@@ -14,7 +14,18 @@ configurations {
     developmentForge.extendsFrom common
 }
 
-loom.silentMojangMappingsLicense()
+loom {
+    silentMojangMappingsLicense()
+    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+
+    forge {
+        convertAccessWideners.set(true)
+        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+
+        mixinConfig("GenerationsCore-common.mixins.json")
+        mixinConfig("GenerationsCore.mixins.json")
+    }
+}
 
 dependencies {
     minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"

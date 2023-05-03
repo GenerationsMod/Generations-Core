@@ -15,7 +15,10 @@ configurations {
     developmentFabric.extendsFrom common
 }
 
-loom.silentMojangMappingsLicense()
+loom{
+    silentMojangMappingsLicense()
+    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+}
 
 dependencies {
     minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"

@@ -14,3 +14,5 @@ dependencies {
 architectury {
     common("forge", "fabric")
 }
+
+loom.accessWidenerPath.set(file("src/main/resources/generationscore.accesswidener"))
