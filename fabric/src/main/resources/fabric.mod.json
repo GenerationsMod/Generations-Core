@@ -14,7 +14,7 @@
   "environment": "*",
   "entrypoints": {},
   "mixins": [
-    "Generations-Core.mixins.json",
+    "GenerationsCore.mixins.json",
     "Generations-Core-common.mixins.json"
   ],
   "depends": {
