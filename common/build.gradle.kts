@@ -12,5 +12,5 @@ dependencies {
 }
 
 architectury {
-    common()
+    common("forge", "fabric")
 }

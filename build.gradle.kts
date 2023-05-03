@@ -18,12 +18,9 @@ allprojects {
     apply(plugin = "maven-publish")
     apply(plugin = "idea")
 
-    /*
-    var archivesBaseName = rootProject.archives_base_name
-    var version = rootProject.mod_version
-    var group = rootProject.maven_group
 
-     */
+    version = rootProject.properties["mod_version"] as String
+    group = rootProject.properties["maven_group"] as String
 
     tasks.withType<JavaCompile>().configureEach {
         options.encoding = "UTF-8"
