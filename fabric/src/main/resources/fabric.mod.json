@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "generations-core",
+  "version": "${version}",
+
+  "name": "Generations-Core",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "GNU GPL 3.0",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "Generations-Core.mixins.json",
+    "Generations-Core-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "minecraft": ">=1.19.4"
+  }
+}
