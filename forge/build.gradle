@@ -14,7 +14,11 @@ configurations {
     developmentForge.extendsFrom common
 }
 
+loom.silentMojangMappingsLicense()
+
 dependencies {
+    minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+    mappings(loom.officialMojangMappings())
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
@@ -44,9 +48,7 @@ remapJar {
     archiveClassifier.set(null)
 }
 
-jar {
-    archiveClassifier.set("dev")
-}
+jar.archiveClassifier.set("dev")
 
 sourcesJar {
     def commonSources = project(":common").sourcesJar
