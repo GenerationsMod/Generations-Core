@@ -12,7 +12,7 @@ import generations.gg.generations.core.generationscore.world.item.curry.CurryTyp
 import generations.gg.generations.core.generationscore.world.item.curry.ItemCurry;
 import generations.gg.generations.core.generationscore.world.item.tools.NpcPathTool;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModWood;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.level.block.SoftSoilBlock.Mulch;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
@@ -30,9 +30,7 @@ import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class GenerationsItems {
 
@@ -2037,12 +2035,12 @@ public class GenerationsItems {
 
     public static final RegistrySupplier<Item> CURRY = register("curry", ItemCurry::new, GenerationsCreativeTabs.TMS_TRS);
 
-    public static final RegistrySupplier<Item> ULTRA_DARK_SIGN = registerSign("ultra_dark_sign", properties -> new SignItem(properties.stacksTo(16), PokeModWood.ULTRA_DARK_SIGN.get(), PokeModWood.ULTRA_DARK_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign", properties -> new HangingSignItem(PokeModWood.ULTRA_DARK_HANGING_SIGN.get(), PokeModWood.ULTRA_DARK_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_SIGN = registerSign("ultra_jungle_sign", properties -> new SignItem(properties.stacksTo(16), PokeModWood.ULTRA_JUNGLE_SIGN.get(), PokeModWood.ULTRA_JUNGLE_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_HANGING_SIGN = registerSign("ultra_jungle_hanging_sign", properties -> new HangingSignItem(PokeModWood.ULTRA_JUNGLE_HANGING_SIGN.get(), PokeModWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GHOST_SIGN = registerSign("ghost_sign", properties -> new SignItem(properties.stacksTo(16), PokeModWood.GHOST_SIGN.get(), PokeModWood.GHOST_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign", properties -> new HangingSignItem(PokeModWood.GHOST_HANGING_SIGN.get(), PokeModWood.GHOST_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_DARK_SIGN = registerSign("ultra_dark_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_SIGN = registerSign("ultra_jungle_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_JUNGLE_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_HANGING_SIGN = registerSign("ultra_jungle_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> GHOST_SIGN = registerSign("ghost_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.GHOST_SIGN.get(), GenerationsWood.GHOST_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign", properties -> new HangingSignItem(GenerationsWood.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
 
     public static final RegistrySupplier<Item> GHOST_BOAT_ITEM = register("ghost_boat", properties -> new PokeModBoatItem(properties, PokeModBoatEntity.Type.GHOST), GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> GHOST_CHEST_BOAT_ITEM = register("ghost_boat_with_chest", properties -> new PokeModChestBoatItem(properties, PokeModChestBoatEntity.Type.GHOST), GenerationsCreativeTabs.BUILDING_BLOCKS);
@@ -2087,6 +2085,7 @@ public class GenerationsItems {
 //    }
     
     public static void init() {
+        GenerationsCore.LOGGER.info("Registering Generations Items");
         ITEMS.register();
     }
 }

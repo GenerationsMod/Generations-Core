@@ -6,8 +6,8 @@ import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class PokeModSignBlockEntity extends SignBlockEntity {
-    public PokeModSignBlockEntity(BlockPos arg, BlockState arg2) {
+public class GenerationsSignBlockEntity extends SignBlockEntity {
+    public GenerationsSignBlockEntity(BlockPos arg, BlockState arg2) {
         super(arg, arg2);
     }
 

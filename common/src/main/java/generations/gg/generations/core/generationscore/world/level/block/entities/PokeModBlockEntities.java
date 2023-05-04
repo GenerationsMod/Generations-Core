@@ -206,26 +206,26 @@ public class PokeModBlockEntities {
     public static final RegistrySupplier<BlockEntityType<TapuShrineBlockEntity>> TAPU_SHRINE = BLOCK_ENTITIES.register("tapu_shrine", () -> BlockEntityType.Builder.of(TapuShrineBlockEntity::new, PokeModShrines.TAPU_SHRINE.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<CookingPotBlockEntity>> COOKING_POT = BLOCK_ENTITIES.register("cooking_pot", () -> BlockEntityType.Builder.of(CookingPotBlockEntity::new, PokeModUtilityBlocks.COOKING_POT.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<GenericChestBlockEntity>> GENERIC_CHEST = BLOCK_ENTITIES.register("generic_chest", () -> BlockEntityType.Builder.of(GenericChestBlockEntity::new, GenerationsBlocks.POKEBALL_CHEST.get(), GenerationsBlocks.GREATBALL_CHEST.get(), GenerationsBlocks.ULTRABALL_CHEST.get(), GenerationsBlocks.MASTERBALL_CHEST.get()).build(null));
-    public static final RegistrySupplier<BlockEntityType<PokeModSignBlockEntity>> SIGN_BLOCK_ENTITIES =
+    public static final RegistrySupplier<BlockEntityType<GenerationsSignBlockEntity>> SIGN_BLOCK_ENTITIES =
             BLOCK_ENTITIES.register("sign_block_entity", () ->
-                    BlockEntityType.Builder.of(PokeModSignBlockEntity::new,
-                            PokeModWood.ULTRA_DARK_SIGN.get(),
-                            PokeModWood.ULTRA_DARK_WALL_SIGN.get(),
-                            PokeModWood.ULTRA_JUNGLE_SIGN.get(),
-                            PokeModWood.ULTRA_JUNGLE_WALL_SIGN.get(),
-                            PokeModWood.GHOST_SIGN.get(),
-                            PokeModWood.GHOST_WALL_SIGN.get()
+                    BlockEntityType.Builder.of(GenerationsSignBlockEntity::new,
+                            GenerationsWood.ULTRA_DARK_SIGN.get(),
+                            GenerationsWood.ULTRA_DARK_WALL_SIGN.get(),
+                            GenerationsWood.ULTRA_JUNGLE_SIGN.get(),
+                            GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get(),
+                            GenerationsWood.GHOST_SIGN.get(),
+                            GenerationsWood.GHOST_WALL_SIGN.get()
                     ).build(null));
 
     public static final RegistrySupplier<BlockEntityType<PokeModHangingSignBlockEntity>> HANGING_SIGN_BLOCK_ENTITIES =
             BLOCK_ENTITIES.register("hanging_sign_block_entity", () ->
                     BlockEntityType.Builder.of(PokeModHangingSignBlockEntity::new,
-                            PokeModWood.ULTRA_DARK_HANGING_SIGN.get(),
-                            PokeModWood.ULTRA_DARK_WALL_HANGING_SIGN.get(),
-                            PokeModWood.ULTRA_JUNGLE_HANGING_SIGN.get(),
-                            PokeModWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(),
-                            PokeModWood.GHOST_HANGING_SIGN.get(),
-                            PokeModWood.GHOST_WALL_HANGING_SIGN.get()
+                            GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(),
+                            GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(),
+                            GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(),
+                            GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(),
+                            GenerationsWood.GHOST_HANGING_SIGN.get(),
+                            GenerationsWood.GHOST_WALL_HANGING_SIGN.get()
                     ).build(null));
     public static final RegistrySupplier<BlockEntityType<BreederBlockEntity>> BREEDER = BLOCK_ENTITIES.register("breeder", () -> BlockEntityType.Builder.of(BreederBlockEntity::new, PokeModUtilityBlocks.BREEDER.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<GenericFurnaceBlockEntity>> GENERIC_FURNACE = BLOCK_ENTITIES.register("generic_furnace", () -> BlockEntityType.Builder.of(GenericFurnaceBlockEntity::new,

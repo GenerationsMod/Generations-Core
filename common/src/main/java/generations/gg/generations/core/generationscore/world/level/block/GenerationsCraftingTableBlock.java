@@ -11,10 +11,10 @@ import net.minecraft.world.level.block.CraftingTableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class PokeModCraftingTableBlock extends CraftingTableBlock {
+public class GenerationsCraftingTableBlock extends CraftingTableBlock {
 	private static final Component CONTAINER_TITLE = Component.translatable("container.crafting");
 
-	public PokeModCraftingTableBlock(Properties arg) {
+	public GenerationsCraftingTableBlock(Properties arg) {
 		super(arg);
 	}
 

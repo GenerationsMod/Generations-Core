@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import org.jetbrains.annotations.NotNull;
 
-public class PokeModWallHangingSignBlock extends WallHangingSignBlock {
-	public PokeModWallHangingSignBlock(Properties arg, WoodType arg2) {
+public class GenerationsWallHangingSignBlock extends WallHangingSignBlock {
+	public GenerationsWallHangingSignBlock(Properties arg, WoodType arg2) {
 		super(arg, arg2);
 	}
 
