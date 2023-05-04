@@ -15,6 +15,15 @@ configurations {
 }
 
 loom {
+    runs {
+        data {
+            data()
+            programArgs("--all", "--mod", "generations-core")
+            programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
+            programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
+        }
+    }
+
     silentMojangMappingsLicense()
     accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
