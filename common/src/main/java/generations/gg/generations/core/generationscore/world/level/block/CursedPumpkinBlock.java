@@ -36,7 +36,7 @@ public class CursedPumpkinBlock extends PumpkinBlock {
                 Direction direction = hit.getDirection();
                 Direction direction1 = direction.getAxis() == Direction.Axis.Y ? player.getDirection().getOpposite() : direction;
                 level.playSound(null, pos, SoundEvents.PUMPKIN_CARVE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                //level.setBlock(pos, PokeModCoreBlocks.CURSED_CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, direction1), 11);
+                level.setBlock(pos, GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().defaultBlockState().setValue(CarvedPumpkinBlock.FACING, direction1), 11);
                 ItemEntity itementity = new ItemEntity(level, (double)pos.getX() + 0.5 + (double)direction1.getStepX() * 0.65, (double)pos.getY() + 0.1, (double)pos.getZ() + 0.5 + (double)direction1.getStepZ() * 0.65, new ItemStack(Items.PUMPKIN_SEEDS, 4));
                 itementity.setDeltaMovement(0.05 * (double)direction1.getStepX() + level.random.nextDouble() * 0.02, 0.05, 0.05 * (double)direction1.getStepZ() + level.random.nextDouble() * 0.02);
                 level.addFreshEntity(itementity);
