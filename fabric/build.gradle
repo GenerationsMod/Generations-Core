@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 architectury {
@@ -15,7 +15,14 @@ configurations {
     developmentFabric.extendsFrom common
 }
 
+loom{
+    silentMojangMappingsLicense()
+    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+}
+
 dependencies {
+    minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+    mappings(loom.officialMojangMappings())
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
@@ -44,9 +51,7 @@ remapJar {
     archiveClassifier.set(null)
 }
 
-jar {
-    archiveClassifier.set("dev")
-}
+jar.archiveClassifier.set("dev")
 
 sourcesJar {
     def commonSources = project(":common").sourcesJar

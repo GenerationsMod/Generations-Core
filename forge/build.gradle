@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 architectury {
     platformSetupLoomIde()
@@ -14,7 +14,22 @@ configurations {
     developmentForge.extendsFrom common
 }
 
+loom {
+    silentMojangMappingsLicense()
+    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+
+    forge {
+        convertAccessWideners.set(true)
+        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+
+        mixinConfig("GenerationsCore-common.mixins.json")
+        mixinConfig("GenerationsCore.mixins.json")
+    }
+}
+
 dependencies {
+    minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+    mappings(loom.officialMojangMappings())
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
@@ -44,9 +59,7 @@ remapJar {
     archiveClassifier.set(null)
 }
 
-jar {
-    archiveClassifier.set("dev")
-}
+jar.archiveClassifier.set("dev")
 
 sourcesJar {
     def commonSources = project(":common").sourcesJar
