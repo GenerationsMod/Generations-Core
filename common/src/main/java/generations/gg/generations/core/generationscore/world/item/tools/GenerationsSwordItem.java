@@ -5,7 +5,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -14,14 +14,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PokeModPickaxeItem extends PickaxeItem {
+public class GenerationsSwordItem extends SwordItem {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public PokeModPickaxeItem(Tier tier, float attackSpeed, Properties properties) {
+    public GenerationsSwordItem(Tier tier, float attackSpeed, Properties properties) {
         super(tier, (int) tier.getAttackDamageBonus(), attackSpeed, properties);
     }
 
-    public PokeModPickaxeItem addToolEffect(ToolEffect toolEffect) {
+    public GenerationsSwordItem addToolEffect(ToolEffect toolEffect) {
         this.toolEffects.add(toolEffect);
         return this;
     }

@@ -4,8 +4,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -14,14 +14,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PokeModHoeItem extends HoeItem {
+public class GenerationsPickaxeItem extends PickaxeItem {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public PokeModHoeItem(Tier tier, float attackSpeed, Properties properties) {
+    public GenerationsPickaxeItem(Tier tier, float attackSpeed, Properties properties) {
         super(tier, (int) tier.getAttackDamageBonus(), attackSpeed, properties);
     }
 
-    public PokeModHoeItem addToolEffect(ToolEffect toolEffect) {
+    public GenerationsPickaxeItem addToolEffect(ToolEffect toolEffect) {
         this.toolEffects.add(toolEffect);
         return this;
     }

@@ -10,7 +10,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
-public enum PokeModTiers implements Tier {
+public enum GenerationToolTiers implements Tier {
     CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, Ingredient.of(GenerationsBlocks.CHARGE_STONE.get())),
     VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, Ingredient.of(GenerationsBlocks.VOLCANIC_STONE.get())),
     ALUMINUM(2, 200, 6F, 1.5F, 14, Ingredient.of(GenerationsItems.ALUMINUM_INGOT.get())),
@@ -38,7 +38,7 @@ public enum PokeModTiers implements Tier {
     private final int enchantmentValue;
     private final Ingredient repairIngredient;
 
-    PokeModTiers(int level, int uses, float speed, float damage, int enchantmentValue, Ingredient repairIngredient) {
+    GenerationToolTiers(int level, int uses, float speed, float damage, int enchantmentValue, Ingredient repairIngredient) {
         this.level = level;
         this.uses = uses;
         this.speed = speed;

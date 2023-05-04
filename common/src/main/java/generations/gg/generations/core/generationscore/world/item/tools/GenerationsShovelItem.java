@@ -14,14 +14,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PokeModShovelItem extends ShovelItem {
+public class GenerationsShovelItem extends ShovelItem {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public PokeModShovelItem(Tier tier, float attackSpeed, Properties properties) {
+    public GenerationsShovelItem(Tier tier, float attackSpeed, Properties properties) {
         super(tier, tier.getAttackDamageBonus(), attackSpeed, properties);
     }
 
-    public PokeModShovelItem addToolEffect(ToolEffect toolEffect) {
+    public GenerationsShovelItem addToolEffect(ToolEffect toolEffect) {
         this.toolEffects.add(toolEffect);
         return this;
     }

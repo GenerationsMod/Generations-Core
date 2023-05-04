@@ -15,14 +15,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PokeModHammerItem extends DiggerItem {
+public class GenerationsHammerItem extends DiggerItem {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public PokeModHammerItem(Tier tier, float attackDamageBonus, float attackSpeed, Properties properties) {
+    public GenerationsHammerItem(Tier tier, float attackDamageBonus, float attackSpeed, Properties properties) {
         super((int) attackDamageBonus, attackSpeed, tier, BlockTags.ANVIL, properties);
     }
 
-    public PokeModHammerItem addToolEffect(ToolEffect toolEffect) {
+    public GenerationsHammerItem addToolEffect(ToolEffect toolEffect) {
         this.toolEffects.add(toolEffect);
         return this;
     }
