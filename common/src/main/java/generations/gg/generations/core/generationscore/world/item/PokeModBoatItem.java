@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import com.pokemod.pokemod.world.entity.PokeModBoatEntity;
 import net.minecraft.stats.Stats;
@@ -24,7 +24,7 @@ public class PokeModBoatItem extends Item{
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::canBeCollidedWith);
     private final PokeModBoatEntity.Type type;
 
-    public PokeModBoatItem(Item.Properties properties, PokeModBoatEntity.Type typeIn) {
+    public PokeModBoatItem(Properties properties, PokeModBoatEntity.Type typeIn) {
         super(properties);
         this.type = typeIn;
     }

@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item.armor;
+package generations.gg.generations.core.generationscore.world.item.armor;
 
 import com.pokemod.pokemod.api.events.ItemEvents;
 import net.minecraft.world.entity.Entity;

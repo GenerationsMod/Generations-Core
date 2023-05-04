@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item.curry;
+package generations.gg.generations.core.generationscore.world.item.curry;
 
 import com.pokemod.pokemod.PokeMod;
 import com.pokemod.pokemod.world.item.berry.ICurryRarity;

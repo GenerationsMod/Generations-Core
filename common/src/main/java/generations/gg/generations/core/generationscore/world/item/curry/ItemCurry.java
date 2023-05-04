@@ -1,17 +1,15 @@
-package com.pokemod.pokemod.world.item.curry;
+package generations.gg.generations.core.generationscore.world.item.curry;
 
-import com.pokemod.pokemod.api.data.pixelmon.curry.Flavor;
-import com.pokemod.pokemod.api.data.player.CurryDex;
-import com.pokemod.pokemod.world.item.PokeModItems;
+import generations.gg.generations.core.generationscore.api.data.curry.Flavor;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,8 +17,8 @@ import java.util.List;
 
 public class ItemCurry extends Item {
 
-    public ItemCurry() {
-        super(new Properties().stacksTo(64));
+    public ItemCurry(Properties properties) {
+        super(properties.stacksTo(64));
     }
 
 
@@ -28,7 +26,7 @@ public class ItemCurry extends Item {
     @Override
     public @NotNull Component getName(@NotNull ItemStack stack) {
         CurryData data = ItemCurry.getData(stack);
-        String name = ForgeRegistries.ITEMS.getKey(this).toString();
+        String name = BuiltInRegistries.ITEM.getKey(this).toString();
 
         if(data.getCurryType() != CurryType.None) name = data.getCurryType().getLocalizedName() + " " + name;
         if(data.getFlavor() != Flavor.NONE) name = data.getFlavor().getLocalizedName() + " " + name;
@@ -54,7 +52,7 @@ public class ItemCurry extends Item {
     }
 
     public static ItemStack createStack(CurryData data) {
-        ItemStack stack = new ItemStack(PokeModItems.CURRY.get());
+        ItemStack stack = new ItemStack(GenerationsItems.CURRY.get());
         setData(stack, data);
         return stack;
     }
@@ -69,16 +67,16 @@ public class ItemCurry extends Item {
 
     @Override
     public void onCraftedBy(@NotNull ItemStack stack, @NotNull Level level, Player player) {
-        if(!player.isLocalPlayer()) {
-            CurryTasteRating rating = CurryDex.of(player).getCurrentTaste();
-
-            CurryData data = getData(stack);
-
-            data.setRating(rating);
-            rating.configureData(data);
-            setData(stack, data);
-
-            CurryDex.add((ServerPlayer) player, data);
+        if(!player.isLocalPlayer()) { //TODO: Currydex
+//            CurryTasteRating rating = CurryDex.of(player).getCurrentTaste();
+//
+//            CurryData data = getData(stack);
+//
+//            data.setRating(rating);
+//            rating.configureData(data);
+//            setData(stack, data);
+//
+//            CurryDex.add((ServerPlayer) player, data);
         }
     }
 }

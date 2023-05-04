@@ -1,14 +1,13 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
-import com.pixelmongenerations.mimikyu.Battle;
-import com.pokemod.pokemod.api.battle.BattleController;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.util.TriPredicate;
+
+import java.util.function.BiPredicate;
 
 public class MeltanBox extends PostBattleUpdatingItemImpl {
 
-    public MeltanBox(Properties settings, String speciesId, String lang, TriPredicate<ServerPlayer, ItemStack, Battle<BattleController>> predicate) {
+    public MeltanBox(Properties settings, String speciesId, String lang, BiPredicate<ServerPlayer, ItemStack/*, Battle<BattleController>*/> predicate) {
         super(settings, speciesId, lang, predicate);
     }
 }

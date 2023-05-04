@@ -1,8 +1,8 @@
-package com.pokemod.pokemod.world.item.armor.effects;
+package generations.gg.generations.core.generationscore.world.item.armor.effects;
 
-import com.pokemod.pokemod.world.item.armor.ArmorEffect;
-import com.pokemod.pokemod.world.item.PokeModArmor;
-import com.pokemod.pokemod.world.item.armor.PokeModArmorItem;
+import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
+import generations.gg.generations.core.generationscore.world.item.armor.ArmorEffect;
+import generations.gg.generations.core.generationscore.world.item.armor.PokeModArmorItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -26,7 +26,7 @@ public record RunningBootsArmorEffect() implements ArmorEffect {
             compound.putDouble("z", player.position().z);
         }
         if (Math.sqrt(Math.pow(compound.getDouble("x") - player.position().x, 2.0D) + Math.pow(compound.getDouble("z") - player.position().z, 2.0D)) >= 2.0D) {
-            itemStack.hurtAndBreak(1, player, owner -> owner.setItemSlot(EquipmentSlot.FEET, new ItemStack(PokeModArmor.OLD_RUNNING_BOOTS.get())));
+            itemStack.hurtAndBreak(1, player, owner -> owner.setItemSlot(EquipmentSlot.FEET, new ItemStack(GenerationsArmor.OLD_RUNNING_BOOTS.get())));
             compound.putDouble("x", player.position().x);
             compound.putDouble("z", player.position().z);
         }

@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -20,7 +20,7 @@ import java.util.List;
 public abstract class DistanceTraveledImplItem extends Item implements DistanceTraveled {
     private final double maxDistance;
 
-    public DistanceTraveledImplItem(Item.Properties properties, double maxDistance) {
+    public DistanceTraveledImplItem(Properties properties, double maxDistance) {
         super(properties);
         this.maxDistance = maxDistance;
     }

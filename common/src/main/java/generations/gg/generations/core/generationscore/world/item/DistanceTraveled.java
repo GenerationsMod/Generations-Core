@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;

@@ -1,6 +1,6 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
-import com.pokemod.pokemod.PokeMod;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
@@ -9,7 +9,7 @@ public class RegiOrbItem extends Item {
 
     public RegiOrbItem(Properties arg, String speciesId) {
         super(arg);
-        this.speciesId = PokeMod.id(speciesId);
+        this.speciesId = GenerationsCore.id(speciesId);
     }
 
     public ResourceLocation getSpeciesId() {

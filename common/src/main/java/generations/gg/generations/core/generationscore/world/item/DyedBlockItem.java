@@ -1,8 +1,9 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import com.pokemod.pokemod.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -11,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -35,7 +37,7 @@ public class DyedBlockItem<T extends DyeableBlock<?, ?>> extends ItemNameBlockIt
 
     protected @NotNull String getOrCreateDescriptionId() {
         if (this.descriptionId == null) {
-            this.descriptionId = Util.makeDescriptionId("item", Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(this)).withPrefix(color.getName() + "_"));
+            this.descriptionId = Util.makeDescriptionId("item", Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(this)).withPrefix(color.getName() + "_"));
         }
         return this.descriptionId;
     }

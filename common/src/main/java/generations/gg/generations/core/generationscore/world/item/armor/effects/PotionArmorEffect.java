@@ -1,7 +1,7 @@
-package com.pokemod.pokemod.world.item.armor.effects;
+package generations.gg.generations.core.generationscore.world.item.armor.effects;
 
-import com.pokemod.pokemod.world.item.armor.PokeModArmorItem;
-import com.pokemod.pokemod.world.item.armor.ArmorEffect;
+import generations.gg.generations.core.generationscore.world.item.armor.ArmorEffect;
+import generations.gg.generations.core.generationscore.world.item.armor.PokeModArmorItem;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;

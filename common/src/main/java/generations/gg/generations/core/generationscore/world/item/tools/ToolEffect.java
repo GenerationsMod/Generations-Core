@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item.tools;
+package generations.gg.generations.core.generationscore.world.item.tools;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;

@@ -1,11 +1,11 @@
-package com.pokemod.pokemod.world.item.berry;
+package generations.gg.generations.core.generationscore.world.item.berry;
 
-import com.pokemod.pokemod.PokeMod;
-import com.pokemod.pokemod.api.data.pixelmon.curry.Flavor;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.api.data.curry.Flavor;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -113,11 +113,11 @@ public enum BerryType implements ICurryRarity {
     }
 
     public Block getBush() {
-        return ForgeRegistries.BLOCKS.getValue(PokeMod.id(this.name().toLowerCase(Locale.ENGLISH) + "_berry_bush"));
+        return BuiltInRegistries.BLOCK.get(GenerationsCore.id(this.name().toLowerCase(Locale.ENGLISH) + "_berry_bush"));
     }
 
     public Item getBerry() {
-        return ForgeRegistries.ITEMS.getValue(PokeMod.id(this.name().toLowerCase(Locale.ENGLISH) + "_berry"));
+        return BuiltInRegistries.ITEM.get(GenerationsCore.id(this.name().toLowerCase(Locale.ENGLISH) + "_berry"));
     }
 
     public static BerryType fromId(int id) {

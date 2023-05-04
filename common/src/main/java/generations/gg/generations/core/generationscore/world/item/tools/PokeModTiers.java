@@ -1,7 +1,7 @@
-package com.pokemod.pokemod.world.item.tools;
+package generations.gg.generations.core.generationscore.world.item.tools;
 
-import com.pokemod.pokemod.world.level.block.PokeModBlocks;
-import com.pokemod.pokemod.world.item.PokeModItems;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
@@ -11,25 +11,25 @@ import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 public enum PokeModTiers implements Tier {
-    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, Ingredient.of(PokeModBlocks.CHARGE_STONE.get())),
-    VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, Ingredient.of(PokeModBlocks.VOLCANIC_STONE.get())),
-    ALUMINUM(2, 200, 6F, 1.5F, 14, Ingredient.of(PokeModItems.ALUMINUM_INGOT.get())),
+    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, Ingredient.of(GenerationsBlocks.CHARGE_STONE.get())),
+    VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, Ingredient.of(GenerationsBlocks.VOLCANIC_STONE.get())),
+    ALUMINUM(2, 200, 6F, 1.5F, 14, Ingredient.of(GenerationsItems.ALUMINUM_INGOT.get())),
     AMETHYST(2, 300, 6.5F, 2.0F, 14, Ingredient.of(Items.AMETHYST_SHARD)),
-    CRYSTAL(2, 300, 6.5F, 2.0F, 14, Ingredient.of(PokeModItems.CRYSTAL.get())),
-    DAWN_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(PokeModItems.DAWN_STONE.get())),
-    DUSK_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(PokeModItems.DUSK_STONE.get())),
-    FIRE_STONE(3, 1561, 8.0F, 3.0F, 10, Ingredient.of(PokeModItems.FIRE_STONE.get())),
-    ICE_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(PokeModItems.ICE_STONE.get())),
-    LEAF_STONE(2, 250, 6.0F, 2.0F, 14, Ingredient.of(PokeModItems.LEAF_STONE.get())),
-    MOON_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(PokeModItems.MOON_STONE.get())),
+    CRYSTAL(2, 300, 6.5F, 2.0F, 14, Ingredient.of(GenerationsItems.CRYSTAL.get())),
+    DAWN_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.DAWN_STONE.get())),
+    DUSK_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.DUSK_STONE.get())),
+    FIRE_STONE(3, 1561, 8.0F, 3.0F, 10, Ingredient.of(GenerationsItems.FIRE_STONE.get())),
+    ICE_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.ICE_STONE.get())),
+    LEAF_STONE(2, 250, 6.0F, 2.0F, 14, Ingredient.of(GenerationsItems.LEAF_STONE.get())),
+    MOON_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.MOON_STONE.get())),
 
-    RUBY(2, 300, 6.5F, 2.0F, 14, Ingredient.of(PokeModItems.RUBY.get())),
+    RUBY(2, 300, 6.5F, 2.0F, 14, Ingredient.of(GenerationsItems.RUBY.get())),
 
-    SAPPHIRE(2, 300, 6.5F, 2.0F, 14, Ingredient.of(PokeModItems.SAPPHIRE.get())),
-    SILICON(2, 100, 45F, 10F, 30, Ingredient.of(PokeModItems.SILICON.get())),
-    SUN_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(PokeModItems.SUN_STONE.get())),
-    THUNDER_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(PokeModItems.THUNDER_STONE.get())),
-    WATER_STONE(3, 1561, 8.0F, 3.0F, 10, Ingredient.of(PokeModItems.WATER_STONE.get()));
+    SAPPHIRE(2, 300, 6.5F, 2.0F, 14, Ingredient.of(GenerationsItems.SAPPHIRE.get())),
+    SILICON(2, 100, 45F, 10F, 30, Ingredient.of(GenerationsItems.SILICON.get())),
+    SUN_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.SUN_STONE.get())),
+    THUNDER_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.THUNDER_STONE.get())),
+    WATER_STONE(3, 1561, 8.0F, 3.0F, 10, Ingredient.of(GenerationsItems.WATER_STONE.get()));
 
     private final int level;
     private final int uses;

@@ -1,7 +1,5 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
-import com.pixelmongenerations.mimikyu.Battle;
-import com.pokemod.pokemod.api.battle.BattleController;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -9,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class SacredAshItem extends Item implements PostBattleUpdatingItem {
 
-    public SacredAshItem(Item.Properties properties) {
+    public SacredAshItem(Properties properties) {
         super(properties);
     }
 
@@ -23,7 +21,7 @@ public class SacredAshItem extends Item implements PostBattleUpdatingItem {
     }
 
     @Override
-    public void onBattleFinish(ServerPlayer player, ItemStack stack, Battle<BattleController> battle) {
+    public void onBattleFinish(ServerPlayer player, ItemStack stack/*, Battle<BattleController> battle*/) {
         // return pixelmonData.data().getSecond().equals(PokeMod.id("sacred_fire"));
     }
 }

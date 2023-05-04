@@ -1,8 +1,6 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
-import com.pixelmongenerations.mimikyu.Battle;
-import com.pokemod.pokemod.PokeMod;
-import com.pokemod.pokemod.api.battle.BattleController;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
@@ -13,7 +11,7 @@ public class TaoTrioStoneItem extends Item implements PostBattleUpdatingItem {
 
     public TaoTrioStoneItem(Properties arg, String species) {
         super(arg);
-        this.species = PokeMod.id(species);
+        this.species = GenerationsCore.id(species);
     }
 
     public ResourceLocation getSpecies() {
@@ -21,7 +19,7 @@ public class TaoTrioStoneItem extends Item implements PostBattleUpdatingItem {
     }
 
     @Override
-    public void onBattleFinish(ServerPlayer player, ItemStack stack, Battle<BattleController> battle) {
+    public void onBattleFinish(ServerPlayer player, ItemStack stack/*, Battle<BattleController> battle*/) {
         // return pixelmonData.data().getFirst().getPokemonForm().types().contains(ElementType.DRAGON);
     }
 }

@@ -1,16 +1,17 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.function.Supplier;
 
 public class CalyrexSteedItem extends Item {
     private final ResourceLocation speices;
-    private final RegistryObject<Item> unenchanted;
+    private final Supplier<Item> unenchanted;
 
-    public CalyrexSteedItem(Properties arg, ResourceLocation speices, RegistryObject<Item> unenchanted) {
+    public CalyrexSteedItem(Properties arg, ResourceLocation speices, Supplier<Item> unenchanted) {
         super(arg);
         this.speices = speices;
         this.unenchanted = unenchanted;

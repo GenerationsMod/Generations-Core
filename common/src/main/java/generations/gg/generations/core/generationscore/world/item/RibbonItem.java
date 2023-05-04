@@ -1,11 +1,10 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
-import com.pixelmongenerations.mimikyu.util.ElementType;
 import net.minecraft.world.item.Item;
 
 public class RibbonItem extends Item {
 
-    public RibbonItem(ElementType element) { // FIXME: the TODO: is the element which is associated with the ribbon
-        super(new Properties().stacksTo(1));
+    public RibbonItem(Properties properties) { // FIXME: the TODO: is the element which is associated with the ribbon
+        super(properties.stacksTo(1));
     }
 }

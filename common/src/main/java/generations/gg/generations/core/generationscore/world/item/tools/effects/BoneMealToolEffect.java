@@ -1,6 +1,7 @@
-package com.pokemod.pokemod.world.item.tools.effects;
+package generations.gg.generations.core.generationscore.world.item.tools.effects;
 
 import com.pokemod.pokemod.world.item.tools.ToolEffect;
+import generations.gg.generations.core.generationscore.world.item.tools.ToolEffect;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -23,7 +24,7 @@ public record BoneMealToolEffect(int durabilityCost) implements ToolEffect {
     public boolean useOn(UseOnContext context) {
         BlockPos blockPos = context.getClickedPos();
         BlockPos blockPosRelative = blockPos.relative(context.getClickedFace());
-        if (!BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), context.getLevel(), blockPos, Objects.requireNonNull(context.getPlayer()))) {
+        if (!BoneMealItem.growCrop(new ItemStack(Items.BONE_MEAL), context.getLevel(), blockPos/*, Objects.requireNonNull(context.getPlayer())*/)) {
             BlockState blockstate = context.getLevel().getBlockState(blockPos);
             if (!blockstate.isFaceSturdy(context.getLevel(), blockPos, context.getClickedFace())) return false;
             if (!BoneMealItem.growWaterPlant(context.getItemInHand().copy(), context.getLevel(), blockPosRelative, context.getClickedFace())) return false;

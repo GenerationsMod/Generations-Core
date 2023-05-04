@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import com.pokemod.pokemod.client.model.ModelContextProviders;
 import net.minecraft.resources.ResourceLocation;
@@ -8,7 +8,7 @@ public class CreationTrioItem extends Item implements ModelContextProviders.Mode
     private final ResourceLocation speciesId;
     private final ResourceLocation model;
 
-    public CreationTrioItem(Item.Properties properties, ResourceLocation speciesId, ResourceLocation model) {
+    public CreationTrioItem(Properties properties, ResourceLocation speciesId, ResourceLocation model) {
         super(properties);
         this.speciesId = speciesId;
         this.model = model;

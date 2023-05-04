@@ -1,0 +1,69 @@
+package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
+
+import com.pokemod.pokemod.world.item.DyedBlockItem;
+import com.pokemod.pokemod.world.level.block.PokeModUtilityBlocks;
+import com.pokemod.pokemod.world.level.block.entities.ClockBlockEntity;
+import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
+import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
+import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@SuppressWarnings("deprecation")
+public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
+    private static Map<Direction, VoxelShape> SHAPE = Util.make(new HashMap<>(), map -> {
+        map.put(Direction.SOUTH, Shapes.box(0.25, 0.25, 0, 0.75, 0.75, 0.0625));
+        map.put(Direction.EAST, Shapes.box(0, 0.25, 0.25, 0.0625, 0.75, 0.75));
+        map.put(Direction.NORTH, Shapes.box(0.25, 0.25, 0.9375, 0.75, 0.75, 1));
+        map.put(Direction.WEST, Shapes.box(0.9375, 0.25, 0.25, 1, 0.75, 0.75));
+    });
+
+    public ClockBlock(Properties arg) {
+        super(ClockBlock::getBlock, PokeModBlockEntities.CLOCK, arg, PokeModBlockEntityModels.CLOCK);
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        Direction direction = state.getValue(FACING);
+        BlockPos blockPos = pos.relative(direction.getOpposite());
+        BlockState blockState = level.getBlockState(blockPos);
+        return blockState.isFaceSturdy(level, blockPos, direction);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE.get(state.getValue(FACING));
+    }
+
+    public static DyedBlockItem<ClockBlock> getBlock(DyeColor color) {
+        return (switch (color) {
+            case WHITE -> PokeModUtilityBlocks.WHITE_CLOCK;
+            case ORANGE -> PokeModUtilityBlocks.ORANGE_CLOCK;
+            case MAGENTA -> PokeModUtilityBlocks.MAGENTA_CLOCK;
+            case LIGHT_BLUE -> PokeModUtilityBlocks.LIGHT_BLUE_CLOCK;
+            case YELLOW -> PokeModUtilityBlocks.YELLOW_CLOCK;
+            case LIME -> PokeModUtilityBlocks.LIME_CLOCK;
+            case PINK -> PokeModUtilityBlocks.PINK_CLOCK;
+            case GRAY -> PokeModUtilityBlocks.GRAY_CLOCK;
+            case LIGHT_GRAY -> PokeModUtilityBlocks.LIGHT_GRAY_CLOCK;
+            case CYAN -> PokeModUtilityBlocks.CYAN_CLOCK;
+            case PURPLE -> PokeModUtilityBlocks.PURPLE_CLOCK;
+            case BLUE -> PokeModUtilityBlocks.BLUE_CLOCK;
+            case BROWN -> PokeModUtilityBlocks.BROWN_CLOCK;
+            case GREEN -> PokeModUtilityBlocks.GREEN_CLOCK;
+            case RED -> PokeModUtilityBlocks.RED_CLOCK;
+            case BLACK -> PokeModUtilityBlocks.BLACK_CLOCK;
+        }).get();
+    }
+}
+

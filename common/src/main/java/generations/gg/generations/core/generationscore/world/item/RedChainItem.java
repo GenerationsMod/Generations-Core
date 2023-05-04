@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
@@ -13,7 +13,7 @@ import java.util.List;
 public class RedChainItem extends EnchantableItem {
     public static final int MAX_USES = 3;
 
-    public RedChainItem(Item.Properties properties) {
+    public RedChainItem(Properties properties) {
         super(properties);
     }
 

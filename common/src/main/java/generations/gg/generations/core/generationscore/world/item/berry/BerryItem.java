@@ -1,13 +1,13 @@
-package com.pokemod.pokemod.world.item.berry;
+package generations.gg.generations.core.generationscore.world.item.berry;
 
+import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.RegistryObject;
 
 public class BerryItem extends ItemNameBlockItem {
     private final BerryType berryType;
 
-    public BerryItem(BerryType berryType, RegistryObject<Block> block, Properties properties) {
+    public BerryItem(BerryType berryType, RegistrySupplier<Block> block, Properties properties) {
         super(block.get(), properties);
         this.berryType = berryType;
     }

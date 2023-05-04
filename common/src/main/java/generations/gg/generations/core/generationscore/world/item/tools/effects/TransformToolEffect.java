@@ -1,6 +1,6 @@
-package com.pokemod.pokemod.world.item.tools.effects;
+package generations.gg.generations.core.generationscore.world.item.tools.effects;
 
-import com.pokemod.pokemod.world.item.tools.ToolEffect;
+import generations.gg.generations.core.generationscore.world.item.tools.ToolEffect;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -10,9 +10,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.ForgeMod;
-
-import java.util.Objects;
 
 public record TransformToolEffect(Block blockFrom, Block blockTo, int durabilityCost) implements ToolEffect {
     @Override
@@ -45,7 +42,7 @@ public record TransformToolEffect(Block blockFrom, Block blockTo, int durability
         float f5 = Mth.sin(-f * 0.017453292F);
         float f6 = f3 * f4;
         float f7 = f2 * f4;
-        double d0 = Objects.requireNonNull(player.getAttribute(ForgeMod.REACH_DISTANCE.get())).getValue();
+        double d0 = 5d; //Objects.requireNonNull(player.getAttribute(ForgeMod.REACH_DISTANCE.get())).getValue(); TODO: figure out platform netural variant.
         Vec3 vec31 = vec3.add((double) f6 * d0, (double) f5 * d0, (double) f7 * d0);
         return level.clip(new ClipContext(vec3, vec31, ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, player));
     }

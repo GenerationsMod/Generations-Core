@@ -1,25 +1,18 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
-import com.pokemod.pokemod.network.api.PokeModNetworking;
-import com.pokemod.pokemod.network.packets.S2COpenMailPacket;
-import com.pokemod.pokemod.tags.PokeModItemTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.stats.Stats;
 import net.minecraft.util.StringUtil;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class ClosedMailItem extends Item {
@@ -34,7 +27,7 @@ public class ClosedMailItem extends Item {
 
     private final MailType type;
 
-    public ClosedMailItem(MailType type, Item.Properties arg) {
+    public ClosedMailItem(MailType type, Properties arg) {
         super(arg);
         this.type = type;
     }
@@ -69,19 +62,19 @@ public class ClosedMailItem extends Item {
         }
     }
 
-    @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
-        ItemStack itemStack = player.getItemInHand(usedHand);
-        if (player instanceof ServerPlayer serverPlayer && itemStack.is(PokeModItemTags.CLOSED_POKEMAIL)) {
-            if(resolveBookComponents(itemStack, serverPlayer.createCommandSourceStack(), serverPlayer)) {
-                serverPlayer.containerMenu.broadcastChanges();
-            }
-
-            PokeModNetworking.sendPacket(new S2COpenMailPacket(usedHand), serverPlayer);
-        }
-        player.awardStat(Stats.ITEM_USED.get(this));
-        return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
-    }
+//    @Override TODO: Enable
+//    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
+//        ItemStack itemStack = player.getItemInHand(usedHand);
+//        if (player instanceof ServerPlayer serverPlayer && itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL)) {
+//            if(resolveBookComponents(itemStack, serverPlayer.createCommandSourceStack(), serverPlayer)) {
+//                serverPlayer.containerMenu.broadcastChanges();
+//            }
+//
+//            PokeModNetworking.sendPacket(new S2COpenMailPacket(usedHand), serverPlayer); TODO: Networking
+//        }
+//        player.awardStat(Stats.ITEM_USED.get(this));
+//        return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
+//    }
 
     public static boolean resolveBookComponents(ItemStack bookStack, @Nullable CommandSourceStack resolvingSource, @Nullable Player resolvingPlayer) {
         CompoundTag compoundTag = bookStack.getTag();

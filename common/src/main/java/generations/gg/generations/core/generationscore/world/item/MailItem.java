@@ -1,7 +1,5 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
-import com.pokemod.pokemod.network.api.PokeModNetworking;
-import com.pokemod.pokemod.network.packets.S2COpenMailEditScreenPacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
@@ -13,20 +11,19 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class MailItem extends Item {
     private final MailType type;
 
-    public MailItem(MailType type, Item.Properties arg) {
+    public MailItem(MailType type, Properties arg) {
         super(arg);
         this.type = type;
     }
 
     public static ItemStack getSealed(Item item) {
         if (item instanceof MailItem mailItem)
-            return new ItemStack(mailItem.type.getSealed().get().get());
+            return new ItemStack(mailItem.type.getSealed().get());
         else return ItemStack.EMPTY;
     }
 
@@ -34,7 +31,7 @@ public class MailItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         var itemStack = player.getItemInHand(usedHand);
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer)
-            PokeModNetworking.sendPacket(new S2COpenMailEditScreenPacket(usedHand), serverPlayer);
+//            PokeModNetworking.sendPacket(new S2COpenMailEditScreenPacket(usedHand), serverPlayer); TODO: Networking
         player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }

@@ -1,6 +1,6 @@
-package com.pokemod.pokemod.world.item.tools.effects;
+package generations.gg.generations.core.generationscore.world.item.tools.effects;
 
-import com.pokemod.pokemod.world.item.tools.ToolEffect;
+import generations.gg.generations.core.generationscore.world.item.tools.ToolEffect;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;

@@ -1,6 +1,6 @@
-package com.pokemod.pokemod.world.item.curry;
+package generations.gg.generations.core.generationscore.world.item.curry;
 
-import com.pokemod.pokemod.world.item.berry.ICurryRarity;
+import generations.gg.generations.core.generationscore.world.item.berry.ICurryRarity;
 import net.minecraft.world.item.Item;
 
 import java.util.HashMap;

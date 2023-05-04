@@ -1,8 +1,8 @@
-package com.pokemod.pokemod.world.item.curry;
+package generations.gg.generations.core.generationscore.world.item.curry;
 
-import com.pokemod.pokemod.api.data.pixelmon.curry.Flavor;
-import com.pokemod.pokemod.world.item.berry.BerryType;
-import com.pokemod.pokemod.world.item.berry.ICurryRarity;
+import generations.gg.generations.core.generationscore.api.data.curry.Flavor;
+import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
+import generations.gg.generations.core.generationscore.world.item.berry.ICurryRarity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;

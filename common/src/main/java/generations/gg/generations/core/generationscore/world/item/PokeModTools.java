@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import com.pokemod.pokemod.PokeMod;
 import com.pokemod.pokemod.world.item.tools.*;

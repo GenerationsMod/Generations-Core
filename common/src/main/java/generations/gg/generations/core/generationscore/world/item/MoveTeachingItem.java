@@ -1,4 +1,4 @@
-package com.pokemod.pokemod.world.item;
+package generations.gg.generations.core.generationscore.world.item;
 
 import com.pixelmongenerations.mimikyu.move.MoveInstance;
 import com.pokemod.pokemod.registries.PokeModRegistries;
@@ -15,7 +15,7 @@ import net.minecraft.world.item.ItemStack;
 public class MoveTeachingItem extends Item implements PixelmonInteractions.PixelmonInteraction {
     private final ResourceLocation move;
 
-    public MoveTeachingItem(ResourceLocation move, Item.Properties properties) {
+    public MoveTeachingItem(ResourceLocation move, Properties properties) {
         super(properties);
         this.move = move;
     }

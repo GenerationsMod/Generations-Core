@@ -1,0 +1,70 @@
+package generations.gg.generations.core.generationscore.world.level.block.entities;
+
+import com.pokemod.pokemod.PokeMod;
+import net.minecraft.resources.ResourceLocation;
+
+public class PokeModBlockEntityModels {
+    public static final ResourceLocation DEFAULT = PokeMod.id("");
+    public static final ResourceLocation ABUNDANT_SHRINE = PokeMod.id("models/block/shrines/abundant_shrine/abundant_shrine.pk");
+    public static final ResourceLocation BOX = PokeMod.id("models/block/decorations/box/box.pk");
+    public static final ResourceLocation CELESTIAL_ALTAR = PokeMod.id("models/block/shrines/celestial_altar/celestial_altar.pk");
+    public static final ResourceLocation CLOCK = PokeMod.id("models/block/decorations/clock.pk");
+    public static final ResourceLocation COOKING_POT = PokeMod.id("models/block/utility_blocks/cooking_pot.pk");
+    public static final ResourceLocation MOLTRES_SHRINE = PokeMod.id("models/block/shrines/legendary_birds/moltres_shrine.pk");
+    public static final ResourceLocation ARTICUNO_SHRINE = PokeMod.id("models/block/shrines/legendary_birds/articuno_shrine.pk");
+    public static final ResourceLocation GROUDON_SHRINE = PokeMod.id("models/block/shrines/weather_trio/groudon_shrine.pk");
+    public static final ResourceLocation HEALER = PokeMod.id("models/block/utility_blocks/healer.pk");
+    public static final ResourceLocation CRYSTAL_BELL = PokeMod.id("models/block/shrines/crystal_bell/crystal_bell.pk");
+    public static final ResourceLocation HOUSE_LAMP = PokeMod.id("models/block/decorations/house_lamp.pk");
+    public static final ResourceLocation KYOGRE_SHRINE = PokeMod.id("models/block/shrines/weather_trio/kyogre_shrine.pk");
+    public static final ResourceLocation LUGIA_SHRINE = PokeMod.id("models/block/shrines/lugia_shrine/lugia_shrine.pk");
+    public static final ResourceLocation DARK_MODEL = PokeMod.id("models/block/shrines/lunar_shrine/dark_shrine.pk");
+    public static final ResourceLocation LIGHT_MODEL = PokeMod.id("models/block/shrines/lunar_shrine/light_shrine.pk");
+    public static final ResourceLocation MELOETTA_MUSIC_BOX = PokeMod.id("models/block/shrines/meloetta_music_box/meloetta_music_box.pk");
+    public static final ResourceLocation PASTEL_BEAN_BAG = PokeMod.id("models/block/decorations/pastel_bean_bag.pk");
+    public static final ResourceLocation PC = PokeMod.id("models/block/utility_blocks/pc.pk");
+    public static final ResourceLocation POKECENTER_SCARLET_SIGN = PokeMod.id("models/block/decorations/pokecenter_scarlet_sign.pk");
+    public static final ResourceLocation DEFAULT_POKEDOLL = PokeMod.id("models/block/pokedolls/charizard.pk");
+    public static final ResourceLocation RED_HEALER = PokeMod.id("models/block/utility_blocks/red_healer/healer.pk");
+    public static final ResourceLocation RAYQUAZA_SHRINE = PokeMod.id("models/block/shrines/weather_trio/groudon_shrine.pk"); //TODO: Change to Rayquaza when model is available
+    public static final ResourceLocation REGICE_SHRINE = PokeMod.id("models/block/shrines/regis/regice_shrine.pk");
+    public static final ResourceLocation REGIDRAGO_SHRINE = PokeMod.id("models/block/shrines/regis/regidrago_shrine.pk");
+    public static final ResourceLocation REGIELEKI_SHRINE = PokeMod.id("models/block/shrines/regis/regieleki_shrine.pk");
+    public static final ResourceLocation REGIGIGAS_SHRINE = PokeMod.id("models/block/shrines/regis/regigigas_shrine.pk");
+    public static final ResourceLocation REGIROCK_SHRINE = PokeMod.id("models/block/shrines/regis/regirock_shrine.pk");
+    public static final ResourceLocation REGISTEEL_SHRINE = PokeMod.id("models/block/shrines/regis/registeel_shrine.pk");
+    public static final ResourceLocation SNORLAX_BEAN_BAG = PokeMod.id("models/block/decorations/snorlax_bean_bag.pk");
+    public static final ResourceLocation ZAPDOS_SHRINE = PokeMod.id("models/block/shrines/legendary_birds/zapdos_shrine.pk");
+    public static final ResourceLocation SWITCH = PokeMod.id("models/block/decorations/switch.pk");
+    public static final ResourceLocation TAO_TRIO_SHRINE = PokeMod.id("models/block/shrines/tao_trio_shrine/tao_trio_shrine.pk");
+    public static final ResourceLocation TAPU_SHRINE = PokeMod.id("models/block/shrines/tapu_shrine/tapu_shrine.pk");
+    public static final ResourceLocation TIME_SPACE_ALTAR = PokeMod.id("models/block/shrines/creation_trio/time_space_altar.pk");
+    public static final ResourceLocation TRASH_CAN  = PokeMod.id("models/block/decorations/trash_can.pk");
+    public static final ResourceLocation UMBRELLA = PokeMod.id("models/block/decorations/umbrella.pk");
+    public static final ResourceLocation POKEBALL_RUG = PokeMod.id("models/block/decorations/rug.pk");
+    public static final ResourceLocation WHITE_HEALER = PokeMod.id("models/block/utility_blocks/healer.pk");
+    public static final ResourceLocation VENDING_MACHINE = PokeMod.id("models/block/utility_blocks/vending_machine.pk");
+    public static final ResourceLocation BENCH = PokeMod.id("models/block/decorations/bench.pk");
+    public static final ResourceLocation BLUE_DESK = PokeMod.id("models/block/decorations/blue_desk.pk");
+    public static final ResourceLocation BOOKSHELF = PokeMod.id("models/block/decorations/bookshelf.pk");
+    public static final ResourceLocation COUCH = PokeMod.id("models/block/decorations/couch.pk");
+    public static final ResourceLocation CUSHION_CHAIR = PokeMod.id("models/block/decorations/cushion_chair.pk");
+    public static final ResourceLocation DESK = PokeMod.id("models/block/decorations/desk.pk");
+    public static final ResourceLocation DOUBLE_STREET_LAMP = PokeMod.id("models/block/decorations/double_street_lamp.pk");
+    public static final ResourceLocation END_TABLE = PokeMod.id("models/block/decorations/end_table.pk");
+    public static final ResourceLocation FLOOR_CUSHION = PokeMod.id("models/block/decorations/floor_cushion.pk");
+    public static final ResourceLocation FOSSIL_DISPLAY = PokeMod.id("models/block/decorations/fossil_display.pk");
+    public static final ResourceLocation FRIDGE = PokeMod.id("models/block/decorations/fridge.pk");
+    public static final ResourceLocation GYM_SIGN = PokeMod.id("models/block/decorations/gym_sign.pk");
+    public static final ResourceLocation LITWICK_CANDLE = PokeMod.id("models/block/decorations/litwick_candle.pk");
+    public static final ResourceLocation LITWICK_CANDLES = PokeMod.id("models/block/decorations/litwick_candles.pk");
+    public static final ResourceLocation POKEBALL_STATUE = PokeMod.id("models/block/decorations/pokeball_statue.pk");
+    public static final ResourceLocation POT_PLANT = PokeMod.id("models/block/decorations/pot_plant.pk");
+    public static final ResourceLocation RUG = PokeMod.id("models/block/decorations/rug.pk");
+    public static final ResourceLocation SWIVEL_CHAIR = PokeMod.id("models/block/decorations/swivel_chair.pk");
+    public static final ResourceLocation TALL_HOUSE_LAMP = PokeMod.id("models/block/decorations/tall_house_lamp.pk");
+    public static final ResourceLocation TREE = PokeMod.id("models/block/decorations/tree.pk");
+    public static final ResourceLocation WATER_FLOAT = PokeMod.id("models/block/decorations/water_float.pk");
+    public static final ResourceLocation WORK_DESK = PokeMod.id("models/block/decorations/work_desk.pk");
+
+}
