@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.pokemod.pokemod.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 

@@ -1,8 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import com.pokemod.pokemod.client.model.ModelContextProviders;
-import com.pokemod.pokemod.world.level.block.generic.GenericModelBlock;
-import com.pokemod.rarecandy.rendering.ObjectInstance;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -10,7 +9,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
 public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implements ModelContextProviders.ModelProvider {
-    public ObjectInstance objectInstance;
+//    public ObjectInstance objectInstance;
     private AABB boundingBox;
 
     public ModelProvidingBlockEntity(BlockEntityType<? extends ModelProvidingBlockEntity> type, BlockPos pos, BlockState state) {

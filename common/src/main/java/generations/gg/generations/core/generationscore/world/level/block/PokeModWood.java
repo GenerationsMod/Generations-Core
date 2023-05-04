@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import com.pokemod.pokemod.PokeMod;
-import com.pokemod.pokemod.world.item.creativetab.PokeModCreativeTabs;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -16,7 +14,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
-import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Supplier;
 

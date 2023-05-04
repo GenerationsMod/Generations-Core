@@ -2,11 +2,11 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 
 import com.pokemod.pokemod.registries.types.PixelmonData;
 import com.pokemod.pokemod.world.entity.pixelmon.PixelmonEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericShrineBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.ShrineBlockEntity;
 import com.pokemod.pokemod.world.item.MelodyFluteItem;
+import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
+import com.pokemod.pokemod.world.level.block.entities.ShrineBlockEntity;
 import com.pokemod.pokemod.world.level.schedule.ScheduledTask;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.registries.RegistryObject;
@@ -29,7 +30,7 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     @Nullable
     private final RegistryObject<Item> galarianImbuedItem;
 
-    public BirdShrineBlock(Properties materialIn, ResourceLocation model, ResourceLocation pokeEntryId, RegistryObject<Item> imbuedItem) {
+    public BirdShrineBlock(BlockBehaviour.Properties materialIn, ResourceLocation model, ResourceLocation pokeEntryId, RegistryObject<Item> imbuedItem) {
         this(materialIn, model, pokeEntryId, imbuedItem, null);
     }
 

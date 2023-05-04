@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
-import com.pokemod.pokemod.PokeMod;
-import com.pokemod.pokemod.world.level.block.entities.PokeDollBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.generic.GenericModelBlock;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeDollBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -39,12 +40,8 @@ public class PokeModDollBlock extends GenericModelBlock<PokeDollBlockEntity> {
     private final float scale;
     private final String variant;
 
-    public PokeModDollBlock(String name, boolean shiny) {
-        this(name, shiny, 1f);
-    }
-
     public PokeModDollBlock(String name, boolean shiny, float scale) {
-        super(Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(1.0f), PokeModBlockEntities.POKE_DOLL, PokeMod.id("models/block/pokedolls/" + name + ".pk"));
+        super(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(1.0f), PokeModBlockEntities.POKE_DOLL, GenerationsCore.id("models/block/pokedolls/" + name + ".pk"));
         this.name = name;
         this.shiny = shiny;
         this.scale = scale;

@@ -3,16 +3,22 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 import com.pokemod.pokemod.PokeMod;
 import com.pokemod.pokemod.world.level.block.*;
 import com.pokemod.pokemod.world.level.block.entities.generic.*;
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.*;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.RegistrySupplier;
 
 public class PokeModBlockEntities {
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, PokeMod.MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
 
-    public static final RegistryObject<BlockEntityType<PokeDollBlockEntity>> POKE_DOLL = BLOCK_ENTITIES.register("pokedoll", () -> BlockEntityType.Builder.of(PokeDollBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<PokeDollBlockEntity>> POKE_DOLL = BLOCK_ENTITIES.register("pokedoll", () -> BlockEntityType.Builder.of(PokeDollBlockEntity::new,
             PokeModPokeDolls.SHINY_CELEBI_POKEDOLL.get(),
             PokeModPokeDolls.CHARIZARD_POKEDOLL.get(),
             PokeModPokeDolls.BLASTOISE_POKEDOLL.get(),
@@ -175,11 +181,11 @@ public class PokeModBlockEntities {
             PokeModPokeDolls.CELEBI_POKEDOLL.get()
     ).build(null));
 
-    public static final RegistryObject<BlockEntityType<HealerBlockEntity>> HEALER = BLOCK_ENTITIES.register("healer", () -> BlockEntityType.Builder.of(HealerBlockEntity::new, PokeModUtilityBlocks.HEALER.get()).build(null));
-    public static final RegistryObject<BlockEntityType<ClockBlockEntity>> CLOCK = BLOCK_ENTITIES.register("clock", () -> BlockEntityType.Builder.of(ClockBlockEntity::new, PokeModUtilityBlocks.CLOCK.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<HealerBlockEntity>> HEALER = BLOCK_ENTITIES.register("healer", () -> BlockEntityType.Builder.of(HealerBlockEntity::new, PokeModUtilityBlocks.HEALER.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<ClockBlockEntity>> CLOCK = BLOCK_ENTITIES.register("clock", () -> BlockEntityType.Builder.of(ClockBlockEntity::new, PokeModUtilityBlocks.CLOCK.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<BoxBlockEntity>> BOX = BLOCK_ENTITIES.register("box", () -> BlockEntityType.Builder.of(BoxBlockEntity::new, PokeModUtilityBlocks.BOX.get()).build(null));
-    public static final RegistryObject<BlockEntityType<GenericShrineBlockEntity>> GENERIC_SHRINE = BLOCK_ENTITIES.register("generic_shrine", () -> BlockEntityType.Builder.of(GenericShrineBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<BoxBlockEntity>> BOX = BLOCK_ENTITIES.register("box", () -> BlockEntityType.Builder.of(BoxBlockEntity::new, PokeModUtilityBlocks.BOX.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<GenericShrineBlockEntity>> GENERIC_SHRINE = BLOCK_ENTITIES.register("generic_shrine", () -> BlockEntityType.Builder.of(GenericShrineBlockEntity::new,
                     PokeModShrines.STATIC_SHRINE.get(),
                     PokeModShrines.FIERY_SHRINE.get(),
                     PokeModShrines.FROZEN_SHRINE.get(),
@@ -192,22 +198,22 @@ public class PokeModBlockEntities {
                     PokeModShrines.REGISTEEL_SHRINE.get(),
                     PokeModShrines.TAPU_SHRINE.get())
             .build(null));
-    public static final RegistryObject<BlockEntityType<WeatherTrioShrineBlockEntity>> WEATHER_TRIO = BLOCK_ENTITIES.register("weather_trio", () -> BlockEntityType.Builder.of(WeatherTrioShrineBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<WeatherTrioShrineBlockEntity>> WEATHER_TRIO = BLOCK_ENTITIES.register("weather_trio", () -> BlockEntityType.Builder.of(WeatherTrioShrineBlockEntity::new,
                     PokeModShrines.KYOGRE_SHRINE.get(),
                     PokeModShrines.GROUDON_SHRINE.get(),
                     PokeModShrines.RAYQUAZA_SHRINE.get())
             .build(null));
-    public static final RegistryObject<BlockEntityType<TimeSpaceAltarBlockEntity>> TIMESPACE_ALTAR = BLOCK_ENTITIES.register("timespace_altar", () -> BlockEntityType.Builder.of(TimeSpaceAltarBlockEntity::new, PokeModShrines.TIMESPACE_ALTAR.get()).build(null));
-    public static final RegistryObject<BlockEntityType<AbundantShrineBlockEntity>> ABUNDANT_SHRINE = BLOCK_ENTITIES.register("abundant_shrine", () -> BlockEntityType.Builder.of(AbundantShrineBlockEntity::new, PokeModShrines.ABUNDANT_SHRINE.get()).build(null));
-    public static final RegistryObject<BlockEntityType<CelestialAltarBlockEntity>> CELESTIAL_ALTAR = BLOCK_ENTITIES.register("celestial_altar", () -> BlockEntityType.Builder.of(CelestialAltarBlockEntity::new, PokeModShrines.CELESTIAL_ALTAR.get()).build(null));
-    public static final RegistryObject<BlockEntityType<LunarShrineBlockEntity>> LUNAR_SHRINE = BLOCK_ENTITIES.register("lunar_shrine", () -> BlockEntityType.Builder.of(LunarShrineBlockEntity::new, PokeModShrines.LUNAR_SHRINE.get()).build(null));
-    public static final RegistryObject<BlockEntityType<MeloettaMusicBoxBlockEntity>> MELOETTA_MUSIC_BOX = BLOCK_ENTITIES.register("meloetta_music_box", () -> BlockEntityType.Builder.of(MeloettaMusicBoxBlockEntity::new, PokeModShrines.MELOETTA_MUSIC_BOX.get()).build(null));
-    public static final RegistryObject<BlockEntityType<RegigigasShrineBlockEntity>> REGIGIGAS_SHRINE = BLOCK_ENTITIES.register("regigigas_shrine", ()-> BlockEntityType.Builder.of(RegigigasShrineBlockEntity::new, PokeModShrines.REGIGIGAS_SHRINE.get()).build(null));
-    public static final RegistryObject<BlockEntityType<TaoTrioShrineBlockEntity>> TAO_TRIO_SHRINE = BLOCK_ENTITIES.register("tao_trio_shrine", () -> BlockEntityType.Builder.of(TaoTrioShrineBlockEntity::new, PokeModShrines.TAO_TRIO_SHRINE.get()).build(null));
-    public static final RegistryObject<BlockEntityType<TapuShrineBlockEntity>> TAPU_SHRINE = BLOCK_ENTITIES.register("tapu_shrine", () -> BlockEntityType.Builder.of(TapuShrineBlockEntity::new, PokeModShrines.TAPU_SHRINE.get()).build(null));
-    public static final RegistryObject<BlockEntityType<CookingPotBlockEntity>> COOKING_POT = BLOCK_ENTITIES.register("cooking_pot", () -> BlockEntityType.Builder.of(CookingPotBlockEntity::new, PokeModUtilityBlocks.COOKING_POT.get()).build(null));
-    public static final RegistryObject<BlockEntityType<GenericChestBlockEntity>> GENERIC_CHEST = BLOCK_ENTITIES.register("generic_chest", () -> BlockEntityType.Builder.of(GenericChestBlockEntity::new, GenerationsBlocks.POKEBALL_CHEST.get(), GenerationsBlocks.GREATBALL_CHEST.get(), GenerationsBlocks.ULTRABALL_CHEST.get(), GenerationsBlocks.MASTERBALL_CHEST.get()).build(null));
-    public static final RegistryObject<BlockEntityType<PokeModSignBlockEntity>> SIGN_BLOCK_ENTITIES =
+    public static final RegistrySupplier<BlockEntityType<TimeSpaceAltarBlockEntity>> TIMESPACE_ALTAR = BLOCK_ENTITIES.register("timespace_altar", () -> BlockEntityType.Builder.of(TimeSpaceAltarBlockEntity::new, PokeModShrines.TIMESPACE_ALTAR.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<AbundantShrineBlockEntity>> ABUNDANT_SHRINE = BLOCK_ENTITIES.register("abundant_shrine", () -> BlockEntityType.Builder.of(AbundantShrineBlockEntity::new, PokeModShrines.ABUNDANT_SHRINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<CelestialAltarBlockEntity>> CELESTIAL_ALTAR = BLOCK_ENTITIES.register("celestial_altar", () -> BlockEntityType.Builder.of(CelestialAltarBlockEntity::new, PokeModShrines.CELESTIAL_ALTAR.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<LunarShrineBlockEntity>> LUNAR_SHRINE = BLOCK_ENTITIES.register("lunar_shrine", () -> BlockEntityType.Builder.of(LunarShrineBlockEntity::new, PokeModShrines.LUNAR_SHRINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<MeloettaMusicBoxBlockEntity>> MELOETTA_MUSIC_BOX = BLOCK_ENTITIES.register("meloetta_music_box", () -> BlockEntityType.Builder.of(MeloettaMusicBoxBlockEntity::new, PokeModShrines.MELOETTA_MUSIC_BOX.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<RegigigasShrineBlockEntity>> REGIGIGAS_SHRINE = BLOCK_ENTITIES.register("regigigas_shrine", ()-> BlockEntityType.Builder.of(RegigigasShrineBlockEntity::new, PokeModShrines.REGIGIGAS_SHRINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<TaoTrioShrineBlockEntity>> TAO_TRIO_SHRINE = BLOCK_ENTITIES.register("tao_trio_shrine", () -> BlockEntityType.Builder.of(TaoTrioShrineBlockEntity::new, PokeModShrines.TAO_TRIO_SHRINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<TapuShrineBlockEntity>> TAPU_SHRINE = BLOCK_ENTITIES.register("tapu_shrine", () -> BlockEntityType.Builder.of(TapuShrineBlockEntity::new, PokeModShrines.TAPU_SHRINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<CookingPotBlockEntity>> COOKING_POT = BLOCK_ENTITIES.register("cooking_pot", () -> BlockEntityType.Builder.of(CookingPotBlockEntity::new, PokeModUtilityBlocks.COOKING_POT.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<GenericChestBlockEntity>> GENERIC_CHEST = BLOCK_ENTITIES.register("generic_chest", () -> BlockEntityType.Builder.of(GenericChestBlockEntity::new, GenerationsBlocks.POKEBALL_CHEST.get(), GenerationsBlocks.GREATBALL_CHEST.get(), GenerationsBlocks.ULTRABALL_CHEST.get(), GenerationsBlocks.MASTERBALL_CHEST.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<PokeModSignBlockEntity>> SIGN_BLOCK_ENTITIES =
             BLOCK_ENTITIES.register("sign_block_entity", () ->
                     BlockEntityType.Builder.of(PokeModSignBlockEntity::new,
                             PokeModWood.ULTRA_DARK_SIGN.get(),
@@ -218,7 +224,7 @@ public class PokeModBlockEntities {
                             PokeModWood.GHOST_WALL_SIGN.get()
                     ).build(null));
 
-    public static final RegistryObject<BlockEntityType<PokeModHangingSignBlockEntity>> HANGING_SIGN_BLOCK_ENTITIES =
+    public static final RegistrySupplier<BlockEntityType<PokeModHangingSignBlockEntity>> HANGING_SIGN_BLOCK_ENTITIES =
             BLOCK_ENTITIES.register("hanging_sign_block_entity", () ->
                     BlockEntityType.Builder.of(PokeModHangingSignBlockEntity::new,
                             PokeModWood.ULTRA_DARK_HANGING_SIGN.get(),
@@ -228,20 +234,20 @@ public class PokeModBlockEntities {
                             PokeModWood.GHOST_HANGING_SIGN.get(),
                             PokeModWood.GHOST_WALL_HANGING_SIGN.get()
                     ).build(null));
-    public static final RegistryObject<BlockEntityType<BreederBlockEntity>> BREEDER = BLOCK_ENTITIES.register("breeder", () -> BlockEntityType.Builder.of(BreederBlockEntity::new, PokeModUtilityBlocks.BREEDER.get()).build(null));
-    public static final RegistryObject<BlockEntityType<GenericFurnaceBlockEntity>> GENERIC_FURNACE = BLOCK_ENTITIES.register("generic_furnace", () -> BlockEntityType.Builder.of(GenericFurnaceBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<BreederBlockEntity>> BREEDER = BLOCK_ENTITIES.register("breeder", () -> BlockEntityType.Builder.of(BreederBlockEntity::new, PokeModUtilityBlocks.BREEDER.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<GenericFurnaceBlockEntity>> GENERIC_FURNACE = BLOCK_ENTITIES.register("generic_furnace", () -> BlockEntityType.Builder.of(GenericFurnaceBlockEntity::new,
             PokeModUtilityBlocks.CHARGE_STONE_FURNACE.get(),
             PokeModUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
             .build(null));
-    public static final RegistryObject<BlockEntityType<GenericBlastFurnaceBlockEntity>> GENERIC_BLAST_FURNACE = BLOCK_ENTITIES.register("generic_blast_furnace", () -> BlockEntityType.Builder.of(GenericBlastFurnaceBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<GenericBlastFurnaceBlockEntity>> GENERIC_BLAST_FURNACE = BLOCK_ENTITIES.register("generic_blast_furnace", () -> BlockEntityType.Builder.of(GenericBlastFurnaceBlockEntity::new,
             PokeModUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(),
             PokeModUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get())
     .build(null));
-    public static final RegistryObject<BlockEntityType<GenericSmokerBlockEntity>> GENERIC_SMOKER = BLOCK_ENTITIES.register("generic_smoker", () -> BlockEntityType.Builder.of(GenericSmokerBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<GenericSmokerBlockEntity>> GENERIC_SMOKER = BLOCK_ENTITIES.register("generic_smoker", () -> BlockEntityType.Builder.of(GenericSmokerBlockEntity::new,
             PokeModUtilityBlocks.CHARGE_STONE_SMOKER.get(),
             PokeModUtilityBlocks.VOLCANIC_STONE_SMOKER.get()
     ).build(null));
-    public static final RegistryObject<BlockEntityType<GenericDyedVariantBlockEntity>> GENERIC_DYED_VARIANT = BLOCK_ENTITIES.register("generic_dyed_variant", () -> BlockEntityType.Builder.of(GenericDyedVariantBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<GenericDyedVariantBlockEntity>> GENERIC_DYED_VARIANT = BLOCK_ENTITIES.register("generic_dyed_variant", () -> BlockEntityType.Builder.of(GenericDyedVariantBlockEntity::new,
             PokeModDecorationBlocks.PASTEL_BEAN_BAG.get(),
             PokeModDecorationBlocks.UMBRELLA.get(),
             PokeModUtilityBlocks.PC.get(),
@@ -249,7 +255,7 @@ public class PokeModBlockEntities {
             PokeModDecorationBlocks.POKEBALL_RUG.get())
             .build(null));
 
-    public static final RegistryObject<BlockEntityType<GenericModelProvidingBlockEntity>> GENERIC_MODEL_PROVIDING = BLOCK_ENTITIES.register("generic_model_providing", () -> BlockEntityType.Builder.of(GenericModelProvidingBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<GenericModelProvidingBlockEntity>> GENERIC_MODEL_PROVIDING = BLOCK_ENTITIES.register("generic_model_providing", () -> BlockEntityType.Builder.of(GenericModelProvidingBlockEntity::new,
                     PokeModDecorationBlocks.SNORLAX_BEAN_BAG.get(),
                     PokeModDecorationBlocks.SWITCH.get(),
                     PokeModDecorationBlocks.HOUSE_LAMP.get(),
@@ -258,12 +264,12 @@ public class PokeModBlockEntities {
                     GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(),
                     PokeModUtilityBlocks.TRASH_CAN.get())
             .build(null));
-    public static final RegistryObject<BlockEntityType<MachineBlockEntity>> MACHINE_BLOCK = BLOCK_ENTITIES.register("machine_block", () -> BlockEntityType.Builder.of(MachineBlockEntity::new, GenerationsBlocks.MACHINE_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = BLOCK_ENTITIES.register("vending_machine", () -> BlockEntityType.Builder.of(VendingMachineBlockEntity::new, PokeModDecorationBlocks.VENDING_MACHINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<MachineBlockEntity>> MACHINE_BLOCK = BLOCK_ENTITIES.register("machine_block", () -> BlockEntityType.Builder.of(MachineBlockEntity::new, GenerationsBlocks.MACHINE_BLOCK.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = BLOCK_ENTITIES.register("vending_machine", () -> BlockEntityType.Builder.of(VendingMachineBlockEntity::new, PokeModDecorationBlocks.VENDING_MACHINE.get()).build(null));
 
 
-    public static void onInitialize(IEventBus eventBus) {
-        PokeMod.LOGGER.info("Registering PokeMod Block Entities");
-        BLOCK_ENTITIES.register(eventBus);
+    public static void onInitialize() {
+        GenerationsCore.LOGGER.info("Registering PokeMod Block Entities");
+        BLOCK_ENTITIES.register();
     }
 }

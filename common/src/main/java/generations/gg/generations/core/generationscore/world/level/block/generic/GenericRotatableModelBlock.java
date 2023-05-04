@@ -2,6 +2,8 @@ package generations.gg.generations.core.generationscore.world.level.block.generi
 
 import com.pokemod.pokemod.client.model.ModelContextProviders;
 import com.teamwizardry.animation.MathUtils;
+import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +22,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.RegistrySupplier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,7 +53,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     private int height;
     private int length;
 
-    protected GenericRotatableModelBlock(Properties materialIn, RegistryObject<BlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model, int width, int height, int length) {
+    protected GenericRotatableModelBlock(Properties materialIn, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model, int width, int height, int length) {
         super(materialIn, blockEntityFunction, baseBlockPosFunction, model);
         assignSize(width, height, length);
         reassignStateDefinition();
@@ -59,18 +61,18 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     }
 
-    protected GenericRotatableModelBlock(Properties materialIn, RegistryObject<BlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model) {
+    protected GenericRotatableModelBlock(Properties materialIn, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model) {
         this(materialIn, blockEntityFunction, baseBlockPosFunction, model, 0, 0, 0);
     }
 
-    protected GenericRotatableModelBlock(Properties properties, RegistryObject<BlockEntityType<T>> blockEntityFunction, ResourceLocation model, int width, int height, int length) {
+    protected GenericRotatableModelBlock(Properties properties, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, ResourceLocation model, int width, int height, int length) {
         super(properties, blockEntityFunction, DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model);
         assignSize(width, height, length);
         reassignStateDefinition();
         this.registerDefaultState(createDefaultState());
     }
 
-    protected GenericRotatableModelBlock(Properties properties, RegistryObject<BlockEntityType<T>> blockEntityFunction, ResourceLocation model) {
+    protected GenericRotatableModelBlock(Properties properties, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, ResourceLocation model) {
         this(properties, blockEntityFunction, DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model, 0, 0, 0);
     }
 

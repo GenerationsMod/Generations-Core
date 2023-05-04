@@ -7,6 +7,8 @@ import com.pokemod.pokemod.world.level.block.entities.generic.GenericDyedVariant
 import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
 import com.pokemod.pokemod.world.level.block.utilityblocks.DyeableBlock;
 import com.pokemod.pokemod.world.entity.block.SittableEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
