@@ -1351,26 +1351,9 @@ public class GenerationsBlocks {
         GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
     }
 
-//    public static void onInitialize(IEventBus eventBus) {
-//        PokeMod.LOGGER.info("Registering PokeMod Blocks");
-//        PokeMod.LOGGER.info("Registering PokeMod PokeBricks");
-//        PokeMod.LOGGER.info("Registering PokeMod Marble");
-//        PokeMod.LOGGER.info("Registering PokeMod Charge and Volocanic Stone");
-//        PokeMod.LOGGER.info("Registering PokeMod Ultra Blocks");
-//    }
     public static void init() {
-        GenerationsCore.LOGGER.info("Registering PokeMod Blocks");
+        GenerationsCore.LOGGER.info("Registering Generations Blocks");
         BLOCKS.register();
-        BLOCKS_WITHOUT_ITEMS.register();
-
-        for (RegistrySupplier<Block> block : BLOCKS)
-            ITEMS.register(block.getId(),
-                    () -> new BlockItem(block.get(), new Item.Properties().arch$tab((CreativeModeTab) null)));
-
-
-        ITEMS.register();
     }
-
-
 
 }
