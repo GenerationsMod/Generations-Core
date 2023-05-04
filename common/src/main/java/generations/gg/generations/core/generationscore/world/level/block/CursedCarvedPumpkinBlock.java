@@ -55,9 +55,8 @@ public class CursedCarvedPumpkinBlock extends CarvedPumpkinBlock {
 
     @Override
     public void onPlace(BlockState state, @NotNull Level level, @NotNull BlockPos pos, BlockState oldState, boolean isMoving) {
-        if (!oldState.is(state.getBlock())) {
-            this.trySpawnGolem(level, pos);
-        }
+        if (!oldState.is(state.getBlock())) this.trySpawnGolem(level, pos);
+
     }
 
     @Override
@@ -97,13 +96,12 @@ public class CursedCarvedPumpkinBlock extends CarvedPumpkinBlock {
         } else {
             blockPatternMatch = this.getOrCreateIronGolemFull().find(level, pos);
             if (blockPatternMatch != null) {
-                for(i = 0; i < this.getOrCreateIronGolemFull().getWidth(); ++i) {
+                for(i = 0; i < this.getOrCreateIronGolemFull().getWidth(); ++i)
                     for(int k = 0; k < this.getOrCreateIronGolemFull().getHeight(); ++k) {
                         BlockInWorld blockInWorld3 = blockPatternMatch.getBlock(i, k, 0);
                         level.setBlock(blockInWorld3.getPos(), Blocks.AIR.defaultBlockState(), 2);
                         level.levelEvent(2001, blockInWorld3.getPos(), Block.getId(blockInWorld3.getState()));
                     }
-                }
 
                 BlockPos blockPos2 = blockPatternMatch.getBlock(1, 2, 0).getPos();
                 IronGolem ironGolem = EntityType.IRON_GOLEM.create(level);
@@ -118,12 +116,11 @@ public class CursedCarvedPumpkinBlock extends CarvedPumpkinBlock {
                     CriteriaTriggers.SUMMONED_ENTITY.trigger(serverPlayer, ironGolem);
                 }
 
-                for(j = 0; j < this.getOrCreateIronGolemFull().getWidth(); ++j) {
+                for(j = 0; j < this.getOrCreateIronGolemFull().getWidth(); ++j)
                     for(int l = 0; l < this.getOrCreateIronGolemFull().getHeight(); ++l) {
                         BlockInWorld blockInWorld4 = blockPatternMatch.getBlock(j, l, 0);
                         level.blockUpdated(blockInWorld4.getPos(), Blocks.AIR);
                     }
-                }
             }
         }
 
@@ -140,39 +137,36 @@ public class CursedCarvedPumpkinBlock extends CarvedPumpkinBlock {
     }
 
     private BlockPattern getOrCreateSnowGolemBase() {
-        if (this.snowGolemBase == null) {
+        if (this.snowGolemBase == null)
             this.snowGolemBase = BlockPatternBuilder.start().aisle(" ", "#", "#").where('#', BlockInWorld.hasState(BlockStatePredicate.forBlock(Blocks.SNOW_BLOCK))).build();
-        }
 
         return this.snowGolemBase;
     }
 
     private BlockPattern getOrCreateSnowGolemFull() {
-        if (this.snowGolemFull == null) {
+        if (this.snowGolemFull == null)
             this.snowGolemFull = BlockPatternBuilder.start().aisle("^", "#", "#").where('^', BlockInWorld.hasState(CURSED_PUMPKINS_PREDICATE)).where('#', BlockInWorld.hasState(BlockStatePredicate.forBlock(Blocks.SNOW_BLOCK))).build();
-        }
+
         return this.snowGolemFull;
     }
 
 
     private BlockPattern getOrCreateIronGolemBase() {
-        if (this.ironGolemBase == null) {
+        if (this.ironGolemBase == null)
             this.ironGolemBase = BlockPatternBuilder.start().aisle("~ ~", "###", "~#~").where('#', BlockInWorld.hasState(BlockStatePredicate.forBlock(Blocks.IRON_BLOCK))).where('~', BlockInWorld.hasState(BlockMaterialPredicate.forMaterial(Material.AIR))).build();
-        }
 
         return this.ironGolemBase;
     }
 
     private BlockPattern getOrCreateIronGolemFull() {
-        if (this.ironGolemFull == null) {
+        if (this.ironGolemFull == null)
             this.ironGolemFull = BlockPatternBuilder.start().aisle("~^~", "###", "~#~").where('^', BlockInWorld.hasState(CURSED_PUMPKINS_PREDICATE)).where('#', BlockInWorld.hasState(BlockStatePredicate.forBlock(Blocks.IRON_BLOCK))).where('~', BlockInWorld.hasState(BlockMaterialPredicate.forMaterial(Material.AIR))).build();
-        }
 
         return this.ironGolemFull;
     }
 
     static {
         FACING = HorizontalDirectionalBlock.FACING;
-        CURSED_PUMPKINS_PREDICATE = (arg) -> arg != null && (arg.is(PokeModCoreBlocks.CURSED_CARVED_PUMPKIN) || arg.is(PokeModCoreBlocks.CURSED_JACK_O_LANTERN));
+        CURSED_PUMPKINS_PREDICATE = (arg) -> arg != null && (arg.is(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()) || arg.is(GenerationsBlocks.CURSED_JACK_O_LANTERN.get()));
     }
 }

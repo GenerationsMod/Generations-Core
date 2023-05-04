@@ -23,6 +23,8 @@ import java.util.function.Supplier;
 public class GenerationsBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
+    public static final DeferredRegister<Block> BLOCKS_WITHOUT_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
     public static final DeferredRegister<Block> POKE_BRICKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PokeMod.MOD_ID);
     public static final DeferredRegister<Block> MARBLE = DeferredRegister.create(ForgeRegistries.BLOCKS, PokeMod.MOD_ID);
@@ -1390,6 +1392,16 @@ public class GenerationsBlocks {
     }
     public static void init() {
         BLOCKS.register();
+        BLOCKS_WITHOUT_ITEMS.register();
+
+        for (RegistrySupplier<Block> block : BLOCKS)
+            ITEMS.register(block.getId(),
+                    () -> new BlockItem(block.get(), new Item.Properties().arch$tab((CreativeModeTab) null)));
+
+
+        ITEMS.register();
     }
+
+
 
 }
