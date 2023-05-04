@@ -27,6 +27,12 @@ loom {
     }
 }
 
+repositories {
+    maven {
+        url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1"
+    }
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
     mappings(loom.officialMojangMappings())
@@ -36,6 +42,7 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:1.1.2")
 }
 
 processResources {
