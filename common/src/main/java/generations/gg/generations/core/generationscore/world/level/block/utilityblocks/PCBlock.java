@@ -1,14 +1,12 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
-import com.pokemod.pokemod.api.data.player.PixelmonPc;
-import com.pokemod.pokemod.world.item.DyedBlockItem;
-import com.pokemod.pokemod.world.level.block.PokeModUtilityBlocks;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
-import com.pokemod.pokemod.world.sound.PokeModSounds;
+import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModUtilityBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
+import generations.gg.generations.core.generationscore.world.sound.PokeModSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -27,7 +25,7 @@ public class PCBlock extends DoubleDyeableBlock<GenericDyedVariantBlockEntity, P
     protected InteractionResult serverUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
         world.playSound(null, pos, PokeModSounds.PC_OPEN.get(), SoundSource.BLOCKS, 0.7F, 1.0F);
 
-        PixelmonPc.openPc((ServerPlayer) player);
+//        PixelmonPc.openPc((ServerPlayer) player);
         return InteractionResult.SUCCESS;
     }
 

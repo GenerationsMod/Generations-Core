@@ -1,12 +1,11 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import com.pokemod.pokemod.registries.types.PixelmonData;
-import com.pokemod.pokemod.world.entity.pixelmon.PixelmonEntity;
-import com.pokemod.pokemod.world.item.MelodyFluteItem;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.ShrineBlockEntity;
-import com.pokemod.pokemod.world.level.schedule.ScheduledTask;
+import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
@@ -18,23 +17,21 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
 public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     private final ResourceLocation pokeEntryId;
-    private final RegistryObject<Item> imbuedItem;
+    private final RegistrySupplier<Item> imbuedItem;
     @Nullable
-    private final RegistryObject<Item> galarianImbuedItem;
+    private final RegistrySupplier<Item> galarianImbuedItem;
 
-    public BirdShrineBlock(BlockBehaviour.Properties materialIn, ResourceLocation model, ResourceLocation pokeEntryId, RegistryObject<Item> imbuedItem) {
+    public BirdShrineBlock(BlockBehaviour.Properties materialIn, ResourceLocation model, ResourceLocation pokeEntryId, RegistrySupplier<Item> imbuedItem) {
         this(materialIn, model, pokeEntryId, imbuedItem, null);
     }
 
-    public BirdShrineBlock(Properties materialIn, ResourceLocation model, ResourceLocation pokeEntryId, RegistryObject<Item> imbuedItem, @Nullable RegistryObject<Item> galarianImbuedItem) {
+    public BirdShrineBlock(Properties materialIn, ResourceLocation model, ResourceLocation pokeEntryId, RegistrySupplier<Item> imbuedItem, @Nullable RegistrySupplier<Item> galarianImbuedItem) {
         super(materialIn, PokeModBlockEntities.GENERIC_SHRINE, model);
         this.pokeEntryId = pokeEntryId;
         this.imbuedItem = imbuedItem;
@@ -57,7 +54,7 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                     stack.shrink(1);
 
                     ScheduledTask.schedule(() -> {
-                        level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(pokeEntryId, form), entity.getBlockPos()));
+//                        level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(pokeEntryId, form), entity.getBlockPos())); TODO: Spawn Pokemon
                         shrine.toggleActive();
                     }, 150);
                     return InteractionResult.SUCCESS;

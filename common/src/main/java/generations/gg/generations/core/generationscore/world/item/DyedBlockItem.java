@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.pokemod.pokemod.world.level.block.utilityblocks.DyeableBlock;
+import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -10,11 +10,9 @@ import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.Objects;
 
 public class DyedBlockItem<T extends DyeableBlock<?, ?>> extends ItemNameBlockItem {

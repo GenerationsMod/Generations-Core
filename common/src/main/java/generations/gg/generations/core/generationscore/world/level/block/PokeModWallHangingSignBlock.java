@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import com.pokemod.pokemod.world.level.block.entities.PokeModHangingSignBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModHangingSignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.WallHangingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;

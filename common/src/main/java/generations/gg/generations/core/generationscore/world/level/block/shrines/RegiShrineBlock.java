@@ -1,12 +1,11 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import com.pokemod.pokemod.registries.types.PixelmonData;
-import com.pokemod.pokemod.world.entity.pixelmon.PixelmonEntity;
-import com.pokemod.pokemod.world.level.block.GenerationsBlocks;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericShrineBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.ShrineBlockEntity;
-import com.pokemod.pokemod.world.item.RegiKeyItem;
+import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.world.item.RegiKeyItem;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +29,7 @@ import java.util.stream.IntStream;
 
 @SuppressWarnings("deprecation")
 public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
-    private static final BiPredicate<Level, BlockPos> IS_PILLAR_PREDICATE = (level, pos) -> GenerationsBlocks.CASTLE_PILLAR.filter(a -> level.getBlockState(pos).is(a)).isPresent(); //TODO convert into tag
+    private static final BiPredicate<Level, BlockPos> IS_PILLAR_PREDICATE = (level, pos) -> level.getBlockState(pos).is(GenerationsBlocks.CASTLE_PILLAR.get()); //TODO convert into tag
     private static final BiFunction<Level, BlockPos, String> FUNCTION = (level, pos) -> IS_PILLAR_PREDICATE.test(level, pos) ? symbolFromState(level.getBlockState(pos.above())).orElse("-") : "-";
     private static final BiFunction<String, Integer, String> SUBSTRING = (cipher, i) -> cipher.substring(i, i + 3);
     private final ResourceLocation species;
@@ -59,7 +57,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                     shrine.toggleActive();
                     list.forEach(a -> level.setBlockAndUpdate(a.above(), Blocks.AIR.defaultBlockState()));
                     player.getItemInHand(hand).shrink(1);
-                    level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(species).getSpecies(), shrine.getBlockPos()));
+//                    level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(species).getSpecies(), shrine.getBlockPos())); //TODO: Enable later
                     shrine.toggleActive();
                 }
             }
@@ -130,7 +128,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     public static Optional<String> symbolFromState(BlockState state) {
         Block block = state.getBlock();
 
-        Predicate<RegistryObject<Block>> predicate = b -> b.filter(a -> a.equals(block)).isPresent();
+        Predicate<RegistrySupplier<Block>> predicate = b -> b.get().equals(block);
 
         if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_A)) return Optional.of("A");
         else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_B)) return Optional.of("B");

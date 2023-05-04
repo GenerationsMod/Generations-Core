@@ -85,7 +85,7 @@ public class PokeModWood {
     public static final RegistrySupplier<WallHangingSignBlock> GHOST_WALL_HANGING_SIGN = registerSignWithoutItem("ghost_wall_hanging_sign", () -> new PokeModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_HANGING_SIGN).requiredFeatures(FeatureFlags.UPDATE_1_20), PokeModWoodTypes.GHOST));
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-        GenerationsItems.BLOCKITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
+        GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
     }
 
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {

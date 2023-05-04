@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
-import com.pokemod.pokemod.world.level.block.PokeModVoxelShapes;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
-import com.pokemod.pokemod.world.level.block.generic.GenericRotatableModelBlock;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModVoxelShapes;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -14,8 +14,6 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import java.util.Map;
 
 @SuppressWarnings("deprecation")
 public class SwitchBlock extends GenericRotatableModelBlock<GenericModelProvidingBlockEntity> {

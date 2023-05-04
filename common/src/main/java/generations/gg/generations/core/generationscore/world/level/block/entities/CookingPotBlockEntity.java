@@ -9,6 +9,7 @@ import com.pokemod.pokemod.world.item.PokeModItems;
 import com.pokemod.pokemod.world.item.berry.BerryItem;
 import com.pokemod.pokemod.world.item.berry.BerryType;
 import com.pokemod.pokemod.world.item.curry.*;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -41,8 +42,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements IContainerFactory<CookingPotContainer>, MenuProvider, ModelContextProviders.VariantProvider {
-    public static final ResourceLocation MODEL = PokeMod.id("models/block/utility_blocks/cooking_pot.pk");
+public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements IContainerFactory<CookingPotBlockEntity>, MenuProvider, ModelContextProviders.VariantProvider {
 
     public CookingPotBlockEntity(BlockPos arg2, BlockState arg3) {
         super(PokeModBlockEntities.COOKING_POT.get(), arg2, arg3);

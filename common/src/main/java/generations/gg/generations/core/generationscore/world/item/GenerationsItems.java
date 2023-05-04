@@ -1338,7 +1338,7 @@ public class GenerationsItems {
 /*        var participant = battle.controller.getParticipant(player).orElseThrow();
         var data = (PixelmonData) participant.getParty().fieldPixelmon;
         return data.getElements().contains(ElementType.FAIRY);*/
-        return false
+        return false;
     }), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> CROWNED_SWORD = register("crowned_sword", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> RUSTY_SHIELD = register("rusty_shield", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zamazenta", "pixelmon.rusty_shield.amountfull", (player, stack/*, battle*/) -> false/*ElementType.FIGHTING.anyMatch((battle.controller.getParticipant(player).orElseThrow().getParty().fieldPixelmon).getElements())*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);

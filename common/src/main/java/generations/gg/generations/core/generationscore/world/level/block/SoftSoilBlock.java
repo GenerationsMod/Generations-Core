@@ -1,8 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import com.pokemod.pokemod.world.item.MulchItem;
+import dev.architectury.event.events.common.InteractionEvent;
+import dev.architectury.injectables.annotations.ExpectPlatform;
+import generations.gg.generations.core.generationscore.world.item.MulchItem;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
@@ -17,7 +18,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FarmBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -26,10 +26,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.FarmlandWaterManager;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.PlantType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
@@ -58,14 +54,14 @@ public class SoftSoilBlock extends Block {
         }
     }
 
-    @Override
-    public boolean canSustainPlant(@NotNull BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull Direction facing, IPlantable plantable) {
-        return plantable.getPlantType(world, pos) == PlantType.CROP || state.getValue(MULCH) != Mulch.NONE;
-    }
+//    @Override //TODO: Figurae out
+//    public boolean canSustainPlant(@NotNull BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull Direction facing, IPlantable plantable) {
+//        return plantable.getPlantType(world, pos) == PlantType.CROP || state.getValue(MULCH) != Mulch.NONE;
+//    }
 
     @Override
     public void fallOn(Level level, @NotNull BlockState state, @NotNull BlockPos pos, @NotNull Entity entity, float fallDistance) {
-        if (!level.isClientSide && state.getValue(MULCH) != Mulch.STABLE && ForgeHooks.onFarmlandTrample(level, pos, Blocks.DIRT.defaultBlockState(), fallDistance, entity)) {
+        if (!level.isClientSide && state.getValue(MULCH) != Mulch.STABLE && InteractionEvent.FARMLAND_TRAMPLE.invoker().trample(level, pos, Blocks.DIRT.defaultBlockState(), fallDistance, entity).isTrue()) {
             turnToNone(state, level, pos);
         }
         super.fallOn(level, state, pos, entity, fallDistance);
@@ -75,13 +71,9 @@ public class SoftSoilBlock extends Block {
         level.setBlockAndUpdate(pos, FarmBlock.pushEntitiesUp(state, Blocks.DIRT.defaultBlockState(), level, pos));
     }
 
+    @ExpectPlatform
     private static boolean isNearWater(LevelReader level, BlockPos pos) {
-        BlockState state = level.getBlockState(pos);
-        for (BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
-            if (!state.canBeHydrated(level, pos, level.getFluidState(blockpos), blockpos)) continue;
-            return true;
-        }
-        return FarmlandWaterManager.hasBlockWaterTicket(level, pos);
+        throw new RuntimeException();
     }
 
     @Override

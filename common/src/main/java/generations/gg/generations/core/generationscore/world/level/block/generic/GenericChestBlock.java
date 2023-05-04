@@ -2,6 +2,8 @@ package generations.gg.generations.core.generationscore.world.level.block.generi
 
 import com.pokemod.pokemod.world.level.block.entities.generic.GenericChestBlockEntity;
 import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.item.curry;
 
-import com.pokemod.pokemod.PokeMod;
-import com.pokemod.pokemod.world.item.berry.ICurryRarity;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.item.berry.ICurryRarity;
 import net.minecraft.locale.Language;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.StringRepresentable;
@@ -42,7 +42,7 @@ public enum CurryType implements ICurryRarity, StringRepresentable {
     private final String type;
 
     CurryType(String type, String ingredient, String haze, int rarity) {
-        this.typeLocation = PokeMod.id("item/curry/item/" + type);
+        this.typeLocation = GenerationsCore.id("item/curry/item/" + type);
         this.type = type;
 
         this.rarity = rarity;

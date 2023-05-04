@@ -1,12 +1,12 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
-import com.pokemod.pokemod.world.item.DyedBlockItem;
-import com.pokemod.pokemod.world.level.block.PokeModDecorationBlocks;
-import com.pokemod.pokemod.world.level.block.PokeModVoxelShapes;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
-import com.pokemod.pokemod.world.level.block.utilityblocks.DyeableBlock;
+import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModDecorationBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModVoxelShapes;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -40,7 +40,6 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.stream.Stream;
 
-import static com.pokemod.pokemod.world.level.block.decorations.UmbrellaBlock.Pole.*;
 import static generations.gg.generations.core.generationscore.world.level.block.decorations.UmbrellaBlock.Pole.*;
 
 @SuppressWarnings("deprecation")

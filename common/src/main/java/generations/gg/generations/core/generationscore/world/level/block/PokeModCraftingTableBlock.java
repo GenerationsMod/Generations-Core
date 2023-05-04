@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import com.pokemod.pokemod.world.container.PokeModWorkBenchContainer;
+import generations.gg.generations.core.generationscore.world.container.PokeModWorkBenchContainer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;

@@ -1,16 +1,11 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import com.pokemod.pokemod.world.item.DyedBlockItem;
-import com.pokemod.pokemod.world.level.block.PokeModDecorationBlocks;
-import com.pokemod.pokemod.world.level.block.PokeModVoxelShapes;
-import com.pokemod.pokemod.world.level.block.utilityblocks.DoubleDyeableBlock;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueGraph;
-import com.pokemod.pokemod.world.npc.dialogue.DialoguePlayer;
-import com.pokemod.pokemod.world.npc.dialogue.nodes.OpenShopNode;
-import net.minecraft.Util;
+import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModDecorationBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModVoxelShapes;
+import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DoubleDyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -24,9 +19,6 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @SuppressWarnings("deprecation")
 public class VendingMachineBlock extends DoubleDyeableBlock<VendingMachineBlockEntity, VendingMachineBlock> {
@@ -44,8 +36,8 @@ public class VendingMachineBlock extends DoubleDyeableBlock<VendingMachineBlockE
 
     @Override
     protected InteractionResult serverUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-        var graph = new DialogueGraph(new OpenShopNode(null));
-        new DialoguePlayer(graph, null, (ServerPlayer) player, false);
+//        var graph = new DialogueGraph(new OpenShopNode(null)); //TODO: Shopes
+//        new DialoguePlayer(graph, null, (ServerPlayer) player, false);
         return InteractionResult.SUCCESS;
     }
 

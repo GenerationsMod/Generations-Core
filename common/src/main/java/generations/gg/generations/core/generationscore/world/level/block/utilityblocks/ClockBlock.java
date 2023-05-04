@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
-import com.pokemod.pokemod.world.item.DyedBlockItem;
-import com.pokemod.pokemod.world.level.block.PokeModUtilityBlocks;
-import com.pokemod.pokemod.world.level.block.entities.ClockBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModUtilityBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ClockBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

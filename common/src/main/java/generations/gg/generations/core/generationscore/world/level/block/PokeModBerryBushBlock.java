@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import com.pokemod.pokemod.world.item.berry.BerryType;
+import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -26,7 +25,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
@@ -68,10 +66,10 @@ public class PokeModBerryBushBlock extends BushBlock implements BonemealableBloc
     @Override
     public void randomTick(BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         int i = state.getValue(AGE);
-        if (i < 3 && level.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(5) == 0)) {
+        /*if (i < 3 && level.getRawBrightness(pos.above(), 0) >= 9 && BlockEventForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(5) == 0)) { TODO: Implment via multiplat
             level.setBlock(pos, state.setValue(AGE, i + 1), 2);
             ForgeHooks.onCropsGrowPost(level, pos, state);
-        }
+        }*/
     }
     @Override
     public @NotNull InteractionResult use(BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {

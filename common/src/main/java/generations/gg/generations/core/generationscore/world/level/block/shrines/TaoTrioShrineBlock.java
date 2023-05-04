@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
-import com.pokemod.pokemod.world.level.block.entities.TaoTrioShrineBlockEntity;
-import com.pokemod.pokemod.world.item.TaoTrioStoneItem;
+import generations.gg.generations.core.generationscore.world.item.TaoTrioStoneItem;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.TaoTrioShrineBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 

@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import com.pokemod.pokemod.world.level.block.entities.LunarShrineBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.LunarShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class LunarShrineBlock extends ShrineBlock<LunarShrineBlockEntity> {

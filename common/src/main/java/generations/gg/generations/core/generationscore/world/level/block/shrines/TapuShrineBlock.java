@@ -1,15 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import com.pokemod.pokemod.PokeMod;
-import com.pokemod.pokemod.registries.PokeModRegistries;
-import com.pokemod.pokemod.world.item.PokeModItems;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericShrineBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueManager;
-import com.pokemod.pokemod.world.npc.dialogue.DialoguePlayer;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -28,13 +22,13 @@ public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
-        if (!world.isClientSide() && !DialogueManager.DIALOGUE_MAP.containsKey((ServerPlayer) player) && player.getItemInHand(handIn).is(PokeModItems.SPARKLING_STONE.get())) {
-            var graph = PokeModRegistries.Dialogue.DIALOGUE.get(PokeMod.id("tapu_spawn"));
-
-            new DialoguePlayer(graph, null, (ServerPlayer) player, false);
-            player.getItemInHand(handIn).shrink(1);
-            return InteractionResult.PASS;
-        }
+//        if (!world.isClientSide() && !DialogueManager.DIALOGUE_MAP.containsKey((ServerPlayer) player) && player.getItemInHand(handIn).is(PokeModItems.SPARKLING_STONE.get())) { TODO: Dialogs
+//            var graph = PokeModRegistries.Dialogue.DIALOGUE.get(PokeMod.id("tapu_spawn"));
+//
+//            new DialoguePlayer(graph, null, (ServerPlayer) player, false);
+//            player.getItemInHand(handIn).shrink(1);
+//            return InteractionResult.PASS;
+//        }
 
         return InteractionResult.FAIL;
     }

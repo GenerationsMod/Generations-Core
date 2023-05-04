@@ -1,13 +1,12 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import com.pokemod.pokemod.client.model.ModelContextProviders;
-import com.pokemod.rarecandy.storage.AnimatedObjectInstance;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ClockBlockEntity extends DyedVariantBlockEntity implements ModelContextProviders.FrameProvider {
-    public AnimatedObjectInstance rarecandyInstance;
+//    public AnimatedObjectInstance rarecandyInstance;
 
     public ClockBlockEntity(BlockPos arg2, BlockState arg3) {
         super(PokeModBlockEntities.CLOCK.get(), arg2, arg3);

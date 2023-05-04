@@ -1,14 +1,11 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
-import com.pokemod.pokemod.api.data.player.PixelmonParty;
-import com.pokemod.pokemod.world.item.DyedBlockItem;
-import com.pokemod.pokemod.world.level.block.PokeModUtilityBlocks;
-import com.pokemod.pokemod.world.level.block.entities.HealerBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
-import com.pokemod.pokemod.world.sound.PokeModSounds;
+import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModUtilityBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -29,13 +26,13 @@ public class HealerBlock extends DyeableBlock<HealerBlockEntity, HealerBlock> {
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
         if (!world.isClientSide()) {
-            var party = PixelmonParty.of(player);
-            world.playSound(null, pos, PokeModSounds.HEALER_ACTIVATE.get(), SoundSource.BLOCKS, 0.7F, 1.0F);
-            for (var pixelmon : party) {
-                if (pixelmon != null) pixelmon.hp = pixelmon.getMaxHp();
-            }
-
-            party.sync();
+//            var party = PixelmonParty.of(player);
+//            world.playSound(null, pos, PokeModSounds.HEALER_ACTIVATE.get(), SoundSource.BLOCKS, 0.7F, 1.0F);
+//            for (var pixelmon : party) {
+//                if (pixelmon != null) pixelmon.hp = pixelmon.getMaxHp();
+//            }
+//
+//            party.sync();
         }
         return InteractionResult.SUCCESS;
     }

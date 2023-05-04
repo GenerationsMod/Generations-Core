@@ -1,11 +1,10 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
-import com.pokemod.pokemod.world.level.block.generic.GenericRotatableModelBlock;
-import com.pokemod.pokemod.world.level.block.entities.CookingPotBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -16,7 +15,6 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,7 +35,7 @@ public class CookingPotBlock extends GenericRotatableModelBlock<CookingPotBlockE
         if (worldIn.isClientSide)
             return InteractionResult.SUCCESS;
 
-        NetworkHooks.openScreen((ServerPlayer) player, be, pos);
+//        NetworkHooks.openScreen((ServerPlayer) player, be, pos); TODO:Netowrking
 
         return InteractionResult.SUCCESS;
     }

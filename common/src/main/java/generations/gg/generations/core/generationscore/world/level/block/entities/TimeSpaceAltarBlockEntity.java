@@ -6,6 +6,10 @@ import com.pokemod.pokemod.world.entity.pixelmon.PixelmonEntity;
 import com.pokemod.pokemod.world.item.PokeModItems;
 import com.pokemod.pokemod.world.item.CreationTrioItem;
 import com.pokemod.pokemod.world.item.RedChainItem;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.world.item.CreationTrioItem;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.item.RedChainItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
@@ -69,7 +73,7 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         if (handler.shouldSpawn()) {
             var id = ((CreationTrioItem) handler.getStackInSlot(0).getItem()).getSpeciesId();
             toggleActive();
-            level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(id), getBlockPos()));
+//            level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(id), getBlockPos())); TODO: Spawn pokemon
             RedChainItem.incrementUsage(handler.getStackInSlot(1));
             if (RedChainItem.getUses(handler.getStackInSlot(1)) >= RedChainItem.MAX_USES)
                 handler.setStackInSlot(1, ItemStack.EMPTY);
@@ -102,7 +106,7 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
             if (slot == 0) {
                 return stack.getItem() instanceof CreationTrioItem;
             } else {
-                return stack.is(PokeModItems.RED_CHAIN.get()) && RedChainItem.isEnchanted(stack);
+                return stack.is(GenerationsItems.RED_CHAIN.get()) && RedChainItem.isEnchanted(stack);
             }
         }
 
