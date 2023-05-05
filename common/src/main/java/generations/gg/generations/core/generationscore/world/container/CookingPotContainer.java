@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.world.container;
 
-import com.pokemod.pokemod.world.level.block.entities.CookingPotBlockEntity;
-import com.pokemod.pokemod.world.item.PokeModItems;
-import com.pokemod.pokemod.world.item.berry.BerryItem;
-import com.pokemod.pokemod.world.item.curry.CurryIngredient;
 import generations.gg.generations.core.generationscore.world.container.slots.CurryResultSlot;
+import generations.gg.generations.core.generationscore.world.container.slots.PredicateSlotItemHandler;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.item.berry.BerryItem;
+import generations.gg.generations.core.generationscore.world.item.curry.CurryIngredient;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,18 +13,16 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class CookingPotContainer extends AbstractContainerMenu {
-    final CookingPotBlockEntity cookingPot;
+    public final CookingPotBlockEntity cookingPot;
 
     public CookingPotContainer(PixelmonContainers.CreationContext<CookingPotBlockEntity> ctx) {
         super(PixelmonContainers.COOKING_POT.get(), ctx.id());
         this.cookingPot = ctx.blockEntity();
 
-        var handler = ctx.blockEntity().getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(new ItemStackHandler(14));
+        var handler = ctx.blockEntity().getContainer();
         addSlot(new PredicateSlotItemHandler(handler, 0, 26, 8 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
         addSlot(new PredicateSlotItemHandler(handler, 1, 44, 8 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
         addSlot(new PredicateSlotItemHandler(handler, 2, 62, 8 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
@@ -106,11 +104,11 @@ public class CookingPotContainer extends AbstractContainerMenu {
     }
 
     public static boolean isBerryOrMaxMushrooms(ItemStack stack) {
-        return stack.getItem() instanceof BerryItem || stack.getItem() == PokeModItems.MAX_MUSHROOMS.get();
+        return stack.getItem() instanceof BerryItem || stack.getItem() == GenerationsItems.MAX_MUSHROOMS.get();
     }
 
     public static boolean isCurryIngredientOrMaxHoney(ItemStack stack) {
-        return stack.getItem() instanceof CurryIngredient || stack.getItem() == PokeModItems.MAX_HONEY.get();
+        return stack.getItem() instanceof CurryIngredient || stack.getItem() == GenerationsItems.MAX_HONEY.get();
     }
 
 }

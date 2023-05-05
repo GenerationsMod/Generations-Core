@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.pokemod.pokemod.world.entity.PokeModChestBoatEntity;
+import generations.gg.generations.core.generationscore.world.entity.PokeModChestBoatEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

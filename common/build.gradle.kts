@@ -1,6 +1,10 @@
 
 loom.silentMojangMappingsLicense()
 
+repositories {
+    maven("https://nexus.resourcefulbees.com/repository/maven-public/")
+}
+
 dependencies {
     minecraft("com.mojang:minecraft:${rootProject.properties["minecraft_version"]}")
     mappings(loom.officialMojangMappings())
@@ -9,6 +13,7 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
     // Remove the next line if you don't want to depend on the API
     modApi("dev.architectury:architectury:${rootProject.properties["architectury_version"]}")
+    modImplementation("earth.terrarium:botarium-common-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
 }
 
 architectury {

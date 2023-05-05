@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block.generic;
 
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericChestBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -26,7 +24,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -38,8 +35,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
 public class GenericChestBlock extends AbstractChestBlock<GenericChestBlockEntity> implements SimpleWaterloggedBlock {
@@ -96,7 +92,7 @@ public class GenericChestBlock extends AbstractChestBlock<GenericChestBlockEntit
     }
 
     @Override
-    @javax.annotation.Nullable
+    @Nullable
     public GenericChestBlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
         return new GenericChestBlockEntity(pos, state, width, height, defaultTranslation);
     }

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import com.pokemod.pokemod.api.data.Syncable;
-import com.pokemod.pokemod.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -14,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class SimpleBlockEntity extends BlockEntity implements Syncable, ModelContextProviders.AngleProvider {
+public abstract class SimpleBlockEntity extends BlockEntity implements ModelContextProviders.AngleProvider {
 
     public SimpleBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState) {
         super(pType, pPos, pBlockState);

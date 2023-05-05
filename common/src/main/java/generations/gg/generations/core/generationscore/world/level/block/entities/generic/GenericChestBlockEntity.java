@@ -1,14 +1,10 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.generic;
 
-import com.pokemod.pokemod.world.level.block.generic.GenericChestBlock;
-import com.pokemod.pokemod.world.container.GenericChestContainer;
-import com.pokemod.pokemod.world.container.GenericContainer;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
 import generations.gg.generations.core.generationscore.world.container.GenericChestContainer;
 import generations.gg.generations.core.generationscore.world.container.GenericContainer;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
@@ -29,11 +25,6 @@ import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.entity.LidBlockEntity;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.wrapper.InvWrapper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -73,7 +64,6 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
     };
 
     private final ChestLidController chestLidController = new ChestLidController();
-    private LazyOptional<IItemHandlerModifiable> chestHandler;
 
     public GenericChestBlockEntity(BlockPos arg, BlockState arg2) {
         this(arg, arg2, 9, 1, "container.chest");
@@ -180,37 +170,7 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
     @Override
     public void setBlockState(@NotNull BlockState blockState) {
         super.setBlockState(blockState);
-        if (this.chestHandler != null) {
-            LazyOptional<IItemHandlerModifiable> oldHandler = this.chestHandler;
-            this.chestHandler = null;
-            oldHandler.invalidate();
-        }
     }
-
-    @Override
-    public <T> @NotNull LazyOptional<T> getCapability(@NotNull Capability<T> cap, Direction side) {
-        if (!this.remove && cap == ForgeCapabilities.ITEM_HANDLER) {
-            if (this.chestHandler == null) {
-                this.chestHandler = LazyOptional.of(this::createHandler);
-            }
-            return this.chestHandler.cast();
-        }
-        return super.getCapability(cap, side);
-    }
-
-    private IItemHandlerModifiable createHandler() {
-        return new InvWrapper(this);
-    }
-
-    @Override
-    public void invalidateCaps() {
-        super.invalidateCaps();
-        if (this.chestHandler != null) {
-            this.chestHandler.invalidate();
-            this.chestHandler = null;
-        }
-    }
-
 
     public void recheckOpen() {
         if (!this.remove) {

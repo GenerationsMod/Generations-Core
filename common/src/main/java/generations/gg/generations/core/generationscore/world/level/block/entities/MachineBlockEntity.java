@@ -1,7 +1,10 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import com.pokemod.pokemod.world.container.MachineBlockContainer;
-import com.pokemod.pokemod.world.container.PixelmonContainers;
+import earth.terrarium.botarium.common.item.ItemContainerBlock;
+import earth.terrarium.botarium.common.item.SerializableContainer;
+import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
+import generations.gg.generations.core.generationscore.world.container.MachineBlockContainer;
+import generations.gg.generations.core.generationscore.world.container.PixelmonContainers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -12,13 +15,12 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.IntStream;
 
-public class MachineBlockEntity extends SimpleBlockEntity implements MenuProvider {
+public class MachineBlockEntity extends SimpleBlockEntity implements ItemContainerBlock, MenuProvider {
     private final MachineBlockItemStackHandler candies = new MachineBlockItemStackHandler();
 
     private int bakeTime = 0;
@@ -32,12 +34,17 @@ public class MachineBlockEntity extends SimpleBlockEntity implements MenuProvide
         return Component.translatable("machine_block");
     }
 
+    @Override
+    public SerializableContainer getContainer() {
+        return candies;
+    }
+
     protected void readNbt(CompoundTag nbt) {
-        candies.deserializeNBT(nbt.getCompound("candies"));
+//        candies.deserializeNBT(nbt.getCompound("candies"));
         bakeTime = nbt.getInt("bakeTime");
     }
     protected void writeNbt(CompoundTag nbt) {
-        nbt.put("candies", candies.serializeNBT());
+//        nbt.put("candies", candies.serializeNBT());
         nbt.putInt("bakeTime", bakeTime);
     }
 
@@ -73,10 +80,10 @@ public class MachineBlockEntity extends SimpleBlockEntity implements MenuProvide
         return bakeTime;
     }
 
-    private class MachineBlockItemStackHandler extends ItemStackHandler{
+    private class MachineBlockItemStackHandler extends ExtendedsimpleItemContainer {
         private boolean locked;
         public MachineBlockItemStackHandler() {
-            super(18);
+            super(MachineBlockEntity.this, 18);
         }
 
         @Override
@@ -92,8 +99,8 @@ public class MachineBlockEntity extends SimpleBlockEntity implements MenuProvide
         }
 
         private boolean isFull() {
-            return IntStream.range(0, this.getSlots())
-                    .mapToObj(candies::getStackInSlot)
+            return IntStream.range(0, this.getContainerSize())
+                    .mapToObj(candies::getItem)
                     .mapToInt(ItemStack::getCount)
                     .allMatch(count -> count > 0 && count >= candies.getSlotLimit(-1));
         }

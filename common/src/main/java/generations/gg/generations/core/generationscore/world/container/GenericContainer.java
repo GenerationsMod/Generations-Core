@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.container;
 
+import dev.architectury.registry.menu.MenuRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
@@ -8,7 +9,6 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,7 +18,7 @@ public interface GenericContainer extends Container, MenuProvider {
     int getHeight();
 
     default void openScreen(Player player) {
-        if (!player.isLocalPlayer()) NetworkHooks.openScreen((ServerPlayer) player, this, byteBuf -> byteBuf.writeVarInt(getWidth()).writeVarInt(getHeight()));
+        if (!player.isLocalPlayer()) MenuRegistry.openExtendedMenu((ServerPlayer) player, this, byteBuf -> byteBuf.writeVarInt(getWidth()).writeVarInt(getHeight()));
     }
 
     default @Nullable

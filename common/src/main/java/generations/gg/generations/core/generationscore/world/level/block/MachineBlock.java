@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
+import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MachineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
 import net.minecraft.core.BlockPos;
@@ -13,11 +14,10 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
 public class MachineBlock extends BaseEntityBlock {
@@ -33,7 +33,7 @@ public class MachineBlock extends BaseEntityBlock {
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if(!level.isClientSide() && level.getBlockEntity(pos) instanceof MachineBlockEntity te) {
-//            NetworkHooks.openScreen((ServerPlayer) player, te, pos);
+            MenuRegistry.openMenu((ServerPlayer) player, te);
 
             return InteractionResult.SUCCESS;
         }

@@ -1,16 +1,16 @@
 package generations.gg.generations.core.generationscore.world.container.slots;
 
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
-public class CurryResultSlot extends SlotItemHandler {
+public class CurryResultSlot extends Slot {
     private final Player player;
     private int removeCount;
 
-    public CurryResultSlot(Player player, IItemHandler handler, int slotIndex, int xPosition, int yPosition) {
+    public CurryResultSlot(Player player, Container handler, int slotIndex, int xPosition, int yPosition) {
         super(handler, slotIndex, xPosition, yPosition);
         this.player = player;
     }

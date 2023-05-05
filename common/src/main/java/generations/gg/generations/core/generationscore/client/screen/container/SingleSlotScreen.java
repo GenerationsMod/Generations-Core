@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.container.screen;
+package generations.gg.generations.core.generationscore.client.screen.container;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

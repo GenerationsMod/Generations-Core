@@ -1,15 +1,13 @@
 package generations.gg.generations.core.generationscore.world.container.slots;
 
 import com.mojang.datafixers.util.Pair;
-import com.pokemod.pokemod.PokeMod;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.Container;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
-import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,14 +15,14 @@ import java.util.function.DoubleSupplier;
 
 import static net.minecraft.world.inventory.InventoryMenu.BLOCK_ATLAS;
 
-public class TypeSlot extends SlotItemHandler {
+public class TypeSlot extends Slot {
     private final RegistrySupplier<Item> candy;
     private final DoubleSupplier supplier;
     private final Pair<ResourceLocation, ResourceLocation> pair;
     public int offsetX;
     public int offsetY;
 
-    public TypeSlot(IItemHandler itemHandler, int index, int xPosition, int yPosition, RegistrySupplier<Item> candy, String elementName, DoubleSupplier supplier) {
+    public TypeSlot(Container itemHandler, int index, int xPosition, int yPosition, RegistrySupplier<Item> candy, String elementName, DoubleSupplier supplier) {
         super(itemHandler, index, xPosition, yPosition);
         this.candy = candy;
         this.supplier = supplier;

@@ -1,18 +1,9 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.pixelmongenerations.mimikyu.move.MoveInstance;
-import com.pokemod.pokemod.registries.PokeModRegistries;
-import com.pokemod.pokemod.world.entity.pixelmon.PixelmonEntity;
-import net.minecraft.ChatFormatting;
-import net.minecraft.locale.Language;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 
-public class MoveTeachingItem extends Item implements PixelmonInteractions.PixelmonInteraction {
+public class MoveTeachingItem extends Item /*implements PixelmonInteractions.PixelmonInteraction*/ {
     private final ResourceLocation move;
 
     public MoveTeachingItem(ResourceLocation move, Properties properties) {
@@ -20,7 +11,7 @@ public class MoveTeachingItem extends Item implements PixelmonInteractions.Pixel
         this.move = move;
     }
 
-    @Override
+    /*@Override
     public InteractionResult interact(PixelmonEntity pixelmonEntity, Player player, ItemStack itemInHand) {
         var data = pixelmonEntity.getPixelmonData();
         var moveName = Language.getInstance().getOrDefault(move.toLanguageKey("move"));
@@ -57,5 +48,5 @@ public class MoveTeachingItem extends Item implements PixelmonInteractions.Pixel
         player.sendSystemMessage(Component.translatable("move.cantlearn", data.getName(), Language.getInstance().getOrDefault(move.toLanguageKey("move"))).withStyle(ChatFormatting.BOLD));
 
         return InteractionResult.PASS;
-    }
+    }*/
 }

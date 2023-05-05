@@ -1,7 +1,7 @@
-package generations.gg.generations.core.generationscore.world.container.screen;
+package generations.gg.generations.core.generationscore.client.screen.container;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.pokemod.pokemod.client.screen.container.ContainerTextureSheet;
+import generations.gg.generations.core.generationscore.client.screen.container.ContainerTextureSheet;
 import generations.gg.generations.core.generationscore.world.container.GenericChestContainer;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
@@ -30,7 +30,7 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestCont
     @Override
     protected void renderBg(@NotNull PoseStack poseStack, float partialTick, int mouseX, int mouseY) {
         poseStack.pushPose();
-        poseStack.translate(getGuiLeft(), getGuiTop(), 0);
+        poseStack.translate(leftPos, topPos, 0);
         ContainerTextureSheet.BACKGROUND.render(poseStack, 0, 0, imageWidth, imageHeight);
         render(poseStack, 7, 15, 0, menu.getInventoryHeight(), menu.getInventoryWidth());
         render(poseStack, menu.getPlayerInventoryX() - 1, menu.getGuiHeight() - 83, 1, 3, 9);

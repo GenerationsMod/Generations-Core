@@ -1,8 +1,10 @@
 package generations.gg.generations.core.generationscore.world.feature;
 
+import net.minecraft.world.level.levelgen.feature.Feature;
+
 public class PokeModCaveFeatures {
     /* All cave biome features *///TODO: Enable once we get to it.
-//    public static Feature<NoisySphereReplaceConfig> NOISY_SPHERE_REPLACE = new NoisySphereReplaceFeature(NoisySphereReplaceConfig.CODEC);
+    public static Feature<NoisySphereReplaceConfig> NOISY_SPHERE_REPLACE = new NoisySphereReplaceFeature(NoisySphereReplaceConfig.CODEC);
 //
 //    /**
 //     * Subscribes event listener(s).

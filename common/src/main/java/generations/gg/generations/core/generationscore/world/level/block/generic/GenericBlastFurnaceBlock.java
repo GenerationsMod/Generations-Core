@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.generic;
 
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericBlastFurnaceBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericBlastFurnaceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BlastFurnaceBlock;
@@ -10,8 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class GenericBlastFurnaceBlock extends BlastFurnaceBlock {
     public GenericBlastFurnaceBlock(Properties arg) {

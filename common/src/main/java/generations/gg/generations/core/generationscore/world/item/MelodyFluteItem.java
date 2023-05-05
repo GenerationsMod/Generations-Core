@@ -1,11 +1,19 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.container.MelodyFluteContainer;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModShrines;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -31,10 +39,10 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
-//        if (!level.isClientSide() && usedHand == InteractionHand.MAIN_HAND && getDamage(player.getItemInHand(usedHand)) <= 0) {
-//            MelodyFluteContainer.MelodyFluteItemStackHandler handler = new MelodyFluteContainer.MelodyFluteItemStackHandler((ServerPlayer) player, usedHand);
-//            NetworkHooks.openScreen((ServerPlayer) player, new SimpleMenuProvider((i, arg, arg2) -> new MelodyFluteContainer(i, arg, handler), Component.translatable("container.melody_flute")), buf -> buf.writeShort(player.getInventory().selected));
-//        }
+        if (!level.isClientSide() && usedHand == InteractionHand.MAIN_HAND && player.getItemInHand(usedHand).getDamageValue() <= 0) {
+            MelodyFluteContainer.MelodyFluteItemStackHandler handler = new MelodyFluteContainer.MelodyFluteItemStackHandler((ServerPlayer) player, usedHand);
+            MenuRegistry.openExtendedMenu((ServerPlayer) player, new SimpleMenuProvider((i, arg, arg2) -> new MelodyFluteContainer(i, arg, handler), Component.translatable("container.melody_flute")), buf -> buf.writeShort(player.getInventory().selected));
+        }
 
         return super.use(level, player, usedHand);
     }
@@ -62,63 +70,63 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
 //    @Nullable
 //    public static ElementType typeFromInbued(ItemStack stack) {
 //        if (stack.isEmpty()) return null;
-//        if (isItem(PokeModItems.ICY_WING, stack)) return ElementType.ICE;
-//        else if (isItem(PokeModItems.PRETTY_FEATHER, stack)) return ElementType.PSYCHIC;
-//        else if (isItem(PokeModItems.STATIC_WING, stack)) return ElementType.ELECTRIC;
-//        else if (isItem(PokeModItems.BELLIGERENT_WING, stack)) return ElementType.FIGHTING;
-//        else if (isItem(PokeModItems.FIERY_WING, stack)) return ElementType.FIRE;
-//        else if (isItem(PokeModItems.SINISTER_WING, stack)) return ElementType.DARK;
-//        else if (isItem(PokeModItems.RAINBOW_WING, stack) || isItem(PokeModItems.SILVER_WING, stack))
+//        if (isItem(GenerationsItems.ICY_WING, stack)) return ElementType.ICE;
+//        else if (isItem(GenerationsItems.PRETTY_FEATHER, stack)) return ElementType.PSYCHIC;
+//        else if (isItem(GenerationsItems.STATIC_WING, stack)) return ElementType.ELECTRIC;
+//        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return ElementType.FIGHTING;
+//        else if (isItem(GenerationsItems.FIERY_WING, stack)) return ElementType.FIRE;
+//        else if (isItem(GenerationsItems.SINISTER_WING, stack)) return ElementType.DARK;
+//        else if (isItem(GenerationsItems.RAINBOW_WING, stack) || isItem(GenerationsItems.SILVER_WING, stack))
 //            return ElementType.FLYING;
 //        else return null;
 //    }
-//
-//    public static String getSpeciesNameFromImbued(ItemStack stack) {
-//        if (isItem(PokeModItems.ICY_WING, stack)) return getSpeciesNameFromImbued(PokeMod.id("articuno"), "none");
-//        else if (isItem(PokeModItems.PRETTY_FEATHER, stack))
-//            return getSpeciesNameFromImbued(PokeMod.id("articuno"), "galarian");
-//        else if (isItem(PokeModItems.STATIC_WING, stack)) return getSpeciesNameFromImbued(PokeMod.id("zapdos"), "none");
-//        else if (isItem(PokeModItems.BELLIGERENT_WING, stack))
-//            return getSpeciesNameFromImbued(PokeMod.id("zapdos"), "galarian");
-//        else if (isItem(PokeModItems.FIERY_WING, stack)) return getSpeciesNameFromImbued(PokeMod.id("moltres"), "none");
-//        else if (isItem(PokeModItems.SINISTER_WING, stack))
-//            return getSpeciesNameFromImbued(PokeMod.id("moltres"), "galarian");
-//        else if (isItem(PokeModItems.RAINBOW_WING, stack)) return getSpeciesNameFromImbued(PokeMod.id("ho_oh"), "none");
-//        else if (isItem(PokeModItems.SILVER_WING, stack)) return getSpeciesNameFromImbued(PokeMod.id("lugia"), "none");
-//        else return "";
-//    }
-//
-//    public static String getSpeciesNameFromImbued(ResourceLocation id, String form) {
-//        String name = I18n.get(id.getNamespace() + "." + id.getPath() + ".name");
-//
-//        if (I18n.exists("form." + form)) {
-//            name = I18n.get("form." + form, name);
-//        }
-//
-//        return name;
-//    }
-//
-//    public static String shrineFromImbued(ItemStack stack) {
-//        String name = "";
-//        if (isItem(PokeModItems.ICY_WING, stack) || isItem(PokeModItems.ELEGANT_WING, stack))
-//            name = PokeModShrines.FROZEN_SHRINE.getId().toLanguageKey("block");
-//        else if (isItem(PokeModItems.STATIC_WING, stack) || isItem(PokeModItems.BELLIGERENT_WING, stack))
-//            name = PokeModShrines.STATIC_SHRINE.getId().toLanguageKey("block");
-//        else if (isItem(PokeModItems.FIERY_WING, stack) || isItem(PokeModItems.SINISTER_WING, stack))
-//            name = PokeModShrines.FIERY_SHRINE.getId().toLanguageKey("block");
-//        else if (isItem(PokeModItems.RAINBOW_WING, stack))
-//            name = PokeModShrines.CRYSTAL_BELL.getId().toLanguageKey("block");
-//        else if (isItem(PokeModItems.SILVER_WING, stack))
-//            name = PokeModShrines.LUGIA_SHRINE.getId().toLanguageKey("block");
-//
-//        return I18n.get(name);
-//    }
-//
-//    public static void setImbuedItem(ItemStack stack, ItemStack imbuedStack) {
-//        stack.getOrCreateTag().put("imbued", imbuedStack.serializeNBT());
-//    }
-//
-//
+
+    public static String getSpeciesNameFromImbued(ItemStack stack) {
+        if (isItem(GenerationsItems.ICY_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("articuno"), "none");
+        else if (isItem(GenerationsItems.PRETTY_FEATHER, stack))
+            return getSpeciesNameFromImbued(GenerationsCore.id("articuno"), "galarian");
+        else if (isItem(GenerationsItems.STATIC_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("zapdos"), "none");
+        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack))
+            return getSpeciesNameFromImbued(GenerationsCore.id("zapdos"), "galarian");
+        else if (isItem(GenerationsItems.FIERY_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("moltres"), "none");
+        else if (isItem(GenerationsItems.SINISTER_WING, stack))
+            return getSpeciesNameFromImbued(GenerationsCore.id("moltres"), "galarian");
+        else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("ho_oh"), "none");
+        else if (isItem(GenerationsItems.SILVER_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("lugia"), "none");
+        else return "";
+    }
+
+    public static String getSpeciesNameFromImbued(ResourceLocation id, String form) {
+        String name = I18n.get(id.getNamespace() + "." + id.getPath() + ".name");
+
+        if (I18n.exists("form." + form)) {
+            name = I18n.get("form." + form, name);
+        }
+
+        return name;
+    }
+
+    public static String shrineFromImbued(ItemStack stack) {
+        String name = "";
+        if (isItem(GenerationsItems.ICY_WING, stack) || isItem(GenerationsItems.ELEGANT_WING, stack))
+            name = PokeModShrines.FROZEN_SHRINE.getId().toLanguageKey("block");
+        else if (isItem(GenerationsItems.STATIC_WING, stack) || isItem(GenerationsItems.BELLIGERENT_WING, stack))
+            name = PokeModShrines.STATIC_SHRINE.getId().toLanguageKey("block");
+        else if (isItem(GenerationsItems.FIERY_WING, stack) || isItem(GenerationsItems.SINISTER_WING, stack))
+            name = PokeModShrines.FIERY_SHRINE.getId().toLanguageKey("block");
+        else if (isItem(GenerationsItems.RAINBOW_WING, stack))
+            name = PokeModShrines.CRYSTAL_BELL.getId().toLanguageKey("block");
+        else if (isItem(GenerationsItems.SILVER_WING, stack))
+            name = PokeModShrines.LUGIA_SHRINE.getId().toLanguageKey("block");
+
+        return I18n.get(name);
+    }
+
+    public static void setImbuedItem(ItemStack stack, ItemStack imbuedStack) {
+        stack.getOrCreateTag().put("imbued", imbuedStack.save(new CompoundTag()));
+    }
+
+
     @Override
     public void onBattleFinish(ServerPlayer player, ItemStack stack/*, Battle<BattleController> battle*/) {
 //        var type = typeFromInbued(getImbuedItem(stack));

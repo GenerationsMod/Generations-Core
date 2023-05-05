@@ -1,11 +1,11 @@
-package generations.gg.generations.core.generationscore.world.container.screen;
+package generations.gg.generations.core.generationscore.client.screen.container;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
-import com.pokemod.pokemod.PokeMod;
-import com.pokemod.pokemod.client.screen.Anchor;
-import com.pokemod.pokemod.client.screen.SubTexture;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.screen.Anchor;
+import generations.gg.generations.core.generationscore.client.screen.SubTexture;
 import generations.gg.generations.core.generationscore.world.container.MachineBlockContainer;
 import generations.gg.generations.core.generationscore.world.container.slots.TypeSlot;
 import net.minecraft.ChatFormatting;
@@ -22,7 +22,7 @@ import java.util.function.DoubleSupplier;
 
 public class MachineBlockScreen extends AbstractContainerScreen<MachineBlockContainer> {
     public static final ResourceLocation TEXTURE = new ResourceLocation("pokemod:textures/gui/container/machine_block.png");
-    public static final SubTexture ARCEUS_SYMBOL = new SubTexture(0, 0, 94, 74, PokeMod.id("textures/gui/container/arceus_symbol.png"), 94);
+    public static final SubTexture ARCEUS_SYMBOL = new SubTexture(0, 0, 94, 74, GenerationsCore.id("textures/gui/container/arceus_symbol.png"), 94);
     private final DoubleSupplier bakeTimeProvider = () -> getMenu().getBakeTime();
     public MachineBlockScreen(MachineBlockContainer arg, Inventory arg2, Component arg3) {
         super(arg, arg2, arg3);
@@ -42,7 +42,7 @@ public class MachineBlockScreen extends AbstractContainerScreen<MachineBlockCont
     protected void renderBg(@NotNull PoseStack poseStack, float partialTick, int mouseX, int mouseY) {
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, TEXTURE);
-        this.blit(poseStack, this.leftPos, this.topPos, 0, 0, this.getXSize(), this.getYSize());
+        blit(poseStack, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
         double percent = bakeTimeProvider.getAsDouble();
 
         ARCEUS_SYMBOL.renderAnchoredStretched(poseStack, this.leftPos + 88, this.topPos + 88, (float) percent, (float) percent, Anchor.CENTER_CENTER);
@@ -104,7 +104,7 @@ public class MachineBlockScreen extends AbstractContainerScreen<MachineBlockCont
             this.itemRenderer.renderAndDecorateItem(poseStack, this.minecraft.player, itemstack, x, y, slot.x + slot.y * this.imageWidth);
             this.itemRenderer.renderGuiItemDecorations(poseStack, this.font, itemstack, x, y, s);
         }
-//        this.itemRenderer.blitOffset = 0.0f;
-//        this.setBlitOffset(0);
+
+        poseStack.popPose();
     }
 }

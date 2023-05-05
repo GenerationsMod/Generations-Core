@@ -1,41 +1,26 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import com.pokemod.pokemod.client.model.ModelContextProviders;
-import com.pokemod.pokemod.registries.types.PixelmonData;
-import com.pokemod.pokemod.world.entity.pixelmon.PixelmonEntity;
-import com.pokemod.pokemod.world.item.PokeModItems;
-import com.pokemod.pokemod.world.item.CreationTrioItem;
-import com.pokemod.pokemod.world.item.RedChainItem;
+import earth.terrarium.botarium.common.item.ItemContainerBlock;
+import earth.terrarium.botarium.common.item.SerializableContainer;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.world.item.CreationTrioItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.RedChainItem;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity implements ModelContextProviders.VariantProvider {
+public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity implements ItemContainerBlock, ModelContextProviders.VariantProvider {
 
     private final TimeSpaceAltarItemStackHandler handler = new TimeSpaceAltarItemStackHandler();
 
     public TimeSpaceAltarBlockEntity(BlockPos pos, BlockState state) {
         super(PokeModBlockEntities.TIMESPACE_ALTAR.get(), pos, state);
-    }
-
-    @Override
-    protected void readNbt(CompoundTag nbt) {
-        handler.deserializeNBT(nbt.getCompound("inventory"));
-    }
-
-    @Override
-    protected void writeNbt(CompoundTag nbt) {
-        nbt.put("inventory", handler.serializeNBT());
     }
 
     public boolean activate(ServerPlayer player, InteractionHand hand) {
@@ -71,13 +56,13 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
 
     public void trySpawn(ServerPlayer player) {
         if (handler.shouldSpawn()) {
-            var id = ((CreationTrioItem) handler.getStackInSlot(0).getItem()).getSpeciesId();
+            var id = ((CreationTrioItem) handler.getItem(0).getItem()).getSpeciesId();
             toggleActive();
 //            level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(id), getBlockPos())); TODO: Spawn pokemon
-            RedChainItem.incrementUsage(handler.getStackInSlot(1));
-            if (RedChainItem.getUses(handler.getStackInSlot(1)) >= RedChainItem.MAX_USES)
-                handler.setStackInSlot(1, ItemStack.EMPTY);
-            handler.setStackInSlot(0, ItemStack.EMPTY);
+            RedChainItem.incrementUsage(handler.getItem(1));
+            if (RedChainItem.getUses(handler.getItem(1)) >= RedChainItem.MAX_USES)
+                handler.setItem(1, ItemStack.EMPTY);
+            handler.setItem(0, ItemStack.EMPTY);
             handler.dumpAllIntoPlayerInventory(player);
             sync();
             toggleActive();
@@ -89,16 +74,21 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         return handler.hasRedChain() ? "red chain" : "none";
     }
 
+    @Override
+    public SerializableContainer getContainer() {
+        return handler;
+    }
+
     @Nullable
     public CreationTrioItem getOrb() {
-        if (handler.getStackInSlot(0).getItem() instanceof CreationTrioItem item) return item;
+        if (handler.getItem(0).getItem() instanceof CreationTrioItem item) return item;
         return null;
     }
 
-    class TimeSpaceAltarItemStackHandler extends ItemStackHandler {
+    class TimeSpaceAltarItemStackHandler extends ExtendedsimpleItemContainer {
 
         public TimeSpaceAltarItemStackHandler() {
-            super(2);
+            super(TimeSpaceAltarBlockEntity.this, 2);
         }
 
         @Override
@@ -116,17 +106,17 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         }
 
         public boolean hasRedChain() {
-            return !getStackInSlot(1).isEmpty();
+            return !getItem(1).isEmpty();
         }
 
         public boolean hasOrb() {
-            return !getStackInSlot(0).isEmpty();
+            return !getItem(0).isEmpty();
         }
 
 
         public ItemStack extractItem() {
             for (int i = 0; i < 2; i++) {
-                ItemStack stack = getStackInSlot(i);
+                ItemStack stack = getItem(i);
 
                 if (!stack.isEmpty()) return extractItem(i, 1, false);
             }
@@ -139,16 +129,11 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         }
 
         public void dumpAllIntoPlayerInventory(ServerPlayer player) {
-            for (ItemStack stack : stacks) {
+            for (ItemStack stack : getItems()) {
                 player.getInventory().placeItemBackInInventory(stack);
             }
 
-            stacks.clear();
-        }
-
-        @Override
-        protected void onContentsChanged(int slot) {
-            sync();
+            clearContent();
         }
     }
 }

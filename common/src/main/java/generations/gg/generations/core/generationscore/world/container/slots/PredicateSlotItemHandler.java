@@ -1,16 +1,16 @@
-package generations.gg.generations.core.generationscore.world.container;
+package generations.gg.generations.core.generationscore.world.container.slots;
 
+import net.minecraft.world.Container;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Predicate;
 
-class PredicateSlotItemHandler extends SlotItemHandler {
+public class PredicateSlotItemHandler extends Slot {
     private final Predicate<ItemStack> predicate;
 
-    public PredicateSlotItemHandler(IItemHandler itemHandler, int index, int xPosition, int yPosition, Predicate<ItemStack> predicate) {
+    public PredicateSlotItemHandler(Container itemHandler, int index, int xPosition, int yPosition, Predicate<ItemStack> predicate) {
         super(itemHandler, index, xPosition, yPosition);
         this.predicate = predicate;
     }

@@ -1,23 +1,25 @@
 package generations.gg.generations.core.generationscore.world.container;
 
 import generations.gg.generations.core.generationscore.world.container.slots.LockedSlot;
+import generations.gg.generations.core.generationscore.world.container.slots.PredicateSlotItemHandler;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class SingleSlotContainer extends AbstractContainerMenu {
-    protected final ItemStackHandler handler;
+    protected final Container handler;
 
     protected SingleSlotContainer(MenuType<? extends SingleSlotContainer> type, int id) {
-        this(type, id, new ItemStackHandler(1));
+        this(type, id, new SimpleContainer(1));
     }
 
-    protected SingleSlotContainer(MenuType<? extends SingleSlotContainer> type, int id, ItemStackHandler handler) {
+    protected SingleSlotContainer(MenuType<? extends SingleSlotContainer> type, int id, Container handler) {
         super(type, id);
         this.handler = handler;
 

@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.container.screen;
+package generations.gg.generations.core.generationscore.client.screen.container;
 
 import generations.gg.generations.core.generationscore.world.container.TrashCanContainer;
 import net.minecraft.network.chat.Component;

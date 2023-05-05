@@ -1,12 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
-import com.pokemod.pokemod.world.item.DyedBlockItem;
-import com.pokemod.pokemod.world.level.block.PokeModDecorationBlocks;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntities;
-import com.pokemod.pokemod.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
-import com.pokemod.pokemod.world.level.block.entities.PokeModBlockEntityModels;
-import com.pokemod.pokemod.world.level.block.utilityblocks.DyeableBlock;
-import com.pokemod.pokemod.world.entity.block.SittableEntity;
+import generations.gg.generations.core.generationscore.world.entity.block.SittableEntity;
+import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import generations.gg.generations.core.generationscore.world.level.block.PokeModDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
@@ -40,7 +36,7 @@ public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEnti
     @Override
     protected InteractionResult serverUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
         if (!world.isClientSide && !player.isShiftKeyDown())
-            return SittableBlock.mount(world, pos, 0.5f, player);
+            return SittableEntity.mount(world, pos, 0.5f, player);
 
         return InteractionResult.PASS;
     }
