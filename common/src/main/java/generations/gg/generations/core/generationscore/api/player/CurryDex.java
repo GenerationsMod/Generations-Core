@@ -64,20 +64,20 @@ public class CurryDex {
     }
 
     public boolean hasStorage() {
-        return this.player != null && this.player.getPersistentData().contains("partyData");
+        return this.player != null && true/*this.player.getPersistentData().contains("partyData") TODO: implment getPersistentData or find replacement*/;
     }
 
     public void generateStorage() {
         if (!hasStorage()) {
             ListTag party = new ListTag();
-            this.player.getPersistentData().put("partyData", party);
+//            this.player.getPersistentData().put("partyData", party);
         }
 
         cacheStorage();
     }
 
     private void cacheStorage() {
-        ListTag list = this.player.getPersistentData().getList("curryDex", Tag.TAG_COMPOUND);
+        ListTag list = new ListTag(); //this.player.getPersistentData().getList("curryDex", Tag.TAG_COMPOUND);
         entries = list.stream().filter(CompoundTag.class::isInstance).map(CompoundTag.class::cast).map(CurryDexEntry::fromNbt).sorted(comparator).collect(Collectors.toList());
     }
 
@@ -105,7 +105,7 @@ public class CurryDex {
         if (entries.stream().noneMatch(a -> comparator.compare(entry, a) == 0) || entry.type == CurryType.Gigantamax && entries.stream().noneMatch(a -> a.type == CurryType.Gigantamax)) {
             entries.add(entry);
             sort();
-            player.getPersistentData().put("curryDex", entries.stream().map(CurryDexEntry::toNbt).collect(NbtListCollector.toNbtList()));
+//            player.getPersistentData().put("curryDex", entries.stream().map(CurryDexEntry::toNbt).collect(NbtListCollector.toNbtList()));
         }
     }
 

@@ -40,6 +40,9 @@ repositories {
     maven {
         url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1"
     }
+//    maven {
+//        url = "https://nexus.resourcefulbees.com/repository/maven-public/"
+//    }
 }
 
 dependencies {
@@ -48,6 +51,7 @@ dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
+//    modApi "earth.terrarium:botarium-forge-${rootProject.minecraft_version}:${rootProject.botarium_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
