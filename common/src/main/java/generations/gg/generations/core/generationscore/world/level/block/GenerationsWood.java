@@ -101,7 +101,7 @@ public class GenerationsWood {
     private static <T extends Block> RegistrySupplier<T> registerSignWithoutItem(String name, Supplier<T> blockSupplier) {
         return WOOD_SIGN.register(name, blockSupplier);
     }
-    public static void onInitialize() {
+    public static void init() {
         GenerationsCore.LOGGER.info("Registering PokeMod Wood");
         WOOD_BLOCKS.register();
         WOOD_SIGN.register();

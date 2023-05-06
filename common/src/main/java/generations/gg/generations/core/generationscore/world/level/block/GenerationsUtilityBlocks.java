@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class PokeModUtilityBlocks {
+public class GenerationsUtilityBlocks {
 	public static final DeferredRegister<Block> UTILITY_BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 	public static final List<RegistrySupplier<DyedBlockItem<HealerBlock>>> HEALER_BLOCKS = new ArrayList<>();
 	public static final List<RegistrySupplier<DyedBlockItem<PCBlock>>> PC_BLOCKS = new ArrayList<>();
@@ -135,7 +135,7 @@ public class PokeModUtilityBlocks {
 	}
 
 
-	public static void onInitialize() {
+	public static void init() {
 		GenerationsCore.LOGGER.info("Registering PokeMod Utility Blocks");
 		UTILITY_BLOCKS.register();
 	}

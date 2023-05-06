@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.generic;
 
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModCookers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -24,6 +24,6 @@ public class GenericFurnaceBlockEntity extends FurnaceBlockEntity implements Pok
 
     @Override
     public @NotNull BlockEntityType<?> getType() {
-        return PokeModBlockEntities.GENERIC_FURNACE.get();
+        return GenerationsBlockEntities.GENERIC_FURNACE.get();
     }
 }

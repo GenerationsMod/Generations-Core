@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.generic;
 
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -49,7 +49,7 @@ public class GenericChestBlock extends AbstractChestBlock<GenericChestBlockEntit
     private final String materialType;
 
     public GenericChestBlock(Properties arg, int width, int height, String materialType) {
-        super(arg, PokeModBlockEntities.GENERIC_CHEST::get);
+        super(arg, GenerationsBlockEntities.GENERIC_CHEST::get);
         this.width = width;
         this.height = height;
         this.materialType = materialType;
@@ -163,6 +163,6 @@ public class GenericChestBlock extends AbstractChestBlock<GenericChestBlockEntit
     @Override
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? ChestBlock.createTickerHelper(blockEntityType, PokeModBlockEntities.GENERIC_CHEST.get(), GenericChestBlockEntity::lidAnimateTick) : null;
+        return level.isClientSide ? ChestBlock.createTickerHelper(blockEntityType, GenerationsBlockEntities.GENERIC_CHEST.get(), GenericChestBlockEntity::lidAnimateTick) : null;
     }
 }

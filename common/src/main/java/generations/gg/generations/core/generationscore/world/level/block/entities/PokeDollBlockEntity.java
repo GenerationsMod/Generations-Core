@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.world.level.block.decorations.PokeModDollBlock;
+import generations.gg.generations.core.generationscore.world.level.block.decorations.PokeDollBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
@@ -11,7 +11,7 @@ public class PokeDollBlockEntity extends ModelProvidingBlockEntity implements Mo
     public static final ResourceLocation DEFAULT_MODEL = GenerationsCore.id("models/block/pokedolls/charizard.pk");
 
     public PokeDollBlockEntity(BlockPos pos, BlockState state) {
-        super(PokeModBlockEntities.POKE_DOLL.get(), pos, state);
+        super(GenerationsBlockEntities.POKE_DOLL.get(), pos, state);
     }
 
     public ResourceLocation getModel() {
@@ -30,10 +30,10 @@ public class PokeDollBlockEntity extends ModelProvidingBlockEntity implements Mo
     @Override
     public float getAngle() {
         var blockState = getBlockState();
-        return (blockState.hasProperty(PokeModDollBlock.CARDINAL) ? blockState.getValue(PokeModDollBlock.CARDINAL).getAngle() : 0f);
+        return (blockState.hasProperty(PokeDollBlock.CARDINAL) ? blockState.getValue(PokeDollBlock.CARDINAL).getAngle() : 0f);
     }
 
-    public PokeModDollBlock getPokeModDollBlock() {
-        return getBlockState().getBlock() instanceof PokeModDollBlock dollBlock ? dollBlock : null;
+    public PokeDollBlock getPokeModDollBlock() {
+        return getBlockState().getBlock() instanceof PokeDollBlock dollBlock ? dollBlock : null;
     }
 }

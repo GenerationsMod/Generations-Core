@@ -6,10 +6,10 @@ import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.NotNull;
 
-public class PokeModTreeGrower extends AbstractTreeGrower {
+public class GenerationsTreeGrower extends AbstractTreeGrower {
     private final ResourceKey<ConfiguredFeature<?, ?>> configuredFeature;
 
-    public PokeModTreeGrower(ResourceKey<ConfiguredFeature<?, ?>> configuredFeature) {
+    public GenerationsTreeGrower(ResourceKey<ConfiguredFeature<?, ?>> configuredFeature) {
         this.configuredFeature = configuredFeature;
     }
 

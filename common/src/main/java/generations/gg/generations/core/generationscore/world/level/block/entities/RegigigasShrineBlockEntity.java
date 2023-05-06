@@ -21,7 +21,7 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
     private final RegigigasItemStackHandler handler = new RegigigasItemStackHandler();
 
     public RegigigasShrineBlockEntity(BlockPos arg2, BlockState arg3) {
-        super(PokeModBlockEntities.REGIGIGAS_SHRINE.get(), arg2, arg3);
+        super(GenerationsBlockEntities.REGIGIGAS_SHRINE.get(), arg2, arg3);
     }
 
     public RegigigasItemStackHandler getRegiOrbs() {

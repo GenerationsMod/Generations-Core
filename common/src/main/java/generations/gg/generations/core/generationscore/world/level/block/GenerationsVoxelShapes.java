@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import net.minecraft.Util;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -8,10 +7,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class PokeModVoxelShapes {
+public class GenerationsVoxelShapes {
     public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {
         VoxelShape[] buffer = new VoxelShape[]{ shape, Shapes.empty() };
         int times = (to.get2DDataValue() - from.get2DDataValue() + 4) % 4;

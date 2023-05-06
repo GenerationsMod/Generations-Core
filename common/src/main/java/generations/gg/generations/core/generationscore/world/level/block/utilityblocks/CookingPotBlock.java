@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 public class CookingPotBlock extends GenericRotatableModelBlock<CookingPotBlockEntity> {
 
     public CookingPotBlock(Properties materialIn) {
-        super(materialIn, PokeModBlockEntities.COOKING_POT, PokeModBlockEntityModels.COOKING_POT);
+        super(materialIn, GenerationsBlockEntities.COOKING_POT, PokeModBlockEntityModels.COOKING_POT);
     }
 
     @Override
@@ -43,6 +43,6 @@ public class CookingPotBlock extends GenericRotatableModelBlock<CookingPotBlockE
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? null : BaseEntityBlock.createTickerHelper(blockEntityType, PokeModBlockEntities.COOKING_POT.get(), CookingPotBlockEntity::serverTick);
+        return level.isClientSide ? null : BaseEntityBlock.createTickerHelper(blockEntityType, GenerationsBlockEntities.COOKING_POT.get(), CookingPotBlockEntity::serverTick);
     }
 }

@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class WeatherTrioShrineBlockEntity extends InteractShrineBlockEntity {
     public WeatherTrioShrineBlockEntity(BlockPos arg2, BlockState arg3) {
-        super(PokeModBlockEntities.WEATHER_TRIO.get(), arg2, arg3);
+        super(GenerationsBlockEntities.WEATHER_TRIO.get(), arg2, arg3);
     }
 
     public boolean activate(ServerPlayer player, InteractionHand hand) {

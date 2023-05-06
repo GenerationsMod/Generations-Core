@@ -45,13 +45,11 @@ public class SoftSoilBlock extends Block {
     @Override
     public void randomTick(BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         int i = state.getValue(MOISTURE);
-        if (state.getValue(MULCH) != Mulch.DAMP && !isNearWater(level, pos) && !level.isRainingAt(pos.above())) {
-            if (i > 0) {
-                level.setBlock(pos, state.setValue(MOISTURE, i - 1), 2);
-            }
-        } else if (i < 7) {
+        if (state.getValue(MULCH) != Mulch.DAMP)
+            isNearWater(level, pos);
+
+        if (i < 7)
             level.setBlock(pos, state.setValue(MOISTURE, 7), 2);
-        }
     }
 
 //    @Override //TODO: Figurae out

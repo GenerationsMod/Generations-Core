@@ -7,7 +7,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 
 @SuppressWarnings("unused")
-public class PokeModPaintings {
+public class GenerationsPaintings {
     public static final DeferredRegister<PaintingVariant> PAINTINGS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.PAINTING_VARIANT);
     public static RegistrySupplier<PaintingVariant> ALAKAZAM = register("alakazam", 32, 16);
     public static RegistrySupplier<PaintingVariant> ARTICUNO = register("articuno", 32, 16);

@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModUtilityBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 public class HealerBlock extends DyeableBlock<HealerBlockEntity, HealerBlock> {
 
     public HealerBlock(BlockBehaviour.Properties props) {
-        super(HealerBlock::getBlock, PokeModBlockEntities.HEALER, props, PokeModBlockEntityModels.HEALER);
+        super(HealerBlock::getBlock, GenerationsBlockEntities.HEALER, props, PokeModBlockEntityModels.HEALER);
     }
 
     @Override
@@ -39,22 +39,22 @@ public class HealerBlock extends DyeableBlock<HealerBlockEntity, HealerBlock> {
 
     public static DyedBlockItem<HealerBlock> getBlock(DyeColor color) {
         return (switch (color) {
-            case RED -> PokeModUtilityBlocks.RED_HEALER;
-            case WHITE -> PokeModUtilityBlocks.WHITE_HEALER;
-            case ORANGE -> PokeModUtilityBlocks.ORANGE_HEALER;
-            case PINK -> PokeModUtilityBlocks.PINK_HEALER;
-            case YELLOW -> PokeModUtilityBlocks.YELLOW_HEALER;
-            case LIME -> PokeModUtilityBlocks.LIME_HEALER;
-            case GREEN -> PokeModUtilityBlocks.GREEN_HEALER;
-            case LIGHT_BLUE -> PokeModUtilityBlocks.LIGHT_BLUE_HEALER;
-            case CYAN -> PokeModUtilityBlocks.CYAN_HEALER;
-            case BLUE -> PokeModUtilityBlocks.BLUE_HEALER;
-            case MAGENTA -> PokeModUtilityBlocks.MAGENTA_HEALER;
-            case PURPLE -> PokeModUtilityBlocks.PURPLE_HEALER;
-            case BROWN -> PokeModUtilityBlocks.BROWN_HEALER;
-            case GRAY -> PokeModUtilityBlocks.GRAY_HEALER;
-            case LIGHT_GRAY -> PokeModUtilityBlocks.LIGHT_GRAY_HEALER;
-            case BLACK -> PokeModUtilityBlocks.BLACK_HEALER;
+            case RED -> GenerationsUtilityBlocks.RED_HEALER;
+            case WHITE -> GenerationsUtilityBlocks.WHITE_HEALER;
+            case ORANGE -> GenerationsUtilityBlocks.ORANGE_HEALER;
+            case PINK -> GenerationsUtilityBlocks.PINK_HEALER;
+            case YELLOW -> GenerationsUtilityBlocks.YELLOW_HEALER;
+            case LIME -> GenerationsUtilityBlocks.LIME_HEALER;
+            case GREEN -> GenerationsUtilityBlocks.GREEN_HEALER;
+            case LIGHT_BLUE -> GenerationsUtilityBlocks.LIGHT_BLUE_HEALER;
+            case CYAN -> GenerationsUtilityBlocks.CYAN_HEALER;
+            case BLUE -> GenerationsUtilityBlocks.BLUE_HEALER;
+            case MAGENTA -> GenerationsUtilityBlocks.MAGENTA_HEALER;
+            case PURPLE -> GenerationsUtilityBlocks.PURPLE_HEALER;
+            case BROWN -> GenerationsUtilityBlocks.BROWN_HEALER;
+            case GRAY -> GenerationsUtilityBlocks.GRAY_HEALER;
+            case LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_HEALER;
+            case BLACK -> GenerationsUtilityBlocks.BLACK_HEALER;
         }).get();
     }
 }

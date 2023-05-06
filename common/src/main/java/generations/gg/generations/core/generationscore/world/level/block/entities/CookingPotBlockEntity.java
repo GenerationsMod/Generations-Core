@@ -41,7 +41,7 @@ import java.util.stream.Stream;
 public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements ItemContainerBlock, MenuRegistry.ExtendedMenuTypeFactory<CookingPotContainer>, MenuProvider, ModelContextProviders.VariantProvider {
 
     public CookingPotBlockEntity(BlockPos arg2, BlockState arg3) {
-        super(PokeModBlockEntities.COOKING_POT.get(), arg2, arg3);
+        super(GenerationsBlockEntities.COOKING_POT.get(), arg2, arg3);
     }
 
     //0-9: berries

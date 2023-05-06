@@ -6,7 +6,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class VendingMachineBlockEntity extends DyedVariantBlockEntity/* implements ShopOfferProvider*/ {
 //    public static Offers offers = Offers.of(BuiltinShops.VENDING_MACHINE.location(), null); TODO: Shops
     public VendingMachineBlockEntity(BlockPos pos, BlockState state) {
-        super(PokeModBlockEntities.VENDING_MACHINE.get(), pos, state);
+        super(GenerationsBlockEntities.VENDING_MACHINE.get(), pos, state);
     }
 
 //    @Nullable

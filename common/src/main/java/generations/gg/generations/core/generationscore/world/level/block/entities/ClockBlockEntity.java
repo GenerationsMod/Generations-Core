@@ -9,7 +9,7 @@ public class ClockBlockEntity extends DyedVariantBlockEntity implements ModelCon
 //    public AnimatedObjectInstance rarecandyInstance;
 
     public ClockBlockEntity(BlockPos arg2, BlockState arg3) {
-        super(PokeModBlockEntities.CLOCK.get(), arg2, arg3);
+        super(GenerationsBlockEntities.CLOCK.get(), arg2, arg3);
     }
 
     @Override

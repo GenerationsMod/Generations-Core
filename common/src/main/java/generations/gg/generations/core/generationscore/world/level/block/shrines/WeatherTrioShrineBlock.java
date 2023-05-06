@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.WeatherTrioShrineBlockEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -13,7 +13,7 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
     private final RegistrySupplier<Item> requiredItem;
 
     public WeatherTrioShrineBlock(BlockBehaviour.Properties properties, ResourceLocation model, ResourceLocation species, RegistrySupplier<Item> requiredItem) {
-        super(properties, PokeModBlockEntities.WEATHER_TRIO, model, WeatherTrioShrineBlockEntity.class);
+        super(properties, GenerationsBlockEntities.WEATHER_TRIO, model, WeatherTrioShrineBlockEntity.class);
         this.species = species;
         this.requiredItem = requiredItem;
     }

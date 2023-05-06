@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.generic;
 
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModCookers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -23,6 +23,6 @@ public class GenericSmokerBlockEntity extends SmokerBlockEntity implements PokeM
 
     @Override
     public @NotNull BlockEntityType<?> getType() {
-        return PokeModBlockEntities.GENERIC_SMOKER.get();
+        return GenerationsBlockEntities.GENERIC_SMOKER.get();
     }
 }

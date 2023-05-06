@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 
 import generations.gg.generations.core.generationscore.world.container.GenericChestContainer;
 import generations.gg.generations.core.generationscore.world.container.GenericContainer;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -70,7 +70,7 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
     }
 
     public GenericChestBlockEntity(BlockPos arg, BlockState arg2, int width, int height, String defaultTranslation) {
-        super(PokeModBlockEntities.GENERIC_CHEST.get(), arg, arg2);
+        super(GenerationsBlockEntities.GENERIC_CHEST.get(), arg, arg2);
         this.width = width;
         this.height = height;
         this.defaultTranslation = defaultTranslation;

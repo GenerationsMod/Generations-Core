@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModUtilityBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ClockBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -29,7 +29,7 @@ public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
     });
 
     public ClockBlock(Properties arg) {
-        super(ClockBlock::getBlock, PokeModBlockEntities.CLOCK, arg, PokeModBlockEntityModels.CLOCK);
+        super(ClockBlock::getBlock, GenerationsBlockEntities.CLOCK, arg, PokeModBlockEntityModels.CLOCK);
     }
 
     @Override
@@ -47,22 +47,22 @@ public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
 
     public static DyedBlockItem<ClockBlock> getBlock(DyeColor color) {
         return (switch (color) {
-            case WHITE -> PokeModUtilityBlocks.WHITE_CLOCK;
-            case ORANGE -> PokeModUtilityBlocks.ORANGE_CLOCK;
-            case MAGENTA -> PokeModUtilityBlocks.MAGENTA_CLOCK;
-            case LIGHT_BLUE -> PokeModUtilityBlocks.LIGHT_BLUE_CLOCK;
-            case YELLOW -> PokeModUtilityBlocks.YELLOW_CLOCK;
-            case LIME -> PokeModUtilityBlocks.LIME_CLOCK;
-            case PINK -> PokeModUtilityBlocks.PINK_CLOCK;
-            case GRAY -> PokeModUtilityBlocks.GRAY_CLOCK;
-            case LIGHT_GRAY -> PokeModUtilityBlocks.LIGHT_GRAY_CLOCK;
-            case CYAN -> PokeModUtilityBlocks.CYAN_CLOCK;
-            case PURPLE -> PokeModUtilityBlocks.PURPLE_CLOCK;
-            case BLUE -> PokeModUtilityBlocks.BLUE_CLOCK;
-            case BROWN -> PokeModUtilityBlocks.BROWN_CLOCK;
-            case GREEN -> PokeModUtilityBlocks.GREEN_CLOCK;
-            case RED -> PokeModUtilityBlocks.RED_CLOCK;
-            case BLACK -> PokeModUtilityBlocks.BLACK_CLOCK;
+            case WHITE -> GenerationsUtilityBlocks.WHITE_CLOCK;
+            case ORANGE -> GenerationsUtilityBlocks.ORANGE_CLOCK;
+            case MAGENTA -> GenerationsUtilityBlocks.MAGENTA_CLOCK;
+            case LIGHT_BLUE -> GenerationsUtilityBlocks.LIGHT_BLUE_CLOCK;
+            case YELLOW -> GenerationsUtilityBlocks.YELLOW_CLOCK;
+            case LIME -> GenerationsUtilityBlocks.LIME_CLOCK;
+            case PINK -> GenerationsUtilityBlocks.PINK_CLOCK;
+            case GRAY -> GenerationsUtilityBlocks.GRAY_CLOCK;
+            case LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_CLOCK;
+            case CYAN -> GenerationsUtilityBlocks.CYAN_CLOCK;
+            case PURPLE -> GenerationsUtilityBlocks.PURPLE_CLOCK;
+            case BLUE -> GenerationsUtilityBlocks.BLUE_CLOCK;
+            case BROWN -> GenerationsUtilityBlocks.BROWN_CLOCK;
+            case GREEN -> GenerationsUtilityBlocks.GREEN_CLOCK;
+            case RED -> GenerationsUtilityBlocks.RED_CLOCK;
+            case BLACK -> GenerationsUtilityBlocks.BLACK_CLOCK;
         }).get();
     }
 }

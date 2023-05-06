@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
     public TapuShrineBlock(BlockBehaviour.Properties properties) {
-        super(properties, PokeModBlockEntities.GENERIC_SHRINE, PokeModBlockEntityModels.TAPU_SHRINE);
+        super(properties, GenerationsBlockEntities.GENERIC_SHRINE, PokeModBlockEntityModels.TAPU_SHRINE);
     }
 
     @Override

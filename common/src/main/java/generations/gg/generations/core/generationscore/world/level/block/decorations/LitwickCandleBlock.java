@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
-import generations.gg.generations.core.generationscore.world.level.block.PokeModVoxelShapes;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
@@ -16,10 +16,10 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class LitwickCandleBlock extends GenericRotatableModelBlock<GenericModelProvidingBlockEntity> {
-    public static final PokeModVoxelShapes.DirectionalShapes SHAPES = PokeModVoxelShapes.generateDirectionVoxelShape(Shapes.join(Shapes.box(0.3125, 0, 0.3125, 0.6875, 0.3125, 0.6875), Shapes.box(0.4375, 0.34375, 0.4375, 0.5625, 0.5, 0.5625), BooleanOp.OR), Direction.NORTH);
+    public static final GenerationsVoxelShapes.DirectionalShapes SHAPES = GenerationsVoxelShapes.generateDirectionVoxelShape(Shapes.join(Shapes.box(0.3125, 0, 0.3125, 0.6875, 0.3125, 0.6875), Shapes.box(0.4375, 0.34375, 0.4375, 0.5625, 0.5, 0.5625), BooleanOp.OR), Direction.NORTH);
 
     public LitwickCandleBlock(BlockBehaviour.Properties properties) {
-        super(properties, PokeModBlockEntities.GENERIC_MODEL_PROVIDING, PokeModBlockEntityModels.LITWICK_CANDLE);
+        super(properties, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, PokeModBlockEntityModels.LITWICK_CANDLE);
     }
 
     @Override

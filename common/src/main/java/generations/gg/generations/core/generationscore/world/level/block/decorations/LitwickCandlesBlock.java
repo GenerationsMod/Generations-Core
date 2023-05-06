@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
-import generations.gg.generations.core.generationscore.world.level.block.PokeModVoxelShapes;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.stream.Stream;
 
 public class LitwickCandlesBlock extends GenericRotatableModelBlock<GenericModelProvidingBlockEntity> {
-    private static final PokeModVoxelShapes.DirectionalShapes SHAPE = PokeModVoxelShapes.generateDirectionVoxelShape(Stream.of(
+    private static final GenerationsVoxelShapes.DirectionalShapes SHAPE = GenerationsVoxelShapes.generateDirectionVoxelShape(Stream.of(
             Shapes.box(0.140625, 0, 0.25, 0.484375, 0.4375, 0.59375),
             Shapes.box(0.203125, 0.1875, 0.3125, 0.421875, 0.65625, 0.53125),
             Shapes.box(0.5, 0, 0.15625, 0.96875, 0.328125, 0.625),
@@ -28,7 +28,7 @@ public class LitwickCandlesBlock extends GenericRotatableModelBlock<GenericModel
                     .reduce(Shapes.empty(), (a,b) -> Shapes.join(a, b, BooleanOp.OR)),
             Direction.NORTH);
     public LitwickCandlesBlock(BlockBehaviour.Properties properties) {
-        super(properties, PokeModBlockEntities.GENERIC_MODEL_PROVIDING, PokeModBlockEntityModels.LITWICK_CANDLES);
+        super(properties, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, PokeModBlockEntityModels.LITWICK_CANDLES);
     }
 
     @Override

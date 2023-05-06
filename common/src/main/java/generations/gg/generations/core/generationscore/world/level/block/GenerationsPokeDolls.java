@@ -5,13 +5,13 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
-import generations.gg.generations.core.generationscore.world.level.block.decorations.PokeModDollBlock;
+import generations.gg.generations.core.generationscore.world.level.block.decorations.PokeDollBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-public class PokeModPokeDolls {
+public class GenerationsPokeDolls {
 
 	public static final DeferredRegister<Block> POKEDOLLS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 	/**
@@ -188,13 +188,13 @@ public class PokeModPokeDolls {
 	}
 
 	private static RegistrySupplier<Block> registerBlockItem(String name, boolean shiny, float scale) {
-		RegistrySupplier<Block> block = POKEDOLLS.register((shiny ? "shiny_" : "") + name  + "_doll", () -> new PokeModDollBlock(name, shiny, scale));
+		RegistrySupplier<Block> block = POKEDOLLS.register((shiny ? "shiny_" : "") + name  + "_doll", () -> new PokeDollBlock(name, shiny, scale));
 		GenerationsItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.POKEDOLLS)));
 		return block;
 	}
 
 	public static void init() {
-		GenerationsCore.LOGGER.info("Registering PokeMod PokeDolls");
+		GenerationsCore.LOGGER.info("Registering Generations PokeDolls");
 		POKEDOLLS.register();
 	}
 }

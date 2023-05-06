@@ -18,16 +18,16 @@ public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier PLAYER_ITEMS = create("player_items", GenerationsItems.POKEDEX);
     public static CreativeTabRegistry.TabSupplier LEGENDARY_ITEMS = create("legendary_items", GenerationsItems.DNA_SPLICERS);
     public static CreativeTabRegistry.TabSupplier BUILDING_BLOCKS = create("building_blocks", GenerationsBlocks.WHITE_POKE_BRICK);
-    public static CreativeTabRegistry.TabSupplier DECORATIONS = create("decorations", PokeModDecorationBlocks.SWITCH);
+    public static CreativeTabRegistry.TabSupplier DECORATIONS = create("decorations", GenerationsDecorationBlocks.SWITCH);
     public static CreativeTabRegistry.TabSupplier NATURAL = create("natural", GenerationsBlocks.RED_APRICORN);
-    public static CreativeTabRegistry.TabSupplier UTILITY = create("utility", PokeModUtilityBlocks.RED_PC);
+    public static CreativeTabRegistry.TabSupplier UTILITY = create("utility", GenerationsUtilityBlocks.RED_PC);
     public static CreativeTabRegistry.TabSupplier FORM_ITEMS = create("form_items", GenerationsItems.METEORITE);
     public static CreativeTabRegistry.TabSupplier POKEMAIL = create("pokemail", GenerationsItems.POKEMAIL_AIR);
     public static CreativeTabRegistry.TabSupplier VALUABLES = create("valuables", GenerationsItems.STRANGE_SOUVENIR);
-    public static CreativeTabRegistry.TabSupplier POKEDOLLS = create("pokedolls", PokeModPokeDolls.PIKACHU_POKEDOLL);
+    public static CreativeTabRegistry.TabSupplier POKEDOLLS = create("pokedolls", GenerationsPokeDolls.PIKACHU_POKEDOLL);
     public static CreativeTabRegistry.TabSupplier CUISINE = create("cuisine", GenerationsItems.GIGANTAMIX);
     public static CreativeTabRegistry.TabSupplier UNIMPLEMENTED = create("unimplemented", GenerationsItems.ABILITY_URGE);
-    public static CreativeTabRegistry.TabSupplier SHRINES = create("shrines", PokeModShrines.FROZEN_SHRINE);
+    public static CreativeTabRegistry.TabSupplier SHRINES = create("shrines", GenerationsShrines.FROZEN_SHRINE);
 
     public static <T extends ItemLike> CreativeTabRegistry.TabSupplier create(String name, RegistrySupplier<T> supplier) {
         return CreativeTabRegistry.create(GenerationsCore.id(name), builder -> {

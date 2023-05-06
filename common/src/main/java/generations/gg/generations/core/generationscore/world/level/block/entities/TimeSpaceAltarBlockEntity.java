@@ -20,7 +20,7 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
     private final TimeSpaceAltarItemStackHandler handler = new TimeSpaceAltarItemStackHandler();
 
     public TimeSpaceAltarBlockEntity(BlockPos pos, BlockState state) {
-        super(PokeModBlockEntities.TIMESPACE_ALTAR.get(), pos, state);
+        super(GenerationsBlockEntities.TIMESPACE_ALTAR.get(), pos, state);
     }
 
     public boolean activate(ServerPlayer player, InteractionHand hand) {

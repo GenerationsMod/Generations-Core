@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModDecorationBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModVoxelShapes;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
@@ -44,55 +44,55 @@ import static generations.gg.generations.core.generationscore.world.level.block.
 
 @SuppressWarnings("deprecation")
 public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, UmbrellaBlock> {
-    private static final Map<Pole, Map<PokeModDollBlock.Cardinal, VoxelShape>> SHAPES = Util.make(new HashMap<>(), map -> {
+    private static final Map<Pole, Map<PokeDollBlock.Cardinal, VoxelShape>> SHAPES = Util.make(new HashMap<>(), map -> {
         //Mid
         var current = map.computeIfAbsent(MID, a -> new HashMap<>());
-        current.put(PokeModDollBlock.Cardinal.NONE, Shapes.join(Shapes.join(Shapes.box(0.46875, 0, 0.46875, 0.53125, 1, 0.53125), Shapes.box(0.45625, 0.5625, 0.45625, 0.54375, 1, 0.54375), BooleanOp.OR), Shapes.box(0, 0.921875, 0, 1, 1, 1), BooleanOp.OR));
+        current.put(PokeDollBlock.Cardinal.NONE, Shapes.join(Shapes.join(Shapes.box(0.46875, 0, 0.46875, 0.53125, 1, 0.53125), Shapes.box(0.45625, 0.5625, 0.45625, 0.54375, 1, 0.54375), BooleanOp.OR), Shapes.box(0, 0.921875, 0, 1, 1, 1), BooleanOp.OR));
 
         var mid_corner = Shapes.box(0.3843749999999999, 0.921875, 0.3843749999999999, 1, 1, 1);
         var mid_side = Shapes.box(0.009374999999999911, 0.921875, 0.3843749999999999, 1, 1, 1);
         var fromCorner = Direction.WEST;
         var fromSide = Direction.NORTH;
 
-        current.put(PokeModDollBlock.Cardinal.NORTH, createShape(mid_side, fromSide, Direction.NORTH));
-        current.put(PokeModDollBlock.Cardinal.NORTH_EAST, createShape(mid_corner, fromCorner, Direction.NORTH));
-        current.put(PokeModDollBlock.Cardinal.EAST, createShape(mid_side, fromSide, Direction.EAST));
-        current.put(PokeModDollBlock.Cardinal.SOUTH_EAST, createShape(mid_corner, fromCorner, Direction.EAST));
-        current.put(PokeModDollBlock.Cardinal.SOUTH, createShape(mid_side, fromSide, Direction.SOUTH));
-        current.put(PokeModDollBlock.Cardinal.SOUTH_WEST, createShape(mid_corner, fromCorner, Direction.SOUTH));
-        current.put(PokeModDollBlock.Cardinal.WEST, createShape(mid_side, fromSide, Direction.WEST));
-        current.put(PokeModDollBlock.Cardinal.NORTH_WEST, createShape(mid_corner, fromCorner, Direction.WEST));
+        current.put(PokeDollBlock.Cardinal.NORTH, createShape(mid_side, fromSide, Direction.NORTH));
+        current.put(PokeDollBlock.Cardinal.NORTH_EAST, createShape(mid_corner, fromCorner, Direction.NORTH));
+        current.put(PokeDollBlock.Cardinal.EAST, createShape(mid_side, fromSide, Direction.EAST));
+        current.put(PokeDollBlock.Cardinal.SOUTH_EAST, createShape(mid_corner, fromCorner, Direction.EAST));
+        current.put(PokeDollBlock.Cardinal.SOUTH, createShape(mid_side, fromSide, Direction.SOUTH));
+        current.put(PokeDollBlock.Cardinal.SOUTH_WEST, createShape(mid_corner, fromCorner, Direction.SOUTH));
+        current.put(PokeDollBlock.Cardinal.WEST, createShape(mid_side, fromSide, Direction.WEST));
+        current.put(PokeDollBlock.Cardinal.NORTH_WEST, createShape(mid_corner, fromCorner, Direction.WEST));
 
 
         //Top
         current = map.computeIfAbsent(TOP, a -> new HashMap<>());
-        current.put(PokeModDollBlock.Cardinal.NONE, Shapes.join(Shapes.join(Shapes.box(0.46875, 0.3687499999999999, 0.46875, 0.53125, 0.3812500000000001, 0.53125), Shapes.box(0.0625, 0.28125, 0.0625, 0.9375, 0.3687499999999999, 0.9375), BooleanOp.OR), Shapes.box(0, 0, 0, 1, 0.3, 1), BooleanOp.OR));
+        current.put(PokeDollBlock.Cardinal.NONE, Shapes.join(Shapes.join(Shapes.box(0.46875, 0.3687499999999999, 0.46875, 0.53125, 0.3812500000000001, 0.53125), Shapes.box(0.0625, 0.28125, 0.0625, 0.9375, 0.3687499999999999, 0.9375), BooleanOp.OR), Shapes.box(0, 0, 0, 1, 0.3, 1), BooleanOp.OR));
 
         mid_corner = Shapes.join(Shapes.box(0.625, 0.14374999999999982, 0.625, 1, 0.2999999999999998, 1), Shapes.box(0.5, 0, 0.5, 1, 0.14374999999999982, 1), BooleanOp.OR);
         mid_side = Shapes.join(Shapes.box(0, 0.14374999999999982, 0.625, 1, 0.2999999999999998, 1), Shapes.box(0, 0, 0.5, 1, 0.14374999999999982, 1), BooleanOp.OR);
 
-        current.put(PokeModDollBlock.Cardinal.NORTH, createShape(mid_side, fromSide, Direction.NORTH));
-        current.put(PokeModDollBlock.Cardinal.NORTH_EAST, createShape(mid_corner, fromCorner, Direction.NORTH));
-        current.put(PokeModDollBlock.Cardinal.EAST, createShape(mid_side, fromSide, Direction.EAST));
-        current.put(PokeModDollBlock.Cardinal.SOUTH_EAST, createShape(mid_corner, fromCorner, Direction.EAST));
-        current.put(PokeModDollBlock.Cardinal.SOUTH, createShape(mid_side, fromSide, Direction.SOUTH));
-        current.put(PokeModDollBlock.Cardinal.SOUTH_WEST, createShape(mid_corner, fromCorner, Direction.SOUTH));
-        current.put(PokeModDollBlock.Cardinal.WEST, createShape(mid_side, fromSide, Direction.WEST));
-        current.put(PokeModDollBlock.Cardinal.NORTH_WEST, createShape(mid_corner, fromCorner, Direction.WEST));
+        current.put(PokeDollBlock.Cardinal.NORTH, createShape(mid_side, fromSide, Direction.NORTH));
+        current.put(PokeDollBlock.Cardinal.NORTH_EAST, createShape(mid_corner, fromCorner, Direction.NORTH));
+        current.put(PokeDollBlock.Cardinal.EAST, createShape(mid_side, fromSide, Direction.EAST));
+        current.put(PokeDollBlock.Cardinal.SOUTH_EAST, createShape(mid_corner, fromCorner, Direction.EAST));
+        current.put(PokeDollBlock.Cardinal.SOUTH, createShape(mid_side, fromSide, Direction.SOUTH));
+        current.put(PokeDollBlock.Cardinal.SOUTH_WEST, createShape(mid_corner, fromCorner, Direction.SOUTH));
+        current.put(PokeDollBlock.Cardinal.WEST, createShape(mid_side, fromSide, Direction.WEST));
+        current.put(PokeDollBlock.Cardinal.NORTH_WEST, createShape(mid_corner, fromCorner, Direction.WEST));
     });
 
     private static VoxelShape createShape(VoxelShape shape, Direction from, Direction to) {
-        return PokeModVoxelShapes.rotateShape(from, to, shape);
+        return GenerationsVoxelShapes.rotateShape(from, to, shape);
     }
     
     private static final VoxelShape BASE_SHAPE = Shapes.join(Shapes.join(Shapes.box(0.375, 0.046875, 0.375, 0.625, 0.084375, 0.625), Shapes.box(0.46875, 0.0625, 0.46875, 0.53125, 1, 0.53125), BooleanOp.OR), Shapes.box(0.35, 0, 0.35, 0.65, 0.046875, 0.65), BooleanOp.OR);
 
-    public static EnumProperty<PokeModDollBlock.Cardinal> CARDINAL = EnumProperty.create("cardinal", PokeModDollBlock.Cardinal.class);
+    public static EnumProperty<PokeDollBlock.Cardinal> CARDINAL = EnumProperty.create("cardinal", PokeDollBlock.Cardinal.class);
     public static EnumProperty<Pole> POLE = EnumProperty.create("pole", Pole.class);
     public static BiFunction<BlockPos, BlockState, BlockPos> FUNCTION = (pos, state) -> pos.offset(state.getValue(CARDINAL).rotation(Rotation.CLOCKWISE_180).offset()).below(state.getValue(POLE).ordinal());
 
     public UmbrellaBlock(BlockBehaviour.Properties props) {
-        super(UmbrellaBlock::getBlock, PokeModBlockEntities.GENERIC_DYED_VARIANT, FUNCTION, props, PokeModBlockEntityModels.UMBRELLA);
+        super(UmbrellaBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, FUNCTION, props, PokeModBlockEntityModels.UMBRELLA);
     }
 
     @Override
@@ -118,8 +118,8 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
 
         for (int i = 1; i < 3; i++) {
             var blockPos = pos.above(i);
-            isFree = isFree && Stream.of(PokeModDollBlock.Cardinal.values())
-                    .map(PokeModDollBlock.Cardinal::offset)
+            isFree = isFree && Stream.of(PokeDollBlock.Cardinal.values())
+                    .map(PokeDollBlock.Cardinal::offset)
                     .map(blockPos::offset)
                     .map(level::getBlockState)
                     .allMatch(BlockState::canBeReplaced);
@@ -136,17 +136,17 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
 
     private void setLayer(Level level, Block block, BlockPos pos, Pole pole) {
         var state = block.defaultBlockState().setValue(POLE, pole);
-        level.setBlock(pos, state.setValue(CARDINAL, PokeModDollBlock.Cardinal.NONE), 2);
+        level.setBlock(pos, state.setValue(CARDINAL, PokeDollBlock.Cardinal.NONE), 2);
 
         if(pole != Pole.BASE) {
-            level.setBlock(pos = pos.north(), state.setValue(CARDINAL, PokeModDollBlock.Cardinal.NORTH), 2);
-            level.setBlock(pos = pos.east(), state.setValue(CARDINAL, PokeModDollBlock.Cardinal.NORTH_EAST), 2);
-            level.setBlock(pos = pos.south(), state.setValue(CARDINAL, PokeModDollBlock.Cardinal.EAST), 2);
-            level.setBlock(pos = pos.south(), state.setValue(CARDINAL, PokeModDollBlock.Cardinal.SOUTH_EAST), 2);
-            level.setBlock(pos = pos.west(), state.setValue(CARDINAL, PokeModDollBlock.Cardinal.SOUTH), 2);
-            level.setBlock(pos = pos.west(), state.setValue(CARDINAL, PokeModDollBlock.Cardinal.SOUTH_WEST), 2);
-            level.setBlock(pos = pos.north(), state.setValue(CARDINAL, PokeModDollBlock.Cardinal.WEST), 2);
-            level.setBlock(pos.north(), state.setValue(CARDINAL, PokeModDollBlock.Cardinal.NORTH_WEST), 2);
+            level.setBlock(pos = pos.north(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH), 2);
+            level.setBlock(pos = pos.east(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH_EAST), 2);
+            level.setBlock(pos = pos.south(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.EAST), 2);
+            level.setBlock(pos = pos.south(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH_EAST), 2);
+            level.setBlock(pos = pos.west(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH), 2);
+            level.setBlock(pos = pos.west(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH_WEST), 2);
+            level.setBlock(pos = pos.north(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.WEST), 2);
+            level.setBlock(pos.north(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH_WEST), 2);
         }
     }
 
@@ -158,7 +158,7 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
         if (pole == TOP && level.getBlockState(pos.below()).is(this) && level.getBlockState(pos.below()).getValue(POLE) == MID) {
             return cardinal.getAnchorDirections().stream().map(pos::relative).map(level::getBlockState).allMatch(a -> a.is(this));
         } else if (pole == MID) {
-            if(cardinal == PokeModDollBlock.Cardinal.NONE) return level.getBlockState(pos.below()).is(this) && level.getBlockState(pos.below()).getValue(POLE) == BASE;
+            if(cardinal == PokeDollBlock.Cardinal.NONE) return level.getBlockState(pos.below()).is(this) && level.getBlockState(pos.below()).getValue(POLE) == BASE;
             else return cardinal.getAnchorDirections().stream().map(pos::relative).map(level::getBlockState).allMatch(a -> a.is(this));
         }
 
@@ -188,7 +188,7 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
     @Override
     protected BlockState createDefaultState() {
         return this.getStateDefinition().any()
-                .setValue(CARDINAL, PokeModDollBlock.Cardinal.NONE)
+                .setValue(CARDINAL, PokeDollBlock.Cardinal.NONE)
                 .setValue(POLE, Pole.BASE);
     }
 
@@ -209,22 +209,22 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
 
     public static DyedBlockItem<UmbrellaBlock> getBlock(DyeColor dyeColor) {
         return (switch (dyeColor) {
-            case BLACK -> PokeModDecorationBlocks.BLACK_UMBRELLA;
-            case BLUE -> PokeModDecorationBlocks.BLUE_UMBRELLA;
-            case BROWN -> PokeModDecorationBlocks.BROWN_UMBRELLA;
-            case CYAN -> PokeModDecorationBlocks.CYAN_UMBRELLA;
-            case GRAY -> PokeModDecorationBlocks.GRAY_UMBRELLA;
-            case GREEN -> PokeModDecorationBlocks.GREEN_UMBRELLA;
-            case LIGHT_BLUE -> PokeModDecorationBlocks.LIGHT_BLUE_UMBRELLA;
-            case LIGHT_GRAY -> PokeModDecorationBlocks.LIGHT_GRAY_UMBRELLA;
-            case LIME -> PokeModDecorationBlocks.LIME_UMBRELLA;
-            case MAGENTA -> PokeModDecorationBlocks.MAGENTA_UMBRELLA;
-            case ORANGE -> PokeModDecorationBlocks.ORANGE_UMBRELLA;
-            case PINK -> PokeModDecorationBlocks.PINK_UMBRELLA;
-            case PURPLE -> PokeModDecorationBlocks.PURPLE_UMBRELLA;
-            case RED -> PokeModDecorationBlocks.RED_UMBRELLA;
-            case WHITE -> PokeModDecorationBlocks.WHITE_UMBRELLA;
-            case YELLOW -> PokeModDecorationBlocks.YELLOW_UMBRELLA;
+            case BLACK -> GenerationsDecorationBlocks.BLACK_UMBRELLA;
+            case BLUE -> GenerationsDecorationBlocks.BLUE_UMBRELLA;
+            case BROWN -> GenerationsDecorationBlocks.BROWN_UMBRELLA;
+            case CYAN -> GenerationsDecorationBlocks.CYAN_UMBRELLA;
+            case GRAY -> GenerationsDecorationBlocks.GRAY_UMBRELLA;
+            case GREEN -> GenerationsDecorationBlocks.GREEN_UMBRELLA;
+            case LIGHT_BLUE -> GenerationsDecorationBlocks.LIGHT_BLUE_UMBRELLA;
+            case LIGHT_GRAY -> GenerationsDecorationBlocks.LIGHT_GRAY_UMBRELLA;
+            case LIME -> GenerationsDecorationBlocks.LIME_UMBRELLA;
+            case MAGENTA -> GenerationsDecorationBlocks.MAGENTA_UMBRELLA;
+            case ORANGE -> GenerationsDecorationBlocks.ORANGE_UMBRELLA;
+            case PINK -> GenerationsDecorationBlocks.PINK_UMBRELLA;
+            case PURPLE -> GenerationsDecorationBlocks.PURPLE_UMBRELLA;
+            case RED -> GenerationsDecorationBlocks.RED_UMBRELLA;
+            case WHITE -> GenerationsDecorationBlocks.WHITE_UMBRELLA;
+            case YELLOW -> GenerationsDecorationBlocks.YELLOW_UMBRELLA;
         }).get();
     }
 

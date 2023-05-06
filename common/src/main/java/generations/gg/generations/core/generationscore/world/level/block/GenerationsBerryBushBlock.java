@@ -28,14 +28,14 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
-public class PokeModBerryBushBlock extends BushBlock implements BonemealableBlock {
+public class GenerationsBerryBushBlock extends BushBlock implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
     private static final VoxelShape SAPLING_SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
     private static final VoxelShape MID_GROWTH_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 
     private final BerryType berryType;
 
-    public PokeModBerryBushBlock(BerryType berryType, Properties arg) {
+    public GenerationsBerryBushBlock(BerryType berryType, Properties arg) {
         super(arg);
         this.berryType = berryType;
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
@@ -75,7 +75,7 @@ public class PokeModBerryBushBlock extends BushBlock implements BonemealableBloc
     public @NotNull InteractionResult use(BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         boolean flag;
         int i = state.getValue(AGE);
-        boolean bl = flag = i == 3;
+        flag = i == 3;
         if (!flag && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
             return InteractionResult.PASS;
         }

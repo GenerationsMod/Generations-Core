@@ -2,8 +2,8 @@ package generations.gg.generations.core.generationscore.world.level.block.decora
 
 import generations.gg.generations.core.generationscore.world.entity.block.SittableEntity;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModDecorationBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 @SuppressWarnings("deprecation")
 public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock> {
     public PastelBeanBagBlock(BlockBehaviour.Properties props) {
-        super(PastelBeanBagBlock::getBlock, PokeModBlockEntities.GENERIC_DYED_VARIANT, props, PokeModBlockEntityModels.PASTEL_BEAN_BAG);
+        super(PastelBeanBagBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, PokeModBlockEntityModels.PASTEL_BEAN_BAG);
     }
 
     @Override
@@ -43,22 +43,22 @@ public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEnti
 
     public static DyedBlockItem<PastelBeanBagBlock> getBlock(DyeColor dyeColor) {
         return (switch (dyeColor) {
-            case WHITE -> PokeModDecorationBlocks.WHITE_PASTEL_BEAN_BAG;
-            case LIGHT_GRAY -> PokeModDecorationBlocks.LIGHT_GRAY_PASTEL_BEAN_BAG;
-            case GRAY -> PokeModDecorationBlocks.GRAY_PASTEL_BEAN_BAG;
-            case BLACK -> PokeModDecorationBlocks.BLACK_PASTEL_BEAN_BAG;
-            case BROWN -> PokeModDecorationBlocks.BROWN_PASTEL_BEAN_BAG;
-            case RED -> PokeModDecorationBlocks.RED_PASTEL_BEAN_BAG;
-            case ORANGE -> PokeModDecorationBlocks.ORANGE_PASTEL_BEAN_BAG;
-            case YELLOW -> PokeModDecorationBlocks.YELLOW_PASTEL_BEAN_BAG;
-            case LIME -> PokeModDecorationBlocks.LIME_PASTEL_BEAN_BAG;
-            case GREEN -> PokeModDecorationBlocks.GREEN_PASTEL_BEAN_BAG;
-            case CYAN -> PokeModDecorationBlocks.CYAN_PASTEL_BEAN_BAG;
-            case LIGHT_BLUE -> PokeModDecorationBlocks.LIGHT_BLUE_PASTEL_BEAN_BAG;
-            case BLUE -> PokeModDecorationBlocks.BLUE_PASTEL_BEAN_BAG;
-            case PURPLE -> PokeModDecorationBlocks.PURPLE_PASTEL_BEAN_BAG;
-            case MAGENTA -> PokeModDecorationBlocks.MAGENTA_PASTEL_BEAN_BAG;
-            case PINK -> PokeModDecorationBlocks.PINK_PASTEL_BEAN_BAG;
+            case WHITE -> GenerationsDecorationBlocks.WHITE_PASTEL_BEAN_BAG;
+            case LIGHT_GRAY -> GenerationsDecorationBlocks.LIGHT_GRAY_PASTEL_BEAN_BAG;
+            case GRAY -> GenerationsDecorationBlocks.GRAY_PASTEL_BEAN_BAG;
+            case BLACK -> GenerationsDecorationBlocks.BLACK_PASTEL_BEAN_BAG;
+            case BROWN -> GenerationsDecorationBlocks.BROWN_PASTEL_BEAN_BAG;
+            case RED -> GenerationsDecorationBlocks.RED_PASTEL_BEAN_BAG;
+            case ORANGE -> GenerationsDecorationBlocks.ORANGE_PASTEL_BEAN_BAG;
+            case YELLOW -> GenerationsDecorationBlocks.YELLOW_PASTEL_BEAN_BAG;
+            case LIME -> GenerationsDecorationBlocks.LIME_PASTEL_BEAN_BAG;
+            case GREEN -> GenerationsDecorationBlocks.GREEN_PASTEL_BEAN_BAG;
+            case CYAN -> GenerationsDecorationBlocks.CYAN_PASTEL_BEAN_BAG;
+            case LIGHT_BLUE -> GenerationsDecorationBlocks.LIGHT_BLUE_PASTEL_BEAN_BAG;
+            case BLUE -> GenerationsDecorationBlocks.BLUE_PASTEL_BEAN_BAG;
+            case PURPLE -> GenerationsDecorationBlocks.PURPLE_PASTEL_BEAN_BAG;
+            case MAGENTA -> GenerationsDecorationBlocks.MAGENTA_PASTEL_BEAN_BAG;
+            case PINK -> GenerationsDecorationBlocks.PINK_PASTEL_BEAN_BAG;
         }).get();
     }
 }

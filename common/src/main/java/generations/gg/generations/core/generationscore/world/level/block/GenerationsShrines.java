@@ -17,7 +17,7 @@ import net.minecraft.world.level.material.Material;
 
 import java.util.function.Supplier;
 
-public class PokeModShrines {
+public class GenerationsShrines {
 	public static final DeferredRegister<Block> SHRINES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 
 
@@ -53,8 +53,8 @@ public class PokeModShrines {
 		return block;
 	}
 
-	public static void onInitialize() {
-		GenerationsCore.LOGGER.info("Registering PokeMod Shrines");
+	public static void init() {
+		GenerationsCore.LOGGER.info("Registering Generations Shrines");
 		SHRINES.register();
 	}
 

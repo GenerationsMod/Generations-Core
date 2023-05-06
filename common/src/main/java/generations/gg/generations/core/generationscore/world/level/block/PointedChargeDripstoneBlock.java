@@ -244,9 +244,7 @@ public class PointedChargeDripstoneBlock extends Block implements Fallable, Simp
 		while (PointedChargeDripstoneBlock.isStalactite(blockState)) {
 			FallingBlockEntity fallingBlockEntity = FallingBlockEntity.fall(level, mutableBlockPos, blockState);
 			if (PointedChargeDripstoneBlock.isTip(blockState, true)) {
-				int i = Math.max(1 + pos.getY() - mutableBlockPos.getY(), 6);
-				float f = (float) i;
-				fallingBlockEntity.setHurtsEntities(f, 40);
+				fallingBlockEntity.setHurtsEntities((float) Math.max(1 + pos.getY() - mutableBlockPos.getY(), 6), 40);
 				break;
 			}
 			mutableBlockPos.move(Direction.DOWN);
@@ -256,8 +254,7 @@ public class PointedChargeDripstoneBlock extends Block implements Fallable, Simp
 
 	@VisibleForTesting
 	public static void growStalactiteOrStalagmiteIfPossible(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		BlockState blockState = level.getBlockState(pos.above(1));
-		if (!PointedChargeDripstoneBlock.canGrow(blockState, level.getBlockState(pos.above(2)))) return;
+		if (!PointedChargeDripstoneBlock.canGrow(level.getBlockState(pos.above(1)), level.getBlockState(pos.above(2)))) return;
 
 		BlockPos blockPos = PointedChargeDripstoneBlock.findTip(state, level, pos, 7, false);
 		if (blockPos == null) return;

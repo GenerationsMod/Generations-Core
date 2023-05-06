@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.levelgen;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModMushroomBlock;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsMushroomBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -17,7 +17,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConf
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
-public class PokeModFeatures {
+public class GenerationsFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLACK_APRICORN_TREE = register("black_apricorn_tree");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_APRICORN_TREE = register("white_apricorn_tree");
@@ -77,7 +77,7 @@ public class PokeModFeatures {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, GenerationsCore.id(name));
     }
 
-    private static void registerMushroom(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, RegistrySupplier<PokeModMushroomBlock> mushroom) {
+    private static void registerMushroom(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, RegistrySupplier<GenerationsMushroomBlock> mushroom) {
         FeatureUtils.register(context, key, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(mushroom.get()))));
     }
 

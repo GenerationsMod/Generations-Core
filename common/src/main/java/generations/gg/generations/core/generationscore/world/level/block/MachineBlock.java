@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block;
 
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MachineBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -49,6 +49,6 @@ public class MachineBlock extends BaseEntityBlock {
     @Override
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? null : MachineBlock.createTickerHelper(blockEntityType, PokeModBlockEntities.MACHINE_BLOCK.get(), MachineBlockEntity::serverTick);
+        return level.isClientSide ? null : MachineBlock.createTickerHelper(blockEntityType, GenerationsBlockEntities.MACHINE_BLOCK.get(), MachineBlockEntity::serverTick);
     }
 }

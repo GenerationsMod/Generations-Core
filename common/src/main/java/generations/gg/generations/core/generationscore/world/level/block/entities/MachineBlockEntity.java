@@ -26,7 +26,7 @@ public class MachineBlockEntity extends SimpleBlockEntity implements ItemContain
     private int bakeTime = 0;
 
     public MachineBlockEntity(BlockPos pos, BlockState state) {
-        super(PokeModBlockEntities.MACHINE_BLOCK.get(), pos, state);
+        super(GenerationsBlockEntities.MACHINE_BLOCK.get(), pos, state);
     }
 
     @Override

@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class LunarShrineBlockEntity extends ShrineBlockEntity {
     public LunarShrineBlockEntity(BlockPos pos, BlockState state) {
-        super(PokeModBlockEntities.LUNAR_SHRINE.get(), pos, state);
+        super(GenerationsBlockEntities.LUNAR_SHRINE.get(), pos, state);
     }
 
     @Override

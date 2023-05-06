@@ -11,19 +11,20 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 @SuppressWarnings("deprecation")
-public class PokeModMushroomBlock extends BushBlock implements BonemealableBlock {
+public class GenerationsMushroomBlock extends BushBlock implements BonemealableBlock {
     protected static final VoxelShape SHAPE = Block.box(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
     private final ResourceKey<ConfiguredFeature<?, ?>> featureKey;
 
-    public PokeModMushroomBlock(Properties arg, ResourceKey<ConfiguredFeature<?, ?>> featureKey) {
+    public GenerationsMushroomBlock(Properties arg, ResourceKey<ConfiguredFeature<?, ?>> featureKey) {
         super(arg);
         this.featureKey = featureKey;
     }
@@ -38,7 +39,7 @@ public class PokeModMushroomBlock extends BushBlock implements BonemealableBlock
 
     public void growMushroom(ServerLevel level, BlockPos pos, BlockState state, RandomSource random) {
         level.removeBlock(pos, false);
-        if (!level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).get(featureKey).place(level, level.getChunkSource().getGenerator(), random, pos)) level.setBlock(pos, state, 3);
+        if (!Objects.requireNonNull(level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).get(featureKey)).place(level, level.getChunkSource().getGenerator(), random, pos)) level.setBlock(pos, state, 3);
     }
 
     @Override

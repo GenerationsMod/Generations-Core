@@ -10,7 +10,8 @@ package generations.gg.generations.core.generationscore;
 
 import com.mojang.logging.LogUtils;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import org.slf4j.Logger;
@@ -34,6 +35,11 @@ public class GenerationsCore
 	public static void init() {
 		GenerationsItems.init();
 		GenerationsBlocks.init();
+		GenerationsWood.init();
+		GenerationsPokeDolls.init();
+		GenerationsShrines.init();
+		GenerationsUtilityBlocks.init();
+		GenerationsBlockEntities.init();
 	}
 
 	/**

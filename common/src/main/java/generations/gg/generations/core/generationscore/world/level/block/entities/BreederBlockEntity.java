@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BreederBlockEntity extends ModelProvidingBlockEntity {
     public BreederBlockEntity(BlockPos arg2, BlockState arg3) {
-        super(PokeModBlockEntities.BREEDER.get(), arg2, arg3);
+        super(GenerationsBlockEntities.BREEDER.get(), arg2, arg3);
     }
 }

@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class PokeModOres {
+public class GenerationsOres {
 	public static final DeferredRegister<Block> ORES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 
 	/**

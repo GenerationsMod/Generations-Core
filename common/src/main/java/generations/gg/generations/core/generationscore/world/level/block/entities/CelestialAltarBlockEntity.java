@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class CelestialAltarBlockEntity extends ShrineBlockEntity {
     public CelestialAltarBlockEntity(BlockPos pos, BlockState state) {
-        super(PokeModBlockEntities.CELESTIAL_ALTAR.get(), pos, state);
+        super(GenerationsBlockEntities.CELESTIAL_ALTAR.get(), pos, state);
     }
 }

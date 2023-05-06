@@ -68,7 +68,6 @@ public class CursedCarvedPumpkinBlock extends CarvedPumpkinBlock {
         BlockPattern.BlockPatternMatch blockPatternMatch = this.getOrCreateSnowGolemFull().find(level, pos);
         int i;
         Iterator<ServerPlayer> var6;
-        ServerPlayer serverPlayer;
         int j;
         if (blockPatternMatch != null) {
             for(i = 0; i < this.getOrCreateSnowGolemFull().getHeight(); ++i) {
@@ -84,15 +83,13 @@ public class CursedCarvedPumpkinBlock extends CarvedPumpkinBlock {
             level.addFreshEntity(snowGolem);
             var6 = level.getEntitiesOfClass(ServerPlayer.class, snowGolem.getBoundingBox().inflate(5.0)).iterator();
 
-            while(var6.hasNext()) {
-                serverPlayer = var6.next();
-                CriteriaTriggers.SUMMONED_ENTITY.trigger(serverPlayer, snowGolem);
-            }
+            while(var6.hasNext())
+                CriteriaTriggers.SUMMONED_ENTITY.trigger(var6.next(), snowGolem);
 
-            for(j = 0; j < this.getOrCreateSnowGolemFull().getHeight(); ++j) {
-                BlockInWorld blockInWorld2 = blockPatternMatch.getBlock(0, j, 0);
-                level.blockUpdated(blockInWorld2.getPos(), Blocks.AIR);
-            }
+
+            for(j = 0; j < this.getOrCreateSnowGolemFull().getHeight(); ++j)
+                level.blockUpdated(blockPatternMatch.getBlock(0, j, 0).getPos(), Blocks.AIR);
+
         } else {
             blockPatternMatch = this.getOrCreateIronGolemFull().find(level, pos);
             if (blockPatternMatch != null) {
@@ -111,16 +108,12 @@ public class CursedCarvedPumpkinBlock extends CarvedPumpkinBlock {
                 level.addFreshEntity(ironGolem);
                 var6 = level.getEntitiesOfClass(ServerPlayer.class, ironGolem.getBoundingBox().inflate(5.0)).iterator();
 
-                while(var6.hasNext()) {
-                    serverPlayer = var6.next();
-                    CriteriaTriggers.SUMMONED_ENTITY.trigger(serverPlayer, ironGolem);
-                }
+                while(var6.hasNext())
+                    CriteriaTriggers.SUMMONED_ENTITY.trigger(var6.next(), ironGolem);
 
                 for(j = 0; j < this.getOrCreateIronGolemFull().getWidth(); ++j)
-                    for(int l = 0; l < this.getOrCreateIronGolemFull().getHeight(); ++l) {
-                        BlockInWorld blockInWorld4 = blockPatternMatch.getBlock(j, l, 0);
-                        level.blockUpdated(blockInWorld4.getPos(), Blocks.AIR);
-                    }
+                    for(int l = 0; l < this.getOrCreateIronGolemFull().getHeight(); ++l)
+                        level.blockUpdated(blockPatternMatch.getBlock(j, l, 0).getPos(), Blocks.AIR);
             }
         }
 

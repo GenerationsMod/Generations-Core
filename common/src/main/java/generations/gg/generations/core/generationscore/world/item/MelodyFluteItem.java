@@ -4,7 +4,7 @@ import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.container.MelodyFluteContainer;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModShrines;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -109,15 +109,15 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
     public static String shrineFromImbued(ItemStack stack) {
         String name = "";
         if (isItem(GenerationsItems.ICY_WING, stack) || isItem(GenerationsItems.ELEGANT_WING, stack))
-            name = PokeModShrines.FROZEN_SHRINE.getId().toLanguageKey("block");
+            name = GenerationsShrines.FROZEN_SHRINE.getId().toLanguageKey("block");
         else if (isItem(GenerationsItems.STATIC_WING, stack) || isItem(GenerationsItems.BELLIGERENT_WING, stack))
-            name = PokeModShrines.STATIC_SHRINE.getId().toLanguageKey("block");
+            name = GenerationsShrines.STATIC_SHRINE.getId().toLanguageKey("block");
         else if (isItem(GenerationsItems.FIERY_WING, stack) || isItem(GenerationsItems.SINISTER_WING, stack))
-            name = PokeModShrines.FIERY_SHRINE.getId().toLanguageKey("block");
+            name = GenerationsShrines.FIERY_SHRINE.getId().toLanguageKey("block");
         else if (isItem(GenerationsItems.RAINBOW_WING, stack))
-            name = PokeModShrines.CRYSTAL_BELL.getId().toLanguageKey("block");
+            name = GenerationsShrines.CRYSTAL_BELL.getId().toLanguageKey("block");
         else if (isItem(GenerationsItems.SILVER_WING, stack))
-            name = PokeModShrines.LUGIA_SHRINE.getId().toLanguageKey("block");
+            name = GenerationsShrines.LUGIA_SHRINE.getId().toLanguageKey("block");
 
         return I18n.get(name);
     }

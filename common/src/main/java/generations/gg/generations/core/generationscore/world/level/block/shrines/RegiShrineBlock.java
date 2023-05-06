@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.item.RegiKeyItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -36,7 +36,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     private final List<String> list;
 
     public RegiShrineBlock(Properties materialIn, ResourceLocation model, ResourceLocation species) {
-        super(materialIn, PokeModBlockEntities.GENERIC_SHRINE, model);
+        super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);
         var cipher = "-" + species.getPath().toUpperCase() + "-";
         list = IntStream.range(0, cipher.length() - 2).boxed().map(a -> SUBSTRING.apply(cipher, a)).collect(Collectors.toList());
         this.species = species;

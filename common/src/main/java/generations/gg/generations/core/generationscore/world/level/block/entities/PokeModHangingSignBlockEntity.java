@@ -13,6 +13,6 @@ public class PokeModHangingSignBlockEntity extends HangingSignBlockEntity {
 
 	@Override
 	public @NotNull BlockEntityType<?> getType() {
-		return PokeModBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get();
+		return GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get();
 	}
 }

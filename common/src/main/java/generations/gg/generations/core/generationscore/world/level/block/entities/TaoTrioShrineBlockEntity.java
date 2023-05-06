@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class TaoTrioShrineBlockEntity extends InteractShrineBlockEntity {
     public TaoTrioShrineBlockEntity(BlockPos pos, BlockState state) {
-        super(PokeModBlockEntities.TAO_TRIO_SHRINE.get(), pos, state);
+        super(GenerationsBlockEntities.TAO_TRIO_SHRINE.get(), pos, state);
     }
 
     public boolean activate(ServerPlayer player, InteractionHand hand) {

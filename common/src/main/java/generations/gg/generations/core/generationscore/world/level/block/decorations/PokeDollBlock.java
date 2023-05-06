@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.decora
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeDollBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -32,7 +32,7 @@ import org.joml.Math;
 import java.util.List;
 
 @SuppressWarnings({"deprecation"})
-public class PokeModDollBlock extends GenericModelBlock<PokeDollBlockEntity> {
+public class PokeDollBlock extends GenericModelBlock<PokeDollBlockEntity> {
     public static final EnumProperty<Cardinal> CARDINAL = EnumProperty.create("cardinal", Cardinal.class);
 
     public final String name;
@@ -40,8 +40,8 @@ public class PokeModDollBlock extends GenericModelBlock<PokeDollBlockEntity> {
     private final float scale;
     private final String variant;
 
-    public PokeModDollBlock(String name, boolean shiny, float scale) {
-        super(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(1.0f), PokeModBlockEntities.POKE_DOLL, GenerationsCore.id("models/block/pokedolls/" + name + ".pk"));
+    public PokeDollBlock(String name, boolean shiny, float scale) {
+        super(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(1.0f), GenerationsBlockEntities.POKE_DOLL, GenerationsCore.id("models/block/pokedolls/" + name + ".pk"));
         this.name = name;
         this.shiny = shiny;
         this.scale = scale;

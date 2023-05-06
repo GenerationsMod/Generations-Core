@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
-import generations.gg.generations.core.generationscore.world.level.block.PokeModUtilityBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.sound.PokeModSounds;
@@ -18,7 +18,7 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class PCBlock extends DoubleDyeableBlock<GenericDyedVariantBlockEntity, PCBlock> {
     public PCBlock(Properties arg) {
-        super(PCBlock::getBlock, PokeModBlockEntities.GENERIC_DYED_VARIANT, arg, PokeModBlockEntityModels.PC);
+        super(PCBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, arg, PokeModBlockEntityModels.PC);
     }
 
     @Override
@@ -31,22 +31,22 @@ public class PCBlock extends DoubleDyeableBlock<GenericDyedVariantBlockEntity, P
 
     public static DyedBlockItem<PCBlock> getBlock(DyeColor color) {
         return (switch (color) {
-            case WHITE -> PokeModUtilityBlocks.WHITE_PC;
-            case ORANGE -> PokeModUtilityBlocks.ORANGE_PC;
-            case MAGENTA -> PokeModUtilityBlocks.MAGENTA_PC;
-            case LIGHT_BLUE -> PokeModUtilityBlocks.LIGHT_BLUE_PC;
-            case YELLOW -> PokeModUtilityBlocks.YELLOW_PC;
-            case LIME -> PokeModUtilityBlocks.LIME_PC;
-            case PINK -> PokeModUtilityBlocks.PINK_PC;
-            case GRAY -> PokeModUtilityBlocks.GRAY_PC;
-            case LIGHT_GRAY -> PokeModUtilityBlocks.LIGHT_GRAY_PC;
-            case CYAN -> PokeModUtilityBlocks.CYAN_PC;
-            case PURPLE -> PokeModUtilityBlocks.PURPLE_PC;
-            case BLUE -> PokeModUtilityBlocks.BLUE_PC;
-            case BROWN -> PokeModUtilityBlocks.BROWN_PC;
-            case GREEN -> PokeModUtilityBlocks.GREEN_PC;
-            case RED -> PokeModUtilityBlocks.RED_PC;
-            case BLACK -> PokeModUtilityBlocks.BLACK_PC;
+            case WHITE -> GenerationsUtilityBlocks.WHITE_PC;
+            case ORANGE -> GenerationsUtilityBlocks.ORANGE_PC;
+            case MAGENTA -> GenerationsUtilityBlocks.MAGENTA_PC;
+            case LIGHT_BLUE -> GenerationsUtilityBlocks.LIGHT_BLUE_PC;
+            case YELLOW -> GenerationsUtilityBlocks.YELLOW_PC;
+            case LIME -> GenerationsUtilityBlocks.LIME_PC;
+            case PINK -> GenerationsUtilityBlocks.PINK_PC;
+            case GRAY -> GenerationsUtilityBlocks.GRAY_PC;
+            case LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_PC;
+            case CYAN -> GenerationsUtilityBlocks.CYAN_PC;
+            case PURPLE -> GenerationsUtilityBlocks.PURPLE_PC;
+            case BLUE -> GenerationsUtilityBlocks.BLUE_PC;
+            case BROWN -> GenerationsUtilityBlocks.BROWN_PC;
+            case GREEN -> GenerationsUtilityBlocks.GREEN_PC;
+            case RED -> GenerationsUtilityBlocks.RED_PC;
+            case BLACK -> GenerationsUtilityBlocks.BLACK_PC;
         }).get();
     }
 

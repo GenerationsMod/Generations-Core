@@ -18,6 +18,7 @@ dependencies {
 
 architectury {
     common("forge", "fabric")
+    platformSetupLoomIde()
 }
 
 loom.accessWidenerPath.set(file("src/main/resources/generationscore.accesswidener"))

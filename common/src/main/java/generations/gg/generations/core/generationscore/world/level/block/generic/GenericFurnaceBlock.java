@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.generic;
 
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericFurnaceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -25,6 +25,6 @@ public class GenericFurnaceBlock extends FurnaceBlock {
     @Override
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> blockEntityType) {
-        return FurnaceBlock.createFurnaceTicker(level, blockEntityType, PokeModBlockEntities.GENERIC_FURNACE.get());
+        return FurnaceBlock.createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_FURNACE.get());
     }
 }

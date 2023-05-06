@@ -22,12 +22,12 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class PokeModDecorationBlocks {
+public class GenerationsDecorationBlocks {
     public static final DeferredRegister<Block> DECORATIONS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final List<RegistrySupplier<DyedBlockItem<VendingMachineBlock>>> VENDING_MACHINE_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<DyedBlockItem<UmbrellaBlock>>> UMBRELLA_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<DyedBlockItem<PastelBeanBagBlock>>> PASTEL_BEAN_BAG_BLOCKS = new ArrayList<>();
-    public static final List<RegistrySupplier<DyedBlockItem<PokeballRugBlock>>> POKEDOLL_RUG_BLOCKS = new ArrayList<>();
+    public static final List<RegistrySupplier<DyedBlockItem<RugBlock>>> POKEDOLL_RUG_BLOCKS = new ArrayList<>();
 
     /**
      * Decoration Blocks
@@ -104,23 +104,23 @@ public class PokeModDecorationBlocks {
     /**
      * Decoration Blocks (Vending Machine)
      */
-    public static final RegistrySupplier<PokeballRugBlock> POKEBALL_RUG = registerBlock("pokedoll_rug", () -> new PokeballRugBlock(BlockBehaviour.Properties.of(Material.WOOL).destroyTime(1.0f).sound(SoundType.WOOL)));
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> WHITE_POKEBALL_RUG = registerPokedollRug("white_pokeball_rug", DyeColor.WHITE);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> LIGHT_GRAY_POKEBALL_RUG = registerPokedollRug("light_gray_pokeball_rug", DyeColor.LIGHT_GRAY);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> GRAY_POKEBALL_RUG = registerPokedollRug("gray_pokeball_rug", DyeColor.GRAY);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> BLACK_POKEBALL_RUG = registerPokedollRug("black_pokeball_rug", DyeColor.BLACK);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> BROWN_POKEBALL_RUG = registerPokedollRug("brown_pokeball_rug", DyeColor.BROWN);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> RED_POKEBALL_RUG = registerPokedollRug("red_pokeball_rug", DyeColor.RED);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> ORANGE_POKEBALL_RUG = registerPokedollRug("orange_pokeball_rug", DyeColor.ORANGE);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> YELLOW_POKEBALL_RUG = registerPokedollRug("yellow_pokeball_rug", DyeColor.YELLOW);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> LIME_POKEBALL_RUG = registerPokedollRug("lime_pokeball_rug", DyeColor.LIME);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> GREEN_POKEBALL_RUG = registerPokedollRug("green_pokeball_rug", DyeColor.GREEN);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> CYAN_POKEBALL_RUG = registerPokedollRug("cyan_pokeball_rug", DyeColor.CYAN);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> LIGHT_BLUE_POKEBALL_RUG = registerPokedollRug("light_blue_pokeball_rug", DyeColor.LIGHT_BLUE);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> BLUE_POKEBALL_RUG = registerPokedollRug("blue_pokeball_rug", DyeColor.BLUE);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> PURPLE_POKEBALL_RUG = registerPokedollRug("purple_pokeball_rug", DyeColor.PURPLE);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> MAGENTA_POKEBALL_RUG = registerPokedollRug("magenta_pokeball_rug", DyeColor.MAGENTA);
-    public static final RegistrySupplier<DyedBlockItem<PokeballRugBlock>> PINK_POKEBALL_RUG = registerPokedollRug("pink_pokeball_rug", DyeColor.PINK);
+    public static final RegistrySupplier<RugBlock> POKEBALL_RUG = registerBlock("pokedoll_rug", () -> new RugBlock(BlockBehaviour.Properties.of(Material.WOOL).destroyTime(1.0f).sound(SoundType.WOOL)));
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> WHITE_POKEBALL_RUG = registerPokedollRug("white_pokeball_rug", DyeColor.WHITE);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> LIGHT_GRAY_POKEBALL_RUG = registerPokedollRug("light_gray_pokeball_rug", DyeColor.LIGHT_GRAY);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> GRAY_POKEBALL_RUG = registerPokedollRug("gray_pokeball_rug", DyeColor.GRAY);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> BLACK_POKEBALL_RUG = registerPokedollRug("black_pokeball_rug", DyeColor.BLACK);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> BROWN_POKEBALL_RUG = registerPokedollRug("brown_pokeball_rug", DyeColor.BROWN);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> RED_POKEBALL_RUG = registerPokedollRug("red_pokeball_rug", DyeColor.RED);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> ORANGE_POKEBALL_RUG = registerPokedollRug("orange_pokeball_rug", DyeColor.ORANGE);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> YELLOW_POKEBALL_RUG = registerPokedollRug("yellow_pokeball_rug", DyeColor.YELLOW);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> LIME_POKEBALL_RUG = registerPokedollRug("lime_pokeball_rug", DyeColor.LIME);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> GREEN_POKEBALL_RUG = registerPokedollRug("green_pokeball_rug", DyeColor.GREEN);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> CYAN_POKEBALL_RUG = registerPokedollRug("cyan_pokeball_rug", DyeColor.CYAN);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> LIGHT_BLUE_POKEBALL_RUG = registerPokedollRug("light_blue_pokeball_rug", DyeColor.LIGHT_BLUE);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> BLUE_POKEBALL_RUG = registerPokedollRug("blue_pokeball_rug", DyeColor.BLUE);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> PURPLE_POKEBALL_RUG = registerPokedollRug("purple_pokeball_rug", DyeColor.PURPLE);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> MAGENTA_POKEBALL_RUG = registerPokedollRug("magenta_pokeball_rug", DyeColor.MAGENTA);
+    public static final RegistrySupplier<DyedBlockItem<RugBlock>> PINK_POKEBALL_RUG = registerPokedollRug("pink_pokeball_rug", DyeColor.PINK);
 
     private static <T extends Block> RegistrySupplier<T> registerDecorationItem(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = DECORATIONS.register(name, blockSupplier);
@@ -150,7 +150,7 @@ public class PokeModDecorationBlocks {
         return item;
     }
 
-    private static RegistrySupplier<DyedBlockItem<PokeballRugBlock>> registerPokedollRug(String name, DyeColor color) {
+    private static RegistrySupplier<DyedBlockItem<RugBlock>> registerPokedollRug(String name, DyeColor color) {
         var item = register(name, properties -> new DyedBlockItem<>(POKEBALL_RUG.get(), color, properties));
         POKEDOLL_RUG_BLOCKS.add(item);
         return item;
@@ -163,7 +163,7 @@ public class PokeModDecorationBlocks {
     public static void onInit() {
         GenerationsCore.LOGGER.info("Registering PokeMod Decorations");
         DECORATIONS.register();
-//        PokeMod.LOGGER.info("Registering PokeMod Vending Machines");
+        //GenerationsCore.LOGGER.info("Registering PokeMod Vending Machines");
 //        NO_ITEM_MODELS.register(eventBus);
     }
 }

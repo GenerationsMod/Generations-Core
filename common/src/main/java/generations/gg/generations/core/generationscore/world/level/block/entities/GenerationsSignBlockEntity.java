@@ -13,6 +13,6 @@ public class GenerationsSignBlockEntity extends SignBlockEntity {
 
     @Override
     public @NotNull BlockEntityType<?> getType() {
-        return PokeModBlockEntities.SIGN_BLOCK_ENTITIES.get();
+        return GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get();
     }
 }

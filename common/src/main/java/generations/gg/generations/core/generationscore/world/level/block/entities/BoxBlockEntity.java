@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BoxBlockEntity extends ModelProvidingBlockEntity {
     public BoxBlockEntity(BlockPos pos, BlockState state) {
-        super(PokeModBlockEntities.BOX.get(), pos, state);
+        super(GenerationsBlockEntities.BOX.get(), pos, state);
     }
 }

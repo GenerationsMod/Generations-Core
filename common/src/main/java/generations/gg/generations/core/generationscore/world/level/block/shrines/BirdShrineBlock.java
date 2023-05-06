@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
@@ -32,7 +32,7 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     }
 
     public BirdShrineBlock(Properties materialIn, ResourceLocation model, ResourceLocation pokeEntryId, RegistrySupplier<Item> imbuedItem, @Nullable RegistrySupplier<Item> galarianImbuedItem) {
-        super(materialIn, PokeModBlockEntities.GENERIC_SHRINE, model);
+        super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);
         this.pokeEntryId = pokeEntryId;
         this.imbuedItem = imbuedItem;
         this.galarianImbuedItem = galarianImbuedItem;
