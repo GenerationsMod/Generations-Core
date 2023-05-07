@@ -21,7 +21,7 @@ public class GenerationsCore
 {
 
 	/** The mod id of the Generations-Core mod. */
-	public static final String MOD_ID = "generations-core";
+	public static final String MOD_ID = "generations_core";
 
 	/** The random source for Generations-Core mod. */
 	public static final RandomSource RANDOM_SOURCE = RandomSource.create();

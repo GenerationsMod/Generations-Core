@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "generations-core",
+  "id": "generations_core",
   "version": "${version}",
 
   "name": "Generations-Core",
@@ -15,7 +15,7 @@
   "entrypoints": {},
   "mixins": [
     "GenerationsCore.mixins.json",
-    "Generations-Core-common.mixins.json"
+    "GenerationsCore-common.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.19",
