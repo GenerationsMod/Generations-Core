@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.level.block.fabric;
+package generations.gg.generations.core.generationscore.fabric.block;
 
 import com.google.common.collect.Streams;
 import net.minecraft.core.BlockPos;
