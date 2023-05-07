@@ -36,6 +36,7 @@ public class GenerationsCore
 		GenerationsItems.init();
 		GenerationsBlocks.init();
 		GenerationsWood.init();
+		GenerationsOres.init();
 		GenerationsPokeDolls.init();
 		GenerationsShrines.init();
 		GenerationsUtilityBlocks.init();

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.screen.container;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import generations.gg.generations.core.generationscore.client.screen.container.ContainerTextureSheet;
 import generations.gg.generations.core.generationscore.world.container.GenericChestContainer;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;

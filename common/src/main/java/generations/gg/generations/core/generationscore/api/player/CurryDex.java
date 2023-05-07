@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.api.player;
 import com.google.common.collect.ImmutableSet;
 import generations.gg.generations.core.generationscore.api.data.curry.Flavor;
 import generations.gg.generations.core.generationscore.api.events.CurryEvents;
-import generations.gg.generations.core.generationscore.util.PokeModUtils;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryTasteRating;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
@@ -194,9 +194,9 @@ public class CurryDex {
             curryDexEntry.biome = new ResourceLocation(entry.getString("biome"));
             curryDexEntry.pos = BlockPos.of(entry.getLong("pos"));
 
-            curryDexEntry.rating = PokeModUtils.getByName(entry.getString("rating"), CurryTasteRating.class).orElse(CurryTasteRating.Unknown);
-            curryDexEntry.type = PokeModUtils.getByName(entry.getString("type"), CurryType.class).orElse(CurryType.None);
-            curryDexEntry.flavor = PokeModUtils.getByName(entry.getString("flavor"), Flavor.class).orElse(Flavor.NONE);
+            curryDexEntry.rating = GenerationsUtils.getByName(entry.getString("rating"), CurryTasteRating.class).orElse(CurryTasteRating.Unknown);
+            curryDexEntry.type = GenerationsUtils.getByName(entry.getString("type"), CurryType.class).orElse(CurryType.None);
+            curryDexEntry.flavor = GenerationsUtils.getByName(entry.getString("flavor"), Flavor.class).orElse(Flavor.NONE);
 
             curryDexEntry.newEntry = entry.getBoolean("newEntry");
 

@@ -30,9 +30,9 @@ public class GenerationsHammerItem extends DiggerItem {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player player, @NotNull InteractionHand usedHand) {
         boolean result = false;
-        for (ToolEffect toolEffect : toolEffects) {
+        for (ToolEffect toolEffect : toolEffects)
             result = result || toolEffect.use(world, player, usedHand);
-        }
+
         return result ?
                 InteractionResultHolder.sidedSuccess(player.getItemInHand(usedHand), world.isClientSide()) :
                 super.use(world, player, usedHand);
@@ -41,9 +41,9 @@ public class GenerationsHammerItem extends DiggerItem {
     @Override
     public @NotNull InteractionResult useOn(@NotNull UseOnContext context) {
         boolean result = false;
-        for (ToolEffect toolEffect : toolEffects) {
+        for (ToolEffect toolEffect : toolEffects)
             result = result || toolEffect.useOn(context);
-        }
+
         return result ?
                 InteractionResult.sidedSuccess(context.getLevel().isClientSide()) :
                 super.useOn(context);

@@ -97,7 +97,9 @@ public class ExtendedsimpleItemContainer extends SimpleItemContainer {
         if (a.isEmpty() || !a.sameItem(b) || a.hasTag() != b.hasTag())
             return false;
 
-        return (!a.hasTag() || a.getTag().equals(b.getTag()));
+        if (!a.hasTag()) return true;
+        assert a.getTag() != null;
+        return (a.getTag().equals(b.getTag()));
     }
 
     @NotNull

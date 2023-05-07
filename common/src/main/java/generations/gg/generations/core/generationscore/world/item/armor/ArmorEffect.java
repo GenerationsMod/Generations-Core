@@ -9,8 +9,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public interface ArmorEffect {
-    void onArmorTick(ItemStack itemStack, Level world, Player player, PokeModArmorItem pokeModArmorItem);
-    void inventoryTick(ItemStack itemStack, Level world, Entity entity, int slotId, boolean isSelected, PokeModArmorItem pokeModArmorItem);
+    void onArmorTick(ItemStack itemStack, Level world, Player player, GenerationsArmorItem generationsArmorItem);
+    void inventoryTick(ItemStack itemStack, Level world, Entity entity, int slotId, boolean isSelected, GenerationsArmorItem generationsArmorItem);
 
     static boolean isWearingFullSet(Player player, ArmorMaterial material) {
         if (player == null) return true;
@@ -23,7 +23,7 @@ public interface ArmorEffect {
         }
 
         return true;
-//        var event = new ItemEvents.EquipFullArmorSet(player, material); TODO: EIther find or PR equilvent event to arch
+//        var event = new ItemEvents.EquipFullArmorSet(player, material); TODO: EIther find or PR equivalent event to arch
 //        MinecraftForge.EVENT_BUS.post(event);
 //        return event.isCanceled();
     }

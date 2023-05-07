@@ -128,7 +128,7 @@ public class GenerationsOres {
 	}
 
 
-	public static void onInitialize() {
+	public static void init() {
 		GenerationsCore.LOGGER.info("Registering PokeMod Ores");
 		ORES.register();
 	}

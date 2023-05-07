@@ -32,7 +32,7 @@ public class MailItem extends Item {
         var itemStack = player.getItemInHand(usedHand);
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer)
 //            PokeModNetworking.sendPacket(new S2COpenMailEditScreenPacket(usedHand), serverPlayer); TODO: Networking
-        player.awardStat(Stats.ITEM_USED.get(this));
+            player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }
 

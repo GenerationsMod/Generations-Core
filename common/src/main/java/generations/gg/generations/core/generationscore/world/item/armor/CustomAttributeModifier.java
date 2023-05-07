@@ -7,5 +7,5 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ItemStack;
 
 public interface CustomAttributeModifier {
-    Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack itemStack, PokeModArmorItem pokeModArmorItem);
+    Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack itemStack, GenerationsArmorItem generationsArmorItem);
 }

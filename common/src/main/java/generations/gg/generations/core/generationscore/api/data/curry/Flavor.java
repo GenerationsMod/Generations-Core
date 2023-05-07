@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.api.data.curry;
 //import com.pokemod.pokemod.api.data.pixelmon.StatisticsType;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.util.StringRepresentable;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.Locale;
@@ -44,7 +45,7 @@ public enum Flavor implements StringRepresentable {
     }
 
     @Override
-    public String getSerializedName() {
+    public @NotNull String getSerializedName() {
         return name().toLowerCase(Locale.ENGLISH);
     }
 }

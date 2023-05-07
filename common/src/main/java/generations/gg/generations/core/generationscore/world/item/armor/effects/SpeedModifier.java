@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.item.armor.effects
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import generations.gg.generations.core.generationscore.world.item.armor.CustomAttributeModifier;
-import generations.gg.generations.core.generationscore.world.item.armor.PokeModArmorItem;
+import generations.gg.generations.core.generationscore.world.item.armor.GenerationsArmorItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -23,8 +23,8 @@ public class SpeedModifier implements CustomAttributeModifier {
     }
 
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack itemStack, PokeModArmorItem pokeModArmorItem) {
-        return equipmentSlot != pokeModArmorItem.getType().getSlot() ?
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack itemStack, GenerationsArmorItem generationsArmorItem) {
+        return equipmentSlot != generationsArmorItem.getType().getSlot() ?
                 ImmutableMultimap.<Attribute, AttributeModifier>builder().build() :
                 ImmutableMultimap.<Attribute, AttributeModifier>builder()
                         .put(Attributes.MOVEMENT_SPEED, isDoubled(itemStack) ? this.elementalBootsModifier2x : this.elementalBootsModifier)

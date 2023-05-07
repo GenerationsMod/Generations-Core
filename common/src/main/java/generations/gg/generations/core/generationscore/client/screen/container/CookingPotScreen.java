@@ -34,13 +34,13 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotContaine
     protected void renderBg(@NotNull PoseStack poseStack, float partialTick, int mouseX, int mouseY) {
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, cookingPotGuiTextures);
-        this.blit(poseStack, this.leftPos, this.topPos, 0, 0, this.width, this.height);
+        blit(poseStack, this.leftPos, this.topPos, 0, 0, this.width, this.height);
 
         int l = this.getCookProgressScaled();
-        this.blit(poseStack, this.leftPos + 105, this.topPos + 24, 176, 18, l + 1, 16);
+        blit(poseStack, this.leftPos + 105, this.topPos + 24, 176, 18, l + 1, 16);
 
         if(cookingPot.isCooking()) {
-            this.blit(poseStack, this.leftPos + 106, this.topPos + 45, 176, 0, 20, 18);
+            blit(poseStack, this.leftPos + 106, this.topPos + 45, 176, 0, 20, 18);
         }
     }
 

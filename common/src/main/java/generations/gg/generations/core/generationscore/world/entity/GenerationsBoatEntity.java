@@ -11,16 +11,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class PokeModBoatEntity extends Boat {
+public class GenerationsBoatEntity extends Boat {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE =
-            SynchedEntityData.defineId(PokeModBoatEntity.class, EntityDataSerializers.INT);
+            SynchedEntityData.defineId(GenerationsBoatEntity.class, EntityDataSerializers.INT);
 
-    public PokeModBoatEntity(EntityType<? extends PokeModBoatEntity> entityType, Level level) {
+    public GenerationsBoatEntity(EntityType<? extends GenerationsBoatEntity> entityType, Level level) {
         super(entityType, level);
         this.blocksBuilding = true;
     }
 
-    public PokeModBoatEntity(Level worldIn, double x, double y, double z) {
+    public GenerationsBoatEntity(Level worldIn, double x, double y, double z) {
         this(PokeModEntities.BOAT_ENTITY.get(), worldIn);
         this.setPos(x, y, z);
         this.xo = x;
@@ -33,9 +33,9 @@ public class PokeModBoatEntity extends Boat {
     }
 
     protected void readAdditionalSaveData(CompoundTag compound) {
-        if (compound.contains("Type", 8)) {
+        if (compound.contains("Type", 8))
             this.setBoatType(Type.byName(compound.getString("Type")));
-        }
+
     }
 
     @Override
@@ -77,19 +77,16 @@ public class PokeModBoatEntity extends Boat {
 
         public static Type byId(int id) {
             Type[] types = values();
-            if (id < 0 || id >= types.length) {
-                id = 0;
-            }
+            if (id < 0 || id >= types.length) id = 0;
+
             return types[id];
         }
 
         public static Type byName(String nameIn) {
             Type[] types = values();
-            for (Type type : types) {
-                if (type.getName().equals(nameIn)) {
-                    return type;
-                }
-            }
+            for (Type type : types)
+                if (type.getName().equals(nameIn)) return type;
+
             return types[0];
         }
     }

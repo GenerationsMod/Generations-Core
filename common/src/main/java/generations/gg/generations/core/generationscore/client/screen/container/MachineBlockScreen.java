@@ -101,6 +101,7 @@ public class MachineBlockScreen extends AbstractContainerScreen<MachineBlockCont
                 AbstractContainerScreen.fill(poseStack, x, y, x + 16, y + 16, -2130706433);
             }
             RenderSystem.enableDepthTest();
+            assert this.minecraft != null;
             this.itemRenderer.renderAndDecorateItem(poseStack, this.minecraft.player, itemstack, x, y, slot.x + slot.y * this.imageWidth);
             this.itemRenderer.renderGuiItemDecorations(poseStack, this.font, itemstack, x, y, s);
         }

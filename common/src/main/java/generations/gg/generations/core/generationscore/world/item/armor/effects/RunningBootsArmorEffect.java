@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.item.armor.effects
 
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.armor.ArmorEffect;
-import generations.gg.generations.core.generationscore.world.item.armor.PokeModArmorItem;
+import generations.gg.generations.core.generationscore.world.item.armor.GenerationsArmorItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 
 public record RunningBootsArmorEffect() implements ArmorEffect {
     @Override
-    public void onArmorTick(ItemStack itemStack, Level world, Player player, PokeModArmorItem pokeModArmorItem) {
+    public void onArmorTick(ItemStack itemStack, Level world, Player player, GenerationsArmorItem generationsArmorItem) {
         if (world.isClientSide) return;
         if (player.isCreative()) return;
         if (player.isSpectator()) return;
@@ -33,7 +33,7 @@ public record RunningBootsArmorEffect() implements ArmorEffect {
     }
 
     @Override
-    public void inventoryTick(ItemStack itemStack, Level world, Entity entity, int slotId, boolean isSelected, PokeModArmorItem pokeModArmorItem) {
+    public void inventoryTick(ItemStack itemStack, Level world, Entity entity, int slotId, boolean isSelected, GenerationsArmorItem generationsArmorItem) {
 
     }
 }

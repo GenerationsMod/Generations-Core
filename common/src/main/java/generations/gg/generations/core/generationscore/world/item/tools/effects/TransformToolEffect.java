@@ -11,6 +11,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.Objects;
+
 public record TransformToolEffect(Block blockFrom, Block blockTo, int durabilityCost) implements ToolEffect {
     @Override
     public boolean use(Level world, Player player, InteractionHand usedHand) {
@@ -28,7 +30,7 @@ public record TransformToolEffect(Block blockFrom, Block blockTo, int durability
         if (!blockFrom.defaultBlockState().canOcclude()) return false;
         if (!context.getLevel().getBlockState(context.getClickedPos()).getBlock().equals(blockFrom)) return false;
         context.getLevel().setBlockAndUpdate(context.getClickedPos(), blockTo.defaultBlockState());
-        context.getItemInHand().hurtAndBreak(1, context.getPlayer(), (owner) -> owner.broadcastBreakEvent(context.getHand()));
+        context.getItemInHand().hurtAndBreak(1, Objects.requireNonNull(context.getPlayer()), (owner) -> owner.broadcastBreakEvent(context.getHand()));
         return true;
     }
 

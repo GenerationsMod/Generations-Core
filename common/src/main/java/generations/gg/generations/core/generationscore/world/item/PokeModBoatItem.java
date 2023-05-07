@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import generations.gg.generations.core.generationscore.world.entity.PokeModBoatEntity;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -22,9 +22,9 @@ import java.util.function.Predicate;
 public class PokeModBoatItem extends Item{
 
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::canBeCollidedWith);
-    private final PokeModBoatEntity.Type type;
+    private final GenerationsBoatEntity.Type type;
 
-    public PokeModBoatItem(Properties properties, PokeModBoatEntity.Type typeIn) {
+    public PokeModBoatItem(Properties properties, GenerationsBoatEntity.Type typeIn) {
         super(properties);
         this.type = typeIn;
     }
@@ -48,7 +48,7 @@ public class PokeModBoatItem extends Item{
                 }
             }
             if (raytraceresult.getType() == HitResult.Type.BLOCK) {
-                PokeModBoatEntity boatentity = new PokeModBoatEntity(worldIn, raytraceresult.getLocation().x, raytraceresult.getLocation().y, raytraceresult.getLocation().z);
+                GenerationsBoatEntity boatentity = new GenerationsBoatEntity(worldIn, raytraceresult.getLocation().x, raytraceresult.getLocation().y, raytraceresult.getLocation().z);
                 boatentity.setBoatType(this.type);
                 boatentity.setYRot(playerIn.getYRot());
                 if (!worldIn.noCollision(boatentity, boatentity.getBoundingBox().inflate(-0.1D))) {

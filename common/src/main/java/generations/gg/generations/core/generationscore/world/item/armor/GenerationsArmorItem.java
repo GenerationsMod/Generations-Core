@@ -10,20 +10,20 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PokeModArmorItem extends ArmorItem {
+public class GenerationsArmorItem extends ArmorItem {
     public final Set<ArmorEffect> armorEffects = new HashSet<>();
     public final Set<CustomAttributeModifier> customAttributeModifiers = new HashSet<>();
 
-    public PokeModArmorItem(ArmorMaterial armorMaterial, Type equipmentSlot, Properties properties) {
+    public GenerationsArmorItem(ArmorMaterial armorMaterial, Type equipmentSlot, Properties properties) {
         super(armorMaterial, equipmentSlot, properties);
     }
 
-    public PokeModArmorItem addArmorEffect(ArmorEffect armorEffect) {
+    public GenerationsArmorItem addArmorEffect(ArmorEffect armorEffect) {
         this.armorEffects.add(armorEffect);
         return this;
     }
 
-    public PokeModArmorItem addCustomAttributeModifier(CustomAttributeModifier customAttributeModifier) {
+    public GenerationsArmorItem addCustomAttributeModifier(CustomAttributeModifier customAttributeModifier) {
         this.customAttributeModifiers.add(customAttributeModifier);
         return this;
     }

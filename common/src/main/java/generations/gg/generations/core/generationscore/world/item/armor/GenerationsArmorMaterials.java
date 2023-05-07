@@ -9,7 +9,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
-public enum PokeModArmorMaterials implements ArmorMaterial {
+public enum GenerationsArmorMaterials implements ArmorMaterial {
     RUNNING("pokemod:running", 66, new int[]{3, 0, 0, 0}, 22, Ingredient.EMPTY),
     OLD_RUNNING("pokemod:old_running", 999999, new int[]{2, 0, 0, 0}, 13, Ingredient.EMPTY),
     AETHER("pokemod:aether", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
@@ -44,7 +44,7 @@ public enum PokeModArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Ingredient repairIngredient;
 
-    PokeModArmorMaterials(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Ingredient repairIngredient) {
+    GenerationsArmorMaterials(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Ingredient repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.slotProtections = slotProtections;

@@ -7,7 +7,7 @@ import org.joml.Vector3f;
 import java.util.EnumSet;
 import java.util.Optional;
 
-public class PokeModUtils {
+public class GenerationsUtils {
 
     public static int getIndex(double translatedCoord, int startCoord, int validSegment, int clickSegment, int sizeMax) {
         double testY = translatedCoord - startCoord;

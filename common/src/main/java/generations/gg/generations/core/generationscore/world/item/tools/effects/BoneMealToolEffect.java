@@ -11,6 +11,8 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.Objects;
+
 public record BoneMealToolEffect(int durabilityCost) implements ToolEffect {
     @Override
     public boolean use(Level world, Player player, InteractionHand usedHand) {
@@ -26,10 +28,10 @@ public record BoneMealToolEffect(int durabilityCost) implements ToolEffect {
             if (!blockstate.isFaceSturdy(context.getLevel(), blockPos, context.getClickedFace())) return false;
             if (!BoneMealItem.growWaterPlant(context.getItemInHand().copy(), context.getLevel(), blockPosRelative, context.getClickedFace())) return false;
         }
-        if (!context.getLevel().isClientSide()) {
+        if (!context.getLevel().isClientSide())
             context.getLevel().levelEvent(1505, blockPosRelative, 0);
-        }
-        context.getItemInHand().hurtAndBreak(durabilityCost, context.getPlayer(), (owner) -> owner.broadcastBreakEvent(context.getHand()));
+
+        context.getItemInHand().hurtAndBreak(durabilityCost, Objects.requireNonNull(context.getPlayer()), (owner) -> owner.broadcastBreakEvent(context.getHand()));
         return true;
     }
 }
