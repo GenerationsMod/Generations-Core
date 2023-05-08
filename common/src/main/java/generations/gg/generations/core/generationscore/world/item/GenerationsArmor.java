@@ -105,8 +105,6 @@ public class GenerationsArmor {
 	public static final RegistrySupplier<Item> WATER_STONE_BOOTS = ARMOR.register("water_stone_boots", () -> new GenerationsArmorItem(GenerationsArmorMaterials.WATER_STONE, ArmorItem.Type.BOOTS, of()).addCustomAttributeModifier(new SpeedModifier(0.5F)).addArmorEffect(new PotionArmorEffect(MobEffects.WATER_BREATHING, 0)));
 
 
-
-
 	public static Item.Properties of() {
 		return new Item.Properties();
 	}

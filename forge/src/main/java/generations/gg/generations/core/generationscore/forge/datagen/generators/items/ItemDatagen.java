@@ -31,6 +31,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ULTRA_BALL, "pokeballs/");
         createItem(GenerationsItems.GREAT_BALL, "pokeballs/");
         createItem(GenerationsItems.MASTER_BALL, "pokeballs/");
+        /*
         createItem(GenerationsItems.LEVEL_BALL, "pokeballs/");
         createItem(GenerationsItems.MOON_BALL, "pokeballs/");
         createItem(GenerationsItems.FRIEND_BALL, "pokeballs/");
@@ -60,6 +61,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GIGATON_BALL, "pokeballs/");
         createItem(GenerationsItems.FEATHER_BALL, "pokeballs/");
         createItem(GenerationsItems.JET_BALL, "pokeballs/");
+
 
         createItem(GenerationsItems.POTION, "restoration/");
         createItem(GenerationsItems.SUPER_POTION, "restoration/");
@@ -168,7 +170,9 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_POWDER, "restoration/");
         createItem(GenerationsItems.MAX_SOUP, "restoration/");
 
-        createItem(GenerationsItems.Z_INGOT, "materials/");
+         */
+
+        createItem(GenerationsItems.Z_INGOT, "ingots/");
         createItem(GenerationsItems.ALUMINUM_INGOT, "ingots/");
         createItem(GenerationsItems.ALUMINUM_PLATE, "materials/");
 
@@ -532,6 +536,8 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.TAPUNIUM_Z, "zcrystals/");
         createHeldItem(GenerationsItems.ULTRANECROZIUM_Z, "zcrystals/");
 
+        /*
+
         createPokedoll(GenerationsPokeDolls.SHINY_CELEBI_POKEDOLL);
         createPokedoll(GenerationsPokeDolls.CHARIZARD_POKEDOLL);
         createPokedoll(GenerationsPokeDolls.BLASTOISE_POKEDOLL);
@@ -692,6 +698,7 @@ public class ItemDatagen extends ItemModelProvider {
         createPokedoll(GenerationsPokeDolls.SHINY_ZAPDOS_POKEDOLL);
         createPokedoll(GenerationsPokeDolls.KRABBY_POKEDOLL);
         createPokedoll(GenerationsPokeDolls.CELEBI_POKEDOLL);
+         */
 
         createItem(GenerationsItems.RELIC_GOLD, "valuables/");
         createItem(GenerationsItems.RELIC_COPPER, "valuables/");
@@ -992,15 +999,15 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GALARICA_TWIG, "natural/");
         createItem(GenerationsItems.COVERED_OLD_AMBER, "natural/fossils/");
         createItem(GenerationsItems.COVERED_ARMOR_FOSSIL, "natural/fossils/");
-        createItem(GenerationsItems.COVERED_BIRD_FOSSIL, "natural/fossils/");
+//        createItem(GenerationsItems.COVERED_BIRD_FOSSIL, "natural/fossils/");
         createItem(GenerationsItems.COVERED_CLAW_FOSSIL, "natural/fossils/");
         createItem(GenerationsItems.COVERED_COVER_FOSSIL, "natural/fossils/");
-        createItem(GenerationsItems.COVERED_DINO_FOSSIL, "natural/fossils/");
+        //createItem(GenerationsItems.COVERED_DINO_FOSSIL, "natural/fossils/");
         createItem(GenerationsItems.COVERED_DOME_FOSSIL, "natural/fossils/");
-        createItem(GenerationsItems.COVERED_DRAKE_FOSSIL, "natural/fossils/");
-        createItem(GenerationsItems.COVERED_FISH_FOSSIL, "natural/fossils/");
-        createItem(GenerationsItems.COVERED_HELIX_FOSSIL, "natural/fossils/");
-        createItem(GenerationsItems.COVERED_JAW_FOSSIL, "natural/fossils/");
+        //createItem(GenerationsItems.COVERED_DRAKE_FOSSIL, "natural/fossils/");
+        //createItem(GenerationsItems.COVERED_FISH_FOSSIL, "natural/fossils/");
+        //createItem(GenerationsItems.COVERED_HELIX_FOSSIL, "natural/fossils/");
+        //createItem(GenerationsItems.COVERED_JAW_FOSSIL, "natural/fossils/");
         createItem(GenerationsItems.COVERED_PLUME_FOSSIL, "natural/fossils/");
         createItem(GenerationsItems.COVERED_ROOT_FOSSIL, "natural/fossils/");
         createItem(GenerationsItems.COVERED_SAIL_FOSSIL, "natural/fossils/");
@@ -1984,8 +1991,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM, "boat/");
         createItem(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM, "chest_boat/");
 
-        createCurry();
-        createImbuedFlute();
+        //createCurry();
+        //createImbuedFlute();
 
         createItem(GenerationsItems.TUMBLESTONE, "tumblestone/");
         createItem(GenerationsItems.BLACK_TUMBLESTONE, "tumblestone/");
@@ -2016,6 +2023,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLES, "item/blocks/decorations/");
         GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(block -> createItemBlockDir(block, "umbrellas"));
         GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(block -> createItemBlockDir(block, "rugs"));
+        /*
         GenerationsDecorationBlocks.PASTEL_BEAN_BAG_BLOCKS.forEach(block -> createItemBlockDir(block, "bean_bags"));
         GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.forEach(block -> createItemBlockDir(block, "vending_machines"));
 
@@ -2028,9 +2036,11 @@ public class ItemDatagen extends ItemModelProvider {
 
         createItemBlock(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "item/blocks/sign/");
 
+         */
+
         createPointedDripstoneItem(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE, "item/blocks/dripstone/");
 
-        GenerationsShrines.SHRINES.forEach(shrine -> createItemBlock(shrine, "item/blocks/shrines/"));
+        //GenerationsShrines.SHRINES.forEach(shrine -> createItemBlock(shrine, "item/blocks/shrines/"));
 
         createItemBlock(GenerationsBlocks.POKECENTER_DOOR, "item/blocks/doors/");
         createItemBlock(GenerationsWood.ULTRA_JUNGLE_DOOR, "item/blocks/doors/");

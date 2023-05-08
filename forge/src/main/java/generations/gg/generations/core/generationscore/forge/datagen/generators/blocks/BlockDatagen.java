@@ -242,9 +242,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerApricorn(GenerationsBlocks.YELLOW_APRICORN);
         registerApricorn(GenerationsBlocks.RED_APRICORN);
 
-
-
-
         registerApricornLeaves(GenerationsBlocks.BLACK_APRICORN_LEAVES);
         registerApricornLeaves(GenerationsBlocks.WHITE_APRICORN_LEAVES);
         registerApricornLeaves(GenerationsBlocks.PINK_APRICORN_LEAVES);
@@ -447,43 +444,36 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         getVariantBuilder(GenerationsBlocks.SOFT_SOIL.get()).forAllStates(state -> {
             SoftSoilBlock.Mulch mulch = state.getValue(SoftSoilBlock.MULCH);
 
-            if(mulch != SoftSoilBlock.Mulch.NONE) {
+            if(mulch != SoftSoilBlock.Mulch.NONE)
                 return ConfiguredModel.builder().modelFile(models().cubeAll("block/soft_soil_" + mulch.getSerializedName(), GenerationsCore.id("block/soft_soil_" + mulch.getSerializedName()))).build();
-            } else {
-                return ConfiguredModel.builder().modelFile(models().cubeAll("block/soft_soil", GenerationsCore.id("block/soft_soil"))).build();
-            }
+            else return ConfiguredModel.builder().modelFile(models().cubeAll("block/soft_soil", GenerationsCore.id("block/soft_soil"))).build();
+
         });
     }
 
     private void registerPallet(@NotNull RegistrySupplier<Block> block, RegistrySupplier<SlabBlock> slab, RegistrySupplier<StairBlock> stairs, RegistrySupplier<WallBlock> wall, RegistrySupplier<ButtonBlock> button, RegistrySupplier<PressurePlateBlock> pressurePlate, boolean dropSelf){
         if(!registered(block.get())) registerBlockItem(block);
-        if (dropSelf)
-            dropSelfList.add(block.get());
+        if (dropSelf) dropSelfList.add(block.get());
 
         if (slab != null) {
             if(!registered(slab.get())) registerSlab(slab.get(), block.get());
-            if (dropSelf)
-                dropSelfList.add(slab.get());
+            if (dropSelf) dropSelfList.add(slab.get());
         }
         if (stairs != null) {
             if(!registered(stairs.get())) registerStairs(stairs.get(), block.get());
-            if (dropSelf)
-                dropSelfList.add(stairs.get());
+            if (dropSelf) dropSelfList.add(stairs.get());
         }
         if (wall != null) {
             if(!registered(wall.get())) registerWall(wall.get(), block.get());
-            if (dropSelf)
-                dropSelfList.add(wall.get());
+            if (dropSelf) dropSelfList.add(wall.get());
         }
         if (button != null) {
             if(!registered(button.get())) registerButton(button.get(), block.get());
-            if (dropSelf)
-                dropSelfList.add(button.get());
+            if (dropSelf) dropSelfList.add(button.get());
         }
         if (pressurePlate != null) {
             if(!registered(pressurePlate.get())) registerPressurePlate(pressurePlate.get(), block.get());
-            if (dropSelf)
-                dropSelfList.add(pressurePlate.get());
+            if (dropSelf) dropSelfList.add(pressurePlate.get());
         }
     }
 

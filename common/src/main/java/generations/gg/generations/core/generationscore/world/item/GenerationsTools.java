@@ -153,7 +153,7 @@ public class GenerationsTools {
 		return new Item.Properties();
 	}
 
-	public static void onInitialize() {
+	public static void init() {
 		GenerationsCore.LOGGER.info("Registering PokeMod Tools");
 		TOOLS.register();
 	}
