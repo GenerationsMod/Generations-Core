@@ -5,6 +5,12 @@ repositories {
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
 }
 
+sourceSets {
+    main {
+        resources.srcDir("src/generated/resources")
+    }
+}
+
 dependencies {
     minecraft("com.mojang:minecraft:${rootProject.properties["minecraft_version"]}")
     mappings(loom.officialMojangMappings())
