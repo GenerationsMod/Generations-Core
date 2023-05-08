@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.level.block.forge;
+package generations.gg.generations.core.generationscore.forge.world.level.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
