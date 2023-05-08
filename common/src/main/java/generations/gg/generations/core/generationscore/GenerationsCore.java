@@ -40,6 +40,7 @@ public class GenerationsCore
 		GenerationsPokeDolls.init();
 		GenerationsShrines.init();
 		GenerationsUtilityBlocks.init();
+		GenerationsDecorationBlocks.init();
 		GenerationsBlockEntities.init();
 	}
 

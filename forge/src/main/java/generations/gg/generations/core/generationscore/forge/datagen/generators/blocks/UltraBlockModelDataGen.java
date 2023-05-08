@@ -34,12 +34,12 @@ public class UltraBlockModelDataGen extends GenerationsBlockStateProvider.Proxie
 	}
 
 	private void registerUltraBlock(Block block) {
-		String name = block.getDescriptionId().replace("block.pokemod.", "");
+		String name = block.getDescriptionId().replace("block.generations_core.", "");
 		simpleBlockWithItem(block, models().singleTexture(name, GenerationsCore.id("block/ultra/ultra_block"), "all", GenerationsCore.id("block/ultra/" + name)));
 	}
 	private void registerUltraStairs(StairBlock stair, Block block) {
-		String name = block.getDescriptionId().replace("block.pokemod.", "");
-		String stairName = stair.getDescriptionId().replace("block.pokemod.", "");
+		String name = block.getDescriptionId().replace("block.generations_core.", "");
+		String stairName = stair.getDescriptionId().replace("block.generations_core.", "");
 		BlockModelBuilder ultrastair = models().singleTexture(stairName, GenerationsCore.id("block/ultra/ultra_stairs"), "bottom", GenerationsCore.id("block/ultra/" + name)).texture("top", GenerationsCore.id("block/ultra/" + name)).texture("side", GenerationsCore.id("block/ultra/" + name));
 		BlockModelBuilder ultrastairInner = models().singleTexture(stairName + "_inner", GenerationsCore.id("block/ultra/ultra_stairs_inner"), "bottom", GenerationsCore.id("block/ultra/" + name)).texture("side", GenerationsCore.id("block/ultra/" + name)).texture("top", GenerationsCore.id("block/ultra/" + name));
 		BlockModelBuilder ultrastairOuter = models().singleTexture(stairName + "_outer", GenerationsCore.id("block/ultra/ultra_stairs_outer"), "bottom", GenerationsCore.id("block/ultra/" + name)).texture("side", GenerationsCore.id("block/ultra/" + name)).texture("top", GenerationsCore.id("block/ultra/" + name));
@@ -48,8 +48,8 @@ public class UltraBlockModelDataGen extends GenerationsBlockStateProvider.Proxie
 	}
 
 	private void registerUltraSlab(SlabBlock slab, Block block) {
-		String name = block.getDescriptionId().replace("block.pokemod.", "");
-		String slabname = slab.getDescriptionId().replace("block.pokemod.", "");
+		String name = block.getDescriptionId().replace("block.generations_core.", "");
+		String slabname = slab.getDescriptionId().replace("block.generations_core.", "");
 		BlockModelBuilder ultraSlab = models().singleTexture(slabname, GenerationsCore.id("block/ultra/ultra_slab"), "bottom", GenerationsCore.id("block/ultra/" + name)).texture("top", GenerationsCore.id("block/ultra/" + name)).texture("side", GenerationsCore.id("block/ultra/" + name));
 		BlockModelBuilder ultraSlabTop = models().singleTexture(slabname + "_top", GenerationsCore.id("block/ultra/ultra_slab_top"), "bottom", GenerationsCore.id("block/ultra/" + name)).texture("top", GenerationsCore.id("block/ultra/" + name)).texture("side", GenerationsCore.id("block/ultra/" + name));
 		BlockModelBuilder ultraSlabDouble = models().singleTexture(slabname + "_double", GenerationsCore.id("block/ultra/ultra_slab_double"), "end", GenerationsCore.id("block/ultra/" + name)).texture("side", GenerationsCore.id("block/ultra/" + name));
@@ -58,8 +58,8 @@ public class UltraBlockModelDataGen extends GenerationsBlockStateProvider.Proxie
 	}
 
 	private void registerUltraButton(ButtonBlock button, Block block) {
-		String name = block.getDescriptionId().replace("block.pokemod.", "");
-		String buttonname = button.getDescriptionId().replace("block.pokemod.", "");
+		String name = block.getDescriptionId().replace("block.generations_core.", "");
+		String buttonname = button.getDescriptionId().replace("block.generations_core.", "");
 		BlockModelBuilder ultraBlock = models().singleTexture(buttonname, GenerationsCore.id("block/ultra/ultra_button"), "texture", GenerationsCore.id("block/ultra/" + name));
 		BlockModelBuilder ultraButtonPressed = models().singleTexture(buttonname + "_pressed", GenerationsCore.id("block/ultra/ultra_button_pressed"), "texture", GenerationsCore.id("block/ultra/" + name));
 		buttonBlock(button, ultraBlock, ultraButtonPressed);
@@ -67,8 +67,8 @@ public class UltraBlockModelDataGen extends GenerationsBlockStateProvider.Proxie
 	}
 
 	private void registerUltraWall(WallBlock wall, Block block) {
-		String name = block.getDescriptionId().replace("block.pokemod.", "");
-		String wallname = wall.getDescriptionId().replace("block.pokemod.", "");
+		String name = block.getDescriptionId().replace("block.generations_core.", "");
+		String wallname = wall.getDescriptionId().replace("block.generations_core.", "");
 		BlockModelBuilder ultraWallPost = models().singleTexture(wallname + "_post", GenerationsCore.id("block/ultra/ultra_wall_post"), "wall", GenerationsCore.id("block/ultra/" + name));
 		BlockModelBuilder ultraWallSide = models().singleTexture(wallname + "_side", GenerationsCore.id("block/ultra/ultra_wall_side"), "wall", GenerationsCore.id("block/ultra/" + name));
 		BlockModelBuilder ultraWallSideTall = models().singleTexture(wallname + "_side_tall", GenerationsCore.id("block/ultra/ultra_wall_side_tall"), "wall", GenerationsCore.id("block/ultra/" + name));
@@ -77,8 +77,8 @@ public class UltraBlockModelDataGen extends GenerationsBlockStateProvider.Proxie
 	}
 
 	private void registerUltraPressurePlate(PressurePlateBlock pressurePlate, Block block) {
-		String name = block.getDescriptionId().replace("block.pokemod.", "");
-		String pressureplatename = pressurePlate.getDescriptionId().replace("block.pokemod.", "");
+		String name = block.getDescriptionId().replace("block.generations_core.", "");
+		String pressureplatename = pressurePlate.getDescriptionId().replace("block.generations_core.", "");
 		BlockModelBuilder ultraPressurePlateUp = models().singleTexture(pressureplatename + "_up", GenerationsCore.id("block/ultra/ultra_pressure_plate_up"), "texture", GenerationsCore.id("block/ultra/" + name));
 		BlockModelBuilder ultraPressurePlateDown = models().singleTexture(pressureplatename + "_down", GenerationsCore.id("block/ultra/ultra_pressure_plate_down"), "texture", GenerationsCore.id("block/ultra/" + name));
 		pressurePlateBlock(pressurePlate, ultraPressurePlateUp, ultraPressurePlateDown);

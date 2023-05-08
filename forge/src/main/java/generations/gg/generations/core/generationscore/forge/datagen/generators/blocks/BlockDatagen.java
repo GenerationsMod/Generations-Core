@@ -233,7 +233,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerGate(GenerationsBlocks.WHITE_PICKET_FENCE_GATE.get(), GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
         registerFence(GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
 
-
+/*
         registerApricorn(GenerationsBlocks.BLACK_APRICORN);
         registerApricorn(GenerationsBlocks.WHITE_APRICORN);
         registerApricorn(GenerationsBlocks.PINK_APRICORN);
@@ -241,6 +241,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerApricorn(GenerationsBlocks.BLUE_APRICORN);
         registerApricorn(GenerationsBlocks.YELLOW_APRICORN);
         registerApricorn(GenerationsBlocks.RED_APRICORN);
+
+
 
 
         registerApricornLeaves(GenerationsBlocks.BLACK_APRICORN_LEAVES);
@@ -330,6 +332,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBerryBush(GenerationsBlocks.YACHE_BERRY_BUSH);
         registerBerryBush(GenerationsBlocks.YAGO_BERRY_BUSH);
 
+ */
+
         registerBlockItem(GenerationsBlocks.RAW_ALUMINUM_BLOCK);
         registerBlockItem(GenerationsBlocks.ALUMINUM_BLOCK);
         registerPallet(GenerationsBlocks.RUBY_BLOCK, GenerationsBlocks.RUBY_SLAB, GenerationsBlocks.RUBY_STAIRS, GenerationsBlocks.RUBY_WALL, null, null, true);
@@ -361,7 +365,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
 
         //Ultra Space
-        registerSandStonePallet(GenerationsBlocks.ULTRA_SANDSTONE, GenerationsBlocks.ULTRA_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SANDSTONE_WALL, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_WALL, GenerationsBlocks.ULTRA_CHISELED_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE_SLAB);
+        //registerSandStonePallet(GenerationsBlocks.ULTRA_SANDSTONE, GenerationsBlocks.ULTRA_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SANDSTONE_WALL, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_WALL, GenerationsBlocks.ULTRA_CHISELED_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE_SLAB);
         registerBlockItem(GenerationsBlocks.GHOST_LANTERN);
         registerBlockItem(GenerationsBlocks.MACHINE_BLOCK);
         registerBlockItem(GenerationsBlocks.RUINS_SAND);
@@ -379,11 +383,12 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.POKECENTER_ROOF, GenerationsBlocks.POKECENTER_ROOF_SLAB, GenerationsBlocks.POKECENTER_ROOF_STAIRS, GenerationsBlocks.POKECENTER_ROOF_WALL, null, null, true);
         registerPallet(GenerationsBlocks.POKECENTER_ROOF_2, GenerationsBlocks.POKECENTER_ROOF_2_SLAB, GenerationsBlocks.POKECENTER_ROOF_2_STAIRS, GenerationsBlocks.POKECENTER_ROOF_2_WALL, null, null, true);
 
+        /*
         pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, GenerationsItems.POKE_BALL);
         pokeBallChests(GenerationsBlocks.GREATBALL_CHEST, GenerationsItems.GREAT_BALL);
         pokeBallChests(GenerationsBlocks.ULTRABALL_CHEST, GenerationsItems.ULTRA_BALL);
         pokeBallChests(GenerationsBlocks.MASTERBALL_CHEST, GenerationsItems.MASTER_BALL);
-
+         */
         //Furnaces
         registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE);
         registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE);
@@ -397,8 +402,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.RICH_SOIL_3);
         registerBlockItem(GenerationsBlocks.RICH_SOIL_4);
 
-        GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
+        //GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
+        /*
         registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "sign");
         GenerationsDecorationBlocks.DECORATIONS.forEach(block -> {
             if (block.get() instanceof BeanBagBlock) registerBlockItemParticle(block, "bean_bags");
@@ -406,15 +412,17 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
             else registerBlockItemParticle(block, "decorations");
         });
 
-        GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block, "shrines"));
+         */
+
+        //GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block, "shrines"));
 //      GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> registerBlockItemParticle(block.get().getBlock(), "utility_blocks/pc"));
-        registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN, "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.BREEDER, "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.BOX, "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT, "utility_blocks");
-        registerNoModel(GenerationsUtilityBlocks.PC);
-        registerNoModel(GenerationsUtilityBlocks.CLOCK);
-        registerNoModel(GenerationsUtilityBlocks.HEALER);
+        //registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN, "utility_blocks");
+        //registerBlockItemParticle(GenerationsUtilityBlocks.BREEDER, "utility_blocks");
+        //registerBlockItemParticle(GenerationsUtilityBlocks.BOX, "utility_blocks");
+        //registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT, "utility_blocks");
+        //registerNoModel(GenerationsUtilityBlocks.PC);
+        //registerNoModel(GenerationsUtilityBlocks.CLOCK);
+        //registerNoModel(GenerationsUtilityBlocks.HEALER);
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);
         registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE);
@@ -766,7 +774,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
                 .texture("south", GenerationsCore.id("block/crafting_table/" + table.getId().getPath() + "_side"))
                 .texture("up", GenerationsCore.id("block/crafting_table/" + table.getId().getPath() + "_top"))
                 .texture("west", GenerationsCore.id("block/crafting_table/" + table.getId().getPath() + "_front"));
-        simpleBlockWithItem((Block) table, tableModel);
+        simpleBlockWithItem(table.get().builtInRegistryHolder().get(), tableModel);
     }
 
     private void registerInfestedBlock(RegistrySupplier<InfestedBlock> block){

@@ -160,7 +160,7 @@ public class GenerationsDecorationBlocks {
         return GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.DECORATIONS)));
     }
 
-    public static void onInit() {
+    public static void init() {
         GenerationsCore.LOGGER.info("Registering PokeMod Decorations");
         DECORATIONS.register();
         //GenerationsCore.LOGGER.info("Registering PokeMod Vending Machines");

@@ -40,9 +40,12 @@ repositories {
     maven {
         url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1"
     }
-//    maven {
-//        url = "https://nexus.resourcefulbees.com/repository/maven-public/"
-//    }
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
@@ -51,7 +54,7 @@ dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
-//    modApi "earth.terrarium:botarium-forge-${rootProject.minecraft_version}:${rootProject.botarium_version}"
+    modImplementation "curse.maven:Botarium-704113:4439777"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
