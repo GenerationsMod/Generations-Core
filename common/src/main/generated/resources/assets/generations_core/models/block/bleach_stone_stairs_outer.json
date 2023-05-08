@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "generations_core:block/bleach_stone",
+    "side": "generations_core:block/bleach_stone",
+    "top": "generations_core:block/bleach_stone"
+  }
+}

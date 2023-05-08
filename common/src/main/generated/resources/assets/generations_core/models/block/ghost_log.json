@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "generations_core:block/ghost_log_top",
+    "side": "generations_core:block/ghost_log",
+    "top": "generations_core:block/ghost_log_top"
+  }
+}

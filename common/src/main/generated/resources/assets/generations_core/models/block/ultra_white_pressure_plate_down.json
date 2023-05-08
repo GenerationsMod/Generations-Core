@@ -1,0 +1,6 @@
+{
+  "parent": "generations_core:block/ultra/ultra_pressure_plate_down",
+  "textures": {
+    "texture": "generations_core:block/ultra/ultra_white"
+  }
+}

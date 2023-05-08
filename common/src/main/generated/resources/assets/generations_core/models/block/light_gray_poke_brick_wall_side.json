@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "generations_core:block/light_gray_poke_brick"
+  }
+}

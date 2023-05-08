@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "generations_core:block/ultra_dark_planks",
+    "east": "generations_core:block/crafting_table/ultra_dark_crafting_table_side",
+    "north": "generations_core:block/crafting_table/ultra_dark_crafting_table_front",
+    "particle": "generations_core:block/crafting_table/ultra_dark_crafting_table_front",
+    "south": "generations_core:block/crafting_table/ultra_dark_crafting_table_side",
+    "up": "generations_core:block/crafting_table/ultra_dark_crafting_table_top",
+    "west": "generations_core:block/crafting_table/ultra_dark_crafting_table_front"
+  }
+}

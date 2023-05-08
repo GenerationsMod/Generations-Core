@@ -1,0 +1,7 @@
+{
+  "parent": "generations_core:block/ultra/ultra_slab_double",
+  "textures": {
+    "end": "generations_core:block/ultra/ultra_purple",
+    "side": "generations_core:block/ultra/ultra_purple"
+  }
+}

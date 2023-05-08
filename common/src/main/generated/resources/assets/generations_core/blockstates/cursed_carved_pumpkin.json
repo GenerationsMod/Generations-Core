@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "generations_core:block/cursed_carved_pumpkin",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "generations_core:block/cursed_carved_pumpkin"
+    },
+    "facing=south": {
+      "model": "generations_core:block/cursed_carved_pumpkin",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "generations_core:block/cursed_carved_pumpkin",
+      "y": 270
+    }
+  }
+}

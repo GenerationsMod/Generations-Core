@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "generations_core:block/golden_temple_sandstone_bottom",
+    "side": "generations_core:block/golden_temple_sandstone",
+    "top": "generations_core:block/golden_temple_sandstone_top"
+  }
+}

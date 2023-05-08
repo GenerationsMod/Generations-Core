@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "generations_core:block/mossy_charge_stone_bricks"
+      },
+      {
+        "model": "generations_core:block/mossy_charge_stone_bricks_mirrored"
+      },
+      {
+        "model": "generations_core:block/mossy_charge_stone_bricks",
+        "y": 180
+      },
+      {
+        "model": "generations_core:block/mossy_charge_stone_bricks_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

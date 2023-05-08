@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "generations_core:block/ice_pillar_side",
+    "side": "generations_core:block/ice_pillar_side",
+    "top": "generations_core:block/ice_pillar_side"
+  }
+}

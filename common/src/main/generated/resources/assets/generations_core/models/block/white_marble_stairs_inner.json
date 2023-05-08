@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "generations_core:block/white_marble",
+    "side": "generations_core:block/white_marble",
+    "top": "generations_core:block/white_marble"
+  }
+}

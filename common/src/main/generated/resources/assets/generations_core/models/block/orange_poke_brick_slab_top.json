@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "generations_core:block/orange_poke_brick",
+    "side": "generations_core:block/orange_poke_brick",
+    "top": "generations_core:block/orange_poke_brick"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "generations_core:block/ghost_pillar_top"
+  }
+}

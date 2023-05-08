@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_mirrored_all",
+  "textures": {
+    "all": "generations_core:block/chiseled_charge_stone_bricks"
+  }
+}

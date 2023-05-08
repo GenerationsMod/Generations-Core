@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/subway_floor_full_cross_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/subway_floor_full_cross"
+    },
+    "type=top": {
+      "model": "generations_core:block/subway_floor_full_cross_slab_top"
+    }
+  }
+}

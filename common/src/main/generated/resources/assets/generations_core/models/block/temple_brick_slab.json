@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "generations_core:block/temple_brick",
+    "side": "generations_core:block/temple_brick",
+    "top": "generations_core:block/temple_brick"
+  }
+}

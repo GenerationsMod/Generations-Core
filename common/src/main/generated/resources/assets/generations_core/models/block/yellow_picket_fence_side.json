@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "generations_core:block/yellow_picket_fence"
+  }
+}

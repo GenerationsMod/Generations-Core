@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "generations_core:block/pink_marble_pressure_plate"
+    },
+    "powered=true": {
+      "model": "generations_core:block/pink_marble_pressure_plate_down"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "generations_core:block/mossy_charge_stone_bricks",
+    "side": "generations_core:block/mossy_charge_stone_bricks",
+    "top": "generations_core:block/mossy_charge_stone_bricks"
+  }
+}

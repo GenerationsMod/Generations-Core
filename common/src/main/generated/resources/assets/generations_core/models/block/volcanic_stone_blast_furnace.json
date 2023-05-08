@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "generations_core:block/furnace/volcanic_stone_blast_furnace_front",
+    "side": "generations_core:block/furnace/volcanic_stone_blast_furnace_side",
+    "top": "generations_core:block/furnace/volcanic_stone_blast_furnace_top"
+  }
+}

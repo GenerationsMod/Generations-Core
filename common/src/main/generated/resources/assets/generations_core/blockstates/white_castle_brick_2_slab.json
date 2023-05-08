@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/white_castle_brick_2_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/white_castle_brick_2"
+    },
+    "type=top": {
+      "model": "generations_core:block/white_castle_brick_2_slab_top"
+    }
+  }
+}

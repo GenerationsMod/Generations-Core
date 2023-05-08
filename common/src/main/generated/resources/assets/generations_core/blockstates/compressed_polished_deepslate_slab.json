@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/compressed_polished_deepslate_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/compressed_polished_deepslate"
+    },
+    "type=top": {
+      "model": "generations_core:block/compressed_polished_deepslate_slab_top"
+    }
+  }
+}

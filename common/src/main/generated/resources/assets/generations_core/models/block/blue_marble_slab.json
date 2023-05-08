@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "generations_core:block/blue_marble",
+    "side": "generations_core:block/blue_marble",
+    "top": "generations_core:block/blue_marble"
+  }
+}

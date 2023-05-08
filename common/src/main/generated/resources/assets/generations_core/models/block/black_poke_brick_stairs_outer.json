@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "generations_core:block/black_poke_brick",
+    "side": "generations_core:block/black_poke_brick",
+    "top": "generations_core:block/black_poke_brick"
+  }
+}

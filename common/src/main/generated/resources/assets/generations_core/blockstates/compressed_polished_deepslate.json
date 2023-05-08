@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "generations_core:block/compressed_polished_deepslate"
+    }
+  }
+}

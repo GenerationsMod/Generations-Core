@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "generations_core:block/subway_wall",
+    "side": "generations_core:block/subway_wall",
+    "top": "generations_core:block/subway_wall"
+  }
+}

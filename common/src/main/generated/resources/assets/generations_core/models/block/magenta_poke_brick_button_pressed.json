@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "generations_core:block/magenta_poke_brick"
+  }
+}

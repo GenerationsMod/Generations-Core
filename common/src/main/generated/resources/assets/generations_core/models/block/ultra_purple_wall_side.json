@@ -1,0 +1,6 @@
+{
+  "parent": "generations_core:block/ultra/ultra_wall_side",
+  "textures": {
+    "wall": "generations_core:block/ultra/ultra_purple"
+  }
+}

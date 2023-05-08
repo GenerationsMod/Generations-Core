@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/water_quartz_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/water_quartz"
+    },
+    "type=top": {
+      "model": "generations_core:block/water_quartz_slab_top"
+    }
+  }
+}

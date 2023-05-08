@@ -1,0 +1,220 @@
+{
+  "variants": {
+    "moisture=0,mulch=amaze": {
+      "model": "generations_core:block/soft_soil_amaze"
+    },
+    "moisture=0,mulch=boost": {
+      "model": "generations_core:block/soft_soil_boost"
+    },
+    "moisture=0,mulch=damp": {
+      "model": "generations_core:block/soft_soil_damp"
+    },
+    "moisture=0,mulch=gooey": {
+      "model": "generations_core:block/soft_soil_gooey"
+    },
+    "moisture=0,mulch=growth": {
+      "model": "generations_core:block/soft_soil_growth"
+    },
+    "moisture=0,mulch=none": {
+      "model": "generations_core:block/soft_soil"
+    },
+    "moisture=0,mulch=rich": {
+      "model": "generations_core:block/soft_soil_rich"
+    },
+    "moisture=0,mulch=stable": {
+      "model": "generations_core:block/soft_soil_stable"
+    },
+    "moisture=0,mulch=surprise": {
+      "model": "generations_core:block/soft_soil_surprise"
+    },
+    "moisture=1,mulch=amaze": {
+      "model": "generations_core:block/soft_soil_amaze"
+    },
+    "moisture=1,mulch=boost": {
+      "model": "generations_core:block/soft_soil_boost"
+    },
+    "moisture=1,mulch=damp": {
+      "model": "generations_core:block/soft_soil_damp"
+    },
+    "moisture=1,mulch=gooey": {
+      "model": "generations_core:block/soft_soil_gooey"
+    },
+    "moisture=1,mulch=growth": {
+      "model": "generations_core:block/soft_soil_growth"
+    },
+    "moisture=1,mulch=none": {
+      "model": "generations_core:block/soft_soil"
+    },
+    "moisture=1,mulch=rich": {
+      "model": "generations_core:block/soft_soil_rich"
+    },
+    "moisture=1,mulch=stable": {
+      "model": "generations_core:block/soft_soil_stable"
+    },
+    "moisture=1,mulch=surprise": {
+      "model": "generations_core:block/soft_soil_surprise"
+    },
+    "moisture=2,mulch=amaze": {
+      "model": "generations_core:block/soft_soil_amaze"
+    },
+    "moisture=2,mulch=boost": {
+      "model": "generations_core:block/soft_soil_boost"
+    },
+    "moisture=2,mulch=damp": {
+      "model": "generations_core:block/soft_soil_damp"
+    },
+    "moisture=2,mulch=gooey": {
+      "model": "generations_core:block/soft_soil_gooey"
+    },
+    "moisture=2,mulch=growth": {
+      "model": "generations_core:block/soft_soil_growth"
+    },
+    "moisture=2,mulch=none": {
+      "model": "generations_core:block/soft_soil"
+    },
+    "moisture=2,mulch=rich": {
+      "model": "generations_core:block/soft_soil_rich"
+    },
+    "moisture=2,mulch=stable": {
+      "model": "generations_core:block/soft_soil_stable"
+    },
+    "moisture=2,mulch=surprise": {
+      "model": "generations_core:block/soft_soil_surprise"
+    },
+    "moisture=3,mulch=amaze": {
+      "model": "generations_core:block/soft_soil_amaze"
+    },
+    "moisture=3,mulch=boost": {
+      "model": "generations_core:block/soft_soil_boost"
+    },
+    "moisture=3,mulch=damp": {
+      "model": "generations_core:block/soft_soil_damp"
+    },
+    "moisture=3,mulch=gooey": {
+      "model": "generations_core:block/soft_soil_gooey"
+    },
+    "moisture=3,mulch=growth": {
+      "model": "generations_core:block/soft_soil_growth"
+    },
+    "moisture=3,mulch=none": {
+      "model": "generations_core:block/soft_soil"
+    },
+    "moisture=3,mulch=rich": {
+      "model": "generations_core:block/soft_soil_rich"
+    },
+    "moisture=3,mulch=stable": {
+      "model": "generations_core:block/soft_soil_stable"
+    },
+    "moisture=3,mulch=surprise": {
+      "model": "generations_core:block/soft_soil_surprise"
+    },
+    "moisture=4,mulch=amaze": {
+      "model": "generations_core:block/soft_soil_amaze"
+    },
+    "moisture=4,mulch=boost": {
+      "model": "generations_core:block/soft_soil_boost"
+    },
+    "moisture=4,mulch=damp": {
+      "model": "generations_core:block/soft_soil_damp"
+    },
+    "moisture=4,mulch=gooey": {
+      "model": "generations_core:block/soft_soil_gooey"
+    },
+    "moisture=4,mulch=growth": {
+      "model": "generations_core:block/soft_soil_growth"
+    },
+    "moisture=4,mulch=none": {
+      "model": "generations_core:block/soft_soil"
+    },
+    "moisture=4,mulch=rich": {
+      "model": "generations_core:block/soft_soil_rich"
+    },
+    "moisture=4,mulch=stable": {
+      "model": "generations_core:block/soft_soil_stable"
+    },
+    "moisture=4,mulch=surprise": {
+      "model": "generations_core:block/soft_soil_surprise"
+    },
+    "moisture=5,mulch=amaze": {
+      "model": "generations_core:block/soft_soil_amaze"
+    },
+    "moisture=5,mulch=boost": {
+      "model": "generations_core:block/soft_soil_boost"
+    },
+    "moisture=5,mulch=damp": {
+      "model": "generations_core:block/soft_soil_damp"
+    },
+    "moisture=5,mulch=gooey": {
+      "model": "generations_core:block/soft_soil_gooey"
+    },
+    "moisture=5,mulch=growth": {
+      "model": "generations_core:block/soft_soil_growth"
+    },
+    "moisture=5,mulch=none": {
+      "model": "generations_core:block/soft_soil"
+    },
+    "moisture=5,mulch=rich": {
+      "model": "generations_core:block/soft_soil_rich"
+    },
+    "moisture=5,mulch=stable": {
+      "model": "generations_core:block/soft_soil_stable"
+    },
+    "moisture=5,mulch=surprise": {
+      "model": "generations_core:block/soft_soil_surprise"
+    },
+    "moisture=6,mulch=amaze": {
+      "model": "generations_core:block/soft_soil_amaze"
+    },
+    "moisture=6,mulch=boost": {
+      "model": "generations_core:block/soft_soil_boost"
+    },
+    "moisture=6,mulch=damp": {
+      "model": "generations_core:block/soft_soil_damp"
+    },
+    "moisture=6,mulch=gooey": {
+      "model": "generations_core:block/soft_soil_gooey"
+    },
+    "moisture=6,mulch=growth": {
+      "model": "generations_core:block/soft_soil_growth"
+    },
+    "moisture=6,mulch=none": {
+      "model": "generations_core:block/soft_soil"
+    },
+    "moisture=6,mulch=rich": {
+      "model": "generations_core:block/soft_soil_rich"
+    },
+    "moisture=6,mulch=stable": {
+      "model": "generations_core:block/soft_soil_stable"
+    },
+    "moisture=6,mulch=surprise": {
+      "model": "generations_core:block/soft_soil_surprise"
+    },
+    "moisture=7,mulch=amaze": {
+      "model": "generations_core:block/soft_soil_amaze"
+    },
+    "moisture=7,mulch=boost": {
+      "model": "generations_core:block/soft_soil_boost"
+    },
+    "moisture=7,mulch=damp": {
+      "model": "generations_core:block/soft_soil_damp"
+    },
+    "moisture=7,mulch=gooey": {
+      "model": "generations_core:block/soft_soil_gooey"
+    },
+    "moisture=7,mulch=growth": {
+      "model": "generations_core:block/soft_soil_growth"
+    },
+    "moisture=7,mulch=none": {
+      "model": "generations_core:block/soft_soil"
+    },
+    "moisture=7,mulch=rich": {
+      "model": "generations_core:block/soft_soil_rich"
+    },
+    "moisture=7,mulch=stable": {
+      "model": "generations_core:block/soft_soil_stable"
+    },
+    "moisture=7,mulch=surprise": {
+      "model": "generations_core:block/soft_soil_surprise"
+    }
+  }
+}

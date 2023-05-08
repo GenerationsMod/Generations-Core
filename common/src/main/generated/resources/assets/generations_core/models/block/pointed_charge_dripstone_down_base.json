@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/pointed_dripstone",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "generations_core:block/pointed_charge_dripstone_down_base"
+  }
+}

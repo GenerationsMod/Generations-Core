@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/carved_pumpkin",
+  "textures": {
+    "front": "generations_core:block/cursed_carved_pumpkin",
+    "side": "generations_core:block/cursed_pumpkin_side",
+    "top": "generations_core:block/cursed_pumpkin_end"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/ice_pillar_top_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/ice_pillar_top"
+    },
+    "type=top": {
+      "model": "generations_core:block/ice_pillar_top_slab_top"
+    }
+  }
+}

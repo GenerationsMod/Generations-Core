@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "generations_core:block/cave_rock_floor",
+    "side": "generations_core:block/cave_rock_floor",
+    "top": "generations_core:block/cave_rock_floor"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "generations_core:block/ice_cave_rock_floor"
+  }
+}

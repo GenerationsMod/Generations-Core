@@ -1,0 +1,8 @@
+{
+  "parent": "generations_core:block/ultra/ultra_stairs",
+  "textures": {
+    "bottom": "generations_core:block/ultra/ultra_yellow",
+    "side": "generations_core:block/ultra/ultra_yellow",
+    "top": "generations_core:block/ultra/ultra_yellow"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "generations_core:block/white_poke_brick",
+    "side": "generations_core:block/white_poke_brick",
+    "top": "generations_core:block/white_poke_brick"
+  }
+}

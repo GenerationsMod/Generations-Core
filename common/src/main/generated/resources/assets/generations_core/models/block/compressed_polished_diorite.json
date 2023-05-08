@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "generations_core:block/compressed_polished_diorite"
+  }
+}

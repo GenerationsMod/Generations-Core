@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/golden_temple_sandstone_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/golden_temple_sandstone"
+    },
+    "type=top": {
+      "model": "generations_core:block/golden_temple_sandstone_slab_top"
+    }
+  }
+}

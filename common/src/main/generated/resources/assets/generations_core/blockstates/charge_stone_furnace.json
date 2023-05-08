@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,lit=false": {
+      "model": "generations_core:block/charge_stone_furnace",
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "generations_core:block/charge_stone_furnace_on",
+      "y": 90
+    },
+    "facing=north,lit=false": {
+      "model": "generations_core:block/charge_stone_furnace"
+    },
+    "facing=north,lit=true": {
+      "model": "generations_core:block/charge_stone_furnace_on"
+    },
+    "facing=south,lit=false": {
+      "model": "generations_core:block/charge_stone_furnace",
+      "y": 180
+    },
+    "facing=south,lit=true": {
+      "model": "generations_core:block/charge_stone_furnace_on",
+      "y": 180
+    },
+    "facing=west,lit=false": {
+      "model": "generations_core:block/charge_stone_furnace",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "generations_core:block/charge_stone_furnace_on",
+      "y": 270
+    }
+  }
+}

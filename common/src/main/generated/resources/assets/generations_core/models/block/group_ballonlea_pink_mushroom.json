@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "generations_core:block/group_ballonlea_pink_mushroom"
+  }
+}

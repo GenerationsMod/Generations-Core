@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "generations_core:block/ghost_planks",
+    "side": "generations_core:block/ghost_planks",
+    "top": "generations_core:block/ghost_planks"
+  }
+}

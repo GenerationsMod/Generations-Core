@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "generations_core:block/bridge_block",
+    "side": "generations_core:block/bridge_block",
+    "top": "generations_core:block/bridge_block"
+  }
+}

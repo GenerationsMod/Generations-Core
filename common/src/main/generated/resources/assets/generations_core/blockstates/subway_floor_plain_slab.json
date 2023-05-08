@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/subway_floor_plain_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/subway_floor_plain"
+    },
+    "type=top": {
+      "model": "generations_core:block/subway_floor_plain_slab_top"
+    }
+  }
+}

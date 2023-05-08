@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "generations_core:block/mossy_charge_stone_bricks"
+  }
+}

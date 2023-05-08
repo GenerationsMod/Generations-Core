@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "generations_core:block/charge_stone"
+      },
+      {
+        "model": "generations_core:block/charge_stone_mirrored"
+      },
+      {
+        "model": "generations_core:block/charge_stone",
+        "y": 180
+      },
+      {
+        "model": "generations_core:block/charge_stone_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "generations_core:block/ultra_light_gray_pressure_plate_up"
+    },
+    "powered=true": {
+      "model": "generations_core:block/ultra_light_gray_pressure_plate_down"
+    }
+  }
+}

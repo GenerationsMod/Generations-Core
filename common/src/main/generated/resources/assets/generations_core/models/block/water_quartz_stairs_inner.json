@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "generations_core:block/water_quartz",
+    "side": "generations_core:block/water_quartz",
+    "top": "generations_core:block/water_quartz"
+  }
+}

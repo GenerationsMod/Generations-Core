@@ -1,0 +1,6 @@
+{
+  "parent": "generations_core:block/ultra/ultra_block",
+  "textures": {
+    "all": "generations_core:block/ultra/ultra_cyan"
+  }
+}

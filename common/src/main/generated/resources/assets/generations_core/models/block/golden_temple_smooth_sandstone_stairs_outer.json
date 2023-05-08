@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "generations_core:block/golden_temple_sandstone_top",
+    "side": "generations_core:block/golden_temple_sandstone_top",
+    "top": "generations_core:block/golden_temple_sandstone_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "generations_core:block/mirrored_floor_2",
+    "side": "generations_core:block/mirrored_floor_2",
+    "top": "generations_core:block/mirrored_floor_2"
+  }
+}

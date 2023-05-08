@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/mirror_glass_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/mirror_glass"
+    },
+    "type=top": {
+      "model": "generations_core:block/mirror_glass_slab_top"
+    }
+  }
+}

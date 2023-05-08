@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "generations_core:block/ultra_dark_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "generations_core:block/ultra_dark_log"
+    },
+    "axis=z": {
+      "model": "generations_core:block/ultra_dark_log_horizontal",
+      "x": 90
+    }
+  }
+}

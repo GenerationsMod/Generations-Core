@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/ultra_magenta_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/ultra_magenta_slab_double"
+    },
+    "type=top": {
+      "model": "generations_core:block/ultra_magenta_slab_top"
+    }
+  }
+}

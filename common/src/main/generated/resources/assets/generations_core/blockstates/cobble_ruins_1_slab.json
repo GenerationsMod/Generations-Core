@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/cobble_ruins_1_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/cobble_ruins_1"
+    },
+    "type=top": {
+      "model": "generations_core:block/cobble_ruins_1_slab_top"
+    }
+  }
+}

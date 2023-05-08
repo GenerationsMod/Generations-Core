@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/temple_block_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/temple_block"
+    },
+    "type=top": {
+      "model": "generations_core:block/temple_block_slab_top"
+    }
+  }
+}

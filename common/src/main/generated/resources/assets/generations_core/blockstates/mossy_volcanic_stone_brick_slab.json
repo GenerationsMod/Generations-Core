@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/mossy_volcanic_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/mossy_volcanic_stone_bricks"
+    },
+    "type=top": {
+      "model": "generations_core:block/mossy_volcanic_stone_brick_slab_top"
+    }
+  }
+}

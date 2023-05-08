@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "generations_core:block/magenta_marble",
+    "side": "generations_core:block/magenta_marble",
+    "top": "generations_core:block/magenta_marble"
+  }
+}

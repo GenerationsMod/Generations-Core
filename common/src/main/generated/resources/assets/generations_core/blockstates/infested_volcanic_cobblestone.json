@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "generations_core:block/volcanic_cobblestone"
+      },
+      {
+        "model": "generations_core:block/volcanic_cobblestone_mirrored"
+      },
+      {
+        "model": "generations_core:block/volcanic_cobblestone",
+        "y": 180
+      },
+      {
+        "model": "generations_core:block/volcanic_cobblestone_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

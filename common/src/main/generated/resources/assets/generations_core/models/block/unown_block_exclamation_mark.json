@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "generations_core:block/unown_block_exclamation_mark"
+  }
+}
