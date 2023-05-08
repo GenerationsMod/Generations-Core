@@ -1,4 +1,4 @@
-package tags;
+package generations.gg.generations.core.generationscore.tags;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.core.registries.Registries;
