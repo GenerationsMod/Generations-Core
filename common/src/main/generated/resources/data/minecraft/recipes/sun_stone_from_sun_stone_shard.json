@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "sun_stone",
+  "key": {
+    "#": {
+      "item": "generations_core:sun_stone_shard"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "generations_core:sun_stone"
+  },
+  "show_notification": true
+}

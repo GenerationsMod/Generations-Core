@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:buizel_fur"
+    },
+    {
+      "item": "generations_core:buizel_fur"
+    },
+    {
+      "item": "generations_core:buizel_fur"
+    },
+    {
+      "item": "generations_core:magikarp_scales"
+    },
+    {
+      "item": "generations_core:magikarp_scales"
+    },
+    {
+      "item": "generations_core:magikarp_scales"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_11"
+  }
+}

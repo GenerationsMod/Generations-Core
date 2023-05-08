@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "compressed_polished_andesite_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:compressed_polished_andesite"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:compressed_polished_andesite_slab"
+  },
+  "show_notification": true
+}

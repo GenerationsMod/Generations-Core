@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:ralts_dust"
+    },
+    {
+      "item": "generations_core:ralts_dust"
+    },
+    {
+      "item": "generations_core:ralts_dust"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_19"
+  }
+}

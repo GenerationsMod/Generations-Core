@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "mirrored_floor_2_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:mirrored_floor_2"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:mirrored_floor_2_slab"
+  },
+  "show_notification": true
+}

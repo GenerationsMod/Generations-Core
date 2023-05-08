@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gothita_eyelash": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:gothita_eyelash"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ralts_dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:ralts_dust"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_41"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_ralts_dust",
+      "has_gothita_eyelash",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_41"
+    ]
+  }
+}

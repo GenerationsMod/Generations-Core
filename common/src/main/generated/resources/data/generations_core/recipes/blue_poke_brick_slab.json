@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "blue_poke_brick_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:blue_poke_brick"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:blue_poke_brick_slab"
+  },
+  "show_notification": true
+}

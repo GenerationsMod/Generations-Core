@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bronzor_fragment": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:bronzor_fragment"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pineco_husk": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:pineco_husk"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_104"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_pineco_husk",
+      "has_bronzor_fragment",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_104"
+    ]
+  }
+}

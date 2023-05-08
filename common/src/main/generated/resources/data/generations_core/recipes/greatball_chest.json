@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "generations_core:great_ball"
+    },
+    "X": {
+      "item": "generations_core:pokeball_chest"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EXE",
+    "EEE"
+  ],
+  "result": {
+    "item": "generations_core:greatball_chest"
+  },
+  "show_notification": true
+}

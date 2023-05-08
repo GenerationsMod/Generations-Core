@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flamigo_down": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:flamigo_down"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_impidimp_hair": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:impidimp_hair"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_meditite_sweat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:meditite_sweat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_158"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_flamigo_down",
+      "has_meditite_sweat",
+      "has_impidimp_hair",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_158"
+    ]
+  }
+}

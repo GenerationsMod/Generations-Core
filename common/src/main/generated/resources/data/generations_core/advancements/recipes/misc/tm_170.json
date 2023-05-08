@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cufant_tarnish": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:cufant_tarnish"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magnemite_screw": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:magnemite_screw"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_orthworm_tarnish": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:orthworm_tarnish"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_170"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_magnemite_screw",
+      "has_orthworm_tarnish",
+      "has_cufant_tarnish",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_170"
+    ]
+  }
+}

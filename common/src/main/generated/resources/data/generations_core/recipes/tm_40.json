@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:combee_honey"
+    },
+    {
+      "item": "generations_core:combee_honey"
+    },
+    {
+      "item": "generations_core:combee_honey"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_40"
+  }
+}

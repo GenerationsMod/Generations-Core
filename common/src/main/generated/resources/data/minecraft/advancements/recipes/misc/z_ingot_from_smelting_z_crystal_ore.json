@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:z_ingot_from_smelting_z_crystal_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_z_crystal_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:z_crystal_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_z_crystal_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:z_ingot_from_smelting_z_crystal_ore"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/pointed_dripstone",
+  "textures": {
+    "layer0": "generations_core:item/blocks/dripstone/pointed_charge_dripstone"
+  }
+}

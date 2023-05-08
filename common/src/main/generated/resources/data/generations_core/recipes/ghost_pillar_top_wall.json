@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ghost_pillar_top_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ghost_pillar_top"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:ghost_pillar_top_wall"
+  },
+  "show_notification": true
+}

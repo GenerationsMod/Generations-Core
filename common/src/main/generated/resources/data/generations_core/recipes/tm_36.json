@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:rockruff_rock"
+    },
+    {
+      "item": "generations_core:rockruff_rock"
+    },
+    {
+      "item": "generations_core:rockruff_rock"
+    },
+    {
+      "item": "generations_core:klawf_claw"
+    },
+    {
+      "item": "generations_core:klawf_claw"
+    },
+    {
+      "item": "generations_core:klawf_claw"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_36"
+  }
+}

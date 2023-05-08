@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "green_poke_brick_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:green_poke_brick"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:green_poke_brick_slab"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:murkrow_bauble"
+    },
+    {
+      "item": "generations_core:murkrow_bauble"
+    },
+    {
+      "item": "generations_core:murkrow_bauble"
+    },
+    {
+      "item": "generations_core:sandile_claw"
+    },
+    {
+      "item": "generations_core:sandile_claw"
+    },
+    {
+      "item": "generations_core:sandile_claw"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_62"
+  }
+}

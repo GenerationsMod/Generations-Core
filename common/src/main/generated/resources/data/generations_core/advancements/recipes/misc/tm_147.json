@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pichu_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:pichu_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_shinx_fang": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:shinx_fang"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_147"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tynamo_slime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:tynamo_slime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_shinx_fang",
+      "has_pichu_fur",
+      "has_tynamo_slime",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_147"
+    ]
+  }
+}

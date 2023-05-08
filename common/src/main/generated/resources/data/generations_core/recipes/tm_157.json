@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:litleo_tuft"
+    },
+    {
+      "item": "generations_core:litleo_tuft"
+    },
+    {
+      "item": "generations_core:litleo_tuft"
+    },
+    {
+      "item": "generations_core:numel_lava"
+    },
+    {
+      "item": "generations_core:numel_lava"
+    },
+    {
+      "item": "generations_core:numel_lava"
+    },
+    {
+      "item": "generations_core:capsakid_seed"
+    },
+    {
+      "item": "generations_core:capsakid_seed"
+    },
+    {
+      "item": "generations_core:capsakid_seed"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_157"
+  }
+}

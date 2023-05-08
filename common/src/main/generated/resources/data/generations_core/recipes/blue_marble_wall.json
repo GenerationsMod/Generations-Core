@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "blue_marble_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:blue_marble"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:blue_marble_wall"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "charge_cobblestone_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:charge_cobblestone"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:charge_cobblestone_wall"
+  },
+  "show_notification": true
+}

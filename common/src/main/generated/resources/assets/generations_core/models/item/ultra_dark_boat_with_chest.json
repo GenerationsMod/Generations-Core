@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "generations_core:item/chest_boat/ultra_dark_boat_with_chest"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_indeedee_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:indeedee_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ralts_dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:ralts_dust"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rellor_mud": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:rellor_mud"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_120"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rellor_mud",
+      "has_indeedee_fur",
+      "has_ralts_dust",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_120"
+    ]
+  }
+}

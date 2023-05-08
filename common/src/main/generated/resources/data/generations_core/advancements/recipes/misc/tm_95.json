@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kricketot_shell": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:kricketot_shell"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_surskit_syrup": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:surskit_syrup"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_95"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_venonat_fang": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:venonat_fang"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_surskit_syrup",
+      "has_venonat_fang",
+      "has_kricketot_shell",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_95"
+    ]
+  }
+}

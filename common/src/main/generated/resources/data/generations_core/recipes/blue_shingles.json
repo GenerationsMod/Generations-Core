@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:gravel"
+    },
+    "Y": {
+      "item": "minecraft:ink_sac"
+    },
+    "Z": {
+      "item": "minecraft:blue_dye"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "ZXZ",
+    "XYX"
+  ],
+  "result": {
+    "count": 5,
+    "item": "generations_core:blue_shingles"
+  },
+  "show_notification": true
+}

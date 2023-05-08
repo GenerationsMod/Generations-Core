@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:wattrel_feather"
+    },
+    {
+      "item": "generations_core:wattrel_feather"
+    },
+    {
+      "item": "generations_core:wattrel_feather"
+    },
+    {
+      "item": "generations_core:bombirdier_feather"
+    },
+    {
+      "item": "generations_core:bombirdier_feather"
+    },
+    {
+      "item": "generations_core:bombirdier_feather"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_14"
+  }
+}

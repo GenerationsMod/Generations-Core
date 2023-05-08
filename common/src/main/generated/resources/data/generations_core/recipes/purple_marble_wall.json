@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "purple_marble_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:purple_marble"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:purple_marble_wall"
+  },
+  "show_notification": true
+}

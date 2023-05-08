@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ultra_purple_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_purple"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:ultra_purple_slab"
+  },
+  "show_notification": true
+}

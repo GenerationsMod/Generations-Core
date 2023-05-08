@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bleach_stone_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:bleach_stone"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:bleach_stone_slab"
+  },
+  "show_notification": true
+}

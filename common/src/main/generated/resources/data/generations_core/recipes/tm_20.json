@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:petilil_leaf"
+    },
+    {
+      "item": "generations_core:petilil_leaf"
+    },
+    {
+      "item": "generations_core:petilil_leaf"
+    },
+    {
+      "item": "generations_core:hoppip_leaf"
+    },
+    {
+      "item": "generations_core:hoppip_leaf"
+    },
+    {
+      "item": "generations_core:hoppip_leaf"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_20"
+  }
+}

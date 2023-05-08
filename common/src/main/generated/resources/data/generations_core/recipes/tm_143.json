@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:snorunt_fur"
+    },
+    {
+      "item": "generations_core:snorunt_fur"
+    },
+    {
+      "item": "generations_core:snorunt_fur"
+    },
+    {
+      "item": "generations_core:snover_berries"
+    },
+    {
+      "item": "generations_core:snover_berries"
+    },
+    {
+      "item": "generations_core:snover_berries"
+    },
+    {
+      "item": "generations_core:cryogonal_ice"
+    },
+    {
+      "item": "generations_core:cryogonal_ice"
+    },
+    {
+      "item": "generations_core:cryogonal_ice"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_143"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:granite"
+    },
+    "Q": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "EQ",
+    "QE"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:rock"
+  },
+  "show_notification": true
+}

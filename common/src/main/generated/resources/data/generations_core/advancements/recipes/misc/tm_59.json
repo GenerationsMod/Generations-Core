@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dunsparce_scales": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:dunsparce_scales"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_girafarig_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:girafarig_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_59"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_veluza_fillet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:veluza_fillet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_veluza_fillet",
+      "has_girafarig_fur",
+      "has_dunsparce_scales",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_59"
+    ]
+  }
+}

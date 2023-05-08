@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "water_quartz_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:water_quartz"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:water_quartz_wall"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "group": "ruby_gem",
+  "ingredient": {
+    "item": "generations_core:charge_stone_ruby_ore"
+  },
+  "result": "generations_core:ruby"
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:spoink_pearl"
+    },
+    {
+      "item": "generations_core:spoink_pearl"
+    },
+    {
+      "item": "generations_core:spoink_pearl"
+    },
+    {
+      "item": "generations_core:meditite_sweat"
+    },
+    {
+      "item": "generations_core:meditite_sweat"
+    },
+    {
+      "item": "generations_core:meditite_sweat"
+    },
+    {
+      "item": "generations_core:drowzee_fur"
+    },
+    {
+      "item": "generations_core:drowzee_fur"
+    },
+    {
+      "item": "generations_core:drowzee_fur"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_54"
+  }
+}

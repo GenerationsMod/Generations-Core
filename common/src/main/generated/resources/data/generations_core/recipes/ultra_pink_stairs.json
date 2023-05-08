@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ultra_pink_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_pink"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:ultra_pink_stairs"
+  },
+  "show_notification": true
+}

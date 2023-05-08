@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cryogonal_ice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:cryogonal_ice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_snorunt_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:snorunt_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_snover_berries": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:snover_berries"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_143"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_snorunt_fur",
+      "has_snover_berries",
+      "has_cryogonal_ice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_143"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cobble_ruins_1_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:cobble_ruins_1"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:cobble_ruins_1_slab"
+  },
+  "show_notification": true
+}

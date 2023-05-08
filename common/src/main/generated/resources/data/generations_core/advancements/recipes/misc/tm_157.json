@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_capsakid_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:capsakid_seed"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_litleo_tuft": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:litleo_tuft"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_numel_lava": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:numel_lava"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_157"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_litleo_tuft",
+      "has_numel_lava",
+      "has_capsakid_seed",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_157"
+    ]
+  }
+}

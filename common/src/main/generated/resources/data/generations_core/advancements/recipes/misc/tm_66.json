@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_alomomola_mucus": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:alomomola_mucus"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_chewtle_claw": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:chewtle_claw"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_skwovet_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:skwovet_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_66"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_skwovet_fur",
+      "has_alomomola_mucus",
+      "has_chewtle_claw",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_66"
+    ]
+  }
+}

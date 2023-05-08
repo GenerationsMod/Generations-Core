@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "water_stone",
+  "key": {
+    "#": {
+      "item": "generations_core:water_stone_shard"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "generations_core:water_stone"
+  },
+  "show_notification": true
+}

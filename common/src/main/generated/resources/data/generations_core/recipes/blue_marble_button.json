@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "blue_marble_button",
+  "ingredients": [
+    {
+      "item": "generations_core:blue_marble"
+    }
+  ],
+  "result": {
+    "item": "generations_core:blue_marble_button"
+  }
+}

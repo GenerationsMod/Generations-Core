@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:cufant_tarnish"
+    },
+    {
+      "item": "generations_core:cufant_tarnish"
+    },
+    {
+      "item": "generations_core:cufant_tarnish"
+    },
+    {
+      "item": "generations_core:pawniard_blade"
+    },
+    {
+      "item": "generations_core:pawniard_blade"
+    },
+    {
+      "item": "generations_core:pawniard_blade"
+    },
+    {
+      "item": "generations_core:rookidee_feather"
+    },
+    {
+      "item": "generations_core:rookidee_feather"
+    },
+    {
+      "item": "generations_core:rookidee_feather"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_99"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ice_cave_rock_floor_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ice_cave_rock_floor"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:ice_cave_rock_floor_wall"
+  },
+  "show_notification": true
+}

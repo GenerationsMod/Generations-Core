@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:packed_ice"
+    },
+    "X": {
+      "item": "generations_core:ice_brick"
+    }
+  },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:ice_pillar_top"
+  },
+  "show_notification": true
+}

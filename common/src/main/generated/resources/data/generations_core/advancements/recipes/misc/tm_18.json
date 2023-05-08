@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_houndour_fang": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:houndour_fang"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_shroodle_ink": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:shroodle_ink"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_18"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_houndour_fang",
+      "has_shroodle_ink",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_18"
+    ]
+  }
+}

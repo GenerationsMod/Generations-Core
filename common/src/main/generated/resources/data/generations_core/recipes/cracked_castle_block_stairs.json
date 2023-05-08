@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cracked_castle_block_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:cracked_castle_block"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:cracked_castle_block_stairs"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:goomy_goo"
+    },
+    {
+      "item": "generations_core:goomy_goo"
+    },
+    {
+      "item": "generations_core:goomy_goo"
+    },
+    {
+      "item": "generations_core:frigibax_scales"
+    },
+    {
+      "item": "generations_core:frigibax_scales"
+    },
+    {
+      "item": "generations_core:frigibax_scales"
+    },
+    {
+      "item": "generations_core:applin_juice"
+    },
+    {
+      "item": "generations_core:applin_juice"
+    },
+    {
+      "item": "generations_core:applin_juice"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_169"
+  }
+}

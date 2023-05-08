@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:zangoose_claw"
+    },
+    {
+      "item": "generations_core:zangoose_claw"
+    },
+    {
+      "item": "generations_core:zangoose_claw"
+    },
+    {
+      "item": "generations_core:gible_scales"
+    },
+    {
+      "item": "generations_core:gible_scales"
+    },
+    {
+      "item": "generations_core:gible_scales"
+    },
+    {
+      "item": "generations_core:scyther_claw"
+    },
+    {
+      "item": "generations_core:scyther_claw"
+    },
+    {
+      "item": "generations_core:scyther_claw"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_88"
+  }
+}

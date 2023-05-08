@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_barboach_slime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:barboach_slime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_diglett_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:diglett_dirt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_phanpy_nail": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:phanpy_nail"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_149"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_phanpy_nail",
+      "has_diglett_dirt",
+      "has_barboach_slime",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_149"
+    ]
+  }
+}

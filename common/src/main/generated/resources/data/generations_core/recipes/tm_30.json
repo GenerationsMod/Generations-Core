@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:maschiff_fang"
+    },
+    {
+      "item": "generations_core:maschiff_fang"
+    },
+    {
+      "item": "generations_core:maschiff_fang"
+    },
+    {
+      "item": "generations_core:squawkabilly_feather"
+    },
+    {
+      "item": "generations_core:squawkabilly_feather"
+    },
+    {
+      "item": "generations_core:squawkabilly_feather"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_30"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:riolu_fur"
+    },
+    {
+      "item": "generations_core:riolu_fur"
+    },
+    {
+      "item": "generations_core:riolu_fur"
+    },
+    {
+      "item": "generations_core:crabrawler_shell"
+    },
+    {
+      "item": "generations_core:crabrawler_shell"
+    },
+    {
+      "item": "generations_core:crabrawler_shell"
+    },
+    {
+      "item": "generations_core:makuhita_sweat"
+    },
+    {
+      "item": "generations_core:makuhita_sweat"
+    },
+    {
+      "item": "generations_core:makuhita_sweat"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_167"
+  }
+}

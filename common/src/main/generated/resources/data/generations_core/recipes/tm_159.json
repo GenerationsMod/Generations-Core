@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:bounsweet_sweat"
+    },
+    {
+      "item": "generations_core:bounsweet_sweat"
+    },
+    {
+      "item": "generations_core:bounsweet_sweat"
+    },
+    {
+      "item": "generations_core:tropius_leaf"
+    },
+    {
+      "item": "generations_core:tropius_leaf"
+    },
+    {
+      "item": "generations_core:tropius_leaf"
+    },
+    {
+      "item": "generations_core:toedscool_flaps"
+    },
+    {
+      "item": "generations_core:toedscool_flaps"
+    },
+    {
+      "item": "generations_core:toedscool_flaps"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_159"
+  }
+}

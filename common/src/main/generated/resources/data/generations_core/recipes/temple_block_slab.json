@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "temple_block_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:temple_block"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:temple_block_slab"
+  },
+  "show_notification": true
+}

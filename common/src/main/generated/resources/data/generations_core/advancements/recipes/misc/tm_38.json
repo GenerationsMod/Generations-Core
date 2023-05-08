@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fletchling_feather": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:fletchling_feather"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_38"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_torkoal_coal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:torkoal_coal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_fletchling_feather",
+      "has_torkoal_coal",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_38"
+    ]
+  }
+}

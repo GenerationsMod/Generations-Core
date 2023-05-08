@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gastly_gas": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:gastly_gas"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_murkrow_bauble": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:murkrow_bauble"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_42"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gastly_gas",
+      "has_murkrow_bauble",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_42"
+    ]
+  }
+}

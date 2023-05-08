@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "group": "black_tumblestone",
+  "ingredient": {
+    "item": "generations_core:deepslate_black_tumblestone_ore"
+  },
+  "result": "generations_core:black_tumblestone"
+}

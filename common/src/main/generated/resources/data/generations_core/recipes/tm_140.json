@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:meowth_fur"
+    },
+    {
+      "item": "generations_core:meowth_fur"
+    },
+    {
+      "item": "generations_core:meowth_fur"
+    },
+    {
+      "item": "generations_core:spiritomb_fragment"
+    },
+    {
+      "item": "generations_core:spiritomb_fragment"
+    },
+    {
+      "item": "generations_core:spiritomb_fragment"
+    },
+    {
+      "item": "generations_core:tatsugiri_scales"
+    },
+    {
+      "item": "generations_core:tatsugiri_scales"
+    },
+    {
+      "item": "generations_core:tatsugiri_scales"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_140"
+  }
+}

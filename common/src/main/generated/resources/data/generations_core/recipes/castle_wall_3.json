@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:stone_bricks"
+    },
+    "Q": {
+      "item": "generations_core:castle_wall"
+    }
+  },
+  "pattern": [
+    "EE",
+    "QQ"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:castle_wall_3"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "sun_stone",
+  "ingredients": [
+    {
+      "item": "generations_core:sun_stone_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "generations_core:sun_stone"
+  }
+}

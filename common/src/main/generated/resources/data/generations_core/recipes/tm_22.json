@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:psyduck_down"
+    },
+    {
+      "item": "generations_core:psyduck_down"
+    },
+    {
+      "item": "generations_core:psyduck_down"
+    },
+    {
+      "item": "generations_core:surskit_syrup"
+    },
+    {
+      "item": "generations_core:surskit_syrup"
+    },
+    {
+      "item": "generations_core:surskit_syrup"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_22"
+  }
+}

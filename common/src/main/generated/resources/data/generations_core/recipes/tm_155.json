@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:tropius_leaf"
+    },
+    {
+      "item": "generations_core:tropius_leaf"
+    },
+    {
+      "item": "generations_core:tropius_leaf"
+    },
+    {
+      "item": "generations_core:skiddo_leaf"
+    },
+    {
+      "item": "generations_core:skiddo_leaf"
+    },
+    {
+      "item": "generations_core:skiddo_leaf"
+    },
+    {
+      "item": "generations_core:cacnea_needle"
+    },
+    {
+      "item": "generations_core:cacnea_needle"
+    },
+    {
+      "item": "generations_core:cacnea_needle"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_155"
+  }
+}

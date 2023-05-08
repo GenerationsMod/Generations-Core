@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "bridge_block_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:bridge_block"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:bridge_block_wall"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mareep_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:mareep_wool"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sableye_gem": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:sableye_gem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spoink_pearl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:spoink_pearl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_101"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_spoink_pearl",
+      "has_sableye_gem",
+      "has_mareep_wool",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_101"
+    ]
+  }
+}

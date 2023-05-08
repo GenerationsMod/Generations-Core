@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cyan_marble_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:cyan_marble"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:cyan_marble_slab"
+  },
+  "show_notification": true
+}

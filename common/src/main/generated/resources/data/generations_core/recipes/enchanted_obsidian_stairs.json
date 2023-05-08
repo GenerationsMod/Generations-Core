@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "enchanted_obsidian_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:enchanted_obsidian"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:enchanted_obsidian_stairs"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ice_stone",
+  "key": {
+    "#": {
+      "item": "generations_core:ice_stone_shard"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "generations_core:ice_stone"
+  },
+  "show_notification": true
+}

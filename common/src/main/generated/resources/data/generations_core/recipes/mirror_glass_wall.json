@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mirror_glass_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:mirror_glass"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:mirror_glass_wall"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "ultra_light_blue_button",
+  "ingredients": [
+    {
+      "item": "generations_core:ultra_light_blue"
+    }
+  ],
+  "result": {
+    "item": "generations_core:ultra_light_blue_button"
+  }
+}

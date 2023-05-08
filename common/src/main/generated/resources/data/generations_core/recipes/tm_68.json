@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:toxel_sparks"
+    },
+    {
+      "item": "generations_core:toxel_sparks"
+    },
+    {
+      "item": "generations_core:toxel_sparks"
+    },
+    {
+      "item": "generations_core:meditite_sweat"
+    },
+    {
+      "item": "generations_core:meditite_sweat"
+    },
+    {
+      "item": "generations_core:meditite_sweat"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_68"
+  }
+}

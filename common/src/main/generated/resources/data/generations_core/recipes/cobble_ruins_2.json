@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "generations_core:rock"
+    },
+    "Q": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "pattern": [
+    "EQ",
+    "EQ"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:cobble_ruins_2"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "generations_core:block/tall_ballonlea_yellow_mushroom"
+  }
+}

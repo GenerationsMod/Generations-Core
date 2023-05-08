@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "generations_core:charge_stone"
+  },
+  "result": "generations_core:smooth_charge_stone"
+}

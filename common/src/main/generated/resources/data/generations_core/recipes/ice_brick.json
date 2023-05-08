@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:ice"
+    },
+    "Q": {
+      "item": "minecraft:packed_ice"
+    }
+  },
+  "pattern": [
+    "EQ",
+    "QE"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:ice_brick"
+  },
+  "show_notification": true
+}

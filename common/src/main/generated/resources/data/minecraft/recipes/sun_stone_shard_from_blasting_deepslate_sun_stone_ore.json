@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "group": "sun_stone_shard",
+  "ingredient": {
+    "item": "generations_core:deepslate_sun_stone_ore"
+  },
+  "result": "generations_core:sun_stone_shard"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ice_pillar_top_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:ice_pillar_top"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:ice_pillar_top_stairs"
+  },
+  "show_notification": true
+}

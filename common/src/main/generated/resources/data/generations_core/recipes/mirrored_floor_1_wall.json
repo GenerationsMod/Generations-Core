@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mirrored_floor_1_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:mirrored_floor_1"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:mirrored_floor_1_wall"
+  },
+  "show_notification": true
+}

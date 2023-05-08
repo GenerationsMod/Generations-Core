@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "dawn_stone",
+  "key": {
+    "#": {
+      "item": "generations_core:dawn_stone_shard"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "generations_core:dawn_stone"
+  },
+  "show_notification": true
+}

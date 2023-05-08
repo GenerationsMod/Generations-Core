@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:gravel"
+    },
+    "Y": {
+      "item": "minecraft:ice"
+    }
+  },
+  "pattern": [
+    "XY",
+    "XY"
+  ],
+  "result": {
+    "item": "generations_core:ice_cave_rock_floor"
+  },
+  "show_notification": true
+}

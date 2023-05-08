@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cobble_ruins_4_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:cobble_ruins_4"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:cobble_ruins_4_wall"
+  },
+  "show_notification": true
+}

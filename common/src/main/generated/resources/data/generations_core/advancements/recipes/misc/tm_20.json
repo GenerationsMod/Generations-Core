@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hoppip_leaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:hoppip_leaf"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_petilil_leaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:petilil_leaf"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_20"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_petilil_leaf",
+      "has_hoppip_leaf",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_20"
+    ]
+  }
+}

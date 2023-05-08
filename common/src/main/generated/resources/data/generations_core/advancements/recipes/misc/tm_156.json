@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_axew_scales": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:axew_scales"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_dratini_scales": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:dratini_scales"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_frigibax_scales": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:frigibax_scales"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_156"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_axew_scales",
+      "has_dratini_scales",
+      "has_frigibax_scales",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_156"
+    ]
+  }
+}

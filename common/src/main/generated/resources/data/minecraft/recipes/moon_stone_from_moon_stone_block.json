@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "moon_stone",
+  "ingredients": [
+    {
+      "item": "generations_core:moon_stone_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "generations_core:moon_stone"
+  }
+}

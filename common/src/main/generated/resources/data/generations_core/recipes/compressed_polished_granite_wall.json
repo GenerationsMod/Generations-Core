@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "compressed_polished_granite_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:compressed_polished_granite"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:compressed_polished_granite_wall"
+  },
+  "show_notification": true
+}

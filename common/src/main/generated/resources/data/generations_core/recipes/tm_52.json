@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:snover_berries"
+    },
+    {
+      "item": "generations_core:snover_berries"
+    },
+    {
+      "item": "generations_core:snover_berries"
+    },
+    {
+      "item": "generations_core:delibird_parcel"
+    },
+    {
+      "item": "generations_core:delibird_parcel"
+    },
+    {
+      "item": "generations_core:delibird_parcel"
+    },
+    {
+      "item": "generations_core:snom_thread"
+    },
+    {
+      "item": "generations_core:snom_thread"
+    },
+    {
+      "item": "generations_core:snom_thread"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_52"
+  }
+}

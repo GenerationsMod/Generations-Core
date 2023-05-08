@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "Q": {
+      "item": "generations_core:charge_cobblestone"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EQE",
+    "EEE"
+  ],
+  "result": {
+    "item": "generations_core:bright_charge_cobblestone"
+  },
+  "show_notification": true
+}

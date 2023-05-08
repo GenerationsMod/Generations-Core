@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "charge_stone_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:charge_stone"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:charge_stone_wall"
+  },
+  "show_notification": true
+}

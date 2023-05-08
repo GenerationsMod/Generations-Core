@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ultra_pink_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_pink"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:ultra_pink_slab"
+  },
+  "show_notification": true
+}

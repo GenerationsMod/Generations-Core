@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "white_castle_brick_2_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:white_castle_brick_2"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:white_castle_brick_2_slab"
+  },
+  "show_notification": true
+}

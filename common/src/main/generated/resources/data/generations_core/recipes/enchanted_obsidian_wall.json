@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "enchanted_obsidian_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:enchanted_obsidian"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:enchanted_obsidian_wall"
+  },
+  "show_notification": true
+}

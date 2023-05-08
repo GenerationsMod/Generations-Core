@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ultra_pink_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_pink"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:ultra_pink_wall"
+  },
+  "show_notification": true
+}

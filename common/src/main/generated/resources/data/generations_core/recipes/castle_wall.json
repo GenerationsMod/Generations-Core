@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:stone_bricks"
+    },
+    "P": {
+      "tag": "minecraft:sand"
+    },
+    "Q": {
+      "tag": "minecraft:dirt"
+    }
+  },
+  "pattern": [
+    "PQ",
+    "EE"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:castle_wall"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "castle_floor_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:castle_floor"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:castle_floor_stairs"
+  },
+  "show_notification": true
+}

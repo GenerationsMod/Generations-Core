@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_falinks_sweat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:falinks_sweat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_heracross_claw": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:heracross_claw"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_mankey_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:mankey_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_134"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_falinks_sweat",
+      "has_heracross_claw",
+      "has_mankey_fur",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_134"
+    ]
+  }
+}

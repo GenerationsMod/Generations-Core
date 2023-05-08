@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "purple_poke_brick_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:purple_poke_brick"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:purple_poke_brick_wall"
+  },
+  "show_notification": true
+}

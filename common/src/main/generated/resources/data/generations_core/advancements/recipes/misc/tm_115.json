@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_goomy_goo": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:goomy_goo"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_swablu_fluff": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:swablu_fluff"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tatsugiri_scales": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:tatsugiri_scales"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_115"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_goomy_goo",
+      "has_swablu_fluff",
+      "has_tatsugiri_scales",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_115"
+    ]
+  }
+}

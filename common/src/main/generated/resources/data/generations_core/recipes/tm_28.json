@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:mudbray_mud"
+    },
+    {
+      "item": "generations_core:mudbray_mud"
+    },
+    {
+      "item": "generations_core:mudbray_mud"
+    },
+    {
+      "item": "generations_core:sandygast_sand"
+    },
+    {
+      "item": "generations_core:sandygast_sand"
+    },
+    {
+      "item": "generations_core:sandygast_sand"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_28"
+  }
+}

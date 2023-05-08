@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:croagunk_poison"
+    },
+    {
+      "item": "generations_core:croagunk_poison"
+    },
+    {
+      "item": "generations_core:croagunk_poison"
+    },
+    {
+      "item": "generations_core:grimer_toxin"
+    },
+    {
+      "item": "generations_core:grimer_toxin"
+    },
+    {
+      "item": "generations_core:grimer_toxin"
+    },
+    {
+      "item": "generations_core:foongus_spores"
+    },
+    {
+      "item": "generations_core:foongus_spores"
+    },
+    {
+      "item": "generations_core:foongus_spores"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_148"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ultra_black_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_black"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:ultra_black_wall"
+  },
+  "show_notification": true
+}

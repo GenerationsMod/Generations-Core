@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "subway_floor_full_cross_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:subway_floor_full_cross"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:subway_floor_full_cross_stairs"
+  },
+  "show_notification": true
+}

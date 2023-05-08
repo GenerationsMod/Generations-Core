@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:chewtle_claw"
+    },
+    {
+      "item": "generations_core:chewtle_claw"
+    },
+    {
+      "item": "generations_core:chewtle_claw"
+    },
+    {
+      "item": "generations_core:heracross_claw"
+    },
+    {
+      "item": "generations_core:heracross_claw"
+    },
+    {
+      "item": "generations_core:heracross_claw"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_53"
+  }
+}

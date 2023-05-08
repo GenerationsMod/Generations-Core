@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:dedenne_fur"
+    },
+    {
+      "item": "generations_core:dedenne_fur"
+    },
+    {
+      "item": "generations_core:dedenne_fur"
+    },
+    {
+      "item": "generations_core:pichu_fur"
+    },
+    {
+      "item": "generations_core:pichu_fur"
+    },
+    {
+      "item": "generations_core:pichu_fur"
+    },
+    {
+      "item": "generations_core:tynamo_slime"
+    },
+    {
+      "item": "generations_core:tynamo_slime"
+    },
+    {
+      "item": "generations_core:tynamo_slime"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_166"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:hatenna_dust"
+    },
+    {
+      "item": "generations_core:hatenna_dust"
+    },
+    {
+      "item": "generations_core:hatenna_dust"
+    },
+    {
+      "item": "generations_core:swablu_fluff"
+    },
+    {
+      "item": "generations_core:swablu_fluff"
+    },
+    {
+      "item": "generations_core:swablu_fluff"
+    },
+    {
+      "item": "generations_core:fidough_fur"
+    },
+    {
+      "item": "generations_core:fidough_fur"
+    },
+    {
+      "item": "generations_core:fidough_fur"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_79"
+  }
+}

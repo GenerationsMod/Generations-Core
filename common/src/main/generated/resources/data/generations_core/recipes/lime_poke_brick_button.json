@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "lime_poke_brick_button",
+  "ingredients": [
+    {
+      "item": "generations_core:lime_poke_brick"
+    }
+  ],
+  "result": {
+    "item": "generations_core:lime_poke_brick_button"
+  }
+}

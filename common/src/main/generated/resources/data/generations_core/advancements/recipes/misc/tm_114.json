@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gastly_gas": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:gastly_gas"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sandygast_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:sandygast_sand"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sinistea_chip": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:sinistea_chip"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_114"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gastly_gas",
+      "has_sandygast_sand",
+      "has_sinistea_chip",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_114"
+    ]
+  }
+}

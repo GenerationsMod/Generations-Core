@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "yellow_shingles_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:yellow_shingles"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:yellow_shingles_slab"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:clay"
+    },
+    "Q": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "EQ",
+    "QE"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:cave_rock"
+  },
+  "show_notification": true
+}

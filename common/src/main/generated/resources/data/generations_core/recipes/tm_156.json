@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:axew_scales"
+    },
+    {
+      "item": "generations_core:axew_scales"
+    },
+    {
+      "item": "generations_core:axew_scales"
+    },
+    {
+      "item": "generations_core:dratini_scales"
+    },
+    {
+      "item": "generations_core:dratini_scales"
+    },
+    {
+      "item": "generations_core:dratini_scales"
+    },
+    {
+      "item": "generations_core:frigibax_scales"
+    },
+    {
+      "item": "generations_core:frigibax_scales"
+    },
+    {
+      "item": "generations_core:frigibax_scales"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_156"
+  }
+}

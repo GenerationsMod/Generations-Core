@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bright_sandstone_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:bright_sandstone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:bright_sandstone_stairs"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "pokecenter_roof_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:pokecenter_roof"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:pokecenter_roof_slab"
+  },
+  "show_notification": true
+}

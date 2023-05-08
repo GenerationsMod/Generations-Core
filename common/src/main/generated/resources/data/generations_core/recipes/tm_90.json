@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:pincurchin_spines"
+    },
+    {
+      "item": "generations_core:pincurchin_spines"
+    },
+    {
+      "item": "generations_core:pincurchin_spines"
+    },
+    {
+      "item": "generations_core:qwilfish_spines"
+    },
+    {
+      "item": "generations_core:qwilfish_spines"
+    },
+    {
+      "item": "generations_core:qwilfish_spines"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_90"
+  }
+}

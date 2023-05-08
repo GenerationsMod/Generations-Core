@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:komala_claw"
+    },
+    {
+      "item": "generations_core:komala_claw"
+    },
+    {
+      "item": "generations_core:komala_claw"
+    },
+    {
+      "item": "generations_core:tinkatink_hair"
+    },
+    {
+      "item": "generations_core:tinkatink_hair"
+    },
+    {
+      "item": "generations_core:tinkatink_hair"
+    },
+    {
+      "item": "generations_core:stantler_hair"
+    },
+    {
+      "item": "generations_core:stantler_hair"
+    },
+    {
+      "item": "generations_core:stantler_hair"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_25"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_magnemite_screw": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:magnemite_screw"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_75"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_voltorb_sparks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:voltorb_sparks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_magnemite_screw",
+      "has_voltorb_sparks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_75"
+    ]
+  }
+}

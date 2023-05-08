@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crabrawler_shell": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:crabrawler_shell"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_makuhita_sweat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:makuhita_sweat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_riolu_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:riolu_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_167"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_riolu_fur",
+      "has_crabrawler_shell",
+      "has_makuhita_sweat",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_167"
+    ]
+  }
+}

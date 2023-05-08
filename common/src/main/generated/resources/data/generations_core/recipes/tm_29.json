@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:mimikyu_scrap"
+    },
+    {
+      "item": "generations_core:mimikyu_scrap"
+    },
+    {
+      "item": "generations_core:mimikyu_scrap"
+    },
+    {
+      "item": "generations_core:greavard_wax"
+    },
+    {
+      "item": "generations_core:greavard_wax"
+    },
+    {
+      "item": "generations_core:greavard_wax"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_29"
+  }
+}

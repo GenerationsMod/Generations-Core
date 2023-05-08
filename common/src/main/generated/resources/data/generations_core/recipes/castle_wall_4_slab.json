@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "castle_wall_4_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:castle_wall_4"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:castle_wall_4_slab"
+  },
+  "show_notification": true
+}

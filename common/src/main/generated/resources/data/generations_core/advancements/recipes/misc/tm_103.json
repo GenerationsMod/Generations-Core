@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_azurill_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:azurill_fur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_falinks_sweat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:falinks_sweat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_mimikyu_scrap": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:mimikyu_scrap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_103"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mimikyu_scrap",
+      "has_azurill_fur",
+      "has_falinks_sweat",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_103"
+    ]
+  }
+}

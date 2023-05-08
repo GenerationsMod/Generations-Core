@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bleach_stone_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:bleach_stone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:bleach_stone_stairs"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bright_sandstone_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:bright_sandstone"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:bright_sandstone_slab"
+  },
+  "show_notification": true
+}

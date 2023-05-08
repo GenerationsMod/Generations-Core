@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:mareep_wool"
+    },
+    {
+      "item": "generations_core:mareep_wool"
+    },
+    {
+      "item": "generations_core:mareep_wool"
+    },
+    {
+      "item": "generations_core:dedenne_fur"
+    },
+    {
+      "item": "generations_core:dedenne_fur"
+    },
+    {
+      "item": "generations_core:dedenne_fur"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_23"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "rock_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:rock"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:rock_slab"
+  },
+  "show_notification": true
+}

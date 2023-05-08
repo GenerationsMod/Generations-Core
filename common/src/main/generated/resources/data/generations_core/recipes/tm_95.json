@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:surskit_syrup"
+    },
+    {
+      "item": "generations_core:surskit_syrup"
+    },
+    {
+      "item": "generations_core:surskit_syrup"
+    },
+    {
+      "item": "generations_core:venonat_fang"
+    },
+    {
+      "item": "generations_core:venonat_fang"
+    },
+    {
+      "item": "generations_core:venonat_fang"
+    },
+    {
+      "item": "generations_core:kricketot_shell"
+    },
+    {
+      "item": "generations_core:kricketot_shell"
+    },
+    {
+      "item": "generations_core:kricketot_shell"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_95"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:tauros_hair"
+    },
+    {
+      "item": "generations_core:tauros_hair"
+    },
+    {
+      "item": "generations_core:tauros_hair"
+    },
+    {
+      "item": "generations_core:zangoose_claw"
+    },
+    {
+      "item": "generations_core:zangoose_claw"
+    },
+    {
+      "item": "generations_core:zangoose_claw"
+    },
+    {
+      "item": "generations_core:slakoth_fur"
+    },
+    {
+      "item": "generations_core:slakoth_fur"
+    },
+    {
+      "item": "generations_core:slakoth_fur"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_152"
+  }
+}

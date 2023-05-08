@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:pincurchin_spines"
+    },
+    {
+      "item": "generations_core:pincurchin_spines"
+    },
+    {
+      "item": "generations_core:pincurchin_spines"
+    },
+    {
+      "item": "generations_core:tadbulb_mucus"
+    },
+    {
+      "item": "generations_core:tadbulb_mucus"
+    },
+    {
+      "item": "generations_core:tadbulb_mucus"
+    },
+    {
+      "item": "generations_core:pawmi_fur"
+    },
+    {
+      "item": "generations_core:pawmi_fur"
+    },
+    {
+      "item": "generations_core:pawmi_fur"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_136"
+  }
+}

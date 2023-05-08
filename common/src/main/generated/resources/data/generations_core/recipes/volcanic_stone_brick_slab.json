@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "volcanic_stone_bricks_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:volcanic_stone_bricks"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:volcanic_stone_brick_slab"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:phanpy_nail"
+    },
+    {
+      "item": "generations_core:phanpy_nail"
+    },
+    {
+      "item": "generations_core:phanpy_nail"
+    },
+    {
+      "item": "generations_core:diglett_dirt"
+    },
+    {
+      "item": "generations_core:diglett_dirt"
+    },
+    {
+      "item": "generations_core:diglett_dirt"
+    },
+    {
+      "item": "generations_core:barboach_slime"
+    },
+    {
+      "item": "generations_core:barboach_slime"
+    },
+    {
+      "item": "generations_core:barboach_slime"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_149"
+  }
+}

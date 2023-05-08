@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "green_poke_brick_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:green_poke_brick"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:green_poke_brick_stairs"
+  },
+  "show_notification": true
+}

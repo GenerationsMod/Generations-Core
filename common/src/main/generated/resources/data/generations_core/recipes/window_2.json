@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:iron_bars"
+    },
+    "Y": {
+      "item": "minecraft:glass"
+    },
+    "Z": {
+      "item": "minecraft:purple_dye"
+    }
+  },
+  "pattern": [
+    " Z ",
+    "XYX",
+    " Z "
+  ],
+  "result": {
+    "item": "generations_core:window_2"
+  },
+  "show_notification": true
+}

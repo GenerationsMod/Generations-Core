@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_finizen_mucus": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:finizen_mucus"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_finneon_scales": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:finneon_scales"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_luvdisc_scales": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:luvdisc_scales"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_142"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_finizen_mucus",
+      "has_finneon_scales",
+      "has_luvdisc_scales",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_142"
+    ]
+  }
+}

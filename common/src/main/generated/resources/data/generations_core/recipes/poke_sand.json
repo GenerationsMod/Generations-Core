@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:sand"
+    },
+    "Y": {
+      "item": "minecraft:sandstone"
+    }
+  },
+  "pattern": [
+    "XX",
+    "YY"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:poke_sand"
+  },
+  "show_notification": true
+}

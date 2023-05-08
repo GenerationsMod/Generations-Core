@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:stone"
+    },
+    "Q": {
+      "item": "minecraft:stone_bricks"
+    }
+  },
+  "pattern": [
+    "EQ",
+    "EQ"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:gray_castle_brick"
+  },
+  "show_notification": true
+}

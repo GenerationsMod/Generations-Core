@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_applin_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:applin_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bramblin_twig": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:bramblin_twig"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_deerling_hair": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:deerling_hair"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_119"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_deerling_hair",
+      "has_bramblin_twig",
+      "has_applin_juice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_119"
+    ]
+  }
+}

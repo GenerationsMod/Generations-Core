@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cool_stone_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:cool_stone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:cool_stone_stairs"
+  },
+  "show_notification": true
+}

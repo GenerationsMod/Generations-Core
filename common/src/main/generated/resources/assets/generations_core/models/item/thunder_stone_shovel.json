@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "generations_core:item/tools/thunder_stone_shovel"
+  }
+}

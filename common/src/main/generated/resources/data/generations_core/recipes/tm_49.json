@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:sunkern_leaf"
+    },
+    {
+      "item": "generations_core:sunkern_leaf"
+    },
+    {
+      "item": "generations_core:sunkern_leaf"
+    },
+    {
+      "item": "generations_core:torkoal_coal"
+    },
+    {
+      "item": "generations_core:torkoal_coal"
+    },
+    {
+      "item": "generations_core:torkoal_coal"
+    },
+    {
+      "item": "generations_core:litleo_tuft"
+    },
+    {
+      "item": "generations_core:litleo_tuft"
+    },
+    {
+      "item": "generations_core:litleo_tuft"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_49"
+  }
+}

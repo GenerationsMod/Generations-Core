@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "enchanted_obsidian_pressure_plate",
+  "key": {
+    "#": {
+      "item": "generations_core:enchanted_obsidian"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "generations_core:enchanted_obsidian_pressure_plate"
+  },
+  "show_notification": true
+}

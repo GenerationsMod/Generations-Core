@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:ultra_purple_button"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_purple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:ultra_purple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ultra_purple",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:ultra_purple_button"
+    ]
+  }
+}

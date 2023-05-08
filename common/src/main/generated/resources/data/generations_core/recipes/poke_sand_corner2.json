@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "generations_core:poke_sand"
+    },
+    "Y": {
+      "item": "minecraft:grass"
+    }
+  },
+  "pattern": [
+    "Y ",
+    " X"
+  ],
+  "result": {
+    "item": "generations_core:poke_sand_corner2"
+  },
+  "show_notification": true
+}

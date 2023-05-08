@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "pink_marble_pressure_plate",
+  "key": {
+    "#": {
+      "item": "generations_core:pink_marble"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "generations_core:pink_marble_pressure_plate"
+  },
+  "show_notification": true
+}

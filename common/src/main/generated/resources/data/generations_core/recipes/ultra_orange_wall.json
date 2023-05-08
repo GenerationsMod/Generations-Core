@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ultra_orange_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_orange"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:ultra_orange_wall"
+  },
+  "show_notification": true
+}

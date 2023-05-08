@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:hatenna_dust"
+    },
+    {
+      "item": "generations_core:hatenna_dust"
+    },
+    {
+      "item": "generations_core:hatenna_dust"
+    },
+    {
+      "item": "generations_core:bronzor_fragment"
+    },
+    {
+      "item": "generations_core:bronzor_fragment"
+    },
+    {
+      "item": "generations_core:bronzor_fragment"
+    },
+    {
+      "item": "generations_core:gothita_eyelash"
+    },
+    {
+      "item": "generations_core:gothita_eyelash"
+    },
+    {
+      "item": "generations_core:gothita_eyelash"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_161"
+  }
+}

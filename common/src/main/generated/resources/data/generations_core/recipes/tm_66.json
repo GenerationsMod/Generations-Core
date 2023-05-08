@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:skwovet_fur"
+    },
+    {
+      "item": "generations_core:skwovet_fur"
+    },
+    {
+      "item": "generations_core:skwovet_fur"
+    },
+    {
+      "item": "generations_core:alomomola_mucus"
+    },
+    {
+      "item": "generations_core:alomomola_mucus"
+    },
+    {
+      "item": "generations_core:alomomola_mucus"
+    },
+    {
+      "item": "generations_core:chewtle_claw"
+    },
+    {
+      "item": "generations_core:chewtle_claw"
+    },
+    {
+      "item": "generations_core:chewtle_claw"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_66"
+  }
+}

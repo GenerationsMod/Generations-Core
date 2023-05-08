@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "moon_stone",
+  "key": {
+    "#": {
+      "item": "generations_core:moon_stone_shard"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "generations_core:moon_stone"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:gravel"
+    },
+    "Y": {
+      "item": "minecraft:ink_sac"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "YXY",
+    "XYX"
+  ],
+  "result": {
+    "count": 5,
+    "item": "generations_core:shingles"
+  },
+  "show_notification": true
+}

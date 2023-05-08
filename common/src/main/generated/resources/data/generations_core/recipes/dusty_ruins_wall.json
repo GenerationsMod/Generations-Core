@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "tag": "minecraft:sand"
+    },
+    "Y": {
+      "item": "generations_core:ruins_wall"
+    }
+  },
+  "pattern": [
+    "XY",
+    "XY"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:dusty_ruins_wall"
+  },
+  "show_notification": true
+}

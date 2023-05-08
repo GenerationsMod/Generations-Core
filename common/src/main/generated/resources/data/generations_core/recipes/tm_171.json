@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:glimmet_crystal"
+    },
+    {
+      "item": "generations_core:glimmet_crystal"
+    },
+    {
+      "item": "generations_core:glimmet_crystal"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_171"
+  }
+}

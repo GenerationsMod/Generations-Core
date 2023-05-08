@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "enchanted_obsidian_button",
+  "ingredients": [
+    {
+      "item": "generations_core:enchanted_obsidian"
+    }
+  ],
+  "result": {
+    "item": "generations_core:enchanted_obsidian_button"
+  }
+}

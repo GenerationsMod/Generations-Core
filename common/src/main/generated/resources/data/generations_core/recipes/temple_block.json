@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:stone_bricks"
+    },
+    "Q": {
+      "item": "minecraft:sandstone"
+    }
+  },
+  "pattern": [
+    "EQ",
+    "QE"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:temple_block"
+  },
+  "show_notification": true
+}

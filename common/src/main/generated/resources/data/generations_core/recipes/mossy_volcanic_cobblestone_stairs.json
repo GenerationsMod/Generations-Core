@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "mossy_volcanic_cobblestone_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:mossy_volcanic_cobblestone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:mossy_volcanic_cobblestone_stairs"
+  },
+  "show_notification": true
+}

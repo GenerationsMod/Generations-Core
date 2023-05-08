@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:mareanie_spike"
+    },
+    {
+      "item": "generations_core:mareanie_spike"
+    },
+    {
+      "item": "generations_core:mareanie_spike"
+    },
+    {
+      "item": "generations_core:pineco_husk"
+    },
+    {
+      "item": "generations_core:pineco_husk"
+    },
+    {
+      "item": "generations_core:pineco_husk"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_91"
+  }
+}

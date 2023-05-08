@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "pokecenter_roof_2_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:pokecenter_roof_2"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:pokecenter_roof_2_stairs"
+  },
+  "show_notification": true
+}

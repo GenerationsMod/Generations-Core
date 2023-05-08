@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:luvdisc_scales"
+    },
+    {
+      "item": "generations_core:luvdisc_scales"
+    },
+    {
+      "item": "generations_core:luvdisc_scales"
+    },
+    {
+      "item": "generations_core:alomomola_mucus"
+    },
+    {
+      "item": "generations_core:alomomola_mucus"
+    },
+    {
+      "item": "generations_core:alomomola_mucus"
+    },
+    {
+      "item": "generations_core:shellder_pearl"
+    },
+    {
+      "item": "generations_core:shellder_pearl"
+    },
+    {
+      "item": "generations_core:shellder_pearl"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_145"
+  }
+}

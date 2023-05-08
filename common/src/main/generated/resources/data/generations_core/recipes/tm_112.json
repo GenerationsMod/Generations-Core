@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:ralts_dust"
+    },
+    {
+      "item": "generations_core:ralts_dust"
+    },
+    {
+      "item": "generations_core:ralts_dust"
+    },
+    {
+      "item": "generations_core:riolu_fur"
+    },
+    {
+      "item": "generations_core:riolu_fur"
+    },
+    {
+      "item": "generations_core:riolu_fur"
+    },
+    {
+      "item": "generations_core:charcadet_soot"
+    },
+    {
+      "item": "generations_core:charcadet_soot"
+    },
+    {
+      "item": "generations_core:charcadet_soot"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_112"
+  }
+}

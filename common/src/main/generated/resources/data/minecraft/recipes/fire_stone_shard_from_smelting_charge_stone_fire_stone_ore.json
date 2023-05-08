@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "fire_stone_shard",
+  "ingredient": {
+    "item": "generations_core:charge_stone_fire_stone_ore"
+  },
+  "result": "generations_core:fire_stone_shard"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ultra_cyan_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_cyan"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:ultra_cyan_wall"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:oak_leaves"
+    },
+    "Y": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "pattern": [
+    "XXX",
+    " Y "
+  ],
+  "result": {
+    "item": "generations_core:tree_bottom"
+  },
+  "show_notification": true
+}

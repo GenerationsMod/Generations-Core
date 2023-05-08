@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "white_poke_brick_button",
+  "ingredients": [
+    {
+      "item": "generations_core:white_poke_brick"
+    }
+  ],
+  "result": {
+    "item": "generations_core:white_poke_brick_button"
+  }
+}

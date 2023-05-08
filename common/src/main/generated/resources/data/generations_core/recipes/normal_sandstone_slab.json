@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "normal_sandstone_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:normal_sandstone"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:normal_sandstone_slab"
+  },
+  "show_notification": true
+}

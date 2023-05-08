@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "leaf_stone",
+  "key": {
+    "#": {
+      "item": "generations_core:leaf_stone_shard"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "generations_core:leaf_stone"
+  },
+  "show_notification": true
+}

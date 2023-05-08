@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cetoddle_grease": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:cetoddle_grease"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_hawlucha_down": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:hawlucha_down"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pawniard_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:pawniard_blade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_89"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cetoddle_grease",
+      "has_hawlucha_down",
+      "has_pawniard_blade",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_89"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "crystal_gem",
+  "ingredient": {
+    "item": "generations_core:deepslate_crystal_ore"
+  },
+  "result": "generations_core:crystal"
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:tumblestone_from_smelting_tumblestone_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tumblestone_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:tumblestone_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tumblestone_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:tumblestone_from_smelting_tumblestone_ore"
+    ]
+  }
+}

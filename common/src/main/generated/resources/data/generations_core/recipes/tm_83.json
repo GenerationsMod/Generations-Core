@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:shroodle_ink"
+    },
+    {
+      "item": "generations_core:shroodle_ink"
+    },
+    {
+      "item": "generations_core:shroodle_ink"
+    },
+    {
+      "item": "generations_core:seviper_fang"
+    },
+    {
+      "item": "generations_core:seviper_fang"
+    },
+    {
+      "item": "generations_core:seviper_fang"
+    },
+    {
+      "item": "generations_core:mareanie_spike"
+    },
+    {
+      "item": "generations_core:mareanie_spike"
+    },
+    {
+      "item": "generations_core:mareanie_spike"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_83"
+  }
+}

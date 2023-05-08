@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "subway_floor_path_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:subway_floor_path"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:subway_floor_path_wall"
+  },
+  "show_notification": true
+}

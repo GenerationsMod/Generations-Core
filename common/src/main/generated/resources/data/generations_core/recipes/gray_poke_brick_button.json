@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "gray_poke_brick_button",
+  "ingredients": [
+    {
+      "item": "generations_core:gray_poke_brick"
+    }
+  ],
+  "result": {
+    "item": "generations_core:gray_poke_brick_button"
+  }
+}

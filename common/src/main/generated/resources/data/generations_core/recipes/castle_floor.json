@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "tag": "minecraft:dirt"
+    },
+    "P": {
+      "tag": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "PPP"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:castle_floor"
+  },
+  "show_notification": true
+}

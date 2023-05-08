@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "silicon",
+  "ingredient": {
+    "item": "generations_core:silicon_ore"
+  },
+  "result": "generations_core:silicon"
+}

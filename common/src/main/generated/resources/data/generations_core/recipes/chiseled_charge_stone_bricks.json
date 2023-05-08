@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "charge_stone_bricks_chiseled",
+  "key": {
+    "#": {
+      "item": "generations_core:charge_stone_brick_slab"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "generations_core:chiseled_charge_stone_bricks"
+  },
+  "show_notification": true
+}

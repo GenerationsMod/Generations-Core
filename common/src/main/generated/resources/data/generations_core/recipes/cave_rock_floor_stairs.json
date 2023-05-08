@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cave_rock_floor_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:cave_rock_floor"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:cave_rock_floor_stairs"
+  },
+  "show_notification": true
+}

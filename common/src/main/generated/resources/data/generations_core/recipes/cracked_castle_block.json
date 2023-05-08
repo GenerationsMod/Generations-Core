@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:bricks"
+    },
+    "Q": {
+      "item": "generations_core:castle_block"
+    }
+  },
+  "pattern": [
+    "EQ",
+    "QE"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:cracked_castle_block"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "green_shingles_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:green_shingles"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:green_shingles_stairs"
+  },
+  "show_notification": true
+}

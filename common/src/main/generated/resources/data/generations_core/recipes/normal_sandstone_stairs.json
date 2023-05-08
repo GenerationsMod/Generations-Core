@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "normal_sandstone_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:normal_sandstone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:normal_sandstone_stairs"
+  },
+  "show_notification": true
+}

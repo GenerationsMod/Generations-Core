@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_litleo_tuft": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:litleo_tuft"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sunkern_leaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:sunkern_leaf"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_49"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_torkoal_coal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:torkoal_coal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_sunkern_leaf",
+      "has_torkoal_coal",
+      "has_litleo_tuft",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_49"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "generations_core:castle_wall"
+    },
+    "P": {
+      "tag": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "PP",
+    "EE"
+  ],
+  "result": {
+    "count": 4,
+    "item": "generations_core:castle_wall_4"
+  },
+  "show_notification": true
+}

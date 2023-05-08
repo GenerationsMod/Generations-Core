@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_murkrow_bauble": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:murkrow_bauble"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sandile_claw": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:sandile_claw"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:tm_62"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_murkrow_bauble",
+      "has_sandile_claw",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:tm_62"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:starly_feather"
+    },
+    {
+      "item": "generations_core:starly_feather"
+    },
+    {
+      "item": "generations_core:starly_feather"
+    },
+    {
+      "item": "generations_core:rufflet_feather"
+    },
+    {
+      "item": "generations_core:rufflet_feather"
+    },
+    {
+      "item": "generations_core:rufflet_feather"
+    },
+    {
+      "item": "generations_core:rookidee_feather"
+    },
+    {
+      "item": "generations_core:rookidee_feather"
+    },
+    {
+      "item": "generations_core:rookidee_feather"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_164"
+  }
+}

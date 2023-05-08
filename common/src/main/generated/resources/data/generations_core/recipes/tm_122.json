@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:hawlucha_down"
+    },
+    {
+      "item": "generations_core:hawlucha_down"
+    },
+    {
+      "item": "generations_core:hawlucha_down"
+    },
+    {
+      "item": "generations_core:slakoth_fur"
+    },
+    {
+      "item": "generations_core:slakoth_fur"
+    },
+    {
+      "item": "generations_core:slakoth_fur"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_122"
+  }
+}

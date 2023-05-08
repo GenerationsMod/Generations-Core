@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:veluza_fillet"
+    },
+    {
+      "item": "generations_core:veluza_fillet"
+    },
+    {
+      "item": "generations_core:veluza_fillet"
+    },
+    {
+      "item": "generations_core:girafarig_fur"
+    },
+    {
+      "item": "generations_core:girafarig_fur"
+    },
+    {
+      "item": "generations_core:girafarig_fur"
+    },
+    {
+      "item": "generations_core:dunsparce_scales"
+    },
+    {
+      "item": "generations_core:dunsparce_scales"
+    },
+    {
+      "item": "generations_core:dunsparce_scales"
+    }
+  ],
+  "result": {
+    "item": "generations_core:tm_59"
+  }
+}

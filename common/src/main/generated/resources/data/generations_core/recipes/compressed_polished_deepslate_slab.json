@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "compressed_polished_deepslate_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:compressed_polished_deepslate"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:compressed_polished_deepslate_slab"
+  },
+  "show_notification": true
+}
