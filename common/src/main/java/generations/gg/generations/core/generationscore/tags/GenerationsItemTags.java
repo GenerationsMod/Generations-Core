@@ -1,0 +1,44 @@
+package generations.gg.generations.core.generationscore.tags;
+
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+
+public class GenerationsItemTags {
+
+    public static final TagKey<Item> GenerationsCoreITEMS = create("generationsitems");
+    public static final TagKey<Item> APRICORNS = create("apricorns");
+    public static final TagKey<Item> APRICORNS_MINUS_PINK = create("apricorns_minus_pink");
+    public static final TagKey<Item> PC = create("pc");
+    public static final TagKey<Item> CLOCK = create("clock");
+    public static final TagKey<Item> HEALER = create("healer");
+    public static final TagKey<Item> VENDING_MACHINE = create("vending_machine");
+    public static final TagKey<Item> UMBRELLA = create("umbrella");
+    public static final TagKey<Item> PASTEL_BEAN_BAG = create("pastel_bean_bag");
+    public static final TagKey<Item> POKEBALL_RUG = create("pokeball_rug");
+    public static final TagKey<Item> ULTRA_DARK_LOGS = create("ultra_dark_logs");
+    public static final TagKey<Item> ULTRA_JUNGLE_LOGS = create("ultra_jungle_logs");
+    public static final TagKey<Item> GHOST_LOGS = create("ghost_logs");
+    public static final TagKey<Item> CHARGE_STONE_BRICKS = create("charge_stone_bricks");
+    public static final TagKey<Item> VOLCANIC_STONE_BRICKS = create("volcanic_stone_bricks");
+
+    public static final TagKey<Item> POKEMAIL = create("pokemail");
+    public static final TagKey<Item> CLOSED_POKEMAIL = create("sealed_pokemail");
+
+    //Ore Tags
+    public static final TagKey<Item> GenerationsCoreORES = create("generationsores");
+    public static final TagKey<Item> ALUMINUM_ORES = create("aluminum_ores");
+    public static final TagKey<Item> SAPPHIRE_ORES = create("sapphire_ores");
+    public static final TagKey<Item> RUBY_ORES = create("ruby_ores");
+    public static final TagKey<Item> SILICON_ORES = create("silicon_ores");
+    public static final TagKey<Item> Z_CRYSTAL_ORES = create("z_crystal_ores");
+    public static final TagKey<Item> FOSSIL_ORES = create("fossil_ores");
+
+    public static final TagKey<Item> MARBLE = create("marble");
+    public static final TagKey<Item> POKEBRICKS = create("pokebricks");
+
+    private static TagKey<Item> create(String name) {
+        return TagKey.create(Registries.ITEM, GenerationsCore.id(name));
+    }
+}
