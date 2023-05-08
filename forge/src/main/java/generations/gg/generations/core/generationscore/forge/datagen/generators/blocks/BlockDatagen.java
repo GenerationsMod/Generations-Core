@@ -383,12 +383,11 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.POKECENTER_ROOF, GenerationsBlocks.POKECENTER_ROOF_SLAB, GenerationsBlocks.POKECENTER_ROOF_STAIRS, GenerationsBlocks.POKECENTER_ROOF_WALL, null, null, true);
         registerPallet(GenerationsBlocks.POKECENTER_ROOF_2, GenerationsBlocks.POKECENTER_ROOF_2_SLAB, GenerationsBlocks.POKECENTER_ROOF_2_STAIRS, GenerationsBlocks.POKECENTER_ROOF_2_WALL, null, null, true);
 
-        /*
         pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, GenerationsItems.POKE_BALL);
         pokeBallChests(GenerationsBlocks.GREATBALL_CHEST, GenerationsItems.GREAT_BALL);
         pokeBallChests(GenerationsBlocks.ULTRABALL_CHEST, GenerationsItems.ULTRA_BALL);
         pokeBallChests(GenerationsBlocks.MASTERBALL_CHEST, GenerationsItems.MASTER_BALL);
-         */
+
         //Furnaces
         registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE);
         registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE);
