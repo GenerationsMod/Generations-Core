@@ -7,7 +7,7 @@ repositories {
 
 sourceSets {
     main {
-        resources.srcDir("src/generated/resources")
+        resources.srcDir("src/main/generated/resources")
     }
 }
 
