@@ -48,8 +48,8 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         //GenerationsPokeDolls.POKEDOLLS.getEntries().stream().map(RegistryObject::get).forEach(this::dropSelf);
         BlockDatagen.dropSelfList.stream().map(block -> (Block) block).forEach(this::dropSelf);
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
-        //GenerationsBlocks.POKE_BRICKS.getEntries().stream().map(RegistryObject::get).forEach(this::dropSelfUpdated);
-        //GenerationsBlocks.MARBLE.getEntries().stream().map(RegistryObject::get).forEach(this::dropSelfUpdated);
+        GenerationsBlocks.POKEBRICKS.forEach(block -> dropSelfUpdated(block.get()));
+        GenerationsBlocks.MARBLE.forEach(block -> dropSelfUpdated(block.get()));
         //GenerationsBlocks.STONE.getEntries().stream().map(RegistryObject::get).forEach(this::dropSelfStoneCobble);
 
 
