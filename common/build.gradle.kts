@@ -4,20 +4,12 @@ loom.silentMojangMappingsLicense()
 repositories {
     mavenCentral()
     maven("https://jitpack.io") // BinarySMD
-    maven("https://maven.pixelmongenerations.com/repository/maven-private/") {
 
-        credentials {
-            username = project.properties["repoLogin"]?.toString() ?: findProperty("REPO_LOGIN").toString()
-            password = project.properties["repoPassword"]?.toString() ?: findProperty("REPO_PASSWORD").toString()
-        }
-    }
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
 
-    mavenCentral()
     maven("https://maven.thepokecraftmod.com/releases")
     maven("https://maven.parchmentmc.org")
     maven("https://oss.sonatype.org/content/repositories/snapshots/")
-    maven("https://jitpack.io")
 }
 
 sourceSets {
