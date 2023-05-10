@@ -48,6 +48,5 @@ public class DataGeneratorsRegister {
        // TagsDatagen.init(generator, output, lookupProvider, event.getExistingFileHelper());
         assert lookupProvider != null;
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookupProvider, Set.of(GenerationsCore.MOD_ID)));
-        //generator.addProvider(true, new PokeModSpriteSourceProvider(output, event.getExistingFileHelper()));
     }
 }

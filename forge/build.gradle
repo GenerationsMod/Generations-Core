@@ -58,7 +58,7 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
-    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:1.1.2")
+    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${rootProject.devauth_version}")
 }
 
 processResources {
