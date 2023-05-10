@@ -2,16 +2,27 @@ package generations.gg.generations.core.generationscore.client.render.block.enti
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import generations.gg.generations.core.generationscore.client.model.ModelRegistry;
+import com.thepokecraftmod.rks.storage.AnimatedObjectInstance;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.client.render.rks.ModelLoader;
+import generations.gg.generations.core.generationscore.client.render.rks.PokeCraftRKSImpl;
+import generations.gg.generations.core.generationscore.client.render.rks.PokemonUniformUploader;
+import generations.gg.generations.core.generationscore.client.render.rks.VariantObjectInstance;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Matrix4f;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> implements BlockEntityRenderer<T> {
+    private static final Map<BlockPos, AnimatedObjectInstance> INSTANCE_DATA = new HashMap<>();
 
     public GeneralUseBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
     }
@@ -20,9 +31,9 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     public void render(@NotNull T blockEntity, float partialTick, PoseStack stack, @NotNull MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         if (!(blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
         stack.pushPose();
-        ModelRegistry.prepForBER(stack, blockEntity);
+        ModelLoader.prepForBER(stack, blockEntity);
         renderModels(stack, blockEntity);
-        RenderSystem.disableDepthTest();
+//        RenderSystem.disableDepthTest();
         stack.popPose();
     }
 
@@ -35,16 +46,12 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     }
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity) {
-//        if (blockEntity.objectInstance == null) {
-//            blockEntity.objectInstance = new ObjectInstance(new Matrix4f(), stack.last().pose(), blockEntity instanceof ModelContextProviders.VariantProvider variantProvider ? variantProvider.getVariant() : null);
-//        } else if (blockEntity instanceof ModelContextProviders.VariantProvider provider)
-//            if (!blockEntity.objectInstance.materialId().equals(provider.getVariant())) {
-//                blockEntity.objectInstance = new ObjectInstance(new Matrix4f(), stack.last().pose(), provider.getVariant());
-//            }
-//
-//        blockEntity.objectInstance.viewMatrix().set(stack.last().pose());
-//
-//        ModelRegistry.get(blockEntity, "fullbright").render(blockEntity.objectInstance, RenderSystem.getProjectionMatrix());
+        var instance = blockEntity.getModelInstance();
+
+        if (instance != null) {
+            instance.transformationMatrix.set(stack.last().pose());
+            PokeCraftRKSImpl.getInstance().addToFrame(instance);
+        }
     }
 
     protected void renderModelFrameProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity) {

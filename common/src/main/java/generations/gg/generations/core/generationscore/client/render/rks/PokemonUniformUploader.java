@@ -16,7 +16,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-package generations.gg.generations.core.generationscore.rks;
+package generations.gg.generations.core.generationscore.client.render.rks;
 
 import com.thepokecraftmod.rks.storage.AnimatedObjectInstance;
 import org.joml.Vector3f;
@@ -26,14 +26,14 @@ import java.util.List;
 public class PokemonUniformUploader {
 
     private final MaterialUploader uploader;
-    private AnimatedObjectInstance instance;
+    private VariantObjectInstance instance;
 
     public PokemonUniformUploader(MaterialUploader uploader) {
         this.uploader = uploader;
     }
 
     public void upload(String materialName) {
-        var shader = uploader.materials.get(materialName).shader;
+        var shader = uploader.defaultMaterials.get(materialName).shader;
         var color = 1;
 
         shader.uploadVec3fs(
@@ -52,10 +52,10 @@ public class PokemonUniformUploader {
                 "lightPositions",
                 worldSpacePositions
         );
-        uploader.handle(materialName);
+        uploader.handle(instance.variant, materialName);
     }
 
-    public void setInstance(AnimatedObjectInstance newInstance) {
+    public void setInstance(VariantObjectInstance newInstance) {
         this.instance = newInstance;
     }
 }

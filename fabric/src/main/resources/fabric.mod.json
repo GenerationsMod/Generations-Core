@@ -12,7 +12,10 @@
   "icon": "icon.png",
 
   "environment": "*",
-  "entrypoints": {},
+  "entrypoints": {
+    "client": ["generations.gg.generations.core.generationscore.fabric.client.GenerationsCoreClientFabric"],
+    "main": ["generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"]
+  },
   "mixins": [
     "GenerationsCore.mixins.json",
     "GenerationsCore-common.mixins.json"

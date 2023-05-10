@@ -27,6 +27,17 @@ repositories {
     maven {
         url = "https://nexus.resourcefulbees.com/repository/maven-public/"
     }
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url = "https://maven.thepokecraftmod.com/releases"
+    }
+    maven {
+        url = "https://maven.parchmentmc.org"
+    }
+    maven {
+        url = "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
 }
 
 dependencies {
@@ -43,6 +54,13 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:1.1.2")
+
+    include(implementation("com.thepokecraftmod:modelLoader:1.2.4"))
+    include(implementation("com.thepokecraftmod:renderer:1.2.4"))
+    include(implementation("org.tukaani:xz:1.9"))
+    include(implementation("com.thebombzen:jxlatte:1.1.0"))
+
+    compileOnly("org.lwjgl:lwjgl-assimp:3.3.2")
 }
 
 processResources {

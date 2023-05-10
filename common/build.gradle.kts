@@ -3,6 +3,7 @@ loom.silentMojangMappingsLicense()
 
 repositories {
     mavenCentral()
+    mavenLocal()
     maven("https://jitpack.io") // BinarySMD
 
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
@@ -28,10 +29,10 @@ dependencies {
     modApi("dev.architectury:architectury:${rootProject.properties["architectury_version"]}")
     modImplementation("earth.terrarium:botarium-common-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
 
-    include(implementation("com.thepokecraftmod:modelLoader:1.2.3")!!)
-    include(implementation("com.thepokecraftmod:renderer:1.2.3")!!)
-    include(implementation("org.tukaani:xz:1.9")!!)
-    include(implementation("com.thebombzen:jxlatte:1.1.0")!!)
+    implementation("com.thepokecraftmod:modelLoader:1.2.4")
+    implementation("com.thepokecraftmod:renderer:1.2.4")
+    implementation("org.tukaani:xz:1.9")
+    implementation("com.thebombzen:jxlatte:1.1.0")
 
     compileOnly("org.lwjgl:lwjgl-assimp:3.3.2")
 }

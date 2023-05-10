@@ -3,24 +3,8 @@ package generations.gg.generations.core.generationscore.client;
 import com.mojang.blaze3d.platform.MacosUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.pokemod.pokemod.api.data.player.PixelmonParty;
-import com.pokemod.pokemod.client.battle.BattleClient;
-import com.pokemod.pokemod.client.overlay.PartyOverlayRenderer;
-import com.pokemod.pokemod.client.particle.PixelmonGlowParticle;
-import com.pokemod.pokemod.client.particle.PokeBallGlowParticle;
-import com.pokemod.pokemod.client.render.Pipelines;
-import com.pokemod.pokemod.client.render.block.entity.*;
-import com.pokemod.pokemod.client.render.entity.*;
-import com.pokemod.pokemod.network.api.PokeModNetworking;
-import com.pokemod.pokemod.network.packets.C2SSendOutPartyMemberPacket;
-import com.pokemod.pokemod.network.protocol.PokeModClientPacketListener;
-import com.pokemod.pokemod.world.container.*;
-import com.pokemod.pokemod.world.item.curry.CurryData;
-import com.pokemod.pokemod.world.level.block.PokeModWoodTypes;
-import com.pokemod.pokemod.world.particle.PokeModParticles;
-import com.pokemod.rarecandy.rendering.RareCandy;
-import com.teamwizardry.animation.GameTime;
-import dev.architectury.registry.client.keymappings.KeyMappingRegistry;
+import dev.architectury.event.events.client.ClientLifecycleEvent;
+import dev.architectury.registry.ReloadListenerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
@@ -31,32 +15,30 @@ import generations.gg.generations.core.generationscore.client.render.entity.Poke
 import generations.gg.generations.core.generationscore.client.render.entity.PokeModChestBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
+import generations.gg.generations.core.generationscore.client.render.rks.PokeCraftRKSImpl;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.PixelmonContainers;
 import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
+import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.resources.PreparableReloadListener;
+import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.util.Mth;
+import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.ForgeConfig;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.joml.Vector4f;
-import org.lwjgl.glfw.GLFW;
 
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
 
 import static generations.gg.generations.core.generationscore.world.item.MelodyFluteItem.isItem;
 
@@ -65,32 +47,34 @@ public class PokeModClient {
 //    public static final GameTime WORLD_TIME = new GameTime();
 //    private static RareCandy RENDERER;
 
-    public static void onInitialize(IEventBus eventBus) {
+    public static void onInitialize() {
         PokeModClient.registerEntityRenderers();
         PokeModClient.registerBlockEntityRenderers();
-        PokeModClient.setupClient();
-        PokeModClient.clientSetup();
+
+        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) resourceManager -> PokeCraftRKSImpl.getInstance().onResourceManagerReload());
+
+        ClientLifecycleEvent.CLIENT_SETUP.register(instance -> {
+            PokeModClient.setupClient(instance);
+            PokeModClient.clientSetup(instance);
+        });
     }
 
-    private static void clientSetup(final FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
-            Minecraft.getInstance().particleEngine.register(PokeModParticles.POKE_BALL_GLOW.get(), new PokeBallGlowParticle.Provider());
-            Minecraft.getInstance().particleEngine.register(PokeModParticles.PIXELMON_GLOW_SHRINK.get(), new PixelmonGlowParticle.Provider(true));
-            Minecraft.getInstance().particleEngine.register(PokeModParticles.PIXELMON_GLOW_GROW.get(), new PixelmonGlowParticle.Provider(false));
+    private static void clientSetup(final Minecraft event) {
+//        event.enqueueWork(() -> {
+//            Minecraft.getInstance().particleEngine.register(PokeModParticles.POKE_BALL_GLOW.get(), new PokeBallGlowParticle.Provider());
+//            Minecraft.getInstance().particleEngine.register(PokeModParticles.PIXELMON_GLOW_SHRINK.get(), new PixelmonGlowParticle.Provider(true));
+//            Minecraft.getInstance().particleEngine.register(PokeModParticles.PIXELMON_GLOW_GROW.get(), new PixelmonGlowParticle.Provider(false));
+//
+//            WoodType.register(PokeModWoodTypes.ULTRA_JUNGLE);
+//            WoodType.register(PokeModWoodTypes.ULTRA_DARK);
+//            WoodType.register(PokeModWoodTypes.GHOST);
+//
+//            Sheets.addWoodType(PokeModWoodTypes.ULTRA_JUNGLE);
+//            Sheets.addWoodType(PokeModWoodTypes.ULTRA_DARK);
+//            Sheets.addWoodType(PokeModWoodTypes.GHOST);
+//        });
 
-            WoodType.register(PokeModWoodTypes.ULTRA_JUNGLE);
-            WoodType.register(PokeModWoodTypes.ULTRA_DARK);
-            WoodType.register(PokeModWoodTypes.GHOST);
-
-            Sheets.addWoodType(PokeModWoodTypes.ULTRA_JUNGLE);
-            Sheets.addWoodType(PokeModWoodTypes.ULTRA_DARK);
-            Sheets.addWoodType(PokeModWoodTypes.GHOST);
-        });
-
-        PokeModClientPacketListener.getInstance().onFmlClientSetup();
-        PokeModClient.updateTitle();
-        ForgeConfig.CLIENT.alwaysSetupTerrainOffThread.set(true); // Performance improvement
-        ForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.set(true); // Use Experimental Forge Light Pipeline
+//        PokeModClient.updateTitle();
     }
 
     private static void renderLine(PoseStack poseStack, Vec3 pos1, Vec3 pos2, VertexConsumer vertexConsumer, BlockPos blockPos, Vec3 camPos, Vector4f color) {
@@ -108,8 +92,8 @@ public class PokeModClient {
                 .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
     }
 
-    private static void setupClient(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
+    private static void setupClient(Minecraft event) {
+        event.submit(() -> {
 //            RunnableKeybind.create("key.throw_pokeball", GLFW.GLFW_KEY_R, "key.categories.pixelmon", () -> PokeModNetworking.sendPacket(new C2SSendOutPartyMemberPacket(Minecraft.getInstance().player)));
 //            RunnableKeybind.create("key.next_party_member", GLFW.GLFW_KEY_DOWN, "key.categories.pixelmon", () -> movePartySelection(PixelmonParty.Direction.FORWARD));
 //            RunnableKeybind.create("key.prev_party_member", GLFW.GLFW_KEY_UP, "key.categories.pixelmon", () -> movePartySelection(PixelmonParty.Direction.BACKWARD));
@@ -130,8 +114,6 @@ public class PokeModClient {
                 else return 0;
             });
 
-            PokeModClient.getRareCandy();
-            Pipelines.onInitialize();
             registerScreens();
         });
     }
@@ -176,7 +158,7 @@ public class PokeModClient {
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.COOKING_POT.get(), CookingPotRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.WEATHER_TRIO.get(), GeneralUseBlockEntityRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), context -> new GenerationsSignRenderer(context));
-        BlockEntityRendererRegistry.register(GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get(), HangingSignRenderer::new);
+//        BlockEntityRendererRegistry.register(GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get(), HangingSignRenderer::new); TODO: JT I let you deal with this. ><
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_CHEST.get(), GenericChestRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), GeneralUseBlockEntityRenderer::new);

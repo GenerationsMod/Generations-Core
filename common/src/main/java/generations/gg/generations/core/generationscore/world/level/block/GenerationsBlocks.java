@@ -32,6 +32,7 @@ public class GenerationsBlocks {
     public static final DeferredRegister<Block> ULTRA_BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> POKEBRICKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> MARBLE = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
+
     public static final BlockBehaviour.Properties ULTRA_BLOCK_SETTINGS = BlockBehaviour.Properties.copy(Blocks.GLASS).lightLevel(value -> 15);
 
     public static final RegistrySupplier<Block> POKE_GRASS = registerBlockItem("poke_grass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
@@ -1380,5 +1381,4 @@ public class GenerationsBlocks {
         MARBLE.register();
         ULTRA_BLOCKS.register();
     }
-
 }

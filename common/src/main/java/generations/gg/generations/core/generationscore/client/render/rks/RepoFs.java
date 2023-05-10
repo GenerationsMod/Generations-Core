@@ -16,7 +16,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-package generations.gg.generations.core.generationscore.rks;
+package generations.gg.generations.core.generationscore.client.render.rks;
 
 import net.minecraft.resources.ResourceLocation;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;

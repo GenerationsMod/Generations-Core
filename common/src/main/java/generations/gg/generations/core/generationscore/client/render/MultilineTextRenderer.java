@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.pokemod.pokemod.client.screen.ScreenUtils;
+import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;

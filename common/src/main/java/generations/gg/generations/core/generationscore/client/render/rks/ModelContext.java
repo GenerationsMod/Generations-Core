@@ -16,23 +16,19 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-package generations.gg.generations.core.generationscore.rks;
+package generations.gg.generations.core.generationscore.client.render.rks;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.thepokecraftmod.rks.ubo.UniformBlockUploader;
-import org.lwjgl.system.MemoryStack;
+import com.thepokecraftmod.rks.FileLocator;
+import com.thepokecraftmod.rks.model.Model;
+import com.thepokecraftmod.rks.pipeline.Shader;
+import com.thepokecraftmod.rks.scene.FullMesh;
 
-public class SharedUniformBlock extends UniformBlockUploader {
+import java.util.function.Function;
 
-    public SharedUniformBlock() {
-        super(MAT4F_SIZE , 0);
-    }
-
-    public void update() {
-        try (var stack = MemoryStack.stackPush()) {
-            var sharedInfo = stack.nmalloc(MAT4F_SIZE);
-            RenderSystem.getProjectionMatrix().getToAddress(sharedInfo);
-            upload(0, MAT4F_SIZE, sharedInfo);
-        }
-    }
-}
+public record ModelContext(
+        FullMesh renderObject,
+        Model model,
+        Function<String, Shader> shaderFunction,
+        FileLocator locator,
+        MaterialUploader uploader
+) {}

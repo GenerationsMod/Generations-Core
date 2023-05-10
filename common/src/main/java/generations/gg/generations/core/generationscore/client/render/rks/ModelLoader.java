@@ -16,10 +16,11 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-package generations.gg.generations.core.generationscore.rks;
+package generations.gg.generations.core.generationscore.client.render.rks;
 
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.thepokecraftmod.rks.FileLocator;
 import com.thepokecraftmod.rks.Pair;
 import com.thepokecraftmod.rks.assimp.AssimpModelLoader;
@@ -30,8 +31,11 @@ import com.thepokecraftmod.rks.model.animation.Skeleton;
 import com.thepokecraftmod.rks.scene.FullMesh;
 import com.thepokecraftmod.rks.scene.MeshObject;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.Rotations;
 import net.minecraft.resources.ResourceLocation;
+import org.joml.Quaternionf;
 import org.joml.Vector4f;
 import org.lwjgl.assimp.Assimp;
 import org.lwjgl.opengl.*;
@@ -64,6 +68,11 @@ public class ModelLoader {
         PokeCraftRKSImpl.getInstance().modelLoadingThreads.submit(() -> new ReadyToUploadObject(modelLocation, modelRepo));
     }
 
+    public static <T extends ModelProvidingBlockEntity> void prepForBER(PoseStack stack, T blockEntity) {
+        stack.translate(0.5, 0, 0.5);
+        stack.mulPose(new Quaternionf().fromAxisAngleDeg(0, 1, 0, blockEntity.getAngle()));
+    }
+
     public static class ReadyToUploadObject implements FileLocator {
         private static final ResourceLocation FALLBACK = GenerationsCore.id("fallback");
         private final ResourceLocation root;
@@ -73,7 +82,7 @@ public class ModelLoader {
             this.root = repo.entries.containsKey(new ResourceLocation(modelLoc.toString() + "/model.gltf")) ? modelLoc : FALLBACK;
             this.repo = repo;
             var model = AssimpModelLoader.load("model.gltf", this, Assimp.aiProcess_GenNormals | Assimp.aiProcess_LimitBoneWeights);
-            var object = loadAnimatedMeshes(model);
+            var object = loadMeshes(model);
             var shaderFunction = PokeCraftRKSImpl.getInstance().shadingMethods.get(model.config().shadingMethod);
             var material = new MaterialUploader(model, this, shaderFunction);
 
@@ -91,6 +100,96 @@ public class ModelLoader {
                         material
                 ));
             });
+        }
+
+        public static Supplier<FullMesh> loadMeshes(Model model) {
+            var indexBuffers = new ArrayList<ByteBuffer>();
+            var vertexBuffers = new ArrayList<FloatBuffer>();
+            var uvBuffers = new ArrayList<FloatBuffer>();
+            var normalBuffers = new ArrayList<FloatBuffer>();
+
+
+            for (var mesh : model.meshes()) {
+                var useShort = mesh.indices().size() < Short.MAX_VALUE;
+
+                var indexBuffer = MemoryUtil.memAlloc(mesh.indices().size() * (useShort ? 2 : 4));
+                mesh.indices().forEach(integer -> {
+                    if (useShort) indexBuffer.putShort((short) (int) integer);
+                    else indexBuffer.putInt(integer);
+                });
+                indexBuffer.flip();
+                indexBuffers.add(indexBuffer);
+
+                var vertexBuffer = MemoryUtil.memAllocFloat(mesh.positions().size() * 3);
+                mesh.positions().forEach(vec3 -> {
+                    vertexBuffer.put(vec3.x());
+                    vertexBuffer.put(vec3.y());
+                    vertexBuffer.put(vec3.z());
+                });
+                vertexBuffer.flip();
+                vertexBuffers.add(vertexBuffer);
+
+                var uvBuffer = MemoryUtil.memAllocFloat(mesh.uvs().size() * 2);
+                mesh.uvs().forEach(vec2 -> {
+                    uvBuffer.put(vec2.x());
+                    uvBuffer.put(vec2.y());
+                });
+                uvBuffer.flip();
+                uvBuffers.add(uvBuffer);
+
+                var normalBuffer = MemoryUtil.memAllocFloat(mesh.normals().size() * 3);
+                mesh.normals().forEach(vec3 -> {
+                    normalBuffer.put(vec3.x());
+                    normalBuffer.put(vec3.y());
+                    normalBuffer.put(vec3.z());
+                });
+                normalBuffer.flip();
+                normalBuffers.add(normalBuffer);
+            }
+
+            return () -> {
+                var mro = new FullMesh();
+                for (int i = 0; i < vertexBuffers.size(); i++) {
+                    var mesh = model.meshes()[i];
+                    var indexBuffer = indexBuffers.get(i);
+                    var vertexBuffer = vertexBuffers.get(i);
+                    var uvBuffer = uvBuffers.get(i);
+                    var normalBuffer = normalBuffers.get(i);
+                    var useShort = mesh.indices().size() < Short.MAX_VALUE;
+                    var meshObject = new MeshObject(model.materialReferences()[mesh.material()]);
+                    var vao = GL30.glGenVertexArrays();
+                    GL30.glBindVertexArray(vao);
+
+                    bindArrayBuffer(vertexBuffer);
+                    vertexAttribPointer(0, 3);
+                    bindArrayBuffer(uvBuffer);
+                    vertexAttribPointer(1, 2);
+                    bindArrayBuffer(normalBuffer);
+                    vertexAttribPointer(2, 3);
+
+                    var ebo = GL15.glGenBuffers();
+                    GL15.glBindBuffer(GL15C.GL_ELEMENT_ARRAY_BUFFER, ebo);
+                    GL15.glBufferData(GL15C.GL_ELEMENT_ARRAY_BUFFER, indexBuffer, GL15.GL_STATIC_DRAW);
+
+                    meshObject.model.meshDrawCommands.add(new MeshDrawCommand(
+                            vao,
+                            GL11C.GL_TRIANGLES,
+                            useShort ? GL11C.GL_UNSIGNED_SHORT : GL11C.GL_UNSIGNED_INT,
+                            ebo,
+                            mesh.indices().size()
+                    ));
+
+                    PokeCraftRKSImpl.getInstance().modelLoadingThreads.submit(() -> {
+                        MemoryUtil.memFree(indexBuffer);
+                        MemoryUtil.memFree(vertexBuffer);
+                        MemoryUtil.memFree(uvBuffer);
+                        MemoryUtil.memFree(normalBuffer);
+                    });
+                    mro.add(meshObject);
+                }
+
+                return mro;
+            };
         }
 
         public static Supplier<FullMesh> loadAnimatedMeshes(Model model) {

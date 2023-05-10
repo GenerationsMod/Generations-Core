@@ -189,7 +189,7 @@ public class GenerationsPokeDolls {
 
 	private static RegistrySupplier<Block> registerBlockItem(String name, boolean shiny, float scale) {
 		RegistrySupplier<Block> block = POKEDOLLS.register((shiny ? "shiny_" : "") + name  + "_doll", () -> new PokeDollBlock(name, shiny, scale));
-		GenerationsItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.POKEDOLLS)));
+		GenerationsItems.ITEMS.register((shiny ? "shiny_" : "") + name  + "_doll", () -> new BlockItem(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.POKEDOLLS)));
 		return block;
 	}
 

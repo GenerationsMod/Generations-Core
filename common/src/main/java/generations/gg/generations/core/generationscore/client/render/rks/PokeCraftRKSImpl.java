@@ -16,7 +16,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-package generations.gg.generations.core.generationscore.rks;
+package generations.gg.generations.core.generationscore.client.render.rks;
 
 import com.thepokecraftmod.rks.model.texture.TextureType;
 import com.thepokecraftmod.rks.pipeline.Shader;
@@ -68,11 +68,11 @@ public class PokeCraftRKSImpl {
                 .uniform(new UniformBlockReference("SharedInfo", 0))
                 .uniform(new UniformBlockReference("InstanceInfo", 1))
                 .texture(TextureType.ALBEDO)
-                .texture(TextureType.NORMALS)
-                .texture(TextureType.METALNESS)
-                .texture(TextureType.ROUGHNESS)
-                .texture(TextureType.AMBIENT_OCCLUSION)
-                .texture(TextureType.EMISSIVE)
+//                .texture(TextureType.NORMALS)
+//                .texture(TextureType.METALNESS)
+//                .texture(TextureType.ROUGHNESS)
+//                .texture(TextureType.AMBIENT_OCCLUSION)
+//                .texture(TextureType.EMISSIVE)
                 .build()
         );
 
