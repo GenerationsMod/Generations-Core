@@ -70,7 +70,7 @@ public class ModelLoader {
 
     public static <T extends ModelProvidingBlockEntity> void prepForBER(PoseStack stack, T blockEntity) {
         stack.translate(0.5, 0, 0.5);
-        stack.mulPose(new Quaternionf().fromAxisAngleDeg(0, 1, 0, blockEntity.getAngle()));
+        stack.mulPose(new Quaternionf().fromAxisAngleDeg(0, -1, 0, blockEntity.getAngle()));
     }
 
     public static class ReadyToUploadObject implements FileLocator {

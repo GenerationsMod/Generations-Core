@@ -22,8 +22,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> implements BlockEntityRenderer<T> {
-    private static final Map<BlockPos, AnimatedObjectInstance> INSTANCE_DATA = new HashMap<>();
-
     public GeneralUseBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
     }
 
