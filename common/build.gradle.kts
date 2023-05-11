@@ -5,12 +5,8 @@ repositories {
     mavenCentral()
     mavenLocal()
     maven("https://jitpack.io") // BinarySMD
-
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-
-    maven("https://maven.thepokecraftmod.com/releases")
-    maven("https://maven.parchmentmc.org")
-    maven("https://oss.sonatype.org/content/repositories/snapshots/")
+    maven("https://jitpack.io") // BinarySMD
 }
 
 sourceSets {
@@ -29,12 +25,13 @@ dependencies {
     modApi("dev.architectury:architectury:${rootProject.properties["architectury_version"]}")
     modImplementation("earth.terrarium:botarium-common-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
 
-    implementation("com.thepokecraftmod:modelLoader:1.2.4")
-    implementation("com.thepokecraftmod:renderer:1.2.4")
-    implementation("org.tukaani:xz:1.9")
-    implementation("com.thebombzen:jxlatte:1.1.0")
-
-    compileOnly("org.lwjgl:lwjgl-assimp:3.3.2")
+    implementation("com.pixelmongenerations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
+    implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")
+    implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}")
+    implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")
+    implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
+    implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
+    implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")
 }
 
 architectury {

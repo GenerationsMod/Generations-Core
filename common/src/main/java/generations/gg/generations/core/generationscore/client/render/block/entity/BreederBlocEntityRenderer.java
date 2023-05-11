@@ -1,10 +1,14 @@
 package generations.gg.generations.core.generationscore.client.render.block.entity;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.pokemod.rarecandy.rendering.ObjectInstance;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BreederBlockEntity;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import org.joml.Matrix4f;
 
 public class BreederBlocEntityRenderer extends GeneralUseBlockEntityRenderer<BreederBlockEntity> {
     public static final ResourceLocation AUTO_FEEDER = GenerationsCore.id("models/block/utility_blocks/breeder/auto_feeder.pk");
@@ -19,7 +23,7 @@ public class BreederBlocEntityRenderer extends GeneralUseBlockEntityRenderer<Bre
     @Override
     protected void renderModels(PoseStack stack, BreederBlockEntity blockEntity) {
         renderResourceLocation(stack, AUTO_FEEDER);
-//        ModelRegistry.get(AUTO_FEEDER_FILL, "fullbright").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
+        ModelRegistry.get(AUTO_FEEDER_FILL, "fullbright").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
         renderResourceLocation(stack, BREEDER);
         renderResourceLocation(stack, EGG);
     }

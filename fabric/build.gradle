@@ -29,15 +29,7 @@ repositories {
     }
     mavenLocal()
     mavenCentral()
-    maven {
-        url = "https://maven.thepokecraftmod.com/releases"
-    }
-    maven {
-        url = "https://maven.parchmentmc.org"
-    }
-    maven {
-        url = "https://oss.sonatype.org/content/repositories/snapshots/"
-    }
+    maven { url = "https://jitpack.io" } // BinarySMD
 }
 
 dependencies {
@@ -47,7 +39,7 @@ dependencies {
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
-    modApi "earth.terrarium:botarium-fabric-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}"
+    include(modApi "earth.terrarium:botarium-fabric-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
 
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
@@ -55,12 +47,15 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:1.1.2")
 
-    include(implementation("com.thepokecraftmod:modelLoader:1.2.4"))
-    include(implementation("com.thepokecraftmod:renderer:1.2.4"))
-    include(implementation("org.tukaani:xz:1.9"))
-    include(implementation("com.thebombzen:jxlatte:1.1.0"))
-
-    compileOnly("org.lwjgl:lwjgl-assimp:3.3.2")
+    include(implementation("com.pixelmongenerations:RareCandy:${project.properties["rareCandy"]}"){
+        transitive = false
+    })
+    include(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}"))
+    include(implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}"))
+    include(implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}"))
+    include(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){transitive = false})
+    include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}"))
+    include(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3"))
 }
 
 processResources {

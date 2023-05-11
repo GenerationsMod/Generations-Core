@@ -15,89 +15,49 @@ import generations.gg.generations.core.generationscore.client.render.entity.Poke
 import generations.gg.generations.core.generationscore.client.render.entity.PokeModChestBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
-import generations.gg.generations.core.generationscore.client.render.rks.PokeCraftRKSImpl;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.PixelmonContainers;
 import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.resources.PreparableReloadListener;
-import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.util.Mth;
-import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector4f;
 
 import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
 
 import static generations.gg.generations.core.generationscore.world.item.MelodyFluteItem.isItem;
+import static net.minecraft.client.renderer.Sheets.*;
 
 public class PokeModClient {
-//    public static final GameTime GAME_TIME = new GameTime();
-//    public static final GameTime WORLD_TIME = new GameTime();
-//    private static RareCandy RENDERER;
-
-    public static void onInitialize() {
+    public static void onInitialize(Minecraft minecraft) {
         PokeModClient.registerEntityRenderers();
         PokeModClient.registerBlockEntityRenderers();
+        ModelRegistry.getRareCandy();
 
-        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) resourceManager -> PokeCraftRKSImpl.getInstance().onResourceManagerReload());
+        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
 
-        ClientLifecycleEvent.CLIENT_SETUP.register(instance -> {
-            PokeModClient.setupClient(instance);
-            PokeModClient.clientSetup(instance);
-        });
-    }
-
-    private static void clientSetup(final Minecraft event) {
-//        event.enqueueWork(() -> {
-//            Minecraft.getInstance().particleEngine.register(PokeModParticles.POKE_BALL_GLOW.get(), new PokeBallGlowParticle.Provider());
-//            Minecraft.getInstance().particleEngine.register(PokeModParticles.PIXELMON_GLOW_SHRINK.get(), new PixelmonGlowParticle.Provider(true));
-//            Minecraft.getInstance().particleEngine.register(PokeModParticles.PIXELMON_GLOW_GROW.get(), new PixelmonGlowParticle.Provider(false));
-//
-//            WoodType.register(PokeModWoodTypes.ULTRA_JUNGLE);
-//            WoodType.register(PokeModWoodTypes.ULTRA_DARK);
-//            WoodType.register(PokeModWoodTypes.GHOST);
-//
-//            Sheets.addWoodType(PokeModWoodTypes.ULTRA_JUNGLE);
-//            Sheets.addWoodType(PokeModWoodTypes.ULTRA_DARK);
-//            Sheets.addWoodType(PokeModWoodTypes.GHOST);
-//        });
-
-//        PokeModClient.updateTitle();
-    }
-
-    private static void renderLine(PoseStack poseStack, Vec3 pos1, Vec3 pos2, VertexConsumer vertexConsumer, BlockPos blockPos, Vec3 camPos, Vector4f color) {
-        PoseStack.Pose pose = poseStack.last();
-        float f = (float) (pos2.x - pos1.x);
-        float f1 = (float) (pos2.y - pos1.y);
-        float f2 = (float) (pos2.z - pos1.z);
-        float f3 = Mth.sqrt(f * f + f1 * f1 + f2 * f2);
-        f /= f3;
-        f1 /= f3;
-        f2 /= f3;
-        vertexConsumer.vertex(pose.pose(), (float) (pos1.x + (blockPos.getX() - camPos.x + 0.5)), (float) (pos1.y + (blockPos.getY() + 0.5 - camPos.y)), (float) (pos1.z + (blockPos.getZ() - camPos.z + 0.5)))
-                .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
-        vertexConsumer.vertex(pose.pose(), (float) (pos2.x + (blockPos.getX() - camPos.x + 0.5)), (float) (pos2.y + (blockPos.getY() + 0.5 - camPos.y)), (float) (pos2.z + (blockPos.getZ() - camPos.z + 0.5)))
-                .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
+        PokeModClient.setupClient(minecraft);
     }
 
     private static void setupClient(Minecraft event) {
         event.submit(() -> {
-//            RunnableKeybind.create("key.throw_pokeball", GLFW.GLFW_KEY_R, "key.categories.pixelmon", () -> PokeModNetworking.sendPacket(new C2SSendOutPartyMemberPacket(Minecraft.getInstance().player)));
-//            RunnableKeybind.create("key.next_party_member", GLFW.GLFW_KEY_DOWN, "key.categories.pixelmon", () -> movePartySelection(PixelmonParty.Direction.FORWARD));
-//            RunnableKeybind.create("key.prev_party_member", GLFW.GLFW_KEY_UP, "key.categories.pixelmon", () -> movePartySelection(PixelmonParty.Direction.BACKWARD));
-//            RunnableKeybind.create("key.toggle_overlay", GLFW.GLFW_KEY_I, "key.categories.pixelmon", PartyOverlayRenderer::toggleOverlay);
+            addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
+            addWoodType(GenerationsWoodTypes.ULTRA_DARK);
+            addWoodType(GenerationsWoodTypes.GHOST);
 
             ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
             ItemPropertiesRegistry.register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
@@ -116,6 +76,12 @@ public class PokeModClient {
 
             registerScreens();
         });
+    }
+
+    public static void addWoodType(WoodType woodType) {
+        WoodType.register(woodType);
+        Sheets.SIGN_MATERIALS.put(woodType, createSignMaterial(woodType));
+        Sheets.HANGING_SIGN_MATERIALS.put(woodType, createHangingSignMaterial(woodType));
     }
 
     private static void registerScreens() {
@@ -182,13 +148,4 @@ public class PokeModClient {
             GenerationsCore.LOGGER.info("Failed to load icon", e);
         }
     }
-
-//    public static RareCandy getRareCandy() {
-//        //RareCandy.DEBUG_THREADS = true;
-//        if (PokeModClient.RENDERER == null) PokeModClient.RENDERER = new RareCandy();
-//        Animation.animationModifier = (animation, s) -> {
-//            if (s.equals("gfb")) animation.ticksPerSecond = 60_000; // 60 fps. 1000 ticks per frame?
-//        };
-//        return RENDERER;
-//    }
 }
