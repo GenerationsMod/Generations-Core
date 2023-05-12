@@ -65,7 +65,6 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
-//    modImplementation("me.djtheredstoner:DevAuth-forge-latest:1.1.2")
 
     include(implementation("com.pixelmongenerations:RareCandy:${project.properties["rareCandy"]}"){transitive = false})
     include(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}"))
@@ -74,6 +73,7 @@ dependencies {
     include(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){transitive = false})
     include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}"))
     include(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3"))
+    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${rootProject.devauth_version}")
 }
 
 processResources {
