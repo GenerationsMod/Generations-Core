@@ -5,10 +5,8 @@ repositories {
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
 }
 
-sourceSets {
-    main {
-        resources.srcDir("src/main/generated/resources")
-    }
+sourceSets.main  {
+    resources.srcDir("src/main/generated/resources")
 }
 
 dependencies {
