@@ -38,13 +38,13 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
     protected void generate() {
         GenerationsWood.WOOD_BLOCKS.forEach(block -> dropSelfUpdated(block.get()));
 
-        //GenerationsBlocks.ULTRA_BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(this::dropSelfUpdated);
+        GenerationsBlocks.ULTRA_BLOCKS.forEach(block -> dropSelfUpdated(block.get()));
         //createDoubleDyedBlock(GenerationsUtilityBlocks.PC.get(), PCBlock.HALF, DoubleBlockHalf.LOWER);
         //createDyedBlock(GenerationsUtilityBlocks.CLOCK.get());
         //createDyedBlock(GenerationsDecorationBlocks.UMBRELLA.get());
         //createDyedBlock(GenerationsDecorationBlocks.PASTEL_BEAN_BAG.get());
         //createDyedBlock(GenerationsDecorationBlocks.VENDING_MACHINE.get());
-//        GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> add(block, createSinglePropConditionTable(block, DoubleDyeableBlock.HALF, DoubleBlockHalf.LOWER)));
+        //GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> add(block, createSinglePropConditionTable(block, DoubleDyeableBlock.HALF, DoubleBlockHalf.LOWER)));
         //GenerationsPokeDolls.POKEDOLLS.getEntries().stream().map(RegistryObject::get).forEach(this::dropSelf);
         BlockDatagen.dropSelfList.stream().map(block -> (Block) block).forEach(this::dropSelf);
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
