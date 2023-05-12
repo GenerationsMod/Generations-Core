@@ -36,17 +36,17 @@ import static generations.gg.generations.core.generationscore.world.item.MelodyF
 import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
-public class PokeModClient {
+public class GenerationsCoreClient {
     public static void onInitialize(Minecraft minecraft) {
-        PokeModClient.registerEntityRenderers();
-        PokeModClient.registerBlockEntityRenderers();
+        GenerationsCoreClient.registerEntityRenderers();
+        GenerationsCoreClient.registerBlockEntityRenderers();
         ModelRegistry.getRareCandy();
 
         Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
         ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
 
-        PokeModClient.setupClient(minecraft);
+        GenerationsCoreClient.setupClient(minecraft);
     }
 
     private static void setupClient(Minecraft event) {
@@ -119,7 +119,7 @@ public class PokeModClient {
 
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.COOKING_POT.get(), CookingPotRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.WEATHER_TRIO.get(), GeneralUseBlockEntityRenderer::new);
-        BlockEntityRendererRegistry.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), context -> new GenerationsSignRenderer(context));
+        BlockEntityRendererRegistry.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), GenerationsSignRenderer::new);
 //        BlockEntityRendererRegistry.register(GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get(), HangingSignRenderer::new); TODO: JT I let you deal with this. ><
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_CHEST.get(), GenericChestRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
