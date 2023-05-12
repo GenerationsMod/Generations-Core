@@ -2,14 +2,14 @@ package generations.gg.generations.core.generationscore.client.render.block.enti
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.pokemod.rarecandy.animation.AnimationInstance;
-import com.pokemod.rarecandy.rendering.ObjectInstance;
-import com.pokemod.rarecandy.storage.AnimatedObjectInstance;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.animation.FixedFrameAnimationInstance;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
+import gg.generations.rarecandy.animation.AnimationInstance;
+import gg.generations.rarecandy.rendering.ObjectInstance;
+import gg.generations.rarecandy.storage.AnimatedObjectInstance;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;

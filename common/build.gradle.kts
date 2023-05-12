@@ -3,10 +3,12 @@ loom.silentMojangMappingsLicense()
 
 repositories {
     mavenCentral()
-    mavenLocal()
-    maven("https://jitpack.io") // BinarySMD
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://jitpack.io") // BinarySMD
+    maven {
+        name = "generationsMavenSnapshots"
+        url = uri("https://maven.generations.gg/snapshots")
+    }
 }
 
 sourceSets {
@@ -25,7 +27,7 @@ dependencies {
     modApi("dev.architectury:architectury:${rootProject.properties["architectury_version"]}")
     modImplementation("earth.terrarium:botarium-common-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
 
-    implementation("com.pixelmongenerations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
+    implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
     implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")
     implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}")
     implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")

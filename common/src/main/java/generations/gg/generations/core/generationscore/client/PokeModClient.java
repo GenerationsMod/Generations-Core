@@ -1,9 +1,6 @@
 package generations.gg.generations.core.generationscore.client;
 
 import com.mojang.blaze3d.platform.MacosUtil;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.registry.ReloadListenerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
@@ -28,25 +25,24 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.core.BlockPos;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
-import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraft.world.phys.Vec3;
-import org.joml.Vector4f;
 
 import java.io.IOException;
 
 import static generations.gg.generations.core.generationscore.world.item.MelodyFluteItem.isItem;
-import static net.minecraft.client.renderer.Sheets.*;
+import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
+import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
 public class PokeModClient {
     public static void onInitialize(Minecraft minecraft) {
         PokeModClient.registerEntityRenderers();
         PokeModClient.registerBlockEntityRenderers();
         ModelRegistry.getRareCandy();
+
+        Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
         ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
 

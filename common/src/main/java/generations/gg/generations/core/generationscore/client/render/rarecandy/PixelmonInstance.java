@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
-import com.pokemod.rarecandy.storage.AnimatedObjectInstance;
-import net.minecraft.world.entity.LivingEntity;
+import gg.generations.rarecandy.storage.AnimatedObjectInstance;
 import org.joml.Matrix4f;
 
 import java.util.function.Supplier;

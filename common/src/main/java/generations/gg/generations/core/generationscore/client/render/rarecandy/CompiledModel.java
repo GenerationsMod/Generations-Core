@@ -1,14 +1,14 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
 import com.mojang.math.Axis;
-import com.pokemod.pokeutils.PixelAsset;
-import com.pokemod.rarecandy.components.MeshObject;
-import com.pokemod.rarecandy.components.MultiRenderObject;
-import com.pokemod.rarecandy.loading.ModelLoader;
-import com.pokemod.rarecandy.pipeline.Pipeline;
-import com.pokemod.rarecandy.rendering.ObjectInstance;
-import com.pokemod.rarecandy.storage.ObjectManager;
 import de.javagl.jgltf.model.GltfModel;
+import gg.generations.pokeutils.PixelAsset;
+import gg.generations.rarecandy.components.MeshObject;
+import gg.generations.rarecandy.components.MultiRenderObject;
+import gg.generations.rarecandy.loading.ModelLoader;
+import gg.generations.rarecandy.pipeline.Pipeline;
+import gg.generations.rarecandy.rendering.ObjectInstance;
+import gg.generations.rarecandy.storage.ObjectManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;

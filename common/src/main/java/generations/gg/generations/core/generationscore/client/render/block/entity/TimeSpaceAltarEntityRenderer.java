@@ -2,9 +2,9 @@ package generations.gg.generations.core.generationscore.client.render.block.enti
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.pokemod.rarecandy.rendering.ObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.entities.TimeSpaceAltarBlockEntity;
+import gg.generations.rarecandy.rendering.ObjectInstance;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import org.jetbrains.annotations.NotNull;

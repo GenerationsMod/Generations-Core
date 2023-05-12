@@ -27,9 +27,12 @@ repositories {
     maven {
         url = "https://nexus.resourcefulbees.com/repository/maven-public/"
     }
-    mavenLocal()
     mavenCentral()
     maven { url = "https://jitpack.io" } // BinarySMD
+    maven {
+        name = "generationsMavenSnapshots"
+        url = uri("https://maven.generations.gg/snapshots")
+    }
 }
 
 dependencies {
@@ -47,7 +50,7 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:1.1.2")
 
-    include(implementation("com.pixelmongenerations:RareCandy:${project.properties["rareCandy"]}"){
+    include(implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){
         transitive = false
     })
     include(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}"))
