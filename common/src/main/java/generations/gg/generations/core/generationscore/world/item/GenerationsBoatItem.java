@@ -19,12 +19,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PokeModBoatItem extends Item{
+public class GenerationsBoatItem extends Item{
 
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::canBeCollidedWith);
     private final GenerationsBoatEntity.Type type;
 
-    public PokeModBoatItem(Properties properties, GenerationsBoatEntity.Type typeIn) {
+    public GenerationsBoatItem(Properties properties, GenerationsBoatEntity.Type typeIn) {
         super(properties);
         this.type = typeIn;
     }

@@ -2044,12 +2044,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GHOST_SIGN = registerSign("ghost_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.GHOST_SIGN.get(), GenerationsWood.GHOST_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign", properties -> new HangingSignItem(GenerationsWood.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
 
-    public static final RegistrySupplier<Item> GHOST_BOAT_ITEM = register("ghost_boat", properties -> new PokeModBoatItem(properties, GenerationsBoatEntity.Type.GHOST), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GHOST_CHEST_BOAT_ITEM = register("ghost_boat_with_chest", properties -> new PokeModChestBoatItem(properties, GenerationsChestBoatEntity.Type.GHOST), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_DARK_BOAT_ITEM = register("ultra_dark_boat", properties -> new PokeModBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_DARK), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_DARK_CHEST_BOAT_ITEM = register("ultra_dark_boat_with_chest", properties -> new PokeModChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_DARK), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_BOAT_ITEM = register("ultra_jungle_boat", properties -> new PokeModBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_CHEST_BOAT_ITEM = register("ultra_jungle_boat_with_chest", properties -> new PokeModChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> GHOST_BOAT_ITEM = register("ghost_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.GHOST), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> GHOST_CHEST_BOAT_ITEM = register("ghost_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.GHOST), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_DARK_BOAT_ITEM = register("ultra_dark_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_DARK), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_DARK_CHEST_BOAT_ITEM = register("ultra_dark_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_DARK), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_BOAT_ITEM = register("ultra_jungle_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_CHEST_BOAT_ITEM = register("ultra_jungle_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.BUILDING_BLOCKS);
 
     public static Item.Properties of() {
         return new Item.Properties();
