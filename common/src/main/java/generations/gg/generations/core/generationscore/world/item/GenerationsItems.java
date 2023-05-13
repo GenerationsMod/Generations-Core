@@ -1374,6 +1374,7 @@ public class GenerationsItems {
      */
     public static final RegistrySupplier<Item> ABILITY_URGE = register("ability_urge", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> ADVENTURE_GUIDE = register("adventure_guide", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> APRICORN_BOX = register("apricorn_box", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> AQUA_SUIT = register("aqua_suit", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> ARMOR_PASS = register("armor_pass", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> ARMORITE_ORE = register("armorite_ore", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1406,6 +1407,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> COUPON_1 = register("coupon_1", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> COUPON_2 = register("coupon_2", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> COUPON_3 = register("coupon_3", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> COURAGE_CANDY = register("courage_candy", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> COURAGE_CANDY_L = register("courage_candy_l", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> COURAGE_CANDY_XL = register("courage_candy_xl", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> CROWN_PASS = register("crown_pass", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> DATA_CARDS = register("data_cards", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> DEVON_PARTS = register("devon_parts", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1443,6 +1447,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GREEN_SPHERE = register("green_sphere", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> GREEN_TEA = register("green_tea", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> GRUBBY_HANKY = register("grubby_hanky", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> HEALTH_CANDY = register("health_candy", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> HEALTH_CANDY_L = register("health_candy_l", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> HEALTH_CANDY_XL = register("health_candy_xl", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+
     public static final RegistrySupplier<Item> HI_TECH_EARBUDS = register("hi_tech_earbuds", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HOLO_CASTER_1 = register("holo_caster_1", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HOLO_CASTER_2 = register("holo_caster_2", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1483,6 +1491,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MEMBER_CARD = register("member_card", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> METEORITE_SHARD = register("meteorite_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEGASTONE_SHARD = register("mega_stone_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> MIGHTY_CANDY = register("mighty_candy", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> MIGHTY_CANDY_L = register("mighty_candy_l", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> MIGHTY_CANDY_XL = register("mighty_candy_xl", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MYSTIC_TICKET = register("mystic_ticket", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> OAKS_LETTER = register("oaks_letter", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> OAKS_PARCEL = register("oaks_parcel", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1512,10 +1523,14 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> POKETCH_RED = register("poketch_red", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POWDER_JAR = register("powder_jar", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POWER_PLANT_PASS = register("power_plant_pass", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> PRISM_SPHERE = register("prism_sphere", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> PROFESSORS_MASK = register("professors_mask", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> PROFS_LETTER = register("profs_letter", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> PROP_CASE = register("prop_case", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> PURPLE_PETAL = register("purple_petal", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> QUICK_CANDY = register("quick_candy", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> QUICK_CANDY_L = register("quick_candy_l", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> QUICK_CANDY_XL = register("quick_candy_xl", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> RADIANT_PETAL = register("radiant_petal", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> RAINBOW_FLOWER = register("rainbow_flower", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> RAINBOW_PASS = register("rainbow_pass", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1549,6 +1564,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SILVER_RAZZ_BERRY = register("silver_razz_berry", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SILVER_WING = register("silver_wing", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SINNOH_STONE = register("sinnoh_stone", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> SMART_CANDY = register("smart_candy", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> SMART_CANDY_L = register("smart_candy_l", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> SMART_CANDY_XL = register("smart_candy_xl", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SONIAS_BOOK = register("sonias_book", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SOOT_SACK = register("soot_sack", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SPARKLING_STONE_1 = register("sparkling_stone_1", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1568,6 +1586,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TM_MATERIAL = register("tm_material", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> TMV_PASS = register("tmv_pass", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> TOTEM_STICKER = register("totem_sticker", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> TOUGH_CANDY = register("tough_candy", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> TOUGH_CANDY_L = register("tough_candy_l", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> TOUGH_CANDY_XL = register("tough_candy_xl", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> TOWN_MAP_1 = register("town_map_1", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> TOWN_MAP_2 = register("town_map_2", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> TOWN_MAP_3 = register("town_map_3", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);

@@ -1443,6 +1443,7 @@ public class ItemDatagen extends ItemModelProvider {
 
         createItem(GenerationsItems.ABILITY_URGE, "unimplemented/");
         createItem(GenerationsItems.ADVENTURE_GUIDE, "unimplemented/");
+        createItem(GenerationsItems.APRICORN_BOX, "unimplemented/");
         createItem(GenerationsItems.AQUA_SUIT, "unimplemented/");
         createItem(GenerationsItems.ARMOR_PASS, "unimplemented/");
         createItem(GenerationsItems.ARMORITE_ORE, "unimplemented/");
@@ -1472,6 +1473,9 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.CONTEST_COSTUME_1, "unimplemented/");
         createItem(GenerationsItems.CONTEST_COSTUME_2, "unimplemented/");
         createItem(GenerationsItems.CONTEST_PASS, "unimplemented/");
+        createItem(GenerationsItems.COURAGE_CANDY, "unimplemented/");
+        createItem(GenerationsItems.COURAGE_CANDY_L, "unimplemented/");
+        createItem(GenerationsItems.COURAGE_CANDY_XL, "unimplemented/");
         createItem(GenerationsItems.COUPON_1, "unimplemented/");
         createItem(GenerationsItems.COUPON_2, "unimplemented/");
         createItem(GenerationsItems.COUPON_3, "unimplemented/");
@@ -1513,6 +1517,9 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GREEN_SPHERE, "unimplemented/");
         createItem(GenerationsItems.GREEN_TEA, "unimplemented/");
         createItem(GenerationsItems.GRUBBY_HANKY, "unimplemented/");
+        createItem(GenerationsItems.HEALTH_CANDY, "unimplemented/");
+        createItem(GenerationsItems.HEALTH_CANDY_L, "unimplemented/");
+        createItem(GenerationsItems.HEALTH_CANDY_XL, "unimplemented/");
         createItem(GenerationsItems.HI_TECH_EARBUDS, "unimplemented/");
         createItem(GenerationsItems.HOLO_CASTER_1, "unimplemented/");
         createItem(GenerationsItems.HOLO_CASTER_2, "unimplemented/");
@@ -1552,6 +1559,9 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MEGA_RING, "unimplemented/");
         createItem(GenerationsItems.MEMBER_CARD, "unimplemented/");
         createItem(GenerationsItems.METEORITE_SHARD, "unimplemented/");
+        createItem(GenerationsItems.MIGHTY_CANDY, "unimplemented/");
+        createItem(GenerationsItems.MIGHTY_CANDY_L, "unimplemented/");
+        createItem(GenerationsItems.MIGHTY_CANDY_XL, "unimplemented/");
         createItem(GenerationsItems.MYSTIC_TICKET, "unimplemented/");
         createItem(GenerationsItems.OAKS_LETTER, "unimplemented/");
         createItem(GenerationsItems.OAKS_PARCEL, "unimplemented/");
@@ -1581,10 +1591,14 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.POKETCH_RED, "unimplemented/");
         createItem(GenerationsItems.POWDER_JAR, "unimplemented/");
         createItem(GenerationsItems.POWER_PLANT_PASS, "unimplemented/");
+        createItem(GenerationsItems.PRISM_SPHERE, "unimplemented/");
         createItem(GenerationsItems.PROFESSORS_MASK, "unimplemented/");
         createItem(GenerationsItems.PROFS_LETTER, "unimplemented/");
         createItem(GenerationsItems.PROP_CASE, "unimplemented/");
         createItem(GenerationsItems.PURPLE_PETAL, "unimplemented/");
+        createItem(GenerationsItems.QUICK_CANDY, "unimplemented/");
+        createItem(GenerationsItems.QUICK_CANDY_L, "unimplemented/");
+        createItem(GenerationsItems.QUICK_CANDY_XL, "unimplemented/");
         createItem(GenerationsItems.RADIANT_PETAL, "unimplemented/");
         createItem(GenerationsItems.RAINBOW_FLOWER, "unimplemented/");
         createItem(GenerationsItems.RAINBOW_PASS, "unimplemented/");
@@ -1619,6 +1633,9 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.SILVER_RAZZ_BERRY, "unimplemented/");
         createItem(GenerationsItems.SILVER_WING, "unimplemented/");
         createItem(GenerationsItems.SINNOH_STONE, "unimplemented/");
+        createItem(GenerationsItems.SMART_CANDY, "unimplemented/");
+        createItem(GenerationsItems.SMART_CANDY_L, "unimplemented/");
+        createItem(GenerationsItems.SMART_CANDY_XL, "unimplemented/");
         createItem(GenerationsItems.SONIAS_BOOK, "unimplemented/");
         createItem(GenerationsItems.SOOT_SACK, "unimplemented/");
         createItem(GenerationsItems.SPARKLING_STONE_1, "unimplemented/");
@@ -1638,6 +1655,9 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.TM_MATERIAL, "unimplemented/");
         createItem(GenerationsItems.TMV_PASS, "unimplemented/");
         createItem(GenerationsItems.TOTEM_STICKER, "unimplemented/");
+        createItem(GenerationsItems.TOUGH_CANDY, "unimplemented/");
+        createItem(GenerationsItems.TOUGH_CANDY_L, "unimplemented/");
+        createItem(GenerationsItems.TOUGH_CANDY_XL, "unimplemented/");
         createItem(GenerationsItems.TOWN_MAP_1, "unimplemented/");
         createItem(GenerationsItems.TOWN_MAP_2, "unimplemented/");
         createItem(GenerationsItems.TOWN_MAP_3, "unimplemented/");
