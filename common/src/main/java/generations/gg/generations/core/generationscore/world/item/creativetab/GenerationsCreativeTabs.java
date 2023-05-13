@@ -14,7 +14,7 @@ public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier RESTORATION = create("restoration", GenerationsItems.POTION);
     public static CreativeTabRegistry.TabSupplier TMS_TRS = create("tms_trs", GenerationsItems.TM_1);
     public static CreativeTabRegistry.TabSupplier BADGES_RIBBONS = create("badges_ribbons", GenerationsItems.MARSH_BADGE);
-    public static CreativeTabRegistry.TabSupplier HELD_ITEMS = create("held_items", GenerationsItems.EXP_SHARE);
+    public static CreativeTabRegistry.TabSupplier HELD_ITEMS = create("held_items", GenerationsItems.AMULET_COIN);
     public static CreativeTabRegistry.TabSupplier PLAYER_ITEMS = create("player_items", GenerationsItems.POKEDEX);
     public static CreativeTabRegistry.TabSupplier LEGENDARY_ITEMS = create("legendary_items", GenerationsItems.DNA_SPLICERS);
     public static CreativeTabRegistry.TabSupplier BUILDING_BLOCKS = create("building_blocks", GenerationsBlocks.WHITE_POKE_BRICK);

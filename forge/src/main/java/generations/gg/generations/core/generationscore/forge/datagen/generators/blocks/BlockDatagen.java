@@ -6,7 +6,6 @@ import generations.gg.generations.core.generationscore.forge.datagen.data.famili
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.level.block.*;
-import generations.gg.generations.core.generationscore.world.level.block.decorations.BeanBagBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.models.model.ModelLocationUtils;
