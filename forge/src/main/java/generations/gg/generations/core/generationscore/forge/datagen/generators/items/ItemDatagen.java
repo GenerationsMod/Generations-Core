@@ -1883,28 +1883,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RAW_ALUMINUM, "rawores/");
         createItem(GenerationsItems.ALUMINUM_NUGGET, "nuggets/");
 
-        createItem(GenerationsItems.RECORD_1, "music_discs/");
-        createItem(GenerationsItems.RECORD_2, "music_discs/");
-        createItem(GenerationsItems.RECORD_3, "music_discs/");
-        createItem(GenerationsItems.RECORD_4, "music_discs/");
-        createItem(GenerationsItems.RECORD_5, "music_discs/");
-        createItem(GenerationsItems.RECORD_6, "music_discs/");
-        createItem(GenerationsItems.RECORD_7, "music_discs/");
-        createItem(GenerationsItems.RECORD_8, "music_discs/");
-        createItem(GenerationsItems.RECORD_9, "music_discs/");
-        createItem(GenerationsItems.RECORD_10, "music_discs/");
-        createItem(GenerationsItems.RECORD_11, "music_discs/");
-        createItem(GenerationsItems.RECORD_12, "music_discs/");
-        createItem(GenerationsItems.RECORD_13, "music_discs/");
-        createItem(GenerationsItems.RECORD_14, "music_discs/");
-        createItem(GenerationsItems.RECORD_15, "music_discs/");
-        createItem(GenerationsItems.RECORD_16, "music_discs/");
-        createItem(GenerationsItems.RECORD_17, "music_discs/");
-        createItem(GenerationsItems.RECORD_18, "music_discs/");
-        createItem(GenerationsItems.RECORD_19, "music_discs/");
-        createItem(GenerationsItems.RECORD_20, "music_discs/");
-        createItem(GenerationsItems.RECORD_21, "music_discs/");
-
         createItem(GenerationsItems.GHOST_BOAT_ITEM, "boat/");
         createItem(GenerationsItems.GHOST_CHEST_BOAT_ITEM, "chest_boat/");
         createItem(GenerationsItems.ULTRA_DARK_BOAT_ITEM, "boat/");

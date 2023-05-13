@@ -1918,27 +1918,6 @@ public class GenerationsItems {
     /**
      * Items to be included in Minecraft Default Section.
      */
-    public static final RegistrySupplier<Item> RECORD_1 = register("record_1", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_2 = register("record_2", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_3 = register("record_3", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_4 = register("record_4", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_5 = register("record_5", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_6 = register("record_6", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_7 = register("record_7", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_8 = register("record_8", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_9 = register("record_9", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_10 = register("record_10", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_11 = register("record_11", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_12 = register("record_12", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_13 = register("record_13", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_14 = register("record_14", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_15 = register("record_15", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_16 = register("record_16", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_17 = register("record_17", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_18 = register("record_18", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_19 = register("record_19", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_20 = register("record_20", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RECORD_21 = register("record_21", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
 
     public static final RegistrySupplier<Item> CURRY = register("curry", ItemCurry::new, GenerationsCreativeTabs.TMS_TRS);
 
