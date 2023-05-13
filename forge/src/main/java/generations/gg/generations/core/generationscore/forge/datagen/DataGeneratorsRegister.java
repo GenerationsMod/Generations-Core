@@ -40,8 +40,7 @@ public class DataGeneratorsRegister {
                 //PixelmonMachineRecipeDatagen::new,
                 WoodRecipes::new,
                 //PokeBallRecipeDatagen::new,
-                FurnaceRecipeProvider::new,
-                TmRecipeDatagen::new));
+                FurnaceRecipeProvider::new));
         generator.addProvider(true, new LootTableDatagen(output));
         generator.addProvider(true, new GeneralLang(output, "en_us"));
         //generator.addProvider(true, new PokeModSpawnColorsProvider(output));
