@@ -1259,13 +1259,6 @@ public class GenerationsItems {
     /**
      * Naturals
      */
-    public static final RegistrySupplier<Item> COOKED_BLACK_APRICORN = register("cooked_black_apricorn", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COOKED_BLUE_APRICORN = register("cooked_blue_apricorn", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COOKED_GREEN_APRICORN = register("cooked_green_apricorn", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COOKED_PINK_APRICORN = register("cooked_pink_apricorn", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COOKED_RED_APRICORN = register("cooked_red_apricorn", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COOKED_WHITE_APRICORN = register("cooked_white_apricorn", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COOKED_YELLOW_APRICORN = register("cooked_yellow_apricorn", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> DAWN_STONE = register("dawn_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> DUSK_STONE = register("dusk_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> FIRE_STONE = register("fire_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
@@ -1570,7 +1563,6 @@ public class GenerationsItems {
      */
     public static final RegistrySupplier<Item> ABILITY_URGE = register("ability_urge", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> ADVENTURE_GUIDE = register("adventure_guide", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> APRICORN_BOX = register("apricorn_box", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> AQUA_SUIT = register("aqua_suit", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> ARMOR_PASS = register("armor_pass", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> ARMORITE_ORE = register("armorite_ore", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);

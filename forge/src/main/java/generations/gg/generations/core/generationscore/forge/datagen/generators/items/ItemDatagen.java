@@ -904,20 +904,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RECORD_RIBBON, "ribbons/");
         createItem(GenerationsItems.SOUVENIR_RIBBON, "ribbons/");
 
-        createItemBlock(GenerationsBlocks.BLACK_APRICORN, "item/natural/");
-        createItemBlock(GenerationsBlocks.WHITE_APRICORN, "item/natural/");
-        createItemBlock(GenerationsBlocks.PINK_APRICORN, "item/natural/");
-        createItemBlock(GenerationsBlocks.GREEN_APRICORN, "item/natural/");
-        createItemBlock(GenerationsBlocks.BLUE_APRICORN, "item/natural/");
-        createItemBlock(GenerationsBlocks.YELLOW_APRICORN, "item/natural/");
-        createItemBlock(GenerationsBlocks.RED_APRICORN, "item/natural/");
-        createItem(GenerationsItems.COOKED_BLACK_APRICORN, "natural/");
-        createItem(GenerationsItems.COOKED_BLUE_APRICORN, "natural/");
-        createItem(GenerationsItems.COOKED_GREEN_APRICORN, "natural/");
-        createItem(GenerationsItems.COOKED_PINK_APRICORN, "natural/");
-        createItem(GenerationsItems.COOKED_RED_APRICORN, "natural/");
-        createItem(GenerationsItems.COOKED_WHITE_APRICORN, "natural/");
-        createItem(GenerationsItems.COOKED_YELLOW_APRICORN, "natural/");
         createItem(GenerationsItems.DAWN_STONE, "natural/");
         createItem(GenerationsItems.DUSK_STONE, "natural/");
         createItem(GenerationsItems.FIRE_STONE, "natural/");
@@ -1643,7 +1629,6 @@ public class ItemDatagen extends ItemModelProvider {
 
         createItem(GenerationsItems.ABILITY_URGE, "unimplemented/");
         createItem(GenerationsItems.ADVENTURE_GUIDE, "unimplemented/");
-        createItem(GenerationsItems.APRICORN_BOX, "unimplemented/");
         createItem(GenerationsItems.AQUA_SUIT, "unimplemented/");
         createItem(GenerationsItems.ARMOR_PASS, "unimplemented/");
         createItem(GenerationsItems.ARMORITE_ORE, "unimplemented/");
