@@ -10,10 +10,12 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.LootTableDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.ores.OreGenDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.*;
+import generations.gg.generations.core.generationscore.forge.datagen.generators.tags.TagsDatagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,10 +30,11 @@ public class DataGeneratorsRegister {
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         CompletableFuture<HolderLookup.Provider> lookupProvider = OreGenDatagen.onInitialize(event.getLookupProvider());
-
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         PackOutput output = generator.getPackOutput();
-        generator.addProvider(true, new GenerationsBlockStateProvider(output, event.getExistingFileHelper(), BlockDatagen::new, UltraBlockModelDataGen::new));
-        generator.addProvider(true, new ItemDatagen(output, event.getExistingFileHelper()));
+        TagsDatagen.init(generator, output, event.getLookupProvider(), existingFileHelper);
+        generator.addProvider(true, new GenerationsBlockStateProvider(output, existingFileHelper, BlockDatagen::new, UltraBlockModelDataGen::new));
+        generator.addProvider(true, new ItemDatagen(output, existingFileHelper));
 
         generator.addProvider(true, new GenerationsRecipeProvider(output,
                 BuildingBlockRecipeDatagen::new,
