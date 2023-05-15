@@ -3,17 +3,22 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.lang.reflect.Field;
 import java.util.concurrent.CompletableFuture;
 
 public class TagsDatagen {
@@ -30,6 +35,28 @@ public class TagsDatagen {
 
         @Override
         protected void addTags(HolderLookup.@NotNull Provider arg) {
+
+            GenerationsBlocks.BLOCKS.forEach(object -> {
+                Block block = object.get();
+                EasyBlockTags(block);
+                if (object instanceof FenceBlock) this.tag(BlockTags.FENCES).add(block);
+                else if (object instanceof FenceGateBlock) this.tag(BlockTags.FENCE_GATES).add(block);
+                else if (object instanceof DoorBlock) this.tag(BlockTags.DOORS).add(block);
+                else if (object instanceof SandBlock) {
+                    this.tag(BlockTags.SAND).add(block);
+                    this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block);
+                }
+
+                Field material = ObfuscationReflectionHelper.findField(BlockBehaviour.class, "material");
+                material.setAccessible(true);
+                try {
+                    if (material.get(block)  == Material.STONE)
+                        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+
             GenerationsBlocks.ULTRA_BLOCKS.forEach(block -> {
                 this.tag(GenerationsBlockTags.ULTRA).add(block.get());
                 EasyBlockTags(block.get());
@@ -54,6 +81,41 @@ public class TagsDatagen {
 
             this.tag(BlockTags.GUARDED_BY_PIGLINS).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
             this.tag(BlockTags.FEATURES_CANNOT_REPLACE).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
+
+
+            //Ore Specific tags
+            this.tag(GenerationsBlockTags.ALUMINUM_ORES).add(GenerationsOres.ALUMINUM_ORE.get(), GenerationsOres.DEEPSLATE_ALUMINUM_ORE.get(), GenerationsOres.CHARGE_STONE_ALUMINUM_ORE.get());
+            this.tag(GenerationsBlockTags.SAPPHIRE_ORES).add(GenerationsOres.SAPPHIRE_ORE.get(), GenerationsOres.DEEPSLATE_SAPPHIRE_ORE.get(), GenerationsOres.CHARGE_STONE_SAPPHIRE_ORE.get());
+            this.tag(GenerationsBlockTags.RUBY_ORES).add(GenerationsOres.RUBY_ORE.get(), GenerationsOres.DEEPSLATE_RUBY_ORE.get(), GenerationsOres.CHARGE_STONE_RUBY_ORE.get());
+            this.tag(GenerationsBlockTags.SILICON_ORES).add(GenerationsOres.SILICON_ORE.get(), GenerationsOres.DEEPSLATE_SILICON_ORE.get(), GenerationsOres.CHARGE_STONE_SILICON_ORE.get());
+            this.tag(GenerationsBlockTags.Z_CRYSTAL_ORES).add(GenerationsOres.Z_CRYSTAL_ORE.get(), GenerationsOres.DEEPSLATE_Z_CRYSTAL_ORE.get(), GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
+            this.tag(GenerationsBlockTags.FOSSIL_ORES).add(GenerationsOres.FOSSIL_ORE.get(), GenerationsOres.DEEPSLATE_FOSSIL_ORE.get(), GenerationsOres.CHARGE_STONE_FOSSIL_ORE.get());
+            //Vanilla Ores
+            this.tag(BlockTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get());
+            this.tag(BlockTags.REDSTONE_ORES).add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get());
+            this.tag(BlockTags.IRON_ORES).add(GenerationsOres.CHARGE_STONE_IRON_ORE.get());
+            this.tag(BlockTags.GOLD_ORES).add(GenerationsOres.CHARGE_STONE_GOLD_ORE.get());
+            this.tag(BlockTags.COPPER_ORES).add(GenerationsOres.CHARGE_STONE_COPPER_ORE.get());
+            this.tag(BlockTags.LAPIS_ORES).add(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get());
+            this.tag(BlockTags.DIAMOND_ORES).add(GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get());
+            this.tag(BlockTags.EMERALD_ORES).add(GenerationsOres.CHARGE_STONE_EMERALD_ORE.get());
+
+            this.tag(GenerationsBlockTags.GENERATIONSORES)
+                    .addTag(GenerationsBlockTags.ALUMINUM_ORES)
+                    .addTag(GenerationsBlockTags.SAPPHIRE_ORES)
+                    .addTag(GenerationsBlockTags.RUBY_ORES)
+                    .addTag(GenerationsBlockTags.SILICON_ORES)
+                    .addTag(GenerationsBlockTags.Z_CRYSTAL_ORES)
+                    .addTag(GenerationsBlockTags.FOSSIL_ORES)
+                    .add(GenerationsOres.CHARGE_STONE_COAL_ORE.get())
+                    .add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get())
+                    .add(GenerationsOres.CHARGE_STONE_IRON_ORE.get())
+                    .add(GenerationsOres.CHARGE_STONE_GOLD_ORE.get())
+                    .add(GenerationsOres.CHARGE_STONE_COPPER_ORE.get())
+                    .add(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get())
+                    .add(GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get())
+                    .add(GenerationsOres.CHARGE_STONE_EMERALD_ORE.get());
+
 
 
             GenerationsWood.WOOD_BLOCKS.forEach(block -> {
@@ -95,8 +157,20 @@ public class TagsDatagen {
                     this.tag(BlockTags.WALL_HANGING_SIGNS).add(sign.get());
             });
 
-            this.tag(BlockTags.MINEABLE_WITH_AXE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
 
+
+            //Charge and Volcanic Stone Brick Tags like Vanilla
+            this.tag(GenerationsBlockTags.CHARGE_STONE_BRICKS)
+                    .add(GenerationsBlocks.CHARGE_STONE_BRICKS.get(), GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get(), GenerationsBlocks.CRACKED_CHARGE_STONE_BRICKS.get(), GenerationsBlocks.CHISELED_CHARGE_STONE_BRICKS.get());
+
+            this.tag(GenerationsBlockTags.VOLCANIC_STONE_BRICKS)
+                    .add(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.CRACKED_VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.CHISELED_VOLCANIC_STONE_BRICKS.get());
+
+
+            this.tag(BlockTags.MINEABLE_WITH_AXE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
+            this.tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)
+                    .addTag(GenerationsBlockTags.POKEBRICKS).addTag(GenerationsBlockTags.GENERATIONSORES).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
+            this.tag(BlockTags.NEEDS_IRON_TOOL).addTag(GenerationsBlockTags.GENERATIONSORES);
         }
 
         private void EasyBlockTags(Block object) {

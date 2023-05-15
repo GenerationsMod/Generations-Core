@@ -1,0 +1,18 @@
+{
+  "values": [
+    "#generations_core:aluminum_ores",
+    "#generations_core:sapphire_ores",
+    "#generations_core:ruby_ores",
+    "#generations_core:silicon_ores",
+    "#generations_core:z_crystal_ores",
+    "#generations_core:fossil_ores",
+    "generations_core:charge_stone_coal_ore",
+    "generations_core:charge_stone_redstone_ore",
+    "generations_core:charge_stone_iron_ore",
+    "generations_core:charge_stone_gold_ore",
+    "generations_core:charge_stone_copper_ore",
+    "generations_core:charge_stone_lapis_lazuli_ore",
+    "generations_core:charge_stone_diamond_ore",
+    "generations_core:charge_stone_emerald_ore"
+  ]
+}
