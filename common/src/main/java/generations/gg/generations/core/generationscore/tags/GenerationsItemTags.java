@@ -37,6 +37,7 @@ public class GenerationsItemTags {
 
     public static final TagKey<Item> MARBLE = create("marble");
     public static final TagKey<Item> POKEBRICKS = create("pokebricks");
+    public static final TagKey<Item> ULTRA = create("ultra");
 
     private static TagKey<Item> create(String name) {
         return TagKey.create(Registries.ITEM, GenerationsCore.id(name));
