@@ -9,16 +9,20 @@
   "contact": {},
 
   "license": "GNU GPL 3.0",
-  "icon": "icon.png",
 
   "environment": "*",
-  "entrypoints": {},
+  "entrypoints": {
+    "main": [
+      "generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"
+    ]
+  },
   "mixins": [
     "GenerationsCore.mixins.json",
     "GenerationsCore-common.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.19",
-    "minecraft": ">=1.19.4"
+    "minecraft": ">=1.19.4",
+    "architectury": ">=8.1.80"
   }
 }
