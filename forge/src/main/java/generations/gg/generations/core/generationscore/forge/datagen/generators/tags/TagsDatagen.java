@@ -52,6 +52,9 @@ public class TagsDatagen {
                             GenerationsBlocks.ULTRABALL_CHEST.get(),
                             GenerationsBlocks.MASTERBALL_CHEST.get());
 
+            this.tag(BlockTags.GUARDED_BY_PIGLINS).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
+            this.tag(BlockTags.FEATURES_CANNOT_REPLACE).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
+
 
             GenerationsWood.WOOD_BLOCKS.forEach(block -> {
                 Block woodBlock = block.get();
