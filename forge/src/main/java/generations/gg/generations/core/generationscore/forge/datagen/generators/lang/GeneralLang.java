@@ -43,7 +43,7 @@ public class GeneralLang extends LanguageProvider {
 
         addItemEntries(GenerationsTools.TOOLS, this::getNameGens);
         addItemEntries(GenerationsArmor.ARMOR, this::getNameGens);
-        addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
+        //addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
 
        // GenerationsEntities.ENTITIES.getEntries().forEach(Pokemon -> add(Pokemon.get(), getNameGens(Pokemon.getId().toString())));
 
@@ -55,6 +55,7 @@ public class GeneralLang extends LanguageProvider {
         add(GenerationsBlocks.WHITE_APRICORN.get().asItem(), "White Apricorn");
         add(GenerationsBlocks.YELLOW_APRICORN.get().asItem(), "Yellow Apricorn");
 
+        /*
         // Battle Gui Entries
         add("button.pixelmon.battle.fight", "Fight");
         add("button.pixelmon.battle.bag", "Bag");
@@ -224,6 +225,7 @@ public class GeneralLang extends LanguageProvider {
 
         add("container.melody_flute", "Melody Flute");
         add("container.trashcan", "Trash Can");
+        */
         add("container.pokeball_chest", "Pokeball Chest");
         add("container.greatball_chest", "Greatball Chest");
         add("container.ultraball_chest", "Ultraball Chest");
@@ -235,6 +237,7 @@ public class GeneralLang extends LanguageProvider {
         add("container.volcanic_stone_blast_furnace", "Volcanic Stone Blast Furnace");
         add("container.volcanic_stone_smoker", "Volcanic Stone Smoker");
         add("container.cooking_pot", "Cooking Pot");
+        /*
 
         SkinLang.addSkins(this);
 
@@ -251,6 +254,7 @@ public class GeneralLang extends LanguageProvider {
 
         add("Generations.timeglass.wrongbiome", "You can only summon Celebi in a Flower Forest Biome");
         add("Generations.timeglass.amount", "You've defeated %s Grass, Psychic, or Fairy Type Pokemon out of 100 in a Flower Forest Biome");
+         */
     }
 
     protected String getNameGens(String name){

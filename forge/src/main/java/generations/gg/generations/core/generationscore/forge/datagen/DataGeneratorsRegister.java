@@ -33,6 +33,7 @@ public class DataGeneratorsRegister {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         PackOutput output = generator.getPackOutput();
         TagsDatagen.init(generator, output, event.getLookupProvider(), existingFileHelper);
+        generator.addProvider(true, new GeneralLang(output, "en_us"));
         generator.addProvider(true, new GenerationsBlockStateProvider(output, existingFileHelper, BlockDatagen::new, UltraBlockModelDataGen::new));
         generator.addProvider(true, new ItemDatagen(output, existingFileHelper));
 
@@ -45,7 +46,7 @@ public class DataGeneratorsRegister {
                 //PokeBallRecipeDatagen::new,
                 FurnaceRecipeProvider::new));
         generator.addProvider(true, new LootTableDatagen(output));
-        generator.addProvider(true, new GeneralLang(output, "en_us"));
+
         //generator.addProvider(true, new PokeModSpawnColorsProvider(output));
        // TagsDatagen.init(generator, output, lookupProvider, event.getExistingFileHelper());
         assert lookupProvider != null;
