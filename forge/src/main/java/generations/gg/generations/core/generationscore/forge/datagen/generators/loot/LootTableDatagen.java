@@ -10,27 +10,19 @@ import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class LootTableDatagen extends LootTableProvider {
-    private final List<SubProviderEntry> subProviders;
 
     public LootTableDatagen(PackOutput output) {
-        super(output, Set.of(), null);
-        subProviders = ImmutableList.of(
+        super(output, Set.of(), ImmutableList.of(
                 new SubProviderEntry(GenerationsBlockLoot::new, LootContextParamSets.BLOCK)
 //            Pair.of(ChestLoot::new, LootContextParamSets.CHEST),
 //            Pair.of(EntityLoot::new, LootContextParamSets.ENTITY),
 //            Pair.of(PiglinBarterLoot::new, LootContextParamSets.PIGLIN_BARTER),
 //            Pair.of(GiftLoot::new, LootContextParamSets.GIFT)
-        );
-    }
-
-    @Override
-    public @NotNull List<SubProviderEntry> getTables() {
-        return subProviders;
+        ));
     }
 
     protected void validate(Map<ResourceLocation, LootTable> map, @NotNull ValidationContext validationContext) {

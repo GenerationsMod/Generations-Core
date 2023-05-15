@@ -31,10 +31,10 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ULTRA_BALL, "pokeballs/");
         createItem(GenerationsItems.GREAT_BALL, "pokeballs/");
         createItem(GenerationsItems.MASTER_BALL, "pokeballs/");
-        /*
-        createItem(GenerationsItems.LEVEL_BALL, "pokeballs/");
-        createItem(GenerationsItems.MOON_BALL, "pokeballs/");
-        createItem(GenerationsItems.FRIEND_BALL, "pokeballs/");
+
+//        createItem(GenerationsItems.LEVEL_BALL, "pokeballs/");
+//        createItem(GenerationsItems.MOON_BALL, "pokeballs/");
+//        createItem(GenerationsItems.FRIEND_BALL, "pokeballs/");
         createItem(GenerationsItems.LOVE_BALL, "pokeballs/");
         createItem(GenerationsItems.SAFARI_BALL, "pokeballs/");
         createItem(GenerationsItems.HEAVY_BALL, "pokeballs/");
@@ -82,24 +82,24 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.AWAKENING, "restoration/");
         createItem(GenerationsItems.BURN_HEAL, "restoration/");
         createItem(GenerationsItems.ICE_HEAL, "restoration/");
-        createItem(GenerationsItems.RARE_CANDY, "restoration/");
+        /*createItem(GenerationsItems.RARE_CANDY, "restoration/");
         createItem(GenerationsItems.XS_CANDY, "restoration/");
         createItem(GenerationsItems.S_CANDY, "restoration/");
         createItem(GenerationsItems.M_CANDY, "restoration/");
         createItem(GenerationsItems.L_CANDY, "restoration/");
-        createItem(GenerationsItems.XL_CANDY, "restoration/");
+        createItem(GenerationsItems.XL_CANDY, "restoration/");*/
         createItem(GenerationsItems.HEALTH_FEATHER, "restoration/");
         createItem(GenerationsItems.MUSCLE_FEATHER, "restoration/");
         createItem(GenerationsItems.RESIST_FEATHER, "restoration/");
         createItem(GenerationsItems.GENIUS_FEATHER, "restoration/");
         createItem(GenerationsItems.CLEVER_FEATHER, "restoration/");
         createItem(GenerationsItems.SWIFT_FEATHER, "restoration/");
-        createItem(GenerationsItems.HP_UP, "restoration/");
-        createItem(GenerationsItems.PROTEIN, "restoration/");
-        createItem(GenerationsItems.IRON, "restoration/");
-        createItem(GenerationsItems.CALCIUM, "restoration/");
-        createItem(GenerationsItems.ZINC, "restoration/");
-        createItem(GenerationsItems.CARBOS, "restoration/");
+//        createItem(GenerationsItems.HP_UP, "restoration/");
+//        createItem(GenerationsItems.PROTEIN, "restoration/");
+//        createItem(GenerationsItems.IRON, "restoration/");
+//        createItem(GenerationsItems.CALCIUM, "restoration/");
+//        createItem(GenerationsItems.ZINC, "restoration/");
+//        createItem(GenerationsItems.CARBOS, "restoration/");
         createItem(GenerationsItems.X_ATTACK, "restoration/");
         createItem(GenerationsItems.X_DEFENSE, "restoration/");
         createItem(GenerationsItems.X_SPECIAL_ATTACK, "restoration/");
@@ -169,8 +169,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_MUSHROOMS, "restoration/");
         createItem(GenerationsItems.MAX_POWDER, "restoration/");
         createItem(GenerationsItems.MAX_SOUP, "restoration/");
-
-         */
 
         createItem(GenerationsItems.Z_INGOT, "ingots/");
         createItem(GenerationsItems.ALUMINUM_INGOT, "ingots/");
@@ -490,8 +488,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.TAPUNIUM_Z, "zcrystals/");
         createHeldItem(GenerationsItems.ULTRANECROZIUM_Z, "zcrystals/");
 
-        /*
-
         createPokedoll(GenerationsPokeDolls.SHINY_CELEBI_POKEDOLL);
         createPokedoll(GenerationsPokeDolls.CHARIZARD_POKEDOLL);
         createPokedoll(GenerationsPokeDolls.BLASTOISE_POKEDOLL);
@@ -652,7 +648,7 @@ public class ItemDatagen extends ItemModelProvider {
         createPokedoll(GenerationsPokeDolls.SHINY_ZAPDOS_POKEDOLL);
         createPokedoll(GenerationsPokeDolls.KRABBY_POKEDOLL);
         createPokedoll(GenerationsPokeDolls.CELEBI_POKEDOLL);
-         */
+
 
         createItem(GenerationsItems.RELIC_GOLD, "valuables/");
         createItem(GenerationsItems.RELIC_COPPER, "valuables/");
@@ -1263,7 +1259,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RAINBOW_WING, "legend_items/");
         createItem(GenerationsItems.DARK_SOUL, "legend_items/");
         createItem(GenerationsItems.DRAGON_SOUL, "legend_items/");
-        createItem(GenerationsItems.MELODY_FLUTE, "legend_items/");
+//        createItem(GenerationsItems.MELODY_FLUTE, "legend_items/");
         createItem(GenerationsItems.SPARKLING_SHARD, "legend_items/");
         createItem(GenerationsItems.SPARKLING_STONE, "legend_items/");
         createItem(GenerationsItems.RUSTY_FRAGMENT, "legend_items/");
@@ -1710,8 +1706,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM, "boat/");
         createItem(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM, "chest_boat/");
 
-        //createCurry();
-        //createImbuedFlute();
+        createCurry();
+        createImbuedFlute();
 
         createItem(GenerationsItems.TUMBLESTONE, "tumblestone/");
         createItem(GenerationsItems.BLACK_TUMBLESTONE, "tumblestone/");
@@ -1742,7 +1738,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLES, "item/blocks/decorations/");
         GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(block -> createItemBlockDir(block, "umbrellas"));
         GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(block -> createItemBlockDir(block, "rugs"));
-        /*
+//        /*
         GenerationsDecorationBlocks.PASTEL_BEAN_BAG_BLOCKS.forEach(block -> createItemBlockDir(block, "bean_bags"));
         GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.forEach(block -> createItemBlockDir(block, "vending_machines"));
 
@@ -1755,11 +1751,9 @@ public class ItemDatagen extends ItemModelProvider {
 
         createItemBlock(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "item/blocks/sign/");
 
-         */
-
         createPointedDripstoneItem(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE, "item/blocks/dripstone/");
 
-        //GenerationsShrines.SHRINES.forEach(shrine -> createItemBlock(shrine, "item/blocks/shrines/"));
+        GenerationsShrines.SHRINES.forEach(shrine -> createItemBlock(shrine, "item/blocks/shrines/"));
 
         createItemBlock(GenerationsBlocks.POKECENTER_DOOR, "item/blocks/doors/");
         createItemBlock(GenerationsWood.ULTRA_JUNGLE_DOOR, "item/blocks/doors/");
@@ -1774,19 +1768,19 @@ public class ItemDatagen extends ItemModelProvider {
     }
 
     private void createCurry() {
-        ItemModelBuilder model = createItem(GenerationsItems.CURRY);
+        ItemModelBuilder model = generated(GenerationsItems.CURRY.getId().getPath(), CurryType.None.getResourceLocation());
 
         CurryType[] values = CurryType.values();
         for (int i = 0; i < values.length; i++) {
             CurryType type = values[i];
-            ItemModelBuilder typeModel = generated("item/curry/item/" + type.getSerializedName(), type.getResourceLocation());
+            ItemModelBuilder typeModel = generated(type.getResourceLocation().getPath(), type.getResourceLocation());
 
             model.override().model(typeModel).predicate(GenerationsCore.id("curry_type"), i).end();
         }
     }
 
     private void createImbuedFlute() {
-        ItemModelBuilder model = createItem(GenerationsItems.MELODY_FLUTE);
+        ItemModelBuilder model = createItem(GenerationsItems.MELODY_FLUTE, "legend_items/");
 
         BiConsumer<String, Float> consumer = (name, i) -> {
             ItemModelBuilder typeModel = generated("item/flute/" + name + "_flute", GenerationsCore.id("item/flute/" + name + "_flute"));
@@ -1854,12 +1848,26 @@ public class ItemDatagen extends ItemModelProvider {
     }
 
     public ItemModelBuilder createItem(RegistrySupplier<? extends Item> item, String directory) {
-        ResourceLocation key = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item.get()), "Tried to create json model for unregistered Item.");
-        return generated(key.getPath(), GenerationsCore.id("item/" + directory + key.getPath()));
+        try {
+            ResourceLocation key = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item.get()), "Tried to create json model for unregistered Item.");
+            return generated(key.getPath(), GenerationsCore.id("item/" + directory + key.getPath()));
+        } catch (Exception e) {
+//            e.printStackTrace();
+
+            LOGGER.error(item.getId() + " -> " + directory);
+            return null;
+        }
     }
 
     public ItemModelBuilder generated(String name, ResourceLocation model) {
-        return this.singleTexture(name, new ResourceLocation("item/generated"), "layer0", model);
+        try {
+            return this.singleTexture(name, new ResourceLocation("item/generated"), "layer0", model);
+        } catch (Exception e) {
+//            e.printStackTrace();
+
+            LOGGER.error(name + " -> " + model);
+            return null;
+        }
     }
 
     private void handheldItem(RegistrySupplier<Item> item, String directory) {

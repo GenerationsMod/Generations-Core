@@ -1,5 +1,61 @@
 {
   "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "generations_core:item/flute/basic_flute",
+      "predicate": {
+        "generations_core:flute_type": 0.0
+      }
+    },
+    {
+      "model": "generations_core:item/flute/icy_flute",
+      "predicate": {
+        "generations_core:flute_type": 1.0
+      }
+    },
+    {
+      "model": "generations_core:item/flute/elegant_flute",
+      "predicate": {
+        "generations_core:flute_type": 2.0
+      }
+    },
+    {
+      "model": "generations_core:item/flute/static_flute",
+      "predicate": {
+        "generations_core:flute_type": 3.0
+      }
+    },
+    {
+      "model": "generations_core:item/flute/belligerent_flute",
+      "predicate": {
+        "generations_core:flute_type": 4.0
+      }
+    },
+    {
+      "model": "generations_core:item/flute/fiery_flute",
+      "predicate": {
+        "generations_core:flute_type": 5.0
+      }
+    },
+    {
+      "model": "generations_core:item/flute/sinister_flute",
+      "predicate": {
+        "generations_core:flute_type": 6.0
+      }
+    },
+    {
+      "model": "generations_core:item/flute/rainbow_flute",
+      "predicate": {
+        "generations_core:flute_type": 7.0
+      }
+    },
+    {
+      "model": "generations_core:item/flute/silver_flute",
+      "predicate": {
+        "generations_core:flute_type": 8.0
+      }
+    }
+  ],
   "textures": {
     "layer0": "generations_core:item/legend_items/melody_flute"
   }

@@ -39,8 +39,8 @@ public class GenerationsPokeDolls {
 	public static final RegistrySupplier<Block> EEVEE_POKEDOLL = registerBlockItem("eevee", false);
 	public static final RegistrySupplier<Block> EKANS_POKEDOLL = registerBlockItem("ekans", false);
 	public static final RegistrySupplier<Block> ENTEI_POKEDOLL = registerBlockItem("entei", false);
-	public static final RegistrySupplier<Block> GIRATINA_ALTERED_POKEDOLL = registerBlockItem("giratinaaltered", false);
-	public static final RegistrySupplier<Block> GIRATINA_ORIGINAL_POKEDOLL = registerBlockItem("giratinaorigin", false);
+	public static final RegistrySupplier<Block> GIRATINA_ALTERED_POKEDOLL = registerBlockItem("giratina_altered", false);
+	public static final RegistrySupplier<Block> GIRATINA_ORIGINAL_POKEDOLL = registerBlockItem("giratina_origin", false);
 	public static final RegistrySupplier<Block> GROUDON_POKEDOLL = registerBlockItem("groudon", false);
 	public static final RegistrySupplier<Block> GULPIN_POKEDOLL = registerBlockItem("gulpin", false);
 	public static final RegistrySupplier<Block> HERACROSS_POKEDOLL = registerBlockItem("heracross", false);
@@ -80,8 +80,8 @@ public class GenerationsPokeDolls {
 	public static final RegistrySupplier<Block> ROWLET_POKEDOLL = registerBlockItem("rowlet", false);
 	public static final RegistrySupplier<Block> SABLEYE_POKEDOLL = registerBlockItem("sableye", false);
 	public static final RegistrySupplier<Block> SEEDOT_POKEDOLL = registerBlockItem("seedot", false);
-	public static final RegistrySupplier<Block> SHAYMIN_LAND_POKEDOLL = registerBlockItem("shayminland", false);
-	public static final RegistrySupplier<Block> SHAYMIN_SKY_POKEDOLL = registerBlockItem("shayminsky", false);
+	public static final RegistrySupplier<Block> SHAYMIN_LAND_POKEDOLL = registerBlockItem("shaymin_land", false);
+	public static final RegistrySupplier<Block> SHAYMIN_SKY_POKEDOLL = registerBlockItem("shaymin_sky", false);
 	public static final RegistrySupplier<Block> SKITTY_POKEDOLL = registerBlockItem("skitty", false);
 	public static final RegistrySupplier<Block> SMOOCHUM_POKEDOLL = registerBlockItem("smoochum", false);
 	public static final RegistrySupplier<Block> SNORLAX_POKEDOLL = registerBlockItem("snorlax", false);
@@ -123,8 +123,8 @@ public class GenerationsPokeDolls {
 	public static final RegistrySupplier<Block> SHINY_EEVEE_POKEDOLL = registerBlockItem("eevee", true);
 	public static final RegistrySupplier<Block> SHINY_EKANS_POKEDOLL = registerBlockItem("ekans", true);
 	public static final RegistrySupplier<Block> SHINY_ENTEI_POKEDOLL = registerBlockItem("entei", true);
-	public static final RegistrySupplier<Block> SHINY_GIRATINA_ALTERED_POKEDOLL = registerBlockItem("giratinaaltered", true);
-	public static final RegistrySupplier<Block> SHINY_GIRATINA_ORIGIN_POKEDOLL = registerBlockItem("giratinaorigin", true);
+	public static final RegistrySupplier<Block> SHINY_GIRATINA_ALTERED_POKEDOLL = registerBlockItem("giratina_altered", true);
+	public static final RegistrySupplier<Block> SHINY_GIRATINA_ORIGIN_POKEDOLL = registerBlockItem("giratina_origin", true);
 	public static final RegistrySupplier<Block> SHINY_GROUDON_POKEDOLL = registerBlockItem("groudon", true);
 	public static final RegistrySupplier<Block> SHINY_GULPIN_POKEDOLL = registerBlockItem("gulpin", true);
 	public static final RegistrySupplier<Block> SHINY_HERACROSS_POKEDOLL = registerBlockItem("heracross", true);
@@ -163,8 +163,8 @@ public class GenerationsPokeDolls {
 	public static final RegistrySupplier<Block> SHINY_SABLEYE_POKEDOLL = registerBlockItem("sableye", true);
 	public static final RegistrySupplier<Block> SHINY_SEEDOT_POKEDOLL = registerBlockItem("seedot", true);
 	public static final RegistrySupplier<Block> SHINY_RHYDON_POKEDOLL = registerBlockItem("rhydon", true);
-	public static final RegistrySupplier<Block> SHINY_SHAYMIN_LAND_POKEDOLL = registerBlockItem("shayminland", true);
-	public static final RegistrySupplier<Block> SHINY_SHAYMIN_SKY_POKEDOLL = registerBlockItem("shayminsky", true);
+	public static final RegistrySupplier<Block> SHINY_SHAYMIN_LAND_POKEDOLL = registerBlockItem("shaymin_land", true);
+	public static final RegistrySupplier<Block> SHINY_SHAYMIN_SKY_POKEDOLL = registerBlockItem("shaymin_sky", true);
 	public static final RegistrySupplier<Block> SHINY_SKITTY_POKEDOLL = registerBlockItem("skitty", true);
 	public static final RegistrySupplier<Block> SHINY_SMOOCHUM_POKEDOLL = registerBlockItem("smoochum", true);
 	public static final RegistrySupplier<Block> SHINY_SNORLAX_POKEDOLL = registerBlockItem("snorlax", true);
@@ -189,7 +189,7 @@ public class GenerationsPokeDolls {
 
 	private static RegistrySupplier<Block> registerBlockItem(String name, boolean shiny, float scale) {
 		RegistrySupplier<Block> block = POKEDOLLS.register((shiny ? "shiny_" : "") + name  + "_doll", () -> new PokeDollBlock(name, shiny, scale));
-		GenerationsItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.POKEDOLLS)));
+		GenerationsItems.ITEMS.register((shiny ? "shiny_" : "") + name  + "_doll", () -> new BlockItem(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.POKEDOLLS)));
 		return block;
 	}
 
