@@ -10,6 +10,7 @@ public class GenerationsBlockTags {
     public static final TagKey<Block> GENERATIONSORES = create("generationsores");
     public static final TagKey<Block> SHRINES = create("shrines");
     public static final TagKey<Block> MARBLE = create("marble");
+    public static final TagKey<Block> ULTRA = create("ultra");
 
     public static final TagKey<Block> ALUMINUM_ORES = create("aluminum_ores");
     public static final TagKey<Block> SAPPHIRE_ORES = create("sapphire_ores");
