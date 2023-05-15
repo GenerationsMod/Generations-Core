@@ -6,34 +6,35 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 public enum GenerationsArmorMaterials implements ArmorMaterial {
-    RUNNING(GenerationsCore.MOD_ID + ":running", 66, new int[]{3, 0, 0, 0}, 22, Ingredient.EMPTY),
-    OLD_RUNNING(GenerationsCore.MOD_ID + ":old_running", 999999, new int[]{2, 0, 0, 0}, 13, Ingredient.EMPTY),
-    AETHER(GenerationsCore.MOD_ID + ":aether", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
-    AQUA(GenerationsCore.MOD_ID + ":aqua", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SAPPHIRE.get())),
-    FLARE(GenerationsCore.MOD_ID + ":flare", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.FIRE_STONE.get())),
-    GALACTIC(GenerationsCore.MOD_ID + ":galactic", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
-    MAGMA(GenerationsCore.MOD_ID + ":magma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.RUBY.get())),
-    NEO_PLASMA(GenerationsCore.MOD_ID + ":neo_plasma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
-    PLASMA(GenerationsCore.MOD_ID + ":plasma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
-    ROCKET(GenerationsCore.MOD_ID + ":rocket", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(Items.AMETHYST_SHARD)),
-    SKULL(GenerationsCore.MOD_ID + ":skull", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
-    CRYSTAL(GenerationsCore.MOD_ID + ":crystal", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
-    ULTRA(GenerationsCore.MOD_ID + ":ultra", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.Z_INGOT.get())),
-    ALUMINUM(GenerationsCore.MOD_ID + ":aluminum", 15, new int[]{2, 5, 6, 2}, 8, Ingredient.of(GenerationsItems.ALUMINUM_INGOT.get())),
-    DAWN_STONE(GenerationsCore.MOD_ID + ":dawn_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.DAWN_STONE.get())),
-    DUSK_STONE(GenerationsCore.MOD_ID + ":dusk_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.DUSK_STONE.get())),
-    FIRE_STONE(GenerationsCore.MOD_ID + ":fire_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.FIRE_STONE.get())),
-    ICE_STONE(GenerationsCore.MOD_ID + ":ice_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.ICE_STONE.get())),
-    LEAF_STONE(GenerationsCore.MOD_ID + ":leaf_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.LEAF_STONE.get())),
-    MOON_STONE(GenerationsCore.MOD_ID + ":moon_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.MOON_STONE.get())),
-    SUN_STONE(GenerationsCore.MOD_ID + ":sun_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SUN_STONE.get())),
-    THUNDER_STONE(GenerationsCore.MOD_ID + ":thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.THUNDER_STONE.get())),
-    WATER_STONE(GenerationsCore.MOD_ID + ":water_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.WATER_STONE.get()));
+    RUNNING("running", 66, new int[]{3, 0, 0, 0}, 22, Items.LEATHER),
+    OLD_RUNNING("old_running", 999999, new int[]{2, 0, 0, 0}, 13, Items.LEATHER),
+    AETHER("aether", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON.get()),
+    AQUA("aqua", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SAPPHIRE.get()),
+    FLARE("flare", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.FIRE_STONE.get()),
+    GALACTIC("galactic", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON.get()),
+    MAGMA("magma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY.get()),
+    NEO_PLASMA("neo_plasma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL.get()),
+    PLASMA("plasma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL.get()),
+    ROCKET("rocket", 200, new int[]{3, 6, 7, 3}, 10, Items.AMETHYST_SHARD),
+    SKULL("skull", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON.get()),
+    CRYSTAL("crystal", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL.get()),
+    ULTRA("ultra", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.Z_INGOT.get()),
+    ALUMINUM("aluminum", 15, new int[]{2, 5, 6, 2}, 8, GenerationsItems.ALUMINUM_INGOT.get()),
+    DAWN_STONE("dawn_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.DAWN_STONE.get()),
+    DUSK_STONE("dusk_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.DUSK_STONE.get()),
+    FIRE_STONE("fire_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.FIRE_STONE.get()),
+    ICE_STONE("ice_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.ICE_STONE.get()),
+    LEAF_STONE("leaf_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.LEAF_STONE.get()),
+    MOON_STONE("moon_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.MOON_STONE.get()),
+    SUN_STONE("sun_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SUN_STONE.get()),
+    THUNDER_STONE("thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.THUNDER_STONE.get()),
+    WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.WATER_STONE.get());
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;
@@ -45,15 +46,15 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Ingredient repairIngredient;
 
-    GenerationsArmorMaterials(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Ingredient repairIngredient) {
-        this.name = name;
+    GenerationsArmorMaterials(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Item repairIngredient) {
+        this.name = GenerationsCore.MOD_ID + ":" + name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.slotProtections = slotProtections;
         this.enchantmentValue = enchantmentValue;
         this.sound = SoundEvents.ARMOR_EQUIP_IRON;
         this.toughness = (float) 0.0;
         this.knockbackResistance = (float) 0.0;
-        this.repairIngredient = repairIngredient;
+        this.repairIngredient = Ingredient.of(repairIngredient);
     }
 
     @Override
