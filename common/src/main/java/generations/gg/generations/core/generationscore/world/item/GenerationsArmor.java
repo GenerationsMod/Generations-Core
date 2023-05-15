@@ -110,7 +110,7 @@ public class GenerationsArmor {
 	}
 
 	public static void init() {
-		GenerationsCore.LOGGER.info("Registering PokeMod Armor");
+		GenerationsCore.LOGGER.info("Registering Generations Armor");
 		ARMOR.register();
 	}
 }

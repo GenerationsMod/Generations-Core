@@ -154,7 +154,7 @@ public class GenerationsTools {
 	}
 
 	public static void init() {
-		GenerationsCore.LOGGER.info("Registering PokeMod Tools");
+		GenerationsCore.LOGGER.info("Registering Generations Tools");
 		TOOLS.register();
 	}
 }

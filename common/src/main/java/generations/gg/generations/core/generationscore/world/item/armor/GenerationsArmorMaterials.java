@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item.armor;
 
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -10,29 +11,29 @@ import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 public enum GenerationsArmorMaterials implements ArmorMaterial {
-    RUNNING("pokemod:running", 66, new int[]{3, 0, 0, 0}, 22, Ingredient.EMPTY),
-    OLD_RUNNING("pokemod:old_running", 999999, new int[]{2, 0, 0, 0}, 13, Ingredient.EMPTY),
-    AETHER("pokemod:aether", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
-    AQUA("pokemod:aqua", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SAPPHIRE.get())),
-    FLARE("pokemod:flare", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.FIRE_STONE.get())),
-    GALACTIC("pokemod:galactic", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
-    MAGMA("pokemod:magma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.RUBY.get())),
-    NEO_PLASMA("pokemod:neo_plasma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
-    PLASMA("pokemod:plasma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
-    ROCKET("pokemod:rocket", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(Items.AMETHYST_SHARD)),
-    SKULL("pokemod:skull", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
-    CRYSTAL("pokemod:crystal", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
-    ULTRA("pokemod:ultra", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.Z_INGOT.get())),
-    ALUMINUM("pokemod:aluminum", 15, new int[]{2, 5, 6, 2}, 8, Ingredient.of(GenerationsItems.ALUMINUM_INGOT.get())),
-    DAWN_STONE("pokemod:dawn_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.DAWN_STONE.get())),
-    DUSK_STONE("pokemod:dusk_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.DUSK_STONE.get())),
-    FIRE_STONE("pokemod:fire_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.FIRE_STONE.get())),
-    ICE_STONE("pokemod:ice_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.ICE_STONE.get())),
-    LEAF_STONE("pokemod:leaf_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.LEAF_STONE.get())),
-    MOON_STONE("pokemod:moon_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.MOON_STONE.get())),
-    SUN_STONE("pokemod:sun_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SUN_STONE.get())),
-    THUNDER_STONE("pokemod:thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.THUNDER_STONE.get())),
-    WATER_STONE("pokemod:water_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.WATER_STONE.get()));
+    RUNNING(GenerationsCore.MOD_ID + ":running", 66, new int[]{3, 0, 0, 0}, 22, Ingredient.EMPTY),
+    OLD_RUNNING(GenerationsCore.MOD_ID + ":old_running", 999999, new int[]{2, 0, 0, 0}, 13, Ingredient.EMPTY),
+    AETHER(GenerationsCore.MOD_ID + ":aether", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
+    AQUA(GenerationsCore.MOD_ID + ":aqua", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SAPPHIRE.get())),
+    FLARE(GenerationsCore.MOD_ID + ":flare", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.FIRE_STONE.get())),
+    GALACTIC(GenerationsCore.MOD_ID + ":galactic", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
+    MAGMA(GenerationsCore.MOD_ID + ":magma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.RUBY.get())),
+    NEO_PLASMA(GenerationsCore.MOD_ID + ":neo_plasma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
+    PLASMA(GenerationsCore.MOD_ID + ":plasma", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
+    ROCKET(GenerationsCore.MOD_ID + ":rocket", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(Items.AMETHYST_SHARD)),
+    SKULL(GenerationsCore.MOD_ID + ":skull", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SILICON.get())),
+    CRYSTAL(GenerationsCore.MOD_ID + ":crystal", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.CRYSTAL.get())),
+    ULTRA(GenerationsCore.MOD_ID + ":ultra", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.Z_INGOT.get())),
+    ALUMINUM(GenerationsCore.MOD_ID + ":aluminum", 15, new int[]{2, 5, 6, 2}, 8, Ingredient.of(GenerationsItems.ALUMINUM_INGOT.get())),
+    DAWN_STONE(GenerationsCore.MOD_ID + ":dawn_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.DAWN_STONE.get())),
+    DUSK_STONE(GenerationsCore.MOD_ID + ":dusk_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.DUSK_STONE.get())),
+    FIRE_STONE(GenerationsCore.MOD_ID + ":fire_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.FIRE_STONE.get())),
+    ICE_STONE(GenerationsCore.MOD_ID + ":ice_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.ICE_STONE.get())),
+    LEAF_STONE(GenerationsCore.MOD_ID + ":leaf_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.LEAF_STONE.get())),
+    MOON_STONE(GenerationsCore.MOD_ID + ":moon_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.MOON_STONE.get())),
+    SUN_STONE(GenerationsCore.MOD_ID + ":sun_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.SUN_STONE.get())),
+    THUNDER_STONE(GenerationsCore.MOD_ID + ":thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.THUNDER_STONE.get())),
+    WATER_STONE(GenerationsCore.MOD_ID + ":water_stone", 200, new int[]{3, 6, 7, 3}, 10, Ingredient.of(GenerationsItems.WATER_STONE.get()));
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;

@@ -46,6 +46,7 @@ public class GenerationsCore
 		GenerationsUtilityBlocks.init();
 		GenerationsDecorationBlocks.init();
 		GenerationsBlockEntities.init();
+		GenerationsPaintings.init();
 	}
 
 	/**
