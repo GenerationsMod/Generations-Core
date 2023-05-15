@@ -9,6 +9,7 @@
 package generations.gg.generations.core.generationscore;
 
 import com.mojang.logging.LogUtils;
+import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
@@ -49,6 +50,8 @@ public class GenerationsCore
 		GenerationsTools.init();
 		GenerationsBlockEntities.init();
 		GenerationsPaintings.init();
+
+		VanillaCompat.setup();
 	}
 
 	/**
