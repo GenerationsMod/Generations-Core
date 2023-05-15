@@ -26,7 +26,7 @@ public class GeneralLang extends LanguageProvider {
         addBlockEntries(GenerationsBlocks.ULTRA_BLOCKS, this::getNameGens);
         addBlockEntries(GenerationsBlocks.POKEBRICKS, this::getPokeBrickName);
         addBlockEntries(GenerationsBlocks.MARBLE, this::getNameGens);
-        //addBlockEntries(GenerationsBlocks.STONE.getEntries(), this::getNameGens);
+//        addBlockEntries(GenerationsBlocks.STONE.getEntries(), this::getNameGens);
         addBlockEntries(GenerationsDecorationBlocks.DECORATIONS, this::getNameGens);
         GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
         GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
@@ -43,7 +43,7 @@ public class GeneralLang extends LanguageProvider {
 
         addItemEntries(GenerationsTools.TOOLS, this::getNameGens);
         addItemEntries(GenerationsArmor.ARMOR, this::getNameGens);
-        //addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
+        addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
 
        // GenerationsEntities.ENTITIES.getEntries().forEach(Pokemon -> add(Pokemon.get(), getNameGens(Pokemon.getId().toString())));
 
@@ -61,7 +61,7 @@ public class GeneralLang extends LanguageProvider {
         add("button.pixelmon.battle.bag", "Bag");
         add("button.pixelmon.battle.pokemon", "Party");
         add("button.pixelmon.battle.run", "Run");
-
+*/
         //Manually add Creative Tabs
         add("item_group.pokeballs", "Poké Balls");
         add("item_group.restoration", "Restoration");
@@ -82,8 +82,9 @@ public class GeneralLang extends LanguageProvider {
         add("item_group.unimplemented", "Unimplemented");
         add("item_group.shrines", "Shrines");
 
+
         //TR/TM lines
-        add("move.cantlearn", "%s can't learn %s.");
+      /*  add("move.cantlearn", "%s can't learn %s.");
         add("move.alreadyknows", "%s already knows %s.");
         add("move.learned", "%s has learned %s.");
         add("move.doesntexist", "The move %s doesn't exists so %s couldn't learn it.");
@@ -222,10 +223,10 @@ public class GeneralLang extends LanguageProvider {
         add("pixelmon.battletext.ultraburst", "The opposing %s regained its true power through Ultra Burst!");
         add("pixelmon.battletext.dynamaxing", "%s is Dynamaxing!");
         add("pixelmon.battletext.gigantamaxing", "%s is Gigantamaxing!");
-
+*/
         add("container.melody_flute", "Melody Flute");
         add("container.trashcan", "Trash Can");
-        */
+
         add("container.pokeball_chest", "Pokeball Chest");
         add("container.greatball_chest", "Greatball Chest");
         add("container.ultraball_chest", "Ultraball Chest");
@@ -240,7 +241,7 @@ public class GeneralLang extends LanguageProvider {
         /*
 
         SkinLang.addSkins(this);
-
+*/
         add("pixelmon.melody_flute.no_item", "This flute resonates with feathers.");
 
         add("pixelmon.melody_flute.imbued", "Imbued: %s");
@@ -254,7 +255,6 @@ public class GeneralLang extends LanguageProvider {
 
         add("Generations.timeglass.wrongbiome", "You can only summon Celebi in a Flower Forest Biome");
         add("Generations.timeglass.amount", "You've defeated %s Grass, Psychic, or Fairy Type Pokemon out of 100 in a Flower Forest Biome");
-         */
     }
 
     protected String getNameGens(String name){

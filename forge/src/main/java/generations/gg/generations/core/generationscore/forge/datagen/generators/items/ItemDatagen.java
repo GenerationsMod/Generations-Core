@@ -32,9 +32,9 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GREAT_BALL, "pokeballs/");
         createItem(GenerationsItems.MASTER_BALL, "pokeballs/");
 
-//        createItem(GenerationsItems.LEVEL_BALL, "pokeballs/");
-//        createItem(GenerationsItems.MOON_BALL, "pokeballs/");
-//        createItem(GenerationsItems.FRIEND_BALL, "pokeballs/");
+        createItem(GenerationsItems.LEVEL_BALL, "pokeballs/");
+        createItem(GenerationsItems.MOON_BALL, "pokeballs/");
+        createItem(GenerationsItems.FRIEND_BALL, "pokeballs/");
         createItem(GenerationsItems.LOVE_BALL, "pokeballs/");
         createItem(GenerationsItems.SAFARI_BALL, "pokeballs/");
         createItem(GenerationsItems.HEAVY_BALL, "pokeballs/");

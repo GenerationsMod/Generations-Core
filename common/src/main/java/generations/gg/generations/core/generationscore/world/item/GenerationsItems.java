@@ -78,106 +78,106 @@ public class GenerationsItems {
     /**
      * Restoration Items
      */
-    public static final RegistrySupplier<Item> POTION = register("potion", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> SUPER_POTION = register("super_potion", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> HYPER_POTION = register("hyper_potion", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MAX_POTION = register("max_potion", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> REVIVE = register("revive", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MAX_REVIVE = register("max_revive", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> ETHER = register("ether", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> PP_UP = register("pp_up", properties -> new PpUpItem(properties), GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> FULL_HEAL = register("full_heal", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> ANTIDOTE = register("antidote", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> PARALYZE_HEAL = register("paralyze_heal", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> AWAKENING = register("awakening", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BURN_HEAL = register("burn_heal", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> ICE_HEAL = register("ice_heal", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> HEALTH_FEATHER = register("health_feather", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MUSCLE_FEATHER = register("muscle_feather", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> RESIST_FEATHER = register("resist_feather", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> GENIUS_FEATHER = register("genius_feather", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> CLEVER_FEATHER = register("clever_feather", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> SWIFT_FEATHER = register("swift_feather", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> X_ATTACK = register("x_attack", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> X_DEFENSE = register("x_defense", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> X_SPECIAL_ATTACK = register("x_special_attack", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> X_SPECIAL_DEFENSE = register("x_special_defense", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> X_SPEED = register("x_speed", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> X_ACCURACY = register("x_accuracy", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> DIRE_HIT = register("dire_hit", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> GUARD_SPEC = register("guard_spec", Item::new, GenerationsCreativeTabs.TMS_TRS);
+    public static final RegistrySupplier<Item> POTION = register("potion", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SUPER_POTION = register("super_potion", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> HYPER_POTION = register("hyper_potion", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MAX_POTION = register("max_potion", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> REVIVE = register("revive", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MAX_REVIVE = register("max_revive", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> ETHER = register("ether", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PP_UP = register("pp_up", properties -> new PpUpItem(properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> FULL_HEAL = register("full_heal", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> ANTIDOTE = register("antidote", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PARALYZE_HEAL = register("paralyze_heal", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> AWAKENING = register("awakening", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BURN_HEAL = register("burn_heal", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> ICE_HEAL = register("ice_heal", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> HEALTH_FEATHER = register("health_feather", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MUSCLE_FEATHER = register("muscle_feather", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> RESIST_FEATHER = register("resist_feather", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> GENIUS_FEATHER = register("genius_feather", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> CLEVER_FEATHER = register("clever_feather", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SWIFT_FEATHER = register("swift_feather", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> X_ATTACK = register("x_attack", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> X_DEFENSE = register("x_defense", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> X_SPECIAL_ATTACK = register("x_special_attack", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> X_SPECIAL_DEFENSE = register("x_special_defense", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> X_SPEED = register("x_speed", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> X_ACCURACY = register("x_accuracy", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> DIRE_HIT = register("dire_hit", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> GUARD_SPEC = register("guard_spec", Item::new, GenerationsCreativeTabs.CUISINE);
 
-    public static final RegistrySupplier<Item> PURPLE_JUICE = register("purple_juice", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> RED_JUICE = register("red_juice", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> YELLOW_JUICE = register("yellow_juice", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BLUE_JUICE = register("blue_juice", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> GREEN_JUICE = register("green_juice", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> PINK_JUICE = register("pink_juice", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> COLORFUL_SHAKE = register("colorful_shake", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> PERILOUS_SOUP = register("perilous_soup", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> RARE_SODA = register("rare_soda", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> ULTRA_RARE_SODA = register("ultra_rare_soda", Item::new, GenerationsCreativeTabs.TMS_TRS);
+    public static final RegistrySupplier<Item> PURPLE_JUICE = register("purple_juice", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> RED_JUICE = register("red_juice", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> YELLOW_JUICE = register("yellow_juice", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BLUE_JUICE = register("blue_juice", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> GREEN_JUICE = register("green_juice", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PINK_JUICE = register("pink_juice", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> COLORFUL_SHAKE = register("colorful_shake", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PERILOUS_SOUP = register("perilous_soup", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> RARE_SODA = register("rare_soda", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> ULTRA_RARE_SODA = register("ultra_rare_soda", Item::new, GenerationsCreativeTabs.CUISINE);
 
-    public static final RegistrySupplier<Item> ADAMANT_MINT = register("adamant_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BOLD_MINT = register("bold_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BRAVE_MINT = register("brave_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> CALM_MINT = register("calm_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> CAREFUL_MINT = register("careful_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> GENTLE_MINT = register("gentle_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> HASTY_MINT = register("hasty_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> IMPISH_MINT = register("impish_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> JOLLY_MINT = register("jolly_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> LONELY_MINT = register("lonely_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> LAX_MINT = register("lax_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MILD_MINT = register("mild_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MODEST_MINT = register("modest_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> NAIVE_MINT = register("naive_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> NAUGHTY_MINT = register("naughty_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> RASH_MINT = register("rash_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> RELAXED_MINT = register("relaxed_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> SASSY_MINT = register("sassy_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> SERIOUS_MINT = register("serious_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> TIMID_MINT = register("timid_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> QUIET_MINT = register("quiet_mint", Item::new, GenerationsCreativeTabs.TMS_TRS);
+    public static final RegistrySupplier<Item> ADAMANT_MINT = register("adamant_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BOLD_MINT = register("bold_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BRAVE_MINT = register("brave_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> CALM_MINT = register("calm_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> CAREFUL_MINT = register("careful_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> GENTLE_MINT = register("gentle_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> HASTY_MINT = register("hasty_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> IMPISH_MINT = register("impish_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> JOLLY_MINT = register("jolly_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> LONELY_MINT = register("lonely_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> LAX_MINT = register("lax_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MILD_MINT = register("mild_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MODEST_MINT = register("modest_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> NAIVE_MINT = register("naive_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> NAUGHTY_MINT = register("naughty_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> RASH_MINT = register("rash_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> RELAXED_MINT = register("relaxed_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SASSY_MINT = register("sassy_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SERIOUS_MINT = register("serious_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> TIMID_MINT = register("timid_mint", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> QUIET_MINT = register("quiet_mint", Item::new, GenerationsCreativeTabs.CUISINE);
 
-    public static final RegistrySupplier<Item> FRESH_WATER = register("fresh_water", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> SODA_POP = register("soda_pop", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> LEMONADE = register("lemonade", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MOOMOO_MILK = register("moomoo_milk", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> LUMIOSE_GALETTE = register("lumiose_galette", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> SHALOUR_SABLE = register("shalour_sable", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> CASTELIACONE = register("casteliacone", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> OLD_GATEAU = register("old_gateau", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BIG_MALASADA = register("big_malasada", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> LAVA_COOKIE = register("lava_cookie", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> RAGE_CANDY_BAR = register("rage_candy_bar", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BLUE_FLUTE = register("blue_flute", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> RED_FLUTE = register("red_flute", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> YELLOW_FLUTE = register("yellow_flute", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> HEAL_POWDER = register("heal_powder", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> ENERGY_POWDER = register("energy_powder", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> ENERGY_ROOT = register("energy_root", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> REVIVAL_HERB = register("revival_herb", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> SWEET_HEART = register("sweet_heart", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BASIC_SWEET_POKE_PUFF = register("basic_sweet_poke_puff", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BASIC_CITRUS_POKE_PUFF = register("basic_citrus_poke_puff", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BASIC_MINT_POKE_PUFF = register("basic_mint_poke_puff", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BASIC_MOCHA_POKE_PUFF = register("basic_mocha_poke_puff", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> BASIC_SPICE_POKE_PUFF = register("basic_spice_poke_puff", Item::new, GenerationsCreativeTabs.TMS_TRS);
+    public static final RegistrySupplier<Item> FRESH_WATER = register("fresh_water", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SODA_POP = register("soda_pop", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> LEMONADE = register("lemonade", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MOOMOO_MILK = register("moomoo_milk", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> LUMIOSE_GALETTE = register("lumiose_galette", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SHALOUR_SABLE = register("shalour_sable", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> CASTELIACONE = register("casteliacone", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> OLD_GATEAU = register("old_gateau", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BIG_MALASADA = register("big_malasada", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> LAVA_COOKIE = register("lava_cookie", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> RAGE_CANDY_BAR = register("rage_candy_bar", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BLUE_FLUTE = register("blue_flute", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> RED_FLUTE = register("red_flute", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> YELLOW_FLUTE = register("yellow_flute", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> HEAL_POWDER = register("heal_powder", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> ENERGY_POWDER = register("energy_powder", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> ENERGY_ROOT = register("energy_root", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> REVIVAL_HERB = register("revival_herb", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SWEET_HEART = register("sweet_heart", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BASIC_SWEET_POKE_PUFF = register("basic_sweet_poke_puff", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BASIC_CITRUS_POKE_PUFF = register("basic_citrus_poke_puff", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BASIC_MINT_POKE_PUFF = register("basic_mint_poke_puff", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BASIC_MOCHA_POKE_PUFF = register("basic_mocha_poke_puff", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BASIC_SPICE_POKE_PUFF = register("basic_spice_poke_puff", Item::new, GenerationsCreativeTabs.CUISINE);
 
     /**
      * Consumable Items
      */
-    public static final RegistrySupplier<Item> DYNAMAX_CANDY = register("dynamax_candy", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MAX_HONEY = register("max_honey", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MAX_MUSHROOMS = register("max_mushrooms", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MAX_POWDER = register("max_powder", Item::new, GenerationsCreativeTabs.TMS_TRS);
-    public static final RegistrySupplier<Item> MAX_SOUP = register("max_soup", Item::new, GenerationsCreativeTabs.TMS_TRS);
+    public static final RegistrySupplier<Item> DYNAMAX_CANDY = register("dynamax_candy", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MAX_HONEY = register("max_honey", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MAX_MUSHROOMS = register("max_mushrooms", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MAX_POWDER = register("max_powder", Item::new, GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MAX_SOUP = register("max_soup", Item::new, GenerationsCreativeTabs.CUISINE);
 
     /**
      * TM ITEMS
@@ -1334,31 +1334,31 @@ public class GenerationsItems {
     /**
      * Curry Ingredients
      */
-    public static final RegistrySupplier<Item> BACHS_FOOD_TIN = register("bachs_food_tin", properties -> new CurryIngredient(CurryType.Rich), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> BOBS_FOOD_TIN = register("bobs_food_tin", properties -> new CurryIngredient(CurryType.Juicy), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> BOILED_EGG = register("boiled_egg", properties -> new CurryIngredient(CurryType.BoiledEgg), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> BREAD = register("bread", properties -> new CurryIngredient(CurryType.Toast), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> BRITTLE_BONES = register("brittle_bones", properties -> new CurryIngredient(CurryType.Bone), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> COCONUT_MILK = register("coconut_milk", properties -> new CurryIngredient(CurryType.Coconut), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> FANCY_APPLE = register("fancy_apple", properties -> new CurryIngredient(CurryType.Apple), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> FRESH_CREAM = register("fresh_cream", properties -> new CurryIngredient(CurryType.WhippedCream), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> FRIED_FOOD = register("fried_food", properties -> new CurryIngredient(CurryType.FriedFood), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> FRUIT_BUNCH = register("fruit_bunch", properties -> new CurryIngredient(CurryType.Tropical), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> INSTANT_NOODLES = register("instant_noodles", properties -> new CurryIngredient(CurryType.InstantNoodle), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> LARGE_LEEK = register("large_leek", properties -> new CurryIngredient(CurryType.Leek), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> MIXED_MUSHROOMS = register("mixed_mushrooms", properties -> new CurryIngredient(CurryType.MushroomMedley), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> MOOMOO_CHEESE = register("moomoo_cheese", properties -> new CurryIngredient(CurryType.CheeseCovered), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> PACK_OF_POTATOES = register("pack_of_potatoes", properties -> new CurryIngredient(CurryType.PlentyOfPotato), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> PACKAGED_CURRY = register("packaged_curry", properties -> new CurryIngredient(CurryType.Decorative), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> PASTA = register("pasta", properties -> new CurryIngredient(CurryType.Pasta), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> PRECOOKED_BURGER = register("precooked_burger", properties -> new CurryIngredient(CurryType.BurgerSteak), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> PUNGENT_ROOT = register("pungent_root", properties -> new CurryIngredient(CurryType.HerbMedley), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> SALAD_MIX = register("salad_mix", properties -> new CurryIngredient(CurryType.Salad), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> SAUSAGES = register("sausages", properties -> new CurryIngredient(CurryType.Sausage), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> SMOKED_POKE_TAIL = register("smoked_poke_tail", properties -> new CurryIngredient(CurryType.SmokedTail), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> SPICE_MIX = register("spice_mix", properties -> new CurryIngredient(CurryType.Seasoned), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> TIN_OF_BEANS = register("tin_of_beans", properties -> new CurryIngredient(CurryType.BeanMedley), GenerationsCreativeTabs.CUISINE);
-    public static final RegistrySupplier<Item> GIGANTAMIX = register("gigantamix", properties -> new CurryIngredient(CurryType.Gigantamax), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BACHS_FOOD_TIN = register("bachs_food_tin", properties -> new CurryIngredient(CurryType.Rich, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BOBS_FOOD_TIN = register("bobs_food_tin", properties -> new CurryIngredient(CurryType.Juicy, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BOILED_EGG = register("boiled_egg", properties -> new CurryIngredient(CurryType.BoiledEgg, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BREAD = register("bread", properties -> new CurryIngredient(CurryType.Toast, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> BRITTLE_BONES = register("brittle_bones", properties -> new CurryIngredient(CurryType.Bone, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> COCONUT_MILK = register("coconut_milk", properties -> new CurryIngredient(CurryType.Coconut, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> FANCY_APPLE = register("fancy_apple", properties -> new CurryIngredient(CurryType.Apple, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> FRESH_CREAM = register("fresh_cream", properties -> new CurryIngredient(CurryType.WhippedCream, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> FRIED_FOOD = register("fried_food", properties -> new CurryIngredient(CurryType.FriedFood, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> FRUIT_BUNCH = register("fruit_bunch", properties -> new CurryIngredient(CurryType.Tropical, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> INSTANT_NOODLES = register("instant_noodles", properties -> new CurryIngredient(CurryType.InstantNoodle, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> LARGE_LEEK = register("large_leek", properties -> new CurryIngredient(CurryType.Leek, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MIXED_MUSHROOMS = register("mixed_mushrooms", properties -> new CurryIngredient(CurryType.MushroomMedley, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> MOOMOO_CHEESE = register("moomoo_cheese", properties -> new CurryIngredient(CurryType.CheeseCovered, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PACK_OF_POTATOES = register("pack_of_potatoes", properties -> new CurryIngredient(CurryType.PlentyOfPotato, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PACKAGED_CURRY = register("packaged_curry", properties -> new CurryIngredient(CurryType.Decorative, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PASTA = register("pasta", properties -> new CurryIngredient(CurryType.Pasta, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PRECOOKED_BURGER = register("precooked_burger", properties -> new CurryIngredient(CurryType.BurgerSteak, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> PUNGENT_ROOT = register("pungent_root", properties -> new CurryIngredient(CurryType.HerbMedley, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SALAD_MIX = register("salad_mix", properties -> new CurryIngredient(CurryType.Salad, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SAUSAGES = register("sausages", properties -> new CurryIngredient(CurryType.Sausage, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SMOKED_POKE_TAIL = register("smoked_poke_tail", properties -> new CurryIngredient(CurryType.SmokedTail, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> SPICE_MIX = register("spice_mix", properties -> new CurryIngredient(CurryType.Seasoned, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> TIN_OF_BEANS = register("tin_of_beans", properties -> new CurryIngredient(CurryType.BeanMedley, properties), GenerationsCreativeTabs.CUISINE);
+    public static final RegistrySupplier<Item> GIGANTAMIX = register("gigantamix", properties -> new CurryIngredient(CurryType.Gigantamax, properties), GenerationsCreativeTabs.CUISINE);
 
     /**
      * Player Consumables
@@ -1640,7 +1640,7 @@ public class GenerationsItems {
      * Items to be included in Minecraft Default Section.
      */
 
-    public static final RegistrySupplier<Item> CURRY = register("curry", ItemCurry::new, GenerationsCreativeTabs.TMS_TRS);
+    public static final RegistrySupplier<Item> CURRY = register("curry", ItemCurry::new, GenerationsCreativeTabs.CUISINE);
 
     public static final RegistrySupplier<Item> ULTRA_DARK_SIGN = registerSign("ultra_dark_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_SIGN.get()), GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), GenerationsCreativeTabs.BUILDING_BLOCKS);
