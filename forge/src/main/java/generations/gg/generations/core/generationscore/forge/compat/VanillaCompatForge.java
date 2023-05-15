@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.compat;
 
 
+import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
@@ -22,7 +23,7 @@ public class VanillaCompatForge {
      * Used to add items to the creative menu in a manner that fits Vanilla's order.
      * @param event net.minecraftforge.event.CreativeModeTabEvent.BuildContents
      */
-    public static void buildContents(CreativeModeTabEvent.BuildContents event) {
+    public static void buildContents(final CreativeModeTabEvent.BuildContents event) {
         MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> entries = event.getEntries();
         CreativeModeTab tab = event.getTab();
         if (tab == CreativeModeTabs.COLORED_BLOCKS) {
@@ -94,7 +95,7 @@ public class VanillaCompatForge {
         }
     }
 
-    private static void addInOrder(CreativeModeTabEvent.BuildContents event, int i,Block b) {
+    private static void addInOrder(CreativeModeTabEvent.BuildContents event, int i, Block b) {
         if (b instanceof PressurePlateBlock){ if(i == 5)event.accept(b);}
         else if (b instanceof ButtonBlock){ if(i == 4)event.accept(b);}
         else if (b instanceof WallBlock){ if(i == 3)event.accept(b);}

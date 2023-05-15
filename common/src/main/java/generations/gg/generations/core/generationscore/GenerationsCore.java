@@ -50,8 +50,6 @@ public class GenerationsCore
 		GenerationsTools.init();
 		GenerationsBlockEntities.init();
 		GenerationsPaintings.init();
-
-		VanillaCompat.setup();
 	}
 
 	/**
