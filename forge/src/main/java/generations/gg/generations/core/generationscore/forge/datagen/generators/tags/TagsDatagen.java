@@ -2,13 +2,16 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
+import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -25,6 +28,7 @@ public class TagsDatagen {
     public static void init(DataGenerator generator, PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper helper) {
         GenerationsBlockTagsProvider blockProvider = new GenerationsBlockTagsProvider(output, lookupProvider, helper);
         generator.addProvider(true, blockProvider);
+        generator.addProvider(true, new GenerationsItemTagsProvider(output, lookupProvider, blockProvider, helper));
     }
 
     public static class GenerationsBlockTagsProvider extends BlockTagsProvider {
@@ -179,6 +183,67 @@ public class TagsDatagen {
             else if (object instanceof WallBlock) this.tag(BlockTags.WALLS).add(object);
             else if (object instanceof ButtonBlock) this.tag(BlockTags.BUTTONS).add(object);
             else if (object instanceof PressurePlateBlock) this.tag(BlockTags.PRESSURE_PLATES).add(object);
+        }
+    }
+
+    public static class GenerationsItemTagsProvider extends ItemTagsProvider {
+
+        public GenerationsItemTagsProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
+            super(arg, completableFuture, blockTagsProvider.contentsGetter(), GenerationsCore.MOD_ID, existingFileHelper);
+        }
+
+        @Override
+        protected void addTags(HolderLookup.@NotNull Provider arg) {
+            //Copy Block tags to item version
+            this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
+            this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
+            this.copy(BlockTags.BUTTONS, ItemTags.BUTTONS);
+            this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
+            this.copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
+            this.copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
+            this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
+            this.copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
+            //this.copy(BlockTags.DOORS, ItemTags.DOORS);
+            //this.copy(BlockTags.SAND, ItemTags.SAND);
+            this.copy(BlockTags.SLABS, ItemTags.SLABS);
+            this.copy(BlockTags.WALLS, ItemTags.WALLS);
+            this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
+            this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
+            //this.copy(BlockTags.FENCES, ItemTags.FENCES);
+            //this.copy(BlockTags.DIRT, ItemTags.DIRT);
+            this.copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS);
+
+            //PokeBricks
+            this.copy(GenerationsBlockTags.POKEBRICKS, GenerationsItemTags.POKEBRICKS);
+            //Marble
+            this.copy(GenerationsBlockTags.MARBLE, GenerationsItemTags.MARBLE);
+
+            //Ultra
+            this.copy(GenerationsBlockTags.ULTRA, GenerationsItemTags.ULTRA);
+
+            //Ore Specific tags like Vanilla
+            this.copy(GenerationsBlockTags.GENERATIONSORES, GenerationsItemTags.GENERATIONSORES);
+            this.copy(GenerationsBlockTags.ALUMINUM_ORES, GenerationsItemTags.ALUMINUM_ORES);
+            this.copy(GenerationsBlockTags.SAPPHIRE_ORES, GenerationsItemTags.SAPPHIRE_ORES);
+            this.copy(GenerationsBlockTags.RUBY_ORES, GenerationsItemTags.RUBY_ORES);
+            this.copy(GenerationsBlockTags.SILICON_ORES, GenerationsItemTags.SILICON_ORES);
+            this.copy(GenerationsBlockTags.Z_CRYSTAL_ORES, GenerationsItemTags.Z_CRYSTAL_ORES);
+            this.copy(GenerationsBlockTags.FOSSIL_ORES, GenerationsItemTags.FOSSIL_ORES);
+            this.tag(ItemTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get().asItem());
+            this.tag(ItemTags.IRON_ORES).add(GenerationsOres.CHARGE_STONE_IRON_ORE.get().asItem());
+            this.tag(ItemTags.GOLD_ORES).add(GenerationsOres.CHARGE_STONE_GOLD_ORE.get().asItem());
+            this.tag(ItemTags.COPPER_ORES).add(GenerationsOres.CHARGE_STONE_COPPER_ORE.get().asItem());
+            this.tag(ItemTags.DIAMOND_ORES).add(GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get().asItem());
+            this.tag(ItemTags.EMERALD_ORES).add(GenerationsOres.CHARGE_STONE_EMERALD_ORE.get().asItem());
+            this.tag(ItemTags.LAPIS_ORES).add(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get().asItem());
+            this.tag(ItemTags.REDSTONE_ORES).add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get().asItem());
+
+            //Charge and Volcanic Stone Brick Tags like Vanilla
+            this.copy(GenerationsBlockTags.CHARGE_STONE_BRICKS, GenerationsItemTags.CHARGE_STONE_BRICKS);
+            this.copy(GenerationsBlockTags.VOLCANIC_STONE_BRICKS, GenerationsItemTags.VOLCANIC_STONE_BRICKS);
+
+
+            //GenerationsItems.ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
         }
     }
 }

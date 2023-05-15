@@ -7,7 +7,7 @@ import net.minecraft.world.item.Item;
 
 public class GenerationsItemTags {
 
-    public static final TagKey<Item> GenerationsCoreITEMS = create("generationsitems");
+    public static final TagKey<Item> GENERATIONSITEMS = create("generationsitems");
     public static final TagKey<Item> APRICORNS = create("apricorns");
     public static final TagKey<Item> APRICORNS_MINUS_PINK = create("apricorns_minus_pink");
     public static final TagKey<Item> PC = create("pc");
@@ -27,7 +27,7 @@ public class GenerationsItemTags {
     public static final TagKey<Item> CLOSED_POKEMAIL = create("sealed_pokemail");
 
     //Ore Tags
-    public static final TagKey<Item> GenerationsCoreORES = create("generationsores");
+    public static final TagKey<Item> GENERATIONSORES = create("generationsores");
     public static final TagKey<Item> ALUMINUM_ORES = create("aluminum_ores");
     public static final TagKey<Item> SAPPHIRE_ORES = create("sapphire_ores");
     public static final TagKey<Item> RUBY_ORES = create("ruby_ores");
