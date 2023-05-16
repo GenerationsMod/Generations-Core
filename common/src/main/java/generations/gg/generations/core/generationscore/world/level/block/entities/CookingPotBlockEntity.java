@@ -7,7 +7,7 @@ import generations.gg.generations.core.generationscore.api.events.CurryEvents;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.world.container.CookingPotContainer;
-import generations.gg.generations.core.generationscore.world.container.PixelmonContainers;
+import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryItem;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
@@ -220,7 +220,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     @Override
     public CookingPotContainer create(int i, Inventory arg, FriendlyByteBuf arg2) {
         if (arg.player.getLevel().getBlockEntity(arg2.readBlockPos()) instanceof CookingPotBlockEntity cookingPot) {
-            return new CookingPotContainer(new PixelmonContainers.CreationContext<>(i, arg, cookingPot));
+            return new CookingPotContainer(new GenerationsContainers.CreationContext<>(i, arg, cookingPot));
         } else {
             return null;
         }
@@ -229,7 +229,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, @NotNull Inventory arg, @NotNull Player arg2) {
-        return new CookingPotContainer(new PixelmonContainers.CreationContext<>(i, arg, this));
+        return new CookingPotContainer(new GenerationsContainers.CreationContext<>(i, arg, this));
     }
 
     @Override

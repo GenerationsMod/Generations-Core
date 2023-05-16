@@ -15,8 +15,8 @@ public class MachineBlockContainer extends AbstractContainerMenu {
 
     private final MachineBlockEntity be;
 
-    public MachineBlockContainer(PixelmonContainers.CreationContext<MachineBlockEntity> ctx) {
-        super(PixelmonContainers.MACHINE_BLOCK.get(), ctx.id());
+    public MachineBlockContainer(GenerationsContainers.CreationContext<MachineBlockEntity> ctx) {
+        super(GenerationsContainers.MACHINE_BLOCK.get(), ctx.id());
         this.be = ctx.blockEntity();
 
         addSlot(new TypeSlot(be.getCandies(), 0, 92, 9, GenerationsItems.BUG_CANDY, "bug", this::getBakeTime));

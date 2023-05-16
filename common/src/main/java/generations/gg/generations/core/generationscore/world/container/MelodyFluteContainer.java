@@ -14,13 +14,13 @@ public class MelodyFluteContainer extends SingleSlotContainer {
     private final int slot;
 
     public MelodyFluteContainer(int id, Inventory playerInventory, Container handler) {
-        super(PixelmonContainers.MELODY_FLUTE.get(), id, handler);
+        super(GenerationsContainers.MELODY_FLUTE.get(), id, handler);
         slot = playerInventory.selected;
         applyPlayerInventory(playerInventory);
     }
 
     public MelodyFluteContainer(int id, Inventory playerInventory, FriendlyByteBuf buf) {
-        super(PixelmonContainers.MELODY_FLUTE.get(), id);
+        super(GenerationsContainers.MELODY_FLUTE.get(), id);
         this.slot = buf.readShort();
         applyPlayerInventory(playerInventory);
     }

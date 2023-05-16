@@ -18,8 +18,8 @@ import org.jetbrains.annotations.NotNull;
 public class CookingPotContainer extends AbstractContainerMenu {
     public final CookingPotBlockEntity cookingPot;
 
-    public CookingPotContainer(PixelmonContainers.CreationContext<CookingPotBlockEntity> ctx) {
-        super(PixelmonContainers.COOKING_POT.get(), ctx.id());
+    public CookingPotContainer(GenerationsContainers.CreationContext<CookingPotBlockEntity> ctx) {
+        super(GenerationsContainers.COOKING_POT.get(), ctx.id());
         this.cookingPot = ctx.blockEntity();
 
         var handler = ctx.blockEntity().getContainer();

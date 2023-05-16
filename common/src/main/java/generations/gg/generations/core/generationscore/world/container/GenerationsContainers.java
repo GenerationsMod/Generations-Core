@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 
 import java.util.function.Function;
 
-public class PixelmonContainers {
+public class GenerationsContainers {
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.MENU);
     public static final RegistrySupplier<MenuType<CookingPotContainer>> COOKING_POT = register("cooking_pot", CookingPotContainer::new, CookingPotBlockEntity.class);
     public static final RegistrySupplier<MenuType<GenericChestContainer>> GENERIC = CONTAINERS.register("generic", () -> MenuRegistry.ofExtended(GenericChestContainer::new));
@@ -27,7 +27,7 @@ public class PixelmonContainers {
 
     public static void init() {
         CONTAINERS.register();
-        PlayerEvent.CLOSE_MENU.register(PixelmonContainers::onContainerClose);
+        PlayerEvent.CLOSE_MENU.register(GenerationsContainers::onContainerClose);
     }
 
     private static void onContainerClose(Player player, AbstractContainerMenu container) {

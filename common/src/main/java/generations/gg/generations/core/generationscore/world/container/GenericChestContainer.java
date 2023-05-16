@@ -20,7 +20,7 @@ public class GenericChestContainer extends AbstractContainerMenu {
     }
 
     public GenericChestContainer(int containerId, Inventory playerInventory, GenericContainer container) {
-        super(PixelmonContainers.GENERIC.get(), containerId);
+        super(GenerationsContainers.GENERIC.get(), containerId);
 
         this.container = container;
         container.startOpen(playerInventory.player);

@@ -34,7 +34,7 @@ public class GenerationsCreativeTabs {
 
     public static <T extends ItemLike> CreativeTabRegistry.TabSupplier create(String name, Supplier<RegistrySupplier<T>> supplier) {
         return CreativeTabRegistry.create(GenerationsCore.id(name), builder -> {
-            builder.icon(() -> new ItemStack(supplier.toOptional().map(ItemLike::asItem).orElse(Items.APPLE)))
+            builder.icon(() -> new ItemStack(supplier.get().toOptional().map(ItemLike::asItem).orElse(Items.APPLE)))
                     .title(Component.translatable("item_group." + name));
             //TODO: Search bar
         });
