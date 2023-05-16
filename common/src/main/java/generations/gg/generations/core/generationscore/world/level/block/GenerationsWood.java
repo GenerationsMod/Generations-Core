@@ -29,8 +29,8 @@ public class GenerationsWood {
 
     public static final RegistrySupplier<RotatedPillarBlock> ULTRA_JUNGLE_LOG = registerBlockItem("ultra_jungle_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_LOG)));
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_ULTRA_JUNGLE_LOG = registerBlockItem("stripped_ultra_jungle_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_JUNGLE_LOG)));
-    public static final RegistrySupplier<Block> ULTRA_JUNGLE_WOOD = registerBlockItem("ultra_jungle_wood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WOOD)));
-    public static final RegistrySupplier<Block> STRIPPED_ULTRA_JUNGLE_WOOD = registerBlockItem("stripped_ultra_jungle_wood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_JUNGLE_WOOD)));
+    public static final RegistrySupplier<Block> ULTRA_JUNGLE_WOOD = registerBlockItem("ultra_jungle_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WOOD)));
+    public static final RegistrySupplier<Block> STRIPPED_ULTRA_JUNGLE_WOOD = registerBlockItem("stripped_ultra_jungle_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_JUNGLE_WOOD)));
     public static final RegistrySupplier<Block> ULTRA_JUNGLE_PLANKS = registerBlockItem("ultra_jungle_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS)));
     public static final RegistrySupplier<SlabBlock> ULTRA_JUNGLE_SLAB = registerBlockItem("ultra_jungle_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_SLAB)));
     public static final RegistrySupplier<StairBlock> ULTRA_JUNGLE_STAIRS =  registerBlockItem("ultra_jungle_stairs", () -> new StairBlock(Blocks.JUNGLE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.JUNGLE_STAIRS)));
@@ -47,8 +47,8 @@ public class GenerationsWood {
     public static final RegistrySupplier<WallHangingSignBlock> ULTRA_JUNGLE_WALL_HANGING_SIGN = registerSignWithoutItem("ultra_jungle_wall_hanging_sign", () -> new GenerationsWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WALL_HANGING_SIGN).requiredFeatures(FeatureFlags.UPDATE_1_20), GenerationsWoodTypes.ULTRA_JUNGLE));
     public static final RegistrySupplier<RotatedPillarBlock> ULTRA_DARK_LOG = registerBlockItem("ultra_dark_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_LOG)));
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_ULTRA_DARK_LOG = registerBlockItem("stripped_ultra_dark_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_DARK_OAK_LOG)));
-    public static final RegistrySupplier<Block> ULTRA_DARK_WOOD = registerBlockItem("ultra_dark_wood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WOOD)));
-    public static final RegistrySupplier<Block> STRIPPED_ULTRA_DARK_WOOD = registerBlockItem("stripped_ultra_dark_wood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_DARK_OAK_WOOD)));
+    public static final RegistrySupplier<Block> ULTRA_DARK_WOOD = registerBlockItem("ultra_dark_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WOOD)));
+    public static final RegistrySupplier<Block> STRIPPED_ULTRA_DARK_WOOD = registerBlockItem("stripped_ultra_dark_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_DARK_OAK_WOOD)));
     public static final RegistrySupplier<Block> ULTRA_DARK_PLANKS = registerBlockItem("ultra_dark_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)));
     public static final RegistrySupplier<SlabBlock> ULTRA_DARK_SLAB = registerBlockItem("ultra_dark_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_SLAB)));
     public static final RegistrySupplier<StairBlock> ULTRA_DARK_STAIRS =  registerBlockItem("ultra_dark_stairs", () -> new StairBlock(Blocks.DARK_OAK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.DARK_OAK_STAIRS)));
@@ -67,8 +67,8 @@ public class GenerationsWood {
 
     public static final RegistrySupplier<RotatedPillarBlock> GHOST_LOG = registerBlockItem("ghost_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_LOG)));
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_GHOST_LOG = registerBlockItem("stripped_ghost_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_DARK_OAK_LOG)));
-    public static final RegistrySupplier<Block> GHOST_WOOD = registerBlockItem("ghost_wood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WOOD)));
-    public static final RegistrySupplier<Block> STRIPPED_GHOST_WOOD = registerBlockItem("stripped_ghost_wood", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_DARK_OAK_WOOD)));
+    public static final RegistrySupplier<Block> GHOST_WOOD = registerBlockItem("ghost_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WOOD)));
+    public static final RegistrySupplier<Block> STRIPPED_GHOST_WOOD = registerBlockItem("stripped_ghost_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_DARK_OAK_WOOD)));
     public static final RegistrySupplier<Block> GHOST_PLANKS = registerBlockItem("ghost_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)));
     public static final RegistrySupplier<SlabBlock> GHOST_SLAB = registerBlockItem("ghost_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_SLAB)));
     public static final RegistrySupplier<StairBlock> GHOST_STAIRS =  registerBlockItem("ghost_stairs", () -> new StairBlock(Blocks.DARK_OAK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.DARK_OAK_STAIRS)));
