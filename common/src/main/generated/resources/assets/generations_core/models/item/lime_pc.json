@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "generations_core:item/blocks/utility_blocks/pc/lime_pc"
+  }
+}

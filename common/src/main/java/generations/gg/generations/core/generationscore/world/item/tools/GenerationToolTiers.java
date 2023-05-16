@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -11,25 +12,25 @@ import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 public enum GenerationToolTiers implements Tier {
-    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, Ingredient.of(GenerationsBlocks.CHARGE_STONE.get())),
-    VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, Ingredient.of(GenerationsBlocks.VOLCANIC_STONE.get())),
-    ALUMINUM(2, 200, 6F, 1.5F, 14, Ingredient.of(GenerationsItems.ALUMINUM_INGOT.get())),
-    AMETHYST(2, 300, 6.5F, 2.0F, 14, Ingredient.of(Items.AMETHYST_SHARD)),
-    CRYSTAL(2, 300, 6.5F, 2.0F, 14, Ingredient.of(GenerationsItems.CRYSTAL.get())),
-    DAWN_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.DAWN_STONE.get())),
-    DUSK_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.DUSK_STONE.get())),
-    FIRE_STONE(3, 1561, 8.0F, 3.0F, 10, Ingredient.of(GenerationsItems.FIRE_STONE.get())),
-    ICE_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.ICE_STONE.get())),
-    LEAF_STONE(2, 250, 6.0F, 2.0F, 14, Ingredient.of(GenerationsItems.LEAF_STONE.get())),
-    MOON_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.MOON_STONE.get())),
+    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.CHARGE_STONE.get().asItem()),
+    VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.VOLCANIC_STONE.get().asItem()),
+    ALUMINUM(2, 200, 6F, 1.5F, 14, GenerationsItems.ALUMINUM_INGOT.get()),
+    AMETHYST(2, 300, 6.5F, 2.0F, 14, Items.AMETHYST_SHARD),
+    CRYSTAL(2, 300, 6.5F, 2.0F, 14, GenerationsItems.CRYSTAL.get()),
+    DAWN_STONE(3, 1561, 12.0F, 0.0F, 22, GenerationsItems.DAWN_STONE.get()),
+    DUSK_STONE(3, 1561, 12.0F, 0.0F, 22, GenerationsItems.DUSK_STONE.get()),
+    FIRE_STONE(3, 1561, 8.0F, 3.0F, 10, GenerationsItems.FIRE_STONE.get()),
+    ICE_STONE(3, 1561, 12.0F, 0.0F, 22, GenerationsItems.ICE_STONE.get()),
+    LEAF_STONE(2, 250, 6.0F, 2.0F, 14, GenerationsItems.LEAF_STONE.get()),
+    MOON_STONE(3, 1561, 12.0F, 0.0F, 22, GenerationsItems.MOON_STONE.get()),
 
-    RUBY(2, 300, 6.5F, 2.0F, 14, Ingredient.of(GenerationsItems.RUBY.get())),
+    RUBY(2, 300, 6.5F, 2.0F, 14, GenerationsItems.RUBY.get()),
 
-    SAPPHIRE(2, 300, 6.5F, 2.0F, 14, Ingredient.of(GenerationsItems.SAPPHIRE.get())),
-    SILICON(2, 100, 45F, 10F, 30, Ingredient.of(GenerationsItems.SILICON.get())),
-    SUN_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.SUN_STONE.get())),
-    THUNDER_STONE(3, 1561, 12.0F, 0.0F, 22, Ingredient.of(GenerationsItems.THUNDER_STONE.get())),
-    WATER_STONE(3, 1561, 8.0F, 3.0F, 10, Ingredient.of(GenerationsItems.WATER_STONE.get()));
+    SAPPHIRE(2, 300, 6.5F, 2.0F, 14, GenerationsItems.SAPPHIRE.get()),
+    SILICON(2, 100, 45F, 10F, 30, GenerationsItems.SILICON.get()),
+    SUN_STONE(3, 1561, 12.0F, 0.0F, 22, GenerationsItems.SUN_STONE.get()),
+    THUNDER_STONE(3, 1561, 12.0F, 0.0F, 22, GenerationsItems.THUNDER_STONE.get()),
+    WATER_STONE(3, 1561, 8.0F, 3.0F, 10, GenerationsItems.WATER_STONE.get());
 
     private final int level;
     private final int uses;
@@ -38,13 +39,13 @@ public enum GenerationToolTiers implements Tier {
     private final int enchantmentValue;
     private final Ingredient repairIngredient;
 
-    GenerationToolTiers(int level, int uses, float speed, float damage, int enchantmentValue, Ingredient repairIngredient) {
+    GenerationToolTiers(int level, int uses, float speed, float damage, int enchantmentValue, Item repairIngredient) {
         this.level = level;
         this.uses = uses;
         this.speed = speed;
         this.damage = damage;
         this.enchantmentValue = enchantmentValue;
-        this.repairIngredient = repairIngredient;
+        this.repairIngredient = Ingredient.of(repairIngredient);
     }
 
     public int getUses() {

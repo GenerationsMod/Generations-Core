@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenericChestBlockItem;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
@@ -32,6 +31,7 @@ public class GenerationsBlocks {
     public static final DeferredRegister<Block> ULTRA_BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> POKEBRICKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> MARBLE = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
+    public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
     public static final BlockBehaviour.Properties ULTRA_BLOCK_SETTINGS = BlockBehaviour.Properties.copy(Blocks.GLASS).lightLevel(value -> 15);
 
@@ -1315,8 +1315,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> YACHE_BERRY_BUSH = createBerryBush(BerryType.YACHE);
     public static final RegistrySupplier<Block> YAGO_BERRY_BUSH = createBerryBush(BerryType.YAGO);
 
-
-
     private static Block apricornLeaves() {
         return new LeavesBlock(
                 BlockBehaviour.Properties
@@ -1371,7 +1369,7 @@ public class GenerationsBlocks {
     }
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-        GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
+        BLOCK_ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
     }
 
     public static void init() {
@@ -1380,5 +1378,6 @@ public class GenerationsBlocks {
         POKEBRICKS.register();
         MARBLE.register();
         ULTRA_BLOCKS.register();
+        BLOCK_ITEMS.register();
     }
 }

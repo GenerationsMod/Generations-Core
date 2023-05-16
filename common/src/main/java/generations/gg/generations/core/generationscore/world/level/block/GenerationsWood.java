@@ -102,7 +102,7 @@ public class GenerationsWood {
         return WOOD_SIGN.register(name, blockSupplier);
     }
     public static void init() {
-        GenerationsCore.LOGGER.info("Registering PokeMod Wood");
+        GenerationsCore.LOGGER.info("Registering Generations Wood");
         WOOD_BLOCKS.register();
         WOOD_SIGN.register();
     }

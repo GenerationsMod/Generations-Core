@@ -41,8 +41,8 @@ public class GenerationsPaintings {
         return PAINTINGS.register(name, () -> new PaintingVariant(width, height));
     }
 
-    public static void onInitialize() {
-        GenerationsCore.LOGGER.info("Registering PokeMod Paintings");
+    public static void init() {
+        GenerationsCore.LOGGER.info("Registering Generations Paintings");
         PAINTINGS.register();
     }
 }

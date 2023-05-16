@@ -1,0 +1,164 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "generations_core:item/curry/item/plain",
+      "predicate": {
+        "generations_core:curry_type": 0.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/sausage",
+      "predicate": {
+        "generations_core:curry_type": 1.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/juicy",
+      "predicate": {
+        "generations_core:curry_type": 2.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/rich",
+      "predicate": {
+        "generations_core:curry_type": 3.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/bean_medley",
+      "predicate": {
+        "generations_core:curry_type": 4.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/toast",
+      "predicate": {
+        "generations_core:curry_type": 5.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/pasta",
+      "predicate": {
+        "generations_core:curry_type": 6.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/mushroom_medley",
+      "predicate": {
+        "generations_core:curry_type": 7.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/smoked_tail",
+      "predicate": {
+        "generations_core:curry_type": 8.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/leek",
+      "predicate": {
+        "generations_core:curry_type": 9.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/apple",
+      "predicate": {
+        "generations_core:curry_type": 10.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/bone",
+      "predicate": {
+        "generations_core:curry_type": 11.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/potato",
+      "predicate": {
+        "generations_core:curry_type": 12.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/herb_medley",
+      "predicate": {
+        "generations_core:curry_type": 13.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/salad",
+      "predicate": {
+        "generations_core:curry_type": 14.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/fried_food",
+      "predicate": {
+        "generations_core:curry_type": 15.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/boiled_egg",
+      "predicate": {
+        "generations_core:curry_type": 16.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/tropical",
+      "predicate": {
+        "generations_core:curry_type": 17.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/cheese_covered",
+      "predicate": {
+        "generations_core:curry_type": 18.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/seasoned",
+      "predicate": {
+        "generations_core:curry_type": 19.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/whipped_cream",
+      "predicate": {
+        "generations_core:curry_type": 20.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/decorative",
+      "predicate": {
+        "generations_core:curry_type": 21.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/coconut",
+      "predicate": {
+        "generations_core:curry_type": 22.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/instant_noodle",
+      "predicate": {
+        "generations_core:curry_type": 23.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/burger_steak",
+      "predicate": {
+        "generations_core:curry_type": 24.0
+      }
+    },
+    {
+      "model": "generations_core:item/curry/item/gigantamax",
+      "predicate": {
+        "generations_core:curry_type": 25.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "generations_core:item/curry/item/plain"
+  }
+}

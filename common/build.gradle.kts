@@ -9,6 +9,7 @@ repositories {
         name = "generationsMavenSnapshots"
         url = uri("https://maven.generations.gg/snapshots")
     }
+    maven("https://maven.bai.lol")
 }
 
 sourceSets.main  {
@@ -32,6 +33,7 @@ dependencies {
     implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
     implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
     implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")
+    modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 }
 
 architectury {

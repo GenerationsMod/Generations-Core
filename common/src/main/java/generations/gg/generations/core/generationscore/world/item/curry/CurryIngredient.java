@@ -10,8 +10,8 @@ public class CurryIngredient extends Item implements ICurryRarity {
     private static final Map<CurryType, CurryIngredient> ingredientToTypeMap = new HashMap<>();
     private final CurryType type;
 
-    public CurryIngredient(CurryType type) {
-        super(new Properties());
+    public CurryIngredient(CurryType type, Properties properties) {
+        super(properties);
         this.type = type;
 
         ingredientToTypeMap.put(type, this);

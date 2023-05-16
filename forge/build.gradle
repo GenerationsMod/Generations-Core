@@ -57,6 +57,9 @@ repositories {
         url = uri("https://maven.generations.gg/snapshots")
     }
 
+    maven {
+        url = "https://maven.bai.lol"
+    }
 }
 
 dependencies {
@@ -78,6 +81,10 @@ dependencies {
     include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}"))
     include(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3"))
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${rootProject.devauth_version}")
+
+    modCompileOnly "mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}"
+    modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
+    modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 }
 
 processResources {

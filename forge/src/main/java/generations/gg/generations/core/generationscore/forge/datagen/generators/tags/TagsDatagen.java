@@ -5,23 +5,29 @@ import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsPaintings;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.PaintingVariantTags;
+import net.minecraft.tags.TagEntry;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Field;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class TagsDatagen {
@@ -29,9 +35,10 @@ public class TagsDatagen {
         GenerationsBlockTagsProvider blockProvider = new GenerationsBlockTagsProvider(output, lookupProvider, helper);
         generator.addProvider(true, blockProvider);
         generator.addProvider(true, new GenerationsItemTagsProvider(output, lookupProvider, blockProvider, helper));
+        generator.addProvider(true, new GenerationsPaintingTagProvider(output, lookupProvider, helper));
     }
 
-    public static class GenerationsBlockTagsProvider extends BlockTagsProvider {
+    private static class GenerationsBlockTagsProvider extends BlockTagsProvider {
 
         public GenerationsBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
             super(output, lookupProvider, GenerationsCore.MOD_ID, existingFileHelper);
@@ -186,7 +193,7 @@ public class TagsDatagen {
         }
     }
 
-    public static class GenerationsItemTagsProvider extends ItemTagsProvider {
+    private static class GenerationsItemTagsProvider extends ItemTagsProvider {
 
         public GenerationsItemTagsProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
             super(arg, completableFuture, blockTagsProvider.contentsGetter(), GenerationsCore.MOD_ID, existingFileHelper);
@@ -244,6 +251,18 @@ public class TagsDatagen {
 
 
             //GenerationsItems.ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
+        }
+    }
+
+    private static class GenerationsPaintingTagProvider extends PaintingVariantTagsProvider {
+
+        public GenerationsPaintingTagProvider(PackOutput arg, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
+            super(arg, completableFuture, GenerationsCore.MOD_ID, existingFileHelper);
+        }
+
+        @Override
+        protected void addTags(HolderLookup.@NotNull Provider arg) {
+            GenerationsPaintings.PAINTINGS.forEach(painting -> this.tag(PaintingVariantTags.PLACEABLE).add(TagEntry.element(Objects.requireNonNull(ForgeRegistries.PAINTING_VARIANTS.getKey(painting.get())))));
         }
     }
 }
