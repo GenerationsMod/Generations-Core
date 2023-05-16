@@ -1,7 +1,7 @@
 {
   "parent": "builtin/entity",
   "textures": {
-    "particle": "pokemod:item/pokeballs/ultra_ball"
+    "particle": "generations_core:item/pokeballs/ultra_ball"
   },
   "display": {
     "gui": {

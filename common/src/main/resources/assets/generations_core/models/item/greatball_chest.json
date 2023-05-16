@@ -1,7 +1,7 @@
 {
   "parent": "builtin/entity",
   "textures": {
-    "particle": "pokemod:item/pokeballs/great_ball"
+    "particle": "generations_core:item/pokeballs/great_ball"
   },
   "display": {
     "gui": {
