@@ -2,7 +2,13 @@
 loom.silentMojangMappingsLicense()
 
 repositories {
+    mavenCentral()
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
+    maven("https://jitpack.io") // BinarySMD
+    maven {
+        name = "generationsMavenSnapshots"
+        url = uri("https://maven.generations.gg/snapshots")
+    }
     maven("https://maven.bai.lol")
 }
 
@@ -19,6 +25,14 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi("dev.architectury:architectury:${rootProject.properties["architectury_version"]}")
     modImplementation("earth.terrarium:botarium-common-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
+
+    implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
+    implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")
+    implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}")
+    implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")
+    implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
+    implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
+    implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 }
 

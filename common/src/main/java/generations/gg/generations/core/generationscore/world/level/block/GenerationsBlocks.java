@@ -1380,5 +1380,4 @@ public class GenerationsBlocks {
         ULTRA_BLOCKS.register();
         BLOCK_ITEMS.register();
     }
-
 }

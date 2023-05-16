@@ -46,6 +46,17 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+
+    maven {
+        url = "https://nexus.resourcefulbees.com/repository/maven-public/"
+    }
+    mavenCentral()
+    maven { url = "https://jitpack.io" } // BinarySMD
+    maven {
+        name = "generationsMavenSnapshots"
+        url = uri("https://maven.generations.gg/snapshots")
+    }
+
     maven {
         url = "https://maven.bai.lol"
     }
@@ -57,10 +68,18 @@ dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
-    modImplementation "curse.maven:Botarium-704113:4439777"
+    include(modApi("earth.terrarium:botarium-forge-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}"))
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+
+    include(implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){transitive = false})
+    include(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}"))
+    include(implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}"))
+    include(implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}"))
+    include(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){transitive = false})
+    include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}"))
+    include(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3"))
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${rootProject.devauth_version}")
 
     modCompileOnly "mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}"

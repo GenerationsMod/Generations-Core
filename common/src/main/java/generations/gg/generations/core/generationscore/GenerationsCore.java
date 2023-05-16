@@ -10,6 +10,7 @@ package generations.gg.generations.core.generationscore;
 
 import com.mojang.logging.LogUtils;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
+import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
@@ -18,6 +19,7 @@ import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.CreativeModeTab;
 import org.slf4j.Logger;
 
 
@@ -37,18 +39,19 @@ public class GenerationsCore
 	 * Initializes the Generations-Core mod.
 	 */
 	public static void init() {
+		GenerationsCreativeTabs.init();
 		GenerationsBlocks.init();
 		GenerationsPokeDolls.init();
 		GenerationsWood.init();
 		GenerationsOres.init();
-		GenerationsShrines.init();
 		GenerationsDecorationBlocks.init();
 		GenerationsUtilityBlocks.init();
-		GenerationsCreativeTabs.init();
+		GenerationsShrines.init();
+		GenerationsBlockEntities.init();
+		PokeModEntities.onInitialize();
 		GenerationsItems.init();
 		GenerationsArmor.init();
 		GenerationsTools.init();
-		GenerationsBlockEntities.init();
 		GenerationsPaintings.init();
 	}
 

@@ -11,8 +11,7 @@ public class PokeModBlockEntityModels {
     public static final ResourceLocation CLOCK = GenerationsCore.id("models/block/decorations/clock.pk");
     public static final ResourceLocation COOKING_POT = GenerationsCore.id("models/block/utility_blocks/cooking_pot.pk");
     public static final ResourceLocation MOLTRES_SHRINE = GenerationsCore.id("models/block/shrines/legendary_birds/moltres_shrine.pk");
-    public static final ResourceLocation ARTICUNO_SHRINE = GenerationsCore.id("models/block/shrines/legendary_birds/articuno_shrine.pk");
-    public static final ResourceLocation GROUDON_SHRINE = GenerationsCore.id("models/block/shrines/weather_trio/groudon_shrine.pk");
+    public static final ResourceLocation ARTICUNO_SHRINE = GenerationsCore.id("models/block/shrines/legendary_birds/articuno_shrine.pk");    public static final ResourceLocation GROUDON_SHRINE = GenerationsCore.id("models/block/shrines/weather_trio/groudon_shrine.pk");
     public static final ResourceLocation HEALER = GenerationsCore.id("models/block/utility_blocks/healer.pk");
     public static final ResourceLocation CRYSTAL_BELL = GenerationsCore.id("models/block/shrines/crystal_bell/crystal_bell.pk");
     public static final ResourceLocation HOUSE_LAMP = GenerationsCore.id("models/block/decorations/house_lamp.pk");

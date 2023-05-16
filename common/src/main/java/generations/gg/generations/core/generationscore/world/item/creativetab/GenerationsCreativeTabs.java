@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.function.Supplier;
@@ -33,7 +34,7 @@ public class GenerationsCreativeTabs {
 
     public static <T extends ItemLike> CreativeTabRegistry.TabSupplier create(String name, Supplier<RegistrySupplier<T>> supplier) {
         return CreativeTabRegistry.create(GenerationsCore.id(name), builder -> {
-            builder.icon(() -> new ItemStack(supplier.get().get()))
+            builder.icon(() -> new ItemStack(supplier.toOptional().map(ItemLike::asItem).orElse(Items.APPLE)))
                     .title(Component.translatable("item_group." + name));
             //TODO: Search bar
         });
