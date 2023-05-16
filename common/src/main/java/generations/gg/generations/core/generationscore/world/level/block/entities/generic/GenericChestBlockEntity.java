@@ -19,7 +19,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.ChestLidController;
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.entity.LidBlockEntity;
@@ -94,17 +93,14 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
         this.height = tag.getInt("height");
         this.defaultTranslation = tag.getString("defaultTranslation");
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        if (!this.tryLoadLootTable(tag)) {
+        if (!this.tryLoadLootTable(tag))
             ContainerHelper.loadAllItems(tag, this.items);
-        }
     }
 
     @Override
     protected void saveAdditional(@NotNull CompoundTag tag) {
         super.saveAdditional(tag);
-        if (!this.trySaveLootTable(tag)) {
-            ContainerHelper.saveAllItems(tag, this.items);
-        }
+        if (!this.trySaveLootTable(tag)) ContainerHelper.saveAllItems(tag, this.items);
         tag.putInt("width", width);
         tag.putInt("height", height);
         tag.putString("defaultTranslation", defaultTranslation);
@@ -135,16 +131,14 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
 
     @Override
     public void startOpen(@NotNull Player player) {
-        if (!this.remove && !player.isSpectator()) {
+        if (!this.remove && !player.isSpectator())
             this.openersCounter.incrementOpeners(player, Objects.requireNonNull(this.getLevel()), this.getBlockPos(), this.getBlockState());
-        }
     }
 
     @Override
     public void stopOpen(@NotNull Player player) {
-        if (!this.remove && !player.isSpectator()) {
+        if (!this.remove && !player.isSpectator())
             this.openersCounter.decrementOpeners(player, Objects.requireNonNull(this.getLevel()), this.getBlockPos(), this.getBlockState());
-        }
     }
 
     @Override
@@ -173,14 +167,12 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
     }
 
     public void recheckOpen() {
-        if (!this.remove) {
+        if (!this.remove)
             this.openersCounter.recheckOpeners(Objects.requireNonNull(this.getLevel()), this.getBlockPos(), this.getBlockState());
-        }
     }
 
     protected void signalOpenCount(Level level, BlockPos pos, BlockState state, int eventId, int eventParam) {
-        Block block = state.getBlock();
-        level.blockEvent(pos, block, 1, eventParam);
+        level.blockEvent(pos, state.getBlock(), 1, eventParam);
     }
 
     @Override

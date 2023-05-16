@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.client;
 
-import com.mojang.blaze3d.platform.MacosUtil;
 import dev.architectury.registry.ReloadListenerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
@@ -29,8 +28,6 @@ import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.WoodType;
-
-import java.io.IOException;
 
 import static generations.gg.generations.core.generationscore.world.item.MelodyFluteItem.isItem;
 import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
