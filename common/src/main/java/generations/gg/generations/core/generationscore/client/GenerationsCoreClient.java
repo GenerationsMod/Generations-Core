@@ -128,20 +128,4 @@ public class GenerationsCoreClient {
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
     }
 
-    private static void updateTitle() {
-        try {
-            var client = Minecraft.getInstance();
-            var filePrefix = Minecraft.getInstance().getLaunchedVersion().equalsIgnoreCase("mod_dev") ? "dev-" : "";
-            if (Minecraft.ON_OSX){
-                MacosUtil.loadIcon(() -> client.getResourceManager().getResource(GenerationsCore.id("textures/logo/" + filePrefix + "logo-32x.icns")).orElseThrow().open());
-            } else {
-                client.getWindow().setIcon(
-                        () -> client.getResourceManager().getResource(GenerationsCore.id("textures/logo/logo-16x.png")).orElseThrow().open(),
-                        () -> client.getResourceManager().getResource(GenerationsCore.id("textures/logo/" + filePrefix + "logo-32x.png")).orElseThrow().open()
-                );
-            }
-        } catch (IOException e) {
-            GenerationsCore.LOGGER.info("Failed to load icon", e);
-        }
-    }
 }
