@@ -4,7 +4,7 @@ import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.world.container.MachineBlockContainer;
-import generations.gg.generations.core.generationscore.world.container.PixelmonContainers;
+import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -65,7 +65,7 @@ public class MachineBlockEntity extends SimpleBlockEntity implements ItemContain
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, @NotNull Inventory arg, @NotNull Player arg2) {
-        return new MachineBlockContainer(new PixelmonContainers.CreationContext<>(i, arg, this));
+        return new MachineBlockContainer(new GenerationsContainers.CreationContext<>(i, arg, this));
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state1, MachineBlockEntity blockEntity) {

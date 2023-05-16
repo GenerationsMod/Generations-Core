@@ -9,7 +9,7 @@
 package generations.gg.generations.core.generationscore;
 
 import com.mojang.logging.LogUtils;
-import generations.gg.generations.core.generationscore.compat.VanillaCompat;
+import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -19,7 +19,6 @@ import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.CreativeModeTab;
 import org.slf4j.Logger;
 
 
@@ -53,6 +52,7 @@ public class GenerationsCore
 		GenerationsArmor.init();
 		GenerationsTools.init();
 		GenerationsPaintings.init();
+		GenerationsContainers.init();
 	}
 
 	/**

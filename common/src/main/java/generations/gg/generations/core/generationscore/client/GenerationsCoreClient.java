@@ -16,7 +16,7 @@ import generations.gg.generations.core.generationscore.client.render.entity.Tier
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
-import generations.gg.generations.core.generationscore.world.container.PixelmonContainers;
+import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
@@ -58,22 +58,22 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
 
-            ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
-            ItemPropertiesRegistry.register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
-                ItemStack stack = MelodyFluteItem.getImbuedItem(arg);
-
-                if (isItem(GenerationsItems.ICY_WING, stack)) return 1f;
-                else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return 2f;
-                else if (isItem(GenerationsItems.STATIC_WING, stack)) return 3f;
-                else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return 4f;
-                else if (isItem(GenerationsItems.FIERY_WING, stack)) return 5f;
-                else if (isItem(GenerationsItems.SINISTER_WING, stack)) return 6f;
-                else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return 7f;
-                else if (isItem(GenerationsItems.SILVER_WING, stack)) return 8f;
-                else return 0;
-            });
-
             registerScreens();
+        });
+
+        ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
+        ItemPropertiesRegistry.register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
+            ItemStack stack = MelodyFluteItem.getImbuedItem(arg);
+
+            if (isItem(GenerationsItems.ICY_WING, stack)) return 1f;
+            else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return 2f;
+            else if (isItem(GenerationsItems.STATIC_WING, stack)) return 3f;
+            else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return 4f;
+            else if (isItem(GenerationsItems.FIERY_WING, stack)) return 5f;
+            else if (isItem(GenerationsItems.SINISTER_WING, stack)) return 6f;
+            else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return 7f;
+            else if (isItem(GenerationsItems.SILVER_WING, stack)) return 8f;
+            else return 0;
         });
     }
 
@@ -84,11 +84,11 @@ public class GenerationsCoreClient {
     }
 
     private static void registerScreens() {
-        MenuRegistry.registerScreenFactory(PixelmonContainers.COOKING_POT.get(), CookingPotScreen::new);
-        MenuRegistry.registerScreenFactory(PixelmonContainers.GENERIC.get(), GenericChestScreen::new);
-        MenuRegistry.registerScreenFactory(PixelmonContainers.MACHINE_BLOCK.get(), MachineBlockScreen::new);
-        MenuRegistry.registerScreenFactory(PixelmonContainers.MELODY_FLUTE.get(), MelodyFluteScreen::new);
-        MenuRegistry.registerScreenFactory(PixelmonContainers.TRASHCAN.get(), TrashCanScreen::new);
+        MenuRegistry.registerScreenFactory(GenerationsContainers.COOKING_POT.get(), CookingPotScreen::new);
+        MenuRegistry.registerScreenFactory(GenerationsContainers.GENERIC.get(), GenericChestScreen::new);
+        MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK.get(), MachineBlockScreen::new);
+        MenuRegistry.registerScreenFactory(GenerationsContainers.MELODY_FLUTE.get(), MelodyFluteScreen::new);
+        MenuRegistry.registerScreenFactory(GenerationsContainers.TRASHCAN.get(), TrashCanScreen::new);
     }
 
     private static void registerEntityRenderers() {
