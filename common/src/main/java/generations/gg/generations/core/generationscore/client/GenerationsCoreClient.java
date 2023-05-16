@@ -1,8 +1,10 @@
 package generations.gg.generations.core.generationscore.client;
 
+import dev.architectury.platform.Platform;
 import dev.architectury.registry.ReloadListenerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
+import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -19,9 +21,12 @@ import generations.gg.generations.core.generationscore.world.entity.PokeModEntit
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.server.packs.PackType;
@@ -44,6 +49,7 @@ public class GenerationsCoreClient {
         ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
 
         GenerationsCoreClient.setupClient(minecraft);
+        if (Platform.isFabric()) registerRenderTypes();
     }
 
     private static void setupClient(Minecraft event) {
@@ -123,6 +129,12 @@ public class GenerationsCoreClient {
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), GeneralUseBlockEntityRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), GeneralUseBlockEntityRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
+    }
+
+    private static void registerRenderTypes(){
+        RenderTypeRegistry.register(RenderType.cutout(), GenerationsWood.GHOST_DOOR.get(), GenerationsWood.ULTRA_JUNGLE_DOOR.get(), GenerationsWood.ULTRA_DARK_DOOR.get());
+        RenderTypeRegistry.register(RenderType.cutout(), GenerationsWood.GHOST_TRAPDOOR.get(), GenerationsWood.ULTRA_JUNGLE_TRAPDOOR.get(), GenerationsWood.ULTRA_DARK_TRAPDOOR.get());
+        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
     }
 
 }
