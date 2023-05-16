@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
 import dev.architectury.event.events.common.InteractionEvent;
-import dev.architectury.injectables.annotations.ExpectPlatform;
 import generations.gg.generations.core.generationscore.world.item.MulchItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -14,7 +13,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FarmBlock;
@@ -29,6 +27,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
+
+import static net.minecraft.world.level.block.FarmBlock.*;
 
 @SuppressWarnings("deprecation")
 public class SoftSoilBlock extends Block {
@@ -45,11 +45,15 @@ public class SoftSoilBlock extends Block {
     @Override
     public void randomTick(BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         int i = state.getValue(MOISTURE);
-        if (state.getValue(MULCH) != Mulch.DAMP)
-            isNearWater(level, pos);
-
-        if (i < 7)
+        if (state.getValue(MULCH) != Mulch.DAMP && !isNearWater(level, pos) && !level.isRainingAt(pos.above())) {
+            if (i > 0) {
+                level.setBlock(pos, state.setValue(MOISTURE, i - 1), 2);
+            } else if (!isUnderCrops(level, pos)) {
+                turnToDirt(null, state, level, pos);
+            }
+        } else if (i < 7) {
             level.setBlock(pos, state.setValue(MOISTURE, 7), 2);
+        }
     }
 
 //    @Override //TODO: Figurae out
@@ -67,11 +71,6 @@ public class SoftSoilBlock extends Block {
 
     public static void turnToNone(BlockState state, Level level, BlockPos pos) {
         level.setBlockAndUpdate(pos, FarmBlock.pushEntitiesUp(state, Blocks.DIRT.defaultBlockState(), level, pos));
-    }
-
-    @ExpectPlatform
-    private static boolean isNearWater(LevelReader level, BlockPos pos) {
-        throw new RuntimeException();
     }
 
     @Override

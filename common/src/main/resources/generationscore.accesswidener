@@ -17,3 +17,5 @@ accessible method net/minecraft/world/item/context/UseOnContext <init> (Lnet/min
 accessible method net/minecraft/world/level/block/state/properties/BlockSetType register (Lnet/minecraft/world/level/block/state/properties/BlockSetType;)Lnet/minecraft/world/level/block/state/properties/BlockSetType;
 accessible field net/minecraft/world/item/AxeItem STRIPPABLES Ljava/util/Map;
 accessible method net/minecraft/world/level/block/FireBlock setFlammable (Lnet/minecraft/world/level/block/Block;II)V
+accessible method net/minecraft/world/level/block/FarmBlock isNearWater (Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z
+accessible method net/minecraft/world/level/block/FarmBlock isUnderCrops (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
