@@ -27,6 +27,7 @@ repositories {
     maven {
         url = "https://nexus.resourcefulbees.com/repository/maven-public/"
     }
+    maven { url "https://maven.bai.lol" }
 }
 
 dependencies {
@@ -43,6 +44,8 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${rootProject.devauth_version}")
+    modRuntimeOnly "mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}"
+    modRuntimeOnly "lol.bai:badpackets:fabric-0.2.0"
 }
 
 processResources {

@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.compat;
 
+import dev.architectury.hooks.item.tool.AxeItemHooks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
@@ -28,7 +28,7 @@ public class VanillaCompat {
 	 * @param stripped The stripped log block of wood
 	 */
 	private static void registerStrippable(Block log, Block stripped) {
-		AxeItem.STRIPPABLES.put(log, stripped);
+		AxeItemHooks.addStrippable(log, stripped);
 	}
 
 	/**

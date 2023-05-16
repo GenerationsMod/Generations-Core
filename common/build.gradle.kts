@@ -3,6 +3,7 @@ loom.silentMojangMappingsLicense()
 
 repositories {
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
+    maven("https://maven.bai.lol")
 }
 
 sourceSets.main  {
@@ -18,6 +19,7 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi("dev.architectury:architectury:${rootProject.properties["architectury_version"]}")
     modImplementation("earth.terrarium:botarium-common-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
+    modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 }
 
 architectury {
