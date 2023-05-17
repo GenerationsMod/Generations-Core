@@ -4,9 +4,7 @@ plugins {
     idea
 }
 
-architectury {
-    minecraft = rootProject.properties["minecraft_version"] as String
-}
+architectury.minecraft = rootProject.properties["minecraft_version"] as String
 
 subprojects {
     apply(plugin = "dev.architectury.loom")
@@ -17,7 +15,6 @@ allprojects {
     apply(plugin = "architectury-plugin")
     apply(plugin = "maven-publish")
     apply(plugin = "idea")
-
 
     version = rootProject.properties["mod_version"] as String
     group = rootProject.properties["maven_group"] as String
