@@ -544,10 +544,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         }
     }
 
-    private void registerApricorn(RegistrySupplier<Block> apricorn) {
-        simpleBlock(apricorn.get(), models().cross("block/" + apricorn.getId().getPath(), GenerationsCore.id("blocks/" + apricorn.getId().getPath())));
-    }
-
     private void registerBerryBush(RegistrySupplier<Block> bush) {
         BerryType.EnumBerryColor color = ((GenerationsBerryBushBlock) bush.get()).getBerryType().getColor();
         getVariantBuilder(bush.get())
@@ -665,7 +661,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
     public void registerBlockItemParticle(RegistrySupplier<? extends Block> block, String name) {
         ResourceLocation textureId = key(block.get()).withPrefix("item/blocks/" + name + "/");
-        simpleBlock(block.get(), models().sign(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), textureId));
+        simpleBlock(block.get(), models().sign(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get())).getPath(), textureId));
         itemModels().singleTexture(block.getId().getPath(), new ResourceLocation("minecraft:item/generated"), "layer0", textureId);
     }
 
@@ -762,7 +758,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
                 .texture("south", GenerationsCore.id("block/crafting_table/" + table.getId().getPath() + "_side"))
                 .texture("up", GenerationsCore.id("block/crafting_table/" + table.getId().getPath() + "_top"))
                 .texture("west", GenerationsCore.id("block/crafting_table/" + table.getId().getPath() + "_front"));
-        simpleBlockWithItem(table.get().builtInRegistryHolder().get(), tableModel);
+        simpleBlockWithItem(table.get(), tableModel);
     }
 
     private void registerInfestedBlock(RegistrySupplier<InfestedBlock> block){
