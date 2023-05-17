@@ -135,6 +135,12 @@ public class GenerationsCoreClient {
         RenderTypeRegistry.register(RenderType.cutout(), GenerationsWood.GHOST_DOOR.get(), GenerationsWood.ULTRA_JUNGLE_DOOR.get(), GenerationsWood.ULTRA_DARK_DOOR.get());
         RenderTypeRegistry.register(RenderType.cutout(), GenerationsWood.GHOST_TRAPDOOR.get(), GenerationsWood.ULTRA_JUNGLE_TRAPDOOR.get(), GenerationsWood.ULTRA_DARK_TRAPDOOR.get());
         RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
+        RenderTypeRegistry.register(RenderType.cutoutMipped(), GenerationsBlocks.WINDOW_1.get(), GenerationsBlocks.WINDOW_2.get());
+        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.POKECENTER_DOOR.get());
+        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM.get(), GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM.get(), GenerationsBlocks.BALLONLEA_PINK_MUSHROOM.get(), GenerationsBlocks.BALLONLEA_YELLOW_MUSHROOM.get());
+        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.GROUP_BALLONLEA_BLUE_MUSHROOM.get(), GenerationsBlocks.GROUP_BALLONLEA_GREEN_MUSHROOM.get(), GenerationsBlocks.GROUP_BALLONLEA_PINK_MUSHROOM.get(), GenerationsBlocks.GROUP_BALLONLEA_YELLOW_MUSHROOM.get());
+        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.TALL_BALLONLEA_BLUE_MUSHROOM.get(), GenerationsBlocks.TALL_BALLONLEA_GREEN_MUSHROOM.get(), GenerationsBlocks.TALL_BALLONLEA_PINK_MUSHROOM.get(), GenerationsBlocks.TALL_BALLONLEA_YELLOW_MUSHROOM.get());
+        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.DOUBLE_BALLONLEA_BLUE_MUSHROOM.get(), GenerationsBlocks.DOUBLE_BALLONLEA_GREEN_MUSHROOM.get(), GenerationsBlocks.DOUBLE_BALLONLEA_PINK_MUSHROOM.get(), GenerationsBlocks.DOUBLE_BALLONLEA_YELLOW_MUSHROOM.get());
     }
 
 }
