@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
+import dev.architectury.registry.menu.ExtendedMenuProvider;
 import dev.architectury.registry.menu.MenuRegistry;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
@@ -21,7 +22,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -38,7 +38,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements ItemContainerBlock, MenuRegistry.ExtendedMenuTypeFactory<CookingPotContainer>, MenuProvider, ModelContextProviders.VariantProvider {
+public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements ItemContainerBlock, MenuRegistry.ExtendedMenuTypeFactory<CookingPotContainer>, ExtendedMenuProvider, ModelContextProviders.VariantProvider {
 
     public CookingPotBlockEntity(BlockPos arg2, BlockState arg3) {
         super(GenerationsBlockEntities.COOKING_POT.get(), arg2, arg3);
@@ -49,7 +49,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     //11: bowl
     //12: log
     //13: out
-    private final ExtendedsimpleItemContainer handler = new ExtendedsimpleItemContainer(this, 14);
+    private ExtendedsimpleItemContainer handler;
 
     private String customName;
     private boolean isCooking;
@@ -68,7 +68,9 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    protected void writeNbt(@NotNull CompoundTag tag) {
+    protected void saveAdditional(CompoundTag tag) {
+        super.saveAdditional(tag);
+
         tag.putBoolean("isCooking", isCooking);
         tag.putInt("cookTime", this.cookTime);
 //        tag.put("inventory", this.handler.serializeNBT());
@@ -77,7 +79,8 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    public void readNbt(@NotNull CompoundTag nbt) {
+    public void load(CompoundTag nbt) {
+        super.load(nbt);
         this.isCooking = nbt.getBoolean("isCooking");
         this.cookTime = nbt.getInt("cookTime");
 //        this.handler.deserializeNBT(nbt.getCompound("inventory"));
@@ -91,7 +94,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
         ItemStack mainIngredient = handler.getItem(11);
         ItemStack log = handler.getItem(12);
 
-        boolean hasEverything = isCooking && Stream.of(berries).anyMatch(a -> !a.isEmpty()) && !bowl.isEmpty() && !log.isEmpty();
+        boolean hasEverything = Stream.of(berries).anyMatch(a -> !a.isEmpty()) && !bowl.isEmpty() && !log.isEmpty() && handler.getItem(13).isEmpty();
         if (hasEverything) {
             boolean hasInserted = false;
             cookTime++;
@@ -167,7 +170,8 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
         blockEntity.serverTick();
     }
 
-    public void setCooking(boolean isCooking) {
+    public void setCooking(boolean isCooking) {//TODO: Reenable the toggle if still desired
+        
         this.isCooking = isCooking;
         this.cookTime = 0;
         sync();
@@ -202,8 +206,6 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
             compound.putInt("cookTime", this.cookTime);
             return compound;
         });
-
-
     }
 
 //    @Override
@@ -214,7 +216,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
 
     @Override
     public SerializableContainer getContainer() {
-        return null;
+        return this.handler == null ? this.handler = new ExtendedsimpleItemContainer(this, 14) : this.handler;
     }
 
     @Override
@@ -224,6 +226,11 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
         } else {
             return null;
         }
+    }
+
+    @Override
+    public void saveExtraData(FriendlyByteBuf buf) {
+        buf.writeBlockPos(getBlockPos());
     }
 
     @Nullable

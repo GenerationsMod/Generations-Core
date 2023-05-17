@@ -43,7 +43,7 @@ public abstract class SimpleBlockEntity extends BlockEntity implements ModelCont
     @Override
     public @NotNull CompoundTag getUpdateTag() {
         CompoundTag tag = new CompoundTag();
-        saveAdditional(tag);
+        writeNbt(tag);
         return tag;
     }
 

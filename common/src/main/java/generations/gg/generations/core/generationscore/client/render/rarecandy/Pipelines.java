@@ -41,7 +41,6 @@ public class Pipelines {
     public static void onInitialize(ResourceManager manager) {
         if(!initalized) {
             REGISTER.invoker().accept(new PipelineRegister(manager, PIPELINE_MAP));
-
             initalized = true;
         }
     }

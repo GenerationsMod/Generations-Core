@@ -2,6 +2,9 @@ package generations.gg.generations.core.generationscore.client.screen.container;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
+import generations.gg.generations.core.generationscore.network.packets.C2SToggleCookingPotPacket;
 import generations.gg.generations.core.generationscore.world.container.CookingPotContainer;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -11,7 +14,7 @@ import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
 public class CookingPotScreen extends AbstractContainerScreen<CookingPotContainer> {
-    public static final ResourceLocation cookingPotGuiTextures = new ResourceLocation("pokemod:textures/gui/cooking_pot.png");
+    public static final ResourceLocation cookingPotGuiTextures = GenerationsCore.id("textures/gui/container/cooking_pot.png");
 
     private final CookingPotBlockEntity cookingPot;
 
@@ -34,7 +37,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotContaine
     protected void renderBg(@NotNull PoseStack poseStack, float partialTick, int mouseX, int mouseY) {
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, cookingPotGuiTextures);
-        blit(poseStack, this.leftPos, this.topPos, 0, 0, this.width, this.height);
+        blit(poseStack, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 
         int l = this.getCookProgressScaled();
         blit(poseStack, this.leftPos + 105, this.topPos + 24, 176, 18, l + 1, 16);
@@ -47,7 +50,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotContaine
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if(findPoint(leftPos + 106, topPos + 45, leftPos + 126, topPos + 63, mouseX, mouseY)) {
-//            PokeModNetworking.sendPacket(new C2SToggleCookingPotPacket(cookingPot.getBlockPos())); TODO: Networking
+            GenerationsNetworking.sendPacket(new C2SToggleCookingPotPacket(cookingPot.getBlockPos()));
             return true;
         }
 

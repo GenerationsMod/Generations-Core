@@ -39,13 +39,18 @@ public class MachineBlockEntity extends SimpleBlockEntity implements ItemContain
         return candies;
     }
 
-    protected void readNbt(CompoundTag nbt) {
-//        candies.deserializeNBT(nbt.getCompound("candies"));
-        bakeTime = nbt.getInt("bakeTime");
+    @Override
+    public void load(CompoundTag tag) {
+        super.load(tag);
+    //        candies.deserializeNBT(nbt.getCompound("candies"));
+        bakeTime = tag.getInt("bakeTime");
     }
-    protected void writeNbt(CompoundTag nbt) {
-//        nbt.put("candies", candies.serializeNBT());
-        nbt.putInt("bakeTime", bakeTime);
+
+    @Override
+    protected void saveAdditional(CompoundTag compoundTag) {
+        super.saveAdditional(compoundTag);
+        //        nbt.put("candies", candies.serializeNBT());
+        compoundTag.putInt("bakeTime", bakeTime);
     }
 
     public void tick() {

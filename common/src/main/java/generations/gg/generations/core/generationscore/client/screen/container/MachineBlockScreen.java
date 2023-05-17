@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.DoubleSupplier;
 
 public class MachineBlockScreen extends AbstractContainerScreen<MachineBlockContainer> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation("pokemod:textures/gui/container/machine_block.png");
+    public static final ResourceLocation TEXTURE = GenerationsCore.id("textures/gui/container/machine_block.png");
     public static final SubTexture ARCEUS_SYMBOL = new SubTexture(0, 0, 94, 74, GenerationsCore.id("textures/gui/container/arceus_symbol.png"), 94);
     private final DoubleSupplier bakeTimeProvider = () -> getMenu().getBakeTime();
     public MachineBlockScreen(MachineBlockContainer arg, Inventory arg2, Component arg3) {

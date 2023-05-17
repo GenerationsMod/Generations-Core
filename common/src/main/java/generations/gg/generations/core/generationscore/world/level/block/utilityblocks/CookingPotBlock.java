@@ -1,10 +1,12 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
+import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -35,7 +37,7 @@ public class CookingPotBlock extends GenericRotatableModelBlock<CookingPotBlockE
         if (worldIn.isClientSide)
             return InteractionResult.SUCCESS;
 
-//        NetworkHooks.openScreen((ServerPlayer) player, be, pos); TODO:Netowrking
+        MenuRegistry.openExtendedMenu((ServerPlayer) player, be);
 
         return InteractionResult.SUCCESS;
     }

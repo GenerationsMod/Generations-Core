@@ -9,6 +9,7 @@
 package generations.gg.generations.core.generationscore;
 
 import com.mojang.logging.LogUtils;
+import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
@@ -53,6 +54,7 @@ public class GenerationsCore
 		GenerationsTools.init();
 		GenerationsPaintings.init();
 		GenerationsContainers.init();
+		GenerationsNetworking.init();
 	}
 
 	/**

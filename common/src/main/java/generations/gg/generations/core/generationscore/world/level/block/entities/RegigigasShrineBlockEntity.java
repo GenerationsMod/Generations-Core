@@ -65,11 +65,11 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
 
     public static int getRegiOrbIndex(RegiOrbItem item) {
         return switch (item.getSpeciesId().toString()) {
-            case "pokemod:regice" -> 0;
-            case "pokemod:regirock" -> 1;
-            case "pokemod:registeel" -> 2;
-            case "pokemod:regidrago" -> 3;
-            case "pokemod:regieleki" -> 4;
+            case "generations_core:regice" -> 0;
+            case "generations_core:regirock" -> 1;
+            case "generations_core:registeel" -> 2;
+            case "generations_core:regidrago" -> 3;
+            case "generations_core:regieleki" -> 4;
             default -> -1;
         };
     }
