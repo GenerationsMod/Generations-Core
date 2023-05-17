@@ -16,7 +16,7 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.M
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
-import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
@@ -93,12 +93,12 @@ public class GenerationsCoreClient {
 //        EntityRendererRegistry.register(PokeModEntities.STARTER_PICK.get(), StarterPickEntityRenderer::new);
 //        EntityRendererRegistry.register(PokeModEntities.PLAYER_NPC.get(), ctx -> new PlayerNpcEntityRenderer(ctx, true));
 //        EntityRendererRegistry.register(PokeModEntities.POKEBALL_ENTITY.get(), PokeBallEntityRenderer::new);
-        EntityRendererRegistry.register(PokeModEntities.SEAT, SittableEntityRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.SEAT, SittableEntityRenderer::new);
 //        EntityRendererRegistry.register(PokeModEntities.STATUE.get(), StatueEntityRenderer::new);
-        EntityRendererRegistry.register(PokeModEntities.TIERED_FISHING_BOBBER, TieredFishingHookRenderer::new);
-        EntityRendererRegistry.register(PokeModEntities.BOAT_ENTITY, PokeModBoatRenderer::new);
-        EntityRendererRegistry.register(PokeModEntities.CHEST_BOAT_ENTITY, PokeModChestBoatRenderer::new);
-        EntityRendererRegistry.register(PokeModEntities.MAGMA_CRYSTAL, ThrownItemRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.TIERED_FISHING_BOBBER, TieredFishingHookRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.BOAT_ENTITY, PokeModBoatRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.CHEST_BOAT_ENTITY, PokeModChestBoatRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.MAGMA_CRYSTAL, ThrownItemRenderer::new);
     }
 
     private static void registerBlockEntityRenderers() {

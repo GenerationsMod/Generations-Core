@@ -10,7 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 
-public class PokeModEntities {
+public class GenerationsEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ENTITY_TYPE);
 
 //    public static final RegistrySupplier<EntityType<PixelmonEntity>> PIXELMON = createEntityType("pixelmon", MobCategory.CREATURE, 0.6f, 1.8f, PixelmonEntity::new);
@@ -33,7 +33,7 @@ public class PokeModEntities {
 //                    .setCustomClientFactory((spawnEntity, world) -> new PokeModChestBoatEntity(world, 0, 0, 0))
                     .build("chest_boat"));
 
-    public static void onInitialize() {
+    public static void init() {
         GenerationsCore.LOGGER.info("Registering PokeMod entities");
         ENTITIES.register();
 //        eventBus.addListener(PokeModEntities::registerEntityAttributes);

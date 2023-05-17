@@ -1,0 +1,7 @@
+{
+  "generations.item.lugia_shrine_song": {
+    "sounds": [
+      "generations_core:items/lugia_shrine_song"
+    ]
+  }
+}

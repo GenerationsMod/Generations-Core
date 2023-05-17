@@ -11,13 +11,14 @@ package generations.gg.generations.core.generationscore;
 import com.mojang.logging.LogUtils;
 import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
-import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import org.slf4j.Logger;
@@ -39,6 +40,7 @@ public class GenerationsCore
 	 * Initializes the Generations-Core mod.
 	 */
 	public static void init() {
+		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
 		GenerationsBlocks.init();
 		GenerationsPokeDolls.init();
@@ -48,7 +50,7 @@ public class GenerationsCore
 		GenerationsUtilityBlocks.init();
 		GenerationsShrines.init();
 		GenerationsBlockEntities.init();
-		PokeModEntities.onInitialize();
+		GenerationsEntities.init();
 		GenerationsItems.init();
 		GenerationsArmor.init();
 		GenerationsTools.init();

@@ -21,7 +21,7 @@ public class GenerationsChestBoatEntity extends ChestBoat {
     }
 
     public GenerationsChestBoatEntity(Level worldIn, double x, double y, double z) {
-        this(PokeModEntities.CHEST_BOAT_ENTITY.get(), worldIn);
+        this(GenerationsEntities.CHEST_BOAT_ENTITY.get(), worldIn);
         this.setPos(x, y, z);
         this.xo = x;
         this.yo = y;

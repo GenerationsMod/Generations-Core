@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.entity.block;
 
-import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,11 +15,11 @@ import org.jetbrains.annotations.NotNull;
 
 public class MagmaCrystalEntity extends ThrowableItemProjectile {
     public MagmaCrystalEntity(Level level) {
-        super(PokeModEntities.MAGMA_CRYSTAL.get(), level);
+        super(GenerationsEntities.MAGMA_CRYSTAL.get(), level);
     }
 
     public MagmaCrystalEntity(Level level, LivingEntity entity) {
-        super(PokeModEntities.MAGMA_CRYSTAL.get(), entity, level);
+        super(GenerationsEntities.MAGMA_CRYSTAL.get(), entity, level);
     }
 
     @Override

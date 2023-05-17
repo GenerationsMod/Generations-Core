@@ -5,9 +5,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
-import generations.gg.generations.core.generationscore.world.sound.PokeModSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -23,7 +21,7 @@ public class PCBlock extends DoubleDyeableBlock<GenericDyedVariantBlockEntity, P
 
     @Override
     protected InteractionResult serverUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-        world.playSound(null, pos, PokeModSounds.PC_OPEN.get(), SoundSource.BLOCKS, 0.7F, 1.0F);
+//        world.playSound(null, pos, GenerationsSounds.PC_OPEN.get(), SoundSource.BLOCKS, 0.7F, 1.0F);
 
 //        PixelmonPc.openPc((ServerPlayer) player);
         return InteractionResult.SUCCESS;

@@ -171,7 +171,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     public void setCooking(boolean isCooking) {//TODO: Reenable the toggle if still desired
-        
+
         this.isCooking = isCooking;
         this.cookTime = 0;
         sync();

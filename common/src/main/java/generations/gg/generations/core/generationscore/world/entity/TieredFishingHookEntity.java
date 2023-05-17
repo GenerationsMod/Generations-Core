@@ -25,7 +25,7 @@ public class TieredFishingHookEntity extends FishingHook {
     }
 
     public TieredFishingHookEntity(Player arg, Level arg2, int i, int j, Teir tier) {
-        this(PokeModEntities.TIERED_FISHING_BOBBER.get(), arg2, i, j, tier);
+        this(GenerationsEntities.TIERED_FISHING_BOBBER.get(), arg2, i, j, tier);
         this.setOwner(arg);
         float f = arg.getXRot();
         float f1 = arg.getYRot();

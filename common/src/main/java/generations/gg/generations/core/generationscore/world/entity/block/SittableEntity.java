@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.entity.block;
 
 import dev.architectury.networking.NetworkManager;
-import generations.gg.generations.core.generationscore.world.entity.PokeModEntities;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -26,7 +26,7 @@ public class SittableEntity extends Entity {
     }
 
     private SittableEntity(Level level, BlockPos pos, double offset) {
-        this(PokeModEntities.SEAT.get(), level);
+        this(GenerationsEntities.SEAT.get(), level);
         this.blockState = level.getBlockState(pos);
         this.setPos(pos.getX() + 0.5, pos.getY() + offset, pos.getZ() + 0.5);
     }
