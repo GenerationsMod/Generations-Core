@@ -42,3 +42,26 @@ architectury {
 }
 
 loom.accessWidenerPath.set(file("src/main/resources/generationscore.accesswidener"))
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenCommon") {
+            artifactId = "${project.properties["archives_base_name"]}" + "-" + rootProject.version
+            from(components["java"])
+        }
+    }
+
+    repositories {
+        mavenLocal()
+        maven {
+            val releasesRepoUrl = "https://maven.generations.gg/releases"
+            val snapshotsRepoUrl = "https://maven.generations.gg/snapshots"
+            url = uri(if (rootProject.version.toString().endsWith("SNAPSHOT") || rootProject.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
+            name = "Generations-Repo"
+            credentials {
+                username = project.properties["repoLogin"]?.toString()
+                password = project.properties["repoPassword"]?.toString()
+            }
+        }
+    }
+}
