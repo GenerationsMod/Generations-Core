@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client;
 
 import dev.architectury.platform.Platform;
-import dev.architectury.registry.ReloadListenerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
 import dev.architectury.registry.client.rendering.RenderTypeRegistry;
@@ -29,8 +28,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
@@ -42,11 +39,9 @@ public class GenerationsCoreClient {
     public static void onInitialize(Minecraft minecraft) {
         GenerationsCoreClient.registerEntityRenderers();
         GenerationsCoreClient.registerBlockEntityRenderers();
-        ModelRegistry.getRareCandy();
 
-        Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
-        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
+//        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
 
         GenerationsCoreClient.setupClient(minecraft);
         if (Platform.isFabric()) registerRenderTypes();
@@ -57,7 +52,9 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
-
+            ModelRegistry.getRareCandy();
+            Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
+            Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
         });
 

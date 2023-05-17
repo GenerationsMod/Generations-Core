@@ -73,13 +73,13 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
-    include(implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){transitive = false})
-    include(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}"))
-    include(implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}"))
-    include(implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}"))
-    include(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){transitive = false})
-    include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}"))
-    include(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3"))
+    forgeRuntimeLibrary(include("gg.generations:RareCandy:${project.properties["rareCandy"]}"){transitive = false})
+    forgeRuntimeLibrary(include("org.tukaani:xz:${project.properties["rareCandyXZ"]}"))
+    forgeRuntimeLibrary(include("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}"))
+    forgeRuntimeLibrary(include("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}"))
+    forgeRuntimeLibrary(include("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){transitive = false})
+    forgeRuntimeLibrary(include("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}"))
+    forgeRuntimeLibrary(include("com.google.flatbuffers:flatbuffers-java:23.3.3"))
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${rootProject.devauth_version}")
 
     modCompileOnly "mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}"
