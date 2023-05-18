@@ -8,8 +8,8 @@ import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
-import generations.gg.generations.core.generationscore.client.render.entity.PokeModBoatRenderer;
-import generations.gg.generations.core.generationscore.client.render.entity.PokeModChestBoatRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.GenerationsChestBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
@@ -97,8 +97,8 @@ public class GenerationsCoreClient {
         EntityRendererRegistry.register(GenerationsEntities.SEAT, SittableEntityRenderer::new);
 //        EntityRendererRegistry.register(PokeModEntities.STATUE.get(), StatueEntityRenderer::new);
         EntityRendererRegistry.register(GenerationsEntities.TIERED_FISHING_BOBBER, TieredFishingHookRenderer::new);
-        EntityRendererRegistry.register(GenerationsEntities.BOAT_ENTITY, PokeModBoatRenderer::new);
-        EntityRendererRegistry.register(GenerationsEntities.CHEST_BOAT_ENTITY, PokeModChestBoatRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.BOAT_ENTITY, GenerationsBoatRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.CHEST_BOAT_ENTITY, GenerationsChestBoatRenderer::new);
         EntityRendererRegistry.register(GenerationsEntities.MAGMA_CRYSTAL, ThrownItemRenderer::new);
     }
 
