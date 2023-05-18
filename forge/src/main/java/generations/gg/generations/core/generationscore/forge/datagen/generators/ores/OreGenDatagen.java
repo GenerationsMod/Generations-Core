@@ -2,8 +2,10 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
-import net.minecraft.core.*;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -25,11 +27,9 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
-import net.minecraftforge.registries.DataPackRegistriesHooks;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -294,16 +294,6 @@ public class OreGenDatagen {
         );
 
         return null;
-    }
-
-    private static HolderLookup.Provider constructRegistries(HolderLookup.Provider original, RegistrySetBuilder datapackEntriesBuilder) {
-        HashSet<? extends ResourceKey<? extends Registry<?>>> builderKeys = new HashSet<>(datapackEntriesBuilder.getEntryKeys());
-        DataPackRegistriesHooks.getDataPackRegistries()
-                .stream()
-                .filter(data -> !builderKeys.contains(data.key()))
-                .forEach(data -> datapackEntriesBuilder.add(data.key(), context -> {
-                }));
-        return datapackEntriesBuilder.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY), original);
     }
 
     private static void registerCommonOreGen(List<Consumer<BootstapContext<ConfiguredFeature<?,?>>>> configuredFeatureMap, List<Consumer<BootstapContext<PlacedFeature>>> placedFeatureMap, List<Consumer<BootstapContext<BiomeModifier>>> biomeModifierMap, RegistrySupplier<DropExperienceBlock> oreBlock, List<OreConfiguration.TargetBlockState> targets, int veinSize, int veinsPerChunk, int minHeight, int maxHeight, TagKey<Biome> biomeTag, boolean triangle) {

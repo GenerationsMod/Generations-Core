@@ -11,7 +11,6 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.ores.OreGenDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.*;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.tags.TagsDatagen;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -19,15 +18,13 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.concurrent.CompletableFuture;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = GenerationsCore.MOD_ID)
 public class DataGeneratorsRegister {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = OreGenDatagen.onInitialize(event.getLookupProvider());
+        OreGenDatagen.onInitialize(event.getLookupProvider());
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         PackOutput output = generator.getPackOutput();
         TagsDatagen.init(generator, output, event.getLookupProvider(), existingFileHelper);

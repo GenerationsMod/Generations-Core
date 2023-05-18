@@ -233,22 +233,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerFence(GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
 
 /*
-        registerApricorn(GenerationsBlocks.BLACK_APRICORN);
-        registerApricorn(GenerationsBlocks.WHITE_APRICORN);
-        registerApricorn(GenerationsBlocks.PINK_APRICORN);
-        registerApricorn(GenerationsBlocks.GREEN_APRICORN);
-        registerApricorn(GenerationsBlocks.BLUE_APRICORN);
-        registerApricorn(GenerationsBlocks.YELLOW_APRICORN);
-        registerApricorn(GenerationsBlocks.RED_APRICORN);
-
-        registerApricornLeaves(GenerationsBlocks.BLACK_APRICORN_LEAVES);
-        registerApricornLeaves(GenerationsBlocks.WHITE_APRICORN_LEAVES);
-        registerApricornLeaves(GenerationsBlocks.PINK_APRICORN_LEAVES);
-        registerApricornLeaves(GenerationsBlocks.GREEN_APRICORN_LEAVES);
-        registerApricornLeaves(GenerationsBlocks.BLUE_APRICORN_LEAVES);
-        registerApricornLeaves(GenerationsBlocks.YELLOW_APRICORN_LEAVES);
-        registerApricornLeaves(GenerationsBlocks.RED_APRICORN_LEAVES);
-
         registerBerryBush(GenerationsBlocks.AGUAV_BERRY_BUSH);
         registerBerryBush(GenerationsBlocks.APICOT_BERRY_BUSH);
         registerBerryBush(GenerationsBlocks.ASPEAR_BERRY_BUSH);
@@ -399,14 +383,15 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         //GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
-        /*
+
         registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "sign");
+
+        /*
         GenerationsDecorationBlocks.DECORATIONS.forEach(block -> {
             if (block.get() instanceof BeanBagBlock) registerBlockItemParticle(block, "bean_bags");
             //else if (block.get() instanceof VendingMachineBlock || block.get() instanceof UmbrellaBlock || block.get() instanceof PastelBeanBagBlock) registerNoModel(block);
             else registerBlockItemParticle(block, "decorations");
         });
-
          */
 
         //GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block, "shrines"));
