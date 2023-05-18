@@ -381,7 +381,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.RICH_SOIL_3);
         registerBlockItem(GenerationsBlocks.RICH_SOIL_4);
 
-        //GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
+        GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
 
         registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "sign");
