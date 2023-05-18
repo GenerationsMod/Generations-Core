@@ -220,6 +220,10 @@ public class TagsDatagen {
             //this.copy(BlockTags.FENCES, ItemTags.FENCES);
             //this.copy(BlockTags.DIRT, ItemTags.DIRT);
             this.copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS);
+            this.tag(ItemTags.LOGS).addTag(GenerationsItemTags.ULTRA_DARK_LOGS).addTag(GenerationsItemTags.ULTRA_JUNGLE_LOGS).addTag(GenerationsItemTags.GHOST_LOGS);
+            this.copy(GenerationsBlockTags.ULTRA_DARK_LOGS, GenerationsItemTags.ULTRA_DARK_LOGS);
+            this.copy(GenerationsBlockTags.ULTRA_JUNGLE_LOGS, GenerationsItemTags.ULTRA_JUNGLE_LOGS);
+            this.copy(GenerationsBlockTags.GHOST_LOGS, GenerationsItemTags.GHOST_LOGS);
 
             //PokeBricks
             this.copy(GenerationsBlockTags.POKEBRICKS, GenerationsItemTags.POKEBRICKS);
