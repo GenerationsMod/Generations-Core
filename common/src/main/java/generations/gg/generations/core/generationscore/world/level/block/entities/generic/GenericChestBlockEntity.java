@@ -35,7 +35,7 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
     private int height;
     private String defaultTranslation;
     private NonNullList<ItemStack> items;
-    private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter(){
+    private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
 
         @Override
         protected void onOpen(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state) {
@@ -55,7 +55,7 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
         @Override
         protected boolean isOwnContainer(Player player) {
             if (player.containerMenu instanceof GenericChestContainer) {
-                Container container = ((GenericChestContainer)player.containerMenu).getContainer();
+                Container container = ((GenericChestContainer) player.containerMenu).getContainer();
                 return container == GenericChestBlockEntity.this;
             }
             return false;
@@ -112,9 +112,9 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
 
     void playSound(BlockState state, SoundEvent sound) {
         Vec3i vec3i = state.getValue(GenericChestBlock.FACING).getNormal();
-        double d = (double)this.worldPosition.getX() + 0.5 + (double)vec3i.getX() / 2.0;
-        double e = (double)this.worldPosition.getY() + 0.5 + (double)vec3i.getY() / 2.0;
-        double f = (double)this.worldPosition.getZ() + 0.5 + (double)vec3i.getZ() / 2.0;
+        double d = (double) this.worldPosition.getX() + 0.5 + (double) vec3i.getX() / 2.0;
+        double e = (double) this.worldPosition.getY() + 0.5 + (double) vec3i.getY() / 2.0;
+        double f = (double) this.worldPosition.getZ() + 0.5 + (double) vec3i.getZ() / 2.0;
         assert this.level != null;
         this.level.playSound(null, d, e, f, sound, SoundSource.BLOCKS, 0.5f, this.level.random.nextFloat() * 0.1f + 0.9f);
     }

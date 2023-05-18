@@ -1765,6 +1765,45 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN, "blocks/sign/");
         createItem(GenerationsItems.GHOST_SIGN, "blocks/sign/");
         createItem(GenerationsItems.GHOST_HANGING_SIGN, "blocks/sign/");
+
+        createItem(GenerationsItems.MUSIC_DISC_BEAST_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_CHERISH_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_DIVE_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_DREAM_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_DUSK_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_FAST_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_FEATHER, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_FRIEND_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_GREAT_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_GS_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_HEAL_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_HEAVY_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_LEADEN_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_LEVEL_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_LOVE_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_LURE_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_LUXURY_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_MASTER_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_MOON_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_NEST_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_NET_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_OLD_POKEBALL_DISC, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_ORIGIN_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_PARK_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_POKE_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_PREMIER_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_QUICK_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_REPEAT_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_SAFARI_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_SPORT_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_STRANGE_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_TIMER_BALL, "discs/");
+        createItem(GenerationsItems.MUSIC_DISC_ULTRA_BALL, "discs/");
+
+        createItem(GenerationsItems.POKE_WALKMON, "utility_items/");
+        createItem(GenerationsItems.GREAT_WALKMON, "utility_items/");
+        createItem(GenerationsItems.ULTRA_WALKMON, "utility_items/");
+        createItem(GenerationsItems.MASTER_WALKMON, "utility_items/");
     }
 
     private void createCurry() {

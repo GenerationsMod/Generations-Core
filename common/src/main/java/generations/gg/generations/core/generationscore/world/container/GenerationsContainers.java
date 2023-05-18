@@ -23,7 +23,9 @@ public class GenerationsContainers {
     public static final RegistrySupplier<MenuType<GenericChestContainer>> GENERIC = CONTAINERS.register("generic", () -> MenuRegistry.ofExtended(GenericChestContainer::new));
     public static final RegistrySupplier<MenuType<MachineBlockContainer>> MACHINE_BLOCK = register("machine_block", MachineBlockContainer::new, MachineBlockEntity.class);
     public static final RegistrySupplier<MenuType<MelodyFluteContainer>> MELODY_FLUTE = CONTAINERS.register("melody_flute", () -> MenuRegistry.ofExtended(MelodyFluteContainer::new));
+
     public static final RegistrySupplier<MenuType<TrashCanContainer>> TRASHCAN = CONTAINERS.register("trashcan", () -> new MenuType<>(TrashCanContainer::new, FeatureFlagSet.of()));
+    public static final RegistrySupplier<MenuType<WalkmonContainer>> WALKMON = CONTAINERS.register("walkmon", () -> MenuRegistry.ofExtended(WalkmonContainer::new));
 
     public static void init() {
         CONTAINERS.register();
@@ -32,6 +34,7 @@ public class GenerationsContainers {
 
     private static void onContainerClose(Player player, AbstractContainerMenu container) {
         if (container instanceof MelodyFluteContainer melodyFluteContainer) melodyFluteContainer.save();
+        if (container instanceof WalkmonContainer genericChestContainer) genericChestContainer.save();
     }
 
     public static <T extends AbstractContainerMenu, V extends BlockEntity> RegistrySupplier<MenuType<T>> register(String name, Function<CreationContext<V>, T> function, Class<V> clazz) {

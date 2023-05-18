@@ -18,7 +18,11 @@ public interface GenericContainer extends Container, MenuProvider {
     int getHeight();
 
     default void openScreen(Player player) {
-        if (!player.isLocalPlayer()) MenuRegistry.openExtendedMenu((ServerPlayer) player, this, byteBuf -> byteBuf.writeVarInt(getWidth()).writeVarInt(getHeight()));
+        openScreen(player, -1);
+    }
+
+    default void openScreen(Player player, int lockedSlot) {
+        if (!player.isLocalPlayer()) MenuRegistry.openExtendedMenu((ServerPlayer) player, this, byteBuf -> byteBuf.writeVarInt(getWidth()).writeVarInt(getHeight()).writeVarInt(lockedSlot));
     }
 
     default @Nullable

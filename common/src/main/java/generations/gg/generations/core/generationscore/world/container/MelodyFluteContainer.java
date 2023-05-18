@@ -54,23 +54,14 @@ public class MelodyFluteContainer extends SingleSlotContainer {
         private final ServerPlayer player;
         private final InteractionHand hand;
 
-        private ItemStack previous;
-        private boolean changed = false;
-
         public MelodyFluteItemStackHandler(ServerPlayer player, InteractionHand hand) {
             super(null, 1);
             var itemStack = MelodyFluteItem.getImbuedItem(player.getItemInHand(hand));
-            previous = itemStack;
 
             setItem(0, itemStack);
 
             this.player = player;
             this.hand = hand;
-        }
-
-        @Override
-        public void setChanged() {
-            changed = !ItemStack.isSame(getItem(0), previous);
         }
 
         public void save() {

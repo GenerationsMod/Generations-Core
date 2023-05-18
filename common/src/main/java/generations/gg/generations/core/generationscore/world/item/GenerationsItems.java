@@ -1659,7 +1659,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ULTRA_JUNGLE_BOAT_ITEM = register("ultra_jungle_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> ULTRA_JUNGLE_CHEST_BOAT_ITEM = register("ultra_jungle_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_JUNGLE), GenerationsCreativeTabs.BUILDING_BLOCKS);
 
-    public static final RegistrySupplier<Item> MP3_PLAYER = register("mp3_player", properties -> new Item(properties), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> POKE_WALKMON = register("poke_walkmon", properties -> new WalkmonItem(properties, 1, "poke_walkmon"), GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmonItem(properties, 2, "great_walkmon"), GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmonItem(properties, 3, "ultra_walkmon"), GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmonItem(properties, 4, "master_walkmon"), GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> MUSIC_DISC_BEAST_BALL = createMusicDisc("music_disc_beast_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
     public static final RegistrySupplier<Item> MUSIC_DISC_CHERISH_BALL = createMusicDisc("music_disc_cherish_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
     public static final RegistrySupplier<Item> MUSIC_DISC_DIVE_BALL = createMusicDisc("music_disc_dive_ball", GenerationsSounds.LUGIA_SHRINE_SONG);

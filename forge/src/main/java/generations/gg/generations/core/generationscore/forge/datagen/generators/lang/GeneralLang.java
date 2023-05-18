@@ -77,6 +77,11 @@ public class GeneralLang extends LanguageProvider {
         add("container.melody_flute", "Melody Flute");
         add("container.trashcan", "Trash Can");
 
+        add("container.poke_walkmon", "Poke Walkmon");
+        add("container.great_walkmon", "Great Walkmon");
+        add("container.ultra_walkmon", "Ultra Walkmon");
+        add("container.master_walkmon", "Master Walkmon");
+
         add("container.pokeball_chest", "Pokeball Chest");
         add("container.greatball_chest", "Greatball Chest");
         add("container.ultraball_chest", "Ultraball Chest");

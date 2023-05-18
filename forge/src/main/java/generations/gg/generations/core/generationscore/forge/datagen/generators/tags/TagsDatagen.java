@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsPaintings;
@@ -249,6 +250,49 @@ public class TagsDatagen {
             this.copy(GenerationsBlockTags.CHARGE_STONE_BRICKS, GenerationsItemTags.CHARGE_STONE_BRICKS);
             this.copy(GenerationsBlockTags.VOLCANIC_STONE_BRICKS, GenerationsItemTags.VOLCANIC_STONE_BRICKS);
 
+            //Discs
+            this.tag(ItemTags.MUSIC_DISCS).add(
+                    GenerationsItems.MUSIC_DISC_BEAST_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_CHERISH_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_DIVE_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_DREAM_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_DUSK_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_FAST_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_FEATHER.get(),
+                    GenerationsItems.MUSIC_DISC_FRIEND_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_GREAT_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_GS_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_HEAL_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_HEAVY_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_LEADEN_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_LEVEL_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_LOVE_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_LURE_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_LUXURY_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_MASTER_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_MOON_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_NEST_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_NET_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_OLD_POKEBALL_DISC.get(),
+                    GenerationsItems.MUSIC_DISC_ORIGIN_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_PARK_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_POKE_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_PREMIER_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_QUICK_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_REPEAT_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_SAFARI_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_SPORT_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_STRANGE_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_TIMER_BALL.get(),
+                    GenerationsItems.MUSIC_DISC_ULTRA_BALL.get()
+            );
+
+            this.tag(GenerationsItemTags.WALKMONS).add(
+                    GenerationsItems.POKE_WALKMON.get(),
+                    GenerationsItems.GREAT_WALKMON.get(),
+                    GenerationsItems.ULTRA_WALKMON.get(),
+                    GenerationsItems.MASTER_WALKMON.get()
+            );
 
             //GenerationsItems.ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
         }
