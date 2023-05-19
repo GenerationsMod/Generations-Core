@@ -1,9 +1,7 @@
 package generations.gg.generations.core.generationscore.client;
 
-import dev.architectury.platform.Platform;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
-import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -20,12 +18,9 @@ import generations.gg.generations.core.generationscore.world.entity.GenerationsE
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.ItemStack;
@@ -44,7 +39,6 @@ public class GenerationsCoreClient {
 //        ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
 
         GenerationsCoreClient.setupClient(minecraft);
-        if (Platform.isFabric()) registerRenderTypes();
     }
 
     private static void setupClient(Minecraft event) {
@@ -74,7 +68,7 @@ public class GenerationsCoreClient {
         });
     }
 
-    public static void addWoodType(WoodType woodType) {
+    private static void addWoodType(WoodType woodType) {
         WoodType.register(woodType);
         Sheets.SIGN_MATERIALS.put(woodType, createSignMaterial(woodType));
         Sheets.HANGING_SIGN_MATERIALS.put(woodType, createHangingSignMaterial(woodType));
@@ -128,17 +122,4 @@ public class GenerationsCoreClient {
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), GeneralUseBlockEntityRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
     }
-
-    private static void registerRenderTypes(){
-        RenderTypeRegistry.register(RenderType.cutout(), GenerationsWood.GHOST_DOOR.get(), GenerationsWood.ULTRA_JUNGLE_DOOR.get(), GenerationsWood.ULTRA_DARK_DOOR.get());
-        RenderTypeRegistry.register(RenderType.cutout(), GenerationsWood.GHOST_TRAPDOOR.get(), GenerationsWood.ULTRA_JUNGLE_TRAPDOOR.get(), GenerationsWood.ULTRA_DARK_TRAPDOOR.get());
-        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
-        RenderTypeRegistry.register(RenderType.cutoutMipped(), GenerationsBlocks.WINDOW_1.get(), GenerationsBlocks.WINDOW_2.get());
-        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.POKECENTER_DOOR.get());
-        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM.get(), GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM.get(), GenerationsBlocks.BALLONLEA_PINK_MUSHROOM.get(), GenerationsBlocks.BALLONLEA_YELLOW_MUSHROOM.get());
-        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.GROUP_BALLONLEA_BLUE_MUSHROOM.get(), GenerationsBlocks.GROUP_BALLONLEA_GREEN_MUSHROOM.get(), GenerationsBlocks.GROUP_BALLONLEA_PINK_MUSHROOM.get(), GenerationsBlocks.GROUP_BALLONLEA_YELLOW_MUSHROOM.get());
-        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.TALL_BALLONLEA_BLUE_MUSHROOM.get(), GenerationsBlocks.TALL_BALLONLEA_GREEN_MUSHROOM.get(), GenerationsBlocks.TALL_BALLONLEA_PINK_MUSHROOM.get(), GenerationsBlocks.TALL_BALLONLEA_YELLOW_MUSHROOM.get());
-        RenderTypeRegistry.register(RenderType.cutout(), GenerationsBlocks.DOUBLE_BALLONLEA_BLUE_MUSHROOM.get(), GenerationsBlocks.DOUBLE_BALLONLEA_GREEN_MUSHROOM.get(), GenerationsBlocks.DOUBLE_BALLONLEA_PINK_MUSHROOM.get(), GenerationsBlocks.DOUBLE_BALLONLEA_YELLOW_MUSHROOM.get());
-    }
-
 }

@@ -23,7 +23,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import org.slf4j.Logger;
 
-
+/**
+ * The Main Class of the Generations-Core mod. (Common)
+ * Registers the mod's items and blocks with Minecraft using Architectury.
+ * @author J.T. McQuigg, WaterPicker
+ */
 public class GenerationsCore
 {
 

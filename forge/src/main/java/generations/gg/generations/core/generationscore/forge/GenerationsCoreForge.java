@@ -10,6 +10,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+/**
+ * Forge Main class for GenerationsCore.
+ * @see Mod
+ * @see GenerationsCore
+ * @author J.T. McQuigg, WaterPicker
+ */
 @Mod(GenerationsCore.MOD_ID)
 public class GenerationsCoreForge {
     public GenerationsCoreForge() {
