@@ -262,7 +262,7 @@ public class GenerationsBlockEntities {
 
 
     public static void init() {
-        GenerationsCore.LOGGER.info("Registering PokeMod Block Entities");
+        GenerationsCore.LOGGER.info("Registering Generations Block Entities");
         BLOCK_ENTITIES.register();
     }
 }

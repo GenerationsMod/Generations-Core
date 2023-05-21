@@ -136,7 +136,7 @@ public class GenerationsUtilityBlocks {
 
 
 	public static void init() {
-		GenerationsCore.LOGGER.info("Registering PokeMod Utility Blocks");
+		GenerationsCore.LOGGER.info("Registering Generations Utility Blocks");
 		UTILITY_BLOCKS.register();
 	}
 }

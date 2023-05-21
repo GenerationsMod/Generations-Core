@@ -34,7 +34,7 @@ public class GenerationsEntities {
                     .build("chest_boat"));
 
     public static void init() {
-        GenerationsCore.LOGGER.info("Registering PokeMod entities");
+        GenerationsCore.LOGGER.info("Registering Generations entities");
         ENTITIES.register();
 //        eventBus.addListener(PokeModEntities::registerEntityAttributes);
     }
