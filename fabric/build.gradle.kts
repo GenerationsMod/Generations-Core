@@ -7,6 +7,8 @@ architectury {
     fabric()
 }
 
+val minecraftVersion = project.properties["minecraft_version"] as String
+
 configurations {
     create("common")
     create("shadowCommon")
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:${rootProject.properties["minecraft_version"]}")
+    minecraft("com.mojang:minecraft:${minecraftVersion}")
     mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${rootProject.properties["fabric_api_version"]}")
@@ -52,7 +54,7 @@ dependencies {
     shadow(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")!!)
     shadow(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")!!)
 
-    modImplementation("earth.terrarium:botarium-fabric-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
+    modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${rootProject.properties["botarium_version"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-0.2.0")
 }

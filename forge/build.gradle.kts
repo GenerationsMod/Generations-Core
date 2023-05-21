@@ -7,7 +7,7 @@ architectury {
     forge()
 }
 
-val minecraft_version = project.properties["minecraft_version"] as String
+val minecraftVersion = project.properties["minecraft_version"] as String
 
 configurations {
     create("common")
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:${minecraft_version}")
+    minecraft("com.mojang:minecraft:${minecraftVersion}")
     mappings(loom.officialMojangMappings())
     forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
@@ -67,7 +67,7 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
-    modApi("earth.terrarium:botarium-forge-${minecraft_version}:${project.properties["botarium_version"]}")
+    modApi("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")
 
     shadow(forgeRuntimeLibrary(implementation("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!)
 

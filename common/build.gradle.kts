@@ -1,5 +1,16 @@
+architectury {
+    common("forge", "fabric")
+    platformSetupLoomIde()
+}
 
-loom.silentMojangMappingsLicense()
+loom {
+    silentMojangMappingsLicense()
+    accessWidenerPath.set(file("src/main/resources/generationscore.accesswidener"))
+}
+
+val minecraftVersion = project.properties["minecraft_version"] as String
+
+sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 
 repositories {
     mavenCentral()
@@ -12,19 +23,15 @@ repositories {
     maven("https://maven.bai.lol")
 }
 
-sourceSets.main  {
-    resources.srcDir("src/main/generated/resources")
-}
-
 dependencies {
-    minecraft("com.mojang:minecraft:${rootProject.properties["minecraft_version"]}")
+    minecraft("com.mojang:minecraft:${minecraftVersion}")
     mappings(loom.officialMojangMappings())
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
     modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
     // Remove the next line if you don't want to depend on the API
     modApi("dev.architectury:architectury:${rootProject.properties["architectury_version"]}")
-    modImplementation("earth.terrarium:botarium-common-${rootProject.properties["minecraft_version"]}:${rootProject.properties["botarium_version"]}")
+    modImplementation("earth.terrarium:botarium-common-${minecraftVersion}:${rootProject.properties["botarium_version"]}")
 
     implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
     implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")
@@ -35,13 +42,6 @@ dependencies {
     implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 }
-
-architectury {
-    common("forge", "fabric")
-    platformSetupLoomIde()
-}
-
-loom.accessWidenerPath.set(file("src/main/resources/generationscore.accesswidener"))
 
 publishing {
     publications {

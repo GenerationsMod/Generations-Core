@@ -2,6 +2,7 @@ plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "1.2-SNAPSHOT" apply false
     idea
+    java
 }
 
 architectury.minecraft = rootProject.properties["minecraft_version"] as String
