@@ -17,10 +17,7 @@ configurations {
     getByName("developmentFabric").extendsFrom(configurations["common"])
 }
 
-loom {
-    silentMojangMappingsLicense()
-    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
-}
+loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
 repositories {
     mavenCentral()
@@ -33,7 +30,6 @@ repositories {
 }
 
 dependencies {
-    mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${rootProject.properties["fabric_api_version"]}")
     modApi("dev.architectury:architectury-fabric:${rootProject.properties["architectury_version"]}")

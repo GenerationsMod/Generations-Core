@@ -18,7 +18,6 @@ configurations {
 }
 
 loom {
-    silentMojangMappingsLicense()
     accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
     forge {
@@ -56,7 +55,6 @@ repositories {
 }
 
 dependencies {
-    mappings(loom.officialMojangMappings())
     forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
     compileOnly("org.jetbrains:annotations:24.0.1")

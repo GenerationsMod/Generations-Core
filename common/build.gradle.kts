@@ -3,10 +3,7 @@ architectury {
     platformSetupLoomIde()
 }
 
-loom {
-    silentMojangMappingsLicense()
-    accessWidenerPath.set(file("src/main/resources/generationscore.accesswidener"))
-}
+loom.accessWidenerPath.set(file("src/main/resources/generationscore.accesswidener"))
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
@@ -24,7 +21,6 @@ repositories {
 }
 
 dependencies {
-    mappings(loom.officialMojangMappings())
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
     modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
