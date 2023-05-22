@@ -41,7 +41,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-" + rootProject.version
+            artifactId = "${project.properties["archives_base_name"]}" + "-Common-" + rootProject.version
             from(components["java"])
         }
     }
