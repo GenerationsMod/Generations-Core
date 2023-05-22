@@ -120,6 +120,16 @@ tasks {
     }
 }
 
+components {
+    java.run {
+        if (this is AdhocComponentWithVariants) {
+            withVariantsFromConfiguration(project.configurations["shadowRuntimeElements"]) {
+                skip()
+            }
+        }
+    }
+}
+
 java {
     if (JavaVersion.current() < JavaVersion.VERSION_17) {
         toolchain.languageVersion.set(JavaLanguageVersion.of(17))

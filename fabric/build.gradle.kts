@@ -90,7 +90,16 @@ tasks {
         dependsOn(commonSources)
         from(commonSources.get().archiveFile.map { zipTree(it) })
     }
+}
 
+components {
+    java.run {
+        if (this is AdhocComponentWithVariants) {
+            withVariantsFromConfiguration(project.configurations["shadowRuntimeElements"]) {
+                skip()
+            }
+        }
+    }
 }
 
 java {
