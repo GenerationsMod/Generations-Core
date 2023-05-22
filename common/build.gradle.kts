@@ -23,10 +23,10 @@ repositories {
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
-    modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
+    modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     // Remove the next line if you don't want to depend on the API
-    modApi("dev.architectury:architectury:${rootProject.properties["architectury_version"]}")
-    modImplementation("earth.terrarium:botarium-common-${minecraftVersion}:${rootProject.properties["botarium_version"]}")
+    modApi("dev.architectury:architectury:${project.properties["architectury_version"]}")
+    modImplementation("earth.terrarium:botarium-common-${minecraftVersion}:${project.properties["botarium_version"]}")
 
     implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
     implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")
@@ -41,7 +41,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Common-" + rootProject.version
+            artifactId = "${project.properties["archives_base_name"]}" + "-Common-" + project.version
             from(components["java"])
         }
     }
@@ -51,7 +51,7 @@ publishing {
         maven {
             val releasesRepoUrl = "https://maven.generations.gg/releases"
             val snapshotsRepoUrl = "https://maven.generations.gg/snapshots"
-            url = uri(if (rootProject.version.toString().endsWith("SNAPSHOT") || rootProject.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
+            url = uri(if (project.version.toString().endsWith("SNAPSHOT") || project.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
             name = "Generations-Repo"
             credentials {
                 username = project.properties["repoLogin"]?.toString()

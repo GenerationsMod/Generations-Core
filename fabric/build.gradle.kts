@@ -30,15 +30,15 @@ repositories {
 }
 
 dependencies {
-    modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
-    modApi("net.fabricmc.fabric-api:fabric-api:${rootProject.properties["fabric_api_version"]}")
-    modApi("dev.architectury:architectury-fabric:${rootProject.properties["architectury_version"]}")
+    modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
+    modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
+    modApi("dev.architectury:architectury-fabric:${project.properties["architectury_version"]}")
     compileOnly("org.jetbrains:annotations:24.0.1")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }
 
-    modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${rootProject.properties["devauth_version"]}")
+    modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
     include(implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false})
 
@@ -49,9 +49,9 @@ dependencies {
     include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")!!)
     include(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")!!)
 
-    modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${rootProject.properties["botarium_version"]}")
+    modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
-    modRuntimeOnly("lol.bai:badpackets:fabric-0.2.0")
+    modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 }
 
 tasks {
@@ -92,7 +92,7 @@ components {
 publishing {
     publications {
         create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Fabric-" + rootProject.version
+            artifactId = "${project.properties["archives_base_name"]}" + "-Fabric-" + project.version
             from(components["java"])
         }
     }
@@ -102,7 +102,7 @@ publishing {
         maven {
             val releasesRepoUrl = "https://maven.generations.gg/releases"
             val snapshotsRepoUrl = "https://maven.generations.gg/snapshots"
-            url = uri(if (rootProject.version.toString().endsWith("SNAPSHOT") || rootProject.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
+            url = uri(if (project.version.toString().endsWith("SNAPSHOT") || project.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
             name = "Generations-Repo"
             credentials {
                 username = project.properties["repoLogin"]?.toString()

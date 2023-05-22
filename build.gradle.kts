@@ -30,8 +30,8 @@ allprojects {
     apply(plugin = "maven-publish")
     apply(plugin = "idea")
 
-    version = rootProject.properties["mod_version"] as String
-    group = rootProject.properties["maven_group"] as String
+    version = project.properties["mod_version"] as String
+    group = project.properties["maven_group"] as String
 
     tasks.withType<JavaCompile>().configureEach {
         options.encoding = "UTF-8"

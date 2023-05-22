@@ -73,7 +73,6 @@ dependencies {
     forgeRuntimeLibrary(include("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
     forgeRuntimeLibrary(include("com.google.flatbuffers", "flatbuffers-java", "23.3.3"))!!
 
-
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
@@ -118,7 +117,7 @@ components {
 publishing {
     publications {
         create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Forge-" + rootProject.version
+            artifactId = "${project.properties["archives_base_name"]}" + "-Forge-" + project.version
             from(components["java"])
         }
     }
@@ -128,7 +127,7 @@ publishing {
         maven {
             val releasesRepoUrl = "https://maven.generations.gg/releases"
             val snapshotsRepoUrl = "https://maven.generations.gg/snapshots"
-            url = uri(if (rootProject.version.toString().endsWith("SNAPSHOT") || rootProject.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
+            url = uri(if (project.version.toString().endsWith("SNAPSHOT") || project.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
             name = "Generations-Repo"
             credentials {
                 username = project.properties["repoLogin"]?.toString()
