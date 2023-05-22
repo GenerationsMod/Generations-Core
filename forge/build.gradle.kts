@@ -47,7 +47,6 @@ repositories {
             includeGroup("curse.maven")
         }
     }
-
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://jitpack.io") // BinarySMD
     maven("https://maven.generations.gg/snapshots")
@@ -66,14 +65,13 @@ dependencies {
 
     modApi("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")
 
-    shadow(forgeRuntimeLibrary(implementation("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!)
-
-    shadow(forgeRuntimeLibrary(implementation("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!)
-    shadow(forgeRuntimeLibrary(implementation("org.apache.commons", "commons-compress", "${project.properties["rareCandyCommonCompress"]}"))!!)
-    shadow(forgeRuntimeLibrary(implementation("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!)
-    shadow(forgeRuntimeLibrary(implementation("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!)
-    shadow(forgeRuntimeLibrary(implementation("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!)
-    shadow(forgeRuntimeLibrary(implementation("com.google.flatbuffers", "flatbuffers-java", "23.3.3"))!!)
+    forgeRuntimeLibrary(include("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
+    forgeRuntimeLibrary(include("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
+    forgeRuntimeLibrary(include("org.apache.commons", "commons-compress", "${project.properties["rareCandyCommonCompress"]}"))!!
+    forgeRuntimeLibrary(include("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!
+    forgeRuntimeLibrary(include("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
+    forgeRuntimeLibrary(include("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
+    forgeRuntimeLibrary(include("com.google.flatbuffers", "flatbuffers-java", "23.3.3"))!!
 
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
@@ -92,18 +90,8 @@ tasks {
 
     shadowJar {
         exclude("fabric.mod.json")
-        isZip64 = true
-        configurations {
-            project.configurations.getByName("shadowCommon")
-        }
+        configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
-        dependencies {
-            exclude(dependency("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}"))
-            exclude(dependency("org.lwjgl:lwjgl:${project.properties["lwjgl"]}"))
-            exclude(dependency("asm:asm:${project.properties["asm"]}"))
-            exclude(dependency("asm:asm-commons:${project.properties["asmCommons"]}"))
-            exclude(dependency("asm:asm-tree:${project.properties["asmTree"]}"))
-        }
     }
 
     remapJar {
@@ -122,17 +110,8 @@ tasks {
 
 components {
     java.run {
-        if (this is AdhocComponentWithVariants) {
-            withVariantsFromConfiguration(project.configurations["shadowRuntimeElements"]) {
-                skip()
-            }
-        }
-    }
-}
-
-java {
-    if (JavaVersion.current() < JavaVersion.VERSION_17) {
-        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+        if (this is AdhocComponentWithVariants)
+            withVariantsFromConfiguration(project.configurations.shadowRuntimeElements.get()) { skip() }
     }
 }
 

@@ -40,14 +40,14 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${rootProject.properties["devauth_version"]}")
 
-    shadow(implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false})
+    include(implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false})
 
-    shadow(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")!!)
-    shadow(implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}")!!)
-    shadow(implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")!!)
-    shadow(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){ isTransitive = false })
-    shadow(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")!!)
-    shadow(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")!!)
+    include(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")!!)
+    include(implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}")!!)
+    include(implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")!!)
+    include(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){ isTransitive = false })
+    include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")!!)
+    include(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")!!)
 
     modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${rootProject.properties["botarium_version"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
@@ -64,18 +64,8 @@ tasks {
     }
 
     shadowJar {
-        isZip64 = true
-        configurations {
-            project.configurations.getByName("shadowCommon")
-        }
+        configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
-        dependencies {
-            exclude(dependency("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}"))
-            exclude(dependency("org.lwjgl:lwjgl:${project.properties["lwjgl"]}"))
-            exclude(dependency("asm:asm:${project.properties["asm"]}"))
-            exclude(dependency("asm:asm-commons:${project.properties["asmCommons"]}"))
-            exclude(dependency("asm:asm-tree:${project.properties["asmTree"]}"))
-        }
     }
 
     remapJar {
@@ -94,17 +84,8 @@ tasks {
 
 components {
     java.run {
-        if (this is AdhocComponentWithVariants) {
-            withVariantsFromConfiguration(project.configurations["shadowRuntimeElements"]) {
-                skip()
-            }
-        }
-    }
-}
-
-java {
-    if (JavaVersion.current() < JavaVersion.VERSION_17) {
-        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+        if (this is AdhocComponentWithVariants)
+            withVariantsFromConfiguration(project.configurations.shadowRuntimeElements.get()) { skip() }
     }
 }
 
