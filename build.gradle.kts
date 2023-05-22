@@ -5,10 +5,16 @@ plugins {
     java
 }
 
-architectury.minecraft = rootProject.properties["minecraft_version"] as String
+val minecraftVersion = project.properties["minecraft_version"] as String
+
+architectury.minecraft = minecraftVersion
 
 subprojects {
     apply(plugin = "dev.architectury.loom")
+
+    dependencies {
+        "minecraft"("com.mojang:minecraft:$minecraftVersion")
+    }
 }
 
 allprojects {

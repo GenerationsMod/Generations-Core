@@ -56,7 +56,6 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:${minecraftVersion}")
     mappings(loom.officialMojangMappings())
     forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
