@@ -4,11 +4,12 @@
   "package": "generations.gg.generations.core.generationscore.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+	"AbstractCauldronBlockMixin"
   ],
   "client": [
-    "client.LevelRendererMixin"
+	"client.LevelRendererMixin"
   ],
   "injectors": {
-    "defaultRequire": 1
+	"defaultRequire": 1
   }
 }
