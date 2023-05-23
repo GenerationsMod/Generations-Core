@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.decora
 
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
@@ -28,7 +28,7 @@ public class LitwickCandlesBlock extends GenericRotatableModelBlock<GenericModel
                     .reduce(Shapes.empty(), (a,b) -> Shapes.join(a, b, BooleanOp.OR)),
             Direction.NORTH);
     public LitwickCandlesBlock(BlockBehaviour.Properties properties) {
-        super(properties, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, PokeModBlockEntityModels.LITWICK_CANDLES);
+        super(properties, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, GenerationsBlockEntityModels.LITWICK_CANDLES);
     }
 
     @Override

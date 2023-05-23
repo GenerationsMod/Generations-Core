@@ -26,7 +26,7 @@ public class VendingMachineBlock extends DoubleDyeableBlock<VendingMachineBlockE
     public static GenerationsVoxelShapes.DirectionalShapes UPPER = GenerationsVoxelShapes.generateDirectionVoxelShape(Shapes.join(Shapes.join(Shapes.box(0.0625, 0, 0.15625, 0.9375, 0.0625, 0.875), Shapes.box(0, 0, 0.04999999999999999, 1, 1, 0.9375), BooleanOp.OR), Shapes.box(0.15000000000000002, 0, 0.01874999999999999, 0.86875, 0.84375, 0.08124999999999999), BooleanOp.OR), Direction.SOUTH);
 
     public VendingMachineBlock(BlockBehaviour.Properties properties) {
-        super(VendingMachineBlock::getBlock, GenerationsBlockEntities.VENDING_MACHINE, properties, PokeModBlockEntityModels.VENDING_MACHINE);
+        super(VendingMachineBlock::getBlock, GenerationsBlockEntities.VENDING_MACHINE, properties, GenerationsBlockEntityModels.VENDING_MACHINE);
     }
 
     @Override

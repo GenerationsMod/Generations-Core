@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.utilit
 
 import generations.gg.generations.core.generationscore.world.level.block.entities.BoxBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 public class BoxBlock extends GenericRotatableModelBlock<BoxBlockEntity> {
 
     public BoxBlock(BlockBehaviour.Properties props) {
-        super(props, GenerationsBlockEntities.BOX, PokeModBlockEntityModels.BOX);
+        super(props, GenerationsBlockEntities.BOX, GenerationsBlockEntityModels.BOX);
     }
 
     @Override

@@ -2,12 +2,12 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 
 import generations.gg.generations.core.generationscore.world.level.block.entities.AbundantShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class AbundantShrineBlock extends ShrineBlock<AbundantShrineBlockEntity> {
 
     public AbundantShrineBlock(BlockBehaviour.Properties properties) {
-        super(properties, GenerationsBlockEntities.ABUNDANT_SHRINE, PokeModBlockEntityModels.ABUNDANT_SHRINE);
+        super(properties, GenerationsBlockEntities.ABUNDANT_SHRINE, GenerationsBlockEntityModels.ABUNDANT_SHRINE);
     }
 }

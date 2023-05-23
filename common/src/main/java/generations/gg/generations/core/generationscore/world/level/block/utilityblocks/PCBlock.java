@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.utilit
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -16,7 +16,7 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class PCBlock extends DoubleDyeableBlock<GenericDyedVariantBlockEntity, PCBlock> {
     public PCBlock(Properties arg) {
-        super(PCBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, arg, PokeModBlockEntityModels.PC);
+        super(PCBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, arg, GenerationsBlockEntityModels.PC);
     }
 
     @Override

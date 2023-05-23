@@ -18,7 +18,7 @@ public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implem
     }
 
     public ResourceLocation getModel() {
-        return (getBlockState().getBlock() instanceof GenericModelBlock<?> block ? block.getModel() : PokeModBlockEntityModels.DEFAULT);
+        return (getBlockState().getBlock() instanceof GenericModelBlock<?> block ? block.getModel() : GenerationsBlockEntityModels.DEFAULT);
     }
 
     public AABB getBoundingBox() {

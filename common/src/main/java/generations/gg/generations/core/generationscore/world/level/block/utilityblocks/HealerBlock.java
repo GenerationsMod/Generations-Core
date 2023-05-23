@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 public class HealerBlock extends DyeableBlock<HealerBlockEntity, HealerBlock> {
 
     public HealerBlock(BlockBehaviour.Properties props) {
-        super(HealerBlock::getBlock, GenerationsBlockEntities.HEALER, props, PokeModBlockEntityModels.HEALER);
+        super(HealerBlock::getBlock, GenerationsBlockEntities.HEALER, props, GenerationsBlockEntityModels.HEALER);
     }
 
     @Override

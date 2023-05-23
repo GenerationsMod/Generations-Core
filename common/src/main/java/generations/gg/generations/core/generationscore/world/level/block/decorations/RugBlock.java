@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.decora
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
@@ -21,7 +21,7 @@ public class RugBlock extends DyeableBlock<GenericDyedVariantBlockEntity, RugBlo
     private static VoxelShape SHAPE = Shapes.box(0, 0, 0, 1, 0.071875, 1);
 
     public RugBlock(BlockBehaviour.Properties properties) {
-        super(RugBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, properties, PokeModBlockEntityModels.POKEBALL_RUG, 1, 0, 0);
+        super(RugBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, properties, GenerationsBlockEntityModels.POKEBALL_RUG, 1, 0, 0);
     }
 
     @Override

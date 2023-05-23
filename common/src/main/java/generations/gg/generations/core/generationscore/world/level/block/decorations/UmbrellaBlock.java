@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.Util;
@@ -92,7 +92,7 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
     public static BiFunction<BlockPos, BlockState, BlockPos> FUNCTION = (pos, state) -> pos.offset(state.getValue(CARDINAL).rotation(Rotation.CLOCKWISE_180).offset()).below(state.getValue(POLE).ordinal());
 
     public UmbrellaBlock(BlockBehaviour.Properties props) {
-        super(UmbrellaBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, FUNCTION, props, PokeModBlockEntityModels.UMBRELLA);
+        super(UmbrellaBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, FUNCTION, props, GenerationsBlockEntityModels.UMBRELLA);
     }
 
     @Override

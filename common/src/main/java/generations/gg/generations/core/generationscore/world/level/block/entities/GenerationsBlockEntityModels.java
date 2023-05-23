@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
 
-public class PokeModBlockEntityModels {
+public class GenerationsBlockEntityModels {
     public static final ResourceLocation DEFAULT = GenerationsCore.id("");
     public static final ResourceLocation ABUNDANT_SHRINE = GenerationsCore.id("models/block/shrines/abundant_shrine/abundant_shrine.pk");
     public static final ResourceLocation BOX = GenerationsCore.id("models/block/decorations/box/box.pk");

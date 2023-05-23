@@ -22,6 +22,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.ItemStack;

@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ClockBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -29,7 +29,7 @@ public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
     });
 
     public ClockBlock(Properties arg) {
-        super(ClockBlock::getBlock, GenerationsBlockEntities.CLOCK, arg, PokeModBlockEntityModels.CLOCK);
+        super(ClockBlock::getBlock, GenerationsBlockEntities.CLOCK, arg, GenerationsBlockEntityModels.CLOCK);
     }
 
     @Override

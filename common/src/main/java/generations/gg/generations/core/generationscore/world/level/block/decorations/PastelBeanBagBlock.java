@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.world.entity.block.Sittab
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 @SuppressWarnings("deprecation")
 public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock> {
     public PastelBeanBagBlock(BlockBehaviour.Properties props) {
-        super(PastelBeanBagBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, PokeModBlockEntityModels.PASTEL_BEAN_BAG);
+        super(PastelBeanBagBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.PASTEL_BEAN_BAG);
     }
 
     @Override

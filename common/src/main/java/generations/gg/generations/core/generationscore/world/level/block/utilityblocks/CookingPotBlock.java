@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.utilit
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 public class CookingPotBlock extends GenericRotatableModelBlock<CookingPotBlockEntity> {
 
     public CookingPotBlock(Properties materialIn) {
-        super(materialIn, GenerationsBlockEntities.COOKING_POT, PokeModBlockEntityModels.COOKING_POT);
+        super(materialIn, GenerationsBlockEntities.COOKING_POT, GenerationsBlockEntityModels.COOKING_POT);
     }
 
     @Override

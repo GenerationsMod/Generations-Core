@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.decora
 
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
@@ -20,7 +20,7 @@ public class SwitchBlock extends GenericRotatableModelBlock<GenericModelProvidin
     private final static GenerationsVoxelShapes.DirectionalShapes SHAPES = GenerationsVoxelShapes.generateDirectionVoxelShape(Shapes.join(Shapes.join(Shapes.empty(), Shapes.box(0.15625, 0, 0.375, 0.875, 0.41875, 0.58125), BooleanOp.OR), Shapes.box(0, 0.084375, 0.46875, 1.015625, 0.521875, 0.53125), BooleanOp.OR), Direction.SOUTH);
 
     public SwitchBlock(BlockBehaviour.Properties props) {
-        super(props, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, PokeModBlockEntityModels.SWITCH);
+        super(props, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, GenerationsBlockEntityModels.SWITCH);
     }
 
     @Override
