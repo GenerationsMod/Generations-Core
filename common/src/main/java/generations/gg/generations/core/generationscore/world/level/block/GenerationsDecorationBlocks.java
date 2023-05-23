@@ -161,7 +161,7 @@ public class GenerationsDecorationBlocks {
     }
 
     public static void init() {
-        GenerationsCore.LOGGER.info("Registering PokeMod Decorations");
+        GenerationsCore.LOGGER.info("Registering Generations Decorations");
         DECORATIONS.register();
         //GenerationsCore.LOGGER.info("Registering PokeMod Vending Machines");
 //        NO_ITEM_MODELS.register(eventBus);

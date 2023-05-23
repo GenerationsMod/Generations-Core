@@ -1,5 +1,5 @@
 {
-  "pokemod:general": {
+  "generations_core:general": {
     "initializer": "generations.gg.generations.core.generationscore.compat.WTHIT",
     "side": "*"
   }

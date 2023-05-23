@@ -17,7 +17,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import java.util.function.Function;
 
 public class GenerationsArmor {
-	public static final dev.architectury.registry.registries.DeferredRegister<Item> ARMOR = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
+	public static final DeferredRegister<Item> ARMOR = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 	/**
 	 * Armor Sets
 	 */

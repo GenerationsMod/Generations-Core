@@ -7,12 +7,12 @@ import net.minecraft.world.inventory.CraftingMenu;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
-public class PokeModWorkBenchContainer extends CraftingMenu {
+public class GenerationsWorkBenchContainer extends CraftingMenu {
 
 	private final Block workbench;
 	private final ContainerLevelAccess worldPos;
 
-	public PokeModWorkBenchContainer(int id, Inventory playerInv, ContainerLevelAccess worldPos, Block workbench) {
+	public GenerationsWorkBenchContainer(int id, Inventory playerInv, ContainerLevelAccess worldPos, Block workbench) {
 		super(id, playerInv, worldPos);
 		this.workbench = workbench;
 		this.worldPos = worldPos;

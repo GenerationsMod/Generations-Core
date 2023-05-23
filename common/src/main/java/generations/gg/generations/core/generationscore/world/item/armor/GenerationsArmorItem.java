@@ -36,10 +36,6 @@ public class GenerationsArmorItem extends ArmorItem {
 //                .build();
 //    }
 //
-//    @Override
-//    public void onArmorTick(ItemStack itemStack, Level world, Player player) {
-//        this.armorEffects.forEach(armorEffect -> armorEffect.onArmorTick(itemStack, world, player, this));
-//    }
 
     @Override
     public void inventoryTick(@NotNull ItemStack itemStack, @NotNull Level world, @NotNull Entity entity, int slotId, boolean isSelected) {

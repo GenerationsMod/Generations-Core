@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import generations.gg.generations.core.generationscore.world.container.PokeModWorkBenchContainer;
+import generations.gg.generations.core.generationscore.world.container.GenerationsWorkBenchContainer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
@@ -20,6 +20,6 @@ public class GenerationsCraftingTableBlock extends CraftingTableBlock {
 
 	@Override
 	public MenuProvider getMenuProvider(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos) {
-		return new SimpleMenuProvider((i, arg3, arg4) -> new PokeModWorkBenchContainer(i, arg3, ContainerLevelAccess.create(level, pos), this), CONTAINER_TITLE);
+		return new SimpleMenuProvider((i, arg3, arg4) -> new GenerationsWorkBenchContainer(i, arg3, ContainerLevelAccess.create(level, pos), this), CONTAINER_TITLE);
 	}
 }
