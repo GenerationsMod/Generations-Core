@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.generic;
 
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModCookers;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsCookers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class GenericFurnaceBlockEntity extends FurnaceBlockEntity implements PokeModCookers {
+public class GenericFurnaceBlockEntity extends FurnaceBlockEntity implements GenerationsCookers {
     private final String name;
 
     public GenericFurnaceBlockEntity(BlockPos arg, BlockState arg2){
