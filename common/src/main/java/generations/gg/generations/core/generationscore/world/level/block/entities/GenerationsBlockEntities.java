@@ -7,6 +7,8 @@ import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.HangingSignBlockEntity;
+import net.minecraft.world.level.block.entity.SignBlockEntity;
 
 public class GenerationsBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
@@ -206,9 +208,9 @@ public class GenerationsBlockEntities {
     public static final RegistrySupplier<BlockEntityType<TapuShrineBlockEntity>> TAPU_SHRINE = BLOCK_ENTITIES.register("tapu_shrine", () -> BlockEntityType.Builder.of(TapuShrineBlockEntity::new, GenerationsShrines.TAPU_SHRINE.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<CookingPotBlockEntity>> COOKING_POT = BLOCK_ENTITIES.register("cooking_pot", () -> BlockEntityType.Builder.of(CookingPotBlockEntity::new, GenerationsUtilityBlocks.COOKING_POT.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<GenericChestBlockEntity>> GENERIC_CHEST = BLOCK_ENTITIES.register("generic_chest", () -> BlockEntityType.Builder.of(GenericChestBlockEntity::new, GenerationsBlocks.POKEBALL_CHEST.get(), GenerationsBlocks.GREATBALL_CHEST.get(), GenerationsBlocks.ULTRABALL_CHEST.get(), GenerationsBlocks.MASTERBALL_CHEST.get()).build(null));
-    public static final RegistrySupplier<BlockEntityType<GenerationsSignBlockEntity>> SIGN_BLOCK_ENTITIES =
+    public static final RegistrySupplier<BlockEntityType<SignBlockEntity>> SIGN_BLOCK_ENTITIES =
             BLOCK_ENTITIES.register("sign_block_entity", () ->
-                    BlockEntityType.Builder.of(GenerationsSignBlockEntity::new,
+                    BlockEntityType.Builder.of(SignBlockEntity::new,
                             GenerationsWood.ULTRA_DARK_SIGN.get(),
                             GenerationsWood.ULTRA_DARK_WALL_SIGN.get(),
                             GenerationsWood.ULTRA_JUNGLE_SIGN.get(),
@@ -217,9 +219,9 @@ public class GenerationsBlockEntities {
                             GenerationsWood.GHOST_WALL_SIGN.get()
                     ).build(null));
 
-    public static final RegistrySupplier<BlockEntityType<PokeModHangingSignBlockEntity>> HANGING_SIGN_BLOCK_ENTITIES =
+    public static final RegistrySupplier<BlockEntityType<HangingSignBlockEntity>> HANGING_SIGN_BLOCK_ENTITIES =
             BLOCK_ENTITIES.register("hanging_sign_block_entity", () ->
-                    BlockEntityType.Builder.of(PokeModHangingSignBlockEntity::new,
+                    BlockEntityType.Builder.of(HangingSignBlockEntity::new,
                             GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(),
                             GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(),
                             GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(),
