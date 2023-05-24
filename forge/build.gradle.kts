@@ -39,8 +39,6 @@ loom {
 }
 
 repositories {
-    mavenCentral()
-    mavenLocal()
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
     maven("https://cursemaven.com") {
         content {
@@ -56,7 +54,6 @@ repositories {
 dependencies {
     forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
-    compileOnly("org.jetbrains:annotations:24.0.1")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionForge")) { isTransitive = false }

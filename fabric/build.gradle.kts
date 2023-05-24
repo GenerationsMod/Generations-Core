@@ -20,8 +20,6 @@ configurations {
 loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
 repositories {
-    mavenCentral()
-    mavenLocal()
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://maven.bai.lol")
@@ -33,7 +31,6 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
     modApi("dev.architectury:architectury-fabric:${project.properties["architectury_version"]}")
-    compileOnly("org.jetbrains:annotations:24.0.1")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }

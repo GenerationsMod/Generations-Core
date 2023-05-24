@@ -10,7 +10,6 @@ val minecraftVersion = project.properties["minecraft_version"] as String
 sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 
 repositories {
-    mavenCentral()
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://jitpack.io") // BinarySMD
     maven {
