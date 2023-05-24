@@ -47,7 +47,7 @@ dependencies {
     include(implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")!!)
     include(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){ isTransitive = false })
     include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")!!)
-    include(implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")!!)
+    include(implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")!!)
 
     modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")

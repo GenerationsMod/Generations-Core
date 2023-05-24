@@ -71,7 +71,7 @@ dependencies {
     forgeRuntimeLibrary(include("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!
     forgeRuntimeLibrary(include("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     forgeRuntimeLibrary(include("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
-    forgeRuntimeLibrary(include("com.google.flatbuffers", "flatbuffers-java", "23.3.3"))!!
+    forgeRuntimeLibrary(include("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")

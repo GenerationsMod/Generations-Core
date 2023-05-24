@@ -34,7 +34,7 @@ dependencies {
     implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")
     implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
     implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
-    implementation("com.google.flatbuffers:flatbuffers-java:23.3.3")
+    implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 }
 
