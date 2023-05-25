@@ -22,7 +22,6 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.ItemStack;
@@ -117,7 +116,6 @@ public class GenerationsCoreClient {
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.COOKING_POT.get(), CookingPotRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.WEATHER_TRIO.get(), GeneralUseBlockEntityRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
-        //BlockEntityRendererRegistry.register(GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get(), HangingSignRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_CHEST.get(), GenericChestRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
         BlockEntityRendererRegistry.register(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), GeneralUseBlockEntityRenderer::new);

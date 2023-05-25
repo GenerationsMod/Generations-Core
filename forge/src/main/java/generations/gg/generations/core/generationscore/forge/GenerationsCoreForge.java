@@ -24,7 +24,7 @@ public class GenerationsCoreForge {
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, eventBus);
         GenerationsCore.init();
         eventBus.addListener(this::onInitialize);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> GenerationsCoreClientForge::init);
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(eventBus));
     }
 
     /**

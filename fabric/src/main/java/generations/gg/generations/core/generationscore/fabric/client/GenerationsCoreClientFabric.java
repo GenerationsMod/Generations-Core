@@ -5,6 +5,8 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsMushroomBlock;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.block.TrapDoorBlock;
  * @see GenerationsCoreClient
  * @author J.T. McQuigg, WaterPicker
  */
+@Environment(EnvType.CLIENT)
 public class GenerationsCoreClientFabric implements ClientModInitializer {
 
     /**
