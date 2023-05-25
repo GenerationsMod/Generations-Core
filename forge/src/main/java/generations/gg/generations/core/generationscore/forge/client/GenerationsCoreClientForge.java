@@ -2,9 +2,10 @@ package generations.gg.generations.core.generationscore.forge.client;
 
 import dev.architectury.event.events.client.ClientLifecycleEvent;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
+import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,6 +32,29 @@ public class GenerationsCoreClientForge {
      * @see EntityRenderersEvent.RegisterRenderers
      */
     private static void registerBlockEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        BlockEntityRenderers.register(GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get(), HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.POKE_DOLL.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.HEALER.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.CLOCK.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.BOX.get(), GeneralUseBlockEntityRenderer::new);
+
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.TIMESPACE_ALTAR.get(), TimeSpaceAltarEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.ABUNDANT_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.CELESTIAL_ALTAR.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.LUNAR_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.MELOETTA_MUSIC_BOX.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.REGIGIGAS_SHRINE.get(), RegigigasShrineBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.TAO_TRIO_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.TAPU_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.BREEDER.get(), BreederBlocEntityRenderer::new);
+
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.COOKING_POT.get(), CookingPotRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.WEATHER_TRIO.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get(), HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.GENERIC_CHEST.get(), GenericChestRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.GENERIC_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), GeneralUseBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
     }
 }
