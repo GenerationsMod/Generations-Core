@@ -1,0 +1,25 @@
+{
+  "values": [
+    "generations_core:fiery_shrine",
+    "generations_core:frozen_shrine",
+    "generations_core:static_shrine",
+    "generations_core:lugia_shrine",
+    "generations_core:crystal_bell",
+    "generations_core:groudon_shrine",
+    "generations_core:kyogre_shrine",
+    "generations_core:rayquaza_shrine",
+    "generations_core:timespace_altar",
+    "generations_core:abundant_shrine",
+    "generations_core:celestial_altar",
+    "generations_core:lunar_shrine",
+    "generations_core:meloetta_music_box",
+    "generations_core:regice_shrine",
+    "generations_core:regidrago_shrine",
+    "generations_core:regieleki_shrine",
+    "generations_core:regirock_shrine",
+    "generations_core:registeel_shrine",
+    "generations_core:regigigas_shrine",
+    "generations_core:tao_trio_shrine",
+    "generations_core:tapu_shrine"
+  ]
+}

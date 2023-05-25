@@ -68,6 +68,11 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
         renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get(), RenderType.cutout());
     }
 
+    /**
+     * Registers the entity renderers.
+     * @see EntityRendererRegistry
+     * @see GenerationsEntities
+     */
     private static void registerEntityRenderers() {
         EntityRendererRegistry.register(GenerationsEntities.SEAT.get(), SittableEntityRenderer::new);
         EntityRendererRegistry.register(GenerationsEntities.TIERED_FISHING_BOBBER.get(), TieredFishingHookRenderer::new);

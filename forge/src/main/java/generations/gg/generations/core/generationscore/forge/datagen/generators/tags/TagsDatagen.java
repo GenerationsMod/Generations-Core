@@ -4,10 +4,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsPaintings;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -90,6 +87,8 @@ public class TagsDatagen {
                             GenerationsBlocks.GREATBALL_CHEST.get(),
                             GenerationsBlocks.ULTRABALL_CHEST.get(),
                             GenerationsBlocks.MASTERBALL_CHEST.get());
+
+            GenerationsShrines.SHRINES.forEach(block -> this.tag(GenerationsBlockTags.SHRINES).add(block.get()));
 
             this.tag(BlockTags.GUARDED_BY_PIGLINS).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
             this.tag(BlockTags.FEATURES_CANNOT_REPLACE).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
@@ -229,7 +228,6 @@ public class TagsDatagen {
             this.copy(GenerationsBlockTags.POKEBRICKS, GenerationsItemTags.POKEBRICKS);
             //Marble
             this.copy(GenerationsBlockTags.MARBLE, GenerationsItemTags.MARBLE);
-
             //Ultra
             this.copy(GenerationsBlockTags.ULTRA, GenerationsItemTags.ULTRA);
 
