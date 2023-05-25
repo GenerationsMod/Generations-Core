@@ -296,7 +296,7 @@ public class TagsDatagen {
                     GenerationsItems.MASTER_WALKMON.get()
             );
 
-            //GenerationsItems.ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
+            GenerationsItems.ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
         }
     }
 
