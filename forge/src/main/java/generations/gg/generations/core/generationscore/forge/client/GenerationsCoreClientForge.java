@@ -1,11 +1,18 @@
 package generations.gg.generations.core.generationscore.forge.client;
 
 import dev.architectury.event.events.client.ClientLifecycleEvent;
+import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
+import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.GenerationsChestBoatRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,11 +26,25 @@ import net.minecraftforge.eventbus.api.IEventBus;
 public class GenerationsCoreClientForge {
     public static void init(IEventBus eventBus) {
         eventBus.addListener(GenerationsCoreClientForge::registerBlockEntityRenderers);
+        eventBus.addListener(GenerationsCoreClientForge::registerEntityRenderers);
         ClientLifecycleEvent.CLIENT_SETUP.register(minecraft -> {
             GenerationsCoreClient.onInitialize(minecraft);
             ForgeConfig.CLIENT.alwaysSetupTerrainOffThread.set(true); // Performance improvement
             ForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.set(true); // Use Experimental Forge Light Pipeline
         });
+    }
+
+    /**
+     * Registers the entity renderers.
+     * @param event The EntityRenderersEvent.RegisterRenderers event.
+     * @see EntityRenderersEvent.RegisterRenderers
+     */
+    private static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(GenerationsEntities.SEAT.get(), SittableEntityRenderer::new);
+        event.registerEntityRenderer(GenerationsEntities.TIERED_FISHING_BOBBER.get(), TieredFishingHookRenderer::new);
+        event.registerEntityRenderer(GenerationsEntities.BOAT_ENTITY.get(), GenerationsBoatRenderer::new);
+        event.registerEntityRenderer(GenerationsEntities.CHEST_BOAT_ENTITY.get(), GenerationsChestBoatRenderer::new);
+        event.registerEntityRenderer(GenerationsEntities.MAGMA_CRYSTAL.get(), ThrownItemRenderer::new);
     }
 
     /**

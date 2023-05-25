@@ -2,6 +2,11 @@ package generations.gg.generations.core.generationscore.fabric.client;
 
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
+import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.GenerationsChestBoatRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsMushroomBlock;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
@@ -10,11 +15,13 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.GlassBlock;
@@ -37,6 +44,7 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
     public void onInitializeClient() {
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
         registerRenderTypes();
+        registerEntityRenderers();
         registerBlockEntityRenderers();
     }
 
@@ -59,7 +67,20 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
         });
         renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get(), RenderType.cutout());
     }
-    
+
+    private static void registerEntityRenderers() {
+        EntityRendererRegistry.register(GenerationsEntities.SEAT.get(), SittableEntityRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.TIERED_FISHING_BOBBER.get(), TieredFishingHookRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.BOAT_ENTITY.get(), GenerationsBoatRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.CHEST_BOAT_ENTITY.get(), GenerationsChestBoatRenderer::new);
+        EntityRendererRegistry.register(GenerationsEntities.MAGMA_CRYSTAL.get(), ThrownItemRenderer::new);
+    }
+
+    /**
+     * Registers the block entity renderers.
+     * @see BlockEntityRenderers
+     * @see GenerationsBlockEntities
+     */
     private static void registerBlockEntityRenderers() {
         BlockEntityRenderers.register(GenerationsBlockEntities.POKE_DOLL.get(), GeneralUseBlockEntityRenderer::new);
         BlockEntityRenderers.register(GenerationsBlockEntities.HEALER.get(), GeneralUseBlockEntityRenderer::new);
