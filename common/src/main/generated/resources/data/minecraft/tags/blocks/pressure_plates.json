@@ -1,7 +1,5 @@
 {
   "values": [
-    "generations_core:charge_stone_pressure_plate",
-    "generations_core:volcanic_stone_pressure_plate",
     "generations_core:enchanted_obsidian_pressure_plate",
     "generations_core:ultra_white_pressure_plate",
     "generations_core:ultra_light_gray_pressure_plate",
@@ -51,6 +49,8 @@
     "generations_core:blue_poke_brick_pressure_plate",
     "generations_core:purple_poke_brick_pressure_plate",
     "generations_core:magenta_poke_brick_pressure_plate",
-    "generations_core:pink_poke_brick_pressure_plate"
+    "generations_core:pink_poke_brick_pressure_plate",
+    "generations_core:charge_stone_pressure_plate",
+    "generations_core:volcanic_stone_pressure_plate"
   ]
 }

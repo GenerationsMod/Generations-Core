@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeModHangingSignBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsHangingSignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.CeilingHangingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -15,6 +15,6 @@ public class GenerationsCeilingHangingSignBlock extends CeilingHangingSignBlock 
 
 	@Override
 	public BlockEntity newBlockEntity(@NotNull BlockPos arg, @NotNull BlockState arg2) {
-		return new PokeModHangingSignBlockEntity(arg, arg2);
+		return new GenerationsHangingSignBlockEntity(arg, arg2);
 	}
 }

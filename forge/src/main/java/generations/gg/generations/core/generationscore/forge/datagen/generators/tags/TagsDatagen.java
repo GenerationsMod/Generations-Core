@@ -81,6 +81,42 @@ public class TagsDatagen {
                 EasyBlockTags(block.get());
             });
 
+            GenerationsBlocks.STONE.forEach(block -> {
+                this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block.get());
+                EasyBlockTags(block.get());
+                if (block.get() instanceof PressurePlateBlock) this.tag(BlockTags.STONE_PRESSURE_PLATES).add(block.get());
+            });
+
+            this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                    GenerationsBlocks.RAW_ALUMINUM_BLOCK.get(),
+                    GenerationsBlocks.ALUMINUM_BLOCK.get(),
+                    GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
+                    GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(),
+                    GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get(),
+                    GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get(),
+                    GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get(),
+                    GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()
+            );
+
+            this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
+                    GenerationsBlocks.POKE_GRASS.get(),
+                    GenerationsBlocks.POKE_DIRT.get(),
+                    GenerationsBlocks.SANDY_GRASS.get(),
+                    GenerationsBlocks.RUINS_SAND.get(),
+                    GenerationsBlocks.RICH_SOIL_1.get(),
+                    GenerationsBlocks.RICH_SOIL_2.get(),
+                    GenerationsBlocks.RICH_SOIL_3.get(),
+                    GenerationsBlocks.RICH_SOIL_4.get()
+            );
+
+            this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
+                    GenerationsBlocks.ENCHANTED_OBSIDIAN.get(),
+                    GenerationsBlocks.ENCHANTED_OBSIDIAN_STAIRS.get(),
+                    GenerationsBlocks.ENCHANTED_OBSIDIAN_SLAB.get(),
+                    GenerationsBlocks.ENCHANTED_OBSIDIAN_WALL.get()
+            );
+
+
             this.tag(GenerationsBlockTags.POKEBALL_CHESTS)
                     .add(
                             GenerationsBlocks.POKEBALL_CHEST.get(),
@@ -168,15 +204,12 @@ public class TagsDatagen {
                     this.tag(BlockTags.WALL_HANGING_SIGNS).add(sign.get());
             });
 
-
-
             //Charge and Volcanic Stone Brick Tags like Vanilla
             this.tag(GenerationsBlockTags.CHARGE_STONE_BRICKS)
                     .add(GenerationsBlocks.CHARGE_STONE_BRICKS.get(), GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get(), GenerationsBlocks.CRACKED_CHARGE_STONE_BRICKS.get(), GenerationsBlocks.CHISELED_CHARGE_STONE_BRICKS.get());
 
             this.tag(GenerationsBlockTags.VOLCANIC_STONE_BRICKS)
                     .add(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.CRACKED_VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.CHISELED_VOLCANIC_STONE_BRICKS.get());
-
 
             this.tag(BlockTags.MINEABLE_WITH_AXE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
             this.tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)

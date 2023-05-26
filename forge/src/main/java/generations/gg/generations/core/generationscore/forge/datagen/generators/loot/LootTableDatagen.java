@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.loot;
 
 import com.google.common.collect.ImmutableList;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -23,6 +24,7 @@ public class LootTableDatagen extends LootTableProvider {
 //            Pair.of(PiglinBarterLoot::new, LootContextParamSets.PIGLIN_BARTER),
 //            Pair.of(GiftLoot::new, LootContextParamSets.GIFT)
         ));
+        GenerationsCore.LOGGER.info("LootTableDatagen");
     }
 
     protected void validate(Map<ResourceLocation, LootTable> map, @NotNull ValidationContext validationContext) {

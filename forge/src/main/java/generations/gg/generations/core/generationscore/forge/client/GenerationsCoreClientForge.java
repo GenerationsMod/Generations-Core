@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.client;
 
 import dev.architectury.event.events.client.ClientLifecycleEvent;
-import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;

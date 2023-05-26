@@ -13,10 +13,13 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.tags.TagsDatagen;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.Set;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = GenerationsCore.MOD_ID)
 public class DataGeneratorsRegister {
@@ -41,10 +44,6 @@ public class DataGeneratorsRegister {
                 //PokeBallRecipeDatagen::new,
                 FurnaceRecipeProvider::new));
         generator.addProvider(true, new LootTableDatagen(output));
-
-        //generator.addProvider(true, new PokeModSpawnColorsProvider(output));
-       // TagsDatagen.init(generator, output, lookupProvider, event.getExistingFileHelper());
-//        assert lookupProvider != null;
-//        generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, lookupProvider, Set.of(GenerationsCore.MOD_ID)));
+        generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, event.getLookupProvider(), Set.of(GenerationsCore.MOD_ID)));
     }
 }

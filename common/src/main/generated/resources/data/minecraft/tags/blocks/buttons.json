@@ -1,7 +1,5 @@
 {
   "values": [
-    "generations_core:charge_stone_button",
-    "generations_core:volcanic_stone_button",
     "generations_core:enchanted_obsidian_button",
     "generations_core:ultra_white_button",
     "generations_core:ultra_light_gray_button",
@@ -51,6 +49,8 @@
     "generations_core:blue_poke_brick_button",
     "generations_core:purple_poke_brick_button",
     "generations_core:magenta_poke_brick_button",
-    "generations_core:pink_poke_brick_button"
+    "generations_core:pink_poke_brick_button",
+    "generations_core:charge_stone_button",
+    "generations_core:volcanic_stone_button"
   ]
 }

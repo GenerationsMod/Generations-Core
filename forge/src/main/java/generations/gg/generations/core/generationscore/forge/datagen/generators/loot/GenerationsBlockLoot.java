@@ -36,6 +36,7 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        GenerationsBlocks.STONE.forEach(block -> dropSelfStoneCobble(block.get()));
         GenerationsWood.WOOD_BLOCKS.forEach(block -> dropSelfUpdated(block.get()));
 
         GenerationsBlocks.ULTRA_BLOCKS.forEach(block -> dropSelfUpdated(block.get()));
@@ -50,7 +51,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
         GenerationsBlocks.POKEBRICKS.forEach(block -> dropSelfUpdated(block.get()));
         GenerationsBlocks.MARBLE.forEach(block -> dropSelfUpdated(block.get()));
-        //GenerationsBlocks.STONE.getEntries().stream().map(RegistryObject::get).forEach(this::dropSelfStoneCobble);
 
 
         add(GenerationsBlocks.BLACK_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.BLACK_APRICORN_LEAVES.get(), GenerationsBlocks.BLACK_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
@@ -310,14 +310,14 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {return knownBlocks;}
 
-    protected void dropSelfUpdated(@NotNull Block block) {
+    private void dropSelfUpdated(@NotNull Block block) {
         if (block instanceof SlabBlock) add(block, createSlabItemTable(block));
         else if (block instanceof DoorBlock) add(block, createDoorTable(block));
         else if (block instanceof InfestedBlock) this.otherWhenSilkTouch(block, ((InfestedBlock) block).getHostBlock());
         else dropSelf(block);
     }
 
-    protected void dropSelfStoneCobble(Block block) {
+    private void dropSelfStoneCobble(@NotNull Block block) {
         if (block == GenerationsBlocks.CHARGE_STONE.get())
             add(block, createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE.get()));
         else if (block == GenerationsBlocks.VOLCANIC_STONE.get())

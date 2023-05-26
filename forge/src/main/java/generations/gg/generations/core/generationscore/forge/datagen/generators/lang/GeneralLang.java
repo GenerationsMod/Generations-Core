@@ -26,6 +26,7 @@ public class GeneralLang extends LanguageProvider {
         addBlockEntries(GenerationsBlocks.ULTRA_BLOCKS, this::getNameGens);
         addBlockEntries(GenerationsBlocks.POKEBRICKS, this::getPokeBrickName);
         addBlockEntries(GenerationsBlocks.MARBLE, this::getNameGens);
+        addBlockEntries(GenerationsBlocks.STONE, this::getNameGens);
         addBlockEntries(GenerationsDecorationBlocks.DECORATIONS, this::getNameGens);
         GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
         GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
