@@ -27,7 +27,6 @@ subprojects {
 
         compileOnly("org.jetbrains:annotations:24.0.1")
     }
-
     loom.silentMojangMappingsLicense()
 }
 
@@ -39,6 +38,7 @@ allprojects {
 
     version = project.properties["mod_version"] as String
     group = project.properties["maven_group"] as String
+    base.archivesName.set(project.properties["archives_base_name"] as String)
 
     tasks.withType<JavaCompile>().configureEach {
         options.encoding = "UTF-8"

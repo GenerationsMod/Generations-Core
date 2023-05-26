@@ -59,7 +59,7 @@ public class TagsDatagen {
                 Field material = ObfuscationReflectionHelper.findField(BlockBehaviour.class, "material");
                 material.setAccessible(true);
                 try {
-                    if (material.get(block)  == Material.STONE)
+                    if (material.get(block) == Material.STONE)
                         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                 } catch (IllegalAccessException e) {
                     throw new RuntimeException(e);
@@ -98,6 +98,15 @@ public class TagsDatagen {
                     GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()
             );
 
+            this.tag(BlockTags.DIRT).add(
+                    GenerationsBlocks.POKE_DIRT.get(),
+                    GenerationsBlocks.ULTRA_SAND.get(),
+                    GenerationsBlocks.RICH_SOIL_1.get(),
+                    GenerationsBlocks.RICH_SOIL_2.get(),
+                    GenerationsBlocks.RICH_SOIL_3.get(),
+                    GenerationsBlocks.RICH_SOIL_4.get()
+            );
+            
             this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                     GenerationsBlocks.POKE_GRASS.get(),
                     GenerationsBlocks.POKE_DIRT.get(),
@@ -215,6 +224,22 @@ public class TagsDatagen {
             this.tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)
                     .addTag(GenerationsBlockTags.POKEBRICKS).addTag(GenerationsBlockTags.GENERATIONSORES).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
             this.tag(BlockTags.NEEDS_IRON_TOOL).addTag(GenerationsBlockTags.GENERATIONSORES);
+            this.tag(BlockTags.NEEDS_STONE_TOOL).add(
+                    GenerationsBlocks.RAW_ALUMINUM_BLOCK.get(),
+                    GenerationsBlocks.ALUMINUM_BLOCK.get(),
+                    GenerationsBlocks.SAPPHIRE_BLOCK.get(),
+                    GenerationsBlocks.SAPPHIRE_SLAB.get(),
+                    GenerationsBlocks.SAPPHIRE_STAIRS.get(),
+                    GenerationsBlocks.SAPPHIRE_WALL.get(),
+                    GenerationsBlocks.RUBY_BLOCK.get(),
+                    GenerationsBlocks.RUBY_SLAB.get(),
+                    GenerationsBlocks.RUBY_STAIRS.get(),
+                    GenerationsBlocks.RUBY_WALL.get(),
+                    GenerationsBlocks.CRYSTAL_BLOCK.get(),
+                    GenerationsBlocks.CRYSTAL_SLAB.get(),
+                    GenerationsBlocks.CRYSTAL_STAIRS.get(),
+                    GenerationsBlocks.CRYSTAL_WALL.get(),
+                    GenerationsBlocks.SILICON_BLOCK.get());
         }
 
         private void EasyBlockTags(Block object) {
@@ -250,9 +275,10 @@ public class TagsDatagen {
             this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
             this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
             //this.copy(BlockTags.FENCES, ItemTags.FENCES);
-            //this.copy(BlockTags.DIRT, ItemTags.DIRT);
+            this.copy(BlockTags.DIRT, ItemTags.DIRT);
             this.copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS);
             this.tag(ItemTags.LOGS).addTag(GenerationsItemTags.ULTRA_DARK_LOGS).addTag(GenerationsItemTags.ULTRA_JUNGLE_LOGS).addTag(GenerationsItemTags.GHOST_LOGS);
+            this.tag(ItemTags.LOGS_THAT_BURN).addTag(GenerationsItemTags.ULTRA_DARK_LOGS).addTag(GenerationsItemTags.ULTRA_JUNGLE_LOGS).addTag(GenerationsItemTags.GHOST_LOGS);
             this.copy(GenerationsBlockTags.ULTRA_DARK_LOGS, GenerationsItemTags.ULTRA_DARK_LOGS);
             this.copy(GenerationsBlockTags.ULTRA_JUNGLE_LOGS, GenerationsItemTags.ULTRA_JUNGLE_LOGS);
             this.copy(GenerationsBlockTags.GHOST_LOGS, GenerationsItemTags.GHOST_LOGS);
@@ -328,6 +354,12 @@ public class TagsDatagen {
                     GenerationsItems.ULTRA_WALKMON.get(),
                     GenerationsItems.MASTER_WALKMON.get()
             );
+
+            this.tag(ItemTags.BOATS).add(GenerationsItems.GHOST_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_DARK_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get());
+            this.tag(ItemTags.CHEST_BOATS).add(GenerationsItems.GHOST_CHEST_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get());
+
+            this.tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE.get().asItem()).add(GenerationsBlocks.VOLCANIC_COBBLESTONE.get().asItem());
+
 
             GenerationsItems.ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
         }
