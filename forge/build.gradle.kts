@@ -60,15 +60,18 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
-    modApi("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")
+    modApi(include("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")!!)
 
-    forgeRuntimeLibrary(include("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
-    forgeRuntimeLibrary(include("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
-    forgeRuntimeLibrary(include("org.apache.commons", "commons-compress", "${project.properties["rareCandyCommonCompress"]}"))!!
-    forgeRuntimeLibrary(include("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!
-    forgeRuntimeLibrary(include("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
-    forgeRuntimeLibrary(include("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
-    forgeRuntimeLibrary(include("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
+    forgeRuntimeLibrary("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
+    forgeRuntimeLibrary("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
+//    forgeRuntimeLibrary(include("org.apache.commons", "commons-compress", "${project.properties["rareCandyCommonCompress"]}"))!!
+    forgeRuntimeLibrary("shadowCommon"("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!
+    forgeRuntimeLibrary("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
+    forgeRuntimeLibrary("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
+    forgeRuntimeLibrary("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
+    forgeRuntimeLibrary("shadowCommon"("com.fasterxml.jackson.core:jackson-databind:2.15.1")!!)
+    forgeRuntimeLibrary("shadowCommon"("com.fasterxml.jackson.core:jackson-annotations:2.15.1")!!)
+    forgeRuntimeLibrary("shadowCommon"("com.fasterxml.jackson.core:jackson-core:2.15.1")!!)
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
