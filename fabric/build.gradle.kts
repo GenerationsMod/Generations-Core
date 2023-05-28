@@ -35,16 +35,15 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
-    include(implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false})
-
-    include(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")!!)
-    include(implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")!!)
-    include(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){ isTransitive = false })
-    include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")!!)
-    include(implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")!!)
-    include(implementation("com.fasterxml.jackson.core:jackson-databind:2.15.1")!!)
-    include(implementation("com.fasterxml.jackson.core:jackson-annotations:2.15.1")!!)
-    include(implementation("com.fasterxml.jackson.core:jackson-core:2.15.1")!!)
+    implementation("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
+    implementation("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
+    implementation("shadowCommon"("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!
+    implementation("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
+    implementation("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
+    implementation("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
+    implementation("shadowCommon"("com.fasterxml.jackson.core:jackson-databind:2.15.1")!!)
+    implementation("shadowCommon"("com.fasterxml.jackson.core:jackson-annotations:2.15.1")!!)
+    implementation("shadowCommon"("com.fasterxml.jackson.core:jackson-core:2.15.1")!!)
 
     include(modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")!!)
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
@@ -52,6 +51,7 @@ dependencies {
 }
 
 tasks {
+    base.archivesName.set(base.archivesName.get() + "-Fabric")
     processResources {
         inputs.property("version", project.version)
 

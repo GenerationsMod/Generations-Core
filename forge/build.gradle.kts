@@ -72,6 +72,7 @@ dependencies {
 }
 
 tasks {
+    base.archivesName.set(base.archivesName.get() + "-Forge")
     processResources {
         inputs.property("version", project.version)
 

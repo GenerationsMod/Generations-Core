@@ -83,7 +83,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     private void reassignStateDefinition() {
-        StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<Block, BlockState>(this);
+        StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
         this.createBlockStateDefinition(builder);
         this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
     }
@@ -164,7 +164,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
+    public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
         if(canSurvive(state, level, currentPos)) return state;
         else return Blocks.AIR.defaultBlockState();
     }

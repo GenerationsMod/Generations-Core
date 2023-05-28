@@ -170,7 +170,7 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
+    public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
         if(canSurvive(state, level, currentPos)) return state;
         else return Blocks.AIR.defaultBlockState();
     }
