@@ -11,11 +11,6 @@ sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 
 repositories {
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-    maven("https://jitpack.io") // BinarySMD
-    maven {
-        name = "generationsMavenSnapshots"
-        url = uri("https://maven.generations.gg/snapshots")
-    }
     maven("https://maven.bai.lol")
 }
 
@@ -38,11 +33,9 @@ dependencies {
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Common"
-            from(components["java"])
-        }
+    publications.create<MavenPublication>("mavenCommon") {
+        artifactId = "${project.properties["archives_base_name"]}" + "-Common"
+        from(components["java"])
     }
 
     repositories {

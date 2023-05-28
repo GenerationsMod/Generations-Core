@@ -40,14 +40,8 @@ loom {
 
 repositories {
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
-    maven("https://cursemaven.com") {
-        content {
-            includeGroup("curse.maven")
-        }
-    }
+    maven("https://cursemaven.com").content { includeGroup("curse.maven") }
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-    maven("https://jitpack.io") // BinarySMD
-    maven("https://maven.generations.gg/snapshots")
     maven("https://maven.bai.lol")
 }
 
@@ -64,7 +58,6 @@ dependencies {
 
     forgeRuntimeLibrary("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
-//    forgeRuntimeLibrary(include("org.apache.commons", "commons-compress", "${project.properties["rareCandyCommonCompress"]}"))!!
     forgeRuntimeLibrary("shadowCommon"("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!
     forgeRuntimeLibrary("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
@@ -115,11 +108,9 @@ components {
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
-            from(components["java"])
-        }
+    publications.create<MavenPublication>("mavenCommon") {
+        artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
+        from(components["java"])
     }
 
     repositories {

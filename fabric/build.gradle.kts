@@ -23,8 +23,6 @@ repositories {
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://maven.bai.lol")
-    maven("https://jitpack.io")
-    maven("https://maven.generations.gg/snapshots")
 }
 
 dependencies {
@@ -40,7 +38,6 @@ dependencies {
     include(implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false})
 
     include(implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")!!)
-//    include(implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}")!!)
     include(implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")!!)
     include(implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){ isTransitive = false })
     include(implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")!!)
@@ -90,11 +87,9 @@ components {
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("mavenCommon") {
-            artifactId = "${project.properties["archives_base_name"]}" + "-Fabric"
-            from(components["java"])
-        }
+    publications.create<MavenPublication>("mavenCommon") {
+        artifactId = "${project.properties["archives_base_name"]}" + "-Fabric"
+        from(components["java"])
     }
 
     repositories {
