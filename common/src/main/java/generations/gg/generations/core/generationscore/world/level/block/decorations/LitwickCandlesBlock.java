@@ -26,7 +26,7 @@ public class LitwickCandlesBlock extends GenericRotatableModelBlock<GenericModel
             Shapes.box(0.3125, 0, 0.515625, 0.65625, 0.25, 0.859375),
             Shapes.box(0.34375, 0, 0.546875, 0.625, 0.5125, 0.828125))
                     .reduce(Shapes.empty(), (a,b) -> Shapes.join(a, b, BooleanOp.OR)),
-            Direction.NORTH);
+            Direction.SOUTH);
     public LitwickCandlesBlock(BlockBehaviour.Properties properties) {
         super(properties, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, GenerationsBlockEntityModels.LITWICK_CANDLES);
     }

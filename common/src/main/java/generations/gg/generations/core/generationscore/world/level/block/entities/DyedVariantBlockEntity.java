@@ -25,14 +25,12 @@ public abstract class DyedVariantBlockEntity extends ModelProvidingBlockEntity i
     }
 
     @Override
-    protected void saveAdditional(CompoundTag nbt) {
-        super.saveAdditional(nbt);
+    protected void writeNbt(CompoundTag nbt) {
         nbt.putString("color", color.getSerializedName());
     }
 
     @Override
-    public void load(CompoundTag nbt) {
-        super.load(nbt);
+    protected void readNbt(CompoundTag nbt) {
         color = DyeColor.byName(nbt.getString("color"), DyeColor.RED);
     }
 
