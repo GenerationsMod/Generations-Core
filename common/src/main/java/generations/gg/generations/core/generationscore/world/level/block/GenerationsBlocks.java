@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.world.item.creativetab.Ge
 import generations.gg.generations.core.generationscore.world.level.block.decorations.PokecenterScarletSignBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.grower.GenerationsTreeGrower;
+import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import generations.gg.generations.core.generationscore.world.level.levelgen.GenerationsFeatures;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -391,112 +392,112 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> ULTRA_WHITE_STAIRS = registerUltraBlock("ultra_white_stairs", () -> new StairBlock(ULTRA_WHITE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_WHITE_SLAB = registerUltraBlock("ultra_white_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_WHITE_WALL = registerUltraBlock("ultra_white_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_WHITE_BUTTON = registerUltraBlock("ultra_white_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_WHITE_PRESSURE_PLATE = registerUltraBlock("ultra_white_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_WHITE_BUTTON = registerUltraBlock("ultra_white_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_WHITE_PRESSURE_PLATE = registerUltraBlock("ultra_white_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_LIGHT_GRAY = registerUltraBlock("ultra_light_gray", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_LIGHT_GRAY_STAIRS = registerUltraBlock("ultra_light_gray_stairs", () -> new StairBlock(ULTRA_LIGHT_GRAY.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_LIGHT_GRAY_SLAB = registerUltraBlock("ultra_light_gray_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_LIGHT_GRAY_WALL = registerUltraBlock("ultra_light_gray_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_LIGHT_GRAY_BUTTON = registerUltraBlock("ultra_light_gray_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIGHT_GRAY_PRESSURE_PLATE = registerUltraBlock("ultra_light_gray_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_LIGHT_GRAY_BUTTON = registerUltraBlock("ultra_light_gray_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIGHT_GRAY_PRESSURE_PLATE = registerUltraBlock("ultra_light_gray_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_GRAY = registerUltraBlock("ultra_gray", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_GRAY_STAIRS = registerUltraBlock("ultra_gray_stairs", () -> new StairBlock(ULTRA_GRAY.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_GRAY_SLAB = registerUltraBlock("ultra_gray_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_GRAY_WALL = registerUltraBlock("ultra_gray_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_GRAY_BUTTON = registerUltraBlock("ultra_gray_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_GRAY_PRESSURE_PLATE = registerUltraBlock("ultra_gray_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_GRAY_BUTTON = registerUltraBlock("ultra_gray_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_GRAY_PRESSURE_PLATE = registerUltraBlock("ultra_gray_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_BLACK = registerUltraBlock("ultra_black", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_BLACK_STAIRS = registerUltraBlock("ultra_black_stairs", () -> new StairBlock(ULTRA_BLACK.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_BLACK_SLAB = registerUltraBlock("ultra_black_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_BLACK_WALL = registerUltraBlock("ultra_black_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_BLACK_BUTTON = registerUltraBlock("ultra_black_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BLACK_PRESSURE_PLATE = registerUltraBlock("ultra_black_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_BLACK_BUTTON = registerUltraBlock("ultra_black_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BLACK_PRESSURE_PLATE = registerUltraBlock("ultra_black_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_BROWN = registerUltraBlock("ultra_brown", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_BROWN_STAIRS = registerUltraBlock("ultra_brown_stairs", () -> new StairBlock(ULTRA_BROWN.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_BROWN_SLAB = registerUltraBlock("ultra_brown_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_BROWN_WALL = registerUltraBlock("ultra_brown_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_BROWN_BUTTON = registerUltraBlock("ultra_brown_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BROWN_PRESSURE_PLATE = registerUltraBlock("ultra_brown_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_BROWN_BUTTON = registerUltraBlock("ultra_brown_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BROWN_PRESSURE_PLATE = registerUltraBlock("ultra_brown_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_RED = registerUltraBlock("ultra_red", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_RED_STAIRS = registerUltraBlock("ultra_red_stairs", () -> new StairBlock(ULTRA_RED.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_RED_SLAB = registerUltraBlock("ultra_red_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_RED_WALL = registerUltraBlock("ultra_red_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_RED_BUTTON = registerUltraBlock("ultra_red_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_RED_PRESSURE_PLATE = registerUltraBlock("ultra_red_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_RED_BUTTON = registerUltraBlock("ultra_red_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_RED_PRESSURE_PLATE = registerUltraBlock("ultra_red_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_ORANGE = registerUltraBlock("ultra_orange", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_ORANGE_STAIRS = registerUltraBlock("ultra_orange_stairs", () -> new StairBlock(ULTRA_ORANGE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_ORANGE_SLAB = registerUltraBlock("ultra_orange_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_ORANGE_WALL = registerUltraBlock("ultra_orange_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_ORANGE_BUTTON = registerUltraBlock("ultra_orange_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_ORANGE_PRESSURE_PLATE = registerUltraBlock("ultra_orange_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_ORANGE_BUTTON = registerUltraBlock("ultra_orange_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_ORANGE_PRESSURE_PLATE = registerUltraBlock("ultra_orange_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_YELLOW = registerUltraBlock("ultra_yellow", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_YELLOW_STAIRS = registerUltraBlock("ultra_yellow_stairs", () -> new StairBlock(ULTRA_YELLOW.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_YELLOW_SLAB = registerUltraBlock("ultra_yellow_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_YELLOW_WALL = registerUltraBlock("ultra_yellow_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_YELLOW_BUTTON = registerUltraBlock("ultra_yellow_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_YELLOW_PRESSURE_PLATE = registerUltraBlock("ultra_yellow_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_YELLOW_BUTTON = registerUltraBlock("ultra_yellow_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_YELLOW_PRESSURE_PLATE = registerUltraBlock("ultra_yellow_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_LIME = registerUltraBlock("ultra_lime", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_LIME_STAIRS = registerUltraBlock("ultra_lime_stairs", () -> new StairBlock(ULTRA_LIME.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_LIME_SLAB = registerUltraBlock("ultra_lime_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_LIME_WALL = registerUltraBlock("ultra_lime_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_LIME_BUTTON = registerUltraBlock("ultra_lime_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIME_PRESSURE_PLATE = registerUltraBlock("ultra_lime_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_LIME_BUTTON = registerUltraBlock("ultra_lime_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIME_PRESSURE_PLATE = registerUltraBlock("ultra_lime_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_GREEN = registerUltraBlock("ultra_green", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_GREEN_STAIRS = registerUltraBlock("ultra_green_stairs", () -> new StairBlock(ULTRA_GREEN.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_GREEN_SLAB = registerUltraBlock("ultra_green_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_GREEN_WALL = registerUltraBlock("ultra_green_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_GREEN_BUTTON = registerUltraBlock("ultra_green_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_GREEN_PRESSURE_PLATE = registerUltraBlock("ultra_green_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_GREEN_BUTTON = registerUltraBlock("ultra_green_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_GREEN_PRESSURE_PLATE = registerUltraBlock("ultra_green_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_CYAN = registerUltraBlock("ultra_cyan", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_CYAN_STAIRS = registerUltraBlock("ultra_cyan_stairs", () -> new StairBlock(ULTRA_CYAN.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_CYAN_SLAB = registerUltraBlock("ultra_cyan_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_CYAN_WALL = registerUltraBlock("ultra_cyan_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_CYAN_BUTTON = registerUltraBlock("ultra_cyan_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_CYAN_PRESSURE_PLATE = registerUltraBlock("ultra_cyan_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_CYAN_BUTTON = registerUltraBlock("ultra_cyan_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_CYAN_PRESSURE_PLATE = registerUltraBlock("ultra_cyan_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_LIGHT_BLUE = registerUltraBlock("ultra_light_blue", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_LIGHT_BLUE_STAIRS = registerUltraBlock("ultra_light_blue_stairs", () -> new StairBlock(ULTRA_LIGHT_BLUE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_LIGHT_BLUE_SLAB = registerUltraBlock("ultra_light_blue_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_LIGHT_BLUE_WALL = registerUltraBlock("ultra_light_blue_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_LIGHT_BLUE_BUTTON = registerUltraBlock("ultra_light_blue_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIGHT_BLUE_PRESSURE_PLATE = registerUltraBlock("ultra_light_blue_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_LIGHT_BLUE_BUTTON = registerUltraBlock("ultra_light_blue_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIGHT_BLUE_PRESSURE_PLATE = registerUltraBlock("ultra_light_blue_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_BLUE = registerUltraBlock("ultra_blue", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_BLUE_STAIRS = registerUltraBlock("ultra_blue_stairs", () -> new StairBlock(ULTRA_BLUE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_BLUE_SLAB = registerUltraBlock("ultra_blue_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_BLUE_WALL = registerUltraBlock("ultra_blue_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_BLUE_BUTTON = registerUltraBlock("ultra_blue_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BLUE_PRESSURE_PLATE = registerUltraBlock("ultra_blue_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_BLUE_BUTTON = registerUltraBlock("ultra_blue_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BLUE_PRESSURE_PLATE = registerUltraBlock("ultra_blue_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_PURPLE = registerUltraBlock("ultra_purple", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_PURPLE_STAIRS = registerUltraBlock("ultra_purple_stairs", () -> new StairBlock(ULTRA_PURPLE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_PURPLE_SLAB = registerUltraBlock("ultra_purple_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_PURPLE_WALL = registerUltraBlock("ultra_purple_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_PURPLE_BUTTON = registerUltraBlock("ultra_purple_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_PURPLE_PRESSURE_PLATE = registerUltraBlock("ultra_purple_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_PURPLE_BUTTON = registerUltraBlock("ultra_purple_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_PURPLE_PRESSURE_PLATE = registerUltraBlock("ultra_purple_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
     public static final RegistrySupplier<Block> ULTRA_MAGENTA = registerUltraBlock("ultra_magenta", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_MAGENTA_STAIRS = registerUltraBlock("ultra_magenta_stairs", () -> new StairBlock(ULTRA_MAGENTA.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_MAGENTA_SLAB = registerUltraBlock("ultra_magenta_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_MAGENTA_WALL = registerUltraBlock("ultra_magenta_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_MAGENTA_BUTTON = registerUltraBlock("ultra_magenta_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_MAGENTA_PRESSURE_PLATE = registerUltraBlock("ultra_magenta_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_MAGENTA_BUTTON = registerUltraBlock("ultra_magenta_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_MAGENTA_PRESSURE_PLATE = registerUltraBlock("ultra_magenta_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
     public static final RegistrySupplier<Block> ULTRA_PINK = registerUltraBlock("ultra_pink", () -> new Block(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<StairBlock> ULTRA_PINK_STAIRS = registerUltraBlock("ultra_pink_stairs", () -> new StairBlock(ULTRA_PINK.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<SlabBlock> ULTRA_PINK_SLAB = registerUltraBlock("ultra_pink_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
     public static final RegistrySupplier<WallBlock> ULTRA_PINK_WALL = registerUltraBlock("ultra_pink_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_PINK_BUTTON = registerUltraBlock("ultra_pink_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_PINK_PRESSURE_PLATE = registerUltraBlock("ultra_pink_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ULTRA_PINK_BUTTON = registerUltraBlock("ultra_pink_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ULTRA_PINK_PRESSURE_PLATE = registerUltraBlock("ultra_pink_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
 
 
     public static final RegistrySupplier<Block> ULTRA_SAND = registerBlockItem("ultra_sand", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
@@ -510,120 +511,120 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> WHITE_MARBLE_STAIRS = registerMarble("white_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(WHITE_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> WHITE_MARBLE_SLAB = registerMarble("white_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> WHITE_MARBLE_WALL = registerMarble("white_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> WHITE_MARBLE_BUTTON = registerMarble("white_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(WHITE_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> WHITE_MARBLE_PRESSURE_PLATE = registerMarble("white_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(WHITE_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> WHITE_MARBLE_BUTTON = registerMarble("white_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(WHITE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> WHITE_MARBLE_PRESSURE_PLATE = registerMarble("white_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(WHITE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> LIGHT_GRAY_MARBLE = registerMarble("light_gray_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> LIGHT_GRAY_MARBLE_STAIRS = registerMarble("light_gray_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> LIGHT_GRAY_MARBLE_SLAB = registerMarble("light_gray_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> LIGHT_GRAY_MARBLE_WALL = registerMarble("light_gray_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> LIGHT_GRAY_MARBLE_BUTTON = registerMarble("light_gray_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIGHT_GRAY_MARBLE_PRESSURE_PLATE = registerMarble("light_gray_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> LIGHT_GRAY_MARBLE_BUTTON = registerMarble("light_gray_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> LIGHT_GRAY_MARBLE_PRESSURE_PLATE = registerMarble("light_gray_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> GRAY_MARBLE = registerMarble("gray_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> GRAY_MARBLE_STAIRS = registerMarble("gray_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(GRAY_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> GRAY_MARBLE_SLAB = registerMarble("gray_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRAY_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> GRAY_MARBLE_WALL = registerMarble("gray_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRAY_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> GRAY_MARBLE_BUTTON = registerMarble("gray_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GRAY_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> GRAY_MARBLE_PRESSURE_PLATE = registerMarble("gray_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GRAY_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> GRAY_MARBLE_BUTTON = registerMarble("gray_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GRAY_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> GRAY_MARBLE_PRESSURE_PLATE = registerMarble("gray_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GRAY_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> BLACK_MARBLE = registerMarble("black_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> BLACK_MARBLE_STAIRS = registerMarble("black_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BLACK_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> BLACK_MARBLE_SLAB = registerMarble("black_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLACK_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> BLACK_MARBLE_WALL = registerMarble("black_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLACK_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> BLACK_MARBLE_BUTTON = registerMarble("black_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLACK_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BLACK_MARBLE_PRESSURE_PLATE = registerMarble("black_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLACK_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> BLACK_MARBLE_BUTTON = registerMarble("black_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLACK_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> BLACK_MARBLE_PRESSURE_PLATE = registerMarble("black_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLACK_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> BROWN_MARBLE = registerMarble("brown_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> BROWN_MARBLE_STAIRS = registerMarble("brown_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BROWN_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> BROWN_MARBLE_SLAB = registerMarble("brown_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BROWN_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> BROWN_MARBLE_WALL = registerMarble("brown_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BROWN_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> BROWN_MARBLE_BUTTON = registerMarble("brown_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BROWN_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BROWN_MARBLE_PRESSURE_PLATE = registerMarble("brown_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BROWN_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> BROWN_MARBLE_BUTTON = registerMarble("brown_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BROWN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> BROWN_MARBLE_PRESSURE_PLATE = registerMarble("brown_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BROWN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> RED_MARBLE = registerMarble("red_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> RED_MARBLE_STAIRS = registerMarble("red_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(RED_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> RED_MARBLE_SLAB = registerMarble("red_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(RED_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> RED_MARBLE_WALL = registerMarble("red_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(RED_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> RED_MARBLE_BUTTON = registerMarble("red_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(RED_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> RED_MARBLE_PRESSURE_PLATE = registerMarble("red_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(RED_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> RED_MARBLE_BUTTON = registerMarble("red_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(RED_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> RED_MARBLE_PRESSURE_PLATE = registerMarble("red_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(RED_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> ORANGE_MARBLE = registerMarble("orange_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> ORANGE_MARBLE_STAIRS = registerMarble("orange_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(ORANGE_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> ORANGE_MARBLE_SLAB = registerMarble("orange_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ORANGE_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> ORANGE_MARBLE_WALL = registerMarble("orange_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ORANGE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> ORANGE_MARBLE_BUTTON = registerMarble("orange_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(ORANGE_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ORANGE_MARBLE_PRESSURE_PLATE = registerMarble("orange_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(ORANGE_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ORANGE_MARBLE_BUTTON = registerMarble("orange_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(ORANGE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ORANGE_MARBLE_PRESSURE_PLATE = registerMarble("orange_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(ORANGE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> YELLOW_MARBLE = registerMarble("yellow_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> YELLOW_MARBLE_STAIRS = registerMarble("yellow_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(YELLOW_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> YELLOW_MARBLE_SLAB = registerMarble("yellow_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(YELLOW_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> YELLOW_MARBLE_WALL = registerMarble("yellow_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(YELLOW_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> YELLOW_MARBLE_BUTTON = registerMarble("yellow_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(YELLOW_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> YELLOW_MARBLE_PRESSURE_PLATE = registerMarble("yellow_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(YELLOW_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> YELLOW_MARBLE_BUTTON = registerMarble("yellow_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(YELLOW_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> YELLOW_MARBLE_PRESSURE_PLATE = registerMarble("yellow_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(YELLOW_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> LIME_MARBLE = registerMarble("lime_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> LIME_MARBLE_STAIRS = registerMarble("lime_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIME_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> LIME_MARBLE_SLAB = registerMarble("lime_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIME_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> LIME_MARBLE_WALL = registerMarble("lime_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIME_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> LIME_MARBLE_BUTTON = registerMarble("lime_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIME_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIME_MARBLE_PRESSURE_PLATE = registerMarble("lime_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIME_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> LIME_MARBLE_BUTTON = registerMarble("lime_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIME_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> LIME_MARBLE_PRESSURE_PLATE = registerMarble("lime_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIME_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> GREEN_MARBLE = registerMarble("green_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> GREEN_MARBLE_STAIRS = registerMarble("green_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(GREEN_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> GREEN_MARBLE_SLAB = registerMarble("green_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GREEN_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> GREEN_MARBLE_WALL = registerMarble("green_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GREEN_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> GREEN_MARBLE_BUTTON = registerMarble("green_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GREEN_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> GREEN_MARBLE_PRESSURE_PLATE = registerMarble("green_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GREEN_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> GREEN_MARBLE_BUTTON = registerMarble("green_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GREEN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> GREEN_MARBLE_PRESSURE_PLATE = registerMarble("green_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GREEN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> CYAN_MARBLE = registerMarble("cyan_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> CYAN_MARBLE_STAIRS = registerMarble("cyan_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(CYAN_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> CYAN_MARBLE_SLAB = registerMarble("cyan_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CYAN_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> CYAN_MARBLE_WALL = registerMarble("cyan_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CYAN_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> CYAN_MARBLE_BUTTON = registerMarble("cyan_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(CYAN_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> CYAN_MARBLE_PRESSURE_PLATE = registerMarble("cyan_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CYAN_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> CYAN_MARBLE_BUTTON = registerMarble("cyan_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(CYAN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> CYAN_MARBLE_PRESSURE_PLATE = registerMarble("cyan_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CYAN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> POWDER_BLUE_MARBLE = registerMarble("powder_blue_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> POWDER_BLUE_MARBLE_STAIRS = registerMarble("powder_blue_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> POWDER_BLUE_MARBLE_SLAB = registerMarble("powder_blue_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> POWDER_BLUE_MARBLE_WALL = registerMarble("powder_blue_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> POWDER_BLUE_MARBLE_BUTTON = registerMarble("powder_blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> POWDER_BLUE_MARBLE_PRESSURE_PLATE = registerMarble("powder_blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> POWDER_BLUE_MARBLE_BUTTON = registerMarble("powder_blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> POWDER_BLUE_MARBLE_PRESSURE_PLATE = registerMarble("powder_blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> LIGHT_BLUE_MARBLE = registerMarble("light_blue_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> LIGHT_BLUE_MARBLE_STAIRS = registerMarble("light_blue_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> LIGHT_BLUE_MARBLE_SLAB = registerMarble("light_blue_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> LIGHT_BLUE_MARBLE_WALL = registerMarble("light_blue_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> LIGHT_BLUE_MARBLE_BUTTON = registerMarble("light_blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIGHT_BLUE_MARBLE_PRESSURE_PLATE = registerMarble("light_blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> LIGHT_BLUE_MARBLE_BUTTON = registerMarble("light_blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> LIGHT_BLUE_MARBLE_PRESSURE_PLATE = registerMarble("light_blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> BLUE_MARBLE = registerMarble("blue_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> BLUE_MARBLE_STAIRS = registerMarble("blue_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BLUE_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> BLUE_MARBLE_SLAB = registerMarble("blue_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLUE_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> BLUE_MARBLE_WALL = registerMarble("blue_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLUE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> BLUE_MARBLE_BUTTON = registerMarble("blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLUE_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BLUE_MARBLE_PRESSURE_PLATE = registerMarble("blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLUE_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> BLUE_MARBLE_BUTTON = registerMarble("blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> BLUE_MARBLE_PRESSURE_PLATE = registerMarble("blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> PURPLE_MARBLE = registerMarble("purple_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> PURPLE_MARBLE_STAIRS = registerMarble("purple_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(PURPLE_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> PURPLE_MARBLE_SLAB = registerMarble("purple_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PURPLE_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> PURPLE_MARBLE_WALL = registerMarble("purple_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(PURPLE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> PURPLE_MARBLE_BUTTON = registerMarble("purple_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PURPLE_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> PURPLE_MARBLE_PRESSURE_PLATE = registerMarble("purple_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PURPLE_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> PURPLE_MARBLE_BUTTON = registerMarble("purple_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PURPLE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> PURPLE_MARBLE_PRESSURE_PLATE = registerMarble("purple_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PURPLE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> MAGENTA_MARBLE = registerMarble("magenta_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> MAGENTA_MARBLE_STAIRS = registerMarble("magenta_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> MAGENTA_MARBLE_SLAB = registerMarble("magenta_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> MAGENTA_MARBLE_WALL = registerMarble("magenta_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> MAGENTA_MARBLE_BUTTON = registerMarble("magenta_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> MAGENTA_MARBLE_PRESSURE_PLATE = registerMarble("magenta_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> MAGENTA_MARBLE_BUTTON = registerMarble("magenta_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> MAGENTA_MARBLE_PRESSURE_PLATE = registerMarble("magenta_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     public static final RegistrySupplier<Block> PINK_MARBLE = registerMarble("pink_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> PINK_MARBLE_STAIRS = registerMarble("pink_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(PINK_MARBLE.get())));
     public static final RegistrySupplier<SlabBlock> PINK_MARBLE_SLAB = registerMarble("pink_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PINK_MARBLE.get())));
     public static final RegistrySupplier<WallBlock> PINK_MARBLE_WALL = registerMarble("pink_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(PINK_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> PINK_MARBLE_BUTTON = registerMarble("pink_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PINK_MARBLE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> PINK_MARBLE_PRESSURE_PLATE = registerMarble("pink_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PINK_MARBLE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> PINK_MARBLE_BUTTON = registerMarble("pink_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PINK_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> PINK_MARBLE_PRESSURE_PLATE = registerMarble("pink_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PINK_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
 
     /**
      * Unown Blocks
@@ -698,8 +699,8 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> CHARGE_STONE_STAIRS = registerStone("charge_stone_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(CHARGE_STONE.get())));
     public static final RegistrySupplier<SlabBlock> CHARGE_STONE_SLAB = registerStone("charge_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CHARGE_STONE.get())));
     public static final RegistrySupplier<WallBlock> CHARGE_STONE_WALL = registerStone("charge_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CHARGE_STONE.get())));
-    public static final RegistrySupplier<PressurePlateBlock> CHARGE_STONE_PRESSURE_PLATE = registerStone("charge_stone_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CHARGE_STONE.get()), BlockSetType.STONE));
-    public static final RegistrySupplier<ButtonBlock> CHARGE_STONE_BUTTON = registerStone("charge_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(CHARGE_STONE.get()), BlockSetType.STONE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> CHARGE_STONE_PRESSURE_PLATE = registerStone("charge_stone_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CHARGE_STONE.get()), GenerationsBlockSetTypes.CHARGE_STONE));
+    public static final RegistrySupplier<ButtonBlock> CHARGE_STONE_BUTTON = registerStone("charge_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(CHARGE_STONE.get()), GenerationsBlockSetTypes.CHARGE_STONE, 20, false));
 
     //ChargeCobbleStone
     public static final RegistrySupplier<Block> CHARGE_COBBLESTONE = registerStone("charge_cobblestone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
@@ -753,8 +754,8 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> VOLCANIC_STONE_STAIRS = registerStone("volcanic_stone_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
     public static final RegistrySupplier<SlabBlock> VOLCANIC_STONE_SLAB = registerStone("volcanic_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
     public static final RegistrySupplier<WallBlock> VOLCANIC_STONE_WALL = registerStone("volcanic_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get())));
-    public static final RegistrySupplier<ButtonBlock> VOLCANIC_STONE_BUTTON = registerStone("volcanic_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> VOLCANIC_STONE_PRESSURE_PLATE = registerStone("volcanic_stone_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(VOLCANIC_STONE.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> VOLCANIC_STONE_BUTTON = registerStone("volcanic_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(VOLCANIC_STONE.get()), GenerationsBlockSetTypes.VOLCANIC_STONE, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> VOLCANIC_STONE_PRESSURE_PLATE = registerStone("volcanic_stone_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(VOLCANIC_STONE.get()), GenerationsBlockSetTypes.VOLCANIC_STONE));
 
     //Volcanic CobbleStone
     public static final RegistrySupplier<Block> VOLCANIC_COBBLESTONE = registerStone("volcanic_cobblestone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
@@ -897,8 +898,8 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> ENCHANTED_OBSIDIAN_STAIRS = registerBlockItem("enchanted_obsidian_stairs", () -> new StairBlock(Blocks.OBSIDIAN.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
     public static final RegistrySupplier<SlabBlock> ENCHANTED_OBSIDIAN_SLAB = registerBlockItem("enchanted_obsidian_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
     public static final RegistrySupplier<WallBlock> ENCHANTED_OBSIDIAN_WALL = registerBlockItem("enchanted_obsidian_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
-    public static final RegistrySupplier<ButtonBlock> ENCHANTED_OBSIDIAN_BUTTON = registerBlockItem("enchanted_obsidian_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ENCHANTED_OBSIDIAN_PRESSURE_PLATE = registerBlockItem("enchanted_obsidian_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ENCHANTED_OBSIDIAN_BUTTON = registerBlockItem("enchanted_obsidian_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), GenerationsBlockSetTypes.ULTRA, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ENCHANTED_OBSIDIAN_PRESSURE_PLATE = registerBlockItem("enchanted_obsidian_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), GenerationsBlockSetTypes.ULTRA));
 
     /**
      * Fences and Gates
@@ -919,113 +920,113 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> WHITE_POKE_BRICK_STAIRS = registerPokeBrick("white_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> WHITE_POKE_BRICK_SLAB = registerPokeBrick("white_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> WHITE_POKE_BRICK_WALL = registerPokeBrick("white_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> WHITE_POKE_BRICK_BUTTON = registerPokeBrick("white_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> WHITE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("white_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> WHITE_POKE_BRICK_BUTTON = registerPokeBrick("white_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> WHITE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("white_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> LIGHT_GRAY_POKE_BRICK = registerPokeBrick("light_gray_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> LIGHT_GRAY_POKE_BRICK_STAIRS = registerPokeBrick("light_gray_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> LIGHT_GRAY_POKE_BRICK_SLAB = registerPokeBrick("light_gray_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> LIGHT_GRAY_POKE_BRICK_WALL = registerPokeBrick("light_gray_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> LIGHT_GRAY_POKE_BRICK_BUTTON = registerPokeBrick("light_gray_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIGHT_GRAY_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("light_gray_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> LIGHT_GRAY_POKE_BRICK_BUTTON = registerPokeBrick("light_gray_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> LIGHT_GRAY_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("light_gray_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> GRAY_POKE_BRICK = registerPokeBrick("gray_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> GRAY_POKE_BRICK_STAIRS = registerPokeBrick("gray_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> GRAY_POKE_BRICK_SLAB = registerPokeBrick("gray_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> GRAY_POKE_BRICK_WALL = registerPokeBrick("gray_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> GRAY_POKE_BRICK_BUTTON = registerPokeBrick("gray_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> GRAY_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("gray_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> GRAY_POKE_BRICK_BUTTON = registerPokeBrick("gray_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> GRAY_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("gray_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> BLACK_POKE_BRICK = registerPokeBrick("black_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> BLACK_POKE_BRICK_STAIRS = registerPokeBrick("black_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> BLACK_POKE_BRICK_SLAB = registerPokeBrick("black_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> BLACK_POKE_BRICK_WALL = registerPokeBrick("black_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> BLACK_POKE_BRICK_BUTTON = registerPokeBrick("black_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BLACK_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("black_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> BLACK_POKE_BRICK_BUTTON = registerPokeBrick("black_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> BLACK_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("black_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> BROWN_POKE_BRICK = registerPokeBrick("brown_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> BROWN_POKE_BRICK_STAIRS = registerPokeBrick("brown_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> BROWN_POKE_BRICK_SLAB = registerPokeBrick("brown_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> BROWN_POKE_BRICK_WALL = registerPokeBrick("brown_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> BROWN_POKE_BRICK_BUTTON = registerPokeBrick("brown_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BROWN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("brown_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> BROWN_POKE_BRICK_BUTTON = registerPokeBrick("brown_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> BROWN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("brown_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> RED_POKE_BRICK = registerPokeBrick("red_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> RED_POKE_BRICK_STAIRS = registerPokeBrick("red_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(RED_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> RED_POKE_BRICK_SLAB = registerPokeBrick("red_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(RED_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> RED_POKE_BRICK_WALL = registerPokeBrick("red_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(RED_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> RED_POKE_BRICK_BUTTON = registerPokeBrick("red_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(RED_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> RED_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("red_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(RED_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> RED_POKE_BRICK_BUTTON = registerPokeBrick("red_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(RED_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> RED_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("red_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(RED_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> ORANGE_POKE_BRICK = registerPokeBrick("orange_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> ORANGE_POKE_BRICK_STAIRS = registerPokeBrick("orange_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> ORANGE_POKE_BRICK_SLAB = registerPokeBrick("orange_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> ORANGE_POKE_BRICK_WALL = registerPokeBrick("orange_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> ORANGE_POKE_BRICK_BUTTON = registerPokeBrick("orange_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ORANGE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("orange_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> ORANGE_POKE_BRICK_BUTTON = registerPokeBrick("orange_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> ORANGE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("orange_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> YELLOW_POKE_BRICK = registerPokeBrick("yellow_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> YELLOW_POKE_BRICK_STAIRS = registerPokeBrick("yellow_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> YELLOW_POKE_BRICK_SLAB = registerPokeBrick("yellow_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> YELLOW_POKE_BRICK_WALL = registerPokeBrick("yellow_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> YELLOW_POKE_BRICK_BUTTON = registerPokeBrick("yellow_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> YELLOW_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("yellow_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> YELLOW_POKE_BRICK_BUTTON = registerPokeBrick("yellow_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> YELLOW_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("yellow_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> LIME_POKE_BRICK = registerPokeBrick("lime_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> LIME_POKE_BRICK_STAIRS = registerPokeBrick("lime_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> LIME_POKE_BRICK_SLAB = registerPokeBrick("lime_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> LIME_POKE_BRICK_WALL = registerPokeBrick("lime_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> LIME_POKE_BRICK_BUTTON = registerPokeBrick("lime_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIME_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("lime_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> LIME_POKE_BRICK_BUTTON = registerPokeBrick("lime_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> LIME_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("lime_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> GREEN_POKE_BRICK = registerPokeBrick("green_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> GREEN_POKE_BRICK_STAIRS = registerPokeBrick("green_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> GREEN_POKE_BRICK_SLAB = registerPokeBrick("green_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> GREEN_POKE_BRICK_WALL = registerPokeBrick("green_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> GREEN_POKE_BRICK_BUTTON = registerPokeBrick("green_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> GREEN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("green_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> GREEN_POKE_BRICK_BUTTON = registerPokeBrick("green_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> GREEN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("green_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> CYAN_POKE_BRICK = registerPokeBrick("cyan_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> CYAN_POKE_BRICK_STAIRS = registerPokeBrick("cyan_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> CYAN_POKE_BRICK_SLAB = registerPokeBrick("cyan_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> CYAN_POKE_BRICK_WALL = registerPokeBrick("cyan_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> CYAN_POKE_BRICK_BUTTON = registerPokeBrick("cyan_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> CYAN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("cyan_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> CYAN_POKE_BRICK_BUTTON = registerPokeBrick("cyan_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> CYAN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("cyan_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> LIGHT_BLUE_POKE_BRICK = registerPokeBrick("light_blue_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> LIGHT_BLUE_POKE_BRICK_STAIRS = registerPokeBrick("light_blue_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> LIGHT_BLUE_POKE_BRICK_SLAB = registerPokeBrick("light_blue_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> LIGHT_BLUE_POKE_BRICK_WALL = registerPokeBrick("light_blue_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> LIGHT_BLUE_POKE_BRICK_BUTTON = registerPokeBrick("light_blue_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIGHT_BLUE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("light_blue_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> LIGHT_BLUE_POKE_BRICK_BUTTON = registerPokeBrick("light_blue_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> LIGHT_BLUE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("light_blue_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> BLUE_POKE_BRICK = registerPokeBrick("blue_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> BLUE_POKE_BRICK_STAIRS = registerPokeBrick("blue_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> BLUE_POKE_BRICK_SLAB = registerPokeBrick("blue_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> BLUE_POKE_BRICK_WALL = registerPokeBrick("blue_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> BLUE_POKE_BRICK_BUTTON = registerPokeBrick("blue_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BLUE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("blue_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> BLUE_POKE_BRICK_BUTTON = registerPokeBrick("blue_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> BLUE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("blue_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> PURPLE_POKE_BRICK = registerPokeBrick("purple_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> PURPLE_POKE_BRICK_STAIRS = registerPokeBrick("purple_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> PURPLE_POKE_BRICK_SLAB = registerPokeBrick("purple_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> PURPLE_POKE_BRICK_WALL = registerPokeBrick("purple_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> PURPLE_POKE_BRICK_BUTTON = registerPokeBrick("purple_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> PURPLE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("purple_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> PURPLE_POKE_BRICK_BUTTON = registerPokeBrick("purple_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> PURPLE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("purple_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> MAGENTA_POKE_BRICK = registerPokeBrick("magenta_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> MAGENTA_POKE_BRICK_STAIRS = registerPokeBrick("magenta_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> MAGENTA_POKE_BRICK_SLAB = registerPokeBrick("magenta_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> MAGENTA_POKE_BRICK_WALL = registerPokeBrick("magenta_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> MAGENTA_POKE_BRICK_BUTTON = registerPokeBrick("magenta_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> MAGENTA_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("magenta_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> MAGENTA_POKE_BRICK_BUTTON = registerPokeBrick("magenta_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> MAGENTA_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("magenta_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
     public static final RegistrySupplier<Block> PINK_POKE_BRICK = registerPokeBrick("pink_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> PINK_POKE_BRICK_STAIRS = registerPokeBrick("pink_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> PINK_POKE_BRICK_SLAB = registerPokeBrick("pink_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> PINK_POKE_BRICK_WALL = registerPokeBrick("pink_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> PINK_POKE_BRICK_BUTTON = registerPokeBrick("pink_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get()), BlockSetType.STONE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> PINK_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("pink_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get()), BlockSetType.STONE));
+    public static final RegistrySupplier<ButtonBlock> PINK_POKE_BRICK_BUTTON = registerPokeBrick("pink_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
+    public static final RegistrySupplier<PressurePlateBlock> PINK_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("pink_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
 
 
     /**
