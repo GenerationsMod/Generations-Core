@@ -119,6 +119,3 @@ run/
 
 ## Datagen .cache folder
 common/src/main/generated/resources/.cache
-
-## Pointed_charge_dripstone
-common/src/main/generated/resources/assets/generations_core/blockstates/pointed_charge_dripstone.json
