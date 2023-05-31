@@ -26,9 +26,9 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 	@Override
 	protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
 
-		buildToolSetCrafting(consumer, GenerationsBlocks.CHARGE_COBBLESTONE.get(), GenerationsTools.CHARGE_STONE_PICKAXE, GenerationsTools.CHARGE_STONE_AXE, GenerationsTools.CHARGE_STONE_SHOVEL, GenerationsTools.CHARGE_STONE_SWORD, GenerationsTools.CHARGE_STONE_HOE, GenerationsTools.CHARGE_STONE_HAMMER);
+		buildToolSetCrafting(consumer, GenerationsBlocks.CHARGE_COBBLESTONE.get(), GenerationsTools.CHARGE_STONE_PICKAXE, GenerationsTools.CHARGE_STONE_AXE, GenerationsTools.CHARGE_STONE_SWORD, GenerationsTools.CHARGE_STONE_SHOVEL, GenerationsTools.CHARGE_STONE_HOE, GenerationsTools.CHARGE_STONE_HAMMER);
 
-		buildToolSetCrafting(consumer, GenerationsBlocks.VOLCANIC_COBBLESTONE.get(), GenerationsTools.VOLCANIC_STONE_PICKAXE, GenerationsTools.VOLCANIC_STONE_AXE, GenerationsTools.VOLCANIC_STONE_SHOVEL, GenerationsTools.VOLCANIC_STONE_SWORD, GenerationsTools.VOLCANIC_STONE_HOE, GenerationsTools.VOLCANIC_STONE_HAMMER);
+		buildToolSetCrafting(consumer, GenerationsBlocks.VOLCANIC_COBBLESTONE.get(), GenerationsTools.VOLCANIC_STONE_PICKAXE, GenerationsTools.VOLCANIC_STONE_AXE, GenerationsTools.VOLCANIC_STONE_SWORD, GenerationsTools.VOLCANIC_STONE_SHOVEL, GenerationsTools.VOLCANIC_STONE_HOE, GenerationsTools.VOLCANIC_STONE_HAMMER);
 
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.ALUMINUM_INGOT.get(), GenerationsArmor.ALUMINUM_HELMET, GenerationsArmor.ALUMINUM_CHESTPLATE, GenerationsArmor.ALUMINUM_LEGGINGS, GenerationsArmor.ALUMINUM_BOOTS, GenerationsTools.ALUMINUM_PICKAXE, GenerationsTools.ALUMINUM_AXE, GenerationsTools.ALUMINUM_SWORD, GenerationsTools.ALUMINUM_SHOVEL, GenerationsTools.ALUMINUM_HOE, GenerationsTools.ALUMINUM_HAMMER);
 
