@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
 public class RugBlock extends DyeableBlock<GenericDyedVariantBlockEntity, RugBlock> {
-    private static VoxelShape SHAPE = Shapes.box(0, 0, 0, 1, 0.071875, 1);
+    private static final VoxelShape SHAPE = Shapes.box(0, 0, 0, 1, 0.071875, 1);
 
     public RugBlock(BlockBehaviour.Properties properties) {
         super(RugBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, properties, GenerationsBlockEntityModels.POKEBALL_RUG, 1, 0, 0);

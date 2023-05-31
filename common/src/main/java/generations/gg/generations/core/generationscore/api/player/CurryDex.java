@@ -92,7 +92,7 @@ public class CurryDex {
             dexEntry.flavor = data.getFlavor();
             dexEntry.rating = data.getRating();
             dexEntry.biome = player.level.getBiome(player.getOnPos()).unwrapKey().get().location();
-            dexEntry.pokemonName = "n/a"; /*PixelmonParty.of(player).stream().filter(Objects::nonNull).map(PixelmonData::displayName).findFirst().orElse("n/a") TODO: Enable*/;
+            dexEntry.pokemonName = "n/a"; /*PixelmonParty.of(player).stream().filter(Objects::nonNull).map(PixelmonData::displayName).findFirst().orElse("n/a") TODO: Enable*/
             dexEntry.pos = player.getOnPos();
 
             CurryEvents.AddEntry event = new CurryEvents.AddEntry(player, data, dexEntry);

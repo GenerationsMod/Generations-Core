@@ -12,7 +12,7 @@ import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
 public class SingleSlotScreen<T extends SingleSlotContainer> extends AbstractContainerScreen<T> {
-    private ResourceLocation CONTAINER_BACKGROUND = GenerationsCore.id("textures/gui/container/single_slot.png");
+    private final ResourceLocation CONTAINER_BACKGROUND = GenerationsCore.id("textures/gui/container/single_slot.png");
 
     public SingleSlotScreen(T arg, Inventory arg2, Component arg3) {
         super(arg, arg2, arg3);

@@ -21,7 +21,7 @@ import java.util.Map;
 
 @SuppressWarnings("deprecation")
 public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
-    private static Map<Direction, VoxelShape> SHAPE = Util.make(new HashMap<>(), map -> {
+    private static final Map<Direction, VoxelShape> SHAPE = Util.make(new HashMap<>(), map -> {
         map.put(Direction.SOUTH, Shapes.box(0.25, 0.25, 0, 0.75, 0.75, 0.0625));
         map.put(Direction.EAST, Shapes.box(0, 0.25, 0.25, 0.0625, 0.75, 0.75));
         map.put(Direction.NORTH, Shapes.box(0.25, 0.25, 0.9375, 0.75, 0.75, 1));
