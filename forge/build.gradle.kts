@@ -62,9 +62,6 @@ dependencies {
     forgeRuntimeLibrary("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
     forgeRuntimeLibrary("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
-    forgeRuntimeLibrary("shadowCommon"("com.fasterxml.jackson.core:jackson-databind:2.15.1")!!)
-    forgeRuntimeLibrary("shadowCommon"("com.fasterxml.jackson.core:jackson-annotations:2.15.1")!!)
-    forgeRuntimeLibrary("shadowCommon"("com.fasterxml.jackson.core:jackson-core:2.15.1")!!)
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
