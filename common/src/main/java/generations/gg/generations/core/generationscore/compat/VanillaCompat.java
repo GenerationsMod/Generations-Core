@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.compat;
 import dev.architectury.hooks.item.tool.AxeItemHooks;
 import dev.architectury.registry.CreativeTabOutput;
 import dev.architectury.registry.CreativeTabRegistry;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
@@ -50,81 +51,90 @@ public class VanillaCompat {
 	}
 
 	private static void modifyTabs() {
-		CreativeTabRegistry.modify(CreativeModeTabs.COLORED_BLOCKS, (flags, output, permissions) -> {
-			for (int i = 0; i <= 5; i++) {
-				int finalI = i;
-				GenerationsBlocks.POKEBRICKS.forEach(block -> addInOrder(output, finalI, block.get()));
-			}
+		var tabs = GenerationsCore.CONFIG.addItemsToVanillaTabs;
 
-			for (int i = 0; i <= 5; i++) {
-				int finalI = i;
-				GenerationsBlocks.MARBLE.forEach(block -> addInOrder(output, finalI, block.get()));
-			}
+		if(tabs.coloredBlocks)
+			CreativeTabRegistry.modify(CreativeModeTabs.COLORED_BLOCKS, (flags, output, permissions) -> {
+				for (int i = 0; i <= 5; i++) {
+					int finalI = i;
+					GenerationsBlocks.POKEBRICKS.forEach(block -> addInOrder(output, finalI, block.get()));
+				}
 
-			for (int i = 0; i <= 5; i++) {
-				int finalI = i;
-				GenerationsBlocks.ULTRA_BLOCKS.forEach(block -> addInOrder(output, finalI, block.get()));
-			}
-		});
+				for (int i = 0; i <= 5; i++) {
+					int finalI = i;
+					GenerationsBlocks.MARBLE.forEach(block -> addInOrder(output, finalI, block.get()));
+				}
 
-		CreativeTabRegistry.modify(CreativeModeTabs.COMBAT, (flags, output, permissions) -> {
-			GenerationsArmor.ARMOR.forEach(item -> output.acceptBefore(Items.TURTLE_HELMET.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
-			GenerationsTools.TOOLS.forEach(item -> {
-				if (item.get() instanceof AxeItem)
-					output.acceptAfter(Items.NETHERITE_AXE.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-				else if (item.get() instanceof SwordItem)
-					output.acceptAfter(Items.NETHERITE_SWORD.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				for (int i = 0; i <= 5; i++) {
+					int finalI = i;
+					GenerationsBlocks.ULTRA_BLOCKS.forEach(block -> addInOrder(output, finalI, block.get()));
+				}
 			});
-		});
 
-		CreativeTabRegistry.modify(CreativeModeTabs.TOOLS_AND_UTILITIES, (flags, output, permissions) -> {
-			GenerationsTools.TOOLS.forEach(item -> {
-				if ((!(item.get() instanceof SwordItem)) && item.get() != GenerationsTools.DIAMOND_HAMMER.get() && item.get() != GenerationsTools.GOLDEN_HAMMER.get() && item.get() != GenerationsTools.IRON_HAMMER.get() && item.get() != GenerationsTools.STONE_HAMMER.get() && item.get() != GenerationsTools.WOODEN_HAMMER.get())
-					output.acceptBefore(Items.BUCKET.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+		if(tabs.combat)
+			CreativeTabRegistry.modify(CreativeModeTabs.COMBAT, (flags, output, permissions) -> {
+				GenerationsArmor.ARMOR.forEach(item -> output.acceptBefore(Items.TURTLE_HELMET.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
+				GenerationsTools.TOOLS.forEach(item -> {
+					if (item.get() instanceof AxeItem)
+						output.acceptAfter(Items.NETHERITE_AXE.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+					else if (item.get() instanceof SwordItem)
+						output.acceptAfter(Items.NETHERITE_SWORD.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				});
 			});
-			output.acceptAfter(Items.WOODEN_HOE.getDefaultInstance(), GenerationsTools.WOODEN_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.STONE_HOE.getDefaultInstance(), GenerationsTools.STONE_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.IRON_HOE.getDefaultInstance(), GenerationsTools.IRON_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.GOLDEN_HOE.getDefaultInstance(), GenerationsTools.GOLDEN_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.DIAMOND_HOE.getDefaultInstance(), GenerationsTools.DIAMOND_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.NETHERITE_HOE.getDefaultInstance(), GenerationsTools.NETHERITE_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.MANGROVE_CHEST_BOAT.getDefaultInstance(), GenerationsItems.GHOST_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.GHOST_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.GHOST_CHEST_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.GHOST_CHEST_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.ULTRA_DARK_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get().getDefaultInstance(),GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-		});
+
+		if(tabs.toolsAndUtilities)
+			CreativeTabRegistry.modify(CreativeModeTabs.TOOLS_AND_UTILITIES, (flags, output, permissions) -> {
+				GenerationsTools.TOOLS.forEach(item -> {
+					if ((!(item.get() instanceof SwordItem)) && item.get() != GenerationsTools.DIAMOND_HAMMER.get() && item.get() != GenerationsTools.GOLDEN_HAMMER.get() && item.get() != GenerationsTools.IRON_HAMMER.get() && item.get() != GenerationsTools.STONE_HAMMER.get() && item.get() != GenerationsTools.WOODEN_HAMMER.get())
+						output.acceptBefore(Items.BUCKET.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				});
+				output.acceptAfter(Items.WOODEN_HOE.getDefaultInstance(), GenerationsTools.WOODEN_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.STONE_HOE.getDefaultInstance(), GenerationsTools.STONE_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.IRON_HOE.getDefaultInstance(), GenerationsTools.IRON_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.GOLDEN_HOE.getDefaultInstance(), GenerationsTools.GOLDEN_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.DIAMOND_HOE.getDefaultInstance(), GenerationsTools.DIAMOND_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.NETHERITE_HOE.getDefaultInstance(), GenerationsTools.NETHERITE_HAMMER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.MANGROVE_CHEST_BOAT.getDefaultInstance(), GenerationsItems.GHOST_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.GHOST_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.GHOST_CHEST_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.GHOST_CHEST_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.ULTRA_DARK_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+			});
+
+		if(tabs.functionalBlocks)
 			CreativeTabRegistry.modify(CreativeModeTabs.FUNCTIONAL_BLOCKS, (flags, output, permissions) -> {
-			output.acceptAfter(Items.WARPED_HANGING_SIGN.getDefaultInstance(), GenerationsItems.GHOST_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.GHOST_SIGN.get().getDefaultInstance(), GenerationsItems.GHOST_HANGING_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.GHOST_HANGING_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.ULTRA_DARK_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_HANGING_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.ULTRA_DARK_HANGING_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsItems.ULTRA_JUNGLE_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-		});
+				output.acceptAfter(Items.WARPED_HANGING_SIGN.getDefaultInstance(), GenerationsItems.GHOST_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.GHOST_SIGN.get().getDefaultInstance(), GenerationsItems.GHOST_HANGING_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.GHOST_HANGING_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.ULTRA_DARK_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_HANGING_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.ULTRA_DARK_HANGING_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsItems.ULTRA_JUNGLE_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+			});
 
+		if(tabs.naturalBlocks)
 			CreativeTabRegistry.modify(CreativeModeTabs.NATURAL_BLOCKS, (flags, output, permissions) -> {
-			output.acceptAfter(Items.DEEPSLATE_COAL_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_COAL_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.DEEPSLATE_DIAMOND_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.DEEPSLATE_EMERALD_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_EMERALD_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.DEEPSLATE_IRON_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_IRON_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.DEEPSLATE_LAPIS_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.DEEPSLATE_GOLD_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_GOLD_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.DEEPSLATE_COPPER_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_COPPER_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			GenerationsOres.ORES.forEach(b -> output.acceptBefore(Items.NETHER_GOLD_ORE.getDefaultInstance(), b.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
-			output.acceptAfter(Items.RAW_GOLD_BLOCK.getDefaultInstance(), GenerationsBlocks.RAW_ALUMINUM_BLOCK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.ACACIA_LOG.getDefaultInstance(), GenerationsWood.GHOST_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsWood.GHOST_LOG.get().asItem().getDefaultInstance(), GenerationsWood.ULTRA_DARK_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsWood.ULTRA_DARK_LOG.get().asItem().getDefaultInstance(), GenerationsWood.ULTRA_JUNGLE_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(Items.JACK_O_LANTERN.getDefaultInstance(), GenerationsBlocks.CURSED_PUMPKIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsBlocks.CURSED_PUMPKIN.get().asItem().getDefaultInstance(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			output.acceptAfter(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().asItem().getDefaultInstance(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-		});
+				output.acceptAfter(Items.DEEPSLATE_COAL_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_COAL_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.DEEPSLATE_DIAMOND_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.DEEPSLATE_EMERALD_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_EMERALD_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.DEEPSLATE_IRON_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_IRON_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.DEEPSLATE_LAPIS_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.DEEPSLATE_GOLD_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_GOLD_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.DEEPSLATE_COPPER_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_COPPER_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				GenerationsOres.ORES.forEach(b -> output.acceptBefore(Items.NETHER_GOLD_ORE.getDefaultInstance(), b.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
+				output.acceptAfter(Items.RAW_GOLD_BLOCK.getDefaultInstance(), GenerationsBlocks.RAW_ALUMINUM_BLOCK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.ACACIA_LOG.getDefaultInstance(), GenerationsWood.GHOST_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsWood.GHOST_LOG.get().asItem().getDefaultInstance(), GenerationsWood.ULTRA_DARK_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsWood.ULTRA_DARK_LOG.get().asItem().getDefaultInstance(), GenerationsWood.ULTRA_JUNGLE_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.JACK_O_LANTERN.getDefaultInstance(), GenerationsBlocks.CURSED_PUMPKIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsBlocks.CURSED_PUMPKIN.get().asItem().getDefaultInstance(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().asItem().getDefaultInstance(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+			});
 
+		if(tabs.buildingBlocks)
 			CreativeTabRegistry.modify(CreativeModeTabs.BUILDING_BLOCKS, (flags, output, permissions) -> {
-			GenerationsWood.WOOD_BLOCKS.forEach(woodBlock -> output.acceptAfter(Items.STONE.getDefaultInstance(), woodBlock.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
-		});
+				GenerationsWood.WOOD_BLOCKS.forEach(woodBlock -> output.acceptAfter(Items.STONE.getDefaultInstance(), woodBlock.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
+			});
 	}
 
 	private static void addInOrder(CreativeTabOutput event, int i, Block b) {

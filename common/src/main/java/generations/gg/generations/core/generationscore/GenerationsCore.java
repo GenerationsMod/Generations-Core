@@ -40,6 +40,9 @@ public class GenerationsCore
 	/** The logger for the Generations-Core mod. */
 	public static final Logger LOGGER = LogUtils.getLogger();
 
+	/** The config for the Generations-Core mod. */
+	public static Config CONFIG;
+
 	/**
 	 * Initializes the Generations-Core mod.
 	 */
@@ -61,6 +64,8 @@ public class GenerationsCore
 		GenerationsPaintings.init();
 		GenerationsContainers.init();
 		GenerationsNetworking.init();
+
+		CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "main");
 	}
 
 	/**
