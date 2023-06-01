@@ -1,10 +1,15 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.StringUtil;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -62,19 +67,18 @@ public class ClosedMailItem extends Item {
         }
     }
 
-//    @Override TODO: Enable
-//    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
-//        ItemStack itemStack = player.getItemInHand(usedHand);
-//        if (player instanceof ServerPlayer serverPlayer && itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL)) {
-//            if(resolveBookComponents(itemStack, serverPlayer.createCommandSourceStack(), serverPlayer)) {
-//                serverPlayer.containerMenu.broadcastChanges();
-//            }
-//
-//            PokeModNetworking.sendPacket(new S2COpenMailPacket(usedHand), serverPlayer); TODO: Networking
-//        }
-//        player.awardStat(Stats.ITEM_USED.get(this));
-//        return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
-//    }
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
+        ItemStack itemStack = player.getItemInHand(usedHand);
+        if (player instanceof ServerPlayer serverPlayer && itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL)) {
+            if(resolveBookComponents(itemStack, serverPlayer.createCommandSourceStack(), serverPlayer)) {
+                serverPlayer.containerMenu.broadcastChanges();
+            }
+
+            PokeModNetworking.sendPacket(new S2COpenMailPacket(usedHand), serverPlayer); TODO: Networking
+        }
+        player.awardStat(Stats.ITEM_USED.get(this));
+        return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
+    }
 
     public static boolean resolveBookComponents(ItemStack bookStack, @Nullable CommandSourceStack resolvingSource, @Nullable Player resolvingPlayer) {
         CompoundTag compoundTag = bookStack.getTag();

@@ -28,6 +28,9 @@ import java.lang.reflect.Field;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
+import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.*;
+import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.POKEMAIL_BRIDGE_M_CLOSED;
+
 public class TagsDatagen {
     public static void init(DataGenerator generator, PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper helper) {
         GenerationsBlockTagsProvider blockProvider = new GenerationsBlockTagsProvider(output, lookupProvider, helper);
@@ -313,55 +316,129 @@ public class TagsDatagen {
 
             //Discs
             this.tag(ItemTags.MUSIC_DISCS).add(
-                    GenerationsItems.MUSIC_DISC_BEAST_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_CHERISH_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_DIVE_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_DREAM_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_DUSK_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_FAST_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_FEATHER.get(),
-                    GenerationsItems.MUSIC_DISC_FRIEND_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_GREAT_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_GS_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_HEAL_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_HEAVY_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_LEADEN_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_LEVEL_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_LOVE_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_LURE_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_LUXURY_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_MASTER_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_MOON_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_NEST_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_NET_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_OLD_POKEBALL_DISC.get(),
-                    GenerationsItems.MUSIC_DISC_ORIGIN_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_PARK_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_POKE_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_PREMIER_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_QUICK_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_REPEAT_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_SAFARI_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_SPORT_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_STRANGE_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_TIMER_BALL.get(),
-                    GenerationsItems.MUSIC_DISC_ULTRA_BALL.get()
+                    MUSIC_DISC_BEAST_BALL.get(),
+                    MUSIC_DISC_CHERISH_BALL.get(),
+                    MUSIC_DISC_DIVE_BALL.get(),
+                    MUSIC_DISC_DREAM_BALL.get(),
+                    MUSIC_DISC_DUSK_BALL.get(),
+                    MUSIC_DISC_FAST_BALL.get(),
+                    MUSIC_DISC_FEATHER.get(),
+                    MUSIC_DISC_FRIEND_BALL.get(),
+                    MUSIC_DISC_GREAT_BALL.get(),
+                    MUSIC_DISC_GS_BALL.get(),
+                    MUSIC_DISC_HEAL_BALL.get(),
+                    MUSIC_DISC_HEAVY_BALL.get(),
+                    MUSIC_DISC_LEADEN_BALL.get(),
+                    MUSIC_DISC_LEVEL_BALL.get(),
+                    MUSIC_DISC_LOVE_BALL.get(),
+                    MUSIC_DISC_LURE_BALL.get(),
+                    MUSIC_DISC_LUXURY_BALL.get(),
+                    MUSIC_DISC_MASTER_BALL.get(),
+                    MUSIC_DISC_MOON_BALL.get(),
+                    MUSIC_DISC_NEST_BALL.get(),
+                    MUSIC_DISC_NET_BALL.get(),
+                    MUSIC_DISC_OLD_POKEBALL_DISC.get(),
+                    MUSIC_DISC_ORIGIN_BALL.get(),
+                    MUSIC_DISC_PARK_BALL.get(),
+                    MUSIC_DISC_POKE_BALL.get(),
+                    MUSIC_DISC_PREMIER_BALL.get(),
+                    MUSIC_DISC_QUICK_BALL.get(),
+                    MUSIC_DISC_REPEAT_BALL.get(),
+                    MUSIC_DISC_SAFARI_BALL.get(),
+                    MUSIC_DISC_SPORT_BALL.get(),
+                    MUSIC_DISC_STRANGE_BALL.get(),
+                    MUSIC_DISC_TIMER_BALL.get(),
+                    MUSIC_DISC_ULTRA_BALL.get()
             );
 
             this.tag(GenerationsItemTags.WALKMONS).add(
-                    GenerationsItems.POKE_WALKMON.get(),
-                    GenerationsItems.GREAT_WALKMON.get(),
-                    GenerationsItems.ULTRA_WALKMON.get(),
-                    GenerationsItems.MASTER_WALKMON.get()
+                    POKE_WALKMON.get(),
+                    GREAT_WALKMON.get(),
+                    ULTRA_WALKMON.get(),
+                    MASTER_WALKMON.get()
             );
 
-            this.tag(ItemTags.BOATS).add(GenerationsItems.GHOST_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_DARK_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get());
-            this.tag(ItemTags.CHEST_BOATS).add(GenerationsItems.GHOST_CHEST_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get());
+            this.tag(ItemTags.BOATS).add(GHOST_BOAT_ITEM.get()).add(ULTRA_DARK_BOAT_ITEM.get()).add(ULTRA_JUNGLE_BOAT_ITEM.get());
+            this.tag(ItemTags.CHEST_BOATS).add(GHOST_CHEST_BOAT_ITEM.get()).add(ULTRA_DARK_CHEST_BOAT_ITEM.get()).add(ULTRA_JUNGLE_CHEST_BOAT_ITEM.get());
 
             this.tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE.get().asItem()).add(GenerationsBlocks.VOLCANIC_COBBLESTONE.get().asItem());
 
 
-            GenerationsItems.ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
+            ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
+
+            this.tag(GenerationsItemTags.POKEMAIL).add(
+                    POKEMAIL_AIR.get(),
+                    POKEMAIL_BLOOM.get(),
+                    POKEMAIL_BRICK.get(),
+                    POKEMAIL_BRIDGE_D.get(),
+                    POKEMAIL_BRIDGE_M.get(),
+                    POKEMAIL_BRIDGE_S.get(),
+                    POKEMAIL_BRIDGE_T.get(),
+                    POKEMAIL_BRIDGE_V.get(),
+                    POKEMAIL_BUBBLE.get(),
+                    POKEMAIL_DREAM.get(),
+                    POKEMAIL_FAB.get(),
+                    POKEMAIL_FAVORED.get(),
+                    POKEMAIL_FLAME.get(),
+                    POKEMAIL_GLITTER.get(),
+                    POKEMAIL_GRASS.get(),
+                    POKEMAIL_GREET.get(),
+                    POKEMAIL_HARBOR.get(),
+                    POKEMAIL_HEART.get(),
+                    POKEMAIL_INQUIRY.get(),
+                    POKEMAIL_LIKE.get(),
+                    POKEMAIL_MECH.get(),
+                    POKEMAIL_MOSAIC.get(),
+                    POKEMAIL_ORANGE.get(),
+                    POKEMAIL_REPLY.get(),
+                    POKEMAIL_RETRO.get(),
+                    POKEMAIL_RSVP.get(),
+                    POKEMAIL_SHADOW.get(),
+                    POKEMAIL_SNOW.get(),
+                    POKEMAIL_SPACE.get(),
+                    POKEMAIL_STEEL.get(),
+                    POKEMAIL_THANKS.get(),
+                    POKEMAIL_TROPIC.get(),
+                    POKEMAIL_TUNNEL.get(),
+                    POKEMAIL_WAVE.get(),
+                    POKEMAIL_WOOD.get());
+
+            this.tag(GenerationsItemTags.CLOSED_POKEMAIL).add(
+                    POKEMAIL_AIR_CLOSED.get(),
+                    POKEMAIL_BLOOM_CLOSED.get(),
+                    POKEMAIL_BRICK_CLOSED.get(),
+                    POKEMAIL_BRIDGE_D_CLOSED.get(),
+                    POKEMAIL_BRIDGE_M_CLOSED.get(),
+                    POKEMAIL_BRIDGE_T_CLOSED.get(),
+                    POKEMAIL_BRIDGE_S_CLOSED.get(),
+                    POKEMAIL_BRIDGE_V_CLOSED.get(),
+                    POKEMAIL_BUBBLE_CLOSED.get(),
+                    POKEMAIL_DREAM_CLOSED.get(),
+                    POKEMAIL_FAB_CLOSED.get(),
+                    POKEMAIL_FAVORED_CLOSED.get(),
+                    POKEMAIL_FLAME_CLOSED.get(),
+                    POKEMAIL_GLITTER_CLOSED.get(),
+                    POKEMAIL_GRASS_CLOSED.get(),
+                    POKEMAIL_GREET_CLOSED.get(),
+                    POKEMAIL_HARBOR_CLOSED.get(),
+                    POKEMAIL_HEART_CLOSED.get(),
+                    POKEMAIL_INQUIRY_CLOSED.get(),
+                    POKEMAIL_LIKE_CLOSED.get(),
+                    POKEMAIL_MECH_CLOSED.get(),
+                    POKEMAIL_MOSAIC_CLOSED.get(),
+                    POKEMAIL_ORANGE_CLOSED.get(),
+                    POKEMAIL_REPLY_CLOSED.get(),
+                    POKEMAIL_RETRO_CLOSED.get(),
+                    POKEMAIL_RSVP_CLOSED.get(),
+                    POKEMAIL_SHADOW_CLOSED.get(),
+                    POKEMAIL_SNOW_CLOSED.get(),
+                    POKEMAIL_SPACE_CLOSED.get(),
+                    POKEMAIL_STEEL_CLOSED.get(),
+                    POKEMAIL_THANKS_CLOSED.get(),
+                    POKEMAIL_TROPIC_CLOSED.get(),
+                    POKEMAIL_TUNNEL_CLOSED.get(),
+                    POKEMAIL_WAVE_CLOSED.get(),
+                    POKEMAIL_WOOD_CLOSED.get());
         }
     }
 
