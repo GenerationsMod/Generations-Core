@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "E": {
+      "item": "minecraft:pink_wool"
+    },
+    "X": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "XEX",
+    " A ",
+    " A "
+  ],
+  "result": {
+    "item": "generations_core:pink_umbrella"
+  },
+  "show_notification": true
+}

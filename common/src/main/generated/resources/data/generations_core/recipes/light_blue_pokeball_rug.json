@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "X": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "XEX"
+  ],
+  "result": {
+    "item": "generations_core:light_blue_pokeball_rug"
+  },
+  "show_notification": true
+}

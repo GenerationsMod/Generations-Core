@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:pink_dye"
+    },
+    "H": {
+      "item": "generations_core:pink_healer"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EHE",
+    "EEE"
+  ],
+  "result": {
+    "item": "generations_core:pink_healer"
+  },
+  "show_notification": true
+}

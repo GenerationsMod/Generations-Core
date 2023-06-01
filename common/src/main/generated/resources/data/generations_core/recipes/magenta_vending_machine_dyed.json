@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:magenta_dye"
+    },
+    {
+      "tag": "generations_core:vending_machine"
+    }
+  ],
+  "result": {
+    "item": "generations_core:magenta_vending_machine"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:clock"
+    },
+    "E": {
+      "item": "minecraft:gray_dye"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XEX",
+    "XCX"
+  ],
+  "result": {
+    "item": "generations_core:gray_clock"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:green_umbrella_dyed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_umbrella": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "generations_core:umbrella"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_umbrella",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:green_umbrella_dyed"
+    ]
+  }
+}

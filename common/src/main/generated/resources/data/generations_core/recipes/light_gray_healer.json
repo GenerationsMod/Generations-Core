@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:light_gray_dye"
+    },
+    "H": {
+      "item": "generations_core:light_gray_healer"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EHE",
+    "EEE"
+  ],
+  "result": {
+    "item": "generations_core:light_gray_healer"
+  },
+  "show_notification": true
+}

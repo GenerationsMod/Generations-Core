@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:cyan_pokeball_rug_dyed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pokeball_rug": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "generations_core:pokeball_rug"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "pokeball_rug",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:cyan_pokeball_rug_dyed"
+    ]
+  }
+}
