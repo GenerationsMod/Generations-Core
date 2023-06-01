@@ -638,8 +638,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlockItem(log.get(), logBlock);
     }
 
-    public void registerApricornLeaves(RegistrySupplier<Block> block) {simpleBlockWithItem(block.get(), models().cubeAll(block.getId().getPath(), blockTexture(Blocks.OAK_LEAVES)));}
-
     public void registerBlockItem(RegistrySupplier<Block> block) {registerBlockItem(block.get());}
 
     public void registerBlockItem(Block block) {simpleBlockWithItem(block, cubeAll(block));}

@@ -23,3 +23,5 @@ accessible method net/minecraft/client/renderer/Sheets createSignMaterial (Lnet/
 accessible method net/minecraft/client/renderer/Sheets createHangingSignMaterial (Lnet/minecraft/world/level/block/state/properties/WoodType;)Lnet/minecraft/client/resources/model/Material;
 accessible method net/minecraft/world/level/block/FarmBlock isNearWater (Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z
 accessible method net/minecraft/world/level/block/FarmBlock isUnderCrops (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
+
+accessible field net/minecraft/world/entity/animal/Sheep ITEM_BY_DYE Ljava/util/Map;

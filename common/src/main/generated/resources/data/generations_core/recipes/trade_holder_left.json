@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "generations_core:poke_ball"
+    },
+    "Q": {
+      "item": "generations_core:aluminum_plate"
+    }
+  },
+  "pattern": [
+    "QQA",
+    " QQ"
+  ],
+  "result": {
+    "item": "generations_core:trade_holder_left"
+  },
+  "show_notification": true
+}

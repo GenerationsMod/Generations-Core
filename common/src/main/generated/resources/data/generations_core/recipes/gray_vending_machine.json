@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "minecraft:glass_pane"
+    },
+    "C": {
+      "item": "generations_core:fresh_water"
+    },
+    "D": {
+      "item": "generations_core:soda_pop"
+    },
+    "E": {
+      "item": "generations_core:lemonade"
+    },
+    "F": {
+      "item": "minecraft:gray_dye"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "CDE",
+    "AFA"
+  ],
+  "result": {
+    "item": "generations_core:gray_vending_machine"
+  },
+  "show_notification": true
+}

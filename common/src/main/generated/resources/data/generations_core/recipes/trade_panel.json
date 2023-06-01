@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:redstone"
+    },
+    "Q": {
+      "item": "generations_core:aluminum_plate"
+    }
+  },
+  "pattern": [
+    "QQQ",
+    "AAA",
+    "QAQ"
+  ],
+  "result": {
+    "item": "generations_core:trade_panel"
+  },
+  "show_notification": true
+}

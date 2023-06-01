@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "tag": "generations_core:vending_machine"
+    }
+  ],
+  "result": {
+    "item": "generations_core:brown_vending_machine"
+  }
+}

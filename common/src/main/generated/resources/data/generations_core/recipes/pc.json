@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:glass_pane"
+    },
+    "P": {
+      "item": "minecraft:redstone_lamp"
+    },
+    "Q": {
+      "item": "generations_core:aluminum_plate"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "QAQ",
+    "QPQ",
+    "QRQ"
+  ],
+  "result": {
+    "item": "generations_core:red_pc"
+  },
+  "show_notification": true
+}
