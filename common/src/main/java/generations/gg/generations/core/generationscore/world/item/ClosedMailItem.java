@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
+import generations.gg.generations.core.generationscore.network.packets.S2COpenMailPacket;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -74,7 +76,7 @@ public class ClosedMailItem extends Item {
                 serverPlayer.containerMenu.broadcastChanges();
             }
 
-            PokeModNetworking.sendPacket(new S2COpenMailPacket(usedHand), serverPlayer); TODO: Networking
+            GenerationsNetworking.sendPacket(serverPlayer, new S2COpenMailPacket(usedHand));
         }
         player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());

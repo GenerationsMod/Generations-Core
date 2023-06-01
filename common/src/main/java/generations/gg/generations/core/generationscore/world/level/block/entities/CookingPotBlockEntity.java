@@ -94,7 +94,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
         ItemStack mainIngredient = handler.getItem(11);
         ItemStack log = handler.getItem(12);
 
-        boolean hasEverything = Stream.of(berries).anyMatch(a -> !a.isEmpty()) && !bowl.isEmpty() && !log.isEmpty() && handler.getItem(13).isEmpty();
+        boolean hasEverything = isCooking && Stream.of(berries).anyMatch(a -> !a.isEmpty()) && !bowl.isEmpty() && !log.isEmpty() && handler.getItem(13).isEmpty();
         if (hasEverything) {
             boolean hasInserted = false;
             cookTime++;
@@ -170,7 +170,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
         blockEntity.serverTick();
     }
 
-    public void setCooking(boolean isCooking) {//TODO: Reenable the toggle if still desired
+    public void setCooking(boolean isCooking) {
 
         this.isCooking = isCooking;
         this.cookTime = 0;

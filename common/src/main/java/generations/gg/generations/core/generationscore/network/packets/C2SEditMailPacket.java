@@ -25,7 +25,9 @@ public record C2SEditMailPacket(int slot, String contents, Optional<String> titl
     }
 
     public void process(Supplier<NetworkManager.PacketContext> ctx) {
-        handleEditMail((ServerPlayer) ctx.get().getPlayer(), slot, contents, title);
+        ctx.get().queue(() -> {
+            handleEditMail((ServerPlayer) ctx.get().getPlayer(), slot, contents, title);
+        });
     }
 
     public void handleEditMail(ServerPlayer sender, int slot, String contents, Optional<String> title) {

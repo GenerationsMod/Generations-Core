@@ -17,7 +17,9 @@ public record C2SToggleCookingPotPacket(BlockPos pos) {
     }
 
     public void process(Supplier<NetworkManager.PacketContext> ctx) {
-        var sender = ctx.get().getPlayer();
-        if (sender.level.getBlockEntity(pos) instanceof CookingPotBlockEntity pot) pot.setCooking(!pot.isCooking());
+        ctx.get().queue(() -> {
+            var sender = ctx.get().getPlayer();
+            if (sender.level.getBlockEntity(pos) instanceof CookingPotBlockEntity pot) pot.setCooking(!pot.isCooking());
+        });
     }
 }
