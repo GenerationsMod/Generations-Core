@@ -50,7 +50,7 @@ dependencies {
 
     //Cobblemon
     modApi("com.bedrockk:molang:1.1.2")
-    modImplementation("cobblemon:Cobblemon-Fabric:1.4.0")
+    modImplementation("cobblemon:Cobblemon-Fabric:1.4.0") { exclude(group = "local.com.bedrockk") }
 
 }
 

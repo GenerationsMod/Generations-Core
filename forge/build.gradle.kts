@@ -69,7 +69,7 @@ dependencies {
     //Cobblemon
     modImplementation("thedarkcolour:kotlinforforge:4.2.0")
     modApi("com.bedrockk:molang:1.1.2")
-    modImplementation("cobblemon:Cobblemon-Forge:1.4.0")
+    implementation("cobblemon:Cobblemon-Forge:1.4.0:dev-shadow") { exclude(group = "local.com.bedrockk") }
 }
 
 tasks {
