@@ -284,7 +284,7 @@ public class MailEditScreen extends Screen {
         RenderSystem.setShaderTexture(0, location);
         int x = (this.width - IMAGE_WIDTH) / 2;
         int y = (this.height - IMAGE_HEIGHT) / 2;
-        this.blit(poseStack, x, y, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
+        blit(poseStack, x, y, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
 
         DisplayCache displayCache = this.getDisplayCache();
         for (LineInfo lineInfo : displayCache.lines) {

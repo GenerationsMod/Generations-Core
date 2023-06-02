@@ -1,15 +1,13 @@
 package generations.gg.generations.core.generationscore;
 
-import com.google.gson.FieldNamingStrategy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class ConfigLoader {
-    private static Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static <T> T loaderConfig(Class<T> clazz, String modid, String name) {
 

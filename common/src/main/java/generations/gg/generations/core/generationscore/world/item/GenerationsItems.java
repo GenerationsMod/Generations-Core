@@ -91,7 +91,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> PP_UP = register("pp_up", properties -> new PpUpItem(properties), GenerationsCreativeTabs.RESTORATION);
+    public static final RegistrySupplier<Item> PP_UP = register("pp_up", PpUpItem::new, GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> FULL_HEAL = register("full_heal", Item::new, GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, GenerationsCreativeTabs.RESTORATION);
@@ -888,10 +888,14 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MARK_CHARM = register("mark_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> CATCHING_CHARM = register("catching_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> EXP_CHARM = register("exp_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> OLD_ROD = register("old_rod", properties -> new TieredFishingRodItem(properties/*, TieredFishingHookEntity.Teir.OLD*/), GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> GOOD_ROD = register("good_rod", properties -> new TieredFishingRodItem(properties/*, TieredFishingHookEntity.Teir.GOOD*/), GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", properties -> new TieredFishingRodItem(properties/*, TieredFishingHookEntity.Teir.SUPER*/), GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> RUBY_ROD = register("ruby_rod", properties -> new TieredFishingRodItem(properties/*, TieredFishingHookEntity.Teir.RUBY*/), GenerationsCreativeTabs.PLAYER_ITEMS);
+    /*, TieredFishingHookEntity.Teir.OLD*/
+    public static final RegistrySupplier<Item> OLD_ROD = register("old_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    /*, TieredFishingHookEntity.Teir.GOOD*/
+    public static final RegistrySupplier<Item> GOOD_ROD = register("good_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    /*, TieredFishingHookEntity.Teir.SUPER*/
+    public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    /*, TieredFishingHookEntity.Teir.RUBY*/
+    public static final RegistrySupplier<Item> RUBY_ROD = register("ruby_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> CAMERA = register("camera", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SNAP_CAMERA = register("snap_camera", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> FILM = register("film", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
@@ -1154,9 +1158,9 @@ public class GenerationsItems {
      * Utility Items
      */
     public static final RegistrySupplier<Item> POKEMON_EDITOR = register("pokemon_editor", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> NPC_EDITOR = register("npc_editor", properties -> new NpcEditorItem(properties), GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> NPC_PATH_TOOL = register("npc_path_tool", properties -> new NpcPathTool(properties), GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> CHISEL = register("chisel", properties -> new StatueEditorItem(properties), GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> NPC_EDITOR = register("npc_editor", NpcEditorItem::new, GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> NPC_PATH_TOOL = register("npc_path_tool", NpcPathTool::new, GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> CHISEL = register("chisel", StatueEditorItem::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> GIFT_BOX = register("gift_box", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> ZONE_WAND = register("zone_wand", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> BIKE_FRAME = register("bike_frame", Item::new, GenerationsCreativeTabs.UTILITY);
@@ -1180,7 +1184,7 @@ public class GenerationsItems {
     /**
      * Form Items
      */
-    public static final RegistrySupplier<Item> METEORITE = register("meteorite", properties -> new MeteoriteItem(properties), GenerationsCreativeTabs.FORM_ITEMS);
+    public static final RegistrySupplier<Item> METEORITE = register("meteorite", MeteoriteItem::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> GRACIDEA = register("gracidea", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> REVEAL_GLASS = register("reveal_glass", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> ROCKSTAR_COSTUME = register("rockstar_costume", Item::new, GenerationsCreativeTabs.FORM_ITEMS);

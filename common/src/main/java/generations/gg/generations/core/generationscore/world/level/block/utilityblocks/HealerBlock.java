@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("deprecation")
 public class HealerBlock extends DyeableBlock<HealerBlockEntity, HealerBlock> {
 
     public HealerBlock(BlockBehaviour.Properties props) {

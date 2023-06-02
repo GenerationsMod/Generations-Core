@@ -9,7 +9,6 @@
   "contact": {},
 
   "license": "GNU GPL 3.0",
-  "accessWidener" : "generationscore.accesswidener",
   "environment": "*",
   "entrypoints": {
     "main": [

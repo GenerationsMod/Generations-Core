@@ -20,7 +20,6 @@ configurations {
 loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
 repositories {
-    maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://maven.bai.lol")
 }
@@ -66,6 +65,7 @@ tasks {
     }
 
     remapJar {
+        injectAccessWidener.set(true)
         inputFile.set(shadowJar.get().archiveFile)
         dependsOn(shadowJar)
     }

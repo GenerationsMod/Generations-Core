@@ -132,9 +132,7 @@ public class VanillaCompat {
 			});
 
 		if(tabs.buildingBlocks)
-			CreativeTabRegistry.modify(CreativeModeTabs.BUILDING_BLOCKS, (flags, output, permissions) -> {
-				GenerationsWood.WOOD_BLOCKS.forEach(woodBlock -> output.acceptAfter(Items.STONE.getDefaultInstance(), woodBlock.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
-			});
+			CreativeTabRegistry.modify(CreativeModeTabs.BUILDING_BLOCKS, (flags, output, permissions) -> GenerationsWood.WOOD_BLOCKS.forEach(woodBlock -> output.acceptAfter(Items.STONE.getDefaultInstance(), woodBlock.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS)));
 	}
 
 	private static void addInOrder(CreativeTabOutput event, int i, Block b) {

@@ -53,10 +53,8 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                     shrine.toggleActive();
                     stack.shrink(1);
 
-                    ScheduledTask.schedule(() -> {
-//                        level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(pokeEntryId, form), entity.getBlockPos())); TODO: Spawn Pokemon
-                        shrine.toggleActive();
-                    }, 150);
+                    //                        level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(pokeEntryId, form), entity.getBlockPos())); TODO: Spawn Pokemon
+                    ScheduledTask.schedule(shrine::toggleActive, 150);
                     return InteractionResult.SUCCESS;
                 }
             }

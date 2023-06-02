@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -29,7 +28,6 @@ import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.*;
-import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.POKEMAIL_BRIDGE_M_CLOSED;
 
 public class TagsDatagen {
     public static void init(DataGenerator generator, PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper helper) {

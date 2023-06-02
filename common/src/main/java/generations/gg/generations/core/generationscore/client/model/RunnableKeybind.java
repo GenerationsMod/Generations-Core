@@ -19,7 +19,7 @@ public class RunnableKeybind extends KeyMapping {
     public RunnableKeybind(String name, int keyId, String category, Runnable runnable) {
         super(name, keyId, category);
         this.runnable = runnable;
-        ClientRawInputEvent.KEY_PRESSED.register((client, keyCode, scanCode, action1, modifiers) -> onKeyPress(client, keyCode, scanCode, action1, modifiers));
+        ClientRawInputEvent.KEY_PRESSED.register(this::onKeyPress);
     }
 
     public EventResult onKeyPress(Minecraft client, int keyCode, int scanCode, int action, int modifiers) {

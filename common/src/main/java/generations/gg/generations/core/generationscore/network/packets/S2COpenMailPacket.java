@@ -4,7 +4,6 @@ import dev.architectury.networking.NetworkManager;
 import generations.gg.generations.core.generationscore.client.screen.mails.MailEditScreen;
 import generations.gg.generations.core.generationscore.client.screen.mails.MailViewScreen;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
-import net.fabricmc.api.EnvType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.InteractionHand;
