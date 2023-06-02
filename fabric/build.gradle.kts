@@ -47,6 +47,11 @@ dependencies {
     include(modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")!!)
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
+
+    //Cobblemon
+    modApi("com.bedrockk:molang:1.1.1")
+    modImplementation("cobblemon:Cobblemon-Fabric:1.4.0")
+
 }
 
 tasks {

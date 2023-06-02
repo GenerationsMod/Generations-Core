@@ -41,6 +41,7 @@ loom {
 repositories {
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://maven.bai.lol")
+    maven("https://thedarkcolour.github.io/KotlinForForge/")
 }
 
 dependencies {
@@ -64,6 +65,11 @@ dependencies {
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
+
+    //Cobblemon
+    modImplementation("thedarkcolour:kotlinforforge:4.2.0")
+    modApi("com.bedrockk:molang:1.1.1")
+    modImplementation("cobblemon:Cobblemon-Forge:1.4.0")
 }
 
 tasks {

@@ -30,6 +30,10 @@ dependencies {
     implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
     implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
+
+    //Cobblemon
+    modImplementation("cobblemon:Cobblemon-Common:1.4.0")
+    modApi("com.bedrockk:molang:1.1.1")
 }
 
 publishing {
