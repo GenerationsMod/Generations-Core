@@ -18,7 +18,7 @@ subprojects {
 
     repositories {
         mavenCentral()
-        //mavenLocal()
+        mavenLocal()
         maven("https://jitpack.io")
         maven("https://maven.generations.gg/snapshots")
         maven("https://maven.generations.gg/releases")

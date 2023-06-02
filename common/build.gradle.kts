@@ -33,7 +33,7 @@ dependencies {
 
     //Cobblemon
     modImplementation("cobblemon:Cobblemon-Common:1.4.0")
-    modApi("com.bedrockk:molang:1.1.1")
+    modApi("com.bedrockk:molang:1.1.2")
 }
 
 publishing {

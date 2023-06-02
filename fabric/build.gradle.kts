@@ -49,7 +49,7 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
     //Cobblemon
-    modApi("com.bedrockk:molang:1.1.1")
+    modApi("com.bedrockk:molang:1.1.2")
     modImplementation("cobblemon:Cobblemon-Fabric:1.4.0")
 
 }
