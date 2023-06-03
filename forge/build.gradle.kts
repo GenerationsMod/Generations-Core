@@ -53,7 +53,7 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
-    modApi(include("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")!!)
+    modApi("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")!!
 
     forgeRuntimeLibrary("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
@@ -67,7 +67,7 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 
     //Cobblemon
-    modImplementation("thedarkcolour:kotlinforforge:4.2.0")
+    modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
     modApi("com.bedrockk:molang:1.1.2")
     implementation("cobblemon:Cobblemon-Forge:1.4.0:dev-shadow") { exclude(group = "local.com.bedrockk") }
 }

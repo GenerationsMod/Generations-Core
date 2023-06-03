@@ -44,7 +44,7 @@ dependencies {
     implementation("shadowCommon"("com.fasterxml.jackson.core:jackson-annotations:2.15.1")!!)
     implementation("shadowCommon"("com.fasterxml.jackson.core:jackson-core:2.15.1")!!)
 
-    include(modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")!!)
+    modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")!!
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
