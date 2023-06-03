@@ -41,12 +41,14 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     }
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity) {
+
         if (blockEntity.objectInstance == null) {
-            blockEntity.objectInstance = new ObjectInstance(new Matrix4f(), stack.last().pose(), blockEntity instanceof ModelContextProviders.VariantProvider variantProvider ? variantProvider.getVariant() : null);
-        } else if (blockEntity instanceof ModelContextProviders.VariantProvider provider)
-            if (!blockEntity.objectInstance.materialId().equals(provider.getVariant())) {
-                blockEntity.objectInstance = new ObjectInstance(new Matrix4f(), stack.last().pose(), provider.getVariant());
-            }
+            blockEntity.objectInstance = new ObjectInstance(new Matrix4f(), stack.last().pose(), "");
+        }
+
+        if (blockEntity instanceof ModelContextProviders.VariantProvider provider && !blockEntity.objectInstance.materialId().equals(provider.getVariant())) {
+            blockEntity.objectInstance.setVariant(provider.getVariant());
+        }
 
         blockEntity.objectInstance.viewMatrix().set(stack.last().pose());
 

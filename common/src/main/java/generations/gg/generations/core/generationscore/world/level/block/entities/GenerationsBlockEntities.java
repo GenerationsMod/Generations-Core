@@ -261,6 +261,13 @@ public class GenerationsBlockEntities {
             .build(null));
     public static final RegistrySupplier<BlockEntityType<MachineBlockEntity>> MACHINE_BLOCK = BLOCK_ENTITIES.register("machine_block", () -> BlockEntityType.Builder.of(MachineBlockEntity::new, GenerationsBlocks.MACHINE_BLOCK.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = BLOCK_ENTITIES.register("vending_machine", () -> BlockEntityType.Builder.of(VendingMachineBlockEntity::new, GenerationsDecorationBlocks.VENDING_MACHINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<BallDisplayBlockEntity>> BALL_DISPLAY = BLOCK_ENTITIES.register("ball_display", () -> BlockEntityType.Builder.of(BallDisplayBlockEntity::new,
+            GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get()
+    ).build(null));
 
 
     public static void init() {

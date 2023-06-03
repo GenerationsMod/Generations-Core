@@ -27,10 +27,10 @@ public class CompiledModel {
         var loader = ModelRegistry.getRareCandy().getLoader();
         this.renderObject = loader.createObject(
                 () -> new PixelAsset(stream, a.toString()),
-                (gltfModel, smdFileMap, pkxFileMap, object) -> {
+                (gltfModel, smdFileMap, pkxFileMap, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
                     try {
-                        ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap, glCalls, pipeline, supplier.apply(gltfModel));
+                        ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap, textures, config, glCalls, pipeline, supplier.apply(gltfModel));
                     } catch (NullPointerException e) {
 //                        RareCandyTest.LOGGER.error("Catching exception reading model %s.".formatted(a));
                         e.printStackTrace();
