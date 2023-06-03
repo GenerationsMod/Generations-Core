@@ -8,7 +8,9 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -45,6 +47,21 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.DAWN_STONE_SHARD.get(), GenerationsArmor.DAWN_STONE_HELMET, GenerationsArmor.DAWN_STONE_CHESTPLATE, GenerationsArmor.DAWN_STONE_LEGGINGS, GenerationsArmor.DAWN_STONE_BOOTS, GenerationsTools.DAWN_STONE_PICKAXE, GenerationsTools.DAWN_STONE_AXE, GenerationsTools.DAWN_STONE_SWORD, GenerationsTools.DAWN_STONE_SHOVEL, GenerationsTools.DAWN_STONE_HOE, GenerationsTools.DAWN_STONE_HAMMER);
 
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.DUSK_STONE_SHARD.get(), GenerationsArmor.DUSK_STONE_HELMET, GenerationsArmor.DUSK_STONE_CHESTPLATE, GenerationsArmor.DUSK_STONE_LEGGINGS, GenerationsArmor.DUSK_STONE_BOOTS, GenerationsTools.DUSK_STONE_PICKAXE, GenerationsTools.DUSK_STONE_AXE, GenerationsTools.DUSK_STONE_SWORD, GenerationsTools.DUSK_STONE_SHOVEL, GenerationsTools.DUSK_STONE_HOE, GenerationsTools.DUSK_STONE_HAMMER);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, GenerationsTools.WOODEN_HAMMER.get())
+				.define('X', ItemTags.PLANKS)
+				.define('#', Items.STICK)
+				.pattern("XXX")
+				.pattern("X#X")
+				.pattern(" # ")
+				.unlockedBy(getHasName(GenerationsTools.WOODEN_HAMMER.get()), has(GenerationsTools.WOODEN_HAMMER.get()))
+				.save(consumer);
+
+		buildHammerRecipes(consumer, GenerationsTools.STONE_HAMMER.get(), Items.COBBLESTONE);
+		buildHammerRecipes(consumer, GenerationsTools.IRON_HAMMER.get(), Items.IRON_INGOT);
+		buildHammerRecipes(consumer, GenerationsTools.GOLDEN_HAMMER.get(), Items.GOLD_INGOT);
+		buildHammerRecipes(consumer, GenerationsTools.DIAMOND_HAMMER.get(), Items.DIAMOND);
+		netheriteSmithing(consumer, GenerationsTools.DIAMOND_HAMMER.get(), RecipeCategory.TOOLS, GenerationsTools.NETHERITE_HAMMER.get());
 	}
 
 	private void buildArmorToolFullSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, RegistrySupplier<Item> pickaxe, RegistrySupplier<Item> axe, RegistrySupplier<Item> sword, RegistrySupplier<Item> shovel, RegistrySupplier<Item> hoe, RegistrySupplier<Item> hammer) {
@@ -65,13 +82,13 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 		if (sword != null) buildSwordRecipes(consumer, sword, baseItem);
 		if (shovel != null) buildShovelRecipes(consumer, shovel, baseItem);
 		if (hoe != null) buildHoeRecipes(consumer, hoe, baseItem);
-		if (hammer != null) buildHammerRecipes(consumer, hammer, baseItem);
+		if (hammer != null) buildHammerRecipes(consumer, hammer.get(), baseItem);
 	}
 
 
 
-	private void buildHammerRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Item> hammer, ItemLike baseItem) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hammer.get())
+	private void buildHammerRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item hammer, ItemLike baseItem) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hammer)
 				.define('X', baseItem)
 				.define('#', Items.STICK)
 				.pattern("XXX")
