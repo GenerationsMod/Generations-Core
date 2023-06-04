@@ -19,6 +19,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
@@ -372,6 +373,9 @@ public class TagsDatagen {
                 else if (item instanceof SwordItem) this.tag(ItemTags.SWORDS).add(item);
                 else if (item instanceof GenerationsHammerItem) this.tag(GenerationsItemTags.HAMMERS).add(item);
             });
+
+            this.tag(ItemTags.TOOLS).addTag(GenerationsItemTags.HAMMERS);
+            this.tag(Tags.Items.TOOLS).addTag(GenerationsItemTags.HAMMERS);
 
             ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
 
