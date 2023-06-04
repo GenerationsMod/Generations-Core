@@ -14,7 +14,7 @@ public class GenericFurnaceBlockEntity extends FurnaceBlockEntity implements Gen
 
     public GenericFurnaceBlockEntity(BlockPos arg, BlockState arg2){
         super(arg, arg2);
-        this.name = arg2.getBlock().getDescriptionId().replace("block.pokemod.", "");
+        this.name = arg2.getBlock().getDescriptionId().replace("block.generations_core.", "");
     }
 
     @Override
