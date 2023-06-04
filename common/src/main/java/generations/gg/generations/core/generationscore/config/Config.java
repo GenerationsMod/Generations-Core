@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore;
+package generations.gg.generations.core.generationscore.config;
 
 public class Config {
     public VanillaTabsToAdd addItemsToVanillaTabs = new VanillaTabsToAdd();
