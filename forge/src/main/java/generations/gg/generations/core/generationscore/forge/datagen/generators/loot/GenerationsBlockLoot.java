@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsPokeDolls;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -46,12 +47,11 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         //createDyedBlock(GenerationsDecorationBlocks.PASTEL_BEAN_BAG.get());
         //createDyedBlock(GenerationsDecorationBlocks.VENDING_MACHINE.get());
         //GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> add(block, createSinglePropConditionTable(block, DoubleDyeableBlock.HALF, DoubleBlockHalf.LOWER)));
-        //GenerationsPokeDolls.POKEDOLLS.getEntries().stream().map(RegistryObject::get).forEach(this::dropSelf);
+        GenerationsPokeDolls.POKEDOLLS.forEach(block -> dropSelf(block.get()));
         BlockDatagen.dropSelfList.stream().map(block -> (Block) block).forEach(this::dropSelf);
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
         GenerationsBlocks.POKEBRICKS.forEach(block -> dropSelfUpdated(block.get()));
         GenerationsBlocks.MARBLE.forEach(block -> dropSelfUpdated(block.get()));
-
 
         add(GenerationsBlocks.BLACK_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.BLACK_APRICORN_LEAVES.get(), GenerationsBlocks.BLACK_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(GenerationsBlocks.WHITE_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.WHITE_APRICORN_LEAVES.get(), GenerationsBlocks.WHITE_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
