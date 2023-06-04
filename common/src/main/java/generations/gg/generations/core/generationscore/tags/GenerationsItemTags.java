@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class GenerationsItemTags {
 
@@ -34,7 +35,17 @@ public class GenerationsItemTags {
     public static final TagKey<Item> SILICON_ORES = create("silicon_ores");
     public static final TagKey<Item> Z_CRYSTAL_ORES = create("z_crystal_ores");
     public static final TagKey<Item> FOSSIL_ORES = create("fossil_ores");
-
+    public static final TagKey<Item> DAWN_STONE_ORES = create("dawn_stone_ores");
+    public static final TagKey<Item> DUSK_STONE_ORES = create("dusk_stone_ores");
+    public static final TagKey<Item> FIRE_STONE_ORES = create("fire_stone_ores");
+    public static final TagKey<Item> ICE_STONE_ORES = create("ice_stone_ores");
+    public static final TagKey<Item> LEAF_STONE_ORES = create("leaf_stone_ores");
+    public static final TagKey<Item> SHINY_STONE_ORES = create("shiny_stone_ores");
+    public static final TagKey<Item> SUN_STONE_ORES = create("sun_stone_ores");
+    public static final TagKey<Item> THUNDER_STONE_ORES = create("thunder_stone_ores");
+    public static final TagKey<Item> WATER_STONE_ORES = create("water_stone_ores");
+    public static final TagKey<Item> MOON_STONE_ORES = create("moon_stone_ores");
+    
     public static final TagKey<Item> MARBLE = create("marble");
     public static final TagKey<Item> POKEBRICKS = create("pokebricks");
     public static final TagKey<Item> ULTRA = create("ultra");

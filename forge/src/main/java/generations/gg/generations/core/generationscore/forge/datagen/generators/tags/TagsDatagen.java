@@ -151,6 +151,16 @@ public class TagsDatagen {
             this.tag(GenerationsBlockTags.SILICON_ORES).add(GenerationsOres.SILICON_ORE.get(), GenerationsOres.DEEPSLATE_SILICON_ORE.get(), GenerationsOres.CHARGE_STONE_SILICON_ORE.get());
             this.tag(GenerationsBlockTags.Z_CRYSTAL_ORES).add(GenerationsOres.Z_CRYSTAL_ORE.get(), GenerationsOres.DEEPSLATE_Z_CRYSTAL_ORE.get(), GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
             this.tag(GenerationsBlockTags.FOSSIL_ORES).add(GenerationsOres.FOSSIL_ORE.get(), GenerationsOres.DEEPSLATE_FOSSIL_ORE.get(), GenerationsOres.CHARGE_STONE_FOSSIL_ORE.get());
+            this.tag(GenerationsBlockTags.DAWN_STONE_ORES).add(GenerationsOres.DAWN_STONE_ORE.get(), GenerationsOres.DEEPSLATE_DAWN_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_DAWN_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.DUSK_STONE_ORES).add(GenerationsOres.DUSK_STONE_ORE.get(), GenerationsOres.DEEPSLATE_DUSK_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_DUSK_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.FIRE_STONE_ORES).add(GenerationsOres.FIRE_STONE_ORE.get(), GenerationsOres.DEEPSLATE_FIRE_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_FIRE_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.ICE_STONE_ORES).add(GenerationsOres.ICE_STONE_ORE.get(), GenerationsOres.DEEPSLATE_ICE_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_ICE_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.LEAF_STONE_ORES).add(GenerationsOres.LEAF_STONE_ORE.get(), GenerationsOres.DEEPSLATE_LEAF_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_LEAF_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.SHINY_STONE_ORES).add(GenerationsOres.SHINY_STONE_ORE.get(), GenerationsOres.DEEPSLATE_SHINY_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_SHINY_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.SUN_STONE_ORES).add(GenerationsOres.SUN_STONE_ORE.get(), GenerationsOres.DEEPSLATE_SUN_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_SUN_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.THUNDER_STONE_ORES).add(GenerationsOres.THUNDER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_THUNDER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_THUNDER_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.WATER_STONE_ORES).add(GenerationsOres.WATER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_WATER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_WATER_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.MOON_STONE_ORES).add(GenerationsOres.MOON_STONE_ORE.get(), GenerationsOres.DEEPSLATE_MOON_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_MOON_STONE_ORE.get());
             //Vanilla Ores
             this.tag(BlockTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get());
             this.tag(BlockTags.REDSTONE_ORES).add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get());
@@ -168,6 +178,16 @@ public class TagsDatagen {
                     .addTag(GenerationsBlockTags.SILICON_ORES)
                     .addTag(GenerationsBlockTags.Z_CRYSTAL_ORES)
                     .addTag(GenerationsBlockTags.FOSSIL_ORES)
+                    .addTag(GenerationsBlockTags.DAWN_STONE_ORES)
+                    .addTag(GenerationsBlockTags.DUSK_STONE_ORES)
+                    .addTag(GenerationsBlockTags.FIRE_STONE_ORES)
+                    .addTag(GenerationsBlockTags.ICE_STONE_ORES)
+                    .addTag(GenerationsBlockTags.LEAF_STONE_ORES)
+                    .addTag(GenerationsBlockTags.SHINY_STONE_ORES)
+                    .addTag(GenerationsBlockTags.SUN_STONE_ORES)
+                    .addTag(GenerationsBlockTags.THUNDER_STONE_ORES)
+                    .addTag(GenerationsBlockTags.WATER_STONE_ORES)
+                    .addTag(GenerationsBlockTags.MOON_STONE_ORES)
                     .add(GenerationsOres.CHARGE_STONE_COAL_ORE.get())
                     .add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get())
                     .add(GenerationsOres.CHARGE_STONE_IRON_ORE.get())
@@ -303,6 +323,16 @@ public class TagsDatagen {
             this.copy(GenerationsBlockTags.SILICON_ORES, GenerationsItemTags.SILICON_ORES);
             this.copy(GenerationsBlockTags.Z_CRYSTAL_ORES, GenerationsItemTags.Z_CRYSTAL_ORES);
             this.copy(GenerationsBlockTags.FOSSIL_ORES, GenerationsItemTags.FOSSIL_ORES);
+            this.copy(GenerationsBlockTags.DAWN_STONE_ORES, GenerationsItemTags.DAWN_STONE_ORES);
+            this.copy(GenerationsBlockTags.DUSK_STONE_ORES, GenerationsItemTags.DUSK_STONE_ORES);
+            this.copy(GenerationsBlockTags.FIRE_STONE_ORES, GenerationsItemTags.FIRE_STONE_ORES);
+            this.copy(GenerationsBlockTags.ICE_STONE_ORES, GenerationsItemTags.ICE_STONE_ORES);
+            this.copy(GenerationsBlockTags.LEAF_STONE_ORES, GenerationsItemTags.LEAF_STONE_ORES);
+            this.copy(GenerationsBlockTags.MOON_STONE_ORES, GenerationsItemTags.MOON_STONE_ORES);
+            this.copy(GenerationsBlockTags.SUN_STONE_ORES, GenerationsItemTags.SUN_STONE_ORES);
+            this.copy(GenerationsBlockTags.SHINY_STONE_ORES, GenerationsItemTags.SHINY_STONE_ORES);
+            this.copy(GenerationsBlockTags.THUNDER_STONE_ORES, GenerationsItemTags.THUNDER_STONE_ORES);
+            this.copy(GenerationsBlockTags.WATER_STONE_ORES, GenerationsItemTags.WATER_STONE_ORES);
             this.tag(ItemTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get().asItem());
             this.tag(ItemTags.IRON_ORES).add(GenerationsOres.CHARGE_STONE_IRON_ORE.get().asItem());
             this.tag(ItemTags.GOLD_ORES).add(GenerationsOres.CHARGE_STONE_GOLD_ORE.get().asItem());
