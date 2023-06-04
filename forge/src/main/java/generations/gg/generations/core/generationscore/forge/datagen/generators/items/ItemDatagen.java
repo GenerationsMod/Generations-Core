@@ -1804,6 +1804,12 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GREAT_WALKMON, "utility_items/");
         createItem(GenerationsItems.ULTRA_WALKMON, "utility_items/");
         createItem(GenerationsItems.MASTER_WALKMON, "utility_items/");
+
+        createItemBlock(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.POKE_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY, "item/blocks/ball_displays/");
     }
 
     private void createCurry() {

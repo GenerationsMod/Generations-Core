@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -247,8 +248,23 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
 
         dropWhenSilkTouch(GenerationsBlocks.WINDOW_1.get());
         dropWhenSilkTouch(GenerationsBlocks.WINDOW_2.get());
+
+        dropSelf(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get());
+
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(), GenerationsItems.POKE_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get(), GenerationsItems.GREAT_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get(), GenerationsItems.ULTRA_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get(), GenerationsItems.MASTER_BALL.get());
     }
 
+    private void dropDisplayStandWithBall(Block block, Item item) {
+        add(block, LootTable
+                .lootTable()
+                .withPool(applyExplosionCondition(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(),
+                        LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()))))
+                .withPool(applyExplosionCondition(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(),
+                        LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(item)))));
+    }
 
 
     private void addOreWithRandomAmountDrops(RegistrySupplier<DropExperienceBlock> ore, RegistrySupplier<DropExperienceBlock> deepslateOre, RegistrySupplier<DropExperienceBlock> chargestoneOre, RegistrySupplier<Item> drop) {
