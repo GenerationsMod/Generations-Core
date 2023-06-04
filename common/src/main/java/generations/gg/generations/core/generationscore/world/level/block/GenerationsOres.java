@@ -127,7 +127,6 @@ public class GenerationsOres {
 		return block;
 	}
 
-
 	public static void init() {
 		GenerationsCore.LOGGER.info("Registering Generations Ores");
 		ORES.register();

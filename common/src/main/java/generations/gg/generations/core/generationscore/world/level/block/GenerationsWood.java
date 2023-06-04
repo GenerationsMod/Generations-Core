@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 
 /**
  * @author JT122406
- * PokeMod wood blocks
+ * Generations wood blocks
  */
 public class GenerationsWood {
 

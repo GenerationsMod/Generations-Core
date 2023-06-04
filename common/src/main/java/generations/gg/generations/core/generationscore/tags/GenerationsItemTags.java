@@ -40,6 +40,7 @@ public class GenerationsItemTags {
     public static final TagKey<Item> ULTRA = create("ultra");
 
     public static final TagKey<Item> WALKMONS = create("walkmons");
+    public static final TagKey<Item> HAMMERS = create("hammers");
 
     private static TagKey<Item> create(String name) {
         return TagKey.create(Registries.ITEM, GenerationsCore.id(name));

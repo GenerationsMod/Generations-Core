@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 /**
  * @author JT122406
  * @see WoodType
- * Registers custom PokeMod wood types
+ * Registers custom Generations wood types
  */
 public class GenerationsWoodTypes {
     public static final WoodType ULTRA_DARK = WoodType.register(new WoodType(GenerationsCore.MOD_ID + ":ultra_dark", BlockSetType.OAK));

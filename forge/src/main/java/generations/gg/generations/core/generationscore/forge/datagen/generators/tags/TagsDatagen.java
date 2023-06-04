@@ -3,6 +3,8 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -13,6 +15,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.tags.TagEntry;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -360,7 +363,15 @@ public class TagsDatagen {
             this.tag(ItemTags.CHEST_BOATS).add(GHOST_CHEST_BOAT_ITEM.get()).add(ULTRA_DARK_CHEST_BOAT_ITEM.get()).add(ULTRA_JUNGLE_CHEST_BOAT_ITEM.get());
 
             this.tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE.get().asItem()).add(GenerationsBlocks.VOLCANIC_COBBLESTONE.get().asItem());
-
+            GenerationsTools.TOOLS.forEach(tool -> {
+                Item item = tool.get();
+                if (item instanceof PickaxeItem) this.tag(ItemTags.PICKAXES).add(item);
+                else if (item instanceof AxeItem) this.tag(ItemTags.AXES).add(item);
+                else if (item instanceof ShovelItem) this.tag(ItemTags.SHOVELS).add(item);
+                else if (item instanceof HoeItem) this.tag(ItemTags.HOES).add(item);
+                else if (item instanceof SwordItem) this.tag(ItemTags.SWORDS).add(item);
+                else if (item instanceof GenerationsHammerItem) this.tag(GenerationsItemTags.HAMMERS).add(item);
+            });
 
             ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
 
