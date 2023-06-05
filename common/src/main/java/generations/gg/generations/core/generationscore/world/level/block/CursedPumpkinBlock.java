@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
+import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -31,7 +32,7 @@ public class CursedPumpkinBlock extends PumpkinBlock {
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         ItemStack itemstack = player.getItemInHand(hand);
-        if (itemstack.is(Items.SHEARS)) {
+        if (itemstack.is(GenerationsItemTags.SHEARS)) {
             if (!level.isClientSide) {
                 Direction direction = hit.getDirection();
                 Direction direction1 = direction.getAxis() == Direction.Axis.Y ? player.getDirection().getOpposite() : direction;

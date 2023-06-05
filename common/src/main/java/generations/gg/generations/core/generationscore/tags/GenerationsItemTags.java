@@ -52,6 +52,7 @@ public class GenerationsItemTags {
 
     public static final TagKey<Item> WALKMONS = create("walkmons");
     public static final TagKey<Item> HAMMERS = create("hammers");
+    public static final TagKey<Item> SHEARS = create("shears");
 
     private static TagKey<Item> create(String name) {
         return TagKey.create(Registries.ITEM, GenerationsCore.id(name));
