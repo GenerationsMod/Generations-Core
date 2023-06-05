@@ -39,7 +39,7 @@ public class DataGeneratorsRegister {
                 BuildingBlockRecipeDatagen::new,
                 //ItemRecipeDatagen::new,
                 GenerationsArmorToolRecipeDatagen::new,
-                MachineRecipeDatagen::new,
+                MachineDecorationsRecipeDatagen::new,
                 WoodRecipes::new,
                 //PokeBallRecipeDatagen::new,
                 FurnaceRecipeProvider::new));

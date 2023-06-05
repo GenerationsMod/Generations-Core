@@ -35,8 +35,8 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 //TODO: Proper RecipeCategory assignment
-public class MachineRecipeDatagen extends GenerationsRecipeProvider.Proxied implements IConditionBuilder {
-    public MachineRecipeDatagen(PackOutput output) {
+public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.Proxied implements IConditionBuilder {
+    public MachineDecorationsRecipeDatagen(PackOutput output) {
         super(output);
     }
 
@@ -162,6 +162,20 @@ public class MachineRecipeDatagen extends GenerationsRecipeProvider.Proxied impl
                 .pattern(" # ").pattern("#X#").pattern(" # ")
                 .unlockedBy(getHasName(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get()), has(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
+                .define('X', GenerationsBlocks.GRAY_MARBLE_STAIRS.get())
+                .define('Y', GenerationsBlocks.GRAY_MARBLE.get())
+                .define('#', Items.BOWL)
+                .pattern(" # ")
+                .pattern("XYX")
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE.get()), has(GenerationsBlocks.GRAY_MARBLE.get()))
+                .save(consumer);
+
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.POKE_BALL.get(), GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.GREAT_BALL.get(), GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.ULTRA_BALL.get(), GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.MASTER_BALL.get(), GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get());
     }
 
     private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
@@ -303,5 +317,16 @@ public class MachineRecipeDatagen extends GenerationsRecipeProvider.Proxied impl
                 .pattern("#")
                 .unlockedBy(getHasName(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()), has(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
+                .define('X', GenerationsBlocks.GRAY_MARBLE_STAIRS.get())
+                .define('Y', GenerationsBlocks.GRAY_MARBLE.get())
+                .define('#', Items.BOWL)
+                .define('Z', pokeball)
+                .pattern(" Z ")
+                .pattern(" # ")
+                .pattern("XYX")
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE.get()), has(GenerationsBlocks.GRAY_MARBLE.get()))
+                .save(consumer, "pokeball_display_with_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(pokeball)).getPath());
     }
 }
