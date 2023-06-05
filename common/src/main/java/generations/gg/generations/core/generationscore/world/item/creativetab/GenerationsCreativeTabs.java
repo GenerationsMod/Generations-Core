@@ -12,6 +12,11 @@ import net.minecraft.world.level.ItemLike;
 
 import java.util.function.Supplier;
 
+/**
+ * Generations Creative Tabs
+ * @author J.T. McQuigg
+ * @author WaterPicker
+ */
 public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier POKEBALLS = create("pokeballs", () -> GenerationsItems.POKE_BALL);
     public static CreativeTabRegistry.TabSupplier RESTORATION = create("restoration", () -> GenerationsItems.POTION);
@@ -20,7 +25,7 @@ public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN);
     public static CreativeTabRegistry.TabSupplier PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX);
     public static CreativeTabRegistry.TabSupplier LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS);
-    public static CreativeTabRegistry.TabSupplier BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.WHITE_POKE_BRICK);
+    public static CreativeTabRegistry.TabSupplier BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK);
     public static CreativeTabRegistry.TabSupplier DECORATIONS = create("decorations", () -> GenerationsDecorationBlocks.SWITCH);
     public static CreativeTabRegistry.TabSupplier NATURAL = create("natural", () -> GenerationsBlocks.RED_APRICORN);
     public static CreativeTabRegistry.TabSupplier UTILITY = create("utility", () -> GenerationsUtilityBlocks.RED_PC);
@@ -37,7 +42,5 @@ public class GenerationsCreativeTabs {
                 .title(Component.translatable("item_group." + name)));
     }
 
-    public static void init() {
-
-    }
+    public static void init() {}
 }
