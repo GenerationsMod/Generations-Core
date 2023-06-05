@@ -44,6 +44,7 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsTools.TOOLS, this::getNameGens);
         addItemEntries(GenerationsArmor.ARMOR, this::getNameGens);
         addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
+        addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens);
 
        // GenerationsEntities.ENTITIES.getEntries().forEach(Pokemon -> add(Pokemon.get(), getNameGens(Pokemon.getId().toString())));
 

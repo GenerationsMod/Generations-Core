@@ -434,6 +434,7 @@ public class TagsDatagen {
             this.tag(Tags.Items.TOOLS).addTag(GenerationsItemTags.HAMMERS);
 
             ITEMS.forEach(item -> this.tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
+            POKEBALLS.forEach(pokeball -> this.tag(GenerationsItemTags.POKEBALLS).add(pokeball.get()));
 
             this.tag(GenerationsItemTags.POKEMAIL).add(
                     POKEMAIL_AIR.get(),
