@@ -15,6 +15,7 @@ public class GenerationsBlockTags {
     public static final TagKey<Block> ALUMINUM_ORES = create("aluminum_ores");
     public static final TagKey<Block> SAPPHIRE_ORES = create("sapphire_ores");
     public static final TagKey<Block> RUBY_ORES = create("ruby_ores");
+    public static final TagKey<Block> CRYSTAL_ORES = create("crystal_ores");
     public static final TagKey<Block> SILICON_ORES = create("silicon_ores");
     public static final TagKey<Block> Z_CRYSTAL_ORES = create("z_crystal_ores");
     public static final TagKey<Block> FOSSIL_ORES = create("fossil_ores");

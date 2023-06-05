@@ -32,6 +32,7 @@ public class GenerationsItemTags {
     public static final TagKey<Item> ALUMINUM_ORES = create("aluminum_ores");
     public static final TagKey<Item> SAPPHIRE_ORES = create("sapphire_ores");
     public static final TagKey<Item> RUBY_ORES = create("ruby_ores");
+    public static final TagKey<Item> CRYSTAL_ORES = create("crystal_ores");
     public static final TagKey<Item> SILICON_ORES = create("silicon_ores");
     public static final TagKey<Item> Z_CRYSTAL_ORES = create("z_crystal_ores");
     public static final TagKey<Item> FOSSIL_ORES = create("fossil_ores");
