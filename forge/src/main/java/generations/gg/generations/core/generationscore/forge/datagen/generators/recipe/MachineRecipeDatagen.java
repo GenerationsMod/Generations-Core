@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.RugBlock;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.UmbrellaBlock;
@@ -294,13 +295,13 @@ public class MachineRecipeDatagen extends GenerationsRecipeProvider.Proxied impl
                 .save(consumer, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(vendingMachine)).withPath(a -> a + "_dyed"));
     }
 
-    private void buildPokeBallDisplayRecipes(Consumer<FinishedRecipe> consumer, Item pokeball, Block stand) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, stand)
+    private void buildPokeBallDisplayRecipes(Consumer<FinishedRecipe> consumer, Item pokeball, Block display) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
                 .define('X', pokeball)
-                .define('#', stand)
+                .define('#', GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
                 .pattern("X")
                 .pattern("#")
-                .unlockedBy(getHasName(stand), has(stand))
+                .unlockedBy(getHasName(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()), has(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()))
                 .save(consumer);
     }
 }
