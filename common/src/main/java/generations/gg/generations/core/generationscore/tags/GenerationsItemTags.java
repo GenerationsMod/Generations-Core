@@ -46,6 +46,10 @@ public class GenerationsItemTags {
     public static final TagKey<Item> THUNDER_STONE_ORES = create("thunder_stone_ores");
     public static final TagKey<Item> WATER_STONE_ORES = create("water_stone_ores");
     public static final TagKey<Item> MOON_STONE_ORES = create("moon_stone_ores");
+    public static final TagKey<Item> BLACK_TUMBLESTONE_ORES = create("black_tumblestone_ores");
+    public static final TagKey<Item> RARE_TUMBLESTONE_ORES = create("rare_tumblestone_ores");
+    public static final TagKey<Item> SKY_TUMBLESTONE_ORES = create("sky_tumblestone_ores");
+    public static final TagKey<Item> TUMBLESTONE_ORES = create("tumblestone_ores");
     
     public static final TagKey<Item> MARBLE = create("marble");
     public static final TagKey<Item> POKEBRICKS = create("pokebricks");

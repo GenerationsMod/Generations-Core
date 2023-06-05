@@ -162,6 +162,10 @@ public class TagsDatagen {
             this.tag(GenerationsBlockTags.THUNDER_STONE_ORES).add(GenerationsOres.THUNDER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_THUNDER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_THUNDER_STONE_ORE.get());
             this.tag(GenerationsBlockTags.WATER_STONE_ORES).add(GenerationsOres.WATER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_WATER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_WATER_STONE_ORE.get());
             this.tag(GenerationsBlockTags.MOON_STONE_ORES).add(GenerationsOres.MOON_STONE_ORE.get(), GenerationsOres.DEEPSLATE_MOON_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_MOON_STONE_ORE.get());
+            this.tag(GenerationsBlockTags.TUMBLESTONE_ORES).add(GenerationsOres.TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_TUMBLESTONE_ORE.get());
+            this.tag(GenerationsBlockTags.RARE_TUMBLESTONE_ORES).add(GenerationsOres.RARE_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_RARE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_RARE_TUMBLESTONE_ORE.get());
+            this.tag(GenerationsBlockTags.SKY_TUMBLESTONE_ORES).add(GenerationsOres.SKY_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_SKY_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_SKY_TUMBLESTONE_ORE.get());
+            this.tag(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES).add(GenerationsOres.BLACK_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_BLACK_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_BLACK_TUMBLESTONE_ORE.get());
             //Vanilla Ores
             this.tag(BlockTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get());
             this.tag(Tags.Blocks.ORES_COAL).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get());
@@ -198,6 +202,10 @@ public class TagsDatagen {
                     .addTag(GenerationsBlockTags.THUNDER_STONE_ORES)
                     .addTag(GenerationsBlockTags.WATER_STONE_ORES)
                     .addTag(GenerationsBlockTags.MOON_STONE_ORES)
+                    .addTag(GenerationsBlockTags.TUMBLESTONE_ORES)
+                    .addTag(GenerationsBlockTags.RARE_TUMBLESTONE_ORES)
+                    .addTag(GenerationsBlockTags.SKY_TUMBLESTONE_ORES)
+                    .addTag(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES)
                     .add(GenerationsOres.CHARGE_STONE_COAL_ORE.get())
                     .add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get())
                     .add(GenerationsOres.CHARGE_STONE_IRON_ORE.get())
@@ -346,6 +354,10 @@ public class TagsDatagen {
             this.copy(GenerationsBlockTags.SHINY_STONE_ORES, GenerationsItemTags.SHINY_STONE_ORES);
             this.copy(GenerationsBlockTags.THUNDER_STONE_ORES, GenerationsItemTags.THUNDER_STONE_ORES);
             this.copy(GenerationsBlockTags.WATER_STONE_ORES, GenerationsItemTags.WATER_STONE_ORES);
+            this.copy(GenerationsBlockTags.TUMBLESTONE_ORES, GenerationsItemTags.TUMBLESTONE_ORES);
+            this.copy(GenerationsBlockTags.RARE_TUMBLESTONE_ORES, GenerationsItemTags.RARE_TUMBLESTONE_ORES);
+            this.copy(GenerationsBlockTags.SKY_TUMBLESTONE_ORES, GenerationsItemTags.SKY_TUMBLESTONE_ORES);
+            this.copy(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES, GenerationsItemTags.BLACK_TUMBLESTONE_ORES);
             this.tag(ItemTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get().asItem());
             this.tag(ItemTags.IRON_ORES).add(GenerationsOres.CHARGE_STONE_IRON_ORE.get().asItem());
             this.tag(ItemTags.GOLD_ORES).add(GenerationsOres.CHARGE_STONE_GOLD_ORE.get().asItem());
