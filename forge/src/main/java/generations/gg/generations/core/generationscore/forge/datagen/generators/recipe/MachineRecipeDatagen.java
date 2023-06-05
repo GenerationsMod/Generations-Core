@@ -22,7 +22,9 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -290,5 +292,15 @@ public class MachineRecipeDatagen extends GenerationsRecipeProvider.Proxied impl
                 .requires(GenerationsItemTags.VENDING_MACHINE)
                 .unlockedBy("has_" + GenerationsItemTags.VENDING_MACHINE.location().getPath(), has(GenerationsItemTags.VENDING_MACHINE))
                 .save(consumer, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(vendingMachine)).withPath(a -> a + "_dyed"));
+    }
+
+    private void buildPokeBallDisplayRecipes(Consumer<FinishedRecipe> consumer, Item pokeball, Block stand) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, stand)
+                .define('X', pokeball)
+                .define('#', stand)
+                .pattern("X")
+                .pattern("#")
+                .unlockedBy(getHasName(stand), has(stand))
+                .save(consumer);
     }
 }
