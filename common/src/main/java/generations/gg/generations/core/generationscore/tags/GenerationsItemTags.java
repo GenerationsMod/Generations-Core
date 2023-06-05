@@ -9,8 +9,6 @@ import net.minecraft.world.level.block.Block;
 public class GenerationsItemTags {
 
     public static final TagKey<Item> GENERATIONSITEMS = create("generationsitems");
-    public static final TagKey<Item> APRICORNS = create("apricorns");
-    public static final TagKey<Item> APRICORNS_MINUS_PINK = create("apricorns_minus_pink");
     public static final TagKey<Item> PC = create("pc");
     public static final TagKey<Item> CLOCK = create("clock");
     public static final TagKey<Item> HEALER = create("healer");
