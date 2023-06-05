@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "generations_core:fire_stone_shard"
+    }
+  },
+  "pattern": [
+    " XX",
+    " #X",
+    " # "
+  ],
+  "result": {
+    "item": "generations_core:fire_stone_axe"
+  },
+  "show_notification": true
+}

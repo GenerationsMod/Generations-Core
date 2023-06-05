@@ -1,0 +1,21 @@
+{
+  "values": [
+    "generations_core:charge_stone_hoe",
+    "generations_core:volcanic_stone_hoe",
+    "generations_core:aluminum_hoe",
+    "generations_core:amethyst_hoe",
+    "generations_core:crystal_hoe",
+    "generations_core:dawn_stone_hoe",
+    "generations_core:dusk_stone_hoe",
+    "generations_core:fire_stone_hoe",
+    "generations_core:ice_stone_hoe",
+    "generations_core:leaf_stone_hoe",
+    "generations_core:moon_stone_hoe",
+    "generations_core:ruby_hoe",
+    "generations_core:sapphire_hoe",
+    "generations_core:silicon_hoe",
+    "generations_core:sun_stone_hoe",
+    "generations_core:thunder_stone_hoe",
+    "generations_core:water_stone_hoe"
+  ]
+}

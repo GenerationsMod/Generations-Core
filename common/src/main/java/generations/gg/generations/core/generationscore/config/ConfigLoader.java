@@ -1,7 +1,8 @@
-package generations.gg.generations.core.generationscore;
+package generations.gg.generations.core.generationscore.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import generations.gg.generations.core.generationscore.GenerationsCoreExpectPlatform;
 
 import java.nio.file.Files;
 import java.nio.file.Path;

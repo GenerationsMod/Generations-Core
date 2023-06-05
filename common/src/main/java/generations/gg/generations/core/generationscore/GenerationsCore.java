@@ -9,6 +9,8 @@
 package generations.gg.generations.core.generationscore;
 
 import com.mojang.logging.LogUtils;
+import generations.gg.generations.core.generationscore.config.Config;
+import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
