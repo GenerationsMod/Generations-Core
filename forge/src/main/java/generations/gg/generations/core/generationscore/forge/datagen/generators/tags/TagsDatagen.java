@@ -137,6 +137,7 @@ public class TagsDatagen {
                             GenerationsBlocks.GREATBALL_CHEST.get(),
                             GenerationsBlocks.ULTRABALL_CHEST.get(),
                             GenerationsBlocks.MASTERBALL_CHEST.get());
+            this.tag(Tags.Blocks.CHESTS).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
 
             GenerationsShrines.SHRINES.forEach(block -> this.tag(GenerationsBlockTags.SHRINES).add(block.get()));
 
