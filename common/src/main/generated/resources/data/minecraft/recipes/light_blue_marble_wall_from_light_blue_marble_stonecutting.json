@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:light_blue_marble"
+  },
+  "result": "generations_core:light_blue_marble_wall"
+}

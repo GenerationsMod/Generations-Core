@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:pokecenter_roof"
+  },
+  "result": "generations_core:pokecenter_roof_stairs"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "generations_core:smooth_charge_stone"
+  },
+  "result": "generations_core:smooth_charge_stone_slab"
+}

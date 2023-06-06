@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:ghost_obelisk"
+  },
+  "result": "generations_core:ghost_obelisk_stairs"
+}

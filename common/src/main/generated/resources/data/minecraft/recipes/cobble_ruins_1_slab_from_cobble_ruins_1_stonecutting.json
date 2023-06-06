@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "generations_core:cobble_ruins_1"
+  },
+  "result": "generations_core:cobble_ruins_1_slab"
+}

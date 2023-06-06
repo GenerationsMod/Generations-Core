@@ -527,7 +527,7 @@ public class TagsDatagen {
                     POKEMAIL_WAVE_CLOSED.get(),
                     POKEMAIL_WOOD_CLOSED.get());
 
-            tag(GenerationsItemTags.SHEARS).addTag(Tags.Items.SHEARS).add(Items.SHEARS);
+            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS.location());
         }
     }
 
