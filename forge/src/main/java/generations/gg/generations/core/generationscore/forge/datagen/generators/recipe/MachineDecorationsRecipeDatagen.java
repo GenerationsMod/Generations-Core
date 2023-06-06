@@ -176,6 +176,28 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
         buildPokeBallDisplayRecipes(consumer, GenerationsItems.GREAT_BALL.get(), GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get());
         buildPokeBallDisplayRecipes(consumer, GenerationsItems.ULTRA_BALL.get(), GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get());
         buildPokeBallDisplayRecipes(consumer, GenerationsItems.MASTER_BALL.get(), GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.CHERISH_BALL.get(), GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.DIVE_BALL.get(), GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.DUSK_BALL.get(), GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.FAST_BALL.get(), GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.FRIEND_BALL.get(), GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.GS_BALL.get(), GenerationsDecorationBlocks.GS_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.HEAL_BALL.get(), GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.HEAVY_BALL.get(), GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LEVEL_BALL.get(), GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LOVE_BALL.get(), GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LURE_BALL.get(), GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LUXURY_BALL.get(), GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.MOON_BALL.get(), GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.NEST_BALL.get(), GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.NET_BALL.get(), GenerationsDecorationBlocks.NET_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.PARK_BALL.get(), GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.PREMIER_BALL.get(), GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.QUICK_BALL.get(), GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.REPEAT_BALL.get(), GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.SAFARI_BALL.get(), GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.SPORT_BALL.get(), GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.TIMER_BALL.get(), GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get());
     }
 
     private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {

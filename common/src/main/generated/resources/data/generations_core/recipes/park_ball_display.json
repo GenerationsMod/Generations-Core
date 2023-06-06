@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "generations_core:empty_ball_display"
+    },
+    "X": {
+      "item": "generations_core:park_ball"
+    }
+  },
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "result": {
+    "item": "generations_core:park_ball_display"
+  },
+  "show_notification": true
+}

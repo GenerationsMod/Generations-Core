@@ -246,6 +246,28 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropDisplayStandWithBall(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get(), GenerationsItems.GREAT_BALL.get());
         dropDisplayStandWithBall(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get(), GenerationsItems.ULTRA_BALL.get());
         dropDisplayStandWithBall(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get(), GenerationsItems.MASTER_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get(), GenerationsItems.CHERISH_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get(), GenerationsItems.DIVE_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get(), GenerationsItems.DUSK_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get(), GenerationsItems.FAST_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get(), GenerationsItems.FRIEND_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.GS_BALL_DISPLAY.get(), GenerationsItems.GS_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get(), GenerationsItems.HEAL_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get(), GenerationsItems.HEAVY_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get(), GenerationsItems.LEVEL_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get(), GenerationsItems.LOVE_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get(), GenerationsItems.LURE_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get(), GenerationsItems.LUXURY_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get(), GenerationsItems.MOON_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get(), GenerationsItems.NEST_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.NET_BALL_DISPLAY.get(), GenerationsItems.NET_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get(), GenerationsItems.PARK_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get(), GenerationsItems.PREMIER_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get(), GenerationsItems.QUICK_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get(), GenerationsItems.REPEAT_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get(), GenerationsItems.SAFARI_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get(), GenerationsItems.SPORT_BALL.get());
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), GenerationsItems.TIMER_BALL.get());
     }
 
     private void dropDisplayStandWithBall(Block block, Item item) {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "generations_core:item/blocks/ball_displays/level_ball_display"
+  }
+}
