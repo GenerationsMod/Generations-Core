@@ -27,7 +27,7 @@ public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS);
     public static CreativeTabRegistry.TabSupplier BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK);
     public static CreativeTabRegistry.TabSupplier DECORATIONS = create("decorations", () -> GenerationsDecorationBlocks.SWITCH);
-    public static CreativeTabRegistry.TabSupplier NATURAL = create("natural", () -> GenerationsBlocks.RED_APRICORN);
+    public static CreativeTabRegistry.TabSupplier NATURAL = create("natural", () -> GenerationsOres.ALUMINUM_ORE);
     public static CreativeTabRegistry.TabSupplier UTILITY = create("utility", () -> GenerationsUtilityBlocks.RED_PC);
     public static CreativeTabRegistry.TabSupplier FORM_ITEMS = create("form_items", () -> GenerationsItems.METEORITE);
     public static CreativeTabRegistry.TabSupplier POKEMAIL = create("pokemail", () -> GenerationsItems.POKEMAIL_AIR);
