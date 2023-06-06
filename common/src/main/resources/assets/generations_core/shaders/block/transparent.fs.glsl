@@ -18,5 +18,5 @@ void main() {
     vec4 lightColor = minecraft_sample_lightmap(lightmap, light);
 
     outColor = color * lightColor;
-    outColor.a = alpha;
+    outColor.a = outColor.a;
 }

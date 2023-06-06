@@ -8,16 +8,23 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class WaterFloatBlock extends DyeableBlock<GenericDyedVariantBlockEntity, WaterFloatBlock> implements SittableBlock {
-    public static VoxelShape AABB = Shapes.box(0,0,0, 1, 0.2, 1);
+    public static VoxelShape AABB = Shapes.box(0, 0, 0, 1, 0.2, 1);
 
     public WaterFloatBlock(BlockBehaviour.Properties properties) {
         super(WaterFloatBlock::getBlock, GenerationsBlockEntities.GENERIC_DYED_VARIANT, properties, GenerationsBlockEntityModels.WATER_FLOAT, 0, 0, 1);
@@ -30,7 +37,7 @@ public class WaterFloatBlock extends DyeableBlock<GenericDyedVariantBlockEntity,
 
     @Override
     public double getOffset() {
-        return 0.16;
+        return 0.04;
     }
 
     public static DyedBlockItem<WaterFloatBlock> getBlock(DyeColor dyeColor) {
@@ -52,5 +59,10 @@ public class WaterFloatBlock extends DyeableBlock<GenericDyedVariantBlockEntity,
             case WHITE -> GenerationsDecorationBlocks.WHITE_WATER_FLOAT;
             case YELLOW -> GenerationsDecorationBlocks.YELLOW_WATER_FLOAT;
         }).get();
+    }
+
+    @Override
+    protected InteractionResult serverUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+        return SittableBlock.super.use(state, world, pos, player, handIn, hit);
     }
 }

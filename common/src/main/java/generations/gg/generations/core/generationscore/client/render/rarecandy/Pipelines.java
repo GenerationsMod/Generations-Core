@@ -4,7 +4,6 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import gg.generations.rarecandy.model.material.TransparentMaterial;
 import gg.generations.rarecandy.pipeline.Pipeline;
 import gg.generations.rarecandy.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
@@ -108,13 +107,11 @@ public class Pipelines {
                     .prePostDraw(() -> {
                         RenderSystem.enableBlend();
                         RenderSystem.defaultBlendFunc();
-                        RenderSystem.enableDepthTest();
+
                     }, () -> {
                         RenderSystem.disableBlend();
                         Minecraft.getInstance().gameRenderer.lightTexture().turnOffLightLayer();
-                        RenderSystem.disableDepthTest();
                     })
-                    .supplyUniform("alpha", ctx -> ctx.uniform().uploadFloat(((TransparentMaterial) ctx.object().getMaterial(ctx.instance().variant())).alpha))
                     .build();
 
             return material -> material.equals("transparent") ? transparent : solid;
@@ -134,22 +131,19 @@ public class Pipelines {
                     .supplyUniform("boneTransforms", ctx -> ctx.uniform().uploadMat4fs(((AnimatedObjectInstance) ctx.instance()).getTransforms()));
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
-                    .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
+                    .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
                     .prePostDraw(() -> {}, Minecraft.getInstance().gameRenderer.lightTexture()::turnOffLightLayer)
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)
-                    .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/transparent.fs.glsl")))
+                    .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/transparent.fs.glsl")))
                     .prePostDraw(() -> {
                         RenderSystem.enableBlend();
                         RenderSystem.defaultBlendFunc();
-                        RenderSystem.enableDepthTest();
                     }, () -> {
                         RenderSystem.disableBlend();
-                        RenderSystem.disableDepthTest();
                         Minecraft.getInstance().gameRenderer.lightTexture().turnOffLightLayer();
                     })
-                    .supplyUniform("alpha", ctx -> ctx.uniform().uploadFloat(((TransparentMaterial) ctx.object().getMaterial(ctx.instance().variant())).alpha))
                     .build();
 
             return material -> material.equals("transparent") ? transparent : solid;
