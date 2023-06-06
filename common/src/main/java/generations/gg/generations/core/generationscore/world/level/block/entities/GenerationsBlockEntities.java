@@ -247,7 +247,8 @@ public class GenerationsBlockEntities {
             GenerationsDecorationBlocks.UMBRELLA.get(),
             GenerationsUtilityBlocks.PC.get(),
             GenerationsUtilityBlocks.TRASH_CAN.get(),
-            GenerationsDecorationBlocks.POKEBALL_RUG.get())
+            GenerationsDecorationBlocks.POKEBALL_RUG.get(),
+            GenerationsDecorationBlocks.WATER_FLOAT.get())
             .build(null));
 
     public static final RegistrySupplier<BlockEntityType<GenericModelProvidingBlockEntity>> GENERIC_MODEL_PROVIDING = BLOCK_ENTITIES.register("generic_model_providing", () -> BlockEntityType.Builder.of(GenericModelProvidingBlockEntity::new,

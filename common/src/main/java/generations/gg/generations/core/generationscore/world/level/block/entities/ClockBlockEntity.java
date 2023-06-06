@@ -6,8 +6,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ClockBlockEntity extends DyedVariantBlockEntity implements ModelContextProviders.FrameProvider {
-//    public AnimatedObjectInstance rarecandyInstance;
-
     public ClockBlockEntity(BlockPos arg2, BlockState arg3) {
         super(GenerationsBlockEntities.CLOCK.get(), arg2, arg3);
     }

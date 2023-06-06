@@ -21,7 +21,7 @@ public class BreederBlocEntityRenderer extends GeneralUseBlockEntityRenderer<Bre
     }
 
     @Override
-    protected void renderModels(PoseStack stack, BreederBlockEntity blockEntity) {
+    protected void renderModels(PoseStack stack, BreederBlockEntity blockEntity, int packedLight) {
         renderResourceLocation(stack, AUTO_FEEDER);
         ModelRegistry.get(AUTO_FEEDER_FILL, "fullbright").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
         renderResourceLocation(stack, BREEDER);

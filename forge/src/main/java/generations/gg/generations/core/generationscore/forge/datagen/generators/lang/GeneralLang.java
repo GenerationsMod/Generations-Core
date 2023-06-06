@@ -30,6 +30,7 @@ public class GeneralLang extends LanguageProvider {
         addBlockEntries(GenerationsDecorationBlocks.DECORATIONS, this::getNameGens);
         GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
         GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
+        GenerationsDecorationBlocks.WATER_FLOAT_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
         GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
         GenerationsDecorationBlocks.PASTEL_BEAN_BAG_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
         addBlockEntries(GenerationsWood.WOOD_BLOCKS, this::getNameGens);

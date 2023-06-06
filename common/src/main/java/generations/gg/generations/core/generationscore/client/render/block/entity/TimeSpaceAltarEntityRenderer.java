@@ -19,10 +19,10 @@ public class TimeSpaceAltarEntityRenderer extends GeneralUseBlockEntityRenderer<
     public void render(@NotNull TimeSpaceAltarBlockEntity blockEntity, float partialTick, PoseStack stack, @NotNull MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         stack.pushPose();
         ModelRegistry.prepForBER(stack, blockEntity);
-        ModelRegistry.get(blockEntity, "fullbright").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
+        ModelRegistry.get(blockEntity, "block").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
 
         var trio = blockEntity.getOrb();
-        if (trio != null) ModelRegistry.get(trio, "fullbright").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
+        if (trio != null) ModelRegistry.get(trio, "block").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
         RenderSystem.disableDepthTest();
         stack.popPose();
     }
