@@ -14,6 +14,7 @@
     "generations_core:crystal_slab",
     "generations_core:crystal_stairs",
     "generations_core:crystal_wall",
-    "generations_core:silicon_block"
+    "generations_core:silicon_block",
+    "#generations_core:ball_display_blocks"
   ]
 }
