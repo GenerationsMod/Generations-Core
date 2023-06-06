@@ -8,13 +8,11 @@ import generations.gg.generations.core.generationscore.world.item.berry.BerryTyp
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.PokecenterScarletSignBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
-import generations.gg.generations.core.generationscore.world.level.block.grower.GenerationsTreeGrower;
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import generations.gg.generations.core.generationscore.world.level.levelgen.GenerationsFeatures;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -1182,29 +1180,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<SlabBlock> COOL_STONE_SLAB = registerBlockItem("cool_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COOL_STONE.get())));
     public static final RegistrySupplier<WallBlock> COOL_STONE_WALL = registerBlockItem("cool_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COOL_STONE.get())));
     /**
-     * Apricorn Trees
-     */
-    public static final RegistrySupplier<Block> BLACK_APRICORN = registerApricornSapling("black_apricorn", () -> new SaplingBlock(new GenerationsTreeGrower(GenerationsFeatures.BLACK_APRICORN_TREE), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
-    public static final RegistrySupplier<Block> BLUE_APRICORN = registerApricornSapling("blue_apricorn", () -> new SaplingBlock(new GenerationsTreeGrower(GenerationsFeatures.BLUE_APRICORN_TREE), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
-    public static final RegistrySupplier<Block> GREEN_APRICORN = registerApricornSapling("green_apricorn", () -> new SaplingBlock(new GenerationsTreeGrower(GenerationsFeatures.GREEN_APRICORN_TREE), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
-    public static final RegistrySupplier<Block> PINK_APRICORN = registerApricornSapling("pink_apricorn", () -> new SaplingBlock(new GenerationsTreeGrower(GenerationsFeatures.PINK_APRICORN_TREE), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
-    public static final RegistrySupplier<Block> RED_APRICORN = registerApricornSapling("red_apricorn", () -> new SaplingBlock(new GenerationsTreeGrower(GenerationsFeatures.RED_APRICORN_TREE), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
-    public static final RegistrySupplier<Block> WHITE_APRICORN = registerApricornSapling("white_apricorn", () -> new SaplingBlock(new GenerationsTreeGrower(GenerationsFeatures.WHITE_APRICORN_TREE), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
-    public static final RegistrySupplier<Block> YELLOW_APRICORN = registerApricornSapling("yellow_apricorn", () -> new SaplingBlock(new GenerationsTreeGrower(GenerationsFeatures.YELLOW_APRICORN_TREE), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
-
-    /**
-     * Apricorn Trees Leaves
-     */
-    public static final RegistrySupplier<Block> BLACK_APRICORN_LEAVES = registerBlockItem("black_apricorn_leaves", GenerationsBlocks::apricornLeaves);
-    public static final RegistrySupplier<Block> BLUE_APRICORN_LEAVES = registerBlockItem("blue_apricorn_leaves", GenerationsBlocks::apricornLeaves);
-    public static final RegistrySupplier<Block> GREEN_APRICORN_LEAVES = registerBlockItem("green_apricorn_leaves", GenerationsBlocks::apricornLeaves);
-    public static final RegistrySupplier<Block> PINK_APRICORN_LEAVES = registerBlockItem("pink_apricorn_leaves", GenerationsBlocks::apricornLeaves);
-    public static final RegistrySupplier<Block> RED_APRICORN_LEAVES = registerBlockItem("red_apricorn_leaves", GenerationsBlocks::apricornLeaves);
-    public static final RegistrySupplier<Block> WHITE_APRICORN_LEAVES = registerBlockItem("white_apricorn_leaves", GenerationsBlocks::apricornLeaves);
-    public static final RegistrySupplier<Block> YELLOW_APRICORN_LEAVES = registerBlockItem("yellow_apricorn_leaves", GenerationsBlocks::apricornLeaves);
-
-
-    /**
      * 1 Block Tall Ballonlea Mushrooms
      */
     public static final RegistrySupplier<GenerationsMushroomBlock> BALLONLEA_BLUE_MUSHROOM = registerBlockItem("ballonlea_blue_mushroom", () -> new GenerationsMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).dynamicShape().lightLevel(value -> 6), GenerationsFeatures.BALLONLEA_BLUE_MUSHROOM));
@@ -1317,27 +1292,8 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> YACHE_BERRY_BUSH = createBerryBush(BerryType.YACHE);
     public static final RegistrySupplier<Block> YAGO_BERRY_BUSH = createBerryBush(BerryType.YAGO);
 
-    private static Block apricornLeaves() {
-        return new LeavesBlock(
-                BlockBehaviour.Properties
-                        .of(Material.LEAVES)
-                        .strength(0.2f)
-                        .randomTicks()
-                        .sound(SoundType.GRASS)
-                        .noOcclusion()
-                        .isValidSpawn(Blocks::ocelotOrParrot)
-                        .isSuffocating(Blocks::never)
-                        .isViewBlocking(Blocks::never));
-    }
-
     private static RegistrySupplier<Block> createBerryBush(BerryType berryType) {
         return BLOCKS.register(berryType.name().toLowerCase(Locale.ENGLISH) + "_berry_bush", () -> new GenerationsBerryBushBlock(berryType, BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
-    }
-
-    private static <T extends Block> RegistrySupplier<T> registerApricornSapling(String name, Supplier<T> blockSupplier) {
-        RegistrySupplier<T> block = BLOCKS.register(name, blockSupplier);
-        register(name, properties -> new ItemNameBlockItem(block.get(), properties));
-        return block;
     }
     
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {

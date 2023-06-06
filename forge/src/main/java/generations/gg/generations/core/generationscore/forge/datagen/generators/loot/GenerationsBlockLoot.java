@@ -29,7 +29,6 @@ import java.util.Set;
 
 public class GenerationsBlockLoot extends BlockLootSubProvider {
 
-    private final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
     private final List<Block> knownBlocks = new ArrayList<>();
 
     protected GenerationsBlockLoot() {
@@ -53,14 +52,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
         GenerationsBlocks.POKEBRICKS.forEach(block -> dropSelfUpdated(block.get()));
         GenerationsBlocks.MARBLE.forEach(block -> dropSelfUpdated(block.get()));
-
-        add(GenerationsBlocks.BLACK_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.BLACK_APRICORN_LEAVES.get(), GenerationsBlocks.BLACK_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(GenerationsBlocks.WHITE_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.WHITE_APRICORN_LEAVES.get(), GenerationsBlocks.WHITE_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(GenerationsBlocks.PINK_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.PINK_APRICORN_LEAVES.get(), GenerationsBlocks.PINK_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(GenerationsBlocks.GREEN_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.GREEN_APRICORN_LEAVES.get(), GenerationsBlocks.GREEN_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(GenerationsBlocks.BLUE_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.BLUE_APRICORN_LEAVES.get(), GenerationsBlocks.BLUE_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(GenerationsBlocks.YELLOW_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.YELLOW_APRICORN_LEAVES.get(), GenerationsBlocks.YELLOW_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(GenerationsBlocks.RED_APRICORN_LEAVES.get(), createLeavesDrops(GenerationsBlocks.RED_APRICORN_LEAVES.get(), GenerationsBlocks.RED_APRICORN.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE.get());
 

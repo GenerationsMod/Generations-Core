@@ -49,14 +49,6 @@ public class GeneralLang extends LanguageProvider {
 
        // GenerationsEntities.ENTITIES.getEntries().forEach(Pokemon -> add(Pokemon.get(), getNameGens(Pokemon.getId().toString())));
 
-        add(GenerationsBlocks.BLACK_APRICORN.get().asItem(), "Black Apricorn");
-        add(GenerationsBlocks.BLUE_APRICORN.get().asItem(), "Blue Apricorn");
-        add(GenerationsBlocks.GREEN_APRICORN.get().asItem(), "Green Apricorn");
-        add(GenerationsBlocks.PINK_APRICORN.get().asItem(), "Pink Apricorn");
-        add(GenerationsBlocks.RED_APRICORN.get().asItem(), "Red Apricorn");
-        add(GenerationsBlocks.WHITE_APRICORN.get().asItem(), "White Apricorn");
-        add(GenerationsBlocks.YELLOW_APRICORN.get().asItem(), "Yellow Apricorn");
-
         //Manually add Creative Tabs
         add("item_group.pokeballs", "Poké Balls");
         add("item_group.restoration", "Restoration");

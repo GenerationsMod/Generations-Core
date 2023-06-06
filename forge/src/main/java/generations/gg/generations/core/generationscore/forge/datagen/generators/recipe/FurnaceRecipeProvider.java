@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
 import com.google.common.collect.ImmutableList;
+import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
