@@ -41,6 +41,7 @@ public class GenerationsBlockTags {
     public static final TagKey<Block> CHARGE_STONE_BRICKS = create("charge_stone_bricks");
     public static final TagKey<Block> VOLCANIC_STONE_BRICKS = create("volcanic_stone_bricks");
     public static final TagKey<Block> POKEBALL_CHESTS = create("pokeball_chests");
+    public static final TagKey<Block> BALL_DISPLAY_BLOCKS = create("ball_display_blocks");
 
     private static TagKey<Block> create(String name) {
         return TagKey.create(Registries.BLOCK, GenerationsCore.id(name));

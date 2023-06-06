@@ -33,6 +33,7 @@ public class GenerationsDecorationBlocks {
     public static final List<RegistrySupplier<DyedBlockItem<PastelBeanBagBlock>>> PASTEL_BEAN_BAG_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<DyedBlockItem<RugBlock>>> POKEDOLL_RUG_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<DyedBlockItem<WaterFloatBlock>>> WATER_FLOAT_BLOCKS = new ArrayList<>();
+    public static final List<RegistrySupplier<BallDisplayBlock>> BALL_DISPLAY_BLOCKS = new ArrayList<>();
 
     /**
      * Decoration Blocks
@@ -175,7 +176,9 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<BallDisplayBlock> TIMER_BALL_DISPLAY = registerBallDisplay(DisplayState.TIMER);
 
     private static RegistrySupplier<BallDisplayBlock> registerBallDisplay(DisplayState state) {
-        return registerDecorationItem(state.name().toLowerCase() + "_ball_display", () -> new BallDisplayBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), state));
+        var block = registerBlock(state.name().toLowerCase() + "_ball_display", () -> new BallDisplayBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), state));
+        BALL_DISPLAY_BLOCKS.add(block);
+        return block;
     }
 
     private static <T extends Block> RegistrySupplier<T> registerDecorationItem(String name, Supplier<T> blockSupplier) {
