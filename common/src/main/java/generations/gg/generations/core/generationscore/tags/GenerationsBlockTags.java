@@ -33,6 +33,8 @@ public class GenerationsBlockTags {
     public static final TagKey<Block> RARE_TUMBLESTONE_ORES = create("rare_tumblestone_ores");
     public static final TagKey<Block> SKY_TUMBLESTONE_ORES = create("sky_tumblestone_ores");
     public static final TagKey<Block> TUMBLESTONE_ORES = create("tumblestone_ores");
+    public static final TagKey<Block> MEGASTONE_ORES = create("megastone_ores");
+    public static final TagKey<Block> METEORITE_ORES = create("meteorite_ores");
     public static final TagKey<Block> ULTRA_DARK_LOGS = create("ultra_dark_logs");
     public static final TagKey<Block> ULTRA_JUNGLE_LOGS = create("ultra_jungle_logs");
     public static final TagKey<Block> GHOST_LOGS = create("ghost_logs");

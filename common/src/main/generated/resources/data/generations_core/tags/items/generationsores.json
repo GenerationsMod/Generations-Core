@@ -21,6 +21,8 @@
     "#generations_core:rare_tumblestone_ores",
     "#generations_core:sky_tumblestone_ores",
     "#generations_core:black_tumblestone_ores",
+    "#generations_core:megastone_ores",
+    "#generations_core:meteorite_ores",
     "generations_core:charge_stone_coal_ore",
     "generations_core:charge_stone_redstone_ore",
     "generations_core:charge_stone_iron_ore",

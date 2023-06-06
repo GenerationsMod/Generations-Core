@@ -167,6 +167,8 @@ public class TagsDatagen {
             this.tag(GenerationsBlockTags.RARE_TUMBLESTONE_ORES).add(GenerationsOres.RARE_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_RARE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_RARE_TUMBLESTONE_ORE.get());
             this.tag(GenerationsBlockTags.SKY_TUMBLESTONE_ORES).add(GenerationsOres.SKY_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_SKY_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_SKY_TUMBLESTONE_ORE.get());
             this.tag(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES).add(GenerationsOres.BLACK_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_BLACK_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_BLACK_TUMBLESTONE_ORE.get());
+            this.tag(GenerationsBlockTags.MEGASTONE_ORES).add(GenerationsOres.MEGASTONE_ORE.get(), GenerationsOres.DEEPSLATE_MEGASTONE_ORE.get(), GenerationsOres.CHARGE_STONE_MEGASTONE_ORE.get());
+            this.tag(GenerationsBlockTags.METEORITE_ORES).add(GenerationsOres.METEORITE_ORE.get(), GenerationsOres.DEEPSLATE_METEORITE_ORE.get(), GenerationsOres.CHARGE_STONE_METEORITE_ORE.get());
             //Vanilla Ores
             this.tag(BlockTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get());
             this.tag(Tags.Blocks.ORES_COAL).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get());
@@ -207,6 +209,8 @@ public class TagsDatagen {
                     .addTag(GenerationsBlockTags.RARE_TUMBLESTONE_ORES)
                     .addTag(GenerationsBlockTags.SKY_TUMBLESTONE_ORES)
                     .addTag(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES)
+                    .addTag(GenerationsBlockTags.MEGASTONE_ORES)
+                    .addTag(GenerationsBlockTags.METEORITE_ORES)
                     .add(GenerationsOres.CHARGE_STONE_COAL_ORE.get())
                     .add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get())
                     .add(GenerationsOres.CHARGE_STONE_IRON_ORE.get())
@@ -359,6 +363,8 @@ public class TagsDatagen {
             this.copy(GenerationsBlockTags.RARE_TUMBLESTONE_ORES, GenerationsItemTags.RARE_TUMBLESTONE_ORES);
             this.copy(GenerationsBlockTags.SKY_TUMBLESTONE_ORES, GenerationsItemTags.SKY_TUMBLESTONE_ORES);
             this.copy(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES, GenerationsItemTags.BLACK_TUMBLESTONE_ORES);
+            this.copy(GenerationsBlockTags.MEGASTONE_ORES, GenerationsItemTags.MEGASTONE_ORES);
+            this.copy(GenerationsBlockTags.METEORITE_ORES, GenerationsItemTags.METEORITE_ORES);
             this.tag(ItemTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE.get().asItem());
             this.tag(ItemTags.IRON_ORES).add(GenerationsOres.CHARGE_STONE_IRON_ORE.get().asItem());
             this.tag(ItemTags.GOLD_ORES).add(GenerationsOres.CHARGE_STONE_GOLD_ORE.get().asItem());
@@ -368,6 +374,14 @@ public class TagsDatagen {
             this.tag(ItemTags.LAPIS_ORES).add(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get().asItem());
             this.tag(ItemTags.REDSTONE_ORES).add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get().asItem());
 
+            this.copy(Tags.Blocks.ORES_COAL, Tags.Items.ORES_COAL);
+            this.copy(Tags.Blocks.ORES_IRON, Tags.Items.ORES_IRON);
+            this.copy(Tags.Blocks.ORES_GOLD, Tags.Items.ORES_GOLD);
+            this.copy(Tags.Blocks.ORES_COPPER, Tags.Items.ORES_COPPER);
+            this.copy(Tags.Blocks.ORES_DIAMOND, Tags.Items.ORES_DIAMOND);
+            this.copy(Tags.Blocks.ORES_EMERALD, Tags.Items.ORES_EMERALD);
+            this.copy(Tags.Blocks.ORES_LAPIS, Tags.Items.ORES_LAPIS);
+            this.copy(Tags.Blocks.ORES_REDSTONE, Tags.Items.ORES_REDSTONE);
             //Charge and Volcanic Stone Brick Tags like Vanilla
             this.copy(GenerationsBlockTags.CHARGE_STONE_BRICKS, GenerationsItemTags.CHARGE_STONE_BRICKS);
             this.copy(GenerationsBlockTags.VOLCANIC_STONE_BRICKS, GenerationsItemTags.VOLCANIC_STONE_BRICKS);
