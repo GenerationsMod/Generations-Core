@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:ghost_pillar_side"
+  },
+  "result": "generations_core:ghost_pillar_side_stairs"
+}

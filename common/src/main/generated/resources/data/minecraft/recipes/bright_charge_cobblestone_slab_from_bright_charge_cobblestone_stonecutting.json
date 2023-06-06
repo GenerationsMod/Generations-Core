@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "generations_core:bright_charge_cobblestone"
+  },
+  "result": "generations_core:bright_charge_cobblestone_slab"
+}

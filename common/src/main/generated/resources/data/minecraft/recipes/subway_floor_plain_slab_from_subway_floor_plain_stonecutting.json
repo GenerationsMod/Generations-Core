@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "generations_core:subway_floor_plain"
+  },
+  "result": "generations_core:subway_floor_plain_slab"
+}

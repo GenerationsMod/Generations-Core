@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.forge.datagen.data.famili
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -13,15 +14,23 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Field;
 import java.util.function.Consumer;
 
-//TODO: Proper RecipeCategory assignment
+/**
+ * Creates recipes for building blocks using Forge Datagen
+ * @see net.minecraft.data.recipes.packs.VanillaRecipeProvider
+ * @see net.minecraft.data.recipes.RecipeProvider
+ * @author J.T. McQuigg
+ */
 public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxied implements IConditionBuilder {
 
     public BuildingBlockRecipeDatagen(PackOutput output) {super(output);}
@@ -1273,6 +1282,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
     }
 
+    /*
     private void unownBlock(@NotNull Consumer<FinishedRecipe> consumer, @NotNull Block createdBlock, @NotNull ItemLike photo){
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, createdBlock)
                 .define('X', GenerationsBlocks.TEMPLE_BLOCK.get())
@@ -1280,10 +1290,26 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .pattern("XY")
                 .unlockedBy(getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()), has(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()))
                 .save(consumer);
-    }
+    }*/
 
     protected void generateForEnabledBlockFamilies(@NotNull Consumer<FinishedRecipe> consumer) {
-        GenerationsBlockFamilies.getAllFamilies().forEach(arg -> generateRecipes(consumer, arg));
+        GenerationsBlockFamilies.getAllFamilies().forEach(arg -> {
+            generateRecipes(consumer, arg);
+            Field material = ObfuscationReflectionHelper.findField(BlockBehaviour.class, "material");
+            material.setAccessible(true);
+            try {
+                if (material.get(arg.getBaseBlock()) == Material.STONE) generateStoneCutterRecipesForFamily(consumer, arg);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        });
         GenerationsBlockFamilies.getAllUltraFamilies().forEach(arg -> generateRecipes(consumer, arg));
+    }
+
+    private void generateStoneCutterRecipesForFamily(@NotNull Consumer<FinishedRecipe> consumer, @NotNull BlockFamily family) {
+        if (family.getVariants().containsKey(BlockFamily.Variant.SLAB)) stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, family.get(BlockFamily.Variant.SLAB), family.getBaseBlock(), 2);
+        if (family.getVariants().containsKey(BlockFamily.Variant.STAIRS)) stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, family.get(BlockFamily.Variant.STAIRS), family.getBaseBlock());
+        if (family.getVariants().containsKey(BlockFamily.Variant.WALL)) stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, family.get(BlockFamily.Variant.WALL), family.getBaseBlock());
+        if (family.getVariants().containsKey(BlockFamily.Variant.CHISELED)) stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, family.get(BlockFamily.Variant.CHISELED), family.getBaseBlock());
     }
 }

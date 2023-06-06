@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_subway_floor_path": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:subway_floor_path"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:subway_floor_path_wall_from_subway_floor_path_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_subway_floor_path",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:subway_floor_path_wall_from_subway_floor_path_stonecutting"
+    ]
+  }
+}
