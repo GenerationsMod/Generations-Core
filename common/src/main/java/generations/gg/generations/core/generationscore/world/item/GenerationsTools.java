@@ -96,12 +96,12 @@ public class GenerationsTools {
 	public static final RegistrySupplier<Item> MOON_STONE_HAMMER = register("moon_stone_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.MOON_STONE, 6.0F, -3.0F, properties).addToolEffect(new PotionToolEffect(MobEffects.NIGHT_VISION, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> MOON_STONE_SWORD = register("moon_stone_sword", properties -> new GenerationsSwordItem(GenerationsTiers.MOON_STONE, -2.4F, properties).addToolEffect(new PotionToolEffect(MobEffects.NIGHT_VISION, 0, 6000, 1)), CreativeModeTabs.COMBAT);
 
-	public static final RegistrySupplier<Item> RUBY_SHOVEL = register("ruby_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.RUBY, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> RUBY_PICKAXE = register("ruby_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.RUBY, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> RUBY_AXE = register("ruby_axe", properties -> new GenerationsAxeItem(GenerationsTiers.RUBY, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> RUBY_HOE = register("ruby_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.RUBY, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> RUBY_HAMMER = register("ruby_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.RUBY, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> RUBY_SWORD = register("ruby_sword", properties -> new GenerationsSwordItem(GenerationsTiers.RUBY, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final RegistrySupplier<Item> RUBY_SHOVEL = register("ruby_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.RUBY, 1f, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> RUBY_PICKAXE = register("ruby_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.RUBY, 2, -2.8f, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> RUBY_AXE = register("ruby_axe", properties -> new GenerationsAxeItem(GenerationsTiers.RUBY, 3, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> RUBY_HOE = register("ruby_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.RUBY, -2, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> RUBY_HAMMER = register("ruby_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.RUBY, 2.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> RUBY_SWORD = register("ruby_sword", properties -> new GenerationsSwordItem(GenerationsTiers.RUBY, 4, -2.4F, properties), CreativeModeTabs.COMBAT);
 
 	public static final RegistrySupplier<Item> SAPPHIRE_SHOVEL = register("sapphire_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.SAPPHIRE, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> SAPPHIRE_PICKAXE = register("sapphire_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.SAPPHIRE, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
