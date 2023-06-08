@@ -247,7 +247,8 @@ public class GenerationsBlockEntities {
             GenerationsDecorationBlocks.UMBRELLA.get(),
             GenerationsUtilityBlocks.PC.get(),
             GenerationsUtilityBlocks.TRASH_CAN.get(),
-            GenerationsDecorationBlocks.POKEBALL_RUG.get())
+            GenerationsDecorationBlocks.POKEBALL_RUG.get(),
+            GenerationsDecorationBlocks.WATER_FLOAT.get())
             .build(null));
 
     public static final RegistrySupplier<BlockEntityType<GenericModelProvidingBlockEntity>> GENERIC_MODEL_PROVIDING = BLOCK_ENTITIES.register("generic_model_providing", () -> BlockEntityType.Builder.of(GenericModelProvidingBlockEntity::new,
@@ -261,6 +262,35 @@ public class GenerationsBlockEntities {
             .build(null));
     public static final RegistrySupplier<BlockEntityType<MachineBlockEntity>> MACHINE_BLOCK = BLOCK_ENTITIES.register("machine_block", () -> BlockEntityType.Builder.of(MachineBlockEntity::new, GenerationsBlocks.MACHINE_BLOCK.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = BLOCK_ENTITIES.register("vending_machine", () -> BlockEntityType.Builder.of(VendingMachineBlockEntity::new, GenerationsDecorationBlocks.VENDING_MACHINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<BallDisplayBlockEntity>> BALL_DISPLAY = BLOCK_ENTITIES.register("ball_display", () -> BlockEntityType.Builder.of(BallDisplayBlockEntity::new,
+            GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.GS_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.NET_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get(),
+            GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get()
+    ).build(null));
 
 
     public static void init() {

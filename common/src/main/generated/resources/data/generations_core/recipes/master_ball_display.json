@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:master_ball"
+    },
+    {
+      "item": "generations_core:empty_ball_display"
+    }
+  ],
+  "result": {
+    "item": "generations_core:master_ball_display"
+  }
+}

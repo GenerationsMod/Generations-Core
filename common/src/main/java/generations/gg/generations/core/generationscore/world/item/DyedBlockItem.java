@@ -32,11 +32,4 @@ public class DyedBlockItem<T extends DyeableBlock<?, ?>> extends ItemNameBlockIt
         }
         return bl;
     }
-
-    protected @NotNull String getOrCreateDescriptionId() {
-        if (this.descriptionId == null) {
-            this.descriptionId = Util.makeDescriptionId("item", Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(this)).withPrefix(color.getName() + "_"));
-        }
-        return this.descriptionId;
-    }
 }

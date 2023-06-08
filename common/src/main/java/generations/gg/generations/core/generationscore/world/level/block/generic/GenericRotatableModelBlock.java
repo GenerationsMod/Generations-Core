@@ -104,15 +104,25 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        BlockPos pos = context.getClickedPos();
-        Level level = context.getLevel();
+        var pos = context.getClickedPos();
+        var level = context.getLevel();
+        var dir = context.getHorizontalDirection();
 
-        if(pos.getY() < level.getMaxBuildHeight() - height && isAreaClear(level, pos)) {
+        if(pos.getY() < level.getMaxBuildHeight() - height && isAreaClear(level, dir, pos)) {
             return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
         } else {
             return null;
         }
     }
+
+    protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
+        var lengthDir = dir;
+        var widthDir = dir.getCounterClockWise();
+        var heightDir = Direction.UP;
+
+        return BlockPos.betweenClosedStream(pos, pos.relative(widthDir, width).relative(heightDir, height).relative(lengthDir, length)).map(level::getBlockState).allMatch(BlockState::canBeReplaced);
+    }
+
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -191,10 +201,6 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     public float getAngle(BlockState state) {
         return state.getValue(FACING).toYRot();
-    }
-
-    protected boolean isAreaClear(Level level, BlockPos pos) {
-        return BlockPos.betweenClosedStream(pos, pos.offset(width, height, length)).map(level::getBlockState).allMatch(BlockState::canBeReplaced);
     }
 
     @Override

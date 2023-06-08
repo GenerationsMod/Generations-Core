@@ -29,6 +29,7 @@ dependencies {
     implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
     implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
     implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")
+    implementation("com.thebombzen:jxlatte:1.1.0")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 
     //Cobblemon

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:bowl"
+    },
+    "X": {
+      "item": "generations_core:gray_marble_stairs"
+    },
+    "Y": {
+      "item": "generations_core:gray_marble"
+    }
+  },
+  "pattern": [
+    " # ",
+    "XYX"
+  ],
+  "result": {
+    "item": "generations_core:empty_ball_display"
+  },
+  "show_notification": true
+}

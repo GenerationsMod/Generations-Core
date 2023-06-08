@@ -3,16 +3,20 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.api.player.CurryDex;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.*;
+import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock;
+import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock.DisplayState;
 import generations.gg.generations.core.generationscore.world.level.block.entities.VendingMachineBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -28,6 +32,8 @@ public class GenerationsDecorationBlocks {
     public static final List<RegistrySupplier<DyedBlockItem<UmbrellaBlock>>> UMBRELLA_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<DyedBlockItem<PastelBeanBagBlock>>> PASTEL_BEAN_BAG_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<DyedBlockItem<RugBlock>>> POKEDOLL_RUG_BLOCKS = new ArrayList<>();
+    public static final List<RegistrySupplier<DyedBlockItem<WaterFloatBlock>>> WATER_FLOAT_BLOCKS = new ArrayList<>();
+    public static final List<RegistrySupplier<BallDisplayBlock>> BALL_DISPLAY_BLOCKS = new ArrayList<>();
 
     /**
      * Decoration Blocks
@@ -122,6 +128,59 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> MAGENTA_POKEBALL_RUG = registerPokedollRug("magenta_pokeball_rug", DyeColor.MAGENTA);
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> PINK_POKEBALL_RUG = registerPokedollRug("pink_pokeball_rug", DyeColor.PINK);
 
+    public static final RegistrySupplier<WaterFloatBlock> WATER_FLOAT = registerBlock("water_float", () -> new WaterFloatBlock(BlockBehaviour.Properties.of(Material.WOOL).destroyTime(1.0f).sound(SoundType.WOOL)));
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> WHITE_WATER_FLOAT = registerWaterFloat("white_water_float", DyeColor.WHITE);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> LIGHT_GRAY_WATER_FLOAT = registerWaterFloat("light_gray_water_float", DyeColor.LIGHT_GRAY);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> GRAY_WATER_FLOAT = registerWaterFloat("gray_water_float", DyeColor.GRAY);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> BLACK_WATER_FLOAT = registerWaterFloat("black_water_float", DyeColor.BLACK);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> BROWN_WATER_FLOAT = registerWaterFloat("brown_water_float", DyeColor.BROWN);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> RED_WATER_FLOAT = registerWaterFloat("red_water_float", DyeColor.RED);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> ORANGE_WATER_FLOAT = registerWaterFloat("orange_water_float", DyeColor.ORANGE);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> YELLOW_WATER_FLOAT = registerWaterFloat("yellow_water_float", DyeColor.YELLOW);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> LIME_WATER_FLOAT = registerWaterFloat("lime_water_float", DyeColor.LIME);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> GREEN_WATER_FLOAT = registerWaterFloat("green_water_float", DyeColor.GREEN);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> CYAN_WATER_FLOAT = registerWaterFloat("cyan_water_float", DyeColor.CYAN);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> LIGHT_BLUE_WATER_FLOAT = registerWaterFloat("light_blue_water_float", DyeColor.LIGHT_BLUE);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> BLUE_WATER_FLOAT = registerWaterFloat("blue_water_float", DyeColor.BLUE);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> PURPLE_WATER_FLOAT = registerWaterFloat("purple_water_float", DyeColor.PURPLE);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> MAGENTA_WATER_FLOAT = registerWaterFloat("magenta_water_float", DyeColor.MAGENTA);
+    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> PINK_WATER_FLOAT = registerWaterFloat("pink_water_float", DyeColor.PINK);
+
+    //Ball Displays
+    public static final RegistrySupplier<BallDisplayBlock> EMPTY_BALL_DISPLAY = registerBallDisplay(DisplayState.EMPTY);
+    public static final RegistrySupplier<BallDisplayBlock> POKE_BALL_DISPLAY = registerBallDisplay(DisplayState.POKE);
+    public static final RegistrySupplier<BallDisplayBlock> GREAT_BALL_DISPLAY = registerBallDisplay(DisplayState.GREAT);
+    public static final RegistrySupplier<BallDisplayBlock> ULTRA_BALL_DISPLAY = registerBallDisplay(DisplayState.ULTRA);
+    public static final RegistrySupplier<BallDisplayBlock> MASTER_BALL_DISPLAY = registerBallDisplay(DisplayState.MASTER);
+    public static final RegistrySupplier<BallDisplayBlock> CHERISH_BALL_DISPLAY = registerBallDisplay(DisplayState.CHERISH);
+    public static final RegistrySupplier<BallDisplayBlock> DIVE_BALL_DISPLAY = registerBallDisplay(DisplayState.DIVE);
+    public static final RegistrySupplier<BallDisplayBlock> DUSK_BALL_DISPLAY = registerBallDisplay(DisplayState.DUSK);
+    public static final RegistrySupplier<BallDisplayBlock> FAST_BALL_DISPLAY = registerBallDisplay(DisplayState.FAST);
+    public static final RegistrySupplier<BallDisplayBlock> FRIEND_BALL_DISPLAY = registerBallDisplay(DisplayState.FRIEND);
+    public static final RegistrySupplier<BallDisplayBlock> GS_BALL_DISPLAY = registerBallDisplay(DisplayState.GS);
+    public static final RegistrySupplier<BallDisplayBlock> HEAL_BALL_DISPLAY = registerBallDisplay(DisplayState.HEAL);
+    public static final RegistrySupplier<BallDisplayBlock> HEAVY_BALL_DISPLAY = registerBallDisplay(DisplayState.HEAVY);
+    public static final RegistrySupplier<BallDisplayBlock> LEVEL_BALL_DISPLAY = registerBallDisplay(DisplayState.LEVEL);
+    public static final RegistrySupplier<BallDisplayBlock> LOVE_BALL_DISPLAY = registerBallDisplay(DisplayState.LOVE);
+    public static final RegistrySupplier<BallDisplayBlock> LURE_BALL_DISPLAY = registerBallDisplay(DisplayState.LURE);
+    public static final RegistrySupplier<BallDisplayBlock> LUXURY_BALL_DISPLAY = registerBallDisplay(DisplayState.LUXURY);
+    public static final RegistrySupplier<BallDisplayBlock> MOON_BALL_DISPLAY = registerBallDisplay(DisplayState.MOON);
+    public static final RegistrySupplier<BallDisplayBlock> NEST_BALL_DISPLAY = registerBallDisplay(DisplayState.NEST);
+    public static final RegistrySupplier<BallDisplayBlock> NET_BALL_DISPLAY = registerBallDisplay(DisplayState.NET);
+    public static final RegistrySupplier<BallDisplayBlock> PARK_BALL_DISPLAY = registerBallDisplay(DisplayState.PARK);
+    public static final RegistrySupplier<BallDisplayBlock> PREMIER_BALL_DISPLAY = registerBallDisplay(DisplayState.PREMIER);
+    public static final RegistrySupplier<BallDisplayBlock> QUICK_BALL_DISPLAY = registerBallDisplay(DisplayState.QUICK);
+    public static final RegistrySupplier<BallDisplayBlock> REPEAT_BALL_DISPLAY = registerBallDisplay(DisplayState.REPEAT);
+    public static final RegistrySupplier<BallDisplayBlock> SAFARI_BALL_DISPLAY = registerBallDisplay(DisplayState.SAFARI);
+    public static final RegistrySupplier<BallDisplayBlock> SPORT_BALL_DISPLAY = registerBallDisplay(DisplayState.SPORT);
+    public static final RegistrySupplier<BallDisplayBlock> TIMER_BALL_DISPLAY = registerBallDisplay(DisplayState.TIMER);
+
+    private static RegistrySupplier<BallDisplayBlock> registerBallDisplay(DisplayState state) {
+        var block = registerDecorationItem(state.name().toLowerCase() + "_ball_display", () -> new BallDisplayBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), state));
+        BALL_DISPLAY_BLOCKS.add(block);
+        return block;
+    }
+
     private static <T extends Block> RegistrySupplier<T> registerDecorationItem(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = DECORATIONS.register(name, blockSupplier);
         register(name, properties -> new BlockItem(block.get(), properties));
@@ -153,6 +212,12 @@ public class GenerationsDecorationBlocks {
     private static RegistrySupplier<DyedBlockItem<RugBlock>> registerPokedollRug(String name, DyeColor color) {
         var item = register(name, properties -> new DyedBlockItem<>(POKEBALL_RUG.get(), color, properties));
         POKEDOLL_RUG_BLOCKS.add(item);
+        return item;
+    }
+
+    private static RegistrySupplier<DyedBlockItem<WaterFloatBlock>> registerWaterFloat(String name, DyeColor color) {
+        var item = register(name, properties -> new DyedBlockItem<>(WATER_FLOAT.get(), color, properties));
+        WATER_FLOAT_BLOCKS.add(item);
         return item;
     }
 

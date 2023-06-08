@@ -3,6 +3,9 @@ package generations.gg.generations.core.generationscore.client.render.block.enti
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockAnimatedObjectInstance;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockLightValueProvider;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.animation.FixedFrameAnimationInstance;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
@@ -27,37 +30,42 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         if (!(blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
         stack.pushPose();
         ModelRegistry.prepForBER(stack, blockEntity);
-        renderModels(stack, blockEntity);
+        renderModels(stack, blockEntity, packedLight);
         RenderSystem.disableDepthTest();
         stack.popPose();
     }
 
-    protected void renderModels(PoseStack stack, T blockEntity) {
+    protected void renderModels(PoseStack stack, T blockEntity, int packedLight) {
         if(blockEntity.isAnimated()) {
-            renderModelFrameProvider(stack, blockEntity);
+            renderModelFrameProvider(stack, blockEntity, packedLight);
         } else {
-            renderModelProvider(stack, blockEntity);
+            renderModelProvider(stack, blockEntity, packedLight);
         }
     }
 
-    protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity) {
+    protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
+
         if (blockEntity.objectInstance == null) {
-            blockEntity.objectInstance = new ObjectInstance(new Matrix4f(), stack.last().pose(), blockEntity instanceof ModelContextProviders.VariantProvider variantProvider ? variantProvider.getVariant() : null);
-        } else if (blockEntity instanceof ModelContextProviders.VariantProvider provider)
-            if (!blockEntity.objectInstance.materialId().equals(provider.getVariant())) {
-                blockEntity.objectInstance = new ObjectInstance(new Matrix4f(), stack.last().pose(), provider.getVariant());
-            }
+            blockEntity.objectInstance = new BlockObjectInstance(new Matrix4f(), stack.last().pose(), "");
+        }
+
+        if (blockEntity instanceof ModelContextProviders.VariantProvider provider && !blockEntity.objectInstance.materialId().equals(provider.getVariant())) {
+            blockEntity.objectInstance.setVariant(provider.getVariant());
+        }
 
         blockEntity.objectInstance.viewMatrix().set(stack.last().pose());
+        ((BlockObjectInstance) blockEntity.objectInstance).setLight(packedLight);
 
-        ModelRegistry.get(blockEntity, "fullbright").render(blockEntity.objectInstance, RenderSystem.getProjectionMatrix());
+        ModelRegistry.get(blockEntity, "block").render(blockEntity.objectInstance, RenderSystem.getProjectionMatrix());
     }
 
-    protected void renderModelFrameProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity) {
-        var model = ModelRegistry.get(blockEntity, "animated");
+    protected void renderModelFrameProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
+        //TODO: Get this operational
+
+        var model = ModelRegistry.get(blockEntity, "animated_block");
 
         if (blockEntity.objectInstance == null) {
-            blockEntity.objectInstance = new AnimatedObjectInstance(new Matrix4f(), stack.last().pose(), blockEntity instanceof ModelContextProviders.VariantProvider variantProvider ? variantProvider.getVariant() : null);
+            blockEntity.objectInstance = new BlockAnimatedObjectInstance(new Matrix4f(), stack.last().pose(), blockEntity instanceof ModelContextProviders.VariantProvider variantProvider ? variantProvider.getVariant() : null);
         }
 
         if (model.renderObject.isReady()) {
@@ -76,9 +84,9 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         }
 
         blockEntity.objectInstance.viewMatrix().set(stack.last().pose());
+        ((BlockLightValueProvider) blockEntity.objectInstance).setLight(packedLight);
 
         var instance = (AnimatedObjectInstance) blockEntity.objectInstance;
-
 
         if(blockEntity instanceof ModelContextProviders.FrameProvider frameProvider && instance.currentAnimation instanceof FixedFrameAnimationInstance fixedAnimation && fixedAnimation.getCurrentTime() != frameProvider.getFrame()) {
             fixedAnimation.setCurrentTime(frameProvider.getFrame());
@@ -88,7 +96,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     }
 
     protected void renderResourceLocation(PoseStack stack, ResourceLocation location) {
-        ModelRegistry.get(location, "fullbright").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
+        ModelRegistry.get(location, "block").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
     }
 
     @Override

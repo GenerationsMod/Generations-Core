@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockLightValueProvider;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import gg.generations.rarecandy.rendering.ObjectInstance;
 import net.minecraft.core.BlockPos;

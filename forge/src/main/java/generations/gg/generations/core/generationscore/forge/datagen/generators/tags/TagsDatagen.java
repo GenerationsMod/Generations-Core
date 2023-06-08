@@ -144,6 +144,8 @@ public class TagsDatagen {
             tag(BlockTags.GUARDED_BY_PIGLINS).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
             tag(BlockTags.FEATURES_CANNOT_REPLACE).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
 
+            GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> tag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS).add(block.get()));
+
 
             //Ore Specific tags
             tag(GenerationsBlockTags.ALUMINUM_ORES).add(GenerationsOres.ALUMINUM_ORE.get(), GenerationsOres.DEEPSLATE_ALUMINUM_ORE.get(), GenerationsOres.CHARGE_STONE_ALUMINUM_ORE.get());
@@ -270,7 +272,8 @@ public class TagsDatagen {
 
             tag(BlockTags.MINEABLE_WITH_AXE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
             tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)
-                    .addTag(GenerationsBlockTags.POKEBRICKS).addTag(GenerationsBlockTags.GENERATIONSORES).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
+                    .addTag(GenerationsBlockTags.POKEBRICKS).addTag(GenerationsBlockTags.GENERATIONSORES).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
+                    .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS);
             tag(BlockTags.NEEDS_IRON_TOOL).addTag(GenerationsBlockTags.GENERATIONSORES);
             tag(Tags.Blocks.ORES).addTag(GenerationsBlockTags.GENERATIONSORES);
             tag(BlockTags.NEEDS_STONE_TOOL).add(
@@ -288,7 +291,8 @@ public class TagsDatagen {
                     GenerationsBlocks.CRYSTAL_SLAB.get(),
                     GenerationsBlocks.CRYSTAL_STAIRS.get(),
                     GenerationsBlocks.CRYSTAL_WALL.get(),
-                    GenerationsBlocks.SILICON_BLOCK.get());
+                    GenerationsBlocks.SILICON_BLOCK.get())
+                    .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS);
         }
 
         private void EasyBlockTags(Block object) {

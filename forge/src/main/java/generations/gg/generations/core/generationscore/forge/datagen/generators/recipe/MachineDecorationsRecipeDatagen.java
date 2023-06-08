@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.RugBlock;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.UmbrellaBlock;
@@ -22,7 +23,9 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,8 +35,8 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 //TODO: Proper RecipeCategory assignment
-public class MachineRecipeDatagen extends GenerationsRecipeProvider.Proxied implements IConditionBuilder {
-    public MachineRecipeDatagen(PackOutput output) {
+public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.Proxied implements IConditionBuilder {
+    public MachineDecorationsRecipeDatagen(PackOutput output) {
         super(output);
     }
 
@@ -159,6 +162,42 @@ public class MachineRecipeDatagen extends GenerationsRecipeProvider.Proxied impl
                 .pattern(" # ").pattern("#X#").pattern(" # ")
                 .unlockedBy(getHasName(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get()), has(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
+                .define('X', GenerationsBlocks.GRAY_MARBLE_STAIRS.get())
+                .define('Y', GenerationsBlocks.GRAY_MARBLE.get())
+                .define('#', Items.BOWL)
+                .pattern(" # ")
+                .pattern("XYX")
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE.get()), has(GenerationsBlocks.GRAY_MARBLE.get()))
+                .save(consumer);
+
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.POKE_BALL.get(), GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.GREAT_BALL.get(), GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.ULTRA_BALL.get(), GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.MASTER_BALL.get(), GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.CHERISH_BALL.get(), GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.DIVE_BALL.get(), GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.DUSK_BALL.get(), GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.FAST_BALL.get(), GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.FRIEND_BALL.get(), GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.GS_BALL.get(), GenerationsDecorationBlocks.GS_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.HEAL_BALL.get(), GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.HEAVY_BALL.get(), GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LEVEL_BALL.get(), GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LOVE_BALL.get(), GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LURE_BALL.get(), GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LUXURY_BALL.get(), GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.MOON_BALL.get(), GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.NEST_BALL.get(), GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.NET_BALL.get(), GenerationsDecorationBlocks.NET_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.PARK_BALL.get(), GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.PREMIER_BALL.get(), GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.QUICK_BALL.get(), GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.REPEAT_BALL.get(), GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.SAFARI_BALL.get(), GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.SPORT_BALL.get(), GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, GenerationsItems.TIMER_BALL.get(), GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get());
     }
 
     private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
@@ -290,5 +329,25 @@ public class MachineRecipeDatagen extends GenerationsRecipeProvider.Proxied impl
                 .requires(GenerationsItemTags.VENDING_MACHINE)
                 .unlockedBy("has_" + GenerationsItemTags.VENDING_MACHINE.location().getPath(), has(GenerationsItemTags.VENDING_MACHINE))
                 .save(consumer, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(vendingMachine)).withPath(a -> a + "_dyed"));
+    }
+
+    private void buildPokeBallDisplayRecipes(Consumer<FinishedRecipe> consumer, Item pokeball, Block display) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, display)
+                .requires(pokeball)
+                .requires(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
+                .unlockedBy(getHasName(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()), has(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()))
+                .unlockedBy(getHasName(pokeball), has(pokeball))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
+                .define('X', GenerationsBlocks.GRAY_MARBLE_STAIRS.get())
+                .define('Y', GenerationsBlocks.GRAY_MARBLE.get())
+                .define('#', Items.BOWL)
+                .define('Z', pokeball)
+                .pattern(" Z ")
+                .pattern(" # ")
+                .pattern("XYX")
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE.get()), has(GenerationsBlocks.GRAY_MARBLE.get()))
+                .save(consumer, "pokeball_display_with_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(pokeball)).getPath());
     }
 }

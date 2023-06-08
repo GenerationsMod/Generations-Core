@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_empty_ball_display": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:empty_ball_display"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_nest_ball": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:nest_ball"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:nest_ball_display"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_empty_ball_display",
+      "has_nest_ball",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:nest_ball_display"
+    ]
+  }
+}

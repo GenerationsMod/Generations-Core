@@ -489,6 +489,7 @@
     "#generations_core:marble",
     "#generations_core:pokebricks",
     "#generations_core:generationsores",
-    "#generations_core:pokeball_chests"
+    "#generations_core:pokeball_chests",
+    "#generations_core:ball_display_blocks"
   ]
 }

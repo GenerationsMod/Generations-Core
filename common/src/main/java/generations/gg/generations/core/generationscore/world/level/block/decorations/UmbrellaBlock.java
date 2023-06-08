@@ -105,7 +105,7 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
         BlockPos pos = context.getClickedPos();
         Level level = context.getLevel();
 
-        if(pos.getY() < level.getMaxBuildHeight() - 2 && isAreaClear(level, pos)) {
+        if(pos.getY() < level.getMaxBuildHeight() - 2 && isAreaClear(level, null, pos)) {
             return this.defaultBlockState();
         } else {
             return null;
@@ -113,7 +113,7 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
     }
 
     @Override
-    protected boolean isAreaClear(Level level, BlockPos pos) {
+    protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
         var isFree = level.getBlockState(pos).canBeReplaced();
 
         for (int i = 1; i < 3; i++) {

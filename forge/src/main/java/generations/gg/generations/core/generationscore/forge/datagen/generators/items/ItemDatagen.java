@@ -1738,6 +1738,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLES, "item/blocks/decorations/");
         GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(block -> createItemBlockDir(block, "umbrellas"));
         GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(block -> createItemBlockDir(block, "rugs"));
+        GenerationsDecorationBlocks.WATER_FLOAT_BLOCKS.forEach(block -> createItemBlockDir(block, "water_floats"));
 //        /*
         GenerationsDecorationBlocks.PASTEL_BEAN_BAG_BLOCKS.forEach(block -> createItemBlockDir(block, "bean_bags"));
         GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.forEach(block -> createItemBlockDir(block, "vending_machines"));
@@ -1804,6 +1805,34 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GREAT_WALKMON, "utility_items/");
         createItem(GenerationsItems.ULTRA_WALKMON, "utility_items/");
         createItem(GenerationsItems.MASTER_WALKMON, "utility_items/");
+
+        createItemBlock(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.POKE_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.DIVE_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.DUSK_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.FAST_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.GS_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.HEAL_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.LOVE_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.LURE_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.MOON_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.NEST_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.NET_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.PARK_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.QUICK_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY, "item/blocks/ball_displays/");
+        createItemBlock(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY, "item/blocks/ball_displays/");
     }
 
     private void createCurry() {
