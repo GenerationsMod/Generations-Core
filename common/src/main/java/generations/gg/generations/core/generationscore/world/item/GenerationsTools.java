@@ -40,12 +40,12 @@ public class GenerationsTools {
 	public static final RegistrySupplier<Item> ALUMINUM_HAMMER = register("aluminum_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.ALUMINUM, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> ALUMINUM_SWORD = register("aluminum_sword", properties -> new GenerationsSwordItem(GenerationsTiers.ALUMINUM, -2.4F, properties), CreativeModeTabs.COMBAT);
 
-	public static final RegistrySupplier<Item> AMETHYST_SHOVEL = register("amethyst_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.AMETHYST, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_PICKAXE = register("amethyst_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.AMETHYST, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_AXE = register("amethyst_axe", properties -> new GenerationsAxeItem(GenerationsTiers.AMETHYST, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_HOE = register("amethyst_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.AMETHYST, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_HAMMER = register("amethyst_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.AMETHYST, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_SWORD = register("amethyst_sword", properties -> new GenerationsSwordItem(GenerationsTiers.AMETHYST, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final RegistrySupplier<Item> AMETHYST_SHOVEL = register("amethyst_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.AMETHYST, 1, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> AMETHYST_PICKAXE = register("amethyst_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.AMETHYST, 2, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> AMETHYST_AXE = register("amethyst_axe", properties -> new GenerationsAxeItem(GenerationsTiers.AMETHYST, 3, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> AMETHYST_HOE = register("amethyst_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.AMETHYST, -2, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> AMETHYST_HAMMER = register("amethyst_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.AMETHYST, 2, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> AMETHYST_SWORD = register("amethyst_sword", properties -> new GenerationsSwordItem(GenerationsTiers.AMETHYST, 4, -2.4F, properties), CreativeModeTabs.COMBAT);
 
 	public static final RegistrySupplier<Item> CRYSTAL_SHOVEL = register("crystal_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.CRYSTAL, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> CRYSTAL_PICKAXE = register("crystal_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.CRYSTAL, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
