@@ -103,12 +103,12 @@ public class GenerationsTools {
 	public static final RegistrySupplier<Item> RUBY_HAMMER = register("ruby_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.RUBY, 2.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> RUBY_SWORD = register("ruby_sword", properties -> new GenerationsSwordItem(GenerationsTiers.RUBY, 4, -2.4F, properties), CreativeModeTabs.COMBAT);
 
-	public static final RegistrySupplier<Item> SAPPHIRE_SHOVEL = register("sapphire_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.SAPPHIRE, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> SAPPHIRE_PICKAXE = register("sapphire_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.SAPPHIRE, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> SAPPHIRE_AXE = register("sapphire_axe", properties -> new GenerationsAxeItem(GenerationsTiers.SAPPHIRE, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> SAPPHIRE_HOE = register("sapphire_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.SAPPHIRE, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> SAPPHIRE_HAMMER = register("sapphire_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.SAPPHIRE, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> SAPPHIRE_SWORD = register("sapphire_sword", properties -> new GenerationsSwordItem(GenerationsTiers.SAPPHIRE, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final RegistrySupplier<Item> SAPPHIRE_SHOVEL = register("sapphire_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.SAPPHIRE, 1, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> SAPPHIRE_PICKAXE = register("sapphire_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.SAPPHIRE, 2, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> SAPPHIRE_AXE = register("sapphire_axe", properties -> new GenerationsAxeItem(GenerationsTiers.SAPPHIRE, 3, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> SAPPHIRE_HOE = register("sapphire_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.SAPPHIRE, -2, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> SAPPHIRE_HAMMER = register("sapphire_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.SAPPHIRE, 2.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> SAPPHIRE_SWORD = register("sapphire_sword", properties -> new GenerationsSwordItem(GenerationsTiers.SAPPHIRE, 4, -2.4F, properties), CreativeModeTabs.COMBAT);
 
 	public static final RegistrySupplier<Item> SILICON_SHOVEL = register("silicon_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.SILICON, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> SILICON_PICKAXE = register("silicon_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.SILICON, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
