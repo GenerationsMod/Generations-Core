@@ -33,12 +33,12 @@ public class GenerationsTools {
 	public static final RegistrySupplier<Item> VOLCANIC_STONE_HAMMER = register("volcanic_stone_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.VOLCANIC_STONE, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> VOLCANIC_STONE_SWORD = register("volcanic_stone_sword", properties -> new GenerationsSwordItem(GenerationsTiers.VOLCANIC_STONE, -2.4F, properties), CreativeModeTabs.COMBAT);
 
-	public static final RegistrySupplier<Item> ALUMINUM_SHOVEL = register("aluminum_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.ALUMINUM, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_PICKAXE = register("aluminum_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.ALUMINUM, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_AXE = register("aluminum_axe", properties -> new GenerationsAxeItem(GenerationsTiers.ALUMINUM, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_HOE = register("aluminum_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.ALUMINUM, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_HAMMER = register("aluminum_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.ALUMINUM, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_SWORD = register("aluminum_sword", properties -> new GenerationsSwordItem(GenerationsTiers.ALUMINUM, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final RegistrySupplier<Item> ALUMINUM_SHOVEL = register("aluminum_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.ALUMINUM, 4, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> ALUMINUM_PICKAXE = register("aluminum_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.ALUMINUM, 3, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> ALUMINUM_AXE = register("aluminum_axe", properties -> new GenerationsAxeItem(GenerationsTiers.ALUMINUM, 8, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> ALUMINUM_HOE = register("aluminum_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.ALUMINUM, 0, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> ALUMINUM_HAMMER = register("aluminum_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.ALUMINUM, 3, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> ALUMINUM_SWORD = register("aluminum_sword", properties -> new GenerationsSwordItem(GenerationsTiers.ALUMINUM, 5, -2.4F, properties), CreativeModeTabs.COMBAT);
 
 	public static final RegistrySupplier<Item> AMETHYST_SHOVEL = register("amethyst_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.AMETHYST, 1, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> AMETHYST_PICKAXE = register("amethyst_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.AMETHYST, 2, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
