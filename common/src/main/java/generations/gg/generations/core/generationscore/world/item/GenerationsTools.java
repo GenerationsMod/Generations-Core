@@ -47,12 +47,12 @@ public class GenerationsTools {
 	public static final RegistrySupplier<Item> AMETHYST_HAMMER = register("amethyst_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.AMETHYST, 2, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> AMETHYST_SWORD = register("amethyst_sword", properties -> new GenerationsSwordItem(GenerationsTiers.AMETHYST, 4, -2.4F, properties), CreativeModeTabs.COMBAT);
 
-	public static final RegistrySupplier<Item> CRYSTAL_SHOVEL = register("crystal_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.CRYSTAL, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_PICKAXE = register("crystal_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.CRYSTAL, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_AXE = register("crystal_axe", properties -> new GenerationsAxeItem(GenerationsTiers.CRYSTAL, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_HOE = register("crystal_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.CRYSTAL, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_HAMMER = register("crystal_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.CRYSTAL, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_SWORD = register("crystal_sword", properties -> new GenerationsSwordItem(GenerationsTiers.CRYSTAL, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final RegistrySupplier<Item> CRYSTAL_SHOVEL = register("crystal_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.CRYSTAL, 1, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> CRYSTAL_PICKAXE = register("crystal_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.CRYSTAL, 2, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> CRYSTAL_AXE = register("crystal_axe", properties -> new GenerationsAxeItem(GenerationsTiers.CRYSTAL, 3, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> CRYSTAL_HOE = register("crystal_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.CRYSTAL, -2, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> CRYSTAL_HAMMER = register("crystal_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.CRYSTAL, 2, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+	public static final RegistrySupplier<Item> CRYSTAL_SWORD = register("crystal_sword", properties -> new GenerationsSwordItem(GenerationsTiers.CRYSTAL, 4, -2.4F, properties), CreativeModeTabs.COMBAT);
 
 	public static final RegistrySupplier<Item> DAWN_STONE_SHOVEL = register("dawn_stone_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.DAWN_STONE, -3.0F, properties).addToolEffect(new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> DAWN_STONE_PICKAXE = register("dawn_stone_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.DAWN_STONE, -2.8F, properties).addToolEffect(new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
