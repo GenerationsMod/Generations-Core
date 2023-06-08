@@ -332,12 +332,11 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
     }
 
     private void buildPokeBallDisplayRecipes(Consumer<FinishedRecipe> consumer, Item pokeball, Block display) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
-                .define('X', pokeball)
-                .define('#', GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
-                .pattern("X")
-                .pattern("#")
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, display)
+                .requires(pokeball)
+                .requires(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
                 .unlockedBy(getHasName(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()), has(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()))
+                .unlockedBy(getHasName(pokeball), has(pokeball))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)

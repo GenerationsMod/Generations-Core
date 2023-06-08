@@ -1,20 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "key": {
-    "#": {
-      "item": "generations_core:empty_ball_display"
-    },
-    "X": {
+  "ingredients": [
+    {
       "item": "generations_core:poke_ball"
+    },
+    {
+      "item": "generations_core:empty_ball_display"
     }
-  },
-  "pattern": [
-    "X",
-    "#"
   ],
   "result": {
     "item": "generations_core:poke_ball_display"
-  },
-  "show_notification": true
+  }
 }

@@ -18,11 +18,24 @@
         "recipe": "generations_core:timer_ball_display"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_timer_ball": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:timer_ball"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_empty_ball_display",
+      "has_timer_ball",
       "has_the_recipe"
     ]
   ],
