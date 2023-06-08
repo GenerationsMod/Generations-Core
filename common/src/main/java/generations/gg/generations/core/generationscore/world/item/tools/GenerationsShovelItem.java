@@ -17,8 +17,8 @@ import java.util.Set;
 public class GenerationsShovelItem extends ShovelItem {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsShovelItem(Tier tier, float attackSpeed, Properties properties) {
-        super(tier, tier.getAttackDamageBonus(), attackSpeed, properties);
+    public GenerationsShovelItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties);
     }
 
     public GenerationsShovelItem addToolEffect(ToolEffect toolEffect) {

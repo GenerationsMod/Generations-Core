@@ -17,8 +17,8 @@ import java.util.Set;
 public class GenerationsPickaxeItem extends PickaxeItem {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsPickaxeItem(Tier tier, float attackSpeed, Properties properties) {
-        super(tier, (int) tier.getAttackDamageBonus(), attackSpeed, properties);
+    public GenerationsPickaxeItem(Tier tier, int attackDamage, float -2.8f, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties);
     }
 
     public GenerationsPickaxeItem addToolEffect(ToolEffect toolEffect) {

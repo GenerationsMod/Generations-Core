@@ -17,8 +17,8 @@ import java.util.Set;
 public class GenerationsAxeItem extends AxeItem {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsAxeItem(Tier tier, float attackSpeed, Properties properties) {
-        super(tier, tier.getAttackDamageBonus(), attackSpeed, properties);
+    public GenerationsAxeItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties);
     }
 
     public GenerationsAxeItem addToolEffect(ToolEffect toolEffect) {
