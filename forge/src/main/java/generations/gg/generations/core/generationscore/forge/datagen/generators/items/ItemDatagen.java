@@ -1055,42 +1055,12 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsArmor.WATER_STONE_LEGGINGS, "armor/");
         createItem(GenerationsArmor.WATER_STONE_BOOTS, "armor/");
 
-        handheldItem(GenerationsTools.CHARGE_STONE_AXE, "tools/");
-        handheldItem(GenerationsTools.CHARGE_STONE_HAMMER, "tools/");
-        handheldItem(GenerationsTools.CHARGE_STONE_HOE, "tools/");
-        handheldItem(GenerationsTools.CHARGE_STONE_PICKAXE, "tools/");
-        handheldItem(GenerationsTools.CHARGE_STONE_SHOVEL, "tools/");
-        handheldItem(GenerationsTools.CHARGE_STONE_SWORD, "tools/");
-        handheldItem(GenerationsTools.VOLCANIC_STONE_AXE, "tools/");
-        handheldItem(GenerationsTools.VOLCANIC_STONE_HAMMER, "tools/");
-        handheldItem(GenerationsTools.VOLCANIC_STONE_HOE, "tools/");
-        handheldItem(GenerationsTools.VOLCANIC_STONE_PICKAXE, "tools/");
-        handheldItem(GenerationsTools.VOLCANIC_STONE_SHOVEL, "tools/");
-        handheldItem(GenerationsTools.VOLCANIC_STONE_SWORD, "tools/");
-        handheldItem(GenerationsTools.ALUMINUM_HOE, "tools/");
-        handheldItem(GenerationsTools.ALUMINUM_PICKAXE, "tools/");
-        handheldItem(GenerationsTools.ALUMINUM_SHOVEL, "tools/");
-        handheldItem(GenerationsTools.ALUMINUM_SWORD, "tools/");
-        handheldItem(GenerationsTools.ALUMINUM_HAMMER, "tools/");
-        handheldItem(GenerationsTools.ALUMINUM_AXE, "tools/");
-        handheldItem(GenerationsTools.AMETHYST_AXE, "tools/");
-        handheldItem(GenerationsTools.AMETHYST_HAMMER, "tools/");
-        handheldItem(GenerationsTools.AMETHYST_HOE, "tools/");
-        handheldItem(GenerationsTools.AMETHYST_PICKAXE, "tools/");
-        handheldItem(GenerationsTools.AMETHYST_SHOVEL, "tools/");
-        handheldItem(GenerationsTools.AMETHYST_SWORD, "tools/");
-        handheldItem(GenerationsTools.CRYSTAL_AXE, "tools/");
-        handheldItem(GenerationsTools.CRYSTAL_HAMMER, "tools/");
-        handheldItem(GenerationsTools.CRYSTAL_HOE, "tools/");
-        handheldItem(GenerationsTools.CRYSTAL_PICKAXE, "tools/");
-        handheldItem(GenerationsTools.CRYSTAL_SHOVEL, "tools/");
-        handheldItem(GenerationsTools.CRYSTAL_SWORD, "tools/");
-        handheldItem(GenerationsTools.DAWN_STONE_AXE, "tools/");
-        handheldItem(GenerationsTools.DAWN_STONE_HAMMER, "tools/");
-        handheldItem(GenerationsTools.DAWN_STONE_HOE, "tools/");
-        handheldItem(GenerationsTools.DAWN_STONE_PICKAXE, "tools/");
-        handheldItem(GenerationsTools.DAWN_STONE_SHOVEL, "tools/");
-        handheldItem(GenerationsTools.DAWN_STONE_SWORD, "tools/");
+        toolSet(GenerationsTools.CHARGE_STONE);
+        toolSet(GenerationsTools.VOLCANIC_STONE);
+        toolSet(GenerationsTools.ALUMINUM);
+        toolSet(GenerationsTools.AMETHYST);
+        toolSet(GenerationsTools.CRYSTAL);
+        toolSet(GenerationsTools.DAWN_STONE);
         handheldItem(GenerationsTools.DUSK_STONE_AXE, "tools/");
         handheldItem(GenerationsTools.DUSK_STONE_HAMMER, "tools/");
         handheldItem(GenerationsTools.DUSK_STONE_HOE, "tools/");
@@ -1835,6 +1805,15 @@ public class ItemDatagen extends ItemModelProvider {
         createItemBlock(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY, "item/blocks/ball_displays/");
     }
 
+    private void toolSet(GenerationsTools.ToolSet toolSet) {
+        handheldItem(toolSet.axe(), "tools/");
+        handheldItem(toolSet.hoe(), "tools/");
+        handheldItem(toolSet.hammer(), "tools/");
+        handheldItem(toolSet.pickaxe(), "tools/");
+        handheldItem(toolSet.sword(), "tools/");
+        handheldItem(toolSet.shovel(), "tools/");
+    }
+
     private void createCurry() {
         ItemModelBuilder model = generated(GenerationsItems.CURRY.getId().getPath(), CurryType.None.getResourceLocation());
 
@@ -1938,7 +1917,7 @@ public class ItemDatagen extends ItemModelProvider {
         }
     }
 
-    private void handheldItem(RegistrySupplier<Item> item, String directory) {
+    private <T extends Item> void handheldItem(RegistrySupplier<T> item, String directory) {
         withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
                 new ResourceLocation(GenerationsCore.MOD_ID, "item/" + directory + item.getId().getPath()));

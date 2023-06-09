@@ -79,4 +79,9 @@ public enum GenerationsTiers implements Tier {
                     BlockTags.NEEDS_DIAMOND_TOOL;
         };
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

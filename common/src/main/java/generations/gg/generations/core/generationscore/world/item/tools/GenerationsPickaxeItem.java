@@ -12,17 +12,18 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-public class GenerationsPickaxeItem extends PickaxeItem {
+public class GenerationsPickaxeItem extends PickaxeItem implements ToolEffectHolder<GenerationsPickaxeItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsPickaxeItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
         super(tier, attackDamage, attackSpeed, properties);
     }
 
-    public GenerationsPickaxeItem addToolEffect(ToolEffect toolEffect) {
-        this.toolEffects.add(toolEffect);
+    public GenerationsPickaxeItem addToolEffects(ToolEffect... toolEffect) {
+        this.toolEffects.addAll(List.of(toolEffect));
         return this;
     }
 

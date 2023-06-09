@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class GenerationsHoeItem extends HoeItem {
+public class GenerationsHoeItem extends HoeItem implements ToolEffectHolder<GenerationsHoeItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsHoeItem(Tier tier, int attackDamageBonus, float attackSpeed, Properties properties) {

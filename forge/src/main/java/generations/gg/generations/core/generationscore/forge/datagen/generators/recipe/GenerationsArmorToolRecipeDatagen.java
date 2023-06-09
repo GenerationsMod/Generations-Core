@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.world.item.tools.*;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -26,15 +27,15 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 
 	@Override
 	protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-		buildToolSetCrafting(consumer, GenerationsBlocks.CHARGE_COBBLESTONE.get(), GenerationsTools.CHARGE_STONE_PICKAXE, GenerationsTools.CHARGE_STONE_AXE, GenerationsTools.CHARGE_STONE_SWORD, GenerationsTools.CHARGE_STONE_SHOVEL, GenerationsTools.CHARGE_STONE_HOE, GenerationsTools.CHARGE_STONE_HAMMER);
-		buildToolSetCrafting(consumer, GenerationsBlocks.VOLCANIC_COBBLESTONE.get(), GenerationsTools.VOLCANIC_STONE_PICKAXE, GenerationsTools.VOLCANIC_STONE_AXE, GenerationsTools.VOLCANIC_STONE_SWORD, GenerationsTools.VOLCANIC_STONE_SHOVEL, GenerationsTools.VOLCANIC_STONE_HOE, GenerationsTools.VOLCANIC_STONE_HAMMER);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.ALUMINUM_INGOT.get(), GenerationsArmor.ALUMINUM_HELMET, GenerationsArmor.ALUMINUM_CHESTPLATE, GenerationsArmor.ALUMINUM_LEGGINGS, GenerationsArmor.ALUMINUM_BOOTS, GenerationsTools.ALUMINUM_PICKAXE, GenerationsTools.ALUMINUM_AXE, GenerationsTools.ALUMINUM_SWORD, GenerationsTools.ALUMINUM_SHOVEL, GenerationsTools.ALUMINUM_HOE, GenerationsTools.ALUMINUM_HAMMER);
-		buildArmorToolFullSetCrafting(consumer, Items.AMETHYST_SHARD, GenerationsArmor.ROCKET_HELMET, GenerationsArmor.ROCKET_CHESTPLATE, GenerationsArmor.ROCKET_LEGGINGS, GenerationsArmor.ROCKET_BOOTS, GenerationsTools.AMETHYST_PICKAXE, GenerationsTools.AMETHYST_AXE, GenerationsTools.AMETHYST_SWORD, GenerationsTools.AMETHYST_SHOVEL, GenerationsTools.AMETHYST_HOE, GenerationsTools.AMETHYST_HAMMER);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.CRYSTAL.get(), GenerationsArmor.CRYSTAL_HELMET, GenerationsArmor.CRYSTAL_CHESTPLATE, GenerationsArmor.CRYSTAL_LEGGINGS, GenerationsArmor.CRYSTAL_BOOTS, GenerationsTools.CRYSTAL_PICKAXE, GenerationsTools.CRYSTAL_AXE, GenerationsTools.CRYSTAL_SWORD, GenerationsTools.CRYSTAL_SHOVEL, GenerationsTools.CRYSTAL_HOE, GenerationsTools.CRYSTAL_HAMMER);
+		buildToolSetCrafting(consumer, GenerationsBlocks.CHARGE_COBBLESTONE.get(), GenerationsTools.CHARGE_STONE);
+		buildToolSetCrafting(consumer, GenerationsBlocks.VOLCANIC_COBBLESTONE.get(), GenerationsTools.VOLCANIC_STONE);
+		buildArmorToolFullSetCrafting(consumer, GenerationsItems.ALUMINUM_INGOT.get(), GenerationsArmor.ALUMINUM_HELMET, GenerationsArmor.ALUMINUM_CHESTPLATE, GenerationsArmor.ALUMINUM_LEGGINGS, GenerationsArmor.ALUMINUM_BOOTS, GenerationsTools.ALUMINUM);
+		buildArmorToolFullSetCrafting(consumer, Items.AMETHYST_SHARD, GenerationsArmor.ROCKET_HELMET, GenerationsArmor.ROCKET_CHESTPLATE, GenerationsArmor.ROCKET_LEGGINGS, GenerationsArmor.ROCKET_BOOTS, GenerationsTools.AMETHYST);
+		buildArmorToolFullSetCrafting(consumer, GenerationsItems.CRYSTAL.get(), GenerationsArmor.CRYSTAL_HELMET, GenerationsArmor.CRYSTAL_CHESTPLATE, GenerationsArmor.CRYSTAL_LEGGINGS, GenerationsArmor.CRYSTAL_BOOTS, GenerationsTools.CRYSTAL);
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.SAPPHIRE.get(), GenerationsArmor.AQUA_HELMET, GenerationsArmor.AQUA_CHESTPLATE, GenerationsArmor.AQUA_LEGGINGS, GenerationsArmor.AQUA_BOOTS, GenerationsTools.SAPPHIRE_PICKAXE, GenerationsTools.SAPPHIRE_AXE, GenerationsTools.SAPPHIRE_SWORD, GenerationsTools.SAPPHIRE_SHOVEL, GenerationsTools.SAPPHIRE_HOE, GenerationsTools.SAPPHIRE_HAMMER);
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.RUBY.get(), GenerationsArmor.MAGMA_HELMET, GenerationsArmor.MAGMA_CHESTPLATE, GenerationsArmor.MAGMA_LEGGINGS, GenerationsArmor.MAGMA_BOOTS, GenerationsTools.RUBY_PICKAXE, GenerationsTools.RUBY_AXE, GenerationsTools.RUBY_SWORD, GenerationsTools.RUBY_SHOVEL, GenerationsTools.RUBY_HOE, GenerationsTools.RUBY_HAMMER);
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.SILICON.get(), GenerationsArmor.GALACTIC_HELMET, GenerationsArmor.GALACTIC_CHESTPLATE, GenerationsArmor.GALACTIC_LEGGINGS, GenerationsArmor.GALACTIC_BOOTS, GenerationsTools.SILICON_PICKAXE, GenerationsTools.SILICON_AXE, GenerationsTools.SILICON_SWORD, GenerationsTools.SILICON_SHOVEL, GenerationsTools.SILICON_HOE, GenerationsTools.SILICON_HAMMER);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.DAWN_STONE_SHARD.get(), GenerationsArmor.DAWN_STONE_HELMET, GenerationsArmor.DAWN_STONE_CHESTPLATE, GenerationsArmor.DAWN_STONE_LEGGINGS, GenerationsArmor.DAWN_STONE_BOOTS, GenerationsTools.DAWN_STONE_PICKAXE, GenerationsTools.DAWN_STONE_AXE, GenerationsTools.DAWN_STONE_SWORD, GenerationsTools.DAWN_STONE_SHOVEL, GenerationsTools.DAWN_STONE_HOE, GenerationsTools.DAWN_STONE_HAMMER);
+		buildArmorToolFullSetCrafting(consumer, GenerationsItems.DAWN_STONE_SHARD.get(), GenerationsArmor.DAWN_STONE_HELMET, GenerationsArmor.DAWN_STONE_CHESTPLATE, GenerationsArmor.DAWN_STONE_LEGGINGS, GenerationsArmor.DAWN_STONE_BOOTS, GenerationsTools.DAWN_STONE);
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.DUSK_STONE_SHARD.get(), GenerationsArmor.DUSK_STONE_HELMET, GenerationsArmor.DUSK_STONE_CHESTPLATE, GenerationsArmor.DUSK_STONE_LEGGINGS, GenerationsArmor.DUSK_STONE_BOOTS, GenerationsTools.DUSK_STONE_PICKAXE, GenerationsTools.DUSK_STONE_AXE, GenerationsTools.DUSK_STONE_SWORD, GenerationsTools.DUSK_STONE_SHOVEL, GenerationsTools.DUSK_STONE_HOE, GenerationsTools.DUSK_STONE_HAMMER);
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.FIRE_STONE_SHARD.get(), GenerationsArmor.FIRE_STONE_HELMET, GenerationsArmor.FIRE_STONE_CHESTPLATE, GenerationsArmor.FIRE_STONE_LEGGINGS, GenerationsArmor.FIRE_STONE_BOOTS, GenerationsTools.FIRE_STONE_PICKAXE, GenerationsTools.FIRE_STONE_AXE, GenerationsTools.FIRE_STONE_SWORD, GenerationsTools.FIRE_STONE_SHOVEL, GenerationsTools.FIRE_STONE_HOE, GenerationsTools.FIRE_STONE_HAMMER);
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.ICE_STONE_SHARD.get(), GenerationsArmor.ICE_STONE_HELMET, GenerationsArmor.ICE_STONE_CHESTPLATE, GenerationsArmor.ICE_STONE_LEGGINGS, GenerationsArmor.ICE_STONE_BOOTS, GenerationsTools.ICE_STONE_PICKAXE, GenerationsTools.ICE_STONE_AXE, GenerationsTools.ICE_STONE_SWORD, GenerationsTools.ICE_STONE_SHOVEL, GenerationsTools.ICE_STONE_HOE, GenerationsTools.ICE_STONE_HAMMER);
@@ -60,9 +61,9 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 		netheriteSmithing(consumer, GenerationsTools.DIAMOND_HAMMER.get(), RecipeCategory.TOOLS, GenerationsTools.NETHERITE_HAMMER.get());
 	}
 
-	private void buildArmorToolFullSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, RegistrySupplier<Item> pickaxe, RegistrySupplier<Item> axe, RegistrySupplier<Item> sword, RegistrySupplier<Item> shovel, RegistrySupplier<Item> hoe, RegistrySupplier<Item> hammer) {
+	private void buildArmorToolFullSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, GenerationsTools.ToolSet toolSet) {
 		buildArmorSetCrafting(consumer, baseItem, helmet, chestplate, leggings, boots);
-		buildToolSetCrafting(consumer, baseItem, pickaxe, axe, sword, shovel, hoe, hammer);
+		buildToolSetCrafting(consumer, baseItem, toolSet);
 	}
 
 	private void buildArmorSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots) {
@@ -72,13 +73,13 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 		if (boots != null) buildBootsRecipes(consumer, baseItem, boots);
 	}
 
-	private void buildToolSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, @NotNull ItemLike baseItem, RegistrySupplier<Item> pickaxe, RegistrySupplier<Item> axe, RegistrySupplier<Item> sword, RegistrySupplier<Item> shovel, RegistrySupplier<Item> hoe, RegistrySupplier<Item> hammer) {
-		if (pickaxe != null) buildPickaxeRecipes(consumer, pickaxe, baseItem);
-		if (axe != null) buildAxeRecipes(consumer, axe, baseItem);
-		if (sword != null) buildSwordRecipes(consumer, sword, baseItem);
-		if (shovel != null) buildShovelRecipes(consumer, shovel, baseItem);
-		if (hoe != null) buildHoeRecipes(consumer, hoe, baseItem);
-		if (hammer != null) buildHammerRecipes(consumer, hammer.get(), baseItem);
+	private void buildToolSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, @NotNull ItemLike baseItem, GenerationsTools.ToolSet toolSet) {
+		if (toolSet.pickaxe() != null) buildPickaxeRecipes(consumer, toolSet.pickaxe(), baseItem);
+		if (toolSet.axe() != null) buildAxeRecipes(consumer, toolSet.axe(), baseItem);
+		if (toolSet.sword() != null) buildSwordRecipes(consumer, toolSet.sword(), baseItem);
+		if (toolSet.shovel() != null) buildShovelRecipes(consumer, toolSet.shovel(), baseItem);
+		if (toolSet.hoe() != null) buildHoeRecipes(consumer, toolSet.hoe(), baseItem);
+		if (toolSet.hammer() != null) buildHammerRecipes(consumer, toolSet.hammer().get(), baseItem);
 	}
 
 
@@ -94,7 +95,7 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildHoeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Item> hoe, ItemLike baseItem) {
+	private void buildHoeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsHoeItem> hoe, ItemLike baseItem) {
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hoe.get())
 				.define('X', baseItem)
 				.define('#', Items.STICK)
@@ -105,7 +106,7 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildShovelRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Item> shovel, ItemLike baseItem) {
+	private void buildShovelRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsShovelItem> shovel, ItemLike baseItem) {
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, shovel.get())
 				.define('X', baseItem)
 				.define('#', Items.STICK)
@@ -116,7 +117,7 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildSwordRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Item> sword, ItemLike baseItem) {
+	private void buildSwordRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsSwordItem> sword, ItemLike baseItem) {
 	ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, sword.get())
 			.define('X', baseItem)
 			.define('#', Items.STICK)
@@ -127,7 +128,7 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 			.save(consumer);
 	}
 
-	private void buildAxeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Item> axe, ItemLike baseItem) {
+	private void buildAxeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsAxeItem> axe, ItemLike baseItem) {
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, axe.get())
 				.define('X', baseItem)
 				.define('#', Items.STICK)
@@ -138,7 +139,7 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildPickaxeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Item> pickaxe, ItemLike baseItem) {
+	private void buildPickaxeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsPickaxeItem> pickaxe, ItemLike baseItem) {
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pickaxe.get())
 				.define('X', baseItem)
 				.define('#', Items.STICK)

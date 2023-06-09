@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-public class GenerationsHammerItem extends DiggerItem {
+public class GenerationsHammerItem extends DiggerItem implements ToolEffectHolder<GenerationsHammerItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsHammerItem(Tier tier, float attackDamageBonus, float attackSpeed, Properties properties) {

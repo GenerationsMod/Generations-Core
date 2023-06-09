@@ -12,19 +12,21 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-public class GenerationsSwordItem extends SwordItem {
+public class GenerationsSwordItem extends SwordItem implements ToolEffectHolder<GenerationsSwordItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsSwordItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
         super(tier, attackDamage, attackSpeed, properties);
     }
 
-    public GenerationsSwordItem addToolEffect(ToolEffect toolEffect) {
-        this.toolEffects.add(toolEffect);
+    public GenerationsSwordItem addToolEffects(ToolEffect... toolEffect) {
+        this.toolEffects.addAll(List.of(toolEffect));
         return this;
     }
+
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player player, @NotNull InteractionHand usedHand) {

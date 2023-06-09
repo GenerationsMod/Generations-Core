@@ -12,17 +12,18 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-public class GenerationsShovelItem extends ShovelItem {
+public class GenerationsShovelItem extends ShovelItem implements ToolEffectHolder {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsShovelItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
         super(tier, attackDamage, attackSpeed, properties);
     }
 
-    public GenerationsShovelItem addToolEffect(ToolEffect toolEffect) {
-        this.toolEffects.add(toolEffect);
+    public GenerationsShovelItem addToolEffects(ToolEffect... toolEffect) {
+        this.toolEffects.addAll(List.of(toolEffect));
         return this;
     }
 

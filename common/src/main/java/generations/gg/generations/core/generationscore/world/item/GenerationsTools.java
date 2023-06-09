@@ -5,12 +5,15 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.tools.*;
 import generations.gg.generations.core.generationscore.world.item.tools.effects.*;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class GenerationsTools {
@@ -19,47 +22,36 @@ public class GenerationsTools {
 	/**
 	 * Tools
 	 */
-	public static final RegistrySupplier<Item> CHARGE_STONE_SHOVEL = register("charge_stone_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.CHARGE_STONE, 0, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CHARGE_STONE_PICKAXE = register("charge_stone_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.CHARGE_STONE, 0, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CHARGE_STONE_AXE = register("charge_stone_axe", properties -> new GenerationsAxeItem(GenerationsTiers.CHARGE_STONE, 0, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CHARGE_STONE_HOE = register("charge_stone_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.CHARGE_STONE, 0, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CHARGE_STONE_HAMMER = register("charge_stone_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.CHARGE_STONE, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CHARGE_STONE_SWORD = register("charge_stone_sword", properties -> new GenerationsSwordItem(GenerationsTiers.CHARGE_STONE, 0, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final ToolSet CHARGE_STONE = ToolSet.create(GenerationsTiers.CHARGE_STONE, 0, 0, 0, 0, 0, 0);
 
-	public static final RegistrySupplier<Item> VOLCANIC_STONE_SHOVEL = register("volcanic_stone_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.VOLCANIC_STONE, 0, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> VOLCANIC_STONE_PICKAXE = register("volcanic_stone_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.VOLCANIC_STONE, 0, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> VOLCANIC_STONE_AXE = register("volcanic_stone_axe", properties -> new GenerationsAxeItem(GenerationsTiers.VOLCANIC_STONE, 0, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> VOLCANIC_STONE_HOE = register("volcanic_stone_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.VOLCANIC_STONE, 0, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> VOLCANIC_STONE_HAMMER = register("volcanic_stone_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.VOLCANIC_STONE, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> VOLCANIC_STONE_SWORD = register("volcanic_stone_sword", properties -> new GenerationsSwordItem(GenerationsTiers.VOLCANIC_STONE, 0, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final ToolSet VOLCANIC_STONE = ToolSet.create(GenerationsTiers.CHARGE_STONE, 0, 0, 0, 0, 0, 0);
 
-	public static final RegistrySupplier<Item> ALUMINUM_SHOVEL = register("aluminum_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.ALUMINUM, 4, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_PICKAXE = register("aluminum_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.ALUMINUM, 3, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_AXE = register("aluminum_axe", properties -> new GenerationsAxeItem(GenerationsTiers.ALUMINUM, 8, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_HOE = register("aluminum_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.ALUMINUM, 0, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_HAMMER = register("aluminum_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.ALUMINUM, 3, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> ALUMINUM_SWORD = register("aluminum_sword", properties -> new GenerationsSwordItem(GenerationsTiers.ALUMINUM, 5, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final ToolSet ALUMINUM = ToolSet.create(GenerationsTiers.CHARGE_STONE, 4, 3, 8, 0, 3, 5);
 
-	public static final RegistrySupplier<Item> AMETHYST_SHOVEL = register("amethyst_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.AMETHYST, 1, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_PICKAXE = register("amethyst_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.AMETHYST, 2, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_AXE = register("amethyst_axe", properties -> new GenerationsAxeItem(GenerationsTiers.AMETHYST, 3, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_HOE = register("amethyst_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.AMETHYST, -2, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_HAMMER = register("amethyst_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.AMETHYST, 2, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> AMETHYST_SWORD = register("amethyst_sword", properties -> new GenerationsSwordItem(GenerationsTiers.AMETHYST, 4, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final ToolSet AMETHYST = ToolSet.create(GenerationsTiers.AMETHYST,
+			1,
+			2,
+			3,
+			2,
+			2,
+			4);
 
-	public static final RegistrySupplier<Item> CRYSTAL_SHOVEL = register("crystal_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.CRYSTAL, 1, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_PICKAXE = register("crystal_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.CRYSTAL, 2, -2.8F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_AXE = register("crystal_axe", properties -> new GenerationsAxeItem(GenerationsTiers.CRYSTAL, 3, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_HOE = register("crystal_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.CRYSTAL, -2, -1.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_HAMMER = register("crystal_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.CRYSTAL, 2, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> CRYSTAL_SWORD = register("crystal_sword", properties -> new GenerationsSwordItem(GenerationsTiers.CRYSTAL, 4, -2.4F, properties), CreativeModeTabs.COMBAT);
+	public static final ToolSet CRYSTAL = ToolSet.create(GenerationsTiers.CRYSTAL,
+			1,
+			2,
+			3,
+			-2,
+			2,
+			4);
 
-	public static final RegistrySupplier<Item> DAWN_STONE_SHOVEL = register("dawn_stone_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.DAWN_STONE, 1, -3.0F, properties).addToolEffect(new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> DAWN_STONE_PICKAXE = register("dawn_stone_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.DAWN_STONE, 2, -2.8F, properties).addToolEffect(new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> DAWN_STONE_AXE = register("dawn_stone_axe", properties -> new GenerationsAxeItem(GenerationsTiers.DAWN_STONE, 3, -3.0F, properties).addToolEffect(new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> DAWN_STONE_HOE = register("dawn_stone_hoe", properties -> new GenerationsHoeItem(GenerationsTiers.DAWN_STONE, 0, -3.0F, properties).addToolEffect(new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> DAWN_STONE_HAMMER = register("dawn_stone_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.DAWN_STONE, 2, -3.0F, properties).addToolEffect(new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
-	public static final RegistrySupplier<Item> DAWN_STONE_SWORD = register("dawn_stone_sword", properties -> new GenerationsSwordItem(GenerationsTiers.DAWN_STONE, 4, -2.4F, properties).addToolEffect(new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1)), CreativeModeTabs.COMBAT);
+	public static  final ToolSet DAWN_STONE = ToolSet.create(GenerationsTiers.DAWN_STONE,
+			1,
+			2,
+			3,
+			0,
+			2,
+			4,
+			new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1));
 
 	public static final RegistrySupplier<Item> DUSK_STONE_SHOVEL = register("dusk_stone_shovel", properties -> new GenerationsShovelItem(GenerationsTiers.DUSK_STONE, 1, -3.0F, properties).addToolEffect(new PotionToolEffect(MobEffects.INVISIBILITY, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> DUSK_STONE_PICKAXE = register("dusk_stone_pickaxe", properties -> new GenerationsPickaxeItem(GenerationsTiers.DUSK_STONE, 2, -2.8F, properties).addToolEffect(new PotionToolEffect(MobEffects.INVISIBILITY, 0, 6000, 1)), CreativeModeTabs.TOOLS_AND_UTILITIES);
@@ -146,7 +138,7 @@ public class GenerationsTools {
 	public static final RegistrySupplier<Item> STONE_HAMMER = register("stone_hammer", properties -> new GenerationsHammerItem(Tiers.STONE, 7.0F, -3.2F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> WOODEN_HAMMER = register("wooden_hammer", properties -> new GenerationsHammerItem(Tiers.WOOD, 6.0F, -3.2F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 
-	private static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function, CreativeModeTab tab) {
+	private static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> function, CreativeModeTab tab) {
 		return TOOLS.register(name, () -> function.apply(of().arch$tab(tab)));
 	}
 
@@ -158,5 +150,23 @@ public class GenerationsTools {
 	public static void init() {
 		GenerationsCore.LOGGER.info("Registering Generations Tools");
 		TOOLS.register();
+	}
+
+	public record ToolSet(RegistrySupplier<GenerationsShovelItem> shovel, RegistrySupplier<GenerationsPickaxeItem> pickaxe, RegistrySupplier<GenerationsAxeItem> axe, RegistrySupplier<GenerationsHoeItem> hoe, RegistrySupplier<GenerationsHammerItem> hammer, RegistrySupplier<GenerationsSwordItem> sword) {
+		public static ToolSet create(Tier tier, int shovelDamage, int pickaxeDamage, int axeDamage, int hoeDamage, int hammerDamage, int swordDamage, ToolEffect... toolEffects) {
+			return new ToolSet(register("_shovel", GenerationsShovelItem::new, tier, shovelDamage, -3.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register("_pickaxe", GenerationsPickaxeItem::new, tier, pickaxeDamage, -2.8F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register("_axe", GenerationsAxeItem::new, tier, axeDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register("_hoe", GenerationsHoeItem::new, tier, hoeDamage, -1.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register("_hammer", GenerationsHammerItem::new, tier, hammerDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register("_sword", GenerationsSwordItem::new, tier, swordDamage, -2.4F, CreativeModeTabs.COMBAT, toolEffects));
+		}
+		public static <T extends Item & ToolEffectHolder<T>> RegistrySupplier<T> register(String name, ToolSupplier<T> supplier, Tier tier, int attackDamage, float attackSpeed, CreativeModeTab tab, ToolEffect... toolEffects) {
+			return GenerationsTools.register(tier.toString().toLowerCase() + name, properties -> supplier.create(tier, attackDamage, attackSpeed, properties).addToolEffects(toolEffects), tab);
+		}
+
+		public interface ToolSupplier<T extends Item> {
+			public T create(Tier tier, int attackDamage, float attackSpeed, Item.Properties properties);
+		}
 	}
 }
