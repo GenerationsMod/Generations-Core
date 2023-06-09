@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class GenerationsTools {
 	public static final DeferredRegister<Item> TOOLS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
@@ -23,7 +24,7 @@ public class GenerationsTools {
 	/**
 	 * Tools
 	 */
-	public static final ToolSet CHARGE_STONE = ToolSet.create(GenerationsTiers.CHARGE_STONE,
+	public static final ToolSet CHARGE_STONE = ToolSet.create("charge_stone", () -> GenerationsTiers.CHARGE_STONE,
 			0,
 			0,
 			0,
@@ -31,7 +32,7 @@ public class GenerationsTools {
 			0,
 			0);
 
-	public static final ToolSet VOLCANIC_STONE = ToolSet.create(GenerationsTiers.CHARGE_STONE,
+	public static final ToolSet VOLCANIC_STONE = ToolSet.create("volcanic_stone", () -> GenerationsTiers.CHARGE_STONE,
 			0,
 			0,
 			0,
@@ -39,7 +40,7 @@ public class GenerationsTools {
 			0,
 			0);
 
-	public static final ToolSet ALUMINUM = ToolSet.create(GenerationsTiers.CHARGE_STONE,
+	public static final ToolSet ALUMINUM = ToolSet.create("aluminum", () -> GenerationsTiers.CHARGE_STONE,
 			4,
 			3,
 			8,
@@ -47,7 +48,7 @@ public class GenerationsTools {
 			3,
 			5);
 
-	public static final ToolSet AMETHYST = ToolSet.create(GenerationsTiers.AMETHYST,
+	public static final ToolSet AMETHYST = ToolSet.create("amethyst", () -> GenerationsTiers.AMETHYST,
 			1,
 			2,
 			3,
@@ -55,7 +56,7 @@ public class GenerationsTools {
 			2,
 			4);
 
-	public static final ToolSet CRYSTAL = ToolSet.create(GenerationsTiers.CRYSTAL,
+	public static final ToolSet CRYSTAL = ToolSet.create("crystal", () -> GenerationsTiers.CRYSTAL,
 			1,
 			2,
 			3,
@@ -63,7 +64,7 @@ public class GenerationsTools {
 			2,
 			4);
 
-	public static  final ToolSet DAWN_STONE = ToolSet.create(GenerationsTiers.DAWN_STONE,
+	public static  final ToolSet DAWN_STONE = ToolSet.create("dawn_stone", () -> GenerationsTiers.DAWN_STONE,
 			1,
 			2,
 			3,
@@ -72,7 +73,7 @@ public class GenerationsTools {
 			4,
 			new PotionToolEffect(MobEffects.HEALTH_BOOST, 0, 6000, 1));
 
-	public static final ToolSet DUSK_STONE = ToolSet.create(GenerationsTiers.DUSK_STONE,
+	public static final ToolSet DUSK_STONE = ToolSet.create("dusk_stone", () -> GenerationsTiers.DUSK_STONE,
 			1,
 			2,
 			3,
@@ -81,7 +82,7 @@ public class GenerationsTools {
 			4,
 			new PotionToolEffect(MobEffects.INVISIBILITY, 0, 6000, 1));
 
-	public static final ToolSet FIRE_STONE = ToolSet.create(GenerationsTiers.FIRE_STONE,
+	public static final ToolSet FIRE_STONE = ToolSet.create("fire_stone", () -> GenerationsTiers.FIRE_STONE,
 			1,
 			2,
 			3,
@@ -90,7 +91,7 @@ public class GenerationsTools {
 			4,
 			new TransformToolEffect(Blocks.WATER, Blocks.OBSIDIAN, 1));
 
-	public static final ToolSet ICE_STONE = ToolSet.create(GenerationsTiers.ICE_STONE,
+	public static final ToolSet ICE_STONE = ToolSet.create("ice_stone", () -> GenerationsTiers.ICE_STONE,
 			4,
 			5,
 			6,
@@ -99,7 +100,7 @@ public class GenerationsTools {
 			7,
 			new TransformToolEffect(Blocks.WATER, Blocks.ICE, 1));
 
-	public static final ToolSet LEAF_STONE = ToolSet.create(GenerationsTiers.LEAF_STONE,
+	public static final ToolSet LEAF_STONE = ToolSet.create("leaf_stone", () -> GenerationsTiers.LEAF_STONE,
 			1,
 			2,
 			3,
@@ -108,7 +109,7 @@ public class GenerationsTools {
 			4,
 			new BoneMealToolEffect(12));
 
-	public static final ToolSet MOON_STONE = ToolSet.create(GenerationsTiers.MOON_STONE,
+	public static final ToolSet MOON_STONE = ToolSet.create("moon_stone", () -> GenerationsTiers.MOON_STONE,
 			1,
 			2,
 			3,
@@ -117,7 +118,7 @@ public class GenerationsTools {
 			4,
 			new PotionToolEffect(MobEffects.NIGHT_VISION, 0, 6000, 1));
 
-	public static final ToolSet RUBY = ToolSet.create(GenerationsTiers.RUBY,
+	public static final ToolSet RUBY = ToolSet.create("ruby", () -> GenerationsTiers.RUBY,
 			1,
 			2,
 			3,
@@ -125,7 +126,7 @@ public class GenerationsTools {
 			2,
 			4);
 
-	public static final ToolSet SAPHIRE = ToolSet.create(GenerationsTiers.SAPPHIRE,
+	public static final ToolSet SAPHIRE = ToolSet.create("saphire", () -> GenerationsTiers.SAPPHIRE,
 			1,
 			2,
 			3,
@@ -133,7 +134,7 @@ public class GenerationsTools {
 			2,
 			4);
 
-	public static final ToolSet SILICON = ToolSet.create(GenerationsTiers.SILICON,
+	public static final ToolSet SILICON = ToolSet.create("silicon", () -> GenerationsTiers.SILICON,
 			0,
 			0,
 			0,
@@ -141,7 +142,7 @@ public class GenerationsTools {
 			6,
 			0);
 
-	public static final ToolSet SUN_STONE = ToolSet.create(GenerationsTiers.SUN_STONE,
+	public static final ToolSet SUN_STONE = ToolSet.create("sun_stone", () -> GenerationsTiers.SUN_STONE,
 			1,
 			2,
 			3,
@@ -150,7 +151,7 @@ public class GenerationsTools {
 			4,
 			new PlaceItemToolEffect((BlockItem) Items.TORCH, 5)); //TODO: Replace with temp light source derived from tinker's construct's light source
 
-	public static final ToolSet THUNDER_STONE = ToolSet.create(GenerationsTiers.THUNDER_STONE,
+	public static final ToolSet THUNDER_STONE = ToolSet.create("thunder_stone", () -> GenerationsTiers.THUNDER_STONE,
 			1,
 			2,
 			3,
@@ -159,7 +160,7 @@ public class GenerationsTools {
 			4,
 			new EnchantmentToolEffect(Enchantments.BLOCK_EFFICIENCY, 3, 1));
 
-	public static final ToolSet WATER_STONE = ToolSet.create(GenerationsTiers.WATER_STONE,
+	public static final ToolSet WATER_STONE = ToolSet.create("water_stone", () -> GenerationsTiers.WATER_STONE,
 			1,
 			2,
 			3,
@@ -186,20 +187,21 @@ public class GenerationsTools {
 
 	public static void init() {
 		GenerationsCore.LOGGER.info("Registering Generations Tools");
+		System.out.println(TOOLS.getRegistrar().get(GenerationsCore.id("charge_stone_shovel")));
 		TOOLS.register();
 	}
 
 	public record ToolSet(RegistrySupplier<GenerationsShovelItem> shovel, RegistrySupplier<GenerationsPickaxeItem> pickaxe, RegistrySupplier<GenerationsAxeItem> axe, RegistrySupplier<GenerationsHoeItem> hoe, RegistrySupplier<GenerationsHammerItem> hammer, RegistrySupplier<GenerationsSwordItem> sword) {
-		public static ToolSet create(Tier tier, int shovelDamage, int pickaxeDamage, int axeDamage, int hoeDamage, int hammerDamage, int swordDamage, ToolEffect... toolEffects) {
-			return new ToolSet(register("_shovel", GenerationsShovelItem::new, tier, shovelDamage, -3.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register("_pickaxe", GenerationsPickaxeItem::new, tier, pickaxeDamage, -2.8F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register("_axe", GenerationsAxeItem::new, tier, axeDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register("_hoe", GenerationsHoeItem::new, tier, hoeDamage, -1.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register("_hammer", GenerationsHammerItem::new, tier, hammerDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register("_sword", GenerationsSwordItem::new, tier, swordDamage, -2.4F, CreativeModeTabs.COMBAT, toolEffects));
+		public static ToolSet create(String name, Supplier<Tier> tier, int shovelDamage, int pickaxeDamage, int axeDamage, int hoeDamage, int hammerDamage, int swordDamage, ToolEffect... toolEffects) {
+			return new ToolSet(register(name + "_shovel", GenerationsShovelItem::new, tier, shovelDamage, -3.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register(name + "_pickaxe", GenerationsPickaxeItem::new, tier, pickaxeDamage, -2.8F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register(name + "_axe", GenerationsAxeItem::new, tier, axeDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register(name + "_hoe", GenerationsHoeItem::new, tier, hoeDamage, -1.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register(name + "_hammer", GenerationsHammerItem::new, tier, hammerDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
+			register(name + "_sword", GenerationsSwordItem::new, tier, swordDamage, -2.4F, CreativeModeTabs.COMBAT, toolEffects));
 		}
-		private static <T extends Item & ToolEffectHolder<T>> RegistrySupplier<T> register(String name, ToolSupplier<T> supplier, Tier tier, int attackDamage, float attackSpeed, CreativeModeTab tab, ToolEffect... toolEffects) {
-			return GenerationsTools.register(tier.toString().toLowerCase() + name, properties -> supplier.create(tier, attackDamage, attackSpeed, properties).addToolEffects(toolEffects), tab);
+		private static <T extends Item & ToolEffectHolder<T>> RegistrySupplier<T> register(String name, ToolSupplier<T> supplier, Supplier<Tier> tier, int attackDamage, float attackSpeed, CreativeModeTab tab, ToolEffect... toolEffects) {
+			return GenerationsTools.register(name, properties -> supplier.create(tier.get(), attackDamage, attackSpeed, properties).addToolEffects(toolEffects), tab);
 		}
 
 		private interface ToolSupplier<T extends Item> {
