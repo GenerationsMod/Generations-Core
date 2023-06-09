@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class GenerationsHoeItem extends HoeItem implements ToolEffectHolder<GenerationsHoeItem> {
@@ -21,8 +22,8 @@ public class GenerationsHoeItem extends HoeItem implements ToolEffectHolder<Gene
         super(tier, attackDamageBonus, attackSpeed, properties);
     }
 
-    public GenerationsHoeItem addToolEffect(ToolEffect toolEffect) {
-        this.toolEffects.add(toolEffect);
+    public GenerationsHoeItem addToolEffects(ToolEffect... toolEffect) {
+        this.toolEffects.addAll(List.of(toolEffect));
         return this;
     }
 

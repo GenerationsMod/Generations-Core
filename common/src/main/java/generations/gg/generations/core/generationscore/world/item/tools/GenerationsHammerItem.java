@@ -13,6 +13,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class GenerationsHammerItem extends DiggerItem implements ToolEffectHolder<GenerationsHammerItem> {
@@ -22,8 +23,8 @@ public class GenerationsHammerItem extends DiggerItem implements ToolEffectHolde
         super((int) attackDamageBonus, attackSpeed, tier, BlockTags.ANVIL, properties);
     }
 
-    public GenerationsHammerItem addToolEffect(ToolEffect toolEffect) {
-        this.toolEffects.add(toolEffect);
+    public GenerationsHammerItem addToolEffects(ToolEffect... toolEffect) {
+        this.toolEffects.addAll(List.of(toolEffect));
         return this;
     }
 
