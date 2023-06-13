@@ -18,15 +18,4 @@ public record S2COpenMailPacket(InteractionHand hand) {
     public void encode(FriendlyByteBuf buf) {
         buf.writeEnum(hand());
     }
-
-    public void process(Supplier<NetworkManager.PacketContext> ctx) {
-        ctx.get().queue(() -> {
-            var client = Minecraft.getInstance();
-            var itemStack = client.player.getItemInHand(hand);
-            if (itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL))
-                client.setScreen(new MailViewScreen(new MailViewScreen.WrittenMailAccess(itemStack)));
-            else if (itemStack.is(GenerationsItemTags.POKEMAIL))
-                client.setScreen(new MailEditScreen(client.player, itemStack, hand));
-        });
-    }
 }

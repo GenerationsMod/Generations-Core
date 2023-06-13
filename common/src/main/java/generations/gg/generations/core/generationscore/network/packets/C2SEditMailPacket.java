@@ -24,10 +24,6 @@ public record C2SEditMailPacket(int slot, String contents, Optional<String> titl
         buf.writeOptional(title, ((byteBuf, s) -> buf.writeUtf(s, 128)));
     }
 
-    public void process(Supplier<NetworkManager.PacketContext> ctx) {
-        ctx.get().queue(() -> handleEditMail((ServerPlayer) ctx.get().getPlayer(), slot, contents, title));
-    }
-
     public void handleEditMail(ServerPlayer sender, int slot, String contents, Optional<String> title) {
         if (Inventory.isHotbarSlot(slot) || slot == 40) {
             title.ifPresentOrElse(s -> sealMail(sender, slot, contents, s), () -> updateMailContents(sender, slot, contents));
