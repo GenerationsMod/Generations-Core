@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "group": "golden_temple_sandstone",
+  "category": "misc",
+  "group": "golden_temple_sandstone_wall",
   "key": {
     "#": {
       "item": "generations_core:golden_temple_sandstone"
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "###",
+    "###"
   ],
   "result": {
-    "count": 4,
-    "item": "generations_core:golden_temple_cut_sandstone"
+    "count": 6,
+    "item": "generations_core:golden_temple_sandstone_wall"
   },
   "show_notification": true
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_golden_temple_sandstone": {
+    "has_golden_temple_cut_sandstone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:golden_temple_sandstone_slab"
+              "generations_core:golden_temple_cut_sandstone"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:golden_temple_chiseled_sandstone"
+        "recipe": "minecraft:golden_temple_cut_sandstone_slab_from_golden_temple_cut_sandstone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_golden_temple_sandstone",
+      "has_golden_temple_cut_sandstone",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:golden_temple_chiseled_sandstone"
+      "minecraft:golden_temple_cut_sandstone_slab_from_golden_temple_cut_sandstone_stonecutting"
     ]
   }
 }

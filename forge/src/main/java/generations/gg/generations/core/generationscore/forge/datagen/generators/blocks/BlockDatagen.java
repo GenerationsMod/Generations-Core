@@ -785,8 +785,10 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
     }
 
     private void registerBlockFamily(BlockFamily family) {
-        registerBlockItem(family.getBaseBlock());
-        family.getVariants().keySet().forEach(variant -> proccessVariant(variant, family));
+        if (family.shouldGenerateModel()) {
+            registerBlockItem(family.getBaseBlock());
+            family.getVariants().keySet().forEach(variant -> proccessVariant(variant, family));
+        }
     }
 
     private void proccessVariant(BlockFamily.Variant variant, BlockFamily family) {

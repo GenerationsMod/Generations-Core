@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:golden_temple_sandstone"
+  },
+  "result": "generations_core:golden_temple_sandstone_stairs"
+}
