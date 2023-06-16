@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "generations_core:block/ultra_sandstone_top",
+    "side": "generations_core:block/ultra_cut_sandstone"
+  }
+}

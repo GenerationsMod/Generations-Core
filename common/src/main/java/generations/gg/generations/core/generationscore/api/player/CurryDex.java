@@ -20,6 +20,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 
 import java.time.Instant;
@@ -148,7 +149,7 @@ public class CurryDex {
     }
 
     public void sync() {
-        if (this.player instanceof ServerPlayer serverPlayer) {
+        if (this.player.getType() == EntityType.PLAYER) {
 //            PokeModNetworking.sendPacket(new S2CSyncCurryDexPacket(this), serverPlayer); TODO: Networking
         } else {
             throw new RuntimeException("Tried to sync a party from the client???");

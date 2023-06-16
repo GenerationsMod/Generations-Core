@@ -345,7 +345,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
 
         //Ultra Space
-        //registerSandStonePallet(GenerationsBlocks.ULTRA_SANDSTONE, GenerationsBlocks.ULTRA_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SANDSTONE_WALL, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_WALL, GenerationsBlocks.ULTRA_CHISELED_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE_SLAB);
+        registerSandStonePallet(GenerationsBlocks.ULTRA_SANDSTONE, GenerationsBlocks.ULTRA_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SANDSTONE_WALL, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_WALL, GenerationsBlocks.ULTRA_CHISELED_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE_SLAB);
         registerBlockItem(GenerationsBlocks.GHOST_LANTERN);
         registerBlockItem(GenerationsBlocks.MACHINE_BLOCK);
         registerBlockItem(GenerationsBlocks.RUINS_SAND);

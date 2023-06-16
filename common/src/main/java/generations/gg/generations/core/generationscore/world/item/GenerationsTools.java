@@ -5,16 +5,12 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.tools.*;
 import generations.gg.generations.core.generationscore.world.item.tools.effects.*;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
 
-import java.util.function.BiFunction;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -126,7 +122,7 @@ public class GenerationsTools {
 			2,
 			4);
 
-	public static final ToolSet SAPHIRE = ToolSet.create("saphire", () -> GenerationsTiers.SAPPHIRE,
+	public static final ToolSet SAPPHIRE = ToolSet.create("sapphire", () -> GenerationsTiers.SAPPHIRE,
 			1,
 			2,
 			3,

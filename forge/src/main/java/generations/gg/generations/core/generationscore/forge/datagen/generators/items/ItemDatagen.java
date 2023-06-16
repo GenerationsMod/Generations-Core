@@ -1067,7 +1067,7 @@ public class ItemDatagen extends ItemModelProvider {
         toolSet(GenerationsTools.LEAF_STONE);
         toolSet(GenerationsTools.MOON_STONE);
         toolSet(GenerationsTools.RUBY);
-        toolSet(GenerationsTools.SAPHIRE);
+        toolSet(GenerationsTools.SAPPHIRE);
         toolSet(GenerationsTools.SILICON);
         toolSet(GenerationsTools.SUN_STONE);
         toolSet(GenerationsTools.THUNDER_STONE);

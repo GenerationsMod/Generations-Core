@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "generations_core:block/ultra_sandstone_top",
+    "side": "generations_core:block/ultra_cut_sandstone",
+    "top": "generations_core:block/ultra_sandstone_top"
+  }
+}
