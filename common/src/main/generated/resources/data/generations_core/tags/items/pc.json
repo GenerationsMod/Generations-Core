@@ -1,0 +1,20 @@
+{
+  "values": [
+    "generations_core:white_pc",
+    "generations_core:orange_pc",
+    "generations_core:magenta_pc",
+    "generations_core:light_blue_pc",
+    "generations_core:yellow_pc",
+    "generations_core:lime_pc",
+    "generations_core:pink_pc",
+    "generations_core:gray_pc",
+    "generations_core:light_gray_pc",
+    "generations_core:cyan_pc",
+    "generations_core:purple_pc",
+    "generations_core:blue_pc",
+    "generations_core:brown_pc",
+    "generations_core:green_pc",
+    "generations_core:red_pc",
+    "generations_core:black_pc"
+  ]
+}

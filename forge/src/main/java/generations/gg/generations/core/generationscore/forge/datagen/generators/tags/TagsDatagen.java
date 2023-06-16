@@ -532,6 +532,8 @@ public class TagsDatagen {
                     POKEMAIL_WOOD_CLOSED.get());
 
             tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS.location());
+
+            GenerationsUtilityBlocks.PC_BLOCKS.forEach(pc -> tag(GenerationsItemTags.PC).add(pc.get()));
         }
     }
 
