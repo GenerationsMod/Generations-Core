@@ -3,6 +3,7 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "1.2-SNAPSHOT" apply false
+    kotlin("jvm") version("1.7.10")
     idea
     java
 }
@@ -13,7 +14,6 @@ architectury.minecraft = minecraftVersion
 
 subprojects {
     apply(plugin = "dev.architectury.loom")
-
     val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
 
     repositories {
@@ -24,6 +24,7 @@ subprojects {
         maven("https://maven.generations.gg/releases")
         maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
         maven("https://cursemaven.com").content { includeGroup("curse.maven") }
+        maven("https://maven.impactdev.net/repository/development/")
     }
 
     dependencies {
