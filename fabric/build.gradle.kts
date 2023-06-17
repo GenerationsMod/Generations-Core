@@ -46,6 +46,7 @@ dependencies {
     implementation("shadowCommon"("com.thebombzen:jxlatte:1.1.0")!!)
 
     modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")!!
+//    modImplementation(files("../libs/cobblemon/common/1.4.0+1.19.4.jar"))
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
