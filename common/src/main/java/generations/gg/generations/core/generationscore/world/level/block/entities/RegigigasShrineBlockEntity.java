@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
@@ -12,6 +13,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
@@ -43,8 +45,11 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
 
             if (handler.isFull()) {
                 toggleActive();
-
-//                level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(BuiltinPixelmonSpecies.REGIGIGAS.location()), getBlockPos())); TODO: enable
+                var pokemon = new PokemonProperties();
+                pokemon.setSpecies("regigigas");
+                var entity = pokemon.createEntity(level);
+                entity.setPos(Vec3.atCenterOf(getBlockPos()));
+                level.addFreshEntity(pokemon.createEntity(level));
                 handler.clear();
                 toggleActive();
                 sync();
@@ -64,12 +69,12 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
     }
 
     public static int getRegiOrbIndex(RegiOrbItem item) {
-        return switch (item.getSpeciesId().toString()) {
-            case "generations_core:regice" -> 0;
-            case "generations_core:regirock" -> 1;
-            case "generations_core:registeel" -> 2;
-            case "generations_core:regidrago" -> 3;
-            case "generations_core:regieleki" -> 4;
+        return switch (item.getSpeciesId()) {
+            case "regice" -> 0;
+            case "regirock" -> 1;
+            case "registeel" -> 2;
+            case "regidrago" -> 3;
+            case "regieleki" -> 4;
             default -> -1;
         };
     }

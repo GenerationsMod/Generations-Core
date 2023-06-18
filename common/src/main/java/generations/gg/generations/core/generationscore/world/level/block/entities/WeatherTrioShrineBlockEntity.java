@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.WeatherTrioShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -18,6 +20,8 @@ public class WeatherTrioShrineBlockEntity extends InteractShrineBlockEntity {
 
     public boolean checkSpawning(ServerPlayer player, ItemStack stack) {
         toggleActive();
+        PokemonUtil.spawn(((WeatherTrioShrineBlock) getBlockState().getBlock()).getSpecies(), level, player.getOnPos());
+
 //        level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(((WeatherTrioShrineBlock) getBlockState().getBlock()).getSpecies()), player.getOnPos())); TODO: Enable
         sync();
         toggleActive();

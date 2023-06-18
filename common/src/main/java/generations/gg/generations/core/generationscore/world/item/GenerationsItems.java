@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.types.ElementalType;
+import com.cobblemon.mod.common.api.types.ElementalTypes;
+import com.google.common.collect.Streams;
 import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
@@ -990,10 +993,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> LEGEND_FINDER = register("legend_finder", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> HOOPA_RING = register("hoopa_ring", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> RED_ORB = register("red_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FADED_RED_ORB = register("faded_red_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300)/*, ElementType.FIRE*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FADED_BLUE_ORB = register("faded_blue_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300)/*, ElementType.WATER*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> FADED_RED_ORB = register("faded_red_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFIRE()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> FADED_BLUE_ORB = register("faded_blue_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getWATER()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> BLUE_ORB = register("blue_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> JADE_ORB = register("jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300)/*, ElementType.FLYING*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> JADE_ORB = register("jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFLYING()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LIGHT_STONE = register("light_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), "reshiram"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> DARK_STONE = register("dark_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), "zekrom"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> DRAGON_STONE = register("dragon_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), "kyurem"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1004,17 +1007,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SPARKLING_SHARD = register("sparkling_shard", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SPARKLING_STONE = register("sparkling_stone", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> RUSTY_FRAGMENT = register("rusty_fragment", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RUSTY_SWORD = register("rusty_sword", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zacian", "pixelmon.rusty_sword.amountfull", (player, stack/*, battle*/) -> {
-/*        var participant = battle.controller.getParticipant(player).orElseThrow();
-        var data = (PixelmonData) participant.getParty().fieldPixelmon;
-        return data.getElements().contains(ElementType.FAIRY);*/
-        return false;
-    }), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RUSTY_SWORD = register("rusty_sword", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zacian", "pixelmon.rusty_sword.amountfull", (player, stack, battle) -> Streams.stream(battle.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getFAIRY()))), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> CROWNED_SWORD = register("crowned_sword", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RUSTY_SHIELD = register("rusty_shield", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zamazenta", "pixelmon.rusty_shield.amountfull", (player, stack/*, battle*/) -> false/*ElementType.FIGHTING.anyMatch((battle.controller.getParticipant(player).orElseThrow().getParty().fieldPixelmon).getElements())*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RUSTY_SHIELD = register("rusty_shield", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zamazenta", "pixelmon.rusty_shield.amountfull", (player, stack, battle) -> Streams.stream(battle.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getFIGHTING()))), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> CROWNED_SHIELD = register("crowned_shield", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SCROLL_PAGE = register("scroll_page", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> SECRET_ARMOR_SCROLL = register("secret_armor_scroll", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(100), "kubfu", "pixelmon.secret_armor_scoll.amountfull", (player, stack/*, battle*/) -> false/*battle.getParticipants().stream().anyMatch(e -> e instanceof NpcParticipant)*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> SECRET_ARMOR_SCROLL = register("secret_armor_scroll", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(100), "kubfu", "pixelmon.secret_armor_scoll.amountfull", (player, stack, battle) -> battle.isNpc()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ZYGARDE_CUBE = register("zygarde_cube", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MELTAN_BOX = register("meltan_box", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(200), "meltan", "pixelmon.meltanbox.amountfull", (player, stack/*, battle*/) -> false /*PixelmonParty.of(player).stream().anyMatch(a -> a.getSpecies().equals(GenerationsCore.id("meltan"))) && ElementType.STEEL.anyMatch((battle.controller.getParticipant(player).orElseThrow().getParty().fieldPixelmon).getElements())*/) {
         @Override
@@ -1539,7 +1537,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> POKE_RADAR = register("poke_radar", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKEBLOCK_CASE = register("pokeblock_case", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKEBLOCK_KIT = register("pokeblock_kit", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> POKEMON_BOX_LINK = register("pokemon_box_link", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> POKEMON_BOX_LINK = register("pokemon_box_link", properties -> new Item(properties.stacksTo(1)) {
+        @Override
+        public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+            return super.use(level, player, interactionHand);
+        }
+    }, GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKETCH_BLUE = register("poketch_blue", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKETCH_RED = register("poketch_red", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POWDER_JAR = register("powder_jar", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);

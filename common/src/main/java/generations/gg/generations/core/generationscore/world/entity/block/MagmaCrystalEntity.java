@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.world.entity.block;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import com.cobblemon.mod.common.client.gui.PokemonGuiUtilsKt;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.server.level.ServerPlayer;
@@ -11,6 +13,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 public class MagmaCrystalEntity extends ThrowableItemProjectile {
@@ -34,7 +37,7 @@ public class MagmaCrystalEntity extends ThrowableItemProjectile {
                 var mat = this.level.getBlockState(((BlockHitResult) result).getBlockPos()).getMaterial();
 
                 if ((mat == Material.LAVA || this.level.getBlockState(((BlockHitResult) result).getBlockPos().above()).getMaterial() == Material.LAVA)) {
-//                    level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(BuiltinPixelmonSpecies.HEATRAN.location()), getOwner().getOnPos())); TODO: Enable later
+                    PokemonUtil.spawn("heatran", level, getOwner().getOnPos());
                     discard();
                 } else if (!level.isClientSide() && mat != Material.AIR) {
                     player.addItem(new ItemStack(GenerationsItems.MAGMA_CRYSTAL.get()));

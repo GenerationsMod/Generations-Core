@@ -1,4 +1,5 @@
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
@@ -41,15 +42,15 @@ allprojects {
     apply(plugin = "architectury-plugin")
     apply(plugin = "maven-publish")
     apply(plugin = "idea")
-//    apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply(plugin = "org.jetbrains.kotlin.jvm")
 
     version = project.properties["mod_version"] as String
     group = project.properties["maven_group"] as String
     base.archivesName.set(project.properties["archives_base_name"] as String)
 
     tasks.withType<JavaCompile>().configureEach {
-        options.encoding = "UTF-8"
-        options.release.set(17)
+            options.encoding = "UTF-8"
+            options.release.set(17)
     }
 
     java.withSourcesJar()

@@ -12,6 +12,7 @@ sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 repositories {
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://maven.bai.lol")
+    mavenCentral()
 }
 
 dependencies {
@@ -34,6 +35,7 @@ dependencies {
 
     //Cobblemon
     modImplementation("com.cobblemon:mod:1.4.0+1.19.4-SNAPSHOT")
+    implementation(kotlin("stdlib-jdk8"))
 
 }
 

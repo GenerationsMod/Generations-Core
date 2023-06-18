@@ -1,5 +1,9 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.types.ElementalType;
+import com.cobblemon.mod.common.api.types.ElementalTypes;
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
+import com.google.common.collect.Streams;
 import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -17,10 +21,14 @@ import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
     public static int MAX_DAMAGE = 300;
@@ -67,19 +75,19 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
         return !getImbuedItem(stack).isEmpty() && stack.getDamageValue() >= stack.getMaxDamage();
     }
 
-//    @Nullable
-//    public static ElementType typeFromInbued(ItemStack stack) {
-//        if (stack.isEmpty()) return null;
-//        if (isItem(GenerationsItems.ICY_WING, stack)) return ElementType.ICE;
-//        else if (isItem(GenerationsItems.PRETTY_FEATHER, stack)) return ElementType.PSYCHIC;
-//        else if (isItem(GenerationsItems.STATIC_WING, stack)) return ElementType.ELECTRIC;
-//        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return ElementType.FIGHTING;
-//        else if (isItem(GenerationsItems.FIERY_WING, stack)) return ElementType.FIRE;
-//        else if (isItem(GenerationsItems.SINISTER_WING, stack)) return ElementType.DARK;
-//        else if (isItem(GenerationsItems.RAINBOW_WING, stack) || isItem(GenerationsItems.SILVER_WING, stack))
-//            return ElementType.FLYING;
-//        else return null;
-//    }
+    @Nullable
+    public static ElementalType typeFromInbued(ItemStack stack) {
+        if (stack.isEmpty()) return null;
+        if (isItem(GenerationsItems.ICY_WING, stack)) return ElementalTypes.INSTANCE.getICE();
+        else if (isItem(GenerationsItems.PRETTY_FEATHER, stack)) return ElementalTypes.INSTANCE.getPSYCHIC();
+        else if (isItem(GenerationsItems.STATIC_WING, stack)) return ElementalTypes.INSTANCE.getELECTRIC();
+        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return ElementalTypes.INSTANCE.getFIGHTING();
+        else if (isItem(GenerationsItems.FIERY_WING, stack)) return ElementalTypes.INSTANCE.getFIRE();
+        else if (isItem(GenerationsItems.SINISTER_WING, stack)) return ElementalTypes.INSTANCE.getDARK();
+        else if (isItem(GenerationsItems.RAINBOW_WING, stack) || isItem(GenerationsItems.SILVER_WING, stack))
+            return ElementalTypes.INSTANCE.getFLYING();
+        else return null;
+    }
 
     public static String getSpeciesNameFromImbued(ItemStack stack) {
         if (isItem(GenerationsItems.ICY_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("articuno"), "none");
@@ -126,43 +134,34 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
         stack.getOrCreateTag().put("imbued", imbuedStack.save(new CompoundTag()));
     }
 
-
     @Override
-    public void onBattleFinish(ServerPlayer player, ItemStack stack/*, Battle<BattleController> battle*/) {
-//        var type = typeFromInbued(getImbuedItem(stack));
-//        var participant = battle.controller.getParticipant(player).orElseThrow();
-//
-//        if (type != null && type.anyMatch(((PixelmonData) participant.getParty().fieldPixelmon).getPokemonForm().types()))
-//            addDamage(stack, 1);
+    public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
+        ElementalType type = typeFromInbued(stack);
+        return type != null && Streams.stream(pixelmonData.pokemon().getTypes()).anyMatch(type::equals);
     }
 
-//    @Override
-//    public void appendHoverText(@NotNull ItemStack stack, @org.jetbrains.annotations.Nullable Level level, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
-//        ItemStack imbued = getImbuedItem(stack);
-//
-//        if (imbued.isEmpty()) {
-//            tooltipComponents.add(Component.translatable("pixelmon.melody_flute.no_item"));
-//        } else {
-//            ElementType type = typeFromInbued(imbued);
-//            String shrine = shrineFromImbued(imbued);
-//            String name = getSpeciesNameFromImbued(imbued);
-//
-//            tooltipComponents.add(Component.translatable(imbued.getDescriptionId()));
-//
-//            if (stack.getDamageValue() >= stack.getMaxDamage()) {
-//                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.full_imbued1", type));
-//                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.full_imbued2", shrine));
-//                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.full_imbued3", name));
-//            } else {
-//                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.not_full_imbued1", stack.getMaxDamage() - stack.getDamageValue(), type));
-//                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.not_full_imbued2", shrine));
-//                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.not_full_imbued3", name));
-//            }
-//        }
-//        }
-//
-//    @Override
-//    public boolean isDamageable(ItemStack stack) {
-//        return true;
-//    }
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack, @org.jetbrains.annotations.Nullable Level level, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
+        ItemStack imbued = getImbuedItem(stack);
+
+        if (imbued.isEmpty()) {
+            tooltipComponents.add(Component.translatable("pixelmon.melody_flute.no_item"));
+        } else {
+            ElementalType type = typeFromInbued(imbued);
+            String shrine = shrineFromImbued(imbued);
+            String name = getSpeciesNameFromImbued(imbued);
+
+            tooltipComponents.add(Component.translatable(imbued.getDescriptionId()));
+
+            if (stack.getDamageValue() >= stack.getMaxDamage()) {
+                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.full_imbued1", type));
+                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.full_imbued2", shrine));
+                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.full_imbued3", name));
+            } else {
+                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.not_full_imbued1", stack.getMaxDamage() - stack.getDamageValue(), type));
+                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.not_full_imbued2", shrine));
+                tooltipComponents.add(Component.translatable("pixelmon.melody_flute.not_full_imbued3", name));
+            }
+        }
+    }
 }

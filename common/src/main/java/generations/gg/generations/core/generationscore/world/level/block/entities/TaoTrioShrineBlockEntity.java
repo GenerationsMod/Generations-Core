@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
+import generations.gg.generations.core.generationscore.world.item.TaoTrioStoneItem;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.TaoTrioShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -18,6 +21,7 @@ public class TaoTrioShrineBlockEntity extends InteractShrineBlockEntity {
 
     public boolean trySpawn(ServerPlayer player, ItemStack stack) {
         toggleActive();
+        PokemonUtil.spawn(((TaoTrioStoneItem) stack.getItem()).getSpecies(), player.getOnPos());
 //        level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(((TaoTrioStoneItem) stack.getItem()).getSpecies()), player.getOnPos())); TODO: enable
         sync();
         toggleActive();

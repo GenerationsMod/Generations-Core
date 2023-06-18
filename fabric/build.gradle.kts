@@ -50,8 +50,9 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
     //Cobblemon
-    //modApi("com.bedrockk:molang:1.1.2")20230617.021050-1
-    modApi("com.cobblemon:fabric:1.4.0+1.19.4-SNAPSHOT")
+    modApi("com.cobblemon:fabric:1.4.0+1.19.4-SNAPSHOT") {
+        isTransitive = false
+    }
 }
 
 tasks {
