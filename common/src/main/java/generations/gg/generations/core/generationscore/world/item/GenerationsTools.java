@@ -183,7 +183,6 @@ public class GenerationsTools {
 
 	public static void init() {
 		GenerationsCore.LOGGER.info("Registering Generations Tools");
-		System.out.println(TOOLS.getRegistrar().get(GenerationsCore.id("charge_stone_shovel")));
 		TOOLS.register();
 	}
 
@@ -201,7 +200,7 @@ public class GenerationsTools {
 		}
 
 		private interface ToolSupplier<T extends Item> {
-			public T create(Tier tier, int attackDamage, float attackSpeed, Item.Properties properties);
+			T create(Tier tier, int attackDamage, float attackSpeed, Item.Properties properties);
 		}
 	}
 }

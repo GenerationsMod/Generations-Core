@@ -533,6 +533,7 @@ public class TagsDatagen {
 
             tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS.location());
 
+            //PC
             GenerationsUtilityBlocks.PC_BLOCKS.forEach(pc -> tag(GenerationsItemTags.PC).add(pc.get()));
         }
     }
