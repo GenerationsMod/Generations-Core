@@ -68,6 +68,8 @@ public class GenerationsCore
 		GenerationsNetworking.init();
 
 		CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "main");
+
+		CobblemonEvents.init();
 	}
 
 	/**

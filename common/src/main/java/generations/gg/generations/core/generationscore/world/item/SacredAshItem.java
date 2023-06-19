@@ -33,6 +33,6 @@ public class SacredAshItem extends Item implements PostBattleUpdatingItem {
 
     @Override
     public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
-         return pixelmonData.move().equals(("sacred_fire")); //TODO: This will not work as is due to lack of proper event. Need to implment on cobblemon side or rethink.
+         return true; // pixelmonData.move().equals(("sacred_fire")); //TODO: This will not work as is due to lack of proper event. Need to implment on cobblemon side or rethink.
     }
 }

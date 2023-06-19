@@ -1,8 +1,12 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
+import com.cobblemon.mod.common.platform.events.ServerEvent;
+import com.cobblemon.mod.common.pokemon.Species;
 import com.google.common.collect.Streams;
 import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
@@ -42,7 +46,7 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
     }
 
     public static <T extends ItemLike> boolean isItem(RegistrySupplier<T> object, ItemStack stack) {
-        return object != null && object.stream().map(ItemLike::asItem).allMatch(stack::is);
+        return object.toOptional().map(ItemLike::asItem).filter(stack::is).isPresent();
     }
 
     @Override
@@ -90,28 +94,19 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
     }
 
     public static String getSpeciesNameFromImbued(ItemStack stack) {
-        if (isItem(GenerationsItems.ICY_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("articuno"), "none");
-        else if (isItem(GenerationsItems.PRETTY_FEATHER, stack))
-            return getSpeciesNameFromImbued(GenerationsCore.id("articuno"), "galarian");
-        else if (isItem(GenerationsItems.STATIC_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("zapdos"), "none");
-        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack))
-            return getSpeciesNameFromImbued(GenerationsCore.id("zapdos"), "galarian");
-        else if (isItem(GenerationsItems.FIERY_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("moltres"), "none");
-        else if (isItem(GenerationsItems.SINISTER_WING, stack))
-            return getSpeciesNameFromImbued(GenerationsCore.id("moltres"), "galarian");
-        else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("ho_oh"), "none");
-        else if (isItem(GenerationsItems.SILVER_WING, stack)) return getSpeciesNameFromImbued(GenerationsCore.id("lugia"), "none");
+        if (isItem(GenerationsItems.ICY_WING, stack)) return getSpeciesNameFromImbued("articuno", false);
+        else if (isItem(GenerationsItems.PRETTY_FEATHER, stack)) return getSpeciesNameFromImbued("articuno", true);
+        else if (isItem(GenerationsItems.STATIC_WING, stack)) return getSpeciesNameFromImbued("zapdos", false);
+        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return getSpeciesNameFromImbued("zapdos", true);
+        else if (isItem(GenerationsItems.FIERY_WING, stack)) return getSpeciesNameFromImbued("moltres", false);
+        else if (isItem(GenerationsItems.SINISTER_WING, stack)) return getSpeciesNameFromImbued("moltres", true);
+        else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return getSpeciesNameFromImbued("ho_oh", false);
+        else if (isItem(GenerationsItems.SILVER_WING, stack)) return getSpeciesNameFromImbued("lugia", false);
         else return "";
     }
 
-    public static String getSpeciesNameFromImbued(ResourceLocation id, String form) {
-        String name = I18n.get(id.getNamespace() + "." + id.getPath() + ".name");
-
-        if (I18n.exists("form." + form)) {
-            name = I18n.get("form." + form, name);
-        }
-
-        return name;
+    public static String getSpeciesNameFromImbued(String id, boolean isGalarian) {
+        return (isGalarian ? "Galarian " : "")  + PokemonSpecies.INSTANCE.getByName(id).getName();
     }
 
     public static String shrineFromImbued(ItemStack stack) {
@@ -136,7 +131,7 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
 
     @Override
     public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
-        ElementalType type = typeFromInbued(stack);
+        ElementalType type = typeFromInbued(MelodyFluteItem.getImbuedItem(stack));
         return type != null && Streams.stream(pixelmonData.pokemon().getTypes()).anyMatch(type::equals);
     }
 
@@ -147,7 +142,7 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
         if (imbued.isEmpty()) {
             tooltipComponents.add(Component.translatable("pixelmon.melody_flute.no_item"));
         } else {
-            ElementalType type = typeFromInbued(imbued);
+            String type = typeFromInbued(imbued).getName();
             String shrine = shrineFromImbued(imbued);
             String name = getSpeciesNameFromImbued(imbued);
 

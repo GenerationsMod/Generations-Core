@@ -23,7 +23,7 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
         return stack.is(requiredItem.get())  && stack.getDamageValue() >= stack.getMaxDamage();
     }
 
-    public ResourceLocation getSpecies() {
+    public String getSpecies() {
         return species;
     }
 }

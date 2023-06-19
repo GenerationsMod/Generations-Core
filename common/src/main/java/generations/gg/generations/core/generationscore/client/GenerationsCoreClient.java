@@ -65,14 +65,14 @@ public class GenerationsCoreClient {
         ItemPropertiesRegistry.register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
             ItemStack stack = MelodyFluteItem.getImbuedItem(arg);
 
-            if (isItem(GenerationsItems.ICY_WING, stack)) return 1f;
-            else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return 2f;
-            else if (isItem(GenerationsItems.STATIC_WING, stack)) return 3f;
-            else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return 4f;
-            else if (isItem(GenerationsItems.FIERY_WING, stack)) return 5f;
-            else if (isItem(GenerationsItems.SINISTER_WING, stack)) return 6f;
-            else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return 7f;
-            else if (isItem(GenerationsItems.SILVER_WING, stack)) return 8f;
+            if (isItem(GenerationsItems.ICY_WING, stack)) return 0.125f;
+            else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return 0.25f;
+            else if (isItem(GenerationsItems.STATIC_WING, stack)) return 0.375f;
+            else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return 0.5f;
+            else if (isItem(GenerationsItems.FIERY_WING, stack)) return 0.625f;
+            else if (isItem(GenerationsItems.SINISTER_WING, stack)) return 0.75f;
+            else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return 0.875f;
+            else if (isItem(GenerationsItems.SILVER_WING, stack)) return 1.0f;
             else return 0;
         });
     }

@@ -21,8 +21,6 @@ public class WeatherTrioShrineBlockEntity extends InteractShrineBlockEntity {
     public boolean checkSpawning(ServerPlayer player, ItemStack stack) {
         toggleActive();
         PokemonUtil.spawn(((WeatherTrioShrineBlock) getBlockState().getBlock()).getSpecies(), level, player.getOnPos());
-
-//        level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(((WeatherTrioShrineBlock) getBlockState().getBlock()).getSpecies()), player.getOnPos())); TODO: Enable
         sync();
         toggleActive();
         stack.shrink(1);

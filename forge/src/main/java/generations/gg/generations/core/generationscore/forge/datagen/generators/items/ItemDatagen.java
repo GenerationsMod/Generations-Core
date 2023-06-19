@@ -1779,7 +1779,7 @@ public class ItemDatagen extends ItemModelProvider {
 
         BiConsumer<String, Float> consumer = (name, i) -> {
             ItemModelBuilder typeModel = generated("item/flute/" + name + "_flute", GenerationsCore.id("item/flute/" + name + "_flute"));
-            model.override().model(typeModel).predicate(GenerationsCore.id("flute_type"), i).end();
+            model.override().model(typeModel).predicate(GenerationsCore.id("flute_type"), i/8f).end();
         };
 
         consumer.accept("basic", 0f);

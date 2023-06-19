@@ -83,7 +83,7 @@ public class GeneralLang extends LanguageProvider {
         add("pixelmon.melody_flute.no_item", "This flute resonates with feathers.");
 
         add("pixelmon.melody_flute.imbued", "Imbued: %s");
-        add("pixelmon.melody_flute.not_full_imbued1", "Imbue by defeating %s %s Pokemon.");
+        add("pixelmon.melody_flute.not_full_imbued1", "Imbue by defeating %s %s pokemon.");
         add("pixelmon.melody_flute.not_full_imbued2", "Then shift right click on a %s");
         add("pixelmon.melody_flute.not_full_imbued3", "to spawn %s.");
 

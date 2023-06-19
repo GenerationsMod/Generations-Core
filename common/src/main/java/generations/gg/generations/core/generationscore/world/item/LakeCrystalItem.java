@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -18,11 +19,11 @@ import java.util.stream.Stream;
 
 public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdatingItem {
 
-    private final ResourceLocation speciesId;
+    private final String speciesId;
 
     public LakeCrystalItem(Properties properties, String speciesId) {
         super(properties);
-        this.speciesId = GenerationsCore.id(speciesId);
+        this.speciesId = speciesId;
     }
 
     @Override
@@ -31,7 +32,7 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
             ItemStack stack = player.getItemInHand(usedHand);
 
             if (!isEnchanted(stack) && stack.getDamageValue() >= getMaxDamage()) {
-//                level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(speciesId), player.getOnPos()));
+                PokemonUtil.spawn(speciesId, level, player.getOnPos());
                 stack.getOrCreateTag().putBoolean("enchanted", true);
                 return InteractionResultHolder.success(stack);
             }

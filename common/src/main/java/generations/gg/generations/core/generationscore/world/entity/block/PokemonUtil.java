@@ -7,15 +7,23 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 public class PokemonUtil {
-    public static void spawn(String species, Level level, Vec3 pos) {
-        var properties = new PokemonProperties();
-        properties.setSpecies(species);
+    public static void spawn(String species, Level level, Vec3 pos, float yaw) {
+        var properties = PokemonProperties.Companion.parse(species, " ", "=");
         var entity = properties.createEntity(level);
         entity.setPos(pos);
+        entity.setYRot(yaw);
         level.addFreshEntity(entity);
     }
 
+    public static void spawn(String species, Level level, Vec3i pos, float yaw) {
+        spawn(species, level, Vec3.atCenterOf(pos), yaw);
+    }
+
     public static void spawn(String species, Level level, Vec3i pos) {
-        spawn(species, level, Vec3.atCenterOf(pos));
+        spawn(species, level, pos, 0);
+    }
+
+    public static void spawn(String species, Level level, Vec3 pos) {
+        spawn(species, level, pos, 0);
     }
 }

@@ -1,7 +1,11 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
+import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.pokemon.Species;
 import com.google.common.collect.Streams;
 import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.CreativeTabRegistry;
@@ -10,6 +14,9 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsChestBoatEntity;
+import generations.gg.generations.core.generationscore.world.entity.TieredFishingHookEntity;
+import generations.gg.generations.core.generationscore.world.entity.block.MagmaCrystalEntity;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryItem;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
@@ -22,6 +29,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.SoftSoilBlock.Mulch;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -904,13 +912,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> CATCHING_CHARM = register("catching_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> EXP_CHARM = register("exp_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     /*, TieredFishingHookEntity.Teir.OLD*/
-    public static final RegistrySupplier<Item> OLD_ROD = register("old_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    /*, TieredFishingHookEntity.Teir.GOOD*/
-    public static final RegistrySupplier<Item> GOOD_ROD = register("good_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> OLD_ROD = register("old_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.OLD), GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> GOOD_ROD = register("good_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.GOOD), GenerationsCreativeTabs.PLAYER_ITEMS);
     /*, TieredFishingHookEntity.Teir.SUPER*/
-    public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.SUPER), GenerationsCreativeTabs.PLAYER_ITEMS);
     /*, TieredFishingHookEntity.Teir.RUBY*/
-    public static final RegistrySupplier<Item> RUBY_ROD = register("ruby_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> RUBY_ROD = register("ruby_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.RUBY), GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> CAMERA = register("camera", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SNAP_CAMERA = register("snap_camera", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> FILM = register("film", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
@@ -951,9 +958,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MARTIAL_ORB = register("martial_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MALEVOLENT_ORB = register("malevolent_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> GENERATIONS_ORB = register("generations_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ADAMANT_ORB = register("adamant_orb", properties -> new CreationTrioItem(properties.stacksTo(1), GenerationsCore.id("dialga"), GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> GRISEOUS_ORB = register("griseous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), GenerationsCore.id("giratina"), GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> LUSTROUS_ORB = register("lustrous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), GenerationsCore.id("palkia"), GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> ADAMANT_ORB = register("adamant_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "dialga", GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> GRISEOUS_ORB = register("griseous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "giratina", GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> LUSTROUS_ORB = register("lustrous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "palkia", GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_1 = register("shattered_ice_key_1", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_2 = register("shattered_ice_key_2", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_3 = register("shattered_ice_key_3", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1014,7 +1021,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SCROLL_PAGE = register("scroll_page", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SECRET_ARMOR_SCROLL = register("secret_armor_scroll", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(100), "kubfu", "pixelmon.secret_armor_scoll.amountfull", (player, stack, battle) -> battle.isNpc()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ZYGARDE_CUBE = register("zygarde_cube", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> MELTAN_BOX = register("meltan_box", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(200), "meltan", "pixelmon.meltanbox.amountfull", (player, stack/*, battle*/) -> false /*PixelmonParty.of(player).stream().anyMatch(a -> a.getSpecies().equals(GenerationsCore.id("meltan"))) && ElementType.STEEL.anyMatch((battle.controller.getParticipant(player).orElseThrow().getParty().fieldPixelmon).getElements())*/) {
+    public static final RegistrySupplier<Item> MELTAN_BOX = register("meltan_box", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(200), "meltan", "pixelmon.meltanbox.amountfull", (player, stack, battle) -> Streams.stream(new PlayerPartyStore(player.getUuid()).iterator()).map(Pokemon::getSpecies).map(Species::getResourceIdentifier).map(ResourceLocation::toString).anyMatch(a -> a.equals("cobblemon:meltan")) && Streams.stream(battle.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getSTEEL()))) {
         @Override
         protected void postSpawn(Level level, Player player, InteractionHand usedHand) {
             player.setItemInHand(usedHand, new ItemStack(MELTAN_BOX_CHARGED.get()));
@@ -1037,8 +1044,8 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ENIGMA_STONE = register("enigma_stone", properties -> new DistanceTraveledImplItem(properties.stacksTo(1), 3000) {
         @Override
         protected void onCompletion(ServerLevel level, Player player, InteractionHand usedHand) {
-//            var species = Math.random() > 0.5 ? GenerationsCore.id("latias") : GenerationsCore.id("latios");
-//            level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(species), player.getOnPos()));
+            var species = Math.random() > 0.5 ? "latias" : "latios";
+            PokemonUtil.spawn(species, level, player.getOnPos());
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ENIGMA_SHARD = register("enigma_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1070,10 +1077,10 @@ public class GenerationsItems {
             );
             player.getCooldowns().addCooldown(this, 20);
             if (!level.isClientSide) {
-//                MagmaCrystalEntity magmaCrystal = new MagmaCrystalEntity(level, player); //TODO: Re enable
-//                magmaCrystal.setItem(itemStack);
-//                magmaCrystal.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-//                level.addFreshEntity(magmaCrystal);
+                MagmaCrystalEntity magmaCrystal = new MagmaCrystalEntity(level, player); //TODO: Re enable
+                magmaCrystal.setItem(itemStack);
+                magmaCrystal.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+                level.addFreshEntity(magmaCrystal);
             }
 
             player.awardStat(Stats.ITEM_USED.get(this));

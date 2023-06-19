@@ -59,7 +59,6 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                     list.forEach(a -> level.setBlockAndUpdate(a.above(), Blocks.AIR.defaultBlockState()));
                     player.getItemInHand(hand).shrink(1);
                     PokemonUtil.spawn(species, level, shrine.getBlockPos());
-//                    level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(species).getSpecies(), shrine.getBlockPos())); //TODO: Enable later
                     shrine.toggleActive();
                 }
             }
