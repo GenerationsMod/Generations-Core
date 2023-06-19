@@ -3,7 +3,7 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "1.2-SNAPSHOT" apply false
-    kotlin("jvm") version("1.7.10")
+//    kotlin("jvm") version("1.8.0") apply false
     idea
     java
 }
@@ -41,7 +41,7 @@ allprojects {
     apply(plugin = "architectury-plugin")
     apply(plugin = "maven-publish")
     apply(plugin = "idea")
-    apply(plugin = "org.jetbrains.kotlin.jvm")
+//    apply(plugin = "org.jetbrains.kotlin.jvm")
 
     version = project.properties["mod_version"] as String
     group = project.properties["maven_group"] as String

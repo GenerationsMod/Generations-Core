@@ -1,8 +1,11 @@
 package generations.gg.generations.core.generationscore.client;
 
+import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.model.RareCandyAnimationFactory;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
@@ -59,6 +62,11 @@ public class GenerationsCoreClient {
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
+
+
+            JsonPokemonPoseableModel.Companion.registerFactory("rarecandy", new RareCandyAnimationFactory());
+
+            VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Pair<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new BoneCreatorProxy(resourceLocation)));
         });
 
         ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
