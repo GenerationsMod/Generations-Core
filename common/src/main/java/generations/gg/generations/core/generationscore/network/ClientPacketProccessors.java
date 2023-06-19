@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.client.screen.mails.MailE
 import generations.gg.generations.core.generationscore.client.screen.mails.MailViewScreen;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailEditScreenPacket;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailPacket;
+import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CSayDialoguePacket;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import net.minecraft.client.Minecraft;
 
@@ -31,5 +32,11 @@ public class ClientPacketProccessors extends PacketProccessors {
             else if (itemStack.is(GenerationsItemTags.POKEMAIL))
                 client.setScreen(new MailEditScreen(client.player, itemStack, packet.hand()));
         });
+    }
+
+    @Override
+    void process(S2CSayDialoguePacket packet, Supplier<NetworkManager.PacketContext> ctx) {
+        if (Minecraft.getInstance().screen instanceof DialogueScreen dialogueScreen)
+            dialogueScreen.activeInfo = new DialogueScreen.SayActiveInfo(text, showArrow);
     }
 }

@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.network.packets.C2SEditMa
 import generations.gg.generations.core.generationscore.network.packets.C2SToggleCookingPotPacket;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailEditScreenPacket;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailPacket;
+import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CSayDialoguePacket;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import net.minecraft.client.Minecraft;
@@ -31,4 +32,6 @@ public class PacketProccessors {
             packet.handleEditMail((ServerPlayer) ctx.get().getPlayer(), packet.slot(), packet.contents(), packet.title());
         });
     }
+
+    void process(S2CSayDialoguePacket packet, Supplier<NetworkManager.PacketContext> ctx) {}
 }
