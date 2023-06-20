@@ -12,6 +12,7 @@ import generations.gg.generations.core.generationscore.client.render.PixelmonIns
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import gg.generations.rarecandy.animation.Animation;
 import gg.generations.rarecandy.components.AnimatedMeshObject;
+import gg.generations.rarecandy.components.MultiRenderObject;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
@@ -24,32 +25,26 @@ public class RareCandyAnimationFactory extends AnimationFactory {
 
     @Override
     public @NotNull StatefulAnimation<PokemonEntity, ModelFrame> stateful(@NotNull JsonPokemonPoseableModel jsonPokemonPoseableModel, @NotNull String s) {
-        var split = s.replace("rarecandy(", "").replace(")", "").split(",");
-
+        var split = s.replace("pk(", "").replace(")", "").split(",");
         var location = new ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/");
         var name = split[1].trim();
 
         return new StatefulAnimationRareCandy(() -> {
-            var objects = ModelRegistry.get(location, "animated").renderObject;
-
-            if(objects.isReady()) return ((AnimatedMeshObject) objects.objects.get(0)).animations.get(name);
-            else return null;
+            var objects = ModelRegistry.get(location, "pixelmon").renderObject;
+            return objects.isReady() ? ((AnimatedMeshObject) objects.objects.get(0)).animations.get(name) : null;
         });
     }
 
     @NotNull
     @Override
     public StatelessAnimation<PokemonEntity, ModelFrame> stateless(@NotNull JsonPokemonPoseableModel jsonPokemonPoseableModel, @NotNull String s) {
-        var split = s.replace("rarecandy(", "").replace(")", "").split(",");
-
+        var split = s.replace("pk(", "").replace(")", "").split(",");
         var location = new ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/");
         var name = split[1].trim();
 
         return new StatelessAnimationRareCandy(jsonPokemonPoseableModel, () -> {
-            var objects = ModelRegistry.get(location, "animated").renderObject;
-
-            if(objects.isReady()) return ((AnimatedMeshObject) objects.objects.get(0)).animations.get(name);
-            else return null;
+            var objects = ModelRegistry.get(location, "pixelmon").renderObject;
+            return objects.isReady() ? ((AnimatedMeshObject) objects.objects.get(0)).animations.get(name) : null;
         });
     }
 
@@ -76,10 +71,11 @@ public class RareCandyAnimationFactory extends AnimationFactory {
         public boolean run(@Nullable PokemonEntity t, @NotNull PoseableEntityModel<PokemonEntity> poseableEntityModel, @NotNull PoseableEntityState<PokemonEntity> poseableEntityState, float v, float v1, float v2, float v3, float v4) {
             secondsPassed += poseableEntityState.getDeltaSeconds();
 
-            var instance = t != null ? ((PixelmonInstanceProvider) (LivingEntity) t).getInstance() : RareCandyTestClient.getInstance();
+            var instance = t != null ? ((PixelmonInstanceProvider) (LivingEntity) t).getInstance() : null;
             var animation = animationSuppler.get();
 
             if(instance != null && animation != null) instance.matrixTransforms = animation.getFrameTransform(secondsPassed/animation_factor);
+
             return true;
         }
     }
@@ -103,7 +99,7 @@ public class RareCandyAnimationFactory extends AnimationFactory {
         protected void setAngles(@Nullable PokemonEntity pokemonEntity, @NotNull PoseableEntityModel<PokemonEntity> poseableEntityModel, @Nullable PoseableEntityState<PokemonEntity> state, float v, float v1, float v2, float v3, float v4) {
 //            val prev = if (state == null) 0F else (state.previousAnimationSeconds - state.timeEnteredPose)
             var cur = state == null ? 0F : (state.getAnimationSeconds() - state.getTimeEnteredPose())/animation_factor;
-            var instance = pokemonEntity != null ? ((PixelmonInstanceProvider) (LivingEntity) pokemonEntity).getInstance() : RareCandyTestClient.getInstance();
+            var instance = pokemonEntity != null ? ((PixelmonInstanceProvider) (LivingEntity) pokemonEntity).getInstance() : null;
             var animation = animationSupplier.get();
 
             if(instance != null && animation != null) instance.matrixTransforms = animationSupplier.get().getFrameTransform(cur);

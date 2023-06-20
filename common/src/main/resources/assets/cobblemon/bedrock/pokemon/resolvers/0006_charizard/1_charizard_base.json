@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:charizard",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "generations_core:charizard",
+      "model": "generations_core:charizard.pk",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

@@ -37,7 +37,9 @@ public class CompiledModel {
                     }
                     return glCalls;
                 },
-                object -> {}
+                object -> {
+                    if(object.scale == 0f) object.scale = 1.0f;
+                }
         );
     }
 
@@ -47,11 +49,13 @@ public class CompiledModel {
 
     public void render(ObjectInstance instance, Matrix4f projectionMatrix, boolean isYNotUp, ObjectManager objectManager) {
         if (!renderObject.isReady()) return;
+
         Minecraft.getInstance().getProfiler().push("create_model_instance");
         MinecraftClientGameProvider.projMatrix = projectionMatrix;
-        var modelMatrix = new Matrix4f();
-        modelMatrix.identity();
-        if (isYNotUp) modelMatrix.rotate(Axis.XP.rotationDegrees(90));
+//        instance.transformationMatrix().scale(renderObject.scale);
+//        var modelMatrix = new Matrix4f();
+//        modelMatrix.identity();
+//        if (isYNotUp) modelMatrix.rotate(Axis.XP.rotationDegrees(90));
         objectManager.add(this.renderObject, instance);
         Minecraft.getInstance().getProfiler().pop();
     }

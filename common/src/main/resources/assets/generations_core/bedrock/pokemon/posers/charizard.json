@@ -1,0 +1,26 @@
+{
+  "portraitScale": 2.2,
+  "portraitTranslation": [-0.5, 1.4, 0],
+  "profileScale": 0.55,
+  "profileTranslation": [0.05, 1.93, 0],
+  "poses": {
+    "standing": {
+      "poseName": "standing",
+      "transformTicks": 10,
+      "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE", "FLOAT"],
+      "animations": [
+        "look",
+        "pk(generations_core:charizard.pk, idle.smd)"
+      ]
+    },
+    "walking": {
+      "poseName": "walking",
+      "transformTicks": 10,
+      "poseTypes": ["WALK"],
+      "animations": [
+        "look",
+        "pk(generations_core:charizard.pk, walk.smd)"
+      ]
+    }
+  }
+}

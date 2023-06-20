@@ -56,6 +56,7 @@ public class LevelRendererMixin {
         BufferUploader.reset();
         ModelRegistry.getRareCandy().render(false, MinecraftClientGameProvider.getTimePassed());
         ModelRegistry.getRareCandy().objectManager.clearObjects();
+        ModelRegistry.freePool();
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
     }
 

@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import de.javagl.jgltf.model.GltfModel;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.model.GenericObjectPool;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import gg.generations.rarecandy.animation.Animation;
 import gg.generations.rarecandy.components.AnimatedMeshObject;
@@ -15,12 +16,14 @@ import gg.generations.rarecandy.rendering.RareCandy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Matrix4f;
 
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModelRegistry {
+    private static GenericObjectPool<PixelmonInstance> POOl = new GenericObjectPool<>(() -> new PixelmonInstance(new Matrix4f(), new Matrix4f(), "", () -> LightingSettings.NORMAL_SHADING), 36);
     private static final Function<GltfModel, Supplier<MeshObject>> MESH_OBJECT_SUPPLIER = gltfModel -> () -> {
         if (gltfModel.getSkinModels().isEmpty()) return new MeshObject();
         return new AnimatedMeshObject();
@@ -74,4 +77,11 @@ public class ModelRegistry {
         return RENDERER;
     }
 
+    public static PixelmonInstance getInstance() {
+        return POOl.acquire();
+    }
+
+    public static void freePool() {
+        POOl.freeAll();
+    }
 }
