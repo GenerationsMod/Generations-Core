@@ -5,8 +5,10 @@ import generations.gg.generations.core.generationscore.client.screen.mails.MailE
 import generations.gg.generations.core.generationscore.client.screen.mails.MailViewScreen;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailEditScreenPacket;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailPacket;
+import generations.gg.generations.core.generationscore.network.packets.dialogue.C2SCloseDialoguePacket;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CSayDialoguePacket;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.dialogue.DialogueManager;
 import net.minecraft.client.Minecraft;
 
 import java.util.function.Supplier;

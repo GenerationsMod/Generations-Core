@@ -1,13 +1,10 @@
 package generations.gg.generations.core.generationscore.world.dialogue;
 
-import com.pokemod.pokemod.network.api.PokeModNetworking;
-import com.pokemod.pokemod.network.packets.S2CCloseScreenPacket;
-import com.pokemod.pokemod.network.packets.dialogue.S2COpenDialogueMenuPacket;
-import com.pokemod.pokemod.registries.PokeModRegistries;
-import com.pokemod.pokemod.world.npc.dialogue.nodes.AbstractNode;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
+import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nullable;
 
