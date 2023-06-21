@@ -3,11 +3,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsPokeDolls;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -134,6 +130,15 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.CURSED_PUMPKIN.get());
         dropSelf(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
         dropSelf(GenerationsBlocks.CURSED_JACK_O_LANTERN.get());
+
+        //Furnaces
+        add(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get()));
+        add(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get()));
+        add(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get()));
+        add(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get()));
+        add(GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get()));
+        add(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()));
+
 
         add(
                 GenerationsOres.FOSSIL_ORE.get(),
