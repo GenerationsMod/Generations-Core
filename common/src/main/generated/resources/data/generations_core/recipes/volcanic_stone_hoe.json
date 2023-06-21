@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "XX ",
-    " # ",
-    " # "
+    "XX",
+    " #",
+    " #"
   ],
   "result": {
     "item": "generations_core:volcanic_stone_hoe"

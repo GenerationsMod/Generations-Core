@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "XX ",
-    " # ",
-    " # "
+    "XX",
+    " #",
+    " #"
   ],
   "result": {
     "item": "generations_core:dusk_stone_hoe"

@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " X ",
-    " X ",
-    " # "
+    "X",
+    "X",
+    "#"
   ],
   "result": {
     "item": "generations_core:fire_stone_sword"

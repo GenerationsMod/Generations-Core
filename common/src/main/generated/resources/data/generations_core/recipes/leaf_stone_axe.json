@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " XX",
-    " #X",
-    " # "
+    "XX",
+    "#X",
+    "# "
   ],
   "result": {
     "item": "generations_core:leaf_stone_axe"

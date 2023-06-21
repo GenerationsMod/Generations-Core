@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " X ",
-    " # ",
-    " # "
+    "X",
+    "#",
+    "#"
   ],
   "result": {
     "item": "generations_core:volcanic_stone_shovel"

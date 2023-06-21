@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " XX",
-    " #X",
-    " # "
+    "XX",
+    "#X",
+    "# "
   ],
   "result": {
     "item": "generations_core:crystal_axe"

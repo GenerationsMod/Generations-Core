@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " XX",
-    " #X",
-    " # "
+    "XX",
+    "#X",
+    "# "
   ],
   "result": {
     "item": "generations_core:water_stone_axe"

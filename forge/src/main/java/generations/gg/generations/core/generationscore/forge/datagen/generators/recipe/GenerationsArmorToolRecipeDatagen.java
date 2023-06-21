@@ -99,9 +99,9 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hoe.get())
 				.define('X', baseItem)
 				.define('#', Items.STICK)
-				.pattern("XX ")
-				.pattern(" # ")
-				.pattern(" # ")
+				.pattern("XX")
+				.pattern(" #")
+				.pattern(" #")
 				.unlockedBy(getHasName(baseItem), has(baseItem))
 				.save(consumer);
 	}
@@ -110,9 +110,9 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, shovel.get())
 				.define('X', baseItem)
 				.define('#', Items.STICK)
-				.pattern(" X ")
-				.pattern(" # ")
-				.pattern(" # ")
+				.pattern("X")
+				.pattern("#")
+				.pattern("#")
 				.unlockedBy(getHasName(baseItem), has(baseItem))
 				.save(consumer);
 	}
@@ -121,9 +121,9 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 	ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, sword.get())
 			.define('X', baseItem)
 			.define('#', Items.STICK)
-			.pattern(" X ")
-			.pattern(" X ")
-			.pattern(" # ")
+			.pattern("X")
+			.pattern("X")
+			.pattern("#")
 			.unlockedBy(getHasName(baseItem), has(baseItem))
 			.save(consumer);
 	}
@@ -132,9 +132,9 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, axe.get())
 				.define('X', baseItem)
 				.define('#', Items.STICK)
-				.pattern(" XX")
-				.pattern(" #X")
-				.pattern(" # ")
+				.pattern("XX")
+				.pattern("#X")
+				.pattern("# ")
 				.unlockedBy(getHasName(baseItem), has(baseItem))
 				.save(consumer);
 	}

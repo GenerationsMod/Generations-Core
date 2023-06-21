@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " X ",
-    " # ",
-    " # "
+    "X",
+    "#",
+    "#"
   ],
   "result": {
     "item": "generations_core:dusk_stone_shovel"

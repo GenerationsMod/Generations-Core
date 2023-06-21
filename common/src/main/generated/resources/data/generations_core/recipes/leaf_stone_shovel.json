@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " X ",
-    " # ",
-    " # "
+    "X",
+    "#",
+    "#"
   ],
   "result": {
     "item": "generations_core:leaf_stone_shovel"

@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " XX",
-    " #X",
-    " # "
+    "XX",
+    "#X",
+    "# "
   ],
   "result": {
     "item": "generations_core:sun_stone_axe"

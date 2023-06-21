@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "XX ",
-    " # ",
-    " # "
+    "XX",
+    " #",
+    " #"
   ],
   "result": {
     "item": "generations_core:leaf_stone_hoe"

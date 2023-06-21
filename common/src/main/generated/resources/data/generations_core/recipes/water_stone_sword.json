@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " X ",
-    " X ",
-    " # "
+    "X",
+    "X",
+    "#"
   ],
   "result": {
     "item": "generations_core:water_stone_sword"

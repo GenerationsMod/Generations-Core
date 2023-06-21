@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    " X ",
-    " # ",
-    " # "
+    "X",
+    "#",
+    "#"
   ],
   "result": {
     "item": "generations_core:dawn_stone_shovel"
