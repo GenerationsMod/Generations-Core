@@ -8,10 +8,7 @@ import generations.gg.generations.core.generationscore.world.item.armor.Generati
 import generations.gg.generations.core.generationscore.world.item.armor.effects.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.function.Function;
@@ -23,10 +20,6 @@ public class GenerationsArmor {
 	 */
 	public static final RegistrySupplier<Item> RUNNING_BOOTS = register("running_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.RUNNING, ArmorItem.Type.BOOTS, of()).addCustomAttributeModifier(new SpeedModifier(0.75F)).addArmorEffect(new RunningBootsArmorEffect()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> OLD_RUNNING_BOOTS = register("old_running_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.OLD_RUNNING, ArmorItem.Type.BOOTS, of()).addCustomAttributeModifier(new SpeedModifier(0.5F)).addArmorEffect(new UnbreakableArmorEffect()).addArmorEffect(new RepairArmorEffect()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> AETHER_HELMET = register("aether_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AETHER, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> AETHER_CHESTPLATE = register("aether_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AETHER, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> AETHER_LEGGINGS = register("aether_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AETHER, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> AETHER_BOOTS = register("aether_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AETHER, ArmorItem.Type.BOOTS, of()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> AQUA_HELMET = register("aqua_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AQUA, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> AQUA_CHESTPLATE = register("aqua_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AQUA, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> AQUA_LEGGINGS = register("aqua_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AQUA, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
@@ -119,5 +112,22 @@ public class GenerationsArmor {
 	public static void init() {
 		GenerationsCore.LOGGER.info("Registering Generations Armor");
 		ARMOR.register();
+	}
+
+	public static final ArmorSet AETHER = ArmorSet.create("aether", GenerationsArmorMaterials.AETHER);
+
+	public record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots) {
+		public static ArmorSet create(String name, ArmorMaterial armorMaterial) {
+			return new ArmorSet(
+					register(name + "_helmet", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.HELMET, properties), CreativeModeTabs.COMBAT),
+					register(name + "_chestplate", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.CHESTPLATE, properties), CreativeModeTabs.COMBAT),
+					register(name + "_leggings", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.LEGGINGS, properties), CreativeModeTabs.COMBAT),
+					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.BOOTS, properties), CreativeModeTabs.COMBAT)
+			);
+		}
+
+		public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function, CreativeModeTab tab) {
+			return GenerationsArmor.register(name, function, tab);
+		}
 	}
 }
