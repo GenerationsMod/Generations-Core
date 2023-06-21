@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.api.player.CurryDex;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
@@ -228,7 +227,5 @@ public class GenerationsDecorationBlocks {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Decorations");
         DECORATIONS.register();
-        //GenerationsCore.LOGGER.info("Registering PokeMod Vending Machines");
-//        NO_ITEM_MODELS.register(eventBus);
     }
 }

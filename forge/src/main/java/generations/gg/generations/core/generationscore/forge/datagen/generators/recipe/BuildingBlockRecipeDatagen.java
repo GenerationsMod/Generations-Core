@@ -12,7 +12,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -799,9 +798,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //Golden Temple Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()).define('#', GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()).pattern("##").pattern("##").unlockedBy(getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()), has(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get())).save(consumer);
-        chiseled(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GOLDEN_TEMPLE_CHISELED_SANDSTONE.get(), GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get());
-        cut(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GOLDEN_TEMPLE_CUT_SANDSTONE.get(), GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get());
-
 
         //Aluminum recipes
         nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ALUMINUM_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ALUMINUM_BLOCK.get(), "aluminum_ingot_from_aluminum_block", "aluminum_ingot");

@@ -28,15 +28,7 @@ public class GeneralLang extends LanguageProvider {
         addBlockEntries(GenerationsBlocks.MARBLE, this::getNameGens);
         addBlockEntries(GenerationsBlocks.STONE, this::getNameGens);
         addBlockEntries(GenerationsDecorationBlocks.DECORATIONS, this::getNameGens);
-        GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
-        GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
-        GenerationsDecorationBlocks.WATER_FLOAT_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
-        GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
-        GenerationsDecorationBlocks.PASTEL_BEAN_BAG_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
         addBlockEntries(GenerationsWood.WOOD_BLOCKS, this::getNameGens);
-        GenerationsUtilityBlocks.PC_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString()).replace("Pc", "PC")));
-        GenerationsUtilityBlocks.HEALER_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
-        GenerationsUtilityBlocks.CLOCK_BLOCKS.forEach(item -> add(item.get(), this.getNameGens(item.getId().toString())));
         addBlockEntries(GenerationsShrines.SHRINES, this::getNameGens);
         addBlockEntries(GenerationsPokeDolls.POKEDOLLS, this::getNameGens);
         addBlockEntries(GenerationsUtilityBlocks.UTILITY_BLOCKS, this::getNameGens);
@@ -46,8 +38,6 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsArmor.ARMOR, this::getNameGens);
         addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
         addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens);
-
-       // GenerationsEntities.ENTITIES.getEntries().forEach(Pokemon -> add(Pokemon.get(), getNameGens(Pokemon.getId().toString())));
 
         //Manually add Creative Tabs
         add("item_group.pokeballs", "Poké Balls");
