@@ -293,6 +293,8 @@ public class TagsDatagen {
                     GenerationsBlocks.CRYSTAL_WALL.get(),
                     GenerationsBlocks.SILICON_BLOCK.get())
                     .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS);
+
+            tag(BlockTags.SNOW_LAYER_CANNOT_SURVIVE_ON).add(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get());
         }
 
         private void EasyBlockTags(Block object) {

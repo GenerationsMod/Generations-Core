@@ -433,6 +433,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
             else return ConfiguredModel.builder().modelFile(models().cubeAll("block/soft_soil", GenerationsCore.id("block/soft_soil"))).build();
 
         });
+        simpleBlockItem(GenerationsBlocks.SOFT_SOIL.get(), models().cubeAll("block/soft_soil", GenerationsCore.id("block/soft_soil")));
     }
 
     private void registerPallet(@NotNull RegistrySupplier<Block> block, RegistrySupplier<SlabBlock> slab, RegistrySupplier<StairBlock> stairs, RegistrySupplier<WallBlock> wall, RegistrySupplier<ButtonBlock> button, RegistrySupplier<PressurePlateBlock> pressurePlate, boolean dropSelf){
