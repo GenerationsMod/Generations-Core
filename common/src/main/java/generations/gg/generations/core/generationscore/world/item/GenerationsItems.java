@@ -195,6 +195,7 @@ public class GenerationsItems {
     /**
      * TM ITEMS
      */
+    /*
     public static final RegistrySupplier<Item> TM_1 = register("tm_1", properties -> new TechnicalMachineItem("take_down", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_2 = register("tm_2", properties -> new TechnicalMachineItem("charm", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_3 = register("tm_3", properties -> new TechnicalMachineItem("fake_tears", properties), GenerationsCreativeTabs.TMS);
@@ -366,6 +367,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TM_169 = register("tm_169", properties -> new TechnicalMachineItem("draco_meteor", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_170 = register("tm_170", properties -> new TechnicalMachineItem("steel_beam", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_171 = register("tm_171", properties -> new TechnicalMachineItem("tera_blast", properties), GenerationsCreativeTabs.TMS);
+     */
 
     /**
      * Badges
