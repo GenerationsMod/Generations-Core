@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
-import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.C2SEditMailPacket;
 import generations.gg.generations.core.generationscore.world.item.MailItem;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -125,7 +125,7 @@ public class MailEditScreen extends Screen {
         }
         this.updateLocalCopy(publish);
         int i = this.hand == InteractionHand.MAIN_HAND ? this.owner.getInventory().selected : 40;
-        GenerationsNetworking.sendPacket(new C2SEditMailPacket(i, this.contents, publish ? Optional.of("") : Optional.empty()));
+        GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2SEditMailPacket(i, this.contents, publish ? Optional.of("") : Optional.empty()));
     }
 
     private void updateLocalCopy(boolean sign) {

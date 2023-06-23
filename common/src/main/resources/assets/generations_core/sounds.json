@@ -3,5 +3,10 @@
     "sounds": [
       "generations_core:items/lugia_shrine_song"
     ]
+  },
+  "generations.other.ui_click": {
+    "sounds": [
+      "generations_core:other/ui_click"
+    ]
   }
 }

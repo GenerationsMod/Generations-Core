@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
 import net.minecraftforge.api.distmarker.Dist;
@@ -9,6 +10,7 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Forge Main class for GenerationsCore.
@@ -22,7 +24,7 @@ public class GenerationsCoreForge {
 		// Submit our event bus to let architectury register our content on the right time
         var eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, eventBus);
-        GenerationsCore.init();
+        GenerationsCore.init(null); //TODO: Implement once we have forge cobblemon stable.
         eventBus.addListener(this::onInitialize);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(eventBus));
     }

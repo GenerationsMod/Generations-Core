@@ -1,8 +1,13 @@
 package generations.gg.generations.core.generationscore.client;
 
+import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
+import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.GenerationsDataProvider;
+import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
@@ -18,6 +23,8 @@ import generations.gg.generations.core.generationscore.world.item.MelodyFluteIte
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
@@ -45,9 +52,13 @@ import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
 public class GenerationsCoreClient {
+
     public static void onInitialize(Minecraft minecraft) {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
+
+        PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
+        PlatformEvents.CLIENT_PLAYER_LOGOUT.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogout);
     }
 
     private static void setupClient(Minecraft event) {
@@ -144,5 +155,15 @@ public class GenerationsCoreClient {
             consumer.accept(GenerationsBoatRenderer.createBoatModelName(type), boat);
             consumer.accept(GenerationsBoatRenderer.createChestBoatModelName(type), chestBoat);
         }
+    }
+
+    public static Unit onLogin(ClientPlayerEvent.Login login) {
+        GenerationsDataProvider.INSTANCE.setCanReload(false);
+        return Unit.INSTANCE;
+    }
+
+    public static Unit onLogout(ClientPlayerEvent.Logout logout) {
+        GenerationsDataProvider.INSTANCE.setCanReload(true);
+        return Unit.INSTANCE;
     }
 }

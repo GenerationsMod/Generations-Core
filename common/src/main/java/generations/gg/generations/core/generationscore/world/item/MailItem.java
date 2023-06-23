@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailEditScreenPacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -33,7 +33,7 @@ public class MailItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         var itemStack = player.getItemInHand(usedHand);
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer)
-            GenerationsNetworking.sendPacket(serverPlayer, new S2COpenMailEditScreenPacket(usedHand));
+            GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(serverPlayer, new S2COpenMailEditScreenPacket(usedHand));
         player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }

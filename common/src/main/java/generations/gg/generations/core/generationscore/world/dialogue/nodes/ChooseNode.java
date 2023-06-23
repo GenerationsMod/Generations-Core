@@ -2,17 +2,14 @@ package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.pokemod.pokemod.network.api.PokeModNetworking;
-import com.pokemod.pokemod.network.packets.dialogue.S2CChooseDialoguePacket;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueNodeType;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueNodeTypes;
-import com.pokemod.pokemod.world.npc.dialogue.DialoguePlayer;
-import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CChooseDialoguePacket;
 import generations.gg.generations.core.generationscore.world.dialogue.DialogueNodeType;
-import generations.gg.generations.core.generationscore.world.dialogue.DialogueNodeTypes;
+import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,16 +54,30 @@ public class ChooseNode extends AbstractNode implements DialogueContainingNode, 
 
     @Override
     public void run(ServerPlayer player, DialoguePlayer dialoguePlayer) {
-        GenerationsNetworking.sendPacket(new S2CChooseDialoguePacket(question, new ArrayList<>(next.keySet())), player);
+        GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(player, new S2CChooseDialoguePacket(question, new ArrayList<>(next.keySet())));
     }
 
     @Override
     public DialogueNodeType<?> getType() {
-        return DialogueNodeTypes.CHOOSE.get();
+        return GenerationsDialogueNodeTypes.CHOOSE.get();
     }
 
     @Override
     public Codec<? extends AbstractNode> getCodec() {
         return CODEC;
+    }
+
+    @Override
+    public void encode(@NotNull FriendlyByteBuf buf) {
+        super.encode(buf);
+        buf.writeUtf(question);
+        buf.writeMap(next, FriendlyByteBuf::writeUtf, (friendlyByteBuf, abstractNode) -> abstractNode.encode(friendlyByteBuf));
+    }
+
+    public static ChooseNode decode(FriendlyByteBuf buf) {
+        return new ChooseNode(
+                buf.readUtf(),
+                buf.readMap(FriendlyByteBuf::readUtf, AbstractNode::decode)
+        );
     }
 }

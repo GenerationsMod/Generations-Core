@@ -2,35 +2,36 @@ package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.pokemod.pokemod.command.arguments.pixelmondata.PixelmonDataParser;
-import com.pokemod.pokemod.world.entity.pixelmon.PixelmonEntity;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueNodeType;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueNodeTypes;
-import com.pokemod.pokemod.world.npc.dialogue.DialoguePlayer;
+import generations.gg.generations.core.generationscore.world.dialogue.DialogueNodeType;
+import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
+import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
+import org.jetbrains.annotations.NotNull;
 
 public class SpawnPokemonNode extends AbstractNode {
     public static Codec<SpawnPokemonNode> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-                    PixelmonDataParser.CODEC.fieldOf("data").forGetter(SpawnPokemonNode::data),
+                    Codec.STRING.fieldOf("data").forGetter(SpawnPokemonNode::data),
                     Codec.INT.optionalFieldOf("maxTick", 100).forGetter(SpawnPokemonNode::maxTick),
                     BlockPos.CODEC.fieldOf("pos").forGetter(SpawnPokemonNode::location),
-                    Codec.INT.fieldOf("yaw").forGetter(SpawnPokemonNode::yaw))
+                    Codec.FLOAT.fieldOf("yaw").forGetter(SpawnPokemonNode::yaw))
             .apply(instance, SpawnPokemonNode::new));
 
-    private final PixelmonDataParser data;
+    private final String data;
     private final int maxTick;
     private final BlockPos pos;
-    private final int yaw;
+    private final float yaw;
 
-    public SpawnPokemonNode(PixelmonDataParser data, int maxTick, BlockPos pos, int yaw) {
+    public SpawnPokemonNode(String data, int maxTick, BlockPos pos, float yaw) {
         this.data = data;
         this.maxTick = maxTick;
         this.pos = pos;
         this.yaw = yaw;
     }
 
-    private PixelmonDataParser data() {
+    private String data() {
         return data;
     }
 
@@ -42,14 +43,14 @@ public class SpawnPokemonNode extends AbstractNode {
         return pos;
     }
 
-    private int yaw() {
+    private float yaw() {
         return yaw;
     }
 
     @Override
     public void run(ServerPlayer serverPlayer, DialoguePlayer dialoguePlayer) {
         var level = serverPlayer.getLevel();
-        level.addFreshEntity(new PixelmonEntity(level, data.parse(level), pos, yaw));
+        PokemonUtil.spawn(data, level, pos, yaw);
     }
 
     @Override
@@ -59,6 +60,19 @@ public class SpawnPokemonNode extends AbstractNode {
 
     @Override
     public DialogueNodeType<?> getType() {
-        return DialogueNodeTypes.SPAWN_PIXELMON;
+        return GenerationsDialogueNodeTypes.SPAWN_PIXELMON.get();
+    }
+
+    @Override
+    public void encode(@NotNull FriendlyByteBuf friendlyByteBuf) {
+        super.encode(friendlyByteBuf);
+        friendlyByteBuf.writeUtf(data);
+        friendlyByteBuf.writeInt(maxTick);
+        friendlyByteBuf.writeBlockPos(pos);
+        friendlyByteBuf.writeFloat(yaw);
+    }
+
+    public static SpawnPokemonNode decode(FriendlyByteBuf buf) {
+        return new SpawnPokemonNode(buf.readUtf(), buf.readInt(), buf.readBlockPos(), buf.readFloat());
     }
 }

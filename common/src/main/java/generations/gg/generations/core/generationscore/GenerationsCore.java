@@ -11,8 +11,8 @@ package generations.gg.generations.core.generationscore;
 import com.mojang.logging.LogUtils;
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
+import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -44,11 +44,13 @@ public class GenerationsCore
 
 	/** The config for the Generations-Core mod. */
 	public static Config CONFIG;
+	public static GenerationsImplementation implementation;
 
 	/**
 	 * Initializes the Generations-Core mod.
 	 */
-	public static void init() {
+	public static void init(GenerationsImplementation implementation) {
+		GenerationsCore.implementation = implementation;
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
 		GenerationsBlocks.init();
@@ -65,7 +67,9 @@ public class GenerationsCore
 		GenerationsTools.init();
 		GenerationsPaintings.init();
 		GenerationsContainers.init();
-		GenerationsNetworking.init();
+		GenerationsDialogueNodeTypes.init();
+
+		GenerationsDataProvider.INSTANCE.registerDefaults();
 
 		CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "main");
 
@@ -77,5 +81,13 @@ public class GenerationsCore
 	 */
 	public static ResourceLocation id(String path) {
 		return new ResourceLocation(MOD_ID, path);
+	}
+
+	public static GenerationsImplementation getImplementation() {
+		return implementation;
+	}
+
+	public static void setImplementation(GenerationsImplementation implementation) {
+		GenerationsCore.implementation = implementation;
 	}
 }

@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailPacket;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import net.minecraft.ChatFormatting;
@@ -76,7 +76,7 @@ public class ClosedMailItem extends Item {
                 serverPlayer.containerMenu.broadcastChanges();
             }
 
-            GenerationsNetworking.sendPacket(serverPlayer, new S2COpenMailPacket(usedHand));
+            GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(serverPlayer, new S2COpenMailPacket(usedHand));
         }
         player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());

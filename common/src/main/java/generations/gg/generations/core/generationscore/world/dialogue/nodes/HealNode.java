@@ -2,18 +2,20 @@ package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.pokemod.pokemod.api.data.Codecs;
-import com.pokemod.pokemod.api.data.player.PixelmonParty;
-import com.pokemod.pokemod.network.api.PokeModNetworking;
-import com.pokemod.pokemod.network.packets.dialogue.S2CHealDialoguePacket;
-import com.pokemod.pokemod.world.level.block.entities.HealerBlockEntity;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueNodeType;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueNodeTypes;
-import com.pokemod.pokemod.world.npc.dialogue.DialoguePlayer;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.api.data.Codecs;
+import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CHealDialoguePacket;
+import generations.gg.generations.core.generationscore.world.dialogue.DialogueNodeType;
+import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
+import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
+import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,17 +59,17 @@ public class HealNode extends AbstractNode implements DialogueContainingNode{
             }
         } else {
             // TODO same delay as healer block
-            var party = PixelmonParty.of(player);
-            for (var data : party) {
-                data.hp = data.getMaxHp();
+//            var party = HealingMachineBlockEntity.of(player);
+//            for (var data : party) {
+//                data.hp = data.getMaxHp();
                 // do we need to heal pixelmon in-game too?
                 /*var inGamePixelmon = party.findInGameCopy(data);
                 if (inGamePixelmon != null) {
                     inGamePixelmon.setHealth(data.getMaxHp());
                 }*/
-            }
+//            }
         }
-        PokeModNetworking.sendPacket(new S2CHealDialoguePacket(text, next instanceof DialogueContainingNode), player);
+        GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(player, new S2CHealDialoguePacket(text, next instanceof DialogueContainingNode));
     }
 
     @Override
@@ -85,11 +87,29 @@ public class HealNode extends AbstractNode implements DialogueContainingNode{
 
     @Override
     public DialogueNodeType<?> getType() {
-        return DialogueNodeTypes.HEAL;
+        return GenerationsDialogueNodeTypes.HEAL.get();
     }
 
     @Override
     public Codec<? extends AbstractNode> getCodec() {
         return CODEC;
+    }
+
+    @Override
+    public void encode(@NotNull FriendlyByteBuf friendlyByteBuf) {
+        super.encode(friendlyByteBuf);
+        friendlyByteBuf.writeCollection(text, FriendlyByteBuf::writeUtf);
+        friendlyByteBuf.writeBoolean(healerRequired);
+        friendlyByteBuf.writeInt(radius);
+        friendlyByteBuf.writeNullable(next, (friendlyByteBuf1, abstractNode) -> abstractNode.encode(friendlyByteBuf1));
+    }
+
+    public static HealNode decode(FriendlyByteBuf buf) {
+        return new HealNode(
+                buf.readCollection(ArrayList::new, FriendlyByteBuf::readUtf),
+                buf.readBoolean(),
+                buf.readInt(),
+                buf.readNullable(AbstractNode::decode)
+        );
     }
 }

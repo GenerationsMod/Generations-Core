@@ -2,15 +2,12 @@ package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.pokemod.pokemod.network.api.PokeModNetworking;
-import com.pokemod.pokemod.network.packets.shop.S2COpenShopPacket;
-import com.pokemod.pokemod.world.entity.PlayerNpcEntity;
-import com.pokemod.pokemod.world.entity.ShopOfferProvider;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueNodeType;
-import com.pokemod.pokemod.world.npc.dialogue.DialogueNodeTypes;
-import com.pokemod.pokemod.world.npc.dialogue.DialoguePlayer;
-import net.minecraft.core.BlockPos;
+import generations.gg.generations.core.generationscore.world.dialogue.DialogueNodeType;
+import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
+import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
@@ -26,17 +23,17 @@ public class OpenShopNode extends AbstractNode {
 
     @Override
     public void run(ServerPlayer player, DialoguePlayer dialoguePlayer) {
-        if (dialoguePlayer.getSource() instanceof PlayerNpcEntity npcEntity) {
-            PokeModNetworking.sendPacket(new S2COpenShopPacket(npcEntity.getId()), player);
-        } else {
-            var optional = BlockPos.withinManhattanStream(player.getOnPos(), 10, 10, 10).filter(a -> player.level.getBlockEntity(a) instanceof ShopOfferProvider).findFirst();
-
-            if (optional.isPresent()) {
-                PokeModNetworking.sendPacket(new S2COpenShopPacket(optional.get()), player);
-            } else {
-                dialoguePlayer.nextNode();
-            }
-        }
+//        if (dialoguePlayer.getSource() instanceof PlayerNpcEntity npcEntity) {
+//            PokeModNetworking.sendPacket(new S2COpenShopPacket(npcEntity.getId()), player);
+//        } else {
+//            var optional = BlockPos.withinManhattanStream(player.getOnPos(), 10, 10, 10).filter(a -> player.level.getBlockEntity(a) instanceof ShopOfferProvider).findFirst();
+//
+//            if (optional.isPresent()) {
+//                PokeModNetworking.sendPacket(new S2COpenShopPacket(optional.get()), player);
+//            } else {
+//                dialoguePlayer.nextNode();
+//            }
+//        }
     }
 
     @Override
@@ -59,6 +56,18 @@ public class OpenShopNode extends AbstractNode {
 
     @Override
     public DialogueNodeType<?> getType() {
-        return DialogueNodeTypes.OPEN_SHOP;
+        return GenerationsDialogueNodeTypes.OPEN_SHOP.get();
+    }
+
+    @Override
+    public void encode(@NotNull FriendlyByteBuf friendlyByteBuf) {
+        super.encode(friendlyByteBuf);
+        friendlyByteBuf.writeNullable(next, (friendlyByteBuf1, abstractNode) -> abstractNode.encode(friendlyByteBuf1));
+    }
+
+    public static OpenShopNode decode(FriendlyByteBuf buf) {
+        return new OpenShopNode(
+                buf.readNullable(AbstractNode::decode)
+        );
     }
 }
