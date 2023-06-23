@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "generations_core:crystal"
+    },
+    "Y": {
+      "item": "generations_core:silicon"
+    }
+  },
+  "pattern": [
+    "X X",
+    "XXX",
+    "YYY"
+  ],
+  "result": {
+    "item": "generations_core:neo_plasma_chestplate"
+  },
+  "show_notification": true
+}

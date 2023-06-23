@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_thunder_stone_shard": {
+    "has_thunder_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:thunder_stone_shard"
+              "generations_core:thunder_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_thunder_stone_shard",
+      "has_thunder_stone",
       "has_the_recipe"
     ]
   ],

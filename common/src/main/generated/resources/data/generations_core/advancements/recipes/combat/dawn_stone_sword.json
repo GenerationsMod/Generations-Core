@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dawn_stone_shard": {
+    "has_dawn_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:dawn_stone_shard"
+              "generations_core:dawn_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_dawn_stone_shard",
+      "has_dawn_stone",
       "has_the_recipe"
     ]
   ],

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sun_stone_shard": {
+    "has_sun_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:sun_stone_shard"
+              "generations_core:sun_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_sun_stone_shard",
+      "has_sun_stone",
       "has_the_recipe"
     ]
   ],

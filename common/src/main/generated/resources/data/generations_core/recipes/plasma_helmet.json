@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "generations_core:silicon"
+    },
+    "Y": {
+      "item": "generations_core:crystal"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "Y Y"
+  ],
+  "result": {
+    "item": "generations_core:plasma_helmet"
+  },
+  "show_notification": true
+}

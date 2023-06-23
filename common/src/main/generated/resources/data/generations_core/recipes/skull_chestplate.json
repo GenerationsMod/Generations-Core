@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "Y": {
+      "item": "generations_core:silicon"
+    }
+  },
+  "pattern": [
+    "X X",
+    "XXX",
+    "YYY"
+  ],
+  "result": {
+    "item": "generations_core:skull_chestplate"
+  },
+  "show_notification": true
+}
