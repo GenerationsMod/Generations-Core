@@ -902,6 +902,7 @@ public class GenerationsBlocks {
     /**
      * Fences and Gates
      */
+    /*
     public static final RegistrySupplier<FenceBlock> BLUE_PICKET_FENCE = registerBlockItem("blue_picket_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f)));
     public static final RegistrySupplier<FenceGateBlock> BLUE_PICKET_FENCE_GATE = registerBlockItem("blue_picket_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f), WoodType.OAK));
     public static final RegistrySupplier<FenceBlock> RED_PICKET_FENCE = registerBlockItem("red_picket_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f)));
@@ -910,8 +911,10 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<FenceGateBlock> WHITE_PICKET_FENCE_GATE = registerBlockItem("white_picket_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f), WoodType.OAK));
     public static final RegistrySupplier<FenceBlock> YELLOW_PICKET_FENCE = registerBlockItem("yellow_picket_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f)));
     public static final RegistrySupplier<FenceGateBlock> YELLOW_PICKET_FENCE_GATE = registerBlockItem("yellow_picket_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f), WoodType.OAK));
+    */
+
     /**
-     * Poke Brick
+     * Poke Bricks
      */
 
     public static final RegistrySupplier<Block> WHITE_POKE_BRICK = registerPokeBrick("white_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
