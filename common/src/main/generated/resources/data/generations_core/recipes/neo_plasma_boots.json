@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "generations_core:crystal"
+    },
+    "Y": {
+      "item": "generations_core:silicon"
+    }
+  },
+  "pattern": [
+    "X X",
+    "Y Y"
+  ],
+  "result": {
+    "item": "generations_core:neo_plasma_boots"
+  },
+  "show_notification": true
+}

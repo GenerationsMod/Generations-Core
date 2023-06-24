@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_moon_stone_shard": {
+    "has_moon_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:moon_stone_shard"
+              "generations_core:moon_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_moon_stone_shard",
+      "has_moon_stone",
       "has_the_recipe"
     ]
   ],

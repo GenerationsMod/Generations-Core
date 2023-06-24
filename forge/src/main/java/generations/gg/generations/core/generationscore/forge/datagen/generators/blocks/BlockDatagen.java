@@ -223,6 +223,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_2, GenerationsBlocks.MIRRORED_FLOOR_2_SLAB, GenerationsBlocks.MIRRORED_FLOOR_2_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_2_WALL, null, null, true);
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_3, GenerationsBlocks.MIRRORED_FLOOR_3_SLAB, GenerationsBlocks.MIRRORED_FLOOR_3_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_3_WALL, null, null, true);
 
+        /*
         registerGate(GenerationsBlocks.YELLOW_PICKET_FENCE_GATE.get(), GenerationsBlocks.YELLOW_PICKET_FENCE.get(), null);
         registerFence(GenerationsBlocks.YELLOW_PICKET_FENCE.get(), null);
         registerGate(GenerationsBlocks.RED_PICKET_FENCE_GATE.get(), GenerationsBlocks.RED_PICKET_FENCE.get(), null);
@@ -231,8 +232,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerFence(GenerationsBlocks.BLUE_PICKET_FENCE.get(), null);
         registerGate(GenerationsBlocks.WHITE_PICKET_FENCE_GATE.get(), GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
         registerFence(GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
+         */
 
-/*
+        /*
         registerBerryBush(GenerationsBlocks.AGUAV_BERRY_BUSH);
         registerBerryBush(GenerationsBlocks.APICOT_BERRY_BUSH);
         registerBerryBush(GenerationsBlocks.ASPEAR_BERRY_BUSH);
@@ -418,6 +420,34 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHISELED_VOLCANIC_STONE_BRICKS);
 
         registerDripStone(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE);
+
+        registerBlockItemParticle(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.POKE_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.DIVE_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.DUSK_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.FAST_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.GS_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.HEAL_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LOVE_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LURE_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.MOON_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.NEST_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.NET_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.PARK_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.QUICK_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY, "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY, "ball_displays");
     }
 
     private void registerNoModel( RegistrySupplier<? extends Block> block) {
@@ -433,6 +463,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
             else return ConfiguredModel.builder().modelFile(models().cubeAll("block/soft_soil", GenerationsCore.id("block/soft_soil"))).build();
 
         });
+        simpleBlockItem(GenerationsBlocks.SOFT_SOIL.get(), models().cubeAll("block/soft_soil", GenerationsCore.id("block/soft_soil")));
     }
 
     private void registerPallet(@NotNull RegistrySupplier<Block> block, RegistrySupplier<SlabBlock> slab, RegistrySupplier<StairBlock> stairs, RegistrySupplier<WallBlock> wall, RegistrySupplier<ButtonBlock> button, RegistrySupplier<PressurePlateBlock> pressurePlate, boolean dropSelf){

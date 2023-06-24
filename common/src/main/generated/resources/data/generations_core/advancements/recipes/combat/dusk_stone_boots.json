@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dusk_stone_shard": {
+    "has_dusk_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:dusk_stone_shard"
+              "generations_core:dusk_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_dusk_stone_shard",
+      "has_dusk_stone",
       "has_the_recipe"
     ]
   ],

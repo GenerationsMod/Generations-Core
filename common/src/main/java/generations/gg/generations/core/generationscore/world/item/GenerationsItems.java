@@ -195,6 +195,7 @@ public class GenerationsItems {
     /**
      * TM ITEMS
      */
+    /*
     public static final RegistrySupplier<Item> TM_1 = register("tm_1", properties -> new TechnicalMachineItem("take_down", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_2 = register("tm_2", properties -> new TechnicalMachineItem("charm", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_3 = register("tm_3", properties -> new TechnicalMachineItem("fake_tears", properties), GenerationsCreativeTabs.TMS);
@@ -366,6 +367,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TM_169 = register("tm_169", properties -> new TechnicalMachineItem("draco_meteor", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_170 = register("tm_170", properties -> new TechnicalMachineItem("steel_beam", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_171 = register("tm_171", properties -> new TechnicalMachineItem("tera_blast", properties), GenerationsCreativeTabs.TMS);
+     */
 
     /**
      * Badges
@@ -914,12 +916,14 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MAX_REPEL = register("max_repel", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WAILMER_PAIL = register("wailmer_pail", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SPRINK_LOTAD = register("sprink_lotad", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    /*
     public static final RegistrySupplier<Item> RED_BIKE = register("red_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> ORANGE_BIKE = register("orange_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> YELLOW_BIKE = register("yellow_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> GREEN_BIKE = register("green_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> BLUE_BIKE = register("blue_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> PURPLE_BIKE = register("purple_bike", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    */
     public static final RegistrySupplier<Item> ROTOM_CATALOG = register("rotom_catalog", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> POKEDEX = register("pokedex", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> ITEM_FINDER = register("item_finder", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);

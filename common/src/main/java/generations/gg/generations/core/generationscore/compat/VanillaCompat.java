@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
@@ -75,10 +76,8 @@ public class VanillaCompat {
 			CreativeTabRegistry.modify(CreativeModeTabs.COMBAT, (flags, output, permissions) -> {
 				GenerationsArmor.ARMOR.forEach(item -> output.acceptBefore(Items.TURTLE_HELMET.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
 				GenerationsTools.TOOLS.forEach(item -> {
-					if (item.get() instanceof AxeItem)
-						output.acceptAfter(Items.NETHERITE_AXE.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-					else if (item.get() instanceof SwordItem)
-						output.acceptAfter(Items.NETHERITE_SWORD.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+					if (item.get() instanceof AxeItem) output.acceptAfter(Items.NETHERITE_AXE.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+					else if (item.get() instanceof SwordItem) output.acceptAfter(Items.NETHERITE_SWORD.getDefaultInstance(), item.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 				});
 			});
 
@@ -110,6 +109,12 @@ public class VanillaCompat {
 				output.acceptAfter(GenerationsItems.ULTRA_DARK_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_DARK_HANGING_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 				output.acceptAfter(GenerationsItems.ULTRA_DARK_HANGING_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 				output.acceptAfter(GenerationsItems.ULTRA_JUNGLE_SIGN.get().getDefaultInstance(), GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.FURNACE.getDefaultInstance(), GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get().asItem().getDefaultInstance(), GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.SMOKER.getDefaultInstance(), GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get().asItem().getDefaultInstance(), GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(Items.BLAST_FURNACE.getDefaultInstance(), GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				output.acceptAfter(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get().asItem().getDefaultInstance(), GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 			});
 
 		if(tabs.naturalBlocks)

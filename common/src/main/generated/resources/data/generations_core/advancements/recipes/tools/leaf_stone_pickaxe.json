@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_leaf_stone_shard": {
+    "has_leaf_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:leaf_stone_shard"
+              "generations_core:leaf_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_leaf_stone_shard",
+      "has_leaf_stone",
       "has_the_recipe"
     ]
   ],

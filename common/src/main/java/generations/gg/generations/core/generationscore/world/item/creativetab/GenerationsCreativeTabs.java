@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier POKEBALLS = create("pokeballs", () -> GenerationsItems.POKE_BALL);
     public static CreativeTabRegistry.TabSupplier RESTORATION = create("restoration", () -> GenerationsItems.POTION);
-    public static CreativeTabRegistry.TabSupplier TMS = create("tms", () -> GenerationsItems.TM_1);
+    //public static CreativeTabRegistry.TabSupplier TMS = create("tms", () -> GenerationsItems.TM_1);
     public static CreativeTabRegistry.TabSupplier BADGES_RIBBONS = create("badges_ribbons", () -> GenerationsItems.MARSH_BADGE);
     public static CreativeTabRegistry.TabSupplier HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN);
     public static CreativeTabRegistry.TabSupplier PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX);

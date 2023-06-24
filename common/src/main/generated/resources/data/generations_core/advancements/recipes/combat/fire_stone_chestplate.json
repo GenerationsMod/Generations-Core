@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_fire_stone_shard": {
+    "has_fire_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:fire_stone_shard"
+              "generations_core:fire_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_fire_stone_shard",
+      "has_fire_stone",
       "has_the_recipe"
     ]
   ],

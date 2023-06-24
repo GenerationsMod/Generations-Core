@@ -1095,12 +1095,15 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_REPEL, "player_items/");
         createItem(GenerationsItems.WAILMER_PAIL, "player_items/");
         createItem(GenerationsItems.SPRINK_LOTAD, "player_items/");
+        /*
         createItem(GenerationsItems.RED_BIKE, "player_items/");
         createItem(GenerationsItems.ORANGE_BIKE, "player_items/");
         createItem(GenerationsItems.YELLOW_BIKE, "player_items/");
         createItem(GenerationsItems.GREEN_BIKE, "player_items/");
         createItem(GenerationsItems.BLUE_BIKE, "player_items/");
         createItem(GenerationsItems.PURPLE_BIKE, "player_items/");
+
+         */
         createItem(GenerationsItems.ROTOM_CATALOG, "player_items/");
         createItem(GenerationsItems.POKEDEX, "player_items/");
         createItem(GenerationsItems.ITEM_FINDER, "player_items/");

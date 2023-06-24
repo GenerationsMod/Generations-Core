@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ice_stone_shard": {
+    "has_ice_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:ice_stone_shard"
+              "generations_core:ice_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_ice_stone_shard",
+      "has_ice_stone",
       "has_the_recipe"
     ]
   ],
