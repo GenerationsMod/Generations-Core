@@ -244,23 +244,18 @@ public class TagsDatagen {
                     tag(BlockTags.WALL_HANGING_SIGNS).add(woodBlock);
             });
 
-            tag(GenerationsBlockTags.GHOST_LOGS)
-                    .add(GenerationsWood.GHOST_LOG.get(), GenerationsWood.STRIPPED_GHOST_LOG.get());
+            tag(GenerationsBlockTags.GHOST_LOGS).add(GenerationsWood.GHOST_LOG.get(), GenerationsWood.STRIPPED_GHOST_LOG.get());
 
-            tag(GenerationsBlockTags.ULTRA_DARK_LOGS)
-                    .add(GenerationsWood.ULTRA_DARK_LOG.get(), GenerationsWood.STRIPPED_ULTRA_DARK_LOG.get());
+            tag(GenerationsBlockTags.ULTRA_DARK_LOGS).add(GenerationsWood.ULTRA_DARK_LOG.get(), GenerationsWood.STRIPPED_ULTRA_DARK_LOG.get());
 
-            tag(GenerationsBlockTags.ULTRA_JUNGLE_LOGS)
-                    .add(GenerationsWood.ULTRA_JUNGLE_LOG.get(), GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG.get());
+            tag(GenerationsBlockTags.ULTRA_JUNGLE_LOGS).add(GenerationsWood.ULTRA_JUNGLE_LOG.get(), GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG.get());
 
             tag(BlockTags.LOGS).addTag(GenerationsBlockTags.GHOST_LOGS).addTag(GenerationsBlockTags.ULTRA_DARK_LOGS).addTag(GenerationsBlockTags.ULTRA_JUNGLE_LOGS);
             tag(BlockTags.LOGS_THAT_BURN).addTag(GenerationsBlockTags.GHOST_LOGS).addTag(GenerationsBlockTags.ULTRA_DARK_LOGS).addTag(GenerationsBlockTags.ULTRA_JUNGLE_LOGS);
 
             GenerationsWood.WOOD_SIGN.forEach(sign -> {
-                if (sign.get() instanceof WallSignBlock)
-                    tag(BlockTags.WALL_SIGNS).add(sign.get());
-                else if (sign.get() instanceof WallHangingSignBlock)
-                    tag(BlockTags.WALL_HANGING_SIGNS).add(sign.get());
+                if (sign.get() instanceof WallSignBlock) tag(BlockTags.WALL_SIGNS).add(sign.get());
+                else if (sign.get() instanceof WallHangingSignBlock) tag(BlockTags.WALL_HANGING_SIGNS).add(sign.get());
             });
 
             //Charge and Volcanic Stone Brick Tags like Vanilla
