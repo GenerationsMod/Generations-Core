@@ -4,26 +4,25 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.screen.AbstractHierarchicalWidget;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
-import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class NodeListWidget extends AbstractHierarchicalWidget {
 
-    private final ArrayList<ResourceLocation> possibleNodes;
-    private ResourceLocation hoveredNode = null;
+    private final ArrayList<String> possibleNodes;
+    private String hoveredNode = null;
 
     public NodeListWidget(int relativeX, int relativeY, int width, int height) {
         super(relativeX, relativeY, width, height, null);
         setX(getX() - getWidth());
         setY(getY() - getHeight());
         this.possibleNodes = new ArrayList<>();
-        possibleNodes.addAll(GenerationsDialogueNodeTypes.DIALOGUE_NODE_TYPES.getIds());
+        possibleNodes.addAll(AbstractNodeAdapter.INSTANCE.getIds());
     }
 
     @Override
@@ -36,7 +35,7 @@ public class NodeListWidget extends AbstractHierarchicalWidget {
         ScreenUtils.drawCenteredString(stack, client.font, "Create a new Node", getX() + width / 2, getY() + 2, 0xFFFFFFFF, false);
 
         for (int i = 0; i < possibleNodes.size(); i++) {
-            client.font.draw(stack, possibleNodes.get(i).getPath(), getX() + 2, getY() + 16 + i * 10, 0xFFFFFFFF);
+            client.font.draw(stack, possibleNodes.get(i), getX() + 2, getY() + 16 + i * 10, 0xFFFFFFFF);
         }
 
         finishRendering(stack, mouseX, mouseY, partialTick);

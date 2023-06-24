@@ -7,7 +7,6 @@ import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsDataProvider;
-import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
@@ -24,7 +23,6 @@ import generations.gg.generations.core.generationscore.world.item.curry.CurryDat
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
@@ -63,6 +61,7 @@ public class GenerationsCoreClient {
 
     private static void setupClient(Minecraft event) {
         event.submit(() -> {
+            GenerationsCore.getImplementation().getNetworkManager().registerClientBound();
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);

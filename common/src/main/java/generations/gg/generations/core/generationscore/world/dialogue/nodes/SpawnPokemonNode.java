@@ -1,30 +1,20 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-import generations.gg.generations.core.generationscore.world.dialogue.DialogueNodeType;
-import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogic;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogic;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import org.jetbrains.annotations.NotNull;
 
 public class SpawnPokemonNode extends AbstractNode {
-    public static Codec<SpawnPokemonNode> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-                    Codec.STRING.fieldOf("data").forGetter(SpawnPokemonNode::data),
-                    Codec.INT.optionalFieldOf("maxTick", 100).forGetter(SpawnPokemonNode::maxTick),
-                    BlockPos.CODEC.fieldOf("pos").forGetter(SpawnPokemonNode::location),
-                    Codec.FLOAT.fieldOf("yaw").forGetter(SpawnPokemonNode::yaw))
-            .apply(instance, SpawnPokemonNode::new));
-
     private final String data;
     private final int maxTick;
-    private final BlockPos pos;
-    private final float yaw;
+    private final LocationLogic pos;
+    private final YawLogic yaw;
 
-    public SpawnPokemonNode(String data, int maxTick, BlockPos pos, float yaw) {
+    public SpawnPokemonNode(String data, int maxTick, LocationLogic pos, YawLogic yaw) {
         this.data = data;
         this.maxTick = maxTick;
         this.pos = pos;
@@ -39,28 +29,18 @@ public class SpawnPokemonNode extends AbstractNode {
         return maxTick;
     }
 
-    private BlockPos location() {
+    private LocationLogic location() {
         return pos;
     }
 
-    private float yaw() {
+    private YawLogic yaw() {
         return yaw;
     }
 
     @Override
     public void run(ServerPlayer serverPlayer, DialoguePlayer dialoguePlayer) {
         var level = serverPlayer.getLevel();
-        PokemonUtil.spawn(data, level, pos, yaw);
-    }
-
-    @Override
-    public Codec<? extends AbstractNode> getCodec() {
-        return CODEC_BY_NAME;
-    }
-
-    @Override
-    public DialogueNodeType<?> getType() {
-        return GenerationsDialogueNodeTypes.SPAWN_PIXELMON.get();
+        PokemonUtil.spawn(data, level, pos.createSupplier(serverPlayer).get(), yaw.createSupplier(serverPlayer).getAsFloat());
     }
 
     @Override
@@ -68,11 +48,11 @@ public class SpawnPokemonNode extends AbstractNode {
         super.encode(friendlyByteBuf);
         friendlyByteBuf.writeUtf(data);
         friendlyByteBuf.writeInt(maxTick);
-        friendlyByteBuf.writeBlockPos(pos);
-        friendlyByteBuf.writeFloat(yaw);
+//        friendlyByteBuf.writeBlockPos(pos);
+//        friendlyByteBuf.writeFloat(yaw);
     }
 
     public static SpawnPokemonNode decode(FriendlyByteBuf buf) {
-        return new SpawnPokemonNode(buf.readUtf(), buf.readInt(), buf.readBlockPos(), buf.readFloat());
+        return new SpawnPokemonNode(buf.readUtf(), buf.readInt(), null, null);
     }
 }

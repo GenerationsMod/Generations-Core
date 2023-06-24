@@ -5,8 +5,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.screen.AbstractHierarchicalWidget;
 import generations.gg.generations.core.generationscore.client.screen.HierarchicalWidget;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
-import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.renderer.GameRenderer;
 import org.jetbrains.annotations.NotNull;
@@ -59,8 +59,8 @@ public class DialogueNodeWidget extends AbstractHierarchicalWidget {
             RenderSystem.setShaderColor(1.0f, 0.337f, 0.286f, 1.0f);
             RenderSystem.setShaderColor(1.0f, 0.337f, 0.286f, 1.0f);
             ScreenUtils.drawRect(stack, getX(), getY(), 80, getHeight(), 0xFFFFFFFF);
-            var nodeId = GenerationsDialogueNodeTypes.DIALOGUE_NODE_TYPES.getId(node.getType());
-            client.font.draw(stack, nodeId.toString().length() > 15 ? nodeId.getPath() : nodeId.toString(), getX() + 2, getY(), 0xFFFFFFFF);
+            var nodeId = AbstractNodeAdapter.INSTANCE.getId(node);
+            client.font.draw(stack, nodeId, getX() + 2, getY(), 0xFFFFFFFF);
 
             // Settings
             RenderSystem.setShaderColor(0.2f, 0.2f, 0.2f, 1.0f);

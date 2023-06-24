@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.network
+package generations.gg.generations.core.generationscore.network.packets
 
 import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import com.cobblemon.mod.common.api.net.NetworkPacket

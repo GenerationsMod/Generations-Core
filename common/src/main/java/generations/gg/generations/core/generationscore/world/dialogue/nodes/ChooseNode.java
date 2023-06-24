@@ -1,11 +1,7 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CChooseDialoguePacket;
-import generations.gg.generations.core.generationscore.world.dialogue.DialogueNodeType;
-import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -16,10 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ChooseNode extends AbstractNode implements DialogueContainingNode, ResponseTakingNode {
-    public static final Codec<ChooseNode> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-                    Codec.STRING.fieldOf("question").forGetter(node -> node.question),
-                    Codec.unboundedMap(Codec.STRING, AbstractNode.CODEC_BY_NAME).fieldOf("next").forGetter(node -> node.next))
-            .apply(instance, ChooseNode::new));
 
     private final String question;
     private final Map<String, AbstractNode> next;
@@ -55,16 +47,6 @@ public class ChooseNode extends AbstractNode implements DialogueContainingNode, 
     @Override
     public void run(ServerPlayer player, DialoguePlayer dialoguePlayer) {
         GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(player, new S2CChooseDialoguePacket(question, new ArrayList<>(next.keySet())));
-    }
-
-    @Override
-    public DialogueNodeType<?> getType() {
-        return GenerationsDialogueNodeTypes.CHOOSE.get();
-    }
-
-    @Override
-    public Codec<? extends AbstractNode> getCodec() {
-        return CODEC;
     }
 
     @Override

@@ -8,11 +8,11 @@
 
 package generations.gg.generations.core.generationscore;
 
+import com.cobblemon.mod.common.api.data.DataProvider;
 import com.mojang.logging.LogUtils;
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
-import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -46,11 +46,15 @@ public class GenerationsCore
 	public static Config CONFIG;
 	public static GenerationsImplementation implementation;
 
+	public static DataProvider dataProvider = GenerationsDataProvider.INSTANCE;
+
 	/**
 	 * Initializes the Generations-Core mod.
 	 */
 	public static void init(GenerationsImplementation implementation) {
 		GenerationsCore.implementation = implementation;
+		implementation.getNetworkManager().registerServerBound();
+
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
 		GenerationsBlocks.init();
@@ -67,7 +71,6 @@ public class GenerationsCore
 		GenerationsTools.init();
 		GenerationsPaintings.init();
 		GenerationsContainers.init();
-		GenerationsDialogueNodeTypes.init();
 
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 

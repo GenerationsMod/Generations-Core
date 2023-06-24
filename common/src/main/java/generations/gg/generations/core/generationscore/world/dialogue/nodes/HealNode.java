@@ -1,12 +1,7 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.api.data.Codecs;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CHealDialoguePacket;
-import generations.gg.generations.core.generationscore.world.dialogue.DialogueNodeType;
-import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
 import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -17,16 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class HealNode extends AbstractNode implements DialogueContainingNode{
-    public static final Codec<HealNode> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            Codecs.listCodec(Codec.STRING).fieldOf("text").forGetter(node -> node.text),
-            Codec.BOOL.fieldOf("healer_required").forGetter(node -> node.healerRequired),
-            Codec.INT.optionalFieldOf("radius").forGetter(node -> node.healerRequired ? Optional.of(node.radius) : Optional.empty()),
-            AbstractNode.CODEC_BY_NAME.optionalFieldOf("next").forGetter(node -> Optional.ofNullable(node.next)))
-            .apply(instance, (text, healerRequired, radius, next) -> new HealNode(text, healerRequired, radius.orElse(0), next.orElse(null))));
-
     private final List<String> text;
     private final boolean healerRequired;
     private final int radius;
@@ -83,16 +70,6 @@ public class HealNode extends AbstractNode implements DialogueContainingNode{
         if (next != null) {
             next.setParent(this);
         }
-    }
-
-    @Override
-    public DialogueNodeType<?> getType() {
-        return GenerationsDialogueNodeTypes.HEAL.get();
-    }
-
-    @Override
-    public Codec<? extends AbstractNode> getCodec() {
-        return CODEC;
     }
 
     @Override

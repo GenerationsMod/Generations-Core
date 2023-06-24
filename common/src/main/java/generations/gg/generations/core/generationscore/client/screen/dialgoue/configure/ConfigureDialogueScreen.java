@@ -9,8 +9,9 @@ import generations.gg.generations.core.generationscore.client.screen.Hierarchica
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.C2SSaveDatapackEntryPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.DialogueGraph;
-import generations.gg.generations.core.generationscore.world.dialogue.GenerationsDialogueNodeTypes;
+import generations.gg.generations.core.generationscore.world.dialogue.Dialogues;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
@@ -73,7 +74,7 @@ public class ConfigureDialogueScreen extends Screen {
         );
 
         if (selectingNewNode)
-            addRenderableWidget(new NodeListWidget(width - 2, height - 2, 120, 20 + GenerationsDialogueNodeTypes.DIALOGUE_NODE_TYPES.getIds().size() * 10));
+            addRenderableWidget(new NodeListWidget(width - 2, height - 2, 120, 20 + AbstractNodeAdapter.INSTANCE.getSize() * 10));
         else addRenderableWidget(Button
                 .builder(Component.literal("+"), this::openNewNodeMenu)
                 .pos(width - 22, height - 22)
@@ -110,8 +111,7 @@ public class ConfigureDialogueScreen extends Screen {
     }
 
     private void saveDataPackEntry(Button button) {
-        var encoder = JsonOps.INSTANCE.withEncoder(DialogueGraph.CODEC);
-        var data = encoder.apply(graph).getOrThrow(false, this::warnCouldntSave);
+        var data = Dialogues.Companion.instance().getGson().toJsonTree(graph);
         GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2SSaveDatapackEntryPacket(GenerationsCore.id("dialogue/test.json"), data));
     }
 

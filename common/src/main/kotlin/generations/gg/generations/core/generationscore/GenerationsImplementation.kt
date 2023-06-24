@@ -7,4 +7,6 @@ import net.minecraft.server.packs.resources.PreparableReloadListener
 
 interface GenerationsImplementation {
     public abstract val networkManager: NetworkManager
+
+    fun registerResourceReloader(identifier: ResourceLocation, reloader: PreparableReloadListener, type: PackType, dependencies: Collection<ResourceLocation>)
 }

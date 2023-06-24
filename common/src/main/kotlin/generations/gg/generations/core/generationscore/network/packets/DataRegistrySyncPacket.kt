@@ -4,10 +4,9 @@ import com.cobblemon.mod.common.api.net.NetworkPacket
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 
-abstract class DataRegistrySyncPacket<T, N : NetworkPacket<N>>(private val registryEntries: Map<ResourceLocation, T>) : NetworkPacket<N> {
+abstract class DataRegistrySyncPacket<T, N : NetworkPacket<N>>(internal val registryEntries: Map<ResourceLocation, T>) : NetworkPacket<N> {
 
     var buffer: FriendlyByteBuf? = null
-    internal val entries = arrayListOf<T>()
 
     override fun encode(buffer: FriendlyByteBuf) {
         buffer.writeMap(this.registryEntries, FriendlyByteBuf::writeResourceLocation, this::encodeEntry)

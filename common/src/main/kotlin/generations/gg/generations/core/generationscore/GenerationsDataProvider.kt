@@ -1,23 +1,26 @@
 package generations.gg.generations.core.generationscore
 
-import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.api.data.DataProvider
 import com.cobblemon.mod.common.api.data.DataRegistry
 import com.cobblemon.mod.common.platform.events.PlatformEvents
 import generations.gg.generations.core.generationscore.world.dialogue.Dialogues
 import com.cobblemon.mod.common.util.ifClient
 import com.cobblemon.mod.common.util.server
+import dev.architectury.utils.Env
+import dev.architectury.utils.EnvExecutor
 import generations.gg.generations.core.generationscore.GenerationsCore.LOGGER
 import generations.gg.generations.core.generationscore.GenerationsCore.id
-import generations.gg.generations.core.generationscore.network.S2CUnlockReloadPacket
+import generations.gg.generations.core.generationscore.network.packets.S2CUnlockReloadPacket
+import io.netty.util.concurrent.EventExecutor
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener
 import java.util.*
+import java.util.function.Supplier
 
-object GenerationsDataProvider : DataProvider {
+public object GenerationsDataProvider : DataProvider {
 
     // Both Forge n Fabric keep insertion order so if a registry depends on another simply register it after
     public var canReload = true
@@ -35,10 +38,19 @@ object GenerationsDataProvider : DataProvider {
             S2CUnlockReloadPacket().sendToPlayer(it.player)
         }
 
-        ifClient {
-            Cobblemon.implementation.registerResourceReloader(id("client_resources"), SimpleResourceReloader(PackType.CLIENT_RESOURCES), PackType.CLIENT_RESOURCES, emptyList())
+        EnvExecutor.runInEnv(Env.CLIENT
+        ) {
+            Runnable {
+                GenerationsCore.implementation.registerResourceReloader(
+                    id("client_resources"),
+                    SimpleResourceReloader(PackType.CLIENT_RESOURCES),
+                    PackType.CLIENT_RESOURCES,
+                    emptyList()
+                )
+            }
         }
-        Cobblemon.implementation.registerResourceReloader(id("data_resources"), SimpleResourceReloader(PackType.SERVER_DATA), PackType.SERVER_DATA, emptyList())
+
+        GenerationsCore.implementation.registerResourceReloader(id("data_resources"), SimpleResourceReloader(PackType.SERVER_DATA), PackType.SERVER_DATA, emptyList())
     }
 
     override fun <T : DataRegistry> register(registry: T): T {

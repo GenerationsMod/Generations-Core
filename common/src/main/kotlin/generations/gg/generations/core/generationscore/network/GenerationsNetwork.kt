@@ -5,14 +5,12 @@ import com.cobblemon.mod.common.NetworkManager
 import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler
-import com.cobblemon.mod.common.net.serverhandling.trade.*
+import com.cobblemon.mod.common.client.net.data.DataRegistrySyncPacketHandler
 import com.cobblemon.mod.common.util.server
 import generations.gg.generations.core.generationscore.GenerationsCore
-import generations.gg.generations.core.generationscore.network.packets.C2SEditMailPacket
-import generations.gg.generations.core.generationscore.network.packets.C2SToggleCookingPotPacket
-import generations.gg.generations.core.generationscore.network.packets.S2COpenMailEditScreenPacket
-import generations.gg.generations.core.generationscore.network.packets.S2COpenMailPacket
+import generations.gg.generations.core.generationscore.network.packets.*
 import generations.gg.generations.core.generationscore.network.packets.dialogue.*
+import generations.gg.generations.core.generationscore.world.dialogue.network.DialogueGraphRegistrySyncPacket
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.protocol.Packet
 import net.minecraft.network.protocol.game.ClientGamePacketListener
@@ -36,6 +34,7 @@ object GenerationsNetwork : NetworkManager {
         this.createClientBound(S2CSayDialoguePacket.ID, S2CSayDialoguePacket::decode, S2CSayDialoguePacket.Handler());
         this.createClientBound(S2CCloseScreenPacket.ID, S2CCloseScreenPacket::decode, S2CCloseScreenPacket.Handler())
         this.createClientBound(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket::decode, S2CUnlockReloadPacket.UnlockReloadPacketHandler)
+        this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket::decode, DataRegistrySyncPacketHandler())
     }
 
     override fun registerServerBound() {

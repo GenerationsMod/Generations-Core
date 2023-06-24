@@ -7,8 +7,14 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import generations.gg.generations.core.generationscore.GenerationsCore
+import generations.gg.generations.core.generationscore.api.data.Codecs
 import generations.gg.generations.core.generationscore.world.dialogue.network.DialogueGraphRegistrySyncPacket
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogic
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogicAdpter
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogic
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogicAdapter
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
@@ -16,7 +22,12 @@ import net.minecraft.server.packs.PackType
 
 class Dialogues : JsonDataRegistry<DialogueGraph> {
     override val id = GenerationsCore.id("dialogues")
-    override val gson: Gson = GsonBuilder().create()
+    override val gson: Gson = GsonBuilder()
+        .registerTypeAdapter(AbstractNode::class.java, AbstractNodeAdapter)
+        .registerTypeAdapter(LocationLogic::class.java, LocationLogicAdpter)
+        .registerTypeAdapter(YawLogic::class.java, YawLogicAdapter)
+        .serializeNulls()
+        .create()
     override val type: PackType = PackType.SERVER_DATA //TODO: Figure out if need client.
     override val typeToken = TypeToken.get(DialogueGraph::class.java)
     override val resourcePath = id.path
