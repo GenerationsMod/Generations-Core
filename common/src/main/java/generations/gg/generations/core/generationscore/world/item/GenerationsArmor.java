@@ -20,34 +20,6 @@ public class GenerationsArmor {
 	 */
 	public static final RegistrySupplier<Item> RUNNING_BOOTS = register("running_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.RUNNING, ArmorItem.Type.BOOTS, of()).addCustomAttributeModifier(new SpeedModifier(0.75F)).addArmorEffect(new RunningBootsArmorEffect()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> OLD_RUNNING_BOOTS = register("old_running_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.OLD_RUNNING, ArmorItem.Type.BOOTS, of()).addCustomAttributeModifier(new SpeedModifier(0.5F)).addArmorEffect(new UnbreakableArmorEffect()).addArmorEffect(new RepairArmorEffect()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> AQUA_HELMET = register("aqua_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AQUA, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> AQUA_CHESTPLATE = register("aqua_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AQUA, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> AQUA_LEGGINGS = register("aqua_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AQUA, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> AQUA_BOOTS = register("aqua_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.AQUA, ArmorItem.Type.BOOTS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> FLARE_HELMET = register("flare_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.FLARE, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> FLARE_CHESTPLATE = register("flare_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.FLARE, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> FLARE_LEGGINGS = register("flare_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.FLARE, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> FLARE_BOOTS = register("flare_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.FLARE, ArmorItem.Type.BOOTS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> GALACTIC_HELMET = register("galactic_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.GALACTIC, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> GALACTIC_CHESTPLATE = register("galactic_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.GALACTIC, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> GALACTIC_LEGGINGS = register("galactic_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.GALACTIC, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> GALACTIC_BOOTS = register("galactic_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.GALACTIC, ArmorItem.Type.BOOTS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> MAGMA_HELMET = register("magma_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.MAGMA, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> MAGMA_CHESTPLATE = register("magma_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.MAGMA, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> MAGMA_LEGGINGS = register("magma_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.MAGMA, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> MAGMA_BOOTS = register("magma_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.MAGMA, ArmorItem.Type.BOOTS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> NEO_PLASMA_HELMET = register("neo_plasma_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.NEO_PLASMA, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> NEO_PLASMA_CHESTPLATE = register("neo_plasma_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.NEO_PLASMA, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> NEO_PLASMA_LEGGINGS = register("neo_plasma_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.NEO_PLASMA, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> NEO_PLASMA_BOOTS = register("neo_plasma_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.NEO_PLASMA, ArmorItem.Type.BOOTS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> PLASMA_HELMET = register("plasma_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.PLASMA, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> PLASMA_CHESTPLATE = register("plasma_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.PLASMA, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> PLASMA_LEGGINGS = register("plasma_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.PLASMA, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> PLASMA_BOOTS = register("plasma_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.PLASMA, ArmorItem.Type.BOOTS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> ROCKET_HELMET = register("rocket_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.ROCKET, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> ROCKET_CHESTPLATE = register("rocket_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.ROCKET, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> ROCKET_LEGGINGS = register("rocket_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.ROCKET, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
-	public static final RegistrySupplier<Item> ROCKET_BOOTS = register("rocket_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.ROCKET, ArmorItem.Type.BOOTS, of()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> SKULL_HELMET = register("skull_helmet", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.SKULL, ArmorItem.Type.HELMET, of()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> SKULL_CHESTPLATE = register("skull_chestplate", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.SKULL, ArmorItem.Type.CHESTPLATE, of()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> SKULL_LEGGINGS = register("skull_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.SKULL, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
@@ -115,19 +87,26 @@ public class GenerationsArmor {
 	}
 
 	public static final ArmorSet AETHER = ArmorSet.create("aether", GenerationsArmorMaterials.AETHER);
+	public static final ArmorSet AQUA = ArmorSet.create("aqua", GenerationsArmorMaterials.AQUA);
+	public static final ArmorSet FLARE = ArmorSet.create("flare", GenerationsArmorMaterials.FLARE);
+	public static final ArmorSet GALACTIC = ArmorSet.create("galactic", GenerationsArmorMaterials.GALACTIC);
+	public static final ArmorSet MAGMA = ArmorSet.create("magma", GenerationsArmorMaterials.MAGMA);
+	public static final ArmorSet NEO_PLASMA = ArmorSet.create("neo_plasma", GenerationsArmorMaterials.NEO_PLASMA);
+	public static final ArmorSet PLASMA = ArmorSet.create("plasma", GenerationsArmorMaterials.PLASMA);
+	public static final ArmorSet ROCKET = ArmorSet.create("rocket", GenerationsArmorMaterials.ROCKET);
 
 	public record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots) {
 		public static ArmorSet create(String name, ArmorMaterial armorMaterial) {
 			return new ArmorSet(
-					register(name + "_helmet", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.HELMET, properties), CreativeModeTabs.COMBAT),
-					register(name + "_chestplate", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.CHESTPLATE, properties), CreativeModeTabs.COMBAT),
-					register(name + "_leggings", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.LEGGINGS, properties), CreativeModeTabs.COMBAT),
-					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.BOOTS, properties), CreativeModeTabs.COMBAT)
+					register(name + "_helmet", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.HELMET, properties)),
+					register(name + "_chestplate", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.CHESTPLATE, properties)),
+					register(name + "_leggings", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.LEGGINGS, properties)),
+					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.BOOTS, properties))
 			);
 		}
 
-		public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function, CreativeModeTab tab) {
-			return GenerationsArmor.register(name, function, tab);
+		public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function) {
+			return GenerationsArmor.register(name, function, CreativeModeTabs.COMBAT);
 		}
 	}
 }
