@@ -569,25 +569,25 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
                 .partialState().with(GenerationsBerryBushBlock.AGE, 3).modelForState().modelFile(models().cross("block/" + bush.getId().getPath() + "_stage3", GenerationsCore.id("block/" + bush.getId().getPath() + "_stage3"))).addModel();
     }
 
-    public void registerStairs(StairBlock stairs, Block texturedBlock) {
+    private void registerStairs(StairBlock stairs, Block texturedBlock) {
         ResourceLocation texture = ModelLocationUtils.getModelLocation(texturedBlock);
         stairsBlock(stairs, texture);
         simpleBlockItem(stairs, itemModels().stairs("block/" + key(stairs).getPath(), texture, texture, texture));
     }
 
-    public void registerSlab(SlabBlock slab, Block texturedBlock) {
+    private void registerSlab(SlabBlock slab, Block texturedBlock) {
         ResourceLocation texture = ModelLocationUtils.getModelLocation(texturedBlock);
         slabBlock(slab, texture, texture);
         simpleBlockItem(slab, itemModels().slab("block/" + key(slab).getPath(), texture, texture, texture));
     }
 
-    public void registerWall(WallBlock wall, Block texturedBlock) {
+    private void registerWall(WallBlock wall, Block texturedBlock) {
         ResourceLocation texture = ModelLocationUtils.getModelLocation(texturedBlock);
         wallBlock(wall, texture);
         simpleBlockItem(wall, itemModels().wallInventory("block/" + key(wall).getPath(), texture));
     }
 
-    public void registerFence(FenceBlock fence, Block block) {
+    private void registerFence(FenceBlock fence, Block block) {
         ResourceLocation texture;
         if (block == null) texture = ModelLocationUtils.getModelLocation(fence);
         else texture = ModelLocationUtils.getModelLocation(block);
@@ -596,7 +596,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlockItem(fence, itemModels().fenceInventory("block/" + key(fence).getPath(), texture));
     }
 
-    public void registerGate(FenceGateBlock gate, FenceBlock fence, Block block) {
+    private void registerGate(FenceGateBlock gate, FenceBlock fence, Block block) {
         ResourceLocation texture;
         if (block == null)
         {
@@ -619,13 +619,13 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         doorBlockWithRenderType(door, new ResourceLocation(blockId.getNamespace(), "block/door/" + blockId.getPath() + "_bottom"), new ResourceLocation(blockId.getNamespace(), "block/door/" + blockId.getPath() + "_top"), "cutout");
     }
 
-    public void registerPressurePlate(PressurePlateBlock pressurePlate, Block texturedBlock) {
+    private void registerPressurePlate(PressurePlateBlock pressurePlate, Block texturedBlock) {
         ResourceLocation texture = ModelLocationUtils.getModelLocation(texturedBlock);
         pressurePlateBlock(pressurePlate, texture);
         itemModels().pressurePlate(key(pressurePlate).getPath(), texture);
     }
 
-    public void registerButton(Block button, Block texturedBlock) {
+    private void registerButton(Block button, Block texturedBlock) {
         ResourceLocation buttonId = key(button);
         ResourceLocation textureBlockId = key(texturedBlock);
 
@@ -634,24 +634,24 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         itemModels().buttonInventory(buttonId.getPath(), texture);
     }
 
-    public void registerTrapDoor(TrapDoorBlock trapDoor, Block texturedBlock){
+    private void registerTrapDoor(TrapDoorBlock trapDoor, Block texturedBlock){
         ResourceLocation texture = ModelLocationUtils.getModelLocation(texturedBlock);
         ResourceLocation trapDoorId = key(trapDoor);
         trapdoorBlockWithRenderType(trapDoor, texture,true, "cutout");
         itemModels().trapdoorBottom(trapDoorId.getPath(), texture);
     }
 
-    public void registerTrapDoor(RegistrySupplier<TrapDoorBlock> trapDoor){registerTrapDoor(trapDoor.get(), trapDoor.get());}
+    private void registerTrapDoor(RegistrySupplier<TrapDoorBlock> trapDoor){registerTrapDoor(trapDoor.get(), trapDoor.get());}
 
-    public void registerSign(StandingSignBlock sign, WallSignBlock wallsign, Block plank){signBlock(sign, wallsign, blockTexture(plank));}
+    private void registerSign(StandingSignBlock sign, WallSignBlock wallsign, Block plank){signBlock(sign, wallsign, blockTexture(plank));}
 
-    public void registerHangingSign(CeilingHangingSignBlock sign, WallHangingSignBlock wallsign, Block plank){
+    private void registerHangingSign(CeilingHangingSignBlock sign, WallHangingSignBlock wallsign, Block plank){
         ModelFile thing = this.models().sign(key(sign).getPath(), blockTexture(plank));
         simpleBlock(sign, thing);
         simpleBlock(wallsign, thing);
     }
 
-    public void registerCrossBlock(RegistrySupplier<GenerationsMushroomBlock> crossBlock) {
+    private void registerCrossBlock(RegistrySupplier<GenerationsMushroomBlock> crossBlock) {
         getVariantBuilder(crossBlock.get()).forAllStates(state ->
                 ConfiguredModel.builder()
                         .modelFile(models().cross(crossBlock.getId().getPath(), blockTexture(crossBlock.get())).renderType("cutout"))
@@ -660,7 +660,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         MUSHROOM_BLOCKS.add(crossBlock.get());
     }
 
-    public void registerLog(RegistrySupplier<RotatedPillarBlock> log) {
+    private void registerLog(RegistrySupplier<RotatedPillarBlock> log) {
         String name = log.getId().getPath();
         BlockModelBuilder logBlock = models().withExistingParent(log.getId().toString(), mcLoc("block/oak_log"))
                 .texture("side", GenerationsCore.id("block/" + name))
@@ -669,23 +669,23 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlockItem(log.get(), logBlock);
     }
 
-    public void registerBlockItem(RegistrySupplier<Block> block) {registerBlockItem(block.get());}
+    private void registerBlockItem(RegistrySupplier<Block> block) {registerBlockItem(block.get());}
 
-    public void registerBlockItem(Block block) {simpleBlockWithItem(block, cubeAll(block));}
+    private void registerBlockItem(Block block) {simpleBlockWithItem(block, cubeAll(block));}
 
-    public void registerBlockItemParticle(RegistrySupplier<? extends Block> block, String name) {
+    private void registerBlockItemParticle(RegistrySupplier<? extends Block> block, String name) {
         ResourceLocation textureId = key(block.get()).withPrefix("item/blocks/" + name + "/");
         simpleBlock(block.get(), models().sign(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get())).getPath(), textureId));
         itemModels().singleTexture(block.getId().getPath(), new ResourceLocation("minecraft:item/generated"), "layer0", textureId);
     }
 
-    public void registerBlockItemParticle(Block block, String name) {
+    private void registerBlockItemParticle(Block block, String name) {
         ResourceLocation blockId = key(block);
         ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");
         simpleBlock(block, models().sign(blockId.getPath(), textureId));
     }
 
-    public void registerPokeDoll(RegistrySupplier<Block> block) {
+    private void registerPokeDoll(RegistrySupplier<Block> block) {
         ResourceLocation blockId = ForgeRegistries.BLOCKS.getKey(block.get());
         assert blockId != null;
         ResourceLocation textureId =  new ResourceLocation(blockId.getNamespace(), "item/dolls/" + blockId.getPath().replace("shiny_", "shiny/"));
@@ -702,17 +702,17 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
             .texture("layer0", texPath);
     }
 
-    public void registerSandStone(RegistrySupplier<Block> block) {
+    private void registerSandStone(RegistrySupplier<Block> block) {
         String name = block.getId().getPath();
         simpleBlockWithItem(block.get(), models().cubeBottomTop(name, GenerationsCore.id("block/" + name), GenerationsCore.id("block/" + name + "_bottom"), GenerationsCore.id("block/" + name + "_top")));
     }
 
-    public void registerSandStoneStairs(RegistrySupplier<StairBlock> stairs, RegistrySupplier<Block> block) {
+    private void registerSandStoneStairs(RegistrySupplier<StairBlock> stairs, RegistrySupplier<Block> block) {
         stairsBlock(stairs.get(),  GenerationsCore.id("block/" + block.getId().getPath()), GenerationsCore.id("block/" + block.getId().getPath() + "_bottom"), GenerationsCore.id("block/" + block.getId().getPath() +"_top"));
         simpleBlockItem(stairs.get(), itemModels().stairs("block/" + stairs.getId().getPath(), GenerationsCore.id("block/" + block.getId().getPath()), GenerationsCore.id("block/" + block.getId().getPath() + "_bottom"), GenerationsCore.id("block/" + block.getId().getPath() +"_top")));
     }
 
-    public void registerSandStoneSlab(RegistrySupplier<SlabBlock> slab, RegistrySupplier<Block> block) {
+    private void registerSandStoneSlab(RegistrySupplier<SlabBlock> slab, RegistrySupplier<Block> block) {
         slabBlock(slab.get(), GenerationsCore.id("block/" + block.getId().getPath()), GenerationsCore.id("block/" + block.getId().getPath()), GenerationsCore.id("block/" + block.getId().getPath() + "_bottom"), GenerationsCore.id("block/" + block.getId().getPath() +"_top"));
         simpleBlockItem(slab.get(), itemModels().slab("block/" + slab.getId().getPath(), GenerationsCore.id("block/" + block.getId().getPath()), GenerationsCore.id("block/" + block.getId().getPath() + "_bottom"), GenerationsCore.id("block/" + block.getId().getPath() +"_top")));
     }
