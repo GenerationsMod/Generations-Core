@@ -1,9 +1,7 @@
 package generations.gg.generations.core.generationscore.world.item;
 
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
-import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -12,8 +10,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Objects;
 
 public class DyedBlockItem<T extends DyeableBlock<?, ?>> extends ItemNameBlockItem {
     private final DyeColor color;

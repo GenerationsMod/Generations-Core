@@ -172,8 +172,7 @@ public class CurryDex {
     @Environment(EnvType.CLIENT)
     public static CurryDex fromByteBuf(FriendlyByteBuf buf) {
         Player player = Minecraft.getInstance().player; //TODO: Need to figure out a better way to handle client side pixelmon player. Currently explodes with held item stuff if the uuid list is used..
-        CurryDex curryDex = new CurryDex(player, buf.readList(CurryDexEntry::fromByteBuf));
-        return curryDex;
+        return new CurryDex(player, buf.readList(CurryDexEntry::fromByteBuf));
     }
 
     public static class CurryDexEntry {

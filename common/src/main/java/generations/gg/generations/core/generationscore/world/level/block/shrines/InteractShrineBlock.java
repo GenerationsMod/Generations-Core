@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
 public abstract class InteractShrineBlock<T extends InteractShrineBlockEntity> extends ShrineBlock<T> {
@@ -25,7 +26,7 @@ public abstract class InteractShrineBlock<T extends InteractShrineBlockEntity> e
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (level.isClientSide() || hand == InteractionHand.OFF_HAND) return InteractionResult.PASS;
         BlockEntity entity = level.getBlockEntity(pos);
         if (isStackValid(player.getItemInHand(hand)) && activate(entity, player, hand)) {

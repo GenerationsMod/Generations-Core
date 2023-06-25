@@ -40,14 +40,14 @@ public class MachineBlockEntity extends SimpleBlockEntity implements ItemContain
     }
 
     @Override
-    public void load(CompoundTag tag) {
+    public void load(@NotNull CompoundTag tag) {
         super.load(tag);
     //        candies.deserializeNBT(nbt.getCompound("candies"));
         bakeTime = tag.getInt("bakeTime");
     }
 
     @Override
-    protected void saveAdditional(CompoundTag compoundTag) {
+    protected void saveAdditional(@NotNull CompoundTag compoundTag) {
         super.saveAdditional(compoundTag);
         //        nbt.put("candies", candies.serializeNBT());
         compoundTag.putInt("bakeTime", bakeTime);

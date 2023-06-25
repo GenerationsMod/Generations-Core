@@ -68,7 +68,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
+    protected void saveAdditional(@NotNull CompoundTag tag) {
         super.saveAdditional(tag);
 
         tag.putBoolean("isCooking", isCooking);
@@ -79,7 +79,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    public void load(CompoundTag nbt) {
+    public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
         this.isCooking = nbt.getBoolean("isCooking");
         this.cookTime = nbt.getInt("cookTime");

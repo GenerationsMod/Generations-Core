@@ -1,15 +1,11 @@
 package generations.gg.generations.core.generationscore.network;
 
 import dev.architectury.networking.NetworkManager;
-import generations.gg.generations.core.generationscore.client.screen.mails.MailEditScreen;
-import generations.gg.generations.core.generationscore.client.screen.mails.MailViewScreen;
 import generations.gg.generations.core.generationscore.network.packets.C2SEditMailPacket;
 import generations.gg.generations.core.generationscore.network.packets.C2SToggleCookingPotPacket;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailEditScreenPacket;
 import generations.gg.generations.core.generationscore.network.packets.S2COpenMailPacket;
-import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
-import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerPlayer;
 
 import java.util.function.Supplier;
@@ -27,8 +23,6 @@ public class PacketProccessors {
     }
 
     void process(C2SEditMailPacket packet, Supplier<NetworkManager.PacketContext> ctx) {
-        ctx.get().queue(() -> {
-            packet.handleEditMail((ServerPlayer) ctx.get().getPlayer(), packet.slot(), packet.contents(), packet.title());
-        });
+        ctx.get().queue(() -> packet.handleEditMail((ServerPlayer) ctx.get().getPlayer(), packet.slot(), packet.contents(), packet.title()));
     }
 }

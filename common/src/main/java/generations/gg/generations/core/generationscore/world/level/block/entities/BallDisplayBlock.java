@@ -1,9 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.decorations.PokeDollBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -14,8 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -43,7 +39,7 @@ public class BallDisplayBlock extends GenericRotatableModelBlock<BallDisplayBloc
     }
 
     @Override
-    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    public @NotNull VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         return state == DisplayState.EMPTY ? EMPTY : FULL;
     }
 
