@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_fence_gate_wall_open",
-  "textures": {
-    "texture": "generations_core:block/blue_picket_fence"
-  }
-}

@@ -34,9 +34,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
     public void registerStatesAndModels() {
         registerOreBlocks();
         GenerationsBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateModel).forEach(this::registerBlockFamily);
-        registerWoodPallet(GenerationsWood.ULTRA_DARK_LOG, GenerationsWood.STRIPPED_ULTRA_DARK_LOG, GenerationsWood.ULTRA_DARK_PLANKS, GenerationsWood.ULTRA_DARK_SLAB, GenerationsWood.ULTRA_DARK_STAIRS, GenerationsWood.ULTRA_DARK_BUTTON, GenerationsWood.ULTRA_DARK_PRESSURE_PLATE, GenerationsWood.ULTRA_DARK_DOOR, GenerationsWood.ULTRA_DARK_TRAPDOOR, GenerationsWood.ULTRA_DARK_WOOD, GenerationsWood.STRIPPED_ULTRA_DARK_WOOD, GenerationsWood.ULTRA_DARK_FENCE, GenerationsWood.ULTRA_DARK_FENCE_GATE, GenerationsWood.ULTRA_DARK_SIGN, GenerationsWood.ULTRA_DARK_WALL_SIGN, GenerationsWood.ULTRA_DARK_CRAFTING_TABLE, GenerationsWood.ULTRA_DARK_HANGING_SIGN, GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN);
-        registerWoodPallet(GenerationsWood.ULTRA_JUNGLE_LOG, GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG, GenerationsWood.ULTRA_JUNGLE_PLANKS, GenerationsWood.ULTRA_JUNGLE_SLAB, GenerationsWood.ULTRA_JUNGLE_STAIRS, GenerationsWood.ULTRA_JUNGLE_BUTTON, GenerationsWood.ULTRA_JUNGLE_PRESSURE_PLATE, GenerationsWood.ULTRA_JUNGLE_DOOR, GenerationsWood.ULTRA_JUNGLE_TRAPDOOR, GenerationsWood.ULTRA_JUNGLE_WOOD, GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD, GenerationsWood.ULTRA_JUNGLE_FENCE, GenerationsWood.ULTRA_JUNGLE_FENCE_GATE, GenerationsWood.ULTRA_JUNGLE_SIGN, GenerationsWood.ULTRA_JUNGLE_WALL_SIGN, GenerationsWood.ULTRA_JUNGLE_CRAFTING_TABLE, GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN, GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN);
-        registerWoodPallet(GenerationsWood.GHOST_LOG, GenerationsWood.STRIPPED_GHOST_LOG, GenerationsWood.GHOST_PLANKS, GenerationsWood.GHOST_SLAB, GenerationsWood.GHOST_STAIRS, GenerationsWood.GHOST_BUTTON, GenerationsWood.GHOST_PRESSURE_PLATE, GenerationsWood.GHOST_DOOR, GenerationsWood.GHOST_TRAPDOOR, GenerationsWood.GHOST_WOOD, GenerationsWood.STRIPPED_GHOST_WOOD, GenerationsWood.GHOST_FENCE, GenerationsWood.GHOST_FENCE_GATE, GenerationsWood.GHOST_SIGN, GenerationsWood.GHOST_WALL_SIGN, GenerationsWood.GHOST_CRAFTING_TABLE, GenerationsWood.GHOST_HANGING_SIGN, GenerationsWood.GHOST_WALL_HANGING_SIGN);
+        registerWoodPallet(GenerationsWood.ULTRA_DARK_LOG, GenerationsWood.STRIPPED_ULTRA_DARK_LOG, GenerationsWood.ULTRA_DARK_PLANKS, GenerationsWood.ULTRA_DARK_SLAB, GenerationsWood.ULTRA_DARK_STAIRS, GenerationsWood.ULTRA_DARK_BUTTON, GenerationsWood.ULTRA_DARK_PRESSURE_PLATE, GenerationsWood.ULTRA_DARK_DOOR, GenerationsWood.ULTRA_DARK_TRAPDOOR, GenerationsWood.ULTRA_DARK_WOOD, GenerationsWood.STRIPPED_ULTRA_DARK_WOOD, GenerationsWood.ULTRA_DARK_FENCE, GenerationsWood.ULTRA_DARK_FENCE_GATE, GenerationsWood.ULTRA_DARK_SIGN, GenerationsWood.ULTRA_DARK_WALL_SIGN, GenerationsWood.ULTRA_DARK_CRAFTING_TABLE, GenerationsWood.ULTRA_DARK_HANGING_SIGN, GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN, GenerationsWood.ULTRA_DARK_BOOKSHELF);
+        registerWoodPallet(GenerationsWood.ULTRA_JUNGLE_LOG, GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG, GenerationsWood.ULTRA_JUNGLE_PLANKS, GenerationsWood.ULTRA_JUNGLE_SLAB, GenerationsWood.ULTRA_JUNGLE_STAIRS, GenerationsWood.ULTRA_JUNGLE_BUTTON, GenerationsWood.ULTRA_JUNGLE_PRESSURE_PLATE, GenerationsWood.ULTRA_JUNGLE_DOOR, GenerationsWood.ULTRA_JUNGLE_TRAPDOOR, GenerationsWood.ULTRA_JUNGLE_WOOD, GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD, GenerationsWood.ULTRA_JUNGLE_FENCE, GenerationsWood.ULTRA_JUNGLE_FENCE_GATE, GenerationsWood.ULTRA_JUNGLE_SIGN, GenerationsWood.ULTRA_JUNGLE_WALL_SIGN, GenerationsWood.ULTRA_JUNGLE_CRAFTING_TABLE, GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN, GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN, GenerationsWood.ULTRA_JUNGLE_BOOKSHELF);
+        registerWoodPallet(GenerationsWood.GHOST_LOG, GenerationsWood.STRIPPED_GHOST_LOG, GenerationsWood.GHOST_PLANKS, GenerationsWood.GHOST_SLAB, GenerationsWood.GHOST_STAIRS, GenerationsWood.GHOST_BUTTON, GenerationsWood.GHOST_PRESSURE_PLATE, GenerationsWood.GHOST_DOOR, GenerationsWood.GHOST_TRAPDOOR, GenerationsWood.GHOST_WOOD, GenerationsWood.STRIPPED_GHOST_WOOD, GenerationsWood.GHOST_FENCE, GenerationsWood.GHOST_FENCE_GATE, GenerationsWood.GHOST_SIGN, GenerationsWood.GHOST_WALL_SIGN, GenerationsWood.GHOST_CRAFTING_TABLE, GenerationsWood.GHOST_HANGING_SIGN, GenerationsWood.GHOST_WALL_HANGING_SIGN, GenerationsWood.GHOST_BOOKSHELF);
 
         //Cobble Ruins
         registerPallet(GenerationsBlocks.COBBLE_RUINS_1, GenerationsBlocks.COBBLE_RUINS_1_SLAB, GenerationsBlocks.COBBLE_RUINS_1_STAIRS, GenerationsBlocks.COBBLE_RUINS_1_WALL, null, null, true);
@@ -775,6 +775,13 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlockWithItem(table.get(), tableModel);
     }
 
+    private void registerBookShelf(RegistrySupplier<Block> bookshelf, RegistrySupplier<Block> plank) {
+        BlockModelBuilder bookshelfModel = models().withExistingParent(bookshelf.getId().toString(), mcLoc("block/cube_column"))
+                .texture("side", GenerationsCore.id("block/" + bookshelf.getId().getPath()))
+                .texture("end", GenerationsCore.id("block/" + plank.getId().getPath()));
+        simpleBlockWithItem(bookshelf.get(), bookshelfModel);
+    }
+
     private void registerInfestedBlock(RegistrySupplier<InfestedBlock> block){
         this.models().withExistingParent(block.getId().toString().replace("infested_", "").concat("_mirrored"), mcLoc("block/cube_mirrored_all"))
                 .texture("all", blockTexture(block.get().getHostBlock()));
@@ -838,7 +845,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         }
     }
 
-    private void registerWoodPallet(RegistrySupplier<RotatedPillarBlock> Log, RegistrySupplier<RotatedPillarBlock> StrippedLog, RegistrySupplier<Block> Plank, RegistrySupplier<SlabBlock> slab, RegistrySupplier<StairBlock> stair, RegistrySupplier<ButtonBlock> button, RegistrySupplier<PressurePlateBlock> pressurePlate, RegistrySupplier<DoorBlock> door, RegistrySupplier<TrapDoorBlock> trapDoor, RegistrySupplier<Block> wood, RegistrySupplier<Block> StrippedWood, RegistrySupplier<FenceBlock> fence, RegistrySupplier<FenceGateBlock> gate, RegistrySupplier<StandingSignBlock> sign, RegistrySupplier<WallSignBlock> wallSign, RegistrySupplier<GenerationsCraftingTableBlock> craftingTable, RegistrySupplier<CeilingHangingSignBlock> hangingSignBlock, RegistrySupplier<WallHangingSignBlock> wallHangingSignBlock){
+    private void registerWoodPallet(RegistrySupplier<RotatedPillarBlock> Log, RegistrySupplier<RotatedPillarBlock> StrippedLog, RegistrySupplier<Block> Plank, RegistrySupplier<SlabBlock> slab, RegistrySupplier<StairBlock> stair, RegistrySupplier<ButtonBlock> button, RegistrySupplier<PressurePlateBlock> pressurePlate, RegistrySupplier<DoorBlock> door, RegistrySupplier<TrapDoorBlock> trapDoor, RegistrySupplier<Block> wood, RegistrySupplier<Block> StrippedWood, RegistrySupplier<FenceBlock> fence, RegistrySupplier<FenceGateBlock> gate, RegistrySupplier<StandingSignBlock> sign, RegistrySupplier<WallSignBlock> wallSign, RegistrySupplier<GenerationsCraftingTableBlock> craftingTable, RegistrySupplier<CeilingHangingSignBlock> hangingSignBlock, RegistrySupplier<WallHangingSignBlock> wallHangingSignBlock, RegistrySupplier<Block> bookshelf){
         if(!registered(Log.get())) registerLog(Log);
         if(!registered(StrippedLog.get())) registerLog(StrippedLog);
         if(!registered(Plank.get())) registerBlockItem(Plank);
@@ -855,5 +862,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         if(!registered(sign.get())) registerSign(sign.get(), wallSign.get(), Plank.get());
         if(!registered(hangingSignBlock.get())) registerHangingSign(hangingSignBlock.get(), wallHangingSignBlock.get(), StrippedLog.get());
         if(!registered(craftingTable.get())) registerCraftingTable(craftingTable, Plank);
+        if (!registered(bookshelf.get())) registerBookShelf(bookshelf, Plank);
     }
 }
