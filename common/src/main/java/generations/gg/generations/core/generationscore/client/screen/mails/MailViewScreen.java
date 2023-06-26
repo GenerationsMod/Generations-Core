@@ -10,7 +10,6 @@ import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.GameNarrator;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -248,7 +247,6 @@ public class MailViewScreen extends Screen {
 
         @Override
         public FormattedText getContents() {
-            String string = this.pages;
             /*try {
                 MutableComponent formattedText = Component.Serializer.fromJson(string);
                 if (formattedText != null) {
@@ -258,7 +256,7 @@ public class MailViewScreen extends Screen {
             catch (Exception exception) {
                 // empty catch block
             }*/
-            return FormattedText.of(string);
+            return FormattedText.of(this.pages);
         }
 
         @Override

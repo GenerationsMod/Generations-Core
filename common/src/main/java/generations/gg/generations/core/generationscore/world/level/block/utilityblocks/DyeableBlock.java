@@ -88,7 +88,7 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
+    public @NotNull ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
         return new ItemStack(getItemFromDyeColor(getAssoicatedBlockEntity(blockGetter, blockPos).map(DyedVariantBlockEntity::getColor).orElse(DyeColor.RED)));
     }
 

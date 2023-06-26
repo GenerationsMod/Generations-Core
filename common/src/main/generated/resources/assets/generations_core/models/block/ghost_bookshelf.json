@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "generations_core:block/ghost_planks",
+    "side": "generations_core:block/ghost_bookshelf"
+  }
+}

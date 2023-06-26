@@ -76,7 +76,7 @@ public class GenerationsChestBoatEntity extends GenerationsBoatEntity implements
         super.remove(removalReason);
     }
 
-    public InteractionResult interact(Player player, InteractionHand interactionHand) {
+    public @NotNull InteractionResult interact(Player player, InteractionHand interactionHand) {
         if (this.canAddPassenger(player) && !player.isSecondaryUseActive()) {
             return super.interact(player, interactionHand);
         } else {
@@ -107,15 +107,15 @@ public class GenerationsChestBoatEntity extends GenerationsBoatEntity implements
         return 27;
     }
 
-    public ItemStack getItem(int i) {
+    public @NotNull ItemStack getItem(int i) {
         return this.getChestVehicleItem(i);
     }
 
-    public ItemStack removeItem(int i, int j) {
+    public @NotNull ItemStack removeItem(int i, int j) {
         return this.removeChestVehicleItem(i, j);
     }
 
-    public ItemStack removeItemNoUpdate(int i) {
+    public @NotNull ItemStack removeItemNoUpdate(int i) {
         return this.removeChestVehicleItemNoUpdate(i);
     }
 
@@ -123,7 +123,7 @@ public class GenerationsChestBoatEntity extends GenerationsBoatEntity implements
         this.setChestVehicleItem(i, itemStack);
     }
 
-    public SlotAccess getSlot(int i) {
+    public @NotNull SlotAccess getSlot(int i) {
         return this.getChestVehicleSlot(i);
     }
 
@@ -165,7 +165,7 @@ public class GenerationsChestBoatEntity extends GenerationsBoatEntity implements
         this.lootTableSeed = l;
     }
 
-    public NonNullList<ItemStack> getItemStacks() {
+    public @NotNull NonNullList<ItemStack> getItemStacks() {
         return this.itemStacks;
     }
 

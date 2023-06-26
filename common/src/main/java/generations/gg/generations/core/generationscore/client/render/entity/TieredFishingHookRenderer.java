@@ -95,7 +95,7 @@ public class TieredFishingHookRenderer extends EntityRenderer<TieredFishingHookE
     }
 
     @Override
-    public ResourceLocation getTextureLocation(TieredFishingHookEntity entity) {
+    public @NotNull ResourceLocation getTextureLocation(TieredFishingHookEntity entity) {
         return TEXTURE_LOCATION;
     }
 }

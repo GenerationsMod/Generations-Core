@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GenerationsShovelItem extends ShovelItem implements ToolEffectHolder {
+public class GenerationsShovelItem extends ShovelItem implements ToolEffectHolder<GenerationsShovelItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsShovelItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {

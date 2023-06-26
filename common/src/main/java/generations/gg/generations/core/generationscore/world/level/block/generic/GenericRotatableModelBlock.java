@@ -117,11 +117,10 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
-        var lengthDir = dir;
         var widthDir = dir.getCounterClockWise();
         var heightDir = Direction.UP;
 
-        return BlockPos.betweenClosedStream(pos, pos.relative(widthDir, width).relative(heightDir, height).relative(lengthDir, length)).map(level::getBlockState).allMatch(BlockState::canBeReplaced);
+        return BlockPos.betweenClosedStream(pos, pos.relative(widthDir, width).relative(heightDir, height).relative(dir, length)).map(level::getBlockState).allMatch(BlockState::canBeReplaced);
     }
 
 

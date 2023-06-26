@@ -91,7 +91,7 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
     }
 
     @Override
-    public VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
+    public @NotNull VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
         return Shapes.empty();
     }
 

@@ -242,6 +242,8 @@ public class TagsDatagen {
                     tag(BlockTags.CEILING_HANGING_SIGNS).add(woodBlock);
                 else if (woodBlock instanceof WallHangingSignBlock)
                     tag(BlockTags.WALL_HANGING_SIGNS).add(woodBlock);
+                else if (woodBlock.getName().getString().contains("book"))
+                    tag(Tags.Blocks.BOOKSHELVES).add(woodBlock);
             });
 
             tag(GenerationsBlockTags.GHOST_LOGS).add(GenerationsWood.GHOST_LOG.get(), GenerationsWood.STRIPPED_GHOST_LOG.get());
@@ -332,6 +334,7 @@ public class TagsDatagen {
             copy(GenerationsBlockTags.ULTRA_DARK_LOGS, GenerationsItemTags.ULTRA_DARK_LOGS);
             copy(GenerationsBlockTags.ULTRA_JUNGLE_LOGS, GenerationsItemTags.ULTRA_JUNGLE_LOGS);
             copy(GenerationsBlockTags.GHOST_LOGS, GenerationsItemTags.GHOST_LOGS);
+            copy(Tags.Blocks.BOOKSHELVES, Tags.Items.BOOKSHELVES);
 
             //PokeBricks
             copy(GenerationsBlockTags.POKEBRICKS, GenerationsItemTags.POKEBRICKS);
