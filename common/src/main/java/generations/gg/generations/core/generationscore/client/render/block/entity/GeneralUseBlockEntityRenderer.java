@@ -46,17 +46,28 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
 
         if (blockEntity.objectInstance == null) {
-            blockEntity.objectInstance = new BlockObjectInstance(new Matrix4f(), stack.last().pose(), "");
+            var amount = instanceAmount();
+            blockEntity.objectInstance = new ObjectInstance[amount];
+
+            for (int i = 0; i < amount; i++) {
+                blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
+            }
         }
 
-        if (blockEntity instanceof ModelContextProviders.VariantProvider provider && !blockEntity.objectInstance.materialId().equals(provider.getVariant())) {
-            blockEntity.objectInstance.setVariant(provider.getVariant());
+        var primeInstance = blockEntity.objectInstance[0];
+
+        if (blockEntity instanceof ModelContextProviders.VariantProvider provider && !primeInstance.materialId().equals(provider.getVariant())) {
+            primeInstance.setVariant(provider.getVariant());
         }
 
-        blockEntity.objectInstance.viewMatrix().set(stack.last().pose());
-        ((BlockObjectInstance) blockEntity.objectInstance).setLight(packedLight);
+        primeInstance.viewMatrix().set(stack.last().pose());
+        ((BlockObjectInstance) primeInstance).setLight(packedLight);
 
-        ModelRegistry.get(blockEntity, "block").render(blockEntity.objectInstance, RenderSystem.getProjectionMatrix());
+        ModelRegistry.get(blockEntity, "block").render(primeInstance, RenderSystem.getProjectionMatrix());
+    }
+
+    protected int instanceAmount() {
+        return 1;
     }
 
     protected void renderModelFrameProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
@@ -64,14 +75,19 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
         var model = ModelRegistry.get(blockEntity, "animated_block");
 
-        if (blockEntity.objectInstance == null) {
-            blockEntity.objectInstance = new BlockAnimatedObjectInstance(new Matrix4f(), stack.last().pose(), blockEntity instanceof ModelContextProviders.VariantProvider variantProvider ? variantProvider.getVariant() : null);
+        var amount = instanceAmount();
+        blockEntity.objectInstance = new ObjectInstance[amount];
+
+        for (int i = 0; i < amount; i++) {
+            blockEntity.objectInstance[i] = new BlockAnimatedObjectInstance(new Matrix4f(), new Matrix4f(), blockEntity instanceof ModelContextProviders.VariantProvider variantProvider ? variantProvider.getVariant() : null);
         }
 
-        if (model.renderObject.isReady()) {
-            blockEntity.objectInstance.link(model.renderObject);
+        var primeInstance = blockEntity.objectInstance[0];
 
-            var animationInstance = ((AnimatedObjectInstance) blockEntity.objectInstance);
+        if (model.renderObject.isReady()) {
+            primeInstance.link(model.renderObject);
+
+            var animationInstance = ((AnimatedObjectInstance) primeInstance);
             var animation = animationInstance.getAnimationsIfAvailable().get(blockEntity.getAnimation());
 
             if (animation != null) {
@@ -83,10 +99,10 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             }
         }
 
-        blockEntity.objectInstance.viewMatrix().set(stack.last().pose());
-        ((BlockLightValueProvider) blockEntity.objectInstance).setLight(packedLight);
+        primeInstance.viewMatrix().set(stack.last().pose());
+        ((BlockLightValueProvider) primeInstance).setLight(packedLight);
 
-        var instance = (AnimatedObjectInstance) blockEntity.objectInstance;
+        var instance = (AnimatedObjectInstance) primeInstance;
 
         if(blockEntity instanceof ModelContextProviders.FrameProvider frameProvider && instance.currentAnimation instanceof FixedFrameAnimationInstance fixedAnimation && fixedAnimation.getCurrentTime() != frameProvider.getFrame()) {
             fixedAnimation.setCurrentTime(frameProvider.getFrame());

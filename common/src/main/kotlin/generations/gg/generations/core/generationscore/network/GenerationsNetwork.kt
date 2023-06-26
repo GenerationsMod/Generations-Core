@@ -5,7 +5,6 @@ import com.cobblemon.mod.common.NetworkManager
 import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler
-import com.cobblemon.mod.common.client.net.data.DataRegistrySyncPacketHandler
 import com.cobblemon.mod.common.util.server
 import generations.gg.generations.core.generationscore.GenerationsCore
 import generations.gg.generations.core.generationscore.network.packets.*

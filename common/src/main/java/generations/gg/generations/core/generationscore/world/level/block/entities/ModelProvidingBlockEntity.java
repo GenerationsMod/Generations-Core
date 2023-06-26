@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockLightValueProvider;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import gg.generations.rarecandy.rendering.ObjectInstance;
 import net.minecraft.core.BlockPos;
@@ -11,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
 public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implements ModelContextProviders.ModelProvider {
-    public ObjectInstance objectInstance;
+    public ObjectInstance[] objectInstance;
     private AABB boundingBox;
 
     public ModelProvidingBlockEntity(BlockEntityType<? extends ModelProvidingBlockEntity> type, BlockPos pos, BlockState state) {

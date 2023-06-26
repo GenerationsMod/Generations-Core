@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -89,7 +90,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     protected BlockState createDefaultState() {
-        return setSize(this.getStateDefinition().any().setValue(FACING, Direction.NORTH), 0, 0, 0);
+        return setSize(super.createDefaultState().setValue(FACING, Direction.NORTH), 0, 0, 0);
     }
 
     @Override
@@ -175,7 +176,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     @Override
     public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
-        if(canSurvive(state, level, currentPos)) return state;
+        if(canSurvive(state, level, currentPos)) return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
         else return Blocks.AIR.defaultBlockState();
     }
 
@@ -213,7 +214,8 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
             for (int y = 0; y <= height; y++) {
                 for (int z = 0; z <= length; z++) {
                     if(x == 0 && y == 0 && z == 0) continue;
-                    level.setBlock(pos.relative(rightDir, x).relative(Direction.UP, y).relative(backDir, z), setSize(state, x, y, z), 2);
+                    var blockPos = pos.relative(rightDir, x).relative(Direction.UP, y).relative(backDir, z);
+                    level.setBlock(blockPos, setSize(state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER), x, y, z), 2);
                 }
             }
         }

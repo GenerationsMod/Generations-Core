@@ -292,6 +292,8 @@ public class GenerationsBlockEntities {
             GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get()
     ).build(null));
 
+    public static final RegistrySupplier<BlockEntityType<PcBlockEntity>> PC = BLOCK_ENTITIES.register("pc", () -> BlockEntityType.Builder.of(PcBlockEntity::new, GenerationsUtilityBlocks.PC.get()).build(null));
+
 
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Block Entities");

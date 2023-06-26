@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.function.Function;
 
-public abstract class DoubleDyeableBlock<T extends DyedVariantBlockEntity, V extends DoubleDyeableBlock<T, V>> extends DyeableBlock<T, V> {
+public abstract class DoubleDyeableBlock<T extends DyedVariantBlockEntity<?>, V extends DoubleDyeableBlock<T, V>> extends DyeableBlock<T, V> {
     public DoubleDyeableBlock(Function<DyeColor, DyedBlockItem<V>> function, RegistrySupplier<BlockEntityType<T>> biFunction, Properties arg, ResourceLocation model) {
         super(function, biFunction, arg, model, 0, 1, 0);
     }

@@ -121,7 +121,7 @@ public class GenerationsCoreClient {
      */
     public static void registerBlockEntityRenderers(BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> consumer) {
         consumer.accept(GenerationsBlockEntities.POKE_DOLL.get(), GeneralUseBlockEntityRenderer::new);
-        consumer.accept(GenerationsBlockEntities.HEALER.get(), GeneralUseBlockEntityRenderer::new);
+        consumer.accept(GenerationsBlockEntities.HEALER.get(), HealerBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.CLOCK.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BOX.get(), GeneralUseBlockEntityRenderer::new);
 
@@ -145,6 +145,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BALL_DISPLAY.get(), GeneralUseBlockEntityRenderer::new);
+        consumer.accept(GenerationsBlockEntities.PC.get(), GeneralUseBlockEntityRenderer::new);
     }
 
     public static void registerLayerDefinitions(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {

@@ -11,7 +11,7 @@ import generations.gg.generations.core.generationscore.world.dialogue.nodes.Abst
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 
-class DialogueGraphRegistrySyncPacket(graphs: Map<ResourceLocation, DialogueGraph>): DataRegistrySyncPacket<DialogueGraph, DialogueGraphRegistrySyncPacket>(graphs) {
+class DialogueGraphRegistrySyncPacket(graphs: MutableMap<ResourceLocation, DialogueGraph>): DataRegistrySyncPacket<DialogueGraph, DialogueGraphRegistrySyncPacket>(graphs) {
     override val id = ID
 
     override fun encodeEntry(buffer: FriendlyByteBuf, entry: DialogueGraph) {
@@ -24,7 +24,7 @@ class DialogueGraphRegistrySyncPacket(graphs: Map<ResourceLocation, DialogueGrap
 
     companion object {
         val ID = GenerationsCore.id("dialogue_graph_registry_sync")
-        fun decode(buffer: FriendlyByteBuf) = DialogueGraphRegistrySyncPacket(emptyMap()).apply { decodeBuffer(buffer) }
+        fun decode(buffer: FriendlyByteBuf) = DialogueGraphRegistrySyncPacket(mutableMapOf()).apply { decodeBuffer(buffer) }
     }
 }
 

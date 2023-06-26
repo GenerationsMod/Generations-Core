@@ -28,7 +28,7 @@ import java.util.function.Supplier;
 public class GenerationsUtilityBlocks {
 	public static final DeferredRegister<Block> UTILITY_BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 	public static final List<RegistrySupplier<DyedBlockItem<HealerBlock>>> HEALER_BLOCKS = new ArrayList<>();
-	public static final List<RegistrySupplier<DyedBlockItem<PCBlock>>> PC_BLOCKS = new ArrayList<>();
+	public static final List<RegistrySupplier<DyedBlockItem<PcBlock>>> PC_BLOCKS = new ArrayList<>();
 	public static final List<RegistrySupplier<DyedBlockItem<ClockBlock>>> CLOCK_BLOCKS = new ArrayList<>();
 
 	/**
@@ -56,23 +56,23 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> BLACK_HEALER = registerHealer("black_healer", DyeColor.BLACK);
 
 	//PC Blocks
-	public static final RegistrySupplier<PCBlock> PC = registerBlock("pc", () -> new PCBlock(BlockBehaviour.Properties.of(Material.METAL)));
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> WHITE_PC = registerPC("white_pc", DyeColor.WHITE);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> ORANGE_PC = registerPC("orange_pc", DyeColor.ORANGE);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> MAGENTA_PC = registerPC("magenta_pc", DyeColor.MAGENTA);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> LIGHT_BLUE_PC = registerPC("light_blue_pc", DyeColor.LIGHT_BLUE);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> YELLOW_PC = registerPC("yellow_pc", DyeColor.YELLOW);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> LIME_PC = registerPC("lime_pc", DyeColor.LIME);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> PINK_PC = registerPC("pink_pc", DyeColor.PINK);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> GRAY_PC = registerPC("gray_pc", DyeColor.GRAY);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> LIGHT_GRAY_PC = registerPC("light_gray_pc", DyeColor.LIGHT_GRAY);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> CYAN_PC = registerPC("cyan_pc", DyeColor.CYAN);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> PURPLE_PC = registerPC("purple_pc", DyeColor.PURPLE);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> BLUE_PC = registerPC("blue_pc", DyeColor.BLUE);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> BROWN_PC = registerPC("brown_pc", DyeColor.BROWN);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> GREEN_PC = registerPC("green_pc", DyeColor.GREEN);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> RED_PC = registerPC("red_pc", DyeColor.RED);
-	public static final RegistrySupplier<DyedBlockItem<PCBlock>> BLACK_PC = registerPC("black_pc", DyeColor.BLACK);
+	public static final RegistrySupplier<PcBlock> PC = registerBlock("pc", () -> new PcBlock(BlockBehaviour.Properties.of(Material.METAL).lightLevel(PcBlock.Companion::lumiance)));
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> WHITE_PC = registerPC("white_pc", DyeColor.WHITE);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> ORANGE_PC = registerPC("orange_pc", DyeColor.ORANGE);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> MAGENTA_PC = registerPC("magenta_pc", DyeColor.MAGENTA);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> LIGHT_BLUE_PC = registerPC("light_blue_pc", DyeColor.LIGHT_BLUE);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> YELLOW_PC = registerPC("yellow_pc", DyeColor.YELLOW);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> LIME_PC = registerPC("lime_pc", DyeColor.LIME);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> PINK_PC = registerPC("pink_pc", DyeColor.PINK);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> GRAY_PC = registerPC("gray_pc", DyeColor.GRAY);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> LIGHT_GRAY_PC = registerPC("light_gray_pc", DyeColor.LIGHT_GRAY);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> CYAN_PC = registerPC("cyan_pc", DyeColor.CYAN);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> PURPLE_PC = registerPC("purple_pc", DyeColor.PURPLE);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> BLUE_PC = registerPC("blue_pc", DyeColor.BLUE);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> BROWN_PC = registerPC("brown_pc", DyeColor.BROWN);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> GREEN_PC = registerPC("green_pc", DyeColor.GREEN);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> RED_PC = registerPC("red_pc", DyeColor.RED);
+	public static final RegistrySupplier<DyedBlockItem<PcBlock>> BLACK_PC = registerPC("black_pc", DyeColor.BLACK);
 
 	public static final RegistrySupplier<ClockBlock> CLOCK = registerBlock("clock", () -> new ClockBlock(BlockBehaviour.Properties.of(Material.METAL)));
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> WHITE_CLOCK = registerClock("white_clock", DyeColor.WHITE);
@@ -122,7 +122,7 @@ public class GenerationsUtilityBlocks {
 		return item;
 	}
 
-	private static RegistrySupplier<DyedBlockItem<PCBlock>> registerPC(String name, DyeColor color) {
+	private static RegistrySupplier<DyedBlockItem<PcBlock>> registerPC(String name, DyeColor color) {
 		var item = register(name, properties -> new DyedBlockItem<>(PC.get(), color, properties));
 		PC_BLOCKS.add(item);
 		return item;

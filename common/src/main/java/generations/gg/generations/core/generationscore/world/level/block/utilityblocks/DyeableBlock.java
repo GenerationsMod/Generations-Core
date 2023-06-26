@@ -24,7 +24,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 @SuppressWarnings("deprecation")
-public abstract class DyeableBlock<T extends DyedVariantBlockEntity, V extends DyeableBlock<T, V>> extends GenericRotatableModelBlock<T> {
+public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> extends GenericRotatableModelBlock<T> {
     private final Function<DyeColor, DyedBlockItem<V>> function;
 
     public DyeableBlock(Function<DyeColor, DyedBlockItem<V>> function, RegistrySupplier<BlockEntityType<T>> biFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, Properties arg, ResourceLocation model, int width, int height, int length) {

@@ -66,5 +66,6 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation WATER_FLOAT = GenerationsCore.id("models/block/decorations/water_float.pk");
     public static final ResourceLocation WORK_DESK = GenerationsCore.id("models/block/decorations/work_desk.pk");
 
-    public static final ResourceLocation BALL_DISPLAY = GenerationsCore.id("models/block/decorations/ball_display.pk");;
+    public static final ResourceLocation BALL_DISPLAY = GenerationsCore.id("models/block/decorations/ball_display.pk");
+    public static final ResourceLocation POKEBALL = GenerationsCore.id("models/block/utility_blocks/pokeball.pk");;
 }

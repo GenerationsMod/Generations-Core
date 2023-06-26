@@ -4,7 +4,7 @@ import com.cobblemon.mod.common.api.net.NetworkPacket
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 
-abstract class DataRegistrySyncPacket<T, N : NetworkPacket<N>>(internal val registryEntries: Map<ResourceLocation, T>) : NetworkPacket<N> {
+abstract class DataRegistrySyncPacket<T, N : NetworkPacket<N>>(internal val registryEntries: MutableMap<ResourceLocation, T>) : NetworkPacket<N> {
 
     var buffer: FriendlyByteBuf? = null
 

@@ -5,9 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.mojang.brigadier.RedirectModifier;
-import com.mojang.serialization.DataResult;
-import com.mojang.serialization.JsonOps;
 import generations.gg.generations.core.generationscore.world.dialogue.BuiltinDialogues;
 import generations.gg.generations.core.generationscore.world.dialogue.DialogueGraph;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.SayNode;
@@ -32,7 +29,7 @@ public class DialogueDataGen implements DataProvider {
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
 
     private final PackOutput.PathProvider pathResolver;
-    private static Function<DialogueGraph, Optional<JsonElement>> function = JsonOps.INSTANCE.withEncoder(DialogueGraph.CODEC).andThen(DataResult::result);
+    private static Function<DialogueGraph, Optional<JsonElement>> function = null;//JsonOps.INSTANCE.withEncoder(DialogueGraph.CODEC).andThen(DataResult::result);
 
     public DialogueDataGen(PackOutput output) {
         pathResolver = output.createPathProvider(PackOutput.Target.DATA_PACK, "dialogues");
