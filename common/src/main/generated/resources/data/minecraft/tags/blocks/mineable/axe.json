@@ -16,6 +16,7 @@
     "generations_core:ultra_jungle_fence_gate",
     "generations_core:ultra_jungle_sign",
     "generations_core:ultra_jungle_hanging_sign",
+    "generations_core:ultra_jungle_bookshelf",
     "generations_core:ultra_dark_log",
     "generations_core:stripped_ultra_dark_log",
     "generations_core:ultra_dark_wood",
@@ -32,6 +33,7 @@
     "generations_core:ultra_dark_fence_gate",
     "generations_core:ultra_dark_sign",
     "generations_core:ultra_dark_hanging_sign",
+    "generations_core:ultra_dark_bookshelf",
     "generations_core:ghost_log",
     "generations_core:stripped_ghost_log",
     "generations_core:ghost_wood",
@@ -48,6 +50,7 @@
     "generations_core:ghost_fence_gate",
     "generations_core:ghost_sign",
     "generations_core:ghost_hanging_sign",
+    "generations_core:ghost_bookshelf",
     "generations_core:cursed_pumpkin",
     "generations_core:cursed_jack_o_lantern",
     "generations_core:cursed_carved_pumpkin"

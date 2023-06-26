@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
-import dev.architectury.networking.NetworkManager;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.MailItem;
 import net.minecraft.nbt.CompoundTag;
@@ -11,7 +10,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Optional;
-import java.util.function.Supplier;
 
 public record C2SEditMailPacket(int slot, String contents, Optional<String> title) {
     public C2SEditMailPacket(FriendlyByteBuf buf) {

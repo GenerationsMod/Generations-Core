@@ -14,6 +14,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class LitwickCandleBlock extends GenericRotatableModelBlock<GenericModelProvidingBlockEntity> {
     public static final GenerationsVoxelShapes.DirectionalShapes SHAPES = GenerationsVoxelShapes.generateDirectionVoxelShape(Shapes.join(Shapes.box(0.3125, 0, 0.3125, 0.6875, 0.3125, 0.6875), Shapes.box(0.4375, 0.34375, 0.4375, 0.5625, 0.5, 0.5625), BooleanOp.OR), Direction.NORTH);
@@ -23,7 +24,7 @@ public class LitwickCandleBlock extends GenericRotatableModelBlock<GenericModelP
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPES.getShape(state);
     }
 }

@@ -18,6 +18,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.vehicle.Boat;
+import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
 
 import java.util.Map;
@@ -93,7 +94,7 @@ public class GenerationsBoatRenderer extends EntityRenderer<GenerationsBoatEntit
     }
 
     @Override
-    public ResourceLocation getTextureLocation(GenerationsBoatEntity boat) {
+    public @NotNull ResourceLocation getTextureLocation(GenerationsBoatEntity boat) {
         return this.boatResources.get(boat.getModBoatType()).getFirst();
     }
 }

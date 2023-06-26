@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.network;
 
 import dev.architectury.networking.NetworkChannel;
-import dev.architectury.networking.NetworkManager;
 import dev.architectury.platform.Platform;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.C2SEditMailPacket;

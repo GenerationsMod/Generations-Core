@@ -19,6 +19,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
 public class VendingMachineBlock extends DoubleDyeableBlock<VendingMachineBlockEntity, VendingMachineBlock> {
@@ -30,7 +31,7 @@ public class VendingMachineBlock extends DoubleDyeableBlock<VendingMachineBlockE
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return state.is(this) ? (getHeightValue(state) == 1 ? UPPER : LOWER).getShape(state) : Shapes.block();
     }
 

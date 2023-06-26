@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/fence_post",
-  "textures": {
-    "texture": "generations_core:block/yellow_picket_fence"
-  }
-}

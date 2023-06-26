@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_dark_planks"
+    },
+    "X": {
+      "tag": "minecraft:bookshelf_books"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "item": "generations_core:ultra_dark_bookshelf"
+  },
+  "show_notification": true
+}
