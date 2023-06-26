@@ -1055,30 +1055,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsArmor.WATER_STONE_LEGGINGS, "armor/");
         createItem(GenerationsArmor.WATER_STONE_BOOTS, "armor/");
 
-        toolSet(GenerationsTools.CHARGE_STONE);
-        toolSet(GenerationsTools.VOLCANIC_STONE);
-        toolSet(GenerationsTools.ALUMINUM);
-        toolSet(GenerationsTools.AMETHYST);
-        toolSet(GenerationsTools.CRYSTAL);
-        toolSet(GenerationsTools.DAWN_STONE);
-        toolSet(GenerationsTools.DUSK_STONE);
-        toolSet(GenerationsTools.FIRE_STONE);
-        toolSet(GenerationsTools.ICE_STONE);
-        toolSet(GenerationsTools.LEAF_STONE);
-        toolSet(GenerationsTools.MOON_STONE);
-        toolSet(GenerationsTools.RUBY);
-        toolSet(GenerationsTools.SAPPHIRE);
-        toolSet(GenerationsTools.SILICON);
-        toolSet(GenerationsTools.SUN_STONE);
-        toolSet(GenerationsTools.THUNDER_STONE);
-        toolSet(GenerationsTools.WATER_STONE);
-        handheldItem(GenerationsTools.DIAMOND_HAMMER, "tools/");
-        handheldItem(GenerationsTools.GOLDEN_HAMMER, "tools/");
-        handheldItem(GenerationsTools.IRON_HAMMER, "tools/");
-        handheldItem(GenerationsTools.NETHERITE_HAMMER, "tools/");
-        handheldItem(GenerationsTools.STONE_HAMMER, "tools/");
-        handheldItem(GenerationsTools.WOODEN_HAMMER, "tools/");
-
+        GenerationsTools.TOOLS.forEach(this::handheldItem);
 
         createItem(GenerationsItems.MARK_CHARM, "player_items/");
         createItem(GenerationsItems.CATCHING_CHARM, "player_items/");
@@ -1753,15 +1730,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItemBlock(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY, "item/blocks/ball_displays/");
     }
 
-    private void toolSet(GenerationsTools.ToolSet toolSet) {
-        handheldItem(toolSet.axe(), "tools/");
-        handheldItem(toolSet.hoe(), "tools/");
-        handheldItem(toolSet.hammer(), "tools/");
-        handheldItem(toolSet.pickaxe(), "tools/");
-        handheldItem(toolSet.sword(), "tools/");
-        handheldItem(toolSet.shovel(), "tools/");
-    }
-
     private void createCurry() {
         ItemModelBuilder model = generated(GenerationsItems.CURRY.getId().getPath(), CurryType.None.getResourceLocation());
 
@@ -1865,9 +1833,9 @@ public class ItemDatagen extends ItemModelProvider {
         }
     }
 
-    private <T extends Item> void handheldItem(RegistrySupplier<T> item, String directory) {
+    private <T extends Item> void handheldItem(RegistrySupplier<T> item) {
         withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(GenerationsCore.MOD_ID, "item/" + directory + item.getId().getPath()));
+                new ResourceLocation(GenerationsCore.MOD_ID, "item/tools/" + item.getId().getPath()));
     }
 }
