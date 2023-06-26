@@ -4,6 +4,9 @@
   "package": "generations.gg.generations.core.generationscore.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BaseFireBlockMixin",
+    "BlockMixin",
+    "PortalShapeMixin"
   ],
   "client": [
   ],
