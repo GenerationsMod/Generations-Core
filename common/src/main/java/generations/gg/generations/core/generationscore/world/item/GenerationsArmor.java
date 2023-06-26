@@ -47,13 +47,14 @@ public class GenerationsArmor {
 	public static final ArmorSet WATER_STONE = ArmorSet.create("water_stone", GenerationsArmorMaterials.WATER_STONE);
 
 
-	public record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots) {
+	public record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, ArmorMaterial armorMaterial) {
 		public static ArmorSet create(String name, ArmorMaterial armorMaterial) {
 			return new ArmorSet(
 					register(name + "_helmet", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.HELMET, properties)),
 					register(name + "_chestplate", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.CHESTPLATE, properties)),
 					register(name + "_leggings", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.LEGGINGS, properties)),
-					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.BOOTS, properties))
+					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial, ArmorItem.Type.BOOTS, properties)),
+					armorMaterial
 			);
 		}
 
