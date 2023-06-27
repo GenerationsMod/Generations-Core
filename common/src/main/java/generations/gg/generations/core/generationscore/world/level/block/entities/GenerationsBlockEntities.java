@@ -293,6 +293,13 @@ public class GenerationsBlockEntities {
     ).build(null));
 
     public static final RegistrySupplier<BlockEntityType<PcBlockEntity>> PC = BLOCK_ENTITIES.register("pc", () -> BlockEntityType.Builder.of(PcBlockEntity::new, GenerationsUtilityBlocks.PC.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<PokeLootBlockEntity>> POKE_LOOT = BLOCK_ENTITIES.register("poke_loot", () -> BlockEntityType.Builder.of(PokeLootBlockEntity::new,
+                    GenerationsUtilityBlocks.POKE_LOOT.get(),
+                    GenerationsUtilityBlocks.GREAT_LOOT.get(),
+                    GenerationsUtilityBlocks.ULTRA_LOOT.get(),
+                    GenerationsUtilityBlocks.MASTER_LOOT.get(),
+                    GenerationsUtilityBlocks.BEAST_LOOT.get()
+            ).build(null));
 
 
     public static void init() {

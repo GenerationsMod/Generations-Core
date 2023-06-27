@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.client;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
+import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -11,6 +12,7 @@ import generations.gg.generations.core.generationscore.client.render.block.entit
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
@@ -22,6 +24,9 @@ import generations.gg.generations.core.generationscore.world.item.MelodyFluteIte
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeLootBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
+import gg.generations.rarecandy.rendering.ObjectInstance;
 import kotlin.Unit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
@@ -29,10 +34,7 @@ import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.Entity;
@@ -41,6 +43,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import org.joml.Matrix4f;
 
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
@@ -146,6 +149,37 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BALL_DISPLAY.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.PC.get(), GeneralUseBlockEntityRenderer::new);
+
+        consumer.accept(GenerationsBlockEntities.POKE_LOOT.get(), (BlockEntityRendererProvider<PokeLootBlockEntity>) context -> (blockEntity, f, stack, multiBufferSource, packedLight, packedOverlay) -> {
+            if (!(blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
+            stack.pushPose();
+            if (blockEntity.objectInstance == null) {
+                blockEntity.objectInstance = new ObjectInstance[1];
+                blockEntity.objectInstance[0] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
+            }
+
+            var primeInstance = blockEntity.objectInstance[0];
+
+            if (!primeInstance.materialId().equals(blockEntity.getVariant())) {
+                primeInstance.setVariant(blockEntity.getVariant());
+            }
+
+
+
+            ((BlockObjectInstance) primeInstance).setLight(packedLight);
+
+
+            ModelRegistry.prepForBER(stack, blockEntity);
+            stack.translate(0, 0.25f, 0);
+
+            var model = ModelRegistry.get(blockEntity, "block");
+            var scale = model.renderObject.scale * 0.5f;
+            stack.scale(scale, scale, scale);
+            primeInstance.viewMatrix().set(stack.last().pose());
+
+            model.render(primeInstance, RenderSystem.getProjectionMatrix());
+            stack.popPose();
+        });
     }
 
     public static void registerLayerDefinitions(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {
