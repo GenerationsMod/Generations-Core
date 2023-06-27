@@ -33,7 +33,7 @@ dependencies {
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 
     //Cobblemon
-    //modImplementation("cobblemon:Cobblemon-Common:1.4.0") { exclude(group = "local.com.bedrockk") }
+    modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
 }
 
 publishing {

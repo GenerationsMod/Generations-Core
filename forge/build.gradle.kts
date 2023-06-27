@@ -68,9 +68,8 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 
     //Cobblemon
-    //modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
-    //modApi("com.bedrockk:molang:1.1.2")
-    //modApi("cobblemon:Cobblemon-Forge:1.4.0:dev-shadow") { exclude(group = "local.com.bedrockk") }
+    modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
+    modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 }
 
 tasks {
