@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import generations.gg.generations.core.generationscore.world.level.IPortalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;

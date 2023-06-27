@@ -2,6 +2,14 @@
   "values": [
     "generations_core:shiny_stone_ore",
     "generations_core:deepslate_shiny_stone_ore",
-    "generations_core:charge_stone_shiny_stone_ore"
+    "generations_core:charge_stone_shiny_stone_ore",
+    {
+      "id": "cobblemon:shiny_stone_ore",
+      "required": false
+    },
+    {
+      "id": "cobblemon:deepslate_shiny_stone_ore",
+      "required": false
+    }
   ]
 }

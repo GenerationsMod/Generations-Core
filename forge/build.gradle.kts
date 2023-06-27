@@ -69,8 +69,7 @@ dependencies {
 
     //Cobblemon
     modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
-    //modApi("com.bedrockk:molang:1.1.2")
-//    modImplementation("com.cobblemon:forge:1.4.0+1.19.4-SNAPSHOT")
+    modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 }
 
 tasks {

@@ -34,9 +34,8 @@ dependencies {
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 
     //Cobblemon
-    modImplementation("com.cobblemon:mod:1.4.0+1.19.4-SNAPSHOT")
     implementation(kotlin("stdlib-jdk8"))
-
+    modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
 }
 
 publishing {

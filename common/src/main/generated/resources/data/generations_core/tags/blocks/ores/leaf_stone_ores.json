@@ -2,6 +2,14 @@
   "values": [
     "generations_core:leaf_stone_ore",
     "generations_core:deepslate_leaf_stone_ore",
-    "generations_core:charge_stone_leaf_stone_ore"
+    "generations_core:charge_stone_leaf_stone_ore",
+    {
+      "id": "cobblemon:leaf_stone_ore",
+      "required": false
+    },
+    {
+      "id": "cobblemon:deepslate_leaf_stone_ore",
+      "required": false
+    }
   ]
 }
