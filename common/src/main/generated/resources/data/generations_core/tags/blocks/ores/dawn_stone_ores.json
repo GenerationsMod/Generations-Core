@@ -2,6 +2,14 @@
   "values": [
     "generations_core:dawn_stone_ore",
     "generations_core:deepslate_dawn_stone_ore",
-    "generations_core:charge_stone_dawn_stone_ore"
+    "generations_core:charge_stone_dawn_stone_ore",
+    {
+      "id": "cobblemon:dawn_stone_ore",
+      "required": false
+    },
+    {
+      "id": "cobblemon:deepslate_dawn_stone_ore",
+      "required": false
+    }
   ]
 }
