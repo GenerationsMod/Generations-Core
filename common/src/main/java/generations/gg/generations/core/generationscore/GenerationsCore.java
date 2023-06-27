@@ -45,10 +45,14 @@ public class GenerationsCore
 	/** The config for the Generations-Core mod. */
 	public static Config CONFIG;
 
+	/** Cobblemon Detection **/
+	public static boolean cobblemon = false;
+
 	/**
 	 * Initializes the Generations-Core mod.
 	 */
-	public static void init() {
+	public static void init(boolean cobblemon) {
+		GenerationsCore.cobblemon = cobblemon;
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
 		GenerationsBlocks.init();
