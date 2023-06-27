@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric.mixin;
 
-import generations.gg.generations.core.generationscore.world.level.IPortalBlock;
+import generations.gg.generations.core.generationscore.world.level.block.IPortalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Blocks;

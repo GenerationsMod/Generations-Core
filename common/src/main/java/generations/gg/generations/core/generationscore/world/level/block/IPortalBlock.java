@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.level;
+package generations.gg.generations.core.generationscore.world.level.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;

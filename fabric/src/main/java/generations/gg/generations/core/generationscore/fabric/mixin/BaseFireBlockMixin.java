@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric.mixin;
 
-import generations.gg.generations.core.generationscore.world.level.IPortalBlock;
+import generations.gg.generations.core.generationscore.world.level.block.IPortalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
@@ -34,7 +34,7 @@ public abstract class BaseFireBlockMixin extends Block {
         for (Direction direction2 : Direction.values()) {
             var pos = mutableBlockPos.set(blockPos).move(direction2);
             var state = level.getBlockState(pos);
-            if (!((IPortalBlock) (Object) state.getBlock()).isPortalFrame(state, level, pos)) continue;
+            if (!((IPortalBlock) state.getBlock()).isPortalFrame(state, level, pos)) continue;
             bl = true;
             break;
         }
