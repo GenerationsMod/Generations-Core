@@ -3,13 +3,14 @@ package generations.gg.generations.core.generationscore.network.packets.dialogue
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler
 import generations.gg.generations.core.generationscore.GenerationsCore.id
+import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket
 import generations.gg.generations.core.generationscore.world.dialogue.DialogueManager
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 
-class C2SRequestNodesDialoguePacket(): NetworkPacket<C2SRequestNodesDialoguePacket> {
+class C2SRequestNodesDialoguePacket(): GenerationsNetworkPacket<C2SRequestNodesDialoguePacket> {
     override val id = ID;
 
     override fun encode(buf: FriendlyByteBuf) {}

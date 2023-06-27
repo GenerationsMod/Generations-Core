@@ -202,7 +202,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var healer = HealerBlock.getBlock(color);
+        var healer = HealerBlock.Companion.getBlock(color);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, healer)
                 .define('E', dye)

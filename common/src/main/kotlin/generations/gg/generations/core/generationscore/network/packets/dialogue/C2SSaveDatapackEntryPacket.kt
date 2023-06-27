@@ -6,12 +6,13 @@ import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonElement
 import generations.gg.generations.core.generationscore.GenerationsCore
+import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 
-class C2SSaveDatapackEntryPacket(private val location: ResourceLocation, data: JsonElement?) : NetworkPacket<C2SSaveDatapackEntryPacket> {
+class C2SSaveDatapackEntryPacket(private val location: ResourceLocation, data: JsonElement?) : GenerationsNetworkPacket<C2SSaveDatapackEntryPacket> {
     private val data: String
 
     override val id = ID

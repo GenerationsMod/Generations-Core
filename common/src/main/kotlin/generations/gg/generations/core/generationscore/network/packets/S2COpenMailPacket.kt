@@ -15,7 +15,7 @@ import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 
-data class S2COpenMailPacket(val hand: InteractionHand): NetworkPacket<S2COpenMailPacket> {
+data class S2COpenMailPacket(val hand: InteractionHand): GenerationsNetworkPacket<S2COpenMailPacket> {
     override val id = ID;
     override fun encode(buf: FriendlyByteBuf) {
         buf.writeEnum(hand)

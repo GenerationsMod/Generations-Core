@@ -13,7 +13,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Inventory
 import java.util.*
 
-class C2SEditMailPacket(val slot: Int, val contents: String, val title: Optional<String>): NetworkPacket<C2SEditMailPacket> {
+class C2SEditMailPacket(val slot: Int, val contents: String, val title: Optional<String>): GenerationsNetworkPacket<C2SEditMailPacket> {
     override val id: ResourceLocation = ID
     override fun encode(buf: FriendlyByteBuf) {
         buf.writeVarInt(slot)

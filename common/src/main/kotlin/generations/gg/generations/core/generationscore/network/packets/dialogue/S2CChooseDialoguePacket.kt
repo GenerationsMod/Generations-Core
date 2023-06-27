@@ -5,11 +5,12 @@ import com.cobblemon.mod.common.api.net.NetworkPacket
 import generations.gg.generations.core.generationscore.GenerationsCore
 import generations.gg.generations.core.generationscore.client.screen.dialgoue.display.DialogueScreen
 import generations.gg.generations.core.generationscore.client.screen.dialgoue.display.DialogueScreen.ChooseActiveInfo
+import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket
 import net.minecraft.client.Minecraft
 import net.minecraft.network.FriendlyByteBuf
 
 
-class S2CChooseDialoguePacket(private val text: String, private val options: List<String>) : NetworkPacket<S2CChooseDialoguePacket> {
+class S2CChooseDialoguePacket(private val text: String, private val options: List<String>) : GenerationsNetworkPacket<S2CChooseDialoguePacket> {
     override val id = ID
 
     override fun encode(buf: FriendlyByteBuf) {

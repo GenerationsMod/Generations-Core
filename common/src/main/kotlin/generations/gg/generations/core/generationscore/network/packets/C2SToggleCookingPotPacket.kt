@@ -9,7 +9,7 @@ import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 
-class C2SToggleCookingPotPacket(val pos: BlockPos): NetworkPacket<C2SToggleCookingPotPacket> {
+class C2SToggleCookingPotPacket(val pos: BlockPos): GenerationsNetworkPacket<C2SToggleCookingPotPacket> {
     override val id = ID;
     constructor(byteBuf: FriendlyByteBuf) : this(byteBuf.readBlockPos())
 

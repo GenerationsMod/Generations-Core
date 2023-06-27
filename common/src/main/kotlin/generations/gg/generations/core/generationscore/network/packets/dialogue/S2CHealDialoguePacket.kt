@@ -4,11 +4,12 @@ import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import generations.gg.generations.core.generationscore.GenerationsCore
 import generations.gg.generations.core.generationscore.client.screen.dialgoue.display.DialogueScreen
+import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket
 import net.minecraft.client.Minecraft
 import net.minecraft.network.FriendlyByteBuf
 
 // TODO delay being able to go to the next node through this packet
-class S2CHealDialoguePacket(private val text: List<String>, private val useNextArrow: Boolean) : NetworkPacket<S2CHealDialoguePacket> {
+class S2CHealDialoguePacket(private val text: List<String>, private val useNextArrow: Boolean) : GenerationsNetworkPacket<S2CHealDialoguePacket> {
     override val id = ID
 
     override fun encode(buf: FriendlyByteBuf) {

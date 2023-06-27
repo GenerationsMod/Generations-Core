@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.network.packets.dialogue
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler
 import generations.gg.generations.core.generationscore.GenerationsCore.id
+import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket
 import generations.gg.generations.core.generationscore.world.dialogue.DialogueManager
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.ResponseTakingNode
 import net.minecraft.network.FriendlyByteBuf
@@ -11,7 +12,7 @@ import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 
 
-class C2SRespondDialoguePacket(private val stringResponse: String): NetworkPacket<C2SRespondDialoguePacket> {
+class C2SRespondDialoguePacket(private val stringResponse: String): GenerationsNetworkPacket<C2SRespondDialoguePacket> {
     override val id: ResourceLocation = ID;
 
     override fun encode(buf: FriendlyByteBuf) {

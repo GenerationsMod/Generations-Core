@@ -4,10 +4,11 @@ import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import generations.gg.generations.core.generationscore.GenerationsCore
 import generations.gg.generations.core.generationscore.client.screen.dialgoue.display.DialogueScreen
+import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket
 import net.minecraft.client.Minecraft
 import net.minecraft.network.FriendlyByteBuf
 
-class S2COpenDialogueMenuPacket(private val closable: Boolean) : NetworkPacket<S2COpenDialogueMenuPacket> {
+class S2COpenDialogueMenuPacket(private val closable: Boolean) : GenerationsNetworkPacket<S2COpenDialogueMenuPacket> {
     override val id = ID
 
     override fun encode(buf: FriendlyByteBuf) {

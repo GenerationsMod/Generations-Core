@@ -4,10 +4,11 @@ import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import generations.gg.generations.core.generationscore.GenerationsCore.id
 import generations.gg.generations.core.generationscore.client.screen.dialgoue.display.DialogueScreen
+import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket
 import net.minecraft.client.Minecraft
 import net.minecraft.network.FriendlyByteBuf
 
-class S2CSayDialoguePacket: NetworkPacket<S2CSayDialoguePacket> {
+class S2CSayDialoguePacket: GenerationsNetworkPacket<S2CSayDialoguePacket> {
     private val text: List<String>
     private val useNextArrow: Boolean
 

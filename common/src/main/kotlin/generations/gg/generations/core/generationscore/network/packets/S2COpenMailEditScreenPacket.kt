@@ -11,7 +11,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.world.InteractionHand
 
-data class S2COpenMailEditScreenPacket(@JvmField val hand: InteractionHand): NetworkPacket<S2COpenMailEditScreenPacket> {
+data class S2COpenMailEditScreenPacket(@JvmField val hand: InteractionHand): GenerationsNetworkPacket<S2COpenMailEditScreenPacket> {
     override val id = ID
     override fun encode(buf: FriendlyByteBuf) {
         buf.writeEnum(hand)

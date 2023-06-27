@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import generations.gg.generations.core.generationscore.GenerationsCore
 import generations.gg.generations.core.generationscore.client.screen.dialgoue.configure.ConfigureDialogueScreen
+import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket
 import generations.gg.generations.core.generationscore.world.dialogue.DialogueGraph
 import generations.gg.generations.core.generationscore.world.dialogue.Dialogues
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.SayNode
@@ -12,7 +13,7 @@ import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 
 
-class S2COpenDialogueEditorScreenPacket(private val location: ResourceLocation) : NetworkPacket<S2COpenDialogueEditorScreenPacket> {
+class S2COpenDialogueEditorScreenPacket(private val location: ResourceLocation) : GenerationsNetworkPacket<S2COpenDialogueEditorScreenPacket> {
 
     override val id = ID
 

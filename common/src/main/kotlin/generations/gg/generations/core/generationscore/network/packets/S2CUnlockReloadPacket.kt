@@ -7,7 +7,7 @@ import generations.gg.generations.core.generationscore.GenerationsDataProvider
 import net.minecraft.client.Minecraft
 import net.minecraft.network.FriendlyByteBuf
 
-class S2CUnlockReloadPacket : NetworkPacket<S2CUnlockReloadPacket> {
+class S2CUnlockReloadPacket : GenerationsNetworkPacket<S2CUnlockReloadPacket> {
     companion object {
         val ID = id("unlock_reload")
 

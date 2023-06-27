@@ -60,7 +60,7 @@ object GenerationsNetwork : NetworkManager {
         decoder: (FriendlyByteBuf) -> T,
         handler: ClientNetworkPacketHandler<T>,
     ) {
-        Cobblemon.implementation.networkManager.createClientBound(identifier, kClass, encoder, decoder, handler)
+        GenerationsCore.implementation.networkManager.createClientBound(identifier, kClass, encoder, decoder, handler)
     }
 
     override fun <T : NetworkPacket<T>> createServerBound(
@@ -70,12 +70,12 @@ object GenerationsNetwork : NetworkManager {
         decoder: (FriendlyByteBuf) -> T,
         handler: ServerNetworkPacketHandler<T>,
     ) {
-        Cobblemon.implementation.networkManager.createServerBound(identifier, kClass, encoder, decoder, handler)
+        GenerationsCore.implementation.networkManager.createServerBound(identifier, kClass, encoder, decoder, handler)
     }
 
-    override fun sendPacketToPlayer(player: ServerPlayer, packet: NetworkPacket<*>) = Cobblemon.implementation.networkManager.sendPacketToPlayer(player, packet)
+    override fun sendPacketToPlayer(player: ServerPlayer, packet: NetworkPacket<*>) = GenerationsCore.implementation.networkManager.sendPacketToPlayer(player, packet)
 
-    override fun sendPacketToServer(packet: NetworkPacket<*>) = Cobblemon.implementation.networkManager.sendPacketToServer(packet)
+    override fun sendPacketToServer(packet: NetworkPacket<*>) = GenerationsCore.implementation.networkManager.sendPacketToServer(packet)
 
-    override fun <T : NetworkPacket<*>> asVanillaClientBound(packet: T): Packet<ClientGamePacketListener> = Cobblemon.implementation.networkManager.asVanillaClientBound(packet)
+    override fun <T : NetworkPacket<*>> asVanillaClientBound(packet: T): Packet<ClientGamePacketListener> = GenerationsCore.implementation.networkManager.asVanillaClientBound(packet)
 }
