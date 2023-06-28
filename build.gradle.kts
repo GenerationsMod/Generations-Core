@@ -28,6 +28,7 @@ subprojects {
         maven("https://maven.impactdev.net/repository/development/")
         maven("https://maven.parchmentmc.org")
     }
+
     @Suppress("UnstableApiUsage")
     dependencies {
         "minecraft"("com.mojang:minecraft:$minecraftVersion")
@@ -59,3 +60,5 @@ allprojects {
 
     java.withSourcesJar()
 }
+
+kotlin.jvmToolchain(17)
