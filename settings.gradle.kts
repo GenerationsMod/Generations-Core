@@ -18,4 +18,4 @@ include("common")
 include("fabric")
 include("forge")
 
-rootProject.name = "Generations-Core"
+rootProject.name = "generations-core"

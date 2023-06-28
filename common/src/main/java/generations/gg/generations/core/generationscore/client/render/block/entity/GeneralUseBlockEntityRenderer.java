@@ -36,22 +36,17 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     }
 
     protected void renderModels(PoseStack stack, T blockEntity, int packedLight) {
-        if(blockEntity.isAnimated()) {
-            renderModelFrameProvider(stack, blockEntity, packedLight);
-        } else {
-            renderModelProvider(stack, blockEntity, packedLight);
-        }
+        if(blockEntity.isAnimated()) renderModelFrameProvider(stack, blockEntity, packedLight);
+        else renderModelProvider(stack, blockEntity, packedLight);
     }
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
 
         if (blockEntity.objectInstance == null) {
-            var amount = instanceAmount();
+            int amount = instanceAmount();
             blockEntity.objectInstance = new ObjectInstance[amount];
 
-            for (int i = 0; i < amount; i++) {
-                blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
-            }
+            for (int i = 0; i < amount; i++) blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
         }
 
         var primeInstance = blockEntity.objectInstance[0];

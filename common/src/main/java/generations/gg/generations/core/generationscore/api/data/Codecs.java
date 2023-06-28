@@ -38,10 +38,7 @@ public class Codecs {
     public record CodecSerializer<T>(Codec<T> codec) implements JsonSerializer<T>, JsonDeserializer<T> {
         @Override
         public T deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-            System.out.println("Rawr: " + json);
-            var dep = JsonOps.INSTANCE.withDecoder(codec).andThen(DataResult::result).apply(json);
-
-            return dep.get().getFirst();
+            return JsonOps.INSTANCE.withDecoder(codec).andThen(DataResult::result).apply(json).orElseThrow().getFirst();
         }
 
         @Override

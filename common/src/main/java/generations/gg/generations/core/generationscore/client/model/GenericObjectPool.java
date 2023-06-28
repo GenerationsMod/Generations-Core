@@ -11,15 +11,12 @@ public class GenericObjectPool<T> {
     public GenericObjectPool(Supplier<T> objectFactory, int maxPoolSize) {
         this.availableObjects = new ArrayDeque<>(maxPoolSize);
         this.usedObjects = new ArrayDeque<>(maxPoolSize);
-        for (int i = 0; i < maxPoolSize; i++) {
-            availableObjects.add(objectFactory.get());
-        }
+        for (int i = 0; i < maxPoolSize; i++) availableObjects.add(objectFactory.get());
     }
 
     public T acquire() {
-        if (availableObjects.isEmpty()) {
-            return null;
-        } else {
+        if (availableObjects.isEmpty()) return null;
+        else {
             T obj = availableObjects.poll();
             usedObjects.add(obj);
             return obj;

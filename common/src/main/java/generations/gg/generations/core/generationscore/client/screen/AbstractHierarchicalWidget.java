@@ -28,9 +28,7 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
 
     public void finishRendering(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
         for (HierarchicalWidget child : getChildren()) {
-            if (child instanceof Renderable rendererChild) {
-                rendererChild.render(poseStack, mouseX, mouseY, partialTick);
-            }
+            if (child instanceof Renderable rendererChild) rendererChild.render(poseStack, mouseX, mouseY, partialTick);
         }
     }
 
@@ -47,9 +45,7 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
     @Override
     public void render(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
         super.render(poseStack, mouseX, mouseY, partialTick);
-        if (this.visible) {
-            this.isHovered = isMouseOver(mouseX, mouseY);
-        }
+        if (this.visible) this.isHovered = isMouseOver(mouseX, mouseY);
     }
 
     @Override
@@ -62,9 +58,7 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
     public void setX(int x) {
         super.setX(x);
 
-        for (var child : getChildren()) {
-            child.onParentMove(getX(), getY());
-        }
+        for (var child : getChildren()) child.onParentMove(getX(), getY());
     }
 
     @Override
@@ -80,9 +74,7 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
     public void setPosition(int x, int y) {
         super.setPosition(x, y);
 
-        for (var child : getChildren()) {
-            child.onParentMove(getX(), getY());
-        }
+        for (var child : getChildren()) child.onParentMove(getX(), getY());
     }
 
     @Override
@@ -93,8 +85,6 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
 
     @Override
     public void onScreenClose(Screen screen) {
-        for (HierarchicalWidget child : getChildren()) {
-            child.onScreenClose(screen);
-        }
+        for (HierarchicalWidget child : getChildren()) child.onScreenClose(screen);
     }
 }
