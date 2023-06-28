@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.model;
 
 import com.cobblemon.mod.common.client.entity.PokemonClientDelegate;
-import com.cobblemon.mod.common.client.render.models.blockbench.BoneCreator;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
@@ -38,7 +37,7 @@ public class BoneCreatorProxy implements Supplier<Bone>, Bone {
     }
 
     @Override
-    public <T extends Entity> void renderBone(T entity, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
+    public <T extends Entity> void render(T entity, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var model = objectSupplier.get();
 
         var instance = entity != null ? ((PixelmonInstanceProvider) entity).getInstance() : ModelRegistry.getInstance();
@@ -68,7 +67,7 @@ public class BoneCreatorProxy implements Supplier<Bone>, Bone {
     }
 
     @Override
-    public void rotateBone(PoseStack poseStack) {
+    public void transform(PoseStack poseStack) {
 
     }
 

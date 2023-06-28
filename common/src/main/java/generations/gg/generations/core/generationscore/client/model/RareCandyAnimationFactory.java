@@ -5,14 +5,13 @@ import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntitySt
 import com.cobblemon.mod.common.client.render.models.blockbench.animation.StatefulAnimation;
 import com.cobblemon.mod.common.client.render.models.blockbench.animation.StatelessAnimation;
 import com.cobblemon.mod.common.client.render.models.blockbench.frame.ModelFrame;
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.AnimationFactory;
+import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.AnimationReferenceFactory;
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import gg.generations.rarecandy.animation.Animation;
 import gg.generations.rarecandy.components.AnimatedMeshObject;
-import gg.generations.rarecandy.components.MultiRenderObject;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
 
-public class RareCandyAnimationFactory extends AnimationFactory {
+public class RareCandyAnimationFactory implements AnimationReferenceFactory {
     public static final float animation_factor = 40f;
 
     @Override
