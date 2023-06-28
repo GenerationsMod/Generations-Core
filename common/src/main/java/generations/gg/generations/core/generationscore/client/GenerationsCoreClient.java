@@ -1,12 +1,11 @@
 package generations.gg.generations.core.generationscore.client;
 
 import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
-import com.mojang.datafixers.util.Pair;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -39,7 +38,10 @@ import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.*;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -66,6 +68,11 @@ public class GenerationsCoreClient {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
 
+        JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
+
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new BoneCreatorProxy(resourceLocation)));
+
+
         PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
         PlatformEvents.CLIENT_PLAYER_LOGOUT.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogout);
     }
@@ -80,11 +87,6 @@ public class GenerationsCoreClient {
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
-
-
-            JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
-
-            VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new BoneCreatorProxy(resourceLocation)));
         });
 
         ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
