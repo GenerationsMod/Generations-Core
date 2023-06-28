@@ -26,11 +26,15 @@ subprojects {
         maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
         maven("https://cursemaven.com").content { includeGroup("curse.maven") }
         maven("https://maven.impactdev.net/repository/development/")
+        maven("https://maven.parchmentmc.org")
     }
-
+    @Suppress("UnstableApiUsage")
     dependencies {
         "minecraft"("com.mojang:minecraft:$minecraftVersion")
-        "mappings"(loom.officialMojangMappings())
+        "mappings"(loom.layered{
+            officialMojangMappings()
+            parchment("org.parchmentmc.data:parchment-$minecraftVersion:${project.properties["parchment"]}@zip")
+        })
 
         compileOnly("org.jetbrains:annotations:24.0.1")
     }
