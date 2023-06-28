@@ -36,7 +36,9 @@ public class CompiledModel {
                     }
                     return glCalls;
                 },
-                object -> {}
+                object -> {
+                    if(object.scale == 0f) object.scale = 1.0f;
+                }
         );
     }
 
@@ -46,6 +48,7 @@ public class CompiledModel {
 
     public void render(ObjectInstance instance, Matrix4f projectionMatrix, ObjectManager objectManager) {
         if (!renderObject.isReady()) return;
+
         Minecraft.getInstance().getProfiler().push("create_model_instance");
         MinecraftClientGameProvider.projMatrix = projectionMatrix;
         objectManager.add(this.renderObject, instance);
