@@ -19,11 +19,6 @@ configurations {
 
 loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
-repositories {
-    maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-    maven("https://maven.bai.lol")
-}
-
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
@@ -46,7 +41,6 @@ dependencies {
     implementation("shadowCommon"("com.thebombzen:jxlatte:1.1.0")!!)
 
     modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")!!
-//    modImplementation(files("../libs/cobblemon/common/1.4.0+1.19.4.jar"))
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
