@@ -1,5 +1,6 @@
-package generations.gg.generations.core.generationscore.world.level.block.entities;
+package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 

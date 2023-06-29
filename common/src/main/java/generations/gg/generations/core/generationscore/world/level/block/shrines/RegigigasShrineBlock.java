@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 import generations.gg.generations.core.generationscore.world.item.RegiOrbItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.world.level.block.entities.RegigigasShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.RegigigasShrineBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 

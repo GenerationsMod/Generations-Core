@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.level.block.entities;
+package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
@@ -6,6 +6,7 @@ import earth.terrarium.botarium.common.item.SerializableContainer;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.RegiOrbItem;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -37,28 +38,21 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
         ItemStack stack = player.getItemInHand(hand);
 
         if (stack.getItem() instanceof RegiOrbItem item && !handler.contains(item)) {
-            int index = OptionalInt.of(getRegiOrbIndex(item)).getAsInt();
-            var remainder = handler.insertItem(index, stack, false);
-            player.setItemInHand(hand, remainder);
-
+            player.setItemInHand(hand, handler.insertItem(OptionalInt.of(getRegiOrbIndex(item)).getAsInt(), stack, false));
             if (handler.isFull()) {
                 toggleActive();
-
-//                level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(BuiltinPixelmonSpecies.REGIGIGAS.location()), getBlockPos())); TODO: enable
+//              level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(BuiltinPixelmonSpecies.REGIGIGAS.location()), getBlockPos())); TODO: enable
                 handler.clear();
                 toggleActive();
                 sync();
             }
-
             return true;
-        } else {
-            for (int i = 0; i < 5; i++) {
+        } else
+            for (int i = 0; i < 5; i++)
                 if (!handler.getItem(i).isEmpty()) {
                     player.getInventory().placeItemBackInInventory(handler.extractItem(i, 1, false));
                     return true;
                 }
-            }
-        }
 
         return false;
     }
@@ -92,9 +86,8 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            if(stack.getItem() instanceof RegiOrbItem orb) {
+            if(stack.getItem() instanceof RegiOrbItem orb)
                 return getItems().stream().map(ItemStack::getItem).filter(RegiOrbItem.class::isInstance).map(RegiOrbItem.class::cast).map(RegiOrbItem::getSpeciesId).noneMatch(a -> a.equals(orb.getSpeciesId()));
-            }
 
             return false;
         }
