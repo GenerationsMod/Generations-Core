@@ -15,6 +15,11 @@ import java.util.function.Consumer;
  * @author J.T. McQuigg, WaterPicker
  */
 public class GenerationsCoreClientForge {
+
+    /**
+     * Initializes the client side of the Forge mod.
+     * @param eventBus The event bus to register the client side of the mod to.
+     */
     public static void init(IEventBus eventBus) {
         eventBus.addListener((Consumer<EntityRenderersEvent.RegisterRenderers>) event -> {
             GenerationsCoreClient.registerBlockEntityRenderers(event::registerBlockEntityRenderer);

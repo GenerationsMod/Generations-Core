@@ -15,6 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -28,20 +29,21 @@ import java.util.List;
 /**
  * Forge Main class for GenerationsCore.
  * @see Mod
- *
  * @see GenerationsCore
- *
  * @author J.T. McQuigg, WaterPicker
  */
 @Mod(GenerationsCore.MOD_ID)
 public class GenerationsCoreForge implements GenerationsImplementation {
     private List<PreparableReloadListener> reloadableResources = new ArrayList<>();
 
+    /**
+     * Sets up Forge side of the mod.
+     * @see FMLJavaModLoadingContext
+     */
     public GenerationsCoreForge() {
         // Submit our event bus to let architectury register our content on the right time
 
-        var MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
-
+        IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));

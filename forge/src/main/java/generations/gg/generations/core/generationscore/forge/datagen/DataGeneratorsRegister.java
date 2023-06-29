@@ -21,6 +21,10 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.Set;
 
+/**
+ * This class is used to register the data generators for the mod.
+ * @see GatherDataEvent
+ */
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = GenerationsCore.MOD_ID)
 public class DataGeneratorsRegister {
 

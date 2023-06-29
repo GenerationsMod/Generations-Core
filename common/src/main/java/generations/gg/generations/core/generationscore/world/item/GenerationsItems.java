@@ -23,7 +23,6 @@ import generations.gg.generations.core.generationscore.world.item.creativetab.Ge
 import generations.gg.generations.core.generationscore.world.item.curry.CurryIngredient;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.world.item.curry.ItemCurry;
-import generations.gg.generations.core.generationscore.world.item.tools.NpcPathTool;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.level.block.SoftSoilBlock.Mulch;
@@ -1177,8 +1176,6 @@ public class GenerationsItems {
      * Utility Items
      */
     public static final RegistrySupplier<Item> POKEMON_EDITOR = register("pokemon_editor", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> NPC_EDITOR = register("npc_editor", NpcEditorItem::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> NPC_PATH_TOOL = register("npc_path_tool", NpcPathTool::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> CHISEL = register("chisel", StatueEditorItem::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> GIFT_BOX = register("gift_box", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> ZONE_WAND = register("zone_wand", Item::new, GenerationsCreativeTabs.UTILITY);

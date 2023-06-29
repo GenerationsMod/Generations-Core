@@ -14,8 +14,6 @@ gradleEnterprise.buildScan {
     termsOfServiceAgree = "yes"
 }
 
-include("common")
-include("fabric")
-include("forge")
+include("common", "fabric", "forge")
 
 rootProject.name = "generations-core"
