@@ -86,7 +86,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
             this.reloadableResources.add(reloader);
         }
         else {
-            if(Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
+            if(Minecraft.getInstance() != null && Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
         }
     }
 

@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
-import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.Species;
@@ -1691,42 +1689,42 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmonItem(properties, 2, "great_walkmon"), GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmonItem(properties, 3, "ultra_walkmon"), GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmonItem(properties, 4, "master_walkmon"), GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> MUSIC_DISC_BEAST_BALL = createMusicDisc("music_disc_beast_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_CHERISH_BALL = createMusicDisc("music_disc_cherish_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_DIVE_BALL = createMusicDisc("music_disc_dive_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_DREAM_BALL = createMusicDisc("music_disc_dream_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_DUSK_BALL = createMusicDisc("music_disc_dusk_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_FAST_BALL = createMusicDisc("music_disc_fast_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_FEATHER = createMusicDisc("music_disc_feather", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_FRIEND_BALL = createMusicDisc("music_disc_friend_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_GREAT_BALL = createMusicDisc("music_disc_great_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_GS_BALL = createMusicDisc("music_disc_gs_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_HEAL_BALL = createMusicDisc("music_disc_heal_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_HEAVY_BALL = createMusicDisc("music_disc_heavy_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LEADEN_BALL = createMusicDisc("music_disc_leaden_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LEVEL_BALL = createMusicDisc("music_disc_level_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LOVE_BALL = createMusicDisc("music_disc_love_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LURE_BALL = createMusicDisc("music_disc_lure_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LUXURY_BALL = createMusicDisc("music_disc_luxury_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_MASTER_BALL = createMusicDisc("music_disc_master_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_MOON_BALL = createMusicDisc("music_disc_moon_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_NEST_BALL = createMusicDisc("music_disc_nest_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_NET_BALL = createMusicDisc("music_disc_net_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_OLD_POKEBALL_DISC = createMusicDisc("music_disc_old_pokeball_disc", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_ORIGIN_BALL = createMusicDisc("music_disc_origin_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_PARK_BALL = createMusicDisc("music_disc_park_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_POKE_BALL = createMusicDisc("music_disc_poke_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_PREMIER_BALL = createMusicDisc("music_disc_premier_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_QUICK_BALL = createMusicDisc("music_disc_quick_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_REPEAT_BALL = createMusicDisc("music_disc_repeat_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_SAFARI_BALL = createMusicDisc("music_disc_safari_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_SPORT_BALL = createMusicDisc("music_disc_sport_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_STRANGE_BALL = createMusicDisc("music_disc_strange_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_TIMER_BALL = createMusicDisc("music_disc_timer_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_ULTRA_BALL = createMusicDisc("music_disc_ultra_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
+    public static final RegistrySupplier<Item> AZALEA_TOWN_DISC = createMusicDisc("azalea_town_disc", GenerationsSounds.AZALEA_TOWN, 4000);
+    public static final RegistrySupplier<Item> CASCARRAFA_CITY_DISC = createMusicDisc("cascarrafa_city_disc", GenerationsSounds.CASCARRAFA_CITY, 3396);
+    public static final RegistrySupplier<Item> CERULEAN_CITY_DISC = createMusicDisc("cerulean_city_disc", GenerationsSounds.CERULEAN_CITY, 3677);
+    public static final RegistrySupplier<Item> ETERNA_CITY_DISC = createMusicDisc("eterna_city_disc", GenerationsSounds.ETERNA_CITY, 2720);
+    public static final RegistrySupplier<Item> GOLDENROD_CITY_DISC = createMusicDisc("goldenrod_city_disc", GenerationsSounds.GOLDENROD_CITY, 3642);
+    public static final RegistrySupplier<Item> ICIRRUS_CITY_DISC = createMusicDisc("icirrus_city_disc", GenerationsSounds.ICIRRUS_CITY, 2958);
+    public static final RegistrySupplier<Item> JUBILIFE_VILLAGE_DISC = createMusicDisc("jubilife_village_disc", GenerationsSounds.JUBILIFE_VILLAGE, 4048);
+    public static final RegistrySupplier<Item> LAKE_OF_RAGE_DISC = createMusicDisc("lake_of_rage_disc", GenerationsSounds.LAKE_OF_RAGE, 2773);
+    public static final RegistrySupplier<Item> LAVERRE_CITY_DISC = createMusicDisc("laverre_city_disc", GenerationsSounds.LAVERRE_CITY, 5626);
+    public static final RegistrySupplier<Item> LILLIE_DISC = createMusicDisc("lillie_disc", GenerationsSounds.LILLIE, 6241);
+    public static final RegistrySupplier<Item> POKEMON_CENTER_DISC = createMusicDisc("pokemon_center_disc", GenerationsSounds.POKEMON_CENTER, 4806);
+    public static final RegistrySupplier<Item> ROUTE_228_DISC = createMusicDisc("route_228_disc", GenerationsSounds.ROUTE_228, 8374);
+    public static final RegistrySupplier<Item> SLUMBERING_WEALD_DISC = createMusicDisc("slumbering_weald_disc", GenerationsSounds.SLUMBERING_WEALD, 5242);
+    public static final RegistrySupplier<Item> SURF_DISC = createMusicDisc("surf_disc", GenerationsSounds.SURF, 5230);
+    public static final RegistrySupplier<Item> VERMILION_CITY_DISC = createMusicDisc("vermilion_city_disc", GenerationsSounds.VERMILION_CITY, 4320);
+    public static final RegistrySupplier<Item> CYNTHIA_DISC = createMusicDisc("cynthia_disc", GenerationsSounds.CYNTHIA, 7705);
+    public static final RegistrySupplier<Item> DEOXYS_DISC = createMusicDisc("deoxys_disc", GenerationsSounds.DEOXYS, 8290);
+    public static final RegistrySupplier<Item> IRIS_DISC = createMusicDisc("iris_disc", GenerationsSounds.IRIS, 5824);
+    public static final RegistrySupplier<Item> KANTO_DISC = createMusicDisc("kanto_disc", GenerationsSounds.KANTO, 6748);
+    public static final RegistrySupplier<Item> LUSAMINE_DISC = createMusicDisc("lusamine_disc", GenerationsSounds.LUSAMINE, 6756);
+    public static final RegistrySupplier<Item> NEMONA_DISC = createMusicDisc("nemona_disc", GenerationsSounds.NEMONA, 3169);
+    public static final RegistrySupplier<Item> NESSA_DISC = createMusicDisc("nessa_disc", GenerationsSounds.NESSA, 5276);
+    public static final RegistrySupplier<Item> PENNY_DISC = createMusicDisc("penny_disc", GenerationsSounds.PENNY, 5342);
+    public static final RegistrySupplier<Item> RIVAL_DISC = createMusicDisc("rival_disc", GenerationsSounds.RIVAL, 4426);
+    public static final RegistrySupplier<Item> SADA_AND_TURO_DISC = createMusicDisc("sada_and_turo_disc", GenerationsSounds.SADA_AND_TURO, 6974);
+    public static final RegistrySupplier<Item> SOUTH_PROVINCE_DISC = createMusicDisc("south_province_disc", GenerationsSounds.SOUTH_PROVINCE, 4285);
+    public static final RegistrySupplier<Item> TEAM_ROCKET_DISC = createMusicDisc("team_rocket_disc", GenerationsSounds.TEAM_ROCKET, 3729);
+    public static final RegistrySupplier<Item> ULTRA_NECROZMA_DISC = createMusicDisc("ultra_necrozma_disc", GenerationsSounds.ULTRA_NECROZMA, 5925);
+    public static final RegistrySupplier<Item> XY_LEGENDARY_DISC = createMusicDisc("xy_legendary_disc", GenerationsSounds.XY_LEGENDARY, 5216);
+    public static final RegistrySupplier<Item> ZINNIA_DISC = createMusicDisc("zinnia_disc", GenerationsSounds.ZINNIA, 6409);
+    public static final RegistrySupplier<Item> LAVENDER_TOWN_DISC = createMusicDisc("lavender_town_disc", GenerationsSounds.LAVENDER_TOWN, 7376);
+    public static final RegistrySupplier<Item> LUGIA_DISC = createMusicDisc("lugia_disc", GenerationsSounds.LUGIA, 6825);
+    public static final RegistrySupplier<Item> MT_PYRE_DISC = createMusicDisc("mt_pyre_disc", GenerationsSounds.MT_PYRE, 4372);
 
-    private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound) {
-        return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, 10000), GenerationsCreativeTabs.UNIMPLEMENTED);
+    private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound, int ticks) {
+        return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, ticks), GenerationsCreativeTabs.UNIMPLEMENTED);
     }
 
     public static Item.Properties of() {

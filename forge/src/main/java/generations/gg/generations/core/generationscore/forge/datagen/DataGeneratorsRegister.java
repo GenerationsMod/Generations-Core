@@ -4,7 +4,6 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.GenerationsBlockStateProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.UltraBlockModelDataGen;
-import generations.gg.generations.core.generationscore.forge.datagen.generators.dialogues.DialogueDataGen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.items.ItemDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.lang.GeneralLang;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.LootTableDatagen;

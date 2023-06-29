@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.lang;
 
 import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -8,10 +9,12 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsToo
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public class GeneralLang extends LanguageProvider {
@@ -34,10 +37,16 @@ public class GeneralLang extends LanguageProvider {
         addBlockEntries(GenerationsUtilityBlocks.UTILITY_BLOCKS, this::getNameGens);
         addBlockEntries(GenerationsOres.ORES, this::getNameGens);
 
-        addItemEntries(GenerationsTools.TOOLS, this::getNameGens);
-        addItemEntries(GenerationsArmor.ARMOR, this::getNameGens);
-        addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
-        addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens);
+        addItemEntries(GenerationsTools.TOOLS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsArmor.ARMOR, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.ITEMS, this::getNameGens, (item, function) -> {
+            var item1 = item.get();
+
+            if(item1 instanceof RecordItem) {
+                add(item.get().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item.getId().toString().replace("_disc", "")));
+            }
+        });
+        addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
         add("item_group.pokeballs", "Poké Balls");
@@ -119,8 +128,11 @@ public class GeneralLang extends LanguageProvider {
         entries.forEach(block -> add(block.get(), function.apply(block.getId().toString())));
     }
 
-    public void addItemEntries(DeferredRegister<Item> entries, Function<String, String> function) {
-        entries.forEach(item -> add(item.get(), function.apply(item.getId().toString())));
+    public void addItemEntries(DeferredRegister<Item> entries, Function<String, String> function, BiConsumer<RegistrySupplier<Item>, Function<String, String>> additionalActions) {
+        entries.forEach(item -> {
+            add(item.get(), function.apply(item.getId().toString()));
+            additionalActions.accept(item, function);
+        });
     }
 
     public void add(@NotNull String key, @NotNull String value) {
