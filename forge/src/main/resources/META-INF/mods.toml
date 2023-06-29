@@ -20,20 +20,27 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 [[dependencies.generations_core]]
    modId="forge"
    mandatory=true #mandatory
-   versionRange="[45,)" #mandatory
+   versionRange="[45.1,)" #mandatory
    ordering="NONE"
    side="BOTH"
 
 [[dependencies.generations_core]]
    modId="minecraft"
    mandatory=true
-   versionRange="[1.19.4,1.20)"
+   versionRange="[1.19.4]"
+   ordering="NONE"
+   side="BOTH"
+
+[[dependencies.generations_core]]
+   modId="architectury"
+   mandatory=true
+   versionRange="[8.1.87,)"
    ordering="NONE"
    side="BOTH"
 
 [[dependencies.generations_core]]
    modId="cobblemon"
    mandatory=false
-   versionRange="[1.4.0+1.19.4-SNAPSHOT]"
+   versionRange="[1.4.0,)"
    ordering="BEFORE"
    side="BOTH"
