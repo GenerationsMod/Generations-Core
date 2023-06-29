@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:golden_temple_prismarine_bricks_stairs"
+          "name": "generations_core:golden_temple_prismarine_brick_slab"
         }
       ],
       "rolls": 1.0

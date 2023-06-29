@@ -4,7 +4,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.ShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
 import net.minecraft.core.BlockPos;

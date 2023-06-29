@@ -1,6 +1,5 @@
-package generations.gg.generations.core.generationscore.world.level.block.entities;
+package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
@@ -8,6 +7,7 @@ import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemCo
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.RegiOrbItem;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
@@ -15,7 +15,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
@@ -41,10 +40,7 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
         ItemStack stack = player.getItemInHand(hand);
 
         if (stack.getItem() instanceof RegiOrbItem item && !handler.contains(item)) {
-            int index = OptionalInt.of(getRegiOrbIndex(item)).getAsInt();
-
-            var remainder = handler.insertItem(index, stack, false);
-            player.setItemInHand(hand, remainder);
+            player.setItemInHand(hand, handler.insertItem(OptionalInt.of(getRegiOrbIndex(item)).getAsInt(), stack, false));
 
             System.out.println(handler.getItems());
 
@@ -58,14 +54,12 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
             sync();
 
             return true;
-        } else {
-            for (int i = 0; i < 5; i++) {
+        } else
+            for (int i = 0; i < 5; i++)
                 if (!handler.getItem(i).isEmpty()) {
                     player.getInventory().placeItemBackInInventory(handler.extractItem(i, 1, false));
                     return true;
                 }
-            }
-        }
 
         return false;
     }
@@ -102,9 +96,7 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
             if(stack.getItem() instanceof RegiOrbItem orb) {
                 Optional<RegiOrbItem> regiOrbItem = getRegiItem(slot).filter(regiOrb -> regiOrb.equals(orb));
 
-                if (regiOrbItem.isPresent()) {
-                    return regiOrbItem.get().equals(orb);
-                }
+                if (regiOrbItem.isPresent()) return regiOrbItem.get().equals(orb);
             }
 
             return false;

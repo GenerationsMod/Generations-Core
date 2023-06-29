@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.level.block.entities;
+package generations.gg.generations.core.generationscore.world.level.block.entities.shrines.altar;
 
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
@@ -8,6 +8,8 @@ import generations.gg.generations.core.generationscore.world.entity.block.Pokemo
 import generations.gg.generations.core.generationscore.world.item.CreationTrioItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.RedChainItem;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -45,14 +47,9 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
             trySpawn(player);
             return true;
         } else if (stack.isEmpty()) {
-            ItemStack chain = handler.extractItem();
-
-            player.getInventory().placeItemBackInInventory(chain);
+            player.getInventory().placeItemBackInInventory(handler.extractItem());
             return true;
-        } else {
-            return false;
-        }
-
+        } else return false;
     }
 
     public void trySpawn(ServerPlayer player) {
@@ -116,11 +113,8 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
 
 
         public ItemStack extractItem() {
-            for (int i = 0; i < 2; i++) {
-                ItemStack stack = getItem(i);
-
-                if (!stack.isEmpty()) return extractItem(i, 1, false);
-            }
+            for (int i = 0; i < 2; i++)
+                if (!getItem(i).isEmpty()) return extractItem(i, 1, false);
 
             return ItemStack.EMPTY;
         }
@@ -130,9 +124,8 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         }
 
         public void dumpAllIntoPlayerInventory(ServerPlayer player) {
-            for (ItemStack stack : getItems()) {
+            for (ItemStack stack : getItems())
                 player.getInventory().placeItemBackInInventory(stack);
-            }
 
             clearContent();
         }

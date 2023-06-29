@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.world.level.block.entities.InteractShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

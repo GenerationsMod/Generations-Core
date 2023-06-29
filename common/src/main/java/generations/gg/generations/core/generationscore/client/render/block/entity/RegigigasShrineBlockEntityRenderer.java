@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.client.render.block.enti
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
-import generations.gg.generations.core.generationscore.world.level.block.entities.RegigigasShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.RegigigasShrineBlockEntity;
 import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;

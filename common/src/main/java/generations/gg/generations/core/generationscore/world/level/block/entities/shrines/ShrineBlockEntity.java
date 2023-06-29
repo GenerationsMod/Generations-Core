@@ -1,6 +1,7 @@
-package generations.gg.generations.core.generationscore.world.level.block.entities;
+package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.ShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;

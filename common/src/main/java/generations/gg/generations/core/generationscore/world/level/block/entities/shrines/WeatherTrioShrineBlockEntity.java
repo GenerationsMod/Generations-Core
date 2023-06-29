@@ -1,6 +1,7 @@
-package generations.gg.generations.core.generationscore.world.level.block.entities;
+package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.WeatherTrioShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,8 +15,7 @@ public class WeatherTrioShrineBlockEntity extends InteractShrineBlockEntity {
     }
 
     public boolean activate(ServerPlayer player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
-        return checkSpawning(player, stack);
+        return checkSpawning(player, player.getItemInHand(hand));
     }
 
     public boolean checkSpawning(ServerPlayer player, ItemStack stack) {
