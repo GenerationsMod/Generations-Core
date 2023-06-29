@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.forge.datagen.data.famili
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.decorations.BeanBagBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.models.model.ModelLocationUtils;
@@ -388,23 +389,10 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "sign");
 
-        /*
-        GenerationsDecorationBlocks.DECORATIONS.forEach(block -> {
-            if (block.get() instanceof BeanBagBlock) registerBlockItemParticle(block, "bean_bags");
-            //else if (block.get() instanceof VendingMachineBlock || block.get() instanceof UmbrellaBlock || block.get() instanceof PastelBeanBagBlock) registerNoModel(block);
-            else registerBlockItemParticle(block, "decorations");
-        });
-         */
 
-        //GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block, "shrines"));
-//      GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> registerBlockItemParticle(block.get().getBlock(), "utility_blocks/pc"));
-        //registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN, "utility_blocks");
-        //registerBlockItemParticle(GenerationsUtilityBlocks.BREEDER, "utility_blocks");
-        //registerBlockItemParticle(GenerationsUtilityBlocks.BOX, "utility_blocks");
-        //registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT, "utility_blocks");
-        //registerNoModel(GenerationsUtilityBlocks.PC);
-        //registerNoModel(GenerationsUtilityBlocks.CLOCK);
-        //registerNoModel(GenerationsUtilityBlocks.HEALER);
+//        GenerationsDecorationBlocks.DECORATIONS.forEach(this::registerNoModel);
+
+        GenerationsShrines.SHRINES.forEach(this::registerNoModel);
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);
         registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE);
@@ -448,6 +436,30 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY, "ball_displays");
         registerBlockItemParticle(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY, "ball_displays");
         registerBlockItemParticle(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY, "ball_displays");
+
+        registerNoModel(GenerationsDecorationBlocks.HOUSE_LAMP);
+        registerNoModel(GenerationsDecorationBlocks.SWITCH);
+        registerNoModel(GenerationsDecorationBlocks.LITWICK_CANDLE);
+        registerNoModel(GenerationsDecorationBlocks.LITWICK_CANDLES);
+        registerNoModel(GenerationsDecorationBlocks.UMBRELLA);
+        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE);
+        registerNoModel(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG);
+        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG);
+        registerNoModel(GenerationsDecorationBlocks.POKEBALL_RUG);
+        registerNoModel(GenerationsDecorationBlocks.WATER_FLOAT);
+        registerNoModel(GenerationsUtilityBlocks.BOX);
+        registerNoModel(GenerationsUtilityBlocks.COOKING_POT);
+        registerNoModel(GenerationsUtilityBlocks.HEALER);
+        registerNoModel(GenerationsUtilityBlocks.PC);
+        registerNoModel(GenerationsUtilityBlocks.CLOCK);
+        registerNoModel(GenerationsUtilityBlocks.TRASH_CAN);
+        registerNoModel(GenerationsUtilityBlocks.BREEDER);
+//        registerBlockItemParticle(GenerationsUtilityBlocks.POKE_LOOT, "");
+//        registerBlockItemParticle(GenerationsUtilityBlocks.POKE_LOOT, "");
+//        registerBlockItemParticle(GenerationsUtilityBlocks.GREAT_LOOT, "");
+//        registerBlockItemParticle(GenerationsUtilityBlocks.ULTRA_LOOT, "");
+//        registerBlockItemParticle(GenerationsUtilityBlocks.MASTER_LOOT, "");
+//        registerBlockItemParticle(GenerationsUtilityBlocks.BEAST_LOOT, "");
     }
 
     private void registerNoModel( RegistrySupplier<? extends Block> block) {
@@ -677,6 +689,11 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         ResourceLocation textureId = key(block.get()).withPrefix("item/blocks/" + name + "/");
         simpleBlock(block.get(), models().sign(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get())).getPath(), textureId));
         itemModels().singleTexture(block.getId().getPath(), new ResourceLocation("minecraft:item/generated"), "layer0", textureId);
+    }
+
+    private void registerBlockParticle(RegistrySupplier<? extends Block> block, String name) {
+        ResourceLocation textureId = key(block.get()).withPrefix("item/blocks/" + name + "/");
+        simpleBlock(block.get(), models().sign(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get())).getPath(), textureId));
     }
 
     private void registerBlockItemParticle(Block block, String name) {

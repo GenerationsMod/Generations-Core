@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsToo
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.jetbrains.annotations.NotNull;
@@ -37,11 +38,11 @@ public class GeneralLang extends LanguageProvider {
         addBlockEntries(GenerationsOres.ORES, this::getNameGens);
 
         addItemEntries(GenerationsTools.TOOLS, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsArmor.ARMOR, this::getNameGens, (item, function) -> {
+        addItemEntries(GenerationsArmor.ARMOR, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.ITEMS, this::getNameGens, (item, function) -> {
             var item1 = item.get();
-            add(item1.getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item.getId().toString().replace("_disc", "")));
+            if(item1 instanceof RecordItem) add(item1.getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item.getId().toString().replace("_disc", "")));
         });
-        addItemEntries(GenerationsItems.ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs

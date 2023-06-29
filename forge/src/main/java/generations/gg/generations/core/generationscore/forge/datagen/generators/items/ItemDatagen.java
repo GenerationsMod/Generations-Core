@@ -1549,7 +1549,6 @@ public class ItemDatagen extends ItemModelProvider {
         GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(block -> createItemBlockDir(block, "umbrellas"));
         GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(block -> createItemBlockDir(block, "rugs"));
         GenerationsDecorationBlocks.WATER_FLOAT_BLOCKS.forEach(block -> createItemBlockDir(block, "water_floats"));
-//        /*
         GenerationsDecorationBlocks.PASTEL_BEAN_BAG_BLOCKS.forEach(block -> createItemBlockDir(block, "bean_bags"));
         GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.forEach(block -> createItemBlockDir(block, "vending_machines"));
 

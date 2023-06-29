@@ -82,12 +82,8 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 
     @Override
     public void registerResourceReloader(@NotNull ResourceLocation identifier, @NotNull PreparableReloadListener reloader, @NotNull PackType type, @NotNull Collection<? extends ResourceLocation> dependencies) {
-        if (type == PackType.SERVER_DATA) {
-            this.reloadableResources.add(reloader);
-        }
-        else {
-            if(Minecraft.getInstance() == null && Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
-        }
+        if (type == PackType.SERVER_DATA) this.reloadableResources.add(reloader);
+        else if(Minecraft.getInstance() != null && Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
     }
 
     @NotNull

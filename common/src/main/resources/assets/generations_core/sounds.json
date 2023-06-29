@@ -2,14 +2,14 @@
   "generations_core.item.lugia_shrine_song": {
     "sounds": [
       {
-        "name": "generations_core:item/lugia_shrine_song",
+        "name": "generations_core:item/lugia_shrine_song"
       }
     ]
   },
   "generations_core.other.ui_click": {
     "sounds": [
       {
-        "name": "generations_core:other/ui_click",
+        "name": "generations_core:other/ui_click"
       }
     ]
   },
