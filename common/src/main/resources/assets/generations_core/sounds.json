@@ -3,7 +3,6 @@
     "sounds": [
       {
         "name": "generations_core:item/lugia_shrine_song",
-        "stream": false
       }
     ]
   },
@@ -11,7 +10,6 @@
     "sounds": [
       {
         "name": "generations_core:other/ui_click",
-        "stream": false
       }
     ]
   },
