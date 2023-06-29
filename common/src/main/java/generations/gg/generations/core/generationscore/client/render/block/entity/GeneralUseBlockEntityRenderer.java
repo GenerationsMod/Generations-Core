@@ -106,8 +106,9 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         model.render(instance, RenderSystem.getProjectionMatrix());
     }
 
-    protected void renderResourceLocation(PoseStack stack, ResourceLocation location) {
-        ModelRegistry.get(location, "block").render(new ObjectInstance(new Matrix4f(), stack.last().pose(), null), RenderSystem.getProjectionMatrix());
+    protected void renderResourceLocation(ResourceLocation location, PoseStack stack, ObjectInstance instance) {
+        instance.transformationMatrix().set(stack.last().pose());
+        ModelRegistry.get(location, "block").render(instance, RenderSystem.getProjectionMatrix());
     }
 
     @Override
