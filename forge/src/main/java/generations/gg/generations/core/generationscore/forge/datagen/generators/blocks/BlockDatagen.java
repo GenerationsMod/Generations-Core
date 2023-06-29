@@ -68,7 +68,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerPallet(GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE, GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_SLAB, GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_STAIRS, GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_WALL, null, null, true);
         registerPallet(GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_SLAB, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_STAIRS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS_SLAB, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS_STAIRS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS_WALL, null, null, true);
+        registerPallet(GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_SLAB, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_STAIRS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_WALL, null, null, true);
 
         //Subway
         registerPallet(GenerationsBlocks.SUBWAY_FLOOR_PLAIN, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_SLAB, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_WALL, null, null, true);

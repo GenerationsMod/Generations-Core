@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:ghost_brick_stair"
+        "recipe": "generations_core:ghost_brick_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "generations_core:ghost_brick_stair"
+      "generations_core:ghost_brick_stairs"
     ]
   }
 }

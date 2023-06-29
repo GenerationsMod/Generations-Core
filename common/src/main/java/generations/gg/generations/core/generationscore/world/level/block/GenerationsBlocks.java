@@ -853,9 +853,9 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<SlabBlock> GOLDEN_TEMPLE_DARK_PRISMARINE_SLAB = registerBlockItem("golden_temple_dark_prismarine_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DARK_PRISMARINE)));
     public static final RegistrySupplier<WallBlock> GOLDEN_TEMPLE_DARK_PRISMARINE_WALL = registerBlockItem("golden_temple_dark_prismarine_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DARK_PRISMARINE)));
     public static final RegistrySupplier<Block> GOLDEN_TEMPLE_PRISMARINE_BRICKS = registerBlockItem("golden_temple_prismarine_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.PRISMARINE_BRICKS)));
-    public static final RegistrySupplier<StairBlock> GOLDEN_TEMPLE_PRISMARINE_BRICKS_STAIRS = registerBlockItem("golden_temple_prismarine_bricks_stairs", () -> new StairBlock(Blocks.PRISMARINE_BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.PRISMARINE_BRICK_STAIRS)));
-    public static final RegistrySupplier<SlabBlock> GOLDEN_TEMPLE_PRISMARINE_BRICKS_SLAB = registerBlockItem("golden_temple_prismarine_bricks_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.PRISMARINE_BRICKS)));
-    public static final RegistrySupplier<WallBlock> GOLDEN_TEMPLE_PRISMARINE_BRICKS_WALL = registerBlockItem("golden_temple_prismarine_bricks_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.PRISMARINE_BRICKS)));
+    public static final RegistrySupplier<StairBlock> GOLDEN_TEMPLE_PRISMARINE_BRICK_STAIRS = registerBlockItem("golden_temple_prismarine_brick_stairs", () -> new StairBlock(Blocks.PRISMARINE_BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.PRISMARINE_BRICK_STAIRS)));
+    public static final RegistrySupplier<SlabBlock> GOLDEN_TEMPLE_PRISMARINE_BRICK_SLAB = registerBlockItem("golden_temple_prismarine_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.PRISMARINE_BRICKS)));
+    public static final RegistrySupplier<WallBlock> GOLDEN_TEMPLE_PRISMARINE_BRICK_WALL = registerBlockItem("golden_temple_prismarine_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.PRISMARINE_BRICKS)));
 
     /**
      * Floor
@@ -1069,7 +1069,7 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<SlabBlock> ULTRA_CUT_SANDSTONE_SLAB = registerBlockItem("ultra_cut_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ULTRA_CUT_SANDSTONE.get())));
     public static final RegistrySupplier<Block> GHOST_LANTERN = registerBlockItem("ghost_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(.5f).lightLevel((lightLevel) -> 15)));
     public static final RegistrySupplier<Block> GHOST_BRICKS = registerBlockItem("ghost_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> GHOST_BRICK_STAIRS = registerBlockItem("ghost_brick_stair", () -> new StairBlock(GHOST_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(GHOST_BRICKS.get())));
+    public static final RegistrySupplier<StairBlock> GHOST_BRICK_STAIRS = registerBlockItem("ghost_brick_stairs", () -> new StairBlock(GHOST_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(GHOST_BRICKS.get())));
     public static final RegistrySupplier<SlabBlock> GHOST_BRICK_SLAB = registerBlockItem("ghost_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GHOST_BRICKS.get())));
     public static final RegistrySupplier<WallBlock> GHOST_BRICK_WALL = registerBlockItem("ghost_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GHOST_BRICKS.get())));
     public static final RegistrySupplier<Block> GHOST_OBELISK = registerBlockItem("ghost_obelisk", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));

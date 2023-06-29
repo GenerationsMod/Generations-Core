@@ -787,8 +787,6 @@
     "generations_core:sail_fossil",
     "generations_core:skull_fossil",
     "generations_core:pokemon_editor",
-    "generations_core:npc_editor",
-    "generations_core:npc_path_tool",
     "generations_core:chisel",
     "generations_core:gift_box",
     "generations_core:zone_wand",
