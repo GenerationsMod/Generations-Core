@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.tags;
 
 import com.cobblemon.mod.common.CobblemonBlocks;
-import com.cobblemon.mod.common.api.tags.CobblemonBlockTags;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
