@@ -1214,8 +1214,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.HIDDEN_CUBE, "utility_items/");
         createItem(GenerationsItems.CHISEL, "utility_items/");
         createItem(GenerationsItems.GIFT_BOX, "utility_items/");
-        createItem(GenerationsItems.NPC_EDITOR, "utility_items/");
-        createItem(GenerationsItems.NPC_PATH_TOOL, "utility_items/");
         createItem(GenerationsItems.POKEMON_EDITOR, "utility_items/");
         createItem(GenerationsItems.ZONE_WAND, "utility_items/");
         createItem(GenerationsItems.GROTTO_SPAWNER, "utility_items/");
