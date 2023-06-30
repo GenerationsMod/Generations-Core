@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonBlocks;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
@@ -471,6 +472,8 @@ public class TagsDatagen {
             tag(Tags.Items.NUGGETS).add(ALUMINUM_NUGGET.get());
 
             ITEMS.forEach(item -> tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
+            RIBBONS.forEach(ribbon -> tag(GenerationsItemTags.RIBBONS).add(ribbon.get()));
+            tag(GenerationsItemTags.GENERATIONSITEMS).addTag(GenerationsItemTags.RIBBONS);
             POKEBALLS.forEach(pokeball -> tag(GenerationsItemTags.POKEBALLS).add(pokeball.get()));
 
             tag(GenerationsItemTags.POKEMAIL).add(
