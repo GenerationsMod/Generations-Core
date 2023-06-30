@@ -21,8 +21,6 @@ public class ItemCurry extends Item {
         super(properties.stacksTo(64));
     }
 
-
-
     @Override
     public @NotNull Component getName(@NotNull ItemStack stack) {
         CurryData data = ItemCurry.getData(stack);

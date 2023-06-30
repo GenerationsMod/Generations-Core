@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.client;
 
 import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
@@ -25,6 +26,7 @@ import generations.gg.generations.core.generationscore.world.entity.GenerationsB
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
+import generations.gg.generations.core.generationscore.world.item.TechnicalMachineItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
@@ -87,6 +89,30 @@ public class GenerationsCoreClient {
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
+        });
+
+        ItemPropertiesRegistry.register(GenerationsItems.TM.get(), GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
+            var type = TechnicalMachineItem.Companion.getType(arg);
+
+            if(type == ElementalTypes.INSTANCE.getNORMAL()) return 0.00f;
+            else if(type == ElementalTypes.INSTANCE.getFIRE()) return 0.01f;
+            else if(type == ElementalTypes.INSTANCE.getWATER()) return 0.02f;
+            else if(type == ElementalTypes.INSTANCE.getGRASS()) return 0.03f;
+            else if(type == ElementalTypes.INSTANCE.getELECTRIC()) return 0.04f;
+            else if(type == ElementalTypes.INSTANCE.getICE()) return 0.05f;
+            else if(type == ElementalTypes.INSTANCE.getFIGHTING()) return 0.06f;
+            else if(type == ElementalTypes.INSTANCE.getPOISON()) return 0.07f;
+            else if(type == ElementalTypes.INSTANCE.getGROUND()) return 0.08f;
+            else if(type == ElementalTypes.INSTANCE.getFLYING()) return 0.09f;
+            else if(type == ElementalTypes.INSTANCE.getPSYCHIC()) return 0.10f;
+            else if(type == ElementalTypes.INSTANCE.getBUG()) return 0.11f;
+            else if(type == ElementalTypes.INSTANCE.getROCK()) return 0.12f;
+            else if(type == ElementalTypes.INSTANCE.getGHOST()) return 0.13f;
+            else if(type == ElementalTypes.INSTANCE.getDRAGON()) return 0.14f;
+            else if(type == ElementalTypes.INSTANCE.getDARK()) return 0.15f;
+            else if(type == ElementalTypes.INSTANCE.getSTEEL()) return 0.16f;
+            else if(type == ElementalTypes.INSTANCE.getFAIRY()) return 0.17f;
+            else return 0.00f;
         });
 
         ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());

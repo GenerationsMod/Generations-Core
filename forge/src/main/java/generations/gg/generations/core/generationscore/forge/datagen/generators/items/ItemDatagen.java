@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items;
 
+import com.cobblemon.mod.common.api.types.ElementalTypes;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
@@ -1516,6 +1517,7 @@ public class ItemDatagen extends ItemModelProvider {
 
         createCurry();
         createImbuedFlute();
+        createTm();
 
         createItem(GenerationsItems.TUMBLESTONE, "tumblestone/");
         createItem(GenerationsItems.BLACK_TUMBLESTONE, "tumblestone/");
@@ -1652,6 +1654,34 @@ public class ItemDatagen extends ItemModelProvider {
 
             model.override().model(typeModel).predicate(GenerationsCore.id("curry_type"), i).end();
         }
+    }
+
+    private void createTm() {
+        ItemModelBuilder model = generated(GenerationsItems.TM.getId().getPath(), GenerationsCore.id("item/tms/tm_normal"));
+
+        BiConsumer<String, Float> consumer = (name, i) -> {
+            ItemModelBuilder typeModel = generated("item/tms/tm_" + name, GenerationsCore.id("item/tms/tm_" + name));
+            model.override().model(typeModel).predicate(GenerationsCore.id("type"), i).end();
+        };
+
+        consumer.accept("normal", 0.00f);
+        consumer.accept("fire", 0.01f);
+        consumer.accept("water", 0.02f);
+        consumer.accept("grass", 0.03f);
+        consumer.accept("electric", 0.04f);
+        consumer.accept("ice", 0.05f);
+        consumer.accept("fighting", 0.06f);
+        consumer.accept("poison", 0.07f);
+        consumer.accept("ground", 0.08f);
+        consumer.accept("flying", 0.09f);
+        consumer.accept("psychic", 0.10f);
+        consumer.accept("bug", 0.1f);
+        consumer.accept("rock", 0.12f);
+        consumer.accept("ghost", 0.13f);
+        consumer.accept("dragon", 0.14f);
+        consumer.accept("dark", 0.15f);
+        consumer.accept("steel", 0.16f);
+        consumer.accept("fairy", 0.17f);
     }
 
     private void createImbuedFlute() {

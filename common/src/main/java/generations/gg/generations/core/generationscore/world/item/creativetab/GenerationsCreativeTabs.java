@@ -4,6 +4,7 @@ import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.item.TechnicalMachineItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -20,7 +21,8 @@ import java.util.function.Supplier;
 public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier POKEBALLS = create("pokeballs", () -> GenerationsItems.POKE_BALL);
     public static CreativeTabRegistry.TabSupplier RESTORATION = create("restoration", () -> GenerationsItems.POTION);
-    //public static CreativeTabRegistry.TabSupplier TMS = create("tms", () -> GenerationsItems.TM_1);
+    public static CreativeTabRegistry.TabSupplier TMS = createStack("tms", () -> TechnicalMachineItem.Companion.createTm(1, "take_down"));
+
     public static CreativeTabRegistry.TabSupplier BADGES_RIBBONS = create("badges_ribbons", () -> GenerationsItems.MARSH_BADGE);
     public static CreativeTabRegistry.TabSupplier HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN);
     public static CreativeTabRegistry.TabSupplier PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX);
@@ -37,9 +39,14 @@ public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier UNIMPLEMENTED = create("unimplemented", () -> GenerationsItems.ABILITY_URGE);
     public static CreativeTabRegistry.TabSupplier SHRINES = create("shrines", () -> GenerationsShrines.FROZEN_SHRINE);
 
-    public static <T extends ItemLike> CreativeTabRegistry.TabSupplier create(String name, Supplier<RegistrySupplier<T>> supplier) {
-        return CreativeTabRegistry.create(GenerationsCore.id(name), builder -> builder.icon(() -> new ItemStack(supplier.get().toOptional().map(ItemLike::asItem).orElse(Items.APPLE)))
+    private static CreativeTabRegistry.TabSupplier createStack(String name, Supplier<ItemStack> supplier) {
+        return CreativeTabRegistry.create(GenerationsCore.id(name), builder -> builder
+                .icon(supplier)
                 .title(Component.translatable("item_group." + name)));
+    }
+
+    public static <T extends ItemLike> CreativeTabRegistry.TabSupplier create(String name, Supplier<RegistrySupplier<T>> supplier) {
+        return createStack(name, () -> new ItemStack(supplier.get().toOptional().map(ItemLike::asItem).orElse(Items.APPLE)));
     }
 
     public static void init() {}

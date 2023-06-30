@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
-import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.Species;
@@ -205,8 +203,10 @@ public class GenerationsItems {
     /**
      * TM ITEMS
      */
+    public static final RegistrySupplier<Item> TM = register("tm", TechnicalMachineItem::new, null);
+
     /*
-    public static final RegistrySupplier<Item> TM_1 = register("tm_1", properties -> new TechnicalMachineItem("take_down", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_1 = register("tm_1, "take_down", 1", properties -> new TechnicalMachineItem("take_down", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_2 = register("tm_2", properties -> new TechnicalMachineItem("charm", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_3 = register("tm_3", properties -> new TechnicalMachineItem("fake_tears", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_4 = register("tm_4", properties -> new TechnicalMachineItem("agility", properties), GenerationsCreativeTabs.TMS);
@@ -306,77 +306,77 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TM_98 = register("tm_98", properties -> new TechnicalMachineItem("skill_swap", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_99 = register("tm_99", properties -> new TechnicalMachineItem("iron_head", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_100 = register("tm_100", properties -> new TechnicalMachineItem("dragon_dance", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_101 = register("tm_101", properties -> new TechnicalMachineItem("power_gem", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_102 = register("tm_102", properties -> new TechnicalMachineItem("gunk_shot", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_103 = register("tm_103", properties -> new TechnicalMachineItem("substitue", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_104 = register("tm_104", properties -> new TechnicalMachineItem("iron_defense", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_105 = register("tm_105", properties -> new TechnicalMachineItem("x_scissor", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_106 = register("tm_106", properties -> new TechnicalMachineItem("drill_run", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_107 = register("tm_107", properties -> new TechnicalMachineItem("will_o_wisp", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_108 = register("tm_108", properties -> new TechnicalMachineItem("crunch", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_109 = register("tm_109", properties -> new TechnicalMachineItem("trick", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_110 = register("tm_110", properties -> new TechnicalMachineItem("liquidation", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_111 = register("tm_111", properties -> new TechnicalMachineItem("giga_drain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_112 = register("tm_112", properties -> new TechnicalMachineItem("aura_sphere", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_113 = register("tm_113", properties -> new TechnicalMachineItem("tailwind", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_114 = register("tm_114", properties -> new TechnicalMachineItem("shadow_ball", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_115 = register("tm_115", properties -> new TechnicalMachineItem("dragon_pulse", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_116 = register("tm_116", properties -> new TechnicalMachineItem("stealth_rock", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_117 = register("tm_117", properties -> new TechnicalMachineItem("hyper_voice", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_118 = register("tm_118", properties -> new TechnicalMachineItem("heat_wave", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_119 = register("tm_119", properties -> new TechnicalMachineItem("energy_ball", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_120 = register("tm_120", properties -> new TechnicalMachineItem("psychic", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_121 = register("tm_121", properties -> new TechnicalMachineItem("heavy_slam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_122 = register("tm_122", properties -> new TechnicalMachineItem("encore", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_123 = register("tm_123", properties -> new TechnicalMachineItem("surf", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_124 = register("tm_124", properties -> new TechnicalMachineItem("ice_spinner", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_125 = register("tm_125", properties -> new TechnicalMachineItem("flamethrower", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_126 = register("tm_126", properties -> new TechnicalMachineItem("thunderbolt", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_127 = register("tm_127", properties -> new TechnicalMachineItem("play_rough", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_128 = register("tm_128", properties -> new TechnicalMachineItem("amnesia", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_129 = register("tm_129", properties -> new TechnicalMachineItem("calm_mind", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_130 = register("tm_130", properties -> new TechnicalMachineItem("helping_hand", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_131 = register("tm_131", properties -> new TechnicalMachineItem("pollen_puff", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_132 = register("tm_132", properties -> new TechnicalMachineItem("baton_pass", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_133 = register("tm_133", properties -> new TechnicalMachineItem("earth_power", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_134 = register("tm_134", properties -> new TechnicalMachineItem("reversal", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_135 = register("tm_135", properties -> new TechnicalMachineItem("ice_beam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_136 = register("tm_136", properties -> new TechnicalMachineItem("electric_terrain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_137 = register("tm_137", properties -> new TechnicalMachineItem("grass_terrain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_138 = register("tm_138", properties -> new TechnicalMachineItem("psychic_terrain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_139 = register("tm_139", properties -> new TechnicalMachineItem("misty_terrain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_140 = register("tm_140", properties -> new TechnicalMachineItem("nasty_plot", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_141 = register("tm_141", properties -> new TechnicalMachineItem("fire_blast", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_142 = register("tm_142", properties -> new TechnicalMachineItem("hydro_pump", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_143 = register("tm_143", properties -> new TechnicalMachineItem("blizzard", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_144 = register("tm_144", properties -> new TechnicalMachineItem("fire_pledge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_145 = register("tm_145", properties -> new TechnicalMachineItem("water_pledge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_146 = register("tm_146", properties -> new TechnicalMachineItem("grass_pledge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_147 = register("tm_147", properties -> new TechnicalMachineItem("wild_charge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_148 = register("tm_148", properties -> new TechnicalMachineItem("sludge_bomb", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_149 = register("tm_149", properties -> new TechnicalMachineItem("earthquake", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_150 = register("tm_150", properties -> new TechnicalMachineItem("stone_edge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_151 = register("tm_151", properties -> new TechnicalMachineItem("phantom_force", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_152 = register("tm_152", properties -> new TechnicalMachineItem("giga_impact", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_153 = register("tm_153", properties -> new TechnicalMachineItem("blast_burn", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_154 = register("tm_154", properties -> new TechnicalMachineItem("hydro_cannon", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_155 = register("tm_155", properties -> new TechnicalMachineItem("frenzy_plant", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_156 = register("tm_156", properties -> new TechnicalMachineItem("outrage", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_157 = register("tm_157", properties -> new TechnicalMachineItem("overheat", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_158 = register("tm_158", properties -> new TechnicalMachineItem("focus_blast", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_159 = register("tm_159", properties -> new TechnicalMachineItem("leaf_storm", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_160 = register("tm_160", properties -> new TechnicalMachineItem("hurricane", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_161 = register("tm_161", properties -> new TechnicalMachineItem("trick_room", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_162 = register("tm_162", properties -> new TechnicalMachineItem("bug_buzz", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_163 = register("tm_163", properties -> new TechnicalMachineItem("hyper_beam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_164 = register("tm_164", properties -> new TechnicalMachineItem("brave_bird", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_165 = register("tm_165", properties -> new TechnicalMachineItem("flare_blitz", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_166 = register("tm_166", properties -> new TechnicalMachineItem("thunder", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_167 = register("tm_167", properties -> new TechnicalMachineItem("close_combat", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_168 = register("tm_168", properties -> new TechnicalMachineItem("solar_beam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_169 = register("tm_169", properties -> new TechnicalMachineItem("draco_meteor", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_170 = register("tm_170", properties -> new TechnicalMachineItem("steel_beam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_171 = register("tm_171", properties -> new TechnicalMachineItem("tera_blast", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_101 = register("tm_101, "power_gem", 101", properties -> new TechnicalMachineItem("power_gem", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_102 = register("tm_102, "gunk_shot", 102", properties -> new TechnicalMachineItem("gunk_shot", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_103 = register("tm_103, "substitue", 103", properties -> new TechnicalMachineItem("substitue", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_104 = register("tm_104, "iron_defense", 104", properties -> new TechnicalMachineItem("iron_defense", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_105 = register("tm_105, "x_scissor", 105", properties -> new TechnicalMachineItem("x_scissor", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_106 = register("tm_106, "drill_run", 106", properties -> new TechnicalMachineItem("drill_run", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_107 = register("tm_107, "will_o_wisp", 107", properties -> new TechnicalMachineItem("will_o_wisp", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_108 = register("tm_108, "crunch", 108", properties -> new TechnicalMachineItem("crunch", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_109 = register("tm_109, "trick", 109", properties -> new TechnicalMachineItem("trick", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_110 = register("tm_110, "liquidation", 110", properties -> new TechnicalMachineItem("liquidation", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_111 = register("tm_111, "giga_drain", 111", properties -> new TechnicalMachineItem("giga_drain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_112 = register("tm_112, "aura_sphere", 112", properties -> new TechnicalMachineItem("aura_sphere", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_113 = register("tm_113, "tailwind", 113", properties -> new TechnicalMachineItem("tailwind", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_114 = register("tm_114, "shadow_ball", 114", properties -> new TechnicalMachineItem("shadow_ball", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_115 = register("tm_115, "dragon_pulse", 115", properties -> new TechnicalMachineItem("dragon_pulse", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_116 = register("tm_116, "stealth_rock", 116", properties -> new TechnicalMachineItem("stealth_rock", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_117 = register("tm_117, "hyper_voice", 117", properties -> new TechnicalMachineItem("hyper_voice", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_118 = register("tm_118, "heat_wave", 118", properties -> new TechnicalMachineItem("heat_wave", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_119 = register("tm_119, "energy_ball", 119", properties -> new TechnicalMachineItem("energy_ball", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_120 = register("tm_120, "psychic", 120", properties -> new TechnicalMachineItem("psychic", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_121 = register("tm_121, "heavy_slam", 121", properties -> new TechnicalMachineItem("heavy_slam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_122 = register("tm_122, "encore", 122", properties -> new TechnicalMachineItem("encore", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_123 = register("tm_123, "surf", 123", properties -> new TechnicalMachineItem("surf", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_124 = register("tm_124, "ice_spinner", 124", properties -> new TechnicalMachineItem("ice_spinner", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_125 = register("tm_125, "flamethrower", 125", properties -> new TechnicalMachineItem("flamethrower", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_126 = register("tm_126, "thunderbolt", 126", properties -> new TechnicalMachineItem("thunderbolt", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_127 = register("tm_127, "play_rough", 127", properties -> new TechnicalMachineItem("play_rough", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_128 = register("tm_128, "amnesia", 128", properties -> new TechnicalMachineItem("amnesia", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_129 = register("tm_129, "calm_mind", 129", properties -> new TechnicalMachineItem("calm_mind", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_130 = register("tm_130, "helping_hand", 130", properties -> new TechnicalMachineItem("helping_hand", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_131 = register("tm_131, "pollen_puff", 131", properties -> new TechnicalMachineItem("pollen_puff", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_132 = register("tm_132, "baton_pass", 132", properties -> new TechnicalMachineItem("baton_pass", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_133 = register("tm_133, "earth_power", 133", properties -> new TechnicalMachineItem("earth_power", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_134 = register("tm_134, "reversal", 134", properties -> new TechnicalMachineItem("reversal", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_135 = register("tm_135, "ice_beam", 135", properties -> new TechnicalMachineItem("ice_beam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_136 = register("tm_136, "electric_terrain", 136", properties -> new TechnicalMachineItem("electric_terrain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_137 = register("tm_137, "grass_terrain", 137", properties -> new TechnicalMachineItem("grass_terrain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_138 = register("tm_138, "psychic_terrain", 138", properties -> new TechnicalMachineItem("psychic_terrain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_139 = register("tm_139, "misty_terrain", 139", properties -> new TechnicalMachineItem("misty_terrain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_140 = register("tm_140, "nasty_plot", 140", properties -> new TechnicalMachineItem("nasty_plot", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_141 = register("tm_141, "fire_blast", 141", properties -> new TechnicalMachineItem("fire_blast", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_142 = register("tm_142, "hydro_pump", 142", properties -> new TechnicalMachineItem("hydro_pump", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_143 = register("tm_143, "blizzard", 143", properties -> new TechnicalMachineItem("blizzard", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_144 = register("tm_144, "fire_pledge", 144", properties -> new TechnicalMachineItem("fire_pledge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_145 = register("tm_145, "water_pledge", 145", properties -> new TechnicalMachineItem("water_pledge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_146 = register("tm_146, "grass_pledge", 146", properties -> new TechnicalMachineItem("grass_pledge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_147 = register("tm_147, "wild_charge", 147", properties -> new TechnicalMachineItem("wild_charge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_148 = register("tm_148, "sludge_bomb", 148", properties -> new TechnicalMachineItem("sludge_bomb", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_149 = register("tm_149, "earthquake", 149", properties -> new TechnicalMachineItem("earthquake", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_150 = register("tm_150, "stone_edge", 150", properties -> new TechnicalMachineItem("stone_edge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_151 = register("tm_151, "phantom_force", 151", properties -> new TechnicalMachineItem("phantom_force", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_152 = register("tm_152, "giga_impact", 152", properties -> new TechnicalMachineItem("giga_impact", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_153 = register("tm_153, "blast_burn", 153", properties -> new TechnicalMachineItem("blast_burn", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_154 = register("tm_154, "hydro_cannon", 154", properties -> new TechnicalMachineItem("hydro_cannon", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_155 = register("tm_155, "frenzy_plant", 155", properties -> new TechnicalMachineItem("frenzy_plant", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_156 = register("tm_156, "outrage", 156", properties -> new TechnicalMachineItem("outrage", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_157 = register("tm_157, "overheat", 157", properties -> new TechnicalMachineItem("overheat", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_158 = register("tm_158, "focus_blast", 158", properties -> new TechnicalMachineItem("focus_blast", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_159 = register("tm_159, "leaf_storm", 159", properties -> new TechnicalMachineItem("leaf_storm", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_160 = register("tm_160, "hurricane", 160", properties -> new TechnicalMachineItem("hurricane", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_161 = register("tm_161, "trick_room", 161", properties -> new TechnicalMachineItem("trick_room", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_162 = register("tm_162, "bug_buzz", 162", properties -> new TechnicalMachineItem("bug_buzz", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_163 = register("tm_163, "hyper_beam", 163", properties -> new TechnicalMachineItem("hyper_beam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_164 = register("tm_164, "brave_bird", 164", properties -> new TechnicalMachineItem("brave_bird", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_165 = register("tm_165, "flare_blitz", 165", properties -> new TechnicalMachineItem("flare_blitz", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_166 = register("tm_166, "thunder", 166", properties -> new TechnicalMachineItem("thunder", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_167 = register("tm_167, "close_combat", 167", properties -> new TechnicalMachineItem("close_combat", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_168 = register("tm_168, "solar_beam", 168", properties -> new TechnicalMachineItem("solar_beam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_169 = register("tm_169, "draco_meteor", 169", properties -> new TechnicalMachineItem("draco_meteor", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_170 = register("tm_170, "steel_beam", 170", properties -> new TechnicalMachineItem("steel_beam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_171 = register("tm_171, "tera_blast", 171", properties -> new TechnicalMachineItem("tera_blast", properties), GenerationsCreativeTabs.TMS);
      */
 
     /**
@@ -1735,7 +1735,11 @@ public class GenerationsItems {
     }
 
     public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> itemSupplier, CreativeTabRegistry.TabSupplier tab) {
-        return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
+        return ITEMS.register(name, () -> {
+            var properties = of();
+            if(tab == null) properties.arch$tab(tab);
+            return itemSupplier.apply(properties);
+        });
     }
 
     public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, CreativeTabRegistry.TabSupplier tab) {

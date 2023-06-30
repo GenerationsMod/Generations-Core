@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
+import generations.gg.generations.core.generationscore.world.item.PixelmonInteractions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
@@ -15,6 +16,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -55,7 +57,6 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 //            addListener(this::onLogin)
 //            addListener(this::onLogout)
         EVENT_BUS.addListener(this::onReload);
-
     }
 
     /**
@@ -80,7 +81,6 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 //    fun onLogout(event: PlayerEvent.PlayerLoggedOutEvent) {
 //        this.hasBeenSynced.remove(event.entity.uuid)
 //    }
-
 
     @Override
     public void registerResourceReloader(@NotNull ResourceLocation identifier, @NotNull PreparableReloadListener reloader, @NotNull PackType type, @NotNull Collection<? extends ResourceLocation> dependencies) {

@@ -93,6 +93,7 @@
     "generations_core:max_mushrooms",
     "generations_core:max_powder",
     "generations_core:max_soup",
+    "generations_core:tm",
     "generations_core:balance_badge",
     "generations_core:beacon_badge",
     "generations_core:boulder_badge",

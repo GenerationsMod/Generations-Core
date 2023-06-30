@@ -99,6 +99,15 @@ public class GeneralLang extends LanguageProvider {
 
         add("Generations.timeglass.wrongbiome", "You can only summon Celebi in a Flower Forest Biome");
         add("Generations.timeglass.amount", "You've defeated %s Grass, Psychic, or Fairy Type Pokemon out of 100 in a Flower Forest Biome");
+
+        //TR/TM lines
+        add("move.cantlearn", "%s can't learn %s.");
+        add("move.alreadyknows", "%s already knows %s.");
+        add("move.learned", "%s has learned %s.");
+        add("move.doesntexist", "The move %s doesn't exists so %s couldn't learn it.");
+        add("move.newmove1", "1, 2, and... Ta da!");
+        add("move.newmove2", "%s forgot %s!");
+        add("move.newmove3", "...and learned %s!");
     }
 
     protected String getNameGens(String name){
