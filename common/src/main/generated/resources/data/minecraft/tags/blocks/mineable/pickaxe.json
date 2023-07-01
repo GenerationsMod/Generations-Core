@@ -1,8 +1,8 @@
 {
   "values": [
     "generations_core:shingles",
-    "generations_core:shingles_corner1",
-    "generations_core:shingles_corner2",
+    "generations_core:shingles_corner_1",
+    "generations_core:shingles_corner_2",
     "generations_core:outside_wall",
     "generations_core:inside_wall",
     "generations_core:inside_wall_molding",

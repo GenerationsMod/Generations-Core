@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonBlocks;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
@@ -87,6 +88,8 @@ public class TagsDatagen {
                 tag(GenerationsBlockTags.POKEBRICKS).add(block.get());
                 EasyBlockTags(block.get());
             });
+
+            GenerationsPokeDolls.POKEDOLLS.forEach(pokedoll -> tag(GenerationsBlockTags.POKEDOLLS).add(pokedoll.get()));
 
             GenerationsBlocks.STONE.forEach(block -> {
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block.get());
@@ -358,6 +361,8 @@ public class TagsDatagen {
             copy(GenerationsBlockTags.MARBLE, GenerationsItemTags.MARBLE);
             //Ultra
             copy(GenerationsBlockTags.ULTRA, GenerationsItemTags.ULTRA);
+            //PokeDolls
+            copy(GenerationsBlockTags.POKEDOLLS, GenerationsItemTags.POKEDOLLS);
 
             //Ore Specific tags like Vanilla
             copy(GenerationsBlockTags.GENERATIONSORES, GenerationsItemTags.GENERATIONSORES);
@@ -471,6 +476,9 @@ public class TagsDatagen {
             tag(Tags.Items.NUGGETS).add(ALUMINUM_NUGGET.get());
 
             ITEMS.forEach(item -> tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
+            RIBBONS.forEach(ribbon -> tag(GenerationsItemTags.RIBBONS).add(ribbon.get()));
+            BADGES.forEach(badge -> tag(GenerationsItemTags.BADGES).add(badge.get()));
+            tag(GenerationsItemTags.GENERATIONSITEMS).addTag(GenerationsItemTags.RIBBONS).addTag(GenerationsItemTags.BADGES);
             POKEBALLS.forEach(pokeball -> tag(GenerationsItemTags.POKEBALLS).add(pokeball.get()));
 
             tag(GenerationsItemTags.POKEMAIL).add(
@@ -551,6 +559,16 @@ public class TagsDatagen {
 
             //PC
             GenerationsUtilityBlocks.PC_BLOCKS.forEach(pc -> tag(GenerationsItemTags.PC).add(pc.get()));
+
+            //Forge Armor Tags
+            GenerationsArmor.ARMOR.forEach(armor -> {
+                switch (((ArmorItem) armor.get()).getType()){
+                    case HELMET -> tag(Tags.Items.ARMORS_HELMETS).add(armor.get());
+                    case CHESTPLATE -> tag(Tags.Items.ARMORS_CHESTPLATES).add(armor.get());
+                    case LEGGINGS -> tag(Tags.Items.ARMORS_LEGGINGS).add(armor.get());
+                    case BOOTS -> tag(Tags.Items.ARMORS_BOOTS).add(armor.get());
+                }
+            });
         }
     }
 

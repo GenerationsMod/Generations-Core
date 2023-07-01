@@ -1,0 +1,25 @@
+{
+  "values": [
+    "generations_core:aether_chestplate",
+    "generations_core:aqua_chestplate",
+    "generations_core:flare_chestplate",
+    "generations_core:galactic_chestplate",
+    "generations_core:magma_chestplate",
+    "generations_core:neo_plasma_chestplate",
+    "generations_core:plasma_chestplate",
+    "generations_core:rocket_chestplate",
+    "generations_core:skull_chestplate",
+    "generations_core:crystal_chestplate",
+    "generations_core:ultra_chestplate",
+    "generations_core:aluminum_chestplate",
+    "generations_core:dawn_stone_chestplate",
+    "generations_core:dusk_stone_chestplate",
+    "generations_core:fire_stone_chestplate",
+    "generations_core:ice_stone_chestplate",
+    "generations_core:leaf_stone_chestplate",
+    "generations_core:moon_stone_chestplate",
+    "generations_core:sun_stone_chestplate",
+    "generations_core:thunder_stone_chestplate",
+    "generations_core:water_stone_chestplate"
+  ]
+}

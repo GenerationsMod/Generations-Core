@@ -51,10 +51,17 @@ import java.util.function.Function;
  * @author J.T. McQuigg
  * @author WaterPicker
  */
+@SuppressWarnings("unused")
 public class GenerationsItems {
 
     /** Generations Items Deferred Register */
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
+
+    /** Generations Ribbons Deferred Register */
+    public static final DeferredRegister<Item> RIBBONS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
+
+    /** Generations Badges Deferred Register */
+    public static final DeferredRegister<Item> BADGES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
     /** Generations Pokeballs Deferred Register */
     public static final DeferredRegister<Item> POKEBALLS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
@@ -457,6 +464,7 @@ public class GenerationsItems {
     /**
      * Ribbons
      */
+    public static final RegistrySupplier<Item> PALDEA_CHAMPION_RIBBON = createRibbon("paldea_champion_ribbon");
     public static final RegistrySupplier<Item> ABILITY_RIBBON = createRibbon("ability_ribbon");
     public static final RegistrySupplier<Item> ALERT_RIBBON = createRibbon("alert_ribbon");
     public static final RegistrySupplier<Item> ALOLA_CHAMPION_RIBBON = createRibbon("alola_champion_ribbon");
@@ -1748,16 +1756,18 @@ public class GenerationsItems {
 
     public static RegistrySupplier<Item> createBadge(String id, Object object/*ElementType elementType*/) {
         /*elementType*/
-        return register(id, BadgeItem::new, GenerationsCreativeTabs.BADGES_RIBBONS);
+        return BADGES.register(id, () -> new BadgeItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.BADGES_RIBBONS)));
     }
 
     public static RegistrySupplier<Item> createRibbon(String id) {
-        return register(id, RibbonItem::new, GenerationsCreativeTabs.BADGES_RIBBONS);
+        return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.BADGES_RIBBONS)));
     }
     
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Items");
         ITEMS.register();
+        BADGES.register();
+        RIBBONS.register();
         GenerationsCore.LOGGER.info("Registering Generations PokeBalls");
         POKEBALLS.register();
     }
