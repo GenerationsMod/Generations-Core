@@ -38,6 +38,7 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsArmor.ARMOR, this::getNameGens);
         addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
         addItemEntries(GenerationsItems.RIBBONS, this::getNameGens);
+        addItemEntries(GenerationsItems.BADGES, this::getNameGens);
         addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens);
 
         //Manually add Creative Tabs

@@ -714,78 +714,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.WATER_CANDY, "valuables/");
         createItem(GenerationsItems.NULL_CANDY, "valuables/");
 
-        createItem(GenerationsItems.BALANCE_BADGE, "badges/");
-        createItem(GenerationsItems.BEACON_BADGE, "badges/");
-        createItem(GenerationsItems.BOULDER_BADGE, "badges/");
-        createItem(GenerationsItems.CASCADE_BADGE, "badges/");
-        createItem(GenerationsItems.COAL_BADGE, "badges/");
-        createItem(GenerationsItems.COBBLE_BADGE, "badges/");
-        createItem(GenerationsItems.DYNAMO_BADGE, "badges/");
-        createItem(GenerationsItems.EARTH_BADGE, "badges/");
-        createItem(GenerationsItems.FEATHER_BADGE, "badges/");
-        createItem(GenerationsItems.FEN_BADGE, "badges/");
-        createItem(GenerationsItems.FOG_BADGE, "badges/");
-        createItem(GenerationsItems.FOREST_BADGE, "badges/");
-        createItem(GenerationsItems.GLACIER_BADGE, "badges/");
-        createItem(GenerationsItems.HEAT_BADGE, "badges/");
-        createItem(GenerationsItems.HIVE_BADGE, "badges/");
-        createItem(GenerationsItems.ICICLE_BADGE, "badges/");
-        createItem(GenerationsItems.KNUCKLE_BADGE, "badges/");
-        createItem(GenerationsItems.MARSH_BADGE, "badges/");
-        createItem(GenerationsItems.MIND_BADGE, "badges/");
-        createItem(GenerationsItems.MINE_BADGE, "badges/");
-        createItem(GenerationsItems.MINERAL_BADGE, "badges/");
-        createItem(GenerationsItems.PLAIN_BADGE, "badges/");
-        createItem(GenerationsItems.RAINBOW_BADGE, "badges/");
-        createItem(GenerationsItems.RAIN_BADGE, "badges/");
-        createItem(GenerationsItems.RELIC_BADGE, "badges/");
-        createItem(GenerationsItems.RISING_BADGE, "badges/");
-        createItem(GenerationsItems.SOUL_BADGE, "badges/");
-        createItem(GenerationsItems.STONE_BADGE, "badges/");
-        createItem(GenerationsItems.STORM_BADGE, "badges/");
-        createItem(GenerationsItems.THUNDER_BADGE, "badges/");
-        createItem(GenerationsItems.VOLCANO_BADGE, "badges/");
-        createItem(GenerationsItems.ZEPHYR_BADGE, "badges/");
-        createItem(GenerationsItems.BASIC_BADGE, "badges/");
-        createItem(GenerationsItems.BOLT_BADGE, "badges/");
-        createItem(GenerationsItems.FREEZE_BADGE, "badges/");
-        createItem(GenerationsItems.INSECT_BADGE, "badges/");
-        createItem(GenerationsItems.JET_BADGE, "badges/");
-        createItem(GenerationsItems.LEGEND_BADGE, "badges/");
-        createItem(GenerationsItems.QUAKE_BADGE, "badges/");
-        createItem(GenerationsItems.TOXIC_BADGE, "badges/");
-        createItem(GenerationsItems.TRIO_BADGE, "badges/");
-        createItem(GenerationsItems.WAVE_BADGE, "badges/");
-        createItem(GenerationsItems.BUG_BADGE, "badges/");
-        createItem(GenerationsItems.CLIFF_BADGE, "badges/");
-        createItem(GenerationsItems.RUMBLE_BADGE, "badges/");
-        createItem(GenerationsItems.PLANT_BADGE, "badges/");
-        createItem(GenerationsItems.VOLTAGE_BADGE, "badges/");
-        createItem(GenerationsItems.FAIRY_BADGE, "badges/");
-        createItem(GenerationsItems.PSYCHIC_BADGE, "badges/");
-        createItem(GenerationsItems.ICEBERG_BADGE, "badges/");
-        createItem(GenerationsItems.SPIKESHELL_BADGE, "badges/");
-        createItem(GenerationsItems.SEARUBY_BADGE, "badges/");
-        createItem(GenerationsItems.JADESTAR_BADGE, "badges/");
-        createItem(GenerationsItems.CORALEYE_BADGE, "badges/");
-        createItem(GenerationsItems.FREEDOM_BADGE, "badges/");
-        createItem(GenerationsItems.HARMONY_BADGE, "badges/");
-        createItem(GenerationsItems.PATIENCE_BADGE, "badges/");
-        createItem(GenerationsItems.PRIDE_BADGE, "badges/");
-        createItem(GenerationsItems.TRANQUILITY_BADGE, "badges/");
-        createItem(GenerationsItems.DARK_BADGE, "badges/");
-        createItem(GenerationsItems.DRAGON_BADGE, "badges/");
-        createItem(GenerationsItems.FAIRY_BADGE_2, "badges/");
-        createItem(GenerationsItems.FIRE_BADGE, "badges/");
-        createItem(GenerationsItems.GRASS_BADGE, "badges/");
-        createItem(GenerationsItems.ICE_BADGE, "badges/");
-        createItem(GenerationsItems.ROCK_BADGE, "badges/");
-        createItem(GenerationsItems.WATER_BADGE, "badges/");
-        createItem(GenerationsItems.FIGHTING_BADGE, "badges/");
-        createItem(GenerationsItems.GHOST_BADGE, "badges/");
-        createItem(GenerationsItems.SHIELD_BADGE_COMPLETE, "badges/");
-        createItem(GenerationsItems.SWORD_BADGE_COMPLETE, "badges/");
-
+        GenerationsItems.BADGES.forEach(badge -> createItem(badge, "badges/"));
         GenerationsItems.RIBBONS.forEach(ribbon -> createItem(ribbon, "ribbons/"));
 
         createItem(GenerationsItems.DAWN_STONE, "natural/");
@@ -1701,8 +1630,6 @@ public class ItemDatagen extends ItemModelProvider {
             ResourceLocation key = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item.get()), "Tried to create json model for unregistered Item.");
             return generated(key.getPath(), GenerationsCore.id("item/" + directory + key.getPath()));
         } catch (Exception e) {
-//            e.printStackTrace();
-
             LOGGER.error(item.getId() + " -> " + directory);
             return null;
         }
@@ -1712,8 +1639,6 @@ public class ItemDatagen extends ItemModelProvider {
         try {
             return this.singleTexture(name, new ResourceLocation("item/generated"), "layer0", model);
         } catch (Exception e) {
-//            e.printStackTrace();
-
             LOGGER.error(name + " -> " + model);
             return null;
         }

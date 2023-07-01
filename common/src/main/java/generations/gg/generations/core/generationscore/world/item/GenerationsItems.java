@@ -42,13 +42,17 @@ import java.util.function.Function;
  * @author J.T. McQuigg
  * @author WaterPicker
  */
+@SuppressWarnings("unused")
 public class GenerationsItems {
 
     /** Generations Items Deferred Register */
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Badged Deferred Register */
+    /** Generations Ribbons Deferred Register */
     public static final DeferredRegister<Item> RIBBONS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
+
+    /** Generations Badges Deferred Register */
+    public static final DeferredRegister<Item> BADGES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
     /** Generations Pokeballs Deferred Register */
     public static final DeferredRegister<Item> POKEBALLS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
@@ -1738,7 +1742,7 @@ public class GenerationsItems {
 
     public static RegistrySupplier<Item> createBadge(String id, Object object/*ElementType elementType*/) {
         /*elementType*/
-        return register(id, BadgeItem::new, GenerationsCreativeTabs.BADGES_RIBBONS);
+        return BADGES.register(id, () -> new BadgeItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.BADGES_RIBBONS)));
     }
 
     public static RegistrySupplier<Item> createRibbon(String id) {
@@ -1748,6 +1752,7 @@ public class GenerationsItems {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Items");
         ITEMS.register();
+        BADGES.register();
         RIBBONS.register();
         GenerationsCore.LOGGER.info("Registering Generations PokeBalls");
         POKEBALLS.register();
