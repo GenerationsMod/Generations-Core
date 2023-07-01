@@ -56,10 +56,10 @@ public class BoneCreatorProxy implements Supplier<Bone>, Bone {
 
             stack.pushPose();
             if(entity != null) {
-                stack.mulPose(Axis.YN.rotationDegrees(180f));
-                stack.mulPose(Axis.ZN.rotationDegrees(180f));
-                stack.translate(0, -1.5, 0);
+                stack.scale(-1, -1, 1);
+                stack.translate(0, -1.501, 0);
             }
+
             stack.scale(scale, scale, scale);
             instance.viewMatrix().set(stack.last().pose());
             stack.popPose();
