@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.client.entity.PokemonClientDelegate;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -62,7 +63,7 @@ public class BoneCreatorProxy implements Supplier<Bone>, Bone {
             stack.scale(scale, scale, scale);
             instance.viewMatrix().set(stack.last().pose());
             stack.popPose();
-            model.render(instance, MinecraftClientGameProvider.projMatrix);
+            model.render(instance, RenderSystem.getProjectionMatrix());
         }
     }
 

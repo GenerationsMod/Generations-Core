@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item
 
+import com.cobblemon.mod.common.api.moves.BenchedMove
 import com.cobblemon.mod.common.api.moves.MoveTemplate
 import com.cobblemon.mod.common.api.moves.Moves
 import com.cobblemon.mod.common.api.pokemon.moves.LearnsetQuery
@@ -29,22 +30,16 @@ open class MoveTeachingItem(properties: Properties) : Item(properties), Pixelmon
             EventResult.pass()
         } else if (LearnsetQuery.TM_MOVE.canLearn(template, data.form.moves)) {
             val moveSet = data.moveSet
-            if (moveSet.filterNotNull().map { it.template }.any { it == template }) {
+            if ((moveSet.map { it.template } + data.benchedMoves.map { it.moveTemplate }).any { it == template }) {
                 player.displayClientMessage("move.alreadyknows".asTranslated(data.getDisplayName(), template.displayName).bold(), true)
                 EventResult.pass()
             }
 
-            val previousMoveData = moveSet[0]
-            if (previousMoveData != null) {
-                moveSet.setMove(0, template.create())
+            data.benchedMoves.add(BenchedMove(template, 0))
 
-                player.displayClientMessage(Component.translatable("move.newmove1").withStyle(ChatFormatting.BOLD), true)
-                player.displayClientMessage("move.newmove2".asTranslated(data.getDisplayName(), previousMoveData.displayName).bold(), true)
-                player.displayClientMessage("move.newmove3".asTranslated(template.displayName).bold(), true)
-            } else {
-                moveSet.setMove(0, template.create())
-                player.displayClientMessage(Component.translatable("move.learned", data.getDisplayName(), template.displayName).withStyle(ChatFormatting.BOLD), true)
-            }
+            player.displayClientMessage("move.newmove1".asTranslated().bold(), true)
+            player.displayClientMessage("move.newmove3".asTranslated(template.displayName).bold(), true)
+
             EventResult.interruptTrue()
         } else {
             player.sendSystemMessage(
