@@ -28,13 +28,11 @@ loom {
         mixinConfig("GenerationsCore.mixins.json")
     }
 
-    runs {
-        create("data") {
+    runs.create("data") {
             data()
             programArgs("--all", "--mod", "generations_core")
             programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
             programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
-        }
     }
 }
 
