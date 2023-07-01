@@ -21,7 +21,8 @@ public class GenerationsCreativeTabs {
     public static CreativeTabRegistry.TabSupplier POKEBALLS = create("pokeballs", () -> GenerationsItems.POKE_BALL);
     public static CreativeTabRegistry.TabSupplier RESTORATION = create("restoration", () -> GenerationsItems.POTION);
     //public static CreativeTabRegistry.TabSupplier TMS = create("tms", () -> GenerationsItems.TM_1);
-    public static CreativeTabRegistry.TabSupplier BADGES_RIBBONS = create("badges_ribbons", () -> GenerationsItems.MARSH_BADGE);
+    public static CreativeTabRegistry.TabSupplier BADGES = create("badges", () -> GenerationsItems.RAINBOW_BADGE);
+    public static CreativeTabRegistry.TabSupplier RIBBONS = create("ribbons", () -> GenerationsItems.COOLNESS_MASTER_RIBBON);
     public static CreativeTabRegistry.TabSupplier HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN);
     public static CreativeTabRegistry.TabSupplier PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX);
     public static CreativeTabRegistry.TabSupplier LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS);
