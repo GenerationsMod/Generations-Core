@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonBlocks;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
@@ -558,6 +559,16 @@ public class TagsDatagen {
 
             //PC
             GenerationsUtilityBlocks.PC_BLOCKS.forEach(pc -> tag(GenerationsItemTags.PC).add(pc.get()));
+
+            //Forge Armor Tags
+            GenerationsArmor.ARMOR.forEach(armor -> {
+                if (armor.get() instanceof ArmorItem item) {
+                    if (item.getType() == ArmorItem.Type.HELMET) tag(Tags.Items.ARMORS_HELMETS).add(item);
+                    else if (item.getType() == ArmorItem.Type.CHESTPLATE) tag(Tags.Items.ARMORS_CHESTPLATES).add(item);
+                    else if (item.getType() == ArmorItem.Type.LEGGINGS) tag(Tags.Items.ARMORS_LEGGINGS).add(item);
+                    else if (item.getType() == ArmorItem.Type.BOOTS) tag(Tags.Items.ARMORS_BOOTS).add(item);
+                }
+            });
         }
     }
 
