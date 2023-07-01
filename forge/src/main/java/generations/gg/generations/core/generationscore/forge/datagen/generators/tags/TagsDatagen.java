@@ -4,7 +4,6 @@ import com.cobblemon.mod.common.CobblemonBlocks;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
@@ -88,6 +87,8 @@ public class TagsDatagen {
                 tag(GenerationsBlockTags.POKEBRICKS).add(block.get());
                 EasyBlockTags(block.get());
             });
+
+            GenerationsPokeDolls.POKEDOLLS.forEach(pokedoll -> tag(GenerationsBlockTags.POKEDOLLS).add(pokedoll.get()));
 
             GenerationsBlocks.STONE.forEach(block -> {
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block.get());
@@ -359,6 +360,8 @@ public class TagsDatagen {
             copy(GenerationsBlockTags.MARBLE, GenerationsItemTags.MARBLE);
             //Ultra
             copy(GenerationsBlockTags.ULTRA, GenerationsItemTags.ULTRA);
+            //PokeDolls
+            copy(GenerationsBlockTags.POKEDOLLS, GenerationsItemTags.POKEDOLLS);
 
             //Ore Specific tags like Vanilla
             copy(GenerationsBlockTags.GENERATIONSORES, GenerationsItemTags.GENERATIONSORES);
