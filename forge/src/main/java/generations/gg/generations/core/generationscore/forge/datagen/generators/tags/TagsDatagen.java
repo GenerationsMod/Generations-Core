@@ -562,11 +562,11 @@ public class TagsDatagen {
 
             //Forge Armor Tags
             GenerationsArmor.ARMOR.forEach(armor -> {
-                if (armor.get() instanceof ArmorItem item) {
-                    if (item.getType() == ArmorItem.Type.HELMET) tag(Tags.Items.ARMORS_HELMETS).add(item);
-                    else if (item.getType() == ArmorItem.Type.CHESTPLATE) tag(Tags.Items.ARMORS_CHESTPLATES).add(item);
-                    else if (item.getType() == ArmorItem.Type.LEGGINGS) tag(Tags.Items.ARMORS_LEGGINGS).add(item);
-                    else if (item.getType() == ArmorItem.Type.BOOTS) tag(Tags.Items.ARMORS_BOOTS).add(item);
+                switch (((ArmorItem) armor.get()).getType()){
+                    case HELMET -> tag(Tags.Items.ARMORS_HELMETS).add(armor.get());
+                    case CHESTPLATE -> tag(Tags.Items.ARMORS_CHESTPLATES).add(armor.get());
+                    case LEGGINGS -> tag(Tags.Items.ARMORS_LEGGINGS).add(armor.get());
+                    case BOOTS -> tag(Tags.Items.ARMORS_BOOTS).add(armor.get());
                 }
             });
         }
