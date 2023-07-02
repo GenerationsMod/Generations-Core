@@ -156,6 +156,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_PERIOD);
         registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_COMMA);
         registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE);
+        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_EMPTY);
 
         registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_A);
         registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_B);
