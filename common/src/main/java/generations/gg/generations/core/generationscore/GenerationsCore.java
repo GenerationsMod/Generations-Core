@@ -71,7 +71,7 @@ public class GenerationsCore
 		GenerationsContainers.init();
 		GenerationsNetworking.init();
 
-		CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "main");
+		CONFIG = ConfigLoader.loaderConfig(Config.class, "core", "main");
 	}
 
 	/**
