@@ -49,7 +49,8 @@ public class GeneralLang extends LanguageProvider {
         add("item_group.pokeballs", "Poké Balls");
         add("item_group.restoration", "Restoration");
         add("item_group.tms", "TMs");
-        add("item_group.badges_ribbons", "Badges/Ribbons");
+        add("item_group.badges", "Badges");
+        add("item_group.ribbons", "Ribbons");
         add("item_group.held_items", "Held Items");
         add("item_group.player_items", "Player Items");
         add("item_group.legendary_items", "Legendary Items");

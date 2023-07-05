@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:stone_button"
+    },
+    "X": {
+      "item": "generations_core:braille_block_underscore"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "  X"
+  ],
+  "result": {
+    "item": "generations_core:braille_block_a"
+  },
+  "show_notification": true
+}

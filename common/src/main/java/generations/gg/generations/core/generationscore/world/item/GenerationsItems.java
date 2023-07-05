@@ -1756,11 +1756,11 @@ public class GenerationsItems {
 
     public static RegistrySupplier<Item> createBadge(String id, Object object/*ElementType elementType*/) {
         /*elementType*/
-        return BADGES.register(id, () -> new BadgeItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.BADGES_RIBBONS)));
+        return BADGES.register(id, () -> new BadgeItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.BADGES)));
     }
 
     public static RegistrySupplier<Item> createRibbon(String id) {
-        return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.BADGES_RIBBONS)));
+        return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.RIBBONS)));
     }
     
     public static void init() {
