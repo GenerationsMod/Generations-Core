@@ -41,17 +41,20 @@ public class BoneCreatorProxy implements Supplier<Bone>, Bone {
     public <T extends Entity> void render(T entity, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var model = objectSupplier.get();
 
-        var instance = entity != null ? ((PixelmonInstanceProvider) entity).getInstance() : ModelRegistry.getInstance();
+        var instance = entity != null ? ((PixelmonInstanceProvider) entity).getInstance() : null;
 
         if(instance != null) {
             var scale = model.renderObject.scale;
 
             if(entity instanceof PokemonEntity pokemon) {
-                var id = PokemonModelRepository.INSTANCE.getTexture(pokemon.getPokemon().getSpecies().getResourceIdentifier(), pokemon.getAspects().get(), (PokemonClientDelegate) pokemon.getDelegate());
 
                 scale *= pokemon.getPokemon().getSpecies().getBaseScale();
 
-                if(id.getNamespace().equals("pk")) instance.setVariant(id.getPath());
+                if(model.renderObject.isReady()) {
+                    var id = PokemonModelRepository.INSTANCE.getVariations().get(pokemon.getPokemon().getSpecies().getResourceIdentifier()).getResolvedTexture(pokemon.getPokemon().getAspects(), 0F);
+                    if(id.getNamespace().equals("pk")) instance.setVariant(id.getPath());
+                }
+
             }
 
             stack.pushPose();
