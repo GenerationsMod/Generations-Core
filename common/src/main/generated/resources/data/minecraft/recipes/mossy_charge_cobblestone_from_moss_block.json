@@ -1,19 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "key": {
-    "E": {
+  "group": "mossy_charge_cobblestone",
+  "ingredients": [
+    {
       "item": "generations_core:charge_cobblestone"
     },
-    "Q": {
-      "item": "minecraft:vine"
+    {
+      "item": "minecraft:moss_block"
     }
-  },
-  "pattern": [
-    "EQ"
   ],
   "result": {
     "item": "generations_core:mossy_charge_cobblestone"
-  },
-  "show_notification": true
+  }
 }
