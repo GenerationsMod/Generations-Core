@@ -1,5 +1,5 @@
 {
-  "parent": "pokemod:block/ultra/ultra_block",
+  "parent": "generations_core:block/ultra/ultra_block",
   "display": {
     "gui": {
       "rotation": [ 30, 135, 0 ],

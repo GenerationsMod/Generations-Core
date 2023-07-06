@@ -1,5 +1,5 @@
 {
-  "parent": "pokemod:block/ultra/ultra_cube",
+  "parent": "generations_core:block/ultra/ultra_cube",
   "ambientocclusion" : false,
   "textures": {
     "particle": "#side",
