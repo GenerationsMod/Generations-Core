@@ -6,7 +6,7 @@
       "item": "generations_core:ghost_gem"
     },
     {
-      "item": "generations_core:ghost_log"
+      "tag": "minecraft:logs"
     }
   ],
   "result": {

@@ -1242,9 +1242,8 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //1 Gem 1 Log = 8 Logs
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsWood.GHOST_LOG.get(), 8)
                 .requires(GenerationsItems.GHOST_GEM.get())
-                .requires(GenerationsWood.GHOST_LOG.get())
+                .requires(ItemTags.LOGS)
                 .unlockedBy(getHasName(GenerationsItems.GHOST_GEM.get()), has(GenerationsItems.GHOST_GEM.get()))
-                .unlockedBy(getHasName(GenerationsWood.GHOST_LOG.get()), has(GenerationsWood.GHOST_LOG.get()))
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsWood.GHOST_PLANKS.get(), 32)
@@ -1273,7 +1272,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //Charge Dripstone
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.get(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
-
     }
 
     private void buildBuildingBlockRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item dye, RegistrySupplier<Block> pokebrick, Block block) {
