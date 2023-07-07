@@ -1,11 +1,9 @@
 modLoader="javafml"
-loaderVersion="[45,)"
+loaderVersion="[47,)"
 license="GNU GPL 3.0"
-issueTrackerURL="https://JTMcQ/Generations-Core/issues"
+issueTrackerURL="https://github.com/GenerationsMod/Generations-Core/issues"
 
-
-
-[[mods]] #mandatory
+[[mods]]
 modId="generations_core"
 version="${version}"
 displayName="Generations-Core"
@@ -19,14 +17,14 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 
 [[dependencies.generations_core]]
    modId="forge"
-   mandatory=true #mandatory
-   versionRange="[45,)" #mandatory
+   mandatory=true
+   versionRange="[47,)"
    ordering="NONE"
    side="BOTH"
 
 [[dependencies.generations_core]]
    modId="minecraft"
    mandatory=true
-   versionRange="[1.19.4,1.20)"
+   versionRange="[1.20.1,)"
    ordering="NONE"
    side="BOTH"
