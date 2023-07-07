@@ -50,14 +50,10 @@ public class SittableEntity extends Entity {
         super.tick();
 
         if (blockState == null)
-            blockState = level.getBlockState(blockPosition());
+            blockState = level().getBlockState(blockPosition());
 
-        if (!level.isClientSide) {
-            if (getPassengers().isEmpty() || blockState.isAir()) {
-                kill();
-            }
-        }
-
+        if (!level().isClientSide)
+            if (getPassengers().isEmpty() || blockState.isAir()) kill();
     }
 
     @Override
