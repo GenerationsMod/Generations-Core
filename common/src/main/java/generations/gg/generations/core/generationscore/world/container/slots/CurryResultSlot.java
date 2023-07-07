@@ -36,7 +36,7 @@ public class CurryResultSlot extends Slot {
     }
 
     protected void checkTakeAchievements(Player player, ItemStack stack) {
-        stack.onCraftedBy(player.getLevel(), player, this.removeCount);
+        stack.onCraftedBy(player.level(), player, this.removeCount);
         //TODO: Curries made stat?
         this.removeCount = 0;
     }

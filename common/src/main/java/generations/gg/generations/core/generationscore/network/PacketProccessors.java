@@ -18,7 +18,7 @@ public class PacketProccessors {
     void process(C2SToggleCookingPotPacket packet, Supplier<NetworkManager.PacketContext> ctx) {
         ctx.get().queue(() -> {
             var sender = ctx.get().getPlayer();
-            if (sender.level.getBlockEntity(packet.pos()) instanceof CookingPotBlockEntity pot) pot.setCooking(!pot.isCooking());
+            if (sender.level().getBlockEntity(packet.pos()) instanceof CookingPotBlockEntity pot) pot.setCooking(!pot.isCooking());
         });
     }
 
