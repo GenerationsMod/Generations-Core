@@ -1732,7 +1732,11 @@ public class GenerationsItems {
         return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
     }
 
-    public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, CreativeModeTab tab) {
+    public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
+        return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
+    }
+
+    public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
         return register(name, itemSupplier, tab);
     }
 
