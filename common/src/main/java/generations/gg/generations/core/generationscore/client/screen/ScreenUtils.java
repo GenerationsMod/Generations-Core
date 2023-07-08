@@ -8,7 +8,7 @@ import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiComponent;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.renderer.GameRenderer;
@@ -16,6 +16,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -39,46 +40,46 @@ public class ScreenUtils {
     /**
      * Utility method because Forge sucks with parameter names. Also, drawTexture makes more sense than blit.
      */
-    public static void drawTexture(PoseStack matrices, int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight) {
-        GuiComponent.blit(matrices, x, y, u, v, width, height, textureWidth, textureHeight);
+    public static void drawTexture(GuiGraphics matrices, ResourceLocation location, int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight) {
+        matrices.blit(location,x, y, u, v, width, height, textureWidth, textureHeight);
     }
 
     /**
      * Utility method because Forge sucks with parameter names. Also, drawTexture makes more sense than blit.
      */
-    public static void drawTexture(PoseStack poseStack, int x, int y, int width, int height, float uOffset, float vOffset, int uWidth, int vHeight, int textureWidth, int textureHeight) {
-        GuiComponent.blit(poseStack, x, y, width, height, uOffset, vOffset, uWidth, vHeight, textureWidth, textureHeight);
+    public static void drawTexture(GuiGraphics graphics, ResourceLocation location, int x, int y, int width, int height, float uOffset, float vOffset, int uWidth, int vHeight, int textureWidth, int textureHeight) {
+        graphics.blit(location, x, y, width, height, uOffset, vOffset, uWidth, vHeight, textureWidth, textureHeight);
     }
 
-    public static void drawAnchoredTexture(PoseStack stack, int x, int y, int width, int height, int u, int v, int uWidth, int vHeight, int textureWidth, int textureHeight, Anchor anchor) {
-        stack.pushPose();
-        anchor.process(stack, x, y, width, height);
-        ScreenUtils.drawTexture(stack, 0, 0, width, height, u, v, uWidth, vHeight, textureWidth, textureHeight);
-        stack.popPose();
+    public static void drawAnchoredTexture(GuiGraphics graphics, ResourceLocation location, int x, int y, int width, int height, int u, int v, int uWidth, int vHeight, int textureWidth, int textureHeight, Anchor anchor) {
+        graphics.pose().pushPose();
+        anchor.process(graphics.pose(), x, y, width, height);
+        ScreenUtils.drawTexture(graphics, location, 0, 0, width, height, u, v, uWidth, vHeight, textureWidth, textureHeight);
+        graphics.pose().popPose();
     }
 
-    public static void drawAnchoredStretchedTexture(PoseStack stack, int x, int y, int width, int height, int u, int v, int uWidth, int vHeight, int textureWidth, int textureHeight, float widthMultiplier, float heightMultiplier, Anchor anchor) {
-        stack.pushPose();
-        anchor.process(stack, x, y, width, height, widthMultiplier, heightMultiplier);
-        ScreenUtils.drawTexture(stack, 0, 0, width, height, u, v, uWidth, vHeight, textureWidth, textureHeight);
-        stack.popPose();
+    public static void drawAnchoredStretchedTexture(GuiGraphics stack, ResourceLocation location, int x, int y, int width, int height, int u, int v, int uWidth, int vHeight, int textureWidth, int textureHeight, float widthMultiplier, float heightMultiplier, Anchor anchor) {
+        stack.pose().pushPose();
+        anchor.process(stack.pose(), x, y, width, height, widthMultiplier, heightMultiplier);
+        ScreenUtils.drawTexture(stack, location, 0, 0, width, height, u, v, uWidth, vHeight, textureWidth, textureHeight);
+        stack.pose().popPose();
     }
 
     /**
      * {@link PoseStack} black magic to render text at a different scale
      */
-    public static void drawScaledText(PoseStack matrices, Object text, float x, float y, float scale, int color, boolean shadow) {
-        matrices.pushPose();
-        matrices.scale(scale, scale, 0);
-        matrices.translate(x / scale, y / scale, 0);
+    public static void drawScaledText(GuiGraphics matrices, Object text, float x, float y, float scale, int color, boolean shadow) {
+        matrices.pose().pushPose();
+        matrices.pose().scale(scale, scale, 0);
+        matrices.pose().translate(x / scale, y / scale, 0);
         drawText(matrices, text, color, shadow);
-        matrices.popPose();
+        matrices.pose().popPose();
     }
 
     /**
      * {@link PoseStack} black magic to render text at a different scale but also with centering
      */
-    public static void drawScaledCenteredText(PoseStack matrices, Object text, int x, int y, float scale, int color, boolean shadow) {
+    public static void drawScaledCenteredText(GuiGraphics matrices, Object text, int x, int y, float scale, int color, boolean shadow) {
         drawScaledText(matrices, text, x - (textWidth(text) / 2f) * scale, (float) y, scale, color, shadow);
     }
 
@@ -91,25 +92,19 @@ public class ScreenUtils {
         throw new RuntimeException("Invalid Text Object " + text);
     }
 
-    private static void drawText(PoseStack matrices, Object text, int color, boolean shadow) {
+    private static void drawText(GuiGraphics matrices, Object text, int color, boolean shadow) {
         var font = Minecraft.getInstance().font;
 
-        if (!shadow) {
-            if (text instanceof String string) font.draw(matrices, string, 0, 0, color);
-            else if (text instanceof Component component) font.draw(matrices, component, 0, 0, color);
-            else if (text instanceof FormattedCharSequence sequence) font.draw(matrices, sequence, 0, 0, color);
-        } else {
-            if (text instanceof String string) font.drawShadow(matrices, string, 0, 0, color);
-            else if (text instanceof Component component) font.drawShadow(matrices, component, 0, 0, color);
-            else if (text instanceof FormattedCharSequence sequence) font.drawShadow(matrices, sequence, 0, 0, color);
-        }
+        if (text instanceof String string) matrices.drawString(font, string, 0, 0, color, shadow);
+        else if (text instanceof Component component) matrices.drawString(font, component, 0, 0, color, shadow);
+        else if (text instanceof FormattedCharSequence sequence) matrices.drawString(font, sequence, 0, 0, color, shadow);
     }
 
-    public static void drawTextWithHeight(PoseStack matrices, Object text, float x, float y, float height, int color) {
+    public static void drawTextWithHeight(GuiGraphics matrices, Object text, float x, float y, float height, int color) {
         drawTextWithHeight(matrices, text, x, y, height, color, Position.LEFT);
     }
 
-    public static void drawTextWithHeight(PoseStack matrices, Object text, float x, float y, float height, int color, ScreenUtils.Position pos) {
+    public static void drawTextWithHeight(GuiGraphics matrices, Object text, float x, float y, float height, int color, ScreenUtils.Position pos) {
         switch (pos) {
             case LEFT -> drawScaledText(matrices, text, x, y, height / 9f, color, false);
 
@@ -133,7 +128,7 @@ public class ScreenUtils {
         else return 0;
     }
 
-    public static void drawTextWithHeightWithLengthScaling(PoseStack matrices, Object text, float x, float y, float optimalHeight, float length, int color, ScreenUtils.Position pos) {
+    public static void drawTextWithHeightWithLengthScaling(GuiGraphics matrices, Object text, float x, float y, float optimalHeight, float length, int color, ScreenUtils.Position pos) {
         float height = optimalHeight;
         int actualLength = getScaledTextLength(text, (int) optimalHeight);
 
@@ -146,27 +141,21 @@ public class ScreenUtils {
         drawTextWithHeight(matrices, text, x, y, height, color, pos);
     }
 
-    public static void drawCenteredString(PoseStack poseStack, Font font, Component text, int x, int y, int color, boolean shadow) {
-        if (shadow) {
-            font.drawShadow(poseStack, text, (float) (x - font.width(text) / 2), (float) y, color);
-        } else {
-            font.draw(poseStack, text, (float) (x - font.width(text) / 2), (float) y, color);
-        }
+    public static void drawCenteredString(GuiGraphics poseStack, Font font, Component text, int x, int y, int color, boolean shadow) {
+        poseStack.drawString(font, text, (x - font.width(text) / 2), y, color, shadow);
     }
 
-    public static void drawCenteredString(PoseStack poseStack, Font font, String text, int x, int y, int color, boolean shadow) {
-        if (shadow)
-            font.drawShadow(poseStack, text, (float) (x - font.width(text) / 2), (float) y, color);
-        else
-            font.draw(poseStack, text, (float) (x - font.width(text) / 2), (float) y, color);
+    public static void drawCenteredString(GuiGraphics poseStack, Font font, String text, int x, int y, int color, boolean shadow) {
+        poseStack.drawString(font, text, (x - font.width(text) / 2), y, color, shadow);
+
     }
 
-    public static void drawRect(PoseStack poseStack, int x, int y, int width, int height, int color) {
+    public static void drawRect(GuiGraphics poseStack, int x, int y, int width, int height, int color) {
         if (width == 0 || height == 0) {
             return;
         }
 
-        drawRect(poseStack.last().pose(), 0, x, y, x + width, y + height, color);
+        drawRect(poseStack.pose().last().pose(), 0, x, y, x + width, y + height, color);
     }
 
     public static void drawRect(Matrix4f mat, int zLevel, int left, int top, int right, int bottom, int startColor) {
@@ -361,25 +350,25 @@ public class ScreenUtils {
         }
     }
 
-    public static void renderCutoff(PoseStack stack, int x, int y, int width, int height, OnRender onRender) {
-        stack.pushPose();
-        stack.translate(0.0F, 0.0F, 950.0F);
+    public static void renderCutoff(GuiGraphics stack, int x, int y, int width, int height, OnRender onRender) {
+        stack.pose().pushPose();
+        stack.pose().translate(0.0F, 0.0F, 950.0F);
         RenderSystem.enableDepthTest();
         RenderSystem.colorMask(false, false, false, false);
-        GuiComponent.fill(stack, 4680, 2260, -4680, -2260, 0xFF000000);
-        stack.translate(0.0F, 0.0F, -950.0F);
+        stack.fill(4680, 2260, -4680, -2260, 0xFF000000);
+        stack.pose().translate(0.0F, 0.0F, -950.0F);
         RenderSystem.depthFunc(GL11.GL_GEQUAL);
-        GuiComponent.fill(stack, x + width, y + height, x, y, 0xFF000000);
+        stack.fill(x + width, y + height, x, y, 0xFF000000);
         RenderSystem.depthFunc(GL11.GL_LEQUAL);
         RenderSystem.colorMask(true, true, true, true);
         onRender.render(stack);
         RenderSystem.depthFunc(GL11.GL_GEQUAL);
-        stack.translate(0.0F, 0.0F, -950.0F);
+        stack.pose().translate(0.0F, 0.0F, -950.0F);
         RenderSystem.colorMask(false, false, false, false);
-        GuiComponent.fill(stack, 4680, 2260, -4680, -2260, 0xFF000000);
+        stack.fill(4680, 2260, -4680, -2260, 0xFF000000);
         RenderSystem.colorMask(true, true, true, true);
         RenderSystem.depthFunc(GL11.GL_LEQUAL);
-        stack.popPose();
+        stack.pose().popPose();
     }
 
     public static void enableScissor(double x, double y, double endX, double endY) {
@@ -397,8 +386,8 @@ public class ScreenUtils {
     }
 
 
-    public static void enableScissor(PoseStack stack, float x1, float y1, float x2, float y2) {
-        Matrix4f matrix = stack.last().pose();
+    public static void enableScissor(GuiGraphics stack, float x1, float y1, float x2, float y2) {
+        Matrix4f matrix = stack.pose().last().pose();
         Vector3f coord = new Vector3f(x1, y1, 0);
         Vector3f end = new Vector3f(x2, y2, 0);
         matrix.transformPosition(coord);
@@ -413,7 +402,7 @@ public class ScreenUtils {
 
 
     public interface OnRender {
-        void render(PoseStack stack);
+        void render(GuiGraphics stack);
     }
 
     public enum Position {

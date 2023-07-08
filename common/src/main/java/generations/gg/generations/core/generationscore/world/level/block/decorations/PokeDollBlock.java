@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeDollBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PokeDollBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,7 +22,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -41,7 +40,7 @@ public class PokeDollBlock extends GenericModelBlock<PokeDollBlockEntity> {
     private final String variant;
 
     public PokeDollBlock(String name, boolean shiny, float scale) {
-        super(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(1.0f), GenerationsBlockEntities.POKE_DOLL, GenerationsCore.id("models/block/pokedolls/" + name + ".pk"));
+        super(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(1.0f), GenerationsBlockEntities.POKE_DOLL, GenerationsCore.id("models/block/pokedolls/" + name + ".pk"));
         this.name = name;
         this.shiny = shiny;
         this.scale = scale;

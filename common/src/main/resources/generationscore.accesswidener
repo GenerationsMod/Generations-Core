@@ -25,3 +25,6 @@ accessible method net/minecraft/world/level/block/FarmBlock isNearWater (Lnet/mi
 accessible method net/minecraft/world/level/block/FarmBlock isUnderCrops (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
 
 accessible field net/minecraft/world/entity/animal/Sheep ITEM_BY_DYE Ljava/util/Map;
+
+mutable field net/minecraft/world/inventory/Slot x I
+mutable field net/minecraft/world/inventory/Slot y I
