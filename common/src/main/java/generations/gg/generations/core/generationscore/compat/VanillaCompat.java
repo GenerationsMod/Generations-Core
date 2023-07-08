@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.compat;
 import dev.architectury.hooks.item.tool.AxeItemHooks;
 import dev.architectury.registry.CreativeTabOutput;
 import dev.architectury.registry.CreativeTabRegistry;
+import dev.architectury.registry.registries.DeferredSupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -29,7 +30,7 @@ public class VanillaCompat {
 		registerStrippable(GenerationsWood.GHOST_LOG.get(), GenerationsWood.STRIPPED_GHOST_LOG.get());
 		registerStrippable(GenerationsWood.GHOST_WOOD.get(), GenerationsWood.STRIPPED_GHOST_WOOD.get());
 
-		modifyTabs();
+		//modifyTabs();
 	}
 
 	/**
@@ -51,11 +52,20 @@ public class VanillaCompat {
 		((FireBlock) Blocks.FIRE).setFlammable(blockIn, encouragement, flammability);
 	}
 
+	/*
 	private static void modifyTabs() {
 		var tabs = GenerationsCore.CONFIG.addItemsToVanillaTabs;
 
+		for (CreativeModeTab tab : CreativeModeTabs.tabs()){
+			switch (tab.getType()) {
+				case CreativeModeTabs.COLORED_BLOCKS:
+					if(!tabs.buildingBlocks)
+						CreativeTabRegistry.disable(tab);
+					break;
+			}
+		}
 		if(tabs.coloredBlocks)
-			CreativeTabRegistry.modify(CreativeModeTabs.COLORED_BLOCKS, (flags, output, permissions) -> {
+			CreativeTabRegistry.modify((DeferredSupplier<CreativeModeTab>) CreativeModeTabs.COLORED_BLOCKS, (flags, output, permissions) -> {
 				for (int i = 0; i <= 5; i++) {
 					int finalI = i;
 					GenerationsBlocks.POKEBRICKS.forEach(block -> addInOrder(output, finalI, block.get()));
@@ -139,6 +149,8 @@ public class VanillaCompat {
 		if(tabs.buildingBlocks)
 			CreativeTabRegistry.modify(CreativeModeTabs.BUILDING_BLOCKS, (flags, output, permissions) -> GenerationsWood.WOOD_BLOCKS.forEach(woodBlock -> output.acceptAfter(Items.STONE.getDefaultInstance(), woodBlock.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS)));
 	}
+
+	 */
 
 	private static void addInOrder(CreativeTabOutput event, int i, Block b) {
 		if (b instanceof PressurePlateBlock){ if(i == 5)event.accept(b);}
