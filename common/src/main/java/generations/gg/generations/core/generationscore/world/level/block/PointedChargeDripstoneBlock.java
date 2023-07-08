@@ -10,7 +10,6 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
@@ -27,7 +26,6 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -135,49 +133,50 @@ public class PointedChargeDripstoneBlock extends Block implements Fallable, Simp
 		else PointedChargeDripstoneBlock.spawnFallingStalactite(state, level, pos);
 	}
 
-	@Override
-	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, RandomSource random) {
-		PointedChargeDripstoneBlock.fluidTransferChance(state, level, pos, random.nextFloat());
-		if (random.nextFloat() < 0.011377778f && PointedChargeDripstoneBlock.isStalactiteStartPos(state, level, pos))
-			PointedChargeDripstoneBlock.growStalactiteOrStalagmiteIfPossible(state, level, pos, random);
+	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+		maybeTransferFluid(state, level, pos, random.nextFloat());
+		if (random.nextFloat() < 0.011377778F && isStalactiteStartPos(state, level, pos))
+			growStalactiteOrStalagmiteIfPossible(state, level, pos, random);
 	}
 
 	@VisibleForTesting
-	public static final void fluidTransferChance(BlockState state, ServerLevel level, BlockPos pos, float randChance) {
-		float f;
-		if (randChance > 0.17578125f) return;
-		if (!PointedChargeDripstoneBlock.isStalactiteStartPos(state, level, pos)) return;
+	public static void maybeTransferFluid(BlockState state, ServerLevel level, BlockPos pos, float randChance) {
+		if (!(randChance > 0.17578125F) || !(randChance > 0.05859375F)) {
+			if (isStalactiteStartPos(state, level, pos)) {
+				Optional<FluidInfo> optional = getFluidAboveStalactite(level, pos, state);
+				if (optional.isPresent()) {
+					Fluid fluid = optional.get().fluid;
+					float f;
+					if (fluid == Fluids.WATER) f = 0.17578125F;
+					else {
+						if (fluid != Fluids.LAVA) return;
 
-		Optional<FluidInfo> optional = PointedChargeDripstoneBlock.getFluidAboveStalactite(level, pos, state);
-		if (optional.isEmpty()) return;
-		Fluid fluid = optional.get().fluid;
-		if (fluid == Fluids.WATER) f = 0.17578125f;
-		else if (fluid == Fluids.LAVA) f = 0.05859375f;
-		else return;
+						f = 0.05859375F;
+					}
 
-		if (randChance >= f) return;
-
-		BlockPos blockPos = PointedChargeDripstoneBlock.findTip(state, level, pos, 11, false);
-		if (blockPos == null) return;
-
-		if (optional.get().sourceState.is(Blocks.MUD) && fluid == Fluids.WATER) {
-			BlockState blockState = Blocks.CLAY.defaultBlockState();
-			level.setBlockAndUpdate(optional.get().pos, blockState);
-			Block.pushEntitiesUp(optional.get().sourceState, blockState, level, optional.get().pos);
-			level.gameEvent(GameEvent.BLOCK_CHANGE, optional.get().pos, GameEvent.Context.of(blockState));
-			level.levelEvent(1504, blockPos, 0);
-			return;
+					if (!(randChance >= f)) {
+						BlockPos blockPos = findTip(state, level, pos, 11, false);
+						if (blockPos != null)
+							if (optional.get().sourceState.is(Blocks.MUD) && fluid == Fluids.WATER) {
+								BlockState blockState = Blocks.CLAY.defaultBlockState();
+								level.setBlockAndUpdate(optional.get().pos, blockState);
+								Block.pushEntitiesUp((optional.get()).sourceState, blockState, level, (optional.get()).pos);
+								level.gameEvent(GameEvent.BLOCK_CHANGE, (optional.get()).pos, GameEvent.Context.of(blockState));
+								level.levelEvent(1504, blockPos, 0);
+							} else {
+								BlockPos blockPos2 = findFillableCauldronBelowStalactiteTip(level, blockPos, fluid);
+								if (blockPos2 != null) {
+									level.levelEvent(1504, blockPos, 0);
+									int i = blockPos.getY() - blockPos2.getY();
+									int j = 50 + i;
+									BlockState blockState2 = level.getBlockState(blockPos2);
+									level.scheduleTick(blockPos2, blockState2.getBlock(), j);
+								}
+							}
+					}
+				}
+			}
 		}
-		BlockPos blockPos2 = PointedChargeDripstoneBlock.findFillableCauldronBelowStalactiteTip(level, blockPos, fluid);
-		if (blockPos2 == null) return;
-
-		level.levelEvent(1504, blockPos, 0);
-		level.scheduleTick(blockPos2, level.getBlockState(blockPos2).getBlock(), 50 + (blockPos.getY() - blockPos2.getY()));
-	}
-
-	@Override
-	public @NotNull PushReaction getPistonPushReaction(@NotNull BlockState state) {
-		return PushReaction.DESTROY;
 	}
 
 	@Override
@@ -196,8 +195,7 @@ public class PointedChargeDripstoneBlock extends Block implements Fallable, Simp
 
 	@Override
 	public @NotNull FluidState getFluidState(BlockState state) {
-		if (state.getValue(WATERLOGGED)) return Fluids.WATER.getSource(false);
-		return super.getFluidState(state);
+		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 
 	@Override
@@ -231,11 +229,6 @@ public class PointedChargeDripstoneBlock extends Block implements Fallable, Simp
 	@Override
 	public @NotNull DamageSource getFallDamageSource(@NotNull Entity entity) {
 		return entity.damageSources().fallingStalactite(entity);
-	}
-
-	@Override
-	public @NotNull Predicate<Entity> getHurtsEntitySelector() {
-		return EntitySelector.NO_CREATIVE_OR_SPECTATOR.and(EntitySelector.LIVING_ENTITY_STILL_ALIVE);
 	}
 
 	private static void spawnFallingStalactite(BlockState state, ServerLevel level, BlockPos pos) {
