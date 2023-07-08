@@ -221,7 +221,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
 
     @Override
     public CookingPotContainer create(int i, Inventory arg, FriendlyByteBuf arg2) {
-        if (arg.player.getLevel().getBlockEntity(arg2.readBlockPos()) instanceof CookingPotBlockEntity cookingPot) {
+        if (arg.player.level().getBlockEntity(arg2.readBlockPos()) instanceof CookingPotBlockEntity cookingPot) {
             return new CookingPotContainer(new GenerationsContainers.CreationContext<>(i, arg, cookingPot));
         } else {
             return null;

@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.world.item.armor.Generati
 import generations.gg.generations.core.generationscore.world.item.armor.GenerationsArmorMaterials;
 import generations.gg.generations.core.generationscore.world.item.armor.effects.*;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -108,7 +109,7 @@ public class GenerationsArmor {
 	public static final RegistrySupplier<Item> WATER_STONE_LEGGINGS = register("water_stone_leggings", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.WATER_STONE, ArmorItem.Type.LEGGINGS, of()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> WATER_STONE_BOOTS = register("water_stone_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.WATER_STONE, ArmorItem.Type.BOOTS, of()).addCustomAttributeModifier(new SpeedModifier(0.5F)).addArmorEffect(new PotionArmorEffect(MobEffects.WATER_BREATHING, 0)), CreativeModeTabs.COMBAT);
 
-	public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function, CreativeModeTab tab) {
+	public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function, ResourceKey<CreativeModeTab> tab) {
 		return ARMOR.register(name, () -> function.apply(of().arch$tab(tab)));
 	}
 

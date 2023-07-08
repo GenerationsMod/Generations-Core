@@ -31,7 +31,7 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         if (stack.getItem() instanceof RedChainItem && !handler.hasRedChain()) {
             ItemStack chain = handler.insertItem(1, stack, false);
 
-            if (ItemStack.isSame(stack, chain)) return false;
+            if (ItemStack.isSameItem(stack, chain)) return false;
             player.setItemInHand(hand, chain);
 
             trySpawn(player);
@@ -40,7 +40,7 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         } else if (stack.getItem() instanceof CreationTrioItem && !handler.hasOrb()) {
             ItemStack chain = handler.insertItem(0, stack, false);
 
-            if (ItemStack.isSame(stack, chain)) return false;
+            if (ItemStack.isSameItem(stack, chain)) return false;
             player.setItemInHand(hand, chain);
 
             trySpawn(player);
