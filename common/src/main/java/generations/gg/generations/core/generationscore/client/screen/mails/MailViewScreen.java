@@ -10,6 +10,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.GameNarrator;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -93,25 +94,23 @@ public class MailViewScreen extends Screen {
     }
 
     @Override
-    public void render(PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
+    public void render(GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
         this.renderBackground(poseStack);
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.setShaderTexture(0, mailAccess.texture());
         int x = (this.width - IMAGE_WIDTH) / 2;
         int y = (this.height - IMAGE_HEIGHT) / 2;
-        blit(poseStack, x, y, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
+        poseStack.blit(mailAccess.texture(), x, y, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
 
-        this.font.draw(poseStack, authorComponent, x + 164f, y + 165f, 0);
+        poseStack.drawString(this.font, authorComponent, x + 164, y + 165, 0);
 
         int l = Math.min(TEXT_HEIGHT / this.font.lineHeight, this.cachedPageComponents.size());
         for (int m = 0; m < l; ++m) {
             FormattedCharSequence formattedCharSequence = this.cachedPageComponents.get(m);
-            this.font.draw(poseStack, formattedCharSequence, (float) (x + PAGE_TEXT_X_OFFSET), (float) (y + PAGE_TEXT_Y_OFFSET + m * this.font.lineHeight), 0);
+            poseStack.drawString(font, formattedCharSequence, (x + PAGE_TEXT_X_OFFSET), (y + PAGE_TEXT_Y_OFFSET + m * this.font.lineHeight), 0);
         }
         Style style = this.getClickedComponentStyleAt(mouseX, mouseY);
         if (style != null) {
-            this.renderComponentHoverEffect(poseStack, style, mouseX, mouseY);
+            poseStack.renderComponentHoverEffect(font, style, mouseX, mouseY);
         }
         super.render(poseStack, mouseX, mouseY, partialTick);
     }
