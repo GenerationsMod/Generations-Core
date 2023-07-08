@@ -11,6 +11,7 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 
 /**
  * Forge Main class for GenerationsCore.
@@ -29,7 +30,7 @@ public class GenerationsCoreForge {
 		// Submit our event bus to let architectury register our content on the right time
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, eventBus);
-        GenerationsCore.init(ModList.get().isLoaded("cobblemon"));
+        GenerationsCore.init(ModList.get().isLoaded("cobblemon"), FMLPaths.CONFIGDIR.get());
         eventBus.addListener(this::onInitialize);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(eventBus));
     }
