@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Files;
@@ -35,6 +36,7 @@ public class ConfigLoader {
             else if (Files.exists(configPath)) value = GSON.fromJson(Files.newBufferedReader(configPath), clazz);
 
             Files.writeString(configPath, GSON.toJson(value));
+            GenerationsCore.LOGGER.info("Generations-" + subfolder + " config loaded!");
             return value;
         } catch (Exception e) {
             throw new RuntimeException("Failed to load config.", e);
