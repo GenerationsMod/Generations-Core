@@ -14,7 +14,7 @@ import net.fabricmc.loader.api.FabricLoader;
 public class GenerationsCoreFabric extends GenerationsCore implements ModInitializer {
 	@Override
 	public void onInitialize() {
-		GenerationsCore.init(FabricLoader.getInstance().isModLoaded("cobblemon"));
+		GenerationsCore.init(FabricLoader.getInstance().isModLoaded("cobblemon"), FabricLoader.getInstance().getConfigDir());
 		VanillaCompat.setup();
 	}
 }
