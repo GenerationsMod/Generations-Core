@@ -51,11 +51,15 @@ public class GenerationsCore
 	/** Cobblemon Detection **/
 	public static boolean cobblemon = false;
 
+	/** Config Directory **/
+	public static Path CONFIG_DIRECTORY;
+
 	/**
 	 * Initializes the Generations-Core mod.
 	 * @param configDirectory The config directory for the Generations-Core mod.
 	 */
 	public static void init(boolean cobblemon, @NotNull Path configDirectory) {
+		CONFIG_DIRECTORY = configDirectory;
 		GenerationsCore.cobblemon = cobblemon;
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
@@ -75,7 +79,7 @@ public class GenerationsCore
 		GenerationsContainers.init();
 		GenerationsNetworking.init();
 
-		CONFIG = ConfigLoader.loaderConfig(Config.class, "core", "main", configDirectory);
+		CONFIG = ConfigLoader.loaderConfig(Config.class, "core", "main");
 	}
 
 	/**
