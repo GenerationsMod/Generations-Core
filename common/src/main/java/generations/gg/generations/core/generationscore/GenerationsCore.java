@@ -23,7 +23,10 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
+
+import java.nio.file.Path;
 
 /**
  * The Main Class of the Generations-Core mod. (Common)
@@ -48,10 +51,15 @@ public class GenerationsCore
 	/** Cobblemon Detection **/
 	public static boolean cobblemon = false;
 
+	/** Config Directory **/
+	public static Path CONFIG_DIRECTORY;
+
 	/**
 	 * Initializes the Generations-Core mod.
+	 * @param configDirectory The config directory for the Generations-Core mod.
 	 */
-	public static void init(boolean cobblemon) {
+	public static void init(boolean cobblemon, @NotNull Path configDirectory) {
+		CONFIG_DIRECTORY = configDirectory;
 		GenerationsCore.cobblemon = cobblemon;
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
