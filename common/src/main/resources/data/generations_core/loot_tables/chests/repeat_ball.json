@@ -1,0 +1,358 @@
+{
+	"type": "minecraft:chest",
+	"pools": [{
+		"rolls": {
+			"min": 1,
+			"max": 3
+		},
+		"entries": [{
+				"type": "minecraft:item",
+				"name": "cobblemon:poke_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:air_balloon"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:binding_band"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:cell_battery"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:chople_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sinister_wing"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:colbur_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:custap_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:eject_button"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:electric_seed"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:fast_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:focus_band"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:focus_sash"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fried_food"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:grassy_seed"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:guard_spec"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:heavy_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:hyper_potion"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:item_urge"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lone_earing"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:max_repel"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:misty_seed"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:old_gateau"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:passho_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:power_plant_pass"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:protein"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:psychic_seed"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:red_card"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:repeat_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:revive"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:smoke_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tin_of_beans"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:x_attack_6"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:x_defense_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:x_special_attack"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:x_special_defense_3"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:x_speed"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:yellow_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:zinc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:black_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:blue_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:green_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:pink_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:red_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:white_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:yellow_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:ice_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:dawn_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:dusk_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:shiny_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:sun_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:moon_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:leaf_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:thunder_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:water_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:fire_stone_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:string"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:music_disc_mall"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fighting_candy"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:record_18"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:film"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:camera"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:aluminium_ingot"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:aluminium_plate"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_orange"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_reply"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_retro"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_rsvp"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_shadow"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_snow"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_space"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_steel"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_thanks"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_tropic"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_tunnel"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_wave"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemail_wood"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm12"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm39"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm58"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm64"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm73"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm89"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm112"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm134"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm158"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm167"
+			}
+		]
+	}]
+}
