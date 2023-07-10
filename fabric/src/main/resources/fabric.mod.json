@@ -7,6 +7,7 @@
   "description": "",
   "authors": ["J.T. McQuigg (JT122406)", "Waterpicker"],
   "contact": {},
+  "icon": "generations.png",
 
   "license": "GNU GPL 3.0",
   "environment": "*",
@@ -25,6 +26,6 @@
   "depends": {
     "fabricloader": ">=0.14.21",
     "minecraft": ">=1.20.1",
-    "architectury": ">=9.0.8"
+    "architectury": ">=9.1.10"
   }
 }
