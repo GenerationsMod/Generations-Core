@@ -1,23 +1,16 @@
 package generations.gg.generations.core.generationscore.client.screen.container;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.screen.Anchor;
 import generations.gg.generations.core.generationscore.client.screen.SubTexture;
 import generations.gg.generations.core.generationscore.world.container.MachineBlockContainer;
 import generations.gg.generations.core.generationscore.world.container.slots.TypeSlot;
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.DoubleSupplier;
@@ -35,9 +28,7 @@ public class MachineBlockScreen extends AbstractContainerScreen<MachineBlockCont
 
     @Override
     public void render(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
-        this.menu.slots.stream().filter(a -> a instanceof TypeSlot).forEach(a -> {
-           TypeSlot.interpolateVectors((TypeSlot) a, 0, 0, 80, 80, bakeTimeProvider.getAsDouble());
-        });
+        this.menu.slots.stream().filter(a -> a instanceof TypeSlot).forEach(a -> TypeSlot.interpolateVectors((TypeSlot) a, 0, 0, 80, 80, bakeTimeProvider.getAsDouble()));
 
         this.renderBackground(poseStack);
         super.render(poseStack, mouseX, mouseY, partialTick);

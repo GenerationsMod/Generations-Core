@@ -9,9 +9,7 @@ import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
@@ -45,9 +43,7 @@ public class GenerationsCreativeTabs {
     public static RegistrySupplier<CreativeModeTab> SHRINES = create("shrines", () -> GenerationsShrines.FROZEN_SHRINE);
 
     private static <T extends ItemLike> RegistrySupplier<CreativeModeTab> create(String name, @NotNull Supplier<Supplier<T>> item) {
-        return CREATIVE_TABS.register(name, () -> CreativeTabRegistry.create(builder -> {
-            builder.title(Component.translatable(name + "." + GenerationsCore.MOD_ID)).icon(() -> item.get().get().asItem().getDefaultInstance());
-        }));
+        return CREATIVE_TABS.register(name, () -> CreativeTabRegistry.create(builder -> builder.title(Component.translatable(name + "." + GenerationsCore.MOD_ID)).icon(() -> item.get().get().asItem().getDefaultInstance())));
     }
 
     public static void init() {
