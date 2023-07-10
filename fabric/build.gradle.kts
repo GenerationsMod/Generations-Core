@@ -50,7 +50,7 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
     //Cobblemon
-    modCompileOnly("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
+    modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
 }
 
 tasks {
