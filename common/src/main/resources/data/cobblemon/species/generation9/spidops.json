@@ -1,0 +1,108 @@
+{
+  "implemented": true,
+  "name": "Spidops",
+  "nationalPokedexNumber": 918,
+  "primaryType": "bug",
+  "abilities": [
+    "insomnia",
+    "h:stakeout"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 79,
+    "defence": 92,
+    "special_attack": 52,
+    "special_defence": 86,
+    "speed": 35
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 141,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "erratic",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:spider_eye",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:stringshot",
+    "1:tackle",
+    "5:strugglebug",
+    "8:assurance",
+    "11:feint",
+    "14:bugbite",
+    "19:block",
+    "24:counter",
+    "28:headbutt",
+    "33:stickyweb",
+    "37:gastroacid",
+    "41:circlethrow",
+    "45:throatchop",
+    "49:skittersmack",
+    "tm:aerialace",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:bugbuzz",
+    "tm:bulletseed",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:fling",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:leechlife",
+    "tm:lowkick",
+    "tm:poisonjab",
+    "tm:pounce",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:reversal",
+    "tm:rocktomb",
+    "tm:scaryface",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:spikes",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:toxicspikes",
+    "tm:trailblaze",
+    "tm:uturn",
+    "tm:xscissor"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 10,
+  "weight": 165,
+  "preEvolution": "tarountula",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.spidops.desc"
+  ]
+}

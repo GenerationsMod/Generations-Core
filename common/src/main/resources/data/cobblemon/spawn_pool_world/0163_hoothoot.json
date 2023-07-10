@@ -1,0 +1,27 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "hoothoot-1",
+            "pokemon": "hoothoot",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "5-24",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "timeRange": "night",
+                "biomes": [
+                    "#cobblemon:is_taiga",
+                    "#cobblemon:is_forest"
+                ]
+            }
+        }
+    ]
+}

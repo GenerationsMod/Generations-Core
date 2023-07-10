@@ -1,0 +1,44 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "marowak-1",
+            "pokemon": "marowak",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "28-42",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_sandy"
+                ]
+            }
+        },
+        {
+            "id": "marowak-alolan-1",
+            "pokemon": "marowak alolan",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "28-42",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true,
+                "timeRange": "night",
+                "biomes": [
+                    "#cobblemon:is_sandy"
+                ]
+            }
+        }
+    ]
+}

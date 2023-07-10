@@ -1,0 +1,170 @@
+{
+  "implemented": true,
+  "name": "Turtwig",
+  "nationalPokedexNumber": 387,
+  "primaryType": "grass",
+  "abilities": [
+    "overgrow",
+    "h:shellarmor"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 68,
+    "defence": 64,
+    "special_attack": 45,
+    "special_defence": 55,
+    "speed": 31
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 64,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "monster",
+    "grass"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "5:withdraw",
+    "9:absorb",
+    "13:razorleaf",
+    "17:curse",
+    "21:bite",
+    "25:megadrain",
+    "29:leechseed",
+    "33:synthesis",
+    "37:crunch",
+    "41:gigadrain",
+    "45:leafstorm",
+    "egg:amnesia",
+    "egg:bodyslam",
+    "egg:doubleedge",
+    "egg:earthpower",
+    "egg:grassyterrain",
+    "egg:growth",
+    "egg:heavyslam",
+    "egg:sandtomb",
+    "egg:seedbomb",
+    "egg:spitup",
+    "egg:stockpile",
+    "egg:superpower",
+    "egg:swallow",
+    "egg:thrash",
+    "egg:tickle",
+    "egg:wideguard",
+    "egg:worryseed",
+    "tm:attract",
+    "tm:bulletseed",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:irontail",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:naturepower",
+    "tm:protect",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockclimb",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:stealthrock",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tm:workup",
+    "tutor:absorb",
+    "tutor:earthpower",
+    "tutor:gigadrain",
+    "tutor:grasspledge",
+    "tutor:headbutt",
+    "tutor:irontail",
+    "tutor:mudslap",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:stockpile",
+    "tutor:superpower",
+    "tutor:synthesis",
+    "tutor:tackle",
+    "tutor:withdraw",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.turtwig.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "turtwig_grotle",
+      "variant": "level_up",
+      "result": "grotle",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 18
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.75,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 102,
+  "aspects": [],
+  "cannotDynamax": false
+}

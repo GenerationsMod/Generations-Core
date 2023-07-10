@@ -1,0 +1,233 @@
+{
+  "implemented": true,
+  "name": "Dragonair",
+  "nationalPokedexNumber": 148,
+  "primaryType": "dragon",
+  "abilities": [
+    "shedskin",
+    "h:marvelscale"
+  ],
+  "baseStats": {
+    "hp": 61,
+    "attack": 84,
+    "defence": 65,
+    "special_attack": 70,
+    "special_defence": 70,
+    "speed": 70
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 147,
+  "experienceGroup": "slow",
+  "eggCycles": 40,
+  "eggGroups": [
+    "water_1",
+    "dragon"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:dragon_breath",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:dragon_scale",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:leer",
+    "1:thunderwave",
+    "1:twister",
+    "1:wrap",
+    "22:dragonrage",
+    "29:slam",
+    "33:aquatail",
+    "33:dragontail",
+    "38:agility",
+    "39:dragonrush",
+    "47:safeguard",
+    "53:dragondance",
+    "53:raindance",
+    "56:outrage",
+    "65:hyperbeam",
+    "tm:agility",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:breakingswipe",
+    "tm:brutalswing",
+    "tm:captivate",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:dracometeor",
+    "tm:dragondance",
+    "tm:dragonpulse",
+    "tm:dragontail",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firespin",
+    "tm:flamethrower",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:incinerate",
+    "tm:ironhead",
+    "tm:irontail",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:outrage",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tutor:agility",
+    "tutor:aquatail",
+    "tutor:attract",
+    "tutor:bide",
+    "tutor:bind",
+    "tutor:blizzard",
+    "tutor:bodyslam",
+    "tutor:bubblebeam",
+    "tutor:curse",
+    "tutor:detect",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:dracometeor",
+    "tutor:dragonbreath",
+    "tutor:dragonpulse",
+    "tutor:dragonrage",
+    "tutor:dragontail",
+    "tutor:endure",
+    "tutor:facade",
+    "tutor:fireblast",
+    "tutor:flamethrower",
+    "tutor:frustration",
+    "tutor:headbutt",
+    "tutor:hiddenpower",
+    "tutor:horndrill",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:leer",
+    "tutor:lightscreen",
+    "tutor:mimic",
+    "tutor:outrage",
+    "tutor:protect",
+    "tutor:rage",
+    "tutor:raindance",
+    "tutor:reflect",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:safeguard",
+    "tutor:scaleshot",
+    "tutor:shockwave",
+    "tutor:skullbash",
+    "tutor:slam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:surf",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:takedown",
+    "tutor:thunder",
+    "tutor:thunderbolt",
+    "tutor:thunderwave",
+    "tutor:toxic",
+    "tutor:twister",
+    "tutor:waterfall",
+    "tutor:watergun",
+    "tutor:waterpulse",
+    "tutor:wrap",
+    "tutor:zapcannon"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.dragonair.desc"
+  ],
+  "preEvolution": "dratini",
+  "evolutions": [
+    {
+      "id": "dragonair_dragonite",
+      "variant": "level_up",
+      "result": "dragonite",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "hurricane"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 55
+        }
+      ]
+    }
+  ],
+  "baseScale": 1.2,
+  "hitbox": {
+    "width": 1.1,
+    "height": 1.9,
+    "fixed": false
+  },
+  "baseFriendship": 35,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 40,
+  "weight": 165,
+  "aspects": [],
+  "cannotDynamax": false
+}

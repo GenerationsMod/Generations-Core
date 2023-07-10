@@ -1,0 +1,162 @@
+{
+  "implemented": true,
+  "name": "Tepig",
+  "nationalPokedexNumber": 498,
+  "primaryType": "fire",
+  "abilities": [
+    "blaze",
+    "h:thickfat"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 63,
+    "defence": 45,
+    "special_attack": 45,
+    "special_defence": 45,
+    "speed": 45
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:porkchop",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "3:tailwhip",
+    "7:ember",
+    "9:odorsleuth",
+    "13:defensecurl",
+    "15:flamecharge",
+    "19:smog",
+    "21:rollout",
+    "25:takedown",
+    "27:heatcrash",
+    "31:assurance",
+    "33:flamethrower",
+    "37:headsmash",
+    "39:roar",
+    "43:flareblitz",
+    "egg:bodyslam",
+    "egg:burnup",
+    "egg:covet",
+    "egg:curse",
+    "egg:endeavor",
+    "egg:heavyslam",
+    "egg:magnitude",
+    "egg:sleeptalk",
+    "egg:suckerpunch",
+    "egg:superpower",
+    "egg:thrash",
+    "egg:yawn",
+    "tm:attract",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:gyroball",
+    "tm:hiddenpower",
+    "tm:incinerate",
+    "tm:overheat",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:toxic",
+    "tm:wildcharge",
+    "tm:willowisp",
+    "tm:workup",
+    "tutor:covet",
+    "tutor:endeavor",
+    "tutor:firepledge",
+    "tutor:heatwave",
+    "tutor:helpinghand",
+    "tutor:irontail",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stompingtantrum",
+    "tutor:superpower",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.tepig.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "tepig_pignite",
+      "variant": "level_up",
+      "result": "pignite",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 17
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.65,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.85,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 99,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,122 @@
+{
+  "implemented": true,
+  "name": "Flittle",
+  "nationalPokedexNumber": 955,
+  "primaryType": "psychic",
+  "abilities": [
+    "anticipation",
+    "frisk",
+    "h:speedboost"
+  ],
+  "baseStats": {
+    "hp": 30,
+    "attack": 35,
+    "defence": 30,
+    "special_attack": 55,
+    "special_defence": 30,
+    "speed": 75
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 51,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:peck",
+    "5:confusion",
+    "8:babydolleyes",
+    "11:disarmingvoice",
+    "15:quickattack",
+    "19:psybeam",
+    "24:pluck",
+    "29:agility",
+    "34:uproar",
+    "egg:allyswitch",
+    "egg:hypnosis",
+    "egg:roost",
+    "tm:agility",
+    "tm:batonpass",
+    "tm:calmmind",
+    "tm:confuseray",
+    "tm:disarmingvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:foulplay",
+    "tm:helpinghand",
+    "tm:lightscreen",
+    "tm:mudslap",
+    "tm:pounce",
+    "tm:protect",
+    "tm:psybeam",
+    "tm:psychic",
+    "tm:psychicterrain",
+    "tm:psyshock",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:sandstorm",
+    "tm:seedbomb",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:trick",
+    "tm:trickroom",
+    "tm:uturn",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 2,
+  "weight": 15,
+  "evolutions": [
+    {
+      "id": "flittle_espathra",
+      "variant": "level_up",
+      "result": "espathra",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "luminacrash"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.flittle.desc"
+  ]
+}

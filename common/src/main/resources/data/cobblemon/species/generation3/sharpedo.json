@@ -1,0 +1,240 @@
+{
+  "implemented": true,
+  "name": "Sharpedo",
+  "nationalPokedexNumber": 319,
+  "primaryType": "water",
+  "secondaryType": "dark",
+  "abilities": [
+    "roughskin",
+    "h:speedboost"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 120,
+    "defence": 40,
+    "special_attack": 95,
+    "special_defence": 40,
+    "speed": 95
+  },
+  "catchRate": 60,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "behaviour": {
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "water",
+      "secondaryType": "dark",
+      "abilities": [
+        "strongjaw"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 140,
+        "defence": 70,
+        "special_attack": 110,
+        "special_defence": 65,
+        "speed": 105
+      },
+      "catchRate": 60,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 196,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "water_2"
+      ],
+      "moves": [],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 25,
+      "weight": 1303,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "baseExperienceYield": 161,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_2"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:deep_sea_tooth",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:bite",
+    "1:feint",
+    "1:focusenergy",
+    "1:leer",
+    "1:rage",
+    "16:icefang",
+    "16:scaryface",
+    "22:crunch",
+    "26:assurance",
+    "28:screech",
+    "33:slash",
+    "34:aquajet",
+    "34:poisonfang",
+    "38:taunt",
+    "43:swagger",
+    "46:liquidation",
+    "48:skullbash",
+    "52:takedown",
+    "53:agility",
+    "56:nightslash",
+    "tm:agility",
+    "tm:assurance",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bounce",
+    "tm:brine",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:closecombat",
+    "tm:confide",
+    "tm:crunch",
+    "tm:darkpulse",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:naturalgift",
+    "tm:payback",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:roar",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scald",
+    "tm:scaryface",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:strength",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:taunt",
+    "tm:thief",
+    "tm:torment",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:zenheadbutt",
+    "tutor:ancientpower",
+    "tutor:aquajet",
+    "tutor:bounce",
+    "tutor:crunch",
+    "tutor:darkpulse",
+    "tutor:destinybond",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:endure",
+    "tutor:flipturn",
+    "tutor:furycutter",
+    "tutor:icefang",
+    "tutor:icywind",
+    "tutor:liquidation",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:poisonfang",
+    "tutor:scaleshot",
+    "tutor:scaryface",
+    "tutor:slash",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:substitute",
+    "tutor:superfang",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:uproar",
+    "tutor:waterpulse",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.sharpedo.desc"
+  ],
+  "preEvolution": "carvanha",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.2,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 35,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 18,
+  "weight": 888,
+  "aspects": [],
+  "cannotDynamax": false
+}

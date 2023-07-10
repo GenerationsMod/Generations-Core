@@ -1,0 +1,158 @@
+{
+  "implemented": true,
+  "name": "Budew",
+  "nationalPokedexNumber": 406,
+  "primaryType": "grass",
+  "secondaryType": "poison",
+  "abilities": [
+    "naturalcure",
+    "poisonpoint",
+    "h:leafguard"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 30,
+    "defence": 35,
+    "special_attack": 50,
+    "special_defence": 70,
+    "speed": 55
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 56,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:rose",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:absorb",
+    "4:growth",
+    "7:watersport",
+    "10:stunspore",
+    "13:megadrain",
+    "16:worryseed",
+    "egg:cottonspore",
+    "egg:extrasensory",
+    "egg:gigadrain",
+    "egg:grasswhistle",
+    "egg:leafstorm",
+    "egg:lifedew",
+    "egg:mindreader",
+    "egg:naturalgift",
+    "egg:pinmissile",
+    "egg:razorleaf",
+    "egg:seedbomb",
+    "egg:sleeppowder",
+    "egg:spikes",
+    "egg:synthesis",
+    "tm:attract",
+    "tm:bulletseed",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:dazzlinggleam",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:leafstorm",
+    "tm:naturalgift",
+    "tm:naturepower",
+    "tm:pinmissile",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:venoshock",
+    "tm:weatherball",
+    "tutor:covet",
+    "tutor:gigadrain",
+    "tutor:grassyglide",
+    "tutor:mudslap",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:swift",
+    "tutor:synthesis",
+    "tutor:uproar",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen4",
+    "baby"
+  ],
+  "pokedex": [
+    "cobblemon.species.budew.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "budew_roselia",
+      "variant": "level_up",
+      "result": "roselia",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "friendship",
+          "amount": 160
+        },
+        {
+          "variant": "time_range",
+          "range": "day"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 2,
+  "weight": 12,
+  "aspects": [],
+  "cannotDynamax": false
+}

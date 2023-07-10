@@ -1,0 +1,182 @@
+{
+  "implemented": true,
+  "name": "Rowlet",
+  "nationalPokedexNumber": 722,
+  "primaryType": "grass",
+  "secondaryType": "flying",
+  "abilities": [
+    "overgrow",
+    "h:longreach"
+  ],
+  "baseStats": {
+    "hp": 68,
+    "attack": 55,
+    "defence": 55,
+    "special_attack": 50,
+    "special_defence": 50,
+    "speed": 42
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 64,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "3",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:leafage",
+    "1:tackle",
+    "4:growl",
+    "8:peck",
+    "11:astonish",
+    "12:shadowsneak",
+    "14:razorleaf",
+    "16:ominouswind",
+    "18:foresight",
+    "22:pluck",
+    "25:synthesis",
+    "29:furyattack",
+    "32:suckerpunch",
+    "36:leafblade",
+    "39:featherdance",
+    "43:bravebird",
+    "46:nastyplot",
+    "egg:batonpass",
+    "egg:confuseray",
+    "egg:curse",
+    "egg:defog",
+    "egg:doubleteam",
+    "egg:haze",
+    "egg:knockoff",
+    "egg:ominouswind",
+    "egg:roost",
+    "tm:aerialace",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:bravebird",
+    "tm:bulletseed",
+    "tm:confide",
+    "tm:confuseray",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grasspledge",
+    "tm:grassyterrain",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:leafblade",
+    "tm:leafstorm",
+    "tm:lightscreen",
+    "tm:magicalleaf",
+    "tm:nastyplot",
+    "tm:naturepower",
+    "tm:nightshade",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:safeguard",
+    "tm:seedbomb",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:workup",
+    "tutor:covet",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:gigadrain",
+    "tutor:grasspledge",
+    "tutor:grassyglide",
+    "tutor:seedbomb",
+    "tutor:skyattack",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.rowlet.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "rowlet_dartrix",
+      "variant": "level_up",
+      "result": "dartrix",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 17
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.7,
+    "height": 0.7,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 15,
+  "aspects": [],
+  "cannotDynamax": false
+}

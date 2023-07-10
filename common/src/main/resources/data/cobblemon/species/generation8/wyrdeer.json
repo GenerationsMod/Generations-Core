@@ -1,0 +1,134 @@
+{
+  "implemented": true,
+  "name": "Wyrdeer",
+  "nationalPokedexNumber": 899,
+  "primaryType": "normal",
+  "secondaryType": "psychic",
+  "abilities": [
+    "intimidate",
+    "frisk",
+    "h:sapsipper"
+  ],
+  "baseStats": {
+    "hp": 103,
+    "attack": 105,
+    "defence": 72,
+    "special_attack": 105,
+    "special_defence": 75,
+    "speed": 65
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 135,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 263,
+  "baseFriendship": 0,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 0,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:leather",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "3:leer",
+    "7:astonish",
+    "10:hypnosis",
+    "13:stomp",
+    "16:sandattack",
+    "21:takedown",
+    "23:confuseray",
+    "27:calmmind",
+    "32:roleplay",
+    "37:zenheadbutt",
+    "49:imprison",
+    "55:doubleedge",
+    "62:megahorn",
+    "tm:agility",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:calmmind",
+    "tm:chargebeam",
+    "tm:confuseray",
+    "tm:dig",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:imprison",
+    "tm:lightscreen",
+    "tm:protect",
+    "tm:psybeam",
+    "tm:psychic",
+    "tm:psyshock",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:scaryface",
+    "tm:shadowball",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:trailblaze",
+    "tm:trick",
+    "tm:trickroom",
+    "tm:wildcharge",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.wyrdeer.desc"
+  ],
+  "height": 18,
+  "weight": 951,
+  "preEvolution": "stantler",
+  "evolutions": [],
+  "baseScale": 1.4,
+  "hitbox": {
+    "width": 1.2,
+    "height": 1.8,
+    "fixed": false
+  },
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,107 @@
+{
+  "implemented": true,
+  "name": "Cetitan",
+  "nationalPokedexNumber": 975,
+  "primaryType": "ice",
+  "abilities": [
+    "thickfat",
+    "slushrush",
+    "h:sheerforce"
+  ],
+  "baseStats": {
+    "hp": 170,
+    "attack": 113,
+    "defence": 65,
+    "special_attack": 45,
+    "special_defence": 55,
+    "speed": 73
+  },
+  "catchRate": 50,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 182,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 25,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:ice_heal",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:powdersnow",
+    "1:tackle",
+    "6:growl",
+    "9:echoedvoice",
+    "12:iceshard",
+    "15:rest",
+    "19:takedown",
+    "25:flail",
+    "27:avalanche",
+    "31:bounce",
+    "36:bodyslam",
+    "40:amnesia",
+    "44:icespinner",
+    "49:doubleedge",
+    "53:blizzard",
+    "tm:amnesia",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:charm",
+    "tm:chillingwater",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:gigaimpact",
+    "tm:heavyslam",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:icepunch",
+    "tm:icespinner",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:playrough",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:sleeptalk",
+    "tm:snowscape",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:waterpulse"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 45,
+  "weight": 7000,
+  "preEvolution": "cetoddle",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.cetitan.desc"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "implemented": true,
+  "name": "Happiny",
+  "nationalPokedexNumber": 440,
+  "primaryType": "normal",
+  "abilities": [
+    "naturalcure",
+    "serenegrace",
+    "h:friendguard"
+  ],
+  "baseStats": {
+    "hp": 100,
+    "attack": 5,
+    "defence": 5,
+    "special_attack": 15,
+    "special_defence": 65,
+    "speed": 30
+  },
+  "catchRate": 130,
+  "maleRatio": 0,
+  "shoulderMountable": false,
+  "baseExperienceYield": 110,
+  "experienceGroup": "fast",
+  "eggCycles": 40,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:oval_stone",
+        "percentage": 20
+      }
+    ]
+  },
+  "moves": [
+    "1:charm",
+    "1:minimize",
+    "1:pound",
+    "4:defensecurl",
+    "5:copycat",
+    "9:refresh",
+    "12:disarmingvoice",
+    "12:sweetkiss",
+    "16:covet",
+    "egg:aromatherapy",
+    "egg:counter",
+    "egg:endure",
+    "egg:gravity",
+    "egg:healbell",
+    "egg:helpinghand",
+    "egg:lastresort",
+    "egg:metronome",
+    "egg:mudbomb",
+    "egg:naturalgift",
+    "egg:present",
+    "egg:seismictoss",
+    "egg:substitute",
+    "tm:attract",
+    "tm:captivate",
+    "tm:charm",
+    "tm:confide",
+    "tm:disarmingvoice",
+    "tm:doubleteam",
+    "tm:drainpunch",
+    "tm:dreameater",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:flamethrower",
+    "tm:flash",
+    "tm:fling",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hypervoice",
+    "tm:icywind",
+    "tm:incinerate",
+    "tm:lightscreen",
+    "tm:metronome",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:recycle",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:snowscape",
+    "tm:solarbeam",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterpulse",
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:covet",
+    "tutor:drainpunch",
+    "tutor:endeavor",
+    "tutor:gravity",
+    "tutor:headbutt",
+    "tutor:healbell",
+    "tutor:helpinghand",
+    "tutor:hypervoice",
+    "tutor:icywind",
+    "tutor:lastresort",
+    "tutor:mudslap",
+    "tutor:recycle",
+    "tutor:rollout",
+    "tutor:shockwave",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:uproar",
+    "tutor:waterpulse",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen4",
+    "baby"
+  ],
+  "pokedex": [
+    "cobblemon.species.happiny.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "happiny_chansey",
+      "variant": "level_up",
+      "result": "chansey",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "itemCondition": "cobblemon:oval_stone"
+        },
+        {
+          "variant": "time_range",
+          "range": "day"
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.7,
+    "fixed": false
+  },
+  "baseFriendship": 140,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 244,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,102 @@
+{
+  "implemented": true,
+  "name": "Kakuna",
+  "nationalPokedexNumber": 14,
+  "primaryType": "bug",
+  "secondaryType": "poison",
+  "abilities": [
+    "shedskin"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 25,
+    "defence": 50,
+    "special_attack": 25,
+    "special_defence": 25,
+    "speed": 35
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 72,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "walk": {
+        "canWalk": false
+      },
+      "swim": {
+        "canSwimInWater": false
+      },
+      "canLook": false
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
+  "moves": [
+    "1:harden",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:harden",
+    "tutor:irondefense",
+    "tutor:stringshot"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.kakuna.desc"
+  ],
+  "preEvolution": "weedle",
+  "evolutions": [
+    {
+      "id": "kakuna_beedrill",
+      "variant": "level_up",
+      "result": "beedrill",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 10
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.9,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 100,
+  "aspects": [],
+  "cannotDynamax": false
+}

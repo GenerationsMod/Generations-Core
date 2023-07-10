@@ -1,0 +1,26 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "ariados-1",
+            "pokemon": "ariados",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "22-46",
+            "weight": 8.0,
+            "condition": {
+                "canSeeSky": true,
+                "timeRange": "night",
+                "biomes": [
+                    "#cobblemon:is_taiga"
+                ]
+            }
+        }
+    ]
+}

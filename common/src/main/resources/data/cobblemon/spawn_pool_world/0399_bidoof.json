@@ -1,0 +1,38 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "bidoof-1",
+            "pokemon": "bidoof",
+            "presets": [
+                "natural",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "1-25",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "bidoof-2",
+            "pokemon": "bidoof",
+            "presets": [
+                "water_surface",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "bucket": "common",
+            "level": "1-25",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true
+            }
+        }
+    ]
+}

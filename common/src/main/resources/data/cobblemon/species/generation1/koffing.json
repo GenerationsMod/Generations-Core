@@ -1,0 +1,237 @@
+{
+  "implemented": true,
+  "name": "Koffing",
+  "nationalPokedexNumber": 109,
+  "primaryType": "poison",
+  "abilities": [
+    "levitate",
+    "neutralizinggas",
+    "h:stench"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 65,
+    "defence": 95,
+    "special_attack": 60,
+    "special_defence": 45,
+    "speed": 35
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 68,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "amorphous"
+  ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:black_sludge",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "moves": [
+    "1:poisongas",
+    "1:tackle",
+    "9:smog",
+    "15:assurance",
+    "17:selfdestruct",
+    "19:clearsmog",
+    "21:sludge",
+    "25:smokescreen",
+    "33:gyroball",
+    "33:haze",
+    "36:toxic",
+    "41:explosion",
+    "42:belch",
+    "42:sludgebomb",
+    "45:destinybond",
+    "49:memento",
+    "egg:curse",
+    "egg:destinybond",
+    "egg:grudge",
+    "egg:painsplit",
+    "egg:psybeam",
+    "egg:psywave",
+    "egg:screech",
+    "egg:spite",
+    "egg:spitup",
+    "egg:stockpile",
+    "egg:swallow",
+    "egg:toxicspikes",
+    "egg:venomdrench",
+    "egg:willowisp",
+    "tm:assurance",
+    "tm:attract",
+    "tm:captivate",
+    "tm:confide",
+    "tm:darkpulse",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:explosion",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:flamethrower",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gyroball",
+    "tm:hiddenpower",
+    "tm:incinerate",
+    "tm:infestation",
+    "tm:naturalgift",
+    "tm:payback",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:selfdestruct",
+    "tm:shadowball",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:sludgewave",
+    "tm:snore",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:torment",
+    "tm:toxic",
+    "tm:toxicspikes",
+    "tm:uproar",
+    "tm:venomdrench",
+    "tm:venoshock",
+    "tm:willowisp",
+    "tutor:attract",
+    "tutor:bide",
+    "tutor:clearsmog",
+    "tutor:corrosivegas",
+    "tutor:curse",
+    "tutor:darkpulse",
+    "tutor:destinybond",
+    "tutor:doubleteam",
+    "tutor:endure",
+    "tutor:explosion",
+    "tutor:facade",
+    "tutor:fireblast",
+    "tutor:flamethrower",
+    "tutor:frustration",
+    "tutor:haze",
+    "tutor:headbutt",
+    "tutor:hiddenpower",
+    "tutor:mimic",
+    "tutor:painsplit",
+    "tutor:poisongas",
+    "tutor:protect",
+    "tutor:psybeam",
+    "tutor:psywave",
+    "tutor:rage",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:rollout",
+    "tutor:screech",
+    "tutor:selfdestruct",
+    "tutor:shadowball",
+    "tutor:shockwave",
+    "tutor:sleeptalk",
+    "tutor:sludge",
+    "tutor:sludgebomb",
+    "tutor:sludgewave",
+    "tutor:smog",
+    "tutor:smokescreen",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:substitute",
+    "tutor:sunnyday",
+    "tutor:swagger",
+    "tutor:tackle",
+    "tutor:taunt",
+    "tutor:thief",
+    "tutor:thunder",
+    "tutor:thunderbolt",
+    "tutor:toxic",
+    "tutor:uproar",
+    "tutor:willowisp",
+    "tutor:zapcannon"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.koffing.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "koffing_weezing",
+      "variant": "level_up",
+      "result": "weezing",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "doublehit"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    },
+    {
+      "id": "koffing_weezing",
+      "variant": "level_up",
+      "result": "weezing form=galar",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "doublehit"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "features": [
+    "galarian"
+  ],
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.9,
+    "height": 1.2,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 10,
+  "aspects": [],
+  "cannotDynamax": false
+}

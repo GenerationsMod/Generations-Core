@@ -1,0 +1,161 @@
+{
+  "implemented": true,
+  "name": "Stufful",
+  "nationalPokedexNumber": 759,
+  "primaryType": "normal",
+  "secondaryType": "fighting",
+  "abilities": [
+    "fluffy",
+    "klutz",
+    "h:cutecharm"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 75,
+    "defence": 50,
+    "special_attack": 45,
+    "special_defence": 50,
+    "speed": 50
+  },
+  "catchRate": 140,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 68,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:salmon",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:leer",
+    "1:tackle",
+    "5:bide",
+    "10:babydolleyes",
+    "14:brutalswing",
+    "16:endure",
+    "19:flail",
+    "20:strength",
+    "23:payback",
+    "28:takedown",
+    "32:hammerarm",
+    "37:thrash",
+    "41:painsplit",
+    "46:doubleedge",
+    "50:superpower",
+    "egg:defensecurl",
+    "egg:endure",
+    "egg:forcepalm",
+    "egg:icepunch",
+    "egg:megakick",
+    "egg:rollout",
+    "egg:stomp",
+    "egg:stompingtantrum",
+    "egg:thunderpunch",
+    "egg:wideguard",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:bulkup",
+    "tm:bulldoze",
+    "tm:charm",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:focusblast",
+    "tm:frustration",
+    "tm:hiddenpower",
+    "tm:icepunch",
+    "tm:ironhead",
+    "tm:lowsweep",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:payback",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:taunt",
+    "tm:thunderpunch",
+    "tm:toxic",
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:bind",
+    "tutor:coaching",
+    "tutor:dualchop",
+    "tutor:focuspunch",
+    "tutor:icepunch",
+    "tutor:ironhead",
+    "tutor:painsplit",
+    "tutor:roleplay",
+    "tutor:snore",
+    "tutor:stompingtantrum",
+    "tutor:superpower",
+    "tutor:thunderpunch",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.stufful.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "stufful_bewear",
+      "variant": "level_up",
+      "result": "bewear",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "bind"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 27
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 68,
+  "aspects": [],
+  "cannotDynamax": false
+}

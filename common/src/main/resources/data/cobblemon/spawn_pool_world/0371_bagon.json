@@ -1,0 +1,24 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "bagon-1",
+            "pokemon": "bagon",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "12-30",
+            "weight": 5.4,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_badlands"
+                ]
+            }
+        }
+    ]
+}

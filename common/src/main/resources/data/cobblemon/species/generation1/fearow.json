@@ -1,0 +1,192 @@
+{
+  "implemented": true,
+  "name": "Fearow",
+  "nationalPokedexNumber": 22,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "keeneye",
+    "h:sniper"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 90,
+    "defence": 65,
+    "special_attack": 61,
+    "special_defence": 61,
+    "speed": 100
+  },
+  "catchRate": 90,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 155,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "resting": {
+      "canSleep": false,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:sharp_beak",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:furyattack",
+    "1:growl",
+    "1:leer",
+    "1:peck",
+    "1:pluck",
+    "17:aerialace",
+    "26:pursuit",
+    "32:focusenergy",
+    "32:mirrormove",
+    "35:assurance",
+    "40:drillpeck",
+    "41:roost",
+    "47:agility",
+    "53:drillrun",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:captivate",
+    "tm:confide",
+    "tm:defog",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:fly",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:naturalgift",
+    "tm:pluck",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:workup",
+    "tutor:agility",
+    "tutor:aircutter",
+    "tutor:attract",
+    "tutor:bide",
+    "tutor:curse",
+    "tutor:defog",
+    "tutor:detect",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:drillpeck",
+    "tutor:drillrun",
+    "tutor:endure",
+    "tutor:facade",
+    "tutor:fly",
+    "tutor:focusenergy",
+    "tutor:frustration",
+    "tutor:furyattack",
+    "tutor:growl",
+    "tutor:headbutt",
+    "tutor:heatwave",
+    "tutor:hiddenpower",
+    "tutor:hyperbeam",
+    "tutor:laserfocus",
+    "tutor:leer",
+    "tutor:mimic",
+    "tutor:mirrormove",
+    "tutor:mudslap",
+    "tutor:ominouswind",
+    "tutor:peck",
+    "tutor:protect",
+    "tutor:pursuit",
+    "tutor:quickattack",
+    "tutor:rage",
+    "tutor:razorwind",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:roost",
+    "tutor:skyattack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:steelwing",
+    "tutor:substitute",
+    "tutor:sunnyday",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:tailwind",
+    "tutor:takedown",
+    "tutor:thief",
+    "tutor:throatchop",
+    "tutor:toxic",
+    "tutor:triattack",
+    "tutor:twister",
+    "tutor:uproar",
+    "tutor:uturn",
+    "tutor:whirlwind"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.fearow.desc"
+  ],
+  "preEvolution": "spearow",
+  "evolutions": [],
+  "baseScale": 2,
+  "hitbox": {
+    "width": 1,
+    "height": 0.7,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 12,
+  "weight": 380,
+  "aspects": [],
+  "cannotDynamax": false
+}

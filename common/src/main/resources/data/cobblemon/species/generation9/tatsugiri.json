@@ -1,0 +1,118 @@
+{
+  "implemented": true,
+  "name": "Tatsugiri",
+  "nationalPokedexNumber": 978,
+  "primaryType": "dragon",
+  "secondaryType": "water",
+  "abilities": [
+    "commander",
+    "h:stormdrain"
+  ],
+  "baseStats": {
+    "hp": 68,
+    "attack": 50,
+    "defence": 60,
+    "special_attack": 120,
+    "special_defence": 95,
+    "speed": 82
+  },
+  "catchRate": 100,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 166,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 35,
+  "eggGroups": [
+    "water_2"
+  ],
+  "behaviour": {
+    "swim": {
+      "swimSpeed": 0.1,
+      "canSwimInWater": true,
+      "canBreatheUnderwater": true,
+      "canWalkOnWater": true
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:raw_salmon"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:splash",
+    "1:watergun",
+    "6:harden",
+    "12:helpinghand",
+    "17:waterpulse",
+    "23:soak",
+    "28:taunt",
+    "34:memento",
+    "39:muddywater",
+    "43:nastyplot",
+    "47:mirrorcoat",
+    "52:dragonpulse",
+    "egg:batonpass",
+    "egg:counter",
+    "egg:rapidspin",
+    "tm:batonpass",
+    "tm:chillingwater",
+    "tm:dracometeor",
+    "tm:dragondance",
+    "tm:dragonpulse",
+    "tm:endure",
+    "tm:facade",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icywind",
+    "tm:nastyplot",
+    "tm:outrage",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:surf",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:waterpulse",
+    "tutor:dragonpulse",
+    "tutor:icywind",
+    "tutor:muddywater",
+    "tutor:taunt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 3,
+  "weight": 80,
+  "evolutions": [],
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.5,
+    "fixed": false
+  },
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.tatsugiri.desc"
+  ]
+}

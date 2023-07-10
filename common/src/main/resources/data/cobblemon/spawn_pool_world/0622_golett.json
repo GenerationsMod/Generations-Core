@@ -1,0 +1,46 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "golett-1",
+            "pokemon": "golett",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-30",
+            "weight": 42.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:deepslate_bricks",
+                    "minecraft:cracked_deepslate_bricks",
+                    "minecraft:deepslate_tiles",
+                    "minecraft:polished_deepslate"
+                ]
+            }
+        },
+        {
+            "id": "golett-2",
+            "pokemon": "golett",
+            "presets": [
+                "ruined_structures"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-30",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": false
+            }
+        }
+    ]
+}

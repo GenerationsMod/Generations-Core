@@ -1,0 +1,73 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "torkoal-1",
+            "pokemon": "torkoal",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-47",
+            "weight": 10.0,
+            "condition": {
+                "biomes": [
+                    "minecraft:basalt_deltas"
+                ]
+            }
+        },
+        {
+            "id": "torkoal-2",
+            "pokemon": "torkoal",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-47",
+            "weight": 10.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_mountain",
+                    "#cobblemon:is_thermal"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:coal_ore"
+                ]
+            }
+        },
+        {
+            "id": "torkoal-3",
+            "pokemon": "torkoal",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-47",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#minecraft:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:coal_ore"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss",
+                    "#cobblemon:is_mountain",
+                    "#cobblemon:is_thermal"
+                ]
+            }
+        }
+    ]
+}

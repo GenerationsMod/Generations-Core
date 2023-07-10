@@ -1,0 +1,25 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "enamorus-1",
+            "pokemon": "enamorus",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "70-75",
+            "weight": 25.0,
+            "condition": {
+                "isRaining": true,
+                "biomes": [
+                    "#cobblemon:is_highlands"
+                ]
+            }
+        }
+    ]
+}

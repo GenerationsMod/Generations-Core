@@ -1,0 +1,142 @@
+{
+  "implemented": true,
+  "name": "Thwackey",
+  "nationalPokedexNumber": 811,
+  "primaryType": "grass",
+  "abilities": [
+    "overgrow",
+    "h:grassysurge"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 85,
+    "defence": 70,
+    "special_attack": 55,
+    "special_defence": 60,
+    "speed": 80
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 147,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field",
+    "grass"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:stick",
+        "maxSelectableTimes": 2
+      },
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:branchpoke",
+    "1:growl",
+    "1:scratch",
+    "1:taunt",
+    "12:razorleaf",
+    "19:screech",
+    "24:knockoff",
+    "30:slam",
+    "36:uproar",
+    "42:woodhammer",
+    "48:endeavor",
+    "tm:acrobatics",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bulletseed",
+    "tm:drainpunch",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:fling",
+    "tm:focusenergy",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grasspledge",
+    "tm:grassyterrain",
+    "tm:leafstorm",
+    "tm:lowkick",
+    "tm:magicalleaf",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:protect",
+    "tm:rest",
+    "tm:round",
+    "tm:scaryface",
+    "tm:screech",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:solarblade",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:trailblaze",
+    "tm:uproar",
+    "tm:uturn",
+    "tm:workup",
+    "tutor:grasspledge",
+    "tutor:grassyglide"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.thwackey.desc"
+  ],
+  "preEvolution": "grookey",
+  "evolutions": [
+    {
+      "id": "thwackey_rillaboom",
+      "variant": "level_up",
+      "result": "rillaboom",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "drumbeating"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.85,
+    "height": 1.65,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 140,
+  "aspects": [],
+  "cannotDynamax": false
+}

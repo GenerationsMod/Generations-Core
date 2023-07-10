@@ -1,0 +1,141 @@
+{
+  "implemented": true,
+  "name": "Whirlipede",
+  "nationalPokedexNumber": 544,
+  "primaryType": "bug",
+  "secondaryType": "poison",
+  "abilities": [
+    "poisonpoint",
+    "swarm",
+    "h:speedboost"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 55,
+    "defence": 99,
+    "special_attack": 40,
+    "special_defence": 79,
+    "speed": 47
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 126,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:antidote",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:defensecurl",
+    "1:poisonsting",
+    "1:rollout",
+    "1:screech",
+    "12:pursuit",
+    "15:protect",
+    "19:poisontail",
+    "22:irondefense",
+    "23:bugbite",
+    "28:venoshock",
+    "32:agility",
+    "32:takedown",
+    "37:steamroller",
+    "41:toxic",
+    "43:venomdrench",
+    "46:rockclimb",
+    "50:doubleedge",
+    "tm:agility",
+    "tm:attract",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:gyroball",
+    "tm:hex",
+    "tm:hiddenpower",
+    "tm:infestation",
+    "tm:irondefense",
+    "tm:payback",
+    "tm:pinmissile",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:toxicspikes",
+    "tm:venomdrench",
+    "tm:venoshock",
+    "tutor:bugbite",
+    "tutor:endeavor",
+    "tutor:irondefense",
+    "tutor:signalbeam",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:steelroller"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.whirlipede.desc"
+  ],
+  "preEvolution": "venipede",
+  "evolutions": [
+    {
+      "id": "whirlipede_scolipede",
+      "variant": "level_up",
+      "result": "scolipede",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 12,
+  "weight": 585,
+  "aspects": [],
+  "cannotDynamax": false
+}

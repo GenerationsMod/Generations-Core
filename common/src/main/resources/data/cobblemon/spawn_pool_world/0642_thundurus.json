@@ -1,0 +1,25 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "thundurus-1",
+            "pokemon": "thundurus",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70-75",
+            "weight": 0.001,
+            "condition": {
+                "isRaining": true,
+                "biomes": [
+                    "#cobblemon:is_highlands"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "sandslash-1",
+            "pokemon": "sandslash",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "22-45",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_sandy"
+                ]
+            }
+        },
+        {
+            "id": "sandslash-alolan-1",
+            "pokemon": "sandslash alolan",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "22-45",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_cold"
+                ]
+            }
+        }
+    ]
+}

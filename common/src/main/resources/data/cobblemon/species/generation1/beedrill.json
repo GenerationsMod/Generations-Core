@@ -1,0 +1,246 @@
+{
+  "implemented": true,
+  "name": "Beedrill",
+  "nationalPokedexNumber": 15,
+  "primaryType": "bug",
+  "secondaryType": "poison",
+  "abilities": [
+    "swarm",
+    "h:sniper"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 90,
+    "defence": 40,
+    "special_attack": 45,
+    "special_defence": 80,
+    "speed": 75
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "bug",
+      "secondaryType": "poison",
+      "abilities": [
+        "adaptability"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "attack": 150,
+        "defence": 40,
+        "special_attack": 15,
+        "special_defence": 80,
+        "speed": 145
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 223,
+      "baseFriendship": 70,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 1,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 15,
+      "eggGroups": [
+        "bug"
+      ],
+      "moves": [],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 14,
+      "weight": 405,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "baseExperienceYield": 178,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "swim": {
+        "canWalkOnWater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "moves": [
+    "1:furyattack",
+    "15:focusenergy",
+    "20:twineedle",
+    "23:venoshock",
+    "25:rage",
+    "25:toxicspikes",
+    "30:pursuit",
+    "34:assurance",
+    "35:pinmissile",
+    "37:poisonjab",
+    "40:agility",
+    "45:endeavor",
+    "45:fellstinger",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:defog",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:infestation",
+    "tm:naturalgift",
+    "tm:payback",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:roost",
+    "tm:round",
+    "tm:secretpower",
+    "tm:silverwind",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:solarbeam",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:venoshock",
+    "tm:xscissor",
+    "tutor:agility",
+    "tutor:aircutter",
+    "tutor:attract",
+    "tutor:batonpass",
+    "tutor:bide",
+    "tutor:brickbreak",
+    "tutor:bugbite",
+    "tutor:curse",
+    "tutor:cut",
+    "tutor:defog",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:drillrun",
+    "tutor:electroweb",
+    "tutor:endeavor",
+    "tutor:endure",
+    "tutor:facade",
+    "tutor:focusenergy",
+    "tutor:frustration",
+    "tutor:furyattack",
+    "tutor:furycutter",
+    "tutor:gigadrain",
+    "tutor:headbutt",
+    "tutor:hiddenpower",
+    "tutor:hyperbeam",
+    "tutor:knockoff",
+    "tutor:laserfocus",
+    "tutor:megadrain",
+    "tutor:mimic",
+    "tutor:ominouswind",
+    "tutor:outrage",
+    "tutor:peck",
+    "tutor:pinmissile",
+    "tutor:poisonjab",
+    "tutor:protect",
+    "tutor:pursuit",
+    "tutor:rage",
+    "tutor:reflect",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:roost",
+    "tutor:skullbash",
+    "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:snore",
+    "tutor:solarbeam",
+    "tutor:stringshot",
+    "tutor:substitute",
+    "tutor:sunnyday",
+    "tutor:swagger",
+    "tutor:sweetscent",
+    "tutor:swift",
+    "tutor:swordsdance",
+    "tutor:tailwind",
+    "tutor:takedown",
+    "tutor:throatchop",
+    "tutor:toxic",
+    "tutor:twineedle",
+    "tutor:uturn",
+    "tutor:xscissor"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.beedrill.desc"
+  ],
+  "preEvolution": "kakuna",
+  "evolutions": [],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.6,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 10,
+  "weight": 295,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,249 @@
+{
+  "implemented": true,
+  "name": "Garchomp",
+  "nationalPokedexNumber": 445,
+  "primaryType": "dragon",
+  "secondaryType": "ground",
+  "abilities": [
+    "sandveil",
+    "h:roughskin"
+  ],
+  "baseStats": {
+    "hp": 108,
+    "attack": 130,
+    "defence": 95,
+    "special_attack": 80,
+    "special_defence": 85,
+    "speed": 102
+  },
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.5
+      },
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "dragon",
+      "secondaryType": "ground",
+      "abilities": [
+        "sandforce"
+      ],
+      "baseStats": {
+        "hp": 108,
+        "attack": 170,
+        "defence": 115,
+        "special_attack": 120,
+        "special_defence": 95,
+        "speed": 92
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 315,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+        "monster",
+        "dragon"
+      ],
+      "moves": [],
+      "labels": [
+        "gen6",
+        "mega",
+        "pseudo_legendary"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 19,
+      "weight": 950,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "baseExperienceYield": 300,
+  "experienceGroup": "slow",
+  "eggCycles": 40,
+  "eggGroups": [
+    "monster",
+    "dragon"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:dragon_fang",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:dragonbreath",
+    "1:dragonrage",
+    "1:firefang",
+    "1:sandattack",
+    "1:sandstorm",
+    "1:tackle",
+    "15:takedown",
+    "18:bulldoze",
+    "19:sandtomb",
+    "24:dualchop",
+    "27:bite",
+    "28:slash",
+    "33:dragonclaw",
+    "40:dig",
+    "48:crunch",
+    "55:dragonrush",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:breakingswipe",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:confide",
+    "tm:crunch",
+    "tm:cut",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:dracometeor",
+    "tm:dragonclaw",
+    "tm:dragonpulse",
+    "tm:dragontail",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:flamethrower",
+    "tm:fling",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:hyperbeam",
+    "tm:incinerate",
+    "tm:ironhead",
+    "tm:irontail",
+    "tm:liquidation",
+    "tm:metalclaw",
+    "tm:mudshot",
+    "tm:naturalgift",
+    "tm:outrage",
+    "tm:poisonjab",
+    "tm:powergem",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rockclimb",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:sandtomb",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:spikes",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thunderfang",
+    "tm:toxic",
+    "tm:whirlpool",
+    "tutor:aquatail",
+    "tutor:brickbreak",
+    "tutor:crunch",
+    "tutor:dig",
+    "tutor:dracometeor",
+    "tutor:dragonclaw",
+    "tutor:dragonpulse",
+    "tutor:dragonrush",
+    "tutor:dualchop",
+    "tutor:earthpower",
+    "tutor:earthquake",
+    "tutor:furycutter",
+    "tutor:gigaimpact",
+    "tutor:headbutt",
+    "tutor:ironhead",
+    "tutor:irontail",
+    "tutor:laserfocus",
+    "tutor:mudslap",
+    "tutor:outrage",
+    "tutor:scaleshot",
+    "tutor:scorchingsands",
+    "tutor:slash",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:swift",
+    "tutor:swordsdance",
+    "tutor:twister"
+  ],
+  "labels": [
+    "gen4",
+    "pseudo_legendary"
+  ],
+  "pokedex": [
+    "cobblemon.species.garchomp.desc"
+  ],
+  "preEvolution": "gabite",
+  "evolutions": [],
+  "baseScale": 1.2,
+  "hitbox": {
+    "width": 1.3,
+    "height": 2.3,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 19,
+  "weight": 950,
+  "aspects": [],
+  "cannotDynamax": false
+}

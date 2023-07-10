@@ -1,0 +1,151 @@
+{
+  "implemented": true,
+  "name": "Litten",
+  "nationalPokedexNumber": 725,
+  "primaryType": "fire",
+  "abilities": [
+    "blaze",
+    "h:intimidate"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 65,
+    "defence": 40,
+    "special_attack": 60,
+    "special_defence": 40,
+    "speed": 70
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 64,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:ember",
+    "1:scratch",
+    "4:growl",
+    "8:lick",
+    "11:leer",
+    "14:firefang",
+    "16:doublekick",
+    "18:roar",
+    "22:bite",
+    "25:swagger",
+    "29:furyswipes",
+    "32:thrash",
+    "36:flamethrower",
+    "39:scaryface",
+    "43:flareblitz",
+    "46:outrage",
+    "egg:bodyslam",
+    "egg:crunch",
+    "egg:fakeout",
+    "egg:heatwave",
+    "egg:nastyplot",
+    "egg:partingshot",
+    "egg:powertrip",
+    "egg:revenge",
+    "tm:acrobatics",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bulkup",
+    "tm:confide",
+    "tm:crunch",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:frustration",
+    "tm:heatwave",
+    "tm:hiddenpower",
+    "tm:leechlife",
+    "tm:nastyplot",
+    "tm:outrage",
+    "tm:overheat",
+    "tm:payday",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:revenge",
+    "tm:roar",
+    "tm:round",
+    "tm:scaryface",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:taunt",
+    "tm:torment",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:willowisp",
+    "tm:workup",
+    "tutor:covet",
+    "tutor:endeavor",
+    "tutor:firepledge",
+    "tutor:heatwave",
+    "tutor:outrage",
+    "tutor:snore"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.litten.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "litten_torracat",
+      "variant": "level_up",
+      "result": "torracat",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 17
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.7,
+    "height": 0.9,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 4,
+  "weight": 43,
+  "aspects": [],
+  "cannotDynamax": false
+}

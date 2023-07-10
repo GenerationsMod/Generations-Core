@@ -1,0 +1,122 @@
+{
+  "implemented": true,
+  "name": "Sprigatito",
+  "nationalPokedexNumber": 906,
+  "primaryType": "grass",
+  "abilities": [
+    "overgrow",
+    "h:protean"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 61,
+    "defence": 54,
+    "special_attack": 45,
+    "special_defence": 45,
+    "speed": 65
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "baseExperienceYield": 62,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field",
+    "grass"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:leafage",
+    "1:scratch",
+    "1:tailwhip",
+    "7:bite",
+    "10:honeclaws",
+    "13:magicalleaf",
+    "15:quickattack",
+    "17:seedbomb",
+    "21:uturn",
+    "25:worryseed",
+    "28:slash",
+    "32:energyball",
+    "36:playrough",
+    "egg:allyswitch",
+    "egg:copycat",
+    "egg:leechseed",
+    "egg:petalblizzard",
+    "egg:suckerpunch",
+    "tm:acrobatics",
+    "tm:agility",
+    "tm:bulletseed",
+    "tm:charm",
+    "tm:disarmingvoice",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:faketears",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grasspledge",
+    "tm:grassyterrain",
+    "tm:helpinghand",
+    "tm:leafstorm",
+    "tm:magicalleaf",
+    "tm:mudslap",
+    "tm:nastyplot",
+    "tm:playrough",
+    "tm:protect",
+    "tm:rest",
+    "tm:seedbomb",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:swift",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:trailblaze",
+    "tm:uturn"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 4,
+  "weight": 41,
+  "evolutions": [
+    {
+      "id": "sprigatito_floragato",
+      "variant": "level_up",
+      "result": "floragato",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 16
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.sprigatito.desc"
+  ]
+}

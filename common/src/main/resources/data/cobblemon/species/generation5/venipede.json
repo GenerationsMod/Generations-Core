@@ -1,0 +1,149 @@
+{
+  "implemented": true,
+  "name": "Venipede",
+  "nationalPokedexNumber": 543,
+  "primaryType": "bug",
+  "secondaryType": "poison",
+  "abilities": [
+    "poisonpoint",
+    "swarm",
+    "h:speedboost"
+  ],
+  "baseStats": {
+    "hp": 30,
+    "attack": 45,
+    "defence": 59,
+    "special_attack": 30,
+    "special_defence": 39,
+    "speed": 57
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 52,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:antidote",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:defensecurl",
+    "1:rollout",
+    "5:poisonsting",
+    "8:screech",
+    "12:pursuit",
+    "15:protect",
+    "19:poisontail",
+    "22:bugbite",
+    "26:venoshock",
+    "28:takedown",
+    "29:agility",
+    "33:steamroller",
+    "36:toxic",
+    "38:venomdrench",
+    "40:rockclimb",
+    "43:doubleedge",
+    "egg:bite",
+    "egg:furycutter",
+    "egg:pinmissile",
+    "egg:rockclimb",
+    "egg:spikes",
+    "egg:takedown",
+    "egg:toxicspikes",
+    "egg:twineedle",
+    "tm:agility",
+    "tm:attract",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:gyroball",
+    "tm:hex",
+    "tm:hiddenpower",
+    "tm:infestation",
+    "tm:irondefense",
+    "tm:payback",
+    "tm:pinmissile",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:toxicspikes",
+    "tm:venomdrench",
+    "tm:venoshock",
+    "tutor:bugbite",
+    "tutor:endeavor",
+    "tutor:irondefense",
+    "tutor:signalbeam",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:steelroller"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.venipede.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "venipede_whirlipede",
+      "variant": "level_up",
+      "result": "whirlipede",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "irondefense"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 22
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 53,
+  "aspects": [],
+  "cannotDynamax": false
+}

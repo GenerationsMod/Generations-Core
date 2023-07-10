@@ -1,0 +1,186 @@
+{
+  "implemented": true,
+  "name": "Aegislash",
+  "nationalPokedexNumber": 681,
+  "primaryType": "steel",
+  "secondaryType": "ghost",
+  "abilities": [
+    "stancechange"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 50,
+    "defence": 140,
+    "special_attack": 50,
+    "special_defence": 140,
+    "speed": 60
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 250,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:iron_sword",
+        "percentage": 20
+      }
+    ]
+  },
+  "moves": [
+    "1:aerialace",
+    "1:autotomize",
+    "1:furycutter",
+    "1:headsmash",
+    "1:irondefense",
+    "1:ironhead",
+    "1:kingsshield",
+    "1:metalsound",
+    "1:nightslash",
+    "1:powertrick",
+    "1:pursuit",
+    "1:retaliate",
+    "1:sacredsword",
+    "1:shadowsneak",
+    "1:slash",
+    "1:swordsdance",
+    "1:tackle",
+    "tm:aerialace",
+    "tm:airslash",
+    "tm:attract",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:closecombat",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:gyroball",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:protect",
+    "tm:psychocut",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:reversal",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarblade",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tutor:afteryou",
+    "tutor:block",
+    "tutor:flashcannon",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:kingsshield",
+    "tutor:laserfocus",
+    "tutor:magnetrise",
+    "tutor:shadowball",
+    "tutor:shockwave",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:steelbeam",
+    "tutor:wideguard"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.aegislash.desc"
+  ],
+  "height": 17,
+  "weight": 530,
+  "preEvolution": "doublade",
+  "evolutions": [],
+  "forms": [
+    {
+      "name": "Blade",
+      "primaryType": "steel",
+      "secondaryType": "ghost",
+      "abilities": [
+        "stancechange"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "attack": 140,
+        "defence": 50,
+        "special_attack": 140,
+        "special_defence": 50,
+        "speed": 60
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 250,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "mineral"
+      ],
+      "moves": [],
+      "labels": [
+        "gen6"
+      ],
+      "aspects": [
+        "blade"
+      ],
+      "height": 17,
+      "weight": 530,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 1.1,
+    "height": 1.9,
+    "fixed": false
+  },
+  "aspects": [],
+  "cannotDynamax": false
+}

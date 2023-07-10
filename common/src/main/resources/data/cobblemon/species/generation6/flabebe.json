@@ -1,0 +1,156 @@
+{
+  "implemented": true,
+  "name": "Flabébé",
+  "nationalPokedexNumber": 669,
+  "primaryType": "fairy",
+  "abilities": [
+    "flowerveil",
+    "h:symbiosis"
+  ],
+  "baseStats": {
+    "hp": 44,
+    "attack": 38,
+    "defence": 39,
+    "special_attack": 61,
+    "special_defence": 79,
+    "speed": 42
+  },
+  "catchRate": 225,
+  "maleRatio": 0,
+  "shoulderMountable": false,
+  "baseExperienceYield": 61,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:oxeye_daisy",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "1:vinewhip",
+    "6:fairywind",
+    "10:luckychant",
+    "10:safeguard",
+    "15:razorleaf",
+    "20:wish",
+    "22:magicalleaf",
+    "24:grassyterrain",
+    "28:petalblizzard",
+    "33:aromatherapy",
+    "33:synthesis",
+    "37:mistyterrain",
+    "41:moonblast",
+    "45:petaldance",
+    "48:solarbeam",
+    "egg:camouflage",
+    "egg:captivate",
+    "egg:copycat",
+    "egg:endeavor",
+    "egg:tearfullook",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:calmmind",
+    "tm:charm",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:dazzlinggleam",
+    "tm:disarmingvoice",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyterrain",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:lightscreen",
+    "tm:magicalleaf",
+    "tm:mistyterrain",
+    "tm:naturepower",
+    "tm:pollenpuff",
+    "tm:protect",
+    "tm:psychic",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tutor:afteryou",
+    "tutor:allyswitch",
+    "tutor:covet",
+    "tutor:endeavor",
+    "tutor:gigadrain",
+    "tutor:healbell",
+    "tutor:helpinghand",
+    "tutor:magiccoat",
+    "tutor:seedbomb",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.flabebe.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "flabebe_floette",
+      "variant": "level_up",
+      "result": "floette",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 19
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 1,
+  "weight": 1,
+  "aspects": [],
+  "cannotDynamax": false
+}

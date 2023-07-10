@@ -1,0 +1,198 @@
+{
+  "implemented": true,
+  "name": "Carvanha",
+  "nationalPokedexNumber": 318,
+  "primaryType": "water",
+  "secondaryType": "dark",
+  "abilities": [
+    "roughskin",
+    "h:speedboost"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 90,
+    "defence": 20,
+    "special_attack": 65,
+    "special_defence": 20,
+    "speed": 65
+  },
+  "catchRate": 225,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 61,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_2"
+  ],
+  "behaviour": {
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.2,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:deep_sea_tooth",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "moves": [
+    "1:bite",
+    "1:leer",
+    "7:rage",
+    "13:focusenergy",
+    "16:icefang",
+    "16:scaryface",
+    "22:crunch",
+    "26:assurance",
+    "28:screech",
+    "31:aquajet",
+    "31:takedown",
+    "32:poisonfang",
+    "37:swagger",
+    "40:liquidation",
+    "43:agility",
+    "egg:ancientpower",
+    "egg:brine",
+    "egg:destinybond",
+    "egg:doubleedge",
+    "egg:hydropump",
+    "egg:psychicfangs",
+    "egg:swift",
+    "egg:thrash",
+    "egg:waterpulse",
+    "tm:agility",
+    "tm:assurance",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:bounce",
+    "tm:brine",
+    "tm:captivate",
+    "tm:confide",
+    "tm:crunch",
+    "tm:darkpulse",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:naturalgift",
+    "tm:payback",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:round",
+    "tm:scald",
+    "tm:scaryface",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:taunt",
+    "tm:thief",
+    "tm:torment",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:zenheadbutt",
+    "tutor:ancientpower",
+    "tutor:bite",
+    "tutor:bounce",
+    "tutor:darkpulse",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:endure",
+    "tutor:flipturn",
+    "tutor:furycutter",
+    "tutor:hydropump",
+    "tutor:icywind",
+    "tutor:leer",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:refresh",
+    "tutor:scaleshot",
+    "tutor:scaryface",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:substitute",
+    "tutor:superfang",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:thrash",
+    "tutor:uproar",
+    "tutor:waterpulse",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.carvanha.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "carvanha_sharpedo",
+      "variant": "level_up",
+      "result": "sharpedo",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "slash"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.1,
+    "fixed": false
+  },
+  "baseFriendship": 35,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 8,
+  "weight": 208,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,171 @@
+{
+  "implemented": true,
+  "name": "Trapinch",
+  "nationalPokedexNumber": 328,
+  "primaryType": "ground",
+  "abilities": [
+    "hypercutter",
+    "arenatrap",
+    "h:sheerforce"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 100,
+    "defence": 45,
+    "special_attack": 45,
+    "special_defence": 45,
+    "speed": 10
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 58,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "bug",
+    "dragon"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:red_sand",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:astonish",
+    "1:bite",
+    "4:laserfocus",
+    "9:sandattack",
+    "13:mudslap",
+    "17:bide",
+    "17:feintattack",
+    "21:bulldoze",
+    "25:rockslide",
+    "25:sandtomb",
+    "33:crunch",
+    "41:dig",
+    "49:sandstorm",
+    "57:hyperbeam",
+    "65:earthpower",
+    "67:superpower",
+    "73:earthquake",
+    "81:feint",
+    "89:fissure",
+    "egg:bugbite",
+    "egg:earthpower",
+    "egg:endure",
+    "egg:feint",
+    "egg:firstimpression",
+    "egg:flail",
+    "egg:focusenergy",
+    "egg:furycutter",
+    "egg:gust",
+    "egg:mudshot",
+    "egg:quickattack",
+    "egg:signalbeam",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:confide",
+    "tm:crunch",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:mudshot",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:sandtomb",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:strength",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superpower",
+    "tm:swagger",
+    "tm:toxic",
+    "tutor:bite",
+    "tutor:bodyslam",
+    "tutor:bugbite",
+    "tutor:doubleedge",
+    "tutor:earthpower",
+    "tutor:endure",
+    "tutor:furycutter",
+    "tutor:gigadrain",
+    "tutor:headbutt",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:rockslide",
+    "tutor:scorchingsands",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:superpower",
+    "tutor:swagger"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.trapinch.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "trapinch_vibrava",
+      "variant": "level_up",
+      "result": "vibrava",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "dragonbreath"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 150,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,130 @@
+{
+  "implemented": true,
+  "name": "Unfezant",
+  "nationalPokedexNumber": 521,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "bigpecks",
+    "superluck",
+    "h:rivalry"
+  ],
+  "baseStats": {
+    "hp": 80,
+    "attack": 115,
+    "defence": 80,
+    "special_attack": 65,
+    "special_defence": 55,
+    "speed": 93
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 244,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:gust",
+    "1:leer",
+    "1:quickattack",
+    "15:aircutter",
+    "18:roost",
+    "23:detect",
+    "27:taunt",
+    "33:airslash",
+    "38:razorwind",
+    "44:featherdance",
+    "49:swagger",
+    "55:facade",
+    "60:tailwind",
+    "66:skyattack",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:airslash",
+    "tm:attract",
+    "tm:bravebird",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fly",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:heatwave",
+    "tm:hiddenpower",
+    "tm:hurricane",
+    "tm:hyperbeam",
+    "tm:pluck",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:taunt",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:uturn",
+    "tm:workup",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:heatwave",
+    "tutor:roost",
+    "tutor:skyattack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:tailwind",
+    "tutor:uproar"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.unfezant.desc"
+  ],
+  "preEvolution": "tranquill",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 12,
+  "weight": 290,
+  "aspects": [],
+  "cannotDynamax": false
+}

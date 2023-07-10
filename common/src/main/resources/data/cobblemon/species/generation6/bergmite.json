@@ -1,0 +1,175 @@
+{
+  "implemented": true,
+  "name": "Bergmite",
+  "nationalPokedexNumber": 712,
+  "primaryType": "ice",
+  "abilities": [
+    "owntempo",
+    "icebody",
+    "h:sturdy"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 69,
+    "defence": 85,
+    "special_attack": 32,
+    "special_defence": 35,
+    "speed": 28
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 61,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "monster",
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:packed_ice",
+        "percentage": 25
+      }
+    ]
+  },
+  "behaviour": {
+    "swim": {
+      "swimSpeed": 0.1,
+      "canSwimInWater": true,
+      "canBreatheUnderwater": true,
+      "canWalkOnWater": true
+    }
+  },
+  "moves": [
+    "1:bite",
+    "1:harden",
+    "1:tackle",
+    "5:powdersnow",
+    "10:icywind",
+    "15:protect",
+    "15:takedown",
+    "20:sharpen",
+    "22:curse",
+    "26:icefang",
+    "27:irondefense",
+    "30:iceball",
+    "33:crunch",
+    "35:rapidspin",
+    "39:avalanche",
+    "43:blizzard",
+    "47:recover",
+    "49:doubleedge",
+    "egg:auroraveil",
+    "egg:barrier",
+    "egg:mirrorcoat",
+    "egg:mist",
+    "egg:recover",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:crunch",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:flash",
+    "tm:flashcannon",
+    "tm:frostbreath",
+    "tm:frustration",
+    "tm:gyroball",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:icespinner",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:irondefense",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockpolish",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:snowscape",
+    "tm:stoneedge",
+    "tm:strength",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tutor:afteryou",
+    "tutor:icywind",
+    "tutor:irondefense",
+    "tutor:snore",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.bergmite.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "bergmite_avalugg",
+      "variant": "level_up",
+      "result": "avalugg",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "bodyslam"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 37
+        }
+      ]
+    },
+    {
+      "id": "bergmite_avalugg",
+      "variant": "item_interact",
+      "result": "avalugg form=hisui",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "rockslide"
+      ],
+      "requirements": [],
+      "requiredContext": "cobblemon:ice_stone"
+    }
+  ],
+  "baseScale": 0.95,
+  "hitbox": {
+    "width": 0.95,
+    "height": 0.8,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 10,
+  "weight": 995,
+  "aspects": [],
+  "cannotDynamax": false
+}

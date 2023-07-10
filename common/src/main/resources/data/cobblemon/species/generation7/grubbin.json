@@ -1,0 +1,133 @@
+{
+  "implemented": true,
+  "name": "Grubbin",
+  "nationalPokedexNumber": 736,
+  "primaryType": "bug",
+  "abilities": [
+    "swarm"
+  ],
+  "baseStats": {
+    "hp": 47,
+    "attack": 62,
+    "defence": 45,
+    "special_attack": 55,
+    "special_defence": 45,
+    "speed": 46
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 60,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:redstone",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:visegrip",
+    "4:stringshot",
+    "7:mudslap",
+    "10:bite",
+    "13:bugbite",
+    "16:spark",
+    "19:acrobatics",
+    "22:crunch",
+    "25:stickyweb",
+    "25:xscissor",
+    "28:dig",
+    "egg:discharge",
+    "egg:electroweb",
+    "egg:endure",
+    "egg:harden",
+    "egg:mudshot",
+    "tm:acrobatics",
+    "tm:attract",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:crunch",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:electroweb",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:hiddenpower",
+    "tm:lightscreen",
+    "tm:mudshot",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:screech",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:voltswitch",
+    "tm:wildcharge",
+    "tm:xscissor",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:magnetrise",
+    "tutor:risingvoltage",
+    "tutor:shockwave",
+    "tutor:skittersmack",
+    "tutor:snore"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.grubbin.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "grubbin_charjabug",
+      "variant": "level_up",
+      "result": "charjabug",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "charge"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 44,
+  "aspects": [],
+  "cannotDynamax": false
+}
