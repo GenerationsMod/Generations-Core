@@ -42,25 +42,25 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens);
 
         //Manually add Creative Tabs
-        add("item_group.pokeballs", "Poké Balls");
-        add("item_group.restoration", "Restoration");
-        add("item_group.tms", "TMs");
-        add("item_group.badges", "Badges");
-        add("item_group.ribbons", "Ribbons");
-        add("item_group.held_items", "Held Items");
-        add("item_group.player_items", "Player Items");
-        add("item_group.legendary_items", "Legendary Items");
-        add("item_group.building_blocks", "Building Blocks");
-        add("item_group.decorations", "Decorations");
-        add("item_group.natural", "Natural");
-        add("item_group.utility", "Utility");
-        add("item_group.form_items", "Form Items");
-        add("item_group.pokemail", "Pokemail");
-        add("item_group.valuables", "Valuables");
-        add("item_group.pokedolls", "PokeDolls");
-        add("item_group.cuisine", "Cuisine");
-        add("item_group.unimplemented", "Unimplemented");
-        add("item_group.shrines", "Shrines");
+        add("pokeballs.generations_core", "Poké Balls");
+        add("restoration.generations_core", "Restoration");
+        add("tms.generations_core", "TMs");
+        add("badges.generations_core", "Badges");
+        add("ribbons.generations_core", "Ribbons");
+        add("held_items.generations_core", "Held Items");
+        add("player_items.generations_core", "Player Items");
+        add("legendary_items.generations_core", "Legendary Items");
+        add("building_blocks.generations_core", "Building Blocks");
+        add("decorations.generations_core", "Decorations");
+        add("natural.generations_core", "Natural");
+        add("utility.generations_core", "Utility");
+        add("form_items.generations_core", "Form Items");
+        add("pokemail.generations_core", "Pokemail");
+        add("valuables.generations_core", "Valuables");
+        add("pokedolls.generations_core", "PokeDolls");
+        add("cuisine.generations_core", "Cuisine");
+        add("unimplemented.generations_core", "Unimplemented");
+        add("shrines.generations_core", "Shrines");
 
         add("container.melody_flute", "Melody Flute");
         add("container.trashcan", "Trash Can");

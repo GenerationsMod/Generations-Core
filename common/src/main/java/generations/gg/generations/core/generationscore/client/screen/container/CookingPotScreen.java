@@ -1,12 +1,12 @@
 package generations.gg.generations.core.generationscore.client.screen.container;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
 import generations.gg.generations.core.generationscore.network.packets.C2SToggleCookingPotPacket;
 import generations.gg.generations.core.generationscore.world.container.CookingPotContainer;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -27,23 +27,22 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotContaine
     }
 
     @Override
-    public void render(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
+    public void render(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
         this.renderBackground(poseStack);
         super.render(poseStack, mouseX, mouseY, partialTick);
         this.renderTooltip(poseStack, mouseX, mouseY);
     }
 
     @Override
-    protected void renderBg(@NotNull PoseStack poseStack, float partialTick, int mouseX, int mouseY) {
+    protected void renderBg(@NotNull GuiGraphics poseStack, float partialTick, int mouseX, int mouseY) {
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.setShaderTexture(0, cookingPotGuiTextures);
-        blit(poseStack, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
+        poseStack.blit(cookingPotGuiTextures, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 
         int l = this.getCookProgressScaled();
-        blit(poseStack, this.leftPos + 105, this.topPos + 24, 176, 18, l + 1, 16);
+        poseStack.blit(cookingPotGuiTextures, this.leftPos + 105, this.topPos + 24, 176, 18, l + 1, 16);
 
         if(cookingPot.isCooking()) {
-            blit(poseStack, this.leftPos + 106, this.topPos + 45, 176, 0, 20, 18);
+            poseStack.blit(cookingPotGuiTextures, this.leftPos + 106, this.topPos + 45, 176, 0, 20, 18);
         }
     }
 

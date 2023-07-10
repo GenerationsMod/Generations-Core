@@ -17,13 +17,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.Field;
 import java.util.function.Consumer;
 
 /**
@@ -1293,16 +1289,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
     }*/
 
     protected void generateForEnabledBlockFamilies(@NotNull Consumer<FinishedRecipe> consumer) {
-        GenerationsBlockFamilies.getAllFamilies().forEach(arg -> {
-            generateRecipes(consumer, arg);
-            Field material = ObfuscationReflectionHelper.findField(BlockBehaviour.class, "material");
-            material.setAccessible(true);
-            try {
-                if (material.get(arg.getBaseBlock()) == Material.STONE) generateStoneCutterRecipesForFamily(consumer, arg);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
-        });
+        GenerationsBlockFamilies.getAllFamilies().forEach(arg -> generateRecipes(consumer, arg));
         GenerationsBlockFamilies.getAllUltraFamilies().forEach(arg -> generateRecipes(consumer, arg));
     }
 

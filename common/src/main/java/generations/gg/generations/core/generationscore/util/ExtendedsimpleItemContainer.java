@@ -94,7 +94,7 @@ public class ExtendedsimpleItemContainer extends SimpleItemContainer {
     }
 
     public static boolean canItemStacksStack(@NotNull ItemStack a, @NotNull ItemStack b) {
-        if (a.isEmpty() || !a.sameItem(b) || a.hasTag() != b.hasTag())
+        if (a.isEmpty() || !ItemStack.isSameItem(a, b) || a.hasTag() != b.hasTag())
             return false;
 
         if (!a.hasTag()) return true;

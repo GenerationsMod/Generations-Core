@@ -38,7 +38,6 @@ public class GenerationsNetworking {
         return switch (Platform.getEnvironment()) {
             case CLIENT -> clientTarget.get().get();
             case SERVER -> serverTarget.get().get();
-            default -> throw new IllegalArgumentException("UNSIDED?");
         };
     }
 }

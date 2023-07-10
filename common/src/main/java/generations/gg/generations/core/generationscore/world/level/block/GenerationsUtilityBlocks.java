@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +33,10 @@ public class GenerationsUtilityBlocks {
 	/**
 	 * Utility Blocks
 	 */
-	public static final RegistrySupplier<Block> BOX = registerBlockItem("box", () -> new BoxBlock(BlockBehaviour.Properties.of(Material.WOOD).destroyTime(0.5f).sound(SoundType.WOOD)));
-	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of(Material.STONE).strength(2.5f).randomTicks().noOcclusion()));
+	public static final RegistrySupplier<Block> BOX = registerBlockItem("box", () -> new BoxBlock(BlockBehaviour.Properties.of().destroyTime(0.5f).sound(SoundType.WOOD).ignitedByLava()));
+	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of().strength(2.5f).randomTicks().noOcclusion()));
 
-	public static final RegistrySupplier<HealerBlock> HEALER = registerBlock("healer", () -> new HealerBlock(BlockBehaviour.Properties.of(Material.METAL)));
+	public static final RegistrySupplier<HealerBlock> HEALER = registerBlock("healer", () -> new HealerBlock(BlockBehaviour.Properties.of().strength(2.5f)));
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> WHITE_HEALER = registerHealer("white_healer", DyeColor.WHITE);
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> RED_HEALER = registerHealer("red_healer", DyeColor.RED);
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> ORANGE_HEALER = registerHealer("orange_healer", DyeColor.ORANGE);
@@ -56,7 +55,7 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> BLACK_HEALER = registerHealer("black_healer", DyeColor.BLACK);
 
 	//PC Blocks
-	public static final RegistrySupplier<PCBlock> PC = registerBlock("pc", () -> new PCBlock(BlockBehaviour.Properties.of(Material.METAL)));
+	public static final RegistrySupplier<PCBlock> PC = registerBlock("pc", () -> new PCBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f)));
 	public static final RegistrySupplier<DyedBlockItem<PCBlock>> WHITE_PC = registerPC("white_pc", DyeColor.WHITE);
 	public static final RegistrySupplier<DyedBlockItem<PCBlock>> ORANGE_PC = registerPC("orange_pc", DyeColor.ORANGE);
 	public static final RegistrySupplier<DyedBlockItem<PCBlock>> MAGENTA_PC = registerPC("magenta_pc", DyeColor.MAGENTA);
@@ -74,7 +73,7 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<DyedBlockItem<PCBlock>> RED_PC = registerPC("red_pc", DyeColor.RED);
 	public static final RegistrySupplier<DyedBlockItem<PCBlock>> BLACK_PC = registerPC("black_pc", DyeColor.BLACK);
 
-	public static final RegistrySupplier<ClockBlock> CLOCK = registerBlock("clock", () -> new ClockBlock(BlockBehaviour.Properties.of(Material.METAL)));
+	public static final RegistrySupplier<ClockBlock> CLOCK = registerBlock("clock", () -> new ClockBlock(BlockBehaviour.Properties.of().strength(2f)));
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> WHITE_CLOCK = registerClock("white_clock", DyeColor.WHITE);
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> ORANGE_CLOCK = registerClock("orange_clock", DyeColor.ORANGE);
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> MAGENTA_CLOCK = registerClock("magenta_clock", DyeColor.MAGENTA);
@@ -92,9 +91,9 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> RED_CLOCK = registerClock("red_clock", DyeColor.RED);
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> BLACK_CLOCK = registerClock("black_clock", DyeColor.BLACK);
 
-	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of(Material.METAL).destroyTime(1.0f).sound(SoundType.METAL)));
+	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
 
-	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlockItem("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of(Material.WOOD).destroyTime(1.0f).sound(SoundType.WOOD)));
+	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlockItem("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOD).ignitedByLava()));
 	public static final RegistrySupplier<GenericFurnaceBlock> CHARGE_STONE_FURNACE = registerBlockItem("charge_stone_furnace", () -> new GenericFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));
 	public static final RegistrySupplier<GenericBlastFurnaceBlock> CHARGE_STONE_BLAST_FURNACE = registerBlockItem("charge_stone_blast_furnace", () -> new GenericBlastFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE)));
 	public static final RegistrySupplier<GenericSmokerBlock> CHARGE_STONE_SMOKER = registerBlockItem("charge_stone_smoker", () -> new GenericSmokerBlock(BlockBehaviour.Properties.copy(Blocks.SMOKER)));

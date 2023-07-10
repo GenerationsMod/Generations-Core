@@ -16,8 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.Locale;
 import java.util.function.Function;
@@ -48,49 +47,49 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> POKE_SAND_SIDE_3 = registerBlockItem("poke_sand_side_3", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
     public static final RegistrySupplier<Block> POKE_SAND_SIDE_4 = registerBlockItem("poke_sand_side_4", () -> new SandBlock(0xdbd3a0,BlockBehaviour.Properties.copy(Blocks.SAND)));
     public static final RegistrySupplier<Block> SANDY_GRASS = registerBlockItem("sandy_grass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> SHINGLES = registerBlockItem("shingles", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> SHINGLES_CORNER_1 = registerBlockItem("shingles_corner_1", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> SHINGLES_CORNER_2 = registerBlockItem("shingles_corner_2", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> OUTSIDE_WALL = registerBlockItem("outside_wall", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL = registerBlockItem("inside_wall", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL_MOLDING = registerBlockItem("inside_wall_molding", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> TREE_TOP = registerBlockItem("tree_top", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)));
-    public static final RegistrySupplier<Block> TREE_BOTTOM = registerBlockItem("tree_bottom", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)));
-    public static final RegistrySupplier<Block> WOODEN_FLOORING = registerBlockItem("wooden_flooring", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)));
-    public static final RegistrySupplier<Block> POKEMART_SIGN = registerBlockItem("pokemart_sign", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> SHINGLES = registerBlockItem("shingles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> SHINGLES_CORNER_1 = registerBlockItem("shingles_corner_1", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> SHINGLES_CORNER_2 = registerBlockItem("shingles_corner_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> OUTSIDE_WALL = registerBlockItem("outside_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> INSIDE_WALL = registerBlockItem("inside_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> INSIDE_WALL_MOLDING = registerBlockItem("inside_wall_molding", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> TREE_TOP = registerBlockItem("tree_top", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistrySupplier<Block> TREE_BOTTOM = registerBlockItem("tree_bottom", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistrySupplier<Block> WOODEN_FLOORING = registerBlockItem("wooden_flooring", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistrySupplier<Block> POKEMART_SIGN = registerBlockItem("pokemart_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<GlassBlock> WINDOW_1 = registerBlockItem("window_1", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()));
     public static final RegistrySupplier<GlassBlock> WINDOW_2 = registerBlockItem("window_2", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()));
 
     /**
      * PokeCenter
      */
-    public static final RegistrySupplier<Block> POKECENTER_SIGN = registerBlockItem("pokecenter_sign", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> POKECENTER_SCARLET_SIGN = registerBlockItem("pokecenter_scarlet_sign", () -> new PokecenterScarletSignBlock(BlockBehaviour.Properties.of(Material.METAL).lightLevel((state) -> 15)));
+    public static final RegistrySupplier<Block> POKECENTER_SIGN = registerBlockItem("pokecenter_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> POKECENTER_SCARLET_SIGN = registerBlockItem("pokecenter_scarlet_sign", () -> new PokecenterScarletSignBlock(BlockBehaviour.Properties.of().lightLevel((state) -> 15).noLootTable()));
     public static final RegistrySupplier<DoorBlock> POKECENTER_DOOR = registerBlockItem("pokecenter_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.OAK));
-    public static final RegistrySupplier<Block> POKECENTER_ROOF = registerBlockItem("pokecenter_roof", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).lightLevel(value -> 5)));
+    public static final RegistrySupplier<Block> POKECENTER_ROOF = registerBlockItem("pokecenter_roof", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 5)));
     public static final RegistrySupplier<StairBlock> POKECENTER_ROOF_STAIRS = registerBlockItem("pokecenter_roof_stairs", () -> new StairBlock(POKECENTER_ROOF.get().defaultBlockState(), BlockBehaviour.Properties.copy(POKECENTER_ROOF.get())));
     public static final RegistrySupplier<SlabBlock> POKECENTER_ROOF_SLAB = registerBlockItem("pokecenter_roof_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(POKECENTER_ROOF.get())));
     public static final RegistrySupplier<WallBlock> POKECENTER_ROOF_WALL = registerBlockItem("pokecenter_roof_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(POKECENTER_ROOF.get())));
-    public static final RegistrySupplier<Block> POKECENTER_ROOF_2 = registerBlockItem("pokecenter_roof_2", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).lightLevel(value -> 5)));
+    public static final RegistrySupplier<Block> POKECENTER_ROOF_2 = registerBlockItem("pokecenter_roof_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 5)));
     public static final RegistrySupplier<StairBlock> POKECENTER_ROOF_2_STAIRS = registerBlockItem("pokecenter_roof_2_stairs", () -> new StairBlock(POKECENTER_ROOF_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(POKECENTER_ROOF_2.get())));
     public static final RegistrySupplier<SlabBlock> POKECENTER_ROOF_2_SLAB = registerBlockItem("pokecenter_roof_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(POKECENTER_ROOF_2.get())));
     public static final RegistrySupplier<WallBlock> POKECENTER_ROOF_2_WALL = registerBlockItem("pokecenter_roof_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(POKECENTER_ROOF_2.get())));
     /**
      * Building Blocks
      */
-    public static final RegistrySupplier<Block> HOUSE_FLOOR_1 = registerBlockItem("house_floor_1", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> HOUSE_FLOOR_2 = registerBlockItem("house_floor_2", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> HOUSE_FLOOR_3 = registerBlockItem("house_floor_3", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> HOUSE_FLOOR_4 = registerBlockItem("house_floor_4", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> HOUSE_FLOOR_5 = registerBlockItem("house_floor_5", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> HOUSE_FLOOR_6 = registerBlockItem("house_floor_6", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> HOUSE_FLOOR_7 = registerBlockItem("house_floor_7", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> HOUSE_FLOOR_8 = registerBlockItem("house_floor_8", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)));
-    public static final RegistrySupplier<Block> INSIDE_WALL_BOTTOM = registerBlockItem("inside_wall_bottom", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL_TOP = registerBlockItem("inside_wall_top", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL_MIDDLE = registerBlockItem("inside_wall_middle", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> RUINS_WALL = registerBlockItem("ruins_wall", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> DUSTY_RUINS_WALL = registerBlockItem("dusty_ruins_wall", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> HOUSE_FLOOR_1 = registerBlockItem("house_floor_1", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> HOUSE_FLOOR_2 = registerBlockItem("house_floor_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> HOUSE_FLOOR_3 = registerBlockItem("house_floor_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> HOUSE_FLOOR_4 = registerBlockItem("house_floor_4", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> HOUSE_FLOOR_5 = registerBlockItem("house_floor_5", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> HOUSE_FLOOR_6 = registerBlockItem("house_floor_6", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> HOUSE_FLOOR_7 = registerBlockItem("house_floor_7", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> HOUSE_FLOOR_8 = registerBlockItem("house_floor_8", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> INSIDE_WALL_BOTTOM = registerBlockItem("inside_wall_bottom", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> INSIDE_WALL_TOP = registerBlockItem("inside_wall_top", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> INSIDE_WALL_MIDDLE = registerBlockItem("inside_wall_middle", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> RUINS_WALL = registerBlockItem("ruins_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> DUSTY_RUINS_WALL = registerBlockItem("dusty_ruins_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     /*
       Temple Blocks
@@ -99,8 +98,8 @@ public class GenerationsBlocks {
     /**
      * Temple Block Pallet
      */
-    public static final RegistrySupplier<Block> TEMPLE_BLOCK = registerBlockItem("temple_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<StairBlock> TEMPLE_BLOCK_STAIRS = registerBlockItem("temple_block_stairs", () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> TEMPLE_BLOCK = registerBlockItem("temple_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<StairBlock> TEMPLE_BLOCK_STAIRS = registerBlockItem("temple_block_stairs", () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<SlabBlock> TEMPLE_BLOCK_SLAB = registerBlockItem("temple_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(TEMPLE_BLOCK.get())));
     public static final RegistrySupplier<WallBlock> TEMPLE_BLOCK_WALL = registerBlockItem("temple_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(TEMPLE_BLOCK.get())));
     /**
@@ -118,15 +117,15 @@ public class GenerationsBlocks {
     /**
      * Castle Block Pallet
      */
-    public static final RegistrySupplier<Block> CASTLE_BLOCK = registerBlockItem("castle_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<StairBlock> CASTLE_BLOCK_STAIRS = registerBlockItem("castle_block_stairs", () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CASTLE_BLOCK = registerBlockItem("castle_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<StairBlock> CASTLE_BLOCK_STAIRS = registerBlockItem("castle_block_stairs", () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<SlabBlock> CASTLE_BLOCK_SLAB = registerBlockItem("castle_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_BLOCK.get())));
     public static final RegistrySupplier<WallBlock> CASTLE_BLOCK_WALL = registerBlockItem("castle_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_BLOCK.get())));
 
     /**
      * Cracked Castle Block Pallet
      */
-    public static final RegistrySupplier<Block> CRACKED_CASTLE_BLOCK = registerBlockItem("cracked_castle_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CRACKED_CASTLE_BLOCK = registerBlockItem("cracked_castle_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> CRACKED_CASTLE_BLOCK_STAIRS = registerBlockItem("cracked_castle_block_stairs", () -> new StairBlock(CRACKED_CASTLE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(CRACKED_CASTLE_BLOCK.get())));
     public static final RegistrySupplier<SlabBlock> CRACKED_CASTLE_BLOCK_SLAB = registerBlockItem("cracked_castle_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CRACKED_CASTLE_BLOCK.get())));
     public static final RegistrySupplier<WallBlock> CRACKED_CASTLE_BLOCK_WALL = registerBlockItem("cracked_castle_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CRACKED_CASTLE_BLOCK.get())));
@@ -167,7 +166,7 @@ public class GenerationsBlocks {
      */
 
     public static final RegistrySupplier<Block> WHITE_CASTLE_BRICK = registerBlockItem("white_castle_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> WHITE_CASTLE_BRICK_STAIRS = registerBlockItem("white_castle_brick_stairs", () -> new StairBlock(WHITE_CASTLE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<StairBlock> WHITE_CASTLE_BRICK_STAIRS = registerBlockItem("white_castle_brick_stairs", () -> new StairBlock(WHITE_CASTLE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<SlabBlock> WHITE_CASTLE_BRICK_SLAB = registerBlockItem("white_castle_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_CASTLE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> WHITE_CASTLE_BRICK_WALL = registerBlockItem("white_castle_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_CASTLE_BRICK.get())));
 
@@ -176,7 +175,7 @@ public class GenerationsBlocks {
      */
 
     public static final RegistrySupplier<Block> WHITE_CASTLE_BRICK_2 = registerBlockItem("white_castle_brick_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> WHITE_CASTLE_BRICK_2_STAIRS = registerBlockItem("castle_white_brick_2_stairs", () -> new StairBlock(WHITE_CASTLE_BRICK_2.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<StairBlock> WHITE_CASTLE_BRICK_2_STAIRS = registerBlockItem("castle_white_brick_2_stairs", () -> new StairBlock(WHITE_CASTLE_BRICK_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<SlabBlock> WHITE_CASTLE_BRICK_2_SLAB = registerBlockItem("white_castle_brick_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_CASTLE_BRICK_2.get())));
     public static final RegistrySupplier<WallBlock> WHITE_CASTLE_BRICK_2_WALL = registerBlockItem("white_castle_brick_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_CASTLE_BRICK_2.get())));
 
@@ -184,7 +183,7 @@ public class GenerationsBlocks {
      * Castle Wall Pallet
      */
 
-    public static final RegistrySupplier<Block> CASTLE_WALL = registerBlockItem("castle_wall", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CASTLE_WALL = registerBlockItem("castle_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> CASTLE_WALL_STAIRS = registerBlockItem("castle_wall_stairs", () -> new StairBlock(CASTLE_WALL.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_WALL.get())));
     public static final RegistrySupplier<SlabBlock> CASTLE_WALL_SLAB = registerBlockItem("castle_wall_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_WALL.get())));
     public static final RegistrySupplier<WallBlock> CASTLE_WALL_WALL = registerBlockItem("castle_wall_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_WALL.get())));
@@ -192,7 +191,7 @@ public class GenerationsBlocks {
     /**
      * Castle Wall 2 Pallet
      */
-    public static final RegistrySupplier<Block> CASTLE_WALL_2 = registerBlockItem("castle_wall_2", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CASTLE_WALL_2 = registerBlockItem("castle_wall_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> CASTLE_WALL_2_STAIRS = registerBlockItem("castle_wall_2_stairs", () -> new StairBlock(CASTLE_WALL_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_WALL_2.get())));
     public static final RegistrySupplier<SlabBlock> CASTLE_WALL_2_SLAB = registerBlockItem("castle_wall_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_2.get())));
     public static final RegistrySupplier<WallBlock> CASTLE_WALL_2_WALL = registerBlockItem("castle_wall_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_2.get())));
@@ -200,7 +199,7 @@ public class GenerationsBlocks {
     /**
      * Castle Wall 3 Pallet
      */
-    public static final RegistrySupplier<Block> CASTLE_WALL_3 = registerBlockItem("castle_wall_3", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CASTLE_WALL_3 = registerBlockItem("castle_wall_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> CASTLE_WALL_3_STAIRS = registerBlockItem("castle_wall_3_stairs", () -> new StairBlock(CASTLE_WALL_3.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_WALL_3.get())));
     public static final RegistrySupplier<SlabBlock> CASTLE_WALL_3_SLAB = registerBlockItem("castle_wall_3_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_3.get())));
     public static final RegistrySupplier<WallBlock> CASTLE_WALL_3_WALL = registerBlockItem("castle_wall_3_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_3.get())));
@@ -208,7 +207,7 @@ public class GenerationsBlocks {
     /**
      * Castle Wall 4 Pallet
      */
-    public static final RegistrySupplier<Block> CASTLE_WALL_4 = registerBlockItem("castle_wall_4", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CASTLE_WALL_4 = registerBlockItem("castle_wall_4", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> CASTLE_WALL_4_STAIRS = registerBlockItem("castle_wall_4_stairs", () -> new StairBlock(CASTLE_WALL_4.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_WALL_4.get())));
     public static final RegistrySupplier<SlabBlock> CASTLE_WALL_4_SLAB = registerBlockItem("castle_wall_4_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_4.get())));
     public static final RegistrySupplier<WallBlock> CASTLE_WALL_4_WALL = registerBlockItem("castle_wall_4_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_4.get())));
@@ -216,7 +215,7 @@ public class GenerationsBlocks {
     /**
      * Castle Floor Pallet
      */
-    public static final RegistrySupplier<Block> CASTLE_FLOOR = registerBlockItem("castle_floor", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CASTLE_FLOOR = registerBlockItem("castle_floor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> CASTLE_FLOOR_STAIRS = registerBlockItem("castle_floor_stairs", () -> new StairBlock(CASTLE_FLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_FLOOR.get())));
     public static final RegistrySupplier<SlabBlock> CASTLE_FLOOR_SLAB = registerBlockItem("castle_floor_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_FLOOR.get())));
     public static final RegistrySupplier<WallBlock> CASTLE_FLOOR_WALL = registerBlockItem("castle_floor_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_FLOOR.get())));
@@ -230,20 +229,20 @@ public class GenerationsBlocks {
     /**
      * Ice Brick Pallet
      */
-    public static final RegistrySupplier<Block> ICE_BRICK = registerBlockItem("ice_brick", () -> new Block(BlockBehaviour.Properties.of(Material.ICE_SOLID)));
+    public static final RegistrySupplier<Block> ICE_BRICK = registerBlockItem("ice_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
     public static final RegistrySupplier<StairBlock> ICE_BRICK_STAIRS = registerBlockItem("ice_brick_stairs", () -> new StairBlock(ICE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.copy(ICE_BRICK.get())));
     public static final RegistrySupplier<SlabBlock> ICE_BRICK_SLAB = registerBlockItem("ice_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ICE_BRICK.get())));
     public static final RegistrySupplier<WallBlock> ICE_BRICK_WALL = registerBlockItem("ice_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ICE_BRICK.get())));
 
-    public static final RegistrySupplier<Block> ICE_PILLAR = registerBlockItem("ice_pillar", () -> new Block(BlockBehaviour.Properties.of(Material.ICE_SOLID)));
-    public static final RegistrySupplier<Block> BROKEN_ICE_PILLAR = registerBlockItem("ice_pillar_broken", () -> new Block(BlockBehaviour.Properties.of(Material.ICE_SOLID)));
+    public static final RegistrySupplier<Block> ICE_PILLAR = registerBlockItem("ice_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
+    public static final RegistrySupplier<Block> BROKEN_ICE_PILLAR = registerBlockItem("ice_pillar_broken", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
 
-    public static final RegistrySupplier<Block> ICE_PILLAR_SIDE = registerBlockItem("ice_pillar_side", () -> new Block(BlockBehaviour.Properties.of(Material.ICE_SOLID)));
+    public static final RegistrySupplier<Block> ICE_PILLAR_SIDE = registerBlockItem("ice_pillar_side", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
     public static final RegistrySupplier<StairBlock> ICE_PILLAR_SIDE_STAIRS = registerBlockItem("ice_pillar_side_stairs", () -> new StairBlock(ICE_PILLAR_SIDE.get().defaultBlockState(), BlockBehaviour.Properties.copy(ICE_PILLAR_SIDE.get())));
     public static final RegistrySupplier<SlabBlock> ICE_PILLAR_SIDE_SLAB = registerBlockItem("ice_pillar_side_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ICE_PILLAR_SIDE.get())));
     public static final RegistrySupplier<WallBlock> ICE_PILLAR_SIDE_WALL = registerBlockItem("ice_pillar_side_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ICE_PILLAR_SIDE.get())));
 
-    public static final RegistrySupplier<Block> ICE_PILLAR_TOP = registerBlockItem("ice_pillar_top", () -> new Block(BlockBehaviour.Properties.of(Material.ICE_SOLID)));
+    public static final RegistrySupplier<Block> ICE_PILLAR_TOP = registerBlockItem("ice_pillar_top", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
     public static final RegistrySupplier<StairBlock> ICE_PILLAR_TOP_STAIRS = registerBlockItem("ice_pillar_top_stairs", () -> new StairBlock(ICE_PILLAR_TOP.get().defaultBlockState(), BlockBehaviour.Properties.copy(ICE_PILLAR_TOP.get())));
     public static final RegistrySupplier<SlabBlock> ICE_PILLAR_TOP_SLAB = registerBlockItem("ice_pillar_top_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ICE_PILLAR_TOP.get())));
     public static final RegistrySupplier<WallBlock> ICE_PILLAR_TOP_WALL = registerBlockItem("ice_pillar_top_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ICE_PILLAR_TOP.get())));
@@ -262,7 +261,7 @@ public class GenerationsBlocks {
      * Cave Rock Pallet
      */
 
-    public static final RegistrySupplier<Block> CAVE_ROCK = registerBlockItem("cave_rock", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CAVE_ROCK = registerBlockItem("cave_rock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     public static final RegistrySupplier<StairBlock> CAVE_ROCK_STAIRS = registerBlockItem("cave_rock_stairs", () -> new StairBlock(CAVE_ROCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(CAVE_ROCK.get())));
     public static final RegistrySupplier<SlabBlock> CAVE_ROCK_SLAB = registerBlockItem("cave_rock_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CAVE_ROCK.get())));
@@ -271,7 +270,7 @@ public class GenerationsBlocks {
     /**
      * Cave Rock Floor Pallet
      */
-    public static final RegistrySupplier<Block> CAVE_ROCK_FLOOR = registerBlockItem("cave_rock_floor", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CAVE_ROCK_FLOOR = registerBlockItem("cave_rock_floor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> CAVE_ROCK_FLOOR_STAIRS = registerBlockItem("cave_rock_floor_stairs", () -> new StairBlock(CAVE_ROCK_FLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(CAVE_ROCK_FLOOR.get())));
     public static final RegistrySupplier<SlabBlock> CAVE_ROCK_FLOOR_SLAB = registerBlockItem("cave_rock_floor_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CAVE_ROCK_FLOOR.get())));
     public static final RegistrySupplier<WallBlock> CAVE_ROCK_FLOOR_WALL = registerBlockItem("cave_rock_floor_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CAVE_ROCK_FLOOR.get())));
@@ -279,7 +278,7 @@ public class GenerationsBlocks {
     /**
      * Gray Cave Rock Floor Pallet
      */
-    public static final RegistrySupplier<Block> GRAY_CAVE_ROCK_FLOOR = registerBlockItem("gray_cave_rock_floor", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> GRAY_CAVE_ROCK_FLOOR = registerBlockItem("gray_cave_rock_floor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> GRAY_CAVE_ROCK_FLOOR_STAIRS = registerBlockItem("gray_cave_rock_floor_stairs", () -> new StairBlock(GRAY_CAVE_ROCK_FLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(GRAY_CAVE_ROCK_FLOOR.get())));
     public static final RegistrySupplier<SlabBlock> GRAY_CAVE_ROCK_FLOOR_SLAB = registerBlockItem("gray_cave_rock_floor_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRAY_CAVE_ROCK_FLOOR.get())));
     public static final RegistrySupplier<WallBlock> GRAY_CAVE_ROCK_FLOOR_WALL = registerBlockItem("gray_cave_rock_floor_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRAY_CAVE_ROCK_FLOOR.get())));
@@ -287,7 +286,7 @@ public class GenerationsBlocks {
     /**
      * Ice Cave Rock Floor Pallet
      */
-    public static final RegistrySupplier<Block> ICE_CAVE_ROCK_FLOOR = registerBlockItem("ice_cave_rock_floor", () -> new Block(BlockBehaviour.Properties.of(Material.ICE_SOLID)));
+    public static final RegistrySupplier<Block> ICE_CAVE_ROCK_FLOOR = registerBlockItem("ice_cave_rock_floor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
     public static final RegistrySupplier<StairBlock> ICE_CAVE_ROCK_FLOOR_STAIRS = registerBlockItem("ice_cave_rock_floor_stairs", () -> new StairBlock(ICE_CAVE_ROCK_FLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(ICE_CAVE_ROCK_FLOOR.get())));
     public static final RegistrySupplier<SlabBlock> ICE_CAVE_ROCK_FLOOR_SLAB = registerBlockItem("ice_cave_rock_floor_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ICE_CAVE_ROCK_FLOOR.get())));
     public static final RegistrySupplier<WallBlock> ICE_CAVE_ROCK_FLOOR_WALL = registerBlockItem("ice_cave_rock_floor_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ICE_CAVE_ROCK_FLOOR.get())));
@@ -296,31 +295,31 @@ public class GenerationsBlocks {
     /**
      * Bridge Block Pallet
      */
-    public static final RegistrySupplier<Block> BRIDGE_BLOCK = registerBlockItem("bridge_block", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)));
+    public static final RegistrySupplier<Block> BRIDGE_BLOCK = registerBlockItem("bridge_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistrySupplier<StairBlock> BRIDGE_BLOCK_STAIRS = registerBlockItem("bridge_block_stairs", () -> new StairBlock(BRIDGE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(BRIDGE_BLOCK.get())));
     public static final RegistrySupplier<SlabBlock> BRIDGE_BLOCK_SLAB = registerBlockItem("bridge_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BRIDGE_BLOCK.get())));
     public static final RegistrySupplier<WallBlock> BRIDGE_BLOCK_WALL = registerBlockItem("bridge_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BRIDGE_BLOCK.get())));
 
-    public static final RegistrySupplier<Block> CASTLE_PILLAR = registerBlockItem("castle_pillar", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BROKEN_CASTLE_PILLAR = registerBlockItem("broken_castle_pillar", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> PRISMARINE_PILLAR = registerBlockItem("prismarine_pillar", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BROKEN_PRISMARINE_PILLAR = registerBlockItem("prismarine_pillar_broken", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> DARK_PRISMARINE_PILLAR = registerBlockItem("dark_prismarine_pillar", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BROKEN_DARK_PRISMARINE_PILLAR = registerBlockItem("dark_prismarine_pillar_broken", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> HAUNTED_PILLAR = registerBlockItem("haunted_pillar", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BROKEN_HAUNTED_PILLAR = registerBlockItem("haunted_pillar_broken", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> CASTLE_PILLAR = registerBlockItem("castle_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BROKEN_CASTLE_PILLAR = registerBlockItem("broken_castle_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> PRISMARINE_PILLAR = registerBlockItem("prismarine_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BROKEN_PRISMARINE_PILLAR = registerBlockItem("prismarine_pillar_broken", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> DARK_PRISMARINE_PILLAR = registerBlockItem("dark_prismarine_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BROKEN_DARK_PRISMARINE_PILLAR = registerBlockItem("dark_prismarine_pillar_broken", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> HAUNTED_PILLAR = registerBlockItem("haunted_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BROKEN_HAUNTED_PILLAR = registerBlockItem("haunted_pillar_broken", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
-    public static final RegistrySupplier<Block> DAWN_STONE_BLOCK = registerBlockItem("dawn_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> DUSK_STONE_BLOCK = registerBlockItem("dusk_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> FIRE_STONE_BLOCK = registerBlockItem("fire_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> ICE_STONE_BLOCK = registerBlockItem("ice_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> LEAF_STONE_BLOCK = registerBlockItem("leaf_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> MOON_STONE_BLOCK = registerBlockItem("moon_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> SHINY_STONE_BLOCK = registerBlockItem("shiny_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> SUN_STONE_BLOCK = registerBlockItem("sun_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> THUNDER_STONE_BLOCK = registerBlockItem("thunder_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> WATER_STONE_BLOCK = registerBlockItem("water_stone_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> CRATE = registerBlockItem("crate", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> DAWN_STONE_BLOCK = registerBlockItem("dawn_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> DUSK_STONE_BLOCK = registerBlockItem("dusk_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> FIRE_STONE_BLOCK = registerBlockItem("fire_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> ICE_STONE_BLOCK = registerBlockItem("ice_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> LEAF_STONE_BLOCK = registerBlockItem("leaf_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> MOON_STONE_BLOCK = registerBlockItem("moon_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> SHINY_STONE_BLOCK = registerBlockItem("shiny_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> SUN_STONE_BLOCK = registerBlockItem("sun_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> THUNDER_STONE_BLOCK = registerBlockItem("thunder_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> WATER_STONE_BLOCK = registerBlockItem("water_stone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> CRATE = registerBlockItem("crate", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     /**
      * Compressed Polished Andesite Pallet
@@ -364,20 +363,20 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<CursedCarvedPumpkinBlock> CURSED_JACK_O_LANTERN = registerBlockItem("cursed_jack_o_lantern", () -> new CursedCarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN)));
 
 
-    public static final RegistrySupplier<Block> COBBLE_RUINS_1 = registerBlockItem("cobble_ruins_1", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_1_STAIRS = registerBlockItem("cobble_ruins_1_stairs", () -> new StairBlock(COBBLE_RUINS_1.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> COBBLE_RUINS_1 = registerBlockItem("cobble_ruins_1", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_1_STAIRS = registerBlockItem("cobble_ruins_1_stairs", () -> new StairBlock(COBBLE_RUINS_1.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<SlabBlock> COBBLE_RUINS_1_SLAB = registerBlockItem("cobble_ruins_1_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_1.get())));
     public static final RegistrySupplier<WallBlock> COBBLE_RUINS_1_WALL = registerBlockItem("cobble_ruins_1_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_1.get())));
-    public static final RegistrySupplier<Block> COBBLE_RUINS_2 = registerBlockItem("cobble_ruins_2", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_2_STAIRS = registerBlockItem("cobble_ruins_2_stairs", () -> new StairBlock(COBBLE_RUINS_2.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> COBBLE_RUINS_2 = registerBlockItem("cobble_ruins_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_2_STAIRS = registerBlockItem("cobble_ruins_2_stairs", () -> new StairBlock(COBBLE_RUINS_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<SlabBlock> COBBLE_RUINS_2_SLAB = registerBlockItem("cobble_ruins_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_2.get())));
     public static final RegistrySupplier<WallBlock> COBBLE_RUINS_2_WALL = registerBlockItem("cobble_ruins_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_2.get())));
-    public static final RegistrySupplier<Block> COBBLE_RUINS_3 = registerBlockItem("cobble_ruins_3", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_3_STAIRS = registerBlockItem("cobble_ruins_3_stairs", () -> new StairBlock(COBBLE_RUINS_3.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> COBBLE_RUINS_3 = registerBlockItem("cobble_ruins_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_3_STAIRS = registerBlockItem("cobble_ruins_3_stairs", () -> new StairBlock(COBBLE_RUINS_3.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<SlabBlock> COBBLE_RUINS_3_SLAB = registerBlockItem("cobble_ruins_3_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_3.get())));
     public static final RegistrySupplier<WallBlock> COBBLE_RUINS_3_WALL = registerBlockItem("cobble_ruins_3_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_3.get())));
-    public static final RegistrySupplier<Block> COBBLE_RUINS_4 = registerBlockItem("cobble_ruins_4", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_4_STAIRS = registerBlockItem("cobble_ruins_4_stairs", () -> new StairBlock(COBBLE_RUINS_4.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> COBBLE_RUINS_4 = registerBlockItem("cobble_ruins_4", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_4_STAIRS = registerBlockItem("cobble_ruins_4_stairs", () -> new StairBlock(COBBLE_RUINS_4.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<SlabBlock> COBBLE_RUINS_4_SLAB = registerBlockItem("cobble_ruins_4_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_4.get())));
     public static final RegistrySupplier<WallBlock> COBBLE_RUINS_4_WALL = registerBlockItem("cobble_ruins_4_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_4.get())));
 
@@ -626,69 +625,69 @@ public class GenerationsBlocks {
     /**
      * Unown Blocks
      */
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_A = registerBlockItem("unown_block_a", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_B = registerBlockItem("unown_block_b", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_C = registerBlockItem("unown_block_c", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_D = registerBlockItem("unown_block_d", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_E = registerBlockItem("unown_block_e", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_F = registerBlockItem("unown_block_f", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_G = registerBlockItem("unown_block_g", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_H = registerBlockItem("unown_block_h", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_I = registerBlockItem("unown_block_i", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_J = registerBlockItem("unown_block_j", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_K = registerBlockItem("unown_block_k", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_L = registerBlockItem("unown_block_l", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_M = registerBlockItem("unown_block_m", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_N = registerBlockItem("unown_block_n", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_O = registerBlockItem("unown_block_o", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_P = registerBlockItem("unown_block_p", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_Q = registerBlockItem("unown_block_q", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_R = registerBlockItem("unown_block_r", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_S = registerBlockItem("unown_block_s", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_T = registerBlockItem("unown_block_t", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_U = registerBlockItem("unown_block_u", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_V = registerBlockItem("unown_block_v", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_W = registerBlockItem("unown_block_w", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_X = registerBlockItem("unown_block_x", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_Y = registerBlockItem("unown_block_y", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_Z = registerBlockItem("unown_block_z", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_BLANK = registerBlockItem("unown_block_blank", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_EXCLAMATION_MARK = registerBlockItem("unown_block_exclamation_mark", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> UNOWN_BLOCK_QUESTION_MARK = registerBlockItem("unown_block_question_mark", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_A = registerBlockItem("unown_block_a", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_B = registerBlockItem("unown_block_b", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_C = registerBlockItem("unown_block_c", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_D = registerBlockItem("unown_block_d", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_E = registerBlockItem("unown_block_e", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_F = registerBlockItem("unown_block_f", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_G = registerBlockItem("unown_block_g", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_H = registerBlockItem("unown_block_h", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_I = registerBlockItem("unown_block_i", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_J = registerBlockItem("unown_block_j", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_K = registerBlockItem("unown_block_k", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_L = registerBlockItem("unown_block_l", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_M = registerBlockItem("unown_block_m", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_N = registerBlockItem("unown_block_n", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_O = registerBlockItem("unown_block_o", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_P = registerBlockItem("unown_block_p", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_Q = registerBlockItem("unown_block_q", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_R = registerBlockItem("unown_block_r", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_S = registerBlockItem("unown_block_s", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_T = registerBlockItem("unown_block_t", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_U = registerBlockItem("unown_block_u", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_V = registerBlockItem("unown_block_v", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_W = registerBlockItem("unown_block_w", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_X = registerBlockItem("unown_block_x", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_Y = registerBlockItem("unown_block_y", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_Z = registerBlockItem("unown_block_z", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_BLANK = registerBlockItem("unown_block_blank", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_EXCLAMATION_MARK = registerBlockItem("unown_block_exclamation_mark", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> UNOWN_BLOCK_QUESTION_MARK = registerBlockItem("unown_block_question_mark", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     /**
      * Braille Blocks
      */
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_A = registerBlockItem("braille_block_a", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_B = registerBlockItem("braille_block_b", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_C = registerBlockItem("braille_block_c", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_D = registerBlockItem("braille_block_d", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_E = registerBlockItem("braille_block_e", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_F = registerBlockItem("braille_block_f", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_G = registerBlockItem("braille_block_g", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_H = registerBlockItem("braille_block_h", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_I = registerBlockItem("braille_block_i", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_J = registerBlockItem("braille_block_j", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_K = registerBlockItem("braille_block_k", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_L = registerBlockItem("braille_block_l", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_M = registerBlockItem("braille_block_m", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_N = registerBlockItem("braille_block_n", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_O = registerBlockItem("braille_block_o", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_P = registerBlockItem("braille_block_p", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_Q = registerBlockItem("braille_block_q", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_R = registerBlockItem("braille_block_r", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_S = registerBlockItem("braille_block_s", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_T = registerBlockItem("braille_block_t", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_U = registerBlockItem("braille_block_u", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_V = registerBlockItem("braille_block_v", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_W = registerBlockItem("braille_block_w", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_X = registerBlockItem("braille_block_x", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_Y = registerBlockItem("braille_block_y", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_Z = registerBlockItem("braille_block_z", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_COMMA = registerBlockItem("braille_block_comma", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_PERIOD = registerBlockItem("braille_block_period", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_UNDERSCORE = registerBlockItem("braille_block_underscore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    public static final RegistrySupplier<Block> BRAILLE_BLOCK_EMPTY = registerBlockItem("braille_block_empty", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_A = registerBlockItem("braille_block_a", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_B = registerBlockItem("braille_block_b", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_C = registerBlockItem("braille_block_c", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_D = registerBlockItem("braille_block_d", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_E = registerBlockItem("braille_block_e", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_F = registerBlockItem("braille_block_f", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_G = registerBlockItem("braille_block_g", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_H = registerBlockItem("braille_block_h", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_I = registerBlockItem("braille_block_i", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_J = registerBlockItem("braille_block_j", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_K = registerBlockItem("braille_block_k", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_L = registerBlockItem("braille_block_l", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_M = registerBlockItem("braille_block_m", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_N = registerBlockItem("braille_block_n", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_O = registerBlockItem("braille_block_o", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_P = registerBlockItem("braille_block_p", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_Q = registerBlockItem("braille_block_q", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_R = registerBlockItem("braille_block_r", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_S = registerBlockItem("braille_block_s", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_T = registerBlockItem("braille_block_t", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_U = registerBlockItem("braille_block_u", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_V = registerBlockItem("braille_block_v", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_W = registerBlockItem("braille_block_w", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_X = registerBlockItem("braille_block_x", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_Y = registerBlockItem("braille_block_y", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_Z = registerBlockItem("braille_block_z", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_COMMA = registerBlockItem("braille_block_comma", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_PERIOD = registerBlockItem("braille_block_period", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_UNDERSCORE = registerBlockItem("braille_block_underscore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> BRAILLE_BLOCK_EMPTY = registerBlockItem("braille_block_empty", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     /**
      * Full ChargeStone Pallet
@@ -845,7 +844,7 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> GOLDEN_TEMPLE_SMOOTH_SANDSTONE_STAIRS = registerBlockItem("golden_temple_smooth_sandstone_stairs", () -> new StairBlock(GOLDEN_TEMPLE_SMOOTH_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(GOLDEN_TEMPLE_SMOOTH_SANDSTONE.get())));
     public static final RegistrySupplier<SlabBlock> GOLDEN_TEMPLE_SMOOTH_SANDSTONE_SLAB = registerBlockItem("golden_temple_smooth_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GOLDEN_TEMPLE_SMOOTH_SANDSTONE.get())));
     public static final RegistrySupplier<WallBlock> GOLDEN_TEMPLE_SMOOTH_SANDSTONE_WALL = registerBlockItem("golden_temple_smooth_sandstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GOLDEN_TEMPLE_SMOOTH_SANDSTONE.get())));
-    public static final RegistrySupplier<Block> GOLDEN_TEMPLE_PRISMARINE = registerBlockItem("golden_temple_prismarine", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_YELLOW).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+    public static final RegistrySupplier<Block> GOLDEN_TEMPLE_PRISMARINE = registerBlockItem("golden_temple_prismarine", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
     public static final RegistrySupplier<StairBlock> GOLDEN_TEMPLE_PRISMARINE_STAIRS = registerBlockItem("golden_temple_prismarine_stairs", () -> new StairBlock(Blocks.PRISMARINE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.PRISMARINE_STAIRS)));
     public static final RegistrySupplier<SlabBlock> GOLDEN_TEMPLE_PRISMARINE_SLAB = registerBlockItem("golden_temple_prismarine_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.PRISMARINE)));
     public static final RegistrySupplier<WallBlock> GOLDEN_TEMPLE_PRISMARINE_WALL = registerBlockItem("golden_temple_prismarine_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.PRISMARINE)));
@@ -1296,7 +1295,7 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> YAGO_BERRY_BUSH = createBerryBush(BerryType.YAGO);
 
     private static RegistrySupplier<Block> createBerryBush(BerryType berryType) {
-        return BLOCKS.register(berryType.name().toLowerCase(Locale.ENGLISH) + "_berry_bush", () -> new GenerationsBerryBushBlock(berryType, BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
+        return BLOCKS.register(berryType.name().toLowerCase(Locale.ENGLISH) + "_berry_bush", () -> new GenerationsBerryBushBlock(berryType, BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
     }
     
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {

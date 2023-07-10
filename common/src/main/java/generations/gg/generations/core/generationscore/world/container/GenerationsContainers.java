@@ -39,7 +39,7 @@ public class GenerationsContainers {
 
     public static <T extends AbstractContainerMenu, V extends BlockEntity> RegistrySupplier<MenuType<T>> register(String name, Function<CreationContext<V>, T> function, Class<V> clazz) {
         return CONTAINERS.register(name, () -> MenuRegistry.ofExtended((id, playerInventory, arg2) -> {
-            var be = playerInventory.player.getLevel().getBlockEntity(arg2.readBlockPos());
+            var be = playerInventory.player.level().getBlockEntity(arg2.readBlockPos());
             if (clazz.isInstance(be)) return function.apply(new CreationContext<>(id, playerInventory, clazz.cast(be)));
             else return null;
         }));

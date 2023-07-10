@@ -19,8 +19,8 @@ public class TypeSlot extends Slot {
     private final RegistrySupplier<Item> candy;
     private final DoubleSupplier supplier;
     private final Pair<ResourceLocation, ResourceLocation> pair;
-    public int offsetX;
-    public int offsetY;
+    public int originalX;
+    public int originalY;
 
     public TypeSlot(Container itemHandler, int index, int xPosition, int yPosition, RegistrySupplier<Item> candy, String elementName, DoubleSupplier supplier) {
         super(itemHandler, index, xPosition, yPosition);
@@ -30,8 +30,8 @@ public class TypeSlot extends Slot {
     }
 
     public static void interpolateVectors(TypeSlot slot, int x1, int y1, int x2, int y2, double t) {
-        slot.offsetX = Math.round((float) (x1 + (x2 - x1) * t));
-        slot.offsetY = Math.round((float) (y1 + (y2 - y1) * t));
+        slot.x = Math.round((float) (slot.originalX + (x2 - slot.originalX) * t));
+        slot.y = Math.round((float) (slot.originalY + (y2 - slot.originalY) * t));
     }
 
     @Override

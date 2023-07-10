@@ -7,7 +7,6 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -43,8 +42,8 @@ public class GenerationsWood {
     public static final RegistrySupplier<FenceGateBlock> ULTRA_JUNGLE_FENCE_GATE = registerBlockItem("ultra_jungle_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE), WoodType.JUNGLE));
     public static final RegistrySupplier<StandingSignBlock> ULTRA_JUNGLE_SIGN = registerBlockWithoutItem("ultra_jungle_sign", () -> new GenerationsStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_SIGN), GenerationsWoodTypes.ULTRA_JUNGLE));
     public static final RegistrySupplier<WallSignBlock> ULTRA_JUNGLE_WALL_SIGN = registerSignWithoutItem("ultra_jungle_wall_sign", () -> new GenerationsWallSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WALL_SIGN), GenerationsWoodTypes.ULTRA_JUNGLE));
-    public static final RegistrySupplier<CeilingHangingSignBlock> ULTRA_JUNGLE_HANGING_SIGN = registerBlockWithoutItem("ultra_jungle_hanging_sign", () -> new GenerationsCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_HANGING_SIGN).requiredFeatures(FeatureFlags.UPDATE_1_20), GenerationsWoodTypes.ULTRA_JUNGLE));
-    public static final RegistrySupplier<WallHangingSignBlock> ULTRA_JUNGLE_WALL_HANGING_SIGN = registerSignWithoutItem("ultra_jungle_wall_hanging_sign", () -> new GenerationsWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WALL_HANGING_SIGN).requiredFeatures(FeatureFlags.UPDATE_1_20), GenerationsWoodTypes.ULTRA_JUNGLE));
+    public static final RegistrySupplier<CeilingHangingSignBlock> ULTRA_JUNGLE_HANGING_SIGN = registerBlockWithoutItem("ultra_jungle_hanging_sign", () -> new GenerationsCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_HANGING_SIGN), GenerationsWoodTypes.ULTRA_JUNGLE));
+    public static final RegistrySupplier<WallHangingSignBlock> ULTRA_JUNGLE_WALL_HANGING_SIGN = registerSignWithoutItem("ultra_jungle_wall_hanging_sign", () -> new GenerationsWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WALL_HANGING_SIGN), GenerationsWoodTypes.ULTRA_JUNGLE));
     public static final RegistrySupplier<Block> ULTRA_JUNGLE_BOOKSHELF = registerBlockItem("ultra_jungle_bookshelf", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistrySupplier<RotatedPillarBlock> ULTRA_DARK_LOG = registerBlockItem("ultra_dark_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_LOG)));
     public static final RegistrySupplier<RotatedPillarBlock> STRIPPED_ULTRA_DARK_LOG = registerBlockItem("stripped_ultra_dark_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_DARK_OAK_LOG)));
@@ -62,8 +61,8 @@ public class GenerationsWood {
     public static final RegistrySupplier<FenceGateBlock> ULTRA_DARK_FENCE_GATE = registerBlockItem("ultra_dark_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE_GATE), WoodType.DARK_OAK));
     public static final RegistrySupplier<StandingSignBlock> ULTRA_DARK_SIGN = registerBlockWithoutItem("ultra_dark_sign", () -> new GenerationsStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_SIGN), GenerationsWoodTypes.ULTRA_DARK));
     public static final RegistrySupplier<WallSignBlock> ULTRA_DARK_WALL_SIGN = registerSignWithoutItem("ultra_dark_wall_sign", () -> new GenerationsWallSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_SIGN), GenerationsWoodTypes.ULTRA_DARK));
-    public static final RegistrySupplier<CeilingHangingSignBlock> ULTRA_DARK_HANGING_SIGN = registerBlockWithoutItem("ultra_dark_hanging_sign", () -> new GenerationsCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_HANGING_SIGN).requiredFeatures(FeatureFlags.UPDATE_1_20), GenerationsWoodTypes.ULTRA_DARK));
-    public static final RegistrySupplier<WallHangingSignBlock> ULTRA_DARK_WALL_HANGING_SIGN = registerSignWithoutItem("ultra_dark_wall_hanging_sign", () -> new GenerationsWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_HANGING_SIGN).requiredFeatures(FeatureFlags.UPDATE_1_20), GenerationsWoodTypes.ULTRA_DARK));
+    public static final RegistrySupplier<CeilingHangingSignBlock> ULTRA_DARK_HANGING_SIGN = registerBlockWithoutItem("ultra_dark_hanging_sign", () -> new GenerationsCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_HANGING_SIGN), GenerationsWoodTypes.ULTRA_DARK));
+    public static final RegistrySupplier<WallHangingSignBlock> ULTRA_DARK_WALL_HANGING_SIGN = registerSignWithoutItem("ultra_dark_wall_hanging_sign", () -> new GenerationsWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_HANGING_SIGN), GenerationsWoodTypes.ULTRA_DARK));
     public static final RegistrySupplier<Block> ULTRA_DARK_BOOKSHELF = registerBlockItem("ultra_dark_bookshelf", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
 
     public static final RegistrySupplier<RotatedPillarBlock> GHOST_LOG = registerBlockItem("ghost_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_LOG)));
@@ -82,8 +81,8 @@ public class GenerationsWood {
     public static final RegistrySupplier<FenceGateBlock> GHOST_FENCE_GATE = registerBlockItem("ghost_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE_GATE), GenerationsWoodTypes.GHOST));
     public static final RegistrySupplier<StandingSignBlock> GHOST_SIGN = registerBlockWithoutItem("ghost_sign", () -> new GenerationsStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_SIGN), GenerationsWoodTypes.GHOST));
     public static final RegistrySupplier<WallSignBlock> GHOST_WALL_SIGN = registerSignWithoutItem("ghost_wall_sign", () -> new GenerationsWallSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_SIGN), GenerationsWoodTypes.GHOST));
-    public static final RegistrySupplier<CeilingHangingSignBlock> GHOST_HANGING_SIGN = registerBlockWithoutItem("ghost_hanging_sign", () -> new GenerationsCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_HANGING_SIGN).requiredFeatures(FeatureFlags.UPDATE_1_20), GenerationsWoodTypes.GHOST));
-    public static final RegistrySupplier<WallHangingSignBlock> GHOST_WALL_HANGING_SIGN = registerSignWithoutItem("ghost_wall_hanging_sign", () -> new GenerationsWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_HANGING_SIGN).requiredFeatures(FeatureFlags.UPDATE_1_20), GenerationsWoodTypes.GHOST));
+    public static final RegistrySupplier<CeilingHangingSignBlock> GHOST_HANGING_SIGN = registerBlockWithoutItem("ghost_hanging_sign", () -> new GenerationsCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_HANGING_SIGN), GenerationsWoodTypes.GHOST));
+    public static final RegistrySupplier<WallHangingSignBlock> GHOST_WALL_HANGING_SIGN = registerSignWithoutItem("ghost_wall_hanging_sign", () -> new GenerationsWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_HANGING_SIGN), GenerationsWoodTypes.GHOST));
     public static final RegistrySupplier<Block> GHOST_BOOKSHELF = registerBlockItem("ghost_bookshelf", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {

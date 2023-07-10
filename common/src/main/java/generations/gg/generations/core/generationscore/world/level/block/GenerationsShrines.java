@@ -13,7 +13,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 
 import java.util.function.Supplier;
 
@@ -21,7 +20,7 @@ public class GenerationsShrines {
 	public static final DeferredRegister<Block> SHRINES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 
 
-	public static final BlockBehaviour.Properties SHRINE_PROPERTIES = BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(-1.0F, 3600000.8F).noLootTable().isValidSpawn(Blocks::never).lightLevel(value -> 5);
+	public static final BlockBehaviour.Properties SHRINE_PROPERTIES = BlockBehaviour.Properties.of()/*of(Material.HEAVY_METAL) TODO: Verify we have all properties*/.strength(-1.0F, 3600000.8F).noLootTable().isValidSpawn(Blocks::never).lightLevel(value -> 5);
 	/**
 	 * Shrine Blocks
 	 */
