@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "basculegion-1",
+            "pokemon": "basculegion",
+            "presets": [
+                "river",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "rare",
+            "level": "40-60",
+            "weight": 5.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "1,5"
+            }
+        }
+    ]
+}

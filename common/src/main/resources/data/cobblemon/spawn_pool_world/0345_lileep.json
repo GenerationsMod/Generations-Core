@@ -1,0 +1,25 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "lileep-1",
+            "pokemon": "lileep",
+            "presets": [
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "seafloor",
+            "bucket": "uncommon",
+            "level": "12-40",
+            "weight": 9.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#minecraft:is_ocean"
+                ]
+            }
+        }
+    ]
+}

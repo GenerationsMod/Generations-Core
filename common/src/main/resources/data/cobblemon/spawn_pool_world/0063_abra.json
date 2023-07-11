@@ -1,0 +1,27 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "abra-1",
+            "pokemon": "abra",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "5-31",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_hills",
+                    "#cobblemon:is_temperate"
+                ],
+                "timeRange": "night"
+            }
+        }
+    ]
+}

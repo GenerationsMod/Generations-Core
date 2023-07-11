@@ -1,0 +1,25 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "tinkaton-1",
+            "pokemon": "tinkaton",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "38-60",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_mountain"
+                ]
+            }
+        }
+    ]
+}

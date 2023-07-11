@@ -1,0 +1,25 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "quaxwell-1",
+            "pokemon": "quaxwell",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "16-40",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_river"
+                ]
+            }
+        }
+    ]
+}

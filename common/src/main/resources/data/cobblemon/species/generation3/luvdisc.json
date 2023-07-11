@@ -1,0 +1,161 @@
+{
+  "implemented": true,
+  "name": "Luvdisc",
+  "nationalPokedexNumber": 370,
+  "primaryType": "water",
+  "abilities": [
+    "swiftswim",
+    "h:hydration"
+  ],
+  "baseStats": {
+    "hp": 43,
+    "attack": 30,
+    "defence": 55,
+    "special_attack": 40,
+    "special_defence": 65,
+    "speed": 97
+  },
+  "catchRate": 225,
+  "maleRatio": 0.25,
+  "shoulderMountable": false,
+  "baseExperienceYield": 116,
+  "experienceGroup": "fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_2"
+  ],
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:deep_sea_scale",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "4:charm",
+    "9:drainingkiss",
+    "12:watergun",
+    "13:wish",
+    "16:agility",
+    "17:luckychant",
+    "22:heartstamp",
+    "24:takedown",
+    "28:attract",
+    "31:waterpulse",
+    "36:sweetkiss",
+    "37:aquaring",
+    "37:babydolleyes",
+    "40:captivate",
+    "40:flail",
+    "40:hydropump",
+    "42:soak",
+    "48:safeguard",
+    "egg:aquajet",
+    "egg:aquaring",
+    "egg:brine",
+    "egg:captivate",
+    "egg:entrainment",
+    "egg:healpulse",
+    "egg:mudsport",
+    "egg:splash",
+    "egg:supersonic",
+    "egg:watersport",
+    "tm:agility",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:brine",
+    "tm:captivate",
+    "tm:charm",
+    "tm:confide",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snowscape",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tutor:bounce",
+    "tutor:charm",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:endure",
+    "tutor:icywind",
+    "tutor:liquidation",
+    "tutor:mimic",
+    "tutor:mudsport",
+    "tutor:psychup",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.luvdisc.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1.15,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.55,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 6,
+  "weight": 87,
+  "aspects": [],
+  "cannotDynamax": false
+}

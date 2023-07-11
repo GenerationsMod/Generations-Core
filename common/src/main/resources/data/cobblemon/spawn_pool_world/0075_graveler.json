@@ -1,0 +1,89 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "graveler-1",
+            "pokemon": "graveler",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-39",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_mountain"
+                ]
+            }
+        },
+        {
+            "id": "graveler-2",
+            "pokemon": "graveler",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-39",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        },
+        {
+            "id": "graveler-alolan-1",
+            "pokemon": "graveler alolan",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-39",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_mountain"
+                ]
+            }
+        },
+        {
+            "id": "graveler-alolan-2",
+            "pokemon": "graveler alolan",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-39",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+{
+  "implemented": true,
+  "name": "Weedle",
+  "nationalPokedexNumber": 13,
+  "primaryType": "bug",
+  "secondaryType": "poison",
+  "abilities": [
+    "shielddust",
+    "h:runaway"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 35,
+    "defence": 30,
+    "special_attack": 20,
+    "special_defence": 20,
+    "speed": 50
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 39,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:poisonsting",
+    "1:stringshot",
+    "15:bugbite",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:poisonsting",
+    "tutor:stringshot"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.weedle.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "weedle_kakuna",
+      "variant": "level_up",
+      "result": "kakuna",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 7
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.4,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 3,
+  "weight": 32,
+  "aspects": [],
+  "cannotDynamax": false
+}

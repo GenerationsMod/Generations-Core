@@ -1,0 +1,127 @@
+{
+  "implemented": true,
+  "name": "Sizzlipede",
+  "nationalPokedexNumber": 850,
+  "primaryType": "fire",
+  "secondaryType": "bug",
+  "abilities": [
+    "flashfire",
+    "whitesmoke",
+    "h:flamebody"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 65,
+    "defence": 45,
+    "special_attack": 50,
+    "special_defence": 50,
+    "speed": 45
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 61,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "bug"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInLava": true,
+        "canBreatheUnderlava": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:blaze_powder",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "moves": [
+    "1:ember",
+    "1:smokescreen",
+    "5:wrap",
+    "10:bite",
+    "15:flamewheel",
+    "20:bugbite",
+    "25:coil",
+    "30:slam",
+    "35:firespin",
+    "40:crunch",
+    "45:firelash",
+    "50:lunge",
+    "55:burnup",
+    "egg:defensecurl",
+    "egg:knockoff",
+    "egg:rollout",
+    "egg:strugglebug",
+    "tm:attract",
+    "tm:brutalswing",
+    "tm:bugbuzz",
+    "tm:crunch",
+    "tm:endure",
+    "tm:facade",
+    "tm:firespin",
+    "tm:heatcrash",
+    "tm:heatwave",
+    "tm:leechlife",
+    "tm:powerwhip",
+    "tm:protect",
+    "tm:rest",
+    "tm:round",
+    "tm:scald",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:venoshock",
+    "tutor:scorchingsands",
+    "tutor:skittersmack"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.sizzlipede.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "sizzlipede_centiskorch",
+      "variant": "level_up",
+      "result": "centiskorch",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 28
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1,
+    "height": 0.2,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 10,
+  "aspects": [],
+  "cannotDynamax": false
+}

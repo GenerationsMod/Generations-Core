@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "lapras-1",
+            "pokemon": "lapras",
+            "presets": [
+                "water_surface"
+            ],
+            "type": "pokemon",
+            "bucket": "rare",
+            "level": "20-53",
+            "weight": 10,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_frozen"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "jellicent-1",
+            "pokemon": "jellicent",
+            "presets": [
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "seafloor",
+            "bucket": "rare",
+            "level": "40-60",
+            "weight": 9.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_frigid",
+                    "#cobblemon:is_frozen"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "amoonguss-1",
+            "pokemon": "amoonguss",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "39-60",
+            "weight": 0.2,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_magical",
+                    "#cobblemon:is_mushroom"
+                ],
+                "maxLight": 7
+            }
+        }
+    ]
+}

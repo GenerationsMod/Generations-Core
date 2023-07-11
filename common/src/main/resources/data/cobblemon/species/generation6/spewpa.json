@@ -1,0 +1,106 @@
+{
+  "implemented": true,
+  "name": "Spewpa",
+  "nationalPokedexNumber": 665,
+  "primaryType": "bug",
+  "abilities": [
+    "shedskin",
+    "h:friendguard"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 22,
+    "defence": 60,
+    "special_attack": 27,
+    "special_defence": 30,
+    "speed": 29
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 75,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:harden",
+    "9:protect",
+    "tm:irondefense",
+    "tm:pounce",
+    "tm:protect",
+    "tm:strugglebug",
+    "tm:terablast",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:irondefense"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.spewpa.desc"
+  ],
+  "preEvolution": "scatterbug",
+  "evolutions": [
+    {
+      "id": "spewpa_vivillon",
+      "variant": "level_up",
+      "result": "vivillon",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 12
+        }
+      ]
+    },
+    {
+      "id": "spewpa_vivillon",
+      "variant": "level_up",
+      "result": "vivillon form=fancy",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 12
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 84,
+  "aspects": [],
+  "cannotDynamax": false
+}

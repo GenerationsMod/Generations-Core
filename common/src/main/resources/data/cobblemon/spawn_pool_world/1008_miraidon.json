@@ -1,0 +1,24 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "miraidon-1",
+            "pokemon": "miraidon",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70-75",
+            "weight": 0.001,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_plateau"
+                ]
+            }
+        }
+    ]
+}

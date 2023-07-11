@@ -1,0 +1,26 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "wyrdeer-1",
+            "pokemon": "wyrdeer",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "47-52",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_snowy",
+                    "#cobblemon:is_tundra"
+                ]
+            }
+        }
+    ]
+}

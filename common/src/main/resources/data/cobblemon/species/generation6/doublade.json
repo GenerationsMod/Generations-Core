@@ -1,0 +1,139 @@
+{
+  "implemented": true,
+  "name": "Doublade",
+  "nationalPokedexNumber": 680,
+  "primaryType": "steel",
+  "secondaryType": "ghost",
+  "abilities": [
+    "noguard"
+  ],
+  "baseStats": {
+    "hp": 59,
+    "attack": 110,
+    "defence": 150,
+    "special_attack": 45,
+    "special_defence": 49,
+    "speed": 35
+  },
+  "catchRate": 90,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 157,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:iron_sword",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:swordsdance",
+    "1:tackle",
+    "5:furycutter",
+    "8:metalsound",
+    "13:pursuit",
+    "18:autotomize",
+    "20:shadowsneak",
+    "22:aerialace",
+    "26:retaliate",
+    "29:slash",
+    "32:irondefense",
+    "36:nightslash",
+    "41:powertrick",
+    "45:ironhead",
+    "51:sacredsword",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:closecombat",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gyroball",
+    "tm:hiddenpower",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:protect",
+    "tm:psychocut",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:reversal",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarblade",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tutor:afteryou",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:laserfocus",
+    "tutor:magnetrise",
+    "tutor:shockwave",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:steelbeam"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.doublade.desc"
+  ],
+  "preEvolution": "honedge",
+  "evolutions": [
+    {
+      "id": "doublade_aegislash",
+      "variant": "item_interact",
+      "result": "aegislash",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "kingsshield"
+      ],
+      "requirements": [],
+      "requiredContext": "cobblemon:dusk_stone"
+    }
+  ],
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.4,
+    "height": 1.8,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 8,
+  "weight": 45,
+  "aspects": [],
+  "cannotDynamax": false
+}

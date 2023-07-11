@@ -1,0 +1,25 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "swablu-1",
+            "pokemon": "swablu",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "3-36",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ]
+            }
+        }
+    ]
+}

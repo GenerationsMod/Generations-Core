@@ -1,0 +1,26 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "torracat-1",
+            "pokemon": "torracat",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "17-33",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_jungle"
+                ],
+                "isRaining": false
+            }
+        }
+    ]
+}

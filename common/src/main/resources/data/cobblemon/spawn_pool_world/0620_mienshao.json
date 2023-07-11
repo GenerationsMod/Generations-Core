@@ -1,0 +1,25 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "mienshao-1",
+            "pokemon": "mienshao",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "50-65",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_mountain"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+  "implemented": true,
+  "name": "Morelull",
+  "nationalPokedexNumber": 755,
+  "primaryType": "grass",
+  "secondaryType": "fairy",
+  "abilities": [
+    "illuminate",
+    "effectspore",
+    "h:raindish"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 35,
+    "defence": 55,
+    "special_attack": 65,
+    "special_defence": 75,
+    "speed": 15
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 57,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:brown_mushroom",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:absorb",
+    "4:astonish",
+    "8:flash",
+    "11:moonlight",
+    "15:megadrain",
+    "18:sleeppowder",
+    "22:ingrain",
+    "25:confuseray",
+    "29:gigadrain",
+    "32:dazzlinggleam",
+    "32:strengthsap",
+    "36:spore",
+    "39:moonblast",
+    "43:dreameater",
+    "46:spotlight",
+    "egg:amnesia",
+    "egg:growth",
+    "egg:leechseed",
+    "egg:poisonpowder",
+    "egg:stunspore",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:confide",
+    "tm:dazzlinggleam",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:dreameater",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:lightscreen",
+    "tm:magicroom",
+    "tm:naturepower",
+    "tm:pollenpuff",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:wonderroom",
+    "tutor:afteryou",
+    "tutor:gigadrain",
+    "tutor:magiccoat",
+    "tutor:magicroom",
+    "tutor:recycle",
+    "tutor:seedbomb",
+    "tutor:signalbeam",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:wonderroom",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.morelull.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "morelull_shiinotic",
+      "variant": "level_up",
+      "result": "shiinotic",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 24
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.5,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 2,
+  "weight": 15,
+  "aspects": [],
+  "cannotDynamax": false
+}

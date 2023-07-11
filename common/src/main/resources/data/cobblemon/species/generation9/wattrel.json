@@ -1,0 +1,122 @@
+{
+  "implemented": true,
+  "name": "Wattrel",
+  "nationalPokedexNumber": 940,
+  "primaryType": "electric",
+  "secondaryType": "flying",
+  "abilities": [
+    "windpower",
+    "voltabsorb",
+    "h:competitive"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 40,
+    "defence": 35,
+    "special_attack": 55,
+    "special_defence": 40,
+    "speed": 70
+  },
+  "catchRate": 180,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 56,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:peck",
+    "4:thundershock",
+    "7:quickattack",
+    "11:pluck",
+    "15:spark",
+    "19:uproar",
+    "23:roost",
+    "27:dualwingbeat",
+    "32:agility",
+    "37:voltswitch",
+    "43:discharge",
+    "egg:endeavor",
+    "egg:featherdance",
+    "egg:spitup",
+    "egg:stockpile",
+    "egg:swallow",
+    "egg:weatherball",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:bravebird",
+    "tm:chargebeam",
+    "tm:eerieimpulse",
+    "tm:electricterrain",
+    "tm:electroball",
+    "tm:endure",
+    "tm:facade",
+    "tm:fly",
+    "tm:hurricane",
+    "tm:protect",
+    "tm:rest",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:swift",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:uturn",
+    "tm:voltswitch",
+    "tm:wildcharge"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 4,
+  "weight": 36,
+  "evolutions": [
+    {
+      "id": "wattrel_kilowattrel",
+      "variant": "level_up",
+      "result": "kilowattrel",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "electroball"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 25
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.wattrel.desc"
+  ]
+}

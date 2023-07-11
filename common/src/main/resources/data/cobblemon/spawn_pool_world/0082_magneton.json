@@ -1,0 +1,29 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "magneton-1",
+            "pokemon": "magneton",
+            "presets": [
+                "redstone"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "30-46",
+            "weight": 0.18,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        }
+    ]
+}

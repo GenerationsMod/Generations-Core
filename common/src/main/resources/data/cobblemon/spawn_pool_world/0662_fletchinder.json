@@ -1,0 +1,28 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "fletchinder-1",
+            "pokemon": "fletchinder",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "17-38",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_temperate",
+                    "#cobblemon:is_sky"
+                ],
+                "isRaining": false
+            }
+        }
+    ]
+}

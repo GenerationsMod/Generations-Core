@@ -1,0 +1,123 @@
+{
+  "implemented": true,
+  "name": "Furfrou",
+  "nationalPokedexNumber": 676,
+  "primaryType": "normal",
+  "abilities": [
+    "furcoat"
+  ],
+  "baseStats": {
+    "hp": 75,
+    "attack": 80,
+    "defence": 60,
+    "special_attack": 65,
+    "special_defence": 90,
+    "speed": 102
+  },
+  "catchRate": 160,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 165,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:tackle",
+    "5:sandattack",
+    "9:babydolleyes",
+    "12:headbutt",
+    "15:tailwhip",
+    "22:bite",
+    "27:odorsleuth",
+    "33:retaliate",
+    "35:takedown",
+    "38:charm",
+    "42:suckerpunch",
+    "48:cottonguard",
+    "egg:captivate",
+    "egg:mimic",
+    "egg:refresh",
+    "egg:roleplay",
+    "egg:workup",
+    "tm:attract",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:darkpulse",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:roar",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:surf",
+    "tm:swagger",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:wildcharge",
+    "tm:workup",
+    "tutor:endeavor",
+    "tutor:helpinghand",
+    "tutor:hypervoice",
+    "tutor:irontail",
+    "tutor:lastresort",
+    "tutor:roleplay",
+    "tutor:snore",
+    "tutor:uproar",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.furfrou.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 12,
+  "weight": 280,
+  "aspects": [],
+  "cannotDynamax": false
+}

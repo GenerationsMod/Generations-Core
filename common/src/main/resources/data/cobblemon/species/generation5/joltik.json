@@ -1,0 +1,174 @@
+{
+  "implemented": true,
+  "name": "Joltik",
+  "nationalPokedexNumber": 595,
+  "primaryType": "bug",
+  "secondaryType": "electric",
+  "abilities": [
+    "compoundeyes",
+    "unnerve",
+    "h:swarm"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 47,
+    "defence": 50,
+    "special_attack": 57,
+    "special_defence": 50,
+    "speed": 65
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": true,
+  "shoulderEffects": [
+    "haste"
+  ],
+  "baseExperienceYield": 64,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:spider_eye",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:absorb",
+    "1:leechlife",
+    "1:spiderweb",
+    "1:stringshot",
+    "4:thunderwave",
+    "7:screech",
+    "12:furycutter",
+    "15:electroweb",
+    "18:bugbite",
+    "23:gastroacid",
+    "26:slash",
+    "29:electroball",
+    "34:signalbeam",
+    "37:agility",
+    "40:suckerpunch",
+    "45:discharge",
+    "48:bugbuzz",
+    "egg:camouflage",
+    "egg:crosspoison",
+    "egg:disable",
+    "egg:doubleteam",
+    "egg:feintattack",
+    "egg:infestation",
+    "egg:lunge",
+    "egg:pinmissile",
+    "egg:poisonsting",
+    "egg:pursuit",
+    "egg:rockclimb",
+    "egg:strugglebug",
+    "tm:agility",
+    "tm:attract",
+    "tm:bounce",
+    "tm:bugbuzz",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:crosspoison",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:electroball",
+    "tm:electroweb",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:hiddenpower",
+    "tm:infestation",
+    "tm:leechlife",
+    "tm:lightscreen",
+    "tm:pinmissile",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:speedswap",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:swift",
+    "tm:thief",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:voltswitch",
+    "tm:wildcharge",
+    "tm:xscissor",
+    "tutor:bounce",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:gastroacid",
+    "tutor:gigadrain",
+    "tutor:magnetrise",
+    "tutor:risingvoltage",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:snore"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.joltik.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "joltik_galvantula",
+      "variant": "level_up",
+      "result": "galvantula",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "stickyweb"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.4,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.6,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 1,
+  "weight": 6,
+  "aspects": [],
+  "cannotDynamax": false
+}

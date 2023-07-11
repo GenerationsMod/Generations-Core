@@ -1,0 +1,139 @@
+{
+  "implemented": true,
+  "name": "Tranquill",
+  "nationalPokedexNumber": 520,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "bigpecks",
+    "superluck",
+    "h:rivalry"
+  ],
+  "baseStats": {
+    "hp": 62,
+    "attack": 77,
+    "defence": 62,
+    "special_attack": 50,
+    "special_defence": 42,
+    "speed": 65
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 125,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:gust",
+    "1:leer",
+    "1:quickattack",
+    "15:aircutter",
+    "18:roost",
+    "23:detect",
+    "27:taunt",
+    "32:airslash",
+    "36:razorwind",
+    "41:featherdance",
+    "45:swagger",
+    "50:facade",
+    "54:tailwind",
+    "59:skyattack",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:airslash",
+    "tm:attract",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fly",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:heatwave",
+    "tm:hiddenpower",
+    "tm:pluck",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:taunt",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:uturn",
+    "tm:workup",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:heatwave",
+    "tutor:roost",
+    "tutor:skyattack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:tailwind",
+    "tutor:uproar"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.tranquill.desc"
+  ],
+  "preEvolution": "pidove",
+  "evolutions": [
+    {
+      "id": "tranquill_unfezant",
+      "variant": "level_up",
+      "result": "unfezant",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 150,
+  "aspects": [],
+  "cannotDynamax": false
+}

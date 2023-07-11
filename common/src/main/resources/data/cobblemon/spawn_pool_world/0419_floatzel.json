@@ -1,0 +1,25 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "floatzel-1",
+            "pokemon": "floatzel",
+            "presets": [
+                "river"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "26-50",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_river"
+                ]
+            }
+        }
+    ]
+}

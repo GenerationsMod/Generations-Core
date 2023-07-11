@@ -1,0 +1,25 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "kecleon-1",
+            "pokemon": "kecleon",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "4-55",
+            "weight": 5.94,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_jungle"
+                ]
+            }
+        }
+    ]
+}

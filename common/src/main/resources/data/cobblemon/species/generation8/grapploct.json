@@ -1,0 +1,120 @@
+{
+  "implemented": true,
+  "name": "Grapploct",
+  "nationalPokedexNumber": 853,
+  "primaryType": "fighting",
+  "abilities": [
+    "limber",
+    "h:technician"
+  ],
+  "baseStats": {
+    "hp": 80,
+    "attack": 118,
+    "defence": 90,
+    "special_attack": 70,
+    "special_defence": 80,
+    "speed": 42
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 168,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 25,
+  "eggGroups": [
+    "water_1",
+    "human_like"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:ink_sac",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:bind",
+    "1:feint",
+    "1:leer",
+    "1:octazooka",
+    "1:rocksmash",
+    "15:detect",
+    "20:brickbreak",
+    "25:bulkup",
+    "30:submission",
+    "35:taunt",
+    "40:reversal",
+    "45:superpower",
+    "50:topsyturvy",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:brine",
+    "tm:brutalswing",
+    "tm:bulkup",
+    "tm:closecombat",
+    "tm:dig",
+    "tm:dive",
+    "tm:drainpunch",
+    "tm:endure",
+    "tm:facade",
+    "tm:focusblast",
+    "tm:gigaimpact",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icepunch",
+    "tm:liquidation",
+    "tm:megapunch",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:payback",
+    "tm:protect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:revenge",
+    "tm:reversal",
+    "tm:round",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:surf",
+    "tm:taunt",
+    "tm:waterfall",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:coaching",
+    "tutor:skittersmack"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.grapploct.desc"
+  ],
+  "preEvolution": "clobbopus",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 16,
+  "weight": 390,
+  "aspects": [],
+  "cannotDynamax": false
+}

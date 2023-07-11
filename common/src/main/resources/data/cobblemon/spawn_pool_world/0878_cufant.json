@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "cufant-1",
+            "pokemon": "cufant",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "15-40",
+            "weight": 4.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_savanna"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "gigalith-1",
+            "pokemon": "gigalith",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "32-60",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        }
+    ]
+}

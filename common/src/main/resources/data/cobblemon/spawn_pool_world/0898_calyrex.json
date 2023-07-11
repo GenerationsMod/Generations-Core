@@ -1,0 +1,24 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "calyrex-1",
+            "pokemon": "calyrex",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "50-60",
+            "weight": 0.001,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_taiga"
+                ]
+            }
+        }
+    ]
+}

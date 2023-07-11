@@ -1,0 +1,41 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "articuno-1",
+            "pokemon": "articuno",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70-75",
+            "weight": 0.001,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_glacial"
+                ]
+            }
+        },
+        {
+            "id": "articuno-galarian-1",
+            "pokemon": "articuno galarian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70-75",
+            "weight": 0.001,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_snowy"
+                ]
+            }
+        }
+    ]
+}

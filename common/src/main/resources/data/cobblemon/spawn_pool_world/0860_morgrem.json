@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "morgrem-1",
+            "pokemon": "morgrem",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "32-48",
+            "weight": 4.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_spooky"
+                ]
+            }
+        }
+    ]
+}

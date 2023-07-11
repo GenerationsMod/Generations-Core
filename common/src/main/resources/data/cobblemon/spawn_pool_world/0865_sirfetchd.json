@@ -1,0 +1,32 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "sirfetchd-1",
+            "pokemon": "sirfetchd",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "15-38",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_temperate"
+                ],
+                "timeRange": "day"
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_spooky"
+                ]
+            }
+        }
+    ]
+}

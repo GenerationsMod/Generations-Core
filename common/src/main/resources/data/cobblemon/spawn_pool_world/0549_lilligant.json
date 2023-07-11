@@ -1,0 +1,43 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "lilligant-1",
+            "pokemon": "lilligant",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "20-60",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_forest"
+                ]
+            }
+        },
+        {
+            "id": "lilligant-hisuian-1",
+            "pokemon": "lilligant hisuian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "20-60",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_forest"
+                ]
+            }
+        }
+    ]
+}

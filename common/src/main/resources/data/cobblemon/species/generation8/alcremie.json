@@ -1,0 +1,178 @@
+{
+  "implemented": true,
+  "name": "Alcremie",
+  "nationalPokedexNumber": 869,
+  "primaryType": "fairy",
+  "abilities": [
+    "sweetveil",
+    "h:aromaveil"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 60,
+    "defence": 75,
+    "special_attack": 110,
+    "special_defence": 121,
+    "speed": 64
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 100,
+  "maleRatio": 0,
+  "shoulderMountable": true,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "fairy",
+      "abilities": [
+        "sweetveil",
+        "h:aromaveil"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "attack": 60,
+        "defence": 75,
+        "special_attack": 110,
+        "special_defence": 121,
+        "speed": 64
+      },
+      "catchRate": 100,
+      "maleRatio": 0,
+      "baseExperienceYield": 173,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 2,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "fairy",
+        "amorphous"
+      ],
+      "moves": [],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 300,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 173,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy",
+    "amorphous"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:sugar",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "minecraft:cake",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:aromaticmist",
+    "1:sweetkiss",
+    "1:sweetscent",
+    "1:tackle",
+    "15:drainingkiss",
+    "20:aromatherapy",
+    "25:attract",
+    "30:acidarmor",
+    "35:dazzlinggleam",
+    "40:recover",
+    "45:mistyterrain",
+    "50:entrainment",
+    "tm:attract",
+    "tm:calmmind",
+    "tm:charm",
+    "tm:dazzlinggleam",
+    "tm:drainingkiss",
+    "tm:drainpunch",
+    "tm:encore",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:faketears",
+    "tm:fling",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:imprison",
+    "tm:lightscreen",
+    "tm:magicalleaf",
+    "tm:magicroom",
+    "tm:metronome",
+    "tm:mistyterrain",
+    "tm:mysticalfire",
+    "tm:playrough",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psyshock",
+    "tm:rest",
+    "tm:round",
+    "tm:safeguard",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:triattack",
+    "tm:wonderroom",
+    "tutor:mistyexplosion"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.alcremie.desc"
+  ],
+  "preEvolution": "milcery",
+  "evolutions": [],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1,
+    "height": 1.5,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 2,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 5,
+  "aspects": [],
+  "cannotDynamax": false
+}

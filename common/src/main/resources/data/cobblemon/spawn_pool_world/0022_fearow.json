@@ -1,0 +1,30 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "fearow-1",
+            "pokemon": "fearow",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-44",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_badlands",
+                    "#cobblemon:is_savanna",
+                    "#cobblemon:is_sky"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        }
+    ]
+}

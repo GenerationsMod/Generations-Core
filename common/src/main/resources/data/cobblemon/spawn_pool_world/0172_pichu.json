@@ -1,0 +1,31 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "pichu-1",
+            "pokemon": "pichu",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "4-20",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_forest"
+                ],
+                "timeRange": "day"
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_spooky"
+                ]
+            }
+        }
+    ]
+}

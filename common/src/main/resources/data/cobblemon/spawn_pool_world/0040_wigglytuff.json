@@ -1,0 +1,48 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "wigglytuff-1",
+            "pokemon": "wigglytuff",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "28-43",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ]
+            }
+        },
+        {
+            "id": "wigglytuff-2",
+            "pokemon": "wigglytuff",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "28-43",
+            "weight": 0.02,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_plains"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ]
+            }
+        }
+    ]
+}

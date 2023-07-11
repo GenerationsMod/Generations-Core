@@ -1,0 +1,42 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "zigzagoon-1",
+            "pokemon": "zigzagoon",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "4-20",
+            "weight": 5.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ]
+            }
+        },
+        {
+            "id": "zigzagoon-galarian-1",
+            "pokemon": "zigzagoon galarian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "4-20",
+            "weight": 5.0,
+            "condition": {
+                "timeRange": "night",
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ]
+            }
+        }
+    ]
+}

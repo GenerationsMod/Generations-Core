@@ -1,0 +1,25 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "lanturn-1",
+            "pokemon": "lanturn",
+            "presets": [
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "seafloor",
+            "bucket": "rare",
+            "level": "27-52",
+            "weight": 9.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#minecraft:is_ocean"
+                ]
+            }
+        }
+    ]
+}

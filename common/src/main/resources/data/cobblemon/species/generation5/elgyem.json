@@ -1,0 +1,205 @@
+{
+  "implemented": true,
+  "name": "Elgyem",
+  "nationalPokedexNumber": 605,
+  "primaryType": "psychic",
+  "abilities": [
+    "telepathy",
+    "synchronize",
+    "h:analytic"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 55,
+    "defence": 55,
+    "special_attack": 85,
+    "special_defence": 55,
+    "speed": 30
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 67,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "human_like"
+  ],
+  "drops": {
+    "amount": "3",
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl",
+        "percentage": 50
+      },
+	  {
+        "item": "minecraft:chorus_fruit",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:light_clay",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "moves": [
+    "1:confusion",
+    "4:growl",
+    "8:healblock",
+    "11:miracleeye",
+    "12:teleport",
+    "15:psybeam",
+    "18:headbutt",
+    "22:hiddenpower",
+    "25:imprison",
+    "29:simplebeam",
+    "32:zenheadbutt",
+    "36:psychup",
+    "39:psychic",
+    "43:calmmind",
+    "46:recover",
+    "50:guardsplit",
+    "50:powersplit",
+    "53:synchronoise",
+    "56:wonderroom",
+    "egg:allyswitch",
+    "egg:astonish",
+    "egg:barrier",
+    "egg:cosmicpower",
+    "egg:destinybond",
+    "egg:disable",
+    "egg:guardswap",
+    "egg:nastyplot",
+    "egg:powerswap",
+    "egg:psychup",
+    "egg:skillswap",
+    "egg:teleport",
+    "tm:agility",
+    "tm:allyswitch",
+    "tm:attract",
+    "tm:calmmind",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:cosmicpower",
+    "tm:darkpulse",
+    "tm:doubleteam",
+    "tm:dreameater",
+    "tm:echoedvoice",
+    "tm:embargo",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:guardswap",
+    "tm:hiddenpower",
+    "tm:imprison",
+    "tm:lightscreen",
+    "tm:nastyplot",
+    "tm:powerswap",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psychup",
+    "tm:psyshock",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:safeguard",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelwing",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:telekinesis",
+    "tm:thief",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:trick",
+    "tm:trickroom",
+    "tm:uproar",
+    "tm:wonderroom",
+    "tm:zenheadbutt",
+    "tutor:afteryou",
+    "tutor:allyswitch",
+    "tutor:barrier",
+    "tutor:darkpulse",
+    "tutor:expandingforce",
+    "tutor:gravity",
+    "tutor:healblock",
+    "tutor:magiccoat",
+    "tutor:meteorbeam",
+    "tutor:nastyplot",
+    "tutor:painsplit",
+    "tutor:recycle",
+    "tutor:roleplay",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:telekinesis",
+    "tutor:trick",
+    "tutor:uproar",
+    "tutor:wonderroom",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.elgyem.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "elgyem_beheeyem",
+      "variant": "level_up",
+      "result": "beheeyem",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 42
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.3,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 90,
+  "aspects": [],
+  "cannotDynamax": false
+}

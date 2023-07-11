@@ -1,0 +1,147 @@
+{
+  "implemented": true,
+  "name": "Raboot",
+  "nationalPokedexNumber": 814,
+  "primaryType": "fire",
+  "abilities": [
+    "blaze",
+    "h:libero"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 86,
+    "defence": 60,
+    "special_attack": 55,
+    "special_defence": 60,
+    "speed": 94
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 147,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field",
+    "human_like"
+  ],
+  "drops": {
+    "amount": "3",
+    "entries": [
+      {
+        "item": "minecraft:rabbit_hide",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:rabbit_foot",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:ember",
+    "1:growl",
+    "1:quickattack",
+    "1:tackle",
+    "12:doublekick",
+    "19:flamecharge",
+    "24:agility",
+    "30:headbutt",
+    "36:counter",
+    "42:bounce",
+    "48:doubleedge",
+    "tm:acrobatics",
+    "tm:agility",
+    "tm:allyswitch",
+    "tm:assurance",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:blazekick",
+    "tm:bounce",
+    "tm:bulkup",
+    "tm:electroball",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:firepledge",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:focusenergy",
+    "tm:gunkshot",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:megakick",
+    "tm:mudshot",
+    "tm:overheat",
+    "tm:protect",
+    "tm:rest",
+    "tm:reversal",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:trailblaze",
+    "tm:uturn",
+    "tm:workup",
+    "tutor:firepledge"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.raboot.desc"
+  ],
+  "preEvolution": "scorbunny",
+  "evolutions": [
+    {
+      "id": "raboot_cinderace",
+      "variant": "level_up",
+      "result": "cinderace",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "pyroball"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.75,
+    "height": 1.4,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 6,
+  "weight": 90,
+  "aspects": [],
+  "cannotDynamax": false
+}

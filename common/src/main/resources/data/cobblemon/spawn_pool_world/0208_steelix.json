@@ -1,0 +1,30 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "steelix-1",
+            "pokemon": "steelix",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "39-51",
+            "weight": 0.06,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        }
+    ]
+}

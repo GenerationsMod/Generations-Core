@@ -1,0 +1,108 @@
+{
+  "implemented": true,
+  "name": "Metapod",
+  "nationalPokedexNumber": 11,
+  "primaryType": "bug",
+  "abilities": [
+    "shedskin"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 20,
+    "defence": 55,
+    "special_attack": 25,
+    "special_defence": 25,
+    "speed": 30
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "features": [
+    "valencian"
+  ],
+  "baseExperienceYield": 72,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "walk": {
+        "canWalk": false
+      },
+      "swim": {
+        "canSwimInWater": false
+      },
+      "canLook": false
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
+  "moves": [
+    "1:harden",
+    "tm:electroweb",
+    "tm:irondefense",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:harden",
+    "tutor:irondefense",
+    "tutor:stringshot"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.metapod.desc"
+  ],
+  "preEvolution": "caterpie",
+  "evolutions": [
+    {
+      "id": "metapod_butterfree",
+      "variant": "level_up",
+      "result": "butterfree",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 10
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.8,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 99,
+  "aspects": [],
+  "cannotDynamax": false
+}

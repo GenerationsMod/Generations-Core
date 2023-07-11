@@ -1,0 +1,170 @@
+{
+  "implemented": true,
+  "name": "Oshawott",
+  "nationalPokedexNumber": 501,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:shellarmor"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 55,
+    "defence": 45,
+    "special_attack": 63,
+    "special_defence": 45,
+    "speed": 45
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:nautilus_shell",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "5:tailwhip",
+    "7:watergun",
+    "11:soak",
+    "11:watersport",
+    "13:focusenergy",
+    "17:razorshell",
+    "19:furycutter",
+    "23:waterpulse",
+    "25:aerialace",
+    "25:revenge",
+    "29:aquajet",
+    "31:encore",
+    "35:aquatail",
+    "37:retaliate",
+    "41:swordsdance",
+    "43:hydropump",
+    "egg:airslash",
+    "egg:aquacutter",
+    "egg:assurance",
+    "egg:brine",
+    "egg:copycat",
+    "egg:detect",
+    "egg:knockoff",
+    "egg:nightslash",
+    "egg:sacredsword",
+    "egg:screech",
+    "egg:trumpcard",
+    "tm:aerialace",
+    "tm:airslash",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:cut",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:fling",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snowscape",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpledge",
+    "tm:waterpulse",
+    "tm:workup",
+    "tm:xscissor",
+    "tutor:aquatail",
+    "tutor:covet",
+    "tutor:helpinghand",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:waterpledge",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.oshawott.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "oshawott_dewott",
+      "variant": "level_up",
+      "result": "dewott",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 17
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.9,
+    "height": 1.25,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 59,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,307 @@
+{
+  "implemented": true,
+  "name": "Grotle",
+  "nationalPokedexNumber": 388,
+  "primaryType": "grass",
+  "abilities": [
+    "overgrow",
+    "h:shellarmor"
+  ],
+  "baseStats": {
+    "hp": 75,
+    "attack": 89,
+    "defence": 85,
+    "special_attack": 55,
+    "special_defence": 65,
+    "speed": 36
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 142,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "monster",
+    "grass"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "1:withdraw",
+    "9:absorb",
+    "13:razorleaf",
+    "17:curse",
+    "22:bite",
+    "27:megadrain",
+    "32:leechseed",
+    "37:synthesis",
+    "42:crunch",
+    "47:gigadrain",
+    "52:leafstorm",
+    "tm:attract",
+    "tm:bulletseed",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:irontail",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:naturepower",
+    "tm:protect",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockclimb",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:stealthrock",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tm:workup",
+    "tutor:earthpower",
+    "tutor:gigadrain",
+    "tutor:grasspledge",
+    "tutor:headbutt",
+    "tutor:irontail",
+    "tutor:mudslap",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:superpower",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.grotle.desc"
+  ],
+  "preEvolution": "turtwig",
+  "evolutions": [
+    {
+      "id": "grotle_torterra_swamp",
+      "variant": "level_up",
+      "result": "torterra tree=swamp",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:oak_sapling"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_swamp"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_oak",
+      "variant": "level_up",
+      "result": "torterra tree=oak",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:oak_sapling"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_birch",
+      "variant": "level_up",
+      "result": "torterra tree=birch",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:birch_sapling"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_dark_oak",
+      "variant": "level_up",
+      "result": "torterra tree=darkoak",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:dark_oak_sapling"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_acacia",
+      "variant": "level_up",
+      "result": "torterra tree=acacia",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:acacia_sapling"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_azalea",
+      "variant": "level_up",
+      "result": "torterra tree=azalea",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "#cobblemon:azalea_tree"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_jungle",
+      "variant": "level_up",
+      "result": "torterra tree=jungle",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:jungle_sapling"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_spruce",
+      "variant": "level_up",
+      "result": "torterra tree=spruce",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:spruce_sapling"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_mangrove",
+      "variant": "level_up",
+      "result": "torterra tree=mangrove",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:mangrove_propagule"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra",
+      "variant": "level_up",
+      "result": "torterra",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 11,
+  "weight": 970,
+  "aspects": [],
+  "cannotDynamax": false
+}

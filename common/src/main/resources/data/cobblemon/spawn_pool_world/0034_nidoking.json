@@ -1,0 +1,26 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "nidoking-1",
+            "pokemon": "nidoking",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "37-50",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_savanna"
+                ],
+                "timeRange": "day"
+            }
+        }
+    ]
+}

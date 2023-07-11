@@ -1,0 +1,64 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "gloom-1",
+            "pokemon": "gloom",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "21-39",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_jungle"
+                ],
+                "timeRange": "night"
+            }
+        },
+        {
+            "id": "gloom-2",
+            "pokemon": "gloom",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "21-39",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_temperate"
+                ],
+                "timeRange": "night"
+            }
+        },
+        {
+            "id": "gloom-valencian-1",
+            "pokemon": "gloom valencian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "21-39",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_savanna"
+                ],
+                "timeRange": "night"
+            }
+        }
+    ]
+}

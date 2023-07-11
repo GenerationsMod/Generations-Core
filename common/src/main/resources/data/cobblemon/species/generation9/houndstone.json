@@ -1,0 +1,110 @@
+{
+  "implemented": true,
+  "name": "Houndstone",
+  "nationalPokedexNumber": 972,
+  "primaryType": "ghost",
+  "abilities": [
+    "sandrush",
+    "h:fluffy"
+  ],
+  "baseStats": {
+    "hp": 72,
+    "attack": 101,
+    "defence": 100,
+    "special_attack": 50,
+    "special_defence": 97,
+    "speed": 68
+  },
+  "catchRate": 60,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 171,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:tackle",
+    "3:lick",
+    "6:bite",
+    "6:tailwhip",
+    "9:roar",
+    "12:headbutt",
+    "16:dig",
+    "24:rest",
+    "28:crunch",
+    "36:playrough",
+    "41:helpinghand",
+    "46:phantomforce",
+    "51:charm",
+    "58:doubleedge",
+    "tm:bodypress",
+    "tm:bulldoze",
+    "tm:charm",
+    "tm:confuseray",
+    "tm:crunch",
+    "tm:dig",
+    "tm:endure",
+    "tm:facade",
+    "tm:firefang",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:hex",
+    "tm:hyperbeam",
+    "tm:icefang",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:nightshade",
+    "tm:phantomforce",
+    "tm:playrough",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:raindance",
+    "tm:rest",
+    "tm:sandstorm",
+    "tm:scaryface",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderfang",
+    "tm:trick",
+    "tm:willowisp"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 20,
+  "weight": 150,
+  "preEvolution": "greavard",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.houndstone.desc"
+  ]
+}

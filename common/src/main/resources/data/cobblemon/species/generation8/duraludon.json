@@ -1,0 +1,177 @@
+{
+  "implemented": true,
+  "name": "Duraludon",
+  "nationalPokedexNumber": 884,
+  "primaryType": "steel",
+  "secondaryType": "dragon",
+  "abilities": [
+    "lightmetal",
+    "heavymetal",
+    "h:stalwart"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 95,
+    "defence": 115,
+    "special_attack": 120,
+    "special_defence": 50,
+    "speed": 85
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "steel",
+      "secondaryType": "dragon",
+      "abilities": [
+        "lightmetal",
+        "heavymetal",
+        "h:stalwart"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 95,
+        "defence": 115,
+        "special_attack": 120,
+        "special_defence": 50,
+        "speed": 85
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 187,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 2,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 30,
+      "eggGroups": [
+        "mineral",
+        "dragon"
+      ],
+      "moves": [],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 430,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 187,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 30,
+  "eggGroups": [
+    "mineral",
+    "dragon"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:leer",
+    "1:metalclaw",
+    "6:rocksmash",
+    "12:honeclaws",
+    "18:metalsound",
+    "24:breakingswipe",
+    "30:dragontail",
+    "36:irondefense",
+    "42:laserfocus",
+    "48:dragonclaw",
+    "54:flashcannon",
+    "60:metalburst",
+    "66:hyperbeam",
+    "egg:mirrorcoat",
+    "egg:nightslash",
+    "egg:slash",
+    "tm:attract",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:breakingswipe",
+    "tm:brickbreak",
+    "tm:darkpulse",
+    "tm:dragonclaw",
+    "tm:dragonpulse",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:foulplay",
+    "tm:gigaimpact",
+    "tm:gyroball",
+    "tm:heavyslam",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:lightscreen",
+    "tm:outrage",
+    "tm:protect",
+    "tm:reflect",
+    "tm:rest",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scaryface",
+    "tm:screech",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:swordsdance",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tutor:dracometeor",
+    "tutor:steelbeam",
+    "tutor:steelroller"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.duraludon.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 18,
+  "weight": 400,
+  "aspects": [],
+  "cannotDynamax": false
+}

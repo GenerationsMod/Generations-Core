@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "kommoo-1",
+            "pokemon": "kommoo",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "55-60",
+            "weight": 0.1,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_badlands"
+                ]
+            }
+        }
+    ]
+}

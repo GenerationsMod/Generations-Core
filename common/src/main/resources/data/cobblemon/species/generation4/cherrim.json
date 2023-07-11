@@ -1,0 +1,178 @@
+{
+  "implemented": true,
+  "name": "Cherrim",
+  "nationalPokedexNumber": 421,
+  "primaryType": "grass",
+  "abilities": [
+    "flowergift"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 60,
+    "defence": 70,
+    "special_attack": 87,
+    "special_defence": 78,
+    "speed": 85
+  },
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Sunshine",
+      "primaryType": "grass",
+      "abilities": [
+        "flowergift"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 60,
+        "defence": 70,
+        "special_attack": 87,
+        "special_defence": 78,
+        "speed": 85
+      },
+      "catchRate": 75,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 158,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 2,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "fairy",
+        "grass"
+      ],
+      "moves": [],
+      "labels": [
+        "gen4"
+      ],
+      "aspects": [
+        "sunshine"
+      ],
+      "height": 5,
+      "weight": 93,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "baseExperienceYield": 158,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy",
+    "grass"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:flowershield",
+    "1:growth",
+    "1:leafage",
+    "1:morningsun",
+    "1:tackle",
+    "10:leechseed",
+    "13:helpinghand",
+    "19:magicalleaf",
+    "22:sunnyday",
+    "25:petaldance",
+    "30:worryseed",
+    "35:takedown",
+    "43:solarbeam",
+    "48:luckychant",
+    "50:petalblizzard",
+    "tm:attract",
+    "tm:bulletseed",
+    "tm:captivate",
+    "tm:confide",
+    "tm:dazzlinggleam",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:grassyterrain",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:magicalleaf",
+    "tm:naturalgift",
+    "tm:naturepower",
+    "tm:playrough",
+    "tm:pollenpuff",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:solarblade",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tm:weatherball",
+    "tutor:gigadrain",
+    "tutor:grassyglide",
+    "tutor:helpinghand",
+    "tutor:laserfocus",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.cherrim.desc"
+  ],
+  "preEvolution": "cherubi",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 93,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,27 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "dusknoir-1",
+            "pokemon": "dusknoir",
+            "presets": [
+                "natural",
+                "urban"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "37-55",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_badlands"
+                ],
+                "timeRange": "night"
+            }
+        }
+    ]
+}

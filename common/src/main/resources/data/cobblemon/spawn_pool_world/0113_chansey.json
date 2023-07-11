@@ -1,0 +1,27 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "chansey-1",
+            "pokemon": "chansey",
+            "presets": [
+                "natural",
+                "urban"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "4-45",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "timeRange": "day"
+            }
+        }
+    ]
+}

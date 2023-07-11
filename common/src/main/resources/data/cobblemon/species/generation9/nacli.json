@@ -1,0 +1,128 @@
+{
+  "implemented": true,
+  "name": "Nacli",
+  "nationalPokedexNumber": 932,
+  "primaryType": "rock",
+  "abilities": [
+    "purifyingsalt",
+    "sturdy",
+    "h:clearbody"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 55,
+    "defence": 75,
+    "special_attack": 35,
+    "special_defence": 35,
+    "speed": 25
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 56,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:flint",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:harden",
+    "1:tackle",
+    "5:rockthrow",
+    "7:mudshot",
+    "10:smackdown",
+    "13:rockpolish",
+    "16:headbutt",
+    "20:irondefense",
+    "25:recover",
+    "30:rockslide",
+    "33:stealthrock",
+    "35:heavyslam",
+    "40:earthquake",
+    "45:stoneedge",
+    "egg:ancientpower",
+    "egg:curse",
+    "egg:fissure",
+    "egg:powergem",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:dig",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:heavyslam",
+    "tm:helpinghand",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:mudshot",
+    "tm:powergem",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:rockslide",
+    "tm:sandstorm",
+    "tm:sleeptalk",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 4,
+  "weight": 160,
+  "evolutions": [
+    {
+      "id": "nacli_naclstack",
+      "variant": "level_up",
+      "result": "naclstack",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "saltcure"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 24
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.nacli.desc"
+  ]
+}

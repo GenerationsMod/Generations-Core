@@ -1,0 +1,37 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "ditto-1",
+            "pokemon": "ditto",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "1-29",
+            "weight": 4.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_ocean",
+                    "#minecraft:deep_lukewarm_ocean",
+                    "#minecraft:lukewarm_ocean",
+                    "#minecraft:warm_ocean",
+                    "#minecraft:is_deep_ocean",
+                    "#minecraft:cold_ocean",
+                    "#minecraft:deep_cold_ocean",
+                    "#minecraft:deep_frozen_ocean",
+                    "#minecraft:frozen_ocean"
+                ]
+            }
+        }
+    ]
+}

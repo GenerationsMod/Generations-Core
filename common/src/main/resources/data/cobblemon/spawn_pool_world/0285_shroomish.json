@@ -1,0 +1,27 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "shroomish-1",
+            "pokemon": "shroomish",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "4-26",
+            "weight": 0.2,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_forest",
+                    "#cobblemon:is_magical",
+                    "#cobblemon:is_mushroom"
+                ],
+                "maxLight": 7
+            }
+        }
+    ]
+}

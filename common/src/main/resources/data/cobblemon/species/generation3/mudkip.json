@@ -1,0 +1,206 @@
+{
+  "implemented": true,
+  "name": "Mudkip",
+  "nationalPokedexNumber": 258,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:damp"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 70,
+    "defence": 50,
+    "special_attack": 50,
+    "special_defence": 50,
+    "speed": 40
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "monster",
+    "water_1"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:tackle",
+    "6:mudslap",
+    "6:rocksmash",
+    "10:watergun",
+    "15:bide",
+    "15:supersonic",
+    "18:waterpulse",
+    "19:foresight",
+    "21:rockslide",
+    "24:mudsport",
+    "25:rockthrow",
+    "27:amnesia",
+    "28:takedown",
+    "30:surf",
+    "33:screech",
+    "33:whirlpool",
+    "37:protect",
+    "42:hydropump",
+    "46:endeavor",
+    "egg:ancientpower",
+    "egg:avalanche",
+    "egg:barrier",
+    "egg:bite",
+    "egg:counter",
+    "egg:curse",
+    "egg:doubleedge",
+    "egg:iceball",
+    "egg:mirrorcoat",
+    "egg:mudbomb",
+    "egg:mudslap",
+    "egg:refresh",
+    "egg:sludge",
+    "egg:stomp",
+    "egg:uproar",
+    "egg:whirlpool",
+    "egg:wideguard",
+    "egg:yawn",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:captivate",
+    "tm:confide",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:earthpower",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:irontail",
+    "tm:lowkick",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scald",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:sludgewave",
+    "tm:snore",
+    "tm:strength",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:ancientpower",
+    "tutor:aquatail",
+    "tutor:bodyslam",
+    "tutor:defensecurl",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:earthpower",
+    "tutor:endeavor",
+    "tutor:endure",
+    "tutor:growl",
+    "tutor:headbutt",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:lowkick",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:rollout",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:superpower",
+    "tutor:swagger",
+    "tutor:tackle",
+    "tutor:uproar",
+    "tutor:watergun",
+    "tutor:waterpledge",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.mudkip.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "mudkip_marshtomp",
+      "variant": "level_up",
+      "result": "marshtomp",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "mudshot"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 16
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.8,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 76,
+  "aspects": [],
+  "cannotDynamax": false
+}

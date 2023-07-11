@@ -1,0 +1,122 @@
+{
+  "implemented": true,
+  "name": "Greedent",
+  "nationalPokedexNumber": 820,
+  "primaryType": "normal",
+  "abilities": [
+    "cheekpouch",
+    "h:gluttony"
+  ],
+  "baseStats": {
+    "hp": 120,
+    "attack": 95,
+    "defence": 95,
+    "special_attack": 55,
+    "special_defence": 75,
+    "speed": 20
+  },
+  "catchRate": 90,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 161,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:wheat",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:bite",
+    "1:stuffcheeks",
+    "1:tackle",
+    "1:tailwhip",
+    "15:spitup",
+    "15:stockpile",
+    "15:swallow",
+    "20:bodyslam",
+    "27:rest",
+    "34:counter",
+    "41:bulletseed",
+    "48:superfang",
+    "55:belch",
+    "tm:amnesia",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:brutalswing",
+    "tm:bulldoze",
+    "tm:bulletseed",
+    "tm:crunch",
+    "tm:dig",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:firefang",
+    "tm:fling",
+    "tm:gigaimpact",
+    "tm:gyroball",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:icefang",
+    "tm:irontail",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:payback",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:raindance",
+    "tm:rest",
+    "tm:round",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superpower",
+    "tm:swordsdance",
+    "tm:tailslap",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderfang",
+    "tm:uproar",
+    "tm:wildcharge"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.greedent.desc"
+  ],
+  "preEvolution": "skwovet",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 60,
+  "aspects": [],
+  "cannotDynamax": false
+}

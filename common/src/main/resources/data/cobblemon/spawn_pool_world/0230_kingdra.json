@@ -1,0 +1,26 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "kingdra-1",
+            "pokemon": "kingdra",
+            "presets": [
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "45-54",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_lukewarm"
+                ],
+                "isRaining": true
+            }
+        }
+    ]
+}

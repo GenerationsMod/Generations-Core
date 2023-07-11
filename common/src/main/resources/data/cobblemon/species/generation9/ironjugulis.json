@@ -1,0 +1,121 @@
+{
+  "implemented": true,
+  "name": "Iron Jugulis",
+  "nationalPokedexNumber": 993,
+  "primaryType": "dark",
+  "secondaryType": "flying",
+  "abilities": [
+    "quarkdrive"
+  ],
+  "baseStats": {
+    "hp": 94,
+    "attack": 80,
+    "defence": 86,
+    "special_attack": 122,
+    "special_defence": 80,
+    "speed": 108
+  },
+  "catchRate": 30,
+  "maleRatio": -1,
+  "baseExperienceYield": 285,
+  "baseFriendship": 0,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 50,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:rotten_flesh",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:aircutter",
+    "1:electricterrain",
+    "1:focusenergy",
+    "1:triattack",
+    "1:workup",
+    "7:roar",
+    "14:assurance",
+    "21:dragonbreath",
+    "28:snarl",
+    "35:crunch",
+    "42:hypervoice",
+    "56:airslash",
+    "63:knockoff",
+    "70:darkpulse",
+    "77:outrage",
+    "84:dragonpulse",
+    "91:hyperbeam",
+    "tm:acrobatics",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:bodyslam",
+    "tm:chargebeam",
+    "tm:crunch",
+    "tm:darkpulse",
+    "tm:dragonpulse",
+    "tm:dragontail",
+    "tm:earthpower",
+    "tm:electricterrain",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:flamethrower",
+    "tm:flashcannon",
+    "tm:fly",
+    "tm:focusblast",
+    "tm:gigaimpact",
+    "tm:heatwave",
+    "tm:hurricane",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:ironhead",
+    "tm:outrage",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:rocktomb",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:uturn",
+    "tm:zenheadbutt",
+    "tutor:crunch",
+    "tutor:dragonbreath",
+    "tutor:hypervoice",
+    "tutor:snarl"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
+  "height": 13,
+  "weight": 1110,
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.ironjugulis.desc"
+  ]
+}

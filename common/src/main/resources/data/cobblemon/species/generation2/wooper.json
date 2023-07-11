@@ -1,0 +1,392 @@
+{
+  "implemented": true,
+  "name": "Wooper",
+  "nationalPokedexNumber": 194,
+  "primaryType": "water",
+  "secondaryType": "ground",
+  "abilities": [
+    "damp",
+    "waterabsorb",
+    "h:unaware"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 45,
+    "defence": 45,
+    "special_attack": 25,
+    "special_defence": 25,
+    "speed": 15
+  },
+  "features": [
+    "paldean"
+  ],
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": true,
+  "shoulderEffects": [
+    "water_breathing"
+  ],
+  "forms": [
+    {
+      "name": "Paldea",
+      "primaryType": "poison",
+      "secondaryType": "ground",
+      "abilities": [
+        "poisonpoint",
+        "waterabsorb",
+        "h:unaware"
+      ],
+      "baseStats": {
+        "hp": 55,
+        "attack": 45,
+        "defence": 45,
+        "special_attack": 25,
+        "special_defence": 25,
+        "speed": 15
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "water_1",
+        "field"
+      ],
+      "drops": {
+        "amount": "1",
+        "entries": [
+          {
+            "item": "generations_core:damp_mulch",
+            "percentage": 10
+          }
+        ]
+      },
+      "moves": [
+        "1:mudshot",
+        "1:tailwhip",
+        "4:tackle",
+        "8:poisontail",
+        "12:toxicspikes",
+        "16:slam",
+        "21:yawn",
+        "24:poisonjab",
+        "28:sludgewave",
+        "32:amnesia",
+        "36:toxic",
+        "40:earthquake",
+        "egg:acidspray",
+        "egg:afteryou",
+        "egg:ancientpower",
+        "egg:counter",
+        "egg:curse",
+        "egg:doublekick",
+        "egg:haze",
+        "egg:mist",
+        "egg:recover",
+        "egg:spitup",
+        "egg:stockpile",
+        "egg:swallow",
+        "tm:acidspray",
+        "tm:amnesia",
+        "tm:bodypress",
+        "tm:bodyslam",
+        "tm:bulldoze",
+        "tm:chillingwater",
+        "tm:dig",
+        "tm:earthpower",
+        "tm:earthquake",
+        "tm:endure",
+        "tm:facade",
+        "tm:gunkshot",
+        "tm:helpinghand",
+        "tm:hydropump",
+        "tm:liquidation",
+        "tm:lowkick",
+        "tm:mudshot",
+        "tm:mudslap",
+        "tm:poisonjab",
+        "tm:poisontail",
+        "tm:protect",
+        "tm:raindance",
+        "tm:rest",
+        "tm:rockslide",
+        "tm:rocktomb",
+        "tm:sandstorm",
+        "tm:sleeptalk",
+        "tm:sludgebomb",
+        "tm:spikes",
+        "tm:stealthrock",
+        "tm:stompingtantrum",
+        "tm:stoneedge",
+        "tm:substitute",
+        "tm:surf",
+        "tm:takedown",
+        "tm:terablast",
+        "tm:toxicspikes",
+        "tm:trailblaze",
+        "tm:venoshock",
+        "tm:waterfall",
+        "tm:waterpulse"
+      ],
+      "labels": [
+        "gen9",
+        "paldea_regional"
+      ],
+      "aspects": [
+        "paldean"
+      ],
+      "height": 4,
+      "weight": 85,
+      "evolutions": [
+        {
+          "id": "wooper_clodsire",
+          "variant": "level_up",
+          "result": "clodsire",
+          "consumeHeldItem": false,
+          "learnableMoves": [],
+          "requirements": [
+            {
+              "variant": "level",
+              "minLevel": 20
+            }
+          ]
+        }
+      ],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 42,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:damp_mulch",
+        "percentage": 10
+      }
+    ]
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:tailwhip",
+    "1:watergun",
+    "5:mudsport",
+    "11:slam",
+    "16:mudshot",
+    "19:mudbomb",
+    "21:amnesia",
+    "24:aquatail",
+    "31:yawn",
+    "36:earthquake",
+    "36:toxic",
+    "41:raindance",
+    "47:muddywater",
+    "51:haze",
+    "51:mist",
+    "egg:acidspray",
+    "egg:afteryou",
+    "egg:ancientpower",
+    "egg:bodyslam",
+    "egg:counter",
+    "egg:curse",
+    "egg:doublekick",
+    "egg:eerieimpulse",
+    "egg:encore",
+    "egg:guardswap",
+    "egg:mudsport",
+    "egg:poweruppunch",
+    "egg:recover",
+    "egg:safeguard",
+    "egg:sleeptalk",
+    "egg:spitup",
+    "egg:stockpile",
+    "egg:swallow",
+    "tm:acidspray",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:eerieimpulse",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:guardswap",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icepunch",
+    "tm:icywind",
+    "tm:infestation",
+    "tm:irontail",
+    "tm:liquidation",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:safeguard",
+    "tm:sandstorm",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:sludgewave",
+    "tm:snore",
+    "tm:snowscape",
+    "tm:spikes",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tutor:afteryou",
+    "tutor:amnesia",
+    "tutor:ancientpower",
+    "tutor:aquatail",
+    "tutor:attract",
+    "tutor:bodyslam",
+    "tutor:curse",
+    "tutor:defensecurl",
+    "tutor:dig",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:dynamicpunch",
+    "tutor:earthpower",
+    "tutor:earthquake",
+    "tutor:endure",
+    "tutor:flash",
+    "tutor:frustration",
+    "tutor:haze",
+    "tutor:headbutt",
+    "tutor:hiddenpower",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:mimic",
+    "tutor:mist",
+    "tutor:mudslap",
+    "tutor:protect",
+    "tutor:raindance",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:rocksmash",
+    "tutor:rollout",
+    "tutor:safeguard",
+    "tutor:sandstorm",
+    "tutor:slam",
+    "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:snore",
+    "tutor:stompingtantrum",
+    "tutor:substitute",
+    "tutor:surf",
+    "tutor:swagger",
+    "tutor:tailwhip",
+    "tutor:toxic",
+    "tutor:watergun",
+    "tutor:waterpulse",
+    "tutor:whirlpool"
+  ],
+  "labels": [
+    "gen2",
+    "johto_regional"
+  ],
+  "pokedex": [
+    "cobblemon.species.wooper.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "wooper_quagsire",
+      "variant": "level_up",
+      "result": "quagsire",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 85,
+  "aspects": [],
+  "cannotDynamax": false
+}

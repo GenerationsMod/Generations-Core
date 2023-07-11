@@ -1,0 +1,64 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "oddish-1",
+            "pokemon": "oddish",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "4-32",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_jungle"
+                ],
+                "timeRange": "night"
+            }
+        },
+        {
+            "id": "oddish-2",
+            "pokemon": "oddish",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "4-32",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_temperate"
+                ],
+                "timeRange": "night"
+            }
+        },
+        {
+            "id": "oddish-valencian-1",
+            "pokemon": "oddish valencian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "4-32",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_savanna"
+                ],
+                "timeRange": "night"
+            }
+        }
+    ]
+}

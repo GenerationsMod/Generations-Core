@@ -1,0 +1,154 @@
+{
+  "implemented": true,
+  "name": "Trubbish",
+  "nationalPokedexNumber": 568,
+  "primaryType": "poison",
+  "abilities": [
+    "stench",
+    "stickyhold",
+    "h:aftermath"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 50,
+    "defence": 62,
+    "special_attack": 40,
+    "special_defence": 62,
+    "speed": 65
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 66,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:trash_can",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:poisongas",
+    "1:pound",
+    "3:recycle",
+    "7:toxicspikes",
+    "12:acidspray",
+    "14:doubleslap",
+    "18:sludge",
+    "23:stockpile",
+    "23:swallow",
+    "25:takedown",
+    "29:sludgebomb",
+    "34:clearsmog",
+    "36:toxic",
+    "37:painsplit",
+    "40:amnesia",
+    "42:belch",
+    "45:gunkshot",
+    "47:explosion",
+    "egg:autotomize",
+    "egg:curse",
+    "egg:haze",
+    "egg:mudsport",
+    "egg:rockblast",
+    "egg:rollout",
+    "egg:sandattack",
+    "egg:selfdestruct",
+    "egg:spikes",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:confide",
+    "tm:darkpulse",
+    "tm:doubleteam",
+    "tm:drainpunch",
+    "tm:endure",
+    "tm:explosion",
+    "tm:facade",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gunkshot",
+    "tm:hiddenpower",
+    "tm:infestation",
+    "tm:payback",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockblast",
+    "tm:round",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:sludgewave",
+    "tm:snore",
+    "tm:spikes",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thief",
+    "tm:toxic",
+    "tm:toxicspikes",
+    "tm:venomdrench",
+    "tm:venoshock",
+    "tutor:corrosivegas",
+    "tutor:darkpulse",
+    "tutor:drainpunch",
+    "tutor:gigadrain",
+    "tutor:gunkshot",
+    "tutor:painsplit",
+    "tutor:recycle",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spite"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.trubbish.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "trubbish_garbodor",
+      "variant": "level_up",
+      "result": "garbodor",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 6,
+  "weight": 310,
+  "aspects": [],
+  "cannotDynamax": false
+}

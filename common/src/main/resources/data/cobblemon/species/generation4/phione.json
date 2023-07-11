@@ -1,0 +1,135 @@
+{
+  "implemented": true,
+  "name": "Phione",
+  "nationalPokedexNumber": 489,
+  "primaryType": "water",
+  "abilities": [
+    "hydration"
+  ],
+  "baseStats": {
+    "hp": 80,
+    "attack": 80,
+    "defence": 80,
+    "special_attack": 80,
+    "special_defence": 80,
+    "speed": 80
+  },
+  "catchRate": 30,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 216,
+  "experienceGroup": "slow",
+  "eggCycles": 40,
+  "eggGroups": [
+    "water_1",
+    "fairy"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:egg",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:heart_of_the_sea",
+        "percentage": 75
+      }
+    ]
+  },
+  "moves": [
+    "1:bubble",
+    "1:watersport",
+    "9:charm",
+    "16:supersonic",
+    "24:bubblebeam",
+    "31:acidarmor",
+    "39:whirlpool",
+    "46:waterpulse",
+    "54:aquaring",
+    "61:dive",
+    "69:raindance",
+    "tm:blizzard",
+    "tm:brine",
+    "tm:confide",
+    "tm:dazzlinggleam",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tutor:ancientpower",
+    "tutor:bounce",
+    "tutor:covet",
+    "tutor:dive",
+    "tutor:grassknot",
+    "tutor:healbell",
+    "tutor:helpinghand",
+    "tutor:icywind",
+    "tutor:knockoff",
+    "tutor:lastresort",
+    "tutor:liquidation",
+    "tutor:mudslap",
+    "tutor:raindance",
+    "tutor:rest",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:surf",
+    "tutor:swift",
+    "tutor:uproar",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen4",
+    "mythical",
+    "legendary"
+  ],
+  "pokedex": [
+    "cobblemon.species.phione.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 31,
+  "aspects": [],
+  "cannotDynamax": false
+}

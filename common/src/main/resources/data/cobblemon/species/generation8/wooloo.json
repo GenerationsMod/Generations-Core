@@ -1,0 +1,118 @@
+{
+  "implemented": true,
+  "name": "Wooloo",
+  "nationalPokedexNumber": 831,
+  "primaryType": "normal",
+  "abilities": [
+    "fluffy",
+    "runaway",
+    "h:bulletproof"
+  ],
+  "baseStats": {
+    "hp": 42,
+    "attack": 40,
+    "defence": 55,
+    "special_attack": 40,
+    "special_defence": 45,
+    "speed": 48
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 122,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "features": [
+    "sheared"
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:mutton",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:white_wool"
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:tackle",
+    "4:defensecurl",
+    "8:copycat",
+    "12:guardsplit",
+    "16:doublekick",
+    "21:headbutt",
+    "25:takedown",
+    "28:guardswap",
+    "32:reversal",
+    "36:cottonguard",
+    "40:doubleedge",
+    "egg:counter",
+    "egg:stomp",
+    "egg:swagger",
+    "tm:agility",
+    "tm:attract",
+    "tm:electroball",
+    "tm:endure",
+    "tm:facade",
+    "tm:guardswap",
+    "tm:payback",
+    "tm:protect",
+    "tm:rest",
+    "tm:reversal",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:thunderwave",
+    "tm:wildcharge",
+    "tutor:grassyglide"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.wooloo.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "wooloo_dubwool",
+      "variant": "level_up",
+      "result": "dubwool",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 24
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 60,
+  "aspects": [],
+  "cannotDynamax": false
+}

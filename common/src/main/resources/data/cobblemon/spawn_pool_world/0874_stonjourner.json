@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "stonjourner-1",
+            "pokemon": "stonjourner",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "20-60",
+            "weight": 4.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_badlands"
+                ]
+            }
+        }
+    ]
+}

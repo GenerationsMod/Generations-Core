@@ -1,0 +1,434 @@
+{
+  "implemented": true,
+  "name": "Rattata",
+  "nationalPokedexNumber": 19,
+  "primaryType": "normal",
+  "abilities": [
+    "runaway",
+    "guts",
+    "h:hustle"
+  ],
+  "baseStats": {
+    "hp": 30,
+    "attack": 56,
+    "defence": 35,
+    "special_attack": 25,
+    "special_defence": 35,
+    "speed": 72
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "features": [
+    "alolan"
+  ],
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Alola",
+      "primaryType": "dark",
+      "secondaryType": "normal",
+      "abilities": [
+        "gluttony",
+        "hustle",
+        "h:thickfat"
+      ],
+      "baseStats": {
+        "hp": 30,
+        "attack": 56,
+        "defence": 35,
+        "special_attack": 25,
+        "special_defence": 35,
+        "speed": 72
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 51,
+      "baseFriendship": 70,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 15,
+      "eggGroups": [
+        "field"
+      ],
+      "drops": {
+        "amount": "7",
+        "entries": [
+          {
+            "item": "cobblemon:black_apricorn",
+            "percentage": 5
+          },
+          {
+            "item": "cobblemon:blue_apricorn",
+            "percentage": 5
+          },
+          {
+            "item": "cobblemon:green_apricorn",
+            "percentage": 5
+          },
+          {
+            "item": "cobblemon:pink_apricorn",
+            "percentage": 5
+          },
+          {
+            "item": "cobblemon:red_apricorn",
+            "percentage": 5
+          },
+          {
+            "item": "cobblemon:white_apricorn",
+            "percentage": 5
+          },
+          {
+            "item": "cobblemon:yellow_apricorn",
+            "percentage": 5
+          }
+        ]
+      },
+      "moves": [
+        "1:tackle",
+        "1:tailwhip",
+        "4:quickattack",
+        "7:focusenergy",
+        "10:bite",
+        "13:pursuit",
+        "16:hyperfang",
+        "19:assurance",
+        "22:crunch",
+        "25:suckerpunch",
+        "28:superfang",
+        "31:doubleedge",
+        "34:endeavor",
+        "egg:counter",
+        "egg:finalgambit",
+        "egg:furyswipes",
+        "egg:mefirst",
+        "egg:revenge",
+        "egg:reversal",
+        "egg:snatch",
+        "egg:stockpile",
+        "egg:swallow",
+        "egg:switcheroo",
+        "egg:uproar",
+        "tm:attract",
+        "tm:blizzard",
+        "tm:confide",
+        "tm:darkpulse",
+        "tm:doubleteam",
+        "tm:embargo",
+        "tm:facade",
+        "tm:frustration",
+        "tm:grassknot",
+        "tm:hiddenpower",
+        "tm:icebeam",
+        "tm:protect",
+        "tm:quash",
+        "tm:raindance",
+        "tm:rest",
+        "tm:return",
+        "tm:round",
+        "tm:shadowball",
+        "tm:shadowclaw",
+        "tm:sleeptalk",
+        "tm:sludgebomb",
+        "tm:snarl",
+        "tm:substitute",
+        "tm:sunnyday",
+        "tm:swagger",
+        "tm:taunt",
+        "tm:thief",
+        "tm:torment",
+        "tm:toxic",
+        "tm:uturn",
+        "tutor:bite",
+        "tutor:blizzard",
+        "tutor:covet",
+        "tutor:crunch",
+        "tutor:darkpulse",
+        "tutor:dig",
+        "tutor:doubleedge",
+        "tutor:endeavor",
+        "tutor:facade",
+        "tutor:focusenergy",
+        "tutor:headbutt",
+        "tutor:hyperfang",
+        "tutor:icebeam",
+        "tutor:icywind",
+        "tutor:irontail",
+        "tutor:lastresort",
+        "tutor:protect",
+        "tutor:quickattack",
+        "tutor:rest",
+        "tutor:shadowball",
+        "tutor:shockwave",
+        "tutor:sludgebomb",
+        "tutor:snatch",
+        "tutor:snore",
+        "tutor:substitute",
+        "tutor:suckerpunch",
+        "tutor:superfang",
+        "tutor:tackle",
+        "tutor:tailwhip",
+        "tutor:taunt",
+        "tutor:toxic",
+        "tutor:uproar",
+        "tutor:uturn",
+        "tutor:zenheadbutt"
+      ],
+      "labels": [
+        "gen7",
+        "alola_regional"
+      ],
+      "aspects": [
+        "alolan"
+      ],
+      "height": 3,
+      "weight": 38,
+      "evolutions": [
+        {
+          "id": "rattata_raticate",
+          "variant": "level_up",
+          "result": "raticate form=alola",
+          "consumeHeldItem": false,
+          "learnableMoves": [],
+          "requirements": [
+            {
+              "variant": "level",
+              "minLevel": 20
+            },
+            {
+              "variant": "time_range",
+              "range": "night"
+            }
+          ]
+        }
+      ],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 51,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "7",
+    "entries": [
+      {
+        "item": "cobblemon:black_apricorn",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:blue_apricorn",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:green_apricorn",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:pink_apricorn",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:red_apricorn",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:white_apricorn",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:yellow_apricorn",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "1:tailwhip",
+    "7:quickattack",
+    "10:bite",
+    "13:hyperfang",
+    "19:suckerpunch",
+    "20:focusenergy",
+    "22:crunch",
+    "25:assurance",
+    "27:pursuit",
+    "31:doubleedge",
+    "34:superfang",
+    "41:endeavor",
+    "egg:bite",
+    "egg:counter",
+    "egg:finalgambit",
+    "egg:flamewheel",
+    "egg:furyswipes",
+    "egg:lastresort",
+    "egg:mefirst",
+    "egg:revenge",
+    "egg:reversal",
+    "egg:screech",
+    "egg:swagger",
+    "egg:uproar",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:captivate",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:cut",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:irontail",
+    "tm:naturalgift",
+    "tm:pluck",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:wildcharge",
+    "tm:workup",
+    "tutor:attract",
+    "tutor:bide",
+    "tutor:bite",
+    "tutor:blizzard",
+    "tutor:bodyslam",
+    "tutor:bubblebeam",
+    "tutor:counter",
+    "tutor:covet",
+    "tutor:crunch",
+    "tutor:curse",
+    "tutor:defensecurl",
+    "tutor:dig",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:endeavor",
+    "tutor:endure",
+    "tutor:facade",
+    "tutor:flamewheel",
+    "tutor:focusenergy",
+    "tutor:frustration",
+    "tutor:furyswipes",
+    "tutor:headbutt",
+    "tutor:hiddenpower",
+    "tutor:hyperfang",
+    "tutor:icebeam",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:lastresort",
+    "tutor:mefirst",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:protect",
+    "tutor:pursuit",
+    "tutor:quickattack",
+    "tutor:rage",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:reversal",
+    "tutor:rocksmash",
+    "tutor:screech",
+    "tutor:shadowball",
+    "tutor:shockwave",
+    "tutor:skullbash",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:suckerpunch",
+    "tutor:sunnyday",
+    "tutor:superfang",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:tackle",
+    "tutor:tailwhip",
+    "tutor:takedown",
+    "tutor:taunt",
+    "tutor:thief",
+    "tutor:thunder",
+    "tutor:thunderbolt",
+    "tutor:thunderwave",
+    "tutor:toxic",
+    "tutor:uproar",
+    "tutor:uturn",
+    "tutor:watergun",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen1",
+    "kanto_regional"
+  ],
+  "pokedex": [
+    "cobblemon.species.rattata.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "rattata_raticate",
+      "variant": "level_up",
+      "result": "raticate",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.5,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 3,
+  "weight": 35,
+  "aspects": [],
+  "cannotDynamax": false
+}

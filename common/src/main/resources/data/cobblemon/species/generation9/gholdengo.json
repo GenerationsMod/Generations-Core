@@ -1,0 +1,107 @@
+{
+  "implemented": true,
+  "name": "Gholdengo",
+  "nationalPokedexNumber": 1000,
+  "primaryType": "steel",
+  "secondaryType": "ghost",
+  "abilities": [
+    "goodasgold"
+  ],
+  "baseStats": {
+    "hp": 87,
+    "attack": 60,
+    "defence": 95,
+    "special_attack": 133,
+    "special_defence": 91,
+    "speed": 84
+  },
+  "catchRate": 45,
+  "maleRatio": -1,
+  "baseExperienceYield": 275,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 50,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:gimmigoul_coin",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:astonish",
+    "1:tackle",
+    "7:nightshade",
+    "14:confuseray",
+    "21:substitute",
+    "28:metalsound",
+    "35:shadowball",
+    "42:recover",
+    "49:powergem",
+    "56:makeitrain",
+    "63:nastyplot",
+    "70:memento",
+    "tm:chargebeam",
+    "tm:confuseray",
+    "tm:dazzlinggleam",
+    "tm:electroball",
+    "tm:endure",
+    "tm:flashcannon",
+    "tm:fling",
+    "tm:focusblast",
+    "tm:gigaimpact",
+    "tm:heavyslam",
+    "tm:hex",
+    "tm:hyperbeam",
+    "tm:ironhead",
+    "tm:lightscreen",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:nastyplot",
+    "tm:nightshade",
+    "tm:powergem",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psyshock",
+    "tm:reflect",
+    "tm:rest",
+    "tm:sandstorm",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:steelbeam",
+    "tm:substitute",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderpunch",
+    "tm:thunderwave",
+    "tm:trick"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 12,
+  "weight": 300,
+  "preEvolution": "gimmighoul",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.gholdengo.desc"
+  ]
+}

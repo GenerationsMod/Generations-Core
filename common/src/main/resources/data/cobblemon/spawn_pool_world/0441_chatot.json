@@ -1,0 +1,34 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "chatot-1",
+            "pokemon": "chatot",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "5-60",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_temperate",
+                    "#cobblemon:is_sky"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_spooky"
+                ]
+            }
+        }
+    ]
+}

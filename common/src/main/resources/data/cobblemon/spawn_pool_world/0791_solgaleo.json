@@ -1,0 +1,24 @@
+{
+    "enabled": "false",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "solgaleo-1",
+            "pokemon": "solgaleo",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70-75",
+            "weight": 0.001,
+            "condition": {
+                "biomes": [
+                    "#minecraft:is_end"
+                ]
+            }
+        }
+    ]
+}

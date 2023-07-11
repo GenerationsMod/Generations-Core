@@ -1,0 +1,164 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "raticate-1",
+            "pokemon": "raticate",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-41",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_grassland"
+                ],
+                "timeRange": "night"
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_spooky"
+                ]
+            }
+        },
+        {
+            "id": "raticate-2",
+            "pokemon": "raticate",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-41",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": false,
+                "minY": 0,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        },
+        {
+            "id": "raticate-3",
+            "pokemon": "raticate",
+            "presets": [
+                "derelict"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-41",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": false,
+                "minY": 0,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        },
+        {
+            "id": "raticate-alolan-1",
+            "pokemon": "raticate alolan",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-41",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": false,
+                "maxY": 0,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        },
+        {
+            "id": "raticate-alolan-2",
+            "pokemon": "raticate alolan",
+            "presets": [
+                "derelict"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-41",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": false,
+                "maxY": 0,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ]
+            }
+        },
+        {
+            "id": "raticate-alolan-3",
+            "pokemon": "raticate alolan",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-41",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_spooky"
+                ],
+                "timeRange": "night"
+            }
+        },
+        {
+            "id": "raticate-alolan-4",
+            "pokemon": "raticate alolan",
+            "presets": [
+                "derelict"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-41",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_spooky"
+                ]
+            }
+        }
+    ]
+}

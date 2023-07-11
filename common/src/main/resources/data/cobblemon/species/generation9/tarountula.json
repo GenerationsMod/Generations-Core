@@ -1,0 +1,117 @@
+{
+  "implemented": true,
+  "name": "Tarountula",
+  "nationalPokedexNumber": 917,
+  "primaryType": "bug",
+  "abilities": [
+    "insomnia",
+    "h:stakeout"
+  ],
+  "baseStats": {
+    "hp": 35,
+    "attack": 41,
+    "defence": 45,
+    "special_attack": 29,
+    "special_defence": 40,
+    "speed": 20
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 42,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "erratic",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:spider_eye",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:stringshot",
+    "1:tackle",
+    "5:strugglebug",
+    "8:assurance",
+    "11:feint",
+    "14:bugbite",
+    "18:block",
+    "22:counter",
+    "25:headbutt",
+    "29:stickyweb",
+    "33:gastroacid",
+    "36:circlethrow",
+    "40:throatchop",
+    "44:skittersmack",
+    "egg:firstimpression",
+    "egg:lunge",
+    "egg:memento",
+    "egg:suckerpunch",
+    "tm:bodyslam",
+    "tm:bugbuzz",
+    "tm:bulletseed",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:leechlife",
+    "tm:poisonjab",
+    "tm:pounce",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:spikes",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:toxicspikes",
+    "tm:trailblaze",
+    "tm:xscissor"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 3,
+  "weight": 40,
+  "evolutions": [
+    {
+      "id": "tarountula_spidops",
+      "variant": "level_up",
+      "result": "spidops",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "silktrap"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 15
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.tarountula.desc"
+  ]
+}

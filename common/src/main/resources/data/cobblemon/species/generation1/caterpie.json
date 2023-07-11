@@ -1,0 +1,99 @@
+{
+  "implemented": true,
+  "name": "Caterpie",
+  "nationalPokedexNumber": 10,
+  "primaryType": "bug",
+  "abilities": [
+    "shielddust",
+    "h:runaway"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 30,
+    "defence": 35,
+    "special_attack": 20,
+    "special_defence": 20,
+    "speed": 45
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "features": [
+    "valencian"
+  ],
+  "baseExperienceYield": 39,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:stringshot",
+    "1:tackle",
+    "15:bugbite",
+    "tm:electroweb",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:snore",
+    "tutor:stringshot",
+    "tutor:tackle"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.caterpie.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "caterpie_metapod",
+      "variant": "level_up",
+      "result": "metapod",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "harden"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 7
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.6,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 29,
+  "aspects": [],
+  "cannotDynamax": false
+}

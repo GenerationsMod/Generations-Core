@@ -1,0 +1,23 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "goldeen-1",
+            "pokemon": "goldeen",
+            "presets": [
+                "river",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-32",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true
+            }
+        }
+    ]
+}

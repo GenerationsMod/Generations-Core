@@ -1,0 +1,143 @@
+{
+  "implemented": true,
+  "name": "Vanillish",
+  "nationalPokedexNumber": 583,
+  "primaryType": "ice",
+  "abilities": [
+    "icebody",
+    "snowcloak",
+    "h:weakarmor"
+  ],
+  "baseStats": {
+    "hp": 51,
+    "attack": 65,
+    "defence": 65,
+    "special_attack": 80,
+    "special_defence": 75,
+    "speed": 59
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 138,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:sugar",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:astonish",
+    "1:harden",
+    "1:iciclespear",
+    "1:uproar",
+    "13:icywind",
+    "16:mist",
+    "19:avalanche",
+    "22:taunt",
+    "26:mirrorshot",
+    "31:acidarmor",
+    "36:icebeam",
+    "42:hail",
+    "47:mirrorcoat",
+    "53:blizzard",
+    "58:sheercold",
+    "tm:allyswitch",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:explosion",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:frostbreath",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hypervoice",
+    "tm:icebeam",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:imprison",
+    "tm:irondefense",
+    "tm:lightscreen",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:secretpower",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:toxic",
+    "tm:uproar",
+    "tutor:allyswitch",
+    "tutor:iceshard",
+    "tutor:icywind",
+    "tutor:imprison",
+    "tutor:irondefense",
+    "tutor:magiccoat",
+    "tutor:magnetrise",
+    "tutor:mirrorshot",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:uproar",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.vanillish.desc"
+  ],
+  "preEvolution": "vanillite",
+  "evolutions": [
+    {
+      "id": "vanillish_vanilluxe",
+      "variant": "level_up",
+      "result": "vanilluxe",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 47
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 11,
+  "weight": 410,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -1,0 +1,24 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "dragapult-1",
+            "pokemon": "dragapult",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "50-70",
+            "weight": 9.0,
+            "condition": {
+                "biomes": [
+                    "#minecraft:is_end"
+                ]
+            }
+        }
+    ]
+}

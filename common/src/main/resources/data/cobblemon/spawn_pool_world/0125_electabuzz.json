@@ -1,0 +1,47 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "electabuzz-1",
+            "pokemon": "electabuzz",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "30-49",
+            "weight": 0.54,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_plains"
+                ],
+                "isThundering": true
+            }
+        },
+        {
+            "id": "electabuzz-2",
+            "pokemon": "electabuzz",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "30-49",
+            "weight": 0.18,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_plains"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:lightning_rod"
+                ]
+            }
+        }
+    ]
+}

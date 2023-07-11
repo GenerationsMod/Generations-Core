@@ -1,0 +1,121 @@
+{
+  "implemented": true,
+  "name": "Maschiff",
+  "nationalPokedexNumber": 942,
+  "primaryType": "dark",
+  "abilities": [
+    "intimidate",
+    "runaway",
+    "h:stakeout"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 78,
+    "defence": 60,
+    "special_attack": 40,
+    "special_defence": 51,
+    "speed": 51
+  },
+  "catchRate": 150,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 68,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:leer",
+    "1:scaryface",
+    "1:tackle",
+    "4:lick",
+    "7:snarl",
+    "10:honeclaws",
+    "14:bite",
+    "18:roar",
+    "22:headbutt",
+    "26:payback",
+    "31:crunch",
+    "35:swagger",
+    "39:reversal",
+    "43:jawlock",
+    "49:doubleedge",
+    "egg:destinybond",
+    "egg:endeavor",
+    "egg:playrough",
+    "egg:retaliate",
+    "tm:bodyslam",
+    "tm:charm",
+    "tm:crunch",
+    "tm:darkpulse",
+    "tm:dig",
+    "tm:endure",
+    "tm:facade",
+    "tm:faketears",
+    "tm:firefang",
+    "tm:helpinghand",
+    "tm:icefang",
+    "tm:playrough",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:raindance",
+    "tm:rest",
+    "tm:reversal",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderfang",
+    "tm:trailblaze"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 5,
+  "weight": 160,
+  "evolutions": [
+    {
+      "id": "maschiff_mabosstiff",
+      "variant": "level_up",
+      "result": "mabosstiff",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "comeuppance"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.maschiff.desc"
+  ]
+}

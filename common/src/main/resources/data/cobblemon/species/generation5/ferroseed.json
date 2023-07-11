@@ -1,0 +1,164 @@
+{
+  "implemented": true,
+  "name": "Ferroseed",
+  "nationalPokedexNumber": 597,
+  "primaryType": "grass",
+  "secondaryType": "steel",
+  "abilities": [
+    "ironbarbs"
+  ],
+  "baseStats": {
+    "hp": 44,
+    "attack": 50,
+    "defence": 91,
+    "special_attack": 24,
+    "special_defence": 86,
+    "speed": 10
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 61,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass",
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:vine",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:harden",
+    "1:tackle",
+    "6:rollout",
+    "9:curse",
+    "14:metalclaw",
+    "18:pinmissile",
+    "21:gyroball",
+    "26:irondefense",
+    "30:mirrorshot",
+    "35:ingrain",
+    "38:selfdestruct",
+    "43:ironhead",
+    "47:payback",
+    "52:flashcannon",
+    "55:explosion",
+    "egg:acidspray",
+    "egg:bulletseed",
+    "egg:gravity",
+    "egg:knockoff",
+    "egg:leechseed",
+    "egg:rockclimb",
+    "egg:seedbomb",
+    "egg:spikes",
+    "egg:stealthrock",
+    "egg:toxic",
+    "egg:worryseed",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bulletseed",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:explosion",
+    "tm:facade",
+    "tm:flash",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gyroball",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:naturepower",
+    "tm:payback",
+    "tm:pinmissile",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:revenge",
+    "tm:rockpolish",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:stealthrock",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tutor:endeavor",
+    "tutor:gigadrain",
+    "tutor:gravity",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:knockoff",
+    "tutor:magnetrise",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:steelbeam",
+    "tutor:steelroller",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.ferroseed.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "ferroseed_ferrothorn",
+      "variant": "level_up",
+      "result": "ferrothorn",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "powerwhip"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 40
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 188,
+  "aspects": [],
+  "cannotDynamax": false
+}

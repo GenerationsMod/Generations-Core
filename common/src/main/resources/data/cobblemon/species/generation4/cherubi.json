@@ -1,0 +1,157 @@
+{
+  "implemented": true,
+  "name": "Cherubi",
+  "nationalPokedexNumber": 420,
+  "primaryType": "grass",
+  "abilities": [
+    "chlorophyll"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 35,
+    "defence": 45,
+    "special_attack": 62,
+    "special_defence": 53,
+    "speed": 35
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 55,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy",
+    "grass"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:morningsun",
+    "1:tackle",
+    "5:leafage",
+    "7:growth",
+    "10:leechseed",
+    "13:helpinghand",
+    "19:magicalleaf",
+    "22:sunnyday",
+    "28:worryseed",
+    "31:takedown",
+    "37:solarbeam",
+    "40:luckychant",
+    "47:petalblizzard",
+    "egg:aromatherapy",
+    "egg:defensecurl",
+    "egg:flowershield",
+    "egg:grasswhistle",
+    "egg:grassyterrain",
+    "egg:healingwish",
+    "egg:healpulse",
+    "egg:naturalgift",
+    "egg:naturepower",
+    "egg:razorleaf",
+    "egg:rollout",
+    "egg:seedbomb",
+    "egg:sweetscent",
+    "egg:tickle",
+    "egg:weatherball",
+    "tm:attract",
+    "tm:bulletseed",
+    "tm:captivate",
+    "tm:confide",
+    "tm:dazzlinggleam",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyterrain",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:magicalleaf",
+    "tm:naturalgift",
+    "tm:naturepower",
+    "tm:pollenpuff",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tm:weatherball",
+    "tutor:bulletseed",
+    "tutor:gigadrain",
+    "tutor:grassyglide",
+    "tutor:healpulse",
+    "tutor:helpinghand",
+    "tutor:leechseed",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.cherubi.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "cherubi_cherrim",
+      "variant": "level_up",
+      "result": "cherrim",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "sunnyday"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 25
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 33,
+  "aspects": [],
+  "cannotDynamax": false
+}

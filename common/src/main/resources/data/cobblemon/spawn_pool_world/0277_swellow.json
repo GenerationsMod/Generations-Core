@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "swellow-1",
+            "pokemon": "swellow",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "22-52",
+            "weight": 5.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ]
+            }
+        }
+    ]
+}
