@@ -1,17 +1,15 @@
 modLoader="javafml"
-loaderVersion="[45,)"
+loaderVersion="[47,)"
 license="GNU GPL 3.0"
-issueTrackerURL="https://JTMcQ/Generations-Core/issues"
+issueTrackerURL="https://github.com/GenerationsMod/Generations-Core/issues"
 
-
-
-[[mods]] #mandatory
+[[mods]]
 modId="generations_core"
 version="${version}"
 displayName="Generations-Core"
 authors="J.T. McQuigg (JT122406), Waterpicker, Stampede"
 credits="Generations Development Team"
-logoFile="icon.png"
+logoFile="generations.png"
 description='''
 Core mod for Generations. Required for all other Generations mods.
 Contains Blocks, Items, Entities, and other things that are used by all other Generations mods.
@@ -19,24 +17,25 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 
 [[dependencies.generations_core]]
    modId="forge"
-   mandatory=true #mandatory
-   versionRange="[45.1,)" #mandatory
+   mandatory=true
+   versionRange="[47.1,)"
    ordering="NONE"
    side="BOTH"
 
 [[dependencies.generations_core]]
    modId="minecraft"
    mandatory=true
-   versionRange="[1.19.4]"
+   versionRange="[1.20.1,)"
    ordering="NONE"
    side="BOTH"
 
 [[dependencies.generations_core]]
    modId="architectury"
    mandatory=true
-   versionRange="[8.1.87,)"
-   ordering="NONE"
+   versionRange="[9.1.10,)"
+   ordering="BEFORE"
    side="BOTH"
+
 
 [[dependencies.generations_core]]
    modId="cobblemon"

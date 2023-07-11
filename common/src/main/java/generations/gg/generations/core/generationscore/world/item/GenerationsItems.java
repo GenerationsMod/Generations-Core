@@ -6,7 +6,6 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import com.google.common.collect.Streams;
 import dev.architectury.core.item.ArchitecturyRecordItem;
-import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -36,10 +35,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
@@ -1750,7 +1746,11 @@ public class GenerationsItems {
         });
     }
 
-    public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, CreativeTabRegistry.TabSupplier tab) {
+    public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
+        return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
+    }
+
+    public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
         return register(name, itemSupplier, tab);
     }
 

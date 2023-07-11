@@ -3,8 +3,11 @@ package generations.gg.generations.core.generationscore.client.screen.mails;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
-import generations.gg.generations.core.generationscore.GenerationsCore;
+import com.mojang.blaze3d.vertex.BufferBuilder;
+import com.mojang.blaze3d.vertex.DefaultVertexFormat;
+import com.mojang.blaze3d.vertex.Tesselator;
+import com.mojang.blaze3d.vertex.VertexFormat;
+import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
 import generations.gg.generations.core.generationscore.network.packets.C2SEditMailPacket;
 import generations.gg.generations.core.generationscore.world.item.MailItem;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -16,7 +19,7 @@ import net.minecraft.Util;
 import net.minecraft.client.GameNarrator;
 import net.minecraft.client.StringSplitter;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiComponent;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.font.TextFieldHelper;
 import net.minecraft.client.gui.screens.Screen;
@@ -276,33 +279,31 @@ public class MailEditScreen extends Screen {
     }
 
     @Override
-    public void render(PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
-        this.renderBackground(poseStack);
+    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        this.renderBackground(graphics);
         this.setFocused(null);
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderSystem.setShaderTexture(0, location);
         int x = (this.width - IMAGE_WIDTH) / 2;
         int y = (this.height - IMAGE_HEIGHT) / 2;
-        blit(poseStack, x, y, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
+        graphics.blit(location, x, y, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
 
         DisplayCache displayCache = this.getDisplayCache();
         for (LineInfo lineInfo : displayCache.lines) {
-            this.font.draw(poseStack, lineInfo.asComponent, (float)lineInfo.x, (float)lineInfo.y, -16777216);
+            graphics.drawString(this.font, lineInfo.asComponent, lineInfo.x, lineInfo.y, 0xff000000);
         }
         this.renderHighlight(displayCache.selection);
-        this.renderCursor(poseStack, displayCache.cursor, displayCache.cursorAtEnd);
+        this.renderCursor(graphics, displayCache.cursor, displayCache.cursorAtEnd);
 
-        super.render(poseStack, mouseX, mouseY, partialTick);
+        super.render(graphics, mouseX, mouseY, partialTick);
     }
 
-    private void renderCursor(PoseStack poseStack, Pos2i cursorPos, boolean isEndOfText) {
+    private void renderCursor(GuiGraphics graphics, Pos2i cursorPos, boolean isEndOfText) {
         if (this.frameTick / 6 % 2 == 0) {
             cursorPos = this.convertLocalToScreen(cursorPos);
             if (!isEndOfText) {
-                GuiComponent.fill(poseStack, cursorPos.x, cursorPos.y - 1, cursorPos.x + 1, cursorPos.y + this.font.lineHeight, -16777216);
+                graphics.fill(cursorPos.x, cursorPos.y - 1, cursorPos.x + 1, cursorPos.y + this.font.lineHeight, 0xff000000);
             } else {
-                this.font.draw(poseStack, "_", (float)cursorPos.x, (float)cursorPos.y, 0);
+                graphics.drawString(this.font, "_", cursorPos.x, cursorPos.y, 0);
             }
         }
     }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ghost_gem": {
+    "has_moss_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:ghost_gem"
+              "minecraft:moss_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:ghost_log"
+        "recipe": "minecraft:mossy_charge_cobblestone_from_moss_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_ghost_gem",
+      "has_moss_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:ghost_log"
+      "minecraft:mossy_charge_cobblestone_from_moss_block"
     ]
   }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_volcanic_stone_bricks",
+  "ingredients": [
+    {
+      "item": "generations_core:volcanic_stone_bricks"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "generations_core:mossy_volcanic_stone_bricks"
+  }
+}

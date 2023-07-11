@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,15 +36,15 @@ public class GenerationsDecorationBlocks {
     /**
      * Decoration Blocks
      */
-    public static final RegistrySupplier<Block> HOUSE_LAMP = registerDecorationItem("house_lamp", () -> new HouseLampBlock(BlockBehaviour.Properties.of(Material.METAL).destroyTime(1.0f).sound(SoundType.METAL).lightLevel((lightLevel) -> 15)));
-    public static final RegistrySupplier<Block> SWITCH = registerDecorationItem("switch", () -> new SwitchBlock(BlockBehaviour.Properties.of(Material.METAL).destroyTime(1.0f).sound(SoundType.METAL)));
-    public static final RegistrySupplier<Block> LITWICK_CANDLE = registerDecorationItem("litwick_candle", () -> new LitwickCandleBlock(BlockBehaviour.Properties.of(Material.WOOD).lightLevel(state -> 11).destroyTime(0.7f)));
-    public static final RegistrySupplier<Block> LITWICK_CANDLES = registerDecorationItem("litwick_candles", () -> new LitwickCandlesBlock(BlockBehaviour.Properties.of(Material.WOOD).lightLevel(state -> 15).destroyTime(0.5f)));
+    public static final RegistrySupplier<Block> HOUSE_LAMP = registerDecorationItem("house_lamp", () -> new HouseLampBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).lightLevel((lightLevel) -> 15)));
+    public static final RegistrySupplier<Block> SWITCH = registerDecorationItem("switch", () -> new SwitchBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
+    public static final RegistrySupplier<Block> LITWICK_CANDLE = registerDecorationItem("litwick_candle", () -> new LitwickCandleBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 11).destroyTime(0.7f)));
+    public static final RegistrySupplier<Block> LITWICK_CANDLES = registerDecorationItem("litwick_candles", () -> new LitwickCandlesBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 15).destroyTime(0.5f)));
 
     /**
      * Decoration Blocks (Umbrella)
      */
-    public static final RegistrySupplier<UmbrellaBlock> UMBRELLA = registerBlock("umbrella", () -> new UmbrellaBlock(BlockBehaviour.Properties.of(Material.METAL).destroyTime(1.0f).sound(SoundType.METAL)));
+    public static final RegistrySupplier<UmbrellaBlock> UMBRELLA = registerBlock("umbrella", () -> new UmbrellaBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
     public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> WHITE_UMBRELLA = registerUmbrella("white_umbrella", DyeColor.WHITE);
     public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> LIGHT_GRAY_UMBRELLA = registerUmbrella("light_gray_umbrella", DyeColor.LIGHT_GRAY);
     public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> GRAY_UMBRELLA = registerUmbrella("gray_umbrella", DyeColor.GRAY);
@@ -66,7 +65,7 @@ public class GenerationsDecorationBlocks {
     /**
      * Decoration Blocks (Vending Machine)
      */
-    public static final RegistrySupplier<VendingMachineBlock> VENDING_MACHINE = registerBlock("vending_machine", () -> new VendingMachineBlock(BlockBehaviour.Properties.of(Material.METAL).destroyTime(1.0f).sound(SoundType.METAL)));
+    public static final RegistrySupplier<VendingMachineBlock> VENDING_MACHINE = registerBlock("vending_machine", () -> new VendingMachineBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistrySupplier<DyedBlockItem<VendingMachineBlock>> WHITE_VENDING_MACHINE = registerVendingMachineItem("white_vending_machine", DyeColor.WHITE);
     public static final RegistrySupplier<DyedBlockItem<VendingMachineBlock>> LIGHT_GRAY_VENDING_MACHINE = registerVendingMachineItem("light_gray_vending_machine", DyeColor.LIGHT_GRAY);
     public static final RegistrySupplier<DyedBlockItem<VendingMachineBlock>> GRAY_VENDING_MACHINE = registerVendingMachineItem("gray_vending_machine", DyeColor.GRAY);
@@ -87,8 +86,8 @@ public class GenerationsDecorationBlocks {
     /**
      * Decoration Blocks (Bean Bags)
      */
-    public static final RegistrySupplier<Block> SNORLAX_BEAN_BAG = registerDecorationItem("snorlax_bean_bag", () -> new BeanBagBlock(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL)));
-    public static final RegistrySupplier<PastelBeanBagBlock> PASTEL_BEAN_BAG = registerBlock("pastel_bean_bag", () -> new PastelBeanBagBlock(BlockBehaviour.Properties.of(Material.WOOL)));
+    public static final RegistrySupplier<Block> SNORLAX_BEAN_BAG = registerDecorationItem("snorlax_bean_bag", () -> new BeanBagBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
+    public static final RegistrySupplier<PastelBeanBagBlock> PASTEL_BEAN_BAG = registerBlock("pastel_bean_bag", () -> new PastelBeanBagBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
     public static final RegistrySupplier<DyedBlockItem<PastelBeanBagBlock>> WHITE_PASTEL_BEAN_BAG = registerPastelBeanBag("white_pastel_bean_bag", DyeColor.WHITE);
     public static final RegistrySupplier<DyedBlockItem<PastelBeanBagBlock>> LIGHT_GRAY_PASTEL_BEAN_BAG = registerPastelBeanBag("light_gray_pastel_bean_bag", DyeColor.LIGHT_GRAY);
     public static final RegistrySupplier<DyedBlockItem<PastelBeanBagBlock>> GRAY_PASTEL_BEAN_BAG = registerPastelBeanBag("gray_pastel_bean_bag", DyeColor.GRAY);
@@ -109,7 +108,7 @@ public class GenerationsDecorationBlocks {
     /**
      * Decoration Blocks (Vending Machine)
      */
-    public static final RegistrySupplier<RugBlock> POKEBALL_RUG = registerBlock("pokeball_rug", () -> new RugBlock(BlockBehaviour.Properties.of(Material.WOOL).destroyTime(1.0f).sound(SoundType.WOOL)));
+    public static final RegistrySupplier<RugBlock> POKEBALL_RUG = registerBlock("pokeball_rug", () -> new RugBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOL).ignitedByLava()));
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> WHITE_POKEBALL_RUG = registerPokedollRug("white_pokeball_rug", DyeColor.WHITE);
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> LIGHT_GRAY_POKEBALL_RUG = registerPokedollRug("light_gray_pokeball_rug", DyeColor.LIGHT_GRAY);
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> GRAY_POKEBALL_RUG = registerPokedollRug("gray_pokeball_rug", DyeColor.GRAY);
@@ -127,7 +126,7 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> MAGENTA_POKEBALL_RUG = registerPokedollRug("magenta_pokeball_rug", DyeColor.MAGENTA);
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> PINK_POKEBALL_RUG = registerPokedollRug("pink_pokeball_rug", DyeColor.PINK);
 
-    public static final RegistrySupplier<WaterFloatBlock> WATER_FLOAT = registerBlock("water_float", () -> new WaterFloatBlock(BlockBehaviour.Properties.of(Material.WOOL).destroyTime(1.0f).sound(SoundType.WOOL)));
+    public static final RegistrySupplier<WaterFloatBlock> WATER_FLOAT = registerBlock("water_float", () -> new WaterFloatBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOL).ignitedByLava()));
     public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> WHITE_WATER_FLOAT = registerWaterFloat("white_water_float", DyeColor.WHITE);
     public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> LIGHT_GRAY_WATER_FLOAT = registerWaterFloat("light_gray_water_float", DyeColor.LIGHT_GRAY);
     public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> GRAY_WATER_FLOAT = registerWaterFloat("gray_water_float", DyeColor.GRAY);

@@ -20,17 +20,13 @@ import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.tags.TagEntry;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.lang.reflect.Field;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
@@ -64,14 +60,8 @@ public class TagsDatagen {
                     tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block);
                 }
 
-                Field material = ObfuscationReflectionHelper.findField(BlockBehaviour.class, "material");
-                material.setAccessible(true);
-                try {
-                    if (material.get(block) == Material.STONE)
-                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
-                } catch (IllegalAccessException e) {
-                    throw new RuntimeException(e);
-                }
+
+
             });
 
             GenerationsBlocks.ULTRA_BLOCKS.forEach(block -> {

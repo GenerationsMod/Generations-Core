@@ -10,7 +10,8 @@ import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -32,14 +33,14 @@ public class MagmaCrystalEntity extends ThrowableItemProjectile {
 
     @Override
     protected void onHit(HitResult result) {
-        if (result.getType() == HitResult.Type.BLOCK && !level.isClientSide()) {
+        if (result.getType() == HitResult.Type.BLOCK && !level().isClientSide()) {
             if (this.getOwner() instanceof ServerPlayer player) {
-                var mat = this.level.getBlockState(((BlockHitResult) result).getBlockPos()).getMaterial();
+                Block mat = this.level().getBlockState(((BlockHitResult) result).getBlockPos()).getBlock();
 
-                if ((mat == Material.LAVA || this.level.getBlockState(((BlockHitResult) result).getBlockPos().above()).getMaterial() == Material.LAVA)) {
-                    PokemonUtil.spawn("heatran", level, getOwner().getOnPos());
+                if ((mat == Blocks.LAVA || this.level().getBlockState(((BlockHitResult) result).getBlockPos().above()).getBlock() == Blocks.LAVA)) {
+//                    level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(BuiltinPixelmonSpecies.HEATRAN.location()), getOwner().getOnPos())); TODO: Enable later
                     discard();
-                } else if (!level.isClientSide() && mat != Material.AIR) {
+                } else if (!level().isClientSide() && mat != Blocks.AIR) {
                     player.addItem(new ItemStack(GenerationsItems.MAGMA_CRYSTAL.get()));
                     discard();
                 }

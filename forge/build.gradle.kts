@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    forge("net.minecraftforge:forge:${project.properties["forge_version"]}")
+    forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
@@ -49,7 +49,7 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
-    modApi("earth.terrarium:botarium-forge-${minecraftVersion}:${project.properties["botarium_version"]}")!!
+    modApi("earth.terrarium:botarium-forge-1.20:${project.properties["botarium_version"]}")!!
 
     forgeRuntimeLibrary("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
@@ -64,7 +64,7 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 
     //Cobblemon
-    modRuntimeOnly("thedarkcolour:kotlinforforge:4.2.0")
+    modRuntimeOnly("thedarkcolour:kotlinforforge:4.4.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 }
 

@@ -21,7 +21,7 @@ loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
-    modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}")
+    modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}+$minecraftVersion")
     modApi("dev.architectury:architectury-fabric:${project.properties["architectury_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
@@ -40,7 +40,7 @@ dependencies {
     implementation("shadowCommon"("com.fasterxml.jackson.core:jackson-core:2.15.1")!!)
     implementation("shadowCommon"("com.thebombzen:jxlatte:1.1.0")!!)
 
-    modImplementation("earth.terrarium:botarium-fabric-${minecraftVersion}:${project.properties["botarium_version"]}")!!
+    modImplementation("earth.terrarium:botarium-fabric-1.20:${project.properties["botarium_version"]}")!!
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 

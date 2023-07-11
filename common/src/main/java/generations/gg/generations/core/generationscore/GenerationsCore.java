@@ -26,11 +26,14 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
+import org.jetbrains.annotations.NotNull;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import org.slf4j.Logger;
+
+import java.nio.file.Path;
 
 /**
  * The Main Class of the Generations-Core mod. (Common)
@@ -55,13 +58,18 @@ public class GenerationsCore
 
 	public static DataProvider dataProvider = GenerationsDataProvider.INSTANCE;
 
+	/** Config Directory **/
+	public static Path CONFIG_DIRECTORY;
+
 	/**
 	 * Initializes the Generations-Core mod.
+	 * @param configDirectory The config directory for the Generations-Core mod.
 	 */
-	public static void init(GenerationsImplementation implementation) {
+	public static void init(GenerationsImplementation implementation, @NotNull Path configDirectory) {
 		GenerationsCore.implementation = implementation;
 		implementation.getNetworkManager().registerServerBound();
-
+		CONFIG_DIRECTORY = configDirectory;
+		GenerationsCore.cobblemon = cobblemon;
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
 		GenerationsBlocks.init();

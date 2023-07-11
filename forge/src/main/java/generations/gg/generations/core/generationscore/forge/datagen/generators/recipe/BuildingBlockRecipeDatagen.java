@@ -11,18 +11,15 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.packs.VanillaRecipeProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.Field;
 import java.util.function.Consumer;
 
 /**
@@ -765,20 +762,18 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.RUINS_WALL.get()), has(GenerationsBlocks.RUINS_WALL.get()))
                 .save(consumer);
 
-        //ChargeStone Recipes
+        //ChargeStone Recipes  (Follow Stone Palette)
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_STONE_BRICKS.get(), 4)
-                .define('E', GenerationsBlocks.CHARGE_STONE.get())
-                .pattern("EE")
-                .pattern("EE")
+                .define('#', GenerationsBlocks.CHARGE_STONE.get())
+                .pattern("##")
+                .pattern("##")
                 .unlockedBy(getHasName(GenerationsBlocks.CHARGE_STONE.get()), has(GenerationsBlocks.CHARGE_STONE.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get())
-                .define('E', GenerationsBlocks.CHARGE_COBBLESTONE.get())
-                .define('Q', Blocks.VINE)
-                .pattern("EQ")
-                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_COBBLESTONE.get()), has(GenerationsBlocks.CHARGE_COBBLESTONE.get()))
-                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get()).requires(GenerationsBlocks.CHARGE_COBBLESTONE.get()).requires(Blocks.VINE).group("mossy_charge_cobblestone").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get(), Blocks.VINE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get()).requires(GenerationsBlocks.CHARGE_STONE_BRICKS.get()).requires(Blocks.VINE).group("mossy_charge_stone_bricks").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get(), Blocks.VINE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get()).requires(GenerationsBlocks.CHARGE_COBBLESTONE.get()).requires(Blocks.MOSS_BLOCK).group("mossy_charge_cobblestone").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get(), Blocks.MOSS_BLOCK));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get()).requires(GenerationsBlocks.CHARGE_STONE_BRICKS.get()).requires(Blocks.MOSS_BLOCK).group("mossy_charge_stone_bricks").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get(), Blocks.MOSS_BLOCK));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE.get())
                 .define('Q', GenerationsBlocks.CHARGE_COBBLESTONE.get()).define('E', Items.GLOWSTONE_DUST)
@@ -788,13 +783,19 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.CHARGE_COBBLESTONE.get()), has(GenerationsBlocks.CHARGE_COBBLESTONE.get()))
                 .save(consumer);
 
-        //Volcanic Recipes
+        //Volcanic Stone Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.VOLCANIC_STONE_BRICKS.get(), 4)
-                .define('E', GenerationsBlocks.VOLCANIC_STONE.get())
-                .pattern("EE")
-                .pattern("EE")
+                .define('#', GenerationsBlocks.VOLCANIC_STONE.get())
+                .pattern("##")
+                .pattern("##")
                 .unlockedBy(getHasName(GenerationsBlocks.VOLCANIC_STONE.get()), has(GenerationsBlocks.VOLCANIC_STONE.get()))
                 .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE.get()).requires(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()).requires(Blocks.VINE).group("mossy_volcanic_cobblestone").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE.get(), Blocks.VINE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get()).requires(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get()).requires(Blocks.VINE).group("mossy_volcanic_stone_bricks").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get(), Blocks.VINE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE.get()).requires(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()).requires(Blocks.MOSS_BLOCK).group("mossy_volcanic_cobblestone").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE.get(), Blocks.MOSS_BLOCK));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get()).requires(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get()).requires(Blocks.MOSS_BLOCK).group("mossy_volcanic_stone_bricks").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get(), Blocks.MOSS_BLOCK));
+
 
         //Golden Temple Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()).define('#', GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()).pattern("##").pattern("##").unlockedBy(getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()), has(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get())).save(consumer);
@@ -1237,9 +1238,8 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //1 Gem 1 Log = 8 Logs
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsWood.GHOST_LOG.get(), 8)
                 .requires(GenerationsItems.GHOST_GEM.get())
-                .requires(GenerationsWood.GHOST_LOG.get())
+                .requires(ItemTags.LOGS)
                 .unlockedBy(getHasName(GenerationsItems.GHOST_GEM.get()), has(GenerationsItems.GHOST_GEM.get()))
-                .unlockedBy(getHasName(GenerationsWood.GHOST_LOG.get()), has(GenerationsWood.GHOST_LOG.get()))
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsWood.GHOST_PLANKS.get(), 32)
@@ -1268,7 +1268,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //Charge Dripstone
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.get(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
-
     }
 
     private void buildBuildingBlockRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item dye, RegistrySupplier<Block> pokebrick, Block block) {
@@ -1290,16 +1289,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
     }*/
 
     protected void generateForEnabledBlockFamilies(@NotNull Consumer<FinishedRecipe> consumer) {
-        GenerationsBlockFamilies.getAllFamilies().forEach(arg -> {
-            generateRecipes(consumer, arg);
-            Field material = ObfuscationReflectionHelper.findField(BlockBehaviour.class, "material");
-            material.setAccessible(true);
-            try {
-                if (material.get(arg.getBaseBlock()) == Material.STONE) generateStoneCutterRecipesForFamily(consumer, arg);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
-        });
+        GenerationsBlockFamilies.getAllFamilies().forEach(arg -> generateRecipes(consumer, arg));
         GenerationsBlockFamilies.getAllUltraFamilies().forEach(arg -> generateRecipes(consumer, arg));
     }
 

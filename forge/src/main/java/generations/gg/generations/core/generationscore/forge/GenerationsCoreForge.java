@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import net.minecraftforge.fml.loading.FMLPaths;
 
 /**
  * Forge Main class for GenerationsCore.
@@ -43,8 +44,6 @@ public class GenerationsCoreForge implements GenerationsImplementation {
      * @see FMLJavaModLoadingContext
      */
     public GenerationsCoreForge() {
-        // Submit our event bus to let architectury register our content on the right time
-
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);

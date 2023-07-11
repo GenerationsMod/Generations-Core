@@ -4,6 +4,7 @@ import dev.architectury.event.events.common.InteractionEvent;
 import generations.gg.generations.core.generationscore.world.item.MulchItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
@@ -28,7 +29,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
 
-import static net.minecraft.world.level.block.FarmBlock.*;
+import static net.minecraft.world.level.block.FarmBlock.isNearWater;
+import static net.minecraft.world.level.block.FarmBlock.turnToDirt;
 
 @SuppressWarnings("deprecation")
 public class SoftSoilBlock extends Block {
@@ -45,15 +47,12 @@ public class SoftSoilBlock extends Block {
     @Override
     public void randomTick(BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         int i = state.getValue(MOISTURE);
-        if (state.getValue(MULCH) != Mulch.DAMP && !isNearWater(level, pos) && !level.isRainingAt(pos.above())) {
-            if (i > 0) {
-                level.setBlock(pos, state.setValue(MOISTURE, i - 1), 2);
-            } else if (!isUnderCrops(level, pos)) {
+        if (state.getValue(MULCH) != Mulch.DAMP && !isNearWater(level, pos) && !level.isRainingAt(pos.above()))
+            if (i > 0) level.setBlock(pos, state.setValue(MOISTURE, i - 1), 2);
+            else if (!(level.getBlockState(pos.above()).is(BlockTags.CROPS)))
                 turnToDirt(null, state, level, pos);
-            }
-        } else if (i < 7) {
-            level.setBlock(pos, state.setValue(MOISTURE, 7), 2);
-        }
+        else if (i < 7) level.setBlock(pos, state.setValue(MOISTURE, 7), 2);
+
     }
 
 //    @Override //TODO: Figurae out

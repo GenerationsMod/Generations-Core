@@ -5,7 +5,7 @@ import generations.gg.generations.core.generationscore.api.data.curry.Flavor;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -131,22 +131,19 @@ public enum BerryType implements ICurryRarity {
     public static Flavor getDominantFlavor(BerryType... berries) {
         int[] output = new int[5];
 
-        for (var berryType : berries) {
-            for (int j = 0; j < 5; j++) {
+        for (var berryType : berries)
+            for (int j = 0; j < 5; j++)
                 output[j] += berryType.flavors[j];
-            }
-        }
 
         if (Arrays.stream(output).distinct().count() <= 1) return Flavor.NONE;
         int max = Integer.MIN_VALUE;
         int maxIndex = -1;
 
-        for (int i = 0; i < output.length; i++) {
+        for (int i = 0; i < output.length; i++)
             if (max < output[i]) {
                 max = output[i];
                 maxIndex = i;
             }
-        }
 
         return getFlavorFromBerryFlavorIndex(maxIndex);
     }
@@ -194,20 +191,20 @@ public enum BerryType implements ICurryRarity {
     }
 
     public enum EnumBerryColor {
-        RED(MaterialColor.COLOR_RED),
-        BLUE(MaterialColor.COLOR_BLUE),
-        PURPLE(MaterialColor.COLOR_PURPLE),
-        GREEN(MaterialColor.COLOR_GREEN),
-        YELLOW(MaterialColor.COLOR_YELLOW),
-        PINK(MaterialColor.COLOR_PINK);
+        RED(MapColor.COLOR_RED),
+        BLUE(MapColor.COLOR_BLUE),
+        PURPLE(MapColor.COLOR_PURPLE),
+        GREEN(MapColor.COLOR_GREEN),
+        YELLOW(MapColor.COLOR_YELLOW),
+        PINK(MapColor.COLOR_PINK);
 
-        private final MaterialColor color;
+        private final MapColor color;
 
-        EnumBerryColor(MaterialColor color) {
+        EnumBerryColor(MapColor color) {
             this.color = color;
         }
 
-        public MaterialColor getMaterialColor() {
+        public MapColor getMapColor() {
             return color;
         }
     }
