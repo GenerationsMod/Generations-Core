@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.client.model;
 
-import com.cobblemon.mod.common.client.entity.PokemonClientDelegate;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
@@ -10,24 +9,24 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Quaternionf;
 
 import java.util.Collections;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class BoneCreatorProxy implements Supplier<Bone>, Bone {
-    private final ResourceLocation location;
+public class RareCandyBone implements Supplier<Bone>, Bone {
+    private static final Quaternionf ROTATION_CORRECTION = Axis.YP.rotationDegrees(180);
     private final Supplier<CompiledModel> objectSupplier;
 
     private static final Map<String, Bone> DUMMY = Collections.emptyMap();
 
-    public BoneCreatorProxy(ResourceLocation location) {
-        this.location = location.withPrefix("bedrock/pokemon/models/");
+    public RareCandyBone(ResourceLocation location) {
+        ResourceLocation location1 = location.withPrefix("bedrock/pokemon/models/");
         objectSupplier = () -> ModelRegistry.get(location, "pixelmon");
     }
 
@@ -48,7 +47,7 @@ public class BoneCreatorProxy implements Supplier<Bone>, Bone {
 
             if(entity instanceof PokemonEntity pokemon) {
 
-                scale *= pokemon.getPokemon().getSpecies().getBaseScale();
+                scale *= pokemon.getPokemon().getSpecies().getHitbox().height; //TODO: Turn to actual height eventually.
 
                 if(model.renderObject.isReady()) {
                     var id = PokemonModelRepository.INSTANCE.getVariations().get(pokemon.getPokemon().getSpecies().getResourceIdentifier()).getResolvedTexture(pokemon.getPokemon().getAspects(), 0F);
@@ -58,6 +57,8 @@ public class BoneCreatorProxy implements Supplier<Bone>, Bone {
             }
 
             stack.pushPose();
+            stack.mulPose(ROTATION_CORRECTION);
+
             if(entity != null) {
                 stack.scale(-1, -1, 1);
                 stack.translate(0, -1.501, 0);

@@ -1,11 +1,11 @@
 {
-  "species": "cobblemon:charizard",
+  "species": "cobblemon:abomasnow",
   "order": 1,
   "variations": [
     {
       "aspects": [],
-      "poser": "generations_core:charizard",
-      "model": "generations_core:charizard.pk",
+      "poser": "generations_core:abomasnow",
+      "model": "generations_core:abomasnow.pk",
       "texture": "pk:normal"
     },
     {

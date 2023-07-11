@@ -11,7 +11,7 @@ import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsDataProvider;
-import generations.gg.generations.core.generationscore.client.model.BoneCreatorProxy;
+import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.client.model.RareCandyAnimationFactory;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
@@ -72,7 +72,7 @@ public class GenerationsCoreClient {
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
-        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new BoneCreatorProxy(resourceLocation)));
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new RareCandyBone(resourceLocation)));
 
 
         PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
