@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.screen.AbstractHierarchicalWidget;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
@@ -26,16 +27,15 @@ public class NodeListWidget extends AbstractHierarchicalWidget {
     }
 
     @Override
-    public void render(@NotNull PoseStack stack, int mouseX, int mouseY, float partialTick) {
+    public void render(@NotNull GuiGraphics stack, int mouseX, int mouseY, float partialTick) {
         super.render(stack, mouseX, mouseY, partialTick);
 
-        RenderSystem.setShader(GameRenderer::getPositionColorShader);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         ScreenUtils.drawRect(stack, getX(), getY(), getWidth(), getHeight(), 0xFF222222);
         ScreenUtils.drawCenteredString(stack, client.font, "Create a new Node", getX() + width / 2, getY() + 2, 0xFFFFFFFF, false);
 
         for (int i = 0; i < possibleNodes.size(); i++) {
-            client.font.draw(stack, possibleNodes.get(i), getX() + 2, getY() + 16 + i * 10, 0xFFFFFFFF);
+            stack.drawString(client.font, possibleNodes.get(i), getX() + 2, getY() + 16 + i * 10, 0xFFFFFFFF);
         }
 
         finishRendering(stack, mouseX, mouseY, partialTick);

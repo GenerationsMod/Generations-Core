@@ -11,6 +11,7 @@ import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
+import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
@@ -31,7 +32,7 @@ import java.util.concurrent.Executor
  */
 class GenerationsCoreFabric : ModInitializer, GenerationsImplementation {
     override fun onInitialize() {
-        GenerationsCore.init(this)
+        GenerationsCore.init(this, FabricLoader.getInstance().configDir)
         VanillaCompat.setup()
 
         ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register { player, isLogin ->

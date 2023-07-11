@@ -16,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -64,18 +65,20 @@ public class TieredFishingHookEntity extends FishingHook {
 
     public int retrieve(@NotNull ItemStack stack) {
         Player player = this.getPlayerOwner();
-        if (!this.level.isClientSide && player != null && !this.shouldStopFishing(player)) {
+        if (!this.level().isClientSide && player != null && !this.shouldStopFishing(player)) {
             int i = 0;
 //            ItemFishedEvent event = null;
             if (this.getHookedIn() != null) {
                 this.pullEntity(this.getHookedIn());
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, Collections.emptyList());
-                this.level.broadcastEntityEvent(this, (byte)31);
+                this.level().broadcastEntityEvent(this, (byte)31);
                 i = this.getHookedIn() instanceof ItemEntity ? 3 : 5;
             } else if (this.nibble > 0) {
-                LootContext.Builder lootcontext$builder = new LootContext.Builder((ServerLevel)this.level).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.TOOL, stack).withParameter(LootContextParams.THIS_ENTITY, this).withRandom(this.random).withLuck((float)this.luck + player.getLuck());
+                var lootcontext$builder = new LootParams.Builder((ServerLevel) this.level()).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.TOOL, stack).withParameter(LootContextParams.THIS_ENTITY, this);
                 lootcontext$builder.withParameter(LootContextParams.KILLER_ENTITY, this.getOwner()).withParameter(LootContextParams.THIS_ENTITY, this);
-                LootTable loottable = this.level.getServer().getLootTables().get(switch (tier){
+                lootcontext$builder.withLuck((float)this.luck + player.getLuck());
+
+                LootTable loottable = this.level().getServer().getLootData().getLootTable(switch (tier){
 //                    case OLD -> PokeModLootTables.FISHING_OLD;
 //                    case GOOD -> PokeModLootTables.FISHING_GOOD;
 //                    case SUPER -> PokeModLootTables.FISHING_SUPER;
@@ -91,20 +94,20 @@ public class TieredFishingHookEntity extends FishingHook {
 //                }
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, list);
                 for (ItemStack itemstack : list) {
-                    ItemEntity itementity = new ItemEntity(this.level, this.getX(), this.getY(), this.getZ(), itemstack);
+                    ItemEntity itementity = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), itemstack);
                     double d0 = player.getX() - this.getX();
                     double d1 = player.getY() - this.getY();
                     double d2 = player.getZ() - this.getZ();
                     double d3 = 0.1;
                     itementity.setDeltaMovement(d0 * 0.1, d1 * 0.1 + Math.sqrt(Math.sqrt(d0 * d0 + d1 * d1 + d2 * d2)) * 0.08, d2 * 0.1);
-                    this.level.addFreshEntity(itementity);
-                    player.level.addFreshEntity(new ExperienceOrb(player.level, player.getX(), player.getY() + 0.5, player.getZ() + 0.5, this.random.nextInt(6) + 1));
+                    this.level().addFreshEntity(itementity);
+                    player.level().addFreshEntity(new ExperienceOrb(player.level(), player.getX(), player.getY() + 0.5, player.getZ() + 0.5, this.random.nextInt(6) + 1));
                     if (!itemstack.is(ItemTags.FISHES)) continue;
                     player.awardStat(Stats.FISH_CAUGHT, 1);
                 }
                 i = 1;
             }
-            if (this.onGround) {
+            if (this.onGround()) {
                 i = 2;
             }
             this.discard();

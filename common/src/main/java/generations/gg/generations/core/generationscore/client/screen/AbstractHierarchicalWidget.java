@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.client.screen;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
@@ -26,7 +27,7 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
         this.parent = parent;
     }
 
-    public void finishRendering(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
+    public void finishRendering(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
         for (HierarchicalWidget child : getChildren()) {
             if (child instanceof Renderable rendererChild) rendererChild.render(poseStack, mouseX, mouseY, partialTick);
         }
@@ -43,7 +44,7 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
     }
 
     @Override
-    public void render(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
+    public void render(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
         super.render(poseStack, mouseX, mouseY, partialTick);
         if (this.visible) this.isHovered = isMouseOver(mouseX, mouseY);
     }
@@ -81,7 +82,7 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
     protected void updateWidgetNarration(@NotNull NarrationElementOutput narrationElementOutput) {}
 
     @Override
-    public void renderWidget(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTick) {}
+    public void renderWidget(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {}
 
     @Override
     public void onScreenClose(Screen screen) {

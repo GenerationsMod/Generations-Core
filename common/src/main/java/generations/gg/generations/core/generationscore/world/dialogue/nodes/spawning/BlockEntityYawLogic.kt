@@ -17,7 +17,7 @@ import java.util.function.Predicate
 @JvmRecord
 data class BlockEntityYawLogic(val blockEntity: ResourceKey<BlockEntityType<*>>) : YawLogic {
     override fun createSupplier(player: Player): FloatSupplier {
-        val world = player.getLevel()
+        val world = player.level()
         val optional =
             BlockPos.withinManhattanStream(player.onPos, 10, 10, 10).map { a -> world.getBlockEntity(a, blockEntity.value())
             }

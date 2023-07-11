@@ -16,7 +16,7 @@ private fun Level.getBlockEntity(it: BlockPos?, key: ResourceKey<BlockEntityType
 @JvmRecord
 data class BlockEntityLocationLogic(val key: ResourceKey<BlockEntityType<*>>) : LocationLogic {
     override fun createSupplier(player: Player): Supplier<Vec3> {
-        val world = player.getLevel()
+        val world = player.level()
         val pos = BlockPos.withinManhattanStream(player.onPos, 10, 10, 10)
             .filter { world.getBlockEntity(it, key.value()).isPresent }
             .findFirst().orElse(player.onPos).center

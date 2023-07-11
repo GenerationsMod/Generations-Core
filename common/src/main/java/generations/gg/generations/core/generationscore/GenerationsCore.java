@@ -69,7 +69,6 @@ public class GenerationsCore
 		GenerationsCore.implementation = implementation;
 		implementation.getNetworkManager().registerServerBound();
 		CONFIG_DIRECTORY = configDirectory;
-		GenerationsCore.cobblemon = cobblemon;
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
 		GenerationsBlocks.init();

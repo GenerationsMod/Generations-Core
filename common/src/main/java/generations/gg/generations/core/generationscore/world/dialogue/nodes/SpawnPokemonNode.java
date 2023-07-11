@@ -39,7 +39,7 @@ public class SpawnPokemonNode extends AbstractNode {
 
     @Override
     public void run(ServerPlayer serverPlayer, DialoguePlayer dialoguePlayer) {
-        var level = serverPlayer.getLevel();
+        var level = serverPlayer.level();
         PokemonUtil.spawn(data, level, pos.createSupplier(serverPlayer).get(), yaw.createSupplier(serverPlayer).getAsFloat());
     }
 

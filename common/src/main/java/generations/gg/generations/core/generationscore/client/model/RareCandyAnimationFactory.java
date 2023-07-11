@@ -68,7 +68,7 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
 
         @Override
         public boolean run(@Nullable PokemonEntity t, @NotNull PoseableEntityModel<PokemonEntity> poseableEntityModel, @NotNull PoseableEntityState<PokemonEntity> poseableEntityState, float v, float v1, float v2, float v3, float v4) {
-            secondsPassed += poseableEntityState.getDeltaSeconds();
+            secondsPassed += poseableEntityState.getAnimationSeconds();
 
             var instance = t != null ? ((PixelmonInstanceProvider) (LivingEntity) t).getInstance() : null;
             var animation = animationSuppler.get();
@@ -76,6 +76,11 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
             if(instance != null && animation != null) instance.matrixTransforms = animation.getFrameTransform(secondsPassed/animation_factor);
 
             return true;
+        }
+
+        @Override
+        public void applyEffects(@NotNull PokemonEntity pokemon, @NotNull PoseableEntityState<PokemonEntity> poseableEntityState, float v, float v1) {
+
         }
     }
 

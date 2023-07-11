@@ -99,10 +99,8 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<PokeLootBlock> BEAST_LOOT = registerLoot("beast");
 
 	private static RegistrySupplier<PokeLootBlock> registerLoot(String name) {
-		return registerBlockItem(name + "_loot", () -> new PokeLootBlock(name, BlockBehaviour.Properties.of(Material.METAL).strength(-1.0f, 3600000.0f)));
+		return registerBlockItem(name + "_loot", () -> new PokeLootBlock(name, BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(-1.0f, 3600000.0f)));
 	}
-
-	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of(Material.METAL).destroyTime(1.0f).sound(SoundType.METAL)));
 
 	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlockItem("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOD).ignitedByLava()));
 	public static final RegistrySupplier<GenericFurnaceBlock> CHARGE_STONE_FURNACE = registerBlockItem("charge_stone_furnace", () -> new GenericFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));

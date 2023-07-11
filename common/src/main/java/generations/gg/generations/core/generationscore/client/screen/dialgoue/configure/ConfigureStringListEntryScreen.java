@@ -1,16 +1,14 @@
 package generations.gg.generations.core.generationscore.client.screen.dialgoue.configure;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiComponent;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.font.TextFieldHelper;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
@@ -187,7 +185,7 @@ public class ConfigureStringListEntryScreen extends Screen {
     }
 
     @Override
-    public void render(@NotNull PoseStack stack, int mouseX, int mouseY, float partialTick) {
+    public void render(@NotNull GuiGraphics stack, int mouseX, int mouseY, float partialTick) {
         super.renderBackground(stack);
         super.render(stack, mouseX, mouseY, partialTick);
 
@@ -195,26 +193,24 @@ public class ConfigureStringListEntryScreen extends Screen {
             currentPage = pages.size() - 1;
         }
 
-        stack.pushPose();
+        stack.pose().pushPose();
         RenderSystem.enableBlend();
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1, 1, 1, 1F);
-        RenderSystem.setShaderTexture(0, GenerationsCore.id("textures/gui/battle/message_box.png"));
-        ScreenUtils.drawTexture(stack, width / 2 - 340 / 2, height - 84, 0, 0, 340, 80, 340, 80);
-        GuiComponent.enableScissor(width / 2 - (340 / 2), height - 84, width / 2 + (340 / 2), height - 6);
+        ScreenUtils.drawTexture(stack, GenerationsCore.id("textures/gui/battle/message_box.png"), width / 2 - 340 / 2, height - 84, 0, 0, 340, 80, 340, 80);
+        stack.enableScissor(width / 2 - (340 / 2), height - 84, width / 2 + (340 / 2), height - 6);
         var y = height - 69;
 
         for (int i = 0; i < displayCache.lines.size(); i++) {
             var rawString = displayCache.lines.get(i);
             var component = ScreenUtils.formatStringWithColorsToComponent(rawString);
             if (displayCache.cursor.y == i) component = ScreenUtils.formatEditableStringWithColorsToComponent(rawString, displayCache.cursor.x);
-            Minecraft.getInstance().font.draw(stack, component, width / 2f - 340 / 2f + 8, y, 0xFFFFFF);
+            stack.drawString(Minecraft.getInstance().font, component, width / 2 - 340 / 2 + 8, y, 0xFFFFFF);
             y += 10;
         }
 
-        GuiComponent.disableScissor();
+        stack.disableScissor();
         RenderSystem.disableBlend();
-        stack.popPose();
+        stack.pose().popPose();
     }
 
     @Override

@@ -10,6 +10,7 @@ import generations.gg.generations.core.generationscore.world.item.armor.effects.
 import generations.gg.generations.core.generationscore.world.item.armor.effects.SpeedModifier;
 import generations.gg.generations.core.generationscore.world.item.armor.effects.UnbreakableArmorEffect;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 
 import java.util.function.Function;
@@ -22,6 +23,11 @@ public class GenerationsArmor {
 	 */
 	public static final RegistrySupplier<Item> RUNNING_BOOTS = register("running_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.RUNNING, ArmorItem.Type.BOOTS, of()).addCustomAttributeModifier(new SpeedModifier(0.75F)).addArmorEffect(new RunningBootsArmorEffect()), CreativeModeTabs.COMBAT);
 	public static final RegistrySupplier<Item> OLD_RUNNING_BOOTS = register("old_running_boots", properties -> new GenerationsArmorItem(GenerationsArmorMaterials.OLD_RUNNING, ArmorItem.Type.BOOTS, of()).addCustomAttributeModifier(new SpeedModifier(0.5F)).addArmorEffect(new UnbreakableArmorEffect()).addArmorEffect(new RepairArmorEffect()), CreativeModeTabs.COMBAT);
+
+	public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function, ResourceKey<CreativeModeTab> tab) {
+		return ARMOR.register(name, () -> function.apply(of().arch$tab(tab)));
+	}
+
 	public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function, CreativeModeTab tab) {
 		return ARMOR.register(name, () -> function.apply(of().arch$tab(tab)));
 	}

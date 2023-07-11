@@ -7,7 +7,7 @@ import com.mojang.blaze3d.vertex.BufferBuilder;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.Tesselator;
 import com.mojang.blaze3d.vertex.VertexFormat;
-import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.C2SEditMailPacket;
 import generations.gg.generations.core.generationscore.world.item.MailItem;
 import it.unimi.dsi.fastutil.ints.IntArrayList;

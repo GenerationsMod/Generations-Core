@@ -1738,14 +1738,6 @@ public class GenerationsItems {
         return POKEBALLS.register(name, () -> itemSupplier.apply(of().arch$tab(GenerationsCreativeTabs.POKEBALLS)));
     }
 
-    public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> itemSupplier, CreativeTabRegistry.TabSupplier tab) {
-        return ITEMS.register(name, () -> {
-            var properties = of();
-            if(tab == null) properties.arch$tab(tab);
-            return itemSupplier.apply(properties);
-        });
-    }
-
     public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
         return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
     }
