@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:crystallized_boots"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

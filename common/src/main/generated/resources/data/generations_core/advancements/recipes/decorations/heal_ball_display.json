@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:heal_ball_display"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

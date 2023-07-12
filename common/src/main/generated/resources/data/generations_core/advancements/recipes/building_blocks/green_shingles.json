@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:green_shingles"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:absol",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:absol.pk",
+      "poser": "generations_core:absol",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "mega"
+      ],
+      "model": "generations_core:absol-mega.pk",
+      "poser": "generations_core:absol-mega",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "mega",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

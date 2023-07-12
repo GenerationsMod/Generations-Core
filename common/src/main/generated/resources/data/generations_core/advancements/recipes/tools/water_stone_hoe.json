@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:water_stone_hoe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

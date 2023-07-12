@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ice_pillar_top_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

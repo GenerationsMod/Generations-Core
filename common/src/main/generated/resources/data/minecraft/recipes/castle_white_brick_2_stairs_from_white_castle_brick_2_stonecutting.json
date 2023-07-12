@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:white_castle_brick_2"
-  },
-  "result": "generations_core:castle_white_brick_2_stairs"
-}

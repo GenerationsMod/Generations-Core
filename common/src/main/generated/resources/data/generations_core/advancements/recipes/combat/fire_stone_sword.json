@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:fire_stone_sword"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:magma_helmet"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ruby_pickaxe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

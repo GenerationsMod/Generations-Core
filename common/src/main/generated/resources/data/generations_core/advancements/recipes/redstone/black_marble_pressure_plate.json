@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:black_marble_pressure_plate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

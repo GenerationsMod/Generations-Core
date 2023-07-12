@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:floor_1"
-  },
-  "result": "generations_core:floor_1_wall"
-}

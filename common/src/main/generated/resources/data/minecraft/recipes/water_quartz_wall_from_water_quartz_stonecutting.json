@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:water_quartz"
-  },
-  "result": "generations_core:water_quartz_wall"
-}

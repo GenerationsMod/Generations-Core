@@ -41,5 +41,6 @@
     "recipes": [
       "minecraft:ghost_planks_from_other_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

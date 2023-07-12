@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:mossy_charge_stone_brick_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

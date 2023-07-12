@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:lapis_lazuli_from_smelting_charge_stone_lapis_lazuli_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

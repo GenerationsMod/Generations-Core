@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:light_gray_shingles"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

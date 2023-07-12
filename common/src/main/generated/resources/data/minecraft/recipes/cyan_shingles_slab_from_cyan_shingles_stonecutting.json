@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "generations_core:cyan_shingles"
-  },
-  "result": "generations_core:cyan_shingles_slab"
-}

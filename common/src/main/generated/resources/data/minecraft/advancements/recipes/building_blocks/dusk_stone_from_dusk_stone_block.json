@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:dusk_stone_from_dusk_stone_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

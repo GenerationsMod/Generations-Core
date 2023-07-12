@@ -28,5 +28,6 @@
     "recipes": [
       "generations_core:magenta_pokeball_rug_dyed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

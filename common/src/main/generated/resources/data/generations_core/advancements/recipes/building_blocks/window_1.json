@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:window_1"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

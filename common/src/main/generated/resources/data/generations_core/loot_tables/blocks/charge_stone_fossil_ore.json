@@ -79,5 +79,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "generations_core:blocks/charge_stone_fossil_ore"
 }

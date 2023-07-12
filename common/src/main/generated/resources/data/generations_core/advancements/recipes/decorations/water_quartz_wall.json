@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:water_quartz_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

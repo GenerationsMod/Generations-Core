@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:gray_cave_rock_floor"
-  },
-  "result": "generations_core:gray_cave_rock_floor_stairs"
-}

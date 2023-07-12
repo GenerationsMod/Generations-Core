@@ -16,5 +16,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "generations_core:blocks/orange_poke_brick_stairs"
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:cave_rock_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

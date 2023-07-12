@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:mossy_charge_cobblestone"
-  },
-  "result": "generations_core:mossy_charge_cobblestone_wall"
-}

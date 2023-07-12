@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:galactic_chestplate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:lime_healer"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

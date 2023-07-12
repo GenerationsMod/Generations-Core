@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.forge.datagen.cobblemon.PokemonModelsProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.GenerationsBlockStateProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.UltraBlockModelDataGen;
@@ -18,8 +19,11 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.apache.commons.lang3.function.TriFunction;
 
+import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
 
 /**
  * This class is used to register the data generators for the mod.
@@ -49,6 +53,52 @@ public class DataGeneratorsRegister {
                 FurnaceRecipeProvider::new));
         generator.addProvider(true, new LootTableDatagen(output));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, event.getLookupProvider(), Set.of(GenerationsCore.MOD_ID)));
+
+        generator.addProvider(true, new PokemonModelsProvider(output) {
+            @Override
+            public void buildResolvers(Consumer<Resolver> provider) {
+                mega(provider, "absol");
+            }
+
+            private void mega(Consumer<Resolver> provider, String name) {
+                TriFunction<String, Boolean, Boolean, Resolver.ModelAssetVariationBuilder> function = (name1, shiny, mega) -> {
+
+                    var builder = shiny ? shiny() : base();
+                    var id = GenerationsCore.id(name1 + (mega ? "-mega" : ""));
+
+                    if(!shiny) {
+                        builder.poser(id).model(id);
+                    }
+
+                    if(mega) {
+                        builder.aspect("mega");
+                    }
+
+                    return builder.variant(shiny ? "shiny" : "normal");
+                };
+
+                simple(GenerationsCore.id(name), 1)
+                        .variation(function.apply(name, false, false))
+                        .variation(function.apply(name, true, false))
+                        .variation(function.apply(name, false, true))
+                        .variation(function.apply(name, true, true))
+                        .register(provider);
+            }
+
+            @Override
+            public void buildPoser(Consumer<PoserBuilder> provider) {
+                megaResolver(provider, "absol");
+            }
+
+            private void megaResolver(Consumer<PoserBuilder> provider, String name) {
+                gensPoser(name).register(provider);
+                gensPoser(name + "-mega").register(provider);
+            }
+
+            public PoserBuilder gensPoser(String name) {
+                return poser(GenerationsCore.id(name)).standing().walking();
+            }
+        });
 
 //        generator.addProvider(true, new DialogueDataGen(event.getGenerator().getPackOutput()));
     }
