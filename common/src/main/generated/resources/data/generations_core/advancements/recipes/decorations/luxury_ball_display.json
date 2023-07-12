@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:luxury_ball_display"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

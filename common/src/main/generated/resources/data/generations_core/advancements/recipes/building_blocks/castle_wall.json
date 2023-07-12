@@ -52,5 +52,6 @@
     "recipes": [
       "generations_core:castle_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

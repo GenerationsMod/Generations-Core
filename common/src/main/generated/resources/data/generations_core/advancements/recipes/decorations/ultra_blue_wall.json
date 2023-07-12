@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ultra_blue_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

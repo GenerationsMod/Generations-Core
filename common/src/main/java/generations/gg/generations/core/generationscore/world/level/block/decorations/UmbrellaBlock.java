@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -135,18 +136,18 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
     }
 
     private void setLayer(Level level, Block block, BlockPos pos, Pole pole) {
-        var state = block.defaultBlockState().setValue(POLE, pole);
-        level.setBlock(pos, state.setValue(CARDINAL, PokeDollBlock.Cardinal.NONE), 2);
+        var state = createDefaultState().setValue(POLE, pole);
+        level.setBlock(pos, state.setValue(CARDINAL, PokeDollBlock.Cardinal.NONE).setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER), 2);
 
         if(pole != Pole.BASE) {
-            level.setBlock(pos = pos.north(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH), 2);
-            level.setBlock(pos = pos.east(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH_EAST), 2);
-            level.setBlock(pos = pos.south(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.EAST), 2);
-            level.setBlock(pos = pos.south(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH_EAST), 2);
-            level.setBlock(pos = pos.west(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH), 2);
-            level.setBlock(pos = pos.west(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH_WEST), 2);
-            level.setBlock(pos = pos.north(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.WEST), 2);
-            level.setBlock(pos.north(), state.setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH_WEST), 2);
+            level.setBlock(pos = pos.north(), state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH), 2);
+            level.setBlock(pos = pos.east(), state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH_EAST), 2);
+            level.setBlock(pos = pos.south(), state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(CARDINAL, PokeDollBlock.Cardinal.EAST), 2);
+            level.setBlock(pos = pos.south(), state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH_EAST), 2);
+            level.setBlock(pos = pos.west(), state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH), 2);
+            level.setBlock(pos = pos.west(), state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(CARDINAL, PokeDollBlock.Cardinal.SOUTH_WEST), 2);
+            level.setBlock(pos = pos.north(), state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(CARDINAL, PokeDollBlock.Cardinal.WEST), 2);
+            level.setBlock(pos.north(), state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(CARDINAL, PokeDollBlock.Cardinal.NORTH_WEST), 2);
         }
     }
 
@@ -171,7 +172,7 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
 
     @Override
     public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
-        if(canSurvive(state, level, currentPos)) return state;
+        if(canSurvive(state, level, currentPos)) return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
         else return Blocks.AIR.defaultBlockState();
     }
 
@@ -182,12 +183,12 @@ public class UmbrellaBlock extends DyeableBlock<GenericDyedVariantBlockEntity, U
 
     @Override
     protected void createBlockStateDefinition(@NotNull StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(CARDINAL, POLE);
+        builder.add(CARDINAL, POLE, WATERLOGGED);
     }
 
     @Override
     protected BlockState createDefaultState() {
-        return this.getStateDefinition().any()
+        return this.getStateDefinition().any().setValue(WATERLOGGED, false)
                 .setValue(CARDINAL, PokeDollBlock.Cardinal.NONE)
                 .setValue(POLE, Pole.BASE);
     }

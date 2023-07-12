@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:pokemart_sign"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

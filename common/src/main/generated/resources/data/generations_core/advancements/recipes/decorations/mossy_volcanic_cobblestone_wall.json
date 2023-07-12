@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:mossy_volcanic_cobblestone_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

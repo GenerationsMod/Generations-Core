@@ -5,7 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ClockBlockEntity extends DyedVariantBlockEntity implements ModelContextProviders.FrameProvider {
+public class ClockBlockEntity extends DyedVariantBlockEntity<ClockBlockEntity> implements ModelContextProviders.FrameProvider {
     public ClockBlockEntity(BlockPos arg2, BlockState arg3) {
         super(GenerationsBlockEntities.CLOCK.get(), arg2, arg3);
     }

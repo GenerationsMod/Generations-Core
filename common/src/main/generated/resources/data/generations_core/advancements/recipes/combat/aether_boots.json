@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:aether_boots"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

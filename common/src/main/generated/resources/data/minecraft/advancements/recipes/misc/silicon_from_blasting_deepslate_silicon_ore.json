@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:silicon_from_blasting_deepslate_silicon_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

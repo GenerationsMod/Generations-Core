@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:subway_floor_path"
-  },
-  "result": "generations_core:subway_floor_path_wall"
-}

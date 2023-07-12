@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:subway_floor_plain_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

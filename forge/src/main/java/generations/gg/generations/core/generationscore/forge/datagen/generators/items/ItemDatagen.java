@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items;
 
+import com.cobblemon.mod.common.api.types.ElementalTypes;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
@@ -1138,6 +1139,7 @@ public class ItemDatagen extends ItemModelProvider {
 
         createCurry();
         createImbuedFlute();
+        createTm();
 
         createItem(GenerationsItems.TUMBLESTONE, "tumblestone/");
         createItem(GenerationsItems.BLACK_TUMBLESTONE, "tumblestone/");
@@ -1196,39 +1198,39 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GHOST_SIGN, "blocks/sign/");
         createItem(GenerationsItems.GHOST_HANGING_SIGN, "blocks/sign/");
 
-        createItem(GenerationsItems.MUSIC_DISC_BEAST_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_CHERISH_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_DIVE_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_DREAM_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_DUSK_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_FAST_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_FEATHER, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_FRIEND_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_GREAT_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_GS_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_HEAL_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_HEAVY_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_LEADEN_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_LEVEL_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_LOVE_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_LURE_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_LUXURY_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_MASTER_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_MOON_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_NEST_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_NET_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_OLD_POKEBALL_DISC, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_ORIGIN_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_PARK_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_POKE_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_PREMIER_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_QUICK_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_REPEAT_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_SAFARI_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_SPORT_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_STRANGE_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_TIMER_BALL, "discs/");
-        createItem(GenerationsItems.MUSIC_DISC_ULTRA_BALL, "discs/");
+        createItem(GenerationsItems.AZALEA_TOWN_DISC, "discs/");
+        createItem(GenerationsItems.CASCARRAFA_CITY_DISC, "discs/");
+        createItem(GenerationsItems.CERULEAN_CITY_DISC, "discs/");
+        createItem(GenerationsItems.ETERNA_CITY_DISC, "discs/");
+        createItem(GenerationsItems.GOLDENROD_CITY_DISC, "discs/");
+        createItem(GenerationsItems.ICIRRUS_CITY_DISC, "discs/");
+        createItem(GenerationsItems.JUBILIFE_VILLAGE_DISC, "discs/");
+        createItem(GenerationsItems.LAKE_OF_RAGE_DISC, "discs/");
+        createItem(GenerationsItems.LAVERRE_CITY_DISC, "discs/");
+        createItem(GenerationsItems.LILLIE_DISC, "discs/");
+        createItem(GenerationsItems.POKEMON_CENTER_DISC, "discs/");
+        createItem(GenerationsItems.ROUTE_228_DISC, "discs/");
+        createItem(GenerationsItems.SLUMBERING_WEALD_DISC, "discs/");
+        createItem(GenerationsItems.SURF_DISC, "discs/");
+        createItem(GenerationsItems.VERMILION_CITY_DISC, "discs/");
+        createItem(GenerationsItems.CYNTHIA_DISC, "discs/");
+        createItem(GenerationsItems.DEOXYS_DISC, "discs/");
+        createItem(GenerationsItems.IRIS_DISC, "discs/");
+        createItem(GenerationsItems.KANTO_DISC, "discs/");
+        createItem(GenerationsItems.LUSAMINE_DISC, "discs/");
+        createItem(GenerationsItems.NEMONA_DISC, "discs/");
+        createItem(GenerationsItems.NESSA_DISC, "discs/");
+        createItem(GenerationsItems.PENNY_DISC, "discs/");
+        createItem(GenerationsItems.RIVAL_DISC, "discs/");
+        createItem(GenerationsItems.SADA_AND_TURO_DISC, "discs/");
+        createItem(GenerationsItems.SOUTH_PROVINCE_DISC, "discs/");
+        createItem(GenerationsItems.TEAM_ROCKET_DISC, "discs/");
+        createItem(GenerationsItems.ULTRA_NECROZMA_DISC, "discs/");
+        createItem(GenerationsItems.XY_LEGENDARY_DISC, "discs/");
+        createItem(GenerationsItems.ZINNIA_DISC, "discs/");
+        createItem(GenerationsItems.LAVENDER_TOWN_DISC, "discs/");
+        createItem(GenerationsItems.LUGIA_DISC, "discs/");
+        createItem(GenerationsItems.MT_PYRE_DISC, "discs/");
 
         createItem(GenerationsItems.POKE_WALKMON, "utility_items/");
         createItem(GenerationsItems.GREAT_WALKMON, "utility_items/");
@@ -1273,12 +1275,40 @@ public class ItemDatagen extends ItemModelProvider {
         }
     }
 
+    private void createTm() {
+        ItemModelBuilder model = generated(GenerationsItems.TM.getId().getPath(), GenerationsCore.id("item/tms/tm_normal"));
+
+        BiConsumer<String, Float> consumer = (name, i) -> {
+            ItemModelBuilder typeModel = generated("item/tms/tm_" + name, GenerationsCore.id("item/tms/tm_" + name));
+            model.override().model(typeModel).predicate(GenerationsCore.id("type"), i).end();
+        };
+
+        consumer.accept("normal", 0.00f);
+        consumer.accept("fire", 0.01f);
+        consumer.accept("water", 0.02f);
+        consumer.accept("grass", 0.03f);
+        consumer.accept("electric", 0.04f);
+        consumer.accept("ice", 0.05f);
+        consumer.accept("fighting", 0.06f);
+        consumer.accept("poison", 0.07f);
+        consumer.accept("ground", 0.08f);
+        consumer.accept("flying", 0.09f);
+        consumer.accept("psychic", 0.10f);
+        consumer.accept("bug", 0.1f);
+        consumer.accept("rock", 0.12f);
+        consumer.accept("ghost", 0.13f);
+        consumer.accept("dragon", 0.14f);
+        consumer.accept("dark", 0.15f);
+        consumer.accept("steel", 0.16f);
+        consumer.accept("fairy", 0.17f);
+    }
+
     private void createImbuedFlute() {
         ItemModelBuilder model = createItem(GenerationsItems.MELODY_FLUTE, "legend_items/");
 
         BiConsumer<String, Float> consumer = (name, i) -> {
             ItemModelBuilder typeModel = generated("item/flute/" + name + "_flute", GenerationsCore.id("item/flute/" + name + "_flute"));
-            model.override().model(typeModel).predicate(GenerationsCore.id("flute_type"), i).end();
+            model.override().model(typeModel).predicate(GenerationsCore.id("flute_type"), i/8f).end();
         };
 
         consumer.accept("basic", 0f);

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:volcanic_stone_axe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

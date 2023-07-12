@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:empty_ball_display"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -39,5 +39,6 @@
     "recipes": [
       "generations_core:castle_floor"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

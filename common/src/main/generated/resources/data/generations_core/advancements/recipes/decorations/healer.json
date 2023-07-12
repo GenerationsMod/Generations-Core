@@ -32,5 +32,6 @@
     "recipes": [
       "generations_core:healer"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

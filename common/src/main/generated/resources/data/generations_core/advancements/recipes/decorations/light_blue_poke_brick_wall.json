@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:light_blue_poke_brick_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

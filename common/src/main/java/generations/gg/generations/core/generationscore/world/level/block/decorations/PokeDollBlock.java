@@ -53,7 +53,7 @@ public class PokeDollBlock extends GenericModelBlock<PokeDollBlockEntity> {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(CARDINAL);
+        builder.add(CARDINAL).add(WATERLOGGED);
     }
 
     @Override

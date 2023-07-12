@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:trade_panel"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:sapphire_pickaxe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

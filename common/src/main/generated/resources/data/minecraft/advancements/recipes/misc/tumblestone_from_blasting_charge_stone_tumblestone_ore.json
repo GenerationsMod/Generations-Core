@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:tumblestone_from_blasting_charge_stone_tumblestone_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

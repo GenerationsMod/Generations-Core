@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:lime_shingles"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

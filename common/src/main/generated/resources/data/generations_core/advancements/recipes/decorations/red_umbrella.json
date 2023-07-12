@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:red_umbrella"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

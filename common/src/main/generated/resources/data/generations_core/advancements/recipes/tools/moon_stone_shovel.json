@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:moon_stone_shovel"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

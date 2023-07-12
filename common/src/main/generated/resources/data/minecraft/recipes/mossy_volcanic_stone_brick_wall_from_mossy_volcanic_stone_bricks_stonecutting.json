@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:mossy_volcanic_stone_bricks"
-  },
-  "result": "generations_core:mossy_volcanic_stone_brick_wall"
-}

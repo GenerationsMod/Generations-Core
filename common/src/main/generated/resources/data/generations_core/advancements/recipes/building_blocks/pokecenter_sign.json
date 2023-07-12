@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:pokecenter_sign"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

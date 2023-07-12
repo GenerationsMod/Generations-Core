@@ -56,5 +56,6 @@
     "recipes": [
       "generations_core:window_2"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

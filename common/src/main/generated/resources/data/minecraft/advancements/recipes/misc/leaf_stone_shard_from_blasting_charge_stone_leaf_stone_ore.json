@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:leaf_stone_shard_from_blasting_charge_stone_leaf_stone_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,0 +1,116 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "generations_core:item/tms/tm_normal",
+      "predicate": {
+        "generations_core:type": 0.0
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_fire",
+      "predicate": {
+        "generations_core:type": 0.01
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_water",
+      "predicate": {
+        "generations_core:type": 0.02
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_grass",
+      "predicate": {
+        "generations_core:type": 0.03
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_electric",
+      "predicate": {
+        "generations_core:type": 0.04
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_ice",
+      "predicate": {
+        "generations_core:type": 0.05
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_fighting",
+      "predicate": {
+        "generations_core:type": 0.06
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_poison",
+      "predicate": {
+        "generations_core:type": 0.07
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_ground",
+      "predicate": {
+        "generations_core:type": 0.08
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_flying",
+      "predicate": {
+        "generations_core:type": 0.09
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_psychic",
+      "predicate": {
+        "generations_core:type": 0.1
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_bug",
+      "predicate": {
+        "generations_core:type": 0.1
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_rock",
+      "predicate": {
+        "generations_core:type": 0.12
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_ghost",
+      "predicate": {
+        "generations_core:type": 0.13
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_dragon",
+      "predicate": {
+        "generations_core:type": 0.14
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_dark",
+      "predicate": {
+        "generations_core:type": 0.15
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_steel",
+      "predicate": {
+        "generations_core:type": 0.16
+      }
+    },
+    {
+      "model": "generations_core:item/tms/tm_fairy",
+      "predicate": {
+        "generations_core:type": 0.17
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "generations_core:item/tms/tm_normal"
+  }
+}

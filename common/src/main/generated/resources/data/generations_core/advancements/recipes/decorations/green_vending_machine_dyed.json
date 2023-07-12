@@ -28,5 +28,6 @@
     "recipes": [
       "generations_core:green_vending_machine_dyed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

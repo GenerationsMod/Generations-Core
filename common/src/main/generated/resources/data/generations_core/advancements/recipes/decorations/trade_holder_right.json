@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:trade_holder_right"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

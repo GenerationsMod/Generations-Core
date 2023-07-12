@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:cobble_ruins_1_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

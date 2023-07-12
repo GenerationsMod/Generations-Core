@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ghost_crafting_table"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

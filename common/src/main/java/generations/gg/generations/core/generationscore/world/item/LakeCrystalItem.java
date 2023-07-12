@@ -1,6 +1,10 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.types.ElementalTypes;
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
+import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -11,27 +15,24 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class LakeCrystalItem extends Item implements PostBattleUpdatingItem {
+import java.util.stream.Stream;
 
-    private final ResourceLocation speciesId;
+public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdatingItem {
+
+    private final String speciesId;
 
     public LakeCrystalItem(Properties properties, String speciesId) {
         super(properties);
-        this.speciesId = GenerationsCore.id(speciesId);
-    }
-
-    @Override
-    public boolean isFoil(@NotNull ItemStack stack) {
-        return isEnchanted(stack);
+        this.speciesId = speciesId;
     }
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
-        if(!level.isClientSide()) {
+        if (!level.isClientSide()) {
             ItemStack stack = player.getItemInHand(usedHand);
 
-            if(!isEnchanted(stack) && stack.getDamageValue() >= getMaxDamage()) {
-//                level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(speciesId), player.getOnPos()));
+            if (!isEnchanted(stack) && stack.getDamageValue() >= getMaxDamage()) {
+                PokemonUtil.spawn(speciesId, level, player.getOnPos());
                 stack.getOrCreateTag().putBoolean("enchanted", true);
                 return InteractionResultHolder.success(stack);
             }
@@ -40,19 +41,8 @@ public class LakeCrystalItem extends Item implements PostBattleUpdatingItem {
         return super.use(level, player, usedHand);
     }
 
-//    @Override
-//    public boolean isDamageable(ItemStack stack) {
-//        return stack != null && !isEnchanted(stack);
-//    }
-
-    public static boolean isEnchanted(ItemStack stack) {
-        return stack.getOrCreateTag().getBoolean("enchanted");
-    }
-
     @Override
-    public void onBattleFinish(ServerPlayer player, ItemStack stack/*, Battle<BattleController> battle*/) {
-//        var participant = battle.controller.getParticipant(player).orElseThrow();
-        //TODO: Water
-        //return !isEnchanted(stack) && pixelmonData.data().getFirst().getElements().contains(ElementType.PSYCHIC);
+    public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
+        return !isEnchanted(stack) && Streams.stream(pixelmonData.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getPSYCHIC()));
     }
 }

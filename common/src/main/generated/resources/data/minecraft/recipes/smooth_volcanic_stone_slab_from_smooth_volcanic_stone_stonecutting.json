@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "generations_core:smooth_volcanic_stone"
-  },
-  "result": "generations_core:smooth_volcanic_stone_slab"
-}

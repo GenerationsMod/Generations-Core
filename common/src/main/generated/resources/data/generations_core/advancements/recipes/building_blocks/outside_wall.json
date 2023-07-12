@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:outside_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

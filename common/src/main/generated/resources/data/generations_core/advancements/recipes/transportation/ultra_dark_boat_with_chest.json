@@ -28,5 +28,6 @@
     "recipes": [
       "generations_core:ultra_dark_boat_with_chest"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

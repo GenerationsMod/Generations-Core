@@ -32,5 +32,6 @@
     "recipes": [
       "generations_core:pc"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

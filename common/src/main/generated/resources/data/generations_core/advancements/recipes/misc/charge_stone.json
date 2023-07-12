@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:charge_stone"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

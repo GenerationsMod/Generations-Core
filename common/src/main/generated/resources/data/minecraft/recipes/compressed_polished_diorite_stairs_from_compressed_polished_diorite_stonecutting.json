@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:compressed_polished_diorite"
-  },
-  "result": "generations_core:compressed_polished_diorite_stairs"
-}

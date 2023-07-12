@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:thunder_stone_helmet"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

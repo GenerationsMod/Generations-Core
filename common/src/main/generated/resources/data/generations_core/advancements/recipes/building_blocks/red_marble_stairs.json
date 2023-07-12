@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:red_marble_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

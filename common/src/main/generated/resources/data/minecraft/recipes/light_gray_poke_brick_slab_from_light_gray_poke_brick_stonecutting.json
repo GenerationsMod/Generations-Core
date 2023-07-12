@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "generations_core:light_gray_poke_brick"
-  },
-  "result": "generations_core:light_gray_poke_brick_slab"
-}

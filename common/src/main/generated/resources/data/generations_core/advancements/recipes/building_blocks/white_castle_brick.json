@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:white_castle_brick"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

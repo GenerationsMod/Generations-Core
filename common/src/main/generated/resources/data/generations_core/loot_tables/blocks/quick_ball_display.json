@@ -31,5 +31,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "generations_core:blocks/quick_ball_display"
 }

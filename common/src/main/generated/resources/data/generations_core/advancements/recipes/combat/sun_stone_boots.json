@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:sun_stone_boots"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

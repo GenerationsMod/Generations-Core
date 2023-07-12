@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:ice_stone_shard_from_blasting_ice_stone_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

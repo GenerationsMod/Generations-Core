@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:water_stone_from_water_stone_shard"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

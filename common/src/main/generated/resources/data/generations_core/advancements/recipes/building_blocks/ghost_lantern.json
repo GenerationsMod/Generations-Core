@@ -56,5 +56,6 @@
     "recipes": [
       "generations_core:ghost_lantern"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

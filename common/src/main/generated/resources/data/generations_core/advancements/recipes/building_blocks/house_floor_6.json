@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:house_floor_6"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

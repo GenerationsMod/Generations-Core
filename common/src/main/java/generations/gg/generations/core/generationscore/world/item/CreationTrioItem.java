@@ -5,10 +5,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
 public class CreationTrioItem extends Item implements ModelContextProviders.ModelProvider {
-    private final ResourceLocation speciesId;
+    private final String speciesId;
     private final ResourceLocation model;
 
-    public CreationTrioItem(Properties properties, ResourceLocation speciesId, ResourceLocation model) {
+    public CreationTrioItem(Properties properties, String speciesId, ResourceLocation model) {
         super(properties);
         this.speciesId = speciesId;
         this.model = model;
@@ -19,7 +19,7 @@ public class CreationTrioItem extends Item implements ModelContextProviders.Mode
         return model;
     }
 
-    public ResourceLocation getSpeciesId() {
+    public String getSpeciesId() {
         return speciesId;
     }
 }

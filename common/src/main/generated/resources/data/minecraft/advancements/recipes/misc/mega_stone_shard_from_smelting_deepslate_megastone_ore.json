@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:mega_stone_shard_from_smelting_deepslate_megastone_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

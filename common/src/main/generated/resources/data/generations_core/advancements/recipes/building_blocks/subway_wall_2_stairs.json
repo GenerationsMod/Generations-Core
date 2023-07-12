@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:subway_wall_2_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

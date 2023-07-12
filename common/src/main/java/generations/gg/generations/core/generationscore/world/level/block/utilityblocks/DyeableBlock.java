@@ -4,8 +4,10 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -24,7 +26,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 @SuppressWarnings("deprecation")
-public abstract class DyeableBlock<T extends DyedVariantBlockEntity, V extends DyeableBlock<T, V>> extends GenericRotatableModelBlock<T> {
+public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> extends GenericRotatableModelBlock<T> {
     private final Function<DyeColor, DyedBlockItem<V>> function;
 
     public DyeableBlock(Function<DyeColor, DyedBlockItem<V>> function, RegistrySupplier<BlockEntityType<T>> biFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, Properties arg, ResourceLocation model, int width, int height, int length) {
@@ -104,5 +106,10 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity, V extends D
         }
 
         super.onRemove(state, level, pos, newState, isMoving);
+    }
+
+    @Override
+    public void spawnAfterBreak(BlockState state, ServerLevel level, BlockPos pos, ItemStack stack, boolean dropExperience) {
+        super.spawnAfterBreak(state, level, pos, stack, dropExperience);
     }
 }

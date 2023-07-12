@@ -28,5 +28,6 @@
     "recipes": [
       "generations_core:lime_clock_dyed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

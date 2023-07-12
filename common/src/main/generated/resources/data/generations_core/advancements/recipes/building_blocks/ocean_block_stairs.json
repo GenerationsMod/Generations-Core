@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ocean_block_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

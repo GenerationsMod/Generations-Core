@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "generations_core:red_marble"
-  },
-  "result": "generations_core:red_marble_slab"
-}

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:gray_marble_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:lime_poke_brick"
-  },
-  "result": "generations_core:lime_poke_brick_stairs"
-}

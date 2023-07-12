@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:ghost_pillar_top"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

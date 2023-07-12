@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -12,16 +14,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.function.BiPredicate;
-
 public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdatingItem {
-    private final ResourceLocation speciesId;
+    private final String speciesId;
     private final String lang;
-    private final BiPredicate<ServerPlayer, ItemStack/*, Battle<BattleController>*/> predicate; //TODO: Turn into TriPredicate when we integrate battle
+    private final TriPredicate<PlayerBattleActor, ItemStack, BattleData> predicate;
 
-    public PostBattleUpdatingItemImpl(Properties settings, String speciesId, String lang, BiPredicate<ServerPlayer, ItemStack/*, Battle<BattleController>*/> predicate) {
+    public PostBattleUpdatingItemImpl(Properties settings, String speciesId, String lang, TriPredicate<PlayerBattleActor, ItemStack, BattleData> predicate) {
         super(settings);
-        this.speciesId = GenerationsCore.id(speciesId);
+        this.speciesId = speciesId;
         this.lang = lang;
         this.predicate = predicate;
     }
@@ -35,7 +35,7 @@ public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdati
 
             if (damage >= getMaxDamage()) {
                 stack.shrink(1);
-//                level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(speciesId), player.getOnPos(), (int) player.getYHeadRot()));
+                PokemonUtil.spawn(speciesId, level, player.getOnPos());
                 postSpawn(level, player, usedHand);
             } else {
                 player.displayClientMessage(Component.translatable(lang, getMaxDamage() - damage), true);
@@ -51,7 +51,7 @@ public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdati
     }
 
     @Override
-    public void onBattleFinish(ServerPlayer player, ItemStack stack/*, Battle<BattleController> battle*/) {
-        if (predicate.test(player, stack/*, battle*/)) addDamage(stack, 1);
+    public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
+        return predicate.test(player, stack, pixelmonData);
     }
 }

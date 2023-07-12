@@ -1,0 +1,21 @@
+{
+  "root": {
+    "type": "say",
+    "next": {
+      "type": "choose",
+      "Tapu Koko": {
+        "type": "spawn_pokemon",
+        "data": "charizard",
+        "location": {
+          "type": "block_entity",
+          "entry": "generations_core:tapu_shrine"
+        },
+        "yaw": {
+          "type": "block_entity",
+          "entry": "generations_core:tapu_shrine"
+        }
+      }
+    },
+    "question": "Choose which Tapu to Spawn:"
+  }
+}

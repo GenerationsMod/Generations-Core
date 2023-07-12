@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:diamond_from_smelting_charge_stone_diamond_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

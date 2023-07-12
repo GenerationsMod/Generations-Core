@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:bleach_stone_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

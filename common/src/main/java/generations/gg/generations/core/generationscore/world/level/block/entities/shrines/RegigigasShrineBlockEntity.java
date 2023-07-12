@@ -4,10 +4,12 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.RegiOrbItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
@@ -39,13 +41,18 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
 
         if (stack.getItem() instanceof RegiOrbItem item && !handler.contains(item)) {
             player.setItemInHand(hand, handler.insertItem(OptionalInt.of(getRegiOrbIndex(item)).getAsInt(), stack, false));
+
+            System.out.println(handler.getItems());
+
             if (handler.isFull()) {
                 toggleActive();
-//              level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(BuiltinPixelmonSpecies.REGIGIGAS.location()), getBlockPos())); TODO: enable
+                PokemonUtil.spawn("regigigas", level, getBlockPos());
                 handler.clear();
                 toggleActive();
-                sync();
             }
+
+            sync();
+
             return true;
         } else
             for (int i = 0; i < 5; i++)
@@ -58,12 +65,12 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
     }
 
     public static int getRegiOrbIndex(RegiOrbItem item) {
-        return switch (item.getSpeciesId().toString()) {
-            case "generations_core:regice" -> 0;
-            case "generations_core:regirock" -> 1;
-            case "generations_core:registeel" -> 2;
-            case "generations_core:regidrago" -> 3;
-            case "generations_core:regieleki" -> 4;
+        return switch (item.getSpeciesId()) {
+            case "regice" -> 0;
+            case "regirock" -> 1;
+            case "registeel" -> 2;
+            case "regidrago" -> 3;
+            case "regieleki" -> 4;
             default -> -1;
         };
     }
@@ -86,8 +93,11 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            if(stack.getItem() instanceof RegiOrbItem orb)
-                return getItems().stream().map(ItemStack::getItem).filter(RegiOrbItem.class::isInstance).map(RegiOrbItem.class::cast).map(RegiOrbItem::getSpeciesId).noneMatch(a -> a.equals(orb.getSpeciesId()));
+            if(stack.getItem() instanceof RegiOrbItem orb) {
+                Optional<RegiOrbItem> regiOrbItem = getRegiItem(slot).filter(regiOrb -> regiOrb.equals(orb));
+
+                if (regiOrbItem.isPresent()) return regiOrbItem.get().equals(orb);
+            }
 
             return false;
         }
@@ -108,5 +118,10 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
         public boolean contains(Item item) {
             return getItems().stream().anyMatch(stack -> stack.is(item));
         }
+    }
+
+    @Override
+    public @NotNull CompoundTag getUpdateTag() {
+        return getContainer().serialize(super.getUpdateTag());
     }
 }

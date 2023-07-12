@@ -9,11 +9,6 @@ val minecraftVersion = project.properties["minecraft_version"] as String
 
 sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 
-repositories {
-    maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-    maven("https://maven.bai.lol")
-}
-
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
@@ -33,6 +28,7 @@ dependencies {
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 
     //Cobblemon
+    implementation(kotlin("stdlib-jdk8"))
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
 }
 

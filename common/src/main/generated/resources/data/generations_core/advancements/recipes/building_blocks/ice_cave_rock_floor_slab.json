@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ice_cave_rock_floor_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

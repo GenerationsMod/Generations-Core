@@ -8,15 +8,18 @@
 
 package generations.gg.generations.core.generationscore;
 
+import com.cobblemon.mod.common.api.data.DataProvider;
 import com.mojang.logging.LogUtils;
+import dev.architectury.event.EventResult;
+import dev.architectury.event.events.common.InteractionEvent;
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.network.GenerationsNetworking;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.world.item.PixelmonInteractions;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
@@ -24,6 +27,10 @@ import generations.gg.generations.core.generationscore.world.sound.GenerationsSo
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import org.jetbrains.annotations.NotNull;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import org.slf4j.Logger;
 
 import java.nio.file.Path;
@@ -47,9 +54,9 @@ public class GenerationsCore
 
 	/** The config for the Generations-Core mod. */
 	public static Config CONFIG;
+	public static GenerationsImplementation implementation;
 
-	/** Cobblemon Detection **/
-	public static boolean cobblemon = false;
+	public static DataProvider dataProvider = GenerationsDataProvider.INSTANCE;
 
 	/** Config Directory **/
 	public static Path CONFIG_DIRECTORY;
@@ -58,9 +65,10 @@ public class GenerationsCore
 	 * Initializes the Generations-Core mod.
 	 * @param configDirectory The config directory for the Generations-Core mod.
 	 */
-	public static void init(boolean cobblemon, @NotNull Path configDirectory) {
+	public static void init(GenerationsImplementation implementation, @NotNull Path configDirectory) {
+		GenerationsCore.implementation = implementation;
+		implementation.getNetworkManager().registerServerBound();
 		CONFIG_DIRECTORY = configDirectory;
-		GenerationsCore.cobblemon = cobblemon;
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();
 		GenerationsBlocks.init();
@@ -77,9 +85,18 @@ public class GenerationsCore
 		GenerationsTools.init();
 		GenerationsPaintings.init();
 		GenerationsContainers.init();
-		GenerationsNetworking.init();
 
-		CONFIG = ConfigLoader.loaderConfig(Config.class, "core", "main");
+		GenerationsDataProvider.INSTANCE.registerDefaults();
+
+		CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "main");
+
+		CobblemonEvents.init();
+		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {
+			var stack = player.getItemInHand(hand);
+			var result = PixelmonInteractions.process(entity, player, stack);
+			if(result.interruptsFurtherEvaluation() && stack.getItem() instanceof PixelmonInteractions.PixelmonInteraction interaction && interaction.isConsumed()) stack.shrink(1);
+			return result;
+		});
 	}
 
 	/**
@@ -87,5 +104,13 @@ public class GenerationsCore
 	 */
 	public static ResourceLocation id(String path) {
 		return new ResourceLocation(MOD_ID, path);
+	}
+
+	public static GenerationsImplementation getImplementation() {
+		return implementation;
+	}
+
+	public static void setImplementation(GenerationsImplementation implementation) {
+		GenerationsCore.implementation = implementation;
 	}
 }

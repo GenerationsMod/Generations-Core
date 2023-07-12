@@ -16,5 +16,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "generations_core:blocks/volcanic_stone_brick_stairs"
 }

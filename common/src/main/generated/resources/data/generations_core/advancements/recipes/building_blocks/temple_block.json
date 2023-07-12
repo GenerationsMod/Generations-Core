@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:temple_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

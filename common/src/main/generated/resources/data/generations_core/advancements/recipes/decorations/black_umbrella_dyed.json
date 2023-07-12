@@ -28,5 +28,6 @@
     "recipes": [
       "generations_core:black_umbrella_dyed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

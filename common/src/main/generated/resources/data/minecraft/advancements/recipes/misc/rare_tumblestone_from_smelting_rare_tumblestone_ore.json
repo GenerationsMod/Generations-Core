@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:rare_tumblestone_from_smelting_rare_tumblestone_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

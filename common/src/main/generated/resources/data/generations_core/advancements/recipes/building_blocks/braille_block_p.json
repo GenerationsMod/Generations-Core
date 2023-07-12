@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:braille_block_p"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

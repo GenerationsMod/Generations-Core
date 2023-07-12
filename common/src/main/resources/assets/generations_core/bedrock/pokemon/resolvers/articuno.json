@@ -1,0 +1,38 @@
+{
+  "species": "cobblemon:articuno",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "generations_core:articuno",
+      "model": "generations_core:articuno.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": ["galarian"],
+      "poser": "generations_core:articuno-galarian",
+      "model": "generations_core:articuno-galarian.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny", "galarian"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "special-halloween"
+      ],
+      "texture": "pk:halloween"
+    }
+  ]
+}

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:crystal_from_smelting_deepslate_crystal_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

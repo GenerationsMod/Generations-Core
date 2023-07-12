@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:sun_stone_shard_from_smelting_deepslate_sun_stone_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

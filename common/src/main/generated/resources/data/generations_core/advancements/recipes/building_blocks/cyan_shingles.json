@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:cyan_shingles"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
