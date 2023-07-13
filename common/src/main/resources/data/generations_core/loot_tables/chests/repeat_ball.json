@@ -123,7 +123,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revive"
+				"name": "cobblemon:revive"
 			},
 			{
 				"type": "minecraft:item",

@@ -23,7 +23,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:health_feather"
+				"name": "cobblemon:health_feather"
 			},
 			{
 				"type": "minecraft:item",

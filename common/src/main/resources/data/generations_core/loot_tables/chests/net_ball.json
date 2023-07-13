@@ -51,7 +51,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:energy_root"
+				"name": "cobblemon:energy_root"
 			},
 			{
 				"type": "minecraft:item",
@@ -143,7 +143,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revival_herb"
+				"name": "cobblemon:revival_herb"
 			},
 			{
 				"type": "minecraft:item",
@@ -275,15 +275,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:jolly_mint"
+				"name": "cobblemon:jolly_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:naive_mint"
+				"name": "cobblemon:naive_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:modest_mint"
+				"name": "cobblemon:modest_mint"
 			},
 			{
 				"type": "minecraft:item",

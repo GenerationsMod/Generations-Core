@@ -287,15 +287,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lax_mint"
+				"name": "cobblemon:lax_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:timid_mint"
+				"name": "cobblemon:timid_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hasty_mint"
+				"name": "cobblemon:hasty_mint"
 			},
 			{
 				"type": "minecraft:item",

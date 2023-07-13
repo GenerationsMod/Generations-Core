@@ -63,7 +63,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:energy_root"
+				"name": "cobblemon:energy_root"
 			},
 			{
 				"type": "minecraft:item",

@@ -15,7 +15,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:berry_juice"
+				"name": "cobblemon:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -235,7 +235,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revival_herb"
+				"name": "cobblemon:revival_herb"
 			},
 			{
 				"type": "minecraft:item",

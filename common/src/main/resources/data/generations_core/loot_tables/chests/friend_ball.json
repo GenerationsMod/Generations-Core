@@ -147,7 +147,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -267,7 +267,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revival_herb"
+				"name": "cobblemon:revival_herb"
 			},
 			{
 				"type": "minecraft:item",

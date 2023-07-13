@@ -39,19 +39,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:clever_feather"
+				"name": "cobblemon:clever_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:genius_feather"
+				"name": "cobblemon:genius_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:health_feather"
+				"name": "cobblemon:health_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:muscle_feather"
+				"name": "cobblemon:muscle_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -59,7 +59,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:resist_feather"
+				"name": "cobblemon:resist_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,11 +171,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:energy_root"
+				"name": "cobblemon:energy_root"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -215,23 +215,23 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_d"
+				"name": "generations_core:pokemail_bridged"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_m"
+				"name": "generations_core:pokemail_bridgem"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_s"
+				"name": "generations_core:pokemail_bridges"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_t"
+				"name": "generations_core:pokemail_bridget"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_v"
+				"name": "generations_core:pokemail_bridgev"
 			},
 			{
 				"type": "minecraft:item",
@@ -247,7 +247,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leek"
+				"name": "cobblemon:leek"
 			},
 			{
 				"type": "minecraft:item",

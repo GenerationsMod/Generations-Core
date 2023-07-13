@@ -86,7 +86,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -134,7 +134,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:max_revive"
+				"name": "cobblemon:max_revive"
 			},
 			{
 				"type": "minecraft:item",
@@ -174,7 +174,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revive"
+				"name": "cobblemon:revive"
 			},
 			{
 				"type": "minecraft:item",

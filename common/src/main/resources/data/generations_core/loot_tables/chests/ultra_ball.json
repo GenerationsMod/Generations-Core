@@ -195,7 +195,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:max_revive"
+				"name": "cobblemon:max_revive"
 			},
 			{
 				"type": "minecraft:item",
@@ -227,7 +227,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pp_up"
+				"name": "cobblemon:pp_up"
 			},
 			{
 				"type": "minecraft:item",

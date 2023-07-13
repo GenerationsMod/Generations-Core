@@ -83,7 +83,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leek"
+				"name": "cobblemon:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -323,15 +323,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:relaxed_mint"
+				"name": "cobblemon:relaxed_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:impish_mint"
+				"name": "cobblemon:impish_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:gentle_mint"
+				"name": "cobblemon:gentle_mint"
 			},
 			{
 				"type": "minecraft:item",
