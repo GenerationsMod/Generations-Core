@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:white_clock"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

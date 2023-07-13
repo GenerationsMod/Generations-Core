@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ultra_magenta_slab_from_ultra_magenta_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_magenta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:ultra_magenta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ultra_magenta",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ultra_magenta_slab_from_ultra_magenta_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

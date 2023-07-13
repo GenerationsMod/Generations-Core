@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:golden_temple_smooth_sandstone_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

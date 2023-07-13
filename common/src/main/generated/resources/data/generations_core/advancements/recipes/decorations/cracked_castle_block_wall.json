@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:cracked_castle_block_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

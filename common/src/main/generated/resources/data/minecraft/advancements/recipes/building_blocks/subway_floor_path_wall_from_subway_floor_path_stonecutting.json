@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:subway_floor_path_wall_from_subway_floor_path_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:cobble_ruins_4_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

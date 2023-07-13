@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:bleach_stone_stairs_from_bleach_stone_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

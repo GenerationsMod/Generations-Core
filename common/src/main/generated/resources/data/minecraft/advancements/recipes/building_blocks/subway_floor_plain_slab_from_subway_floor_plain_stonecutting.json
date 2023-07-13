@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:subway_floor_plain_slab_from_subway_floor_plain_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

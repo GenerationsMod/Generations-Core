@@ -12,14 +12,17 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.packs.VanillaRecipeProvider;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
@@ -1289,11 +1292,18 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
     }*/
 
     protected void generateForEnabledBlockFamilies(@NotNull Consumer<FinishedRecipe> consumer) {
-        GenerationsBlockFamilies.getAllFamilies().forEach(arg -> generateRecipes(consumer, arg));
-        GenerationsBlockFamilies.getAllUltraFamilies().forEach(arg -> generateRecipes(consumer, arg));
+        GenerationsBlockFamilies.getAllFamilies().forEach(arg -> {
+            generateRecipes(consumer, arg);
+            generateStoneCutterRecipesForFamily(consumer, arg);
+        });
+        GenerationsBlockFamilies.getAllUltraFamilies().forEach(arg -> {
+            generateRecipes(consumer, arg);
+            generateStoneCutterRecipesForFamily(consumer, arg);
+        });
     }
 
     private void generateStoneCutterRecipesForFamily(@NotNull Consumer<FinishedRecipe> consumer, @NotNull BlockFamily family) {
+        if (Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(family.getBaseBlock())).toString().contains("planks")) return;
         if (family.getVariants().containsKey(BlockFamily.Variant.SLAB)) stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, family.get(BlockFamily.Variant.SLAB), family.getBaseBlock(), 2);
         if (family.getVariants().containsKey(BlockFamily.Variant.STAIRS)) stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, family.get(BlockFamily.Variant.STAIRS), family.getBaseBlock());
         if (family.getVariants().containsKey(BlockFamily.Variant.WALL)) stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, family.get(BlockFamily.Variant.WALL), family.getBaseBlock());

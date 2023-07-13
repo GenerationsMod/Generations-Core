@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:ultra_purple"
+  },
+  "result": "generations_core:ultra_purple_wall"
+}

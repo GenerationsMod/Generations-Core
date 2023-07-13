@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:ultra_sandstone_wall_from_ultra_sandstone_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:charge_stone_stairs_from_charge_stone_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

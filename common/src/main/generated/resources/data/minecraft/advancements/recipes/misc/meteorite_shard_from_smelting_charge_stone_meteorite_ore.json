@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:meteorite_shard_from_smelting_charge_stone_meteorite_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

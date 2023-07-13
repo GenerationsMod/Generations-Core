@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:castle_white_brick_2_stairs_from_white_castle_brick_2_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

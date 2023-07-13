@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:pokecenter_roof_2_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:magenta_shingles"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

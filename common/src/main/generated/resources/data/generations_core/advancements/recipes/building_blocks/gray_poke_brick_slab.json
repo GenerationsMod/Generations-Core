@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:gray_poke_brick_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

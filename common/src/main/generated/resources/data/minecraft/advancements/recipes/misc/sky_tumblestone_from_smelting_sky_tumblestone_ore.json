@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:sky_tumblestone_from_smelting_sky_tumblestone_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:neo_plasma_boots"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

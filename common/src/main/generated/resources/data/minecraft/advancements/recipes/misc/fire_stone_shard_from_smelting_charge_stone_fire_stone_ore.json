@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:fire_stone_shard_from_smelting_charge_stone_fire_stone_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

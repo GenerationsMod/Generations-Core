@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:ghost_bricks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

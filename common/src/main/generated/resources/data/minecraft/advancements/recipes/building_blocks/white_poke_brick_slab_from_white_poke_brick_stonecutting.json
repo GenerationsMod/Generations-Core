@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:white_poke_brick_slab_from_white_poke_brick_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

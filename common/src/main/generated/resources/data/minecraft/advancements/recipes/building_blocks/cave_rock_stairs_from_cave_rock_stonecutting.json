@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:cave_rock_stairs_from_cave_rock_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:light_blue_shingles_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

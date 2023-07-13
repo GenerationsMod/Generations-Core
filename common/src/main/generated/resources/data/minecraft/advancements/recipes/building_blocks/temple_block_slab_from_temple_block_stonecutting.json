@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:temple_block_slab_from_temple_block_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

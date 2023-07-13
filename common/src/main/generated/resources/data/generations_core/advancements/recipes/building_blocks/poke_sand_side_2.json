@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:poke_sand_side_2"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

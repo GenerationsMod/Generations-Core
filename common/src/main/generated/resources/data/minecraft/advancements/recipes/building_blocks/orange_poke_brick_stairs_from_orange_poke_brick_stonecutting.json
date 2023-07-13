@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:orange_poke_brick_stairs_from_orange_poke_brick_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

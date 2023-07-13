@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:neo_plasma_chestplate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

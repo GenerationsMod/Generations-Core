@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:smooth_charge_stone_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

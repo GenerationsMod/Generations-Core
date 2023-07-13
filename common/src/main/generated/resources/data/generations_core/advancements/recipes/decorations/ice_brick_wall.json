@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ice_brick_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:meteorite_shard_from_blasting_deepslate_meteorite_ore"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

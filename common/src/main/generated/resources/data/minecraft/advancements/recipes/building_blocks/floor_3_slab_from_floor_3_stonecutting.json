@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:floor_3_slab_from_floor_3_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

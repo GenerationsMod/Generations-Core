@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:compressed_polished_diorite_stairs_from_compressed_polished_diorite_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

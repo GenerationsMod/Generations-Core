@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:golden_temple_cut_sandstone_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:thunder_stone_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

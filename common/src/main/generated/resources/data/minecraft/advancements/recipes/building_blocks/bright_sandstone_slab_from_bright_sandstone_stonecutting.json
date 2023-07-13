@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:bright_sandstone_slab_from_bright_sandstone_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
