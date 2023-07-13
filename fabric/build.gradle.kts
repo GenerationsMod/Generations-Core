@@ -21,7 +21,6 @@ loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
 repositories {
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-    maven("https://maven.bai.lol")
 }
 
 dependencies {

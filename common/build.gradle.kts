@@ -11,7 +11,6 @@ sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 
 repositories {
     maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-    maven("https://maven.bai.lol")
 }
 
 dependencies {
