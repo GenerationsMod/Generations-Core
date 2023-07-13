@@ -431,6 +431,10 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "cobblemon:mild_mint"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "cobblemon:calm_mint"
 			},
 			{
