@@ -1,0 +1,23 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "eelektrik-1",
+            "pokemon": "eelektrik",
+            "presets": [
+                "river",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "39-50",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true
+            }
+        }
+    ]
+}

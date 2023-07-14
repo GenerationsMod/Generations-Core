@@ -1,0 +1,144 @@
+{
+  "implemented": true,
+  "name": "Burmy",
+  "nationalPokedexNumber": 412,
+  "primaryType": "bug",
+  "abilities": [
+    "shedskin",
+    "h:overcoat"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 29,
+    "defence": 45,
+    "special_attack": 29,
+    "special_defence": 45,
+    "speed": 36
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 45,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:protect",
+    "10:tackle",
+    "15:bugbite",
+    "20:hiddenpower",
+    "tm:hiddenpower",
+    "tm:protect",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:protect",
+    "tutor:snore",
+    "tutor:stringshot"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.burmy.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "burmy_wormadam",
+      "variant": "level_up",
+      "result": "wormadam",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        },
+        {
+          "variant": "properties",
+          "target": "gender=female"
+        }
+      ]
+    },
+    {
+      "id": "burmy_wormadam",
+      "variant": "level_up",
+      "result": "wormadam form=sandy",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        },
+        {
+          "variant": "properties",
+          "target": "gender=female"
+        }
+      ]
+    },
+    {
+      "id": "burmy_wormadam",
+      "variant": "level_up",
+      "result": "wormadam form=trash",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        },
+        {
+          "variant": "properties",
+          "target": "gender=female"
+        }
+      ]
+    },
+    {
+      "id": "burmy_mothim",
+      "variant": "level_up",
+      "result": "mothim",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        },
+        {
+          "variant": "properties",
+          "target": "gender=male"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 2,
+  "weight": 34,
+  "aspects": [],
+  "cannotDynamax": false
+}

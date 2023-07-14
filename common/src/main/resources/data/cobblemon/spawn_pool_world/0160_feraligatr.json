@@ -1,0 +1,22 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "feraligatr-1",
+            "pokemon": "feraligatr",
+            "presets": [
+                "river"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "32-52",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": true
+            }
+        }
+    ]
+}

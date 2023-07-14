@@ -1,0 +1,184 @@
+{
+  "implemented": true,
+  "name": "Inteleon",
+  "nationalPokedexNumber": 818,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:sniper"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 85,
+    "defence": 65,
+    "special_attack": 125,
+    "special_defence": 65,
+    "speed": 120
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "water",
+      "abilities": [
+        "torrent",
+        "h:sniper"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defence": 65,
+        "special_attack": 125,
+        "special_defence": 65,
+        "speed": 120
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "baseExperienceYield": 265,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 3
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "water_1",
+        "field"
+      ],
+      "moves": [],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 30,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 265,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 20
+      }
+    ]
+  },
+  "moves": [
+    "1:acrobatics",
+    "1:bind",
+    "1:growl",
+    "1:pound",
+    "1:watergun",
+    "12:waterpulse",
+    "19:tearfullook",
+    "24:suckerpunch",
+    "30:uturn",
+    "38:liquidation",
+    "46:soak",
+    "54:raindance",
+    "62:hydropump",
+    "tm:acrobatics",
+    "tm:agility",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:blizzard",
+    "tm:bounce",
+    "tm:breakingswipe",
+    "tm:chillingwater",
+    "tm:darkpulse",
+    "tm:dive",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:focusenergy",
+    "tm:gigaimpact",
+    "tm:hydrocannon",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:lightscreen",
+    "tm:liquidation",
+    "tm:metronome",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:protect",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:round",
+    "tm:safeguard",
+    "tm:scald",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:snowscape",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:uturn",
+    "tm:waterfall",
+    "tm:waterpledge",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:hydrocannon",
+    "tutor:scaleshot",
+    "tutor:waterpledge"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.inteleon.desc"
+  ],
+  "preEvolution": "drizzile",
+  "evolutions": [],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.8,
+    "height": 2.5,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 3
+  },
+  "height": 19,
+  "weight": 452,
+  "aspects": [],
+  "cannotDynamax": false
+}

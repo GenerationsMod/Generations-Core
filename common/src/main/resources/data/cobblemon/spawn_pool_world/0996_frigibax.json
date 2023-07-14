@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "frigibax-1",
+            "pokemon": "frigibax",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "15-30",
+            "weight": 9.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_frigid"
+                ]
+            }
+        }
+    ]
+}

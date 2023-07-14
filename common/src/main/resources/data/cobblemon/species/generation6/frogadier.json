@@ -1,0 +1,188 @@
+{
+  "implemented": true,
+  "name": "Frogadier",
+  "nationalPokedexNumber": 657,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:protean"
+  ],
+  "baseStats": {
+    "hp": 54,
+    "attack": 63,
+    "defence": 52,
+    "special_attack": 83,
+    "special_defence": 56,
+    "speed": 97
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 142,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:pearlescent_froglight",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:pound",
+    "1:watergun",
+    "5:bubble",
+    "8:quickattack",
+    "10:lick",
+    "14:waterpulse",
+    "20:smokescreen",
+    "23:round",
+    "28:fling",
+    "33:smackdown",
+    "38:substitute",
+    "44:bounce",
+    "48:doubleteam",
+    "55:hydropump",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:cut",
+    "tm:darkpulse",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:fling",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:gunkshot",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icepunch",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:lowkick",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:poweruppunch",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:smackdown",
+    "tm:snowscape",
+    "tm:spikes",
+    "tm:strength",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:toxic",
+    "tm:toxicspikes",
+    "tm:trailblaze",
+    "tm:uturn",
+    "tm:waterfall",
+    "tm:waterpledge",
+    "tm:waterpulse",
+    "tm:workup",
+    "tutor:bounce",
+    "tutor:gunkshot",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:lowkick",
+    "tutor:roleplay",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:waterpledge",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.frogadier.desc"
+  ],
+  "preEvolution": "froakie",
+  "evolutions": [
+    {
+      "id": "frogadier_greninja",
+      "variant": "level_up",
+      "result": "greninja",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "watershuriken"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.9,
+    "height": 2,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 6,
+  "weight": 109,
+  "aspects": [],
+  "cannotDynamax": false
+}

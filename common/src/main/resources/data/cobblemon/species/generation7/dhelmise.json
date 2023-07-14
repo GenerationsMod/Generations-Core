@@ -1,0 +1,179 @@
+{
+  "implemented": true,
+  "name": "Dhelmise",
+  "nationalPokedexNumber": 781,
+  "primaryType": "ghost",
+  "secondaryType": "grass",
+  "abilities": [
+    "steelworker"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 131,
+    "defence": 100,
+    "special_attack": 86,
+    "special_defence": 90,
+    "speed": 40
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.2,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "catchRate": 25,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 181,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 25,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:kelp",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:raw_iron",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
+  "moves": [
+    "1:absorb",
+    "1:astonish",
+    "1:growth",
+    "1:rapidspin",
+    "1:switcheroo",
+    "5:megadrain",
+    "9:wrap",
+    "14:gyroball",
+    "18:metalsound",
+    "23:gigadrain",
+    "27:whirlpool",
+    "32:anchorshot",
+    "36:shadowball",
+    "41:energyball",
+    "45:slam",
+    "50:heavyslam",
+    "54:phantomforce",
+    "59:powerwhip",
+    "tm:aerialace",
+    "tm:allyswitch",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodypress",
+    "tm:brickbreak",
+    "tm:brine",
+    "tm:brutalswing",
+    "tm:bulldoze",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:earthquake",
+    "tm:embargo",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:gyroball",
+    "tm:heavyslam",
+    "tm:helpinghand",
+    "tm:hex",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:liquidation",
+    "tm:muddywater",
+    "tm:payback",
+    "tm:phantomforce",
+    "tm:powerwhip",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:round",
+    "tm:shadowball",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:sludgewave",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:solarblade",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:thief",
+    "tm:toxic",
+    "tm:whirlpool",
+    "tutor:allyswitch",
+    "tutor:block",
+    "tutor:gigadrain",
+    "tutor:grassyglide",
+    "tutor:helpinghand",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:knockoff",
+    "tutor:painsplit",
+    "tutor:poltergeist",
+    "tutor:roleplay",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:steelroller",
+    "tutor:synthesis",
+    "tutor:telekinesis"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.dhelmise.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1.1,
+  "hitbox": {
+    "width": 2.5,
+    "height": 4,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 39,
+  "weight": 2100,
+  "aspects": [],
+  "cannotDynamax": false
+}

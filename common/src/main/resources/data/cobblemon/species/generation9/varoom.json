@@ -1,0 +1,120 @@
+{
+  "implemented": true,
+  "name": "Varoom",
+  "nationalPokedexNumber": 965,
+  "primaryType": "steel",
+  "secondaryType": "poison",
+  "abilities": [
+    "overcoat",
+    "h:slowstart"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 70,
+    "defence": 63,
+    "special_attack": 30,
+    "special_defence": 45,
+    "speed": 47
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 60,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:coal",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:lick",
+    "1:poisongas",
+    "4:smog",
+    "7:taunt",
+    "10:assurance",
+    "13:sludge",
+    "17:gyroball",
+    "21:headbutt",
+    "25:screech",
+    "28:ironhead",
+    "32:swagger",
+    "36:poisonjab",
+    "41:uproar",
+    "46:spinout",
+    "50:gunkshot",
+    "egg:haze",
+    "egg:partingshot",
+    "egg:selfdestruct",
+    "egg:torment",
+    "egg:toxic",
+    "tm:acidspray",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:gunkshot",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:raindance",
+    "tm:sandstorm",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:steelbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:toxicspikes",
+    "tm:venoshock",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 10,
+  "weight": 350,
+  "evolutions": [
+    {
+      "id": "varoom_revavroom",
+      "variant": "level_up",
+      "result": "revavroom",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "shiftgear"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 40
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.varoom.desc"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "implemented": true,
+  "name": "Barboach",
+  "nationalPokedexNumber": 339,
+  "primaryType": "water",
+  "secondaryType": "ground",
+  "abilities": [
+    "oblivious",
+    "anticipation",
+    "h:hydration"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 48,
+    "defence": 43,
+    "special_attack": 46,
+    "special_defence": 41,
+    "speed": 60
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 58,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_2"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:damp_mulch",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:mudslap",
+    "6:mudsport",
+    "6:watersport",
+    "11:watergun",
+    "14:mudbomb",
+    "16:magnitude",
+    "21:amnesia",
+    "22:waterpulse",
+    "26:rest",
+    "26:snore",
+    "31:earthquake",
+    "35:aquatail",
+    "35:muddywater",
+    "36:futuresight",
+    "41:fissure",
+    "egg:dragondance",
+    "egg:earthpower",
+    "egg:flail",
+    "egg:hydropump",
+    "egg:muddywater",
+    "egg:mudshot",
+    "egg:spark",
+    "egg:takedown",
+    "egg:thrash",
+    "egg:whirlpool",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:bounce",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:dragondance",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:futuresight",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:naturalgift",
+    "tm:outrage",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:zenheadbutt",
+    "tutor:aquatail",
+    "tutor:bounce",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:earthpower",
+    "tutor:endure",
+    "tutor:headbutt",
+    "tutor:icywind",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spark",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.barboach.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "barboach_whiscash",
+      "variant": "level_up",
+      "result": "whiscash",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "thrash"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 19,
+  "aspects": [],
+  "cannotDynamax": false
+}

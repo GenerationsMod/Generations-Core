@@ -1,0 +1,119 @@
+{
+  "implemented": true,
+  "name": "Zebstrika",
+  "nationalPokedexNumber": 523,
+  "primaryType": "electric",
+  "abilities": [
+    "lightningrod",
+    "motordrive",
+    "h:sapsipper"
+  ],
+  "baseStats": {
+    "hp": 75,
+    "attack": 100,
+    "defence": 63,
+    "special_attack": 80,
+    "special_defence": 63,
+    "speed": 116
+  },
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 174,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:charge",
+    "1:iondeluge",
+    "1:quickattack",
+    "1:tailwhip",
+    "1:thunderwave",
+    "11:shockwave",
+    "18:flamecharge",
+    "22:pursuit",
+    "25:spark",
+    "31:stomp",
+    "36:discharge",
+    "42:agility",
+    "47:wildcharge",
+    "53:thrash",
+    "tm:attract",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:facade",
+    "tm:flamecharge",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:lightscreen",
+    "tm:overheat",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:voltswitch",
+    "tm:wildcharge",
+    "tutor:allyswitch",
+    "tutor:bounce",
+    "tutor:laserfocus",
+    "tutor:lowkick",
+    "tutor:magnetrise",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snatch",
+    "tutor:snore"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.zebstrika.desc"
+  ],
+  "preEvolution": "blitzle",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 16,
+  "weight": 795,
+  "aspects": [],
+  "cannotDynamax": false
+}

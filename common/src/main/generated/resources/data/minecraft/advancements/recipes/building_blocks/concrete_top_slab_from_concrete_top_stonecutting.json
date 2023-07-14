@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_concrete_top": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:concrete_top"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:concrete_top_slab_from_concrete_top_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_concrete_top",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:concrete_top_slab_from_concrete_top_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,180 @@
+{
+  "implemented": true,
+  "name": "Duosion",
+  "nationalPokedexNumber": 578,
+  "primaryType": "psychic",
+  "abilities": [
+    "overcoat",
+    "magicguard",
+    "h:regenerator"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 40,
+    "defence": 50,
+    "special_attack": 125,
+    "special_defence": 60,
+    "speed": 30
+  },
+  "catchRate": 100,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 130,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "amorphous"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:gooey_mulch",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:confusion",
+    "1:protect",
+    "1:psywave",
+    "1:reflect",
+    "1:rollout",
+    "1:snatch",
+    "12:psybeam",
+    "14:hiddenpower",
+    "16:lightscreen",
+    "19:charm",
+    "24:recover",
+    "25:psyshock",
+    "28:allyswitch",
+    "28:endeavor",
+    "31:futuresight",
+    "34:painsplit",
+    "39:psychic",
+    "43:skillswap",
+    "50:healblock",
+    "53:wonderroom",
+    "tm:allyswitch",
+    "tm:attract",
+    "tm:calmmind",
+    "tm:charm",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:dreameater",
+    "tm:embargo",
+    "tm:encore",
+    "tm:endure",
+    "tm:energyball",
+    "tm:explosion",
+    "tm:facade",
+    "tm:flash",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:futuresight",
+    "tm:guardswap",
+    "tm:gyroball",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:imprison",
+    "tm:infestation",
+    "tm:irondefense",
+    "tm:lightscreen",
+    "tm:powerswap",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psychicterrain",
+    "tm:psychup",
+    "tm:psyshock",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:telekinesis",
+    "tm:thunder",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:trick",
+    "tm:trickroom",
+    "tm:wonderroom",
+    "tm:zenheadbutt",
+    "tutor:afteryou",
+    "tutor:allyswitch",
+    "tutor:endeavor",
+    "tutor:expandingforce",
+    "tutor:gravity",
+    "tutor:helpinghand",
+    "tutor:imprison",
+    "tutor:irondefense",
+    "tutor:magiccoat",
+    "tutor:painsplit",
+    "tutor:recover",
+    "tutor:roleplay",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:steelroller",
+    "tutor:telekinesis",
+    "tutor:trick",
+    "tutor:wonderroom",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.duosion.desc"
+  ],
+  "preEvolution": "solosis",
+  "evolutions": [
+    {
+      "id": "duosion_reuniclus",
+      "variant": "level_up",
+      "result": "reuniclus",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "hammerarm"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 41
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 80,
+  "aspects": [],
+  "cannotDynamax": false
+}

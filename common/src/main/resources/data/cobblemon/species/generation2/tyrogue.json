@@ -1,0 +1,219 @@
+{
+  "implemented": true,
+  "name": "Tyrogue",
+  "nationalPokedexNumber": 236,
+  "primaryType": "fighting",
+  "abilities": [
+    "guts",
+    "steadfast",
+    "h:vitalspirit"
+  ],
+  "baseStats": {
+    "hp": 35,
+    "attack": 35,
+    "defence": 35,
+    "special_attack": 35,
+    "special_defence": 35,
+    "speed": 35
+  },
+  "catchRate": 75,
+  "maleRatio": 1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 42,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 25,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:black_belt",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "moves": [
+    "1:fakeout",
+    "1:focusenergy",
+    "1:foresight",
+    "1:helpinghand",
+    "1:tackle",
+    "egg:bulletpunch",
+    "egg:counter",
+    "egg:endure",
+    "egg:feint",
+    "egg:helpinghand",
+    "egg:highjumpkick",
+    "egg:machpunch",
+    "egg:mindreader",
+    "egg:pursuit",
+    "egg:rapidspin",
+    "egg:vacuumwave",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:bulkup",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:workup",
+    "tutor:attract",
+    "tutor:bodyslam",
+    "tutor:counter",
+    "tutor:covet",
+    "tutor:curse",
+    "tutor:detect",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:endure",
+    "tutor:fakeout",
+    "tutor:feint",
+    "tutor:frustration",
+    "tutor:headbutt",
+    "tutor:helpinghand",
+    "tutor:hiddenpower",
+    "tutor:highjumpkick",
+    "tutor:laserfocus",
+    "tutor:lowkick",
+    "tutor:machpunch",
+    "tutor:megakick",
+    "tutor:mimic",
+    "tutor:mindreader",
+    "tutor:mudslap",
+    "tutor:protect",
+    "tutor:rapidspin",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:rockslide",
+    "tutor:rocksmash",
+    "tutor:roleplay",
+    "tutor:seismictoss",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:strength",
+    "tutor:substitute",
+    "tutor:sunnyday",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:tackle",
+    "tutor:thief",
+    "tutor:toxic",
+    "tutor:uproar",
+    "tutor:vacuumwave"
+  ],
+  "labels": [
+    "gen2",
+    "baby"
+  ],
+  "pokedex": [
+    "cobblemon.species.tyrogue.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "tyrogue_hitmonlee",
+      "variant": "level_up",
+      "result": "hitmonlee",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        },
+        {
+          "variant": "attack_defence_ratio",
+          "ratio": "ATTACK_HIGHER"
+        }
+      ]
+    },
+    {
+      "id": "tyrogue_hitmonchan",
+      "variant": "level_up",
+      "result": "hitmonchan",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        },
+        {
+          "variant": "attack_defence_ratio",
+          "ratio": "DEFENCE_HIGHER"
+        }
+      ]
+    },
+    {
+      "id": "tyrogue_hitmontop",
+      "variant": "level_up",
+      "result": "hitmontop",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "triplekick"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        },
+        {
+          "variant": "attack_defence_ratio",
+          "ratio": "EQUAL"
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.45,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 210,
+  "aspects": [],
+  "cannotDynamax": false
+}

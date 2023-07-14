@@ -1,0 +1,50 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "honchkrow-1",
+            "pokemon": "honchkrow",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "41-50",
+            "weight": 0.02,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_sky",
+                    "#cobblemon:is_swamp",
+                    "#cobblemon:is_taiga"
+                ],
+                "timeRange": "night",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "honchkrow-2",
+            "pokemon": "honchkrow",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "41-50",
+            "weight": 0.02,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_spooky"
+                ],
+                "isRaining": false
+            }
+        }
+    ]
+}

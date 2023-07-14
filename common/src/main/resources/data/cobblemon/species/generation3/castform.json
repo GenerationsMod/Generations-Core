@@ -1,0 +1,287 @@
+{
+  "implemented": true,
+  "name": "Castform",
+  "nationalPokedexNumber": 351,
+  "primaryType": "normal",
+  "abilities": [
+    "forecast"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 70,
+    "defence": 70,
+    "special_attack": 70,
+    "special_defence": 70,
+    "speed": 70
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Sunny",
+      "primaryType": "fire",
+      "abilities": [
+        "forecast"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 70,
+        "defence": 70,
+        "special_attack": 70,
+        "special_defence": 70,
+        "speed": 70
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 147,
+      "baseFriendship": 70,
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 25,
+      "eggGroups": [
+        "fairy",
+        "amorphous"
+      ],
+      "moves": [],
+      "labels": [
+        "gen3"
+      ],
+      "aspects": [
+        "sunny"
+      ],
+      "height": 3,
+      "weight": 8,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    },
+    {
+      "name": "Rainy",
+      "primaryType": "water",
+      "abilities": [
+        "forecast"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 70,
+        "defence": 70,
+        "special_attack": 70,
+        "special_defence": 70,
+        "speed": 70
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 147,
+      "baseFriendship": 70,
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 25,
+      "eggGroups": [
+        "fairy",
+        "amorphous"
+      ],
+      "moves": [],
+      "labels": [
+        "gen3"
+      ],
+      "aspects": [
+        "rainy"
+      ],
+      "height": 3,
+      "weight": 8,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    },
+    {
+      "name": "Snowy",
+      "primaryType": "ice",
+      "abilities": [
+        "forecast"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 70,
+        "defence": 70,
+        "special_attack": 70,
+        "special_defence": 70,
+        "speed": 70
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 147,
+      "baseFriendship": 70,
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 25,
+      "eggGroups": [
+        "fairy",
+        "amorphous"
+      ],
+      "moves": [],
+      "labels": [
+        "gen3"
+      ],
+      "aspects": [
+        "snowy"
+      ],
+      "height": 3,
+      "weight": 8,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "baseExperienceYield": 147,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 25,
+  "eggGroups": [
+    "fairy",
+    "amorphous"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:lightning_rod",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "10:ember",
+    "10:powdersnow",
+    "10:watergun",
+    "20:hail",
+    "20:headbutt",
+    "20:raindance",
+    "20:sunnyday",
+    "30:weatherball",
+    "45:hurricane",
+    "50:blizzard",
+    "50:fireblast",
+    "50:hydropump",
+    "egg:amnesia",
+    "egg:clearsmog",
+    "egg:cosmicpower",
+    "egg:disable",
+    "egg:futuresight",
+    "egg:guardswap",
+    "egg:hex",
+    "egg:luckychant",
+    "egg:ominouswind",
+    "egg:psychup",
+    "egg:reflecttype",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:captivate",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:flamethrower",
+    "tm:flash",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:incinerate",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:waterpulse",
+    "tm:workup",
+    "tutor:bodyslam",
+    "tutor:defensecurl",
+    "tutor:defog",
+    "tutor:doubleedge",
+    "tutor:ember",
+    "tutor:endure",
+    "tutor:icywind",
+    "tutor:lastresort",
+    "tutor:mimic",
+    "tutor:ominouswind",
+    "tutor:psychup",
+    "tutor:shockwave",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:tailwind",
+    "tutor:thunderwave",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.castform.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 8,
+  "aspects": [],
+  "cannotDynamax": false
+}

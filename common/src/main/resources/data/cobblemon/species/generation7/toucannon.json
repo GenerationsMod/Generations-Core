@@ -1,0 +1,120 @@
+{
+  "implemented": true,
+  "name": "Toucannon",
+  "nationalPokedexNumber": 733,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "keeneye",
+    "skilllink",
+    "h:sheerforce"
+  ],
+  "baseStats": {
+    "hp": 80,
+    "attack": 120,
+    "defence": 75,
+    "special_attack": 75,
+    "special_defence": 75,
+    "speed": 60
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 218,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:beakblast",
+    "1:echoedvoice",
+    "1:growl",
+    "1:peck",
+    "1:rockblast",
+    "1:rocksmash",
+    "13:supersonic",
+    "16:pluck",
+    "21:roost",
+    "24:furyattack",
+    "30:screech",
+    "34:drillpeck",
+    "40:bulletseed",
+    "44:featherdance",
+    "50:hypervoice",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:brickbreak",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:flamecharge",
+    "tm:flashcannon",
+    "tm:fly",
+    "tm:frustration",
+    "tm:hiddenpower",
+    "tm:overheat",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:smackdown",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:workup",
+    "tutor:defog",
+    "tutor:gunkshot",
+    "tutor:heatwave",
+    "tutor:hypervoice",
+    "tutor:knockoff",
+    "tutor:seedbomb",
+    "tutor:skyattack",
+    "tutor:snore",
+    "tutor:tailwind",
+    "tutor:uproar"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.toucannon.desc"
+  ],
+  "preEvolution": "trumbeak",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 11,
+  "weight": 260,
+  "aspects": [],
+  "cannotDynamax": false
+}

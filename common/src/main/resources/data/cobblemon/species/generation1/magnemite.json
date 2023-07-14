@@ -1,0 +1,218 @@
+{
+  "implemented": true,
+  "name": "Magnemite",
+  "nationalPokedexNumber": 81,
+  "primaryType": "electric",
+  "secondaryType": "steel",
+  "abilities": [
+    "magnetpull",
+    "sturdy",
+    "h:analytic"
+  ],
+  "baseStats": {
+    "hp": 25,
+    "attack": 35,
+    "defence": 70,
+    "special_attack": 95,
+    "special_defence": 55,
+    "speed": 45
+  },
+  "catchRate": 190,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 65,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canWalkOnWater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:magnet",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "moves": [
+    "1:metalsound",
+    "1:tackle",
+    "6:thundershock",
+    "11:supersonic",
+    "13:lightscreen",
+    "16:sonicboom",
+    "21:thunderwave",
+    "26:spark",
+    "27:electroball",
+    "30:magnetbomb",
+    "32:lockon",
+    "35:flashcannon",
+    "38:discharge",
+    "38:swift",
+    "43:mirrorshot",
+    "44:screech",
+    "46:magnetrise",
+    "49:gyroball",
+    "50:zapcannon",
+    "egg:electroweb",
+    "egg:explosion",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:confuseray",
+    "tm:doubleteam",
+    "tm:eerieimpulse",
+    "tm:electricterrain",
+    "tm:electroball",
+    "tm:electroweb",
+    "tm:endure",
+    "tm:explosion",
+    "tm:facade",
+    "tm:flash",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gyroball",
+    "tm:heavyslam",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:recycle",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:voltswitch",
+    "tm:wildcharge",
+    "tutor:bide",
+    "tutor:curse",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:electroweb",
+    "tutor:endure",
+    "tutor:facade",
+    "tutor:flash",
+    "tutor:flashcannon",
+    "tutor:frustration",
+    "tutor:gravity",
+    "tutor:headbutt",
+    "tutor:hiddenpower",
+    "tutor:irondefense",
+    "tutor:lightscreen",
+    "tutor:lockon",
+    "tutor:magiccoat",
+    "tutor:magnetrise",
+    "tutor:metalsound",
+    "tutor:mimic",
+    "tutor:protect",
+    "tutor:rage",
+    "tutor:raindance",
+    "tutor:recycle",
+    "tutor:reflect",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:risingvoltage",
+    "tutor:rollout",
+    "tutor:screech",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:sonicboom",
+    "tutor:steelbeam",
+    "tutor:substitute",
+    "tutor:supersonic",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:tackle",
+    "tutor:takedown",
+    "tutor:teleport",
+    "tutor:thunder",
+    "tutor:thunderbolt",
+    "tutor:thundershock",
+    "tutor:thunderwave",
+    "tutor:toxic",
+    "tutor:zapcannon"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.magnemite.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "magnemite_magneton",
+      "variant": "level_up",
+      "result": "magneton",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "triattack"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.6,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 60,
+  "aspects": [],
+  "cannotDynamax": false
+}

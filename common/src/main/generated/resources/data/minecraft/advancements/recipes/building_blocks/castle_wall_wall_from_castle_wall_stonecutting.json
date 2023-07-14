@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_castle_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:castle_wall"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:castle_wall_wall_from_castle_wall_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_castle_wall",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:castle_wall_wall_from_castle_wall_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

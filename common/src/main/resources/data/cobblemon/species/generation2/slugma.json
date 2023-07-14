@@ -1,0 +1,198 @@
+{
+  "implemented": true,
+  "name": "Slugma",
+  "nationalPokedexNumber": 218,
+  "primaryType": "fire",
+  "abilities": [
+    "magmaarmor",
+    "flamebody",
+    "h:weakarmor"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 40,
+    "defence": 40,
+    "special_attack": 70,
+    "special_defence": 40,
+    "speed": 20
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "swim": {
+        "canWalkOnLava": true,
+        "canBreatheUnderlava": true,
+        "avoidsWater": true,
+        "canSwimInLava": true,
+        "canSwimInWater": false
+      },
+      "walk": {
+        "walkSpeed": 0.2
+      }
+    }
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 50,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "amorphous"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:gooey_mulch",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:smog",
+    "1:yawn",
+    "8:ember",
+    "15:incinerate",
+    "15:rockthrow",
+    "20:clearsmog",
+    "22:harden",
+    "23:flameburst",
+    "23:recover",
+    "26:ancientpower",
+    "29:amnesia",
+    "36:flamethrower",
+    "38:lavaplume",
+    "43:rockslide",
+    "50:bodyslam",
+    "56:earthpower",
+    "egg:acidarmor",
+    "egg:curse",
+    "egg:earthpower",
+    "egg:guardswap",
+    "egg:heatwave",
+    "egg:inferno",
+    "egg:memento",
+    "egg:rollout",
+    "egg:smokescreen",
+    "egg:spitup",
+    "egg:stockpile",
+    "egg:swallow",
+    "tm:attract",
+    "tm:captivate",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:frustration",
+    "tm:hiddenpower",
+    "tm:incinerate",
+    "tm:infestation",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:naturepower",
+    "tm:overheat",
+    "tm:protect",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:willowisp",
+    "tutor:acidarmor",
+    "tutor:afteryou",
+    "tutor:amnesia",
+    "tutor:ancientpower",
+    "tutor:attract",
+    "tutor:bodyslam",
+    "tutor:curse",
+    "tutor:defensecurl",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:earthpower",
+    "tutor:ember",
+    "tutor:endure",
+    "tutor:fireblast",
+    "tutor:flamethrower",
+    "tutor:frustration",
+    "tutor:harden",
+    "tutor:heatwave",
+    "tutor:hiddenpower",
+    "tutor:inferno",
+    "tutor:irondefense",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:painsplit",
+    "tutor:protect",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:rockslide",
+    "tutor:rocksmash",
+    "tutor:rockthrow",
+    "tutor:rollout",
+    "tutor:selfdestruct",
+    "tutor:sleeptalk",
+    "tutor:smog",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:sunnyday",
+    "tutor:swagger",
+    "tutor:toxic"
+  ],
+  "labels": [
+    "gen2"
+  ],
+  "pokedex": [
+    "cobblemon.species.slugma.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "slugma_magcargo",
+      "variant": "level_up",
+      "result": "magcargo",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 38
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 350,
+  "aspects": [],
+  "cannotDynamax": false
+}

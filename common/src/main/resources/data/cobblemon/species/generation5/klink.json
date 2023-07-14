@@ -1,0 +1,148 @@
+{
+  "implemented": true,
+  "name": "Klink",
+  "nationalPokedexNumber": 599,
+  "primaryType": "steel",
+  "abilities": [
+    "plus",
+    "minus",
+    "h:clearbody"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 55,
+    "defence": 70,
+    "special_attack": 45,
+    "special_defence": 60,
+    "speed": 30
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 130,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 60,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:visegrip",
+    "6:charge",
+    "11:thundershock",
+    "16:geargrind",
+    "21:bind",
+    "26:chargebeam",
+    "31:autotomize",
+    "36:mirrorshot",
+    "39:screech",
+    "42:discharge",
+    "45:metalsound",
+    "48:shiftgear",
+    "51:lockon",
+    "54:zapcannon",
+    "57:hyperbeam",
+    "tm:assurance",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:powergem",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockpolish",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:voltswitch",
+    "tm:wildcharge",
+    "tutor:bind",
+    "tutor:gravity",
+    "tutor:irondefense",
+    "tutor:magiccoat",
+    "tutor:magnetrise",
+    "tutor:recycle",
+    "tutor:risingvoltage",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:steelbeam",
+    "tutor:steelroller",
+    "tutor:telekinesis",
+    "tutor:uproar"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.klink.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "klink_klang",
+      "variant": "level_up",
+      "result": "klang",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 38
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 210,
+  "aspects": [],
+  "cannotDynamax": false
+}

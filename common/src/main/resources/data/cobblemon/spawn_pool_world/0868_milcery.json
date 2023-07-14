@@ -1,0 +1,24 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "milcery-1",
+            "pokemon": "milcery",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "5-27",
+            "weight": 1.98,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:cake"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{
+  "implemented": true,
+  "name": "Fletchinder",
+  "nationalPokedexNumber": 662,
+  "primaryType": "fire",
+  "secondaryType": "flying",
+  "abilities": [
+    "flamebody",
+    "h:galewings"
+  ],
+  "baseStats": {
+    "hp": 62,
+    "attack": 73,
+    "defence": 55,
+    "special_attack": 56,
+    "special_defence": 52,
+    "speed": 84
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 134,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:feint",
+    "1:growl",
+    "1:tackle",
+    "6:quickattack",
+    "10:peck",
+    "13:agility",
+    "16:flail",
+    "17:ember",
+    "25:roost",
+    "27:razorwind",
+    "31:naturalgift",
+    "36:aerialace",
+    "38:flamecharge",
+    "42:acrobatics",
+    "46:mefirst",
+    "51:tailwind",
+    "55:steelwing",
+    "64:fly",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:attract",
+    "tm:bravebird",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:fly",
+    "tm:frustration",
+    "tm:heatwave",
+    "tm:hiddenpower",
+    "tm:hurricane",
+    "tm:incinerate",
+    "tm:overheat",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:willowisp",
+    "tm:workup",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:heatwave",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:tailwind"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.fletchinder.desc"
+  ],
+  "preEvolution": "fletchling",
+  "evolutions": [
+    {
+      "id": "fletchinder_talonflame",
+      "variant": "level_up",
+      "result": "talonflame",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 7,
+  "weight": 160,
+  "aspects": [],
+  "cannotDynamax": false
+}

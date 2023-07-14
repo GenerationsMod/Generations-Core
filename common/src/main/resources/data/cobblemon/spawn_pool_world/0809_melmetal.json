@@ -1,0 +1,25 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "melmetal-1",
+            "pokemon": "melmetal",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "70-75",
+            "weight": 0.1,
+            "condition": {
+                "timeRange": "night",
+                "biomes": [
+                    "#cobblemon:is_glacial"
+                ]
+            }
+        }
+    ]
+}

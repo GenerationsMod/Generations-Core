@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:ultra_light_gray"
+  },
+  "result": "generations_core:ultra_light_gray_wall"
+}

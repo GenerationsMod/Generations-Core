@@ -1,0 +1,43 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "sizzlipede-1",
+            "pokemon": "sizzlipede",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-30",
+            "weight": 5.4,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_badlands"
+                ]
+            }
+        },
+        {
+            "id": "sizzlipede-2",
+            "pokemon": "sizzlipede",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-30",
+            "weight": 5.4,
+            "condition": {
+                "biomes": [
+                    "minecraft:basalt_deltas",
+                    "minecraft:nether_wastes"
+                ]
+            }
+        }
+    ]
+}

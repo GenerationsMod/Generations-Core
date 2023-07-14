@@ -1,0 +1,210 @@
+{
+  "implemented": true,
+  "name": "Grovyle",
+  "nationalPokedexNumber": 253,
+  "primaryType": "grass",
+  "abilities": [
+    "overgrow",
+    "h:unburden"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 65,
+    "defence": 45,
+    "special_attack": 85,
+    "special_defence": 65,
+    "speed": 95
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 142,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "monster",
+    "dragon"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:stick",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:absorb",
+    "1:energyball",
+    "1:leafage",
+    "1:leer",
+    "1:pound",
+    "1:quickattack",
+    "13:megadrain",
+    "16:furycutter",
+    "17:pursuit",
+    "20:assurance",
+    "23:screech",
+    "25:gigadrain",
+    "29:leafblade",
+    "35:agility",
+    "35:doubleteam",
+    "41:slam",
+    "43:xscissor",
+    "47:detect",
+    "50:endeavor",
+    "53:falseswipe",
+    "53:quickguard",
+    "59:leafstorm",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:bulletseed",
+    "tm:captivate",
+    "tm:confide",
+    "tm:crunch",
+    "tm:cut",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:drainpunch",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:flash",
+    "tm:fling",
+    "tm:focuspunch",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyterrain",
+    "tm:hiddenpower",
+    "tm:irontail",
+    "tm:leafblade",
+    "tm:leafstorm",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:magicalleaf",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:naturalgift",
+    "tm:naturepower",
+    "tm:poweruppunch",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:safeguard",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:solarblade",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:thunderpunch",
+    "tm:toxic",
+    "tm:workup",
+    "tm:xscissor",
+    "tutor:bodyslam",
+    "tutor:counter",
+    "tutor:doubleedge",
+    "tutor:drainpunch",
+    "tutor:dynamicpunch",
+    "tutor:endeavor",
+    "tutor:endure",
+    "tutor:focuspunch",
+    "tutor:furycutter",
+    "tutor:gigadrain",
+    "tutor:grasspledge",
+    "tutor:grassyglide",
+    "tutor:headbutt",
+    "tutor:irontail",
+    "tutor:lowkick",
+    "tutor:megakick",
+    "tutor:megapunch",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:seedbomb",
+    "tutor:seismictoss",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:swordsdance",
+    "tutor:synthesis",
+    "tutor:thunderpunch",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.grovyle.desc"
+  ],
+  "preEvolution": "treecko",
+  "evolutions": [
+    {
+      "id": "grovyle_sceptile",
+      "variant": "level_up",
+      "result": "sceptile",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "dualchop"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1.6,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 9,
+  "weight": 216,
+  "aspects": [],
+  "cannotDynamax": false
+}

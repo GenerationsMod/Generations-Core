@@ -1,0 +1,160 @@
+{
+  "implemented": true,
+  "name": "Taillow",
+  "nationalPokedexNumber": 276,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "guts",
+    "h:scrappy"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 55,
+    "defence": 30,
+    "special_attack": 30,
+    "special_defence": 30,
+    "speed": 85
+  },
+  "catchRate": 200,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 54,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:wheat_seeds",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:peck",
+    "4:focusenergy",
+    "8:quickattack",
+    "13:wingattack",
+    "19:doubleteam",
+    "25:quickguard",
+    "26:endeavor",
+    "34:aerialace",
+    "41:bravebird",
+    "43:agility",
+    "45:reversal",
+    "53:airslash",
+    "egg:boomburst",
+    "egg:bravebird",
+    "egg:defog",
+    "egg:hurricane",
+    "egg:mirrormove",
+    "egg:pursuit",
+    "egg:rage",
+    "egg:refresh",
+    "egg:roost",
+    "egg:skyattack",
+    "egg:steelwing",
+    "egg:supersonic",
+    "egg:whirlwind",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:captivate",
+    "tm:confide",
+    "tm:defog",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fly",
+    "tm:frustration",
+    "tm:hiddenpower",
+    "tm:naturalgift",
+    "tm:pluck",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:workup",
+    "tutor:aircutter",
+    "tutor:bravebird",
+    "tutor:counter",
+    "tutor:defog",
+    "tutor:doubleedge",
+    "tutor:endeavor",
+    "tutor:endure",
+    "tutor:featherdance",
+    "tutor:focusenergy",
+    "tutor:growl",
+    "tutor:heatwave",
+    "tutor:mimic",
+    "tutor:mirrormove",
+    "tutor:mudslap",
+    "tutor:ominouswind",
+    "tutor:peck",
+    "tutor:roost",
+    "tutor:skyattack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:tailwind",
+    "tutor:twister"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.taillow.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "taillow_swellow",
+      "variant": "level_up",
+      "result": "swellow",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 22
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 3,
+  "weight": 23,
+  "aspects": [],
+  "cannotDynamax": false
+}

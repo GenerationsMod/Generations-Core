@@ -1,0 +1,145 @@
+{
+  "implemented": true,
+  "name": "Klinklang",
+  "nationalPokedexNumber": 601,
+  "primaryType": "steel",
+  "abilities": [
+    "plus",
+    "minus",
+    "h:clearbody"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 100,
+    "defence": 115,
+    "special_attack": 70,
+    "special_defence": 85,
+    "speed": 90
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 30,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 260,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "quantityRange": "1-3",
+        "percentage": 75
+      }
+    ]
+  },
+  "moves": [
+    "1:charge",
+    "1:geargrind",
+    "1:gearup",
+    "1:magneticflux",
+    "1:thundershock",
+    "1:visegrip",
+    "21:bind",
+    "25:chargebeam",
+    "31:autotomize",
+    "36:mirrorshot",
+    "40:screech",
+    "44:discharge",
+    "48:metalsound",
+    "54:shiftgear",
+    "60:lockon",
+    "64:electricterrain",
+    "66:zapcannon",
+    "72:hyperbeam",
+    "tm:allyswitch",
+    "tm:assurance",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:electricterrain",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:powergem",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockpolish",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:trickroom",
+    "tm:uproar",
+    "tm:voltswitch",
+    "tm:wildcharge",
+    "tutor:allyswitch",
+    "tutor:bind",
+    "tutor:gravity",
+    "tutor:irondefense",
+    "tutor:magiccoat",
+    "tutor:magnetrise",
+    "tutor:recycle",
+    "tutor:risingvoltage",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:steelbeam",
+    "tutor:steelroller",
+    "tutor:telekinesis",
+    "tutor:uproar"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.klinklang.desc"
+  ],
+  "preEvolution": "klang",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.8,
+    "height": 1.8,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 3,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 810,
+  "aspects": [],
+  "cannotDynamax": false
+}

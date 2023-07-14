@@ -1,0 +1,155 @@
+{
+  "implemented": true,
+  "name": "Spritzee",
+  "nationalPokedexNumber": 682,
+  "primaryType": "fairy",
+  "abilities": [
+    "healer",
+    "h:aromaveil"
+  ],
+  "baseStats": {
+    "hp": 78,
+    "attack": 52,
+    "defence": 60,
+    "special_attack": 63,
+    "special_defence": 65,
+    "speed": 23
+  },
+  "catchRate": 200,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 68,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:warped_roots",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:fairywind",
+    "1:sweetscent",
+    "6:sweetkiss",
+    "8:odorsleuth",
+    "13:echoedvoice",
+    "17:calmmind",
+    "21:drainingkiss",
+    "25:aromatherapy",
+    "29:attract",
+    "31:moonblast",
+    "35:charm",
+    "38:flail",
+    "42:mistyterrain",
+    "44:skillswap",
+    "48:psychic",
+    "50:disarmingvoice",
+    "egg:afteryou",
+    "egg:captivate",
+    "egg:disable",
+    "egg:nastyplot",
+    "egg:refresh",
+    "egg:wish",
+    "tm:allyswitch",
+    "tm:attract",
+    "tm:calmmind",
+    "tm:chargebeam",
+    "tm:charm",
+    "tm:confide",
+    "tm:dazzlinggleam",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:dreameater",
+    "tm:echoedvoice",
+    "tm:encore",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:faketears",
+    "tm:flash",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gyroball",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:lightscreen",
+    "tm:mistyterrain",
+    "tm:nastyplot",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:secretpower",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thunderbolt",
+    "tm:torment",
+    "tm:toxic",
+    "tm:trickroom",
+    "tutor:afteryou",
+    "tutor:allyswitch",
+    "tutor:covet",
+    "tutor:endeavor",
+    "tutor:healbell",
+    "tutor:helpinghand",
+    "tutor:magiccoat",
+    "tutor:mistyexplosion",
+    "tutor:skillswap",
+    "tutor:snore",
+    "tutor:telekinesis"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.spritzee.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "spritzee_aromatisse",
+      "variant": "trade",
+      "result": "aromatisse",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "itemCondition": "cobblemon:sachet"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 2,
+  "weight": 5,
+  "aspects": [],
+  "cannotDynamax": false
+}

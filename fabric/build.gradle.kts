@@ -19,6 +19,10 @@ configurations {
 
 loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 
+repositories {
+    maven("https://nexus.resourcefulbees.com/repository/maven-public/")
+}
+
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}+$minecraftVersion")

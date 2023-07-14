@@ -1,0 +1,248 @@
+{
+  "implemented": true,
+  "name": "Squawkabilly",
+  "nationalPokedexNumber": 931,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "intimidate",
+    "hustle",
+    "h:guts"
+  ],
+  "baseStats": {
+    "hp": 82,
+    "attack": 96,
+    "defence": 51,
+    "special_attack": 45,
+    "special_defence": 51,
+    "speed": 92
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 146,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "erratic",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:mimic",
+    "1:peck",
+    "6:quickattack",
+    "10:torment",
+    "13:aerialace",
+    "17:furyattack",
+    "20:taunt",
+    "24:uproar",
+    "27:copycat",
+    "30:fly",
+    "34:facade",
+    "38:swagger",
+    "42:bravebird",
+    "47:roost",
+    "52:reversal",
+    "egg:doubleedge",
+    "egg:finalgambit",
+    "egg:flatter",
+    "egg:partingshot",
+    "tm:aerialace",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:bravebird",
+    "tm:endure",
+    "tm:facade",
+    "tm:faketears",
+    "tm:fly",
+    "tm:foulplay",
+    "tm:gigaimpact",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:hurricane",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:pounce",
+    "tm:protect",
+    "tm:rest",
+    "tm:reversal",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:uturn"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 6,
+  "weight": 24,
+  "evolutions": [],
+  "cannotDynamax": false,
+  "forms": [
+    {
+      "name": "Blue",
+      "primaryType": "normal",
+      "secondaryType": "flying",
+      "abilities": [
+        "intimidate",
+        "hustle",
+        "h:guts"
+      ],
+      "baseStats": {
+        "hp": 82,
+        "attack": 96,
+        "defence": 51,
+        "special_attack": 45,
+        "special_defence": 51,
+        "speed": 92
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "erratic",
+      "eggCycles": 15,
+      "eggGroups": [
+        "flying"
+      ],
+      "moves": [],
+      "labels": [
+        "gen9"
+      ],
+      "aspects": [
+        "blue"
+      ],
+      "height": 6,
+      "weight": 24,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Yellow",
+      "primaryType": "normal",
+      "secondaryType": "flying",
+      "abilities": [
+        "intimidate",
+        "hustle",
+        "h:sheerforce"
+      ],
+      "baseStats": {
+        "hp": 82,
+        "attack": 96,
+        "defence": 51,
+        "special_attack": 45,
+        "special_defence": 51,
+        "speed": 92
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "erratic",
+      "eggCycles": 15,
+      "eggGroups": [
+        "flying"
+      ],
+      "moves": [],
+      "labels": [
+        "gen9"
+      ],
+      "aspects": [
+        "yellow"
+      ],
+      "height": 6,
+      "weight": 24,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "White",
+      "primaryType": "normal",
+      "secondaryType": "flying",
+      "abilities": [
+        "intimidate",
+        "hustle",
+        "h:sheerforce"
+      ],
+      "baseStats": {
+        "hp": 82,
+        "attack": 96,
+        "defence": 51,
+        "special_attack": 45,
+        "special_defence": 51,
+        "speed": 92
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "erratic",
+      "eggCycles": 15,
+      "eggGroups": [
+        "flying"
+      ],
+      "moves": [],
+      "labels": [
+        "gen9"
+      ],
+      "aspects": [
+        "white"
+      ],
+      "height": 6,
+      "weight": 24,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "pokedex": [
+    "cobblemon.species.squawkabilly.desc"
+  ]
+}

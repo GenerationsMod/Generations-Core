@@ -1,0 +1,122 @@
+{
+  "implemented": true,
+  "name": "Nickit",
+  "nationalPokedexNumber": 827,
+  "primaryType": "dark",
+  "abilities": [
+    "runaway",
+    "unburden",
+    "h:stakeout"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 28,
+    "defence": 28,
+    "special_attack": 47,
+    "special_defence": 52,
+    "speed": 50
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 49,
+  "experienceGroup": "fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:quickattack",
+    "1:tailwhip",
+    "4:beatup",
+    "8:honeclaws",
+    "12:snarl",
+    "16:assurance",
+    "20:nastyplot",
+    "24:suckerpunch",
+    "28:nightslash",
+    "32:tailslap",
+    "36:foulplay",
+    "egg:howl",
+    "egg:knockoff",
+    "egg:quickguard",
+    "egg:torment",
+    "tm:agility",
+    "tm:assurance",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:beatup",
+    "tm:dig",
+    "tm:endure",
+    "tm:facade",
+    "tm:faketears",
+    "tm:foulplay",
+    "tm:mudshot",
+    "tm:nastyplot",
+    "tm:playrough",
+    "tm:protect",
+    "tm:rest",
+    "tm:round",
+    "tm:screech",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:substitute",
+    "tm:swift",
+    "tm:tailslap",
+    "tm:taunt",
+    "tm:thief",
+    "tutor:lashout"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.nickit.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "nickit_thievul",
+      "variant": "level_up",
+      "result": "thievul",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "thief"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 18
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 89,
+  "aspects": [],
+  "cannotDynamax": false
+}

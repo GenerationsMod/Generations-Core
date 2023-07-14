@@ -37,6 +37,7 @@ loom {
 }
 
 repositories {
+    maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     maven("https://thedarkcolour.github.io/KotlinForForge/")
 }
 

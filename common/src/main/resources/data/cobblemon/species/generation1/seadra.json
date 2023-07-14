@@ -1,0 +1,207 @@
+{
+  "implemented": true,
+  "name": "Seadra",
+  "nationalPokedexNumber": 117,
+  "primaryType": "water",
+  "abilities": [
+    "poisonpoint",
+    "sniper",
+    "h:damp"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 65,
+    "defence": 95,
+    "special_attack": 95,
+    "special_defence": 45,
+    "speed": 85
+  },
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 154,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "dragon"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:prismarine_shard",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:dragon_scale",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:bubble",
+    "1:leer",
+    "1:smokescreen",
+    "1:watergun",
+    "14:focusenergy",
+    "18:bubblebeam",
+    "20:dragonbreath",
+    "29:twister",
+    "30:brine",
+    "37:laserfocus",
+    "40:agility",
+    "51:hydropump",
+    "57:dragonpulse",
+    "62:dragondance",
+    "65:raindance",
+    "tm:agility",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:bounce",
+    "tm:brine",
+    "tm:captivate",
+    "tm:confide",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:dragondance",
+    "tm:dragonpulse",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:muddywater",
+    "tm:naturalgift",
+    "tm:outrage",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tutor:agility",
+    "tutor:attract",
+    "tutor:bide",
+    "tutor:blizzard",
+    "tutor:bounce",
+    "tutor:bubble",
+    "tutor:bubblebeam",
+    "tutor:clearsmog",
+    "tutor:curse",
+    "tutor:disable",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:dragonbreath",
+    "tutor:dragonpulse",
+    "tutor:endure",
+    "tutor:facade",
+    "tutor:flashcannon",
+    "tutor:flipturn",
+    "tutor:focusenergy",
+    "tutor:frustration",
+    "tutor:headbutt",
+    "tutor:hiddenpower",
+    "tutor:hydropump",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
+    "tutor:icywind",
+    "tutor:laserfocus",
+    "tutor:leer",
+    "tutor:mimic",
+    "tutor:outrage",
+    "tutor:protect",
+    "tutor:rage",
+    "tutor:raindance",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:scald",
+    "tutor:scaleshot",
+    "tutor:signalbeam",
+    "tutor:skullbash",
+    "tutor:sleeptalk",
+    "tutor:smokescreen",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:surf",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:takedown",
+    "tutor:toxic",
+    "tutor:twister",
+    "tutor:waterfall",
+    "tutor:watergun",
+    "tutor:waterpulse",
+    "tutor:whirlpool"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.seadra.desc"
+  ],
+  "preEvolution": "horsea",
+  "evolutions": [
+    {
+      "id": "seadra_kingdra",
+      "variant": "trade",
+      "result": "kingdra",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "itemCondition": "cobblemon:dragon_scale"
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.9,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 12,
+  "weight": 250,
+  "aspects": [],
+  "cannotDynamax": false
+}

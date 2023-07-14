@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gray_cave_rock_floor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:gray_cave_rock_floor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:gray_cave_rock_floor_stairs_from_gray_cave_rock_floor_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gray_cave_rock_floor",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:gray_cave_rock_floor_stairs_from_gray_cave_rock_floor_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

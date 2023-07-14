@@ -1,0 +1,210 @@
+{
+  "implemented": true,
+  "name": "Swinub",
+  "nationalPokedexNumber": 220,
+  "primaryType": "ice",
+  "secondaryType": "ground",
+  "abilities": [
+    "oblivious",
+    "snowcloak",
+    "h:thickfat"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 50,
+    "defence": 40,
+    "special_attack": 30,
+    "special_defence": 30,
+    "speed": 50
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 225,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 50,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:raw_porkchop"
+      },
+      {
+        "item": "minecraft:brown_wool"
+      }
+    ]
+  },
+  "moves": [
+    "1:odorsleuth",
+    "1:tackle",
+    "4:mudsport",
+    "10:powdersnow",
+    "13:mudslap",
+    "19:endure",
+    "20:mudbomb",
+    "25:icywind",
+    "28:iceshard",
+    "28:takedown",
+    "37:earthquake",
+    "37:mist",
+    "40:flail",
+    "46:blizzard",
+    "55:amnesia",
+    "egg:ancientpower",
+    "egg:avalanche",
+    "egg:bite",
+    "egg:bodyslam",
+    "egg:curse",
+    "egg:doubleedge",
+    "egg:fissure",
+    "egg:freezedry",
+    "egg:iciclecrash",
+    "egg:iciclespear",
+    "egg:mudshot",
+    "egg:rockslide",
+    "egg:stealthrock",
+    "egg:takedown",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:confide",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:lightscreen",
+    "tm:mudshot",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:sandtomb",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:stealthrock",
+    "tm:strength",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:swagger",
+    "tm:toxic",
+    "tutor:amnesia",
+    "tutor:ancientpower",
+    "tutor:attract",
+    "tutor:bite",
+    "tutor:blizzard",
+    "tutor:bodyslam",
+    "tutor:charm",
+    "tutor:curse",
+    "tutor:defensecurl",
+    "tutor:detect",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:earthpower",
+    "tutor:earthquake",
+    "tutor:endeavor",
+    "tutor:endure",
+    "tutor:frustration",
+    "tutor:headbutt",
+    "tutor:hiddenpower",
+    "tutor:iciclespear",
+    "tutor:icywind",
+    "tutor:mimic",
+    "tutor:mist",
+    "tutor:mudshot",
+    "tutor:mudslap",
+    "tutor:odorsleuth",
+    "tutor:powdersnow",
+    "tutor:protect",
+    "tutor:raindance",
+    "tutor:rest",
+    "tutor:return",
+    "tutor:roar",
+    "tutor:rockslide",
+    "tutor:rocksmash",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:strength",
+    "tutor:substitute",
+    "tutor:superpower",
+    "tutor:swagger",
+    "tutor:tackle",
+    "tutor:takedown",
+    "tutor:toxic"
+  ],
+  "labels": [
+    "gen2"
+  ],
+  "pokedex": [
+    "cobblemon.species.swinub.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "swinub_piloswine",
+      "variant": "level_up",
+      "result": "piloswine",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "icefang"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 33
+        }
+      ]
+    }
+  ],
+  "baseScale": 1.1,
+  "hitbox": {
+    "width": 0.7,
+    "height": 0.4,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 65,
+  "aspects": [],
+  "cannotDynamax": false
+}

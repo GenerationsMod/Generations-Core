@@ -1,0 +1,92 @@
+{
+  "implemented": true,
+  "name": "Silcoon",
+  "nationalPokedexNumber": 266,
+  "primaryType": "bug",
+  "abilities": [
+    "shedskin"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 35,
+    "defence": 55,
+    "special_attack": 25,
+    "special_defence": 25,
+    "speed": 15
+  },
+  "behaviour": {
+    "moving": {
+      "canMove": false,
+      "walk": {
+        "canWalk": false
+      },
+      "canLook": false
+    }
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 72,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:harden",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:irondefense",
+    "tutor:stringshot"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.silcoon.desc"
+  ],
+  "preEvolution": "wurmple",
+  "evolutions": [
+    {
+      "id": "silcoon_beautifly",
+      "variant": "level_up",
+      "result": "beautifly",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 10
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 100,
+  "aspects": [],
+  "cannotDynamax": false
+}

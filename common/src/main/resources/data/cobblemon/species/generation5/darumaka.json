@@ -1,0 +1,301 @@
+{
+  "implemented": true,
+  "name": "Darumaka",
+  "nationalPokedexNumber": 554,
+  "primaryType": "fire",
+  "abilities": [
+    "hustle",
+    "h:innerfocus"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 90,
+    "defence": 45,
+    "special_attack": 15,
+    "special_defence": 45,
+    "speed": 50
+  },
+  "features": [
+    "galarian"
+  ],
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Galar",
+      "primaryType": "ice",
+      "abilities": [
+        "hustle",
+        "h:innerfocus"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 90,
+        "defence": 45,
+        "special_attack": 15,
+        "special_defence": 45,
+        "speed": 50
+      },
+      "catchRate": 120,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 63,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "field"
+      ],
+      "moves": [
+        "1:powdersnow",
+        "1:tackle",
+        "4:taunt",
+        "8:bite",
+        "12:avalanche",
+        "16:workup",
+        "20:icefang",
+        "24:headbutt",
+        "28:icepunch",
+        "32:uproar",
+        "36:bellydrum",
+        "40:blizzard",
+        "44:thrash",
+        "48:superpower",
+        "egg:flamewheel",
+        "egg:focuspunch",
+        "egg:freezedry",
+        "egg:hammerarm",
+        "egg:incinerate",
+        "egg:poweruppunch",
+        "egg:takedown",
+        "egg:yawn",
+        "tm:attract",
+        "tm:avalanche",
+        "tm:blizzard",
+        "tm:brickbreak",
+        "tm:dig",
+        "tm:encore",
+        "tm:endure",
+        "tm:facade",
+        "tm:fireblast",
+        "tm:firefang",
+        "tm:firepunch",
+        "tm:firespin",
+        "tm:flamethrower",
+        "tm:flareblitz",
+        "tm:fling",
+        "tm:focusenergy",
+        "tm:grassknot",
+        "tm:gyroball",
+        "tm:heatwave",
+        "tm:icebeam",
+        "tm:icefang",
+        "tm:icepunch",
+        "tm:megakick",
+        "tm:megapunch",
+        "tm:overheat",
+        "tm:protect",
+        "tm:rest",
+        "tm:rockslide",
+        "tm:rocktomb",
+        "tm:round",
+        "tm:sleeptalk",
+        "tm:snore",
+        "tm:solarbeam",
+        "tm:substitute",
+        "tm:sunnyday",
+        "tm:superpower",
+        "tm:taunt",
+        "tm:thief",
+        "tm:uproar",
+        "tm:uturn",
+        "tm:willowisp",
+        "tm:workup",
+        "tm:zenheadbutt"
+      ],
+      "labels": [
+        "gen8",
+        "galar_regional"
+      ],
+      "aspects": [
+        "galarian"
+      ],
+      "height": 7,
+      "weight": 400,
+      "evolutions": [
+        {
+          "id": "darumaka_darmanitan",
+          "variant": "item_interact",
+          "result": "darmanitan form=galar",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "iciclecrash"
+          ],
+          "requirements": [],
+          "requiredContext": "cobblemon:ice_stone"
+        }
+      ],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 63,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:birch_leaves",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:ember",
+    "1:tackle",
+    "3:rollout",
+    "6:incinerate",
+    "8:bite",
+    "9:rage",
+    "11:firefang",
+    "14:headbutt",
+    "17:uproar",
+    "19:facade",
+    "22:firepunch",
+    "25:workup",
+    "27:thrash",
+    "30:bellydrum",
+    "33:flareblitz",
+    "35:taunt",
+    "39:superpower",
+    "42:overheat",
+    "egg:encore",
+    "egg:endure",
+    "egg:extrasensory",
+    "egg:flamewheel",
+    "egg:focusenergy",
+    "egg:focuspunch",
+    "egg:hammerarm",
+    "egg:sleeptalk",
+    "egg:snatch",
+    "egg:takedown",
+    "egg:yawn",
+    "tm:attract",
+    "tm:brickbreak",
+    "tm:confide",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:firepunch",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:fling",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:gyroball",
+    "tm:heatwave",
+    "tm:hiddenpower",
+    "tm:incinerate",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:overheat",
+    "tm:poweruppunch",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superpower",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:uturn",
+    "tm:willowisp",
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:endeavor",
+    "tutor:firepunch",
+    "tutor:focuspunch",
+    "tutor:heatwave",
+    "tutor:sleeptalk",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:superpower",
+    "tutor:uproar",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5",
+    "unova_regional"
+  ],
+  "pokedex": [
+    "cobblemon.species.darumaka.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "darumaka_darmanitan",
+      "variant": "level_up",
+      "result": "darmanitan",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "hammerarm"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 375,
+  "aspects": [],
+  "cannotDynamax": false
+}

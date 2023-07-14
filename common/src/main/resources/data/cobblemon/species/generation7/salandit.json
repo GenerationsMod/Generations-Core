@@ -1,0 +1,176 @@
+{
+  "implemented": true,
+  "name": "Salandit",
+  "nationalPokedexNumber": 757,
+  "primaryType": "poison",
+  "secondaryType": "fire",
+  "abilities": [
+    "corrosion",
+    "h:oblivious"
+  ],
+  "baseStats": {
+    "hp": 48,
+    "attack": 44,
+    "defence": 40,
+    "special_attack": 71,
+    "special_defence": 40,
+    "speed": 77
+  },
+  "catchRate": 120,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 64,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "monster",
+    "dragon"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:flint",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:poisongas",
+    "1:scratch",
+    "5:ember",
+    "8:sweetscent",
+    "13:dragonrage",
+    "15:poisonfang",
+    "16:smog",
+    "21:doubleslap",
+    "24:flameburst",
+    "29:toxic",
+    "30:incinerate",
+    "32:nastyplot",
+    "37:venoshock",
+    "40:flamethrower",
+    "45:venomdrench",
+    "48:dragonpulse",
+    "60:endeavor",
+    "egg:belch",
+    "egg:fakeout",
+    "egg:knockoff",
+    "egg:mudslap",
+    "egg:sandattack",
+    "egg:snatch",
+    "tm:acidspray",
+    "tm:agility",
+    "tm:attract",
+    "tm:beatup",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:dragonclaw",
+    "tm:dragonpulse",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:fling",
+    "tm:foulplay",
+    "tm:frustration",
+    "tm:gunkshot",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:irontail",
+    "tm:leechlife",
+    "tm:mudslap",
+    "tm:nastyplot",
+    "tm:overheat",
+    "tm:payback",
+    "tm:poisonjab",
+    "tm:poisontail",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scaryface",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:sludgewave",
+    "tm:snore",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderwave",
+    "tm:torment",
+    "tm:toxic",
+    "tm:toxicspikes",
+    "tm:trailblaze",
+    "tm:venomdrench",
+    "tm:venoshock",
+    "tm:willowisp",
+    "tutor:covet",
+    "tutor:dragonpulse",
+    "tutor:foulplay",
+    "tutor:gunkshot",
+    "tutor:heatwave",
+    "tutor:helpinghand",
+    "tutor:irontail",
+    "tutor:knockoff",
+    "tutor:scaleshot",
+    "tutor:skittersmack",
+    "tutor:snatch",
+    "tutor:snore"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.salandit.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "salandit_salazzle",
+      "variant": "level_up",
+      "result": "salazzle",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "firelash"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 33
+        },{
+          "variant": "properties",
+          "target": "gender=female"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 6,
+  "weight": 48,
+  "aspects": [],
+  "cannotDynamax": false
+}

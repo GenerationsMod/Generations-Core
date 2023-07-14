@@ -1,0 +1,147 @@
+{
+  "implemented": true,
+  "name": "Swirlix",
+  "nationalPokedexNumber": 684,
+  "primaryType": "fairy",
+  "abilities": [
+    "sweetveil",
+    "h:unburden"
+  ],
+  "baseStats": {
+    "hp": 62,
+    "attack": 48,
+    "defence": 66,
+    "special_attack": 59,
+    "special_defence": 57,
+    "speed": 49
+  },
+  "catchRate": 200,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 68,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:sugar",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:sweetscent",
+    "1:tackle",
+    "5:fairywind",
+    "8:playnice",
+    "10:faketears",
+    "13:round",
+    "17:cottonspore",
+    "21:endeavor",
+    "21:stringshot",
+    "26:aromatherapy",
+    "31:drainingkiss",
+    "36:energyball",
+    "41:cottonguard",
+    "45:wish",
+    "49:playrough",
+    "58:lightscreen",
+    "67:safeguard",
+    "egg:afteryou",
+    "egg:bellydrum",
+    "egg:copycat",
+    "egg:stickyweb",
+    "egg:yawn",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:calmmind",
+    "tm:charm",
+    "tm:confide",
+    "tm:dazzlinggleam",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:dreameater",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:faketears",
+    "tm:flamethrower",
+    "tm:flash",
+    "tm:frustration",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:lightscreen",
+    "tm:playrough",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:surf",
+    "tm:swagger",
+    "tm:thief",
+    "tm:thunderbolt",
+    "tm:toxic",
+    "tutor:afteryou",
+    "tutor:covet",
+    "tutor:endeavor",
+    "tutor:gastroacid",
+    "tutor:healbell",
+    "tutor:helpinghand",
+    "tutor:magiccoat",
+    "tutor:mistyexplosion",
+    "tutor:snore"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.swirlix.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "swirlix_slurpuff",
+      "variant": "trade",
+      "result": "slurpuff",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "itemCondition": "cobblemon:whipped_dream"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 35,
+  "aspects": [],
+  "cannotDynamax": false
+}

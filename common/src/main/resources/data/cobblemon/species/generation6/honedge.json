@@ -1,0 +1,145 @@
+{
+  "implemented": true,
+  "name": "Honedge",
+  "nationalPokedexNumber": 679,
+  "primaryType": "steel",
+  "secondaryType": "ghost",
+  "abilities": [
+    "noguard"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 80,
+    "defence": 100,
+    "special_attack": 35,
+    "special_defence": 37,
+    "speed": 28
+  },
+  "catchRate": 180,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 65,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:iron_sword",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:swordsdance",
+    "1:tackle",
+    "5:furycutter",
+    "8:metalsound",
+    "13:pursuit",
+    "18:autotomize",
+    "20:shadowsneak",
+    "22:aerialace",
+    "26:retaliate",
+    "29:slash",
+    "32:irondefense",
+    "35:nightslash",
+    "39:powertrick",
+    "42:ironhead",
+    "47:sacredsword",
+    "egg:block",
+    "egg:destinybond",
+    "egg:metalsound",
+    "egg:shadowsneak",
+    "egg:wideguard",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:closecombat",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gyroball",
+    "tm:hiddenpower",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:protect",
+    "tm:psychocut",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:reversal",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarblade",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tutor:afteryou",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:laserfocus",
+    "tutor:magnetrise",
+    "tutor:shockwave",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:steelbeam"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.honedge.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "honedge_doublade",
+      "variant": "level_up",
+      "result": "doublade",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.85,
+    "height": 1.6,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 8,
+  "weight": 20,
+  "aspects": [],
+  "cannotDynamax": false
+}

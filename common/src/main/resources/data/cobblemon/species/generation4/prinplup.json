@@ -1,0 +1,174 @@
+{
+  "implemented": true,
+  "name": "Prinplup",
+  "nationalPokedexNumber": 394,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:defiant"
+  ],
+  "baseStats": {
+    "hp": 64,
+    "attack": 66,
+    "defence": 68,
+    "special_attack": 81,
+    "special_defence": 76,
+    "speed": 50
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 142,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "drops": {
+    "amount": "3",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:tackle",
+    "8:bubble",
+    "11:watersport",
+    "15:peck",
+    "16:metalclaw",
+    "19:bide",
+    "19:bubblebeam",
+    "28:furyattack",
+    "33:brine",
+    "37:whirlpool",
+    "42:mist",
+    "46:drillpeck",
+    "51:hydropump",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:brickbreak",
+    "tm:brine",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:defog",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:icebeam",
+    "tm:naturalgift",
+    "tm:pluck",
+    "tm:protect",
+    "tm:quash",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:stealthrock",
+    "tm:strength",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:covet",
+    "tutor:defog",
+    "tutor:dive",
+    "tutor:headbutt",
+    "tutor:icywind",
+    "tutor:mudslap",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:waterpledge",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.prinplup.desc"
+  ],
+  "preEvolution": "piplup",
+  "evolutions": [
+    {
+      "id": "prinplup_empoleon",
+      "variant": "level_up",
+      "result": "empoleon",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.65,
+    "height": 1.45,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 8,
+  "weight": 230,
+  "aspects": [],
+  "cannotDynamax": false
+}

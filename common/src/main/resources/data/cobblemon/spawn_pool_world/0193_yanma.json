@@ -1,0 +1,24 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "yanma-1",
+            "pokemon": "yanma",
+            "presets": [
+                "water_surface",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "bucket": "common",
+            "level": "11-39",
+            "weight": 5.4,
+            "condition": {
+                "canSeeSky": true,
+                "timeRange": "day",
+                "isRaining": false
+            }
+        }
+    ]
+}

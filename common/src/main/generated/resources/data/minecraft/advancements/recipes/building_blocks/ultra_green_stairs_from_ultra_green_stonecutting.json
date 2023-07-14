@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ultra_green_stairs_from_ultra_green_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_green": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:ultra_green"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ultra_green",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ultra_green_stairs_from_ultra_green_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

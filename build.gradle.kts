@@ -27,8 +27,10 @@ subprojects {
         maven("https://cursemaven.com").content { includeGroup("curse.maven") }
         maven("https://maven.impactdev.net/repository/development/")
         maven("https://maven.parchmentmc.org")
-        maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-        maven("https://maven.bai.lol")
+        maven("https://maven2.bai.lol").content {
+            includeGroup("lol.bai")
+            includeGroup("mcp.mobius.waila")
+        }
     }
 
     @Suppress("UnstableApiUsage")

@@ -1,0 +1,24 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "delibird-1",
+            "pokemon": "delibird",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "1-50",
+            "weight": 4.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_glacial"
+                ]
+            }
+        }
+    ]
+}

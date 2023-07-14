@@ -1,0 +1,175 @@
+{
+  "implemented": true,
+  "name": "Lotad",
+  "nationalPokedexNumber": 270,
+  "primaryType": "water",
+  "secondaryType": "grass",
+  "abilities": [
+    "swiftswim",
+    "raindish",
+    "h:owntempo"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 30,
+    "defence": 30,
+    "special_attack": 40,
+    "special_defence": 50,
+    "speed": 30
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 44,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "water_1",
+    "grass"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:lily_pad",
+        "percentage": 50
+      },
+      {
+        "item": "generations_core:lotad_doll",
+        "percentage": 1
+      }
+    ]
+  },
+  "moves": [
+    "1:astonish",
+    "3:growl",
+    "6:watergun",
+    "7:absorb",
+    "9:bubble",
+    "13:naturepower",
+    "15:naturalgift",
+    "16:flail",
+    "21:mist",
+    "25:bubblebeam",
+    "27:zenheadbutt",
+    "30:gigadrain",
+    "31:raindance",
+    "43:energyball",
+    "43:megadrain",
+    "egg:counter",
+    "egg:flail",
+    "egg:gigadrain",
+    "egg:leechseed",
+    "egg:razorleaf",
+    "egg:sweetscent",
+    "egg:synthesis",
+    "egg:teeterdance",
+    "egg:tickle",
+    "egg:watergun",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:bulletseed",
+    "tm:captivate",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:naturalgift",
+    "tm:naturepower",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:zenheadbutt",
+    "tutor:absorb",
+    "tutor:astonish",
+    "tutor:bodyslam",
+    "tutor:doubleedge",
+    "tutor:endure",
+    "tutor:gigadrain",
+    "tutor:grassyglide",
+    "tutor:growl",
+    "tutor:headbutt",
+    "tutor:icywind",
+    "tutor:leechseed",
+    "tutor:mimic",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:swordsdance",
+    "tutor:synthesis",
+    "tutor:uproar",
+    "tutor:waterpulse",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.lotad.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "lotad_lombre",
+      "variant": "level_up",
+      "result": "lombre",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 14
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.6,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 26,
+  "aspects": [],
+  "cannotDynamax": false
+}

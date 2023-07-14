@@ -1,0 +1,130 @@
+{
+  "implemented": true,
+  "name": "Sobble",
+  "nationalPokedexNumber": 816,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:sniper"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 40,
+    "defence": 40,
+    "special_attack": 70,
+    "special_defence": 40,
+    "speed": 70
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:pound",
+    "6:watergun",
+    "8:bind",
+    "12:waterpulse",
+    "17:tearfullook",
+    "20:suckerpunch",
+    "24:uturn",
+    "28:liquidation",
+    "32:soak",
+    "36:raindance",
+    "egg:aquajet",
+    "egg:aquaring",
+    "egg:doubleteam",
+    "egg:fellstinger",
+    "egg:haze",
+    "egg:iceshard",
+    "egg:mist",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:bounce",
+    "tm:chillingwater",
+    "tm:dive",
+    "tm:endure",
+    "tm:facade",
+    "tm:hydropump",
+    "tm:lightscreen",
+    "tm:liquidation",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:protect",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:round",
+    "tm:safeguard",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:uturn",
+    "tm:waterfall",
+    "tm:waterpledge",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:waterpledge"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.sobble.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "sobble_drizzile",
+      "variant": "level_up",
+      "result": "drizzile",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 16
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.9,
+    "height": 1.05,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 1
+  },
+  "height": 3,
+  "weight": 40,
+  "aspects": [],
+  "cannotDynamax": false
+}

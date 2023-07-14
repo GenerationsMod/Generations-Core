@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_red_poke_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:red_poke_brick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:red_poke_brick_stairs_from_red_poke_brick_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_red_poke_brick",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:red_poke_brick_stairs_from_red_poke_brick_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

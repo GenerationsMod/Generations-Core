@@ -1,0 +1,109 @@
+{
+  "implemented": true,
+  "name": "Magikarp",
+  "nationalPokedexNumber": 129,
+  "primaryType": "water",
+  "abilities": [
+    "swiftswim",
+    "h:rattled"
+  ],
+  "baseStats": {
+    "hp": 20,
+    "attack": 10,
+    "defence": 55,
+    "special_attack": 15,
+    "special_defence": 20,
+    "speed": 80
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 40,
+  "experienceGroup": "slow",
+  "eggCycles": 5,
+  "eggGroups": [
+    "water_2",
+    "dragon"
+  ],
+  "behaviour": {
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:salmon"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:splash",
+    "15:tackle",
+    "30:flail",
+    "tm:bounce",
+    "tm:hydropump",
+    "tutor:bounce",
+    "tutor:celebrate",
+    "tutor:flail",
+    "tutor:happyhour",
+    "tutor:hydropump",
+    "tutor:splash",
+    "tutor:tackle"
+  ],
+  "labels": [
+    "gen1"
+  ],
+  "pokedex": [
+    "cobblemon.species.magikarp.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "magikarp_gyarados",
+      "variant": "level_up",
+      "result": "gyarados",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "bite"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 9,
+  "weight": 100,
+  "aspects": [],
+  "cannotDynamax": false
+}

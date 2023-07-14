@@ -1,0 +1,77 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "avalugg-1",
+            "pokemon": "avalugg",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "37-51",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_frozen"
+                ]
+            }
+        },
+        {
+            "id": "avalugg-2",
+            "pokemon": "avalugg",
+            "presets": [
+                "water_surface"
+            ],
+            "type": "pokemon",
+            "bucket": "common",
+            "level": "37-51",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_frozen"
+                ]
+            }
+        },
+        {
+            "id": "avalugg-hisuian-1",
+            "pokemon": "avalugg hisuian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "37-51",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_frozen"
+                ]
+            }
+        },
+        {
+            "id": "avalugg-hisuian-2",
+            "pokemon": "avalugg hisuian",
+            "presets": [
+                "water_surface"
+            ],
+            "type": "pokemon",
+            "bucket": "common",
+            "level": "37-51",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_frozen"
+                ]
+            }
+        }
+    ]
+}

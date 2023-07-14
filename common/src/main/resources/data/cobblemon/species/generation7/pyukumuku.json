@@ -1,0 +1,130 @@
+{
+  "implemented": true,
+  "name": "Pyukumuku",
+  "nationalPokedexNumber": 771,
+  "primaryType": "water",
+  "abilities": [
+    "innardsout",
+    "h:unaware"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 60,
+    "defence": 130,
+    "special_attack": 30,
+    "special_defence": 130,
+    "speed": 5
+  },
+  "catchRate": 60,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 144,
+  "experienceGroup": "fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "water_1"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:slime_ball",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.175
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": false,
+        "canBreatheUnderwater": true
+      },
+      "wanderChance": 360
+    }
+  },
+  "moves": [
+    "1:batonpass",
+    "1:bide",
+    "1:harden",
+    "1:mudsport",
+    "1:watersport",
+    "5:helpinghand",
+    "9:taunt",
+    "13:safeguard",
+    "17:counter",
+    "21:purify",
+    "25:curse",
+    "29:gastroacid",
+    "33:painsplit",
+    "37:recover",
+    "41:soak",
+    "45:toxic",
+    "49:memento",
+    "egg:bestow",
+    "egg:endure",
+    "egg:mirrorcoat",
+    "egg:spite",
+    "egg:swagger",
+    "egg:tickle",
+    "egg:venomdrench",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:lightscreen",
+    "tm:protect",
+    "tm:psychup",
+    "tm:quash",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:safeguard",
+    "tm:screech",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:toxic",
+    "tm:venomdrench",
+    "tutor:block",
+    "tutor:gastroacid",
+    "tutor:helpinghand",
+    "tutor:painsplit",
+    "tutor:recycle",
+    "tutor:spite"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.pyukumuku.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.75,
+    "height": 0.6,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 2,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 12,
+  "aspects": [],
+  "cannotDynamax": false
+}

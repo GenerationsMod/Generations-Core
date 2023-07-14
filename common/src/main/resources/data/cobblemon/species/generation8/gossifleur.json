@@ -1,0 +1,122 @@
+{
+  "implemented": true,
+  "name": "Gossifleur",
+  "nationalPokedexNumber": 829,
+  "primaryType": "grass",
+  "abilities": [
+    "cottondown",
+    "regenerator",
+    "h:effectspore"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 40,
+    "defence": 60,
+    "special_attack": 40,
+    "special_defence": 60,
+    "speed": 10
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 50,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:dandelion",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:leafage",
+    "1:sing",
+    "4:rapidspin",
+    "8:sweetscent",
+    "12:razorleaf",
+    "16:round",
+    "21:leaftornado",
+    "24:synthesis",
+    "28:hypervoice",
+    "32:aromatherapy",
+    "36:leafstorm",
+    "egg:growth",
+    "egg:leechseed",
+    "egg:poisonpowder",
+    "egg:sleeppowder",
+    "egg:stunspore",
+    "egg:worryseed",
+    "tm:attract",
+    "tm:bulletseed",
+    "tm:charm",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyterrain",
+    "tm:helpinghand",
+    "tm:hypervoice",
+    "tm:leafstorm",
+    "tm:lightscreen",
+    "tm:magicalleaf",
+    "tm:pollenpuff",
+    "tm:protect",
+    "tm:rest",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tutor:grassyglide"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.gossifleur.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "gossifleur_eldegoss",
+      "variant": "level_up",
+      "result": "eldegoss",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "cottonspore"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 22,
+  "aspects": [],
+  "cannotDynamax": false
+}

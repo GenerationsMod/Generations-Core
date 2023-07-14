@@ -1,0 +1,199 @@
+{
+  "implemented": true,
+  "name": "Grimmsnarl",
+  "nationalPokedexNumber": 861,
+  "primaryType": "dark",
+  "secondaryType": "fairy",
+  "abilities": [
+    "prankster",
+    "frisk",
+    "h:pickpocket"
+  ],
+  "baseStats": {
+    "hp": 95,
+    "attack": 120,
+    "defence": 65,
+    "special_attack": 95,
+    "special_defence": 75,
+    "speed": 60
+  },
+  "catchRate": 45,
+  "maleRatio": 1,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "dark",
+      "secondaryType": "fairy",
+      "abilities": [
+        "prankster",
+        "frisk",
+        "h:pickpocket"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "attack": 120,
+        "defence": 65,
+        "special_attack": 95,
+        "special_defence": 75,
+        "speed": 60
+      },
+      "catchRate": 45,
+      "maleRatio": 1,
+      "baseExperienceYield": 255,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "fairy",
+        "human_like"
+      ],
+      "moves": [],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 320,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 255,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy",
+    "human_like"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:bamboo",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:bite",
+    "1:bulkup",
+    "1:confide",
+    "1:fakeout",
+    "1:falsesurrender",
+    "1:flatter",
+    "1:poweruppunch",
+    "12:faketears",
+    "16:assurance",
+    "20:swagger",
+    "24:suckerpunch",
+    "28:torment",
+    "35:darkpulse",
+    "40:nastyplot",
+    "48:playrough",
+    "56:foulplay",
+    "64:hammerarm",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:bulkup",
+    "tm:chillingwater",
+    "tm:crunch",
+    "tm:darkestlariat",
+    "tm:darkpulse",
+    "tm:dazzlinggleam",
+    "tm:drainingkiss",
+    "tm:drainpunch",
+    "tm:endure",
+    "tm:facade",
+    "tm:faketears",
+    "tm:firepunch",
+    "tm:fling",
+    "tm:focusblast",
+    "tm:focusenergy",
+    "tm:foulplay",
+    "tm:gigaimpact",
+    "tm:hyperbeam",
+    "tm:icepunch",
+    "tm:imprison",
+    "tm:leechlife",
+    "tm:lightscreen",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:metronome",
+    "tm:mistyterrain",
+    "tm:nastyplot",
+    "tm:playrough",
+    "tm:powerswap",
+    "tm:powerwhip",
+    "tm:protect",
+    "tm:reflect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:revenge",
+    "tm:round",
+    "tm:scaryface",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:throatchop",
+    "tm:thunderpunch",
+    "tm:thunderwave",
+    "tm:trailblaze",
+    "tm:trick",
+    "tm:uproar",
+    "tm:wonderroom",
+    "tutor:burningjealousy",
+    "tutor:lashout"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.grimmsnarl.desc"
+  ],
+  "preEvolution": "morgrem",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 15,
+  "weight": 610,
+  "aspects": [],
+  "cannotDynamax": false
+}

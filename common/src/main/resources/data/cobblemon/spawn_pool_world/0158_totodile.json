@@ -1,0 +1,22 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "totodile-1",
+            "pokemon": "totodile",
+            "presets": [
+                "river"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "5-32",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true
+            }
+        }
+    ]
+}

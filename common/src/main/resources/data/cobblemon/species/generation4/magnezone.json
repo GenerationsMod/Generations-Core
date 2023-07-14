@@ -1,0 +1,178 @@
+{
+  "implemented": true,
+  "name": "Magnezone",
+  "nationalPokedexNumber": 462,
+  "primaryType": "electric",
+  "secondaryType": "steel",
+  "abilities": [
+    "magnetpull",
+    "sturdy",
+    "h:analytic"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 70,
+    "defence": 115,
+    "special_attack": 130,
+    "special_defence": 90,
+    "speed": 60
+  },
+  "catchRate": 30,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 268,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "cobblemon:magnet",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:barrier",
+    "1:electricterrain",
+    "1:magneticflux",
+    "1:metalsound",
+    "1:mirrorcoat",
+    "1:supersonic",
+    "1:tackle",
+    "1:thundershock",
+    "1:triattack",
+    "13:lightscreen",
+    "14:sonicboom",
+    "17:thunderwave",
+    "22:spark",
+    "27:electroball",
+    "27:lockon",
+    "30:magnetbomb",
+    "34:screech",
+    "39:flashcannon",
+    "40:discharge",
+    "46:mirrorshot",
+    "50:magnetrise",
+    "54:gyroball",
+    "60:zapcannon",
+    "tm:allyswitch",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:confuseray",
+    "tm:doubleteam",
+    "tm:eerieimpulse",
+    "tm:electricterrain",
+    "tm:electroball",
+    "tm:electroweb",
+    "tm:endure",
+    "tm:explosion",
+    "tm:facade",
+    "tm:flash",
+    "tm:flashcannon",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:gyroball",
+    "tm:heavyslam",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:recycle",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:selfdestruct",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:triattack",
+    "tm:voltswitch",
+    "tm:wildcharge",
+    "tutor:allyswitch",
+    "tutor:electroweb",
+    "tutor:gravity",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:magiccoat",
+    "tutor:magnetrise",
+    "tutor:recycle",
+    "tutor:risingvoltage",
+    "tutor:rollout",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:steelbeam",
+    "tutor:steelroller",
+    "tutor:swift"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.magnezone.desc"
+  ],
+  "preEvolution": "magneton",
+  "evolutions": [],
+  "baseScale": 1.4,
+  "hitbox": {
+    "width": 1.5,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 12,
+  "weight": 1800,
+  "aspects": [],
+  "cannotDynamax": false
+}

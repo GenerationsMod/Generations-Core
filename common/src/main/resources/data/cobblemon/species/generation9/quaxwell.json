@@ -1,0 +1,116 @@
+{
+  "implemented": true,
+  "name": "Quaxwell",
+  "nationalPokedexNumber": 913,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:moxie"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 85,
+    "defence": 65,
+    "special_attack": 65,
+    "special_defence": 60,
+    "speed": 65
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "baseExperienceYield": 144,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "flying",
+    "water_1"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:doublehit",
+    "1:growl",
+    "1:pound",
+    "1:watergun",
+    "7:workup",
+    "10:wingattack",
+    "13:aquajet",
+    "17:waterpulse",
+    "19:lowsweep",
+    "23:aquacutter",
+    "27:airslash",
+    "32:focusenergy",
+    "38:acrobatics",
+    "43:liquidation",
+    "48:featherdance",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:batonpass",
+    "tm:bravebird",
+    "tm:chillingwater",
+    "tm:disarmingvoice",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:helpinghand",
+    "tm:hydropump",
+    "tm:liquidation",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:mistyterrain",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:surf",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:waterpledge",
+    "tm:waterpulse"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 12,
+  "weight": 215,
+  "preEvolution": "quaxly",
+  "evolutions": [
+    {
+      "id": "quaxwell_quaquaval",
+      "variant": "level_up",
+      "result": "quaquaval",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "aquastep"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.quaxwell.desc"
+  ]
+}

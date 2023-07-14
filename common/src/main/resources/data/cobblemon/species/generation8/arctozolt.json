@@ -1,0 +1,125 @@
+{
+  "implemented": true,
+  "name": "Arctozolt",
+  "nationalPokedexNumber": 881,
+  "primaryType": "electric",
+  "secondaryType": "ice",
+  "abilities": [
+    "voltabsorb",
+    "static",
+    "h:slushrush"
+  ],
+  "baseStats": {
+    "hp": 90,
+    "attack": 100,
+    "defence": 90,
+    "special_attack": 90,
+    "special_defence": 80,
+    "speed": 55
+  },
+  "catchRate": 45,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 177,
+  "experienceGroup": "slow",
+  "eggCycles": 35,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:calcite",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:powdersnow",
+    "1:thundershock",
+    "7:charge",
+    "14:echoedvoice",
+    "21:ancientpower",
+    "28:pluck",
+    "35:avalanche",
+    "42:freezedry",
+    "49:slam",
+    "56:discharge",
+    "63:boltbeak",
+    "70:iciclecrash",
+    "77:blizzard",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:electroball",
+    "tm:endure",
+    "tm:facade",
+    "tm:gigaimpact",
+    "tm:hail",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:irontail",
+    "tm:lowkick",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:payback",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:rockblast",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:surf",
+    "tm:taunt",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderfang",
+    "tm:thunderpunch",
+    "tm:thunderwave",
+    "tm:wildcharge",
+    "tutor:charge",
+    "tutor:meteorbeam",
+    "tutor:powdersnow",
+    "tutor:risingvoltage",
+    "tutor:thundershock"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.arctozolt.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 23,
+  "weight": 1500,
+  "aspects": [],
+  "cannotDynamax": false
+}

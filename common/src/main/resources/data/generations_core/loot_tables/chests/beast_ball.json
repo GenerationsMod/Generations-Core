@@ -1,0 +1,338 @@
+{
+	"type": "minecraft:chest",
+	"pools": [{
+		"rolls": {
+			"min": 1,
+			"max": 3
+		},
+		"entries": [{
+				"type": "minecraft:item",
+				"name": "cobblemon:poke_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:antidote"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:assault_vest"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:babiri_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:beast_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:big_nugget"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:black_sludge"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:bright_powder"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:brittle_bones"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:cell_battery"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:chalky_stone"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:charcoal"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:charti_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:choice_band"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:choice_specs"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:chople_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:colbur_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:comet_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:courage_candy_xl"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:dna_splicers"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:dragon_gem"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:dynamax_candy"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:enigma_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:exp_candy_xl"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fairy_gem"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fire_gem"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:flame_orb"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:full_heal"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ganlon_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:gigantamix"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:golden_nanab_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:heal_powder"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:jaboca_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lava_cookie"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:permit"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pomeg_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:power_belt"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rawst_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rock_incense"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sea_incense"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:smart_candy_l"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:soda_pop"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:strange_souvenir"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:weakness_policy"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:wepear_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:wide_lens"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:x_special_defense_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:x_speed"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:x_speed_6"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:yache_berry"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:yellow_nectar"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:dragon_candy"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:yellow_shard"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:zinc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:zoom_lens"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:purpur_block"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:end_stone"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:prismarine"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:glowstone_dust"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:nether_wart"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:spider_eye"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:warped_fungus"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "minecraft:music_disc_cat"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:record_1"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:z_ingot"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:amethyst"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ruby"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lava_crystal"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm44"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm78"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm100"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm115"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm156"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm169"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:gooey_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:damp_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:surprise_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:growth_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:stable_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:amaze_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:boost_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rich_mulch"
+			}
+		]
+	}]
+}

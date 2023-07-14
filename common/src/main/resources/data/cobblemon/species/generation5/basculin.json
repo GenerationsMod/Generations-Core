@@ -1,0 +1,347 @@
+{
+  "implemented": true,
+  "name": "Basculin",
+  "nationalPokedexNumber": 550,
+  "primaryType": "water",
+  "abilities": [
+    "reckless",
+    "adaptability",
+    "h:moldbreaker"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 92,
+    "defence": 65,
+    "special_attack": 80,
+    "special_defence": 55,
+    "speed": 98
+  },
+  "catchRate": 25,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 161,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 40,
+  "eggGroups": [
+    "water_2"
+  ],
+  "behaviour": {
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:salmon"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "1:tailwhip",
+    "1:watergun",
+    "4:uproar",
+    "7:headbutt",
+    "10:bite",
+    "13:aquajet",
+    "16:chipaway",
+    "20:takedown",
+    "24:crunch",
+    "28:aquatail",
+    "32:soak",
+    "36:doubleedge",
+    "41:scaryface",
+    "44:wavecrash",
+    "46:flail",
+    "46:headsmash",
+    "51:finalgambit",
+    "56:thrash",
+    "egg:agility",
+    "egg:brine",
+    "egg:bubblebeam",
+    "egg:endeavor",
+    "egg:headsmash",
+    "egg:muddywater",
+    "egg:mudshot",
+    "egg:rage",
+    "egg:revenge",
+    "egg:swift",
+    "egg:whirlpool",
+    "tm:agility",
+    "tm:assurance",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:bounce",
+    "tm:brine",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:crunch",
+    "tm:cut",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:revenge",
+    "tm:reversal",
+    "tm:round",
+    "tm:scald",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:snowscape",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:zenheadbutt",
+    "tutor:agility",
+    "tutor:aquatail",
+    "tutor:bounce",
+    "tutor:endeavor",
+    "tutor:flipturn",
+    "tutor:headbutt",
+    "tutor:icywind",
+    "tutor:liquidation",
+    "tutor:scaleshot",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:superpower",
+    "tutor:uproar",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.basculin.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.1,
+    "height": 0.8,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 10,
+  "weight": 180,
+  "forms": [
+    {
+      "name": "Blue-Striped",
+      "primaryType": "water",
+      "abilities": [
+        "rockhead",
+        "adaptability",
+        "h:moldbreaker"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 92,
+        "defence": 65,
+        "special_attack": 80,
+        "special_defence": 55,
+        "speed": 98
+      },
+      "catchRate": 25,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 161,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 40,
+      "eggGroups": [
+        "water_2"
+      ],
+      "moves": [],
+      "labels": [
+        "gen5"
+      ],
+      "aspects": [
+        "bluestriped"
+      ],
+      "height": 10,
+      "weight": 180,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "White-Striped",
+      "primaryType": "water",
+      "abilities": [
+        "rattled",
+        "adaptability",
+        "h:moldbreaker"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 92,
+        "defence": 65,
+        "special_attack": 80,
+        "special_defence": 55,
+        "speed": 98
+      },
+      "catchRate": 25,
+      "maleRatio": 0.5,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 40,
+      "eggGroups": [
+        "water_2"
+      ],
+      "moves": [
+        "1:tailwhip",
+        "1:watergun",
+        "4:tackle",
+        "8:flail",
+        "12:aquajet",
+        "16:bite",
+        "20:scaryface",
+        "24:headbutt",
+        "28:soak",
+        "32:crunch",
+        "36:takedown",
+        "40:uproar",
+        "44:wavecrash",
+        "48:thrash",
+        "52:doubleedge",
+        "56:headsmash",
+        "egg:endeavor",
+        "egg:lastrespects",
+        "tm:agility",
+        "tm:blizzard",
+        "tm:chillingwater",
+        "tm:crunch",
+        "tm:endure",
+        "tm:facade",
+        "tm:hydropump",
+        "tm:icebeam",
+        "tm:icefang",
+        "tm:icywind",
+        "tm:liquidation",
+        "tm:mudshot",
+        "tm:protect",
+        "tm:psychicfangs",
+        "tm:raindance",
+        "tm:rest",
+        "tm:scaryface",
+        "tm:sleeptalk",
+        "tm:snowscape",
+        "tm:substitute",
+        "tm:surf",
+        "tm:swift",
+        "tm:takedown",
+        "tm:terablast",
+        "tm:waterfall",
+        "tm:waterpulse",
+        "tm:zenheadbutt"
+      ],
+      "labels": [
+        "gen8"
+      ],
+      "aspects": [
+        "whitestriped"
+      ],
+      "height": 10,
+      "weight": 180,
+      "evolutions": [
+        {
+          "id": "basculin_basculegion",
+          "variant": "level_up",
+          "result": "basculegion",
+          "consumeHeldItem": false,
+          "learnableMoves": [],
+          "requirements": [
+            {
+              "variant": "recoil",
+              "amount": 294
+            }
+          ]
+        },
+        {
+          "id": "basculin_basculegion",
+          "variant": "level_up",
+          "result": "basculegion form=f",
+          "consumeHeldItem": false,
+          "learnableMoves": [],
+          "requirements": [
+            {
+              "variant": "recoil",
+              "amount": 294
+            }
+          ]
+        }
+      ],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "aspects": [
+    "redstriped"
+  ],
+  "cannotDynamax": false
+}

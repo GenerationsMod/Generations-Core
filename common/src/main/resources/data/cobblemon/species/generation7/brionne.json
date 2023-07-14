@@ -1,0 +1,153 @@
+{
+  "implemented": true,
+  "name": "Brionne",
+  "nationalPokedexNumber": 729,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:liquidvoice"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 69,
+    "defence": 69,
+    "special_attack": 91,
+    "special_defence": 81,
+    "speed": 50
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 147,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:disarmingvoice",
+    "1:growl",
+    "1:pound",
+    "1:watergun",
+    "11:babydolleyes",
+    "14:aquajet",
+    "16:icywind",
+    "19:encore",
+    "24:bubblebeam",
+    "28:sing",
+    "33:doubleslap",
+    "37:hypervoice",
+    "42:moonblast",
+    "46:captivate",
+    "51:hydropump",
+    "55:mistyterrain",
+    "tm:acrobatics",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:brine",
+    "tm:charm",
+    "tm:confide",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:echoedvoice",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hypervoice",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:irontail",
+    "tm:mistyterrain",
+    "tm:playrough",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scald",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterfall",
+    "tm:whirlpool",
+    "tm:wonderroom",
+    "tm:workup",
+    "tutor:aquatail",
+    "tutor:covet",
+    "tutor:flipturn",
+    "tutor:helpinghand",
+    "tutor:hypervoice",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:snore",
+    "tutor:tripleaxel",
+    "tutor:uproar",
+    "tutor:waterpledge",
+    "tutor:waterpulse",
+    "tutor:wonderroom"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.brionne.desc"
+  ],
+  "preEvolution": "popplio",
+  "evolutions": [
+    {
+      "id": "brionne_primarina",
+      "variant": "level_up",
+      "result": "primarina",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "sparklingaria"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 34
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 1.05,
+    "height": 1.25,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 175,
+  "aspects": [],
+  "cannotDynamax": false
+}

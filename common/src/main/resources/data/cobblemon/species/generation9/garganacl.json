@@ -1,0 +1,117 @@
+{
+  "implemented": true,
+  "name": "Garganacl",
+  "nationalPokedexNumber": 934,
+  "primaryType": "rock",
+  "abilities": [
+    "purifyingsalt",
+    "sturdy",
+    "h:clearbody"
+  ],
+  "baseStats": {
+    "hp": 100,
+    "attack": 100,
+    "defence": 130,
+    "special_attack": 45,
+    "special_defence": 90,
+    "speed": 35
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 250,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 3,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:flint",
+        "quantityRange": "1-3",
+        "percentage": 75
+      }
+    ]
+  },
+  "moves": [
+    "1:block",
+    "1:harden",
+    "1:rockblast",
+    "1:tackle",
+    "1:wideguard",
+    "5:rockthrow",
+    "7:mudshot",
+    "10:rocktomb",
+    "13:rockpolish",
+    "16:headbutt",
+    "24:saltcure",
+    "30:recover",
+    "34:rockslide",
+    "40:stealthrock",
+    "44:heavyslam",
+    "49:earthquake",
+    "54:stoneedge",
+    "60:explosion",
+    "tm:avalanche",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:bulldoze",
+    "tm:dig",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:firepunch",
+    "tm:flashcannon",
+    "tm:fling",
+    "tm:gigaimpact",
+    "tm:heavyslam",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:icepunch",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:mudshot",
+    "tm:powergem",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:rockblast",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:sandstorm",
+    "tm:sleeptalk",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thunderpunch",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 25,
+  "weight": 2400,
+  "preEvolution": "naclstack",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.garganacl.desc"
+  ]
+}

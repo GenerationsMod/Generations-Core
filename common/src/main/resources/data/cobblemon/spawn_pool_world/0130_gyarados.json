@@ -1,0 +1,73 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "gyarados-1",
+            "pokemon": "gyarados",
+            "presets": [
+                "water_surface",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "bucket": "uncommon",
+            "level": "20-54",
+            "weight": 2,
+            "condition": {
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "gyarados-2",
+            "pokemon": "gyarados",
+            "presets": [
+                "underwater",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "20-54",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "gyarados-3",
+            "pokemon": "gyarados",
+            "presets": [
+                "water_surface"
+            ],
+            "type": "pokemon",
+            "bucket": "uncommon",
+            "level": "20-54",
+            "weight": 2,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#minecraft:is_ocean"
+                ]
+            }
+        },
+        {
+            "id": "gyarados-4",
+            "pokemon": "gyarados",
+            "presets": [
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "20-54",
+            "weight": 0.1,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#minecraft:is_ocean"
+                ]
+            }
+        }
+    ]
+}
