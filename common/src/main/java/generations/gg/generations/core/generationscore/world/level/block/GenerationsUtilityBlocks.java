@@ -93,6 +93,44 @@ public class GenerationsUtilityBlocks {
 
 	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
 
+	public static RegistrySupplier<PokeLootBlock> BEAST_LOOT = registerLoot("beast");
+	public static RegistrySupplier<PokeLootBlock> CHERISH_LOOT = registerLoot("cherish");
+	public static RegistrySupplier<PokeLootBlock> DIVE_LOOT = registerLoot("dive");
+	public static RegistrySupplier<PokeLootBlock> DREAM_LOOT = registerLoot("dream");
+	public static RegistrySupplier<PokeLootBlock> DUSK_LOOT = registerLoot("dusk");
+	public static RegistrySupplier<PokeLootBlock> FAST_LOOT = registerLoot("fast");
+	public static RegistrySupplier<PokeLootBlock> FRIEND_LOOT = registerLoot("friend");
+	public static RegistrySupplier<PokeLootBlock> GIGATON_LOOT = registerLoot("gigaton");
+	public static RegistrySupplier<PokeLootBlock> GREAT_LOOT = registerLoot("great");
+	public static RegistrySupplier<PokeLootBlock> HEAL_LOOT = registerLoot("heal");
+	public static RegistrySupplier<PokeLootBlock> HEAVY_LOOT = registerLoot("heavy");
+	public static RegistrySupplier<PokeLootBlock> JET_LOOT = registerLoot("jet");
+	public static RegistrySupplier<PokeLootBlock> LEADEN_LOOT = registerLoot("leaden");
+	public static RegistrySupplier<PokeLootBlock> LEVEL_LOOT = registerLoot("level");
+	public static RegistrySupplier<PokeLootBlock> LOVE_LOOT = registerLoot("love");
+	public static RegistrySupplier<PokeLootBlock> LURE_LOOT = registerLoot("lure");
+	public static RegistrySupplier<PokeLootBlock> LUXURY_LOOT = registerLoot("luxury");
+	public static RegistrySupplier<PokeLootBlock> MASTER_LOOT = registerLoot("master");
+	public static RegistrySupplier<PokeLootBlock> MOON_LOOT = registerLoot("moon");
+	public static RegistrySupplier<PokeLootBlock> NEST_LOOT = registerLoot("nest");
+	public static RegistrySupplier<PokeLootBlock> NET_LOOT = registerLoot("net");
+	public static RegistrySupplier<PokeLootBlock> ORIGIN_LOOT = registerLoot("origin");
+	public static RegistrySupplier<PokeLootBlock> PARK_LOOT = registerLoot("park");
+	public static RegistrySupplier<PokeLootBlock> POKE_LOOT = registerLoot("poke");
+	public static RegistrySupplier<PokeLootBlock> PREMIER_LOOT = registerLoot("premier");
+	public static RegistrySupplier<PokeLootBlock> QUICK_LOOT = registerLoot("quick");
+	public static RegistrySupplier<PokeLootBlock> REPEAT_LOOT = registerLoot("repeat");
+	public static RegistrySupplier<PokeLootBlock> SAFARI_LOOT = registerLoot("safari");
+	public static RegistrySupplier<PokeLootBlock> SPORT_LOOT = registerLoot("sport");
+	public static RegistrySupplier<PokeLootBlock> STRANGE_LOOT = registerLoot("strange");
+	public static RegistrySupplier<PokeLootBlock> TIMER_LOOT = registerLoot("timer");
+	public static RegistrySupplier<PokeLootBlock> ULTRA_LOOT = registerLoot("ultra");
+	public static RegistrySupplier<PokeLootBlock> WING_LOOT = registerLoot("wing");
+
+	private static RegistrySupplier<PokeLootBlock> registerLoot(String name) {
+		return registerBlockItem(name + "_loot", () -> new PokeLootBlock(name, BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.METAL).strength(-1.0f, 3600000.0f)));
+	}
+
 	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlockItem("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOD).ignitedByLava()));
 	public static final RegistrySupplier<GenericFurnaceBlock> CHARGE_STONE_FURNACE = registerBlockItem("charge_stone_furnace", () -> new GenericFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));
 	public static final RegistrySupplier<GenericBlastFurnaceBlock> CHARGE_STONE_BLAST_FURNACE = registerBlockItem("charge_stone_blast_furnace", () -> new GenericBlastFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE)));

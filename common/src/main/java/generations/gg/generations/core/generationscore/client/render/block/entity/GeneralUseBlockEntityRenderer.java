@@ -53,6 +53,8 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             blockEntity.objectInstance.setVariant(provider.getVariant());
         }
 
+
+
         blockEntity.objectInstance.viewMatrix().set(stack.last().pose());
         ((BlockObjectInstance) blockEntity.objectInstance).setLight(packedLight);
 

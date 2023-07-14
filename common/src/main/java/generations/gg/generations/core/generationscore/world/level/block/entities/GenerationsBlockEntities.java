@@ -295,6 +295,42 @@ public class GenerationsBlockEntities {
             GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get()
     ).build(null));
 
+    public static final RegistrySupplier<BlockEntityType<PokeLootBlockEntity>> POKE_LOOT = BLOCK_ENTITIES.register("poke_loot", () -> BlockEntityType.Builder.of(PokeLootBlockEntity::new,
+            GenerationsUtilityBlocks.BEAST_LOOT.get(),
+            GenerationsUtilityBlocks.CHERISH_LOOT.get(),
+            GenerationsUtilityBlocks.DIVE_LOOT.get(),
+            GenerationsUtilityBlocks.DREAM_LOOT.get(),
+            GenerationsUtilityBlocks.DUSK_LOOT.get(),
+            GenerationsUtilityBlocks.FAST_LOOT.get(),
+            GenerationsUtilityBlocks.FRIEND_LOOT.get(),
+            GenerationsUtilityBlocks.GIGATON_LOOT.get(),
+            GenerationsUtilityBlocks.GREAT_LOOT.get(),
+            GenerationsUtilityBlocks.HEAL_LOOT.get(),
+            GenerationsUtilityBlocks.HEAVY_LOOT.get(),
+            GenerationsUtilityBlocks.JET_LOOT.get(),
+            GenerationsUtilityBlocks.LEADEN_LOOT.get(),
+            GenerationsUtilityBlocks.LEVEL_LOOT.get(),
+            GenerationsUtilityBlocks.LOVE_LOOT.get(),
+            GenerationsUtilityBlocks.LURE_LOOT.get(),
+            GenerationsUtilityBlocks.LUXURY_LOOT.get(),
+            GenerationsUtilityBlocks.MASTER_LOOT.get(),
+            GenerationsUtilityBlocks.MOON_LOOT.get(),
+            GenerationsUtilityBlocks.NEST_LOOT.get(),
+            GenerationsUtilityBlocks.NET_LOOT.get(),
+            GenerationsUtilityBlocks.ORIGIN_LOOT.get(),
+            GenerationsUtilityBlocks.PARK_LOOT.get(),
+            GenerationsUtilityBlocks.POKE_LOOT.get(),
+            GenerationsUtilityBlocks.PREMIER_LOOT.get(),
+            GenerationsUtilityBlocks.QUICK_LOOT.get(),
+            GenerationsUtilityBlocks.REPEAT_LOOT.get(),
+            GenerationsUtilityBlocks.SAFARI_LOOT.get(),
+            GenerationsUtilityBlocks.SPORT_LOOT.get(),
+            GenerationsUtilityBlocks.STRANGE_LOOT.get(),
+            GenerationsUtilityBlocks.TIMER_LOOT.get(),
+            GenerationsUtilityBlocks.ULTRA_LOOT.get(),
+            GenerationsUtilityBlocks.WING_LOOT.get()
+    ).build(null));
+
 
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Block Entities");
