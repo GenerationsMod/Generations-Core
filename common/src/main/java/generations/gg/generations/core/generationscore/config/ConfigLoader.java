@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
 
 /**
  * The Config Loader for all Generations modules/extensions
@@ -17,7 +18,7 @@ import java.nio.file.Path;
 public class ConfigLoader {
 
     /** The Gson instance for the Config Loader. */
-    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson GSON = new GsonBuilder().registerTypeAdapter(Duration.class, new DurationJsonAdapter()).setPrettyPrinting().create();
 
     /**
      * Loads a config file for a Generations module/extension.

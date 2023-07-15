@@ -4,20 +4,20 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeLootBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import org.joml.Matrix4f;
 
-public class PokeLootRendrer implements BlockEntityRenderer<PokeLootBlockEntity> {
+public class PokeLootRendrer implements BlockEntityRenderer<BallLootBlockEntity> {
 
     public PokeLootRendrer(BlockEntityRendererProvider.Context ctx) {}
 
     @Override
-    public void render(PokeLootBlockEntity blockEntity, float partialTick, PoseStack stack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
-        if (!(blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
+    public void render(BallLootBlockEntity blockEntity, float partialTick, PoseStack stack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
+        if (!(blockEntity.isVisible() && blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
         stack.pushPose();
         if (blockEntity.objectInstance == null) {
             blockEntity.objectInstance = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
