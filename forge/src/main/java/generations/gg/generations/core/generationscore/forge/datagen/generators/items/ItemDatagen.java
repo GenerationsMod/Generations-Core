@@ -1177,7 +1177,7 @@ public class ItemDatagen extends ItemModelProvider {
         GenerationsUtilityBlocks.HEALER_BLOCKS.forEach(block -> createItemBlockDir(block, "utility_blocks/healer"));
         GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> createItemBlockDir(block, "utility_blocks/pc"));
         GenerationsUtilityBlocks.CLOCK_BLOCKS.forEach(block -> createItemBlockDir(block, "clocks"));
-        GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> createItemBlock(block, "ball_loots/"));
+        GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> createItemBlock(block, "items/blocks/ball_loots/"));
         createItemBlock(GenerationsUtilityBlocks.TRASH_CAN, "item/blocks/utility_blocks/");
 
         createItemBlock(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "item/blocks/sign/");
