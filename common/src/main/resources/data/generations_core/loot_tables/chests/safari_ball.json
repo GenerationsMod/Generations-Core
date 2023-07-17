@@ -107,7 +107,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:leek"
+				"name": "generations_core:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -151,7 +151,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:revive"
+				"name": "generations_core:revive"
 			},
 			{
 				"type": "minecraft:item",

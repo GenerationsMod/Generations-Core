@@ -423,19 +423,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:quiet_mint"
+				"name": "generations_core:quiet_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:rash_mint"
+				"name": "generations_core:rash_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:mild_mint"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:calm_mint"
+				"name": "generations_core:calm_mint"
 			},
 			{
 				"type": "minecraft:item",

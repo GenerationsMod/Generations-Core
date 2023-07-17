@@ -39,6 +39,10 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:berry_juice"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:bobs_food_tin"
 			},
 			{
@@ -67,11 +71,19 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:clever_feather"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:custap_berry"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:dire_hit"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:electric_seed"
 			},
 			{
 				"type": "minecraft:item",
@@ -83,7 +95,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:energy_root"
+				"name": "generations_core:energy_root"
 			},
 			{
 				"type": "minecraft:item",
@@ -111,6 +123,10 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:grassy_seed"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "cobblemon:great_ball"
 			},
 			{
@@ -119,7 +135,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:heal_powder"
+				"name": "generations_core:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -159,6 +175,10 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:misty_seed"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:moomoo_cheese"
 			},
 			{
@@ -184,6 +204,10 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:pretty_feather"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:psychic_seed"
 			},
 			{
 				"type": "minecraft:item",
@@ -296,6 +320,14 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:silicon"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:aluminium_ingot"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:aluminium_plate"
 			},
 			{
 				"type": "minecraft:item",

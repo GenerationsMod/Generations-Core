@@ -27,7 +27,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:berry_juice"
+				"name": "generations_core:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -131,7 +131,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:heal_powder"
+				"name": "generations_core:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,7 +171,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:max_revive"
+				"name": "generations_core:max_revive"
 			},
 			{
 				"type": "minecraft:item",
@@ -199,7 +199,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:revive"
+				"name": "generations_core:revive"
 			},
 			{
 				"type": "minecraft:item",

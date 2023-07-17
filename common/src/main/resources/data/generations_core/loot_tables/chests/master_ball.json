@@ -179,7 +179,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:pp_max"
+				"name": "generations_core:pp_max"
 			},
 			{
 				"type": "minecraft:item",
