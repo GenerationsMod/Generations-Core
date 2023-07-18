@@ -94,15 +94,6 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> BLACK_CLOCK = registerClock("black_clock", DyeColor.BLACK);
 
 	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
-	public static final RegistrySupplier<PokeLootBlock> POKE_LOOT = registerLoot("poke");
-	public static final RegistrySupplier<PokeLootBlock> GREAT_LOOT = registerLoot("great");
-	public static final RegistrySupplier<PokeLootBlock> ULTRA_LOOT = registerLoot("ultra");
-	public static final RegistrySupplier<PokeLootBlock> MASTER_LOOT = registerLoot("master");
-	public static final RegistrySupplier<PokeLootBlock> BEAST_LOOT = registerLoot("beast");
-
-	private static RegistrySupplier<PokeLootBlock> registerLoot(String name) {
-		return registerBlockItem(name + "_loot", () -> new PokeLootBlock(name, BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(-1.0f, 3600000.0f)));
-	}
 
 	public static RegistrySupplier<BallLootBlock> BEAST_BALL_LOOT = registerLoot("beast");
 	public static RegistrySupplier<BallLootBlock> CHERISH_BALL_LOOT = registerLoot("cherish");
