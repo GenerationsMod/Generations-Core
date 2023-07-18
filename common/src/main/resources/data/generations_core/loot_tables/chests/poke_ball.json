@@ -39,7 +39,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:berry_juice"
+				"name": "generations_core:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -71,7 +71,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:clever_feather"
+				"name": "generations_core:clever_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -95,7 +95,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:energy_root"
+				"name": "generations_core:energy_root"
 			},
 			{
 				"type": "minecraft:item",
@@ -135,7 +135,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:heal_powder"
+				"name": "generations_core:heal_powder"
 			},
 			{
 				"type": "minecraft:item",

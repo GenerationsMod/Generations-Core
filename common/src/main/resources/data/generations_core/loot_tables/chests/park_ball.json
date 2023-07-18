@@ -111,7 +111,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:leek"
+				"name": "generations_core:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -143,7 +143,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:pp_max"
+				"name": "generations_core:pp_max"
 			},
 			{
 				"type": "minecraft:item",
@@ -275,87 +275,83 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:serious_mint"
+				"name": "generations_core:serious_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:lonely_mint"
+				"name": "generations_core:lonely_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:brave_mint"
+				"name": "generations_core:brave_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:adamant_mint"
+				"name": "generations_core:adamant_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:naughty_mint"
+				"name": "generations_core:naughty_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:bold_mint"
+				"name": "generations_core:bold_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:relaxed_mint"
+				"name": "generations_core:relaxed_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:impish_mint"
+				"name": "generations_core:impish_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:gentle_mint"
+				"name": "generations_core:gentle_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:lax_mint"
+				"name": "generations_core:lax_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:timid_mint"
+				"name": "generations_core:timid_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:hasty_mint"
+				"name": "generations_core:hasty_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:jolly_mint"
+				"name": "generations_core:jolly_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:naive_mint"
+				"name": "generations_core:naive_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:modest_mint"
+				"name": "generations_core:modest_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:quiet_mint"
+				"name": "generations_core:quiet_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:rash_mint"
+				"name": "generations_core:rash_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:mild_mint"
+				"name": "generations_core:calm_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:calm_mint"
+				"name": "generations_core:sassy_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:sassy_mint"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:careful_mint"
+				"name": "generations_core:careful_mint"
 			},
 			{
 				"type": "minecraft:item",

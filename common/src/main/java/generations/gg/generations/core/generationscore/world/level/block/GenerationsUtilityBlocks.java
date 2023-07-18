@@ -30,6 +30,8 @@ public class GenerationsUtilityBlocks {
 	public static final List<RegistrySupplier<DyedBlockItem<PcBlock>>> PC_BLOCKS = new ArrayList<>();
 	public static final List<RegistrySupplier<DyedBlockItem<ClockBlock>>> CLOCK_BLOCKS = new ArrayList<>();
 
+	public static final List<RegistrySupplier<BallLootBlock>> BALL_LOOTS = new ArrayList<>();
+
 	/**
 	 * Utility Blocks
 	 */
@@ -100,6 +102,46 @@ public class GenerationsUtilityBlocks {
 
 	private static RegistrySupplier<PokeLootBlock> registerLoot(String name) {
 		return registerBlockItem(name + "_loot", () -> new PokeLootBlock(name, BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(-1.0f, 3600000.0f)));
+	}
+
+	public static RegistrySupplier<BallLootBlock> BEAST_BALL_LOOT = registerLoot("beast");
+	public static RegistrySupplier<BallLootBlock> CHERISH_BALL_LOOT = registerLoot("cherish");
+	public static RegistrySupplier<BallLootBlock> DIVE_BALL_LOOT = registerLoot("dive");
+	public static RegistrySupplier<BallLootBlock> DREAM_BALL_LOOT = registerLoot("dream");
+	public static RegistrySupplier<BallLootBlock> DUSK_BALL_LOOT = registerLoot("dusk");
+	public static RegistrySupplier<BallLootBlock> FAST_BALL_LOOT = registerLoot("fast");
+	public static RegistrySupplier<BallLootBlock> FRIEND_BALL_LOOT = registerLoot("friend");
+	public static RegistrySupplier<BallLootBlock> GIGATON_BALL_LOOT = registerLoot("gigaton");
+	public static RegistrySupplier<BallLootBlock> GREAT_BALL_LOOT = registerLoot("great");
+	public static RegistrySupplier<BallLootBlock> HEAL_BALL_LOOT = registerLoot("heal");
+	public static RegistrySupplier<BallLootBlock> HEAVY_BALL_LOOT = registerLoot("heavy");
+	public static RegistrySupplier<BallLootBlock> JET_BALL_LOOT = registerLoot("jet");
+	public static RegistrySupplier<BallLootBlock> LEADEN_BALL_LOOT = registerLoot("leaden");
+	public static RegistrySupplier<BallLootBlock> LEVEL_BALL_LOOT = registerLoot("level");
+	public static RegistrySupplier<BallLootBlock> LOVE_BALL_LOOT = registerLoot("love");
+	public static RegistrySupplier<BallLootBlock> LURE_BALL_LOOT = registerLoot("lure");
+	public static RegistrySupplier<BallLootBlock> LUXURY_BALL_LOOT = registerLoot("luxury");
+	public static RegistrySupplier<BallLootBlock> MASTER_BALL_LOOT = registerLoot("master");
+	public static RegistrySupplier<BallLootBlock> MOON_BALL_LOOT = registerLoot("moon");
+	public static RegistrySupplier<BallLootBlock> NEST_BALL_LOOT = registerLoot("nest");
+	public static RegistrySupplier<BallLootBlock> NET_BALL_LOOT = registerLoot("net");
+	public static RegistrySupplier<BallLootBlock> ORIGIN_BALL_LOOT = registerLoot("origin");
+	public static RegistrySupplier<BallLootBlock> PARK_BALL_LOOT = registerLoot("park");
+	public static RegistrySupplier<BallLootBlock> POKE_BALL_LOOT = registerLoot("poke");
+	public static RegistrySupplier<BallLootBlock> PREMIER_BALL_LOOT = registerLoot("premier");
+	public static RegistrySupplier<BallLootBlock> QUICK_BALL_LOOT = registerLoot("quick");
+	public static RegistrySupplier<BallLootBlock> REPEAT_BALL_LOOT = registerLoot("repeat");
+	public static RegistrySupplier<BallLootBlock> SAFARI_BALL_LOOT = registerLoot("safari");
+	public static RegistrySupplier<BallLootBlock> SPORT_BALL_LOOT = registerLoot("sport");
+	public static RegistrySupplier<BallLootBlock> STRANGE_BALL_LOOT = registerLoot("strange");
+	public static RegistrySupplier<BallLootBlock> TIMER_BALL_LOOT = registerLoot("timer");
+	public static RegistrySupplier<BallLootBlock> ULTRA_BALL_LOOT = registerLoot("ultra");
+	public static RegistrySupplier<BallLootBlock> WING_BALL_LOOT = registerLoot("wing");
+
+	private static RegistrySupplier<BallLootBlock> registerLoot(String name) {
+		var block = registerBlockItem(name + "_ball_loot", () -> new BallLootBlock(name, BlockBehaviour.Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f)));
+		BALL_LOOTS.add(block);
+		return block;
 	}
 
 	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlockItem("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOD).ignitedByLava()));

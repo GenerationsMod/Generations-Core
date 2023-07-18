@@ -295,14 +295,41 @@ public class GenerationsBlockEntities {
             GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get()
     ).build(null));
 
-    public static final RegistrySupplier<BlockEntityType<PcBlockEntity>> PC = BLOCK_ENTITIES.register("pc", () -> BlockEntityType.Builder.of(PcBlockEntity::new, GenerationsUtilityBlocks.PC.get()).build(null));
-    public static final RegistrySupplier<BlockEntityType<PokeLootBlockEntity>> POKE_LOOT = BLOCK_ENTITIES.register("poke_loot", () -> BlockEntityType.Builder.of(PokeLootBlockEntity::new,
-                    GenerationsUtilityBlocks.POKE_LOOT.get(),
-                    GenerationsUtilityBlocks.GREAT_LOOT.get(),
-                    GenerationsUtilityBlocks.ULTRA_LOOT.get(),
-                    GenerationsUtilityBlocks.MASTER_LOOT.get(),
-                    GenerationsUtilityBlocks.BEAST_LOOT.get()
-            ).build(null));
+    public static final RegistrySupplier<BlockEntityType<BallLootBlockEntity>> BALL_LOOT = BLOCK_ENTITIES.register("poke_loot", () -> BlockEntityType.Builder.of(BallLootBlockEntity::new,
+            GenerationsUtilityBlocks.BEAST_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.CHERISH_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.DIVE_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.DREAM_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.DUSK_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.FAST_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.FRIEND_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.GIGATON_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.GREAT_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.HEAL_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.HEAVY_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.JET_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.LEADEN_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.LEVEL_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.LOVE_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.LURE_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.LUXURY_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.MASTER_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.MOON_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.NEST_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.NET_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.ORIGIN_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.PARK_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.POKE_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.PREMIER_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.QUICK_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.REPEAT_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.SAFARI_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.SPORT_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.STRANGE_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.TIMER_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.ULTRA_BALL_LOOT.get(),
+            GenerationsUtilityBlocks.WING_BALL_LOOT.get()
+    ).build(null));
 
 
     public static void init() {

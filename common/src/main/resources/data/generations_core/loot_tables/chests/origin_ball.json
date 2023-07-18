@@ -63,7 +63,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:leek"
+				"name": "generations_core:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,7 +171,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:berry_juice"
+				"name": "generations_core:berry_juice"
 			},
 			{
 				"type": "minecraft:item",

@@ -167,7 +167,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:pp_up"
+				"name": "generations_core:pp_up"
 			},
 			{
 				"type": "minecraft:item",

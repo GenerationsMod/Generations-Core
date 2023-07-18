@@ -331,15 +331,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:adamant_mint"
+				"name": "generations_core:adamant_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:naughty_mint"
+				"name": "generations_core:naughty_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:bold_mint"
+				"name": "generations_core:bold_mint"
 			},
 			{
 				"type": "minecraft:item",

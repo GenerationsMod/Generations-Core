@@ -189,38 +189,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BALL_DISPLAY.get(), GeneralUseBlockEntityRenderer::new);
-        consumer.accept(GenerationsBlockEntities.PC.get(), GeneralUseBlockEntityRenderer::new);
-
-        consumer.accept(GenerationsBlockEntities.POKE_LOOT.get(), (BlockEntityRendererProvider<PokeLootBlockEntity>) context -> (blockEntity, f, stack, multiBufferSource, packedLight, packedOverlay) -> {
-            if (!(blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
-            stack.pushPose();
-            if (blockEntity.objectInstance == null) {
-                blockEntity.objectInstance = new ObjectInstance[1];
-                blockEntity.objectInstance[0] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
-            }
-
-            var primeInstance = blockEntity.objectInstance[0];
-
-            if (!primeInstance.materialId().equals(blockEntity.getVariant())) {
-                primeInstance.setVariant(blockEntity.getVariant());
-            }
-
-
-
-            ((BlockObjectInstance) primeInstance).setLight(packedLight);
-
-
-            ModelRegistry.prepForBER(stack, blockEntity);
-            stack.translate(0, 0.25f, 0);
-
-            var model = ModelRegistry.get(blockEntity, "block");
-            var scale = model.renderObject.scale * 0.5f;
-            stack.scale(scale, scale, scale);
-            primeInstance.viewMatrix().set(stack.last().pose());
-
-            model.render(primeInstance, RenderSystem.getProjectionMatrix());
-            stack.popPose();
-        });
+        consumer.accept(GenerationsBlockEntities.BALL_LOOT.get(), PokeLootRendrer::new);
     }
 
     public static void registerLayerDefinitions(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {

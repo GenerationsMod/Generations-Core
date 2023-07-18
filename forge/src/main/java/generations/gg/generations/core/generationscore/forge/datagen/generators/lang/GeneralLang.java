@@ -109,6 +109,18 @@ public class GeneralLang extends LanguageProvider {
         add("move.newmove1", "1, 2, and... Ta da!");
         add("move.newmove2", "%s forgot %s!");
         add("move.newmove3", "...and learned %s!");
+
+        add("generations_core.blocks.lootfound", "You found one %s!");
+        add("generations_core.blocks.timedclaim", "You've already claimed this timed loot! Try again later!");
+        add("generations_core.blocks.claimedloot", "You've already claimed this loot!");
+        add("generations_core.blocks.ownerchanged", "Block owner changed to server!");
+        add("generations_core.blocks.balllootset", "Custom Ball Loot Set: %s");
+        add("generations_core.blocks.visible", "Ball Loot Visibility: %s");
+        add("generations_core.blocks.lootmode", "Loot Mode: %s");
+        add("generations_core.blocks.lootmodePL1D", "Permanent, limit 1 drop");
+        add("generations_core.blocks.lootmodeTD", "Timed drops");
+        add("generations_core.blocks.lootmodeFCFS", "First come, first served");
+        add("generations_core.blocks.lootmodePUD", "Permanent, unlimited drops");
     }
 
     protected String getNameGens(String name){

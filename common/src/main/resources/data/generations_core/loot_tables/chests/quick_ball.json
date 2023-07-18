@@ -15,7 +15,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:berry_juice"
+				"name": "generations_core:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -279,11 +279,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:sassy_mint"
+				"name": "generations_core:sassy_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:careful_mint"
+				"name": "generations_core:careful_mint"
 			},
 			{
 				"type": "minecraft:item",

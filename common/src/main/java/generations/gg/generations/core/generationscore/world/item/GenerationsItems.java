@@ -899,6 +899,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TAPUNIUM_Z = register("tapunium_z", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> ULTRANECROZIUM_Z = register("ultranecrozium_z", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
 
+    public static final RegistrySupplier<Item> ELECTRIC_SEED = register("electric_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> GRASSY_SEED = register("grassy_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> PSYCHIC_SEED = register("pyschic_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+
     /**
      * Vanilla Like Materials
      */

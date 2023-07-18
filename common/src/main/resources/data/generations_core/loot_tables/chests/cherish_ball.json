@@ -31,7 +31,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:berry_juice"
+				"name": "generations_core:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -395,15 +395,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:serious_mint"
+				"name": "generations_core:serious_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:lonely_mint"
+				"name": "generations_core:lonely_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:brave_mint"
+				"name": "generations_core:brave_mint"
 			},
 			{
 				"type": "minecraft:item",

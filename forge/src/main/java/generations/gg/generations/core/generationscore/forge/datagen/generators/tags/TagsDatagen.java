@@ -140,6 +140,7 @@ public class TagsDatagen {
             tag(BlockTags.FEATURES_CANNOT_REPLACE).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
 
             GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> tag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS).add(block.get()));
+            GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> tag(GenerationsBlockTags.BALL_LOOTS).add(block.get()));
 
 
             //Ore Specific tags
