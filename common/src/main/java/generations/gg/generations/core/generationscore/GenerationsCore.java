@@ -8,7 +8,9 @@
 
 package generations.gg.generations.core.generationscore;
 
+import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.data.DataProvider;
+import com.cobblemon.mod.common.api.pokemon.helditem.HeldItemProvider;
 import com.mojang.logging.LogUtils;
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.InteractionEvent;
@@ -26,6 +28,7 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -34,6 +37,7 @@ import net.minecraft.world.entity.player.Player;
 import org.slf4j.Logger;
 
 import java.nio.file.Path;
+import java.util.function.Function;
 
 /**
  * The Main Class of the Generations-Core mod. (Common)
