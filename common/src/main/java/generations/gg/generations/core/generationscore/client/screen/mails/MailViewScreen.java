@@ -99,12 +99,12 @@ public class MailViewScreen extends Screen {
         int y = (this.height - IMAGE_HEIGHT) / 2;
         poseStack.blit(mailAccess.texture(), x, y, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
 
-        poseStack.drawString(this.font, authorComponent, x + 164, y + 165, 0);
+        poseStack.drawString(this.font, authorComponent, x + 164, y + 165, 0, false);
 
         int l = Math.min(TEXT_HEIGHT / this.font.lineHeight, this.cachedPageComponents.size());
         for (int m = 0; m < l; ++m) {
             FormattedCharSequence formattedCharSequence = this.cachedPageComponents.get(m);
-            poseStack.drawString(font, formattedCharSequence, (x + PAGE_TEXT_X_OFFSET), (y + PAGE_TEXT_Y_OFFSET + m * this.font.lineHeight), 0);
+            poseStack.drawString(font, formattedCharSequence, (x + PAGE_TEXT_X_OFFSET), (y + PAGE_TEXT_Y_OFFSET + m * this.font.lineHeight), 0, false);
         }
         Style style = this.getClickedComponentStyleAt(mouseX, mouseY);
         if (style != null) {

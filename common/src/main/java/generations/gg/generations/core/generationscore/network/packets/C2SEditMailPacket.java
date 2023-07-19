@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.item.ClosedMailItem;
 import generations.gg.generations.core.generationscore.world.item.MailItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.StringTag;
@@ -32,7 +33,7 @@ public record C2SEditMailPacket(int slot, String contents, Optional<String> titl
         var itemStack = sender.getInventory().getItem(slot);
 
         if (itemStack.is(GenerationsItemTags.POKEMAIL)) {
-            itemStack.addTagElement("contents", StringTag.valueOf(contents));
+            itemStack.addTagElement(ClosedMailItem.TAG_CONTENTS, StringTag.valueOf(contents));
         }
     }
 
@@ -48,8 +49,9 @@ public record C2SEditMailPacket(int slot, String contents, Optional<String> titl
                 itemStack1.setTag(compoundTag);
             }
 
-            itemStack1.addTagElement("author", StringTag.valueOf(sender.getName().getString()));
-            itemStack1.addTagElement("contents", StringTag.valueOf(contents));
+            itemStack1.addTagElement(ClosedMailItem.TAG_TITLE, StringTag.valueOf(title));
+            itemStack1.addTagElement(ClosedMailItem.TAG_AUTHOR, StringTag.valueOf(sender.getName().getString()));
+            itemStack1.addTagElement(ClosedMailItem.TAG_CONTENTS, StringTag.valueOf(contents));
 
             sender.getInventory().setItem(slot, itemStack1);
         }
