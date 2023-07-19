@@ -1,0 +1,17 @@
+{
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:celebi.pk, idle.smd)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PROFILE",
+        "STAND",
+        "FLOAT",
+        "NONE",
+        "PORTRAIT"
+      ]
+    }
+  }
+}

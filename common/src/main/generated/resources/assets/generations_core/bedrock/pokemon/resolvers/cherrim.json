@@ -1,0 +1,40 @@
+{
+  "name": "cobblemon:cherrim",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "sunshine"
+      ],
+      "model": "generations_core:cherrim.pk",
+      "poser": "generations_core:cherrim",
+      "texture": "pk:sunshine"
+    },
+    {
+      "aspects": [
+        "sunshine",
+        "shiny"
+      ],
+      "model": "generations_core:cherrim.pk",
+      "poser": "generations_core:cherrim",
+      "texture": "pk:sunshine"
+    },
+    {
+      "aspects": [
+        "overcast"
+      ],
+      "model": "generations_core:cherrim.pk",
+      "poser": "generations_core:cherrim",
+      "texture": "pk:overcast"
+    },
+    {
+      "aspects": [
+        "overcast",
+        "shiny"
+      ],
+      "model": "generations_core:cherrim.pk",
+      "poser": "generations_core:cherrim",
+      "texture": "pk:overcast"
+    }
+  ]
+}

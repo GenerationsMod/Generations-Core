@@ -1,0 +1,26 @@
+{
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:chimchar.pk, idle.smd)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PROFILE",
+        "STAND",
+        "FLOAT",
+        "NONE",
+        "PORTRAIT"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:chimchar.pk, walk.smd)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "name": "cobblemon:deoxys",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "attack"
+      ],
+      "model": "generations_core:deoxys.pk",
+      "poser": "generations_core:deoxys",
+      "texture": "pk:attack"
+    },
+    {
+      "aspects": [
+        "attack",
+        "shiny"
+      ],
+      "model": "generations_core:deoxys.pk",
+      "poser": "generations_core:deoxys",
+      "texture": "pk:attack"
+    },
+    {
+      "aspects": [
+        "defense"
+      ],
+      "model": "generations_core:deoxys.pk",
+      "poser": "generations_core:deoxys",
+      "texture": "pk:defense"
+    },
+    {
+      "aspects": [
+        "defense",
+        "shiny"
+      ],
+      "model": "generations_core:deoxys.pk",
+      "poser": "generations_core:deoxys",
+      "texture": "pk:defense"
+    },
+    {
+      "aspects": [
+        "normal"
+      ],
+      "model": "generations_core:deoxys.pk",
+      "poser": "generations_core:deoxys",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "normal",
+        "shiny"
+      ],
+      "model": "generations_core:deoxys.pk",
+      "poser": "generations_core:deoxys",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "speed"
+      ],
+      "model": "generations_core:deoxys.pk",
+      "poser": "generations_core:deoxys",
+      "texture": "pk:speed"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "speed"
+      ],
+      "model": "generations_core:deoxys.pk",
+      "poser": "generations_core:deoxys",
+      "texture": "pk:speed"
+    }
+  ]
+}

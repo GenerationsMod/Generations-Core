@@ -6,10 +6,10 @@
       ],
       "poseName": "standing",
       "poseTypes": [
-        "STAND",
-        "NONE",
         "PROFILE",
+        "STAND",
         "FLOAT",
+        "NONE",
         "PORTRAIT"
       ]
     },
