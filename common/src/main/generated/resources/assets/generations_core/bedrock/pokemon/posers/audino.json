@@ -1,0 +1,26 @@
+{
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:audino.pk, idle.smd)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "STAND",
+        "NONE",
+        "PROFILE",
+        "FLOAT",
+        "PORTRAIT"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:audino.pk, walk.smd)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    }
+  }
+}

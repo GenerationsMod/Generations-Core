@@ -10,8 +10,10 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 
+import java.security.Provider;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -24,34 +26,31 @@ public abstract class PokemonModelsProvider implements DataProvider {
         this.poserPathProvider = arg.createPathProvider(PackOutput.Target.RESOURCE_PACK, "bedrock/pokemon/posers");
     }
 
-
     @Override
     public CompletableFuture<?> run(CachedOutput output) {
         Set<ResourceLocation> resolvers = Sets.newHashSet();
         Set<ResourceLocation> poser = Sets.newHashSet();
         List<CompletableFuture<?>> list = new ArrayList<>();
-        buildResolvers(provider -> {
-            if(!resolvers.add(provider.getId())) {
-                throw new IllegalArgumentException("Duplicate Resolvers" + provider.getId());
+        build((resolver, poserBuilders) -> {
+            if(!resolvers.add(resolver.getId())) {
+                throw new IllegalArgumentException("Duplicate Resolvers" + resolver.getId());
             } else {
-                list.add(DataProvider.saveStable(output, provider.build(), this.resolverPathProvider.json(provider.getId())));
+                list.add(DataProvider.saveStable(output, resolver.build(), this.resolverPathProvider.json(resolver.getId())));
             }
-        });
 
-        buildPoser(provider -> {
-            if(!poser.add(provider.getId())) {
-                throw new IllegalArgumentException("Duplicate Posers" + provider.getId());
-            } else {
-                list.add(DataProvider.saveStable(output, provider.build(), this.poserPathProvider.json(provider.getId())));
+            for(var poserBuilder : poserBuilders) {
+                if (!poser.add(poserBuilder.getId())) {
+                    throw new IllegalArgumentException("Duplicate Posers" + poserBuilder.getId());
+                } else {
+                    list.add(DataProvider.saveStable(output, poserBuilder.build(), this.poserPathProvider.json(poserBuilder.getId())));
+                }
             }
         });
 
         return CompletableFuture.allOf(list.toArray(CompletableFuture[]::new));
     }
 
-    public abstract void buildResolvers(Consumer<Resolver> provider);
-
-    public abstract void buildPoser(Consumer<PoserBuilder> provider);
+    public abstract void build(BiConsumer<Resolver, List<PoserBuilder>> provider);
 
     @Override
     public String getName() {

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "generations_core:floor_2"
+  },
+  "result": "generations_core:floor_2_slab"
+}

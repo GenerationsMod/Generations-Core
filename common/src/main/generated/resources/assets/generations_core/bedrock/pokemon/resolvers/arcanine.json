@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:arcanine",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:arcanine.pk",
+      "poser": "generations_core:arcanine",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "hisuian"
+      ],
+      "model": "generations_core:arcanine-hisuian.pk",
+      "poser": "generations_core:arcanine-hisuian",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "hisuian",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

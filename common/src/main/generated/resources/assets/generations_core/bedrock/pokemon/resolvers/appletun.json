@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:appletun",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:appletun.pk",
+      "poser": "generations_core:appletun",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "gigantamax"
+      ],
+      "model": "generations_core:appletun-gigantamax.pk",
+      "poser": "generations_core:appletun-gigantamax",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "gigantamax"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

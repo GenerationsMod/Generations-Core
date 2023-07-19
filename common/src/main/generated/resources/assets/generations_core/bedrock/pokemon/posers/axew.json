@@ -1,0 +1,26 @@
+{
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:axew.pk, idle.smd)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "STAND",
+        "NONE",
+        "PROFILE",
+        "FLOAT",
+        "PORTRAIT"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:axew.pk, walk.smd)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    }
+  }
+}

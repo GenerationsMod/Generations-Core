@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "generations_core:concrete_top"
+  },
+  "result": "generations_core:concrete_top_slab"
+}

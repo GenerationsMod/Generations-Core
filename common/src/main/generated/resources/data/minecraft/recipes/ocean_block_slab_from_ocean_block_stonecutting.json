@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "generations_core:ocean_block"
+  },
+  "result": "generations_core:ocean_block_slab"
+}

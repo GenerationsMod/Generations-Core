@@ -1,0 +1,17 @@
+{
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:azurill.pk, idle.smd)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "STAND",
+        "NONE",
+        "PROFILE",
+        "FLOAT",
+        "PORTRAIT"
+      ]
+    }
+  }
+}

@@ -1,0 +1,572 @@
+{
+  "scale": 0.013531752,
+  "materials": {
+    "black": {
+      "type": "solid",
+      "texture": "black.png"
+    },
+    "blue": {
+      "type": "solid",
+      "texture": "blue.png"
+    },
+    "brown": {
+      "type": "solid",
+      "texture": "brown.png"
+    },
+    "cyan": {
+      "type": "solid",
+      "texture": "cyan.png"
+    },
+    "green": {
+      "type": "solid",
+      "texture": "green.png"
+    },
+    "grey": {
+      "type": "solid",
+      "texture": "grey.png"
+    },
+    "halloween": {
+      "type": "solid",
+      "texture": "halloween.png"
+    },
+    "lightblue": {
+      "type": "solid",
+      "texture": "lightblue.png"
+    },
+    "lightgrey": {
+      "type": "solid",
+      "texture": "lightgrey.png"
+    },
+    "lime": {
+      "type": "solid",
+      "texture": "lime.png"
+    },
+    "magenta": {
+      "type": "solid",
+      "texture": "magenta.png"
+    },
+    "normal": {
+      "type": "solid",
+      "texture": "normal.png"
+    },
+    "orange": {
+      "type": "solid",
+      "texture": "orange.png"
+    },
+    "pink": {
+      "type": "solid",
+      "texture": "pink.png"
+    },
+    "purple": {
+      "type": "solid",
+      "texture": "purple.png"
+    },
+    "red": {
+      "type": "solid",
+      "texture": "red.png"
+    },
+    "santa": {
+      "type": "solid",
+      "texture": "santa.png"
+    },
+    "shiny-black": {
+      "type": "solid",
+      "texture": "shiny-black.png"
+    },
+    "shiny-blue": {
+      "type": "solid",
+      "texture": "shiny-blue.png"
+    },
+    "shiny-brown": {
+      "type": "solid",
+      "texture": "shiny-brown.png"
+    },
+    "shiny-cyan": {
+      "type": "solid",
+      "texture": "shiny-cyan.png"
+    },
+    "shiny-green": {
+      "type": "solid",
+      "texture": "shiny-green.png"
+    },
+    "shiny-grey": {
+      "type": "solid",
+      "texture": "shiny-grey.png"
+    },
+    "shiny-lightblue": {
+      "type": "solid",
+      "texture": "shiny-lightblue.png"
+    },
+    "shiny-lightgrey": {
+      "type": "solid",
+      "texture": "shiny-lightgrey.png"
+    },
+    "shiny-lime": {
+      "type": "solid",
+      "texture": "shiny-lime.png"
+    },
+    "shiny-magenta": {
+      "type": "solid",
+      "texture": "shiny-magenta.png"
+    },
+    "shiny-orange": {
+      "type": "solid",
+      "texture": "shiny-orange.png"
+    },
+    "shiny-pink": {
+      "type": "solid",
+      "texture": "shiny-pink.png"
+    },
+    "shiny-purple": {
+      "type": "solid",
+      "texture": "shiny-purple.png"
+    },
+    "shiny-red": {
+      "type": "solid",
+      "texture": "shiny-red.png"
+    },
+    "shiny": {
+      "type": "solid",
+      "texture": "shiny.png"
+    },
+    "shiny-yellow": {
+      "type": "solid",
+      "texture": "shiny-yellow.png"
+    },
+    "yellow": {
+      "type": "solid",
+      "texture": "yellow.png"
+    }
+  },
+  "defaultVariant": {
+	"hat": {
+	  "material": "santa",
+	  "hide": true
+	},
+    "model": {
+      "material": "black",
+      "hide": "false"
+    }
+  },
+  "variants": {
+    "black-santa": {
+      "hat": {
+        "hide": false
+      }
+    },
+    "blue-santa": {
+      "model": {
+        "material": "blue"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "brown-santa": {
+      "model": {
+        "material": "brown"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "cyan-santa": {
+      "model": {
+        "material": "cyan"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "green-santa": {
+      "model": {
+        "material": "green"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "grey-santa": {
+      "model": {
+        "material": "grey"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "halloween-santa": {
+      "model": {
+        "material": "halloween"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "lightblue-santa": {
+      "model": {
+        "material": "lightblue"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "lightgrey-santa": {
+      "model": {
+        "material": "lightgrey"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "lime-santa": {
+      "model": {
+        "material": "lime"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "magenta-santa": {
+      "model": {
+        "material": "magenta"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "normal-santa": {
+      "model": {
+        "material": "normal"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "orange-santa": {
+      "model": {
+        "material": "orange"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "pink-santa": {
+      "model": {
+        "material": "pink"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "purple-santa": {
+      "model": {
+        "material": "purple"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "red-santa": {
+      "model": {
+        "material": "red"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-black-santa": {
+      "model": {
+        "material": "shiny-black"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-blue-santa": {
+      "model": {
+        "material": "shiny-blue"
+      }
+    },
+    "shiny-brown-santa": {
+      "model": {
+        "material": "shiny-brown"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-cyan-santa": {
+      "model": {
+        "material": "shiny-cyan"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-green-santa": {
+      "model": {
+        "material": "shiny-green"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-grey-santa": {
+      "model": {
+        "material": "shiny-grey"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-lightblue-santa": {
+      "model": {
+        "material": "shiny-lightblue"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-lightgrey-santa": {
+      "model": {
+        "material": "shiny-lightgrey"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-lime-santa": {
+      "model": {
+        "material": "shiny-lime"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-magenta-santa": {
+      "model": {
+        "material": "shiny-magenta"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-orange-santa": {
+      "model": {
+        "material": "shiny-orange"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-pink-santa": {
+      "model": {
+        "material": "shiny-pink"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-purple-santa": {
+      "model": {
+        "material": "shiny-purple"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-red-santa": {
+      "model": {
+        "material": "shiny-red"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-santa": {
+      "model": {
+        "material": "shiny"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "shiny-yellow-santa": {
+      "model": {
+        "material": "shiny-yellow"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+    "yellow-santa": {
+      "model": {
+        "material": "yellow"
+      },
+      "hat": {
+        "hide": false
+      }
+    },
+	"black": {},
+    "blue": {
+      "model": {
+        "material": "blue"
+      }
+    },
+    "brown": {
+      "model": {
+        "material": "brown"
+      }
+    },
+    "cyan": {
+      "model": {
+        "material": "cyan"
+      }
+    },
+    "green": {
+      "model": {
+        "material": "green"
+      }
+    },
+    "grey": {
+      "model": {
+        "material": "grey"
+      }
+    },
+    "halloween": {
+      "model": {
+        "material": "halloween"
+      }
+    },
+    "lightblue": {
+      "model": {
+        "material": "lightblue"
+      }
+    },
+    "lightgrey": {
+      "model": {
+        "material": "lightgrey"
+      }
+    },
+    "lime": {
+      "model": {
+        "material": "lime"
+      }
+    },
+    "magenta": {
+      "model": {
+        "material": "magenta"
+      }
+    },
+    "normal": {
+      "model": {
+        "material": "normal"
+      }
+    },
+    "orange": {
+      "model": {
+        "material": "orange"
+      }
+    },
+    "pink": {
+      "model": {
+        "material": "pink"
+      }
+    },
+    "purple": {
+      "model": {
+        "material": "purple"
+      }
+    },
+    "red": {
+      "model": {
+        "material": "red"
+      }
+    },
+    "shiny-black": {
+      "model": {
+        "material": "shiny-black"
+      }
+    },
+    "shiny-blue": {
+      "model": {
+        "material": "shiny-blue"
+      }
+    },
+    "shiny-brown": {
+      "model": {
+        "material": "shiny-brown"
+      }
+    },
+    "shiny-cyan": {
+      "model": {
+        "material": "shiny-cyan"
+      }
+    },
+    "shiny-green": {
+      "model": {
+        "material": "shiny-green"
+      }
+    },
+    "shiny-grey": {
+      "model": {
+        "material": "shiny-grey"
+      }
+    },
+    "shiny-lightblue": {
+      "model": {
+        "material": "shiny-lightblue"
+      }
+    },
+    "shiny-lightgrey": {
+      "model": {
+        "material": "shiny-lightgrey"
+      }
+    },
+    "shiny-lime": {
+      "model": {
+        "material": "shiny-lime"
+      }
+    },
+    "shiny-magenta": {
+      "model": {
+        "material": "shiny-magenta"
+      }
+    },
+    "shiny-orange": {
+      "model": {
+        "material": "shiny-orange"
+      }
+    },
+    "shiny-pink": {
+      "model": {
+        "material": "shiny-pink"
+      }
+    },
+    "shiny-purple": {
+      "model": {
+        "material": "shiny-purple"
+      }
+    },
+    "shiny-red": {
+      "model": {
+        "material": "shiny-red"
+      }
+    },
+    "shiny": {
+      "model": {
+        "material": "shiny"
+      }
+    },
+    "shiny-yellow": {
+      "model": {
+        "material": "shiny-yellow"
+      }
+    },
+    "yellow": {
+      "model": {
+        "material": "yellow"
+      }
+    }
+  }
+}

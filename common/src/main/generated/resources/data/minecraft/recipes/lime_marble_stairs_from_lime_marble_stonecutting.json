@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:lime_marble"
+  },
+  "result": "generations_core:lime_marble_stairs"
+}
