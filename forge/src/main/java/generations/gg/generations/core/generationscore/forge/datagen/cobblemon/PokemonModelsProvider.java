@@ -5,6 +5,7 @@ import com.google.common.collect.Sets;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
@@ -21,6 +22,8 @@ public abstract class PokemonModelsProvider implements DataProvider {
     private final PackOutput.PathProvider resolverPathProvider;
     private final PackOutput.PathProvider poserPathProvider;
 
+    protected List<Pair<Resolver, List<PoserBuilder>>> pairs = new ArrayList<>();
+
     public PokemonModelsProvider(PackOutput arg) {
         this.resolverPathProvider = arg.createPathProvider(PackOutput.Target.RESOURCE_PACK, "bedrock/pokemon/resolvers");
         this.poserPathProvider = arg.createPathProvider(PackOutput.Target.RESOURCE_PACK, "bedrock/pokemon/posers");
@@ -31,14 +34,17 @@ public abstract class PokemonModelsProvider implements DataProvider {
         Set<ResourceLocation> resolvers = Sets.newHashSet();
         Set<ResourceLocation> poser = Sets.newHashSet();
         List<CompletableFuture<?>> list = new ArrayList<>();
-        build((resolver, poserBuilders) -> {
-            if(!resolvers.add(resolver.getId())) {
+
+        build();
+
+        pairForEach(pairs, (resolver, poserBuilders) -> {
+            if (!resolvers.add(resolver.getId())) {
                 throw new IllegalArgumentException("Duplicate Resolvers" + resolver.getId());
             } else {
                 list.add(DataProvider.saveStable(output, resolver.build(), this.resolverPathProvider.json(resolver.getId())));
             }
 
-            for(var poserBuilder : poserBuilders) {
+            for (var poserBuilder : poserBuilders) {
                 if (!poser.add(poserBuilder.getId())) {
                     throw new IllegalArgumentException("Duplicate Posers" + poserBuilder.getId());
                 } else {
@@ -47,10 +53,16 @@ public abstract class PokemonModelsProvider implements DataProvider {
             }
         });
 
+
+
         return CompletableFuture.allOf(list.toArray(CompletableFuture[]::new));
     }
 
-    public abstract void build(BiConsumer<Resolver, List<PoserBuilder>> provider);
+    private static <T, V> void pairForEach(List<Pair<T, V>> list, BiConsumer<T,V> o) {
+        list.forEach(pair -> o.accept(pair.getFirst(), pair.getSecond()));
+    }
+
+    public abstract void build();
 
     @Override
     public String getName() {

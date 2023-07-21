@@ -1,0 +1,91 @@
+{
+  "name": "cobblemon:florges",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "blue"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:blue"
+    },
+    {
+      "aspects": [
+        "blue",
+        "shiny"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:shiny-blue"
+    },
+    {
+      "aspects": [
+        "orange"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:orange"
+    },
+    {
+      "aspects": [
+        "orange",
+        "shiny"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:shiny-orange"
+    },
+    {
+      "aspects": [
+        "red"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:red"
+    },
+    {
+      "aspects": [
+        "red",
+        "shiny"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:shiny-red"
+    },
+    {
+      "aspects": [
+        "white"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:white"
+    },
+    {
+      "aspects": [
+        "white",
+        "shiny"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:shiny-white"
+    },
+    {
+      "aspects": [
+        "yellow"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:yellow"
+    },
+    {
+      "aspects": [
+        "yellow",
+        "shiny"
+      ],
+      "model": "generations_core:florges.pk",
+      "poser": "generations_core:florges",
+      "texture": "pk:shiny-yellow"
+    }
+  ]
+}

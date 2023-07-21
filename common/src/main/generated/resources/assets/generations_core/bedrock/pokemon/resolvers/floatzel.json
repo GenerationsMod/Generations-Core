@@ -1,0 +1,40 @@
+{
+  "name": "cobblemon:floatzel",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "male"
+      ],
+      "model": "generations_core:floatzel.pk",
+      "poser": "generations_core:floatzel",
+      "texture": "pk:male"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "male"
+      ],
+      "model": "generations_core:floatzel.pk",
+      "poser": "generations_core:floatzel",
+      "texture": "pk:shiny-male"
+    },
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "generations_core:floatzel.pk",
+      "poser": "generations_core:floatzel",
+      "texture": "pk:female"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "female"
+      ],
+      "model": "generations_core:floatzel.pk",
+      "poser": "generations_core:floatzel",
+      "texture": "pk:shiny-female"
+    }
+  ]
+}

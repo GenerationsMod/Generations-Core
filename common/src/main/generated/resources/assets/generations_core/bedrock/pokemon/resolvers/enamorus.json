@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:enamorus",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:enamorus.pk",
+      "poser": "generations_core:enamorus",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "therian"
+      ],
+      "model": "generations_core:enamorus-therian.pk",
+      "poser": "generations_core:enamorus-therian",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "therian"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

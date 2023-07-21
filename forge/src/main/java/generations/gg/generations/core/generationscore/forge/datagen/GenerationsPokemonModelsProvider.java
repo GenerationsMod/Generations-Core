@@ -1,10 +1,12 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
+import com.mojang.datafixers.util.Pair;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.cobblemon.PokemonModelsProvider;
 import net.minecraft.data.PackOutput;
 import org.apache.commons.lang3.function.TriFunction;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 
@@ -14,166 +16,228 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
     }
 
     @Override
-    public void build(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider) {
+    public void build() {
         alcremie(); //Because special sweet tart. 0.o
-        mega(provider, "absol");
-        base(provider, "accelgor");
-        mega(provider, "aerodactyl");
-        mega(provider, "aggron");
-        base(provider, "aipom");
-        mega(provider, "alakazam");
-        base(provider, "alomomola"); //TODO: Add swim
-        mega(provider, "altaria");
-        base(provider, "amaura");
-        base(provider, "ambipom");
-        base(provider, "amoonguss");
-        mega(provider, "ampharos");
-        base(provider, "anorith");
-        gigantamax(provider, "appletun");
-        base(provider, "applin");
-        base(provider, "arbok");
-        hisuian(provider, "arcanine");
-        elemental(provider, "arceus");
-        base(provider, "archen");
-        base(provider, "archeops");
-        base(provider, "arctovish");
-        base(provider, "arctozolt");
-        base(provider, "ariados");
-        base(provider, "armaldo");
-        base(provider, "aromatisse");
-        base(provider, "aron");
-        base(provider, "arrokuda", true);
-        mega(provider, "audino");
-        base(provider, "aurorus");
-        hisuian(provider, "avalugg");
-        base(provider, "axew");
-        base(provider, "azelf");
-        base(provider, "azumarill");
-        base(provider, "azurill", true);
-        base(provider, "yamper");
-        base(provider, "yungoos");
-        base(provider, "yveltal");
-        base(provider, "xatu");
-        bulkForms(provider, "xerneas", "active", "neutral");
-        base(provider, "xurkitree");
-        base(provider, "cacnea");
-        base(provider, "cacturne");
-        bulkForms(provider, "calyrex", "icerider", "shadowrider");
-        base(provider, "camerupt");
-        base(provider, "carbink");
-        base(provider, "carkol");
-        base(provider, "carnivine");
-        base(provider, "carracosta");
-        base(provider, "carvanha");
-        base(provider, "cascoon");
-        base(provider, "caterpie");
-        base(provider, "celebi", true); //TODO Fix to do fly
-        base(provider, "celesteela");
-        base(provider, "centiskorch");
-        base(provider, "chandelure");
-        base(provider, "chansey");
-        base(provider, "charjabug");
-        base(provider, "chatot");
-        bulkFormsModel(provider, "cherrim", "sunshine", "overcast");
-        base(provider, "cherubi");
-        base(provider, "chesnaught");
-        base(provider, "chespin");
-        base(provider, "chewtle");
-        base(provider, "chikorita");
-        base(provider, "chimchar");
-        base(provider, "chimecho");
-        base(provider, "chinchou");
-        base(provider, "chingling");
-        base(provider, "cinccino");
-        base(provider, "cinderace");
-        base(provider, "clamperl");
-        base(provider, "clauncher");
-        base(provider, "clawitzer");
-        base(provider, "claydol");
-        base(provider, "clefable");
-        base(provider, "clefairy");
-        base(provider, "cleffa");
-        base(provider, "clobbopus");
-        base(provider, "cloyster");
-        base(provider, "coalossal");
-        base(provider, "cobalion");
-        base(provider, "cofagrigus");
-        base(provider, "combee");
-        base(provider, "combusken");
-        base(provider, "comfey");
-        base(provider, "conkeldurr");
-        base(provider, "copperajah");
-        base(provider, "corphish");
-        base(provider, "corviknight");
-        base(provider, "corvisquire");
-        base(provider, "cosmoem");
-        base(provider, "cosmog");
-        base(provider, "cottonee");
-        base(provider, "crabominable");
-        base(provider, "crabrawler");
-        base(provider, "cradily");
-        base(provider, "cramorant");
-        base(provider, "cranidos");
-        base(provider, "crawdaunt");
-        base(provider, "cresselia");
-        base(provider, "croagunk");
-        base(provider, "crobat");
-        base(provider, "croconaw");
-        base(provider, "crustle");
-        base(provider, "cryogonal");
-        base(provider, "cubchoo");
-        base(provider, "cubone");
-        base(provider, "cufant");
-        base(provider, "cutiefly");
-        base(provider, "cyndaquil");
-        base(provider, "darkrai");
-        base(provider, "dartrix");
-        base(provider, "dedenne");
-        base(provider, "deerling");
-        base(provider, "deino");
-        base(provider, "delcatty");
-        base(provider, "delibird");
-        base(provider, "delphox");
-        bulkFormsModel(provider, "deoxys", "attack", "defense", "normal", "speed");
-        base(provider, "dewgong");
-        base(provider, "dewott");
-        base(provider, "dhelmise");
-        base(provider, "diancie");
-        base(provider, "diggersby");
-        base(provider, "ditto");
-        base(provider, "dodrio");
-        base(provider, "doduo");
-        base(provider, "donphan");
-        base(provider, "dottler");
-        base(provider, "doublade");
-        base(provider, "dracovish");
-        base(provider, "dracozolt");
-        base(provider, "dragalge");
-        base(provider, "dragapult");
-        base(provider, "dragonair");
-        base(provider, "dragonite");
-        base(provider, "drakloak");
-        base(provider, "drampa");
-        base(provider, "drapion");
-        base(provider, "dratini");
-        base(provider, "drednaw");
-        base(provider, "dreepy");
-        base(provider, "drifblim");
-        base(provider, "drifloon");
-        base(provider, "drilbur");
-        base(provider, "drizzile");
-        base(provider, "drowzee");
-        base(provider, "druddigon");
-        base(provider, "dubwool");
-        base(provider, "ducklett");
-        base(provider, "dunsparce");
-        base(provider, "duraludon");
-        base(provider, "durant");
-        base(provider, "dusclops");
-        base(provider, "dusknoir");
-        base(provider, "duskull");
-        base(provider, "dustox");
-        base(provider, "dwebble");
+        mega("absol");
+        base("accelgor");
+        mega("aerodactyl");
+        mega("aggron");
+        base("aipom");
+        mega("alakazam");
+        base("alomomola"); //TODO: Add swim
+        mega("altaria");
+        base("amaura");
+        base("ambipom");
+        base("amoonguss");
+        mega("ampharos");
+        base("anorith");
+        gigantamax("appletun");
+        base("applin");
+        base("arbok");
+        hisuian("arcanine");
+        elemental("arceus");
+        base("archen");
+        base("archeops");
+        base("arctovish");
+        base("arctozolt");
+        base("ariados");
+        base("armaldo");
+        base("aromatisse");
+        base("aron");
+        baseOnlyIdle("arrokuda");
+        mega("audino");
+        base("aurorus");
+        hisuian("avalugg");
+        base("axew");
+        base("azelf");
+        base("azumarill");
+        baseOnlyIdle("azurill");
+        base("yamper");
+        base("yungoos");
+        base("yveltal");
+        base("xatu");
+        bulkForms("xerneas", "active", "neutral");
+        base("xurkitree");
+        base("cacnea");
+        base("cacturne");
+        bulkForms("calyrex", "icerider", "shadowrider");
+        base("camerupt");
+        base("carbink");
+        base("carkol");
+        base("carnivine");
+        base("carracosta");
+        base("carvanha");
+        base("cascoon");
+        base("caterpie");
+        base("celebi", true); //TODO Fix to do fly
+        base("celesteela");
+        base("centiskorch");
+        base("chandelure");
+        base("chansey");
+        base("charjabug");
+        base("chatot");
+        bulkFormsModel("cherrim", "sunshine", "overcast");
+        base("cherubi");
+        base("chesnaught");
+        base("chespin");
+        base("chewtle");
+        base("chikorita");
+        base("chimchar");
+        base("chimecho");
+        base("chinchou");
+        base("chingling");
+        base("cinccino");
+        base("cinderace");
+        base("clamperl");
+        base("clauncher");
+        base("clawitzer");
+        base("claydol");
+        base("clefable");
+        base("clefairy");
+        base("cleffa");
+        base("clobbopus");
+        base("cloyster");
+        base("coalossal");
+        base("cobalion");
+        base("cofagrigus");
+        base("combee");
+        base("combusken");
+        base("comfey");
+        base("conkeldurr");
+        base("copperajah");
+        base("corphish");
+        base("corviknight");
+        base("corvisquire");
+        base("cosmoem");
+        base("cosmog");
+        base("cottonee");
+        base("crabominable");
+        base("crabrawler");
+        base("cradily");
+        base("cramorant");
+        base("cranidos");
+        base("crawdaunt");
+        base("cresselia");
+        base("croagunk");
+        base("crobat");
+        base("croconaw");
+        base("crustle");
+        base("cryogonal");
+        base("cubchoo");
+        base("cubone");
+        base("cufant");
+        base("cutiefly");
+        base("cyndaquil");
+        base("darkrai");
+        base("dartrix");
+        base("dedenne");
+        base("deerling");
+        base("deino");
+        base("delcatty");
+        base("delibird");
+        base("delphox");
+        bulkFormsModel("deoxys", "attack", "defense", "normal", "speed");
+        base("dewgong");
+        base("dewott");
+        base("dhelmise");
+        base("diancie");
+        base("diggersby");
+        base("ditto");
+        base("dodrio");
+        base("doduo");
+        base("donphan");
+        base("dottler");
+        base("doublade");
+        base("dracovish");
+        base("dracozolt");
+        base("dragalge");
+        base("dragapult");
+        base("dragonair");
+        base("dragonite");
+        base("drakloak");
+        base("drampa");
+        base("drapion");
+        base("dratini");
+        base("drednaw");
+        base("dreepy");
+        base("drifblim");
+        base("drifloon");
+        base("drilbur");
+        base("drizzile");
+        base("drowzee");
+        base("druddigon");
+        base("dubwool");
+        base("ducklett");
+        base("dunsparce");
+        base("duraludon");
+        base("durant");
+        base("dusclops");
+        base("dusknoir");
+        base("duskull");
+        base("dustox");
+        base("dwebble");
+        bulkFormsModel("dialga", "altered", "origin");
+        darmanitan();
+        form("galarian", "darumaka");
+        hisuian("decidueye");
+        alolan("diglett");
+        alolan("dugtrio");
+        base("eelektrik");
+        base("eelektross");
+        base("eevee");
+        bulkFormsModel("eiscue", "ice", "noice");
+        base("ekans");
+        base("eldegoss");
+        base("electabuzz");
+        base("electivire");
+        base("electrike");
+        hisuian("electrode");
+        base("elekid");
+        base("elgyem");
+        base("emboar");
+        base("emolga");
+        base("empoleon");
+        form("therian", "enamorus", false);
+        base("entei");
+        base("escavalier");
+        base("espeon");
+        base("espurr");
+        base("excadrill");
+        base("exeggcute");
+        alolan("exeggutor");
+        base("exploud");
+        base("falinks");
+        form("galarian", "farfetchd");
+        base("fearow");
+        base("feebas");
+        base("fennekin");
+        base("feraligatr");
+        base("flareon");
+        base("fletchinder");
+        base("fletchling");
+        bulkForms("floatzel", "male", "female");
+        bulkForms("floette", "blue", "orange", "red", "white", "yellow"); //TODO: Add Azure;
+        bulkForms("florges", "blue", "orange", "red", "white", "yellow");
+        base("flygon");
+        base("fomantis");
+        base("foongus");
+        base("forretress");
+        base("fraxure");
+        bulkFormsModel("frillish", "female", "male");
+        base("froakie");
+        base("frogadier");
+        base("froslass");
+        base("frosmoth");
+        bulkFormsModel("furfrou", "dandy", "debutante", "diamond", "heart", "kabuki", "lareine", "matron", "natural", "pharaoh", "star");
+        base("furret");
+    }
+
+    private void darmanitan() {
+        //TODO
+    }
+
+    private void alolan(String name) {
+        form("alolan", name, false);
     }
 
     private void alcremie() {
@@ -181,7 +245,7 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
     }
 
     //TODO: Implment similar to bulkForm but its done with models instead.
-    private void bulkFormsModel(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String name, String... forms) {
+    private void bulkFormsModel(String name, String... forms) {
         var resolver = simple(GenerationsCore.id(name), 1);
         for (String type : forms) {
             var id = GenerationsCore.id(name);
@@ -189,11 +253,11 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
             resolver.variation(shiny().aspect(type).variant(type).poser(id).model(id));
         }
 
-        provider.accept(resolver, resolver(name, false));
+        pairs.add(new Pair<>(resolver, poserBuilder(name, false)));
     }
 
-    private void elemental(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String name) {
-        bulkForms(provider, name, "normal",
+    private void elemental(String name) {
+        bulkForms(name, "normal",
                 "fire",
                 "water",
                 "grass",
@@ -213,7 +277,7 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
                 "fairy");
     }
 
-    private void bulkForms(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String name, String... forms) {
+    private void bulkForms(String name, String... forms) {
         var id = GenerationsCore.id(name);
         var resolver = simple(GenerationsCore.id(name), 1);
         for (String type : forms) {
@@ -221,44 +285,48 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
             resolver.variation(shiny().aspect(type).variant("shiny-" + type).poser(id).model(id));
         }
 
-        provider.accept(resolver, resolver(name, false));
+        pairs.add(new Pair<>(resolver, poserBuilder(name, false)));
     }
 
-    private void gigantamax(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String name) {
-        form(provider, "gigantamax", name, true);
+    private void gigantamax(String name) {
+        form("gigantamax", name, true);
     }
 
-    private void hisuian(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String name) {
-        form(provider, "hisuian", name);
+    private void hisuian(String name) {
+        form("hisuian", name);
     }
 
-    private void base(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String name) {
-        base(provider, name, false);
+    private void base(String name) {
+        base(name, false);
     }
 
-    private void base(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String name, boolean idleOnly) {
-        provider.accept(base(name), resolver(name, idleOnly));
+    private void baseOnlyIdle(String name) {
+        base(name, true);
     }
 
-    private void form(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String form, String name) {
-        form(provider, form, name, false);
+    private void base(String name, boolean idleOnly) {
+        pairs.add(new Pair<>(baseResolver(name), poserBuilder(name, idleOnly)));
     }
 
-    private void form(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String form, String name, boolean idleOnly) {
-        provider.accept(form(form, name, idleOnly), formResolver(form, name, idleOnly));
+    private void form(String form, String name) {
+        form(form, name, false);
     }
 
-    private void mega(BiConsumer<PokemonModelsProvider.Resolver, List<PokemonModelsProvider.PoserBuilder>> provider, String name) {
-        form(provider, "mega", name);
+    private void form(String form, String name, boolean idleOnly) {
+        pairs.add(new Pair<>(formResolver(form, name, idleOnly), formPoserBuilder(form, name, idleOnly)));
     }
 
-    public static PokemonModelsProvider.Resolver base(String name) {
+    private void mega(String name) {
+        form("mega", name);
+    }
+
+    public static PokemonModelsProvider.Resolver baseResolver(String name) {
         return simple(GenerationsCore.id(name), 1)
                 .variation(base().variant("normal"))
                 .variation(shiny().variant("shiny"));
     }
 
-    private PokemonModelsProvider.Resolver form(String form, String name, boolean idleOnly) {
+    private PokemonModelsProvider.Resolver formResolver(String form, String name, boolean idleOnly) {
         TriFunction<String, Boolean, Boolean, PokemonModelsProvider.Resolver.ModelAssetVariationBuilder> function = (name1, shiny, mega) -> {
 
             var builder = shiny ? shiny() : base();
@@ -282,12 +350,12 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
                 .variation(function.apply(name, true, true));
     }
 
-    private List<PokemonModelsProvider.PoserBuilder> formResolver(String form, String name, boolean idleOnly) {
+    private List<PokemonModelsProvider.PoserBuilder> formPoserBuilder(String form, String name, boolean idleOnly) {
         return List.of(gensPoser(name, false),
                 gensPoser(name + "-" + form, idleOnly));
     }
 
-    private List<PokemonModelsProvider.PoserBuilder> resolver(String name, boolean idleOnly) {
+    private List<PokemonModelsProvider.PoserBuilder> poserBuilder(String name, boolean idleOnly) {
         return List.of(gensPoser(name, idleOnly));
     }
 

@@ -1,0 +1,26 @@
+{
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:furret.pk, idle.smd)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PROFILE",
+        "FLOAT",
+        "NONE",
+        "STAND",
+        "PORTRAIT"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:furret.pk, walk.smd)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    }
+  }
+}

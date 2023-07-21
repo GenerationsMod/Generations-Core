@@ -7,9 +7,9 @@
       "poseName": "standing",
       "poseTypes": [
         "PROFILE",
-        "STAND",
         "FLOAT",
         "NONE",
+        "STAND",
         "PORTRAIT"
       ]
     }
