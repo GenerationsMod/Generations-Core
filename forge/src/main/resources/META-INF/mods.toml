@@ -32,7 +32,7 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 [[dependencies.generations_core]]
    modId="architectury"
    mandatory=true
-   versionRange="[9.1.10,)"
+   versionRange="[9.1.11,)"
    ordering="BEFORE"
    side="BOTH"
 
