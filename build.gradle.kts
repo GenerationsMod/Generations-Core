@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
-    id("dev.architectury.loom") version "1.2-SNAPSHOT" apply false
     kotlin("jvm") version ("1.8.20")
+    id("dev.architectury.loom") version "1.3-SNAPSHOT" apply false
     idea
     java
 }
@@ -31,6 +31,7 @@ subprojects {
             includeGroup("lol.bai")
             includeGroup("mcp.mobius.waila")
         }
+        maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     }
 
     @Suppress("UnstableApiUsage")

@@ -35,7 +35,7 @@ public enum MailType {
     SHADOW(GenerationsItems.POKEMAIL_SHADOW_CLOSED),
     SNOW(GenerationsItems.POKEMAIL_SNOW_CLOSED),
     SPACE(GenerationsItems.POKEMAIL_SPACE_CLOSED),
-    STEEL(GenerationsItems.POKEMAIL_STEEL),
+    STEEL(GenerationsItems.POKEMAIL_STEEL_CLOSED),
     THANKS(GenerationsItems.POKEMAIL_THANKS_CLOSED),
     TROPIC(GenerationsItems.POKEMAIL_TROPIC_CLOSED),
     TUNNEL(GenerationsItems.POKEMAIL_TUNNEL_CLOSED),

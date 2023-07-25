@@ -289,7 +289,7 @@ public class MailEditScreen extends Screen {
 
         DisplayCache displayCache = this.getDisplayCache();
         for (LineInfo lineInfo : displayCache.lines) {
-            graphics.drawString(this.font, lineInfo.asComponent, lineInfo.x, lineInfo.y, 0xff000000);
+            graphics.drawString(this.font, lineInfo.asComponent, lineInfo.x, lineInfo.y, 0xff000000, false);
         }
         this.renderHighlight(displayCache.selection);
         this.renderCursor(graphics, displayCache.cursor, displayCache.cursorAtEnd);
@@ -303,7 +303,7 @@ public class MailEditScreen extends Screen {
             if (!isEndOfText) {
                 graphics.fill(cursorPos.x, cursorPos.y - 1, cursorPos.x + 1, cursorPos.y + this.font.lineHeight, 0xff000000);
             } else {
-                graphics.drawString(this.font, "_", cursorPos.x, cursorPos.y, 0);
+                graphics.drawString(this.font, "_", cursorPos.x, cursorPos.y, 0, false);
             }
         }
     }
