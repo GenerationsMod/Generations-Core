@@ -5,7 +5,7 @@
     {
       "aspects": [],
       "poser": "generations_core:charizard",
-      "model": "generations_core:charizard.pk",
+      "model": "generations_core:charmander.pk",
       "texture": "pk:normal"
     },
     {
@@ -13,12 +13,6 @@
         "shiny"
       ],
       "texture": "pk:shiny"
-    },
-    {
-      "aspects": [
-        "special-halloween"
-      ],
-      "texture": "pk:halloween"
     }
   ]
 }

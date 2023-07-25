@@ -1,5 +1,4 @@
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"

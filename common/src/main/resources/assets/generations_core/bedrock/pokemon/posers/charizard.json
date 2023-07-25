@@ -1,16 +1,17 @@
 {
   "portraitScale": 1,
   "portraitTranslation": [0, 0, 0],
-  "profileScale": 0,
+  "profileScale": 1,
   "profileTranslation": [0, 0, 0],
+  "faint": "pk(generations_core:charmander.pk, faint)",
+  "cry": "pk(generations_core:charmander.pk, roar)",
   "poses": {
     "standing": {
       "poseName": "standing",
       "transformTicks": 10,
       "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE", "FLOAT"],
       "animations": [
-        "look",
-        "pk(generations_core:charizard.pk, idle.smd)"
+        "pk(generations_core:charmander.pk, idle.tranm)"
       ]
     },
     "walking": {
@@ -18,8 +19,15 @@
       "transformTicks": 10,
       "poseTypes": ["WALK"],
       "animations": [
-        "look",
-        "pk(generations_core:charizard.pk, walk.smd)"
+        "pk(generations_core:charmander.pk, walk.tranm)"
+      ]
+    },
+    "sleeping": {
+      "poseName": "sleeping",
+      "transformTicks": 10,
+      "poseTypes": ["SLEEP"],
+      "animations": [
+        "pk(generations_core:charmander.pk, rest_loop.tranm)"
       ]
     }
   }
