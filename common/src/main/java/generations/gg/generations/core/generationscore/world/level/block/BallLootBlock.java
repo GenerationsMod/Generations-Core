@@ -1,14 +1,12 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import dev.architectury.utils.GameInstance;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity.LootMode;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -29,13 +27,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Collectors;
@@ -52,7 +50,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if(level.isClientSide || hand == InteractionHand.OFF_HAND) {
             return InteractionResult.CONSUME;
         }
@@ -144,15 +142,12 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     }
 
     public NonNullList<ItemStack> getDrops(ServerLevel level, BlockPos pos, Player player) {
-        var lootTableId = this.getLootTableId();
-        LootTable lootTable = GameInstance.getServer().getLootData().getLootTable(lootTableId);
-
         LootParams.Builder builder = (new LootParams.Builder(level)).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos));
-        if (player != null) {
+        if (player != null)
             builder.withLuck(player.getLuck()).withParameter(LootContextParams.THIS_ENTITY, player);
-        }
 
-        return lootTable.getRandomItems(builder.create(LootContextParamSets.CHEST)).stream().collect(Collectors.toCollection(NonNullList::create));
+
+        return level.getServer().getLootData().getLootTable(this.getLootTableId()).getRandomItems(builder.create(LootContextParamSets.CHEST)).stream().collect(Collectors.toCollection(NonNullList::create));
     }
 
     @Override

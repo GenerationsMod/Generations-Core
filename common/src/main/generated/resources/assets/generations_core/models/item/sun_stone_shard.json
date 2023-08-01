@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/natural/sun_stone_shard"
+    "layer0": "generations_core:item/placeholder"
   }
 }

@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.compat;
 
-import dev.architectury.hooks.item.tool.AxeItemHooks;
 import dev.architectury.registry.CreativeTabOutput;
 import dev.architectury.registry.CreativeTabRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -13,6 +12,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
+import org.jetbrains.annotations.NotNull;
 
 public class VanillaCompat {
 
@@ -37,8 +37,8 @@ public class VanillaCompat {
 	 * @param log The log block of wood
 	 * @param stripped The stripped log block of wood
 	 */
-	private static void registerStrippable(Block log, Block stripped) {
-		AxeItemHooks.addStrippable(log, stripped);
+	private static void registerStrippable(@NotNull Block log, @NotNull Block stripped) {
+		AxeItem.STRIPPABLES.put(log, stripped);
 	}
 
 	/**

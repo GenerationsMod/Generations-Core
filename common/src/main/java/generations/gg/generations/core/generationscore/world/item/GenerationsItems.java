@@ -579,6 +579,7 @@ public class GenerationsItems {
      * Held Items
      */
     public static final RegistrySupplier<Item> ABSORB_BULB = register("absorb_bulb", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> ABILITY_SHIELD = register("ability_shield", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> ADRENALINE_ORB = register("adrenaline_orb", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> AIR_BALLOON = register("air_balloon", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> AMULET_COIN = register("amulet_coin", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
