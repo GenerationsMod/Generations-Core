@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/utility_items/orange_cloner_tank"
+    "layer0": "generations_core:item/placeholder"
   }
 }

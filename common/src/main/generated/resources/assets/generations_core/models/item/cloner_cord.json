@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/utility_items/cloner_cord"
+    "layer0": "generations_core:item/placeholder"
   }
 }

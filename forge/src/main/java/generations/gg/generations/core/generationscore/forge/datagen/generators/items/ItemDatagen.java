@@ -146,6 +146,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ROSERADE_TEA, "consumable/");
         createItem(GenerationsItems.TAPU_COCOA, "consumable/");
 
+        createHeldItem(GenerationsItems.ABILITY_SHIELD);
         createHeldItem(GenerationsItems.ABSORB_BULB);
         createHeldItem(GenerationsItems.ADRENALINE_ORB);
         createHeldItem(GenerationsItems.AIR_BALLOON);
@@ -1357,7 +1358,7 @@ public class ItemDatagen extends ItemModelProvider {
             return this.singleTexture(name, new ResourceLocation("item/generated"), "layer0", model);
         } catch (Exception e) {
             LOGGER.error(name + " -> " + model);
-            return null;
+            return this.singleTexture(name, new ResourceLocation("item/generated"), "layer0", GenerationsCore.id("item/placeholder"));
         }
     }
 

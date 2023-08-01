@@ -94,6 +94,7 @@
     "generations_core:max_powder",
     "generations_core:max_soup",
     "generations_core:absorb_bulb",
+    "generations_core:ability_shield",
     "generations_core:adrenaline_orb",
     "generations_core:air_balloon",
     "generations_core:amulet_coin",
