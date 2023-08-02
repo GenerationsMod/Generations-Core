@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
-import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
@@ -12,7 +11,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.packs.VanillaRecipeProvider;
-import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -888,39 +886,39 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
 
         //pokebrick Recipes
-        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_POKE_BRICK, Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_POKE_BRICK.get(), Blocks.BRICKS);
 
-        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_MARBLE, Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_MARBLE.get(), Blocks.QUARTZ_BLOCK);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POWDER_BLUE_MARBLE.get(), 4)
                 .requires(Blocks.QUARTZ_BLOCK, 4)
@@ -1273,8 +1271,8 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.get(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
     }
 
-    private void buildBuildingBlockRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item dye, RegistrySupplier<Block> pokebrick, Block block) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, pokebrick.get(), 4)
+    private void buildBuildingBlockRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item dye, Block pokebrick, Block block) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, pokebrick, 4)
                 .requires(block, 4)
                 .requires(dye)
                 .unlockedBy(getHasName(block), has(block))
