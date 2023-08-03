@@ -1307,7 +1307,7 @@ public class ItemDatagen extends ItemModelProvider {
     }
 
     private void createHeldItem(Item held) {
-        this.createHeldItem(held, "");
+        createHeldItem(held, "");
     }
 
     private void createHeldItem(Item held, String directory) {
@@ -1332,11 +1332,11 @@ public class ItemDatagen extends ItemModelProvider {
         ResourceLocation key = Objects.requireNonNull(getKey(block.asItem()), "Tried to create json model for unregistered Item.");
         singleTexture(key.getPath(), mcLoc("item/pointed_dripstone"), "layer0", GenerationsCore.id(directory.concat(key.getPath())));
     }
+
     public void createItemBlockDir(Item block, String directory) {
         ResourceLocation key = Objects.requireNonNull(getKey(block), "Tried to create json model for unregistered Item.");
         generated(key.getPath(), GenerationsCore.id("item/blocks/" + directory + "/" + key.getPath()));
     }
-
 
     public ItemModelBuilder createCurryType(CurryType type) {
         return generated("item/curry/" + type.getSerializedName(), type.getResourceLocation());
