@@ -336,7 +336,7 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         add(ore, createOreDrop(ore, drop));
     }
 
-    private void addAll(Block block, SlabBlock slab, StairBlock stair, WallBlock wall) {
+    private void addAll(Block block, Block slab, Block stair, Block wall) {
         if (block != null) dropSelf(block);
         if (slab != null) add(slab, createSlabItemTable(slab));
         if (stair != null) dropSelf(stair);
