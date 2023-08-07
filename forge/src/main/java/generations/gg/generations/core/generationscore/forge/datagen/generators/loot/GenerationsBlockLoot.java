@@ -142,82 +142,11 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         add(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()));
 
 
-        add(
-                GenerationsOres.FOSSIL_ORE.get(),
-                LootTable
-                        .lootTable()
-                        .withPool(
-                                applyExplosionCondition(GenerationsOres.FOSSIL_ORE.get(),
-                                        LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_OLD_AMBER.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_ARMOR_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_BIRD_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_CLAW_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_COVER_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DINO_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DOME_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DRAKE_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_FISH_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_HELIX_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_JAW_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_PLUME_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_ROOT_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_SAIL_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_SKULL_FOSSIL.get()))
-                                                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
-                                ))
-        );
-        add(
-                GenerationsOres.DEEPSLATE_FOSSIL_ORE.get(),
-                LootTable
-                        .lootTable()
-                        .withPool(
-                                applyExplosionCondition(GenerationsOres.FOSSIL_ORE.get(),
-                                        LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_OLD_AMBER.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_ARMOR_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_BIRD_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_CLAW_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_COVER_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DINO_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DOME_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DRAKE_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_FISH_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_HELIX_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_JAW_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_PLUME_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_ROOT_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_SAIL_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_SKULL_FOSSIL.get()))
-                                                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
-                                ))
-        );
+        dropSelf(GenerationsOres.FOSSIL_ORE.get());
 
-        add(
-                GenerationsOres.CHARGE_STONE_FOSSIL_ORE.get(),
-                LootTable
-                        .lootTable()
-                        .withPool(
-                                applyExplosionCondition(GenerationsOres.FOSSIL_ORE.get(),
-                                        LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_OLD_AMBER.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_ARMOR_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_BIRD_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_CLAW_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_COVER_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DINO_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DOME_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_DRAKE_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_FISH_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_HELIX_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_JAW_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_PLUME_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_ROOT_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_SAIL_FOSSIL.get()))
-                                                .add(LootItem.lootTableItem(GenerationsItems.COVERED_SKULL_FOSSIL.get()))
-                                                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
-                                ))
-        );
+        dropSelf(GenerationsOres.DEEPSLATE_FOSSIL_ORE.get());
+
+        dropSelf(GenerationsOres.CHARGE_STONE_FOSSIL_ORE.get());
 
         dropSelf(GenerationsBlocks.POKE_GRASS.get());
         dropSelf(GenerationsBlocks.POKE_DIRT.get());

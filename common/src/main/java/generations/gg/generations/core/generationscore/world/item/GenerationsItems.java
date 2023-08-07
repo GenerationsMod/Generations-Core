@@ -1141,40 +1141,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> RICH_MULCH = register("rich_mulch", properties -> new MulchItem(Mulch.RICH, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> SURPRISE_MULCH = register("surprise_mulch", properties -> new MulchItem(Mulch.SURPRISE, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_OLD_AMBER = register("covered_old_amber", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_ARMOR_FOSSIL = register("covered_armor_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_BIRD_FOSSIL = register("covered_bird_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_CLAW_FOSSIL = register("covered_claw_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_COVER_FOSSIL = register("covered_cover_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_DINO_FOSSIL = register("covered_dino_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_DOME_FOSSIL = register("covered_dome_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_DRAKE_FOSSIL = register("covered_drake_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_FISH_FOSSIL = register("covered_fish_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_HELIX_FOSSIL = register("covered_helix_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_JAW_FOSSIL = register("covered_jaw_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_PLUME_FOSSIL = register("covered_plume_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_ROOT_FOSSIL = register("covered_root_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_SAIL_FOSSIL = register("covered_sail_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVERED_SKULL_FOSSIL = register("covered_skull_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> OLD_AMBER = register("old_amber", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ARCTOVISH_FOSSIL = register("arctovish_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ARCTOZOLT_FOSSIL = register("arctozolt_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ARMOR_FOSSIL = register("armor_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> BIRD_FOSSIL = register("bird_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> CLAW_FOSSIL = register("claw_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> COVER_FOSSIL = register("cover_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DINO_FOSSIL = register("dino_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DOME_FOSSIL = register("dome_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DRACOVISH_FOSSIL = register("dracovish_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DRACOZOLT_FOSSIL = register("dracozolt_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DRAKE_FOSSIL = register("drake_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> FISH_FOSSIL = register("fish_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> HELIX_FOSSIL = register("helix_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> JAW_FOSSIL = register("jaw_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> PLUME_FOSSIL = register("plume_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ROOT_FOSSIL = register("root_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SAIL_FOSSIL = register("sail_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SKULL_FOSSIL = register("skull_fossil", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
 
     /**
      * Utility Items
