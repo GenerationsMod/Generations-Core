@@ -127,66 +127,35 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.THUNDER_STONE_BLOCK);
         registerBlockItem(GenerationsBlocks.WATER_STONE_BLOCK);
 
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_A);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_B);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_C);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_D);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_E);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_F);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_G);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_H);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_I);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_J);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_K);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_L);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_M);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_N);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_O);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_P);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_Q);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_R);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_S);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_T);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_U);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_V);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_W);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_X);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_Y);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_Z);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_PERIOD);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_COMMA);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_EMPTY);
-
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_A);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_B);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_C);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_D);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_E);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_F);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_G);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_H);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_I);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_J);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_K);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_L);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_M);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_N);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_O);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_P);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_Q);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_R);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_S);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_T);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_U);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_V);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_W);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_X);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_Y);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_Z);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_BLANK);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_A);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_B);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_C);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_D);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_E);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_F);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_G);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_H);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_I);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_J);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_K);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_L);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_M);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_N);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_O);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_P);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Q);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_R);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_S);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_T);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_U);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_V);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_W);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_X);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Y);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Z);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_BLANK);
 
         registerBlockItem(GenerationsBlocks.SANDY_GRASS);
         registerBlockItem(GenerationsBlocks.POKE_GRASS);
@@ -674,7 +643,17 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
     private void registerBlockItem(Block block) {simpleBlockWithItem(block, cubeAll(block));}
 
-    private void registerBlockItemParticle(Block block, String name) {
+    private void unownBlock(RegistrySupplier<? extends Block> block) {
+        BlockModelBuilder model = models().cubeBottomTop(block.getId().getPath(),
+                block.getId().withPrefix("block/"),
+                GenerationsCore.id("block/unown_block_bottom"),
+                GenerationsCore.id("block/unown_block_top"));
+
+        simpleBlockWithItem(block.get(), model);
+        dropSelfList.add(block.get());
+    }
+
+        private void registerBlockItemParticle(Block block, String name) {
         ResourceLocation blockId = key(block);
         try {
             ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");

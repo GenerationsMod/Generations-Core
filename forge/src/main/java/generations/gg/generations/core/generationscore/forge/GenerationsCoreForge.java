@@ -4,6 +4,7 @@ import dev.architectury.platform.forge.EventBuses;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
+import net.minecraft.world.inventory.Slot;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -27,7 +28,7 @@ public class GenerationsCoreForge {
      * @see FMLJavaModLoadingContext
      */
     public GenerationsCoreForge() {
-		// Submit our event bus to let architectury register our content on the right time
+        // Submit our event bus to let architectury register our content on the right time
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, eventBus);
         GenerationsCore.init(ModList.get().isLoaded("cobblemon"), FMLPaths.CONFIGDIR.get());
