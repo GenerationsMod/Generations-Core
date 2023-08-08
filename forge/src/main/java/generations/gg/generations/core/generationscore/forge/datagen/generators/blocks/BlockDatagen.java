@@ -367,6 +367,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
          */
 
         GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block.get(), "shrines"));
+        GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots"));
 //      GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> registerBlockItemParticle(block.get().getBlock(), "utility_blocks/pc"));
         //registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN, "utility_blocks");
         //registerBlockItemParticle(GenerationsUtilityBlocks.BREEDER, "utility_blocks");
