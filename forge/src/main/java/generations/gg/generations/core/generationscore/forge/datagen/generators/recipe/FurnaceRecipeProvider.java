@@ -21,13 +21,6 @@ import java.util.function.Consumer;
 //TODO: Proper RecipeCategory assignment
 public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied implements IConditionBuilder {
 
-    private static final ImmutableList<ItemLike> THUNDER_STONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> LEAF_STONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> WATER_STONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> FIRE_STONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> SUN_STONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> MOON_STONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> ICE_STONE_SMELTABLES;
     private static final ImmutableList<ItemLike> ALUMINUM_SMELTABLES;
     private static final ImmutableList<ItemLike> Z_CRYSTAL_SMELTABLES;
     private static final ImmutableList<ItemLike> RUBY_SMELTABLES;
@@ -42,13 +35,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
     private static final ImmutableList<ItemLike> RARE_TUMBLESTONE_SMELTABLES;
 
     static {
-        THUNDER_STONE_SMELTABLES = ImmutableList.of(GenerationsOres.THUNDER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_THUNDER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_THUNDER_STONE_ORE.get());
-        LEAF_STONE_SMELTABLES = ImmutableList.of(GenerationsOres.LEAF_STONE_ORE.get(), GenerationsOres.DEEPSLATE_LEAF_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_LEAF_STONE_ORE.get());
-        WATER_STONE_SMELTABLES = ImmutableList.of(GenerationsOres.WATER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_WATER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_WATER_STONE_ORE.get());
-        FIRE_STONE_SMELTABLES = ImmutableList.of(GenerationsOres.FIRE_STONE_ORE.get(), GenerationsOres.DEEPSLATE_FIRE_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_FIRE_STONE_ORE.get());
-        SUN_STONE_SMELTABLES = ImmutableList.of(GenerationsOres.SUN_STONE_ORE.get(), GenerationsOres.DEEPSLATE_SUN_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_SUN_STONE_ORE.get());
-        MOON_STONE_SMELTABLES = ImmutableList.of(GenerationsOres.MOON_STONE_ORE.get(), GenerationsOres.DEEPSLATE_MOON_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_MOON_STONE_ORE.get());
-        ICE_STONE_SMELTABLES = ImmutableList.of(GenerationsOres.ICE_STONE_ORE.get(), GenerationsOres.DEEPSLATE_ICE_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_ICE_STONE_ORE.get());
         ALUMINUM_SMELTABLES = ImmutableList.of(GenerationsItems.RAW_ALUMINUM.get(), GenerationsOres.ALUMINUM_ORE.get(), GenerationsOres.DEEPSLATE_ALUMINUM_ORE.get(), GenerationsOres.CHARGE_STONE_ALUMINUM_ORE.get());
         Z_CRYSTAL_SMELTABLES = ImmutableList.of(GenerationsOres.Z_CRYSTAL_ORE.get(), GenerationsOres.DEEPSLATE_Z_CRYSTAL_ORE.get(), GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
         RUBY_SMELTABLES = ImmutableList.of(GenerationsOres.RUBY_ORE.get(), GenerationsOres.DEEPSLATE_RUBY_ORE.get(), GenerationsOres.CHARGE_STONE_RUBY_ORE.get());
@@ -69,16 +55,8 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-        oreSmelting(consumer, THUNDER_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.THUNDER_STONE_SHARD.get(), 1.0F, 200, "thunder_stone_shard");
         oreSmelting(consumer, MEGASTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.MEGASTONE_SHARD.get(), 1.0F, 200, "mega_stone_shard");
         oreSmelting(consumer, METEORITE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.METEORITE_SHARD.get(), 1.0F, 200, "meteorite_shard");
-        oreSmelting(consumer, LEAF_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.LEAF_STONE_SHARD.get(), 1.0F, 200, "leaf_stone_shard");
-        oreSmelting(consumer, WATER_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.WATER_STONE_SHARD.get(), 1.0F, 200, "water_stone_shard");
-        oreSmelting(consumer, FIRE_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.FIRE_STONE_SHARD.get(), 1.0F, 200, "fire_stone_shard");
-        oreSmelting(consumer, SUN_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SUN_STONE_SHARD.get(), 1.0F, 200, "sun_stone_shard");
-        oreSmelting(consumer, MOON_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.MOON_STONE_SHARD.get(), 1.0F, 200, "moon_stone_shard");
-        oreSmelting(consumer, ICE_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.ICE_STONE_SHARD.get(), 1.0F, 200, "ice_stone_shard");
-        oreSmelting(consumer, ALUMINUM_SMELTABLES, RecipeCategory.MISC, GenerationsItems.ALUMINUM_INGOT.get(), 1.0F, 200, "aluminum_ingot");
         oreSmelting(consumer, Z_CRYSTAL_SMELTABLES, RecipeCategory.MISC, GenerationsItems.Z_INGOT.get(), 1.0F, 200, "z_ingot");
         oreSmelting(consumer, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY.get(), 1.0F, 200, "ruby_gem");
         oreSmelting(consumer, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SAPPHIRE.get(), 1.0F, 200, "sapphire_gem");
@@ -88,13 +66,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
         oreSmelting(consumer, BLACK_TUMPLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.BLACK_TUMBLESTONE.get(), 1.0F, 200, "black_tumblestone");
         oreSmelting(consumer, SKY_TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SKY_TUMBLESTONE.get(), 1.0F, 200, "sky_tumblestone");
         oreSmelting(consumer, RARE_TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RARE_TUMBLESTONE.get(), 1.0F, 200, "rare_tumblestone");
-        oreBlasting(consumer, THUNDER_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.THUNDER_STONE_SHARD.get(), 1.0F, 100, "thunder_stone_shard");
-        oreBlasting(consumer, LEAF_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.LEAF_STONE_SHARD.get(), 1.0F, 100, "leaf_stone_shard");
-        oreBlasting(consumer, WATER_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.WATER_STONE_SHARD.get(), 1.0F, 100, "water_stone_shard");
-        oreBlasting(consumer, FIRE_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.FIRE_STONE_SHARD.get(), 1.0F, 100, "fire_stone_shard");
-        oreBlasting(consumer, SUN_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SUN_STONE_SHARD.get(), 1.0F, 100, "sun_stone_shard");
-        oreBlasting(consumer, MOON_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.MOON_STONE_SHARD.get(), 1.0F, 100, "moon_stone_shard");
-        oreBlasting(consumer, ICE_STONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.ICE_STONE_SHARD.get(), 1.0F, 100, "ice_stone_shard");
         oreBlasting(consumer, ALUMINUM_SMELTABLES, RecipeCategory.MISC, GenerationsItems.ALUMINUM_INGOT.get(), 1.0F, 100, "aluminum_ingot");
         oreBlasting(consumer, Z_CRYSTAL_SMELTABLES, RecipeCategory.MISC, GenerationsItems.Z_INGOT.get(), 1.0F, 100, "z_ingot");
         oreBlasting(consumer, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY.get(), 1.0F, 100, "ruby_gem");

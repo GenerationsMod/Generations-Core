@@ -790,29 +790,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //buildStairsCraftingRecipes(consumer, PixelmonBlocks.RUBY_STAIRS, PixelmonBlocks.RUBY_BLOCK, true);
 
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SILICON.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SILICON_BLOCK.get());
-
-        //Evolution Recipes
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DAWN_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DAWN_STONE.get(), "dawn_stone_from_dawn_stone_shard", "dawn_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DAWN_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DAWN_STONE_BLOCK.get(), "dawn_stone_from_dusk_stone_block", "dawn_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DUSK_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DUSK_STONE.get(), "dusk_stone_from_dusk_stone_shard", "dusk_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DUSK_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DUSK_STONE_BLOCK.get(), "dusk_stone_from_dusk_stone_block", "dusk_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.FIRE_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.FIRE_STONE.get(), "fire_stone_from_fire_stone_shard", "fire_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.FIRE_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FIRE_STONE_BLOCK.get(), "fire_stone_from_fire_stone_block", "fire_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.WATER_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.WATER_STONE.get(), "water_stone_from_water_stone_shard", "water_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.WATER_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WATER_STONE_BLOCK.get(), "water_stone_from_water_stone_block", "water_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.THUNDER_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.THUNDER_STONE.get(), "thunder_stone_from_thunder_stone_shard", "thunder_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.THUNDER_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.THUNDER_STONE_BLOCK.get(), "thunder_stone_from_thunder_stone_block", "thunder_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.LEAF_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.LEAF_STONE.get(), "leaf_stone_from_leaf_stone_shard", "leaf_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.LEAF_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LEAF_STONE_BLOCK.get(), "leaf_stone_from_leaf_stone_block", "leaf_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.MOON_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.MOON_STONE.get(), "moon_stone_from_moon_stone_shard", "moon_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.MOON_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOON_STONE_BLOCK.get(), "moon_stone_from_moon_stone_block", "moon_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SUN_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SUN_STONE.get(), "sun_stone_from_sun_stone_shard", "sun_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SUN_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SUN_STONE_BLOCK.get(), "sun_stone_from_sun_stone_block", "sun_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SHINY_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SHINY_STONE.get(), "shiny_stone_from_shiny_stone_shard", "shiny_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SHINY_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINY_STONE_BLOCK.get(), "shiny_stone_from_shiny_stone_block", "shiny_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ICE_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ICE_STONE.get(), "ice_stone_from_ice_stone_shard", "ice_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ICE_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_STONE_BLOCK.get(), "ice_stone_from_ice_stone_block", "ice_stone");
-
         /*
          * PokeChests
          */
