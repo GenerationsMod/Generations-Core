@@ -172,11 +172,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.POKE_SAND_SIDE_3);
         registerBlockItem(GenerationsBlocks.POKE_SAND_SIDE_4);
 
-
-        registerBlockItem(GenerationsBlocks.SHINGLES);
-        registerBlockItem(GenerationsBlocks.SHINGLES_CORNER_1);
-        registerBlockItem(GenerationsBlocks.SHINGLES_CORNER_2);
-
         registerBlockItem(GenerationsBlocks.ULTRA_SAND);
 
         registerBlockItem(GenerationsBlocks.CRATE);

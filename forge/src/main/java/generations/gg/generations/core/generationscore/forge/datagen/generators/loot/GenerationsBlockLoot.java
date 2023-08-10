@@ -162,9 +162,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.POKE_SAND_SIDE_3.get());
         dropSelf(GenerationsBlocks.POKE_SAND_SIDE_4.get());
         dropSelf(GenerationsBlocks.SANDY_GRASS.get());
-        dropSelf(GenerationsBlocks.SHINGLES.get());
-        dropSelf(GenerationsBlocks.SHINGLES_CORNER_1.get());
-        dropSelf(GenerationsBlocks.SHINGLES_CORNER_2.get());
         dropSelf(GenerationsBlocks.INSIDE_WALL.get());
         dropSelf(GenerationsBlocks.INSIDE_WALL_MOLDING.get());
         dropSelf(GenerationsBlocks.TREE_TOP.get());

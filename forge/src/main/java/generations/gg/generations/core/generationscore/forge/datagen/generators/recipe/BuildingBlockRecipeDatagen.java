@@ -135,17 +135,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
                 .save(consumer);
 
-        //Shingles
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINGLES.get(), 5)
-                .define('X', Blocks.GRAVEL)
-                .define('Y', Items.INK_SAC)
-                .pattern("XYX")
-                .pattern("YXY")
-                .pattern("XYX")
-                .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
-                .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
-                .save(consumer);
-
         //Colored Shingles
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_SHINGLES.get(), 5)
                 .define('X', Blocks.GRAVEL)
@@ -321,26 +310,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .pattern("XYX")
                 .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
-                .save(consumer);
-
-        //shingles corner 1
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINGLES_CORNER_1.get())
-                .define('X', GenerationsBlocks.SHINGLES.get())
-                .define('Y', Items.BONE_MEAL)
-                .define('Z', Items.INK_SAC)
-                .pattern("  Y")
-                .pattern(" X ")
-                .pattern("ZZZ")
-                .unlockedBy(getHasName(GenerationsBlocks.SHINGLES.get()), has(GenerationsBlocks.SHINGLES.get()))
-                .save(consumer);
-
-        //shingles corner 2
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINGLES_CORNER_2.get())
-                .define('X', GenerationsBlocks.SHINGLES.get())
-                .define('Y', Items.BONE_MEAL)
-                .pattern(" Y")
-                .pattern("X ")
-                .unlockedBy(getHasName(GenerationsBlocks.SHINGLES.get()), has(GenerationsBlocks.SHINGLES.get()))
                 .save(consumer);
 
         //Outside Wall
