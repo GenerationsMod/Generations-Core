@@ -862,20 +862,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<PressurePlateBlock> ENCHANTED_OBSIDIAN_PRESSURE_PLATE = registerBlockItem("enchanted_obsidian_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OBSIDIAN), GenerationsBlockSetTypes.ULTRA));
 
     /**
-     * Fences and Gates
-     */
-    /*
-    public static final RegistrySupplier<FenceBlock> BLUE_PICKET_FENCE = registerBlockItem("blue_picket_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f)));
-    public static final RegistrySupplier<FenceGateBlock> BLUE_PICKET_FENCE_GATE = registerBlockItem("blue_picket_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f), WoodType.OAK));
-    public static final RegistrySupplier<FenceBlock> RED_PICKET_FENCE = registerBlockItem("red_picket_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f)));
-    public static final RegistrySupplier<FenceGateBlock> RED_PICKET_FENCE_GATE = registerBlockItem("red_picket_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f), WoodType.OAK));
-    public static final RegistrySupplier<FenceBlock> WHITE_PICKET_FENCE = registerBlockItem("white_picket_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f)));
-    public static final RegistrySupplier<FenceGateBlock> WHITE_PICKET_FENCE_GATE = registerBlockItem("white_picket_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f), WoodType.OAK));
-    public static final RegistrySupplier<FenceBlock> YELLOW_PICKET_FENCE = registerBlockItem("yellow_picket_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f)));
-    public static final RegistrySupplier<FenceGateBlock> YELLOW_PICKET_FENCE_GATE = registerBlockItem("yellow_picket_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f, 3.0f), WoodType.OAK));
-    */
-
-    /**
      * Poke Bricks
      */
 

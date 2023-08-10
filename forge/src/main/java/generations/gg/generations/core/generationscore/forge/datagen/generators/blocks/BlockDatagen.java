@@ -189,17 +189,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_3, GenerationsBlocks.MIRRORED_FLOOR_3_SLAB, GenerationsBlocks.MIRRORED_FLOOR_3_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_3_WALL, null, null, true);
 
         /*
-        registerGate(GenerationsBlocks.YELLOW_PICKET_FENCE_GATE.get(), GenerationsBlocks.YELLOW_PICKET_FENCE.get(), null);
-        registerFence(GenerationsBlocks.YELLOW_PICKET_FENCE.get(), null);
-        registerGate(GenerationsBlocks.RED_PICKET_FENCE_GATE.get(), GenerationsBlocks.RED_PICKET_FENCE.get(), null);
-        registerFence(GenerationsBlocks.RED_PICKET_FENCE.get(), null);
-        registerGate(GenerationsBlocks.BLUE_PICKET_FENCE_GATE.get(), GenerationsBlocks.BLUE_PICKET_FENCE.get(), null);
-        registerFence(GenerationsBlocks.BLUE_PICKET_FENCE.get(), null);
-        registerGate(GenerationsBlocks.WHITE_PICKET_FENCE_GATE.get(), GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
-        registerFence(GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
-         */
-
-        /*
         registerBerryBush(GenerationsBlocks.AGUAV_BERRY_BUSH);
         registerBerryBush(GenerationsBlocks.APICOT_BERRY_BUSH);
         registerBerryBush(GenerationsBlocks.ASPEAR_BERRY_BUSH);

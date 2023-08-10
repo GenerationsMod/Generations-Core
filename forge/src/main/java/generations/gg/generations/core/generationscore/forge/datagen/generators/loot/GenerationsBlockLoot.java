@@ -50,18 +50,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
 
         dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE.get());
 
-        /*
-        dropSelf(GenerationsBlocks.BLUE_PICKET_FENCE.get());
-        dropSelf(GenerationsBlocks.BLUE_PICKET_FENCE_GATE.get());
-        dropSelf(GenerationsBlocks.WHITE_PICKET_FENCE.get());
-        dropSelf(GenerationsBlocks.WHITE_PICKET_FENCE_GATE.get());
-        dropSelf(GenerationsBlocks.RED_PICKET_FENCE.get());
-        dropSelf(GenerationsBlocks.RED_PICKET_FENCE_GATE.get());
-        dropSelf(GenerationsBlocks.YELLOW_PICKET_FENCE.get());
-        dropSelf(GenerationsBlocks.YELLOW_PICKET_FENCE_GATE.get());
-
-         */
-
         dropSelf(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get());
 
         //Ores
