@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "generations_core:block/unown_block_question_mark"
+    "bottom": "generations_core:block/unown_block_bottom",
+    "side": "generations_core:block/unown_block_question_mark",
+    "top": "generations_core:block/unown_block_top"
   }
 }

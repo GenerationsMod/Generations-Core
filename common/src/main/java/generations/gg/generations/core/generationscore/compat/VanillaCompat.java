@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.compat;
 
+import com.google.common.collect.ImmutableMap;
 import dev.architectury.registry.CreativeTabOutput;
 import dev.architectury.registry.CreativeTabRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -13,6 +14,8 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
 
 public class VanillaCompat {
 
@@ -38,6 +41,13 @@ public class VanillaCompat {
 	 * @param stripped The stripped log block of wood
 	 */
 	private static void registerStrippable(@NotNull Block log, @NotNull Block stripped) {
+		if (!log.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS))
+			throw new IllegalArgumentException("Input block is missing required 'AXIS' property!");
+		if (!stripped.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS))
+			throw new IllegalArgumentException("Result block is missing required 'AXIS' property!");
+		if (AxeItem.STRIPPABLES instanceof ImmutableMap)
+			AxeItem.STRIPPABLES = new HashMap<>(AxeItem.STRIPPABLES);
+
 		AxeItem.STRIPPABLES.put(log, stripped);
 	}
 

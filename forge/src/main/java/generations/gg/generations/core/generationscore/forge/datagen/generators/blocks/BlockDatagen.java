@@ -6,7 +6,6 @@ import generations.gg.generations.core.generationscore.forge.datagen.data.famili
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.level.block.*;
-import generations.gg.generations.core.generationscore.world.level.block.decorations.BeanBagBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.models.model.ModelLocationUtils;
@@ -89,10 +88,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.INSIDE_WALL_MOLDING);
         registerBlockItem(GenerationsBlocks.OUTSIDE_WALL);
 
-        registerBlockItem(GenerationsBlocks.TREE_TOP);
-        registerBlockItem(GenerationsBlocks.TREE_BOTTOM);
-        registerBlockItem(GenerationsBlocks.WOODEN_FLOORING);
-
         registerBlockItem(GenerationsBlocks.POKEMART_SIGN);
         registerBlockItem(GenerationsBlocks.POKECENTER_SIGN);
 
@@ -128,66 +123,35 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.THUNDER_STONE_BLOCK);
         registerBlockItem(GenerationsBlocks.WATER_STONE_BLOCK);
 
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_A);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_B);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_C);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_D);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_E);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_F);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_G);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_H);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_I);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_J);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_K);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_L);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_M);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_N);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_O);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_P);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_Q);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_R);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_S);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_T);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_U);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_V);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_W);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_X);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_Y);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_Z);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_PERIOD);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_COMMA);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE);
-        registerBlockItem(GenerationsBlocks.BRAILLE_BLOCK_EMPTY);
-
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_A);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_B);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_C);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_D);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_E);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_F);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_G);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_H);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_I);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_J);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_K);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_L);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_M);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_N);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_O);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_P);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_Q);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_R);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_S);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_T);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_U);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_V);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_W);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_X);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_Y);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_Z);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK);
-        registerBlockItem(GenerationsBlocks.UNOWN_BLOCK_BLANK);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_A);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_B);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_C);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_D);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_E);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_F);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_G);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_H);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_I);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_J);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_K);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_L);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_M);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_N);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_O);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_P);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Q);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_R);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_S);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_T);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_U);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_V);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_W);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_X);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Y);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Z);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK);
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_BLANK);
 
         registerBlockItem(GenerationsBlocks.SANDY_GRASS);
         registerBlockItem(GenerationsBlocks.POKE_GRASS);
@@ -204,11 +168,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.POKE_SAND_SIDE_3);
         registerBlockItem(GenerationsBlocks.POKE_SAND_SIDE_4);
 
-
-        registerBlockItem(GenerationsBlocks.SHINGLES);
-        registerBlockItem(GenerationsBlocks.SHINGLES_CORNER_1);
-        registerBlockItem(GenerationsBlocks.SHINGLES_CORNER_2);
-
         registerBlockItem(GenerationsBlocks.ULTRA_SAND);
 
         registerBlockItem(GenerationsBlocks.CRATE);
@@ -224,17 +183,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_1, GenerationsBlocks.MIRRORED_FLOOR_1_SLAB, GenerationsBlocks.MIRRORED_FLOOR_1_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_1_WALL, null, null, true);
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_2, GenerationsBlocks.MIRRORED_FLOOR_2_SLAB, GenerationsBlocks.MIRRORED_FLOOR_2_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_2_WALL, null, null, true);
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_3, GenerationsBlocks.MIRRORED_FLOOR_3_SLAB, GenerationsBlocks.MIRRORED_FLOOR_3_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_3_WALL, null, null, true);
-
-        /*
-        registerGate(GenerationsBlocks.YELLOW_PICKET_FENCE_GATE.get(), GenerationsBlocks.YELLOW_PICKET_FENCE.get(), null);
-        registerFence(GenerationsBlocks.YELLOW_PICKET_FENCE.get(), null);
-        registerGate(GenerationsBlocks.RED_PICKET_FENCE_GATE.get(), GenerationsBlocks.RED_PICKET_FENCE.get(), null);
-        registerFence(GenerationsBlocks.RED_PICKET_FENCE.get(), null);
-        registerGate(GenerationsBlocks.BLUE_PICKET_FENCE_GATE.get(), GenerationsBlocks.BLUE_PICKET_FENCE.get(), null);
-        registerFence(GenerationsBlocks.BLUE_PICKET_FENCE.get(), null);
-        registerGate(GenerationsBlocks.WHITE_PICKET_FENCE_GATE.get(), GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
-        registerFence(GenerationsBlocks.WHITE_PICKET_FENCE.get(), null);
-         */
 
         /*
         registerBerryBush(GenerationsBlocks.AGUAV_BERRY_BUSH);
@@ -388,12 +336,18 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
 
-        registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "sign");
+        registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign");
 
 
-//        GenerationsDecorationBlocks.DECORATIONS.forEach(this::registerNoModel);
-
-        GenerationsShrines.SHRINES.forEach(this::registerNoModel);
+        GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block.get(), "shrines"));
+        GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots"));
+//      GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> registerBlockItemParticle(block.get().getBlock(), "utility_blocks/pc"));
+        registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.BOX.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
+        //registerNoModel(GenerationsUtilityBlocks.PC);
+        //registerNoModel(GenerationsUtilityBlocks.CLOCK);
+        //registerNoModel(GenerationsUtilityBlocks.HEALER);
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);
         registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE);
@@ -411,56 +365,32 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerDripStone(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE);
 
         registerBlockItemParticle(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.POKE_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.DIVE_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.DUSK_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.FAST_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.GS_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.HEAL_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LOVE_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LURE_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.MOON_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.NEST_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.NET_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.PARK_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.QUICK_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY, "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY, "ball_displays");
-
-        registerNoModel(GenerationsDecorationBlocks.HOUSE_LAMP);
-        registerNoModel(GenerationsDecorationBlocks.SWITCH);
-        registerNoModel(GenerationsDecorationBlocks.LITWICK_CANDLE);
-        registerNoModel(GenerationsDecorationBlocks.LITWICK_CANDLES);
-        registerNoModel(GenerationsDecorationBlocks.UMBRELLA);
-        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE);
-        registerNoModel(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG);
-        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG);
-        registerNoModel(GenerationsDecorationBlocks.POKEBALL_RUG);
-        registerNoModel(GenerationsDecorationBlocks.WATER_FLOAT);
-        registerNoModel(GenerationsUtilityBlocks.BOX);
-        registerNoModel(GenerationsUtilityBlocks.COOKING_POT);
-        registerNoModel(GenerationsUtilityBlocks.HEALER);
-        registerNoModel(GenerationsUtilityBlocks.PC);
-        registerNoModel(GenerationsUtilityBlocks.CLOCK);
-        registerNoModel(GenerationsUtilityBlocks.TRASH_CAN);
-        registerNoModel(GenerationsUtilityBlocks.BREEDER);
-//        registerBlockItemParticle(GenerationsUtilityBlocks.POKE_LOOT, "");
-//        registerBlockItemParticle(GenerationsUtilityBlocks.POKE_LOOT, "");
-//        registerBlockItemParticle(GenerationsUtilityBlocks.GREAT_LOOT, "");
-//        registerBlockItemParticle(GenerationsUtilityBlocks.ULTRA_LOOT, "");
-//        registerBlockItemParticle(GenerationsUtilityBlocks.MASTER_LOOT, "");
-//        registerBlockItemParticle(GenerationsUtilityBlocks.BEAST_LOOT, "");
+        registerBlockItemParticle(GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.GS_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.NET_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get(), "ball_displays");
+        registerBlockItemParticle(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), "ball_displays");
     }
 
     private void registerNoModel( RegistrySupplier<? extends Block> block) {
@@ -686,21 +616,23 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
     private void registerBlockItem(Block block) {simpleBlockWithItem(block, cubeAll(block));}
 
-    private void registerBlockItemParticle(RegistrySupplier<? extends Block> block, String name) {
-        ResourceLocation textureId = key(block.get()).withPrefix("item/blocks/" + name + "/");
-        simpleBlock(block.get(), models().sign(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get())).getPath(), textureId));
-        itemModels().singleTexture(block.getId().getPath(), new ResourceLocation("minecraft:item/generated"), "layer0", textureId);
+    private void unownBlock(RegistrySupplier<? extends Block> block) {
+        BlockModelBuilder model = models().cubeBottomTop(block.getId().getPath(),
+                block.getId().withPrefix("block/"),
+                GenerationsCore.id("block/unown_block_bottom"),
+                GenerationsCore.id("block/unown_block_top"));
+
+        simpleBlockWithItem(block.get(), model);
+        dropSelfList.add(block.get());
     }
 
-    private void registerBlockParticle(RegistrySupplier<? extends Block> block, String name) {
-        ResourceLocation textureId = key(block.get()).withPrefix("item/blocks/" + name + "/");
-        simpleBlock(block.get(), models().sign(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get())).getPath(), textureId));
-    }
-
-    private void registerBlockItemParticle(Block block, String name) {
+        private void registerBlockItemParticle(Block block, String name) {
         ResourceLocation blockId = key(block);
-        ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");
-        simpleBlock(block, models().sign(blockId.getPath(), textureId));
+        try {
+            ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");
+            simpleBlock(block, models().sign(blockId.getPath(), textureId));
+        } catch (Exception ignored) {
+        }
     }
 
     private void registerPokeDoll(RegistrySupplier<Block> block) {

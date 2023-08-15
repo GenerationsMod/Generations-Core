@@ -29,6 +29,7 @@ import java.util.stream.Stream;
 /**
  * This class is used to register the data generators for the mod.
  * @see GatherDataEvent
+ * @author J.T. McQuigg (JT122406)
  */
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = GenerationsCore.MOD_ID)
 public class DataGeneratorsRegister {

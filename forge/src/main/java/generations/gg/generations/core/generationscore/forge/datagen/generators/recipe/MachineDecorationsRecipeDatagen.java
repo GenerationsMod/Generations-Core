@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
-
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;

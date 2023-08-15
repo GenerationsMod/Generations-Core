@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
-import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
@@ -12,7 +11,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.packs.VanillaRecipeProvider;
-import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -135,17 +133,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .pattern("YXY")
                 .pattern("YYY")
                 .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        //Shingles
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINGLES.get(), 5)
-                .define('X', Blocks.GRAVEL)
-                .define('Y', Items.INK_SAC)
-                .pattern("XYX")
-                .pattern("YXY")
-                .pattern("XYX")
-                .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
-                .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
         //Colored Shingles
@@ -325,26 +312,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        //shingles corner 1
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINGLES_CORNER_1.get())
-                .define('X', GenerationsBlocks.SHINGLES.get())
-                .define('Y', Items.BONE_MEAL)
-                .define('Z', Items.INK_SAC)
-                .pattern("  Y")
-                .pattern(" X ")
-                .pattern("ZZZ")
-                .unlockedBy(getHasName(GenerationsBlocks.SHINGLES.get()), has(GenerationsBlocks.SHINGLES.get()))
-                .save(consumer);
-
-        //shingles corner 2
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINGLES_CORNER_2.get())
-                .define('X', GenerationsBlocks.SHINGLES.get())
-                .define('Y', Items.BONE_MEAL)
-                .pattern(" Y")
-                .pattern("X ")
-                .unlockedBy(getHasName(GenerationsBlocks.SHINGLES.get()), has(GenerationsBlocks.SHINGLES.get()))
-                .save(consumer);
-
         //Outside Wall
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.OUTSIDE_WALL.get())
                 .requires(Blocks.STONE)
@@ -365,34 +332,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.INSIDE_WALL_MOLDING.get(), 2)
                 .requires(GenerationsBlocks.INSIDE_WALL.get(), 2)
                 .unlockedBy(getHasName(GenerationsBlocks.INSIDE_WALL.get()), has(GenerationsBlocks.INSIDE_WALL.get()))
-                .save(consumer);
-
-        //Tree Bottom
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TREE_BOTTOM.get())
-                .define('X', Blocks.OAK_LEAVES)
-                .define('Y', Blocks.OAK_LOG)
-                .pattern("XXX")
-                .pattern(" Y ")
-                .unlockedBy(getHasName(Blocks.OAK_LEAVES), has(Blocks.OAK_LEAVES))
-                .unlockedBy(getHasName(Blocks.OAK_LOG), has(Blocks.OAK_LOG))
-                .save(consumer);
-
-        //Tree Top
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TREE_TOP.get())
-                .define('X', Blocks.OAK_LEAVES)
-                .define('Y', Items.STICK)
-                .pattern("XYX")
-                .pattern("XYX")
-                .unlockedBy(getHasName(Blocks.OAK_LEAVES), has(Blocks.OAK_LEAVES))
-                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
-                .save(consumer);
-
-        //Wooden Flooring
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WOODEN_FLOORING.get())
-                .define('X', Blocks.OAK_SLAB)
-                .pattern("XXX")
-                .pattern("XXX")
-                .unlockedBy(getHasName(Blocks.OAK_SLAB), has(Blocks.OAK_SLAB))
                 .save(consumer);
 
         //Window 1
@@ -823,29 +762,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //buildStairsCraftingRecipes(consumer, PixelmonBlocks.RUBY_STAIRS, PixelmonBlocks.RUBY_BLOCK, true);
 
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SILICON.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SILICON_BLOCK.get());
-
-        //Evolution Recipes
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DAWN_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DAWN_STONE.get(), "dawn_stone_from_dawn_stone_shard", "dawn_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DAWN_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DAWN_STONE_BLOCK.get(), "dawn_stone_from_dusk_stone_block", "dawn_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DUSK_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DUSK_STONE.get(), "dusk_stone_from_dusk_stone_shard", "dusk_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.DUSK_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DUSK_STONE_BLOCK.get(), "dusk_stone_from_dusk_stone_block", "dusk_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.FIRE_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.FIRE_STONE.get(), "fire_stone_from_fire_stone_shard", "fire_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.FIRE_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FIRE_STONE_BLOCK.get(), "fire_stone_from_fire_stone_block", "fire_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.WATER_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.WATER_STONE.get(), "water_stone_from_water_stone_shard", "water_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.WATER_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WATER_STONE_BLOCK.get(), "water_stone_from_water_stone_block", "water_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.THUNDER_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.THUNDER_STONE.get(), "thunder_stone_from_thunder_stone_shard", "thunder_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.THUNDER_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.THUNDER_STONE_BLOCK.get(), "thunder_stone_from_thunder_stone_block", "thunder_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.LEAF_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.LEAF_STONE.get(), "leaf_stone_from_leaf_stone_shard", "leaf_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.LEAF_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LEAF_STONE_BLOCK.get(), "leaf_stone_from_leaf_stone_block", "leaf_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.MOON_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.MOON_STONE.get(), "moon_stone_from_moon_stone_shard", "moon_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.MOON_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOON_STONE_BLOCK.get(), "moon_stone_from_moon_stone_block", "moon_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SUN_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SUN_STONE.get(), "sun_stone_from_sun_stone_shard", "sun_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SUN_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SUN_STONE_BLOCK.get(), "sun_stone_from_sun_stone_block", "sun_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SHINY_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SHINY_STONE.get(), "shiny_stone_from_shiny_stone_shard", "shiny_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SHINY_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINY_STONE_BLOCK.get(), "shiny_stone_from_shiny_stone_block", "shiny_stone");
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ICE_STONE_SHARD.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ICE_STONE.get(), "ice_stone_from_ice_stone_shard", "ice_stone");
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ICE_STONE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_STONE_BLOCK.get(), "ice_stone_from_ice_stone_block", "ice_stone");
-
         /*
          * PokeChests
          */
@@ -888,39 +804,39 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
 
         //pokebrick Recipes
-        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_POKE_BRICK, Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_POKE_BRICK, Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_POKE_BRICK.get(), Blocks.BRICKS);
 
-        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_MARBLE, Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_MARBLE, Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_MARBLE.get(), Blocks.QUARTZ_BLOCK);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POWDER_BLUE_MARBLE.get(), 4)
                 .requires(Blocks.QUARTZ_BLOCK, 4)
@@ -950,256 +866,8 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_A, GenerationsItems.UNOWN);
+        //TODO: Finish these.
 
-        /*
-        * Braille Blocks
-         */
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get(), 6)
-                .define('X', GenerationsBlocks.TEMPLE_BLOCK.get())
-                .pattern("XX")
-                .pattern("XX")
-                .pattern("XX")
-                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK.get()), has(GenerationsBlocks.TEMPLE_BLOCK.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_A.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern("  X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_B.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern("# X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_C.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern("  X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_D.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern(" #X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_E.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern(" #X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_F.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern("# X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_G.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern("##X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_H.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern("##X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_I.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern(" # ")
-                .pattern("# X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_J.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern(" # ")
-                .pattern("##X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_K.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern("  X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_L.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern("# X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_M.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern("  X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_N.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern(" #X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_O.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern(" #X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_P.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern("# X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_Q.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern("##X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_R.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern("##X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_S.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern(" # ")
-                .pattern("# X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_T.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern(" # ")
-                .pattern("##X")
-                .pattern("#  ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_U.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern("  X")
-                .pattern("## ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_V.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern("# X")
-                .pattern("## ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_W.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern(" # ")
-                .pattern("##X")
-                .pattern(" # ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_X.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern("  X")
-                .pattern("## ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_Y.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("## ")
-                .pattern(" #X")
-                .pattern("## ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_Z.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("#  ")
-                .pattern(" #X")
-                .pattern("## ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_PERIOD.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("##X")
-                .pattern(" # ")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRAILLE_BLOCK_COMMA.get())
-                .define('X', GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get())
-                .define('#', Items.STONE_BUTTON)
-                .pattern("# X")
-                .unlockedBy(getHasName(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()), has(GenerationsBlocks.BRAILLE_BLOCK_UNDERSCORE.get()))
-                .save(consumer);
         /*
          * Ghost Block Recipes
          */
@@ -1273,8 +941,8 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.get(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
     }
 
-    private void buildBuildingBlockRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item dye, RegistrySupplier<Block> pokebrick, Block block) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, pokebrick.get(), 4)
+    private void buildBuildingBlockRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item dye, Block pokebrick, Block block) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, pokebrick, 4)
                 .requires(block, 4)
                 .requires(dye)
                 .unlockedBy(getHasName(block), has(block))

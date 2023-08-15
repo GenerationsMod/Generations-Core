@@ -33,7 +33,14 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
    modId="architectury"
    mandatory=true
    versionRange="[9.1.12,)"
-   ordering="BEFORE"
+   ordering="AFTER"
+   side="BOTH"
+
+[[dependencies.generations_core]]
+   modId="cobblemon"
+   mandatory=true
+   versionRange="*"
+   ordering="AFTER"
    side="BOTH"
 
 

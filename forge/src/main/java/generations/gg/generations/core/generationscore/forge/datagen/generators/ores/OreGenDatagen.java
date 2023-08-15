@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -14,7 +13,6 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -24,7 +22,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -161,91 +158,7 @@ public class OreGenDatagen {
                 BiomeTags.IS_OVERWORLD,
                 false
         );
-        registerCommonOreGen(
-                CONFIGURED_FEATURE,
-                PLACED_FEATURE,
-                BIOME_MODIFIER,
-                GenerationsOres.THUNDER_STONE_ORE,
-                List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, GenerationsOres.THUNDER_STONE_ORE.get().defaultBlockState()), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, GenerationsOres.DEEPSLATE_THUNDER_STONE_ORE.get().defaultBlockState())),
-                6,
-                3,
-                0,
-                192,
-                BiomeTags.IS_MOUNTAIN,
-                false
-        );
-        registerCommonOreGen(
-                CONFIGURED_FEATURE,
-                PLACED_FEATURE,
-                BIOME_MODIFIER,
-                GenerationsOres.LEAF_STONE_ORE,
-                List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, GenerationsOres.LEAF_STONE_ORE.get().defaultBlockState()), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, GenerationsOres.DEEPSLATE_LEAF_STONE_ORE.get().defaultBlockState())),
-                6,
-                3,
-                -64,
-                64,
-                Tags.Biomes.IS_LUSH,
-                false
-        );
-        registerCommonOreGen(
-                CONFIGURED_FEATURE,
-                PLACED_FEATURE,
-                BIOME_MODIFIER,
-                GenerationsOres.WATER_STONE_ORE,
-                List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, GenerationsOres.WATER_STONE_ORE.get().defaultBlockState()), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, GenerationsOres.DEEPSLATE_WATER_STONE_ORE.get().defaultBlockState())),
-                6,
-                3,
-                -16,
-                64,
-                Tags.Biomes.IS_WATER,
-                false
-        );
-        registerCommonOreGen(
-                CONFIGURED_FEATURE,
-                PLACED_FEATURE,
-                BIOME_MODIFIER,
-                GenerationsOres.FIRE_STONE_ORE,
-                List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, GenerationsOres.FIRE_STONE_ORE.get().defaultBlockState()), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, GenerationsOres.DEEPSLATE_FIRE_STONE_ORE.get().defaultBlockState())),
-                6,
-                3,
-                -64,
-                64,
-                Tags.Biomes.IS_HOT_OVERWORLD,
-                false
-        );
-        registerCommonOreGen(
-                CONFIGURED_FEATURE,
-                PLACED_FEATURE,
-                BIOME_MODIFIER,
-                GenerationsOres.SUN_STONE_ORE,
-                List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, GenerationsOres.SUN_STONE_ORE.get().defaultBlockState()), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, GenerationsOres.DEEPSLATE_SUN_STONE_ORE.get().defaultBlockState())),
-                6,
-                3,
-                -64,
-                64,
-                Tags.Biomes.IS_HOT_OVERWORLD,
-                false
-        );
-        registerCommonOreGen(
-                CONFIGURED_FEATURE,
-                PLACED_FEATURE,
-                BIOME_MODIFIER,
-                GenerationsOres.ICE_STONE_ORE,
-                List.of(OreConfiguration.target(STONE_ORE_REPLACEABLES, GenerationsOres.ICE_STONE_ORE.get().defaultBlockState()), OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, GenerationsOres.DEEPSLATE_ICE_STONE_ORE.get().defaultBlockState())),
-                6,
-                3,
-                0,
-                128,
-                Tags.Biomes.IS_COLD_OVERWORLD,
-                false
-        );
-        registerCommonBiomeOreGen(
-                CONFIGURED_FEATURE,
-                PLACED_FEATURE,
-                BIOME_MODIFIER,
-                List.of(OreConfiguration.target(DEEPSLATE_ORE_REPLACEABLES, GenerationsOres.DEEPSLATE_MOON_STONE_ORE.get().defaultBlockState())),
-                List.of(Biomes.DEEP_DARK, Biomes.PLAINS)
-        );
+
         registerCommonOreGen(
                 CONFIGURED_FEATURE,
                 PLACED_FEATURE,
@@ -311,26 +224,6 @@ public class OreGenDatagen {
         biomeModifierMap.add(context -> {
             HolderSet.Named<Biome> tag = context.lookup(Registries.BIOME).getOrThrow(biomeTag);
             BiomeModifier biomeModifier = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(tag, HolderSet.direct(context.lookup(Registries.PLACED_FEATURE).getOrThrow(ResourceKey.create(Registries.PLACED_FEATURE, blockId))), GenerationStep.Decoration.UNDERGROUND_ORES);
-            context.register(ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, blockId), biomeModifier);
-        });
-    }
-
-    private static void registerCommonBiomeOreGen(List<Consumer<BootstapContext<ConfiguredFeature<?,?>>>> configuredFeatureMap, List<Consumer<BootstapContext<PlacedFeature>>> placedFeatureMap, List<Consumer<BootstapContext<BiomeModifier>>> biomeModifierMap, List<OreConfiguration.TargetBlockState> targets, List<ResourceKey<Biome>> biome) {
-        // Create Data
-        ResourceLocation blockId = GenerationsOres.MOON_STONE_ORE.getId();
-        OreConfiguration config = new OreConfiguration(targets, 6);
-        configuredFeatureMap.add(context -> context.register(ResourceKey.create(Registries.CONFIGURED_FEATURE, blockId), new ConfiguredFeature<>(Feature.ORE, config)));
-        placedFeatureMap.add(context -> {
-            Holder<ConfiguredFeature<?, ?>> configuredFeature = context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(ResourceKey.create(Registries.CONFIGURED_FEATURE, blockId));
-            PlacedFeature placedOreFeature = new PlacedFeature(configuredFeature, commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0))));
-            context.register(ResourceKey.create(Registries.PLACED_FEATURE, blockId), placedOreFeature);
-        });
-
-        biomeModifierMap.add(context -> {
-            HolderGetter<Biome> lookup = context.lookup(Registries.BIOME);
-            List<Holder<Biome>> holders = new ArrayList<>();
-            for (ResourceKey<Biome> biomeKey : biome) holders.add(lookup.getOrThrow(biomeKey));
-            BiomeModifier biomeModifier = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(holders), HolderSet.direct(context.lookup(Registries.PLACED_FEATURE).getOrThrow(ResourceKey.create(Registries.PLACED_FEATURE, blockId))), GenerationStep.Decoration.UNDERGROUND_ORES);
             context.register(ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, blockId), biomeModifier);
         });
     }

@@ -44,9 +44,8 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity implements Mo
         doesCustomDrops = nbt.getBoolean("doesCustomDrops");
         visible = nbt.getBoolean("visible");
 
-        if(nbt.contains("customDrops")) {
+        if(nbt.contains("customDrops"))
             customDrops = nbt.getList("customDrops", CompoundTag.TAG_COMPOUND).stream().map(CompoundTag.class::cast).map(ItemStack::of).collect(Collectors.toCollection(NonNullList::create));
-        }
     }
 
     @Override
@@ -65,9 +64,8 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity implements Mo
         nbt.putBoolean("doesCustomDrops", doesCustomDrops);
         nbt.putBoolean("visible", visible);
 
-        if(customDrops != null) {
+        if(customDrops != null)
             nbt.put("customDrops", customDrops.stream().map(GenerationsUtils::toCompoundTag).collect(ListTag::new, AbstractList::add, AbstractCollection::addAll));
-        }
     }
 
     public BallLootBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -88,21 +86,20 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity implements Mo
     }
 
     public boolean canClaim(UUID playerUUID) {
-        if (!this.lootMode.isDropOnce()) {
-            return true;
-        }
+        if (!this.lootMode.isDropOnce()) return true;
+
 
         Optional<LootClaim> claim = this.getLootClaim(playerUUID);
-        if (claim.isPresent() && this.lootMode.isTimeEnabled() && claim.get().time().plus(GenerationsCore.CONFIG.lootTime).isAfter(Instant.now())) {
-            return true;
+        if (claim.isPresent() && this.lootMode.isTimeEnabled()) {
+            claim.get().time().plus(GenerationsCore.CONFIG.lootTime);
+            Instant.now();
         }
         return true;
     }
 
     public void addClaimer(UUID playerUUID) {
-        if (this.lootMode.isDropOnce()) {
+        if (this.lootMode.isDropOnce())
             this.claims.add(new LootClaim(playerUUID, Instant.now()));
-        }
     }
 
     public Optional<LootClaim> getLootClaim(UUID playerUUID) {
@@ -165,7 +162,6 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity implements Mo
         private final boolean timeEnabled;
 
         LootMode(boolean dropOnce, boolean timeEnabled) {
-
             this.dropOnce = dropOnce;
             this.timeEnabled = timeEnabled;
         }

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item.armor;
 
+import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.sounds.SoundEvent;
@@ -16,7 +17,7 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     OLD_RUNNING("old_running", 999999, new int[]{2, 0, 0, 0}, 13, Items.LEATHER),
     AETHER("aether", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON.get()),
     AQUA("aqua", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SAPPHIRE.get()),
-    FLARE("flare", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.FIRE_STONE.get()),
+    FLARE("flare", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY.get()),
     GALACTIC("galactic", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON.get()),
     MAGMA("magma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY.get()),
     NEO_PLASMA("neo_plasma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL.get()),
@@ -26,15 +27,15 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     CRYSTAL("crystal", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL.get()),
     ULTRA("ultra", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.Z_INGOT.get()),
     ALUMINUM("aluminum", 15, new int[]{2, 5, 6, 2}, 8, GenerationsItems.ALUMINUM_INGOT.get()),
-    DAWN_STONE("dawn_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.DAWN_STONE.get()),
-    DUSK_STONE("dusk_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.DUSK_STONE.get()),
-    FIRE_STONE("fire_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.FIRE_STONE.get()),
-    ICE_STONE("ice_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.ICE_STONE.get()),
-    LEAF_STONE("leaf_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.LEAF_STONE.get()),
-    MOON_STONE("moon_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.MOON_STONE.get()),
-    SUN_STONE("sun_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SUN_STONE.get()),
-    THUNDER_STONE("thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.THUNDER_STONE.get()),
-    WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.WATER_STONE.get());
+    DAWN_STONE("dawn_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.DAWN_STONE.asItem()),
+    DUSK_STONE("dusk_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.DUSK_STONE.asItem()),
+    FIRE_STONE("fire_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.FIRE_STONE.asItem()),
+    ICE_STONE("ice_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.ICE_STONE.asItem()),
+    LEAF_STONE("leaf_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.LEAF_STONE.asItem()),
+    MOON_STONE("moon_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.MOON_STONE.asItem()),
+    SUN_STONE("sun_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.SUN_STONE.asItem()),
+    THUNDER_STONE("thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.THUNDER_STONE.asItem()),
+    WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, CobblemonItems.WATER_STONE.asItem());
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;
