@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric
 
-import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.NetworkManager
-import com.cobblemon.mod.fabric.CobblemonFabric
 import dev.architectury.event.events.common.InteractionEvent
 import generations.gg.generations.core.generationscore.GenerationsCore
 import generations.gg.generations.core.generationscore.GenerationsImplementation
@@ -16,9 +14,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ResourceManager
-import net.minecraft.server.packs.resources.ResourceManagerReloadListener
 import net.minecraft.util.profiling.ProfilerFiller
-import net.minecraft.world.entity.EntityEvent
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 
