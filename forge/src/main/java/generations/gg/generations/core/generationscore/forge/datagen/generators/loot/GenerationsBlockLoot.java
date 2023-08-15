@@ -103,16 +103,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         add(GenerationsBlocks.MASTERBALL_CHEST.get(), createNameableBlockEntityTable(GenerationsBlocks.MASTERBALL_CHEST.get()));
 
 
-        addOreWithRandomAmountDrops(GenerationsOres.DAWN_STONE_ORE.get(), GenerationsOres.DEEPSLATE_DAWN_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_DAWN_STONE_ORE.get(), GenerationsItems.DAWN_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.DUSK_STONE_ORE.get(), GenerationsOres.DEEPSLATE_DUSK_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_DUSK_STONE_ORE.get(), GenerationsItems.DUSK_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.FIRE_STONE_ORE.get(), GenerationsOres.DEEPSLATE_FIRE_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_FIRE_STONE_ORE.get(), GenerationsItems.FIRE_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.ICE_STONE_ORE.get(), GenerationsOres.DEEPSLATE_ICE_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_ICE_STONE_ORE.get(), GenerationsItems.ICE_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.LEAF_STONE_ORE.get(), GenerationsOres.DEEPSLATE_LEAF_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_LEAF_STONE_ORE.get(), GenerationsItems.LEAF_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.MOON_STONE_ORE.get(), GenerationsOres.DEEPSLATE_MOON_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_MOON_STONE_ORE.get(),GenerationsItems.MOON_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.SUN_STONE_ORE.get(), GenerationsOres.DEEPSLATE_SUN_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_SUN_STONE_ORE.get(), GenerationsItems.SUN_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.THUNDER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_THUNDER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_THUNDER_STONE_ORE.get(), GenerationsItems.THUNDER_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.WATER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_WATER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_WATER_STONE_ORE.get(), GenerationsItems.WATER_STONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.SHINY_STONE_ORE.get(), GenerationsOres.DEEPSLATE_SHINY_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_SHINY_STONE_ORE.get(), GenerationsItems.SHINY_STONE_SHARD.get());
         addOreWithRandomAmountDrops(GenerationsOres.MEGASTONE_ORE.get(), GenerationsOres.DEEPSLATE_MEGASTONE_ORE.get(), GenerationsOres.CHARGE_STONE_MEGASTONE_ORE.get(), GenerationsItems.MEGASTONE_SHARD.get());
         addOreWithRandomAmountDrops(GenerationsOres.METEORITE_ORE.get(), GenerationsOres.DEEPSLATE_METEORITE_ORE.get(), GenerationsOres.CHARGE_STONE_METEORITE_ORE.get(), GenerationsItems.METEORITE_SHARD.get());
 

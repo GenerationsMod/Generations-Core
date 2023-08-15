@@ -523,26 +523,6 @@ public class ItemDatagen extends ItemModelProvider {
         GenerationsItems.BADGES.forEach(badge -> createItem(badge.get(), "badges/"));
         GenerationsItems.RIBBONS.forEach(ribbon -> createItem(ribbon.get(), "ribbons/"));
 
-        createItem(GenerationsItems.DAWN_STONE.get(), "natural/");
-        createItem(GenerationsItems.DUSK_STONE.get(), "natural/");
-        createItem(GenerationsItems.FIRE_STONE.get(), "natural/");
-        createItem(GenerationsItems.ICE_STONE.get(), "natural/");
-        createItem(GenerationsItems.LEAF_STONE.get(), "natural/");
-        createItem(GenerationsItems.MOON_STONE.get(), "natural/");
-        createItem(GenerationsItems.SHINY_STONE.get(), "natural/");
-        createItem(GenerationsItems.SUN_STONE.get(), "natural/");
-        createItem(GenerationsItems.THUNDER_STONE.get(), "natural/");
-        createItem(GenerationsItems.WATER_STONE.get(), "natural/");
-        createItem(GenerationsItems.DAWN_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.DUSK_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.FIRE_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.ICE_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.LEAF_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.MOON_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.SHINY_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.SUN_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.THUNDER_STONE_SHARD.get(), "natural/");
-        createItem(GenerationsItems.WATER_STONE_SHARD.get(), "natural/");
         createItem(GenerationsItems.CRYSTAL.get(), "natural/");
         createItem(GenerationsItems.RUBY.get(), "natural/");
         createItem(GenerationsItems.SAPPHIRE.get(), "natural/");

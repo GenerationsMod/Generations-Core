@@ -1104,26 +1104,6 @@ public class GenerationsItems {
     /**
      * Naturals
      */
-    public static final RegistrySupplier<Item> DAWN_STONE = register("dawn_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DUSK_STONE = register("dusk_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> FIRE_STONE = register("fire_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ICE_STONE = register("ice_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> LEAF_STONE = register("leaf_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> MOON_STONE = register("moon_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SHINY_STONE = register("shiny_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SUN_STONE = register("sun_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> THUNDER_STONE = register("thunder_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> WATER_STONE = register("water_stone", EvolutionItem::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DAWN_STONE_SHARD = register("dawn_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DUSK_STONE_SHARD = register("dusk_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> FIRE_STONE_SHARD = register("fire_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ICE_STONE_SHARD = register("ice_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> LEAF_STONE_SHARD = register("leaf_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> MOON_STONE_SHARD = register("moon_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SHINY_STONE_SHARD = register("shiny_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SUN_STONE_SHARD = register("sun_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> THUNDER_STONE_SHARD = register("thunder_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> WATER_STONE_SHARD = register("water_stone_shard", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> CRYSTAL = register("crystal", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> RUBY = register("ruby", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> SAPPHIRE = register("sapphire", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
