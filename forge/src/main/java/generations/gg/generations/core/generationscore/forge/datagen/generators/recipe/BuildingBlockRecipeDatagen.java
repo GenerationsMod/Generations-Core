@@ -334,34 +334,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.INSIDE_WALL.get()), has(GenerationsBlocks.INSIDE_WALL.get()))
                 .save(consumer);
 
-        //Tree Bottom
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TREE_BOTTOM.get())
-                .define('X', Blocks.OAK_LEAVES)
-                .define('Y', Blocks.OAK_LOG)
-                .pattern("XXX")
-                .pattern(" Y ")
-                .unlockedBy(getHasName(Blocks.OAK_LEAVES), has(Blocks.OAK_LEAVES))
-                .unlockedBy(getHasName(Blocks.OAK_LOG), has(Blocks.OAK_LOG))
-                .save(consumer);
-
-        //Tree Top
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TREE_TOP.get())
-                .define('X', Blocks.OAK_LEAVES)
-                .define('Y', Items.STICK)
-                .pattern("XYX")
-                .pattern("XYX")
-                .unlockedBy(getHasName(Blocks.OAK_LEAVES), has(Blocks.OAK_LEAVES))
-                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
-                .save(consumer);
-
-        //Wooden Flooring
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WOODEN_FLOORING.get())
-                .define('X', Blocks.OAK_SLAB)
-                .pattern("XXX")
-                .pattern("XXX")
-                .unlockedBy(getHasName(Blocks.OAK_SLAB), has(Blocks.OAK_SLAB))
-                .save(consumer);
-
         //Window 1
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WINDOW_1.get())
                 .define('X', Blocks.IRON_BARS)

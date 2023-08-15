@@ -142,9 +142,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.SANDY_GRASS.get());
         dropSelf(GenerationsBlocks.INSIDE_WALL.get());
         dropSelf(GenerationsBlocks.INSIDE_WALL_MOLDING.get());
-        dropSelf(GenerationsBlocks.TREE_TOP.get());
-        dropSelf(GenerationsBlocks.TREE_BOTTOM.get());
-        dropSelf(GenerationsBlocks.WOODEN_FLOORING.get());
         dropSelf(GenerationsBlocks.POKEMART_SIGN.get());
         dropSelf(GenerationsBlocks.POKECENTER_SIGN.get());
 
