@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.compat;
 
 import com.google.common.collect.ImmutableMap;
-import dev.architectury.hooks.item.tool.AxeItemHooks;
 import dev.architectury.registry.CreativeTabOutput;
 import dev.architectury.registry.CreativeTabRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -46,9 +45,9 @@ public class VanillaCompat {
 			throw new IllegalArgumentException("Input block is missing required 'AXIS' property!");
 		if (!stripped.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS))
 			throw new IllegalArgumentException("Result block is missing required 'AXIS' property!");
-		if (AxeItem.STRIPPABLES instanceof ImmutableMap) {
+		if (AxeItem.STRIPPABLES instanceof ImmutableMap)
 			AxeItem.STRIPPABLES = new HashMap<>(AxeItem.STRIPPABLES);
-		}
+
 		AxeItem.STRIPPABLES.put(log, stripped);
 	}
 

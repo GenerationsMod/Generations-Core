@@ -22,7 +22,6 @@ import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.RandomSource;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
@@ -38,9 +37,6 @@ public class GenerationsCore
 
 	/** The mod id of the Generations-Core mod. */
 	public static final String MOD_ID = "generations_core";
-
-	/** The random source for Generations-Core mod. */
-	public static final RandomSource RANDOM_SOURCE = RandomSource.create();
 
 	/** The logger for the Generations-Core mod. */
 	public static final Logger LOGGER = LogUtils.getLogger();
@@ -73,11 +69,11 @@ public class GenerationsCore
 		GenerationsBlockEntities.init();
 		GenerationsEntities.init();
 		GenerationsItems.init();
-		GenerationsArmor.init();
-		GenerationsTools.init();
 		GenerationsPaintings.init();
 		GenerationsContainers.init();
 		GenerationsNetworking.init();
+		GenerationsArmor.init();
+		GenerationsTools.init();
 
 		CONFIG = ConfigLoader.loaderConfig(Config.class, "core", "main");
 	}
