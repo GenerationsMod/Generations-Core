@@ -16,4 +16,4 @@ gradleEnterprise.buildScan {
 
 include("common", "fabric", "forge")
 
-rootProject.name = "generations-core"
+rootProject.name = "Generations-Core.forge"
