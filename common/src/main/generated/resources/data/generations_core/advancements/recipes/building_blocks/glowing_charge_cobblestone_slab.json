@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:glowing_charge_cobblestone_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

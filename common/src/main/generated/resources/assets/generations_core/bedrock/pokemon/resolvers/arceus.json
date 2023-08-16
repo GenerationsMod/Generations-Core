@@ -1,0 +1,312 @@
+{
+  "name": "cobblemon:arceus",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "normal"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "normal",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-normal"
+    },
+    {
+      "aspects": [
+        "fire"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:fire"
+    },
+    {
+      "aspects": [
+        "fire",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-fire"
+    },
+    {
+      "aspects": [
+        "water"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:water"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "water"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-water"
+    },
+    {
+      "aspects": [
+        "grass"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:grass"
+    },
+    {
+      "aspects": [
+        "grass",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-grass"
+    },
+    {
+      "aspects": [
+        "electric"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:electric"
+    },
+    {
+      "aspects": [
+        "electric",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-electric"
+    },
+    {
+      "aspects": [
+        "ice"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:ice"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "ice"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-ice"
+    },
+    {
+      "aspects": [
+        "fighting"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:fighting"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "fighting"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-fighting"
+    },
+    {
+      "aspects": [
+        "poison"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:poison"
+    },
+    {
+      "aspects": [
+        "poison",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-poison"
+    },
+    {
+      "aspects": [
+        "ground"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:ground"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "ground"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-ground"
+    },
+    {
+      "aspects": [
+        "flying"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:flying"
+    },
+    {
+      "aspects": [
+        "flying",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-flying"
+    },
+    {
+      "aspects": [
+        "psychic"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:psychic"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "psychic"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-psychic"
+    },
+    {
+      "aspects": [
+        "bug"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:bug"
+    },
+    {
+      "aspects": [
+        "bug",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-bug"
+    },
+    {
+      "aspects": [
+        "rock"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:rock"
+    },
+    {
+      "aspects": [
+        "rock",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-rock"
+    },
+    {
+      "aspects": [
+        "ghost"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:ghost"
+    },
+    {
+      "aspects": [
+        "ghost",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-ghost"
+    },
+    {
+      "aspects": [
+        "dragon"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:dragon"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "dragon"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-dragon"
+    },
+    {
+      "aspects": [
+        "dark"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:dark"
+    },
+    {
+      "aspects": [
+        "dark",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-dark"
+    },
+    {
+      "aspects": [
+        "steel"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:steel"
+    },
+    {
+      "aspects": [
+        "steel",
+        "shiny"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-steel"
+    },
+    {
+      "aspects": [
+        "fairy"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:fairy"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "fairy"
+      ],
+      "model": "generations_core:arceus.pk",
+      "poser": "generations_core:arceus",
+      "texture": "pk:shiny-fairy"
+    }
+  ]
+}

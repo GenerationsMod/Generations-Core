@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:pokecenter_roof_slab_from_pokecenter_roof_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

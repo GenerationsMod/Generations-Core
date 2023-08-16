@@ -24,5 +24,6 @@
     "recipes": [
       "generations_core:ultra_jungle_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

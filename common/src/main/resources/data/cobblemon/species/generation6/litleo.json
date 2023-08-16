@@ -1,0 +1,162 @@
+{
+  "implemented": true,
+  "name": "Litleo",
+  "nationalPokedexNumber": 667,
+  "primaryType": "fire",
+  "secondaryType": "normal",
+  "abilities": [
+    "rivalry",
+    "unnerve",
+    "h:moxie"
+  ],
+  "baseStats": {
+    "hp": 62,
+    "attack": 50,
+    "defence": 58,
+    "special_attack": 73,
+    "special_defence": 54,
+    "speed": 72
+  },
+  "catchRate": 220,
+  "maleRatio": 0.125,
+  "shoulderMountable": false,
+  "baseExperienceYield": 74,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:rabbit_hide",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:leer",
+    "1:tackle",
+    "5:ember",
+    "8:workup",
+    "11:headbutt",
+    "15:nobleroar",
+    "20:takedown",
+    "23:firefang",
+    "28:endeavor",
+    "33:echoedvoice",
+    "36:flamethrower",
+    "39:crunch",
+    "43:hypervoice",
+    "46:incinerate",
+    "50:overheat",
+    "egg:entrainment",
+    "egg:firespin",
+    "egg:flareblitz",
+    "egg:snatch",
+    "egg:yawn",
+    "tm:acrobatics",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:confide",
+    "tm:crunch",
+    "tm:darkpulse",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:frustration",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hypervoice",
+    "tm:incinerate",
+    "tm:mudslap",
+    "tm:overheat",
+    "tm:payback",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:roar",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:solarbeam",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderfang",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:wildcharge",
+    "tm:willowisp",
+    "tm:workup",
+    "tutor:endeavor",
+    "tutor:heatwave",
+    "tutor:helpinghand",
+    "tutor:hypervoice",
+    "tutor:irontail",
+    "tutor:snatch",
+    "tutor:snore"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.litleo.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "litleo_pyroar",
+      "variant": "level_up",
+      "result": "pyroar",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 135,
+  "aspects": [],
+  "cannotDynamax": false
+}

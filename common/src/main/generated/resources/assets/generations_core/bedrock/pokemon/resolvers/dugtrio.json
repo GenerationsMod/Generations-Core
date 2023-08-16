@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:dugtrio",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:dugtrio.pk",
+      "poser": "generations_core:dugtrio",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "alolan"
+      ],
+      "model": "generations_core:dugtrio-alolan.pk",
+      "poser": "generations_core:dugtrio-alolan",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "alolan",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

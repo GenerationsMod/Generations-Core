@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:aether_chestplate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

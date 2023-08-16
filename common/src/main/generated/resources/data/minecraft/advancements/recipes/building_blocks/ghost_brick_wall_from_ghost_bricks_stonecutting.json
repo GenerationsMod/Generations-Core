@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:ghost_brick_wall_from_ghost_bricks_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

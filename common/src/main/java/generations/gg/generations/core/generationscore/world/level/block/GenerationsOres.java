@@ -21,28 +21,8 @@ public class GenerationsOres {
 	public static final DeferredRegister<Block> ORES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 
 	/**
-	 * Stone Ores
-	 */
-	public static final RegistrySupplier<DropExperienceBlock> DAWN_STONE_ORE = registerBlockItem("dawn_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DUSK_STONE_ORE = registerBlockItem("dusk_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> FIRE_STONE_ORE = registerBlockItem("fire_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> ICE_STONE_ORE = registerBlockItem("ice_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> LEAF_STONE_ORE = registerBlockItem("leaf_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> SHINY_STONE_ORE = registerBlockItem("shiny_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> SUN_STONE_ORE = registerBlockItem("sun_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> THUNDER_STONE_ORE = registerBlockItem("thunder_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> WATER_STONE_ORE = registerBlockItem("water_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> MOON_STONE_ORE = registerBlockItem("moon_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_DAWN_STONE_ORE = registerBlockItem("deepslate_dawn_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_DUSK_STONE_ORE = registerBlockItem("deepslate_dusk_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_FIRE_STONE_ORE = registerBlockItem("deepslate_fire_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_ICE_STONE_ORE = registerBlockItem("deepslate_ice_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_LEAF_STONE_ORE = registerBlockItem("deepslate_leaf_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_SHINY_STONE_ORE = registerBlockItem("deepslate_shiny_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_SUN_STONE_ORE = registerBlockItem("deepslate_sun_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_THUNDER_STONE_ORE = registerBlockItem("deepslate_thunder_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_WATER_STONE_ORE = registerBlockItem("deepslate_water_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_MOON_STONE_ORE = registerBlockItem("deepslate_moon_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
+	 * Stone Ores (Charge Stone Variants) Temporarly disabled till ready to use in chargestone cave modules
+
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_DAWN_STONE_ORE = registerBlockItem("charge_stone_dawn_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_DUSK_STONE_ORE = registerBlockItem("charge_stone_dusk_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_FIRE_STONE_ORE = registerBlockItem("charge_stone_fire_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
@@ -53,6 +33,7 @@ public class GenerationsOres {
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_THUNDER_STONE_ORE = registerBlockItem("charge_stone_thunder_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_WATER_STONE_ORE = registerBlockItem("charge_stone_water_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_MOON_STONE_ORE = registerBlockItem("charge_stone_moon_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+	 */
 
 	/**
 	 * Tumblestone Ores

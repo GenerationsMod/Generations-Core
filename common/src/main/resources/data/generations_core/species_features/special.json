@@ -1,0 +1,8 @@
+{
+  "type": "choice",
+  "keys": ["special"],
+  "default": "false",
+  "choices": ["halloween"],
+  "isAspect": true,
+  "aspectFormat": "special-{{choice}}"
+}

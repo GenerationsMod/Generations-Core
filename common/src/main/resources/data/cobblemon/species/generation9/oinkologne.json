@@ -1,0 +1,202 @@
+{
+  "implemented": true,
+  "name": "Oinkologne",
+  "nationalPokedexNumber": 916,
+  "primaryType": "normal",
+  "abilities": [
+    "lingeringaroma",
+    "gluttony",
+    "h:thickfat"
+  ],
+  "baseStats": {
+    "hp": 110,
+    "attack": 100,
+    "defence": 75,
+    "special_attack": 59,
+    "special_defence": 80,
+    "speed": 65
+  },
+  "catchRate": 100,
+  "maleRatio": 1,
+  "baseExperienceYield": 171,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:mud",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "1:tailwhip",
+    "5:disarmingvoice",
+    "8:echoedvoice",
+    "12:mudshot",
+    "15:covet",
+    "17:dig",
+    "23:headbutt",
+    "26:takedown",
+    "27:yawn",
+    "34:workup",
+    "38:uproar",
+    "42:doubleedge",
+    "48:earthpower",
+    "54:belch",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:bulletseed",
+    "tm:chillingwater",
+    "tm:dig",
+    "tm:disarmingvoice",
+    "tm:earthpower",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:ironhead",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:playrough",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:trailblaze",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 10,
+  "weight": 1200,
+  "preEvolution": "lechonk",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "forms": [
+    {
+      "name": "F",
+      "primaryType": "normal",
+      "abilities": [
+        "aromaveil",
+        "gluttony",
+        "h:thickfat"
+      ],
+      "baseStats": {
+        "hp": 115,
+        "attack": 90,
+        "defence": 70,
+        "special_attack": 59,
+        "special_defence": 90,
+        "speed": 65
+      },
+      "catchRate": 100,
+      "maleRatio": 0,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 15,
+      "eggGroups": [
+        "field"
+      ],
+      "moves": [
+        "1:tackle",
+        "1:tailwhip",
+        "3:disarmingvoice",
+        "6:echoedvoice",
+        "9:mudshot",
+        "12:covet",
+        "15:dig",
+        "17:headbutt",
+        "23:yawn",
+        "28:takedown",
+        "30:workup",
+        "34:uproar",
+        "39:doubleedge",
+        "45:earthpower",
+        "51:belch",
+        "tm:bodypress",
+        "tm:bodyslam",
+        "tm:bulldoze",
+        "tm:bulletseed",
+        "tm:chillingwater",
+        "tm:dig",
+        "tm:disarmingvoice",
+        "tm:earthpower",
+        "tm:endure",
+        "tm:energyball",
+        "tm:facade",
+        "tm:gigaimpact",
+        "tm:helpinghand",
+        "tm:hyperbeam",
+        "tm:hypervoice",
+        "tm:ironhead",
+        "tm:mudshot",
+        "tm:mudslap",
+        "tm:playrough",
+        "tm:protect",
+        "tm:raindance",
+        "tm:rest",
+        "tm:seedbomb",
+        "tm:sleeptalk",
+        "tm:stompingtantrum",
+        "tm:substitute",
+        "tm:sunnyday",
+        "tm:takedown",
+        "tm:terablast",
+        "tm:thief",
+        "tm:trailblaze",
+        "tm:zenheadbutt"
+      ],
+      "labels": [
+        "gen9"
+      ],
+      "aspects": [
+        "f"
+      ],
+      "height": 10,
+      "weight": 1200,
+      "preEvolution": "lechonk",
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "pokedex": [
+    "cobblemon.species.oinkologne.desc"
+  ]
+}

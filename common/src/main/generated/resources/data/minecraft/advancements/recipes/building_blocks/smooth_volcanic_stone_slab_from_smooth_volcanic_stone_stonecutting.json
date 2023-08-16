@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:smooth_volcanic_stone_slab_from_smooth_volcanic_stone_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

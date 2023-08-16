@@ -1,0 +1,161 @@
+{
+  "implemented": true,
+  "name": "Larvesta",
+  "nationalPokedexNumber": 636,
+  "primaryType": "bug",
+  "secondaryType": "fire",
+  "abilities": [
+    "flamebody",
+    "h:swarm"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 85,
+    "defence": 55,
+    "special_attack": 50,
+    "special_defence": 55,
+    "speed": 60
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 72,
+  "experienceGroup": "slow",
+  "eggCycles": 40,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:magma_block",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:ember",
+    "1:stringshot",
+    "10:absorb",
+    "10:leechlife",
+    "12:strugglebug",
+    "20:takedown",
+    "30:flamecharge",
+    "30:screech",
+    "40:bugbite",
+    "50:doubleedge",
+    "60:flamewheel",
+    "70:bugbuzz",
+    "80:amnesia",
+    "90:thrash",
+    "100:flareblitz",
+    "egg:absorb",
+    "egg:endure",
+    "egg:foresight",
+    "egg:harden",
+    "egg:magnetrise",
+    "egg:morningsun",
+    "egg:stringshot",
+    "egg:thrash",
+    "egg:zenheadbutt",
+    "tm:acrobatics",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bugbuzz",
+    "tm:calmmind",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:heatwave",
+    "tm:hiddenpower",
+    "tm:incinerate",
+    "tm:leechlife",
+    "tm:lightscreen",
+    "tm:overheat",
+    "tm:pounce",
+    "tm:protect",
+    "tm:psychic",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:uturn",
+    "tm:wildcharge",
+    "tm:willowisp",
+    "tm:zenheadbutt",
+    "tutor:bugbite",
+    "tutor:gigadrain",
+    "tutor:heatwave",
+    "tutor:magnetrise",
+    "tutor:signalbeam",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.larvesta.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "larvesta_volcarona",
+      "variant": "level_up",
+      "result": "volcarona",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "quiverdance"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 59
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 11,
+  "weight": 288,
+  "aspects": [],
+  "cannotDynamax": false
+}

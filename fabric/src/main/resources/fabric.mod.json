@@ -7,6 +7,7 @@
   "description": "",
   "authors": ["J.T. McQuigg (JT122406)", "Waterpicker"],
   "contact": {},
+  "icon": "generations.png",
 
   "license": "GNU GPL 3.0",
   "environment": "*",
@@ -23,9 +24,9 @@
     "GenerationsCore-common.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.19",
-    "minecraft": ">=1.19.4",
-    "architectury": ">=8.1.87",
-    "cobblemon": ">=1.4.0"
+    "fabricloader": ">=0.14.21",
+    "minecraft": ">=1.20.1",
+    "architectury": ">=9.1.12",
+    "cobblemon": "*"
   }
 }

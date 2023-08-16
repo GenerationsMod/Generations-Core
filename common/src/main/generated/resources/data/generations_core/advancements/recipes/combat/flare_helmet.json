@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "generations_core:fire_stone"
+              "cobblemon:fire_stone"
             ]
           }
         ]
@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:flare_helmet"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

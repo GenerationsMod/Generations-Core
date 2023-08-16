@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "generations_core:leaf_stone"
+              "cobblemon:leaf_stone"
             ]
           }
         ]
@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:leaf_stone_boots"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

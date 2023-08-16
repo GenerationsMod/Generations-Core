@@ -1,0 +1,174 @@
+{
+  "implemented": true,
+  "name": "Bidoof",
+  "nationalPokedexNumber": 399,
+  "primaryType": "normal",
+  "abilities": [
+    "simple",
+    "unaware",
+    "h:moody"
+  ],
+  "baseStats": {
+    "hp": 59,
+    "attack": 45,
+    "defence": 40,
+    "special_attack": 35,
+    "special_defence": 40,
+    "speed": 31
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 50,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "behaviour": {
+    "swim": {
+      "swimSpeed": 0.1,
+      "canSwimInWater": true,
+      "canBreatheUnderwater": true,
+      "canWalkOnWater": true
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:stick",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:tackle",
+    "5:growl",
+    "9:defensecurl",
+    "13:rollout",
+    "17:headbutt",
+    "21:hyperfang",
+    "25:crunch",
+    "25:yawn",
+    "29:amnesia",
+    "33:takedown",
+    "37:superfang",
+    "37:swordsdance",
+    "41:superpower",
+    "45:curse",
+    "egg:aquatail",
+    "egg:defensecurl",
+    "egg:doubleedge",
+    "egg:endure",
+    "egg:furyswipes",
+    "egg:mudsport",
+    "egg:odorsleuth",
+    "egg:quickattack",
+    "egg:rockclimb",
+    "egg:rollout",
+    "egg:skullbash",
+    "egg:sleeptalk",
+    "egg:watersport",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:captivate",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:cut",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:irontail",
+    "tm:naturalgift",
+    "tm:pluck",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:stealthrock",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:taunt",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:workup",
+    "tutor:aquatail",
+    "tutor:covet",
+    "tutor:furycutter",
+    "tutor:headbutt",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:lastresort",
+    "tutor:mudslap",
+    "tutor:rollout",
+    "tutor:secretpower",
+    "tutor:shockwave",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:superfang",
+    "tutor:superpower",
+    "tutor:swift",
+    "tutor:tackle"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.bidoof.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "bidoof_bibarel",
+      "variant": "level_up",
+      "result": "bibarel",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 15
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1,
+    "height": 0.9,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 200,
+  "aspects": [],
+  "cannotDynamax": false
+}

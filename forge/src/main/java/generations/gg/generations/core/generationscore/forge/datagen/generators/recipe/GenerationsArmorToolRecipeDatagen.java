@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
-import dev.architectury.registry.registries.RegistrySupplier;
+import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
@@ -30,28 +30,28 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 	protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
 		buildToolSetCrafting(consumer, GenerationsBlocks.CHARGE_COBBLESTONE.get(), GenerationsTools.CHARGE_STONE);
 		buildToolSetCrafting(consumer, GenerationsBlocks.VOLCANIC_COBBLESTONE.get(), GenerationsTools.VOLCANIC_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.ALUMINUM_INGOT.get(), GenerationsArmor.ALUMINUM.helmet(), GenerationsArmor.ALUMINUM.chestplate(), GenerationsArmor.ALUMINUM.leggings(), GenerationsArmor.ALUMINUM.boots(), GenerationsTools.ALUMINUM);
-		buildArmorToolFullSetCrafting(consumer, Items.AMETHYST_SHARD, GenerationsArmor.ROCKET.helmet(), GenerationsArmor.ROCKET.chestplate(), GenerationsArmor.ROCKET.leggings(), GenerationsArmor.ROCKET.boots(), GenerationsTools.AMETHYST);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.CRYSTAL.get(), GenerationsArmor.CRYSTALLIZED.helmet(), GenerationsArmor.CRYSTALLIZED.chestplate(), GenerationsArmor.CRYSTALLIZED.leggings(), GenerationsArmor.CRYSTALLIZED.boots(), GenerationsTools.CRYSTAL);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.SAPPHIRE.get(), GenerationsArmor.AQUA.helmet(), GenerationsArmor.AQUA.chestplate(), GenerationsArmor.AQUA.leggings(), GenerationsArmor.AQUA.boots(), GenerationsTools.SAPPHIRE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.RUBY.get(), GenerationsArmor.MAGMA.helmet(), GenerationsArmor.MAGMA.chestplate(), GenerationsArmor.MAGMA.leggings(), GenerationsArmor.MAGMA.boots(), GenerationsTools.RUBY);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.SILICON.get(), GenerationsArmor.GALACTIC.helmet(), GenerationsArmor.GALACTIC.chestplate(), GenerationsArmor.GALACTIC.leggings(), GenerationsArmor.GALACTIC.boots(), GenerationsTools.SILICON);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.DAWN_STONE.get(), GenerationsArmor.DAWN_STONE.helmet(), GenerationsArmor.DAWN_STONE.chestplate(), GenerationsArmor.DAWN_STONE.leggings(), GenerationsArmor.DAWN_STONE.boots(), GenerationsTools.DAWN_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.DUSK_STONE.get(), GenerationsArmor.DUSK_STONE.helmet(), GenerationsArmor.DUSK_STONE.chestplate(), GenerationsArmor.DUSK_STONE.leggings(), GenerationsArmor.DUSK_STONE.boots(), GenerationsTools.DUSK_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.FIRE_STONE.get(), GenerationsArmor.FIRE_STONE.helmet(), GenerationsArmor.FIRE_STONE.chestplate(), GenerationsArmor.FIRE_STONE.leggings(), GenerationsArmor.FIRE_STONE.boots(), GenerationsTools.FIRE_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.ICE_STONE.get(), GenerationsArmor.ICE_STONE.helmet(), GenerationsArmor.ICE_STONE.chestplate(), GenerationsArmor.ICE_STONE.leggings(), GenerationsArmor.ICE_STONE.boots(), GenerationsTools.ICE_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.LEAF_STONE.get(), GenerationsArmor.LEAF_STONE.helmet(), GenerationsArmor.LEAF_STONE.chestplate(), GenerationsArmor.LEAF_STONE.leggings(), GenerationsArmor.LEAF_STONE.boots(), GenerationsTools.LEAF_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.SUN_STONE.get(), GenerationsArmor.SUN_STONE.helmet(), GenerationsArmor.SUN_STONE.chestplate(), GenerationsArmor.SUN_STONE.leggings(), GenerationsArmor.SUN_STONE.boots(), GenerationsTools.SUN_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.MOON_STONE.get(), GenerationsArmor.MOON_STONE.helmet(), GenerationsArmor.MOON_STONE.chestplate(), GenerationsArmor.MOON_STONE.leggings(), GenerationsArmor.MOON_STONE.boots(), GenerationsTools.MOON_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.THUNDER_STONE.get(), GenerationsArmor.THUNDER_STONE.helmet(), GenerationsArmor.THUNDER_STONE.chestplate(), GenerationsArmor.THUNDER_STONE.leggings(), GenerationsArmor.THUNDER_STONE.boots(), GenerationsTools.THUNDER_STONE);
-		buildArmorToolFullSetCrafting(consumer, GenerationsItems.WATER_STONE.get(), GenerationsArmor.WATER_STONE.helmet(), GenerationsArmor.WATER_STONE.chestplate(), GenerationsArmor.WATER_STONE.leggings(), GenerationsArmor.WATER_STONE.boots(), GenerationsTools.WATER_STONE);
-		buildArmorSetCrafting(consumer, GenerationsItems.Z_INGOT.get(), GenerationsArmor.ULTRA.helmet(), GenerationsArmor.ULTRA.chestplate(), GenerationsArmor.ULTRA.leggings(), GenerationsArmor.ULTRA.boots());
+		buildArmorToolFullSetCrafting(consumer, GenerationsItems.ALUMINUM_INGOT.get(), GenerationsArmor.ALUMINUM.helmet().get(), GenerationsArmor.ALUMINUM.chestplate().get(), GenerationsArmor.ALUMINUM.leggings().get(), GenerationsArmor.ALUMINUM.boots().get(), GenerationsTools.ALUMINUM);
+		buildArmorToolFullSetCrafting(consumer, Items.AMETHYST_SHARD, GenerationsArmor.ROCKET.helmet().get(), GenerationsArmor.ROCKET.chestplate().get(), GenerationsArmor.ROCKET.leggings().get(), GenerationsArmor.ROCKET.boots().get(), GenerationsTools.AMETHYST);
+		buildArmorToolFullSetCrafting(consumer, GenerationsItems.CRYSTAL.get(), GenerationsArmor.CRYSTALLIZED.helmet().get(), GenerationsArmor.CRYSTALLIZED.chestplate().get(), GenerationsArmor.CRYSTALLIZED.leggings().get(), GenerationsArmor.CRYSTALLIZED.boots().get(), GenerationsTools.CRYSTAL);
+		buildArmorToolFullSetCrafting(consumer, GenerationsItems.SAPPHIRE.get(), GenerationsArmor.AQUA.helmet().get(), GenerationsArmor.AQUA.chestplate().get(), GenerationsArmor.AQUA.leggings().get(), GenerationsArmor.AQUA.boots().get(), GenerationsTools.SAPPHIRE);
+		buildArmorToolFullSetCrafting(consumer, GenerationsItems.RUBY.get(), GenerationsArmor.MAGMA.helmet().get(), GenerationsArmor.MAGMA.chestplate().get(), GenerationsArmor.MAGMA.leggings().get(), GenerationsArmor.MAGMA.boots().get(), GenerationsTools.RUBY);
+		buildArmorToolFullSetCrafting(consumer, GenerationsItems.SILICON.get(), GenerationsArmor.GALACTIC.helmet().get(), GenerationsArmor.GALACTIC.chestplate().get(), GenerationsArmor.GALACTIC.leggings().get(), GenerationsArmor.GALACTIC.boots().get(), GenerationsTools.SILICON);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.DAWN_STONE.asItem(), GenerationsArmor.DAWN_STONE.helmet().get(), GenerationsArmor.DAWN_STONE.chestplate().get(), GenerationsArmor.DAWN_STONE.leggings().get(), GenerationsArmor.DAWN_STONE.boots().get(), GenerationsTools.DAWN_STONE);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.DUSK_STONE.asItem(), GenerationsArmor.DUSK_STONE.helmet().get(), GenerationsArmor.DUSK_STONE.chestplate().get(), GenerationsArmor.DUSK_STONE.leggings().get(), GenerationsArmor.DUSK_STONE.boots().get(), GenerationsTools.DUSK_STONE);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.FIRE_STONE.asItem(), GenerationsArmor.FIRE_STONE.helmet().get(), GenerationsArmor.FIRE_STONE.chestplate().get(), GenerationsArmor.FIRE_STONE.leggings().get(), GenerationsArmor.FIRE_STONE.boots().get(), GenerationsTools.FIRE_STONE);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.ICE_STONE.asItem(), GenerationsArmor.ICE_STONE.helmet().get(), GenerationsArmor.ICE_STONE.chestplate().get(), GenerationsArmor.ICE_STONE.leggings().get(), GenerationsArmor.ICE_STONE.boots().get(), GenerationsTools.ICE_STONE);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.LEAF_STONE.asItem(), GenerationsArmor.LEAF_STONE.helmet().get(), GenerationsArmor.LEAF_STONE.chestplate().get(), GenerationsArmor.LEAF_STONE.leggings().get(), GenerationsArmor.LEAF_STONE.boots().get(), GenerationsTools.LEAF_STONE);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.SUN_STONE.asItem(), GenerationsArmor.SUN_STONE.helmet().get(), GenerationsArmor.SUN_STONE.chestplate().get(), GenerationsArmor.SUN_STONE.leggings().get(), GenerationsArmor.SUN_STONE.boots().get(), GenerationsTools.SUN_STONE);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.MOON_STONE.asItem(), GenerationsArmor.MOON_STONE.helmet().get(), GenerationsArmor.MOON_STONE.chestplate().get(), GenerationsArmor.MOON_STONE.leggings().get(), GenerationsArmor.MOON_STONE.boots().get(), GenerationsTools.MOON_STONE);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.THUNDER_STONE.asItem(), GenerationsArmor.THUNDER_STONE.helmet().get(), GenerationsArmor.THUNDER_STONE.chestplate().get(), GenerationsArmor.THUNDER_STONE.leggings().get(), GenerationsArmor.THUNDER_STONE.boots().get(), GenerationsTools.THUNDER_STONE);
+		buildArmorToolFullSetCrafting(consumer, CobblemonItems.WATER_STONE.asItem(), GenerationsArmor.WATER_STONE.helmet().get(), GenerationsArmor.WATER_STONE.chestplate().get(), GenerationsArmor.WATER_STONE.leggings().get(), GenerationsArmor.WATER_STONE.boots().get(), GenerationsTools.WATER_STONE);
+		buildArmorSetCrafting(consumer, GenerationsItems.Z_INGOT.get(), GenerationsArmor.ULTRA.helmet().get(), GenerationsArmor.ULTRA.chestplate().get(), GenerationsArmor.ULTRA.leggings().get(), GenerationsArmor.ULTRA.boots().get());
 		//Modified Armor Recipes
-		buildModifiedArmorSetCrafting(consumer, GenerationsItems.ALUMINUM_INGOT.get(), GenerationsItems.CRYSTAL.get(), GenerationsArmor.AETHER.helmet(), GenerationsArmor.AETHER.chestplate(), GenerationsArmor.AETHER.leggings(), GenerationsArmor.AETHER.boots());
-		buildModifiedArmorSetCrafting(consumer, GenerationsItems.RUBY.get(), GenerationsItems.FIRE_STONE.get(), GenerationsArmor.FLARE.helmet(), GenerationsArmor.FLARE.chestplate(), GenerationsArmor.FLARE.leggings(), GenerationsArmor.FLARE.boots());
-		buildModifiedArmorSetCrafting(consumer, GenerationsItems.CRYSTAL.get(), GenerationsItems.SILICON.get(), GenerationsArmor.NEO_PLASMA.helmet(), GenerationsArmor.NEO_PLASMA.chestplate(), GenerationsArmor.NEO_PLASMA.leggings(), GenerationsArmor.NEO_PLASMA.boots());
-		buildModifiedArmorSetCrafting(consumer, GenerationsItems.SILICON.get(), GenerationsItems.CRYSTAL.get(), GenerationsArmor.PLASMA.helmet(), GenerationsArmor.PLASMA.chestplate(), GenerationsArmor.PLASMA.leggings(), GenerationsArmor.PLASMA.boots());  //check above
-		buildModifiedArmorSetCrafting(consumer, Items.AMETHYST_SHARD, GenerationsItems.SILICON.get(), GenerationsArmor.SKULL.helmet(), GenerationsArmor.SKULL.chestplate(), GenerationsArmor.SKULL.leggings(), GenerationsArmor.SKULL.boots());
+		buildModifiedArmorSetCrafting(consumer, GenerationsItems.ALUMINUM_INGOT.get(), GenerationsItems.CRYSTAL.get(), GenerationsArmor.AETHER.helmet().get(), GenerationsArmor.AETHER.chestplate().get(), GenerationsArmor.AETHER.leggings().get(), GenerationsArmor.AETHER.boots().get());
+		buildModifiedArmorSetCrafting(consumer, GenerationsItems.RUBY.get(), CobblemonItems.FIRE_STONE.asItem(), GenerationsArmor.FLARE.helmet().get(), GenerationsArmor.FLARE.chestplate().get(), GenerationsArmor.FLARE.leggings().get(), GenerationsArmor.FLARE.boots().get());
+		buildModifiedArmorSetCrafting(consumer, GenerationsItems.CRYSTAL.get(), GenerationsItems.SILICON.get(), GenerationsArmor.NEO_PLASMA.helmet().get(), GenerationsArmor.NEO_PLASMA.chestplate().get(), GenerationsArmor.NEO_PLASMA.leggings().get(), GenerationsArmor.NEO_PLASMA.boots().get());
+		buildModifiedArmorSetCrafting(consumer, GenerationsItems.SILICON.get(), GenerationsItems.CRYSTAL.get(), GenerationsArmor.PLASMA.helmet().get(), GenerationsArmor.PLASMA.chestplate().get(), GenerationsArmor.PLASMA.leggings().get(), GenerationsArmor.PLASMA.boots().get());  //check above
+		buildModifiedArmorSetCrafting(consumer, Items.AMETHYST_SHARD, GenerationsItems.SILICON.get(), GenerationsArmor.SKULL.helmet().get(), GenerationsArmor.SKULL.chestplate().get(), GenerationsArmor.SKULL.leggings().get(), GenerationsArmor.SKULL.boots().get());
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, GenerationsTools.WOODEN_HAMMER.get())
 				.define('X', ItemTags.PLANKS)
@@ -69,12 +69,12 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 		netheriteSmithing(consumer, GenerationsTools.DIAMOND_HAMMER.get(), RecipeCategory.TOOLS, GenerationsTools.NETHERITE_HAMMER.get());
 	}
 
-	private void buildArmorToolFullSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, GenerationsTools.ToolSet toolSet) {
+	private void buildArmorToolFullSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, Item helmet, Item chestplate, Item leggings, Item boots, GenerationsTools.ToolSet toolSet) {
 		buildArmorSetCrafting(consumer, baseItem, helmet, chestplate, leggings, boots);
 		buildToolSetCrafting(consumer, baseItem, toolSet);
 	}
 
-	private void buildArmorSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots) {
+	private void buildArmorSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, Item helmet, Item chestplate, Item leggings, Item boots) {
 		if (helmet != null) buildHelmetRecipes(consumer, baseItem, helmet);
 		if (chestplate != null) buildChestplateRecipes(consumer, baseItem, chestplate);
 		if (leggings != null) buildLeggingsRecipes(consumer, baseItem, leggings);
@@ -82,11 +82,11 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 	}
 
 	private void buildToolSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, @NotNull ItemLike baseItem, GenerationsTools.ToolSet toolSet) {
-		if (toolSet.pickaxe() != null) buildPickaxeRecipes(consumer, toolSet.pickaxe(), baseItem);
-		if (toolSet.axe() != null) buildAxeRecipes(consumer, toolSet.axe(), baseItem);
-		if (toolSet.sword() != null) buildSwordRecipes(consumer, toolSet.sword(), baseItem);
-		if (toolSet.shovel() != null) buildShovelRecipes(consumer, toolSet.shovel(), baseItem);
-		if (toolSet.hoe() != null) buildHoeRecipes(consumer, toolSet.hoe(), baseItem);
+		if (toolSet.pickaxe() != null) buildPickaxeRecipes(consumer, toolSet.pickaxe().get(), baseItem);
+		if (toolSet.axe() != null) buildAxeRecipes(consumer, toolSet.axe().get(), baseItem);
+		if (toolSet.sword() != null) buildSwordRecipes(consumer, toolSet.sword().get(), baseItem);
+		if (toolSet.shovel() != null) buildShovelRecipes(consumer, toolSet.shovel().get(), baseItem);
+		if (toolSet.hoe() != null) buildHoeRecipes(consumer, toolSet.hoe().get(), baseItem);
 		if (toolSet.hammer() != null) buildHammerRecipes(consumer, toolSet.hammer().get(), baseItem);
 	}
 
@@ -101,8 +101,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildHoeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsHoeItem> hoe, ItemLike baseItem) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hoe.get())
+	private void buildHoeRecipes(@NotNull Consumer<FinishedRecipe> consumer, GenerationsHoeItem hoe, ItemLike baseItem) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hoe)
 				.define('X', baseItem)
 				.define('#', Items.STICK)
 				.pattern("XX")
@@ -112,8 +112,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildShovelRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsShovelItem> shovel, ItemLike baseItem) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, shovel.get())
+	private void buildShovelRecipes(@NotNull Consumer<FinishedRecipe> consumer, GenerationsShovelItem shovel, ItemLike baseItem) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, shovel)
 				.define('X', baseItem)
 				.define('#', Items.STICK)
 				.pattern("X")
@@ -123,8 +123,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildSwordRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsSwordItem> sword, ItemLike baseItem) {
-	ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, sword.get())
+	private void buildSwordRecipes(@NotNull Consumer<FinishedRecipe> consumer, GenerationsSwordItem sword, ItemLike baseItem) {
+	ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, sword)
 			.define('X', baseItem)
 			.define('#', Items.STICK)
 			.pattern("X")
@@ -134,8 +134,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 			.save(consumer);
 	}
 
-	private void buildAxeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsAxeItem> axe, ItemLike baseItem) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, axe.get())
+	private void buildAxeRecipes(@NotNull Consumer<FinishedRecipe> consumer, GenerationsAxeItem axe, ItemLike baseItem) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, axe)
 				.define('X', baseItem)
 				.define('#', Items.STICK)
 				.pattern("XX")
@@ -145,8 +145,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildPickaxeRecipes(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<GenerationsPickaxeItem> pickaxe, ItemLike baseItem) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pickaxe.get())
+	private void buildPickaxeRecipes(@NotNull Consumer<FinishedRecipe> consumer, GenerationsPickaxeItem pickaxe, ItemLike baseItem) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pickaxe)
 				.define('X', baseItem)
 				.define('#', Items.STICK)
 				.pattern("XXX")
@@ -156,8 +156,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildHelmetRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> helmet){
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmet.get())
+	private void buildHelmetRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, Item helmet){
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmet)
 				.define('X', baseItem)
 				.pattern("XXX")
 				.pattern("X X")
@@ -165,8 +165,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildChestplateRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> chestplate){
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, chestplate.get())
+	private void buildChestplateRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, Item chestplate){
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, chestplate)
 				.define('X', baseItem)
 				.pattern("X X")
 				.pattern("XXX")
@@ -175,8 +175,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildLeggingsRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> leggings){
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, leggings.get())
+	private void buildLeggingsRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, Item leggings){
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, leggings)
 				.define('X', baseItem)
 				.pattern("XXX")
 				.pattern("X X")
@@ -185,8 +185,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildBootsRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, RegistrySupplier<Item> boots){
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, boots.get())
+	private void buildBootsRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike baseItem, Item boots){
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, boots)
 				.define('X', baseItem)
 				.pattern("X X")
 				.pattern("X X")
@@ -195,15 +195,15 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 	}
 	
 	//Modified Armor Recipes
-	private void buildModifiedArmorSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike itemTop, ItemLike itemBottom, RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots) {
+	private void buildModifiedArmorSetCrafting(@NotNull Consumer<FinishedRecipe> consumer, ItemLike itemTop, ItemLike itemBottom, Item helmet, Item chestplate, Item leggings, Item boots) {
 		if (helmet != null) buildModifiedHelmetRecipes(consumer, itemTop, itemBottom, helmet);
 		if (chestplate != null) buildModifiedChestplateRecipes(consumer, itemTop, itemBottom, chestplate);
 		if (leggings != null) buildModifiedLeggingsRecipes(consumer, itemTop, itemBottom, leggings);
 		if (boots != null) buildModifiedBootsRecipes(consumer, itemTop, itemBottom, boots);
 	}
 
-	private void buildModifiedHelmetRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike item1, ItemLike item2, RegistrySupplier<Item> helmet){
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmet.get())
+	private void buildModifiedHelmetRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike item1, ItemLike item2, Item helmet){
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmet)
 				.define('X', item1)
 				.define('Y', item2)
 				.pattern("XXX")
@@ -213,8 +213,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildModifiedChestplateRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike item1, ItemLike item2, RegistrySupplier<Item> chestplate){
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, chestplate.get())
+	private void buildModifiedChestplateRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike item1, ItemLike item2, Item chestplate){
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, chestplate)
 				.define('X', item1)
 				.define('Y', item2)
 				.pattern("X X")
@@ -225,8 +225,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildModifiedLeggingsRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike item1, ItemLike item2, RegistrySupplier<Item> leggings){
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, leggings.get())
+	private void buildModifiedLeggingsRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike item1, ItemLike item2, Item leggings){
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, leggings)
 				.define('X', item1)
 				.define('Y', item2)
 				.pattern("XXX")
@@ -237,8 +237,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 				.save(consumer);
 	}
 
-	private void buildModifiedBootsRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike item1, ItemLike item2, RegistrySupplier<Item> boots){
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, boots.get())
+	private void buildModifiedBootsRecipes(@NotNull Consumer<FinishedRecipe> consumer, ItemLike item1, ItemLike item2, Item boots){
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, boots)
 				.define('X', item1)
 				.define('Y', item2)
 				.pattern("X X")

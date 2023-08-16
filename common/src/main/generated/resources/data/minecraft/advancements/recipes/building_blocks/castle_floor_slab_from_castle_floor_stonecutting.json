@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:castle_floor_slab_from_castle_floor_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:aggron",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:aggron.pk",
+      "poser": "generations_core:aggron",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "mega"
+      ],
+      "model": "generations_core:aggron-mega.pk",
+      "poser": "generations_core:aggron-mega",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "mega",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "implemented": true,
+  "name": "Marshtomp",
+  "nationalPokedexNumber": 259,
+  "primaryType": "water",
+  "secondaryType": "ground",
+  "abilities": [
+    "torrent",
+    "h:damp"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 85,
+    "defence": 70,
+    "special_attack": 60,
+    "special_defence": 70,
+    "speed": 50
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 142,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "monster",
+    "water_1"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:mudslap",
+    "1:rocksmash",
+    "1:surf",
+    "1:tackle",
+    "1:watergun",
+    "9:rockthrow",
+    "15:bide",
+    "15:supersonic",
+    "16:mudshot",
+    "20:foresight",
+    "20:waterpulse",
+    "25:mudbomb",
+    "25:mudsport",
+    "28:rockslide",
+    "31:takedown",
+    "35:amnesia",
+    "37:muddywater",
+    "42:protect",
+    "45:screech",
+    "46:earthquake",
+    "53:endeavor",
+    "55:hydropump",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:confide",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icepunch",
+    "tm:icywind",
+    "tm:irontail",
+    "tm:lowkick",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:naturalgift",
+    "tm:poweruppunch",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sandtomb",
+    "tm:scald",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:sludgewave",
+    "tm:snore",
+    "tm:stealthrock",
+    "tm:strength",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:ancientpower",
+    "tutor:aquatail",
+    "tutor:bodyslam",
+    "tutor:counter",
+    "tutor:defensecurl",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:dynamicpunch",
+    "tutor:earthpower",
+    "tutor:endeavor",
+    "tutor:endure",
+    "tutor:headbutt",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:lowkick",
+    "tutor:megakick",
+    "tutor:megapunch",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:rockslide",
+    "tutor:rollout",
+    "tutor:seismictoss",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:substitute",
+    "tutor:superpower",
+    "tutor:swagger",
+    "tutor:uproar",
+    "tutor:waterpledge",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.marshtomp.desc"
+  ],
+  "preEvolution": "mudkip",
+  "evolutions": [
+    {
+      "id": "marshtomp_swampert",
+      "variant": "level_up",
+      "result": "swampert",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.9,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 280,
+  "aspects": [],
+  "cannotDynamax": false
+}

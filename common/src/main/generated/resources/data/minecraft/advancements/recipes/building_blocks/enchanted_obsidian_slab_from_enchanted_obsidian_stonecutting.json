@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:enchanted_obsidian_slab_from_enchanted_obsidian_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

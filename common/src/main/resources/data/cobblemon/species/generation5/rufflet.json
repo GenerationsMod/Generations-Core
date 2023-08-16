@@ -1,0 +1,181 @@
+{
+  "implemented": true,
+  "name": "Rufflet",
+  "nationalPokedexNumber": 627,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "keeneye",
+    "sheerforce",
+    "h:hustle"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 83,
+    "defence": 50,
+    "special_attack": 37,
+    "special_defence": 50,
+    "speed": 60
+  },
+  "catchRate": 190,
+  "maleRatio": 1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 70,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:leer",
+    "1:peck",
+    "5:furyattack",
+    "10:wingattack",
+    "14:honeclaws",
+    "19:scaryface",
+    "23:aerialace",
+    "28:slash",
+    "32:defog",
+    "37:tailwind",
+    "41:airslash",
+    "46:crushclaw",
+    "50:skydrop",
+    "55:whirlwind",
+    "59:bravebird",
+    "64:thrash",
+    "egg:rocksmash",
+    "egg:roost",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bravebird",
+    "tm:bulkup",
+    "tm:closecombat",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:fly",
+    "tm:frustration",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:hurricane",
+    "tm:pluck",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:roost",
+    "tm:round",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:skydrop",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelwing",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superpower",
+    "tm:swagger",
+    "tm:swift",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:heatwave",
+    "tutor:roost",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:superpower",
+    "tutor:tailwind"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.rufflet.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "rufflet_braviary",
+      "variant": "level_up",
+      "result": "braviary",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "superpower"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 54
+        }
+      ]
+    },
+    {
+      "id": "rufflet_braviary",
+      "variant": "level_up",
+      "result": "braviary form=hisui",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "esperwing"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 54
+        },
+        {
+          "variant": "time_range",
+          "range": "night"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 105,
+  "aspects": [],
+  "cannotDynamax": false
+}

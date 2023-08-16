@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:farfetchd",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:farfetchd.pk",
+      "poser": "generations_core:farfetchd",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "galarian"
+      ],
+      "model": "generations_core:farfetchd-galarian.pk",
+      "poser": "generations_core:farfetchd-galarian",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "galarian"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "implemented": true,
+  "name": "Piplup",
+  "nationalPokedexNumber": 393,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:defiant"
+  ],
+  "baseStats": {
+    "hp": 53,
+    "attack": 51,
+    "defence": 53,
+    "special_attack": 61,
+    "special_defence": 56,
+    "speed": 40
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 63,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "drops": {
+    "amount": "3",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:pound",
+    "4:growl",
+    "8:bubble",
+    "11:watersport",
+    "15:peck",
+    "18:bide",
+    "18:bubblebeam",
+    "25:furyattack",
+    "29:brine",
+    "32:whirlpool",
+    "36:mist",
+    "39:drillpeck",
+    "43:hydropump",
+    "egg:agility",
+    "egg:aquaring",
+    "egg:bide",
+    "egg:doublehit",
+    "egg:featherdance",
+    "egg:flail",
+    "egg:hydropump",
+    "egg:icywind",
+    "egg:mudslap",
+    "egg:mudsport",
+    "egg:powertrip",
+    "egg:snore",
+    "egg:supersonic",
+    "egg:yawn",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:brickbreak",
+    "tm:brine",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:defog",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:naturalgift",
+    "tm:pluck",
+    "tm:protect",
+    "tm:quash",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:stealthrock",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:bubble",
+    "tutor:bubblebeam",
+    "tutor:covet",
+    "tutor:defog",
+    "tutor:dive",
+    "tutor:drillpeck",
+    "tutor:featherdance",
+    "tutor:growl",
+    "tutor:headbutt",
+    "tutor:hydropump",
+    "tutor:icywind",
+    "tutor:mudslap",
+    "tutor:peck",
+    "tutor:pound",
+    "tutor:return",
+    "tutor:round",
+    "tutor:signalbeam",
+    "tutor:sing",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:waterpledge",
+    "tutor:waterpulse",
+    "tutor:watersport",
+    "tutor:whirlpool"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.piplup.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "piplup_prinplup",
+      "variant": "level_up",
+      "result": "prinplup",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 16
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 52,
+  "aspects": [],
+  "cannotDynamax": false
+}

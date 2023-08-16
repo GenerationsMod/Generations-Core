@@ -13,6 +13,7 @@ import generations.gg.generations.core.generationscore.world.dialogue.Dialogues;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.components.events.GuiEventListener;
@@ -152,7 +153,7 @@ public class ConfigureDialogueScreen extends Screen {
     }
 
     @Override
-    public void render(@NotNull PoseStack stack, int mouseX, int mouseY, float partialTick) {
+    public void render(@NotNull GuiGraphics stack, int mouseX, int mouseY, float partialTick) {
         super.renderBackground(stack);
         super.render(stack, mouseX, mouseY, partialTick);
         ScreenUtils.drawCenteredString(stack, minecraft.font, "Press Left Click to Edit a Property", width / 2, 8, 0xFFCCCCCC, true);

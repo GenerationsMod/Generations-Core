@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.client.screen.Hierarchica
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.renderer.GameRenderer;
 import org.jetbrains.annotations.NotNull;
@@ -42,7 +43,7 @@ public class DialogueNodeWidget extends AbstractHierarchicalWidget {
     }
 
     @Override
-    public void render(@NotNull PoseStack stack, int mouseX, int mouseY, float partialTick) {
+    public void render(@NotNull GuiGraphics stack, int mouseX, int mouseY, float partialTick) {
         super.render(stack, mouseX, mouseY, partialTick);
 
         if (this.visible) {
@@ -51,29 +52,27 @@ public class DialogueNodeWidget extends AbstractHierarchicalWidget {
                 getRootParent().setY((int) (mouseY - moveOffsetY));
             }
 
-            stack.pushPose();
+            stack.pose().pushPose();
 
             // Tab
             RenderSystem.enableBlend();
-            RenderSystem.setShader(GameRenderer::getPositionColorShader);
-            RenderSystem.setShaderColor(1.0f, 0.337f, 0.286f, 1.0f);
             RenderSystem.setShaderColor(1.0f, 0.337f, 0.286f, 1.0f);
             ScreenUtils.drawRect(stack, getX(), getY(), 80, getHeight(), 0xFFFFFFFF);
             var nodeId = AbstractNodeAdapter.INSTANCE.getId(node);
-            client.font.draw(stack, nodeId, getX() + 2, getY(), 0xFFFFFFFF);
+            stack.drawString(client.font, nodeId, getX() + 2, getY(), 0xFFFFFFFF);
 
             // Settings
             RenderSystem.setShaderColor(0.2f, 0.2f, 0.2f, 1.0f);
             ScreenUtils.drawRect(stack, getX(), getY() + 8, 80, getHeight(), 0xFFFFFFFF);
             RenderSystem.disableBlend();
-            stack.popPose();
+            stack.pose().popPose();
 
             // Children Connections
             RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
             var lineStart = new Vector2f(getX() + getWidth() / 2f, getY() + getHeight() + 9);
             for (var child : getChildren()) {
                 if (child instanceof DialogueNodeWidget) {
-                    ScreenUtils.drawLine(stack.last().pose(), 0, lineStart, new Vector2f(child.getX() + getWidth() / 2f, child.getY() + 2), 0xFFFFFFFF);
+                    ScreenUtils.drawLine(stack.pose().last().pose(), 0, lineStart, new Vector2f(child.getX() + getWidth() / 2f, child.getY() + 2), 0xFFFFFFFF);
                 }
             }
         }
@@ -159,9 +158,9 @@ public class DialogueNodeWidget extends AbstractHierarchicalWidget {
         }
 
         @Override
-        public void render(@NotNull PoseStack stack, int mouseX, int mouseY, float partialTick) {
+        public void render(@NotNull GuiGraphics stack, int mouseX, int mouseY, float partialTick) {
             super.render(stack, mouseX, mouseY, partialTick);
-            client.font.draw(stack, fieldName, getX() + 2, getY(), isHovered ? 0xFFFFFFFF : 0xFF999999);
+            stack.drawString(client.font, fieldName, getX() + 2, getY(), isHovered ? 0xFFFFFFFF : 0xFF999999);
         }
     }
 }

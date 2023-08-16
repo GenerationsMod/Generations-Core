@@ -1,0 +1,26 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "foongus-1",
+            "pokemon": "foongus",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "9-45",
+            "weight": 0.2,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_magical",
+                    "#cobblemon:is_mushroom"
+                ],
+                "maxLight": 7
+            }
+        }
+    ]
+}

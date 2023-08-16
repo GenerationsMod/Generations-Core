@@ -2,32 +2,43 @@ package generations.gg.generations.core.generationscore.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import generations.gg.generations.core.generationscore.GenerationsCoreExpectPlatform;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
 
+/**
+ * The Config Loader for all Generations modules/extensions
+ * @author WaterPicker
+ * @author J.T. McQuigg
+ */
 public class ConfigLoader {
-    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public static <T> T loaderConfig(Class<T> clazz, String modid, String name) {
+    /** The Gson instance for the Config Loader. */
+    private static final Gson GSON = new GsonBuilder().registerTypeAdapter(Duration.class, new DurationJsonAdapter()).setPrettyPrinting().create();
 
-
+    /**
+     * Loads a config file for a Generations module/extension.
+     *
+     * @param clazz      The class of the config file.
+     * @param subfolder  The subfolder for the Generations module/extension.  This should be what comes after generations_ in the modid
+     * @param name       The name of the config file.
+     * @return The config file.
+     */
+    @ApiStatus.Internal
+    public static <T> T loaderConfig(@NotNull Class<T> clazz, String subfolder, String name) {
         try {
-            var configPath = GenerationsCoreExpectPlatform.getConfigDirectory().resolve(Path.of(modid, name + ".json"));
+            Path configPath = GenerationsCore.CONFIG_DIRECTORY.resolve(Path.of("generations", subfolder, name + ".json"));
             T value = clazz.getConstructor().newInstance();
 
-            if(Files.notExists(configPath.getParent())) Files.createDirectory(configPath.getParent());
+            if (Files.notExists(configPath)) Files.createDirectories(configPath.getParent());
+            else if (Files.exists(configPath)) value = GSON.fromJson(Files.newBufferedReader(configPath), clazz);
 
-            if (Files.exists(configPath)) {
-                var t = GSON.fromJson(Files.newBufferedReader(configPath), clazz);
-                if(t != null) value = t;
-            }
-
-            var json = GSON.toJson(value);
-
-            Files.writeString(configPath, json);
-
+            Files.writeString(configPath, GSON.toJson(value));
+            GenerationsCore.LOGGER.info("Generations-" + subfolder + " config loaded!");
             return value;
         } catch (Exception e) {
             throw new RuntimeException("Failed to load config.", e);

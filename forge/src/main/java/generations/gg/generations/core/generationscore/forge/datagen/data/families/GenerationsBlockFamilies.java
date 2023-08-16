@@ -12,6 +12,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.stream.Stream;
 
+/**
+ * Generations Core Block Families
+ * Used during Data Generation
+ * @see BlockFamilies
+ * @author J.T. McQuigg
+ */
 @SuppressWarnings("unused")
 public class GenerationsBlockFamilies extends BlockFamilies {
 

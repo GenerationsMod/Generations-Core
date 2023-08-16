@@ -1,0 +1,167 @@
+{
+  "implemented": true,
+  "name": "Zweilous",
+  "nationalPokedexNumber": 634,
+  "primaryType": "dark",
+  "secondaryType": "dragon",
+  "abilities": [
+    "hustle"
+  ],
+  "baseStats": {
+    "hp": 72,
+    "attack": 85,
+    "defence": 70,
+    "special_attack": 65,
+    "special_defence": 70,
+    "speed": 58
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 147,
+  "experienceGroup": "slow",
+  "eggCycles": 40,
+  "eggGroups": [
+    "dragon"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:rotten_flesh",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:bite",
+    "1:doublehit",
+    "1:dragonrage",
+    "1:focusenergy",
+    "1:tackle",
+    "12:headbutt",
+    "16:assurance",
+    "17:dragonbreath",
+    "20:roar",
+    "25:crunch",
+    "28:slam",
+    "32:dragonpulse",
+    "38:workup",
+    "42:dragonrush",
+    "48:bodyslam",
+    "55:scaryface",
+    "60:nastyplot",
+    "64:hypervoice",
+    "71:outrage",
+    "tm:assurance",
+    "tm:attract",
+    "tm:beatup",
+    "tm:bodyslam",
+    "tm:confide",
+    "tm:crunch",
+    "tm:darkpulse",
+    "tm:doubleteam",
+    "tm:dracometeor",
+    "tm:dragonpulse",
+    "tm:dragontail",
+    "tm:earthpower",
+    "tm:endure",
+    "tm:facade",
+    "tm:firefang",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hypervoice",
+    "tm:icefang",
+    "tm:incinerate",
+    "tm:nastyplot",
+    "tm:outrage",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rocksmash",
+    "tm:round",
+    "tm:scaryface",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:stompingtantrum",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superpower",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderfang",
+    "tm:thunderwave",
+    "tm:torment",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:aquatail",
+    "tutor:darkpulse",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:earthpower",
+    "tutor:hypervoice",
+    "tutor:outrage",
+    "tutor:shockwave",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:superpower",
+    "tutor:uproar",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.zweilous.desc"
+  ],
+  "preEvolution": "deino",
+  "evolutions": [
+    {
+      "id": "zweilous_hydreigon",
+      "variant": "level_up",
+      "result": "hydreigon",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 64
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 35,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 14,
+  "weight": 500,
+  "aspects": [],
+  "cannotDynamax": false
+}

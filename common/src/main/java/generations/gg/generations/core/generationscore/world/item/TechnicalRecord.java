@@ -4,6 +4,6 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 
 public class TechnicalRecord extends MoveTeachingItem {
     public TechnicalRecord(String move, Properties properties) {
-        super(GenerationsCore.id(move), properties);
+        super(properties);
     }
 }

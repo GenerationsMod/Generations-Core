@@ -1,0 +1,44 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "sigilyph-1",
+            "pokemon": "sigilyph",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-49",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_desert"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:chiseled_red_sandstone",
+                    "minecraft:chiseled_sandstone",
+                    "minecraft:cut_red_sandstone",
+                    "minecraft:cut_red_sandstone_slab",
+                    "minecraft:cut_sandstone",
+                    "minecraft:cut_sandstone_slab",
+                    "minecraft:red_sandstone_slab",
+                    "minecraft:red_sandstone_stairs",
+                    "minecraft:red_sandstone_wall",
+                    "minecraft:sandstone_stairs",
+                    "minecraft:sandstone_wall",
+                    "minecraft:smooth_red_sandstone",
+                    "minecraft:smooth_red_sandstone_slab",
+                    "minecraft:smooth_red_sandstone_stairs",
+                    "minecraft:smooth_sandstone",
+                    "minecraft:smooth_sandstone_slab",
+                    "minecraft:smooth_sandstone_stairs"
+                ]
+            }
+        }
+    ]
+}

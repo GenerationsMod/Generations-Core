@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:gray_cave_rock_floor_slab_from_gray_cave_rock_floor_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:blue_marble_slab_from_blue_marble_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

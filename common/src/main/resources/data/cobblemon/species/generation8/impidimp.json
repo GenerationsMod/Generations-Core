@@ -1,0 +1,138 @@
+{
+  "implemented": true,
+  "name": "Impidimp",
+  "nationalPokedexNumber": 859,
+  "primaryType": "dark",
+  "secondaryType": "fairy",
+  "abilities": [
+    "prankster",
+    "frisk",
+    "h:pickpocket"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 45,
+    "defence": 30,
+    "special_attack": 55,
+    "special_defence": 40,
+    "speed": 50
+  },
+  "catchRate": 255,
+  "maleRatio": 1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 53,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy",
+    "human_like"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:bamboo",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:confide",
+    "1:fakeout",
+    "4:bite",
+    "8:flatter",
+    "12:faketears",
+    "16:assurance",
+    "20:swagger",
+    "24:suckerpunch",
+    "28:torment",
+    "33:darkpulse",
+    "36:nastyplot",
+    "40:playrough",
+    "44:foulplay",
+    "egg:partingshot",
+    "tm:assurance",
+    "tm:attract",
+    "tm:chillingwater",
+    "tm:darkpulse",
+    "tm:dazzlinggleam",
+    "tm:drainingkiss",
+    "tm:drainpunch",
+    "tm:endure",
+    "tm:facade",
+    "tm:faketears",
+    "tm:fling",
+    "tm:foulplay",
+    "tm:leechlife",
+    "tm:lightscreen",
+    "tm:lowkick",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:metronome",
+    "tm:mistyterrain",
+    "tm:nastyplot",
+    "tm:playrough",
+    "tm:protect",
+    "tm:reflect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:revenge",
+    "tm:round",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderwave",
+    "tm:trailblaze",
+    "tm:trick",
+    "tm:uproar",
+    "tutor:burningjealousy",
+    "tutor:lashout"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.impidimp.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "impidimp_morgrem",
+      "variant": "level_up",
+      "result": "morgrem",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "falsesurrender"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 55,
+  "aspects": [],
+  "cannotDynamax": false
+}

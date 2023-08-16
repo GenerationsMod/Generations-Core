@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +30,15 @@ public class GenerationsUtilityBlocks {
 	public static final List<RegistrySupplier<DyedBlockItem<PcBlock>>> PC_BLOCKS = new ArrayList<>();
 	public static final List<RegistrySupplier<DyedBlockItem<ClockBlock>>> CLOCK_BLOCKS = new ArrayList<>();
 
+	public static final List<RegistrySupplier<BallLootBlock>> BALL_LOOTS = new ArrayList<>();
+
 	/**
 	 * Utility Blocks
 	 */
-	public static final RegistrySupplier<Block> BOX = registerBlockItem("box", () -> new BoxBlock(BlockBehaviour.Properties.of(Material.WOOD).destroyTime(0.5f).sound(SoundType.WOOD)));
-	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of(Material.STONE).strength(2.5f).randomTicks().noOcclusion()));
+	public static final RegistrySupplier<Block> BOX = registerBlockItem("box", () -> new BoxBlock(BlockBehaviour.Properties.of().destroyTime(0.5f).sound(SoundType.WOOD).ignitedByLava()));
+	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of().strength(2.5f).randomTicks().noOcclusion()));
 
-	public static final RegistrySupplier<HealerBlock> HEALER = registerBlock("healer", () -> new HealerBlock(BlockBehaviour.Properties.of(Material.METAL)));
+	public static final RegistrySupplier<HealerBlock> HEALER = registerBlock("healer", () -> new HealerBlock(BlockBehaviour.Properties.of().strength(2.5f)));
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> WHITE_HEALER = registerHealer("white_healer", DyeColor.WHITE);
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> RED_HEALER = registerHealer("red_healer", DyeColor.RED);
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> ORANGE_HEALER = registerHealer("orange_healer", DyeColor.ORANGE);
@@ -56,7 +57,7 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<DyedBlockItem<HealerBlock>> BLACK_HEALER = registerHealer("black_healer", DyeColor.BLACK);
 
 	//PC Blocks
-	public static final RegistrySupplier<PcBlock> PC = registerBlock("pc", () -> new PcBlock(BlockBehaviour.Properties.of(Material.METAL).lightLevel(PcBlock.Companion::lumiance)));
+	public static final RegistrySupplier<PcBlock> PC = registerBlock("pc", () -> new PcBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
 	public static final RegistrySupplier<DyedBlockItem<PcBlock>> WHITE_PC = registerPC("white_pc", DyeColor.WHITE);
 	public static final RegistrySupplier<DyedBlockItem<PcBlock>> ORANGE_PC = registerPC("orange_pc", DyeColor.ORANGE);
 	public static final RegistrySupplier<DyedBlockItem<PcBlock>> MAGENTA_PC = registerPC("magenta_pc", DyeColor.MAGENTA);
@@ -74,7 +75,7 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<DyedBlockItem<PcBlock>> RED_PC = registerPC("red_pc", DyeColor.RED);
 	public static final RegistrySupplier<DyedBlockItem<PcBlock>> BLACK_PC = registerPC("black_pc", DyeColor.BLACK);
 
-	public static final RegistrySupplier<ClockBlock> CLOCK = registerBlock("clock", () -> new ClockBlock(BlockBehaviour.Properties.of(Material.METAL)));
+	public static final RegistrySupplier<ClockBlock> CLOCK = registerBlock("clock", () -> new ClockBlock(BlockBehaviour.Properties.of().strength(2f)));
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> WHITE_CLOCK = registerClock("white_clock", DyeColor.WHITE);
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> ORANGE_CLOCK = registerClock("orange_clock", DyeColor.ORANGE);
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> MAGENTA_CLOCK = registerClock("magenta_clock", DyeColor.MAGENTA);
@@ -92,19 +93,49 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> RED_CLOCK = registerClock("red_clock", DyeColor.RED);
 	public static final RegistrySupplier<DyedBlockItem<ClockBlock>> BLACK_CLOCK = registerClock("black_clock", DyeColor.BLACK);
 
-	public static final RegistrySupplier<PokeLootBlock> POKE_LOOT = registerLoot("poke");
-	public static final RegistrySupplier<PokeLootBlock> GREAT_LOOT = registerLoot("great");
-	public static final RegistrySupplier<PokeLootBlock> ULTRA_LOOT = registerLoot("ultra");
-	public static final RegistrySupplier<PokeLootBlock> MASTER_LOOT = registerLoot("master");
-	public static final RegistrySupplier<PokeLootBlock> BEAST_LOOT = registerLoot("beast");
+	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
 
-	private static RegistrySupplier<PokeLootBlock> registerLoot(String name) {
-		return registerBlockItem(name + "_loot", () -> new PokeLootBlock(name, BlockBehaviour.Properties.of(Material.METAL).strength(-1.0f, 3600000.0f)));
+	public static RegistrySupplier<BallLootBlock> BEAST_BALL_LOOT = registerLoot("beast");
+	public static RegistrySupplier<BallLootBlock> CHERISH_BALL_LOOT = registerLoot("cherish");
+	public static RegistrySupplier<BallLootBlock> DIVE_BALL_LOOT = registerLoot("dive");
+	public static RegistrySupplier<BallLootBlock> DREAM_BALL_LOOT = registerLoot("dream");
+	public static RegistrySupplier<BallLootBlock> DUSK_BALL_LOOT = registerLoot("dusk");
+	public static RegistrySupplier<BallLootBlock> FAST_BALL_LOOT = registerLoot("fast");
+	public static RegistrySupplier<BallLootBlock> FRIEND_BALL_LOOT = registerLoot("friend");
+	public static RegistrySupplier<BallLootBlock> GIGATON_BALL_LOOT = registerLoot("gigaton");
+	public static RegistrySupplier<BallLootBlock> GREAT_BALL_LOOT = registerLoot("great");
+	public static RegistrySupplier<BallLootBlock> HEAL_BALL_LOOT = registerLoot("heal");
+	public static RegistrySupplier<BallLootBlock> HEAVY_BALL_LOOT = registerLoot("heavy");
+	public static RegistrySupplier<BallLootBlock> JET_BALL_LOOT = registerLoot("jet");
+	public static RegistrySupplier<BallLootBlock> LEADEN_BALL_LOOT = registerLoot("leaden");
+	public static RegistrySupplier<BallLootBlock> LEVEL_BALL_LOOT = registerLoot("level");
+	public static RegistrySupplier<BallLootBlock> LOVE_BALL_LOOT = registerLoot("love");
+	public static RegistrySupplier<BallLootBlock> LURE_BALL_LOOT = registerLoot("lure");
+	public static RegistrySupplier<BallLootBlock> LUXURY_BALL_LOOT = registerLoot("luxury");
+	public static RegistrySupplier<BallLootBlock> MASTER_BALL_LOOT = registerLoot("master");
+	public static RegistrySupplier<BallLootBlock> MOON_BALL_LOOT = registerLoot("moon");
+	public static RegistrySupplier<BallLootBlock> NEST_BALL_LOOT = registerLoot("nest");
+	public static RegistrySupplier<BallLootBlock> NET_BALL_LOOT = registerLoot("net");
+	public static RegistrySupplier<BallLootBlock> ORIGIN_BALL_LOOT = registerLoot("origin");
+	public static RegistrySupplier<BallLootBlock> PARK_BALL_LOOT = registerLoot("park");
+	public static RegistrySupplier<BallLootBlock> POKE_BALL_LOOT = registerLoot("poke");
+	public static RegistrySupplier<BallLootBlock> PREMIER_BALL_LOOT = registerLoot("premier");
+	public static RegistrySupplier<BallLootBlock> QUICK_BALL_LOOT = registerLoot("quick");
+	public static RegistrySupplier<BallLootBlock> REPEAT_BALL_LOOT = registerLoot("repeat");
+	public static RegistrySupplier<BallLootBlock> SAFARI_BALL_LOOT = registerLoot("safari");
+	public static RegistrySupplier<BallLootBlock> SPORT_BALL_LOOT = registerLoot("sport");
+	public static RegistrySupplier<BallLootBlock> STRANGE_BALL_LOOT = registerLoot("strange");
+	public static RegistrySupplier<BallLootBlock> TIMER_BALL_LOOT = registerLoot("timer");
+	public static RegistrySupplier<BallLootBlock> ULTRA_BALL_LOOT = registerLoot("ultra");
+	public static RegistrySupplier<BallLootBlock> WING_BALL_LOOT = registerLoot("wing");
+
+	private static RegistrySupplier<BallLootBlock> registerLoot(String name) {
+		var block = registerBlockItem(name + "_ball_loot", () -> new BallLootBlock(name, BlockBehaviour.Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f)));
+		BALL_LOOTS.add(block);
+		return block;
 	}
 
-	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of(Material.METAL).destroyTime(1.0f).sound(SoundType.METAL)));
-
-	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlockItem("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of(Material.WOOD).destroyTime(1.0f).sound(SoundType.WOOD)));
+	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlockItem("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOD).ignitedByLava()));
 	public static final RegistrySupplier<GenericFurnaceBlock> CHARGE_STONE_FURNACE = registerBlockItem("charge_stone_furnace", () -> new GenericFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));
 	public static final RegistrySupplier<GenericBlastFurnaceBlock> CHARGE_STONE_BLAST_FURNACE = registerBlockItem("charge_stone_blast_furnace", () -> new GenericBlastFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE)));
 	public static final RegistrySupplier<GenericSmokerBlock> CHARGE_STONE_SMOKER = registerBlockItem("charge_stone_smoker", () -> new GenericSmokerBlock(BlockBehaviour.Properties.copy(Blocks.SMOKER)));

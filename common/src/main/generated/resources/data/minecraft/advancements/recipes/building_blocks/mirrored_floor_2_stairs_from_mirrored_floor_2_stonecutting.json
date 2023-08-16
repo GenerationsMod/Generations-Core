@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:mirrored_floor_2_stairs_from_mirrored_floor_2_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

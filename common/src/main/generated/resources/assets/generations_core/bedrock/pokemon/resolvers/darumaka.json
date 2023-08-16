@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:darumaka",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:darumaka.pk",
+      "poser": "generations_core:darumaka",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "galarian"
+      ],
+      "model": "generations_core:darumaka-galarian.pk",
+      "poser": "generations_core:darumaka-galarian",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "galarian"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

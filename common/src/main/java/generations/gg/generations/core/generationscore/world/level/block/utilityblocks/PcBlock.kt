@@ -133,8 +133,8 @@ class PcBlock(arg: Properties) : DoubleDyeableBlock<PcBlockEntity, PcBlock>({ co
         val pos = pcBlockEntity.blockPos
 
         override fun isPermitted(player: ServerPlayer): Boolean {
-            val isWithinRange = player.level == world && player.position().closerThan(pos.toVec3d(), maxDistance)
-            val pcStillStanding = player.level.getBlockEntity(pos) is PcBlockEntity
+            val isWithinRange = player.level() == world && player.position().closerThan(pos.toVec3d(), maxDistance)
+            val pcStillStanding = player.level().getBlockEntity(pos) is PcBlockEntity
             if (!isWithinRange || !pcStillStanding) {
                 PCLinkManager.removeLink(playerID)
             }

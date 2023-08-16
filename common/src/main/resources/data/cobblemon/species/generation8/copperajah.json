@@ -1,0 +1,180 @@
+{
+  "implemented": true,
+  "name": "Copperajah",
+  "nationalPokedexNumber": 879,
+  "primaryType": "steel",
+  "abilities": [
+    "sheerforce",
+    "h:heavymetal"
+  ],
+  "baseStats": {
+    "hp": 122,
+    "attack": 130,
+    "defence": 69,
+    "special_attack": 80,
+    "special_defence": 69,
+    "speed": 30
+  },
+  "catchRate": 90,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "steel",
+      "abilities": [
+        "sheerforce",
+        "h:heavymetal"
+      ],
+      "baseStats": {
+        "hp": 122,
+        "attack": 130,
+        "defence": 69,
+        "special_attack": 80,
+        "special_defence": 69,
+        "speed": 30
+      },
+      "catchRate": 90,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 175,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 25,
+      "eggGroups": [
+        "field",
+        "mineral"
+      ],
+      "moves": [],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 230,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 175,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 25,
+  "eggGroups": [
+    "field",
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:raw_copper",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:rocksmash",
+    "1:rollout",
+    "1:tackle",
+    "15:bulldoze",
+    "20:stomp",
+    "25:irondefense",
+    "30:dig",
+    "37:strength",
+    "44:ironhead",
+    "51:playrough",
+    "58:highhorsepower",
+    "65:superpower",
+    "tm:attract",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:bulldoze",
+    "tm:dig",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:fling",
+    "tm:gigaimpact",
+    "tm:heatcrash",
+    "tm:heavyslam",
+    "tm:highhorsepower",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:megakick",
+    "tm:mudshot",
+    "tm:outrage",
+    "tm:payback",
+    "tm:playrough",
+    "tm:powerwhip",
+    "tm:protect",
+    "tm:rest",
+    "tm:revenge",
+    "tm:rockblast",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:scaryface",
+    "tm:screech",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:stealthrock",
+    "tm:steelbeam",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:steelbeam",
+    "tutor:steelroller"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.copperajah.desc"
+  ],
+  "preEvolution": "cufant",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 30,
+  "weight": 6500,
+  "aspects": [],
+  "cannotDynamax": false
+}

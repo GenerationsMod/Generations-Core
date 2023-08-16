@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/unimplemented/sparkling_stone_2"
+    "layer0": "generations_core:item/placeholder"
   }
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:brown_poke_brick_stairs_from_brown_poke_brick_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

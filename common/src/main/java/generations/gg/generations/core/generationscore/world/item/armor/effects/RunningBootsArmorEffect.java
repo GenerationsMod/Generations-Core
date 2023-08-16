@@ -17,7 +17,7 @@ public record RunningBootsArmorEffect() implements ArmorEffect {
         if (player.isCreative()) return;
         if (player.isSpectator()) return;
         if (player.isPassenger()) return;
-        if (!player.isOnGround()) return;
+        if (!player.onGround()) return;
         if (player.isVisuallyCrawling()) return;
         CompoundTag compound = itemStack.getTagElement("pos");
         if (compound == null) {

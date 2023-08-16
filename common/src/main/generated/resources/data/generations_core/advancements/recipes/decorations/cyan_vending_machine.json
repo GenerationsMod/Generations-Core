@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:cyan_vending_machine"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

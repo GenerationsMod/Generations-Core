@@ -1,7 +1,10 @@
 package generations.gg.generations.core.generationscore.config;
 
+import java.time.Duration;
+
 public class Config {
     public VanillaTabsToAdd addItemsToVanillaTabs = new VanillaTabsToAdd();
+    public Duration lootTime = Duration.ofHours(1);
 
     public Config() {}
 

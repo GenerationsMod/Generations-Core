@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:gray_castle_brick_2"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

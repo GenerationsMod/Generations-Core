@@ -1,11 +1,17 @@
 package generations.gg.generations.core.generationscore.util;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.joml.Vector3f;
 
 import java.util.EnumSet;
 import java.util.Optional;
+import java.util.function.Function;
 
 public class GenerationsUtils {
 
@@ -41,4 +47,11 @@ public class GenerationsUtils {
         return Time.of(hours, minutes, seconds);
     }
 
+    public static CompoundTag toCompoundTag(ItemStack stack) {
+        var compound = new CompoundTag();
+        compound.putString("id", stack.getItem().arch$registryName().toString());
+        compound.putInt("Count", stack.getCount());
+        if(stack.getTag() != null) compound.put("tag", stack.getTag());
+        return compound;
+    };
 }

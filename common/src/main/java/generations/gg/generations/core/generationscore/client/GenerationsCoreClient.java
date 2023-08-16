@@ -1,22 +1,21 @@
 package generations.gg.generations.core.generationscore.client;
 
 import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
-import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsDataProvider;
-import generations.gg.generations.core.generationscore.client.model.BoneCreatorProxy;
+import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.client.model.RareCandyAnimationFactory;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
@@ -25,12 +24,10 @@ import generations.gg.generations.core.generationscore.world.entity.GenerationsB
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
+import generations.gg.generations.core.generationscore.world.item.TechnicalMachineItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PokeLootBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
-import gg.generations.rarecandy.rendering.ObjectInstance;
 import kotlin.Unit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
@@ -52,7 +49,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import org.joml.Matrix4f;
 
 import java.io.File;
 import java.util.function.BiConsumer;
@@ -70,7 +66,7 @@ public class GenerationsCoreClient {
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
-        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new BoneCreatorProxy(resourceLocation)));
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new RareCandyBone(resourceLocation)));
 
 
         PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
@@ -87,6 +83,30 @@ public class GenerationsCoreClient {
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
+        });
+
+        ItemPropertiesRegistry.register(GenerationsItems.TM.get(), GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
+            var type = TechnicalMachineItem.Companion.getType(arg);
+
+            if(type == ElementalTypes.INSTANCE.getNORMAL()) return 0.00f;
+            else if(type == ElementalTypes.INSTANCE.getFIRE()) return 0.01f;
+            else if(type == ElementalTypes.INSTANCE.getWATER()) return 0.02f;
+            else if(type == ElementalTypes.INSTANCE.getGRASS()) return 0.03f;
+            else if(type == ElementalTypes.INSTANCE.getELECTRIC()) return 0.04f;
+            else if(type == ElementalTypes.INSTANCE.getICE()) return 0.05f;
+            else if(type == ElementalTypes.INSTANCE.getFIGHTING()) return 0.06f;
+            else if(type == ElementalTypes.INSTANCE.getPOISON()) return 0.07f;
+            else if(type == ElementalTypes.INSTANCE.getGROUND()) return 0.08f;
+            else if(type == ElementalTypes.INSTANCE.getFLYING()) return 0.09f;
+            else if(type == ElementalTypes.INSTANCE.getPSYCHIC()) return 0.10f;
+            else if(type == ElementalTypes.INSTANCE.getBUG()) return 0.11f;
+            else if(type == ElementalTypes.INSTANCE.getROCK()) return 0.12f;
+            else if(type == ElementalTypes.INSTANCE.getGHOST()) return 0.13f;
+            else if(type == ElementalTypes.INSTANCE.getDRAGON()) return 0.14f;
+            else if(type == ElementalTypes.INSTANCE.getDARK()) return 0.15f;
+            else if(type == ElementalTypes.INSTANCE.getSTEEL()) return 0.16f;
+            else if(type == ElementalTypes.INSTANCE.getFAIRY()) return 0.17f;
+            else return 0.00f;
         });
 
         ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
@@ -163,38 +183,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BALL_DISPLAY.get(), GeneralUseBlockEntityRenderer::new);
-        consumer.accept(GenerationsBlockEntities.PC.get(), GeneralUseBlockEntityRenderer::new);
-
-        consumer.accept(GenerationsBlockEntities.POKE_LOOT.get(), (BlockEntityRendererProvider<PokeLootBlockEntity>) context -> (blockEntity, f, stack, multiBufferSource, packedLight, packedOverlay) -> {
-            if (!(blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
-            stack.pushPose();
-            if (blockEntity.objectInstance == null) {
-                blockEntity.objectInstance = new ObjectInstance[1];
-                blockEntity.objectInstance[0] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
-            }
-
-            var primeInstance = blockEntity.objectInstance[0];
-
-            if (!primeInstance.materialId().equals(blockEntity.getVariant())) {
-                primeInstance.setVariant(blockEntity.getVariant());
-            }
-
-
-
-            ((BlockObjectInstance) primeInstance).setLight(packedLight);
-
-
-            ModelRegistry.prepForBER(stack, blockEntity);
-            stack.translate(0, 0.25f, 0);
-
-            var model = ModelRegistry.get(blockEntity, "block");
-            var scale = model.renderObject.scale * 0.5f;
-            stack.scale(scale, scale, scale);
-            primeInstance.viewMatrix().set(stack.last().pose());
-
-            model.render(primeInstance, RenderSystem.getProjectionMatrix());
-            stack.popPose();
-        });
+        consumer.accept(GenerationsBlockEntities.BALL_LOOT.get(), PokeLootRendrer::new);
     }
 
     public static void registerLayerDefinitions(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {

@@ -1,0 +1,46 @@
+{
+    "enabled": "true",
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "golurk-1",
+            "pokemon": "golurk",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "43-48",
+            "weight": 18.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_abyss"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:deepslate_bricks",
+                    "minecraft:cracked_deepslate_bricks",
+                    "minecraft:deepslate_tiles",
+                    "minecraft:polished_deepslate"
+                ]
+            }
+        },
+        {
+            "id": "golurk-2",
+            "pokemon": "golurk",
+            "presets": [
+                "ruined_structures"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "43-48",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": false
+            }
+        }
+    ]
+}

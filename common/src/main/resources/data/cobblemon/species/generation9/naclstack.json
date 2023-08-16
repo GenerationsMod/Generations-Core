@@ -1,0 +1,129 @@
+{
+  "implemented": true,
+  "name": "Naclstack",
+  "nationalPokedexNumber": 933,
+  "primaryType": "rock",
+  "abilities": [
+    "purifyingsalt",
+    "sturdy",
+    "h:clearbody"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 60,
+    "defence": 100,
+    "special_attack": 35,
+    "special_defence": 65,
+    "speed": 35
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 124,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:flint",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
+  "moves": [
+    "1:harden",
+    "1:tackle",
+    "5:rockthrow",
+    "7:mudshot",
+    "10:smackdown",
+    "13:rockpolish",
+    "16:headbutt",
+    "20:irondefense",
+    "30:recover",
+    "34:rockslide",
+    "38:stealthrock",
+    "41:heavyslam",
+    "45:earthquake",
+    "51:stoneedge",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:dig",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:gigaimpact",
+    "tm:heavyslam",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:mudshot",
+    "tm:powergem",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:rockslide",
+    "tm:sandstorm",
+    "tm:sleeptalk",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 5,
+  "weight": 1050,
+  "preEvolution": "nacli",
+  "evolutions": [
+    {
+      "id": "naclstack_garganacl",
+      "variant": "level_up",
+      "result": "garganacl",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "hammerarm"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 38
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.naclstack.desc"
+  ]
+}

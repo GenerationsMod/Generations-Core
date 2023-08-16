@@ -1,0 +1,40 @@
+{
+  "name": "cobblemon:gastrodon",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "east"
+      ],
+      "model": "generations_core:gastrodon.pk",
+      "poser": "generations_core:gastrodon",
+      "texture": "pk:east"
+    },
+    {
+      "aspects": [
+        "east",
+        "shiny"
+      ],
+      "model": "generations_core:gastrodon.pk",
+      "poser": "generations_core:gastrodon",
+      "texture": "pk:east"
+    },
+    {
+      "aspects": [
+        "west"
+      ],
+      "model": "generations_core:gastrodon.pk",
+      "poser": "generations_core:gastrodon",
+      "texture": "pk:west"
+    },
+    {
+      "aspects": [
+        "west",
+        "shiny"
+      ],
+      "model": "generations_core:gastrodon.pk",
+      "poser": "generations_core:gastrodon",
+      "texture": "pk:west"
+    }
+  ]
+}

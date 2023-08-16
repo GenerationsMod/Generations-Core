@@ -1,0 +1,166 @@
+{
+  "implemented": true,
+  "name": "Pignite",
+  "nationalPokedexNumber": 499,
+  "primaryType": "fire",
+  "secondaryType": "fighting",
+  "abilities": [
+    "blaze",
+    "h:thickfat"
+  ],
+  "baseStats": {
+    "hp": 90,
+    "attack": 93,
+    "defence": 55,
+    "special_attack": 70,
+    "special_defence": 55,
+    "speed": 55
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 146,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:porkchop",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:ember",
+    "1:odorsleuth",
+    "1:tackle",
+    "1:tailwhip",
+    "13:defensecurl",
+    "15:flamecharge",
+    "17:armthrust",
+    "20:smog",
+    "23:rollout",
+    "28:takedown",
+    "31:heatcrash",
+    "36:assurance",
+    "39:flamethrower",
+    "44:headsmash",
+    "47:roar",
+    "52:flareblitz",
+    "tm:attract",
+    "tm:brickbreak",
+    "tm:bulldoze",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:fling",
+    "tm:focusblast",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:gyroball",
+    "tm:hiddenpower",
+    "tm:incinerate",
+    "tm:lowsweep",
+    "tm:overheat",
+    "tm:poisonjab",
+    "tm:poweruppunch",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:stoneedge",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:toxic",
+    "tm:wildcharge",
+    "tm:willowisp",
+    "tm:workup",
+    "tutor:covet",
+    "tutor:endeavor",
+    "tutor:firepledge",
+    "tutor:firepunch",
+    "tutor:focuspunch",
+    "tutor:heatwave",
+    "tutor:helpinghand",
+    "tutor:irontail",
+    "tutor:lowkick",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stompingtantrum",
+    "tutor:superpower",
+    "tutor:thunderpunch",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.pignite.desc"
+  ],
+  "preEvolution": "tepig",
+  "evolutions": [
+    {
+      "id": "pignite_emboar",
+      "variant": "level_up",
+      "result": "emboar",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1.5,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 10,
+  "weight": 555,
+  "aspects": [],
+  "cannotDynamax": false
+}

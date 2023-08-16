@@ -43,6 +43,6 @@ public class TimeGlassItem extends Item implements PostBattleUpdatingItem {
 
     @Override
     public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
-        return player.getEntity().getLevel().getBiome(player.getEntity().getOnPos()).is(Biomes.FLOWER_FOREST) && Streams.stream(pixelmonData.pokemon().getSpecies().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getPSYCHIC()) || type.equals(ElementalTypes.INSTANCE.getGRASS()));
+        return player.getEntity().level().getBiome(player.getEntity().getOnPos()).is(Biomes.FLOWER_FOREST) && Streams.stream(pixelmonData.pokemon().getSpecies().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getPSYCHIC()) || type.equals(ElementalTypes.INSTANCE.getGRASS()));
     }
 }

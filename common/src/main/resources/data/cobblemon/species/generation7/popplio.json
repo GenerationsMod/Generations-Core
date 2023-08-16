@@ -1,0 +1,157 @@
+{
+  "implemented": true,
+  "name": "Popplio",
+  "nationalPokedexNumber": 728,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:liquidvoice"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 54,
+    "defence": 54,
+    "special_attack": 66,
+    "special_defence": 56,
+    "speed": 40
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 64,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:pound",
+    "1:watergun",
+    "4:growl",
+    "8:disarmingvoice",
+    "11:babydolleyes",
+    "14:aquajet",
+    "16:icywind",
+    "18:encore",
+    "22:bubblebeam",
+    "25:sing",
+    "29:doubleslap",
+    "32:hypervoice",
+    "36:moonblast",
+    "39:captivate",
+    "43:hydropump",
+    "46:mistyterrain",
+    "egg:amnesia",
+    "egg:aquaring",
+    "egg:aromaticmist",
+    "egg:charm",
+    "egg:lifedew",
+    "egg:perishsong",
+    "egg:wonderroom",
+    "tm:acrobatics",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:brine",
+    "tm:charm",
+    "tm:confide",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:drainingkiss",
+    "tm:echoedvoice",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hypervoice",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:irontail",
+    "tm:mistyterrain",
+    "tm:playrough",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scald",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:waterfall",
+    "tm:whirlpool",
+    "tm:wonderroom",
+    "tm:workup",
+    "tutor:aquatail",
+    "tutor:covet",
+    "tutor:flipturn",
+    "tutor:helpinghand",
+    "tutor:hypervoice",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:snore",
+    "tutor:tripleaxel",
+    "tutor:uproar",
+    "tutor:waterpledge",
+    "tutor:waterpulse",
+    "tutor:wonderroom"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.popplio.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "popplio_brionne",
+      "variant": "level_up",
+      "result": "brionne",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 17
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.75,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 75,
+  "aspects": [],
+  "cannotDynamax": false
+}

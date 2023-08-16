@@ -1,0 +1,203 @@
+{
+  "implemented": true,
+  "name": "Torchic",
+  "nationalPokedexNumber": 255,
+  "primaryType": "fire",
+  "abilities": [
+    "blaze",
+    "h:speedboost"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 60,
+    "defence": 40,
+    "special_attack": 70,
+    "special_defence": 50,
+    "speed": 45
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "3",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:scratch",
+    "7:focusenergy",
+    "9:flamecharge",
+    "10:ember",
+    "12:detect",
+    "16:peck",
+    "18:aerialace",
+    "19:sandattack",
+    "24:bounce",
+    "25:firespin",
+    "28:flameburst",
+    "28:quickattack",
+    "33:featherdance",
+    "34:slash",
+    "36:reversal",
+    "37:mirrormove",
+    "39:flareblitz",
+    "43:flamethrower",
+    "egg:agility",
+    "egg:batonpass",
+    "egg:counter",
+    "egg:crushclaw",
+    "egg:curse",
+    "egg:endure",
+    "egg:featherdance",
+    "egg:feint",
+    "egg:flameburst",
+    "egg:lastresort",
+    "egg:lowkick",
+    "egg:nightslash",
+    "egg:peck",
+    "egg:reversal",
+    "egg:rockslide",
+    "egg:smellingsalts",
+    "egg:swagger",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:assurance",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:bodyslam",
+    "tm:bounce",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:focusenergy",
+    "tm:frustration",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:incinerate",
+    "tm:lowkick",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:naturalgift",
+    "tm:overheat",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:reversal",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tm:willowisp",
+    "tm:workup",
+    "tutor:bodyslam",
+    "tutor:bounce",
+    "tutor:counter",
+    "tutor:defog",
+    "tutor:doubleedge",
+    "tutor:ember",
+    "tutor:endure",
+    "tutor:firepledge",
+    "tutor:focusenergy",
+    "tutor:growl",
+    "tutor:headbutt",
+    "tutor:heatwave",
+    "tutor:helpinghand",
+    "tutor:lastresort",
+    "tutor:lowkick",
+    "tutor:megakick",
+    "tutor:megapunch",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:rockslide",
+    "tutor:scratch",
+    "tutor:seismictoss",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:swordsdance"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.torchic.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "torchic_combusken",
+      "variant": "level_up",
+      "result": "combusken",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "doublekick"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 16
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 25,
+  "aspects": [],
+  "cannotDynamax": false
+}

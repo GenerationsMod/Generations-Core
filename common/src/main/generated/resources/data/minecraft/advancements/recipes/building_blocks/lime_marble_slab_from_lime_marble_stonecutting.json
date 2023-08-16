@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:lime_marble_slab_from_lime_marble_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

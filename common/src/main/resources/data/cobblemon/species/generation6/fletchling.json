@@ -1,0 +1,152 @@
+{
+  "implemented": true,
+  "name": "Fletchling",
+  "nationalPokedexNumber": 661,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "bigpecks",
+    "h:galewings"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 50,
+    "defence": 43,
+    "special_attack": 40,
+    "special_defence": 38,
+    "speed": 62
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 56,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "flying"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:tackle",
+    "6:quickattack",
+    "10:ember",
+    "10:peck",
+    "13:agility",
+    "16:flail",
+    "21:roost",
+    "25:razorwind",
+    "29:naturalgift",
+    "30:aerialace",
+    "34:flamecharge",
+    "39:acrobatics",
+    "41:mefirst",
+    "45:tailwind",
+    "48:steelwing",
+    "50:fly",
+    "egg:defog",
+    "egg:flamecharge",
+    "egg:quickguard",
+    "egg:snatch",
+    "egg:tailwind",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:attract",
+    "tm:bravebird",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:flamecharge",
+    "tm:flareblitz",
+    "tm:fly",
+    "tm:frustration",
+    "tm:heatwave",
+    "tm:hiddenpower",
+    "tm:hurricane",
+    "tm:overheat",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:willowisp",
+    "tm:workup",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:heatwave",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:tailwind"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.fletchling.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "fletchling_fletchinder",
+      "variant": "level_up",
+      "result": "fletchinder",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "flamecharge"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 17
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 3,
+  "weight": 17,
+  "aspects": [],
+  "cannotDynamax": false
+}

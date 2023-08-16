@@ -17,7 +17,7 @@ public record EntityLocationLogic(ResourceKey<EntityType<?>> entity) implements 
 
     @Override
     public Supplier<Vec3> createSupplier(Player player) {
-        var world = player.getLevel();
+        var world = player.level();
         var type = BuiltInRegistries.ENTITY_TYPE.getOrThrow(entity());
 
         var pos = world.getEntities(player, AABB.ofSize(player.getOnPos().getCenter(), 10, 10, 10)).stream().filter(obj -> type.equals(obj.getType())).findFirst().orElse(player).getOnPos().getCenter();

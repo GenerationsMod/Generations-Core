@@ -1,0 +1,184 @@
+{
+  "implemented": true,
+  "name": "Empoleon",
+  "nationalPokedexNumber": 395,
+  "primaryType": "water",
+  "secondaryType": "steel",
+  "abilities": [
+    "torrent",
+    "h:defiant"
+  ],
+  "baseStats": {
+    "hp": 84,
+    "attack": 86,
+    "defence": 88,
+    "special_attack": 111,
+    "special_defence": 101,
+    "speed": 60
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 239,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "drops": {
+    "amount": "3",
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 20
+      }
+    ]
+  },
+  "moves": [
+    "1:bubble",
+    "1:growl",
+    "1:tackle",
+    "11:swordsdance",
+    "15:peck",
+    "16:metalclaw",
+    "19:bubblebeam",
+    "19:swagger",
+    "28:furyattack",
+    "33:brine",
+    "36:aquajet",
+    "39:whirlpool",
+    "46:mist",
+    "52:drillpeck",
+    "59:hydropump",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:brickbreak",
+    "tm:brine",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:defog",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:earthquake",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:fling",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:naturalgift",
+    "tm:pluck",
+    "tm:protect",
+    "tm:quash",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rockclimb",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:stealthrock",
+    "tm:steelwing",
+    "tm:strength",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:aquajet",
+    "tutor:covet",
+    "tutor:defog",
+    "tutor:dive",
+    "tutor:furycutter",
+    "tutor:grassknot",
+    "tutor:headbutt",
+    "tutor:hydrocannon",
+    "tutor:hydropump",
+    "tutor:icebeam",
+    "tutor:icywind",
+    "tutor:irondefense",
+    "tutor:knockoff",
+    "tutor:laserfocus",
+    "tutor:liquidation",
+    "tutor:mudslap",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:throatchop",
+    "tutor:waterpledge",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.empoleon.desc"
+  ],
+  "preEvolution": "prinplup",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.85,
+    "height": 2.05,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 17,
+  "weight": 845,
+  "aspects": [],
+  "cannotDynamax": false
+}

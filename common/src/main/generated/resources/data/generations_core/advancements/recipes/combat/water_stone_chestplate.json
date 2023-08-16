@@ -12,7 +12,7 @@
         "items": [
           {
             "items": [
-              "generations_core:water_stone"
+              "cobblemon:water_stone"
             ]
           }
         ]
@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:water_stone_chestplate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

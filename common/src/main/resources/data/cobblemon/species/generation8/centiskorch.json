@@ -1,0 +1,173 @@
+{
+  "implemented": true,
+  "name": "Centiskorch",
+  "nationalPokedexNumber": 851,
+  "primaryType": "fire",
+  "secondaryType": "bug",
+  "abilities": [
+    "flashfire",
+    "whitesmoke",
+    "h:flamebody"
+  ],
+  "baseStats": {
+    "hp": 100,
+    "attack": 115,
+    "defence": 65,
+    "special_attack": 90,
+    "special_defence": 90,
+    "speed": 65
+  },
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "fire",
+      "secondaryType": "bug",
+      "abilities": [
+        "flashfire",
+        "whitesmoke",
+        "h:flamebody"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "attack": 115,
+        "defence": 65,
+        "special_attack": 90,
+        "special_defence": 90,
+        "speed": 65
+      },
+      "catchRate": 75,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 184,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "bug"
+      ],
+      "moves": [],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 750,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 184,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "bug"
+  ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInLava": true,
+        "canBreatheUnderlava": true
+      }
+    }
+  },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:blaze_powder",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:bite",
+    "1:ember",
+    "1:inferno",
+    "1:smokescreen",
+    "1:wrap",
+    "15:flamewheel",
+    "20:bugbite",
+    "25:coil",
+    "32:slam",
+    "39:firespin",
+    "46:crunch",
+    "53:firelash",
+    "60:lunge",
+    "67:burnup",
+    "tm:attract",
+    "tm:brutalswing",
+    "tm:bugbuzz",
+    "tm:crunch",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:firespin",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:gigaimpact",
+    "tm:heatcrash",
+    "tm:heatwave",
+    "tm:hyperbeam",
+    "tm:leechlife",
+    "tm:mysticalfire",
+    "tm:overheat",
+    "tm:powerwhip",
+    "tm:protect",
+    "tm:rest",
+    "tm:round",
+    "tm:scald",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:thunderfang",
+    "tm:venoshock",
+    "tm:willowisp",
+    "tm:xscissor",
+    "tutor:scorchingsands",
+    "tutor:skittersmack"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.centiskorch.desc"
+  ],
+  "preEvolution": "sizzlipede",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 2.5,
+    "height": 0.3,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 30,
+  "weight": 1200,
+  "aspects": [],
+  "cannotDynamax": false
+}

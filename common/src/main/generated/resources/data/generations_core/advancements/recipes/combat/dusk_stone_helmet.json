@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "generations_core:dusk_stone"
+              "cobblemon:dusk_stone"
             ]
           }
         ]
@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:dusk_stone_helmet"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

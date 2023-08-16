@@ -11,73 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:covered_old_amber"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_armor_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_bird_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_claw_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_cover_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_dino_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_dome_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_drake_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_fish_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_helix_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_jaw_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_plume_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_root_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_sail_fossil"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:covered_skull_fossil"
-        }
-      ],
-      "functions": [
-        {
-          "enchantment": "minecraft:fortune",
-          "formula": "minecraft:ore_drops",
-          "function": "minecraft:apply_bonus"
+          "name": "generations_core:charge_stone_fossil_ore"
         }
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "generations_core:blocks/charge_stone_fossil_ore"
 }

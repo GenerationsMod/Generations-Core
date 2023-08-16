@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:yellow_poke_brick_wall_from_yellow_poke_brick_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

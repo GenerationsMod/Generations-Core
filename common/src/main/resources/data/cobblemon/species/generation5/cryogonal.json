@@ -1,0 +1,153 @@
+{
+  "implemented": true,
+  "name": "Cryogonal",
+  "nationalPokedexNumber": 615,
+  "primaryType": "ice",
+  "abilities": [
+    "levitate"
+  ],
+  "baseStats": {
+    "hp": 80,
+    "attack": 50,
+    "defence": 50,
+    "special_attack": 95,
+    "special_defence": 135,
+    "speed": 105
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 25,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 180,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 25,
+  "eggGroups": [
+    "mineral"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:nevermelt_ice",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:bind",
+    "5:iceshard",
+    "9:sharpen",
+    "12:laserfocus",
+    "13:rapidspin",
+    "17:icywind",
+    "21:ancientpower",
+    "21:haze",
+    "21:mist",
+    "25:aurorabeam",
+    "29:acidarmor",
+    "33:icebeam",
+    "37:lightscreen",
+    "37:reflect",
+    "41:slash",
+    "45:confuseray",
+    "49:recover",
+    "50:freezedry",
+    "53:solarbeam",
+    "57:nightslash",
+    "61:sheercold",
+    "egg:auroraveil",
+    "egg:explosion",
+    "egg:frostbreath",
+    "tm:acrobatics",
+    "tm:attract",
+    "tm:auroraveil",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:confuseray",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:explosion",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:frostbreath",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icespinner",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:irondefense",
+    "tm:lightscreen",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:snowscape",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:waterpulse",
+    "tutor:bind",
+    "tutor:defog",
+    "tutor:icywind",
+    "tutor:irondefense",
+    "tutor:knockoff",
+    "tutor:laserfocus",
+    "tutor:magiccoat",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:tripleaxel",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.cryogonal.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 1.5,
+    "height": 2.2,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 2,
+    "speed": 0
+  },
+  "height": 11,
+  "weight": 1480,
+  "aspects": [],
+  "cannotDynamax": false
+}

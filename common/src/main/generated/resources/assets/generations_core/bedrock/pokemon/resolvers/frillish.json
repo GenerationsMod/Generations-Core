@@ -1,0 +1,40 @@
+{
+  "name": "cobblemon:frillish",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "model": "generations_core:frillish.pk",
+      "poser": "generations_core:frillish",
+      "texture": "pk:female"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "female"
+      ],
+      "model": "generations_core:frillish.pk",
+      "poser": "generations_core:frillish",
+      "texture": "pk:female"
+    },
+    {
+      "aspects": [
+        "male"
+      ],
+      "model": "generations_core:frillish.pk",
+      "poser": "generations_core:frillish",
+      "texture": "pk:male"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "male"
+      ],
+      "model": "generations_core:frillish.pk",
+      "poser": "generations_core:frillish",
+      "texture": "pk:male"
+    }
+  ]
+}

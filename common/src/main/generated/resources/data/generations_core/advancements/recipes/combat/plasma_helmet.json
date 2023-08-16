@@ -43,5 +43,6 @@
     "recipes": [
       "generations_core:plasma_helmet"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

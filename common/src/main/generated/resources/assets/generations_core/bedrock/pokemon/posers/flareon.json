@@ -1,0 +1,26 @@
+{
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:flareon.pk, idle.smd)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PORTRAIT",
+        "FLOAT",
+        "STAND",
+        "NONE",
+        "PROFILE"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:flareon.pk, walk.smd)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    }
+  }
+}

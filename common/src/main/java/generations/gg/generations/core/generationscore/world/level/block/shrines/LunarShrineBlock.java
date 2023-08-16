@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.world.level.block.entities.LunarShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.LunarShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 

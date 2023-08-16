@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:cool_stone_stairs_from_cool_stone_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

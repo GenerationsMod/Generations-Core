@@ -1,0 +1,166 @@
+{
+  "implemented": true,
+  "name": "Chingling",
+  "nationalPokedexNumber": 433,
+  "primaryType": "psychic",
+  "abilities": [
+    "levitate"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 30,
+    "defence": 50,
+    "special_attack": 65,
+    "special_defence": 50,
+    "speed": 45
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 57,
+  "experienceGroup": "fast",
+  "eggCycles": 25,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:bell",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:wrap",
+    "6:growl",
+    "9:astonish",
+    "13:yawn",
+    "14:confusion",
+    "17:uproar",
+    "22:lastresort",
+    "25:entrainment",
+    "egg:cosmicpower",
+    "egg:curse",
+    "egg:disable",
+    "egg:dreameater",
+    "egg:futuresight",
+    "egg:hypnosis",
+    "egg:recover",
+    "egg:skillswap",
+    "egg:storedpower",
+    "egg:wish",
+    "tm:attract",
+    "tm:calmmind",
+    "tm:captivate",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:dazzlinggleam",
+    "tm:doubleteam",
+    "tm:dreameater",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psychup",
+    "tm:psyshock",
+    "tm:raindance",
+    "tm:recycle",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:shockwave",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:snatch",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:telekinesis",
+    "tm:thunderwave",
+    "tm:torment",
+    "tm:toxic",
+    "tm:trickroom",
+    "tutor:allyswitch",
+    "tutor:bind",
+    "tutor:gravity",
+    "tutor:healbell",
+    "tutor:helpinghand",
+    "tutor:hypervoice",
+    "tutor:icywind",
+    "tutor:knockoff",
+    "tutor:lastresort",
+    "tutor:magiccoat",
+    "tutor:recycle",
+    "tutor:rollout",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:swift",
+    "tutor:telekinesis",
+    "tutor:trick",
+    "tutor:uproar",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen4",
+    "baby"
+  ],
+  "pokedex": [
+    "cobblemon.species.chingling.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "chingling_chimecho",
+      "variant": "level_up",
+      "result": "chimecho",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "friendship",
+          "amount": 160
+        },
+        {
+          "variant": "time_range",
+          "range": "night"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 2,
+  "weight": 6,
+  "aspects": [],
+  "cannotDynamax": false
+}

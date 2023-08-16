@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ultra_jungle_trapdoor"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

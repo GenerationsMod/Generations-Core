@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:red_marble_stairs_from_red_marble_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

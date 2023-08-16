@@ -1,0 +1,127 @@
+{
+  "implemented": true,
+  "name": "Drizzile",
+  "nationalPokedexNumber": 817,
+  "primaryType": "water",
+  "abilities": [
+    "torrent",
+    "h:sniper"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 60,
+    "defence": 55,
+    "special_attack": 95,
+    "special_defence": 55,
+    "speed": 90
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 147,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:bind",
+    "1:growl",
+    "1:pound",
+    "1:watergun",
+    "12:waterpulse",
+    "19:tearfullook",
+    "24:suckerpunch",
+    "30:uturn",
+    "36:liquidation",
+    "42:soak",
+    "48:raindance",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:bounce",
+    "tm:chillingwater",
+    "tm:dive",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:hydropump",
+    "tm:lightscreen",
+    "tm:liquidation",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:protect",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:round",
+    "tm:safeguard",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:uturn",
+    "tm:waterfall",
+    "tm:waterpledge",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tm:whirlpool",
+    "tm:workup",
+    "tutor:waterpledge"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.drizzile.desc"
+  ],
+  "preEvolution": "sobble",
+  "evolutions": [
+    {
+      "id": "drizzile_inteleon",
+      "variant": "level_up",
+      "result": "inteleon",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "snipeshot"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.95,
+    "height": 1.45,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 115,
+  "aspects": [],
+  "cannotDynamax": false
+}

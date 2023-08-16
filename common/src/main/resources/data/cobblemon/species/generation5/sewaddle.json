@@ -1,0 +1,138 @@
+{
+  "implemented": true,
+  "name": "Sewaddle",
+  "nationalPokedexNumber": 540,
+  "primaryType": "bug",
+  "secondaryType": "grass",
+  "abilities": [
+    "swarm",
+    "chlorophyll",
+    "h:overcoat"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 53,
+    "defence": 70,
+    "special_attack": 40,
+    "special_defence": 60,
+    "speed": 42
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:oak_leaves",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:stringshot",
+    "1:tackle",
+    "8:bugbite",
+    "15:razorleaf",
+    "22:strugglebug",
+    "29:endure",
+    "31:stickyweb",
+    "36:bugbuzz",
+    "43:flail",
+    "egg:agility",
+    "egg:airslash",
+    "egg:batonpass",
+    "egg:camouflage",
+    "egg:grassyterrain",
+    "egg:mefirst",
+    "egg:mindreader",
+    "egg:razorwind",
+    "egg:screech",
+    "egg:silverwind",
+    "tm:attract",
+    "tm:calmmind",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:dreameater",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:hiddenpower",
+    "tm:lightscreen",
+    "tm:naturepower",
+    "tm:payback",
+    "tm:protect",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:toxic",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:gigadrain",
+    "tutor:irondefense",
+    "tutor:magiccoat",
+    "tutor:seedbomb",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.sewaddle.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "sewaddle_swadloon",
+      "variant": "level_up",
+      "result": "swadloon",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 20
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 25,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -26,7 +26,7 @@ class C2SToggleCookingPotPacket(val pos: BlockPos): GenerationsNetworkPacket<C2S
     class Handler: ServerNetworkPacketHandler<C2SToggleCookingPotPacket> {
         override fun handle(packet: C2SToggleCookingPotPacket, server: MinecraftServer, player: ServerPlayer) {
             server.execute {
-                val te = player.level.getBlockEntity(packet.pos)
+                val te = player.level().getBlockEntity(packet.pos)
                 if (te is CookingPotBlockEntity) te.isCooking = !te.isCooking
             }
         }

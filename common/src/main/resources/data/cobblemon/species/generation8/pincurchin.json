@@ -1,0 +1,124 @@
+{
+  "implemented": true,
+  "name": "Pincurchin",
+  "nationalPokedexNumber": 871,
+  "primaryType": "electric",
+  "abilities": [
+    "lightningrod",
+    "h:electricsurge"
+  ],
+  "baseStats": {
+    "hp": 48,
+    "attack": 101,
+    "defence": 95,
+    "special_attack": 91,
+    "special_defence": 85,
+    "speed": 15
+  },
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 152,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "amorphous"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:kelp",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:peck",
+    "1:thundershock",
+    "5:watergun",
+    "10:charge",
+    "15:furyattack",
+    "20:spark",
+    "25:bubblebeam",
+    "30:recover",
+    "35:curse",
+    "40:electricterrain",
+    "45:poisonjab",
+    "50:zingzap",
+    "55:acupressure",
+    "60:discharge",
+    "egg:memento",
+    "egg:suckerpunch",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:brine",
+    "tm:chargebeam",
+    "tm:chillingwater",
+    "tm:electricterrain",
+    "tm:electroball",
+    "tm:endure",
+    "tm:facade",
+    "tm:gigaimpact",
+    "tm:hex",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:liquidation",
+    "tm:muddywater",
+    "tm:payback",
+    "tm:pinmissile",
+    "tm:poisonjab",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:reversal",
+    "tm:round",
+    "tm:scald",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:spikes",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:throatchop",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxicspikes",
+    "tm:venomdrench",
+    "tm:venoshock",
+    "tm:wildcharge",
+    "tutor:risingvoltage"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.pincurchin.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 10,
+  "aspects": [],
+  "cannotDynamax": false
+}

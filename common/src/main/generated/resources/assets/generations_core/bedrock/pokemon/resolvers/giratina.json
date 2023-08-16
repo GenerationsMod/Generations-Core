@@ -1,0 +1,40 @@
+{
+  "name": "cobblemon:giratina",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "altered"
+      ],
+      "model": "generations_core:giratina.pk",
+      "poser": "generations_core:giratina",
+      "texture": "pk:altered"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "altered"
+      ],
+      "model": "generations_core:giratina.pk",
+      "poser": "generations_core:giratina",
+      "texture": "pk:altered"
+    },
+    {
+      "aspects": [
+        "origin"
+      ],
+      "model": "generations_core:giratina.pk",
+      "poser": "generations_core:giratina",
+      "texture": "pk:origin"
+    },
+    {
+      "aspects": [
+        "origin",
+        "shiny"
+      ],
+      "model": "generations_core:giratina.pk",
+      "poser": "generations_core:giratina",
+      "texture": "pk:origin"
+    }
+  ]
+}

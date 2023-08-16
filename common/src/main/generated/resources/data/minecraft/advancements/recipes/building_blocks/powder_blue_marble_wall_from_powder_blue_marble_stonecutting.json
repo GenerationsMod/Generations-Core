@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:powder_blue_marble_wall_from_powder_blue_marble_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "generations_core:dawn_stone"
+              "cobblemon:dawn_stone"
             ]
           }
         ]
@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:dawn_stone_sword"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

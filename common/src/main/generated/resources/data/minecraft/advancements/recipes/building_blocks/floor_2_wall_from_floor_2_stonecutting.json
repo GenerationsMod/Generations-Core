@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:floor_2_wall_from_floor_2_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

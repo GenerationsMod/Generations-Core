@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:cracked_castle_block_wall_from_cracked_castle_block_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

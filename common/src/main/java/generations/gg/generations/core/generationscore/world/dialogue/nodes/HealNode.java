@@ -37,7 +37,7 @@ public class HealNode extends AbstractNode implements DialogueContainingNode{
             for (int x = center.getX() - radius; x < maxX; x++) {
                 for (int y = center.getY() - radius; y < maxY; y++) {
                     for (int z = center.getZ() - radius; z < maxZ; z++) {
-                        if (source.getLevel().getBlockEntity(new BlockPos(x, y, z)) instanceof HealerBlockEntity healerBlockEntity) {
+                        if (source.level().getBlockEntity(new BlockPos(x, y, z)) instanceof HealerBlockEntity healerBlockEntity) {
                             // TODO heal player's pixelmon when the healer block gets implemented
                             System.out.println("Healing player's pixelmon through dialogue");
                         }

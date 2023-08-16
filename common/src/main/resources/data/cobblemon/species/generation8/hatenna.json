@@ -1,0 +1,137 @@
+{
+  "implemented": true,
+  "name": "Hatenna",
+  "nationalPokedexNumber": 856,
+  "primaryType": "psychic",
+  "abilities": [
+    "healer",
+    "anticipation",
+    "h:magicbounce"
+  ],
+  "baseStats": {
+    "hp": 42,
+    "attack": 30,
+    "defence": 45,
+    "special_attack": 56,
+    "special_defence": 53,
+    "speed": 39
+  },
+  "catchRate": 235,
+  "maleRatio": 0,
+  "shoulderMountable": false,
+  "baseExperienceYield": 53,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:confusion",
+    "1:playnice",
+    "5:lifedew",
+    "10:disarmingvoice",
+    "15:aromatherapy",
+    "15:aromaticmist",
+    "20:psybeam",
+    "25:healpulse",
+    "30:dazzlinggleam",
+    "35:calmmind",
+    "40:psychic",
+    "45:healingwish",
+    "egg:afteryou",
+    "egg:aromaticmist",
+    "egg:mysticalfire",
+    "egg:nuzzle",
+    "egg:quash",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:calmmind",
+    "tm:charm",
+    "tm:darkpulse",
+    "tm:dazzlinggleam",
+    "tm:disarmingvoice",
+    "tm:drainingkiss",
+    "tm:endure",
+    "tm:facade",
+    "tm:gigadrain",
+    "tm:helpinghand",
+    "tm:imprison",
+    "tm:lightscreen",
+    "tm:magicalleaf",
+    "tm:metronome",
+    "tm:mistyterrain",
+    "tm:mysticalfire",
+    "tm:playrough",
+    "tm:protect",
+    "tm:psybeam",
+    "tm:psychic",
+    "tm:psychicterrain",
+    "tm:psyshock",
+    "tm:reflect",
+    "tm:rest",
+    "tm:round",
+    "tm:safeguard",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:swift",
+    "tm:terablast",
+    "tm:thunderwave",
+    "tm:trick",
+    "tm:trickroom",
+    "tutor:expandingforce"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.hatenna.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "hatenna_hattrem",
+      "variant": "level_up",
+      "result": "hattrem",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "brutalswing"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 34,
+  "aspects": [],
+  "cannotDynamax": false
+}

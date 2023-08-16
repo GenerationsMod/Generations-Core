@@ -30,5 +30,6 @@
     "recipes": [
       "generations_core:ghost_obelisk_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

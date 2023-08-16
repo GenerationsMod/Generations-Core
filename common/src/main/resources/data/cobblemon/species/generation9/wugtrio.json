@@ -1,0 +1,101 @@
+{
+  "implemented": true,
+  "name": "Wugtrio",
+  "nationalPokedexNumber": 961,
+  "primaryType": "water",
+  "abilities": [
+    "gooey",
+    "rattled",
+    "h:sandveil"
+  ],
+  "baseStats": {
+    "hp": 35,
+    "attack": 100,
+    "defence": 50,
+    "special_attack": 50,
+    "special_defence": 70,
+    "speed": 120
+  },
+  "catchRate": 50,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 149,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_3"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:seagrass",
+        "percentage": 25
+      }
+    ]
+  },
+  "moves": [
+    "1:mudslap",
+    "1:sandattack",
+    "1:watergun",
+    "1:wrap",
+    "12:aquajet",
+    "16:slam",
+    "20:waterpulse",
+    "24:headbutt",
+    "30:tripledive",
+    "36:dig",
+    "42:suckerpunch",
+    "48:throatchop",
+    "54:liquidation",
+    "tm:agility",
+    "tm:blizzard",
+    "tm:bulldoze",
+    "tm:chillingwater",
+    "tm:dig",
+    "tm:earthpower",
+    "tm:endure",
+    "tm:facade",
+    "tm:foulplay",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:liquidation",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:sandstorm",
+    "tm:sleeptalk",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:waterpulse"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 12,
+  "weight": 54,
+  "preEvolution": "wiglett",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.wugtrio.desc"
+  ]
+}

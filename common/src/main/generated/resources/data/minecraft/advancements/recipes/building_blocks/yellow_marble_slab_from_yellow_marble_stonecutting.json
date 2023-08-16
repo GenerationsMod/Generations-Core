@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:yellow_marble_slab_from_yellow_marble_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

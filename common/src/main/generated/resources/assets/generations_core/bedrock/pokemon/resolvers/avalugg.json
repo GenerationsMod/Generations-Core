@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:avalugg",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:avalugg.pk",
+      "poser": "generations_core:avalugg",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "hisuian"
+      ],
+      "model": "generations_core:avalugg-hisuian.pk",
+      "poser": "generations_core:avalugg-hisuian",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "hisuian",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

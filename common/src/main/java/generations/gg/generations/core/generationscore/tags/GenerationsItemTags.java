@@ -14,6 +14,7 @@ public class GenerationsItemTags {
     public static final TagKey<Item> VENDING_MACHINE = create("vending_machine");
     public static final TagKey<Item> UMBRELLA = create("umbrella");
     public static final TagKey<Item> PASTEL_BEAN_BAG = create("pastel_bean_bag");
+    public static final TagKey<Item> POKEDOLLS = create("pokedolls");
     public static final TagKey<Item> POKEBALL_RUG = create("pokeball_rug");
     public static final TagKey<Item> ULTRA_DARK_LOGS = create("ultra_dark_logs");
     public static final TagKey<Item> ULTRA_JUNGLE_LOGS = create("ultra_jungle_logs");
@@ -24,6 +25,8 @@ public class GenerationsItemTags {
     public static final TagKey<Item> POKEMAIL = create("pokemail");
     public static final TagKey<Item> CLOSED_POKEMAIL = create("sealed_pokemail");
     public static final TagKey<Item> POKEBALLS = create("pokeballs");
+    public static final TagKey<Item> BADGES = create("badges");
+    public static final TagKey<Item> RIBBONS = create("ribbons");
 
     //Ore Tags
     public static final TagKey<Item> GENERATIONSORES = create("generationsores");
@@ -34,16 +37,6 @@ public class GenerationsItemTags {
     public static final TagKey<Item> SILICON_ORES = create("ores/silicon_ores");
     public static final TagKey<Item> Z_CRYSTAL_ORES = create("ores/z_crystal_ores");
     public static final TagKey<Item> FOSSIL_ORES = create("ores/fossil_ores");
-    public static final TagKey<Item> DAWN_STONE_ORES = create("ores/dawn_stone_ores");
-    public static final TagKey<Item> DUSK_STONE_ORES = create("ores/dusk_stone_ores");
-    public static final TagKey<Item> FIRE_STONE_ORES = create("ores/fire_stone_ores");
-    public static final TagKey<Item> ICE_STONE_ORES = create("ores/ice_stone_ores");
-    public static final TagKey<Item> LEAF_STONE_ORES = create("ores/leaf_stone_ores");
-    public static final TagKey<Item> SHINY_STONE_ORES = create("ores/shiny_stone_ores");
-    public static final TagKey<Item> SUN_STONE_ORES = create("ores/sun_stone_ores");
-    public static final TagKey<Item> THUNDER_STONE_ORES = create("ores/thunder_stone_ores");
-    public static final TagKey<Item> WATER_STONE_ORES = create("ores/water_stone_ores");
-    public static final TagKey<Item> MOON_STONE_ORES = create("ores/moon_stone_ores");
     public static final TagKey<Item> BLACK_TUMBLESTONE_ORES = create("ores/black_tumblestone_ores");
     public static final TagKey<Item> RARE_TUMBLESTONE_ORES = create("ores/rare_tumblestone_ores");
     public static final TagKey<Item> SKY_TUMBLESTONE_ORES = create("ores/sky_tumblestone_ores");

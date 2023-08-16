@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.screen;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 
 /*
@@ -30,54 +29,49 @@ public class NineSlice extends SubTexture {
         setUpSlices(left, right, up, down);
     }
 
-    public void renderStretched(PoseStack stack, int x, int y, float widthMultiplier, float heightMultiplier) {
-        RenderSystem.setShaderTexture(0, this.sheet);
-        renderComplex(stack, x, y, (int) (this.width * widthMultiplier), (int) (this.height * heightMultiplier));
+    public void renderStretched(GuiGraphics graphics, int x, int y, float widthMultiplier, float heightMultiplier) {
+        renderComplex(graphics, x, y, (int) (this.width * widthMultiplier), (int) (this.height * heightMultiplier));
     }
 
-    public void renderAnchoredStretched(PoseStack stack, int x, int y, float widthMultiplier, float heightMultiplier, Anchor anchor) {
-        stack.pushPose();
-        anchor.process(stack, x, y, width, height, widthMultiplier, heightMultiplier);
-        RenderSystem.setShaderTexture(0, this.sheet);
-        renderComplex(stack, 0, 0, width, height);
-        stack.popPose();
+    public void renderAnchoredStretched(GuiGraphics graphics, int x, int y, float widthMultiplier, float heightMultiplier, Anchor anchor) {
+        graphics.pose().pushPose();
+        anchor.process(graphics.pose(), x, y, width, height, widthMultiplier, heightMultiplier);
+        renderComplex(graphics, 0, 0, width, height);
+        graphics.pose().popPose();
     }
 
-    public void render(PoseStack stack, int x, int y, int width, int height) {
-        RenderSystem.setShaderTexture(0, this.sheet);
-        renderComplex(stack, x, y, width, height);
+    public void render(GuiGraphics graphics, int x, int y, int width, int height) {
+        renderComplex(graphics, x, y, width, height);
     }
 
     @Override
-    public void renderAnchored(PoseStack stack, int x, int y, Anchor anchor) {
-        stack.pushPose();
-        anchor.process(stack, x, y, width, height);
-        RenderSystem.setShaderTexture(0, this.sheet);
-        ScreenUtils.drawTexture(stack, 0, 0, width, height, this.u, this.v, this.uWidth, this.vHeight, this.sheetScale, this.sheetScale);
-        stack.popPose();
+    public void renderAnchored(GuiGraphics graphics, int x, int y, Anchor anchor) {
+        graphics.pose().pushPose();
+        anchor.process(graphics.pose(), x, y, width, height);
+        ScreenUtils.drawTexture(graphics, sheet, 0, 0, width, height, this.u, this.v, this.uWidth, this.vHeight, this.sheetScale, this.sheetScale);
+        graphics.pose().popPose();
     }
 
     @Override
-    protected void renderInner(PoseStack stack, int x, int y, int texWidth, int texHeight) {
-        RenderSystem.setShaderTexture(0, this.sheet);
-        renderComplex(stack, x, y, texWidth, texHeight);
+    protected void renderInner(GuiGraphics graphics, int x, int y, int texWidth, int texHeight) {
+        renderComplex(graphics, x, y, texWidth, texHeight);
     }
 
-    protected void renderComplex(PoseStack stack, int x, int y, int width, int height) {
+    protected void renderComplex(GuiGraphics graphics, int x, int y, int width, int height) {
         //TODO: Replace with vanilla nineslice
-        section(stack, NineSliceEquations.FIRST, NineSliceEquations.FIRST, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
-        section(stack, NineSliceEquations.FIRST, NineSliceEquations.SECOND, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
-        section(stack, NineSliceEquations.FIRST, NineSliceEquations.THIRD, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
-        section(stack, NineSliceEquations.SECOND, NineSliceEquations.FIRST, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
-        section(stack, NineSliceEquations.SECOND, NineSliceEquations.SECOND, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
-        section(stack, NineSliceEquations.SECOND, NineSliceEquations.THIRD, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
-        section(stack, NineSliceEquations.THIRD, NineSliceEquations.FIRST, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
-        section(stack, NineSliceEquations.THIRD, NineSliceEquations.SECOND, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
-        section(stack, NineSliceEquations.THIRD, NineSliceEquations.THIRD, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.FIRST, NineSliceEquations.FIRST, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.FIRST, NineSliceEquations.SECOND, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.FIRST, NineSliceEquations.THIRD, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.SECOND, NineSliceEquations.FIRST, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.SECOND, NineSliceEquations.SECOND, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.SECOND, NineSliceEquations.THIRD, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.THIRD, NineSliceEquations.FIRST, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.THIRD, NineSliceEquations.SECOND, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
+        section(graphics, NineSliceEquations.THIRD, NineSliceEquations.THIRD, x, y, width, height, u, v, uWidth, vHeight, left, right, top, bottom, sheetScale);
     }
 
-    protected void section(PoseStack stack, NineSliceEquation horizontal, NineSliceEquation vertical, int x, int y, int width, int height, int u, int v, int uWidth, int vHeight, int left, int right, int top, int bottom, int sheetSize) {
-        ScreenUtils.drawTexture(stack,
+    protected void section(GuiGraphics graphics, NineSliceEquation horizontal, NineSliceEquation vertical, int x, int y, int width, int height, int u, int v, int uWidth, int vHeight, int left, int right, int top, int bottom, int sheetSize) {
+        ScreenUtils.drawTexture(graphics, sheet,
                 horizontal.getPos(x, width, left, right),
                 vertical.getPos(y, height, top, bottom),
                 horizontal.getSize(width, left, right),

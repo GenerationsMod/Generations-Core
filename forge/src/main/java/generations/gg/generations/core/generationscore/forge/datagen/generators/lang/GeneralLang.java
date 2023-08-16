@@ -49,24 +49,25 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
-        add("item_group.pokeballs", "Poké Balls");
-        add("item_group.restoration", "Restoration");
-        add("item_group.tms", "TMs");
-        add("item_group.badges_ribbons", "Badges/Ribbons");
-        add("item_group.held_items", "Held Items");
-        add("item_group.player_items", "Player Items");
-        add("item_group.legendary_items", "Legendary Items");
-        add("item_group.building_blocks", "Building Blocks");
-        add("item_group.decorations", "Decorations");
-        add("item_group.natural", "Natural");
-        add("item_group.utility", "Utility");
-        add("item_group.form_items", "Form Items");
-        add("item_group.pokemail", "Pokemail");
-        add("item_group.valuables", "Valuables");
-        add("item_group.pokedolls", "PokeDolls");
-        add("item_group.cuisine", "Cuisine");
-        add("item_group.unimplemented", "Unimplemented");
-        add("item_group.shrines", "Shrines");
+        add("pokeballs.generations_core", "Poké Balls");
+        add("restoration.generations_core", "Restoration");
+        add("tms.generations_core", "TMs");
+        add("badges.generations_core", "Badges");
+        add("ribbons.generations_core", "Ribbons");
+        add("held_items.generations_core", "Held Items");
+        add("player_items.generations_core", "Player Items");
+        add("legendary_items.generations_core", "Legendary Items");
+        add("building_blocks.generations_core", "Building Blocks");
+        add("decorations.generations_core", "Decorations");
+        add("natural.generations_core", "Natural");
+        add("utility.generations_core", "Utility");
+        add("form_items.generations_core", "Form Items");
+        add("pokemail.generations_core", "Pokemail");
+        add("valuables.generations_core", "Valuables");
+        add("pokedolls.generations_core", "PokeDolls");
+        add("cuisine.generations_core", "Cuisine");
+        add("unimplemented.generations_core", "Unimplemented");
+        add("shrines.generations_core", "Shrines");
 
         add("container.melody_flute", "Melody Flute");
         add("container.trashcan", "Trash Can");
@@ -102,6 +103,27 @@ public class GeneralLang extends LanguageProvider {
 
         add("Generations.timeglass.wrongbiome", "You can only summon Celebi in a Flower Forest Biome");
         add("Generations.timeglass.amount", "You've defeated %s Grass, Psychic, or Fairy Type Pokemon out of 100 in a Flower Forest Biome");
+
+        //TR/TM lines
+        add("move.cantlearn", "%s can't learn %s.");
+        add("move.alreadyknows", "%s already knows %s.");
+        add("move.learned", "%s has learned %s.");
+        add("move.doesntexist", "The move %s doesn't exists so %s couldn't learn it.");
+        add("move.newmove1", "1, 2, and... Ta da!");
+        add("move.newmove2", "%s forgot %s!");
+        add("move.newmove3", "...and learned %s!");
+
+        add("generations_core.blocks.lootfound", "You found one %s!");
+        add("generations_core.blocks.timedclaim", "You've already claimed this timed loot! Try again later!");
+        add("generations_core.blocks.claimedloot", "You've already claimed this loot!");
+        add("generations_core.blocks.ownerchanged", "Block owner changed to server!");
+        add("generations_core.blocks.balllootset", "Custom Ball Loot Set: %s");
+        add("generations_core.blocks.visible", "Ball Loot Visibility: %s");
+        add("generations_core.blocks.lootmode", "Loot Mode: %s");
+        add("generations_core.blocks.lootmodePL1D", "Permanent, limit 1 drop");
+        add("generations_core.blocks.lootmodeTD", "Timed drops");
+        add("generations_core.blocks.lootmodeFCFS", "First come, first served");
+        add("generations_core.blocks.lootmodePUD", "Permanent, unlimited drops");
     }
 
     protected String getNameGens(String name){

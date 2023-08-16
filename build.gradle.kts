@@ -1,10 +1,9 @@
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
-    id("dev.architectury.loom") version "1.2-SNAPSHOT" apply false
-    kotlin("jvm") version ("1.8.20")
+    kotlin("jvm") version ("1.9.0")
+    id("dev.architectury.loom") version "1.3-SNAPSHOT" apply false
     idea
     java
 }
@@ -27,8 +26,11 @@ subprojects {
         maven("https://cursemaven.com").content { includeGroup("curse.maven") }
         maven("https://maven.impactdev.net/repository/development/")
         maven("https://maven.parchmentmc.org")
+        maven("https://maven2.bai.lol").content {
+            includeGroup("lol.bai")
+            includeGroup("mcp.mobius.waila")
+        }
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-        maven("https://maven.bai.lol")
     }
 
     @Suppress("UnstableApiUsage")

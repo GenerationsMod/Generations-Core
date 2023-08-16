@@ -1,0 +1,194 @@
+{
+  "implemented": true,
+  "name": "Wailmer",
+  "nationalPokedexNumber": 320,
+  "primaryType": "water",
+  "abilities": [
+    "waterveil",
+    "oblivious",
+    "h:pressure"
+  ],
+  "baseStats": {
+    "hp": 130,
+    "attack": 70,
+    "defence": 35,
+    "special_attack": 70,
+    "special_defence": 35,
+    "speed": 60
+  },
+  "behaviour": {
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "catchRate": 125,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 80,
+  "experienceGroup": "fluctuating",
+  "eggCycles": 40,
+  "eggGroups": [
+    "field",
+    "water_2"
+  ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "minecraft:bone_block",
+        "percentage": 50
+      }
+    ]
+  },
+  "moves": [
+    "1:splash",
+    "5:growl",
+    "10:watergun",
+    "14:rollout",
+    "19:whirlpool",
+    "23:astonish",
+    "28:waterpulse",
+    "31:brine",
+    "32:mist",
+    "36:bodyslam",
+    "37:rest",
+    "41:dive",
+    "41:waterspout",
+    "44:bounce",
+    "46:amnesia",
+    "50:heavyslam",
+    "50:hydropump",
+    "egg:aquaring",
+    "egg:bodyslam",
+    "egg:clearsmog",
+    "egg:curse",
+    "egg:defensecurl",
+    "egg:doubleedge",
+    "egg:fissure",
+    "egg:rollout",
+    "egg:sleeptalk",
+    "egg:snore",
+    "egg:soak",
+    "egg:swagger",
+    "egg:thrash",
+    "egg:tickle",
+    "egg:zenheadbutt",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bounce",
+    "tm:brine",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:confide",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:earthquake",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:hail",
+    "tm:heavyslam",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hypervoice",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:strength",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tm:whirlpool",
+    "tm:zenheadbutt",
+    "tutor:bodyslam",
+    "tutor:bounce",
+    "tutor:defensecurl",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:endure",
+    "tutor:headbutt",
+    "tutor:hypervoice",
+    "tutor:icywind",
+    "tutor:mimic",
+    "tutor:rollout",
+    "tutor:selfdestruct",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:steelroller",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:watergun",
+    "tutor:waterpulse",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.wailmer.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "wailmer_wailord",
+      "variant": "level_up",
+      "result": "wailord",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 40
+        }
+      ]
+    }
+  ],
+  "baseScale": 1.8,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 20,
+  "weight": 1300,
+  "aspects": [],
+  "cannotDynamax": false
+}

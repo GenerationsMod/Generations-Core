@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Supplier;
 
 public class RareCandyAnimationFactory implements AnimationReferenceFactory {
-    public static final float animation_factor = 40f;
+    public static final float animation_factor = 0.0625f;
 
     @Override
     public @NotNull StatefulAnimation<PokemonEntity, ModelFrame> stateful(@NotNull JsonPokemonPoseableModel jsonPokemonPoseableModel, @NotNull String s) {
@@ -68,14 +68,19 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
 
         @Override
         public boolean run(@Nullable PokemonEntity t, @NotNull PoseableEntityModel<PokemonEntity> poseableEntityModel, @NotNull PoseableEntityState<PokemonEntity> poseableEntityState, float v, float v1, float v2, float v3, float v4) {
-            secondsPassed += poseableEntityState.getDeltaSeconds();
+            secondsPassed += poseableEntityState.getAnimationSeconds();
 
             var instance = t != null ? ((PixelmonInstanceProvider) (LivingEntity) t).getInstance() : null;
             var animation = animationSuppler.get();
 
-            if(instance != null && animation != null) instance.matrixTransforms = animation.getFrameTransform(secondsPassed/animation_factor);
+            if(instance != null && animation != null) instance.matrixTransforms = animation.getFrameTransform(secondsPassed * animation_factor);
 
             return true;
+        }
+
+        @Override
+        public void applyEffects(@NotNull PokemonEntity pokemon, @NotNull PoseableEntityState<PokemonEntity> poseableEntityState, float v, float v1) {
+
         }
     }
 
@@ -97,7 +102,7 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
         @Override
         protected void setAngles(@Nullable PokemonEntity pokemonEntity, @NotNull PoseableEntityModel<PokemonEntity> poseableEntityModel, @Nullable PoseableEntityState<PokemonEntity> state, float v, float v1, float v2, float v3, float v4) {
 //            val prev = if (state == null) 0F else (state.previousAnimationSeconds - state.timeEnteredPose)
-            var cur = state == null ? 0F : (state.getAnimationSeconds() - state.getTimeEnteredPose())/animation_factor;
+            var cur = state == null ? 0F : (state.getAnimationSeconds() - state.getTimeEnteredPose()) * animation_factor;
             var instance = pokemonEntity != null ? ((PixelmonInstanceProvider) (LivingEntity) pokemonEntity).getInstance() : null;
             var animation = animationSupplier.get();
 

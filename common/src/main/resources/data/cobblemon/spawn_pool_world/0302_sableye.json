@@ -1,0 +1,39 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "sableye-1",
+            "pokemon": "sableye",
+            "presets": [
+                "underground"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "15-38",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:amethyst_block",
+                    "minecraft:budding_amethyst",
+                    "#minecraft:crystal_sound_blocks",
+                    "#minecraft:diamond_ores",
+                    "#minecraft:emerald_ores",
+                    "#c:amethyst_ores",
+                    "#c:diamond_ores",
+                    "#c:emerald_ores",
+                    "#c:peridot_ores",
+                    "#c:ruby_ores",
+                    "#c:sapphire_ores",
+                    "#c:topaz_ores"
+                ]
+            }
+        }
+    ]
+}

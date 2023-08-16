@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:cobble_ruins_1_wall_from_cobble_ruins_1_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

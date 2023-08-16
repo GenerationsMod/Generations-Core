@@ -19,16 +19,6 @@ public class GenerationsBlockTags {
     public static final TagKey<Block> SILICON_ORES = create("ores/silicon_ores");
     public static final TagKey<Block> Z_CRYSTAL_ORES = create("ores/z_crystal_ores");
     public static final TagKey<Block> FOSSIL_ORES = create("ores/fossil_ores");
-    public static final TagKey<Block> DAWN_STONE_ORES = create("ores/dawn_stone_ores");
-    public static final TagKey<Block> DUSK_STONE_ORES = create("ores/dusk_stone_ores");
-    public static final TagKey<Block> FIRE_STONE_ORES = create("ores/fire_stone_ores");
-    public static final TagKey<Block> ICE_STONE_ORES = create("ores/ice_stone_ores");
-    public static final TagKey<Block> LEAF_STONE_ORES = create("ores/leaf_stone_ores");
-    public static final TagKey<Block> SHINY_STONE_ORES = create("ores/shiny_stone_ores");
-    public static final TagKey<Block> SUN_STONE_ORES = create("ores/sun_stone_ores");
-    public static final TagKey<Block> THUNDER_STONE_ORES = create("ores/thunder_stone_ores");
-    public static final TagKey<Block> WATER_STONE_ORES = create("ores/water_stone_ores");
-    public static final TagKey<Block> MOON_STONE_ORES = create("ores/moon_stone_ores");
     public static final TagKey<Block> BLACK_TUMBLESTONE_ORES = create("ores/black_tumblestone_ores");
     public static final TagKey<Block> RARE_TUMBLESTONE_ORES = create("ores/rare_tumblestone_ores");
     public static final TagKey<Block> SKY_TUMBLESTONE_ORES = create("ores/sky_tumblestone_ores");
@@ -42,6 +32,8 @@ public class GenerationsBlockTags {
     public static final TagKey<Block> VOLCANIC_STONE_BRICKS = create("volcanic_stone_bricks");
     public static final TagKey<Block> POKEBALL_CHESTS = create("pokeball_chests");
     public static final TagKey<Block> BALL_DISPLAY_BLOCKS = create("ball_display_blocks");
+    public static final TagKey<Block> BALL_LOOTS = create("ball_loots");
+    public static final TagKey<Block> POKEDOLLS = create("pokedolls");
 
     private static TagKey<Block> create(String name) {
         return TagKey.create(Registries.BLOCK, GenerationsCore.id(name));

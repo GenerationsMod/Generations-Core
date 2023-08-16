@@ -1,0 +1,190 @@
+{
+  "implemented": true,
+  "name": "Braixen",
+  "nationalPokedexNumber": 654,
+  "primaryType": "fire",
+  "abilities": [
+    "blaze",
+    "h:magician"
+  ],
+  "baseStats": {
+    "hp": 59,
+    "attack": 59,
+    "defence": 58,
+    "special_attack": 90,
+    "special_defence": 70,
+    "speed": 73
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 143,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "drops": {
+    "amount": "3",
+    "entries": [
+      {
+        "item": "minecraft:stick"
+      },
+      {
+        "item": "minecraft:blaze_powder",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 10
+      }
+    ]
+  },
+  "moves": [
+    "1:scratch",
+    "1:tailwhip",
+    "5:ember",
+    "11:howl",
+    "14:flamecharge",
+    "18:psybeam",
+    "22:firespin",
+    "27:luckychant",
+    "30:lightscreen",
+    "34:psyshock",
+    "41:flamethrower",
+    "45:willowisp",
+    "48:psychic",
+    "51:sunnyday",
+    "53:magicroom",
+    "55:fireblast",
+    "tm:agility",
+    "tm:attract",
+    "tm:calmmind",
+    "tm:charm",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:dreameater",
+    "tm:echoedvoice",
+    "tm:embargo",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firepledge",
+    "tm:firepunch",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:foulplay",
+    "tm:frustration",
+    "tm:grassknot",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:imprison",
+    "tm:incinerate",
+    "tm:lightscreen",
+    "tm:lowkick",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:overheat",
+    "tm:poweruppunch",
+    "tm:protect",
+    "tm:psybeam",
+    "tm:psychic",
+    "tm:psychicterrain",
+    "tm:psychup",
+    "tm:psyshock",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderpunch",
+    "tm:toxic",
+    "tm:trick",
+    "tm:trickroom",
+    "tm:willowisp",
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:allyswitch",
+    "tutor:covet",
+    "tutor:firepledge",
+    "tutor:firepunch",
+    "tutor:foulplay",
+    "tutor:heatwave",
+    "tutor:irontail",
+    "tutor:laserfocus",
+    "tutor:lowkick",
+    "tutor:magiccoat",
+    "tutor:magicroom",
+    "tutor:recycle",
+    "tutor:shockwave",
+    "tutor:skillswap",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:telekinesis",
+    "tutor:thunderpunch",
+    "tutor:trick",
+    "tutor:wonderroom",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.braixen.desc"
+  ],
+  "preEvolution": "fennekin",
+  "evolutions": [
+    {
+      "id": "braixen_delphox",
+      "variant": "level_up",
+      "result": "delphox",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "mysticalfire"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.65,
+  "hitbox": {
+    "width": 1,
+    "height": 2.25,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 10,
+  "weight": 145,
+  "aspects": [],
+  "cannotDynamax": false
+}

@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.world.item.CreationTrioIt
 import generations.gg.generations.core.generationscore.world.item.RedChainItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.world.level.block.entities.TimeSpaceAltarBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 

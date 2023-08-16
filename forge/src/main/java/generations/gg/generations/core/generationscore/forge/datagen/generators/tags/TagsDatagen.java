@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.tags;
 
-import com.cobblemon.mod.common.CobblemonBlocks;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
@@ -19,17 +19,13 @@ import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.tags.TagEntry;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.lang.reflect.Field;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
@@ -63,14 +59,8 @@ public class TagsDatagen {
                     tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block);
                 }
 
-                Field material = ObfuscationReflectionHelper.findField(BlockBehaviour.class, "material");
-                material.setAccessible(true);
-                try {
-                    if (material.get(block) == Material.STONE)
-                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
-                } catch (IllegalAccessException e) {
-                    throw new RuntimeException(e);
-                }
+
+
             });
 
             GenerationsBlocks.ULTRA_BLOCKS.forEach(block -> {
@@ -87,6 +77,8 @@ public class TagsDatagen {
                 tag(GenerationsBlockTags.POKEBRICKS).add(block.get());
                 EasyBlockTags(block.get());
             });
+
+            GenerationsPokeDolls.POKEDOLLS.forEach(pokedoll -> tag(GenerationsBlockTags.POKEDOLLS).add(pokedoll.get()));
 
             GenerationsBlocks.STONE.forEach(block -> {
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block.get());
@@ -147,6 +139,7 @@ public class TagsDatagen {
             tag(BlockTags.FEATURES_CANNOT_REPLACE).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
 
             GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> tag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS).add(block.get()));
+            GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> tag(GenerationsBlockTags.BALL_LOOTS).add(block.get()));
 
 
             //Ore Specific tags
@@ -157,26 +150,6 @@ public class TagsDatagen {
             tag(GenerationsBlockTags.SILICON_ORES).add(GenerationsOres.SILICON_ORE.get(), GenerationsOres.DEEPSLATE_SILICON_ORE.get(), GenerationsOres.CHARGE_STONE_SILICON_ORE.get());
             tag(GenerationsBlockTags.Z_CRYSTAL_ORES).add(GenerationsOres.Z_CRYSTAL_ORE.get(), GenerationsOres.DEEPSLATE_Z_CRYSTAL_ORE.get(), GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
             tag(GenerationsBlockTags.FOSSIL_ORES).add(GenerationsOres.FOSSIL_ORE.get(), GenerationsOres.DEEPSLATE_FOSSIL_ORE.get(), GenerationsOres.CHARGE_STONE_FOSSIL_ORE.get());
-            tag(GenerationsBlockTags.DAWN_STONE_ORES).add(GenerationsOres.DAWN_STONE_ORE.get(), GenerationsOres.DEEPSLATE_DAWN_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_DAWN_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.DAWN_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_DAWN_STONE_ORE));
-            tag(GenerationsBlockTags.DUSK_STONE_ORES).add(GenerationsOres.DUSK_STONE_ORE.get(), GenerationsOres.DEEPSLATE_DUSK_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_DUSK_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.DUSK_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_DUSK_STONE_ORE));
-            tag(GenerationsBlockTags.FIRE_STONE_ORES).add(GenerationsOres.FIRE_STONE_ORE.get(), GenerationsOres.DEEPSLATE_FIRE_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_FIRE_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.FIRE_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_FIRE_STONE_ORE));
-            tag(GenerationsBlockTags.ICE_STONE_ORES).add(GenerationsOres.ICE_STONE_ORE.get(), GenerationsOres.DEEPSLATE_ICE_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_ICE_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.ICE_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_ICE_STONE_ORE));
-            tag(GenerationsBlockTags.LEAF_STONE_ORES).add(GenerationsOres.LEAF_STONE_ORE.get(), GenerationsOres.DEEPSLATE_LEAF_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_LEAF_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.LEAF_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_LEAF_STONE_ORE));
-            tag(GenerationsBlockTags.SHINY_STONE_ORES).add(GenerationsOres.SHINY_STONE_ORE.get(), GenerationsOres.DEEPSLATE_SHINY_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_SHINY_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.SHINY_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_SHINY_STONE_ORE));
-            tag(GenerationsBlockTags.SUN_STONE_ORES).add(GenerationsOres.SUN_STONE_ORE.get(), GenerationsOres.DEEPSLATE_SUN_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_SUN_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.SUN_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_SUN_STONE_ORE));
-            tag(GenerationsBlockTags.THUNDER_STONE_ORES).add(GenerationsOres.THUNDER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_THUNDER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_THUNDER_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.THUNDER_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_THUNDER_STONE_ORE));
-            tag(GenerationsBlockTags.WATER_STONE_ORES).add(GenerationsOres.WATER_STONE_ORE.get(), GenerationsOres.DEEPSLATE_WATER_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_WATER_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.WATER_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_WATER_STONE_ORE));
-            tag(GenerationsBlockTags.MOON_STONE_ORES).add(GenerationsOres.MOON_STONE_ORE.get(), GenerationsOres.DEEPSLATE_MOON_STONE_ORE.get(), GenerationsOres.CHARGE_STONE_MOON_STONE_ORE.get())
-                            .addOptional(getBlockLocation(CobblemonBlocks.MOON_STONE_ORE)).addOptional(getBlockLocation(CobblemonBlocks.DEEPSLATE_MOON_STONE_ORE));
             tag(GenerationsBlockTags.TUMBLESTONE_ORES).add(GenerationsOres.TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_TUMBLESTONE_ORE.get());
             tag(GenerationsBlockTags.RARE_TUMBLESTONE_ORES).add(GenerationsOres.RARE_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_RARE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_RARE_TUMBLESTONE_ORE.get());
             tag(GenerationsBlockTags.SKY_TUMBLESTONE_ORES).add(GenerationsOres.SKY_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_SKY_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_SKY_TUMBLESTONE_ORE.get());
@@ -209,16 +182,6 @@ public class TagsDatagen {
                     .addTag(GenerationsBlockTags.SILICON_ORES)
                     .addTag(GenerationsBlockTags.Z_CRYSTAL_ORES)
                     .addTag(GenerationsBlockTags.FOSSIL_ORES)
-                    .addTag(GenerationsBlockTags.DAWN_STONE_ORES)
-                    .addTag(GenerationsBlockTags.DUSK_STONE_ORES)
-                    .addTag(GenerationsBlockTags.FIRE_STONE_ORES)
-                    .addTag(GenerationsBlockTags.ICE_STONE_ORES)
-                    .addTag(GenerationsBlockTags.LEAF_STONE_ORES)
-                    .addTag(GenerationsBlockTags.SHINY_STONE_ORES)
-                    .addTag(GenerationsBlockTags.SUN_STONE_ORES)
-                    .addTag(GenerationsBlockTags.THUNDER_STONE_ORES)
-                    .addTag(GenerationsBlockTags.WATER_STONE_ORES)
-                    .addTag(GenerationsBlockTags.MOON_STONE_ORES)
                     .addTag(GenerationsBlockTags.TUMBLESTONE_ORES)
                     .addTag(GenerationsBlockTags.RARE_TUMBLESTONE_ORES)
                     .addTag(GenerationsBlockTags.SKY_TUMBLESTONE_ORES)
@@ -358,6 +321,8 @@ public class TagsDatagen {
             copy(GenerationsBlockTags.MARBLE, GenerationsItemTags.MARBLE);
             //Ultra
             copy(GenerationsBlockTags.ULTRA, GenerationsItemTags.ULTRA);
+            //PokeDolls
+            copy(GenerationsBlockTags.POKEDOLLS, GenerationsItemTags.POKEDOLLS);
 
             //Ore Specific tags like Vanilla
             copy(GenerationsBlockTags.GENERATIONSORES, GenerationsItemTags.GENERATIONSORES);
@@ -369,16 +334,6 @@ public class TagsDatagen {
             copy(GenerationsBlockTags.SILICON_ORES, GenerationsItemTags.SILICON_ORES);
             copy(GenerationsBlockTags.Z_CRYSTAL_ORES, GenerationsItemTags.Z_CRYSTAL_ORES);
             copy(GenerationsBlockTags.FOSSIL_ORES, GenerationsItemTags.FOSSIL_ORES);
-            copy(GenerationsBlockTags.DAWN_STONE_ORES, GenerationsItemTags.DAWN_STONE_ORES);
-            copy(GenerationsBlockTags.DUSK_STONE_ORES, GenerationsItemTags.DUSK_STONE_ORES);
-            copy(GenerationsBlockTags.FIRE_STONE_ORES, GenerationsItemTags.FIRE_STONE_ORES);
-            copy(GenerationsBlockTags.ICE_STONE_ORES, GenerationsItemTags.ICE_STONE_ORES);
-            copy(GenerationsBlockTags.LEAF_STONE_ORES, GenerationsItemTags.LEAF_STONE_ORES);
-            copy(GenerationsBlockTags.MOON_STONE_ORES, GenerationsItemTags.MOON_STONE_ORES);
-            copy(GenerationsBlockTags.SUN_STONE_ORES, GenerationsItemTags.SUN_STONE_ORES);
-            copy(GenerationsBlockTags.SHINY_STONE_ORES, GenerationsItemTags.SHINY_STONE_ORES);
-            copy(GenerationsBlockTags.THUNDER_STONE_ORES, GenerationsItemTags.THUNDER_STONE_ORES);
-            copy(GenerationsBlockTags.WATER_STONE_ORES, GenerationsItemTags.WATER_STONE_ORES);
             copy(GenerationsBlockTags.TUMBLESTONE_ORES, GenerationsItemTags.TUMBLESTONE_ORES);
             copy(GenerationsBlockTags.RARE_TUMBLESTONE_ORES, GenerationsItemTags.RARE_TUMBLESTONE_ORES);
             copy(GenerationsBlockTags.SKY_TUMBLESTONE_ORES, GenerationsItemTags.SKY_TUMBLESTONE_ORES);
@@ -471,6 +426,9 @@ public class TagsDatagen {
             tag(Tags.Items.NUGGETS).add(ALUMINUM_NUGGET.get());
 
             ITEMS.forEach(item -> tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
+            RIBBONS.forEach(ribbon -> tag(GenerationsItemTags.RIBBONS).add(ribbon.get()));
+            BADGES.forEach(badge -> tag(GenerationsItemTags.BADGES).add(badge.get()));
+            tag(GenerationsItemTags.GENERATIONSITEMS).addTag(GenerationsItemTags.RIBBONS).addTag(GenerationsItemTags.BADGES);
             POKEBALLS.forEach(pokeball -> tag(GenerationsItemTags.POKEBALLS).add(pokeball.get()));
 
             tag(GenerationsItemTags.POKEMAIL).add(
@@ -547,10 +505,20 @@ public class TagsDatagen {
                     POKEMAIL_WAVE_CLOSED.get(),
                     POKEMAIL_WOOD_CLOSED.get());
 
-            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS.location());
+            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS.location()).addOptionalTag(ResourceLocation.tryParse("c:shears"));
 
             //PC
             GenerationsUtilityBlocks.PC_BLOCKS.forEach(pc -> tag(GenerationsItemTags.PC).add(pc.get()));
+
+            //Forge Armor Tags
+            GenerationsArmor.ARMOR.forEach(armor -> {
+                switch (((ArmorItem) armor.get()).getType()){
+                    case HELMET -> tag(Tags.Items.ARMORS_HELMETS).add(armor.get());
+                    case CHESTPLATE -> tag(Tags.Items.ARMORS_CHESTPLATES).add(armor.get());
+                    case LEGGINGS -> tag(Tags.Items.ARMORS_LEGGINGS).add(armor.get());
+                    case BOOTS -> tag(Tags.Items.ARMORS_BOOTS).add(armor.get());
+                }
+            });
         }
     }
 

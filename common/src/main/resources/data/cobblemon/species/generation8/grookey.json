@@ -1,0 +1,146 @@
+{
+  "implemented": true,
+  "name": "Grookey",
+  "nationalPokedexNumber": 810,
+  "primaryType": "grass",
+  "abilities": [
+    "overgrow",
+    "h:grassysurge"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 65,
+    "defence": 50,
+    "special_attack": 40,
+    "special_defence": 40,
+    "speed": 65
+  },
+  "catchRate": 45,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field",
+    "grass"
+  ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "minecraft:stick"
+      },
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 5
+      }
+    ]
+  },
+  "moves": [
+    "1:growl",
+    "1:scratch",
+    "6:branchpoke",
+    "8:taunt",
+    "12:razorleaf",
+    "17:screech",
+    "20:knockoff",
+    "24:slam",
+    "28:uproar",
+    "32:woodhammer",
+    "36:endeavor",
+    "egg:fakeout",
+    "egg:growth",
+    "egg:hammerarm",
+    "egg:leechseed",
+    "egg:naturepower",
+    "egg:strength",
+    "egg:worryseed",
+    "tm:acrobatics",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bulletseed",
+    "tm:drainpunch",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:fling",
+    "tm:focusenergy",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grasspledge",
+    "tm:grassyterrain",
+    "tm:leafstorm",
+    "tm:lowkick",
+    "tm:magicalleaf",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:protect",
+    "tm:rest",
+    "tm:round",
+    "tm:screech",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:solarblade",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:trailblaze",
+    "tm:uproar",
+    "tm:uturn",
+    "tm:workup",
+    "tutor:grasspledge",
+    "tutor:grassyglide"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.grookey.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "grookey_thwackey",
+      "variant": "level_up",
+      "result": "thwackey",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "doublehit"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 16
+        }
+      ]
+    }
+  ],
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 50,
+  "aspects": [],
+  "cannotDynamax": false
+}

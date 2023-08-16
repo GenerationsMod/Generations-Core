@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:ocean_block_wall_from_ocean_block_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

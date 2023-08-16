@@ -1,0 +1,40 @@
+{
+  "name": "cobblemon:eiscue",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "ice"
+      ],
+      "model": "generations_core:eiscue.pk",
+      "poser": "generations_core:eiscue",
+      "texture": "pk:ice"
+    },
+    {
+      "aspects": [
+        "shiny",
+        "ice"
+      ],
+      "model": "generations_core:eiscue.pk",
+      "poser": "generations_core:eiscue",
+      "texture": "pk:ice"
+    },
+    {
+      "aspects": [
+        "noice"
+      ],
+      "model": "generations_core:eiscue.pk",
+      "poser": "generations_core:eiscue",
+      "texture": "pk:noice"
+    },
+    {
+      "aspects": [
+        "noice",
+        "shiny"
+      ],
+      "model": "generations_core:eiscue.pk",
+      "poser": "generations_core:eiscue",
+      "texture": "pk:noice"
+    }
+  ]
+}

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:cyan_marble_wall_from_cyan_marble_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

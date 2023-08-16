@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.tools.*;
 import generations.gg.generations.core.generationscore.world.item.tools.effects.*;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -172,7 +173,7 @@ public class GenerationsTools {
 	public static final RegistrySupplier<Item> STONE_HAMMER = register("stone_hammer", properties -> new GenerationsHammerItem(Tiers.STONE, 7.0F, -3.2F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> WOODEN_HAMMER = register("wooden_hammer", properties -> new GenerationsHammerItem(Tiers.WOOD, 6.0F, -3.2F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 
-	private static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> function, CreativeModeTab tab) {
+	private static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> function, ResourceKey<CreativeModeTab> tab) {
 		return TOOLS.register(name, () -> function.apply(of().arch$tab(tab)));
 	}
 
@@ -196,7 +197,7 @@ public class GenerationsTools {
 			register(name + "_hammer", GenerationsHammerItem::new, tier, hammerDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
 			register(name + "_sword", GenerationsSwordItem::new, tier, swordDamage, -2.4F, CreativeModeTabs.COMBAT, toolEffects));
 		}
-		private static <T extends Item & ToolEffectHolder<T>> RegistrySupplier<T> register(String name, ToolSupplier<T> supplier, Supplier<Tier> tier, int attackDamage, float attackSpeed, CreativeModeTab tab, ToolEffect... toolEffects) {
+		private static <T extends Item & ToolEffectHolder<T>> RegistrySupplier<T> register(String name, ToolSupplier<T> supplier, Supplier<Tier> tier, int attackDamage, float attackSpeed, ResourceKey<CreativeModeTab> tab, ToolEffect... toolEffects) {
 			return GenerationsTools.register(name, properties -> supplier.create(tier.get(), attackDamage, attackSpeed, properties).addToolEffects(toolEffects), tab);
 		}
 

@@ -1,0 +1,33 @@
+{
+  "name": "cobblemon:diglett",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:diglett.pk",
+      "poser": "generations_core:diglett",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "alolan"
+      ],
+      "model": "generations_core:diglett-alolan.pk",
+      "poser": "generations_core:diglett-alolan",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "alolan",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

@@ -28,5 +28,6 @@
     "recipes": [
       "generations_core:ghost_boat_with_chest"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.renderer.GameRenderer;
@@ -44,29 +45,28 @@ public class OptionsWidget extends AbstractWidget {
     }
 
     @Override
-    public void renderWidget(@NotNull PoseStack stack, int mouseX, int mouseY, float partialTick) {
+    public void renderWidget(@NotNull GuiGraphics stack, int mouseX, int mouseY, float partialTick) {
         isMouseOver(mouseX, mouseY);
 
-        stack.pushPose();
+        stack.pose().pushPose();
         RenderSystem.enableBlend();
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1, 1, 1, 1F);
-        RenderSystem.setShaderTexture(0, GenerationsCore.id("textures/gui/battle/message_box.png"));
-        ScreenUtils.drawTexture(stack, getX() - getWidth(), getY() - getHeight(), 0, 0, getWidth(), 2, getWidth(), 20); // Top 3 Slice
-        ScreenUtils.drawTexture(stack, getX() - getWidth(), getY() - getHeight() + 2, 0, 50, getWidth(), getHeight() - 4, getWidth(), getHeight() * 4); // Top 3 Slice
-        ScreenUtils.drawTexture(stack, getX() - getWidth(), getY() - 2, 0, -2, getWidth(), 2, getWidth(), 20); // Top 3 Slice
+        var texture = GenerationsCore.id("textures/gui/battle/message_box.png");
+        ScreenUtils.drawTexture(stack, texture, getX() - getWidth(), getY() - getHeight(), 0, 0, getWidth(), 2, getWidth(), 20); // Top 3 Slice
+        ScreenUtils.drawTexture(stack, texture, getX() - getWidth(), getY() - getHeight() + 2, 0, 50, getWidth(), getHeight() - 4, getWidth(), getHeight() * 4); // Top 3 Slice
+        ScreenUtils.drawTexture(stack, texture, getX() - getWidth(), getY() - 2, 0, -2, getWidth(), 2, getWidth(), 20); // Top 3 Slice
 
         int y = getY() - getHeight() - 4;
         for (var option : options) {
-            Minecraft.getInstance().font.draw(stack, option, getX() - getWidth() + 15, y += 10, 0xFF000000);
+            stack.drawString(Minecraft.getInstance().font, option, getX() - getWidth() + 15, y += 10, 0xFF000000);
         }
 
         if(hovered != null) {
-            RenderSystem.setShaderTexture(0, CHOICE_ARROW);
+            texture = CHOICE_ARROW;
         }
-        ScreenUtils.drawTexture(stack, (int) (getX() - getWidth() /*+ 4 + Mth.sin(GenerationsCoreClient.GAME_TIME.getTime() * 0.2f)*/ / 0.95f), getY() - getHeight() + 5 + options.indexOf(hovered) * 10, 0, 0, 8, 8, 8, 8);
+        ScreenUtils.drawTexture(stack, texture, (int) (getX() - getWidth() /*+ 4 + Mth.sin(GenerationsCoreClient.GAME_TIME.getTime() * 0.2f)*/ / 0.95f), getY() - getHeight() + 5 + options.indexOf(hovered) * 10, 0, 0, 8, 8, 8, 8);
 
-        stack.popPose();
+        stack.pose().popPose();
     }
 
     @Override

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:concrete_top_wall_from_concrete_top_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
