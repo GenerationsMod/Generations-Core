@@ -43,7 +43,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createClientBound(S2CSayDialoguePacket.ID, S2CSayDialoguePacket.class, S2CSayDialoguePacket::decode, new S2CSayDialoguePacket.Handler());
         this.createClientBound(S2CCloseScreenPacket.ID, S2CCloseScreenPacket.class, S2CCloseScreenPacket::decode,new  S2CCloseScreenPacket.Handler());
         this.createClientBound(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket.class, S2CUnlockReloadPacket::decode, new S2CUnlockReloadPacket.UnlockReloadPacketHandler());
-        this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket.class, DialogueGraphRegistrySyncPacket::decode, new DataRegistrySyncPacketHandler());
+        this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket.class, DialogueGraphRegistrySyncPacket::decode, new DataRegistrySyncPacketHandler<>());
     }
 
     public void registerServerBound() {

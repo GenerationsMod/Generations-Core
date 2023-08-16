@@ -10,8 +10,8 @@ import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsDataProvider;
-import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.client.model.RareCandyAnimationFactory;
+import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
@@ -86,7 +86,7 @@ public class GenerationsCoreClient {
         });
 
         ItemPropertiesRegistry.register(GenerationsItems.TM.get(), GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
-            var type = TechnicalMachineItem.Companion.getType(arg);
+            var type = TechnicalMachineItem.getType(arg);
 
             if(type == ElementalTypes.INSTANCE.getNORMAL()) return 0.00f;
             else if(type == ElementalTypes.INSTANCE.getFIRE()) return 0.01f;
@@ -196,12 +196,12 @@ public class GenerationsCoreClient {
     }
 
     public static Unit onLogin(ClientPlayerEvent.Login login) {
-        GenerationsDataProvider.INSTANCE.setCanReload(false);
+        GenerationsDataProvider.INSTANCE.canReload = false;
         return Unit.INSTANCE;
     }
 
     public static Unit onLogout(ClientPlayerEvent.Logout logout) {
-        GenerationsDataProvider.INSTANCE.setCanReload(true);
+        GenerationsDataProvider.INSTANCE.canReload = true;
         return Unit.INSTANCE;
     }
 }

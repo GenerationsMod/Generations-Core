@@ -1,12 +1,10 @@
-package generations.gg.generations.core.generationscore.network.packets
+package generations.gg.generations.core.generationscore.network.packets;
 
-import com.cobblemon.mod.common.api.net.NetworkPacket
-import generations.gg.generations.core.generationscore.GenerationsCore.id
-import generations.gg.generations.core.generationscore.GenerationsDataProvider
+import generations.gg.generations.core.generationscore.GenerationsDataProvider;
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
-import net.minecraft.client.Minecraft
-import net.minecraft.network.FriendlyByteBuf
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;;
 
 import static generations.gg.generations.core.generationscore.GenerationsCore.id;
 
