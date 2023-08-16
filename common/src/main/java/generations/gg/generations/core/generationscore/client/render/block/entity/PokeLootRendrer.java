@@ -21,7 +21,7 @@ public class PokeLootRendrer implements BlockEntityRenderer<BallLootBlockEntity>
         if (!(blockEntity.isVisible() && blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
         stack.pushPose();
         if (blockEntity.objectInstance == null) {
-            blockEntity.objectInstance = new ObjectInstance[] { new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "") };
+            blockEntity.objectInstance = new ObjectInstance[] { new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "default") };
         }
 
         var primeInstance = blockEntity.objectInstance[0];

@@ -20,6 +20,8 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
+import java.util.Objects;
+
 public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> implements BlockEntityRenderer<T> {
 
     public GeneralUseBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
@@ -46,12 +48,12 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             int amount = instanceAmount();
             blockEntity.objectInstance = new ObjectInstance[amount];
 
-            for (int i = 0; i < amount; i++) blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
+            for (int i = 0; i < amount; i++) blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), null);
         }
 
         var primeInstance = blockEntity.objectInstance[0];
 
-        if (blockEntity instanceof ModelContextProviders.VariantProvider provider && !primeInstance.materialId().equals(provider.getVariant())) {
+        if (blockEntity instanceof ModelContextProviders.VariantProvider provider && !Objects.equals(primeInstance.materialId(), provider.getVariant())) {
             primeInstance.setVariant(provider.getVariant());
         }
 
@@ -107,6 +109,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     }
 
     protected void renderResourceLocation(ResourceLocation location, PoseStack stack, ObjectInstance objectInstance) {
+        objectInstance.transformationMatrix().set(stack.last().pose());
         ModelRegistry.get(location, "block").render(objectInstance, RenderSystem.getProjectionMatrix());
     }
 

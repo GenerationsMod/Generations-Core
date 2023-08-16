@@ -13,7 +13,7 @@ public class PokemonEntityMixin implements PixelmonInstanceProvider {
 
     public PixelmonInstance getInstance() {
         if (instance == null) {
-            instance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), "", () -> LightingSettings.NORMAL_SHADING);
+            instance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null, () -> LightingSettings.NORMAL_SHADING);
         }
 
         return instance;

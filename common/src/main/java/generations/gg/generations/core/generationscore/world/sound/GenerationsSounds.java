@@ -45,40 +45,6 @@ public class GenerationsSounds {
     public static final RegistrySupplier<SoundEvent> LUGIA = registerSound("generations_core.music.special.lugia");
     public static final RegistrySupplier<SoundEvent> MT_PYRE = registerSound("generations_core.music.special.mt_pyre");
 
-    public static RegistrySupplier<SoundEvent> AZALEA_TOWN = registerSound("generations_core.music.ambient.azalea_town");
-    public static RegistrySupplier<SoundEvent> CASCARRAFA_CITY = registerSound("generations_core.music.ambient.cascarrafa_city");
-    public static RegistrySupplier<SoundEvent> CERULEAN_CITY = registerSound("generations_core.music.ambient.cerulean_city");
-    public static RegistrySupplier<SoundEvent> ETERNA_CITY = registerSound("generations_core.music.ambient.eterna_city");
-    public static RegistrySupplier<SoundEvent> GOLDENROD_CITY = registerSound("generations_core.music.ambient.goldenrod_city");
-    public static RegistrySupplier<SoundEvent> ICIRRUS_CITY = registerSound("generations_core.music.ambient.icirrus_city");
-    public static RegistrySupplier<SoundEvent> JUBILIFE_VILLAGE = registerSound("generations_core.music.ambient.jubilife_village");
-    public static RegistrySupplier<SoundEvent> LAKE_OF_RAGE = registerSound("generations_core.music.ambient.lake_of_rage");
-    public static RegistrySupplier<SoundEvent> LAVERRE_CITY = registerSound("generations_core.music.ambient.laverre_city");
-    public static RegistrySupplier<SoundEvent> LILLIE = registerSound("generations_core.music.ambient.lillie");
-    public static RegistrySupplier<SoundEvent> POKEMON_CENTER = registerSound("generations_core.music.ambient.pokemon_center");
-    public static RegistrySupplier<SoundEvent> ROUTE_228 = registerSound("generations_core.music.ambient.route_228");
-    public static RegistrySupplier<SoundEvent> SLUMBERING_WEALD = registerSound("generations_core.music.ambient.slumbering_weald");
-    public static RegistrySupplier<SoundEvent> SURF = registerSound("generations_core.music.ambient.surf");
-    public static RegistrySupplier<SoundEvent> VERMILION_CITY = registerSound("generations_core.music.ambient.vermilion_city");
-    public static RegistrySupplier<SoundEvent> CYNTHIA = registerSound("generations_core.music.battle.cynthia");
-    public static RegistrySupplier<SoundEvent> DEOXYS = registerSound("generations_core.music.battle.deoxys");
-    public static RegistrySupplier<SoundEvent> IRIS = registerSound("generations_core.music.battle.iris");
-    public static RegistrySupplier<SoundEvent> KANTO = registerSound("generations_core.music.battle.kanto");
-    public static RegistrySupplier<SoundEvent> LUSAMINE = registerSound("generations_core.music.battle.lusamine");
-    public static RegistrySupplier<SoundEvent> NEMONA = registerSound("generations_core.music.battle.nemona");
-    public static RegistrySupplier<SoundEvent> NESSA = registerSound("generations_core.music.battle.nessa");
-    public static RegistrySupplier<SoundEvent> PENNY = registerSound("generations_core.music.battle.penny");
-    public static RegistrySupplier<SoundEvent> RIVAL = registerSound("generations_core.music.battle.rival");
-    public static RegistrySupplier<SoundEvent> SADA_AND_TURO = registerSound("generations_core.music.battle.sada_and_turo");
-    public static RegistrySupplier<SoundEvent> SOUTH_PROVINCE = registerSound("generations_core.music.battle.south_province");
-    public static RegistrySupplier<SoundEvent> TEAM_ROCKET = registerSound("generations_core.music.battle.team_rocket");
-    public static RegistrySupplier<SoundEvent> ULTRA_NECROZMA = registerSound("generations_core.music.battle.ultra_necrozma");
-    public static RegistrySupplier<SoundEvent> XY_LEGENDARY = registerSound("generations_core.music.battle.xy_legendary");
-    public static RegistrySupplier<SoundEvent> ZINNIA = registerSound("generations_core.music.battle.zinnia");
-    public static RegistrySupplier<SoundEvent> LAVENDER_TOWN = registerSound("generations_core.music.special.lavender_town");
-    public static RegistrySupplier<SoundEvent> LUGIA = registerSound("generations_core.music.special.lugia");
-    public static RegistrySupplier<SoundEvent> MT_PYRE = registerSound("generations_core.music.special.mt_pyre");
-
     private static RegistrySupplier<SoundEvent> registerSound(String id) {
         return SOUNDS.register(id, () -> SoundEvent.createVariableRangeEvent(GenerationsCore.id(id)));
     }
