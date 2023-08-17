@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.screen.dialgoue.configure;
 
 import com.google.gson.JsonObject;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -112,7 +111,7 @@ public class ConfigureDialogueScreen extends Screen {
     }
 
     private void saveDataPackEntry(Button button) {
-        var data = Dialogues.Companion.instance().getGson().toJsonTree(graph);
+        var data = Dialogues.instance().getGson().toJsonTree(graph);
         GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2SSaveDatapackEntryPacket(GenerationsCore.id("dialogue/test.json"), data));
     }
 

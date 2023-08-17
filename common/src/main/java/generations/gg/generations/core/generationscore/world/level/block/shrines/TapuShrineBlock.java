@@ -29,7 +29,7 @@ public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
         if (!world.isClientSide() && !DialogueManager.DIALOGUE_MAP.containsKey((ServerPlayer) player) && player.getItemInHand(handIn).is(GenerationsItems.SPARKLING_STONE.get())) {
-            var graph = Dialogues.Companion.instance().get(BuiltinDialogues.TAPU_SPAWN);
+            var graph = Dialogues.instance().get(BuiltinDialogues.TAPU_SPAWN);
 
             new DialoguePlayer(graph, null, (ServerPlayer) player, false);
             player.getItemInHand(handIn).shrink(1);

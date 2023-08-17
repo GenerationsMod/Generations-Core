@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.forge;
 
-import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler;
-import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
+import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
@@ -22,6 +22,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public class GenerationsForgeNetworkManager implements GenerationsImplementation.NetworkManager {
+    public static final GenerationsForgeNetworkManager INSTANCE = new GenerationsForgeNetworkManager();
 
     private static final String PROTOCOL_VERSION = "1";
     private int id = 0;

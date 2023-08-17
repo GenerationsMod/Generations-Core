@@ -1,8 +1,5 @@
 package generations.gg.generations.core.generationscore.util;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
@@ -11,7 +8,7 @@ import org.joml.Vector3f;
 
 import java.util.EnumSet;
 import java.util.Optional;
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 public class GenerationsUtils {
 
@@ -54,4 +51,8 @@ public class GenerationsUtils {
         if(stack.getTag() != null) compound.put("tag", stack.getTag());
         return compound;
     };
+
+    public static <T, K, V> V processIfNotNull(T t, K k, BiFunction<T, K, V> function) {
+        return t != null ? function.apply(t, k) : null;
+    }
 }
