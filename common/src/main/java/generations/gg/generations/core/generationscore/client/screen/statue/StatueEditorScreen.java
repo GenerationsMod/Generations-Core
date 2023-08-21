@@ -142,16 +142,16 @@ public class StatueEditorScreen extends Screen {
 
         super.render(poseStack, mouseX, mouseY, partialTick);
 
-        if (scaleTextField != null && scaleTextField.visible) poseStack.drawString(font, "Scale", x + 6, y + 70, 0x5F5F60);
+        if (scaleTextField != null && scaleTextField.visible) poseStack.drawString(font, "Scale", x + 6, y + 70, 0x5F5F60, false);
 
-        if (statickCheckbox != null && statickCheckbox.visible) poseStack.drawString(font, "Static:", x + 129, y + 69, 0x5F5F60);
-        if (pixelmonFormTextField != null && pixelmonFormTextField.visible) poseStack.drawString(font, "Form:", x + 44, y + 31, 0x5F5F60);
-        if (pixelmonSkinTextField != null && pixelmonSkinTextField.visible) poseStack.drawString(font, "Skin:", x + 44, y + 49, 0x5F5F60);
+        if (statickCheckbox != null && statickCheckbox.visible) poseStack.drawString(font, "Static:", x + 129, y + 69, 0x5F5F60, false);
+        if (pixelmonFormTextField != null && pixelmonFormTextField.visible) poseStack.drawString(font, "Form:", x + 44, y + 31, 0x5F5F60, false);
+        if (pixelmonSkinTextField != null && pixelmonSkinTextField.visible) poseStack.drawString(font, "Skin:", x + 44, y + 49, 0x5F5F60, false);
         if (animationTextField != null && animationTextField.visible) {
-            poseStack.drawString(font, "Animation:", x + 77, y + 110, 0x5F5F60);
+            poseStack.drawString(font, "Animation:", x + 77, y + 110, 0x5F5F60, false);
         }
         if (timestampTextField != null && timestampTextField.visible) {
-            poseStack.drawString(font, "Timestamp:", x + 77, y + 128, 0x5F5F60);
+            poseStack.drawString(font, "Timestamp:", x + 77, y + 128, 0x5F5F60, false);
 //TODO: WOrk on
 //            var animation = getAnimation();
 //            String s = animation != null ? String.valueOf((int) (animation.animationDuration)) : "-1";
@@ -159,11 +159,11 @@ public class StatueEditorScreen extends Screen {
         }
 
         if (orientationWidget != null && orientationWidget.visible) {
-            poseStack.drawString(font, "N", x + 41, y + 102, 0x000000);
-            poseStack.drawString(font, "E", x + 63, y + 125, 0x000000);
-            poseStack.drawString(font, "W", x + 19, y + 125, 0x000000);
-            poseStack.drawString(font, "S", x + 41, y + 148, 0x000000);
-            poseStack.drawString(font, "Orientation: " + String.format("%.2f", statue.getStatueData().getOrientation()), x + 12, y + 90, 0x5F5F60);
+            poseStack.drawString(font, "N", x + 41, y + 102, 0x000000, false);
+            poseStack.drawString(font, "E", x + 63, y + 125, 0x000000, false);
+            poseStack.drawString(font, "W", x + 19, y + 125, 0x000000, false);
+            poseStack.drawString(font, "S", x + 41, y + 148, 0x000000, false);
+            poseStack.drawString(font, "Orientation: " + String.format("%.2f", statue.getStatueData().getOrientation()), x + 12, y + 90, 0x5F5F60, false);
         }
     }
 
@@ -196,7 +196,7 @@ public class StatueEditorScreen extends Screen {
 
         pixelmonSelectionWidget = this.addRenderableWidget(new PixelmonSelectionWidget(pixelmonSelectionButton.getX() + 34, pixelmonSelectionButton.getY(), data -> {
             var info = statue.getStatueData();
-//            info.setPokemon(data.key());
+            info.getProperties().setSpecies(data.data().getSpecies().resourceIdentifier.toString());
 //            var form = info.getPokedexEntry().getFormMap().containsKey(info.getFormId()) ? info.getSkinId() : info.getPokedexEntry().getDefaultFormId();
 //            info.setForm(form);
 //            var skin = info.getPokemonForm().skins().containsKey(info.getSkinId()) ? info.getSkinId() : info.getPokemonForm().defaultSkin();

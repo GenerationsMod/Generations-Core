@@ -24,12 +24,22 @@ public class PixelmonSelectionButton extends AbstractButton {
     }
 
     @Override
-    protected void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+    protected void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
 //        RenderSystem.enableBlend();
-        guiGraphics.blit(TEXTURE, getX(), getY(), 102, 199, 34, 34);
-        GuiUtilsKt.drawPortraitPokemon(selectedPixelmon.data().getSpecies(), selectedPixelmon.data().getAspects(), guiGraphics.pose(), 13f, false, null, partialTick);
+        graphics.blit(TEXTURE, getX(), getY(), 102, 199, 34, 34);
 
-        ScreenUtils.drawTexture(guiGraphics, TEXTURE, getX()+1, getY()+1, 0, 0, 32, 32, 32, 32);
+        graphics.pose().pushPose();
+
+        graphics.enableScissor(getX() + 1, getY() + 1, getX() + 33, getY() + 33);
+        graphics.pose().translate(getX() + 17,getY() + 1-8.57,0);
+
+        GuiUtilsKt.drawPortraitPokemon(selectedPixelmon.data().getSpecies(), selectedPixelmon.data().getAspects(), graphics.pose(), 9.28f, true, null, partialTick);
+        graphics.disableScissor();
+
+        graphics.pose().popPose();
+
+        ScreenUtils.drawTexture(graphics, TEXTURE, getX()+1, getY()+1, 0, 0, 32, 32, 32, 32, 256, 256);
+
     }
 
     public void setSelectedPixelmon(PixelmonSelectionWidget.PixelmonWidgetData data) {

@@ -64,18 +64,22 @@ public class PixelmonSelectionWidget extends AbstractButton {
 
                     graphics.pose().translate(x,y,0);
 
-                    graphics.blit(TEXTURE, 0, 0, 102, 199, 34, 34);
+                    graphics.blit(TEXTURE, 0, 0, 102, 199, 34, 34, 256, 256);
 
-                    graphics.pose().translate(1,1,0);
+                    graphics.enableScissor(x + 1, y + 1, x + 33, y + 33);
+                    graphics.pose().translate(17,1-8.57,0);
+
                     var pixelmon = shownData.get(j);
 
-                    GuiUtilsKt.drawPortraitPokemon(pixelmon.data().getSpecies(), pixelmon.data.getAspects(), graphics.pose(), 13f, false, null, partialTick);
-
+                    GuiUtilsKt.drawPortraitPokemon(pixelmon.data().getSpecies(), pixelmon.data.getAspects(), graphics.pose(), 9.28f, true, null, partialTick);
+                    graphics.disableScissor();
                     if (isMouseOverPixelmon(mouseX, mouseY, x, y)) {
                         this.setTooltip(Tooltip.create(Component.literal(pixelmon.getName())));
                         this.setHoveredPixelmonData(pixelmon);
                         isAnyPixelmonHovered = true;
                     }
+
+                    graphics.pose().popPose();
                 }
             }
         }
@@ -144,7 +148,7 @@ public class PixelmonSelectionWidget extends AbstractButton {
 
     public record PixelmonWidgetData(RenderablePokemon data) {
         public String getName() {
-            return data.getForm().getName();
+            return data.getForm().getName() + " " + data.getSpecies().getName();
         }
     }
 }

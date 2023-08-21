@@ -203,6 +203,11 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         }
     }
 
+    @Override
+    public float getScale() {
+        return getStatueData().getScale();
+    }
+
     public static final class StatueInfo {
         private PokemonProperties properties;
         private float orientation;

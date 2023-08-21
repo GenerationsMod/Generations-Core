@@ -32,7 +32,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
     public RareCandyBone(ResourceLocation location) {
         ResourceLocation location1 = location.withPrefix("bedrock/pokemon/models/");
-        objectSupplier = () -> ModelRegistry.get(location, "pixelmon");
+        objectSupplier = () -> ModelRegistry.get(location, "animated_block");
     }
 
 
@@ -52,6 +52,8 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         if(instance != null) {
             var scale = model.renderObject.scale;
 
+            instance.setLight(packedLight);
+
             if (entity1 instanceof PokemonEntity pokemon) {
 
                 scale *= pokemon.getPokemon().getSpecies().getHitbox().height; //TODO: Turn to actual height eventually.
@@ -62,7 +64,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
                 }
 
             } else if (entity1 instanceof StatueEntity statue) {
-                var species = PokemonSpecies.INSTANCE.getByName(Objects.requireNonNull(statue.getStatueData().getProperties().getSpecies()));
+                var species = statue.getStatueData().getProperties().asRenderablePokemon().getSpecies();
                 scale *= species.getHitbox().height; //TODO: Turn to actual height eventually.
 
                 if (model.renderObject.isReady()) {

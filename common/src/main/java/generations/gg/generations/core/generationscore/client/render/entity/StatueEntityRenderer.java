@@ -33,8 +33,11 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         stack.pushPose();
         stack.mulPose(Axis.YP.rotationDegrees(entityYaw));
         stack.scale(-1, -1, 1);
-        stack.translate(0, -1.501, 0);
+        var scale = entity.getScale();
+        stack.translate(0, -1.501 * scale, 0);
+        stack.scale(scale, scale, scale);
         var state = entity.delegate;
+
         state.updatePartialTicks(partialTicks);
         model.setupAnimStateful(null, state, 0.f, 0.0f, partialTicks, 0.0f,0.0f);
         model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.INSTANCE.getLayers(entity.getStatueData().getProperties().asRenderablePokemon().getSpecies().getResourceIdentifier(), entity.getStatueData().getProperties().getAspects()));

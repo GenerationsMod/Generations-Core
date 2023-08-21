@@ -133,7 +133,11 @@ public class Pipelines {
                         var light = ((BlockLightValueProvider) ctx.instance()).getLight();
                         ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
                     })
-                    .supplyUniform("boneTransforms", ctx -> ctx.uniform().uploadMat4fs(((AnimatedObjectInstance) ctx.instance()).getTransforms()));
+                    .supplyUniform("boneTransforms", ctx -> {
+                        var matrices = ((AnimatedObjectInstance) ctx.instance()).getTransforms();
+
+                        ctx.uniform().uploadMat4fs(matrices != null ? matrices : AnimationController.NO_ANIMATION);
+                    });
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
