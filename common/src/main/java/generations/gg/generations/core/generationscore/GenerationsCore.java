@@ -14,6 +14,7 @@ import com.cobblemon.mod.common.api.pokemon.helditem.HeldItemProvider;
 import com.mojang.logging.LogUtils;
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.InteractionEvent;
+import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
@@ -71,6 +72,7 @@ public class GenerationsCore
 	 */
 	public static void init(GenerationsImplementation implementation, @NotNull Path configDirectory) {
 		GenerationsCore.implementation = implementation;
+		GenerationsCoreEntityDataSerializers.init();
 		implementation.getNetworkManager().registerServerBound();
 		CONFIG_DIRECTORY = configDirectory;
 		GenerationsSounds.init();

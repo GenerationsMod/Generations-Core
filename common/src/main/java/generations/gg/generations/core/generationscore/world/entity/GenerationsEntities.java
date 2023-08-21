@@ -1,14 +1,22 @@
 package generations.gg.generations.core.generationscore.world.entity;
 
+import dev.architectury.registry.level.entity.EntityAttributeRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.world.entity.block.MagmaCrystalEntity;
 import generations.gg.generations.core.generationscore.world.entity.block.SittableEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.level.Level;
+import org.apache.http.client.entity.EntityBuilder;
+
+import java.util.function.Supplier;
 
 public class GenerationsEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ENTITY_TYPE);
@@ -32,10 +40,13 @@ public class GenerationsEntities {
                             MobCategory.MISC).fireImmune().sized(1.375F, 0.5625F)
 //                    .setCustomClientFactory((spawnEntity, world) -> new PokeModChestBoatEntity(world, 0, 0, 0))
                     .build("chest_boat"));
+    public static RegistrySupplier<EntityType<StatueEntity>> STATUE_ENTITY =
+            ENTITIES.register("statue", () -> EntityType.Builder.<StatueEntity>of(StatueEntity::new, MobCategory.MISC).build("statue"));
 
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations entities");
         ENTITIES.register();
+        EntityAttributeRegistry.register(STATUE_ENTITY, StatueEntity::createLivingAttributes);
 //        eventBus.addListener(PokeModEntities::registerEntityAttributes);
     }
 

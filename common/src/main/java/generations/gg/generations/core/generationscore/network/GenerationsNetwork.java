@@ -8,12 +8,16 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.network.packets.*;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.*;
+import generations.gg.generations.core.generationscore.network.packets.statue.C2SUpdateStatueInfoPacket;
+import generations.gg.generations.core.generationscore.network.packets.statue.S2COpenStatueEditorScreenPacket;
+import generations.gg.generations.core.generationscore.network.packets.statue.S2CUpdateStatueInfoPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.network.DialogueGraphRegistrySyncPacket;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
 
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -43,6 +47,8 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createClientBound(S2CSayDialoguePacket.ID, S2CSayDialoguePacket.class, S2CSayDialoguePacket::decode, new S2CSayDialoguePacket.Handler());
         this.createClientBound(S2CCloseScreenPacket.ID, S2CCloseScreenPacket.class, S2CCloseScreenPacket::decode,new  S2CCloseScreenPacket.Handler());
         this.createClientBound(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket.class, S2CUnlockReloadPacket::decode, new S2CUnlockReloadPacket.UnlockReloadPacketHandler());
+        this.createClientBound(S2COpenStatueEditorScreenPacket.ID, S2COpenStatueEditorScreenPacket.class, S2COpenStatueEditorScreenPacket::decode, new S2COpenStatueEditorScreenPacket.Handler());
+        this.createClientBound(S2CUpdateStatueInfoPacket.ID, S2CUpdateStatueInfoPacket.class, S2CUpdateStatueInfoPacket::decode, new S2CUpdateStatueInfoPacket.Handler());
         this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket.class, DialogueGraphRegistrySyncPacket::decode, new DataRegistrySyncPacketHandler<>());
     }
 
@@ -53,6 +59,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createServerBound(C2SRequestNodesDialoguePacket.ID, C2SRequestNodesDialoguePacket.class, C2SRequestNodesDialoguePacket::decode, new C2SRequestNodesDialoguePacket.Handler());
         this.createServerBound(C2SRespondDialoguePacket.ID, C2SRespondDialoguePacket.class, C2SRespondDialoguePacket::decode, new C2SRespondDialoguePacket.Handler());
         this.createServerBound(C2SSaveDatapackEntryPacket.ID, C2SSaveDatapackEntryPacket.class, C2SSaveDatapackEntryPacket::decode, new C2SSaveDatapackEntryPacket.Handler());
+        this.createServerBound(C2SUpdateStatueInfoPacket.ID, C2SUpdateStatueInfoPacket.class, C2SUpdateStatueInfoPacket::decode, new C2SUpdateStatueInfoPacket.Handler());
     }
 
     private <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, Class<T> kClass, Function<FriendlyByteBuf, T> decoder, generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler<T> handler) {
@@ -89,6 +96,11 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
 
     public void sendPacketToServer(GenerationsNetworkPacket<?> packet) {
         GenerationsCore.implementation.getNetworkManager().sendPacketToServer(packet);
+    }
+
+    @Override
+    public <T extends GenerationsNetworkPacket<?>, V extends Entity> void sendToAllTracking(T packet, V entity) {
+        GenerationsCore.implementation.getNetworkManager().sendToAllTracking(packet, entity);
     }
 
     public <T extends GenerationsNetworkPacket<?>> Packet<ClientGamePacketListener> asVanillaClientBound(T packet) {

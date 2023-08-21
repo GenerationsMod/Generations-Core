@@ -11,6 +11,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
@@ -80,5 +81,10 @@ public class GenerationsForgeNetworkManager implements GenerationsImplementation
 
     public <T extends GenerationsNetworkPacket<?>> @NotNull Packet<ClientGamePacketListener> asVanillaClientBound(T packet) {
         return (Packet<ClientGamePacketListener>) this.channel.toVanillaPacket(packet, NetworkDirection.PLAY_TO_CLIENT);
+    }
+
+    @Override
+    public <T extends GenerationsNetworkPacket<?>, V extends Entity> void sendToAllTracking(T packet, V entity) {
+        this.channel.send(PacketDistributor.TRACKING_ENTITY.with(() -> entity), packet);
     }
 }
