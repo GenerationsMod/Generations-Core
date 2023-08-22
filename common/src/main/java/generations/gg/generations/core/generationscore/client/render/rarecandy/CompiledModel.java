@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.BufferUploader;
 import de.javagl.jgltf.model.GltfModel;
 import gg.generations.pokeutils.PixelAsset;
 import gg.generations.rarecandy.components.MeshObject;
@@ -23,7 +25,7 @@ import java.util.function.Supplier;
 public class CompiledModel {
     public final MultiRenderObject<MeshObject> renderObject;
     public CompiledModel(ResourceLocation a, InputStream stream, Function<String, Pipeline> pipeline, Function<GltfModel, Supplier<MeshObject>> supplier) {
-        var loader = ModelRegistry.getRareCandy().getLoader();
+        var loader = ModelRegistry.getWorldRareCandy().getLoader();
         this.renderObject = loader.createObject(
                 () -> new PixelAsset(stream, a.toString()),
                 (gltfModel, smdFileMap, pkxFileMap, textures, config, object) -> {
@@ -42,8 +44,16 @@ public class CompiledModel {
         );
     }
 
+    public void renderGui(ObjectInstance instance, Matrix4f projectionMatrix) {
+//        RenderSystem.enableDepthTest();
+        BufferUploader.reset();
+        render(instance, projectionMatrix, ModelRegistry.getGuiRareCandy().objectManager);
+        ModelRegistry.getGuiRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+        ModelRegistry.freePool();
+    }
+
     public void render(ObjectInstance instance, Matrix4f projectionMatrix) {
-        render(instance, projectionMatrix, ModelRegistry.getRareCandy().objectManager);
+        render(instance, projectionMatrix, ModelRegistry.getWorldRareCandy().objectManager);
     }
 
     public void render(ObjectInstance instance, Matrix4f projectionMatrix, ObjectManager objectManager) {
