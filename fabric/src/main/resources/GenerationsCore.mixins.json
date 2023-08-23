@@ -9,6 +9,7 @@
     "PortalShapeMixin"
   ],
   "client": [
+    "MainMixin"
   ],
   "injectors": {
     "defaultRequire": 1
