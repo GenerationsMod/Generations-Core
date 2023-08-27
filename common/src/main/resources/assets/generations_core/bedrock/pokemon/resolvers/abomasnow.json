@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:abomasnow",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "generations_core:abomasnow",
+      "model": "generations_core:abomasnow.pk",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

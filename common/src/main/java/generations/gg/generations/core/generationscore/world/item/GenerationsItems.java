@@ -1,11 +1,19 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
+import com.cobblemon.mod.common.api.types.ElementalTypes;
+import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.pokemon.Species;
+import com.google.common.collect.Streams;
 import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsChestBoatEntity;
+import generations.gg.generations.core.generationscore.world.entity.TieredFishingHookEntity;
+import generations.gg.generations.core.generationscore.world.entity.block.MagmaCrystalEntity;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryItem;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
@@ -17,6 +25,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.SoftSoilBlock.Mulch;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -197,8 +206,10 @@ public class GenerationsItems {
     /**
      * TM ITEMS
      */
+    public static final RegistrySupplier<Item> TM = register("tm", TechnicalMachineItem::new, null);
+
     /*
-    public static final RegistrySupplier<Item> TM_1 = register("tm_1", properties -> new TechnicalMachineItem("take_down", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_1 = register("tm_1, "take_down", 1", properties -> new TechnicalMachineItem("take_down", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_2 = register("tm_2", properties -> new TechnicalMachineItem("charm", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_3 = register("tm_3", properties -> new TechnicalMachineItem("fake_tears", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_4 = register("tm_4", properties -> new TechnicalMachineItem("agility", properties), GenerationsCreativeTabs.TMS);
@@ -298,77 +309,77 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TM_98 = register("tm_98", properties -> new TechnicalMachineItem("skill_swap", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_99 = register("tm_99", properties -> new TechnicalMachineItem("iron_head", properties), GenerationsCreativeTabs.TMS);
     public static final RegistrySupplier<Item> TM_100 = register("tm_100", properties -> new TechnicalMachineItem("dragon_dance", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_101 = register("tm_101", properties -> new TechnicalMachineItem("power_gem", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_102 = register("tm_102", properties -> new TechnicalMachineItem("gunk_shot", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_103 = register("tm_103", properties -> new TechnicalMachineItem("substitue", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_104 = register("tm_104", properties -> new TechnicalMachineItem("iron_defense", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_105 = register("tm_105", properties -> new TechnicalMachineItem("x_scissor", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_106 = register("tm_106", properties -> new TechnicalMachineItem("drill_run", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_107 = register("tm_107", properties -> new TechnicalMachineItem("will_o_wisp", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_108 = register("tm_108", properties -> new TechnicalMachineItem("crunch", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_109 = register("tm_109", properties -> new TechnicalMachineItem("trick", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_110 = register("tm_110", properties -> new TechnicalMachineItem("liquidation", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_111 = register("tm_111", properties -> new TechnicalMachineItem("giga_drain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_112 = register("tm_112", properties -> new TechnicalMachineItem("aura_sphere", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_113 = register("tm_113", properties -> new TechnicalMachineItem("tailwind", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_114 = register("tm_114", properties -> new TechnicalMachineItem("shadow_ball", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_115 = register("tm_115", properties -> new TechnicalMachineItem("dragon_pulse", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_116 = register("tm_116", properties -> new TechnicalMachineItem("stealth_rock", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_117 = register("tm_117", properties -> new TechnicalMachineItem("hyper_voice", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_118 = register("tm_118", properties -> new TechnicalMachineItem("heat_wave", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_119 = register("tm_119", properties -> new TechnicalMachineItem("energy_ball", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_120 = register("tm_120", properties -> new TechnicalMachineItem("psychic", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_121 = register("tm_121", properties -> new TechnicalMachineItem("heavy_slam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_122 = register("tm_122", properties -> new TechnicalMachineItem("encore", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_123 = register("tm_123", properties -> new TechnicalMachineItem("surf", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_124 = register("tm_124", properties -> new TechnicalMachineItem("ice_spinner", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_125 = register("tm_125", properties -> new TechnicalMachineItem("flamethrower", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_126 = register("tm_126", properties -> new TechnicalMachineItem("thunderbolt", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_127 = register("tm_127", properties -> new TechnicalMachineItem("play_rough", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_128 = register("tm_128", properties -> new TechnicalMachineItem("amnesia", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_129 = register("tm_129", properties -> new TechnicalMachineItem("calm_mind", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_130 = register("tm_130", properties -> new TechnicalMachineItem("helping_hand", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_131 = register("tm_131", properties -> new TechnicalMachineItem("pollen_puff", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_132 = register("tm_132", properties -> new TechnicalMachineItem("baton_pass", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_133 = register("tm_133", properties -> new TechnicalMachineItem("earth_power", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_134 = register("tm_134", properties -> new TechnicalMachineItem("reversal", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_135 = register("tm_135", properties -> new TechnicalMachineItem("ice_beam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_136 = register("tm_136", properties -> new TechnicalMachineItem("electric_terrain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_137 = register("tm_137", properties -> new TechnicalMachineItem("grass_terrain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_138 = register("tm_138", properties -> new TechnicalMachineItem("psychic_terrain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_139 = register("tm_139", properties -> new TechnicalMachineItem("misty_terrain", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_140 = register("tm_140", properties -> new TechnicalMachineItem("nasty_plot", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_141 = register("tm_141", properties -> new TechnicalMachineItem("fire_blast", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_142 = register("tm_142", properties -> new TechnicalMachineItem("hydro_pump", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_143 = register("tm_143", properties -> new TechnicalMachineItem("blizzard", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_144 = register("tm_144", properties -> new TechnicalMachineItem("fire_pledge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_145 = register("tm_145", properties -> new TechnicalMachineItem("water_pledge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_146 = register("tm_146", properties -> new TechnicalMachineItem("grass_pledge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_147 = register("tm_147", properties -> new TechnicalMachineItem("wild_charge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_148 = register("tm_148", properties -> new TechnicalMachineItem("sludge_bomb", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_149 = register("tm_149", properties -> new TechnicalMachineItem("earthquake", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_150 = register("tm_150", properties -> new TechnicalMachineItem("stone_edge", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_151 = register("tm_151", properties -> new TechnicalMachineItem("phantom_force", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_152 = register("tm_152", properties -> new TechnicalMachineItem("giga_impact", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_153 = register("tm_153", properties -> new TechnicalMachineItem("blast_burn", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_154 = register("tm_154", properties -> new TechnicalMachineItem("hydro_cannon", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_155 = register("tm_155", properties -> new TechnicalMachineItem("frenzy_plant", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_156 = register("tm_156", properties -> new TechnicalMachineItem("outrage", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_157 = register("tm_157", properties -> new TechnicalMachineItem("overheat", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_158 = register("tm_158", properties -> new TechnicalMachineItem("focus_blast", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_159 = register("tm_159", properties -> new TechnicalMachineItem("leaf_storm", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_160 = register("tm_160", properties -> new TechnicalMachineItem("hurricane", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_161 = register("tm_161", properties -> new TechnicalMachineItem("trick_room", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_162 = register("tm_162", properties -> new TechnicalMachineItem("bug_buzz", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_163 = register("tm_163", properties -> new TechnicalMachineItem("hyper_beam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_164 = register("tm_164", properties -> new TechnicalMachineItem("brave_bird", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_165 = register("tm_165", properties -> new TechnicalMachineItem("flare_blitz", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_166 = register("tm_166", properties -> new TechnicalMachineItem("thunder", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_167 = register("tm_167", properties -> new TechnicalMachineItem("close_combat", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_168 = register("tm_168", properties -> new TechnicalMachineItem("solar_beam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_169 = register("tm_169", properties -> new TechnicalMachineItem("draco_meteor", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_170 = register("tm_170", properties -> new TechnicalMachineItem("steel_beam", properties), GenerationsCreativeTabs.TMS);
-    public static final RegistrySupplier<Item> TM_171 = register("tm_171", properties -> new TechnicalMachineItem("tera_blast", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_101 = register("tm_101, "power_gem", 101", properties -> new TechnicalMachineItem("power_gem", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_102 = register("tm_102, "gunk_shot", 102", properties -> new TechnicalMachineItem("gunk_shot", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_103 = register("tm_103, "substitue", 103", properties -> new TechnicalMachineItem("substitue", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_104 = register("tm_104, "iron_defense", 104", properties -> new TechnicalMachineItem("iron_defense", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_105 = register("tm_105, "x_scissor", 105", properties -> new TechnicalMachineItem("x_scissor", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_106 = register("tm_106, "drill_run", 106", properties -> new TechnicalMachineItem("drill_run", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_107 = register("tm_107, "will_o_wisp", 107", properties -> new TechnicalMachineItem("will_o_wisp", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_108 = register("tm_108, "crunch", 108", properties -> new TechnicalMachineItem("crunch", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_109 = register("tm_109, "trick", 109", properties -> new TechnicalMachineItem("trick", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_110 = register("tm_110, "liquidation", 110", properties -> new TechnicalMachineItem("liquidation", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_111 = register("tm_111, "giga_drain", 111", properties -> new TechnicalMachineItem("giga_drain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_112 = register("tm_112, "aura_sphere", 112", properties -> new TechnicalMachineItem("aura_sphere", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_113 = register("tm_113, "tailwind", 113", properties -> new TechnicalMachineItem("tailwind", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_114 = register("tm_114, "shadow_ball", 114", properties -> new TechnicalMachineItem("shadow_ball", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_115 = register("tm_115, "dragon_pulse", 115", properties -> new TechnicalMachineItem("dragon_pulse", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_116 = register("tm_116, "stealth_rock", 116", properties -> new TechnicalMachineItem("stealth_rock", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_117 = register("tm_117, "hyper_voice", 117", properties -> new TechnicalMachineItem("hyper_voice", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_118 = register("tm_118, "heat_wave", 118", properties -> new TechnicalMachineItem("heat_wave", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_119 = register("tm_119, "energy_ball", 119", properties -> new TechnicalMachineItem("energy_ball", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_120 = register("tm_120, "psychic", 120", properties -> new TechnicalMachineItem("psychic", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_121 = register("tm_121, "heavy_slam", 121", properties -> new TechnicalMachineItem("heavy_slam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_122 = register("tm_122, "encore", 122", properties -> new TechnicalMachineItem("encore", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_123 = register("tm_123, "surf", 123", properties -> new TechnicalMachineItem("surf", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_124 = register("tm_124, "ice_spinner", 124", properties -> new TechnicalMachineItem("ice_spinner", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_125 = register("tm_125, "flamethrower", 125", properties -> new TechnicalMachineItem("flamethrower", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_126 = register("tm_126, "thunderbolt", 126", properties -> new TechnicalMachineItem("thunderbolt", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_127 = register("tm_127, "play_rough", 127", properties -> new TechnicalMachineItem("play_rough", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_128 = register("tm_128, "amnesia", 128", properties -> new TechnicalMachineItem("amnesia", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_129 = register("tm_129, "calm_mind", 129", properties -> new TechnicalMachineItem("calm_mind", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_130 = register("tm_130, "helping_hand", 130", properties -> new TechnicalMachineItem("helping_hand", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_131 = register("tm_131, "pollen_puff", 131", properties -> new TechnicalMachineItem("pollen_puff", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_132 = register("tm_132, "baton_pass", 132", properties -> new TechnicalMachineItem("baton_pass", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_133 = register("tm_133, "earth_power", 133", properties -> new TechnicalMachineItem("earth_power", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_134 = register("tm_134, "reversal", 134", properties -> new TechnicalMachineItem("reversal", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_135 = register("tm_135, "ice_beam", 135", properties -> new TechnicalMachineItem("ice_beam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_136 = register("tm_136, "electric_terrain", 136", properties -> new TechnicalMachineItem("electric_terrain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_137 = register("tm_137, "grass_terrain", 137", properties -> new TechnicalMachineItem("grass_terrain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_138 = register("tm_138, "psychic_terrain", 138", properties -> new TechnicalMachineItem("psychic_terrain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_139 = register("tm_139, "misty_terrain", 139", properties -> new TechnicalMachineItem("misty_terrain", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_140 = register("tm_140, "nasty_plot", 140", properties -> new TechnicalMachineItem("nasty_plot", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_141 = register("tm_141, "fire_blast", 141", properties -> new TechnicalMachineItem("fire_blast", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_142 = register("tm_142, "hydro_pump", 142", properties -> new TechnicalMachineItem("hydro_pump", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_143 = register("tm_143, "blizzard", 143", properties -> new TechnicalMachineItem("blizzard", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_144 = register("tm_144, "fire_pledge", 144", properties -> new TechnicalMachineItem("fire_pledge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_145 = register("tm_145, "water_pledge", 145", properties -> new TechnicalMachineItem("water_pledge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_146 = register("tm_146, "grass_pledge", 146", properties -> new TechnicalMachineItem("grass_pledge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_147 = register("tm_147, "wild_charge", 147", properties -> new TechnicalMachineItem("wild_charge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_148 = register("tm_148, "sludge_bomb", 148", properties -> new TechnicalMachineItem("sludge_bomb", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_149 = register("tm_149, "earthquake", 149", properties -> new TechnicalMachineItem("earthquake", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_150 = register("tm_150, "stone_edge", 150", properties -> new TechnicalMachineItem("stone_edge", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_151 = register("tm_151, "phantom_force", 151", properties -> new TechnicalMachineItem("phantom_force", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_152 = register("tm_152, "giga_impact", 152", properties -> new TechnicalMachineItem("giga_impact", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_153 = register("tm_153, "blast_burn", 153", properties -> new TechnicalMachineItem("blast_burn", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_154 = register("tm_154, "hydro_cannon", 154", properties -> new TechnicalMachineItem("hydro_cannon", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_155 = register("tm_155, "frenzy_plant", 155", properties -> new TechnicalMachineItem("frenzy_plant", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_156 = register("tm_156, "outrage", 156", properties -> new TechnicalMachineItem("outrage", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_157 = register("tm_157, "overheat", 157", properties -> new TechnicalMachineItem("overheat", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_158 = register("tm_158, "focus_blast", 158", properties -> new TechnicalMachineItem("focus_blast", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_159 = register("tm_159, "leaf_storm", 159", properties -> new TechnicalMachineItem("leaf_storm", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_160 = register("tm_160, "hurricane", 160", properties -> new TechnicalMachineItem("hurricane", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_161 = register("tm_161, "trick_room", 161", properties -> new TechnicalMachineItem("trick_room", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_162 = register("tm_162, "bug_buzz", 162", properties -> new TechnicalMachineItem("bug_buzz", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_163 = register("tm_163, "hyper_beam", 163", properties -> new TechnicalMachineItem("hyper_beam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_164 = register("tm_164, "brave_bird", 164", properties -> new TechnicalMachineItem("brave_bird", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_165 = register("tm_165, "flare_blitz", 165", properties -> new TechnicalMachineItem("flare_blitz", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_166 = register("tm_166, "thunder", 166", properties -> new TechnicalMachineItem("thunder", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_167 = register("tm_167, "close_combat", 167", properties -> new TechnicalMachineItem("close_combat", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_168 = register("tm_168, "solar_beam", 168", properties -> new TechnicalMachineItem("solar_beam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_169 = register("tm_169, "draco_meteor", 169", properties -> new TechnicalMachineItem("draco_meteor", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_170 = register("tm_170, "steel_beam", 170", properties -> new TechnicalMachineItem("steel_beam", properties), GenerationsCreativeTabs.TMS);
+    public static final RegistrySupplier<Item> TM_171 = register("tm_171, "tera_blast", 171", properties -> new TechnicalMachineItem("tera_blast", properties), GenerationsCreativeTabs.TMS);
      */
 
     /**
@@ -909,13 +920,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> CATCHING_CHARM = register("catching_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> EXP_CHARM = register("exp_charm", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     /*, TieredFishingHookEntity.Teir.OLD*/
-    public static final RegistrySupplier<Item> OLD_ROD = register("old_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    /*, TieredFishingHookEntity.Teir.GOOD*/
-    public static final RegistrySupplier<Item> GOOD_ROD = register("good_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> OLD_ROD = register("old_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.OLD), GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> GOOD_ROD = register("good_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.GOOD), GenerationsCreativeTabs.PLAYER_ITEMS);
     /*, TieredFishingHookEntity.Teir.SUPER*/
-    public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.SUPER), GenerationsCreativeTabs.PLAYER_ITEMS);
     /*, TieredFishingHookEntity.Teir.RUBY*/
-    public static final RegistrySupplier<Item> RUBY_ROD = register("ruby_rod", TieredFishingRodItem::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> RUBY_ROD = register("ruby_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.RUBY), GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> CAMERA = register("camera", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SNAP_CAMERA = register("snap_camera", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> FILM = register("film", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
@@ -956,9 +966,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MARTIAL_ORB = register("martial_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MALEVOLENT_ORB = register("malevolent_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> GENERATIONS_ORB = register("generations_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ADAMANT_ORB = register("adamant_orb", properties -> new CreationTrioItem(properties.stacksTo(1), GenerationsCore.id("dialga"), GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> GRISEOUS_ORB = register("griseous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), GenerationsCore.id("giratina"), GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> LUSTROUS_ORB = register("lustrous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), GenerationsCore.id("palkia"), GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> ADAMANT_ORB = register("adamant_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "dialga", GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> GRISEOUS_ORB = register("griseous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "giratina", GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> LUSTROUS_ORB = register("lustrous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "palkia", GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_1 = register("shattered_ice_key_1", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_2 = register("shattered_ice_key_2", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_3 = register("shattered_ice_key_3", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -998,10 +1008,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> LEGEND_FINDER = register("legend_finder", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> HOOPA_RING = register("hoopa_ring", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> RED_ORB = register("red_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FADED_RED_ORB = register("faded_red_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300)/*, ElementType.FIRE*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FADED_BLUE_ORB = register("faded_blue_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300)/*, ElementType.WATER*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> FADED_RED_ORB = register("faded_red_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFIRE()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> FADED_BLUE_ORB = register("faded_blue_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getWATER()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> BLUE_ORB = register("blue_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> JADE_ORB = register("jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300)/*, ElementType.FLYING*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> JADE_ORB = register("jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFLYING()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LIGHT_STONE = register("light_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), "reshiram"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> DARK_STONE = register("dark_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), "zekrom"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> DRAGON_STONE = register("dragon_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), "kyurem"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1012,19 +1022,14 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SPARKLING_SHARD = register("sparkling_shard", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SPARKLING_STONE = register("sparkling_stone", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> RUSTY_FRAGMENT = register("rusty_fragment", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RUSTY_SWORD = register("rusty_sword", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zacian", "pixelmon.rusty_sword.amountfull", (player, stack/*, battle*/) -> {
-/*        var participant = battle.controller.getParticipant(player).orElseThrow();
-        var data = (PixelmonData) participant.getParty().fieldPixelmon;
-        return data.getElements().contains(ElementType.FAIRY);*/
-        return false;
-    }), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RUSTY_SWORD = register("rusty_sword", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zacian", "pixelmon.rusty_sword.amountfull", (player, stack, battle) -> Streams.stream(battle.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getFAIRY()))), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> CROWNED_SWORD = register("crowned_sword", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RUSTY_SHIELD = register("rusty_shield", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zamazenta", "pixelmon.rusty_shield.amountfull", (player, stack/*, battle*/) -> false/*ElementType.FIGHTING.anyMatch((battle.controller.getParticipant(player).orElseThrow().getParty().fieldPixelmon).getElements())*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RUSTY_SHIELD = register("rusty_shield", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(250), "zamazenta", "pixelmon.rusty_shield.amountfull", (player, stack, battle) -> Streams.stream(battle.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getFIGHTING()))), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> CROWNED_SHIELD = register("crowned_shield", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SCROLL_PAGE = register("scroll_page", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> SECRET_ARMOR_SCROLL = register("secret_armor_scroll", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(100), "kubfu", "pixelmon.secret_armor_scoll.amountfull", (player, stack/*, battle*/) -> false/*battle.getParticipants().stream().anyMatch(e -> e instanceof NpcParticipant)*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> SECRET_ARMOR_SCROLL = register("secret_armor_scroll", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(100), "kubfu", "pixelmon.secret_armor_scoll.amountfull", (player, stack, battle) -> battle.isNpc()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ZYGARDE_CUBE = register("zygarde_cube", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> MELTAN_BOX = register("meltan_box", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(200), "meltan", "pixelmon.meltanbox.amountfull", (player, stack/*, battle*/) -> false /*PixelmonParty.of(player).stream().anyMatch(a -> a.getSpecies().equals(GenerationsCore.id("meltan"))) && ElementType.STEEL.anyMatch((battle.controller.getParticipant(player).orElseThrow().getParty().fieldPixelmon).getElements())*/) {
+    public static final RegistrySupplier<Item> MELTAN_BOX = register("meltan_box", properties -> new PostBattleUpdatingItemImpl(properties.stacksTo(1).durability(200), "meltan", "pixelmon.meltanbox.amountfull", (player, stack, battle) -> Streams.stream(new PlayerPartyStore(player.getUuid()).iterator()).map(Pokemon::getSpecies).map(Species::getResourceIdentifier).map(ResourceLocation::toString).anyMatch(a -> a.equals("cobblemon:meltan")) && Streams.stream(battle.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getSTEEL()))) {
         @Override
         protected void postSpawn(Level level, Player player, InteractionHand usedHand) {
             player.setItemInHand(usedHand, new ItemStack(MELTAN_BOX_CHARGED.get()));
@@ -1047,8 +1052,8 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ENIGMA_STONE = register("enigma_stone", properties -> new DistanceTraveledImplItem(properties.stacksTo(1), 3000) {
         @Override
         protected void onCompletion(ServerLevel level, Player player, InteractionHand usedHand) {
-//            var species = Math.random() > 0.5 ? GenerationsCore.id("latias") : GenerationsCore.id("latios");
-//            level.addFreshEntity(new PixelmonEntity(level, PixelmonData.of(species), player.getOnPos()));
+            var species = Math.random() > 0.5 ? "latias" : "latios";
+            PokemonUtil.spawn(species, level, player.getOnPos());
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ENIGMA_SHARD = register("enigma_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1080,10 +1085,10 @@ public class GenerationsItems {
             );
             player.getCooldowns().addCooldown(this, 20);
             if (!level.isClientSide) {
-//                MagmaCrystalEntity magmaCrystal = new MagmaCrystalEntity(level, player); //TODO: Re enable
-//                magmaCrystal.setItem(itemStack);
-//                magmaCrystal.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-//                level.addFreshEntity(magmaCrystal);
+                MagmaCrystalEntity magmaCrystal = new MagmaCrystalEntity(level, player); //TODO: Re enable
+                magmaCrystal.setItem(itemStack);
+                magmaCrystal.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+                level.addFreshEntity(magmaCrystal);
             }
 
             player.awardStat(Stats.ITEM_USED.get(this));
@@ -1491,7 +1496,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> POKE_RADAR = register("poke_radar", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKEBLOCK_CASE = register("pokeblock_case", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKEBLOCK_KIT = register("pokeblock_kit", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> POKEMON_BOX_LINK = register("pokemon_box_link", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> POKEMON_BOX_LINK = register("pokemon_box_link", properties -> new Item(properties.stacksTo(1)) {
+        @Override
+        public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+            return super.use(level, player, interactionHand);
+        }
+    }, GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKETCH_BLUE = register("poketch_blue", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKETCH_RED = register("poketch_red", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POWDER_JAR = register("powder_jar", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1633,42 +1643,42 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmonItem(properties, 2, "great_walkmon"), GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmonItem(properties, 3, "ultra_walkmon"), GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmonItem(properties, 4, "master_walkmon"), GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> MUSIC_DISC_BEAST_BALL = createMusicDisc("music_disc_beast_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_CHERISH_BALL = createMusicDisc("music_disc_cherish_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_DIVE_BALL = createMusicDisc("music_disc_dive_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_DREAM_BALL = createMusicDisc("music_disc_dream_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_DUSK_BALL = createMusicDisc("music_disc_dusk_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_FAST_BALL = createMusicDisc("music_disc_fast_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_FEATHER = createMusicDisc("music_disc_feather", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_FRIEND_BALL = createMusicDisc("music_disc_friend_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_GREAT_BALL = createMusicDisc("music_disc_great_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_GS_BALL = createMusicDisc("music_disc_gs_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_HEAL_BALL = createMusicDisc("music_disc_heal_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_HEAVY_BALL = createMusicDisc("music_disc_heavy_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LEADEN_BALL = createMusicDisc("music_disc_leaden_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LEVEL_BALL = createMusicDisc("music_disc_level_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LOVE_BALL = createMusicDisc("music_disc_love_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LURE_BALL = createMusicDisc("music_disc_lure_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_LUXURY_BALL = createMusicDisc("music_disc_luxury_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_MASTER_BALL = createMusicDisc("music_disc_master_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_MOON_BALL = createMusicDisc("music_disc_moon_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_NEST_BALL = createMusicDisc("music_disc_nest_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_NET_BALL = createMusicDisc("music_disc_net_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_OLD_POKEBALL_DISC = createMusicDisc("music_disc_old_pokeball_disc", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_ORIGIN_BALL = createMusicDisc("music_disc_origin_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_PARK_BALL = createMusicDisc("music_disc_park_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_POKE_BALL = createMusicDisc("music_disc_poke_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_PREMIER_BALL = createMusicDisc("music_disc_premier_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_QUICK_BALL = createMusicDisc("music_disc_quick_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_REPEAT_BALL = createMusicDisc("music_disc_repeat_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_SAFARI_BALL = createMusicDisc("music_disc_safari_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_SPORT_BALL = createMusicDisc("music_disc_sport_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_STRANGE_BALL = createMusicDisc("music_disc_strange_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_TIMER_BALL = createMusicDisc("music_disc_timer_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
-    public static final RegistrySupplier<Item> MUSIC_DISC_ULTRA_BALL = createMusicDisc("music_disc_ultra_ball", GenerationsSounds.LUGIA_SHRINE_SONG);
+    public static final RegistrySupplier<Item> AZALEA_TOWN_DISC = createMusicDisc("azalea_town_disc", GenerationsSounds.AZALEA_TOWN, 4000);
+    public static final RegistrySupplier<Item> CASCARRAFA_CITY_DISC = createMusicDisc("cascarrafa_city_disc", GenerationsSounds.CASCARRAFA_CITY, 3396);
+    public static final RegistrySupplier<Item> CERULEAN_CITY_DISC = createMusicDisc("cerulean_city_disc", GenerationsSounds.CERULEAN_CITY, 3677);
+    public static final RegistrySupplier<Item> ETERNA_CITY_DISC = createMusicDisc("eterna_city_disc", GenerationsSounds.ETERNA_CITY, 2720);
+    public static final RegistrySupplier<Item> GOLDENROD_CITY_DISC = createMusicDisc("goldenrod_city_disc", GenerationsSounds.GOLDENROD_CITY, 3642);
+    public static final RegistrySupplier<Item> ICIRRUS_CITY_DISC = createMusicDisc("icirrus_city_disc", GenerationsSounds.ICIRRUS_CITY, 2958);
+    public static final RegistrySupplier<Item> JUBILIFE_VILLAGE_DISC = createMusicDisc("jubilife_village_disc", GenerationsSounds.JUBILIFE_VILLAGE, 4048);
+    public static final RegistrySupplier<Item> LAKE_OF_RAGE_DISC = createMusicDisc("lake_of_rage_disc", GenerationsSounds.LAKE_OF_RAGE, 2773);
+    public static final RegistrySupplier<Item> LAVERRE_CITY_DISC = createMusicDisc("laverre_city_disc", GenerationsSounds.LAVERRE_CITY, 5626);
+    public static final RegistrySupplier<Item> LILLIE_DISC = createMusicDisc("lillie_disc", GenerationsSounds.LILLIE, 6241);
+    public static final RegistrySupplier<Item> POKEMON_CENTER_DISC = createMusicDisc("pokemon_center_disc", GenerationsSounds.POKEMON_CENTER, 4806);
+    public static final RegistrySupplier<Item> ROUTE_228_DISC = createMusicDisc("route_228_disc", GenerationsSounds.ROUTE_228, 8374);
+    public static final RegistrySupplier<Item> SLUMBERING_WEALD_DISC = createMusicDisc("slumbering_weald_disc", GenerationsSounds.SLUMBERING_WEALD, 5242);
+    public static final RegistrySupplier<Item> SURF_DISC = createMusicDisc("surf_disc", GenerationsSounds.SURF, 5230);
+    public static final RegistrySupplier<Item> VERMILION_CITY_DISC = createMusicDisc("vermilion_city_disc", GenerationsSounds.VERMILION_CITY, 4320);
+    public static final RegistrySupplier<Item> CYNTHIA_DISC = createMusicDisc("cynthia_disc", GenerationsSounds.CYNTHIA, 7705);
+    public static final RegistrySupplier<Item> DEOXYS_DISC = createMusicDisc("deoxys_disc", GenerationsSounds.DEOXYS, 8290);
+    public static final RegistrySupplier<Item> IRIS_DISC = createMusicDisc("iris_disc", GenerationsSounds.IRIS, 5824);
+    public static final RegistrySupplier<Item> KANTO_DISC = createMusicDisc("kanto_disc", GenerationsSounds.KANTO, 6748);
+    public static final RegistrySupplier<Item> LUSAMINE_DISC = createMusicDisc("lusamine_disc", GenerationsSounds.LUSAMINE, 6756);
+    public static final RegistrySupplier<Item> NEMONA_DISC = createMusicDisc("nemona_disc", GenerationsSounds.NEMONA, 3169);
+    public static final RegistrySupplier<Item> NESSA_DISC = createMusicDisc("nessa_disc", GenerationsSounds.NESSA, 5276);
+    public static final RegistrySupplier<Item> PENNY_DISC = createMusicDisc("penny_disc", GenerationsSounds.PENNY, 5342);
+    public static final RegistrySupplier<Item> RIVAL_DISC = createMusicDisc("rival_disc", GenerationsSounds.RIVAL, 4426);
+    public static final RegistrySupplier<Item> SADA_AND_TURO_DISC = createMusicDisc("sada_and_turo_disc", GenerationsSounds.SADA_AND_TURO, 6974);
+    public static final RegistrySupplier<Item> SOUTH_PROVINCE_DISC = createMusicDisc("south_province_disc", GenerationsSounds.SOUTH_PROVINCE, 4285);
+    public static final RegistrySupplier<Item> TEAM_ROCKET_DISC = createMusicDisc("team_rocket_disc", GenerationsSounds.TEAM_ROCKET, 3729);
+    public static final RegistrySupplier<Item> ULTRA_NECROZMA_DISC = createMusicDisc("ultra_necrozma_disc", GenerationsSounds.ULTRA_NECROZMA, 5925);
+    public static final RegistrySupplier<Item> XY_LEGENDARY_DISC = createMusicDisc("xy_legendary_disc", GenerationsSounds.XY_LEGENDARY, 5216);
+    public static final RegistrySupplier<Item> ZINNIA_DISC = createMusicDisc("zinnia_disc", GenerationsSounds.ZINNIA, 6409);
+    public static final RegistrySupplier<Item> LAVENDER_TOWN_DISC = createMusicDisc("lavender_town_disc", GenerationsSounds.LAVENDER_TOWN, 7376);
+    public static final RegistrySupplier<Item> LUGIA_DISC = createMusicDisc("lugia_disc", GenerationsSounds.LUGIA, 6825);
+    public static final RegistrySupplier<Item> MT_PYRE_DISC = createMusicDisc("mt_pyre_disc", GenerationsSounds.MT_PYRE, 4372);
 
-    private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound) {
-        return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, 10000), GenerationsCreativeTabs.UNIMPLEMENTED);
+    private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound, int ticks) {
+        return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, ticks), GenerationsCreativeTabs.UNIMPLEMENTED);
     }
 
     public static Item.Properties of() {
@@ -1677,10 +1687,6 @@ public class GenerationsItems {
 
     public static RegistrySupplier<Item> registerPokeBall(String name, Function<Item.Properties, Item> itemSupplier) {
         return POKEBALLS.register(name, () -> itemSupplier.apply(of().arch$tab(GenerationsCreativeTabs.POKEBALLS)));
-    }
-
-    public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> itemSupplier, CreativeModeTab tab) {
-        return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
     }
 
     public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {

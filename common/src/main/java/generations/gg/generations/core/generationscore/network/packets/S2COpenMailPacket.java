@@ -1,14 +1,42 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
+import generations.gg.generations.core.generationscore.client.screen.mails.MailEditScreen;
+import generations.gg.generations.core.generationscore.client.screen.mails.MailViewScreen;
+import generations.gg.generations.core.generationscore.client.screen.mails.MailViewScreen.WrittenMailAccess;
+import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
+import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 
-public record S2COpenMailPacket(InteractionHand hand) {
-    public S2COpenMailPacket(FriendlyByteBuf buf) {
-        this(buf.readEnum(InteractionHand.class));
+import static generations.gg.generations.core.generationscore.GenerationsCore.id;
+
+public record S2COpenMailPacket(InteractionHand hand) implements GenerationsNetworkPacket<S2COpenMailPacket> {
+    public ResourceLocation getId() {
+        return ID;
+    }
+    public void encode(FriendlyByteBuf buf) {
+        buf.writeEnum(hand);
     }
 
-    public void encode(FriendlyByteBuf buf) {
-        buf.writeEnum(hand());
+    public static ResourceLocation ID = id("open_mail");
+    public static S2COpenMailPacket decode(FriendlyByteBuf buf) {
+        return new S2COpenMailPacket(buf.readEnum(InteractionHand.class));
+    }
+
+    public static class Handler implements ClientNetworkPacketHandler<S2COpenMailPacket> {
+        public void handle(S2COpenMailPacket packet, Minecraft client) {
+            var itemStack = client.player.getItemInHand(packet.hand());
+            if (itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL)) client.setScreen(
+                    new MailViewScreen(
+                            new WrittenMailAccess(itemStack)));
+            else if (itemStack.is(GenerationsItemTags.POKEMAIL)) client.setScreen(
+                    new MailEditScreen(
+                        client.player,
+                        itemStack,
+                        packet.hand)
+            );
+        }
     }
 }

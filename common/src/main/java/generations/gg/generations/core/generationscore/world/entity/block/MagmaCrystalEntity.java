@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.world.entity.block;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import com.cobblemon.mod.common.client.gui.PokemonGuiUtilsKt;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.server.level.ServerPlayer;
@@ -12,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 public class MagmaCrystalEntity extends ThrowableItemProjectile {

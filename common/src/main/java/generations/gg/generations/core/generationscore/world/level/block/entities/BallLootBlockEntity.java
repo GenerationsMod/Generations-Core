@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.level.block.BallLootBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -16,10 +17,10 @@ import java.util.stream.Collectors;
 
 public class BallLootBlockEntity extends ModelProvidingBlockEntity implements ModelContextProviders.VariantProvider {
     private UUID owner = null;
-    private List<LootClaim> claims = new ArrayList<>();
+    private final List<LootClaim> claims = new ArrayList<>();
     private LootMode lootMode = LootMode.PL1D;
     private boolean doesCustomDrops = false;
-    private boolean visible = false;
+    private boolean visible = true;
     private NonNullList<ItemStack> customDrops = null;
 
     @Override
@@ -64,7 +65,7 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity implements Mo
         nbt.putBoolean("visible", visible);
 
         if(customDrops != null)
-            nbt.put("customDrops", customDrops.stream().map(ItemStack::getTag).collect(ListTag::new, AbstractList::add, AbstractCollection::addAll));
+            nbt.put("customDrops", customDrops.stream().map(GenerationsUtils::toCompoundTag).collect(ListTag::new, AbstractList::add, AbstractCollection::addAll));
     }
 
     public BallLootBlockEntity(BlockPos pPos, BlockState pBlockState) {

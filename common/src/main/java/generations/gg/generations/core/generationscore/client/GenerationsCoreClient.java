@@ -1,8 +1,17 @@
 package generations.gg.generations.core.generationscore.client;
 
+import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.api.types.ElementalTypes;
+import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
+import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
+import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.GenerationsDataProvider;
+import generations.gg.generations.core.generationscore.client.model.RareCandyAnimationFactory;
+import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
@@ -15,9 +24,11 @@ import generations.gg.generations.core.generationscore.world.entity.GenerationsB
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
+import generations.gg.generations.core.generationscore.world.item.TechnicalMachineItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import kotlin.Unit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
@@ -30,6 +41,8 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Tuple;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
@@ -37,6 +50,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
+import java.io.File;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
@@ -45,13 +59,23 @@ import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
 public class GenerationsCoreClient {
+
     public static void onInitialize(Minecraft minecraft) {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
+
+        JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
+
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new RareCandyBone(resourceLocation)));
+
+
+        PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
+        PlatformEvents.CLIENT_PLAYER_LOGOUT.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogout);
     }
 
     private static void setupClient(Minecraft event) {
         event.submit(() -> {
+            GenerationsCore.getImplementation().getNetworkManager().registerClientBound();
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
@@ -61,18 +85,42 @@ public class GenerationsCoreClient {
             registerScreens();
         });
 
+        ItemPropertiesRegistry.register(GenerationsItems.TM.get(), GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
+            var type = TechnicalMachineItem.getType(arg);
+
+            if(type == ElementalTypes.INSTANCE.getNORMAL()) return 0.00f;
+            else if(type == ElementalTypes.INSTANCE.getFIRE()) return 0.01f;
+            else if(type == ElementalTypes.INSTANCE.getWATER()) return 0.02f;
+            else if(type == ElementalTypes.INSTANCE.getGRASS()) return 0.03f;
+            else if(type == ElementalTypes.INSTANCE.getELECTRIC()) return 0.04f;
+            else if(type == ElementalTypes.INSTANCE.getICE()) return 0.05f;
+            else if(type == ElementalTypes.INSTANCE.getFIGHTING()) return 0.06f;
+            else if(type == ElementalTypes.INSTANCE.getPOISON()) return 0.07f;
+            else if(type == ElementalTypes.INSTANCE.getGROUND()) return 0.08f;
+            else if(type == ElementalTypes.INSTANCE.getFLYING()) return 0.09f;
+            else if(type == ElementalTypes.INSTANCE.getPSYCHIC()) return 0.10f;
+            else if(type == ElementalTypes.INSTANCE.getBUG()) return 0.11f;
+            else if(type == ElementalTypes.INSTANCE.getROCK()) return 0.12f;
+            else if(type == ElementalTypes.INSTANCE.getGHOST()) return 0.13f;
+            else if(type == ElementalTypes.INSTANCE.getDRAGON()) return 0.14f;
+            else if(type == ElementalTypes.INSTANCE.getDARK()) return 0.15f;
+            else if(type == ElementalTypes.INSTANCE.getSTEEL()) return 0.16f;
+            else if(type == ElementalTypes.INSTANCE.getFAIRY()) return 0.17f;
+            else return 0.00f;
+        });
+
         ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
         ItemPropertiesRegistry.register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
             ItemStack stack = MelodyFluteItem.getImbuedItem(arg);
 
-            if (isItem(GenerationsItems.ICY_WING, stack)) return 1f;
-            else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return 2f;
-            else if (isItem(GenerationsItems.STATIC_WING, stack)) return 3f;
-            else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return 4f;
-            else if (isItem(GenerationsItems.FIERY_WING, stack)) return 5f;
-            else if (isItem(GenerationsItems.SINISTER_WING, stack)) return 6f;
-            else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return 7f;
-            else if (isItem(GenerationsItems.SILVER_WING, stack)) return 8f;
+            if (isItem(GenerationsItems.ICY_WING, stack)) return 0.125f;
+            else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return 0.25f;
+            else if (isItem(GenerationsItems.STATIC_WING, stack)) return 0.375f;
+            else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return 0.5f;
+            else if (isItem(GenerationsItems.FIERY_WING, stack)) return 0.625f;
+            else if (isItem(GenerationsItems.SINISTER_WING, stack)) return 0.75f;
+            else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return 0.875f;
+            else if (isItem(GenerationsItems.SILVER_WING, stack)) return 1.0f;
             else return 0;
         });
     }
@@ -111,7 +159,7 @@ public class GenerationsCoreClient {
      */
     public static void registerBlockEntityRenderers(BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> consumer) {
         consumer.accept(GenerationsBlockEntities.POKE_DOLL.get(), GeneralUseBlockEntityRenderer::new);
-        consumer.accept(GenerationsBlockEntities.HEALER.get(), GeneralUseBlockEntityRenderer::new);
+        consumer.accept(GenerationsBlockEntities.HEALER.get(), HealerBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.CLOCK.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BOX.get(), GeneralUseBlockEntityRenderer::new);
 
@@ -145,5 +193,15 @@ public class GenerationsCoreClient {
             consumer.accept(GenerationsBoatRenderer.createBoatModelName(type), boat);
             consumer.accept(GenerationsBoatRenderer.createChestBoatModelName(type), chestBoat);
         }
+    }
+
+    public static Unit onLogin(ClientPlayerEvent.Login login) {
+        GenerationsDataProvider.INSTANCE.canReload = false;
+        return Unit.INSTANCE;
+    }
+
+    public static Unit onLogout(ClientPlayerEvent.Logout logout) {
+        GenerationsDataProvider.INSTANCE.canReload = true;
+        return Unit.INSTANCE;
     }
 }

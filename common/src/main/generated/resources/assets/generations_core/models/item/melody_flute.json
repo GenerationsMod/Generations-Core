@@ -10,49 +10,49 @@
     {
       "model": "generations_core:item/flute/icy_flute",
       "predicate": {
-        "generations_core:flute_type": 1.0
+        "generations_core:flute_type": 0.125
       }
     },
     {
       "model": "generations_core:item/flute/elegant_flute",
       "predicate": {
-        "generations_core:flute_type": 2.0
+        "generations_core:flute_type": 0.25
       }
     },
     {
       "model": "generations_core:item/flute/static_flute",
       "predicate": {
-        "generations_core:flute_type": 3.0
+        "generations_core:flute_type": 0.375
       }
     },
     {
       "model": "generations_core:item/flute/belligerent_flute",
       "predicate": {
-        "generations_core:flute_type": 4.0
+        "generations_core:flute_type": 0.5
       }
     },
     {
       "model": "generations_core:item/flute/fiery_flute",
       "predicate": {
-        "generations_core:flute_type": 5.0
+        "generations_core:flute_type": 0.625
       }
     },
     {
       "model": "generations_core:item/flute/sinister_flute",
       "predicate": {
-        "generations_core:flute_type": 6.0
+        "generations_core:flute_type": 0.75
       }
     },
     {
       "model": "generations_core:item/flute/rainbow_flute",
       "predicate": {
-        "generations_core:flute_type": 7.0
+        "generations_core:flute_type": 0.875
       }
     },
     {
       "model": "generations_core:item/flute/silver_flute",
       "predicate": {
-        "generations_core:flute_type": 8.0
+        "generations_core:flute_type": 1.0
       }
     }
   ],

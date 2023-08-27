@@ -1,11 +1,14 @@
 package generations.gg.generations.core.generationscore.util;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.joml.Vector3f;
 
 import java.util.EnumSet;
 import java.util.Optional;
+import java.util.function.BiFunction;
 
 public class GenerationsUtils {
 
@@ -41,4 +44,15 @@ public class GenerationsUtils {
         return Time.of(hours, minutes, seconds);
     }
 
+    public static CompoundTag toCompoundTag(ItemStack stack) {
+        var compound = new CompoundTag();
+        compound.putString("id", stack.getItem().arch$registryName().toString());
+        compound.putInt("Count", stack.getCount());
+        if(stack.getTag() != null) compound.put("tag", stack.getTag());
+        return compound;
+    };
+
+    public static <T, K, V> V processIfNotNull(T t, K k, BiFunction<T, K, V> function) {
+        return t != null ? function.apply(t, k) : null;
+    }
 }

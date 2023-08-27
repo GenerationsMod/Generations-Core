@@ -1,40 +1,49 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-//public class PixelmonInteractions {
-//    private static final List<PixelmonInteraction> customInteractions = new ArrayList<>();
-//    public static void registerCustomInteraction(PixelmonInteraction customInteraction) {
-//        customInteractions.add(customInteraction);
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
+import dev.architectury.event.EventResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PixelmonInteractions {
+    private static final List<PixelmonInteraction> customInteractions = new ArrayList<>();
+    public void registerCustomInteraction(PixelmonInteraction customInteraction) {
+        customInteractions.add(customInteraction);
+    }
+
+//    fun registerDefaultNonItemInteractions() {
+//        registerCustomInteraction(PixelmonInteraction { pixelmonEntity: PokemonEntity, player: Player?, itemInHand: ItemStack? ->
+//            val data: Unit = pixelmonEntity.getPixelmonData()
+//            val holder: Unit = PokeModRegistries.Pixelmon.SPECIES.getHolderOrThrow(data.getSpecies())
+//            InteractionResult.PASS
+//        })
 //    }
 
-//    public static void registerDefaultNonItemInteractions() {
-//        registerCustomInteraction((pixelmonEntity, player, itemInHand) -> {
-//            var data = pixelmonEntity.getPixelmonData();
-//            var holder = PokeModRegistries.Pixelmon.SPECIES.getHolderOrThrow(data.getSpecies());
+    public EventResult triggerCustomInteraction(
+        PokemonEntity pixelmonEntity,
+        Player player,
+        ItemStack itemInHand
+    ) {
+        return customInteractions.stream().map(interaction -> interaction.interact(pixelmonEntity, player, itemInHand))
+            .filter(EventResult::interruptsFurtherEvaluation)
+            .findFirst()
+            .orElse(EventResult.pass());
+    }
 
-            /*if(itemInHand.getItem() == Items.SADDLE && PokeModRegistries.PIXELMON.registry().getTag(PokemonTags.SADDLEABLE).stream().anyMatch(a -> a.contains(holder))) {
-                data.setSkin("saddle");
+    public static EventResult process(Entity entity, Player player, ItemStack stack) {
+        if (entity instanceof PokemonEntity pokemon && stack.getItem() instanceof PixelmonInteraction interaction)
+            return interaction.interact(pokemon, player, stack);
+        else return EventResult.pass();
+    }
 
-                return InteractionResult.CONSUME;
-            } else {
-                return InteractionResult.PASS;
-            }*/
-//            return InteractionResult.PASS;
-//        });
-//    }
-
-//    public static InteractionResult triggerCustomInteraction(PixelmonEntity pixelmonEntity, Player player, ItemStack itemInHand) {
-//        return customInteractions.stream()
-//                .map(a -> a.interact(pixelmonEntity, player, itemInHand))
-//                .filter(InteractionResult::consumesAction)
-//                .findFirst()
-//                .orElse(InteractionResult.PASS);
-//    }
-//
-//    public interface PixelmonInteraction {
-//        InteractionResult interact(PixelmonEntity pixelmonEntity, Player player, ItemStack itemInHand);
-//
-//        default boolean isConsumed() {
-//            return true;
-//        }
-//    }
-//}
+    public interface PixelmonInteraction {
+        EventResult interact(PokemonEntity pokemon, Player player, ItemStack itemInHandItemStack);
+        default boolean isConsumed() {
+            return true;
+        }
+    }
+}

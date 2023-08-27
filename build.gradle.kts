@@ -2,6 +2,7 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
+    kotlin("jvm") version ("1.9.0")
     id("dev.architectury.loom") version "1.3-SNAPSHOT" apply false
     idea
     java
@@ -13,7 +14,6 @@ architectury.minecraft = minecraftVersion
 
 subprojects {
     apply(plugin = "dev.architectury.loom")
-
     val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
 
     repositories {
@@ -32,6 +32,7 @@ subprojects {
         }
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     }
+
     @Suppress("UnstableApiUsage")
     dependencies {
         "minecraft"("com.mojang:minecraft:$minecraftVersion")
@@ -50,15 +51,18 @@ allprojects {
     apply(plugin = "architectury-plugin")
     apply(plugin = "maven-publish")
     apply(plugin = "idea")
+    apply(plugin = "org.jetbrains.kotlin.jvm")
 
     version = project.properties["mod_version"] as String
     group = project.properties["maven_group"] as String
     base.archivesName.set(project.properties["archives_base_name"] as String)
 
     tasks.withType<JavaCompile>().configureEach {
-        options.encoding = "UTF-8"
-        options.release.set(17)
+            options.encoding = "UTF-8"
+            options.release.set(17)
     }
 
     java.withSourcesJar()
 }
+
+kotlin.jvmToolchain(17)

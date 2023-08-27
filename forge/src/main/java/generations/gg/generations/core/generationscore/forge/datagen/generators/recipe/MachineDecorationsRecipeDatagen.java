@@ -11,7 +11,7 @@ import generations.gg.generations.core.generationscore.world.level.block.decorat
 import generations.gg.generations.core.generationscore.world.level.block.entities.VendingMachineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.ClockBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.HealerBlock;
-import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.PCBlock;
+import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.PcBlock;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -201,7 +201,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var healer = HealerBlock.getBlock(color);
+        var healer = HealerBlock.Companion.getBlock(color);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, healer)
                 .define('E', dye)
@@ -215,7 +215,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     private void buildColoredPcCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var finishedPc = PCBlock.getBlock(color);
+        var finishedPc = PcBlock.getBlock(color);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, finishedPc)
                 .define('E', dye)

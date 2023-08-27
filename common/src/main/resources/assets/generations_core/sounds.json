@@ -1,7 +1,280 @@
 {
-  "generations.item.lugia_shrine_song": {
+  "generations_core.item.lugia_shrine_song": {
     "sounds": [
-      "generations_core:items/lugia_shrine_song"
+      {
+        "name": "generations_core:item/lugia_shrine_song"
+      }
+    ]
+  },
+  "generations_core.other.ui_click": {
+    "sounds": [
+      {
+        "name": "generations_core:other/ui_click"
+      }
+    ]
+  },
+  "generations_core.music.ambient.azalea_town": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/azalea_town",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.cascarrafa_city": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/cascarrafa_city",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.cerulean_city": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/cerulean_city",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.eterna_city": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/eterna_city",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.goldenrod_city": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/goldenrod_city",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.icirrus_city": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/icirrus_city",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.jubilife_village": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/jubilife_village",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.lake_of_rage": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/lake_of_rage",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.laverre_city": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/laverre_city",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.lillie": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/lillie",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.pokemon_center": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/pokemon_center",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.route_228": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/route_228",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.slumbering_weald": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/slumbering_weald",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.surf": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/surf",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.ambient.vermilion_city": {
+    "sounds": [
+      {
+        "name": "generations_core:music/ambient/vermilion_city",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.cynthia": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/cynthia",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.deoxys": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/deoxys",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.iris": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/iris",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.kanto": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/kanto",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.lusamine": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/lusamine",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.nemona": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/nemona",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.nessa": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/nessa",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.penny": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/penny",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.rival": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/rival",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.sada_and_turo": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/sada_and_turo",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.south_province": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/south_province",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.team_rocket": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/team_rocket",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.ultra_necrozma": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/ultra_necrozma",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.xy_legendary": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/xy_legendary",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.battle.zinnia": {
+    "sounds": [
+      {
+        "name": "generations_core:music/battle/zinnia",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.special.lavender_town": {
+    "sounds": [
+      {
+        "name": "generations_core:music/special/lavender_town",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.special.lugia": {
+    "sounds": [
+      {
+        "name": "generations_core:music/special/lugia",
+        "stream": true
+      }
+    ]
+  },
+  "generations_core.music.special.mt_pyre": {
+    "sounds": [
+      {
+        "name": "generations_core:music/special/mt_pyre",
+        "stream": true
+      }
     ]
   }
 }

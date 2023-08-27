@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.B
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
+import gg.generations.rarecandy.rendering.ObjectInstance;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -20,15 +21,14 @@ public class PokeLootRendrer implements BlockEntityRenderer<BallLootBlockEntity>
         if (!(blockEntity.isVisible() && blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
         stack.pushPose();
         if (blockEntity.objectInstance == null) {
-            blockEntity.objectInstance = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "");
+            blockEntity.objectInstance = new ObjectInstance[] { new BlockObjectInstance(new Matrix4f(), new Matrix4f(), "default") };
         }
 
-        var primeInstance = blockEntity.objectInstance;
+        var primeInstance = blockEntity.objectInstance[0];
 
         if (!primeInstance.materialId().equals(blockEntity.getVariant())) {
             primeInstance.setVariant(blockEntity.getVariant());
         }
-
 
 
         ((BlockObjectInstance) primeInstance).setLight(packedLight);

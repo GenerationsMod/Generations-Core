@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
-import com.mojang.math.Axis;
 import de.javagl.jgltf.model.GltfModel;
 import gg.generations.pokeutils.PixelAsset;
 import gg.generations.rarecandy.components.MeshObject;
@@ -37,21 +36,21 @@ public class CompiledModel {
                     }
                     return glCalls;
                 },
-                object -> {}
+                object -> {
+                    if(object.scale == 0f) object.scale = 1.0f;
+                }
         );
     }
 
     public void render(ObjectInstance instance, Matrix4f projectionMatrix) {
-        render(instance, projectionMatrix, false, ModelRegistry.getRareCandy().objectManager);
+        render(instance, projectionMatrix, ModelRegistry.getRareCandy().objectManager);
     }
 
-    public void render(ObjectInstance instance, Matrix4f projectionMatrix, boolean isYNotUp, ObjectManager objectManager) {
+    public void render(ObjectInstance instance, Matrix4f projectionMatrix, ObjectManager objectManager) {
         if (!renderObject.isReady()) return;
+
         Minecraft.getInstance().getProfiler().push("create_model_instance");
         MinecraftClientGameProvider.projMatrix = projectionMatrix;
-        var modelMatrix = new Matrix4f();
-        modelMatrix.identity();
-        if (isYNotUp) modelMatrix.rotate(Axis.XP.rotationDegrees(90));
         objectManager.add(this.renderObject, instance);
         Minecraft.getInstance().getProfiler().pop();
     }

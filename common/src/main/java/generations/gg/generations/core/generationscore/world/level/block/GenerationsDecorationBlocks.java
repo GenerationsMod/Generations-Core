@@ -108,7 +108,7 @@ public class GenerationsDecorationBlocks {
     /**
      * Decoration Blocks (Vending Machine)
      */
-    public static final RegistrySupplier<RugBlock> POKEBALL_RUG = registerBlock("pokedoll_rug", () -> new RugBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOL).ignitedByLava()));
+    public static final RegistrySupplier<RugBlock> POKEBALL_RUG = registerBlock("pokeball_rug", () -> new RugBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOL).ignitedByLava()));
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> WHITE_POKEBALL_RUG = registerPokedollRug("white_pokeball_rug", DyeColor.WHITE);
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> LIGHT_GRAY_POKEBALL_RUG = registerPokedollRug("light_gray_pokeball_rug", DyeColor.LIGHT_GRAY);
     public static final RegistrySupplier<DyedBlockItem<RugBlock>> GRAY_POKEBALL_RUG = registerPokedollRug("gray_pokeball_rug", DyeColor.GRAY);

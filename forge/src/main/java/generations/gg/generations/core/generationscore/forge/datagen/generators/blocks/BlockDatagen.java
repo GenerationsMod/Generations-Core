@@ -338,13 +338,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign");
 
-        /*
-        GenerationsDecorationBlocks.DECORATIONS.forEach(block -> {
-            if (block.get() instanceof BeanBagBlock) registerBlockItemParticle(block, "bean_bags");
-            //else if (block.get() instanceof VendingMachineBlock || block.get() instanceof UmbrellaBlock || block.get() instanceof PastelBeanBagBlock) registerNoModel(block);
-            else registerBlockItemParticle(block, "decorations");
-        });
-         */
 
         GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block.get(), "shrines"));
         GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots"));

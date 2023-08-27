@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.lang;
 
 import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -8,10 +9,12 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsToo
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public class GeneralLang extends LanguageProvider {
@@ -34,12 +37,16 @@ public class GeneralLang extends LanguageProvider {
         addBlockEntries(GenerationsUtilityBlocks.UTILITY_BLOCKS, this::getNameGens);
         addBlockEntries(GenerationsOres.ORES, this::getNameGens);
 
-        addItemEntries(GenerationsTools.TOOLS, this::getNameGens);
-        addItemEntries(GenerationsArmor.ARMOR, this::getNameGens);
-        addItemEntries(GenerationsItems.ITEMS, this::getNameGens);
-        addItemEntries(GenerationsItems.RIBBONS, this::getNameGens);
-        addItemEntries(GenerationsItems.BADGES, this::getNameGens);
-        addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens);
+        addItemEntries(GenerationsTools.TOOLS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsArmor.ARMOR, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.ITEMS, this::getNameGens, (item, function) -> {
+            var item1 = item.get();
+
+            if(item1 instanceof RecordItem) {
+                add(item.get().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item.getId().toString().replace("_disc", "")));
+            }
+        });
+        addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
         add("pokeballs.generations_core", "Poké Balls");
@@ -86,7 +93,7 @@ public class GeneralLang extends LanguageProvider {
         add("pixelmon.melody_flute.no_item", "This flute resonates with feathers.");
 
         add("pixelmon.melody_flute.imbued", "Imbued: %s");
-        add("pixelmon.melody_flute.not_full_imbued1", "Imbue by defeating %s %s Pokemon.");
+        add("pixelmon.melody_flute.not_full_imbued1", "Imbue by defeating %s %s pokemon.");
         add("pixelmon.melody_flute.not_full_imbued2", "Then shift right click on a %s");
         add("pixelmon.melody_flute.not_full_imbued3", "to spawn %s.");
 
@@ -96,6 +103,15 @@ public class GeneralLang extends LanguageProvider {
 
         add("Generations.timeglass.wrongbiome", "You can only summon Celebi in a Flower Forest Biome");
         add("Generations.timeglass.amount", "You've defeated %s Grass, Psychic, or Fairy Type Pokemon out of 100 in a Flower Forest Biome");
+
+        //TR/TM lines
+        add("move.cantlearn", "%s can't learn %s.");
+        add("move.alreadyknows", "%s already knows %s.");
+        add("move.learned", "%s has learned %s.");
+        add("move.doesntexist", "The move %s doesn't exists so %s couldn't learn it.");
+        add("move.newmove1", "1, 2, and... Ta da!");
+        add("move.newmove2", "%s forgot %s!");
+        add("move.newmove3", "...and learned %s!");
 
         add("generations_core.blocks.lootfound", "You found one %s!");
         add("generations_core.blocks.timedclaim", "You've already claimed this timed loot! Try again later!");
@@ -134,8 +150,11 @@ public class GeneralLang extends LanguageProvider {
         entries.forEach(block -> add(block.get(), function.apply(block.getId().toString())));
     }
 
-    public void addItemEntries(DeferredRegister<Item> entries, Function<String, String> function) {
-        entries.forEach(item -> add(item.get(), function.apply(item.getId().toString())));
+    public void addItemEntries(DeferredRegister<Item> entries, Function<String, String> function, BiConsumer<RegistrySupplier<Item>, Function<String, String>> additionalActions) {
+        entries.forEach(item -> {
+            add(item.get(), function.apply(item.getId().toString()));
+            additionalActions.accept(item, function);
+        });
     }
 
     public void add(@NotNull String key, @NotNull String value) {

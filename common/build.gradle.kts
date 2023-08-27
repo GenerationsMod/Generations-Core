@@ -28,6 +28,7 @@ dependencies {
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 
     //Cobblemon
+    implementation(kotlin("stdlib-jdk8"))
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
 }
 
