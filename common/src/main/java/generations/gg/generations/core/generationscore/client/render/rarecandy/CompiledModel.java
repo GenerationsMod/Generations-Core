@@ -47,6 +47,8 @@ public class CompiledModel {
     public void renderGui(ObjectInstance instance, Matrix4f projectionMatrix) {
         RenderSystem.enableDepthTest();
         BufferUploader.reset();
+        RenderSystem.applyModelViewMatrix();
+        instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
         render(instance, projectionMatrix, ModelRegistry.getGuiRareCandy().objectManager);
         ModelRegistry.getGuiRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
     }
