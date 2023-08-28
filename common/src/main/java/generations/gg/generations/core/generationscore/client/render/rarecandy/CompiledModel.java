@@ -49,7 +49,6 @@ public class CompiledModel {
         BufferUploader.reset();
         render(instance, projectionMatrix, ModelRegistry.getGuiRareCandy().objectManager);
         ModelRegistry.getGuiRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
-        ModelRegistry.freePool();
     }
 
     public void render(ObjectInstance instance, Matrix4f projectionMatrix) {

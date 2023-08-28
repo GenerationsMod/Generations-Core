@@ -14,12 +14,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 import java.util.Collections;
 import java.util.Map;
 import java.util.function.Supplier;
 
 public class RareCandyBone implements Supplier<Bone>, Bone {
+    private  static Vector3f temp = new Vector3f();
     private static final Quaternionf ROTATION_CORRECTION = Axis.YP.rotationDegrees(180);
     private final Supplier<CompiledModel> objectSupplier;
 
@@ -45,7 +47,9 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         boolean isGui = false;
 
         if(instance == null) {
-            instance = ModelRegistry.getInstance();
+            instance = ModelRegistry.getGuiInstance();
+            instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
+
             isGui = true;
         }
 
@@ -64,15 +68,13 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             }
 
             stack.pushPose();
+
             stack.mulPose(ROTATION_CORRECTION);
-
-//            if(entity != null) {
-                stack.scale(-1, -1, 1);
-                stack.translate(0, -1.501, 0);
-//            }
-
+            stack.scale(-1, -1, 1);
+            stack.translate(0, -1.501, 0);
             stack.scale(scale, scale, scale);
-            instance.viewMatrix().set(stack.last().pose());
+
+            instance.transformationMatrix().set(stack.last().pose());
             stack.popPose();
 
             if(!isGui) {

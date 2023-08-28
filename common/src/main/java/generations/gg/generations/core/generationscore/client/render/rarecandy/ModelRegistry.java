@@ -44,6 +44,7 @@ public class ModelRegistry {
     });
     private static RareCandy WORLD_RENDER;
     private static RareCandy GUI_RENDER;
+    private static final PixelmonInstance guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), "", () -> LightingSettings.NORMAL_SHADING);
 
     public static CompiledModel get(ModelContextProviders.ModelProvider modelProvider, String pipeline) {
         return get(modelProvider.getModel(), pipeline);
@@ -88,11 +89,7 @@ public class ModelRegistry {
     }
 
 
-    public static PixelmonInstance getInstance() {
-        return POOl.acquire();
-    }
-
-    public static void freePool() {
-        POOl.freeAll();
+    public static PixelmonInstance getGuiInstance() {
+        return guiInstance;
     }
 }
