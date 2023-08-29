@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.client.model;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Species;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -13,6 +14,7 @@ import generations.gg.generations.core.generationscore.client.render.PixelmonIns
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
@@ -42,54 +44,42 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     }
 
     @Override
-    public <T extends Entity> void render(T entity, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
+    public void render(RenderContext context, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var model = objectSupplier.get();
 
-        var instance = entity != null ? ((PixelmonInstanceProvider) entity).getInstance() : null;
+        var instance = context.request(RenderContext.Companion.getENTITY()) instanceof PixelmonInstanceProvider provider ? provider.getInstance() : null;
 
         boolean isGui = false;
+
+        var scale = model.renderObject.scale;
 
         if(instance == null) {
             instance = ModelRegistry.getGuiInstance();
             instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
             isGui = true;
+        } else {
+            scale *= context.request(RenderContext.Companion.getSCALE());
         }
 
-        if(instance != null) {
-            var scale = model.renderObject.scale;
 
-            Species species = null;
-            Set<String> aspects = null;
+        if(model.renderObject.isReady()) {
+            var id = context.request(RenderContext.Companion.getTEXTURE());
+            if(id.getNamespace().equals("pk")) instance.setVariant(id.getPath());
 
-            if(entity instanceof PokemonEntity pokemon) {
-                species = pokemon.getPokemon().getSpecies();
-                aspects = pokemon.getPokemon().getAspects();
-                scale *= species.getBaseScale();
+            stack.pushPose();
+
+            stack.mulPose(ROTATION_CORRECTION);
+            stack.scale(-1, -1, 1);
+            stack.translate(0, -1.501, 0);
+            stack.scale(scale, scale, scale);
+
+            instance.transformationMatrix().set(stack.last().pose());
+            stack.popPose();
+
+            if(!isGui) {
+                model.render(instance, RenderSystem.getProjectionMatrix());
             } else {
-                species = PokemonSpecies.INSTANCE.getByIdentifier(PokemonModelRepository.INSTANCE.getPreviousSpecies());
-                aspects = PokemonModelRepository.INSTANCE.getPreviousAspects();
-            }
-
-
-            if(model.renderObject.isReady()) {
-                var id = PokemonModelRepository.INSTANCE.getVariations().get(species.getResourceIdentifier()).getResolvedTexture(aspects, 0F);
-                if(id.getNamespace().equals("pk")) instance.setVariant(id.getPath());
-
-                stack.pushPose();
-
-                stack.mulPose(ROTATION_CORRECTION);
-                stack.scale(-1, -1, 1);
-                stack.translate(0, -1.501, 0);
-                stack.scale(scale, scale, scale);
-
-                instance.transformationMatrix().set(stack.last().pose());
-                stack.popPose();
-
-                if(!isGui) {
-                    model.render(instance, RenderSystem.getProjectionMatrix());
-                } else {
-                    model.renderGui(instance, RenderSystem.getProjectionMatrix());
-                }
+                model.renderGui(instance, RenderSystem.getProjectionMatrix());
             }
         }
     }
