@@ -70,7 +70,7 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
         public boolean run(@Nullable PokemonEntity t, @NotNull PoseableEntityModel<PokemonEntity> poseableEntityModel, @NotNull PoseableEntityState<PokemonEntity> poseableEntityState, float v, float v1, float v2, float v3, float v4) {
             secondsPassed += poseableEntityState.getAnimationSeconds();
 
-            var instance = t != null ? ((PixelmonInstanceProvider) (LivingEntity) t).getInstance() : null;
+            var instance = t != null ? ((PixelmonInstanceProvider) (LivingEntity) t).getInstance() : ModelRegistry.getGuiInstance();
             var animation = animationSuppler.get();
 
             if(instance != null && animation != null) instance.matrixTransforms = animation.getFrameTransform(secondsPassed * animation_factor);
@@ -103,7 +103,7 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
         protected void setAngles(@Nullable PokemonEntity pokemonEntity, @NotNull PoseableEntityModel<PokemonEntity> poseableEntityModel, @Nullable PoseableEntityState<PokemonEntity> state, float v, float v1, float v2, float v3, float v4) {
 //            val prev = if (state == null) 0F else (state.previousAnimationSeconds - state.timeEnteredPose)
             var cur = state == null ? 0F : (state.getAnimationSeconds() - state.getTimeEnteredPose()) * animation_factor;
-            var instance = pokemonEntity != null ? ((PixelmonInstanceProvider) (LivingEntity) pokemonEntity).getInstance() : null;
+            var instance = pokemonEntity != null ? ((PixelmonInstanceProvider) (LivingEntity) pokemonEntity).getInstance() : ModelRegistry.getGuiInstance();
             var animation = animationSupplier.get();
 
             if(instance != null && animation != null) instance.matrixTransforms = animationSupplier.get().getFrameTransform(cur);

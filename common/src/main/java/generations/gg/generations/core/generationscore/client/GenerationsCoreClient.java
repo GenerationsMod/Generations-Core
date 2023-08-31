@@ -80,7 +80,6 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
-            ModelRegistry.getRareCandy();
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
