@@ -13,7 +13,6 @@ architectury.minecraft = minecraftVersion
 
 subprojects {
     apply(plugin = "dev.architectury.loom")
-
     val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
 
     repositories {
@@ -32,6 +31,7 @@ subprojects {
         }
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     }
+
     @Suppress("UnstableApiUsage")
     dependencies {
         "minecraft"("com.mojang:minecraft:$minecraftVersion")
