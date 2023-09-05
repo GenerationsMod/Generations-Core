@@ -51,8 +51,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> INSIDE_WALL = registerBlockItem("inside_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> INSIDE_WALL_MOLDING = registerBlockItem("inside_wall_molding", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> POKEMART_SIGN = registerBlockItem("pokemart_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<GlassBlock> WINDOW_1 = registerBlockItem("window_1", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()));
-    public static final RegistrySupplier<GlassBlock> WINDOW_2 = registerBlockItem("window_2", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()));
 
     /**
      * PokeCenter

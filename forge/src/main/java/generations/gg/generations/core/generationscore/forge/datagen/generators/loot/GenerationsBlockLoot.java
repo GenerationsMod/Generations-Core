@@ -145,9 +145,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.POKEMART_SIGN.get());
         dropSelf(GenerationsBlocks.POKECENTER_SIGN.get());
 
-        dropWhenSilkTouch(GenerationsBlocks.WINDOW_1.get());
-        dropWhenSilkTouch(GenerationsBlocks.WINDOW_2.get());
-
         dropSelf(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get());
 
         dropDisplayStandWithBall(GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(), GenerationsItems.POKE_BALL.get());

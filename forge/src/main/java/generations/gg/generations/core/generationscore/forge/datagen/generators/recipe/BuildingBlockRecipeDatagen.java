@@ -334,28 +334,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.INSIDE_WALL.get()), has(GenerationsBlocks.INSIDE_WALL.get()))
                 .save(consumer);
 
-        //Window 1
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WINDOW_1.get())
-                .define('X', Blocks.IRON_BARS)
-                .define('Y', Blocks.GLASS)
-                .pattern("XYX")
-                .unlockedBy(getHasName(Blocks.IRON_BARS), has(Blocks.IRON_BARS))
-                .unlockedBy(getHasName(Blocks.GLASS), has(Blocks.GLASS))
-                .save(consumer);
-
-        //Window 2
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WINDOW_2.get())
-                .define('X', Blocks.IRON_BARS)
-                .define('Y', Blocks.GLASS)
-                .define('Z', Items.PURPLE_DYE)
-                .pattern(" Z ")
-                .pattern("XYX")
-                .pattern(" Z ")
-                .unlockedBy(getHasName(Blocks.IRON_BARS), has(Blocks.IRON_BARS))
-                .unlockedBy(getHasName(Blocks.GLASS), has(Blocks.GLASS))
-                .unlockedBy(getHasName(Items.PURPLE_DYE), has(Items.PURPLE_DYE))
-                .save(consumer);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKECENTER_SIGN.get())
                 .define('X', Blocks.IRON_BLOCK)
                 .define('Y', Items.RED_DYE)

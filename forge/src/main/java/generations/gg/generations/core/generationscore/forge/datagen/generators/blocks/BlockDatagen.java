@@ -91,9 +91,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.POKEMART_SIGN);
         registerBlockItem(GenerationsBlocks.POKECENTER_SIGN);
 
-        registerGlassBlock(GenerationsBlocks.WINDOW_1);
-        registerGlassBlock(GenerationsBlocks.WINDOW_2);
-
         registerBlockItem(GenerationsBlocks.RUINS_WALL);
         registerBlockItem(GenerationsBlocks.DUSTY_RUINS_WALL);
 
