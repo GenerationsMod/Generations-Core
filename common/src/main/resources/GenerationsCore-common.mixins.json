@@ -8,9 +8,8 @@
     "AbstractFurnaceBlockEntityMixin"
   ],
   "client": [
-    "client.LevelRendererMixin",
-    "client.PokemonEntityMixin",
-    "client.RenderSystemMixin"
+	"client.LevelRendererMixin",
+    "client.PokemonEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
