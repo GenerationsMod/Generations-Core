@@ -14,7 +14,7 @@ public class StatueEntityClient extends PoseableEntityState<PokemonEntity> imple
 
     @Override
     public void updatePartialTicks(float v) {
-        setCurrentPartialTicks(v);
+        setCurrentPartialTicks(getPartialTicks() + v);
     }
 
     public PixelmonInstance getInstance() {

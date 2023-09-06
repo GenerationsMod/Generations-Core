@@ -1057,7 +1057,7 @@ public class GenerationsItems {
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ENIGMA_SHARD = register("enigma_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> SACRED_ASH = register("sacred_ash", properties -> new SacredAshItem(properties.stacksTo(1).durability(200)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> SACRED_ASH = register("sacred_ash", properties -> new SacredAshItem(properties.stacksTo(1).durability(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHARD_OF_WILLPOWER = register("shard_of_willpower", properties -> new Item(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHARD_OF_EMOTION = register("shard_of_emotion", properties -> new Item(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHARD_OF_KNOWLEDGE = register("shard_of_knowledge", properties -> new Item(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);

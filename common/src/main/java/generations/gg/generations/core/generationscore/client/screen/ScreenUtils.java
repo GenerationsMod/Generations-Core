@@ -100,8 +100,34 @@ public class ScreenUtils {
         else if (text instanceof FormattedCharSequence sequence) matrices.drawString(font, sequence, 0, 0, color, shadow);
     }
 
+    private static void drawText(GuiGraphics matrices, Object text, float x, float y, int color, boolean shadow) {
+        var font = Minecraft.getInstance().font;
+        matrices.pose().pushPose();
+        matrices.pose().translate(x, y, 0);
+        if (text instanceof String string) matrices.drawString(font, string, 0, 0, color, shadow);
+        else if (text instanceof Component component) matrices.drawString(font, component, 0, 0, color, shadow);
+        else if (text instanceof FormattedCharSequence sequence) matrices.drawString(font, sequence, 0, 0, color, shadow);
+        matrices.pose().popPose();
+    }
+
+
     public static void drawTextWithHeight(GuiGraphics matrices, Object text, float x, float y, float height, int color) {
         drawTextWithHeight(matrices, text, x, y, height, color, Position.LEFT);
+    }
+
+    public static void drawText(GuiGraphics matrices, Object text, float x, float y, int color, ScreenUtils.Position pos) {
+        switch (pos) {
+            case LEFT -> drawText(matrices, text, x, y, color, false);
+
+            case MIDDLE -> {
+                int length = getTextLength(text) / 2;
+                drawText(matrices, text, x - length, y, color, false);
+            }
+            case RIGHT -> {
+                int length = getTextLength(text);
+                drawText(matrices, text, x - length, y, color, false);
+            }
+        }
     }
 
     public static void drawTextWithHeight(GuiGraphics matrices, Object text, float x, float y, float height, int color, ScreenUtils.Position pos) {
@@ -127,6 +153,16 @@ public class ScreenUtils {
             return (int) (Minecraft.getInstance().font.width(string) * (height / 9f));
         else return 0;
     }
+
+    public static int getTextLength(Object text) {
+        if (text instanceof String string) return Minecraft.getInstance().font.width(string);
+        else if (text instanceof FormattedText string)
+            return Minecraft.getInstance().font.width(string);
+        else if (text instanceof FormattedCharSequence string)
+            return Minecraft.getInstance().font.width(string);
+        else return 0;
+    }
+
 
     public static void drawTextWithHeightWithLengthScaling(GuiGraphics matrices, Object text, float x, float y, float optimalHeight, float length, int color, ScreenUtils.Position pos) {
         float height = optimalHeight;

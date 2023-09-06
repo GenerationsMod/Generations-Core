@@ -1,7 +1,9 @@
 package generations.gg.generations.core.generationscore.world.entity;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.client.CobblemonResources;
 import com.cobblemon.mod.common.client.entity.PokemonClientDelegate;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Pokemon;
@@ -17,6 +19,7 @@ import generations.gg.generations.core.generationscore.network.GenerationsNetwor
 import generations.gg.generations.core.generationscore.network.packets.statue.S2COpenStatueEditorScreenPacket;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.SacredAshItem;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
@@ -81,11 +84,13 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
     @Override
     public @NotNull InteractionResult interact(@NotNull Player player, @NotNull InteractionHand hand) {
         if (!level().isClientSide()) {
-            if (getStatueData().isSacredAshInteractable() && SacredAshItem.isFullyCharged(player.getItemInHand(hand))) {
+            var stack = player.getItemInHand(hand);
+
+            if (stack.is(GenerationsItems.SACRED_ASH.get()) && getStatueData().isSacredAshInteractable() && SacredAshItem.isFullyCharged(stack)) {
                 var entity = getStatueData().getProperties().createEntity(level());
-                entity.setPos(Vec3.atCenterOf(getOnPos()));
+                entity.setPos(Vec3.atBottomCenterOf(getOnPos()));
                 level().addFreshEntity(entity);
-                player.getItemInHand(hand).shrink(1);
+                stack.shrink(1);
                 return InteractionResult.SUCCESS;
             } else if (player.getItemInHand(hand).getItem().equals(GenerationsItems.CHISEL.get())) {
                 GenerationsNetwork.INSTANCE.sendPacketToPlayer((ServerPlayer) player, new S2COpenStatueEditorScreenPacket(getId()));
@@ -209,6 +214,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
     }
 
     public static final class StatueInfo {
+        private static ResourceLocation defaultSpecies = new ResourceLocation("cobblemon", "charizard");
         private PokemonProperties properties;
         private float orientation;
         private String animation;
@@ -217,13 +223,15 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         private float scale;
 
         private boolean sacredAshInteractable;
+        private String label = "";
 
         public StatueInfo() {
-            this(PokemonProperties.Companion.parse("species=charizard", " ", "="), 0.0f, 1.0f, "", false, 0.0f, false);
+            this(PokemonProperties.Companion.parse("species=charizard", " ", "="), "Statue", 0.0f, 1.0f, "", false, 0.0f, false);
         }
 
-        public StatueInfo(PokemonProperties properties, float orientation, float scale, String animation, boolean isStatic, float progress, boolean sacredAshInteractable) {
+        public StatueInfo(PokemonProperties properties, String label, float orientation, float scale, String animation, boolean isStatic, float progress, boolean sacredAshInteractable) {
             this.properties = properties;
+            this.label = label;
             this.orientation = orientation;
             this.scale = scale;
             this.animation = animation;
@@ -233,19 +241,36 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         }
 
         public StatueInfo(FriendlyByteBuf buf) {
-            this(PokemonProperties.Companion.parse(buf.readUtf(), " ", "="), buf.readFloat(), buf.readFloat(), buf.readUtf(), buf.readBoolean(), buf.readFloat(), buf.readBoolean());
+            this(PokemonProperties.Companion.parse(buf.readUtf(), " ", "="), buf.readUtf(), buf.readFloat(), buf.readFloat(), buf.readUtf(), buf.readBoolean(), buf.readFloat(), buf.readBoolean());
         }
 
         public StatueInfo(CompoundTag tag) {
-            this(PokemonProperties.Companion.parse(tag.getString("properties"), " ", "="), tag.getFloat("orientation"), tag.getFloat("scale"), tag.getString("animation"), tag.getBoolean("isStatic"), tag.getFloat("progress"), tag.getBoolean("sacredAshInteractable"));
+            this(PokemonProperties.Companion.parse(tag.getString("properties"), " ", "="), tag.getString("label"), tag.getFloat("orientation"), tag.getFloat("scale"), tag.getString("animation"), tag.getBoolean("isStatic"), tag.getFloat("progress"), tag.getBoolean("sacredAshInteractable"));
         }
 
         public static StatueInfo of(PokemonProperties properties) {
-            return new StatueInfo(properties, 0.0f, 1.0f, "", true, 0.0f, false);
+            return new StatueInfo(properties, "", 0.0f, 1.0f, "", true, 0.0f, false);
         }
 
         public PokemonProperties getProperties() {
             return properties;
+        }
+
+        public RenderablePokemon asRenderablePokemon() {
+            var properties = getProperties();
+
+            Species species = null;
+
+            if(properties.getSpecies() != null) {
+                species = PokemonSpecies.INSTANCE.getByIdentifier(new ResourceLocation("cobbelmon", properties.getSpecies()));
+
+                if(species == null) {
+                    species = PokemonSpecies.INSTANCE.getByIdentifier(defaultSpecies);
+                }
+            } else {
+                species = PokemonSpecies.INSTANCE.getByIdentifier(defaultSpecies);
+            }
+            return new RenderablePokemon(species, properties.getAspects());
         }
 
         public void setProperties(PokemonProperties properties) {
@@ -281,11 +306,12 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
             tag.putBoolean("isStatic", isStatic);
             tag.putFloat("progress", progress);
             tag.putBoolean("sacredAshInteractable", sacredAshInteractable);
+            tag.putString("label", label);
             return tag;
         }
 
         public void serializeToByteBuf(FriendlyByteBuf buf) {
-            buf.writeUtf(properties.asString(" "));
+            buf.writeUtf(properties.asString(" ")).writeUtf(label);
             buf.writeFloat(orientation).writeFloat(scale);
             buf.writeUtf(animation).writeBoolean(isStatic).writeFloat(progress).writeBoolean(sacredAshInteractable);
         }
@@ -320,6 +346,14 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
 
         public void setProgress(float timestamp) {
             this.progress = timestamp;
+        }
+
+        public void setLabel(String label) {
+            this.label = label;
+        }
+
+        public String getLabel() {
+            return label;
         }
     }
 }

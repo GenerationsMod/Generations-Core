@@ -31,6 +31,7 @@ public class GenerationsCoreClientForge {
     }
 
     private static void forgeClientSetup(final FMLClientSetupEvent event) {
+        System.loadLibrary("renderdoc");
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
         ForgeConfig.CLIENT.alwaysSetupTerrainOffThread.set(true); // Performance improvement
         ForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.set(true); // Use Experimental Forge Light Pipeline

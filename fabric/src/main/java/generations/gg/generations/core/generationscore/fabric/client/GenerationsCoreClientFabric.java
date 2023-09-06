@@ -33,6 +33,7 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
+        System.loadLibrary("renderdoc");
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
         registerRenderTypes();
         GenerationsCoreClient.registerEntityRenderers(EntityRendererRegistry::register);

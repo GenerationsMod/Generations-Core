@@ -1,6 +1,11 @@
 package generations.gg.generations.core.generationscore.client.screen.statue;
 
 
+import com.cobblemon.mod.common.api.gui.GuiUtilsKt;
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import com.cobblemon.mod.common.client.gui.PokemonGuiUtilsKt;
+import com.cobblemon.mod.common.client.gui.summary.widgets.ModelWidget;
+import com.cobblemon.mod.common.util.math.QuaternionUtilsKt;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.client.screen.widget.AngleSelectionWidget;
@@ -18,14 +23,17 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import org.joml.Math;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 public class StatueEditorScreen extends Screen {
     private static final ResourceLocation TEXTURE = GenerationsCore.id("textures/gui/npc/customization.png");
+    private static final ResourceLocation STATUE = GenerationsCore.id("textures/gui/statue/statue_gui.png");
     private final StatueEntity statue;
     private int x, y;
 
-    private AbstractWidget orientationWidget, statickCheckbox, pixelmonFormTextField, pixelmonSkinTextField, pixelmonSelectionButton,
-            pixelmonSelectionWidget, pixelmonSelectionSearchBar, scaleTextField, animationTextField, timestampTextField, parserTextField;
+    private AbstractWidget orientationWidget, statickCheckbox, nameTextField, scaleTextField, animationTextField, timestampTextField, parserTextField, interactableCheckbox, modelWidget;
 
     public StatueEditorScreen(StatueEntity entity) {
         super(Component.empty());
@@ -34,19 +42,48 @@ public class StatueEditorScreen extends Screen {
 
     @Override
     protected void init() {
-        this.x = width / 2 - 128;
-        this.y = height / 2 - 83;
+        this.x = width / 2 - 96;
+        this.y = height / 2 - 84;
 
         var info = statue.getStatueData();
 
-        this.parserTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 6, y + 7, 170, 14, 50,
-                "Derp", s -> {
-//                    npcEntity.getDisplayData().setDisplayName(s);
-//                    npcEntity.updateDisplayData();
+        this.parserTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 7, y + 7, 178, 14, 500,
+                info.getProperties().asString(" "), s -> {
+                info.setProperties(PokemonProperties.Companion.parse(s, " ", "="));
+                statue.updateStatueData();
                 }));
 
-        this.scaleTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 43, y + 66,
-                78, 14, 5, String.valueOf(info.getScale()),
+        this.nameTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 92, 126, 14, 50, info.getLabel(), a -> true, s -> {
+            statue.getStatueData().setLabel(s);
+            statue.updateStatueData();
+        }));
+
+        this.animationTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 110, 126, 14, 50, info.getAnimation(), a -> true, s -> {
+            statue.getStatueData().setAnimation(s);
+            statue.updateStatueData();
+            checkTimestampState(true);
+        }));
+
+        this.timestampTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 128, 78, 14, 25, String.valueOf(info.getFrame()), s -> {
+            if (s.isEmpty()) {
+                return true;
+            }
+            try {
+                if (parseFloat(s) >= 0) {
+                    return true;
+                }
+            } catch (Exception ignored) {}
+            return false;
+        }, s -> {
+            var value = s.isEmpty() ? 0 : parseFloat(s);
+//            var anim = getAnimation();
+//            if (anim != null) {
+//                statue.getStatueData().setProgress((float) Mth.clamp(value, 0, anim.animationDuration));
+//                statue.updateStatueData();
+//            }
+        }));
+
+        this.scaleTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 146, 36, 14, 5, String.valueOf(info.getScale()),
                 s -> {
                     if (s.isEmpty()) {
                         return true;
@@ -70,36 +107,9 @@ public class StatueEditorScreen extends Screen {
                     }
                 }));
 
-        this.animationTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 129, y + 107, 120, 14, 50, info.getAnimation(), a -> true, s -> {
-            statue.getStatueData().setAnimation(s);
-            statue.updateStatueData();
-            checkTimestampState(true);
-        }));
-
-        this.timestampTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 129, y + 125, 60, 14, 25, String.valueOf(info.getFrame()), s -> {
-            if (s.isEmpty()) {
-                return true;
-            }
-            try {
-                if (parseFloat(s) >= 0) {
-                    return true;
-                }
-            } catch (Exception ignored) {}
-            return false;
-        }, s -> {
-            var value = s.isEmpty() ? 0 : parseFloat(s);
-
-            //TODO: Work on
-//            var anim = getAnimation();
-//            if (anim != null) {
-//                statue.getStatueData().setProgress((float) Mth.clamp(value, 0, anim.animationDuration));
-//                statue.updateStatueData();
-//            }
-        }));
-
         checkTimestampState(true);
 
-        statickCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 160, y + 65, 16, 16, TEXTURE, 0, 166,
+        statickCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 127, 16, 16, TEXTURE, 0, 166,
                 () -> {
                     var data = statue.getStatueData();
                     data.setIsStatic(true);
@@ -115,14 +125,28 @@ public class StatueEditorScreen extends Screen {
                 info.isStatic()
         ));
 
-        orientationWidget = addRenderableWidget(new AngleSelectionWidget(x + 28, y + 113, 15, (statue.getStatueData().getOrientation() + 180) % 360, 5, 0x000000,
+
+        this.interactableCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 145, 16, 16, TEXTURE, 0, 166,
+                () -> {
+                    var data = statue.getStatueData();
+                    data.setSacredAshInteractable(true);
+                    statue.updateStatueData();
+                },
+                () -> {
+                    var data = statue.getStatueData();
+                    data.setSacredAshInteractable(false);
+                    statue.updateStatueData();
+                },
+                info.isSacredAshInteractable()
+        ));
+
+        orientationWidget = addRenderableWidget(new AngleSelectionWidget(x + 43, y + 47, 15, (statue.getStatueData().getOrientation() + 180) % 360, 5, 0x000000,
                 (prevAngle, angle) -> {
-                    statue.getStatueData().setOrientation((angle + 180) % 360);
+                    statue.getStatueData().setOrientation((angle) % 360);
                     statue.updateStatueData();
                 }));
 
-        initializePixelmonModelCustomizationWidgets();
-        setPixelmonSelectionWidgetVisibility(false);
+        modelWidget = this.addRenderableWidget(new ModelWidget(x +  122, y + 25, 63, 63, info.getProperties().asRenderablePokemon(), 1.9090909f, 325f, -9.545454f));
     }
 
 //    private Animation getAnimation() {
@@ -137,130 +161,34 @@ public class StatueEditorScreen extends Screen {
     public void render(GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
         poseStack.pose().pushPose();
         poseStack.pose().translate(x, y, 0.0);
-        poseStack.blit(TEXTURE, 0, 0, 0, 0, 256, 166, 256, 256);
+
+        poseStack.pose().pushPose();
+        poseStack.fill(122, 25, 122 + 63, 25 + 63, 0xff000000);
+        poseStack.enableScissor(x + 122, y + 25, x + 122 + 63, y + 25 + 63);
+
+        poseStack.pose().translate((63 / 2f), 63 - 5.0, 0.0);
+        PokemonGuiUtilsKt.drawProfilePokemon(statue.getInfo(), poseStack.pose(), new Quaternionf().rotationXYZ(Math.toRadians(13f), Math.toRadians(35F), Math.toRadians(0F)), statue.delegate, 6f, partialTick);
+        poseStack.disableScissor();
         poseStack.pose().popPose();
 
+        poseStack.blit(STATUE, 0, 0, 0, 0, 256, 166, 256, 256);
+
+        poseStack.pose().popPose();
         super.render(poseStack, mouseX, mouseY, partialTick);
 
-        if (scaleTextField != null && scaleTextField.visible) poseStack.drawString(font, "Scale", x + 6, y + 70, 0x5F5F60, false);
+        ScreenUtils.drawText(poseStack, "Name:", x + 168, y + 131, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Interactable:", x + 168, y + 149, 0x5F5F60, ScreenUtils.Position.RIGHT);
 
-        if (statickCheckbox != null && statickCheckbox.visible) poseStack.drawString(font, "Static:", x + 129, y + 69, 0x5F5F60, false);
-        if (pixelmonFormTextField != null && pixelmonFormTextField.visible) poseStack.drawString(font, "Form:", x + 44, y + 31, 0x5F5F60, false);
-        if (pixelmonSkinTextField != null && pixelmonSkinTextField.visible) poseStack.drawString(font, "Skin:", x + 44, y + 49, 0x5F5F60, false);
-        if (animationTextField != null && animationTextField.visible) {
-            poseStack.drawString(font, "Animation:", x + 77, y + 110, 0x5F5F60, false);
-        }
-        if (timestampTextField != null && timestampTextField.visible) {
-            poseStack.drawString(font, "Timestamp:", x + 77, y + 128, 0x5F5F60, false);
-//TODO: WOrk on
-//            var animation = getAnimation();
-//            String s = animation != null ? String.valueOf((int) (animation.animationDuration)) : "-1";
-//            poseStack.drawString(font, " / " + s, x + 190, y + 128, 0x5F5F60);
-        }
+        ScreenUtils.drawText(poseStack, "Name:", x + 56, y + 95, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Animation", x + 56, y + 113, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Timestamp:", x + 56, y + 131, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Scale:", x + 56, y + 149, 0x5F5F60, ScreenUtils.Position.RIGHT);
 
-        if (orientationWidget != null && orientationWidget.visible) {
-            poseStack.drawString(font, "N", x + 41, y + 102, 0x000000, false);
-            poseStack.drawString(font, "E", x + 63, y + 125, 0x000000, false);
-            poseStack.drawString(font, "W", x + 19, y + 125, 0x000000, false);
-            poseStack.drawString(font, "S", x + 41, y + 148, 0x000000, false);
-            poseStack.drawString(font, "Orientation: " + String.format("%.2f", statue.getStatueData().getOrientation()), x + 12, y + 90, 0x5F5F60, false);
-        }
-    }
-
-    private void initializePixelmonModelCustomizationWidgets() {
-        var pixelmonData = statue.getStatueData();
-        pixelmonSelectionButton = this.addRenderableWidget(new PixelmonSelectionButton(
-                x + 6, y + 26,
-                new PixelmonSelectionWidget.PixelmonWidgetData(pixelmonData.getProperties().asRenderablePokemon()),
-                btn -> {
-                    boolean visibility = pixelmonSelectionWidget.visible;
-                    setPixelmonSelectionWidgetVisibility(!visibility);
-                    scaleTextField.visible = visibility;
-                    scaleTextField.active = visibility;
-
-                    orientationWidget.visible = visibility;
-                    orientationWidget.active = visibility;
-                    statickCheckbox.visible = visibility;
-                    statickCheckbox.active = visibility;
-                    pixelmonFormTextField.visible = visibility;
-                    pixelmonFormTextField.active = visibility;
-                    pixelmonSkinTextField.visible = visibility;
-                    pixelmonSkinTextField.active = visibility;
-                    animationTextField.active = visibility;
-                    animationTextField.visible = visibility;
-                    checkTimestampState(visibility);
-                    parserTextField.active = visibility;
-                    parserTextField.visible = visibility;
-                })
-        );
-
-        pixelmonSelectionWidget = this.addRenderableWidget(new PixelmonSelectionWidget(pixelmonSelectionButton.getX() + 34, pixelmonSelectionButton.getY(), data -> {
-            var info = statue.getStatueData();
-            info.getProperties().setSpecies(data.data().getSpecies().resourceIdentifier.toString());
-//            var form = info.getPokedexEntry().getFormMap().containsKey(info.getFormId()) ? info.getSkinId() : info.getPokedexEntry().getDefaultFormId();
-//            info.setForm(form);
-//            var skin = info.getPokemonForm().skins().containsKey(info.getSkinId()) ? info.getSkinId() : info.getPokemonForm().defaultSkin();
-//            info.setSkin(skin);
-
-            setPixelmonSelectionWidgetVisibility(false);
-
-            scaleTextField.visible = true;
-            scaleTextField.active = true;
-            orientationWidget.visible = true;
-            orientationWidget.active = true;
-            statickCheckbox.visible = true;
-            statickCheckbox.active = true;
-            pixelmonFormTextField.visible = true;
-            pixelmonFormTextField.active = true;
-            pixelmonSkinTextField.visible = true;
-            pixelmonSkinTextField.active = true;
-            animationTextField.active = true;
-            animationTextField.visible = true;
-            checkTimestampState(true);
-            parserTextField.active = true;
-            parserTextField.visible = true;
-            ((PixelmonSelectionButton)pixelmonSelectionButton).setSelectedPixelmon(new PixelmonSelectionWidget.PixelmonWidgetData(statue.getStatueData().getProperties().asRenderablePokemon()));
-        }));
-
-        var pixelmonSelectionSearchBar = new EditBox(font, pixelmonSelectionButton.getX() + 34, pixelmonSelectionButton.getY() - 10, pixelmonSelectionWidget.getWidth(), 10, Component.empty());
-        pixelmonSelectionSearchBar.setResponder(((PixelmonSelectionWidget)pixelmonSelectionWidget)::updateShownData);
-        pixelmonSelectionSearchBar.setHint(Component.literal("Filter..."));
-        pixelmonSelectionSearchBar.setBordered(false);
-        this.pixelmonSelectionSearchBar = this.addRenderableWidget(pixelmonSelectionSearchBar);
-
-        this.pixelmonFormTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 75, y + 27,
-                120, 14, 32, "Form", //pixelmonData.getFormId(),
-                s -> {
-                    var data = statue.getStatueData();
-//                    var form = data.getPokedexEntry().getFormMap().containsKey(s) ? s : data.getPokedexEntry().getDefaultFormId();
-//                    data.setForm(form);
-//                    var skin = data.getPokemonForm().skins().containsKey(pixelmonSkinTextField.getMessage().getString()) ? pixelmonSkinTextField.getMessage().getString() : data.getPokemonForm().defaultSkin();
-//                    data.setSkin(skin);
-
-                    ((PixelmonSelectionButton)pixelmonSelectionButton).setSelectedPixelmon(new PixelmonSelectionWidget.PixelmonWidgetData(statue.getStatueData().getProperties().asRenderablePokemon()));
-                    statue.setStatueInfo(data);
-                }));
-
-        this.pixelmonSkinTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 75, y + 45,
-                120, 14, 32, "Skin", //pixelmonData.getSkinId(),
-                s -> {
-                    var data = statue.getStatueData();
-//                    var form = data.getPokedexEntry().getFormMap().containsKey(pixelmonFormTextField.getMessage().getString()) ? pixelmonFormTextField.getMessage().getString() : data.getPokedexEntry().getDefaultFormId();
-//                    data.setForm(form);
-//                    var skin = data.getPokemonForm().skins().containsKey(s) ? s : data.getPokemonForm().defaultSkin();
-//                    data.setSkin(skin);
-//
-//                    data.setSkin(s);
-                    ((PixelmonSelectionButton)pixelmonSelectionButton).setSelectedPixelmon(new PixelmonSelectionWidget.PixelmonWidgetData(statue.getStatueData().getProperties().asRenderablePokemon()));
-                    statue.setStatueInfo(data);
-                }));
-    }
-
-    private void setPixelmonSelectionWidgetVisibility(boolean visible) {
-        pixelmonSelectionSearchBar.visible = visible;
-        pixelmonSelectionSearchBar.active = visible;
-        pixelmonSelectionWidget.visible = visible;
-        pixelmonSelectionWidget.active = visible;
+        poseStack.drawString(font, "N", x + 56, y + 36, 0x000000, false);
+        poseStack.drawString(font, "E", x + 78, y + 59, 0x000000, false);
+        poseStack.drawString(font, "W", x + 34, y + 59, 0x000000, false);
+        poseStack.drawString(font, "S", x + 56, y + 82, 0x000000, false);
+        poseStack.drawString(font, "Orientation: " + String.format("%.2f", statue.getStatueData().getOrientation()), x + 11, y + 24, 0x5F5F60, false);
     }
 
     private void checkTimestampState(boolean visibility) {
