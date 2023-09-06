@@ -76,10 +76,8 @@ public class StatueEditorScreen extends Screen {
             return false;
         }, s -> {
             var value = s.isEmpty() ? 0 : parseFloat(s);
-//            var anim = getAnimation();
-//            if (anim != null) {
-//                statue.getStatueData().setProgress((float) Mth.clamp(value, 0, anim.animationDuration));
-//                statue.updateStatueData();
+                  statue.getStatueData().setProgress(value);
+                statue.updateStatueData();
 //            }
         }));
 
@@ -140,9 +138,9 @@ public class StatueEditorScreen extends Screen {
                 info.isSacredAshInteractable()
         ));
 
-        orientationWidget = addRenderableWidget(new AngleSelectionWidget(x + 43, y + 47, 15, (statue.getStatueData().getOrientation() + 180) % 360, 5, 0x000000,
+        orientationWidget = addRenderableWidget(new AngleSelectionWidget(x + 43, y + 47, 15, (statue.getStatueData().getOrientation() + 180), 5, 0x000000,
                 (prevAngle, angle) -> {
-                    statue.getStatueData().setOrientation((angle) % 360);
+                    statue.getStatueData().setOrientation((angle- 180));
                     statue.updateStatueData();
                 }));
 
@@ -167,7 +165,7 @@ public class StatueEditorScreen extends Screen {
         poseStack.enableScissor(x + 122, y + 25, x + 122 + 63, y + 25 + 63);
 
         poseStack.pose().translate((63 / 2f), 63 - 5.0, 0.0);
-        PokemonGuiUtilsKt.drawProfilePokemon(statue.getInfo(), poseStack.pose(), new Quaternionf().rotationXYZ(Math.toRadians(13f), Math.toRadians(35F), Math.toRadians(0F)), statue.delegate, 6f, partialTick);
+        PokemonGuiUtilsKt.drawProfilePokemon(statue.getStatueData().asRenderablePokemon(), poseStack.pose(), new Quaternionf().rotationXYZ(Math.toRadians(13f), Math.toRadians(-35F), Math.toRadians(0F)), statue.delegate, 6f, partialTick);
         poseStack.disableScissor();
         poseStack.pose().popPose();
 
@@ -176,7 +174,7 @@ public class StatueEditorScreen extends Screen {
         poseStack.pose().popPose();
         super.render(poseStack, mouseX, mouseY, partialTick);
 
-        ScreenUtils.drawText(poseStack, "Name:", x + 168, y + 131, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Static:", x + 168, y + 131, 0x5F5F60, ScreenUtils.Position.RIGHT);
         ScreenUtils.drawText(poseStack, "Interactable:", x + 168, y + 149, 0x5F5F60, ScreenUtils.Position.RIGHT);
 
         ScreenUtils.drawText(poseStack, "Name:", x + 56, y + 95, 0x5F5F60, ScreenUtils.Position.RIGHT);

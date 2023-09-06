@@ -23,6 +23,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
@@ -59,6 +60,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         this.sizeChanged = true;
         setNoGravity(true);
         setInvulnerable(true);
+        this.noPhysics = true;
         EnvExecutor.runInEnv(CLIENT, () -> () -> delegate = new StatueEntityClient());
     }
 
@@ -213,6 +215,12 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         return getStatueData().getScale();
     }
 
+    @Override
+    public Component getDisplayName() {
+        String label = getStatueData().label;
+        return label != null ? Component.nullToEmpty(label) : super.getDisplayName();
+    }
+
     public static final class StatueInfo {
         private static ResourceLocation defaultSpecies = new ResourceLocation("cobblemon", "charizard");
         private PokemonProperties properties;
@@ -223,7 +231,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         private float scale;
 
         private boolean sacredAshInteractable;
-        private String label = "";
+        private String label = null;
 
         public StatueInfo() {
             this(PokemonProperties.Companion.parse("species=charizard", " ", "="), "Statue", 0.0f, 1.0f, "", false, 0.0f, false);
@@ -241,7 +249,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         }
 
         public StatueInfo(FriendlyByteBuf buf) {
-            this(PokemonProperties.Companion.parse(buf.readUtf(), " ", "="), buf.readUtf(), buf.readFloat(), buf.readFloat(), buf.readUtf(), buf.readBoolean(), buf.readFloat(), buf.readBoolean());
+            this(PokemonProperties.Companion.parse(buf.readUtf(), " ", "="), buf.readNullable(FriendlyByteBuf::readUtf), buf.readFloat(), buf.readFloat(), buf.readUtf(), buf.readBoolean(), buf.readFloat(), buf.readBoolean());
         }
 
         public StatueInfo(CompoundTag tag) {
@@ -262,7 +270,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
             Species species = null;
 
             if(properties.getSpecies() != null) {
-                species = PokemonSpecies.INSTANCE.getByIdentifier(new ResourceLocation("cobbelmon", properties.getSpecies()));
+                species = PokemonSpecies.INSTANCE.getByIdentifier(new ResourceLocation("cobblemon", properties.getSpecies()));
 
                 if(species == null) {
                     species = PokemonSpecies.INSTANCE.getByIdentifier(defaultSpecies);
@@ -306,12 +314,12 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
             tag.putBoolean("isStatic", isStatic);
             tag.putFloat("progress", progress);
             tag.putBoolean("sacredAshInteractable", sacredAshInteractable);
-            tag.putString("label", label);
+            if(tag.contains("label")) tag.putString("label", label);
             return tag;
         }
 
         public void serializeToByteBuf(FriendlyByteBuf buf) {
-            buf.writeUtf(properties.asString(" ")).writeUtf(label);
+            buf.writeUtf(properties.asString(" ")).writeNullable(label, FriendlyByteBuf::writeUtf);
             buf.writeFloat(orientation).writeFloat(scale);
             buf.writeUtf(animation).writeBoolean(isStatic).writeFloat(progress).writeBoolean(sacredAshInteractable);
         }
@@ -348,12 +356,12 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
             this.progress = timestamp;
         }
 
-        public void setLabel(String label) {
-            this.label = label;
-        }
-
         public String getLabel() {
             return label;
+        }
+
+        public void setLabel(String label) {
+            this.label = label;
         }
     }
 }

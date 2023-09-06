@@ -1,11 +1,7 @@
 package generations.gg.generations.core.generationscore.client.model;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.cobblemon.mod.common.pokemon.Species;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -15,16 +11,17 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.C
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 import java.util.Collections;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Supplier;
+
+import static generations.gg.generations.core.generationscore.client.render.entity.StatueEntityRenderer.STATUE;
 
 public class RareCandyBone implements Supplier<Bone>, Bone {
     private  static Vector3f temp = new Vector3f();
@@ -48,7 +45,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     public void render(RenderContext context, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var model = objectSupplier.get();
 
-        var instance = context.request(RenderContext.Companion.getENTITY()) instanceof PixelmonInstanceProvider provider ? provider.getInstance() : null;
+        var instance = (context.request(RenderContext.Companion.getENTITY()) != null ? context.request(RenderContext.Companion.getENTITY()) : context.request(STATUE)) instanceof PixelmonInstanceProvider provider ? provider.getInstance() : null;
 
         boolean isGui = false;
 
@@ -64,6 +61,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
 
         if(model.renderObject.isReady()) {
+            instance.setLight(packedLight);
             var id = context.request(RenderContext.Companion.getTEXTURE());
             if(id.getNamespace().equals("pk")) instance.setVariant(id.getPath());
 

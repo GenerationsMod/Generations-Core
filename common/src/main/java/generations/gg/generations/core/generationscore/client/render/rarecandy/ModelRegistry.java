@@ -23,7 +23,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModelRegistry {
-    private static GenericObjectPool<PixelmonInstance> POOl = new GenericObjectPool<>(() -> new PixelmonInstance(new Matrix4f(), new Matrix4f(), "", () -> LightingSettings.NORMAL_SHADING), 36);
     private static final Function<GltfModel, Supplier<MeshObject>> MESH_OBJECT_SUPPLIER = gltfModel -> () -> {
         if (gltfModel.getSkinModels().isEmpty()) return new MeshObject();
         return new AnimatedMeshObject();

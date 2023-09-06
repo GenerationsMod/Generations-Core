@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.client.render.PixelmonIns
 import generations.gg.generations.core.generationscore.client.render.rarecandy.LightingSettings;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 
 public class StatueEntityClient extends PoseableEntityState<PokemonEntity> implements PixelmonInstanceProvider {
@@ -15,6 +16,10 @@ public class StatueEntityClient extends PoseableEntityState<PokemonEntity> imple
     @Override
     public void updatePartialTicks(float v) {
         setCurrentPartialTicks(getPartialTicks() + v);
+    }
+
+    public void setCurrentTicks(float v) {
+        setCurrentPartialTicks(v);
     }
 
     public PixelmonInstance getInstance() {
@@ -27,5 +32,11 @@ public class StatueEntityClient extends PoseableEntityState<PokemonEntity> imple
     @Override
     public void setInstance(PixelmonInstance instance) {
         pixelmonInstance = instance;
+    }
+
+    @Nullable
+    @Override
+    public PokemonEntity getEntity() {
+        return null;
     }
 }
