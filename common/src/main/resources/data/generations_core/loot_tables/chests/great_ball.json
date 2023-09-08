@@ -411,63 +411,63 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm5"
+				"name": "generations_core:tm_5"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm28"
+				"name": "generations_core:tm_28"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm35"
+				"name": "generations_core:tm_35"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm55"
+				"name": "generations_core:tm_55"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm84"
+				"name": "generations_core:tm_84"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm90"
+				"name": "generations_core:tm_90"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm106"
+				"name": "generations_core:tm_106"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm133"
+				"name": "generations_core:tm_133"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm149"
+				"name": "generations_core:tm_149"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm44"
+				"name": "generations_core:tm_44"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm78"
+				"name": "generations_core:tm_78"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm100"
+				"name": "generations_core:tm_100"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm115"
+				"name": "generations_core:tm_115"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm156"
+				"name": "generations_core:tm_156"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm169"
+				"name": "generations_core:tm_169"
 			}
 		]
 	}]

@@ -359,71 +359,71 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm9"
+				"name": "generations_core:tm_9"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm23"
+				"name": "generations_core:tm_23"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm48"
+				"name": "generations_core:tm_48"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm68"
+				"name": "generations_core:tm_68"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm72"
+				"name": "generations_core:tm_72"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm82"
+				"name": "generations_core:tm_82"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm96"
+				"name": "generations_core:tm_96"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm126"
+				"name": "generations_core:tm_126"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm136"
+				"name": "generations_core:tm_136"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm147"
+				"name": "generations_core:tm_147"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm166"
+				"name": "generations_core:tm_166"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm44"
+				"name": "generations_core:tm_44"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm78"
+				"name": "generations_core:tm_78"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm100"
+				"name": "generations_core:tm_100"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm115"
+				"name": "generations_core:tm_115"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm156"
+				"name": "generations_core:tm_156"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm169"
+				"name": "generations_core:tm_169"
 			}
 		]
 	}]

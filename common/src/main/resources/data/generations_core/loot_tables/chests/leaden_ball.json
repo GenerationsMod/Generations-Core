@@ -307,83 +307,83 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm8"
+				"name": "generations_core:tm_8"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm24"
+				"name": "generations_core:tm_24"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm38"
+				"name": "generations_core:tm_38"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm49"
+				"name": "generations_core:tm_49"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm67"
+				"name": "generations_core:tm_67"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm107"
+				"name": "generations_core:tm_107"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm118"
+				"name": "generations_core:tm_118"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm125"
+				"name": "generations_core:tm_125"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm141"
+				"name": "generations_core:tm_141"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm144"
+				"name": "generations_core:tm_144"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm153"
+				"name": "generations_core:tm_153"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm157"
+				"name": "generations_core:tm_157"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm165"
+				"name": "generations_core:tm_165"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm36"
+				"name": "generations_core:tm_36"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm51"
+				"name": "generations_core:tm_51"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm76"
+				"name": "generations_core:tm_76"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm86"
+				"name": "generations_core:tm_86"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm101"
+				"name": "generations_core:tm_101"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm116"
+				"name": "generations_core:tm_116"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm150"
+				"name": "generations_core:tm_150"
 			}
 		]
 	}]
