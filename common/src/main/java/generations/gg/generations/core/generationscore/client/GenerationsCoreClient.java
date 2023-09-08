@@ -17,7 +17,6 @@ import generations.gg.generations.core.generationscore.client.render.entity.Gene
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.StatueEntityRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
@@ -25,7 +24,7 @@ import generations.gg.generations.core.generationscore.world.entity.GenerationsB
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
-import generations.gg.generations.core.generationscore.world.item.TechnicalMachineItem;
+import generations.gg.generations.core.generationscore.world.item.MoveTeachingItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
@@ -67,10 +66,7 @@ public class GenerationsCoreClient {
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
-        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> {
-            System.out.println("Cobblemon I dare you tell me " + resourceLocation + " doesn't exists.");
-            return new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation));
-        });
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
 
 
         PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
@@ -88,8 +84,8 @@ public class GenerationsCoreClient {
             registerScreens();
         });
 
-        ItemPropertiesRegistry.register(GenerationsItems.TM.get(), GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
-            var type = TechnicalMachineItem.getType(arg);
+        ItemPropertiesRegistry.register(GenerationsItems.CUSTOM_TM.get(), GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
+            var type = ((MoveTeachingItem) arg.getItem()).getType(arg);
 
             if(type == ElementalTypes.INSTANCE.getNORMAL()) return 0.00f;
             else if(type == ElementalTypes.INSTANCE.getFIRE()) return 0.01f;

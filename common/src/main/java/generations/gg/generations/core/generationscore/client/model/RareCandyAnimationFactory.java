@@ -24,7 +24,6 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
 
     @Override
     public @NotNull StatefulAnimation<PokemonEntity, ModelFrame> stateful(@NotNull JsonPokemonPoseableModel jsonPokemonPoseableModel, @NotNull String s) {
-        System.out.println("Cobblemon I dare you tell me this stateful animation " + s + " doesn't exists.");
         var split = s.replace("pk(", "").replace(")", "").split(",");
         var location = new ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/");
         var name = split[1].trim();
@@ -38,7 +37,6 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
     @NotNull
     @Override
     public StatelessAnimation<PokemonEntity, ModelFrame> stateless(@NotNull JsonPokemonPoseableModel jsonPokemonPoseableModel, @NotNull String s) {
-        System.out.println("Cobblemon I dare you tell me this stateless animation " + s + " doesn't exists.");
         var split = s.replace("pk(", "").replace(")", "").split(",");
         var location = new ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/");
         var name = split[1].trim();
