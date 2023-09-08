@@ -19,7 +19,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:belue_berry"
+				"name": "cobblemon:belue_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -35,7 +35,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:bluk_berry"
+				"name": "cobblemon:bluk_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -63,7 +63,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone"
+				"name": "cobblemon:dusk_stone"
 			},
 			{
 				"type": "minecraft:item",
@@ -103,19 +103,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golden_pinap_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:golden_razz_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:green_scarf"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:grepa_berry"
+				"name": "cobblemon:grepa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -167,7 +159,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nomel_berry"
+				"name": "cobblemon:nomel_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -175,11 +167,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:oval_charm"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:pamtre_berry"
+				"name": "cobblemon:pamtre_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -275,11 +263,51 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:elegant_wing"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "minecraft:music_disc_chirp"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_22"
+				"name": "generations_core:iris_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:nessa_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:team_rocket_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sada_and_turo_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:south_province_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rival_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lusamine_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:xy_legendary_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:kanto_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ultra_necrozma_disc"
 			},
 			{
 				"type": "minecraft:item",

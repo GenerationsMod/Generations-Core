@@ -23,7 +23,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chople_berry"
+				"name": "cobblemon:chople_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -31,11 +31,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:colbur_berry"
+				"name": "cobblemon:colbur_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:custap_berry"
+				"name": "cobblemon:custap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -83,7 +83,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lone_earing"
+				"name": "generations_core:lone_earring"
 			},
 			{
 				"type": "minecraft:item",
@@ -99,7 +99,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:passho_berry"
+				"name": "cobblemon:passho_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,7 +123,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revive"
+				"name": "cobblemon:revive"
 			},
 			{
 				"type": "minecraft:item",
@@ -191,46 +191,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:ice_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:dawn_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:shiny_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:sun_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:moon_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:leaf_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:thunder_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:water_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:fire_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "minecraft:string"
 			},
 			{
@@ -239,11 +199,63 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:fighting_candy"
+				"name": "generations_core:cascarrafa_city_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_18"
+				"name": "generations_core:slumbering_weald_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemon_center_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:azalea_town_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lillie_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:route_228_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:jubilife_village_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:goldenrod_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:eterna_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:vermilion_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fragmented_drago_key_1"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fragmented_drago_key_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fragmented_drago_key_3"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fragmented_drago_key_4"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fighting_candy"
 			},
 			{
 				"type": "minecraft:item",
@@ -255,11 +267,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aluminium_ingot"
+				"name": "generations_core:aluminum_ingot"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aluminium_plate"
+				"name": "generations_core:aluminum_plate"
 			},
 			{
 				"type": "minecraft:item",

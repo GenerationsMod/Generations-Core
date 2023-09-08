@@ -23,11 +23,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:clever_feather"
+				"name": "cobblemon:clever_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:coba_berry"
+				"name": "cobblemon:coba_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -36,10 +36,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:dire_hit_2"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:dropped_item"
 			},
 			{
 				"type": "minecraft:item",
@@ -63,7 +59,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:genius_feather"
+				"name": "cobblemon:genius_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -79,19 +75,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:grepa_berry"
+				"name": "cobblemon:grepa_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:haban_berry"
+				"name": "cobblemon:haban_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:health_feather"
+				"name": "cobblemon:health_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kebia_berry"
+				"name": "cobblemon:kebia_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -99,15 +95,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leek"
+				"name": "cobblemon:leek"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:liechi_berry"
+				"name": "cobblemon:liechi_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lum_berry"
+				"name": "cobblemon:lum_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,11 +119,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:muscle_feather"
+				"name": "cobblemon:muscle_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nanab_berry"
+				"name": "cobblemon:nanab_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,7 +167,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:resist_feather"
+				"name": "cobblemon:resist_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -203,7 +199,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wiki_berry"
+				"name": "cobblemon:wiki_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -227,14 +223,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:sun_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:leaf_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "minecraft:cobweb"
 			},
 			{
@@ -247,7 +235,43 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_14"
+				"name": "generations_core:cerulean_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:icirrus_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:laverre_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:surf_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lake_of_rage_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:penny_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:nemona_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:zinnia_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:cynthia_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:deoxys_disc"
 			},
 			{
 				"type": "minecraft:item",

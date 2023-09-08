@@ -79,7 +79,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hondew_berry"
+				"name": "cobblemon:hondew_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -91,7 +91,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:iron_ball"
+				"name": "generations_core:iron_ball"
 			},
 			{
 				"type": "minecraft:item",
@@ -99,7 +99,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kelpsy_berry"
+				"name": "cobblemon:kelpsy_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -107,7 +107,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lansat_berry"
+				"name": "cobblemon:lansat_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -127,7 +127,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lum_berry"
+				"name": "cobblemon:lum_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -151,7 +151,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:oran_berry"
+				"name": "cobblemon:oran_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -203,7 +203,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rindo_berry"
+				"name": "cobblemon:rindo_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -263,7 +263,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tamato_berry"
+				"name": "cobblemon:tamato_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -311,14 +311,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:shiny_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:fire_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "minecraft:gunpowder"
 			},
 			{
@@ -336,10 +328,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_ward"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:record_10"
 			},
 			{
 				"type": "minecraft:item",
@@ -372,6 +360,22 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:berry_sweet"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:crumbled_rock_key_1"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:crumbled_rock_key_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:crumbled_rock_key_3"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:crumbled_rock_key_4"
 			},
 			{
 				"type": "minecraft:item",
@@ -423,15 +427,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:quiet_mint"
+				"name": "cobblemon:quiet_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rash_mint"
+				"name": "cobblemon:rash_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:calm_mint"
+				"name": "cobblemon:mild_mint"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:calm_mint"
 			},
 			{
 				"type": "minecraft:item",

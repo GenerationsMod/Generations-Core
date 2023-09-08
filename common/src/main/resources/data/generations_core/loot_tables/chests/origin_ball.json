@@ -63,7 +63,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leek"
+				"name": "cobblemon:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -71,7 +71,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lone_earing"
+				"name": "generations_core:lone_earring"
 			},
 			{
 				"type": "minecraft:item",
@@ -103,15 +103,43 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shard_of_knowledge"
+				"name": "generations_core:iris_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shard_of_willpower"
+				"name": "generations_core:nessa_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shard_of_emotion"
+				"name": "generations_core:team_rocket_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sada_and_turo_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:south_province_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rival_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lusamine_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:xy_legendary_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:kanto_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ultra_necrozma_disc"
 			},
 			{
 				"type": "minecraft:item",
@@ -159,19 +187,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:apicot_berry"
+				"name": "cobblemon:apicot_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aspear_berry"
+				"name": "cobblemon:aspear_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:babiri_berry"
+				"name": "cobblemon:babiri_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:berry_juice"
+				"name": "cobblemon:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -328,46 +356,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:tart_apple"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:dawn_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:fire_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:ice_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:leaf_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:moon_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:shiny_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:sun_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:thunder_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:water_stone_shard"
 			},
 			{
 				"type": "minecraft:item",

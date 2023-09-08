@@ -31,7 +31,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:berry_juice"
+				"name": "cobblemon:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,7 +123,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hondew_berry"
+				"name": "cobblemon:hondew_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -139,7 +139,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:jaboca_berry"
+				"name": "cobblemon:jaboca_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,15 +171,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:oval_charm"
+				"name": "cobblemon:pecha_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pecha_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:persim_berry"
+				"name": "cobblemon:persim_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -239,10 +235,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:silver_nanab_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:small_bouquet"
 			},
 			{
@@ -255,7 +247,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:starf_berry"
+				"name": "cobblemon:starf_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -295,7 +287,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:ice_stone_shard"
+				"name": "generations_core:rotom_catalog"
 			},
 			{
 				"type": "minecraft:item",
@@ -320,10 +312,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_cat"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:record_2"
 			},
 			{
 				"type": "minecraft:item",
@@ -395,15 +383,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:serious_mint"
+				"name": "cobblemon:serious_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lonely_mint"
+				"name": "cobblemon:lonely_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:brave_mint"
+				"name": "cobblemon:brave_mint"
 			},
 			{
 				"type": "minecraft:item",

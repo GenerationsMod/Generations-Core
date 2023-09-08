@@ -27,7 +27,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:bluk_berry"
+				"name": "cobblemon:bluk_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -47,11 +47,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:charti_berry"
+				"name": "cobblemon:charti_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:colbur_berry"
+				"name": "cobblemon:colbur_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -59,7 +59,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone"
+				"name": "cobblemon:dusk_stone"
 			},
 			{
 				"type": "minecraft:item",
@@ -87,15 +87,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:ganlon_berry"
+				"name": "cobblemon:ganlon_berry"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:ghost_gem"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:golden_pinap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -111,7 +107,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hi-tech-earbuds"
+				"name": "generations_core:hi_tech_earbuds"
 			},
 			{
 				"type": "minecraft:item",
@@ -131,7 +127,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kebia_berry"
+				"name": "cobblemon:kebia_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -139,7 +135,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leppa_berry"
+				"name": "cobblemon:leppa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -191,11 +187,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:old_amber"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:payapa_berry"
+				"name": "cobblemon:payapa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -239,7 +231,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:roseli_berry"
+				"name": "cobblemon:roseli_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -251,7 +243,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:sitrus_berry"
+				"name": "cobblemon:sitrus_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -303,7 +295,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wepear_berry"
+				"name": "cobblemon:wepear_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -312,18 +304,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:x_speed"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:dawn_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:moon_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:thunder_stone_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -351,10 +331,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_13"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:wishing_star"
 			},
 			{
@@ -371,7 +347,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:meteorite_ore"
+				"name": "generations_core:meteorite_shard"
 			},
 			{
 				"type": "minecraft:item",

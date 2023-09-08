@@ -22,7 +22,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:coba_berry"
+				"name": "cobblemon:coba_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -30,7 +30,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cornn_berry"
+				"name": "cobblemon:cornn_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -74,10 +74,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golden_nanab_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:grip_claw"
 			},
 			{
@@ -86,7 +82,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -98,7 +94,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:iapapa_berry"
+				"name": "cobblemon:iapapa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -106,7 +102,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kasib_berry"
+				"name": "cobblemon:kasib_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -130,11 +126,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:magost_berry"
+				"name": "cobblemon:magost_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:max_revive"
+				"name": "cobblemon:max_revive"
 			},
 			{
 				"type": "minecraft:item",
@@ -142,11 +138,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nanab_berry"
+				"name": "cobblemon:nanab_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nomel_berry"
+				"name": "cobblemon:nomel_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -158,7 +154,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pomeg_berry"
+				"name": "cobblemon:pomeg_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -170,15 +166,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rabuta_berry"
+				"name": "cobblemon:rabuto_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revive"
+				"name": "cobblemon:revive"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:salac_berry"
+				"name": "cobblemon:salac_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -186,7 +182,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shark_beak"
+				"name": "cobblemon:sharp_beak"
 			},
 			{
 				"type": "minecraft:item",
@@ -194,7 +190,51 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:silver_razz_berry"
+				"name": "generations_core:orb"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rotom_catalog"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:cerulean_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:icirrus_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:laverre_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:surf_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lake_of_rage_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:penny_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:nemona_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:zinnia_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:cynthia_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:deoxys_disc"
 			},
 			{
 				"type": "minecraft:item",
@@ -214,7 +254,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wiki_berry"
+				"name": "cobblemon:wiki_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -251,10 +291,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_wait"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:record_21"
 			},
 			{
 				"type": "minecraft:item",

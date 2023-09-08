@@ -39,7 +39,47 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:bluk_berry"
+				"name": "generations_core:iris_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:nessa_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:team_rocket_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sada_and_turo_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:south_province_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rival_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lusamine_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:xy_legendary_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:kanto_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ultra_necrozma_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:bluk_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -63,11 +103,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cheri_berry"
+				"name": "cobblemon:cheri_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cherish_berry"
+				"name": "cobblemon:cheri_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -83,7 +123,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cornn_berry"
+				"name": "cobblemon:cornn_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -151,10 +191,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golden_nanab_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:grip_claw"
 			},
 			{
@@ -175,11 +211,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kee_berry"
+				"name": "cobblemon:kee_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kelpsy_berry"
+				"name": "cobblemon:kelpsy_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -195,7 +231,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:max_revive"
+				"name": "cobblemon:max_revive"
 			},
 			{
 				"type": "minecraft:item",
@@ -227,7 +263,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pp_up"
+				"name": "cobblemon:pp_up"
 			},
 			{
 				"type": "minecraft:item",

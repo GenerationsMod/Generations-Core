@@ -15,7 +15,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:babiri_berry"
+				"name": "cobblemon:babiri_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -27,7 +27,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:bluk_berry"
+				"name": "cobblemon:bluk_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -39,7 +39,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:charti_berry"
+				"name": "cobblemon:charti_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -47,7 +47,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:coba_berry"
+				"name": "cobblemon:coba_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -79,15 +79,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:jaboca_berry"
+				"name": "cobblemon:jaboca_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kasib_berry"
+				"name": "cobblemon:kasib_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kebia_berry"
+				"name": "cobblemon:kebia_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -107,11 +107,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lone_earing"
+				"name": "generations_core:lone_earring"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:love_incense"
+				"name": "generations_core:luck_incense"
 			},
 			{
 				"type": "minecraft:item",
@@ -127,7 +127,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:mago_berry"
+				"name": "cobblemon:mago_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -147,7 +147,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pamtre_berry"
+				"name": "cobblemon:pamtre_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -159,7 +159,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pinap_berry"
+				"name": "cobblemon:pinap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -187,7 +187,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rawst_berry"
+				"name": "cobblemon:rawst_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -211,7 +211,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rowap_berry"
+				"name": "cobblemon:rowap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -223,23 +223,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:silver_nanab_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:smoke_ball"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:spelon_berry"
+				"name": "cobblemon:spelon_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:sprinklotad"
+				"name": "generations_core:sprink_lotad"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:starf_berry"
+				"name": "cobblemon:starf_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -263,7 +259,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wacan_berry"
+				"name": "cobblemon:wacan_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -303,10 +299,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_12"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:mark_charm"
 			},
 			{
@@ -319,15 +311,31 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aluminium_ingot"
+				"name": "generations_core:aluminum_ingot"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aluminium_plate"
+				"name": "generations_core:aluminum_plate"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:wailmer_pail"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rusty_iron_key_1"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rusty_iron_key_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rusty_iron_key_3"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rusty_iron_key_4"
 			},
 			{
 				"type": "minecraft:item",

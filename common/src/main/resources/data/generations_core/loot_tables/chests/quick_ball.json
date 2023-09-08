@@ -15,7 +15,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:berry_juice"
+				"name": "cobblemon:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -43,7 +43,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:custap_berry"
+				"name": "cobblemon:custap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -63,7 +63,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:haban_berry"
+				"name": "cobblemon:haban_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -71,7 +71,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:health_wing"
+				"name": "generations_core:health_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -83,7 +83,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kasib_berry"
+				"name": "cobblemon:kasib_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -107,11 +107,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nanab_berry"
+				"name": "cobblemon:nanab_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pomeg_berry"
+				"name": "cobblemon:pomeg_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -132,6 +132,22 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:protector"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:discharged_eleki_key_1"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:discharged_eleki_key_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:discharged_eleki_key_3"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:discharged_eleki_key_4"
 			},
 			{
 				"type": "minecraft:item",
@@ -163,19 +179,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:salac_berry"
+				"name": "cobblemon:salac_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:silver_pinap_berry"
+				"name": "generations_core:smoked_poke_tail"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:smoke_poke_tail"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:spelon_berry"
+				"name": "cobblemon:spelon_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -255,10 +267,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_17"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:purple_bike"
 			},
 			{
@@ -279,11 +287,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:sassy_mint"
+				"name": "cobblemon:sassy_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:careful_mint"
+				"name": "cobblemon:careful_mint"
 			},
 			{
 				"type": "minecraft:item",

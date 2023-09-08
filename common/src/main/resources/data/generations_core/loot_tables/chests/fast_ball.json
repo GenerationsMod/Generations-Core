@@ -15,11 +15,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aguav_berry"
+				"name": "cobblemon:aguav_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:belue_berry"
+				"name": "cobblemon:belue_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -35,7 +35,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -71,7 +71,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:iapapa_berry"
+				"name": "cobblemon:iapapa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -83,15 +83,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:iron_ball"
+				"name": "generations_core:iron_ball"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kelpsy_berry"
+				"name": "cobblemon:kelpsy_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:liechi_berry"
+				"name": "cobblemon:liechi_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -139,7 +139,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:payapa_berry"
+				"name": "cobblemon:payapa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -155,7 +155,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:qualot_berry"
+				"name": "cobblemon:qualot_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -183,11 +183,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:salac_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:silver_razz_berry"
+				"name": "cobblemon:salac_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -195,7 +191,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tomato_berry"
+				"name": "cobblemon:tamato_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -211,7 +207,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:watmel_berry"
+				"name": "cobblemon:watmel_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -231,7 +227,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:thunder_stone_shard"
+				"name": "generations_core:fiery_wing"
 			},
 			{
 				"type": "minecraft:item",
@@ -252,10 +248,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_far"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:record_6"
 			},
 			{
 				"type": "minecraft:item",
@@ -363,7 +355,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_great"
+				"name": "generations_core:pokemail_greet"
 			},
 			{
 				"type": "minecraft:item",

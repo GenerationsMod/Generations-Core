@@ -11,7 +11,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:belue_berry"
+				"name": "cobblemon:belue_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -35,7 +35,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:colbur_berry"
+				"name": "cobblemon:colbur_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -47,7 +47,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone"
+				"name": "cobblemon:dusk_stone"
 			},
 			{
 				"type": "minecraft:item",
@@ -67,7 +67,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:health_wing"
+				"name": "generations_core:health_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -75,7 +75,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kasib_berry"
+				"name": "cobblemon:kasib_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -103,7 +103,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nomel_berry"
+				"name": "cobblemon:nomel_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -111,7 +111,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:occa_berry"
+				"name": "cobblemon:occa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -127,7 +127,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pecha_berry"
+				"name": "cobblemon:pecha_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -139,15 +139,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rabuta_berry"
+				"name": "cobblemon:rabuto_berry"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:razor_fang"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:razz_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -172,10 +168,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:shiny_stone"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:silver_nanab_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -239,15 +231,51 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:sinister_wing"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:iris_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:nessa_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:team_rocket_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sada_and_turo_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:south_province_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rival_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lusamine_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:xy_legendary_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:kanto_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ultra_necrozma_disc"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:x_speed_2"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:dawn_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -275,10 +303,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_5"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:dark_soul"
 			},
 			{
@@ -287,15 +311,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lax_mint"
+				"name": "cobblemon:lax_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:timid_mint"
+				"name": "cobblemon:timid_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hasty_mint"
+				"name": "cobblemon:hasty_mint"
 			},
 			{
 				"type": "minecraft:item",

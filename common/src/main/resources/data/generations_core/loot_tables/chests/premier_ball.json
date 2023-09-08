@@ -43,7 +43,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cornn_berry"
+				"name": "cobblemon:cornn_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -75,7 +75,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:durin_berry"
+				"name": "cobblemon:durin_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -103,10 +103,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golden_nanab_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:guard_spec"
 			},
 			{
@@ -119,11 +115,55 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:elegant_wing"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:iris_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:nessa_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:team_rocket_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sada_and_turo_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:south_province_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rival_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lusamine_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:xy_legendary_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:kanto_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ultra_necrozma_disc"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "cobblemon:heavy_ball"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hi-tech-earbuds"
+				"name": "generations_core:hi_tech_earbuds"
 			},
 			{
 				"type": "minecraft:item",
@@ -139,7 +179,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:magost_berry"
+				"name": "cobblemon:magost_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -159,15 +199,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:old_amber"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:poison_gem"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pp_up"
+				"name": "cobblemon:pp_up"
 			},
 			{
 				"type": "minecraft:item",
@@ -187,7 +223,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rindo_berry"
+				"name": "cobblemon:rindo_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -195,7 +231,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rowap_berry"
+				"name": "cobblemon:rowap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -252,10 +288,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_stal"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:record_16"
 			},
 			{
 				"type": "minecraft:item",

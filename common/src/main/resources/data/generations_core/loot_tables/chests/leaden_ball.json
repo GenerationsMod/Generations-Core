@@ -19,11 +19,67 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:rusty_iron_key_1"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rusty_iron_key_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rusty_iron_key_3"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rusty_iron_key_4"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:cerulean_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:icirrus_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:laverre_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:surf_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lake_of_rage_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:penny_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:nemona_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:zinnia_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:cynthia_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:deoxys_disc"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:mirror"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:meteorite_ore"
+				"name": "generations_core:meteorite_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -39,7 +95,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:sprinklotad"
+				"name": "generations_core:sprink_lotad"
 			},
 			{
 				"type": "minecraft:item",
@@ -51,7 +107,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:babiri_berry"
+				"name": "cobblemon:babiri_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -63,11 +119,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chilan_berry"
+				"name": "cobblemon:chilan_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -79,7 +135,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:iron_ball"
+				"name": "generations_core:iron_ball"
 			},
 			{
 				"type": "minecraft:item",
@@ -87,7 +143,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kee_berry"
+				"name": "cobblemon:kee_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -111,7 +167,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:maranga_berry"
+				"name": "cobblemon:maranga_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -155,19 +211,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:ganlon_berry"
+				"name": "cobblemon:ganlon_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:apicot_berry"
+				"name": "cobblemon:apicot_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kee_berry"
+				"name": "cobblemon:kee_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:maranga_berry"
+				"name": "cobblemon:maranga_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -224,46 +280,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:zoom_lens"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:dawn_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:fire_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:ice_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:leaf_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:moon_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:shiny_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:sun_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:thunder_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:water_stone_shard"
 			},
 			{
 				"type": "minecraft:item",

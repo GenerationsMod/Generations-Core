@@ -15,7 +15,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:coba_berry"
+				"name": "cobblemon:coba_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -27,11 +27,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:iron_ball"
+				"name": "generations_core:iron_ball"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shark_beak"
+				"name": "cobblemon:sharp_beak"
 			},
 			{
 				"type": "minecraft:item",
@@ -39,19 +39,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:clever_feather"
+				"name": "cobblemon:clever_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:genius_feather"
+				"name": "cobblemon:genius_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:health_feather"
+				"name": "cobblemon:health_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:muscle_feather"
+				"name": "cobblemon:muscle_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -59,7 +59,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:resist_feather"
+				"name": "cobblemon:resist_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,11 +123,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nanab_berry"
+				"name": "cobblemon:nanab_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pomeg_berry"
+				"name": "cobblemon:pomeg_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -155,7 +155,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,11 +171,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:energy_root"
+				"name": "cobblemon:energy_root"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -215,23 +215,23 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_d"
+				"name": "generations_core:pokemail_bridged"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_m"
+				"name": "generations_core:pokemail_bridgem"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_s"
+				"name": "generations_core:pokemail_bridges"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_t"
+				"name": "generations_core:pokemail_bridget"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridge_v"
+				"name": "generations_core:pokemail_bridgev"
 			},
 			{
 				"type": "minecraft:item",
@@ -247,7 +247,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leek"
+				"name": "cobblemon:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -255,7 +255,47 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lone_earing"
+				"name": "generations_core:cascarrafa_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:slumbering_weald_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemon_center_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:azalea_town_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lillie_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:route_228_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:jubilife_village_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:goldenrod_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:eterna_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:vermilion_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lone_earring"
 			},
 			{
 				"type": "minecraft:item",

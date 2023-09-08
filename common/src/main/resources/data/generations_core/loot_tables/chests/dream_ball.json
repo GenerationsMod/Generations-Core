@@ -27,7 +27,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -71,11 +71,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:iapapa_berry"
+				"name": "cobblemon:iapapa_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kebia_berry"
+				"name": "cobblemon:kebia_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -83,7 +83,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leek"
+				"name": "cobblemon:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,11 +123,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:payapa_berry"
+				"name": "cobblemon:payapa_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:persim_berry"
+				"name": "cobblemon:persim_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -187,7 +187,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:roseli_berry"
+				"name": "cobblemon:roseli_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -199,7 +199,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:sitrus_berry"
+				"name": "cobblemon:sitrus_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -263,14 +263,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:shiny_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:moon_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "minecraft:purpur_block"
 			},
 			{
@@ -288,10 +280,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_blocks"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:record_4"
 			},
 			{
 				"type": "minecraft:item",
@@ -323,15 +311,31 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:relaxed_mint"
+				"name": "generations_core:lava_crystal"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:impish_mint"
+				"name": "generations_core:lugia_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:gentle_mint"
+				"name": "generations_core:lavender_town_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:mt_pyre_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:relaxed_mint"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:impish_mint"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:gentle_mint"
 			},
 			{
 				"type": "minecraft:item",

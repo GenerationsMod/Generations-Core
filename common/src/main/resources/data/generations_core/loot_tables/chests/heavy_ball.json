@@ -19,7 +19,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:babiri_berry"
+				"name": "cobblemon:babiri_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -31,11 +31,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chilan_berry"
+				"name": "cobblemon:chilan_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -43,7 +43,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:coba_berry"
+				"name": "cobblemon:coba_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -71,7 +71,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:figy_berry"
+				"name": "cobblemon:figy_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -83,7 +83,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:ganlon_berry"
+				"name": "cobblemon:ganlon_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -95,7 +95,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:haban_berry"
+				"name": "cobblemon:haban_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,7 +123,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:iron_ball"
+				"name": "generations_core:iron_ball"
 			},
 			{
 				"type": "minecraft:item",
@@ -131,7 +131,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kee_berry"
+				"name": "cobblemon:kee_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -155,7 +155,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:maranga_berry"
+				"name": "cobblemon:maranga_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -167,7 +167,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pecha_berry"
+				"name": "cobblemon:pecha_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -215,7 +215,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:sprinklotad"
+				"name": "generations_core:sprink_lotad"
 			},
 			{
 				"type": "minecraft:item",
@@ -275,10 +275,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_9"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:mewtwo_armor"
 			},
 			{
@@ -300,6 +296,22 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:iron_plate"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fragmented_drago_key_1"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fragmented_drago_key_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fragmented_drago_key_3"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:fragmented_drago_key_4"
 			},
 			{
 				"type": "minecraft:item",

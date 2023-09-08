@@ -19,7 +19,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chilan_berry"
+				"name": "cobblemon:chilan_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -43,7 +43,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:durin_berry"
+				"name": "cobblemon:durin_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -51,7 +51,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:energy_root"
+				"name": "cobblemon:energy_root"
 			},
 			{
 				"type": "minecraft:item",
@@ -71,11 +71,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golden_pinap_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:kee_berry"
+				"name": "cobblemon:kee_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -87,11 +83,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:love_incense"
+				"name": "generations_core:luck_incense"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lum_berry"
+				"name": "cobblemon:lum_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -99,11 +95,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:magost_berry"
+				"name": "cobblemon:magost_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:maranga_berry"
+				"name": "cobblemon:maranga_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -111,7 +107,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:micle_berry"
+				"name": "cobblemon:micle_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,15 +119,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nomel_berry"
+				"name": "cobblemon:nomel_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:passho_berry"
+				"name": "cobblemon:passho_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:petaya_berry"
+				"name": "cobblemon:petaya_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -143,11 +139,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revival_herb"
+				"name": "cobblemon:revival_herb"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rindo_berry"
+				"name": "cobblemon:rindo_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -175,7 +171,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tanga_berry"
+				"name": "cobblemon:tanga_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -183,7 +179,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wepear_berry"
+				"name": "cobblemon:wepear_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -219,7 +215,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:yache_berry"
+				"name": "cobblemon:yache_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -228,14 +224,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:zoom_lens"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:leaf_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:water_stone_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -255,10 +243,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_15"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:old_rod"
 			},
 			{
@@ -271,19 +255,59 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:cascarrafa_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:slumbering_weald_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemon_center_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:azalea_town_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lillie_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:route_228_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:jubilife_village_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:goldenrod_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:eterna_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:vermilion_city_disc"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:wailmer_pail"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:jolly_mint"
+				"name": "cobblemon:jolly_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:naive_mint"
+				"name": "cobblemon:naive_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:modest_mint"
+				"name": "cobblemon:modest_mint"
 			},
 			{
 				"type": "minecraft:item",

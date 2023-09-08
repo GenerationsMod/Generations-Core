@@ -15,7 +15,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aguav_berry"
+				"name": "cobblemon:aguav_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -63,7 +63,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:figy_berry"
+				"name": "cobblemon:figy_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -95,6 +95,22 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:discharged_eleki_key_1"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:discharged_eleki_key_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:discharged_eleki_key_3"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:discharged_eleki_key_4"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "cobblemon:heal_ball"
 			},
 			{
@@ -103,11 +119,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kasib_berry"
+				"name": "cobblemon:kasib_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leek"
+				"name": "cobblemon:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -131,7 +147,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pamtre_berry"
+				"name": "cobblemon:pamtre_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -143,15 +159,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:razz_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:red_scarf"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revive"
+				"name": "cobblemon:revive"
 			},
 			{
 				"type": "minecraft:item",
@@ -159,7 +171,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:roseli_berry"
+				"name": "cobblemon:roseli_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -195,7 +207,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wiki_berry"
+				"name": "cobblemon:wiki_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -255,10 +267,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:sun_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "minecraft:milk_bucket"
 			},
 			{
@@ -276,10 +284,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_mall"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:record_19"
 			},
 			{
 				"type": "minecraft:item",

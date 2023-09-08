@@ -47,11 +47,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cheri_berry"
+				"name": "cobblemon:cheri_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -59,7 +59,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chople_berry"
+				"name": "cobblemon:chople_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -119,10 +119,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golden_razz_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:griseous_orb"
 			},
 			{
@@ -179,7 +175,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pp_max"
+				"name": "cobblemon:pp_max"
 			},
 			{
 				"type": "minecraft:item",
@@ -220,14 +216,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:rocky_helmet"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:sacred_ash"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:silver_pinap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -275,14 +263,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shaderoot_carrot"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:iceroot_carrot"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:orb"
 			},
 			{
@@ -299,7 +279,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:health_wing"
+				"name": "generations_core:health_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -423,15 +403,23 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:meteorite_ore"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:enigma_shard"
+				"name": "generations_core:meteorite_shard"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:mew_dna_fiber"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lustrous_globe"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:griseous_core"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:adamant_crystal"
 			},
 			{
 				"type": "minecraft:item",
