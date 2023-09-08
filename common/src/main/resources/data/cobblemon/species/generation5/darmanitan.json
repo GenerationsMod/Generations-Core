@@ -33,6 +33,9 @@
   "eggGroups": [
     "field"
   ],
+  "features": [
+    "galarian"
+  ],
   "moves": [
     "1:bite",
     "1:ember",

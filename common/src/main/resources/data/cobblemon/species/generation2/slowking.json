@@ -20,6 +20,9 @@
   "catchRate": 70,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Galar",
