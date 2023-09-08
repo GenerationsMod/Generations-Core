@@ -227,10 +227,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm_v_pass"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:tough_candy"
 			},
 			{
