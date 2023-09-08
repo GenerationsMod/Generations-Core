@@ -31,7 +31,6 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     private static final Map<String, Bone> DUMMY = Collections.emptyMap();
 
     public RareCandyBone(ResourceLocation location) {
-        ResourceLocation location1 = location.withPrefix("bedrock/pokemon/models/");
         objectSupplier = () -> ModelRegistry.get(location, "animated_block");
     }
 
