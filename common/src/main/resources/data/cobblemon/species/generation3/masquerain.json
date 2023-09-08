@@ -26,14 +26,18 @@
     "water_1",
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:boost_mulch",
-        "percentage": 50
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.4
+      },
+      "swim": {
+        "canWalkOnWater": true
+      },
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
     "1:bubble",
@@ -43,16 +47,16 @@
     "1:sweetscent",
     "1:watergun",
     "1:watersport",
+    "1:whirlwind",
+    "17:gust",
     "22:aircutter",
-    "26:gust",
-    "33:scaryface",
+    "22:scaryface",
+    "26:stunspore",
+    "32:airslash",
+    "32:silverwind",
     "38:gigadrain",
-    "40:stunspore",
-    "47:airslash",
-    "47:silverwind",
-    "53:whirlwind",
-    "61:bugbuzz",
-    "68:quiverdance",
+    "44:bugbuzz",
+    "52:quiverdance",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
@@ -151,7 +155,7 @@
   ],
   "preEvolution": "surskit",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1,
     "height": 1,

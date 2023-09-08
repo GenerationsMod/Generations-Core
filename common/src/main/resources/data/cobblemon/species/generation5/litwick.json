@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Litwick",
   "nationalPokedexNumber": 607,
   "primaryType": "ghost",
@@ -26,33 +25,24 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:litwick_candle",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
-    "1:ember",
-    "3:minimize",
-    "5:smog",
-    "7:firespin",
-    "10:confuseray",
-    "13:nightshade",
-    "16:willowisp",
+    "1:smog",
+    "4:ember",
+    "8:minimize",
+    "12:confuseray",
+    "16:hex",
     "20:flameburst",
-    "24:imprison",
-    "28:hex",
-    "33:memento",
-    "38:inferno",
-    "43:curse",
-    "49:shadowball",
-    "55:painsplit",
-    "61:overheat",
+    "20:willowisp",
+    "24:firespin",
+    "28:nightshade",
+    "32:curse",
+    "36:shadowball",
+    "40:inferno",
+    "44:imprison",
+    "48:painsplit",
+    "52:overheat",
+    "56:memento",
     "egg:acid",
     "egg:acidarmor",
     "egg:captivate",

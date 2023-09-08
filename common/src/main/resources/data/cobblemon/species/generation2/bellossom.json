@@ -27,15 +27,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:lilac",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:acid",
@@ -43,20 +34,20 @@
     "1:grassyterrain",
     "1:growth",
     "1:leafblade",
+    "1:leafstorm",
     "1:magicalleaf",
     "1:megadrain",
     "1:moonblast",
     "1:moonlight",
+    "1:petaldance",
     "1:poisonpowder",
+    "1:quiverdance",
     "1:sleeppowder",
     "1:stunspore",
     "1:sunnyday",
     "1:sweetscent",
     "1:toxic",
-    "39:quiverdance",
-    "44:petaldance",
     "49:petalblizzard",
-    "53:leafstorm",
     "55:solarbeam",
     "tm:attract",
     "tm:batonpass",

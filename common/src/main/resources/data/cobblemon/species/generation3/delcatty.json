@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Delcatty",
   "nationalPokedexNumber": 301,
   "primaryType": "normal",
@@ -26,15 +25,6 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cod",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:attract",
     "1:doubleslap",

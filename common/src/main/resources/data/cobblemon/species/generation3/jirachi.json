@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Jirachi",
   "nationalPokedexNumber": 385,
   "primaryType": "steel",
@@ -24,38 +23,25 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:wishing_star",
-        "percentage": 100
-      },
-      {
-        "item": "generations_core:jirachi_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:wish",
-    "5:rest",
-    "10:swift",
-    "15:helpinghand",
-    "20:psychic",
+    "7:swift",
+    "14:helpinghand",
     "21:lifedew",
     "25:refresh",
+    "28:zenheadbutt",
     "30:luckychant",
-    "35:doubleedge",
-    "35:zenheadbutt",
-    "40:futuresight",
-    "45:cosmicpower",
-    "45:gravity",
+    "35:gravity",
+    "42:psychic",
     "49:meteormash",
-    "50:doomdesire",
-    "50:healingwish",
-    "65:lastresort",
+    "56:healingwish",
+    "63:rest",
+    "70:futuresight",
+    "77:doubleedge",
+    "84:cosmicpower",
+    "91:lastresort",
+    "98:doomdesire",
     "tm:aerialace",
     "tm:allyswitch",
     "tm:amnesia",

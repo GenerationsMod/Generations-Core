@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Skiploom",
   "nationalPokedexNumber": 188,
   "primaryType": "grass",
@@ -27,36 +26,27 @@
     "fairy",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:peony",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:splash",
     "1:synthesis",
-    "1:tackle",
     "1:tailwhip",
+    "8:tackle",
     "10:fairywind",
-    "13:poisonpowder",
-    "15:stunspore",
-    "17:sleeppowder",
-    "20:bulletseed",
-    "22:leechseed",
-    "29:cottonspore",
-    "32:acrobatics",
-    "36:megadrain",
+    "12:poisonpowder",
+    "12:sleeppowder",
+    "12:stunspore",
+    "15:bulletseed",
+    "20:leechseed",
+    "24:megadrain",
+    "28:acrobatics",
+    "31:cottonspore",
+    "34:uturn",
     "36:ragepowder",
-    "36:uturn",
-    "40:worryseed",
-    "44:gigadrain",
-    "48:bounce",
-    "52:memento",
+    "37:gigadrain",
+    "41:bounce",
+    "44:memento",
+    "48:worryseed",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:attract",

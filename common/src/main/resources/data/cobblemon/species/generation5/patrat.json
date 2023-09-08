@@ -25,14 +25,13 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wheat",
-        "percentage": 50
-      }
-    ]
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:tackle",
@@ -46,12 +45,12 @@
     "21:superfang",
     "23:afteryou",
     "26:focusenergy",
-    "26:workup",
-    "28:hyperfang",
-    "31:meanlook",
-    "33:batonpass",
+    "28:workup",
+    "31:hyperfang",
     "33:nastyplot",
-    "36:slam",
+    "36:meanlook",
+    "38:batonpass",
+    "41:slam",
     "egg:assurance",
     "egg:bulletseed",
     "egg:flail",
@@ -125,10 +124,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.5,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.3,
     "fixed": false
   },
   "baseFriendship": 70,

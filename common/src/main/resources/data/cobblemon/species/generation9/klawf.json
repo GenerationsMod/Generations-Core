@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Klawf",
   "nationalPokedexNumber": 950,
   "primaryType": "rock",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sand",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:rockthrow",
     "1:visegrip",

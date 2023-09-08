@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Aron",
   "nationalPokedexNumber": 304,
   "primaryType": "steel",
@@ -26,34 +25,25 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 15
-      }
-    ]
-  },
   "moves": [
+    "1:harden",
     "1:tackle",
-    "4:harden",
-    "7:mudslap",
-    "10:headbutt",
-    "13:metalclaw",
-    "13:rocktomb",
-    "17:irondefense",
-    "21:roar",
-    "25:rockslide",
-    "25:takedown",
-    "29:ironhead",
-    "29:irontail",
-    "34:protect",
-    "39:metalsound",
-    "43:autotomize",
-    "44:doubleedge",
-    "46:heavyslam",
-    "46:metalburst",
+    "4:metalclaw",
+    "4:mudslap",
+    "8:rocktomb",
+    "12:roar",
+    "16:headbutt",
+    "20:protect",
+    "24:rockslide",
+    "28:ironhead",
+    "33:metalsound",
+    "36:takedown",
+    "40:autotomize",
+    "44:irontail",
+    "48:irondefense",
+    "52:heavyslam",
+    "56:doubleedge",
+    "60:metalburst",
     "egg:bodyslam",
     "egg:curse",
     "egg:dragonrush",

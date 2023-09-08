@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Pawmo",
   "nationalPokedexNumber": 922,
   "primaryType": "electric",
@@ -34,15 +33,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wool",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:scratch",
@@ -113,7 +103,7 @@
       ],
       "requirements": [
         {
-          "variant": "walked_steps",
+          "variant": "blocks_traveled",
           "amount": 1000
         }
       ]

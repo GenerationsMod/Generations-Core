@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Spheal",
   "nationalPokedexNumber": 363,
   "primaryType": "ice",
@@ -27,32 +26,23 @@
     "water_1",
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:fresh_water",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
-    "1:growl",
-    "1:powdersnow",
-    "1:watergun",
-    "5:rollout",
-    "7:encore",
+    "1:rollout",
+    "4:growl",
+    "8:watergun",
+    "12:powdersnow",
     "13:iceball",
-    "17:brine",
-    "19:bodyslam",
-    "25:aurorabeam",
-    "31:hail",
-    "37:rest",
-    "37:snore",
+    "16:rest",
+    "20:snore",
+    "24:brine",
+    "28:aurorabeam",
+    "33:encore",
+    "36:bodyslam",
     "40:surf",
-    "43:blizzard",
-    "49:sheercold",
+    "44:blizzard",
+    "48:hail",
+    "52:sheercold",
     "egg:aquaring",
     "egg:bellydrum",
     "egg:curse",

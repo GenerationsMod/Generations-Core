@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dewpider",
   "nationalPokedexNumber": 751,
   "primaryType": "water",
@@ -26,33 +25,24 @@
     "water_1",
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:spider_eye",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
+    "1:infestation",
     "1:watergun",
     "1:watersport",
-    "5:infestation",
+    "4:bugbite",
+    "8:bite",
     "8:spiderweb",
-    "13:bugbite",
-    "16:bubblebeam",
+    "12:bubblebeam",
+    "16:aquaring",
     "20:headbutt",
-    "21:bite",
-    "24:aquaring",
+    "24:crunch",
     "28:soak",
-    "29:leechlife",
-    "32:crunch",
-    "37:lunge",
-    "40:mirrorcoat",
-    "45:liquidation",
-    "48:entrainment",
+    "32:entrainment",
+    "36:lunge",
+    "40:liquidation",
+    "44:leechlife",
+    "48:mirrorcoat",
     "egg:aurorabeam",
     "egg:powersplit",
     "egg:spitup",

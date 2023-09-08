@@ -18,17 +18,6 @@
   "catchRate": 190,
   "maleRatio": 0.5,
   "shoulderMountable": true,
-  "shoulderEffects": [
-    {
-      "type": "potion_effect",
-      "effect": "minecraft:speed",
-      "amplifier": 0,
-      "ambient": true,
-      "showParticles": false,
-      "showIcon": false
-    }
-
-  ],
   "forms": [
     {
       "name": "Spiky-eared",
@@ -61,19 +50,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pichu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
         "1:thundershock",
@@ -141,28 +117,15 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:pichu_doll",
-        "percentage": 1
-      },
-      {
-        "item": "minecraft:glowstone_dust",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
-    "1:charm",
+    "1:tailwhip",
     "1:thundershock",
     "4:playnice",
-    "6:tailwhip",
-    "8:thunderwave",
-    "11:sweetkiss",
+    "8:sweetkiss",
     "12:nuzzle",
-    "18:nastyplot",
+    "16:nastyplot",
+    "18:thunderwave",
+    "20:charm",
     "egg:bestow",
     "egg:bide",
     "egg:charge",

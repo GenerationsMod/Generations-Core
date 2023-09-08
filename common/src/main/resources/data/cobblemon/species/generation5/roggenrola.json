@@ -25,29 +25,33 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blackstone",
-        "percentage": 25
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.3
       }
-    ]
+    }
   },
   "moves": [
+    "1:sandattack",
     "1:tackle",
     "4:harden",
-    "7:sandattack",
-    "10:headbutt",
-    "14:rockblast",
-    "17:mudslap",
+    "8:stealthrock",
+    "12:mudslap",
+    "16:smackdown",
     "20:irondefense",
-    "23:smackdown",
-    "27:rockslide",
-    "30:stealthrock",
-    "33:sandstorm",
-    "36:stoneedge",
-    "40:explosion",
+    "24:headbutt",
+    "28:rockslide",
+    "32:rockblast",
+    "36:sandstorm",
+    "40:stoneedge",
+    "44:explosion",
     "egg:autotomize",
     "egg:curse",
     "egg:gravity",
@@ -126,10 +130,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.5,
+    "height": 0.8,
     "fixed": false
   },
   "baseFriendship": 50,

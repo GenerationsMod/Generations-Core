@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Turtonator",
   "nationalPokedexNumber": 776,
   "primaryType": "fire",
@@ -25,31 +24,22 @@
     "monster",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:scute",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:ember",
+    "1:smog",
     "1:tackle",
-    "5:smog",
-    "9:protect",
-    "13:incinerate",
-    "17:flail",
-    "21:endure",
-    "25:irondefense",
-    "29:flamethrower",
-    "33:bodyslam",
-    "37:shellsmash",
-    "41:dragonpulse",
-    "45:shelltrap",
-    "49:overheat",
-    "53:explosion",
+    "4:ember",
+    "8:protect",
+    "12:endure",
+    "16:flail",
+    "20:incinerate",
+    "24:irondefense",
+    "28:dragonpulse",
+    "32:bodyslam",
+    "36:flamethrower",
+    "40:shelltrap",
+    "44:shellsmash",
+    "48:overheat",
+    "52:explosion",
     "egg:curse",
     "egg:firespin",
     "egg:headsmash",

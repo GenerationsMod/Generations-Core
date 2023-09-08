@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Pincurchin",
   "nationalPokedexNumber": 871,
   "primaryType": "electric",
@@ -25,15 +24,6 @@
     "water_1",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:kelp",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:peck",
     "1:thundershock",

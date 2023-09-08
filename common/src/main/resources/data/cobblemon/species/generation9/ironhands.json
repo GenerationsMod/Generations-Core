@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Iron Hands",
   "nationalPokedexNumber": 992,
   "primaryType": "fighting",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:fresh_water",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:armthrust",
     "1:electricterrain",

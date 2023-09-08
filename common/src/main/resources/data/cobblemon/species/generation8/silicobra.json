@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Silicobra",
   "nationalPokedexNumber": 843,
   "primaryType": "ground",
@@ -26,15 +25,6 @@
     "field",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sand",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:sandattack",
     "1:wrap",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Oranguru",
   "nationalPokedexNumber": 765,
   "primaryType": "normal",
@@ -26,31 +25,22 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
-    "4:afteryou",
-    "8:taunt",
-    "11:quash",
+    "1:taunt",
+    "5:afteryou",
+    "10:calmmind",
     "15:storedpower",
-    "18:psychup",
+    "20:psychup",
     "22:feintattack",
-    "25:nastyplot",
-    "29:zenheadbutt",
-    "32:instruct",
-    "36:foulplay",
-    "39:calmmind",
-    "43:psychic",
-    "46:futuresight",
-    "50:trickroom",
+    "25:quash",
+    "30:nastyplot",
+    "35:zenheadbutt",
+    "40:trickroom",
+    "45:psychic",
+    "50:instruct",
+    "55:foulplay",
+    "60:futuresight",
     "egg:dreameater",
     "egg:extrasensory",
     "egg:lastresort",

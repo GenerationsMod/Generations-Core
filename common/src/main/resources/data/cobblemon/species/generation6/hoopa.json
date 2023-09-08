@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Hoopa",
   "nationalPokedexNumber": 720,
   "primaryType": "psychic",
@@ -36,7 +35,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 306,
+      "baseExperienceYield": 270,
       "baseFriendship": 100,
       "evYield": {
         "hp": 0,
@@ -51,7 +50,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mythical",
@@ -73,26 +71,15 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:gold_ingot",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:allyswitch",
     "1:confusion",
     "1:destinybond",
-    "1:hyperspacefury",
-    "1:hyperspacehole",
-    "1:trick",
     "6:astonish",
     "10:magiccoat",
+    "10:trick",
     "15:lightscreen",
-    "15:psybeam",
+    "19:psybeam",
     "25:skillswap",
     "29:guardsplit",
     "29:powersplit",
@@ -105,6 +92,8 @@
     "55:shadowball",
     "68:nastyplot",
     "75:psychic",
+    "85:hyperspacefury",
+    "85:hyperspacehole",
     "tm:brickbreak",
     "tm:calmmind",
     "tm:chargebeam",

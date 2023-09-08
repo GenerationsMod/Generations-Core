@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Simisear",
   "nationalPokedexNumber": 514,
   "primaryType": "fire",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:jungle_leaves",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:flameburst",
     "1:furyswipes",

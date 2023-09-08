@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Musharna",
   "nationalPokedexNumber": 518,
   "primaryType": "psychic",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:awakening",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:calmmind",
     "1:defensecurl",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Victini",
   "nationalPokedexNumber": 494,
   "primaryType": "psychic",
@@ -24,35 +23,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:nether_star",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
+    "1:flamecharge",
     "1:focusenergy",
-    "1:incinerate",
     "1:quickattack",
-    "1:searingshot",
     "1:vcreate",
     "7:workup",
-    "9:endure",
-    "17:headbutt",
-    "25:flamecharge",
-    "33:reversal",
+    "14:incinerate",
+    "21:storedpower",
+    "28:headbutt",
+    "35:endure",
     "41:flameburst",
-    "49:zenheadbutt",
-    "57:inferno",
-    "65:doubleedge",
-    "73:flareblitz",
-    "81:finalgambit",
-    "89:storedpower",
-    "97:overheat",
+    "42:zenheadbutt",
+    "49:inferno",
+    "56:reversal",
+    "63:searingshot",
+    "70:doubleedge",
+    "77:flareblitz",
+    "84:overheat",
+    "91:finalgambit",
     "tm:batonpass",
     "tm:blazekick",
     "tm:bounce",

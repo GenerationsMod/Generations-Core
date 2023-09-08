@@ -99,7 +99,7 @@
   ],
   "preEvolution": "scyther",
   "evolutions": [],
-  "baseScale": 0.9,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1.2,
     "height": 2,

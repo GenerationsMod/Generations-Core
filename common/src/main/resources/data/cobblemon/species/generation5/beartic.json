@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Beartic",
   "nationalPokedexNumber": 614,
   "primaryType": "ice",
@@ -25,38 +24,29 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:calcite",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aquajet",
     "1:bide",
     "1:charm",
+    "1:endure",
+    "1:furyswipes",
     "1:growl",
-    "1:icywind",
+    "1:iciclecrash",
     "1:powdersnow",
-    "1:superpower",
-    "9:playnice",
-    "17:furyswipes",
+    "9:icywind",
+    "12:playnice",
+    "15:brine",
     "18:frostbreath",
-    "21:brine",
-    "25:endure",
-    "29:swagger",
+    "21:slash",
+    "24:flail",
+    "27:swagger",
+    "30:hail",
     "30:snowscape",
-    "33:slash",
-    "36:flail",
-    "37:iciclecrash",
-    "41:rest",
-    "45:blizzard",
-    "53:hail",
-    "59:thrash",
-    "66:sheercold",
+    "33:thrash",
+    "36:rest",
+    "41:blizzard",
+    "46:sheercold",
+    "51:superpower",
     "tm:aerialace",
     "tm:assurance",
     "tm:attract",

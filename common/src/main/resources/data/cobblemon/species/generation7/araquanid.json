@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Araquanid",
   "nationalPokedexNumber": 752,
   "primaryType": "water",
@@ -133,33 +132,24 @@
     "water_1",
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:spider_eye",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:bite",
     "1:bubble",
     "1:bugbite",
     "1:infestation",
-    "1:soak",
     "1:spiderweb",
     "1:watergun",
     "1:wideguard",
-    "16:bubblebeam",
+    "12:bubblebeam",
+    "16:aquaring",
     "20:headbutt",
-    "21:bite",
-    "26:aquaring",
-    "33:leechlife",
-    "38:crunch",
-    "45:lunge",
-    "50:mirrorcoat",
-    "57:liquidation",
-    "62:entrainment",
+    "26:crunch",
+    "32:soak",
+    "38:entrainment",
+    "44:lunge",
+    "50:liquidation",
+    "56:leechlife",
+    "62:mirrorcoat",
     "tm:attract",
     "tm:blizzard",
     "tm:bugbuzz",

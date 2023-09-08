@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Nihilego",
   "nationalPokedexNumber": 793,
   "primaryType": "rock",
@@ -24,36 +23,27 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:glow_ink_sac",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:acid",
     "1:constrict",
-    "1:guardsplit",
     "1:pound",
-    "1:powersplit",
-    "1:tickle",
     "1:wrap",
-    "7:clearsmog",
+    "5:acid",
+    "10:tickle",
     "13:psywave",
-    "19:headbutt",
-    "23:venoshock",
-    "29:toxicspikes",
+    "15:acidspray",
+    "20:clearsmog",
+    "25:guardsplit",
+    "25:powersplit",
+    "30:venoshock",
     "31:safeguard",
-    "37:powergem",
-    "43:mirrorcoat",
-    "47:acidspray",
-    "53:venomdrench",
-    "59:stealthrock",
-    "67:wonderroom",
-    "73:headsmash",
+    "35:headbutt",
+    "40:toxicspikes",
+    "45:venomdrench",
+    "50:powergem",
+    "55:stealthrock",
+    "60:mirrorcoat",
+    "65:wonderroom",
+    "70:headsmash",
     "tm:allyswitch",
     "tm:bodyslam",
     "tm:brutalswing",

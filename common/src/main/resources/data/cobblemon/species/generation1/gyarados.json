@@ -37,7 +37,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 224,
+      "baseExperienceYield": 189,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
         "water_2",
         "dragon"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -81,6 +80,9 @@
         "canWalk": true,
         "avoidsLand": true
       },
+      "fly": {
+        "canFly": false
+      },
       "swim": {
         "swimSpeed": 0.1,
         "canSwimInWater": true,
@@ -102,26 +104,26 @@
     ]
   },
   "moves": [
+    "1:bite",
     "1:flail",
+    "1:leer",
     "1:splash",
     "1:tackle",
-    "1:thrash",
+    "1:twister",
     "4:whirlpool",
+    "8:icefang",
     "12:brine",
-    "20:bite",
+    "16:scaryface",
     "21:waterfall",
-    "25:dragonrage",
-    "30:leer",
-    "32:icefang",
-    "33:scaryface",
-    "35:aquatail",
-    "35:twister",
+    "24:crunch",
+    "28:raindance",
+    "32:aquatail",
+    "36:dragondance",
+    "36:dragonrage",
     "40:hydropump",
-    "41:crunch",
-    "45:raindance",
-    "48:hurricane",
-    "50:dragondance",
-    "55:hyperbeam",
+    "44:hurricane",
+    "48:thrash",
+    "52:hyperbeam",
     "tm:attract",
     "tm:avalanche",
     "tm:blizzard",

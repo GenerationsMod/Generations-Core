@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dustox",
   "nationalPokedexNumber": 269,
   "primaryType": "bug",
@@ -25,29 +24,20 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:confusion",
-    "13:gust",
+    "1:gust",
+    "12:confusion",
     "15:poisonpowder",
-    "17:protect",
-    "20:moonlight",
+    "17:moonlight",
     "20:venoshock",
-    "24:psybeam",
-    "27:whirlwind",
-    "31:lightscreen",
-    "34:silverwind",
-    "38:toxic",
-    "41:bugbuzz",
-    "45:quiverdance",
+    "22:psybeam",
+    "25:silverwind",
+    "27:lightscreen",
+    "30:whirlwind",
+    "32:toxic",
+    "35:bugbuzz",
+    "37:protect",
+    "40:quiverdance",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:attract",

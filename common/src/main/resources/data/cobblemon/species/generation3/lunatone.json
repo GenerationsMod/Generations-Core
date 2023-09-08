@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Lunatone",
   "nationalPokedexNumber": 337,
   "primaryType": "rock",
@@ -24,36 +23,27 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:stone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:confusion",
     "1:harden",
     "1:moonblast",
     "1:moonlight",
     "1:powergem",
-    "1:psyshock",
+    "1:rockthrow",
     "1:tackle",
-    "7:confusion",
-    "13:rockthrow",
-    "19:hypnosis",
-    "20:rockpolish",
-    "25:psywave",
-    "25:rockslide",
-    "31:cosmicpower",
-    "31:embargo",
-    "37:psychic",
-    "41:stoneedge",
-    "42:healblock",
-    "43:futuresight",
-    "49:explosion",
-    "64:magicroom",
+    "5:hypnosis",
+    "10:rockpolish",
+    "13:psywave",
+    "15:rockslide",
+    "17:embargo",
+    "20:psyshock",
+    "25:cosmicpower",
+    "30:psychic",
+    "33:healblock",
+    "35:stoneedge",
+    "40:futuresight",
+    "45:magicroom",
+    "50:explosion",
     "tm:acrobatics",
     "tm:allyswitch",
     "tm:batonpass",

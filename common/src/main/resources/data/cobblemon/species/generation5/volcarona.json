@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Volcarona",
   "nationalPokedexNumber": 637,
   "primaryType": "bug",
@@ -25,41 +24,32 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:magma_block",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
-    "1:amnesia",
     "1:doubleedge",
     "1:ember",
+    "1:fierydance",
+    "1:firespin",
     "1:flamecharge",
-    "1:flamewheel",
     "1:flareblitz",
     "1:gust",
-    "1:leechlife",
+    "1:quiverdance",
     "1:stringshot",
     "1:strugglebug",
     "1:takedown",
     "1:thrash",
+    "1:whirlwind",
+    "18:flamewheel",
     "24:bugbite",
-    "30:firespin",
     "30:screech",
-    "40:whirlwind",
+    "36:leechlife",
+    "42:bugbuzz",
+    "48:heatwave",
     "50:silverwind",
-    "59:quiverdance",
-    "60:heatwave",
-    "70:bugbuzz",
+    "54:amnesia",
+    "62:hurricane",
     "70:fireblast",
-    "80:ragepowder",
-    "90:hurricane",
-    "100:fierydance",
+    "78:ragepowder",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:aircutter",

@@ -25,15 +25,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:paralyze_heal",
-        "percentage": 25
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
@@ -42,22 +33,22 @@
     }
   },
   "moves": [
-    "1:thundershock",
-    "4:quickattack",
-    "7:tailwhip",
-    "10:charge",
-    "13:spark",
-    "15:nuzzle",
+    "1:nuzzle",
+    "1:tailwhip",
+    "5:doubleteam",
+    "10:quickattack",
+    "15:thundershock",
     "16:pursuit",
-    "19:doubleteam",
+    "20:charge",
     "22:shockwave",
+    "25:acrobatics",
     "26:electroball",
-    "30:acrobatics",
-    "34:lightscreen",
-    "38:encore",
-    "42:voltswitch",
-    "46:agility",
+    "30:spark",
+    "35:encore",
+    "40:voltswitch",
+    "45:lightscreen",
     "50:discharge",
+    "55:agility",
     "egg:airslash",
     "egg:astonish",
     "egg:batonpass",

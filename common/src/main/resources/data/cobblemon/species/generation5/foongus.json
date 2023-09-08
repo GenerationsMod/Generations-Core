@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Foongus",
   "nationalPokedexNumber": 590,
   "primaryType": "grass",
@@ -25,32 +24,23 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:poke_ball",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
-    "6:growth",
-    "8:astonish",
+    "1:astonish",
+    "4:growth",
     "8:stunspore",
     "12:bide",
-    "15:megadrain",
-    "18:ingrain",
+    "12:megadrain",
+    "16:synthesis",
+    "20:clearsmog",
     "20:feintattack",
     "24:sweetscent",
     "28:gigadrain",
-    "32:toxic",
-    "35:synthesis",
-    "39:clearsmog",
-    "43:solarbeam",
-    "45:ragepowder",
-    "50:spore",
+    "32:ingrain",
+    "36:toxic",
+    "40:ragepowder",
+    "44:solarbeam",
+    "48:spore",
     "egg:bodyslam",
     "egg:defensecurl",
     "egg:endure",

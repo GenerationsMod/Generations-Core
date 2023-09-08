@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Indeedee",
   "nationalPokedexNumber": 876,
   "primaryType": "psychic",
@@ -64,11 +63,11 @@
         "20:helpinghand",
         "25:followme",
         "30:aromatherapy",
+        "30:healingwish",
         "35:psychic",
         "40:calmmind",
         "45:guardsplit",
         "50:psychicterrain",
-        "55:healingwish",
         "egg:fakeout",
         "egg:healpulse",
         "egg:psychoshift",
@@ -143,15 +142,6 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:goat_horn",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:playnice",
     "1:storedpower",

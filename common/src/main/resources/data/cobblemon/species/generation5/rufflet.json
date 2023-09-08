@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Rufflet",
   "nationalPokedexNumber": 627,
   "primaryType": "normal",
@@ -26,32 +25,23 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:peck",
     "5:furyattack",
-    "10:wingattack",
-    "14:honeclaws",
-    "19:scaryface",
-    "23:aerialace",
-    "28:slash",
-    "32:defog",
-    "37:tailwind",
-    "41:airslash",
-    "46:crushclaw",
+    "6:honeclaws",
+    "12:wingattack",
+    "18:tailwind",
+    "24:scaryface",
+    "30:aerialace",
+    "36:slash",
+    "42:whirlwind",
+    "48:crushclaw",
     "50:skydrop",
-    "55:whirlwind",
-    "59:bravebird",
-    "64:thrash",
+    "55:airslash",
+    "60:defog",
+    "66:thrash",
+    "72:bravebird",
     "egg:rocksmash",
     "egg:roost",
     "tm:acrobatics",
@@ -151,10 +141,6 @@
         {
           "variant": "level",
           "minLevel": 54
-        },
-        {
-          "variant": "time_range",
-          "range": "night"
         }
       ]
     }

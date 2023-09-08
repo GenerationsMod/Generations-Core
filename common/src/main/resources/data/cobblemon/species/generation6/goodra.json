@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Goodra",
   "nationalPokedexNumber": 706,
   "primaryType": "dragon",
@@ -16,9 +15,6 @@
     "special_defence": 150,
     "speed": 80
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -42,6 +38,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
+      "baseExperienceYield": 300,
       "baseFriendship": 35,
       "evYield": {
         "hp": 0,
@@ -145,37 +142,28 @@
   "eggGroups": [
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:absorb",
     "1:acidspray",
+    "1:aquatail",
     "1:bubble",
+    "1:dragonbreath",
     "1:feint",
     "1:outrage",
     "1:poisontail",
     "1:tackle",
     "1:tearfullook",
     "1:watergun",
-    "5:absorb",
-    "9:protect",
     "13:bide",
-    "18:dragonbreath",
-    "25:raindance",
+    "15:protect",
+    "20:flail",
     "25:waterpulse",
-    "28:flail",
-    "32:bodyslam",
-    "38:muddywater",
+    "30:raindance",
+    "35:dragonpulse",
     "43:curse",
-    "47:dragonpulse",
-    "50:aquatail",
-    "55:powerwhip",
+    "49:bodyslam",
+    "58:muddywater",
+    "67:powerwhip",
     "tm:acidspray",
     "tm:assurance",
     "tm:attract",

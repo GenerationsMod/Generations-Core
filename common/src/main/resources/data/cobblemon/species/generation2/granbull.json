@@ -26,33 +26,24 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:charm",
     "1:firefang",
     "1:icefang",
+    "1:outrage",
     "1:scaryface",
     "1:tackle",
+    "1:tailwhip",
     "1:thunderfang",
-    "4:tailwhip",
-    "8:charm",
-    "13:bite",
+    "7:bite",
+    "13:lick",
     "19:headbutt",
-    "19:lick",
-    "28:roar",
-    "38:rage",
+    "27:roar",
+    "35:rage",
     "43:playrough",
-    "49:takedown",
+    "43:takedown",
     "51:payback",
-    "61:crunch",
-    "67:outrage",
+    "59:crunch",
     "tm:attract",
     "tm:brickbreak",
     "tm:bulkup",
@@ -187,10 +178,10 @@
   ],
   "preEvolution": "snubbull",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
     "width": 1,
-    "height": 1,
+    "height": 2,
     "fixed": false
   },
   "baseFriendship": 70,

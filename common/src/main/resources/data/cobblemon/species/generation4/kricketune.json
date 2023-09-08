@@ -24,6 +24,19 @@
   "eggGroups": [
     "bug"
   ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -35,6 +48,7 @@
   },
   "moves": [
     "1:bide",
+    "1:furycutter",
     "1:growl",
     "1:tackle",
     "10:furycutter",
@@ -45,12 +59,16 @@
     "26:slash",
     "26:xscissor",
     "30:screech",
+    "30:xscissor",
     "34:bugbuzz",
+    "34:screech",
     "36:fellstinger",
     "38:perishsong",
     "38:taunt",
     "42:nightslash",
     "44:stickyweb",
+    "46:bugbuzz",
+    "50:perishsong",
     "tm:aerialace",
     "tm:attract",
     "tm:batonpass",
@@ -121,10 +139,10 @@
   ],
   "preEvolution": "kricketot",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.9,
+    "height": 1.7,
     "fixed": false
   },
   "baseFriendship": 70,

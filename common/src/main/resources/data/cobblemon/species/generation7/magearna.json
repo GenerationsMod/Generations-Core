@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Magearna",
   "nationalPokedexNumber": 801,
   "primaryType": "steel",
@@ -168,41 +167,32 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:netherite_scrap",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:craftyshield",
-    "1:defensecurl",
-    "1:gearup",
     "1:gyroball",
     "1:helpinghand",
-    "1:ironhead",
-    "1:psybeam",
-    "1:shiftgear",
     "1:sonicboom",
+    "6:defensecurl",
     "9:luckychant",
     "12:rollout",
-    "17:aurorabeam",
+    "18:irondefense",
+    "24:gearup",
     "24:magneticflux",
     "25:mirrorshot",
-    "33:mindreader",
-    "41:flashcannon",
+    "30:psybeam",
+    "36:aurorabeam",
     "42:lockon",
-    "49:fleurcannon",
+    "42:mindreader",
+    "48:shiftgear",
+    "54:craftyshield",
     "54:trick",
-    "57:irondefense",
-    "65:painsplit",
+    "60:ironhead",
+    "66:aurasphere",
+    "72:flashcannon",
     "73:synchronoise",
-    "81:aurasphere",
+    "78:painsplit",
     "84:zapcannon",
     "89:heartswap",
+    "90:fleurcannon",
     "97:trumpcard",
     "tm:agility",
     "tm:aurasphere",

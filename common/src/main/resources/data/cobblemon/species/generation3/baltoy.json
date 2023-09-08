@@ -25,7 +25,7 @@
     "mineral"
   ],
   "drops": {
-    "amount": "3",
+    "amount": "2",
     "entries": [
       {
         "item": "minecraft:clay_ball",
@@ -34,32 +34,28 @@
       {
         "item": "cobblemon:light_clay",
         "percentage": 2.5
-      },
-      {
-        "item": "generations_core:baltoy_doll",
-        "percentage": 1
       }
     ]
   },
   "moves": [
-    "1:confusion",
-    "3:harden",
-    "5:rapidspin",
-    "7:mudslap",
-    "11:psybeam",
-    "15:rocktomb",
-    "19:selfdestruct",
-    "25:ancientpower",
-    "31:powertrick",
-    "31:sandstorm",
-    "37:cosmicpower",
-    "43:extrasensory",
-    "43:imprison",
-    "45:explosion",
-    "48:guardsplit",
-    "48:powersplit",
-    "53:earthpower",
-    "61:healblock",
+    "1:harden",
+    "1:mudslap",
+    "3:rapidspin",
+    "6:confusion",
+    "9:rocktomb",
+    "10:healblock",
+    "12:powertrick",
+    "15:psybeam",
+    "18:ancientpower",
+    "21:imprison",
+    "24:cosmicpower",
+    "27:extrasensory",
+    "30:earthpower",
+    "33:selfdestruct",
+    "36:guardsplit",
+    "36:powersplit",
+    "39:sandstorm",
+    "42:explosion",
     "tm:allyswitch",
     "tm:bulldoze",
     "tm:calmmind",

@@ -27,32 +27,34 @@
     "water_1",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:kelp",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
       }
-    ]
+    }
   },
   "moves": [
     "1:smokescreen",
     "1:tackle",
-    "1:watergun",
+    "5:acid",
     "5:feintattack",
-    "9:tailwhip",
+    "10:watergun",
     "12:bubble",
-    "15:acid",
+    "15:tailwhip",
     "19:camouflage",
-    "23:poisontail",
-    "25:waterpulse",
-    "28:doubleteam",
-    "32:toxic",
-    "35:aquatail",
-    "38:sludgebomb",
-    "42:hydropump",
-    "49:dragonpulse",
+    "20:doubleteam",
+    "25:poisontail",
+    "30:waterpulse",
+    "35:toxic",
+    "40:dragonpulse",
+    "45:aquatail",
+    "50:sludgebomb",
+    "55:hydropump",
     "egg:acidarmor",
     "egg:dragontail",
     "egg:haze",
@@ -145,10 +147,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.5,
+    "height": 1.2,
     "fixed": false
   },
   "baseFriendship": 50,

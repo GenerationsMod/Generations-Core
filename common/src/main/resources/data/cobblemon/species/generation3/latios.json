@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Latios",
   "nationalPokedexNumber": 381,
   "primaryType": "dragon",
@@ -36,7 +35,7 @@
       },
       "catchRate": 3,
       "maleRatio": 1,
-      "baseExperienceYield": 315,
+      "baseExperienceYield": 300,
       "baseFriendship": 90,
       "evYield": {
         "hp": 0,
@@ -51,7 +50,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega",
@@ -73,43 +71,30 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:elytra",
-        "percentage": 100
-      },
-      {
-        "item": "generations_core:latias_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
+    "1:dragondance",
+    "1:healblock",
     "1:psywave",
-    "5:healblock",
-    "5:memento",
-    "10:helpinghand",
-    "10:storedpower",
+    "1:safeguard",
+    "1:storedpower",
+    "4:protect",
+    "5:helpinghand",
+    "10:recover",
+    "13:refresh",
     "15:confusion",
-    "15:safeguard",
-    "20:dragonbreath",
     "20:tailwind",
-    "25:protect",
+    "25:dragonbreath",
     "30:allyswitch",
-    "30:refresh",
     "35:lusterpurge",
-    "40:psychic",
+    "36:telekinesis",
     "40:zenheadbutt",
-    "45:recover",
-    "50:dragondance",
-    "50:psychoshift",
+    "45:dragonpulse",
+    "50:healpulse",
     "55:simplebeam",
-    "65:healpulse",
-    "70:dragonpulse",
-    "70:telekinesis",
-    "75:powersplit",
+    "60:psychic",
+    "65:powersplit",
+    "70:memento",
+    "75:psychoshift",
     "tm:aerialace",
     "tm:agility",
     "tm:airslash",

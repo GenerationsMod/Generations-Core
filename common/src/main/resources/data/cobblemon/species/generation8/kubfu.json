@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Kubfu",
   "nationalPokedexNumber": 891,
   "primaryType": "fighting",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:enchanted_golden_apply",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:rocksmash",

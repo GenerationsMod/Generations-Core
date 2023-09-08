@@ -15,19 +15,25 @@
     "special_defence": 50,
     "speed": 90
   },
+  "features": [
+    "alolan"
+  ],
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.42
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 190,
   "maleRatio": 0.5,
   "shoulderMountable": true,
-  "shoulderEffects": [
-    {
-      "type": "potion_effect",
-      "effect": "minecraft:speed",
-      "amplifier": 0,
-      "ambient": true,
-      "showParticles": false,
-      "showIcon": false
-    }
-  ],
   "forms": [
     {
       "name": "Cosplay",
@@ -60,35 +66,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "6",
-        "entries": [
-          {
-            "item": "generations_core:rockstar_costume",
-            "percentage": 2
-          },
-          {
-            "item": "generations_core:belle_costume",
-            "percentage": 2
-          },
-          {
-            "item": "generations_core:popstar_costume",
-            "percentage": 2
-          },
-          {
-            "item": "generations_core:phd_costume",
-            "percentage": 2
-          },
-          {
-            "item": "generations_core:libre_costume",
-            "percentage": 2
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:tailwhip",
         "1:thundershock",
@@ -198,19 +175,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:rockstar_costume",
-            "percentage": 5
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "form_change:meteormash"
       ],
@@ -257,19 +221,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:belle_costume",
-            "percentage": 5
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "form_change:iciclecrash"
       ],
@@ -316,19 +267,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:popstar_costume",
-            "percentage": 5
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "form_change:drainingkiss"
       ],
@@ -375,19 +313,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:phd_costume",
-            "percentage": 5
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "form_change:electricterrain"
       ],
@@ -434,19 +359,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:libre_costume",
-            "percentage": 5
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "form_change:flyingpress"
       ],
@@ -494,42 +406,29 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
+        "1:growl",
         "1:nastyplot",
+        "1:nuzzle",
+        "1:playnice",
+        "1:quickattack",
         "1:sweetkiss",
         "1:tailwhip",
         "1:thundershock",
-        "5:growl",
-        "7:playnice",
-        "10:quickattack",
-        "13:electroball",
-        "18:thunderwave",
-        "21:feint",
-        "23:doubleteam",
-        "26:spark",
+        "4:thunderwave",
+        "8:doubleteam",
+        "12:electroball",
+        "16:feint",
+        "20:spark",
+        "24:agility",
         "28:irontail",
-        "29:nuzzle",
-        "34:discharge",
-        "37:slam",
-        "42:thunderbolt",
-        "45:agility",
+        "28:slam",
+        "32:discharge",
+        "36:thunderbolt",
+        "40:lightscreen",
+        "44:thunder",
         "50:wildcharge",
-        "53:lightscreen",
-        "58:thunder",
         "egg:charge",
         "egg:disarmingvoice",
         "egg:fakeout",
@@ -657,42 +556,29 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
+        "1:growl",
         "1:nastyplot",
+        "1:nuzzle",
+        "1:playnice",
+        "1:quickattack",
         "1:sweetkiss",
         "1:tailwhip",
         "1:thundershock",
-        "5:growl",
-        "7:playnice",
-        "10:quickattack",
-        "13:electroball",
-        "18:thunderwave",
-        "21:feint",
-        "23:doubleteam",
-        "26:spark",
+        "4:thunderwave",
+        "8:doubleteam",
+        "12:electroball",
+        "16:feint",
+        "20:spark",
+        "24:agility",
         "28:irontail",
-        "29:nuzzle",
-        "34:discharge",
-        "37:slam",
-        "42:thunderbolt",
-        "45:agility",
+        "28:slam",
+        "32:discharge",
+        "36:thunderbolt",
+        "40:lightscreen",
+        "44:thunder",
         "50:wildcharge",
-        "53:lightscreen",
-        "58:thunder",
         "egg:charge",
         "egg:disarmingvoice",
         "egg:fakeout",
@@ -819,42 +705,29 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
+        "1:growl",
         "1:nastyplot",
+        "1:nuzzle",
+        "1:playnice",
+        "1:quickattack",
         "1:sweetkiss",
         "1:tailwhip",
         "1:thundershock",
-        "5:growl",
-        "7:playnice",
-        "10:quickattack",
-        "13:electroball",
-        "18:thunderwave",
-        "21:feint",
-        "23:doubleteam",
-        "26:spark",
+        "4:thunderwave",
+        "8:doubleteam",
+        "12:electroball",
+        "16:feint",
+        "20:spark",
+        "24:agility",
         "28:irontail",
-        "29:nuzzle",
-        "34:discharge",
-        "37:slam",
-        "42:thunderbolt",
-        "45:agility",
+        "28:slam",
+        "32:discharge",
+        "36:thunderbolt",
+        "40:lightscreen",
+        "44:thunder",
         "50:wildcharge",
-        "53:lightscreen",
-        "58:thunder",
         "egg:charge",
         "egg:disarmingvoice",
         "egg:fakeout",
@@ -980,42 +853,29 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
+        "1:growl",
         "1:nastyplot",
+        "1:nuzzle",
+        "1:playnice",
+        "1:quickattack",
         "1:sweetkiss",
         "1:tailwhip",
         "1:thundershock",
-        "5:growl",
-        "7:playnice",
-        "10:quickattack",
-        "13:electroball",
-        "18:thunderwave",
-        "21:feint",
-        "23:doubleteam",
-        "26:spark",
+        "4:thunderwave",
+        "8:doubleteam",
+        "12:electroball",
+        "16:feint",
+        "20:spark",
+        "24:agility",
         "28:irontail",
-        "29:nuzzle",
-        "34:discharge",
-        "37:slam",
-        "42:thunderbolt",
-        "45:agility",
+        "28:slam",
+        "32:discharge",
+        "36:thunderbolt",
+        "40:lightscreen",
+        "44:thunder",
         "50:wildcharge",
-        "53:lightscreen",
-        "58:thunder",
         "egg:charge",
         "egg:disarmingvoice",
         "egg:fakeout",
@@ -1141,42 +1001,29 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
+        "1:growl",
         "1:nastyplot",
+        "1:nuzzle",
+        "1:playnice",
+        "1:quickattack",
         "1:sweetkiss",
         "1:tailwhip",
         "1:thundershock",
-        "5:growl",
-        "7:playnice",
-        "10:quickattack",
-        "13:electroball",
-        "18:thunderwave",
-        "21:feint",
-        "23:doubleteam",
-        "26:spark",
+        "4:thunderwave",
+        "8:doubleteam",
+        "12:electroball",
+        "16:feint",
+        "20:spark",
+        "24:agility",
         "28:irontail",
-        "29:nuzzle",
-        "34:discharge",
-        "37:slam",
-        "42:thunderbolt",
-        "45:agility",
+        "28:slam",
+        "32:discharge",
+        "36:thunderbolt",
+        "40:lightscreen",
+        "44:thunder",
         "50:wildcharge",
-        "53:lightscreen",
-        "58:thunder",
         "egg:charge",
         "egg:disarmingvoice",
         "egg:fakeout",
@@ -1303,42 +1150,29 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
+        "1:growl",
         "1:nastyplot",
+        "1:nuzzle",
+        "1:playnice",
+        "1:quickattack",
         "1:sweetkiss",
         "1:tailwhip",
         "1:thundershock",
-        "5:growl",
-        "7:playnice",
-        "10:quickattack",
-        "13:electroball",
-        "18:thunderwave",
-        "21:feint",
-        "23:doubleteam",
-        "26:spark",
+        "4:thunderwave",
+        "8:doubleteam",
+        "12:electroball",
+        "16:feint",
+        "20:spark",
+        "24:agility",
         "28:irontail",
-        "29:nuzzle",
-        "34:discharge",
-        "37:slam",
-        "42:thunderbolt",
-        "45:agility",
+        "28:slam",
+        "32:discharge",
+        "36:thunderbolt",
+        "40:lightscreen",
+        "44:thunder",
         "50:wildcharge",
-        "53:lightscreen",
-        "58:thunder",
         "egg:charge",
         "egg:disarmingvoice",
         "egg:fakeout",
@@ -1422,11 +1256,9 @@
         "tutor:volttackle"
       ],
       "labels": [
-        "gen7",
-        "alola_regional"
+        "gen7"
       ],
       "aspects": [
-        "alolan"
       ],
       "height": 4,
       "weight": 60,
@@ -1466,42 +1298,29 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
+        "1:growl",
         "1:nastyplot",
+        "1:nuzzle",
+        "1:playnice",
+        "1:quickattack",
         "1:sweetkiss",
         "1:tailwhip",
         "1:thundershock",
-        "5:growl",
-        "7:playnice",
-        "10:quickattack",
-        "13:electroball",
-        "18:thunderwave",
-        "21:feint",
-        "23:doubleteam",
-        "26:spark",
+        "4:thunderwave",
+        "8:doubleteam",
+        "12:electroball",
+        "16:feint",
+        "20:spark",
+        "24:agility",
         "28:irontail",
-        "29:nuzzle",
-        "34:discharge",
-        "37:slam",
-        "42:thunderbolt",
-        "45:agility",
+        "28:slam",
+        "32:discharge",
+        "36:thunderbolt",
+        "40:lightscreen",
+        "44:thunder",
         "50:wildcharge",
-        "53:lightscreen",
-        "58:thunder",
         "egg:charge",
         "egg:disarmingvoice",
         "egg:fakeout",
@@ -1613,7 +1432,7 @@
       },
       "catchRate": 190,
       "maleRatio": 0.5,
-      "baseExperienceYield": 86,
+      "baseExperienceYield": 112,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -1628,19 +1447,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:growl",
         "1:thundershock",
@@ -1750,7 +1556,6 @@
         "field",
         "fairy"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -1796,19 +1601,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "drops": {
-        "amount": "2",
-        "entries": [
-          {
-            "item": "generations_core:pikachu_doll",
-            "percentage": 1
-          },
-          {
-            "item": "minecraft:glowstone_dust",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:charm",
         "1:growl",
@@ -1905,6 +1697,29 @@
       "evolutions": [],
       "cannotDynamax": false,
       "battleOnly": false
+    },
+    {
+      "name": "Alolan",
+      "maleRatio": 0.5,
+      "labels": [
+        "alola_regional"
+      ],
+      "aspects": [
+        "alolan"
+      ],
+      "evolutions": [
+        {
+          "id": "alolan_pikachu_raichu",
+          "variant": "item_interact",
+          "result": "raichu alolan",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "psychic"
+          ],
+          "requirements": [],
+          "requiredContext": "cobblemon:thunder_stone"
+        }
+      ]
     }
   ],
   "baseExperienceYield": 112,
@@ -1915,40 +1730,60 @@
     "fairy"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "7",
     "entries": [
       {
-        "item": "generations_core:pikachu_doll",
-        "percentage": 1
+        "item": "generations_core:rockstar_costume",
+        "percentage": 2
+      },
+      {
+        "item": "generations_core:belle_costume",
+        "percentage": 2
+      },
+      {
+        "item": "generations_core:popstar_costume",
+        "percentage": 2
+      },
+      {
+        "item": "generations_core:phd_costume",
+        "percentage": 2
+      },
+      {
+        "item": "generations_core:libre_costume",
+        "percentage": 2
       },
       {
         "item": "minecraft:glowstone_dust",
         "percentage": 20
-      }
+      },
+      {
+        "item": "generations_core:pikachu_doll",
+        "percentage": 1
+      },
     ]
   },
   "moves": [
     "1:charm",
     "1:growl",
     "1:nastyplot",
+    "1:nuzzle",
+    "1:playnice",
+    "1:quickattack",
     "1:sweetkiss",
+    "1:tailwhip",
     "1:thundershock",
-    "6:tailwhip",
-    "7:playnice",
-    "8:thunderwave",
-    "11:quickattack",
-    "15:doubleteam",
-    "18:electroball",
-    "20:slam",
-    "23:nuzzle",
-    "26:spark",
-    "26:thunderbolt",
+    "4:thunderwave",
+    "8:doubleteam",
+    "12:electroball",
+    "16:feint",
+    "20:spark",
+    "24:agility",
     "28:irontail",
-    "29:feint",
-    "33:agility",
-    "37:discharge",
-    "41:thunder",
-    "50:lightscreen",
+    "28:slam",
+    "32:discharge",
+    "36:thunderbolt",
+    "40:lightscreen",
+    "44:thunder",
     "50:wildcharge",
     "tm:agility",
     "tm:attract",
@@ -2127,17 +1962,6 @@
       "consumeHeldItem": false,
       "learnableMoves": [
         "thunderpunch"
-      ],
-      "requirements": [],
-      "requiredContext": "cobblemon:thunder_stone"
-    },
-    {
-      "id": "pikachu_raichu",
-      "variant": "item_interact",
-      "result": "raichu form=alola",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "psychic"
       ],
       "requirements": [],
       "requiredContext": "cobblemon:thunder_stone"

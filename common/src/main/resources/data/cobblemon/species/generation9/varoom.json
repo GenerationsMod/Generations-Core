@@ -16,6 +16,14 @@
     "special_defence": 45,
     "speed": 47
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 190,
   "maleRatio": 0.5,
   "baseExperienceYield": 60,
@@ -33,15 +41,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:coal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:lick",
     "1:poisongas",
@@ -113,6 +112,12 @@
       ]
     }
   ],
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.75,
+    "height": 1.0,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.varoom.desc"

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gothita",
   "nationalPokedexNumber": 574,
   "primaryType": "psychic",
@@ -25,34 +24,25 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rose",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:confusion",
     "1:pound",
-    "3:confusion",
-    "7:tickle",
-    "8:playnice",
-    "10:faketears",
+    "4:playnice",
+    "8:tickle",
+    "12:psybeam",
     "14:doubleslap",
-    "16:psybeam",
+    "16:charm",
     "19:embargo",
+    "20:psyshock",
     "24:feintattack",
     "24:hypnosis",
-    "25:psyshock",
-    "28:flatter",
-    "31:futuresight",
+    "28:faketears",
     "33:healblock",
     "33:psychup",
-    "37:psychic",
+    "36:psychic",
+    "40:flatter",
     "40:telekinesis",
-    "46:charm",
+    "44:futuresight",
     "48:magicroom",
     "egg:captivate",
     "egg:darkpulse",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mesprit",
   "nationalPokedexNumber": 481,
   "primaryType": "psychic",
@@ -23,35 +22,34 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:heart_of_the_sea",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:mesprit_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
+    "1:copycat",
+    "1:healingwish",
+    "1:naturalgift",
     "1:rest",
     "6:imprison",
+    "7:swift",
+    "14:protect",
     "16:protect",
     "21:psybeam",
     "21:swift",
+    "28:imprison",
     "31:luckychant",
+    "35:extrasensory",
     "36:futuresight",
+    "42:charm",
     "46:charm",
     "49:psychic",
+    "50:extrasensory",
     "51:extrasensory",
     "56:flatter",
     "61:copycat",
+    "63:futuresight",
     "66:naturalgift",
+    "70:copycat",
     "76:healingwish",
+    "77:healingwish",
     "84:mysticalpower",
     "tm:acrobatics",
     "tm:allyswitch",

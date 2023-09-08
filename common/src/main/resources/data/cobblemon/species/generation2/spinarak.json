@@ -26,34 +26,25 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
+    "1:constrict",
     "1:poisonsting",
     "1:stringshot",
     "5:absorb",
-    "6:scaryface",
     "8:infestation",
-    "11:constrict",
-    "17:nightshade",
+    "12:leechlife",
+    "12:scaryface",
+    "15:nightshade",
     "19:shadowsneak",
-    "23:leechlife",
+    "22:furyswipes",
     "26:suckerpunch",
-    "30:furyswipes",
+    "29:spiderweb",
+    "33:agility",
     "36:pinmissile",
-    "37:spiderweb",
+    "40:psychic",
     "43:poisonjab",
-    "45:agility",
     "47:crosspoison",
     "50:stickyweb",
-    "53:psychic",
     "54:toxicthread",
     "egg:batonpass",
     "egg:disable",
@@ -171,7 +162,7 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.6,
   "hitbox": {
     "width": 1,
     "height": 1,

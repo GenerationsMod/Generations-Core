@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Palossand",
   "nationalPokedexNumber": 770,
   "primaryType": "ghost",
@@ -25,30 +24,21 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sand",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:astonish",
     "1:harden",
-    "1:sandattack",
-    "14:sandtomb",
-    "18:megadrain",
-    "23:bulldoze",
-    "27:hypnosis",
-    "32:irondefense",
-    "36:gigadrain",
-    "41:shadowball",
-    "47:earthpower",
-    "54:shoreup",
-    "60:sandstorm",
+    "1:sandtomb",
+    "15:megadrain",
+    "20:sandattack",
+    "25:bulldoze",
+    "30:hypnosis",
+    "35:gigadrain",
+    "40:irondefense",
+    "47:shadowball",
+    "54:earthpower",
+    "61:shoreup",
+    "68:sandstorm",
     "tm:amnesia",
     "tm:attract",
     "tm:bodyslam",

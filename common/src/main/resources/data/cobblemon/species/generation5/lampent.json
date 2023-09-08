@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Lampent",
   "nationalPokedexNumber": 608,
   "primaryType": "ghost",
@@ -26,33 +25,24 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:litwick_candle",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:ember",
     "1:minimize",
     "1:smog",
-    "7:firespin",
-    "10:confuseray",
-    "13:nightshade",
-    "16:willowisp",
+    "12:confuseray",
+    "16:hex",
     "20:flameburst",
-    "24:imprison",
-    "28:hex",
-    "33:memento",
-    "38:inferno",
-    "45:curse",
-    "53:shadowball",
-    "61:painsplit",
-    "69:overheat",
+    "20:willowisp",
+    "24:firespin",
+    "28:nightshade",
+    "32:curse",
+    "36:shadowball",
+    "40:inferno",
+    "46:imprison",
+    "52:painsplit",
+    "58:overheat",
+    "64:memento",
     "tm:allyswitch",
     "tm:attract",
     "tm:calmmind",

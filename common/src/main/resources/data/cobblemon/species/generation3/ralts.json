@@ -27,35 +27,26 @@
     "human_like",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:amaze_mulch",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
+    "1:disarmingvoice",
     "1:growl",
+    "3:doubleteam",
     "6:confusion",
-    "11:disarmingvoice",
-    "11:doubleteam",
-    "16:teleport",
-    "17:luckychant",
+    "9:hypnosis",
+    "12:drainingkiss",
+    "14:luckychant",
+    "15:teleport",
+    "17:magicalleaf",
     "18:psybeam",
-    "21:calmmind",
     "21:lifedew",
-    "21:magicalleaf",
-    "22:drainingkiss",
-    "23:healpulse",
-    "26:psychic",
-    "31:imprison",
-    "36:futuresight",
-    "39:charm",
-    "41:hypnosis",
-    "46:dreameater",
-    "54:storedpower",
+    "24:charm",
+    "27:calmmind",
+    "29:imprison",
+    "30:psychic",
+    "33:healpulse",
+    "36:dreameater",
+    "39:futuresight",
+    "42:storedpower",
     "egg:allyswitch",
     "egg:confuseray",
     "egg:destinybond",
@@ -214,7 +205,7 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1,
     "height": 1,

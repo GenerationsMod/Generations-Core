@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zorua",
   "nationalPokedexNumber": 570,
   "primaryType": "dark",
@@ -14,9 +13,6 @@
     "special_defence": 40,
     "speed": 65
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 75,
   "maleRatio": 0.875,
   "shoulderMountable": false,
@@ -38,6 +34,7 @@
       },
       "catchRate": 75,
       "maleRatio": 0.875,
+      "baseExperienceYield": 66,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -144,34 +141,25 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rabbit_hide",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:scratch",
+    "4:torment",
     "5:pursuit",
     "8:honeclaws",
-    "9:faketears",
-    "13:furyswipes",
+    "12:furyswipes",
+    "16:scaryface",
     "17:feintattack",
-    "21:scaryface",
+    "20:taunt",
     "24:knockoff",
-    "25:taunt",
-    "29:foulplay",
-    "33:torment",
-    "37:agility",
+    "28:faketears",
+    "32:agility",
+    "36:imprison",
+    "40:nightdaze",
     "41:embargo",
+    "44:nastyplot",
     "45:punishment",
-    "49:nastyplot",
-    "53:imprison",
-    "57:nightdaze",
+    "48:foulplay",
     "egg:captivate",
     "egg:copycat",
     "egg:counter",

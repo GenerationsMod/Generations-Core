@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Flutter Mane",
   "nationalPokedexNumber": 987,
   "primaryType": "ghost",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:confuseray",

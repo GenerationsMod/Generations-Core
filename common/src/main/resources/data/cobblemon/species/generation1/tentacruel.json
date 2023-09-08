@@ -38,12 +38,12 @@
       }
     }
   },
-    "resting": {
-      "canSleep": true,
-      "willSleepOnBed": false,
-      "depth": "normal",
-      "light": "0-4"
-    },
+  "resting": {
+    "canSleep": true,
+    "willSleepOnBed": false,
+    "depth": "normal",
+    "light": "0-4"
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -63,27 +63,27 @@
     ]
   },
   "moves": [
+    "1:acid",
     "1:constrict",
     "1:poisonsting",
     "1:reflecttype",
-    "1:supersonic",
     "1:watergun",
-    "15:toxicspikes",
-    "19:acid",
-    "25:bubblebeam",
-    "26:acidspray",
-    "29:waterpulse",
-    "30:wrap",
+    "1:wrap",
+    "1:wringout",
+    "12:supersonic",
+    "13:toxicspikes",
+    "16:waterpulse",
+    "20:screech",
+    "22:acidspray",
+    "24:bubblebeam",
+    "28:barrier",
+    "28:hex",
     "34:acidarmor",
     "36:brine",
-    "36:poisonjab",
-    "38:barrier",
+    "40:poisonjab",
     "46:surf",
-    "47:hex",
-    "47:screech",
-    "55:hydropump",
-    "55:wringout",
-    "56:sludgewave",
+    "52:sludgewave",
+    "58:hydropump",
     "tm:attract",
     "tm:blizzard",
     "tm:brine",

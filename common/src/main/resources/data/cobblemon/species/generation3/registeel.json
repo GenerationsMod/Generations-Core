@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Registeel",
   "nationalPokedexNumber": 379,
   "primaryType": "steel",
@@ -24,37 +23,24 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:registeel_orb",
-        "percentage": 100
-      },
-      {
-        "item": "generations_core:registeel_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:bulldoze",
-    "1:explosion",
-    "1:stomp",
-    "9:metalclaw",
-    "17:curse",
-    "25:superpower",
-    "33:ancientpower",
-    "41:amnesia",
-    "41:irondefense",
+    "1:chargebeam",
+    "1:metalclaw",
+    "6:bulldoze",
+    "12:ancientpower",
+    "18:stomp",
+    "24:flashcannon",
+    "24:ironhead",
+    "30:curse",
+    "36:amnesia",
+    "36:irondefense",
+    "42:hammerarm",
     "48:heavyslam",
-    "49:chargebeam",
-    "49:zapcannon",
-    "57:lockon",
-    "65:hyperbeam",
-    "73:flashcannon",
-    "73:ironhead",
-    "81:hammerarm",
+    "54:superpower",
+    "60:lockon",
+    "66:zapcannon",
+    "72:hyperbeam",
+    "78:explosion",
     "tm:aerialace",
     "tm:amnesia",
     "tm:bodypress",

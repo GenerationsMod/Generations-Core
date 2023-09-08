@@ -38,7 +38,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 261,
+      "baseExperienceYield": 216,
       "baseFriendship": 70,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
       "eggGroups": [
         "flying"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -82,6 +81,11 @@
       "light": "0-4"
     },
     "moving": {
+      "moving" : {
+        "walk": {
+          "walkSpeed": 0.42
+        }
+      },
       "fly": {
         "canFly": true
       }
@@ -106,19 +110,19 @@
   },
   "moves": [
     "1:gust",
+    "1:hurricane",
     "1:quickattack",
     "1:sandattack",
     "1:tackle",
-    "20:whirlwind",
+    "17:whirlwind",
     "22:twister",
-    "27:wingattack",
-    "34:featherdance",
+    "27:featherdance",
+    "32:agility",
+    "38:wingattack",
     "44:roost",
-    "48:agility",
     "50:tailwind",
+    "56:mirrormove",
     "62:airslash",
-    "62:mirrormove",
-    "68:hurricane",
     "tm:aerialace",
     "tm:attract",
     "tm:captivate",
@@ -210,10 +214,10 @@
   ],
   "preEvolution": "pidgeotto",
   "evolutions": [],
-  "baseScale": 1.7,
+  "baseScale": 1.4,
   "hitbox": {
-    "width": 0.8,
-    "height": 1,
+    "width": 0.75,
+    "height": 1.5,
     "fixed": false
   },
   "baseFriendship": 70,

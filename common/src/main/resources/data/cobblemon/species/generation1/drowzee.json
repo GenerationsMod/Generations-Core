@@ -25,33 +25,37 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:clock",
-        "percentage": 5
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.22
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:hypnosis",
     "1:pound",
-    "7:disable",
-    "11:confusion",
-    "17:headbutt",
-    "21:poisongas",
-    "26:psybeam",
-    "27:meditate",
+    "5:disable",
+    "9:confusion",
+    "13:headbutt",
+    "17:poisongas",
+    "21:meditate",
+    "21:psybeam",
+    "25:psychup",
     "29:wakeupslap",
-    "31:psychic",
-    "37:psychup",
+    "29:zenheadbutt",
+    "33:swagger",
+    "37:psychic",
     "37:synchronoise",
-    "41:swagger",
-    "43:nastyplot",
-    "45:futuresight",
-    "50:zenheadbutt",
-    "57:psyshock",
+    "41:nastyplot",
+    "45:psyshock",
+    "49:futuresight",
     "egg:assist",
     "egg:barrier",
     "egg:firepunch",
@@ -238,7 +242,7 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.85,
   "hitbox": {
     "width": 0.7,
     "height": 1.1,

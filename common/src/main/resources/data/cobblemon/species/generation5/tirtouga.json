@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tirtouga",
   "nationalPokedexNumber": 564,
   "primaryType": "water",
@@ -27,35 +26,26 @@
     "water_1",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:scute",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bide",
     "1:watergun",
     "1:withdraw",
+    "3:protect",
     "5:rollout",
-    "8:bite",
-    "11:protect",
-    "15:aquajet",
-    "18:ancientpower",
-    "21:crunch",
-    "25:wideguard",
-    "28:brine",
-    "31:smackdown",
+    "6:aquajet",
+    "9:smackdown",
+    "12:ancientpower",
+    "15:bite",
+    "18:wideguard",
+    "21:brine",
+    "24:rockslide",
+    "27:crunch",
+    "30:curse",
     "33:irondefense",
-    "35:curse",
-    "38:shellsmash",
-    "41:aquatail",
-    "45:rockslide",
-    "48:raindance",
-    "51:hydropump",
+    "36:aquatail",
+    "39:raindance",
+    "42:hydropump",
+    "45:shellsmash",
     "egg:bide",
     "egg:block",
     "egg:bodyslam",

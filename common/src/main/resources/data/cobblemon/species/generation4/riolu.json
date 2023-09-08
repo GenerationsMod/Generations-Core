@@ -25,34 +25,38 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:endure",
     "1:foresight",
     "1:quickattack",
+    "4:feint",
     "6:counter",
     "8:metalclaw",
+    "11:feint",
     "11:forcepalm",
+    "12:counter",
     "15:feint",
+    "15:forcepalm",
     "16:workup",
+    "19:copycat",
     "19:reversal",
     "20:rocksmash",
+    "24:nastyplot",
     "24:screech",
     "24:vacuumwave",
+    "28:screech",
     "29:copycat",
+    "29:reversal",
     "32:quickguard",
+    "36:forcepalm",
     "40:swordsdance",
     "44:helpinghand",
     "47:nastyplot",
+    "48:copycat",
+    "50:finalgambit",
+    "52:finalgambit",
     "55:finalgambit",
+    "56:reversal",
     "egg:agility",
     "egg:bite",
     "egg:blazekick",
@@ -192,8 +196,8 @@
   ],
   "baseScale": 0.8,
   "hitbox": {
-    "width": 0.8,
-    "height": 1.2,
+    "width": 0.6,
+    "height": 1.3,
     "fixed": false
   },
   "baseFriendship": 50,

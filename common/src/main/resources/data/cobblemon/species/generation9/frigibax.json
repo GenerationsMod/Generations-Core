@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Frigibax",
   "nationalPokedexNumber": 996,
   "primaryType": "dragon",
@@ -34,15 +33,6 @@
     "dragon",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:ice_heal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:dragontail",
     "1:leer",

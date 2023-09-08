@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Trapinch",
   "nationalPokedexNumber": 328,
   "primaryType": "ground",
@@ -26,35 +25,26 @@
     "bug",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:red_sand",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
-    "1:bite",
+    "1:bide",
+    "1:feintattack",
+    "1:sandattack",
     "4:laserfocus",
-    "9:sandattack",
-    "13:mudslap",
-    "17:bide",
-    "17:feintattack",
-    "21:bulldoze",
-    "25:rockslide",
-    "25:sandtomb",
-    "33:crunch",
-    "41:dig",
-    "49:sandstorm",
-    "57:hyperbeam",
-    "65:earthpower",
-    "67:superpower",
-    "73:earthquake",
-    "81:feint",
-    "89:fissure",
+    "8:bite",
+    "12:mudslap",
+    "15:rockslide",
+    "16:sandtomb",
+    "20:bulldoze",
+    "24:dig",
+    "28:crunch",
+    "29:feint",
+    "32:sandstorm",
+    "36:earthpower",
+    "40:earthquake",
+    "43:hyperbeam",
+    "44:superpower",
+    "48:fissure",
     "egg:bugbite",
     "egg:earthpower",
     "egg:endure",

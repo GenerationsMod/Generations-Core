@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Scraggy",
   "nationalPokedexNumber": 559,
   "primaryType": "dark",
@@ -27,34 +26,25 @@
     "field",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:leather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:lowkick",
-    "5:sandattack",
+    "4:payback",
+    "8:headbutt",
     "9:feintattack",
-    "12:headbutt",
-    "16:swagger",
-    "20:brickbreak",
+    "12:sandattack",
+    "16:facade",
     "20:protect",
-    "23:payback",
     "24:beatup",
     "27:chipaway",
-    "31:highjumpkick",
-    "34:scaryface",
-    "38:crunch",
-    "42:facade",
+    "28:scaryface",
+    "32:brickbreak",
+    "36:swagger",
+    "40:crunch",
+    "44:highjumpkick",
     "45:rockclimb",
-    "49:focuspunch",
-    "53:headsmash",
+    "48:focuspunch",
+    "52:headsmash",
     "egg:acidspray",
     "egg:amnesia",
     "egg:counter",

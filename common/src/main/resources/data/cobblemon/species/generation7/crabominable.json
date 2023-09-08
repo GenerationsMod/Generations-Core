@@ -26,15 +26,6 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:seagrass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
     "1:icepunch",
@@ -139,7 +130,7 @@
   ],
   "preEvolution": "crabrawler",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1,
     "height": 1,

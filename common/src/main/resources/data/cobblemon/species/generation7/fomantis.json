@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Fomantis",
   "nationalPokedexNumber": 753,
   "primaryType": "grass",
@@ -24,28 +23,19 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sweet_berries",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:furycutter",
-    "5:leafage",
-    "10:razorleaf",
-    "14:growth",
-    "19:ingrain",
-    "23:leafblade",
-    "28:synthesis",
+    "1:leafage",
+    "5:growth",
+    "10:ingrain",
+    "15:razorleaf",
+    "20:sweetscent",
+    "25:slash",
     "30:xscissor",
-    "32:slash",
-    "37:sweetscent",
-    "41:solarbeam",
-    "46:sunnyday",
+    "35:synthesis",
+    "40:leafblade",
+    "45:sunnyday",
+    "50:solarbeam",
     "egg:aromatherapy",
     "egg:defog",
     "egg:gigadrain",

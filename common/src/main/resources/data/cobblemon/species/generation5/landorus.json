@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Landorus",
   "nationalPokedexNumber": 645,
   "primaryType": "ground",
@@ -34,37 +33,28 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:mirror",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:block",
     "1:mudshot",
-    "1:rocktomb",
+    "1:rockthrow",
     "1:sandtomb",
     "1:smackdown",
     "5:leer",
-    "7:imprison",
-    "13:punishment",
-    "19:bulldoze",
-    "25:rockthrow",
-    "31:extrasensory",
-    "37:swordsdance",
-    "43:earthpower",
-    "49:rockslide",
-    "55:earthquake",
-    "61:sandstorm",
-    "67:fissure",
-    "73:stoneedge",
-    "79:hammerarm",
+    "7:punishment",
+    "10:block",
+    "15:bulldoze",
+    "20:rocktomb",
+    "25:swordsdance",
+    "30:imprison",
+    "35:rockslide",
+    "40:earthpower",
+    "45:extrasensory",
+    "50:stoneedge",
+    "55:hammerarm",
+    "60:sandstorm",
+    "65:earthquake",
+    "70:outrage",
+    "75:fissure",
     "80:sandsearstorm",
-    "85:outrage",
     "tm:attract",
     "tm:bodyslam",
     "tm:brickbreak",
@@ -199,7 +189,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "legendary"

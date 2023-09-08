@@ -36,14 +36,17 @@
   },
   "moves": [
     "1:charm",
+    "1:copycat",
     "1:minimize",
     "1:pound",
     "4:defensecurl",
     "5:copycat",
+    "8:sweetkiss",
     "9:refresh",
     "12:disarmingvoice",
     "12:sweetkiss",
     "16:covet",
+    "20:charm",
     "egg:aromatherapy",
     "egg:counter",
     "egg:endure",
@@ -157,10 +160,10 @@
       ]
     }
   ],
-  "baseScale": 0.8,
+  "baseScale": 0.7,
   "hitbox": {
     "width": 0.6,
-    "height": 0.7,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 140,

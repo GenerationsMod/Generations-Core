@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Pangoro",
   "nationalPokedexNumber": 675,
   "primaryType": "fighting",
@@ -27,34 +26,25 @@
     "field",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:armthrust",
     "1:bulletpunch",
-    "1:entrainment",
-    "1:hammerarm",
     "1:leer",
     "1:tackle",
-    "7:armthrust",
-    "10:workup",
+    "1:taunt",
+    "12:circlethrow",
     "12:karatechop",
     "15:cometpunch",
-    "20:slash",
-    "25:circlethrow",
-    "27:vitalthrow",
-    "35:bodyslam",
-    "42:crunch",
-    "48:partingshot",
+    "16:lowsweep",
+    "20:workup",
+    "24:slash",
+    "28:vitalthrow",
+    "35:crunch",
+    "40:bodyslam",
+    "46:partingshot",
+    "52:entrainment",
     "52:skyuppercut",
-    "65:taunt",
-    "70:lowsweep",
+    "58:hammerarm",
     "tm:aerialace",
     "tm:attract",
     "tm:beatup",

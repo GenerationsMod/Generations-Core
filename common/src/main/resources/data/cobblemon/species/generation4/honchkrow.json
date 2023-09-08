@@ -18,6 +18,11 @@
     "speed": 71
   },
   "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    },
     "resting": {
       "canSleep": true,
       "times": "day"
@@ -48,7 +53,9 @@
   "moves": [
     "1:astonish",
     "1:haze",
+    "1:nightslash",
     "1:pursuit",
+    "1:quash",
     "1:suckerpunch",
     "1:wingattack",
     "25:swagger",
@@ -56,8 +63,10 @@
     "45:foulplay",
     "45:nightslash",
     "55:darkpulse",
+    "55:nightslash",
     "65:comeuppance",
     "65:quash",
+    "75:darkpulse",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:aircutter",

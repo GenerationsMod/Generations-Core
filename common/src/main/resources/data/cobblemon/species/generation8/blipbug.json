@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Blipbug",
   "nationalPokedexNumber": 824,
   "primaryType": "bug",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:strugglebug",
     "egg:infestation",

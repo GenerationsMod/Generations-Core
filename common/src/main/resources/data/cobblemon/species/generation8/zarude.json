@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zarude",
   "nationalPokedexNumber": 893,
   "primaryType": "dark",
@@ -160,15 +159,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:vine",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:bind",
     "1:scratch",

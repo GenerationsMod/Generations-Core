@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Armaldo",
   "nationalPokedexNumber": 348,
   "primaryType": "rock",
@@ -25,31 +24,22 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
+    "1:furycutter",
     "1:harden",
     "1:mudsport",
     "1:scratch",
+    "1:smackdown",
     "1:watergun",
-    "13:smackdown",
-    "25:bugbite",
-    "25:metalclaw",
-    "29:brine",
-    "31:protect",
-    "37:ancientpower",
-    "46:furycutter",
-    "55:slash",
-    "64:rockblast",
-    "67:crushclaw",
-    "73:xscissor",
+    "12:metalclaw",
+    "16:ancientpower",
+    "20:bugbite",
+    "24:brine",
+    "28:slash",
+    "32:crushclaw",
+    "36:rockblast",
+    "43:protect",
+    "48:xscissor",
     "tm:aerialace",
     "tm:attract",
     "tm:bodyslam",

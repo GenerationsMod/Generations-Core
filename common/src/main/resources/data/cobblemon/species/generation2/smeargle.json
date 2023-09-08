@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Smeargle",
   "nationalPokedexNumber": 235,
   "primaryType": "normal",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:sketch",
     "tutor:captivate",

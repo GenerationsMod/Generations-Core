@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sandygast",
   "nationalPokedexNumber": 769,
   "primaryType": "ghost",
@@ -25,30 +24,21 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sand",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:harden",
     "5:astonish",
-    "9:sandattack",
-    "14:sandtomb",
-    "18:megadrain",
-    "23:bulldoze",
-    "27:hypnosis",
-    "32:irondefense",
-    "36:gigadrain",
-    "41:shadowball",
-    "45:earthpower",
-    "50:shoreup",
-    "54:sandstorm",
+    "10:sandtomb",
+    "15:megadrain",
+    "20:sandattack",
+    "25:bulldoze",
+    "30:hypnosis",
+    "35:gigadrain",
+    "40:irondefense",
+    "45:shadowball",
+    "50:earthpower",
+    "55:shoreup",
+    "60:sandstorm",
     "egg:amnesia",
     "egg:ancientpower",
     "egg:curse",

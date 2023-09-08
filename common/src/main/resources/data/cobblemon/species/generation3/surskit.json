@@ -26,29 +26,32 @@
     "water_1",
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:boost_mulch",
-        "percentage": 50
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      },
+      "walk": {
+        "avoidsLand": true
       }
-    ]
+    }
   },
   "moves": [
     "1:bubble",
     "1:watergun",
-    "7:quickattack",
-    "13:sweetscent",
+    "6:quickattack",
+    "9:sweetscent",
     "14:soak",
-    "19:watersport",
-    "25:bubblebeam",
+    "14:watersport",
+    "17:bubblebeam",
+    "22:agility",
+    "25:haze",
+    "25:mist",
     "30:aquajet",
-    "31:agility",
-    "37:haze",
-    "37:mist",
+    "35:batonpass",
     "38:stickyweb",
-    "43:batonpass",
     "egg:aquajet",
     "egg:bugbite",
     "egg:endure",
@@ -154,10 +157,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.6,
     "fixed": false
   },
   "baseFriendship": 70,

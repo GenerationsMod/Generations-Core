@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sealeo",
   "nationalPokedexNumber": 364,
   "primaryType": "ice",
@@ -27,33 +26,24 @@
     "water_1",
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:fresh_water",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
-    "1:encore",
     "1:growl",
-    "1:powdersnow",
+    "1:rollout",
+    "1:swagger",
     "1:watergun",
-    "5:rollout",
+    "12:powdersnow",
     "13:iceball",
-    "17:brine",
-    "19:bodyslam",
-    "25:aurorabeam",
-    "31:hail",
-    "32:swagger",
-    "39:rest",
-    "39:snore",
+    "16:rest",
+    "20:snore",
+    "24:brine",
+    "28:aurorabeam",
+    "35:encore",
+    "40:bodyslam",
     "46:surf",
-    "47:blizzard",
-    "55:sheercold",
+    "52:blizzard",
+    "58:hail",
+    "64:sheercold",
     "tm:attract",
     "tm:blizzard",
     "tm:bodyslam",

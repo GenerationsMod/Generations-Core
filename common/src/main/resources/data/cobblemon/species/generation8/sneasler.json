@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sneasler",
   "nationalPokedexNumber": 903,
   "primaryType": "fighting",
@@ -35,15 +34,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:salmon",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:fling",
     "1:leer",

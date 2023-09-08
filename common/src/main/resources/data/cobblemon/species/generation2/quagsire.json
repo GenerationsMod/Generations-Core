@@ -36,35 +36,31 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
       {
         "item": "minecraft:clay_ball",
         "quantityRange": "1-2",
         "percentage": 66
-      },
-      {
-        "item": "generations_core:damp_mulch",
-        "percentage": 10
       }
     ]
   },
   "moves": [
+    "1:mudshot",
     "1:mudsport",
+    "1:raindance",
     "1:tailwhip",
     "1:watergun",
-    "11:slam",
-    "16:mudshot",
+    "12:haze",
+    "12:mist",
+    "16:slam",
     "19:mudbomb",
-    "23:amnesia",
+    "23:yawn",
     "28:aquatail",
-    "35:yawn",
-    "42:earthquake",
+    "34:muddywater",
+    "40:amnesia",
     "46:toxic",
-    "49:raindance",
-    "53:muddywater",
-    "61:haze",
-    "61:mist",
+    "52:earthquake",
     "tm:acidspray",
     "tm:amnesia",
     "tm:attract",

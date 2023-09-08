@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Orthworm",
   "nationalPokedexNumber": 968,
   "primaryType": "steel",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:dirt",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:harden",
     "1:tackle",

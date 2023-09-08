@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Melmetal",
   "nationalPokedexNumber": 809,
   "primaryType": "steel",
@@ -34,7 +33,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 270,
+      "baseExperienceYield": 300,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -49,7 +48,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "mythical",
@@ -72,30 +70,21 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:harden",
     "1:headbutt",
     "1:tailwhip",
-    "1:thunderwave",
-    "27:thundershock",
-    "36:acidarmor",
-    "45:flashcannon",
-    "54:megapunch",
-    "63:protect",
+    "1:thundershock",
+    "24:thunderwave",
+    "32:acidarmor",
+    "40:flashcannon",
+    "48:megapunch",
+    "56:protect",
     "64:discharge",
-    "72:doubleironbash",
     "72:dynamicpunch",
-    "81:superpower",
-    "90:hyperbeam",
+    "80:superpower",
+    "88:doubleironbash",
+    "96:hyperbeam",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:brickbreak",

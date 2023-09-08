@@ -25,6 +25,14 @@
     "monster",
     "grass"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -37,20 +45,20 @@
   "moves": [
     "1:growl",
     "1:petalblizzard",
+    "1:petaldance",
+    "1:poisonpowder",
     "1:razorleaf",
-    "1:reflect",
     "1:tackle",
-    "15:poisonpowder",
+    "12:synthesis",
+    "18:reflect",
     "22:magicalleaf",
-    "23:synthesis",
     "26:naturalgift",
-    "31:bodyslam",
-    "32:petaldance",
     "34:sweetscent",
-    "41:lightscreen",
-    "51:safeguard",
+    "40:lightscreen",
+    "46:bodyslam",
+    "54:safeguard",
     "60:aromatherapy",
-    "61:solarbeam",
+    "66:solarbeam",
     "tm:attract",
     "tm:bulldoze",
     "tm:bulletseed",
@@ -153,10 +161,10 @@
   ],
   "preEvolution": "bayleef",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.75,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.6,
+    "height": 3.4,
     "fixed": false
   },
   "baseFriendship": 70,

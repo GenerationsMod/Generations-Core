@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Octillery",
   "nationalPokedexNumber": 224,
   "primaryType": "water",
@@ -26,36 +25,27 @@
     "water_1",
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:stable_mulch",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
+    "1:constrict",
+    "1:focusenergy",
     "1:gunkshot",
     "1:helpinghand",
+    "1:octazooka",
     "1:rockblast",
     "1:watergun",
     "1:waterpulse",
     "1:wrap",
-    "11:constrict",
-    "22:aurorabeam",
-    "22:bubblebeam",
-    "22:psybeam",
+    "12:psybeam",
+    "16:aurorabeam",
+    "20:bubblebeam",
     "24:lockon",
-    "25:octazooka",
-    "29:bulletseed",
-    "36:wringout",
-    "38:focusenergy",
-    "42:signalbeam",
-    "52:hydropump",
-    "54:icebeam",
-    "61:soak",
-    "70:hyperbeam",
+    "28:wringout",
+    "30:bulletseed",
+    "34:signalbeam",
+    "36:icebeam",
+    "42:hydropump",
+    "48:soak",
+    "54:hyperbeam",
     "tm:assurance",
     "tm:attract",
     "tm:blizzard",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dudunsparce",
   "nationalPokedexNumber": 982,
   "primaryType": "normal",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mud",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:flail",

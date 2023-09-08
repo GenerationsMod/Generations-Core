@@ -37,7 +37,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 210,
+      "baseExperienceYield": 175,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -52,7 +52,6 @@
       "eggGroups": [
         "bug"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -73,33 +72,24 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:shears",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
-    "1:focusenergy",
+    "1:harden",
     "1:visegrip",
-    "7:bind",
-    "13:seismictoss",
+    "4:focusenergy",
+    "8:bind",
+    "12:seismictoss",
+    "15:revenge",
     "16:bugbite",
-    "19:harden",
-    "22:doublehit",
-    "25:revenge",
-    "25:vitalthrow",
-    "30:xscissor",
-    "31:brickbreak",
-    "33:stormthrow",
-    "35:thrash",
+    "20:stormthrow",
+    "24:doublehit",
+    "26:brickbreak",
+    "28:vitalthrow",
+    "32:xscissor",
     "36:strength",
-    "37:guillotine",
-    "43:submission",
-    "49:swordsdance",
+    "40:swordsdance",
+    "43:thrash",
+    "44:submission",
+    "48:guillotine",
     "52:superpower",
     "egg:bugbite",
     "egg:closecombat",

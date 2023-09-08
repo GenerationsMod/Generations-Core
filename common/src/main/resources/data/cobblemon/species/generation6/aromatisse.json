@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Aromatisse",
   "nationalPokedexNumber": 683,
   "primaryType": "fairy",
@@ -24,36 +23,27 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:warped_roots",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aromaticmist",
+    "1:echoedvoice",
     "1:fairywind",
     "1:healpulse",
+    "1:odorsleuth",
+    "1:sweetkiss",
     "1:sweetscent",
-    "6:sweetkiss",
-    "8:odorsleuth",
-    "13:echoedvoice",
-    "17:calmmind",
-    "21:drainingkiss",
-    "25:aromatherapy",
-    "29:attract",
-    "31:moonblast",
-    "35:charm",
-    "38:flail",
-    "42:mistyterrain",
-    "44:skillswap",
-    "48:psychic",
-    "53:disarmingvoice",
+    "9:disarmingvoice",
+    "12:aromatherapy",
+    "15:drainingkiss",
+    "18:attract",
+    "21:flail",
+    "24:mistyterrain",
+    "27:psychic",
+    "30:charm",
+    "33:calmmind",
+    "36:moonblast",
+    "39:skillswap",
+    "42:psychup",
     "57:reflect",
-    "64:psychup",
     "tm:allyswitch",
     "tm:attract",
     "tm:calmmind",

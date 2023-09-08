@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Amoonguss",
   "nationalPokedexNumber": 591,
   "primaryType": "grass",
@@ -25,32 +24,23 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:poke_ball",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:astonish",
     "1:bide",
     "1:growth",
     "1:stunspore",
-    "15:megadrain",
-    "18:ingrain",
+    "12:megadrain",
+    "16:synthesis",
+    "20:clearsmog",
     "20:feintattack",
     "24:sweetscent",
     "28:gigadrain",
-    "32:toxic",
-    "35:synthesis",
-    "43:clearsmog",
-    "49:solarbeam",
-    "54:ragepowder",
-    "62:spore",
+    "32:ingrain",
+    "36:toxic",
+    "42:ragepowder",
+    "48:solarbeam",
+    "54:spore",
     "tm:attract",
     "tm:bodyslam",
     "tm:bulletseed",

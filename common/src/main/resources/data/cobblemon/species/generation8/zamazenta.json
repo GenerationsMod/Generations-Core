@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zamazenta",
   "nationalPokedexNumber": 889,
   "primaryType": "fighting",
@@ -35,7 +34,7 @@
       },
       "catchRate": 10,
       "maleRatio": -1,
-      "baseExperienceYield": 360,
+      "baseExperienceYield": 335,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -73,19 +72,9 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:crowned_shield",
-        "percentage": 100
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:howl",
-    "1:metalburst",
     "1:metalclaw",
     "1:quickattack",
     "1:wideguard",
@@ -93,6 +82,7 @@
     "22:irondefense",
     "33:ironhead",
     "44:laserfocus",
+    "44:metalburst",
     "55:crunch",
     "66:moonblast",
     "77:closecombat",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Miraidon",
   "nationalPokedexNumber": 1008,
   "primaryType": "electric",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:guilded_blackstone",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:dragonbreath",
     "1:electricterrain",

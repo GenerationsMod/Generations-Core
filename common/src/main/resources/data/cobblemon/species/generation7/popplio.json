@@ -17,7 +17,7 @@
   },
   "catchRate": 45,
   "maleRatio": 0.875,
-  "shoulderMountable": false,
+  "shoulderMountable": true,
   "baseExperienceYield": 64,
   "experienceGroup": "medium_slow",
   "eggCycles": 15,
@@ -25,6 +25,23 @@
     "water_1",
     "field"
   ],
+  "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.17
+      },
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -35,22 +52,22 @@
     ]
   },
   "moves": [
+    "1:growl",
     "1:pound",
-    "1:watergun",
-    "4:growl",
-    "8:disarmingvoice",
-    "11:babydolleyes",
-    "14:aquajet",
-    "16:icywind",
-    "18:encore",
-    "22:bubblebeam",
-    "25:sing",
+    "3:watergun",
+    "6:disarmingvoice",
+    "9:aquajet",
+    "12:babydolleyes",
+    "15:icywind",
+    "18:sing",
+    "21:bubblebeam",
+    "24:encore",
+    "27:mistyterrain",
     "29:doubleslap",
-    "32:hypervoice",
-    "36:moonblast",
+    "30:hypervoice",
+    "33:moonblast",
+    "36:hydropump",
     "39:captivate",
-    "43:hydropump",
-    "46:mistyterrain",
     "egg:amnesia",
     "egg:aquaring",
     "egg:aromaticmist",

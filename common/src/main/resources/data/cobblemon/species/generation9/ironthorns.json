@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Iron Thorns",
   "nationalPokedexNumber": 995,
   "primaryType": "rock",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:glow_berries",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:electricterrain",
     "1:firefang",

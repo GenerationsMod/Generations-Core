@@ -22,9 +22,11 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "swim": {
-      "canWalkOnWater": true,
-      "canBreatheUnderwater": true
+    "moving": {
+      "swim": {
+        "canWalkOnWater": true,
+        "canBreatheUnderwater": true
+      }
     }
   },
   "baseExperienceYield": 295,
@@ -40,15 +42,6 @@
   "experienceGroup": "slow",
   "eggCycles": 50,
   "eggGroups": ["undiscovered"],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aquajet",
     "1:honeclaws",

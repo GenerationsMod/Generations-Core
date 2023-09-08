@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cherubi",
   "nationalPokedexNumber": 420,
   "primaryType": "grass",
@@ -24,28 +23,27 @@
     "fairy",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sweet_berries",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:morningsun",
     "1:tackle",
     "5:leafage",
     "7:growth",
+    "10:growth",
     "10:leechseed",
     "13:helpinghand",
+    "15:helpinghand",
     "19:magicalleaf",
+    "20:magicalleaf",
     "22:sunnyday",
+    "26:leechseed",
     "28:worryseed",
+    "30:takedown",
     "31:takedown",
+    "35:petalblizzard",
     "37:solarbeam",
     "40:luckychant",
+    "40:worryseed",
+    "45:solarbeam",
     "47:petalblizzard",
     "egg:aromatherapy",
     "egg:defensecurl",

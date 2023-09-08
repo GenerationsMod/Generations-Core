@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Runerigus",
   "nationalPokedexNumber": 867,
   "primaryType": "ground",
@@ -25,15 +24,6 @@
     "mineral",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cobblestone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:haze",

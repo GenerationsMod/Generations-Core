@@ -21,19 +21,23 @@
   "shoulderMountable": false,
   "baseExperienceYield": 128,
   "experienceGroup": "medium_slow",
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "eggCycles": 15,
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:honeclaws",
     "1:leer",
@@ -108,8 +112,8 @@
   ],
   "baseScale": 1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.65,
+    "height": 1.1,
     "fixed": false
   },
   "baseFriendship": 50,

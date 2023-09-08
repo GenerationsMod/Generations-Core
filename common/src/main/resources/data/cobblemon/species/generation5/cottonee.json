@@ -27,33 +27,31 @@
     "fairy",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:boost_mulch",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
     "1:absorb",
-    "1:fairywind",
-    "4:growth",
-    "8:leechseed",
-    "10:stunspore",
-    "13:megadrain",
-    "17:cottonspore",
-    "19:razorleaf",
-    "22:poisonpowder",
-    "26:gigadrain",
-    "28:charm",
-    "31:helpinghand",
-    "35:energyball",
-    "37:cottonguard",
-    "40:sunnyday",
-    "44:endeavor",
-    "46:solarbeam",
+    "1:helpinghand",
+    "3:fairywind",
+    "6:stunspore",
+    "12:megadrain",
+    "15:razorleaf",
+    "18:growth",
+    "21:poisonpowder",
+    "24:gigadrain",
+    "27:charm",
+    "30:leechseed",
+    "33:cottonspore",
+    "36:energyball",
+    "39:sunnyday",
+    "42:endeavor",
+    "45:cottonguard",
+    "48:solarbeam",
     "egg:beatup",
     "egg:captivate",
     "egg:encore",
@@ -135,10 +133,10 @@
       "requiredContext": "cobblemon:sun_stone"
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 0.7,
     "fixed": false
   },
   "baseFriendship": 50,

@@ -23,32 +23,39 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bell",
-        "percentage": 10
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "canWalk": false
+      },
+      "fly": {
+        "canFly": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
+    "1:astonish",
+    "1:confusion",
+    "1:growl",
+    "1:healingwish",
+    "1:synchronoise",
     "1:wrap",
-    "6:growl",
-    "9:astonish",
-    "14:confusion",
-    "17:takedown",
-    "22:uproar",
-    "25:yawn",
-    "30:psywave",
-    "33:doubleedge",
-    "38:healbell",
-    "41:safeguard",
-    "46:extrasensory",
+    "13:yawn",
+    "16:psywave",
+    "19:takedown",
+    "22:extrasensory",
+    "27:healbell",
+    "32:uproar",
+    "37:safeguard",
+    "42:doubleedge",
     "46:psychic",
-    "49:healingwish",
-    "49:healpulse",
-    "54:synchronoise",
+    "47:healpulse",
     "egg:cosmicpower",
     "egg:craftyshield",
     "egg:curse",
@@ -143,6 +150,13 @@
     "tutor:wrap",
     "tutor:zenheadbutt"
   ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "labels": [
     "gen3"
   ],
@@ -151,10 +165,10 @@
   ],
   "preEvolution": "chingling",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.4,
+    "height": 1.2,
     "fixed": false
   },
   "baseFriendship": 70,

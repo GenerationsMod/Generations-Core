@@ -47,6 +47,7 @@
     ]
   },
   "moves": [
+    "1:armthrust",
     "1:ember",
     "1:hammerarm",
     "1:odorsleuth",
@@ -54,7 +55,6 @@
     "1:tailwhip",
     "13:defensecurl",
     "15:flamecharge",
-    "17:armthrust",
     "20:smog",
     "23:rollout",
     "28:takedown",

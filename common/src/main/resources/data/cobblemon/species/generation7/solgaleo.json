@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Solgaleo",
   "nationalPokedexNumber": 791,
   "primaryType": "psychic",
@@ -24,34 +23,25 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:nether_star",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:cosmicpower",
     "1:metalclaw",
+    "1:nobleroar",
     "1:sunsteelstrike",
     "1:teleport",
     "1:wakeupslap",
     "7:ironhead",
-    "13:metalsound",
-    "19:zenheadbutt",
-    "23:flashcannon",
-    "31:morningsun",
-    "37:crunch",
-    "43:metalburst",
-    "47:solarbeam",
+    "14:metalsound",
+    "21:zenheadbutt",
+    "28:flashcannon",
+    "35:morningsun",
+    "42:crunch",
+    "49:metalburst",
     "56:wildcharge",
-    "59:nobleroar",
-    "61:flareblitz",
-    "67:wideguard",
-    "73:gigaimpact",
+    "63:solarbeam",
+    "70:flareblitz",
+    "77:wideguard",
+    "84:gigaimpact",
     "tm:agility",
     "tm:bulldoze",
     "tm:calmmind",

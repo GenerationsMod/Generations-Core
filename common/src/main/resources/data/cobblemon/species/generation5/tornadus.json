@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tornadus",
   "nationalPokedexNumber": 641,
   "primaryType": "flying",
@@ -33,35 +32,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:mirror",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:gust",
-    "1:uproar",
     "5:leer",
-    "7:swagger",
-    "13:bite",
-    "19:revenge",
-    "25:aircutter",
-    "31:extrasensory",
-    "37:agility",
-    "43:airslash",
-    "49:crunch",
-    "55:tailwind",
-    "61:raindance",
-    "67:hurricane",
-    "73:darkpulse",
+    "10:swagger",
+    "13:revenge",
+    "15:bite",
+    "20:aircutter",
+    "25:agility",
+    "30:tailwind",
+    "35:airslash",
+    "40:crunch",
+    "45:extrasensory",
+    "50:uproar",
+    "55:hammerarm",
+    "60:raindance",
+    "65:hurricane",
+    "67:darkpulse",
+    "70:thrash",
     "77:bleakwindstorm",
-    "79:hammerarm",
-    "85:thrash",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
@@ -202,7 +192,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "legendary"

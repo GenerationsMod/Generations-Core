@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mandibuzz",
   "nationalPokedexNumber": 630,
   "primaryType": "dark",
@@ -26,38 +25,29 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:bonerush",
+    "1:flatter",
     "1:furyattack",
     "1:gust",
     "1:leer",
+    "1:mirrormove",
     "1:pluck",
     "1:skyattack",
     "1:toxic",
-    "14:nastyplot",
-    "19:flatter",
+    "18:tailwind",
     "23:feintattack",
     "24:knockoff",
     "28:punishment",
     "30:irondefense",
-    "32:defog",
-    "37:tailwind",
-    "41:airslash",
-    "46:darkpulse",
+    "36:whirlwind",
+    "42:airslash",
+    "48:darkpulse",
     "50:embargo",
-    "51:bonerush",
-    "57:whirlwind",
-    "63:bravebird",
-    "70:mirrormove",
+    "57:nastyplot",
+    "64:defog",
     "72:attract",
+    "80:bravebird",
     "tm:aerialace",
     "tm:airslash",
     "tm:assurance",

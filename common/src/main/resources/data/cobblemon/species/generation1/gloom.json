@@ -36,33 +36,24 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:surprise_mulch",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
+    "1:acid",
     "1:growth",
-    "1:poisonpowder",
     "1:sweetscent",
+    "12:megadrain",
+    "14:poisonpowder",
     "16:stunspore",
     "18:sleeppowder",
-    "23:megadrain",
-    "24:acid",
-    "29:luckychant",
+    "20:gigadrain",
+    "24:luckychant",
+    "26:toxic",
     "32:moonblast",
-    "35:moonlight",
-    "35:naturalgift",
-    "39:toxic",
-    "44:petaldance",
-    "47:gigadrain",
+    "38:grassyterrain",
+    "44:moonlight",
+    "44:naturalgift",
     "49:petalblizzard",
-    "54:grassyterrain",
+    "50:petaldance",
     "tm:attract",
     "tm:bulletseed",
     "tm:captivate",

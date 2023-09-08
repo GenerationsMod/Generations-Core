@@ -25,32 +25,35 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
+    "1:leer",
     "1:tackle",
     "4:thundershock",
     "5:leer",
+    "8:charge",
     "9:charge",
     "11:babydolleyes",
+    "12:bite",
     "13:bite",
     "13:spark",
+    "16:spark",
+    "17:bite",
+    "20:roar",
     "21:roar",
     "24:voltswitch",
     "25:swagger",
+    "28:scaryface",
     "29:crunch",
     "29:thunderfang",
     "32:thunderwave",
+    "33:crunch",
+    "36:crunch",
     "37:scaryface",
+    "40:discharge",
     "41:discharge",
+    "44:swagger",
     "45:wildcharge",
+    "48:wildcharge",
     "egg:babydolleyes",
     "egg:doublekick",
     "egg:eerieimpulse",
@@ -154,9 +157,9 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
+    "width": 0.7,
     "height": 1,
     "fixed": false
   },

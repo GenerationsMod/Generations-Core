@@ -34,15 +34,6 @@
     "flying",
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:counter",
     "1:doublehit",
@@ -115,6 +106,12 @@
   "weight": 619,
   "preEvolution": "quaxwell",
   "evolutions": [],
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1.0,
+    "height": 3.2,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.quaquaval.desc"

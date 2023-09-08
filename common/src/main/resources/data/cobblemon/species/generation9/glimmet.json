@@ -16,6 +16,19 @@
     "special_defence": 60,
     "speed": 60
   },
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 70,
   "maleRatio": 0.5,
   "baseExperienceYield": 70,
@@ -33,15 +46,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:z_crystal_ore",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:harden",
     "1:rockthrow",
@@ -112,6 +116,12 @@
       ]
     }
   ],
+  "baseScale": 0.45,
+  "hitbox": {
+    "width": 1,
+    "height": 2,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.glimmet.desc"

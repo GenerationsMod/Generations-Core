@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Altaria",
   "nationalPokedexNumber": 334,
   "primaryType": "dragon",
@@ -37,7 +36,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 207,
+      "baseExperienceYield": 172,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -53,7 +52,6 @@
         "flying",
         "dragon"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -75,36 +73,27 @@
     "flying",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wool",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
+    "1:disarmingvoice",
     "1:growl",
+    "1:mist",
     "1:peck",
     "1:pluck",
-    "1:sing",
-    "11:disarmingvoice",
-    "18:furyattack",
-    "18:round",
-    "21:safeguard",
-    "28:mist",
-    "31:takedown",
-    "32:naturalgift",
-    "35:dragonbreath",
-    "40:dragondance",
-    "45:refresh",
-    "46:cottonguard",
-    "52:moonblast",
-    "54:dragonpulse",
-    "54:perishsong",
-    "59:skyattack",
+    "12:furyattack",
+    "16:round",
+    "20:dragonbreath",
+    "20:naturalgift",
+    "24:safeguard",
+    "26:refresh",
+    "28:sing",
+    "30:dragondance",
+    "32:cottonguard",
+    "38:takedown",
+    "40:dragonpulse",
+    "44:moonblast",
+    "50:perishsong",
+    "56:skyattack",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

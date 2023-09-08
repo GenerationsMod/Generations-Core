@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Solrock",
   "nationalPokedexNumber": 338,
   "primaryType": "rock",
@@ -24,36 +23,27 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:stone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:confusion",
     "1:flareblitz",
     "1:harden",
     "1:morningsun",
+    "1:rockthrow",
     "1:tackle",
+    "5:firespin",
     "5:hypnosis",
-    "7:confusion",
-    "13:rockthrow",
-    "19:firespin",
-    "20:rockpolish",
+    "10:rockpolish",
+    "13:psywave",
+    "15:rockslide",
+    "17:embargo",
     "20:zenheadbutt",
-    "25:psywave",
-    "31:cosmicpower",
-    "31:embargo",
-    "33:psychic",
-    "37:rockslide",
-    "41:stoneedge",
-    "42:healblock",
-    "43:solarbeam",
-    "49:explosion",
-    "64:wonderroom",
+    "25:cosmicpower",
+    "30:psychic",
+    "33:healblock",
+    "35:stoneedge",
+    "40:solarbeam",
+    "45:wonderroom",
+    "50:explosion",
     "tm:acrobatics",
     "tm:allyswitch",
     "tm:batonpass",

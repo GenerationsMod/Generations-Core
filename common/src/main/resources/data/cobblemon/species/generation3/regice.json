@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Regice",
   "nationalPokedexNumber": 378,
   "primaryType": "ice",
@@ -24,35 +23,22 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:regice_orb",
-        "percentage": 100
-      },
-      {
-        "item": "generations_core:regice_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:bulldoze",
-    "1:explosion",
-    "1:stomp",
-    "9:icywind",
-    "17:curse",
-    "25:superpower",
-    "33:ancientpower",
-    "41:amnesia",
+    "1:chargebeam",
+    "1:icywind",
+    "6:bulldoze",
+    "12:ancientpower",
+    "18:stomp",
+    "24:icebeam",
+    "30:curse",
+    "36:amnesia",
+    "42:hammerarm",
     "48:blizzard",
-    "49:chargebeam",
-    "49:zapcannon",
-    "57:lockon",
-    "65:hyperbeam",
-    "73:icebeam",
-    "81:hammerarm",
+    "54:superpower",
+    "60:lockon",
+    "66:zapcannon",
+    "72:hyperbeam",
+    "78:explosion",
     "tm:amnesia",
     "tm:auroraveil",
     "tm:avalanche",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sandaconda",
   "nationalPokedexNumber": 844,
   "primaryType": "ground",
@@ -54,7 +53,6 @@
         "field",
         "dragon"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -76,15 +74,6 @@
     "field",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sand",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:brutalswing",
     "1:minimize",

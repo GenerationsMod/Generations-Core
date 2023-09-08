@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Jangmo-o",
   "nationalPokedexNumber": 782,
   "primaryType": "dragon",
@@ -25,30 +24,21 @@
   "eggGroups": [
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:heart_scale",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:leer",
     "1:tackle",
-    "5:leer",
+    "4:protect",
+    "8:dragontail",
     "9:bide",
-    "13:protect",
-    "17:dragontail",
-    "21:scaryface",
-    "25:headbutt",
-    "29:workup",
-    "33:screech",
-    "37:irondefense",
-    "41:dragonclaw",
-    "45:nobleroar",
-    "49:dragondance",
-    "53:outrage",
+    "12:scaryface",
+    "16:headbutt",
+    "20:workup",
+    "24:screech",
+    "28:irondefense",
+    "32:dragonclaw",
+    "36:nobleroar",
+    "40:dragondance",
+    "44:outrage",
     "egg:counter",
     "egg:dragonbreath",
     "egg:focuspunch",

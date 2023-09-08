@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Silcoon",
   "nationalPokedexNumber": 266,
   "primaryType": "bug",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:harden",
     "tutor:bugbite",

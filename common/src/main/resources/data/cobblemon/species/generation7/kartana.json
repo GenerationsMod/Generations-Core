@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Kartana",
   "nationalPokedexNumber": 798,
   "primaryType": "grass",
@@ -24,35 +23,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:paper",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:aircutter",
-    "1:cut",
-    "1:defog",
     "1:furycutter",
-    "1:sacredsword",
     "1:vacuumwave",
-    "7:falseswipe",
-    "13:razorleaf",
-    "19:synthesis",
-    "23:aerialace",
-    "29:laserfocus",
-    "31:nightslash",
-    "37:swordsdance",
-    "43:leafblade",
+    "5:razorleaf",
+    "10:falseswipe",
+    "15:cut",
+    "20:aircutter",
+    "25:aerialace",
+    "30:detect",
+    "35:nightslash",
+    "40:synthesis",
+    "45:laserfocus",
     "47:xscissor",
-    "53:detect",
+    "50:defog",
+    "55:leafblade",
     "59:airslash",
+    "60:sacredsword",
+    "65:swordsdance",
     "67:psychocut",
-    "73:guillotine",
+    "70:guillotine",
     "tm:aerialace",
     "tm:airslash",
     "tm:brickbreak",

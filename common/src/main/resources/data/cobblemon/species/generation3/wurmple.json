@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Wurmple",
   "nationalPokedexNumber": 265,
   "primaryType": "bug",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:stringshot",
     "1:tackle",

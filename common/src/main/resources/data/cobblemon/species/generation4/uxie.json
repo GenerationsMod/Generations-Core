@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Uxie",
   "nationalPokedexNumber": 480,
   "primaryType": "psychic",
@@ -23,34 +22,34 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:heart_of_the_sea",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:uxie_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
+    "1:flail",
+    "1:memento",
+    "1:naturalgift",
     "1:rest",
     "6:imprison",
+    "7:swift",
+    "14:endure",
     "16:endure",
     "21:psybeam",
     "21:swift",
+    "28:imprison",
     "31:yawn",
+    "35:extrasensory",
     "36:futuresight",
+    "42:amnesia",
     "46:amnesia",
     "49:psychic",
+    "50:extrasensory",
     "51:extrasensory",
+    "56:yawn",
     "61:flail",
+    "63:futuresight",
     "66:naturalgift",
+    "70:flail",
     "76:memento",
+    "77:memento",
     "84:mysticalpower",
     "tm:acrobatics",
     "tm:allyswitch",

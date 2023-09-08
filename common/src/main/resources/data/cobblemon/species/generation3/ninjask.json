@@ -25,37 +25,42 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 20
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
+
   "moves": [
-    "1:absorb",
     "1:aerialace",
-    "1:bugbite",
+    "1:batonpass",
     "1:dig",
+    "1:doubleteam",
     "1:falseswipe",
+    "1:furycutter",
     "1:harden",
     "1:leechlife",
     "1:metalclaw",
     "1:mudslap",
     "1:sandattack",
     "1:scratch",
-    "14:furyswipes",
-    "19:mindreader",
-    "20:doubleteam",
-    "20:furycutter",
-    "20:screech",
-    "25:swordsdance",
-    "31:slash",
-    "38:agility",
-    "45:batonpass",
-    "52:xscissor",
+    "1:screech",
+    "15:agility",
+    "23:absorb",
+    "29:bugbite",
+    "36:furyswipes",
+    "43:mindreader",
+    "50:slash",
+    "57:swordsdance",
+    "64:xscissor",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
@@ -137,7 +142,7 @@
   ],
   "preEvolution": "nincada",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
     "width": 1,
     "height": 1,

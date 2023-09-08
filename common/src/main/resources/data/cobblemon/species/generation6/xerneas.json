@@ -49,7 +49,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "legendary"
@@ -70,35 +69,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:totem_of_undying",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:aromatherapy",
-    "1:healpulse",
-    "1:ingrain",
+    "1:gravity",
     "1:tackle",
-    "1:takedown",
     "5:lightscreen",
     "10:aurorabeam",
-    "18:gravity",
-    "26:geomancy",
-    "35:moonblast",
-    "44:megahorn",
-    "51:nightslash",
-    "55:hornleech",
-    "59:psychup",
-    "63:mistyterrain",
-    "72:naturepower",
-    "80:closecombat",
-    "88:gigaimpact",
-    "93:outrage",
+    "15:naturepower",
+    "20:nightslash",
+    "25:aromatherapy",
+    "30:psychup",
+    "35:hornleech",
+    "40:mistyterrain",
+    "45:ingrain",
+    "50:takedown",
+    "55:geomancy",
+    "60:moonblast",
+    "65:healpulse",
+    "70:megahorn",
+    "75:closecombat",
+    "80:outrage",
+    "85:gigaimpact",
     "tm:bodyslam",
     "tm:calmmind",
     "tm:closecombat",

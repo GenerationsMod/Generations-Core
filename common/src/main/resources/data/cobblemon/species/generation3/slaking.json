@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Slaking",
   "nationalPokedexNumber": 289,
   "primaryType": "normal",
@@ -23,33 +22,24 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:encore",
+    "1:punishment",
     "1:scratch",
     "1:slackoff",
     "1:suckerpunch",
+    "1:swagger",
     "1:yawn",
-    "19:feintattack",
-    "25:amnesia",
+    "14:feintattack",
+    "17:amnesia",
+    "23:covet",
+    "27:chipaway",
     "27:throatchop",
-    "31:covet",
-    "36:swagger",
-    "37:chipaway",
-    "37:counter",
-    "43:flail",
-    "49:fling",
+    "33:counter",
+    "39:flail",
+    "45:fling",
     "52:megakick",
-    "55:punishment",
-    "61:hammerarm",
+    "63:hammerarm",
     "tm:aerialace",
     "tm:amnesia",
     "tm:attract",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Glameow",
   "nationalPokedexNumber": 431,
   "primaryType": "normal",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cod",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:fakeout",
     "5:scratch",
@@ -46,6 +36,7 @@
     "32:captivate",
     "37:slash",
     "41:suckerpunch",
+    "44:attract",
     "45:attract",
     "48:honeclaws",
     "50:playrough",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gothorita",
   "nationalPokedexNumber": 575,
   "primaryType": "psychic",
@@ -25,35 +24,26 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rose_bush",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
-    "1:faketears",
     "1:playnice",
     "1:pound",
     "1:tickle",
+    "12:psybeam",
     "14:doubleslap",
-    "16:psybeam",
+    "16:charm",
     "19:embargo",
+    "20:psyshock",
     "24:feintattack",
     "24:hypnosis",
-    "25:psyshock",
-    "28:flatter",
-    "31:futuresight",
+    "28:faketears",
     "34:healblock",
     "35:psychup",
-    "39:psychic",
+    "40:psychic",
     "43:telekinesis",
-    "50:charm",
-    "53:magicroom",
+    "46:flatter",
+    "52:futuresight",
+    "58:magicroom",
     "tm:allyswitch",
     "tm:attract",
     "tm:calmmind",

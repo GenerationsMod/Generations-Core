@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Komala",
   "nationalPokedexNumber": 775,
   "primaryType": "normal",
@@ -23,14 +22,16 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 25
-      }
-    ]
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "canWalk": false
+      },
+      "swim": {
+        "canSwimInWater": false
+      },
+      "canLook": false
+    }
   },
   "moves": [
     "1:defensecurl",
@@ -118,9 +119,9 @@
     "cobblemon.species.komala.desc"
   ],
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.6,
   "hitbox": {
-    "width": 1,
+    "width": 0.7,
     "height": 1,
     "fixed": false
   },

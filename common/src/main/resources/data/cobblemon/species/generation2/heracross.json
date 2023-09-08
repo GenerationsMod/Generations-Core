@@ -38,7 +38,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 210,
+      "baseExperienceYield": 175,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
       "eggGroups": [
         "bug"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -74,37 +73,28 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:heracross_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:armthrust",
     "1:bulletseed",
     "1:leer",
     "1:nightslash",
     "1:tackle",
-    "6:hornattack",
-    "11:endure",
-    "13:aerialace",
+    "5:furyattack",
+    "7:feint",
+    "10:endure",
+    "15:aerialace",
     "16:chipaway",
-    "17:furyattack",
-    "23:brickbreak",
-    "30:counter",
-    "31:pinmissile",
-    "37:closecombat",
-    "37:takedown",
+    "20:hornattack",
+    "25:counter",
+    "30:brickbreak",
+    "34:takedown",
+    "35:pinmissile",
     "40:throatchop",
-    "45:reversal",
     "45:thrash",
-    "49:feint",
+    "46:reversal",
     "50:swordsdance",
-    "53:megahorn",
+    "55:megahorn",
+    "60:closecombat",
     "egg:bide",
     "egg:doubleedge",
     "egg:falseswipe",

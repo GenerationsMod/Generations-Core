@@ -16,6 +16,14 @@
     "special_defence": 67,
     "speed": 90
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 75,
   "maleRatio": 0.5,
   "baseExperienceYield": 175,
@@ -33,15 +41,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:coal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:lick",
     "1:magnetrise",

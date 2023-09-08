@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Passimian",
   "nationalPokedexNumber": 766,
   "primaryType": "fighting",
@@ -24,31 +23,22 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:leer",
     "1:tackle",
-    "4:leer",
-    "8:rocksmash",
-    "11:focusenergy",
+    "5:rocksmash",
+    "10:focusenergy",
     "15:beatup",
-    "18:scaryface",
-    "22:takedown",
+    "20:scaryface",
     "25:bestow",
-    "29:thrash",
-    "32:bulkup",
-    "36:doubleedge",
-    "39:fling",
-    "43:closecombat",
-    "46:reversal",
-    "50:gigaimpact",
+    "25:takedown",
+    "30:fling",
+    "35:bulkup",
+    "40:thrash",
+    "45:doubleedge",
+    "50:closecombat",
+    "55:reversal",
+    "60:gigaimpact",
     "egg:counter",
     "egg:feint",
     "egg:ironhead",

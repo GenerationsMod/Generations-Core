@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cosmoem",
   "nationalPokedexNumber": 790,
   "primaryType": "psychic",
@@ -23,15 +22,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:nether_star",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:cosmicpower",
     "1:teleport",

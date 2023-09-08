@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dialga",
   "nationalPokedexNumber": 483,
   "primaryType": "steel",
@@ -38,6 +37,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
+      "baseExperienceYield": 340,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -52,7 +52,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "legendary"
@@ -73,34 +72,35 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:adamant_crystal",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:dialga_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:dragonbreath",
+    "1:metalclaw",
     "1:scaryface",
     "6:metalclaw",
+    "8:dragonbreath",
     "10:ancientpower",
     "15:slash",
+    "16:ancientpower",
     "19:powergem",
     "24:metalburst",
+    "24:slash",
     "28:dragonclaw",
+    "32:flashcannon",
     "33:earthpower",
     "37:aurasphere",
+    "40:dragonclaw",
     "40:roaroftime",
     "42:flashcannon",
     "42:irontail",
+    "46:roaroftime",
+    "48:aurasphere",
+    "50:flashcannon",
     "50:healblock",
+    "56:powergem",
+    "64:metalburst",
+    "72:earthpower",
+    "80:irontail",
+    "88:roaroftime",
     "tm:aerialace",
     "tm:aurasphere",
     "tm:blizzard",

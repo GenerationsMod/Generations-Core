@@ -38,7 +38,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 178,
+      "baseExperienceYield": 198,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
       "eggGroups": [
         "bug"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -89,6 +88,9 @@
       },
       "fly": {
         "canFly": true
+      },
+      "walk": {
+        "walkSpeed": 0.4
       }
     }
   },
@@ -103,25 +105,25 @@
   },
   "moves": [
     "1:bugbite",
-    "1:confusion",
+    "1:gust",
     "1:harden",
     "1:stringshot",
     "1:tackle",
-    "13:poisonpowder",
-    "14:stunspore",
-    "15:sleeppowder",
-    "18:supersonic",
-    "23:whirlwind",
-    "28:gust",
-    "30:tailwind",
-    "34:psybeam",
-    "34:ragepowder",
-    "36:captivate",
-    "40:bugbuzz",
-    "40:safeguard",
-    "43:airslash",
-    "46:quiverdance",
-    "47:silverwind",
+    "4:supersonic",
+    "8:confusion",
+    "12:poisonpowder",
+    "12:sleeppowder",
+    "12:stunspore",
+    "16:psybeam",
+    "19:silverwind",
+    "20:whirlwind",
+    "24:airslash",
+    "28:safeguard",
+    "32:bugbuzz",
+    "36:tailwind",
+    "37:captivate",
+    "40:ragepowder",
+    "44:quiverdance",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:airslash",

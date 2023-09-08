@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Salandit",
   "nationalPokedexNumber": 757,
   "primaryType": "poison",
@@ -26,33 +25,24 @@
     "monster",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:flint",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:poisongas",
     "1:scratch",
-    "5:ember",
-    "8:sweetscent",
+    "5:smog",
+    "10:ember",
     "13:dragonrage",
     "15:poisonfang",
-    "16:smog",
+    "20:sweetscent",
     "21:doubleslap",
     "24:flameburst",
-    "29:toxic",
+    "25:nastyplot",
     "30:incinerate",
-    "32:nastyplot",
-    "37:venoshock",
-    "40:flamethrower",
+    "35:venoshock",
+    "40:dragonpulse",
+    "45:flamethrower",
     "45:venomdrench",
-    "48:dragonpulse",
-    "60:endeavor",
+    "50:toxic",
+    "55:endeavor",
     "egg:belch",
     "egg:fakeout",
     "egg:knockoff",
@@ -147,7 +137,8 @@
         {
           "variant": "level",
           "minLevel": 33
-        },{
+        },
+        {
           "variant": "properties",
           "target": "gender=female"
         }

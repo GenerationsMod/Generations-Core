@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Charjabug",
   "nationalPokedexNumber": 737,
   "primaryType": "bug",
@@ -24,30 +23,21 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:bite",
+    "1:bugbite",
     "1:charge",
     "1:mudslap",
     "1:stringshot",
     "1:visegrip",
-    "13:bugbite",
-    "16:spark",
+    "15:bite",
     "19:acrobatics",
-    "25:crunch",
+    "23:spark",
     "29:stickyweb",
-    "31:xscissor",
-    "37:dig",
-    "43:discharge",
-    "49:irondefense",
+    "36:xscissor",
+    "43:crunch",
+    "50:dig",
+    "57:irondefense",
+    "64:discharge",
     "tm:acrobatics",
     "tm:attract",
     "tm:chargebeam",

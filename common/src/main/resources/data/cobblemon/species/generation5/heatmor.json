@@ -25,6 +25,14 @@
   "eggGroups": [
     "field"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -35,26 +43,26 @@
     ]
   },
   "moves": [
-    "1:honeclaws",
-    "1:incinerate",
     "1:lick",
     "1:tackle",
+    "5:furyswipes",
     "6:odorsleuth",
-    "11:bind",
-    "16:firespin",
-    "21:furyswipes",
+    "10:incinerate",
+    "15:bugbite",
+    "20:spitup",
+    "20:stockpile",
+    "20:swallow",
+    "25:slash",
     "26:snatch",
+    "30:bind",
     "31:flameburst",
-    "36:bugbite",
-    "41:slash",
-    "44:firelash",
-    "46:amnesia",
-    "51:flamethrower",
-    "56:spitup",
-    "56:stockpile",
-    "56:swallow",
-    "61:flareblitz",
-    "61:inferno",
+    "35:firelash",
+    "40:honeclaws",
+    "45:amnesia",
+    "50:firespin",
+    "50:flamethrower",
+    "55:inferno",
+    "60:flareblitz",
     "egg:belch",
     "egg:bodyslam",
     "egg:curse",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Spoink",
   "nationalPokedexNumber": 325,
   "primaryType": "psychic",
@@ -25,33 +24,24 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:potato",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:splash",
     "7:confusion",
     "7:psywave",
     "10:growl",
     "10:odorsleuth",
-    "16:psybeam",
-    "19:psychup",
-    "25:confuseray",
+    "14:psybeam",
+    "18:psychup",
+    "21:magiccoat",
+    "22:confuseray",
     "26:zenheadbutt",
-    "28:magiccoat",
-    "34:payback",
-    "34:psychic",
-    "34:psyshock",
-    "37:rest",
-    "37:snore",
-    "43:bounce",
-    "46:powergem",
+    "29:powergem",
+    "29:rest",
+    "33:snore",
+    "38:psyshock",
+    "40:payback",
+    "44:psychic",
+    "50:bounce",
     "egg:amnesia",
     "egg:endure",
     "egg:extrasensory",

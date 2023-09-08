@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Stonjourner",
   "nationalPokedexNumber": 874,
   "primaryType": "rock",
@@ -23,15 +22,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:iron_ingot",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:block",
     "1:rockthrow",

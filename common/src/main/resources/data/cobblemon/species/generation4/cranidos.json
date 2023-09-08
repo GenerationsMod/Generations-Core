@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cranidos",
   "nationalPokedexNumber": 408,
   "primaryType": "rock",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cobblestone",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:headbutt",
     "1:leer",
@@ -43,9 +33,13 @@
     "24:assurance",
     "28:ancientpower",
     "28:chipaway",
+    "33:ancientpower",
     "33:zenheadbutt",
     "37:screech",
+    "37:zenheadbutt",
+    "42:screech",
     "43:headsmash",
+    "46:headsmash",
     "egg:crunch",
     "egg:curse",
     "egg:doubleedge",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cresselia",
   "nationalPokedexNumber": 488,
   "primaryType": "psychic",
@@ -23,28 +22,34 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:cresselia_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:doubleteam",
+    "1:lunardance",
+    "1:moonlight",
+    "1:psychocut",
+    "1:psychoshift",
+    "6:mist",
     "11:safeguard",
+    "12:aurorabeam",
     "18:psybeam",
     "20:mist",
     "24:allyswitch",
+    "24:psychoshift",
     "29:aurorabeam",
+    "30:slash",
+    "36:psychocut",
     "38:futuresight",
+    "42:moonlight",
     "47:slash",
+    "48:safeguard",
+    "54:psychic",
     "57:moonlight",
+    "60:moonblast",
+    "66:futuresight",
     "66:psychocut",
     "72:lunarblessing",
+    "72:lunardance",
     "75:psychoshift",
     "84:lunardance",
     "93:psychic",

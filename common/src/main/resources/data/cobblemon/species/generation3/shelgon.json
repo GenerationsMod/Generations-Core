@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Shelgon",
   "nationalPokedexNumber": 372,
   "primaryType": "dragon",
@@ -24,31 +23,22 @@
   "eggGroups": [
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:stone",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:bite",
-    "1:headbutt",
+    "1:dragonbreath",
+    "1:ember",
     "1:leer",
+    "1:protect",
     "1:rage",
-    "21:focusenergy",
-    "25:ember",
-    "30:protect",
-    "37:zenheadbutt",
-    "38:dragonbreath",
-    "47:scaryface",
-    "49:flamethrower",
-    "56:crunch",
+    "15:headbutt",
+    "20:scaryface",
+    "25:crunch",
+    "33:dragonclaw",
+    "39:zenheadbutt",
+    "46:focusenergy",
+    "53:flamethrower",
     "60:outrage",
-    "69:dragonclaw",
-    "78:doubleedge",
+    "67:doubleedge",
     "tm:aerialace",
     "tm:attract",
     "tm:bodyslam",

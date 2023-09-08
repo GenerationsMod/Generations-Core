@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Swablu",
   "nationalPokedexNumber": 333,
   "primaryType": "normal",
@@ -26,38 +25,25 @@
     "flying",
     "dragon"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:wool",
-        "percentage": 25
-      },
-      {
-        "item": "generations_core:swablu_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:peck",
-    "8:astonish",
-    "11:disarmingvoice",
-    "11:sing",
-    "18:furyattack",
-    "18:round",
+    "3:astonish",
+    "4:disarmingvoice",
+    "8:mist",
+    "12:furyattack",
+    "16:round",
     "20:dragonbreath",
-    "21:safeguard",
-    "28:mist",
-    "31:takedown",
-    "32:naturalgift",
-    "38:mirrormove",
-    "40:cottonguard",
-    "41:refresh",
-    "45:dragonpulse",
-    "46:moonblast",
-    "48:perishsong",
+    "20:naturalgift",
+    "24:safeguard",
+    "26:refresh",
+    "28:sing",
+    "30:mirrormove",
+    "32:cottonguard",
+    "36:takedown",
+    "38:dragonpulse",
+    "40:moonblast",
+    "44:perishsong",
     "egg:agility",
     "egg:astonish",
     "egg:defog",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Togepi",
   "nationalPokedexNumber": 175,
   "primaryType": "fairy",
@@ -25,33 +24,24 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:egg",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:charm",
     "1:growl",
     "1:pound",
-    "4:metronome",
+    "4:sweetkiss",
     "8:lifedew",
-    "9:sweetkiss",
-    "13:yawn",
+    "12:charm",
+    "16:ancientpower",
     "17:encore",
-    "21:ancientpower",
+    "20:yawn",
+    "24:metronome",
     "25:bestow",
-    "25:followme",
-    "29:wish",
-    "33:safeguard",
-    "37:doubleedge",
-    "41:batonpass",
-    "51:lastresort",
-    "53:afteryou",
+    "28:afteryou",
+    "32:doubleedge",
+    "36:safeguard",
+    "40:followme",
+    "44:batonpass",
+    "48:lastresort",
+    "52:wish",
     "egg:aerialace",
     "egg:extrasensory",
     "egg:foresight",

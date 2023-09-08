@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Pheromosa",
   "nationalPokedexNumber": 795,
   "primaryType": "bug",
@@ -24,36 +23,27 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:honey_bottle",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:doublekick",
-    "1:leer",
-    "1:lowkick",
-    "1:quickguard",
-    "1:quiverdance",
+    "1:feint",
     "1:rapidspin",
+    "5:leer",
     "7:swift",
-    "13:stomp",
+    "10:quickguard",
     "15:bugbite",
-    "19:feint",
+    "20:lowkick",
     "23:silverwind",
-    "29:bounce",
+    "25:doublekick",
+    "30:triplekick",
     "31:jumpkick",
-    "37:agility",
-    "43:triplekick",
-    "47:lunge",
-    "53:bugbuzz",
+    "35:stomp",
+    "40:agility",
+    "45:lunge",
+    "50:bounce",
+    "55:speedswap",
     "59:mefirst",
-    "67:highjumpkick",
-    "73:speedswap",
+    "60:bugbuzz",
+    "65:quiverdance",
+    "70:highjumpkick",
     "tm:agility",
     "tm:assurance",
     "tm:blizzard",

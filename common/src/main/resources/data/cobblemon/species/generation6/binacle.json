@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Binacle",
   "nationalPokedexNumber": 688,
   "primaryType": "rock",
@@ -26,32 +25,23 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:kelp",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:mudslap",
     "1:sandattack",
     "1:scratch",
-    "1:shellsmash",
-    "4:watergun",
-    "7:withdraw",
-    "10:furyswipes",
-    "13:slash",
-    "18:mudslap",
+    "4:withdraw",
+    "8:watergun",
+    "12:furycutter",
+    "16:furyswipes",
+    "20:ancientpower",
     "20:clamp",
     "24:rockpolish",
-    "28:ancientpower",
+    "28:slash",
     "32:honeclaws",
-    "37:furycutter",
+    "36:razorshell",
+    "40:shellsmash",
     "41:nightslash",
-    "45:razorshell",
-    "49:crosschop",
+    "44:crosschop",
     "egg:helpinghand",
     "egg:nightslash",
     "egg:sandattack",

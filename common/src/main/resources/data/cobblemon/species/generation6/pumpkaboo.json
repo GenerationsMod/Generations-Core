@@ -17,12 +17,26 @@
     "special_defence": 55,
     "speed": 51
   },
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "11-15"
+    }
+  },
   "catchRate": 120,
   "maleRatio": 0.5,
   "shoulderMountable": false,
   "forms": [
     {
       "name": "Small",
+      "baseScale": 0.6,
       "primaryType": "ghost",
       "secondaryType": "grass",
       "abilities": [
@@ -55,7 +69,6 @@
       "eggGroups": [
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen6"
       ],
@@ -79,6 +92,7 @@
     },
     {
       "name": "Large",
+      "baseScale": 1.0,
       "primaryType": "ghost",
       "secondaryType": "grass",
       "abilities": [
@@ -111,7 +125,6 @@
       "eggGroups": [
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen6"
       ],
@@ -135,6 +148,7 @@
     },
     {
       "name": "Super",
+      "baseScale": 1.4,
       "primaryType": "ghost",
       "secondaryType": "grass",
       "abilities": [
@@ -168,6 +182,92 @@
         "amorphous"
       ],
       "moves": [
+        "1:astonish",
+        "1:confuseray",
+        "1:trick",
+        "4:scaryface",
+        "6:trickortreat",
+        "11:worryseed",
+        "16:razorleaf",
+        "20:leechseed",
+        "26:bulletseed",
+        "30:shadowsneak",
+        "36:shadowball",
+        "42:painsplit",
+        "48:seedbomb",
+        "egg:bestow",
+        "egg:curse",
+        "egg:destinybond",
+        "egg:disable",
+        "tm:allyswitch",
+        "tm:attract",
+        "tm:bulletseed",
+        "tm:chargebeam",
+        "tm:confide",
+        "tm:darkpulse",
+        "tm:doubleteam",
+        "tm:dreameater",
+        "tm:endure",
+        "tm:energyball",
+        "tm:explosion",
+        "tm:facade",
+        "tm:fireblast",
+        "tm:flamecharge",
+        "tm:flamethrower",
+        "tm:flash",
+        "tm:foulplay",
+        "tm:frustration",
+        "tm:gigadrain",
+        "tm:grassknot",
+        "tm:gyroball",
+        "tm:hex",
+        "tm:hiddenpower",
+        "tm:imprison",
+        "tm:incinerate",
+        "tm:lightscreen",
+        "tm:mysticalfire",
+        "tm:naturepower",
+        "tm:protect",
+        "tm:psychic",
+        "tm:rest",
+        "tm:return",
+        "tm:rockslide",
+        "tm:rocksmash",
+        "tm:round",
+        "tm:safeguard",
+        "tm:scaryface",
+        "tm:secretpower",
+        "tm:seedbomb",
+        "tm:shadowball",
+        "tm:skillswap",
+        "tm:sleeptalk",
+        "tm:sludgebomb",
+        "tm:snore",
+        "tm:solarbeam",
+        "tm:substitute",
+        "tm:sunnyday",
+        "tm:swagger",
+        "tm:thief",
+        "tm:toxic",
+        "tm:trick",
+        "tm:trickroom",
+        "tm:willowisp",
+        "tutor:allyswitch",
+        "tutor:foulplay",
+        "tutor:gigadrain",
+        "tutor:grassyglide",
+        "tutor:magiccoat",
+        "tutor:painsplit",
+        "tutor:poltergeist",
+        "tutor:roleplay",
+        "tutor:seedbomb",
+        "tutor:skillswap",
+        "tutor:skittersmack",
+        "tutor:spite",
+        "tutor:synthesis",
+        "tutor:telekinesis",
+        "tutor:trick",
+        "tutor:worryseed",
         "tutor:astonish",
         "tutor:scaryface",
         "tutor:shadowsneak",
@@ -216,18 +316,18 @@
   },
   "moves": [
     "1:astonish",
-    "1:confuseray",
-    "1:trick",
-    "4:scaryface",
-    "6:trickortreat",
-    "11:worryseed",
-    "16:razorleaf",
-    "20:leechseed",
-    "26:bulletseed",
-    "30:shadowsneak",
+    "1:trickortreat",
+    "4:shadowsneak",
+    "8:confuseray",
+    "12:razorleaf",
+    "16:leechseed",
+    "20:bulletseed",
+    "24:scaryface",
+    "28:worryseed",
+    "32:seedbomb",
     "36:shadowball",
-    "42:painsplit",
-    "48:seedbomb",
+    "40:trick",
+    "44:painsplit",
     "egg:bestow",
     "egg:curse",
     "egg:destinybond",
@@ -318,10 +418,10 @@
       "requirements": []
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 50,

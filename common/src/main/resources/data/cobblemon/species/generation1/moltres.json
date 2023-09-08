@@ -16,12 +16,12 @@
     "special_defence": 85,
     "speed": 90
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 3,
   "maleRatio": -1,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Galar",
@@ -158,26 +158,26 @@
     }
   },
   "moves": [
-    "1:ember",
     "1:gust",
     "1:leer",
-    "1:wingattack",
-    "13:firespin",
-    "25:agility",
-    "29:ancientpower",
+    "5:ember",
+    "8:firespin",
+    "10:safeguard",
+    "15:wingattack",
+    "20:agility",
+    "25:ancientpower",
     "30:incinerate",
-    "37:endure",
-    "49:flamethrower",
-    "50:airslash",
-    "57:roost",
-    "61:safeguard",
+    "35:airslash",
+    "36:flamethrower",
+    "40:roost",
+    "45:heatwave",
+    "50:sunnyday",
+    "55:hurricane",
+    "60:endure",
+    "65:burnup",
     "65:overheat",
+    "70:skyattack",
     "71:solarbeam",
-    "73:heatwave",
-    "85:skyattack",
-    "85:sunnyday",
-    "92:hurricane",
-    "99:burnup",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

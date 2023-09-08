@@ -33,15 +33,6 @@
     "field",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cod",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leafage",
     "1:scratch",
@@ -115,6 +106,12 @@
       ]
     }
   ],
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1,
+    "height": 1.0,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.sprigatito.desc"

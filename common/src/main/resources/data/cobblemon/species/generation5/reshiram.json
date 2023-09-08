@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Reshiram",
   "nationalPokedexNumber": 643,
   "primaryType": "dragon",
@@ -24,32 +23,23 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:dragon_head",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
+    "1:ancientpower",
+    "1:dragonbreath",
     "1:dragonrage",
     "1:firefang",
-    "8:imprison",
-    "15:ancientpower",
-    "22:flamethrower",
-    "29:dragonbreath",
-    "36:slash",
-    "43:extrasensory",
-    "50:fusionflare",
-    "54:dragonpulse",
-    "64:nobleroar",
-    "71:crunch",
-    "78:fireblast",
-    "85:outrage",
-    "92:hypervoice",
-    "100:blueflare",
+    "1:nobleroar",
+    "8:slash",
+    "16:crunch",
+    "24:extrasensory",
+    "32:dragonpulse",
+    "40:flamethrower",
+    "48:fusionflare",
+    "56:hypervoice",
+    "64:fireblast",
+    "72:imprison",
+    "80:outrage",
+    "88:blueflare",
     "tm:bodypress",
     "tm:breakingswipe",
     "tm:brutalswing",

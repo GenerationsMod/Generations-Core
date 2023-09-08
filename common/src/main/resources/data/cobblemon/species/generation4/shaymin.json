@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Shaymin",
   "nationalPokedexNumber": 492,
   "primaryType": "grass",
@@ -32,23 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:gracidea",
-        "percentage": 75
-      },
-      {
-        "item": "generations_core:shaymin_sky_doll",
-        "percentage": 75
-      },
-      {
-        "item": "generations_core:shaymin_land_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:growth",
@@ -173,7 +155,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",

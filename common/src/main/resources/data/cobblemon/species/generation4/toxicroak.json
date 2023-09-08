@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Toxicroak",
   "nationalPokedexNumber": 454,
   "primaryType": "poison",
@@ -26,34 +25,39 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:pearlescent_froglight",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:mudslap",
     "1:poisonsting",
+    "1:taunt",
     "10:taunt",
+    "12:flatter",
     "15:pursuit",
     "16:lowkick",
+    "16:revenge",
     "17:feintattack",
+    "20:venoshock",
     "22:revenge",
+    "24:suckerpunch",
     "24:swagger",
+    "28:swagger",
     "29:mudbomb",
     "31:suckerpunch",
+    "32:poisonjab",
     "36:nastyplot",
     "36:toxic",
     "36:venoshock",
+    "41:nastyplot",
     "41:poisonjab",
+    "42:nastyplot",
+    "48:sludgebomb",
+    "49:poisonjab",
     "49:sludgebomb",
+    "54:belch",
     "54:flatter",
+    "54:sludgebomb",
     "58:belch",
+    "62:flatter",
     "tm:acidspray",
     "tm:aerialace",
     "tm:assurance",

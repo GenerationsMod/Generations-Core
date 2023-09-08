@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dottler",
   "nationalPokedexNumber": 825,
   "primaryType": "bug",
@@ -26,15 +25,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:strugglebug",
     "tm:allyswitch",

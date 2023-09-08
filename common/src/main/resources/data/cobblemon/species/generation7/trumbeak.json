@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Trumbeak",
   "nationalPokedexNumber": 732,
   "primaryType": "normal",
@@ -26,15 +25,6 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:echoedvoice",
     "1:growl",

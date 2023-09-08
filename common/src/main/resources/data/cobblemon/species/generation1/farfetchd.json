@@ -150,6 +150,11 @@
     "field"
   ],
   "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
     "moving": {
       "fly": {
         "canFly": true
@@ -171,24 +176,24 @@
   "moves": [
     "1:peck",
     "1:poisonjab",
-    "6:sandattack",
-    "11:leer",
-    "13:aerialace",
+    "1:sandattack",
+    "5:leer",
+    "7:furyattack",
+    "10:furycutter",
     "15:cut",
-    "16:furyattack",
-    "21:aircutter",
-    "21:knockoff",
-    "26:furycutter",
-    "31:swordsdance",
+    "20:aerialace",
+    "25:aircutter",
+    "30:knockoff",
     "33:nightslash",
-    "36:agility",
+    "35:falseswipe",
     "37:acrobatics",
-    "37:airslash",
-    "41:slash",
+    "40:slash",
     "43:feint",
-    "46:falseswipe",
-    "55:bravebird",
+    "45:swordsdance",
+    "50:airslash",
     "55:leafblade",
+    "60:agility",
+    "65:bravebird",
     "egg:covet",
     "egg:curse",
     "egg:featherdance",
@@ -347,10 +352,10 @@
   "pokedex": [
     "cobblemon.species.farfetchd.desc"
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 0.4,
-    "height": 0.8,
+    "width": 0.7,
+    "height": 1.0,
     "fixed": false
   },
   "baseFriendship": 50,

@@ -25,37 +25,28 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bite",
+    "1:crunch",
     "1:firefang",
     "1:howl",
     "1:icefang",
     "1:sandattack",
+    "1:snarl",
     "1:tackle",
+    "1:thief",
     "1:thunderfang",
-    "17:odorsleuth",
-    "18:snarl",
-    "22:roar",
-    "27:swagger",
-    "32:assurance",
-    "32:scaryface",
-    "37:takedown",
-    "42:taunt",
+    "13:odorsleuth",
+    "16:roar",
+    "20:swagger",
+    "24:assurance",
+    "28:scaryface",
+    "32:embargo",
+    "36:taunt",
     "44:yawn",
-    "47:crunch",
-    "47:embargo",
-    "52:thief",
+    "48:takedown",
+    "52:suckerpunch",
     "56:playrough",
-    "62:suckerpunch",
     "tm:attract",
     "tm:captivate",
     "tm:confide",
@@ -131,7 +122,7 @@
   ],
   "preEvolution": "poochyena",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
     "width": 1,
     "height": 1,

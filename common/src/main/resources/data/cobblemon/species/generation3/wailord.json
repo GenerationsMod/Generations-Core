@@ -23,10 +23,16 @@
         "avoidsLand": true
       },
       "swim": {
-        "swimSpeed": 0.2,
         "canSwimInWater": true,
-        "canBreatheUnderwater": true
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "catchRate": 60,
@@ -50,25 +56,25 @@
     ]
   },
   "moves": [
+    "1:astonish",
     "1:growl",
     "1:nobleroar",
     "1:rollout",
     "1:soak",
     "1:splash",
     "1:watergun",
-    "19:whirlpool",
-    "23:astonish",
-    "28:waterpulse",
-    "31:brine",
-    "32:mist",
+    "15:mist",
+    "18:waterpulse",
+    "21:heavyslam",
+    "24:brine",
+    "27:whirlpool",
+    "30:dive",
+    "33:bounce",
     "36:bodyslam",
-    "37:rest",
-    "44:waterspout",
-    "46:dive",
-    "52:amnesia",
-    "54:bounce",
-    "59:hydropump",
-    "70:heavyslam",
+    "39:rest",
+    "44:amnesia",
+    "49:hydropump",
+    "54:waterspout",
     "tm:amnesia",
     "tm:attract",
     "tm:avalanche",
@@ -158,10 +164,10 @@
   ],
   "preEvolution": "wailmer",
   "evolutions": [],
-  "baseScale": 1.3,
+  "baseScale": 2,
   "hitbox": {
-    "width": 3.5,
-    "height": 2.3,
+    "width": 3.2,
+    "height": 2.1,
     "fixed": false
   },
   "baseFriendship": 50,

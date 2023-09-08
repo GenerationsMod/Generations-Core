@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Capsakid",
   "nationalPokedexNumber": 951,
   "primaryType": "grass",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:grass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leafage",
     "1:leer",

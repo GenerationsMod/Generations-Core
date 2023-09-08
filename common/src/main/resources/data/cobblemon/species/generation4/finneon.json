@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Finneon",
   "nationalPokedexNumber": 456,
   "primaryType": "water",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:fresh_water",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:pound",
     "6:watergun",
@@ -41,6 +31,7 @@
     "13:raindance",
     "17:gust",
     "22:waterpulse",
+    "26:attract",
     "26:captivate",
     "29:safeguard",
     "33:aquaring",

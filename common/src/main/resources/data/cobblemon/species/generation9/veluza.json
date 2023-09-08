@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Veluza",
   "nationalPokedexNumber": 976,
   "primaryType": "water",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:kelp",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aquajet",
     "1:tackle",

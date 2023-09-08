@@ -24,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:lapis_lazuli",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:batonpass",
     "1:bite",
@@ -41,23 +32,23 @@
     "1:covet",
     "1:disarmingvoice",
     "1:doubleedge",
+    "1:fairywind",
     "1:growl",
     "1:helpinghand",
     "1:tackle",
     "1:tailwhip",
     "1:takedown",
     "5:sandattack",
-    "9:babydolleyes",
-    "9:fairywind",
-    "13:quickattack",
-    "17:swift",
-    "20:drainingkiss",
-    "25:skillswap",
-    "29:mistyterrain",
-    "33:lightscreen",
-    "37:moonblast",
-    "41:lastresort",
+    "10:quickattack",
+    "15:babydolleyes",
+    "20:swift",
+    "25:lightscreen",
+    "30:drainingkiss",
+    "35:mistyterrain",
+    "40:skillswap",
     "45:psychup",
+    "50:moonblast",
+    "55:lastresort",
     "tm:attract",
     "tm:batonpass",
     "tm:bodyslam",

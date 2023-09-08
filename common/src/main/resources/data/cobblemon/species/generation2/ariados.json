@@ -26,15 +26,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:bugbite",
@@ -42,23 +33,23 @@
     "1:fellstinger",
     "1:focusenergy",
     "1:poisonsting",
-    "1:scaryface",
     "1:stringshot",
     "1:swordsdance",
     "1:venomdrench",
     "8:infestation",
-    "17:nightshade",
+    "12:leechlife",
+    "12:scaryface",
+    "15:nightshade",
     "19:shadowsneak",
-    "25:leechlife",
+    "23:furyswipes",
     "28:suckerpunch",
-    "34:furyswipes",
+    "32:spiderweb",
+    "37:agility",
     "41:pinmissile",
-    "43:spiderweb",
+    "46:psychic",
     "50:poisonjab",
-    "53:agility",
     "55:crosspoison",
     "58:stickyweb",
-    "63:psychic",
     "63:toxicthread",
     "tm:attract",
     "tm:captivate",
@@ -150,7 +141,7 @@
   ],
   "preEvolution": "spinarak",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1,
     "height": 1,

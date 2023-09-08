@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Celesteela",
   "nationalPokedexNumber": 797,
   "primaryType": "steel",
@@ -24,35 +23,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ultra_lime",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:airslash",
-    "1:harden",
-    "1:ingrain",
     "1:tackle",
-    "1:wideguard",
-    "7:smackdown",
-    "13:megadrain",
-    "19:leechseed",
-    "23:metalsound",
+    "5:harden",
+    "10:wideguard",
+    "15:megadrain",
+    "20:smackdown",
+    "25:ingrain",
     "29:ironhead",
-    "31:gigadrain",
-    "37:flashcannon",
-    "43:autotomize",
+    "30:autotomize",
+    "35:gigadrain",
+    "40:flashcannon",
+    "45:metalsound",
     "47:seedbomb",
-    "53:skullbash",
-    "59:irondefense",
-    "67:heavyslam",
-    "73:doubleedge",
+    "50:irondefense",
+    "55:leechseed",
+    "60:heavyslam",
+    "65:doubleedge",
+    "70:skullbash",
     "tm:acrobatics",
     "tm:airslash",
     "tm:bodyslam",

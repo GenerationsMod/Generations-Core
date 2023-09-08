@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cramorant",
   "nationalPokedexNumber": 845,
   "primaryType": "flying",
@@ -52,7 +51,6 @@
         "water_1",
         "flying"
       ],
-      "moves": [],
       "labels": [
         "gen8"
       ],
@@ -98,7 +96,6 @@
         "water_1",
         "flying"
       ],
-      "moves": [],
       "labels": [
         "gen8"
       ],
@@ -119,15 +116,6 @@
     "water_1",
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:belch",
     "1:peck",

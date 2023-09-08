@@ -25,35 +25,26 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:stick",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:copycat",
     "1:faketears",
-    "1:mimic",
+    "1:flail",
+    "1:hammerarm",
     "1:rockthrow",
+    "1:slam",
+    "1:stoneedge",
     "1:woodhammer",
-    "9:flail",
-    "17:lowkick",
-    "22:tearfullook",
-    "25:rockslide",
-    "30:rocktomb",
-    "33:block",
-    "33:counter",
-    "41:feintattack",
-    "41:suckerpunch",
-    "43:stoneedge",
-    "49:hammerarm",
-    "49:slam",
-    "54:headsmash",
-    "57:doubleedge",
+    "12:block",
+    "16:mimic",
+    "19:feintattack",
+    "20:rocktomb",
+    "24:tearfullook",
+    "28:suckerpunch",
+    "32:rockslide",
+    "36:lowkick",
+    "40:counter",
+    "44:doubleedge",
+    "48:headsmash",
     "egg:curse",
     "egg:defensecurl",
     "egg:endure",
@@ -203,10 +194,10 @@
   ],
   "preEvolution": "bonsly",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.9,
+    "height": 2.3,
     "fixed": false
   },
   "baseFriendship": 50,

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Scrafty",
   "nationalPokedexNumber": 560,
   "primaryType": "dark",
@@ -27,34 +26,25 @@
     "field",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:leather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:feintattack",
+    "1:headbutt",
     "1:leer",
     "1:lowkick",
-    "1:sandattack",
-    "12:headbutt",
-    "16:swagger",
-    "20:brickbreak",
+    "1:payback",
+    "12:sandattack",
+    "16:facade",
     "20:protect",
-    "23:payback",
     "24:beatup",
     "27:chipaway",
-    "31:highjumpkick",
-    "34:scaryface",
-    "38:crunch",
-    "45:facade",
+    "28:scaryface",
+    "32:brickbreak",
+    "36:swagger",
+    "42:crunch",
+    "48:highjumpkick",
     "51:rockclimb",
-    "58:focuspunch",
-    "65:headsmash",
+    "54:focuspunch",
+    "60:headsmash",
     "tm:amnesia",
     "tm:assurance",
     "tm:attract",

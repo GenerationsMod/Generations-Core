@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Garbodor",
   "nationalPokedexNumber": 569,
   "primaryType": "poison",
@@ -53,7 +52,6 @@
       "eggGroups": [
         "mineral"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -74,36 +72,27 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:trash_can",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:acidspray",
     "1:metalclaw",
     "1:poisongas",
     "1:pound",
     "1:recycle",
     "1:takedown",
-    "1:toxicspikes",
-    "12:acidspray",
+    "9:amnesia",
+    "12:clearsmog",
     "14:doubleslap",
+    "15:toxicspikes",
     "18:sludge",
-    "23:stockpile",
-    "23:swallow",
-    "25:bodyslam",
-    "29:sludgebomb",
-    "34:clearsmog",
+    "21:stockpile",
+    "21:swallow",
+    "24:bodyslam",
+    "27:sludgebomb",
+    "30:toxic",
+    "33:belch",
     "39:painsplit",
-    "39:toxic",
-    "46:amnesia",
-    "49:belch",
-    "54:gunkshot",
-    "59:explosion",
+    "43:gunkshot",
+    "48:explosion",
     "tm:amnesia",
     "tm:attract",
     "tm:bodypress",

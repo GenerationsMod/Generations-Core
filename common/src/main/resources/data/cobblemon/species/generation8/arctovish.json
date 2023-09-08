@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Arctovish",
   "nationalPokedexNumber": 883,
   "primaryType": "water",
@@ -26,15 +25,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:calcite",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:powdersnow",
     "1:watergun",

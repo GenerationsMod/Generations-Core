@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Inkay",
   "nationalPokedexNumber": 686,
   "primaryType": "dark",
@@ -27,35 +26,26 @@
     "water_1",
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ink_sac",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:constrict",
     "1:peck",
     "1:tackle",
+    "3:hypnosis",
     "4:reflect",
     "6:wrap",
-    "8:foulplay",
-    "12:swagger",
+    "9:payback",
+    "12:pluck",
     "13:psywave",
-    "15:topsyturvy",
-    "18:hypnosis",
-    "21:psybeam",
-    "23:switcheroo",
-    "27:payback",
+    "15:psybeam",
+    "18:swagger",
+    "21:slash",
+    "24:nightslash",
+    "27:psychocut",
     "31:lightscreen",
-    "35:pluck",
-    "39:psychocut",
-    "43:slash",
-    "46:nightslash",
-    "48:superpower",
+    "31:switcheroo",
+    "33:foulplay",
+    "36:topsyturvy",
+    "39:superpower",
     "egg:acupressure",
     "egg:camouflage",
     "egg:destinybond",

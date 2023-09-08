@@ -22,14 +22,19 @@
       "willSleepOnBed": false,
       "depth": "normal",
       "light": "0-4"
+    },
+    "moving": {
+      "swim": {
+        "canSwimInWater": false
+      }
     }
   },
-  "features": [
-    "alolan"
-  ],
   "catchRate": 50,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "alolan"
+  ],
   "forms": [
     {
       "name": "Alola",
@@ -66,6 +71,7 @@
         "field"
       ],
       "moves": [
+        "1:astonish",
         "1:growl",
         "1:metalclaw",
         "1:nightslash",
@@ -73,18 +79,17 @@
         "1:sandattack",
         "1:sandtomb",
         "1:triattack",
-        "7:astonish",
-        "10:mudslap",
+        "12:mudslap",
         "14:magnitude",
-        "18:bulldoze",
-        "22:suckerpunch",
+        "16:bulldoze",
+        "20:suckerpunch",
+        "24:ironhead",
         "25:mudbomb",
-        "30:earthpower",
         "30:sandstorm",
-        "35:dig",
-        "41:ironhead",
-        "47:earthquake",
-        "53:fissure",
+        "36:dig",
+        "42:earthpower",
+        "48:earthquake",
+        "54:fissure",
         "tm:aerialace",
         "tm:agility",
         "tm:allyswitch",
@@ -213,26 +218,26 @@
     ]
   },
   "moves": [
+    "1:astonish",
     "1:growl",
     "1:nightslash",
     "1:rototiller",
     "1:sandattack",
+    "1:sandtomb",
     "1:scratch",
     "1:triattack",
-    "7:astonish",
-    "9:magnitude",
-    "17:dig",
-    "18:bulldoze",
+    "12:mudslap",
+    "14:magnitude",
+    "16:bulldoze",
+    "20:suckerpunch",
     "21:furyswipes",
-    "23:suckerpunch",
-    "25:mudslap",
-    "26:sandtomb",
-    "28:earthpower",
+    "24:slash",
+    "25:mudbomb",
     "30:sandstorm",
-    "33:mudbomb",
-    "38:slash",
-    "51:earthquake",
-    "64:fissure",
+    "36:dig",
+    "42:earthpower",
+    "48:earthquake",
+    "54:fissure",
     "tm:aerialace",
     "tm:agility",
     "tm:allyswitch",

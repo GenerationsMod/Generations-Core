@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Lokix",
   "nationalPokedexNumber": 920,
   "primaryType": "bug",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:pumpkin_seeds",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:detect",
     "1:leer",

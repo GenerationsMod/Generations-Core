@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Wiglett",
   "nationalPokedexNumber": 960,
   "primaryType": "water",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:seagrass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:sandattack",
     "1:watergun",

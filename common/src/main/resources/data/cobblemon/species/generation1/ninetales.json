@@ -15,6 +15,14 @@
     "special_defence": 100,
     "speed": 100
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 75,
   "maleRatio": 0.25,
   "shoulderMountable": false,
@@ -200,6 +208,7 @@
     "1:ember",
     "1:extrasensory",
     "1:fireblast",
+    "1:firespin",
     "1:flamethrower",
     "1:grudge",
     "1:imprison",
@@ -211,7 +220,6 @@
     "1:spite",
     "1:tailwhip",
     "1:willowisp",
-    "45:firespin",
     "tm:agility",
     "tm:attract",
     "tm:bodyslam",

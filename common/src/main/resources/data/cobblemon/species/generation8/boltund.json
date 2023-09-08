@@ -24,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:electrify",
@@ -91,10 +82,10 @@
   ],
   "preEvolution": "yamper",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.7,
+    "height": 1.65,
     "fixed": false
   },
   "baseFriendship": 50,

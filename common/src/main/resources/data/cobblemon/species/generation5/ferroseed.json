@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Ferroseed",
   "nationalPokedexNumber": 597,
   "primaryType": "grass",
@@ -25,31 +24,22 @@
     "grass",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:vine",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:harden",
     "1:tackle",
+    "5:metalclaw",
     "6:rollout",
-    "9:curse",
-    "14:metalclaw",
-    "18:pinmissile",
-    "21:gyroball",
-    "26:irondefense",
+    "10:pinmissile",
+    "15:ingrain",
+    "20:flashcannon",
+    "25:ironhead",
     "30:mirrorshot",
-    "35:ingrain",
-    "38:selfdestruct",
-    "43:ironhead",
+    "30:selfdestruct",
+    "35:irondefense",
+    "41:curse",
+    "45:gyroball",
     "47:payback",
-    "52:flashcannon",
-    "55:explosion",
+    "50:explosion",
     "egg:acidspray",
     "egg:bulletseed",
     "egg:gravity",

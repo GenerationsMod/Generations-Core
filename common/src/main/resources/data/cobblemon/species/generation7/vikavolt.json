@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Vikavolt",
   "nationalPokedexNumber": 738,
   "primaryType": "bug",
@@ -36,7 +35,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 225,
+      "baseExperienceYield": 250,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -132,20 +131,12 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:airslash",
-    "1:bite",
+    "1:bugbite",
     "1:charge",
     "1:crunch",
+    "1:dig",
     "1:discharge",
     "1:irondefense",
     "1:mudslap",
@@ -153,16 +144,15 @@
     "1:thunderbolt",
     "1:visegrip",
     "1:xscissor",
-    "13:bugbite",
-    "16:spark",
+    "15:bite",
     "19:acrobatics",
-    "25:guillotine",
+    "23:spark",
     "29:stickyweb",
-    "31:bugbuzz",
-    "37:dig",
-    "41:zapcannon",
-    "49:agility",
+    "36:bugbuzz",
+    "43:guillotine",
     "50:fly",
+    "57:agility",
+    "64:zapcannon",
     "tm:acrobatics",
     "tm:agility",
     "tm:airslash",

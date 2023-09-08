@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Virizion",
   "nationalPokedexNumber": 640,
   "primaryType": "grass",
@@ -24,30 +23,21 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:goat_horn",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:helpinghand",
     "1:leer",
     "1:quickattack",
-    "7:doublekick",
-    "13:magicalleaf",
-    "19:takedown",
-    "25:helpinghand",
-    "31:retaliate",
-    "37:gigadrain",
-    "42:sacredsword",
-    "49:swordsdance",
-    "55:quickguard",
-    "61:workup",
-    "67:leafblade",
-    "73:closecombat",
+    "1:workup",
+    "7:magicalleaf",
+    "14:quickguard",
+    "21:doublekick",
+    "28:retaliate",
+    "35:gigadrain",
+    "42:takedown",
+    "49:sacredsword",
+    "56:swordsdance",
+    "63:leafblade",
+    "70:closecombat",
     "tm:aerialace",
     "tm:airslash",
     "tm:bounce",

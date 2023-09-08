@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cosmog",
   "nationalPokedexNumber": 789,
   "primaryType": "psychic",
@@ -23,18 +22,9 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:nether_star",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:splash",
-    "23:teleport",
+    "1:teleport",
     "tutor:splash",
     "tutor:teleport"
   ],

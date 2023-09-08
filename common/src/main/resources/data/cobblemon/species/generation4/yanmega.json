@@ -26,27 +26,17 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mangrove_roots",
-        "percentage": 25
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
-      "swim": {
-        "canWalkOnWater": true
-      },
       "fly": {
         "canFly": true
       }
     }
   },
   "moves": [
+    "1:airslash",
     "1:bugbite",
+    "1:bugbuzz",
     "1:doubleteam",
     "1:foresight",
     "1:nightslash",
@@ -61,9 +51,14 @@
     "38:feint",
     "38:slash",
     "43:screech",
+    "43:slash",
+    "46:screech",
     "46:uturn",
     "49:airslash",
+    "49:uturn",
+    "54:airslash",
     "54:bugbuzz",
+    "57:bugbuzz",
     "tm:aerialace",
     "tm:attract",
     "tm:captivate",

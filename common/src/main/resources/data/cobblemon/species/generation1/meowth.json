@@ -16,6 +16,10 @@
     "special_defence": 40,
     "speed": 90
   },
+  "features": [
+    "galarian",
+    "alolan"
+  ],
   "behaviour": {
     "resting": {
       "canSleep": true,
@@ -24,10 +28,6 @@
       "light": "0-4"
     }
   },
-  "features": [
-    "alolan",
-    "galarian"
-  ],
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -66,22 +66,22 @@
         "field"
       ],
       "moves": [
+        "1:fakeout",
         "1:growl",
-        "1:scratch",
-        "6:bite",
-        "9:fakeout",
-        "14:furyswipes",
-        "17:screech",
+        "4:feint",
+        "8:scratch",
+        "12:payday",
+        "16:bite",
+        "20:taunt",
         "22:feintattack",
-        "25:taunt",
-        "30:payday",
+        "24:assurance",
+        "29:furyswipes",
+        "32:screech",
         "33:slash",
-        "38:nastyplot",
-        "41:assurance",
+        "36:nightslash",
+        "40:nastyplot",
         "44:playrough",
         "46:captivate",
-        "49:nightslash",
-        "50:feint",
         "55:darkpulse",
         "egg:amnesia",
         "egg:assist",
@@ -216,7 +216,7 @@
         {
           "id": "meowth_persian",
           "variant": "level_up",
-          "result": "persian form=alola",
+          "result": "persian alolan",
           "consumeHeldItem": false,
           "learnableMoves": [
             "powergem"
@@ -410,7 +410,6 @@
       "eggGroups": [
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -432,7 +431,7 @@
     "field"
   ],
   "drops": {
-    "amount": "3",
+    "amount": "2",
     "entries": [
       {
         "item": "minecraft:gold_nugget",
@@ -442,31 +441,27 @@
       {
         "item": "cobblemon:quick_claw",
         "percentage": 2.5
-      },
-      {
-        "item": "generations_core:meowth_doll",
-        "percentage": 1
       }
     ]
   },
   "moves": [
+    "1:fakeout",
     "1:growl",
-    "1:scratch",
-    "10:bite",
-    "18:payday",
-    "25:feintattack",
-    "25:taunt",
-    "31:screech",
-    "36:furyswipes",
-    "38:nastyplot",
-    "40:slash",
-    "41:assurance",
-    "43:fakeout",
+    "4:feint",
+    "8:scratch",
+    "12:payday",
+    "16:bite",
+    "20:taunt",
+    "22:feintattack",
+    "24:assurance",
+    "29:furyswipes",
+    "32:screech",
+    "36:slash",
+    "40:nastyplot",
     "44:playrough",
     "45:swagger",
     "46:captivate",
     "49:nightslash",
-    "54:feint",
     "egg:amnesia",
     "egg:assist",
     "egg:charm",

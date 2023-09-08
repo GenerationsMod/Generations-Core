@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mantine",
   "nationalPokedexNumber": 226,
   "primaryType": "water",
@@ -26,36 +25,27 @@
   "eggGroups": [
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine_shard",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
     "1:bulletseed",
     "1:psybeam",
     "1:roost",
     "1:signalbeam",
+    "1:supersonic",
     "1:tackle",
     "1:watergun",
-    "8:supersonic",
-    "13:headbutt",
-    "15:bubblebeam",
-    "22:takedown",
-    "23:wideguard",
-    "29:agility",
-    "36:airslash",
-    "36:wingattack",
+    "1:wingattack",
+    "11:confuseray",
+    "12:waterpulse",
+    "16:wideguard",
+    "20:agility",
+    "24:bubblebeam",
+    "28:headbutt",
+    "32:airslash",
+    "36:aquaring",
     "40:bounce",
-    "43:waterpulse",
-    "46:aquaring",
-    "49:hydropump",
-    "50:confuseray",
+    "44:takedown",
+    "48:hydropump",
     "egg:amnesia",
     "egg:confuseray",
     "egg:haze",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Terrakion",
   "nationalPokedexNumber": 639,
   "primaryType": "rock",
@@ -24,30 +23,21 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:goat_horn",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:helpinghand",
     "1:leer",
     "1:quickattack",
-    "7:doublekick",
-    "13:smackdown",
-    "19:takedown",
-    "25:helpinghand",
-    "31:retaliate",
-    "37:rockslide",
-    "42:sacredsword",
-    "49:swordsdance",
-    "55:quickguard",
-    "61:workup",
-    "67:stoneedge",
-    "73:closecombat",
+    "1:workup",
+    "7:smackdown",
+    "14:quickguard",
+    "21:doublekick",
+    "28:retaliate",
+    "35:rockslide",
+    "42:takedown",
+    "49:sacredsword",
+    "56:swordsdance",
+    "63:stoneedge",
+    "70:closecombat",
     "tm:aerialace",
     "tm:airslash",
     "tm:brickbreak",

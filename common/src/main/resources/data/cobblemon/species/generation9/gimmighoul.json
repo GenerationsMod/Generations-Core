@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gimmighoul",
   "nationalPokedexNumber": 999,
   "primaryType": "ghost",
@@ -31,15 +30,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:gimmighoul_coin",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:tackle",

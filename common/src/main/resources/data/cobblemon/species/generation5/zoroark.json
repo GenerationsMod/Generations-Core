@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zoroark",
   "nationalPokedexNumber": 571,
   "primaryType": "dark",
@@ -14,9 +13,6 @@
     "special_defence": 60,
     "speed": 105
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 45,
   "maleRatio": 0.875,
   "shoulderMountable": false,
@@ -38,6 +34,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.875,
+      "baseExperienceYield": 179,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -140,36 +137,27 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rabbit_hide",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:honeclaws",
     "1:leer",
+    "1:nightslash",
     "1:pursuit",
     "1:scratch",
+    "1:torment",
     "1:uturn",
-    "13:furyswipes",
+    "12:furyswipes",
+    "16:scaryface",
     "17:feintattack",
-    "21:scaryface",
+    "20:taunt",
     "24:knockoff",
-    "25:taunt",
     "28:faketears",
-    "29:foulplay",
-    "30:nightslash",
-    "34:torment",
-    "39:agility",
+    "34:agility",
+    "40:imprison",
     "44:embargo",
+    "46:nightdaze",
     "49:punishment",
-    "54:nastyplot",
-    "59:imprison",
-    "64:nightdaze",
+    "52:nastyplot",
+    "58:foulplay",
     "tm:aerialace",
     "tm:agility",
     "tm:assurance",

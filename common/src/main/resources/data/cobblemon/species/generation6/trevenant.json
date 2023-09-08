@@ -27,33 +27,24 @@
     "grass",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:warped_roots",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:astonish",
     "1:branchpoke",
-    "1:confuseray",
-    "1:hornleech",
+    "1:leechseed",
+    "1:shadowclaw",
     "1:tackle",
-    "5:astonish",
-    "8:growth",
-    "13:ingrain",
+    "12:confuseray",
+    "16:willowisp",
     "19:feintattack",
     "20:hex",
-    "23:leechseed",
-    "28:curse",
-    "31:willowisp",
-    "35:forestscurse",
-    "39:destinybond",
-    "45:phantomforce",
-    "49:woodhammer",
-    "55:shadowclaw",
+    "24:growth",
+    "28:hornleech",
+    "32:curse",
+    "36:phantomforce",
+    "40:ingrain",
+    "44:woodhammer",
+    "48:destinybond",
+    "52:forestscurse",
     "tm:allyswitch",
     "tm:attract",
     "tm:brutalswing",
@@ -142,10 +133,10 @@
   ],
   "preEvolution": "phantump",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.3,
   "hitbox": {
     "width": 1,
-    "height": 1,
+    "height": 2.5,
     "fixed": false
   },
   "baseFriendship": 50,

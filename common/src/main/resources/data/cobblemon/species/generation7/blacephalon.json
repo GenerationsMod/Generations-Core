@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Blacephalon",
   "nationalPokedexNumber": 806,
   "primaryType": "fire",
@@ -24,34 +23,25 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ultra_pink",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
-    "1:ember",
     "1:firespin",
-    "7:magiccoat",
+    "5:lightscreen",
+    "10:ember",
     "13:storedpower",
+    "15:nightshade",
     "17:flameburst",
     "20:confuseray",
-    "23:nightshade",
-    "29:lightscreen",
+    "25:magiccoat",
     "30:incinerate",
-    "31:calmmind",
     "35:hypnosis",
-    "37:fireblast",
     "40:mysticalfire",
-    "41:shadowball",
-    "47:trick",
+    "45:shadowball",
+    "50:calmmind",
     "55:willowisp",
-    "59:mindblown",
+    "60:trick",
+    "65:fireblast",
+    "70:mindblown",
     "tm:calmmind",
     "tm:confide",
     "tm:darkpulse",

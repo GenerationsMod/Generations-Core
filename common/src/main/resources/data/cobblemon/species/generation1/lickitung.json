@@ -16,6 +16,13 @@
     "special_defence": 75,
     "speed": 30
   },
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.2
+      }
+    }
+  },
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -35,21 +42,21 @@
     ]
   },
   "moves": [
+    "1:defensecurl",
     "1:lick",
-    "7:supersonic",
-    "12:defensecurl",
-    "18:knockoff",
-    "23:stomp",
-    "29:wrap",
-    "33:rollout",
-    "34:disable",
+    "6:rollout",
+    "12:supersonic",
+    "18:wrap",
+    "24:disable",
+    "30:stomp",
+    "36:knockoff",
     "37:chipaway",
-    "37:mefirst",
-    "40:slam",
-    "45:screech",
-    "49:powerwhip",
-    "51:refresh",
-    "53:wringout",
+    "41:mefirst",
+    "42:screech",
+    "45:refresh",
+    "48:slam",
+    "54:powerwhip",
+    "57:wringout",
     "60:bellydrum",
     "egg:amnesia",
     "egg:belch",

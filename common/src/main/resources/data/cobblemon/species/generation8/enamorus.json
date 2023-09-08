@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Enamorus",
   "nationalPokedexNumber": 905,
   "primaryType": "fairy",
@@ -34,15 +33,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:mirror",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:fairywind",
@@ -125,6 +115,7 @@
       },
       "catchRate": 3,
       "maleRatio": 0,
+      "baseExperienceYield": 116,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,

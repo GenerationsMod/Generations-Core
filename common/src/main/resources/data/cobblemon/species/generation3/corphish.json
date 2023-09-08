@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Corphish",
   "nationalPokedexNumber": 341,
   "primaryType": "water",
@@ -26,33 +25,24 @@
     "water_1",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:damp_mulch",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
+    "1:harden",
     "1:watergun",
-    "7:harden",
-    "10:visegrip",
-    "13:leer",
-    "19:bubblebeam",
+    "4:leer",
+    "7:visegrip",
+    "8:taunt",
+    "12:bubblebeam",
+    "16:knockoff",
     "20:doublehit",
-    "22:protect",
-    "25:knockoff",
-    "31:razorshell",
-    "31:taunt",
-    "34:crabhammer",
-    "35:nightslash",
-    "37:swordsdance",
-    "43:crunch",
-    "44:guillotine",
+    "24:protect",
+    "28:nightslash",
+    "32:razorshell",
+    "36:swordsdance",
+    "40:crunch",
+    "44:crabhammer",
     "48:endeavor",
+    "52:guillotine",
     "egg:ancientpower",
     "egg:aquajet",
     "egg:bodyslam",

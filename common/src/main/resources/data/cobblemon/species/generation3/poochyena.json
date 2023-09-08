@@ -25,33 +25,24 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
-    "5:howl",
-    "9:sandattack",
-    "13:bite",
-    "17:odorsleuth",
-    "21:roar",
-    "25:swagger",
-    "29:assurance",
-    "29:scaryface",
-    "33:takedown",
-    "37:taunt",
+    "4:howl",
+    "7:sandattack",
+    "10:bite",
+    "13:odorsleuth",
+    "16:roar",
+    "19:swagger",
+    "22:assurance",
+    "25:scaryface",
+    "28:embargo",
+    "31:taunt",
+    "34:crunch",
     "37:yawn",
-    "41:crunch",
-    "41:embargo",
+    "40:takedown",
+    "43:suckerpunch",
     "45:thief",
     "46:playrough",
-    "49:suckerpunch",
     "egg:astonish",
     "egg:covet",
     "egg:firefang",
@@ -148,7 +139,7 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
     "width": 1,
     "height": 1,

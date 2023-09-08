@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Orbeetle",
   "nationalPokedexNumber": 826,
   "primaryType": "bug",
@@ -55,7 +54,6 @@
       "eggGroups": [
         "bug"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -76,15 +74,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:lightscreen",

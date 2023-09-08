@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Smoliv",
   "nationalPokedexNumber": 928,
   "primaryType": "grass",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:azalea_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:sweetscent",
     "1:tackle",

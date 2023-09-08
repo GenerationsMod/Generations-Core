@@ -17,6 +17,19 @@
     "special_defence": 69,
     "speed": 112
   },
+  "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.24
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "11-15"
+    }
+  },
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -26,35 +39,26 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:antidote",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:batonpass",
     "1:defensecurl",
     "1:irondefense",
-    "1:megahorn",
     "1:poisonsting",
+    "1:protect",
     "1:rollout",
-    "1:screech",
+    "12:poisontail",
     "12:pursuit",
-    "15:protect",
-    "19:poisontail",
-    "23:bugbite",
-    "28:venoshock",
-    "30:batonpass",
-    "33:agility",
+    "16:screech",
+    "20:bugbite",
+    "26:venoshock",
     "34:takedown",
     "39:steamroller",
-    "44:toxic",
-    "47:venomdrench",
+    "42:agility",
     "50:rockclimb",
-    "55:doubleedge",
+    "50:toxic",
+    "58:venomdrench",
+    "66:doubleedge",
+    "74:megahorn",
     "tm:agility",
     "tm:assurance",
     "tm:attract",
@@ -135,10 +139,10 @@
   ],
   "preEvolution": "whirlipede",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.0,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 2.5,
+    "height": 3.0,
     "fixed": false
   },
   "baseFriendship": 50,

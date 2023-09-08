@@ -28,14 +28,17 @@
   ],
   "behaviour": {
     "moving": {
-      "swim": {
-        "canWalkOnWater": true
-      },
       "fly": {
         "canFly": true
       },
       "walk": {
         "canWalk": false
+      },
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": false,
+        "depth": "normal",
+        "light": "0-4"
       }
     }
   },
@@ -53,25 +56,25 @@
     ]
   },
   "moves": [
-    "1:metalsound",
     "1:tackle",
-    "6:thundershock",
-    "11:supersonic",
-    "13:lightscreen",
-    "16:sonicboom",
-    "21:thunderwave",
-    "26:spark",
-    "27:electroball",
-    "30:magnetbomb",
-    "32:lockon",
-    "35:flashcannon",
-    "38:discharge",
+    "1:thundershock",
+    "4:supersonic",
+    "8:thunderwave",
+    "11:magnetbomb",
+    "12:electroball",
+    "16:gyroball",
+    "17:sonicboom",
+    "20:spark",
+    "23:mirrorshot",
+    "24:screech",
+    "28:magnetrise",
+    "32:flashcannon",
+    "36:discharge",
     "38:swift",
-    "43:mirrorshot",
-    "44:screech",
-    "46:magnetrise",
-    "49:gyroball",
-    "50:zapcannon",
+    "40:metalsound",
+    "44:lightscreen",
+    "48:lockon",
+    "52:zapcannon",
     "egg:electroweb",
     "egg:explosion",
     "tm:chargebeam",

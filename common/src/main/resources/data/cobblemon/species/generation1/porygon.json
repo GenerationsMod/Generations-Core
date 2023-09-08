@@ -25,15 +25,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:upgrade",
-        "percentage": 1
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
@@ -45,22 +36,22 @@
     }
   },
   "moves": [
-    "1:conversion2",
     "1:conversion",
+    "1:sharpen",
     "1:tackle",
-    "9:agility",
-    "12:psybeam",
+    "5:recycle",
+    "10:magnetrise",
     "15:thundershock",
-    "20:recover",
-    "23:magnetrise",
-    "24:sharpen",
+    "20:psybeam",
+    "25:conversion2",
     "29:signalbeam",
-    "32:lockon",
-    "36:triattack",
+    "30:agility",
+    "35:recover",
     "40:discharge",
-    "44:recycle",
-    "48:zapcannon",
-    "56:magiccoat",
+    "45:triattack",
+    "50:magiccoat",
+    "55:lockon",
+    "60:zapcannon",
     "tm:aerialace",
     "tm:agility",
     "tm:allyswitch",
@@ -203,7 +194,7 @@
       "requirements": [
         {
           "variant": "held_item",
-          "itemCondition": "cobblemon:up_grade"
+          "itemCondition": "cobblemon:upgrade"
         }
       ]
     }

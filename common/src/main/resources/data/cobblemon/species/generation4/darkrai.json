@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Darkrai",
   "nationalPokedexNumber": 491,
   "primaryType": "dark",
@@ -23,19 +22,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:ender_pearl",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:darkrai_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:disable",
     "1:nightshade",

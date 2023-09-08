@@ -17,12 +17,12 @@
     "special_defence": 80,
     "speed": 30
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 75,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Mega",
@@ -41,7 +41,7 @@
       },
       "catchRate": 75,
       "maleRatio": 0.5,
-      "baseExperienceYield": 207,
+      "baseExperienceYield": 172,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -57,7 +57,6 @@
         "monster",
         "water_1"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -239,24 +238,15 @@
     "monster",
     "water_1"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:rich_mulch",
-        "percentage": 5
-      },
-      {
-        "item": "generations_core:boost_mulch",
-        "percentage": 5
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "swim": {
+        "swimSpeed": 0.08,
         "canSwimInWater": true,
         "canBreatheUnderwater": true
+      },
+      "walk": {
+        "walkSpeed": 0.18
       }
     }
   },
@@ -265,21 +255,21 @@
     "1:futuresight",
     "1:growl",
     "1:tackle",
-    "1:yawn",
-    "13:watergun",
-    "17:confusion",
-    "24:disable",
-    "29:headbutt",
-    "29:waterpulse",
+    "1:watergun",
+    "1:withdraw",
+    "9:yawn",
+    "12:confusion",
+    "15:disable",
+    "18:waterpulse",
+    "21:headbutt",
+    "24:zenheadbutt",
+    "27:amnesia",
     "30:surf",
-    "34:zenheadbutt",
-    "36:amnesia",
-    "37:withdraw",
-    "41:slackoff",
-    "44:psychic",
-    "55:psychup",
-    "61:raindance",
-    "68:healpulse",
+    "33:slackoff",
+    "36:psychic",
+    "41:psychup",
+    "46:raindance",
+    "51:healpulse",
     "tm:aerialace",
     "tm:amnesia",
     "tm:attract",

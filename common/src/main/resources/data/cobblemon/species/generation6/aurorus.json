@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Aurorus",
   "nationalPokedexNumber": 699,
   "primaryType": "rock",
@@ -25,35 +24,26 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:powder_snow_bucket",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:freezedry",
+    "1:ancientpower",
+    "1:encore",
     "1:growl",
     "1:powdersnow",
-    "5:thunderwave",
-    "10:rockthrow",
-    "13:icywind",
+    "1:rockthrow",
+    "12:icywind",
     "15:takedown",
-    "18:mist",
-    "20:aurorabeam",
-    "26:ancientpower",
-    "30:round",
+    "16:round",
+    "20:mist",
+    "24:aurorabeam",
+    "28:thunderwave",
+    "32:naturepower",
     "34:avalanche",
-    "38:hail",
-    "43:naturepower",
-    "46:encore",
-    "50:lightscreen",
-    "56:icebeam",
-    "63:hyperbeam",
-    "74:blizzard",
+    "36:freezedry",
+    "42:icebeam",
+    "48:lightscreen",
+    "54:hail",
+    "60:blizzard",
+    "66:hyperbeam",
     "tm:attract",
     "tm:avalanche",
     "tm:blizzard",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Farigiraf",
   "nationalPokedexNumber": 981,
   "primaryType": "normal",
@@ -34,15 +33,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:flowering_azalea_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:growl",

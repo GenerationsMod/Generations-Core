@@ -32,14 +32,13 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:flint",
-        "percentage": 25
-      }
-    ]
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:ember",
@@ -113,6 +112,12 @@
       ]
     }
   ],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1.0,
+    "height": 1.4,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.crocalor.desc"

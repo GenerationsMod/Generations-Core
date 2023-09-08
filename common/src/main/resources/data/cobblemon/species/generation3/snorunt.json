@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Snorunt",
   "nationalPokedexNumber": 361,
   "primaryType": "ice",
@@ -26,33 +25,24 @@
     "fairy",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ice",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
-    "1:leer",
+    "1:headbutt",
     "1:powdersnow",
-    "7:doubleteam",
-    "10:bite",
-    "16:icywind",
-    "19:headbutt",
-    "25:protect",
-    "28:crunch",
-    "28:icefang",
+    "5:leer",
+    "10:doubleteam",
+    "15:iceshard",
+    "20:protect",
+    "25:icywind",
+    "30:frostbreath",
     "34:icebeam",
-    "37:frostbreath",
-    "37:hail",
-    "37:iceshard",
-    "43:blizzard",
+    "35:bite",
+    "40:icefang",
+    "45:hail",
     "45:snowscape",
     "50:weatherball",
+    "55:crunch",
+    "60:blizzard",
     "egg:avalanche",
     "egg:bide",
     "egg:block",

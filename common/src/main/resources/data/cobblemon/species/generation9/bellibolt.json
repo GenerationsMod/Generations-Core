@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Bellibolt",
   "nationalPokedexNumber": 939,
   "primaryType": "electric",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:verdant_froglight",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:mudslap",
     "1:slackoff",

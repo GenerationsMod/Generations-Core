@@ -26,33 +26,24 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:lead",
-        "percentage": 15
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:tackle",
-    "11:ember",
+    "5:ember",
+    "8:focusenergy",
     "12:bulldoze",
+    "12:magnitude",
+    "15:flameburst",
     "15:incinerate",
-    "19:magnitude",
-    "21:flameburst",
-    "25:focusenergy",
+    "19:amnesia",
+    "22:lavaplume",
+    "26:earthpower",
     "29:curse",
-    "29:takedown",
-    "31:amnesia",
-    "31:lavaplume",
-    "35:earthpower",
-    "35:earthquake",
+    "31:takedown",
     "36:yawn",
-    "41:flamethrower",
-    "49:doubleedge",
+    "40:earthquake",
+    "43:flamethrower",
+    "47:doubleedge",
     "egg:ancientpower",
     "egg:bodyslam",
     "egg:defensecurl",

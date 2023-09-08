@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cyclizar",
   "nationalPokedexNumber": 967,
   "primaryType": "dragon",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:silicon",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:tackle",

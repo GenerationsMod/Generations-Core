@@ -26,6 +26,17 @@
   "eggGroups": [
     "mineral"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "walk": {
+      "walkSpeed": 0.4
+    }
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -37,27 +48,27 @@
     ]
   },
   "moves": [
+    "1:bind",
+    "1:harden",
     "1:mudsport",
-    "1:screech",
+    "1:rockthrow",
     "1:tackle",
-    "8:bind",
-    "12:rockthrow",
-    "17:rocktomb",
-    "19:harden",
+    "4:smackdown",
+    "8:rockpolish",
+    "10:rocktomb",
+    "12:dragonbreath",
+    "13:rage",
+    "16:curse",
     "20:gyroball",
-    "22:smackdown",
-    "23:rage",
-    "30:dragonbreath",
-    "30:rockpolish",
-    "33:sandstorm",
-    "34:rockslide",
-    "37:slam",
-    "38:curse",
-    "38:stealthrock",
-    "43:dig",
-    "45:irontail",
-    "49:sandtomb",
-    "49:stoneedge",
+    "20:rockslide",
+    "24:screech",
+    "28:sandtomb",
+    "32:stealthrock",
+    "36:slam",
+    "40:sandstorm",
+    "44:dig",
+    "48:irontail",
+    "52:stoneedge",
     "56:doubleedge",
     "egg:block",
     "egg:defensecurl",
@@ -217,7 +228,7 @@
   ],
   "baseScale": 2,
   "hitbox": {
-    "width": 2.5,
+    "width": 1.3,
     "height": 2.5,
     "fixed": false
   },

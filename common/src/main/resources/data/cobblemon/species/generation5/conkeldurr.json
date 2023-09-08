@@ -25,33 +25,24 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_copper",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bide",
-    "1:focusenergy",
     "1:leer",
+    "1:lowkick",
     "1:pound",
-    "12:lowkick",
-    "16:rockthrow",
+    "1:rockthrow",
+    "12:focusenergy",
+    "16:bulkup",
+    "20:rockslide",
     "20:wakeupslap",
     "24:chipaway",
     "24:slam",
-    "29:bulkup",
-    "33:rockslide",
-    "37:dynamicpunch",
-    "41:scaryface",
-    "45:hammerarm",
-    "49:stoneedge",
-    "53:focuspunch",
-    "57:superpower",
+    "30:scaryface",
+    "36:dynamicpunch",
+    "42:hammerarm",
+    "48:stoneedge",
+    "54:superpower",
+    "60:focuspunch",
     "tm:attract",
     "tm:brickbreak",
     "tm:brutalswing",

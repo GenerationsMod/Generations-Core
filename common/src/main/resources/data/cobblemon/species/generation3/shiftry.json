@@ -27,15 +27,6 @@
     "field",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wheat_seeds",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:aircutter",
@@ -46,6 +37,7 @@
     "1:feintattack",
     "1:growth",
     "1:harden",
+    "1:hurricane",
     "1:leafblade",
     "1:megadrain",
     "1:nastyplot",
@@ -61,9 +53,8 @@
     "1:tackle",
     "1:torment",
     "1:whirlwind",
-    "19:leaftornado",
-    "32:hurricane",
-    "49:leafstorm",
+    "20:leaftornado",
+    "44:leafstorm",
     "tm:aerialace",
     "tm:airslash",
     "tm:amnesia",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Keldeo",
   "nationalPokedexNumber": 647,
   "primaryType": "water",
@@ -33,31 +32,22 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:goat_horn",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aquajet",
+    "1:helpinghand",
     "1:leer",
     "1:secretsword",
-    "7:doublekick",
-    "13:bubblebeam",
-    "19:takedown",
-    "25:helpinghand",
-    "31:retaliate",
-    "37:aquatail",
-    "43:sacredsword",
-    "49:swordsdance",
-    "55:quickguard",
-    "61:workup",
-    "67:hydropump",
-    "73:closecombat",
+    "1:workup",
+    "7:bubblebeam",
+    "14:quickguard",
+    "21:doublekick",
+    "28:retaliate",
+    "35:aquatail",
+    "42:takedown",
+    "49:sacredsword",
+    "56:swordsdance",
+    "63:hydropump",
+    "70:closecombat",
     "tm:aerialace",
     "tm:airslash",
     "tm:aurasphere",
@@ -184,7 +174,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "mythical",

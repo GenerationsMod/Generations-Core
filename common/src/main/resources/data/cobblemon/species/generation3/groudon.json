@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Groudon",
   "nationalPokedexNumber": 383,
   "primaryType": "ground",
@@ -35,7 +34,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 347,
+      "baseExperienceYield": 335,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -50,7 +49,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "primal",
@@ -72,39 +70,22 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "3",
-    "entries": [
-      {
-        "item": "minecraft:ancient_debris",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:red_orb",
-        "percentage": 100
-      },
-      {
-        "item": "generations_core:groudon_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
+    "1:ancientpower",
+    "1:lavaplume",
     "1:mudshot",
-    "5:scaryface",
-    "15:ancientpower",
-    "15:lavaplume",
-    "20:hammerarm",
+    "1:precipiceblades",
+    "1:scaryface",
+    "9:earthpower",
+    "18:bulkup",
     "20:slash",
-    "30:bulkup",
-    "35:earthquake",
-    "45:fireblast",
-    "45:precipiceblades",
-    "50:rest",
-    "60:fissure",
-    "65:earthpower",
-    "65:solarbeam",
-    "75:eruption",
+    "27:earthquake",
+    "36:hammerarm",
+    "45:fissure",
+    "54:rest",
+    "72:fireblast",
+    "81:solarbeam",
+    "90:eruption",
     "tm:aerialace",
     "tm:bodypress",
     "tm:bodyslam",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Deoxys",
   "nationalPokedexNumber": 386,
   "primaryType": "psychic",
@@ -32,50 +31,33 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "3",
-    "entries": [
-      {
-        "item": "minecraft:ancient_debris",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:wishing_star",
-        "percentage": 100
-      },
-      {
-        "item": "generations_core:deoxys_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:wrap",
-    "5:nightshade",
-    "10:doubleteam",
-    "10:teleport",
-    "15:knockoff",
-    "15:taunt",
-    "20:pursuit",
-    "20:spikes",
-    "25:psychic",
-    "30:snatch",
-    "30:swift",
-    "35:agility",
-    "35:amnesia",
-    "35:cosmicpower",
-    "35:irondefense",
-    "40:recover",
-    "40:zapcannon",
-    "45:psychoboost",
-    "49:superpower",
-    "50:counter",
-    "50:extremespeed",
-    "50:hyperbeam",
-    "50:mirrorcoat",
-    "57:psychoshift",
-    "65:zenheadbutt",
+    "7:nightshade",
+    "13:doubleteam",
+    "13:teleport",
+    "19:knockoff",
+    "19:taunt",
+    "25:pursuit",
+    "25:spikes",
+    "31:psychic",
+    "37:snatch",
+    "37:superpower",
+    "37:swift",
+    "43:psychoshift",
+    "49:zenheadbutt",
+    "55:agility",
+    "55:amnesia",
+    "55:cosmicpower",
+    "55:irondefense",
+    "61:recover",
+    "61:zapcannon",
+    "67:psychoboost",
+    "73:counter",
+    "73:extremespeed",
+    "73:hyperbeam",
+    "73:mirrorcoat",
     "tm:aerialace",
     "tm:allyswitch",
     "tm:avalanche",
@@ -256,7 +238,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen3",
         "mythical",
@@ -302,7 +283,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen3",
         "mythical",
@@ -348,7 +328,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen3",
         "mythical",

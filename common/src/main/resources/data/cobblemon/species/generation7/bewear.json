@@ -17,6 +17,14 @@
     "special_defence": 60,
     "speed": 60
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 70,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -26,32 +34,23 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:salmon",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:babydolleyes",
     "1:bind",
     "1:leer",
+    "1:payback",
     "1:tackle",
     "5:bide",
-    "10:babydolleyes",
-    "14:brutalswing",
+    "12:brutalswing",
     "16:endure",
-    "19:flail",
     "20:strength",
-    "23:payback",
-    "30:takedown",
+    "24:takedown",
+    "30:flail",
     "36:hammerarm",
-    "43:thrash",
-    "49:painsplit",
-    "56:doubleedge",
-    "62:superpower",
+    "42:thrash",
+    "48:painsplit",
+    "54:doubleedge",
+    "60:superpower",
     "tm:aerialace",
     "tm:attract",
     "tm:bodypress",
@@ -134,8 +133,8 @@
   "evolutions": [],
   "baseScale": 1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.2,
+    "height": 2.8,
     "fixed": false
   },
   "baseFriendship": 50,

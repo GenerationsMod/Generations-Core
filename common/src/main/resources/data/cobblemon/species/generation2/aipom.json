@@ -25,30 +25,21 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:scratch",
     "1:tailwhip",
-    "6:sandattack",
-    "13:astonish",
-    "18:batonpass",
-    "25:tickle",
-    "31:furyswipes",
+    "4:sandattack",
+    "8:astonish",
+    "11:batonpass",
+    "15:tickle",
+    "18:furyswipes",
+    "22:swift",
+    "25:screech",
+    "29:agility",
     "32:doublehit",
     "36:fling",
-    "38:swift",
     "39:nastyplot",
     "43:lastresort",
-    "43:screech",
-    "50:agility",
     "egg:agility",
     "egg:beatup",
     "egg:bounce",
@@ -207,10 +198,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.68,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.4,
     "fixed": false
   },
   "baseFriendship": 70,

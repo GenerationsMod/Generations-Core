@@ -33,6 +33,11 @@
       "light": "0-4"
     },
     "moving": {
+      "moving" : {
+        "walk": {
+          "walkSpeed": 0.29
+        }
+      },
       "swim": {
         "canSwimInWater": true,
         "canBreatheUnderwater": true
@@ -54,20 +59,20 @@
   },
   "moves": [
     "1:tackle",
-    "4:tailwhip",
-    "7:bubble",
-    "10:withdraw",
-    "13:watergun",
-    "18:bite",
-    "23:rapidspin",
-    "25:waterpulse",
+    "1:tailwhip",
+    "3:watergun",
+    "6:withdraw",
+    "9:rapidspin",
+    "12:bite",
+    "13:bubble",
+    "15:waterpulse",
+    "18:protect",
+    "21:raindance",
+    "24:aquatail",
     "27:shellsmash",
-    "28:aquatail",
-    "28:protect",
-    "33:raindance",
-    "34:irondefense",
-    "40:skullbash",
-    "47:hydropump",
+    "30:irondefense",
+    "33:hydropump",
+    "36:skullbash",
     "egg:aquajet",
     "egg:aquaring",
     "egg:aurasphere",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Rabsca",
   "nationalPokedexNumber": 954,
   "primaryType": "bug",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mud",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:defensecurl",

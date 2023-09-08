@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Feebas",
   "nationalPokedexNumber": 349,
   "primaryType": "water",
@@ -26,19 +25,10 @@
     "water_1",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:seagrass",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:splash",
     "15:tackle",
-    "30:flail",
+    "25:flail",
     "egg:brine",
     "egg:captivate",
     "egg:confuseray",

@@ -25,32 +25,38 @@
     "monster",
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:clay_ball",
-        "percentage": 25
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
       }
-    ]
+    }
   },
   "moves": [
     "1:leer",
     "1:scratch",
-    "7:rage",
-    "13:watergun",
-    "20:bite",
+    "6:watergun",
+    "8:rage",
+    "13:bite",
+    "15:scaryface",
     "20:icefang",
     "22:flail",
-    "22:thrash",
     "27:crunch",
-    "27:scaryface",
     "29:chipaway",
-    "35:slash",
-    "36:aquatail",
-    "41:superpower",
-    "43:screech",
-    "52:hydropump",
+    "34:slash",
+    "36:screech",
+    "41:thrash",
+    "43:aquatail",
+    "48:superpower",
+    "50:hydropump",
     "egg:ancientpower",
     "egg:aquajet",
     "egg:block",
@@ -192,10 +198,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.5,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.85,
+    "height": 1.4,
     "fixed": false
   },
   "baseFriendship": 70,

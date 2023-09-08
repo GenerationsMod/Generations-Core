@@ -17,9 +17,6 @@
     "special_defence": 110,
     "speed": 30
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 70,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -59,6 +56,13 @@
         "monster",
         "water_1"
       ],
+      "behaviour": {
+        "moving": {
+          "walk": {
+            "walkSpeed": 0.23
+          }
+        }
+      },
       "moves": [
         "1:acid",
         "1:chillyreception",
@@ -198,15 +202,6 @@
     "monster",
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:rich_mulch",
-        "percentage": 25
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "swim": {
@@ -219,27 +214,27 @@
     "1:chillyreception",
     "1:curse",
     "1:futuresight",
+    "1:growl",
     "1:hiddenpower",
+    "1:nastyplot",
     "1:powergem",
+    "1:swagger",
     "1:tackle",
-    "1:yawn",
-    "6:growl",
-    "13:watergun",
-    "17:confusion",
-    "24:disable",
+    "1:watergun",
+    "9:yawn",
+    "12:confusion",
+    "15:disable",
+    "18:waterpulse",
+    "21:headbutt",
+    "24:zenheadbutt",
     "27:amnesia",
-    "29:headbutt",
-    "29:waterpulse",
     "30:surf",
     "33:slackoff",
-    "34:zenheadbutt",
-    "36:swagger",
-    "39:nastyplot",
-    "40:psychic",
+    "36:psychic",
+    "39:psychup",
     "42:raindance",
-    "47:psychup",
-    "53:trumpcard",
-    "58:healpulse",
+    "45:healpulse",
+    "49:trumpcard",
     "tm:amnesia",
     "tm:attract",
     "tm:avalanche",

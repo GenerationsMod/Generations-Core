@@ -26,37 +26,28 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:carrot",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:agility",
-    "1:bulldoze",
-    "1:hammerarm",
     "1:laserfocus",
     "1:leer",
+    "1:mudslap",
     "1:rototiller",
-    "1:swordsdance",
     "1:tackle",
-    "7:quickattack",
+    "9:quickattack",
+    "12:mudshot",
     "13:doubleslap",
-    "13:mudslap",
-    "15:takedown",
-    "18:mudshot",
-    "20:doublekick",
-    "26:odorsleuth",
-    "31:flail",
-    "37:dig",
-    "42:bounce",
-    "48:superfang",
-    "53:facade",
-    "57:earthquake",
+    "15:flail",
+    "18:doublekick",
+    "23:bulldoze",
+    "27:odorsleuth",
+    "28:dig",
+    "33:bounce",
+    "38:takedown",
+    "43:swordsdance",
+    "48:earthquake",
+    "53:superfang",
+    "54:facade",
+    "58:hammerarm",
     "tm:agility",
     "tm:attract",
     "tm:bodyslam",
@@ -156,10 +147,10 @@
   ],
   "preEvolution": "bunnelby",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.25,
+    "height": 2.2,
     "fixed": false
   },
   "baseFriendship": 50,

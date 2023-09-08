@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Regigigas",
   "nationalPokedexNumber": 486,
   "primaryType": "normal",
@@ -23,39 +22,38 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:regigigas_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confuseray",
+    "1:crushgrip",
     "1:dizzypunch",
     "1:firepunch",
     "1:foresight",
+    "1:heavyslam",
     "1:icepunch",
     "1:knockoff",
     "1:megapunch",
     "1:pound",
     "1:stomp",
     "1:thunderpunch",
+    "6:payback",
+    "12:revenge",
+    "18:stomp",
     "24:protect",
     "25:revenge",
     "25:superpower",
+    "30:knockoff",
+    "36:megapunch",
     "40:wideguard",
     "42:bodypress",
+    "48:wideguard",
     "50:zenheadbutt",
+    "54:zenheadbutt",
+    "60:heavyslam",
     "65:payback",
     "66:hammerarm",
+    "72:gigaimpact",
     "75:crushgrip",
+    "78:crushgrip",
     "90:heavyslam",
     "100:gigaimpact",
     "tm:aerialace",

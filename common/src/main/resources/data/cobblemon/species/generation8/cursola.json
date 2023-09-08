@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cursola",
   "nationalPokedexNumber": 864,
   "primaryType": "ghost",
@@ -25,15 +24,6 @@
     "water_1",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:dead_brain_coral",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:disable",

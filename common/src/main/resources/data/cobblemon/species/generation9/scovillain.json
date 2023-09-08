@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Scovillain",
   "nationalPokedexNumber": 952,
   "primaryType": "grass",
@@ -34,15 +33,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:grass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:firefang",
     "1:leafage",

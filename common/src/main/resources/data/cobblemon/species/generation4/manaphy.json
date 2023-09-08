@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Manaphy",
   "nationalPokedexNumber": 490,
   "primaryType": "water",
@@ -24,19 +23,6 @@
     "water_1",
     "fairy"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:heart_of_the_sea",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:manaphy_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
     "1:tailglow",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Greavard",
   "nationalPokedexNumber": 971,
   "primaryType": "ghost",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:tackle",

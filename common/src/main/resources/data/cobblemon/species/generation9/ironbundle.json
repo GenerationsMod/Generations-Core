@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Iron Bundle",
   "nationalPokedexNumber": 991,
   "primaryType": "ice",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blue_ice",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:electricterrain",
     "1:present",

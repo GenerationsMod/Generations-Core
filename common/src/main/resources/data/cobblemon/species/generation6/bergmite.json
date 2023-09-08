@@ -26,42 +26,38 @@
     "monster",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:packed_ice",
-        "percentage": 25
-      }
-    ]
-  },
   "behaviour": {
-    "swim": {
-      "swimSpeed": 0.1,
-      "canSwimInWater": true,
-      "canBreatheUnderwater": true,
-      "canWalkOnWater": true
+    "moving": {
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      },
+      "walk": {
+        "walkSpeed": 0.15
+      }
     }
   },
   "moves": [
-    "1:bite",
     "1:harden",
-    "1:tackle",
-    "5:powdersnow",
-    "10:icywind",
+    "1:rapidspin",
+    "3:tackle",
+    "6:powdersnow",
+    "9:curse",
+    "12:icywind",
     "15:protect",
-    "15:takedown",
+    "18:avalanche",
     "20:sharpen",
-    "22:curse",
-    "26:icefang",
+    "21:bite",
+    "24:icefang",
     "27:irondefense",
     "30:iceball",
+    "30:recover",
     "33:crunch",
-    "35:rapidspin",
-    "39:avalanche",
-    "43:blizzard",
-    "47:recover",
-    "49:doubleedge",
+    "36:takedown",
+    "39:blizzard",
+    "42:doubleedge",
     "egg:auroraveil",
     "egg:barrier",
     "egg:mirrorcoat",
@@ -143,14 +139,18 @@
     },
     {
       "id": "bergmite_avalugg",
-      "variant": "item_interact",
+      "variant": "level_up",
       "result": "avalugg form=hisui",
       "consumeHeldItem": false,
       "learnableMoves": [
         "rockslide"
       ],
-      "requirements": [],
-      "requiredContext": "cobblemon:ice_stone"
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 37
+        }
+      ]
     }
   ],
   "baseScale": 0.95,

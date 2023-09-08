@@ -15,14 +15,6 @@
     "special_defence": 121,
     "speed": 64
   },
-  "behaviour": {
-    "resting": {
-      "canSleep": true,
-      "willSleepOnBed": false,
-      "depth": "normal",
-      "light": "0-4"
-    }
-  },
   "catchRate": 100,
   "maleRatio": 0,
   "shoulderMountable": true,
@@ -60,7 +52,6 @@
         "fairy",
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -82,6 +73,14 @@
     "fairy",
     "amorphous"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "2",
     "entries": [

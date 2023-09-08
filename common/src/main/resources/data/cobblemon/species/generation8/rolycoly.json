@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Rolycoly",
   "nationalPokedexNumber": 837,
   "primaryType": "rock",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:coal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:smokescreen",
     "1:tackle",

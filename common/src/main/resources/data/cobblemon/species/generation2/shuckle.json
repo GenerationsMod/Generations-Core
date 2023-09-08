@@ -26,35 +26,39 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:scute",
-        "percentage": 10
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.2
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
+    "1:bide",
     "1:constrict",
-    "1:stickyweb",
-    "1:strugglebug",
     "1:withdraw",
-    "9:wrap",
-    "14:encore",
-    "23:rockthrow",
-    "23:safeguard",
-    "28:bide",
-    "34:shellsmash",
-    "35:gastroacid",
-    "37:rest",
-    "37:rollout",
-    "38:rockslide",
-    "40:bugbite",
-    "48:powertrick",
-    "49:stoneedge",
-    "55:guardsplit",
-    "55:powersplit",
+    "1:wrap",
+    "5:encore",
+    "5:rollout",
+    "10:strugglebug",
+    "15:rockthrow",
+    "20:safeguard",
+    "25:rest",
+    "30:bugbite",
+    "35:guardsplit",
+    "35:powersplit",
+    "40:rockslide",
+    "45:gastroacid",
+    "50:stickyweb",
+    "55:powertrick",
+    "60:stoneedge",
+    "65:shellsmash",
     "egg:acid",
     "egg:acupressure",
     "egg:covet",
@@ -176,7 +180,7 @@
     "cobblemon.species.shuckle.desc"
   ],
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.5,
   "hitbox": {
     "width": 1,
     "height": 1,

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Hariyama",
   "nationalPokedexNumber": 297,
   "primaryType": "fighting",
@@ -25,38 +24,29 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:fresh_water",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:armthrust",
     "1:brine",
     "1:focusenergy",
     "1:sandattack",
     "1:tackle",
-    "13:vitalthrow",
-    "19:fakeout",
+    "10:fakeout",
+    "13:forcepalm",
+    "16:whirlwind",
+    "19:knockoff",
     "22:bulkup",
-    "22:whirlwind",
-    "29:knockoff",
+    "22:vitalthrow",
+    "26:bellydrum",
     "30:detect",
-    "32:forcepalm",
-    "33:smellingsalts",
+    "30:smellingsalts",
+    "34:seismictoss",
     "38:focuspunch",
-    "40:bellydrum",
-    "42:wakeupslap",
-    "44:endure",
-    "51:seismictoss",
-    "52:closecombat",
-    "55:reversal",
+    "38:wakeupslap",
+    "42:endure",
+    "46:closecombat",
+    "50:reversal",
+    "54:heavyslam",
     "60:headlongrush",
-    "62:heavyslam",
     "tm:attract",
     "tm:bodypress",
     "tm:bodyslam",

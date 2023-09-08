@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Ducklett",
   "nationalPokedexNumber": 580,
   "primaryType": "water",
@@ -27,15 +26,6 @@
     "water_1",
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:watergun",
     "3:watersport",

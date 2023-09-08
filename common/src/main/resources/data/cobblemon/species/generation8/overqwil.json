@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Overqwil",
   "nationalPokedexNumber": 904,
   "primaryType": "dark",
@@ -24,7 +23,7 @@
   "baseFriendship": 0,
   "evYield": {
     "hp": 0,
-    "attack": 1,
+    "attack": 2,
     "defence": 0,
     "special_attack": 0,
     "special_defence": 0,
@@ -35,15 +34,6 @@
   "eggGroups": [
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:pufferfish",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:poisonsting",
     "1:tackle",

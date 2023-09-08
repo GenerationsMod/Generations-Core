@@ -16,6 +16,14 @@
     "special_defence": 52,
     "speed": 81
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 45,
   "maleRatio": 0.875,
   "shoulderMountable": false,
@@ -38,6 +46,7 @@
   "moves": [
     "1:ember",
     "1:leer",
+    "1:machpunch",
     "1:scratch",
     "9:taunt",
     "14:machpunch",
@@ -50,6 +59,8 @@
     "46:acrobatics",
     "46:slackoff",
     "49:flareblitz",
+    "49:slackoff",
+    "56:flareblitz",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:attract",

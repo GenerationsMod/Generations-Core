@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Flamigo",
   "nationalPokedexNumber": 973,
   "primaryType": "flying",
@@ -34,15 +33,6 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:copycat",
     "1:peck",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Duraludon",
   "nationalPokedexNumber": 884,
   "primaryType": "steel",
@@ -56,7 +55,6 @@
         "mineral",
         "dragon"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -78,15 +76,6 @@
     "mineral",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:metalclaw",

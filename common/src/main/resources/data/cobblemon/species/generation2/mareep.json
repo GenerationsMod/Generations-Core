@@ -21,36 +21,43 @@
   "baseExperienceYield": 56,
   "experienceGroup": "medium_slow",
   "eggCycles": 20,
+  "features": [
+    "sheared"
+  ],
   "eggGroups": [
     "monster",
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": "2",
     "entries": [
       {
-        "item": "minecraft:wool",
-        "percentage": 25
+        "item": "minecraft:mutton",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:white_wool"
       }
     ]
   },
   "moves": [
     "1:growl",
     "1:tackle",
-    "9:thundershock",
-    "16:thunderwave",
+    "4:thunderwave",
+    "8:thundershock",
+    "11:cottonspore",
+    "15:charge",
     "18:takedown",
-    "23:charge",
-    "23:cottonspore",
+    "22:electroball",
     "25:confuseray",
-    "28:discharge",
-    "28:electroball",
-    "30:lightscreen",
-    "32:cottonguard",
-    "32:signalbeam",
-    "37:thunder",
+    "29:powergem",
+    "32:discharge",
+    "36:cottonguard",
     "39:dazzlinggleam",
-    "41:powergem",
+    "39:signalbeam",
+    "43:lightscreen",
+    "46:thunder",
     "egg:afteryou",
     "egg:agility",
     "egg:bodyslam",
@@ -177,10 +184,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 1.1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.75,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 70,

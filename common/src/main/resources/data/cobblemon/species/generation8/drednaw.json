@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Drednaw",
   "nationalPokedexNumber": 834,
   "primaryType": "water",
@@ -56,7 +55,6 @@
         "monster",
         "water_1"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -78,15 +76,6 @@
     "monster",
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:scute",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:crunch",

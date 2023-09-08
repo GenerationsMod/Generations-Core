@@ -45,17 +45,17 @@
     "1:watergun",
     "1:watersport",
     "13:focusenergy",
-    "17:razorshell",
-    "20:furycutter",
-    "25:waterpulse",
-    "28:revenge",
+    "18:razorshell",
+    "21:furycutter",
+    "26:waterpulse",
     "29:aerialace",
-    "33:aquajet",
-    "36:encore",
-    "41:aquatail",
-    "44:retaliate",
-    "49:swordsdance",
-    "52:hydropump",
+    "29:revenge",
+    "34:aquajet",
+    "37:encore",
+    "42:aquatail",
+    "45:retaliate",
+    "50:swordsdance",
+    "53:hydropump",
     "tm:aerialace",
     "tm:airslash",
     "tm:attract",
@@ -143,14 +143,18 @@
     },
     {
       "id": "dewott_samurott",
-      "variant": "item_interact",
+      "variant": "level_up",
       "result": "samurott form=hisui",
       "consumeHeldItem": false,
       "learnableMoves": [
         "ceaselessedge"
       ],
-      "requirements": [],
-      "requiredContext": "cobblemon:fire_stone"
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
     }
   ],
   "baseScale": 0.6,

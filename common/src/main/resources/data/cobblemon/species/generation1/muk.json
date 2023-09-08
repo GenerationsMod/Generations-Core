@@ -16,12 +16,12 @@
     "special_defence": 100,
     "speed": 50
   },
-  "features": [
-    "alolan"
-  ],
   "catchRate": 75,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "alolan"
+  ],
   "forms": [
     {
       "name": "Alola",
@@ -219,7 +219,7 @@
     }
   },
   "drops": {
-    "amount": "3",
+    "amount": "2",
     "entries": [
       {
         "item": "minecraft:slime_ball",
@@ -229,10 +229,6 @@
       {
         "item": "cobblemon:black_sludge",
         "percentage": 5
-      },
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 5
       }
     ]
   },
@@ -241,21 +237,21 @@
     "1:mudslap",
     "1:poisongas",
     "1:pound",
-    "8:disable",
-    "13:sludge",
+    "1:venomdrench",
+    "12:disable",
+    "15:sludge",
+    "18:mudbomb",
     "18:mudshot",
-    "19:minimize",
-    "23:mudbomb",
-    "26:screech",
+    "21:minimize",
+    "26:fling",
     "26:toxic",
-    "28:fling",
-    "34:acidarmor",
-    "38:venomdrench",
-    "47:sludgebomb",
-    "50:sludgewave",
+    "29:sludgebomb",
+    "32:sludgewave",
+    "37:screech",
+    "40:gunkshot",
+    "46:acidarmor",
     "52:belch",
-    "54:gunkshot",
-    "61:memento",
+    "57:memento",
     "tm:acidspray",
     "tm:attract",
     "tm:bodyslam",

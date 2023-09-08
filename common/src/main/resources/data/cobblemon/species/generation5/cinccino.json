@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cinccino",
   "nationalPokedexNumber": 573,
   "primaryType": "normal",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:custap_berry",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:afteryou",
     "1:babydolleyes",

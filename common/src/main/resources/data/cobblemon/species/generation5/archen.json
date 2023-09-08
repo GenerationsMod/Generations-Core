@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Archen",
   "nationalPokedexNumber": 566,
   "primaryType": "rock",
@@ -25,35 +24,26 @@
     "flying",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:quickattack",
-    "1:wingattack",
-    "5:rockthrow",
+    "3:rockthrow",
+    "6:wingattack",
     "8:doubleteam",
-    "11:scaryface",
+    "9:dragonbreath",
+    "12:ancientpower",
     "15:pluck",
-    "18:ancientpower",
-    "21:agility",
-    "25:quickguard",
+    "18:quickguard",
+    "21:uturn",
+    "24:rockslide",
+    "27:scaryface",
     "28:acrobatics",
-    "31:dragonbreath",
-    "35:crunch",
+    "30:crunch",
+    "33:agility",
     "36:tailwind",
-    "38:endeavor",
-    "41:uturn",
-    "45:rockslide",
-    "48:dragonclaw",
-    "51:thrash",
+    "39:dragonclaw",
+    "42:thrash",
+    "45:endeavor",
     "egg:allyswitch",
     "egg:bite",
     "egg:defog",

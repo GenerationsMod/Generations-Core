@@ -25,15 +25,6 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 5
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "swim": {
@@ -46,21 +37,21 @@
   "moves": [
     "1:tackle",
     "1:watergun",
-    "1:withdraw",
-    "8:iciclespear",
-    "9:supersonic",
-    "17:aurorabeam",
-    "25:protect",
-    "28:iceshard",
+    "4:withdraw",
+    "8:iceshard",
+    "12:leer",
+    "13:iciclespear",
+    "16:whirlpool",
+    "20:supersonic",
+    "24:aurorabeam",
+    "25:clamp",
+    "28:protect",
     "32:razorshell",
-    "33:leer",
-    "37:whirlpool",
-    "40:irondefense",
-    "41:clamp",
+    "36:irondefense",
+    "40:icebeam",
     "44:brine",
-    "49:icebeam",
-    "56:shellsmash",
-    "61:hydropump",
+    "44:shellsmash",
+    "48:hydropump",
     "egg:aquaring",
     "egg:avalanche",
     "egg:barrier",

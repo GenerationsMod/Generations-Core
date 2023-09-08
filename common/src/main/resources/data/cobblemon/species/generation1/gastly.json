@@ -24,15 +24,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 25
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
@@ -48,21 +39,21 @@
     }
   },
   "moves": [
-    "1:hypnosis",
+    "1:confuseray",
     "1:lick",
-    "8:spite",
-    "13:curse",
-    "13:meanlook",
-    "16:nightshade",
-    "21:confuseray",
-    "22:suckerpunch",
-    "26:payback",
-    "28:dreameater",
-    "33:destinybond",
+    "4:hypnosis",
+    "8:meanlook",
+    "12:payback",
+    "16:spite",
+    "20:curse",
+    "24:hex",
+    "28:nightshade",
+    "32:suckerpunch",
     "36:darkpulse",
-    "36:shadowball",
-    "41:nightmare",
-    "43:hex",
+    "40:shadowball",
+    "44:destinybond",
+    "47:nightmare",
+    "48:dreameater",
     "egg:astonish",
     "egg:clearsmog",
     "egg:disable",

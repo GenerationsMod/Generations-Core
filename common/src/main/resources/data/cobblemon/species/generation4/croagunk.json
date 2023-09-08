@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Croagunk",
   "nationalPokedexNumber": 453,
   "primaryType": "poison",
@@ -26,34 +25,42 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:pearlescent_froglight",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
+    "1:mudslap",
+    "1:poisonsting",
     "3:mudslap",
+    "4:astonish",
     "8:poisonsting",
+    "8:taunt",
     "10:taunt",
+    "12:flatter",
     "15:pursuit",
     "16:lowkick",
+    "16:revenge",
     "17:feintattack",
+    "20:venoshock",
     "22:revenge",
+    "24:suckerpunch",
     "24:swagger",
+    "28:swagger",
     "29:mudbomb",
     "31:suckerpunch",
+    "32:poisonjab",
     "36:nastyplot",
     "36:toxic",
     "36:venoshock",
+    "38:nastyplot",
     "38:poisonjab",
+    "40:nastyplot",
+    "43:poisonjab",
     "43:sludgebomb",
+    "44:sludgebomb",
     "45:flatter",
+    "45:sludgebomb",
     "47:belch",
+    "48:belch",
+    "50:flatter",
     "egg:acupressure",
     "egg:bulletpunch",
     "egg:counter",

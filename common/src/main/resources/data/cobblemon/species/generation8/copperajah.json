@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Copperajah",
   "nationalPokedexNumber": 879,
   "primaryType": "steel",
@@ -52,7 +51,6 @@
         "field",
         "mineral"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -74,15 +72,6 @@
     "field",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_copper",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:rocksmash",

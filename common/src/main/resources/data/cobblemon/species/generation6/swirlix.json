@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Swirlix",
   "nationalPokedexNumber": 684,
   "primaryType": "fairy",
@@ -24,31 +23,22 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sugar",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:sweetscent",
     "1:tackle",
-    "5:fairywind",
-    "8:playnice",
-    "10:faketears",
-    "13:round",
-    "17:cottonspore",
-    "21:endeavor",
+    "3:playnice",
+    "6:fairywind",
+    "9:aromatherapy",
+    "12:drainingkiss",
+    "15:faketears",
+    "18:round",
     "21:stringshot",
-    "26:aromatherapy",
-    "31:drainingkiss",
-    "36:energyball",
-    "41:cottonguard",
-    "45:wish",
-    "49:playrough",
+    "24:cottonspore",
+    "27:energyball",
+    "30:wish",
+    "33:playrough",
+    "36:cottonguard",
+    "39:endeavor",
     "58:lightscreen",
     "67:safeguard",
     "egg:afteryou",

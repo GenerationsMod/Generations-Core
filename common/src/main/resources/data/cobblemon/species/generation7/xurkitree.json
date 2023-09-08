@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Xurkitree",
   "nationalPokedexNumber": 796,
   "primaryType": "electric",
@@ -23,35 +22,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:glowstone_dust",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:charge",
-    "1:spark",
     "1:tailglow",
     "1:thundershock",
     "1:wrap",
-    "7:thunderwave",
-    "13:shockwave",
-    "19:ingrain",
-    "23:thunderpunch",
-    "29:eerieimpulse",
+    "5:charge",
+    "10:thunderwave",
+    "15:ingrain",
+    "20:spark",
+    "25:shockwave",
+    "30:hypnosis",
     "31:signalbeam",
-    "37:thunderbolt",
-    "43:hypnosis",
-    "47:discharge",
+    "35:eerieimpulse",
+    "40:thunderpunch",
+    "45:discharge",
     "50:magnetrise",
-    "53:electricterrain",
-    "59:powerwhip",
+    "55:thunderbolt",
+    "60:electricterrain",
+    "65:powerwhip",
     "67:iondeluge",
-    "73:zapcannon",
+    "70:zapcannon",
     "tm:brutalswing",
     "tm:calmmind",
     "tm:chargebeam",

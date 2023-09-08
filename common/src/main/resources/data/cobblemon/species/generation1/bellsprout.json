@@ -26,33 +26,29 @@
     "grass"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
       {
         "item": "cobblemon:big_root",
         "percentage": 2.5
-      },
-      {
-        "item": "generations_core:surprise_mulch",
-        "percentage": 5
       }
     ]
   },
   "moves": [
     "1:vinewhip",
-    "6:growth",
+    "7:growth",
     "11:wrap",
-    "15:sleeppowder",
-    "17:poisonpowder",
-    "19:stunspore",
+    "13:sleeppowder",
+    "15:poisonpowder",
+    "17:stunspore",
     "23:acid",
     "27:knockoff",
-    "30:sweetscent",
+    "29:sweetscent",
     "35:gastroacid",
-    "37:razorleaf",
+    "39:razorleaf",
     "41:poisonjab",
-    "45:slam",
-    "47:wringout",
+    "47:slam",
+    "50:wringout",
     "egg:acidspray",
     "egg:belch",
     "egg:bulletseed",

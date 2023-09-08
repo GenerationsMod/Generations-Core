@@ -25,6 +25,14 @@
     "monster",
     "grass"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -36,19 +44,19 @@
   },
   "moves": [
     "1:growl",
+    "1:poisonpowder",
     "1:razorleaf",
-    "1:reflect",
     "1:tackle",
-    "15:poisonpowder",
+    "12:synthesis",
+    "18:reflect",
     "22:magicalleaf",
-    "23:synthesis",
     "26:naturalgift",
-    "31:bodyslam",
     "32:sweetscent",
-    "39:lightscreen",
-    "47:safeguard",
+    "36:lightscreen",
+    "40:bodyslam",
+    "46:safeguard",
     "50:aromatherapy",
-    "55:solarbeam",
+    "54:solarbeam",
     "tm:attract",
     "tm:bulletseed",
     "tm:captivate",
@@ -154,10 +162,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.9,
+    "height": 1.7,
     "fixed": false
   },
   "baseFriendship": 70,

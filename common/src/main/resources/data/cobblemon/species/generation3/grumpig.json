@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Grumpig",
   "nationalPokedexNumber": 326,
   "primaryType": "psychic",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:potato",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:belch",
     "1:confusion",
@@ -41,18 +31,18 @@
     "1:psybeam",
     "1:psywave",
     "1:splash",
-    "19:psychup",
-    "25:confuseray",
+    "1:teeterdance",
+    "18:psychup",
+    "21:magiccoat",
+    "22:confuseray",
     "26:zenheadbutt",
-    "28:magiccoat",
-    "32:teeterdance",
-    "37:payback",
-    "37:psychic",
-    "37:psyshock",
-    "43:rest",
-    "43:snore",
-    "55:bounce",
-    "55:powergem",
+    "29:powergem",
+    "35:rest",
+    "35:snore",
+    "42:psyshock",
+    "46:payback",
+    "52:psychic",
+    "60:bounce",
     "tm:amnesia",
     "tm:attract",
     "tm:bodypress",

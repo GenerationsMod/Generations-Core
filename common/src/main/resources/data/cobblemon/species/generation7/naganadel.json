@@ -24,32 +24,23 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:ultra_purple",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:acid",
     "1:aircutter",
+    "1:airslash",
     "1:dragonpulse",
     "1:growl",
     "1:helpinghand",
     "1:peck",
     "7:furyattack",
-    "13:venoshock",
-    "19:charm",
-    "23:venomdrench",
-    "31:nastyplot",
-    "37:poisonjab",
-    "41:toxic",
-    "47:fellstinger",
-    "53:airslash",
+    "14:fellstinger",
+    "21:charm",
+    "28:venoshock",
+    "35:venomdrench",
+    "42:nastyplot",
+    "49:poisonjab",
     "56:gastroacid",
+    "63:toxic",
     "70:dragonrush",
     "tm:acrobatics",
     "tm:aerialace",

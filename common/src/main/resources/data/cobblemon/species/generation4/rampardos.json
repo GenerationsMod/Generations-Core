@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Rampardos",
   "nationalPokedexNumber": 409,
   "primaryType": "rock",
@@ -24,18 +23,12 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cobblestone",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
+    "1:endeavor",
+    "1:focusenergy",
     "1:headbutt",
     "1:leer",
+    "1:pursuit",
     "6:focusenergy",
     "10:pursuit",
     "15:takedown",
@@ -44,9 +37,13 @@
     "28:ancientpower",
     "28:chipaway",
     "30:endeavor",
+    "36:ancientpower",
     "36:zenheadbutt",
     "43:screech",
+    "43:zenheadbutt",
+    "51:screech",
     "52:headsmash",
+    "58:headsmash",
     "tm:attract",
     "tm:avalanche",
     "tm:blizzard",

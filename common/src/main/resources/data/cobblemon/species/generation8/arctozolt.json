@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Arctozolt",
   "nationalPokedexNumber": 881,
   "primaryType": "electric",
@@ -26,15 +25,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:calcite",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:powdersnow",
     "1:thundershock",

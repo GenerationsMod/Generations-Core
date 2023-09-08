@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mothim",
   "nationalPokedexNumber": 414,
   "primaryType": "bug",
@@ -25,16 +24,10 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:bugbite",
+    "1:protect",
+    "1:quiverdance",
     "1:tackle",
     "10:protect",
     "15:bugbite",
@@ -49,6 +42,7 @@
     "44:psychic",
     "47:bugbuzz",
     "47:lunge",
+    "50:bugbuzz",
     "50:quiverdance",
     "tm:acrobatics",
     "tm:aerialace",

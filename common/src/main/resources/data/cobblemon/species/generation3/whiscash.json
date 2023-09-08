@@ -26,34 +26,36 @@
   "eggGroups": [
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:damp_mulch",
-        "percentage": 10
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
       }
-    ]
+    }
   },
   "moves": [
     "1:belch",
     "1:mudslap",
     "1:mudsport",
+    "1:rest",
+    "1:snore",
     "1:thrash",
     "1:tickle",
+    "1:watergun",
     "1:watersport",
     "1:zenheadbutt",
-    "11:watergun",
-    "14:mudbomb",
-    "16:magnitude",
-    "21:amnesia",
-    "22:waterpulse",
-    "26:rest",
-    "26:snore",
-    "36:earthquake",
-    "39:aquatail",
-    "39:muddywater",
-    "46:futuresight",
+    "12:waterpulse",
+    "13:mudbomb",
+    "18:amnesia",
+    "20:magnitude",
+    "24:aquatail",
+    "33:muddywater",
+    "40:earthquake",
+    "48:futuresight",
     "56:fissure",
     "tm:amnesia",
     "tm:attract",
@@ -152,7 +154,7 @@
   "evolutions": [],
   "baseScale": 1,
   "hitbox": {
-    "width": 1,
+    "width": 2.3,
     "height": 1,
     "fixed": false
   },

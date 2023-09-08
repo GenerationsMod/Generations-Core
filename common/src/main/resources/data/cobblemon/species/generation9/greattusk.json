@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Great Tusk",
   "nationalPokedexNumber": 984,
   "primaryType": "ground",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mud",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:hornattack",

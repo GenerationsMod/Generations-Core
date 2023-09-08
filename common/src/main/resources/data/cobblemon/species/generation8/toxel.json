@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Toxel",
   "nationalPokedexNumber": 848,
   "primaryType": "electric",
@@ -26,15 +25,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:paraylze_heal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:acid",
     "1:belch",

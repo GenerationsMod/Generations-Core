@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Karrablast",
   "nationalPokedexNumber": 588,
   "primaryType": "bug",
@@ -25,32 +24,23 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:raw_aluminum",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:leer",
     "1:peck",
-    "4:leer",
+    "4:furycutter",
     "8:endure",
-    "13:furycutter",
+    "12:falseswipe",
     "16:acidspray",
     "16:furyattack",
     "20:headbutt",
-    "25:falseswipe",
-    "28:bugbuzz",
+    "24:flail",
+    "28:scaryface",
     "32:slash",
-    "37:takedown",
-    "40:scaryface",
-    "44:xscissor",
-    "49:flail",
-    "52:swordsdance",
-    "56:doubleedge",
+    "32:xscissor",
+    "36:swordsdance",
+    "40:takedown",
+    "44:bugbuzz",
+    "48:doubleedge",
     "egg:bugbite",
     "egg:counter",
     "egg:drillrun",

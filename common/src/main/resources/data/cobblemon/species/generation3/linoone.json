@@ -165,39 +165,43 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.31
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:babydolleyes",
     "1:growl",
-    "1:headbutt",
     "1:pinmissile",
     "1:playrough",
     "1:rototiller",
+    "1:sandattack",
     "1:switcheroo",
     "1:tackle",
     "1:tailwhip",
-    "13:sandattack",
+    "9:covet",
+    "12:headbutt",
+    "13:odorsleuth",
     "15:honeclaws",
-    "17:odorsleuth",
-    "23:mudsport",
+    "17:mudsport",
+    "18:furyswipes",
+    "23:rest",
+    "27:bestow",
     "28:takedown",
-    "29:furyswipes",
-    "35:covet",
-    "35:doubleedge",
+    "32:slash",
+    "33:fling",
     "38:flail",
-    "41:bestow",
-    "41:slash",
-    "47:rest",
-    "53:bellydrum",
-    "59:fling",
+    "43:bellydrum",
+    "48:doubleedge",
     "tm:attract",
     "tm:blizzard",
     "tm:bodyslam",
@@ -304,8 +308,8 @@
   "preEvolution": "zigzagoon",
   "baseScale": 1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.6,
+    "height": 0.5,
     "fixed": false
   },
   "baseFriendship": 50,

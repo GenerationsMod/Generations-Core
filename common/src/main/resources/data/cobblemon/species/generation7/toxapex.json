@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Toxapex",
   "nationalPokedexNumber": 748,
   "primaryType": "poison",
@@ -26,31 +25,22 @@
   "eggGroups": [
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:spider_eye",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:banefulbunker",
     "1:bite",
     "1:peck",
     "1:poisonsting",
-    "1:toxicspikes",
-    "17:wideguard",
-    "21:toxic",
-    "25:venoshock",
+    "1:wideguard",
+    "15:venoshock",
+    "20:recover",
+    "25:pinmissile",
     "29:spikecannon",
-    "33:recover",
-    "37:poisonjab",
+    "30:toxicspikes",
+    "35:liquidation",
     "42:acidspray",
-    "44:venomdrench",
-    "51:pinmissile",
-    "58:liquidation",
+    "42:venomdrench",
+    "49:poisonjab",
+    "56:toxic",
     "tm:acidspray",
     "tm:attract",
     "tm:blizzard",

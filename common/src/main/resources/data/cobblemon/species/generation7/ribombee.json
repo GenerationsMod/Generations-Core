@@ -20,6 +20,22 @@
   "catchRate": 75,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canWalkOnWater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "forms": [
     {
       "name": "Totem",
@@ -131,7 +147,13 @@
       "weight": 20,
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "baseScale": 0.9,
+      "hitbox": {
+        "width": 0.9,
+        "height": 2.6,
+        "fixed": false
+      }
     }
   ],
   "baseExperienceYield": 162,
@@ -141,30 +163,21 @@
     "bug",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:honeycomb",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:covet",
     "1:fairywind",
     "1:pollenpuff",
-    "1:strugglebug",
     "1:stunspore",
+    "1:sweetscent",
     "13:silverwind",
-    "16:drainingkiss",
-    "21:sweetscent",
-    "28:bugbuzz",
-    "35:dazzlinggleam",
+    "18:drainingkiss",
+    "24:strugglebug",
+    "32:aromatherapy",
     "40:switcheroo",
-    "42:aromatherapy",
-    "49:quiverdance",
+    "48:dazzlinggleam",
+    "56:bugbuzz",
+    "64:quiverdance",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:allyswitch",
@@ -244,10 +257,10 @@
   ],
   "preEvolution": "cutiefly",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.35,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.85,
+    "height": 2.6,
     "fixed": false
   },
   "baseFriendship": 50,

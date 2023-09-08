@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tyrantrum",
   "nationalPokedexNumber": 697,
   "primaryType": "rock",
@@ -26,34 +25,25 @@
     "monster",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:porkchop",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:headsmash",
+    "1:ancientpower",
+    "1:roar",
     "1:tackle",
     "1:tailwhip",
-    "6:roar",
-    "10:stomp",
     "12:bide",
+    "12:charm",
     "15:stealthrock",
-    "17:bite",
-    "20:charm",
-    "26:ancientpower",
-    "30:dragontail",
-    "34:crunch",
-    "37:dragonclaw",
+    "16:bite",
+    "20:dragontail",
+    "24:stomp",
+    "28:rockslide",
+    "32:crunch",
+    "36:dragonclaw",
     "42:thrash",
-    "47:earthquake",
-    "53:horndrill",
-    "68:rockslide",
-    "75:gigaimpact",
+    "48:earthquake",
+    "54:horndrill",
+    "60:gigaimpact",
+    "66:headsmash",
     "tm:aerialace",
     "tm:assurance",
     "tm:attract",

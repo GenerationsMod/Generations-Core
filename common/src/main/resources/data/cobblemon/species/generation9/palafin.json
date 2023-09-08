@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Palafin",
   "nationalPokedexNumber": 964,
   "primaryType": "water",
@@ -32,15 +31,6 @@
     "field",
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:tropical_fish",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:jetpunch",
     "1:supersonic",

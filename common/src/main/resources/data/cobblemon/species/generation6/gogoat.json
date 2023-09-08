@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gogoat",
   "nationalPokedexNumber": 673,
   "primaryType": "grass",
@@ -24,21 +23,13 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:gogoat",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aerialace",
+    "1:earthquake",
     "1:growth",
     "1:tackle",
-    "7:vinewhip",
-    "9:tailwhip",
+    "1:tailwhip",
+    "1:vinewhip",
     "12:leechseed",
     "13:razorleaf",
     "16:worryseed",
@@ -51,7 +42,6 @@
     "47:hornleech",
     "55:leafblade",
     "58:milkdrink",
-    "60:earthquake",
     "tm:aerialace",
     "tm:attract",
     "tm:bodyslam",

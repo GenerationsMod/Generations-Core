@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gholdengo",
   "nationalPokedexNumber": 1000,
   "primaryType": "steel",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:gimmigoul_coin",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:tackle",

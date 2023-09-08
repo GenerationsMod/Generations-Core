@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Brambleghast",
   "nationalPokedexNumber": 947,
   "primaryType": "grass",
@@ -33,15 +32,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:crimson_roots",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:defensecurl",

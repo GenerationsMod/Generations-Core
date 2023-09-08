@@ -25,31 +25,41 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 50
-      }
-    ]
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
+    "1:charge",
     "1:leer",
     "1:tackle",
     "1:thundershock",
     "9:charge",
+    "12:bite",
     "13:bite",
     "13:spark",
+    "18:bite",
+    "18:spark",
     "23:roar",
+    "24:roar",
     "28:swagger",
     "31:voltswitch",
     "33:crunch",
     "33:thunderfang",
+    "36:scaryface",
+    "38:crunch",
     "42:thunderwave",
     "43:scaryface",
+    "48:crunch",
     "48:discharge",
     "53:wildcharge",
+    "54:discharge",
+    "60:swagger",
+    "68:wildcharge",
     "tm:attract",
     "tm:captivate",
     "tm:chargebeam",
@@ -139,8 +149,8 @@
   ],
   "baseScale": 1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.9,
+    "height": 1.1,
     "fixed": false
   },
   "baseFriendship": 100,

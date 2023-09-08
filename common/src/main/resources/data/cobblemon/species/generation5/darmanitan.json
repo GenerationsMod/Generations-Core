@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Darmanitan",
   "nationalPokedexNumber": 555,
   "primaryType": "fire",
@@ -15,9 +14,6 @@
     "special_defence": 55,
     "speed": 95
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 60,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -36,36 +32,27 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:birch_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:ember",
-    "1:incinerate",
+    "1:hammerarm",
     "1:rage",
     "1:rollout",
     "1:tackle",
-    "11:firefang",
-    "14:headbutt",
+    "1:taunt",
+    "12:incinerate",
+    "16:workup",
     "17:swagger",
     "19:facade",
-    "22:firepunch",
-    "25:workup",
-    "27:thrash",
-    "30:bellydrum",
+    "20:firefang",
+    "24:headbutt",
+    "28:firepunch",
     "32:uproar",
-    "33:flareblitz",
-    "35:hammerarm",
-    "39:taunt",
-    "47:superpower",
+    "38:bellydrum",
+    "44:flareblitz",
+    "50:thrash",
     "54:overheat",
+    "56:superpower",
     "tm:attract",
     "tm:bodypress",
     "tm:bodyslam",
@@ -188,7 +175,7 @@
       },
       "catchRate": 60,
       "maleRatio": 0.5,
-      "baseExperienceYield": 189,
+      "baseExperienceYield": 168,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -203,7 +190,6 @@
       "eggGroups": [
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen5"
       ],
@@ -354,7 +340,7 @@
       },
       "catchRate": 60,
       "maleRatio": 0.5,
-      "baseExperienceYield": 189,
+      "baseExperienceYield": 168,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -369,7 +355,6 @@
       "eggGroups": [
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "galar_regional"

@@ -25,34 +25,25 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:salmon",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:covet",
-    "1:furyswipes",
+    "1:faketears",
     "1:leer",
     "1:lick",
     "1:scratch",
+    "8:furyswipes",
     "13:payback",
-    "19:faketears",
-    "22:sweetscent",
-    "25:feintattack",
+    "15:feintattack",
+    "17:sweetscent",
+    "22:slash",
     "25:playnice",
     "29:playrough",
-    "31:rest",
-    "37:slash",
-    "38:scaryface",
-    "43:snore",
+    "35:scaryface",
+    "41:rest",
+    "41:snore",
     "48:highhorsepower",
-    "49:thrash",
-    "67:hammerarm",
+    "56:thrash",
+    "64:hammerarm",
     "tm:aerialace",
     "tm:attract",
     "tm:avalanche",
@@ -217,10 +208,10 @@
       "requiredContext": "cobblemon:peat_block"
     }
   ],
-  "baseScale": 1,
+  "baseScale": 1.1,
   "hitbox": {
     "width": 1,
-    "height": 1,
+    "height": 2.14,
     "fixed": false
   },
   "baseFriendship": 70,

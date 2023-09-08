@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Diancie",
   "nationalPokedexNumber": 719,
   "primaryType": "rock",
@@ -36,7 +35,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 315,
+      "baseExperienceYield": 300,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -51,7 +50,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega",
@@ -74,36 +72,27 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:amethyst_shard",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
+    "1:diamondstorm",
     "1:harden",
+    "1:rockthrow",
     "1:tackle",
-    "5:rockthrow",
-    "8:sharpen",
-    "12:smackdown",
-    "18:reflect",
-    "21:stealthrock",
-    "27:guardsplit",
-    "31:ancientpower",
-    "35:flail",
+    "5:sharpen",
+    "7:guardsplit",
+    "12:reflect",
+    "14:smackdown",
+    "21:flail",
+    "28:ancientpower",
     "35:rockpolish",
-    "40:powergem",
-    "40:skillswap",
+    "42:lightscreen",
     "46:trickroom",
     "49:rockslide",
-    "49:stoneedge",
-    "50:diamondstorm",
-    "50:moonblast",
-    "60:lightscreen",
+    "56:skillswap",
+    "63:powergem",
     "70:safeguard",
+    "70:stealthrock",
+    "77:moonblast",
+    "84:stoneedge",
     "tm:allyswitch",
     "tm:amnesia",
     "tm:batonpass",

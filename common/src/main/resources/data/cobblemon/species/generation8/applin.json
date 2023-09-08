@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Applin",
   "nationalPokedexNumber": 840,
   "primaryType": "grass",
@@ -27,15 +26,6 @@
     "grass",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:apple",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:withdraw",

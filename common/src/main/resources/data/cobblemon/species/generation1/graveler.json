@@ -17,12 +17,12 @@
     "special_defence": 45,
     "speed": 35
   },
-  "features": [
-    "alolan"
-  ],
   "catchRate": 120,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "alolan"
+  ],
   "forms": [
     {
       "name": "Alola",
@@ -192,7 +192,7 @@
         "item": "cobblemon:hard_stone",
         "percentage": 5
       },
-	  {
+      {
         "item": "cobblemon:black_augurite",
         "percentage": 5
       }
@@ -202,19 +202,19 @@
     "1:defensecurl",
     "1:mudsport",
     "1:rockpolish",
-    "1:rockthrow",
     "1:tackle",
-    "16:magnitude",
-    "21:selfdestruct",
-    "27:smackdown",
-    "29:rollout",
-    "36:bulldoze",
-    "37:rockblast",
-    "42:stealthrock",
-    "45:earthquake",
-    "49:stoneedge",
-    "53:explosion",
-    "62:doubleedge",
+    "10:rollout",
+    "12:magnitude",
+    "16:rockthrow",
+    "18:smackdown",
+    "22:bulldoze",
+    "24:selfdestruct",
+    "30:stealthrock",
+    "34:rockblast",
+    "40:earthquake",
+    "44:explosion",
+    "50:doubleedge",
+    "54:stoneedge",
     "tm:attract",
     "tm:brickbreak",
     "tm:bulldoze",

@@ -28,11 +28,13 @@
     "field"
   ],
   "behaviour": {
-    "swim": {
-      "swimSpeed": 0.25,
-      "canSwimInWater": true,
-      "canBreatheUnderwater": true,
-      "canWalkOnWater": true
+    "moving": {
+      "swim": {
+        "swimSpeed": 0.25,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      }
     }
   },
   "drops": {
@@ -50,19 +52,30 @@
     "1:growl",
     "1:rototiller",
     "1:tackle",
+    "1:watergun",
+    "5:defensecurl",
     "9:defensecurl",
+    "9:rollout",
+    "13:headbutt",
     "13:rollout",
     "15:watergun",
     "18:headbutt",
+    "18:hyperfang",
     "23:hyperfang",
+    "23:yawn",
     "28:crunch",
     "28:yawn",
     "33:amnesia",
+    "33:takedown",
+    "38:superfang",
     "38:takedown",
     "43:superfang",
     "43:swordsdance",
+    "48:amnesia",
     "48:superpower",
     "53:curse",
+    "53:superpower",
+    "58:curse",
     "tm:attract",
     "tm:blizzard",
     "tm:bulldoze",

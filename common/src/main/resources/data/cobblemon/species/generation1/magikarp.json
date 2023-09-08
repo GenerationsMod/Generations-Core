@@ -53,7 +53,7 @@
   "moves": [
     "1:splash",
     "15:tackle",
-    "30:flail",
+    "25:flail",
     "tm:bounce",
     "tm:hydropump",
     "tutor:bounce",

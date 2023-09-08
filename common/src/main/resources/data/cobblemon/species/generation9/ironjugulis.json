@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Iron Jugulis",
   "nationalPokedexNumber": 993,
   "primaryType": "dark",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aircutter",
     "1:electricterrain",

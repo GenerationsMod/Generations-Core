@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Glalie",
   "nationalPokedexNumber": 362,
   "primaryType": "ice",
@@ -36,7 +35,7 @@
       },
       "catchRate": 75,
       "maleRatio": 0.5,
-      "baseExperienceYield": 203,
+      "baseExperienceYield": 168,
       "baseFriendship": 50,
       "evYield": {
         "hp": 2,
@@ -52,7 +51,6 @@
         "fairy",
         "mineral"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -74,35 +72,26 @@
     "fairy",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:packed_ice",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
-    "1:bite",
     "1:doubleteam",
-    "1:iceshard",
+    "1:freezedry",
+    "1:headbutt",
     "1:leer",
     "1:powdersnow",
-    "16:icywind",
-    "19:headbutt",
-    "25:protect",
-    "28:crunch",
-    "28:icefang",
-    "34:icebeam",
-    "37:frostbreath",
-    "42:freezedry",
-    "42:hail",
+    "1:sheercold",
+    "15:iceshard",
+    "20:protect",
+    "25:icywind",
+    "30:frostbreath",
+    "35:bite",
+    "37:icebeam",
+    "40:icefang",
+    "47:hail",
     "47:snowscape",
-    "53:blizzard",
     "54:weatherball",
-    "61:sheercold",
+    "61:crunch",
+    "68:blizzard",
     "tm:attract",
     "tm:avalanche",
     "tm:blizzard",

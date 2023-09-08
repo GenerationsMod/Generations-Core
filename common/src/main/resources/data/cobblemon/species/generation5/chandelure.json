@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Chandelure",
   "nationalPokedexNumber": 609,
   "primaryType": "ghost",
@@ -26,15 +25,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:litwick_candle",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:confuseray",

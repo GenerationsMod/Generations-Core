@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Alomomola",
   "nationalPokedexNumber": 594,
   "primaryType": "water",
@@ -26,15 +25,6 @@
     "water_1",
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:heart_scale",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:playnice",
     "1:pound",
@@ -42,19 +32,19 @@
     "5:aquaring",
     "9:aquajet",
     "13:doubleslap",
+    "13:helpinghand",
+    "13:wideguard",
     "17:healpulse",
     "21:protect",
     "25:waterpulse",
+    "29:healingwish",
     "29:wakeupslap",
     "33:soak",
     "37:wish",
     "41:brine",
     "45:safeguard",
-    "49:helpinghand",
     "49:whirlpool",
-    "53:wideguard",
-    "57:healingwish",
-    "61:hydropump",
+    "55:hydropump",
     "egg:bounce",
     "egg:endure",
     "egg:mirrorcoat",

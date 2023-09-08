@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Crawdaunt",
   "nationalPokedexNumber": 342,
   "primaryType": "water",
@@ -27,34 +26,25 @@
     "water_1",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:damp_mulch",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
     "1:harden",
     "1:leer",
+    "1:swift",
+    "1:taunt",
     "1:visegrip",
     "1:watergun",
-    "19:bubblebeam",
+    "12:bubblebeam",
+    "16:knockoff",
     "20:doublehit",
-    "22:protect",
-    "25:knockoff",
-    "30:swift",
-    "32:razorshell",
-    "33:taunt",
-    "38:crabhammer",
-    "39:nightslash",
-    "43:swordsdance",
-    "51:crunch",
-    "52:guillotine",
+    "24:protect",
+    "28:nightslash",
+    "34:razorshell",
+    "40:swordsdance",
+    "46:crunch",
+    "52:crabhammer",
     "58:endeavor",
+    "64:guillotine",
     "tm:aerialace",
     "tm:attract",
     "tm:avalanche",

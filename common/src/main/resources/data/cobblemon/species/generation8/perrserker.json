@@ -25,15 +25,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cod",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:fakeout",
     "1:growl",
@@ -121,9 +112,9 @@
   "pokedex": [
     "cobblemon.species.perrserker.desc"
   ],
-  "preEvolution": "meowth form=galar",
+  "preEvolution": "meowth galarian",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1,
     "height": 1,

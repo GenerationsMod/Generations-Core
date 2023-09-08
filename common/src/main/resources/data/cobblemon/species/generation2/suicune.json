@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Suicune",
   "nationalPokedexNumber": 245,
   "primaryType": "water",
@@ -24,37 +23,28 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:suicune_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:bite",
+    "1:bubblebeam",
     "1:extremespeed",
+    "1:gust",
     "1:leer",
+    "1:mist",
     "1:sheercold",
     "1:watergun",
     "6:waterpulse",
-    "11:bubblebeam",
-    "21:raindance",
+    "12:bite",
+    "18:calmmind",
     "24:roar",
-    "31:gust",
-    "41:aurorabeam",
+    "29:aurorabeam",
+    "30:icefang",
+    "36:tailwind",
     "42:crunch",
-    "50:icefang",
-    "51:mist",
+    "48:extrasensory",
     "54:surf",
-    "57:tailwind",
-    "61:mirrorcoat",
-    "64:extrasensory",
-    "71:hydropump",
-    "81:calmmind",
-    "85:blizzard",
+    "60:mirrorcoat",
+    "66:raindance",
+    "72:hydropump",
+    "78:blizzard",
     "tm:agility",
     "tm:airslash",
     "tm:avalanche",

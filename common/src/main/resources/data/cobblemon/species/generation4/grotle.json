@@ -21,6 +21,9 @@
       "willSleepOnBed": false,
       "depth": "normal",
       "light": "0-4"
+    },
+    "walk": {
+      "walkSpeed": 0.2
     }
   },
   "catchRate": 45,
@@ -43,6 +46,7 @@
     ]
   },
   "moves": [
+    "1:absorb",
     "1:tackle",
     "1:withdraw",
     "9:absorb",
@@ -268,6 +272,23 @@
         {
           "variant": "held_item",
           "itemCondition": "minecraft:mangrove_propagule"
+        }
+      ]
+    },
+    {
+      "id": "grotle_torterra_cherry",
+      "variant": "level_up",
+      "result": "torterra tree=cherry",
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:cherry_sapling"
         }
       ]
     },

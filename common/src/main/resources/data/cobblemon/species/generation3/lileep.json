@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Lileep",
   "nationalPokedexNumber": 345,
   "primaryType": "rock",
@@ -25,33 +24,24 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
+    "1:constrict",
     "1:wrap",
-    "8:constrict",
-    "15:acid",
+    "4:acid",
+    "8:confuseray",
+    "12:ingrain",
+    "16:ancientpower",
     "20:megadrain",
-    "21:brine",
-    "22:ingrain",
-    "26:gigadrain",
-    "29:confuseray",
-    "36:amnesia",
-    "36:gastroacid",
-    "43:ancientpower",
-    "50:energyball",
-    "50:spitup",
-    "50:stockpile",
-    "50:swallow",
-    "64:wringout",
+    "24:brine",
+    "28:amnesia",
+    "32:gastroacid",
+    "36:gigadrain",
+    "41:spitup",
+    "41:stockpile",
+    "41:swallow",
+    "44:energyball",
+    "52:wringout",
     "egg:barrier",
     "egg:bind",
     "egg:curse",

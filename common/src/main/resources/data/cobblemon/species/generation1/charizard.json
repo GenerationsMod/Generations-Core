@@ -37,7 +37,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.875,
-      "baseExperienceYield": 285,
+      "baseExperienceYield": 267,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
         "monster",
         "dragon"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -84,7 +83,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.875,
-      "baseExperienceYield": 285,
+      "baseExperienceYield": 267,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -100,7 +99,6 @@
         "monster",
         "dragon"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -132,7 +130,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.875,
-      "baseExperienceYield": 240,
+      "baseExperienceYield": 267,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -148,7 +146,6 @@
         "monster",
         "dragon"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -211,18 +208,18 @@
     "1:scratch",
     "1:shadowclaw",
     "1:smokescreen",
+    "1:wingattack",
     "12:dragonbreath",
+    "17:dragonrage",
+    "19:firefang",
     "20:rage",
-    "27:scaryface",
-    "28:firefang",
+    "24:slash",
+    "30:flamethrower",
     "32:flameburst",
-    "34:flamethrower",
-    "36:wingattack",
-    "44:slash",
-    "54:dragonrage",
-    "62:inferno",
-    "64:firespin",
-    "66:flareblitz",
+    "39:scaryface",
+    "46:firespin",
+    "54:inferno",
+    "62:flareblitz",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:aircutter",

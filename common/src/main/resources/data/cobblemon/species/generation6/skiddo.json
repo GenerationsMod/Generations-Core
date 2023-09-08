@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Skiddo",
   "nationalPokedexNumber": 672,
   "primaryType": "grass",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:goat_horn",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:growth",
     "1:tackle",

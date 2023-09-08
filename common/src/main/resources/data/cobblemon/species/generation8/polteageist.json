@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Polteageist",
   "nationalPokedexNumber": 855,
   "primaryType": "ghost",
@@ -51,7 +50,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen8"
       ],
@@ -73,15 +71,6 @@
     "mineral",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:azalea_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aromaticmist",
     "1:astonish",

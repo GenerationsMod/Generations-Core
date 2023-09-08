@@ -25,15 +25,6 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine",
-        "percentage": 10
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "swim": {
@@ -46,25 +37,25 @@
   "moves": [
     "1:harden",
     "1:tackle",
-    "6:watergun",
-    "10:rapidspin",
+    "4:watergun",
+    "8:confuseray",
+    "12:rapidspin",
     "13:psywave",
-    "15:recover",
-    "19:camouflage",
+    "16:minimize",
+    "18:bubblebeam",
+    "20:swift",
+    "22:camouflage",
+    "24:gyroball",
     "24:psybeam",
-    "24:swift",
-    "28:bubblebeam",
-    "33:minimize",
-    "36:brine",
-    "37:gyroball",
-    "37:lightscreen",
-    "40:confuseray",
-    "42:cosmicpower",
-    "42:psychic",
+    "28:brine",
+    "32:lightscreen",
+    "35:reflecttype",
+    "36:powergem",
+    "40:psychic",
     "44:surf",
-    "46:hydropump",
-    "46:powergem",
-    "46:reflecttype",
+    "48:recover",
+    "52:cosmicpower",
+    "56:hydropump",
     "tm:blizzard",
     "tm:brine",
     "tm:confide",

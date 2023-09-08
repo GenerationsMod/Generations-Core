@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Amaura",
   "nationalPokedexNumber": 698,
   "primaryType": "rock",
@@ -25,35 +24,26 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:powder_snow_bucket",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:powdersnow",
-    "5:thunderwave",
+    "4:encore",
+    "8:ancientpower",
     "10:rockthrow",
-    "13:icywind",
+    "12:icywind",
     "15:takedown",
-    "18:mist",
-    "20:aurorabeam",
-    "26:ancientpower",
-    "30:round",
+    "16:round",
+    "20:mist",
+    "24:aurorabeam",
+    "28:thunderwave",
+    "32:naturepower",
     "34:avalanche",
     "36:freezedry",
-    "38:hail",
-    "41:naturepower",
-    "44:encore",
-    "47:lightscreen",
-    "50:icebeam",
-    "57:hyperbeam",
-    "65:blizzard",
+    "40:icebeam",
+    "44:lightscreen",
+    "48:hail",
+    "52:blizzard",
+    "56:hyperbeam",
     "egg:auroraveil",
     "egg:barrier",
     "egg:discharge",

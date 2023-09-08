@@ -17,6 +17,11 @@
     "speed": 25
   },
   "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.125
+      }
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": false,
@@ -121,6 +126,12 @@
       ]
     }
   ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.5,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.nacli.desc"

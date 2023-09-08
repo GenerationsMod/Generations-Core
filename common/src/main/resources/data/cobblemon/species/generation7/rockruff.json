@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Rockruff",
   "nationalPokedexNumber": 744,
   "primaryType": "rock",
@@ -25,30 +24,21 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:tackle",
     "4:sandattack",
-    "7:bite",
     "8:doubleteam",
-    "12:howl",
-    "15:rockthrow",
+    "12:rockthrow",
+    "16:howl",
     "18:odorsleuth",
-    "23:rocktomb",
-    "26:roar",
-    "29:stealthrock",
-    "34:rockslide",
-    "37:scaryface",
-    "40:crunch",
+    "20:bite",
+    "24:rocktomb",
+    "28:roar",
+    "32:rockslide",
+    "36:crunch",
+    "40:scaryface",
+    "44:stealthrock",
     "45:rockclimb",
     "48:stoneedge",
     "egg:crushclaw",

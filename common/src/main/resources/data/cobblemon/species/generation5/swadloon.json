@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Swadloon",
   "nationalPokedexNumber": 541,
   "primaryType": "bug",
@@ -26,22 +25,13 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:oak_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bugbite",
     "1:grasswhistle",
+    "1:protect",
     "1:razorleaf",
     "1:stringshot",
     "1:tackle",
-    "20:protect",
     "tm:attract",
     "tm:calmmind",
     "tm:confide",

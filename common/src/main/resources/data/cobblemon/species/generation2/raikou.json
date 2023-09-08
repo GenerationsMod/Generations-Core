@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Raikou",
   "nationalPokedexNumber": 243,
   "primaryType": "electric",
@@ -24,34 +23,25 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:raikou_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:bite",
     "1:charge",
     "1:extremespeed",
     "1:leer",
-    "11:thundershock",
-    "21:roar",
-    "31:quickattack",
+    "1:quickattack",
+    "1:thundershock",
+    "6:spark",
+    "12:bite",
+    "18:calmmind",
+    "24:roar",
+    "30:thunderfang",
     "36:howl",
-    "41:spark",
-    "50:thunderfang",
-    "51:reflect",
-    "57:discharge",
-    "61:crunch",
-    "64:extrasensory",
-    "71:raindance",
-    "71:thunder",
+    "42:crunch",
+    "48:extrasensory",
+    "54:discharge",
+    "60:reflect",
+    "66:raindance",
+    "72:thunder",
     "78:zapcannon",
-    "81:calmmind",
     "tm:agility",
     "tm:aurasphere",
     "tm:bodyslam",

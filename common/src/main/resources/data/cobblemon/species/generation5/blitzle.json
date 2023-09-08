@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Blitzle",
   "nationalPokedexNumber": 522,
   "primaryType": "electric",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:lead",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:quickattack",
     "4:tailwhip",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Kingambit",
   "nationalPokedexNumber": 983,
   "primaryType": "dark",
@@ -34,15 +33,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:furycutter",
     "1:leer",

@@ -26,31 +26,22 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cocoa_beans",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:poisonsting",
-    "6:sandattack",
-    "12:knockoff",
-    "13:harden",
-    "20:furycutter",
-    "20:quickattack",
-    "27:acrobatics",
-    "28:feintattack",
-    "34:swordsdance",
-    "36:slash",
-    "38:uturn",
-    "42:xscissor",
-    "44:screech",
+    "4:sandattack",
+    "7:harden",
+    "10:knockoff",
+    "13:quickattack",
+    "16:furycutter",
+    "19:feintattack",
+    "22:acrobatics",
+    "27:slash",
+    "30:uturn",
+    "35:screech",
+    "40:xscissor",
     "45:skyuppercut",
-    "52:guillotine",
+    "50:swordsdance",
+    "55:guillotine",
     "egg:agility",
     "egg:batonpass",
     "egg:counter",
@@ -199,10 +190,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.7,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 70,

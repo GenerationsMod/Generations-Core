@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zangoose",
   "nationalPokedexNumber": 335,
   "primaryType": "normal",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:potion",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bellydrum",
     "1:counter",
@@ -44,27 +34,27 @@
     "1:finalgambit",
     "1:flail",
     "1:furyswipes",
+    "1:leer",
     "1:nightslash",
     "1:quickguard",
     "1:scratch",
-    "4:leer",
-    "7:quickattack",
-    "10:swordsdance",
+    "5:quickattack",
+    "8:furycutter",
     "12:metalclaw",
-    "13:furycutter",
+    "12:pursuit",
     "15:honeclaws",
     "19:slash",
     "22:powertrip",
-    "25:pursuit",
-    "26:revenge",
-    "27:embargo",
-    "31:crushclaw",
+    "22:revenge",
+    "26:crushclaw",
+    "29:falseswipe",
+    "33:embargo",
     "33:switcheroo",
-    "37:taunt",
-    "46:detect",
-    "48:xscissor",
-    "53:closecombat",
-    "55:falseswipe",
+    "36:detect",
+    "40:xscissor",
+    "43:taunt",
+    "47:swordsdance",
+    "50:closecombat",
     "egg:bellydrum",
     "egg:counter",
     "egg:curse",

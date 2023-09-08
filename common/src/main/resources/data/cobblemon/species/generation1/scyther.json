@@ -26,15 +26,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:shears",
-        "percentage": 10
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
@@ -46,21 +37,21 @@
     "1:leer",
     "1:quickattack",
     "1:vacuumwave",
-    "6:focusenergy",
-    "11:pursuit",
-    "16:falseswipe",
-    "21:agility",
-    "26:wingattack",
-    "31:slash",
+    "4:furycutter",
+    "8:falseswipe",
+    "9:pursuit",
+    "12:wingattack",
+    "16:doubleteam",
+    "20:doublehit",
+    "24:slash",
+    "28:focusenergy",
+    "32:agility",
     "33:razorwind",
-    "36:swordsdance",
-    "41:doubleteam",
-    "41:xscissor",
+    "36:airslash",
+    "40:xscissor",
     "44:laserfocus",
+    "44:swordsdance",
     "45:nightslash",
-    "46:furycutter",
-    "49:doublehit",
-    "53:airslash",
     "61:feint",
     "egg:batonpass",
     "egg:bugbuzz",

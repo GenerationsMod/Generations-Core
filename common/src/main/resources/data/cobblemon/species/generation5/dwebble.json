@@ -27,31 +27,22 @@
     "bug",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:red_sand",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:furycutter",
-    "5:rockblast",
-    "7:withdraw",
-    "11:sandattack",
+    "1:sandattack",
+    "4:withdraw",
+    "8:smackdown",
+    "12:bugbite",
     "13:feintattack",
-    "17:smackdown",
-    "19:rockpolish",
-    "23:bugbite",
-    "24:stealthrock",
-    "29:rockslide",
-    "31:slash",
-    "35:xscissor",
-    "37:shellsmash",
-    "41:flail",
-    "43:rockwrecker",
+    "16:flail",
+    "20:slash",
+    "24:rockslide",
+    "28:stealthrock",
+    "32:rockblast",
+    "36:xscissor",
+    "40:rockpolish",
+    "44:shellsmash",
+    "48:rockwrecker",
     "egg:block",
     "egg:counter",
     "egg:curse",

@@ -24,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:lightning_rod",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:batonpass",
     "1:bite",
@@ -46,18 +37,18 @@
     "1:tackle",
     "1:tailwhip",
     "1:takedown",
-    "8:sandattack",
-    "9:babydolleyes",
-    "16:thundershock",
-    "23:quickattack",
-    "30:doublekick",
-    "36:pinmissile",
-    "42:thunderwave",
-    "43:thunderfang",
-    "47:agility",
-    "50:lastresort",
-    "52:thunder",
-    "78:discharge",
+    "1:thundershock",
+    "5:sandattack",
+    "10:quickattack",
+    "15:babydolleyes",
+    "20:thunderwave",
+    "25:doublekick",
+    "30:thunderfang",
+    "35:pinmissile",
+    "40:discharge",
+    "45:agility",
+    "50:thunder",
+    "55:lastresort",
     "tm:agility",
     "tm:attract",
     "tm:batonpass",

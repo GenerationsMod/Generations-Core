@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Carkol",
   "nationalPokedexNumber": 838,
   "primaryType": "rock",
@@ -26,15 +25,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:coal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:rapidspin",
     "1:smackdown",

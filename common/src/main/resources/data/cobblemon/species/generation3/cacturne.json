@@ -26,37 +26,36 @@
     "grass",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cactus",
-        "percentage": 25
-      }
-    ]
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:absorb",
+    "1:destinybond",
     "1:growth",
     "1:leer",
     "1:poisonsting",
     "1:revenge",
-    "13:leechseed",
+    "1:spikyshield",
+    "10:leechseed",
+    "13:sandattack",
     "16:bulletseed",
-    "17:sandattack",
+    "16:needlearm",
+    "19:feintattack",
     "19:powertrip",
-    "21:pinmissile",
-    "25:ingrain",
-    "29:feintattack",
-    "32:spikyshield",
-    "35:spikes",
-    "41:needlearm",
-    "41:suckerpunch",
+    "22:ingrain",
+    "26:payback",
+    "30:spikes",
+    "35:suckerpunch",
+    "38:pinmissile",
     "44:energyball",
-    "47:cottonspore",
-    "47:payback",
-    "53:sandstorm",
-    "59:destinybond",
+    "49:cottonspore",
+    "54:sandstorm",
     "tm:attract",
     "tm:bodyslam",
     "tm:brickbreak",

@@ -36,7 +36,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 270,
+      "baseExperienceYield": 250,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -51,7 +51,6 @@
       "eggGroups": [
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -82,7 +81,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 225,
+      "baseExperienceYield": 250,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -97,7 +96,6 @@
       "eggGroups": [
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -118,15 +116,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 25
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
@@ -135,24 +124,24 @@
     }
   },
   "moves": [
+    "1:confuseray",
     "1:hypnosis",
     "1:lick",
+    "1:meanlook",
     "1:perishsong",
     "1:reflecttype",
-    "1:spite",
-    "13:curse",
-    "13:meanlook",
-    "16:nightshade",
-    "21:confuseray",
-    "22:suckerpunch",
-    "25:shadowpunch",
-    "28:payback",
-    "31:dreameater",
-    "39:destinybond",
-    "44:darkpulse",
-    "45:shadowball",
-    "53:nightmare",
-    "55:hex",
+    "1:shadowpunch",
+    "12:payback",
+    "16:spite",
+    "20:curse",
+    "24:hex",
+    "30:nightshade",
+    "36:suckerpunch",
+    "42:darkpulse",
+    "48:shadowball",
+    "54:destinybond",
+    "60:dreameater",
+    "61:nightmare",
     "tm:acidspray",
     "tm:allyswitch",
     "tm:attract",
@@ -340,10 +329,10 @@
   ],
   "preEvolution": "haunter",
   "evolutions": [],
-  "baseScale": 1.5,
+  "baseScale": 0.95,
   "hitbox": {
-    "width": 0.9,
-    "height": 1.1,
+    "width": 1.3,
+    "height": 1.6,
     "fixed": false
   },
   "baseFriendship": 50,

@@ -43,24 +43,37 @@
       }
     ]
   },
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.6
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "moves": [
-    "1:furyattack",
     "1:growl",
     "1:peck",
-    "1:pluck",
-    "1:pursuit",
     "1:quickattack",
-    "21:triattack",
+    "1:rage",
+    "1:triattack",
+    "12:furyattack",
+    "15:pursuit",
+    "19:pluck",
     "22:doublehit",
-    "25:rage",
-    "28:acupressure",
+    "26:agility",
+    "29:uproar",
+    "34:acupressure",
     "38:swordsdance",
-    "38:uproar",
     "43:jumpkick",
     "47:drillpeck",
-    "54:endeavor",
-    "60:agility",
-    "60:thrash",
+    "52:endeavor",
+    "56:thrash",
     "tm:aerialace",
     "tm:attract",
     "tm:captivate",

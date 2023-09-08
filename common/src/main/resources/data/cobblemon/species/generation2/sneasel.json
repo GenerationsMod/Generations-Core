@@ -17,9 +17,6 @@
     "special_defence": 75,
     "speed": 115
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 60,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -43,6 +40,7 @@
       },
       "catchRate": 60,
       "maleRatio": 0.5,
+      "baseExperienceYield": 86,
       "baseFriendship": 35,
       "evYield": {
         "hp": 0,
@@ -159,32 +157,23 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ice",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:scratch",
-    "1:taunt",
-    "8:quickattack",
-    "15:screech",
-    "22:feintattack",
-    "29:furyswipes",
-    "35:honeclaws",
-    "36:agility",
+    "6:taunt",
+    "10:feintattack",
+    "12:quickattack",
+    "18:metalclaw",
+    "24:icywind",
+    "30:furyswipes",
+    "36:honeclaws",
     "40:snatch",
-    "43:icywind",
+    "42:beatup",
     "44:punishment",
-    "49:iceshard",
-    "50:slash",
-    "57:beatup",
-    "64:metalclaw",
+    "47:iceshard",
+    "48:agility",
+    "54:screech",
+    "60:slash",
     "egg:assist",
     "egg:avalanche",
     "egg:bite",
@@ -376,7 +365,7 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 0.6,
     "height": 1.1,

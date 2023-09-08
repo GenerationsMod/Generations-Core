@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Roaring Moon",
   "nationalPokedexNumber": 1005,
   "primaryType": "dragon",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:stone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:breakingswipe",

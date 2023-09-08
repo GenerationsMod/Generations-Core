@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Abomasnow",
   "nationalPokedexNumber": 460,
   "primaryType": "grass",
@@ -37,7 +36,7 @@
       },
       "catchRate": 60,
       "maleRatio": 0.5,
-      "baseExperienceYield": 208,
+      "baseExperienceYield": 173,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -53,7 +52,6 @@
         "monster",
         "grass"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -75,30 +73,30 @@
     "monster",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ice",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:auroraveil",
     "1:icepunch",
     "1:icywind",
     "1:leafage",
     "1:leer",
+    "1:mist",
     "1:powdersnow",
     "1:razorleaf",
     "13:grasswhistle",
+    "15:iceshard",
     "17:swagger",
+    "20:razorleaf",
     "21:mist",
+    "25:icywind",
     "26:iceshard",
+    "30:swagger",
     "31:ingrain",
+    "35:ingrain",
     "36:woodhammer",
+    "43:woodhammer",
     "47:blizzard",
+    "49:blizzard",
+    "56:sheercold",
     "58:sheercold",
     "tm:attract",
     "tm:avalanche",

@@ -36,33 +36,29 @@
     "grass"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
       {
         "item": "minecraft:red_mushroom",
         "quantityRange": "1-2",
         "percentage": 66
-      },
-      {
-        "item": "generations_core:boost_mulch",
-        "percentage": 5
       }
     ]
   },
   "moves": [
     "1:scratch",
-    "7:stunspore",
+    "6:poisonpowder",
+    "6:stunspore",
     "11:absorb",
-    "13:poisonpowder",
+    "11:leechlife",
     "17:furycutter",
-    "19:leechlife",
-    "25:spore",
-    "31:slash",
-    "37:growth",
-    "43:gigadrain",
-    "43:xscissor",
-    "49:aromatherapy",
+    "22:spore",
+    "27:slash",
+    "33:growth",
+    "38:gigadrain",
+    "43:aromatherapy",
     "49:ragepowder",
+    "54:xscissor",
     "egg:agility",
     "egg:bugbite",
     "egg:counter",

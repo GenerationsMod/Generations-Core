@@ -35,15 +35,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:salmon",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:covet",
     "1:faketears",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sliggoo",
   "nationalPokedexNumber": 705,
   "primaryType": "dragon",
@@ -16,9 +15,6 @@
     "special_defence": 113,
     "speed": 60
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -42,6 +38,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
+      "baseExperienceYield": 158,
       "baseFriendship": 35,
       "evYield": {
         "hp": 0,
@@ -140,31 +137,22 @@
   "eggGroups": [
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:gooey_mulch",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:absorb",
     "1:acidarmor",
     "1:bubble",
+    "1:dragonbreath",
     "1:tackle",
     "1:watergun",
-    "5:absorb",
-    "9:protect",
     "13:bide",
-    "18:dragonbreath",
-    "25:raindance",
+    "15:protect",
+    "20:flail",
     "25:waterpulse",
-    "28:flail",
-    "32:bodyslam",
-    "38:muddywater",
+    "30:raindance",
+    "35:dragonpulse",
     "43:curse",
-    "47:dragonpulse",
+    "49:bodyslam",
+    "56:muddywater",
     "tm:acidspray",
     "tm:attract",
     "tm:blizzard",

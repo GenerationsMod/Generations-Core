@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Snom",
   "nationalPokedexNumber": 872,
   "primaryType": "ice",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blue_ice",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:powdersnow",
     "1:strugglebug",

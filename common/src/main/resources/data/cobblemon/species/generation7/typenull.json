@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Type: Null",
   "nationalPokedexNumber": 772,
   "primaryType": "normal",
@@ -23,33 +22,24 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:imprison",
     "1:tackle",
+    "5:aerialace",
     "5:rage",
     "10:pursuit",
-    "15:imprison",
-    "20:aerialace",
+    "10:scaryface",
+    "15:doublehit",
+    "20:metalsound",
     "25:crushclaw",
-    "30:scaryface",
-    "35:xscissor",
-    "40:takedown",
-    "45:metalsound",
-    "50:ironhead",
-    "55:doublehit",
-    "60:airslash",
+    "30:airslash",
+    "35:triattack",
+    "40:xscissor",
+    "45:ironhead",
+    "50:takedown",
+    "55:doubleedge",
     "65:punishment",
     "70:razorwind",
-    "75:triattack",
-    "80:doubleedge",
     "85:healblock",
     "tm:aerialace",
     "tm:airslash",

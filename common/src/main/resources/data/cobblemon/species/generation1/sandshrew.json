@@ -16,6 +16,11 @@
     "speed": 40
   },
   "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.29
+      }
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": false,
@@ -23,12 +28,12 @@
       "light": "0-4"
     }
   },
-  "features": [
-    "alolan"
-  ],
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "alolan"
+  ],
   "forms": [
     {
       "name": "Alola",
@@ -63,35 +68,26 @@
       "eggGroups": [
         "field"
       ],
-      "drops": {
-        "amount": "1",
-        "entries": [
-          {
-            "item": "minecraft:sand",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:defensecurl",
         "1:scratch",
         "3:bide",
         "3:mist",
-        "5:powdersnow",
+        "6:powdersnow",
         "7:iceball",
-        "9:rapidspin",
         "9:rollout",
-        "11:furycutter",
-        "14:metalclaw",
-        "17:swift",
-        "20:furyswipes",
-        "23:irondefense",
-        "26:slash",
-        "30:ironhead",
-        "34:gyroball",
-        "38:swordsdance",
+        "12:furycutter",
+        "15:rapidspin",
+        "18:metalclaw",
+        "21:swift",
+        "24:furyswipes",
+        "27:irondefense",
+        "30:slash",
+        "33:ironhead",
+        "36:gyroball",
+        "39:swordsdance",
         "42:hail",
-        "46:blizzard",
+        "45:blizzard",
         "egg:amnesia",
         "egg:chipaway",
         "egg:counter",
@@ -230,35 +226,26 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sand",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
+    "1:defensecurl",
     "1:scratch",
-    "6:defensecurl",
-    "11:sandattack",
-    "13:rapidspin",
-    "17:magnitude",
-    "17:poisonsting",
+    "3:poisonsting",
+    "6:sandattack",
+    "9:rollout",
+    "12:furycutter",
+    "14:magnitude",
+    "15:rapidspin",
     "18:bulldoze",
-    "21:rollout",
-    "23:slash",
-    "25:furycutter",
+    "21:swift",
+    "23:sandtomb",
+    "24:furyswipes",
     "27:agility",
-    "30:dig",
-    "30:swift",
-    "33:gyroball",
-    "37:furyswipes",
-    "38:swordsdance",
-    "45:sandtomb",
-    "46:earthquake",
-    "53:sandstorm",
+    "30:slash",
+    "33:dig",
+    "36:gyroball",
+    "39:swordsdance",
+    "42:sandstorm",
+    "45:earthquake",
     "egg:chipaway",
     "egg:counter",
     "egg:crushclaw",

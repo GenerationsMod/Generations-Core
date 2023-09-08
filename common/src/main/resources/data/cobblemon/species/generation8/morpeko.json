@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Morpeko",
   "nationalPokedexNumber": 877,
   "primaryType": "electric",
@@ -25,15 +24,6 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wheat",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:tailwhip",
     "1:thundershock",
@@ -161,7 +151,6 @@
         "field",
         "fairy"
       ],
-      "moves": [],
       "labels": [
         "gen8"
       ],

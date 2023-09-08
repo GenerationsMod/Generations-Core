@@ -34,31 +34,22 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:disable",
     "1:foresight",
     "1:tackle",
-    "9:supersonic",
-    "17:confusion",
-    "20:poisonpowder",
+    "5:supersonic",
+    "11:confusion",
+    "13:poisonpowder",
+    "17:psybeam",
+    "23:stunspore",
     "25:bugbuzz",
-    "25:leechlife",
-    "28:stunspore",
-    "33:psybeam",
-    "35:signalbeam",
-    "36:sleeppowder",
+    "25:signalbeam",
+    "29:sleeppowder",
+    "35:leechlife",
     "37:zenheadbutt",
     "41:poisonfang",
-    "41:psychic",
+    "47:psychic",
     "egg:agility",
     "egg:batonpass",
     "egg:bugbite",

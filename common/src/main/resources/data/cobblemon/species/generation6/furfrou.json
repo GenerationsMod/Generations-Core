@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Furfrou",
   "nationalPokedexNumber": 676,
   "primaryType": "normal",
@@ -23,15 +22,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:tackle",

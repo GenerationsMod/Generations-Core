@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Hatterene",
   "nationalPokedexNumber": 858,
   "primaryType": "psychic",
@@ -55,7 +54,6 @@
       "eggGroups": [
         "fairy"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -76,15 +74,6 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ender_pearl",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:brutalswing",
     "1:confusion",

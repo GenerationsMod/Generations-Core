@@ -27,30 +27,42 @@
     "water_1",
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 50
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      },
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      },
+      "walk": {
+        "walkSpeed": 0.3
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:growl",
     "1:watergun",
-    "7:supersonic",
-    "13:wingattack",
-    "19:waterpulse",
-    "21:mist",
-    "29:roost",
-    "31:quickattack",
-    "33:aircutter",
-    "42:aerialace",
-    "43:pursuit",
-    "47:airslash",
-    "50:hurricane",
-    "55:agility",
+    "5:quickattack",
+    "10:supersonic",
+    "15:wingattack",
+    "20:waterpulse",
+    "22:aircutter",
+    "26:agility",
+    "26:pursuit",
+    "29:aerialace",
+    "30:airslash",
+    "35:mist",
+    "40:roost",
+    "45:hurricane",
     "egg:aerialace",
     "egg:agility",
     "egg:aircutter",
@@ -165,10 +177,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.6,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.7,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 50,

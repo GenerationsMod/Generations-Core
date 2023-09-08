@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Castform",
   "nationalPokedexNumber": 351,
   "primaryType": "normal",
@@ -50,7 +49,6 @@
         "fairy",
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen3"
       ],
@@ -95,7 +93,6 @@
         "fairy",
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen3"
       ],
@@ -140,7 +137,6 @@
         "fairy",
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen3"
       ],
@@ -161,29 +157,20 @@
     "fairy",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:lightning_rod",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
     "10:ember",
     "10:powdersnow",
     "10:watergun",
+    "15:headbutt",
     "20:hail",
-    "20:headbutt",
     "20:raindance",
     "20:sunnyday",
-    "30:weatherball",
+    "25:weatherball",
+    "35:blizzard",
+    "35:fireblast",
+    "35:hydropump",
     "45:hurricane",
-    "50:blizzard",
-    "50:fireblast",
-    "50:hydropump",
     "egg:amnesia",
     "egg:clearsmog",
     "egg:cosmicpower",

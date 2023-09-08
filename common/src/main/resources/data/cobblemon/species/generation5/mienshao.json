@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mienshao",
   "nationalPokedexNumber": 620,
   "primaryType": "fighting",
@@ -26,35 +25,26 @@
     "field",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:awakening",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:detect",
     "1:fakeout",
     "1:meditate",
     "1:pound",
     "1:quickguard",
+    "1:reversal",
     "15:furyswipes",
     "17:doubleslap",
+    "20:wideguard",
     "21:swift",
-    "25:calmmind",
-    "29:forcepalm",
-    "33:drainpunch",
+    "25:forcepalm",
+    "30:uturn",
+    "35:drainpunch",
     "37:jumpkick",
     "40:honeclaws",
-    "41:uturn",
-    "45:wideguard",
-    "49:bounce",
-    "56:highjumpkick",
-    "63:reversal",
-    "70:aurasphere",
+    "45:aurasphere",
+    "53:bounce",
+    "59:calmmind",
+    "66:highjumpkick",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

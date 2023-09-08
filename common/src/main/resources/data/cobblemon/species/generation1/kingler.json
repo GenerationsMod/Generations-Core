@@ -53,7 +53,6 @@
       "eggGroups": [
         "water_3"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -102,17 +101,17 @@
     "1:visegrip",
     "1:watergun",
     "1:wideguard",
-    "15:bubblebeam",
-    "23:mudshot",
-    "27:stomp",
+    "12:mudshot",
+    "16:protect",
+    "20:bubblebeam",
+    "24:stomp",
+    "31:flail",
     "36:razorshell",
-    "38:guillotine",
-    "42:protect",
-    "44:slam",
+    "42:slam",
     "48:swordsdance",
     "51:brine",
-    "57:crabhammer",
-    "65:flail",
+    "54:crabhammer",
+    "60:guillotine",
     "tm:agility",
     "tm:allyswitch",
     "tm:amnesia",

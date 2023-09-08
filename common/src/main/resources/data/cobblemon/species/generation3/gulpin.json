@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gulpin",
   "nationalPokedexNumber": 316,
   "primaryType": "poison",
@@ -25,37 +24,24 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 20
-      },
-      {
-        "item": "generations_core:gulpin_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:pound",
-    "6:yawn",
-    "9:poisongas",
-    "14:sludge",
-    "17:amnesia",
-    "23:encore",
-    "28:toxic",
-    "34:acidspray",
-    "34:spitup",
-    "34:stockpile",
-    "34:swallow",
-    "39:sludgebomb",
-    "40:belch",
-    "44:gastroacid",
+    "5:yawn",
+    "8:poisongas",
+    "10:sludge",
+    "12:amnesia",
+    "17:acidspray",
+    "20:encore",
+    "25:toxic",
+    "28:spitup",
+    "28:stockpile",
+    "28:swallow",
+    "33:sludgebomb",
+    "36:gastroacid",
+    "41:belch",
     "44:painsplit",
-    "49:wringout",
-    "54:gunkshot",
+    "44:wringout",
+    "49:gunkshot",
     "egg:acidarmor",
     "egg:clearsmog",
     "egg:curse",

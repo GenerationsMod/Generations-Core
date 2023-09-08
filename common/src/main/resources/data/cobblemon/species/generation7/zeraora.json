@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zeraora",
   "nationalPokedexNumber": 807,
   "primaryType": "electric",
@@ -23,34 +22,25 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:lightning_rod",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
+    "1:fakeout",
     "1:poweruppunch",
+    "1:quickattack",
     "1:scratch",
+    "1:snarl",
     "1:spark",
-    "5:honeclaws",
-    "8:quickattack",
-    "12:furyswipes",
-    "15:voltswitch",
-    "19:snarl",
-    "22:fakeout",
-    "26:charge",
-    "29:thunderpunch",
-    "33:slash",
-    "36:wildcharge",
-    "40:quickguard",
-    "43:plasmafists",
-    "47:closecombat",
-    "50:discharge",
+    "8:furyswipes",
+    "16:quickguard",
+    "24:slash",
+    "32:voltswitch",
+    "40:charge",
+    "48:thunderpunch",
+    "56:honeclaws",
+    "64:discharge",
+    "72:wildcharge",
     "80:agility",
+    "88:plasmafists",
+    "96:closecombat",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

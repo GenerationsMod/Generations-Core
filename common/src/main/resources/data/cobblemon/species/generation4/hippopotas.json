@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Hippopotas",
   "nationalPokedexNumber": 449,
   "primaryType": "ground",
@@ -24,29 +23,28 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:melon_slice",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:sandattack",
     "1:tackle",
+    "4:bite",
     "7:bite",
+    "8:yawn",
+    "12:sandtomb",
     "13:yawn",
+    "16:dig",
     "19:dig",
     "19:takedown",
+    "20:crunch",
     "24:sandstorm",
     "25:sandtomb",
+    "28:takedown",
     "31:crunch",
     "32:roar",
     "36:rest",
     "37:earthquake",
+    "40:earthquake",
     "44:doubleedge",
+    "48:fissure",
     "50:fissure",
     "52:slackoff",
     "egg:bodyslam",

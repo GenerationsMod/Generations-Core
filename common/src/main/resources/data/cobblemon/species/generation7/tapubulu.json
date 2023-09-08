@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tapu Bulu",
   "nationalPokedexNumber": 787,
   "primaryType": "grass",
@@ -25,36 +24,27 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:totem_of_undying",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:disable",
-    "1:grassyterrain",
     "1:leafage",
-    "1:meanlook",
     "1:rocksmash",
     "1:superpower",
-    "1:whirlwind",
-    "1:withdraw",
-    "1:woodhammer",
-    "8:hornattack",
+    "5:withdraw",
+    "10:disable",
     "14:gigadrain",
+    "15:leechseed",
     "20:megadrain",
-    "20:scaryface",
-    "26:leechseed",
-    "32:hornleech",
+    "25:whirlwind",
+    "30:hornattack",
+    "35:scaryface",
     "38:rototiller",
-    "43:naturesmadness",
-    "48:zenheadbutt",
-    "53:megahorn",
-    "58:skullbash",
+    "40:hornleech",
+    "45:zenheadbutt",
+    "50:meanlook",
+    "55:naturesmadness",
+    "60:woodhammer",
+    "65:megahorn",
+    "70:skullbash",
+    "75:grassyterrain",
     "tm:brickbreak",
     "tm:brutalswing",
     "tm:bulkup",

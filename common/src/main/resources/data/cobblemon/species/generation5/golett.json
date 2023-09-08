@@ -34,35 +34,26 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_copper",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
-    "1:defensecurl",
-    "1:pound",
-    "5:mudslap",
+    "1:mudslap",
+    "4:defensecurl",
+    "8:pound",
     "9:rollout",
-    "13:shadowpunch",
-    "17:irondefense",
-    "21:megapunch",
-    "21:stompingtantrum",
-    "25:magnitude",
-    "30:dynamicpunch",
-    "35:nightshade",
+    "12:shadowpunch",
+    "16:curse",
+    "20:nightshade",
+    "24:stompingtantrum",
+    "28:irondefense",
+    "30:magnitude",
+    "32:megapunch",
     "36:shadowball",
-    "40:curse",
     "40:heavyslam",
     "44:phantomforce",
-    "45:earthquake",
-    "50:hammerarm",
-    "55:focuspunch",
+    "48:hammerarm",
+    "52:earthquake",
+    "56:dynamicpunch",
+    "61:focuspunch",
     "tm:allyswitch",
     "tm:brickbreak",
     "tm:bulldoze",

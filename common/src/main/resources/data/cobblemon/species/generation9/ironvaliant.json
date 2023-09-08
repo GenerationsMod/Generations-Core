@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Iron Valiant",
   "nationalPokedexNumber": 1006,
   "primaryType": "fairy",
@@ -32,15 +31,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:fern",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:disable",
     "1:doubleteam",

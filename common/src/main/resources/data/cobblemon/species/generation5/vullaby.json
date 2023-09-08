@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Vullaby",
   "nationalPokedexNumber": 629,
   "primaryType": "dark",
@@ -26,35 +25,26 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:gust",
     "1:leer",
     "5:furyattack",
-    "10:pluck",
-    "14:nastyplot",
-    "19:flatter",
+    "6:flatter",
+    "12:pluck",
+    "18:tailwind",
     "23:feintattack",
     "24:knockoff",
     "28:punishment",
     "30:irondefense",
-    "32:defog",
-    "37:tailwind",
-    "41:airslash",
-    "46:darkpulse",
+    "36:whirlwind",
+    "42:airslash",
+    "48:darkpulse",
     "50:embargo",
-    "55:whirlwind",
-    "59:bravebird",
+    "54:nastyplot",
+    "60:defog",
     "64:mirrormove",
     "66:attract",
+    "72:bravebird",
     "egg:faketears",
     "egg:foulplay",
     "egg:knockoff",

@@ -25,16 +25,21 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wheat_seeds",
-        "percentage": 50
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
+    "1:airslash",
     "1:bravebird",
     "1:focusenergy",
     "1:growl",
@@ -42,13 +47,12 @@
     "1:pluck",
     "1:quickattack",
     "13:wingattack",
-    "19:doubleteam",
+    "17:doubleteam",
+    "21:aerialace",
     "27:quickguard",
-    "28:endeavor",
-    "38:aerialace",
-    "49:agility",
+    "33:agility",
+    "45:endeavor",
     "57:reversal",
-    "61:airslash",
     "tm:aerialace",
     "tm:attract",
     "tm:captivate",
@@ -113,10 +117,10 @@
   ],
   "preEvolution": "taillow",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.7,
+    "height": 1.2,
     "fixed": false
   },
   "baseFriendship": 70,

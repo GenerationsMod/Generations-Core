@@ -26,22 +26,14 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mangrove_roots",
-        "percentage": 25
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
         "canFly": true
       },
-      "walk": {
-        "canWalk": false
+      "swim": {
+        "canSwimInWater": true,
+        "canWalkOnWater": true
       }
     }
   },
@@ -49,16 +41,16 @@
     "1:foresight",
     "1:tackle",
     "6:quickattack",
-    "12:doubleteam",
-    "17:sonicboom",
-    "23:hypnosis",
-    "25:detect",
+    "11:doubleteam",
+    "14:sonicboom",
+    "17:detect",
+    "22:supersonic",
+    "27:uproar",
     "30:pursuit",
-    "31:supersonic",
     "33:ancientpower",
-    "34:uproar",
-    "39:wingattack",
-    "49:screech",
+    "38:hypnosis",
+    "43:wingattack",
+    "46:screech",
     "49:uturn",
     "54:airslash",
     "57:bugbuzz",

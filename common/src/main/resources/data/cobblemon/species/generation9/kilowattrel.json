@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Kilowattrel",
   "nationalPokedexNumber": 941,
   "primaryType": "electric",
@@ -35,15 +34,6 @@
     "water_1",
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:peck",

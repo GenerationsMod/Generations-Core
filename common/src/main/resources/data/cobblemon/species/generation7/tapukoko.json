@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tapu Koko",
   "nationalPokedexNumber": 785,
   "primaryType": "electric",
@@ -25,35 +24,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:totem_of_undying",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:bravebird",
-    "1:electricterrain",
-    "1:falseswipe",
-    "1:meanlook",
-    "1:powerswap",
     "1:quickattack",
     "1:thundershock",
-    "1:withdraw",
-    "8:spark",
+    "5:withdraw",
     "10:fairywind",
-    "14:shockwave",
-    "20:screech",
-    "26:charge",
-    "32:wildcharge",
+    "15:falseswipe",
+    "20:spark",
+    "25:shockwave",
+    "30:charge",
+    "35:agility",
     "38:mirrormove",
-    "43:naturesmadness",
-    "48:discharge",
-    "53:agility",
+    "40:screech",
+    "45:discharge",
+    "50:meanlook",
+    "55:naturesmadness",
     "58:electroball",
+    "60:wildcharge",
+    "65:bravebird",
+    "70:powerswap",
+    "75:electricterrain",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

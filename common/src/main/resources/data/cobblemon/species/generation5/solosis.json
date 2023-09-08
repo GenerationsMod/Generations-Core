@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Solosis",
   "nationalPokedexNumber": 577,
   "primaryType": "psychic",
@@ -25,34 +24,25 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:protect",
     "1:psywave",
-    "3:reflect",
+    "4:recover",
     "7:rollout",
+    "8:endeavor",
     "10:snatch",
     "12:psybeam",
     "14:hiddenpower",
-    "16:lightscreen",
-    "19:charm",
-    "24:recover",
-    "25:psyshock",
+    "16:charm",
+    "20:psyshock",
+    "24:lightscreen",
+    "24:reflect",
     "28:allyswitch",
-    "28:endeavor",
-    "31:futuresight",
     "33:painsplit",
-    "37:psychic",
+    "36:psychic",
     "40:skillswap",
+    "44:futuresight",
     "46:healblock",
     "48:wonderroom",
     "egg:acidarmor",

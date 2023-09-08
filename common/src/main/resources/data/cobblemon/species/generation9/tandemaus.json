@@ -34,15 +34,6 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:potato",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:babydolleyes",
     "1:pound",
@@ -100,6 +91,12 @@
     "tm:uturn",
     "tm:waterpulse"
   ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1.25,
+    "height": 0.75,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
@@ -111,19 +108,6 @@
       "id": "tandemaus_maushold",
       "variant": "level_up",
       "result": "maushold",
-      "consumeHeldItem": false,
-      "learnableMoves": [],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 25
-        }
-      ]
-    },
-    {
-      "id": "tandemaus_maushold",
-      "variant": "level_up",
-      "result": "maushold form=four",
       "consumeHeldItem": false,
       "learnableMoves": [],
       "requirements": [

@@ -25,33 +25,41 @@
     "monster",
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:clay_ball",
-        "percentage": 25
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      },
+      "walk": {
+        "walkSpeed": 0.25
       }
-    ]
+    }
   },
   "moves": [
+    "1:agility",
     "1:leer",
     "1:rage",
     "1:scratch",
     "1:watergun",
-    "21:bite",
+    "13:bite",
+    "15:scaryface",
     "21:icefang",
     "24:flail",
-    "24:thrash",
-    "28:scaryface",
-    "30:agility",
     "32:crunch",
     "37:chipaway",
-    "38:slash",
-    "47:screech",
-    "50:aquatail",
-    "58:hydropump",
-    "58:superpower",
+    "45:slash",
+    "50:screech",
+    "58:thrash",
+    "63:aquatail",
+    "71:superpower",
+    "76:hydropump",
     "tm:aerialace",
     "tm:attract",
     "tm:avalanche",
@@ -184,10 +192,10 @@
   ],
   "preEvolution": "croconaw",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.05,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.2,
+    "height": 2.1,
     "fixed": false
   },
   "baseFriendship": 70,

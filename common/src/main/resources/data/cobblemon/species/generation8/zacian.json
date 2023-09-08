@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zacian",
   "nationalPokedexNumber": 888,
   "primaryType": "fairy",
@@ -35,7 +34,7 @@
       },
       "catchRate": 10,
       "maleRatio": -1,
-      "baseExperienceYield": 360,
+      "baseExperienceYield": 335,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -73,15 +72,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:crowned_sword",
-        "percentage": 100
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:howl",

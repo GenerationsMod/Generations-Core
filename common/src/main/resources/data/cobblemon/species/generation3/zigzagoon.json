@@ -21,7 +21,7 @@
   ],
   "catchRate": 255,
   "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "shoulderMountable": true,
   "forms": [
     {
       "name": "Galar",
@@ -131,7 +131,7 @@
       "weight": 175,
       "evolutions": [
         {
-          "id": "zigzagoon_linoone",
+          "id": "galarian_zigzagoon_linoone",
           "variant": "level_up",
           "result": "linoone form=galar",
           "consumeHeldItem": false,
@@ -146,6 +146,12 @@
           ]
         }
       ],
+      "baseScale": 0.8,
+      "hitbox": {
+        "width": 0.6,
+        "height": 0.4,
+        "fixed": false
+      },
       "cannotDynamax": false,
       "battleOnly": false
     }
@@ -156,33 +162,32 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:growl",
     "1:tackle",
-    "5:tailwhip",
-    "9:headbutt",
-    "11:babydolleyes",
-    "13:sandattack",
-    "17:odorsleuth",
-    "21:mudsport",
-    "25:pinmissile",
-    "29:covet",
-    "31:takedown",
-    "33:bestow",
-    "33:flail",
+    "3:sandattack",
+    "6:tailwhip",
+    "9:covet",
+    "12:headbutt",
+    "13:odorsleuth",
+    "15:babydolleyes",
+    "17:mudsport",
+    "18:pinmissile",
+    "21:rest",
+    "24:takedown",
+    "25:bestow",
+    "27:fling",
+    "30:flail",
+    "33:bellydrum",
     "36:doubleedge",
-    "37:rest",
-    "41:bellydrum",
-    "45:fling",
     "egg:charm",
     "egg:extremespeed",
     "egg:helpinghand",
@@ -305,10 +310,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.6,
+    "height": 0.4,
     "fixed": false
   },
   "baseFriendship": 50,

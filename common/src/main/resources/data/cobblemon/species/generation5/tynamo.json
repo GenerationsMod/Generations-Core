@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tynamo",
   "nationalPokedexNumber": 602,
   "primaryType": "electric",
@@ -23,15 +22,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:paralyze_heal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:chargebeam",
     "1:spark",

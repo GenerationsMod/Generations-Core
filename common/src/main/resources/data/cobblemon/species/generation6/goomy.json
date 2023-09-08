@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Goomy",
   "nationalPokedexNumber": 704,
   "primaryType": "dragon",
@@ -25,30 +24,21 @@
   "eggGroups": [
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:absorb",
     "1:bubble",
     "1:tackle",
-    "5:absorb",
     "5:watergun",
-    "9:protect",
+    "10:dragonbreath",
     "13:bide",
-    "18:dragonbreath",
-    "25:raindance",
+    "15:protect",
+    "20:flail",
     "25:waterpulse",
-    "28:flail",
-    "32:bodyslam",
-    "38:muddywater",
+    "30:raindance",
+    "35:dragonpulse",
     "41:curse",
-    "42:dragonpulse",
+    "45:bodyslam",
+    "50:muddywater",
     "egg:acidarmor",
     "egg:counter",
     "egg:curse",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Pansear",
   "nationalPokedexNumber": 513,
   "primaryType": "fire",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:jungle_leaves",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:playnice",
     "1:scratch",

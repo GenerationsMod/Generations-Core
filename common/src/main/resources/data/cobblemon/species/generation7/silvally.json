@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Silvally",
   "nationalPokedexNumber": 773,
   "primaryType": "normal",
@@ -49,7 +48,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -94,7 +92,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -139,7 +136,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -184,7 +180,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -229,7 +224,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -274,7 +268,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -319,7 +312,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -364,7 +356,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -409,7 +400,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -454,7 +444,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -499,7 +488,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -544,7 +532,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -589,7 +576,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -634,7 +620,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -679,7 +664,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -724,7 +708,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -769,7 +752,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"
@@ -790,16 +772,9 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:aerialace",
+    "1:bite",
     "1:explosion",
     "1:firefang",
     "1:healblock",
@@ -808,25 +783,23 @@
     "1:ironhead",
     "1:multiattack",
     "1:poisonfang",
+    "1:scaryface",
     "1:tackle",
     "1:thunderfang",
     "5:rage",
     "10:pursuit",
-    "15:bite",
-    "20:aerialace",
+    "15:doublehit",
+    "20:metalsound",
     "25:crushclaw",
-    "30:scaryface",
-    "35:xscissor",
-    "40:takedown",
-    "45:metalsound",
-    "50:crunch",
-    "55:doublehit",
-    "60:airslash",
+    "30:airslash",
+    "35:triattack",
+    "40:xscissor",
+    "45:crunch",
+    "50:takedown",
+    "55:doubleedge",
+    "60:partingshot",
     "65:punishment",
     "70:razorwind",
-    "75:triattack",
-    "80:doubleedge",
-    "85:partingshot",
     "tm:aerialace",
     "tm:airslash",
     "tm:confide",

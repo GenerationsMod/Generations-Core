@@ -33,15 +33,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:scaryface",
@@ -101,6 +92,12 @@
   "weight": 610,
   "preEvolution": "maschiff",
   "evolutions": [],
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1.6,
+    "height": 1.9,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.mabosstiff.desc"

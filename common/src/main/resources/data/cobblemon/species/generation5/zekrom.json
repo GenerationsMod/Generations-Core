@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zekrom",
   "nationalPokedexNumber": 644,
   "primaryType": "dragon",
@@ -24,32 +23,23 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:dragon_head",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
+    "1:ancientpower",
+    "1:dragonbreath",
     "1:dragonrage",
+    "1:nobleroar",
     "1:thunderfang",
-    "8:imprison",
-    "15:ancientpower",
-    "22:thunderbolt",
-    "29:dragonbreath",
-    "36:slash",
-    "43:zenheadbutt",
-    "50:fusionbolt",
-    "54:dragonclaw",
-    "64:nobleroar",
-    "71:crunch",
-    "78:thunder",
-    "85:outrage",
-    "92:hypervoice",
-    "100:boltstrike",
+    "8:slash",
+    "16:crunch",
+    "24:zenheadbutt",
+    "32:dragonclaw",
+    "40:thunderbolt",
+    "48:fusionbolt",
+    "56:hypervoice",
+    "64:thunder",
+    "72:imprison",
+    "80:outrage",
+    "88:boltstrike",
     "tm:bodypress",
     "tm:breakingswipe",
     "tm:brutalswing",

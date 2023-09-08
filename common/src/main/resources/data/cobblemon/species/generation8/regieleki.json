@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Regieleki",
   "nationalPokedexNumber": 894,
   "primaryType": "electric",
@@ -23,15 +22,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:regieleki_orb",
-        "percentage": 100
-      }
-    ]
-  },
   "moves": [
     "1:rapidspin",
     "1:thundershock",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Lunala",
   "nationalPokedexNumber": 792,
   "primaryType": "psychic",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:nether_star",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:cosmicpower",
@@ -40,17 +30,17 @@
     "1:moongeistbeam",
     "1:teleport",
     "7:nightshade",
-    "13:confuseray",
-    "19:airslash",
-    "23:shadowball",
-    "31:moonlight",
-    "37:nightdaze",
-    "43:magiccoat",
-    "47:moonblast",
-    "59:dreameater",
-    "61:phantomforce",
-    "67:wideguard",
-    "73:hyperbeam",
+    "14:confuseray",
+    "21:airslash",
+    "28:shadowball",
+    "35:moonlight",
+    "42:nightdaze",
+    "49:magiccoat",
+    "56:moonblast",
+    "63:phantomforce",
+    "70:dreameater",
+    "77:wideguard",
+    "84:hyperbeam",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

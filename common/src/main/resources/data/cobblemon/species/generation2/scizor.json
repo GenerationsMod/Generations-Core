@@ -38,7 +38,7 @@
       },
       "catchRate": 25,
       "maleRatio": 0.5,
-      "baseExperienceYield": 210,
+      "baseExperienceYield": 175,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
       "eggGroups": [
         "bug"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -74,15 +73,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:shears",
-        "percentage": 20
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
@@ -100,28 +90,28 @@
     ]
   },
   "moves": [
+    "1:agility",
     "1:airslash",
     "1:bulletpunch",
+    "1:falseswipe",
+    "1:feint",
+    "1:furycutter",
     "1:leer",
     "1:quickattack",
     "1:wingattack",
-    "6:focusenergy",
-    "11:pursuit",
-    "16:falseswipe",
-    "21:agility",
-    "26:metalclaw",
-    "31:slash",
+    "9:pursuit",
+    "12:metalclaw",
+    "16:doubleteam",
+    "20:doublehit",
+    "24:slash",
+    "28:focusenergy",
+    "32:irondefense",
     "33:razorwind",
-    "36:swordsdance",
-    "41:doubleteam",
-    "41:irondefense",
-    "41:xscissor",
+    "36:ironhead",
+    "40:xscissor",
     "44:laserfocus",
+    "44:swordsdance",
     "45:nightslash",
-    "46:furycutter",
-    "49:doublehit",
-    "53:ironhead",
-    "61:feint",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
@@ -258,10 +248,10 @@
   ],
   "preEvolution": "scyther",
   "evolutions": [],
-  "baseScale": 0.9,
+  "baseScale": 0.85,
   "hitbox": {
-    "width": 1,
-    "height": 2.2,
+    "width": 1.1,
+    "height": 2.6,
     "fixed": false
   },
   "baseFriendship": 50,
