@@ -17,6 +17,9 @@
     ],
     "client" : [
       "generations.gg.generations.core.generationscore.fabric.client.GenerationsCoreClientFabric"
+    ],
+    "fabric-datagen": [
+      "generations.gg.generations.core.generationscore.fabric.datagen.DataGen"
     ]
   },
   "mixins": [
