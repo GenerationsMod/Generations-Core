@@ -166,7 +166,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:rabuto_berry"
+				"name": "cobblemon:rabuta_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -314,7 +314,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:amethyst"
+				"name": "minecraft:amethyst_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -399,10 +399,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:boost_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:pure_mulch"
 			}
 		]
 	}]

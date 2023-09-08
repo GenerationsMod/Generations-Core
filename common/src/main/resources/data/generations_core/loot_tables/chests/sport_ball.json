@@ -267,14 +267,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:old_running_boots"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:new_running_boots"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:rockstar_costume"
 			},
 			{
@@ -328,10 +320,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:shattered_relic_song_4"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:legendary_finder"
 			},
 			{
 				"type": "minecraft:item",

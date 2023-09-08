@@ -191,7 +191,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:rabuto_berry"
+				"name": "cobblemon:rabuta_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -283,7 +283,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "minecraft:primsarine_shard"
+				"name": "minecraft:prismarine_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -347,23 +347,23 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridged"
+				"name": "generations_core:pokemail_bridge_d"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridgem"
+				"name": "generations_core:pokemail_bridge_m"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridges"
+				"name": "generations_core:pokemail_bridge_s"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridget"
+				"name": "generations_core:pokemail_bridge_t"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridgev"
+				"name": "generations_core:pokemail_bridge_v"
 			},
 			{
 				"type": "minecraft:item",

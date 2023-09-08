@@ -123,7 +123,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:leek"
+				"name": "generations_core:leek"
 			},
 			{
 				"type": "minecraft:item",
@@ -284,10 +284,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_mall"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:omelet"
 			},
 			{
 				"type": "minecraft:item",

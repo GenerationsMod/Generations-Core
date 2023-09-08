@@ -395,10 +395,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:super_candy_xl"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:mighty_candy_l"
 			},
 			{
@@ -408,10 +404,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:max_elixir"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:berry_bottle"
 			},
 			{
 				"type": "minecraft:item",

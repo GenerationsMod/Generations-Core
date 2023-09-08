@@ -95,10 +95,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golf_leaf"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:great_ball"
 			},
 			{

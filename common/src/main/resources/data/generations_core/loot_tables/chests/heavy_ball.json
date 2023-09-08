@@ -295,7 +295,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:iron_plate"
+				"name": "generations_core:iron_plate"
 			},
 			{
 				"type": "minecraft:item",

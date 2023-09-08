@@ -259,7 +259,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:amethyst"
+				"name": "minecraft:amethyst_shard"
 			},
 			{
 				"type": "minecraft:item",

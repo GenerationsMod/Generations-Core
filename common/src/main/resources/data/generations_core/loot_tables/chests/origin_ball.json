@@ -63,7 +63,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:leek"
+				"name": "generations_core:leek"
 			},
 			{
 				"type": "minecraft:item",

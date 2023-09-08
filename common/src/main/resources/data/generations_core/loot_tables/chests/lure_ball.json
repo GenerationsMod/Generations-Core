@@ -343,10 +343,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:legendary_finder"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:grass_candy"
 			},
 			{

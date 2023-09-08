@@ -59,10 +59,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cocounut_milk"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:eject_button"
 			},
 			{

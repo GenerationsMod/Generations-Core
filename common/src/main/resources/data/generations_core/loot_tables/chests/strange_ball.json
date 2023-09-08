@@ -240,30 +240,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:red_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:orange_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:yellow_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:green_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:blue_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:purple_bike"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:sprink_lotad"
 			},
 			{

@@ -23,7 +23,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:health_feather"
+				"name": "generations_core:health_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -167,7 +167,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:mirror_herb"
+				"name": "cobblemon:mirror_herb"
 			},
 			{
 				"type": "minecraft:item",

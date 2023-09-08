@@ -267,22 +267,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:purple_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:orange_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:old_running_boots"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:new_running_boots"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:dragon_soul"
 			},
 			{

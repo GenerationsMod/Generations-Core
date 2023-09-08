@@ -299,7 +299,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "pokemon:aluminum_ingot"
+				"name": "generations_core:aluminum_ingot"
 			},
 			{
 				"type": "minecraft:item",

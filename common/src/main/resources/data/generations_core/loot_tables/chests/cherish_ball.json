@@ -275,7 +275,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:topical_shell"
+				"name": "generations_core:tropical_shell"
 			},
 			{
 				"type": "minecraft:item",
@@ -315,27 +315,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:yellow_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:orange_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:omelet"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:exp_charm"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:old_running_boots"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "pixelmon:new_running_boots"
 			},
 			{
 				"type": "minecraft:item",

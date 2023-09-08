@@ -39,19 +39,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:clever_feather"
+				"name": "generations_core:clever_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:genius_feather"
+				"name": "generations_core:genius_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:health_feather"
+				"name": "generations_core:health_feather"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:muscle_feather"
+				"name": "generations_core:muscle_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -59,7 +59,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:resist_feather"
+				"name": "generations_core:resist_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -95,7 +95,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:mirror_herb"
+				"name": "cobblemon:mirror_herb"
 			},
 			{
 				"type": "minecraft:item",
@@ -215,23 +215,23 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridged"
+				"name": "generations_core:pokemail_bridge_d"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridgem"
+				"name": "generations_core:pokemail_bridge_m"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridges"
+				"name": "generations_core:pokemail_bridge_s"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridget"
+				"name": "generations_core:pokemail_bridge_t"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridgev"
+				"name": "generations_core:pokemail_bridge_v"
 			},
 			{
 				"type": "minecraft:item",
@@ -247,7 +247,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:leek"
+				"name": "generations_core:leek"
 			},
 			{
 				"type": "minecraft:item",
