@@ -145,7 +145,7 @@
     "amount": "1",
     "entries": [
       {
-        "item": "minecraft:moltres_doll",
+        "item": "generations_core:moltres_doll",
         "percentage": 75
       }
     ]

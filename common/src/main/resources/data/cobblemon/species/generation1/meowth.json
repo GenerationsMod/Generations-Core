@@ -431,7 +431,7 @@
     "field"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "3",
     "entries": [
       {
         "item": "minecraft:gold_nugget",
@@ -441,6 +441,10 @@
       {
         "item": "cobblemon:quick_claw",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:meowth_doll",
+        "percentage": 1
       }
     ]
   },

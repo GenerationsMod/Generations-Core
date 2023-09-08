@@ -34,7 +34,7 @@
     "amount": "1",
     "entries": [
       {
-        "item": "minecraft:mew_doll",
+        "item": "generations_core:mew_doll",
         "percentage": 75
       }
     ]

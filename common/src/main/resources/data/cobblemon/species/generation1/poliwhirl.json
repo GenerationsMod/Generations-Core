@@ -34,11 +34,15 @@
     "water_1"
   ],
   "drops": {
-    "amount": "1",
+    "amount": "2",
     "entries": [
       {
         "item": "minecraft:ochre_froglight",
         "percentage": 10
+      },
+      {
+        "item": "generations_core:poliwhirl_doll",
+        "percentage": 1
       }
     ]
   },

@@ -26,6 +26,15 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:azurill_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:splash",
     "1:tailwhip",

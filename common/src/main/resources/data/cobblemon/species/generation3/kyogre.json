@@ -70,6 +70,15 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:kyogre_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "moves": [
     "1:ancientpower",
     "1:bodyslam",

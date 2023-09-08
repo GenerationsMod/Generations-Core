@@ -24,6 +24,15 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:regirock_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "moves": [
     "1:chargebeam",
     "1:rockthrow",

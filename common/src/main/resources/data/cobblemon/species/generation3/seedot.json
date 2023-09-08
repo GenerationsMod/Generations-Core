@@ -26,6 +26,15 @@
     "field",
     "grass"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:seedot_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:bide",
     "1:harden",

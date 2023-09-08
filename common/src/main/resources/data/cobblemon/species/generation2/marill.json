@@ -27,6 +27,15 @@
     "water_1",
     "fairy"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:marill_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:defensecurl",
     "1:helpinghand",

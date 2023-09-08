@@ -26,6 +26,15 @@
     "flying",
     "dragon"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:swablu_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:growl",
     "1:peck",

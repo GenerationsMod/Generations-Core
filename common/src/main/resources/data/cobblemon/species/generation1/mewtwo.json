@@ -121,7 +121,7 @@
     "amount": "1",
     "entries": [
       {
-        "item": "minecraft:mewtwo_doll",
+        "item": "generations_core:mewtwo_doll",
         "percentage": 75
       }
     ]

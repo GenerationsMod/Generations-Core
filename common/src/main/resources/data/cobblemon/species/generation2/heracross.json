@@ -73,6 +73,15 @@
   "eggGroups": [
     "bug"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:heracross_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:armthrust",
     "1:bulletseed",

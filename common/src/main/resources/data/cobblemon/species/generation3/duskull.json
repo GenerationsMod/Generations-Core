@@ -24,6 +24,15 @@
   "eggGroups": [
     "amorphous"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:duskull_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "behaviour": {
     "moving": {
       "fly": {

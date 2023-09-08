@@ -150,7 +150,7 @@
     "amount": "1",
     "entries": [
       {
-        "item": "minecraft:articuno_doll",
+        "item": "generations_core:articuno_doll",
         "percentage": 75
       }
     ]

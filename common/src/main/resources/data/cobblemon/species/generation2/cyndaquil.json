@@ -24,6 +24,15 @@
   "eggGroups": [
     "field"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:cyndaquil_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "behaviour": {
     "resting": {
       "canSleep": true,

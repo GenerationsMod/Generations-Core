@@ -25,11 +25,15 @@
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": "2",
     "entries": [
       {
         "item": "cobblemon:charcoal_stick",
         "percentage": 5
+      },
+      {
+        "item": "generations_core:litten_doll",
+        "percentage": 1
       }
     ]
   },

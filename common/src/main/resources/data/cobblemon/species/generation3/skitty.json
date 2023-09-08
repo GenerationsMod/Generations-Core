@@ -26,6 +26,15 @@
     "field",
     "fairy"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:skitty_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:fakeout",
     "1:growl",

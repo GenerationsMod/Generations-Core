@@ -34,7 +34,7 @@
     "dragon"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "3",
     "entries": [
       {
         "item": "minecraft:stick",
@@ -43,6 +43,10 @@
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 5
+      },
+      {
+        "item": "generations_core:treecko_doll",
+        "percentage": 1
       }
     ]
   },

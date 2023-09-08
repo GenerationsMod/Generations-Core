@@ -25,6 +25,15 @@
   "eggGroups": [
     "amorphous"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:gulpin_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:pound",
     "5:yawn",

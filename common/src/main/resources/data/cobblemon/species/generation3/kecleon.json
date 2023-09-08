@@ -24,6 +24,15 @@
   "eggGroups": [
     "field"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:kecleon_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:astonish",
     "1:lick",

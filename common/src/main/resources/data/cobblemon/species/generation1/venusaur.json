@@ -134,7 +134,7 @@
     "grass"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "3",
     "entries": [
       {
         "item": "minecraft:melon_seeds",
@@ -144,6 +144,10 @@
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 20
+      },
+      {
+        "item": "generations_core:venusaur_doll",
+        "percentage": 1
       }
     ]
   },

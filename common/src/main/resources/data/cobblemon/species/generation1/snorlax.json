@@ -74,13 +74,17 @@
     "monster"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "3",
     "entries": [
       {
         "item": "minecraft:apple",
         "quantityRange": "1-3",
         "percentage": 75,
         "maxSelectableTimes": 2
+      },
+      {
+        "item": "generations_core:snorlax_doll",
+        "percentage": 1
       }
     ]
   },

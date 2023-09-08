@@ -40,11 +40,15 @@
     "water_2"
   ],
   "drops": {
-    "amount": "1",
+    "amount": "2",
     "entries": [
       {
         "item": "minecraft:bone_block",
         "percentage": 50
+      },
+      {
+        "item": "generations_core:wailmer_doll",
+        "percentage": 1
       }
     ]
   },

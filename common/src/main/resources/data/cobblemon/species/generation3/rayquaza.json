@@ -72,6 +72,15 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:rayquaza_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "moves": [
     "1:airslash",
     "1:ancientpower",

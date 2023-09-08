@@ -24,6 +24,15 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:wynaut_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:amnesia",
     "1:charm",

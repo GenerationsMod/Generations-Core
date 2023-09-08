@@ -152,7 +152,7 @@
     "amount": "1",
     "entries": [
       {
-        "item": "minecraft:zapdos_doll",
+        "item": "generations_core:zapdos_doll",
         "percentage": 75
       }
     ]

@@ -32,6 +32,19 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "generations_core:shaymin_land_doll",
+        "percentage": 50
+      },
+      {
+        "item": "generations_core:shaymin_sky_doll",
+        "percentage": 50
+      }
+    ]
+  },
   "moves": [
     "1:defensecurl",
     "1:growth",

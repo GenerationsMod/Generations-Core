@@ -117,6 +117,15 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:pichu_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:tailwhip",
     "1:thundershock",

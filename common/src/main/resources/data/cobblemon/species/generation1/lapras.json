@@ -88,7 +88,7 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": "3",
     "entries": [
       {
         "item": "cobblemon:nevermelt_ice",
@@ -97,6 +97,10 @@
       {
         "item": "minecraft:heart_of_the_sea",
         "percentage": 10
+      },
+      {
+        "item": "generations_core:lapras_doll",
+        "percentage": 1
       }
     ]
   },

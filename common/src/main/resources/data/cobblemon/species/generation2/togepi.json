@@ -25,6 +25,15 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:togepi_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "moves": [
     "1:growl",
     "1:pound",
