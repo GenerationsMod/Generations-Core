@@ -4,7 +4,6 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenericChestBlockItem;
-import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.PokecenterScarletSignBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
@@ -18,7 +17,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 
-import java.util.Locale;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -51,8 +49,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> INSIDE_WALL = registerBlockItem("inside_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> INSIDE_WALL_MOLDING = registerBlockItem("inside_wall_molding", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> POKEMART_SIGN = registerBlockItem("pokemart_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<GlassBlock> WINDOW_1 = registerBlockItem("window_1", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()));
-    public static final RegistrySupplier<GlassBlock> WINDOW_2 = registerBlockItem("window_2", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()));
 
     /**
      * PokeCenter
@@ -1158,92 +1154,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<GenericChestBlock> ULTRABALL_CHEST = registerChestBlockItem("ultraball_chest", () -> new GenericChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST),  9, 6, "ultraball_chest"));
     public static final RegistrySupplier<GenericChestBlock> MASTERBALL_CHEST = registerChestBlockItem("masterball_chest", () -> new GenericChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST),  12, 8, "masterball_chest"));
 
-    /**
-     * Berry Bushes
-     */
-    public static final RegistrySupplier<Block> AGUAV_BERRY_BUSH = createBerryBush(BerryType.AGUAV);
-    public static final RegistrySupplier<Block> APICOT_BERRY_BUSH = createBerryBush(BerryType.APICOT);
-    public static final RegistrySupplier<Block> ASPEAR_BERRY_BUSH = createBerryBush(BerryType.ASPEAR);
-    public static final RegistrySupplier<Block> BABIRI_BERRY_BUSH = createBerryBush(BerryType.BABIRI);
-    public static final RegistrySupplier<Block> BELUE_BERRY_BUSH = createBerryBush(BerryType.BELUE);
-    public static final RegistrySupplier<Block> BLUK_BERRY_BUSH = createBerryBush(BerryType.BLUK);
-    public static final RegistrySupplier<Block> CHARTI_BERRY_BUSH = createBerryBush(BerryType.CHARTI);
-    public static final RegistrySupplier<Block> CHERI_BERRY_BUSH = createBerryBush(BerryType.CHERI);
-    public static final RegistrySupplier<Block> CHESTO_BERRY_BUSH = createBerryBush(BerryType.CHESTO);
-    public static final RegistrySupplier<Block> CHILAN_BERRY_BUSH = createBerryBush(BerryType.CHILAN);
-    public static final RegistrySupplier<Block> CHOPLE_BERRY_BUSH = createBerryBush(BerryType.CHOPLE);
-    public static final RegistrySupplier<Block> COBA_BERRY_BUSH = createBerryBush(BerryType.COBA);
-    public static final RegistrySupplier<Block> COLBUR_BERRY_BUSH = createBerryBush(BerryType.COLBUR);
-    public static final RegistrySupplier<Block> CORNN_BERRY_BUSH = createBerryBush(BerryType.CORNN);
-    public static final RegistrySupplier<Block> CUSTAP_BERRY_BUSH = createBerryBush(BerryType.CUSTAP);
-    public static final RegistrySupplier<Block> DRASH_BERRY_BUSH = createBerryBush(BerryType.DRASH);
-    public static final RegistrySupplier<Block> DURIN_BERRY_BUSH = createBerryBush(BerryType.DURIN);
-    public static final RegistrySupplier<Block> EGGANT_BERRY_BUSH = createBerryBush(BerryType.EGGANT);
-    public static final RegistrySupplier<Block> ENIGMA_BERRY_BUSH = createBerryBush(BerryType.ENIGMA);
-    public static final RegistrySupplier<Block> FIGY_BERRY_BUSH = createBerryBush(BerryType.FIGY);
-    public static final RegistrySupplier<Block> GANLON_BERRY_BUSH = createBerryBush(BerryType.GANLON);
-    public static final RegistrySupplier<Block> GINEMA_BERRY_BUSH = createBerryBush(BerryType.GINEMA);
-    public static final RegistrySupplier<Block> GREPA_BERRY_BUSH = createBerryBush(BerryType.GREPA);
-    public static final RegistrySupplier<Block> HABAN_BERRY_BUSH = createBerryBush(BerryType.HABAN);
-    public static final RegistrySupplier<Block> HONDEW_BERRY_BUSH = createBerryBush(BerryType.HONDEW);
-    public static final RegistrySupplier<Block> IAPAPA_BERRY_BUSH = createBerryBush(BerryType.IAPAPA);
-    public static final RegistrySupplier<Block> JABOCA_BERRY_BUSH = createBerryBush(BerryType.JABOCA);
-    public static final RegistrySupplier<Block> KASIB_BERRY_BUSH = createBerryBush(BerryType.KASIB);
-    public static final RegistrySupplier<Block> KEBIA_BERRY_BUSH = createBerryBush(BerryType.KEBIA);
-    public static final RegistrySupplier<Block> KEE_BERRY_BUSH = createBerryBush(BerryType.KEE);
-    public static final RegistrySupplier<Block> KELPSY_BERRY_BUSH = createBerryBush(BerryType.KELPSY);
-    public static final RegistrySupplier<Block> KUO_BERRY_BUSH = createBerryBush(BerryType.KUO);
-    public static final RegistrySupplier<Block> LANSAT_BERRY_BUSH = createBerryBush(BerryType.LANSAT);
-    public static final RegistrySupplier<Block> LEPPA_BERRY_BUSH = createBerryBush(BerryType.LEPPA);
-    public static final RegistrySupplier<Block> LIECHI_BERRY_BUSH = createBerryBush(BerryType.LIECHI);
-    public static final RegistrySupplier<Block> LUM_BERRY_BUSH = createBerryBush(BerryType.LUM);
-    public static final RegistrySupplier<Block> MAGO_BERRY_BUSH = createBerryBush(BerryType.MAGO);
-    public static final RegistrySupplier<Block> MAGOST_BERRY_BUSH = createBerryBush(BerryType.MAGOST);
-    public static final RegistrySupplier<Block> MARANGA_BERRY_BUSH = createBerryBush(BerryType.MARANGA);
-    public static final RegistrySupplier<Block> MICLE_BERRY_BUSH = createBerryBush(BerryType.MICLE);
-    public static final RegistrySupplier<Block> NANAB_BERRY_BUSH = createBerryBush(BerryType.NANAB);
-    public static final RegistrySupplier<Block> NINIKU_BERRY_BUSH = createBerryBush(BerryType.NINIKU);
-    public static final RegistrySupplier<Block> NOMEL_BERRY_BUSH = createBerryBush(BerryType.NOMEL);
-    public static final RegistrySupplier<Block> NUTPEA_BERRY_BUSH = createBerryBush(BerryType.NUTPEA);
-    public static final RegistrySupplier<Block> OCCA_BERRY_BUSH = createBerryBush(BerryType.OCCA);
-    public static final RegistrySupplier<Block> ORAN_BERRY_BUSH = createBerryBush(BerryType.ORAN);
-    public static final RegistrySupplier<Block> PAMTRE_BERRY_BUSH = createBerryBush(BerryType.PAMTRE);
-    public static final RegistrySupplier<Block> PASSHO_BERRY_BUSH = createBerryBush(BerryType.PASSHO);
-    public static final RegistrySupplier<Block> PAYAPA_BERRY_BUSH = createBerryBush(BerryType.PAYAPA);
-    public static final RegistrySupplier<Block> PECHA_BERRY_BUSH = createBerryBush(BerryType.PECHA);
-    public static final RegistrySupplier<Block> PERSIM_BERRY_BUSH = createBerryBush(BerryType.PERSIM);
-    public static final RegistrySupplier<Block> PETAYA_BERRY_BUSH = createBerryBush(BerryType.PETAYA);
-    public static final RegistrySupplier<Block> PINAP_BERRY_BUSH = createBerryBush(BerryType.PINAP);
-    public static final RegistrySupplier<Block> POMEG_BERRY_BUSH = createBerryBush(BerryType.POMEG);
-    public static final RegistrySupplier<Block> PUMKIN_BERRY_BUSH = createBerryBush(BerryType.PUMKIN);
-    public static final RegistrySupplier<Block> QUALOT_BERRY_BUSH = createBerryBush(BerryType.QUALOT);
-    public static final RegistrySupplier<Block> RABUTA_BERRY_BUSH = createBerryBush(BerryType.RABUTA);
-    public static final RegistrySupplier<Block> RAWST_BERRY_BUSH = createBerryBush(BerryType.RAWST);
-    public static final RegistrySupplier<Block> RAZZ_BERRY_BUSH = createBerryBush(BerryType.BAZZ);
-    public static final RegistrySupplier<Block> RINDO_BERRY_BUSH = createBerryBush(BerryType.RINDO);
-    public static final RegistrySupplier<Block> ROSELI_BERRY_BUSH = createBerryBush(BerryType.ROSELI);
-    public static final RegistrySupplier<Block> ROWAP_BERRY_BUSH = createBerryBush(BerryType.ROWAP);
-    public static final RegistrySupplier<Block> SALAC_BERRY_BUSH = createBerryBush(BerryType.SALAC);
-    public static final RegistrySupplier<Block> SHUCA_BERRY_BUSH = createBerryBush(BerryType.SHUCA);
-    public static final RegistrySupplier<Block> SITRUS_BERRY_BUSH = createBerryBush(BerryType.SITRUS);
-    public static final RegistrySupplier<Block> SPELON_BERRY_BUSH = createBerryBush(BerryType.SPELON);
-    public static final RegistrySupplier<Block> STARF_BERRY_BUSH = createBerryBush(BerryType.STARF);
-    public static final RegistrySupplier<Block> STRIB_BERRY_BUSH = createBerryBush(BerryType.STRIB);
-    public static final RegistrySupplier<Block> TAMATO_BERRY_BUSH = createBerryBush(BerryType.TAMATO);
-    public static final RegistrySupplier<Block> TANGA_BERRY_BUSH = createBerryBush(BerryType.TANGA);
-    public static final RegistrySupplier<Block> TOPO_BERRY_BUSH = createBerryBush(BerryType.TOPO);
-    public static final RegistrySupplier<Block> TOUGA_BERRY_BUSH = createBerryBush(BerryType.TOUGA);
-    public static final RegistrySupplier<Block> WACAN_BERRY_BUSH = createBerryBush(BerryType.WACAN);
-    public static final RegistrySupplier<Block> WATMEL_BERRY_BUSH = createBerryBush(BerryType.WATMEL);
-    public static final RegistrySupplier<Block> WEPEAR_BERRY_BUSH = createBerryBush(BerryType.WEPEAR);
-    public static final RegistrySupplier<Block> WIKI_BERRY_BUSH = createBerryBush(BerryType.WIKI);
-    public static final RegistrySupplier<Block> YACHE_BERRY_BUSH = createBerryBush(BerryType.YACHE);
-    public static final RegistrySupplier<Block> YAGO_BERRY_BUSH = createBerryBush(BerryType.YAGO);
-
-    private static RegistrySupplier<Block> createBerryBush(BerryType berryType) {
-        return BLOCKS.register(berryType.name().toLowerCase(Locale.ENGLISH) + "_berry_bush", () -> new GenerationsBerryBushBlock(berryType, BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
-    }
-    
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = BLOCKS.register(name, blockSupplier);
         register(name, properties -> new BlockItem(block.get(), properties));

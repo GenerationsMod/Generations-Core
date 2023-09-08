@@ -4,7 +4,6 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import net.minecraft.data.BlockFamily;
@@ -19,7 +18,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Objects;
 
 public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
@@ -90,9 +88,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerBlockItem(GenerationsBlocks.POKEMART_SIGN);
         registerBlockItem(GenerationsBlocks.POKECENTER_SIGN);
-
-        registerGlassBlock(GenerationsBlocks.WINDOW_1);
-        registerGlassBlock(GenerationsBlocks.WINDOW_2);
 
         registerBlockItem(GenerationsBlocks.RUINS_WALL);
         registerBlockItem(GenerationsBlocks.DUSTY_RUINS_WALL);
@@ -183,88 +178,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_1, GenerationsBlocks.MIRRORED_FLOOR_1_SLAB, GenerationsBlocks.MIRRORED_FLOOR_1_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_1_WALL, null, null, true);
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_2, GenerationsBlocks.MIRRORED_FLOOR_2_SLAB, GenerationsBlocks.MIRRORED_FLOOR_2_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_2_WALL, null, null, true);
         registerPallet(GenerationsBlocks.MIRRORED_FLOOR_3, GenerationsBlocks.MIRRORED_FLOOR_3_SLAB, GenerationsBlocks.MIRRORED_FLOOR_3_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_3_WALL, null, null, true);
-
-        /*
-        registerBerryBush(GenerationsBlocks.AGUAV_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.APICOT_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.ASPEAR_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.BABIRI_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.BELUE_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.BLUK_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.CHARTI_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.CHERI_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.CHESTO_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.CHILAN_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.CHOPLE_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.COBA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.COLBUR_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.CORNN_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.CUSTAP_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.DRASH_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.DURIN_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.EGGANT_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.ENIGMA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.FIGY_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.GANLON_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.GINEMA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.GREPA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.HABAN_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.HONDEW_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.IAPAPA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.JABOCA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.KASIB_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.KEBIA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.KEE_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.KELPSY_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.KUO_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.LANSAT_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.LEPPA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.LIECHI_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.LUM_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.MAGO_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.MAGOST_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.MARANGA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.MICLE_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.NANAB_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.NINIKU_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.NOMEL_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.NUTPEA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.OCCA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.ORAN_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.PAMTRE_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.PASSHO_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.PAYAPA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.PECHA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.PERSIM_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.PETAYA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.PINAP_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.POMEG_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.PUMKIN_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.QUALOT_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.RABUTA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.RAWST_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.RAZZ_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.RINDO_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.ROSELI_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.ROWAP_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.SALAC_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.SHUCA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.SITRUS_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.SPELON_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.STARF_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.STRIB_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.TAMATO_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.TANGA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.TOPO_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.TOUGA_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.WACAN_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.WATMEL_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.WEPEAR_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.WIKI_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.YACHE_BERRY_BUSH);
-        registerBerryBush(GenerationsBlocks.YAGO_BERRY_BUSH);
-
- */
 
         registerBlockItem(GenerationsBlocks.RAW_ALUMINUM_BLOCK);
         registerBlockItem(GenerationsBlocks.ALUMINUM_BLOCK);
@@ -501,15 +414,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
             simpleBlockWithItem(cutSandstone.get(), cutBlock);
             dropSelfList.add(cutSandstone.get());
         }
-    }
-
-    private void registerBerryBush(RegistrySupplier<Block> bush) {
-        BerryType.EnumBerryColor color = ((GenerationsBerryBushBlock) bush.get()).getBerryType().getColor();
-        getVariantBuilder(bush.get())
-                .partialState().with(GenerationsBerryBushBlock.AGE, 0).modelForState().modelFile(models().cross("block/" + color.name().toLowerCase(Locale.ENGLISH) + "_berry_bush_stage0", GenerationsCore.id("block/" + color.name().toLowerCase(Locale.ENGLISH) + "_berry_bush_stage0"))).addModel()
-                .partialState().with(GenerationsBerryBushBlock.AGE, 1).modelForState().modelFile(models().cross("block/" + color.name().toLowerCase(Locale.ENGLISH) + "_berry_bush_stage1", GenerationsCore.id("block/" + color.name().toLowerCase(Locale.ENGLISH) + "_berry_bush_stage1"))).addModel()
-                .partialState().with(GenerationsBerryBushBlock.AGE, 2).modelForState().modelFile(models().cross("block/" + bush.getId().getPath() + "_stage2", GenerationsCore.id("block/" + bush.getId().getPath() + "_stage2"))).addModel()
-                .partialState().with(GenerationsBerryBushBlock.AGE, 3).modelForState().modelFile(models().cross("block/" + bush.getId().getPath() + "_stage3", GenerationsCore.id("block/" + bush.getId().getPath() + "_stage3"))).addModel();
     }
 
     private void registerStairs(StairBlock stairs, Block texturedBlock) {
