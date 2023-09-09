@@ -95,6 +95,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GIGATON_BALL = registerPokeBall("gigaton_ball", Item::new); //createPokeball(PokeBall.GIGATON_BALL);
     public static final RegistrySupplier<Item> FEATHER_BALL = registerPokeBall("feather_ball", Item::new); //createPokeball(PokeBall.FEATHER_BALL);
     public static final RegistrySupplier<Item> JET_BALL = registerPokeBall("jet_ball", Item::new); //createPokeball(PokeBall.JET_BALL);
+    public static final RegistrySupplier<Item> STRANGE_BALL = registerPokeBall("strange_ball", Item::new);
+    public static final RegistrySupplier<Item> ORIGIN_BALL = registerPokeBall("origin_ball", Item::new);
+
 
     /**
      * Restoration Items
@@ -819,8 +822,14 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ULTRANECROZIUM_Z = register("ultranecrozium_z", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
 
     public static final RegistrySupplier<Item> ELECTRIC_SEED = register("electric_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> MISTY_SEED = register("misty_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> GRASSY_SEED = register("grassy_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
-    public static final RegistrySupplier<Item> PSYCHIC_SEED = register("pyschic_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> PSYCHIC_SEED = register("psychic_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> RED_SCARF = register("red_scarf", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> LEGEND_PLATE = register("legend_plate", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> LIGHT_SOUL = register("light_soul", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> LUSTROUS_GLOBE = register("lustrous_globe", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> GRISEOUS_CORE = register("griseous_core", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
 
     /**
      * Vanilla Like Materials
@@ -1023,6 +1032,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> BELLIGERENT_WING = register("belligerent_wing", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> FIERY_WING = register("fiery_wing", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SINISTER_WING = register("sinister_wing", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> MEW_DNA_FIBER = register("mew_dna_fiber", properties -> new Item(properties), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+
+
 
     /**
      * Naturals

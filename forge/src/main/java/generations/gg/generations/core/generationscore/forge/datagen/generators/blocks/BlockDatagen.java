@@ -248,6 +248,13 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
+        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE);
+        registerNoModel(GenerationsDecorationBlocks.UMBRELLA);
+        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG);
+        registerNoModel(GenerationsDecorationBlocks.POKEBALL_RUG);
+        registerNoModel(GenerationsDecorationBlocks.WATER_FLOAT);
+        GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(this::registerNoModel);
+
 
         registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign");
 
@@ -258,9 +265,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.BOX.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
-        //registerNoModel(GenerationsUtilityBlocks.PC);
-        //registerNoModel(GenerationsUtilityBlocks.CLOCK);
-        //registerNoModel(GenerationsUtilityBlocks.HEALER);
+        registerNoModel(GenerationsUtilityBlocks.PC);
+        registerNoModel(GenerationsUtilityBlocks.CLOCK);
+        registerNoModel(GenerationsUtilityBlocks.HEALER);
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);
         registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE);
@@ -306,7 +313,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), "ball_displays");
     }
 
-    private void registerNoModel( RegistrySupplier<? extends Block> block) {
+    private <T extends Block> void registerNoModel( RegistrySupplier<T> block) {
         this.simpleBlock(block.get(), ConfiguredModel.builder().modelFile(models().getBuilder(block.getId().getPath())).build());
     }
 
@@ -529,8 +536,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlockWithItem(block.get(), model);
         dropSelfList.add(block.get());
     }
-
-        private void registerBlockItemParticle(Block block, String name) {
+    private void registerBlockItemParticle(Block block, String name) {
         ResourceLocation blockId = key(block);
         try {
             ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");
