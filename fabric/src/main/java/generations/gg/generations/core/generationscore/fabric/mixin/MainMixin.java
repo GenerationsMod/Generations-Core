@@ -13,6 +13,6 @@ public class MainMixin {
     @Unique
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void kiollME(CallbackInfo ci) {
-        System.loadLibrary("renderdoc");
+        //System.loadLibrary("renderdoc");
     }
 }
