@@ -219,7 +219,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "pokemon:moomoo_milk"
+				"name": "generations_core:moomoo_milk"
 			},
 			{
 				"type": "minecraft:item",

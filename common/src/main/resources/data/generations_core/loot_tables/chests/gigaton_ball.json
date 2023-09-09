@@ -327,7 +327,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "pokemon:z_ingot"
+				"name": "generations_core:z_ingot"
 			},
 			{
 				"type": "minecraft:item",

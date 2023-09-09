@@ -829,6 +829,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> LEGEND_PLATE = register("legend_plate", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> LIGHT_SOUL = register("light_soul", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LUSTROUS_GLOBE = register("lustrous_globe", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> ADAMANT_CRYSTAL = register("adamant_crystal", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> GRISEOUS_CORE = register("griseous_core", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
 
     /**
