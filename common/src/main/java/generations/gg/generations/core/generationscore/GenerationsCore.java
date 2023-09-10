@@ -73,7 +73,6 @@ public class GenerationsCore
 	public static void init(GenerationsImplementation implementation, @NotNull Path configDirectory) {
 		GenerationsCore.implementation = implementation;
 		GenerationsCoreEntityDataSerializers.init();
-		implementation.getNetworkManager().registerServerBound();
 		CONFIG_DIRECTORY = configDirectory;
 		GenerationsSounds.init();
 		GenerationsCreativeTabs.init();

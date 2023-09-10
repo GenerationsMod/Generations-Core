@@ -26,10 +26,11 @@ public record S2COpenDialogueMenuPacket(boolean closable) implements Generations
     }
 
     public static class Handler implements ClientNetworkPacketHandler<S2COpenDialogueMenuPacket> {
+        public static final Handler INSTANCE = new Handler();
 
         @Override
-        public void handle(@NotNull S2COpenDialogueMenuPacket packet, @NotNull Minecraft client) {
-            client.setScreen(new DialogueScreen(packet.closable));
+        public void handle(@NotNull S2COpenDialogueMenuPacket packet) {
+            Minecraft.getInstance().setScreen(new DialogueScreen(packet.closable));
         }
     }
 }

@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.forge;
 
+import dev.architectury.networking.NetworkChannel;
+import dev.architectury.networking.NetworkManager;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
@@ -10,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerChunkCache;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraftforge.network.NetworkDirection;
@@ -21,13 +24,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class GenerationsForgeNetworkManager implements GenerationsImplementation.NetworkManager {
     public static final GenerationsForgeNetworkManager INSTANCE = new GenerationsForgeNetworkManager();
-
     private static final String PROTOCOL_VERSION = "1";
     private int id = 0;
-
     private SimpleChannel channel = NetworkRegistry.newSimpleChannel(
             GenerationsCore.id("main"),
             () -> PROTOCOL_VERSION,
@@ -50,6 +52,8 @@ public class GenerationsForgeNetworkManager implements GenerationsImplementation
             Function<FriendlyByteBuf, T> decoder,
             ClientNetworkPacketHandler<T> handler
     ) {
+        System.out.println("Generations Client: " + id);
+
         this.channel.registerMessage(this.id++, kClass, encoder, decoder, (msg, ctx) -> {
             var context = ctx.get();
             handler.handleOnNettyThread(msg);
@@ -64,6 +68,7 @@ public class GenerationsForgeNetworkManager implements GenerationsImplementation
             Function<FriendlyByteBuf, T> decoder,
             ServerNetworkPacketHandler<T> handler
     ) {
+        System.out.println("Generations Server: " + id);
         this.channel.registerMessage(this.id++, kClass, encoder, decoder, (msg, ctx) -> {
             var context = ctx.get();
             handler.handleOnNettyThread(msg, Objects.requireNonNull(Objects.requireNonNull(context.getSender()).getServer()), context.getSender());
@@ -80,7 +85,7 @@ public class GenerationsForgeNetworkManager implements GenerationsImplementation
     }
 
     public <T extends GenerationsNetworkPacket<?>> @NotNull Packet<ClientGamePacketListener> asVanillaClientBound(T packet) {
-        return (Packet<ClientGamePacketListener>) this.channel.toVanillaPacket(packet, NetworkDirection.PLAY_TO_CLIENT);
+        return (Packet<ClientGamePacketListener>) channel.toVanillaPacket(packet, NetworkDirection.PLAY_TO_CLIENT);
     }
 
     @Override

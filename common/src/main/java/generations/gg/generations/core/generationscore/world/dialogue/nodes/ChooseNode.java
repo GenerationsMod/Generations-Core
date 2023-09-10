@@ -15,7 +15,7 @@ public class ChooseNode extends AbstractNode implements DialogueContainingNode, 
 
     private final String question;
     private final Map<String, AbstractNode> next;
-    public String response;
+    public transient String response;
 
     public ChooseNode(String question, Map<String, AbstractNode> next) {
         this.question = question;

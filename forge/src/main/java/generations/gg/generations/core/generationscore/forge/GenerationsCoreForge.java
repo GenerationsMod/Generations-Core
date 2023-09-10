@@ -45,9 +45,11 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
-        GenerationsCore.init(this, FMLPaths.CONFIGDIR.get());
 
+        GenerationsCore.init(this, FMLPaths.CONFIGDIR.get());
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            GenerationsCoreClientForge.init(MOD_BUS);
+        });
         var EVENT_BUS = MinecraftForge.EVENT_BUS;
 
         EVENT_BUS.addListener(this::onDataPackSync);
@@ -60,6 +62,8 @@ public class GenerationsCoreForge implements GenerationsImplementation {
      * Should initialize everything where a specific event does not cover it.
      */
     private void onInitialize(FMLCommonSetupEvent event) {
+        getNetworkManager().registerClientBound();
+        getNetworkManager().registerServerBound();
         event.enqueueWork(VanillaCompat::setup);
     }
 

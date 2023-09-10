@@ -35,8 +35,9 @@ public record S2CSayDialoguePacket(List<String> text, boolean useNextArrow) impl
     }
 
     public static class Handler implements ClientNetworkPacketHandler<S2CSayDialoguePacket> {
+        public static final Handler INSTANCE = new Handler();
         @Override
-        public void handle(S2CSayDialoguePacket packet, Minecraft client) {
+        public void handle(S2CSayDialoguePacket packet) {
             if (Minecraft.getInstance().screen instanceof DialogueScreen dialogueScreen) dialogueScreen.activeInfo = new DialogueScreen.SayActiveInfo(packet.text, packet.useNextArrow);
         }
     }

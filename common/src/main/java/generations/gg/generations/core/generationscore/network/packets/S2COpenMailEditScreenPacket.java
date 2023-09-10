@@ -26,18 +26,17 @@ public record S2COpenMailEditScreenPacket(InteractionHand hand) implements Gener
     }
 
     public static class Handler implements ClientNetworkPacketHandler<S2COpenMailEditScreenPacket> {
-        public void handle(S2COpenMailEditScreenPacket packet, Minecraft client) {
-            client.execute(() -> {
-                var itemStack = client.player.getItemInHand(packet.hand());
-                if (itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL)) client.setScreen(new MailViewScreen(new WrittenMailAccess(itemStack)));
-                else if (itemStack.is(GenerationsItemTags.POKEMAIL)) client.setScreen(
-                        new MailEditScreen(
-                                client.player,
-                                itemStack,
-                                packet.hand
-                    )
-                );
-            });
+        public final static Handler INSTANCE = new Handler();
+
+        public void handle(S2COpenMailEditScreenPacket packet) {
+            var itemStack = Minecraft.getInstance().player.getItemInHand(packet.hand());
+            if (itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL))
+                Minecraft.getInstance().setScreen(new MailViewScreen(new WrittenMailAccess(itemStack)));
+            else if (itemStack.is(GenerationsItemTags.POKEMAIL)) Minecraft.getInstance().setScreen(
+                    new MailEditScreen(
+                            Minecraft.getInstance().player, itemStack,
+                            packet.hand)
+            );
         }
     }
 

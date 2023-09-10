@@ -26,8 +26,10 @@ public class S2CCloseScreenPacket implements GenerationsNetworkPacket<S2CCloseSc
 
 
     public static class Handler implements ClientNetworkPacketHandler<S2CCloseScreenPacket> {
-        public void handle(S2CCloseScreenPacket packet, Minecraft client) {
-            client.setScreen(null);
+        public static final Handler INSTANCE = new Handler();
+
+        public void handle(S2CCloseScreenPacket packet) {
+            Minecraft.getInstance().setScreen(null);
         }
     }
 }

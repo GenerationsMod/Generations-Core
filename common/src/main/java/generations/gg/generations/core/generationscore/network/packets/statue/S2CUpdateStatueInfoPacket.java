@@ -4,6 +4,7 @@ import dev.architectury.utils.EnvExecutor;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
+import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CCloseScreenPacket;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
@@ -30,14 +31,15 @@ public record S2CUpdateStatueInfoPacket(int entityId) implements GenerationsNetw
     }
 
     public static class Handler implements ClientNetworkPacketHandler<S2CUpdateStatueInfoPacket> {
+        public static final Handler INSTANCE = new Handler();
 
         @Override
-        public void handle(S2CUpdateStatueInfoPacket packet, Minecraft client) {
+        public void handle(S2CUpdateStatueInfoPacket packet) {
             EnvExecutor.runInEnv(CLIENT, () -> () -> {
-                if (client.level == null)
+                if (Minecraft.getInstance().level == null)
                     return;
 
-                Entity entity = client.level.getEntity(packet.entityId());
+                Entity entity = Minecraft.getInstance().level.getEntity(packet.entityId());
                 if (entity instanceof StatueEntity statueEntity)
                     statueEntity.updateStatueData();
             });

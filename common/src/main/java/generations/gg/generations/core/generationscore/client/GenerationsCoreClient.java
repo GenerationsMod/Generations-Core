@@ -75,7 +75,6 @@ public class GenerationsCoreClient {
 
     private static void setupClient(Minecraft event) {
         event.submit(() -> {
-            GenerationsCore.getImplementation().getNetworkManager().registerClientBound();
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
