@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.client.screen.statue;
 
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.gui.GuiUtilsKt;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.client.gui.PokemonGuiUtilsKt;
@@ -49,19 +50,18 @@ public class StatueEditorScreen extends Screen {
 
         this.parserTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 7, y + 7, 178, 14, 500,
                 info.getProperties().asString(" "), s -> {
-                info.setProperties(PokemonProperties.Companion.parse(s, " ", "="));
-                statue.updateStatueData();
+                    statue.getStatueData().setProperties(PokemonProperties.Companion.parse(s, " ", "="));
+                    updateStatueData();
                 }));
 
         this.nameTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 92, 126, 14, 50, info.getLabel(), a -> true, s -> {
-            statue.getStatueData().setLabel(s);
-            statue.updateStatueData();
+                    statue.getStatueData().setLabel(s);
+                    updateStatueData();
         }));
 
         this.animationTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 110, 126, 14, 50, info.getAnimation(), a -> true, s -> {
             statue.getStatueData().setAnimation(s);
-            statue.updateStatueData();
-            checkTimestampState(true);
+            updateStatueData();
         }));
 
         this.timestampTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 128, 78, 14, 25, String.valueOf(info.getFrame()), s -> {
@@ -77,7 +77,7 @@ public class StatueEditorScreen extends Screen {
         }, s -> {
             var value = s.isEmpty() ? 0 : parseFloat(s);
                   statue.getStatueData().setProgress(value);
-                statue.updateStatueData();
+                updateStatueData();
 //            }
         }));
 
@@ -98,27 +98,23 @@ public class StatueEditorScreen extends Screen {
 
                     if (scale <= 0) {
                         statue.getStatueData().setScale(1.0F);
-                        statue.updateStatueData();
+                        updateStatueData();
                     } else {
                         statue.getStatueData().setScale(scale);
-                        statue.updateStatueData();
+                        updateStatueData();
                     }
                 }));
-
-        checkTimestampState(true);
 
         statickCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 127, 16, 16, TEXTURE, 0, 166,
                 () -> {
                     var data = statue.getStatueData();
                     data.setIsStatic(true);
-                    statue.updateStatueData();
-                    checkTimestampState(false);
+                    updateStatueData();
                 },
                 () -> {
                     var data = statue.getStatueData();
-                    data.setIsStatic(false);
-                    statue.updateStatueData();
-                    checkTimestampState(true);
+                    statue.getStatueData().setIsStatic(false);
+                    updateStatueData();
                 },
                 info.isStatic()
         ));
@@ -126,25 +122,28 @@ public class StatueEditorScreen extends Screen {
 
         this.interactableCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 145, 16, 16, TEXTURE, 0, 166,
                 () -> {
-                    var data = statue.getStatueData();
-                    data.setSacredAshInteractable(true);
-                    statue.updateStatueData();
+                    statue.getStatueData().setSacredAshInteractable(true);
+                    updateStatueData();
                 },
                 () -> {
                     var data = statue.getStatueData();
-                    data.setSacredAshInteractable(false);
-                    statue.updateStatueData();
+                    statue.getStatueData().setSacredAshInteractable(false);
+                    updateStatueData();
                 },
                 info.isSacredAshInteractable()
         ));
 
-        orientationWidget = addRenderableWidget(new AngleSelectionWidget(x + 43, y + 47, 15, (statue.getStatueData().getOrientation() + 180), 5, 0x000000,
+        orientationWidget = addRenderableWidget(new AngleSelectionWidget(x + 43, y + 47, 15, (statue.getStatueData().getOrientation()), 5, 0x000000,
                 (prevAngle, angle) -> {
-                    statue.getStatueData().setOrientation((angle- 180));
-                    statue.updateStatueData();
+                    statue.getStatueData().setOrientation(angle);
+                    updateStatueData();
                 }));
 
-        modelWidget = this.addRenderableWidget(new ModelWidget(x +  122, y + 25, 63, 63, info.getProperties().asRenderablePokemon(), 1.9090909f, 325f, -9.545454f));
+        modelWidget = this.addRenderableWidget(new ModelWidget(x +  122, y + 25, 63, 63, info.getProperties().asRenderablePokemon(), 1.9090909f, -325f, -9.545454f));
+    }
+
+    private void updateStatueData() {
+        GenerationsCore.implementation.getNetworkManager().sendPacketToServer(new C2SUpdateStatueInfoPacket(statue.getId(), statue.getStatueData()));
     }
 
 //    private Animation getAnimation() {
@@ -187,19 +186,6 @@ public class StatueEditorScreen extends Screen {
         poseStack.drawString(font, "W", x + 34, y + 59, 0x000000, false);
         poseStack.drawString(font, "S", x + 56, y + 82, 0x000000, false);
         poseStack.drawString(font, "Orientation: " + String.format("%.2f", statue.getStatueData().getOrientation()), x + 11, y + 24, 0x5F5F60, false);
-    }
-
-    private void checkTimestampState(boolean visibility) {
-        //TODO: work on
-//        var animation = getAnimation();
-//        if(visibility && animation != null) {
-//            timestampTextField.visible = true;
-//            timestampTextField.active = true;
-//            timestampTextField.setMessage(Component.literal(String.valueOf((int) (statue.getStatueData().getFrame()))));
-//        } else {
-//            timestampTextField.visible = false;
-//            timestampTextField.active = false;
-//        }
     }
 
     @Override

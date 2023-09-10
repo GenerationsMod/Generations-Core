@@ -37,7 +37,6 @@ public record C2SUpdateStatueInfoPacket(int entityId, StatueEntity.StatueInfo st
                 statueEntity.setStatueInfo(packet.statueInfo());
                 GenerationsNetwork.INSTANCE.sendToAllTracking(new S2CUpdateStatueInfoPacket(packet.entityId()), statueEntity);
             }
-
         }
     }
 }

@@ -314,7 +314,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
             tag.putBoolean("isStatic", isStatic);
             tag.putFloat("progress", progress);
             tag.putBoolean("sacredAshInteractable", sacredAshInteractable);
-            if(tag.contains("label")) tag.putString("label", label);
+            if(label != null) tag.putString("label", label);
             return tag;
         }
 

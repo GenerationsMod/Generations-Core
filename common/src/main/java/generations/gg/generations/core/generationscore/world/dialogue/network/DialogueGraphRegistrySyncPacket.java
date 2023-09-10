@@ -45,7 +45,7 @@ public class DialogueGraphRegistrySyncPacket extends DataRegistrySyncPacket<Dial
     public static final ResourceLocation ID = GenerationsCore.id("dialogue_graph_registry_sync");
     public static DialogueGraphRegistrySyncPacket decode(FriendlyByteBuf buffer) {
         var graph = new DialogueGraphRegistrySyncPacket(new HashMap<>());
-        graph.decodeEntry(buffer);
+        graph.decodeBuffer(buffer);
         return graph;
     }
 
