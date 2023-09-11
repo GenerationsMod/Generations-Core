@@ -98,7 +98,6 @@ public class TagsDatagen {
             );
 
             tag(BlockTags.DIRT).add(
-                    GenerationsBlocks.POKE_DIRT.get(),
                     GenerationsBlocks.ULTRA_SAND.get(),
                     GenerationsBlocks.RICH_SOIL_1.get(),
                     GenerationsBlocks.RICH_SOIL_2.get(),
@@ -107,9 +106,6 @@ public class TagsDatagen {
             );
             
             tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
-                    GenerationsBlocks.POKE_GRASS.get(),
-                    GenerationsBlocks.POKE_DIRT.get(),
-                    GenerationsBlocks.SANDY_GRASS.get(),
                     GenerationsBlocks.RUINS_SAND.get(),
                     GenerationsBlocks.RICH_SOIL_1.get(),
                     GenerationsBlocks.RICH_SOIL_2.get(),

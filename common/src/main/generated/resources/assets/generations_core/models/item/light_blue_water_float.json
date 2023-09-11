@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "generations_core:item/blocks/water_floats/light_blue_water_float"
-  }
-}

@@ -19,7 +19,6 @@ import generations.gg.generations.core.generationscore.world.item.curry.CurryIng
 import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.world.item.curry.ItemCurry;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
-import generations.gg.generations.core.generationscore.world.level.block.SoftSoilBlock.Mulch;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +33,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
@@ -146,29 +146,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> PERILOUS_SOUP = register("perilous_soup", Item::new, GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> RARE_SODA = register("rare_soda", Item::new, GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> ULTRA_RARE_SODA = register("ultra_rare_soda", Item::new, GenerationsCreativeTabs.RESTORATION);
-
-    public static final RegistrySupplier<Item> ADAMANT_MINT = register("adamant_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BOLD_MINT = register("bold_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> BRAVE_MINT = register("brave_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> CALM_MINT = register("calm_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> CAREFUL_MINT = register("careful_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> GENTLE_MINT = register("gentle_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> HASTY_MINT = register("hasty_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> IMPISH_MINT = register("impish_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> JOLLY_MINT = register("jolly_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> LONELY_MINT = register("lonely_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> LAX_MINT = register("lax_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> MILD_MINT = register("mild_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> MODEST_MINT = register("modest_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> NAIVE_MINT = register("naive_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> NAUGHTY_MINT = register("naughty_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> RASH_MINT = register("rash_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> RELAXED_MINT = register("relaxed_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> SASSY_MINT = register("sassy_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> SERIOUS_MINT = register("serious_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> TIMID_MINT = register("timid_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-    public static final RegistrySupplier<Item> QUIET_MINT = register("quiet_mint", Item::new, GenerationsCreativeTabs.RESTORATION);
-
     public static final RegistrySupplier<Item> FRESH_WATER = register("fresh_water", Item::new, GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> SODA_POP = register("soda_pop", Item::new, GenerationsCreativeTabs.RESTORATION);
     public static final RegistrySupplier<Item> LEMONADE = register("lemonade", Item::new, GenerationsCreativeTabs.RESTORATION);
@@ -560,6 +537,8 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> VICTORY_RIBBON = createRibbon("victory_ribbon");
     public static final RegistrySupplier<Item> WINNING_RIBBON = createRibbon("winning_ribbon");
     public static final RegistrySupplier<Item> WORLD_ABILITY_RIBBON = createRibbon("world_ability_ribbon");
+    public static final RegistrySupplier<Item> ONCE_IN_A_LIFETIME_RIBBON = createRibbon("once_in_a_lifetime_ribbon");
+    public static final RegistrySupplier<Item> GALAR_CHAMP_RIBBON = createRibbon("galar_champ_ribbon");
     public static final RegistrySupplier<Item> ABILITY_SYMBOL = createRibbon("ability_symbol");
     public static final RegistrySupplier<Item> ABILITY_SYMBOL_SILVER = createRibbon("ability_symbol_silver");
     public static final RegistrySupplier<Item> BRAVE_SYMBOL = createRibbon("brave_symbol");
@@ -827,10 +806,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> PSYCHIC_SEED = register("psychic_seed", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> RED_SCARF = register("red_scarf", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> LEGEND_PLATE = register("legend_plate", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
-    public static final RegistrySupplier<Item> LIGHT_SOUL = register("light_soul", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LUSTROUS_GLOBE = register("lustrous_globe", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> ADAMANT_CRYSTAL = register("adamant_crystal", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
-    public static final RegistrySupplier<Item> GRISEOUS_CORE = register("griseous_core", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> GRISEOUS_CORE = register("griseous_core", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
 
     /**
      * Vanilla Like Materials
@@ -872,14 +850,11 @@ public class GenerationsItems {
     */
     public static final RegistrySupplier<Item> ROTOM_CATALOG = register("rotom_catalog", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> POKEDEX = register("pokedex", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> ITEM_FINDER = register("item_finder", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> LURE_MODULE = register("lure_module", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> BOTTLE_CAP = register("bottle_cap", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> GOLD_BOTTLE_CAP = register("gold_bottle_cap", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> ABILITY_CAPSULE = register("ability_capsule", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> ABILITY_PATCH = register("ability_patch", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> RANCH_UPGRADE = register("ranch_upgrade", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> CORRUPTED_GEM = register("corrupted_gem", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WISHING_STAR = register("wishing_star", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
     public static final RegistrySupplier<Item> UNCHARGED_DYNAMAX_BAND = register("uncharged_dynamax_band", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.PLAYER_ITEMS);
 
@@ -887,13 +862,6 @@ public class GenerationsItems {
      * Legendary Items
      */
     public static final RegistrySupplier<Item> ORB = register("orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> UNO_ORB = register("uno_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> DOS_ORB = register("dos_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> TRES_ORB = register("tres_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> MYSTICAL_ORB = register("mystical_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> MARTIAL_ORB = register("martial_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> MALEVOLENT_ORB = register("malevolent_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> GENERATIONS_ORB = register("generations_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ADAMANT_ORB = register("adamant_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "dialga", GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> GRISEOUS_ORB = register("griseous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "giratina", GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LUSTROUS_ORB = register("lustrous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "palkia", GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -938,6 +906,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> RED_ORB = register("red_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> FADED_RED_ORB = register("faded_red_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFIRE()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> FADED_BLUE_ORB = register("faded_blue_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getWATER()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> FADED_JADED_ORB = register("faded_jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFLYING()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> BLUE_ORB = register("blue_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> JADE_ORB = register("jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFLYING()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LIGHT_STONE = register("light_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), "reshiram"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -985,6 +954,7 @@ public class GenerationsItems {
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ENIGMA_SHARD = register("enigma_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> ENIGMA_FRAGMENT = register("enigma_fragment", properties -> new Item(properties), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SACRED_ASH = register("sacred_ash", properties -> new SacredAshItem(properties.stacksTo(1).durability(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHARD_OF_WILLPOWER = register("shard_of_willpower", properties -> new Item(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHARD_OF_EMOTION = register("shard_of_emotion", properties -> new Item(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1034,8 +1004,11 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> FIERY_WING = register("fiery_wing", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SINISTER_WING = register("sinister_wing", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MEW_DNA_FIBER = register("mew_dna_fiber", properties -> new Item(properties), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-
-
+    public static final RegistrySupplier<Item> LIGHT_SOUL = register("light_soul", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> LIGHT_CRYSTAL = register("light_crystal", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> WONDER_EGG = register("wonder_egg", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> PHIONE_EGG = register("phione_egg", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> SOUL_HEART = register("soul_heart", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
 
     /**
      * Naturals
@@ -1048,20 +1021,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> BLACK_TUMBLESTONE = register("black_tumblestone", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> SKY_TUMBLESTONE = register("sky_tumblestone", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> RARE_TUMBLESTONE = register("rare_tumblestone", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GROWTH_MULCH = register("growth_mulch", properties -> new MulchItem(Mulch.GROWTH, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> DAMP_MULCH = register("damp_mulch", properties -> new MulchItem(Mulch.DAMP, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> STABLE_MULCH = register("stable_mulch", properties -> new MulchItem(Mulch.STABLE, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GOOEY_MULCH = register("gooey_mulch", properties -> new MulchItem(Mulch.GOOEY, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> AMAZE_MULCH = register("amaze_mulch", properties -> new MulchItem(Mulch.AMAZE, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> BOOST_MULCH = register("boost_mulch", properties -> new MulchItem(Mulch.BOOST, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RICH_MULCH = register("rich_mulch", properties -> new MulchItem(Mulch.RICH, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SURPRISE_MULCH = register("surprise_mulch", properties -> new MulchItem(Mulch.SURPRISE, properties), GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
 
     /**
      * Utility Items
      */
-    public static final RegistrySupplier<Item> POKEMON_EDITOR = register("pokemon_editor", Item::new, GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> POKEMON_WAND = register("pokemon_wand", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> CHISEL = register("chisel", StatueEditorItem::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> GIFT_BOX = register("gift_box", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> ZONE_WAND = register("zone_wand", Item::new, GenerationsCreativeTabs.UTILITY);
@@ -1069,19 +1034,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> BIKE_HANDLEBARS = register("bike_handlebars", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> BIKE_SEAT = register("bike_seat", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> BIKE_WHEEL = register("bike_wheel", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> TRADE_MONITOR = register("trade_monitor", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> TRADE_HOLDER_RIGHT = register("trade_holder_right", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> TRADE_HOLDER_LEFT = register("trade_holder_left", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> TRADE_PANEL = register("trade_panel", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> GREEN_CLONER_TANK = register("green_cloner_tank", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> ORANGE_CLONER_TANK = register("orange_cloner_tank", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> CLONER_CORD = register("cloner_cord", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> HIDDEN_IRON_DOOR = register("hidden_iron_door", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> HIDDEN_WOODEN_DOOR = register("hidden_wooden_door", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> HIDDEN_LEVER = register("hidden_lever", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> HIDDEN_PRESSURE_PLATE = register("hidden_pressure_plate", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> HIDDEN_CUBE = register("hidden_cube", Item::new, GenerationsCreativeTabs.UTILITY);
-    public static final RegistrySupplier<Item> GROTTO_SPAWNER = register("grotto_spawner", Item::new, GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> HIDDEN_BUTTON = register("hidden_button", Item::new, GenerationsCreativeTabs.UTILITY);
 
     /**
      * Form Items
@@ -1277,6 +1235,26 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> PINAP_JUICE = register("pinap_juice", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.CUISINE);
     public static final RegistrySupplier<Item> ROSERADE_TEA = register("roserade_tea", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.CUISINE);
     public static final RegistrySupplier<Item> TAPU_COCOA = register("tapu_cocoa", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), GenerationsCreativeTabs.CUISINE);
+
+    /**
+     * Fossils
+     */
+    public static final RegistrySupplier<Item> ARMOR_FOSSIL = register("armor_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> BIRD_FOSSIL = register("bird_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> CLAW_FOSSIL = register("claw_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> COVER_FOSSIL = register("cover_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> DINO_FOSSIL = register("dino_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> DOME_FOSSIL = register("dome_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> DRAKE_FOSSIL = register("drake_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> FISH_FOSSIL = register("fish_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> FOSSIL = register("fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> HELIX_FOSSIL = register("helix_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> JAW_FOSSIL = register("jaw_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> OLD_AMBER = register("old_amber", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> PLUME_FOSSIL = register("plume_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> ROOT_FOSSIL = register("root_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> SAIL_FOSSIL = register("sail_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
+    public static final RegistrySupplier<Item> SKULL_FOSSIL = register("skull_fossil", Item::new, GenerationsCreativeTabs.NATURAL);
 
     /**
      * Un-Implemented Items : Items currently have no in-game function
@@ -1483,8 +1461,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SMART_CANDY_XL = register("smart_candy_xl", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SONIAS_BOOK = register("sonias_book", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SOOT_SACK = register("soot_sack", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> SPARKLING_STONE_1 = register("sparkling_stone_1", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> SPARKLING_STONE_2 = register("sparkling_stone_2", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SPRAYDUCK = register("sprayduck", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SQUIRT_BOTTLE = register("squirt_bottle", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> SS_TICKET = register("ss_ticket", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1543,12 +1519,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> YELLOW_SCARF = register("yellow_scarf", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> Z_POWER_RING = register("z_power_ring", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> Z_RING = register("z_ring", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-
-    /**
-     * Everything else that sorting.
-     */
-    public static final RegistrySupplier<Item> PIXELMON_SPRITE = register("pixelmon_sprite", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> TREE = register("tree", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
 
     /**
      * Items to be included in Minecraft Default Section.

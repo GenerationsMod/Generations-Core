@@ -30,24 +30,6 @@ public class GenerationsBlocks {
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
     public static final BlockBehaviour.Properties ULTRA_BLOCK_SETTINGS = BlockBehaviour.Properties.copy(Blocks.GLASS).lightLevel(value -> 15);
-
-    public static final RegistrySupplier<Block> POKE_GRASS = registerBlockItem("poke_grass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
-    public static final RegistrySupplier<Block> POKE_DIRT = registerBlockItem("poke_dirt", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
-    public static final RegistrySupplier<Block> POKE_SAND = registerBlockItem("poke_sand", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_SMALL_CORNER_1 = registerBlockItem("poke_sand_small_corner_1", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_SMALL_CORNER_2 = registerBlockItem("poke_sand_small_corner_2", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_CORNER_1 = registerBlockItem("poke_sand_corner_1", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_CORNER_2 = registerBlockItem("poke_sand_corner_2", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_CORNER_3 = registerBlockItem("poke_sand_corner_3", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_CORNER_4 = registerBlockItem("poke_sand_corner_4", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_SIDE_1 = registerBlockItem("poke_sand_side_1", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_SIDE_2 = registerBlockItem("poke_sand_side_2", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_SIDE_3 = registerBlockItem("poke_sand_side_3", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> POKE_SAND_SIDE_4 = registerBlockItem("poke_sand_side_4", () -> new SandBlock(0xdbd3a0,BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> SANDY_GRASS = registerBlockItem("sandy_grass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)));
-    public static final RegistrySupplier<Block> OUTSIDE_WALL = registerBlockItem("outside_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL = registerBlockItem("inside_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL_MOLDING = registerBlockItem("inside_wall_molding", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> POKEMART_SIGN = registerBlockItem("pokemart_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     /**
@@ -75,9 +57,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> HOUSE_FLOOR_6 = registerBlockItem("house_floor_6", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> HOUSE_FLOOR_7 = registerBlockItem("house_floor_7", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> HOUSE_FLOOR_8 = registerBlockItem("house_floor_8", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL_BOTTOM = registerBlockItem("inside_wall_bottom", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL_TOP = registerBlockItem("inside_wall_top", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<Block> INSIDE_WALL_MIDDLE = registerBlockItem("inside_wall_middle", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> RUINS_WALL = registerBlockItem("ruins_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> DUSTY_RUINS_WALL = registerBlockItem("dusty_ruins_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
@@ -1055,7 +1034,6 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<WallBlock> CONCRETE_TOP_WALL = registerBlockItem("concrete_top_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CONCRETE_TOP.get())));
     public static final RegistrySupplier<Block> RUINS_SAND = registerBlockItem("ruins_sand", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
     public static final RegistrySupplier<Block> BURST_TURF = registerBlockItem("burst_turf", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
-    public static final RegistrySupplier<Block> SOFT_SOIL = registerBlockItem("soft_soil", () -> new SoftSoilBlock(BlockBehaviour.Properties.copy(Blocks.FARMLAND).randomTicks()));
 
     //Rich Soil
     public static final RegistrySupplier<Block> RICH_SOIL_1 = registerBlockItem("rich_soil_1", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));

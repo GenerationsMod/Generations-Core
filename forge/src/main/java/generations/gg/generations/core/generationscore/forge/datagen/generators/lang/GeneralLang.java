@@ -51,6 +51,8 @@ public class GeneralLang extends LanguageProvider {
             }
         });
         addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
         add("pokeballs.generations_core", "Poké Balls");

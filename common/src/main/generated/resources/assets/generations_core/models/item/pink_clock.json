@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/blocks/clocks/pink_clock"
+    "layer0": "generations_core:item/placeholder"
   }
 }
