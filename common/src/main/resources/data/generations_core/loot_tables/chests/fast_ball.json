@@ -63,10 +63,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:growth_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:health_candy"
 			},
 			{

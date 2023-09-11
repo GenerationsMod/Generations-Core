@@ -308,38 +308,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:tm_169"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:gooey_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:damp_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:surprise_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:growth_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:stable_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:amaze_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:boost_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:rich_mulch"
 			}
 		]
 	}]

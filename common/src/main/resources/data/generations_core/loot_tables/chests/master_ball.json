@@ -303,10 +303,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:corrupted_gem"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:lava_crystal"
 			},
 			{

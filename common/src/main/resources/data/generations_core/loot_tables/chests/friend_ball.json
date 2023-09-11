@@ -123,19 +123,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:gooey_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:green_scarf"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:grepa_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:growth_mulch"
 			},
 			{
 				"type": "minecraft:item",

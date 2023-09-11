@@ -259,10 +259,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:stable_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:star_piece"
 			},
 			{

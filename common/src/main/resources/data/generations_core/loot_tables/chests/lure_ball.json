@@ -51,19 +51,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:damp_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:exp_candy_xs"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:green_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:growth_mulch"
 			},
 			{
 				"type": "minecraft:item",
