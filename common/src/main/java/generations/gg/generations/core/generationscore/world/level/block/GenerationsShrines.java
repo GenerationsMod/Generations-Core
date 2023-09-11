@@ -34,7 +34,7 @@ public class GenerationsShrines {
 	public static final RegistrySupplier<Block> RAYQUAZA_SHRINE = registerBlockItem("rayquaza_shrine", () -> new WeatherTrioShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.RAYQUAZA_SHRINE, "rayquaza", GenerationsItems.JADE_ORB));
 	public static final RegistrySupplier<Block> TIMESPACE_ALTAR = registerBlockItem("timespace_altar", () -> new TimespaceAltarBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> ABUNDANT_SHRINE = registerBlockItem("abundant_shrine", () -> new AbundantShrineBlock(SHRINE_PROPERTIES));
-	public static final RegistrySupplier<Block> CELESTIAL_ALTAR = registerBlockItem("celestial_altar", () -> new CelestialAltarBlock(SHRINE_PROPERTIES));
+	public static final RegistrySupplier<Block> CELESTIAL_ALTAR = registerBlock("celestial_altar", () -> new CelestialAltarBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> LUNAR_SHRINE = registerBlockItem("lunar_shrine", () -> new LunarShrineBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> MELOETTA_MUSIC_BOX = registerBlockItem("meloetta_music_box", () -> new MeloettaMusicBoxBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> REGICE_SHRINE = registerBlockItem("regice_shrine", () -> new RegiShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.REGICE_SHRINE, "regice"));
@@ -50,6 +50,10 @@ public class GenerationsShrines {
 		RegistrySupplier<T> block = SHRINES.register(name, blockSupplier);
 		GenerationsItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.SHRINES)));
 		return block;
+	}
+
+	private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> blockSupplier) {
+		return SHRINES.register(name, blockSupplier);
 	}
 
 	public static void init() {

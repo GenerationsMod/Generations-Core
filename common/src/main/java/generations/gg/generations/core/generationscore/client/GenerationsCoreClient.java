@@ -134,6 +134,9 @@ public class GenerationsCoreClient {
         });
 
         registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get());
+        registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get());
+        registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST.get());
+        registerChestRenderer(GenerationsBlocks.MASTERBALL_CHEST.get());
     }
 
     private static void registerChestRenderer(GenericChestBlock chest ) {
