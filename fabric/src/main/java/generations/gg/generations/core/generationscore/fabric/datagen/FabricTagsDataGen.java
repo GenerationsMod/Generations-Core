@@ -26,7 +26,7 @@ class BlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        getOrCreateTagBuilder(ConventionalBlockTags.ORES).addTag(GenerationsBlockTags.GENERATIONSORES);
+        //getOrCreateTagBuilder(ConventionalBlockTags.ORES).addTag(GenerationsBlockTags.GENERATIONSORES);
         getOrCreateTagBuilder(ConventionalBlockTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get());
     }
 }
@@ -39,7 +39,7 @@ class ItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        getOrCreateTagBuilder(ConventionalItemTags.ORES).addTag(GenerationsItemTags.GENERATIONSORES);
+        //getOrCreateTagBuilder(ConventionalItemTags.ORES).addTag(GenerationsItemTags.GENERATIONSORES);
         getOrCreateTagBuilder(ConventionalItemTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get().asItem());
     }
 }
