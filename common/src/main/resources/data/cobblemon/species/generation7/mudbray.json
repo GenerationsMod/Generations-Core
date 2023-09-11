@@ -16,6 +16,14 @@
     "special_defence": 55,
     "speed": 45
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 190,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -25,32 +33,23 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:saddle",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:mudslap",
     "1:rocksmash",
     "3:mudsport",
+    "4:irondefense",
+    "8:doublekick",
     "8:rototiller",
-    "10:bulldoze",
-    "15:doublekick",
-    "17:stomp",
+    "12:bulldoze",
+    "16:stomp",
     "20:strength",
     "22:bide",
-    "24:highhorsepower",
-    "29:irondefense",
-    "31:heavyslam",
-    "36:counter",
-    "38:earthquake",
-    "43:megakick",
-    "45:superpower",
+    "24:counter",
+    "28:highhorsepower",
+    "32:heavyslam",
+    "36:earthquake",
+    "40:megakick",
+    "44:superpower",
     "egg:bodyslam",
     "egg:closecombat",
     "egg:doubleedge",

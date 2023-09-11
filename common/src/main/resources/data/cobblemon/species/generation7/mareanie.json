@@ -26,30 +26,21 @@
   "eggGroups": [
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:spider_eye",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:peck",
     "1:poisonsting",
-    "5:peck",
-    "9:bite",
-    "13:toxicspikes",
-    "17:wideguard",
-    "21:toxic",
-    "25:venoshock",
+    "5:wideguard",
+    "10:bite",
+    "15:venoshock",
+    "20:recover",
+    "25:pinmissile",
     "29:spikecannon",
-    "33:recover",
-    "37:poisonjab",
+    "30:toxicspikes",
+    "35:liquidation",
     "40:acidspray",
-    "41:venomdrench",
-    "45:pinmissile",
-    "49:liquidation",
+    "40:venomdrench",
+    "45:poisonjab",
+    "50:toxic",
     "egg:haze",
     "egg:infestation",
     "egg:spitup",

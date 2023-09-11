@@ -11,7 +11,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:belue_berry"
+				"name": "cobblemon:belue_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -35,7 +35,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:colbur_berry"
+				"name": "cobblemon:colbur_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -47,7 +47,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone"
+				"name": "cobblemon:dusk_stone"
 			},
 			{
 				"type": "minecraft:item",
@@ -67,7 +67,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:health_wing"
+				"name": "generations_core:health_feather"
 			},
 			{
 				"type": "minecraft:item",
@@ -75,7 +75,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:kasib_berry"
+				"name": "cobblemon:kasib_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -103,7 +103,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nomel_berry"
+				"name": "cobblemon:nomel_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -111,7 +111,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:occa_berry"
+				"name": "cobblemon:occa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -127,7 +127,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pecha_berry"
+				"name": "cobblemon:pecha_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -135,19 +135,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:power_lense"
+				"name": "generations_core:power_lens"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rabuta_berry"
+				"name": "cobblemon:rabuta_berry"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:razor_fang"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:razz_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -172,10 +168,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:shiny_stone"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:silver_nanab_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -239,15 +231,51 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:sinister_wing"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:iris_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:nessa_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:team_rocket_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sada_and_turo_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:south_province_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rival_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lusamine_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:xy_legendary_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:kanto_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ultra_necrozma_disc"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:x_speed_2"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:dawn_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -275,10 +303,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_5"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:dark_soul"
 			},
 			{
@@ -287,15 +311,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lax_mint"
+				"name": "cobblemon:lax_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:timid_mint"
+				"name": "cobblemon:timid_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hasty_mint"
+				"name": "cobblemon:hasty_mint"
 			},
 			{
 				"type": "minecraft:item",
@@ -323,63 +347,63 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm17"
+				"name": "generations_core:tm_17"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm29"
+				"name": "generations_core:tm_29"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm42"
+				"name": "generations_core:tm_42"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm61"
+				"name": "generations_core:tm_61"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm114"
+				"name": "generations_core:tm_114"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm151"
+				"name": "generations_core:tm_151"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm3"
+				"name": "generations_core:tm_3"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm18"
+				"name": "generations_core:tm_18"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm30"
+				"name": "generations_core:tm_30"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm43"
+				"name": "generations_core:tm_43"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm62"
+				"name": "generations_core:tm_62"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm87"
+				"name": "generations_core:tm_87"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm94"
+				"name": "generations_core:tm_94"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm108"
+				"name": "generations_core:tm_108"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm140"
+				"name": "generations_core:tm_140"
 			}
 		]
 	}]

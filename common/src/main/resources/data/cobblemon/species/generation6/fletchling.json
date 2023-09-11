@@ -25,32 +25,30 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
     "1:growl",
+    "1:peck",
     "1:tackle",
-    "6:quickattack",
+    "5:quickattack",
     "10:ember",
-    "10:peck",
-    "13:agility",
-    "16:flail",
-    "21:roost",
+    "15:flail",
+    "20:acrobatics",
+    "25:agility",
     "25:razorwind",
     "29:naturalgift",
     "30:aerialace",
     "34:flamecharge",
-    "39:acrobatics",
+    "35:tailwind",
+    "40:steelwing",
     "41:mefirst",
-    "45:tailwind",
-    "48:steelwing",
+    "45:roost",
     "50:fly",
     "egg:defog",
     "egg:flamecharge",
@@ -130,10 +128,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.6,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.45,
+    "height": 0.7,
     "fixed": false
   },
   "baseFriendship": 50,

@@ -25,16 +25,12 @@
     "field"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
       {
-        "item": "minecraft:jungle_leaves",
-        "percentage": 10
-      },
-      {
-        "item": "minecraft:kecleon_doll",
+        "item": "generations_core:kecleon_doll",
         "percentage": 1
-      },
+      }
     ]
   },
   "moves": [
@@ -44,19 +40,19 @@
     "1:tailwhip",
     "1:thief",
     "4:bind",
-    "7:feintattack",
-    "12:furyswipes",
-    "14:feint",
-    "17:psybeam",
-    "20:shadowsneak",
-    "24:screech",
+    "7:shadowsneak",
+    "10:feint",
+    "13:furyswipes",
+    "16:feintattack",
+    "18:psybeam",
+    "21:ancientpower",
+    "25:slash",
     "30:camouflage",
-    "31:slash",
-    "40:substitute",
-    "43:suckerpunch",
-    "49:ancientpower",
-    "49:shadowclaw",
-    "58:synchronoise",
+    "33:shadowclaw",
+    "38:screech",
+    "42:substitute",
+    "46:suckerpunch",
+    "50:synchronoise",
     "egg:camouflage",
     "egg:disable",
     "egg:dizzypunch",

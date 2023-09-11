@@ -26,31 +26,42 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine_shard",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
     "1:tackle",
     "1:watergun",
+    "3:supersonic",
     "4:supersonic",
+    "7:bubblebeam",
+    "8:wingattack",
     "10:bubblebeam",
+    "11:confuseray",
+    "12:waterpulse",
     "13:headbutt",
+    "14:wingattack",
+    "16:headbutt",
+    "16:wideguard",
     "19:agility",
+    "19:waterpulse",
+    "20:agility",
     "22:wingattack",
     "23:wideguard",
+    "24:bubblebeam",
+    "27:takedown",
+    "28:headbutt",
     "28:waterpulse",
     "31:takedown",
+    "32:agility",
+    "32:airslash",
     "36:airslash",
+    "36:aquaring",
     "37:confuseray",
+    "39:aquaring",
     "40:bounce",
+    "44:takedown",
     "46:aquaring",
+    "46:bounce",
+    "48:hydropump",
     "49:hydropump",
     "egg:amnesia",
     "egg:confuseray",

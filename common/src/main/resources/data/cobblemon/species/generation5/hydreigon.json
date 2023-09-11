@@ -24,37 +24,28 @@
   "eggGroups": [
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:doublehit",
+    "1:dragonbreath",
     "1:dragonrage",
     "1:focusenergy",
     "1:tackle",
     "1:triattack",
-    "12:headbutt",
+    "12:roar",
     "16:assurance",
-    "17:dragonbreath",
-    "20:roar",
-    "25:crunch",
+    "20:headbutt",
+    "24:workup",
     "28:slam",
-    "32:dragonpulse",
-    "38:workup",
-    "42:dragonrush",
-    "48:bodyslam",
-    "55:scaryface",
+    "32:crunch",
+    "36:scaryface",
+    "40:dragonpulse",
+    "44:bodyslam",
+    "48:hypervoice",
+    "54:dragonrush",
     "60:nastyplot",
-    "68:hypervoice",
+    "68:outrage",
     "76:hyperbeam",
-    "79:outrage",
     "tm:acrobatics",
     "tm:assurance",
     "tm:attract",

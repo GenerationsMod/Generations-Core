@@ -31,7 +31,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:berry_juice"
+				"name": "cobblemon:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,7 +123,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hondew_berry"
+				"name": "cobblemon:hondew_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -139,7 +139,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:jaboca_berry"
+				"name": "cobblemon:jaboca_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,15 +171,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:oval_charm"
+				"name": "cobblemon:pecha_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pecha_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:persim_berry"
+				"name": "cobblemon:persim_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -239,10 +235,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:silver_nanab_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:small_bouquet"
 			},
 			{
@@ -255,7 +247,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:starf_berry"
+				"name": "cobblemon:starf_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -283,7 +275,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:topical_shell"
+				"name": "generations_core:tropical_shell"
 			},
 			{
 				"type": "minecraft:item",
@@ -295,7 +287,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:ice_stone_shard"
+				"name": "generations_core:rotom_catalog"
 			},
 			{
 				"type": "minecraft:item",
@@ -323,31 +315,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_2"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:yellow_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:orange_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:omelet"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:exp_charm"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:old_running_boots"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "pixelmon:new_running_boots"
 			},
 			{
 				"type": "minecraft:item",
@@ -395,15 +363,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:serious_mint"
+				"name": "cobblemon:serious_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lonely_mint"
+				"name": "cobblemon:lonely_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:brave_mint"
+				"name": "cobblemon:brave_mint"
 			},
 			{
 				"type": "minecraft:item",
@@ -423,103 +391,103 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm10"
+				"name": "generations_core:tm_10"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm34"
+				"name": "generations_core:tm_34"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm46"
+				"name": "generations_core:tm_46"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm52"
+				"name": "generations_core:tm_52"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm69"
+				"name": "generations_core:tm_69"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm124"
+				"name": "generations_core:tm_124"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm135"
+				"name": "generations_core:tm_135"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm143"
+				"name": "generations_core:tm_143"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm4"
+				"name": "generations_core:tm_4"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm16"
+				"name": "generations_core:tm_16"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm41"
+				"name": "generations_core:tm_41"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm54"
+				"name": "generations_core:tm_54"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm59"
+				"name": "generations_core:tm_59"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm63"
+				"name": "generations_core:tm_63"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm74"
+				"name": "generations_core:tm_74"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm75"
+				"name": "generations_core:tm_75"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm85"
+				"name": "generations_core:tm_85"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm92"
+				"name": "generations_core:tm_92"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm98"
+				"name": "generations_core:tm_98"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm109"
+				"name": "generations_core:tm_109"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm120"
+				"name": "generations_core:tm_120"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm128"
+				"name": "generations_core:tm_128"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm129"
+				"name": "generations_core:tm_129"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm138"
+				"name": "generations_core:tm_138"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm161"
+				"name": "generations_core:tm_161"
 			}
 		]
 	}]

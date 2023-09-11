@@ -24,35 +24,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:crying_obsidian",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:firespin",
-    "1:flareblitz",
     "1:steameruption",
-    "1:takedown",
     "1:watergun",
     "6:leer",
-    "8:mist",
-    "11:haze",
-    "15:flamecharge",
-    "21:waterpulse",
-    "28:stomp",
+    "12:weatherball",
+    "18:flamecharge",
+    "24:waterpulse",
     "30:scaryface",
-    "32:scald",
     "36:incinerate",
-    "40:weatherball",
+    "42:stomp",
     "46:bodyslam",
-    "50:hydropump",
-    "65:overheat",
-    "76:explosion",
+    "48:scald",
+    "54:takedown",
+    "60:haze",
+    "60:mist",
+    "66:hydropump",
+    "78:flareblitz",
+    "84:overheat",
+    "90:explosion",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:brickbreak",

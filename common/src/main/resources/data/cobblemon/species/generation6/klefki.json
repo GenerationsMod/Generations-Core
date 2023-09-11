@@ -25,32 +25,23 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_copper",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:fairylock",
-    "1:tackle",
-    "5:fairywind",
-    "8:astonish",
-    "12:metalsound",
+    "1:astonish",
+    "4:tackle",
+    "8:fairywind",
+    "12:torment",
     "15:spikes",
-    "18:drainingkiss",
-    "23:craftyshield",
-    "27:foulplay",
-    "32:torment",
+    "16:craftyshield",
+    "16:fairylock",
+    "20:metalsound",
+    "24:drainingkiss",
+    "28:recycle",
+    "32:imprison",
     "34:mirrorshot",
     "36:flashcannon",
-    "36:imprison",
-    "40:recycle",
-    "43:playrough",
+    "40:playrough",
     "44:magicroom",
+    "48:foulplay",
     "50:healblock",
     "52:lastresort",
     "egg:irondefense",

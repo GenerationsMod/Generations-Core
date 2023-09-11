@@ -25,15 +25,6 @@
     "water_1",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ink_sac",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bind",
     "1:feint",

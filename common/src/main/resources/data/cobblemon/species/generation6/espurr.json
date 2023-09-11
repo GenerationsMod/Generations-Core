@@ -25,26 +25,17 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cod",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:scratch",
-    "5:covet",
+    "3:fakeout",
+    "6:disarmingvoice",
     "9:confusion",
-    "13:lightscreen",
-    "17:psybeam",
-    "19:fakeout",
-    "22:disarmingvoice",
-    "25:psyshock",
+    "18:covet",
+    "21:psybeam",
+    "30:lightscreen",
     "30:reflect",
+    "33:psyshock",
     "egg:assist",
     "egg:barrier",
     "egg:tickle",

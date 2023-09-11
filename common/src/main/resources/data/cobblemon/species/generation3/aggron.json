@@ -37,7 +37,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 284,
+      "baseExperienceYield": 265,
       "baseFriendship": 35,
       "evYield": {
         "hp": 0,
@@ -52,7 +52,6 @@
       "eggGroups": [
         "monster"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -73,34 +72,25 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 15
-      }
-    ]
-  },
   "moves": [
     "1:harden",
-    "1:headbutt",
+    "1:metalclaw",
     "1:mudslap",
+    "1:rocktomb",
     "1:tackle",
-    "13:metalclaw",
-    "13:rocktomb",
-    "17:irondefense",
-    "21:roar",
-    "25:rockslide",
-    "25:takedown",
-    "29:ironhead",
-    "29:irontail",
-    "37:protect",
-    "50:metalsound",
-    "57:autotomize",
-    "63:doubleedge",
-    "65:heavyslam",
-    "65:metalburst",
+    "12:roar",
+    "16:headbutt",
+    "20:protect",
+    "24:rockslide",
+    "28:ironhead",
+    "35:metalsound",
+    "40:takedown",
+    "48:autotomize",
+    "56:irontail",
+    "64:irondefense",
+    "72:heavyslam",
+    "80:doubleedge",
+    "88:metalburst",
     "tm:aerialace",
     "tm:attract",
     "tm:avalanche",

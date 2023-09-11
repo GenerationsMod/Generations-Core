@@ -35,23 +35,15 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "4",
+    "amount": "2",
     "entries": [
       {
-        "item": "generations_core:griseous_orb",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:griseous_core",
+        "item": "generations_core:giratina_altered_doll",
         "percentage": 50
       },
       {
         "item": "generations_core:giratina_origin_doll",
-        "percentage": 75
-      },
-      {
-        "item": "generations_core:giratina_altered_doll",
-        "percentage": 75
+        "percentage": 50
       }
     ]
   },
@@ -59,19 +51,31 @@
     "1:defog",
     "1:dragonbreath",
     "1:scaryface",
+    "1:shadowsneak",
     "6:ominouswind",
+    "7:dragonbreath",
     "10:ancientpower",
+    "14:ancientpower",
     "15:slash",
     "19:shadowsneak",
+    "21:hex",
     "24:destinybond",
     "28:dragonclaw",
+    "28:slash",
     "33:earthpower",
+    "35:scaryface",
     "37:aurasphere",
     "40:shadowforce",
     "42:shadowclaw",
+    "46:shadowforce",
     "49:painsplit",
     "50:healblock",
     "50:hex",
+    "56:aurasphere",
+    "63:dragonclaw",
+    "70:earthpower",
+    "77:shadowforce",
+    "84:destinybond",
     "tm:aerialace",
     "tm:aurasphere",
     "tm:bodyslam",
@@ -230,7 +234,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "legendary"

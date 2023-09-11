@@ -27,37 +27,28 @@
     "flying",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cocoa_beans",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
-    "1:boomburst",
     "1:dragonpulse",
-    "1:hurricane",
+    "1:gust",
     "1:moonlight",
-    "1:screech",
     "1:supersonic",
     "1:tackle",
     "5:leechlife",
-    "11:gust",
     "12:doubleteam",
-    "13:bite",
     "16:wingattack",
     "18:agility",
-    "23:aircutter",
-    "27:roost",
+    "20:bite",
+    "24:aircutter",
+    "28:whirlwind",
     "31:razorwind",
-    "35:tailwind",
-    "40:whirlwind",
-    "43:superfang",
-    "53:airslash",
+    "32:superfang",
+    "36:airslash",
+    "40:screech",
+    "44:roost",
+    "51:tailwind",
+    "56:hurricane",
+    "62:boomburst",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

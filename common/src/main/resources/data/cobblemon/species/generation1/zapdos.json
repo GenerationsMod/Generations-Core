@@ -16,12 +16,12 @@
     "special_defence": 90,
     "speed": 100
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 3,
   "maleRatio": -1,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Galar",
@@ -152,7 +152,7 @@
     "amount": "1",
     "entries": [
       {
-        "item": "minecraft:zapdos_doll",
+        "item": "generations_core:zapdos_doll",
         "percentage": 75
       }
     ]
@@ -166,21 +166,21 @@
   },
   "moves": [
     "1:peck",
-    "1:thundershock",
-    "13:thunderwave",
-    "22:pluck",
-    "25:agility",
-    "29:ancientpower",
-    "37:detect",
-    "49:drillpeck",
-    "50:discharge",
-    "57:roost",
-    "61:charge",
-    "73:lightscreen",
-    "85:raindance",
-    "85:thunder",
-    "92:magneticflux",
-    "92:zapcannon",
+    "1:thunderwave",
+    "5:thundershock",
+    "10:lightscreen",
+    "15:pluck",
+    "20:agility",
+    "25:ancientpower",
+    "30:charge",
+    "35:drillpeck",
+    "40:roost",
+    "45:discharge",
+    "50:raindance",
+    "55:thunder",
+    "60:detect",
+    "65:magneticflux",
+    "70:zapcannon",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

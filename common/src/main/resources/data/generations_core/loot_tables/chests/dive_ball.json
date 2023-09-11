@@ -31,7 +31,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:deap_sea_scale"
+				"name": "cobblemon:deep_sea_scale"
 			},
 			{
 				"type": "minecraft:item",
@@ -63,7 +63,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lansat_berry"
+				"name": "cobblemon:lansat_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -75,7 +75,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leppa_berry"
+				"name": "cobblemon:leppa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -91,7 +91,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lum_berry"
+				"name": "cobblemon:lum_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -115,7 +115,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:mago_berry"
+				"name": "cobblemon:mago_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -155,15 +155,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:passho_berry"
+				"name": "cobblemon:passho_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:persim_berry"
+				"name": "cobblemon:persim_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pinap_berry"
+				"name": "cobblemon:pinap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -191,11 +191,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rabuta_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:razz_berry"
+				"name": "cobblemon:rabuta_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -215,7 +211,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:smoke_poke_tail"
+				"name": "generations_core:smoked_poke_tail"
 			},
 			{
 				"type": "minecraft:item",
@@ -227,7 +223,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:sprinklotad"
+				"name": "generations_core:sprink_lotad"
 			},
 			{
 				"type": "minecraft:item",
@@ -239,7 +235,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tanga_berry"
+				"name": "cobblemon:tanga_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -251,7 +247,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wacan_berry"
+				"name": "cobblemon:wacan_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -259,7 +255,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:watmel_berry"
+				"name": "cobblemon:watmel_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -267,15 +263,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:yache_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:ice_stone_shard"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:water_stone_shard"
+				"name": "cobblemon:yache_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -295,7 +283,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "minecraft:primsarine_shard"
+				"name": "minecraft:prismarine_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -304,10 +292,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "minecraft:music_disc_blocks"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:record_3"
 			},
 			{
 				"type": "minecraft:item",
@@ -331,15 +315,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:adamant_mint"
+				"name": "cobblemon:adamant_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:naughty_mint"
+				"name": "cobblemon:naughty_mint"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:bold_mint"
+				"name": "cobblemon:bold_mint"
 			},
 			{
 				"type": "minecraft:item",
@@ -363,23 +347,23 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridged"
+				"name": "generations_core:pokemail_bridge_d"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridgem"
+				"name": "generations_core:pokemail_bridge_m"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridges"
+				"name": "generations_core:pokemail_bridge_s"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridget"
+				"name": "generations_core:pokemail_bridge_t"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pokemail_bridgev"
+				"name": "generations_core:pokemail_bridge_v"
 			},
 			{
 				"type": "minecraft:item",
@@ -387,39 +371,55 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm11"
+				"name": "generations_core:shattered_ice_key_1"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm22"
+				"name": "generations_core:shattered_ice_key_2"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm50"
+				"name": "generations_core:shattered_ice_key_3"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm77"
+				"name": "generations_core:shattered_ice_key_4"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm110"
+				"name": "generations_core:tm_11"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm123"
+				"name": "generations_core:tm_22"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm142"
+				"name": "generations_core:tm_50"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm145"
+				"name": "generations_core:tm_77"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm154"
+				"name": "generations_core:tm_110"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_123"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_142"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_145"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_154"
 			}
 		]
 	}]

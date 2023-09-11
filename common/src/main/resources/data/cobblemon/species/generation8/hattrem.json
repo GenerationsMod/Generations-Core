@@ -25,15 +25,6 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ender_pearl",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:disarmingvoice",

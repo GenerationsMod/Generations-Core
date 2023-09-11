@@ -55,7 +55,6 @@
       "eggGroups": [
         "flying"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -76,14 +75,12 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
     "1:honeclaws",
@@ -161,10 +158,10 @@
   ],
   "preEvolution": "corvisquire",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 2.0,
+    "height": 4.4,
     "fixed": false
   },
   "baseFriendship": 50,

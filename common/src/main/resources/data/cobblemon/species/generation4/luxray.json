@@ -25,32 +25,33 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:charge",
     "1:electricterrain",
     "1:leer",
     "1:tackle",
     "1:thundershock",
+    "12:bite",
     "13:bite",
     "13:spark",
+    "18:bite",
+    "18:spark",
     "23:roar",
+    "24:roar",
     "28:swagger",
     "33:voltswitch",
     "35:crunch",
     "35:thunderfang",
+    "40:scaryface",
+    "42:crunch",
     "48:thunderwave",
     "49:scaryface",
+    "56:crunch",
     "56:discharge",
     "63:wildcharge",
+    "64:discharge",
+    "72:swagger",
+    "80:wildcharge",
     "tm:agility",
     "tm:attract",
     "tm:bodyslam",
@@ -133,10 +134,10 @@
   ],
   "preEvolution": "luxio",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.15,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.0,
+    "height": 1.6,
     "fixed": false
   },
   "baseFriendship": 50,

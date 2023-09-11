@@ -24,36 +24,27 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:totem_of_undying",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
+    "1:doubleteam",
     "1:gust",
-    "1:hurricane",
     "1:razorwind",
-    "1:roost",
-    "1:taunt",
-    "5:doubleteam",
-    "10:airslash",
-    "18:snarl",
+    "5:taunt",
+    "10:snarl",
+    "15:disable",
+    "20:suckerpunch",
     "25:tailwind",
-    "26:oblivionwing",
-    "35:disable",
-    "44:darkpulse",
-    "51:foulplay",
+    "30:roost",
+    "35:airslash",
+    "40:darkpulse",
+    "45:psychic",
+    "50:oblivionwing",
     "55:phantomforce",
-    "59:psychic",
-    "63:dragonrush",
-    "72:focusblast",
-    "80:suckerpunch",
-    "88:hyperbeam",
-    "93:skyattack",
+    "60:foulplay",
+    "65:dragonrush",
+    "70:hurricane",
+    "75:focusblast",
+    "80:skyattack",
+    "85:hyperbeam",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:airslash",

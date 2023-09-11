@@ -64,15 +64,23 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:enigma_shard"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:legend_plate"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:ghost_candy"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lugia_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lavender_town_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:mt_pyre_disc"
 			},
 			{
 				"type": "minecraft:item",
@@ -92,7 +100,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pp_up"
+				"name": "cobblemon:pp_up"
 			},
 			{
 				"type": "minecraft:item",
@@ -124,6 +132,10 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "generations_core:orb"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:mixed_mushrooms"
 			},
 			{
@@ -152,19 +164,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:enigma_berry"
+				"name": "cobblemon:enigma_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pomeg_berry"
+				"name": "cobblemon:pomeg_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:yache_berry"
+				"name": "cobblemon:yache_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:hondew_berry"
+				"name": "cobblemon:hondew_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -228,30 +240,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:red_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:orange_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:yellow_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:green_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:blue_bike"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:purple_bike"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:sprink_lotad"
 			},
 			{
@@ -312,63 +300,63 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm17"
+				"name": "generations_core:tm_17"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm29"
+				"name": "generations_core:tm_29"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm42"
+				"name": "generations_core:tm_42"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm61"
+				"name": "generations_core:tm_61"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm114"
+				"name": "generations_core:tm_114"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm151"
+				"name": "generations_core:tm_151"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm3"
+				"name": "generations_core:tm_3"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm18"
+				"name": "generations_core:tm_18"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm30"
+				"name": "generations_core:tm_30"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm43"
+				"name": "generations_core:tm_43"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm62"
+				"name": "generations_core:tm_62"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm87"
+				"name": "generations_core:tm_87"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm94"
+				"name": "generations_core:tm_94"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm108"
+				"name": "generations_core:tm_108"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm140"
+				"name": "generations_core:tm_140"
 			}
 		],
 		"conditions": []

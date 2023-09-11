@@ -32,15 +32,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:electricterrain",
     "1:sunnyday",

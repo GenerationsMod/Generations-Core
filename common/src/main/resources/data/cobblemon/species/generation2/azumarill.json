@@ -27,35 +27,26 @@
     "water_1",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:carrot",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:bubble",
     "1:defensecurl",
+    "1:helpinghand",
+    "1:rollout",
     "1:tackle",
     "1:tailwhip",
     "1:watergun",
     "1:watersport",
+    "6:bubblebeam",
+    "7:bubble",
     "9:charm",
     "12:slam",
     "15:bounce",
-    "15:rollout",
-    "16:helpinghand",
-    "24:bubblebeam",
+    "21:aquatail",
     "25:playrough",
-    "27:aquaring",
-    "34:doubleedge",
-    "42:superpower",
-    "45:raindance",
-    "47:aquatail",
-    "57:hydropump",
+    "30:aquaring",
+    "35:raindance",
+    "40:hydropump",
+    "45:doubleedge",
+    "50:superpower",
     "tm:amnesia",
     "tm:attract",
     "tm:blizzard",

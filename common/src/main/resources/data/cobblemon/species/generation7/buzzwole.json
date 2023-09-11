@@ -24,36 +24,27 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:honeycomb",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:fellstinger",
-    "1:focusenergy",
     "1:harden",
     "1:icepunch",
     "1:poweruppunch",
-    "1:reversal",
     "1:thunderpunch",
+    "5:taunt",
     "7:cometpunch",
-    "13:bulkup",
-    "19:vitalthrow",
-    "23:endure",
+    "10:fellstinger",
+    "15:vitalthrow",
+    "20:bulkup",
+    "25:endure",
     "29:leechlife",
-    "31:taunt",
-    "37:megapunch",
-    "43:counter",
-    "47:hammerarm",
-    "53:lunge",
-    "59:dynamicpunch",
-    "67:superpower",
-    "73:focuspunch",
+    "30:reversal",
+    "35:megapunch",
+    "40:lunge",
+    "45:focusenergy",
+    "50:dynamicpunch",
+    "55:counter",
+    "60:hammerarm",
+    "65:superpower",
+    "70:focuspunch",
     "tm:bodyslam",
     "tm:bounce",
     "tm:brickbreak",

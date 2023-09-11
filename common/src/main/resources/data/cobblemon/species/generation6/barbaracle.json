@@ -26,34 +26,25 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:kelp",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:mudslap",
     "1:sandattack",
     "1:scratch",
-    "1:shellsmash",
     "1:skullbash",
-    "1:stoneedge",
-    "4:watergun",
-    "7:withdraw",
-    "10:furyswipes",
-    "13:slash",
-    "18:mudslap",
+    "1:watergun",
+    "1:withdraw",
+    "12:furycutter",
+    "16:furyswipes",
+    "20:ancientpower",
     "20:clamp",
     "24:rockpolish",
-    "28:ancientpower",
+    "28:slash",
     "32:honeclaws",
-    "37:furycutter",
+    "36:razorshell",
+    "42:shellsmash",
     "44:nightslash",
-    "48:razorshell",
-    "55:crosschop",
+    "48:crosschop",
+    "54:stoneedge",
     "tm:aerialace",
     "tm:assurance",
     "tm:attract",

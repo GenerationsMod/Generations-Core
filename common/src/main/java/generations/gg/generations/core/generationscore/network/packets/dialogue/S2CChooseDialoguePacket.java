@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.screen.dialgoue.display.DialogueScreen;
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
+import generations.gg.generations.core.generationscore.network.packets.S2COpenMailEditScreenPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -31,12 +32,14 @@ public record S2CChooseDialoguePacket(String text, List<String> options) impleme
     }
 
     public static class Handler implements ClientNetworkPacketHandler<S2CChooseDialoguePacket> {
+        public static final Handler INSTANCE = new Handler();
+
         @Override
-        public void handle(S2CChooseDialoguePacket packet, Minecraft client) {
-            if (client.screen instanceof DialogueScreen dialogueScreen) {
+        public void handle(S2CChooseDialoguePacket packet) {
+            if (Minecraft.getInstance().screen instanceof DialogueScreen dialogueScreen) {
                 dialogueScreen.activeInfo = new DialogueScreen.ChooseActiveInfo(packet.text, packet.options);
                 dialogueScreen.init(
-                    client,
+                        Minecraft.getInstance(),
                     dialogueScreen.width,
                     dialogueScreen.height
                 ); // reinitialize to get the options widget to pop up

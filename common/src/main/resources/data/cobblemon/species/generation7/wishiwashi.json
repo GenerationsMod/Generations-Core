@@ -14,9 +14,74 @@
     "special_defence": 25,
     "speed": 40
   },
+  "features": [
+    "schooling"
+  ],
   "catchRate": 60,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "School",
+      "primaryType": "water",
+      "abilities": [
+        "schooling"
+      ],
+      "baseStats": {
+        "hp": 45,
+        "attack": 140,
+        "defence": 130,
+        "special_attack": 140,
+        "special_defence": 135,
+        "speed": 30
+      },
+      "catchRate": 60,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 61,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "fast",
+      "eggCycles": 15,
+      "eggGroups": [
+        "water_2"
+      ],
+      "behaviour": {
+        "moving": {
+          "walk": {
+            "avoidsLand": true
+          },
+          "swim": {
+            "canSwimInWater": true,
+            "canBreatheUnderwater": true
+          }
+        }
+      },
+      "labels": [
+        "gen7"
+      ],
+      "aspects": [
+        "schooling"
+      ],
+      "height": 82,
+      "weight": 786,
+      "evolutions": [],
+      "baseScale": 2,
+      "hitbox": {
+        "width": 3.0,
+        "height": 3.0,
+        "fixed": false
+      },
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
   "baseExperienceYield": 61,
   "baseFriendship": 50,
   "evYield": {
@@ -32,32 +97,36 @@
   "eggGroups": [
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
       }
-    ]
+    }
   },
   "moves": [
     "1:growl",
     "1:watergun",
-    "6:helpinghand",
+    "4:helpinghand",
+    "8:beatup",
     "9:feintattack",
-    "14:brine",
-    "17:aquaring",
-    "22:tearfullook",
+    "12:brine",
+    "16:tearfullook",
+    "20:dive",
+    "24:soak",
     "25:takedown",
     "28:uproar",
-    "30:dive",
-    "33:beatup",
-    "38:aquatail",
-    "41:doubleedge",
-    "46:soak",
-    "49:endeavor",
-    "54:hydropump",
+    "32:aquatail",
+    "36:aquaring",
+    "40:endeavor",
+    "44:hydropump",
+    "48:doubleedge",
     "egg:mist",
     "egg:muddywater",
     "egg:takedown",
@@ -119,52 +188,12 @@
   "height": 2,
   "weight": 3,
   "evolutions": [],
-  "forms": [
-    {
-      "name": "School",
-      "primaryType": "water",
-      "abilities": [
-        "schooling"
-      ],
-      "baseStats": {
-        "hp": 45,
-        "attack": 140,
-        "defence": 130,
-        "special_attack": 140,
-        "special_defence": 135,
-        "speed": 30
-      },
-      "catchRate": 60,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 217,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 1,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "fast",
-      "eggCycles": 15,
-      "eggGroups": [
-        "water_2"
-      ],
-      "moves": [],
-      "labels": [
-        "gen7"
-      ],
-      "aspects": [
-        "school"
-      ],
-      "height": 82,
-      "weight": 786,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
-    }
-  ],
+  "baseScale": 0.4,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.6,
+    "fixed": false
+  },
   "aspects": [],
   "cannotDynamax": false
 }

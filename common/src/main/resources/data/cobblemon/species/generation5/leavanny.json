@@ -26,25 +26,16 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:oak_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bugbite",
     "1:falseswipe",
     "1:razorleaf",
+    "1:slash",
     "1:stringshot",
     "1:tackle",
     "22:strugglebug",
-    "29:slash",
+    "29:fellstinger",
     "32:helpinghand",
-    "34:fellstinger",
     "36:leafblade",
     "39:xscissor",
     "43:entrainment",

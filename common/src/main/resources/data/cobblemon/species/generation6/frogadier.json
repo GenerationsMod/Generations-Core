@@ -53,21 +53,21 @@
     ]
   },
   "moves": [
+    "1:bubble",
     "1:growl",
     "1:pound",
     "1:watergun",
-    "5:bubble",
     "8:quickattack",
     "10:lick",
     "14:waterpulse",
-    "20:smokescreen",
+    "19:smokescreen",
     "23:round",
     "28:fling",
     "33:smackdown",
-    "38:substitute",
-    "44:bounce",
-    "48:doubleteam",
-    "55:hydropump",
+    "40:substitute",
+    "45:bounce",
+    "50:doubleteam",
+    "56:hydropump",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:attract",
@@ -166,7 +166,7 @@
       ]
     }
   ],
-  "baseScale": 0.75,
+  "baseScale": 0.6,
   "hitbox": {
     "width": 0.9,
     "height": 2,

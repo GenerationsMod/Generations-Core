@@ -148,9 +148,6 @@
     "moving": {
       "fly": {
         "canFly": true
-      },
-      "walk": {
-        "canWalk": false
       }
     }
   },
@@ -164,24 +161,24 @@
     ]
   },
   "moves": [
+    "1:doublehit",
     "1:heatwave",
     "1:poisongas",
-    "1:selfdestruct",
     "1:smog",
+    "1:smokescreen",
     "1:tackle",
-    "15:assurance",
-    "19:clearsmog",
-    "21:sludge",
-    "25:smokescreen",
+    "12:clearsmog",
+    "16:assurance",
+    "20:sludge",
+    "24:haze",
+    "28:selfdestruct",
     "29:gyroball",
-    "33:doublehit",
-    "33:haze",
+    "32:sludgebomb",
     "38:toxic",
-    "44:explosion",
-    "48:sludgebomb",
-    "50:belch",
-    "51:destinybond",
-    "58:memento",
+    "44:belch",
+    "50:explosion",
+    "56:memento",
+    "62:destinybond",
     "tm:assurance",
     "tm:attract",
     "tm:captivate",
@@ -292,10 +289,10 @@
   ],
   "preEvolution": "koffing",
   "evolutions": [],
-  "baseScale": 1.2,
+  "baseScale": 0.9,
   "hitbox": {
-    "width": 1.12,
-    "height": 1.2,
+    "width": 1.3,
+    "height": 1.4,
     "fixed": false
   },
   "baseFriendship": 50,

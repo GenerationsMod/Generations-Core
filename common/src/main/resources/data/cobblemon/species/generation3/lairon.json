@@ -26,34 +26,25 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 15
-      }
-    ]
-  },
   "moves": [
     "1:harden",
-    "1:headbutt",
+    "1:metalclaw",
     "1:mudslap",
+    "1:rocktomb",
     "1:tackle",
-    "13:metalclaw",
-    "13:rocktomb",
-    "17:irondefense",
-    "21:roar",
-    "25:rockslide",
-    "25:takedown",
-    "29:ironhead",
-    "29:irontail",
-    "37:protect",
-    "45:metalsound",
-    "51:autotomize",
-    "53:doubleedge",
-    "56:heavyslam",
-    "56:metalburst",
+    "12:roar",
+    "16:headbutt",
+    "20:protect",
+    "24:rockslide",
+    "28:ironhead",
+    "35:metalsound",
+    "40:takedown",
+    "46:autotomize",
+    "52:irontail",
+    "58:irondefense",
+    "64:heavyslam",
+    "70:doubleedge",
+    "76:metalburst",
     "tm:aerialace",
     "tm:attract",
     "tm:bodypress",

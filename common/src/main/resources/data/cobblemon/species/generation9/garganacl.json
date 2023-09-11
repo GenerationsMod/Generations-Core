@@ -33,6 +33,13 @@
   "eggGroups": [
     "mineral"
   ],
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.2
+      }
+    }
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -110,6 +117,12 @@
   "weight": 2400,
   "preEvolution": "naclstack",
   "evolutions": [],
+  "baseScale": 0.85,
+  "hitbox": {
+    "width": 2,
+    "height": 3,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.garganacl.desc"

@@ -26,33 +26,24 @@
     "grass",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:vine",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:curse",
     "1:harden",
+    "1:metalclaw",
+    "1:pinmissile",
+    "1:powerwhip",
     "1:rockclimb",
     "1:rollout",
     "1:tackle",
-    "14:metalclaw",
-    "18:pinmissile",
-    "21:gyroball",
-    "26:irondefense",
+    "15:ingrain",
+    "20:flashcannon",
+    "25:ironhead",
     "30:mirrorshot",
-    "35:ingrain",
-    "38:selfdestruct",
-    "40:powerwhip",
-    "46:ironhead",
+    "30:selfdestruct",
+    "35:irondefense",
+    "43:curse",
+    "49:gyroball",
     "53:payback",
-    "61:flashcannon",
-    "67:explosion",
+    "56:explosion",
     "tm:aerialace",
     "tm:assurance",
     "tm:attract",

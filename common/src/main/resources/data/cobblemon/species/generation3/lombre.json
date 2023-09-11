@@ -27,6 +27,22 @@
     "water_1",
     "grass"
   ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "swimSpeed": 0.3,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -38,28 +54,28 @@
     ]
   },
   "moves": [
+    "1:absorb",
     "1:astonish",
+    "1:fakeout",
     "1:flail",
+    "1:growl",
+    "1:knockoff",
     "1:teeterdance",
     "1:watergun",
-    "3:growl",
-    "7:absorb",
     "9:bubble",
     "9:mist",
     "12:megadrain",
-    "13:naturepower",
-    "19:fakeout",
-    "25:bubblebeam",
-    "25:furyswipes",
-    "27:zenheadbutt",
-    "31:watersport",
+    "18:furyswipes",
+    "20:watersport",
+    "24:bubblebeam",
+    "30:naturepower",
+    "32:uproar",
     "36:gigadrain",
-    "36:knockoff",
     "37:thief",
     "43:raindance",
-    "43:uproar",
-    "49:hydropump",
+    "50:zenheadbutt",
     "57:energyball",
+    "64:hydropump",
     "tm:attract",
     "tm:blizzard",
     "tm:bodyslam",

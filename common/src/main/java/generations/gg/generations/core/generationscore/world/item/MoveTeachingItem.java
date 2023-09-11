@@ -18,7 +18,7 @@ import net.minecraft.world.item.ItemStack;
 
 import java.util.stream.Stream;
 
-public class MoveTeachingItem extends Item implements PixelmonInteractions.PixelmonInteraction {
+public abstract class MoveTeachingItem extends Item implements PixelmonInteractions.PixelmonInteraction {
     public MoveTeachingItem(Properties properties) {
         super(properties);
     }
@@ -51,7 +51,7 @@ public class MoveTeachingItem extends Item implements PixelmonInteractions.Pixel
         }
     }
 
-    public static ElementalType getType(ItemStack stack) {
+    public ElementalType getType(ItemStack stack) {
         var template = getMove(stack);
 
         if (template != null) {
@@ -61,25 +61,13 @@ public class MoveTeachingItem extends Item implements PixelmonInteractions.Pixel
         }
     }
 
-    public ItemStack createTm(int number, String move) {
-        var stack = GenerationsItems.TM.get().getDefaultInstance();
-        var tag = stack.getOrCreateTag();
-        tag.putInt("number", number);
-        tag.putString("move", move);
-        return stack;
+    public MoveTemplate getMove(ItemStack itemStack) {
+        var moveString = getMoveString(itemStack);
+
+        return moveString != null ? Moves.INSTANCE.getByName(moveString) : null;
     }
 
-    public static MoveTemplate getMove(ItemStack itemStack) {
-        var tag = itemStack.getTag();
-
-        if (tag != null) {
-            if(tag.contains("move")) {
-                return Moves.INSTANCE.getByName(tag.getString("move"));
-            }
-        }
-
-        return null;
-    }
+    protected abstract String getMoveString(ItemStack itemStack);
 }
 
 

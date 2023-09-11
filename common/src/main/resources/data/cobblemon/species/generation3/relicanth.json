@@ -27,31 +27,35 @@
     "water_1",
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine",
-        "percentage": 10
+  "behaviour": {
+    "moving": {
+      "canLook": false,
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
       }
-    ]
+    }
   },
   "moves": [
-    "1:flail",
     "1:harden",
+    "1:mudsport",
     "1:tackle",
-    "8:watergun",
+    "5:watergun",
+    "10:ancientpower",
     "15:rocktomb",
-    "22:yawn",
-    "29:takedown",
+    "15:yawn",
+    "20:dive",
+    "25:takedown",
     "30:aquatail",
-    "36:mudsport",
-    "43:ancientpower",
-    "50:rest",
-    "57:dive",
-    "57:doubleedge",
-    "64:hydropump",
-    "78:headsmash",
+    "35:rest",
+    "40:flail",
+    "45:hydropump",
+    "50:doubleedge",
+    "55:headsmash",
     "egg:amnesia",
     "egg:aquatail",
     "egg:brine",
@@ -157,10 +161,10 @@
     "cobblemon.species.relicanth.desc"
   ],
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 0.8,
     "fixed": false
   },
   "baseFriendship": 50,

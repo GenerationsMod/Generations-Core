@@ -17,12 +17,12 @@
     "special_defence": 120,
     "speed": 90
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Galar",
@@ -199,44 +199,35 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:amaze_mulch",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:barrier",
+    "1:batonpass",
+    "1:copycat",
+    "1:encore",
     "1:guardswap",
+    "1:magicalleaf",
     "1:mistyterrain",
     "1:pound",
     "1:powerswap",
     "1:quickguard",
     "1:wideguard",
-    "4:copycat",
-    "5:confusion",
-    "8:substitute",
-    "12:meditate",
-    "15:doubleslap",
+    "8:meditate",
+    "11:doubleslap",
+    "12:confusion",
     "15:psywave",
-    "18:mimic",
-    "19:lightscreen",
-    "19:reflect",
+    "16:roleplay",
     "20:protect",
-    "22:magicalleaf",
-    "25:encore",
-    "29:psybeam",
-    "33:recycle",
+    "24:recycle",
+    "28:psybeam",
+    "29:substitute",
+    "32:mimic",
+    "36:lightscreen",
+    "36:reflect",
+    "36:safeguard",
     "36:trick",
-    "40:roleplay",
     "40:suckerpunch",
-    "43:psychic",
     "44:dazzlinggleam",
-    "47:batonpass",
-    "50:safeguard",
+    "48:psychic",
     "52:teeterdance",
     "egg:confuseray",
     "egg:fakeout",

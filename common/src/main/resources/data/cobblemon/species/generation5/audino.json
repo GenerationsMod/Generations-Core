@@ -37,7 +37,7 @@
       },
       "catchRate": 255,
       "maleRatio": 0.5,
-      "baseExperienceYield": 425,
+      "baseExperienceYield": 390,
       "baseFriendship": 50,
       "evYield": {
         "hp": 2,
@@ -52,7 +52,6 @@
       "eggGroups": [
         "fairy"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -73,37 +72,28 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:potion",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:growl",
-    "1:helpinghand",
-    "1:hypervoice",
-    "1:mistyterrain",
     "1:playnice",
     "1:pound",
-    "5:babydolleyes",
-    "5:refresh",
-    "10:doubleslap",
-    "13:disarmingvoice",
-    "15:attract",
-    "20:secretpower",
+    "4:disarmingvoice",
+    "9:babydolleyes",
+    "9:refresh",
+    "12:helpinghand",
+    "16:growl",
+    "17:doubleslap",
     "20:zenheadbutt",
+    "21:attract",
     "24:lifedew",
-    "25:entrainment",
-    "30:takedown",
-    "35:healpulse",
-    "40:afteryou",
-    "45:simplebeam",
-    "50:doubleedge",
-    "55:lastresort",
+    "25:secretpower",
+    "28:afteryou",
+    "32:takedown",
+    "36:simplebeam",
+    "40:hypervoice",
+    "44:healpulse",
+    "48:doubleedge",
+    "52:entrainment",
+    "56:mistyterrain",
+    "60:lastresort",
     "egg:amnesia",
     "egg:bestow",
     "egg:drainingkiss",

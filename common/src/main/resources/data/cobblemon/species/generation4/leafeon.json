@@ -24,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:grass_block",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:batonpass",
     "1:bite",
@@ -42,19 +33,40 @@
     "1:doubleedge",
     "1:growl",
     "1:helpinghand",
+    "1:razorleaf",
     "1:swift",
     "1:tackle",
     "1:tailwhip",
     "1:takedown",
+    "5:sandattack",
     "8:sandattack",
     "9:babydolleyes",
+    "9:razorleaf",
+    "10:quickattack",
+    "13:quickattack",
+    "15:babydolleyes",
     "15:razorleaf",
+    "17:grasswhistle",
     "20:leechseed",
+    "20:magicalleaf",
     "22:quickattack",
+    "25:gigadrain",
+    "25:magicalleaf",
+    "29:swordsdance",
     "29:synthesis",
+    "30:synthesis",
+    "33:synthesis",
+    "35:sunnyday",
     "36:magicalleaf",
+    "37:sunnyday",
+    "40:gigadrain",
+    "41:lastresort",
     "43:gigadrain",
+    "45:leafblade",
+    "45:swordsdance",
     "50:lastresort",
+    "50:leafblade",
+    "55:lastresort",
     "57:grasswhistle",
     "64:sunnyday",
     "71:leafblade",

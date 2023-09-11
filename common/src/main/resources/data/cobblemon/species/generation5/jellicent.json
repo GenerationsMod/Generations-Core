@@ -26,15 +26,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:growth_mulch",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:acidarmor",
@@ -43,19 +34,19 @@
     "1:poisonsting",
     "1:watergun",
     "1:watersport",
+    "1:wringout",
+    "12:waterpulse",
     "13:bubblebeam",
-    "17:recover",
-    "22:waterpulse",
+    "16:raindance",
+    "20:hex",
+    "24:brine",
     "27:ominouswind",
-    "32:brine",
+    "28:recover",
     "32:shadowball",
     "36:whirlpool",
-    "37:raindance",
-    "45:hex",
+    "43:hydropump",
     "48:destinybond",
-    "53:hydropump",
-    "61:wringout",
-    "69:waterspout",
+    "54:waterspout",
     "tm:attract",
     "tm:blizzard",
     "tm:brine",

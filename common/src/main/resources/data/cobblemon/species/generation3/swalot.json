@@ -25,34 +25,25 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
+    "1:bodyslam",
+    "1:gunkshot",
     "1:poisongas",
     "1:pound",
     "1:sludge",
     "1:venomdrench",
+    "1:wringout",
     "1:yawn",
-    "17:amnesia",
-    "23:encore",
-    "26:bodyslam",
-    "31:toxic",
-    "38:acidspray",
-    "40:spitup",
-    "40:stockpile",
-    "40:swallow",
-    "46:belch",
-    "48:sludgebomb",
-    "52:gastroacid",
-    "59:wringout",
-    "66:gunkshot",
+    "12:amnesia",
+    "17:acidspray",
+    "20:encore",
+    "25:toxic",
+    "30:spitup",
+    "30:stockpile",
+    "30:swallow",
+    "37:sludgebomb",
+    "42:gastroacid",
+    "49:belch",
     "tm:acidspray",
     "tm:amnesia",
     "tm:attract",

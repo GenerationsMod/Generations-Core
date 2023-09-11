@@ -32,15 +32,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:brown_mushroom",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:mudslap",
     "1:reflecttype",

@@ -27,30 +27,21 @@
     "flying",
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cocoa_beans",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:confusion",
+    "1:attract",
+    "1:gust",
     "4:odorsleuth",
-    "8:gust",
-    "12:assurance",
+    "5:confusion",
+    "10:endeavor",
+    "15:aircutter",
     "15:heartstamp",
-    "19:imprison",
-    "21:aircutter",
-    "25:attract",
-    "29:amnesia",
-    "29:calmmind",
-    "32:airslash",
-    "36:futuresight",
-    "41:psychic",
-    "47:endeavor",
+    "20:imprison",
+    "25:assurance",
+    "30:amnesia",
+    "35:airslash",
+    "40:psychic",
+    "45:calmmind",
+    "50:futuresight",
     "55:simplebeam",
     "egg:captivate",
     "egg:charm",

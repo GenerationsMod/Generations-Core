@@ -23,29 +23,20 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:scratch",
     "1:yawn",
-    "7:encore",
-    "13:slackoff",
+    "6:encore",
+    "9:slackoff",
+    "14:feintattack",
     "14:headbutt",
-    "19:feintattack",
-    "25:amnesia",
+    "17:amnesia",
+    "22:covet",
+    "25:chipaway",
     "25:throatchop",
-    "31:covet",
-    "37:chipaway",
-    "37:counter",
+    "30:counter",
+    "33:flail",
     "38:playrough",
-    "43:flail",
     "egg:afteryou",
     "egg:bodyslam",
     "egg:crushclaw",

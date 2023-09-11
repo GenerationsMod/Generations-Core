@@ -16,7 +16,7 @@
     "speed": 35
   },
   "catchRate": 190,
-  "maleRatio": 0.5,
+  "maleRatio": 0.7,
   "shoulderMountable": false,
   "baseExperienceYield": 67,
   "experienceGroup": "medium_slow",
@@ -25,35 +25,34 @@
     "grass",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cactus",
-        "percentage": 25
-      }
-    ]
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:leer",
     "1:poisonsting",
-    "5:absorb",
-    "9:growth",
-    "13:leechseed",
+    "4:absorb",
+    "7:growth",
+    "10:leechseed",
+    "13:sandattack",
     "16:bulletseed",
-    "17:sandattack",
+    "16:needlearm",
+    "19:feintattack",
     "19:powertrip",
-    "21:pinmissile",
-    "25:ingrain",
-    "29:feintattack",
-    "33:spikes",
-    "37:needlearm",
-    "37:suckerpunch",
-    "41:cottonspore",
-    "41:payback",
+    "22:ingrain",
+    "26:payback",
+    "30:spikes",
+    "34:suckerpunch",
+    "38:pinmissile",
     "42:energyball",
-    "45:sandstorm",
-    "49:destinybond",
+    "46:cottonspore",
+    "50:sandstorm",
+    "54:destinybond",
     "egg:acid",
     "egg:belch",
     "egg:block",
@@ -190,10 +189,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.9,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 35,

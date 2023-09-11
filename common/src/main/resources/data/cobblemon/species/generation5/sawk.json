@@ -25,31 +25,22 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:bide",
     "1:leer",
     "1:rocksmash",
-    "5:bide",
-    "9:focusenergy",
-    "13:doublekick",
-    "17:lowsweep",
-    "21:counter",
-    "25:karatechop",
-    "29:brickbreak",
-    "33:bulkup",
-    "37:retaliate",
-    "41:endure",
-    "45:quickguard",
-    "49:closecombat",
-    "53:reversal",
+    "5:focusenergy",
+    "10:doublekick",
+    "15:quickguard",
+    "17:karatechop",
+    "20:lowsweep",
+    "25:bulkup",
+    "30:retaliate",
+    "35:brickbreak",
+    "40:counter",
+    "45:endure",
+    "50:reversal",
+    "55:closecombat",
     "tm:attract",
     "tm:brickbreak",
     "tm:bulkup",

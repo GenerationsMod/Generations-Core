@@ -33,37 +33,28 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:magma_cream",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
+    "1:bind",
     "1:bite",
     "1:bulldoze",
     "1:coreenforcer",
     "1:dragonbreath",
-    "1:glare",
     "1:thousandarrows",
     "1:thousandwaves",
-    "5:safeguard",
-    "10:dig",
-    "18:bind",
-    "26:landswrath",
-    "35:sandstorm",
-    "44:haze",
-    "51:crunch",
-    "55:earthquake",
+    "8:haze",
+    "16:dig",
+    "24:safeguard",
+    "32:crunch",
+    "40:dragonpulse",
+    "48:landswrath",
+    "56:glare",
     "59:camouflage",
-    "63:dragonpulse",
+    "64:sandstorm",
+    "72:coil",
     "72:dragondance",
-    "80:coil",
+    "80:earthquake",
     "88:extremespeed",
-    "93:outrage",
+    "88:outrage",
     "tm:bodyslam",
     "tm:breakingswipe",
     "tm:brickbreak",
@@ -176,7 +167,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 243,
+      "baseExperienceYield": 300,
       "baseFriendship": 0,
       "evYield": {
         "hp": 3,
@@ -236,7 +227,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 354,
+      "baseExperienceYield": 300,
       "baseFriendship": 0,
       "evYield": {
         "hp": 3,
@@ -251,7 +242,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "legendary"

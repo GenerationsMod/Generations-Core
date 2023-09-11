@@ -25,33 +25,24 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:flowering_azalea_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
-    "4:growth",
-    "8:leechseed",
-    "10:sleeppowder",
+    "1:growth",
+    "3:helpinghand",
+    "6:stunspore",
+    "9:megadrain",
+    "12:aromatherapy",
     "12:charm",
-    "13:megadrain",
-    "17:synthesis",
-    "19:magicalleaf",
-    "22:stunspore",
-    "26:gigadrain",
-    "28:aromatherapy",
-    "31:helpinghand",
-    "35:energyball",
-    "37:entrainment",
-    "40:sunnyday",
-    "44:afteryou",
-    "46:leafstorm",
+    "15:magicalleaf",
+    "18:sleeppowder",
+    "21:gigadrain",
+    "24:leechseed",
+    "27:afteryou",
+    "30:energyball",
+    "33:synthesis",
+    "36:sunnyday",
+    "39:entrainment",
+    "42:leafstorm",
     "egg:bide",
     "egg:charm",
     "egg:encore",
@@ -142,7 +133,7 @@
         "victorydance"
       ],
       "requirements": [],
-      "requiredContext": "cobblemon:moon_stone"
+      "requiredContext": "cobblemon:sun_stone"
     }
   ],
   "baseScale": 1,

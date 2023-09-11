@@ -19,31 +19,12 @@
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": true,
-  "shoulderEffects": [
-    {
-      "type": "potion_effect",
-      "effect": "minecraft:slow_falling",
-      "amplifier": 0,
-      "ambient": true,
-      "showParticles": false,
-      "showIcon": false
-    }
-  ],
   "baseExperienceYield": 49,
   "experienceGroup": "medium_fast",
   "eggCycles": 15,
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cocoa_beans",
-        "percentage": 10
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "walk": {
@@ -62,21 +43,21 @@
   },
   "moves": [
     "1:absorb",
-    "1:leechlife",
-    "6:astonish",
-    "6:supersonic",
-    "16:bite",
-    "21:wingattack",
-    "24:swift",
-    "26:confuseray",
-    "31:aircutter",
-    "33:acrobatics",
-    "36:meanlook",
-    "37:venoshock",
-    "41:airslash",
-    "41:poisonfang",
-    "43:quickguard",
-    "46:haze",
+    "1:supersonic",
+    "5:astonish",
+    "10:meanlook",
+    "13:wingattack",
+    "15:poisonfang",
+    "20:quickguard",
+    "23:swift",
+    "25:aircutter",
+    "30:acrobatics",
+    "30:bite",
+    "35:haze",
+    "40:venoshock",
+    "45:confuseray",
+    "50:airslash",
+    "55:leechlife",
     "egg:bravebird",
     "egg:curse",
     "egg:defog",

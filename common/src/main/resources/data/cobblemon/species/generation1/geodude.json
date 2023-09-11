@@ -17,12 +17,12 @@
     "special_defence": 30,
     "speed": 20
   },
-  "features": [
-    "alolan"
-  ],
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "alolan"
+  ],
   "forms": [
     {
       "name": "Alola",
@@ -211,20 +211,20 @@
   "moves": [
     "1:defensecurl",
     "1:tackle",
-    "6:mudsport",
-    "8:rockpolish",
-    "11:rockthrow",
-    "16:magnitude",
-    "21:selfdestruct",
-    "25:smackdown",
-    "26:rollout",
-    "31:rockblast",
-    "32:bulldoze",
-    "36:earthquake",
-    "36:stealthrock",
-    "39:stoneedge",
-    "41:explosion",
-    "46:doubleedge",
+    "4:mudsport",
+    "6:rockpolish",
+    "10:rollout",
+    "12:magnitude",
+    "16:rockthrow",
+    "18:smackdown",
+    "22:bulldoze",
+    "24:selfdestruct",
+    "28:stealthrock",
+    "30:rockblast",
+    "34:earthquake",
+    "36:explosion",
+    "40:doubleedge",
+    "42:stoneedge",
     "egg:autotomize",
     "egg:block",
     "egg:curse",

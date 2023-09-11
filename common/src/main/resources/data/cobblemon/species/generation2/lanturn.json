@@ -26,37 +26,39 @@
   "eggGroups": [
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sea_lantern",
-        "percentage": 10
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "avoidsLand": true
+      },
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
       }
-    ]
+    }
   },
   "moves": [
     "1:bubble",
     "1:eerieimpulse",
+    "1:electroball",
+    "1:spitup",
     "1:spotlight",
+    "1:stockpile",
     "1:supersonic",
+    "1:swallow",
     "1:thunderwave",
-    "13:flail",
-    "17:watergun",
-    "25:spark",
-    "27:spitup",
-    "27:stockpile",
-    "27:swallow",
-    "30:bubblebeam",
-    "30:electroball",
-    "32:confuseray",
-    "35:signalbeam",
-    "40:discharge",
-    "43:takedown",
-    "47:aquaring",
-    "50:hydropump",
+    "1:watergun",
+    "12:bubblebeam",
+    "16:confuseray",
+    "20:spark",
+    "24:charge",
+    "29:signalbeam",
+    "30:discharge",
+    "36:aquaring",
+    "42:flail",
+    "48:takedown",
+    "54:hydropump",
     "54:iondeluge",
-    "61:charge",
     "tm:agility",
     "tm:amnesia",
     "tm:attract",

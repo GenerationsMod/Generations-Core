@@ -34,7 +34,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 347,
+      "baseExperienceYield": 335,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -49,7 +49,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "primal",
@@ -72,16 +71,8 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "3",
+    "amount": "1",
     "entries": [
-      {
-        "item": "minecraft:ancient_debris",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:blue_orb",
-        "percentage": 100
-      },
       {
         "item": "generations_core:kyogre_doll",
         "percentage": 75
@@ -89,21 +80,21 @@
     ]
   },
   "moves": [
+    "1:ancientpower",
+    "1:bodyslam",
+    "1:originpulse",
+    "1:scaryface",
     "1:waterpulse",
-    "5:scaryface",
-    "15:ancientpower",
-    "20:bodyslam",
-    "20:muddywater",
-    "30:aquaring",
-    "30:calmmind",
-    "35:icebeam",
-    "45:hydropump",
-    "45:originpulse",
+    "9:aquatail",
+    "18:calmmind",
+    "27:muddywater",
+    "36:icebeam",
+    "45:sheercold",
     "50:rest",
-    "60:sheercold",
-    "65:aquatail",
-    "65:doubleedge",
-    "75:waterspout",
+    "54:aquaring",
+    "72:hydropump",
+    "81:doubleedge",
+    "90:waterspout",
     "tm:avalanche",
     "tm:blizzard",
     "tm:bodyslam",

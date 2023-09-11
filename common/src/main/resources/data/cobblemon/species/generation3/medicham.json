@@ -37,7 +37,7 @@
       },
       "catchRate": 90,
       "maleRatio": 0.5,
-      "baseExperienceYield": 179,
+      "baseExperienceYield": 144,
       "baseFriendship": 70,
       "evYield": {
         "hp": 0,
@@ -52,7 +52,6 @@
       "eggGroups": [
         "human_like"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -73,15 +72,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:potion",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:bide",
     "1:confusion",
@@ -91,23 +81,23 @@
     "1:meditate",
     "1:thunderpunch",
     "1:workup",
-    "1:zenheadbutt",
     "12:endure",
-    "17:hiddenpower",
+    "15:feint",
+    "17:forcepalm",
+    "20:hiddenpower",
     "20:psybeam",
     "20:swagger",
-    "22:feint",
-    "22:mindreader",
-    "28:calmmind",
-    "29:forcepalm",
-    "32:highjumpkick",
-    "36:psychup",
-    "42:acupressure",
-    "42:powertrick",
-    "46:reversal",
+    "23:calmmind",
+    "25:mindreader",
+    "25:zenheadbutt",
+    "28:highjumpkick",
+    "31:psychup",
+    "33:acupressure",
+    "36:powertrick",
+    "42:reversal",
+    "47:recover",
     "53:axekick",
     "53:counter",
-    "54:recover",
     "tm:aerialace",
     "tm:attract",
     "tm:aurasphere",

@@ -18,6 +18,11 @@
     "speed": 55
   },
   "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.25
+      }
+      },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": false,
@@ -34,36 +39,27 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_copper",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:defensecurl",
+    "1:focuspunch",
     "1:highhorsepower",
     "1:mudslap",
-    "1:phantomforce",
     "1:pound",
     "9:rollout",
-    "13:shadowpunch",
-    "17:irondefense",
-    "21:megapunch",
-    "21:stompingtantrum",
-    "25:magnitude",
-    "30:dynamicpunch",
-    "35:nightshade",
+    "12:shadowpunch",
+    "16:curse",
+    "20:nightshade",
+    "24:stompingtantrum",
+    "28:irondefense",
+    "30:magnitude",
+    "32:megapunch",
     "36:shadowball",
-    "40:curse",
-    "43:heavyslam",
-    "50:earthquake",
-    "60:hammerarm",
-    "70:focuspunch",
+    "40:heavyslam",
+    "46:phantomforce",
+    "52:hammerarm",
+    "58:earthquake",
+    "64:dynamicpunch",
     "tm:allyswitch",
     "tm:bodypress",
     "tm:bodyslam",
@@ -175,7 +171,7 @@
   ],
   "preEvolution": "golett",
   "evolutions": [],
-  "baseScale": 1.2,
+  "baseScale": 1.65,
   "hitbox": {
     "width": 1.4,
     "height": 3.5,

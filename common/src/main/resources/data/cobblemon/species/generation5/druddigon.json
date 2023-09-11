@@ -26,34 +26,25 @@
     "monster",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blackstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:scratch",
-    "5:honeclaws",
-    "9:bite",
-    "13:scaryface",
+    "5:bite",
+    "10:dragontail",
     "15:metalclaw",
     "18:dragonrage",
-    "21:slash",
-    "25:crunch",
-    "27:dragonclaw",
+    "20:scaryface",
+    "25:slash",
+    "30:dragonclaw",
     "31:chipaway",
+    "35:honeclaws",
     "35:revenge",
+    "40:crunch",
     "40:nightslash",
-    "45:dragontail",
     "45:ironhead",
     "49:rockclimb",
+    "50:outrage",
     "55:superpower",
-    "62:outrage",
     "egg:crushclaw",
     "egg:feintattack",
     "egg:firefang",

@@ -17,23 +17,9 @@
     "special_defence": 25,
     "speed": 15
   },
-  "features": [
-    "paldean"
-  ],
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": true,
-  "shoulderEffects": [
-    {
-      "type": "potion_effect",
-      "effect": "minecraft:water_breathing",
-      "amplifier": 0,
-      "ambient": true,
-      "showParticles": false,
-      "showIcon": false
-    }
-
-  ],
   "forms": [
     {
       "name": "Paldea",
@@ -54,6 +40,7 @@
       },
       "catchRate": 255,
       "maleRatio": 0.5,
+      "baseExperienceYield": 42,
       "baseFriendship": 50,
       "evYield": {
         "hp": 1,
@@ -69,15 +56,6 @@
         "water_1",
         "field"
       ],
-      "drops": {
-        "amount": "1",
-        "entries": [
-          {
-            "item": "generations_core:damp_mulch",
-            "percentage": 10
-          }
-        ]
-      },
       "moves": [
         "1:mudshot",
         "1:tailwhip",
@@ -180,21 +158,18 @@
     "water_1",
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:damp_mulch",
-        "percentage": 10
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "swim": {
         "canSwimInWater": true,
         "canBreatheUnderwater": true
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "drops": {
@@ -209,19 +184,19 @@
   "moves": [
     "1:tailwhip",
     "1:watergun",
+    "4:raindance",
     "5:mudsport",
-    "11:slam",
-    "16:mudshot",
+    "8:mudshot",
+    "12:haze",
+    "12:mist",
+    "16:slam",
     "19:mudbomb",
-    "21:amnesia",
+    "21:yawn",
     "24:aquatail",
-    "31:yawn",
-    "36:earthquake",
+    "28:muddywater",
+    "32:amnesia",
     "36:toxic",
-    "41:raindance",
-    "47:muddywater",
-    "51:haze",
-    "51:mist",
+    "40:earthquake",
     "egg:acidspray",
     "egg:afteryou",
     "egg:ancientpower",
@@ -359,6 +334,9 @@
   "labels": [
     "gen2",
     "johto_regional"
+  ],
+  "features": [
+    "paldean"
   ],
   "pokedex": [
     "cobblemon.species.wooper.desc"

@@ -25,34 +25,25 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:totem_of_undying",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:aromatherapy",
-    "1:aromaticmist",
     "1:astonish",
     "1:confusion",
-    "1:drainingkiss",
-    "1:meanlook",
-    "1:psychicterrain",
-    "1:withdraw",
+    "5:withdraw",
     "8:psywave",
-    "14:psybeam",
-    "20:sweetscent",
-    "26:skillswap",
-    "32:psyshock",
-    "38:tickle",
-    "43:naturesmadness",
-    "48:extrasensory",
-    "53:flatter",
-    "58:moonblast",
+    "10:aromatherapy",
+    "15:drainingkiss",
+    "20:psybeam",
+    "25:flatter",
+    "30:aromaticmist",
+    "35:sweetscent",
+    "40:extrasensory",
+    "45:psyshock",
+    "50:meanlook",
+    "55:naturesmadness",
+    "60:moonblast",
+    "65:tickle",
+    "70:skillswap",
+    "75:psychicterrain",
     "tm:allyswitch",
     "tm:calmmind",
     "tm:chargebeam",

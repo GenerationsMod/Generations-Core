@@ -23,27 +23,18 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:mudslap",
     "1:visegrip",
-    "4:stringshot",
-    "7:mudslap",
-    "10:bite",
-    "13:bugbite",
-    "16:spark",
+    "5:stringshot",
+    "10:bugbite",
+    "15:bite",
     "19:acrobatics",
-    "22:crunch",
+    "21:spark",
     "25:stickyweb",
-    "25:xscissor",
-    "28:dig",
+    "30:xscissor",
+    "35:crunch",
+    "40:dig",
     "egg:discharge",
     "egg:electroweb",
     "egg:endure",

@@ -33,15 +33,6 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:seagrass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:mudslap",
     "1:sandattack",

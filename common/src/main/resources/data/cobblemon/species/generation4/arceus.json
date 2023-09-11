@@ -49,7 +49,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -95,7 +94,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -141,7 +139,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -187,7 +184,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -233,7 +229,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mythical",
@@ -279,7 +274,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -325,7 +319,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -371,7 +364,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -417,7 +409,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -463,7 +454,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -509,7 +499,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -555,7 +544,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -601,7 +589,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -647,7 +634,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -693,7 +679,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -739,7 +724,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -785,7 +769,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",
@@ -808,12 +791,8 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
-      {
-        "item": "minecraft:nether_star",
-        "percentage": 50
-      },
       {
         "item": "generations_core:arceus_doll",
         "percentage": 75

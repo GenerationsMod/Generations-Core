@@ -25,15 +25,6 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:shield",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:protect",
     "1:tackle",
@@ -45,6 +36,7 @@
     "28:ancientpower",
     "33:endure",
     "37:metalburst",
+    "42:ironhead",
     "43:ironhead",
     "46:heavyslam",
     "egg:bodyslam",

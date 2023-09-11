@@ -25,34 +25,25 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:glow_berries",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
-    "1:bite",
     "1:leer",
     "1:tackle",
     "3:rockthrow",
-    "8:sandstorm",
+    "6:payback",
+    "9:bite",
+    "12:scaryface",
     "14:chipaway",
-    "15:screech",
+    "15:rockslide",
     "18:stompingtantrum",
-    "22:rockslide",
+    "21:screech",
+    "24:darkpulse",
     "24:smackdown",
-    "28:darkpulse",
-    "29:thrash",
-    "32:payback",
-    "36:scaryface",
-    "43:crunch",
-    "46:stoneedge",
-    "50:earthquake",
-    "57:hyperbeam",
+    "27:crunch",
+    "31:earthquake",
+    "33:stoneedge",
+    "36:thrash",
+    "39:sandstorm",
+    "42:hyperbeam",
     "egg:ancientpower",
     "egg:assurance",
     "egg:curse",

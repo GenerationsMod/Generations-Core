@@ -17,7 +17,7 @@
   },
   "catchRate": 45,
   "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "shoulderMountable": true,
   "baseExperienceYield": 167,
   "experienceGroup": "medium_fast",
   "eggCycles": 20,
@@ -39,17 +39,17 @@
     "1:scratch",
     "1:splash",
     "1:woodhammer",
-    "5:doubleteam",
-    "10:babydolleyes",
-    "14:shadowsneak",
-    "19:mimic",
+    "6:shadowsneak",
+    "12:doubleteam",
+    "18:babydolleyes",
     "23:feintattack",
-    "28:charm",
-    "32:slash",
-    "37:shadowclaw",
-    "41:honeclaws",
-    "46:playrough",
-    "50:painsplit",
+    "24:mimic",
+    "30:honeclaws",
+    "36:slash",
+    "42:shadowclaw",
+    "48:charm",
+    "54:playrough",
+    "60:painsplit",
     "egg:curse",
     "egg:destinybond",
     "egg:grudge",
@@ -197,7 +197,6 @@
       "eggGroups": [
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen7"
       ],
@@ -362,7 +361,6 @@
       "eggGroups": [
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen7",
         "totem"

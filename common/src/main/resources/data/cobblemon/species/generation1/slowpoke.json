@@ -17,12 +17,12 @@
     "special_defence": 40,
     "speed": 15
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 190,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Galar",
@@ -186,45 +186,42 @@
     "monster",
     "water_1"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:rich_mulch",
-        "percentage": 5
-      },
-      {
-        "item": "generations_core:boost_mulch",
-        "percentage": 5
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "swim": {
+        "swimSpeed": 0.08,
         "canSwimInWater": true,
         "canBreatheUnderwater": true
+      },
+      "walk": {
+        "walkSpeed": 0.125
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-16"
     }
   },
   "moves": [
     "1:curse",
     "1:tackle",
-    "1:yawn",
-    "6:growl",
-    "13:watergun",
-    "17:confusion",
-    "24:disable",
-    "29:headbutt",
-    "29:waterpulse",
+    "3:growl",
+    "6:watergun",
+    "9:yawn",
+    "12:confusion",
+    "15:disable",
+    "18:waterpulse",
+    "21:headbutt",
+    "24:zenheadbutt",
+    "27:amnesia",
     "30:surf",
-    "34:zenheadbutt",
-    "36:amnesia",
-    "39:slackoff",
-    "40:psychic",
-    "47:psychup",
-    "53:raindance",
-    "58:healpulse",
+    "33:slackoff",
+    "36:psychic",
+    "39:psychup",
+    "42:raindance",
+    "45:healpulse",
     "egg:belch",
     "egg:bellydrum",
     "egg:block",

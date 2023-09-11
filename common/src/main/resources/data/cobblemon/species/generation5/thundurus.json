@@ -34,37 +34,28 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:mirror",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
+    "1:nastyplot",
     "1:thundershock",
-    "1:uproar",
     "5:leer",
-    "7:swagger",
-    "13:bite",
-    "19:revenge",
-    "25:shockwave",
-    "31:healblock",
+    "10:swagger",
+    "13:revenge",
+    "15:bite",
+    "20:shockwave",
+    "25:agility",
+    "25:healblock",
+    "30:charge",
     "35:voltswitch",
-    "37:agility",
-    "43:discharge",
-    "49:crunch",
-    "55:charge",
+    "40:crunch",
+    "45:discharge",
+    "50:uproar",
+    "55:hammerarm",
     "60:raindance",
-    "61:nastyplot",
-    "67:thunder",
-    "73:darkpulse",
+    "65:thunder",
+    "67:darkpulse",
+    "70:thrash",
     "75:wildboltstorm",
-    "79:hammerarm",
-    "85:thrash",
     "tm:acrobatics",
     "tm:agility",
     "tm:assurance",
@@ -215,7 +206,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "legendary"

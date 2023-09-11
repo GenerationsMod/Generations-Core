@@ -24,15 +24,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:poke_ball",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:amnesia",
     "1:charm",

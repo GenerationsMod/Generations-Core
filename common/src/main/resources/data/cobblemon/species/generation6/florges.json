@@ -24,15 +24,6 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:oxeye_daisy",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:aromatherapy",
     "1:disarmingvoice",
@@ -42,13 +33,13 @@
     "1:luckychant",
     "1:magicalleaf",
     "1:mistyterrain",
-    "1:moonblast",
     "1:petalblizzard",
     "1:petaldance",
     "1:safeguard",
     "1:solarbeam",
     "1:synthesis",
     "1:wish",
+    "5:moonblast",
     "tm:attract",
     "tm:batonpass",
     "tm:calmmind",

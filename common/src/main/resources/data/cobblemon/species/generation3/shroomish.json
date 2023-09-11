@@ -26,29 +26,20 @@
     "fairy",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:spore_blossom",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
-    "4:tackle",
-    "7:stunspore",
-    "10:leechseed",
-    "16:megadrain",
-    "22:headbutt",
-    "28:poisonpowder",
-    "29:worryseed",
+    "1:tackle",
+    "5:stunspore",
+    "8:leechseed",
+    "12:megadrain",
+    "15:headbutt",
+    "19:poisonpowder",
+    "22:worryseed",
+    "26:gigadrain",
+    "29:growth",
     "33:toxic",
-    "36:growth",
-    "41:seedbomb",
-    "45:gigadrain",
-    "54:spore",
+    "36:seedbomb",
+    "40:spore",
     "egg:bulletseed",
     "egg:charm",
     "egg:drainpunch",
@@ -154,10 +145,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.7,
+    "height": 0.6,
     "fixed": false
   },
   "baseFriendship": 70,

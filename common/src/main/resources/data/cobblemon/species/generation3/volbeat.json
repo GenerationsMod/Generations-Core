@@ -26,31 +26,35 @@
     "bug",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:glowstone_dust",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:flash",
     "1:tackle",
-    "5:confuseray",
-    "9:doubleteam",
-    "13:moonlight",
+    "5:doubleteam",
+    "8:confuseray",
+    "12:quickattack",
     "15:strugglebug",
-    "17:quickattack",
-    "21:tailglow",
-    "25:signalbeam",
+    "19:moonlight",
+    "22:tailglow",
+    "26:signalbeam",
     "29:protect",
-    "33:helpinghand",
-    "37:doubleedge",
-    "37:zenheadbutt",
-    "41:bugbuzz",
+    "33:zenheadbutt",
+    "36:helpinghand",
+    "40:bugbuzz",
     "43:playrough",
+    "47:doubleedge",
     "50:infestation",
     "egg:batonpass",
     "egg:bugbuzz",
@@ -149,10 +153,10 @@
     "cobblemon.species.volbeat.desc"
   ],
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.7,
+    "height": 1.1,
     "fixed": false
   },
   "baseFriendship": 70,

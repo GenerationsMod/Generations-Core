@@ -25,34 +25,25 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:custap_berry",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:babydolleyes",
     "1:pound",
-    "3:babydolleyes",
     "3:growl",
-    "7:helpinghand",
-    "9:tickle",
+    "4:helpinghand",
+    "8:echoedvoice",
+    "12:sing",
     "13:doubleslap",
-    "15:encore",
-    "19:swift",
-    "21:sing",
-    "25:tailslap",
-    "27:charm",
+    "16:charm",
+    "20:swift",
+    "24:encore",
+    "28:afteryou",
     "31:wakeupslap",
-    "33:echoedvoice",
-    "37:slam",
+    "32:tailslap",
+    "36:tickle",
     "39:captivate",
-    "43:hypervoice",
-    "45:lastresort",
-    "49:afteryou",
+    "40:slam",
+    "44:hypervoice",
+    "48:lastresort",
     "egg:aquatail",
     "egg:endure",
     "egg:faketears",

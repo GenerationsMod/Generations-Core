@@ -2,21 +2,25 @@ package generations.gg.generations.core.generationscore.client;
 
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
+import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRenderer;
+import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry;
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
+import com.mojang.blaze3d.vertex.PoseStack;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsDataProvider;
 import generations.gg.generations.core.generationscore.client.model.RareCandyAnimationFactory;
 import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
+import generations.gg.generations.core.generationscore.client.model.inventory.GenericChestItemStackRenderer;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.StatueEntityRenderer;
 import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
@@ -24,16 +28,20 @@ import generations.gg.generations.core.generationscore.world.entity.GenerationsB
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
-import generations.gg.generations.core.generationscore.world.item.TechnicalMachineItem;
+import generations.gg.generations.core.generationscore.world.item.MoveTeachingItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import kotlin.Unit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -41,14 +49,17 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.function.BiConsumer;
@@ -66,7 +77,7 @@ public class GenerationsCoreClient {
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
-        //VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), new RareCandyBone(resourceLocation)));
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
 
 
         PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
@@ -75,18 +86,16 @@ public class GenerationsCoreClient {
 
     private static void setupClient(Minecraft event) {
         event.submit(() -> {
-            GenerationsCore.getImplementation().getNetworkManager().registerClientBound();
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
-            ModelRegistry.getRareCandy();
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
         });
 
-        ItemPropertiesRegistry.register(GenerationsItems.TM.get(), GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
-            var type = TechnicalMachineItem.getType(arg);
+        ItemPropertiesRegistry.registerGeneric(GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {
+            var type = ((MoveTeachingItem) arg.getItem()).getType(arg);
 
             if(type == ElementalTypes.INSTANCE.getNORMAL()) return 0.00f;
             else if(type == ElementalTypes.INSTANCE.getFIRE()) return 0.01f;
@@ -123,6 +132,16 @@ public class GenerationsCoreClient {
             else if (isItem(GenerationsItems.SILVER_WING, stack)) return 1.0f;
             else return 0;
         });
+
+        registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get());
+        registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get());
+        registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST.get());
+        registerChestRenderer(GenerationsBlocks.MASTERBALL_CHEST.get());
+    }
+
+    private static void registerChestRenderer(GenericChestBlock chest ) {
+        var e = new GenericChestItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), () -> new GenericChestBlockEntity(BlockPos.ZERO, chest.defaultBlockState()));
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(chest.asItem(), e::renderByItem);
     }
 
     private static void addWoodType(WoodType woodType) {
@@ -150,6 +169,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsEntities.BOAT_ENTITY.get(), (EntityRendererProvider.Context context) -> new GenerationsBoatRenderer(context, false));
         consumer.accept(GenerationsEntities.CHEST_BOAT_ENTITY.get(), context -> new GenerationsBoatRenderer(context, true));
         consumer.accept(GenerationsEntities.MAGMA_CRYSTAL.get(), ThrownItemRenderer::new);
+        consumer.accept(GenerationsEntities.STATUE_ENTITY.get(), StatueEntityRenderer::new);
     }
 
     /**
@@ -161,7 +181,6 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.POKE_DOLL.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.HEALER.get(), HealerBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.CLOCK.get(), GeneralUseBlockEntityRenderer::new);
-        consumer.accept(GenerationsBlockEntities.BOX.get(), GeneralUseBlockEntityRenderer::new);
 
         consumer.accept(GenerationsBlockEntities.TIMESPACE_ALTAR.get(), TimeSpaceAltarEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.ABUNDANT_SHRINE.get(), GeneralUseBlockEntityRenderer::new);

@@ -34,7 +34,13 @@
         "canSwimInWater": true,
         "canBreatheUnderwater": true
       }
-    }
+    },
+      "resting": {
+        "canSleep": true,
+        "willSleepOnBed": false,
+        "depth": "normal",
+        "light": "0-4"
+      }
   },
   "drops": {
     "amount": "1",
@@ -46,25 +52,25 @@
     ]
   },
   "moves": [
+    "1:charm",
     "1:tackle",
-    "4:charm",
-    "9:drainingkiss",
-    "12:watergun",
+    "4:watergun",
+    "7:agility",
+    "13:luckychant",
     "13:wish",
-    "16:agility",
-    "17:luckychant",
+    "17:waterpulse",
+    "20:attract",
+    "22:drainingkiss",
     "22:heartstamp",
-    "24:takedown",
-    "28:attract",
-    "31:waterpulse",
-    "36:sweetkiss",
-    "37:aquaring",
+    "26:flail",
+    "31:sweetkiss",
+    "34:takedown",
     "37:babydolleyes",
-    "40:captivate",
-    "40:flail",
-    "40:hydropump",
+    "37:captivate",
+    "40:aquaring",
     "42:soak",
-    "48:safeguard",
+    "46:hydropump",
+    "49:safeguard",
     "egg:aquajet",
     "egg:aquaring",
     "egg:brine",

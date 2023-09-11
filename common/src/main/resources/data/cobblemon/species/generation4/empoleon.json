@@ -31,6 +31,9 @@
       "swim": {
         "canSwimInWater": true,
         "canBreatheUnderwater": true
+      },
+      "walk": {
+        "walkSpeed": 0.2
       }
     },
     "resting": {
@@ -58,14 +61,17 @@
     ]
   },
   "moves": [
+    "1:aquajet",
     "1:bubble",
     "1:growl",
+    "1:metalclaw",
     "1:tackle",
     "11:swordsdance",
     "15:peck",
     "16:metalclaw",
     "19:bubblebeam",
     "19:swagger",
+    "24:swagger",
     "28:furyattack",
     "33:brine",
     "36:aquajet",

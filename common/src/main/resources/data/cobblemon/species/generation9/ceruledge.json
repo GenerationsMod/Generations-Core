@@ -16,9 +16,23 @@
     "special_defence": 100,
     "speed": 85
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 25,
   "maleRatio": 0.5,
   "baseExperienceYield": 263,
+  "baseScale": 0.85,
+  "hitbox": {
+    "width": 0.8,
+    "height": 2.1,
+    "fixed": false
+  },
   "baseFriendship": 20,
   "evYield": {
     "hp": 0,
@@ -33,15 +47,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:charcoal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:ember",

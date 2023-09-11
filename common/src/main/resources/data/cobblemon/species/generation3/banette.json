@@ -36,7 +36,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 194,
+      "baseExperienceYield": 159,
       "baseFriendship": 35,
       "evYield": {
         "hp": 0,
@@ -51,7 +51,6 @@
       "eggGroups": [
         "amorphous"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -72,33 +71,24 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
-    "1:curse",
     "1:knockoff",
     "1:nightshade",
-    "1:phantomforce",
     "1:screech",
-    "20:shadowsneak",
-    "25:spite",
-    "31:hex",
-    "32:willowisp",
+    "1:spite",
+    "16:willowisp",
+    "19:feintattack",
+    "19:shadowsneak",
+    "22:hex",
+    "26:curse",
+    "30:shadowball",
+    "34:embargo",
     "34:roleplay",
-    "35:suckerpunch",
-    "39:feintattack",
-    "42:embargo",
-    "48:shadowball",
-    "55:snatch",
-    "64:grudge",
-    "66:trick",
+    "40:suckerpunch",
+    "46:snatch",
+    "46:trick",
+    "52:grudge",
+    "53:phantomforce",
     "tm:attract",
     "tm:calmmind",
     "tm:captivate",

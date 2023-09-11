@@ -38,12 +38,12 @@
       }
     }
   },
-    "resting": {
-      "canSleep": true,
-      "willSleepOnBed": false,
-      "depth": "normal",
-      "light": "0-4"
-    },
+  "resting": {
+    "canSleep": true,
+    "willSleepOnBed": false,
+    "depth": "normal",
+    "light": "0-4"
+  },
   "drops": {
     "amount": "1",
     "entries": [
@@ -65,24 +65,24 @@
   "moves": [
     "1:poisonsting",
     "1:watergun",
-    "6:supersonic",
-    "12:constrict",
-    "15:toxicspikes",
-    "19:acid",
-    "25:bubblebeam",
-    "26:acidspray",
-    "29:waterpulse",
-    "30:wrap",
+    "4:acid",
+    "7:constrict",
+    "8:wrap",
+    "12:supersonic",
+    "13:toxicspikes",
+    "16:waterpulse",
+    "20:screech",
+    "22:acidspray",
+    "24:bubblebeam",
+    "28:barrier",
+    "28:hex",
     "32:acidarmor",
-    "33:poisonjab",
     "34:brine",
-    "36:barrier",
+    "36:poisonjab",
     "40:surf",
-    "43:hex",
-    "43:screech",
-    "43:wringout",
-    "49:hydropump",
-    "50:sludgewave",
+    "44:sludgewave",
+    "48:hydropump",
+    "49:wringout",
     "egg:acupressure",
     "egg:aquaring",
     "egg:aurorabeam",

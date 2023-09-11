@@ -16,6 +16,11 @@
     "speed": 80
   },
   "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.3
+      }
+    },
     "resting": {
       "canSleep": true,
       "depth": "normal",
@@ -50,19 +55,19 @@
     "1:ember",
     "1:growl",
     "1:scratch",
+    "1:smokescreen",
     "12:dragonbreath",
     "13:metalclaw",
-    "13:smokescreen",
+    "17:dragonrage",
+    "19:firefang",
     "20:rage",
-    "27:scaryface",
-    "28:firefang",
+    "24:slash",
+    "30:flamethrower",
     "32:flameburst",
-    "34:flamethrower",
-    "41:slash",
-    "48:dragonrage",
+    "37:scaryface",
+    "42:firespin",
+    "48:inferno",
     "54:flareblitz",
-    "54:inferno",
-    "55:firespin",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:attract",

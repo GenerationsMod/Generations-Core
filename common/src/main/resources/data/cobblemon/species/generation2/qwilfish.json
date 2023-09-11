@@ -17,9 +17,6 @@
     "special_defence": 55,
     "speed": 85
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -43,6 +40,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
+      "baseExperienceYield": 88,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -159,38 +157,29 @@
   "eggGroups": [
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:pufferfish",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:fellstinger",
+    "1:hydropump",
     "1:poisonsting",
-    "1:spikes",
     "1:tackle",
-    "9:harden",
-    "9:minimize",
+    "4:harden",
+    "8:watergun",
+    "12:fellstinger",
     "13:bubble",
-    "13:watergun",
+    "16:minimize",
     "17:rollout",
-    "21:pinmissile",
-    "21:toxicspikes",
-    "25:revenge",
-    "25:spitup",
-    "25:stockpile",
-    "33:brine",
-    "33:takedown",
-    "37:hydropump",
-    "45:aquatail",
-    "45:destinybond",
-    "49:poisonjab",
-    "52:toxic",
-    "60:acupressure",
+    "20:spikes",
+    "24:brine",
+    "28:poisonjab",
+    "28:revenge",
+    "32:pinmissile",
+    "36:toxicspikes",
+    "40:spitup",
+    "40:stockpile",
+    "44:toxic",
+    "48:aquatail",
+    "48:takedown",
+    "52:acupressure",
+    "56:destinybond",
     "egg:acidspray",
     "egg:aquajet",
     "egg:astonish",

@@ -26,33 +26,24 @@
   "eggGroups": [
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:heart_scale",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:autotomize",
     "1:bide",
+    "1:dragontail",
     "1:leer",
     "1:protect",
     "1:skyuppercut",
     "1:tackle",
-    "17:dragontail",
-    "21:scaryface",
-    "25:headbutt",
-    "29:workup",
-    "33:screech",
-    "38:irondefense",
-    "43:dragonclaw",
-    "48:nobleroar",
-    "53:dragondance",
-    "58:outrage",
-    "63:closecombat",
+    "12:scaryface",
+    "16:headbutt",
+    "20:workup",
+    "24:screech",
+    "28:irondefense",
+    "32:dragonclaw",
+    "38:nobleroar",
+    "44:dragondance",
+    "50:outrage",
+    "56:closecombat",
     "tm:aerialace",
     "tm:attract",
     "tm:brickbreak",

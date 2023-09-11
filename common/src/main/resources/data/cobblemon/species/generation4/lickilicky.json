@@ -16,6 +16,13 @@
     "special_defence": 95,
     "speed": 50
   },
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.2
+      }
+    }
+  },
   "catchRate": 30,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -36,23 +43,41 @@
     ]
   },
   "moves": [
+    "1:defensecurl",
     "1:lick",
+    "1:powerwhip",
+    "1:rollout",
+    "1:supersonic",
+    "1:wringout",
     "5:supersonic",
     "9:defensecurl",
     "13:knockoff",
     "17:wrap",
+    "18:wrap",
     "21:stomp",
+    "24:disable",
     "25:disable",
     "29:slam",
+    "30:stomp",
     "33:rollout",
+    "36:knockoff",
     "37:chipaway",
     "37:mefirst",
+    "41:mefirst",
     "41:refresh",
+    "42:screech",
+    "45:refresh",
     "45:screech",
+    "48:slam",
     "49:powerwhip",
+    "49:screech",
+    "53:powerwhip",
     "53:wringout",
+    "54:powerwhip",
     "57:gyroball",
+    "57:wringout",
     "60:bellydrum",
+    "61:gyroball",
     "tm:amnesia",
     "tm:attract",
     "tm:blizzard",
@@ -164,8 +189,8 @@
   "evolutions": [],
   "baseScale": 1.1,
   "hitbox": {
-    "width": 0.9,
-    "height": 1.7,
+    "width": 1.4,
+    "height": 2.6,
     "fixed": false
   },
   "baseFriendship": 50,

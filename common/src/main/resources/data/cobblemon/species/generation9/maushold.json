@@ -16,6 +16,14 @@
     "special_defence": 75,
     "speed": 111
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 75,
   "maleRatio": -1,
   "baseExperienceYield": 165,
@@ -34,15 +42,6 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:potato",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:babydolleyes",
     "1:followme",
@@ -99,10 +98,18 @@
     "tm:uturn",
     "tm:waterpulse"
   ],
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1.25,
+    "height": 0.75,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
-  "aspects": [],
+  "aspects": [
+    "maushold-family-three"
+  ],
   "height": 3,
   "weight": 23,
   "preEvolution": "tandemaus",
@@ -202,7 +209,7 @@
         "gen9"
       ],
       "aspects": [
-        "four"
+        "maushold-family-four"
       ],
       "height": 3,
       "weight": 28,

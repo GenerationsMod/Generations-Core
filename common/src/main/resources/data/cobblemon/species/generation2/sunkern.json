@@ -25,33 +25,24 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sunflower",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:absorb",
+    "1:growth",
     "1:tackle",
-    "6:growth",
-    "13:grasswhistle",
-    "13:megadrain",
-    "17:leechseed",
-    "18:ingrain",
+    "4:ingrain",
+    "7:absorb",
+    "7:grasswhistle",
+    "10:megadrain",
+    "13:leechseed",
+    "16:razorleaf",
+    "19:worryseed",
+    "22:gigadrain",
     "25:endeavor",
-    "25:worryseed",
-    "29:razorleaf",
-    "30:sunnyday",
+    "28:synthesis",
     "31:naturalgift",
-    "34:solarbeam",
-    "37:doubleedge",
-    "37:synthesis",
-    "42:gigadrain",
-    "45:seedbomb",
+    "31:solarbeam",
+    "34:doubleedge",
+    "36:sunnyday",
+    "39:seedbomb",
     "egg:bide",
     "egg:curse",
     "egg:encore",

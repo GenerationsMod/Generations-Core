@@ -32,15 +32,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:pumpkin_seeds",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:tackle",

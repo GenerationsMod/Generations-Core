@@ -38,7 +38,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 270,
+      "baseExperienceYield": 300,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -165,36 +165,27 @@
   "eggGroups": [
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:heart_scale",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:autotomize",
     "1:bellydrum",
     "1:bide",
     "1:clangingscales",
+    "1:dragontail",
     "1:leer",
     "1:protect",
     "1:skyuppercut",
     "1:tackle",
-    "17:dragontail",
-    "21:scaryface",
-    "25:headbutt",
-    "29:workup",
-    "33:screech",
-    "38:irondefense",
-    "43:dragonclaw",
-    "51:nobleroar",
-    "59:dragondance",
-    "67:outrage",
+    "12:scaryface",
+    "16:headbutt",
+    "20:workup",
+    "24:screech",
+    "28:irondefense",
+    "32:dragonclaw",
+    "38:nobleroar",
+    "44:dragondance",
+    "52:outrage",
+    "60:closecombat",
     "68:clangoroussoul",
-    "75:closecombat",
     "76:boomburst",
     "tm:aerialace",
     "tm:attract",

@@ -26,34 +26,25 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:acalea_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:astonish",
     "1:growl",
     "1:guardswap",
     "1:powerswap",
     "1:tackle",
-    "7:astonish",
-    "13:confusion",
-    "19:stomp",
-    "25:odorsleuth",
-    "28:assurance",
-    "31:agility",
-    "32:doublehit",
+    "5:confusion",
+    "5:odorsleuth",
+    "10:assurance",
+    "14:stomp",
+    "19:psybeam",
+    "23:agility",
+    "28:doublehit",
     "32:twinbeam",
-    "37:batonpass",
-    "37:psychic",
-    "41:zenheadbutt",
-    "43:psybeam",
+    "32:zenheadbutt",
+    "37:crunch",
+    "41:batonpass",
     "46:nastyplot",
-    "49:crunch",
+    "50:psychic",
     "egg:allyswitch",
     "egg:amnesia",
     "egg:beatup",

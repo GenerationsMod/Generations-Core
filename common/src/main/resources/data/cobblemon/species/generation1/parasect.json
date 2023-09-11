@@ -18,6 +18,13 @@
     "speed": 30
   },
   "behaviour": {
+    "moving": {
+      "canLook": false,
+      "wanderChance": 20,
+      "walking": {
+        "walkSpeed": 0.45
+      }
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": false,
@@ -36,32 +43,28 @@
     "grass"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
       {
         "item": "minecraft:red_mushroom"
-      },
-      {
-        "item": "generations_core:boost_mulch",
-        "percentage": 5
       }
     ]
   },
   "moves": [
     "1:absorb",
     "1:crosspoison",
+    "1:leechlife",
     "1:poisonpowder",
     "1:scratch",
     "1:stunspore",
     "17:furycutter",
-    "19:leechlife",
-    "27:spore",
-    "35:slash",
-    "43:growth",
-    "51:gigadrain",
-    "55:xscissor",
-    "59:aromatherapy",
+    "22:spore",
+    "29:slash",
+    "37:growth",
+    "44:gigadrain",
+    "51:aromatherapy",
     "59:ragepowder",
+    "66:xscissor",
     "tm:aerialace",
     "tm:attract",
     "tm:brickbreak",

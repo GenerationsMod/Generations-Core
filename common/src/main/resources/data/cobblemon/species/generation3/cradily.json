@@ -25,34 +25,25 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:acid",
     "1:astonish",
+    "1:confuseray",
     "1:constrict",
-    "1:ingrain",
     "1:leechseed",
     "1:wrap",
+    "1:wringout",
+    "12:ingrain",
+    "16:ancientpower",
     "20:megadrain",
-    "21:brine",
-    "26:gigadrain",
-    "29:confuseray",
-    "36:amnesia",
-    "46:gastroacid",
-    "48:ancientpower",
-    "56:energyball",
-    "60:spitup",
-    "60:stockpile",
-    "60:swallow",
-    "76:wringout",
+    "24:brine",
+    "28:amnesia",
+    "32:gastroacid",
+    "36:gigadrain",
+    "43:spitup",
+    "43:stockpile",
+    "43:swallow",
+    "48:energyball",
     "tm:amnesia",
     "tm:attract",
     "tm:bodyslam",

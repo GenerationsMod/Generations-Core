@@ -25,33 +25,24 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cod",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
+    "1:growl",
     "1:scratch",
-    "3:growl",
+    "4:sandattack",
+    "5:fakeout",
     "6:assist",
-    "10:sandattack",
     "12:furyswipes",
     "15:pursuit",
-    "19:torment",
-    "21:fakeout",
+    "16:torment",
+    "21:assurance",
     "24:honeclaws",
-    "28:assurance",
+    "28:suckerpunch",
     "30:slash",
+    "32:nastyplot",
     "33:captivate",
-    "37:nightslash",
+    "36:nightslash",
     "39:snatch",
-    "42:nastyplot",
-    "46:suckerpunch",
-    "49:playrough",
+    "40:playrough",
     "egg:charm",
     "egg:copycat",
     "egg:covet",

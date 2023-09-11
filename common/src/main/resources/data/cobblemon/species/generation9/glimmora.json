@@ -16,6 +16,19 @@
     "special_defence": 81,
     "speed": 86
   },
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 25,
   "maleRatio": 0.5,
   "baseExperienceYield": 184,
@@ -33,15 +46,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:z_crystal_ore",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:harden",
     "1:rockthrow",
@@ -102,6 +106,12 @@
   "weight": 450,
   "preEvolution": "glimmet",
   "evolutions": [],
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 1.2,
+    "height": 1.6,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.glimmora.desc"

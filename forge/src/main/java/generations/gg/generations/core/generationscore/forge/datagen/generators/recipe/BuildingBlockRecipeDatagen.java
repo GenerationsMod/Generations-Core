@@ -37,104 +37,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
     public void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         generateForEnabledBlockFamilies(consumer);
 
-        //PokeGrass
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_GRASS.get(), 4)
-                .define('X', Blocks.GRASS)
-                .pattern("XX")
-                .pattern("XX")
-                .unlockedBy(getHasName(Blocks.GRASS), has(Blocks.GRASS))
-                .save(consumer);
-
-        //PokeDirt
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_DIRT.get(), 4)
-                .define('X', Blocks.DIRT)
-                .pattern("XX")
-                .pattern("XX")
-                .unlockedBy(getHasName(Blocks.DIRT), has(Blocks.DIRT))
-                .save(consumer);
-
-        //PokeSand
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND.get(), 4)
-                .define('X', Blocks.SAND)
-                .define('Y', Blocks.SANDSTONE)
-                .pattern("XX")
-                .pattern("YY")
-                .unlockedBy(getHasName(Blocks.SANDSTONE), has(Blocks.SANDSTONE))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND_CORNER_1.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern(" Y")
-                .pattern("X ")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND_CORNER_2.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern("Y ")
-                .pattern(" X")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND_CORNER_3.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern(" X")
-                .pattern("Y ")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND_CORNER_4.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern("X ")
-                .pattern(" Y")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND_SIDE_1.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern("Y ")
-                .pattern("YX")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND_SIDE_2.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern(" X")
-                .pattern("YY")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND_SIDE_3.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern("YY")
-                .pattern("X ")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKE_SAND_SIDE_4.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern("XY")
-                .pattern(" Y")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SANDY_GRASS.get())
-                .define('X', GenerationsBlocks.POKE_SAND.get())
-                .define('Y', Blocks.GRASS)
-                .pattern("YYY")
-                .pattern("YXY")
-                .pattern("YYY")
-                .unlockedBy(getHasName(GenerationsBlocks.POKE_SAND.get()), has(GenerationsBlocks.POKE_SAND.get()))
-                .save(consumer);
-
         //Colored Shingles
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_SHINGLES.get(), 5)
                 .define('X', Blocks.GRAVEL)
@@ -310,28 +212,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .pattern("XYX")
                 .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
-                .save(consumer);
-
-        //Outside Wall
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.OUTSIDE_WALL.get())
-                .requires(Blocks.STONE)
-                .requires(Items.YELLOW_DYE)
-                .unlockedBy(getHasName(Blocks.STONE), has(Blocks.STONE))
-                .unlockedBy(getHasName(Items.YELLOW_DYE), has(Items.YELLOW_DYE))
-                .save(consumer);
-
-        //Inside Wall
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.INSIDE_WALL.get())
-                .requires(Blocks.STONE)
-                .requires(Items.WHITE_DYE)
-                .unlockedBy(getHasName(Blocks.STONE), has(Blocks.STONE))
-                .unlockedBy(getHasName(Items.WHITE_DYE), has(Items.WHITE_DYE))
-                .save(consumer);
-
-        //Inside Wall Molding
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.INSIDE_WALL_MOLDING.get(), 2)
-                .requires(GenerationsBlocks.INSIDE_WALL.get(), 2)
-                .unlockedBy(getHasName(GenerationsBlocks.INSIDE_WALL.get()), has(GenerationsBlocks.INSIDE_WALL.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKECENTER_SIGN.get())
@@ -624,7 +504,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //House Floors
         //Missing Blocks for 1+2 recipes
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_1.get(), GenerationsBlocks.BURST_TURF.get());
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_2.get(), GenerationsBlocks.POKE_GRASS.get());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_3.get(), GenerationsBlocks.RUINS_SAND.get());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_4.get(), GenerationsBlocks.OCEAN_BLOCK.get());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_5.get(), GenerationsBlocks.MIRROR_GLASS.get());
@@ -639,30 +518,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.COPPER_JUNK.get()), has(GenerationsBlocks.COPPER_JUNK.get()))
                 .save(consumer);
          */
-
-        //Inside Wall bottom
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.INSIDE_WALL_BOTTOM.get())
-                .define('X', GenerationsBlocks.BURST_TURF.get())
-                .pattern("X X")
-                .pattern("X X")
-                .pattern("XXX")
-                .unlockedBy(getHasName(GenerationsBlocks.BURST_TURF.get()), has(GenerationsBlocks.BURST_TURF.get()))
-                .save(consumer);
-
-        //Inside wall middle
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.INSIDE_WALL_MIDDLE.get())
-                .define('X', GenerationsBlocks.BURST_TURF.get())
-                .pattern("X X")
-                .pattern("X X")
-                .unlockedBy(getHasName(GenerationsBlocks.BURST_TURF.get()), has(GenerationsBlocks.BURST_TURF.get()))
-                .save(consumer);
-
-        //Inside wall top
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.INSIDE_WALL_TOP.get())
-                .define('X', GenerationsBlocks.BURST_TURF.get())
-                .pattern("XXX")
-                .unlockedBy(getHasName(GenerationsBlocks.BURST_TURF.get()), has(GenerationsBlocks.BURST_TURF.get()))
-                .save(consumer);
 
         //Ruins Wall
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RUINS_WALL.get(), 4)

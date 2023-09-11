@@ -25,36 +25,27 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:totem_of_undying",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:disarmingvoice",
-    "1:haze",
-    "1:healpulse",
-    "1:meanlook",
-    "1:mist",
-    "1:mistyterrain",
-    "1:moonblast",
     "1:watergun",
-    "1:withdraw",
-    "8:waterpulse",
+    "5:withdraw",
+    "10:haze",
+    "10:mist",
     "14:whirlpool",
-    "20:soak",
+    "15:aquaring",
+    "20:waterpulse",
+    "25:brine",
     "26:refresh",
-    "32:brine",
-    "38:defog",
+    "30:defog",
+    "35:healpulse",
     "40:surf",
-    "43:naturesmadness",
-    "48:muddywater",
-    "53:aquaring",
-    "58:hydropump",
+    "45:muddywater",
+    "50:meanlook",
+    "55:naturesmadness",
+    "60:moonblast",
+    "65:hydropump",
+    "70:soak",
+    "75:mistyterrain",
     "tm:blizzard",
     "tm:brine",
     "tm:calmmind",

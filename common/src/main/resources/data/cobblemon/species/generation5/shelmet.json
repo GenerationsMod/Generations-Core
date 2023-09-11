@@ -25,32 +25,23 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:slime_ball",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:leechlife",
+    "1:protect",
     "4:acid",
     "8:bide",
-    "13:curse",
+    "8:curse",
+    "12:megadrain",
     "16:strugglebug",
-    "20:megadrain",
-    "25:yawn",
-    "28:protect",
-    "32:acidarmor",
-    "37:gigadrain",
-    "40:bodyslam",
+    "20:yawn",
+    "24:acidarmor",
+    "28:gigadrain",
+    "32:guardswap",
+    "36:bodyslam",
+    "40:recover",
     "44:bugbuzz",
-    "49:recover",
-    "52:guardswap",
-    "56:finalgambit",
+    "48:finalgambit",
     "egg:batonpass",
     "egg:doubleedge",
     "egg:encore",

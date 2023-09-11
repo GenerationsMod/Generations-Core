@@ -34,30 +34,34 @@
     "water_1"
   ],
   "drops": {
-    "amount": "1",
+    "amount": "2",
     "entries": [
       {
         "item": "minecraft:ochre_froglight",
         "percentage": 10
+      },
+      {
+        "item": "generations_core:poliwhirl_doll",
+        "percentage": 1
       }
     ]
   },
   "moves": [
-    "1:bubble",
     "1:hypnosis",
+    "1:mudshot",
     "1:pound",
     "1:watergun",
     "1:watersport",
-    "19:doubleslap",
-    "27:bubblebeam",
-    "27:raindance",
-    "32:mudshot",
-    "35:bodyslam",
+    "11:bubble",
+    "15:doubleslap",
+    "18:bubblebeam",
+    "24:raindance",
+    "32:bodyslam",
     "40:earthpower",
-    "43:bellydrum",
     "43:wakeupslap",
-    "51:hydropump",
+    "48:hydropump",
     "53:mudbomb",
+    "56:bellydrum",
     "66:doubleedge",
     "tm:attract",
     "tm:blizzard",
@@ -210,7 +214,7 @@
       ]
     }
   ],
-  "baseScale": 0.8,
+  "baseScale": 0.9,
   "hitbox": {
     "width": 1,
     "height": 1.1,

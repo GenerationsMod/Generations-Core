@@ -27,15 +27,6 @@
     "flying",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:egg",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:afteryou",
     "1:airslash",

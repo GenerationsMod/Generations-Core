@@ -26,32 +26,23 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:charm",
     "1:firefang",
     "1:icefang",
     "1:scaryface",
     "1:tackle",
+    "1:tailwhip",
     "1:thunderfang",
-    "4:tailwhip",
-    "8:charm",
-    "13:bite",
+    "7:bite",
+    "13:lick",
     "19:headbutt",
-    "19:lick",
-    "26:roar",
-    "34:rage",
+    "25:roar",
+    "31:rage",
     "37:playrough",
+    "37:takedown",
     "43:payback",
-    "43:takedown",
-    "53:crunch",
+    "49:crunch",
     "egg:closecombat",
     "egg:crunch",
     "egg:doubleedge",
@@ -208,10 +199,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.1,
     "fixed": false
   },
   "baseFriendship": 70,

@@ -25,32 +25,23 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
-    "1:magnetrise",
+    "1:bulletpunch",
+    "1:confusion",
+    "1:metalclaw",
     "1:tackle",
-    "1:takedown",
+    "6:zenheadbutt",
+    "12:magnetrise",
     "18:flashcannon",
-    "20:confusion",
-    "20:metalclaw",
-    "26:miracleeye",
-    "26:scaryface",
-    "32:bulletpunch",
-    "32:pursuit",
-    "38:psychic",
-    "44:irondefense",
+    "23:pursuit",
+    "26:takedown",
+    "29:miracleeye",
+    "34:psychic",
+    "42:scaryface",
     "50:meteormash",
-    "52:zenheadbutt",
-    "56:agility",
-    "62:hyperbeam",
+    "58:irondefense",
+    "66:agility",
+    "74:hyperbeam",
     "tm:aerialace",
     "tm:agility",
     "tm:allyswitch",

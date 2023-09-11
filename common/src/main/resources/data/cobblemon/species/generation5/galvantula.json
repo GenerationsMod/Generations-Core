@@ -26,6 +26,13 @@
   "eggGroups": [
     "bug"
   ],
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.4
+      }
+    }
+  },
   "drops": {
     "amount": "2",
     "entries": [
@@ -43,23 +50,23 @@
   },
   "moves": [
     "1:absorb",
+    "1:bugbite",
+    "1:electroweb",
+    "1:furycutter",
     "1:leechlife",
     "1:spiderweb",
     "1:stickyweb",
-    "1:stringshot",
-    "1:thunderwave",
-    "7:screech",
-    "12:furycutter",
-    "15:electroweb",
-    "18:bugbite",
-    "23:gastroacid",
-    "26:slash",
-    "29:electroball",
+    "12:stringshot",
+    "16:thunderwave",
+    "20:electroball",
+    "24:agility",
+    "28:suckerpunch",
+    "32:slash",
     "34:signalbeam",
-    "40:agility",
-    "46:suckerpunch",
-    "54:discharge",
-    "60:bugbuzz",
+    "39:discharge",
+    "44:screech",
+    "50:gastroacid",
+    "56:bugbuzz",
     "tm:agility",
     "tm:attract",
     "tm:bounce",

@@ -32,15 +32,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:amaze_mulch",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:disable",
     "1:pound",

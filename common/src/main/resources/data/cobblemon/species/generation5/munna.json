@@ -25,35 +25,26 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:awakening",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:psywave",
+    "1:storedpower",
+    "4:hypnosis",
     "5:luckychant",
-    "7:yawn",
-    "11:psybeam",
-    "13:imprison",
-    "17:moonlight",
-    "19:hypnosis",
+    "8:psybeam",
+    "12:imprison",
+    "16:moonlight",
     "20:magiccoat",
-    "23:zenheadbutt",
+    "24:zenheadbutt",
     "25:synchronoise",
+    "28:calmmind",
     "29:nightmare",
-    "31:futuresight",
-    "35:calmmind",
-    "37:psychic",
+    "32:yawn",
+    "36:psychic",
     "40:moonblast",
-    "41:dreameater",
     "43:telekinesis",
-    "47:storedpower",
+    "44:dreameater",
+    "48:futuresight",
     "52:wonderroom",
     "egg:barrier",
     "egg:batonpass",

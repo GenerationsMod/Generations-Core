@@ -16,12 +16,12 @@
     "special_defence": 50,
     "speed": 60
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 190,
   "maleRatio": 0.75,
   "shoulderMountable": false,
+  "features": [
+    "hisuian"
+  ],
   "forms": [
     {
       "name": "Hisui",
@@ -42,6 +42,7 @@
       },
       "catchRate": 190,
       "maleRatio": 0.75,
+      "baseExperienceYield": 70,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -158,26 +159,26 @@
     ]
   },
   "moves": [
-    "1:bite",
-    "1:roar",
+    "1:ember",
+    "1:leer",
     "4:howl",
-    "7:ember",
-    "13:leer",
-    "19:odorsleuth",
-    "25:reversal",
-    "25:takedown",
-    "28:firefang",
-    "31:flameburst",
-    "31:flamewheel",
-    "37:helpinghand",
-    "42:crunch",
-    "43:agility",
+    "8:bite",
+    "10:odorsleuth",
+    "12:flamewheel",
+    "16:helpinghand",
+    "20:agility",
+    "24:firefang",
+    "28:flameburst",
+    "28:retaliate",
+    "32:crunch",
+    "36:takedown",
+    "40:flamethrower",
+    "41:heatwave",
     "43:outrage",
-    "45:heatwave",
-    "48:flareblitz",
+    "44:roar",
     "48:playrough",
-    "48:retaliate",
-    "49:flamethrower",
+    "52:reversal",
+    "56:flareblitz",
     "egg:bodyslam",
     "egg:burnup",
     "egg:closecombat",

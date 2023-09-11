@@ -5,7 +5,7 @@
     {
       "aspects": [],
       "poser": "generations_core:charizard",
-      "model": "generations_core:charmander.pk",
+      "model": "generations_core:charizard.pk",
       "texture": "pk:normal"
     },
     {

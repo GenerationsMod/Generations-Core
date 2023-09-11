@@ -33,15 +33,6 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:pound",
     "4:growl",
@@ -58,9 +49,9 @@
     "33:flatter",
     "36:airslash",
     "40:revelationdance",
+    "43:agility",
     "43:mirrormove",
-    "46:agility",
-    "50:hurricane",
+    "47:hurricane",
     "egg:attract",
     "egg:captivate",
     "egg:defog",
@@ -164,7 +155,6 @@
       "eggGroups": [
         "flying"
       ],
-      "moves": [],
       "labels": [
         "gen7"
       ],
@@ -209,7 +199,6 @@
       "eggGroups": [
         "flying"
       ],
-      "moves": [],
       "labels": [
         "gen7"
       ],
@@ -254,7 +243,6 @@
       "eggGroups": [
         "flying"
       ],
-      "moves": [],
       "labels": [
         "gen7"
       ],

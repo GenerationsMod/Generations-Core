@@ -25,15 +25,6 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cocoa_beans",
-        "percentage": 20
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "swim": {
@@ -48,23 +39,23 @@
     "1:absorb",
     "1:astonish",
     "1:crosspoison",
-    "1:leechlife",
+    "1:meanlook",
     "1:screech",
     "1:supersonic",
     "1:tailwind",
     "1:toxic",
-    "16:bite",
-    "21:wingattack",
+    "13:wingattack",
+    "15:poisonfang",
+    "20:quickguard",
     "24:swift",
-    "28:confuseray",
-    "35:aircutter",
-    "39:acrobatics",
-    "42:meanlook",
-    "43:venoshock",
-    "49:poisonfang",
-    "51:airslash",
-    "51:quickguard",
-    "56:haze",
+    "27:aircutter",
+    "33:acrobatics",
+    "34:bite",
+    "41:haze",
+    "48:venoshock",
+    "55:confuseray",
+    "62:airslash",
+    "69:leechlife",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

@@ -28,29 +28,37 @@
     "amount": "1",
     "entries": [
       {
-        "item": "minecraft:blaze_powder",
-        "percentage": 25
+        "item": "generations_core:cyndaquil_doll",
+        "percentage": 1
       }
     ]
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:leer",
     "1:tackle",
     "6:smokescreen",
-    "12:ember",
-    "19:quickattack",
+    "10:ember",
+    "13:quickattack",
+    "19:flamewheel",
     "22:defensecurl",
-    "27:flamewheel",
     "28:flamecharge",
-    "31:lavaplume",
-    "36:swift",
-    "40:rollout",
-    "46:doubleedge",
-    "46:flamethrower",
+    "31:swift",
+    "37:lavaplume",
+    "40:flamethrower",
     "46:inferno",
-    "49:eruption",
+    "49:rollout",
+    "55:doubleedge",
     "58:burnup",
     "58:overheat",
+    "64:eruption",
     "egg:covet",
     "egg:crushclaw",
     "egg:curse",
@@ -176,10 +184,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.5,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.15,
     "fixed": false
   },
   "baseFriendship": 70,

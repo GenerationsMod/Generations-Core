@@ -14,6 +14,19 @@
     "special_defence": 105,
     "speed": 30
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "catchRate": 90,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -24,34 +37,25 @@
     "mineral",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blackstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
-    "1:disable",
     "1:haze",
+    "1:nightshade",
     "1:protect",
-    "13:nightshade",
-    "17:hex",
+    "1:scaryface",
+    "12:disable",
+    "16:willowisp",
     "20:craftyshield",
-    "21:willowisp",
+    "24:hex",
     "25:ominouswind",
-    "29:curse",
-    "33:guardsplit",
-    "33:powersplit",
-    "34:scaryface",
-    "39:shadowball",
-    "45:grudge",
+    "28:meanlook",
+    "32:grudge",
+    "38:curse",
+    "44:shadowball",
     "50:darkpulse",
-    "51:meanlook",
-    "57:destinybond",
+    "56:guardsplit",
+    "56:powersplit",
+    "62:destinybond",
     "tm:allyswitch",
     "tm:attract",
     "tm:bodypress",
@@ -139,10 +143,10 @@
   ],
   "preEvolution": "yamask",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.5,
+    "height": 3.3,
     "fixed": false
   },
   "baseFriendship": 50,

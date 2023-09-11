@@ -19,23 +19,52 @@
   "catchRate": 90,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Alolan",
+      "maleRatio": 0.5,
+      "labels": [
+        "alola_regional"
+      ],
+      "aspects": [
+        "alolan"
+      ],
+      "evolutions": [
+        {
+          "id": "exeggcute_exeggutor",
+          "variant": "item_interact",
+          "result": "exeggutor alolan",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "dragonhammer"
+          ],
+          "requirements": [],
+          "requiredContext": "cobblemon:leaf_stone"
+        }
+      ]
+    }
+  ],
   "baseExperienceYield": 65,
   "experienceGroup": "slow",
   "eggCycles": 20,
   "eggGroups": [
     "grass"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
       {
         "item": "minecraft:egg",
         "quantityRange": "1-3",
         "percentage": 75
-      },
-      {
-        "item": "generations_core:rich_mulch",
-        "percentage": 5
       }
     ]
   },
@@ -43,23 +72,23 @@
     "1:absorb",
     "1:barrage",
     "1:hypnosis",
-    "1:uproar",
-    "7:reflect",
-    "13:leechseed",
+    "5:reflect",
+    "10:leechseed",
     "15:megadrain",
-    "17:bulletseed",
-    "19:confusion",
-    "25:stunspore",
+    "19:stunspore",
+    "20:confusion",
+    "21:poisonpowder",
+    "23:sleeppowder",
     "25:synthesis",
-    "31:poisonpowder",
-    "33:worryseed",
+    "30:bulletseed",
     "35:gigadrain",
     "37:naturalgift",
-    "37:sleeppowder",
-    "43:solarbeam",
-    "47:extrasensory",
+    "40:extrasensory",
+    "45:uproar",
     "47:psychic",
-    "53:bestow",
+    "50:bestow",
+    "50:worryseed",
+    "55:solarbeam",
     "egg:ancientpower",
     "egg:block",
     "egg:curse",
@@ -195,6 +224,9 @@
   "pokedex": [
     "cobblemon.species.exeggcute.desc"
   ],
+  "features": [
+    "alolan"
+  ],
   "evolutions": [
     {
       "id": "exeggcute_exeggutor",
@@ -206,20 +238,9 @@
       ],
       "requirements": [],
       "requiredContext": "cobblemon:leaf_stone"
-    },
-    {
-      "id": "exeggcute_exeggutor",
-      "variant": "item_interact",
-      "result": "exeggutor form=alola",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "dragonhammer"
-      ],
-      "requirements": [],
-      "requiredContext": "cobblemon:leaf_stone"
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1.1,
     "height": 0.5,

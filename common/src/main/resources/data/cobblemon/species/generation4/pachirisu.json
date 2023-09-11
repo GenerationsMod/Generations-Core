@@ -26,15 +26,6 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wheat",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bide",
     "1:growl",
@@ -48,9 +39,13 @@
     "25:electroball",
     "25:sweetkiss",
     "29:discharge",
+    "29:sweetkiss",
     "33:superfang",
     "33:thunderwave",
     "37:lastresort",
+    "37:superfang",
+    "41:discharge",
+    "45:lastresort",
     "49:hyperfang",
     "49:thunder",
     "egg:babydolleyes",

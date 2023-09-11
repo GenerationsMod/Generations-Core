@@ -17,12 +17,12 @@
     "special_defence": 95,
     "speed": 35
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 60,
   "maleRatio": 0.25,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Galar",
@@ -167,36 +167,27 @@
     "water_1",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:stable_mulch",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
+    "1:harden",
     "1:tackle",
+    "4:bubble",
     "5:watergun",
-    "6:harden",
-    "12:bubble",
-    "17:recover",
-    "17:refresh",
-    "23:bubblebeam",
+    "10:aquaring",
+    "13:refresh",
+    "15:endure",
+    "20:ancientpower",
+    "20:spikecannon",
+    "23:luckychant",
+    "25:bubblebeam",
     "27:brine",
-    "28:luckychant",
-    "28:spikecannon",
     "29:irondefense",
-    "34:rockblast",
-    "35:endure",
+    "30:flail",
+    "31:rockblast",
     "35:lifedew",
-    "37:aquaring",
-    "39:mirrorcoat",
-    "44:powergem",
-    "45:ancientpower",
-    "52:flail",
-    "53:earthpower",
+    "40:powergem",
+    "45:earthpower",
+    "50:recover",
+    "55:mirrorcoat",
     "egg:amnesia",
     "egg:aquaring",
     "egg:barrier",

@@ -15,9 +15,6 @@
     "special_defence": 85,
     "speed": 100
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 45,
   "maleRatio": 0.875,
   "shoulderMountable": false,
@@ -40,6 +37,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.875,
+      "baseExperienceYield": 240,
       "baseFriendship": 70,
       "evYield": {
         "hp": 0,
@@ -141,32 +139,36 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blaze_powder",
-        "percentage": 25
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.25
       }
-    ]
+    }
   },
   "moves": [
+    "1:doubleedge",
     "1:ember",
+    "1:eruption",
     "1:gyroball",
     "1:leer",
     "1:smokescreen",
     "1:tackle",
-    "21:quickattack",
+    "13:quickattack",
+    "20:flamewheel",
     "24:defensecurl",
-    "31:flamewheel",
+    "31:swift",
     "35:flamecharge",
-    "35:lavaplume",
-    "45:swift",
-    "46:rollout",
-    "53:doubleedge",
+    "43:lavaplume",
+    "48:flamethrower",
     "56:inferno",
-    "57:eruption",
-    "60:flamethrower",
+    "61:rollout",
     "74:burnup",
     "74:overheat",
     "tm:aerialace",
@@ -308,10 +310,10 @@
   ],
   "preEvolution": "quilava",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.65,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.35,
+    "height": 2.65,
     "fixed": false
   },
   "baseFriendship": 70,

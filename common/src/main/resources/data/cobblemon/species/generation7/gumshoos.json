@@ -135,15 +135,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wheat",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:payback",
@@ -160,9 +151,9 @@
     "35:scaryface",
     "39:crunch",
     "43:hyperfang",
-    "47:yawn",
-    "51:thrash",
-    "55:rest",
+    "43:yawn",
+    "47:thrash",
+    "52:rest",
     "tm:attract",
     "tm:bodyslam",
     "tm:bulldoze",

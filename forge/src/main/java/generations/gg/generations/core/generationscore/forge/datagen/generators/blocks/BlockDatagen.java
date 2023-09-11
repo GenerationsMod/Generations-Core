@@ -79,13 +79,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         //Enchanted Obsidian
         registerPallet(GenerationsBlocks.ENCHANTED_OBSIDIAN, GenerationsBlocks.ENCHANTED_OBSIDIAN_SLAB, GenerationsBlocks.ENCHANTED_OBSIDIAN_STAIRS, GenerationsBlocks.ENCHANTED_OBSIDIAN_WALL, GenerationsBlocks.ENCHANTED_OBSIDIAN_BUTTON, GenerationsBlocks.ENCHANTED_OBSIDIAN_PRESSURE_PLATE, true);
 
-        registerBlockItem(GenerationsBlocks.INSIDE_WALL);
-        registerBlockItem(GenerationsBlocks.INSIDE_WALL_BOTTOM);
-        registerBlockItem(GenerationsBlocks.INSIDE_WALL_MIDDLE);
-        registerBlockItem(GenerationsBlocks.INSIDE_WALL_TOP);
-        registerBlockItem(GenerationsBlocks.INSIDE_WALL_MOLDING);
-        registerBlockItem(GenerationsBlocks.OUTSIDE_WALL);
-
         registerBlockItem(GenerationsBlocks.POKEMART_SIGN);
         registerBlockItem(GenerationsBlocks.POKECENTER_SIGN);
 
@@ -148,21 +141,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         unownBlock(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK);
         unownBlock(GenerationsBlocks.UNOWN_BLOCK_BLANK);
 
-        registerBlockItem(GenerationsBlocks.SANDY_GRASS);
-        registerBlockItem(GenerationsBlocks.POKE_GRASS);
-        registerBlockItem(GenerationsBlocks.POKE_DIRT);
-        registerBlockItem(GenerationsBlocks.POKE_SAND);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_SMALL_CORNER_1);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_SMALL_CORNER_2);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_CORNER_1);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_CORNER_2);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_CORNER_3);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_CORNER_4);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_SIDE_1);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_SIDE_2);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_SIDE_3);
-        registerBlockItem(GenerationsBlocks.POKE_SAND_SIDE_4);
-
         registerBlockItem(GenerationsBlocks.ULTRA_SAND);
 
         registerBlockItem(GenerationsBlocks.CRATE);
@@ -215,7 +193,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.MACHINE_BLOCK);
         registerBlockItem(GenerationsBlocks.RUINS_SAND);
         registerBlockItem(GenerationsBlocks.BURST_TURF);
-        registerSoftSoil();
 
         registerBlockItem(GenerationsBlocks.WARNING_BLOCK);
 
@@ -248,6 +225,10 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
+        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE);
+        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG);
+        GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(this::registerNoModel);
+
 
         registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign");
 
@@ -256,11 +237,10 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots"));
 //      GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> registerBlockItemParticle(block.get().getBlock(), "utility_blocks/pc"));
         registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.BOX.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
-        //registerNoModel(GenerationsUtilityBlocks.PC);
-        //registerNoModel(GenerationsUtilityBlocks.CLOCK);
-        //registerNoModel(GenerationsUtilityBlocks.HEALER);
+        registerNoModel(GenerationsUtilityBlocks.PC);
+        registerNoModel(GenerationsUtilityBlocks.CLOCK);
+        registerNoModel(GenerationsUtilityBlocks.HEALER);
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);
         registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE);
@@ -306,20 +286,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), "ball_displays");
     }
 
-    private void registerNoModel( RegistrySupplier<? extends Block> block) {
+    private <T extends Block> void registerNoModel( RegistrySupplier<T> block) {
         this.simpleBlock(block.get(), ConfiguredModel.builder().modelFile(models().getBuilder(block.getId().getPath())).build());
-    }
-
-    private void registerSoftSoil() {
-        getVariantBuilder(GenerationsBlocks.SOFT_SOIL.get()).forAllStates(state -> {
-            SoftSoilBlock.Mulch mulch = state.getValue(SoftSoilBlock.MULCH);
-
-            if(mulch != SoftSoilBlock.Mulch.NONE)
-                return ConfiguredModel.builder().modelFile(models().cubeAll("block/soft_soil_" + mulch.getSerializedName(), GenerationsCore.id("block/soft_soil_" + mulch.getSerializedName()))).build();
-            else return ConfiguredModel.builder().modelFile(models().cubeAll("block/soft_soil", GenerationsCore.id("block/soft_soil"))).build();
-
-        });
-        simpleBlockItem(GenerationsBlocks.SOFT_SOIL.get(), models().cubeAll("block/soft_soil", GenerationsCore.id("block/soft_soil")));
     }
 
     private void registerPallet(@NotNull RegistrySupplier<Block> block, RegistrySupplier<SlabBlock> slab, RegistrySupplier<StairBlock> stairs, RegistrySupplier<WallBlock> wall, RegistrySupplier<ButtonBlock> button, RegistrySupplier<PressurePlateBlock> pressurePlate, boolean dropSelf){
@@ -529,8 +497,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlockWithItem(block.get(), model);
         dropSelfList.add(block.get());
     }
-
-        private void registerBlockItemParticle(Block block, String name) {
+    private void registerBlockItemParticle(Block block, String name) {
         ResourceLocation blockId = key(block);
         try {
             ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");

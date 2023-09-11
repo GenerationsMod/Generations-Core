@@ -24,30 +24,21 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mud",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
+    "1:defensecurl",
     "1:growl",
     "1:odorsleuth",
     "1:tackle",
-    "9:defensecurl",
+    "6:flail",
+    "10:rollout",
     "15:bulldoze",
-    "17:flail",
-    "19:naturalgift",
+    "15:naturalgift",
+    "19:endure",
     "24:slam",
-    "25:takedown",
+    "28:takedown",
     "33:charm",
-    "33:rollout",
     "37:lastresort",
-    "41:endure",
-    "49:doubleedge",
+    "42:doubleedge",
     "egg:ancientpower",
     "egg:bodyslam",
     "egg:counter",
@@ -182,10 +173,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.7,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 70,

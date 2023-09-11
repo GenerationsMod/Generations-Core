@@ -27,34 +27,25 @@
     "monster",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:jungle_leaves",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
+    "1:growth",
     "1:gust",
+    "1:leafstorm",
     "1:leer",
-    "7:growth",
-    "11:razorleaf",
-    "17:stomp",
-    "21:sweetscent",
-    "27:whirlwind",
+    "1:razorleaf",
+    "6:sweetscent",
+    "10:stomp",
+    "16:magicalleaf",
+    "21:whirlwind",
+    "26:leaftornado",
+    "30:naturalgift",
     "30:wideguard",
-    "31:magicalleaf",
-    "37:bodyslam",
-    "41:solarbeam",
+    "36:airslash",
+    "41:bodyslam",
+    "46:bestow",
     "46:outrage",
-    "47:airslash",
-    "47:leaftornado",
-    "47:synthesis",
-    "57:bestow",
-    "57:naturalgift",
-    "61:leafstorm",
+    "50:synthesis",
+    "56:solarbeam",
     "egg:bulletseed",
     "egg:curse",
     "egg:dragondance",

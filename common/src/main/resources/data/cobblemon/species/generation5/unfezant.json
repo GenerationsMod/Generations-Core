@@ -26,30 +26,28 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
     "1:growl",
     "1:gust",
     "1:leer",
     "1:quickattack",
-    "15:aircutter",
-    "18:roost",
-    "23:detect",
-    "27:taunt",
-    "33:airslash",
+    "12:taunt",
+    "16:aircutter",
+    "20:swagger",
+    "26:featherdance",
+    "36:detect",
     "38:razorwind",
-    "44:featherdance",
-    "49:swagger",
+    "42:airslash",
+    "50:roost",
     "55:facade",
-    "60:tailwind",
+    "58:tailwind",
     "66:skyattack",
     "tm:aerialace",
     "tm:agility",
@@ -108,7 +106,7 @@
   ],
   "preEvolution": "tranquill",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.75,
   "hitbox": {
     "width": 1,
     "height": 1,

@@ -55,7 +55,6 @@
       "eggGroups": [
         "mineral"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -76,15 +75,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:coal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:flamecharge",
     "1:rapidspin",

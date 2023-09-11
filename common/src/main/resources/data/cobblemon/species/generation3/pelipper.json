@@ -27,38 +27,47 @@
     "water_1",
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 50
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      },
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:agility",
     "1:airslash",
     "1:growl",
+    "1:protect",
     "1:quickattack",
     "1:soak",
+    "1:supersonic",
+    "1:tailwind",
     "1:watergun",
     "1:watersport",
-    "1:wingattack",
-    "7:supersonic",
-    "19:waterpulse",
-    "21:mist",
-    "24:payback",
-    "25:protect",
-    "31:roost",
-    "33:stockpile",
-    "33:swallow",
-    "34:brine",
-    "43:fling",
-    "47:spitup",
-    "50:tailwind",
-    "61:hydropump",
-    "63:hurricane",
+    "15:wingattack",
+    "19:payback",
+    "20:waterpulse",
+    "22:brine",
+    "28:spitup",
+    "28:stockpile",
+    "28:swallow",
+    "34:fling",
+    "41:mist",
+    "48:roost",
+    "55:hurricane",
+    "62:hydropump",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
@@ -158,10 +167,10 @@
   ],
   "preEvolution": "wingull",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.2,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.2,
     "fixed": false
   },
   "baseFriendship": 50,

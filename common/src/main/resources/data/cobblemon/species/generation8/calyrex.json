@@ -36,7 +36,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 340,
+      "baseExperienceYield": 250,
       "baseFriendship": 100,
       "evYield": {
         "hp": 0,
@@ -204,7 +204,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 340,
+      "baseExperienceYield": 250,
       "baseFriendship": 100,
       "evYield": {
         "hp": 0,
@@ -354,15 +354,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:saddle",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:growth",

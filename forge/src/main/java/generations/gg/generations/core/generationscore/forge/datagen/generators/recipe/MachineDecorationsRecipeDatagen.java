@@ -6,8 +6,6 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.decorations.RugBlock;
-import generations.gg.generations.core.generationscore.world.level.block.decorations.UmbrellaBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.VendingMachineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.ClockBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.HealerBlock;
@@ -19,7 +17,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
@@ -68,50 +65,8 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
             buildColoredPcCraftingRecipes(consumer, color);
             buildClockRecipes(consumer, color);
             buildVendingMachineRecipes(consumer, color);
-            buildUmbrellaRecipes(consumer, color);
-            buildPokeballRugRecipes(consumer, color);
             buildColoredHealerCraftingRecipes(consumer, color);
         }
-
-        //Trading Machine
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsItems.TRADE_HOLDER_LEFT.get())
-                .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
-                .define('A', GenerationsItems.POKE_BALL.get())
-                .pattern("QQA")
-                .pattern(" QQ")
-                .unlockedBy(getHasName(GenerationsItems.POKE_BALL.get()), has(GenerationsItems.POKE_BALL.get()))
-                .unlockedBy(getHasName(GenerationsItems.ALUMINUM_PLATE.get()), has(GenerationsItems.ALUMINUM_PLATE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsItems.TRADE_HOLDER_RIGHT.get())
-                .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
-                .define('A', GenerationsItems.POKE_BALL.get())
-                .pattern("QQA")
-                .pattern(" QQ")
-                .unlockedBy(getHasName(GenerationsItems.POKE_BALL.get()), has(GenerationsItems.POKE_BALL.get()))
-                .unlockedBy(getHasName(GenerationsItems.ALUMINUM_PLATE.get()), has(GenerationsItems.ALUMINUM_PLATE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsItems.TRADE_PANEL.get())
-                .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
-                .define('A', Items.REDSTONE)
-                .pattern("QQQ")
-                .pattern("AAA")
-                .pattern("QAQ")
-                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
-                .unlockedBy(getHasName(GenerationsItems.ALUMINUM_PLATE.get()), has(GenerationsItems.ALUMINUM_PLATE.get()))
-                .save(consumer);
-
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsItems.TRADE_MONITOR.get())
-                .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
-                .define('A', Items.GLASS_PANE)
-                .pattern("QQQ")
-                .pattern("QAQ")
-                .pattern("QQQ")
-                .unlockedBy(getHasName(Items.GLASS_PANE), has(Items.GLASS_PANE))
-                .unlockedBy(getHasName(GenerationsItems.ALUMINUM_PLATE.get()), has(GenerationsItems.ALUMINUM_PLATE.get()))
-                .save(consumer);
 
         //FURNACES
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
@@ -227,25 +182,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
     }
 
-    private void buildPokeballRugRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
-        var dye = DyeItem.byColor(color);
-        var rug = RugBlock.getBlock(color);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, rug)
-                .define('E', dye)
-                .define('X', Items.WHITE_WOOL)
-                .pattern("XEX")
-                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
-                .save(consumer);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, rug)
-                .requires(dye)
-                .requires(GenerationsItemTags.POKEBALL_RUG)
-                .unlockedBy(GenerationsItemTags.POKEBALL_RUG.location().getPath(), has(GenerationsItemTags.POKEBALL_RUG))
-                .save(consumer, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(rug)).withPath(a -> a + "_dyed"));
-    }
-
-//    private void buildPastelBeanBagRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) { //TODO: Figure out recipe
+    //    private void buildPastelBeanBagRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) { //TODO: Figure out recipe
 //        var dye = DyeItem.byColor(color);
 //        var pastelBeanBag = PastelBeanBagBlock.getBlock(color);
 //
@@ -262,28 +199,6 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 //                .unlockedBy("has_" + GenerationsItemTags.PASTEL_BEAN_BAG.location().getPath(), has(GenerationsItemTags.PASTEL_BEAN_BAG))
 //                .save(consumer, BuiltInRegistries.ITEM.getKey(pastelBeanBag).withPath(a -> a + "_dyed"));
 //    }
-
-    private void buildUmbrellaRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
-        var dye = DyeItem.byColor(color);
-        var umbrella = UmbrellaBlock.getBlock(color);
-
-        var builder = ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, umbrella)
-                .define('X', Items.WHITE_WOOL);
-                if (color != DyeColor.WHITE) builder.define('E', Sheep.ITEM_BY_DYE.get(color));
-                builder.define('A', Items.STICK);
-                if(color != DyeColor.WHITE) builder.pattern("XEX");
-                else builder.pattern("XXX");
-                builder.pattern(" A ")
-                .pattern(" A ")
-                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
-                .save(consumer);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, umbrella)
-                .requires(dye)
-                .requires(GenerationsItemTags.UMBRELLA)
-                .unlockedBy("has_" + GenerationsItemTags.UMBRELLA.location().getPath(), has(GenerationsItemTags.UMBRELLA))
-                .save(consumer, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(umbrella)).withPath(a -> a + "_dyed"));
-    }
 
     private void buildClockRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);

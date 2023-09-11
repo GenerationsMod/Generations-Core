@@ -27,33 +27,29 @@
     "grass"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
       {
         "item": "generations_core:seedot_doll",
         "percentage": 1
-      },
-      {
-        "item": "minecraft:wheat_seeds",
-        "percentage": 50
       }
     ]
   },
   "moves": [
     "1:bide",
+    "1:harden",
     "1:tackle",
     "3:absorb",
-    "3:harden",
     "6:astonish",
-    "7:growth",
+    "9:growth",
     "12:rollout",
-    "13:naturepower",
     "15:megadrain",
     "18:payback",
-    "21:synthesis",
+    "21:naturepower",
+    "24:sunnyday",
+    "27:synthesis",
     "30:suckerpunch",
-    "31:sunnyday",
-    "43:explosion",
+    "33:explosion",
     "egg:amnesia",
     "egg:beatup",
     "egg:bulletseed",

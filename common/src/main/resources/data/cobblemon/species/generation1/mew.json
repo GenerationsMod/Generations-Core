@@ -23,15 +23,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mew_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
@@ -39,22 +30,31 @@
       }
     }
   },
+  "drops": {
+    "amount": "1",
+    "entries": [
+      {
+        "item": "generations_core:mew_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "moves": [
     "1:pound",
     "1:reflecttype",
-    "10:transform",
-    "20:megapunch",
-    "30:metronome",
+    "10:amnesia",
+    "10:megapunch",
+    "20:batonpass",
+    "30:ancientpower",
     "40:barrier",
     "40:lifedew",
-    "40:psychic",
-    "50:ancientpower",
-    "60:amnesia",
+    "50:nastyplot",
+    "60:metronome",
     "70:imprison",
     "70:mefirst",
-    "80:batonpass",
-    "90:nastyplot",
-    "100:aurasphere",
+    "80:transform",
+    "90:aurasphere",
+    "100:psychic",
     "tm:acidspray",
     "tm:acrobatics",
     "tm:aerialace",
@@ -547,7 +547,7 @@
     "cobblemon.species.mew.desc"
   ],
   "evolutions": [],
-  "baseScale": 0.7,
+  "baseScale": 0.5,
   "hitbox": {
     "width": 0.6,
     "height": 1,

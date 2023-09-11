@@ -27,35 +27,26 @@
     "human_like",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:amaze_mulch",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
+    "1:disarmingvoice",
     "1:doubleteam",
     "1:growl",
-    "1:magicalleaf",
-    "1:teleport",
-    "11:disarmingvoice",
-    "17:luckychant",
+    "9:hypnosis",
+    "12:drainingkiss",
+    "14:luckychant",
+    "15:teleport",
+    "17:magicalleaf",
     "18:psybeam",
-    "21:calmmind",
-    "23:drainingkiss",
     "23:lifedew",
-    "25:healpulse",
-    "26:psychic",
+    "28:charm",
+    "33:calmmind",
     "33:imprison",
-    "40:futuresight",
-    "45:charm",
-    "47:hypnosis",
-    "54:dreameater",
-    "64:storedpower",
+    "38:psychic",
+    "43:healpulse",
+    "48:dreameater",
+    "51:storedpower",
+    "53:futuresight",
     "tm:allyswitch",
     "tm:attract",
     "tm:bodyslam",
@@ -210,7 +201,7 @@
       "requiredContext": "cobblemon:dawn_stone"
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1,
     "height": 1,

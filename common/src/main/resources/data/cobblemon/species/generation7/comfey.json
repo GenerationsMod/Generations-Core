@@ -16,44 +16,48 @@
     "special_defence": 110,
     "speed": 100
   },
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 60,
   "maleRatio": 0.25,
-  "shoulderMountable": false,
+  "shoulderMountable": true,
   "baseExperienceYield": 170,
   "experienceGroup": "fast",
   "eggCycles": 20,
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:azure_bluet",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:flowershield",
-    "1:helpinghand",
-    "1:vinewhip",
-    "4:leechseed",
-    "7:drainingkiss",
-    "10:magicalleaf",
-    "13:growth",
-    "16:wrap",
-    "19:sweetkiss",
+    "1:growth",
+    "1:wrap",
+    "3:vinewhip",
+    "6:helpinghand",
+    "9:drainingkiss",
+    "12:flowershield",
+    "15:magicalleaf",
+    "18:synthesis",
+    "21:leechseed",
     "22:naturalgift",
-    "25:petalblizzard",
-    "28:synthesis",
-    "31:sweetscent",
-    "34:grassknot",
-    "37:floralhealing",
-    "40:petaldance",
-    "43:aromatherapy",
-    "46:grassyterrain",
-    "49:playrough",
+    "24:grassknot",
+    "27:sweetkiss",
+    "30:floralhealing",
+    "33:petalblizzard",
+    "36:aromatherapy",
+    "39:playrough",
+    "42:sweetscent",
+    "45:petaldance",
+    "48:grassyterrain",
     "egg:afteryou",
     "egg:amnesia",
     "egg:endure",
@@ -140,10 +144,10 @@
     "cobblemon.species.comfey.desc"
   ],
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.37,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.5,
+    "height": 2.2,
     "fixed": false
   },
   "baseFriendship": 50,

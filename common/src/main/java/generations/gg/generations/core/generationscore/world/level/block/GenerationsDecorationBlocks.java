@@ -27,10 +27,7 @@ import java.util.function.Supplier;
 public class GenerationsDecorationBlocks {
     public static final DeferredRegister<Block> DECORATIONS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final List<RegistrySupplier<DyedBlockItem<VendingMachineBlock>>> VENDING_MACHINE_BLOCKS = new ArrayList<>();
-    public static final List<RegistrySupplier<DyedBlockItem<UmbrellaBlock>>> UMBRELLA_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<DyedBlockItem<PastelBeanBagBlock>>> PASTEL_BEAN_BAG_BLOCKS = new ArrayList<>();
-    public static final List<RegistrySupplier<DyedBlockItem<RugBlock>>> POKEDOLL_RUG_BLOCKS = new ArrayList<>();
-    public static final List<RegistrySupplier<DyedBlockItem<WaterFloatBlock>>> WATER_FLOAT_BLOCKS = new ArrayList<>();
     public static final List<RegistrySupplier<BallDisplayBlock>> BALL_DISPLAY_BLOCKS = new ArrayList<>();
 
     /**
@@ -40,27 +37,6 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> SWITCH = registerDecorationItem("switch", () -> new SwitchBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
     public static final RegistrySupplier<Block> LITWICK_CANDLE = registerDecorationItem("litwick_candle", () -> new LitwickCandleBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 11).destroyTime(0.7f)));
     public static final RegistrySupplier<Block> LITWICK_CANDLES = registerDecorationItem("litwick_candles", () -> new LitwickCandlesBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 15).destroyTime(0.5f)));
-
-    /**
-     * Decoration Blocks (Umbrella)
-     */
-    public static final RegistrySupplier<UmbrellaBlock> UMBRELLA = registerBlock("umbrella", () -> new UmbrellaBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> WHITE_UMBRELLA = registerUmbrella("white_umbrella", DyeColor.WHITE);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> LIGHT_GRAY_UMBRELLA = registerUmbrella("light_gray_umbrella", DyeColor.LIGHT_GRAY);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> GRAY_UMBRELLA = registerUmbrella("gray_umbrella", DyeColor.GRAY);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> BLACK_UMBRELLA = registerUmbrella("black_umbrella", DyeColor.BLACK);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> BROWN_UMBRELLA = registerUmbrella("brown_umbrella", DyeColor.BROWN);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> RED_UMBRELLA = registerUmbrella("red_umbrella", DyeColor.RED);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> ORANGE_UMBRELLA = registerUmbrella("orange_umbrella", DyeColor.ORANGE);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> YELLOW_UMBRELLA = registerUmbrella("yellow_umbrella", DyeColor.YELLOW);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> LIME_UMBRELLA = registerUmbrella("lime_umbrella", DyeColor.LIME);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> GREEN_UMBRELLA = registerUmbrella("green_umbrella", DyeColor.GREEN);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> CYAN_UMBRELLA = registerUmbrella("cyan_umbrella", DyeColor.CYAN);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> LIGHT_BLUE_UMBRELLA = registerUmbrella("light_blue_umbrella", DyeColor.LIGHT_BLUE);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> BLUE_UMBRELLA = registerUmbrella("blue_umbrella", DyeColor.BLUE);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> PURPLE_UMBRELLA = registerUmbrella("purple_umbrella", DyeColor.PURPLE);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> MAGENTA_UMBRELLA = registerUmbrella("magenta_umbrella", DyeColor.MAGENTA);
-    public static final RegistrySupplier<DyedBlockItem<UmbrellaBlock>> PINK_UMBRELLA = registerUmbrella("pink_umbrella", DyeColor.PINK);
 
     /**
      * Decoration Blocks (Vending Machine)
@@ -108,42 +84,6 @@ public class GenerationsDecorationBlocks {
     /**
      * Decoration Blocks (Vending Machine)
      */
-    public static final RegistrySupplier<RugBlock> POKEBALL_RUG = registerBlock("pokeball_rug", () -> new RugBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOL).ignitedByLava()));
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> WHITE_POKEBALL_RUG = registerPokedollRug("white_pokeball_rug", DyeColor.WHITE);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> LIGHT_GRAY_POKEBALL_RUG = registerPokedollRug("light_gray_pokeball_rug", DyeColor.LIGHT_GRAY);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> GRAY_POKEBALL_RUG = registerPokedollRug("gray_pokeball_rug", DyeColor.GRAY);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> BLACK_POKEBALL_RUG = registerPokedollRug("black_pokeball_rug", DyeColor.BLACK);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> BROWN_POKEBALL_RUG = registerPokedollRug("brown_pokeball_rug", DyeColor.BROWN);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> RED_POKEBALL_RUG = registerPokedollRug("red_pokeball_rug", DyeColor.RED);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> ORANGE_POKEBALL_RUG = registerPokedollRug("orange_pokeball_rug", DyeColor.ORANGE);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> YELLOW_POKEBALL_RUG = registerPokedollRug("yellow_pokeball_rug", DyeColor.YELLOW);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> LIME_POKEBALL_RUG = registerPokedollRug("lime_pokeball_rug", DyeColor.LIME);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> GREEN_POKEBALL_RUG = registerPokedollRug("green_pokeball_rug", DyeColor.GREEN);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> CYAN_POKEBALL_RUG = registerPokedollRug("cyan_pokeball_rug", DyeColor.CYAN);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> LIGHT_BLUE_POKEBALL_RUG = registerPokedollRug("light_blue_pokeball_rug", DyeColor.LIGHT_BLUE);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> BLUE_POKEBALL_RUG = registerPokedollRug("blue_pokeball_rug", DyeColor.BLUE);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> PURPLE_POKEBALL_RUG = registerPokedollRug("purple_pokeball_rug", DyeColor.PURPLE);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> MAGENTA_POKEBALL_RUG = registerPokedollRug("magenta_pokeball_rug", DyeColor.MAGENTA);
-    public static final RegistrySupplier<DyedBlockItem<RugBlock>> PINK_POKEBALL_RUG = registerPokedollRug("pink_pokeball_rug", DyeColor.PINK);
-
-    public static final RegistrySupplier<WaterFloatBlock> WATER_FLOAT = registerBlock("water_float", () -> new WaterFloatBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOL).ignitedByLava()));
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> WHITE_WATER_FLOAT = registerWaterFloat("white_water_float", DyeColor.WHITE);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> LIGHT_GRAY_WATER_FLOAT = registerWaterFloat("light_gray_water_float", DyeColor.LIGHT_GRAY);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> GRAY_WATER_FLOAT = registerWaterFloat("gray_water_float", DyeColor.GRAY);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> BLACK_WATER_FLOAT = registerWaterFloat("black_water_float", DyeColor.BLACK);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> BROWN_WATER_FLOAT = registerWaterFloat("brown_water_float", DyeColor.BROWN);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> RED_WATER_FLOAT = registerWaterFloat("red_water_float", DyeColor.RED);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> ORANGE_WATER_FLOAT = registerWaterFloat("orange_water_float", DyeColor.ORANGE);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> YELLOW_WATER_FLOAT = registerWaterFloat("yellow_water_float", DyeColor.YELLOW);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> LIME_WATER_FLOAT = registerWaterFloat("lime_water_float", DyeColor.LIME);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> GREEN_WATER_FLOAT = registerWaterFloat("green_water_float", DyeColor.GREEN);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> CYAN_WATER_FLOAT = registerWaterFloat("cyan_water_float", DyeColor.CYAN);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> LIGHT_BLUE_WATER_FLOAT = registerWaterFloat("light_blue_water_float", DyeColor.LIGHT_BLUE);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> BLUE_WATER_FLOAT = registerWaterFloat("blue_water_float", DyeColor.BLUE);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> PURPLE_WATER_FLOAT = registerWaterFloat("purple_water_float", DyeColor.PURPLE);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> MAGENTA_WATER_FLOAT = registerWaterFloat("magenta_water_float", DyeColor.MAGENTA);
-    public static final RegistrySupplier<DyedBlockItem<WaterFloatBlock>> PINK_WATER_FLOAT = registerWaterFloat("pink_water_float", DyeColor.PINK);
-
     //Ball Displays
     public static final RegistrySupplier<BallDisplayBlock> EMPTY_BALL_DISPLAY = registerBallDisplay(DisplayState.EMPTY);
     public static final RegistrySupplier<BallDisplayBlock> POKE_BALL_DISPLAY = registerBallDisplay(DisplayState.POKE);
@@ -195,27 +135,9 @@ public class GenerationsDecorationBlocks {
         return item;
     }
 
-    private static RegistrySupplier<DyedBlockItem<UmbrellaBlock>> registerUmbrella(String name, DyeColor color) {
-        var item = register(name, properties -> new DyedBlockItem<>(UMBRELLA.get(), color, properties));
-        UMBRELLA_BLOCKS.add(item);
-        return item;
-    }
-
     private static RegistrySupplier<DyedBlockItem<PastelBeanBagBlock>> registerPastelBeanBag(String name, DyeColor color) {
         var item = register(name, properties -> new DyedBlockItem<>(PASTEL_BEAN_BAG.get(), color, properties));
         PASTEL_BEAN_BAG_BLOCKS.add(item);
-        return item;
-    }
-
-    private static RegistrySupplier<DyedBlockItem<RugBlock>> registerPokedollRug(String name, DyeColor color) {
-        var item = register(name, properties -> new DyedBlockItem<>(POKEBALL_RUG.get(), color, properties));
-        POKEDOLL_RUG_BLOCKS.add(item);
-        return item;
-    }
-
-    private static RegistrySupplier<DyedBlockItem<WaterFloatBlock>> registerWaterFloat(String name, DyeColor color) {
-        var item = register(name, properties -> new DyedBlockItem<>(WATER_FLOAT.get(), color, properties));
-        WATER_FLOAT_BLOCKS.add(item);
         return item;
     }
 

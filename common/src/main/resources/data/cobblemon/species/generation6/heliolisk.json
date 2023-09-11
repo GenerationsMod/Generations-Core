@@ -27,15 +27,6 @@
     "monster",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bulldoze",
     "1:charge",

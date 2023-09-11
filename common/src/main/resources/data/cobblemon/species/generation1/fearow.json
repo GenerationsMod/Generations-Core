@@ -31,7 +31,7 @@
         "canFly": true
       },
       "walk": {
-        "canWalk": false
+        "canWalk": true
       }
     },
     "resting": {
@@ -59,20 +59,20 @@
     ]
   },
   "moves": [
-    "1:furyattack",
+    "1:drillrun",
     "1:growl",
     "1:leer",
     "1:peck",
     "1:pluck",
-    "17:aerialace",
-    "26:pursuit",
+    "1:pursuit",
+    "11:furyattack",
+    "15:aerialace",
+    "18:mirrormove",
+    "23:assurance",
+    "27:agility",
     "32:focusenergy",
-    "32:mirrormove",
-    "35:assurance",
-    "40:drillpeck",
-    "41:roost",
-    "47:agility",
-    "53:drillrun",
+    "36:roost",
+    "41:drillpeck",
     "tm:aerialace",
     "tm:attract",
     "tm:captivate",
@@ -170,10 +170,10 @@
   ],
   "preEvolution": "spearow",
   "evolutions": [],
-  "baseScale": 2,
+  "baseScale": 1.3,
   "hitbox": {
     "width": 1,
-    "height": 0.7,
+    "height": 1.4,
     "fixed": false
   },
   "baseFriendship": 70,

@@ -38,6 +38,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
+      "baseExperienceYield": 340,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -52,7 +53,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "legendary"
@@ -74,12 +74,8 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
-      {
-        "item": "minecraft:lustrous_globe",
-        "percentage": 50
-      },
       {
         "item": "generations_core:palkia_doll",
         "percentage": 75
@@ -89,18 +85,32 @@
   "moves": [
     "1:dragonbreath",
     "1:scaryface",
+    "1:waterpulse",
     "6:waterpulse",
+    "8:dragonbreath",
     "10:ancientpower",
     "15:slash",
+    "16:ancientpower",
     "19:powergem",
     "24:aquaring",
     "24:aquatail",
+    "24:slash",
     "28:dragonclaw",
+    "32:aquaring",
     "33:earthpower",
     "37:aurasphere",
+    "40:dragonclaw",
     "40:spacialrend",
     "42:hydropump",
+    "46:spacialrend",
+    "48:aurasphere",
     "50:healblock",
+    "50:hydropump",
+    "56:powergem",
+    "64:aquatail",
+    "72:earthpower",
+    "80:spacialrend",
+    "88:hydropump",
     "tm:aerialace",
     "tm:aurasphere",
     "tm:avalanche",

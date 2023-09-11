@@ -27,14 +27,12 @@
     "fairy",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:boost_mulch",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
     "1:absorb",
@@ -46,19 +44,19 @@
     "1:fairywind",
     "1:gigadrain",
     "1:growth",
+    "1:gust",
     "1:helpinghand",
+    "1:hurricane",
     "1:leechseed",
     "1:megadrain",
     "1:memento",
+    "1:moonblast",
     "1:poisonpowder",
     "1:razorleaf",
     "1:solarbeam",
     "1:stunspore",
     "1:sunnyday",
-    "10:gust",
-    "28:tailwind",
-    "46:hurricane",
-    "50:moonblast",
+    "1:tailwind",
     "tm:attract",
     "tm:beatup",
     "tm:charm",
@@ -130,10 +128,10 @@
   ],
   "preEvolution": "cottonee",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.85,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 0.8,
     "fixed": false
   },
   "baseFriendship": 50,

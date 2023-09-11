@@ -30,6 +30,9 @@
       "swim": {
         "canSwimInWater": true,
         "canBreatheUnderwater": true
+      },
+      "walk": {
+        "walkSpeed": 0.3
       }
     },
     "resting": {
@@ -57,7 +60,9 @@
     ]
   },
   "moves": [
+    "1:bubble",
     "1:growl",
+    "1:metalclaw",
     "1:tackle",
     "8:bubble",
     "11:watersport",
@@ -65,11 +70,13 @@
     "16:metalclaw",
     "19:bide",
     "19:bubblebeam",
+    "24:bide",
     "28:furyattack",
     "33:brine",
     "37:whirlpool",
     "42:mist",
     "46:drillpeck",
+    "50:hydropump",
     "51:hydropump",
     "tm:aerialace",
     "tm:attract",

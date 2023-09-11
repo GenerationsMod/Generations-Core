@@ -25,29 +25,20 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:absorb",
-    "13:gust",
-    "17:stunspore",
+    "1:gust",
+    "12:absorb",
+    "15:stunspore",
+    "17:morningsun",
     "20:aircutter",
-    "20:morningsun",
-    "24:megadrain",
-    "27:whirlwind",
-    "31:attract",
-    "34:silverwind",
+    "22:megadrain",
+    "25:silverwind",
+    "27:attract",
+    "30:whirlwind",
+    "32:gigadrain",
+    "35:bugbuzz",
     "37:rage",
-    "38:gigadrain",
-    "41:bugbuzz",
-    "45:quiverdance",
+    "40:quiverdance",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:attract",

@@ -26,36 +26,27 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:peck",
-    "9:metalclaw",
-    "10:sandattack",
-    "13:swift",
+    "4:sandattack",
+    "8:furyattack",
+    "12:aircutter",
+    "12:metalclaw",
     "16:agility",
     "20:feint",
     "20:wingattack",
-    "26:furyattack",
-    "29:aircutter",
-    "32:steelwing",
+    "23:swift",
+    "24:slash",
+    "28:steelwing",
+    "32:autotomize",
     "36:drillpeck",
-    "39:airslash",
-    "39:autotomize",
-    "42:slash",
-    "42:spikes",
-    "45:metalsound",
-    "45:nightslash",
+    "40:metalsound",
+    "44:spikes",
+    "45:airslash",
     "48:irondefense",
     "52:bravebird",
+    "53:nightslash",
     "egg:aircutter",
     "egg:assurance",
     "egg:bravebird",

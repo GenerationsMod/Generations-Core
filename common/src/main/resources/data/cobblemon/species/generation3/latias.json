@@ -36,7 +36,7 @@
       },
       "catchRate": 3,
       "maleRatio": 0,
-      "baseExperienceYield": 315,
+      "baseExperienceYield": 300,
       "baseFriendship": 90,
       "evYield": {
         "hp": 0,
@@ -51,7 +51,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega",
@@ -74,12 +73,8 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
-      {
-        "item": "minecraft:elytra",
-        "percentage": 100
-      },
       {
         "item": "generations_core:latias_doll",
         "percentage": 75
@@ -87,27 +82,27 @@
     ]
   },
   "moves": [
+    "1:charm",
     "1:psywave",
-    "5:wish",
-    "10:helpinghand",
-    "10:storedpower",
+    "1:safeguard",
+    "1:storedpower",
+    "4:watersport",
+    "5:helpinghand",
+    "10:recover",
+    "13:refresh",
     "15:confusion",
-    "15:safeguard",
-    "20:dragonbreath",
     "20:tailwind",
-    "25:watersport",
-    "30:refresh",
+    "25:dragonbreath",
+    "30:wish",
     "35:mistball",
-    "40:psychic",
     "40:zenheadbutt",
-    "45:recover",
-    "50:charm",
-    "50:psychoshift",
-    "60:healingwish",
-    "65:healpulse",
-    "70:dragonpulse",
-    "70:reflecttype",
-    "75:guardsplit",
+    "45:dragonpulse",
+    "50:healpulse",
+    "55:reflecttype",
+    "60:psychic",
+    "65:guardsplit",
+    "70:healingwish",
+    "75:psychoshift",
     "tm:aerialace",
     "tm:agility",
     "tm:airslash",

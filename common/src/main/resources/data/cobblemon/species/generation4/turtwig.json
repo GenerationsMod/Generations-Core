@@ -21,6 +21,9 @@
       "willSleepOnBed": true,
       "depth": "normal",
       "light": "0-4"
+    },
+    "walk": {
+      "walkSpeed": 0.35
     }
   },
   "catchRate": 45,
@@ -148,7 +151,7 @@
       ]
     }
   ],
-  "baseScale": 0.9,
+  "baseScale": 0.7,
   "hitbox": {
     "width": 0.75,
     "height": 1,

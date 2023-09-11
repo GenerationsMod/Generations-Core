@@ -36,7 +36,7 @@
       },
       "catchRate": 45,
       "maleRatio": -1,
-      "baseExperienceYield": 182,
+      "baseExperienceYield": 154,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -84,7 +84,7 @@
       },
       "catchRate": 45,
       "maleRatio": -1,
-      "baseExperienceYield": 182,
+      "baseExperienceYield": 154,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -132,7 +132,7 @@
       },
       "catchRate": 45,
       "maleRatio": -1,
-      "baseExperienceYield": 182,
+      "baseExperienceYield": 154,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -180,7 +180,7 @@
       },
       "catchRate": 45,
       "maleRatio": -1,
-      "baseExperienceYield": 182,
+      "baseExperienceYield": 154,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -228,7 +228,7 @@
       },
       "catchRate": 45,
       "maleRatio": -1,
-      "baseExperienceYield": 182,
+      "baseExperienceYield": 154,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -266,30 +266,36 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
+    "1:charge",
     "1:confuseray",
+    "1:discharge",
+    "1:doubleteam",
     "1:thundershock",
     "1:thunderwave",
     "1:trick",
+    "5:thundershock",
     "8:uproar",
+    "10:confuseray",
+    "15:charge",
     "15:doubleteam",
+    "20:electroball",
     "22:shockwave",
+    "25:thunderwave",
     "29:ominouswind",
+    "30:shockwave",
+    "35:hex",
     "36:substitute",
+    "40:substitute",
     "43:charge",
     "43:electroball",
+    "45:trick",
     "50:discharge",
     "50:hex",
+    "55:uproar",
+    "57:charge",
+    "64:discharge",
     "tm:allyswitch",
     "tm:chargebeam",
     "tm:confide",

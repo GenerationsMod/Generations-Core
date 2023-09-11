@@ -35,7 +35,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.875,
-      "baseExperienceYield": 284,
+      "baseExperienceYield": 265,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -51,7 +51,6 @@
         "monster",
         "water_1"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -82,7 +81,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.875,
-      "baseExperienceYield": 239,
+      "baseExperienceYield": 265,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -98,7 +97,6 @@
         "monster",
         "water_1"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -145,6 +143,11 @@
       "light": "0-4"
     },
     "moving": {
+      "moving" : {
+        "walk": {
+          "walkSpeed": 0.3
+        }
+      },
       "swim": {
         "canSwimInWater": true,
         "canBreatheUnderwater": true
@@ -152,22 +155,22 @@
     }
   },
   "moves": [
-    "1:bubble",
     "1:flashcannon",
     "1:tackle",
     "1:tailwhip",
+    "1:watergun",
     "1:withdraw",
-    "13:watergun",
-    "19:bite",
-    "25:rapidspin",
-    "28:waterpulse",
-    "31:protect",
-    "32:aquatail",
+    "9:rapidspin",
+    "12:bite",
+    "13:bubble",
+    "15:waterpulse",
+    "20:protect",
+    "25:raindance",
+    "30:aquatail",
     "35:shellsmash",
-    "42:raindance",
-    "46:irondefense",
-    "55:skullbash",
-    "68:hydropump",
+    "42:irondefense",
+    "49:hydropump",
+    "56:skullbash",
     "tm:attract",
     "tm:aurasphere",
     "tm:avalanche",

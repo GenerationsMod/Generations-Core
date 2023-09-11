@@ -42,23 +42,36 @@
       }
     ]
   },
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.55
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "moves": [
     "1:growl",
     "1:peck",
     "5:quickattack",
-    "9:pursuit",
-    "13:furyattack",
-    "21:pluck",
+    "8:rage",
+    "12:furyattack",
+    "15:pursuit",
+    "19:pluck",
     "21:triattack",
-    "25:rage",
-    "28:acupressure",
-    "32:doublehit",
-    "33:uproar",
+    "22:doublehit",
+    "26:agility",
+    "29:uproar",
+    "33:acupressure",
     "36:swordsdance",
-    "37:drillpeck",
     "40:jumpkick",
-    "45:agility",
-    "46:endeavor",
+    "43:drillpeck",
+    "47:endeavor",
     "50:thrash",
     "egg:assurance",
     "egg:bravebird",

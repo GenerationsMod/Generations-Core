@@ -24,12 +24,8 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
-      {
-        "item": "minecraft:ender_pearl",
-        "percentage": 50
-      },
       {
         "item": "generations_core:darkrai_doll",
         "percentage": 75

@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.network.ClientNetworkPack
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
@@ -13,9 +14,11 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
 import org.apache.logging.log4j.util.TriConsumer;
 
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class GenerationsFabricNetworkManager implements GenerationsImplementation.NetworkManager {
@@ -65,5 +68,10 @@ public class GenerationsFabricNetworkManager implements GenerationsImplementatio
     @Override
     public <T extends GenerationsNetworkPacket<?>> Packet<ClientGamePacketListener> asVanillaClientBound(T packet) {
         return ServerPlayNetworking.createS2CPacket(packet.getId(), packet.toBuffer());
+    }
+
+    @Override
+    public <T extends GenerationsNetworkPacket<?>, V extends Entity> void sendToAllTracking(T packet, V entity) {
+        PlayerLookup.tracking(entity).forEach(player -> sendPacketToPlayer(player, packet));
     }
 }

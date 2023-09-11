@@ -33,15 +33,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mud",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
     "1:tailwhip",

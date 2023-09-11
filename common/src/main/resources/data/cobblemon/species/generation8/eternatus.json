@@ -36,7 +36,7 @@
       },
       "catchRate": 255,
       "maleRatio": -1,
-      "baseExperienceYield": 563,
+      "baseExperienceYield": 345,
       "baseFriendship": 0,
       "evYield": {
         "hp": 3,
@@ -51,7 +51,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "legendary"
@@ -72,15 +71,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:dynamax_candy",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:agility",
     "1:confuseray",

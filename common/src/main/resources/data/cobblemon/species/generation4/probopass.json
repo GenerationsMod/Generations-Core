@@ -34,15 +34,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:compass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:block",
     "1:gravity",
@@ -53,18 +44,35 @@
     "1:tackle",
     "1:triattack",
     "1:wideguard",
+    "13:thunderwave",
+    "16:rest",
     "18:rockblast",
+    "19:spark",
+    "22:rockslide",
+    "25:powergem",
     "25:spark",
     "25:thunderwave",
+    "28:rockblast",
+    "31:discharge",
     "31:rockslide",
+    "34:sandstorm",
+    "37:earthpower",
     "37:sandstorm",
+    "40:stoneedge",
+    "43:lockon",
     "43:rest",
+    "43:zapcannon",
     "49:discharge",
     "49:powergem",
+    "55:discharge",
     "55:stoneedge",
+    "61:stoneedge",
     "61:zapcannon",
     "67:lockon",
+    "67:zapcannon",
     "73:earthpower",
+    "73:lockon",
+    "79:earthpower",
     "tm:attract",
     "tm:bulldoze",
     "tm:captivate",
@@ -138,7 +146,7 @@
   ],
   "preEvolution": "nosepass",
   "evolutions": [],
-  "baseScale": 1.0,
+  "baseScale": 1,
   "hitbox": {
     "width": 1.5,
     "height": 2,

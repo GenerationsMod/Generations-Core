@@ -34,8 +34,9 @@ public record S2COpenDialogueEditorScreenPacket(ResourceLocation location) imple
 
 
     public static class Handler implements ClientNetworkPacketHandler<S2COpenDialogueEditorScreenPacket> {
-        public void handle(S2COpenDialogueEditorScreenPacket packet, Minecraft client) {
-            client.setScreen(
+        public static final Handler INSTANCE = new Handler();
+        public void handle(S2COpenDialogueEditorScreenPacket packet) {
+            Minecraft.getInstance().setScreen(
                 new ConfigureDialogueScreen(
                     Dialogues.instance().getOrElse(
                         packet.location, new DialogueGraph(

@@ -16,12 +16,12 @@
     "special_defence": 70,
     "speed": 110
   },
-  "features": [
-    "pladean-breed"
-  ],
   "catchRate": 45,
   "maleRatio": 1,
   "shoulderMountable": false,
+  "features": [
+    "pladean-breed"
+  ],
   "forms": [
     {
       "name": "Paldea-Combat",
@@ -41,6 +41,7 @@
       },
       "catchRate": 45,
       "maleRatio": 1,
+      "baseExperienceYield": 172,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -140,6 +141,7 @@
       },
       "catchRate": 45,
       "maleRatio": 1,
+      "baseExperienceYield": 172,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -245,6 +247,7 @@
       },
       "catchRate": 45,
       "maleRatio": 1,
+      "baseExperienceYield": 172,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -351,21 +354,21 @@
   "moves": [
     "1:tackle",
     "1:tailwhip",
-    "4:rage",
-    "8:hornattack",
-    "13:scaryface",
+    "5:rage",
+    "5:workup",
+    "10:payback",
     "15:assurance",
-    "19:pursuit",
-    "24:payback",
-    "26:swagger",
-    "29:workup",
-    "29:zenheadbutt",
-    "34:rest",
+    "15:pursuit",
+    "20:hornattack",
+    "25:scaryface",
+    "30:zenheadbutt",
     "35:ragingbull",
-    "43:thrash",
-    "53:takedown",
-    "55:gigaimpact",
-    "63:doubleedge",
+    "35:takedown",
+    "40:rest",
+    "45:swagger",
+    "50:thrash",
+    "55:doubleedge",
+    "60:gigaimpact",
     "egg:curse",
     "egg:endeavor",
     "tm:assurance",

@@ -25,34 +25,25 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:salmon",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:growl",
     "1:powdersnow",
-    "5:growl",
+    "3:endure",
+    "6:furyswipes",
     "9:bide",
-    "13:icywind",
-    "15:playnice",
-    "17:furyswipes",
+    "9:icywind",
+    "12:playnice",
+    "15:brine",
     "18:frostbreath",
-    "21:brine",
-    "25:endure",
-    "29:charm",
+    "21:slash",
+    "24:flail",
+    "27:charm",
+    "30:hail",
     "30:snowscape",
-    "33:slash",
-    "36:flail",
-    "41:rest",
-    "45:blizzard",
-    "49:hail",
-    "53:thrash",
-    "57:sheercold",
+    "33:thrash",
+    "36:rest",
+    "39:blizzard",
+    "42:sheercold",
     "egg:assurance",
     "egg:avalanche",
     "egg:encore",

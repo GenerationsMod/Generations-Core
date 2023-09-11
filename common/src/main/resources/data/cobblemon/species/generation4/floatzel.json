@@ -25,16 +25,17 @@
     "water_1",
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:fresh_water",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "swimSpeed": 0.5,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
       }
-    ]
+    }
   },
   "moves": [
+    "1:crunch",
     "1:growl",
     "1:icefang",
     "1:quickattack",
@@ -44,14 +45,22 @@
     "6:watergun",
     "10:pursuit",
     "15:swift",
+    "15:watergun",
     "18:bite",
+    "18:pursuit",
     "21:aquajet",
+    "21:swift",
+    "24:aquajet",
     "26:crunch",
     "29:agility",
     "29:doublehit",
+    "35:whirlpool",
     "39:whirlpool",
     "41:liquidation",
+    "41:razorwind",
+    "46:aquatail",
     "50:razorwind",
+    "51:agility",
     "57:hydropump",
     "62:aquatail",
     "62:wavecrash",
@@ -148,10 +157,10 @@
   ],
   "preEvolution": "buizel",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.9,
+    "height": 1.7,
     "fixed": false
   },
   "baseFriendship": 70,

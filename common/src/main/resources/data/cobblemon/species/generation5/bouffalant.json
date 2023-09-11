@@ -25,32 +25,23 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wool",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:pursuit",
     "1:tackle",
+    "5:focusenergy",
     "6:rage",
-    "11:furyattack",
-    "16:hornattack",
-    "21:scaryface",
-    "26:revenge",
-    "31:headcharge",
+    "10:furyattack",
+    "15:revenge",
+    "20:scaryface",
+    "25:hornattack",
+    "30:reversal",
     "35:throatchop",
-    "36:focusenergy",
-    "41:megahorn",
-    "46:reversal",
-    "51:thrash",
-    "56:swordsdance",
-    "61:gigaimpact",
+    "40:headcharge",
+    "45:swordsdance",
+    "50:megahorn",
+    "50:thrash",
+    "55:gigaimpact",
     "egg:amnesia",
     "egg:belch",
     "egg:cottonguard",
@@ -140,10 +131,10 @@
     "cobblemon.species.bouffalant.desc"
   ],
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.6,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.3,
+    "height": 1.5,
     "fixed": false
   },
   "baseFriendship": 50,

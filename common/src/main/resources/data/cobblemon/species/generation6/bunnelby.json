@@ -25,35 +25,26 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:carrot",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:agility",
     "1:leer",
-    "1:tackle",
+    "1:mudslap",
+    "3:tackle",
     "6:laserfocus",
-    "7:quickattack",
+    "9:quickattack",
     "10:doubleslap",
-    "13:mudslap",
-    "15:takedown",
-    "18:mudshot",
-    "20:doublekick",
+    "12:mudshot",
+    "15:flail",
+    "18:doublekick",
     "21:bulldoze",
+    "24:dig",
     "25:odorsleuth",
-    "29:flail",
-    "33:dig",
+    "27:bounce",
+    "30:takedown",
     "33:swordsdance",
-    "38:bounce",
-    "42:superfang",
+    "36:earthquake",
+    "39:superfang",
     "47:facade",
-    "49:earthquake",
     "egg:defensecurl",
     "egg:rollout",
     "egg:spikes",
@@ -136,10 +127,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.55,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.2,
     "fixed": false
   },
   "baseFriendship": 50,

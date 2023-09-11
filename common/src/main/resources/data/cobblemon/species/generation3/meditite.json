@@ -25,37 +25,28 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:potion",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:bide",
+    "1:confusion",
     "1:workup",
     "4:meditate",
-    "9:confusion",
-    "12:detect",
+    "9:detect",
     "12:endure",
-    "17:hiddenpower",
+    "15:feint",
+    "17:forcepalm",
+    "20:hiddenpower",
     "20:psybeam",
     "20:swagger",
-    "22:feint",
-    "22:mindreader",
+    "23:calmmind",
+    "25:mindreader",
     "25:zenheadbutt",
-    "28:calmmind",
-    "29:forcepalm",
-    "32:highjumpkick",
-    "36:psychup",
-    "39:acupressure",
-    "39:powertrick",
-    "41:reversal",
+    "28:highjumpkick",
+    "31:psychup",
+    "33:acupressure",
+    "36:powertrick",
+    "39:reversal",
+    "41:recover",
     "44:counter",
-    "44:recover",
     "egg:batonpass",
     "egg:bulletpunch",
     "egg:drainpunch",

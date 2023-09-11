@@ -25,36 +25,27 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:fresh_water",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:focusenergy",
     "1:tackle",
     "4:sandattack",
-    "10:armthrust",
-    "13:vitalthrow",
-    "19:fakeout",
+    "7:armthrust",
+    "10:fakeout",
+    "13:forcepalm",
+    "16:whirlwind",
+    "19:knockoff",
     "22:bulkup",
-    "22:whirlwind",
+    "22:vitalthrow",
+    "25:bellydrum",
     "28:detect",
-    "28:forcepalm",
-    "28:knockoff",
-    "31:smellingsalts",
+    "28:smellingsalts",
+    "31:seismictoss",
     "34:focuspunch",
     "34:wakeupslap",
-    "37:bellydrum",
+    "37:endure",
     "40:closecombat",
-    "40:endure",
+    "43:reversal",
     "46:heavyslam",
-    "46:seismictoss",
-    "49:reversal",
     "egg:bulletpunch",
     "egg:chipaway",
     "egg:counter",

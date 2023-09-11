@@ -37,7 +37,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 315,
+      "baseExperienceYield": 300,
       "baseFriendship": 35,
       "evYield": {
         "hp": 0,
@@ -52,7 +52,6 @@
       "eggGroups": [
         "monster"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega",
@@ -74,39 +73,30 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:glow_berries",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
-    "1:bite",
+    "1:darkpulse",
     "1:firefang",
     "1:icefang",
     "1:irondefense",
     "1:leer",
+    "1:payback",
     "1:rockthrow",
-    "1:sandstorm",
-    "1:screech",
     "1:tackle",
     "1:thunderfang",
+    "9:bite",
+    "12:scaryface",
     "14:chipaway",
+    "15:rockslide",
     "18:stompingtantrum",
-    "22:rockslide",
+    "21:screech",
     "24:smackdown",
-    "28:darkpulse",
-    "29:thrash",
-    "34:payback",
-    "38:scaryface",
-    "47:crunch",
-    "54:stoneedge",
-    "61:earthquake",
-    "75:hyperbeam",
-    "82:gigaimpact",
+    "27:crunch",
+    "33:earthquake",
+    "37:stoneedge",
+    "42:thrash",
+    "47:sandstorm",
+    "52:hyperbeam",
+    "59:gigaimpact",
     "tm:aerialace",
     "tm:assurance",
     "tm:attract",

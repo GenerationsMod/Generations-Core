@@ -25,15 +25,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:slime_ball",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:acid",
@@ -47,18 +38,18 @@
     "1:quickattack",
     "1:watershuriken",
     "1:yawn",
+    "12:megadrain",
     "16:strugglebug",
-    "20:megadrain",
-    "25:swift",
+    "20:swift",
+    "24:agility",
+    "28:gigadrain",
     "28:mefirst",
-    "32:agility",
-    "37:gigadrain",
-    "40:uturn",
+    "32:powerswap",
+    "36:uturn",
+    "40:recover",
     "44:bugbuzz",
-    "49:recover",
-    "52:powerswap",
+    "48:finalgambit",
     "52:toxic",
-    "56:finalgambit",
     "tm:agility",
     "tm:attract",
     "tm:batonpass",

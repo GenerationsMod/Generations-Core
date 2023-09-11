@@ -23,24 +23,15 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:paraylyze_heal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:chargebeam",
+    "1:crunch",
     "1:headbutt",
     "1:spark",
     "1:thunderwave",
     "9:bind",
     "19:acid",
     "29:discharge",
-    "39:crunch",
     "44:thunderbolt",
     "49:acidspray",
     "54:coil",

@@ -71,7 +71,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lone_earing"
+				"name": "generations_core:lone_earring"
 			},
 			{
 				"type": "minecraft:item",
@@ -103,15 +103,43 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shard_of_knowledge"
+				"name": "generations_core:iris_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shard_of_willpower"
+				"name": "generations_core:nessa_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shard_of_emotion"
+				"name": "generations_core:team_rocket_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:sada_and_turo_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:south_province_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rival_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lusamine_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:xy_legendary_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:kanto_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:ultra_necrozma_disc"
 			},
 			{
 				"type": "minecraft:item",
@@ -143,7 +171,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:instant_noddles"
+				"name": "generations_core:instant_noodles"
 			},
 			{
 				"type": "minecraft:item",
@@ -159,19 +187,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:apicot_berry"
+				"name": "cobblemon:apicot_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aspear_berry"
+				"name": "cobblemon:aspear_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:babiri_berry"
+				"name": "cobblemon:babiri_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:berry_juice"
+				"name": "cobblemon:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -331,111 +359,71 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:dawn_stone_shard"
+				"name": "generations_core:tm_9"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:dusk_stone_shard"
+				"name": "generations_core:tm_23"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:fire_stone_shard"
+				"name": "generations_core:tm_48"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:ice_stone_shard"
+				"name": "generations_core:tm_68"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:leaf_stone_shard"
+				"name": "generations_core:tm_72"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:moon_stone_shard"
+				"name": "generations_core:tm_82"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:shiny_stone_shard"
+				"name": "generations_core:tm_96"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:sun_stone_shard"
+				"name": "generations_core:tm_126"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:thunder_stone_shard"
+				"name": "generations_core:tm_136"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:water_stone_shard"
+				"name": "generations_core:tm_147"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm9"
+				"name": "generations_core:tm_166"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm23"
+				"name": "generations_core:tm_44"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm48"
+				"name": "generations_core:tm_78"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm68"
+				"name": "generations_core:tm_100"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm72"
+				"name": "generations_core:tm_115"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm82"
+				"name": "generations_core:tm_156"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm96"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm126"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm136"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm147"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm166"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm44"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm78"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm100"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm115"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm156"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tm169"
+				"name": "generations_core:tm_169"
 			}
 		]
 	}]

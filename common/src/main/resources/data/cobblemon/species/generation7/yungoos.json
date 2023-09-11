@@ -25,15 +25,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wheat",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
     "3:leer",
@@ -50,9 +41,9 @@
     "31:scaryface",
     "34:crunch",
     "37:hyperfang",
-    "40:yawn",
-    "43:thrash",
-    "46:rest",
+    "37:yawn",
+    "40:thrash",
+    "43:rest",
     "egg:endeavor",
     "egg:firefang",
     "egg:icefang",

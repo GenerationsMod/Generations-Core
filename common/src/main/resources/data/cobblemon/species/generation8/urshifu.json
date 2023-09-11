@@ -177,7 +177,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "legendary",
@@ -224,7 +223,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "legendary",
@@ -246,15 +244,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:enchanted_golden_apple",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:endure",
     "1:focusenergy",

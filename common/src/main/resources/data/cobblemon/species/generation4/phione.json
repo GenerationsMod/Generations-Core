@@ -24,19 +24,6 @@
     "water_1",
     "fairy"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:egg",
-        "percentage": 50
-      },
-      {
-        "item": "minecraft:heart_of_the_sea",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
     "1:watersport",

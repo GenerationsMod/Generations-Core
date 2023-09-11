@@ -139,6 +139,14 @@
   "eggGroups": [
     "field"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "2",
     "entries": [
@@ -155,23 +163,23 @@
   },
   "moves": [
     "1:ember",
+    "1:furyattack",
     "1:growl",
     "1:megahorn",
     "1:poisonjab",
     "1:quickattack",
     "1:tackle",
     "1:tailwhip",
-    "15:flamewheel",
-    "19:stomp",
-    "21:flamecharge",
-    "25:firespin",
-    "31:takedown",
-    "33:inferno",
-    "38:agility",
-    "40:furyattack",
-    "50:bounce",
-    "56:flareblitz",
-    "63:fireblast",
+    "15:flamecharge",
+    "20:agility",
+    "25:flamewheel",
+    "30:stomp",
+    "35:firespin",
+    "43:takedown",
+    "45:bounce",
+    "49:inferno",
+    "56:fireblast",
+    "63:flareblitz",
     "tm:agility",
     "tm:allyswitch",
     "tm:attract",

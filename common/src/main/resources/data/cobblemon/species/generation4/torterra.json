@@ -41,10 +41,14 @@
       "willSleepOnBed": false,
       "depth": "normal",
       "light": "0-4"
+    },
+    "walk": {
+      "walkSpeed": 0.05
     }
   },
   "moves": [
     "1:absorb",
+    "1:earthquake",
     "1:razorleaf",
     "1:tackle",
     "1:withdraw",

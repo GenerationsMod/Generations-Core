@@ -36,16 +36,12 @@
     "amount": "2",
     "entries": [
       {
-        "item": "generations_core:gracidea",
-        "percentage": 75
+        "item": "generations_core:shaymin_land_doll",
+        "percentage": 50
       },
       {
         "item": "generations_core:shaymin_sky_doll",
-        "percentage": 75
-      },
-      {
-        "item": "generations_core:shaymin_land_doll",
-        "percentage": 75
+        "percentage": 50
       }
     ]
   },
@@ -173,7 +169,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen4",
         "mythical",

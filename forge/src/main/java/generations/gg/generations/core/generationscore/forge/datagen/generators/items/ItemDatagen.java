@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items;
 
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -8,6 +9,7 @@ import generations.gg.generations.core.generationscore.world.item.curry.CurryTyp
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -83,27 +85,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.PERILOUS_SOUP.get(), "restoration/");
         createItem(GenerationsItems.RARE_SODA.get(), "restoration/");
         createItem(GenerationsItems.ULTRA_RARE_SODA.get(), "restoration/");
-        createMint(GenerationsItems.ADAMANT_MINT.get(), "red");
-        createMint(GenerationsItems.BOLD_MINT.get(), "purple");
-        createMint(GenerationsItems.BRAVE_MINT.get(), "red");
-        createMint(GenerationsItems.CALM_MINT.get(), "pink");
-        createMint(GenerationsItems.CAREFUL_MINT.get(), "pink");
-        createMint(GenerationsItems.GENTLE_MINT.get(), "pink");
-        createMint(GenerationsItems.HASTY_MINT.get(), "green");
-        createMint(GenerationsItems.IMPISH_MINT.get(), "purple");
-        createMint(GenerationsItems.JOLLY_MINT.get(), "green");
-        createMint(GenerationsItems.LONELY_MINT.get(), "red");
-        createMint(GenerationsItems.LAX_MINT.get(), "purple");
-        createMint(GenerationsItems.MILD_MINT.get(), "blue");
-        createMint(GenerationsItems.MODEST_MINT.get(), "blue");
-        createMint(GenerationsItems.NAIVE_MINT.get(), "green");
-        createMint(GenerationsItems.NAUGHTY_MINT.get(), "red");
-        createMint(GenerationsItems.RASH_MINT.get(), "blue");
-        createMint(GenerationsItems.RELAXED_MINT.get(), "purple");
-        createMint(GenerationsItems.SASSY_MINT.get(), "pink");
-        createMint(GenerationsItems.SERIOUS_MINT.get(), "yellow");
-        createMint(GenerationsItems.TIMID_MINT.get(), "green");
-        createMint(GenerationsItems.QUIET_MINT.get(), "blue");
         createItem(GenerationsItems.FRESH_WATER.get(), "restoration/");
         createItem(GenerationsItems.SODA_POP.get(), "restoration/");
         createItem(GenerationsItems.LEMONADE.get(), "restoration/");
@@ -375,6 +356,12 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.TAPUNIUM_Z.get(), "zcrystals/");
         createHeldItem(GenerationsItems.ULTRANECROZIUM_Z.get(), "zcrystals/");
 
+        createHeldItem(GenerationsItems.ELECTRIC_SEED.get());
+        createHeldItem(GenerationsItems.MISTY_SEED.get());
+        createHeldItem(GenerationsItems.GRASSY_SEED.get());
+        createHeldItem(GenerationsItems.PSYCHIC_SEED.get());
+        createHeldItem(GenerationsItems.RED_SCARF.get());
+
         GenerationsPokeDolls.POKEDOLLS.forEach(ball -> createPokedoll(ball.get()));
 
         createItem(GenerationsItems.RELIC_GOLD.get(), "valuables/");
@@ -448,14 +435,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RUBY.get(), "natural/");
         createItem(GenerationsItems.SAPPHIRE.get(), "natural/");
         createItem(GenerationsItems.SILICON.get(), "natural/");
-        createItem(GenerationsItems.GROWTH_MULCH.get(), "natural/");
-        createItem(GenerationsItems.DAMP_MULCH.get(), "natural/");
-        createItem(GenerationsItems.STABLE_MULCH.get(), "natural/");
-        createItem(GenerationsItems.GOOEY_MULCH.get(), "natural/");
-        createItem(GenerationsItems.AMAZE_MULCH.get(), "natural/");
-        createItem(GenerationsItems.BOOST_MULCH.get(), "natural/");
-        createItem(GenerationsItems.RICH_MULCH.get(), "natural/");
-        createItem(GenerationsItems.SURPRISE_MULCH.get(), "natural/");
         createItem(GenerationsItems.GALARICA_TWIG.get(), "natural/");
 
         GenerationsArmor.ARMOR.forEach(armor -> createItem(armor.get(), "armor/"));
@@ -487,25 +466,15 @@ public class ItemDatagen extends ItemModelProvider {
          */
         createItem(GenerationsItems.ROTOM_CATALOG.get(), "player_items/");
         createItem(GenerationsItems.POKEDEX.get(), "player_items/");
-        createItem(GenerationsItems.ITEM_FINDER.get(), "player_items/");
         createItem(GenerationsItems.LURE_MODULE.get(), "player_items/");
         createItem(GenerationsItems.BOTTLE_CAP.get(), "player_items/");
         createItem(GenerationsItems.GOLD_BOTTLE_CAP.get(), "player_items/");
         createItem(GenerationsItems.ABILITY_CAPSULE.get(), "player_items/");
         createItem(GenerationsItems.ABILITY_PATCH.get(), "player_items/");
-        createItem(GenerationsItems.RANCH_UPGRADE.get(), "player_items/");
-        createItem(GenerationsItems.CORRUPTED_GEM.get(), "player_items/");
         createItem(GenerationsItems.WISHING_STAR.get(), "player_items/");
         createItem(GenerationsItems.UNCHARGED_DYNAMAX_BAND.get(), "player_items/");
 
         createItem(GenerationsItems.ORB.get(), "legend_items/");
-        createItem(GenerationsItems.UNO_ORB.get(), "legend_items/");
-        createItem(GenerationsItems.DOS_ORB.get(), "legend_items/");
-        createItem(GenerationsItems.TRES_ORB.get(), "legend_items/");
-        createItem(GenerationsItems.MYSTICAL_ORB.get(), "legend_items/");
-        createItem(GenerationsItems.MARTIAL_ORB.get(), "legend_items/");
-        createItem(GenerationsItems.MALEVOLENT_ORB.get(), "legend_items/");
-        createItem(GenerationsItems.GENERATIONS_ORB.get(), "legend_items/");
         createItem(GenerationsItems.ADAMANT_ORB.get(), "legend_items/");
         createItem(GenerationsItems.GRISEOUS_ORB.get(), "legend_items/");
         createItem(GenerationsItems.LUSTROUS_ORB.get(), "legend_items/");
@@ -599,18 +568,26 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.CRYSTAL_OF_WILLPOWER.get(), "legend_items/");
         createItem(GenerationsItems.CRYSTAL_OF_EMOTION.get(), "legend_items/");
         createItem(GenerationsItems.CRYSTAL_OF_KNOWLEDGE.get(), "legend_items/");
+        createItem(GenerationsItems.LEGEND_PLATE.get(), "legend_items/");
+        createItem(GenerationsItems.LUSTROUS_GLOBE.get(), "legend_items/");
+        createItem(GenerationsItems.ADAMANT_CRYSTAL.get(), "legend_items/");
+        createItem(GenerationsItems.GRISEOUS_CORE.get(), "legend_items/");
+        createItem(GenerationsItems.FADED_JADED_ORB.get(), "legend_items/");
+        createItem(GenerationsItems.MELTAN_BOX_CHARGED.get(), "legend_items/", "meltan_box");
+        createItem(GenerationsItems.UNENCHANTED_ICEROOT_CARROT.get(), "legend_items/", "iceroot_carrot");
+        createItem(GenerationsItems.UNENCHANTED_SHADEROOT_CARROT.get(), "legend_items/", "shaderoot_carrot");
+        createItem(GenerationsItems.ENIGMA_FRAGMENT.get(), "legend_items/");
+        createItem(GenerationsItems.MEW_DNA_FIBER.get(), "legend_items/");
+        createItem(GenerationsItems.LIGHT_SOUL.get(), "legend_items/");
+        createItem(GenerationsItems.LIGHT_CRYSTAL.get(), "legend_items/");
+        createItem(GenerationsItems.SOUL_HEART.get(), "legend_items/");
+        createItem(GenerationsItems.WONDER_EGG.get(), "legend_items/");
+        createItem(GenerationsItems.PHIONE_EGG.get(), "legend_items/");
 
         createItem(GenerationsItems.BIKE_FRAME.get(), "utility_items/");
         createItem(GenerationsItems.BIKE_HANDLEBARS.get(), "utility_items/");
         createItem(GenerationsItems.BIKE_SEAT.get(), "utility_items/");
         createItem(GenerationsItems.BIKE_WHEEL.get(), "utility_items/");
-        createItem(GenerationsItems.TRADE_MONITOR.get(), "utility_items/");
-        createItem(GenerationsItems.TRADE_HOLDER_RIGHT.get(), "utility_items/");
-        createItem(GenerationsItems.TRADE_HOLDER_LEFT.get(), "utility_items/");
-        createItem(GenerationsItems.TRADE_PANEL.get(), "utility_items/");
-        createItem(GenerationsItems.GREEN_CLONER_TANK.get(), "utility_items/");
-        createItem(GenerationsItems.ORANGE_CLONER_TANK.get(), "utility_items/");
-        createItem(GenerationsItems.CLONER_CORD.get(), "utility_items/");
         createItem(GenerationsItems.HIDDEN_IRON_DOOR.get(), "utility_items/");
         createItem(GenerationsItems.HIDDEN_WOODEN_DOOR.get(), "utility_items/");
         createItem(GenerationsItems.HIDDEN_LEVER.get(), "utility_items/");
@@ -618,9 +595,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.HIDDEN_CUBE.get(), "utility_items/");
         createItem(GenerationsItems.CHISEL.get(), "utility_items/");
         createItem(GenerationsItems.GIFT_BOX.get(), "utility_items/");
-        createItem(GenerationsItems.POKEMON_EDITOR.get(), "utility_items/");
+        createItem(GenerationsItems.POKEMON_WAND.get(), "utility_items/");
         createItem(GenerationsItems.ZONE_WAND.get(), "utility_items/");
-        createItem(GenerationsItems.GROTTO_SPAWNER.get(), "utility_items/");
 
         createItem(GenerationsItems.METEORITE.get(), "form_items/");
         createItem(GenerationsItems.GRACIDEA.get(), "form_items/");
@@ -931,8 +907,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.SMART_CANDY_XL.get(), "unimplemented/");
         createItem(GenerationsItems.SONIAS_BOOK.get(), "unimplemented/");
         createItem(GenerationsItems.SOOT_SACK.get(), "unimplemented/");
-        createItem(GenerationsItems.SPARKLING_STONE_1.get(), "unimplemented/");
-        createItem(GenerationsItems.SPARKLING_STONE_2.get(), "unimplemented/");
         createItem(GenerationsItems.SPRAYDUCK.get(), "unimplemented/");
         createItem(GenerationsItems.SQUIRT_BOTTLE.get(), "unimplemented/");
         createItem(GenerationsItems.SS_TICKET.get(), "unimplemented/");
@@ -1005,7 +979,178 @@ public class ItemDatagen extends ItemModelProvider {
 
         createCurry();
         createImbuedFlute();
-        createTm();
+        createTm(GenerationsItems.CUSTOM_TM);
+        createTm(GenerationsItems.TM_1);
+        createTm(GenerationsItems.TM_2);
+        createTm(GenerationsItems.TM_3);
+        createTm(GenerationsItems.TM_4);
+        createTm(GenerationsItems.TM_5);
+        createTm(GenerationsItems.TM_6);
+        createTm(GenerationsItems.TM_7);
+        createTm(GenerationsItems.TM_8);
+        createTm(GenerationsItems.TM_9);
+        createTm(GenerationsItems.TM_10);
+        createTm(GenerationsItems.TM_11);
+        createTm(GenerationsItems.TM_12);
+        createTm(GenerationsItems.TM_13);
+        createTm(GenerationsItems.TM_14);
+        createTm(GenerationsItems.TM_15);
+        createTm(GenerationsItems.TM_16);
+        createTm(GenerationsItems.TM_17);
+        createTm(GenerationsItems.TM_18);
+        createTm(GenerationsItems.TM_19);
+        createTm(GenerationsItems.TM_20);
+        createTm(GenerationsItems.TM_21);
+        createTm(GenerationsItems.TM_22);
+        createTm(GenerationsItems.TM_23);
+        createTm(GenerationsItems.TM_24);
+        createTm(GenerationsItems.TM_25);
+        createTm(GenerationsItems.TM_26);
+        createTm(GenerationsItems.TM_27);
+        createTm(GenerationsItems.TM_28);
+        createTm(GenerationsItems.TM_29);
+        createTm(GenerationsItems.TM_30);
+        createTm(GenerationsItems.TM_31);
+        createTm(GenerationsItems.TM_32);
+        createTm(GenerationsItems.TM_33);
+        createTm(GenerationsItems.TM_34);
+        createTm(GenerationsItems.TM_35);
+        createTm(GenerationsItems.TM_36);
+        createTm(GenerationsItems.TM_37);
+        createTm(GenerationsItems.TM_38);
+        createTm(GenerationsItems.TM_39);
+        createTm(GenerationsItems.TM_40);
+        createTm(GenerationsItems.TM_41);
+        createTm(GenerationsItems.TM_42);
+        createTm(GenerationsItems.TM_43);
+        createTm(GenerationsItems.TM_44);
+        createTm(GenerationsItems.TM_45);
+        createTm(GenerationsItems.TM_46);
+        createTm(GenerationsItems.TM_47);
+        createTm(GenerationsItems.TM_48);
+        createTm(GenerationsItems.TM_49);
+        createTm(GenerationsItems.TM_50);
+        createTm(GenerationsItems.TM_51);
+        createTm(GenerationsItems.TM_52);
+        createTm(GenerationsItems.TM_53);
+        createTm(GenerationsItems.TM_54);
+        createTm(GenerationsItems.TM_55);
+        createTm(GenerationsItems.TM_56);
+        createTm(GenerationsItems.TM_57);
+        createTm(GenerationsItems.TM_58);
+        createTm(GenerationsItems.TM_59);
+        createTm(GenerationsItems.TM_60);
+        createTm(GenerationsItems.TM_61);
+        createTm(GenerationsItems.TM_62);
+        createTm(GenerationsItems.TM_63);
+        createTm(GenerationsItems.TM_64);
+        createTm(GenerationsItems.TM_65);
+        createTm(GenerationsItems.TM_66);
+        createTm(GenerationsItems.TM_67);
+        createTm(GenerationsItems.TM_68);
+        createTm(GenerationsItems.TM_69);
+        createTm(GenerationsItems.TM_70);
+        createTm(GenerationsItems.TM_71);
+        createTm(GenerationsItems.TM_72);
+        createTm(GenerationsItems.TM_73);
+        createTm(GenerationsItems.TM_74);
+        createTm(GenerationsItems.TM_75);
+        createTm(GenerationsItems.TM_76);
+        createTm(GenerationsItems.TM_77);
+        createTm(GenerationsItems.TM_78);
+        createTm(GenerationsItems.TM_79);
+        createTm(GenerationsItems.TM_80);
+        createTm(GenerationsItems.TM_81);
+        createTm(GenerationsItems.TM_82);
+        createTm(GenerationsItems.TM_83);
+        createTm(GenerationsItems.TM_84);
+        createTm(GenerationsItems.TM_85);
+        createTm(GenerationsItems.TM_86);
+        createTm(GenerationsItems.TM_87);
+        createTm(GenerationsItems.TM_88);
+        createTm(GenerationsItems.TM_89);
+        createTm(GenerationsItems.TM_90);
+        createTm(GenerationsItems.TM_91);
+        createTm(GenerationsItems.TM_92);
+        createTm(GenerationsItems.TM_93);
+        createTm(GenerationsItems.TM_94);
+        createTm(GenerationsItems.TM_95);
+        createTm(GenerationsItems.TM_96);
+        createTm(GenerationsItems.TM_97);
+        createTm(GenerationsItems.TM_98);
+        createTm(GenerationsItems.TM_99);
+        createTm(GenerationsItems.TM_100);
+        createTm(GenerationsItems.TM_101);
+        createTm(GenerationsItems.TM_102);
+        createTm(GenerationsItems.TM_103);
+        createTm(GenerationsItems.TM_104);
+        createTm(GenerationsItems.TM_105);
+        createTm(GenerationsItems.TM_106);
+        createTm(GenerationsItems.TM_107);
+        createTm(GenerationsItems.TM_108);
+        createTm(GenerationsItems.TM_109);
+        createTm(GenerationsItems.TM_110);
+        createTm(GenerationsItems.TM_111);
+        createTm(GenerationsItems.TM_112);
+        createTm(GenerationsItems.TM_113);
+        createTm(GenerationsItems.TM_114);
+        createTm(GenerationsItems.TM_115);
+        createTm(GenerationsItems.TM_116);
+        createTm(GenerationsItems.TM_117);
+        createTm(GenerationsItems.TM_118);
+        createTm(GenerationsItems.TM_119);
+        createTm(GenerationsItems.TM_120);
+        createTm(GenerationsItems.TM_121);
+        createTm(GenerationsItems.TM_122);
+        createTm(GenerationsItems.TM_123);
+        createTm(GenerationsItems.TM_124);
+        createTm(GenerationsItems.TM_125);
+        createTm(GenerationsItems.TM_126);
+        createTm(GenerationsItems.TM_127);
+        createTm(GenerationsItems.TM_128);
+        createTm(GenerationsItems.TM_129);
+        createTm(GenerationsItems.TM_130);
+        createTm(GenerationsItems.TM_131);
+        createTm(GenerationsItems.TM_132);
+        createTm(GenerationsItems.TM_133);
+        createTm(GenerationsItems.TM_134);
+        createTm(GenerationsItems.TM_135);
+        createTm(GenerationsItems.TM_136);
+        createTm(GenerationsItems.TM_137);
+        createTm(GenerationsItems.TM_138);
+        createTm(GenerationsItems.TM_139);
+        createTm(GenerationsItems.TM_140);
+        createTm(GenerationsItems.TM_141);
+        createTm(GenerationsItems.TM_142);
+        createTm(GenerationsItems.TM_143);
+        createTm(GenerationsItems.TM_144);
+        createTm(GenerationsItems.TM_145);
+        createTm(GenerationsItems.TM_146);
+        createTm(GenerationsItems.TM_147);
+        createTm(GenerationsItems.TM_148);
+        createTm(GenerationsItems.TM_149);
+        createTm(GenerationsItems.TM_150);
+        createTm(GenerationsItems.TM_151);
+        createTm(GenerationsItems.TM_152);
+        createTm(GenerationsItems.TM_153);
+        createTm(GenerationsItems.TM_154);
+        createTm(GenerationsItems.TM_155);
+        createTm(GenerationsItems.TM_156);
+        createTm(GenerationsItems.TM_157);
+        createTm(GenerationsItems.TM_158);
+        createTm(GenerationsItems.TM_159);
+        createTm(GenerationsItems.TM_160);
+        createTm(GenerationsItems.TM_161);
+        createTm(GenerationsItems.TM_162);
+        createTm(GenerationsItems.TM_163);
+        createTm(GenerationsItems.TM_164);
+        createTm(GenerationsItems.TM_165);
+        createTm(GenerationsItems.TM_166);
+        createTm(GenerationsItems.TM_167);
+        createTm(GenerationsItems.TM_168);
+        createTm(GenerationsItems.TM_169);
+        createTm(GenerationsItems.TM_170);
+        createTm(GenerationsItems.TM_171);
 
         createItem(GenerationsItems.TUMBLESTONE.get(), "tumblestone/");
         createItem(GenerationsItems.BLACK_TUMBLESTONE.get(), "tumblestone/");
@@ -1034,13 +1179,9 @@ public class ItemDatagen extends ItemModelProvider {
         createItemBlock(GenerationsDecorationBlocks.SWITCH.get(), "item/blocks/decorations/");
         createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "item/blocks/decorations/");
         createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "item/blocks/decorations/");
-        GenerationsDecorationBlocks.UMBRELLA_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "umbrellas"));
-        GenerationsDecorationBlocks.POKEDOLL_RUG_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "rugs"));
-        GenerationsDecorationBlocks.WATER_FLOAT_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "water_floats"));
         GenerationsDecorationBlocks.PASTEL_BEAN_BAG_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "bean_bags"));
         GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "vending_machines"));
 
-        createItemBlock(GenerationsUtilityBlocks.BOX.get(), "utility_blocks/");
         createItemBlock(GenerationsUtilityBlocks.COOKING_POT.get(), "item/blocks/utility_blocks/");
         GenerationsUtilityBlocks.HEALER_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "utility_blocks/healer"));
         GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "utility_blocks/pc"));
@@ -1131,6 +1272,23 @@ public class ItemDatagen extends ItemModelProvider {
         createItemBlock(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
         createItemBlock(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
         createItemBlock(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
+
+        createItem(GenerationsItems.ARMOR_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.BIRD_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.CLAW_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.COVER_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.DINO_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.DOME_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.DRAKE_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.FISH_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.HELIX_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.JAW_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.OLD_AMBER.get(), "fossils/");
+        createItem(GenerationsItems.PLUME_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.ROOT_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.SAIL_FOSSIL.get(), "fossils/");
+        createItem(GenerationsItems.SKULL_FOSSIL.get(), "fossils/");
     }
 
     private void createCurry() {
@@ -1142,8 +1300,8 @@ public class ItemDatagen extends ItemModelProvider {
         }
     }
 
-    private void createTm() {
-        ItemModelBuilder model = generated(GenerationsItems.TM.getId().getPath(), GenerationsCore.id("item/tms/tm_normal"));
+    private void createTm(RegistrySupplier<Item> tm) {
+        ItemModelBuilder model = generated(tm.getId().getPath(), GenerationsCore.id("item/tms/tm_normal"));
 
         BiConsumer<String, Float> consumer = (name, i) -> {
             ItemModelBuilder typeModel = generated("item/tms/tm_" + name, GenerationsCore.id("item/tms/tm_" + name));
@@ -1192,11 +1350,6 @@ public class ItemDatagen extends ItemModelProvider {
     private ResourceLocation getKey(Item item) {
         return ForgeRegistries.ITEMS.getKey(item);
     }
-    
-    private void createMint(Item mint, String color) {
-        ResourceLocation key = Objects.requireNonNull(getKey(mint), "Tried to create json model for unregistered Item.");
-        generated(key.getPath(), GenerationsCore.id(String.format("item/restoration/%s_mint", color)));
-    }
 
     private void createTmMaterial(Item material) {
         generated(getKey(material).getPath(), GenerationsCore.id("item/tms/tm_material"));
@@ -1239,14 +1392,19 @@ public class ItemDatagen extends ItemModelProvider {
     }
 
     public ItemModelBuilder createItem(Item item, String directory) {
+        return createItem(item, directory, "");
+    }
+
+    public ItemModelBuilder createItem(Item item, String directory, String override) {
         try {
             ResourceLocation key = Objects.requireNonNull(getKey(item), "Tried to create json model for unregistered Item.");
-            return generated(key.getPath(), GenerationsCore.id("item/" + directory + key.getPath()));
+            return generated(key.getPath(), GenerationsCore.id("item/" + directory + (override.isEmpty() ? key.getPath() : override)));
         } catch (Exception e) {
             LOGGER.error(item.getDescriptionId() + " -> " + directory);
             return null;
         }
     }
+
 
     public ItemModelBuilder generated(String name, ResourceLocation model) {
         try {

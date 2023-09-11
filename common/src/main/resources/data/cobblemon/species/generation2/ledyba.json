@@ -26,30 +26,21 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
-    "8:supersonic",
-    "15:cometpunch",
-    "17:machpunch",
-    "22:lightscreen",
-    "22:reflect",
-    "22:safeguard",
-    "25:silverwind",
-    "29:batonpass",
+    "5:supersonic",
+    "8:swift",
+    "12:lightscreen",
+    "12:reflect",
+    "12:safeguard",
+    "15:machpunch",
+    "19:silverwind",
+    "22:cometpunch",
+    "26:batonpass",
+    "29:agility",
+    "33:bugbuzz",
     "36:airslash",
-    "36:swift",
-    "41:bugbuzz",
-    "43:agility",
-    "50:doubleedge",
+    "40:doubleedge",
     "egg:bide",
     "egg:bugbite",
     "egg:bugbuzz",

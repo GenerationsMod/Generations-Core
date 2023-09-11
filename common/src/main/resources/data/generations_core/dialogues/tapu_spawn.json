@@ -1,8 +1,7 @@
 {
   "root": {
-    "type": "say",
+    "type": "choose",
     "next": {
-      "type": "choose",
       "Tapu Koko": {
         "type": "spawn_pokemon",
         "data": "charizard",

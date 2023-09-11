@@ -24,33 +24,24 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ultra_gray",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:harden",
-    "1:protect",
     "1:tackle",
-    "5:rockslide",
-    "11:stealthrock",
+    "5:rockthrow",
+    "10:protect",
     "15:stomp",
     "17:bide",
-    "19:takedown",
     "20:block",
-    "23:rockthrow",
-    "31:autotomize",
-    "37:irondefense",
-    "43:ironhead",
+    "25:rockslide",
+    "30:wideguard",
+    "35:autotomize",
+    "40:rockblast",
     "45:magnetrise",
-    "47:rockblast",
-    "53:wideguard",
-    "61:doubleedge",
+    "50:irondefense",
+    "55:ironhead",
+    "60:takedown",
+    "65:stealthrock",
+    "70:doubleedge",
     "tm:allyswitch",
     "tm:bodypress",
     "tm:bodyslam",

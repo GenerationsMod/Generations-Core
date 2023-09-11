@@ -24,15 +24,6 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:oxeye_daisy",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
     "1:vinewhip",

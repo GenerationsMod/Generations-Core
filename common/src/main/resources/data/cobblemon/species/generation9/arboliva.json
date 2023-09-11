@@ -33,15 +33,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:azalea_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:mirrorcoat",
     "1:safeguard",

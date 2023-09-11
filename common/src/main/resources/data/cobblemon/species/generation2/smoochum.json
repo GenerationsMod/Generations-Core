@@ -26,33 +26,24 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:smoochumdoll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:lick",
     "1:pound",
-    "9:sweetkiss",
-    "13:powdersnow",
+    "4:powdersnow",
+    "8:copycat",
+    "12:confusion",
     "16:covet",
-    "21:confusion",
+    "20:sing",
     "21:heartstamp",
-    "25:sing",
+    "24:faketears",
     "28:icepunch",
-    "28:luckychant",
-    "31:avalanche",
-    "33:meanlook",
-    "37:faketears",
-    "38:copycat",
-    "45:psychic",
-    "49:perishsong",
-    "57:blizzard",
+    "31:luckychant",
+    "32:psychic",
+    "35:avalanche",
+    "36:sweetkiss",
+    "40:meanlook",
+    "44:perishsong",
+    "48:blizzard",
     "egg:captivate",
     "egg:fakeout",
     "egg:icepunch",

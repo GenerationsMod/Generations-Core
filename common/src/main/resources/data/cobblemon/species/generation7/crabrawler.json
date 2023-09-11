@@ -25,22 +25,13 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:seagrass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bubble",
     "1:visegrip",
     "5:rocksmash",
     "9:leer",
+    "13:bubblebeam",
     "13:pursuit",
-    "17:bubblebeam",
     "17:protect",
     "22:brickbreak",
     "22:poweruppunch",
@@ -141,10 +132,10 @@
       "requiredContext": "cobblemon:ice_stone"
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.6,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.1,
+    "height": 1.2,
     "fixed": false
   },
   "baseFriendship": 70,

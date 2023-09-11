@@ -25,31 +25,22 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
-    "4:thunderwave",
-    "9:leer",
-    "12:howl",
+    "1:thunderwave",
+    "4:leer",
+    "8:howl",
+    "12:quickattack",
+    "13:spark",
+    "16:odorsleuth",
     "16:shockwave",
-    "17:quickattack",
-    "20:spark",
-    "25:odorsleuth",
+    "20:bite",
+    "24:thunderfang",
     "28:roar",
-    "33:bite",
-    "33:thunderfang",
-    "36:thunder",
-    "41:charge",
-    "41:discharge",
-    "49:wildcharge",
+    "32:discharge",
+    "36:charge",
+    "40:wildcharge",
+    "44:thunder",
     "egg:crunch",
     "egg:curse",
     "egg:discharge",

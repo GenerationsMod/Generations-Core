@@ -25,34 +25,25 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:trash_can",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:poisongas",
     "1:pound",
     "3:recycle",
-    "7:toxicspikes",
-    "12:acidspray",
+    "6:acidspray",
+    "9:amnesia",
+    "12:clearsmog",
     "14:doubleslap",
+    "15:toxicspikes",
     "18:sludge",
-    "23:stockpile",
-    "23:swallow",
-    "25:takedown",
-    "29:sludgebomb",
-    "34:clearsmog",
-    "36:toxic",
+    "21:stockpile",
+    "21:swallow",
+    "24:takedown",
+    "27:sludgebomb",
+    "30:toxic",
+    "33:belch",
     "37:painsplit",
-    "40:amnesia",
-    "42:belch",
-    "45:gunkshot",
-    "47:explosion",
+    "39:gunkshot",
+    "42:explosion",
     "egg:autotomize",
     "egg:curse",
     "egg:haze",

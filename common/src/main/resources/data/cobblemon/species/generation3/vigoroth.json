@@ -23,28 +23,19 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:encore",
     "1:focusenergy",
     "1:scratch",
     "1:uproar",
-    "19:furyswipes",
-    "25:endure",
+    "14:furyswipes",
+    "17:endure",
+    "23:slash",
+    "27:chipaway",
     "27:throatchop",
-    "31:slash",
-    "37:counter",
-    "43:chipaway",
-    "43:focuspunch",
-    "49:reversal",
+    "33:counter",
+    "37:focuspunch",
+    "43:reversal",
     "tm:aerialace",
     "tm:amnesia",
     "tm:attract",

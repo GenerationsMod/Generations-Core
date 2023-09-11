@@ -25,31 +25,22 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:magma_block",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:ember",
     "1:stringshot",
+    "6:flamecharge",
     "10:absorb",
-    "10:leechlife",
     "12:strugglebug",
-    "20:takedown",
-    "30:flamecharge",
+    "18:flamewheel",
+    "24:bugbite",
     "30:screech",
-    "40:bugbite",
-    "50:doubleedge",
-    "60:flamewheel",
-    "70:bugbuzz",
-    "80:amnesia",
+    "36:leechlife",
+    "42:bugbuzz",
+    "48:takedown",
+    "54:amnesia",
+    "60:doubleedge",
+    "66:flareblitz",
     "90:thrash",
-    "100:flareblitz",
     "egg:absorb",
     "egg:endure",
     "egg:foresight",

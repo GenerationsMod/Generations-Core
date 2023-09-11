@@ -35,7 +35,7 @@
       },
       "catchRate": 255,
       "maleRatio": -1,
-      "baseExperienceYield": 340,
+      "baseExperienceYield": 300,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -83,7 +83,7 @@
       },
       "catchRate": 255,
       "maleRatio": -1,
-      "baseExperienceYield": 340,
+      "baseExperienceYield": 300,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -131,7 +131,7 @@
       },
       "catchRate": 255,
       "maleRatio": -1,
-      "baseExperienceYield": 339,
+      "baseExperienceYield": 300,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -170,39 +170,26 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:n_solarizer",
-        "percentage": 75
-      },
-      {
-        "item": "generations_core:n_lunarizer",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:chargebeam",
     "1:confusion",
+    "1:gravity",
     "1:metalclaw",
     "1:mirrorshot",
     "1:moonlight",
     "1:morningsun",
-    "7:slash",
-    "13:storedpower",
-    "19:rockblast",
-    "23:nightslash",
-    "31:gravity",
-    "37:psychocut",
-    "43:powergem",
-    "47:autotomize",
-    "50:photongeyser",
-    "53:stealthrock",
-    "59:irondefense",
+    "8:stealthrock",
+    "16:slash",
+    "24:nightslash",
+    "32:psychocut",
+    "40:storedpower",
+    "48:rockblast",
+    "56:irondefense",
+    "64:powergem",
     "67:wringout",
-    "73:prismaticlaser",
+    "72:photongeyser",
+    "80:autotomize",
+    "88:prismaticlaser",
     "tm:aerialace",
     "tm:allyswitch",
     "tm:breakingswipe",

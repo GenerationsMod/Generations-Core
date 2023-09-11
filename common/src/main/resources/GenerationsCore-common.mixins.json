@@ -4,14 +4,14 @@
   "package": "generations.gg.generations.core.generationscore.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-	"AbstractCauldronBlockMixin",
-	"AbstractFurnaceBlockEntityMixin"
+    "AbstractCauldronBlockMixin",
+    "AbstractFurnaceBlockEntityMixin"
   ],
   "client": [
 	"client.LevelRendererMixin",
     "client.PokemonEntityMixin"
   ],
   "injectors": {
-	"defaultRequire": 1
+    "defaultRequire": 1
   }
 }

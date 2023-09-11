@@ -32,15 +32,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:gilded_blackstone",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:meanlook",

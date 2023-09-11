@@ -36,7 +36,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 201,
+      "baseExperienceYield": 166,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -51,7 +51,6 @@
       "eggGroups": [
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -72,33 +71,24 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:electricterrain",
     "1:firefang",
     "1:howl",
     "1:leer",
     "1:tackle",
     "1:thunderwave",
+    "12:quickattack",
+    "13:spark",
+    "16:odorsleuth",
     "16:shockwave",
-    "17:quickattack",
-    "20:spark",
-    "25:odorsleuth",
-    "31:roar",
-    "37:thunderfang",
-    "39:bite",
-    "45:thunder",
-    "49:discharge",
-    "53:charge",
-    "61:wildcharge",
+    "20:bite",
+    "24:thunderfang",
+    "30:roar",
+    "36:discharge",
+    "42:charge",
+    "48:wildcharge",
+    "54:thunder",
+    "60:electricterrain",
     "tm:agility",
     "tm:attract",
     "tm:bodyslam",

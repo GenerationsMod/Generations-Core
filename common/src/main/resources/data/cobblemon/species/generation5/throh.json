@@ -25,32 +25,23 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:bide",
     "1:bind",
     "1:leer",
     "1:matblock",
-    "5:bide",
-    "9:focusenergy",
-    "13:seismictoss",
-    "17:vitalthrow",
-    "21:revenge",
-    "25:stormthrow",
-    "29:bodyslam",
-    "33:bulkup",
-    "37:circlethrow",
-    "41:endure",
-    "45:wideguard",
-    "49:superpower",
-    "53:reversal",
+    "5:focusenergy",
+    "10:circlethrow",
+    "15:wideguard",
+    "20:revenge",
+    "21:bodyslam",
+    "25:bulkup",
+    "30:stormthrow",
+    "35:vitalthrow",
+    "40:seismictoss",
+    "45:endure",
+    "50:reversal",
+    "55:superpower",
     "tm:attract",
     "tm:bodyslam",
     "tm:brickbreak",

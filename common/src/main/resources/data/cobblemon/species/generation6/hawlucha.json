@@ -27,36 +27,27 @@
     "flying",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:seed",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:detect",
     "1:honeclaws",
     "1:tackle",
     "4:karatechop",
-    "8:wingattack",
-    "12:roost",
-    "16:aerialace",
-    "20:encore",
+    "4:wingattack",
+    "8:detect",
+    "12:aerialace",
+    "16:encore",
+    "20:featherdance",
     "24:brickbreak",
     "24:fling",
     "24:submission",
-    "28:flyingpress",
-    "32:bounce",
+    "28:bounce",
     "32:taunt",
-    "36:endeavor",
-    "40:featherdance",
-    "44:highjumpkick",
-    "48:skyattack",
+    "36:roost",
+    "40:swordsdance",
+    "44:flyingpress",
+    "48:highjumpkick",
+    "52:endeavor",
     "55:skydrop",
-    "60:swordsdance",
+    "56:skyattack",
     "egg:agility",
     "egg:allyswitch",
     "egg:batonpass",

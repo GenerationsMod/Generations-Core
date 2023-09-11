@@ -24,37 +24,28 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:echo_shard",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:assurance",
+    "1:copycat",
     "1:counter",
     "1:drainpunch",
+    "1:feint",
     "1:firepunch",
     "1:icepunch",
-    "1:laserfocus",
     "1:pursuit",
     "1:shadowsneak",
     "1:thunderpunch",
-    "5:forcepalm",
-    "11:feint",
+    "9:roleplay",
     "15:rollingkick",
-    "20:copycat",
-    "26:shadowpunch",
-    "30:roleplay",
+    "18:shadowpunch",
+    "27:forcepalm",
     "35:jumpkick",
-    "41:psychup",
-    "45:spectralthief",
-    "50:closecombat",
-    "56:suckerpunch",
-    "60:endeavor",
+    "36:assurance",
+    "45:suckerpunch",
+    "63:psychup",
+    "72:spectralthief",
+    "81:laserfocus",
+    "90:endeavor",
+    "99:closecombat",
     "tm:acrobatics",
     "tm:agility",
     "tm:assurance",

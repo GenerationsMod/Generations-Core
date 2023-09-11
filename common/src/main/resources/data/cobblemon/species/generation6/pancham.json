@@ -26,31 +26,22 @@
     "field",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bamboo",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:tackle",
-    "7:armthrust",
+    "4:armthrust",
     "8:taunt",
-    "10:workup",
+    "12:circlethrow",
     "12:karatechop",
     "15:cometpunch",
     "16:lowsweep",
-    "20:slash",
-    "25:circlethrow",
-    "27:vitalthrow",
-    "33:bodyslam",
-    "39:crunch",
-    "42:entrainment",
-    "45:partingshot",
+    "20:workup",
+    "24:slash",
+    "28:vitalthrow",
+    "33:crunch",
+    "36:bodyslam",
+    "40:partingshot",
+    "44:entrainment",
     "48:skyuppercut",
     "egg:foulplay",
     "egg:mefirst",

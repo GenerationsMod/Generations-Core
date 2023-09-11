@@ -24,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wheat",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:stuffcheeks",

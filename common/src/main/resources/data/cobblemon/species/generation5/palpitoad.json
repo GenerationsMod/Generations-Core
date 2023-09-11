@@ -26,31 +26,22 @@
   "eggGroups": [
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:pearlescent_froglight",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:acid",
     "1:bubble",
+    "1:echoedvoice",
     "1:growl",
-    "1:round",
     "1:supersonic",
-    "12:bubblebeam",
-    "16:mudshot",
-    "20:aquaring",
-    "23:uproar",
-    "28:muddywater",
-    "33:raindance",
-    "37:flail",
-    "42:echoedvoice",
-    "47:hydropump",
-    "51:hypervoice",
+    "12:mudshot",
+    "16:round",
+    "20:bubblebeam",
+    "24:flail",
+    "30:uproar",
+    "37:aquaring",
+    "42:hypervoice",
+    "48:muddywater",
+    "54:raindance",
+    "60:hydropump",
     "tm:attract",
     "tm:bounce",
     "tm:bulldoze",

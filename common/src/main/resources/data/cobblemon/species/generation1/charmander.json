@@ -16,6 +16,11 @@
     "speed": 65
   },
   "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.3
+      }
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": true,
@@ -49,20 +54,20 @@
   "moves": [
     "1:growl",
     "1:scratch",
-    "7:ember",
+    "4:ember",
+    "8:smokescreen",
     "12:dragonbreath",
     "13:metalclaw",
-    "13:smokescreen",
+    "16:dragonrage",
+    "17:firefang",
     "19:rage",
-    "25:firefang",
-    "25:scaryface",
+    "20:slash",
+    "24:flamethrower",
     "28:flameburst",
-    "31:flamethrower",
-    "37:slash",
+    "28:scaryface",
+    "32:firespin",
+    "36:inferno",
     "40:flareblitz",
-    "43:dragonrage",
-    "46:inferno",
-    "49:firespin",
     "egg:aircutter",
     "egg:ancientpower",
     "egg:beatup",

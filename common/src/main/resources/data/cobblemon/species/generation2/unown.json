@@ -23,15 +23,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:amethyst_shard",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:hiddenpower",
     "tm:hiddenpower",

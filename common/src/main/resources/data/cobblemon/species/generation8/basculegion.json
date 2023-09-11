@@ -35,15 +35,6 @@
   "eggGroups": [
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:fresh_water",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:phantomforce",
     "1:shadowball",
@@ -128,6 +119,7 @@
       },
       "catchRate": 135,
       "maleRatio": 0,
+      "baseExperienceYield": 265,
       "baseFriendship": 0,
       "evYield": {
         "hp": 2,

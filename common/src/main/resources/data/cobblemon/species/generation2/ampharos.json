@@ -36,7 +36,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 275,
+      "baseExperienceYield": 230,
       "baseFriendship": 70,
       "evYield": {
         "hp": 0,
@@ -52,7 +52,6 @@
         "monster",
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -74,15 +73,6 @@
     "monster",
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wool",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:dragonpulse",
     "1:firepunch",
@@ -90,22 +80,22 @@
     "1:iondeluge",
     "1:magneticflux",
     "1:tackle",
+    "1:thunderpunch",
     "1:thundershock",
     "1:thunderwave",
     "1:zapcannon",
+    "11:cottonspore",
+    "16:charge",
     "20:takedown",
-    "25:charge",
-    "27:cottonspore",
+    "25:electroball",
     "29:confuseray",
-    "30:thunderpunch",
-    "33:electroball",
-    "34:discharge",
-    "40:cottonguard",
-    "42:lightscreen",
-    "42:signalbeam",
+    "35:powergem",
+    "40:discharge",
+    "46:cottonguard",
     "51:dazzlinggleam",
-    "57:thunder",
-    "59:powergem",
+    "51:signalbeam",
+    "57:lightscreen",
+    "62:thunder",
     "tm:agility",
     "tm:attract",
     "tm:bodyslam",
@@ -233,10 +223,10 @@
   ],
   "preEvolution": "flaaffy",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1,
-    "height": 1,
+    "height": 2.5,
     "fixed": false
   },
   "baseFriendship": 70,

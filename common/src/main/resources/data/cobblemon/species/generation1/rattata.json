@@ -17,6 +17,11 @@
     "speed": 72
   },
   "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.41
+      }
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": true,
@@ -65,39 +70,6 @@
       "eggGroups": [
         "field"
       ],
-      "drops": {
-        "amount": "7",
-        "entries": [
-          {
-            "item": "cobblemon:black_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:blue_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:green_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:pink_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:red_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:white_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:yellow_apricorn",
-            "percentage": 5
-          }
-        ]
-      },
       "moves": [
         "1:tackle",
         "1:tailwhip",
@@ -226,53 +198,20 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "7",
-    "entries": [
-      {
-        "item": "cobblemon:black_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:blue_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:green_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:pink_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:red_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:white_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:yellow_apricorn",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
     "1:tailwhip",
-    "7:quickattack",
+    "4:quickattack",
+    "7:focusenergy",
     "10:bite",
-    "13:hyperfang",
-    "19:suckerpunch",
-    "20:focusenergy",
+    "13:pursuit",
+    "16:hyperfang",
+    "19:assurance",
     "22:crunch",
-    "25:assurance",
-    "27:pursuit",
+    "25:suckerpunch",
+    "28:superfang",
     "31:doubleedge",
-    "34:superfang",
-    "41:endeavor",
+    "34:endeavor",
     "egg:bite",
     "egg:counter",
     "egg:finalgambit",

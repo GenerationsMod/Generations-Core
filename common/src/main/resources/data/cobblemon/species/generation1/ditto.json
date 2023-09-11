@@ -15,6 +15,14 @@
     "special_defence": 48,
     "speed": 48
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 35,
   "maleRatio": -1,
   "shoulderMountable": false,
@@ -25,12 +33,8 @@
     "ditto"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 10
-      },
       {
         "item": "generations_core:ditto_doll",
         "percentage": 1

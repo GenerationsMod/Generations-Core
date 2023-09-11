@@ -14,6 +14,19 @@
     "special_defence": 65,
     "speed": 30
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "features": [
     "galarian"
   ],
@@ -146,33 +159,24 @@
     "mineral",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blackstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:protect",
-    "5:disable",
-    "9:haze",
-    "13:nightshade",
-    "17:hex",
+    "4:haze",
+    "8:nightshade",
+    "12:disable",
+    "16:willowisp",
     "20:craftyshield",
-    "21:willowisp",
+    "24:hex",
     "25:ominouswind",
-    "29:curse",
-    "33:guardsplit",
-    "33:powersplit",
-    "37:shadowball",
-    "41:grudge",
+    "28:meanlook",
+    "32:grudge",
+    "36:curse",
+    "40:shadowball",
     "44:darkpulse",
-    "45:meanlook",
-    "49:destinybond",
+    "48:guardsplit",
+    "48:powersplit",
+    "52:destinybond",
     "egg:allyswitch",
     "egg:craftyshield",
     "egg:disable",
@@ -274,10 +278,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.5,
   "hitbox": {
     "width": 1,
-    "height": 1,
+    "height": 1.4,
     "fixed": false
   },
   "baseFriendship": 50,

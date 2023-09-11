@@ -24,37 +24,65 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
+    "1:astonish",
     "1:bind",
     "1:disable",
     "1:firepunch",
+    "1:futuresight",
     "1:gravity",
     "1:icepunch",
     "1:leer",
     "1:nightshade",
+    "1:shadowpunch",
+    "1:shadowsneak",
     "1:thunderpunch",
     "9:foresight",
+    "12:confuseray",
     "14:astonish",
+    "14:foresight",
+    "16:nightshade",
     "17:confuseray",
+    "17:shadowsneak",
+    "20:payback",
+    "22:pursuit",
     "22:shadowsneak",
+    "24:willowisp",
     "25:pursuit",
+    "25:willowisp",
+    "28:meanlook",
+    "30:confuseray",
     "30:curse",
+    "32:hex",
+    "33:curse",
     "33:willowisp",
+    "36:curse",
     "37:shadowpunch",
+    "40:hex",
     "42:hex",
+    "42:shadowball",
     "43:meanlook",
     "45:shadowball",
+    "48:futuresight",
+    "49:meanlook",
     "51:payback",
+    "52:meanlook",
     "54:destinybond",
+    "57:payback",
+    "58:payback",
     "61:futuresight",
     "tm:allyswitch",
     "tm:attract",
@@ -164,8 +192,8 @@
   "evolutions": [],
   "baseScale": 1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 2,
+    "height": 3,
     "fixed": false
   },
   "baseFriendship": 35,

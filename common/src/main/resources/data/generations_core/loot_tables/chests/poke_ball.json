@@ -11,7 +11,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aguav_berry"
+				"name": "cobblemon:aguav_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -23,23 +23,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:apicot_berry"
+				"name": "cobblemon:apicot_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aspear_berry"
+				"name": "cobblemon:aspear_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:babiri_berry"
+				"name": "cobblemon:babiri_berry"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:bachs_food_tin"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -63,27 +59,19 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:charti_berry"
+				"name": "cobblemon:charti_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:clever_feather"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:custap_berry"
+				"name": "cobblemon:custap_berry"
 			},
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:dire_hit"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:electric_seed"
 			},
 			{
 				"type": "minecraft:item",
@@ -95,7 +83,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:energy_root"
+				"name": "cobblemon:energy_root"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,10 +111,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:grassy_seed"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:great_ball"
 			},
 			{
@@ -135,7 +119,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -143,7 +127,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:iapapa_berry"
+				"name": "cobblemon:iapapa_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -163,7 +147,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:maranga_berry"
+				"name": "cobblemon:maranga_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,11 +155,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:micle_berry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:misty_seed"
+				"name": "cobblemon:micle_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -183,7 +163,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:oran_berry"
+				"name": "cobblemon:oran_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -191,7 +171,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:petaya_berry"
+				"name": "cobblemon:petaya_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -207,11 +187,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:psychic_seed"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:qualot_berry"
+				"name": "cobblemon:qualot_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -220,6 +196,10 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:repeat_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:rotom_catalog"
 			},
 			{
 				"type": "minecraft:item",
@@ -320,14 +300,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:silicon"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:aluminium_ingot"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:aluminium_plate"
 			},
 			{
 				"type": "minecraft:item",

@@ -25,6 +25,15 @@
   "eggGroups": [
     "human_like"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+
   "drops": {
     "amount": "1",
     "entries": [
@@ -35,29 +44,29 @@
     ]
   },
   "moves": [
+    "1:bulletpunch",
     "1:cometpunch",
     "1:fakeout",
+    "1:feint",
     "1:focusenergy",
     "1:helpinghand",
-    "1:revenge",
+    "1:pursuit",
     "1:tackle",
-    "7:agility",
+    "1:vacuumwave",
+    "4:machpunch",
     "8:poweruppunch",
-    "13:pursuit",
-    "16:bulletpunch",
-    "20:machpunch",
-    "21:feint",
-    "26:firepunch",
-    "26:icepunch",
-    "26:thunderpunch",
-    "26:vacuumwave",
-    "31:quickguard",
-    "32:skyuppercut",
-    "38:megapunch",
-    "44:detect",
-    "50:counter",
-    "56:closecombat",
-    "56:focuspunch",
+    "12:detect",
+    "16:revenge",
+    "21:quickguard",
+    "24:firepunch",
+    "24:icepunch",
+    "24:thunderpunch",
+    "28:agility",
+    "32:megapunch",
+    "36:closecombat",
+    "40:counter",
+    "41:skyuppercut",
+    "44:focuspunch",
     "tm:agility",
     "tm:attract",
     "tm:aurasphere",

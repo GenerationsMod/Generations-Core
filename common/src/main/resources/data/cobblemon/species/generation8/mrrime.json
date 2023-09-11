@@ -26,15 +26,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ice",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:afteryou",
     "1:batonpass",

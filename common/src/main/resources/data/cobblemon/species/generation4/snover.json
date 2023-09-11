@@ -26,29 +26,29 @@
     "monster",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ice",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:powdersnow",
     "5:leafage",
     "5:razorleaf",
     "9:icywind",
+    "10:mist",
     "13:grasswhistle",
+    "15:iceshard",
     "17:swagger",
+    "20:razorleaf",
     "21:mist",
+    "25:icywind",
     "26:iceshard",
+    "30:swagger",
     "31:ingrain",
+    "35:ingrain",
     "36:woodhammer",
     "41:blizzard",
+    "41:woodhammer",
+    "45:blizzard",
     "46:sheercold",
+    "50:sheercold",
     "egg:avalanche",
     "egg:bulletseed",
     "egg:doubleedge",

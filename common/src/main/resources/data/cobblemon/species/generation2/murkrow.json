@@ -18,6 +18,14 @@
     "speed": 91
   },
   "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "walkSpeed": 0.28
+      }
+    },
     "resting": {
       "canSleep": true,
       "times": "day"
@@ -45,22 +53,22 @@
     ]
   },
   "moves": [
+    "1:astonish",
     "1:peck",
     "5:gust",
-    "9:astonish",
-    "14:pursuit",
+    "5:pursuit",
+    "11:haze",
     "15:wingattack",
-    "22:haze",
+    "21:nightshade",
     "25:assurance",
-    "27:nightshade",
+    "31:taunt",
     "35:feintattack",
-    "40:taunt",
-    "45:foulplay",
-    "45:suckerpunch",
-    "48:meanlook",
-    "51:tailwind",
-    "61:torment",
-    "65:quash",
+    "35:meanlook",
+    "40:foulplay",
+    "50:suckerpunch",
+    "50:tailwind",
+    "55:torment",
+    "60:quash",
     "egg:assurance",
     "egg:bravebird",
     "egg:confuseray",
@@ -212,7 +220,7 @@
       "requiredContext": "cobblemon:dusk_stone"
     }
   ],
-  "baseScale": 0.9,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 0.65,
     "height": 1,

@@ -25,36 +25,34 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:carrot",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
-    "1:bravebird",
+    "1:ember",
     "1:feint",
+    "1:flamecharge",
     "1:flareblitz",
     "1:growl",
+    "1:peck",
+    "1:quickattack",
     "1:tackle",
-    "6:quickattack",
-    "10:peck",
-    "13:agility",
-    "16:flail",
-    "17:ember",
-    "25:roost",
+    "15:flail",
+    "22:acrobatics",
     "27:razorwind",
+    "29:agility",
     "31:naturalgift",
     "38:aerialace",
-    "39:flamecharge",
-    "44:acrobatics",
+    "47:tailwind",
     "49:mefirst",
-    "55:tailwind",
-    "60:steelwing",
+    "56:steelwing",
+    "65:roost",
     "74:fly",
+    "83:bravebird",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
@@ -122,10 +120,10 @@
   ],
   "preEvolution": "fletchinder",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.6,
     "fixed": false
   },
   "baseFriendship": 50,

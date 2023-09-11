@@ -26,19 +26,16 @@
     "grass"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
       {
         "item": "cobblemon:big_root",
         "percentage": 10
-      },
-      {
-        "item": "generations_core:surprise_mulch",
-        "percentage": 5
       }
     ]
   },
   "moves": [
+    "1:leaftornado",
     "1:razorleaf",
     "1:sleeppowder",
     "1:spitup",
@@ -46,9 +43,8 @@
     "1:swallow",
     "1:sweetscent",
     "1:vinewhip",
-    "27:leaftornado",
-    "47:leafblade",
-    "47:leafstorm",
+    "32:leafstorm",
+    "44:leafblade",
     "tm:attract",
     "tm:bulletseed",
     "tm:captivate",

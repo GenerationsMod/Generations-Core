@@ -27,30 +27,21 @@
     "monster",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:pound",
+    "1:mudslap",
     "1:tailwhip",
-    "6:thundershock",
-    "11:charge",
-    "13:mudslap",
-    "17:quickattack",
+    "4:pound",
+    "8:thundershock",
+    "12:quickattack",
+    "16:charge",
+    "20:bulldoze",
     "22:razorwind",
-    "25:paraboliccharge",
-    "31:thunderwave",
-    "35:bulldoze",
-    "40:voltswitch",
+    "24:voltswitch",
+    "28:paraboliccharge",
+    "32:thunderwave",
+    "36:thunderbolt",
+    "40:electrify",
     "44:thunder",
-    "45:electrify",
-    "49:thunderbolt",
     "egg:agility",
     "egg:camouflage",
     "egg:dragonrush",

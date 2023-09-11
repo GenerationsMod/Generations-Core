@@ -17,6 +17,11 @@
     "speed": 97
   },
   "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.33
+      }
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": false,
@@ -65,39 +70,6 @@
       "eggGroups": [
         "field"
       ],
-      "drops": {
-        "amount": "7",
-        "entries": [
-          {
-            "item": "cobblemon:black_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:blue_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:green_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:pink_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:red_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:white_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:yellow_apricorn",
-            "percentage": 5
-          }
-        ]
-      },
       "moves": [
         "1:focusenergy",
         "1:quickattack",
@@ -240,39 +212,6 @@
       "eggGroups": [
         "field"
       ],
-      "drops": {
-        "amount": "7",
-        "entries": [
-          {
-            "item": "cobblemon:black_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:blue_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:green_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:pink_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:red_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:white_apricorn",
-            "percentage": 5
-          },
-          {
-            "item": "cobblemon:yellow_apricorn",
-            "percentage": 5
-          }
-        ]
-      },
       "moves": [
         "1:focusenergy",
         "1:quickattack",
@@ -365,55 +304,22 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "7",
-    "entries": [
-      {
-        "item": "cobblemon:black_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:blue_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:green_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:pink_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:red_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:white_apricorn",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:yellow_apricorn",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:focusenergy",
     "1:quickattack",
+    "1:scaryface",
     "1:swordsdance",
     "1:tackle",
     "1:tailwhip",
     "10:bite",
-    "13:hyperfang",
-    "19:suckerpunch",
-    "20:scaryface",
+    "13:pursuit",
+    "16:hyperfang",
+    "19:assurance",
     "24:crunch",
-    "29:assurance",
-    "30:pursuit",
+    "29:suckerpunch",
+    "34:superfang",
     "39:doubleedge",
-    "40:superfang",
-    "50:endeavor",
+    "44:endeavor",
     "tm:attract",
     "tm:blizzard",
     "tm:captivate",

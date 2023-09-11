@@ -147,7 +147,7 @@
   ],
   "preEvolution": "misdreavus",
   "evolutions": [],
-  "baseScale": 1.2,
+  "baseScale": 0.8,
   "hitbox": {
     "width": 1,
     "height": 1.65,

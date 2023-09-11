@@ -25,31 +25,22 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:tackle",
+    "4:workup",
     "5:odorsleuth",
     "8:bite",
-    "10:babydolleyes",
-    "12:helpinghand",
-    "15:takedown",
-    "19:workup",
-    "22:crunch",
-    "26:roar",
-    "29:retaliate",
-    "33:reversal",
-    "36:lastresort",
-    "40:gigaimpact",
-    "45:playrough",
+    "12:retaliate",
+    "17:babydolleyes",
+    "20:playrough",
+    "24:crunch",
+    "28:takedown",
+    "32:helpinghand",
+    "36:reversal",
+    "40:roar",
+    "44:lastresort",
+    "48:gigaimpact",
     "egg:afteryou",
     "egg:charm",
     "egg:covet",
@@ -139,10 +130,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.6,
   "hitbox": {
     "width": 1,
-    "height": 1,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 50,

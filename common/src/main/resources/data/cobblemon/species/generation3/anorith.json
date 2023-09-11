@@ -25,31 +25,22 @@
   "eggGroups": [
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
+    "1:furycutter",
+    "1:harden",
     "1:scratch",
-    "7:harden",
-    "13:mudsport",
-    "13:smackdown",
-    "19:watergun",
-    "25:bugbite",
-    "25:metalclaw",
-    "29:brine",
-    "31:protect",
-    "37:ancientpower",
-    "43:furycutter",
-    "49:slash",
-    "55:crushclaw",
-    "55:rockblast",
-    "61:xscissor",
+    "4:mudsport",
+    "4:watergun",
+    "8:smackdown",
+    "12:metalclaw",
+    "16:ancientpower",
+    "20:bugbite",
+    "24:brine",
+    "28:slash",
+    "32:crushclaw",
+    "36:rockblast",
+    "41:protect",
+    "44:xscissor",
     "egg:aquajet",
     "egg:crosspoison",
     "egg:curse",

@@ -33,16 +33,14 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:flint",
-        "percentage": 25
-      }
-    ]
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
-  
   "moves": [
     "1:ember",
     "1:leer",
@@ -116,6 +114,12 @@
   "weight": 3265,
   "preEvolution": "crocalor",
   "evolutions": [],
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 2.4,
+    "height": 1.8,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.skeledirge.desc"

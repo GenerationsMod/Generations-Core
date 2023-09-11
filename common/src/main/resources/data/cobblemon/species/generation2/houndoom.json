@@ -38,7 +38,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 210,
+      "baseExperienceYield": 175,
       "baseFriendship": 35,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
       "eggGroups": [
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -74,36 +73,27 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:ember",
     "1:howl",
     "1:leer",
+    "1:nastyplot",
+    "1:smog",
     "1:thunderfang",
-    "13:smog",
-    "19:roar",
+    "13:roar",
+    "16:bite",
     "20:incinerate",
-    "27:bite",
-    "28:beatup",
-    "32:firefang",
-    "35:odorsleuth",
+    "20:odorsleuth",
+    "26:beatup",
+    "30:firefang",
+    "35:feintattack",
     "35:torment",
     "41:comeuppance",
-    "43:feintattack",
-    "44:embargo",
+    "41:embargo",
     "45:foulplay",
-    "51:flamethrower",
-    "59:crunch",
-    "60:nastyplot",
-    "65:inferno",
+    "50:flamethrower",
+    "56:crunch",
+    "62:inferno",
     "tm:attract",
     "tm:bodyslam",
     "tm:captivate",

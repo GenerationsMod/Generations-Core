@@ -25,30 +25,42 @@
     "monster",
     "grass"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
-    "amount": "1",
+    "amount": "2",
     "entries": [
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 5
+      },
+      {
+        "item": "generations_core:chikorita_doll",
+        "percentage": 1
       }
     ]
   },
   "moves": [
     "1:growl",
     "1:tackle",
-    "8:razorleaf",
-    "12:reflect",
-    "15:poisonpowder",
+    "6:razorleaf",
+    "9:poisonpowder",
+    "12:synthesis",
+    "17:reflect",
     "20:magicalleaf",
-    "22:synthesis",
     "23:naturalgift",
     "28:sweetscent",
-    "29:bodyslam",
-    "36:lightscreen",
+    "31:lightscreen",
+    "34:bodyslam",
+    "39:safeguard",
     "42:aromatherapy",
-    "43:safeguard",
-    "50:solarbeam",
+    "45:solarbeam",
     "egg:ancientpower",
     "egg:aromatherapy",
     "egg:bodyslam",
@@ -167,10 +179,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.6,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.7,
+    "height": 1.1,
     "fixed": false
   },
   "baseFriendship": 70,

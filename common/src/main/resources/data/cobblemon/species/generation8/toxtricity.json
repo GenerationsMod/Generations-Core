@@ -187,7 +187,6 @@
       "eggGroups": [
         "human_like"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -235,7 +234,6 @@
       "eggGroups": [
         "human_like"
       ],
-      "moves": [],
       "labels": [
         "gen8",
         "gmax"
@@ -256,15 +254,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:paralyze_heal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:acid",
     "1:acidspray",

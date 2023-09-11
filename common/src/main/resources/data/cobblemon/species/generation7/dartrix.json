@@ -50,23 +50,23 @@
     ]
   },
   "moves": [
+    "1:astonish",
     "1:growl",
     "1:leafage",
-    "1:peck",
     "1:tackle",
-    "11:astonish",
+    "9:peck",
     "12:shadowsneak",
-    "14:razorleaf",
+    "15:razorleaf",
     "16:ominouswind",
     "19:foresight",
-    "24:pluck",
-    "28:synthesis",
+    "20:synthesis",
+    "25:pluck",
+    "30:nastyplot",
     "33:furyattack",
-    "37:suckerpunch",
-    "42:leafblade",
-    "46:featherdance",
-    "51:bravebird",
-    "55:nastyplot",
+    "35:suckerpunch",
+    "40:leafblade",
+    "45:featherdance",
+    "50:bravebird",
     "tm:aerialace",
     "tm:aircutter",
     "tm:airslash",
@@ -165,10 +165,6 @@
         {
           "variant": "level",
           "minLevel": 36
-        },
-        {
-          "variant": "time_range",
-          "range": "night"
         }
       ]
     }

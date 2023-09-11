@@ -24,19 +24,11 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:chorus_flower",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:batonpass",
     "1:bite",
     "1:charm",
+    "1:confusion",
     "1:copycat",
     "1:covet",
     "1:doubleedge",
@@ -45,18 +37,17 @@
     "1:tackle",
     "1:tailwhip",
     "1:takedown",
-    "8:sandattack",
-    "9:babydolleyes",
-    "16:confusion",
-    "23:quickattack",
-    "30:swift",
-    "36:psybeam",
-    "42:psychup",
-    "43:futuresight",
-    "47:psychic",
-    "50:lastresort",
-    "52:morningsun",
-    "78:powerswap",
+    "5:sandattack",
+    "10:quickattack",
+    "15:babydolleyes",
+    "20:swift",
+    "25:psybeam",
+    "30:morningsun",
+    "35:powerswap",
+    "40:psychic",
+    "45:psychup",
+    "50:futuresight",
+    "55:lastresort",
     "tm:allyswitch",
     "tm:attract",
     "tm:batonpass",

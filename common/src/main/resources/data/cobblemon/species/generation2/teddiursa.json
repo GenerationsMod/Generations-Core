@@ -25,34 +25,25 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:salmon",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:babydolleyes",
     "1:covet",
+    "1:faketears",
+    "1:fling",
     "1:leer",
+    "1:lick",
     "1:scratch",
-    "7:lick",
-    "13:furyswipes",
+    "8:furyswipes",
     "13:payback",
-    "19:faketears",
-    "22:sweetscent",
-    "25:feintattack",
+    "15:feintattack",
+    "17:sweetscent",
+    "22:slash",
     "25:playnice",
     "29:playrough",
-    "31:rest",
-    "36:charm",
-    "37:slash",
-    "43:snore",
-    "49:thrash",
-    "57:fling",
+    "33:charm",
+    "37:rest",
+    "37:snore",
+    "41:thrash",
     "egg:bellydrum",
     "egg:chipaway",
     "egg:closecombat",
@@ -218,9 +209,9 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.55,
   "hitbox": {
-    "width": 1,
+    "width": 0.7,
     "height": 1,
     "fixed": false
   },

@@ -16,8 +16,17 @@
     "special_defence": 30,
     "speed": 75
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 120,
   "maleRatio": 0.5,
+  "shoulderMountable": true,
   "baseExperienceYield": 51,
   "baseFriendship": 50,
   "evYield": {
@@ -33,14 +42,24 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
+  "baseScale": 0.45,
+  "hitbox": {
+    "width": 1,
+    "height": 1.3,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:growl",

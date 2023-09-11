@@ -26,29 +26,40 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_copper",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:tackle",
+    "4:confuseray",
+    "5:hypnosis",
     "7:hypnosis",
+    "8:payback",
+    "9:imprison",
+    "11:confuseray",
     "12:imprison",
     "14:confuseray",
     "15:psywave",
+    "16:gyroball",
     "19:extrasensory",
+    "19:irondefense",
+    "20:hypnosis",
+    "21:feintattack",
+    "24:safeguard",
+    "25:safeguard",
     "26:irondefense",
+    "28:extrasensory",
+    "29:futuresight",
     "30:safeguard",
     "31:metalsound",
+    "32:heavyslam",
     "35:gyroball",
+    "36:irondefense",
     "37:futuresight",
+    "39:extrasensory",
+    "40:metalsound",
     "41:feintattack",
+    "41:payback",
+    "44:futuresight",
+    "45:healblock",
     "49:heavyslam",
     "49:payback",
     "52:healblock",

@@ -25,34 +25,25 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sugar",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:freezedry",
     "1:harden",
     "1:iciclecrash",
-    "1:iciclespear",
-    "1:uproar",
+    "1:mist",
+    "1:taunt",
     "1:weatherball",
-    "13:icywind",
-    "16:mist",
-    "19:avalanche",
-    "22:taunt",
+    "12:icywind",
+    "16:avalanche",
+    "20:hail",
+    "24:iciclespear",
     "26:mirrorshot",
-    "31:acidarmor",
-    "36:icebeam",
-    "42:hail",
-    "50:mirrorcoat",
-    "59:blizzard",
-    "67:sheercold",
+    "28:uproar",
+    "32:acidarmor",
+    "38:mirrorcoat",
+    "44:icebeam",
+    "52:blizzard",
+    "60:sheercold",
     "tm:allyswitch",
     "tm:attract",
     "tm:avalanche",

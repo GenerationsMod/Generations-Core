@@ -25,39 +25,68 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:honey",
-        "percentage": 25
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "fly": {
+        "canFly": true,
+        "flySpeedHorizontal": 0.6
       }
-    ]
+    }
   },
   "moves": [
     "1:bugbite",
+    "1:confuseray",
+    "1:destinybond",
     "1:fellstinger",
     "1:gust",
+    "1:poisonsting",
+    "1:slash",
     "1:strugglebug",
     "1:sweetscent",
     "3:poisonsting",
+    "4:furycutter",
+    "5:furycutter",
     "7:confuseray",
     "8:aromaticmist",
     "9:furycutter",
+    "9:pursuit",
+    "12:fellstinger",
     "13:defendorder",
+    "13:furyswipes",
     "15:pursuit",
+    "16:furyswipes",
+    "17:defendorder",
     "19:furyswipes",
+    "20:swagger",
     "21:powergem",
+    "21:slash",
     "24:aromatherapy",
     "24:roost",
     "25:healorder",
+    "25:powergem",
     "27:toxic",
+    "28:airslash",
+    "29:healorder",
     "31:slash",
+    "32:powergem",
     "33:captivate",
+    "33:toxic",
+    "36:toxic",
     "37:airslash",
     "37:attackorder",
     "39:swagger",
+    "40:attackorder",
+    "40:defendorder",
+    "41:captivate",
     "43:destinybond",
+    "44:destinybond",
+    "45:attackorder",
+    "49:swagger",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
@@ -148,10 +177,10 @@
   ],
   "preEvolution": "combee",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
     "width": 1,
-    "height": 1,
+    "height": 1.7,
     "fixed": false
   },
   "baseFriendship": 50,

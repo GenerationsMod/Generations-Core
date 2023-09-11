@@ -43,6 +43,9 @@
   },
   "behaviour": {
     "moving": {
+      "walk": {
+        "avoidsLand": true
+      },
       "swim": {
         "canSwimInWater": true,
         "canBreatheUnderwater": true
@@ -53,19 +56,19 @@
     "1:bubble",
     "1:leer",
     "1:smokescreen",
+    "1:twister",
     "1:watergun",
     "1:whirlpool",
     "1:yawn",
-    "14:focusenergy",
-    "18:bubblebeam",
+    "15:focusenergy",
     "20:dragonbreath",
-    "29:twister",
-    "30:brine",
+    "25:bubblebeam",
+    "30:agility",
+    "31:brine",
     "37:laserfocus",
-    "40:agility",
+    "44:dragonpulse",
     "51:hydropump",
-    "57:dragonpulse",
-    "62:dragondance",
+    "58:dragondance",
     "65:raindance",
     "tm:agility",
     "tm:attract",

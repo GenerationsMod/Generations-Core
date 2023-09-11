@@ -15,6 +15,14 @@
     "special_defence": 44,
     "speed": 61
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "catchRate": 45,
   "maleRatio": 0.875,
   "shoulderMountable": false,
@@ -48,6 +56,8 @@
     "39:acrobatics",
     "39:slackoff",
     "41:flamethrower",
+    "41:slackoff",
+    "47:flamethrower",
     "egg:assist",
     "egg:blazekick",
     "egg:counter",

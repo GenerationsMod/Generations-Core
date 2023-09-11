@@ -11,7 +11,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aguav_berry"
+				"name": "cobblemon:aguav_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -19,7 +19,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aspear_berry"
+				"name": "cobblemon:aspear_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -27,7 +27,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:berry_juice"
+				"name": "cobblemon:berry_juice"
 			},
 			{
 				"type": "minecraft:item",
@@ -55,11 +55,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cheri_berry"
+				"name": "cobblemon:cheri_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -75,7 +75,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:custap_berry"
+				"name": "cobblemon:custap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -95,11 +95,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:enigma_berry"
+				"name": "cobblemon:enigma_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:figy_berry"
+				"name": "cobblemon:figy_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -119,10 +119,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golden_razz_berry"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:guard_spec"
 			},
 			{
@@ -131,7 +127,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -147,7 +143,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lansat_berry"
+				"name": "cobblemon:lansat_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -155,15 +151,15 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leppa_berry"
+				"name": "cobblemon:leppa_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lum_berry"
+				"name": "cobblemon:lum_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:mago_berry"
+				"name": "cobblemon:mago_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,7 +167,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:max_revive"
+				"name": "cobblemon:max_revive"
 			},
 			{
 				"type": "minecraft:item",
@@ -187,7 +183,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pinap_berry"
+				"name": "cobblemon:pinap_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -199,11 +195,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:revive"
+				"name": "cobblemon:revive"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:salac_berry"
+				"name": "cobblemon:salac_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -223,7 +219,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tomato_berry"
+				"name": "cobblemon:tamato_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -251,10 +247,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_8"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:hoopa_ring"
 			},
 			{
@@ -267,55 +259,95 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm13"
+				"name": "generations_core:cascarrafa_city_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm26"
+				"name": "generations_core:slumbering_weald_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm45"
+				"name": "generations_core:pokemon_center_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm83"
+				"name": "generations_core:azalea_town_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm91"
+				"name": "generations_core:lillie_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm102"
+				"name": "generations_core:route_228_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm148"
+				"name": "generations_core:jubilife_village_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm2"
+				"name": "generations_core:goldenrod_city_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm19"
+				"name": "generations_core:eterna_city_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm37"
+				"name": "generations_core:vermilion_city_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm79"
+				"name": "generations_core:tm_13"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm127"
+				"name": "generations_core:tm_26"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm139"
+				"name": "generations_core:tm_45"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_83"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_91"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_102"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_148"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_2"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_19"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_37"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_79"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_127"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_139"
 			}
 		]
 	}]

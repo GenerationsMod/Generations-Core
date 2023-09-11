@@ -17,12 +17,12 @@
     "special_defence": 99,
     "speed": 32
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 75,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Galar",
@@ -143,36 +143,27 @@
     "water_1",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mud",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:mudslap",
     "1:mudsport",
     "1:tackle",
+    "1:thundershock",
     "1:watergun",
     "5:bide",
-    "9:thundershock",
-    "13:mudshot",
+    "5:endure",
+    "10:mudshot",
+    "15:revenge",
     "17:camouflage",
     "20:charge",
     "21:mudbomb",
-    "25:discharge",
     "25:suckerpunch",
     "30:electricterrain",
-    "30:endure",
     "35:bounce",
     "40:muddywater",
+    "45:discharge",
     "45:thunderbolt",
-    "50:revenge",
-    "55:flail",
-    "61:fissure",
+    "50:flail",
+    "55:fissure",
     "egg:astonish",
     "egg:curse",
     "egg:earthpower",

@@ -16,9 +16,6 @@
     "special_defence": 75,
     "speed": 90
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 75,
   "maleRatio": 0,
   "shoulderMountable": false,
@@ -42,6 +39,7 @@
       },
       "catchRate": 75,
       "maleRatio": 0,
+      "baseExperienceYield": 168,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -139,15 +137,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:flowering_azalea_leaves",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:afteryou",
@@ -160,16 +149,16 @@
     "1:helpinghand",
     "1:leafstorm",
     "1:leechseed",
-    "1:magicalleaf",
     "1:megadrain",
+    "1:petalblizzard",
+    "1:quiverdance",
     "1:sleeppowder",
     "1:stunspore",
     "1:sunnyday",
     "1:synthesis",
-    "10:teeterdance",
-    "28:quiverdance",
+    "1:teeterdance",
+    "5:magicalleaf",
     "46:petaldance",
-    "50:petalblizzard",
     "tm:attract",
     "tm:bulletseed",
     "tm:charm",

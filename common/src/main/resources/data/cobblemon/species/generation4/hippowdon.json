@@ -24,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:melon_slice",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:bite",
     "1:firefang",
@@ -41,15 +32,21 @@
     "1:tackle",
     "1:thunderfang",
     "1:yawn",
+    "12:sandtomb",
+    "16:dig",
     "19:dig",
     "19:takedown",
+    "20:crunch",
     "24:sandstorm",
     "25:sandtomb",
+    "28:takedown",
     "31:crunch",
     "32:roar",
     "38:rest",
     "40:earthquake",
+    "44:earthquake",
     "50:doubleedge",
+    "56:fissure",
     "60:fissure",
     "62:slackoff",
     "tm:amnesia",

@@ -33,15 +33,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:crimson_roots",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:defensecurl",
@@ -104,7 +95,7 @@
       "learnableMoves": [],
       "requirements": [
         {
-          "variant": "walked_steps",
+          "variant": "blocks_traveled",
           "amount": 1000
         }
       ]

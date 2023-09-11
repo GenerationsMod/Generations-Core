@@ -24,37 +24,41 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 10
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
+    "1:astonish",
     "1:bind",
     "1:disable",
     "1:firepunch",
     "1:gravity",
     "1:icepunch",
     "1:leer",
-    "1:nightshade",
+    "1:shadowpunch",
+    "1:shadowsneak",
     "1:thunderpunch",
-    "12:foresight",
-    "16:astonish",
-    "22:shadowsneak",
-    "23:confuseray",
-    "27:pursuit",
-    "34:curse",
-    "37:shadowpunch",
-    "41:willowisp",
-    "42:hex",
-    "45:shadowball",
-    "51:meanlook",
-    "51:payback",
-    "58:futuresight",
+    "12:confuseray",
+    "14:foresight",
+    "16:nightshade",
+    "20:payback",
+    "22:pursuit",
+    "24:willowisp",
+    "28:meanlook",
+    "32:hex",
+    "36:curse",
+    "42:shadowball",
+    "48:futuresight",
     "tm:allyswitch",
     "tm:attract",
     "tm:blizzard",
@@ -188,10 +192,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.85,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.2,
+    "height": 2.0,
     "fixed": false
   },
   "baseFriendship": 35,

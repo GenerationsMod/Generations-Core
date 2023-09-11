@@ -35,7 +35,7 @@
     "grass"
   ],
   "drops": {
-    "amount": "3",
+    "amount": "2",
     "entries": [
       {
         "item": "minecraft:melon_seeds",
@@ -44,29 +44,25 @@
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 5
-      },
-      {
-        "item": "generations_core:surprise_mulch",
-        "percentage": 5
       }
     ]
   },
   "moves": [
+    "1:growl",
     "1:tackle",
-    "4:growl",
-    "7:leechseed",
-    "10:vinewhip",
+    "3:vinewhip",
+    "6:growth",
+    "9:leechseed",
+    "12:razorleaf",
     "15:poisonpowder",
     "15:sleeppowder",
-    "15:takedown",
-    "20:razorleaf",
-    "25:sweetscent",
-    "27:doubleedge",
-    "31:worryseed",
-    "32:growth",
-    "37:seedbomb",
-    "39:synthesis",
-    "46:solarbeam",
+    "18:seedbomb",
+    "21:takedown",
+    "24:sweetscent",
+    "27:synthesis",
+    "30:worryseed",
+    "33:doubleedge",
+    "36:solarbeam",
     "egg:amnesia",
     "egg:charm",
     "egg:curse",

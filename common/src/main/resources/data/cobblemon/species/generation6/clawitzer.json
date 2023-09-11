@@ -24,35 +24,26 @@
     "water_1",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:seagrass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:aurasphere",
     "1:darkpulse",
     "1:dragonpulse",
+    "1:flail",
     "1:healpulse",
     "1:splash",
+    "1:visegrip",
     "1:watergun",
-    "7:watersport",
-    "9:visegrip",
+    "1:watersport",
     "12:bubble",
-    "16:flail",
+    "15:aquajet",
     "20:bubblebeam",
+    "20:smackdown",
     "25:honeclaws",
-    "25:swordsdance",
-    "30:crabhammer",
-    "34:waterpulse",
-    "42:smackdown",
-    "47:aquajet",
+    "30:waterpulse",
+    "35:swordsdance",
+    "42:aurasphere",
     "49:bounce",
-    "53:muddywater",
+    "56:muddywater",
+    "63:crabhammer",
     "tm:attract",
     "tm:aurasphere",
     "tm:blizzard",

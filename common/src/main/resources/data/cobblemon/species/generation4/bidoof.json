@@ -27,11 +27,22 @@
     "field"
   ],
   "behaviour": {
-    "swim": {
-      "swimSpeed": 0.1,
-      "canSwimInWater": true,
-      "canBreatheUnderwater": true,
-      "canWalkOnWater": true
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.28
+      },
+      "swim": {
+        "swimSpeed": 0.17,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "drops": {
@@ -44,20 +55,31 @@
     ]
   },
   "moves": [
+    "1:growl",
     "1:tackle",
+    "5:defensecurl",
     "5:growl",
     "9:defensecurl",
+    "9:rollout",
+    "13:headbutt",
     "13:rollout",
     "17:headbutt",
+    "17:hyperfang",
     "21:hyperfang",
+    "21:yawn",
     "25:crunch",
     "25:yawn",
     "29:amnesia",
+    "29:takedown",
+    "33:superfang",
     "33:takedown",
     "37:superfang",
     "37:swordsdance",
+    "41:amnesia",
     "41:superpower",
     "45:curse",
+    "45:superpower",
+    "49:curse",
     "egg:aquatail",
     "egg:defensecurl",
     "egg:doubleedge",

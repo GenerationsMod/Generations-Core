@@ -50,7 +50,6 @@
         "fairy",
         "grass"
       ],
-      "moves": [],
       "labels": [
         "gen4"
       ],
@@ -71,31 +70,32 @@
     "fairy",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sweet_berries",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:flowershield",
     "1:growth",
     "1:leafage",
+    "1:leechseed",
     "1:morningsun",
+    "1:petaldance",
     "1:tackle",
     "10:leechseed",
     "13:helpinghand",
+    "15:helpinghand",
     "19:magicalleaf",
+    "20:magicalleaf",
     "22:sunnyday",
     "25:petaldance",
+    "28:leechseed",
     "30:worryseed",
+    "34:takedown",
     "35:takedown",
+    "41:petalblizzard",
     "43:solarbeam",
     "48:luckychant",
+    "48:worryseed",
     "50:petalblizzard",
+    "55:solarbeam",
+    "62:petaldance",
     "tm:attract",
     "tm:bulletseed",
     "tm:captivate",

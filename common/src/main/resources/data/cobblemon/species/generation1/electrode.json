@@ -16,12 +16,12 @@
     "special_defence": 80,
     "speed": 150
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 60,
   "maleRatio": -1,
   "shoulderMountable": false,
+  "features": [
+    "hisuian"
+  ],
   "forms": [
     {
       "name": "Hisui",
@@ -42,6 +42,7 @@
       },
       "catchRate": 60,
       "maleRatio": -1,
+      "baseExperienceYield": 172,
       "baseFriendship": 70,
       "evYield": {
         "hp": 0,
@@ -142,24 +143,24 @@
   },
   "moves": [
     "1:charge",
+    "1:eerieimpulse",
     "1:magneticflux",
-    "1:screech",
     "1:sonicboom",
     "1:tackle",
     "1:thundershock",
-    "6:eerieimpulse",
-    "21:spark",
-    "26:chargebeam",
-    "27:selfdestruct",
-    "29:electroball",
-    "34:rollout",
-    "40:magnetrise",
+    "9:spark",
+    "11:rollout",
+    "13:screech",
+    "16:chargebeam",
+    "20:swift",
+    "22:electroball",
+    "26:selfdestruct",
+    "29:lightscreen",
+    "36:magnetrise",
     "41:discharge",
-    "41:lightscreen",
-    "46:gyroball",
-    "48:swift",
-    "54:explosion",
-    "59:mirrorcoat",
+    "47:explosion",
+    "54:gyroball",
+    "58:mirrorcoat",
     "tm:agility",
     "tm:chargebeam",
     "tm:confide",
@@ -260,10 +261,10 @@
   ],
   "preEvolution": "voltorb",
   "evolutions": [],
-  "baseScale": 1.7,
+  "baseScale": 0.9,
   "hitbox": {
-    "width": 0.6,
-    "height": 0.6,
+    "width": 1.2,
+    "height": 1.15,
     "fixed": false
   },
   "baseFriendship": 70,

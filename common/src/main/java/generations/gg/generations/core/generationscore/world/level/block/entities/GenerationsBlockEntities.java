@@ -182,13 +182,12 @@ public class GenerationsBlockEntities {
     public static final RegistrySupplier<BlockEntityType<HealerBlockEntity>> HEALER = BLOCK_ENTITIES.register("healer", () -> BlockEntityType.Builder.of(HealerBlockEntity::new, GenerationsUtilityBlocks.HEALER.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<ClockBlockEntity>> CLOCK = BLOCK_ENTITIES.register("clock", () -> BlockEntityType.Builder.of(ClockBlockEntity::new, GenerationsUtilityBlocks.CLOCK.get()).build(null));
 
-    public static final RegistrySupplier<BlockEntityType<BoxBlockEntity>> BOX = BLOCK_ENTITIES.register("box", () -> BlockEntityType.Builder.of(BoxBlockEntity::new, GenerationsUtilityBlocks.BOX.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<GenericShrineBlockEntity>> GENERIC_SHRINE = BLOCK_ENTITIES.register("generic_shrine", () -> BlockEntityType.Builder.of(GenericShrineBlockEntity::new,
                     GenerationsShrines.STATIC_SHRINE.get(),
                     GenerationsShrines.FIERY_SHRINE.get(),
                     GenerationsShrines.FROZEN_SHRINE.get(),
                     GenerationsShrines.LUGIA_SHRINE.get(),
-                    GenerationsShrines.CRYSTAL_BELL.get(),
+                    GenerationsShrines.HO_OH_SHRINE.get(),
                     GenerationsShrines.REGICE_SHRINE.get(),
                     GenerationsShrines.REGIDRAGO_SHRINE.get(),
                     GenerationsShrines.REGIELEKI_SHRINE.get(),
@@ -247,11 +246,8 @@ public class GenerationsBlockEntities {
     ).build(null));
     public static final RegistrySupplier<BlockEntityType<GenericDyedVariantBlockEntity>> GENERIC_DYED_VARIANT = BLOCK_ENTITIES.register("generic_dyed_variant", () -> BlockEntityType.Builder.of(GenericDyedVariantBlockEntity::new,
             GenerationsDecorationBlocks.PASTEL_BEAN_BAG.get(),
-            GenerationsDecorationBlocks.UMBRELLA.get(),
             GenerationsUtilityBlocks.PC.get(),
-            GenerationsUtilityBlocks.TRASH_CAN.get(),
-            GenerationsDecorationBlocks.POKEBALL_RUG.get(),
-            GenerationsDecorationBlocks.WATER_FLOAT.get())
+            GenerationsUtilityBlocks.TRASH_CAN.get())
             .build(null));
 
     public static final RegistrySupplier<BlockEntityType<GenericModelProvidingBlockEntity>> GENERIC_MODEL_PROVIDING = BLOCK_ENTITIES.register("generic_model_providing", () -> BlockEntityType.Builder.of(GenericModelProvidingBlockEntity::new,

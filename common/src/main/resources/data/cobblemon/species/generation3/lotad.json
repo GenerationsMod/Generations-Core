@@ -27,6 +27,25 @@
     "water_1",
     "grass"
   ],
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.2
+      },
+      "swim": {
+        "swimSpeed": 0.3,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "drops": {
     "amount": "2",
     "entries": [
@@ -42,20 +61,20 @@
   },
   "moves": [
     "1:astonish",
-    "3:growl",
+    "1:growl",
+    "3:absorb",
     "6:watergun",
-    "7:absorb",
     "9:bubble",
-    "13:naturepower",
-    "15:naturalgift",
+    "9:mist",
+    "12:megadrain",
+    "12:naturalgift",
     "16:flail",
-    "21:mist",
-    "25:bubblebeam",
-    "27:zenheadbutt",
-    "30:gigadrain",
-    "31:raindance",
+    "20:bubblebeam",
+    "24:naturepower",
+    "28:gigadrain",
+    "33:raindance",
+    "38:zenheadbutt",
     "43:energyball",
-    "43:megadrain",
     "egg:counter",
     "egg:flail",
     "egg:gigadrain",

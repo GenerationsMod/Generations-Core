@@ -34,15 +34,6 @@
     "field",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cod",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leafage",
     "1:scratch",
@@ -125,6 +116,12 @@
   "weight": 312,
   "preEvolution": "floragato",
   "evolutions": [],
+  "baseScale": 0.67,
+  "hitbox": {
+    "width": 1,
+    "height": 3.0,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.meowscarada.desc"

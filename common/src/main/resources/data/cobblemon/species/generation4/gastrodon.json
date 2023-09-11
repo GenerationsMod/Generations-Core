@@ -27,28 +27,24 @@
     "water_1",
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:slime_ball",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:harden",
     "1:mudslap",
     "1:mudsport",
+    "1:recover",
     "1:watergun",
     "1:waterpulse",
     "11:mudbomb",
+    "15:waterpulse",
     "16:hiddenpower",
     "20:ancientpower",
     "22:raindance",
+    "25:bodyslam",
     "29:bodyslam",
+    "33:muddywater",
     "39:earthpower",
     "41:muddywater",
+    "46:raindance",
     "53:memento",
     "54:recover",
     "tm:amnesia",

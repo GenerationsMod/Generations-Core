@@ -25,30 +25,21 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:fern",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:foresight",
     "1:scratch",
     "4:defensecurl",
     "7:quickattack",
-    "12:furyswipes",
-    "17:helpinghand",
-    "24:slam",
-    "31:followme",
+    "13:furyswipes",
+    "16:helpinghand",
+    "19:followme",
+    "25:slam",
+    "28:rest",
     "31:suckerpunch",
+    "36:amnesia",
     "39:batonpass",
-    "40:rest",
     "42:mefirst",
     "47:hypervoice",
-    "49:amnesia",
     "egg:assist",
     "egg:babydolleyes",
     "egg:captivate",

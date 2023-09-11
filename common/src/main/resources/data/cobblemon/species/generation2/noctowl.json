@@ -26,35 +26,33 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 20
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
+    "1:echoedvoice",
     "1:foresight",
     "1:growl",
     "1:peck",
     "1:skyattack",
     "1:tackle",
-    "13:uproar",
-    "16:hypnosis",
-    "25:reflect",
-    "27:echoedvoice",
-    "32:airslash",
-    "33:takedown",
-    "37:zenheadbutt",
-    "41:confusion",
-    "42:extrasensory",
-    "47:moonblast",
-    "47:psychoshift",
-    "47:synchronoise",
-    "52:roost",
-    "57:dreameater",
+    "9:confusion",
+    "12:reflect",
+    "15:psychoshift",
+    "16:zenheadbutt",
+    "18:airslash",
+    "23:extrasensory",
+    "28:takedown",
+    "33:uproar",
+    "38:roost",
+    "43:moonblast",
+    "48:hypnosis",
+    "51:synchronoise",
+    "53:dreameater",
     "tm:aerialace",
     "tm:agility",
     "tm:airslash",
@@ -169,10 +167,10 @@
   ],
   "preEvolution": "hoothoot",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.8,
+    "height": 1.9,
     "fixed": false
   },
   "baseFriendship": 50,

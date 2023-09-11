@@ -25,35 +25,26 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sweet_berries",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:doubleslap",
     "1:flail",
     "1:playnice",
+    "1:powerwhip",
     "1:punishment",
     "1:rapidspin",
     "1:razorleaf",
     "1:splash",
     "1:swagger",
     "1:tropkick",
-    "17:sweetscent",
-    "21:magicalleaf",
-    "25:teeterdance",
-    "29:stomp",
-    "33:aromaticmist",
+    "16:sweetscent",
+    "22:magicalleaf",
+    "28:stomp",
+    "34:teeterdance",
     "37:captivate",
-    "41:aromatherapy",
-    "45:leafstorm",
-    "49:highjumpkick",
-    "53:powerwhip",
+    "40:aromaticmist",
+    "46:aromatherapy",
+    "46:leafstorm",
+    "58:highjumpkick",
     "tm:acrobatics",
     "tm:attract",
     "tm:bounce",

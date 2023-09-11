@@ -23,15 +23,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:iron_ingot",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:block",
     "1:rockthrow",

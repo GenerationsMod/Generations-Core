@@ -51,7 +51,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "mythical",
@@ -98,7 +97,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "mythical",
@@ -145,7 +143,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "mythical",
@@ -192,7 +189,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "mythical",
@@ -215,26 +211,26 @@
     "undiscovered"
   ],
   "moves": [
-    "1:fellstinger",
-    "1:magnetrise",
-    "1:metalclaw",
+    "1:furycutter",
     "1:quickattack",
-    "1:screech",
-    "1:technoblast",
-    "7:furycutter",
-    "11:lockon",
-    "18:flamecharge",
+    "7:screech",
+    "14:metalclaw",
+    "21:fellstinger",
     "22:magnetbomb",
+    "28:flamecharge",
     "29:slash",
-    "33:metalsound",
+    "35:metalsound",
     "40:signalbeam",
+    "42:xscissor",
     "44:triattack",
-    "51:xscissor",
-    "55:bugbuzz",
-    "62:simplebeam",
-    "66:zapcannon",
+    "49:magnetrise",
+    "56:bugbuzz",
+    "63:simplebeam",
+    "70:zapcannon",
     "73:hyperbeam",
-    "77:selfdestruct",
+    "77:lockon",
+    "84:technoblast",
+    "91:selfdestruct",
     "tm:aerialace",
     "tm:allyswitch",
     "tm:assurance",

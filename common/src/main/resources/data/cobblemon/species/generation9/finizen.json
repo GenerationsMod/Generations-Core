@@ -32,15 +32,6 @@
     "field",
     "water_2"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:tropical_fish",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:supersonic",
     "1:watergun",

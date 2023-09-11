@@ -26,7 +26,7 @@ import java.util.concurrent.Executor;
  *
  * @author J.T. McQuigg, WaterPicker
  */
-class GenerationsCoreFabric implements ModInitializer, GenerationsImplementation {
+public class GenerationsCoreFabric implements ModInitializer, GenerationsImplementation {
     public void onInitialize() {
         GenerationsCore.init(this, FabricLoader.getInstance().getConfigDir());
         VanillaCompat.setup();

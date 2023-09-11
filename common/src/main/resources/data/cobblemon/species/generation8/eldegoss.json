@@ -25,15 +25,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:dandelion",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leafage",
     "1:rapidspin",

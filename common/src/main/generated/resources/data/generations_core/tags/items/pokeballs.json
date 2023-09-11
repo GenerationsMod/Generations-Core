@@ -32,6 +32,8 @@
     "generations_core:wing_ball",
     "generations_core:gigaton_ball",
     "generations_core:feather_ball",
-    "generations_core:jet_ball"
+    "generations_core:jet_ball",
+    "generations_core:strange_ball",
+    "generations_core:origin_ball"
   ]
 }

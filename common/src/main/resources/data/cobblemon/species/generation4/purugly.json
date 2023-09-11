@@ -25,19 +25,11 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cod",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:fakeout",
     "1:growl",
     "1:scratch",
+    "1:swagger",
     "13:hypnosis",
     "17:feintattack",
     "20:furyswipes",
@@ -47,6 +39,7 @@
     "37:slash",
     "38:swagger",
     "45:bodyslam",
+    "52:attract",
     "53:attract",
     "60:honeclaws",
     "tm:aerialace",

@@ -34,14 +34,18 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wool",
-        "percentage": 25
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.22
       }
-    ]
+    }
   },
   "moves": [
     "1:counter",
@@ -124,6 +128,12 @@
   "weight": 560,
   "preEvolution": "primeape",
   "evolutions": [],
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.2,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.annihilape.desc"

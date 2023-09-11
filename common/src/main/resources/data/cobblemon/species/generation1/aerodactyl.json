@@ -38,7 +38,7 @@
       },
       "catchRate": 45,
       "maleRatio": 0.875,
-      "baseExperienceYield": 215,
+      "baseExperienceYield": 180,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
       "eggGroups": [
         "flying"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -78,7 +77,16 @@
     "moving": {
       "fly": {
         "canFly": true
+      },
+      "walk": {
+        "walkSpeed": 0.3
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "drops": {
@@ -96,24 +104,24 @@
     ]
   },
   "moves": [
+    "1:ancientpower",
+    "1:bite",
     "1:firefang",
     "1:icefang",
     "1:thunderfang",
-    "1:wingattack",
-    "8:agility",
-    "9:roar",
-    "15:bite",
-    "22:supersonic",
-    "29:ancientpower",
-    "33:crunch",
-    "36:scaryface",
-    "43:takedown",
+    "5:supersonic",
+    "10:wingattack",
+    "15:scaryface",
+    "20:rockslide",
+    "25:roar",
+    "30:crunch",
+    "35:ironhead",
+    "40:takedown",
     "45:stoneedge",
-    "49:ironhead",
     "49:skydrop",
-    "50:hyperbeam",
-    "65:rockslide",
-    "73:gigaimpact",
+    "50:agility",
+    "55:hyperbeam",
+    "60:gigaimpact",
     "egg:assurance",
     "egg:curse",
     "egg:dragonbreath",

@@ -26,38 +26,29 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:wither_rose",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:copycat",
     "1:drainingkiss",
     "1:lick",
-    "1:lovelykiss",
     "1:pound",
     "1:powdersnow",
     "1:sweetkiss",
     "12:confusion",
+    "15:doubleslap",
     "16:covet",
     "20:sing",
-    "21:doubleslap",
     "21:heartstamp",
-    "25:icepunch",
-    "28:wakeupslap",
-    "33:avalanche",
+    "24:faketears",
+    "28:icepunch",
+    "33:wakeupslap",
     "34:psychic",
-    "35:meanlook",
-    "41:faketears",
-    "44:wringout",
-    "51:bodyslam",
-    "57:perishsong",
-    "67:blizzard",
+    "39:avalanche",
+    "40:lovelykiss",
+    "44:bodyslam",
+    "46:meanlook",
+    "49:wringout",
+    "52:perishsong",
+    "58:blizzard",
     "tm:allyswitch",
     "tm:attract",
     "tm:auroraveil",

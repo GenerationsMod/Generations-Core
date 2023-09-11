@@ -23,7 +23,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModelRegistry {
-    private static GenericObjectPool<PixelmonInstance> POOl = new GenericObjectPool<>(() -> new PixelmonInstance(new Matrix4f(), new Matrix4f(), "", () -> LightingSettings.NORMAL_SHADING), 36);
     private static final Function<GltfModel, Supplier<MeshObject>> MESH_OBJECT_SUPPLIER = gltfModel -> () -> {
         if (gltfModel.getSkinModels().isEmpty()) return new MeshObject();
         return new AnimatedMeshObject();
@@ -42,7 +41,9 @@ public class ModelRegistry {
             }
         }
     });
-    private static RareCandy RENDERER;
+    private static RareCandy WORLD_RENDER;
+    private static RareCandy GUI_RENDER;
+    private static final PixelmonInstance guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), "", () -> LightingSettings.NORMAL_SHADING);
 
     public static CompiledModel get(ModelContextProviders.ModelProvider modelProvider, String pipeline) {
         return get(modelProvider.getModel(), pipeline);
@@ -68,20 +69,26 @@ public class ModelRegistry {
 
     private record Pair<A, B>(A a, B b) {}
 
-    public static RareCandy getRareCandy() {
+    public static RareCandy getWorldRareCandy() {
         //RareCandy.DEBUG_THREADS = true;
-        if (RENDERER == null) RENDERER = new RareCandy();
+        if (WORLD_RENDER == null) WORLD_RENDER = new RareCandy();
         Animation.animationModifier = (animation, s) -> {
             if (s.equals("gfb")) animation.ticksPerSecond = 60_000; // 60 fps. 1000 ticks per frame?
         };
-        return RENDERER;
+        return WORLD_RENDER;
     }
 
-    public static PixelmonInstance getInstance() {
-        return POOl.acquire();
+    public static RareCandy getGuiRareCandy() {
+        //RareCandy.DEBUG_THREADS = true;
+        if (GUI_RENDER == null) GUI_RENDER = new RareCandy();
+        Animation.animationModifier = (animation, s) -> {
+            if (s.equals("gfb")) animation.ticksPerSecond = 60_000; // 60 fps. 1000 ticks per frame?
+        };
+        return GUI_RENDER;
     }
 
-    public static void freePool() {
-        POOl.freeAll();
+
+    public static PixelmonInstance getGuiInstance() {
+        return guiInstance;
     }
 }

@@ -31,7 +31,9 @@ public record S2CHealDialoguePacket(List<String> text, boolean useNextArrow) imp
     }
 
     public static class Handler implements ClientNetworkPacketHandler<S2CHealDialoguePacket> {
-        public void handle(S2CHealDialoguePacket packet, Minecraft client) {
+        public static final Handler INSTANCE = new Handler();
+
+        public void handle(S2CHealDialoguePacket packet) {
             if (Minecraft.getInstance().screen instanceof DialogueScreen dialogueScreen)
                 dialogueScreen.activeInfo = new DialogueScreen.SayActiveInfo(packet.text, packet.useNextArrow);
         }

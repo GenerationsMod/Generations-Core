@@ -16,6 +16,7 @@
   },
   "catchRate": 60,
   "maleRatio": 0.5,
+  "shoulderMountable": false,
   "baseExperienceYield": 165,
   "baseFriendship": 50,
   "evYield": {
@@ -151,7 +152,6 @@
         "water_1",
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen8"
       ],

@@ -8,13 +8,17 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.RecordItem;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class GeneralLang extends LanguageProvider {
@@ -43,10 +47,12 @@ public class GeneralLang extends LanguageProvider {
             var item1 = item.get();
 
             if(item1 instanceof RecordItem) {
-                add(item.get().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item.getId().toString().replace("_disc", "")));
+                add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
             }
         });
         addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
         add("pokeballs.generations_core", "Poké Balls");
@@ -126,19 +132,22 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.blocks.lootmodePUD", "Permanent, unlimited drops");
     }
 
-    protected String getNameGens(String name){
-            name = name.substring(name.indexOf(":") + 1);  //Removes Mod Tag from front of name
-            name = name.replace('_', ' ');
-            name = name.substring(0, 1).toUpperCase() + name.substring(1);
-            for (int i = 0; i < name.length(); i++)
-                if (name.charAt(i) == ' ')
-                    name = name.substring(0, i + 1) + name.substring(i + 1, i + 2).toUpperCase() + name.substring(i + 2);
 
-            return name;
-        }
+    protected String getNameGens(RegistrySupplier<? extends ItemLike> item, String name){
+        name = name.substring(name.indexOf(":") + 1);  //Removes Mod Tag from front of name
+        name = name.replace('_', ' ');
+        name = name.substring(0, 1).toUpperCase() + name.substring(1);
+        for (int i = 0; i < name.length(); i++)
+            if (name.charAt(i) == ' ')
+                name = name.substring(0, i + 1) + name.substring(i + 1, i + 2).toUpperCase() + name.substring(i + 2);
 
-    protected String getPokeBrickName(String name){
-        return getNameGens(name).replace("Poke Brick", "PokeBrick");
+        name = name.replaceAll("Tm", "TM");
+
+        return name;
+    }
+
+    protected String getPokeBrickName(RegistrySupplier<? extends ItemLike> item, String name){
+        return getNameGens(item, name).replace("Poke Brick", "PokeBrick");
     }
 
     @Deprecated
@@ -146,13 +155,13 @@ public class GeneralLang extends LanguageProvider {
         add(key.replace(" ", "_").replace("-", "_").replace(",", "_"), entry);
     }
 
-    public void addBlockEntries(DeferredRegister<Block> entries, Function<String, String> function) {
-        entries.forEach(block -> add(block.get(), function.apply(block.getId().toString())));
+    public void addBlockEntries(DeferredRegister<Block> entries, BiFunction<RegistrySupplier<Block>, String, String> function) {
+        entries.forEach(block -> add(block.get(), function.apply(block, block.getId().toString())));
     }
 
-    public void addItemEntries(DeferredRegister<Item> entries, Function<String, String> function, BiConsumer<RegistrySupplier<Item>, Function<String, String>> additionalActions) {
+    public void addItemEntries(DeferredRegister<Item> entries, BiFunction<RegistrySupplier<? extends ItemLike>, String, String> function, BiConsumer<RegistrySupplier<? extends ItemLike>, BiFunction<RegistrySupplier<? extends ItemLike>, String, String>> additionalActions) {
         entries.forEach(item -> {
-            add(item.get(), function.apply(item.getId().toString()));
+            add(item.get(), function.apply(item, item.getId().toString()));
             additionalActions.accept(item, function);
         });
     }

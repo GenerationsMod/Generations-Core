@@ -26,35 +26,26 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sandstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:bite",
     "1:honeclaws",
     "1:leer",
     "1:powertrip",
     "1:rage",
     "1:sandattack",
-    "10:torment",
-    "13:sandtomb",
+    "9:sandtomb",
+    "12:scaryface",
+    "15:bite",
     "16:assurance",
+    "18:torment",
     "19:mudslap",
+    "21:dig",
     "22:embargo",
-    "25:swagger",
-    "28:crunch",
-    "32:dig",
-    "36:scaryface",
-    "40:foulplay",
-    "44:sandstorm",
-    "48:earthquake",
-    "52:thrash",
+    "24:swagger",
+    "27:crunch",
+    "32:sandstorm",
+    "35:foulplay",
+    "42:earthquake",
+    "47:thrash",
     "tm:aerialace",
     "tm:assurance",
     "tm:attract",

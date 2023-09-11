@@ -26,32 +26,23 @@
     "monster",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:porkchop",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
     "1:tailwhip",
-    "6:roar",
-    "10:stomp",
+    "4:roar",
+    "8:ancientpower",
     "12:bide",
+    "12:charm",
     "15:stealthrock",
-    "17:bite",
-    "20:charm",
-    "26:ancientpower",
+    "16:bite",
+    "20:dragontail",
+    "24:stomp",
     "28:rockslide",
-    "30:dragontail",
-    "34:crunch",
-    "37:dragonclaw",
+    "32:crunch",
+    "36:dragonclaw",
     "40:thrash",
     "44:earthquake",
-    "49:horndrill",
+    "48:horndrill",
     "egg:curse",
     "egg:dragondance",
     "egg:firefang",

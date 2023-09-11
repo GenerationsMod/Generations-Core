@@ -23,27 +23,18 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:regidrago_orb",
-        "percentage": 100
-      }
-    ]
-  },
   "moves": [
     "1:twister",
     "1:visegrip",
     "6:bite",
     "12:ancientpower",
     "18:dragonbreath",
-    "24:focusenergy",
     "30:crunch",
     "36:dragonclaw",
     "42:hammerarm",
     "48:dragondance",
     "54:thrash",
+    "60:focusenergy",
     "60:laserfocus",
     "66:dragonenergy",
     "72:hyperbeam",

@@ -16,9 +16,6 @@
     "special_defence": 46,
     "speed": 28
   },
-  "features": [
-    "hisuian"
-  ],
   "catchRate": 55,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -42,6 +39,7 @@
       },
       "catchRate": 55,
       "maleRatio": 0.5,
+      "baseExperienceYield": 180,
       "baseFriendship": 50,
       "evYield": {
         "hp": 0,
@@ -136,46 +134,42 @@
     "monster",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:packed_icd",
-        "percentage": 25
-      }
-    ]
-  },
   "behaviour": {
-    "swim": {
-      "swimSpeed": 0.1,
-      "canSwimInWater": true,
-      "canBreatheUnderwater": true,
-      "canWalkOnWater": true
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.2
+      },
+      "swim": {
+        "swimSpeed": 0.1,
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      }
     }
   },
   "moves": [
-    "1:bite",
     "1:bodyslam",
-    "1:crunch",
     "1:harden",
-    "1:irondefense",
-    "1:skullbash",
+    "1:powdersnow",
+    "1:rapidspin",
     "1:tackle",
     "1:wideguard",
-    "5:powdersnow",
-    "10:icywind",
+    "9:curse",
+    "12:icywind",
     "15:protect",
-    "15:takedown",
+    "18:avalanche",
     "20:sharpen",
-    "22:curse",
-    "26:icefang",
+    "21:bite",
+    "24:icefang",
+    "27:irondefense",
     "30:iceball",
-    "35:rapidspin",
-    "42:avalanche",
-    "46:blizzard",
+    "30:recover",
+    "33:crunch",
+    "36:takedown",
+    "41:blizzard",
+    "46:doubleedge",
     "51:iciclecrash",
-    "51:recover",
-    "56:doubleedge",
+    "51:skullbash",
     "tm:attract",
     "tm:avalanche",
     "tm:blizzard",

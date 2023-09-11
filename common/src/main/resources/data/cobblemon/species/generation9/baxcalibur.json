@@ -34,15 +34,6 @@
     "dragon",
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:ice_heal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:breakingswipe",
     "1:dragontail",

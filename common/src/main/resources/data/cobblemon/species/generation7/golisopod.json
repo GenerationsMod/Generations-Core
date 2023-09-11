@@ -25,32 +25,23 @@
     "bug",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:spider_eye",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:firstimpression",
-    "1:furycutter",
-    "1:rocksmash",
     "1:sandattack",
+    "1:spite",
     "1:strugglebug",
-    "10:bugbite",
+    "4:rocksmash",
+    "8:furycutter",
     "12:mudshot",
-    "13:spite",
-    "16:swordsdance",
-    "21:slash",
-    "26:razorshell",
-    "31:suckerpunch",
-    "36:irondefense",
-    "41:pinmissile",
-    "48:liquidation",
+    "16:bugbite",
+    "20:irondefense",
+    "24:suckerpunch",
+    "28:slash",
+    "32:razorshell",
+    "36:pinmissile",
+    "40:swordsdance",
+    "44:liquidation",
     "tm:aerialace",
     "tm:assurance",
     "tm:attract",
@@ -140,7 +131,7 @@
   ],
   "preEvolution": "wimpod",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
     "width": 1,
     "height": 1,

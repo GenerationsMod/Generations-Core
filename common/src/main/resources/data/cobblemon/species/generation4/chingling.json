@@ -16,31 +16,44 @@
   },
   "catchRate": 120,
   "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "shoulderMountable": true,
   "baseExperienceYield": 57,
   "experienceGroup": "fast",
   "eggCycles": 25,
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bell",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "walkSpeed": 0.2
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:wrap",
+    "4:growl",
     "6:growl",
+    "7:astonish",
     "9:astonish",
+    "10:confusion",
     "13:yawn",
     "14:confusion",
+    "16:lastresort",
     "17:uproar",
+    "19:entrainment",
     "22:lastresort",
     "25:entrainment",
+    "32:uproar",
     "egg:cosmicpower",
     "egg:curse",
     "egg:disable",
@@ -144,10 +157,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.45,
+    "height": 0.5,
     "fixed": false
   },
   "baseFriendship": 70,

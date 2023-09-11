@@ -24,35 +24,40 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 20
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
       }
-    ]
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
+
   "moves": [
-    "1:absorb",
     "1:dig",
     "1:falseswipe",
+    "1:grudge",
     "1:harden",
     "1:metalclaw",
     "1:mudslap",
+    "1:sandattack",
     "1:scratch",
     "1:shadowclaw",
     "5:leechlife",
-    "9:sandattack",
-    "14:furyswipes",
-    "19:mindreader",
-    "25:spite",
-    "31:confuseray",
-    "38:shadowball",
-    "38:shadowsneak",
-    "45:grudge",
-    "45:phantomforce",
-    "52:healblock",
+    "15:confuseray",
+    "23:absorb",
+    "29:shadowsneak",
+    "36:furyswipes",
+    "41:healblock",
+    "43:mindreader",
+    "50:shadowball",
+    "57:spite",
+    "64:phantomforce",
     "form_change:agility",
     "form_change:batonpass",
     "form_change:screech",
@@ -135,7 +140,7 @@
   ],
   "preEvolution": "nincada",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
     "width": 1,
     "height": 1,

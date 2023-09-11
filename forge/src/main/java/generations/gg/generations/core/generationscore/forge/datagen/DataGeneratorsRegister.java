@@ -56,7 +56,7 @@ public class DataGeneratorsRegister {
         generator.addProvider(true, new LootTableDatagen(output));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, event.getLookupProvider(), Set.of(GenerationsCore.MOD_ID)));
 
-        generator.addProvider(true, new GenerationsPokemonModelsProvider(output));
+//        generator.addProvider(true, new GenerationsPokemonModelsProvider(output));
 
 //        generator.addProvider(true, new DialogueDataGen(event.getGenerator().getPackOutput()));
     }

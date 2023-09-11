@@ -15,7 +15,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:coba_berry"
+				"name": "cobblemon:coba_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -27,11 +27,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:iron_ball"
+				"name": "generations_core:iron_ball"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:shark_beak"
+				"name": "cobblemon:sharp_beak"
 			},
 			{
 				"type": "minecraft:item",
@@ -95,7 +95,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:mirror_herb"
+				"name": "cobblemon:mirror_herb"
 			},
 			{
 				"type": "minecraft:item",
@@ -123,11 +123,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:nanab_berry"
+				"name": "cobblemon:nanab_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pomeg_berry"
+				"name": "cobblemon:pomeg_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -155,7 +155,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chesto_berry"
+				"name": "cobblemon:chesto_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -171,11 +171,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:energy_root"
+				"name": "cobblemon:energy_root"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
@@ -255,7 +255,47 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:lone_earing"
+				"name": "generations_core:cascarrafa_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:slumbering_weald_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:pokemon_center_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:azalea_town_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lillie_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:route_228_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:jubilife_village_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:goldenrod_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:eterna_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:vermilion_city_disc"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:lone_earring"
 			},
 			{
 				"type": "minecraft:item",
@@ -311,35 +351,35 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm14"
+				"name": "generations_core:tm_14"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm27"
+				"name": "generations_core:tm_27"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm40"
+				"name": "generations_core:tm_40"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm65"
+				"name": "generations_core:tm_65"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm97"
+				"name": "generations_core:tm_97"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm113"
+				"name": "generations_core:tm_113"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm160"
+				"name": "generations_core:tm_160"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm164"
+				"name": "generations_core:tm_164"
 			}
 		]
 	}]

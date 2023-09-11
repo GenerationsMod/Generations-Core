@@ -25,32 +25,23 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:flint",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:mudslap",
     "1:mudsport",
-    "1:scratch",
-    "5:rapidspin",
-    "8:mudslap",
+    "1:rapidspin",
+    "4:scratch",
+    "8:honeclaws",
     "12:furyswipes",
-    "15:metalclaw",
-    "19:dig",
-    "22:honeclaws",
+    "16:metalclaw",
+    "20:sandstorm",
     "24:crushclaw",
     "26:slash",
-    "29:rockslide",
-    "33:earthquake",
+    "28:rockslide",
+    "32:dig",
     "36:swordsdance",
-    "40:sandstorm",
-    "43:drillrun",
-    "47:fissure",
+    "40:drillrun",
+    "44:earthquake",
+    "48:fissure",
     "egg:crushclaw",
     "egg:earthpower",
     "egg:irondefense",

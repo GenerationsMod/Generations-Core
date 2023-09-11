@@ -26,34 +26,25 @@
     "field",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:awakening",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:detect",
     "1:pound",
+    "5:fakeout",
     "5:meditate",
-    "9:detect",
-    "13:fakeout",
+    "10:reversal",
     "15:furyswipes",
     "17:doubleslap",
+    "20:quickguard",
     "21:swift",
-    "25:calmmind",
-    "29:forcepalm",
-    "33:drainpunch",
+    "25:forcepalm",
+    "30:uturn",
+    "35:drainpunch",
     "37:jumpkick",
     "40:honeclaws",
-    "41:uturn",
-    "45:quickguard",
-    "49:bounce",
-    "53:highjumpkick",
-    "57:reversal",
-    "61:aurasphere",
+    "45:aurasphere",
+    "51:bounce",
+    "55:calmmind",
+    "60:highjumpkick",
     "egg:allyswitch",
     "egg:batonpass",
     "egg:endure",

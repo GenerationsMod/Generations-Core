@@ -26,15 +26,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_aluminum",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:doubleedge",
     "1:endure",
@@ -47,19 +38,19 @@
     "1:scaryface",
     "1:takedown",
     "1:twineedle",
+    "12:falseswipe",
     "16:acidspray",
     "16:furyattack",
     "20:headbutt",
-    "25:falseswipe",
-    "28:bugbuzz",
+    "24:reversal",
+    "28:irondefense",
     "32:slash",
-    "37:ironhead",
-    "40:irondefense",
-    "44:xscissor",
-    "49:reversal",
+    "32:xscissor",
+    "36:swordsdance",
+    "40:ironhead",
+    "44:bugbuzz",
+    "48:gigaimpact",
     "52:metalburst",
-    "52:swordsdance",
-    "56:gigaimpact",
     "tm:aerialace",
     "tm:agility",
     "tm:attract",

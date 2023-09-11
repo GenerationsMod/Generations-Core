@@ -34,15 +34,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:grass",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:firefang",
     "1:leafage",

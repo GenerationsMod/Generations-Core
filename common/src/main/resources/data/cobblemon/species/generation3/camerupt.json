@@ -38,7 +38,7 @@
       },
       "catchRate": 150,
       "maleRatio": 0.5,
-      "baseExperienceYield": 196,
+      "baseExperienceYield": 161,
       "baseFriendship": 70,
       "evYield": {
         "hp": 0,
@@ -53,7 +53,6 @@
       "eggGroups": [
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -74,34 +73,25 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:lead",
-        "percentage": 15
-      }
-    ]
-  },
   "moves": [
     "1:ember",
+    "1:eruption",
+    "1:fissure",
+    "1:focusenergy",
     "1:growl",
-    "1:magnitude",
+    "1:rockslide",
     "1:tackle",
     "12:bulldoze",
+    "12:magnitude",
+    "15:flameburst",
     "15:incinerate",
-    "21:flameburst",
-    "25:focusenergy",
+    "19:amnesia",
+    "22:lavaplume",
+    "26:earthpower",
     "29:curse",
-    "29:takedown",
-    "31:amnesia",
-    "31:lavaplume",
-    "33:rockslide",
-    "37:earthquake",
-    "39:earthpower",
+    "31:takedown",
     "39:yawn",
-    "45:eruption",
-    "55:fissure",
+    "46:earthquake",
     "tm:amnesia",
     "tm:attract",
     "tm:bodypress",
@@ -199,10 +189,10 @@
   ],
   "preEvolution": "numel",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 1.2,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 2,
+    "height": 1.5,
     "fixed": false
   },
   "baseFriendship": 70,

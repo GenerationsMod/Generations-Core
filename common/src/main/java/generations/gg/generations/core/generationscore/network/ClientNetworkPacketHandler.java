@@ -5,10 +5,10 @@ import net.minecraft.client.Minecraft;
 
 public interface ClientNetworkPacketHandler<T extends GenerationsNetworkPacket<T>> {
 
-    void handle(T packet, Minecraft client);
+    void handle(T packet);
 
     default void handleOnNettyThread(T packet) {
         var client = Minecraft.getInstance();
-        client.execute(() -> handle(packet, client));
+        client.execute(() -> handle(packet));
     }
 }

@@ -25,30 +25,34 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:fire_coral",
-        "percentage": 50
-      },
-      {
-        "item": "minecraft:ancient_debris",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:ancientpower",
+    "1:earthpower",
+    "1:firespin",
+    "1:heatwave",
+    "1:ironhead",
+    "1:leer",
+    "1:magmastorm",
     "6:metalclaw",
     "9:leer",
+    "12:ancientpower",
     "17:firefang",
+    "18:firefang",
+    "24:scaryface",
     "25:metalsound",
+    "30:ironhead",
     "33:crunch",
+    "36:crunch",
     "41:scaryface",
+    "42:lavaplume",
+    "48:metalsound",
     "49:lavaplume",
+    "54:earthpower",
     "57:firespin",
+    "60:heatwave",
     "65:ironhead",
+    "66:stoneedge",
+    "72:magmastorm",
     "73:earthpower",
     "81:heatwave",
     "88:stoneedge",

@@ -23,23 +23,14 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:harden",
-    "1:headbutt",
-    "9:tailwhip",
-    "18:thunderwave",
-    "27:thundershock",
-    "36:acidarmor",
-    "45:flashcannon",
+    "1:thundershock",
+    "8:tailwhip",
+    "16:headbutt",
+    "24:thunderwave",
+    "32:acidarmor",
+    "40:flashcannon",
     "tm:endure",
     "tm:facade",
     "tm:flashcannon",

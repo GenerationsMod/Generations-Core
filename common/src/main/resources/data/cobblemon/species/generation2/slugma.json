@@ -45,32 +45,23 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:gooey_mulch",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:smog",
     "1:yawn",
-    "8:ember",
+    "6:ember",
+    "8:rockthrow",
+    "13:harden",
     "15:incinerate",
-    "15:rockthrow",
     "20:clearsmog",
-    "22:harden",
-    "23:flameburst",
-    "23:recover",
-    "26:ancientpower",
-    "29:amnesia",
-    "36:flamethrower",
-    "38:lavaplume",
-    "43:rockslide",
-    "50:bodyslam",
-    "56:earthpower",
+    "22:ancientpower",
+    "27:flameburst",
+    "29:rockslide",
+    "34:lavaplume",
+    "36:amnesia",
+    "41:bodyslam",
+    "43:recover",
+    "48:flamethrower",
+    "50:earthpower",
     "egg:acidarmor",
     "egg:curse",
     "egg:earthpower",

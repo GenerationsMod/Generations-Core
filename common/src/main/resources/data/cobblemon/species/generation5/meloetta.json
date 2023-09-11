@@ -34,10 +34,10 @@
     "undiscovered"
   ],
   "moves": [
+    "1:confusion",
+    "1:quickattack",
     "1:round",
-    "6:quickattack",
-    "11:confusion",
-    "16:sing",
+    "1:sing",
     "21:teeterdance",
     "26:acrobatics",
     "31:psybeam",
@@ -211,7 +211,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen5",
         "mythical",

@@ -23,15 +23,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:paralyze_heal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:acid",
     "1:coil",

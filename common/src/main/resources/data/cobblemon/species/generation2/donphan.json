@@ -24,35 +24,26 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:mud",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:bulldoze",
+    "1:defensecurl",
     "1:firefang",
+    "1:flail",
+    "1:furyattack",
     "1:growl",
     "1:hornattack",
     "1:odorsleuth",
     "1:thunderfang",
-    "9:defensecurl",
-    "10:knockoff",
-    "17:flail",
-    "19:magnitude",
+    "6:rapidspin",
+    "10:rollout",
+    "15:assurance",
+    "19:knockoff",
     "24:slam",
-    "25:furyattack",
+    "30:magnitude",
     "30:stompingtantrum",
-    "31:assurance",
-    "33:rollout",
-    "39:scaryface",
-    "41:rapidspin",
-    "49:earthquake",
-    "54:gigaimpact",
+    "37:scaryface",
+    "43:earthquake",
+    "50:gigaimpact",
     "tm:attract",
     "tm:bodypress",
     "tm:bodyslam",
@@ -177,10 +168,10 @@
   ],
   "preEvolution": "phanpy",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.8,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.3,
+    "height": 1.5,
     "fixed": false
   },
   "baseFriendship": 70,

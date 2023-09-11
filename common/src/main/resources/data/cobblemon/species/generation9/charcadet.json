@@ -15,6 +15,19 @@
     "special_defence": 40,
     "speed": 35
   },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.25
+      }
+    }
+  },
   "catchRate": 90,
   "maleRatio": 0.5,
   "baseExperienceYield": 51,
@@ -32,15 +45,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:charcoal",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:ember",

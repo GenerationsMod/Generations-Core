@@ -26,34 +26,41 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:cocoa_beans",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:firefang",
+    "1:guillotine",
     "1:harden",
     "1:icefang",
     "1:knockoff",
     "1:poisonjab",
     "1:sandattack",
     "1:thunderfang",
+    "13:quickattack",
+    "16:furycutter",
     "16:quickattack",
+    "19:feintattack",
     "20:furycutter",
+    "22:acrobatics",
     "23:feintattack",
     "27:acrobatics",
+    "27:nightslash",
     "27:screech",
+    "30:uturn",
     "31:nightslash",
+    "31:screech",
+    "34:nightslash",
     "34:swordsdance",
+    "35:screech",
+    "38:swordsdance",
     "38:uturn",
+    "40:xscissor",
+    "42:uturn",
     "42:xscissor",
     "45:guillotine",
     "45:skyuppercut",
+    "45:xscissor",
+    "49:guillotine",
+    "50:swordsdance",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:attract",
@@ -138,10 +145,10 @@
   ],
   "preEvolution": "gligar",
   "evolutions": [],
-  "baseScale": 1,
+  "baseScale": 0.9,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.6,
+    "height": 1.3,
     "fixed": false
   },
   "baseFriendship": 70,

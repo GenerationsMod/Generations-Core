@@ -27,28 +27,29 @@
     "bug",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:honeycomb",
-        "percentage": 25
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canWalkOnWater": true
+      },
+      "fly": {
+        "canFly": true
       }
-    ]
+    }
   },
   "moves": [
     "1:absorb",
-    "4:fairywind",
-    "7:stunspore",
-    "10:strugglebug",
+    "1:fairywind",
+    "6:stunspore",
+    "12:sweetscent",
     "13:silverwind",
-    "16:drainingkiss",
-    "21:sweetscent",
-    "26:bugbuzz",
-    "31:dazzlinggleam",
-    "36:aromatherapy",
+    "18:drainingkiss",
+    "24:strugglebug",
+    "30:aromatherapy",
     "36:switcheroo",
-    "41:quiverdance",
+    "42:dazzlinggleam",
+    "48:bugbuzz",
+    "54:quiverdance",
     "egg:aromaticmist",
     "egg:batonpass",
     "egg:bestow",
@@ -145,10 +146,10 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.3,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.9,
+    "height": 2,
     "fixed": false
   },
   "baseFriendship": 50,

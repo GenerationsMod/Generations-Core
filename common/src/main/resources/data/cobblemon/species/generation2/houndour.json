@@ -26,34 +26,25 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
     "1:ember",
     "1:leer",
-    "7:howl",
-    "13:smog",
-    "19:roar",
+    "4:howl",
+    "8:smog",
+    "13:roar",
+    "16:bite",
     "20:incinerate",
-    "25:bite",
-    "27:beatup",
-    "30:firefang",
-    "31:odorsleuth",
+    "20:odorsleuth",
+    "25:beatup",
+    "28:firefang",
+    "32:feintattack",
     "32:torment",
     "37:comeuppance",
-    "37:feintattack",
-    "40:embargo",
+    "37:embargo",
     "40:foulplay",
-    "43:flamethrower",
+    "44:flamethrower",
     "49:crunch",
-    "53:nastyplot",
+    "52:nastyplot",
     "56:inferno",
     "egg:beatup",
     "egg:counter",

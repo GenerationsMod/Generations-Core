@@ -18,6 +18,11 @@
     "speed": 97
   },
   "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": false,
@@ -47,21 +52,21 @@
     "1:confusion",
     "1:gust",
     "1:miracleeye",
-    "4:hypnosis",
+    "5:gravity",
     "8:psywave",
-    "11:tailwind",
-    "14:whirlwind",
-    "18:psybeam",
-    "21:aircutter",
-    "24:lightscreen",
-    "28:reflect",
+    "10:hypnosis",
+    "15:aircutter",
+    "20:psybeam",
+    "25:whirlwind",
+    "30:cosmicpower",
     "31:synchronoise",
     "34:mirrormove",
-    "38:gravity",
-    "41:airslash",
-    "44:psychic",
-    "48:cosmicpower",
-    "51:skyattack",
+    "35:airslash",
+    "40:psychic",
+    "45:tailwind",
+    "50:lightscreen",
+    "50:reflect",
+    "55:skyattack",
     "60:skillswap",
     "egg:ancientpower",
     "egg:futuresight",

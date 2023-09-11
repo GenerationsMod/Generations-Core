@@ -36,7 +36,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 351,
+      "baseExperienceYield": 340,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -51,7 +51,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega",
@@ -82,7 +81,7 @@
       },
       "catchRate": 3,
       "maleRatio": -1,
-      "baseExperienceYield": 351,
+      "baseExperienceYield": 340,
       "baseFriendship": 0,
       "evYield": {
         "hp": 0,
@@ -97,7 +96,6 @@
       "eggGroups": [
         "undiscovered"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega",
@@ -123,7 +121,7 @@
     "amount": "1",
     "entries": [
       {
-        "item": "minecraft:mewtwo_doll",
+        "item": "generations_core:mewtwo_doll",
         "percentage": 75
       }
     ]
@@ -141,23 +139,23 @@
     "1:laserfocus",
     "1:lifedew",
     "1:psywave",
+    "1:swift",
     "8:ancientpower",
-    "11:barrier",
-    "22:mist",
-    "22:swift",
-    "33:psychup",
-    "36:miracleeye",
-    "44:futuresight",
-    "44:recover",
-    "50:psychocut",
-    "55:safeguard",
-    "64:guardswap",
-    "64:powerswap",
-    "66:psychic",
-    "77:amnesia",
-    "79:mefirst",
-    "100:aurasphere",
-    "100:psystrike",
+    "16:psychocut",
+    "22:psychup",
+    "24:safeguard",
+    "29:miracleeye",
+    "32:amnesia",
+    "40:aurasphere",
+    "48:psychic",
+    "56:guardswap",
+    "56:powerswap",
+    "64:barrier",
+    "64:mist",
+    "72:psystrike",
+    "80:recover",
+    "88:futuresight",
+    "93:mefirst",
     "tm:aerialace",
     "tm:agility",
     "tm:allyswitch",

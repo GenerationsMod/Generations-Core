@@ -34,16 +34,9 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:bugbite",
+    "1:protect",
     "1:quiverdance",
     "1:suckerpunch",
     "1:tackle",
@@ -160,6 +153,8 @@
         "bug"
       ],
       "moves": [
+        "1:bugbite",
+        "1:protect",
         "1:quiverdance",
         "1:suckerpunch",
         "1:tackle",
@@ -278,7 +273,9 @@
         "bug"
       ],
       "moves": [
+        "1:bugbite",
         "1:metalburst",
+        "1:protect",
         "1:quiverdance",
         "1:suckerpunch",
         "1:tackle",

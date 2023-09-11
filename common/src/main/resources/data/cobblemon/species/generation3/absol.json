@@ -36,7 +36,7 @@
       },
       "catchRate": 30,
       "maleRatio": 0.5,
-      "baseExperienceYield": 198,
+      "baseExperienceYield": 163,
       "baseFriendship": 35,
       "evYield": {
         "hp": 0,
@@ -51,7 +51,6 @@
       "eggGroups": [
         "field"
       ],
-      "moves": [],
       "labels": [
         "gen6",
         "mega"
@@ -72,36 +71,27 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:feint",
+    "1:leer",
+    "1:quickattack",
     "1:scratch",
-    "5:leer",
-    "9:taunt",
+    "5:doubleteam",
     "10:knockoff",
-    "13:quickattack",
-    "17:razorwind",
-    "20:pursuit",
-    "21:bite",
-    "26:swordsdance",
-    "31:doubleteam",
+    "10:pursuit",
+    "15:detect",
+    "16:bite",
+    "20:taunt",
+    "25:slash",
+    "30:nightslash",
     "35:focusenergy",
-    "36:slash",
-    "41:futuresight",
-    "44:suckerpunch",
-    "46:perishsong",
-    "49:detect",
-    "52:nightslash",
-    "57:mefirst",
-    "60:psychocut",
+    "37:psychocut",
+    "40:suckerpunch",
+    "41:mefirst",
+    "45:swordsdance",
+    "49:razorwind",
+    "50:futuresight",
+    "55:perishsong",
     "egg:assurance",
     "egg:batonpass",
     "egg:bite",

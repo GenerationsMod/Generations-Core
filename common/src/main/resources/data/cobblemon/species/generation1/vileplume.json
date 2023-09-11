@@ -36,15 +36,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:surprise_mulch",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:acid",
@@ -55,14 +46,14 @@
     "1:megadrain",
     "1:moonblast",
     "1:moonlight",
+    "1:petaldance",
     "1:poisonpowder",
     "1:sleeppowder",
     "1:stunspore",
     "1:sweetscent",
     "1:toxic",
-    "44:petaldance",
     "49:petalblizzard",
-    "65:solarbeam",
+    "69:solarbeam",
     "tm:attract",
     "tm:bodyslam",
     "tm:bulletseed",

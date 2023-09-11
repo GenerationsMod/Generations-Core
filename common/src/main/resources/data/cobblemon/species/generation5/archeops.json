@@ -25,35 +25,26 @@
     "flying",
     "water_3"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:quickattack",
     "1:rockthrow",
     "1:wingattack",
     "8:doubleteam",
-    "11:scaryface",
+    "9:dragonbreath",
+    "12:ancientpower",
     "15:pluck",
-    "18:ancientpower",
-    "21:agility",
-    "25:quickguard",
+    "18:quickguard",
+    "21:uturn",
+    "24:rockslide",
+    "27:scaryface",
     "28:acrobatics",
-    "31:dragonbreath",
-    "35:crunch",
+    "30:crunch",
+    "33:agility",
     "36:tailwind",
-    "40:endeavor",
-    "45:uturn",
-    "51:rockslide",
-    "56:dragonclaw",
-    "61:thrash",
+    "41:dragonclaw",
+    "46:thrash",
+    "51:endeavor",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",

@@ -24,33 +24,37 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blaze_powder",
-        "percentage": 25
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.3
       }
-    ]
+    }
   },
   "moves": [
     "1:leer",
     "1:smokescreen",
     "1:tackle",
-    "12:ember",
-    "21:quickattack",
+    "10:ember",
+    "13:quickattack",
+    "20:flamewheel",
     "24:defensecurl",
-    "31:flamewheel",
+    "31:swift",
     "35:flamecharge",
-    "35:lavaplume",
-    "42:swift",
-    "46:rollout",
-    "53:doubleedge",
+    "42:lavaplume",
+    "46:flamethrower",
     "53:inferno",
-    "54:flamethrower",
-    "57:eruption",
+    "57:rollout",
+    "64:doubleedge",
     "68:burnup",
     "68:overheat",
+    "75:eruption",
     "tm:aerialace",
     "tm:attract",
     "tm:bodyslam",
@@ -167,20 +171,24 @@
     },
     {
       "id": "quilava_typhlosion",
-      "variant": "item_interact",
+      "variant": "level_up",
       "result": "typhlosion form=hisui",
       "consumeHeldItem": false,
       "learnableMoves": [
         "infernalparade"
       ],
-      "requirements": [],
-      "requiredContext": "cobblemon:fire_stone"
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 36
+        }
+      ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.7,
   "hitbox": {
     "width": 1,
-    "height": 1,
+    "height": 0.9,
     "fixed": false
   },
   "baseFriendship": 70,

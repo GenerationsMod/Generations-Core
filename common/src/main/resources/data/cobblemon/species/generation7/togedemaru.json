@@ -141,31 +141,22 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
+    "1:nuzzle",
     "1:tackle",
-    "1:thundershock",
     "5:defensecurl",
     "9:rollout",
-    "13:charge",
-    "17:spark",
-    "21:nuzzle",
-    "25:magnetrise",
-    "29:discharge",
-    "33:zingzap",
-    "37:electricterrain",
-    "41:wildcharge",
-    "45:pinmissile",
-    "49:spikyshield",
-    "53:fellstinger",
+    "10:charge",
+    "15:thundershock",
+    "20:fellstinger",
+    "25:spark",
+    "30:pinmissile",
+    "35:magnetrise",
+    "40:zingzap",
+    "45:discharge",
+    "50:electricterrain",
+    "55:wildcharge",
+    "60:spikyshield",
     "egg:disarmingvoice",
     "egg:encore",
     "egg:fakeout",

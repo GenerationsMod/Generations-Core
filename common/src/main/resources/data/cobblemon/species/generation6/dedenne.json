@@ -27,33 +27,24 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:seed",
-        "percentage": 25
-      }
-    ]
-  },
   "moves": [
-    "1:tackle",
+    "1:nuzzle",
     "1:tailwhip",
-    "7:thundershock",
-    "11:charge",
-    "14:charm",
-    "17:paraboliccharge",
-    "20:nuzzle",
+    "5:tackle",
+    "10:charge",
+    "15:thundershock",
+    "20:charm",
     "23:thunderwave",
-    "26:voltswitch",
-    "30:rest",
-    "31:snore",
+    "25:paraboliccharge",
+    "30:voltswitch",
     "34:chargebeam",
-    "39:entrainment",
-    "42:playrough",
-    "45:thunder",
-    "50:discharge",
+    "35:rest",
+    "35:snore",
+    "40:discharge",
+    "45:playrough",
     "50:superfang",
+    "55:entrainment",
+    "60:thunder",
     "egg:covet",
     "egg:eerieimpulse",
     "egg:helpinghand",

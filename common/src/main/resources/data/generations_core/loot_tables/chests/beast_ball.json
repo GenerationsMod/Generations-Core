@@ -19,7 +19,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:babiri_berry"
+				"name": "cobblemon:babiri_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -55,7 +55,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:charti_berry"
+				"name": "cobblemon:charti_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -67,11 +67,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:chople_berry"
+				"name": "cobblemon:chople_berry"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:colbur_berry"
+				"name": "cobblemon:colbur_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -95,7 +95,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:enigma_berry"
+				"name": "cobblemon:enigma_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -119,7 +119,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:ganlon_berry"
+				"name": "cobblemon:ganlon_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -127,15 +127,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:golden_nanab_berry"
+				"name": "cobblemon:heal_powder"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:heal_powder"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:jaboca_berry"
+				"name": "cobblemon:jaboca_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -147,7 +143,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:pomeg_berry"
+				"name": "cobblemon:pomeg_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -155,7 +151,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rawst_berry"
+				"name": "cobblemon:rawst_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -183,7 +179,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wepear_berry"
+				"name": "cobblemon:wepear_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -203,7 +199,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:yache_berry"
+				"name": "cobblemon:yache_berry"
 			},
 			{
 				"type": "minecraft:item",
@@ -259,15 +255,11 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:record_1"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:z_ingot"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:amethyst"
+				"name": "minecraft:amethyst_shard"
 			},
 			{
 				"type": "minecraft:item",
@@ -279,27 +271,43 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm44"
+				"name": "generations_core:belligerent_wing"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm78"
+				"name": "generations_core:lugia_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm100"
+				"name": "generations_core:lavender_town_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm115"
+				"name": "generations_core:mt_pyre_disc"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm156"
+				"name": "generations_core:tm_44"
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tm169"
+				"name": "generations_core:tm_78"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_100"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_115"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_156"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "generations_core:tm_169"
 			},
 			{
 				"type": "minecraft:item",

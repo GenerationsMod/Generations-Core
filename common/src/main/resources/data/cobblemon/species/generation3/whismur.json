@@ -25,28 +25,19 @@
     "monster",
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:energy_powder",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
+    "1:astonish",
     "1:pound",
-    "4:echoedvoice",
-    "5:uproar",
-    "11:astonish",
-    "15:howl",
-    "21:supersonic",
-    "25:stomp",
-    "31:screech",
-    "35:roar",
-    "41:rest",
-    "41:sleeptalk",
-    "41:synchronoise",
+    "5:echoedvoice",
+    "10:howl",
+    "15:rest",
+    "15:sleeptalk",
+    "21:stomp",
+    "25:roar",
+    "30:supersonic",
+    "35:uproar",
+    "40:screech",
+    "43:synchronoise",
     "45:hypervoice",
     "egg:circlethrow",
     "egg:disarmingvoice",

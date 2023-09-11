@@ -24,12 +24,8 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "2",
+    "amount": "1",
     "entries": [
-      {
-        "item": "minecraft:heart_of_the_sea",
-        "percentage": 50
-      },
       {
         "item": "generations_core:azelf_doll",
         "percentage": 75
@@ -38,19 +34,31 @@
   },
   "moves": [
     "1:confusion",
+    "1:lastresort",
+    "1:naturalgift",
     "1:rest",
     "6:imprison",
+    "7:swift",
+    "14:detect",
     "16:detect",
     "21:psybeam",
     "21:swift",
+    "28:imprison",
     "31:uproar",
+    "35:extrasensory",
     "36:futuresight",
+    "42:nastyplot",
     "46:nastyplot",
     "49:psychic",
+    "50:extrasensory",
     "51:extrasensory",
+    "56:uproar",
     "61:lastresort",
+    "63:futuresight",
     "66:naturalgift",
+    "70:lastresort",
     "76:explosion",
+    "77:explosion",
     "84:mysticalpower",
     "tm:acrobatics",
     "tm:allyswitch",

@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore;
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
+import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -10,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
+import net.minecraft.world.entity.Entity;
 
 import java.util.Collection;
 import java.util.function.BiConsumer;
@@ -41,6 +43,7 @@ public interface GenerationsImplementation {
 
         <T extends GenerationsNetworkPacket<?>> Packet<ClientGamePacketListener> asVanillaClientBound(T packet);
 
+        <T extends GenerationsNetworkPacket<?>, V extends Entity> void sendToAllTracking(T packet, V entity);
     }
 
     public enum Environment {

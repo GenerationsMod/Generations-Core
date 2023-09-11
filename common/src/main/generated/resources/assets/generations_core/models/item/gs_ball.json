@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/pokeballs/gs_ball"
+    "layer0": "generations_core:item/placeholder"
   }
 }

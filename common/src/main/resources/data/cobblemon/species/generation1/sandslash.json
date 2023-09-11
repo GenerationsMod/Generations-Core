@@ -23,12 +23,12 @@
       "light": "0-4"
     }
   },
-  "features": [
-    "alolan"
-  ],
   "catchRate": 90,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "alolan"
+  ],
   "forms": [
     {
       "name": "Alola",
@@ -63,15 +63,6 @@
       "eggGroups": [
         "field"
       ],
-      "drops": {
-        "amount": "1",
-        "entries": [
-          {
-            "item": "minecraft:sand",
-            "percentage": 20
-          }
-        ]
-      },
       "moves": [
         "1:blizzard",
         "1:defensecurl",
@@ -211,35 +202,26 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:sand",
-        "percentage": 20
-      }
-    ]
-  },
   "moves": [
+    "1:crushclaw",
     "1:defensecurl",
+    "1:poisonsting",
     "1:sandattack",
     "1:scratch",
-    "13:rapidspin",
-    "17:magnitude",
-    "17:poisonsting",
+    "9:rollout",
+    "12:furycutter",
+    "14:magnitude",
+    "15:rapidspin",
     "18:bulldoze",
-    "21:rollout",
-    "22:crushclaw",
-    "24:slash",
-    "28:furycutter",
-    "30:dig",
-    "33:swift",
-    "38:swordsdance",
-    "42:furyswipes",
-    "45:gyroball",
-    "46:earthquake",
-    "52:sandtomb",
-    "62:sandstorm",
+    "21:swift",
+    "26:furyswipes",
+    "31:sandtomb",
+    "36:slash",
+    "41:dig",
+    "46:gyroball",
+    "51:swordsdance",
+    "56:sandstorm",
+    "61:earthquake",
     "tm:aerialace",
     "tm:agility",
     "tm:amnesia",

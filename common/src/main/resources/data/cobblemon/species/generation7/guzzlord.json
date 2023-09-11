@@ -24,38 +24,29 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ultra_cyan",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
-    "1:belch",
     "1:bite",
     "1:dragonrage",
-    "1:stockpile",
-    "1:swallow",
-    "1:wideguard",
-    "7:stomp",
+    "1:dragontail",
+    "5:stockpile",
+    "5:swallow",
     "10:knockoff",
     "13:brutalswing",
+    "15:stomp",
     "19:steamroller",
-    "23:dragontail",
+    "20:stompingtantrum",
+    "25:wideguard",
     "29:irontail",
-    "31:stompingtantrum",
+    "30:crunch",
     "35:bodyslam",
-    "37:crunch",
-    "43:hammerarm",
-    "47:thrash",
-    "53:gastroacid",
-    "59:heavyslam",
+    "40:gastroacid",
+    "45:hammerarm",
+    "50:heavyslam",
+    "55:dragonrush",
+    "60:belch",
+    "65:thrash",
     "67:wringout",
     "70:gigaimpact",
-    "73:dragonrush",
     "tm:amnesia",
     "tm:bodypress",
     "tm:bodyslam",
