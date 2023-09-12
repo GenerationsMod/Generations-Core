@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#generations_core:generationsores",
+      "required": false
+    }
+  ]
+}
