@@ -9,6 +9,8 @@ architectury {
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
+sourceSets.main.get().resources.srcDir(project(":common").file("src/main/generated/resources").absolutePath)
+
 configurations {
     create("common")
     create("shadowCommon")
