@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Files;
@@ -28,7 +27,6 @@ public class ConfigLoader {
      * @param name       The name of the config file.
      * @return The config file.
      */
-    @ApiStatus.Internal
     public static <T> T loaderConfig(@NotNull Class<T> clazz, String subfolder, String name) {
         try {
             Path configPath = GenerationsCore.CONFIG_DIRECTORY.resolve(Path.of("generations", subfolder, name + ".json"));
