@@ -10,7 +10,7 @@ import generations.gg.generations.core.generationscore.network.packets.dialogue.
 import generations.gg.generations.core.generationscore.world.dialogue.DialogueGraph;
 import generations.gg.generations.core.generationscore.world.dialogue.Dialogues;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeTypes;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -74,7 +74,7 @@ public class ConfigureDialogueScreen extends Screen {
         );
 
         if (selectingNewNode)
-            addRenderableWidget(new NodeListWidget(width - 2, height - 2, 120, 20 + AbstractNodeAdapter.INSTANCE.getSize() * 10));
+            addRenderableWidget(new NodeListWidget(width - 2, height - 2, 120, 20 + AbstractNodeTypes.getSize() * 10));
         else addRenderableWidget(Button
                 .builder(Component.literal("+"), this::openNewNodeMenu)
                 .pos(width - 22, height - 22)

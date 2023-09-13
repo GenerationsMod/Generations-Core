@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
@@ -46,7 +47,7 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
 
             if (handler.isFull()) {
                 toggleActive();
-                PokemonUtil.spawn("regigigas", level, getBlockPos());
+                PokemonUtil.spawn(PokemonProperties.Companion.parse("regigigas", " ", "="), level, getBlockPos());
                 handler.clear();
                 toggleActive();
             }

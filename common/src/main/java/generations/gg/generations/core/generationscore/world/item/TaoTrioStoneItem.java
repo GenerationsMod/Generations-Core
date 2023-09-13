@@ -1,23 +1,22 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class TaoTrioStoneItem extends Item implements PostBattleUpdatingItem {
-    private final String species;
+    private final PokemonProperties species;
 
     public TaoTrioStoneItem(Properties arg, String species) {
         super(arg);
-        this.species = species;
+        this.species = GenerationsUtils.parseProperties(species);
     }
 
-    public String getSpecies() {
+    public PokemonProperties getSpecies() {
         return species;
     }
 

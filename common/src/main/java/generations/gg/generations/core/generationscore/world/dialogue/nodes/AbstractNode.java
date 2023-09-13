@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
+import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -33,11 +34,9 @@ public abstract class AbstractNode {
         return null;
     }
 
-    public void encode(@NotNull FriendlyByteBuf friendlyByteBuf) {
-        friendlyByteBuf.writeUtf(AbstractNodeAdapter.INSTANCE.getId(this));
-    }
+    public abstract void encode(@NotNull FriendlyByteBuf friendlyByteBuf);
 
-    public static AbstractNode decode(FriendlyByteBuf buf) {
-        return AbstractNodeAdapter.decode(buf);
-    }
+    public abstract void toJson(JsonObject json);
+
+    public abstract AbstractNodeType<?> type();
 }

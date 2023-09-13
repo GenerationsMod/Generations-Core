@@ -1,7 +1,10 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning;
 
-import com.mojang.serialization.Codec;
+import com.google.gson.JsonObject;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 
-public record YawLogicType<T extends YawLogic>(ResourceLocation id, Codec<T> codec, Class<? extends YawLogic> logicClass) {
+import java.util.function.Function;
+
+public record YawLogicType<T extends YawLogic>(ResourceLocation id, Function<JsonObject, T> codec, Function<FriendlyByteBuf, T> decoder) {
 }

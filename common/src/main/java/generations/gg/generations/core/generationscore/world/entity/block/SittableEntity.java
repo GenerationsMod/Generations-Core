@@ -44,7 +44,7 @@ public class SittableEntity extends Entity {
         return InteractionResult.SUCCESS;
     }
 
-    // Tick the entity and check if the block is removed or if there are no more passengers
+    // Tick the key and check if the block is removed or if there are no more passengers
     @Override
     public void tick() {
         super.tick();

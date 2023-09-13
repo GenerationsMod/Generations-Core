@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CSayDialoguePacket;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
@@ -10,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SayNode extends AbstractNode implements DialogueContainingNode{
+public class SayNode extends AbstractNode implements DialogueContainingNode {
     private final List<String> text;
     private final AbstractNode next;
 
@@ -38,16 +41,30 @@ public class SayNode extends AbstractNode implements DialogueContainingNode{
     }
 
     @Override
+    public AbstractNodeType<?> type() {
+        return AbstractNodeTypes.SAY;
+    }
+
+    @Override
     public void encode(@NotNull FriendlyByteBuf buf) {
-        super.encode(buf);
         buf.writeCollection(text, FriendlyByteBuf::writeUtf);
-        buf.writeNullable(next, (friendlyByteBuf, abstractNode) -> abstractNode.encode(friendlyByteBuf));
+        buf.writeNullable(next, AbstractNodeTypes::encode);
     }
 
     public static SayNode decode(FriendlyByteBuf buf) {
         return new SayNode(
                 buf.readList(FriendlyByteBuf::readUtf),
-                buf.readNullable(AbstractNode::decode)
+                buf.readNullable(AbstractNodeTypes::decode)
         );
+    }
+
+    @Override
+    public void toJson(JsonObject json) {
+        json.add("text", JsonUtils.toJsonList(text, JsonArray::add));
+        JsonUtils.toNullable("next", json, next, AbstractNodeTypes::toJson);
+    }
+
+    public static SayNode fromJson(JsonObject object) {
+        return new SayNode(JsonUtils.fromJsonList("next", object, JsonElement::getAsString), JsonUtils.fromNullable("next", object, AbstractNodeTypes::fromJson));
     }
 }

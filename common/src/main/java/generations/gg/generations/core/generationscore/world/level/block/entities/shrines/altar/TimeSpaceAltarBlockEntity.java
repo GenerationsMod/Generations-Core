@@ -4,6 +4,7 @@ import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.CreationTrioItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -56,7 +57,7 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         if (handler.shouldSpawn()) {
             var id = ((CreationTrioItem) handler.getItem(0).getItem()).getSpeciesId();
             toggleActive();
-            PokemonUtil.spawn(id, level, getBlockPos());
+            PokemonUtil.spawn(GenerationsUtils.parseProperties(id), level, getBlockPos());
             RedChainItem.incrementUsage(handler.getItem(1));
             if (RedChainItem.getUses(handler.getItem(1)) >= RedChainItem.MAX_USES)
                 handler.setItem(1, ItemStack.EMPTY);

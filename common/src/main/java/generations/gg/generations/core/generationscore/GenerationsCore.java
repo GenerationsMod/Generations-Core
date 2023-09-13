@@ -15,6 +15,9 @@ import generations.gg.generations.core.generationscore.api.data.GenerationsCoreE
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeTypes;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogicTypes;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogicTypes;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -26,7 +29,10 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
+
+import java.nio.file.Path;
 
 /**
  * The Main Class of the Generations-Core mod. (Common)
@@ -74,6 +80,9 @@ public class GenerationsCore
 		GenerationsTools.init();
 		GenerationsPaintings.init();
 		GenerationsContainers.init();
+		YawLogicTypes.init();
+		LocationLogicTypes.init();
+		AbstractNodeTypes.init();
 
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 

@@ -1,13 +1,11 @@
 package generations.gg.generations.core.generationscore.client.screen.dialgoue.configure;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.screen.AbstractHierarchicalWidget;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeTypes;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Tooltip;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +21,7 @@ public class NodeListWidget extends AbstractHierarchicalWidget {
         setX(getX() - getWidth());
         setY(getY() - getHeight());
         this.possibleNodes = new ArrayList<>();
-        possibleNodes.addAll(AbstractNodeAdapter.INSTANCE.getIds());
+        possibleNodes.addAll(AbstractNodeTypes.getIds());
     }
 
     @Override

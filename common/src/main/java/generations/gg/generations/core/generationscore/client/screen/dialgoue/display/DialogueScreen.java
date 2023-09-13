@@ -13,6 +13,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
 import org.lwjgl.glfw.GLFW;
 
@@ -51,19 +52,19 @@ public class DialogueScreen extends Screen {
         stack.pose().pushPose();
         RenderSystem.enableBlend();
         RenderSystem.setShaderColor(1, 1, 1, 1F);
-        ScreenUtils.drawTexture(stack, GenerationsCore.id("textures/gui/battle/message_box.png"), width / 2 - 340 / 2, height - 84, 0, 0, 340, 80, 340, 80);
-        stack.enableScissor(width / 2 - (340 / 2), height - 84, width / 2 + (340 / 2), height - 6);
+        ScreenUtils.drawTexture(stack, GenerationsCore.id("textures/gui/dialogue/message_box.png"), width / 2 - 170, height - 84, 0, 0, 340, 80, 340, 80);
+        stack.enableScissor(width / 2 - 170, height - 84, width / 2 + 170, height - 6);
         var y = height - 69;
 
         if (activeInfo != null) {
             for (var line : ConfigureStringListEntryScreen.DisplayCache.calculateMultilineFittingString(activeInfo.text(), 63)) {
                 var component = ScreenUtils.formatStringWithColorsToComponent(line);
-                stack.drawString(Minecraft.getInstance().font, component, width / 2 - 340 / 2 + 8, y, 0xFFFFFF);
+                stack.drawString(Minecraft.getInstance().font, component, width / 2 - 170 + 8, y, 0xFFFFFF);
                 y += 10;
             }
 
             if (activeInfo.renderArrow()) {
-                ScreenUtils.drawTexture(stack, GenerationsCore.id("textures/gui/dialogue/next_dialogue_arrow.png"), width / 2 + 340 / 2 - 30, (int) (height - 26/* + (Mth.sin(PokeModClient.GAME_TIME.getTime() * 0.2f) / 0.95f)*/), 0, 0, 10, 10, 10, 10);
+                ScreenUtils.drawTexture(stack, GenerationsCore.id("textures/gui/dialogue/next_dialogue_arrow.png"), width / 2 + 340 / 2 - 30, (int) (height - 26 * + (Mth.sin(partialTick * 0.2f) / 0.95f)), 0, 0, 10, 10, 10, 10);
             }
         } else {
             ScreenUtils.drawCenteredString(stack, Minecraft.getInstance().font, "Waiting for Server...", width / 2, y, 0xFF000000, false);

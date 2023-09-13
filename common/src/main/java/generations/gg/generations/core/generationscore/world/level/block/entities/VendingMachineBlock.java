@@ -1,11 +1,15 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
+import generations.gg.generations.core.generationscore.world.dialogue.DialogueGraph;
+import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.OpenShopNode;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DoubleDyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -37,8 +41,8 @@ public class VendingMachineBlock extends DoubleDyeableBlock<VendingMachineBlockE
 
     @Override
     protected InteractionResult serverUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-//        var graph = new DialogueGraph(new OpenShopNode(null)); //TODO: Shopes
-//        new DialoguePlayer(graph, null, (ServerPlayer) player, false);
+        var graph = new DialogueGraph(new OpenShopNode(null));
+        new DialoguePlayer(graph, null, (ServerPlayer) player, false);
         return InteractionResult.SUCCESS;
     }
 

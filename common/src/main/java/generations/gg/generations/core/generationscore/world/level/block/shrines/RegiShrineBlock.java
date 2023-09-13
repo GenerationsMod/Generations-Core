@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.RegiKeyItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
@@ -34,14 +36,14 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     private static final BiPredicate<Level, BlockPos> IS_PILLAR_PREDICATE = (level, pos) -> level.getBlockState(pos).is(GenerationsBlocks.CASTLE_PILLAR.get()); //TODO convert into tag
     private static final BiFunction<Level, BlockPos, String> FUNCTION = (level, pos) -> IS_PILLAR_PREDICATE.test(level, pos) ? symbolFromState(level.getBlockState(pos.above())).orElse("-") : "-";
     private static final BiFunction<String, Integer, String> SUBSTRING = (cipher, i) -> cipher.substring(i, i + 3);
-    private final String species;
+    private final PokemonProperties species;
     private final List<String> list;
 
     public RegiShrineBlock(Properties materialIn, ResourceLocation model, String species) {
         super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);
         var cipher = "-" + species.toUpperCase() + "-";
         list = IntStream.range(0, cipher.length() - 2).boxed().map(a -> SUBSTRING.apply(cipher, a)).collect(Collectors.toList());
-        this.species = species;
+        this.species = GenerationsUtils.parseProperties(species);
     }
 
     private static String getSymbolSequence(Level world, Direction facing, BlockPos pos) {

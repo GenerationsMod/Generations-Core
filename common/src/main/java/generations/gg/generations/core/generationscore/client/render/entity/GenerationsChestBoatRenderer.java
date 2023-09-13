@@ -23,7 +23,7 @@ public class GenerationsChestBoatRenderer extends BoatRenderer {
         super(context, false);
         this.shadowRadius = 0.8F;
         this.boatResources = Stream.of(GenerationsChestBoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap((p_173938_) -> p_173938_,
-                (type) -> Pair.of(GenerationsCore.id("textures/entity/chest_boat/"+ type.getName() + ".png"),
+                (type) -> Pair.of(GenerationsCore.id("textures/key/chest_boat/"+ type.getName() + ".png"),
                         new BoatModel(context.bakeLayer(new ModelLayerLocation(new ResourceLocation("minecraft", "chest_boat/oak"), "main"))))));
     }
 

@@ -63,6 +63,10 @@
 			},
 			{
 				"type": "minecraft:item",
+				"name": "cobblemon:growth_mulch"
+			},
+			{
+				"type": "minecraft:item",
 				"name": "generations_core:health_candy"
 			},
 			{

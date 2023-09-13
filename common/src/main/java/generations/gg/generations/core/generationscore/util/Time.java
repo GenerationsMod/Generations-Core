@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.util;
 
+import net.minecraft.network.FriendlyByteBuf;
 import org.jetbrains.annotations.Range;
 
 import java.time.Clock;
@@ -35,6 +36,16 @@ public class Time implements Comparable<Time> {
 
     public static Time now() {
         return Time.of(LocalTime.now());
+    }
+
+    public static Time decode(FriendlyByteBuf buffer) {
+        return of(buffer.readByte(), buffer.readByte(), buffer.readByte());
+    }
+
+    public void encode(FriendlyByteBuf buffer) {
+        buffer.writeByte(hour);
+        buffer.writeByte(minute);
+        buffer.writeByte(second);
     }
 
     public Time add(Time time) {

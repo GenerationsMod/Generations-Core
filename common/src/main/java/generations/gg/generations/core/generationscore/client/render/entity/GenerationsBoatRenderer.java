@@ -52,7 +52,7 @@ public class GenerationsBoatRenderer extends EntityRenderer<GenerationsBoatEntit
     }
 
     private static String getTextureLocation(GenerationsBoatEntity.Type type, boolean bl) {
-        return bl ? "textures/entity/chest_boat/" + type.getName() + ".png" : "textures/entity/boat/" + type.getName() + ".png";
+        return bl ? "textures/key/chest_boat/" + type.getName() + ".png" : "textures/key/boat/" + type.getName() + ".png";
     }
 
     public void render(GenerationsBoatEntity boat, float f, float g, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {

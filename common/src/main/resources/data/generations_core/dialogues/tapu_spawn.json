@@ -1,16 +1,56 @@
 {
   "root": {
-    "type": "choose",
+    "type": "generations_core:choose",
     "next": {
-      "Tapu Koko": {
-        "type": "spawn_pokemon",
-        "data": "charizard",
-        "location": {
-          "type": "block_entity",
+      "Tapu Bulu": {
+        "type": "generations_core:spawn_pokemon",
+        "maxTick": 20,
+        "pos": {
+          "type": "generations_core:block",
           "entry": "generations_core:tapu_shrine"
         },
+        "properties": "tapubulu level=70",
         "yaw": {
-          "type": "block_entity",
+          "type": "generations_core:block",
+          "entry": "generations_core:tapu_shrine"
+        }
+      },
+      "Tapu Fini": {
+        "type": "generations_core:spawn_pokemon",
+        "maxTick": 20,
+        "pos": {
+          "type": "generations_core:block",
+          "entry": "generations_core:tapu_shrine"
+        },
+        "properties": "tapufini level=70",
+        "yaw": {
+          "type": "generations_core:block",
+          "entry": "generations_core:tapu_shrine"
+        }
+      },
+      "Tapu Koko": {
+        "type": "generations_core:spawn_pokemon",
+        "maxTick": 20,
+        "pos": {
+          "type": "generations_core:block",
+          "entry": "generations_core:tapu_shrine"
+        },
+        "properties": "tapukoko level=70",
+        "yaw": {
+          "type": "generations_core:block",
+          "entry": "generations_core:tapu_shrine"
+        }
+      },
+      "Tapu Lele": {
+        "type": "generations_core:spawn_pokemon",
+        "maxTick": 20,
+        "pos": {
+          "type": "generations_core:block",
+          "entry": "generations_core:tapu_shrine"
+        },
+        "properties": "tapulele level=70",
+        "yaw": {
+          "type": "generations_core:block",
           "entry": "generations_core:tapu_shrine"
         }
       }

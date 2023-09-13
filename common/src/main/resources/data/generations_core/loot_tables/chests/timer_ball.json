@@ -371,6 +371,22 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:pokemail_wood"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:gooey_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:damp_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:surprise_mulch"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:growth_mulch"
 			}
 		]
 	}]

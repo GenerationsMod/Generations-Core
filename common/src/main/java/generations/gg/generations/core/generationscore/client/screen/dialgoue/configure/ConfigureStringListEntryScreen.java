@@ -196,7 +196,7 @@ public class ConfigureStringListEntryScreen extends Screen {
         stack.pose().pushPose();
         RenderSystem.enableBlend();
         RenderSystem.setShaderColor(1, 1, 1, 1F);
-        ScreenUtils.drawTexture(stack, GenerationsCore.id("textures/gui/battle/message_box.png"), width / 2 - 340 / 2, height - 84, 0, 0, 340, 80, 340, 80);
+        ScreenUtils.drawTexture(stack, GenerationsCore.id("textures/gui/dialogue/message_box.png"), width / 2 - 340 / 2, height - 84, 0, 0, 340, 80, 340, 80);
         stack.enableScissor(width / 2 - (340 / 2), height - 84, width / 2 + (340 / 2), height - 6);
         var y = height - 69;
 

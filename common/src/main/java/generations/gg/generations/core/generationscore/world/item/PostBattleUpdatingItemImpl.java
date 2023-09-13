@@ -1,11 +1,10 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
-import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -15,13 +14,13 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdatingItem {
-    private final String speciesId;
+    private final PokemonProperties speciesId;
     private final String lang;
     private final TriPredicate<PlayerBattleActor, ItemStack, BattleData> predicate;
 
     public PostBattleUpdatingItemImpl(Properties settings, String speciesId, String lang, TriPredicate<PlayerBattleActor, ItemStack, BattleData> predicate) {
         super(settings);
-        this.speciesId = speciesId;
+        this.speciesId = GenerationsUtils.parseProperties(speciesId);
         this.lang = lang;
         this.predicate = predicate;
     }

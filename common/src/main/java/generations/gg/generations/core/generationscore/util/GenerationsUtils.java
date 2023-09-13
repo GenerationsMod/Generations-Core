@@ -1,12 +1,19 @@
 package generations.gg.generations.core.generationscore.util;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import com.google.gson.*;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.JsonOps;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.joml.Vector3f;
 
+import java.lang.reflect.Type;
 import java.util.EnumSet;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
@@ -54,5 +61,32 @@ public class GenerationsUtils {
 
     public static <T, K, V> V processIfNotNull(T t, K k, BiFunction<T, K, V> function) {
         return t != null ? function.apply(t, k) : null;
+    }
+
+    public static <T> Serializer<T> codec(Codec<T> codec) {
+        return new Serializer<>(codec);
+    }
+
+    public static PokemonProperties parseProperties(String data) {
+        return PokemonProperties.Companion.parse(data, " ", "=");
+    }
+
+    //Because BiMap dump and pass null if new entry.
+    public static <K, V> V ensureMapReturn(Map<K, V> map, K key, V value) {
+        var output = map.put(key, value);
+        return output != null ? output : map.get(key);
+    }
+
+    public record Serializer<T>(Codec<T> codec) implements JsonSerializer<T>, JsonDeserializer<T> {
+
+        @Override
+        public T deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+            return JsonOps.INSTANCE.withDecoder(codec()).andThen(DataResult::result).apply(json).orElseThrow().getFirst();
+        }
+
+        @Override
+        public JsonElement serialize(T src, Type typeOfSrc, JsonSerializationContext context) {
+            return JsonOps.INSTANCE.withEncoder(codec()).andThen(DataResult::result).apply(src).orElseThrow();
+        }
     }
 }

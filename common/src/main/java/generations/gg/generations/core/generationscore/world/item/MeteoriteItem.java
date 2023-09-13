@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -10,6 +11,8 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class MeteoriteItem extends EnchantableItem {
+    private static final PokemonProperties properties = GenerationsUtils.parseProperties("deoxys attack");
+
     public MeteoriteItem(Properties arg) {
         super(arg);
     }
@@ -20,7 +23,7 @@ public class MeteoriteItem extends EnchantableItem {
             ItemStack stack = player.getItemInHand(usedHand);
 
             if (EnchantableItem.isEnchanted(stack)) {
-                PokemonUtil.spawn("deoxys attack", level, player.getOnPos());
+                PokemonUtil.spawn(properties, level, player.getOnPos());
                 stack.shrink(1);
 
                 return InteractionResultHolder.success(stack);

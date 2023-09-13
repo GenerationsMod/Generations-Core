@@ -1,29 +1,25 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
-import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.stream.Stream;
-
 public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdatingItem {
 
-    private final String speciesId;
+    private final PokemonProperties pokemonProperties;
 
     public LakeCrystalItem(Properties properties, String speciesId) {
         super(properties);
-        this.speciesId = speciesId;
+        this.pokemonProperties = GenerationsUtils.parseProperties(speciesId);
     }
 
     @Override
@@ -32,7 +28,7 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
             ItemStack stack = player.getItemInHand(usedHand);
 
             if (!isEnchanted(stack) && stack.getDamageValue() >= getMaxDamage()) {
-                PokemonUtil.spawn(speciesId, level, player.getOnPos());
+                PokemonUtil.spawn(pokemonProperties, level, player.getOnPos());
                 stack.getOrCreateTag().putBoolean("enchanted", true);
                 return InteractionResultHolder.success(stack);
             }

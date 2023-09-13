@@ -5,18 +5,14 @@ import com.cobblemon.mod.common.api.data.JsonDataRegistry;
 import com.cobblemon.mod.common.api.reactive.SimpleObservable;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.dialogue.network.DialogueGraphRegistrySyncPacket;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeAdapter;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogic;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogicAdapter;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogic;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogicAdapter;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.apache.commons.io.FilenameUtils;
 import org.jetbrains.annotations.NotNull;
@@ -29,9 +25,6 @@ public class Dialogues implements JsonDataRegistry<DialogueGraph> {
     private static final ResourceLocation id = GenerationsCore.id("dialogues");
 
     private static final Gson gson = new GsonBuilder()
-            .registerTypeAdapter(AbstractNode.class, AbstractNodeAdapter.INSTANCE)
-            .registerTypeAdapter(LocationLogic.class, LocationLogicAdapter.INSTANCE)
-            .registerTypeAdapter(YawLogic.class, new YawLogicAdapter())
             .serializeNulls()
             .create();
 
@@ -59,7 +52,7 @@ public class Dialogues implements JsonDataRegistry<DialogueGraph> {
 
     @NotNull
     @Override
-    public TypeToken<generations.gg.generations.core.generationscore.world.dialogue.DialogueGraph> getTypeToken() {
+    public TypeToken<DialogueGraph> getTypeToken() {
         return typeToken;
     }
 
@@ -108,15 +101,21 @@ public class Dialogues implements JsonDataRegistry<DialogueGraph> {
     @Override
     public void reload(@NotNull ResourceManager manager) {
         var data = new HashMap<ResourceLocation, DialogueGraph>();
-        manager.listResources(this.getResourcePath(), path -> path.toString().endsWith(".json")).forEach((identifier, resource) -> {
+        var map = manager.listResources(this.getResourcePath(), path -> path.toString().endsWith(".json")).entrySet();
+
+        for (Map.Entry<ResourceLocation, Resource> entry : map) {
+            ResourceLocation identifier = entry.getKey();
+            Resource resource = entry.getValue();
             try (var reader = resource.openAsReader()) {
                 var resolvedIdentifier = new ResourceLocation(identifier.getNamespace(), FilenameUtils.removeExtension(Path.of(identifier.getPath()).getFileName().toString()));
-
-                data.put(resolvedIdentifier, gson.fromJson(reader, typeToken));
+                var json = gson.fromJson(reader, JsonObject.class);
+                if(!json.has("root")) return;
+                var graph = new DialogueGraph(json.getAsJsonObject("root"));
+                data.put(resolvedIdentifier, graph);
             } catch (Exception exception) {
                 throw new RuntimeException("Error loading JSON for data: %s".formatted(identifier), exception);
             }
-        });
+        }
 
         this.reload(data);
     }

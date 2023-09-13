@@ -1,0 +1,60 @@
+{
+  "root": {
+    "type": "generations_core:choose",
+    "next": {
+      "Enamorus": {
+        "type": "generations_core:spawn_pokemon",
+        "maxTick": 20,
+        "pos": {
+          "type": "generations_core:block",
+          "entry": "generations_core:abundant_shrine"
+        },
+        "properties": "enamorus level=70",
+        "yaw": {
+          "type": "generations_core:block",
+          "entry": "generations_core:abundant_shrine"
+        }
+      },
+      "Landorus": {
+        "type": "generations_core:spawn_pokemon",
+        "maxTick": 20,
+        "pos": {
+          "type": "generations_core:block",
+          "entry": "generations_core:abundant_shrine"
+        },
+        "properties": "landorus level=70",
+        "yaw": {
+          "type": "generations_core:block",
+          "entry": "generations_core:abundant_shrine"
+        }
+      },
+      "Thundurus": {
+        "type": "generations_core:spawn_pokemon",
+        "maxTick": 20,
+        "pos": {
+          "type": "generations_core:block",
+          "entry": "generations_core:abundant_shrine"
+        },
+        "properties": "thundurus level=70",
+        "yaw": {
+          "type": "generations_core:block",
+          "entry": "generations_core:abundant_shrine"
+        }
+      },
+      "Tornadus": {
+        "type": "generations_core:spawn_pokemon",
+        "maxTick": 20,
+        "pos": {
+          "type": "generations_core:block",
+          "entry": "generations_core:abundant_shrine"
+        },
+        "properties": "tornadus level=70",
+        "yaw": {
+          "type": "generations_core:block",
+          "entry": "generations_core:abundant_shrine"
+        }
+      }
+    },
+    "question": "Choose which Tapu to Spawn:"
+  }
+}

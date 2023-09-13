@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
@@ -23,10 +25,11 @@ import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
 public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
-    private final String pokeEntryId;
     private final RegistrySupplier<Item> imbuedItem;
     @Nullable
     private final RegistrySupplier<Item> galarianImbuedItem;
+    private final PokemonProperties regularProperties;
+    private final PokemonProperties galarianProperties;
 
     public BirdShrineBlock(BlockBehaviour.Properties materialIn, ResourceLocation model, String pokeEntryId, RegistrySupplier<Item> imbuedItem) {
         this(materialIn, model, pokeEntryId, imbuedItem, null);
@@ -34,9 +37,10 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
     public BirdShrineBlock(Properties materialIn, ResourceLocation model, String pokeEntryId, RegistrySupplier<Item> imbuedItem, @Nullable RegistrySupplier<Item> galarianImbuedItem) {
         super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);
-        this.pokeEntryId = pokeEntryId;
         this.imbuedItem = imbuedItem;
         this.galarianImbuedItem = galarianImbuedItem;
+        this.regularProperties = GenerationsUtils.parseProperties(pokeEntryId);
+        this.galarianProperties = GenerationsUtils.parseProperties(pokeEntryId + " galarian");
     }
 
     @Override
@@ -47,14 +51,14 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
             if (MelodyFluteItem.isFlute(stack)) {
                 var imbuedStack = MelodyFluteItem.getImbuedItem(stack);
                 if (imbuedStack.isEmpty()) return InteractionResult.PASS;
-                var form = getForm(imbuedStack);
+                var pokemonProperties = getProperties(imbuedStack);
                 var entity = level.getBlockEntity(hit.getBlockPos());
 
-                if (entity instanceof ShrineBlockEntity shrine && !shrine.isActive() && stack.getDamageValue() >= stack.getMaxDamage() && form != null) {
+                if (entity instanceof ShrineBlockEntity shrine && !shrine.isActive() && stack.getDamageValue() >= stack.getMaxDamage() && pokemonProperties != null) {
                     shrine.toggleActive();
                     stack.shrink(1);
 
-                    PokemonUtil.spawn(pokeEntryId, level, entity.getBlockPos()); //TODO: Sort out using galrian form.
+                    PokemonUtil.spawn(pokemonProperties, level, entity.getBlockPos());
 
                     ScheduledTask.schedule(shrine::toggleActive, 150);
                     return InteractionResult.SUCCESS;
@@ -65,11 +69,11 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
         return InteractionResult.PASS;
     }
 
-    public String getForm(ItemStack stack) {
+    public PokemonProperties getProperties(ItemStack stack) {
         if (MelodyFluteItem.isItem(imbuedItem, stack)) {
-            return "none";
+            return regularProperties;
         } else if (galarianImbuedItem != null && MelodyFluteItem.isItem(galarianImbuedItem, stack)) {
-            return "galarian";
+            return galarianProperties;
         } else {
             return null;
         }

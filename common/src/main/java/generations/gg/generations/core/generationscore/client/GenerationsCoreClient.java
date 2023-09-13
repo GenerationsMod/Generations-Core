@@ -160,7 +160,7 @@ public class GenerationsCoreClient {
     }
 
     /**
-     * Registers the entity renderers.
+     * Registers the key renderers.
      * @see GenerationsEntities
      */
     public static void registerEntityRenderers(BiConsumer<EntityType<? extends Entity>, EntityRendererProvider> consumer) {
@@ -173,7 +173,7 @@ public class GenerationsCoreClient {
     }
 
     /**
-     * Registers the block entity renderers.
+     * Registers the block key renderers.
      * @see BlockEntityRenderers
      * @see GenerationsBlockEntities
      */

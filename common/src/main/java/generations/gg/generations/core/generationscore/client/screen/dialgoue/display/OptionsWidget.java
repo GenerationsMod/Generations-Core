@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.screen.dialgoue.display;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
@@ -9,7 +8,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.network.chat.Component;
@@ -22,6 +20,7 @@ import java.util.function.Consumer;
 
 public class OptionsWidget extends AbstractWidget {
     private static final ResourceLocation CHOICE_ARROW = GenerationsCore.id("textures/gui/dialogue/choice_arrow.png");
+    private static final ResourceLocation MESSAGE_BOX = GenerationsCore.id("textures/gui/dialogue/message_box.png");
     private final List<String> options;
     private final Consumer<String> onPicked;
     private String hovered;
@@ -51,10 +50,10 @@ public class OptionsWidget extends AbstractWidget {
         stack.pose().pushPose();
         RenderSystem.enableBlend();
         RenderSystem.setShaderColor(1, 1, 1, 1F);
-        var texture = GenerationsCore.id("textures/gui/battle/message_box.png");
-        ScreenUtils.drawTexture(stack, texture, getX() - getWidth(), getY() - getHeight(), 0, 0, getWidth(), 2, getWidth(), 20); // Top 3 Slice
-        ScreenUtils.drawTexture(stack, texture, getX() - getWidth(), getY() - getHeight() + 2, 0, 50, getWidth(), getHeight() - 4, getWidth(), getHeight() * 4); // Top 3 Slice
-        ScreenUtils.drawTexture(stack, texture, getX() - getWidth(), getY() - 2, 0, -2, getWidth(), 2, getWidth(), 20); // Top 3 Slice
+
+        ScreenUtils.drawTexture(stack, MESSAGE_BOX, getX() - getWidth(), getY() - getHeight(), 0, 0, getWidth(), 2, getWidth(), 20); // Top 3 Slice
+        ScreenUtils.drawTexture(stack, MESSAGE_BOX, getX() - getWidth(), getY() - getHeight() + 2, 0, 50, getWidth(), getHeight() - 4, getWidth(), getHeight() * 4); // Top 3 Slice
+        ScreenUtils.drawTexture(stack, MESSAGE_BOX, getX() - getWidth(), getY() - 2, 0, -2, getWidth(), 2, getWidth(), 20); // Top 3 Slice
 
         int y = getY() - getHeight() - 4;
         for (var option : options) {
@@ -62,9 +61,8 @@ public class OptionsWidget extends AbstractWidget {
         }
 
         if(hovered != null) {
-            texture = CHOICE_ARROW;
+            ScreenUtils.drawTexture(stack, CHOICE_ARROW, (int) (getX() - getWidth() + 4 + Mth.sin(partialTick * 0.2f) / 0.95f), getY() - getHeight() + 5 + options.indexOf(hovered) * 10, 0, 0, 8, 8, 8, 8);
         }
-        ScreenUtils.drawTexture(stack, texture, (int) (getX() - getWidth() /*+ 4 + Mth.sin(GenerationsCoreClient.GAME_TIME.getTime() * 0.2f)*/ / 0.95f), getY() - getHeight() + 5 + options.indexOf(hovered) * 10, 0, 0, 8, 8, 8, 8);
 
         stack.pose().popPose();
     }

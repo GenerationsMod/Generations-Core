@@ -9,7 +9,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.DataRegistrySyncPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.DialogueGraph;
 import generations.gg.generations.core.generationscore.world.dialogue.Dialogues;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 
@@ -29,12 +29,12 @@ public class DialogueGraphRegistrySyncPacket extends DataRegistrySyncPacket<Dial
 
     @Override
     public void encodeEntry(FriendlyByteBuf buffer, DialogueGraph entry) {
-        entry.root().encode(buffer);
+        AbstractNodeTypes.encode(buffer, entry.root());
     }
 
     @Override
     public DialogueGraph decodeEntry(FriendlyByteBuf buffer) {
-        return new DialogueGraph(AbstractNode.decode(buffer));
+        return new DialogueGraph(AbstractNodeTypes.decode(buffer));
     }
 
     @Override

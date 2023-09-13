@@ -65,9 +65,9 @@ public class GenerationsDataProvider implements DataProvider {
 
     public <T extends DataRegistry> T register(T registry) {
         // Only send message once
-        if (this.registries.isEmpty()) {
-            LOGGER.info("Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.");
-        }
+//        if (this.registries.isEmpty()) {
+//            LOGGER.info("Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.");
+//        }
         this.registries.add(registry);
         LOGGER.info("Registered the {} registry", registry.getId().toString());
         LOGGER.debug("Registered the {} registry of class {}", registry.getId().toString(), registry.getClass().getCanonicalName());

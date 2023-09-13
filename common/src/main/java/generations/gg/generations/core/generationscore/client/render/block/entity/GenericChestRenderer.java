@@ -91,7 +91,7 @@ public class GenericChestRenderer implements BlockEntityRenderer<GenericChestBlo
 
     static {
         map = Util.make(new HashMap<>(), map -> {
-            Consumer<String> consumer = (id) -> map.put(id, new Material(Sheets.CHEST_SHEET, GenerationsCore.id("entity/chest/" + id)));
+            Consumer<String> consumer = (id) -> map.put(id, new Material(Sheets.CHEST_SHEET, GenerationsCore.id("key/chest/" + id)));
             consumer.accept("pokeball_chest");
             consumer.accept("greatball_chest");
             consumer.accept("ultraball_chest");

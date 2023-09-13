@@ -74,11 +74,11 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     }
 
 //    fun onLogin(event: PlayerEvent.PlayerLoggedInEvent) {
-//        this.hasBeenSynced.add(event.entity.uuid)
+//        this.hasBeenSynced.add(event.key.uuid)
 //    }
 //
 //    fun onLogout(event: PlayerEvent.PlayerLoggedOutEvent) {
-//        this.hasBeenSynced.remove(event.entity.uuid)
+//        this.hasBeenSynced.remove(event.key.uuid)
 //    }
 
     @Override

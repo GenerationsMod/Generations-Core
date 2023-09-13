@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CHealDialoguePacket;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
@@ -9,17 +12,18 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HealNode extends AbstractNode implements DialogueContainingNode{
+public class HealNode extends AbstractNode implements DialogueContainingNode {
     private final List<String> text;
     private final boolean healerRequired;
     private final int radius;
     private final AbstractNode next;
 
-    public HealNode(List<String> text, boolean healerRequired, int radius, AbstractNode next) {
+    public HealNode(List<String> text, boolean healerRequired, int radius, @Nullable AbstractNode next) {
         this.text = text;
         this.healerRequired = healerRequired;
         this.radius = radius;
@@ -73,12 +77,16 @@ public class HealNode extends AbstractNode implements DialogueContainingNode{
     }
 
     @Override
+    public AbstractNodeType<?> type() {
+        return AbstractNodeTypes.HEAL;
+    }
+
+    @Override
     public void encode(@NotNull FriendlyByteBuf friendlyByteBuf) {
-        super.encode(friendlyByteBuf);
         friendlyByteBuf.writeCollection(text, FriendlyByteBuf::writeUtf);
         friendlyByteBuf.writeBoolean(healerRequired);
         friendlyByteBuf.writeInt(radius);
-        friendlyByteBuf.writeNullable(next, (friendlyByteBuf1, abstractNode) -> abstractNode.encode(friendlyByteBuf1));
+        friendlyByteBuf.writeNullable(next, AbstractNodeTypes::encode);
     }
 
     public static HealNode decode(FriendlyByteBuf buf) {
@@ -86,7 +94,19 @@ public class HealNode extends AbstractNode implements DialogueContainingNode{
                 buf.readCollection(ArrayList::new, FriendlyByteBuf::readUtf),
                 buf.readBoolean(),
                 buf.readInt(),
-                buf.readNullable(AbstractNode::decode)
+                buf.readNullable(AbstractNodeTypes::decode)
         );
+    }
+
+    @Override
+    public void toJson(JsonObject json) {
+        json.add("text", JsonUtils.toJsonList(text, JsonArray::add));
+        json.addProperty("healerRequired", healerRequired);
+        json.addProperty("radius", radius);
+        JsonUtils.toNullable("next", json, next, AbstractNodeTypes::toJson);
+    }
+
+    public static HealNode fromJson(JsonObject object) {
+        return new HealNode(JsonUtils.fromJsonList("next", object, JsonElement::getAsString), object.getAsJsonPrimitive("healerRequired").getAsBoolean(), object.getAsJsonPrimitive("radius").getAsInt(), JsonUtils.fromNullable("next", object, AbstractNodeTypes::fromJson));
     }
 }

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.pokemon.Pokemon;
@@ -9,6 +10,7 @@ import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsChestBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.TieredFishingHookEntity;
@@ -947,9 +949,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> UNENCHANTED_SHADEROOT_CARROT = register("unenchanted_shaderoot_carrot", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHADEROOT_CARROT = register("shaderoot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("spectrier"), UNENCHANTED_SHADEROOT_CARROT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ENIGMA_STONE = register("enigma_stone", properties -> new DistanceTraveledImplItem(properties.stacksTo(1), 3000) {
+        private PokemonProperties latias = GenerationsUtils.parseProperties("latias");
+        private PokemonProperties latios = GenerationsUtils.parseProperties("latios");
+
         @Override
         protected void onCompletion(ServerLevel level, Player player, InteractionHand usedHand) {
-            var species = Math.random() > 0.5 ? "latias" : "latios";
+            var species = Math.random() > 0.5 ? latias : latios;
             PokemonUtil.spawn(species, level, player.getOnPos());
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);

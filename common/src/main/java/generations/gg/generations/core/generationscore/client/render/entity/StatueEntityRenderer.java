@@ -26,7 +26,7 @@ import org.joml.Matrix4f;
 import static net.minecraft.client.renderer.texture.MissingTextureAtlasSprite.getTexture;
 
 public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, EntityModel<StatueEntity>> {
-    public static final ResourceLocation CONCRETE = GenerationsCore.id("textures/entity/statue_material/concrete.png");
+    public static final ResourceLocation CONCRETE = GenerationsCore.id("textures/key/statue_material/concrete.png");
     public StatueEntityRenderer(EntityRendererProvider.Context arg) {
         super(arg, null, 0.0f);
     }
@@ -52,7 +52,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         stack.scale(scale, scale, scale);
         var state = entity.delegate;
 
-//        entity.delegate.getInstance().setVariant("statue:concrete");
+//        key.delegate.getInstance().setVariant("statue:concrete");
 
         var pose = model.getPose(PoseType.PROFILE);
         if(pose != null) state.setPose(pose.getPoseName());
@@ -82,7 +82,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
             this.renderNameTag(entity, entity.getDisplayName(), stack, buffer, light);
         }
 
-//        super.render(entity, entityYaw, partialTicks, stack, buffer, light);
+//        super.render(key, entityYaw, partialTicks, stack, buffer, light);
     }
 
 //    @Override

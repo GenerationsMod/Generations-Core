@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
+import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CChooseDialoguePacket;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
@@ -10,9 +11,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
 public class ChooseNode extends AbstractNode implements DialogueContainingNode, ResponseTakingNode {
-
     private final String question;
     private final Map<String, AbstractNode> next;
     public transient String response;
@@ -50,16 +51,30 @@ public class ChooseNode extends AbstractNode implements DialogueContainingNode, 
     }
 
     @Override
+    public AbstractNodeType<?> type() {
+        return AbstractNodeTypes.CHOOSE;
+    }
+
+    @Override
     public void encode(@NotNull FriendlyByteBuf buf) {
-        super.encode(buf);
         buf.writeUtf(question);
-        buf.writeMap(next, FriendlyByteBuf::writeUtf, (friendlyByteBuf, abstractNode) -> abstractNode.encode(friendlyByteBuf));
+        buf.writeMap(next, FriendlyByteBuf::writeUtf, AbstractNodeTypes::encode);
+    }
+
+    @Override
+    public void toJson(JsonObject json) {
+        json.addProperty("question", question);
+        json.add("next", JsonUtils.toJson(next, Function.identity(), AbstractNodeTypes::toJson));
+    }
+
+    public static ChooseNode fromJson(JsonObject jsonObject) {
+        return new ChooseNode(jsonObject.getAsJsonPrimitive("question").getAsString(), JsonUtils.fromJson(jsonObject.getAsJsonObject("next"), Function.identity(), jsonElement -> AbstractNodeTypes.fromJson(jsonElement.getAsJsonObject())));
     }
 
     public static ChooseNode decode(FriendlyByteBuf buf) {
         return new ChooseNode(
                 buf.readUtf(),
-                buf.readMap(FriendlyByteBuf::readUtf, AbstractNode::decode)
+                buf.readMap(FriendlyByteBuf::readUtf, AbstractNodeTypes::decode)
         );
     }
 }
