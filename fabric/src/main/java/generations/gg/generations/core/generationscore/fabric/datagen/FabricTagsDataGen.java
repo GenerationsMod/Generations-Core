@@ -12,6 +12,11 @@ import net.minecraft.core.HolderLookup;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Fabric Data Generator for Generations Tags
+ * @author J.T. McQuigg
+ * @see DataGen
+ */
 public class FabricTagsDataGen {
     public static void init(FabricDataGenerator.Pack pack) {
         pack.addProvider(BlockTagsProvider::new);
@@ -19,6 +24,10 @@ public class FabricTagsDataGen {
     }
 }
 
+/**
+ * Fabric Block Tag Provider for Generations Tags
+ * @see FabricTagProvider.BlockTagProvider
+ */
 class BlockTagsProvider extends FabricTagProvider.BlockTagProvider {
     public BlockTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
@@ -26,11 +35,15 @@ class BlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        getOrCreateTagBuilder(ConventionalBlockTags.ORES).addOptionalTag(GenerationsBlockTags.GENERATIONSORES);
+        getOrCreateTagBuilder(ConventionalBlockTags.ORES).forceAddTag(GenerationsBlockTags.GENERATIONSORES);
         getOrCreateTagBuilder(ConventionalBlockTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get());
     }
 }
 
+/**
+ * Fabric Item Tag Provider for Generations Tags
+ * @see FabricTagProvider.ItemTagProvider
+ */
 class ItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
     public ItemTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
@@ -39,7 +52,7 @@ class ItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        getOrCreateTagBuilder(ConventionalItemTags.ORES).addOptionalTag(GenerationsItemTags.GENERATIONSORES);
+        getOrCreateTagBuilder(ConventionalItemTags.ORES).forceAddTag(GenerationsItemTags.GENERATIONSORES);
         getOrCreateTagBuilder(ConventionalItemTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get().asItem());
     }
 }
