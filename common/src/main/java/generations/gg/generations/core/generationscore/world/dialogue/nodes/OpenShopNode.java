@@ -2,8 +2,12 @@ package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
 import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.api.player.PlayerMoneyHandler;
+import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.shop.S2COpenShopPacket;
+import generations.gg.generations.core.generationscore.network.packets.shop.S2CSyncPlayerMoneyPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
+import generations.gg.generations.core.generationscore.world.entity.PlayerNpcEntity;
 import generations.gg.generations.core.generationscore.world.entity.ShopOfferProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -19,17 +23,18 @@ public class OpenShopNode extends AbstractNode {
 
     @Override
     public void run(ServerPlayer player, DialoguePlayer dialoguePlayer) {
-//        if (dialoguePlayer.getSource() instanceof PlayerNpcEntity npcEntity) {
-//            PokeModNetworking.sendPacket(new S2COpenShopPacket(npcEntity.getId()), player);
-//        } else {
+        if (dialoguePlayer.getSource() instanceof PlayerNpcEntity npcEntity) {
+            GenerationsNetwork.INSTANCE.sendPacketToPlayer(player, new S2COpenShopPacket(npcEntity.getId()));
+        } else {
             var optional = BlockPos.withinManhattanStream(player.getOnPos(), 10, 10, 10).filter(a -> player.level().getBlockEntity(a) instanceof ShopOfferProvider).findFirst();
 
             if (optional.isPresent()) {
+                GenerationsCore.implementation.getNetworkManager().sendPacketToPlayer(player, new S2CSyncPlayerMoneyPacket(PlayerMoneyHandler.of(player).balance()));
                 GenerationsCore.implementation.getNetworkManager().sendPacketToPlayer(player, new S2COpenShopPacket(optional.get()));
             } else {
                 dialoguePlayer.nextNode();
             }
-//        }
+        }
     }
 
     @Override

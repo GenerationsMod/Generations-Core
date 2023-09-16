@@ -8,6 +8,8 @@ import dev.architectury.utils.Env;
 import dev.architectury.utils.EnvExecutor;
 import generations.gg.generations.core.generationscore.network.packets.S2CUnlockReloadPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.Dialogues;
+import generations.gg.generations.core.generationscore.world.shop.ShopPresets;
+import generations.gg.generations.core.generationscore.world.shop.Shops;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import net.minecraft.resources.ResourceLocation;
@@ -37,6 +39,8 @@ public class GenerationsDataProvider implements DataProvider {
 
     public void registerDefaults() {
         this.register(Dialogues.instance());
+        this.register(Shops.instance());
+        this.register(ShopPresets.instance());
 
         PlatformEvents.SERVER_PLAYER_LOGOUT.subscribe(Priority.HIGH, it -> {
             synchronizedPlayerIds.remove(it.getPlayer().getUUID());

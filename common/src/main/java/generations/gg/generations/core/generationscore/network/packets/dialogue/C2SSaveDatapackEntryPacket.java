@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.api.data.datapack.DatapackSaver;
 import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
 import net.minecraft.network.FriendlyByteBuf;
@@ -39,7 +40,12 @@ public record C2SSaveDatapackEntryPacket(ResourceLocation location, String data)
 
         @Override
         public void handle(C2SSaveDatapackEntryPacket packet, MinecraftServer server, ServerPlayer player) {
-//            TODO("Not yet implemented"); //TODO Implement datapack updating.
+            if (player.hasPermissions(4)) { // Operators only can change configs. Too dangerous. TODO: look into forge's PermissionsAPI class?
+                var namespace = packet.location.getNamespace().equals("minecraft") ? "" : ("/" + packet.location.getNamespace());
+                DatapackSaver.savePokemodData(server, path -> path.resolve("generated" + namespace + "/" + packet.location.getPath()), packet.data);
+            } else {
+                GenerationsCore.LOGGER.warn("{} tried saving config data without permission. This player is probably cheating or this is a bug.", player);
+            }
         }
     }
 }

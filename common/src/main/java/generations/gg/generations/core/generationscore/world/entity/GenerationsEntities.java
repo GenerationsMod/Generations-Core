@@ -4,26 +4,19 @@ import dev.architectury.registry.level.entity.EntityAttributeRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.world.entity.block.MagmaCrystalEntity;
 import generations.gg.generations.core.generationscore.world.entity.block.SittableEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.level.Level;
-import org.apache.http.client.entity.EntityBuilder;
-
-import java.util.function.Supplier;
 
 public class GenerationsEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ENTITY_TYPE);
 
 //    public static final RegistrySupplier<EntityType<PixelmonEntity>> PIXELMON = createEntityType("pixelmon", MobCategory.CREATURE, 0.6f, 1.8f, PixelmonEntity::new);
 //    public static final RegistrySupplier<EntityType<StarterPickEntity>> STARTER_PICK = createEntityType("starter_pick", MobCategory.CREATURE, 0.6f, 0.6f, StarterPickEntity::new);
-//    public static final RegistrySupplier<EntityType<PlayerNpcEntity>> PLAYER_NPC = createEntityType("player_npc", MobCategory.MISC, 0.6f, 1.8f, PlayerNpcEntity::new);
+    public static final RegistrySupplier<EntityType<PlayerNpcEntity>> PLAYER_NPC = createEntityType("player_npc", MobCategory.MISC, 0.6f, 1.8f, PlayerNpcEntity::new);
 //    public static final RegistrySupplier<EntityType<PokeBallEntity>> POKEBALL_ENTITY = createEntityType("pokeball", MobCategory.MISC, 0.2f, 0.2f, PokeBallEntity::new);
     public static final RegistrySupplier<EntityType<SittableEntity>> SEAT = createEntityType("seat", MobCategory.MISC, 0.0f, 0.0f, SittableEntity::new);
 //    public static final RegistrySupplier<EntityType<StatueEntity>> STATUE = createEntityType("statue", MobCategory.MISC, 1.0f, 1.0f, StatueEntity::new);
@@ -47,8 +40,10 @@ public class GenerationsEntities {
         GenerationsCore.LOGGER.info("Registering Generations entities");
         ENTITIES.register();
         EntityAttributeRegistry.register(STATUE_ENTITY, StatueEntity::createLivingAttributes);
+        EntityAttributeRegistry.register(PLAYER_NPC, PlayerNpcEntity::createMobAttributes);
 //        eventBus.addListener(PokeModEntities::registerEntityAttributes);
     }
+
 
 //    private static void registerEntityAttributes(EntityAttributeCreationEvent event) {
 //        event.put(PIXELMON.get(), PixelmonEntity.createMobAttributes().build());

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.screen.widget;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
@@ -62,7 +61,9 @@ public class ScrollableMultiLineTextBox extends AbstractWidget {
         if (this.isHovered && this.maxScroll > 0) {
             renderScrollBar(guiGraphics);
         }
-        ScreenUtils.renderCutoff(guiGraphics, getX(), getY(), width, height, this::renderParagraphs);
+        this.renderParagraphs(guiGraphics);
+
+//        ScreenUtils.renderCutoff(guiGraphics, getX(), getY(), width, height, this::renderParagraphs);
     }
 
     public void clearParagraphs() {

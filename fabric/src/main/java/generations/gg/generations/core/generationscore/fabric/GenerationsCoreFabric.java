@@ -34,6 +34,9 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
         GenerationsCore.init(this);
         VanillaCompat.setup();
 
+        this.getNetworkManager().registerClientBound();
+        this.getNetworkManager().registerServerBound();
+
         ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, isLogin) -> {
             if (isLogin)
                 GenerationsCore.dataProvider.sync(player);

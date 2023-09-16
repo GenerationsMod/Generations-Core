@@ -1,0 +1,73 @@
+{
+  "entries": [
+    {
+      "amount": 1,
+      "buyPrice": 200,
+      "description": "Fresh Water",
+      "item": {
+        "Count": 1,
+        "id": "generations_core:fresh_water"
+      },
+      "order": 0,
+      "priceVariation": 0.0,
+      "sellPrice": 0,
+      "weight": 1
+    },
+    {
+      "amount": 1,
+      "buyPrice": 300,
+      "description": "Soda Pop",
+      "item": {
+        "Count": 1,
+        "id": "generations_core:soda_pop"
+      },
+      "order": 1,
+      "priceVariation": 0.0,
+      "sellPrice": 0,
+      "weight": 1
+    },
+    {
+      "amount": 1,
+      "buyPrice": 350,
+      "description": "Lemonade",
+      "item": {
+        "Count": 1,
+        "id": "generations_core:lemonade"
+      },
+      "order": 2,
+      "priceVariation": 0.0,
+      "sellPrice": 0,
+      "weight": 1
+    },
+    {
+      "amount": 1,
+      "buyPrice": 500,
+      "description": "Moomoo Milk",
+      "item": {
+        "Count": 1,
+        "id": "generations_core:moomoo_milk"
+      },
+      "order": 3,
+      "priceVariation": 0.0,
+      "sellPrice": 0,
+      "weight": 1
+    },
+    {
+      "amount": 1,
+      "buyPrice": 1500,
+      "description": "Berry Juice",
+      "item": {
+        "Count": 1,
+        "id": "generations_core:berry_juice"
+      },
+      "order": 4,
+      "priceVariation": 0.0,
+      "sellPrice": 0,
+      "weight": 1
+    }
+  ],
+  "maxEntries": 6,
+  "presets": [],
+  "refreshTime": 0,
+  "refreshType": "never"
+}

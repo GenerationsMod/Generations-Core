@@ -5,10 +5,11 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractCauldronBlockMixin",
-    "AbstractFurnaceBlockEntityMixin"
+    "AbstractFurnaceBlockEntityMixin",
+    "LivingEntityAccessor"
   ],
   "client": [
-	"client.LevelRendererMixin",
+    "client.LevelRendererMixin",
     "client.PokemonEntityMixin"
   ],
   "injectors": {

@@ -5,6 +5,7 @@ import com.google.gson.*;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
+import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
@@ -88,5 +89,10 @@ public class GenerationsUtils {
         public JsonElement serialize(T src, Type typeOfSrc, JsonSerializationContext context) {
             return JsonOps.INSTANCE.withEncoder(codec()).andThen(DataResult::result).apply(src).orElseThrow();
         }
+    }
+
+    @ExpectPlatform
+    public static CompoundTag serializeStack(ItemStack itemStack) {
+        throw new RuntimeException();
     }
 }

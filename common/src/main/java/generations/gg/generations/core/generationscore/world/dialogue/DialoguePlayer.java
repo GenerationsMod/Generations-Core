@@ -25,7 +25,7 @@ public class DialoguePlayer {
         this.forcedUntilEnd = forcedUntilEnd;
 
         currentNode = graph.root();
-        if (DialogueManager.DIALOGUE_MAP.containsKey(player)) throw new RuntimeException(player.getName().toString() + "[" + player.getStringUUID() + "] Is already in a dialogue menu");
+//        if (DialogueManager.DIALOGUE_MAP.containsKey(player)) throw new RuntimeException(player.getName().toString() + "[" + player.getStringUUID() + "] Is already in a dialogue menu");
         DialogueManager.DIALOGUE_MAP.put(player, this);
         GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(
                 player,
@@ -34,7 +34,7 @@ public class DialoguePlayer {
         update();
     }
 
-    DialoguePlayer(
+    public DialoguePlayer(
             ResourceLocation id,
             LivingEntity source,
             ServerPlayer serverPlayer,

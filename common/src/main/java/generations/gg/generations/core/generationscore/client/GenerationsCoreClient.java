@@ -9,6 +9,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Varyi
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -17,10 +18,7 @@ import generations.gg.generations.core.generationscore.client.model.RareCandyAni
 import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.client.model.inventory.GenericChestItemStackRenderer;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
-import generations.gg.generations.core.generationscore.client.render.entity.GenerationsBoatRenderer;
-import generations.gg.generations.core.generationscore.client.render.entity.SittableEntityRenderer;
-import generations.gg.generations.core.generationscore.client.render.entity.StatueEntityRenderer;
-import generations.gg.generations.core.generationscore.client.render.entity.TieredFishingHookRenderer;
+import generations.gg.generations.core.generationscore.client.render.entity.*;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
@@ -29,6 +27,7 @@ import generations.gg.generations.core.generationscore.world.entity.GenerationsE
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
 import generations.gg.generations.core.generationscore.world.item.MoveTeachingItem;
+import generations.gg.generations.core.generationscore.world.item.NpcPathTool;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
@@ -36,12 +35,14 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import kotlin.Unit;
+import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -50,16 +51,26 @@ import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.util.Tuple;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Vector4f;
 
 import java.io.File;
 import java.util.function.BiConsumer;
@@ -141,7 +152,12 @@ public class GenerationsCoreClient {
 
     private static void registerChestRenderer(GenericChestBlock chest ) {
         var e = new GenericChestItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), () -> new GenericChestBlockEntity(BlockPos.ZERO, chest.defaultBlockState()));
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(chest.asItem(), e::renderByItem);
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(chest.asItem(), new CobblemonBuiltinItemRenderer() {
+            @Override
+            public void render(@NotNull ItemStack itemStack, @NotNull ItemDisplayContext itemDisplayContext, @NotNull PoseStack poseStack, @NotNull MultiBufferSource multiBufferSource, int i, int i1) {
+
+            }
+        });
     }
 
     private static void addWoodType(WoodType woodType) {
@@ -170,6 +186,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsEntities.CHEST_BOAT_ENTITY.get(), context -> new GenerationsBoatRenderer(context, true));
         consumer.accept(GenerationsEntities.MAGMA_CRYSTAL.get(), ThrownItemRenderer::new);
         consumer.accept(GenerationsEntities.STATUE_ENTITY.get(), StatueEntityRenderer::new);
+        consumer.accept(GenerationsEntities.PLAYER_NPC.get(), context -> new PlayerNpcEntityRenderer(context, true));
     }
 
     /**
@@ -222,5 +239,106 @@ public class GenerationsCoreClient {
     public static Unit onLogout(ClientPlayerEvent.Logout logout) {
         GenerationsDataProvider.INSTANCE.canReload = true;
         return Unit.INSTANCE;
+    }
+
+    public static void renderHighlightedPath(PoseStack poseStack, int renderTick, Camera camera) {
+            Player player = Minecraft.getInstance().player;
+            if (player == null) return;
+            ItemStack heldItem = player.getItemInHand(InteractionHand.MAIN_HAND);
+            if (!(heldItem.getItem() instanceof NpcPathTool)) {
+                return;
+            }
+
+            // Get the block positions to highlight.
+            var blockPositions = NpcPathTool.getPath(heldItem);
+
+            // Set up variables for drawing the path lines.
+            float speed = 10;
+            float percentage = 0;
+            float holdTimeMod = 2.5f; // Determines how long the path ray will remain.
+            float percPerSegment = -1;
+            if (blockPositions.size() > 1) {
+                int numEdges = blockPositions.size() - 1;
+                percentage = (renderTick % (numEdges * speed * holdTimeMod)) / (numEdges * speed);
+                percPerSegment = (1.0f / numEdges);
+            }
+            BlockPos prevBlockPos = null;
+
+            // Set up the drawing objects.
+            poseStack.pushPose();
+            MultiBufferSource.BufferSource buffers = Minecraft.getInstance().renderBuffers().bufferSource();
+            VertexConsumer vertexconsumer = buffers.getBuffer(RenderType.lines());
+            Vector4f color = new Vector4f(227F / 255, 28F / 255, 121F / 255, 0.8F);
+
+            for (BlockPos blockPos : blockPositions) {
+                BlockState blockstate = player.level().getBlockState(blockPos);
+                // figure out the percentage of the segment to draw.
+                float segmentPercentage;
+                if (prevBlockPos == null) {
+                    segmentPercentage = 0;
+                } else if (percPerSegment > percentage) {
+                    segmentPercentage = percentage / percPerSegment;
+                    percentage = 0;
+                } else {
+                    percentage -= percPerSegment;
+                    segmentPercentage = 1;
+                }
+                // Draw the block highlight.
+                if (!blockstate.isAir()) {
+                    renderHitOutline(
+                            poseStack, vertexconsumer, player.level(), camera, blockPos, blockstate, color);
+                }
+                // Draw the animated path segment.
+                if (prevBlockPos != null && segmentPercentage > 0) {
+                    Vec3 pos1 = new Vec3(0, 0, 0);
+                    Vec3 pos2 = new Vec3(blockPos.getX() - prevBlockPos.getX(), blockPos.getY() - prevBlockPos.getY(), blockPos.getZ() - prevBlockPos.getZ());
+                    pos2 = pos2.multiply(segmentPercentage, segmentPercentage, segmentPercentage);
+                    renderLine(poseStack, pos1, pos2, vertexconsumer, prevBlockPos.above(), camera.getPosition(), color);
+                }
+                prevBlockPos = blockPos;
+            }
+
+            buffers.endBatch();
+            poseStack.popPose();
+    }
+
+    private static void renderShape(PoseStack poseStack, VertexConsumer vertexConsumer, VoxelShape voxelShape, double x, double y, double z, Vector4f color) {
+        PoseStack.Pose pose = poseStack.last();
+        // Create the vertex consumer shape by creating every edge.
+        voxelShape.forAllEdges((x1, y1, z1, x2, y2, z2) -> {
+            float f = (float) (x2 - x1);
+            float f1 = (float) (y2 - y1);
+            float f2 = (float) (z2 - z1);
+            float f3 = Mth.sqrt(f * f + f1 * f1 + f2 * f2);
+            f /= f3;
+            f1 /= f3;
+            f2 /= f3;
+            vertexConsumer.vertex(pose.pose(), (float) (x1 + x), (float) (y1 + y), (float) (z1 + z))
+                    .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
+            vertexConsumer.vertex(pose.pose(), (float) (x2 + x), (float) (y2 + y), (float) (z2 + z))
+                    .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
+        });
+    }
+
+    private static void renderLine(PoseStack poseStack, Vec3 pos1, Vec3 pos2, VertexConsumer vertexConsumer, BlockPos blockPos, Vec3 camPos, Vector4f color) {
+        PoseStack.Pose pose = poseStack.last();
+        float f = (float) (pos2.x - pos1.x);
+        float f1 = (float) (pos2.y - pos1.y);
+        float f2 = (float) (pos2.z - pos1.z);
+        float f3 = Mth.sqrt(f * f + f1 * f1 + f2 * f2);
+        f /= f3;
+        f1 /= f3;
+        f2 /= f3;
+        vertexConsumer.vertex(pose.pose(), (float) (pos1.x + (blockPos.getX() - camPos.x + 0.5)), (float) (pos1.y + (blockPos.getY() + 0.5 - camPos.y)), (float) (pos1.z + (blockPos.getZ() - camPos.z + 0.5)))
+                .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
+        vertexConsumer.vertex(pose.pose(), (float) (pos2.x + (blockPos.getX() - camPos.x + 0.5)), (float) (pos2.y + (blockPos.getY() + 0.5 - camPos.y)), (float) (pos2.z + (blockPos.getZ() - camPos.z + 0.5)))
+                .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
+    }
+
+
+    private static void renderHitOutline(PoseStack poseStack, VertexConsumer vertexConsumer, Level level, Camera camera, BlockPos blockPos, BlockState blockState, Vector4f color) {
+        Position pos = camera.getPosition();
+        renderShape(poseStack, vertexConsumer, blockState.getShape(level, blockPos, CollisionContext.of(camera.getEntity())),
+                (double) blockPos.getX() - pos.x(), (double) blockPos.getY() - pos.y(), (double) blockPos.getZ() - pos.z(), color);
     }
 }

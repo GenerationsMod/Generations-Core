@@ -120,5 +120,4 @@ public class Shops implements JsonDataRegistry<Shop> {
 
         this.reload(data);
     }
-
 }

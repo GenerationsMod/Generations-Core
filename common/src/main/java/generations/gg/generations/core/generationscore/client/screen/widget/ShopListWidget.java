@@ -2,14 +2,12 @@ package generations.gg.generations.core.generationscore.client.screen.widget;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.client.screen.ShopScreen;
 import generations.gg.generations.core.generationscore.world.shop.SimpleShopEntry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -66,11 +64,11 @@ public class ShopListWidget extends AbstractWidget {
         if (maxScroll > 0 && scroll < maxScroll) {
             guiGraphics.blit(TEXTURE, getX() + width / 2 - 5, getY() + height + 3, 10, 10, 737, 235, 21, 19, 921, 805);
         }
-        ScreenUtils.renderCutoff(guiGraphics, getX(), getY(), width, height, poseStack -> {
+//        ScreenUtils.renderCutoff(guiGraphics, getX(), getY(), width, height, poseStack -> {
             for (int i = 0; i < entries.length; i++) {
-                renderEntry(i, poseStack, mouseX, mouseY);
+                renderEntry(i, guiGraphics, mouseX, mouseY);
             }
-        });
+//        });
     }
 
     private void renderEntry(int index, GuiGraphics stack, int mouseX, int mouseY) {
@@ -78,9 +76,6 @@ public class ShopListWidget extends AbstractWidget {
         int y = getY() + index * entryHeight;
 
         if (index == selectedIndex || isEntryHovered(index, mouseX, mouseY)) {
-            RenderSystem.setShader(GameRenderer::getPositionTexShader);
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-            RenderSystem.setShaderTexture(0, TEXTURE);
             stack.blit(TEXTURE, getX(), y, width + 23, entryHeight, 0, 743, 716, 62, 921, 805);
         }
 
@@ -92,16 +87,13 @@ public class ShopListWidget extends AbstractWidget {
             stack.renderTooltip(minecraft.font, entry.getItem(), mouseX, mouseY);
         }
 
-        stack.drawString(minecraft.font, entry.getItem().getHoverName().getString(), itemX + 20, (int) (itemY + 8 - minecraft.font.lineHeight / 2F), 0x000000);
+        stack.drawString(minecraft.font, entry.getItem().getHoverName().getString(), itemX + 20, (int) (itemY + 8 - minecraft.font.lineHeight / 2F), 0x000000, false);
 
         String priceText = String.valueOf(isBuyPage ? entry.getBuyPrice() : entry.getSellPrice());
         int priceTextX = getX() + width - paddingX - minecraft.font.width(priceText);
         int priceTextY = y + entryHeight / 2 - minecraft.font.lineHeight / 2;
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-        RenderSystem.setShaderTexture(0, POKEDOLLAR_ICON);
         stack.blit(POKEDOLLAR_ICON, priceTextX - 7, priceTextY, 0, 0, 7, 9, 7, 9);
-        stack.drawString(minecraft.font, priceText, priceTextX, priceTextY, 0x000000);
+        stack.drawString(minecraft.font, priceText, priceTextX, priceTextY, 0x000000, false);
     }
 
     @Override

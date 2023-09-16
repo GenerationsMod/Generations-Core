@@ -49,7 +49,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     //11: bowl
     //12: log
     //13: out
-    private ExtendedsimpleItemContainer handler;
+    private ExtendedsimpleItemContainer handler = new ExtendedsimpleItemContainer(this, 14);
 
     private String customName;
     private boolean isCooking;
@@ -216,7 +216,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
 
     @Override
     public SerializableContainer getContainer() {
-        return this.handler == null ? this.handler = new ExtendedsimpleItemContainer(this, 14) : this.handler;
+        return this.handler;
     }
 
     @Override

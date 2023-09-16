@@ -88,7 +88,7 @@ public class Shop {
     }
 
     public List<ShopPreset> getPresets() {
-        return presetKeys.stream().map(PokeModRegistries.Dialogue.SHOP_PRESETS::get).toList();
+        return presetKeys.stream().map(ShopPresets.instance()::get).toList();
     }
 
     public void setPresetKeys(List<ResourceLocation> presetKeys) {

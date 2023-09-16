@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.client.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.api.player.ClientPlayerMoney;
+import generations.gg.generations.core.generationscore.client.screen.widget.ImageButton;
 import generations.gg.generations.core.generationscore.client.screen.widget.RadioButton;
 import generations.gg.generations.core.generationscore.client.screen.widget.ScrollableMultiLineTextBox;
 import generations.gg.generations.core.generationscore.client.screen.widget.ShopListWidget;
@@ -11,7 +12,6 @@ import generations.gg.generations.core.generationscore.util.ShopUtils;
 import generations.gg.generations.core.generationscore.world.entity.ShopOfferProvider;
 import generations.gg.generations.core.generationscore.world.shop.SimpleShopEntry;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
@@ -57,7 +57,7 @@ public class ShopScreen extends Screen {
         this.y = height / 2 - scaledCoord(743) / 2;
 
         this.addRenderableWidget(new ImageButton(x + scaledCoord(653), y + scaledCoord(619), scaledCoord(19), scaledCoord(21),
-                735, 414, 19, TEXTURE/*, 21*/, 921, 805, btn -> {
+                TEXTURE, 735, 414, 19, 21, 921, 805, btn -> {
             int i = 1;
             if (hasControlDown()) {
                 i = 100;
@@ -72,7 +72,7 @@ public class ShopScreen extends Screen {
         }));
 
         this.addRenderableWidget(new ImageButton(x + scaledCoord(523), y + scaledCoord(619), scaledCoord(19), scaledCoord(21),
-                716, 414, 19, TEXTURE/*, 21*/, 921, 805, btn -> {
+                TEXTURE, 716, 414, 19,  21, 921, 805, btn -> {
             int i = 1;
             if (hasControlDown()) {
                 i = 100;
@@ -93,7 +93,7 @@ public class ShopScreen extends Screen {
                 new RadioButton.RadioOption("Sell", null, () -> updatePage(false))));
         this.buyButton = this.addRenderableWidget(new ImageButton(x + scaledCoord(513), y + scaledCoord(664),
                 scaledCoord(170), scaledCoord(40),
-                716, 313, 170, TEXTURE,/*40,*/ 921, 805, btn -> shopItem()));
+                TEXTURE, 716, 313, 170,40, 921, 805, btn -> shopItem()));
         this.buyButton.active = selected != -1;
         this.descriptionTextBox = this.addRenderableWidget(new ScrollableMultiLineTextBox(x + scaledCoord(40), y + scaledCoord(570),
                 scaledCoord(453), scaledCoord(130), false, false, font, 0x000000, description()));
@@ -170,23 +170,23 @@ public class ShopScreen extends Screen {
             moneyText = font.plainSubstrByWidth(moneyText, moneyTextXEnd - moneyTextX - font.width("...")) + "...";
         }
         int moneyTextY = y + scaledCoord(30) - font.lineHeight / 2;
-        guiGraphics.drawString(font, yourMoneyText, x + scaledCoord(362), moneyTextY, 0x000000);
+        guiGraphics.drawString(font, yourMoneyText, x + scaledCoord(362), moneyTextY, 0x000000, false);
 
         guiGraphics.blit(POKEDOLLAR_ICON, moneyTextX, moneyTextY, 0, 0, 7, 9, 7, 9);
-        guiGraphics.drawString(font, moneyText, moneyTextX + 7, moneyTextY, 0x000000);
+        guiGraphics.drawString(font, moneyText, moneyTextX + 7, moneyTextY, 0x000000, false);
         if (mouseX >= moneyTextX && mouseX <= moneyTextXEnd && mouseY >= moneyTextY && mouseY <= moneyTextY + font.lineHeight) {
             guiGraphics.renderTooltip(font, Component.literal(String.valueOf(ClientPlayerMoney.balance)), mouseX, mouseY);
         }
 
         String amountText = String.valueOf(amount);
-        guiGraphics.drawString(font, amountText, (int) (x + scaledCoord(598) - font.width(amountText) / 2F), (int) (y + scaledCoord(630) - font.lineHeight / 2F), 0x000000);
+        guiGraphics.drawString(font, amountText, (int) (x + scaledCoord(598) - font.width(amountText) / 2F), (int) (y + scaledCoord(630) - font.lineHeight / 2F), 0x000000, false);
 
         if (selected != -1) {
             SimpleShopEntry entry = entries[selected];
             int selectedX = x + scaledCoord(40);
             int selectedY = y + scaledCoord(550);
             drawItem(guiGraphics, entry.getItem(), selectedX, selectedY - 10, mouseX, mouseY);
-            guiGraphics.drawString(font, entry.getItem().getHoverName().getString(), selectedX + 18, (int) (selectedY - font.lineHeight / 2F), 0xFCF9EA);
+            guiGraphics.drawString(font, entry.getItem().getHoverName().getString(), selectedX + 18, (int) (selectedY - font.lineHeight / 2F), 0xFCF9EA, false);
 
             int itemAmount = ShopUtils.getAmountInInventory(minecraft.player, entry.getItem());
             String amountInInventory = "x" + itemAmount;
@@ -200,7 +200,7 @@ public class ShopScreen extends Screen {
             guiGraphics.pose().translate(0, 0, 1050);
             drawItem(guiGraphics, entry.getItem(), inventoryX, inventoryY - 8, mouseX, mouseY);
             guiGraphics.pose().popPose();
-            guiGraphics.drawString(font, amountInInventory, inventoryX + 17, inventoryY + 8 - font.lineHeight, color);
+            guiGraphics.drawString(font, amountInInventory, inventoryX + 17, inventoryY + 8 - font.lineHeight, color, false);
         }
         guiGraphics.pose().pushPose();
         super.render(guiGraphics, mouseX, mouseY, partialTick);
@@ -218,7 +218,7 @@ public class ShopScreen extends Screen {
             int priceY = (int) (buyButton.getY() + buyButton.getHeight() / 2F - font.lineHeight / 2F);
             guiGraphics.pose().pushPose();
             guiGraphics.pose().translate(0, 0, 1000);
-            guiGraphics.drawString(font, price, priceX + 7, priceY, color);
+            guiGraphics.drawString(font, price, priceX + 7, priceY, color, false);
             guiGraphics.blit(POKEDOLLAR_ICON, priceX, priceY, 0, 0, 7, 9, 7, 9);
             guiGraphics.pose().popPose();
         }
@@ -259,5 +259,10 @@ public class ShopScreen extends Screen {
 
     private int scaledCoord(int i) {
         return Math.round(i * 0.33F);
+    }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
     }
 }

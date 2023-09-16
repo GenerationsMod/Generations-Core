@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.network.packets.*;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.*;
+import generations.gg.generations.core.generationscore.network.packets.npc.*;
 import generations.gg.generations.core.generationscore.network.packets.shop.C2SCloseShopPacket;
 import generations.gg.generations.core.generationscore.network.packets.shop.C2SShopItemPacket;
 import generations.gg.generations.core.generationscore.network.packets.shop.S2COpenShopPacket;
@@ -14,6 +15,7 @@ import generations.gg.generations.core.generationscore.network.packets.statue.C2
 import generations.gg.generations.core.generationscore.network.packets.statue.S2COpenStatueEditorScreenPacket;
 import generations.gg.generations.core.generationscore.network.packets.statue.S2CUpdateStatueInfoPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.network.DialogueGraphRegistrySyncPacket;
+import generations.gg.generations.core.generationscore.world.shop.ShopPresetRegistrySyncPacket;
 import generations.gg.generations.core.generationscore.world.shop.ShopRegistrySyncPacket;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
@@ -55,8 +57,11 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createClientBound(S2CUpdateStatueInfoPacket.ID, S2CUpdateStatueInfoPacket.class, S2CUpdateStatueInfoPacket::decode, S2CUpdateStatueInfoPacket.Handler::new);
         this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket.class, DialogueGraphRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
         this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket.class, ShopRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
+        this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket.class, ShopPresetRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
         this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket.class, S2COpenShopPacket::new, S2COpenShopPacket.Handler::new);
         this.createClientBound(S2CSyncPlayerMoneyPacket.ID, S2CSyncPlayerMoneyPacket.class, S2CSyncPlayerMoneyPacket::new, S2CSyncPlayerMoneyPacket.Handler::new);
+        this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, S2COpenNpcCustomizationScreenPacket.class, S2COpenNpcCustomizationScreenPacket::new, S2COpenNpcCustomizationScreenPacket.Handler::new);
+        this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, S2CUpdateNpcDisplayDataPacket.class, S2CUpdateNpcDisplayDataPacket::new, S2CUpdateNpcDisplayDataPacket.Handler::new);
     }
 
     public void registerServerBound() {
@@ -69,6 +74,9 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createServerBound(C2SUpdateStatueInfoPacket.ID, C2SUpdateStatueInfoPacket.class, C2SUpdateStatueInfoPacket::decode, new C2SUpdateStatueInfoPacket.Handler());
         this.createServerBound(C2SCloseShopPacket.ID, C2SCloseShopPacket.class, C2SCloseShopPacket::new, new C2SCloseShopPacket.Handler());
         this.createServerBound(C2SShopItemPacket.ID, C2SShopItemPacket.class, C2SShopItemPacket::new, new C2SShopItemPacket.Handler());
+        this.createServerBound(C2SUpdateNpcDialoguePacket.ID, C2SUpdateNpcDialoguePacket.class, C2SUpdateNpcDialoguePacket::new, new C2SUpdateNpcDialoguePacket.Handler());
+        this.createServerBound(C2SUpdateNpcDisplayDataPacket.ID, C2SUpdateNpcDisplayDataPacket.class, C2SUpdateNpcDisplayDataPacket::new, new C2SUpdateNpcDisplayDataPacket.Handler());
+        this.createServerBound(C2SUpdateNpcShopPacket.ID, C2SUpdateNpcShopPacket.class, C2SUpdateNpcShopPacket::new, new C2SUpdateNpcShopPacket.Handler());
     }
 
     private <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, Class<T> kClass, Function<FriendlyByteBuf, T> decoder, Supplier<ClientNetworkPacketHandler<T>> handler) {

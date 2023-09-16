@@ -43,6 +43,6 @@ public class AccountInfo implements PlayerDataExtension {
     }
 
     public static AccountInfo get(Player player) {
-        return (AccountInfo) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new AccountInfo(0));
+        return (AccountInfo) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new AccountInfo(100000));
     }
 }

@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.world.container;
 
+import com.cobblemon.mod.common.item.BerryItem;
 import generations.gg.generations.core.generationscore.world.container.slots.CurryResultSlot;
 import generations.gg.generations.core.generationscore.world.container.slots.PredicateSlotItemHandler;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.berry.BerryItem;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryIngredient;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import net.minecraft.tags.ItemTags;

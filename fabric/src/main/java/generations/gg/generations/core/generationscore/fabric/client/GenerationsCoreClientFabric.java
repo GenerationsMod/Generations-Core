@@ -10,6 +10,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -33,6 +34,8 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
+//        System.loadLibrary("renderdoc");+
+        WorldRenderEvents.AFTER_TRANSLUCENT.register(context -> GenerationsCoreClient.renderHighlightedPath(context.matrixStack(), Minecraft.getInstance().levelRenderer.ticks, context.camera()));
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
         registerRenderTypes();
         GenerationsCoreClient.registerEntityRenderers(EntityRendererRegistry::register);

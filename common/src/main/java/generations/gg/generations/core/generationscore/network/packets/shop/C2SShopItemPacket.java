@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.network.packets.shop;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.api.player.PlayerMoneyHandler;
 import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
 import generations.gg.generations.core.generationscore.util.ShopUtils;
@@ -92,6 +93,8 @@ public class C2SShopItemPacket implements GenerationsNetworkPacket<C2SShopItemPa
                 } else {
                     ShopUtils.sell(player, packet.itemStack, packet.price, packet.amount);
                 }
+
+                PlayerMoneyHandler.of(player).sync(player);
             }
         }
     }

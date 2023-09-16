@@ -35,7 +35,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
@@ -1034,6 +1033,8 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> POKEMON_WAND = register("pokemon_wand", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> CHISEL = register("chisel", StatueEditorItem::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> GIFT_BOX = register("gift_box", Item::new, GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> NPC_WAND = register("npc_wand", NpcWandItem::new, GenerationsCreativeTabs.UTILITY);
+    public static final RegistrySupplier<Item> NPC_PATH_TOOL = register("npc_path_tool", NpcPathTool::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> ZONE_WAND = register("zone_wand", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> BIKE_FRAME = register("bike_frame", Item::new, GenerationsCreativeTabs.UTILITY);
     public static final RegistrySupplier<Item> BIKE_HANDLEBARS = register("bike_handlebars", Item::new, GenerationsCreativeTabs.UTILITY);
