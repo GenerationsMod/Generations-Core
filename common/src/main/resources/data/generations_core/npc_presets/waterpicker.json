@@ -1,0 +1,66 @@
+{
+  "display": {
+    "renderer": {
+      "pose": "STANDING",
+      "texture": "waterpicker",
+      "isTextureUsername": true,
+      "entityType": "minecraft:steve",
+      "tag": {
+        "id": "minecraft:steve"
+      },
+      "scale": 1.0
+    },
+    "heldItems": {
+      "boots": {
+        "id": "minecraft:air",
+        "Count": 0
+      },
+      "mainhand": {
+        "id": "minecraft:air",
+        "Count": 0
+      },
+      "offhand": {
+        "id": "minecraft:air",
+        "Count": 0
+      },
+      "helmet": {
+        "id": "generations_core:water_stone_helmet",
+        "Count": 1,
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "chestplate": {
+        "id": "minecraft:air",
+        "Count": 0
+      },
+      "leggings": {
+        "id": "minecraft:air",
+        "Count": 0
+      }
+    },
+    "movement": {
+      "path": [],
+      "moveSpeed": 0.0,
+      "cooldownTicks": 0,
+      "type": "still",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "radius": 0
+    },
+    "rotation": {
+      "type": "static",
+      "bodyY": 180.0,
+      "headY": 180.0,
+      "headX": 0.0
+    },
+    "displayName": "Vendor",
+    "nameVisibility": true,
+    "collision": "none"
+  },
+  "shop": "generations_core:vending_machine",
+  "dialogue": "generations_core:shop"
+}

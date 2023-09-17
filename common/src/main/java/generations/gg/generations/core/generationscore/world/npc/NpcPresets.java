@@ -27,7 +27,7 @@ import java.util.Optional;
 import java.util.Set;
 
 public class NpcPresets implements JsonDataRegistry<NpcPreset> {
-    private static final ResourceLocation id = GenerationsCore.id("dialogues");
+    private static final ResourceLocation id = GenerationsCore.id("npc_presets");
 
     private static final Gson gson = new GsonBuilder()
             .serializeNulls()

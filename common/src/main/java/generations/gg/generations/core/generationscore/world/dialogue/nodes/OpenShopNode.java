@@ -72,6 +72,6 @@ public class OpenShopNode extends AbstractNode {
     }
 
     public static OpenShopNode fromJson(JsonObject object) {
-        return new OpenShopNode(AbstractNodeTypes.fromJson(object.getAsJsonObject("next")));
+        return new OpenShopNode(JsonUtils.fromNullable("next", object, AbstractNodeTypes::fromJson));
     }
 }

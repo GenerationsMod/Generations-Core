@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.client.screen.ScreenUtils
 import generations.gg.generations.core.generationscore.client.screen.widget.DropdownWidget;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.C2SSaveDatapackEntryPacket;
+import generations.gg.generations.core.generationscore.network.packets.npc.C2SSetNpcPresetPacket;
 import generations.gg.generations.core.generationscore.world.entity.PlayerNpcEntity;
 import generations.gg.generations.core.generationscore.world.npc.NpcPreset;
 import generations.gg.generations.core.generationscore.world.npc.NpcPresets;
@@ -80,7 +81,7 @@ public class PresetCustomizationTab extends CustomizationTab {
         this.addRenderableWidget(new DropdownWidget(x + 54, y + 6, 143, presets, presets.get(0),
                 (widget, preset) -> {
                     if (!preset.equals(createPresetString)) {
-                        npcEntity.loadPreset(presetMap.get(preset));
+                        new C2SSetNpcPresetPacket(npcEntity.getId(), presetMap.get(preset)).sendToServer();
                     }
                     widget.select(0);
                 },

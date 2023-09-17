@@ -8,6 +8,7 @@ import dev.architectury.utils.Env;
 import dev.architectury.utils.EnvExecutor;
 import generations.gg.generations.core.generationscore.network.packets.S2CUnlockReloadPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.Dialogues;
+import generations.gg.generations.core.generationscore.world.npc.NpcPresets;
 import generations.gg.generations.core.generationscore.world.shop.ShopPresets;
 import generations.gg.generations.core.generationscore.world.shop.Shops;
 import kotlin.Unit;
@@ -41,6 +42,7 @@ public class GenerationsDataProvider implements DataProvider {
         this.register(Dialogues.instance());
         this.register(Shops.instance());
         this.register(ShopPresets.instance());
+        this.register(NpcPresets.instance());
 
         PlatformEvents.SERVER_PLAYER_LOGOUT.subscribe(Priority.HIGH, it -> {
             synchronizedPlayerIds.remove(it.getPlayer().getUUID());
@@ -68,7 +70,7 @@ public class GenerationsDataProvider implements DataProvider {
     }
 
     public <T extends DataRegistry> T register(T registry) {
-        // Only send message once
+//         Only send message once
 //        if (this.registries.isEmpty()) {
 //            LOGGER.info("Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.");
 //        }
