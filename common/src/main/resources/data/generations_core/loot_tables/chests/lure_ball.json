@@ -51,10 +51,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:damp_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:exp_candy_xs"
 			},
 			{

@@ -83,10 +83,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:gooey_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:great_ball"
 			},
 			{

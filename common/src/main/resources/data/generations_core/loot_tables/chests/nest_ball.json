@@ -63,10 +63,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:gooey_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:grassy_seed"
 			},
 			{

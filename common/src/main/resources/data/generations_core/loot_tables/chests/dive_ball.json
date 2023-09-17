@@ -23,10 +23,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:damp_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:damp_rock"
 			},
 			{

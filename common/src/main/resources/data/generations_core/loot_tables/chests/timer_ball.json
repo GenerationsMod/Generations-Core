@@ -374,14 +374,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:gooey_mulch"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:damp_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:surprise_mulch"
 			},
 			{

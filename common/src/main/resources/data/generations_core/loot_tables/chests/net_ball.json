@@ -35,10 +35,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "cobblemon:damp_mulch"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:dire_hit"
 			},
 			{
@@ -60,10 +56,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "cobblemon:galarica_cuff"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "cobblemon:gooey_mulch"
 			},
 			{
 				"type": "minecraft:item",
