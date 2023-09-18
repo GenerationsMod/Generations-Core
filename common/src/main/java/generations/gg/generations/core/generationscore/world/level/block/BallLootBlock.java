@@ -147,7 +147,9 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
             builder.withLuck(player.getLuck()).withParameter(LootContextParams.THIS_ENTITY, player);
 
 
-        return level.getServer().getLootData().getLootTable(this.getLootTableId()).getRandomItems(builder.create(LootContextParamSets.CHEST)).stream().collect(Collectors.toCollection(NonNullList::create));
+        var table = level.getServer().getLootData().getLootTable(this.getLootTableId()).getRandomItems(builder.create(LootContextParamSets.CHEST)).stream().collect(Collectors.toCollection(NonNullList::create));
+
+        return table;
     }
 
     @Override

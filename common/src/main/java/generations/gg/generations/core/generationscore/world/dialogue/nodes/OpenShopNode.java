@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
 import com.google.gson.JsonObject;
-import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.api.player.PlayerMoneyHandler;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.shop.S2COpenShopPacket;
@@ -14,6 +13,8 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.CompletableFuture;
+
 public class OpenShopNode extends AbstractNode {
     private final AbstractNode next;
 
@@ -24,13 +25,33 @@ public class OpenShopNode extends AbstractNode {
     @Override
     public void run(ServerPlayer player, DialoguePlayer dialoguePlayer) {
         if (dialoguePlayer.getSource() instanceof PlayerNpcEntity npcEntity) {
+            var amount = PlayerMoneyHandler.of(player).balance();
+            var playerFuture = CompletableFuture.completedFuture(player);
+            var npcIdFuture = CompletableFuture.completedFuture(npcEntity.getId());
+
+            amount.thenAccept(amount1 -> {
+                var player1 = playerFuture.join();
+                var npcId = npcIdFuture.join();
+
+                new S2CSyncPlayerMoneyPacket(amount1).sendToPlayer(player1);
+                new S2COpenShopPacket(npcId).sendToPlayer(player1);
+            });
+
             GenerationsNetwork.INSTANCE.sendPacketToPlayer(player, new S2COpenShopPacket(npcEntity.getId()));
         } else {
             var optional = BlockPos.withinManhattanStream(player.getOnPos(), 10, 10, 10).filter(a -> player.level().getBlockEntity(a) instanceof ShopOfferProvider).findFirst();
 
             if (optional.isPresent()) {
-                GenerationsCore.implementation.getNetworkManager().sendPacketToPlayer(player, new S2CSyncPlayerMoneyPacket(PlayerMoneyHandler.of(player).balance()));
-                GenerationsCore.implementation.getNetworkManager().sendPacketToPlayer(player, new S2COpenShopPacket(optional.get()));
+                var blockPos = CompletableFuture.supplyAsync(optional::get);
+                var amount = PlayerMoneyHandler.of(player).balance();
+                var playerFuture = CompletableFuture.completedFuture(player);
+
+                blockPos.thenAccept(pos -> {
+                    var amount1 = amount.join();
+                    var player1 = playerFuture.join();
+                    new S2CSyncPlayerMoneyPacket(amount1).sendToPlayer(player1);
+                    new S2COpenShopPacket(pos).sendToPlayer(player1);
+                });
             } else {
                 dialoguePlayer.nextNode();
             }

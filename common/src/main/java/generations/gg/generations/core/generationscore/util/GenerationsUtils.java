@@ -7,12 +7,15 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.joml.Vector3f;
 
 import java.lang.reflect.Type;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.EnumSet;
 import java.util.Map;
 import java.util.Optional;
@@ -76,6 +79,20 @@ public class GenerationsUtils {
     public static <K, V> V ensureMapReturn(Map<K, V> map, K key, V value) {
         var output = map.put(key, value);
         return output != null ? output : map.get(key);
+    }
+
+    public static BigDecimal readBigDecimal(FriendlyByteBuf buf) {
+        var scale = buf.readInt();
+        var unscaled = new byte[buf.readInt()];
+        buf.readBytes(unscaled);
+        return new BigDecimal(new BigInteger(unscaled), scale);
+    }
+
+    public static void writeBigDecimal(FriendlyByteBuf buf, BigDecimal value) {
+        buf.writeInt(value.scale());
+        var unscaled = value.unscaledValue().toByteArray();
+        buf.writeInt(unscaled.length);
+        buf.writeBytes(unscaled);
     }
 
     public record Serializer<T>(Codec<T> codec) implements JsonSerializer<T>, JsonDeserializer<T> {

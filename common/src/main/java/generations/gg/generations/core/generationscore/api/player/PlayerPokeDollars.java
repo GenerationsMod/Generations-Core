@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.api.player;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.network.packets.shop.S2CSyncPlayerMoneyPacket;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+
+import java.math.BigDecimal;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Manages the player's Pixelmon currency
@@ -19,33 +19,33 @@ public class PlayerPokeDollars implements PlayerMoney {
 //        PlayerPokeDollars.of(event.getEntity()).sync();
 //    }
 
-    public int balance() {
-        return getAccount().getBalance();
+    public CompletableFuture<BigDecimal> balance() {
+        return CompletableFuture.completedFuture(getAccount().getBalance());
     }
 
     public AccountInfo getAccount() {
         return AccountInfo.get(player);
     }
 
-    public void set(int amount) {
+    public void set(BigDecimal amount) {
         getAccount().setBalance(amount);
     }
 
-    public boolean deposit(int amount) {
+    public CompletableFuture<Boolean> deposit(BigDecimal amount) {
         var account = getAccount();
-        account.setBalance(account.getBalance() + amount);
-        return true; //Do we want an upper limit?
+        account.setBalance(account.getBalance().add(amount));
+        return CompletableFuture.completedFuture(true); //Do we want an upper limit?
     }
 
     // It will be up to the individual methods to first check balance before removing more than what the player has
-    public boolean withdraw(int amount) {
+    public CompletableFuture<Boolean> withdraw(BigDecimal amount) {
         var account = getAccount();
-        var newBalance = account.getBalance() - amount;
+        var newBalance = account.getBalance().subtract(amount);
 
-        if(newBalance < 0) return false;
+        if(newBalance.compareTo(BigDecimal.ZERO) < 0) return CompletableFuture.completedFuture(false);
         else {
             account.setBalance(newBalance);
-            return true;
+            return CompletableFuture.completedFuture(true);
         }
     }
 }

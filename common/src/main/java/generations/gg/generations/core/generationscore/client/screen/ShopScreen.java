@@ -18,6 +18,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -108,7 +109,7 @@ public class ShopScreen extends Screen {
     }
 
     private void updateBuyButtonActive() {
-        if (isBuyPage && ClientPlayerMoney.balance < getItemPrice()) {
+        if (isBuyPage && ClientPlayerMoney.balance.compareTo(BigDecimal.valueOf(getItemPrice())) <= 0) {
             this.buyButton.active = false;
         } else {
             if (!isBuyPage) {

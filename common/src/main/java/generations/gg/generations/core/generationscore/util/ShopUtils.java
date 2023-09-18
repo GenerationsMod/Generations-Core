@@ -15,20 +15,27 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 public class ShopUtils {
 
     public static void buy(Player player, ItemStack stack, int perItemPrice, int amount) {
-        if (takePokeDollars(player, perItemPrice * amount)) {
-            giveStack(player, stack, amount);
-        }
+        Consumer<Boolean> var = ab -> {
+            if(ab) giveStack(player, stack);
+        };
+        takePokeDollars(player, perItemPrice * amount).thenAccept(var);
     }
 
     public static void sell(Player player, ItemStack stack, int perItemPrice, int amount) {
+        Consumer<Boolean> var = ab -> {
+            if(ab) takeStack(player, stack);
+        };
+
         if (hasAmount(player, stack, amount)) {
-            takeStack(player, stack, amount);
-            givePokeDollars(player, perItemPrice * amount);
+            givePokeDollars(player, perItemPrice * amount).thenAccept(var);
         }
     }
 
@@ -136,12 +143,12 @@ public class ShopUtils {
 //        return PlayerPokeDollars.of(player).getBalance() >= pokedollars;
 //    }
 
-    public static void givePokeDollars(Player player, int pokedollars) {
-        PlayerMoneyHandler.of(player).deposit(pokedollars);
+    public static CompletableFuture<Boolean> givePokeDollars(Player player, int pokedollars) {
+        return PlayerMoneyHandler.of(player).deposit(BigDecimal.valueOf(pokedollars));
     }
 
-    public static boolean takePokeDollars(Player player, int pokedollars) {
-        return PlayerMoneyHandler.of(player).withdraw(pokedollars);
+    public static CompletableFuture<Boolean> takePokeDollars(Player player, int pokedollars) {
+        return PlayerMoneyHandler.of(player).withdraw(BigDecimal.valueOf(pokedollars));
     }
 
     public static boolean validateItemForNpc(ShopOfferProvider provider, ItemStack stack, int price, boolean isBuy) {
