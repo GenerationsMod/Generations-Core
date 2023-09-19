@@ -12,15 +12,10 @@
   "license": "GNU GPL 3.0",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"
-    ],
-    "client" : [
-      "generations.gg.generations.core.generationscore.fabric.client.GenerationsCoreClientFabric"
-    ],
-    "fabric-datagen": [
-      "generations.gg.generations.core.generationscore.fabric.datagen.DataGen"
-    ]
+    "preLaunch": ["generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"],
+    "main": ["generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"],
+    "client" : ["generations.gg.generations.core.generationscore.fabric.client.GenerationsCoreClientFabric"],
+    "fabric-datagen": ["generations.gg.generations.core.generationscore.fabric.datagen.DataGen"]
   },
   "mixins": [
     "GenerationsCore.mixins.json",

@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.forge;
 
-import com.cobblemon.mod.common.NetworkManager;
 import dev.architectury.platform.forge.EventBuses;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
+import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -45,11 +45,9 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
-
-        GenerationsCore.init(this, FMLPaths.CONFIGDIR.get());
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-            GenerationsCoreClientForge.init(MOD_BUS);
-        });
+        ConfigLoader.CONFIG_DIRECTORY = FMLPaths.CONFIGDIR.get();
+        GenerationsCore.init(this);
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
         var EVENT_BUS = MinecraftForge.EVENT_BUS;
 
         EVENT_BUS.addListener(this::onDataPackSync);
@@ -86,7 +84,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     @Override
     public void registerResourceReloader(ResourceLocation identifier, PreparableReloadListener reloader, PackType type, Collection<ResourceLocation> dependencies) {
         if (type == PackType.SERVER_DATA) this.reloadableResources.add(reloader);
-        else if(Minecraft.getInstance() != null && Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
+        else if(Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
     }
 
     @NotNull
