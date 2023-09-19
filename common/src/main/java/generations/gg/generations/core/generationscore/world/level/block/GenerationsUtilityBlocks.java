@@ -94,6 +94,8 @@ public class GenerationsUtilityBlocks {
 
 	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
 
+	public static final RegistrySupplier<Block> RKS_MACHINE = registerBlockItem("rks_machine", () -> new RksMachineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
 	public static RegistrySupplier<BallLootBlock> BEAST_BALL_LOOT = registerLoot("beast");
 	public static RegistrySupplier<BallLootBlock> CHERISH_BALL_LOOT = registerLoot("cherish");
 	public static RegistrySupplier<BallLootBlock> DIVE_BALL_LOOT = registerLoot("dive");

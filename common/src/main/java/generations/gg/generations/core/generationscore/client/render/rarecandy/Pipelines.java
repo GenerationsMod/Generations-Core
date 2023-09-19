@@ -104,7 +104,8 @@ public class Pipelines {
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
-                    .prePostDraw(() -> {}, Minecraft.getInstance().gameRenderer.lightTexture()::turnOffLightLayer)
+                    .prePostDraw(() -> {
+                    }, Minecraft.getInstance().gameRenderer.lightTexture()::turnOffLightLayer)
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)

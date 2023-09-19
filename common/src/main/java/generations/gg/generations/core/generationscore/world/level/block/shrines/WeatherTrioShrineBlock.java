@@ -28,4 +28,9 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
     public PokemonProperties getSpecies() {
         return species;
     }
+
+    @Override
+    public String getActiveVariant(boolean active) {
+        return active ? "activated" : "deactivated";
+    }
 }

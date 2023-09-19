@@ -116,19 +116,19 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     @Override
     public void attack(BlockState state, Level level, BlockPos pos, Player player) {
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof BallLootBlockEntity be && player.getUUID().equals(be.getOwner())) {
-            String mode = "pixelmon.blocks.lootmode";
+            String mode = "pixelmon.blocks.lootmode.";
 
             var lootMode = be.getLootMode();
 
             lootMode = switch (lootMode) {
-                case PL1D -> LootMode.TD;
-                case TD -> LootMode.FCFS;
-                case FCFS -> LootMode.PUD;
-                case PUD -> LootMode.PL1D;
+                case ONCE_PER_PLAYER -> LootMode.TIMED;
+                case TIMED -> LootMode.ONCE;
+                case ONCE -> LootMode.UNLIMITED;
+                case UNLIMITED -> LootMode.ONCE_PER_PLAYER;
             };
 
             be.setLootMode(lootMode);
-            mode += lootMode.name();
+            mode += lootMode.name().toUpperCase();
 
             player.displayClientMessage(Component.translatable("generations_core.blocks.lootmode", I18n.get(mode)), false);
         }

@@ -263,6 +263,14 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         return state;
     }
 
+    public int width() {
+        return width;
+    }
+
+    public int length() {
+        return length;
+    }
+
     public enum Size {//TODO: THink of better name
         WIDTH, LENGTH, HEIGHT
     }

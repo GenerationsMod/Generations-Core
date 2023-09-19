@@ -624,6 +624,8 @@
     "generations_core:pokemon_wand",
     "generations_core:chisel",
     "generations_core:gift_box",
+    "generations_core:npc_wand",
+    "generations_core:npc_path_tool",
     "generations_core:zone_wand",
     "generations_core:bike_frame",
     "generations_core:bike_handlebars",

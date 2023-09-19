@@ -70,4 +70,5 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation POKEBALL = GenerationsCore.id("models/block/utility_blocks/pokeball.pk");
 
     public static final ResourceLocation BREEDER = GenerationsCore.id("models/block/utility_blocks/breeder/breeder.pk");
+    public static final ResourceLocation RKS_MACHINE = GenerationsCore.id("models/block/utility_blocks/rks_machine.pk");;
 }

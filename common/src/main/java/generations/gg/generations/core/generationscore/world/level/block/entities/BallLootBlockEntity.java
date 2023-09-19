@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class BallLootBlockEntity extends ModelProvidingBlockEntity implements ModelContextProviders.VariantProvider {
     private UUID owner = null;
     private final List<LootClaim> claims = new ArrayList<>();
-    private LootMode lootMode = LootMode.PL1D;
+    private LootMode lootMode = LootMode.ONCE_PER_PLAYER;
     private boolean doesCustomDrops = false;
     private boolean visible = true;
     private NonNullList<ItemStack> customDrops = null;
@@ -87,8 +87,7 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity implements Mo
 
     public boolean canClaim(UUID playerUUID) {
         if (!this.lootMode.isDropOnce()) return true;
-
-
+        
         Optional<LootClaim> claim = this.getLootClaim(playerUUID);
         if (claim.isPresent() && this.lootMode.isTimeEnabled()) {
             claim.get().time().plus(GenerationsCore.CONFIG.lootTime);
@@ -153,10 +152,10 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity implements Mo
     }
 
     public enum LootMode {
-        PL1D(true, false),
-        TD(false, true),
-        FCFS(true, true),
-        PUD(false, false);
+        ONCE_PER_PLAYER(true, false),
+        TIMED(false, true),
+        ONCE(true, true),
+        UNLIMITED(false, false);
 
         private final boolean dropOnce;
         private final boolean timeEnabled;

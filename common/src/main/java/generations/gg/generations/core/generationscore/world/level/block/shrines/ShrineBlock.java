@@ -13,6 +13,6 @@ public class ShrineBlock<T extends ShrineBlockEntity> extends GenericRotatableMo
     }
 
     public String getActiveVariant(boolean active) {
-        return active ? "active" : "inactive";
+        return null;
     }
 }

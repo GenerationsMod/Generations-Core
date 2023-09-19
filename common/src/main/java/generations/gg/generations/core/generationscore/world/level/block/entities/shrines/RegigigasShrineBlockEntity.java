@@ -125,4 +125,5 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
     public @NotNull CompoundTag getUpdateTag() {
         return getContainer().serialize(super.getUpdateTag());
     }
+
 }

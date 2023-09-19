@@ -9,10 +9,13 @@
 package generations.gg.generations.core.generationscore;
 
 import com.cobblemon.mod.common.api.data.DataProvider;
+import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.mojang.logging.LogUtils;
 import dev.architectury.event.events.common.InteractionEvent;
 import dev.architectury.platform.Platform;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
+import generations.gg.generations.core.generationscore.api.player.AccountInfo;
+import generations.gg.generations.core.generationscore.api.player.LegendsObtained;
 import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
@@ -89,6 +92,9 @@ public class GenerationsCore
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 
 		CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "main");
+
+		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
+		PlayerDataExtensionRegistry.INSTANCE.register(LegendsObtained.KEY, LegendsObtained.class, false);
 
 		if(Platform.isModLoaded("impactor")) ImpactorCompat.init();
 

@@ -23,6 +23,6 @@ public class ShrineBlockEntity extends ModelProvidingBlockEntity implements Mode
 
     @Override
     public String getVariant() {
-        return getBlockState().getBlock() instanceof ShrineBlock<?> shrine ? shrine.getActiveVariant(isActive()) : "inactive";
+        return getBlockState().getBlock() instanceof ShrineBlock<?> shrine ? shrine.getActiveVariant(isActive()) : null;
     }
 }

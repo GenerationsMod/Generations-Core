@@ -257,7 +257,8 @@ public class GenerationsBlockEntities {
                     GenerationsDecorationBlocks.LITWICK_CANDLE.get(),
                     GenerationsDecorationBlocks.LITWICK_CANDLES.get(),
                     GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(),
-                    GenerationsUtilityBlocks.TRASH_CAN.get())
+                    GenerationsUtilityBlocks.TRASH_CAN.get(),
+                    GenerationsUtilityBlocks.RKS_MACHINE.get())
             .build(null));
     public static final RegistrySupplier<BlockEntityType<MachineBlockEntity>> MACHINE_BLOCK = BLOCK_ENTITIES.register("machine_block", () -> BlockEntityType.Builder.of(MachineBlockEntity::new, GenerationsBlocks.MACHINE_BLOCK.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = BLOCK_ENTITIES.register("vending_machine", () -> BlockEntityType.Builder.of(VendingMachineBlockEntity::new, GenerationsDecorationBlocks.VENDING_MACHINE.get()).build(null));

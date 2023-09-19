@@ -8,18 +8,15 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 public class GeneralLang extends LanguageProvider {
 
@@ -126,10 +123,10 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.blocks.balllootset", "Custom Ball Loot Set: %s");
         add("generations_core.blocks.visible", "Ball Loot Visibility: %s");
         add("generations_core.blocks.lootmode", "Loot Mode: %s");
-        add("generations_core.blocks.lootmodePL1D", "Permanent, limit 1 drop");
-        add("generations_core.blocks.lootmodeTD", "Timed drops");
-        add("generations_core.blocks.lootmodeFCFS", "First come, first served");
-        add("generations_core.blocks.lootmodePUD", "Permanent, unlimited drops");
+        add("generations_core.blocks.lootmode.once_per_player", "Permanent, limit 1 drop");
+        add("generations_core.blocks.lootmode.timed", "Timed drops");
+        add("generations_core.blocks.lootmode.once", "First come, first served");
+        add("generations_core.blocks.lootmode.unlimited", "Permanent, unlimited drops");
     }
 
 

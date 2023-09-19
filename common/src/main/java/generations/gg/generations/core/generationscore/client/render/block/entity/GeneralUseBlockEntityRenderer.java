@@ -43,24 +43,28 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     }
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
+        var model = ModelRegistry.get(blockEntity, "block");
 
         if (blockEntity.objectInstance == null) {
             int amount = instanceAmount();
             blockEntity.objectInstance = new ObjectInstance[amount];
 
-            for (int i = 0; i < amount; i++) blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), null);
+            for (int i = 0; i < amount; i++)
+                blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), null);
         }
 
-        var primeInstance = blockEntity.objectInstance[0];
+        String variant = blockEntity instanceof ModelContextProviders.VariantProvider provider ? provider.getVariant() : null;
 
-        if (blockEntity instanceof ModelContextProviders.VariantProvider provider && !Objects.equals(primeInstance.materialId(), provider.getVariant())) {
-            primeInstance.setVariant(provider.getVariant());
+        for (var instance : blockEntity.objectInstance) {
+            if (!Objects.equals(instance.materialId(), variant)) {
+                instance.setVariant(variant);
+            }
+
+            instance.viewMatrix().set(stack.last().pose());
+            ((BlockObjectInstance) instance).setLight(packedLight);
+
+            model.render(instance, RenderSystem.getProjectionMatrix());
         }
-
-        primeInstance.viewMatrix().set(stack.last().pose());
-        ((BlockObjectInstance) primeInstance).setLight(packedLight);
-
-        ModelRegistry.get(blockEntity, "block").render(primeInstance, RenderSystem.getProjectionMatrix());
     }
 
     protected int instanceAmount() {

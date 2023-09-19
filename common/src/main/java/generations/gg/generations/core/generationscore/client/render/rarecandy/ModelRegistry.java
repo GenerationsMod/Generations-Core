@@ -7,8 +7,9 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import de.javagl.jgltf.model.GltfModel;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.model.GenericObjectPool;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import gg.generations.rarecandy.animation.Animation;
 import gg.generations.rarecandy.components.AnimatedMeshObject;
 import gg.generations.rarecandy.components.MeshObject;
@@ -58,6 +59,20 @@ public class ModelRegistry {
     }
 
     public static void prepForBER(PoseStack stack, ModelContextProviders.AngleProvider supplier) {
+
+
+        if(supplier instanceof GenericModelProvidingBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof GenericRotatableModelBlock<?> block) {
+            var dir = blockEntity.getBlockState().getValue(GenericRotatableModelBlock.FACING);
+            var opposite = dir.getOpposite();
+            var counterClockwise = dir.getCounterClockWise();
+
+            var displaceX = block.width() / 2f;
+            var dispalceZ = block.length() / 2f;
+
+
+            stack.translate((opposite.getStepX() + counterClockwise.getStepX()) * displaceX, 0.0f, (opposite.getStepZ() + counterClockwise.getStepZ()) * dispalceZ);
+        }
+
         stack.translate(0.5f, 0.0f, 0.5f);
         stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
     }
