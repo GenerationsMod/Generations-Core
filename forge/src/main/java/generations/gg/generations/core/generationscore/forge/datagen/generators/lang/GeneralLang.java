@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.world.item.ItemWithLangTooltip;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -127,6 +128,9 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.blocks.lootmode.timed", "Timed drops");
         add("generations_core.blocks.lootmode.once", "First come, first served");
         add("generations_core.blocks.lootmode.unlimited", "Permanent, unlimited drops");
+
+        addTooltip(GenerationsItems.LAVA_CRYSTAL, "HINT: You see a faint image of Heatran from within. You’ll need more, and an Orb.");
+        addTooltip(GenerationsItems.MAGMA_CRYSTAL, "HINT: Against your better judgment, you feel a sudden urge to throw this crystal into lava (right-click)");
     }
 
 
@@ -145,6 +149,10 @@ public class GeneralLang extends LanguageProvider {
 
     protected String getPokeBrickName(RegistrySupplier<? extends ItemLike> item, String name){
         return getNameGens(item, name).replace("Poke Brick", "PokeBrick");
+    }
+
+    public <T extends ItemWithLangTooltip> void addTooltip(RegistrySupplier<T> registrySupplier, String entry) {
+        add(registrySupplier.get().tooltipId(), entry);
     }
 
     @Deprecated

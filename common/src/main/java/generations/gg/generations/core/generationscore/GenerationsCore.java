@@ -88,7 +88,7 @@ public class GenerationsCore
 
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 
-		CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "main");
+		CONFIG = ConfigLoader.loadConfig(Config.class, MOD_ID, "main");
 
 		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);

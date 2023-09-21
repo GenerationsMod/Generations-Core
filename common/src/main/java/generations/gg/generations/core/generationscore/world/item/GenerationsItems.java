@@ -10,6 +10,7 @@ import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsChestBoatEntity;
@@ -937,7 +938,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TIME_GLASS = register("time_glass", properties -> new TimeGlassItem(properties.stacksTo(1).durability(100)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MOON_FLUTE = register("moon_flute", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SUN_FLUTE = register("sun_flute", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> LAVA_CRYSTAL = register("lava_crystal", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltip> LAVA_CRYSTAL = register("lava_crystal", ItemWithLangTooltip::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> JEWEL_OF_LIFE = register("jewel_of_life", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> PRISON_BOTTLE_STEM = register("prison_bottle_stem", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> PRISON_BOTTLE = register("prison_bottle", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -971,9 +972,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> REGISTEEL_ORB = register("registeel_orb", properties -> new RegiOrbItem(properties,"registeel"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REGIDRAGO_ORB = register("regidrago_orb", properties -> new RegiOrbItem(properties, "regidrago"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REGIELEKI_ORB = register("regieleki_orb", properties -> new RegiOrbItem(properties, "regieleki"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> MAGMA_CRYSTAL = register("magma_crystal", properties -> new Item(properties.stacksTo(1)) {
+    public static final RegistrySupplier<ItemWithLangTooltip> MAGMA_CRYSTAL = register("magma_crystal", properties -> new ItemWithLangTooltip(properties.stacksTo(1)) {
         public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
             ItemStack itemStack = player.getItemInHand(usedHand);
+            if(!level.isClientSide && GenerationsCore.CONFIG.caught.capped(player, LegendKeys.HEATRAN)) return InteractionResultHolder.fail(itemStack);
 
             level.playSound(
                     null,
@@ -985,20 +987,21 @@ public class GenerationsItems {
                     0.5F,
                     0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F)
             );
-            player.getCooldowns().addCooldown(this, 20);
+
             if (!level.isClientSide) {
-                MagmaCrystalEntity magmaCrystal = new MagmaCrystalEntity(level, player); //TODO: Re enable
+                MagmaCrystalEntity magmaCrystal = new MagmaCrystalEntity(level, player);
                 magmaCrystal.setItem(itemStack);
                 magmaCrystal.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
                 level.addFreshEntity(magmaCrystal);
             }
+            player.getCooldowns().addCooldown(this, 20);
 
             player.awardStat(Stats.ITEM_USED.get(this));
             if (!player.getAbilities().instabuild) {
                 itemStack.shrink(1);
             }
 
-            return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
+            return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());;
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ICY_WING = register("icy_wing", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1596,7 +1599,7 @@ public class GenerationsItems {
         return POKEBALLS.register(name, () -> itemSupplier.apply(of().arch$tab(GenerationsCreativeTabs.POKEBALLS)));
     }
 
-    public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
+    public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
         return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
     }
 

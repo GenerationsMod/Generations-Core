@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.api.player;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.api.storage.player.PlayerDataExtension;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.gson.JsonObject;
@@ -9,7 +8,7 @@ import generations.gg.generations.core.generationscore.config.Key;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class Caught implements PlayerDataExtension {
+public class Caught extends PlayerDataExtension {
     public static String KEY = "caught";
 
     private final Multiset<Key> obtained;
@@ -53,7 +52,7 @@ public class Caught implements PlayerDataExtension {
     @NotNull
     @Override
     public JsonObject serialize() {
-        var json = new JsonObject();
+        var json = super.serialize();
         obtained.elementSet().forEach(key -> json.addProperty(key.toString(), obtained.count(key)));
         return json;
     }
@@ -62,7 +61,7 @@ public class Caught implements PlayerDataExtension {
     @Override
     public PlayerDataExtension deserialize(@NotNull JsonObject jsonObject) {
         var multiset = HashMultiset.<Key>create();
-        jsonObject.entrySet().forEach(entry -> multiset.setCount(Key.fromString(entry.getKey()), entry.getValue().getAsInt()));
+        jsonObject.entrySet().stream().filter(a -> !a.getKey().equals(PlayerDataExtension.Companion.getNAME_KEY())).forEach(entry -> multiset.setCount(Key.fromString(entry.getKey()), entry.getValue().getAsInt()));
 
         return new Caught(multiset);
     }

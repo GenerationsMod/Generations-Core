@@ -1,16 +1,19 @@
 package generations.gg.generations.core.generationscore.api.player;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.api.storage.player.PlayerDataExtension;
 import com.google.gson.JsonObject;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 
-public class AccountInfo implements PlayerDataExtension {
+public class AccountInfo extends PlayerDataExtension {
     public static String KEY = "account_info";
     private BigDecimal balance;
+
+    public AccountInfo() {
+        balance = BigDecimal.ZERO;
+    }
 
     public AccountInfo(BigDecimal balance) {
         this.balance = balance;
@@ -33,7 +36,7 @@ public class AccountInfo implements PlayerDataExtension {
     @NotNull
     @Override
     public JsonObject serialize() {
-        var json = new JsonObject();
+        var json = super.serialize();
         json.addProperty("balance", balance);
         return json;
     }
