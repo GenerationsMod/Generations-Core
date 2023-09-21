@@ -1,10 +1,18 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.world.dialogue.BuiltinDialogues;
-import generations.gg.generations.core.generationscore.world.dialogue.DialogueManager;
-import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
-import generations.gg.generations.core.generationscore.world.dialogue.Dialogues;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.config.LegendKeys;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
+import generations.gg.generations.core.generationscore.world.dialogue.*;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.ChooseNode;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.SpawnPokemonNode;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.BlockLocationLogic;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.BlockYawLogic;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogic;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogic;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
@@ -19,8 +27,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+
 @SuppressWarnings("deprecation")
 public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
+
+    private static LocationLogic TAPU_LOCATION = BlockLocationLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
+    private static YawLogic TAPU_YAW = BlockYawLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
 
     public TapuShrineBlock(BlockBehaviour.Properties properties) {
         super(properties, GenerationsBlockEntities.GENERIC_SHRINE, GenerationsBlockEntityModels.TAPU_SHRINE);
@@ -29,7 +42,8 @@ public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
         if (!world.isClientSide() && !DialogueManager.DIALOGUE_MAP.containsKey((ServerPlayer) player) && player.getItemInHand(handIn).is(GenerationsItems.SPARKLING_STONE.get())) {
-            var graph = Dialogues.instance().get(BuiltinDialogues.TAPU_SPAWN);
+            var graph = generateGraph(player);
+            if(graph == null) return InteractionResult.FAIL;
 
             new DialoguePlayer(graph, null, (ServerPlayer) player, false);
             player.getItemInHand(handIn).shrink(1);
@@ -37,5 +51,32 @@ public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
         }
 
         return InteractionResult.FAIL;
+    }
+
+    public static DialogueGraph generateGraph(Player player) {
+        var map = new HashMap<String, AbstractNode>();
+
+        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_BULU)) {
+            map.put("Tapu Bulu", generateTapu("tapubulu"));
+        }
+
+        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_FINI)) {
+            map.put("Tapu Fini", generateTapu("tapufini"));
+        }
+
+        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_BULU)) {
+            map.put("Tapu Bulu", generateTapu("tapubulu"));
+        }
+
+        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_KOKO)) {
+            map.put("Tapu Koko", generateTapu("tapukoko"));
+        }
+
+        if(map.isEmpty()) return null;
+        return new DialogueGraph(new ChooseNode("Choose which Tapu to Spawn:", map));
+    }
+
+    private static SpawnPokemonNode generateTapu(String name) {
+        return new SpawnPokemonNode(GenerationsUtils.parseProperties(name + " level=70"), 20, TAPU_LOCATION, TAPU_YAW);
     }
 }

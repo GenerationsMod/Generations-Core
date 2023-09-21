@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biomes;
 import org.jetbrains.annotations.NotNull;
 
-public class TimeGlassItem extends Item implements PostBattleUpdatingItem {
+public class TimeGlassItem extends Item implements PostBattleUpdatingItem, LangTooltip {
     private static final PokemonProperties properties = GenerationsUtils.parseProperties("celebi");
 
     public TimeGlassItem(Properties arg) {

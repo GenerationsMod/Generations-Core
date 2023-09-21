@@ -6,7 +6,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
-import generations.gg.generations.core.generationscore.world.item.ItemWithLangTooltip;
+import generations.gg.generations.core.generationscore.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -18,6 +18,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+
+import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.*;
 
 public class GeneralLang extends LanguageProvider {
 
@@ -131,6 +135,65 @@ public class GeneralLang extends LanguageProvider {
 
         addTooltip(GenerationsItems.LAVA_CRYSTAL, "HINT: You see a faint image of Heatran from within. You’ll need more, and an Orb.");
         addTooltip(GenerationsItems.MAGMA_CRYSTAL, "HINT: Against your better judgment, you feel a sudden urge to throw this crystal into lava (right-click)");
+        addTooltip(GenerationsItems.METEORITE, "HINT: Maybe if you collect enough you could craft something from out of this world.");
+        addTooltip(GenerationsItems.TIME_GLASS,  "HINT: Try charging it by defeating Pokemon of a relevant type. It may then react in a Flower Forest biome.");
+        addTooltip(GenerationsItems.ORB, "HINT: This item is flowing with mysterious energy. It’s related to a number of legendary and mythical beings. Maybe you can craft something…");
+        var string = "HINT: Try collecting all 4 parts to repair this key.";
+        addTooltip(CRUMBLED_ROCK_KEY_1, string);
+        addTooltip(CRUMBLED_ROCK_KEY_2, string);
+        addTooltip(CRUMBLED_ROCK_KEY_3, string);
+        addTooltip(CRUMBLED_ROCK_KEY_4, string);
+        addTooltip(SHATTERED_ICE_KEY_1, string);
+        addTooltip(CRUMBLED_ROCK_KEY_2, string);
+        addTooltip(CRUMBLED_ROCK_KEY_3, string);
+        addTooltip(CRUMBLED_ROCK_KEY_4, string);
+        addTooltip(RUSTY_IRON_KEY_1, string);
+        addTooltip(RUSTY_IRON_KEY_2, string);
+        addTooltip(RUSTY_IRON_KEY_3, string);
+        addTooltip(RUSTY_IRON_KEY_4, string);
+        addTooltip(DISCHARGED_ELEKI_KEY_1, string);
+        addTooltip(DISCHARGED_ELEKI_KEY_2, string);
+        addTooltip(DISCHARGED_ELEKI_KEY_3, string);
+        addTooltip(DISCHARGED_ELEKI_KEY_4, string);
+        addTooltip(FRAGMENTED_DRAGO_KEY_1, string);
+        addTooltip(FRAGMENTED_DRAGO_KEY_2, string);
+        addTooltip(FRAGMENTED_DRAGO_KEY_3, string);
+        addTooltip(FRAGMENTED_DRAGO_KEY_4, string);
+
+        string = "HINT: This item appears to be related to one of the Regi’s. Find their shrine at a Snowpoint Temple.";
+        addTooltip(ROCK_PEAK_KEY, string);
+        addTooltip(ICEBERG_KEY, string);
+        addTooltip(IRON_KEY, string);
+        addTooltip(ELEKI_KEY, string);
+        addTooltip(DRAGO_KEY, string);
+
+
+        addTooltip(ENIGMA_FRAGMENT, "HINT: You appear to gain one for each new biome discovered. If you collect enough, maybe you can craft something.");
+        addTooltip(ENIGMA_SHARD, "HINT: You should explore more… Maybe with enough of these you could craft something related to the Eon Duo.");
+        addTooltip(ENIGMA_STONE, "HINT: You should try capturing or defeating Psychic or Dragon Type Pokemon");
+
+        string = "HINT: This item appears to be related to the Weather Trio. Try Charging it by defeating Pokemon of a relevant type. Then, find a relevant shrine.";
+        addTooltip(FADED_BLUE_ORB, string);
+        addTooltip(FADED_RED_ORB, string);
+
+        addTooltip(FADED_JADE_ORB, "HINT: This item appears to be related to the Weather Trio. Try charging it by defeating Pokemon of a relevant type. Then, go VERY high in altitude.");
+        addTooltip(JADE_ORB, "HINT: This item can teach Dragon Ascent to a certain Pokemon.");
+
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+
+
+
     }
 
 
@@ -151,7 +214,7 @@ public class GeneralLang extends LanguageProvider {
         return getNameGens(item, name).replace("Poke Brick", "PokeBrick");
     }
 
-    public <T extends ItemWithLangTooltip> void addTooltip(RegistrySupplier<T> registrySupplier, String entry) {
+    public <T extends LangTooltip> void addTooltip(RegistrySupplier<T> registrySupplier, String entry) {
         add(registrySupplier.get().tooltipId(), entry);
     }
 

@@ -1,6 +1,9 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.config.LegendKeys;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -14,6 +17,13 @@ public class RedChainItem extends EnchantableItem {
 
     public RedChainItem(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public int neededEnchantmentLevel(Player player) {
+        var caught = GenerationsCore.CONFIG.caught;
+        if(caught.capped(player, LegendKeys.DIALGA) || caught.capped(player, LegendKeys.GIRATINA) || caught.capped(player, LegendKeys.PALKIA)) return super.neededEnchantmentLevel(player);
+        else return 0;
     }
 
     public static void incrementUsage(ItemStack stack) {

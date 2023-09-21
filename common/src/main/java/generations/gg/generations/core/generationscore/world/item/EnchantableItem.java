@@ -1,12 +1,17 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class EnchantableItem extends Item {
+public abstract class EnchantableItem extends Item {
     public EnchantableItem(Properties arg) {
         super(arg);
+    }
+
+    public int neededEnchantmentLevel(Player player) {
+        return 100;
     }
 
     public static ItemStack getEnchanted(Item item) {

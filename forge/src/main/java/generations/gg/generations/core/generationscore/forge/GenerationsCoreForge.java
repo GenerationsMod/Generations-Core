@@ -14,6 +14,7 @@ import net.minecraft.server.packs.resources.ReloadableResourceManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -26,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * Forge Main class for GenerationsCore.
@@ -51,6 +53,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         var EVENT_BUS = MinecraftForge.EVENT_BUS;
 
         EVENT_BUS.addListener(this::onDataPackSync);
+        EVENT_BUS.addListener((Consumer<AnvilUpdateEvent>) event -> GenerationsCore.onAnvilChange(event.getLeft(), event.getRight(), event::setOutput, event::setCost, event::setMaterialCost));
 //            addListener(this::onLogin)
 //            addListener(this::onLogout)
         EVENT_BUS.addListener(this::onReload);

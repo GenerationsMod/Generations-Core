@@ -42,6 +42,11 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
                 GenerationsCore.dataProvider.sync(player);
         });
 
+        AnvilEvents.ANVIL_CHANGE.register((result, left, right, name, baseCost, player) -> {
+            GenerationsCore.onAnvilChange(left, right, result::setOutput, result::setCost, result::setMaterialCost);
+            return false;
+        });
+
 //        InteractionEvent.INTERACT_ENTITY
     }
 

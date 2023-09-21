@@ -867,31 +867,31 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ADAMANT_ORB = register("adamant_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "dialga", GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> GRISEOUS_ORB = register("griseous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "giratina", GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LUSTROUS_ORB = register("lustrous_orb", properties -> new CreationTrioItem(properties.stacksTo(1), "palkia", GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_1 = register("shattered_ice_key_1", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_2 = register("shattered_ice_key_2", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_3 = register("shattered_ice_key_3", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> SHATTERED_ICE_KEY_4 = register("shattered_ice_key_4", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ICEBERG_KEY = register("iceberg_key", properties -> new RegiKeyItem(properties, "regice"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> CRUMBLED_ROCK_KEY_1 = register("crumbled_rock_key_1", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> CRUMBLED_ROCK_KEY_2 = register("crumbled_rock_key_2", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> CRUMBLED_ROCK_KEY_3 = register("crumbled_rock_key_3", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> CRUMBLED_ROCK_KEY_4 = register("crumbled_rock_key_4", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ROCK_PEAK_KEY = register("rock_peak_key", properties -> new RegiKeyItem(properties, "regirock"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RUSTY_IRON_KEY_1 = register("rusty_iron_key_1", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RUSTY_IRON_KEY_2 = register("rusty_iron_key_2", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RUSTY_IRON_KEY_3 = register("rusty_iron_key_3", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RUSTY_IRON_KEY_4 = register("rusty_iron_key_4", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> IRON_KEY = register("iron_key", properties -> new RegiKeyItem(properties, "registeel"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FRAGMENTED_DRAGO_KEY_1 = register("fragmented_drago_key_1", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FRAGMENTED_DRAGO_KEY_2 = register("fragmented_drago_key_2", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FRAGMENTED_DRAGO_KEY_3 = register("fragmented_drago_key_3", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FRAGMENTED_DRAGO_KEY_4 = register("fragmented_drago_key_4", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> DRAGO_KEY = register("drago_key", properties -> new RegiKeyItem(properties, "regidrago"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> DISCHARGED_ELEKI_KEY_1 = register("discharged_eleki_key_1", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> DISCHARGED_ELEKI_KEY_2 = register("discharged_eleki_key_2", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> DISCHARGED_ELEKI_KEY_3 = register("discharged_eleki_key_3", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> DISCHARGED_ELEKI_KEY_4 = register("discharged_eleki_key_4", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ELEKI_KEY = register("eleki_key", properties -> new RegiKeyItem(properties, "regieleki"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_ICE_KEY_1 = register("shattered_ice_key_1", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_ICE_KEY_2 = register("shattered_ice_key_2", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_ICE_KEY_3 = register("shattered_ice_key_3", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_ICE_KEY_4 = register("shattered_ice_key_4", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<RegiKeyItem> ICEBERG_KEY = register("iceberg_key", properties -> new RegiKeyItem(properties, "regice"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> CRUMBLED_ROCK_KEY_1 = register("crumbled_rock_key_1", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> CRUMBLED_ROCK_KEY_2 = register("crumbled_rock_key_2", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> CRUMBLED_ROCK_KEY_3 = register("crumbled_rock_key_3", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> CRUMBLED_ROCK_KEY_4 = register("crumbled_rock_key_4", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<RegiKeyItem> ROCK_PEAK_KEY = register("rock_peak_key", properties -> new RegiKeyItem(properties, "regirock"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> RUSTY_IRON_KEY_1 = register("rusty_iron_key_1", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> RUSTY_IRON_KEY_2 = register("rusty_iron_key_2", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> RUSTY_IRON_KEY_3 = register("rusty_iron_key_3", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> RUSTY_IRON_KEY_4 = register("rusty_iron_key_4", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<RegiKeyItem> IRON_KEY = register("iron_key", properties -> new RegiKeyItem(properties, "registeel"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> FRAGMENTED_DRAGO_KEY_1 = register("fragmented_drago_key_1", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> FRAGMENTED_DRAGO_KEY_2 = register("fragmented_drago_key_2", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> FRAGMENTED_DRAGO_KEY_3 = register("fragmented_drago_key_3", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> FRAGMENTED_DRAGO_KEY_4 = register("fragmented_drago_key_4", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<RegiKeyItem> DRAGO_KEY = register("drago_key", properties -> new RegiKeyItem(properties, "regidrago"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> DISCHARGED_ELEKI_KEY_1 = register("discharged_eleki_key_1", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> DISCHARGED_ELEKI_KEY_2 = register("discharged_eleki_key_2", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> DISCHARGED_ELEKI_KEY_3 = register("discharged_eleki_key_3", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> DISCHARGED_ELEKI_KEY_4 = register("discharged_eleki_key_4", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<RegiKeyItem> ELEKI_KEY = register("eleki_key", properties -> new RegiKeyItem(properties, "regieleki"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_RELIC_SONG_1 = register("shattered_relic_song_1", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_RELIC_SONG_2 = register("shattered_relic_song_2", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHATTERED_RELIC_SONG_3 = register("shattered_relic_song_3", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -908,7 +908,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> RED_ORB = register("red_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> FADED_RED_ORB = register("faded_red_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFIRE()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> FADED_BLUE_ORB = register("faded_blue_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getWATER()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> FADED_JADED_ORB = register("faded_jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFLYING()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> FADED_JADE_ORB = register("faded_jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFLYING()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> BLUE_ORB = register("blue_orb", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> JADE_ORB = register("jade_orb", properties -> new WeatherTrioItem(properties.stacksTo(1).durability(300), ElementalTypes.INSTANCE.getFLYING()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LIGHT_STONE = register("light_stone", properties -> new TaoTrioStoneItem(properties.stacksTo(1).durability(100), "reshiram"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -935,10 +935,10 @@ public class GenerationsItems {
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MELTAN_BOX_CHARGED = register("meltan_box_charged", properties -> new EvolutionItem(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> TIME_GLASS = register("time_glass", properties -> new TimeGlassItem(properties.stacksTo(1).durability(100)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<TimeGlassItem> TIME_GLASS = register("time_glass", properties -> new TimeGlassItem(properties.stacksTo(1).durability(100)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> MOON_FLUTE = register("moon_flute", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SUN_FLUTE = register("sun_flute", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltip> LAVA_CRYSTAL = register("lava_crystal", ItemWithLangTooltip::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> LAVA_CRYSTAL = register("lava_crystal", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> JEWEL_OF_LIFE = register("jewel_of_life", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> PRISON_BOTTLE_STEM = register("prison_bottle_stem", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> PRISON_BOTTLE = register("prison_bottle", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -964,15 +964,15 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SHARD_OF_WILLPOWER = register("shard_of_willpower", properties -> new Item(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHARD_OF_EMOTION = register("shard_of_emotion", properties -> new Item(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHARD_OF_KNOWLEDGE = register("shard_of_knowledge", properties -> new Item(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> CRYSTAL_OF_WILLPOWER = register("crystal_of_willpower", properties -> new LakeCrystalItem(properties.durability(100), "azelf"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> CRYSTAL_OF_EMOTION = register("crystal_of_emotion", properties -> new LakeCrystalItem(properties.durability(100), "mesprit"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> CRYSTAL_OF_KNOWLEDGE = register("crystal_of_knowledge", properties -> new LakeCrystalItem(properties.durability(100), "uxie"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> CRYSTAL_OF_WILLPOWER = register("crystal_of_willpower", properties -> new LakeCrystalItem(properties.durability(100), LegendKeys.AZELF), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> CRYSTAL_OF_EMOTION = register("crystal_of_emotion", properties -> new LakeCrystalItem(properties.durability(100), LegendKeys.MESPRIT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> CRYSTAL_OF_KNOWLEDGE = register("crystal_of_knowledge", properties -> new LakeCrystalItem(properties.durability(100), LegendKeys.UXIE), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REGICE_ORB = register("regice_orb", properties -> new RegiOrbItem(properties, "regice"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REGIROCK_ORB = register("regirock_orb", properties -> new RegiOrbItem(properties, "regirock"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REGISTEEL_ORB = register("registeel_orb", properties -> new RegiOrbItem(properties,"registeel"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REGIDRAGO_ORB = register("regidrago_orb", properties -> new RegiOrbItem(properties, "regidrago"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REGIELEKI_ORB = register("regieleki_orb", properties -> new RegiOrbItem(properties, "regieleki"), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltip> MAGMA_CRYSTAL = register("magma_crystal", properties -> new ItemWithLangTooltip(properties.stacksTo(1)) {
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> MAGMA_CRYSTAL = register("magma_crystal", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)) {
         public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
             ItemStack itemStack = player.getItemInHand(usedHand);
             if(!level.isClientSide && GenerationsCore.CONFIG.caught.capped(player, LegendKeys.HEATRAN)) return InteractionResultHolder.fail(itemStack);
@@ -1001,7 +1001,7 @@ public class GenerationsItems {
                 itemStack.shrink(1);
             }
 
-            return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());;
+            return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ICY_WING = register("icy_wing", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1053,7 +1053,7 @@ public class GenerationsItems {
     /**
      * Form Items
      */
-    public static final RegistrySupplier<Item> METEORITE = register("meteorite", MeteoriteItem::new, GenerationsCreativeTabs.FORM_ITEMS);
+    public static final RegistrySupplier<MeteoriteItem> METEORITE = register("meteorite", MeteoriteItem::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> GRACIDEA = register("gracidea", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> REVEAL_GLASS = register("reveal_glass", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> ROCKSTAR_COSTUME = register("rockstar_costume", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
@@ -1385,7 +1385,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MEGA_CUFF = register("mega_cuff", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEGA_RING = register("mega_ring", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEMBER_CARD = register("member_card", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> METEORITE_SHARD = register("meteorite_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> METEORITE_SHARD = register("meteorite_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEGASTONE_SHARD = register("mega_stone_shard", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MIGHTY_CANDY = register("mighty_candy", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MIGHTY_CANDY_L = register("mighty_candy_l", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);

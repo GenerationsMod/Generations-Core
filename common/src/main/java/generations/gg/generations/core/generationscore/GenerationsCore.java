@@ -24,17 +24,19 @@ import generations.gg.generations.core.generationscore.world.dialogue.nodes.Abst
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogicTypes;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogicTypes;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
-import generations.gg.generations.core.generationscore.world.item.PixelmonInteractions;
+import generations.gg.generations.core.generationscore.world.item.*;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
+
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 /**
  * The Main Class of the Generations-Core mod. (Common)
@@ -102,6 +104,14 @@ public class GenerationsCore
 			if(result.interruptsFurtherEvaluation() && stack.getItem() instanceof PixelmonInteractions.PixelmonInteraction interaction && interaction.isConsumed()) stack.shrink(1);
 			return result;
 		});
+	}
+
+	public static void onAnvilChange(ItemStack left, ItemStack right, Player player, Consumer<ItemStack> output, IntConsumer cost, IntConsumer materialCost) {
+		if(left.getItem() instanceof EnchantableItem enchantableItem && enchantableItem.neededEnchantmentLevel(player) > 0 && !EnchantableItem.isEnchanted(left) && right.isEmpty()) {
+			output.accept(EnchantableItem.setEnchanted(left.copy(), true));
+			cost.accept(100);
+			materialCost.accept(0);
+		}
 	}
 
 	/**

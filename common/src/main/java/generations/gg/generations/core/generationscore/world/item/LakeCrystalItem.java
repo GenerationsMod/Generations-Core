@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
+import generations.gg.generations.core.generationscore.config.Key;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import net.minecraft.world.InteractionHand;
@@ -17,9 +18,14 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
 
     private final PokemonProperties pokemonProperties;
 
-    public LakeCrystalItem(Properties properties, String speciesId) {
+    public LakeCrystalItem(Properties properties, Key speciesId) {
         super(properties);
-        this.pokemonProperties = GenerationsUtils.parseProperties(speciesId);
+        this.pokemonProperties = GenerationsUtils.parseProperties(speciesId.species().getPath());
+    }
+
+    @Override
+    public int neededEnchantmentLevel(Player player) {
+        return 0;
     }
 
     @Override

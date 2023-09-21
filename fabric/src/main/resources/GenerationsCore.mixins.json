@@ -4,8 +4,10 @@
   "package": "generations.gg.generations.core.generationscore.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AnvilMenuMixin",
     "BaseFireBlockMixin",
     "BlockMixin",
+    "ItemCombinerMenuMixin",
     "PortalShapeMixin"
   ],
   "client": [

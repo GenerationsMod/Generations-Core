@@ -69,6 +69,7 @@ public class DialoguePlayer {
     public void discard() {
         DialogueManager.DIALOGUE_MAP.remove(player);
         GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(player, new S2CCloseScreenPacket());
+
     }
 
     public LivingEntity getSource() {

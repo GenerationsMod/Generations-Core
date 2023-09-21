@@ -10,21 +10,22 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ItemWithLangTooltip extends Item {
-    public ItemWithLangTooltip(Properties properties) {
-        super(properties);
-    }
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+public interface LangTooltip {
+
+    default void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         var tooltipId = tooltipId(stack);
-        if(Language.getInstance().has(this.getDescriptionId(stack))) tooltipComponents.add(Component.translatable(tooltipId));
+        if(Language.getInstance().has(self().getDescriptionId(stack))) tooltipComponents.add(Component.translatable(tooltipId));
     }
 
-    public String tooltipId() {
+    default String tooltipId() {
         return tooltipId(null);
     }
 
     private String tooltipId(ItemStack stack) {
-        return this.getDescriptionId(stack) + ".tooltip";
+        return self().getDescriptionId(stack) + ".tooltip";
+    }
+
+    private Item self() {
+        return (Item) this;
     }
 }

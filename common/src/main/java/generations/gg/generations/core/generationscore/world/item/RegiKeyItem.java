@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
-public class RegiKeyItem extends Item {
+public class RegiKeyItem extends Item implements LangTooltip {
     private final ResourceLocation speciesId;
 
     public RegiKeyItem(Properties properties, String speciesId) {
