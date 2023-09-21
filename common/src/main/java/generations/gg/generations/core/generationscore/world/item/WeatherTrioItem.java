@@ -3,13 +3,9 @@ package generations.gg.generations.core.generationscore.world.item;
 import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-import java.util.stream.Stream;
-
-public class WeatherTrioItem extends Item implements PostBattleUpdatingItem {
+public class WeatherTrioItem extends ItemWithLangTooltipImpl implements PostBattleUpdatingItem, LangTooltip {
 
     private final ElementalType type;
 

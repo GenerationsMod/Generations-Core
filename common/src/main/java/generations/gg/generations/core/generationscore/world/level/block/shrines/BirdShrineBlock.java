@@ -25,17 +25,17 @@ import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
 public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
-    private final RegistrySupplier<Item> imbuedItem;
+    private final RegistrySupplier<? extends Item> imbuedItem;
     @Nullable
-    private final RegistrySupplier<Item> galarianImbuedItem;
+    private final RegistrySupplier<? extends Item> galarianImbuedItem;
     private final PokemonProperties regularProperties;
     private final PokemonProperties galarianProperties;
 
-    public BirdShrineBlock(BlockBehaviour.Properties materialIn, ResourceLocation model, String pokeEntryId, RegistrySupplier<Item> imbuedItem) {
+    public BirdShrineBlock(BlockBehaviour.Properties materialIn, ResourceLocation model, String pokeEntryId, RegistrySupplier<? extends Item> imbuedItem) {
         this(materialIn, model, pokeEntryId, imbuedItem, null);
     }
 
-    public BirdShrineBlock(Properties materialIn, ResourceLocation model, String pokeEntryId, RegistrySupplier<Item> imbuedItem, @Nullable RegistrySupplier<Item> galarianImbuedItem) {
+    public BirdShrineBlock(Properties materialIn, ResourceLocation model, String pokeEntryId, RegistrySupplier<? extends Item> imbuedItem, @Nullable RegistrySupplier<? extends Item> galarianImbuedItem) {
         super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);
         this.imbuedItem = imbuedItem;
         this.galarianImbuedItem = galarianImbuedItem;

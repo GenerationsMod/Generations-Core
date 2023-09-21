@@ -42,12 +42,12 @@ public abstract class DistanceTraveledImplItem extends Item implements DistanceT
 
     @Override
     public void incrementDistance(ServerPlayer player, ItemStack stack, double distance) {
-        if (checkPlayerState()) {
+        if (checkPlayerState(player)) {
            setDistance(stack, getDistance(stack) + distance);
         }
     }
 
-    public boolean checkPlayerState() {
+    public boolean checkPlayerState(Player player) {
         return true;
     }
 

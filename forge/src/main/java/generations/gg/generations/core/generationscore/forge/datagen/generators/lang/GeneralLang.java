@@ -18,8 +18,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
-import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.*;
 
@@ -135,7 +133,8 @@ public class GeneralLang extends LanguageProvider {
 
         addTooltip(GenerationsItems.LAVA_CRYSTAL, "HINT: You see a faint image of Heatran from within. You’ll need more, and an Orb.");
         addTooltip(GenerationsItems.MAGMA_CRYSTAL, "HINT: Against your better judgment, you feel a sudden urge to throw this crystal into lava (right-click)");
-        addTooltip(GenerationsItems.METEORITE, "HINT: Maybe if you collect enough you could craft something from out of this world.");
+        addTooltip(METEORITE, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
+        addTooltip(METEORITE_SHARD, "HINT: Maybe if you collect enough you could craft something from out of this world.");
         addTooltip(GenerationsItems.TIME_GLASS,  "HINT: Try charging it by defeating Pokemon of a relevant type. It may then react in a Flower Forest biome.");
         addTooltip(GenerationsItems.ORB, "HINT: This item is flowing with mysterious energy. It’s related to a number of legendary and mythical beings. Maybe you can craft something…");
         var string = "HINT: Try collecting all 4 parts to repair this key.";
@@ -179,21 +178,58 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(FADED_JADE_ORB, "HINT: This item appears to be related to the Weather Trio. Try charging it by defeating Pokemon of a relevant type. Then, go VERY high in altitude.");
         addTooltip(JADE_ORB, "HINT: This item can teach Dragon Ascent to a certain Pokemon.");
 
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-        addTooltip(GenerationsItems.METEORITE_SHARD, "HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.");
-
-
-
+        addTooltip(SHARD_OF_EMOTION, "HINT: Keep fishing. With enough, you could craft something.");
+        addTooltip(SHARD_OF_KNOWLEDGE, "HINT: Keep fishing. With enough, you could craft something.");
+        addTooltip(SHARD_OF_WILLPOWER, "HINT: Keep fishing. With enough, you could craft something.");
+        addTooltip(CRYSTAL_OF_EMOTION, "HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.");
+        addTooltip(CRYSTAL_OF_KNOWLEDGE, "HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.");
+        addTooltip(CRYSTAL_OF_WILLPOWER, "HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.");
+        addTooltip(CRYSTAL_OF_EMOTION, "enchanted", "HINT: Try charging it by defeating Pokemon of a relevant type.");
+        addTooltip(CRYSTAL_OF_KNOWLEDGE, "enchanted", "HINT: Try charging it by defeating Pokemon of a relevant type.");
+        addTooltip(CRYSTAL_OF_WILLPOWER, "enchanted", "HINT: Try charging it by defeating Pokemon of a relevant type.");
+        addTooltip(RUBY_ROD, "HINT: Fish… Lake… Guardian…");
+        addTooltip(RED_CHAIN, "HINT: It doesn’t seem to be reacting to anything. The Crystals used may have used up all their energy. Try enchanting it to give it some power.");
+        addTooltip(RED_CHAIN, "enchanted", "“HINT: This item appears to be related to the Creation Trio, perhaps if you had their respected Orbs you could activate an altar.");
+        addTooltip(ADAMANT_ORB, "HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.");
+        addTooltip(LUSTROUS_ORB, "HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.");
+        addTooltip(GRISEOUS_ORB, "HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.");
+        addTooltip(REGICE_ORB, "HINT: If you collect the other Orbs, Regigigas may be awoken");
+        addTooltip(REGIROCK_ORB, "HINT: If you collect the other Orbs, Regigigas may be awoken");
+        addTooltip(REGISTEEL_ORB, "HINT: If you collect the other Orbs, Regigigas may be awoken");
+        addTooltip(REGIELEKI_ORB, "HINT: If you collect the other Orbs, Regigigas may be awoken");
+        addTooltip(REGIDRAGO_ORB, "HINT: If you collect the other Orbs, Regigigas may be awoken");
+        addTooltip(LIGHT_CRYSTAL, "HINT: It’s guiding you to a pentagram. You’ll need 5 in total and prevail against the dark.");
+        addTooltip(DARK_CRYSTAL, "HINT: It’s guiding you to a pentagram. You’ll need 5 in total and prevail against the light.");
+        addTooltip(LIGHT_SOUL, "HINT: Cresselia appears faintly, you need more.");
+        addTooltip(DARK_SOUL, "HINT:  Darkrai appears faintly, you need more.");
+        addTooltip(WONDER_EGG, "HINT: Oh?");
+        addTooltip(PHIONE_EGG, "HINT: Oh?");
+        addTooltip(DRAGON_SOUL, "HINT: It screams. They seek their masters- the Tao Trio. An Orb is required to seal these souls. With a certain Gem, you could manipulate it towards a specific Tao.");
+        addTooltip(LIGHT_STONE, "HINT: It isn’t reacting. More Dragons could do the trick.");
+        addTooltip(DARK_STONE, "HINT: It isn’t reacting. More Dragons could do the trick.");
+        addTooltip(DRAGON_STONE, "HINT: It isn’t reacting. More Dragons could do the trick.");
+        addTooltip(SHATTERED_RELIC_SONG_1, "HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
+        addTooltip(SHATTERED_RELIC_SONG_2, "HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
+        addTooltip(SHATTERED_RELIC_SONG_3, "HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
+        addTooltip(SHATTERED_RELIC_SONG_4, "HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
+        addTooltip(RELIC_SONG, "HINT: A special music box may play this melody differently.");
+        addTooltip(ZYGARDE_CUBE, "A strange cube capable of storing up to 100 Zygarde Cells, as well as fusing them together to reconstruct the legendary Zygarde.");
+        addTooltip(HOOPA_RING, "HINT: If you collect 6 and insert them on a Bottle Stem, you could create a Prison Bottle. A Bottle Stem may be created with Rubies, White Glazed Terracotta, and an Orb.");
+        addTooltip(SPARKLING_SHARD, "HINT: A protective presence looms over this shard. Perhaps if you collect more you’ll get a stronger feeling of what to do.");
+        addTooltip(SPARKLING_STONE, "HINT: Capturing Pokemon of a specific type to care for seems to cause a reaction.");
+        addTooltip(SOUL_HEART, "HINT: This item appears to hold the soul of a mysterious Pokemon. You could try creating a body for it in an RKS Machine.");
+        addTooltip(MELTAN_BOX, "HINT: Meltan oddly find peace in this box. Collect an army colony of Meltan! For science, of course.");
+        addTooltip(MELTAN_BOX_CHARGED, "HINT: Meltan oddly find peace in this box. Collect an army colony of Meltan! For science, of course.");
+        addTooltip(RUSTY_FRAGMENT, "HINT: Collect more Rusty Fragments from Aegislash to assist in crafting a Sword or Shield");
+        addTooltip(RUSTY_SHIELD, "HINT: Steel Type Pokemon");
+        addTooltip(RUSTY_SWORD, "HINT: Steel Type Pokemon");
+        addTooltip(SCROLL_PAGE, "HINT: This item is given to masters of the Martial Arts. Gather more pages to complete the scroll and prove your worth.");
+        addTooltip(SECRET_ARMOR_SCROLL, "HINT: A Legendary Pokemon has taken notice to you- continue to prove your worth by defeating more Fighting type Pokemon");
+        addTooltip(WHITE_MANE_HAIR, "HINT: This majestic steed requires a generous offering of carrots if you wish to lay your eyes upon them.");
+        addTooltip(BLACK_MANE_HAIR, "HINT: This majestic steed requires a generous offering of carrots if you wish to lay your eyes upon them.");
+        addTooltip(MEW_DNA_FIBER, "HINT: DNA may be manipulated in an RKS Machine.");
+        addTooltip(MEW_FOSSIL, "HINT: This may contain valuable DNA traces to recreate something in an RKS Machine.");
+        addTooltip(SACRED_ASH, "HINT: A sacred item capable of bringing back the dead.");
     }
 
 
@@ -215,7 +251,11 @@ public class GeneralLang extends LanguageProvider {
     }
 
     public <T extends LangTooltip> void addTooltip(RegistrySupplier<T> registrySupplier, String entry) {
-        add(registrySupplier.get().tooltipId(), entry);
+        addTooltip(registrySupplier, null, entry);
+    }
+
+    public <T extends LangTooltip> void addTooltip(RegistrySupplier<T> registrySupplier, String sub, String entry) {
+        add(registrySupplier.get().tooltipId() + (sub != null ? "." + sub : ""), entry);
     }
 
     @Deprecated

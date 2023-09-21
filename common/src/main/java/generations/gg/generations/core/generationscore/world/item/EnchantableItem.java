@@ -26,7 +26,7 @@ public abstract class EnchantableItem extends Item {
     }
 
     public static boolean isEnchanted(ItemStack stack) {
-        return stack.getOrCreateTag().getBoolean("enchanted");
+        return stack != null && !stack.isEmpty() && stack.getOrCreateTag().getBoolean("enchanted");
     }
 
     public boolean isFoil(@NotNull ItemStack stack) {

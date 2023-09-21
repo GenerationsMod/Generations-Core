@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class RedChainItem extends EnchantableItem {
+public class RedChainItem extends EnchantableItem implements LangTooltip {
     public static final int MAX_USES = 3;
 
     public RedChainItem(Properties properties) {
@@ -37,6 +37,12 @@ public class RedChainItem extends EnchantableItem {
 
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
-        tooltipComponents.add(Component.nullToEmpty("Remaining Uses: %s".formatted(MAX_USES - getUses(stack))));
+        LangTooltip.super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        if(isAdvanced.isAdvanced()) tooltipComponents.add(Component.nullToEmpty("Remaining Uses: %s".formatted(MAX_USES - getUses(stack))));
+    }
+
+    @Override
+    public String tooltipId(ItemStack stack) {
+        return this.getDescriptionId() + (isEnchanted(stack) ? ".enchanted" : "") + ".tooltip";
     }
 }

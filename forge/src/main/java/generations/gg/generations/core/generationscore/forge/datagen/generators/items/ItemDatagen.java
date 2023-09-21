@@ -9,7 +9,6 @@ import generations.gg.generations.core.generationscore.world.item.curry.CurryTyp
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -509,7 +508,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.SHATTERED_RELIC_SONG_4.get(), "legend_items/");
         createItem(GenerationsItems.RELIC_SONG.get(), "legend_items/");
         createItem(GenerationsItems.RED_CHAIN.get(), "legend_items/");
-        createItem(GenerationsItems.RED_CHAIN_SHARD.get(), "legend_items/");
         createItem(GenerationsItems.DNA_SPLICERS.get(), "legend_items/");
         createItem(GenerationsItems.REINS_OF_UNITY.get(), "legend_items/");
         createItem(GenerationsItems.N_SOLARIZER.get(), "legend_items/");
@@ -572,7 +570,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.LUSTROUS_GLOBE.get(), "legend_items/");
         createItem(GenerationsItems.ADAMANT_CRYSTAL.get(), "legend_items/");
         createItem(GenerationsItems.GRISEOUS_CORE.get(), "legend_items/");
-        createItem(GenerationsItems.FADED_JADED_ORB.get(), "legend_items/");
+        createItem(GenerationsItems.FADED_JADE_ORB.get(), "legend_items/");
         createItem(GenerationsItems.MELTAN_BOX_CHARGED.get(), "legend_items/", "meltan_box");
         createItem(GenerationsItems.UNENCHANTED_ICEROOT_CARROT.get(), "legend_items/", "iceroot_carrot");
         createItem(GenerationsItems.UNENCHANTED_SHADEROOT_CARROT.get(), "legend_items/", "shaderoot_carrot");
