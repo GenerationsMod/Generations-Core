@@ -15,7 +15,7 @@ import dev.architectury.event.events.common.InteractionEvent;
 import dev.architectury.platform.Platform;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.api.player.AccountInfo;
-import generations.gg.generations.core.generationscore.api.player.LegendsObtained;
+import generations.gg.generations.core.generationscore.api.player.Caught;
 import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
@@ -34,10 +34,7 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
-
-import java.nio.file.Path;
 
 /**
  * The Main Class of the Generations-Core mod. (Common)
@@ -94,7 +91,7 @@ public class GenerationsCore
 		CONFIG = ConfigLoader.loaderConfig(Config.class, MOD_ID, "main");
 
 		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
-		PlayerDataExtensionRegistry.INSTANCE.register(LegendsObtained.KEY, LegendsObtained.class, false);
+		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);
 
 		if(Platform.isModLoaded("impactor")) ImpactorCompat.init();
 

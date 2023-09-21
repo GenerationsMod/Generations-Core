@@ -2,10 +2,10 @@ package generations.gg.generations.core.generationscore;
 
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType;
-import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import com.cobblemon.mod.common.pokemon.Pokemon;
+import generations.gg.generations.core.generationscore.api.player.Caught;
+import generations.gg.generations.core.generationscore.config.Key;
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem.BattleData;
 import kotlin.Unit;
@@ -38,6 +38,13 @@ class CobblemonEvents {
                 });
             });
 
+            return Unit.INSTANCE;
+        });
+
+        com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_CAPTURED.subscribe(Priority.HIGH, event -> {
+            var key = Key.fromPokemon(event.getPokemon());
+
+            Caught.get(event.getPlayer()).accumulate(key);
             return Unit.INSTANCE;
         });
     }

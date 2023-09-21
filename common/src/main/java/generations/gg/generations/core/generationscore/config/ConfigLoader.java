@@ -17,7 +17,8 @@ import java.time.Duration;
 public class ConfigLoader {
 
     /** The Gson instance for the Config Loader. */
-    private static final Gson GSON = new GsonBuilder().registerTypeAdapter(Duration.class, new DurationJsonAdapter()).setPrettyPrinting().create();
+    private static final Gson GSON = new GsonBuilder().registerTypeAdapter(Duration.class, new DurationJsonAdapter())
+            .registerTypeAdapter(Config.Caught.class, new Config.Caught.Adapter()).setPrettyPrinting().create();
 
     /** Config Directory **/
     public static Path CONFIG_DIRECTORY = null;

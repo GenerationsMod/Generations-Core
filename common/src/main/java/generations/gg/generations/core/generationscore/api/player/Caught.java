@@ -5,32 +5,34 @@ import com.cobblemon.mod.common.api.storage.player.PlayerDataExtension;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.gson.JsonObject;
+import generations.gg.generations.core.generationscore.config.Key;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class LegendsObtained implements PlayerDataExtension {
-    public static String KEY = "legends_obtained";
+public class Caught implements PlayerDataExtension {
+    public static String KEY = "caught";
 
-    private Multiset<String> obtained;
+    private final Multiset<Key> obtained;
 
-    public LegendsObtained(Multiset<String> obtained) {
+    public Caught(Multiset<Key> obtained) {
         this.obtained = obtained;
     }
 
-    public LegendsObtained() {
+    public Caught() {
         this(HashMultiset.create());
     }
 
-    public int get(String name) {
-        return obtained.count(name);
+    public int get(Key name) {
+        return obtained.contains(name) ? obtained.count(name) : -1;
     }
 
-    public boolean accumulate(String name, int amount) {
+    public boolean accumulate(Key name, int amount) {
         var count = obtained.count(name);
+
         return obtained.setCount(name, count, amount + count);
     }
 
-    public boolean accumulate(String name) {
+    public boolean accumulate(Key name) {
         return accumulate(name, 1);
     }
 
@@ -38,7 +40,7 @@ public class LegendsObtained implements PlayerDataExtension {
         obtained.clear();
     }
 
-    public void reset(String name) {
+    public void reset(Key name) {
         obtained.setCount(name, 0);
     }
 
@@ -52,20 +54,20 @@ public class LegendsObtained implements PlayerDataExtension {
     @Override
     public JsonObject serialize() {
         var json = new JsonObject();
-        obtained.forEachEntry(json::addProperty);
+        obtained.elementSet().forEach(key -> json.addProperty(key.toString(), obtained.count(key)));
         return json;
     }
 
     @NotNull
     @Override
     public PlayerDataExtension deserialize(@NotNull JsonObject jsonObject) {
-        var multiset = HashMultiset.<String>create();
-        jsonObject.entrySet().forEach(entry -> multiset.setCount(entry.getKey(), entry.getValue().getAsInt()));
+        var multiset = HashMultiset.<Key>create();
+        jsonObject.entrySet().forEach(entry -> multiset.setCount(Key.fromString(entry.getKey()), entry.getValue().getAsInt()));
 
-        return new LegendsObtained(multiset);
+        return new Caught(multiset);
     }
 
-    public static LegendsObtained get(Player player) {
-        return (LegendsObtained) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new LegendsObtained());
+    public static Caught get(Player player) {
+        return (Caught) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new Caught());
     }
 }
