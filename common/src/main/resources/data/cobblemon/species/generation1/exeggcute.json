@@ -31,7 +31,20 @@
       ],
       "evolutions": [
         {
-          "id": "exeggcute_exeggutor",
+          "id": "exeggcute_exeggutor_kantonian",
+          "variant": "item_interact",
+          "result": "exeggutor",
+          "consumeHeldItem": false,
+          "requirements": [
+            {
+              "variant": "biome",
+              "biomeCondition": "cobblemon:is_jungle"
+            }
+          ],
+          "requiredContext": "cobblemon:leaf_stone"
+        },
+        {
+          "id": "exeggcute_exeggutor_alolan_kantonian",
           "variant": "item_interact",
           "result": "exeggutor alolan",
           "consumeHeldItem": false,
@@ -39,6 +52,38 @@
             "dragonhammer"
           ],
           "requirements": [],
+          "requiredContext": "cobblemon:leaf_stone"
+        }
+      ]
+    },
+    {
+      "name": "base",
+      "evolutions": [
+        {
+          "id": "exeggcute_exeggutor_kantonian_alolan",
+          "variant": "item_interact",
+          "result": "exeggutor",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "stomp"
+          ],
+          "requirements": [],
+          "requiredContext": "cobblemon:leaf_stone"
+        },
+        {
+          "id": "exeggcute_exeggutor_alolan",
+          "variant": "item_interact",
+          "result": "exeggutor alolan",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "dragonhammer"
+          ],
+          "requirements": [
+            {
+              "variant": "biome",
+              "biomeCondition": "#minecraft:is_beach"
+            }
+          ],
           "requiredContext": "cobblemon:leaf_stone"
         }
       ]
@@ -229,7 +274,7 @@
   ],
   "evolutions": [
     {
-      "id": "exeggcute_exeggutor",
+      "id": "exeggcute_exeggutor_kantonian_alolan",
       "variant": "item_interact",
       "result": "exeggutor",
       "consumeHeldItem": false,
@@ -237,6 +282,22 @@
         "stomp"
       ],
       "requirements": [],
+      "requiredContext": "cobblemon:leaf_stone"
+    },
+    {
+      "id": "exeggcute_exeggutor_alolan",
+      "variant": "item_interact",
+      "result": "exeggutor alolan",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "dragonhammer"
+      ],
+      "requirements": [
+        {
+          "variant": "biome",
+          "biomeCondition": "#minecraft:is_beach"
+        }
+      ],
       "requiredContext": "cobblemon:leaf_stone"
     }
   ],

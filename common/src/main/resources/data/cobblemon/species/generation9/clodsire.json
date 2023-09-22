@@ -103,6 +103,12 @@
   "weight": 2230,
   "preEvolution": "wooper form=paldea",
   "evolutions": [],
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 1.4,
+    "height": 1.0,
+    "fixed": false
+  },
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.clodsire.desc"

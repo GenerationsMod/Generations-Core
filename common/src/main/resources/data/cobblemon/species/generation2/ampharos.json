@@ -73,6 +73,13 @@
     "monster",
     "field"
   ],
+  "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.2
+      }
+    }
+  },
   "moves": [
     "1:dragonpulse",
     "1:firepunch",

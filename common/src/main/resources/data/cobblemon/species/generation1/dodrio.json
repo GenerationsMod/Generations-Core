@@ -46,7 +46,7 @@
   "behaviour": {
     "moving": {
       "walk": {
-        "walkSpeed": 0.6
+        "walkSpeed": 0.4
       }
     },
     "resting": {

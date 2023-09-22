@@ -25,6 +25,13 @@
   "eggGroups": [
     "mineral"
   ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "moves": [
     "1:tackle",
     "1:takedown",
@@ -65,8 +72,8 @@
   ],
   "baseScale": 0.75,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.4,
+    "height": 0.8,
     "fixed": false
   },
   "baseFriendship": 35,

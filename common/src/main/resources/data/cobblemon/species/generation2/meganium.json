@@ -31,6 +31,11 @@
       "willSleepOnBed": false,
       "depth": "normal",
       "light": "0-4"
+    },
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.15
+      }
     }
   },
   "drops": {

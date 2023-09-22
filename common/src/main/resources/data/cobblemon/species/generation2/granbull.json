@@ -26,6 +26,13 @@
     "field",
     "fairy"
   ],
+  "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.25
+      }
+    }
+  },
   "moves": [
     "1:charm",
     "1:firefang",

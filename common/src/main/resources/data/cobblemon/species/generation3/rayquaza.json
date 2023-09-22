@@ -63,7 +63,8 @@
       "weight": 3920,
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": true
+      "battleOnly": true,
+      "requiredMove": "Dragon Ascent"
     }
   ],
   "baseExperienceYield": 340,

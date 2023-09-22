@@ -1259,6 +1259,7 @@
         "gen7"
       ],
       "aspects": [
+        "alola"
       ],
       "height": 4,
       "weight": 60,
@@ -1709,7 +1710,23 @@
       ],
       "evolutions": [
         {
-          "id": "alolan_pikachu_raichu",
+          "id": "pikachu_raichu_alolan_kantonian",
+          "variant": "item_interact",
+          "result": "raichu",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "thunderpunch"
+          ],
+          "requirements": [
+            {
+              "variant": "biome",
+              "biomeCondition": "cobblemon:is_temperate"
+            }
+          ],
+          "requiredContext": "cobblemon:thunder_stone"
+        },
+        {
+          "id": "pikachu_raichu_alolan",
           "variant": "item_interact",
           "result": "raichu alolan",
           "consumeHeldItem": false,
@@ -1717,6 +1734,38 @@
             "psychic"
           ],
           "requirements": [],
+          "requiredContext": "cobblemon:thunder_stone"
+        }
+      ]
+    },
+    {
+      "name": "base",
+      "evolutions": [
+        {
+          "id": "pikachu_raichu_kantonian",
+          "variant": "item_interact",
+          "result": "raichu",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "thunderpunch"
+          ],
+          "requirements": [],
+          "requiredContext": "cobblemon:thunder_stone"
+        },
+        {
+          "id": "pikachu_raichu_kantonian_alolan",
+          "variant": "item_interact",
+          "result": "raichu alolan",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "psychic"
+          ],
+          "requirements": [
+            {
+              "variant": "biome",
+              "biomeCondition": "#minecraft:is_beach"
+            }
+          ],
           "requiredContext": "cobblemon:thunder_stone"
         }
       ]
@@ -1728,6 +1777,7 @@
   "eggGroups": [
     "field",
     "fairy"
+  ],
   ],
   "drops": {
     "amount": "7",
@@ -1759,7 +1809,7 @@
       {
         "item": "generations_core:pikachu_doll",
         "percentage": 1
-      },
+      }
     ]
   },
   "moves": [
@@ -1956,7 +2006,7 @@
   "preEvolution": "pichu",
   "evolutions": [
     {
-      "id": "pikachu_raichu",
+      "id": "pikachu_raichu_kantonian",
       "variant": "item_interact",
       "result": "raichu",
       "consumeHeldItem": false,
@@ -1964,6 +2014,22 @@
         "thunderpunch"
       ],
       "requirements": [],
+      "requiredContext": "cobblemon:thunder_stone"
+    },
+    {
+      "id": "pikachu_raichu_kantonian_alolan",
+      "variant": "item_interact",
+      "result": "raichu alolan",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "psychic"
+      ],
+      "requirements": [
+        {
+          "variant": "biome",
+          "biomeCondition": "#minecraft:is_beach"
+        }
+      ],
       "requiredContext": "cobblemon:thunder_stone"
     }
   ],

@@ -33,6 +33,17 @@
     "field",
     "grass"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "walk": {
+      "walkSpeed": 0.25
+    }
+  },
   "moves": [
     "1:leafage",
     "1:scratch",

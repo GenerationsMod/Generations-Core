@@ -31,9 +31,13 @@
       "willSleepOnBed": true,
       "depth": "normal",
       "light": "0-4"
+    },
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.2
+      }
     }
   },
-
   "moves": [
     "1:sandattack",
     "1:scratch",
@@ -128,25 +132,12 @@
           "minLevel": 20
         }
       ]
-    },
-    {
-      "id": "nincada_shedinja",
-      "variant": "level_up",
-      "result": "shedinja",
-      "consumeHeldItem": false,
-      "learnableMoves": [],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 20
-        }
-      ]
     }
   ],
   "baseScale": 0.45,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 0.9,
+    "height": 0.7,
     "fixed": false
   },
   "baseFriendship": 50,

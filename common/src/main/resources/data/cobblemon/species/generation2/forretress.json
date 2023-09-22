@@ -16,6 +16,9 @@
     "special_defence": 60,
     "speed": 40
   },
+  "features": [
+    "shulker"
+  ],
   "behaviour": {
     "resting": {
       "canSleep": true,

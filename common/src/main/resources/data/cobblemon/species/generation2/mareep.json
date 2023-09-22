@@ -28,6 +28,13 @@
     "monster",
     "field"
   ],
+  "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.2
+      }
+    }
+  },
   "drops": {
     "amount": "2",
     "entries": [

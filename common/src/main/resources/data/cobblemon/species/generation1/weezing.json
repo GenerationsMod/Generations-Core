@@ -289,7 +289,7 @@
   ],
   "preEvolution": "koffing",
   "evolutions": [],
-  "baseScale": 0.9,
+  "baseScale": 1.2,
   "hitbox": {
     "width": 1.3,
     "height": 1.4,

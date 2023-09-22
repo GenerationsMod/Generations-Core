@@ -194,6 +194,25 @@
           "minLevel": 31
         }
       ]
+    },
+    {
+      "id": "pineco_forretress_shulker",
+      "variant": "level_up",
+      "result": "forretress shulker",
+      "consumeHeldItem": true,
+      "learnableMoves": [
+        "heavyslam"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 31
+        },
+        {
+          "variant": "held_item",
+          "itemCondition": "minecraft:shulker_shell"
+        }
+      ]
     }
   ],
   "baseScale": 0.75,

@@ -34,7 +34,7 @@
       "light": "0-4"
     },
     "walk": {
-      "walkSpeed": 0.4
+      "walkSpeed": 0.3
     }
   },
   "drops": {

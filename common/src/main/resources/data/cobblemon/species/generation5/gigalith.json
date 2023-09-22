@@ -34,7 +34,7 @@
     },
     "moving" : {
       "walk": {
-        "walkSpeed": 0.1
+        "walkSpeed": 0.12
       }
     }
   },

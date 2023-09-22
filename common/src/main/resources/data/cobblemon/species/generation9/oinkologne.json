@@ -187,6 +187,12 @@
       "battleOnly": false
     }
   ],
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.1,
+    "fixed": false
+  },
   "pokedex": [
     "cobblemon.species.oinkologne.desc"
   ]

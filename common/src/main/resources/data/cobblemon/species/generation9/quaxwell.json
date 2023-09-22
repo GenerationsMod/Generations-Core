@@ -33,6 +33,13 @@
     "flying",
     "water_1"
   ],
+  "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.3
+      }
+    }
+  },
   "moves": [
     "1:doublehit",
     "1:growl",

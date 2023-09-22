@@ -27,6 +27,13 @@
     "grass",
     "amorphous"
   ],
+  "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.2
+      }
+    }
+  },
   "moves": [
     "1:astonish",
     "1:branchpoke",

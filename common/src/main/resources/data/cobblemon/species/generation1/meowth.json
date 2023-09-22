@@ -265,6 +265,13 @@
       "eggGroups": [
         "field"
       ],
+      "behaviour": {
+        "moving" : {
+          "walk": {
+            "walkSpeed": 0.2
+          }
+        }
+      },
       "moves": [
         "1:fakeout",
         "1:growl",

@@ -33,6 +33,13 @@
   "eggGroups": [
     "field"
   ],
+  "behaviour": {
+    "moving" : {
+      "walk": {
+        "walkSpeed": 0.25
+      }
+    }
+  },
   "moves": [
     "1:powdersnow",
     "1:tackle",

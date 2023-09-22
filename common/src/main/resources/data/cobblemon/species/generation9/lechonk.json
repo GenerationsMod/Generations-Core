@@ -85,6 +85,12 @@
   "aspects": [],
   "height": 5,
   "weight": 102,
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.6,
+    "fixed": false
+  },
   "evolutions": [
     {
       "id": "lechonk_oinkologne",
