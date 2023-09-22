@@ -130,5 +130,7 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
 
             clearContent();
         }
+
+        
     }
 }
