@@ -9,10 +9,7 @@ architectury {
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
-sourceSets.main.get().resources.srcDirs(mutableListOf(
-    project(":common").file("src/main/generated/resources").absolutePath,
-    project(":fabric").file("src/main/generated/resources").absolutePath)
-)
+sourceSets.main.get().resources.srcDir(file("src/main/generated/resources"))
 
 configurations {
     create("common")

@@ -3,6 +3,8 @@ architectury {
     platformSetupLoomIde()
 }
 
+sourceSets.main.get().resources.srcDir(file("src/main/generated/resources"))
+
 loom.accessWidenerPath.set(file("src/main/resources/generationscore.accesswidener"))
 
 val minecraftVersion = project.properties["minecraft_version"] as String
