@@ -53,7 +53,7 @@ dependencies {
     implementation("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
     implementation("shadowCommon"("com.thebombzen:jxlatte:1.1.0")!!)
 
-    modApi("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")!!
+    modApi("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 

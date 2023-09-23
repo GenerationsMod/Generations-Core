@@ -13,7 +13,7 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     // Remove the next line if you don't want to depend on the API
     modApi("dev.architectury:architectury:${project.properties["architectury_version"]}")
-    modImplementation("earth.terrarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
+    modApi("earth.terrarium:botarium-common-$minecraftVersion:${project.properties["botarium_version"]}")
 
     implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
     implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")
@@ -28,7 +28,7 @@ dependencies {
     //Cobblemon
     implementation(kotlin("stdlib-jdk8"))
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
-    implementation("net.impactdev.impactor.api:economy:5.1.0")
+    modApi("net.impactdev.impactor.api:economy:5.1.0")
 }
 
 publishing {
