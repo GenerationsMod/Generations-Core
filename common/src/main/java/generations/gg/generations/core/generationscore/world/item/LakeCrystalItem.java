@@ -7,14 +7,19 @@ import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.config.Key;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdatingItem {
+import java.util.List;
+
+public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdatingItem, LangTooltip {
 
     private final PokemonProperties pokemonProperties;
 
@@ -46,5 +51,15 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
     @Override
     public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
         return !isEnchanted(stack) && Streams.stream(pixelmonData.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getPSYCHIC()));
+    }
+
+    @Override
+    public String tooltipId(ItemStack stack) {
+        return this.getDescriptionId() + (isEnchanted(stack) ? ".enchanted" : "") + ".tooltip";
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+        LangTooltip.super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
     }
 }

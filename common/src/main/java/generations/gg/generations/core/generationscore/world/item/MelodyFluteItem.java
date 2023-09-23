@@ -1,22 +1,17 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
-import com.cobblemon.mod.common.platform.events.ServerEvent;
-import com.cobblemon.mod.common.pokemon.Species;
 import com.google.common.collect.Streams;
 import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.container.MelodyFluteContainer;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -83,7 +78,7 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
     public static ElementalType typeFromInbued(ItemStack stack) {
         if (stack.isEmpty()) return null;
         if (isItem(GenerationsItems.ICY_WING, stack)) return ElementalTypes.INSTANCE.getICE();
-        else if (isItem(GenerationsItems.PRETTY_FEATHER, stack)) return ElementalTypes.INSTANCE.getPSYCHIC();
+        else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return ElementalTypes.INSTANCE.getPSYCHIC();
         else if (isItem(GenerationsItems.STATIC_WING, stack)) return ElementalTypes.INSTANCE.getELECTRIC();
         else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return ElementalTypes.INSTANCE.getFIGHTING();
         else if (isItem(GenerationsItems.FIERY_WING, stack)) return ElementalTypes.INSTANCE.getFIRE();
@@ -95,7 +90,7 @@ public class MelodyFluteItem extends Item implements PostBattleUpdatingItem {
 
     public static String getSpeciesNameFromImbued(ItemStack stack) {
         if (isItem(GenerationsItems.ICY_WING, stack)) return getSpeciesNameFromImbued("articuno", false);
-        else if (isItem(GenerationsItems.PRETTY_FEATHER, stack)) return getSpeciesNameFromImbued("articuno", true);
+        else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return getSpeciesNameFromImbued("articuno", true);
         else if (isItem(GenerationsItems.STATIC_WING, stack)) return getSpeciesNameFromImbued("zapdos", false);
         else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return getSpeciesNameFromImbued("zapdos", true);
         else if (isItem(GenerationsItems.FIERY_WING, stack)) return getSpeciesNameFromImbued("moltres", false);

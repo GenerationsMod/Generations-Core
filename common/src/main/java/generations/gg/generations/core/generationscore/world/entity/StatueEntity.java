@@ -1,34 +1,24 @@
 package generations.gg.generations.core.generationscore.world.entity;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
-import com.cobblemon.mod.common.client.CobblemonResources;
-import com.cobblemon.mod.common.client.entity.PokemonClientDelegate;
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.RenderablePokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import dev.architectury.utils.EnvExecutor;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.client.StatueEntityClient;
-import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.statue.S2COpenStatueEditorScreenPacket;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.SacredAshItem;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -40,7 +30,6 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static dev.architectury.utils.Env.CLIENT;
 
@@ -84,11 +73,16 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
     }
 
     @Override
+    public boolean isAttackable() {
+        return false;
+    }
+
+    @Override
     public @NotNull InteractionResult interact(@NotNull Player player, @NotNull InteractionHand hand) {
         if (!level().isClientSide()) {
             var stack = player.getItemInHand(hand);
 
-            if (stack.is(GenerationsItems.SACRED_ASH.get()) && getStatueData().isSacredAshInteractable() && SacredAshItem.isFullyCharged(stack)) {
+            if (stack.is(GenerationsItems.SACRED_ASH.get()) && getStatueData().isSacredAshInteractable()/* && SacredAshItem.isFullyCharged(stack)*/) {
                 var entity = getStatueData().getProperties().createEntity(level());
                 entity.setPos(Vec3.atBottomCenterOf(getOnPos()));
                 level().addFreshEntity(entity);

@@ -12,9 +12,9 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrineBlockEntity> {
     private final PokemonProperties species;
-    private final RegistrySupplier<Item> requiredItem;
+    private final RegistrySupplier<? extends Item> requiredItem;
 
-    public WeatherTrioShrineBlock(BlockBehaviour.Properties properties, ResourceLocation model, String species, RegistrySupplier<Item> requiredItem) {
+    public WeatherTrioShrineBlock(BlockBehaviour.Properties properties, ResourceLocation model, String species, RegistrySupplier<? extends Item> requiredItem) {
         super(properties, GenerationsBlockEntities.WEATHER_TRIO, model, WeatherTrioShrineBlockEntity.class);
         this.species = GenerationsUtils.parseProperties(species);
         this.requiredItem = requiredItem;

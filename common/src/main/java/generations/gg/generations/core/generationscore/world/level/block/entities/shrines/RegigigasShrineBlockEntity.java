@@ -114,6 +114,7 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
 
         public void clear() {
             getItems().clear();
+            setChanged();
         }
 
         public boolean contains(Item item) {

@@ -9,9 +9,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ItemWithLangTooltipImpl extends Item implements LangTooltip{
-    public ItemWithLangTooltipImpl(Properties properties) {
-        super(properties);
+public class JadeOrb extends TechnicalMachineItem implements LangTooltip {
+    public JadeOrb(Item.Properties properties) {
+        super("dragonascent", properties);
     }
 
     @Override

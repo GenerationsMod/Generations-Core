@@ -9,7 +9,6 @@ import generations.gg.generations.core.generationscore.world.item.curry.CurryTyp
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -509,7 +508,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.SHATTERED_RELIC_SONG_4.get(), "legend_items/");
         createItem(GenerationsItems.RELIC_SONG.get(), "legend_items/");
         createItem(GenerationsItems.RED_CHAIN.get(), "legend_items/");
-        createItem(GenerationsItems.RED_CHAIN_SHARD.get(), "legend_items/");
         createItem(GenerationsItems.DNA_SPLICERS.get(), "legend_items/");
         createItem(GenerationsItems.REINS_OF_UNITY.get(), "legend_items/");
         createItem(GenerationsItems.N_SOLARIZER.get(), "legend_items/");

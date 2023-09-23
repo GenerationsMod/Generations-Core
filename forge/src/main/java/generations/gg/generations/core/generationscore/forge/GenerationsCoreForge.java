@@ -53,7 +53,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         var EVENT_BUS = MinecraftForge.EVENT_BUS;
 
         EVENT_BUS.addListener(this::onDataPackSync);
-        EVENT_BUS.addListener((Consumer<AnvilUpdateEvent>) event -> GenerationsCore.onAnvilChange(event.getLeft(), event.getRight(), event::setOutput, event::setCost, event::setMaterialCost));
+        EVENT_BUS.addListener((Consumer<AnvilUpdateEvent>) event -> GenerationsCore.onAnvilChange(event.getLeft(), event.getRight(), event.getPlayer(), event::setOutput, event::setCost, event::setMaterialCost));
 //            addListener(this::onLogin)
 //            addListener(this::onLogout)
         EVENT_BUS.addListener(this::onReload);

@@ -5,10 +5,9 @@ import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class TaoTrioStoneItem extends Item implements PostBattleUpdatingItem {
+public class TaoTrioStoneItem extends ItemWithLangTooltipImpl implements PostBattleUpdatingItem {
     private final PokemonProperties species;
 
     public TaoTrioStoneItem(Properties arg, String species) {

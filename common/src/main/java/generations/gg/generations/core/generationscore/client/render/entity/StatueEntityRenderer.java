@@ -9,21 +9,16 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.LightingSettings;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.*;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Matrix4f;
-
-import static net.minecraft.client.renderer.texture.MissingTextureAtlasSprite.getTexture;
 
 public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, EntityModel<StatueEntity>> {
     public static final ResourceLocation CONCRETE = GenerationsCore.id("textures/key/statue_material/concrete.png");
@@ -61,7 +56,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         else state.setCurrentTicks(entity.getStatueData().getFrame());
         model.setupAnimStateful(null, state, 0F, 0F, 0F, 0F, 0F);
 
-        model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.INSTANCE.getLayers(entity.getStatueData().getProperties().asRenderablePokemon().getSpecies().getResourceIdentifier(), entity.getStatueData().getProperties().getAspects()));
+        model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.INSTANCE.getLayers(entity.getStatueData().asRenderablePokemon().getSpecies().getResourceIdentifier(), entity.getStatueData().getProperties().getAspects()));
         var vertexConsumer = ItemRenderer.getFoilBuffer(buffer, model.getLayer(getTextureLocation(entity), false, false), false, false);
 
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
@@ -85,12 +80,12 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 //        super.render(key, entityYaw, partialTicks, stack, buffer, light);
     }
 
-//    @Override
-//    protected void scale(StatueEntity livingEntity, PoseStack matrixStack, float partialTickTime) {
-//        var species = livingEntity.getStatueData().getProperties().asRenderablePokemon().getForm();
-//        var scale = species.getBaseScale();
-//        matrixStack.scale(scale, scale, scale)
-//    }
+    @Override
+    protected void scale(StatueEntity livingEntity, PoseStack matrixStack, float partialTickTime) {
+        var species = livingEntity.getStatueData().getProperties().asRenderablePokemon().getForm();
+        var scale = species.getBaseScale();
+        matrixStack.scale(scale, scale, scale);
+    }
 
     @Override
     protected float getAttackAnim(StatueEntity livingBase, float partialTickTime) {

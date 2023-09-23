@@ -21,7 +21,7 @@ public interface LangTooltip {
         return tooltipId(null);
     }
 
-    private String tooltipId(ItemStack stack) {
+    default String tooltipId(ItemStack stack) {
         return self().getDescriptionId(stack) + ".tooltip";
     }
 
