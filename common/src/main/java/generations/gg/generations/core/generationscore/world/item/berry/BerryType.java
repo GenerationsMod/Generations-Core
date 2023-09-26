@@ -1,185 +1,100 @@
 package generations.gg.generations.core.generationscore.world.item.berry;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.api.data.curry.Flavor;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
+import com.cobblemon.mod.common.api.berry.Berry;
+import generations.gg.generations.core.generationscore.world.item.curry.ICurryRarity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.MapColor;
 
-import java.util.Arrays;
-import java.util.Locale;
+import java.util.stream.Stream;
 
 public enum BerryType implements ICurryRarity {
-    CHERI(new int[]{10, 0, 0, 0, 0}, 4, 15, 24, 1, 1, 3, 1, EnumBerryColor.RED),
-    CHESTO(new int[]{0, 10, 0, 0, 0}, 4, 15, 24, 1, 1, 3, 1, EnumBerryColor.PURPLE),
-    PECHA(new int[]{0, 0, 10, 0, 0}, 4, 15, 24, 1, 2, 3, 1, EnumBerryColor.PINK),
-    RAWST(new int[]{0, 0, 0, 10, 0}, 4, 15, 24, 1, 1, 3, 1, EnumBerryColor.GREEN),
-    ASPEAR(new int[]{0, 0, 0, 0, 10}, 4, 15, 24, 1, 1, 3, 1, EnumBerryColor.YELLOW),
-    LEPPA(new int[]{10, 0, 10, 10, 10}, 4, 15, 24, 1.5, 1.5, 3, 1, EnumBerryColor.RED),
-    ORAN(new int[]{10, 10, 0, 10, 10}, 4, 15, 24, 1, 2, 3, 1, EnumBerryColor.BLUE),
-    PERSIM(new int[]{10, 10, 10, 0, 10}, 4, 15, 24, 1, 1, 3, 1, EnumBerryColor.PINK),
-    LUM(new int[]{10, 10, 10, 10, 0}, 3, 20, 48, 1.2, 0.5, 3, 2, EnumBerryColor.GREEN),
-    SITRUS(new int[]{0, 10, 10, 10, 10}, 3, 20, 48, 1.2, 0.5, 3, 2, EnumBerryColor.YELLOW),
-    FIGY(new int[]{15, 0, 0, 0, 0}, 3, 15, 24, 1.5, 1, 3, 2, EnumBerryColor.RED),
-    WIKI(new int[]{0, 15, 0, 0, 0}, 3, 15, 24, 1.5, 1, 3, 2, EnumBerryColor.PURPLE),
-    MAGO(new int[]{0, 0, 15, 0, 0}, 3, 15, 24, 1.5, 1, 3, 2, EnumBerryColor.PINK),
-    AGUAV(new int[]{0, 0, 0, 15, 0}, 3, 15, 24, 1.5, 1, 3, 2, EnumBerryColor.GREEN),
-    IAPAPA(new int[]{0, 0, 0, 0, 15}, 3, 15, 24, 1.5, 1, 3, 2, EnumBerryColor.YELLOW),
-    BAZZ(new int[]{10, 10, 0, 0, 0}, 3, 15, 24, 1, 1, 3, 4, EnumBerryColor.RED),
-    BLUK(new int[]{0, 10, 10, 0, 0}, 3, 15, 24, 1, 1, 3, 4, EnumBerryColor.PURPLE),
-    NANAB(new int[]{0, 0, 10, 10, 0}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.PINK),
-    WEPEAR(new int[]{0, 0, 0, 10, 10}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.GREEN),
-    PINAP(new int[]{10, 0, 0, 0, 10}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.YELLOW),
-    POMEG(new int[]{10, 0, 10, 10, 0}, 1, 20, 48, 0.5, 1.5, 3, 0, EnumBerryColor.RED),
-    KELPSY(new int[]{0, 10, 0, 10, 10}, 1, 20, 48, 0.5, 1.5, 3, 0, EnumBerryColor.BLUE),
-    QUALOT(new int[]{10, 0, 10, 0, 10}, 1, 20, 48, 0.5, 1.5, 3, 0, EnumBerryColor.YELLOW),
-    HONDEW(new int[]{10, 10, 0, 10, 0}, 1, 20, 48, 0.5, 1.5, 3, 0, EnumBerryColor.GREEN),
-    GREPA(new int[]{0, 10, 10, 0, 10}, 1, 20, 48, 0.5, 1.5, 3, 0, EnumBerryColor.YELLOW),
-    TAMATO(new int[]{20, 10, 0, 0, 0}, 1, 20, 48, 0.5, 1.5, 3, 0, EnumBerryColor.RED),
-    CORNN(new int[]{0, 20, 10, 0, 0}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.PURPLE),
-    MAGOST(new int[]{0, 0, 20, 10, 0}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.PINK),
-    RABUTA(new int[]{0, 0, 0, 20, 10}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.GREEN),
-    NOMEL(new int[]{10, 0, 0, 0, 20}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.YELLOW),
-    SPELON(new int[]{30, 10, 0, 0, 0}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.RED),
-    PAMTRE(new int[]{0, 30, 10, 0, 0}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.PURPLE),
-    WATMEL(new int[]{0, 0, 30, 10, 0}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.PINK),
-    DURIN(new int[]{0, 0, 0, 30, 10}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.GREEN),
-    BELUE(new int[]{10, 0, 0, 0, 30}, 3, 15, 24, 1, 1, 3, 0, EnumBerryColor.PURPLE),
-    OCCA(new int[]{15, 0, 10, 0, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.RED),
-    PASSHO(new int[]{0, 15, 0, 10, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.BLUE),
-    WACAN(new int[]{0, 0, 15, 0, 10}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.YELLOW),
-    RINDO(new int[]{10, 0, 0, 15, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.YELLOW),
-    YACHE(new int[]{0, 10, 0, 0, 15}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.BLUE),
-    CHOPLE(new int[]{15, 0, 0, 10, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.RED),
-    KEBIA(new int[]{0, 15, 0, 0, 10}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.GREEN),
-    SHUCA(new int[]{10, 0, 15, 0, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.YELLOW),
-    COBA(new int[]{0, 10, 0, 15, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.BLUE),
-    PAYAPA(new int[]{0, 0, 10, 0, 15}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.PURPLE),
-    TANGA(new int[]{20, 0, 0, 0, 10}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.GREEN),
-    CHARTI(new int[]{10, 20, 0, 0, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.YELLOW),
-    KASIB(new int[]{0, 10, 20, 0, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.PURPLE),
-    HABAN(new int[]{0, 0, 10, 20, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.RED),
-    COLBUR(new int[]{0, 0, 0, 10, 20}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.PURPLE),
-    BABIRI(new int[]{25, 10, 0, 0, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.GREEN),
-    CHILAN(new int[]{0, 25, 10, 0, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.YELLOW),
-    ROSELI(new int[]{0, 0, 25, 10, 0}, 3, 20, 48, 1, 0.5, 2, 5, EnumBerryColor.PINK),
-    LIECHI(new int[]{30, 10, 30, 0, 0}, 1, 10, 96, 0.2, 0.1, 1, 10, EnumBerryColor.RED),
-    GANLON(new int[]{0, 30, 10, 30, 0}, 1, 10, 96, 0.2, 0.1, 1, 10, EnumBerryColor.PURPLE),
-    SALAC(new int[]{0, 0, 30, 10, 30}, 1, 10, 96, 0.2, 0.1, 1, 10, EnumBerryColor.GREEN),
-    PETAYA(new int[]{30, 0, 0, 30, 10}, 1, 10, 96, 0.2, 0.1, 1, 10, EnumBerryColor.PINK),
-    APICOT(new int[]{10, 30, 0, 0, 30}, 1, 10, 96, 0.2, 0.1, 1, 10, EnumBerryColor.BLUE),
-    LANSAT(new int[]{30, 10, 30, 10, 30}, 1, 5, 120, 0.1, 0.1, 0.5, 15, EnumBerryColor.RED),
-    STARF(new int[]{30, 10, 30, 10, 30}, 1, 5, 120, 0.1, 0.1, 0.5, 30, EnumBerryColor.GREEN),
-    PUMKIN(new int[]{0, 0, 0, 0, 50}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.YELLOW),
-    DRASH(new int[]{0, 0, 50, 0, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.PINK),
-    EGGANT(new int[]{0, 50, 0, 0, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.BLUE),
-    STRIB(new int[]{20, 0, 0, 20, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.GREEN),
-    NUTPEA(new int[]{0, 0, 0, 0, 10}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.YELLOW),
-    GINEMA(new int[]{0, 20, 0, 0, 20}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.YELLOW),
-    KUO(new int[]{0, 0, 0, 10, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.GREEN),
-    YAGO(new int[]{0, 0, 0, 0, 50}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.GREEN),
-    TOUGA(new int[]{50, 0, 0, 0, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.RED),
-    NINIKU(new int[]{10, 0, 0, 0, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.BLUE),
-    TOPO(new int[]{0, 0, 20, 0, 20}, 1, 5, 72, 0.2, 0.1, 0.2, 0, EnumBerryColor.PINK),
-    ENIGMA(new int[]{0, 20, 0, 20, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 20, EnumBerryColor.PURPLE),
-    MICLE(new int[]{0, 40, 10, 0, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 20, EnumBerryColor.GREEN),
-    CUSTAP(new int[]{0, 0, 40, 10, 0}, 1, 5, 72, 0.2, 0.1, 0.2, 20, EnumBerryColor.RED),
-    JABOCA(new int[]{0, 0, 0, 40, 10}, 1, 5, 72, 0.2, 0.1, 0.2, 20, EnumBerryColor.YELLOW),
-    ROWAP(new int[]{10, 0, 0, 0, 40}, 1, 5, 72, 0.2, 0.1, 0.2, 20, EnumBerryColor.BLUE),
-    KEE(new int[]{30, 30, 10, 10, 10}, 1, 10, 96, 0.2, 0.1, 1, 10, EnumBerryColor.PINK),
-    MARANGA(new int[]{10, 10, 30, 30, 10}, 1, 10, 96, 0.2, 0.1, 1, 10, EnumBerryColor.BLUE);
+    CHERI(1, EnumBerryColor.RED),
+    CHESTO(1, EnumBerryColor.PURPLE),
+    PECHA(1, EnumBerryColor.PINK),
+    RAWST(1, EnumBerryColor.GREEN),
+    ASPEAR(1, EnumBerryColor.YELLOW),
+    LEPPA(1, EnumBerryColor.RED),
+    ORAN(1, EnumBerryColor.BLUE),
+    PERSIM(1, EnumBerryColor.PINK),
+    LUM(2, EnumBerryColor.GREEN),
+    SITRUS(2, EnumBerryColor.YELLOW),
+    FIGY(2, EnumBerryColor.RED),
+    WIKI(2, EnumBerryColor.PURPLE),
+    MAGO(2, EnumBerryColor.PINK),
+    AGUAV(2, EnumBerryColor.GREEN),
+    IAPAPA(2, EnumBerryColor.YELLOW),
+    BAZZ(4, EnumBerryColor.RED),
+    BLUK(4, EnumBerryColor.PURPLE),
+    NANAB(0, EnumBerryColor.PINK),
+    WEPEAR(0, EnumBerryColor.GREEN),
+    PINAP(0, EnumBerryColor.YELLOW),
+    POMEG(0, EnumBerryColor.RED),
+    KELPSY(0, EnumBerryColor.BLUE),
+    QUALOT(0, EnumBerryColor.YELLOW),
+    HONDEW(0, EnumBerryColor.GREEN),
+    GREPA(0, EnumBerryColor.YELLOW),
+    TAMATO(0, EnumBerryColor.RED),
+    CORNN(0, EnumBerryColor.PURPLE),
+    MAGOST(0, EnumBerryColor.PINK),
+    RABUTA(0, EnumBerryColor.GREEN),
+    NOMEL(0, EnumBerryColor.YELLOW),
+    SPELON(0, EnumBerryColor.RED),
+    PAMTRE(0, EnumBerryColor.PURPLE),
+    WATMEL(0, EnumBerryColor.PINK),
+    DURIN(0, EnumBerryColor.GREEN),
+    BELUE(0, EnumBerryColor.PURPLE),
+    OCCA(5, EnumBerryColor.RED),
+    PASSHO(5, EnumBerryColor.BLUE),
+    WACAN(5, EnumBerryColor.YELLOW),
+    RINDO(5, EnumBerryColor.YELLOW),
+    YACHE(5, EnumBerryColor.BLUE),
+    CHOPLE(5, EnumBerryColor.RED),
+    KEBIA(5, EnumBerryColor.GREEN),
+    SHUCA(5, EnumBerryColor.YELLOW),
+    COBA(5, EnumBerryColor.BLUE),
+    PAYAPA(5, EnumBerryColor.PURPLE),
+    TANGA(5, EnumBerryColor.GREEN),
+    CHARTI(5, EnumBerryColor.YELLOW),
+    KASIB(5, EnumBerryColor.PURPLE),
+    HABAN(5, EnumBerryColor.RED),
+    COLBUR(5, EnumBerryColor.PURPLE),
+    BABIRI(5, EnumBerryColor.GREEN),
+    CHILAN(5, EnumBerryColor.YELLOW),
+    ROSELI(5, EnumBerryColor.PINK),
+    LIECHI(10, EnumBerryColor.RED),
+    GANLON(10, EnumBerryColor.PURPLE),
+    SALAC(10, EnumBerryColor.GREEN),
+    PETAYA(10, EnumBerryColor.PINK),
+    APICOT(10, EnumBerryColor.BLUE),
+    LANSAT(15, EnumBerryColor.RED),
+    STARF(30, EnumBerryColor.GREEN),
+    PUMKIN(0, EnumBerryColor.YELLOW),
+    DRASH(0, EnumBerryColor.PINK),
+    EGGANT(0, EnumBerryColor.BLUE),
+    STRIB(0, EnumBerryColor.GREEN),
+    NUTPEA(0, EnumBerryColor.YELLOW),
+    GINEMA(0, EnumBerryColor.YELLOW),
+    KUO(0, EnumBerryColor.GREEN),
+    YAGO(0, EnumBerryColor.GREEN),
+    TOUGA(0, EnumBerryColor.RED),
+    NINIKU(0, EnumBerryColor.BLUE),
+    TOPO(0, EnumBerryColor.PINK),
+    ENIGMA(20, EnumBerryColor.PURPLE),
+    MICLE(20, EnumBerryColor.GREEN),
+    CUSTAP(20, EnumBerryColor.RED),
+    JABOCA(20, EnumBerryColor.YELLOW),
+    ROWAP(20, EnumBerryColor.BLUE),
+    KEE(10, EnumBerryColor.PINK),
+    MARANGA(10, EnumBerryColor.BLUE);
 
-    private final int[] flavors;
-    public final byte minYield;
-    public final byte maxYield;
-    public final byte growthTime;
-    private final double waterAmount;
-    private final double weedingAmount;
-    private final double pestRemovalAmount;
     private final int rarity;
     private final EnumBerryColor color;
+    private final ResourceLocation id;
 
-    BerryType(int[] flavors, int minYield, int maxYield, int growthTime, double waterAmount, double weedingAmount, double pestRemovalAmount, int rarity, EnumBerryColor color) {
-        this.flavors = flavors;
-        this.minYield = (byte) minYield;
-        this.maxYield = (byte) maxYield;
-        this.growthTime = (byte) growthTime;
-        this.waterAmount = waterAmount;
-        this.weedingAmount = weedingAmount;
-        this.pestRemovalAmount = pestRemovalAmount;
+    BerryType(int rarity, EnumBerryColor color) {
+        this.id = new ResourceLocation("cobbelmon", name().toLowerCase() + "_berry");
         this.rarity = rarity;
         this.color = color;
-    }
-
-    public Block getBush() {
-        return BuiltInRegistries.BLOCK.get(GenerationsCore.id(this.name().toLowerCase(Locale.ENGLISH) + "_berry_bush"));
-    }
-
-    public Item getBerry() {
-        return BuiltInRegistries.ITEM.get(GenerationsCore.id(this.name().toLowerCase(Locale.ENGLISH) + "_berry"));
-    }
-
-    public static BerryType fromId(int id) {
-        try {
-            return values()[id];
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public static Flavor getDominantFlavor(BerryType... berries) {
-        int[] output = new int[5];
-
-        for (var berryType : berries)
-            for (int j = 0; j < 5; j++)
-                output[j] += berryType.flavors[j];
-
-        if (Arrays.stream(output).distinct().count() <= 1) return Flavor.NONE;
-        int max = Integer.MIN_VALUE;
-        int maxIndex = -1;
-
-        for (int i = 0; i < output.length; i++)
-            if (max < output[i]) {
-                max = output[i];
-                maxIndex = i;
-            }
-
-        return getFlavorFromBerryFlavorIndex(maxIndex);
-    }
-
-    public static Flavor getFlavorFromBerryFlavorIndex(int value) {
-        return switch (value) {
-            case 0 -> Flavor.SPICY;
-            case 1 -> Flavor.DRY;
-            case 2 -> Flavor.SWEET;
-            case 3 -> Flavor.BITTER;
-            case 4 -> Flavor.SOUR;
-            default -> Flavor.NONE;
-        };
-    }
-
-    public int getFlavorValue(Flavor flavor) {
-        return switch (flavor) {
-            case SPICY -> flavors[0];
-            case DRY -> flavors[1];
-            case SWEET -> flavors[2];
-            case BITTER -> flavors[3];
-            case SOUR -> flavors[4];
-            default -> 0;
-        };
-    }
-
-    public double getWaterAmount() {
-        return waterAmount;
-    }
-
-    public double getWeedingAmount() {
-        return weedingAmount;
-    }
-
-    public double getPestRemovalAmount() {
-        return pestRemovalAmount;
     }
 
     public EnumBerryColor getColor() {
@@ -188,6 +103,10 @@ public enum BerryType implements ICurryRarity {
 
     public int getRarity() {
         return rarity;
+    }
+
+    public static BerryType fromCobblemonBerry(Berry berry) {
+        return Stream.of(values()).filter(b -> b.id.equals(berry.getIdentifier())).findAny().orElse(null);
     }
 
     public enum EnumBerryColor {

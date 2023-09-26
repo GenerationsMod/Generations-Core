@@ -15,10 +15,6 @@ public class PlayerPokeDollars implements PlayerMoney {
         this.player = player;
     }
 
-//    public static void onJoin(PlayerEvent.PlayerLoggedInEvent event) {
-//        PlayerPokeDollars.of(event.getEntity()).sync();
-//    }
-
     public CompletableFuture<BigDecimal> balance() {
         return CompletableFuture.completedFuture(getAccount().getBalance());
     }

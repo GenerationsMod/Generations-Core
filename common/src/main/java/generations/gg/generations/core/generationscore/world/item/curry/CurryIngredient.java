@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.item.curry;
 
-import generations.gg.generations.core.generationscore.world.item.berry.ICurryRarity;
 import net.minecraft.world.item.Item;
 
 import java.util.HashMap;

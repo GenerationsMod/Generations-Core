@@ -1,13 +1,13 @@
 package generations.gg.generations.core.generationscore.world.item.curry;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.item.berry.ICurryRarity;
 import net.minecraft.locale.Language;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.StringRepresentable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
+import java.util.stream.Stream;
 
 public enum CurryType implements ICurryRarity, StringRepresentable {
     None("plain", "none", "default_haze", 0),
@@ -67,5 +67,9 @@ public enum CurryType implements ICurryRarity, StringRepresentable {
     @Override
     public @NotNull String getSerializedName() {
         return type;
+    }
+
+    public static CurryType get(String name) {
+        return Stream.of(values()).filter(a -> a.getSerializedName().equals(name)).findAny().orElse(None);
     }
 }

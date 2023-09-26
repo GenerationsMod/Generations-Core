@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
+import com.cobblemon.mod.common.api.berry.Berry;
+import com.cobblemon.mod.common.api.berry.Flavor;
+import com.cobblemon.mod.common.item.BerryItem;
 import dev.architectury.registry.menu.ExtendedMenuProvider;
 import dev.architectury.registry.menu.MenuRegistry;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
@@ -10,8 +13,6 @@ import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemCo
 import generations.gg.generations.core.generationscore.world.container.CookingPotContainer;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.berry.BerryItem;
-import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryIngredient;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
@@ -31,8 +32,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -106,7 +106,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
 
                 if (hasBerry && !hasMaxMushrooms) {
                     CurryType type = !mainIngredient.isEmpty() && mainIngredient.getItem() instanceof CurryIngredient ? ((CurryIngredient) mainIngredient.getItem()).getType() : CurryType.None;
-                    List<BerryType> berriesTypes = Arrays.stream(berries).filter(berry -> !berry.isEmpty() && berry.getItem() instanceof BerryItem).map(a -> ((BerryItem) a.getItem()).getBerry()).collect(Collectors.toList());
+                    List<Berry> berriesTypes = Arrays.stream(berries).filter(berry -> !berry.isEmpty() && berry.getItem() instanceof BerryItem).map(a -> ((BerryItem) a.getItem()).berry()).collect(Collectors.toList());
 
                     CurryEvents.Cook event = new CurryEvents.Cook(type, berriesTypes, new CurryData(type, berriesTypes));
 
@@ -241,6 +241,31 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
 
     @Override
     public String getVariant() {
-        return isCooking() ? "lit" : "unlit";
+        if(hasLogs()) {
+            return isCooking() ? "lit" : "unlit";
+        } else {
+            return "no_logs";
+        }
+    }
+
+    public boolean hasLogs() {
+        return !handler.getItem(12).isEmpty();
+    }
+
+    public static Flavor getDominantFlavor(Berry... berries) {
+        Map<Flavor, Integer> output = new HashMap<>();
+
+//        int[] output = new int[5];
+
+        for (var berryType : berries)
+            for (var flavor : com.cobblemon.mod.common.api.berry.Flavor.values())
+                output.compute(flavor, (flavor1, integer) -> {
+                    var i = berryType.flavor(flavor1);
+                    return integer == null ? i : integer + i;
+                });
+
+        if (output.values().stream().distinct().count() <= 1) return null;
+
+        return output.entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(null);
     }
 }

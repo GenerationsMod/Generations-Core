@@ -1,18 +1,21 @@
 package generations.gg.generations.core.generationscore.world.item.curry;
 
-import generations.gg.generations.core.generationscore.api.data.curry.Flavor;
+import com.cobblemon.mod.common.api.berry.Berry;
+import com.cobblemon.mod.common.api.berry.Flavor;
 import generations.gg.generations.core.generationscore.world.item.berry.BerryType;
-import generations.gg.generations.core.generationscore.world.item.berry.ICurryRarity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+import static generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity.getDominantFlavor;
+
 public class CurryData {
-    private Flavor flavor = Flavor.NONE;
+    @Nullable private Flavor flavor = null;
     private CurryType curryType = CurryType.None;
     private int experience;
     private double healthPercentage;
@@ -30,18 +33,18 @@ public class CurryData {
         rating.configureData(this);
     }
 
-    public CurryData(CurryType mainIngredient, List<BerryType> berries, CurryTasteRating rating) {
+    public CurryData(CurryType mainIngredient, List<Berry> berries, CurryTasteRating rating) {
         this(rating);
-        var flavor = BerryType.getDominantFlavor(berries.toArray(BerryType[]::new));
-        int friendship = Stream.concat(berries.stream(), Stream.of(mainIngredient)).filter(Objects::nonNull).map(ICurryRarity.class::cast).mapToInt(ICurryRarity::getRarity).sum();
-        if (mainIngredient == CurryType.Gigantamax) flavor = Flavor.NONE;
+        var flavor = getDominantFlavor(berries.toArray(Berry[]::new));
+        int friendship = Stream.concat(berries.stream().map(BerryType::fromCobblemonBerry).filter(Objects::nonNull), Stream.of(mainIngredient)).filter(Objects::nonNull).map(ICurryRarity.class::cast).mapToInt(ICurryRarity::getRarity).sum();
+        if (mainIngredient == CurryType.Gigantamax) flavor = null;
 
         this.curryType = mainIngredient;
         this.flavor = flavor;
         this.friendship = friendship;
     }
 
-    public CurryData(CurryType mainIngredient, List<BerryType> berries) {
+    public CurryData(CurryType mainIngredient, List<Berry> berries) {
         this(mainIngredient, berries, CurryTasteRating.Unknown);
     }
 
@@ -141,7 +144,7 @@ public class CurryData {
             return curry;
         }
 
-        return curry.setFlavor(Flavor.getFlavorFromIndex(nbt.getInt("flavor")))
+        return curry.setFlavor(Flavor.values()[nbt.getInt("flavor")])
                 .setCurryType(CurryType.getCurryTypeFromIndex(nbt.getInt("type")))
                 .setRating(CurryTasteRating.fromId(nbt.getInt("rating")))
                 .setExperience(nbt.getInt("experience"))

@@ -6,7 +6,8 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "AbstractFurnaceBlockEntityMixin",
-    "LivingEntityAccessor"
+    "LivingEntityAccessor",
+    "ServerPlayerMixin"
   ],
   "client": [
     "client.LevelRendererMixin",

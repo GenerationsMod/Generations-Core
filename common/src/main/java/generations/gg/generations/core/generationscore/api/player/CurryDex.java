@@ -1,7 +1,12 @@
 package generations.gg.generations.core.generationscore.api.player;
 
+import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.berry.Flavor;
 import com.google.common.collect.ImmutableSet;
-import generations.gg.generations.core.generationscore.api.data.curry.Flavor;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 import generations.gg.generations.core.generationscore.api.events.CurryEvents;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
@@ -19,10 +24,11 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
+import org.jetbrains.annotations.NotNull;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -31,55 +37,27 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public class CurryDex {
+public class CurryDex extends PlayerDataExtension {
+    public static String KEY = "curry_dex";
     private static final Map<Player, CurryDex> LOCAL_PARTY_CACHE = new Object2ObjectArrayMap<>();
     private static final Map<Player, CurryDex> SERVER_PARTY_CACHE = new Object2ObjectArrayMap<>();
 
     private static final Comparator<CurryDexEntry> comparator = Comparator.<CurryDexEntry>comparingInt(a -> a.type.ordinal()).thenComparingInt(a -> a.flavor.ordinal());
-    List<CurryDexEntry> entries = new ArrayList<>();
-    private Entity player;
+    List<CurryDexEntry> entries;
 
-    public CurryDex(Player player) {
-        this.player = player;
-        if (player != null) {
-            generateStorage();
-        }
-     }
+    public CurryDex() {
+        this(new ArrayList<>());
+    }
 
-    public CurryDex(Player player, List<CurryDexEntry> entries) {
+    public CurryDex(List<CurryDexEntry> entries) {
         this.entries = entries;
         sort();
     }
 
-    public static void onJoin(ServerPlayer player) {
-        CurryDex.of(player).sync();
-    }
-
     public static CurryDex of(Player player) {
-        if (player.isLocalPlayer()) {
-            return LOCAL_PARTY_CACHE.computeIfAbsent(player, CurryDex::new);
-        } else {
-            return SERVER_PARTY_CACHE.computeIfAbsent(player, CurryDex::new);
-        }
-    }
-
-    public boolean hasStorage() {
-        return this.player != null && true/*this.player.getPersistentData().contains("partyData") TODO: implment getPersistentData or find replacement*/;
-    }
-
-    public void generateStorage() {
-        if (!hasStorage()) {
-            ListTag party = new ListTag();
-//            this.player.getPersistentData().put("partyData", party);
-        }
-
-        cacheStorage();
-    }
-
-    private void cacheStorage() {
-        ListTag list = new ListTag(); //this.player.getPersistentData().getList("curryDex", Tag.TAG_COMPOUND);
-        entries = list.stream().filter(CompoundTag.class::isInstance).map(CompoundTag.class::cast).map(CurryDexEntry::fromNbt).sorted(comparator).collect(Collectors.toList());
+        return (CurryDex) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new CurryDex());
     }
 
     public static void add(ServerPlayer player, CurryData data) {
@@ -172,7 +150,7 @@ public class CurryDex {
     @Environment(EnvType.CLIENT)
     public static CurryDex fromByteBuf(FriendlyByteBuf buf) {
         Player player = Minecraft.getInstance().player; //TODO: Need to figure out a better way to handle client side pixelmon player. Currently explodes with held item stuff if the uuid list is used..
-        return new CurryDex(player, buf.readList(CurryDexEntry::fromByteBuf));
+        return new CurryDex(buf.readList(CurryDexEntry::fromByteBuf));
     }
 
     public static class CurryDexEntry {
@@ -196,7 +174,7 @@ public class CurryDex {
 
             curryDexEntry.rating = GenerationsUtils.getByName(entry.getString("rating"), CurryTasteRating.class).orElse(CurryTasteRating.Unknown);
             curryDexEntry.type = GenerationsUtils.getByName(entry.getString("type"), CurryType.class).orElse(CurryType.None);
-            curryDexEntry.flavor = GenerationsUtils.getByName(entry.getString("flavor"), Flavor.class).orElse(Flavor.NONE);
+            curryDexEntry.flavor = GenerationsUtils.getByName(entry.getString("flavor"), Flavor.class).orElse(null);
 
             curryDexEntry.newEntry = entry.getBoolean("newEntry");
 
@@ -212,12 +190,13 @@ public class CurryDex {
 
             compound.putString("rating", rating.getSerializedName());
             compound.putString("type", type.getSerializedName());
-            compound.putString("flavor", flavor.getSerializedName());
+            compound.putString("flavor", flavor.name());
 
             compound.putBoolean("newEntry", newEntry);
 
             return compound;
         }
+
 
         public Instant getInstant() {
             return instant;
@@ -231,13 +210,13 @@ public class CurryDex {
         public String toString() {
             String name = I18n.get("item.curry.name");
             if(type != CurryType.None) name = type.getLocalizedName() + " " + name;
-            if(flavor != Flavor.NONE && type != CurryType.Gigantamax) name = flavor.getLocalizedName() + " " + name;
+            if(flavor != null && type != CurryType.Gigantamax) name = GenerationsUtils.getFlavorLocalizedName(flavor) + " " + name;
             return name;
         }
 
         public String getDescription() {
             return I18n.get("gui.currydex.description."
-                    + (flavor != Flavor.NONE ? flavor.name().toLowerCase(Locale.ENGLISH) + "_" : "") +
+                    + (flavor != null ? flavor.name().toLowerCase(Locale.ENGLISH) + "_" : "") +
                     (type != CurryType.None ? type.name().toLowerCase(Locale.ENGLISH) + "_" : "") +
                     "curry");
         }
@@ -264,10 +243,68 @@ public class CurryDex {
             entry.newEntry = byteBuf.readBoolean();
 
             entry.type = CurryType.getCurryTypeFromIndex(byteBuf.readByte());
-            entry.flavor = Flavor.getFlavorFromIndex(byteBuf.readByte());
+            entry.flavor = Flavor.values()[byteBuf.readByte()];
             entry.rating = CurryTasteRating.fromId(byteBuf.readByte());
             return entry;
         }
+
+        public JsonObject toJson() {
+            var json = new JsonObject();
+            json.addProperty("instance", getInstant().toEpochMilli());
+            json.addProperty("pokemonName", pokemonName);
+            json.addProperty("biome", biome.toString());
+            json.add("pos", toBlockPosFromJson(pos));
+            json.addProperty("newEntry", newEntry);
+            json.addProperty("type", type.getSerializedName());
+            json.addProperty("flavor", flavor.name().toLowerCase());
+            json.addProperty("entry", rating.getSerializedName());
+            return json;
+        }
+
+        public static CurryDexEntry fromJson(JsonObject byteBuf) {
+            CurryDexEntry entry = new CurryDexEntry();
+
+            entry.instant = Instant.ofEpochMilli(byteBuf.getAsJsonPrimitive("instnace").getAsInt());
+            entry.pokemonName = byteBuf.getAsJsonPrimitive("pokemonName").getAsString();
+            entry.biome = new ResourceLocation(byteBuf.getAsJsonPrimitive("biome").getAsString());
+            entry.pos = fromJsonToBlockPos(byteBuf.getAsJsonArray("pos"));
+
+            entry.newEntry = byteBuf.getAsJsonPrimitive("newEntry").getAsBoolean();
+
+            entry.type = CurryType.get(byteBuf.getAsJsonPrimitive("type").getAsString());
+            entry.flavor = Flavor.valueOf(byteBuf.getAsJsonPrimitive("flavor").getAsString().toUpperCase());
+            entry.rating = CurryTasteRating.get(byteBuf.getAsJsonPrimitive("rating").getAsString());
+            return entry;
+        }
+
+        private static BlockPos fromJsonToBlockPos(JsonArray element) {
+            var array = element.asList().stream().map(a -> a.getAsJsonPrimitive()).mapToInt(a -> a.getAsInt()).toArray();
+            return new BlockPos(array[0], array[1], array[2]);
+        }
+
+        private static JsonArray toBlockPosFromJson(BlockPos pos) {
+            return IntStream.of(pos.getX(), pos.getY(), pos.getZ()).mapToObj(JsonPrimitive::new).collect(JsonArryaCollector.toJsonArray());
+        }
+    }
+
+    @NotNull
+    @Override
+    public String name() {
+        return KEY;
+    }
+
+    @NotNull
+    @Override
+    public JsonObject serialize() {
+        var json = super.serialize();
+        json.add("entries", entries.stream().map(CurryDexEntry::toJson).collect(JsonArryaCollector.toJsonArray()));
+        return json;
+    }
+
+    @NotNull
+    @Override
+    public PlayerDataExtension deserialize(@NotNull JsonObject jsonObject) {
+        return new CurryDex(jsonObject.getAsJsonArray("entries").asList().stream().map(JsonElement::getAsJsonObject).map(CurryDexEntry::fromJson).toList());
     }
 
     public static class NbtListCollector<T extends Tag> implements Collector<T, ListTag, ListTag> {
@@ -295,6 +332,40 @@ public class CurryDex {
 
         @Override
         public Function<ListTag, ListTag> finisher() {
+            return Function.identity();
+        }
+
+        @Override
+        public Set<Collector.Characteristics> characteristics() {
+            return ImmutableSet.of();
+        }
+    }
+
+    public static class JsonArryaCollector<T extends JsonElement> implements Collector<T, JsonArray, JsonArray> {
+        public static <T extends JsonElement> JsonArryaCollector<T> toJsonArray() {
+            return new JsonArryaCollector<>();
+        }
+
+        @Override
+        public Supplier<JsonArray> supplier() {
+            return JsonArray::new;
+        }
+
+        @Override
+        public BiConsumer<JsonArray, T> accumulator() {
+            return JsonArray::add;
+        }
+
+        @Override
+        public BinaryOperator<JsonArray> combiner() {
+            return (a, b) -> {
+                b.addAll(a);
+                return a;
+            };
+        }
+
+        @Override
+        public Function<JsonArray, JsonArray> finisher() {
             return Function.identity();
         }
 

@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 public enum CurryTasteRating implements StringRepresentable {
     Unknown(0, 0, false, false, ChatFormatting.BLACK),
@@ -42,5 +43,9 @@ public enum CurryTasteRating implements StringRepresentable {
     @Override
     public @NotNull String getSerializedName() {
         return name().toLowerCase(Locale.ENGLISH);
+    }
+
+    public static CurryTasteRating get(String name) {
+        return Stream.of(values()).filter(a -> a.getSerializedName().equals(name)).findAny().orElse(Unknown);
     }
 }

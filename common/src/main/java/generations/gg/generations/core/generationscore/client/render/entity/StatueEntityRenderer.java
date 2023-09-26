@@ -76,8 +76,6 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         if (this.shouldShowName(entity)) {
             this.renderNameTag(entity, entity.getDisplayName(), stack, buffer, light);
         }
-
-//        super.render(key, entityYaw, partialTicks, stack, buffer, light);
     }
 
     @Override

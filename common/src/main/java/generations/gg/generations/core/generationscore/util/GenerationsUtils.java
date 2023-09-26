@@ -1,22 +1,26 @@
 package generations.gg.generations.core.generationscore.util;
 
+import com.cobblemon.mod.common.api.berry.Flavor;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.google.gson.*;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.EnumSet;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiFunction;
@@ -35,9 +39,14 @@ public class GenerationsUtils {
         return -1;
     }
 
-    public static <T extends Enum<T> & StringRepresentable> Optional<T> getByName(String name, Class<T> tClass) {
-        return EnumSet.allOf(tClass).stream().filter(arg -> arg.getSerializedName().equals(name)).findFirst();
+    public static <T extends Enum<T>> Optional<T> getByName(String name, Class<T> tClass) {
+        return EnumSet.allOf(tClass).stream().filter(arg -> (arg instanceof StringRepresentable representable ? representable.getSerializedName() : arg.name()).equals(name)).findFirst();
     }
+
+    public static String getFlavorLocalizedName(@Nullable Flavor flavor) {
+        return flavor != null ? I18n.get("enum.flavor." + flavor.toString().toLowerCase(Locale.ENGLISH)) : "";
+    }
+
 
     public static Vector3f rgbFromInt(int color) {
         float d = (color >> 16 & 0xFF) / 255.0f;
