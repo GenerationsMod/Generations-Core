@@ -24,11 +24,9 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -36,7 +34,6 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CurryDex extends PlayerDataExtension {
@@ -115,24 +112,24 @@ public class CurryDex extends PlayerDataExtension {
     /**
      * Used to sync player data from the server back to the client.
      */
-    public static void replace(Player player, CurryDex curryDex) {
-        if (player.isLocalPlayer()) {
-            LOCAL_PARTY_CACHE.remove(player);
-            LOCAL_PARTY_CACHE.put(player, curryDex);
-        } else {
-            SERVER_PARTY_CACHE.remove(player);
-            SERVER_PARTY_CACHE.put(player, curryDex);
-            curryDex.sync();
-        }
-    }
-
-    public void sync() {
-        if (this.player.getType() == EntityType.PLAYER) {
-//            PokeModNetworking.sendPacket(new S2CSyncCurryDexPacket(this), serverPlayer); TODO: Networking
-        } else {
-            throw new RuntimeException("Tried to sync a party from the client???");
-        }
-    }
+//    public static void replace(Player player, CurryDex curryDex) {
+//        if (player.isLocalPlayer()) {
+//            LOCAL_PARTY_CACHE.remove(player);
+//            LOCAL_PARTY_CACHE.put(player, curryDex);
+//        } else {
+//            SERVER_PARTY_CACHE.remove(player);
+//            SERVER_PARTY_CACHE.put(player, curryDex);
+//            curryDex.sync();
+//        }
+//    }
+//
+//    public void sync() {
+//        if (this.player.getType() == EntityType.PLAYER) {
+////            PokeModNetworking.sendPacket(new S2CSyncCurryDexPacket(this), serverPlayer); TODO: Networking
+//        } else {
+//            throw new RuntimeException("Tried to sync a party from the client???");
+//        }
+//    }
 
     public CurryTasteRating getCurrentTaste() {
         int size = entries.size();
@@ -250,7 +247,7 @@ public class CurryDex extends PlayerDataExtension {
 
         public JsonObject toJson() {
             var json = new JsonObject();
-            json.addProperty("instance", getInstant().toEpochMilli());
+            json.addProperty("instant", getInstant().toEpochMilli());
             json.addProperty("pokemonName", pokemonName);
             json.addProperty("biome", biome.toString());
             json.add("pos", toBlockPosFromJson(pos));

@@ -8,8 +8,10 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
@@ -47,7 +49,9 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
             return false;
         });
 
-//        InteractionEvent.INTERACT_ENTITY
+        GenerationsCore.initBuiltinPacks((type, s, s2) -> {
+            System.out.println("Pack " + s2 + ": " + ResourceManagerHelper.registerBuiltinResourcePack(GenerationsCore.id(s), FabricLoader.getInstance().getModContainer("generations_core").get(), Component.literal(s2), ResourcePackActivationType.DEFAULT_ENABLED));
+        });
     }
 
     @Override

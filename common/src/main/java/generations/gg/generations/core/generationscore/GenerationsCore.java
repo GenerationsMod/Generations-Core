@@ -30,9 +30,11 @@ import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import org.apache.logging.log4j.util.TriConsumer;
 import org.slf4j.Logger;
 
 import java.util.function.Consumer;
@@ -104,6 +106,10 @@ public class GenerationsCore
 			if(result.interruptsFurtherEvaluation() && stack.getItem() instanceof PixelmonInteractions.PixelmonInteraction interaction && interaction.isConsumed()) stack.shrink(1);
 			return result;
 		});
+	}
+
+	public static void initBuiltinPacks(TriConsumer<PackType, String, String> consumer) {
+		consumer.accept(PackType.CLIENT_RESOURCES, "smooth_pokemon", "Smooth Pokemon Models");
 	}
 
 	public static void onAnvilChange(ItemStack left, ItemStack right, Player player, Consumer<ItemStack> output, IntConsumer cost, IntConsumer materialCost) {

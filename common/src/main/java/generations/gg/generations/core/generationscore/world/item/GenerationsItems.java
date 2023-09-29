@@ -925,9 +925,9 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SUN_FLUTE = register("sun_flute", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> LAVA_CRYSTAL = register("lava_crystal", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> JEWEL_OF_LIFE = register("jewel_of_life", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> PRISON_BOTTLE_STEM = register("prison_bottle_stem", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> PRISON_BOTTLE_STEM = register("prison_bottle_stem", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> PRISON_BOTTLE = register("prison_bottle", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> MIRROR = register("mirror", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> MIRROR = register("mirror", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> DARK_CRYSTAL = register("dark_crystal", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> UNENCHANTED_ICEROOT_CARROT = register("unenchanted_iceroot_carrot", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ICEROOT_CARROT = register("iceroot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("glastrier"), UNENCHANTED_ICEROOT_CARROT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1001,7 +1001,7 @@ public class GenerationsItems {
      */
     public static final RegistrySupplier<MeteoriteItem> METEORITE = register("meteorite", MeteoriteItem::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> GRACIDEA = register("gracidea", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
-    public static final RegistrySupplier<Item> REVEAL_GLASS = register("reveal_glass", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> REVEAL_GLASS = register("reveal_glass", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> ROCKSTAR_COSTUME = register("rockstar_costume", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> BELLE_COSTUME = register("belle_costume", Item::new, GenerationsCreativeTabs.FORM_ITEMS);
     public static final RegistrySupplier<Item> POPSTAR_COSTUME = register("popstar_costume", Item::new, GenerationsCreativeTabs.FORM_ITEMS);

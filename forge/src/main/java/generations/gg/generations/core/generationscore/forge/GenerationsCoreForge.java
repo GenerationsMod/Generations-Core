@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge;
 
+import com.mojang.datafixers.util.Pair;
 import dev.architectury.platform.forge.EventBuses;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
@@ -7,26 +8,30 @@ import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.PathPackResources;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
@@ -38,6 +43,7 @@ import java.util.function.Consumer;
 @Mod(GenerationsCore.MOD_ID)
 public class GenerationsCoreForge implements GenerationsImplementation {
     private List<PreparableReloadListener> reloadableResources = new ArrayList<>();
+    private Map<PackType, List<Pair<String, String>>> packs = new HashMap<>();
 
     /**
      * Sets up Forge side of the mod.
@@ -57,6 +63,24 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 //            addListener(this::onLogin)
 //            addListener(this::onLogout)
         EVENT_BUS.addListener(this::onReload);
+
+        GenerationsCore.initBuiltinPacks((packType, id, name) -> packs.computeIfAbsent(packType, a -> new ArrayList<>()).add(new Pair<>(id, name)));
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::addPackFinders);
+    }
+
+    public void addPackFinders(AddPackFindersEvent event) {
+        var packList = packs.get(event.getPackType());
+        if (packList != null) {
+            event.addRepositorySource(consumer -> {
+                packList.stream().map(a -> createPack(a.getFirst(), a.getSecond())).forEach(consumer);
+            });
+        }
+    }
+
+    public static Pack createPack(String id, String name) {
+        var resourcePath = ModList.get().getModFileById(GenerationsCore.MOD_ID).getFile().findResource("resourcepacks", id);
+        return Pack.readMetaAndCreate("builtin/" + id, Component.literal(name), false,
+                (path) -> new PathPackResources(path, resourcePath, false), PackType.SERVER_DATA, Pack.Position.BOTTOM, PackSource.BUILT_IN);
     }
 
     /**

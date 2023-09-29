@@ -1,14 +1,13 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.RegiKeyItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -33,27 +32,24 @@ import java.util.stream.IntStream;
 
 @SuppressWarnings("deprecation")
 public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
-    private static final BiPredicate<Level, BlockPos> IS_PILLAR_PREDICATE = (level, pos) -> level.getBlockState(pos).is(GenerationsBlocks.CASTLE_PILLAR.get()); //TODO convert into tag
-    private static final BiFunction<Level, BlockPos, String> FUNCTION = (level, pos) -> IS_PILLAR_PREDICATE.test(level, pos) ? symbolFromState(level.getBlockState(pos.above())).orElse("-") : "-";
-    private static final BiFunction<String, Integer, String> SUBSTRING = (cipher, i) -> cipher.substring(i, i + 3);
-    private final PokemonProperties species;
+    private final String species;
     private final List<String> list;
 
     public RegiShrineBlock(Properties materialIn, ResourceLocation model, String species) {
         super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);
         var cipher = "-" + species.toUpperCase() + "-";
-        list = IntStream.range(0, cipher.length() - 2).boxed().map(a -> SUBSTRING.apply(cipher, a)).collect(Collectors.toList());
-        this.species = GenerationsUtils.parseProperties(species);
+        list = IntStream.range(0, cipher.length() - 2).boxed().map(a -> getSubSequence(cipher, a)).collect(Collectors.toList());
+        this.species = species;
     }
 
     private static String getSymbolSequence(Level world, Direction facing, BlockPos pos) {
-        return FUNCTION.apply(world, pos.relative(facing)) + FUNCTION.apply(world, pos) + FUNCTION.apply(world, pos.relative(facing.getOpposite()));
+        return getSymbol(world, pos.relative(facing)) + getSymbol(world, pos) + getSymbol(world, pos.relative(facing.getOpposite()));
     }
 
     @Override
     public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!level.isClientSide() && player.getItemInHand(hand).getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesId().equals(species)) {
-            List<BlockPos> blockPos = searchForBlock(level, pos, 15, 1, IS_PILLAR_PREDICATE);
+        if (!level.isClientSide() && player.getItemInHand(hand).getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesId().getPath().equals(species)) {
+            List<BlockPos> blockPos = searchForBlock(level, pos, 15, 1, RegiShrineBlock::isPillar);
 
             if (!blockPos.isEmpty()) {
                 List<BlockPos> list = checkForUnownSequence(level, blockPos.get(0));
@@ -61,7 +57,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                     shrine.toggleActive();
                     list.forEach(a -> level.setBlockAndUpdate(a.above(), Blocks.AIR.defaultBlockState()));
                     player.getItemInHand(hand).shrink(1);
-                    PokemonUtil.spawn(species, level, shrine.getBlockPos());
+                    PokemonUtil.spawn(GenerationsUtils.parseProperties("species=" + species + " level=70"), level, shrine.getBlockPos());
                     shrine.toggleActive();
                 }
             }
@@ -80,7 +76,6 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     }
 
     public static List<BlockPos> searchForBlock(Level world, BlockPos pos, int radius, int amount, BiPredicate<Level, BlockPos> block) {
-//        return BlockPos.betweenClosedStream(pos.offset(-radius, -radius, -radius), pos.offset(radius, radius, radius)).filter(a -> block.test(world, a)).limit(amount).collect(Collectors.toList());
 
         List<BlockPos> states = new ArrayList<>();
 
@@ -128,7 +123,17 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
         return !positions.isEmpty() && positions.size() == list.size() ? Optional.of(positions) : Optional.empty();
     }
 
+    private static boolean isPillar(Level level, BlockPos pos) {
+        return level.getBlockState(pos).is(GenerationsBlocks.CASTLE_PILLAR.get()); //TODO convert into tag
+    }
 
+    private static String getSymbol(Level level, BlockPos pos) {
+        return isPillar(level, pos) ? symbolFromState(level.getBlockState(pos.above())).orElse("-") : "-";
+    }
+
+    public String getSubSequence(String cipher, Integer i) {
+        return cipher.substring(i, i + 3);
+    }
     public static Optional<String> symbolFromState(BlockState state) {
         Block block = state.getBlock();
 

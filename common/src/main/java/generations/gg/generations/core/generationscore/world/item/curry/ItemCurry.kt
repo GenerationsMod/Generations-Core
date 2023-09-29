@@ -45,7 +45,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         }
     }
 
-    fun hasHideFlag(stack: ItemStack): Boolean {
+    private fun hasHideFlag(stack: ItemStack): Boolean {
         return stack.hasTag() && stack.tag!!.getBoolean("hide_tooltip")
     }
 
