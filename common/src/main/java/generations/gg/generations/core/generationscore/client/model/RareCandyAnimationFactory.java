@@ -29,8 +29,11 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
         var name = split[1].trim();
 
         return new StatefulAnimationRareCandy(() -> {
-            var objects = ModelRegistry.get(location, "pixelmon").renderObject;
-            return objects.isReady() ? ((AnimatedMeshObject) objects.objects.get(0)).animations.get(name) : null;
+            var objects = ModelRegistry.get(location, "animated_block").renderObject;
+            if (objects.isReady()) {
+                return ((AnimatedMeshObject) objects.objects.get(0)).animations.get(name);
+            }
+            return null;
         });
     }
 
@@ -42,8 +45,11 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
         var name = split[1].trim();
 
         return new StatelessAnimationRareCandy(jsonPokemonPoseableModel, () -> {
-            var objects = ModelRegistry.get(location, "pixelmon").renderObject;
-            return objects.isReady() ? ((AnimatedMeshObject) objects.objects.get(0)).animations.get(name) : null;
+            var objects = ModelRegistry.get(location, "animated_block").renderObject;
+            if (objects.isReady()) {
+                return ((AnimatedMeshObject) objects.objects.get(0)).animations.get(name);
+            }
+            return null;
         });
     }
 
