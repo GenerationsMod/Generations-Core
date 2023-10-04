@@ -80,7 +80,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     public static Pack createPack(String id, String name) {
         var resourcePath = ModList.get().getModFileById(GenerationsCore.MOD_ID).getFile().findResource("resourcepacks", id);
         return Pack.readMetaAndCreate("builtin/" + id, Component.literal(name), false,
-                (path) -> new PathPackResources(path, resourcePath, false), PackType.SERVER_DATA, Pack.Position.BOTTOM, PackSource.BUILT_IN);
+                (path) -> new PathPackResources(path, resourcePath, false), PackType.CLIENT_RESOURCES, Pack.Position.BOTTOM, PackSource.BUILT_IN);
     }
 
     /**

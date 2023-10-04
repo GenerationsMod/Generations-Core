@@ -797,6 +797,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> LUSTROUS_GLOBE = register("lustrous_globe", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> ADAMANT_CRYSTAL = register("adamant_crystal", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
     public static final RegistrySupplier<Item> GRISEOUS_CORE = register("griseous_core", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> LOADED_DICE = register("loaded_dice", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> PUNCHING_GLOVE = register("punching_glove", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> CLEAR_AMULET = register("clear_amulet", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> COVERT_CLOAK = register("covert_cloak", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> BOOSTER_ENERGY = register("booster_energy", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
+    public static final RegistrySupplier<Item> FAIRY_FEATHER = register("fairy_feather", Item::new, GenerationsCreativeTabs.HELD_ITEMS);
 
     /**
      * Vanilla Like Materials

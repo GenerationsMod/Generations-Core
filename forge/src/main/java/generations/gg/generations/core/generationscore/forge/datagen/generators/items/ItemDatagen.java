@@ -361,6 +361,13 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.PSYCHIC_SEED.get());
         createHeldItem(GenerationsItems.RED_SCARF.get());
 
+        createHeldItem(GenerationsItems.LOADED_DICE.get());
+        createHeldItem(GenerationsItems.PUNCHING_GLOVE.get());
+        createHeldItem(GenerationsItems.CLEAR_AMULET.get());
+        createHeldItem(GenerationsItems.COVERT_CLOAK.get());
+        createHeldItem(GenerationsItems.BOOSTER_ENERGY.get());
+        createHeldItem(GenerationsItems.FAIRY_FEATHER.get());
+
         GenerationsPokeDolls.POKEDOLLS.forEach(ball -> createPokedoll(ball.get()));
 
         createItem(GenerationsItems.RELIC_GOLD.get(), "valuables/");
