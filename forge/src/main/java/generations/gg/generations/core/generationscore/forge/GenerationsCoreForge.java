@@ -7,6 +7,8 @@ import generations.gg.generations.core.generationscore.GenerationsImplementation
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
+import net.minecraft.ChatFormatting;
+import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -16,6 +18,7 @@ import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
+import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddPackFindersEvent;
@@ -28,9 +31,14 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLLoader;
 import net.minecraftforge.fml.loading.FMLPaths;
+import net.minecraftforge.forgespi.language.IModFileInfo;
+import net.minecraftforge.forgespi.language.IModInfo;
 import org.jetbrains.annotations.NotNull;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -43,7 +51,7 @@ import java.util.function.Consumer;
 @Mod(GenerationsCore.MOD_ID)
 public class GenerationsCoreForge implements GenerationsImplementation {
     private List<PreparableReloadListener> reloadableResources = new ArrayList<>();
-    private Map<PackType, List<Pair<String, String>>> packs = new HashMap<>();
+    private Map<PackType, List<Pair<ResourceLocation, Component>>> packs = new HashMap<>();
 
     /**
      * Sets up Forge side of the mod.
@@ -71,17 +79,58 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     public void addPackFinders(AddPackFindersEvent event) {
         var packList = packs.get(event.getPackType());
         if (packList != null) {
-            event.addRepositorySource(consumer -> {
-                packList.stream().map(a -> createPack(a.getFirst(), a.getSecond())).forEach(consumer);
-            });
+            for (var pack1 : packList) {
+                var id = pack1.getFirst();
+                var displayName = pack1.getSecond();
+
+                IModFileInfo info = getPackInfo(id);
+                Path resourcePath = info.getFile().findResource("resourcepacks/" + id.getPath());
+
+                final Pack.Info packInfo = createInfoForLatest(displayName, false);
+                final Pack pack = Pack.create(
+                        GenerationsCore.MOD_ID + ":add_pack/" + id.getPath(), displayName,
+                        false,
+                        (path) -> new PathPackResources(path, resourcePath, true),
+                        packInfo, PackType.CLIENT_RESOURCES, Pack.Position.BOTTOM, false, createSource()
+                );
+                event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
+            }
         }
     }
 
-    public static Pack createPack(String id, String name) {
-        var resourcePath = ModList.get().getModFileById(GenerationsCore.MOD_ID).getFile().findResource("resourcepacks", id);
-        return Pack.readMetaAndCreate("builtin/" + id, Component.literal(name), false,
-                (path) -> new PathPackResources(path, resourcePath, false), PackType.CLIENT_RESOURCES, Pack.Position.BOTTOM, PackSource.BUILT_IN);
+    private static IModFileInfo getPackInfo(ResourceLocation pack) {
+        if (!FMLLoader.isProduction()) {
+            for (IModInfo mod : ModList.get().getMods()) {
+                if (mod.getModId().startsWith("generated_") && fileExists(mod, "resourcepacks/" + pack.getPath())) {
+                    return mod.getOwningFile();
+                }
+            }
+        }
+        return ModList.get().getModFileById(pack.getNamespace());
     }
+
+    private static boolean fileExists(IModInfo info, String path) {
+        return Files.exists(info.getOwningFile().getFile().findResource(path.split("/")));
+    }
+
+    private static Pack.Info createInfoForLatest(Component description, boolean hidden) {
+        return new Pack.Info(
+                description,
+                SharedConstants.getCurrentVersion().getPackVersion(PackType.SERVER_DATA),
+                SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES),
+                FeatureFlagSet.of(),
+                false
+        );
+    }
+
+    private static PackSource createSource() {
+        final Component text = Component.translatable("pack.source.builtin");
+        return PackSource.create(
+                component -> Component.translatable("pack.nameAndSource", component, text).withStyle(ChatFormatting.GRAY),
+                false
+        );
+    }
+
 
     /**
      * Should initialize everything where a specific event does not cover it.
@@ -111,7 +160,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     @Override
     public void registerResourceReloader(ResourceLocation identifier, PreparableReloadListener reloader, PackType type, Collection<ResourceLocation> dependencies) {
         if (type == PackType.SERVER_DATA) this.reloadableResources.add(reloader);
-        else if(Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
+        else if(Minecraft.getInstance() != null /*Jt do not touch. Had issues with this being null during datagen for some reason.*/ && Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
     }
 
     @NotNull

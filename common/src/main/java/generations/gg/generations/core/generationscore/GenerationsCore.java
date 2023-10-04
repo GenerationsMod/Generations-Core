@@ -29,6 +29,8 @@ import generations.gg.generations.core.generationscore.world.item.creativetab.Ge
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.util.RandomSource;
@@ -108,8 +110,8 @@ public class GenerationsCore
 		});
 	}
 
-	public static void initBuiltinPacks(TriConsumer<PackType, String, String> consumer) {
-		consumer.accept(PackType.CLIENT_RESOURCES, "smooth_pokemon", "Smooth Pokemon Models");
+	public static void initBuiltinPacks(TriConsumer<PackType, ResourceLocation, MutableComponent> consumer) {
+		consumer.accept(PackType.CLIENT_RESOURCES, GenerationsCore.id("smooth_pokemon"), Component.literal("Smooth Pokemon Models"));
 	}
 
 	public static void onAnvilChange(ItemStack left, ItemStack right, Player player, Consumer<ItemStack> output, IntConsumer cost, IntConsumer materialCost) {

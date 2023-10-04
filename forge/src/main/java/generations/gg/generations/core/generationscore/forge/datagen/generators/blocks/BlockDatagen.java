@@ -5,8 +5,10 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -227,7 +229,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE);
         registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG);
-        GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(this::registerNoModel);
+        GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> registerBlockItemParticle(block.get(), "ball_displays"));
 
 
         registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign");
@@ -241,6 +243,14 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerNoModel(GenerationsUtilityBlocks.PC);
         registerNoModel(GenerationsUtilityBlocks.CLOCK);
         registerNoModel(GenerationsUtilityBlocks.HEALER);
+
+        registerBlockItemParticle(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SWITCH.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), "decorations");
+        registerBlockItemParticle(GenerationsUtilityBlocks.RKS_MACHINE.get(), "utility_blocks");
+
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);
         registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE);
@@ -256,34 +266,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHISELED_VOLCANIC_STONE_BRICKS);
 
         registerDripStone(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE);
-
-        registerBlockItemParticle(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.GS_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.NET_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get(), "ball_displays");
-        registerBlockItemParticle(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), "ball_displays");
     }
 
     private <T extends Block> void registerNoModel( RegistrySupplier<T> block) {
@@ -499,10 +481,17 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
     }
     private void registerBlockItemParticle(Block block, String name) {
         ResourceLocation blockId = key(block);
+        ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");
         try {
-            ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");
             simpleBlock(block, models().sign(blockId.getPath(), textureId));
+            itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.asItem())).toString()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+                    .texture("layer0", textureId);
         } catch (Exception ignored) {
+            DataProvider.LOGGER.error("Block: " + name + " -> " + textureId);
+            simpleBlock(block, models().sign(blockId.getPath(), GenerationsCore.id("item/placeholder")));
+            itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.asItem())).toString()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+                    .texture("layer0", GenerationsCore.id("item/placeholder"));
+
         }
     }
 

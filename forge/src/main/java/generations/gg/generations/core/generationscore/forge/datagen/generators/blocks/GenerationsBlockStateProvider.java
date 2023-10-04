@@ -27,7 +27,9 @@ public class GenerationsBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        providers.forEach(Proxied::registerStatesAndModels);
+        for (Proxied provider : providers) {
+            provider.registerStatesAndModels();
+        }
     }
 
     public PackOutput getPackOutput() {

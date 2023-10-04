@@ -39,6 +39,6 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 [[dependencies.generations_core]]
    modId="cobblemon"
    mandatory=true
-   versionRange="*"
+   versionRange="[1.4.0,)"
    ordering="AFTER"
    side="BOTH"
