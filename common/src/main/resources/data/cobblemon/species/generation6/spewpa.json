@@ -70,7 +70,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_void"
+          "biomeCondition": "#cobblemon:is_mushroom"
         }
       ]
     },
@@ -89,7 +89,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_void"
+          "biomeCondition": "#cobblemon:is_plains"
         }
       ]
     },
@@ -108,7 +108,11 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_void"
+          "biomeCondition": "#cobblemon:is_spooky"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_magical"
         }
       ]
     },
@@ -127,7 +131,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_void"
+          "biomeCondition": "minecraft:cherry_grove"
         }
       ]
     },
@@ -146,7 +150,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_floral"
+          "biomeCondition": "#cobblemon:is_forest"
         }
       ]
     },
@@ -165,7 +169,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_void"
+          "biomeCondition": "#cobblemon:is_badlands"
         }
       ]
     },
@@ -184,7 +188,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_snowy"
+          "biomeCondition": "#cobblemon:is_taiga"
         }
       ]
     },
@@ -222,7 +226,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_coast"
+          "biomeCondition": "#cobblemon:is_ocean"
         }
       ]
     },
@@ -241,7 +245,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_plains"
+          "biomeCondition": "#cobblemon:is_floral"
         }
       ]
     },
@@ -260,7 +264,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_plains"
+          "biomeCondition": "minecraft:is_void"
         }
       ]
     },
@@ -279,7 +283,11 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_void"
+          "biomeCondition": "#cobblemon:is_mountain"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_peak"
         }
       ]
     },
@@ -298,7 +306,11 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_deep"
+          "biomeCondition": "#cobblemon:is_coast"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_warm_ocean"
         }
       ]
     },
@@ -336,7 +348,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_frozen"
+          "biomeCondition": "#cobblemon:is_frozen_ocean"
         }
       ]
     },
@@ -356,6 +368,10 @@
         {
           "variant": "biome",
           "biomeCondition": "#cobblemon:is_river"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_swamp"
         }
       ]
     },
@@ -374,7 +390,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_sandy"
+          "biomeCondition": "#cobblemon:is_desert"
         }
       ]
     },
@@ -412,7 +428,15 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_void"
+          "biomeCondition": "#cobblemon:is_sky"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_volcano"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "minecraft:sunflower_plains"
         }
       ]
     },
@@ -432,6 +456,14 @@
         {
           "variant": "biome",
           "biomeCondition": "#cobblemon:is_tundra"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_snowy_forest"
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_glacial"
         }
       ]
     },

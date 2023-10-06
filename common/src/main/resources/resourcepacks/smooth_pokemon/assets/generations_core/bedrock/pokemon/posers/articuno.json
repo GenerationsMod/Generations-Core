@@ -1,6 +1,4 @@
 {
-  "portraitScale": 1,
-  "portraitTranslation": [0, 0, 1],
   "profileScale": 1,
   "profileTranslation": [0, 0, 1],
   "poses": {
@@ -10,7 +8,7 @@
       "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE", "FLOAT"],
       "animations": [
         "look",
-        "pk(generations_core:articuno.pk, idle.smd)"
+        "pk(generations_core:articuno.pk, idle.tranm)"
       ]
     },
     "walking": {
@@ -19,7 +17,7 @@
       "poseTypes": ["WALK"],
       "animations": [
         "look",
-        "pk(generations_core:articuno.pk, walk.smd)"
+        "pk(generations_core:articuno.pk, walk.tranm)"
       ]
     }
   }

@@ -5,7 +5,7 @@
     {
       "aspects": [],
       "poser": "generations_core:pikachu",
-      "model": "generations_core:pikachu_with_cap.pk",
+      "model": "generations_core:pikachu.pk",
       "texture": "pk:normal"
     },
     {

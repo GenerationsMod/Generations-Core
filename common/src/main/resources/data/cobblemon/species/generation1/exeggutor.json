@@ -55,9 +55,9 @@
         "special_defence": 0,
         "speed": 0
       },
-      "baseScale": 1.3,
+      "baseScale": 2.8,
       "hitbox": {
-        "width": 1.0,
+        "width": 0.9,
         "height": 8.0,
         "fixed": false
       },
@@ -393,7 +393,7 @@
   ],
   "preEvolution": "exeggcute",
   "evolutions": [],
-  "baseScale": 1.0,
+  "baseScale": 1.6,
   "hitbox": {
     "width": 1.0,
     "height": 1.7,
