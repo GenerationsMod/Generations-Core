@@ -151,7 +151,7 @@ public class GenerationsCoreClient {
     }
 
     private static void registerChestRenderer(GenericChestBlock chest ) {
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(chest.asItem(), new GenericChestItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), () -> new GenericChestBlockEntity(BlockPos.ZERO, chest.defaultBlockState())););
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(chest.asItem(), new GenericChestItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), () -> new GenericChestBlockEntity(BlockPos.ZERO, chest.defaultBlockState())));
     }
 
     private static void addWoodType(WoodType woodType) {

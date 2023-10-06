@@ -1,14 +1,26 @@
 {
+  "portraitScale": 1,
+  "portraitTranslation": [0, 0, 1],
   "profileScale": 1,
   "profileTranslation": [0, 0, 1],
+  "faint": "pk(generations_core:articuno.pk, faint)",
   "poses": {
     "standing": {
       "poseName": "standing",
       "transformTicks": 10,
-      "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE", "FLOAT"],
+      "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE"],
       "animations": [
         "look",
-        "pk(generations_core:articuno.pk, idle.tranm)"
+        "pk(generations_core:articuno.pk, idle)"
+      ]
+    },
+    "flyidle": {
+      "poseName": "flyidle",
+      "transformTicks": 10,
+      "poseTypes": ["HOVER", "FLOAT"],
+      "animations": [
+        "look",
+        "pk(generations_core:articuno.pk, flyidle)"
       ]
     },
     "walking": {
@@ -17,7 +29,25 @@
       "poseTypes": ["WALK"],
       "animations": [
         "look",
-        "pk(generations_core:articuno.pk, walk.tranm)"
+        "pk(generations_core:articuno.pk, walk)"
+      ]
+    },
+    "flywalk": {
+      "poseName": "flywalk",
+      "transformTicks": 10,
+      "poseTypes": ["FLY"],
+      "animations": [
+        "look",
+        "pk(generations_core:articuno.pk, flywalk)"
+      ]
+    },
+    "sleeping": {
+      "poseName": "sleeping",
+      "transformTicks": 10,
+      "poseTypes": ["SLEEP"],
+      "animations": [
+        "look",
+        "pk(generations_core:articuno.pk, sleeploop)"
       ]
     }
   }
