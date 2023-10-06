@@ -1,15 +1,15 @@
 {
   "portraitScale": 1,
-  "portraitTranslation": [0, 0, 3],
+  "portraitTranslation": [0, 0, 1],
   "profileScale": 1,
-  "profileTranslation": [0, 0, 3],
-  "faint": "pk(generations_core:charizard.pk, faint)",
+  "profileTranslation": [0, 0, 1],
   "poses": {
     "standing": {
       "poseName": "standing",
       "transformTicks": 10,
       "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE", "FLOAT"],
       "animations": [
+        "look",
         "pk(generations_core:charizard.pk, idle.tranm)"
       ]
     },
@@ -18,15 +18,35 @@
       "transformTicks": 10,
       "poseTypes": ["WALK"],
       "animations": [
+        "look",
         "pk(generations_core:charizard.pk, walk.tranm)"
       ]
     },
-    "sleeping": {
-      "poseName": "sleeping",
+    "flying": {
+      "poseName": "flying",
+      "transformTicks": 10,
+      "poseTypes": ["FLY"],
+      "animations": [
+        "look",
+        "pk(generations_core:charizard.pk, flywalk.tranm)"
+      ]
+    },
+    "hover": {
+      "poseName": "hover",
+      "transformTicks": 10,
+      "poseTypes": ["HOVER"],
+      "animations": [
+        "look",
+        "pk(generations_core:charizard.pk, flyidle.tranm)"
+      ]
+    },
+    "sleep": {
+      "poseName": "sleep",
       "transformTicks": 10,
       "poseTypes": ["SLEEP"],
       "animations": [
-        "pk(generations_core:charizard.pk, rest_loop.tranm)"
+        "look",
+        "pk(generations_core:charizard.pk, sleeploop.tranm)"
       ]
     }
   }

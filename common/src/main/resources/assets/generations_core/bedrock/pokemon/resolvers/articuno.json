@@ -27,12 +27,6 @@
         "shiny", "galarian"
       ],
       "texture": "pk:shiny"
-    },
-    {
-      "aspects": [
-        "special-halloween"
-      ],
-      "texture": "pk:halloween"
     }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "portraitScale": 1,
+  "portraitTranslation": [0, 0, 1],
+  "profileScale": 1,
+  "profileTranslation": [0, 0, 1],
+  "poses": {
+    "standing": {
+      "poseName": "standing",
+      "transformTicks": 10,
+      "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE", "FLOAT"],
+      "animations": [
+        "look",
+        "pk(generations_core:pikachu.pk, idle.tranm)"
+      ]
+    },
+    "walking": {
+      "poseName": "walking",
+      "transformTicks": 10,
+      "poseTypes": ["WALK"],
+      "animations": [
+        "look",
+        "pk(generations_core:pikachu.pk, walk.tranm)"
+      ]
+    },
+    "swimming": {
+      "poseName": "swimming",
+      "transformTicks": 10,
+      "poseTypes": ["SWIM"],
+      "animations": [
+        "look",
+        "pk(generations_core:pikachu.pk, swimidle.tranm)"
+      ]
+    },
+    "float": {
+      "poseName": "float",
+      "transformTicks": 10,
+      "poseTypes": ["FLOAT"],
+      "animations": [
+        "look",
+        "pk(generations_core:pikachu.pk, swimwalk.tranm)"
+      ]
+    },
+    "sleep": {
+      "poseName": "sleep",
+      "transformTicks": 10,
+      "poseTypes": ["SLEEP"],
+      "animations": [
+        "look",
+        "pk(generations_core:pikachu.pk, sleeploop.tranm)"
+      ]
+    }
+  }
+}
