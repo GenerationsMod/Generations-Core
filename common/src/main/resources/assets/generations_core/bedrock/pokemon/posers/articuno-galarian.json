@@ -22,24 +22,6 @@
         "pk(generations_core:articuno-galarian.pk, walk.tranm)"
       ]
     },
-    "flying": {
-      "poseName": "flying",
-      "transformTicks": 10,
-      "poseTypes": ["FLY"],
-      "animations": [
-        "look",
-        "pk(generations_core:articuno-galarian.pk, flywalk.tranm)"
-      ]
-    },
-    "hover": {
-      "poseName": "hover",
-      "transformTicks": 10,
-      "poseTypes": ["HOVER"],
-      "animations": [
-        "look",
-        "pk(generations_core:articuno-galarian.pk, flyidle.tranm)"
-      ]
-    },
     "sleep": {
       "poseName": "sleep",
       "transformTicks": 10,

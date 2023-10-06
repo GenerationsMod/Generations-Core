@@ -21,33 +21,6 @@
         "look",
         "pk(generations_core:articuno.pk, walk.tranm)"
       ]
-    },
-    "flying": {
-      "poseName": "flying",
-      "transformTicks": 10,
-      "poseTypes": ["FLY"],
-      "animations": [
-        "look",
-        "pk(generations_core:articuno.pk, flywalk.tranm)"
-      ]
-    },
-    "hover": {
-      "poseName": "hover",
-      "transformTicks": 10,
-      "poseTypes": ["HOVER"],
-      "animations": [
-        "look",
-        "pk(generations_core:articuno.pk, flyidle.tranm)"
-      ]
-    },
-    "sleep": {
-      "poseName": "sleep",
-      "transformTicks": 10,
-      "poseTypes": ["SLEEP"],
-      "animations": [
-        "look",
-        "pk(generations_core:articuno.pk, sleeploop.tranm)"
-      ]
     }
   }
 }
