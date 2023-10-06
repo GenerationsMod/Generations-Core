@@ -301,7 +301,7 @@
       "requiredContext": "cobblemon:leaf_stone"
     }
   ],
-  "baseScale": 0.8,
+  "baseScale": 1.0,
   "hitbox": {
     "width": 1.1,
     "height": 0.5,

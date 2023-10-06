@@ -55,6 +55,19 @@
       "eggGroups": [
         "field"
       ],
+      "drops": {
+        "amount": "2",
+        "entries": [
+          {
+            "item": "cobblemon:razor_claw",
+            "percentage": 2.5
+          },
+          {
+            "item": "cobblemon:poison_barb",
+            "percentage": 2.5
+          }
+        ]
+      },
       "moves": [
         "1:leer",
         "1:rocksmash",
@@ -157,6 +170,19 @@
   "eggGroups": [
     "field"
   ],
+  "drops": {
+    "amount": "2",
+    "entries": [
+      {
+        "item": "cobblemon:razor_claw",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:quick_claw",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
     "1:leer",
     "1:scratch",
