@@ -10,10 +10,11 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
-import gg.generations.rarecandy.animation.Animation;
-import gg.generations.rarecandy.components.AnimatedMeshObject;
-import gg.generations.rarecandy.components.MeshObject;
-import gg.generations.rarecandy.rendering.RareCandy;
+
+import gg.generations.rarecandy.renderer.animation.Animation;
+import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
+import gg.generations.rarecandy.renderer.components.MeshObject;
+import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;

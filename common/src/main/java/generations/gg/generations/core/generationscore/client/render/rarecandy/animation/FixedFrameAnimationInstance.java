@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy.animation;
 
-import gg.generations.rarecandy.animation.Animation;
-import gg.generations.rarecandy.animation.AnimationInstance;
+import gg.generations.rarecandy.renderer.animation.Animation;
+import gg.generations.rarecandy.renderer.animation.AnimationInstance;
 
 public class FixedFrameAnimationInstance extends AnimationInstance {
     public FixedFrameAnimationInstance(Animation animation, float frame) {

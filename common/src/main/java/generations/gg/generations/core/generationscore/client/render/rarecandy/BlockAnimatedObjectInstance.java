@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
-import gg.generations.rarecandy.storage.AnimatedObjectInstance;
+import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import org.joml.Matrix4f;
 
 public class BlockAnimatedObjectInstance extends AnimatedObjectInstance implements BlockLightValueProvider {

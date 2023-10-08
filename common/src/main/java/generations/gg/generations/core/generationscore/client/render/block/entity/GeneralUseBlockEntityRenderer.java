@@ -10,9 +10,9 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.M
 import generations.gg.generations.core.generationscore.client.render.rarecandy.animation.FixedFrameAnimationInstance;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
-import gg.generations.rarecandy.animation.AnimationInstance;
-import gg.generations.rarecandy.rendering.ObjectInstance;
-import gg.generations.rarecandy.storage.AnimatedObjectInstance;
+import gg.generations.rarecandy.renderer.animation.AnimationInstance;
+import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
+import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;

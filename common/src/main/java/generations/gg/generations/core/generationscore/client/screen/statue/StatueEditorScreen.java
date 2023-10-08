@@ -16,7 +16,6 @@ import generations.gg.generations.core.generationscore.client.screen.widget.Pixe
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.statue.C2SUpdateStatueInfoPacket;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
-import gg.generations.rarecandy.animation.Animation;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.EditBox;

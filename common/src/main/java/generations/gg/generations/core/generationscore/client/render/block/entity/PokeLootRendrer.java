@@ -6,7 +6,7 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.B
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
-import gg.generations.rarecandy.rendering.ObjectInstance;
+import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;

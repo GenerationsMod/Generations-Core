@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
-import gg.generations.rarecandy.rendering.ObjectInstance;
+import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;

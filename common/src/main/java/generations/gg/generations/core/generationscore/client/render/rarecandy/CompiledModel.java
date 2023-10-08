@@ -3,13 +3,13 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
 import de.javagl.jgltf.model.GltfModel;
-import gg.generations.pokeutils.PixelAsset;
-import gg.generations.rarecandy.components.MeshObject;
-import gg.generations.rarecandy.components.MultiRenderObject;
-import gg.generations.rarecandy.loading.ModelLoader;
-import gg.generations.rarecandy.pipeline.Pipeline;
-import gg.generations.rarecandy.rendering.ObjectInstance;
-import gg.generations.rarecandy.storage.ObjectManager;
+import gg.generations.rarecandy.pokeutils.PixelAsset;
+import gg.generations.rarecandy.renderer.components.MeshObject;
+import gg.generations.rarecandy.renderer.components.MultiRenderObject;
+import gg.generations.rarecandy.renderer.loading.ModelLoader;
+import gg.generations.rarecandy.renderer.pipeline.Pipeline;
+import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
+import gg.generations.rarecandy.renderer.storage.ObjectManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
@@ -31,7 +31,7 @@ public class CompiledModel {
                 (gltfModel, smdFileMap, pkxFileMap, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
                     try {
-                        ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap,textures, config, glCalls, pipeline, supplier.apply(gltfModel));
+                        ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap,textures, config, glCalls, supplier.apply(gltfModel));
                     } catch (NullPointerException e) {
 //                        RareCandyTest.LOGGER.error("Catching exception reading model %s.".formatted(a));
                         e.printStackTrace();

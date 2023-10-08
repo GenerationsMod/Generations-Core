@@ -144,14 +144,17 @@ public class GenerationsCoreClient {
             else return 0;
         });
 
+
+
         registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.MASTERBALL_CHEST.get());
     }
 
-    private static void registerChestRenderer(GenericChestBlock chest ) {
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(chest.asItem(), new GenericChestItemStackRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels(), () -> new GenericChestBlockEntity(BlockPos.ZERO, chest.defaultBlockState())););
+
+    private static void registerChestRenderer(GenericChestBlock chest) {
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(chest.asItem(), new GenericChestItemStackRenderer(() -> new GenericChestBlockEntity(BlockPos.ZERO, chest.defaultBlockState())));
     }
 
     private static void addWoodType(WoodType woodType) {

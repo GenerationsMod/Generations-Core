@@ -10,8 +10,8 @@ import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPoke
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
-import gg.generations.rarecandy.animation.Animation;
-import gg.generations.rarecandy.components.AnimatedMeshObject;
+import gg.generations.rarecandy.renderer.animation.Animation;
+import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
@@ -55,7 +55,7 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
 
     public static class StatefulAnimationRareCandy implements StatefulAnimation<PokemonEntity, ModelFrame> {
         private float secondsPassed = 0f;
-        private final Supplier<gg.generations.rarecandy.animation.Animation> animationSuppler;
+        private final Supplier<Animation> animationSuppler;
 
         public StatefulAnimationRareCandy(Supplier<Animation> animationSuppler) {
             this.animationSuppler = animationSuppler;
@@ -92,7 +92,7 @@ public class RareCandyAnimationFactory implements AnimationReferenceFactory {
 
     private static class StatelessAnimationRareCandy extends StatelessAnimation<PokemonEntity, ModelFrame> {
 
-        private final Supplier<gg.generations.rarecandy.animation.Animation> animationSupplier;
+        private final Supplier<Animation> animationSupplier;
 
         public StatelessAnimationRareCandy(JsonPokemonPoseableModel jsonPokemonPoseableModel, Supplier<Animation> animationSupplier) {
             super(jsonPokemonPoseableModel);

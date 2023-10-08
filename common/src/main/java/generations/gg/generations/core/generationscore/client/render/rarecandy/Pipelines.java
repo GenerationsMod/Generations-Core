@@ -4,13 +4,17 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import gg.generations.rarecandy.animation.AnimationController;
-import gg.generations.rarecandy.pipeline.Pipeline;
-import gg.generations.rarecandy.storage.AnimatedObjectInstance;
+import gg.generations.rarecandy.pokeutils.CullType;
+import gg.generations.rarecandy.renderer.animation.AnimationController;
+import gg.generations.rarecandy.renderer.model.material.Material;
+import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
+import gg.generations.rarecandy.renderer.pipeline.Pipeline;
+import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.joml.Vector3f;
+import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13C;
 
 import java.util.HashMap;
@@ -39,6 +43,12 @@ public class Pipelines {
 
     private static boolean initalized = false;
 
+    private static String activeShaderGroup = "animated_block";
+
+    public static void setActiveShaderGroup(String group) {
+        activeShaderGroup = PIPELINE_MAP.containsKey(group) ? group : "animated_block";
+    }
+
     /**
      * Called on first usage of RareCandy to reduce lag later on
      */
@@ -46,6 +56,7 @@ public class Pipelines {
         if(!initalized) {
             REGISTER.invoker().accept(new PipelineRegister(manager, PIPELINE_MAP));
             initalized = true;
+            PipelineRegistry.setFunction(s -> Pipelines.getPipeline(activeShaderGroup).apply(s));
         }
     }
 
@@ -104,19 +115,57 @@ public class Pipelines {
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
-                    .prePostDraw(() -> {
-                    }, Minecraft.getInstance().gameRenderer.lightTexture()::turnOffLightLayer)
+                    .supplyUniform("lightmap", ctx -> {
+                        GL13C.glActiveTexture('蓀' + 1);
+                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
+                        ctx.uniform().uploadInt(1);
+                    })
+                    .supplyUniform("light", ctx -> {
+                        var light = ((BlockLightValueProvider) ctx.instance()).getLight();
+                        ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
+                    })
+                    .supplyUniform("boneTransforms", ctx -> {
+                        var matrices = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms(): AnimationController.NO_ANIMATION;
+                        ctx.uniform().uploadMat4fs(matrices);
+                    })
+                    .prePostDraw(material -> {
+                        if (material.cullType() != CullType.None) {
+                            RenderSystem.enableCull();
+                            GL11.glFrontFace(material.cullType().getGlConstant());
+                        }
+                    }, material -> {
+                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
+                        if (material.cullType() != CullType.None) {
+                            RenderSystem.disableCull();
+                        }
+                    })
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/transparent.fs.glsl")))
-                    .prePostDraw(() -> {
-                        RenderSystem.enableBlend();
-                        RenderSystem.defaultBlendFunc();
-
-                    }, () -> {
-                        RenderSystem.disableBlend();
-                        Minecraft.getInstance().gameRenderer.lightTexture().turnOffLightLayer();
+                    .supplyUniform("lightmap", ctx -> {
+                        GL13C.glActiveTexture('蓀' + 1);
+                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
+                        ctx.uniform().uploadInt(1);
+                    })
+                    .supplyUniform("light", ctx -> {
+                        var light = ((BlockLightValueProvider) ctx.instance()).getLight();
+                        ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
+                    })
+                    .supplyUniform("boneTransforms", ctx -> {
+                        var matrices = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms(): AnimationController.NO_ANIMATION;
+                        ctx.uniform().uploadMat4fs(matrices);
+                    })
+                    .prePostDraw(material -> {
+                        if (material.cullType() != CullType.None) {
+                            RenderSystem.enableCull();
+                            GL11.glFrontFace(material.cullType().getGlConstant());
+                        }
+                    }, material -> {
+                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
+                        if (material.cullType() != CullType.None) {
+                            RenderSystem.disableCull();
+                        }
                     })
                     .build();
 
@@ -135,25 +184,27 @@ public class Pipelines {
                         ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
                     })
                     .supplyUniform("boneTransforms", ctx -> {
-                        var matrices = ((AnimatedObjectInstance) ctx.instance()).getTransforms();
-
-                        ctx.uniform().uploadMat4fs(matrices != null ? matrices : AnimationController.NO_ANIMATION);
+                        var matrices = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms(): AnimationController.NO_ANIMATION;
+                        ctx.uniform().uploadMat4fs(matrices);
+                    })
+                    .prePostDraw(material -> {
+                        if (material.cullType() != CullType.None) {
+                            RenderSystem.enableCull();
+                            GL11.glFrontFace(material.cullType().getGlConstant());
+                        }
+                    }, material -> {
+                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
+                        if (material.cullType() != CullType.None) {
+                            RenderSystem.disableCull();
+                        }
                     });
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
-                    .prePostDraw(() -> {}, Minecraft.getInstance().gameRenderer.lightTexture()::turnOffLightLayer)
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/transparent.fs.glsl")))
-                    .prePostDraw(() -> {
-                        RenderSystem.enableBlend();
-                        RenderSystem.defaultBlendFunc();
-                    }, () -> {
-                        RenderSystem.disableBlend();
-                        Minecraft.getInstance().gameRenderer.lightTexture().turnOffLightLayer();
-                    })
                     .build();
 
             return material -> material.equals("transparent") ? transparent : solid;
