@@ -17,7 +17,7 @@
     "speed": 65
   },
   "catchRate": 100,
-  "maleRatio": 1,
+  "maleRatio": 0.5,
   "baseExperienceYield": 171,
   "baseFriendship": 50,
   "evYield": {
@@ -93,7 +93,7 @@
   "cannotDynamax": false,
   "forms": [
     {
-      "name": "F",
+      "name": "female",
       "primaryType": "normal",
       "abilities": [
         "aromaveil",
@@ -109,7 +109,6 @@
         "speed": 65
       },
       "catchRate": 100,
-      "maleRatio": 0,
       "baseFriendship": 50,
       "evYield": {
         "hp": 2,
@@ -177,7 +176,7 @@
         "gen9"
       ],
       "aspects": [
-        "f"
+        "female"
       ],
       "height": 10,
       "weight": 1200,
@@ -185,6 +184,9 @@
       "evolutions": [],
       "cannotDynamax": false,
       "battleOnly": false
+    },
+    {
+      "name": "base"
     }
   ],
   "baseScale": 1.0,

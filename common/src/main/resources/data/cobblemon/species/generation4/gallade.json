@@ -74,6 +74,14 @@
     "human_like",
     "amorphous"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "moves": [
     "1:aquacutter",
     "1:calmmind",

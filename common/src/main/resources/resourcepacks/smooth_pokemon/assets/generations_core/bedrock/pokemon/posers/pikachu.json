@@ -1,16 +1,26 @@
 {
   "portraitScale": 1,
-  "portraitTranslation": [0, 0, 3],
+  "portraitTranslation": [0, 0, 1],
   "profileScale": 1,
-  "profileTranslation": [0, 0, 3],
-  "faint": "pk(generations_core:pikachu_with_cap.pk, pm0025_11_00_00520_down01_start.tranm)",
+  "profileTranslation": [0, 0, 1],
+  "faint": "pk(generations_core:pikachu.pk, faint)",
   "poses": {
     "standing": {
       "poseName": "standing",
       "transformTicks": 10,
-      "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE", "FLOAT"],
+      "poseTypes": ["STAND", "NONE", "PORTRAIT", "PROFILE"],
       "animations": [
-        "pk(generations_core:pikachu_with_cap.pk, pm0025_11_00_00011_defaultidle02)"
+        "look",
+        "pk(generations_core:pikachu.pk, idle)"
+      ]
+    },
+    "swimidle": {
+      "poseName": "swimidle",
+      "transformTicks": 10,
+      "poseTypes": ["FLOAT"],
+      "animations": [
+        "look",
+        "pk(generations_core:pikachu.pk, swimidle)"
       ]
     },
     "walking": {
@@ -18,7 +28,17 @@
       "transformTicks": 10,
       "poseTypes": ["WALK"],
       "animations": [
-        "pk(generations_core:pikachu_with_cap.pk, pm0025_11_00_00030_walk01_loop)"
+        "look",
+        "pk(generations_core:pikachu.pk, walk)"
+      ]
+    },
+    "swimwalk": {
+      "poseName": "swimwalk",
+      "transformTicks": 10,
+      "poseTypes": ["SWIM"],
+      "animations": [
+        "look",
+        "pk(generations_core:pikachu.pk, swimwalk)"
       ]
     },
     "sleeping": {
@@ -26,7 +46,8 @@
       "transformTicks": 10,
       "poseTypes": ["SLEEP"],
       "animations": [
-        "pk(generations_core:pikachu_with_cap.pk, pm0025_11_00_00281_sleep01_loop)"
+        "look",
+        "pk(generations_core:pikachu.pk, sleeploop)"
       ]
     }
   }
