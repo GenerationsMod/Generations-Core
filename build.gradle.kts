@@ -30,6 +30,7 @@ subprojects {
             includeGroup("lol.bai")
             includeGroup("mcp.mobius.waila")
         }
+        maven("https://maven.tterrag.com/")
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
     }
 

@@ -113,12 +113,14 @@ public class Pipelines {
                             ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
                         });
 
+
+
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
                     .supplyUniform("lightmap", ctx -> {
-                        GL13C.glActiveTexture('蓀' + 1);
+                        GL13C.glActiveTexture('蓀' + 2);
                         Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-                        ctx.uniform().uploadInt(1);
+                        ctx.uniform().uploadInt(2);
                     })
                     .supplyUniform("light", ctx -> {
                         var light = ((BlockLightValueProvider) ctx.instance()).getLight();
@@ -144,9 +146,9 @@ public class Pipelines {
             var transparent = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/transparent.fs.glsl")))
                     .supplyUniform("lightmap", ctx -> {
-                        GL13C.glActiveTexture('蓀' + 1);
+                        GL13C.glActiveTexture('蓀' + 2);
                         Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-                        ctx.uniform().uploadInt(1);
+                        ctx.uniform().uploadInt(2);
                     })
                     .supplyUniform("light", ctx -> {
                         var light = ((BlockLightValueProvider) ctx.instance()).getLight();
@@ -175,9 +177,9 @@ public class Pipelines {
         register.register("animated_block", manager -> {
             var BLOCK_BASE = new Pipeline.Builder(BASE)
                     .supplyUniform("lightmap", ctx -> {
-                        GL13C.glActiveTexture('蓀' + 1);
+                        GL13C.glActiveTexture('蓀' + 2);
                         Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-                        ctx.uniform().uploadInt(1);
+                        ctx.uniform().uploadInt(2);
                     })
                     .supplyUniform("light", ctx -> {
                         var light = ((BlockLightValueProvider) ctx.instance()).getLight();

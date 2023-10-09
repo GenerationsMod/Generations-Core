@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.forge;
 
+import com.jozufozu.flywheel.api.MaterialManager;
+import com.jozufozu.flywheel.core.materials.model.ModelData;
 import dev.architectury.networking.NetworkChannel;
 import dev.architectury.networking.NetworkManager;
 import generations.gg.generations.core.generationscore.GenerationsCore;
