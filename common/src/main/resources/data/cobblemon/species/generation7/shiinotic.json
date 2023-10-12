@@ -27,12 +27,16 @@
     "grass"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:brown_mushroom",
         "quantityRange": "1-2",
         "percentage": 66
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5
       }
     ]
   },

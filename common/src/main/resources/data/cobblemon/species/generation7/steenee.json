@@ -8,6 +8,15 @@
     "oblivious",
     "h:sweetveil"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 52,
     "attack": 40,

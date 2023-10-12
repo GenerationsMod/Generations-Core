@@ -7,6 +7,27 @@
   "abilities": [
     "dancer"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "minecraft:honey_bottle",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 70,

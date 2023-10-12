@@ -9,6 +9,15 @@
     "klutz",
     "h:cutecharm"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:chople_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 75,

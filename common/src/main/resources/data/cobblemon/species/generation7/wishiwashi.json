@@ -6,6 +6,18 @@
   "abilities": [
     "schooling"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:cod"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 45,
     "attack": 20,

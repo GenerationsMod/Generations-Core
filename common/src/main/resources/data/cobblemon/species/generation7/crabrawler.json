@@ -8,6 +8,15 @@
     "ironfist",
     "h:angerpoint"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 47,
     "attack": 82,

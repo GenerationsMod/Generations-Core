@@ -8,6 +8,19 @@
     "waterbubble",
     "h:waterabsorb"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 68,
     "attack": 70,

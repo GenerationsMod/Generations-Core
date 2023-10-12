@@ -8,6 +8,15 @@
     "oblivious",
     "h:sweetveil"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 42,
     "attack": 30,

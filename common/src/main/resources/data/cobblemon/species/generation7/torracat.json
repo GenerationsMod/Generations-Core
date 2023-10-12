@@ -25,7 +25,7 @@
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:charcoal_stick",

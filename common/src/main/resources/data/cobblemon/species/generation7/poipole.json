@@ -6,6 +6,16 @@
   "abilities": [
     "beastboost"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:echo_shard",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      }
+    ]
+  },
   "baseStats": {
     "hp": 67,
     "attack": 73,

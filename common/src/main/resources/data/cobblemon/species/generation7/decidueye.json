@@ -141,7 +141,7 @@
     "flying"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:feather",
@@ -150,6 +150,10 @@
       },
       {
         "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 25
       }
     ]
   },

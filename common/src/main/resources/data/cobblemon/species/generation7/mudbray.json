@@ -8,6 +8,27 @@
     "stamina",
     "h:innerfocus"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:leather",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:clay_ball",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:light_clay",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 100,

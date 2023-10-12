@@ -14,6 +14,18 @@
     "special_defence": 95,
     "speed": 65
   },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:acacia_log"
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,

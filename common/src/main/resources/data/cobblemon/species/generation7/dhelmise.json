@@ -44,7 +44,7 @@
     "mineral"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:kelp",

@@ -7,6 +7,15 @@
   "abilities": [
     "wimpout"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:bluk_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 25,
     "attack": 35,

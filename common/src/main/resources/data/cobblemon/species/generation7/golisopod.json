@@ -7,6 +7,15 @@
   "abilities": [
     "emergencyexit"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:bluk_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 125,

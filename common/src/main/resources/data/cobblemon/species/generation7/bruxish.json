@@ -9,6 +9,22 @@
     "strongjaw",
     "h:wonderskin"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:cod"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:razor_fang",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 68,
     "attack": 105,
