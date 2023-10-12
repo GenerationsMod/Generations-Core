@@ -7,6 +7,26 @@
     "steadfast",
     "h:scrappy"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "cobblemon:medicinal_leek"
+      },
+      {
+        "item": "minecraft:feather",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 62,
     "attack": 135,

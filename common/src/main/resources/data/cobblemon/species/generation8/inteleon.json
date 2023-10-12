@@ -74,11 +74,11 @@
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 20
+        "percentage": 25
       }
     ]
   },

@@ -8,6 +8,27 @@
     "unnerve",
     "h:bigpecks"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:metal_coat",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 68,
     "attack": 67,

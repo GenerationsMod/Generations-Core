@@ -9,6 +9,27 @@
     "bulletproof",
     "h:unnerve"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "quantityRange": "3-5"
+      },
+      {
+        "item": "minecraft:honey_bottle",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:peat_block",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 130,
     "attack": 140,

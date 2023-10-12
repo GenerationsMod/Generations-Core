@@ -8,6 +8,23 @@
     "unburden",
     "h:stakeout"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "minecraft:emerald",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 58,

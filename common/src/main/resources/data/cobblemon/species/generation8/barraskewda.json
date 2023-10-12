@@ -7,6 +7,18 @@
     "swiftswim",
     "h:propellertail"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:salmon"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 61,
     "attack": 123,
