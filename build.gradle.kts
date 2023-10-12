@@ -31,6 +31,7 @@ subprojects {
             includeGroup("mcp.mobius.waila")
         }
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
+        maven("https://maven.tterrag.com/")
     }
 
     @Suppress("UnstableApiUsage")

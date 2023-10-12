@@ -10,6 +10,7 @@
   ],
   "client": [
     "client.LevelRendererMixin",
+    "client.LightTextureMixin",
     "client.PokemonEntityMixin"
   ],
   "injectors": {
