@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
@@ -11,16 +12,22 @@ import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
 import gg.generations.rarecandy.renderer.pipeline.Pipeline;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.joml.Vector3f;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL11C;
 import org.lwjgl.opengl.GL13C;
+import org.lwjgl.opengl.GL33;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
+
+import static org.lwjgl.opengl.GL13C.GL_TEXTURE0;
 
 public class Pipelines {
     public static Event<Consumer<PipelineRegister>> REGISTER = EventFactory.createConsumerLoop(PipelineRegister.class);
@@ -66,8 +73,8 @@ public class Pipelines {
                 .supplyUniform("modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().transformationMatrix()))
                 .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(MinecraftClientGameProvider.projMatrix))
                 .supplyUniform("diffuse", ctx -> {
-                    ctx.object().getMaterial(ctx.instance().materialId()).getDiffuseTexture().bind(0);
                     ctx.uniform().uploadInt(0);
+                    ctx.object().getMaterial(ctx.instance().materialId()).getDiffuseTexture().bind(0);
                 });
         var LIGHTING_BASE = new Pipeline.Builder(BASE)
                 .supplyUniform("lightPosition", ctx -> ctx.uniform().uploadVec3f(GLOBAL_LIGHT))
@@ -104,9 +111,8 @@ public class Pipelines {
         register.register("block", manager -> {
             var BLOCK_BASE = new Pipeline.Builder(BASE)
                         .supplyUniform("lightmap", ctx -> {
-                            GL13C.glActiveTexture('蓀' + 1);
-                            Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-                            ctx.uniform().uploadInt(1);
+                            GL13C.glActiveTexture(GL_TEXTURE0 + 2);
+                            ctx.uniform().uploadInt(2);
                         })
                         .supplyUniform("light", ctx -> {
                             var light = ((BlockLightValueProvider) ctx.instance()).getLight();
@@ -117,30 +123,7 @@ public class Pipelines {
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
-                    .supplyUniform("lightmap", ctx -> {
-                        GL13C.glActiveTexture('蓀' + 2);
-                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-                        ctx.uniform().uploadInt(2);
-                    })
-                    .supplyUniform("light", ctx -> {
-                        var light = ((BlockLightValueProvider) ctx.instance()).getLight();
-                        ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
-                    })
-                    .supplyUniform("boneTransforms", ctx -> {
-                        var matrices = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms(): AnimationController.NO_ANIMATION;
-                        ctx.uniform().uploadMat4fs(matrices);
-                    })
-                    .prePostDraw(material -> {
-                        if (material.cullType() != CullType.None) {
-                            RenderSystem.enableCull();
-                            GL11.glFrontFace(material.cullType().getGlConstant());
-                        }
-                    }, material -> {
-                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-                        if (material.cullType() != CullType.None) {
-                            RenderSystem.disableCull();
-                        }
-                    })
+                    .prePostDraw(RenderSystem::enableBlend, Minecraft.getInstance().gameRenderer.lightTexture()::turnOffLightLayer)
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)
@@ -177,9 +160,11 @@ public class Pipelines {
         register.register("animated_block", manager -> {
             var BLOCK_BASE = new Pipeline.Builder(BASE)
                     .supplyUniform("lightmap", ctx -> {
-                        GL13C.glActiveTexture('蓀' + 2);
-                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-                        ctx.uniform().uploadInt(2);
+                        ctx.uniform().uploadInt(1);
+                        GL13C.glActiveTexture('蓀' + 1);
+                        GL11C.glBindTexture(3553, ((ILightTexture) Minecraft.getInstance().gameRenderer.lightTexture()).getTextureId());
+                        RenderSystem.texParameter(3553, 10241, 9729);
+                        RenderSystem.texParameter(3553, 10240, 9729);
                     })
                     .supplyUniform("light", ctx -> {
                         var light = ((BlockLightValueProvider) ctx.instance()).getLight();
@@ -203,10 +188,15 @@ public class Pipelines {
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
+                    .prePostDraw(() -> {}, () -> {})
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/transparent.fs.glsl")))
+                    .prePostDraw(() -> {
+                        RenderSystem.enableBlend();
+                        RenderSystem.defaultBlendFunc();
+                    }, RenderSystem::disableBlend)
                     .build();
 
             return material -> material.equals("transparent") ? transparent : solid;
