@@ -7,6 +7,25 @@
     "shedskin",
     "h:friendguard"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:bright_powder",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+
   "baseStats": {
     "hp": 45,
     "attack": 22,

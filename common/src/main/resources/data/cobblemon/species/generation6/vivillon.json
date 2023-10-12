@@ -9,6 +9,20 @@
     "compoundeyes",
     "h:friendguard"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:bright_powder",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5
+      }
+    ]
+  },
+
   "baseStats": {
     "hp": 80,
     "attack": 52,

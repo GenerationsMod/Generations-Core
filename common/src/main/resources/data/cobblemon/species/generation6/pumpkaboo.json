@@ -302,7 +302,7 @@
     "amorphous"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:pumpkin_seeds",
@@ -310,6 +310,10 @@
       },
       {
         "item": "cobblemon:miracle_seed",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kasib_berry",
         "percentage": 2.5
       }
     ]

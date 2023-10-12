@@ -32,11 +32,8 @@
     }
   },
   "drops": {
-    "amount": "3",
+    "amount": 2,
     "entries": [
-      {
-        "item": "minecraft:stick"
-      },
       {
         "item": "minecraft:blaze_powder",
         "percentage": 50

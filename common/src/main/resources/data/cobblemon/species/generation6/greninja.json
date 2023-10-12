@@ -8,6 +8,20 @@
     "torrent",
     "h:protean"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:pearlescent_froglight",
+        "percentage": 75,
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 25
+      }
+    ]
+  },
   "baseStats": {
     "hp": 72,
     "attack": 95,

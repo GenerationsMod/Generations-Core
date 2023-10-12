@@ -9,6 +9,20 @@
     "poisontouch",
     "h:adaptability"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:kelp",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5
+      }
+    ]
+  },
+
   "baseStats": {
     "hp": 50,
     "attack": 60,

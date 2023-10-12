@@ -8,6 +8,19 @@
     "icebody",
     "h:sturdy"
   ],
+    "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 55,
     "attack": 69,

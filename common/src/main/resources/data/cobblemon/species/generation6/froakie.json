@@ -39,7 +39,7 @@
     "water_1"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:pearlescent_froglight",

@@ -7,6 +7,15 @@
     "cutecharm",
     "h:pixilate"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:shiny_stone",
+        "percentage": 25
+      }
+    ]
+  },
   "baseStats": {
     "hp": 95,
     "attack": 65,

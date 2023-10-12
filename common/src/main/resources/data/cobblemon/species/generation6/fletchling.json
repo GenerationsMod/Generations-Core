@@ -8,6 +8,23 @@
     "bigpecks",
     "h:galewings"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+
   "baseStats": {
     "hp": 45,
     "attack": 50,
