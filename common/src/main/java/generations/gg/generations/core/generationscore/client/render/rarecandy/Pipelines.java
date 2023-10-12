@@ -1,26 +1,21 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import gg.generations.rarecandy.pokeutils.CullType;
 import gg.generations.rarecandy.renderer.animation.AnimationController;
-import gg.generations.rarecandy.renderer.model.material.Material;
 import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
 import gg.generations.rarecandy.renderer.pipeline.Pipeline;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LightTexture;
-import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.joml.Vector3f;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL11C;
 import org.lwjgl.opengl.GL13C;
-import org.lwjgl.opengl.GL33;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -123,7 +118,7 @@ public class Pipelines {
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
-                    .prePostDraw(RenderSystem::enableBlend, Minecraft.getInstance().gameRenderer.lightTexture()::turnOffLightLayer)
+                    .prePostDraw(t -> RenderSystem.enableBlend(), t1 -> Minecraft.getInstance().gameRenderer.lightTexture().turnOffLightLayer())
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)
@@ -188,15 +183,15 @@ public class Pipelines {
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
-                    .prePostDraw(() -> {}, () -> {})
+                    .prePostDraw(material -> {}, material -> {})
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/transparent.fs.glsl")))
-                    .prePostDraw(() -> {
+                    .prePostDraw(material -> {
                         RenderSystem.enableBlend();
                         RenderSystem.defaultBlendFunc();
-                    }, RenderSystem::disableBlend)
+                    }, material -> RenderSystem.disableCull())
                     .build();
 
             return material -> material.equals("transparent") ? transparent : solid;
