@@ -9,6 +9,20 @@
     "anticipation",
     "h:hydration"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 110,
     "attack": 78,

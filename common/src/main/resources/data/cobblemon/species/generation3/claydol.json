@@ -33,7 +33,7 @@
     "mineral"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:clay_ball",
@@ -42,6 +42,10 @@
       },
       {
         "item": "cobblemon:light_clay",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:colbur_berry",
         "percentage": 5
       }
     ]

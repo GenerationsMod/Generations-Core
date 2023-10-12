@@ -74,7 +74,7 @@
     "dragon"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:stick",
@@ -83,7 +83,7 @@
       },
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 20
+        "percentage": 25
       }
     ]
   },

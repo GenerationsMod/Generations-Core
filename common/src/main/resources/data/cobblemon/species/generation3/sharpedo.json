@@ -86,10 +86,14 @@
     "water_2"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:deep_sea_tooth",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:aspear_berry",
         "percentage": 5
       }
     ]

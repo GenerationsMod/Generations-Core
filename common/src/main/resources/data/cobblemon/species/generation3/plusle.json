@@ -25,10 +25,14 @@
     "fairy"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:magnet",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:cheri_berry",
         "percentage": 5
       }
     ]

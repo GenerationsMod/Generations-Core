@@ -9,6 +9,20 @@
     "earlybird",
     "h:pickpocket"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:dark_oak_sapling",
+        "percentage": 75,
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 90,
     "attack": 100,

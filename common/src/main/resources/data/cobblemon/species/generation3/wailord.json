@@ -46,12 +46,16 @@
     "water_2"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:bone_block",
         "quantityRange": "1-2",
         "percentage": 66
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 5
       }
     ]
   },

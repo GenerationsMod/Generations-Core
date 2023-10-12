@@ -43,7 +43,7 @@
       }
   },
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:deep_sea_scale",

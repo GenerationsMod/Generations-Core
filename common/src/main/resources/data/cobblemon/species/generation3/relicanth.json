@@ -9,6 +9,19 @@
     "rockhead",
     "h:sturdy"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:deep_sea_scale",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 100,
     "attack": 90,

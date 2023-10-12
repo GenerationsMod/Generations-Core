@@ -75,7 +75,7 @@
     "water_1"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "minecraft:clay_ball",
@@ -84,7 +84,7 @@
       },
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 20
+        "percentage": 25
       }
     ]
   },

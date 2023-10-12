@@ -27,12 +27,16 @@
     "human_like"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:bamboo",
         "quantityRange": "1-2",
         "percentage": 66
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 5
       }
     ]
   },

@@ -9,6 +9,27 @@
     "trace",
     "h:telepathy"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:twisted_spoon",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:dawn_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 28,
     "attack": 25,

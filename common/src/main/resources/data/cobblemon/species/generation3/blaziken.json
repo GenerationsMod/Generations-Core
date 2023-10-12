@@ -73,7 +73,7 @@
     "field"
   ],
   "drops": {
-    "amount": "3",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:feather",
@@ -85,7 +85,7 @@
       },
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 20
+        "percentage": 25
       }
     ]
   },

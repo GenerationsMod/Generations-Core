@@ -44,12 +44,20 @@
     }
   },
   "drops": {
-    "amount": "1",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:lily_pad",
         "quantityRange": "1-2",
         "percentage": 66
+      },
+      {
+        "item": "cobblemon:mental_herb",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5
       }
     ]
   },

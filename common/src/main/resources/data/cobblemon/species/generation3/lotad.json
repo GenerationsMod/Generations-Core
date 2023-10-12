@@ -47,11 +47,19 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:lily_pad",
         "percentage": 50
+      },
+      {
+        "item": "cobblemon:mental_herb",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 2.5
       },
       {
         "item": "generations_core:lotad_doll",

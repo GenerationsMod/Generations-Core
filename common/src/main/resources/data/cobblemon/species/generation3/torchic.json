@@ -25,7 +25,7 @@
     "field"
   ],
   "drops": {
-    "amount": "4",
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:feather",

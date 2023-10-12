@@ -8,6 +8,25 @@
     "quickfeet",
     "h:moxie"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 90,

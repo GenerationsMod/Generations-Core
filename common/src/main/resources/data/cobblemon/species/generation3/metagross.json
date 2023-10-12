@@ -8,6 +8,15 @@
     "clearbody",
     "h:lightmetal"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:metal_coat",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 80,
     "attack": 135,

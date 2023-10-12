@@ -8,6 +8,19 @@
     "swarm",
     "h:prankster"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:bright_powder",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 65,
     "attack": 73,

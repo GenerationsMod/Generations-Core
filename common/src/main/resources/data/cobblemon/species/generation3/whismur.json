@@ -7,6 +7,15 @@
     "soundproof",
     "h:rattled"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 64,
     "attack": 51,

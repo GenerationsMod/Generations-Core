@@ -99,16 +99,16 @@
 		"tutor:waterpulse",
 		"tutor:whirlpool"
 	],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:prismarine_shard",
-	"quantityRange": "1-2",
-        "percentage": 66
-      }
-    ]
-  },
+	"drops": {
+		"amount": 1,
+		"entries": [
+			{
+				"item": "minecraft:prismarine_shard",
+				"percentage": 66,
+				"quantityRange": "1-2"
+			}
+		]
+	},
 
 	"labels": [
 		"gen3"

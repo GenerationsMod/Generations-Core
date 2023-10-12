@@ -76,10 +76,14 @@
     "fairy"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:razor_fang",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:occa_berry",
         "percentage": 5
       }
     ]

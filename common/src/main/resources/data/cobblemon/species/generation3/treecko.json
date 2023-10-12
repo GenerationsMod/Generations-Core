@@ -34,7 +34,7 @@
     "dragon"
   ],
   "drops": {
-    "amount": "3",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:stick",

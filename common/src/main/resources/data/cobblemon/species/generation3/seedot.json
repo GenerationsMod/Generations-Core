@@ -8,6 +8,23 @@
     "earlybird",
     "h:pickpocket"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:dark_oak_sapling",
+        "percent": 50
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percent": 2.5
+      },
+      {
+        "item": "generations_core:seedot_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 40,
     "attack": 40,
@@ -26,15 +43,6 @@
     "field",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:seedot_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:bide",
     "1:harden",

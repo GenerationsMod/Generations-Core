@@ -7,6 +7,23 @@
     "levitate",
     "h:frisk"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:reaper_cloth",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:duskull_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 20,
     "attack": 40,
@@ -24,15 +41,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:duskull_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {

@@ -7,6 +7,15 @@
     "soundproof",
     "h:scrappy"
   ],
+    "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 84,
     "attack": 71,
