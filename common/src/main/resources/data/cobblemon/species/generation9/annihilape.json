@@ -9,6 +9,19 @@
     "innerfocus",
     "h:defiant"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:muscle_band",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:payapa_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 110,
     "attack": 115,

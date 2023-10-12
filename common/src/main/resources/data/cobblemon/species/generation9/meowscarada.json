@@ -8,6 +8,15 @@
     "overgrow",
     "h:protean"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 25
+      }
+    ]
+  },
   "baseStats": {
     "hp": 76,
     "attack": 110,

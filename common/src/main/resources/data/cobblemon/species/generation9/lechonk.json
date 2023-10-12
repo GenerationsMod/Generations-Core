@@ -8,6 +8,19 @@
     "gluttony",
     "h:thickfat"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:porkchop",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 54,
     "attack": 45,

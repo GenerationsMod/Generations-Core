@@ -8,6 +8,20 @@
     "slushrush",
     "h:sheerforce"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:bone_block",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 170,
     "attack": 113,

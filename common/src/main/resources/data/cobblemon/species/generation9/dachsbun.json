@@ -7,6 +7,20 @@
     "wellbakedbody",
     "h:aromaveil"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:bread",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 57,
     "attack": 80,

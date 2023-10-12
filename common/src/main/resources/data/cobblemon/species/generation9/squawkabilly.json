@@ -9,6 +9,23 @@
     "hustle",
     "h:guts"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:chilan_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 82,
     "attack": 96,

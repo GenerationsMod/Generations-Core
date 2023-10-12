@@ -47,12 +47,16 @@
     "mineral"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
-        "item": "minecraft:flint",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "item": "minecraft:quartz",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 5
       }
     ]
   },

@@ -8,6 +8,19 @@
     "toxicdebris",
     "h:corrosion"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:amethyst_shard",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:shuca_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 48,
     "attack": 35,

@@ -8,6 +8,15 @@
     "blaze",
     "h:unaware"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 25
+      }
+    ]
+  },
   "baseStats": {
     "hp": 104,
     "attack": 75,

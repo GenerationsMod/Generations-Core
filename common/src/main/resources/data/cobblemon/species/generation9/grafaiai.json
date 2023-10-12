@@ -9,6 +9,15 @@
     "poisontouch",
     "h:prankster"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 63,
     "attack": 95,

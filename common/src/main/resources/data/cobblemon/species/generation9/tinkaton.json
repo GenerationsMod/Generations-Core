@@ -9,6 +9,20 @@
     "owntempo",
     "h:pickpocket"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "percentage": 75,
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 85,
     "attack": 75,

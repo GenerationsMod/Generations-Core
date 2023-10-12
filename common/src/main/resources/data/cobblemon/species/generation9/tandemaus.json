@@ -8,6 +8,19 @@
     "pickup",
     "h:owntempo"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:wheat_seeds",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:chilan_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 50,
     "attack": 50,

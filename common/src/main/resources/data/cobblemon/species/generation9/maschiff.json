@@ -8,6 +8,23 @@
     "runaway",
     "h:stakeout"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 78,

@@ -8,6 +8,19 @@
     "snowcloak",
     "h:sheerforce"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:bone_block",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 108,
     "attack": 68,

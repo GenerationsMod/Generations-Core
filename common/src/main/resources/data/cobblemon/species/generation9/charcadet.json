@@ -7,6 +7,23 @@
     "flashfire",
     "h:flamebody"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:charcoal",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 40,
     "attack": 50,

@@ -8,6 +8,28 @@
     "flashfire",
     "h:weakarmor"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:charcoal",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:malicious_armor",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 125,

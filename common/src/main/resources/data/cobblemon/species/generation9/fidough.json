@@ -7,6 +7,19 @@
     "owntempo",
     "h:klutz"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:bread",
+        "percentage": 50  
+      },
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 37,
     "attack": 55,
