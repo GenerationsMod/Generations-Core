@@ -8,6 +8,20 @@
     "anticipation",
     "h:overcoat"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:occa_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 59,

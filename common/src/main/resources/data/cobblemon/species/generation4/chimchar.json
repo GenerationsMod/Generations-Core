@@ -7,6 +7,15 @@
     "blaze",
     "h:ironfist"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 44,
     "attack": 58,
@@ -33,15 +42,6 @@
     "field",
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:charcoal_stick",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:scratch",

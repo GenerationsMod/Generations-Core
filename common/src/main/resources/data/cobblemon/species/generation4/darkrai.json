@@ -6,6 +6,18 @@
   "abilities": [
     "baddreams"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:reaper_cloth"
+      },
+      {
+        "item": "generations_core:darkrai_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 90,
@@ -23,15 +35,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:darkrai_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:disable",
     "1:nightshade",

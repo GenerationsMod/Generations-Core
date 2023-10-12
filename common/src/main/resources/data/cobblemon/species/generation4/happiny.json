@@ -26,11 +26,11 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:oval_stone",
-        "percentage": 20
+        "percentage": 25
       }
     ]
   },

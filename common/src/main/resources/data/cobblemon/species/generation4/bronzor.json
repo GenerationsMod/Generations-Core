@@ -9,6 +9,31 @@
     "heatproof",
     "h:heavymetal"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "quantityRange": "1",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:mental_herb",
+        "quantityRange": "1",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:light_clay",
+        "quantityRange": "1",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:occa_berry",
+        "quantityRange": "1",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 57,
     "attack": 24,

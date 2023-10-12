@@ -8,6 +8,20 @@
     "leafguard",
     "h:regenerator"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:vines",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 100,
     "attack": 100,
@@ -25,20 +39,6 @@
   "eggGroups": [
     "grass"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:vines",
-        "quantityRange": "1-2",
-        "percentage": 66
-      },
-      {
-        "item": "cobblemon:big_root",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:bind",

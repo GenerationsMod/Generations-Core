@@ -8,6 +8,19 @@
     "sandveil",
     "h:roughskin"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:dragon_fang",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 58,
     "attack": 70,
@@ -26,15 +39,6 @@
     "monster",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:dragon_fang",
-        "percentage": 2.5
-      }
-    ]
-  },
   "moves": [
     "1:sandtomb",
     "1:tackle",

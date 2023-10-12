@@ -7,6 +7,23 @@
     "flamebody",
     "h:vitalspirit"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:blaze_powder",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:magmarizer",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 95,
@@ -24,19 +41,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blaze_powder",
-        "percentage": 10
-      },
-      {
-        "item": "cobblemon:magmarizer",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:ember",
     "1:leer",

@@ -8,6 +8,16 @@
     "oblivious",
     "h:cloudnine"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:slime_ball",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
   "baseStats": {
     "hp": 110,
     "attack": 85,
@@ -32,16 +42,6 @@
   "eggGroups": [
     "monster"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:slime_ball",
-        "quantityRange": "1-2",
-        "percentage": 66
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:lick",

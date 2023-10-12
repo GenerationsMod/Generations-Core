@@ -9,6 +9,21 @@
     "unaware",
     "h:moody"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:stick",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
   "baseStats": {
     "hp": 79,
     "attack": 85,
@@ -36,16 +51,6 @@
         "canWalkOnWater": true
       }
     }
-  },
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:stick",
-        "quantityRange": "1-2",
-        "percentage": 66
-      }
-    ]
   },
   "moves": [
     "1:aquajet",

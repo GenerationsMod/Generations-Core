@@ -7,6 +7,19 @@
     "sandstream",
     "h:sandforce"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:soft_sand",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 68,
     "attack": 72,

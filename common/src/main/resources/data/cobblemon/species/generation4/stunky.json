@@ -9,6 +9,15 @@
     "aftermath",
     "h:keeneye"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 63,
     "attack": 63,

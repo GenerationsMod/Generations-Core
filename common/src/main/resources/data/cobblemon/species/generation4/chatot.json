@@ -9,6 +9,23 @@
     "tangledfeet",
     "h:bigpecks"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:feather",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 76,
     "attack": 65,

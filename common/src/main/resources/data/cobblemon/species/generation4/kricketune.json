@@ -7,6 +7,15 @@
     "swarm",
     "h:technician"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 77,
     "attack": 85,
@@ -36,15 +45,6 @@
       "depth": "normal",
       "light": "0-4"
     }
-  },
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:metronome",
-        "percentage": 5
-      }
-    ]
   },
   "moves": [
     "1:bide",

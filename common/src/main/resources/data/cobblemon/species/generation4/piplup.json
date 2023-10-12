@@ -7,6 +7,22 @@
     "torrent",
     "h:defiant"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 53,
     "attack": 51,
@@ -41,22 +57,6 @@
       "depth": "normal",
       "light": "0-4"
     }
-  },
-  "drops": {
-    "amount": "3",
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "percentage": 50
-      },
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:mystic_water",
-        "percentage": 5
-      }
-    ]
   },
   "moves": [
     "1:pound",

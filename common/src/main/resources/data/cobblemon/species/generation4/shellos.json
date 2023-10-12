@@ -8,6 +8,19 @@
     "stormdrain",
     "h:sandforce"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:rindo_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 76,
     "attack": 48,

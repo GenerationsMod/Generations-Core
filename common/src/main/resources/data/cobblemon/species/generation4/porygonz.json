@@ -8,6 +8,15 @@
     "download",
     "h:analytic"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:dubious_disc",
+        "percentage": 25
+      }
+    ]
+  },
   "baseStats": {
     "hp": 85,
     "attack": 80,
@@ -34,15 +43,6 @@
         "canWalk": false
       }
     }
-  },
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:dubious_disc",
-        "percentage": 20
-      }
-    ]
   },
   "moves": [
     "1:conversion2",

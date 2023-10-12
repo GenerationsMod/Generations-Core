@@ -9,6 +9,28 @@
     "sturdy",
     "h:analytic"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "cobblemon:magnet",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:metal_coat",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:shuca_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 70,
@@ -35,20 +57,6 @@
         "canWalk": false
       }
     }
-  },
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "quantityRange": "1-3",
-        "percentage": 75
-      },
-      {
-        "item": "cobblemon:magnet",
-        "percentage": 10
-      }
-    ]
   },
   "moves": [
     "1:barrier",

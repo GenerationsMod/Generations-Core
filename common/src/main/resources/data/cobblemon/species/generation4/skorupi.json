@@ -9,6 +9,19 @@
     "sniper",
     "h:keeneye"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:bluk_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 40,
     "attack": 50,

@@ -7,6 +7,21 @@
     "swiftswim",
     "h:waterveil"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:salmon",
+        "quantityRange": "1",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:wacan_berry",
+        "quantityRange": "1",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 55,
     "attack": 65,

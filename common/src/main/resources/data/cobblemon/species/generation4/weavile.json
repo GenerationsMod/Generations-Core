@@ -8,6 +8,23 @@
     "pressure",
     "h:pickpocket"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:razor_claw",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:quick_claw",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:chople_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 120,
@@ -25,19 +42,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "cobblemon:razor_claw",
-        "percentage": 10
-      },
-      {
-        "item": "cobblemon:quick_claw",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:agility",
     "1:assurance",

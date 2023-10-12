@@ -6,6 +6,19 @@
   "abilities": [
     "chlorophyll"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 45,
     "attack": 35,

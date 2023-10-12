@@ -9,6 +9,19 @@
     "solidrock",
     "h:reckless"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:protector",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 115,
     "attack": 140,
@@ -27,15 +40,6 @@
     "monster",
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:protector",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:bulldoze",
     "1:furyattack",

@@ -8,6 +8,30 @@
     "klutz",
     "h:limber"
   ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:rabbit"
+      },
+      {
+        "item": "minecraft:rabbit_hide",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:rabbit_foot",
+        "percentage": 2.5
+      },
+      {
+        "item": "minecraft:carrot",
+        "percentage": 2.5
+      },
+      {
+        "item": "minecraft:chople_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 55,
     "attack": 66,
@@ -26,23 +50,6 @@
     "field",
     "human_like"
   ],
-  "drops": {
-    "amount": "3",
-    "entries": [
-      {
-        "item": "minecraft:carrot",
-        "percentage": 50
-      },
-      {
-        "item": "minecraft:rabbit_hide",
-        "percentage": 5
-      },
-      {
-        "item": "minecraft:rabbit_foot",
-        "percentage": 2.5
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:foresight",

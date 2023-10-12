@@ -7,6 +7,24 @@
     "motordrive",
     "h:vitalspirit"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:redstone",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "cobblemon:electirizer",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 123,
@@ -24,21 +42,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:redstone",
-        "quantityRange": "1-3",
-        "percentage": 75
-      },
-      {
-        "item": "cobblemon:electirizer",
-        "quantityRange": "1",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:charge",
     "1:electricterrain",

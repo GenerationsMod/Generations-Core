@@ -38,7 +38,7 @@
     "flying"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:feather",
@@ -47,6 +47,10 @@
       },
       {
         "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:bluk_berry",
+        "percentage": 5
       }
     ]
   },

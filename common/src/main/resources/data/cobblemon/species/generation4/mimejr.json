@@ -9,6 +9,19 @@
     "filter",
     "h:technician"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:light_clay",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 20,
     "attack": 25,
@@ -26,15 +39,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:light_clay",
-        "percentage": 2.5
-      }
-    ]
-  },
   "moves": [
     "1:barrier",
     "1:confusion",

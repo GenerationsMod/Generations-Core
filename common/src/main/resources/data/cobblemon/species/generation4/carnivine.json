@@ -6,6 +6,23 @@
   "abilities": [
     "levitate"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 74,
     "attack": 100,

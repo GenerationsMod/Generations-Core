@@ -6,6 +6,19 @@
   "abilities": [
     "levitate"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:spell_tag",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 60,
@@ -23,15 +36,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:spell_tag",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:growl",

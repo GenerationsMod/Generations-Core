@@ -8,6 +8,19 @@
     "swarm",
     "h:tintedlens"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:silver_powder",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:occa_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 94,

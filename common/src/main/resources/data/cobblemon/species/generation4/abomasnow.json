@@ -8,6 +8,23 @@
     "snowwarning",
     "h:soundproof"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:snowball",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 5
+      },      {
+        "item": "cobblemon:occa_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 90,
     "attack": 92,

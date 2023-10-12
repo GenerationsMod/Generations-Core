@@ -8,6 +8,15 @@
     "owntempo",
     "h:defiant"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 71,
     "attack": 82,

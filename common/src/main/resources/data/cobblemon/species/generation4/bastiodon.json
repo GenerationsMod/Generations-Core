@@ -8,6 +8,16 @@
     "sturdy",
     "h:soundproof"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "1-2",
+        "percentage": 66
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 52,

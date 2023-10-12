@@ -8,6 +8,27 @@
     "intimidate",
     "h:reckless"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:sharp_beak",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 85,
     "attack": 120,

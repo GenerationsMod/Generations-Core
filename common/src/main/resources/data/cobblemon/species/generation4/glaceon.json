@@ -7,6 +7,19 @@
     "snowcloak",
     "h:icebody"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:ice_stone",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 65,
     "attack": 60,

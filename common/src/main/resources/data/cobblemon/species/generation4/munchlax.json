@@ -8,6 +8,24 @@
     "thickfat",
     "h:gluttony"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:apple",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "cobblemon:leftovers",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 135,
     "attack": 85,
@@ -25,17 +43,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:apple",
-        "quantityRange": "1-3",
-        "percentage": 75,
-        "maxSelectableTimes": 2
-      }
-    ]
-  },
   "moves": [
     "1:lastresort",
     "1:lick",

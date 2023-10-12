@@ -8,6 +8,15 @@
     "overgrow",
     "h:shellarmor"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 25
+      }
+    ]
+  },
   "baseStats": {
     "hp": 95,
     "attack": 109,
@@ -26,15 +35,6 @@
     "monster",
     "grass"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:miracle_seed",
-        "percentage": 20
-      }
-    ]
-  },
   "behaviour": {
     "resting": {
       "canSleep": true,

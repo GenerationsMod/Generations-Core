@@ -8,6 +8,22 @@
     "stormdrain",
     "h:waterveil"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:cod"
+      },
+      {
+        "item": "cobblemon:bone_meal",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 69,
     "attack": 69,
