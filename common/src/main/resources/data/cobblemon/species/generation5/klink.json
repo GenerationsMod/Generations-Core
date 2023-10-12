@@ -8,6 +8,15 @@
     "minus",
     "h:clearbody"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "percentage": 50
+      }
+    ]
+  },
   "baseStats": {
     "hp": 40,
     "attack": 55,
@@ -33,15 +42,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:thundershock",
     "1:visegrip",

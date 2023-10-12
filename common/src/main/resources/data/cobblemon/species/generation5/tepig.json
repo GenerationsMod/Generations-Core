@@ -7,6 +7,19 @@
     "blaze",
     "h:thickfat"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:porkchop",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 65,
     "attack": 63,
@@ -32,20 +45,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:porkchop",
-        "quantityRange": "1-2",
-        "percentage": 66
-      },
-      {
-        "item": "cobblemon:charcoal_stick",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
     "3:tailwhip",

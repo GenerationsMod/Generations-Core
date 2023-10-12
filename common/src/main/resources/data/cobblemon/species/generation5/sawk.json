@@ -8,6 +8,20 @@
     "innerfocus",
     "h:moldbreaker"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:black_belt",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:bluk_berry",
+        "percentage": 5
+      }
+
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 125,

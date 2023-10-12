@@ -8,6 +8,27 @@
     "synchronize",
     "h:analytic"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:chorus_fruit",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:light_clay",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:colbur_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 55,
     "attack": 55,
@@ -33,23 +54,6 @@
   "eggGroups": [
     "human_like"
   ],
-  "drops": {
-    "amount": "3",
-    "entries": [
-      {
-        "item": "minecraft:ender_pearl",
-        "percentage": 50
-      },
-      {
-        "item": "minecraft:chorus_fruit",
-        "percentage": 50
-      },
-      {
-        "item": "cobblemon:light_clay",
-        "percentage": 2.5
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:growl",

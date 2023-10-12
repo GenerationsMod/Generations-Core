@@ -9,6 +9,19 @@
     "hustle",
     "h:truant"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:occa_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 58,
     "attack": 109,
@@ -26,15 +39,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:furycutter",
     "1:sandattack",

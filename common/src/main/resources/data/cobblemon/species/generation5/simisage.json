@@ -7,6 +7,23 @@
     "gluttony",
     "h:overgrow"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:leaf_stone",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:occa_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 98,

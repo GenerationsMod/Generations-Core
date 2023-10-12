@@ -6,6 +6,19 @@
   "abilities": [
     "levitate"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 80,
     "attack": 50,
@@ -31,15 +44,6 @@
   "eggGroups": [
     "mineral"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:nevermelt_ice",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:bind",
     "1:iceshard",

@@ -8,6 +8,24 @@
     "snowwarning",
     "h:weakarmor"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:snow_ball",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 71,
     "attack": 95,

@@ -9,6 +9,19 @@
     "infiltrator",
     "h:chlorophyll"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:white_wool",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 67,

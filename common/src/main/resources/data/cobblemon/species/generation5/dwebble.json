@@ -9,6 +9,16 @@
     "shellarmor",
     "h:weakarmor"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:hard_stone",
+        "percentage": 2.5
+      }
+    ]
+  },
+
   "baseStats": {
     "hp": 50,
     "attack": 65,

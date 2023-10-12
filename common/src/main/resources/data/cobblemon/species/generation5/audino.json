@@ -8,6 +8,15 @@
     "regenerator",
     "h:klutz"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 103,
     "attack": 60,

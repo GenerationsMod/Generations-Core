@@ -8,6 +8,19 @@
     "moldbreaker",
     "h:unnerve"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:dragon_fang",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 76,
     "attack": 147,

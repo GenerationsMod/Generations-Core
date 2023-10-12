@@ -8,6 +8,24 @@
     "sandrush",
     "h:scrappy"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:blue_wool",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:chilan_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 65,
     "attack": 80,

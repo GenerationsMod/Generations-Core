@@ -9,6 +9,19 @@
     "sapsipper",
     "h:serenegrace"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:leather",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 60,
@@ -29,15 +42,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:leather",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:camouflage",
     "1:tackle",

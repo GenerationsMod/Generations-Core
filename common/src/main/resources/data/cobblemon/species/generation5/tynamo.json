@@ -6,6 +6,15 @@
   "abilities": [
     "levitate"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:slime_ball",
+        "percentage": 50
+      }
+    ]
+  },
   "baseStats": {
     "hp": 35,
     "attack": 55,

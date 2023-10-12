@@ -7,6 +7,19 @@
     "torrent",
     "h:shellarmor"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      },
+      {
+        "item": "minecraft:nautilus_shell",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 55,
     "attack": 55,
@@ -24,19 +37,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:nautilus_shell",
-        "percentage": 50
-      },
-      {
-        "item": "cobblemon:mystic_water",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:tackle",
     "5:tailwhip",

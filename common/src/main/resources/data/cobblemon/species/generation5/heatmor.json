@@ -8,6 +8,19 @@
     "flashfire",
     "h:whitesmoke"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:blaze_powder",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 85,
     "attack": 97,
@@ -32,15 +45,6 @@
       "depth": "normal",
       "light": "0-4"
     }
-  },
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:blaze_powder",
-        "percentage": 5
-      }
-    ]
   },
   "moves": [
     "1:lick",

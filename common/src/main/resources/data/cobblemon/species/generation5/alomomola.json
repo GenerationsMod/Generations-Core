@@ -8,6 +8,23 @@
     "hydration",
     "h:regenerator"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:cod"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:deep_sea_scale",
+        "percentage": 5
+      }
+    ]
+  },
+
   "baseStats": {
     "hp": 165,
     "attack": 75,

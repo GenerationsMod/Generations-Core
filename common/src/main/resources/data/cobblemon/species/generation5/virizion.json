@@ -7,6 +7,14 @@
   "abilities": [
     "justified"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed"
+      }
+    ]
+  },
   "baseStats": {
     "hp": 91,
     "attack": 90,

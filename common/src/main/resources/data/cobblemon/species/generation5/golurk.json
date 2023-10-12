@@ -9,6 +9,24 @@
     "klutz",
     "h:noguard"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:light_clay",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:colbur_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 89,
     "attack": 124,

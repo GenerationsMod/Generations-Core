@@ -7,6 +7,20 @@
     "torrent",
     "h:shellarmor"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 25
+      },
+      {
+        "item": "minecraft:nautilus_shell",
+        "percentage": 25
+      }
+
+    ]
+  },
   "baseStats": {
     "hp": 95,
     "attack": 100,

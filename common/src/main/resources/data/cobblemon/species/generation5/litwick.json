@@ -9,6 +9,22 @@
     "flamebody",
     "h:infiltrator"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:candle"
+      },
+      {
+        "item": "cobblemon:dusk_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 50,
     "attack": 30,

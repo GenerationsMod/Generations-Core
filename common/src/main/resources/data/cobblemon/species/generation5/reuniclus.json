@@ -8,6 +8,20 @@
     "magicguard",
     "h:regenerator"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:slime_ball",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 110,
     "attack": 65,

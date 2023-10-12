@@ -9,6 +9,19 @@
     "moxie",
     "h:angerpoint"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:black_glasses",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 95,
     "attack": 117,

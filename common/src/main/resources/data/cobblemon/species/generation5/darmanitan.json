@@ -7,6 +7,15 @@
     "sheerforce",
     "h:zenmode"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 105,
     "attack": 140,
@@ -15,6 +24,9 @@
     "special_defence": 55,
     "speed": 95
   },
+  "features": [
+    "galarian"
+  ],
   "catchRate": 60,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -32,9 +44,6 @@
   "eggCycles": 20,
   "eggGroups": [
     "field"
-  ],
-  "features": [
-    "galarian"
   ],
   "moves": [
     "1:bite",

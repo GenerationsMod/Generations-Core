@@ -8,6 +8,25 @@
     "sandstream",
     "h:sandforce"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:raw_copper",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "cobblemon:hard_stone",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:black_augurite",
+        "percentage": 10
+      }
+    ]
+  },
+
   "baseStats": {
     "hp": 85,
     "attack": 135,

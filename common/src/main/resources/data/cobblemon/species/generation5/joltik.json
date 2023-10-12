@@ -9,6 +9,27 @@
     "unnerve",
     "h:swarm"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:spider_eye",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 50,
     "attack": 47,
@@ -26,19 +47,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "percentage": 50
-      },
-      {
-        "item": "minecraft:spider_eye",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:absorb",
     "1:furycutter",

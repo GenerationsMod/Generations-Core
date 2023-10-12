@@ -8,6 +8,23 @@
     "slushrush",
     "h:rattled"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:snowball",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:cod",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 55,
     "attack": 70,

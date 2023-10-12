@@ -8,6 +8,19 @@
     "competitive",
     "h:shadowtag"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:twisted_spoon",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 55,

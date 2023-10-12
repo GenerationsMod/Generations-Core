@@ -8,6 +8,20 @@
     "ironbarbs",
     "h:anticipation"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:occa_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 74,
     "attack": 94,

@@ -8,6 +8,22 @@
     "pickup",
     "h:runaway"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "percentage": 50
+      },
+      {
+        "item": "minecraft:blue_wool"
+      },
+      {
+        "item": "cobblemon:chilan_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 45,
     "attack": 60,

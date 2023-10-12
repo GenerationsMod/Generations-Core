@@ -9,6 +9,19 @@
     "magicguard",
     "h:tintedlens"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:light_clay",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:colbur_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 72,
     "attack": 58,
@@ -39,15 +52,6 @@
   "eggGroups": [
     "flying"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "cobblemon:light_clay",
-        "percentage": 5
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:gust",

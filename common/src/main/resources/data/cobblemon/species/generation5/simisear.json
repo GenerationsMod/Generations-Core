@@ -7,6 +7,23 @@
     "gluttony",
     "h:blaze"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:fire_stone",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 98,

@@ -9,6 +9,20 @@
     "poisontouch",
     "h:waterabsorb"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 105,
     "attack": 95,

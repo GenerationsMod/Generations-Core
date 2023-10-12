@@ -6,6 +6,15 @@
   "abilities": [
     "mummy"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:spell_tag",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 38,
     "attack": 30,
@@ -27,12 +36,12 @@
       }
     }
   },
-  "features": [
-    "galarian"
-  ],
   "catchRate": 190,
   "maleRatio": 0.5,
   "shoulderMountable": false,
+  "features": [
+    "galarian"
+  ],
   "forms": [
     {
       "name": "Galar",

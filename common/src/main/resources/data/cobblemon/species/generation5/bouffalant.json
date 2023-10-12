@@ -8,6 +8,31 @@
     "sapsipper",
     "h:soundproof"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:leather",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:beef",
+        "quantityRange": "1-3",
+        "percentage": 75
+      },
+      {
+        "item": "minecraft:brown_wool",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 5
+      }
+    ]
+  },
+
   "baseStats": {
     "hp": 95,
     "attack": 110,
