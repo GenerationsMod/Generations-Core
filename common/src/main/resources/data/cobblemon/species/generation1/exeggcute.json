@@ -31,20 +31,7 @@
       ],
       "evolutions": [
         {
-          "id": "exeggcute_exeggutor_kantonian",
-          "variant": "item_interact",
-          "result": "exeggutor",
-          "consumeHeldItem": false,
-          "requirements": [
-            {
-              "variant": "biome",
-              "biomeCondition": "cobblemon:is_jungle"
-            }
-          ],
-          "requiredContext": "cobblemon:leaf_stone"
-        },
-        {
-          "id": "exeggcute_exeggutor_alolan_kantonian",
+          "id": "exeggcute_exeggutor_alolan",
           "variant": "item_interact",
           "result": "exeggutor alolan",
           "consumeHeldItem": false,
@@ -53,6 +40,19 @@
           ],
           "requirements": [],
           "requiredContext": "cobblemon:leaf_stone"
+        },
+        {
+          "id": "exeggcute_exeggutor_alolan_kantonian",
+          "variant": "item_interact",
+          "result": "exeggutor",
+          "consumeHeldItem": false,
+          "requirements": [
+            {
+              "variant": "biome",
+              "biomeCondition": "#cobblemon:is_jungle"
+            }
+          ],
+          "requiredContext": "cobblemon:leaf_stone"
         }
       ]
     },
@@ -60,7 +60,7 @@
       "name": "base",
       "evolutions": [
         {
-          "id": "exeggcute_exeggutor_kantonian_alolan",
+          "id": "exeggcute_exeggutor_kantonian",
           "variant": "item_interact",
           "result": "exeggutor",
           "consumeHeldItem": false,
@@ -71,7 +71,7 @@
           "requiredContext": "cobblemon:leaf_stone"
         },
         {
-          "id": "exeggcute_exeggutor_alolan",
+          "id": "exeggcute_exeggutor_kantonian_alolan",
           "variant": "item_interact",
           "result": "exeggutor alolan",
           "consumeHeldItem": false,

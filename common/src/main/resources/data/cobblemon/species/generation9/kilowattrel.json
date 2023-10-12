@@ -38,6 +38,7 @@
   "moves": [
     "1:growl",
     "1:peck",
+	"1:electroball",
     "4:thundershock",
     "7:quickattack",
     "11:pluck",

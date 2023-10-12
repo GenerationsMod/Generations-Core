@@ -35,6 +35,7 @@
   "moves": [
     "1:growl",
     "1:tackle",
+	"1:lastrespects",
     "3:lick",
     "6:bite",
     "6:tailwhip",

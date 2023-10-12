@@ -37,6 +37,7 @@
   "moves": [
     "1:growl",
     "1:scratch",
+	"1:armthrust",
     "3:thundershock",
     "6:quickattack",
     "8:charge",

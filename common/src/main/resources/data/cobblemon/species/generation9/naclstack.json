@@ -59,6 +59,7 @@
   "moves": [
     "1:harden",
     "1:tackle",
+	"1:saltcure",
     "5:rockthrow",
     "7:mudshot",
     "10:smackdown",

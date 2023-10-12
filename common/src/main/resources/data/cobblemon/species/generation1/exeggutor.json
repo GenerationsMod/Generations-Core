@@ -19,10 +19,16 @@
   "behaviour": {
     "moving": {
       "walk": {
-        "walkSpeed": 0.27
+        "walkSpeed": 0.35
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
-  },
+},
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -55,10 +61,10 @@
         "special_defence": 0,
         "speed": 0
       },
-      "baseScale": 2.8,
+      "baseScale": 1.2,
       "hitbox": {
-        "width": 0.9,
-        "height": 8.0,
+        "width": 1.5,
+        "height": 20.0,
         "fixed": false
       },
       "experienceGroup": "slow",
@@ -66,14 +72,6 @@
       "eggGroups": [
         "grass"
       ],
-      "behaviour": {
-        "resting": {
-          "canSleep": true,
-          "willSleepOnBed": false,
-          "depth": "normal",
-          "light": "0-4"
-        }
-      },
       "moves": [
         "1:absorb",
         "1:barrage",

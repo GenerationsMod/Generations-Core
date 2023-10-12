@@ -157,7 +157,7 @@
     {
       "id": "spewpa_vivillon_high_plains",
       "variant": "level_up",
-      "result": "vivillon vivillon_wings=high_plains",
+      "result": "vivillon vivillon_wings=high-plains",
       "consumeHeldItem": false,
       "learnableMoves": [
         "gust"
@@ -176,7 +176,7 @@
     {
       "id": "spewpa_vivillon_icy_snow",
       "variant": "level_up",
-      "result": "vivillon vivillon_wings=icy_snow",
+      "result": "vivillon vivillon_wings=icy-snow",
       "consumeHeldItem": false,
       "learnableMoves": [
         "gust"
@@ -315,25 +315,6 @@
       ]
     },
     {
-      "id": "spewpa_vivillon_poke_ball",
-      "variant": "level_up",
-      "result": "vivillon vivillon_wings=poke-ball",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "gust"
-      ],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 12
-        },
-        {
-          "variant": "biome",
-          "biomeCondition": "#cobblemon:is_void"
-        }
-      ]
-    },
-    {
       "id": "spewpa_vivillon_polar",
       "variant": "level_up",
       "result": "vivillon vivillon_wings=polar",
@@ -464,44 +445,6 @@
         {
           "variant": "biome",
           "biomeCondition": "#cobblemon:is_glacial"
-        }
-      ]
-    },
-    {
-      "id": "spewpa_vivillon_blazing",
-      "variant": "level_up",
-      "result": "vivillon vivillon_wings=blazing",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "gust"
-      ],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 12
-        },
-        {
-          "variant": "world",
-          "identifier": "minecraft:the_nether"
-        }
-      ]
-    },
-    {
-      "id": "spewpa_vivillon_ender",
-      "variant": "level_up",
-      "result": "vivillon vivillon_wings=ender",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "gust"
-      ],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 12
-        },
-        {
-          "variant": "world",
-          "identifier": "minecraft:the_end"
         }
       ]
     }
