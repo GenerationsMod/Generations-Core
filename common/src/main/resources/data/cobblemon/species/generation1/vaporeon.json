@@ -7,6 +7,19 @@
     "waterabsorb",
     "h:hydration"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:water_stone",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 130,
     "attack": 65,

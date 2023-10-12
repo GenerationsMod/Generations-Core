@@ -9,6 +9,15 @@
     "damp",
     "h:swiftswim"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 90,
     "attack": 95,
@@ -26,15 +35,6 @@
   "eggGroups": [
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "minecraft:ochre_froglight",
-        "percentage": 10
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "swim": {

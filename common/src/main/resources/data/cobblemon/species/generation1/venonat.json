@@ -9,6 +9,15 @@
     "tintedlens",
     "h:runaway"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 50
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 55,

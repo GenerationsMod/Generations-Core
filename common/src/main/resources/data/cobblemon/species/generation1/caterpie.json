@@ -40,11 +40,15 @@
       "bug"
     ],
     "drops": {
-      "amount": "1",
+      "amount": 2,
       "entries": [
         {
           "item": "minecraft:string",
           "percentage": 50
+        },
+        {
+          "item": "cobblemon:wepear_berry",
+          "percentage": 2.5
         }
       ]
     },

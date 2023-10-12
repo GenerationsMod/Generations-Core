@@ -42,7 +42,7 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:feather",
@@ -54,6 +54,10 @@
       },
       {
         "item": "cobblemon:sharp_beak",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:charti_berry",
         "percentage": 5
       }
     ]

@@ -7,6 +7,43 @@
     "static",
     "h:lightningrod"
   ],
+  "drops": {
+    "amount": 8,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5
+      },
+      {
+        "item": "generations_core:rockstar_costume",
+        "percentage": 2
+      },
+      {
+        "item": "generations_core:belle_costume",
+        "percentage": 2
+      },
+      {
+        "item": "generations_core:popstar_costume",
+        "percentage": 2
+      },
+      {
+        "item": "generations_core:phd_costume",
+        "percentage": 2
+      },
+      {
+        "item": "generations_core:libre_costume",
+        "percentage": 2
+      },
+      {
+        "item": "minecraft:glowstone_dust",
+        "percentage": 20
+      },
+      {
+        "item": "generations_core:pikachu_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 35,
     "attack": 55,
@@ -1783,39 +1820,6 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "7",
-    "entries": [
-      {
-        "item": "generations_core:rockstar_costume",
-        "percentage": 2
-      },
-      {
-        "item": "generations_core:belle_costume",
-        "percentage": 2
-      },
-      {
-        "item": "generations_core:popstar_costume",
-        "percentage": 2
-      },
-      {
-        "item": "generations_core:phd_costume",
-        "percentage": 2
-      },
-      {
-        "item": "generations_core:libre_costume",
-        "percentage": 2
-      },
-      {
-        "item": "minecraft:glowstone_dust",
-        "percentage": 20
-      },
-      {
-        "item": "generations_core:pikachu_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:charm",
     "1:growl",

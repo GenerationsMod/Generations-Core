@@ -33,7 +33,7 @@
     "monster"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "minecraft:slime_ball",

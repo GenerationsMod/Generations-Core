@@ -35,7 +35,7 @@
     "grass"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:melon_seeds",

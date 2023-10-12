@@ -91,11 +91,15 @@
     }
   },
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:poison_barb",
-        "percentage": 2.5
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 5
       }
     ]
   },

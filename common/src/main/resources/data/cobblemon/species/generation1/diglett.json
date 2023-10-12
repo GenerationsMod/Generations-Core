@@ -16,6 +16,9 @@
     "special_defence": 45,
     "speed": 95
   },
+  "features": [
+    "alolan"
+  ],
   "behaviour": {
     "resting": {
       "canSleep": true,
@@ -32,9 +35,6 @@
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": false,
-  "features": [
-    "alolan"
-  ],
   "forms": [
     {
       "name": "Alola",
@@ -222,14 +222,18 @@
     "field"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:potato",
-        "percentage": 50
+        "percentage": 2.5
       },
       {
         "item": "cobblemon:big_root",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:soft_sand",
         "percentage": 2.5
       }
     ]

@@ -74,10 +74,14 @@
     "human_like"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:muscle_band",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:focus_band",
         "percentage": 10
       }
     ]

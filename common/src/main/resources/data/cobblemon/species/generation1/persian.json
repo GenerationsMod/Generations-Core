@@ -226,11 +226,12 @@
     "field"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
-        "item": "minecraft:raw_gold",
-        "percentage": 20
+        "item": "minecraft:gold_nugget",
+        "percentage": 66,
+        "quantityRange": "1-2"
       },
       {
         "item": "cobblemon:quick_claw",

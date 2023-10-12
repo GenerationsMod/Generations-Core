@@ -28,10 +28,14 @@
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:protector",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:passho_berry",
         "percentage": 2.5
       }
     ]

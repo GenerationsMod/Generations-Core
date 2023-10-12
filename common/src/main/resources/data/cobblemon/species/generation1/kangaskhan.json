@@ -8,6 +8,15 @@
     "scrappy",
     "h:innerfocus"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 105,
     "attack": 95,

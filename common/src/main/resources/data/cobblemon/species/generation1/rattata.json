@@ -8,6 +8,19 @@
     "guts",
     "h:hustle"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "percentage": 50
+      }
+    ]
+  },
   "baseStats": {
     "hp": 30,
     "attack": 56,
@@ -45,6 +58,15 @@
         "hustle",
         "h:thickfat"
       ],
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:rotten_flesh",
+            "percentage": 50
+          }
+        ]
+      },
       "baseStats": {
         "hp": 30,
         "attack": 56,

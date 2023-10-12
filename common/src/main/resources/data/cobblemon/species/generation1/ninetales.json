@@ -194,11 +194,15 @@
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:sweet_berries",
         "quantityRange": "3-5"
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 5
       }
     ]
   },

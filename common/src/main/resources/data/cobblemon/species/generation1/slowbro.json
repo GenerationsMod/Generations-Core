@@ -9,6 +9,19 @@
     "owntempo",
     "h:regenerator"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kings_rock",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 95,
     "attack": 75,

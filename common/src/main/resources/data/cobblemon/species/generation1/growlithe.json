@@ -150,11 +150,15 @@
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:bone",
         "percentage": 50
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 2.5
       }
     ]
   },

@@ -7,6 +7,18 @@
     "pressure",
     "h:unnerve"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:twisted_spoon"
+      },
+      {
+        "item": "generations_core:mewtwo_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "baseStats": {
     "hp": 106,
     "attack": 110,
@@ -117,15 +129,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:mewtwo_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {

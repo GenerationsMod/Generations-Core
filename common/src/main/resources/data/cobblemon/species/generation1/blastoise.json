@@ -119,7 +119,7 @@
     "water_1"
   ],
   "drops": {
-    "amount": "3",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:scute",
@@ -127,12 +127,12 @@
         "percentage": 75
       },
       {
-        "item": "cobblemon:mystic_water",
-        "percentage": 20
-      },
-      {
         "item": "generations_core:blastoise_doll",
         "percentage": 1
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 25
       }
     ]
   },

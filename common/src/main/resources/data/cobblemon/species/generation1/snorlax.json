@@ -74,7 +74,7 @@
     "monster"
   ],
   "drops": {
-    "amount": "3",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:apple",

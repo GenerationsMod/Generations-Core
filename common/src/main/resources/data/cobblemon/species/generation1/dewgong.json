@@ -36,12 +36,20 @@
     }
   },
   "drops": {
-    "amount": "1",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:cod",
         "quantityRange": "1-2",
         "percentage": 66
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 5
       }
     ]
   },

@@ -9,6 +9,15 @@
     "skilllink",
     "h:overcoat"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 50,
     "attack": 95,

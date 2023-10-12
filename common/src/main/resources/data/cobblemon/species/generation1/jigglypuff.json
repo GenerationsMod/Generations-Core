@@ -9,6 +9,19 @@
     "competitive",
     "h:friendguard"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5
+      },
+      {
+        "item": "generations_core:jigglypuff_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 115,
     "attack": 45,
@@ -34,15 +47,6 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:jigglypuff_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:charm",
     "1:copycat",

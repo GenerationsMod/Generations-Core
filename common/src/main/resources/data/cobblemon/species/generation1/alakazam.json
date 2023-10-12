@@ -80,7 +80,7 @@
     "human_like"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:ender_pearl",
@@ -89,6 +89,10 @@
       },
       {
         "item": "cobblemon:twisted_spoon",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:kasib_berry",
         "percentage": 10
       }
     ]

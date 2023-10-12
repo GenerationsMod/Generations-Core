@@ -39,7 +39,7 @@
     "dragon"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:razor_fang",

@@ -34,10 +34,14 @@
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:muscle_band",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:payapa_berry",
         "percentage": 2.5
       }
     ]

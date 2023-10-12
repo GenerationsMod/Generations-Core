@@ -235,7 +235,7 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:slime_ball",

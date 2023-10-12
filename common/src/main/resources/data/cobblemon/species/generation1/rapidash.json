@@ -151,15 +151,19 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:leather",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "percentage": 66,
+        "quantityRange": "1-2"
       },
       {
         "item": "minecraft:blaze_powder",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:shuca_berry",
         "percentage": 5
       }
     ]

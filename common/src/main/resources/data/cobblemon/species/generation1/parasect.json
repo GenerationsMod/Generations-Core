@@ -43,10 +43,14 @@
     "grass"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5
       }
     ]
   },

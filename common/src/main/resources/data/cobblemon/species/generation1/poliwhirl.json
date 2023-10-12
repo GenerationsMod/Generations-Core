@@ -8,6 +8,19 @@
     "damp",
     "h:swiftswim"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 5
+      },
+      {
+        "item": "generations_core:poliwhirl_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 65,
     "attack": 65,
@@ -33,19 +46,6 @@
   "eggGroups": [
     "water_1"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "minecraft:ochre_froglight",
-        "percentage": 10
-      },
-      {
-        "item": "generations_core:poliwhirl_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:hypnosis",
     "1:mudshot",

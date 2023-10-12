@@ -9,6 +9,15 @@
     "competitive",
     "h:frisk"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 140,
     "attack": 70,

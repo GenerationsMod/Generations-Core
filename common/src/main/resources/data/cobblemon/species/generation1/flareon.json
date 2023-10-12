@@ -7,6 +7,19 @@
     "flashfire",
     "h:guts"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:fire_stone",
+        "percentage": 25
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 65,
     "attack": 130,

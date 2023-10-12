@@ -34,7 +34,7 @@
     "human_like"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:ender_pearl",

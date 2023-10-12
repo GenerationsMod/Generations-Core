@@ -7,6 +7,15 @@
     "static",
     "h:lightningrod"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 90,
@@ -37,6 +46,15 @@
       "abilities": [
         "surgesurfer"
       ],
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "cobblemon:oran_berry",
+            "percentage": 10
+          }
+        ]
+      },
       "baseStats": {
         "hp": 60,
         "attack": 85,

@@ -43,8 +43,13 @@
     }
   },
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
+      {
+        "item": "minecraft:string",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
       {
         "item": "cobblemon:silver_powder",
         "percentage": 2.5

@@ -7,6 +7,23 @@
     "limber",
     "h:imposter"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:quick_powder",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:metal_powder",
+        "percentage": 5
+      },
+      {
+        "item": "generations_core:ditto_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 48,
     "attack": 48,
@@ -32,15 +49,6 @@
   "eggGroups": [
     "ditto"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:ditto_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:transform",
     "tutor:transform"

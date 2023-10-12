@@ -8,6 +8,25 @@
     "pressure",
     "h:snowcloak"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:never_melt_ice"
+      },
+      {
+        "item": "generations_core:articuno_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "baseStats": {
     "hp": 90,
     "attack": 85,
@@ -146,15 +165,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:articuno_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {

@@ -8,6 +8,25 @@
     "pressure",
     "h:static"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "cobblemon:feather",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:magnet"
+      },
+      {
+        "item": "generations_core:zapdos_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "baseStats": {
     "hp": 90,
     "attack": 90,
@@ -148,15 +167,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:zapdos_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {

@@ -42,7 +42,7 @@
     }
   },
   "drops": {
-    "amount": "3",
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:feather",
@@ -54,6 +54,10 @@
       },
       {
         "item": "cobblemon:mystic_water",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:chesto_berry",
         "percentage": 5
       }
     ]

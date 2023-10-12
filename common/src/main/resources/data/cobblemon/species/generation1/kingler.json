@@ -83,7 +83,7 @@
     }
   },
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:kings_rock",

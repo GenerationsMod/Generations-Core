@@ -7,6 +7,19 @@
     "sandveil",
     "h:sandrush"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:quick_claw",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:soft_sand",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 100,

@@ -34,7 +34,7 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:dragon_breath",
@@ -42,6 +42,14 @@
       },
       {
         "item": "cobblemon:dragon_scale",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:dragon_fang",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:yache_berry",
         "percentage": 2.5
       }
     ]
