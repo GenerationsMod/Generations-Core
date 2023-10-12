@@ -25,7 +25,7 @@
     "undiscovered"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:redstone",
@@ -33,7 +33,10 @@
       },
       {
         "item": "cobblemon:electirizer",
-        "quantityRange": "1",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:cheri_berry",
         "percentage": 2.5
       }
     ]

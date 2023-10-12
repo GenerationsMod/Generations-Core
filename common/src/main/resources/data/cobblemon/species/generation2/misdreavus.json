@@ -24,10 +24,14 @@
     "amorphous"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:spell_tag",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kasib_berry",
         "percentage": 2.5
       }
     ]

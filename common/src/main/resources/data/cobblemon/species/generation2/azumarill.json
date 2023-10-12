@@ -9,6 +9,15 @@
     "hugepower",
     "h:sapsipper"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 100,
     "attack": 50,

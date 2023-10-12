@@ -7,6 +7,19 @@
     "torrent",
     "h:sheerforce"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5
+      },
+      {
+        "item": "generations_core:totodile_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 50,
     "attack": 65,
@@ -25,15 +38,6 @@
     "monster",
     "water_1"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:totodile_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "behaviour": {
     "resting": {
       "canSleep": true,

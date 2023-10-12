@@ -9,6 +9,19 @@
     "owntempo",
     "h:regenerator"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:kings_rock",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 95,
     "attack": 75,

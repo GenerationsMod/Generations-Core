@@ -9,6 +9,29 @@
     "insomnia",
     "h:sniper"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:spider_eye",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 2.5
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "1-2"
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 90,

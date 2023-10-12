@@ -8,6 +8,20 @@
     "quickfeet",
     "h:rattled"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 90,
     "attack": 120,

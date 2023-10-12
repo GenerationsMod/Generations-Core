@@ -7,6 +7,23 @@
     "static",
     "h:lightningrod"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:thunder_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:pichu_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 20,
     "attack": 40,
@@ -117,15 +134,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:pichu_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:tailwhip",
     "1:thundershock",

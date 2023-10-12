@@ -38,7 +38,7 @@
     "flying"
   ],
   "drops": {
-    "amount": "3",
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:feather",
@@ -50,6 +50,10 @@
       },
       {
         "item": "cobblemon:wise_glasses",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:persim_berry",
         "percentage": 5
       }
     ]

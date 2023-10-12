@@ -39,11 +39,11 @@
     }
   },
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 20
+        "percentage": 25
       }
     ]
   },

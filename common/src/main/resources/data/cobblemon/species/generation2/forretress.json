@@ -37,7 +37,7 @@
     "bug"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:string",
@@ -45,7 +45,7 @@
         "percentage": 66
       },
       {
-        "item": "cobblemon:metal_coat",
+        "item": "cobblemon:occa_berry",
         "percentage": 5
       }
     ]

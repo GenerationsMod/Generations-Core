@@ -7,6 +7,22 @@
     "static",
     "h:plus"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:mutton",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "minecraft:white_wool"
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 70,
     "attack": 55,

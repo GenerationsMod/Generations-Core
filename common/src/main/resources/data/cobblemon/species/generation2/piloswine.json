@@ -35,15 +35,23 @@
     "field"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 4,
     "entries": [
       {
-        "item": "minecraft:raw_porkchop",
+        "item": "minecraft:porkchop",
         "quantityRange": "1-2"
       },
       {
         "item": "minecraft:brown_wool",
         "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 5
       }
     ]
   },

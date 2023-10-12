@@ -9,6 +9,23 @@
     "flamebody",
     "h:weakarmor"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:magma_cream",
+        "percentage": 66,
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "minecraft:basalt"
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 50,

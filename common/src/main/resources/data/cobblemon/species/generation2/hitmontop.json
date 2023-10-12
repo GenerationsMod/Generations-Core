@@ -26,10 +26,14 @@
     "human_like"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:black_belt",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:payapa_berry",
         "percentage": 5
       }
     ]

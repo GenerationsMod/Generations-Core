@@ -7,6 +7,15 @@
     "torrent",
     "h:sheerforce"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 25
+      }
+    ]
+  },
   "baseStats": {
     "hp": 85,
     "attack": 105,

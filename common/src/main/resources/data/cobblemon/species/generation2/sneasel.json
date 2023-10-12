@@ -56,7 +56,7 @@
         "field"
       ],
       "drops": {
-        "amount": "2",
+        "amount": 2,
         "entries": [
           {
             "item": "cobblemon:razor_claw",
@@ -171,7 +171,7 @@
     "field"
   ],
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "cobblemon:razor_claw",
@@ -179,6 +179,10 @@
       },
       {
         "item": "cobblemon:quick_claw",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:chople_berry",
         "percentage": 2.5
       }
     ]

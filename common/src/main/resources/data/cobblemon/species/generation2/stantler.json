@@ -34,11 +34,15 @@
     "field"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:leather",
         "percentage": 50
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 2.5
       }
     ]
   },

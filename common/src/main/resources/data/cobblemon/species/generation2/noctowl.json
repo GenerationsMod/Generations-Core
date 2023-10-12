@@ -9,6 +9,27 @@
     "keeneye",
     "h:tintedlens"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "1-2",
+        "percentage": 66
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:wise_glasses",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:chilan_berry",
+        "percentage": 5
+      }
+    ]
+  },  
   "baseStats": {
     "hp": 100,
     "attack": 50,

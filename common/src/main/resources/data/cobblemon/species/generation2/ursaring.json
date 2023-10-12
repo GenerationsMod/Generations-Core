@@ -8,6 +8,27 @@
     "quickfeet",
     "h:unnerve"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "minecraft:honey_bottle",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:peat_block",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 90,
     "attack": 130,

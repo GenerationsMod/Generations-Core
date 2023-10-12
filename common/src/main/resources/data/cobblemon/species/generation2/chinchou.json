@@ -9,6 +9,23 @@
     "illuminate",
     "h:waterabsorb"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:prismarine_crystals",
+        "percentage": 50
+      },
+      {
+        "item": "cobblemon:deep_sea_scale",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 75,
     "attack": 38,

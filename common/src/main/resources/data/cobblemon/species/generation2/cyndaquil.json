@@ -7,6 +7,19 @@
     "blaze",
     "h:flashfire"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5
+      },
+      {
+        "item": "generations_core:cyndaquil_doll",
+        "percentage": 1
+      }
+    ]
+  },
   "baseStats": {
     "hp": 39,
     "attack": 52,
@@ -24,15 +37,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:cyndaquil_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "behaviour": {
     "resting": {
       "canSleep": true,

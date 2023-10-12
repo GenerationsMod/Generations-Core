@@ -8,6 +8,19 @@
     "innerfocus",
     "h:infiltrator"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:razor_fang",
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 10
+      }
+    ]
+  },
   "baseStats": {
     "hp": 85,
     "attack": 90,

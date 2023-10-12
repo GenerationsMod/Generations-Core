@@ -34,11 +34,18 @@
     }
   },
   "drops": {
-    "amount": "1",
+    "amount": 3,
     "entries": [
       {
+        "item": "minecraft:verdant_froglight"
+      },
+      {
         "item": "cobblemon:kings_rock",
-        "percentage": 20
+        "percentage": 10
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 10
       }
     ]
   },

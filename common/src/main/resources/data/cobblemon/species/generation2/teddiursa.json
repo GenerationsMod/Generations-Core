@@ -8,6 +8,27 @@
     "quickfeet",
     "h:honeygather"
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:honey_bottle",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:peat_block",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "baseStats": {
     "hp": 60,
     "attack": 80,

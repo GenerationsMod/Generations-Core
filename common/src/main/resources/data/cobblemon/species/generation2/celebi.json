@@ -15,6 +15,19 @@
     "special_defence": 100,
     "speed": 100
   },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 100
+      },
+      {
+        "item": "generations_core:celebi_doll",
+        "percentage": 75
+      }
+    ]
+  },
   "catchRate": 45,
   "maleRatio": -1,
   "shoulderMountable": false,
@@ -24,15 +37,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:celebi_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:healbell",

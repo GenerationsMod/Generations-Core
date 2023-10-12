@@ -39,7 +39,7 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:miracle_seed",

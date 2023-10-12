@@ -9,6 +9,14 @@
     "gluttony",
     "h:contrary"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:berry_juice"
+      }
+    ]
+  },
   "baseStats": {
     "hp": 20,
     "attack": 10,

@@ -26,19 +26,18 @@
     "fairy"
   ],
   "drops": {
-    "amount": "1",
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:lucky_egg",
-        "percentage": 20
+        "percentage": 25
       },
       {
         "item": "cobblemon:oval_stone",
-        "percentage": 20
+        "percentage": 25
       },
       {
-        "item": "minecraft:egg",
-        "percentage": 50
+        "item": "minecraft:egg"
       }
     ]
   },

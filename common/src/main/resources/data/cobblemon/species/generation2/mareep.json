@@ -41,15 +41,19 @@
     }
   },
   "drops": {
-    "amount": "2",
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:mutton",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "1-2"
       },
       {
-        "item": "minecraft:white_wool"
+        "item": "minecraft:white_wool",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 2.5
       }
     ]
   },
