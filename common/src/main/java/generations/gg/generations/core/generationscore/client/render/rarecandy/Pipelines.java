@@ -12,6 +12,7 @@ import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
+import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL11C;
@@ -166,7 +167,11 @@ public class Pipelines {
                         ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
                     })
                     .supplyUniform("boneTransforms", ctx -> {
-                        var matrices = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms(): AnimationController.NO_ANIMATION;
+                        Matrix4f[] matrices = null;
+                        if (ctx.instance() instanceof AnimatedObjectInstance instance)
+                            matrices = instance.getTransforms();
+
+                        if(matrices == null) matrices = AnimationController.NO_ANIMATION;
                         ctx.uniform().uploadMat4fs(matrices);
                     })
                     .prePostDraw(material -> {
