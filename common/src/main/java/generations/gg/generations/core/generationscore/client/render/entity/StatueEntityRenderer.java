@@ -94,6 +94,6 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
     public @NotNull ResourceLocation getTextureLocation(@NotNull StatueEntity entity) {
 //        return CONCRETE;
         var renderable = entity.getStatueData().asRenderablePokemon();
-        return PokemonModelRepository.INSTANCE.getTexture(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects(), entity.delegate);
+        return PokemonModelRepository.INSTANCE.getTexture(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects(), 0f);
     }
 }

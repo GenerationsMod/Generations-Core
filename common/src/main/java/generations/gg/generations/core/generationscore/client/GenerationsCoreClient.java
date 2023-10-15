@@ -83,7 +83,7 @@ import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 public class GenerationsCoreClient {
 
     public static void onInitialize(Minecraft minecraft) {
-        System.loadLibrary("renderdoc");
+//        System.loadLibrary("renderdoc");
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
 
