@@ -36,17 +36,5 @@ public record C2SSaveDatapackEntryPacket(ResourceLocation location, String data)
             return new C2SSaveDatapackEntryPacket(buf.readResourceLocation(), GSON.toJsonTree(buf.readUtf()));
         }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SSaveDatapackEntryPacket> {
-
-        @Override
-        public void handle(C2SSaveDatapackEntryPacket packet, MinecraftServer server, ServerPlayer player) {
-            if (player.hasPermissions(4)) { // Operators only can change configs. Too dangerous. TODO: look into forge's PermissionsAPI class?
-                var namespace = packet.location.getNamespace().equals("minecraft") ? "" : ("/" + packet.location.getNamespace());
-                DatapackSaver.savePokemodData(server, path -> path.resolve("generated" + namespace + "/" + packet.location.getPath()), packet.data);
-            } else {
-                GenerationsCore.LOGGER.warn("{} tried saving config data without permission. This player is probably cheating or this is a bug.", player);
-            }
-        }
-    }
 }
 

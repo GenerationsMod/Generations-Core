@@ -38,18 +38,4 @@ public class C2SUpdateNpcShopPacket implements GenerationsNetworkPacket<C2SUpdat
         return ID;
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SUpdateNpcShopPacket> {
-        @Override
-        public void handle(C2SUpdateNpcShopPacket packet, MinecraftServer server, ServerPlayer player) {
-            PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId);
-
-            if (npcEntity != null) {
-                if (packet.shop == null) {
-                    npcEntity.setOffers(null);
-                } else {
-                    npcEntity.loadOffers(packet.shop);
-                }
-            }
-        }
-    }
 }

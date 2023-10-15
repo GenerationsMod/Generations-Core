@@ -30,17 +30,6 @@ public record C2SEditMailPacket(int slot, String contents, Optional<String> titl
         return new C2SEditMailPacket(buffer.readVarInt(), buffer.readUtf(8192), buffer.readOptional(arg -> arg.readUtf(128)));
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SEditMailPacket> {
-        public void handle(C2SEditMailPacket packet, MinecraftServer server, ServerPlayer player) {
-            server.execute(() -> handleEditMail(
-                    player,
-                    packet.slot,
-                    packet.contents,
-                    packet.title
-            ));
-        }
-    }
-
     public static void handleEditMail(ServerPlayer sender, int slot, String contents, Optional<String> title) {
         if (Inventory.isHotbarSlot(slot) || slot == 40) {
             title.ifPresentOrElse(s -> sealMail(sender, slot, contents, s), () -> updateMailContents(

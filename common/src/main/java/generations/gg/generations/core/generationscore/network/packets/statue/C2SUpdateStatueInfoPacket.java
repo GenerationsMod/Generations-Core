@@ -28,15 +28,4 @@ public record C2SUpdateStatueInfoPacket(int entityId, StatueEntity.StatueInfo st
         return ID;
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SUpdateStatueInfoPacket> {
-
-        @Override
-        public void handle(C2SUpdateStatueInfoPacket packet, MinecraftServer server, ServerPlayer player) {
-            StatueEntity statueEntity = (StatueEntity) player.level().getEntity(packet.entityId());
-            if (statueEntity != null) {
-                statueEntity.setStatueInfo(packet.statueInfo());
-                GenerationsNetwork.INSTANCE.sendToAllTracking(new S2CUpdateStatueInfoPacket(packet.entityId()), statueEntity);
-            }
-        }
-    }
 }

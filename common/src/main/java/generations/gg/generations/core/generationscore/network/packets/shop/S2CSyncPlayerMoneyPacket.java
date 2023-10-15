@@ -32,10 +32,4 @@ public class S2CSyncPlayerMoneyPacket implements GenerationsNetworkPacket<S2CSyn
         GenerationsUtils.writeBigDecimal(buf, balance);
     }
 
-    public static class Handler implements ClientNetworkPacketHandler<S2CSyncPlayerMoneyPacket> {
-        @Override
-        public void handle(S2CSyncPlayerMoneyPacket packet) {
-            ClientPlayerMoney.balance = packet.balance;
-        }
-    }
 }

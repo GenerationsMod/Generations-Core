@@ -34,17 +34,4 @@ public class S2CUpdateNpcDisplayDataPacket implements GenerationsNetworkPacket<S
         return ID;
     }
 
-    public static class Handler implements ClientNetworkPacketHandler<S2CUpdateNpcDisplayDataPacket> {
-        @Override
-        public void handle(S2CUpdateNpcDisplayDataPacket packet) {
-            EnvExecutor.runInEnv(Env.CLIENT, () -> () -> {
-                if (Minecraft.getInstance().level == null)
-                    return;
-
-                Entity entity = Minecraft.getInstance().level.getEntity(packet.entityId);
-                if (entity instanceof PlayerNpcEntity npcEntity)
-                    npcEntity.updateDisplayData();
-            });
-        }
-    }
 }

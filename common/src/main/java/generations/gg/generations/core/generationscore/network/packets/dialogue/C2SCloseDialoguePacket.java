@@ -27,11 +27,4 @@ public class C2SCloseDialoguePacket implements GenerationsNetworkPacket<C2SClose
         return new C2SCloseDialoguePacket();
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SCloseDialoguePacket> {
-        @Override
-        public void handle(C2SCloseDialoguePacket packet, MinecraftServer server, ServerPlayer player) {
-            if (DialogueManager.DIALOGUE_MAP.containsKey(player)) DialogueManager.DIALOGUE_MAP.get(player).discard();
-        }
-
-    }
 }

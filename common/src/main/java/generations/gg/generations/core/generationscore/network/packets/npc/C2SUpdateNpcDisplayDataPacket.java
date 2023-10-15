@@ -38,14 +38,4 @@ public class C2SUpdateNpcDisplayDataPacket implements GenerationsNetworkPacket<C
         return ID;
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SUpdateNpcDisplayDataPacket> {
-        @Override
-        public void handle(C2SUpdateNpcDisplayDataPacket packet, MinecraftServer server, ServerPlayer player) {
-            PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId);
-            if (npcEntity != null) {
-                npcEntity.setDisplayData(packet.npcDisplayData);
-                GenerationsNetwork.INSTANCE.sendToAllTracking(new S2CUpdateNpcDisplayDataPacket(packet.entityId), npcEntity);
-            }
-        }
-    }
 }

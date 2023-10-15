@@ -25,21 +25,6 @@ public record S2COpenMailEditScreenPacket(InteractionHand hand) implements Gener
         buf.writeEnum(hand);
     }
 
-    public static class Handler implements ClientNetworkPacketHandler<S2COpenMailEditScreenPacket> {
-        public final static Handler INSTANCE = new Handler();
-
-        public void handle(S2COpenMailEditScreenPacket packet) {
-            var itemStack = Minecraft.getInstance().player.getItemInHand(packet.hand());
-            if (itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL))
-                Minecraft.getInstance().setScreen(new MailViewScreen(new WrittenMailAccess(itemStack)));
-            else if (itemStack.is(GenerationsItemTags.POKEMAIL)) Minecraft.getInstance().setScreen(
-                    new MailEditScreen(
-                            Minecraft.getInstance().player, itemStack,
-                            packet.hand)
-            );
-        }
-    }
-
     public static final ResourceLocation ID = id("open_mail_edit_screen");
     public static S2COpenMailEditScreenPacket decode(FriendlyByteBuf buf) {
         return new S2COpenMailEditScreenPacket(buf.readEnum(InteractionHand.class));

@@ -29,15 +29,4 @@ public record C2SRespondDialoguePacket(String stringResponse) implements Generat
         return new C2SRespondDialoguePacket(buf.readUtf());
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SRespondDialoguePacket> {
-        @Override
-        public void handle(C2SRespondDialoguePacket packet, MinecraftServer server, ServerPlayer player) {
-            var dialoguePlayer = DialogueManager.DIALOGUE_MAP.get(player);
-            var node = dialoguePlayer != null ? dialoguePlayer.currentNode : null;
-
-            if (dialoguePlayer != null && node instanceof ResponseTakingNode responseTakingNode) {
-                responseTakingNode.clientResponse(packet.stringResponse);
-            }
-        }
-    }
 }

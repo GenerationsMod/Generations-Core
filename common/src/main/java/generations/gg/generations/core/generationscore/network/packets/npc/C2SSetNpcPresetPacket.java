@@ -28,13 +28,4 @@ public record C2SSetNpcPresetPacket(int entityId, ResourceLocation preset) imple
         return ID;
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SSetNpcPresetPacket> {
-        @Override
-        public void handle(C2SSetNpcPresetPacket packet, MinecraftServer server, ServerPlayer player) {
-            PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId);
-            if (npcEntity != null && player.hasPermissions(4)) {
-                npcEntity.loadPreset(packet.preset);
-            }
-        }
-    }
 }

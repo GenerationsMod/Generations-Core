@@ -28,15 +28,4 @@ public class C2SCloseShopPacket implements GenerationsNetworkPacket<C2SCloseShop
         return ID;
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SCloseShopPacket> {
-        @Override
-        public void handle(C2SCloseShopPacket packet, MinecraftServer server, ServerPlayer player) {
-            ServerPlayer sender = player;
-            DialoguePlayer dialoguePlayer = DialogueManager.DIALOGUE_MAP.get(sender);
-            if (dialoguePlayer == null)
-                return;
-
-            dialoguePlayer.openAndNextNode();
-        }
-    }
 }

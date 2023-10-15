@@ -75,27 +75,4 @@ public class C2SShopItemPacket implements GenerationsNetworkPacket<C2SShopItemPa
         return ID;
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SShopItemPacket> {
-        @Override
-        public void handle(C2SShopItemPacket packet, MinecraftServer server, ServerPlayer player) {
-            ShopOfferProvider offerProvider = null;
-
-            if (packet.npcId != -1 && player.level().getEntity(packet.npcId) instanceof ShopOfferProvider provider)
-                offerProvider = provider;
-            else if (player.level().getBlockEntity(packet.pos) instanceof ShopOfferProvider provider) {
-                offerProvider = provider;
-            }
-
-            if (offerProvider != null
-                    && ShopUtils.validateItemForNpc(offerProvider, packet.itemStack, packet.price, packet.isBuy)) {
-                if (packet.isBuy) {
-                    ShopUtils.buy(player, packet.itemStack, packet.price, packet.amount);
-                } else {
-                    ShopUtils.sell(player, packet.itemStack, packet.price, packet.amount);
-                }
-
-                PlayerMoneyHandler.of(player).sync(player);
-            }
-        }
-    }
 }

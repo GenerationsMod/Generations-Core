@@ -40,13 +40,4 @@ public class C2SUpdateNpcDialoguePacket implements GenerationsNetworkPacket<C2SU
         return ID;
     }
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SUpdateNpcDialoguePacket> {
-        @Override
-        public void handle(C2SUpdateNpcDialoguePacket packet, MinecraftServer server, ServerPlayer player) {
-            PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId);
-            if (npcEntity != null) {
-                npcEntity.setDialogue(packet.dialogue);
-            }
-        }
-    }
 }

@@ -33,10 +33,4 @@ public record C2SToggleCookingPotPacket(BlockPos pos) implements GenerationsNetw
     }
 
 
-    public static class Handler implements ServerNetworkPacketHandler<C2SToggleCookingPotPacket> {
-        @Override
-        public void handle(@NotNull C2SToggleCookingPotPacket packet, @NotNull MinecraftServer minecraftServer, @NotNull ServerPlayer player) {
-            if (player.level().getBlockEntity(packet.pos) instanceof CookingPotBlockEntity te) te.setCooking(!te.isCooking());
-        }
-    }
 }

@@ -23,11 +23,4 @@ public class S2CUnlockReloadPacket implements GenerationsNetworkPacket<S2CUnlock
 
     public void encode(FriendlyByteBuf buffer) {}
 
-     public static class UnlockReloadPacketHandler implements ClientNetworkPacketHandler<S2CUnlockReloadPacket> {
-         public static final UnlockReloadPacketHandler INSTANCE = new UnlockReloadPacketHandler();
-
-         public void handle(S2CUnlockReloadPacket packet) {
-             GenerationsDataProvider.INSTANCE.canReload = true;
-         }
-     }
 }

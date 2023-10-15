@@ -34,13 +34,4 @@ public class S2COpenNpcCustomizationScreenPacket implements GenerationsNetworkPa
         return ID;
     }
 
-    public static class Handler implements ClientNetworkPacketHandler<S2COpenNpcCustomizationScreenPacket> {
-        @Override
-        public void handle(S2COpenNpcCustomizationScreenPacket packet) {
-            EnvExecutor.runInEnv(Env.CLIENT, () -> () -> {
-                var npcEntity = (PlayerNpcEntity) Minecraft.getInstance().level.getEntity(packet.entityId);
-                Minecraft.getInstance().setScreen(new CustomizeNpcScreen(npcEntity));
-            });
-        }
-    }
 }
