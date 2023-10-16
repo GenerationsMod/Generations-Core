@@ -8,9 +8,9 @@ import net.minecraft.server.level.ServerPlayer;
 public class C2SUpdateNpcDialogueHandler implements ServerNetworkPacketHandler<C2SUpdateNpcDialoguePacket> {
     @Override
     public void handle(C2SUpdateNpcDialoguePacket packet, MinecraftServer server, ServerPlayer player) {
-        PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId);
+        PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId());
         if (npcEntity != null) {
-            npcEntity.setDialogue(packet.dialogue);
+            npcEntity.setDialogue(packet.dialogue());
         }
     }
 }

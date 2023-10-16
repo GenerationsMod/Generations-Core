@@ -11,17 +11,11 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 
-public class S2CUpdateNpcDisplayDataPacket implements GenerationsNetworkPacket<S2CUpdateNpcDisplayDataPacket> {
+public record S2CUpdateNpcDisplayDataPacket(int entityId) implements GenerationsNetworkPacket<S2CUpdateNpcDisplayDataPacket> {
     public static final ResourceLocation ID = GenerationsCore.id("update_npc_display_data");
 
-    private final int entityId;
-
-    public S2CUpdateNpcDisplayDataPacket(int entityId) {
-        this.entityId = entityId;
-    }
-
     public S2CUpdateNpcDisplayDataPacket(FriendlyByteBuf buf) {
-        this.entityId = buf.readInt();
+        this(buf.readInt());
     }
 
     @Override

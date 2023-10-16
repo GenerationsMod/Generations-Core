@@ -13,7 +13,7 @@ public class C2SRespondDialogueHandler implements ServerNetworkPacketHandler<C2S
         var node = dialoguePlayer != null ? dialoguePlayer.currentNode : null;
 
         if (dialoguePlayer != null && node instanceof ResponseTakingNode responseTakingNode) {
-            responseTakingNode.clientResponse(packet.stringResponse);
+            responseTakingNode.clientResponse(packet.stringResponse());
         }
     }
 }

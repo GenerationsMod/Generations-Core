@@ -10,7 +10,7 @@ public class S2CChooseDialogueHandler implements ClientNetworkPacketHandler<S2CC
     @Override
     public void handle(S2CChooseDialoguePacket packet) {
         if (Minecraft.getInstance().screen instanceof DialogueScreen dialogueScreen) {
-            dialogueScreen.activeInfo = new DialogueScreen.ChooseActiveInfo(packet.text, packet.options);
+            dialogueScreen.activeInfo = new DialogueScreen.ChooseActiveInfo(packet.text(), packet.options());
             dialogueScreen.init(
                     Minecraft.getInstance(),
                     dialogueScreen.width,

@@ -10,6 +10,6 @@ public class S2CSayDialogueHandler implements ClientNetworkPacketHandler<S2CSayD
     @Override
     public void handle(S2CSayDialoguePacket packet) {
         if (Minecraft.getInstance().screen instanceof DialogueScreen dialogueScreen)
-            dialogueScreen.activeInfo = new DialogueScreen.SayActiveInfo(packet.text, packet.useNextArrow);
+            dialogueScreen.activeInfo = new DialogueScreen.SayActiveInfo(packet.text(), packet.useNextArrow());
     }
 }

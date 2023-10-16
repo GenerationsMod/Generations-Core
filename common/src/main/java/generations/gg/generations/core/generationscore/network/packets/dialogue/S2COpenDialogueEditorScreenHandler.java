@@ -16,7 +16,7 @@ public class S2COpenDialogueEditorScreenHandler implements ClientNetworkPacketHa
         Minecraft.getInstance().setScreen(
                 new ConfigureDialogueScreen(
                         Dialogues.instance().getOrElse(
-                                packet.location, new DialogueGraph(
+                                packet.location(), new DialogueGraph(
                                         new SayNode(
                                                 List.of("Hi @p!"), null
                                         )

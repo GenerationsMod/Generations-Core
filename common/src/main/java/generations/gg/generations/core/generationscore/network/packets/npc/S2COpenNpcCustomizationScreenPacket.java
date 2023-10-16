@@ -11,17 +11,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 
-public class S2COpenNpcCustomizationScreenPacket implements GenerationsNetworkPacket<S2COpenNpcCustomizationScreenPacket> {
+public record S2COpenNpcCustomizationScreenPacket(int entityId) implements GenerationsNetworkPacket<S2COpenNpcCustomizationScreenPacket> {
     public static final ResourceLocation ID = GenerationsCore.id("open_npc_customization");
 
-    private final int entityId;
-
-    public S2COpenNpcCustomizationScreenPacket(int entityId) {
-        this.entityId = entityId;
-    }
-
     public S2COpenNpcCustomizationScreenPacket(FriendlyByteBuf buf) {
-        this.entityId = buf.readInt();
+        this(buf.readInt());
     }
 
     @Override

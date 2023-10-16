@@ -14,7 +14,7 @@ public class S2CUpdateNpcDisplayDataHandler implements ClientNetworkPacketHandle
             if (Minecraft.getInstance().level == null)
                 return;
 
-            Entity entity = Minecraft.getInstance().level.getEntity(packet.entityId);
+            Entity entity = Minecraft.getInstance().level.getEntity(packet.entityId());
             if (entity instanceof PlayerNpcEntity npcEntity)
                 npcEntity.updateDisplayData();
         });

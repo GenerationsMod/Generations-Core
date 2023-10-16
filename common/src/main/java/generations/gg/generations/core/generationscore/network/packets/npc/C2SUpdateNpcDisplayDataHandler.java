@@ -9,10 +9,10 @@ import net.minecraft.server.level.ServerPlayer;
 public class C2SUpdateNpcDisplayDataHandler implements ServerNetworkPacketHandler<C2SUpdateNpcDisplayDataPacket> {
     @Override
     public void handle(C2SUpdateNpcDisplayDataPacket packet, MinecraftServer server, ServerPlayer player) {
-        PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId);
+        PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId());
         if (npcEntity != null) {
-            npcEntity.setDisplayData(packet.npcDisplayData);
-            GenerationsNetwork.INSTANCE.sendToAllTracking(new S2CUpdateNpcDisplayDataPacket(packet.entityId), npcEntity);
+            npcEntity.setDisplayData(packet.npcDisplayData());
+            GenerationsNetwork.INSTANCE.sendToAllTracking(new S2CUpdateNpcDisplayDataPacket(packet.entityId()), npcEntity);
         }
     }
 }

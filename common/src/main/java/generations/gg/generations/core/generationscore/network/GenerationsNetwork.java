@@ -53,7 +53,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket.class, DialogueGraphRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
         this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket.class, ShopRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
         this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket.class, ShopPresetRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
-        this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket.class, S2COpenShopPacket::new, S2COpenShopHandler::new);
+        this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket.class, S2COpenShopPacket::decode, S2COpenShopHandler::new);
         this.createClientBound(S2CSyncPlayerMoneyPacket.ID, S2CSyncPlayerMoneyPacket.class, S2CSyncPlayerMoneyPacket::new, S2CSyncPlayerMoneyHandler::new);
         this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, S2COpenNpcCustomizationScreenPacket.class, S2COpenNpcCustomizationScreenPacket::new, S2COpenNpcCustomizationScreenHandler::new);
         this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, S2CUpdateNpcDisplayDataPacket.class, S2CUpdateNpcDisplayDataPacket::new, S2CUpdateNpcDisplayDataHandler::new);
@@ -68,7 +68,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createServerBound(C2SSaveDatapackEntryPacket.ID, C2SSaveDatapackEntryPacket.class, C2SSaveDatapackEntryPacket::decode, new C2SSaveDatapackEntryHandler());
         this.createServerBound(C2SUpdateStatueInfoPacket.ID, C2SUpdateStatueInfoPacket.class, C2SUpdateStatueInfoPacket::decode, new C2SUpdateStatueInfoHandler());
         this.createServerBound(C2SCloseShopPacket.ID, C2SCloseShopPacket.class, C2SCloseShopPacket::new, new C2SCloseShopHandler());
-        this.createServerBound(C2SShopItemPacket.ID, C2SShopItemPacket.class, C2SShopItemPacket::new, new C2SShopItemHandler());
+        this.createServerBound(C2SShopItemPacket.ID, C2SShopItemPacket.class, C2SShopItemPacket::decode, new C2SShopItemHandler());
         this.createServerBound(C2SUpdateNpcDialoguePacket.ID, C2SUpdateNpcDialoguePacket.class, C2SUpdateNpcDialoguePacket::new, new C2SUpdateNpcDialogueHandler());
         this.createServerBound(C2SUpdateNpcDisplayDataPacket.ID, C2SUpdateNpcDisplayDataPacket.class, C2SUpdateNpcDisplayDataPacket::new, new C2SUpdateNpcDisplayDataHandler());
         this.createServerBound(C2SUpdateNpcShopPacket.ID, C2SUpdateNpcShopPacket.class, C2SUpdateNpcShopPacket::new, new C2SUpdateNpcShopHandler());

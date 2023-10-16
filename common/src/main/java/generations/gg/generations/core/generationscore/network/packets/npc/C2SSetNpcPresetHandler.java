@@ -8,9 +8,9 @@ import net.minecraft.server.level.ServerPlayer;
 public class C2SSetNpcPresetHandler implements ServerNetworkPacketHandler<C2SSetNpcPresetPacket> {
     @Override
     public void handle(C2SSetNpcPresetPacket packet, MinecraftServer server, ServerPlayer player) {
-        PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId);
+        PlayerNpcEntity npcEntity = (PlayerNpcEntity) player.level().getEntity(packet.entityId());
         if (npcEntity != null && player.hasPermissions(4)) {
-            npcEntity.loadPreset(packet.preset);
+            npcEntity.loadPreset(packet.preset());
         }
     }
 }

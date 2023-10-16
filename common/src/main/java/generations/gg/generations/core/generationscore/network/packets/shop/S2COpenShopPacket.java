@@ -9,34 +9,25 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
-public class S2COpenShopPacket implements GenerationsNetworkPacket<S2COpenShopPacket> {
+public record S2COpenShopPacket(int entityId, BlockPos pos) implements GenerationsNetworkPacket<S2COpenShopPacket> {
     public static final ResourceLocation ID = GenerationsCore.id("open_shop");
-    private final int entityId;
-    private final BlockPos pos;
 
     public S2COpenShopPacket(int entityId) {
-        this.entityId = entityId;
-        this.pos = null;
+        this(entityId, null);
     }
 
     public S2COpenShopPacket(BlockPos pos) {
-        this.entityId = -1;
-        this.pos = pos;
+        this(-1, pos);
     }
 
-    public S2COpenShopPacket(FriendlyByteBuf buf) {
-        if (buf.readBoolean()) {
-            this.entityId = buf.readInt();
-            this.pos = null;
-        } else {
-            this.entityId = -1;
-            this.pos = buf.readBlockPos();
-        }
+    public static S2COpenShopPacket decode(FriendlyByteBuf buf) {
+        return buf.readBoolean() ? new S2COpenShopPacket(buf.readInt()) : new S2COpenShopPacket(buf.readBlockPos());
     }
 
     @Override
-    public void encode(FriendlyByteBuf buf) {
+    public void encode(@NotNull FriendlyByteBuf buf) {
         if (entityId >= 0) {
             buf.writeBoolean(true);
             buf.writeInt(this.entityId);

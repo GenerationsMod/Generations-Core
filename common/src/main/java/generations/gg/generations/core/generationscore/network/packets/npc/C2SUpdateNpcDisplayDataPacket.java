@@ -11,20 +11,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 
-public class C2SUpdateNpcDisplayDataPacket implements GenerationsNetworkPacket<C2SUpdateNpcDisplayDataPacket> {
+public record C2SUpdateNpcDisplayDataPacket(int entityId, NpcDisplayData npcDisplayData) implements GenerationsNetworkPacket<C2SUpdateNpcDisplayDataPacket> {
     public static final ResourceLocation ID = GenerationsCore.id("update_npc_display_data");
 
-    private final int entityId;
-    private final NpcDisplayData npcDisplayData;
-
-    public C2SUpdateNpcDisplayDataPacket(int entityId, NpcDisplayData npcDisplayData) {
-        this.entityId = entityId;
-        this.npcDisplayData = npcDisplayData;
-    }
-
     public C2SUpdateNpcDisplayDataPacket(FriendlyByteBuf buf) {
-        this.entityId = buf.readInt();
-        this.npcDisplayData = new NpcDisplayData(buf);
+        this(buf.readInt(), new NpcDisplayData(buf));
     }
 
     @Override

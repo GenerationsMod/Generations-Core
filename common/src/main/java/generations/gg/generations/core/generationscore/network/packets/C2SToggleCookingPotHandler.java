@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 public class C2SToggleCookingPotHandler implements ServerNetworkPacketHandler<C2SToggleCookingPotPacket> {
     @Override
     public void handle(@NotNull C2SToggleCookingPotPacket packet, @NotNull MinecraftServer minecraftServer, @NotNull ServerPlayer player) {
-        if (player.level().getBlockEntity(packet.pos) instanceof CookingPotBlockEntity te)
+        if (player.level().getBlockEntity(packet.pos()) instanceof CookingPotBlockEntity te)
             te.setCooking(!te.isCooking());
     }
 }

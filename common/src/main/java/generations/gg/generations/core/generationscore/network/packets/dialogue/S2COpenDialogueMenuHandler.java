@@ -10,6 +10,6 @@ public class S2COpenDialogueMenuHandler implements ClientNetworkPacketHandler<S2
 
     @Override
     public void handle(@NotNull S2COpenDialogueMenuPacket packet) {
-        Minecraft.getInstance().setScreen(new DialogueScreen(packet.closable));
+        Minecraft.getInstance().setScreen(new DialogueScreen(packet.closable()));
     }
 }

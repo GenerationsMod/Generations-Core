@@ -1,61 +1,32 @@
 package generations.gg.generations.core.generationscore.network.packets.shop;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.api.player.PlayerMoneyHandler;
-import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.util.ShopUtils;
-import generations.gg.generations.core.generationscore.world.entity.ShopOfferProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
-public class C2SShopItemPacket implements GenerationsNetworkPacket<C2SShopItemPacket> {
+public record C2SShopItemPacket(int npcId, BlockPos pos, ItemStack itemStack, int price, int amount, boolean isBuy) implements GenerationsNetworkPacket<C2SShopItemPacket> {
     public static final ResourceLocation ID = GenerationsCore.id("shop_item");
 
-    private final int npcId, price, amount;
-    private final BlockPos pos;
-    private final boolean isBuy;
-    private final ItemStack itemStack;
-
     public C2SShopItemPacket(int npcId, ItemStack stack, int price, int amount, boolean isBuy) {
-        this.npcId = npcId;
-        this.pos = null;
-        this.itemStack = stack;
-        this.price = price;
-        this.amount = amount;
-        this.isBuy = isBuy;
+        this(npcId, null, stack, price, amount, isBuy);
     }
 
     public C2SShopItemPacket(BlockPos pos, ItemStack stack, int price, int amount, boolean isBuy) {
-        this.pos = pos;
-        this.npcId = -1;
-        this.itemStack = stack;
-        this.price = price;
-        this.amount = amount;
-        this.isBuy = isBuy;
+        this(-1, pos, stack, price, amount, isBuy);
     }
 
-    public C2SShopItemPacket(FriendlyByteBuf buf) {
-        if(buf.readBoolean()) {
-            this.npcId = buf.readInt();
-            this.pos = null;
-        } else {
-            this.npcId = -1;
-            this.pos = buf.readBlockPos();
-        }
+    public static C2SShopItemPacket decode(FriendlyByteBuf buf) {
+        var isNpc = buf.readBoolean();
 
-        this.itemStack = buf.readItem();
-        this.price = buf.readInt();
-        this.amount = buf.readInt();
-        this.isBuy = buf.readBoolean();
+        return new C2SShopItemPacket(isNpc ? buf.readInt() : -1, !isNpc ? buf.readBlockPos() : null, buf.readItem(), buf.readInt(), buf.readInt(), buf.readBoolean());
     }
 
     @Override
-    public void encode(FriendlyByteBuf buf) {
+    public void encode(@NotNull FriendlyByteBuf buf) {
         if(this.npcId >= 0) {
             buf.writeBoolean(true);
             buf.writeInt(npcId);

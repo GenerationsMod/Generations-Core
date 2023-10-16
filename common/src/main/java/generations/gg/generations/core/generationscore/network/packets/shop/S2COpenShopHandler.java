@@ -12,9 +12,9 @@ public class S2COpenShopHandler implements ClientNetworkPacketHandler<S2COpenSho
         if (Minecraft.getInstance().level == null)
             return;
 
-        if (packet.entityId != -1 && Minecraft.getInstance().level.getEntity(packet.entityId) instanceof ShopOfferProvider shopOfferProvider)
+        if (packet.entityId() != -1 && Minecraft.getInstance().level.getEntity(packet.entityId()) instanceof ShopOfferProvider shopOfferProvider)
             Minecraft.getInstance().setScreen(new ShopScreen(shopOfferProvider));
-        else if (Minecraft.getInstance().level.getBlockEntity(packet.pos) instanceof ShopOfferProvider shopOfferProvider) {
+        else if (Minecraft.getInstance().level.getBlockEntity(packet.pos()) instanceof ShopOfferProvider shopOfferProvider) {
             Minecraft.getInstance().setScreen(new ShopScreen(shopOfferProvider));
         }
     }

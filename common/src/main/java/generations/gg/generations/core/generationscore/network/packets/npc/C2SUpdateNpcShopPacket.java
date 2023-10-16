@@ -10,21 +10,11 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import org.jetbrains.annotations.Nullable;
 
-public class C2SUpdateNpcShopPacket implements GenerationsNetworkPacket<C2SUpdateNpcShopPacket> {
+public record C2SUpdateNpcShopPacket(int entityId, @Nullable ResourceLocation shop) implements GenerationsNetworkPacket<C2SUpdateNpcShopPacket> {
     public static final ResourceLocation ID = GenerationsCore.id("update_npc_shop");
 
-    private final int entityId;
-    @Nullable
-    private final ResourceLocation shop;
-
-    public C2SUpdateNpcShopPacket(int entityId, @Nullable ResourceLocation shop) {
-        this.entityId = entityId;
-        this.shop = shop;
-    }
-
     public C2SUpdateNpcShopPacket(FriendlyByteBuf buf) {
-        this.entityId = buf.readInt();
-        this.shop = buf.readNullable(FriendlyByteBuf::readResourceLocation);
+        this(buf.readInt(), buf.readNullable(FriendlyByteBuf::readResourceLocation));
     }
 
     @Override
