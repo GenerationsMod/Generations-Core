@@ -39,24 +39,24 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
     }
 
     public void registerClientBound() {
-        this.createClientBound(S2COpenMailEditScreenPacket.ID, S2COpenMailEditScreenPacket.class, S2COpenMailEditScreenPacket::decode, S2COpenMailEditScreenPacketHandler::new);
-        this.createClientBound(S2COpenMailPacket.ID, S2COpenMailPacket.class, S2COpenMailPacket::decode, S2COpenMailPacket.Handler::new);
-        this.createClientBound(S2CChooseDialoguePacket.ID, S2CChooseDialoguePacket.class, S2CChooseDialoguePacket::decode, S2CChooseDialogueHandler::new);
-        this.createClientBound(S2CHealDialoguePacket.ID, S2CHealDialoguePacket.class, S2CHealDialoguePacket::decode, S2CHealDialoguePacket.Handler::new);
-        this.createClientBound(S2COpenDialogueEditorScreenPacket.ID, S2COpenDialogueEditorScreenPacket.class, S2COpenDialogueEditorScreenPacket::decode, S2COpenDialogueEditorScreenHandler::new);
-        this.createClientBound(S2COpenDialogueMenuPacket.ID, S2COpenDialogueMenuPacket.class, S2COpenDialogueMenuPacket::decode, S2COpenDialogueMenuHandler::new);
-        this.createClientBound(S2CSayDialoguePacket.ID, S2CSayDialoguePacket.class, S2CSayDialoguePacket::decode, S2CSayDialogueHandler::new);
-        this.createClientBound(S2CCloseScreenPacket.ID, S2CCloseScreenPacket.class, S2CCloseScreenPacket::decode, S2CCloseScreenHandler::new);
-        this.createClientBound(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket.class, S2CUnlockReloadPacket::decode, UnlockReloadPacketHandler::new);
-        this.createClientBound(S2COpenStatueEditorScreenPacket.ID, S2COpenStatueEditorScreenPacket.class, S2COpenStatueEditorScreenPacket::decode, S2COpenStatueEditorScreenHandler::new);
-        this.createClientBound(S2CUpdateStatueInfoPacket.ID, S2CUpdateStatueInfoPacket.class, S2CUpdateStatueInfoPacket::decode, S2CUpdateStatueInfoHandler::new);
-        this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket.class, DialogueGraphRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
-        this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket.class, ShopRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
-        this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket.class, ShopPresetRegistrySyncPacket::decode, DataRegistrySyncPacketHandler::new);
-        this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket.class, S2COpenShopPacket::decode, S2COpenShopHandler::new);
-        this.createClientBound(S2CSyncPlayerMoneyPacket.ID, S2CSyncPlayerMoneyPacket.class, S2CSyncPlayerMoneyPacket::new, S2CSyncPlayerMoneyHandler::new);
-        this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, S2COpenNpcCustomizationScreenPacket.class, S2COpenNpcCustomizationScreenPacket::new, S2COpenNpcCustomizationScreenHandler::new);
-        this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, S2CUpdateNpcDisplayDataPacket.class, S2CUpdateNpcDisplayDataPacket::new, S2CUpdateNpcDisplayDataHandler::new);
+        this.createClientBound(S2COpenMailEditScreenPacket.ID, S2COpenMailEditScreenPacket.class, S2COpenMailEditScreenPacket::decode, () -> S2COpenMailEditScreenPacketHandler::new);
+        this.createClientBound(S2COpenMailPacket.ID, S2COpenMailPacket.class, S2COpenMailPacket::decode, () -> S2COpenMailPacket.Handler::new);
+        this.createClientBound(S2CChooseDialoguePacket.ID, S2CChooseDialoguePacket.class, S2CChooseDialoguePacket::decode, () -> S2CChooseDialogueHandler::new);
+        this.createClientBound(S2CHealDialoguePacket.ID, S2CHealDialoguePacket.class, S2CHealDialoguePacket::decode, () -> S2CHealDialoguePacket.Handler::new);
+        this.createClientBound(S2COpenDialogueEditorScreenPacket.ID, S2COpenDialogueEditorScreenPacket.class, S2COpenDialogueEditorScreenPacket::decode, () -> S2COpenDialogueEditorScreenHandler::new);
+        this.createClientBound(S2COpenDialogueMenuPacket.ID, S2COpenDialogueMenuPacket.class, S2COpenDialogueMenuPacket::decode, () -> S2COpenDialogueMenuHandler::new);
+        this.createClientBound(S2CSayDialoguePacket.ID, S2CSayDialoguePacket.class, S2CSayDialoguePacket::decode, () -> S2CSayDialogueHandler::new);
+        this.createClientBound(S2CCloseScreenPacket.ID, S2CCloseScreenPacket.class, S2CCloseScreenPacket::decode, () -> S2CCloseScreenHandler::new);
+        this.createClientBound(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket.class, S2CUnlockReloadPacket::decode, () -> UnlockReloadPacketHandler::new);
+        this.createClientBound(S2COpenStatueEditorScreenPacket.ID, S2COpenStatueEditorScreenPacket.class, S2COpenStatueEditorScreenPacket::decode, () -> S2COpenStatueEditorScreenHandler::new);
+        this.createClientBound(S2CUpdateStatueInfoPacket.ID, S2CUpdateStatueInfoPacket.class, S2CUpdateStatueInfoPacket::decode, () -> S2CUpdateStatueInfoHandler::new);
+        this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket.class, DialogueGraphRegistrySyncPacket::decode, () -> DataRegistrySyncPacketHandler::new);
+        this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket.class, ShopRegistrySyncPacket::decode, () -> DataRegistrySyncPacketHandler::new);
+        this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket.class, ShopPresetRegistrySyncPacket::decode, () -> DataRegistrySyncPacketHandler::new);
+        this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket.class, S2COpenShopPacket::decode, () -> S2COpenShopHandler::new);
+        this.createClientBound(S2CSyncPlayerMoneyPacket.ID, S2CSyncPlayerMoneyPacket.class, S2CSyncPlayerMoneyPacket::new, () -> S2CSyncPlayerMoneyHandler::new);
+        this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, S2COpenNpcCustomizationScreenPacket.class, S2COpenNpcCustomizationScreenPacket::new, () -> S2COpenNpcCustomizationScreenHandler::new);
+        this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, S2CUpdateNpcDisplayDataPacket.class, S2CUpdateNpcDisplayDataPacket::new, () -> S2CUpdateNpcDisplayDataHandler::new);
     }
 
     public void registerServerBound() {
@@ -75,8 +75,8 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createServerBound(C2SSetNpcPresetPacket.ID, C2SSetNpcPresetPacket.class, C2SSetNpcPresetPacket::new, new C2SSetNpcPresetHandler());
     }
 
-    private <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, Class<T> kClass, Function<FriendlyByteBuf, T> decoder, Supplier<ClientNetworkPacketHandler<T>> handler) {
-        createClientBound(identifier, kClass, T::encode, decoder, Platform.getEnvironment() == Env.CLIENT ? handler.get() : (packet) -> {});
+    private <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, Class<T> kClass, Function<FriendlyByteBuf, T> decoder, Supplier<Supplier<ClientNetworkPacketHandler<T>>> handler) {
+        createClientBound(identifier, kClass, T::encode, decoder, Platform.getEnvironment() == Env.CLIENT ? handler.get().get() : (packet) -> {});
     }
 
     private <T extends GenerationsNetworkPacket<T>> void createServerBound(ResourceLocation identifier, Class<T> kClass, Function<FriendlyByteBuf, T> decoder, ServerNetworkPacketHandler<T> handler) {
