@@ -19,6 +19,7 @@ import generations.gg.generations.core.generationscore.client.model.RareCandyBon
 import generations.gg.generations.core.generationscore.client.model.inventory.GenericChestItemStackRenderer;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.*;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
@@ -53,6 +54,9 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.util.Mth;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.InteractionHand;
@@ -76,7 +80,9 @@ import java.io.File;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
+import static generations.gg.generations.core.generationscore.GenerationsCore.id;
 import static generations.gg.generations.core.generationscore.world.item.MelodyFluteItem.isItem;
+import static java.util.Collections.emptyList;
 import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
@@ -91,8 +97,13 @@ public class GenerationsCoreClient {
 
         VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
 
+        GenerationsCore.implementation.registerResourceReloader(
+                id("model_registry"),
+                (ResourceManagerReloadListener) resourceManager -> ModelRegistry.LOADER.invalidateAll(),
+                PackType.CLIENT_RESOURCES,
+                emptyList());
 
-        PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
+                PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
         PlatformEvents.CLIENT_PLAYER_LOGOUT.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogout);
     }
 

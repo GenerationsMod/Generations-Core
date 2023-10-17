@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
+import com.google.common.cache.*;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import de.javagl.jgltf.model.GltfModel;
@@ -29,7 +27,7 @@ public class ModelRegistry {
         if (gltfModel.getSkinModels().isEmpty()) return new MeshObject();
         return new AnimatedMeshObject();
     };
-    public static final LoadingCache<Pair<ResourceLocation, String>, CompiledModel> LOADER = CacheBuilder.newBuilder().build(new CacheLoader<>() {
+    public static final LoadingCache<Pair<ResourceLocation, String>, CompiledModel> LOADER = CacheBuilder.newBuilder().removalListener((RemovalListener<Pair<ResourceLocation, String>, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
         @Override
         public @NotNull CompiledModel load(@NotNull Pair<ResourceLocation, String> pair) {
             try {

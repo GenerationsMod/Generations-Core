@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.function.Function;
@@ -64,5 +65,13 @@ public class CompiledModel {
         MinecraftClientGameProvider.projMatrix = projectionMatrix;
         objectManager.add(this.renderObject, instance);
         Minecraft.getInstance().getProfiler().pop();
+    }
+
+    public void delete() {
+        try {
+            renderObject.close();
+        } catch (IOException e) {
+
+        }
     }
 }
