@@ -1,10 +1,12 @@
 package generations.gg.generations.core.generationscore.fabric;
 
+import dev.architectury.utils.EnvExecutor;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
+import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -34,7 +36,7 @@ public class GenerationsFabricNetworkManager implements GenerationsImplementatio
 
     @Override
     public <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, Class<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, ClientNetworkPacketHandler<T> handler) {
-        ClientPlayNetworking.registerGlobalReceiver(identifier, this.createClientBoundHandler(decoder, (msg, a) -> handler.handleOnNettyThread(msg)));
+        EnvExecutor.runInEnv(EnvType.CLIENT, () -> () -> ClientPlayNetworking.registerGlobalReceiver(identifier, this.createClientBoundHandler(decoder, (msg, a) -> handler.handleOnNettyThread(msg))));
     }
 
     @Override

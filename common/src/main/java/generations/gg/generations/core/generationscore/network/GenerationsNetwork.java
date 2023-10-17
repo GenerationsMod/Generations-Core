@@ -53,6 +53,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket.class, DialogueGraphRegistrySyncPacket::decode, () -> DataRegistrySyncPacketHandler::new);
         this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket.class, ShopRegistrySyncPacket::decode, () -> DataRegistrySyncPacketHandler::new);
         this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket.class, ShopPresetRegistrySyncPacket::decode, () -> DataRegistrySyncPacketHandler::new);
+        this.createClientBound(NpcPresetsRegistrySyncPacket.ID, NpcPresetsRegistrySyncPacket.class, NpcPresetsRegistrySyncPacket::decode, () -> DataRegistrySyncPacketHandler::new);
         this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket.class, S2COpenShopPacket::decode, () -> S2COpenShopHandler::new);
         this.createClientBound(S2CSyncPlayerMoneyPacket.ID, S2CSyncPlayerMoneyPacket.class, S2CSyncPlayerMoneyPacket::new, () -> S2CSyncPlayerMoneyHandler::new);
         this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, S2COpenNpcCustomizationScreenPacket.class, S2COpenNpcCustomizationScreenPacket::new, () -> S2COpenNpcCustomizationScreenHandler::new);
