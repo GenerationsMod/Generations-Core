@@ -65,7 +65,7 @@ dependencies {
     modApi("com.jozufozu.flywheel:flywheel-forge-$minecraftVersion:${project.properties["flywheel_forge_version"]}")
 
     //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.4.0")
+    implementation("thedarkcolour:kotlinforforge:4.5.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 
 }
