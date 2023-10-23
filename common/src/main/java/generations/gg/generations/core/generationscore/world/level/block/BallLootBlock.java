@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
+import com.cobblemon.mod.common.api.pokeball.PokeBalls;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity.LootMode;
@@ -23,6 +24,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -31,6 +33,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
@@ -42,10 +45,12 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     private static VoxelShape shape = Shapes.box(0.25f, 0.0f, 0.25f, 0.75, 0.5f, 0.75f);
     private final String name;
     private final ResourceLocation lootTable;
+    private final ResourceLocation ball;
 
     protected BallLootBlock(String name, Properties properties) {
         super(properties, GenerationsBlockEntities.BALL_LOOT, GenerationsBlockEntityModels.POKEBALL);
         this.name = name;
+        this.ball = new ResourceLocation("cobblemon", name + "_ball");
         this.lootTable = GenerationsCore.id("chests/%s_ball".formatted(name));
     }
 
@@ -167,5 +172,16 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.setPlacedBy(level, pos, state, placer, stack);
         if(level.getBlockEntity(pos) instanceof BallLootBlockEntity lootBlockEntity && placer instanceof ServerPlayer player) lootBlockEntity.setOwner(placer.getUUID());
+    }
+
+    public ItemStack ball() {
+        var ball = PokeBalls.INSTANCE.getPokeBall(this.ball);
+
+        return (ball != null ? ball : PokeBalls.INSTANCE.getPOKE_BALL()).stack(1);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return shape;
     }
 }

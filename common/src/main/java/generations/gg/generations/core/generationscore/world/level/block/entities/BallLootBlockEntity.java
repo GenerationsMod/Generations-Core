@@ -15,7 +15,7 @@ import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class BallLootBlockEntity extends ModelProvidingBlockEntity implements ModelContextProviders.VariantProvider {
+public class BallLootBlockEntity extends ModelProvidingBlockEntity {
     private UUID owner = null;
     private final List<LootClaim> claims = new ArrayList<>();
     private LootMode lootMode = LootMode.ONCE_PER_PLAYER;
@@ -72,10 +72,10 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity implements Mo
         super(GenerationsBlockEntities.BALL_LOOT.get(), pPos, pBlockState);
     }
 
-    @Override
-    public String getVariant() {
-        return getBlockState().getBlock() instanceof BallLootBlock loot ? loot.getType() : "poke";
-    }
+//    @Override
+//    public String getVariant() {
+//        return getBlockState().getBlock() instanceof BallLootBlock loot ? loot.getType() : "poke";
+//    }
 
     public UUID getOwner() {
         return owner;
