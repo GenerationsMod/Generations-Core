@@ -4,7 +4,9 @@ import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.Key;
+import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.LangTooltip;
@@ -24,10 +26,12 @@ import java.util.List;
 public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdatingItem, LangTooltip {
 
     private final PokemonProperties pokemonProperties;
+    private final Key key;
 
-    public LakeCrystalItem(Properties properties, Key speciesId) {
+    public LakeCrystalItem(Properties properties, Key key) {
         super(properties);
-        this.pokemonProperties = GenerationsUtils.parseProperties(speciesId.species().getPath());
+        this.pokemonProperties = GenerationsUtils.parseProperties(key.species().getPath());
+        this.key = key;
     }
 
     @Override
@@ -37,7 +41,7 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
-        if (!level.isClientSide()) {
+        if (!level.isClientSide() || GenerationsCore.CONFIG.caught.capped(player, key)) {
             ItemStack stack = player.getItemInHand(usedHand);
 
             if (!isEnchanted(stack) && stack.getDamageValue() >= getMaxDamage()) {

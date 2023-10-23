@@ -4,6 +4,9 @@ import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.config.Config;
+import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.ItemWithLangTooltipImpl;
@@ -28,7 +31,7 @@ public class TimeGlassItem extends ItemWithLangTooltipImpl implements PostBattle
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
-        if(!level.isClientSide()) {
+        if(!level.isClientSide() && GenerationsCore.CONFIG.caught.capped(player, LegendKeys.CELEBI)) {
             int damage = stack.getDamageValue();
             if (damage >= stack.getMaxDamage()) {
                 if (level.getBiome(player.getOnPos()).is(Biomes.FLOWER_FOREST)) {
