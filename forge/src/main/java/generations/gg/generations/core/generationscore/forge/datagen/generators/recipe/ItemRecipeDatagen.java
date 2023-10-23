@@ -1,7 +1,10 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,6 +17,19 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.ENIGMA_STONE.get())
+                .define('#', GenerationsItems.ENIGMA_SHARD.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(GenerationsItems.ENIGMA_SHARD.get()), has(GenerationsItems.ENIGMA_SHARD.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.ENIGMA_SHARD.get())
+                .define('#', GenerationsItems.ENIGMA_FRAGMENT.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(GenerationsItems.ENIGMA_FRAGMENT.get()), has(GenerationsItems.ENIGMA_FRAGMENT.get()))
+                .save(consumer);
         //These are all HeldItems and Recipes are not needed rn
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PokeModItems.CELL_BATTERY.get())

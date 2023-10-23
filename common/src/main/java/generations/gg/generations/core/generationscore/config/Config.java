@@ -18,6 +18,7 @@ public class Config {
     public Duration lootTime = Duration.ofHours(1);
 
     public Caught caught = new Caught();
+    public int eonDuoFragmentLimit = 32;
 
     public Config() {}
 
@@ -62,10 +63,13 @@ public class Config {
                 .setCount(MANAPHY, 1)
                 .setCount(MANAPHY, 1)
                 .setCount(TORNADUS, 1)
-                .setCount(TORNADUS, 2)
+                .setCount(LATIAS, 1)
+                .setCount(LATIAS, 1)
                 .build();
 
         public boolean capped(Player player, Key key) {
+            if(!limits.contains(key)) return true;
+
             var count = limits.count(key);
 
             return count > 0 && generations.gg.generations.core.generationscore.api.player.Caught.get(player).get(key) >= count;

@@ -1,9 +1,11 @@
-package generations.gg.generations.core.generationscore.world.item;
+package generations.gg.generations.core.generationscore.world.item.legends;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
+import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
+import generations.gg.generations.core.generationscore.world.item.TriPredicate;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

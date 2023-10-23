@@ -41,7 +41,7 @@ public class DataGeneratorsRegister {
 
         generator.addProvider(true, new GenerationsRecipeProvider(output,
                 BuildingBlockRecipeDatagen::new,
-                //ItemRecipeDatagen::new,
+                ItemRecipeDatagen::new,
                 GenerationsArmorToolRecipeDatagen::new,
                 MachineDecorationsRecipeDatagen::new,
                 WoodRecipes::new,

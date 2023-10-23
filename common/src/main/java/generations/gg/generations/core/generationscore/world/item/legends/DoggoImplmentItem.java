@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.item;
+package generations.gg.generations.core.generationscore.world.item.legends;
 
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.google.common.collect.Streams;

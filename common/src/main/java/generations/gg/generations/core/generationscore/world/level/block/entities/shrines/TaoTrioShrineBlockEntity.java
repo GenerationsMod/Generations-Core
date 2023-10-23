@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.world.item.TaoTrioStoneItem;
+import generations.gg.generations.core.generationscore.world.item.legends.TaoTrioStoneItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;

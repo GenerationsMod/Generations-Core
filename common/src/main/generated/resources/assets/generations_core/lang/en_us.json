@@ -1202,6 +1202,7 @@
   "generations_core.blocks.ownerchanged": "Block owner changed to server!",
   "generations_core.blocks.timedclaim": "You've already claimed this timed loot! Try again later!",
   "generations_core.blocks.visible": "Ball Loot Visibility: %s",
+  "generations_core.enigma_biome": "Upon entering %s for the first, a fragment of a shard of an engima appears.",
   "held_items.generations_core": "Held Items",
   "item.generations_core.ability_capsule": "Ability Capsule",
   "item.generations_core.ability_patch": "Ability Patch",

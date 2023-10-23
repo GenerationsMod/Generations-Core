@@ -32,8 +32,8 @@ import java.util.HashMap;
 @SuppressWarnings("deprecation")
 public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
-    private static LocationLogic TAPU_LOCATION = BlockLocationLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
-    private static YawLogic TAPU_YAW = BlockYawLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
+    private static final LocationLogic TAPU_LOCATION = BlockLocationLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
+    private static final YawLogic TAPU_YAW = BlockYawLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
 
     public TapuShrineBlock(BlockBehaviour.Properties properties) {
         super(properties, GenerationsBlockEntities.GENERIC_SHRINE, GenerationsBlockEntityModels.TAPU_SHRINE);

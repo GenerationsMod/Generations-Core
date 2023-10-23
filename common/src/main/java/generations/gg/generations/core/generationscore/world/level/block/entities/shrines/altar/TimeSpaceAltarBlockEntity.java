@@ -6,9 +6,9 @@ import generations.gg.generations.core.generationscore.client.model.ModelContext
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.world.item.CreationTrioItem;
+import generations.gg.generations.core.generationscore.world.item.legends.CreationTrioItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.RedChainItem;
+import generations.gg.generations.core.generationscore.world.item.legends.RedChainItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import net.minecraft.core.BlockPos;

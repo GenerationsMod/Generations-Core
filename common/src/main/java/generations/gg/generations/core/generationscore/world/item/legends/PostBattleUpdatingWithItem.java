@@ -1,6 +1,9 @@
-package generations.gg.generations.core.generationscore.world.item;
+package generations.gg.generations.core.generationscore.world.item.legends;
 
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
+import generations.gg.generations.core.generationscore.world.item.LangTooltip;
+import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
+import generations.gg.generations.core.generationscore.world.item.TriPredicate;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -11,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class PostBattleUpdatingWithItem extends PostBattleUpdatingItemImpl implements LangTooltip {
-    public PostBattleUpdatingWithItem(Item.Properties properties, String species, String lang, TriPredicate<PlayerBattleActor, ItemStack, BattleData> triPredicate) {
+    public PostBattleUpdatingWithItem(Item.Properties properties, String species, String lang, TriPredicate<PlayerBattleActor, ItemStack, PostBattleUpdatingItem.BattleData> triPredicate) {
         super(properties, species, lang, triPredicate);
     }
 

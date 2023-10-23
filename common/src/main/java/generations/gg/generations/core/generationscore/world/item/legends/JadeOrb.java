@@ -1,5 +1,7 @@
-package generations.gg.generations.core.generationscore.world.item;
+package generations.gg.generations.core.generationscore.world.item.legends;
 
+import generations.gg.generations.core.generationscore.world.item.LangTooltip;
+import generations.gg.generations.core.generationscore.world.item.TechnicalMachineItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

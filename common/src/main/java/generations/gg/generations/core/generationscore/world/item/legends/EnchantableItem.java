@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.item;
+package generations.gg.generations.core.generationscore.world.item.legends;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;

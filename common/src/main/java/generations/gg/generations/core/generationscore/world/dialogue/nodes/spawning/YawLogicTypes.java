@@ -16,7 +16,7 @@ public class YawLogicTypes {
 
     public static YawLogicType<BlockYawLogic> BLOCK = register("block", BlockYawLogic::fromJson, BlockYawLogic::decode);
     public static YawLogicType<EntityYawLogic> ENTITY = register("entity", EntityYawLogic::fromJson, EntityYawLogic::decode);
-
+    public static YawLogicType<PlayerYawLogic> PLAYER = register("player", json -> PlayerYawLogic.INSTANCE, buf -> PlayerYawLogic.INSTANCE);
 
     public static <T extends YawLogic> YawLogicType<T> register(String name, Function<JsonObject, T> codec, Function<FriendlyByteBuf, T> decoder) {
         return register(GenerationsCore.id(name), codec, decoder);

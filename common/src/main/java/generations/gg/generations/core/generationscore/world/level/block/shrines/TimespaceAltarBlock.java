@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.world.item.CreationTrioItem;
-import generations.gg.generations.core.generationscore.world.item.RedChainItem;
+import generations.gg.generations.core.generationscore.world.item.legends.CreationTrioItem;
+import generations.gg.generations.core.generationscore.world.item.legends.RedChainItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity;

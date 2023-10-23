@@ -132,6 +132,8 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.blocks.lootmode.once", "First come, first served");
         add("generations_core.blocks.lootmode.unlimited", "Permanent, unlimited drops");
 
+        add("generations_core.enigma_biome", "Upon entering %s for the first, a fragment of a shard of an engima appears.");
+
         //Heatran
         addTooltip(GenerationsItems.LAVA_CRYSTAL, "HINT: You see a faint image of Heatran from within. You’ll need more, and an Orb.");
         addTooltip(GenerationsItems.MAGMA_CRYSTAL, "HINT: Against your better judgment, you feel a sudden urge to throw this crystal into lava (right-click)");

@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.world.item.RegiKeyItem;
+import generations.gg.generations.core.generationscore.world.item.legends.RegiKeyItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;

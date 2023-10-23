@@ -7,7 +7,7 @@ import earth.terrarium.botarium.common.item.SerializableContainer;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.RegiOrbItem;
+import generations.gg.generations.core.generationscore.world.item.legends.RegiOrbItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

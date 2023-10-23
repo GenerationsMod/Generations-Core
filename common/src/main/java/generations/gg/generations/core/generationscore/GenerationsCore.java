@@ -15,6 +15,7 @@ import dev.architectury.event.events.common.InteractionEvent;
 import dev.architectury.platform.Platform;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.api.player.AccountInfo;
+import generations.gg.generations.core.generationscore.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.api.player.Caught;
 import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.config.Config;
@@ -26,6 +27,7 @@ import generations.gg.generations.core.generationscore.world.dialogue.nodes.spaw
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.world.item.*;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
+import generations.gg.generations.core.generationscore.world.item.legends.EnchantableItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
@@ -98,6 +100,7 @@ public class GenerationsCore
 
 		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);
+		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
 
 		if(Platform.isModLoaded("impactor")) ImpactorCompat.init();
 

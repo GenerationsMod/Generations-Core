@@ -14,6 +14,7 @@ import generations.gg.generations.core.generationscore.world.item.creativetab.Ge
 import generations.gg.generations.core.generationscore.world.item.curry.CurryIngredient;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.world.item.curry.ItemCurry;
+import generations.gg.generations.core.generationscore.world.item.legends.*;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.registries.Registries;
@@ -937,12 +938,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MIRROR = register("mirror", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> DARK_CRYSTAL = register("dark_crystal", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> UNENCHANTED_ICEROOT_CARROT = register("unenchanted_iceroot_carrot", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ICEROOT_CARROT = register("iceroot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("glastrier"), UNENCHANTED_ICEROOT_CARROT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> ICEROOT_CARROT = register("iceroot_carrot", properties -> new CalyrexSteedI tem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("glastrier"), UNENCHANTED_ICEROOT_CARROT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> UNENCHANTED_SHADEROOT_CARROT = register("unenchanted_shaderoot_carrot", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHADEROOT_CARROT = register("shaderoot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("spectrier"), UNENCHANTED_SHADEROOT_CARROT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<EnigmaStoneItem> ENIGMA_STONE = register("enigma_stone", properties -> new EnigmaStoneItem(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_SHARD = register("enigma_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_FRAGMENT = register("enigma_fragment", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<EnigmaStoneItem> ENIGMA_STONE = register("enigma_stone", properties -> new EnigmaStoneItem(properties.stacksTo(1).durability(100)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_SHARD = register("enigma_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_FRAGMENT = register("enigma_fragment", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4).fireResistant() /* just incase it falls into lava while in nether*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SACRED_ASH = register("sacred_ash", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1).durability(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_WILLPOWER = register("shard_of_willpower", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_EMOTION = register("shard_of_emotion", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);

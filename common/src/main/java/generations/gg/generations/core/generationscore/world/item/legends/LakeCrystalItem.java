@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.world.item;
+package generations.gg.generations.core.generationscore.world.item.legends;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
@@ -7,6 +7,8 @@ import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.config.Key;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
+import generations.gg.generations.core.generationscore.world.item.LangTooltip;
+import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

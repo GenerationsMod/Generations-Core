@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.world.item.RegiOrbItem;
+import generations.gg.generations.core.generationscore.world.item.legends.RegiOrbItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.RegigigasShrineBlockEntity;

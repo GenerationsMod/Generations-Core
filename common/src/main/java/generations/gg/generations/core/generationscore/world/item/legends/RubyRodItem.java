@@ -1,6 +1,8 @@
-package generations.gg.generations.core.generationscore.world.item;
+package generations.gg.generations.core.generationscore.world.item.legends;
 
 import generations.gg.generations.core.generationscore.world.entity.TieredFishingHookEntity;
+import generations.gg.generations.core.generationscore.world.item.LangTooltip;
+import generations.gg.generations.core.generationscore.world.item.TieredFishingRodItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;

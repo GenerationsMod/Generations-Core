@@ -17,6 +17,8 @@ public class LocationLogicTypes {
     public static LocationLogicType<BlockLocationLogic> BLOCK = register("block", BlockLocationLogic::fromJson, BlockLocationLogic::decode);
     public static LocationLogicType<EntityLocationLogic> ENTITY = register("entity", EntityLocationLogic::fromJson, EntityLocationLogic::decode);
 
+    public static LocationLogicType<PlayerLocationLogic> PLAYER = register("player", json -> PlayerLocationLogic.INSTANCE, buf -> PlayerLocationLogic.INSTANCE);
+
 
     public static <T extends LocationLogic> LocationLogicType<T> register(String name, Function<JsonObject, T> codec, Function<FriendlyByteBuf, T> decoder) {
         return register(GenerationsCore.id(name), codec, decoder);
