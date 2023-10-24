@@ -70,9 +70,11 @@ public class Config {
         public boolean capped(Player player, Key key) {
             if(!limits.contains(key)) return true;
 
-            var count = limits.count(key);
+            var limit = limits.count(key);
 
-            return count > 0 && generations.gg.generations.core.generationscore.api.player.Caught.get(player).get(key) >= count;
+            var count = generations.gg.generations.core.generationscore.api.player.Caught.get(player).get(key);
+
+            return limit > 0 && limit >= count;
         }
 
         public static class Adapter implements JsonDeserializer<Caught>, JsonSerializer<Caught> {

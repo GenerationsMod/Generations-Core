@@ -18,6 +18,7 @@ import generations.gg.generations.core.generationscore.world.dialogue.nodes.spaw
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -46,8 +47,8 @@ public class EnigmaStoneItem extends ItemWithLangTooltipImpl implements PostBatt
             if(graph == null) return InteractionResultHolder.fail(stack);
 
             new DialoguePlayer(graph, null, (ServerPlayer) player, false);
-            player.getItemInHand(usedHand).shrink(1);
-            return InteractionResultHolder.success(stack);
+//            player.getItemInHand(usedHand).shrink(1);
+            return InteractionResultHolder.consume(stack);
         }
 
         return InteractionResultHolder.fail(stack);
@@ -65,7 +66,11 @@ public class EnigmaStoneItem extends ItemWithLangTooltipImpl implements PostBatt
         }
 
         if(map.isEmpty()) return null;
-        return new DialogueGraph(new ChooseNode("Choose which Tapu to Spawn:", map));
+        var node = new ChooseNode("Choose which Eon to Spawn:", map);
+        node.consumer = p -> {
+            GenerationsUtils.giveItem(p, GenerationsItems.ENIGMA_STONE.get().getDefaultInstance());
+        };
+        return new DialogueGraph(node);
     }
 
     private static SpawnPokemonNode generateEons(String name) {

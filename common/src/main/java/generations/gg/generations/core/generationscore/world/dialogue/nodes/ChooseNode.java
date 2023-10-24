@@ -11,12 +11,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class ChooseNode extends AbstractNode implements DialogueContainingNode, ResponseTakingNode {
     private final String question;
     private final Map<String, AbstractNode> next;
     public transient String response;
+
+    public transient Consumer<ServerPlayer> consumer = player -> {};
 
     public ChooseNode(String question, Map<String, AbstractNode> next) {
         this.question = question;
@@ -53,6 +56,10 @@ public class ChooseNode extends AbstractNode implements DialogueContainingNode, 
     @Override
     public AbstractNodeType<?> type() {
         return AbstractNodeTypes.CHOOSE;
+    }
+
+    void onPrematureClose(ServerPlayer player) {
+        onPrematureCloseConsumer;
     }
 
     @Override

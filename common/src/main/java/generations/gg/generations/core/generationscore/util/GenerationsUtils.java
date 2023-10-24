@@ -10,7 +10,9 @@ import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -104,6 +106,12 @@ public class GenerationsUtils {
         buf.writeBytes(unscaled);
     }
 
+    public static void giveItem(ServerPlayer player, ItemStack stack) {
+        if(!player.getInventory().add(stack)) {
+            Containers.dropItemStack(player.level(), player.position().x, player.position().y, player.position().z, stack);
+        }
+    }
+
     public record Serializer<T>(Codec<T> codec) implements JsonSerializer<T>, JsonDeserializer<T> {
 
         @Override
@@ -120,5 +128,9 @@ public class GenerationsUtils {
     @ExpectPlatform
     public static CompoundTag serializeStack(ItemStack itemStack) {
         throw new RuntimeException();
+    }
+
+    if(!getInventory().add(stack)) {
+        Containers.dropItemStack(level(), position().x, position().y, position().z, stack);
     }
 }

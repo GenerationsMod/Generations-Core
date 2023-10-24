@@ -1,24 +1,23 @@
 package generations.gg.generations.core.generationscore;
 
-import com.cobblemon.mod.common.api.Priority;
-import com.cobblemon.mod.common.api.battles.model.actor.ActorType;
+import com.cobblemon.mod.common.api.Priority
+import com.cobblemon.mod.common.api.battles.model.actor.ActorType
+import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_STARTED_POST
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
-import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
-import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import com.cobblemon.mod.common.util.subscribeOnServer
-import generations.gg.generations.core.generationscore.api.player.Caught;
-import generations.gg.generations.core.generationscore.config.Key;
-import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
-import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem.BattleData;
-import kotlin.Unit;
-import net.minecraft.world.item.ItemStack;
-
-import java.util.ArrayList;
+import com.cobblemon.mod.common.api.events.battles.BattleStartedPostEvent
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
+import generations.gg.generations.core.generationscore.api.player.Caught
+import generations.gg.generations.core.generationscore.config.Key
+import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem
+import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem.BattleData
+import net.minecraft.world.item.ItemStack
 
 class CobblemonEvents {
     companion object {
         @JvmStatic
         fun init() {
+//            BATTLE_STARTED_POST.subscribe(Priority.HIGHEST) { (battle): BattleStartedPostEvent -> battle.mute = false }
+
             BATTLE_VICTORY.subscribe(Priority.HIGH) { event ->
                 val data = mutableListOf<BattleData>()
 

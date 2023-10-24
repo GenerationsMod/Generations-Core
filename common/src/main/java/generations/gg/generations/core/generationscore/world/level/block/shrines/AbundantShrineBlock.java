@@ -30,10 +30,15 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.function.Consumer;
 
 public class AbundantShrineBlock extends ShrineBlock<AbundantShrineBlockEntity> {
     private static final LocationLogic THERIAN_LOCATION = BlockLocationLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
     private static final YawLogic THERIAN_YAW = BlockYawLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
+
+    private static final Consumer<Player> playerConsumer = p -> {
+        GenerationsUtils.giveItem(p, GenerationsItems.REVEAL_GLASS.get().getDefaultInstance());
+    };
 
     public AbundantShrineBlock(BlockBehaviour.Properties properties) {
         super(properties, GenerationsBlockEntities.ABUNDANT_SHRINE, GenerationsBlockEntityModels.ABUNDANT_SHRINE);
@@ -41,7 +46,7 @@ public class AbundantShrineBlock extends ShrineBlock<AbundantShrineBlockEntity> 
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
-        if (!world.isClientSide() && !DialogueManager.DIALOGUE_MAP.containsKey((ServerPlayer) player) && player.getItemInHand(handIn).is(GenerationsItems.SPARKLING_STONE.get())) {
+        if (!world.isClientSide() && !DialogueManager.DIALOGUE_MAP.containsKey((ServerPlayer) player) && player.getItemInHand(handIn).is(GenerationsItems.REVEAL_GLASS.get())) {
             var graph = generateGraph(player);
             if(graph == null) return InteractionResult.FAIL;
 

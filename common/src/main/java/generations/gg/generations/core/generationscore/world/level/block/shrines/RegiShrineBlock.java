@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.config.Key;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.legends.RegiKeyItem;
@@ -32,14 +33,14 @@ import java.util.stream.IntStream;
 
 @SuppressWarnings("deprecation")
 public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
-    private final String species;
+    private final Key species;
     private final List<String> list;
 
-    public RegiShrineBlock(Properties materialIn, ResourceLocation model, String species) {
+    public RegiShrineBlock(Properties materialIn, ResourceLocation model, Key speciesKey) {
         super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);
-        var cipher = "-" + species.toUpperCase() + "-";
+        var cipher = "-" + speciesKey.species().getPath().toUpperCase() + "-";
         list = IntStream.range(0, cipher.length() - 2).boxed().map(a -> getSubSequence(cipher, a)).collect(Collectors.toList());
-        this.species = species;
+        this.species = speciesKey;
     }
 
     private static String getSymbolSequence(Level world, Direction facing, BlockPos pos) {
@@ -48,7 +49,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
     @Override
     public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!level.isClientSide() && player.getItemInHand(hand).getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesId().getPath().equals(species)) {
+        if (!level.isClientSide() && player.getItemInHand(hand).getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesId().equals(species)) {
             List<BlockPos> blockPos = searchForBlock(level, pos, 15, 1, RegiShrineBlock::isPillar);
 
             if (!blockPos.isEmpty()) {
@@ -57,7 +58,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                     shrine.toggleActive();
                     list.forEach(a -> level.setBlockAndUpdate(a.above(), Blocks.AIR.defaultBlockState()));
                     player.getItemInHand(hand).shrink(1);
-                    PokemonUtil.spawn(GenerationsUtils.parseProperties("species=" + species + " level=70"), level, shrine.getBlockPos());
+                    PokemonUtil.spawn(GenerationsUtils.parseProperties("species=" + species.species().getPath() + " level=70"), level, shrine.getBlockPos());
                     shrine.toggleActive();
                 }
             }

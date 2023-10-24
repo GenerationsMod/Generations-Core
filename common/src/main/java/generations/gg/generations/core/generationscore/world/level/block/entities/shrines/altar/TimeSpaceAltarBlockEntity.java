@@ -2,7 +2,9 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
@@ -39,7 +41,7 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
             trySpawn(player);
 
             return true;
-        } else if (stack.getItem() instanceof CreationTrioItem && !handler.hasOrb()) {
+        } else if (stack.getItem() instanceof CreationTrioItem && !handler.hasOrb(player)) {
             ItemStack chain = handler.insertItem(0, stack, false);
 
             if (ItemStack.isSameItem(stack, chain)) return false;
@@ -53,11 +55,11 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
         } else return false;
     }
 
-    public void trySpawn(ServerPlayer player) {
-        if (handler.shouldSpawn()) {
+    public boolean trySpawn(ServerPlayer player) {
+        if (handler.shouldSpawn(player)) {
             var id = ((CreationTrioItem) handler.getItem(0).getItem()).getSpeciesId();
             toggleActive();
-            PokemonUtil.spawn(GenerationsUtils.parseProperties(id), level, getBlockPos());
+            PokemonUtil.spawn(GenerationsUtils.parseProperties(id.species().getPath()), level, getBlockPos());
             RedChainItem.incrementUsage(handler.getItem(1));
             if (RedChainItem.getUses(handler.getItem(1)) >= RedChainItem.MAX_USES)
                 handler.setItem(1, ItemStack.EMPTY);
@@ -65,6 +67,12 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
             handler.dumpAllIntoPlayerInventory(player);
             sync();
             toggleActive();
+
+            return true;
+        }
+
+        else {
+            return false;
         }
     }
 
@@ -108,8 +116,10 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
             return !getItem(1).isEmpty();
         }
 
-        public boolean hasOrb() {
-            return !getItem(0).isEmpty();
+        public boolean hasOrb(ServerPlayer player) {
+            var orb = getItem(0);
+
+            return !orb.isEmpty() && !GenerationsCore.CONFIG.caught.capped(player, ((CreationTrioItem) orb.getItem()).getSpeciesId());
         }
 
 
@@ -120,8 +130,8 @@ public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity impleme
             return ItemStack.EMPTY;
         }
 
-        public boolean shouldSpawn() {
-            return hasRedChain() && hasOrb();
+        public boolean shouldSpawn(ServerPlayer player) {
+            return hasRedChain() && hasOrb(player);
         }
 
         public void dumpAllIntoPlayerInventory(ServerPlayer player) {

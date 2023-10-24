@@ -50,7 +50,7 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
         });
 
         GenerationsCore.initBuiltinPacks((type, s, s2) -> {
-            System.out.println("Pack " + s2 + ": " + ResourceManagerHelper.registerBuiltinResourcePack(s, FabricLoader.getInstance().getModContainer("generations_core").get(), s2, ResourcePackActivationType.DEFAULT_ENABLED));
+            ResourceManagerHelper.registerBuiltinResourcePack(s, FabricLoader.getInstance().getModContainer("generations_core").get(), s2, ResourcePackActivationType.DEFAULT_ENABLED);
         });
     }
 
