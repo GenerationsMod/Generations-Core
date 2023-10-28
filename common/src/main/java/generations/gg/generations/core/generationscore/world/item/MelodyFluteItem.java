@@ -7,7 +7,9 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
 import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.world.container.MelodyFluteContainer;
+import generations.gg.generations.core.generationscore.world.item.legends.ElementalPostBattleUpdateItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
@@ -25,7 +27,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class MelodyFluteItem extends ItemWithLangTooltipImpl implements PostBattleUpdatingItem {
+public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
     public static int MAX_DAMAGE = 300;
 
     public MelodyFluteItem(Properties properties) {
@@ -74,45 +76,20 @@ public class MelodyFluteItem extends ItemWithLangTooltipImpl implements PostBatt
 
     @Nullable
     public static ElementalType typeFromInbued(ItemStack stack) {
-        if (stack.isEmpty()) return null;
-        if (isItem(GenerationsItems.ICY_WING, stack)) return ElementalTypes.INSTANCE.getICE();
-        else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return ElementalTypes.INSTANCE.getPSYCHIC();
-        else if (isItem(GenerationsItems.STATIC_WING, stack)) return ElementalTypes.INSTANCE.getELECTRIC();
-        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return ElementalTypes.INSTANCE.getFIGHTING();
-        else if (isItem(GenerationsItems.FIERY_WING, stack)) return ElementalTypes.INSTANCE.getFIRE();
-        else if (isItem(GenerationsItems.SINISTER_WING, stack)) return ElementalTypes.INSTANCE.getDARK();
-        else if (isItem(GenerationsItems.RAINBOW_WING, stack) || isItem(GenerationsItems.SILVER_WING, stack))
-            return ElementalTypes.INSTANCE.getFLYING();
-        else return null;
+        return stack.getItem() instanceof WingItem wing ? wing.getType() : null;
     }
 
     public static String getSpeciesNameFromImbued(ItemStack stack) {
-        if (isItem(GenerationsItems.ICY_WING, stack)) return getSpeciesNameFromImbued("articuno", false);
-        else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return getSpeciesNameFromImbued("articuno", true);
-        else if (isItem(GenerationsItems.STATIC_WING, stack)) return getSpeciesNameFromImbued("zapdos", false);
-        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return getSpeciesNameFromImbued("zapdos", true);
-        else if (isItem(GenerationsItems.FIERY_WING, stack)) return getSpeciesNameFromImbued("moltres", false);
-        else if (isItem(GenerationsItems.SINISTER_WING, stack)) return getSpeciesNameFromImbued("moltres", true);
-        else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return getSpeciesNameFromImbued("ho_oh", false);
-        else if (isItem(GenerationsItems.SILVER_WING, stack)) return getSpeciesNameFromImbued("lugia", false);
-        else return "";
+        return stack.getItem() instanceof WingItem wing ? getSpeciesNameFromImbued(wing.getKey()) : "";
     }
 
     public static String getWingName(ItemStack stack) {
-        if (isItem(GenerationsItems.ICY_WING, stack)) return ".icy";
-        else if (isItem(GenerationsItems.ELEGANT_WING, stack)) return ".elegant";
-        else if (isItem(GenerationsItems.STATIC_WING, stack)) return ".static";
-        else if (isItem(GenerationsItems.BELLIGERENT_WING, stack)) return ".belligerent";
-        else if (isItem(GenerationsItems.FIERY_WING, stack)) return ".fiery";
-        else if (isItem(GenerationsItems.SINISTER_WING, stack)) return ".sinister";
-        else if (isItem(GenerationsItems.RAINBOW_WING, stack)) return ".rainbow";
-        else if (isItem(GenerationsItems.SILVER_WING, stack)) return ".silver";
-        else return "";
+        return stack.getItem() instanceof WingItem wing ? "." + wing : "";
     }
 
 
-    public static String getSpeciesNameFromImbued(String id, boolean isGalarian) {
-        return (isGalarian ? "Galarian " : "")  + PokemonSpecies.INSTANCE.getByName(id).getName();
+    public static String getSpeciesNameFromImbued(SpeciesKey key) {
+        return (key.aspects().contains("galarian") ? "Galarian " : "")  + PokemonSpecies.INSTANCE.getByIdentifier(key.species()).getName();
     }
 
     public static String shrineFromImbued(ItemStack stack) {
@@ -136,15 +113,14 @@ public class MelodyFluteItem extends ItemWithLangTooltipImpl implements PostBatt
     }
 
     @Override
-    public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
+    public boolean checkType(PlayerBattleActor player, ItemStack stack, ElementalType t) {
         ElementalType type = typeFromInbued(MelodyFluteItem.getImbuedItem(stack));
-        return type != null && Streams.stream(pixelmonData.pokemon().getTypes()).anyMatch(type::equals);
+        return t.equals(type);
     }
 
     @Override
     public String tooltipId(ItemStack stack) {
-        var imbued = getImbuedItem(stack);
-        return this.getDescriptionId() + getWingName(imbued) + ".tooltip";
+        return this.getDescriptionId() + getWingName(getImbuedItem(stack)) + ".tooltip";
     }
 
     //    @Override

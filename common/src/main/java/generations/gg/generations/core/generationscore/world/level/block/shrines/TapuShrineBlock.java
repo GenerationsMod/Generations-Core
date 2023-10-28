@@ -64,8 +64,8 @@ public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
             map.put("Tapu Fini", generateTapu("tapufini"));
         }
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_BULU)) {
-            map.put("Tapu Bulu", generateTapu("tapubulu"));
+        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_LELE)) {
+            map.put("Tapu Lele", generateTapu("tapulele"));
         }
 
         if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_KOKO)) {

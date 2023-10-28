@@ -47,16 +47,16 @@ public class LevelRendererMixin {
 
     @Shadow @Final private static Logger LOGGER;
 
-    @Inject(method = "renderLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/LevelRenderer;checkPoseStack(Lcom/mojang/blaze3d/vertex/PoseStack;)V", ordinal = 2, shift = At.Shift.BEFORE))
-    private void pokecraft$rksRender(PoseStack poseStack, float partialTick, long finishNanoTime, boolean renderBlockOutline, Camera camera, GameRenderer gameRenderer, LightTexture lightTexture, Matrix4f projectionMatrix, CallbackInfo ci) {
-        var startTime = System.currentTimeMillis();
-        assert level != null;
-        level.getProfiler().popPush("render_models");
-        RenderSystem.enableDepthTest();
-        BufferUploader.reset();
-        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
-        if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
-    }
+//    @Inject(method = "renderLevel", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;pushPose()V", ordinal = 2, shift = At.Shift.BEFORE))
+//    private void pokecraft$rksRender(PoseStack poseStack, float partialTick, long finishNanoTime, boolean renderBlockOutline, Camera camera, GameRenderer gameRenderer, LightTexture lightTexture, Matrix4f projectionMatrix, CallbackInfo ci) {
+//        var startTime = System.currentTimeMillis();
+//        assert level != null;
+//        level.getProfiler().popPush("render_models");
+//        RenderSystem.enableDepthTest();
+//        BufferUploader.reset();
+//        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+//        if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
+//    }
 
     private boolean shouldRenderFpsPie() {
         return Minecraft.getInstance().options.renderDebug && Minecraft.getInstance().options.renderDebugCharts && !Minecraft.getInstance().options.hideGui;

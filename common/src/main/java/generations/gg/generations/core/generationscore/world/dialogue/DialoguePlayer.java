@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CCloseScreenPacket;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2COpenDialogueMenuPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
+import generations.gg.generations.core.generationscore.world.dialogue.nodes.ChooseNode;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.ResponseTakingNode;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -68,7 +69,7 @@ public class DialoguePlayer {
     }
 
     public void discard() {
-        if(currentNode instanceof ResponseTakingNode node) {
+        if(currentNode instanceof ChooseNode node) {
             node.onPrematureClose(player);
         }
 

@@ -2,10 +2,11 @@ package generations.gg.generations.core.generationscore.world.item.legends;
 
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.google.common.collect.Streams;
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import net.minecraft.world.item.Item;
 
-public class DoggoImplmentItem extends PostBattleUpdatingWithItem {
-    public DoggoImplmentItem(Item.Properties properties) {
-        super(properties, "zamazenta", "pixelmon.rusty_shield.amountfull", (player, stack, battle) -> Streams.stream(battle.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getFIGHTING())));
+public class DoggoImplmentItem extends ElementalPostBattleUpdateItemImplImpl {
+    public DoggoImplmentItem(Item.Properties properties, SpeciesKey key) {
+        super(properties, "pixelmon.rusty_shield.amountfull", key, ElementalTypes.INSTANCE.getFIGHTING());
     }
 }

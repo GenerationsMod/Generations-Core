@@ -47,7 +47,7 @@ public class EnigmaStoneItem extends ItemWithLangTooltipImpl implements PostBatt
             if(graph == null) return InteractionResultHolder.fail(stack);
 
             new DialoguePlayer(graph, null, (ServerPlayer) player, false);
-//            player.getItemInHand(usedHand).shrink(1);
+            player.getItemInHand(usedHand).shrink(1);
             return InteractionResultHolder.consume(stack);
         }
 
@@ -62,7 +62,7 @@ public class EnigmaStoneItem extends ItemWithLangTooltipImpl implements PostBatt
         }
 
         if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.LATIOS)) {
-            map.put("Latios", generateEons("latias"));
+            map.put("Latios", generateEons("latios"));
         }
 
         if(map.isEmpty()) return null;

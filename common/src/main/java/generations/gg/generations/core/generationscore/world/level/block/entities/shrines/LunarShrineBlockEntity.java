@@ -15,7 +15,7 @@ public class LunarShrineBlockEntity extends ShrineBlockEntity {
 
     @Override
     public ResourceLocation getModel() {
-        if (hasLevel()) Objects.requireNonNull(getLevel()).getLightEmission(getBlockPos());
-        return GenerationsBlockEntityModels.LIGHT_MODEL;
+        if (hasLevel() && Objects.requireNonNull(getLevel()).getLightEmission(getBlockPos()) >= 10) return GenerationsBlockEntityModels.LIGHT_MODEL;
+        return GenerationsBlockEntityModels.DARK_MODEL;
     }
 }

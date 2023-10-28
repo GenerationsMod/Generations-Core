@@ -553,7 +553,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.PRISON_BOTTLE_STEM.get(), "legend_items/");
         createItem(GenerationsItems.PRISON_BOTTLE.get(), "legend_items/");
         createItem(GenerationsItems.MIRROR.get(), "legend_items/");
-        createItem(GenerationsItems.DARK_CRYSTAL.get(), "legend_items/");
+        createItem(GenerationsShrines.DARK_CRYSTAL.get().asItem(), "legend_items/");
         createItem(GenerationsItems.ICEROOT_CARROT.get(), "legend_items/");
         createItem(GenerationsItems.SHADEROOT_CARROT.get(), "legend_items/");
         createItem(GenerationsItems.ICY_WING.get(), "legend_items/");
@@ -584,7 +584,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ENIGMA_FRAGMENT.get(), "legend_items/");
         createItem(GenerationsItems.MEW_DNA_FIBER.get(), "legend_items/");
         createItem(GenerationsItems.LIGHT_SOUL.get(), "legend_items/");
-        createItem(GenerationsItems.LIGHT_CRYSTAL.get(), "legend_items/");
+        createItem(GenerationsShrines.LIGHT_CRYSTAL.get().asItem(), "legend_items/");
         createItem(GenerationsItems.SOUL_HEART.get(), "legend_items/");
         createItem(GenerationsItems.WONDER_EGG.get(), "legend_items/");
         createItem(GenerationsItems.PHIONE_EGG.get(), "legend_items/");

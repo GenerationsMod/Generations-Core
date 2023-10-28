@@ -8,10 +8,12 @@
     "BaseFireBlockMixin",
     "BlockMixin",
     "ItemCombinerMenuMixin",
-    "PortalShapeMixin"
+    "PortalShapeMixin",
+    "RecipeBookSettingsAccessor"
   ],
   "client": [
-    "MainMixin"
+    "MainMixin",
+    "client.RecipeBookCategoriesMixin"
   ],
   "injectors": {
     "defaultRequire": 1

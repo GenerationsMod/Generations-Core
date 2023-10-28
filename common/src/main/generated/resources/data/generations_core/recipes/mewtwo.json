@@ -1,0 +1,28 @@
+{
+  "type": "generations_core:rks",
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "generations_core:dna_splicers"
+    },
+    "B": {
+      "item": "generations_core:orb"
+    },
+    "C": {
+      "item": "generations_core:mew_dna_fiber"
+    },
+    "X": {
+      "item": "generations_core:mew_fossil"
+    }
+  },
+  "pattern": [
+    "XAX",
+    "XBX",
+    "XCX"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "pokemon",
+    "data": "mewtwo"
+  }
+}

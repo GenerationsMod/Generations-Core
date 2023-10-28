@@ -1,19 +1,17 @@
 package generations.gg.generations.core.generationscore.world.item.legends;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.config.Key;
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.world.item.ItemWithLangTooltipImpl;
-import net.minecraft.resources.ResourceLocation;
 
 public class RegiKeyItem extends ItemWithLangTooltipImpl {
-    private final Key speciesId;
+    private final SpeciesKey speciesKey;
 
-    public RegiKeyItem(Properties properties, Key speciesKey) {
+    public RegiKeyItem(Properties properties, SpeciesKey speciesKey) {
         super(properties);
-        this.speciesId = speciesKey;
+        this.speciesKey = speciesKey;
     }
 
-    public Key getSpeciesId() {
-        return speciesId;
+    public SpeciesKey getSpeciesKey() {
+        return speciesKey;
     }
 }

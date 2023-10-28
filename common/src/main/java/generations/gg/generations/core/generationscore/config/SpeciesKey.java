@@ -1,21 +1,38 @@
 package generations.gg.generations.core.generationscore.config;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public record Key(ResourceLocation species, Set<String> aspects) {
-    public Key(String species, Set<String> aspects) {
+public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
+    public SpeciesKey(String species, Set<String> aspects) {
         this(new ResourceLocation(species), aspects);
     }
 
-    public Key(String species) {
+    public SpeciesKey(String species) {
         this(species, null);
+    }
+
+    public PokemonProperties createProperties() {
+        var properties = new PokemonProperties();
+        properties.setSpecies(species.getPath());
+        properties.setAspects(aspects);
+        return properties;
+    }
+
+
+    public PokemonProperties createProperties(int level) {
+        var properties = createProperties();
+        properties.setLevel(level);
+        return properties;
     }
 
     @Override
@@ -24,11 +41,11 @@ public record Key(ResourceLocation species, Set<String> aspects) {
         return species.toString() + setString;
     }
 
-    public Key(ResourceLocation species) {
-        this(species, null);
+    public SpeciesKey(ResourceLocation species) {
+        this(species, Collections.emptySet());
     }
 
-    public static Key fromPokemon(Pokemon pokemon) {
+    public static SpeciesKey fromPokemon(Pokemon pokemon) {
         Set<String> aspects;
 
         if (pokemon.getAspects().size() != 0) {
@@ -38,10 +55,10 @@ public record Key(ResourceLocation species, Set<String> aspects) {
             aspects = Set.of();
         }
 
-        return new Key(pokemon.getSpecies().resourceIdentifier, aspects.isEmpty() ? null : aspects);
+        return new SpeciesKey(pokemon.getSpecies().resourceIdentifier, aspects.isEmpty() ? null : aspects);
     }
 
-    public static Key fromString(String input) {
+    public static SpeciesKey fromString(String input) {
         String[] parts = input.split("\\[|\\]");
 
         ResourceLocation species = new ResourceLocation(parts[0]);
@@ -59,6 +76,6 @@ public record Key(ResourceLocation species, Set<String> aspects) {
                 aspects = new HashSet<>(Arrays.asList(valueArray));
             }
         }
-        return new Key(species, aspects);
+        return new SpeciesKey(species, aspects);
     }
 }

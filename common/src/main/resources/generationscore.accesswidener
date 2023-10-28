@@ -40,3 +40,6 @@ accessible field net/minecraft/client/renderer/LevelRenderer ticks I
 
 accessible field net/minecraft/client/renderer/entity/EntityRenderer shadowRadius F
 accessible field net/minecraft/client/renderer/entity/EntityRenderer shadowStrength F
+
+accessible method net/minecraft/world/item/crafting/ShapedRecipe dissolvePattern ([Ljava/lang/String;Ljava/util/Map;II)Lnet/minecraft/core/NonNullList;
+accessible method net/minecraft/world/item/crafting/RecipeManager byType (Lnet/minecraft/world/item/crafting/RecipeType;)Ljava/util/Map;

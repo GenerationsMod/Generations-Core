@@ -37,9 +37,9 @@ public class TimeGlassItem extends ItemWithLangTooltipImpl implements PostBattle
                 if (level.getBiome(player.getOnPos()).is(Biomes.FLOWER_FOREST)) {
                     PokemonUtil.spawn(properties, level, player.getOnPos());
                     player.getItemInHand(usedHand).shrink(1);
-                } else player.displayClientMessage(Component.translatable("pokemod.timeglass.wrongbiome"), true);
+                } else player.displayClientMessage(Component.translatable("generations_core.timeglass.wrongbiome"), true);
             } else {
-                player.displayClientMessage(Component.translatable("pokemod.timeglass.amount", damage), true);
+                player.displayClientMessage(Component.translatable("generations_core.timeglass.amount", damage), true);
             }
 
             return InteractionResultHolder.success(stack);
@@ -51,6 +51,6 @@ public class TimeGlassItem extends ItemWithLangTooltipImpl implements PostBattle
 
     @Override
     public boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData) {
-        return player.getEntity().level().getBiome(player.getEntity().getOnPos()).is(Biomes.FLOWER_FOREST) && Streams.stream(pixelmonData.pokemon().getSpecies().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getPSYCHIC()) || type.equals(ElementalTypes.INSTANCE.getGRASS()));
+        return Streams.stream(pixelmonData.pokemon().getSpecies().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getPSYCHIC()) || type.equals(ElementalTypes.INSTANCE.getGRASS()));
     }
 }

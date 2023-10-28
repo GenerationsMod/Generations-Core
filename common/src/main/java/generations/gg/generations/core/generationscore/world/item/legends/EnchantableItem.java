@@ -1,11 +1,12 @@
 package generations.gg.generations.core.generationscore.world.item.legends;
 
+import generations.gg.generations.core.generationscore.world.item.ItemWithLangTooltipImpl;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class EnchantableItem extends Item {
+public abstract class EnchantableItem extends ItemWithLangTooltipImpl {
     public EnchantableItem(Properties arg) {
         super(arg);
     }

@@ -19,7 +19,7 @@ import java.util.List;
 
 import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.MELTAN_BOX_CHARGED;
 
-public class MeltanBox extends PostBattleUpdatingItemImpl implements LangTooltip {
+public class MeltanBox extends PostBattleUpdatingWithItem {
     public MeltanBox(Properties settings) {
         super(settings, "meltan", "pixelmon.meltanbox.amountfull", (player, stack, battle) -> Streams.stream(new PlayerPartyStore(player.getUuid()).iterator()).map(Pokemon::getSpecies).map(Species::getResourceIdentifier).map(ResourceLocation::toString).anyMatch(a -> a.equals("cobblemon:meltan")) && Streams.stream(battle.pokemon().getTypes()).anyMatch(type -> type.equals(ElementalTypes.INSTANCE.getSTEEL())));
     }
@@ -27,10 +27,5 @@ public class MeltanBox extends PostBattleUpdatingItemImpl implements LangTooltip
     @Override
     protected void postSpawn(Level level, Player player, InteractionHand usedHand) {
         player.setItemInHand(usedHand, new ItemStack(MELTAN_BOX_CHARGED.get()));
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-        LangTooltip.super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
     }
 }

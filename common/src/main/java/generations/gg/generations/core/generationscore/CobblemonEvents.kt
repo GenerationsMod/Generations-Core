@@ -2,12 +2,10 @@ package generations.gg.generations.core.generationscore;
 
 import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
-import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_STARTED_POST
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
-import com.cobblemon.mod.common.api.events.battles.BattleStartedPostEvent
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import generations.gg.generations.core.generationscore.api.player.Caught
-import generations.gg.generations.core.generationscore.config.Key
+import generations.gg.generations.core.generationscore.config.SpeciesKey
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem.BattleData
 import net.minecraft.world.item.ItemStack
@@ -53,8 +51,8 @@ class CobblemonEvents {
             }
 
             com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_CAPTURED.subscribe(Priority.HIGH) { event ->
-                val key = Key.fromPokemon(event.pokemon);
-                Caught.get(event.player).accumulate(key);
+                val speciesKey = SpeciesKey.fromPokemon(event.pokemon);
+                Caught.get(event.player).accumulate(speciesKey);
             }
 
             com.cobblemon.mod.common.api.events.CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, {

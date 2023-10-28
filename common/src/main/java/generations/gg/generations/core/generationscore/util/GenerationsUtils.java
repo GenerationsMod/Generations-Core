@@ -9,6 +9,8 @@ import com.mojang.serialization.JsonOps;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.StringRepresentable;
@@ -74,6 +76,14 @@ public class GenerationsUtils {
         return compound;
     };
 
+    public static JsonElement jsonToNbt(Tag tag) {
+        return NbtOps.INSTANCE.convertTo(JsonOps.INSTANCE, tag);
+    }
+
+    public static Tag jsonToNbt(JsonElement json) {
+        return JsonOps.INSTANCE.convertTo(NbtOps.INSTANCE, json);
+    }
+
     public static <T, K, V> V processIfNotNull(T t, K k, BiFunction<T, K, V> function) {
         return t != null ? function.apply(t, k) : null;
     }
@@ -128,9 +138,5 @@ public class GenerationsUtils {
     @ExpectPlatform
     public static CompoundTag serializeStack(ItemStack itemStack) {
         throw new RuntimeException();
-    }
-
-    if(!getInventory().add(stack)) {
-        Containers.dropItemStack(level(), position().x, position().y, position().z, stack);
     }
 }

@@ -1,8 +1,11 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.WeatherTrioShrineBlock;
+import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -20,10 +23,10 @@ public class WeatherTrioShrineBlockEntity extends InteractShrineBlockEntity {
 
     public boolean checkSpawning(ServerPlayer player, ItemStack stack) {
         toggleActive();
-        PokemonUtil.spawn(((WeatherTrioShrineBlock) getBlockState().getBlock()).getSpecies(), level, player.getOnPos());
+        PokemonUtil.spawn(((WeatherTrioShrineBlock) getBlockState().getBlock()).getSpecies().createProperties(70), level, player.getOnPos());
         sync();
-        toggleActive();
         stack.shrink(1);
+        ScheduledTask.schedule(this::toggleActive, 150);
         return true;
     }
 }

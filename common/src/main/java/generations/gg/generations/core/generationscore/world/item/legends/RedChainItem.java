@@ -38,7 +38,7 @@ public class RedChainItem extends EnchantableItem implements LangTooltip {
 
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
-        LangTooltip.super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
         if(isAdvanced.isAdvanced()) tooltipComponents.add(Component.nullToEmpty("Remaining Uses: %s".formatted(MAX_USES - getUses(stack))));
     }
 

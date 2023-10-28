@@ -30,6 +30,8 @@ import generations.gg.generations.core.generationscore.world.item.creativetab.Ge
 import generations.gg.generations.core.generationscore.world.item.legends.EnchantableItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeSerializers;
+import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -93,6 +95,8 @@ public class GenerationsCore
 		YawLogicTypes.init();
 		LocationLogicTypes.init();
 		AbstractNodeTypes.init();
+		GenerationsCoreRecipeTypes.init();
+		GenerationsCoreRecipeSerializers.init();
 
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 

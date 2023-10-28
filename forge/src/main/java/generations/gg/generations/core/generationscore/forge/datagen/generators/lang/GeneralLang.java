@@ -97,19 +97,19 @@ public class GeneralLang extends LanguageProvider {
         add("container.cooking_pot", "Cooking Pot");
 
 
-        add("pixelmon.melody_flute.no_item", "This flute resonates with feathers.");
+        add("generations_core.item.melody_flute.no_item", "This flute resonates with feathers.");
 
-        add("pixelmon.melody_flute.imbued", "Imbued: %s");
-        add("pixelmon.melody_flute.not_full_imbued1", "Imbue by defeating %s %s pokemon.");
-        add("pixelmon.melody_flute.not_full_imbued2", "Then shift right click on a %s");
-        add("pixelmon.melody_flute.not_full_imbued3", "to spawn %s.");
+        add("generations_core.item.melody_flute.imbued", "Imbued: %s");
+        add("generations_core.item.melody_flute.not_full_imbued1", "Imbue by defeating %s %s pokemon.");
+        add("generations_core.item.melody_flute.not_full_imbued2", "Then shift right click on a %s");
+        add("generations_core.item.melody_flute.not_full_imbued3", "to spawn %s.");
 
-        add("pixelmon.melody_flute.full_imbued1", "Fully imbued with the essence of %s.");
-        add("pixelmon.melody_flute.full_imbued2", "Shift right click on a %s");
-        add("pixelmon.melody_flute.full_imbued3", "to spawn %s.");
+        add("generations_core.item.melody_flute.full_imbued1", "Fully imbued with the essence of %s.");
+        add("generations_core.item.melody_flute.full_imbued2", "Shift right click on a %s");
+        add("generations_core.item.melody_flute.full_imbued3", "to spawn %s.");
 
-        add("Generations.timeglass.wrongbiome", "You can only summon Celebi in a Flower Forest Biome");
-        add("Generations.timeglass.amount", "You've defeated %s Grass, Psychic, or Fairy Type Pokemon out of 100 in a Flower Forest Biome");
+        add("generations_core.item.timeglass.wrongbiome", "You can only summon Celebi in a Flower Forest Biome");
+        add("generations_core.item.timeglass.amount", "You've defeated %s Grass, Psychic, or Fairy Type Pokemon out of 100 in a Flower Forest Biome");
 
         //TR/TM lines
         add("move.cantlearn", "%s can't learn %s.");
@@ -176,11 +176,11 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(ELEKI_KEY, string);
         addTooltip(DRAGO_KEY, string);
         string = "HINT: Quiet vibrations of what sound like a faint screech are flowing into your ears. All you can make out are “Key” and “Spell”.";
-        addBlockTooltip(GenerationsShrines.REGICE_SHRINE, string);
-        addBlockTooltip(GenerationsShrines.REGIROCK_SHRINE, string);
-        addBlockTooltip(GenerationsShrines.REGISTEEL_SHRINE, string);
-        addBlockTooltip(GenerationsShrines.REGIDRAGO_SHRINE, string);
-        addBlockTooltip(GenerationsShrines.REGIELEKI_SHRINE, string);
+        addTooltip(GenerationsShrines.REGICE_SHRINE, string);
+        addTooltip(GenerationsShrines.REGIROCK_SHRINE, string);
+        addTooltip(GenerationsShrines.REGISTEEL_SHRINE, string);
+        addTooltip(GenerationsShrines.REGIDRAGO_SHRINE, string);
+        addTooltip(GenerationsShrines.REGIELEKI_SHRINE, string);
 
         //Eon Duo
         addTooltip(ENIGMA_FRAGMENT, "HINT: You appear to gain one for each new biome discovered. If you collect enough, maybe you can craft something.");
@@ -219,7 +219,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(REGISTEEL_ORB, "HINT: If you collect the other Orbs, Regigigas may be awoken");
         addTooltip(REGIELEKI_ORB, "HINT: If you collect the other Orbs, Regigigas may be awoken");
         addTooltip(REGIDRAGO_ORB, "HINT: If you collect the other Orbs, Regigigas may be awoken");
-        addBlockTooltip(REGIGIGAS_SHRINE, "HINT: Images of all 5 Regi’s in the distant past begin to swarm into you. They’re playing. You feel an overwhelming sense of… nurturing? Regigigas clearly has no desire to be awakened unless you’ve awakened its friends.");
+        addTooltip(REGIGIGAS_SHRINE, "HINT: Images of all 5 Regi’s in the distant past begin to swarm into you. They’re playing. You feel an overwhelming sense of… nurturing? Regigigas clearly has no desire to be awakened unless you’ve awakened its friends.");
 
         //Lunar Duo
         addBlock(LUNAR_SHRINE, "HINT: It seems empty, strangely like the feeling of a heartache. A summoning ritual is to occur here. A deep malevolent cry is suddenly heard in your left ear- “Souls”. Almost immediately afterwards, a higher-pitched angelic-like cry is heard in your right- “Souls”. Creepy.");
@@ -242,7 +242,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(LIGHT_STONE, "HINT: It isn’t reacting. More Dragons could do the trick.");
         addTooltip(DARK_STONE, "HINT: It isn’t reacting. More Dragons could do the trick.");
         addTooltip(DRAGON_STONE, "HINT: It isn’t reacting. More Dragons could do the trick.");
-        addBlockTooltip(TAO_TRIO_SHRINE, "HINT: It’s radiating a lifeless aura. It’s dead silent but you begin to see battle cries?  Even stranger, you begin to taste powerful blasts of soundwaves– attacks from the distant past. A fierce battle took place long ago. Suddenly, you know what needs to be done– collect Dragon Souls.");
+        addTooltip(TAO_TRIO_SHRINE, "HINT: It’s radiating a lifeless aura. It’s dead silent but you begin to see battle cries?  Even stranger, you begin to taste powerful blasts of soundwaves– attacks from the distant past. A fierce battle took place long ago. Suddenly, you know what needs to be done– collect Dragon Souls.");
 
         //Meloetta
         addTooltip(SHATTERED_RELIC_SONG_1, "HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
@@ -250,7 +250,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(SHATTERED_RELIC_SONG_3, "HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
         addTooltip(SHATTERED_RELIC_SONG_4, "HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
         addTooltip(RELIC_SONG, "HINT: A special music box may play this melody differently.");
-        addBlockTooltip(MELOETTA_MUSIC_BOX, "HINT: You hear a wonderful melody from within. You need to hear more.”");
+        addTooltip(MELOETTA_MUSIC_BOX, "HINT: You hear a wonderful melody from within. You need to hear more.”");
         //Zygarde
         addTooltip(ZYGARDE_CUBE, "A strange cube capable of storing up to 100 Zygarde Cells, as well as fusing them together to reconstruct the legendary Zygarde.");
 
@@ -307,21 +307,12 @@ public class GeneralLang extends LanguageProvider {
         return getNameGens(item, name).replace("Poke Brick", "PokeBrick");
     }
 
-    public <T extends LangTooltip> void addTooltip(RegistrySupplier<T> registrySupplier, String entry) {
+    public <T extends ItemLike> void addTooltip(RegistrySupplier<T> registrySupplier, String entry) {
         addTooltip(registrySupplier, null, entry);
     }
 
-    public <T extends LangTooltip> void addTooltip(RegistrySupplier<T> registrySupplier, String sub, String entry) {
-        add(registrySupplier.get().tooltipId() + (sub != null ? "." + sub : ""), entry);
-    }
-
-    public void addBlockTooltip(RegistrySupplier<Block> registrySupplier, String entry) {
-        addBlockTooltip(registrySupplier, null, entry);
-    }
-
-    public void addBlockTooltip(RegistrySupplier<Block> registrySupplier, String sub, String entry) {
-        if(registrySupplier.get().asItem() instanceof LangTooltip lang)
-            add(lang.tooltipId() + (sub != null ? "." + sub : ""), entry);
+    public <T extends ItemLike> void addTooltip(RegistrySupplier<T> registrySupplier, String sub, String entry) {
+        if(registrySupplier.get() instanceof LangTooltip lang) add(lang.tooltipId() + (sub != null ? "." + sub : ""), entry);
     }
 
     @Deprecated

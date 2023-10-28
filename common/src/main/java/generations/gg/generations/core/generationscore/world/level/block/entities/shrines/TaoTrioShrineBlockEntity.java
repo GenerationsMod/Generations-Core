@@ -20,7 +20,7 @@ public class TaoTrioShrineBlockEntity extends InteractShrineBlockEntity {
 
     public boolean trySpawn(ServerPlayer player, ItemStack stack) {
         toggleActive();
-        PokemonUtil.spawn(((TaoTrioStoneItem) stack.getItem()).getSpecies(), level, player.getOnPos());
+        PokemonUtil.spawn(((TaoTrioStoneItem) stack.getItem()).getSpecies().createProperties(70), level, player.getOnPos());
         sync();
         toggleActive();
         stack.shrink(1);

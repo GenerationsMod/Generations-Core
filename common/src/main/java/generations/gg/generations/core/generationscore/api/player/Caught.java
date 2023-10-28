@@ -4,16 +4,16 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.gson.JsonObject;
-import generations.gg.generations.core.generationscore.config.Key;
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class Caught extends PlayerDataExtension {
     public static String KEY = "caught";
 
-    private final Multiset<Key> obtained;
+    private final Multiset<SpeciesKey> obtained;
 
-    public Caught(Multiset<Key> obtained) {
+    public Caught(Multiset<SpeciesKey> obtained) {
         this.obtained = obtained;
     }
 
@@ -21,17 +21,17 @@ public class Caught extends PlayerDataExtension {
         this(HashMultiset.create());
     }
 
-    public int get(Key name) {
+    public int get(SpeciesKey name) {
         return obtained.contains(name) ? obtained.count(name) : -1;
     }
 
-    public boolean accumulate(Key name, int amount) {
+    public boolean accumulate(SpeciesKey name, int amount) {
         var count = obtained.count(name);
 
         return obtained.setCount(name, count, amount + count);
     }
 
-    public boolean accumulate(Key name) {
+    public boolean accumulate(SpeciesKey name) {
         return accumulate(name, 1);
     }
 
@@ -39,7 +39,7 @@ public class Caught extends PlayerDataExtension {
         obtained.clear();
     }
 
-    public void reset(Key name) {
+    public void reset(SpeciesKey name) {
         obtained.setCount(name, 0);
     }
 
@@ -60,8 +60,8 @@ public class Caught extends PlayerDataExtension {
     @NotNull
     @Override
     public PlayerDataExtension deserialize(@NotNull JsonObject jsonObject) {
-        var multiset = HashMultiset.<Key>create();
-        jsonObject.entrySet().stream().filter(a -> !a.getKey().equals(PlayerDataExtension.Companion.getNAME_KEY())).forEach(entry -> multiset.setCount(Key.fromString(entry.getKey()), entry.getValue().getAsInt()));
+        var multiset = HashMultiset.<SpeciesKey>create();
+        jsonObject.entrySet().stream().filter(a -> !a.getKey().equals(PlayerDataExtension.Companion.getNAME_KEY())).forEach(entry -> multiset.setCount(SpeciesKey.fromString(entry.getKey()), entry.getValue().getAsInt()));
 
         return new Caught(multiset);
     }

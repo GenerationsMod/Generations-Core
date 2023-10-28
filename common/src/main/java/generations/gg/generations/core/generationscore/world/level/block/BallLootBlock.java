@@ -5,7 +5,6 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallLootBlockEntity.LootMode;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.client.resources.language.I18n;
@@ -48,7 +47,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     private final ResourceLocation ball;
 
     protected BallLootBlock(String name, Properties properties) {
-        super(properties, GenerationsBlockEntities.BALL_LOOT, GenerationsBlockEntityModels.POKEBALL);
+        super(properties, GenerationsBlockEntities.BALL_LOOT, null);
         this.name = name;
         this.ball = new ResourceLocation("cobblemon", name + "_ball");
         this.lootTable = GenerationsCore.id("chests/%s_ball".formatted(name));
@@ -85,9 +84,9 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
                     level.playSound(null, player.getX(), player.getY(), player.getZ(), GenerationsSounds.LUGIA_SHRINE_SONG.get(), SoundSource.BLOCKS, 0.2f, 1.0f);
 
                     if (be.isVisible()) {
-//                        player.addStat(GenerationsStats.HIDDEN_LOOT_FOUND, 1);
+                        player.awardStat(GenerationsCoreStats.HIDDEN_LOOT_FOUND, 1);
                     } else {
-//                        player.addStat(GenerationsState.NORMAL_LOOT_FOUND, 1);
+                        player.awardStat(GenerationsCoreStats.NORMAL_LOOT_FOUND, 1);
                     }
                 } else if(be.getLootMode().isTimeEnabled()) {
                     player.displayClientMessage(Component.translatable("generations_core.blocks.timedclaim"), false);

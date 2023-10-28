@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.item;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.config.Key;
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.legends.DistanceTraveledImplItem;
@@ -19,21 +19,21 @@ import java.util.List;
 
 public class LegendaryEggItem extends DistanceTraveledImplItem implements LangTooltip {
 
-    private final Key key;
+    private final SpeciesKey speciesKey;
 
-    public LegendaryEggItem(Properties properties, Key key, double maxDistance) {
+    public LegendaryEggItem(Properties properties, SpeciesKey speciesKey, double maxDistance) {
         super(properties, maxDistance);
-        this.key = key;
+        this.speciesKey = speciesKey;
     }
 
     @Override
     protected void onCompletion(ServerLevel level, Player player, InteractionHand usedHand) {
-        PokemonUtil.spawn(GenerationsUtils.parseProperties(key.species().getPath()), level, player.position());
+        PokemonUtil.spawn(GenerationsUtils.parseProperties(speciesKey.species().getPath()), level, player.position());
     }
 
     @Override
     public boolean checkPlayerState(Player player) {
-        return !GenerationsCore.CONFIG.caught.capped(player, key);
+        return !GenerationsCore.CONFIG.caught.capped(player, speciesKey);
     }
 
     @Override

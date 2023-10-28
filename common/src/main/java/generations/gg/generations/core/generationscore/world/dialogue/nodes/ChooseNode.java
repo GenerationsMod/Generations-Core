@@ -58,8 +58,8 @@ public class ChooseNode extends AbstractNode implements DialogueContainingNode, 
         return AbstractNodeTypes.CHOOSE;
     }
 
-    void onPrematureClose(ServerPlayer player) {
-        onPrematureCloseConsumer;
+    public void onPrematureClose(ServerPlayer player) {
+        consumer.accept(player);
     }
 
     @Override

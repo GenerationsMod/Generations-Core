@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.client;
 
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
-import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRenderer;
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry;
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
@@ -19,6 +18,7 @@ import generations.gg.generations.core.generationscore.client.model.RareCandyBon
 import generations.gg.generations.core.generationscore.client.model.inventory.GenericChestItemStackRenderer;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.*;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
@@ -55,7 +55,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.util.Mth;
 import net.minecraft.util.Tuple;
@@ -63,7 +62,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -73,7 +71,6 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
 import org.joml.Vector4f;
 
 import java.io.File;
@@ -182,6 +179,7 @@ public class GenerationsCoreClient {
         MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK.get(), MachineBlockScreen::new);
         MenuRegistry.registerScreenFactory(GenerationsContainers.MELODY_FLUTE.get(), MelodyFluteScreen::new);
         MenuRegistry.registerScreenFactory(GenerationsContainers.TRASHCAN.get(), TrashCanScreen::new);
+        MenuRegistry.registerScreenFactory(GenerationsContainers.RKS_MACHINE.get(), TesselatingLoomScreen::new);
     }
 
     /**
@@ -229,6 +227,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.VENDING_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BALL_DISPLAY.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BALL_LOOT.get(), PokeLootRendrer::new);
+        consumer.accept(GenerationsBlockEntities.RKS_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
     }
 
     public static void registerLayerDefinitions(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {
@@ -349,5 +348,9 @@ public class GenerationsCoreClient {
         Position pos = camera.getPosition();
         renderShape(poseStack, vertexConsumer, blockState.getShape(level, blockPos, CollisionContext.of(camera.getEntity())),
                 (double) blockPos.getX() - pos.x(), (double) blockPos.getY() - pos.y(), (double) blockPos.getZ() - pos.z(), color);
+    }
+
+    public static void renderRareCandy() {
+        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
     }
 }

@@ -197,8 +197,7 @@ public class GenerationsBlockEntities {
             .build(null));
     public static final RegistrySupplier<BlockEntityType<WeatherTrioShrineBlockEntity>> WEATHER_TRIO = BLOCK_ENTITIES.register("weather_trio", () -> BlockEntityType.Builder.of(WeatherTrioShrineBlockEntity::new,
                     GenerationsShrines.KYOGRE_SHRINE.get(),
-                    GenerationsShrines.GROUDON_SHRINE.get(),
-                    GenerationsShrines.RAYQUAZA_SHRINE.get())
+                    GenerationsShrines.GROUDON_SHRINE.get())
             .build(null));
     public static final RegistrySupplier<BlockEntityType<TimeSpaceAltarBlockEntity>> TIMESPACE_ALTAR = BLOCK_ENTITIES.register("timespace_altar", () -> BlockEntityType.Builder.of(TimeSpaceAltarBlockEntity::new, GenerationsShrines.TIMESPACE_ALTAR.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<AbundantShrineBlockEntity>> ABUNDANT_SHRINE = BLOCK_ENTITIES.register("abundant_shrine", () -> BlockEntityType.Builder.of(AbundantShrineBlockEntity::new, GenerationsShrines.ABUNDANT_SHRINE.get()).build(null));
@@ -258,7 +257,8 @@ public class GenerationsBlockEntities {
                     GenerationsDecorationBlocks.LITWICK_CANDLES.get(),
                     GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(),
                     GenerationsUtilityBlocks.TRASH_CAN.get(),
-                    GenerationsUtilityBlocks.RKS_MACHINE.get())
+                    GenerationsShrines.DARK_CRYSTAL.get(),
+                    GenerationsShrines.LIGHT_CRYSTAL.get())
             .build(null));
     public static final RegistrySupplier<BlockEntityType<MachineBlockEntity>> MACHINE_BLOCK = BLOCK_ENTITIES.register("machine_block", () -> BlockEntityType.Builder.of(MachineBlockEntity::new, GenerationsBlocks.MACHINE_BLOCK.get()).build(null));
     public static final RegistrySupplier<BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = BLOCK_ENTITIES.register("vending_machine", () -> BlockEntityType.Builder.of(VendingMachineBlockEntity::new, GenerationsDecorationBlocks.VENDING_MACHINE.get()).build(null));
@@ -330,6 +330,7 @@ public class GenerationsBlockEntities {
             GenerationsUtilityBlocks.WING_BALL_LOOT.get()
     ).build(null));
 
+    public static final RegistrySupplier<BlockEntityType<RksMachineBlockEntity>> RKS_MACHINE = BLOCK_ENTITIES.register("rks_machine", () -> BlockEntityType.Builder.of(RksMachineBlockEntity::new, GenerationsUtilityBlocks.RKS_MACHINE.get()).build(null));
 
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Block Entities");

@@ -10,6 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class RenderSystemMixin {
     @Inject(method = "enableScissor", at = @At("HEAD"), cancellable = true, remap = false)
     private static void ensableScissor(int i, int j, int k, int l, CallbackInfo ci) {
-        ci.cancel();
+//        ci.cancel();
     }
 }

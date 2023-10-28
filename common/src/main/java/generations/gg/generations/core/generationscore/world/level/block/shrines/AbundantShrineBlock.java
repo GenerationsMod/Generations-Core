@@ -36,7 +36,7 @@ public class AbundantShrineBlock extends ShrineBlock<AbundantShrineBlockEntity> 
     private static final LocationLogic THERIAN_LOCATION = BlockLocationLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
     private static final YawLogic THERIAN_YAW = BlockYawLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
 
-    private static final Consumer<Player> playerConsumer = p -> {
+    private static final Consumer<ServerPlayer> playerConsumer = p -> {
         GenerationsUtils.giveItem(p, GenerationsItems.REVEAL_GLASS.get().getDefaultInstance());
     };
 
@@ -78,7 +78,9 @@ public class AbundantShrineBlock extends ShrineBlock<AbundantShrineBlockEntity> 
         }
 
         if(map.isEmpty()) return null;
-        return new DialogueGraph(new ChooseNode("Choose which Therian to Spawn:", map));
+        var node = new ChooseNode("Choose which Therian to Spawn:", map);
+        node.consumer = playerConsumer;
+        return new DialogueGraph(node);
     }
 
     private static SpawnPokemonNode generateTapu(String name) {

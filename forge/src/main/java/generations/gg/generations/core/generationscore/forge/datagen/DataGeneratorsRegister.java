@@ -46,7 +46,8 @@ public class DataGeneratorsRegister {
                 MachineDecorationsRecipeDatagen::new,
                 WoodRecipes::new,
                 //PokeBallRecipeDatagen::new,
-                FurnaceRecipeProvider::new));
+                FurnaceRecipeProvider::new,
+                RksRecipeProvider::new));
         generator.addProvider(true, new LootTableDatagen(output));
         generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, event.getLookupProvider(), Set.of(GenerationsCore.MOD_ID)));
 

@@ -7,7 +7,9 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MachineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.flag.FeatureFlagSet;
@@ -26,6 +28,9 @@ public class GenerationsContainers {
 
     public static final RegistrySupplier<MenuType<TrashCanContainer>> TRASHCAN = CONTAINERS.register("trashcan", () -> new MenuType<>(TrashCanContainer::new, FeatureFlagSet.of()));
     public static final RegistrySupplier<MenuType<WalkmonContainer>> WALKMON = CONTAINERS.register("walkmon", () -> MenuRegistry.ofExtended(WalkmonContainer::new));
+
+    public static final RegistrySupplier<MenuType<RksMachineContainer>> RKS_MACHINE = CONTAINERS.register("rks_machine", () -> MenuRegistry.ofExtended((id, inventory, buf) -> new RksMachineContainer(id, inventory)));
+
 
     public static void init() {
         CONTAINERS.register();

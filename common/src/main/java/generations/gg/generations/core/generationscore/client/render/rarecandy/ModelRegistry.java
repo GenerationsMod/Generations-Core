@@ -6,6 +6,7 @@ import com.mojang.math.Axis;
 import de.javagl.jgltf.model.GltfModel;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 
@@ -60,7 +61,7 @@ public class ModelRegistry {
     public static void prepForBER(PoseStack stack, ModelContextProviders.AngleProvider supplier) {
 
 
-        if(supplier instanceof GenericModelProvidingBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof GenericRotatableModelBlock<?> block) {
+        if(supplier instanceof ModelProvidingBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof GenericRotatableModelBlock<?> block) {
             var dir = blockEntity.getBlockState().getValue(GenericRotatableModelBlock.FACING);
             var opposite = dir.getOpposite();
             var counterClockwise = dir.getCounterClockWise();

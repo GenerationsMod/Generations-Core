@@ -5,33 +5,27 @@ import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.config.Key;
-import generations.gg.generations.core.generationscore.config.LegendKeys;
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdatingItem, LangTooltip {
 
     private final PokemonProperties pokemonProperties;
-    private final Key key;
+    private final SpeciesKey speciesKey;
 
-    public LakeCrystalItem(Properties properties, Key key) {
+    public LakeCrystalItem(Properties properties, SpeciesKey speciesKey) {
         super(properties);
-        this.pokemonProperties = GenerationsUtils.parseProperties(key.species().getPath());
-        this.key = key;
+        this.pokemonProperties = GenerationsUtils.parseProperties(speciesKey.species().getPath());
+        this.speciesKey = speciesKey;
     }
 
     @Override
@@ -41,7 +35,7 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
-        if (!level.isClientSide() || GenerationsCore.CONFIG.caught.capped(player, key)) {
+        if (!level.isClientSide() || GenerationsCore.CONFIG.caught.capped(player, speciesKey)) {
             ItemStack stack = player.getItemInHand(usedHand);
 
             if (!isEnchanted(stack) && stack.getDamageValue() >= getMaxDamage()) {
@@ -62,10 +56,5 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
     @Override
     public String tooltipId(ItemStack stack) {
         return this.getDescriptionId() + (isEnchanted(stack) ? ".enchanted" : "") + ".tooltip";
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-        LangTooltip.super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
     }
 }

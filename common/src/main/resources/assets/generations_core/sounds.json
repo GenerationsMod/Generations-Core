@@ -6,6 +6,13 @@
       }
     ]
   },
+  "generations_core.block.rks_machine": {
+    "sounds": [
+      {
+        "name": "generations_core:block/rks_machine"
+      }
+    ]
+  },
   "generations_core.other.ui_click": {
     "sounds": [
       {

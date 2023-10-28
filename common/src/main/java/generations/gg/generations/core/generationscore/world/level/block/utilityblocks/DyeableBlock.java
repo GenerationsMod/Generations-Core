@@ -107,9 +107,4 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
 
         super.onRemove(state, level, pos, newState, isMoving);
     }
-
-    @Override
-    public void spawnAfterBreak(BlockState state, ServerLevel level, BlockPos pos, ItemStack stack, boolean dropExperience) {
-        super.spawnAfterBreak(state, level, pos, stack, dropExperience);
-    }
 }

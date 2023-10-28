@@ -63,7 +63,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         this(materialIn, blockEntityFunction, baseBlockPosFunction, model, 0, 0, 0);
     }
 
-    protected GenericRotatableModelBlock(Properties properties, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, ResourceLocation model, int width, int height, int length) {
+    public GenericRotatableModelBlock(Properties properties, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, ResourceLocation model, int width, int height, int length) {
         super(properties, blockEntityFunction, DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model);
         assignSize(width, height, length);
         reassignStateDefinition();

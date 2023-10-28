@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;
+import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -43,11 +44,9 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
         if (stack.getItem() instanceof RegiOrbItem item && !handler.contains(item)) {
             player.setItemInHand(hand, handler.insertItem(OptionalInt.of(getRegiOrbIndex(item)).getAsInt(), stack, false));
 
-            System.out.println(handler.getItems());
-
             if (handler.isFull()) {
                 toggleActive();
-                PokemonUtil.spawn(PokemonProperties.Companion.parse("regigigas", " ", "="), level, getBlockPos());
+                PokemonUtil.spawn(LegendKeys.REGIGIGAS.createProperties(70), level, getBlockPos().above());
                 handler.clear();
                 toggleActive();
             }

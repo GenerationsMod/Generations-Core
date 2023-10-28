@@ -2,8 +2,12 @@ package generations.gg.generations.core.generationscore.fabric;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.client.GenerationsCoreRecipeBookGroups;
+import generations.gg.generations.core.generationscore.client.ModRecipeBookTypes;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
+import generations.gg.generations.core.generationscore.util.RegisterRecipeBookCategoriesEvent;
+import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
@@ -11,7 +15,6 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
@@ -20,6 +23,7 @@ import net.minecraft.util.profiling.ProfilerFiller;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
@@ -48,6 +52,13 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
             GenerationsCore.onAnvilChange(left, right, player, result::setOutput, result::setCost, result::setMaterialCost);
             return false;
         });
+
+        RegisterRecipeBookCategoriesEvent.EVENT.register(event -> {
+            event.registerAggregateCategory(GenerationsCoreRecipeBookGroups.RKS_SEARCH.get(), List.of(GenerationsCoreRecipeBookGroups.RKS_GENERAL.get()));
+            event.registerBookCategories(ModRecipeBookTypes.RKS, List.of(GenerationsCoreRecipeBookGroups.RKS_GENERAL.get()));
+            event.registerRecipeCategoryFinder(GenerationsCoreRecipeTypes.RKS.get(), recipe -> GenerationsCoreRecipeBookGroups.RKS_GENERAL.get());
+        });
+
 
         GenerationsCore.initBuiltinPacks((type, s, s2) -> {
             ResourceManagerHelper.registerBuiltinResourcePack(s, FabricLoader.getInstance().getModContainer("generations_core").get(), s2, ResourcePackActivationType.DEFAULT_ENABLED);
