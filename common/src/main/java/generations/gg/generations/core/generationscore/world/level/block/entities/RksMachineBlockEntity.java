@@ -1,6 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import com.google.common.collect.Lists;
+import dev.architectury.registry.menu.ExtendedMenuProvider;
+import dev.architectury.registry.menu.MenuRegistry;
+import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.world.recipe.RksRecipe;
@@ -8,9 +11,9 @@ import generations.gg.generations.core.generationscore.world.sound.GenerationsSo
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -26,11 +29,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
@@ -42,43 +43,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements MenuProvider, Container, RecipeHolder, StackedContentsCompatible {
-    public static final int DATA_WEAVING_TIME = 0;
-    public static final int DATA_WEAVING_TIME_TOTAL = 1;
-    public static final int NUM_DATA_VALUES = 2;
+public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements MenuRegistry.ExtendedMenuTypeFactory<RksMachineContainer>, ExtendedMenuProvider, Container, RecipeHolder, StackedContentsCompatible, Toggleable {
 
     private static final int[] OUTPUT_SLOTS = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     private static final int[] INPUT_SLOTS = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    private static final int DEFAULT_WEAVE_TIME = 200;
+    private static final int DEFAULT_PROCESSING_TIME = 200;
     private static final String INVENTORY_TAG = "Inventory";
-    private static final String WEAVE_TIME_TAG = "WeaveTime";
-    private static final String WEAVE_TIME_TOTAL_TAG = "WeaveTimeTotal";
+    private static final String PROCESSING_TIME_TAG = "ProcessingTime";
+    private static final String PROCESSING_TIME_TOTAL_TAG = "ProcessingTimeTotal";
+    private static final String IS_PROCESSING_TAG = "IsProcessing";
 
-    public int weaveTime;
-    public int weaveTimeTotal;
+    public int processingTime;
+    public int processTimeTotal;
 
-    public final ContainerData dataAccess = new ContainerData() {
-        public int get(int index) {
-            return switch (index) {
-                case DATA_WEAVING_TIME -> RksMachineBlockEntity.this.weaveTime;
-                case DATA_WEAVING_TIME_TOTAL -> RksMachineBlockEntity.this.weaveTimeTotal;
-                default -> 0;
-            };
-        }
-
-        public void set(int index, int value) {
-            switch (index) {
-                case DATA_WEAVING_TIME -> RksMachineBlockEntity.this.weaveTime = value;
-                case DATA_WEAVING_TIME_TOTAL -> RksMachineBlockEntity.this.weaveTimeTotal = value;
-            }
-
-        }
-
-        public int getCount() {
-            return NUM_DATA_VALUES;
-        }
-    };
+    private boolean isProcessing = false;
 
     public NonNullList<ItemStack> inventory;
     public ItemStack output = ItemStack.EMPTY;
@@ -100,8 +79,9 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         ContainerHelper.saveAllItems(inventoryTag, inventory);
         inventoryTag.put("Output", output.save(new CompoundTag()));
         nbt.put(INVENTORY_TAG, inventoryTag);
-        nbt.putInt(WEAVE_TIME_TAG, this.weaveTime);
-        nbt.putInt(WEAVE_TIME_TOTAL_TAG, this.weaveTimeTotal);
+        nbt.putInt(PROCESSING_TIME_TAG, this.processingTime);
+        nbt.putInt(PROCESSING_TIME_TOTAL_TAG, this.processTimeTotal);
+        nbt.putBoolean(IS_PROCESSING_TAG, this.isProcessing);
     }
 
     public void load(CompoundTag nbt) {
@@ -109,8 +89,9 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         CompoundTag inventoryTag = nbt.getCompound(INVENTORY_TAG);
         ContainerHelper.saveAllItems(inventoryTag, this.inventory);
         this.output = ItemStack.of(inventoryTag.getCompound("Output"));
-        this.weaveTime = nbt.getInt(WEAVE_TIME_TAG);
-        this.weaveTimeTotal = nbt.getInt(WEAVE_TIME_TOTAL_TAG);
+        this.processingTime = nbt.getInt(PROCESSING_TIME_TAG);
+        this.processTimeTotal = nbt.getInt(PROCESSING_TIME_TOTAL_TAG);
+        this.isProcessing = nbt.getBoolean(IS_PROCESSING_TAG);
     }
 
     @Override
@@ -121,7 +102,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int syncId, Inventory inv, Player player) {
-        return new RksMachineContainer(syncId, this, inv, dataAccess);
+        return new RksMachineContainer(new GenerationsContainers.CreationContext<>(syncId, inv, this));
     }
 
 //    @Override
@@ -262,15 +243,15 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
             } else if (!ItemStack.isSameItem(outstack, result)) {
                 return false;
             } else {
-                return (outstack.getCount() + result.getCount() <= outstack.getMaxStackSize());
+                return (outstack.getCount() + result.getCount() <= (recipe.isPokemonResult() ? 1 :outstack.getMaxStackSize()));
             }
         } else {
             return false;
         }
     }
 
-    private int getWeavingTime() {
-        return getCurrentRecipe().map(RksRecipe::processingTime).orElse(DEFAULT_WEAVE_TIME);
+    private int getProcessingTime() {
+        return getCurrentRecipe().map(RksRecipe::processingTime).orElse(DEFAULT_PROCESSING_TIME);
     }
 
     protected void smelt(ItemStack result, RksRecipe recipe) {
@@ -314,44 +295,42 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     public static void serverTick(Level level, BlockPos blockpos, BlockState blockstate, RksMachineBlockEntity tile) {
         boolean flag1 = false;
 
-        if (!level.isClientSide()) {
+        if (tile.isToggled()) {
             ItemStack result = tile.getResult().orElse(ItemStack.EMPTY);
 
             Optional<RksRecipe> recipe = tile.getCurrentRecipe();
 
             if (recipe.isPresent() && (!tile.isInputEmpty())) {
                 if (tile.canSmelt(result, recipe.get())) {
-                    if (tile.weaveTime <= 0) {
-                        tile.weaveTimeTotal = tile.getWeavingTime();
-                        tile.weaveTime = 0;
+                    if (tile.processingTime <= 0) {
+                        tile.processTimeTotal = tile.getProcessingTime();
+                        tile.processingTime = 0;
                     }
                 }
-                ++tile.weaveTime;
+                ++tile.processingTime;
 
-                if(tile.weaveTime % 60 == 0) {
+                if(tile.processingTime % 60 == 0) {
                     level.playSound(null, blockpos, GenerationsSounds.RKS_MACHINE.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
                 }
 
-                if (tile.weaveTime >= tile.weaveTimeTotal) {
+                if (tile.processingTime >= tile.processTimeTotal) {
                     tile.smelt(result, recipe.get());
-                    tile.weaveTime = 0;
+                    tile.processingTime = 0;
 
-                    tile.weaveTimeTotal = !tile.isInputEmpty() ? tile.getWeavingTime() : 0;
+                    tile.processTimeTotal = !tile.isInputEmpty() ? tile.getProcessingTime() : 0;
 
-                    flag1 = true;
+                    tile.setToggled(false);
                 }
             }
             else {
-                tile.weaveTime = 0;
+                tile.processingTime = 0;
+                tile.setToggled(false);
             }
-        } else if (tile.weaveTime > 0) {
-            tile.weaveTime = Mth.clamp(tile.weaveTime - 2, 0, tile.weaveTimeTotal);
-        }
+        }/* else if (tile.processingTime > 0) {
+            tile.processingTime = Mth.clamp(tile.processingTime - 2, 0, tile.processTimeTotal);
+        }*/
 
-
-        if (flag1) {
-            tile.setChanged();
-        }
+        tile.sync();
     }
 
     @Override
@@ -375,7 +354,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         for (Object2IntMap.Entry entry : this.recipesUsed.object2IntEntrySet()) {
             level.getRecipeManager().byKey((ResourceLocation)entry.getKey()).ifPresent(recipe -> {
                 list.add((Recipe<?>)recipe);
-                createExperience(level, popVec, entry.getIntValue(), ((AbstractCookingRecipe)recipe).getExperience());
+                createExperience(level, popVec, entry.getIntValue(), ((RksRecipe)recipe).experience());
             });
         }
         return list;
@@ -390,6 +369,27 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         ExperienceOrb.award(level, popVec, i);
     }
 
+    @Override
+    public void setToggled(boolean toggle) {
+        isProcessing = toggle;
+    }
 
-//	public record WeavingResult()
+    @Override
+    public boolean isToggled() {
+        return isProcessing;
+    }
+
+    @Override
+    public void saveExtraData(FriendlyByteBuf buf) {
+        buf.writeBlockPos(getBlockPos());
+    }
+
+    @Override
+    public RksMachineContainer create(int id, Inventory inventory, FriendlyByteBuf buf) {
+        if (inventory.player.level().getBlockEntity(buf.readBlockPos()) instanceof RksMachineBlockEntity cookingPot) {
+            return new RksMachineContainer(new GenerationsContainers.CreationContext<>(id, inventory, cookingPot));
+        } else {
+            return null;
+        }
+    }
 }

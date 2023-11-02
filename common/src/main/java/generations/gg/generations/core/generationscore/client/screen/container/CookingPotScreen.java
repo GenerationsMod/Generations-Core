@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.client.screen.container;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.network.packets.C2SToggleCookingPotPacket;
+import generations.gg.generations.core.generationscore.network.packets.C2STogglePacket;
 import generations.gg.generations.core.generationscore.world.container.CookingPotContainer;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import net.minecraft.client.gui.GuiGraphics;
@@ -48,7 +48,7 @@ public class CookingPotScreen extends AbstractContainerScreen<CookingPotContaine
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if(findPoint(leftPos + 106, topPos + 45, leftPos + 126, topPos + 63, mouseX, mouseY)) {
-            GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2SToggleCookingPotPacket(cookingPot.getBlockPos()));
+            GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2STogglePacket(cookingPot.getBlockPos()));
             return true;
         }
 

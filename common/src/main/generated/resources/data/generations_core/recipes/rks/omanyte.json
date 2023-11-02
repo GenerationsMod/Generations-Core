@@ -1,0 +1,21 @@
+{
+  "type": "generations_core:rks",
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "generations_core:helix_fossil"
+    }
+  },
+  "pattern": [
+    "A"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "pokemon",
+    "data": {
+      "CustomProperties": [],
+      "OriginalText": "",
+      "SpeciesText": "omanyte"
+    }
+  }
+}

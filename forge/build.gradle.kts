@@ -62,7 +62,7 @@ dependencies {
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
-    modApi("com.jozufozu.flywheel:flywheel-forge-$minecraftVersion:${project.properties["flywheel_forge_version"]}")
+//    modApi("com.jozufozu.flywheel:flywheel-forge-$minecraftVersion:${project.properties["flywheel_forge_version"]}")
 
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.5.0")

@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:mewtwo"
+        "recipe": "generations_core:rks/tyrunt"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "mew_fossil": {
+    "jaw_fossil": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:mew_fossil"
+              "generations_core:jaw_fossil"
             ]
           }
         ]
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "mew_fossil",
+      "jaw_fossil",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:mewtwo"
+      "generations_core:rks/tyrunt"
     ]
   },
   "sends_telemetry_event": true

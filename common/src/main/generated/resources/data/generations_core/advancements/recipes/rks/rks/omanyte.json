@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:rks/omanyte"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "helix_fossil": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:helix_fossil"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "helix_fossil",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:rks/omanyte"
+    ]
+  },
+  "sends_telemetry_event": true
+}

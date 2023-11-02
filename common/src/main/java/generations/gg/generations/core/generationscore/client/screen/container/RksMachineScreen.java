@@ -1,8 +1,10 @@
 package generations.gg.generations.core.generationscore.client.screen.container;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.network.packets.C2STogglePacket;
 import generations.gg.generations.core.generationscore.world.container.RksMachineContainer;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
@@ -15,15 +17,23 @@ import net.minecraft.world.inventory.Slot;
 
 import java.util.Objects;
 
-public class TesselatingLoomScreen extends AbstractContainerScreen<RksMachineContainer> implements RecipeUpdateListener {
+public class RksMachineScreen extends AbstractContainerScreen<RksMachineContainer> implements RecipeUpdateListener {
 	private static final ResourceLocation TEXTURE = GenerationsCore.id("textures/gui/container/rks_machine.png");
 	private static final ResourceLocation RECIPE_BUTTON_TEXTURE = new ResourceLocation("textures/gui/recipe_button.png");
 
 	private final RecipeBookComponent recipeBook = new RecipeBookComponent();
 	private boolean narrow;
 
-	public TesselatingLoomScreen(RksMachineContainer handler, Inventory inventory, Component title) {
+	private final Button button;
+
+	public RksMachineScreen(RksMachineContainer handler, Inventory inventory, Component title) {
 		super(handler, inventory, title);
+		button = Button.builder(Component.literal("Start"), new Button.OnPress() {
+			@Override
+			public void onPress(Button button) {
+				GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2STogglePacket(handler.getRksMachine().getBlockPos()));
+			}
+		}).bounds(0, 0, 41, 13).build();
 	}
 
 	public void init() {
@@ -36,6 +46,8 @@ public class TesselatingLoomScreen extends AbstractContainerScreen<RksMachineCon
 			this.leftPos = this.recipeBook.updateScreenPosition(this.width, this.imageWidth);
 			button.setPosition(this.leftPos + 5, this.height / 2 - 49);
 		}));
+		this.addRenderableWidget(button);
+		this.button.setPosition(this.leftPos + 109, this.topPos + 62);
 		this.addWidget(this.recipeBook);
 		this.setInitialFocus(this.recipeBook);
 		this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;

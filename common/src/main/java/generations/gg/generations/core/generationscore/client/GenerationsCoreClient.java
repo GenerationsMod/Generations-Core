@@ -179,7 +179,7 @@ public class GenerationsCoreClient {
         MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK.get(), MachineBlockScreen::new);
         MenuRegistry.registerScreenFactory(GenerationsContainers.MELODY_FLUTE.get(), MelodyFluteScreen::new);
         MenuRegistry.registerScreenFactory(GenerationsContainers.TRASHCAN.get(), TrashCanScreen::new);
-        MenuRegistry.registerScreenFactory(GenerationsContainers.RKS_MACHINE.get(), TesselatingLoomScreen::new);
+        MenuRegistry.registerScreenFactory(GenerationsContainers.RKS_MACHINE.get(), RksMachineScreen::new);
     }
 
     /**

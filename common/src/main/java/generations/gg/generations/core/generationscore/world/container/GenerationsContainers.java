@@ -29,7 +29,7 @@ public class GenerationsContainers {
     public static final RegistrySupplier<MenuType<TrashCanContainer>> TRASHCAN = CONTAINERS.register("trashcan", () -> new MenuType<>(TrashCanContainer::new, FeatureFlagSet.of()));
     public static final RegistrySupplier<MenuType<WalkmonContainer>> WALKMON = CONTAINERS.register("walkmon", () -> MenuRegistry.ofExtended(WalkmonContainer::new));
 
-    public static final RegistrySupplier<MenuType<RksMachineContainer>> RKS_MACHINE = CONTAINERS.register("rks_machine", () -> MenuRegistry.ofExtended((id, inventory, buf) -> new RksMachineContainer(id, inventory)));
+    public static final RegistrySupplier<MenuType<RksMachineContainer>> RKS_MACHINE = register("rks_machine", RksMachineContainer::new, RksMachineBlockEntity.class);
 
 
     public static void init() {

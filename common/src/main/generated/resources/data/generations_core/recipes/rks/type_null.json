@@ -1,0 +1,45 @@
+{
+  "type": "generations_core:rks",
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "minecraft:netherite_chestplate"
+    },
+    "B": {
+      "item": "minecraft:netherite_leggings"
+    },
+    "C": {
+      "item": "minecraft:netherite_boots"
+    },
+    "D": {
+      "item": "minecraft:netherite_axe"
+    },
+    "E": {
+      "item": "minecraft:netherite_helmet"
+    },
+    "F": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "G": {
+      "item": "generations_core:bug_memory_drive"
+    },
+    "Z": {
+      "item": "minecraft:netherite_block"
+    }
+  },
+  "pattern": [
+    "DAE",
+    "FBG",
+    "ZCZ"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "pokemon",
+    "data": {
+      "CustomProperties": [],
+      "OriginalText": "",
+      "SpeciesText": "typenull"
+    }
+  },
+  "speciesKey": "cobblemon:typenull[]"
+}

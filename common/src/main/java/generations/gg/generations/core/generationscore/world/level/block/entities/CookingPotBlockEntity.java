@@ -38,7 +38,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements ItemContainerBlock, MenuRegistry.ExtendedMenuTypeFactory<CookingPotContainer>, ExtendedMenuProvider, ModelContextProviders.VariantProvider {
+public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements ItemContainerBlock, MenuRegistry.ExtendedMenuTypeFactory<CookingPotContainer>, ExtendedMenuProvider, ModelContextProviders.VariantProvider, Toggleable {
 
     public CookingPotBlockEntity(BlockPos arg2, BlockState arg3) {
         super(GenerationsBlockEntities.COOKING_POT.get(), arg2, arg3);
@@ -267,5 +267,15 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
         if (output.values().stream().distinct().count() <= 1) return null;
 
         return output.entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(null);
+    }
+
+    @Override
+    public void setToggled(boolean toggle) {
+        setCooking(toggle);
+    }
+
+    @Override
+    public boolean isToggled() {
+        return isCooking();
     }
 }

@@ -1,9 +1,5 @@
 package generations.gg.generations.core.generationscore.forge;
 
-import com.jozufozu.flywheel.api.MaterialManager;
-import com.jozufozu.flywheel.core.materials.model.ModelData;
-import dev.architectury.networking.NetworkChannel;
-import dev.architectury.networking.NetworkManager;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
@@ -14,7 +10,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerChunkCache;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraftforge.network.NetworkDirection;
@@ -26,7 +21,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class GenerationsForgeNetworkManager implements GenerationsImplementation.NetworkManager {
     public static final GenerationsForgeNetworkManager INSTANCE = new GenerationsForgeNetworkManager();

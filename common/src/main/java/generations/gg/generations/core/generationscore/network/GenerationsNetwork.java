@@ -61,7 +61,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
     }
 
     public void registerServerBound() {
-        this.createServerBound(C2SToggleCookingPotPacket.ID, C2SToggleCookingPotPacket.class, C2SToggleCookingPotPacket::decode, new C2SToggleCookingPotHandler());
+        this.createServerBound(C2STogglePacket.ID, C2STogglePacket.class, C2STogglePacket::decode, new C2SToggleHandler());
         this.createServerBound(C2SEditMailPacket.ID, C2SEditMailPacket.class, C2SEditMailPacket::decode, new C2SEditMailHandler());
         this.createServerBound(C2SCloseDialoguePacket.ID, C2SCloseDialoguePacket.class, C2SCloseDialoguePacket::decode, new C2SCloseDialogueHandler());
         this.createServerBound(C2SRequestNodesDialoguePacket.ID, C2SRequestNodesDialoguePacket.class, C2SRequestNodesDialoguePacket::decode, new C2SRequestNodesDialogueHandler());

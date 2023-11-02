@@ -2,10 +2,14 @@
 package generations.gg.generations.core.generationscore.world.container;
 
 import generations.gg.generations.core.generationscore.client.ModRecipeBookTypes;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
+import generations.gg.generations.core.generationscore.world.level.block.RksMachineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
+import generations.gg.generations.core.generationscore.world.recipe.RksRecipe;
+import generations.gg.generations.core.generationscore.world.recipe.RksResult;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
@@ -24,23 +28,18 @@ public class RksMachineContainer extends RecipeBookMenu<Container> {
 	public static final int NUM_DATA_VALUES = 2;
 
 	protected Inventory playerInventory;
-	protected Container recipeInv;
-	protected ContainerData data;
+	protected RksMachineBlockEntity rksMachine;
 
-	public RksMachineContainer(int id, Inventory playerInventory) {
-		this(id, new SimpleContainer(10), playerInventory, new SimpleContainerData(2));
-	}
-	public RksMachineContainer(int id, Container inventory, Inventory playerInventory, ContainerData propertyDelegate) {
-		super(GenerationsContainers.RKS_MACHINE.get(), id);
-		this.playerInventory = playerInventory;
-		this.recipeInv = inventory;
-		this.data = propertyDelegate;
+	public RksMachineContainer(GenerationsContainers.CreationContext<RksMachineBlockEntity> ctx) {
+		super(GenerationsContainers.RKS_MACHINE.get(), ctx.id());
+		this.playerInventory = ctx.playerInv();
+		this.rksMachine = ctx.blockEntity();
 
-		this.addSlot(new ResultSlot(playerInventory.player, recipeInv, 0, 124, 35));
+		this.addSlot(new ResultSlot(playerInventory.player, rksMachine, 0, 124, 35));
 
 		for(int i = 0; i < 3; ++i) {
 			for(int j = 0; j < 3; ++j) {
-				this.addSlot(new Slot(this.recipeInv, j + i * 3 + 1, 30 + j * 18, 17 + i * 18));
+				this.addSlot(new Slot(this.rksMachine, j + i * 3 + 1, 30 + j * 18, 17 + i * 18));
 			}
 		}
 
@@ -53,15 +52,15 @@ public class RksMachineContainer extends RecipeBookMenu<Container> {
 		for(int i = 0; i < 9; ++i) {
 			this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
 		}
+	}
 
-		this.addDataSlots(data);
+	public RksMachineBlockEntity getRksMachine() {
+		return rksMachine;
 	}
 
 	@Override
 	public void fillCraftSlotsStackedContents(StackedContents stackedContents) {
-		if(this.recipeInv instanceof StackedContentsCompatible provider) {
-			provider.fillStackedContents(stackedContents);
-		}
+		this.rksMachine.fillStackedContents(stackedContents);
 	}
 
 	@Override
@@ -79,7 +78,7 @@ public class RksMachineContainer extends RecipeBookMenu<Container> {
 
 	@Override
 	public boolean recipeMatches(Recipe<? super Container> recipe) {
-		return recipe.matches(recipeInv, playerInventory.player.level());
+		return recipe.matches(rksMachine, playerInventory.player.level());
 	}
 
 	@Override
@@ -146,24 +145,28 @@ public class RksMachineContainer extends RecipeBookMenu<Container> {
 
 	@Override
 	public boolean stillValid(Player player) {
-		return recipeInv.stillValid(player);
+		return rksMachine.stillValid(player);
 	}
 
 	public int getBurnProgress(int pixels) {
-		int i = this.data.get(DATA_WEAVE_TIME);
-		int j = this.data.get(DATA_WEAVE_TIME_TOAL);
+		int i = this.rksMachine.processingTime;
+		int j = this.rksMachine.processTimeTotal;
 		return j != 0 && i != 0 ? i * pixels / j : 0;
 	}
 
 	public boolean isWeaving() {
-		return this.data.get(DATA_WEAVE_TIME) > 0;
+		return this.rksMachine.processingTime > 0;
+	}
+
+	public void toggle(boolean b) {
+		rksMachine.setToggled(b);
 	}
 
 	public static class ResultSlot extends Slot {
 		private final Player player;
 		private int removeCount;
 
-		public ResultSlot(Player player, Container container, int slot, int x, int y) {
+		public ResultSlot(Player player, RksMachineBlockEntity container, int slot, int x, int y) {
 			super(container, slot, x, y);
 			this.player = player;
 		}
@@ -184,7 +187,16 @@ public class RksMachineContainer extends RecipeBookMenu<Container> {
 
 		@Override
 		public void onTake(Player player, ItemStack stack) {
-			this.checkTakeAchievements(stack);
+			if(((RksMachineBlockEntity) container).getRecipeUsed() instanceof RksRecipe recipe && recipe.isPokemonResult()) {
+				var rksmachine = ((RksMachineBlockEntity) container);
+				var pos = rksmachine.getBlockPos();
+				var dir = rksmachine.getBlockState().getValue(RksMachineBlock.FACING);
+
+				PokemonUtil.spawn(((RksResult.PokemonResult) recipe.getResult()).properties(), rksmachine.getLevel(), pos.above(2), dir.toYRot());
+				stack.setCount(0);
+			} else {
+				this.checkTakeAchievements(stack);
+			}
 			super.onTake(player, stack);
 		}
 

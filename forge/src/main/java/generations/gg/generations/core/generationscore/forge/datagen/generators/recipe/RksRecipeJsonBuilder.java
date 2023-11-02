@@ -83,6 +83,12 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 		return new RksRecipeJsonBuilder(output, outputCount);
 	}
 
+	public static RksRecipeJsonBuilder create(String name) {
+		var properties = new PokemonProperties();
+		properties.setSpecies(name);
+		return create(properties);
+	}
+
 	public RksRecipeJsonBuilder key(SpeciesKey key) {
 		this.speciesKey = key;
 		return this;
@@ -141,10 +147,12 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 	}
 
 	public void offerTo(Consumer<FinishedRecipe> exporter, ResourceLocation recipeId) {
+		recipeId = recipeId.withPrefix("rks/");
+
 		this.validate(recipeId);
 		this.advancementBuilder.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId)).rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(RequirementsStrategy.OR);
 
-		exporter.accept(new RksRecipeJsonProvider(recipeId, this.output, this.group == null ? "" : this.group, this.pattern, this.inputs, this.advancementBuilder, recipeId.withPrefix("recipes/tesselating/"), experience, processingTime, speciesKey));
+		exporter.accept(new RksRecipeJsonProvider(recipeId, this.output, this.group == null ? "" : this.group, this.pattern, this.inputs, this.advancementBuilder, recipeId.withPrefix("recipes/rks/"), experience, processingTime, speciesKey));
 	}
 
 	private void validate(ResourceLocation recipeId) {
@@ -167,9 +175,9 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 
 			if (!set.isEmpty()) {
 				throw new IllegalStateException("Ingredients are defined but not used in pattern for recipe " + recipeId);
-			} else if (this.pattern.size() == 1 && this.pattern.get(0).length() == 1) {
+			} /*else if (this.pattern.size() == 1 && this.pattern.get(0).length() == 1) {
 				throw new IllegalStateException("Shaped recipe " + recipeId + " only takes in a single item - should it be a shapeless recipe instead?");
-			} else if (this.advancementBuilder.getCriteria().isEmpty()) {
+			}*/ else if (this.advancementBuilder.getCriteria().isEmpty()) {
 				throw new IllegalStateException("No way of obtaining recipe " + recipeId);
 			}
 		}

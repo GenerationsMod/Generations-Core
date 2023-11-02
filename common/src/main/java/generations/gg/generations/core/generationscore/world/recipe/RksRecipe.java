@@ -10,7 +10,6 @@ import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -272,35 +271,20 @@ public class RksRecipe implements Recipe<Container> {
         return map;
     }
 
-    public static RksResult resultFrom(JsonObject resultObject) {
-        var type = GsonHelper.getAsString(resultObject, "type");
-
-        return switch (type) {
-            case "item" -> new RksResult.ItemResult(itemStackFromJson(resultObject));
-            case "pokemon" -> new RksResult.PokemonResult(GenerationsUtils.parseProperties(GsonHelper.getAsString(resultObject, "data")));
-            default -> throw new JsonSyntaxException("Invalid Type: " + type);
-        };
-    }
-
-    public static ItemStack itemStackFromJson(JsonObject stackObject) {
-        return ItemStack.of((CompoundTag) GenerationsUtils.jsonToNbt(stackObject));
-    }
-
-    public static Item itemFromJson(JsonObject itemObject) {
-        String string = GsonHelper.getAsString(itemObject, "item");
-        Item item = BuiltInRegistries.ITEM.getOptional(new ResourceLocation(string)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + string + "'"));
-        if (item == Items.AIR) {
-            throw new JsonSyntaxException("Invalid item: " + string);
-        }
-        return item;
-    }
-
     public int processingTime() {
         return processingTime;
     }
 
     public float experience() {
         return experience;
+    }
+
+    public boolean isPokemonResult() {
+        return result instanceof RksResult.PokemonResult;
+    }
+
+    public RksResult getResult() {
+        return result;
     }
 
     public static class Serializer implements RecipeSerializer<RksRecipe> {
@@ -312,7 +296,7 @@ public class RksRecipe implements Recipe<Container> {
             int i = strings[0].length();
             int j = strings.length;
             NonNullList<Ingredient> nonNullList = dissolvePattern(strings, map, i, j);
-            var result = resultFrom(GsonHelper.getAsJsonObject(json, "result"));
+            var result = RksResult.fromJson(GsonHelper.getAsJsonObject(json, "result"));
 
 
 

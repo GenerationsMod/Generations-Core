@@ -1,0 +1,33 @@
+{
+  "type": "generations_core:rks",
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "minecraft:egg"
+    },
+    "B": {
+      "item": "generations_core:orb"
+    },
+    "C": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "X": {
+      "item": "generations_core:water_gem"
+    },
+    "Z": {
+      "item": "cobblemon:mystic_water"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "ABC",
+    "ZZZ"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "item",
+    "Count": 1,
+    "id": "generations_core:wonder_egg"
+  },
+  "speciesKey": "cobblemon:manaphy[]"
+}

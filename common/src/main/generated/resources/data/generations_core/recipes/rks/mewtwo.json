@@ -23,6 +23,12 @@
   "processingTime": 240,
   "result": {
     "type": "pokemon",
-    "data": "mewtwo"
-  }
+    "data": {
+      "CustomProperties": [],
+      "Level": 70,
+      "OriginalText": "",
+      "SpeciesText": "mewtwo"
+    }
+  },
+  "speciesKey": "cobblemon:mewtwo[]"
 }

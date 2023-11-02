@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
@@ -20,11 +21,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
@@ -142,10 +146,23 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     private boolean checkDirection(LevelReader level, BlockPos pos, Direction dir, Size size, int value) {
         var forward = getValue(level, pos, dir, size);
-//        var backward = getValue(level, pos, dir.getOpposite(), size);
-//        var maxSize = getSize(dir.getAxis());
+        var backward = getValue(level, pos, dir.getOpposite(), size);
+        var maxSize = getSize(dir.getAxis());
 
-        return value == 0 || forward == value - 1;
+        return value == 0 || forward == value - 1 || backward > maxSize;
+    }
+
+    @Override
+    public void playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, Player player) {
+        level.destroyBlock(getBaseBlockPos(pos, state), true);
+
+        super.playerWillDestroy(level, pos, state, player);
+    }
+
+    @Override
+    public @NotNull List<ItemStack> getDrops(@NotNull BlockState state, LootParams.@NotNull Builder params) {
+        if(getWidthValue(state) == 0 && getLengthValue(state) == 0 && getHeightValue(state) == 0) return super.getDrops(state, params);
+        else return Collections.emptyList();
     }
 
     private int getValue(LevelReader level, BlockPos pos, Direction direction, Size size) {

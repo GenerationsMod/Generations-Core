@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:rks/aerodactyl"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "old_amber": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:old_amber"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "old_amber",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:rks/aerodactyl"
+    ]
+  },
+  "sends_telemetry_event": true
+}

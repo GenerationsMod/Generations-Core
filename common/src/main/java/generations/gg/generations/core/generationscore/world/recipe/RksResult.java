@@ -55,7 +55,7 @@ public interface RksResult {
     public record PokemonResult(PokemonProperties properties) implements RksResult {
         @Override
         public void toJson(JsonObject object) {
-            object.addProperty("data", properties.asString(" "));
+            object.add("data", properties.saveToJSON());
         }
 
         @Override
@@ -64,7 +64,8 @@ public interface RksResult {
         }
 
         public static PokemonResult fromJson(JsonObject object) {
-            return new PokemonResult(GenerationsUtils.parseProperties(object.getAsJsonPrimitive("data").getAsString()));
+            var properties = new PokemonProperties().loadFromJSON(object.getAsJsonObject("data"));
+            return new PokemonResult(properties);
         }
     }
 }

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
+import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
@@ -8,6 +9,7 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -70,7 +72,7 @@ public class RksMachineBlock extends GenericRotatableModelBlock<RksMachineBlockE
     protected void openContainer(Level level, BlockPos bpos, Player player) {
         var rksMachine = getAssoicatedBlockEntity(level, bpos).orElseThrow(() -> new IllegalStateException("Our named container provider is missing!"));
         if (rksMachine != null) {
-            player.openMenu(rksMachine);
+            MenuRegistry.openExtendedMenu((ServerPlayer) player, rksMachine);
             player.awardStat(Stats.INTERACT_WITH_FURNACE);
         }
     }
