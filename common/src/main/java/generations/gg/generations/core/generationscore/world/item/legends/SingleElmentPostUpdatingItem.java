@@ -8,11 +8,11 @@ import generations.gg.generations.core.generationscore.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
 import net.minecraft.world.item.ItemStack;
 
-public class WeatherTrioItem extends ItemWithLangTooltipImpl implements PostBattleUpdatingItem, LangTooltip {
+public class SingleElmentPostUpdatingItem extends ItemWithLangTooltipImpl implements PostBattleUpdatingItem, LangTooltip {
 
     private final ElementalType type;
 
-    public WeatherTrioItem(Properties properties, ElementalType type) {
+    public SingleElmentPostUpdatingItem(Properties properties, ElementalType type) {
         super(properties);
         this.type = type;
     }

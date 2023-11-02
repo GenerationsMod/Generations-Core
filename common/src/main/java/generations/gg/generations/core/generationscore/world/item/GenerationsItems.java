@@ -969,7 +969,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<ItemWithLangTooltipImpl> LIGHT_SOUL = register("light_soul", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<LegendaryEggItem> WONDER_EGG = register("wonder_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.MANAPHY, 10000), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<LegendaryEggItem> PHIONE_EGG = register("phione_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.PHIONE, 10000), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> SOUL_HEART = register("soul_heart", ItemWithLangTooltipImpl::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<SingleElmentPostUpdatingItem> SOUL_HEART = register("soul_heart", properties -> new SingleElmentPostUpdatingItem(properties.stacksTo(1).durability(100), ElementalTypes.INSTANCE.getFAIRY()), GenerationsCreativeTabs.LEGENDARY_ITEMS);
 
     /**
      * Naturals

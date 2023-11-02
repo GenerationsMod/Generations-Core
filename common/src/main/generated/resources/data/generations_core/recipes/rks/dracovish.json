@@ -1,0 +1,24 @@
+{
+  "type": "generations_core:rks",
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "generations_core:drake_fossil"
+    },
+    "B": {
+      "item": "generations_core:fish_fossil"
+    }
+  },
+  "pattern": [
+    "AB"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "pokemon",
+    "data": {
+      "CustomProperties": [],
+      "OriginalText": "",
+      "SpeciesText": "dracovish"
+    }
+  }
+}
