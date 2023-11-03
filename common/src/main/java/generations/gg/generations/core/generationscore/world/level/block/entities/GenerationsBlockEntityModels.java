@@ -76,4 +76,5 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation RKS_MACHINE = GenerationsCore.id("models/block/utility_blocks/rks_machine.pk");;
     public static final ResourceLocation LIGHT_CRYSTAL = GenerationsCore.id("models/block/shrines/light_crystal.pk");
     public static final ResourceLocation DARK_CRYSTAL = GenerationsCore.id("models/block/shrines/dark_crystal.pk");
+    public static final ResourceLocation SCARECROW = GenerationsCore.id("models/block/utility_blocks/scarecrow.pk");
 }

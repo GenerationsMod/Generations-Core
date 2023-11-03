@@ -250,6 +250,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), "decorations");
         registerBlockItemParticle(GenerationsUtilityBlocks.RKS_MACHINE.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.SCARECROW.get(), "utility_blocks");
 
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);

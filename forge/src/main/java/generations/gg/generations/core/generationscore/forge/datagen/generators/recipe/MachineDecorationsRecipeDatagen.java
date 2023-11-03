@@ -152,6 +152,16 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
         buildPokeBallDisplayRecipes(consumer, GenerationsItems.SAFARI_BALL.get(), GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get());
         buildPokeBallDisplayRecipes(consumer, GenerationsItems.SPORT_BALL.get(), GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get());
         buildPokeBallDisplayRecipes(consumer, GenerationsItems.TIMER_BALL.get(), GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsUtilityBlocks.SCARECROW.get())
+                .pattern(" # ")
+                .pattern("BAB")
+                .pattern(" B ")
+                .define('#', Items.MELON)
+                .define('A', Items.HAY_BLOCK)
+                .define('B', Items.STICK)
+                .unlockedBy(getHasName(Items.HAY_BLOCK), has(Items.HAY_BLOCK))
+                .save(consumer);
     }
 
     private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {

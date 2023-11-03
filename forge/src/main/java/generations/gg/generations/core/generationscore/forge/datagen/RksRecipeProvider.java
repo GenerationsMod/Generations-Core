@@ -83,16 +83,16 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
             return stack;
         }).get();
 
-        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA.createProperties(70))
-                .key(LegendKeys.TYPE_NULL)
-                .pattern(" A ")
-                .pattern("CBC")
-                .pattern(" A ")
-                .input('A', Items.NETHERITE_INGOT)
-                .input('B', itemStack)
-                .input('C', Items.IRON_INGOT)
-                .criterion("netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
-                .offerTo(exporter, GenerationsCore.id("type_null"));
+//        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA.createProperties(70))
+//                .key(LegendKeys.TYPE_NULL)
+//                .pattern(" A ")
+//                .pattern("CBC")
+//                .pattern(" A ")
+//                .input('A', Items.NETHERITE_INGOT)
+//                .input('B', itemStack)
+//                .input('C', Items.IRON_INGOT)
+//                .criterion("netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
+//                .offerTo(exporter, GenerationsCore.id("type_null"));
 
         createFossil(GenerationsItems.OLD_AMBER, "aerodactyl", exporter);
         createFossil(GenerationsItems.HELIX_FOSSIL, "omanyte", exporter);

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:melon"
+    },
+    "A": {
+      "item": "minecraft:hay_block"
+    },
+    "B": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " # ",
+    "BAB",
+    " B "
+  ],
+  "result": {
+    "item": "generations_core:scarecrow"
+  },
+  "show_notification": true
+}

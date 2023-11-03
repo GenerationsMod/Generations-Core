@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericBlastFurnaceBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericFurnaceBlock;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericSmokerBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.*;
 import net.minecraft.core.registries.Registries;
@@ -95,6 +96,8 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
 
 	public static final RegistrySupplier<Block> RKS_MACHINE = registerBlockItem("rks_machine", () -> new RksMachineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
+	public static final RegistrySupplier<Block> SCARECROW = registerBlockItem("scarecrow", () -> new ScarecrowBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).dynamicShape().noOcclusion()));
 
 	public static RegistrySupplier<BallLootBlock> BEAST_BALL_LOOT = registerLoot("beast");
 	public static RegistrySupplier<BallLootBlock> CHERISH_BALL_LOOT = registerLoot("cherish");

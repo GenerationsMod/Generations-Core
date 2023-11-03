@@ -2,19 +2,32 @@ package generations.gg.generations.core.generationscore;
 
 import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
+import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import generations.gg.generations.core.generationscore.api.player.Caught
 import generations.gg.generations.core.generationscore.config.SpeciesKey
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem.BattleData
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks
+import generations.gg.generations.core.generationscore.world.level.block.shrines.RegiShrineBlock
+import generations.gg.generations.core.generationscore.world.level.block.shrines.RegigigasShrineBlock
 import net.minecraft.world.item.ItemStack
+import java.util.function.BiPredicate
 
-class CobblemonEvents {
+class GenerationsCobblemonEvents {
     companion object {
         @JvmStatic
         fun init() {
-//            BATTLE_STARTED_POST.subscribe(Priority.HIGHEST) { (battle): BattleStartedPostEvent -> battle.mute = false }
+            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) {
+                var level = it.entity.level();
+
+                var amount = 0;
+                level.getChunk(it.entity.blockPosition()).findBlocks({ it.`is`(GenerationsUtilityBlocks.SCARECROW.get())}) {pos, state -> amount += 1}
+                if(amount > 0) it.cancel();
+            }
+
+
 
             BATTLE_VICTORY.subscribe(Priority.HIGH) { event ->
                 val data = mutableListOf<BattleData>()
@@ -50,12 +63,14 @@ class CobblemonEvents {
                     }
             }
 
-            com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_CAPTURED.subscribe(Priority.HIGH) { event ->
+            CobblemonEvents.POKEMON_CAPTURED.subscribe(Priority.HIGH) { event ->
                 val speciesKey = SpeciesKey.fromPokemon(event.pokemon);
                 Caught.get(event.player).accumulate(speciesKey);
             }
 
-            com.cobblemon.mod.common.api.events.CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, {
+            GenerationsCobblemonEvents
+
+            CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, {
 
             });
         }

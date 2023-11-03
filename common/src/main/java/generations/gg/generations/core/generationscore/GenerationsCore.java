@@ -108,7 +108,7 @@ public class GenerationsCore
 
 		if(Platform.isModLoaded("impactor")) ImpactorCompat.init();
 
-		CobblemonEvents.init();
+		GenerationsCobblemonEvents.init();
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {
 			var stack = player.getItemInHand(hand);
 			var result = PixelmonInteractions.process(entity, player, stack);

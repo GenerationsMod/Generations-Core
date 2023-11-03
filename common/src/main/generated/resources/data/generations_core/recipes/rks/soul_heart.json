@@ -1,0 +1,27 @@
+{
+  "type": "generations_core:rks",
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "generations_core:heart_scale"
+    },
+    "B": {
+      "item": "generations_core:orb"
+    }
+  },
+  "pattern": [
+    " A ",
+    "ABA",
+    " A "
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "item",
+    "Count": 1,
+    "id": "generations_core:soul_heart",
+    "tag": {
+      "Damage": 0
+    }
+  },
+  "speciesKey": "cobblemon:magearna[]"
+}
