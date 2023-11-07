@@ -44,6 +44,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
         var model = ModelRegistry.get(blockEntity, "block");
+        stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
 
         if (blockEntity.objectInstance == null) {
             int amount = instanceAmount();
@@ -75,6 +76,8 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         //TODO: Get this operational
 
         var model = ModelRegistry.get(blockEntity, "animated_block");
+
+        stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
 
         var amount = instanceAmount();
         blockEntity.objectInstance = new ObjectInstance[amount];
