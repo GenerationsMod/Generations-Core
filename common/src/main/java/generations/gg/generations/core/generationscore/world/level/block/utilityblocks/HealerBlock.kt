@@ -38,14 +38,14 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty
 import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 
-class HealerBlock(props: Properties?) : DyeableBlock<HealerBlockEntity, HealerBlock>(
-    { color: DyeColor -> getBlock(color) },
+class HealerBlock(function: (DyeColor) -> DyedBlockItem<HealerBlockEntity, HealerBlock>, props: Properties?) : DyeableBlock<HealerBlockEntity, HealerBlock>(
+    function,
     GenerationsBlockEntities.HEALER,
     props,
     GenerationsBlockEntityModels.HEALER
 ) {
     companion object {
-        fun getBlock(color: DyeColor): DyedBlockItem<HealerBlock?> = when (color) {
+/*        fun getBlock(color: DyeColor): DyedBlockItem<HealerBlock?> = when (color) {
             DyeColor.RED -> GenerationsUtilityBlocks.RED_HEALER
             DyeColor.WHITE -> GenerationsUtilityBlocks.WHITE_HEALER
             DyeColor.ORANGE -> GenerationsUtilityBlocks.ORANGE_HEALER
@@ -62,7 +62,7 @@ class HealerBlock(props: Properties?) : DyeableBlock<HealerBlockEntity, HealerBl
             DyeColor.GRAY -> GenerationsUtilityBlocks.GRAY_HEALER
             DyeColor.LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_HEALER
             DyeColor.BLACK -> GenerationsUtilityBlocks.BLACK_HEALER
-        }.get()
+        }.get()*/
 
 
         // Charge level 6 is used only when healing machine is active

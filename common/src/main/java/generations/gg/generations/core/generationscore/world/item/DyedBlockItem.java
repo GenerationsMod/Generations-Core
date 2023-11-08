@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
@@ -11,11 +12,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class DyedBlockItem<T extends DyeableBlock<?, ?>> extends ItemNameBlockItem {
+public class DyedBlockItem<T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> extends ItemNameBlockItem {
     private final DyeColor color;
     private String descriptionId;
 
-    public DyedBlockItem(T block, DyeColor color, Properties properties) {
+    public DyedBlockItem(DyeableBlock<T, V> block, DyeColor color, Properties properties) {
         super(block, properties);
         this.color = color;
     }

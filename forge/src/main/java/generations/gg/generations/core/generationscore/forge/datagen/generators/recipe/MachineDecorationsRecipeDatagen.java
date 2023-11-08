@@ -38,7 +38,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLUE_HEALER.get(), 1) //TODO: Decide which color to be base or incorporate dye into recipe.
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get(), 1) //TODO: Decide which color to be base or incorporate dye into recipe.
                 .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
                 .define('R', Items.IRON_INGOT)
                 .define('P', Items.DIAMOND)
@@ -49,7 +49,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                         inventoryTrigger(ItemPredicate.Builder.item().of(GenerationsItems.ALUMINUM_PLATE.get(), Items.DIAMOND, Items.IRON_INGOT).build()))
                 .save(consumer, GenerationsCore.id("healer"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.RED_PC.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.PC.dyeMap().get(DyeColor.RED).get(), 1)
                 .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
                 .define('A', Blocks.GLASS_PANE)
                 .define('R', Items.REDSTONE)
@@ -166,7 +166,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var healer = HealerBlock.Companion.getBlock(color);
+        var healer = GenerationsUtilityBlocks.HEALER.dyeMap().get(color).get();
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, healer)
                 .define('E', dye)
@@ -174,13 +174,13 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("EEE")
                 .pattern("EHE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsUtilityBlocks.BLUE_HEALER.get()), has(GenerationsUtilityBlocks.BLUE_HEALER.get())) //TODO: Decide which color to be base or incorporate dye into recipe.
+                .unlockedBy(getHasName(GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get()), has(GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get())) //TODO: Decide which color to be base or incorporate dye into recipe.
                 .save(consumer);
     }
 
     private void buildColoredPcCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var finishedPc = PcBlock.getBlock(color);
+        var finishedPc = GenerationsUtilityBlocks.PC.dyeMap().get(color).get();
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, finishedPc)
                 .define('E', dye)
@@ -188,7 +188,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("EEE")
                 .pattern("EHE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsUtilityBlocks.RED_PC.get()) , has(GenerationsUtilityBlocks.RED_PC.get())) //TODO: Decide if to incorporate dye into recipe.
+                .unlockedBy(getHasName(GenerationsUtilityBlocks.PC.dyeMap().get(DyeColor.RED).get()), has(GenerationsUtilityBlocks.PC.dyeMap().get(DyeColor.RED).get())) //TODO: Decide if to incorporate dye into recipe.
                 .save(consumer);
     }
 
@@ -212,7 +212,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     private void buildClockRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var clock = ClockBlock.getBlock(color);
+        var clock = GenerationsUtilityBlocks.CLOCK.dyeMap().get(color).get();
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, clock)
                 .define('E', dye)
@@ -233,7 +233,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     private void buildVendingMachineRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var vendingMachine = VendingMachineBlock.getBlock(color);
+        var vendingMachine = GenerationsDecorationBlocks.VENDING_MACHINE.dyeMap().get(color).get();
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, vendingMachine)
                 .define('A', Items.IRON_INGOT)

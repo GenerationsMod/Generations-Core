@@ -48,8 +48,6 @@ public class GenerationsForgeNetworkManager implements GenerationsImplementation
             Function<FriendlyByteBuf, T> decoder,
             ClientNetworkPacketHandler<T> handler
     ) {
-        System.out.println("Generations Client: " + id);
-
         this.channel.registerMessage(this.id++, kClass, encoder, decoder, (msg, ctx) -> {
             var context = ctx.get();
             handler.handleOnNettyThread(msg);
@@ -64,7 +62,6 @@ public class GenerationsForgeNetworkManager implements GenerationsImplementation
             Function<FriendlyByteBuf, T> decoder,
             ServerNetworkPacketHandler<T> handler
     ) {
-        System.out.println("Generations Server: " + id);
         this.channel.registerMessage(this.id++, kClass, encoder, decoder, (msg, ctx) -> {
             var context = ctx.get();
             handler.handleOnNettyThread(msg, Objects.requireNonNull(Objects.requireNonNull(context.getSender()).getServer()), context.getSender());

@@ -77,11 +77,6 @@ public class ModelRegistry {
         stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
     }
 
-    public static void all() {
-        var map = LOADER.asMap().keySet();
-        System.out.println("Amount: " + map.size() + " " + map);
-    }
-
     private record Pair<A, B>(A a, B b) {}
 
     public static RareCandy getWorldRareCandy() {

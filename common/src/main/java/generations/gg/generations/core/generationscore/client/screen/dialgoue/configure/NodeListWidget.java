@@ -72,7 +72,6 @@ public class NodeListWidget extends AbstractHierarchicalWidget {
 
     @Override
     public void onClick(double mouseX, double mouseY) {
-        System.out.println("test");
         super.onClick(mouseX, mouseY);
     }
 }

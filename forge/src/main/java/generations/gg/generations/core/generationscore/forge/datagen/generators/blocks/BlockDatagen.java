@@ -227,8 +227,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
-        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE);
-        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG);
+        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE.block());
+        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block());
         GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> registerBlockItemParticle(block.get(), "ball_displays"));
 
 
@@ -240,9 +240,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 //      GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> registerBlockItemParticle(block.get().getBlock(), "utility_blocks/pc"));
         registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
-        registerNoModel(GenerationsUtilityBlocks.PC);
-        registerNoModel(GenerationsUtilityBlocks.CLOCK);
-        registerNoModel(GenerationsUtilityBlocks.HEALER);
+        registerNoModel(GenerationsUtilityBlocks.PC.block());
+        registerNoModel(GenerationsUtilityBlocks.CLOCK.block());
+        registerNoModel(GenerationsUtilityBlocks.HEALER.block());
 
         registerBlockItemParticle(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.SWITCH.get(), "decorations");

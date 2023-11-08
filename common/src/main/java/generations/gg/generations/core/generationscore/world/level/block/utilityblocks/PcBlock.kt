@@ -36,7 +36,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 import java.util.*
 
-class PcBlock(arg: Properties) : DoubleDyeableBlock<PcBlockEntity, PcBlock>({ color: DyeColor -> getBlock(color) }, GenerationsBlockEntities.PC, arg, GenerationsBlockEntityModels.PC
+class PcBlock(funciton: (DyeColor) -> DyedBlockItem<PcBlockEntity, PcBlock>, arg: Properties) : DoubleDyeableBlock<PcBlockEntity, PcBlock>(funciton, GenerationsBlockEntities.PC, arg, GenerationsBlockEntityModels.PC
 ) {
     override fun createDefaultState(): BlockState {
         return super.createDefaultState().setValue(ON, false)
@@ -94,25 +94,25 @@ class PcBlock(arg: Properties) : DoubleDyeableBlock<PcBlockEntity, PcBlock>({ co
     companion object {
         val ON = BooleanProperty.create("on")
 
-        @JvmStatic
-        fun getBlock(color: DyeColor): DyedBlockItem<PcBlock> = when (color) {
-            DyeColor.WHITE -> GenerationsUtilityBlocks.WHITE_PC
-            DyeColor.ORANGE -> GenerationsUtilityBlocks.ORANGE_PC
-            DyeColor.MAGENTA -> GenerationsUtilityBlocks.MAGENTA_PC
-            DyeColor.LIGHT_BLUE -> GenerationsUtilityBlocks.LIGHT_BLUE_PC
-            DyeColor.YELLOW -> GenerationsUtilityBlocks.YELLOW_PC
-            DyeColor.LIME -> GenerationsUtilityBlocks.LIME_PC
-            DyeColor.PINK -> GenerationsUtilityBlocks.PINK_PC
-            DyeColor.GRAY -> GenerationsUtilityBlocks.GRAY_PC
-            DyeColor.LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_PC
-            DyeColor.CYAN -> GenerationsUtilityBlocks.CYAN_PC
-            DyeColor.PURPLE -> GenerationsUtilityBlocks.PURPLE_PC
-            DyeColor.BLUE -> GenerationsUtilityBlocks.BLUE_PC
-            DyeColor.BROWN -> GenerationsUtilityBlocks.BROWN_PC
-            DyeColor.GREEN -> GenerationsUtilityBlocks.GREEN_PC
-            DyeColor.RED -> GenerationsUtilityBlocks.RED_PC
-            DyeColor.BLACK -> GenerationsUtilityBlocks.BLACK_PC
-        }.get()
+//        @JvmStatic
+//        fun getBlock(color: DyeColor): DyedBlockItem<PcBlock> = when (color) {
+//            DyeColor.WHITE -> GenerationsUtilityBlocks.WHITE_PC
+//            DyeColor.ORANGE -> GenerationsUtilityBlocks.ORANGE_PC
+//            DyeColor.MAGENTA -> GenerationsUtilityBlocks.MAGENTA_PC
+//            DyeColor.LIGHT_BLUE -> GenerationsUtilityBlocks.LIGHT_BLUE_PC
+//            DyeColor.YELLOW -> GenerationsUtilityBlocks.YELLOW_PC
+//            DyeColor.LIME -> GenerationsUtilityBlocks.LIME_PC
+//            DyeColor.PINK -> GenerationsUtilityBlocks.PINK_PC
+//            DyeColor.GRAY -> GenerationsUtilityBlocks.GRAY_PC
+//            DyeColor.LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_PC
+//            DyeColor.CYAN -> GenerationsUtilityBlocks.CYAN_PC
+//            DyeColor.PURPLE -> GenerationsUtilityBlocks.PURPLE_PC
+//            DyeColor.BLUE -> GenerationsUtilityBlocks.BLUE_PC
+//            DyeColor.BROWN -> GenerationsUtilityBlocks.BROWN_PC
+//            DyeColor.GREEN -> GenerationsUtilityBlocks.GREEN_PC
+//            DyeColor.RED -> GenerationsUtilityBlocks.RED_PC
+//            DyeColor.BLACK -> GenerationsUtilityBlocks.BLACK_PC
+//        }.get()
 
         fun lumiance(state: BlockState): Int {
             return try {

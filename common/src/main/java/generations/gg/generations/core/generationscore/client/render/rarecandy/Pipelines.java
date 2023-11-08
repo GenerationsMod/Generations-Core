@@ -188,7 +188,19 @@ public class Pipelines {
 
             var solid = new Pipeline.Builder(BLOCK_BASE)
                     .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
-                    .prePostDraw(material -> {}, material -> {})
+                    .build();
+
+            var masked = new Pipeline.Builder(BLOCK_BASE)
+                    .shader(read(manager, GenerationsCore.id("shaders/block/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/masked.fs.glsl")))
+                    .supplyUniform("mask", ctx -> {
+                        ctx.object().getVariant(ctx.instance().variant()).getTexture("mask").bind(2);
+                        ctx.uniform().uploadInt(2);
+                    })
+                    .supplyUniform("color", ctx -> {
+                        var color = (Vector3f) ctx.object().getMaterial(ctx.instance().variant()).getValue("color");
+
+                        ctx.uniform().uploadVec3f(color);
+                    })
                     .build();
 
             var transparent = new Pipeline.Builder(BLOCK_BASE)
@@ -199,7 +211,11 @@ public class Pipelines {
                     }, material -> RenderSystem.disableCull())
                     .build();
 
-            return material -> material.equals("transparent") ? transparent : solid;
+            return material -> {
+                if (material.equals("transparent")) return transparent;
+                if (material.equals("masked")) return masked;
+                return solid;
+            };
         });
     }
 

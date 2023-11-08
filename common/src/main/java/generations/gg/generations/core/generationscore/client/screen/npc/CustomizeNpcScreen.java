@@ -19,6 +19,7 @@ import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
@@ -41,7 +42,7 @@ public class CustomizeNpcScreen extends Screen {
                 new Tab(new DisplayCustomizationTab(npcEntity), new ItemStack(Items.SPYGLASS), "Display"),
                 new Tab(new HeldItemCustomizationTab(npcEntity), new ItemStack(GenerationsArmor.ROCKET.chestplate().get()), "Held Items"),
                 new Tab(new MovementCustomizationTab(npcEntity), new ItemStack(GenerationsItems.NEST_BALL.get()/*.RED_BIKE.get()*/), "Movement"),
-                new Tab(new PresetCustomizationTab(npcEntity), new ItemStack(GenerationsUtilityBlocks.RED_PC.get()), "Presets")
+                new Tab(new PresetCustomizationTab(npcEntity), new ItemStack(GenerationsUtilityBlocks.PC.dyeMap().get(DyeColor.RED).get()), "Presets")
         };
         selectTab(0);
     }

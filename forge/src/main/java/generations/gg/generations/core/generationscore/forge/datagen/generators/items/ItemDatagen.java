@@ -1184,13 +1184,14 @@ public class ItemDatagen extends ItemModelProvider {
 //        createItemBlock(GenerationsDecorationBlocks.SWITCH.get(), "item/blocks/decorations/");
 //        createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "item/blocks/decorations/");
 //        createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "item/blocks/decorations/");
-        GenerationsDecorationBlocks.PASTEL_BEAN_BAG_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "bean_bags"));
-        GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "vending_machines"));
+        GenerationsDecorationBlocks.PASTEL_BEAN_BAG.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "bean_bags"));
+        GenerationsDecorationBlocks.VENDING_MACHINE.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "vending_machines"));
+        GenerationsDecorationBlocks.SWIVEL_CHAIR.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "swivel_chairs"));
 
         createItemBlock(GenerationsUtilityBlocks.COOKING_POT.get(), "item/blocks/utility_blocks/");
-        GenerationsUtilityBlocks.HEALER_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "utility_blocks/healer"));
-        GenerationsUtilityBlocks.PC_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "utility_blocks/pc"));
-        GenerationsUtilityBlocks.CLOCK_BLOCKS.forEach(block -> createItemBlockDir(block.get(), "clocks"));
+        GenerationsUtilityBlocks.HEALER.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "utility_blocks/healer"));
+        GenerationsUtilityBlocks.PC.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "utility_blocks/pc"));
+        GenerationsUtilityBlocks.CLOCK.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "clocks"));
 //        GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> createItemBlock(block.get(), "item/blocks/ball_loots/"));
 //        createItemBlock(GenerationsUtilityBlocks.TRASH_CAN.get(), "item/blocks/utility_blocks/");
 

@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ClockBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.PcBlockEntity;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 @SuppressWarnings("deprecation")
 public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
@@ -29,8 +30,8 @@ public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
         map.put(Direction.WEST, Shapes.box(0.9375, 0.25, 0.25, 1, 0.75, 0.75));
     });
 
-    public ClockBlock(Properties arg) {
-        super(ClockBlock::getBlock, GenerationsBlockEntities.CLOCK, arg, GenerationsBlockEntityModels.CLOCK);
+    public ClockBlock(Function<DyeColor, DyedBlockItem<ClockBlockEntity, ClockBlock>> function, Properties arg) {
+        super(function, GenerationsBlockEntities.CLOCK, arg, GenerationsBlockEntityModels.CLOCK);
     }
 
     @Override
@@ -46,25 +47,25 @@ public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
         return SHAPE.get(state.getValue(FACING));
     }
 
-    public static DyedBlockItem<ClockBlock> getBlock(DyeColor color) {
-        return (switch (color) {
-            case WHITE -> GenerationsUtilityBlocks.WHITE_CLOCK;
-            case ORANGE -> GenerationsUtilityBlocks.ORANGE_CLOCK;
-            case MAGENTA -> GenerationsUtilityBlocks.MAGENTA_CLOCK;
-            case LIGHT_BLUE -> GenerationsUtilityBlocks.LIGHT_BLUE_CLOCK;
-            case YELLOW -> GenerationsUtilityBlocks.YELLOW_CLOCK;
-            case LIME -> GenerationsUtilityBlocks.LIME_CLOCK;
-            case PINK -> GenerationsUtilityBlocks.PINK_CLOCK;
-            case GRAY -> GenerationsUtilityBlocks.GRAY_CLOCK;
-            case LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_CLOCK;
-            case CYAN -> GenerationsUtilityBlocks.CYAN_CLOCK;
-            case PURPLE -> GenerationsUtilityBlocks.PURPLE_CLOCK;
-            case BLUE -> GenerationsUtilityBlocks.BLUE_CLOCK;
-            case BROWN -> GenerationsUtilityBlocks.BROWN_CLOCK;
-            case GREEN -> GenerationsUtilityBlocks.GREEN_CLOCK;
-            case RED -> GenerationsUtilityBlocks.RED_CLOCK;
-            case BLACK -> GenerationsUtilityBlocks.BLACK_CLOCK;
-        }).get();
-    }
+//    public static DyedBlockItem<ClockBlock> getBlock(DyeColor color) {
+//        return (switch (color) {
+//            case WHITE -> GenerationsUtilityBlocks.WHITE_CLOCK;
+//            case ORANGE -> GenerationsUtilityBlocks.ORANGE_CLOCK;
+//            case MAGENTA -> GenerationsUtilityBlocks.MAGENTA_CLOCK;
+//            case LIGHT_BLUE -> GenerationsUtilityBlocks.LIGHT_BLUE_CLOCK;
+//            case YELLOW -> GenerationsUtilityBlocks.YELLOW_CLOCK;
+//            case LIME -> GenerationsUtilityBlocks.LIME_CLOCK;
+//            case PINK -> GenerationsUtilityBlocks.PINK_CLOCK;
+//            case GRAY -> GenerationsUtilityBlocks.GRAY_CLOCK;
+//            case LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_CLOCK;
+//            case CYAN -> GenerationsUtilityBlocks.CYAN_CLOCK;
+//            case PURPLE -> GenerationsUtilityBlocks.PURPLE_CLOCK;
+//            case BLUE -> GenerationsUtilityBlocks.BLUE_CLOCK;
+//            case BROWN -> GenerationsUtilityBlocks.BROWN_CLOCK;
+//            case GREEN -> GenerationsUtilityBlocks.GREEN_CLOCK;
+//            case RED -> GenerationsUtilityBlocks.RED_CLOCK;
+//            case BLACK -> GenerationsUtilityBlocks.BLACK_CLOCK;
+//        }).get();
+//    }
 }
 

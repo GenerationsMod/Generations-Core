@@ -179,8 +179,10 @@ public class GenerationsBlockEntities {
             GenerationsPokeDolls.CELEBI_POKEDOLL.get()
     ).build(null));
 
-    public static final RegistrySupplier<BlockEntityType<HealerBlockEntity>> HEALER = BLOCK_ENTITIES.register("healer", () -> BlockEntityType.Builder.of(HealerBlockEntity::new, GenerationsUtilityBlocks.HEALER.get()).build(null));
-    public static final RegistrySupplier<BlockEntityType<ClockBlockEntity>> CLOCK = BLOCK_ENTITIES.register("clock", () -> BlockEntityType.Builder.of(ClockBlockEntity::new, GenerationsUtilityBlocks.CLOCK.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<HealerBlockEntity>> HEALER = BLOCK_ENTITIES.register("healer", () -> BlockEntityType.Builder.of(HealerBlockEntity::new, GenerationsUtilityBlocks.HEALER
+            .block()
+            .get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<ClockBlockEntity>> CLOCK = BLOCK_ENTITIES.register("clock", () -> BlockEntityType.Builder.of(ClockBlockEntity::new, GenerationsUtilityBlocks.CLOCK.block().get()).build(null));
 
     public static final RegistrySupplier<BlockEntityType<GenericShrineBlockEntity>> GENERIC_SHRINE = BLOCK_ENTITIES.register("generic_shrine", () -> BlockEntityType.Builder.of(GenericShrineBlockEntity::new,
                     GenerationsShrines.STATIC_SHRINE.get(),
@@ -244,9 +246,10 @@ public class GenerationsBlockEntities {
             GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()
     ).build(null));
     public static final RegistrySupplier<BlockEntityType<GenericDyedVariantBlockEntity>> GENERIC_DYED_VARIANT = BLOCK_ENTITIES.register("generic_dyed_variant", () -> BlockEntityType.Builder.of(GenericDyedVariantBlockEntity::new,
-            GenerationsDecorationBlocks.PASTEL_BEAN_BAG.get(),
-            GenerationsUtilityBlocks.PC.get(),
-            GenerationsUtilityBlocks.TRASH_CAN.get())
+            GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block().get(),
+            GenerationsUtilityBlocks.PC.block().get(),
+            GenerationsUtilityBlocks.TRASH_CAN.get(),
+                    GenerationsDecorationBlocks.SWIVEL_CHAIR.block().get())
             .build(null));
 
     public static final RegistrySupplier<BlockEntityType<GenericModelProvidingBlockEntity>> GENERIC_MODEL_PROVIDING = BLOCK_ENTITIES.register("generic_model_providing", () -> BlockEntityType.Builder.of(GenericModelProvidingBlockEntity::new,
@@ -262,7 +265,7 @@ public class GenerationsBlockEntities {
                     GenerationsUtilityBlocks.SCARECROW.get())
             .build(null));
     public static final RegistrySupplier<BlockEntityType<MachineBlockEntity>> MACHINE_BLOCK = BLOCK_ENTITIES.register("machine_block", () -> BlockEntityType.Builder.of(MachineBlockEntity::new, GenerationsBlocks.MACHINE_BLOCK.get()).build(null));
-    public static final RegistrySupplier<BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = BLOCK_ENTITIES.register("vending_machine", () -> BlockEntityType.Builder.of(VendingMachineBlockEntity::new, GenerationsDecorationBlocks.VENDING_MACHINE.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = BLOCK_ENTITIES.register("vending_machine", () -> BlockEntityType.Builder.of(VendingMachineBlockEntity::new, GenerationsDecorationBlocks.VENDING_MACHINE.block().get()).build(null));
     public static final RegistrySupplier<BlockEntityType<BallDisplayBlockEntity>> BALL_DISPLAY = BLOCK_ENTITIES.register("ball_display", () -> BlockEntityType.Builder.of(BallDisplayBlockEntity::new,
             GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(),
             GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(),
@@ -293,7 +296,7 @@ public class GenerationsBlockEntities {
             GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get()
     ).build(null));
 
-    public static final RegistrySupplier<BlockEntityType<PcBlockEntity>> PC = BLOCK_ENTITIES.register("pc", () -> BlockEntityType.Builder.of(PcBlockEntity::new, GenerationsUtilityBlocks.PC.get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<PcBlockEntity>> PC = BLOCK_ENTITIES.register("pc", () -> BlockEntityType.Builder.of(PcBlockEntity::new, GenerationsUtilityBlocks.PC.block().get()).build(null));
 
     public static final RegistrySupplier<BlockEntityType<BallLootBlockEntity>> BALL_LOOT = BLOCK_ENTITIES.register("poke_loot", () -> BlockEntityType.Builder.of(BallLootBlockEntity::new,
             GenerationsUtilityBlocks.BEAST_BALL_LOOT.get(),
