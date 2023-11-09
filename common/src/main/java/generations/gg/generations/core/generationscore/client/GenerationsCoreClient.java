@@ -228,6 +228,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.BALL_DISPLAY.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BALL_LOOT.get(), PokeLootRendrer::new);
         consumer.accept(GenerationsBlockEntities.RKS_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
+        consumer.accept(GenerationsBlockEntities.PC.get(), GeneralUseBlockEntityRenderer::new);
     }
 
     public static void registerLayerDefinitions(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {

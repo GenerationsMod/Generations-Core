@@ -6,13 +6,9 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
-import generations.gg.generations.core.generationscore.world.level.block.entities.ClockBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.PcBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.*;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericBlastFurnaceBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericFurnaceBlock;
-import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericSmokerBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.*;
 import net.minecraft.core.registries.Registries;
@@ -44,7 +40,9 @@ public class GenerationsUtilityBlocks {
 	public static final DyedGroup<HealerBlock, HealerBlockEntity> HEALER = registerDyed("healer", function -> () -> new HealerBlock(function::apply, BlockBehaviour.Properties.of().strength(2.5f)));
 
 	//PC Blocks
-	public static final DyedGroup<PcBlock, PcBlockEntity> PC = registerDyed("pc", function -> () -> new PcBlock(function::apply, BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
+	public static final RegistrySupplier<PcBlock> TABLE_PC = registerBlockItem("table_pc", () -> new PcBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.TABLE_PC, 0, 0, 0));
+	public static final RegistrySupplier<PcBlock> ROTOM_PC = registerBlockItem("rotom_pc", () -> new PcBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.ROTOM_PC, 0, 1, 0));
+
 
 	public static final DyedGroup<ClockBlock, ClockBlockEntity> CLOCK = registerDyed("clock", function -> () -> new ClockBlock(function, BlockBehaviour.Properties.of().strength(2f)));
 

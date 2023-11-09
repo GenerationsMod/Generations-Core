@@ -17,7 +17,9 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.world.level.block.entities.PcBlockEntity
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
@@ -36,8 +38,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 import java.util.*
 
-class PcBlock(funciton: (DyeColor) -> DyedBlockItem<PcBlockEntity, PcBlock>, arg: Properties) : DoubleDyeableBlock<PcBlockEntity, PcBlock>(funciton, GenerationsBlockEntities.PC, arg, GenerationsBlockEntityModels.PC
-) {
+class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, height: Int = 0, length: Int = 0) : GenericRotatableModelBlock<PcBlockEntity>(arg, GenerationsBlockEntities.PC, model, width, height, length) {
     override fun createDefaultState(): BlockState {
         return super.createDefaultState().setValue(ON, false)
     }
@@ -49,13 +50,13 @@ class PcBlock(funciton: (DyeColor) -> DyedBlockItem<PcBlockEntity, PcBlock>, arg
         pathComputationType: PathComputationType
     ): Boolean = false
 
-    override fun serverUse(
+    override fun use(
         blockState: BlockState,
         world: Level,
         blockPos: BlockPos,
         player: Player,
-        interactionHand: InteractionHand,
-        blockHitResult: BlockHitResult
+        hand: InteractionHand,
+        hit: BlockHitResult
     ): InteractionResult {
         if (player !is ServerPlayer) return SUCCESS
 

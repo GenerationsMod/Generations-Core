@@ -49,7 +49,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                         inventoryTrigger(ItemPredicate.Builder.item().of(GenerationsItems.ALUMINUM_PLATE.get(), Items.DIAMOND, Items.IRON_INGOT).build()))
                 .save(consumer, GenerationsCore.id("healer"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.PC.dyeMap().get(DyeColor.RED).get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ROTOM_PC.get(), 1)
                 .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
                 .define('A', Blocks.GLASS_PANE)
                 .define('R', Items.REDSTONE)
@@ -62,7 +62,6 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer, GenerationsCore.id("pc"));
 
         for (DyeColor color : DyeColor.values()) {
-            buildColoredPcCraftingRecipes(consumer, color);
             buildClockRecipes(consumer, color);
             buildVendingMachineRecipes(consumer, color);
             buildColoredHealerCraftingRecipes(consumer, color);
@@ -175,20 +174,6 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("EHE")
                 .pattern("EEE")
                 .unlockedBy(getHasName(GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get()), has(GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get())) //TODO: Decide which color to be base or incorporate dye into recipe.
-                .save(consumer);
-    }
-
-    private void buildColoredPcCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
-        var dye = DyeItem.byColor(color);
-        var finishedPc = GenerationsUtilityBlocks.PC.dyeMap().get(color).get();
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, finishedPc)
-                .define('E', dye)
-                .define('H', GenerationsItemTags.PC)
-                .pattern("EEE")
-                .pattern("EHE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsUtilityBlocks.PC.dyeMap().get(DyeColor.RED).get()), has(GenerationsUtilityBlocks.PC.dyeMap().get(DyeColor.RED).get())) //TODO: Decide if to incorporate dye into recipe.
                 .save(consumer);
     }
 

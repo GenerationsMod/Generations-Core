@@ -503,9 +503,6 @@ public class TagsDatagen {
 
             tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS.location()).addOptionalTag(ResourceLocation.tryParse("c:shears"));
 
-            //PC
-            GenerationsUtilityBlocks.PC.dyeMap().values().forEach(pc -> tag(GenerationsItemTags.PC).add(pc.get()));
-
             //Forge Armor Tags
             GenerationsArmor.ARMOR.forEach(armor -> {
                 switch (((ArmorItem) armor.get()).getType()){

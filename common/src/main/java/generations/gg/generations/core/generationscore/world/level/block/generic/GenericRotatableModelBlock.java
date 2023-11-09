@@ -284,6 +284,10 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         return width;
     }
 
+    public int height() {
+        return height;
+    }
+
     public int length() {
         return length;
     }

@@ -24,7 +24,8 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation LIGHT_MODEL = GenerationsCore.id("models/block/shrines/lunar_shrine/light_shrine.pk");
     public static final ResourceLocation MELOETTA_MUSIC_BOX = GenerationsCore.id("models/block/shrines/meloetta_music_box/meloetta_music_box.pk");
     public static final ResourceLocation PASTEL_BEAN_BAG = GenerationsCore.id("models/block/decorations/pastel_bean_bag.pk");
-    public static final ResourceLocation PC = GenerationsCore.id("models/block/utility_blocks/pc.pk");
+    public static final ResourceLocation ROTOM_PC = GenerationsCore.id("models/block/utility_blocks/rotom_pc.pk");
+    public static final ResourceLocation TABLE_PC = GenerationsCore.id("models/block/utility_blocks/table_pc.pk");
     public static final ResourceLocation POKECENTER_SCARLET_SIGN = GenerationsCore.id("models/block/decorations/pokecenter_scarlet_sign.pk");
     public static final ResourceLocation DEFAULT_POKEDOLL = GenerationsCore.id("models/block/pokedolls/charizard.pk");
     public static final ResourceLocation RED_HEALER = GenerationsCore.id("models/block/utility_blocks/red_healer/healer.pk");

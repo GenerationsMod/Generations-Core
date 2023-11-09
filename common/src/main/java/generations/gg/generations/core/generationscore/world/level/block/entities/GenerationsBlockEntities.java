@@ -247,7 +247,6 @@ public class GenerationsBlockEntities {
     ).build(null));
     public static final RegistrySupplier<BlockEntityType<GenericDyedVariantBlockEntity>> GENERIC_DYED_VARIANT = BLOCK_ENTITIES.register("generic_dyed_variant", () -> BlockEntityType.Builder.of(GenericDyedVariantBlockEntity::new,
             GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block().get(),
-            GenerationsUtilityBlocks.PC.block().get(),
             GenerationsUtilityBlocks.TRASH_CAN.get(),
                     GenerationsDecorationBlocks.SWIVEL_CHAIR.block().get())
             .build(null));
@@ -296,7 +295,7 @@ public class GenerationsBlockEntities {
             GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get()
     ).build(null));
 
-    public static final RegistrySupplier<BlockEntityType<PcBlockEntity>> PC = BLOCK_ENTITIES.register("pc", () -> BlockEntityType.Builder.of(PcBlockEntity::new, GenerationsUtilityBlocks.PC.block().get()).build(null));
+    public static final RegistrySupplier<BlockEntityType<PcBlockEntity>> PC = BLOCK_ENTITIES.register("pc", () -> BlockEntityType.Builder.of(PcBlockEntity::new, GenerationsUtilityBlocks.ROTOM_PC.get(), GenerationsUtilityBlocks.TABLE_PC.get()).build(null));
 
     public static final RegistrySupplier<BlockEntityType<BallLootBlockEntity>> BALL_LOOT = BLOCK_ENTITIES.register("poke_loot", () -> BlockEntityType.Builder.of(BallLootBlockEntity::new,
             GenerationsUtilityBlocks.BEAST_BALL_LOOT.get(),

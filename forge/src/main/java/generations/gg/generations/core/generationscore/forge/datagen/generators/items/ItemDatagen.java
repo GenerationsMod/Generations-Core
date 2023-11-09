@@ -1190,7 +1190,8 @@ public class ItemDatagen extends ItemModelProvider {
 
         createItemBlock(GenerationsUtilityBlocks.COOKING_POT.get(), "item/blocks/utility_blocks/");
         GenerationsUtilityBlocks.HEALER.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "utility_blocks/healer"));
-        GenerationsUtilityBlocks.PC.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "utility_blocks/pc"));
+        createItemBlock(GenerationsUtilityBlocks.TABLE_PC.get(), "item/blocks/utility_blocks/");
+        createItemBlock(GenerationsUtilityBlocks.ROTOM_PC.get(), "item/blocks/utility_blocks/");
         GenerationsUtilityBlocks.CLOCK.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "clocks"));
 //        GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> createItemBlock(block.get(), "item/blocks/ball_loots/"));
 //        createItemBlock(GenerationsUtilityBlocks.TRASH_CAN.get(), "item/blocks/utility_blocks/");

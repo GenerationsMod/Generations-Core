@@ -1,21 +1,19 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities
 
-import com.cobblemon.mod.common.CobblemonBlocks
 import com.cobblemon.mod.common.api.storage.pc.link.PCLinkManager
-import com.cobblemon.mod.common.api.storage.pc.link.ProximityPCLink
-import com.cobblemon.mod.common.block.PCBlock
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.PcBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.entity.BlockEntityTicker
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.entity.EntityTypeTest
 import net.minecraft.world.phys.AABB
 
-class PcBlockEntity(blockPos: BlockPos, blockState: BlockState
-) : DyedVariantBlockEntity<PcBlockEntity>(GenerationsBlockEntities.PC.get(), blockPos, blockState) {
+class PcBlockEntity(
+    blockPos: BlockPos, blockState: BlockState,
+) : ModelProvidingBlockEntity(GenerationsBlockEntities.PC.get(), blockPos, blockState), VariantProvider {
 
     companion object {
         internal val TICKER = BlockEntityTicker<PcBlockEntity> { world, _, _, blockEntity ->
@@ -33,14 +31,11 @@ class PcBlockEntity(blockPos: BlockPos, blockState: BlockState
             val posBottom = pcBlock.getBaseBlockPos(blockPos, blockState)
             val stateBottom = world.getBlockState(posBottom)
 
-            val dye = (world.getBlockEntity(posBottom) as? PcBlockEntity)?.color
-
             val posTop = posBottom.above()
 
             if (stateBottom.getValue(PcBlock.ON) != on) {
-                world.setBlockAndUpdate(posTop, stateBottom.setValue(PcBlock.ON, on).setValue(pcBlock.heightProperty, 1))
                 world.setBlockAndUpdate(posBottom, stateBottom.setValue(PcBlock.ON, on))
-                (world.getBlockEntity(posBottom) as? PcBlockEntity)?.color = dye
+                if((stateBottom.block as PcBlock).height() == 1) world.setBlockAndUpdate(posTop, stateBottom.setValue(PcBlock.ON, on).setValue(pcBlock.heightProperty, 1))
             }
         }
     }
@@ -67,6 +62,6 @@ class PcBlockEntity(blockPos: BlockPos, blockState: BlockState
     }
 
     override fun getVariant(): String {
-        return super.getVariant() + "_" + (if(blockState.getValue(PcBlock.ON)) "on" else "off")
+        return (if(blockState.getValue(PcBlock.ON)) "on" else "off")
     }
 }
