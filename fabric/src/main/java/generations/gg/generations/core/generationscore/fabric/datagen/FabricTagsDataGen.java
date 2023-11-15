@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.fabric.datagen;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -57,6 +58,7 @@ class ItemTagsProvider extends FabricTagProvider.ItemTagProvider {
     protected void addTags(HolderLookup.Provider arg) {
         getOrCreateTagBuilder(ConventionalItemTags.ORES).forceAddTag(GenerationsItemTags.GENERATIONSORES);
         getOrCreateTagBuilder(ConventionalItemTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get().asItem());
+        getOrCreateTagBuilder(ConventionalItemTags.INGOTS).add(GenerationsItems.Z_INGOT.get(), GenerationsItems.ALUMINUM_INGOT.get());
     }
 }
 

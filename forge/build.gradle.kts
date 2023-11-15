@@ -62,12 +62,10 @@ dependencies {
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
-//    modApi("com.jozufozu.flywheel:flywheel-forge-$minecraftVersion:${project.properties["flywheel_forge_version"]}")
 
     //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.5.0")
+    modRuntimeOnly("thedarkcolour:kotlinforforge:4.5.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
-
 }
 
 tasks {
@@ -81,8 +79,8 @@ tasks {
     }
 
     shadowJar {
-        exclude("fabric.mod.json")
-        exclude("generations/gg/generations/core/generationscore/forge/datagen/**")
+        exclude("fabric.mod.json",
+            "generations/gg/generations/core/generationscore/forge/datagen/**")
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
     }
