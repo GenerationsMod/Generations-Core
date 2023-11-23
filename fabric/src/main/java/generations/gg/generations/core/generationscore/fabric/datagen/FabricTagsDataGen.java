@@ -59,6 +59,7 @@ class ItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ConventionalItemTags.ORES).forceAddTag(GenerationsItemTags.GENERATIONSORES);
         getOrCreateTagBuilder(ConventionalItemTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get().asItem());
         getOrCreateTagBuilder(ConventionalItemTags.INGOTS).add(GenerationsItems.Z_INGOT.get(), GenerationsItems.ALUMINUM_INGOT.get());
+        getOrCreateTagBuilder(ConventionalItemTags.NUGGETS).add(GenerationsItems.ALUMINUM_NUGGET.get());
     }
 }
 
