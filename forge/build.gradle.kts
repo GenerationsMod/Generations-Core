@@ -24,8 +24,8 @@ loom {
         convertAccessWideners.set(true)
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
 
-        mixinConfig("GenerationsCore-common.mixins.json")
-        mixinConfig("GenerationsCore.mixins.json")
+        mixinConfigs("GenerationsCore-common.mixins.json",
+            "GenerationsCore.mixins.json")
     }
 
     runs.create("data") {
@@ -64,7 +64,7 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 
     //Cobblemon
-    modRuntimeOnly("thedarkcolour:kotlinforforge:4.5.0")
+    modRuntimeOnly("thedarkcolour:kotlinforforge:4.7.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 }
 
@@ -80,7 +80,8 @@ tasks {
 
     shadowJar {
         exclude("fabric.mod.json",
-            "generations/gg/generations/core/generationscore/forge/datagen/**")
+            "generations/gg/generations/core/generationscore/forge/datagen/**",
+            "architectury.common.json")
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
     }
@@ -107,7 +108,7 @@ components {
 }
 
 publishing {
-    publications.create<MavenPublication>("mavenCommon") {
+    publications.create<MavenPublication>("mavenForge") {
         artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
         from(components["java"])
     }

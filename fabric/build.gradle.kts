@@ -61,7 +61,7 @@ dependencies {
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
-    modApi("net.fabricmc:fabric-language-kotlin:1.10.13+kotlin.1.9.20")
+    modApi("net.fabricmc:fabric-language-kotlin:1.10.14+kotlin.1.9.20")
     modRuntimeOnly("com.jozufozu.flywheel:flywheel-fabric-$minecraftVersion:${project.properties["flywheel_fabric_version"]}")
 }
 
@@ -81,8 +81,11 @@ tasks {
     }
 
     shadowJar {
-        exclude("generations/gg/generations/core/generationscore/fabric/datagen/**",
-            "data/forge/**")
+        exclude(mutableListOf(
+            "generations/gg/generations/core/generationscore/fabric/datagen/**",
+            "data/forge/**",
+            "architectury.common.json"
+        ))
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
     }
@@ -110,7 +113,7 @@ components {
 }
 
 publishing {
-    publications.create<MavenPublication>("mavenCommon") {
+    publications.create<MavenPublication>("mavenFabric") {
         artifactId = "${project.properties["archives_base_name"]}" + "-Fabric"
         from(components["java"])
     }
