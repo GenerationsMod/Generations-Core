@@ -21,6 +21,7 @@ public class GenerationsItemTags {
     public static final TagKey<Item> GHOST_LOGS = create("ghost_logs");
     public static final TagKey<Item> CHARGE_STONE_BRICKS = create("charge_stone_bricks");
     public static final TagKey<Item> VOLCANIC_STONE_BRICKS = create("volcanic_stone_bricks");
+    public static final TagKey<Item> POKEBALL_CHESTS = create("pokeball_chests");
 
     public static final TagKey<Item> POKEMAIL = create("pokemail");
     public static final TagKey<Item> CLOSED_POKEMAIL = create("sealed_pokemail");

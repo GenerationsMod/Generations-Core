@@ -356,6 +356,8 @@ public class TagsDatagen {
             //Charge and Volcanic Stone Brick Tags like Vanilla
             copy(GenerationsBlockTags.CHARGE_STONE_BRICKS, GenerationsItemTags.CHARGE_STONE_BRICKS);
             copy(GenerationsBlockTags.VOLCANIC_STONE_BRICKS, GenerationsItemTags.VOLCANIC_STONE_BRICKS);
+            copy(GenerationsBlockTags.POKEBALL_CHESTS, GenerationsItemTags.POKEBALL_CHESTS);
+            tag(Tags.Items.CHESTS).addTag(GenerationsItemTags.POKEBALL_CHESTS);
 
             //Discs
             tag(ItemTags.MUSIC_DISCS).add(
