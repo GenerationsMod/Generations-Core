@@ -6,7 +6,6 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "AbstractFurnaceBlockEntityMixin",
-    "LivingEntityAccessor",
     "ServerPlayerMixin"
   ],
   "client": [

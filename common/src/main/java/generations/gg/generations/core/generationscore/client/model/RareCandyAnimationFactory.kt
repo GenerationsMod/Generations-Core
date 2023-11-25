@@ -18,8 +18,8 @@ import java.util.function.Supplier
 
 class RareCandyAnimationFactory : AnimationReferenceFactory {
     override fun stateful(
-        jsonPokemonPoseableModel: JsonPokemonPoseableModel,
-        s: String
+            model: JsonPokemonPoseableModel,
+            s: String
     ): StatefulAnimation<PokemonEntity, ModelFrame> {
         val split =
             s.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()

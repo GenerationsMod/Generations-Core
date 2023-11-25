@@ -5,7 +5,6 @@ import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.common.collect.ImmutableMap;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
-import generations.gg.generations.core.generationscore.mixin.LivingEntityAccessor;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
 import generations.gg.generations.core.generationscore.network.packets.npc.S2COpenNpcCustomizationScreenPacket;
@@ -241,7 +240,7 @@ public class PlayerNpcEntity extends PathfinderMob implements ShopOfferProvider 
                 default -> 1.62F;
             }  * getRenderedScale();
         }
-        return ((LivingEntityAccessor) renderedEntity).generationscore_getEyeHeight(poseIn, sizeIn) * getRenderedScale();
+        return ((Entity) renderedEntity).getEyeHeight(poseIn, sizeIn) * getRenderedScale();
     }
 
     public void setDialogue(@Nullable ResourceLocation key) {
