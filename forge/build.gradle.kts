@@ -1,5 +1,6 @@
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.modrinth.minotaur") version "2.+"
 }
 
 architectury {
@@ -97,6 +98,22 @@ tasks {
         val commonSources = project(":common").tasks.sourcesJar
         dependsOn(commonSources)
         from(commonSources.get().archiveFile.map { zipTree(it) })
+    }
+
+    modrinth {
+        token.set(project.properties["modrinth_token"] as String)
+        projectId.set("numhere")
+        versionNumber.set(project.properties["mod_version"] as String)
+        versionType.set("release")
+        uploadFile.set(remapJar.get().archiveFile)
+        gameVersions.add(minecraftVersion)
+        loaders.add("forge")
+        dependencies {
+            required.project("cobblemon")
+            required.project("kotlin-for-forge")
+            required.project("architectury-api")
+            required.project("botarium")
+        }
     }
 }
 

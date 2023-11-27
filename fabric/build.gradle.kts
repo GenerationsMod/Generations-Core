@@ -1,5 +1,6 @@
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.modrinth.minotaur") version "2.+"
 }
 
 architectury {
@@ -61,7 +62,7 @@ dependencies {
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
-    modApi("net.fabricmc:fabric-language-kotlin:1.10.14+kotlin.1.9.20")
+    modApi("net.fabricmc:fabric-language-kotlin:1.10.15+kotlin.1.9.21")
     modRuntimeOnly("com.jozufozu.flywheel:flywheel-fabric-$minecraftVersion:${project.properties["flywheel_fabric_version"]}")
 }
 
@@ -102,6 +103,23 @@ tasks {
         val commonSources = project(":common").tasks.sourcesJar
         dependsOn(commonSources)
         from(commonSources.get().archiveFile.map { zipTree(it) })
+    }
+
+    modrinth {
+        token.set(project.properties["modrinth_token"] as String)
+        projectId.set("numhere")
+        versionNumber.set(project.properties["mod_version"] as String)
+        versionType.set("release")
+        uploadFile.set(remapJar.get().archiveFile)
+        gameVersions.add(minecraftVersion)
+        loaders.add("fabric")
+        dependencies {
+            required.project("fabric-api")
+            required.project("cobblemon")
+            required.project("fabric-language-kotlin")
+            required.project("architectury-api")
+            required.project("botarium")
+        }
     }
 }
 
