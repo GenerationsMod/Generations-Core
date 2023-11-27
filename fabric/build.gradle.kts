@@ -1,3 +1,5 @@
+import com.modrinth.minotaur.TaskModrinthUpload
+
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("com.modrinth.minotaur") version "2.+"
@@ -105,20 +107,23 @@ tasks {
         from(commonSources.get().archiveFile.map { zipTree(it) })
     }
 
-    modrinth {
-        token.set(project.properties["modrinth_token"] as String)
-        projectId.set("numhere")
-        versionNumber.set(project.properties["mod_version"] as String)
-        versionType.set("release")
-        uploadFile.set(remapJar.get().archiveFile)
-        gameVersions.add(minecraftVersion)
-        loaders.add("fabric")
-        dependencies {
-            required.project("fabric-api")
-            required.project("cobblemon")
-            required.project("fabric-language-kotlin")
-            required.project("architectury-api")
-            required.project("botarium")
+    create("publishModrinth", TaskModrinthUpload::class) {
+        dependsOn(remapJar)
+        modrinth {
+            token.set(project.properties["modrinth_token"] as String)
+            projectId.set("generations-core")
+            versionNumber.set(project.properties["mod_version"] as String)
+            versionType.set("release")
+            uploadFile.set(remapJar.get().archiveFile)
+            gameVersions.add(minecraftVersion)
+            loaders.add("fabric")
+            dependencies {
+                required.project("fabric-api")
+                required.project("cobblemon")
+                required.project("fabric-language-kotlin")
+                required.project("architectury-api")
+                required.project("botarium")
+            }
         }
     }
 }
