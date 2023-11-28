@@ -81,7 +81,8 @@ tasks {
     shadowJar {
         exclude("fabric.mod.json",
             "generations/gg/generations/core/generationscore/forge/datagen/**",
-            "architectury.common.json")
+            "architectury.common.json",
+            ".cache")
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
     }

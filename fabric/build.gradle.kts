@@ -84,7 +84,8 @@ tasks {
         exclude(mutableListOf(
             "generations/gg/generations/core/generationscore/fabric/datagen/**",
             "data/forge/**",
-            "architectury.common.json"
+            "architectury.common.json",
+            ".cache"
         ))
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
