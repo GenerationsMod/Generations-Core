@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
-public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implements ModelContextProviders.ModelProvider {
+public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implements ModelContextProviders.ModelProvider, ModelContextProviders.VariantProvider {
     public ObjectInstance[] objectInstance;
     private AABB boundingBox;
 
@@ -24,6 +24,11 @@ public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implem
     public AABB getBoundingBox() {
         if(boundingBox == null) boundingBox = getBlockState().getBlock() instanceof GenericModelBlock<?> block ? block.computeRenderBoundingBox(getLevel(), getBlockPos(), getBlockState()) : defaultAABB(getBlockPos());
         return boundingBox;
+    }
+
+    @Override
+    public String getVariant() {
+        return getBlockState().getBlock() instanceof ModelContextProviders.VariantProvider provider ? provider.getVariant() : null;
     }
 
     public static AABB defaultAABB(BlockPos pos) {

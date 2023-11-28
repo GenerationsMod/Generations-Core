@@ -35,6 +35,9 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
+import gg.generations.rarecandy.pokeutils.reader.TextureReference;
+import gg.generations.rarecandy.renderer.loading.ITexture;
+import gg.generations.rarecandy.tools.TextureLoader;
 import kotlin.Unit;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -74,6 +77,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Vector4f;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
@@ -110,6 +115,38 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
+
+            TextureLoader.setInstance(new gg.generations.rarecandy.pokeutils.reader.TextureLoader() {
+                final Map<String, ResourceLocation> MAP = new HashMap<>();
+
+                @Override
+                public ITexture getTexture(String s) {
+                    return (ITexture) Minecraft.getInstance().getTextureManager().getTexture(MAP.get(s));
+                }
+
+                @Override
+                public void register(String s, TextureReference textureReference) {
+                    var location = Minecraft.getInstance().getTextureManager().register(s, new generations.gg.generations.core.generationscore.client.render.rarecandy.Texture(textureReference));
+                    MAP.putIfAbsent(s, location);
+                }
+
+                @Override
+                public void remove(String s) {
+                    Minecraft.getInstance().getTextureManager().release(MAP.get(s));
+                }
+
+                @Override
+                public void clear() {
+                    var manager = Minecraft.getInstance().getTextureManager();
+
+                    for (var entry : MAP.keySet()) {
+                        manager.release(MAP.get(entry));
+                    }
+
+                    MAP.clear();
+                }
+            });
+
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
         });

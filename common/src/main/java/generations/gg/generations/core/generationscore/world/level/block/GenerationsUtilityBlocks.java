@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
@@ -105,13 +106,13 @@ public class GenerationsUtilityBlocks {
 	}
 
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
-		RegistrySupplier<T> block = UTILITY_BLOCKS.register(name, blockSupplier);
+		RegistrySupplier<T> block = registerBlock(name, blockSupplier);
 		register(name, properties -> new BlockItem(block.get(), properties));
 		return block;
 	}
 
 	private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> blockSupplier) {
-		return UTILITY_BLOCKS.register(name, blockSupplier);
+		return GenerationsUtils.registerBlock(UTILITY_BLOCKS, name, blockSupplier);
 	}
 
 	public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, Function<Function<DyeColor, DyedBlockItem<T, V>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {

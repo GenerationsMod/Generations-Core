@@ -33,7 +33,10 @@ public class ModelRegistry {
         public @NotNull CompiledModel load(@NotNull Pair<ResourceLocation, String> pair) {
             try {
                 var resourceManager = Minecraft.getInstance().getResourceManager();
-                var is = resourceManager.getResource(pair.a()).orElseGet(() -> resourceManager.getResource(GenerationsCore.id("models/pokemon/substitute.pk")).orElseThrow()).open();
+                var is = resourceManager.getResource(pair.a()).orElseGet(() -> {
+                    System.out.println("Oh No: " + pair.a + "/" + pair.b);
+                    return resourceManager.getResource(GenerationsCore.id("models/pokemon/substitute.pk")).orElseThrow();
+                }).open();
                 return new CompiledModel(pair.a, is, Pipelines.getPipeline(pair.b()), MESH_OBJECT_SUPPLIER);
             } catch (Exception e) {
                 var path = pair.a().toString();
@@ -60,21 +63,21 @@ public class ModelRegistry {
 
     public static void prepForBER(PoseStack stack, ModelContextProviders.AngleProvider supplier) {
 
+        stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
 
         if(supplier instanceof ModelProvidingBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof GenericRotatableModelBlock<?> block) {
             var dir = blockEntity.getBlockState().getValue(GenericRotatableModelBlock.FACING);
             var opposite = dir.getOpposite();
             var counterClockwise = dir.getCounterClockWise();
 
-            var displaceX = block.width() / 2f;
-            var dispalceZ = block.length() / 2f;
+            var displaceX = (block.width()+1) / 2f;
+            var dispalceZ = (block.length()+1) / 2f;
 
 
-            stack.translate((opposite.getStepX() + counterClockwise.getStepX()) * displaceX, 0.0f, (opposite.getStepZ() + counterClockwise.getStepZ()) * dispalceZ);
+            stack.translate(counterClockwise.getStepX() * displaceX, 0.0f, opposite.getStepZ() * dispalceZ);
         }
 
-        stack.translate(0.5f, 0.0f, 0.5f);
-        stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
+//        stack.translate(0.5f, 0.0f, 0.5f);
     }
 
     private record Pair<A, B>(A a, B b) {}

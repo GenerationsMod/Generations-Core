@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
@@ -10,6 +11,7 @@ import generations.gg.generations.core.generationscore.world.level.block.decorat
 import generations.gg.generations.core.generationscore.world.level.block.entities.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock.DisplayState;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -39,21 +41,29 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> LITWICK_CANDLE = registerDecorationItem("litwick_candle", () -> new LitwickCandleBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 11).destroyTime(0.7f)));
     public static final RegistrySupplier<Block> LITWICK_CANDLES = registerDecorationItem("litwick_candles", () -> new LitwickCandlesBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 15).destroyTime(0.5f)));
 
-    /**
-     * Decoration Blocks (Vending Machine)
-     */
     public static final DyedGroup<VendingMachineBlock, VendingMachineBlockEntity> VENDING_MACHINE = registerDyed("vending_machine", function -> () -> new VendingMachineBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-
-    /**
-     * Decoration Blocks (Bean Bags)
-     */
     public static final RegistrySupplier<Block> SNORLAX_BEAN_BAG = registerDecorationItem("snorlax_bean_bag", () -> new BeanBagBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
-//    public static final RegistrySupplier<PastelBeanBagBlock> PASTEL_BEAN_BAG = registerBlock("pastel_bean_bag", () -> new PastelBeanBagBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
-
     public static final DyedGroup<PastelBeanBagBlock, GenericDyedVariantBlockEntity> PASTEL_BEAN_BAG = registerDyed("pastel_bean_bag", function -> () -> new PastelBeanBagBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
-
-
     public static final DyedGroup<SwivelChairBlock, GenericDyedVariantBlockEntity> SWIVEL_CHAIR = registerDyed("swivel_chair", function -> () -> new SwivelChairBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));;
+    public static final RegistrySupplier<Block> BENCH = registerDecorationItem("bench", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.WOOL).strength(1.0f).sound(SoundType.WOOD)));
+    public static final RegistrySupplier<Block> BUSH = registerDecorationItem("bush", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.GRASS).strength(1.0f)));
+
+    public static final RegistrySupplier<Block> DESK = registerDecorationItem("desk", () -> new DeskBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(1.0f).sound(SoundType.WOOD)));
+
+    public static final RegistrySupplier<Block> FRIDGE = registerDecorationItem("fridge", () -> new FridgeBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(.5f)));
+
+    public static final RegistrySupplier<Block> POKEBALL_PILLAR = registerDecorationItem("pokeball_pillar", () -> new PokeballPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.0f)));
+
+    public static final RegistrySupplier<Block> HDTV = registerDecorationItem("hdtv", () -> new HdTvBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(.5f)));
+
+//    public static final RegistrySupplier<Block> SHOP_DISPLAY_CASE_1 = registerDecorationItem("shop_display_case_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
+//    public static final RegistrySupplier<Block> SHOP_DISPLAY_CASE_2 = registerDecorationItem("shop_display_case_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
+//    public static final RegistrySupplier<Block> SHOP_DISPLAY_SHELF_1 = registerDecorationItem("shop_display_shelf_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
+//    public static final RegistrySupplier<Block> SHOP_DISPLAY_SHELF_2 = registerDecorationItem("shop_display_shelf_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
+//    public static final RegistrySupplier<Block> ROUND_SHOP_DISPLAY_SHELF_1 = registerDecorationItem("round_shop_display_shelf_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
+//    public static final RegistrySupplier<Block> ROUND_SHOP_DISPLAY_SHELF_2 = registerDecorationItem("round_shop_display_shelf_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
+
+
 
     public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, Function<Function<DyeColor, DyedBlockItem<T, V>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
 
@@ -112,13 +122,13 @@ public class GenerationsDecorationBlocks {
     }
 
     private static <T extends Block> RegistrySupplier<T> registerDecorationItem(String name, Supplier<T> blockSupplier) {
-        RegistrySupplier<T> block = DECORATIONS.register(name, blockSupplier);
+        RegistrySupplier<T> block = registerBlock(name, blockSupplier);
         register(name, properties -> new BlockItem(block.get(), properties));
         return block;
     }
 
     private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> blockSupplier) {
-        return DECORATIONS.register(name, blockSupplier);
+        return GenerationsUtils.registerBlock(DECORATIONS, name, blockSupplier);
     }
 
     private static <T extends BlockItem> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier) {

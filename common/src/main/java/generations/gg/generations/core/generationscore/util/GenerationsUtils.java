@@ -7,6 +7,12 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
@@ -17,6 +23,7 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
@@ -28,6 +35,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiFunction;
+import java.util.function.Supplier;
 
 public class GenerationsUtils {
 
@@ -120,6 +128,22 @@ public class GenerationsUtils {
         if(!player.getInventory().add(stack)) {
             Containers.dropItemStack(player.level(), player.position().x, player.position().y, player.position().z, stack);
         }
+    }
+
+    public static <T extends Block> RegistrySupplier<T> registerBlock(DeferredRegister<Block> deferredRegister, String name, Supplier<T> blockSupplier) {
+        return deferredRegister.register(name, applyMutable(name, blockSupplier));
+    }
+
+    private static <T extends Block> Supplier<T> applyMutable(String name, Supplier<T> blockSupplier) {
+        return () -> {
+            var block = blockSupplier.get();
+
+            if(block instanceof GenericModelBlock<?> genericModelBlock) {
+                MutableBlockEntityType.blocksToAdd.add(genericModelBlock);
+            }
+
+            return block;
+        };
     }
 
     public record Serializer<T>(Codec<T> codec) implements JsonSerializer<T>, JsonDeserializer<T> {

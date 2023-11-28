@@ -43,7 +43,6 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation TAPU_SHRINE = GenerationsCore.id("models/block/shrines/tapu_shrine/tapu_shrine.pk");
     public static final ResourceLocation TIME_SPACE_ALTAR = GenerationsCore.id("models/block/shrines/creation_trio/time_space_altar.pk");
     public static final ResourceLocation TRASH_CAN  = GenerationsCore.id("models/block/decorations/trash_can.pk");
-    public static final ResourceLocation UMBRELLA = GenerationsCore.id("models/block/decorations/umbrella.pk");
     public static final ResourceLocation POKEBALL_RUG = GenerationsCore.id("models/block/decorations/rug.pk");
     public static final ResourceLocation WHITE_HEALER = GenerationsCore.id("models/block/utility_blocks/healer.pk");
     public static final ResourceLocation VENDING_MACHINE = GenerationsCore.id("models/block/utility_blocks/vending_machine.pk");
@@ -54,21 +53,19 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation CUSHION_CHAIR = GenerationsCore.id("models/block/decorations/cushion_chair.pk");
     public static final ResourceLocation DESK = GenerationsCore.id("models/block/decorations/desk.pk");
     public static final ResourceLocation DOUBLE_STREET_LAMP = GenerationsCore.id("models/block/decorations/double_street_lamp.pk");
-    public static final ResourceLocation END_TABLE = GenerationsCore.id("models/block/decorations/end_table.pk");
     public static final ResourceLocation FLOOR_CUSHION = GenerationsCore.id("models/block/decorations/floor_cushion.pk");
-    public static final ResourceLocation FOSSIL_DISPLAY = GenerationsCore.id("models/block/decorations/fossil_display.pk");
     public static final ResourceLocation FRIDGE = GenerationsCore.id("models/block/decorations/fridge.pk");
     public static final ResourceLocation GYM_SIGN = GenerationsCore.id("models/block/decorations/gym_sign.pk");
     public static final ResourceLocation LITWICK_CANDLE = GenerationsCore.id("models/block/decorations/litwick_candle.pk");
     public static final ResourceLocation LITWICK_CANDLES = GenerationsCore.id("models/block/decorations/litwick_candles.pk");
-    public static final ResourceLocation POKEBALL_STATUE = GenerationsCore.id("models/block/decorations/pokeball_statue.pk");
-    public static final ResourceLocation POT_PLANT = GenerationsCore.id("models/block/decorations/pot_plant.pk");
+    public static final ResourceLocation POKEBALL_PILLAR = GenerationsCore.id("models/block/decorations/pokeball_pillar.pk");
+    public static final ResourceLocation BUSH = GenerationsCore.id("models/block/decorations/bush.pk");
     public static final ResourceLocation RUG = GenerationsCore.id("models/block/decorations/rug.pk");
+    public static final ResourceLocation HDTV = GenerationsCore.id("models/block/decorations/hdtv.pk");
     public static final ResourceLocation SWIVEL_CHAIR = GenerationsCore.id("models/block/decorations/swivel_chair.pk");
     public static final ResourceLocation TALL_HOUSE_LAMP = GenerationsCore.id("models/block/decorations/tall_house_lamp.pk");
-    public static final ResourceLocation TREE = GenerationsCore.id("models/block/decorations/tree.pk");
-    public static final ResourceLocation WATER_FLOAT = GenerationsCore.id("models/block/decorations/water_float.pk");
     public static final ResourceLocation WORK_DESK = GenerationsCore.id("models/block/decorations/work_desk.pk");
+    public static final ResourceLocation SHOP = GenerationsCore.id("models/block/decorations/shop.pk");
 
     public static final ResourceLocation BALL_DISPLAY = GenerationsCore.id("models/block/decorations/ball_display.pk");
     public static final ResourceLocation POKEBALL = GenerationsCore.id("models/block/utility_blocks/pokeball.pk");

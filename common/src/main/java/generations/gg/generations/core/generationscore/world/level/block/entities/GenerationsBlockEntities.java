@@ -251,7 +251,7 @@ public class GenerationsBlockEntities {
                     GenerationsDecorationBlocks.SWIVEL_CHAIR.block().get())
             .build(null));
 
-    public static final RegistrySupplier<BlockEntityType<GenericModelProvidingBlockEntity>> GENERIC_MODEL_PROVIDING = BLOCK_ENTITIES.register("generic_model_providing", () -> BlockEntityType.Builder.of(GenericModelProvidingBlockEntity::new,
+    public static final RegistrySupplier<BlockEntityType<GenericModelProvidingBlockEntity>> GENERIC_MODEL_PROVIDING = BLOCK_ENTITIES.register("generic_model_providing", () -> MutableBlockEntityType.Builder.create(GenericModelProvidingBlockEntity::new,
                     GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(),
                     GenerationsDecorationBlocks.SWITCH.get(),
                     GenerationsDecorationBlocks.HOUSE_LAMP.get(),

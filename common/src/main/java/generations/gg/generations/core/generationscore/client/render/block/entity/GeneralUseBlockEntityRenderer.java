@@ -54,7 +54,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
                 blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), null);
         }
 
-        String variant = blockEntity instanceof ModelContextProviders.VariantProvider provider ? provider.getVariant() : null;
+        String variant = blockEntity.getVariant();
 
         for (var instance : blockEntity.objectInstance) {
             if (!Objects.equals(instance.materialId(), variant)) {
@@ -83,7 +83,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         blockEntity.objectInstance = new ObjectInstance[amount];
 
         for (int i = 0; i < amount; i++) {
-            blockEntity.objectInstance[i] = new BlockAnimatedObjectInstance(new Matrix4f(), new Matrix4f(), blockEntity instanceof ModelContextProviders.VariantProvider variantProvider ? variantProvider.getVariant() : null);
+            blockEntity.objectInstance[i] = new BlockAnimatedObjectInstance(new Matrix4f(), new Matrix4f(), blockEntity.getVariant());
         }
 
         var primeInstance = blockEntity.objectInstance[0];

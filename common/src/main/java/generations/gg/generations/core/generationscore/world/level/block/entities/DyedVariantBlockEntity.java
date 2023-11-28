@@ -7,7 +7,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public abstract class DyedVariantBlockEntity<T extends DyedVariantBlockEntity<?>> extends ModelProvidingBlockEntity implements ModelContextProviders.VariantProvider {
+public abstract class DyedVariantBlockEntity<T extends DyedVariantBlockEntity<?>> extends ModelProvidingBlockEntity {
     private DyeColor color = DyeColor.RED;
 
     public DyedVariantBlockEntity(BlockEntityType<T> arg, BlockPos arg2, BlockState arg3) {

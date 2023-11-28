@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,6 +22,43 @@ public class GenerationsVoxelShapes {
 
     public static DirectionalShapes generateDirectionVoxelShape(VoxelShape shape, Direction source) {
         return new DirectionalShapes(rotateShape(source, Direction.NORTH, shape), rotateShape(source, Direction.EAST, shape), rotateShape(source, Direction.SOUTH, shape), rotateShape(source, Direction.WEST, shape));
+    }
+
+    public static GenericRotatableShapes generateRotationalVoxelShape(VoxelShape shape, Direction source, int width, int height, int length) {
+        var array = new DirectionalShapes[width*height*length];
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                for (int z = 0; z < length; z++) {
+                    var index = x+width*(y+height*z);
+
+                    var mask = Shapes.block().move(x, y, z);
+                    array[index] = generateDirectionVoxelShape(Shapes.join(shape, mask, BooleanOp.AND).move(-x, -y, -z), source);
+
+
+                }
+            }
+        }
+
+
+        return new GenericRotatableShapes(array, width, height, length);
+    }
+
+
+    public record GenericRotatableShapes(DirectionalShapes[] array, int width, int height, int length) {
+        public VoxelShape getShape(BlockState state) {
+            if(state.getBlock() instanceof GenericRotatableModelBlock<?> block) {
+                int x = block.getWidthValue(state);
+                int y = block.getHeightValue(state);
+                int z = block.getLengthValue(state);
+
+                var index = x+width*(y+height*z);
+
+                return array[index].getShape(state);
+            }
+
+            return Shapes.empty();
+        }
     }
 
     public record DirectionalShapes(VoxelShape north, VoxelShape east, VoxelShape south, VoxelShape west) {

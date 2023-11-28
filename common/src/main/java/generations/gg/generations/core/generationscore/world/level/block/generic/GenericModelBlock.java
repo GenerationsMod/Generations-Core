@@ -32,7 +32,7 @@ import java.util.Optional;
 import java.util.function.BiFunction;
 
 @SuppressWarnings("deprecation")
-public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.ModelProvider> extends BaseEntityBlock implements SimpleWaterloggedBlock {
+public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.ModelProvider> extends BaseEntityBlock implements SimpleWaterloggedBlock, ModelContextProviders.VariantProvider {
     protected static final BooleanProperty WATERLOGGED = BooleanProperty.create("waterlogged");
     private static final BiFunction<BlockPos, BlockState, BlockPos> DEFAUL_BLOCK_POS_FUNCTION = (pos, state) -> pos;
 
@@ -133,5 +133,14 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
         }
 
         return super.updateShape(blockState, direction, blockState2, levelAccessor, blockPos, blockPos2);
+    }
+
+    public BlockEntityType<T> getBlockEntityType() {
+        return blockEntityFunction.get();
+    }
+
+    @Override
+    public String getVariant() {
+        return null;
     }
 }
