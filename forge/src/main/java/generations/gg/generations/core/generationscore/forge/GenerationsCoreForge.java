@@ -61,7 +61,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
-        ConfigLoader.CONFIG_DIRECTORY = FMLPaths.CONFIGDIR.get();
+        ConfigLoader.setConfigDirectory(FMLPaths.CONFIGDIR.get());
         GenerationsCore.init(this);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
         var EVENT_BUS = MinecraftForge.EVENT_BUS;
