@@ -65,7 +65,6 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
 
             var id = getTexture(context.request(RenderContext.Companion.getENTITY()));
-            System.out.println("Rendering: " + id);
 
             if (id != null) {
                 if (id.getNamespace().equals("pk")) {

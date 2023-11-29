@@ -13,7 +13,6 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.M
 import gg.generations.rarecandy.renderer.animation.Animation
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.entity.Entity
 import java.util.function.Supplier
 
 class RareCandyAnimationFactory : AnimationReferenceFactory {
@@ -54,19 +53,16 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         })
     }
 
-    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation<Any>>?) :
-        StatefulAnimation<PokemonEntity, ModelFrame> {
+    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation<Any>>?) : StatefulAnimation<PokemonEntity, ModelFrame> {
         private var secondsPassed = 0f
-        override val isTransform: Boolean
-            get() = false
+        override val isTransform: Boolean = false
 
-        override val isPosePauser: Boolean
-            get() = false //TODO: Implment this.
+        override val isPosePauser: Boolean = false //TODO: Implment this.
 
         override fun preventsIdle(
-            t: PokemonEntity?,
-            poseableEntityState: PoseableEntityState<PokemonEntity>,
-            statelessAnimation: StatelessAnimation<PokemonEntity, *>
+            entity: PokemonEntity?,
+            state: PoseableEntityState<PokemonEntity>,
+            idleAnimation: StatelessAnimation<PokemonEntity, *>
         ): Boolean {
             return false
         }
@@ -101,8 +97,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         jsonPokemonPoseableModel: JsonPokemonPoseableModel,
         private val animationSupplier: Supplier<Animation<Any>?>
     ) : StatelessAnimation<PokemonEntity, ModelFrame>(jsonPokemonPoseableModel) {
-        override val targetFrame: Class<ModelFrame>
-            get() = frame!!.javaClass
+        override val targetFrame = ModelFrame::class.java
 
         override fun setAngles(
             pokemonEntity: PokemonEntity?,
@@ -120,7 +115,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 if (pokemonEntity != null) (pokemonEntity as PixelmonInstanceProvider).instance else ModelRegistry.getGuiInstance()
             val animation = animationSupplier.get()
             if (instance != null && animation != null) instance.matrixTransforms =
-                animationSupplier.get()!!.getFrameTransform(cur.toDouble())
+                animation.getFrameTransform(cur.toDouble())
         }
     }
 

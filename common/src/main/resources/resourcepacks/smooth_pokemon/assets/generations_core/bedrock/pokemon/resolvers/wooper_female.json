@@ -1,0 +1,13 @@
+{
+  "species": "cobblemon:wooper",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "poser": "generations_core:wooper_female",
+      "model": "generations_core:wooper_female.pk"
+    }
+  ]
+}

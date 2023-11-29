@@ -12,6 +12,8 @@ out vec2 texCoord0;
 uniform mat4 viewMatrix;
 uniform mat4 modelMatrix;
 uniform mat4 projectionMatrix;
+uniform vec2 uvOffset;
+
 
 uniform mat4 boneTransforms[MAX_BONES];
 
@@ -29,6 +31,6 @@ void main() {
     mat4 modelTransform = modelMatrix * getBoneTransform();
     vec4 worldPosition = modelTransform * vec4(positions, 1.0);
 
-    texCoord0 = texcoords;
+    texCoord0 = texcoords + uvOffset;
     gl_Position = worldSpace * worldPosition;
 }

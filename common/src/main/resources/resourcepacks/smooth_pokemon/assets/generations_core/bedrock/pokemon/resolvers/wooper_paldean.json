@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:wooper",
+  "order": 5,
+  "variations": [
+    {
+      "aspects": ["paldean"],
+      "poser": "generations_core:wooper_paldean",
+      "model": "generations_core:wooper_paldean.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "paldean",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

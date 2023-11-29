@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:wooper",
+  "order": 3,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "generations_core:wooper_male",
+      "model": "generations_core:wooper_male.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:normal"
+    }
+  ]
+}
