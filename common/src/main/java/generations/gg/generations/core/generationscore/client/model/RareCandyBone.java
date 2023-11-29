@@ -62,6 +62,8 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         if(model.renderObject.isReady()) {
             instance.setLight(packedLight);
             var id = context.request(RenderContext.Companion.getTEXTURE());
+            System.out.println("Rendering: " + id);
+
             if(id != null && id.getNamespace().equals("pk")) instance.setVariant(id.getPath());
 
             stack.pushPose();

@@ -3,7 +3,9 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
 import de.javagl.jgltf.model.GltfModel;
+import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
+import gg.generations.rarecandy.pokeutils.reader.TextureLoader;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
 import gg.generations.rarecandy.renderer.loading.ModelLoader;
@@ -11,12 +13,15 @@ import gg.generations.rarecandy.renderer.pipeline.Pipeline;
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import gg.generations.rarecandy.renderer.storage.ObjectManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ResourceManager;
 import org.joml.Matrix4f;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -40,6 +45,18 @@ public class CompiledModel {
                     return glCalls;
                 },
                 object -> {
+                    var manager = Minecraft.getInstance().getTextureManager();
+                    object.availableVariants().forEach(new Consumer<String>() {
+                        @Override
+                        public void accept(String s) {
+                            manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
+                                @Override
+                                public void load(ResourceManager resourceManager) throws IOException {
+
+                                }
+                            });
+                        }
+                    });
                     if(object.scale == 0f) object.scale = 1.0f;
                 }
         );

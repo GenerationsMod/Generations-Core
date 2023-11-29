@@ -76,7 +76,10 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Vector4f;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.nio.Buffer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -90,6 +93,8 @@ import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
 public class GenerationsCoreClient {
 
+    public static GenerationsTextureLoader textureLoader;
+
     public static void onInitialize(Minecraft minecraft) {
 //        System.loadLibrary("renderdoc");
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
@@ -99,9 +104,12 @@ public class GenerationsCoreClient {
 
         VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
 
+
         GenerationsCore.implementation.registerResourceReloader(
                 id("model_registry"),
-                (ResourceManagerReloadListener) resourceManager -> ModelRegistry.LOADER.invalidateAll(),
+                (ResourceManagerReloadListener) resourceManager -> {
+                    ModelRegistry.LOADER.invalidateAll();
+                },
                 PackType.CLIENT_RESOURCES,
                 emptyList());
 
@@ -116,36 +124,7 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.GHOST);
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
-            TextureLoader.setInstance(new gg.generations.rarecandy.pokeutils.reader.TextureLoader() {
-                final Map<String, ResourceLocation> MAP = new HashMap<>();
-
-                @Override
-                public ITexture getTexture(String s) {
-                    return (ITexture) Minecraft.getInstance().getTextureManager().getTexture(MAP.get(s));
-                }
-
-                @Override
-                public void register(String s, TextureReference textureReference) {
-                    var location = Minecraft.getInstance().getTextureManager().register(s, new generations.gg.generations.core.generationscore.client.render.rarecandy.Texture(textureReference));
-                    MAP.putIfAbsent(s, location);
-                }
-
-                @Override
-                public void remove(String s) {
-                    Minecraft.getInstance().getTextureManager().release(MAP.get(s));
-                }
-
-                @Override
-                public void clear() {
-                    var manager = Minecraft.getInstance().getTextureManager();
-
-                    for (var entry : MAP.keySet()) {
-                        manager.release(MAP.get(entry));
-                    }
-
-                    MAP.clear();
-                }
-            });
+            TextureLoader.setInstance(textureLoader = new GenerationsTextureLoader());
 
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
@@ -390,5 +369,72 @@ public class GenerationsCoreClient {
 
     public static void renderRareCandy() {
         ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+    }
+
+    public static class GenerationsTextureLoader extends gg.generations.rarecandy.pokeutils.reader.TextureLoader {
+        final Map<String, ResourceLocation> MAP = new HashMap<>();
+
+        public GenerationsTextureLoader() {
+
+        }
+
+        public void initalize() {
+            register("dark", new TextureReference(fromColor("000000"), "dark"));
+            register("light", new TextureReference(fromColor("ffffff"), "light"));
+            register("neutral", new TextureReference(fromColor("999999"), "neutral"));
+        }
+
+        private static BufferedImage fromColor(String color) {
+            int colorValue = Integer.parseInt(color.replace("#", ""), 16);
+
+            var image = new BufferedImage(2, 2, BufferedImage.TYPE_INT_ARGB);
+            image.setRGB(0, 0, colorValue);
+            image.setRGB(0, 1, colorValue);
+            image.setRGB(1, 0, colorValue);
+            image.setRGB(1, 1, colorValue);
+            return image;
+        }
+
+        @Override
+        public ITexture getTexture(String s) {
+            return (ITexture) Minecraft.getInstance().getTextureManager().getTexture(MAP.get(s));
+        }
+
+        @Override
+        public void register(String s, TextureReference textureReference) {
+            var location = Minecraft.getInstance().getTextureManager().register(s, new generations.gg.generations.core.generationscore.client.render.rarecandy.Texture(textureReference));
+            MAP.putIfAbsent(s, location);
+        }
+
+        @Override
+        public void remove(String s) {
+            Minecraft.getInstance().getTextureManager().release(MAP.remove(s));
+        }
+
+        @Override
+        public void clear() {
+            var manager = Minecraft.getInstance().getTextureManager();
+
+            for (var entry : MAP.keySet()) {
+                manager.release(MAP.get(entry));
+            }
+
+            MAP.clear();
+        }
+
+        @Override
+        public ITexture getDarkFallback() {
+            return getTexture("dark");
+        }
+
+        @Override
+        public ITexture getBrightFallback() {
+            return getTexture("light");
+        }
+
+        @Override
+        public ITexture getNuetralFallback() {
+            return getTexture("neutral");
+        }
     }
 }
