@@ -61,10 +61,17 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         if(model.renderObject.isReady()) {
             instance.setLight(packedLight);
-            var id = context.request(RenderContext.Companion.getTEXTURE());
+
+
+
+            var id = getTexture(context.request(RenderContext.Companion.getENTITY()));
             System.out.println("Rendering: " + id);
 
-            if(id != null && id.getNamespace().equals("pk")) instance.setVariant(id.getPath());
+            if (id != null) {
+                if (id.getNamespace().equals("pk")) {
+                    instance.setVariant(id.getPath());
+                }
+            }
 
             stack.pushPose();
 
@@ -82,6 +89,11 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
                 model.renderGui(instance, RenderSystem.getProjectionMatrix());
             }
         }
+    }
+
+    private ResourceLocation getTexture(Entity entity) {
+        if(entity instanceof PixelmonInstanceProvider provider) return provider.getVariant();
+        else return null;
     }
 
     @Override

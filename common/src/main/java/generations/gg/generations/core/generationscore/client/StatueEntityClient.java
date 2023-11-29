@@ -7,8 +7,11 @@ import generations.gg.generations.core.generationscore.client.render.PixelmonIns
 import generations.gg.generations.core.generationscore.client.render.rarecandy.LightingSettings;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
+import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
+
+import java.util.Set;
 
 public class StatueEntityClient extends PoseableEntityState<PokemonEntity> implements PixelmonInstanceProvider {
     private PixelmonInstance pixelmonInstance;
@@ -32,6 +35,16 @@ public class StatueEntityClient extends PoseableEntityState<PokemonEntity> imple
     @Override
     public void setInstance(PixelmonInstance instance) {
         pixelmonInstance = instance;
+    }
+
+    @Override
+    public ResourceLocation species() {
+        return null;
+    }
+
+    @Override
+    public Set<String> aspects() {
+        return null;
     }
 
     @Nullable

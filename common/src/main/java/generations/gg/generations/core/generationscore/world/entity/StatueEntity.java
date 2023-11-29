@@ -30,6 +30,7 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Set;
 
 import static dev.architectury.utils.Env.CLIENT;
 
@@ -202,6 +203,16 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         if(delegate != null) {
             delegate.setInstance(instance);
         }
+    }
+
+    @Override
+    public ResourceLocation species() {
+        return getStatueData().asRenderablePokemon().getSpecies().getResourceIdentifier();
+    }
+
+    @Override
+    public Set<String> aspects() {
+        return getStatueData().asRenderablePokemon().getAspects();
     }
 
     @Override
