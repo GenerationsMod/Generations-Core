@@ -9,11 +9,9 @@ import com.mojang.serialization.JsonOps;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
-import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
-import net.minecraft.client.resources.language.I18n;
+import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
@@ -56,7 +54,7 @@ public class GenerationsUtils {
     }
 
     public static String getFlavorLocalizedName(@Nullable Flavor flavor) {
-        return flavor != null ? I18n.get("enum.flavor." + flavor.toString().toLowerCase(Locale.ENGLISH)) : "";
+        return flavor != null ? Language.getInstance().getOrDefault("enum.flavor." + flavor.toString().toLowerCase(Locale.ENGLISH)) : "";
     }
 
 

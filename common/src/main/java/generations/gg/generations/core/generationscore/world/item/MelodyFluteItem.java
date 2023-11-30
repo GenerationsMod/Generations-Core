@@ -11,7 +11,7 @@ import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.world.container.MelodyFluteContainer;
 import generations.gg.generations.core.generationscore.world.item.legends.ElementalPostBattleUpdateItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
-import net.minecraft.client.resources.language.I18n;
+import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -105,7 +105,7 @@ public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
         else if (isItem(GenerationsItems.SILVER_WING, stack))
             name = GenerationsShrines.LUGIA_SHRINE.getId().toLanguageKey("block");
 
-        return I18n.get(name);
+        return Language.getInstance().getOrDefault(name);
     }
 
     public static void setImbuedItem(ItemStack stack, ItemStack imbuedStack) {

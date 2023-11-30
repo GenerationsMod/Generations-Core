@@ -7,10 +7,10 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
-import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -134,7 +134,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
             be.setLootMode(lootMode);
             mode += lootMode.name().toUpperCase();
 
-            player.displayClientMessage(Component.translatable("generations_core.blocks.lootmode", I18n.get(mode)), false);
+            player.displayClientMessage(Component.translatable("generations_core.blocks.lootmode", Language.getInstance().getOrDefault(mode)), false);
         }
     }
     public String getType() {

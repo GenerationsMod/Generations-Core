@@ -16,8 +16,8 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
+import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -205,14 +205,14 @@ public class CurryDex extends PlayerDataExtension {
 
         @Override
         public String toString() {
-            String name = I18n.get("item.curry.name");
+            String name = Language.getInstance().getOrDefault("item.curry.name");
             if(type != CurryType.None) name = type.getLocalizedName() + " " + name;
             if(flavor != null && type != CurryType.Gigantamax) name = GenerationsUtils.getFlavorLocalizedName(flavor) + " " + name;
             return name;
         }
 
         public String getDescription() {
-            return I18n.get("gui.currydex.description."
+            return Language.getInstance().getOrDefault("gui.currydex.description."
                     + (flavor != null ? flavor.name().toLowerCase(Locale.ENGLISH) + "_" : "") +
                     (type != CurryType.None ? type.name().toLowerCase(Locale.ENGLISH) + "_" : "") +
                     "curry");
@@ -275,7 +275,7 @@ public class CurryDex extends PlayerDataExtension {
         }
 
         private static BlockPos fromJsonToBlockPos(JsonArray element) {
-            var array = element.asList().stream().map(a -> a.getAsJsonPrimitive()).mapToInt(a -> a.getAsInt()).toArray();
+            var array = element.asList().stream().map(JsonElement::getAsJsonPrimitive).mapToInt(JsonPrimitive::getAsInt).toArray();
             return new BlockPos(array[0], array[1], array[2]);
         }
 

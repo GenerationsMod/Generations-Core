@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.api.data.curry;
 
 //import com.pokemod.pokemod.api.data.pixelmon.StatisticsType;
-import net.minecraft.client.resources.language.I18n;
+import net.minecraft.locale.Language;
 import net.minecraft.util.StringRepresentable;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,7 +29,7 @@ public enum Flavor implements StringRepresentable {
 //    }
 
     public String getLocalizedName() {
-        return this != NONE ? I18n.get("enum.flavor." + this.toString().toLowerCase(Locale.ENGLISH)) : "";
+        return this != NONE ? Language.getInstance().getOrDefault("enum.flavor." + this.toString().toLowerCase(Locale.ENGLISH)) : "";
     }
 
     public static Flavor getFlavorFromIndex(int index) {
