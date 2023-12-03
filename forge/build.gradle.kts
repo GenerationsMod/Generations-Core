@@ -1,4 +1,5 @@
 import com.modrinth.minotaur.TaskModrinthUpload
+import masecla.modrinth4j.model.version.ProjectVersion
 import net.darkhax.curseforgegradle.Constants
 import net.darkhax.curseforgegradle.TaskPublishCurseForge
 
@@ -111,7 +112,7 @@ tasks {
             token.set(project.properties["modrinth_token"] as String)
             projectId.set("generations-core")
             versionNumber.set(project.properties["mod_version"] as String)
-            versionType.set("release")
+            versionType.set(ProjectVersion.VersionType.BETA.name)
             uploadFile.set(remapJar.get().archiveFile)
             gameVersions.add(minecraftVersion)
             loaders.add("forge")
@@ -130,6 +131,7 @@ tasks {
         val mainFile = upload(860936, remapJar.get().archiveFile)
         mainFile.releaseType = Constants.RELEASE_TYPE_BETA
         mainFile.gameVersions.add(minecraftVersion)
+        mainFile.addJavaVersion("17", "18")
         mainFile.addModLoader("forge")
         mainFile.displayName = remapJar.get().archiveBaseName.get() + '-' + version
         mainFile.changelog = "Test changelog"
