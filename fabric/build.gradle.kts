@@ -136,7 +136,7 @@ tasks {
         mainFile.releaseType = "release"
         mainFile.gameVersions.add(minecraftVersion)
         mainFile.addModLoader("fabric", "quilt")
-        mainFile.displayName = remapJar.get().archiveBaseName.get()
+        mainFile.displayName = remapJar.get().archiveBaseName.get() + '-' + version
         mainFile.changelog = "Test changelog"
     }
 }

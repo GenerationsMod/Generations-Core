@@ -130,7 +130,7 @@ tasks {
         mainFile.releaseType = "release"
         mainFile.gameVersions.add(minecraftVersion)
         mainFile.addModLoader("forge")
-        mainFile.displayName = remapJar.get().archiveBaseName.get()
+        mainFile.displayName = remapJar.get().archiveBaseName.get() + '-' + version
         mainFile.changelog = "Test changelog"
     }
 }
