@@ -100,8 +100,6 @@ public class GenerationsCore
 
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 
-		CONFIG = ConfigLoader.loadConfig(Config.class, MOD_ID, "main");
-
 		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);

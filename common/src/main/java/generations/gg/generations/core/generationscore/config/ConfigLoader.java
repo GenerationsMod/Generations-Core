@@ -21,7 +21,16 @@ public class ConfigLoader {
             .registerTypeAdapter(Config.Caught.class, new Config.Caught.Adapter()).setPrettyPrinting().create();
 
     /** Config Directory **/
-    public static Path CONFIG_DIRECTORY = null;
+    private static Path CONFIG_DIRECTORY;
+
+    /**
+     * Sets the config directory for Generations modules/extensions.
+     *
+     * @param configDirectory The config directory.
+     */
+    public static void setConfigDirectory(@NotNull Path configDirectory) {
+        CONFIG_DIRECTORY = configDirectory;
+    }
 
     /**
      * Loads or Creates a config file for a Generations module/extension.

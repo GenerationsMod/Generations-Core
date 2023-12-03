@@ -83,7 +83,7 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
 
     @Override
     public void onPreLaunch() {
-        ConfigLoader.CONFIG_DIRECTORY = FabricLoader.getInstance().getConfigDir();
+        ConfigLoader.setConfigDirectory(FabricLoader.getInstance().getConfigDir());
     }
 
     private record GenerationsReloadListener(ResourceLocation identifier, PreparableReloadListener reloader, Collection<ResourceLocation> dependencies) implements IdentifiableResourceReloadListener {

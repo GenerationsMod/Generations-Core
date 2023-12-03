@@ -58,10 +58,10 @@ public class GenerationsCoreForge implements GenerationsImplementation {
      * @see FMLJavaModLoadingContext
      */
     public GenerationsCoreForge() {
+        ConfigLoader.setConfigDirectory(FMLPaths.CONFIGDIR.get());
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
-        ConfigLoader.CONFIG_DIRECTORY = FMLPaths.CONFIGDIR.get();
         GenerationsCore.init(this);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
         var EVENT_BUS = MinecraftForge.EVENT_BUS;
@@ -97,6 +97,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
             }
         }
     }
+
 
     private static IModFileInfo getPackInfo(ResourceLocation pack) {
         if (!FMLLoader.isProduction()) {
