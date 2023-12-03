@@ -1,4 +1,5 @@
 import com.modrinth.minotaur.TaskModrinthUpload
+import net.darkhax.curseforgegradle.Constants
 import net.darkhax.curseforgegradle.TaskPublishCurseForge
 
 plugins {
@@ -133,12 +134,12 @@ tasks {
         dependsOn(remapJar)
         apiToken = project.properties["curseforge_token"] as String
         val mainFile = upload(860936, remapJar.get().archiveFile)
-        mainFile.releaseType = "release"
+        mainFile.releaseType = Constants.RELEASE_TYPE_BETA
         mainFile.gameVersions.add(minecraftVersion)
         mainFile.addModLoader("fabric", "quilt")
         mainFile.displayName = remapJar.get().archiveBaseName.get() + '-' + version
         mainFile.changelog = "Test changelog"
-        mainFile.addRelations("required", 419699, 704113, 687131, 306612)
+        mainFile.addRelations(Constants.RELATION_REQUIRED, "architectury-api", "botarium", "cobblemon", "fabric-api")
     }
 }
 
