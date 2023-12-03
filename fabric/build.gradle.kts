@@ -134,9 +134,10 @@ tasks {
         apiToken = project.properties["curseforge_token"] as String
         val mainFile = upload(860936, remapJar.get().archiveFile)
         mainFile.releaseType = "release"
-        mainFile.gameVersions = mutableSetOf(minecraftVersion)
+        mainFile.gameVersions.add(minecraftVersion)
         mainFile.addModLoader("fabric", "quilt")
         mainFile.displayName = remapJar.get().archiveBaseName.get()
+        mainFile.changelog = "Test changelog"
     }
 }
 
