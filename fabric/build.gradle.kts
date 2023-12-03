@@ -1,8 +1,10 @@
 import com.modrinth.minotaur.TaskModrinthUpload
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
 
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("com.modrinth.minotaur") version "2.+"
+    id("net.darkhax.curseforgegradle") version "1.1.+"
 }
 
 architectury {
@@ -125,6 +127,15 @@ tasks {
                 required.project("botarium")
             }
         }
+    }
+
+    create("publishCurseForge", TaskPublishCurseForge::class) {
+        dependsOn(remapJar)
+        val mainFile = upload(860936, remapJar.get().archiveFile)
+        mainFile.releaseType = "release"
+        mainFile.gameVersions = mutableSetOf(minecraftVersion)
+        mainFile.addModLoader("fabric", "quilt")
+        mainFile.displayName = remapJar.get().archiveBaseName.get()
     }
 }
 
