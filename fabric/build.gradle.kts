@@ -144,6 +144,10 @@ tasks {
         mainFile.changelog = "Test changelog"
         mainFile.addRelations(Constants.RELATION_REQUIRED, "architectury-api", "botarium", "cobblemon", "fabric-api")
     }
+
+    create("Fabric-publishCurseForgeAndModrinth") {
+        dependsOn(getByName("publishCurseForge"), getByName("publishModrinth"))
+    }
 }
 
 components {

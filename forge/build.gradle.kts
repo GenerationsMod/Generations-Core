@@ -138,6 +138,10 @@ tasks {
         mainFile.changelog = "Test changelog"
         mainFile.addRelations(Constants.RELATION_REQUIRED, "architectury-api", "botarium", "cobblemon")
     }
+
+    create("Forge-publishCurseForgeAndModrinth") {
+        dependsOn(getByName("publishCurseForge"), getByName("publishModrinth"))
+    }
 }
 
 components {
