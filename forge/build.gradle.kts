@@ -132,6 +132,7 @@ tasks {
         mainFile.addModLoader("forge")
         mainFile.displayName = remapJar.get().archiveBaseName.get() + '-' + version
         mainFile.changelog = "Test changelog"
+        mainFile.addRelations("required", 419699, 704113, 687131)
     }
 }
 

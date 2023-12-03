@@ -138,6 +138,7 @@ tasks {
         mainFile.addModLoader("fabric", "quilt")
         mainFile.displayName = remapJar.get().archiveBaseName.get() + '-' + version
         mainFile.changelog = "Test changelog"
+        mainFile.addRelations("required", 419699, 704113, 687131, 306612)
     }
 }
 
