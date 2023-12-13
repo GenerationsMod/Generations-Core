@@ -1,5 +1,12 @@
+import com.modrinth.minotaur.TaskModrinthUpload
+import masecla.modrinth4j.model.version.ProjectVersion
+import net.darkhax.curseforgegradle.Constants
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
+
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.modrinth.minotaur") version "2.+"
+    id("net.darkhax.curseforgegradle") version "1.1.+"
 }
 
 architectury {
@@ -98,6 +105,42 @@ tasks {
         val commonSources = project(":common").tasks.sourcesJar
         dependsOn(commonSources)
         from(commonSources.get().archiveFile.map { zipTree(it) })
+    }
+
+    create("publishModrinth", TaskModrinthUpload::class) {
+        dependsOn(remapJar)
+        modrinth {
+            token.set(project.properties["modrinth_token"] as String)
+            projectId.set("generations-core")
+            versionNumber.set(project.properties["mod_version"] as String)
+            versionType.set(ProjectVersion.VersionType.BETA.name)
+            uploadFile.set(remapJar.get().archiveFile)
+            gameVersions.add(minecraftVersion)
+            loaders.add("forge")
+            dependencies {
+                required.project("cobblemon")
+                required.project("kotlin-for-forge")
+                required.project("architectury-api")
+                required.project("botarium")
+            }
+        }
+    }
+
+    create("publishCurseForge", TaskPublishCurseForge::class) {
+        dependsOn(remapJar)
+        apiToken = project.properties["curseforge_token"] as String
+        val mainFile = upload(860936, remapJar.get().archiveFile)
+        mainFile.releaseType = Constants.RELEASE_TYPE_BETA
+        mainFile.gameVersions.add(minecraftVersion)
+        mainFile.addJavaVersion("17", "18")
+        mainFile.addModLoader("forge")
+        mainFile.displayName = remapJar.get().archiveBaseName.get() + '-' + version
+        mainFile.changelog = "Test changelog"
+        mainFile.addRelations(Constants.RELATION_REQUIRED, "architectury-api", "botarium", "cobblemon")
+    }
+
+    create("Forge-publishCurseForgeAndModrinth") {
+        dependsOn(getByName("publishCurseForge"), getByName("publishModrinth"))
     }
 }
 
