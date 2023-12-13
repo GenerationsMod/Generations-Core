@@ -23,9 +23,11 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         val split =
             s.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
-
-
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
+        val transforms = if(split.size == 3) split[2].asBoolean() else false;
+        val pausesPoses = if(split.size == 4) split[3].asBoolean() else false;
+
+
         val name = split[1].trim { it <= ' ' }
         return StatefulAnimationRareCandy(Supplier<Animation<Any>> {
             val objects = ModelRegistry.get(location, "animated_block").renderObject
@@ -33,7 +35,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
-        })
+        }, transforms, pausesPoses)
     }
 
     override fun stateless(
@@ -53,7 +55,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         })
     }
 
-    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation<Any>>?) : StatefulAnimation<PokemonEntity, ModelFrame> {
+    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation<Any>>?, private val transforms: Boolean, private val pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {
         private var secondsPassed = 0f
         override val isTransform: Boolean = false
 
@@ -123,3 +125,9 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         const val animation_factor = 0.0625f
     }
 }
+
+private fun String.asBoolean(): Boolean = when {
+        this.lowercase().equals("true") -> true
+        this.lowercase().equals("false") -> false
+        else -> false
+    }

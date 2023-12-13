@@ -13,8 +13,4 @@ public interface PixelmonInstanceProvider {
     public ResourceLocation species();
 
     public Set<String> aspects();
-
-    default ResourceLocation getVariant() {
-        return PokemonModelRepository.INSTANCE.getVariations().get(species()).getTexture(aspects(), 0.0f);
-    }
 }

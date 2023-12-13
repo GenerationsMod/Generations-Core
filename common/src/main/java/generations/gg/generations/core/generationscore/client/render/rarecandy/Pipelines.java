@@ -4,11 +4,13 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import gg.generations.rarecandy.pokeutils.BlendType;
 import gg.generations.rarecandy.pokeutils.CullType;
 import gg.generations.rarecandy.pokeutils.reader.TextureLoader;
 import gg.generations.rarecandy.renderer.animation.AnimationController;
 import gg.generations.rarecandy.renderer.animation.GfbAnimationInstance;
+import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
 import gg.generations.rarecandy.renderer.pipeline.Pipeline;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
@@ -88,17 +90,16 @@ public class Pipelines {
 
         var BASE = new Pipeline.Builder(ROOT)
                 .supplyUniform("diffuse", ctx -> {
-                    var texture = ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
+                    var variant = ctx.instance().variant();
 
-                    if(texture == null) {
-                        System.out.printf("Error! Can't find %s!%n", "diffuse");
-                        texture = TextureLoader.instance().getNuetralFallback();
-                    }
+                    ITexture texture = isStatueMaterial(variant) ? getTexture(variant) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
+                    if (texture == null) texture = TextureLoader.instance().getNuetralFallback();
 
                     texture.bind(0);
                     ctx.uniform().uploadInt(0);
                 })
                 .prePostDraw(material -> {
+                    material.cullType().enable();
                     if(material.blendType() == BlendType.Regular) {
                         RenderSystem.enableBlend();
                         RenderSystem.defaultBlendFunc();
@@ -108,89 +109,7 @@ public class Pipelines {
                     if(material.blendType() == BlendType.Regular) {
                         RenderSystem.disableBlend();
                     }
-
                 });
-
-//        var LIGHTING_BASE = new Pipeline.Builder(BASE)
-//                .supplyUniform("lightPosition", ctx -> ctx.uniform().uploadVec3f(GLOBAL_LIGHT))
-//                .supplyUniform("reflectivity", ctx -> ctx.uniform().uploadFloat(0.01f))
-//                .supplyUniform("shineDamper", ctx -> ctx.uniform().uploadFloat(0.01f))
-//                .supplyUniform("diffuseColorMix", ctx -> ctx.uniform().uploadFloat(0.1f))
-//                .supplyUniform("intColor", ctx -> ctx.uniform().uploadInt(0xFFFFFFFF));
-//
-//        register.register("animated", manager -> {
-//            var pipeline = new Pipeline.Builder(LIGHTING_BASE)
-//                    .shader(read(manager, GenerationsCore.id("shaders/animated/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/animated/animated.fs.glsl")))
-//                    .supplyUniform("boneTransforms", ctx -> ctx.uniform().uploadMat4fs(((AnimatedObjectInstance) ctx.instance()).getTransforms()))
-//                    .build();
-//            return material -> pipeline;
-//        });
-
-//        register.register("pixelmon", manager -> {
-//            var pipeline = new Pipeline.Builder(BASE)
-//                    .shader(read(manager, GenerationsCore.id("shaders/animated/animated.vs.glsl")), read(manager, GenerationsCore.id("shaders/animated/animated.fs.glsl")))
-//                    .supplyUniform("lightPosition", ctx -> ctx.uniform().uploadVec3f(GLOBAL_LIGHT))
-//                    .supplyUniform("reflectivity", ctx -> ctx.uniform().uploadFloat(((PixelmonInstance) ctx.instance()).reflectivity())) // 0.3f with coloured light for totems etc
-//                    .supplyUniform("shineDamper", ctx -> ctx.uniform().uploadFloat(((PixelmonInstance) ctx.instance()).shineDamper())) // 0.3f for this one too.
-//                    .supplyUniform("intColor", ctx -> ctx.uniform().uploadInt(((PixelmonInstance) ctx.instance()).lightColor()))
-//                    .supplyUniform("diffuseColorMix", ctx -> ctx.uniform().uploadFloat(((PixelmonInstance) ctx.instance()).diffuseColorMix()))
-//                    .supplyUniform("boneTransforms", ctx -> {
-//                        var matrices = ((AnimatedObjectInstance) ctx.instance()).getTransforms();
-//
-//                        ctx.uniform().uploadMat4fs(matrices != null ? matrices : AnimationController.NO_ANIMATION);
-//                    })
-//                    .build();
-//            return material -> pipeline;
-//        });
-
-//        register.register("block", manager -> {
-//            var BLOCK_BASE = new Pipeline.Builder(BASE)
-//                        .supplyUniform("lightmap", ctx -> {
-//                            GL13C.glActiveTexture(GL_TEXTURE0 + 2);
-//                            ctx.uniform().uploadInt(2);
-//                        })
-//                        .supplyUniform("light", ctx -> {
-//                            var light = ((BlockLightValueProvider) ctx.instance()).getLight();
-//                            ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
-//                        });
-//
-//
-//
-//            var solid = new Pipeline.Builder(BLOCK_BASE)
-//                    .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/solid.fs.glsl")))
-//                    .prePostDraw(t -> RenderSystem.enableBlend(), t1 -> Minecraft.getInstance().gameRenderer.lightTexture().turnOffLightLayer())
-//                    .build();
-//
-//            var transparent = new Pipeline.Builder(BLOCK_BASE)
-//                    .shader(read(manager, GenerationsCore.id("shaders/block/static.vs.glsl")), read(manager, GenerationsCore.id("shaders/block/transparent.fs.glsl")))
-//                    .supplyUniform("lightmap", ctx -> {
-//                        GL13C.glActiveTexture('蓀' + 2);
-//                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-//                        ctx.uniform().uploadInt(2);
-//                    })
-//                    .supplyUniform("light", ctx -> {
-//                        var light = ((BlockLightValueProvider) ctx.instance()).getLight();
-//                        ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
-//                    })
-//                    .supplyUniform("boneTransforms", ctx -> {
-//                        var matrices = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms(): AnimationController.NO_ANIMATION;
-//                        ctx.uniform().uploadMat4fs(matrices);
-//                    })
-//                    .prePostDraw(material -> {
-//                        if (material.cullType() != CullType.None) {
-//                            RenderSystem.enableCull();
-//                            GL11.glFrontFace(material.cullType().getGlConstant());
-//                        }
-//                    }, material -> {
-//                        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-//                        if (material.cullType() != CullType.None) {
-//                            RenderSystem.disableCull();
-//                        }
-//                    })
-//                    .build();
-//
-//            return material -> material.equals("transparent") ? transparent : solid;
-//        });
 
         register.register("animated_block",
                 manager -> {
@@ -252,7 +171,7 @@ public class Pipelines {
                             .supplyUniform("layer", ctx -> {
                                 var texture = ctx.getTexture("layer");
 
-                                if (texture == null) texture = TextureLoader.instance().getDarkFallback();
+                                if (texture == null || isStatueMaterial(ctx.instance().variant())) texture = TextureLoader.instance().getDarkFallback();
 
 
                                 texture.bind(2);
@@ -260,7 +179,7 @@ public class Pipelines {
                             }).supplyUniform("mask", ctx -> {
                                 var texture = ctx.getTexture("mask");
 
-                                if (texture == null) texture = TextureLoader.instance().getDarkFallback();
+                                if (texture == null || isStatueMaterial(ctx.instance().variant())) texture = TextureLoader.instance().getDarkFallback();
 
                                 texture.bind(3);
                                 ctx.uniform().uploadInt(3);
@@ -272,7 +191,7 @@ public class Pipelines {
                             .build();
 
 
-                    return (Function<String, Pipeline>) s -> switch (s) {
+                    return s -> switch (s) {
                         case "transparent" -> transparent;
                         case "masked" -> masked;
                         case "unlit" -> unlit;
@@ -280,6 +199,14 @@ public class Pipelines {
                         default -> solid;
                     };
                 });
+    }
+
+    private static ITexture getTexture(String variant) {
+        return gg.generations.rarecandy.tools.TextureLoader.instance().getTexture(variant);
+    }
+
+    private static boolean isStatueMaterial(String variant) {
+        return variant == null || variant.startsWith("material") && ((GenerationsCoreClient.GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(variant);
     }
 
     public static Function<String, Pipeline> getPipeline(String name) {

@@ -7,6 +7,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPoke
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
+import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
@@ -58,6 +59,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.util.Mth;
 import net.minecraft.util.Tuple;
@@ -76,10 +78,11 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Vector4f;
 
-import java.awt.*;
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.nio.Buffer;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -88,6 +91,7 @@ import java.util.function.Supplier;
 import static generations.gg.generations.core.generationscore.GenerationsCore.id;
 import static generations.gg.generations.core.generationscore.world.item.MelodyFluteItem.isItem;
 import static java.util.Collections.emptyList;
+import static java.util.Collections.min;
 import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
@@ -124,7 +128,8 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.GHOST);
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
-            TextureLoader.setInstance(textureLoader = new GenerationsTextureLoader());
+            TextureLoader.setInstance(textureLoader = new GenerationsTextureLoader(event));
+            textureLoader.initialize(event.getResourceManager());
 
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
@@ -374,14 +379,23 @@ public class GenerationsCoreClient {
     public static class GenerationsTextureLoader extends gg.generations.rarecandy.pokeutils.reader.TextureLoader {
         final Map<String, ResourceLocation> MAP = new HashMap<>();
 
-        public GenerationsTextureLoader() {
+        public GenerationsTextureLoader(Minecraft minecraft) {}
 
-        }
-
-        public void initalize() {
+        public void initialize(ResourceManager manager) {
             register("dark", new TextureReference(fromColor("000000"), "dark"));
             register("light", new TextureReference(fromColor("ffffff"), "light"));
             register("neutral", new TextureReference(fromColor("999999"), "neutral"));
+
+            register("statue:concrete", new TextureReference(fromResourceLocation(manager, new ResourceLocation("generations_core:concrete")), "statue:concrete"));
+
+        }
+
+        private BufferedImage fromResourceLocation(ResourceManager manager, ResourceLocation location) {
+            try {
+                return ImageIO.read(manager.getResourceOrThrow(new ResourceLocation("%s:textures/entity/statue_material/%s.png".formatted(location.getNamespace(), location.getPath()))).open());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         private static BufferedImage fromColor(String color) {
@@ -397,7 +411,8 @@ public class GenerationsCoreClient {
 
         @Override
         public ITexture getTexture(String s) {
-            return (ITexture) Minecraft.getInstance().getTextureManager().getTexture(MAP.get(s));
+            var texture = MAP.getOrDefault(s, null);
+            return texture != null ? (ITexture) Minecraft.getInstance().getTextureManager().getTexture(MAP.get(s)) : null;
         }
 
         @Override
@@ -435,6 +450,14 @@ public class GenerationsCoreClient {
         @Override
         public ITexture getNuetralFallback() {
             return getTexture("neutral");
+        }
+
+        public boolean has(String texture) {
+            return MAP.containsKey(texture);
+        }
+
+        public ResourceLocation getLocation(ResourceLocation material) {
+            return MAP.getOrDefault(material.toString(), null);
         }
     }
 }

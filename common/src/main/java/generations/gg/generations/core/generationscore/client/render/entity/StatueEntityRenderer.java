@@ -5,11 +5,14 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Pokem
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
 import com.cobblemon.mod.common.entity.PoseType;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
+import com.google.gson.reflect.TypeToken;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
+import gg.generations.rarecandy.pokeutils.reader.TextureLoader;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -21,13 +24,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, EntityModel<StatueEntity>> {
-    public static final ResourceLocation CONCRETE = GenerationsCore.id("textures/key/statue_material/concrete.png");
+    public static final ResourceLocation CONCRETE = GenerationsCore.id("textures/entity/statue_material/concrete.png");
     public StatueEntityRenderer(EntityRendererProvider.Context arg) {
         super(arg, null, 0.0f);
     }
 
     public RenderContext context = new RenderContext();
-    public static RenderContext.Key<StatueEntity> STATUE = RenderContext.Companion.key(GenerationsCore.id("statue"), StatueEntity.class);
+    public static RenderContext.Key<StatueEntity> STATUE = RenderContext.Companion.key(GenerationsCore.id("statue"), TypeToken.get(StatueEntity.class));
 
     @Override
     public void render(@NotNull StatueEntity entity, float entityYaw, float partialTicks, @NotNull PoseStack stack, @Nullable MultiBufferSource buffer, int light) {
@@ -47,7 +50,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         stack.scale(scale, scale, scale);
         var state = entity.delegate;
 
-//        key.delegate.getInstance().setVariant("statue:concrete");
+//        state.getInstance().setVariant(entity.getStatueData().material());
 
         var pose = model.getPose(PoseType.PROFILE);
         if(pose != null) state.setPose(pose.getPoseName());
@@ -63,7 +66,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
         context.pop();
         context.put(RenderContext.Companion.getRENDER_STATE(), RenderContext.RenderState.WORLD);
-        context.put(STATUE, entity);
+        context.put(RenderContext.Companion.getENTITY(), entity);
         context.put(RenderContext.Companion.getSCALE(), scale);
         context.put(RenderContext.Companion.getTEXTURE(), texture);
 
@@ -92,8 +95,9 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
     @Override
     public @NotNull ResourceLocation getTextureLocation(@NotNull StatueEntity entity) {
-//        return CONCRETE;
-        var renderable = entity.getStatueData().asRenderablePokemon();
-        return PokemonModelRepository.INSTANCE.getTexture(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects(), 0f);
+        var material = entity.getStatueData().material();
+
+        if(material != null) return ((GenerationsCoreClient.GenerationsTextureLoader) TextureLoader.instance()).getLocation(material);
+        else return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);
     }
 }

@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.client.model;
 
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -44,7 +45,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     public void render(RenderContext context, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var model = objectSupplier.get();
 
-        var instance = (context.request(RenderContext.Companion.getENTITY()) != null ? context.request(RenderContext.Companion.getENTITY()) : context.request(STATUE)) instanceof PixelmonInstanceProvider provider ? provider.getInstance() : null;
+        var instance = context.request(RenderContext.Companion.getENTITY()) instanceof PixelmonInstanceProvider provider ? provider.getInstance() : null;
 
         boolean isGui = false;
 
@@ -58,13 +59,12 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             scale *= context.request(RenderContext.Companion.getSCALE());
         }
 
-
         if(model.renderObject.isReady()) {
             instance.setLight(packedLight);
 
 
 
-            var id = getTexture(context.request(RenderContext.Companion.getENTITY()));
+            var id = getTexture(context);
 
             if (id != null) {
                 if (id.getNamespace().equals("pk")) {
@@ -90,9 +90,14 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         }
     }
 
-    private ResourceLocation getTexture(Entity entity) {
-        if(entity instanceof PixelmonInstanceProvider provider) return provider.getVariant();
-        else return null;
+    private ResourceLocation getTexture(RenderContext context) {
+        if(context.request(RenderContext.Companion.getENTITY()) instanceof StatueEntity statue && statue.getStatueData().material() != null) {
+            return statue.getStatueData().material();
+        }
+
+        var species = context.request(RenderContext.Companion.getSPECIES());
+        var aspects = context.request(RenderContext.Companion.getASPECTS());
+        return PokemonModelRepository.INSTANCE.getVariations().get(species).getTexture(aspects, 0.0f);
     }
 
     @Override

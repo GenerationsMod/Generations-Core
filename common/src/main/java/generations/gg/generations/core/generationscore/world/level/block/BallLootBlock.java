@@ -120,7 +120,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     @Override
     public void attack(BlockState state, Level level, BlockPos pos, Player player) {
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof BallLootBlockEntity be && player.getUUID().equals(be.getOwner())) {
-            String mode = "pixelmon.blocks.lootmode.";
+            String mode = "generations_core.blocks.lootmode.";
 
             var lootMode = be.getLootMode();
 

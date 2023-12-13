@@ -368,5 +368,9 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         public void setLabel(String label) {
             this.label = label;
         }
+
+        public ResourceLocation material() {
+            return new ResourceLocation("statue:concrete");
+        }
     }
 }
