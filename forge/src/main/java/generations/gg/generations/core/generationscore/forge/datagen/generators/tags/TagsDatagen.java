@@ -503,7 +503,7 @@ public class TagsDatagen {
                     POKEMAIL_WAVE_CLOSED.get(),
                     POKEMAIL_WOOD_CLOSED.get());
 
-            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS.location()).addOptionalTag(ResourceLocation.tryParse("c:shears"));
+            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS).addOptionalTag(ResourceLocation.tryParse("c:shears"));
 
             //Forge Armor Tags
             GenerationsArmor.ARMOR.forEach(armor -> {
