@@ -13,17 +13,16 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 
 import java.util.Collection;
-import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 
@@ -31,9 +30,9 @@ import java.util.stream.Stream;
 public abstract class ServerPlayerMixin extends Player {
     @Shadow public abstract ServerLevel serverLevel();
 
-    @Shadow public abstract ItemEntity drop(ItemStack droppedItem, boolean dropAround, boolean includeThrowerName);
+    @Shadow public abstract ItemEntity drop(@NotNull ItemStack droppedItem, boolean dropAround, boolean includeThrowerName);
 
-    @Shadow public abstract void sendSystemMessage(Component component);
+    @Shadow public abstract void sendSystemMessage(@NotNull Component component);
 
     @Unique
     ResourceKey<Biome> currentBiome = null;
@@ -44,10 +43,11 @@ public abstract class ServerPlayerMixin extends Player {
 
     @Override
     public void checkMovementStatistics(double distanceX, double distanceY, double distanceZ) {
+        if (!GenerationsCore.CONFIG.enigmaFragment.enabled) return;
         super.checkMovementStatistics(distanceX, distanceY, distanceZ);
         BiomesVisited biomesVisited = BiomesVisited.get(this);
-        if(biomesVisited.numberOfVisitedBiomes() < GenerationsCore.CONFIG.eonDuoFragmentLimit)
-        serverLevel().getBiome(blockPosition()).unwrapKey().filter(a -> !a.equals(currentBiome)).ifPresent(biomeResourceKey -> {
+        if(biomesVisited.numberOfVisitedBiomes() < GenerationsCore.CONFIG.enigmaFragment.limit)
+            serverLevel().getBiome(blockPosition()).unwrapKey().filter(a -> !a.equals(currentBiome)).ifPresent(biomeResourceKey -> {
             this.currentBiome = biomeResourceKey;
 
 
