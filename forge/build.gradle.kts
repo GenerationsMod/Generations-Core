@@ -1,12 +1,10 @@
-import com.modrinth.minotaur.TaskModrinthUpload
-import masecla.modrinth4j.model.version.ProjectVersion
-import net.darkhax.curseforgegradle.Constants
-import net.darkhax.curseforgegradle.TaskPublishCurseForge
+import com.hypherionmc.modpublisher.properties.CurseEnvironment
+import com.hypherionmc.modpublisher.properties.ModLoader
+import com.hypherionmc.modpublisher.properties.ReleaseType
 
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("com.modrinth.minotaur") version "2.+"
-    id("net.darkhax.curseforgegradle") version "1.1.+"
+    id("com.hypherionmc.modutils.modpublisher") version "2.+"
 }
 
 architectury {
@@ -15,6 +13,7 @@ architectury {
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
+val jarName = base.archivesName.get() + "-Forge"
 
 configurations {
     create("common")
@@ -71,12 +70,12 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 
     //Cobblemon
-    modRuntimeOnly("thedarkcolour:kotlinforforge:4.7.0")
+    implementation("thedarkcolour:kotlinforforge:4.9.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 }
 
 tasks {
-    base.archivesName.set(base.archivesName.get() + "-Forge")
+    base.archivesName.set(jarName)
     processResources {
         inputs.property("version", project.version)
 
@@ -106,42 +105,34 @@ tasks {
         dependsOn(commonSources)
         from(commonSources.get().archiveFile.map { zipTree(it) })
     }
+}
 
-    create("publishModrinth", TaskModrinthUpload::class) {
-        dependsOn(remapJar)
-        modrinth {
-            token.set(project.properties["modrinth_token"] as String)
-            projectId.set("generations-core")
-            versionNumber.set(project.properties["mod_version"] as String)
-            versionType.set(ProjectVersion.VersionType.BETA.name)
-            uploadFile.set(remapJar.get().archiveFile)
-            gameVersions.add(minecraftVersion)
-            loaders.add("forge")
-            dependencies {
-                required.project("cobblemon")
-                required.project("kotlin-for-forge")
-                required.project("architectury-api")
-                required.project("botarium")
-            }
-        }
+publisher {
+    apiKeys {
+        curseforge(project.properties["curseforge_token"].toString())
+        modrinth(project.properties["modrinth_token"].toString())
+        github(project.properties["github_token"].toString())
     }
 
-    create("publishCurseForge", TaskPublishCurseForge::class) {
-        dependsOn(remapJar)
-        apiToken = project.properties["curseforge_token"] as String
-        val mainFile = upload(860936, remapJar.get().archiveFile)
-        mainFile.releaseType = Constants.RELEASE_TYPE_BETA
-        mainFile.gameVersions.add(minecraftVersion)
-        mainFile.addJavaVersion("17", "18")
-        mainFile.addModLoader("forge")
-        mainFile.displayName = remapJar.get().archiveBaseName.get() + '-' + version
-        mainFile.changelog = "Test changelog"
-        mainFile.addRelations(Constants.RELATION_REQUIRED, "architectury-api", "botarium", "cobblemon")
-    }
-
-    create("Forge-publishCurseForgeAndModrinth") {
-        dependsOn(getByName("publishCurseForge"), getByName("publishModrinth"))
-    }
+    curseID.set("860936")
+    modrinthID.set("e1GvDbBX")
+    githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
+    setReleaseType(ReleaseType.BETA)
+    version.set(project.version.toString())
+    displayName.set("$jarName-${version.get()}")
+    changelog.set("test changelog")
+    artifact.set(tasks.remapJar)
+    setGameVersions(minecraftVersion)
+    setLoaders(ModLoader.FORGE)
+    setCurseEnvironment(CurseEnvironment.BOTH)
+    val depends = mutableListOf(
+        "architectury-api",
+        "kotlin-for-forge",
+        "cobblemon",
+        "botarium",
+    )
+    curseDepends.required.set(depends)
+    modrinthDepends.required.set(depends)
 }
 
 components {
@@ -153,7 +144,7 @@ components {
 
 publishing {
     publications.create<MavenPublication>("mavenForge") {
-        artifactId = "${project.properties["archives_base_name"]}" + "-Forge"
+        artifactId = jarName
         from(components["java"])
     }
 

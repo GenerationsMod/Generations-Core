@@ -11,14 +11,12 @@ import java.time.Duration;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static generations.gg.generations.core.generationscore.config.LegendKeys.*;
-
 public class Config {
     public VanillaTabsToAdd addItemsToVanillaTabs = new VanillaTabsToAdd();
     public Duration lootTime = Duration.ofHours(1);
 
     public Caught caught = new Caught();
-    public int eonDuoFragmentLimit = 32;
+    public EnigmaFragment enigmaFragment = new EnigmaFragment();
 
     public Config() {}
 
@@ -112,5 +110,10 @@ public class Config {
         public boolean functionalBlocks = true;
         public boolean naturalBlocks = true;
         public boolean buildingBlocks = true;
+    }
+
+    public static class EnigmaFragment {
+        public boolean enabled = true;
+        public int limit = 32;
     }
 }
