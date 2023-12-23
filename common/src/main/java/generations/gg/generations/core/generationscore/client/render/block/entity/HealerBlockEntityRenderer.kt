@@ -38,7 +38,7 @@ class HealerBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Gene
 
         ModelRegistry.prepForBER(stack, blockEntity)
 
-        val model = ModelRegistry.get(GenerationsBlockEntityModels.POKEBALL, "animated_block")
+        val model = ModelRegistry.get(GenerationsBlockEntityModels.POKEBALL)
         val scale = model.renderObject.scale * 0.16f
 
         for ((index, pokeBall) in blockEntity.pokeBalls.withIndex()) {

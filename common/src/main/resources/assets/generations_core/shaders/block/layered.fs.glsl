@@ -7,9 +7,11 @@ out vec4 outColor;
 uniform sampler2D diffuse;
 uniform sampler2D layer;
 uniform sampler2D mask;
+uniform sampler2D emission;
 
 uniform sampler2D lightmap;
 uniform ivec2 light;
+uniform bool useLight;
 
 //base
 uniform vec3 baseColor1;
@@ -30,50 +32,56 @@ uniform float emiIntensity3;
 uniform float emiIntensity4;
 uniform float emiIntensity5;
 
-vec4 adjust(vec4 color) {
-    color.r = clamp(color.r * 2, 0.0, 1.0);
-    color.g = clamp(color.g * 2, 0.0, 1.0);
-    color.b = clamp(color.b * 2, 0.0, 1.0);
-    color.a = clamp(color.a * 2, 0.0, 1.0);
+uniform int frame;
 
-    return color;
+vec4 adjust(vec4 color) {
+    return clamp(color * 2, 0, 1);
 }
 
-vec3 emission(vec3 base, vec3 emissionColor, float intensity) {
+float adjustScalar(float color) {
+    return clamp(color * 2, 0.0, 1.0);
+}
+
+float getMaskIntensity() {
+    vec2 effectTexCoord = vec2(texCoord0);
+
+    if(frame >= 0) {
+        effectTexCoord *= 0.25;
+        effectTexCoord.x += (frame % 4)/4f;
+        effectTexCoord.y +=  (frame/4)/4f;
+    }
+
+    return texture(mask, effectTexCoord).r;
+}
+
+vec3 applyEmission(vec3 base, vec3 emissionColor, float intensity) {
     return base + (emissionColor - base) * intensity;
 }
 
 vec4 getColor() {
-    vec3 color = texture(diffuse, texCoord0).xyz;
+    vec4 color = texture(diffuse, texCoord0);
     vec4 layerMasks = adjust(texture(layer, texCoord0));
-    vec4 maskColor = adjust(texture(mask, texCoord0));
+    float maskColor = adjustScalar(getMaskIntensity());
 
-    vec3 base = mix(color, color * baseColor1, layerMasks.r);
-    base = mix(base, color * baseColor2, layerMasks.g);
-    base = mix(base, color * baseColor3, layerMasks.b);
-    base = mix(base, color * baseColor4, layerMasks.a);
-    base = mix(base, color * baseColor5, maskColor.r);
+    vec3 base = mix(color.rgb, color.rgb * baseColor1, layerMasks.r);
+    base = mix(base, color.rgb * baseColor2, layerMasks.g);
+    base = mix(base, color.rgb * baseColor3, layerMasks.b);
+    base = mix(base, color.rgb * baseColor4, layerMasks.a);
+    base = mix(base, color.rgb * baseColor5, maskColor);
 
-    base = mix(base, emission(base, emiColor1, emiIntensity1), layerMasks.r);
-    base = mix(base, emission(base, emiColor2, emiIntensity2), layerMasks.g);
-    base = mix(base, emission(base, emiColor3, emiIntensity3), layerMasks.b);
-    base = mix(base, emission(base, emiColor4, emiIntensity4), layerMasks.a);
-    base = mix(base, emission(base, emiColor5, emiIntensity5), maskColor.r);
+    base = mix(base, applyEmission(base, emiColor1, emiIntensity1), layerMasks.r);
+    base = mix(base, applyEmission(base, emiColor2, emiIntensity2), layerMasks.g);
+    base = mix(base, applyEmission(base, emiColor3, emiIntensity3), layerMasks.b);
+    base = mix(base, applyEmission(base, emiColor4, emiIntensity4), layerMasks.a);
+    base = mix(base, applyEmission(vec3(0), emiColor5, emiIntensity5), maskColor);
 
-    return vec4(base, 1);
+    return vec4(base, color.a);
 }
-
 vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
     return texture(lightMap, clamp(uv / 256.0, vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
 }
 
 void main() {
-    vec4 color = getColor();
-    vec4 lightColor = minecraft_sample_lightmap(lightmap, light);
-
-    if(color.a < 0.1) {
-        discard;
-    }
-
-    outColor = color * lightColor;
+    outColor = getColor();
+    if(useLight) outColor *= mix(minecraft_sample_lightmap(lightmap, light), vec4(1,1,1,1), texture(emission, texCoord0).r);
 }

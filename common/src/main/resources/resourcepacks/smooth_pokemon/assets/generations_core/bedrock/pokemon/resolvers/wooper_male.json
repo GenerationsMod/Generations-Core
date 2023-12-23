@@ -3,7 +3,6 @@
   "order": 3,
   "variations": [
     {
-      "aspects": [],
       "poser": "generations_core:wooper_male",
       "model": "generations_core:wooper_male.pk",
       "texture": "pk:normal",
@@ -13,7 +12,7 @@
       "aspects": [
         "shiny"
       ],
-      "texture": "pk:normal"
+      "texture": "pk:shiny"
     }
   ]
 }

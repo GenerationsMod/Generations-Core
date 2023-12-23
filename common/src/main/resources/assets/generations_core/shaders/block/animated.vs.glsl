@@ -13,6 +13,7 @@ uniform mat4 viewMatrix;
 uniform mat4 modelMatrix;
 uniform mat4 projectionMatrix;
 uniform vec2 uvOffset;
+uniform vec2 uvScale;
 
 
 uniform mat4 boneTransforms[MAX_BONES];

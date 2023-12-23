@@ -12,17 +12,13 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.C
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 import java.util.Collections;
 import java.util.Map;
 import java.util.function.Supplier;
-
-import static generations.gg.generations.core.generationscore.client.render.entity.StatueEntityRenderer.STATUE;
 
 public class RareCandyBone implements Supplier<Bone>, Bone {
     private  static Vector3f temp = new Vector3f();
@@ -32,7 +28,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     private static final Map<String, Bone> DUMMY = Collections.emptyMap();
 
     public RareCandyBone(ResourceLocation location) {
-        objectSupplier = () -> ModelRegistry.get(location, "animated_block");
+        objectSupplier = () -> ModelRegistry.get(location);
     }
 
 
@@ -62,13 +58,13 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         if(model.renderObject.isReady()) {
             instance.setLight(packedLight);
 
-
-
             var id = getTexture(context);
 
             if (id != null) {
                 if (id.getNamespace().equals("pk")) {
                     instance.setVariant(id.getPath());
+                } else if(id.getNamespace().equals("statue")) {
+                    instance.setVariant(id.toString());
                 }
             }
 

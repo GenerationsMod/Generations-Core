@@ -7,7 +7,6 @@ import de.javagl.jgltf.model.GltfModel;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 
 import gg.generations.rarecandy.renderer.animation.Animation;
@@ -28,18 +27,18 @@ public class ModelRegistry {
         if (gltfModel.getSkinModels().isEmpty()) return new MeshObject();
         return new AnimatedMeshObject();
     };
-    public static final LoadingCache<Pair<ResourceLocation, String>, CompiledModel> LOADER = CacheBuilder.newBuilder().removalListener((RemovalListener<Pair<ResourceLocation, String>, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
+    public static final LoadingCache<ResourceLocation, CompiledModel> LOADER = CacheBuilder.newBuilder().removalListener((RemovalListener<ResourceLocation, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
         @Override
-        public @NotNull CompiledModel load(@NotNull Pair<ResourceLocation, String> pair) {
+        public @NotNull CompiledModel load(@NotNull ResourceLocation pair) {
             try {
                 var resourceManager = Minecraft.getInstance().getResourceManager();
-                var is = resourceManager.getResource(pair.a()).orElseGet(() -> {
-                    System.out.println("Oh No: " + pair.a + "/" + pair.b);
+                var is = resourceManager.getResource(pair).orElseGet(() -> {
+                    System.out.println("Failed to get Pokemon model: " + pair);
                     return resourceManager.getResource(GenerationsCore.id("models/pokemon/substitute.pk")).orElseThrow();
                 }).open();
-                return new CompiledModel(pair.a, is, Pipelines.getPipeline(pair.b()), MESH_OBJECT_SUPPLIER);
+                return new CompiledModel(pair, is, MESH_OBJECT_SUPPLIER);
             } catch (Exception e) {
-                var path = pair.a().toString();
+                var path = pair.toString();
                 if (path.endsWith(".smdx") || path.endsWith(".pqc")) throw new RuntimeException("Tried reading a 1.12 .smdx or .pqc");
                 throw new RuntimeException("Failed to load " + path, e);
             }
@@ -47,15 +46,15 @@ public class ModelRegistry {
     });
     private static RareCandy WORLD_RENDER;
     private static RareCandy GUI_RENDER;
-    private static final PixelmonInstance guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), "", () -> LightingSettings.NORMAL_SHADING);
+    private static final PixelmonInstance guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), "");
 
-    public static CompiledModel get(ModelContextProviders.ModelProvider modelProvider, String pipeline) {
-        return get(modelProvider.getModel(), pipeline);
+    public static CompiledModel get(ModelContextProviders.ModelProvider modelProvider) {
+        return get(modelProvider.getModel());
     }
 
-    public static CompiledModel get(ResourceLocation location, String pipeline) {
+    public static CompiledModel get(ResourceLocation location) {
         try {
-            return LOADER.get(new Pair<>(location, pipeline));
+            return LOADER.get(location);
         } catch (ExecutionException e) {
             throw new RuntimeException(e);
         }
@@ -79,8 +78,6 @@ public class ModelRegistry {
 
 //        stack.translate(0.5f, 0.0f, 0.5f);
     }
-
-    private record Pair<A, B>(A a, B b) {}
 
     public static RareCandy getWorldRareCandy() {
         //RareCandy.DEBUG_THREADS = true;

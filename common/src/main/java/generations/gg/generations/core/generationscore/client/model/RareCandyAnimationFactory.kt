@@ -30,7 +30,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
 
         val name = split[1].trim { it <= ' ' }
         return StatefulAnimationRareCandy(Supplier<Animation<Any>> {
-            val objects = ModelRegistry.get(location, "animated_block").renderObject
+            val objects = ModelRegistry.get(location).renderObject
             if (objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
@@ -47,7 +47,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
         val name = split[1].trim { it <= ' ' }
         return StatelessAnimationRareCandy(jsonPokemonPoseableModel, Supplier<Animation<Any>?> {
-            val objects = ModelRegistry.get(location, "animated_block").renderObject
+            val objects = ModelRegistry.get(location).renderObject
             if (objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
@@ -82,7 +82,10 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
             secondsPassed += poseableEntityState.animationSeconds
             val instance = if (t != null) (t as PixelmonInstanceProvider).instance else ModelRegistry.getGuiInstance()
             val animation = animationSuppler?.get()
-            if (instance != null && animation != null) instance.matrixTransforms = animation.getFrameTransform((secondsPassed * animation_factor).toDouble())
+            if (instance != null && animation != null) {
+                instance.matrixTransforms = animation.getFrameTransform((secondsPassed * animation_factor).toDouble())
+                System.out.println(secondsPassed.toString() + " " + animation.animationDuration)
+            }
             return true
         }
 
@@ -113,16 +116,19 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         ) {
 //            val prev = if (state == null) 0F else (state.previousAnimationSeconds - state.timeEnteredPose)
             val cur = if (state == null) 0f else (state.animationSeconds - state.timeEnteredPose) * animation_factor
+
             val instance =
                 if (pokemonEntity != null) (pokemonEntity as PixelmonInstanceProvider).instance else ModelRegistry.getGuiInstance()
             val animation = animationSupplier.get()
-            if (instance != null && animation != null) instance.matrixTransforms =
-                animation.getFrameTransform(cur.toDouble())
+
+            if (instance != null && animation != null) {
+                instance.matrixTransforms = animation.getFrameTransform(cur.toDouble())
+            }
         }
     }
 
     companion object {
-        const val animation_factor = 0.0625f
+        const val animation_factor = 0.001f
     }
 }
 

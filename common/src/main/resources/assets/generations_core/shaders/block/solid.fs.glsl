@@ -6,19 +6,15 @@ out vec4 outColor;
 
 uniform sampler2D diffuse;
 uniform sampler2D lightmap;
+uniform sampler2D emission;
 uniform ivec2 light;
+uniform bool useLight;
 
 vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
     return texture(lightMap, clamp(uv / 256.0, vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
 }
 
 void main() {
-    vec4 color = texture(diffuse, texCoord0);
-    vec4 lightColor = minecraft_sample_lightmap(lightmap, light);
-
-    if(color.a < 0.1) {
-        discard;
-    }
-
-    outColor = color * lightColor;
+    outColor = texture(diffuse, texCoord0);
+    if(useLight) outColor *= mix(minecraft_sample_lightmap(lightmap, light), vec4(1,1,1,1), texture(emission, texCoord0).r);
 }

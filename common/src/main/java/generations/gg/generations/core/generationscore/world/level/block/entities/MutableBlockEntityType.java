@@ -24,17 +24,7 @@ public class MutableBlockEntityType<T extends BlockEntity> extends BlockEntityTy
 	}
 
 	public boolean addBlock(Block block) {
-		var list = ((BlockEntityTypeAccessor) this).getBlocks();
-
-		System.out.println("Name: " + block.arch$registryName());
-
-		System.out.println("Pre: " + list);
-
-		var bool = list.add(block);
-
-		System.out.println("Post: " + list);
-
-		return bool;
+		return ((BlockEntityTypeAccessor) this).getBlocks().add(block);
 	}
 
 	public boolean removeBlock(Block block) {

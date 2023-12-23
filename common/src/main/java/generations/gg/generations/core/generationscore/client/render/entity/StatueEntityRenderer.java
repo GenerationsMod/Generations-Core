@@ -12,7 +12,7 @@ import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
-import gg.generations.rarecandy.pokeutils.reader.TextureLoader;
+import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -60,7 +60,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         model.setupAnimStateful(null, state, 0F, 0F, 0F, 0F, 0F);
 
         model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.INSTANCE.getLayers(entity.getStatueData().asRenderablePokemon().getSpecies().getResourceIdentifier(), entity.getStatueData().getProperties().getAspects()));
-        var vertexConsumer = ItemRenderer.getFoilBuffer(buffer, model.getLayer(getTextureLocation(entity), false, false), false, false);
+        var vertexConsumer = ItemRenderer.getFoilBuffer(buffer, model.getLayer(texture, false, false), false, false);
 
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 
@@ -69,6 +69,8 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         context.put(RenderContext.Companion.getENTITY(), entity);
         context.put(RenderContext.Companion.getSCALE(), scale);
         context.put(RenderContext.Companion.getTEXTURE(), texture);
+        context.put(RenderContext.Companion.getSPECIES(), entity.species());
+        context.put(RenderContext.Companion.getASPECTS(), entity.aspects());
 
         model.render(context, stack, vertexConsumer, light, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
 
@@ -97,7 +99,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
     public @NotNull ResourceLocation getTextureLocation(@NotNull StatueEntity entity) {
         var material = entity.getStatueData().material();
 
-        if(material != null) return ((GenerationsCoreClient.GenerationsTextureLoader) TextureLoader.instance()).getLocation(material);
+        if(material != null) return ((GenerationsCoreClient.GenerationsTextureLoader) ITextureLoader.instance()).getLocation(material);
         else return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);
     }
 }

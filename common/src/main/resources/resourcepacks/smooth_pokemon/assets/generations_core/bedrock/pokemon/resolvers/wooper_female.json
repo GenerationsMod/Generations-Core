@@ -1,6 +1,6 @@
 {
   "species": "cobblemon:wooper",
-  "order": 1,
+  "order": 4,
   "variations": [
     {
       "aspects": [
@@ -8,6 +8,13 @@
       ],
       "poser": "generations_core:wooper_female",
       "model": "generations_core:wooper_female.pk"
+    },
+    {
+      "aspects": [
+        "female",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
     }
   ]
 }

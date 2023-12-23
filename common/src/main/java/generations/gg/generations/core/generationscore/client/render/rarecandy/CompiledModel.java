@@ -3,19 +3,17 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
 import de.javagl.jgltf.model.GltfModel;
-import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
-import gg.generations.rarecandy.pokeutils.reader.TextureLoader;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
 import gg.generations.rarecandy.renderer.loading.ModelLoader;
-import gg.generations.rarecandy.renderer.pipeline.Pipeline;
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import gg.generations.rarecandy.renderer.storage.ObjectManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
+import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
 import java.io.IOException;
@@ -30,7 +28,7 @@ import java.util.function.Supplier;
  */
 public class CompiledModel {
     public final MultiRenderObject<MeshObject> renderObject;
-    public CompiledModel(ResourceLocation a, InputStream stream, Function<String, Pipeline> pipeline, Function<GltfModel, Supplier<MeshObject>> supplier) {
+    public CompiledModel(ResourceLocation a, InputStream stream, Function<GltfModel, Supplier<MeshObject>> supplier) {
         var loader = ModelRegistry.getWorldRareCandy().getLoader();
         this.renderObject = loader.createObject(
                 () -> new PixelAsset(stream, a.toString()),
@@ -46,17 +44,12 @@ public class CompiledModel {
                 },
                 object -> {
                     var manager = Minecraft.getInstance().getTextureManager();
-                    object.availableVariants().forEach(new Consumer<String>() {
+                    object.availableVariants().forEach(s -> manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
                         @Override
-                        public void accept(String s) {
-                            manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
-                                @Override
-                                public void load(ResourceManager resourceManager) throws IOException {
+                        public void load(@NotNull ResourceManager resourceManager) {
 
-                                }
-                            });
                         }
-                    });
+                    }));
                     if(object.scale == 0f) object.scale = 1.0f;
                 }
         );

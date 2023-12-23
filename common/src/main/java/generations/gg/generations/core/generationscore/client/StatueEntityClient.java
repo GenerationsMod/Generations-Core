@@ -27,7 +27,7 @@ public class StatueEntityClient extends PoseableEntityState<PokemonEntity> imple
 
     public PixelmonInstance getInstance() {
         if (pixelmonInstance == null)
-            pixelmonInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null, () -> LightingSettings.NORMAL_SHADING);
+            pixelmonInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null);
 
         return pixelmonInstance;
     }

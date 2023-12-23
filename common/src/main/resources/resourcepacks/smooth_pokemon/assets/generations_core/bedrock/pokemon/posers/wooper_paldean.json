@@ -16,7 +16,7 @@
       ],
       "animations": [
         "look",
-        "pk(generations_core:wooper_paldean.pk, idle.tranm)"
+        "pk(generations_core:wooper_paldean.pk, idle)"
       ]
     },
     "floating": {

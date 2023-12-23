@@ -43,7 +43,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     }
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
-        var model = ModelRegistry.get(blockEntity, "block_animated");
+        var model = ModelRegistry.get(blockEntity);
         stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
 
         if (blockEntity.objectInstance == null) {
@@ -75,7 +75,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     protected void renderModelFrameProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
         //TODO: Get this operational
 
-        var model = ModelRegistry.get(blockEntity, "animated_block");
+        var model = ModelRegistry.get(blockEntity);
 
         stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
 
@@ -117,7 +117,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
     protected void renderResourceLocation(ResourceLocation location, PoseStack stack, ObjectInstance objectInstance) {
         objectInstance.transformationMatrix().set(stack.last().pose());
-        ModelRegistry.get(location, "animated_block").render(objectInstance, RenderSystem.getProjectionMatrix());
+        ModelRegistry.get(location).render(objectInstance, RenderSystem.getProjectionMatrix());
     }
 
     @Override

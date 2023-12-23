@@ -36,6 +36,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
+import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.pokeutils.reader.TextureReference;
 import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.tools.TextureLoader;
@@ -55,6 +56,8 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.texture.AbstractTexture;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
@@ -85,6 +88,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
@@ -122,7 +126,7 @@ public class GenerationsCoreClient {
     }
 
     private static void setupClient(Minecraft event) {
-        event.submit(() -> {
+        event.tell(() -> {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
@@ -376,7 +380,7 @@ public class GenerationsCoreClient {
         ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
     }
 
-    public static class GenerationsTextureLoader extends gg.generations.rarecandy.pokeutils.reader.TextureLoader {
+    public static class GenerationsTextureLoader extends ITextureLoader {
         final Map<String, ResourceLocation> MAP = new HashMap<>();
 
         public GenerationsTextureLoader(Minecraft minecraft) {}
@@ -386,7 +390,7 @@ public class GenerationsCoreClient {
             register("light", new TextureReference(fromColor("ffffff"), "light"));
             register("neutral", new TextureReference(fromColor("999999"), "neutral"));
 
-            register("statue:concrete", new TextureReference(fromResourceLocation(manager, new ResourceLocation("generations_core:concrete")), "statue:concrete"));
+            register("statue:concrete", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("concrete")), "statue:concrete"));
 
         }
 
@@ -416,9 +420,21 @@ public class GenerationsCoreClient {
         }
 
         @Override
+        public void register(String s, ITexture iTexture) {
+            if(iTexture instanceof DynamicTexture texture) {
+                var location = Minecraft.getInstance().getTextureManager().register(s.replace(":", "_"), texture);
+                MAP.putIfAbsent(s, location);
+            }
+        }
+
+        @Override
         public void register(String s, TextureReference textureReference) {
-            var location = Minecraft.getInstance().getTextureManager().register(s, new generations.gg.generations.core.generationscore.client.render.rarecandy.Texture(textureReference));
-            MAP.putIfAbsent(s, location);
+            register(s, new generations.gg.generations.core.generationscore.client.render.rarecandy.Texture(textureReference));
+        }
+
+        @Override
+        protected ITexture loadFromReference(TextureReference textureReference) {
+            return null;
         }
 
         @Override
@@ -438,6 +454,11 @@ public class GenerationsCoreClient {
         }
 
         @Override
+        public TextureReference generateDirectReference(String s) {
+            return null;
+        }
+
+        @Override
         public ITexture getDarkFallback() {
             return getTexture("dark");
         }
@@ -450,6 +471,11 @@ public class GenerationsCoreClient {
         @Override
         public ITexture getNuetralFallback() {
             return getTexture("neutral");
+        }
+
+        @Override
+        public Set<String> getTextureEntries() {
+            return null;
         }
 
         public boolean has(String texture) {
