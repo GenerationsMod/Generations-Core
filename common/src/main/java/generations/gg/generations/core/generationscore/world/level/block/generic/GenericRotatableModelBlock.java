@@ -295,4 +295,8 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     public enum Size {//TODO: THink of better name
         WIDTH, LENGTH, HEIGHT
     }
+
+    public boolean shouldRotateSpecial() {
+        return true;
+    }
 }

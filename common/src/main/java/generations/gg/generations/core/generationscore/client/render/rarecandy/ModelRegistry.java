@@ -14,9 +14,11 @@ import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
 
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
@@ -62,21 +64,28 @@ public class ModelRegistry {
 
     public static void prepForBER(PoseStack stack, ModelContextProviders.AngleProvider supplier) {
 
-        stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
 
-        if(supplier instanceof ModelProvidingBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof GenericRotatableModelBlock<?> block) {
-            var dir = blockEntity.getBlockState().getValue(GenericRotatableModelBlock.FACING);
-            var opposite = dir.getOpposite();
-            var counterClockwise = dir.getCounterClockWise();
+        if(supplier instanceof ModelProvidingBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof GenericRotatableModelBlock<?> block && block.shouldRotateSpecial()) {
+            var forward = blockEntity.getBlockState().getValue(GenericRotatableModelBlock.FACING);
 
-            var displaceX = (block.width()+1) / 2f;
-            var dispalceZ = (block.length()+1) / 2f;
+            var width = block.width() * 0.5f;
+            var lenth = block.length() * 0.5f;
 
+            stack.translate(0.5f, 0.0f, 0.5f);
 
-            stack.translate(counterClockwise.getStepX() * displaceX, 0.0f, opposite.getStepZ() * dispalceZ);
+            switch (forward) {
+                case SOUTH -> stack.translate(width, 0, -lenth);
+                case EAST -> stack.translate(-lenth, 0, -width);
+                case NORTH -> stack.translate(-width, 0, lenth);
+                case WEST -> stack.translate(lenth, 0, width);
+            }
+
+            stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
+        } else {
+            stack.translate(0.5f, 0.0f, 0.5f);
+            stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
         }
 
-//        stack.translate(0.5f, 0.0f, 0.5f);
     }
 
     public static RareCandy getWorldRareCandy() {

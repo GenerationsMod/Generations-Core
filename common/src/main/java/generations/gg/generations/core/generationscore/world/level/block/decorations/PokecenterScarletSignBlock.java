@@ -34,4 +34,9 @@ public class PokecenterScarletSignBlock extends GenericRotatableModelBlock<Gener
         BlockState blockState = level.getBlockState(blockPos);
         return blockState.isFaceSturdy(level, blockPos, direction);
     }
+
+    @Override
+    public boolean shouldRotateSpecial() {
+        return false;
+    }
 }
