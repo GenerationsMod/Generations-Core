@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.client.render;
 
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.pokemon.FormData;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import net.minecraft.resources.ResourceLocation;
 
@@ -13,4 +14,8 @@ public interface PixelmonInstanceProvider {
     public ResourceLocation species();
 
     public Set<String> aspects();
+
+    default FormData getFormData() {
+        return PokemonSpecies.INSTANCE.getByIdentifier(species()).getForm(aspects());
+    }
 }

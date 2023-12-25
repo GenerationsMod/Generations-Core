@@ -52,7 +52,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
             isGui = true;
         } else {
-            scale *= context.request(RenderContext.Companion.getSCALE());
+            scale *= ((PixelmonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;
         }
 
         if(model.renderObject.isReady()) {
