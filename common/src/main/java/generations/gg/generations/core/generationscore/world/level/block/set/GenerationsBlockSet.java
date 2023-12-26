@@ -28,7 +28,7 @@ public class GenerationsBlockSet {
         slab = GenerationsBlocks.registerBlockItem(name + "_slab", () -> new SlabBlock(properties)).get();
         stairs = GenerationsBlocks.registerBlockItem(name + "_stairs", () -> new StairBlock(baseBlock.defaultBlockState(), properties)).get();
         wall = GenerationsBlocks.registerBlockItem(name + "_wall", () -> new WallBlock(properties)).get();
-        blockFamily = new BlockFamily.Builder(baseBlock).slab(slab).stairs(stairs).wall(wall).getFamily();
+        blockFamily = new BlockFamily.Builder(baseBlock).slab(slab).stairs(stairs).wall(wall).recipeGroupPrefix(name).recipeUnlockedBy("has_" + name).getFamily();
         blockSets.add(this);
     }
 

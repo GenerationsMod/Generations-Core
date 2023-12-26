@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.forge.datagen.data.famili
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -800,6 +801,11 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         GenerationsBlockFamilies.getAllUltraFamilies().forEach(arg -> {
             generateRecipes(consumer, arg);
             generateStoneCutterRecipesForFamily(consumer, arg);
+        });
+        GenerationsBlockSet.getBlockSets().forEach(arg -> {
+            BlockFamily family = arg.getBlockFamily();
+            generateRecipes(consumer, family);
+            generateStoneCutterRecipesForFamily(consumer, family);
         });
     }
 
