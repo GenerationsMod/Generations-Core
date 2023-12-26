@@ -744,14 +744,9 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> ULTRA_CUT_SANDSTONE = registerBlockItem("ultra_cut_sandstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE)));
     public static final RegistrySupplier<SlabBlock> ULTRA_CUT_SANDSTONE_SLAB = registerBlockItem("ultra_cut_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ULTRA_CUT_SANDSTONE.get())));
     public static final RegistrySupplier<Block> GHOST_LANTERN = registerBlockItem("ghost_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(.5f).lightLevel((lightLevel) -> 15)));
-    public static final RegistrySupplier<Block> GHOST_BRICKS = registerBlockItem("ghost_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> GHOST_BRICK_STAIRS = registerBlockItem("ghost_brick_stairs", () -> new StairBlock(GHOST_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(GHOST_BRICKS.get())));
-    public static final RegistrySupplier<SlabBlock> GHOST_BRICK_SLAB = registerBlockItem("ghost_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GHOST_BRICKS.get())));
-    public static final RegistrySupplier<WallBlock> GHOST_BRICK_WALL = registerBlockItem("ghost_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GHOST_BRICKS.get())));
-    public static final RegistrySupplier<Block> GHOST_OBELISK = registerBlockItem("ghost_obelisk", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> GHOST_OBELISK_STAIRS = registerBlockItem("ghost_obelisk_stairs", () -> new StairBlock(GHOST_OBELISK.get().defaultBlockState(), BlockBehaviour.Properties.copy(GHOST_OBELISK.get())));
-    public static final RegistrySupplier<SlabBlock> GHOST_OBELISK_SLAB = registerBlockItem("ghost_obelisk_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GHOST_OBELISK.get())));
-    public static final RegistrySupplier<WallBlock> GHOST_OBELISK_WALL = registerBlockItem("ghost_obelisk_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GHOST_OBELISK.get())));
+    public static final GenerationsBlockSet GHOST_BRICKS_SET = new GenerationsBlockSet("ghost_bricks", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet GHOST_OBELISK_SET = new GenerationsBlockSet("ghost_obelisk", BlockBehaviour.Properties.copy(Blocks.STONE));
+
     public static final RegistrySupplier<Block> GHOST_PILLAR_SIDE = registerBlockItem("ghost_pillar_side", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<StairBlock> GHOST_PILLAR_SIDE_STAIRS = registerBlockItem("ghost_pillar_side_stairs", () -> new StairBlock(GHOST_PILLAR_SIDE.get().defaultBlockState(), BlockBehaviour.Properties.copy(GHOST_PILLAR_SIDE.get())));
     public static final RegistrySupplier<SlabBlock> GHOST_PILLAR_SIDE_SLAB = registerBlockItem("ghost_pillar_side_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GHOST_PILLAR_SIDE.get())));
@@ -760,29 +755,15 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> GHOST_PILLAR_TOP_STAIRS = registerBlockItem("ghost_pillar_top_stairs", () -> new StairBlock(GHOST_PILLAR_TOP.get().defaultBlockState(), BlockBehaviour.Properties.copy(GHOST_PILLAR_TOP.get())));
     public static final RegistrySupplier<SlabBlock> GHOST_PILLAR_TOP_SLAB = registerBlockItem("ghost_pillar_top_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GHOST_PILLAR_TOP.get())));
     public static final RegistrySupplier<WallBlock> GHOST_PILLAR_TOP_WALL = registerBlockItem("ghost_pillar_top_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GHOST_PILLAR_TOP.get())));
-    public static final RegistrySupplier<Block> MIRROR_GLASS = registerBlockItem("mirror_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(.5f)));
-    public static final RegistrySupplier<StairBlock>  MIRROR_GLASS_STAIRS = registerBlockItem("mirror_glass_stairs", () -> new StairBlock(MIRROR_GLASS.get().defaultBlockState(), BlockBehaviour.Properties.copy(MIRROR_GLASS.get())));
-    public static final RegistrySupplier<SlabBlock> MIRROR_GLASS_SLAB = registerBlockItem("mirror_glass_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MIRROR_GLASS.get())));
-    public static final RegistrySupplier<WallBlock> MIRROR_GLASS_WALL = registerBlockItem("mirror_glass_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MIRROR_GLASS.get())));
 
-    public static final RegistrySupplier<Block> NORMAL_SANDSTONE = registerBlockItem("normal_sandstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
-    public static final RegistrySupplier<StairBlock> NORMAL_SANDSTONE_STAIRS = registerBlockItem("normal_sandstone_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(NORMAL_SANDSTONE.get())));
-    public static final RegistrySupplier<SlabBlock> NORMAL_SANDSTONE_SLAB = registerBlockItem("normal_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(NORMAL_SANDSTONE.get())));
-    public static final RegistrySupplier<WallBlock> NORMAL_SANDSTONE_WALL = registerBlockItem("normal_sandstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(NORMAL_SANDSTONE.get())));
-    public static final RegistrySupplier<Block> BRIGHT_SANDSTONE = registerBlockItem("bright_sandstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).lightLevel((lightLevel) -> 15)));
-    public static final RegistrySupplier<StairBlock> BRIGHT_SANDSTONE_STAIRS = registerBlockItem("bright_sandstone_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BRIGHT_SANDSTONE.get())));
-    public static final RegistrySupplier<SlabBlock> BRIGHT_SANDSTONE_SLAB = registerBlockItem("bright_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BRIGHT_SANDSTONE.get())));
-    public static final RegistrySupplier<WallBlock> BRIGHT_SANDSTONE_WALL = registerBlockItem("bright_sandstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BRIGHT_SANDSTONE.get())));
+    public static final GenerationsBlockSet MIRROR_GLASS_SET = new GenerationsBlockSet("mirror_glass", BlockBehaviour.Properties.copy(Blocks.GLASS).strength(.5f));
+    public static final GenerationsBlockSet NORMAL_SANDSTONE_SET = new GenerationsBlockSet("normal_sandstone", BlockBehaviour.Properties.copy(Blocks.SANDSTONE));
+    public static final GenerationsBlockSet BRIGHT_SANDSTONE_SET = new GenerationsBlockSet("bright_sandstone", BlockBehaviour.Properties.copy(Blocks.SANDSTONE).lightLevel((lightLevel) -> 15));
     public static final RegistrySupplier<Block> MACHINE_BLOCK = registerBlockItem("machine_block", () -> new MachineBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<Block> OCEAN_BLOCK = registerBlockItem("ocean_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> OCEAN_BLOCK_STAIRS = registerBlockItem("ocean_block_stairs", () -> new StairBlock(OCEAN_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(OCEAN_BLOCK.get())));
-    public static final RegistrySupplier<SlabBlock> OCEAN_BLOCK_SLAB = registerBlockItem("ocean_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(OCEAN_BLOCK.get())));
-    public static final RegistrySupplier<WallBlock> OCEAN_BLOCK_WALL = registerBlockItem("ocean_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(OCEAN_BLOCK.get())));
+    public static final GenerationsBlockSet OCEAN_BLOCK_SET = new GenerationsBlockSet("ocean_block", BlockBehaviour.Properties.copy(Blocks.STONE));
 
-    public static final RegistrySupplier<Block> WATER_QUARTZ = registerBlockItem("water_quartz", () -> new Block(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)));
-    public static final RegistrySupplier<StairBlock> WATER_QUARTZ_STAIRS = registerBlockItem("water_quartz_stairs", () -> new StairBlock(WATER_QUARTZ.get().defaultBlockState(), BlockBehaviour.Properties.copy(WATER_QUARTZ.get())));
-    public static final RegistrySupplier<SlabBlock> WATER_QUARTZ_SLAB = registerBlockItem("water_quartz_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WATER_QUARTZ.get())));
-    public static final RegistrySupplier<WallBlock> WATER_QUARTZ_WALL = registerBlockItem("water_quartz_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WATER_QUARTZ.get())));
+    public static final GenerationsBlockSet WATER_QUARTZ_SET = new GenerationsBlockSet("water_quartz", BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK));
+
     public static final RegistrySupplier<Block> CONCRETE_TOP = registerBlockItem("concrete_top", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLACK_CONCRETE)));
     public static final RegistrySupplier<StairBlock> CONCRETE_TOP_STAIRS = registerBlockItem("concrete_top_stairs", () -> new StairBlock(CONCRETE_TOP.get().defaultBlockState(), BlockBehaviour.Properties.copy(CONCRETE_TOP.get())));
     public static final RegistrySupplier<SlabBlock> CONCRETE_TOP_SLAB = registerBlockItem("concrete_top_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CONCRETE_TOP.get())));
@@ -797,10 +778,7 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> RICH_SOIL_4 = registerBlockItem("rich_soil_4", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 
     //Bleach Stone
-    public static final RegistrySupplier<Block> BLEACH_STONE = registerBlockItem("bleach_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> BLEACH_STONE_STAIRS = registerBlockItem("bleach_stone_stairs", () -> new StairBlock(BLEACH_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(BLEACH_STONE.get())));
-    public static final RegistrySupplier<SlabBlock> BLEACH_STONE_SLAB = registerBlockItem("bleach_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLEACH_STONE.get())));
-    public static final RegistrySupplier<WallBlock> BLEACH_STONE_WALL = registerBlockItem("bleach_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLEACH_STONE.get())));
+    public static final GenerationsBlockSet BLEACH_STONE_SET = new GenerationsBlockSet("bleach_stone", BlockBehaviour.Properties.copy(Blocks.STONE));
 
     //Shingles
     public static final RegistrySupplier<Block> WHITE_SHINGLES = registerBlockItem("white_shingles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
@@ -852,10 +830,8 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<StairBlock> PINK_SHINGLES_STAIRS = registerBlockItem("pink_shingles_stairs", () -> new StairBlock(PINK_SHINGLES.get().defaultBlockState(), BlockBehaviour.Properties.copy(PINK_SHINGLES.get())));
     public static final RegistrySupplier<Block> PINK_SHINGLES_SLAB = registerBlockItem("pink_shingles_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PINK_SHINGLES.get())));
 
-    public static final RegistrySupplier<Block> COOL_STONE = registerBlockItem("cool_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> COOL_STONE_STAIRS = registerBlockItem("cool_stone_stairs", () -> new StairBlock(COOL_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(COOL_STONE.get())));
-    public static final RegistrySupplier<SlabBlock> COOL_STONE_SLAB = registerBlockItem("cool_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COOL_STONE.get())));
-    public static final RegistrySupplier<WallBlock> COOL_STONE_WALL = registerBlockItem("cool_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COOL_STONE.get())));
+    public static final GenerationsBlockSet COOL_STONE_SET = new GenerationsBlockSet("cool_stone", BlockBehaviour.Properties.copy(Blocks.STONE));
+
     /**
      * 1 Block Tall Ballonlea Mushrooms
      */

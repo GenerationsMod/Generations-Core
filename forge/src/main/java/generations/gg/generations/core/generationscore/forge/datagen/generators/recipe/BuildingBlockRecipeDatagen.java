@@ -506,9 +506,9 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //Missing Blocks for 1+2 recipes
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_1.get(), GenerationsBlocks.BURST_TURF.get());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_3.get(), GenerationsBlocks.RUINS_SAND.get());
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_4.get(), GenerationsBlocks.OCEAN_BLOCK.get());
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_5.get(), GenerationsBlocks.MIRROR_GLASS.get());
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_6.get(), GenerationsBlocks.NORMAL_SANDSTONE.get());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_4.get(), GenerationsBlocks.OCEAN_BLOCK_SET.getBaseBlock());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_5.get(), GenerationsBlocks.MIRROR_GLASS_SET.getBaseBlock());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_6.get(), GenerationsBlocks.NORMAL_SANDSTONE_SET.getBaseBlock());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_7.get(), GenerationsBlocks.ICE_PILLAR_TOP_SET.getBaseBlock());
 
         /*
@@ -706,36 +706,36 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
          * Ghost Block Recipes
          */
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_BRICKS.get(), 16)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock(), 16)
                 .requires(Blocks.BRICKS)
                 .requires(GenerationsItems.GHOST_GEM.get())
                 .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
                 .unlockedBy(getHasName(GenerationsItems.GHOST_GEM.get()), has(GenerationsItems.GHOST_GEM.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_OBELISK.get())
-                .define('X', GenerationsBlocks.GHOST_BRICKS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_OBELISK_SET.getBaseBlock())
+                .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
                 .pattern("XX")
                 .pattern("XX")
-                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS.get()), has(GenerationsBlocks.GHOST_BRICKS.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_PILLAR_SIDE.get(), 2)
-                .define('X', GenerationsBlocks.GHOST_BRICKS.get())
+                .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
                 .define('Y', GenerationsWood.GHOST_PLANKS.get())
                 .pattern("XY")
                 .pattern("YX")
                 .pattern("XY")
-                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS.get()), has(GenerationsBlocks.GHOST_BRICKS.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
                 .unlockedBy(getHasName(GenerationsWood.GHOST_PLANKS.get()), has(GenerationsWood.GHOST_PLANKS.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_PILLAR_TOP.get())
-                .define('X', GenerationsBlocks.GHOST_BRICKS.get())
+                .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
                 .define('Y', GenerationsWood.GHOST_PLANKS.get())
                 .pattern("YX")
                 .pattern("XY")
-                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS.get()), has(GenerationsBlocks.GHOST_BRICKS.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
                 .unlockedBy(getHasName(GenerationsWood.GHOST_PLANKS.get()), has(GenerationsWood.GHOST_PLANKS.get()))
                 .save(consumer);
 
