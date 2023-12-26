@@ -42,7 +42,7 @@ public class GenerationsUtilityBlocks {
 
 	//PC Blocks
 	public static final RegistrySupplier<PcBlock> TABLE_PC = registerBlockItem("table_pc", () -> new PcBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.TABLE_PC, 0, 0, 0));
-	public static final RegistrySupplier<PcBlock> ROTOM_PC = registerBlockItem("rotom_pc", () -> new PcBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.ROTOM_PC, 0, 1, 0));
+	public static final RegistrySupplier<PcBlock> ROTOM_PC = registerBlockItem("rotom_pc", () -> new RotomPc(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
 
 
 	public static final DyedGroup<ClockBlock, ClockBlockEntity> CLOCK = registerDyed("clock", function -> () -> new ClockBlock(function, BlockBehaviour.Properties.of().strength(2f)));

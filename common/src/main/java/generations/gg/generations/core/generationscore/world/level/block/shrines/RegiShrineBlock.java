@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.legends.RegiKeyItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
@@ -16,11 +17,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -32,10 +37,19 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static net.minecraft.world.phys.shapes.BooleanOp.OR;
+
 @SuppressWarnings("deprecation")
 public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
+    private final static GenerationsVoxelShapes.DirectionalShapes SHAPE = GenerationsVoxelShapes.generateDirectionVoxelShape(Shapes.join(Shapes.box(0, 0, 0, 1, 0.3125, 1), Shapes.box(0.125, 0.3125, 0.125, 0.875, 0.8125, 0.875), OR), Direction.NORTH);
+
     private final SpeciesKey species;
     private final List<String> list;
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE.getShape(state);
+    }
 
     public RegiShrineBlock(Properties materialIn, ResourceLocation model, SpeciesKey speciesKey) {
         super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);

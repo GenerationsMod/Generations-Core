@@ -38,7 +38,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 import java.util.*
 
-class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, height: Int = 0, length: Int = 0) : GenericRotatableModelBlock<PcBlockEntity>(arg, GenerationsBlockEntities.PC, model, width, height, length) {
+open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, height: Int = 0, length: Int = 0) : GenericRotatableModelBlock<PcBlockEntity>(arg, GenerationsBlockEntities.PC, model, width, height, length) {
     override fun createDefaultState(): BlockState {
         return super.createDefaultState().setValue(ON, false)
     }
