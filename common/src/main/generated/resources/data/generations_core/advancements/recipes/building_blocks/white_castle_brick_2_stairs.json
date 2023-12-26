@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:castle_white_brick_2_stairs_from_white_castle_brick_2_stonecutting"
+        "recipe": "generations_core:white_castle_brick_2_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:castle_white_brick_2_stairs_from_white_castle_brick_2_stonecutting"
+      "generations_core:white_castle_brick_2_stairs"
     ]
   },
   "sends_telemetry_event": false

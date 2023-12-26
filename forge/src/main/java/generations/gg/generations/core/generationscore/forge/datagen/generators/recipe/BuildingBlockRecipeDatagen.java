@@ -270,7 +270,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
 
         //Castle Brick
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BRICK_2_SET.getBaseBlock(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BRICK_SET.getBaseBlock(), 4)
                 .define('E', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
                 .define('Q', Blocks.BRICKS)
                 .pattern("EQ")

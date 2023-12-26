@@ -21,6 +21,7 @@ import net.minecraft.world.level.material.MapColor;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+@SuppressWarnings("unused")
 public class GenerationsBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
@@ -63,7 +64,7 @@ public class GenerationsBlocks {
 
     public static final GenerationsBlockSet GRAY_CASTLE_BRICK_SET = new GenerationsBlockSet("gray_castle_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS));
     public static final GenerationsBlockSet GRAY_CASTLE_BRICK_2_SET = new GenerationsBlockSet("gray_castle_brick_2", BlockBehaviour.Properties.copy(Blocks.BRICKS));
-public static final GenerationsBlockSet WHITE_CASTLE_BRICK_SET = new GenerationsBlockSet("white_castle_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet WHITE_CASTLE_BRICK_SET = new GenerationsBlockSet("white_castle_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS));
     public static final GenerationsBlockSet WHITE_CASTLE_BRICK_2_SET = new GenerationsBlockSet("white_castle_brick_2", BlockBehaviour.Properties.copy(Blocks.BRICKS));
     public static final GenerationsBlockSet CASTLE_WALL_SET = new GenerationsBlockSet("castle_wall", BlockBehaviour.Properties.copy(Blocks.STONE));
     public static final GenerationsBlockSet CASTLE_WALL_2_SET = new GenerationsBlockSet("castle_wall_2", BlockBehaviour.Properties.copy(Blocks.STONE));
@@ -576,9 +577,9 @@ public static final GenerationsBlockSet WHITE_CASTLE_BRICK_SET = new Generations
     public static final GenerationsBlockSet FLOOR_2_SET = new GenerationsBlockSet("floor_2", BlockBehaviour.Properties.copy(Blocks.STONE));
     public static final GenerationsBlockSet FLOOR_3_SET = new GenerationsBlockSet("floor_3", BlockBehaviour.Properties.copy(Blocks.STONE));
     public static final GenerationsBlockSet FLOOR_4_SET = new GenerationsBlockSet("floor_4", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet MIRROR_FLOOR_1_SET = new GenerationsBlockSet("mirror_floor_1", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet MIRROR_FLOOR_2_SET = new GenerationsBlockSet("mirror_floor_2", BlockBehaviour.Properties.copy(Blocks.STONE));
-    public static final GenerationsBlockSet MIRROR_FLOOR_3_SET = new GenerationsBlockSet("mirror_floor_3", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet MIRRORED_FLOOR_1_SET = new GenerationsBlockSet("mirrored_floor_1", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet MIRRORED_FLOOR_2_SET = new GenerationsBlockSet("mirrored_floor_2", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet MIRRORED_FLOOR_3_SET = new GenerationsBlockSet("mirrored_floor_3", BlockBehaviour.Properties.copy(Blocks.STONE));
 
     public static final RegistrySupplier<Block> ENCHANTED_OBSIDIAN = registerBlockItem("enchanted_obsidian", () -> new EnchantedObsidianBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
     public static final RegistrySupplier<StairBlock> ENCHANTED_OBSIDIAN_STAIRS = registerBlockItem("enchanted_obsidian_stairs", () -> new StairBlock(Blocks.OBSIDIAN.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
