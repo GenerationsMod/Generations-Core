@@ -5,7 +5,6 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.*;
-import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import net.minecraft.data.BlockFamily;
@@ -44,12 +43,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerWoodPallet(GenerationsWood.ULTRA_DARK_LOG, GenerationsWood.STRIPPED_ULTRA_DARK_LOG, GenerationsWood.ULTRA_DARK_PLANKS, GenerationsWood.ULTRA_DARK_SLAB, GenerationsWood.ULTRA_DARK_STAIRS, GenerationsWood.ULTRA_DARK_BUTTON, GenerationsWood.ULTRA_DARK_PRESSURE_PLATE, GenerationsWood.ULTRA_DARK_DOOR, GenerationsWood.ULTRA_DARK_TRAPDOOR, GenerationsWood.ULTRA_DARK_WOOD, GenerationsWood.STRIPPED_ULTRA_DARK_WOOD, GenerationsWood.ULTRA_DARK_FENCE, GenerationsWood.ULTRA_DARK_FENCE_GATE, GenerationsWood.ULTRA_DARK_SIGN, GenerationsWood.ULTRA_DARK_WALL_SIGN, GenerationsWood.ULTRA_DARK_CRAFTING_TABLE, GenerationsWood.ULTRA_DARK_HANGING_SIGN, GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN, GenerationsWood.ULTRA_DARK_BOOKSHELF);
         registerWoodPallet(GenerationsWood.ULTRA_JUNGLE_LOG, GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG, GenerationsWood.ULTRA_JUNGLE_PLANKS, GenerationsWood.ULTRA_JUNGLE_SLAB, GenerationsWood.ULTRA_JUNGLE_STAIRS, GenerationsWood.ULTRA_JUNGLE_BUTTON, GenerationsWood.ULTRA_JUNGLE_PRESSURE_PLATE, GenerationsWood.ULTRA_JUNGLE_DOOR, GenerationsWood.ULTRA_JUNGLE_TRAPDOOR, GenerationsWood.ULTRA_JUNGLE_WOOD, GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD, GenerationsWood.ULTRA_JUNGLE_FENCE, GenerationsWood.ULTRA_JUNGLE_FENCE_GATE, GenerationsWood.ULTRA_JUNGLE_SIGN, GenerationsWood.ULTRA_JUNGLE_WALL_SIGN, GenerationsWood.ULTRA_JUNGLE_CRAFTING_TABLE, GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN, GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN, GenerationsWood.ULTRA_JUNGLE_BOOKSHELF);
         registerWoodPallet(GenerationsWood.GHOST_LOG, GenerationsWood.STRIPPED_GHOST_LOG, GenerationsWood.GHOST_PLANKS, GenerationsWood.GHOST_SLAB, GenerationsWood.GHOST_STAIRS, GenerationsWood.GHOST_BUTTON, GenerationsWood.GHOST_PRESSURE_PLATE, GenerationsWood.GHOST_DOOR, GenerationsWood.GHOST_TRAPDOOR, GenerationsWood.GHOST_WOOD, GenerationsWood.STRIPPED_GHOST_WOOD, GenerationsWood.GHOST_FENCE, GenerationsWood.GHOST_FENCE_GATE, GenerationsWood.GHOST_SIGN, GenerationsWood.GHOST_WALL_SIGN, GenerationsWood.GHOST_CRAFTING_TABLE, GenerationsWood.GHOST_HANGING_SIGN, GenerationsWood.GHOST_WALL_HANGING_SIGN, GenerationsWood.GHOST_BOOKSHELF);
-
-        //Cobble Ruins
-        registerPallet(GenerationsBlocks.COBBLE_RUINS_1, GenerationsBlocks.COBBLE_RUINS_1_SLAB, GenerationsBlocks.COBBLE_RUINS_1_STAIRS, GenerationsBlocks.COBBLE_RUINS_1_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.COBBLE_RUINS_2, GenerationsBlocks.COBBLE_RUINS_2_SLAB, GenerationsBlocks.COBBLE_RUINS_2_STAIRS, GenerationsBlocks.COBBLE_RUINS_2_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.COBBLE_RUINS_3, GenerationsBlocks.COBBLE_RUINS_3_SLAB, GenerationsBlocks.COBBLE_RUINS_3_STAIRS, GenerationsBlocks.COBBLE_RUINS_3_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.COBBLE_RUINS_4, GenerationsBlocks.COBBLE_RUINS_4_SLAB, GenerationsBlocks.COBBLE_RUINS_4_STAIRS, GenerationsBlocks.COBBLE_RUINS_4_WALL, null, null, true);
 
         //House Floors
         registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_1);
@@ -211,8 +204,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerDoor(GenerationsBlocks.POKECENTER_DOOR.get());
 
-        registerPallet(GenerationsBlocks.POKECENTER_ROOF, GenerationsBlocks.POKECENTER_ROOF_SLAB, GenerationsBlocks.POKECENTER_ROOF_STAIRS, GenerationsBlocks.POKECENTER_ROOF_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.POKECENTER_ROOF_2, GenerationsBlocks.POKECENTER_ROOF_2_SLAB, GenerationsBlocks.POKECENTER_ROOF_2_STAIRS, GenerationsBlocks.POKECENTER_ROOF_2_WALL, null, null, true);
 
         pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, GenerationsItems.POKE_BALL);
         pokeBallChests(GenerationsBlocks.GREATBALL_CHEST, GenerationsItems.GREAT_BALL);
