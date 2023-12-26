@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.world.item.GenericChestBl
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.PokecenterScarletSignBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import generations.gg.generations.core.generationscore.world.level.levelgen.GenerationsFeatures;
 import net.minecraft.core.registries.Registries;
@@ -60,162 +61,29 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> RUINS_WALL = registerBlockItem("ruins_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> DUSTY_RUINS_WALL = registerBlockItem("dusty_ruins_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
-    /*
-      Temple Blocks
-     */
 
-    /**
-     * Temple Block Pallet
-     */
-    public static final RegistrySupplier<Block> TEMPLE_BLOCK = registerBlockItem("temple_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> TEMPLE_BLOCK_STAIRS = registerBlockItem("temple_block_stairs", () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<SlabBlock> TEMPLE_BLOCK_SLAB = registerBlockItem("temple_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(TEMPLE_BLOCK.get())));
-    public static final RegistrySupplier<WallBlock> TEMPLE_BLOCK_WALL = registerBlockItem("temple_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(TEMPLE_BLOCK.get())));
-    /**
-     * Temple Brick Pallet
-     */
-    public static final RegistrySupplier<Block> TEMPLE_BRICK = registerBlockItem("temple_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> TEMPLE_BRICK_STAIRS = registerBlockItem("temple_brick_stairs", () -> new StairBlock(TEMPLE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.copy(TEMPLE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> TEMPLE_BRICK_SLAB = registerBlockItem("temple_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(TEMPLE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> TEMPLE_BRICK_WALL = registerBlockItem("temple_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(TEMPLE_BRICK.get())));
+    public static final GenerationsBlockSet TEMPLE_BLOCK_SET = new GenerationsBlockSet("temple_block", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet TEMPLE_BRICK_SET = new GenerationsBlockSet("temple_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet CASTLE_BLOCK_SET = new GenerationsBlockSet("castle_block", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CRACKED_CASTLE_BLOCK_SET = new GenerationsBlockSet("cracked_castle_block", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CASTLE_BRICK_SET = new GenerationsBlockSet("castle_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet CASTLE_BRICK_2_SET = new GenerationsBlockSet("castle_brick_2", BlockBehaviour.Properties.copy(Blocks.BRICKS));
 
-    /*
-      Castle Blocks
-     */
-
-    /**
-     * Castle Block Pallet
-     */
-    public static final RegistrySupplier<Block> CASTLE_BLOCK = registerBlockItem("castle_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CASTLE_BLOCK_STAIRS = registerBlockItem("castle_block_stairs", () -> new StairBlock(Blocks.STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<SlabBlock> CASTLE_BLOCK_SLAB = registerBlockItem("castle_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_BLOCK.get())));
-    public static final RegistrySupplier<WallBlock> CASTLE_BLOCK_WALL = registerBlockItem("castle_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_BLOCK.get())));
-
-    /**
-     * Cracked Castle Block Pallet
-     */
-    public static final RegistrySupplier<Block> CRACKED_CASTLE_BLOCK = registerBlockItem("cracked_castle_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CRACKED_CASTLE_BLOCK_STAIRS = registerBlockItem("cracked_castle_block_stairs", () -> new StairBlock(CRACKED_CASTLE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(CRACKED_CASTLE_BLOCK.get())));
-    public static final RegistrySupplier<SlabBlock> CRACKED_CASTLE_BLOCK_SLAB = registerBlockItem("cracked_castle_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CRACKED_CASTLE_BLOCK.get())));
-    public static final RegistrySupplier<WallBlock> CRACKED_CASTLE_BLOCK_WALL = registerBlockItem("cracked_castle_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CRACKED_CASTLE_BLOCK.get())));
-
-    /**
-     * Castle Brick Pallet
-     */
-    public static final RegistrySupplier<Block> CASTLE_BRICK = registerBlockItem("castle_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> CASTLE_BRICK_STAIRS = registerBlockItem("castle_brick_stairs", () -> new StairBlock(CASTLE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> CASTLE_BRICK_SLAB = registerBlockItem("castle_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> CASTLE_BRICK_WALL = registerBlockItem("castle_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_BRICK.get())));
-
-    /**
-     * Castle Brick 2 Pallet
-     */
-    public static final RegistrySupplier<Block> CASTLE_BRICK_2 = registerBlockItem("castle_brick_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> CASTLE_BRICK_2_STAIRS = registerBlockItem("castle_brick_2_stairs", () -> new StairBlock(CASTLE_BRICK_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_BRICK_2.get())));
-    public static final RegistrySupplier<SlabBlock> CASTLE_BRICK_2_SLAB = registerBlockItem("castle_brick_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_BRICK_2.get())));
-    public static final RegistrySupplier<WallBlock> CASTLE_BRICK_2_WALL = registerBlockItem("castle_brick_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_BRICK_2.get())));
-
-    /**
-     * Gray Castle Brick Pallet
-     */
-    public static final RegistrySupplier<Block> GRAY_CASTLE_BRICK = registerBlockItem("gray_castle_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> GRAY_CASTLE_BRICK_STAIRS = registerBlockItem("gray_castle_brick_stairs", () -> new StairBlock(GRAY_CASTLE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.copy(GRAY_CASTLE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> GRAY_CASTLE_BRICK_SLAB = registerBlockItem("gray_castle_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRAY_CASTLE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> GRAY_CASTLE_BRICK_WALL = registerBlockItem("gray_castle_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRAY_CASTLE_BRICK.get())));
-    /**
-     * Gray Castle Brick 2 Pallet
-     */
-    public static final RegistrySupplier<Block> GRAY_CASTLE_BRICK_2 = registerBlockItem("gray_castle_brick_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> GRAY_CASTLE_BRICK_2_STAIRS = registerBlockItem("gray_castle_brick_2_stairs", () -> new StairBlock(GRAY_CASTLE_BRICK_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(GRAY_CASTLE_BRICK_2.get())));
-    public static final RegistrySupplier<SlabBlock> GRAY_CASTLE_BRICK_2_SLAB = registerBlockItem("gray_castle_brick_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRAY_CASTLE_BRICK_2.get())));
-    public static final RegistrySupplier<WallBlock> GRAY_CASTLE_BRICK_2_WALL = registerBlockItem("gray_castle_brick_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRAY_CASTLE_BRICK_2.get())));
-
-    /**
-     * White Castle Brick Pallet
-     */
-
-    public static final RegistrySupplier<Block> WHITE_CASTLE_BRICK = registerBlockItem("white_castle_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> WHITE_CASTLE_BRICK_STAIRS = registerBlockItem("white_castle_brick_stairs", () -> new StairBlock(WHITE_CASTLE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<SlabBlock> WHITE_CASTLE_BRICK_SLAB = registerBlockItem("white_castle_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_CASTLE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> WHITE_CASTLE_BRICK_WALL = registerBlockItem("white_castle_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_CASTLE_BRICK.get())));
-
-    /**
-     * White Castle Brick 2 Pallet
-     */
-
-    public static final RegistrySupplier<Block> WHITE_CASTLE_BRICK_2 = registerBlockItem("white_castle_brick_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> WHITE_CASTLE_BRICK_2_STAIRS = registerBlockItem("castle_white_brick_2_stairs", () -> new StairBlock(WHITE_CASTLE_BRICK_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<SlabBlock> WHITE_CASTLE_BRICK_2_SLAB = registerBlockItem("white_castle_brick_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_CASTLE_BRICK_2.get())));
-    public static final RegistrySupplier<WallBlock> WHITE_CASTLE_BRICK_2_WALL = registerBlockItem("white_castle_brick_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_CASTLE_BRICK_2.get())));
-
-    /**
-     * Castle Wall Pallet
-     */
-
-    public static final RegistrySupplier<Block> CASTLE_WALL = registerBlockItem("castle_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CASTLE_WALL_STAIRS = registerBlockItem("castle_wall_stairs", () -> new StairBlock(CASTLE_WALL.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_WALL.get())));
-    public static final RegistrySupplier<SlabBlock> CASTLE_WALL_SLAB = registerBlockItem("castle_wall_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_WALL.get())));
-    public static final RegistrySupplier<WallBlock> CASTLE_WALL_WALL = registerBlockItem("castle_wall_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_WALL.get())));
-
-    /**
-     * Castle Wall 2 Pallet
-     */
-    public static final RegistrySupplier<Block> CASTLE_WALL_2 = registerBlockItem("castle_wall_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CASTLE_WALL_2_STAIRS = registerBlockItem("castle_wall_2_stairs", () -> new StairBlock(CASTLE_WALL_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_WALL_2.get())));
-    public static final RegistrySupplier<SlabBlock> CASTLE_WALL_2_SLAB = registerBlockItem("castle_wall_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_2.get())));
-    public static final RegistrySupplier<WallBlock> CASTLE_WALL_2_WALL = registerBlockItem("castle_wall_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_2.get())));
-
-    /**
-     * Castle Wall 3 Pallet
-     */
-    public static final RegistrySupplier<Block> CASTLE_WALL_3 = registerBlockItem("castle_wall_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CASTLE_WALL_3_STAIRS = registerBlockItem("castle_wall_3_stairs", () -> new StairBlock(CASTLE_WALL_3.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_WALL_3.get())));
-    public static final RegistrySupplier<SlabBlock> CASTLE_WALL_3_SLAB = registerBlockItem("castle_wall_3_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_3.get())));
-    public static final RegistrySupplier<WallBlock> CASTLE_WALL_3_WALL = registerBlockItem("castle_wall_3_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_3.get())));
-
-    /**
-     * Castle Wall 4 Pallet
-     */
-    public static final RegistrySupplier<Block> CASTLE_WALL_4 = registerBlockItem("castle_wall_4", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CASTLE_WALL_4_STAIRS = registerBlockItem("castle_wall_4_stairs", () -> new StairBlock(CASTLE_WALL_4.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_WALL_4.get())));
-    public static final RegistrySupplier<SlabBlock> CASTLE_WALL_4_SLAB = registerBlockItem("castle_wall_4_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_4.get())));
-    public static final RegistrySupplier<WallBlock> CASTLE_WALL_4_WALL = registerBlockItem("castle_wall_4_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_WALL_4.get())));
-
-    /**
-     * Castle Floor Pallet
-     */
-    public static final RegistrySupplier<Block> CASTLE_FLOOR = registerBlockItem("castle_floor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CASTLE_FLOOR_STAIRS = registerBlockItem("castle_floor_stairs", () -> new StairBlock(CASTLE_FLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(CASTLE_FLOOR.get())));
-    public static final RegistrySupplier<SlabBlock> CASTLE_FLOOR_SLAB = registerBlockItem("castle_floor_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CASTLE_FLOOR.get())));
-    public static final RegistrySupplier<WallBlock> CASTLE_FLOOR_WALL = registerBlockItem("castle_floor_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CASTLE_FLOOR.get())));
-
-
-    /*
-      Ice Blocks
-     */
-
-
-    /**
-     * Ice Brick Pallet
-     */
-    public static final RegistrySupplier<Block> ICE_BRICK = registerBlockItem("ice_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
-    public static final RegistrySupplier<StairBlock> ICE_BRICK_STAIRS = registerBlockItem("ice_brick_stairs", () -> new StairBlock(ICE_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.copy(ICE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> ICE_BRICK_SLAB = registerBlockItem("ice_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ICE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> ICE_BRICK_WALL = registerBlockItem("ice_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ICE_BRICK.get())));
-
+    public static final GenerationsBlockSet GRAY_CASTLE_BRICK_SET = new GenerationsBlockSet("gray_castle_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet GRAY_CASTLE_BRICK_2_SET = new GenerationsBlockSet("gray_castle_brick_2", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+public static final GenerationsBlockSet WHITE_CASTLE_BRICK_SET = new GenerationsBlockSet("white_castle_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet WHITE_CASTLE_BRICK_2_SET = new GenerationsBlockSet("white_castle_brick_2", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet CASTLE_WALL_SET = new GenerationsBlockSet("castle_wall", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CASTLE_WALL_2_SET = new GenerationsBlockSet("castle_wall_2", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CASTLE_WALL_3_SET = new GenerationsBlockSet("castle_wall_3", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CASTLE_WALL_4_SET = new GenerationsBlockSet("castle_wall_4", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CASTLE_FLOOR_SET = new GenerationsBlockSet("castle_floor", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet ICE_BRICK_SET = new GenerationsBlockSet("ice_brick", BlockBehaviour.Properties.copy(Blocks.ICE));
     public static final RegistrySupplier<Block> ICE_PILLAR = registerBlockItem("ice_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
     public static final RegistrySupplier<Block> BROKEN_ICE_PILLAR = registerBlockItem("ice_pillar_broken", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
 
-    public static final RegistrySupplier<Block> ICE_PILLAR_SIDE = registerBlockItem("ice_pillar_side", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
-    public static final RegistrySupplier<StairBlock> ICE_PILLAR_SIDE_STAIRS = registerBlockItem("ice_pillar_side_stairs", () -> new StairBlock(ICE_PILLAR_SIDE.get().defaultBlockState(), BlockBehaviour.Properties.copy(ICE_PILLAR_SIDE.get())));
-    public static final RegistrySupplier<SlabBlock> ICE_PILLAR_SIDE_SLAB = registerBlockItem("ice_pillar_side_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ICE_PILLAR_SIDE.get())));
-    public static final RegistrySupplier<WallBlock> ICE_PILLAR_SIDE_WALL = registerBlockItem("ice_pillar_side_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ICE_PILLAR_SIDE.get())));
-
-    public static final RegistrySupplier<Block> ICE_PILLAR_TOP = registerBlockItem("ice_pillar_top", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
-    public static final RegistrySupplier<StairBlock> ICE_PILLAR_TOP_STAIRS = registerBlockItem("ice_pillar_top_stairs", () -> new StairBlock(ICE_PILLAR_TOP.get().defaultBlockState(), BlockBehaviour.Properties.copy(ICE_PILLAR_TOP.get())));
-    public static final RegistrySupplier<SlabBlock> ICE_PILLAR_TOP_SLAB = registerBlockItem("ice_pillar_top_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ICE_PILLAR_TOP.get())));
-    public static final RegistrySupplier<WallBlock> ICE_PILLAR_TOP_WALL = registerBlockItem("ice_pillar_top_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ICE_PILLAR_TOP.get())));
-
+    public static final GenerationsBlockSet ICE_PILLAR_SIDE_SET = new GenerationsBlockSet("ice_pillar_side", BlockBehaviour.Properties.copy(Blocks.ICE));
+    public static final GenerationsBlockSet ICE_PILLAR_TOP_SET = new GenerationsBlockSet("ice_pillar_top", BlockBehaviour.Properties.copy(Blocks.ICE));
 
 
     /**
@@ -1132,7 +1000,7 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<GenericChestBlock> ULTRABALL_CHEST = registerChestBlockItem("ultraball_chest", () -> new GenericChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST),  9, 6, "ultraball_chest"));
     public static final RegistrySupplier<GenericChestBlock> MASTERBALL_CHEST = registerChestBlockItem("masterball_chest", () -> new GenericChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST),  12, 8, "masterball_chest"));
 
-    private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
+    public static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = BLOCKS.register(name, blockSupplier);
         register(name, properties -> new BlockItem(block.get(), properties));
         return block;
