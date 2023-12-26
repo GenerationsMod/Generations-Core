@@ -423,7 +423,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         /*
          * Rock Pallets
          */
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ROCK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ROCK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.GRANITE)
                 .define('Q', Blocks.STONE)
                 .pattern("EQ")
@@ -431,7 +431,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Blocks.GRANITE), has(Blocks.GRANITE))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CAVE_ROCK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CAVE_ROCK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.CLAY)
                 .define('Q', Blocks.STONE)
                 .pattern("EQ")
@@ -439,14 +439,14 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Blocks.CLAY), has(Blocks.CLAY))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CAVE_ROCK_FLOOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CAVE_ROCK_FLOOR_SET.getBaseBlock())
                 .define('X', Blocks.GRAVEL)
                 .pattern("XX")
                 .pattern("XX")
                 .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_CAVE_ROCK_FLOOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_CAVE_ROCK_FLOOR_SET.getBaseBlock())
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Blocks.ICE)
                 .pattern("XY")
@@ -455,7 +455,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //Bridge Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIDGE_BLOCK.get(), 3)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIDGE_BLOCK_SET.getBaseBlock(), 3)
                 .define('E', Blocks.OAK_LOG)
                 .pattern("EEE")
                 .unlockedBy(getHasName(Blocks.OAK_LOG), has(Blocks.OAK_LOG))
@@ -463,42 +463,42 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
 
         //Compressed Polished Blocks
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_ANDESITE.get(), Blocks.POLISHED_ANDESITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DIORITE.get(), Blocks.POLISHED_DIORITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_GRANITE.get(), Blocks.POLISHED_GRANITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DEEPSLATE.get(), Blocks.POLISHED_DEEPSLATE);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_ANDESITE_SET.getBaseBlock(), Blocks.POLISHED_ANDESITE);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DIORITE_SET.getBaseBlock(), Blocks.POLISHED_DIORITE);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_GRANITE_SET.getBaseBlock(), Blocks.POLISHED_GRANITE);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DEEPSLATE_SET.getBaseBlock(), Blocks.POLISHED_DEEPSLATE);
 
         //Cobble Ruins Pallet
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1.get(), 4)
                 .define('E', Blocks.COBBLESTONE)
-                .define('Q', GenerationsBlocks.ROCK.get())
+                .define('Q', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .pattern("EQ")
                 .pattern("EQ")
-                .unlockedBy(getHasName(GenerationsBlocks.ROCK.get()), has(GenerationsBlocks.ROCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_2.get(), 4)
-                .define('E', GenerationsBlocks.ROCK.get())
+                .define('E', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .define('Q', Blocks.COBBLESTONE)
                 .pattern("EQ")
                 .pattern("EQ")
-                .unlockedBy(getHasName(GenerationsBlocks.ROCK.get()), has(GenerationsBlocks.ROCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_3.get(), 4)
-                .define('E', GenerationsBlocks.ROCK.get())
+                .define('E', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .define('Q', Blocks.COBBLESTONE)
                 .pattern("EE")
                 .pattern("QQ")
-                .unlockedBy(getHasName(GenerationsBlocks.ROCK.get()), has(GenerationsBlocks.ROCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_4.get(), 4)
                 .define('E', Blocks.COBBLESTONE)
-                .define('Q', GenerationsBlocks.ROCK.get())
+                .define('Q', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .pattern("EE")
                 .pattern("QQ")
-                .unlockedBy(getHasName(GenerationsBlocks.ROCK.get()), has(GenerationsBlocks.ROCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
         //House Floors

@@ -84,58 +84,13 @@ public static final GenerationsBlockSet WHITE_CASTLE_BRICK_SET = new Generations
 
     public static final GenerationsBlockSet ICE_PILLAR_SIDE_SET = new GenerationsBlockSet("ice_pillar_side", BlockBehaviour.Properties.copy(Blocks.ICE));
     public static final GenerationsBlockSet ICE_PILLAR_TOP_SET = new GenerationsBlockSet("ice_pillar_top", BlockBehaviour.Properties.copy(Blocks.ICE));
+    public static final GenerationsBlockSet ROCK_SET = new GenerationsBlockSet("rock", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CAVE_ROCK_SET = new GenerationsBlockSet("cave_rock", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet GRAY_CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("gray_cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet ICE_CAVE_ROCK_FLOOR_SET = new GenerationsBlockSet("ice_cave_rock_floor", BlockBehaviour.Properties.copy(Blocks.ICE));
+    public static final GenerationsBlockSet BRIDGE_BLOCK_SET = new GenerationsBlockSet("bridge_block", BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS));
 
-
-    /**
-     * Rock Pallets
-     */
-
-    public static final RegistrySupplier<Block> ROCK = registerBlockItem("rock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> ROCK_STAIRS = registerBlockItem("rock_stairs", () -> new StairBlock(ROCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(ROCK.get())));
-    public static final RegistrySupplier<SlabBlock> ROCK_SLAB = registerBlockItem("rock_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ROCK.get())));
-    public static final RegistrySupplier<WallBlock> ROCK_WALL = registerBlockItem("rock_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ROCK.get())));
-    /**
-     * Cave Rock Pallet
-     */
-
-    public static final RegistrySupplier<Block> CAVE_ROCK = registerBlockItem("cave_rock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-
-    public static final RegistrySupplier<StairBlock> CAVE_ROCK_STAIRS = registerBlockItem("cave_rock_stairs", () -> new StairBlock(CAVE_ROCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(CAVE_ROCK.get())));
-    public static final RegistrySupplier<SlabBlock> CAVE_ROCK_SLAB = registerBlockItem("cave_rock_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CAVE_ROCK.get())));
-    public static final RegistrySupplier<WallBlock> CAVE_ROCK_WALL = registerBlockItem("cave_rock_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CAVE_ROCK.get())));
-
-    /**
-     * Cave Rock Floor Pallet
-     */
-    public static final RegistrySupplier<Block> CAVE_ROCK_FLOOR = registerBlockItem("cave_rock_floor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CAVE_ROCK_FLOOR_STAIRS = registerBlockItem("cave_rock_floor_stairs", () -> new StairBlock(CAVE_ROCK_FLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(CAVE_ROCK_FLOOR.get())));
-    public static final RegistrySupplier<SlabBlock> CAVE_ROCK_FLOOR_SLAB = registerBlockItem("cave_rock_floor_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CAVE_ROCK_FLOOR.get())));
-    public static final RegistrySupplier<WallBlock> CAVE_ROCK_FLOOR_WALL = registerBlockItem("cave_rock_floor_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CAVE_ROCK_FLOOR.get())));
-
-    /**
-     * Gray Cave Rock Floor Pallet
-     */
-    public static final RegistrySupplier<Block> GRAY_CAVE_ROCK_FLOOR = registerBlockItem("gray_cave_rock_floor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> GRAY_CAVE_ROCK_FLOOR_STAIRS = registerBlockItem("gray_cave_rock_floor_stairs", () -> new StairBlock(GRAY_CAVE_ROCK_FLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(GRAY_CAVE_ROCK_FLOOR.get())));
-    public static final RegistrySupplier<SlabBlock> GRAY_CAVE_ROCK_FLOOR_SLAB = registerBlockItem("gray_cave_rock_floor_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRAY_CAVE_ROCK_FLOOR.get())));
-    public static final RegistrySupplier<WallBlock> GRAY_CAVE_ROCK_FLOOR_WALL = registerBlockItem("gray_cave_rock_floor_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRAY_CAVE_ROCK_FLOOR.get())));
-
-    /**
-     * Ice Cave Rock Floor Pallet
-     */
-    public static final RegistrySupplier<Block> ICE_CAVE_ROCK_FLOOR = registerBlockItem("ice_cave_rock_floor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ICE)));
-    public static final RegistrySupplier<StairBlock> ICE_CAVE_ROCK_FLOOR_STAIRS = registerBlockItem("ice_cave_rock_floor_stairs", () -> new StairBlock(ICE_CAVE_ROCK_FLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(ICE_CAVE_ROCK_FLOOR.get())));
-    public static final RegistrySupplier<SlabBlock> ICE_CAVE_ROCK_FLOOR_SLAB = registerBlockItem("ice_cave_rock_floor_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ICE_CAVE_ROCK_FLOOR.get())));
-    public static final RegistrySupplier<WallBlock> ICE_CAVE_ROCK_FLOOR_WALL = registerBlockItem("ice_cave_rock_floor_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ICE_CAVE_ROCK_FLOOR.get())));
-
-
-    /**
-     * Bridge Block Pallet
-     */
-    public static final RegistrySupplier<Block> BRIDGE_BLOCK = registerBlockItem("bridge_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
-    public static final RegistrySupplier<StairBlock> BRIDGE_BLOCK_STAIRS = registerBlockItem("bridge_block_stairs", () -> new StairBlock(BRIDGE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(BRIDGE_BLOCK.get())));
-    public static final RegistrySupplier<SlabBlock> BRIDGE_BLOCK_SLAB = registerBlockItem("bridge_block_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BRIDGE_BLOCK.get())));
-    public static final RegistrySupplier<WallBlock> BRIDGE_BLOCK_WALL = registerBlockItem("bridge_block_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BRIDGE_BLOCK.get())));
 
     public static final RegistrySupplier<Block> CASTLE_PILLAR = registerBlockItem("castle_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> BROKEN_CASTLE_PILLAR = registerBlockItem("broken_castle_pillar", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
@@ -161,35 +116,10 @@ public static final GenerationsBlockSet WHITE_CASTLE_BRICK_SET = new Generations
     /**
      * Compressed Polished Andesite Pallet
      */
-    public static final RegistrySupplier<Block> COMPRESSED_POLISHED_ANDESITE = registerBlockItem("compressed_polished_andesite", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
-    public static final RegistrySupplier<StairBlock> COMPRESSED_POLISHED_ANDESITE_STAIRS = registerBlockItem("compressed_polished_andesite_stairs", () -> new StairBlock(COMPRESSED_POLISHED_ANDESITE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
-    public static final RegistrySupplier<SlabBlock> COMPRESSED_POLISHED_ANDESITE_SLAB = registerBlockItem("compressed_polished_andesite_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
-    public static final RegistrySupplier<WallBlock> COMPRESSED_POLISHED_ANDESITE_WALL = registerBlockItem("compressed_polished_andesite_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
-
-    /**
-     * Compressed Polished Diorite Pallet
-     */
-    public static final RegistrySupplier<Block> COMPRESSED_POLISHED_DIORITE = registerBlockItem("compressed_polished_diorite", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_DIORITE)));
-    public static final RegistrySupplier<StairBlock> COMPRESSED_POLISHED_DIORITE_STAIRS = registerBlockItem("compressed_polished_diorite_stairs", () -> new StairBlock(COMPRESSED_POLISHED_DIORITE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.POLISHED_DIORITE)));
-    public static final RegistrySupplier<SlabBlock> COMPRESSED_POLISHED_DIORITE_SLAB = registerBlockItem("compressed_polished_diorite_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_DIORITE)));
-    public static final RegistrySupplier<WallBlock> COMPRESSED_POLISHED_DIORITE_WALL = registerBlockItem("compressed_polished_diorite_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_DIORITE)));
-
-    /**
-     * Compressed Polished Granite Pallet
-     */
-    public static final RegistrySupplier<Block> COMPRESSED_POLISHED_GRANITE = registerBlockItem("compressed_polished_granite", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_GRANITE)));
-    public static final RegistrySupplier<StairBlock> COMPRESSED_POLISHED_GRANITE_STAIRS = registerBlockItem("compressed_polished_granite_stairs", () -> new StairBlock(COMPRESSED_POLISHED_GRANITE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.POLISHED_GRANITE)));
-    public static final RegistrySupplier<SlabBlock> COMPRESSED_POLISHED_GRANITE_SLAB = registerBlockItem("compressed_polished_granite_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_GRANITE)));
-    public static final RegistrySupplier<WallBlock> COMPRESSED_POLISHED_GRANITE_WALL = registerBlockItem("compressed_polished_granite_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_GRANITE)));
-
-    /**
-     * Compressed Polished Deepslate Pallet
-     */
-    public static final RegistrySupplier<Block> COMPRESSED_POLISHED_DEEPSLATE = registerBlockItem("compressed_polished_deepslate", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_DEEPSLATE)));
-    public static final RegistrySupplier<StairBlock> COMPRESSED_POLISHED_DEEPSLATE_STAIRS = registerBlockItem("compressed_polished_deepslate_stairs", () -> new StairBlock(COMPRESSED_POLISHED_DEEPSLATE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.POLISHED_DEEPSLATE)));
-    public static final RegistrySupplier<SlabBlock> COMPRESSED_POLISHED_DEEPSLATE_SLAB = registerBlockItem("compressed_polished_deepslate_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_DEEPSLATE)));
-    public static final RegistrySupplier<WallBlock> COMPRESSED_POLISHED_DEEPSLATE_WALL = registerBlockItem("compressed_polished_deepslate_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_DEEPSLATE)));
-
+    public static final GenerationsBlockSet COMPRESSED_POLISHED_ANDESITE_SET = new GenerationsBlockSet("compressed_polished_andesite", BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE));
+    public static final GenerationsBlockSet COMPRESSED_POLISHED_DIORITE_SET = new GenerationsBlockSet("compressed_polished_diorite", BlockBehaviour.Properties.copy(Blocks.POLISHED_DIORITE));
+    public static final GenerationsBlockSet COMPRESSED_POLISHED_GRANITE_SET = new GenerationsBlockSet("compressed_polished_granite", BlockBehaviour.Properties.copy(Blocks.POLISHED_GRANITE));
+    public static final GenerationsBlockSet COMPRESSED_POLISHED_DEEPSLATE_SET = new GenerationsBlockSet("compressed_polished_deepslate", BlockBehaviour.Properties.copy(Blocks.POLISHED_DEEPSLATE));
 
     public static final RegistrySupplier<Block> WARNING_BLOCK = registerBlockItem("warning_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
 
