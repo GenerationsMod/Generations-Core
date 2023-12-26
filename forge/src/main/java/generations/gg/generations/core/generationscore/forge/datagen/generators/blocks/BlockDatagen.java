@@ -149,16 +149,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerBlockItem(GenerationsBlocks.GOLDEN_TEMPLE_SAND);
 
-
-        //floor
-        registerPallet(GenerationsBlocks.FLOOR_1, GenerationsBlocks.FLOOR_1_SLAB, GenerationsBlocks.FLOOR_1_STAIRS, GenerationsBlocks.FLOOR_1_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.FLOOR_2, GenerationsBlocks.FLOOR_2_SLAB, GenerationsBlocks.FLOOR_2_STAIRS, GenerationsBlocks.FLOOR_2_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.FLOOR_3, GenerationsBlocks.FLOOR_3_SLAB, GenerationsBlocks.FLOOR_3_STAIRS, GenerationsBlocks.FLOOR_3_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.FLOOR_4, GenerationsBlocks.FLOOR_4_SLAB, GenerationsBlocks.FLOOR_4_STAIRS, GenerationsBlocks.FLOOR_4_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.MIRRORED_FLOOR_1, GenerationsBlocks.MIRRORED_FLOOR_1_SLAB, GenerationsBlocks.MIRRORED_FLOOR_1_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_1_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.MIRRORED_FLOOR_2, GenerationsBlocks.MIRRORED_FLOOR_2_SLAB, GenerationsBlocks.MIRRORED_FLOOR_2_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_2_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.MIRRORED_FLOOR_3, GenerationsBlocks.MIRRORED_FLOOR_3_SLAB, GenerationsBlocks.MIRRORED_FLOOR_3_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_3_WALL, null, null, true);
-
         registerBlockItem(GenerationsBlocks.RAW_ALUMINUM_BLOCK);
         registerBlockItem(GenerationsBlocks.ALUMINUM_BLOCK);
         registerPallet(GenerationsBlocks.RUBY_BLOCK, GenerationsBlocks.RUBY_SLAB, GenerationsBlocks.RUBY_STAIRS, GenerationsBlocks.RUBY_WALL, null, null, true);

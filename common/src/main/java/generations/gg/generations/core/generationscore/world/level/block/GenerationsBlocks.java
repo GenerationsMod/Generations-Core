@@ -572,36 +572,13 @@ public static final GenerationsBlockSet WHITE_CASTLE_BRICK_SET = new Generations
     /**
      * Floor
      */
-    public static final RegistrySupplier<Block> FLOOR_1 = registerBlockItem("floor_1", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> FLOOR_1_STAIRS = registerBlockItem("floor_1_stairs", () -> new StairBlock(FLOOR_1.get().defaultBlockState(), BlockBehaviour.Properties.copy(FLOOR_1.get())));
-    public static final RegistrySupplier<SlabBlock> FLOOR_1_SLAB = registerBlockItem("floor_1_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(FLOOR_1.get())));
-    public static final RegistrySupplier<WallBlock> FLOOR_1_WALL = registerBlockItem("floor_1_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(FLOOR_1.get())));
-    public static final RegistrySupplier<Block> FLOOR_2 = registerBlockItem("floor_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> FLOOR_2_STAIRS = registerBlockItem("floor_2_stairs", () -> new StairBlock(FLOOR_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(FLOOR_2.get())));
-    public static final RegistrySupplier<SlabBlock> FLOOR_2_SLAB = registerBlockItem("floor_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(FLOOR_2.get())));
-    public static final RegistrySupplier<WallBlock> FLOOR_2_WALL = registerBlockItem("floor_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(FLOOR_2.get())));
-    public static final RegistrySupplier<Block> FLOOR_3 = registerBlockItem("floor_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> FLOOR_3_STAIRS = registerBlockItem("floor_3_stairs", () -> new StairBlock(FLOOR_3.get().defaultBlockState(), BlockBehaviour.Properties.copy(FLOOR_3.get())));
-    public static final RegistrySupplier<SlabBlock> FLOOR_3_SLAB = registerBlockItem("floor_3_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(FLOOR_3.get())));
-    public static final RegistrySupplier<WallBlock> FLOOR_3_WALL = registerBlockItem("floor_3_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(FLOOR_3.get())));
-    public static final RegistrySupplier<Block> FLOOR_4 = registerBlockItem("floor_4", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> FLOOR_4_STAIRS = registerBlockItem("floor_4_stairs", () -> new StairBlock(FLOOR_4.get().defaultBlockState(), BlockBehaviour.Properties.copy(FLOOR_4.get())));
-    public static final RegistrySupplier<SlabBlock> FLOOR_4_SLAB = registerBlockItem("floor_4_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(FLOOR_4.get())));
-    public static final RegistrySupplier<WallBlock> FLOOR_4_WALL = registerBlockItem("floor_4_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(FLOOR_4.get())));
-    public static final RegistrySupplier<Block> MIRRORED_FLOOR_1 = registerBlockItem("mirrored_floor_1", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> MIRRORED_FLOOR_1_STAIRS = registerBlockItem("mirrored_floor_1_stairs", () -> new StairBlock(MIRRORED_FLOOR_1.get().defaultBlockState(), BlockBehaviour.Properties.copy(MIRRORED_FLOOR_1.get())));
-    public static final RegistrySupplier<SlabBlock> MIRRORED_FLOOR_1_SLAB = registerBlockItem("mirrored_floor_1_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MIRRORED_FLOOR_1.get())));
-    public static final RegistrySupplier<WallBlock> MIRRORED_FLOOR_1_WALL = registerBlockItem("mirrored_floor_1_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MIRRORED_FLOOR_1.get())));
-
-    public static final RegistrySupplier<Block> MIRRORED_FLOOR_2 = registerBlockItem("mirrored_floor_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> MIRRORED_FLOOR_2_STAIRS = registerBlockItem("mirrored_floor_2_stairs", () -> new StairBlock(MIRRORED_FLOOR_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(MIRRORED_FLOOR_2.get())));
-    public static final RegistrySupplier<SlabBlock> MIRRORED_FLOOR_2_SLAB = registerBlockItem("mirrored_floor_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MIRRORED_FLOOR_2.get())));
-    public static final RegistrySupplier<WallBlock> MIRRORED_FLOOR_2_WALL = registerBlockItem("mirrored_floor_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MIRRORED_FLOOR_2.get())));
-
-    public static final RegistrySupplier<Block> MIRRORED_FLOOR_3 = registerBlockItem("mirrored_floor_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> MIRRORED_FLOOR_3_STAIRS = registerBlockItem("mirrored_floor_3_stairs", () -> new StairBlock(MIRRORED_FLOOR_3.get().defaultBlockState(), BlockBehaviour.Properties.copy(MIRRORED_FLOOR_3.get())));
-    public static final RegistrySupplier<SlabBlock> MIRRORED_FLOOR_3_SLAB = registerBlockItem("mirrored_floor_3_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MIRRORED_FLOOR_3.get())));
-    public static final RegistrySupplier<WallBlock> MIRRORED_FLOOR_3_WALL = registerBlockItem("mirrored_floor_3_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MIRRORED_FLOOR_3.get())));
+    public static final GenerationsBlockSet FLOOR_1_SET = new GenerationsBlockSet("floor_1", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet FLOOR_2_SET = new GenerationsBlockSet("floor_2", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet FLOOR_3_SET = new GenerationsBlockSet("floor_3", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet FLOOR_4_SET = new GenerationsBlockSet("floor_4", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet MIRROR_FLOOR_1_SET = new GenerationsBlockSet("mirror_floor_1", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet MIRROR_FLOOR_2_SET = new GenerationsBlockSet("mirror_floor_2", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet MIRROR_FLOOR_3_SET = new GenerationsBlockSet("mirror_floor_3", BlockBehaviour.Properties.copy(Blocks.STONE));
 
     public static final RegistrySupplier<Block> ENCHANTED_OBSIDIAN = registerBlockItem("enchanted_obsidian", () -> new EnchantedObsidianBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
     public static final RegistrySupplier<StairBlock> ENCHANTED_OBSIDIAN_STAIRS = registerBlockItem("enchanted_obsidian_stairs", () -> new StairBlock(Blocks.OBSIDIAN.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
