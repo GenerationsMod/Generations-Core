@@ -83,5 +83,9 @@ vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
 
 void main() {
     outColor = getColor();
+
+    if(outColor.a < 0.004) discard;
+
+
     if(useLight) outColor *= mix(minecraft_sample_lightmap(lightmap, light), vec4(1,1,1,1), texture(emission, texCoord0).r);
 }

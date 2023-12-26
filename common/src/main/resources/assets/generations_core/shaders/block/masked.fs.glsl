@@ -20,6 +20,8 @@ vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
 void main() {
     outColor = texture(diffuse, texCoord0);
 
+    if(outColor.a < 0.004) discard;
+
     float mask = texture(mask, texCoord0).x;
 
     outColor.xyz = mix(outColor.xyz, outColor.xyz * color, mask);

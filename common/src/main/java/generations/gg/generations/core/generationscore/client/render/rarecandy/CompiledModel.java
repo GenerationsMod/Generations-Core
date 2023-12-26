@@ -28,7 +28,12 @@ import java.util.function.Supplier;
  */
 public class CompiledModel {
     public final MultiRenderObject<MeshObject> renderObject;
+
     public CompiledModel(ResourceLocation a, InputStream stream, Function<GltfModel, Supplier<MeshObject>> supplier) {
+        this(a, stream, supplier, false);
+    }
+
+    public CompiledModel(ResourceLocation a, InputStream stream, Function<GltfModel, Supplier<MeshObject>> supplier, boolean requiresVariantTexture) {
         var loader = ModelRegistry.getWorldRareCandy().getLoader();
         this.renderObject = loader.createObject(
                 () -> new PixelAsset(stream, a.toString()),
@@ -44,12 +49,15 @@ public class CompiledModel {
                 },
                 object -> {
                     var manager = Minecraft.getInstance().getTextureManager();
-                    object.availableVariants().forEach(s -> manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
-                        @Override
-                        public void load(@NotNull ResourceManager resourceManager) {
 
-                        }
-                    }));
+                    if(requiresVariantTexture) {
+                        object.availableVariants().forEach(s -> manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
+                            @Override
+                            public void load(@NotNull ResourceManager resourceManager) {
+
+                            }
+                        }));
+                    }
                     if(object.scale == 0f) object.scale = 1.0f;
                 }
         );

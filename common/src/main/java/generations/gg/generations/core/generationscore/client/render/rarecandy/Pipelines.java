@@ -212,7 +212,7 @@ public class Pipelines {
 
 
     private static boolean isStatueMaterial(String variant) {
-        return variant == null || variant.startsWith("material") && ((GenerationsCoreClient.GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(variant);
+        return variant != null && variant.startsWith("material") && ((GenerationsCoreClient.GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(variant);
     }
 
     public static Pipeline getPipeline(String name) {

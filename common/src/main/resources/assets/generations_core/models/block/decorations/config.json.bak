@@ -1,0 +1,21 @@
+{
+  "scale": 1.0,
+  "materials": {
+    "bush": {
+      "shader": "solid",
+      "images": {
+		"diffuse": "bush.png"
+	  }
+	  "blend": "regular"
+    }
+  },
+  "defaultVariant": {
+    "bush": {
+      "material": "bush",
+      "hide": false
+    }
+  },
+  "variants": {
+    "regular": {}
+  }
+}
