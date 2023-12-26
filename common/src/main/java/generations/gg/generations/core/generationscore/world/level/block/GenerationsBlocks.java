@@ -39,17 +39,9 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> POKECENTER_SIGN = registerBlockItem("pokecenter_sign", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> POKECENTER_SCARLET_SIGN = registerBlockItem("pokecenter_scarlet_sign", () -> new PokecenterScarletSignBlock(BlockBehaviour.Properties.of().lightLevel((state) -> 15).noLootTable()));
     public static final RegistrySupplier<DoorBlock> POKECENTER_DOOR = registerBlockItem("pokecenter_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.OAK));
-    public static final RegistrySupplier<Block> POKECENTER_ROOF = registerBlockItem("pokecenter_roof", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 5)));
-    public static final RegistrySupplier<StairBlock> POKECENTER_ROOF_STAIRS = registerBlockItem("pokecenter_roof_stairs", () -> new StairBlock(POKECENTER_ROOF.get().defaultBlockState(), BlockBehaviour.Properties.copy(POKECENTER_ROOF.get())));
-    public static final RegistrySupplier<SlabBlock> POKECENTER_ROOF_SLAB = registerBlockItem("pokecenter_roof_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(POKECENTER_ROOF.get())));
-    public static final RegistrySupplier<WallBlock> POKECENTER_ROOF_WALL = registerBlockItem("pokecenter_roof_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(POKECENTER_ROOF.get())));
-    public static final RegistrySupplier<Block> POKECENTER_ROOF_2 = registerBlockItem("pokecenter_roof_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 5)));
-    public static final RegistrySupplier<StairBlock> POKECENTER_ROOF_2_STAIRS = registerBlockItem("pokecenter_roof_2_stairs", () -> new StairBlock(POKECENTER_ROOF_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(POKECENTER_ROOF_2.get())));
-    public static final RegistrySupplier<SlabBlock> POKECENTER_ROOF_2_SLAB = registerBlockItem("pokecenter_roof_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(POKECENTER_ROOF_2.get())));
-    public static final RegistrySupplier<WallBlock> POKECENTER_ROOF_2_WALL = registerBlockItem("pokecenter_roof_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(POKECENTER_ROOF_2.get())));
-    /**
-     * Building Blocks
-     */
+
+    public static final GenerationsBlockSet POKECENTER_ROOF_SET = new GenerationsBlockSet("pokecenter_roof", BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 5));
+    public static final GenerationsBlockSet POKECENTER_ROOF_2_SET = new GenerationsBlockSet("pokecenter_roof_2", BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 5));
     public static final RegistrySupplier<Block> HOUSE_FLOOR_1 = registerBlockItem("house_floor_1", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> HOUSE_FLOOR_2 = registerBlockItem("house_floor_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> HOUSE_FLOOR_3 = registerBlockItem("house_floor_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
