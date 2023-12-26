@@ -470,7 +470,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DEEPSLATE_SET.getBaseBlock(), Blocks.POLISHED_DEEPSLATE);
 
         //Cobble Ruins Pallet
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
                 .define('E', Blocks.COBBLESTONE)
                 .define('Q', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .pattern("EQ")
@@ -478,7 +478,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_2.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_2_SET.getBaseBlock(), 4)
                 .define('E', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .define('Q', Blocks.COBBLESTONE)
                 .pattern("EQ")
@@ -486,7 +486,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_3.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_3_SET.getBaseBlock(), 4)
                 .define('E', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .define('Q', Blocks.COBBLESTONE)
                 .pattern("EE")
@@ -494,7 +494,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_4.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_4_SET.getBaseBlock(), 4)
                 .define('E', Blocks.COBBLESTONE)
                 .define('Q', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .pattern("EE")

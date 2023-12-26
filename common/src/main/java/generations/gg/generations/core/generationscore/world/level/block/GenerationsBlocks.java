@@ -129,23 +129,10 @@ public static final GenerationsBlockSet WHITE_CASTLE_BRICK_SET = new Generations
     public static final RegistrySupplier<CursedCarvedPumpkinBlock> CURSED_CARVED_PUMPKIN = registerBlockItem("cursed_carved_pumpkin", () -> new CursedCarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.CARVED_PUMPKIN)));
     public static final RegistrySupplier<CursedCarvedPumpkinBlock> CURSED_JACK_O_LANTERN = registerBlockItem("cursed_jack_o_lantern", () -> new CursedCarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN)));
 
-
-    public static final RegistrySupplier<Block> COBBLE_RUINS_1 = registerBlockItem("cobble_ruins_1", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_1_STAIRS = registerBlockItem("cobble_ruins_1_stairs", () -> new StairBlock(COBBLE_RUINS_1.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<SlabBlock> COBBLE_RUINS_1_SLAB = registerBlockItem("cobble_ruins_1_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_1.get())));
-    public static final RegistrySupplier<WallBlock> COBBLE_RUINS_1_WALL = registerBlockItem("cobble_ruins_1_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_1.get())));
-    public static final RegistrySupplier<Block> COBBLE_RUINS_2 = registerBlockItem("cobble_ruins_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_2_STAIRS = registerBlockItem("cobble_ruins_2_stairs", () -> new StairBlock(COBBLE_RUINS_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<SlabBlock> COBBLE_RUINS_2_SLAB = registerBlockItem("cobble_ruins_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_2.get())));
-    public static final RegistrySupplier<WallBlock> COBBLE_RUINS_2_WALL = registerBlockItem("cobble_ruins_2_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_2.get())));
-    public static final RegistrySupplier<Block> COBBLE_RUINS_3 = registerBlockItem("cobble_ruins_3", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_3_STAIRS = registerBlockItem("cobble_ruins_3_stairs", () -> new StairBlock(COBBLE_RUINS_3.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<SlabBlock> COBBLE_RUINS_3_SLAB = registerBlockItem("cobble_ruins_3_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_3.get())));
-    public static final RegistrySupplier<WallBlock> COBBLE_RUINS_3_WALL = registerBlockItem("cobble_ruins_3_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_3.get())));
-    public static final RegistrySupplier<Block> COBBLE_RUINS_4 = registerBlockItem("cobble_ruins_4", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> COBBLE_RUINS_4_STAIRS = registerBlockItem("cobble_ruins_4_stairs", () -> new StairBlock(COBBLE_RUINS_4.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<SlabBlock> COBBLE_RUINS_4_SLAB = registerBlockItem("cobble_ruins_4_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_4.get())));
-    public static final RegistrySupplier<WallBlock> COBBLE_RUINS_4_WALL = registerBlockItem("cobble_ruins_4_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLE_RUINS_4.get())));
+    public static final GenerationsBlockSet COBBLE_RUINS_1_SET = new GenerationsBlockSet("cobble_ruins_1", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet COBBLE_RUINS_2_SET = new GenerationsBlockSet("cobble_ruins_2", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet COBBLE_RUINS_3_SET = new GenerationsBlockSet("cobble_ruins_3", BlockBehaviour.Properties.copy(Blocks.STONE));
+    public static final GenerationsBlockSet COBBLE_RUINS_4_SET = new GenerationsBlockSet("cobble_ruins_4", BlockBehaviour.Properties.copy(Blocks.STONE));
 
     /**
      * Ultra Blocks
