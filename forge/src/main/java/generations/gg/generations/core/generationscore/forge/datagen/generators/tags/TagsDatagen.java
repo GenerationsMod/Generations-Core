@@ -412,7 +412,7 @@ public class TagsDatagen {
             tag(ItemTags.BOATS).add(GHOST_BOAT_ITEM.get()).add(ULTRA_DARK_BOAT_ITEM.get()).add(ULTRA_JUNGLE_BOAT_ITEM.get());
             tag(ItemTags.CHEST_BOATS).add(GHOST_CHEST_BOAT_ITEM.get()).add(ULTRA_DARK_CHEST_BOAT_ITEM.get()).add(ULTRA_JUNGLE_CHEST_BOAT_ITEM.get());
 
-            tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE.get().asItem()).add(GenerationsBlocks.VOLCANIC_COBBLESTONE.get().asItem());
+            tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock().asItem()).add(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock().asItem());
             GenerationsTools.TOOLS.forEach(tool -> {
                 Item item = tool.get();
                 if (item instanceof PickaxeItem) tag(ItemTags.PICKAXES).add(item);
@@ -509,7 +509,7 @@ public class TagsDatagen {
                     POKEMAIL_WAVE_CLOSED.get(),
                     POKEMAIL_WOOD_CLOSED.get());
 
-            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS).addOptionalTag(ResourceLocation.tryParse("c:shears"));
+            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS).addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("c:shears")));
 
             //Forge Armor Tags
             GenerationsArmor.ARMOR.forEach(armor -> {

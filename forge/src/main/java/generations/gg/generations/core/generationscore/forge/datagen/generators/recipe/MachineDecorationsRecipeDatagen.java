@@ -69,11 +69,11 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
         //FURNACES
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
-                .define('X', GenerationsBlocks.CHARGE_COBBLESTONE.get())
+                .define('X', GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())
                 .pattern("XXX")
                 .pattern("X X")
                 .pattern("XXX")
-                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_COBBLESTONE.get()), has(GenerationsBlocks.CHARGE_COBBLESTONE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()), has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get())
                 .define('#', GenerationsBlocks.SMOOTH_CHARGE_STONE.get())
@@ -93,11 +93,11 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
-                .define('X', GenerationsBlocks.VOLCANIC_COBBLESTONE.get())
+                .define('X', GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock())
                 .pattern("XXX")
                 .pattern("X X")
                 .pattern("XXX")
-                .unlockedBy(getHasName(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()), has(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()), has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get())
                 .define('#', GenerationsBlocks.SMOOTH_VOLCANIC_STONE.get())

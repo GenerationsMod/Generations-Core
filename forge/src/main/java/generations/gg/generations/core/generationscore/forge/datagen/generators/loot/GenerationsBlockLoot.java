@@ -230,9 +230,9 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
 
     private void dropSelfStoneCobble(@NotNull Block block) {
         if (block == GenerationsBlocks.CHARGE_STONE.get())
-            add(block, createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE.get()));
+            add(block, createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()));
         else if (block == GenerationsBlocks.VOLCANIC_STONE.get())
-            add(block, createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()));
+            add(block, createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()));
         else dropSelfUpdated(block);
     }
     @Override

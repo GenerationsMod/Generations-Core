@@ -28,8 +28,8 @@ public class GenerationsArmorToolRecipeDatagen extends GenerationsRecipeProvider
 	//AETHER, FLARE, NEO
 	@Override
 	protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-		buildToolSetCrafting(consumer, GenerationsBlocks.CHARGE_COBBLESTONE.get(), GenerationsTools.CHARGE_STONE);
-		buildToolSetCrafting(consumer, GenerationsBlocks.VOLCANIC_COBBLESTONE.get(), GenerationsTools.VOLCANIC_STONE);
+		buildToolSetCrafting(consumer, GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock(), GenerationsTools.CHARGE_STONE);
+		buildToolSetCrafting(consumer, GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock(), GenerationsTools.VOLCANIC_STONE);
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.ALUMINUM_INGOT.get(), GenerationsArmor.ALUMINUM.helmet().get(), GenerationsArmor.ALUMINUM.chestplate().get(), GenerationsArmor.ALUMINUM.leggings().get(), GenerationsArmor.ALUMINUM.boots().get(), GenerationsTools.ALUMINUM);
 		buildArmorToolFullSetCrafting(consumer, Items.AMETHYST_SHARD, GenerationsArmor.ROCKET.helmet().get(), GenerationsArmor.ROCKET.chestplate().get(), GenerationsArmor.ROCKET.leggings().get(), GenerationsArmor.ROCKET.boots().get(), GenerationsTools.AMETHYST);
 		buildArmorToolFullSetCrafting(consumer, GenerationsItems.CRYSTAL.get(), GenerationsArmor.CRYSTALLIZED.helmet().get(), GenerationsArmor.CRYSTALLIZED.chestplate().get(), GenerationsArmor.CRYSTALLIZED.leggings().get(), GenerationsArmor.CRYSTALLIZED.boots().get(), GenerationsTools.CRYSTAL);
