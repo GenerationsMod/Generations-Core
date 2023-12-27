@@ -71,10 +71,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_SLAB, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_STAIRS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_WALL, null, null, true);
 
         //Subway
-        registerPallet(GenerationsBlocks.SUBWAY_FLOOR_PLAIN, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_SLAB, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.SUBWAY_FLOOR_CROSS, GenerationsBlocks.SUBWAY_FLOOR_CROSS_SLAB, GenerationsBlocks.SUBWAY_FLOOR_CROSS_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_CROSS_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.SUBWAY_FLOOR_FULL_CROSS, GenerationsBlocks.SUBWAY_FLOOR_FULL_CROSS_SLAB, GenerationsBlocks.SUBWAY_FLOOR_FULL_CROSS_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_FULL_CROSS_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.SUBWAY_FLOOR_PATH, GenerationsBlocks.SUBWAY_FLOOR_PATH_SLAB, GenerationsBlocks.SUBWAY_FLOOR_PATH_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_PATH_WALL, null, null, true);
         registerPallet(GenerationsBlocks.SUBWAY_WALL, GenerationsBlocks.SUBWAY_WALL_SLAB, GenerationsBlocks.SUBWAY_WALL_STAIRS, null, null, null, true);
         registerPallet(GenerationsBlocks.SUBWAY_WALL_2, GenerationsBlocks.SUBWAY_WALL_2_SLAB, GenerationsBlocks.SUBWAY_WALL_2_STAIRS, null, null, null, true);
 

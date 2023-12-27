@@ -515,32 +515,19 @@ public class GenerationsBlocks {
     /**
      * Battle Subway Blocks
      */
-    public static final RegistrySupplier<Block> SUBWAY_FLOOR_CROSS = registerBlockItem("subway_floor_cross", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
-    public static final RegistrySupplier<Block> SUBWAY_FLOOR_FULL_CROSS = registerBlockItem("subway_floor_full_cross", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
-    public static final RegistrySupplier<Block> SUBWAY_FLOOR_PATH = registerBlockItem("subway_floor_path", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
-    public static final RegistrySupplier<Block> SUBWAY_FLOOR_PLAIN = registerBlockItem("subway_floor_plain", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
+
+    public static final GenerationsBlockSet SUBWAY_FLOOR_CROSS_SET = new GenerationsBlockSet("subway_floor_cross", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
+    public static final GenerationsBlockSet SUBWAY_FLOOR_FULL_CROSS_SET = new GenerationsBlockSet("subway_floor_full_cross", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
+    public static final GenerationsBlockSet SUBWAY_FLOOR_PATH_SET = new GenerationsBlockSet("subway_floor_path", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
+    public static final GenerationsBlockSet SUBWAY_FLOOR_PLAIN_SET = new GenerationsBlockSet("subway_floor_plain", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
+    //public static final GenerationsBlockSet SUBWAY_WALL_SET = new GenerationsBlockSet("subway_wall", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
+    //public static final GenerationsBlockSet SUBWAY_WALL_2_SET = new GenerationsBlockSet("subway_wall_2", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
     public static final RegistrySupplier<Block> SUBWAY_WALL = registerBlockItem("subway_wall", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
     public static final RegistrySupplier<Block> SUBWAY_WALL_2 = registerBlockItem("subway_wall_2", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
-
-
-    public static final RegistrySupplier<SlabBlock> SUBWAY_FLOOR_CROSS_SLAB = registerBlockItem("subway_floor_cross_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SUBWAY_FLOOR_CROSS.get())));
-    public static final RegistrySupplier<SlabBlock> SUBWAY_FLOOR_FULL_CROSS_SLAB = registerBlockItem("subway_floor_full_cross_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SUBWAY_FLOOR_FULL_CROSS.get())));
-    public static final RegistrySupplier<SlabBlock> SUBWAY_FLOOR_PATH_SLAB = registerBlockItem("subway_floor_path_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SUBWAY_FLOOR_PATH.get())));
-    public static final RegistrySupplier<SlabBlock> SUBWAY_FLOOR_PLAIN_SLAB = registerBlockItem("subway_floor_plain_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SUBWAY_FLOOR_PLAIN.get())));
     public static final RegistrySupplier<SlabBlock> SUBWAY_WALL_SLAB = registerBlockItem("subway_wall_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SUBWAY_WALL.get())));
     public static final RegistrySupplier<SlabBlock> SUBWAY_WALL_2_SLAB = registerBlockItem("subway_wall_2_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SUBWAY_WALL_2.get())));
-
-    public static final RegistrySupplier<StairBlock> SUBWAY_FLOOR_CROSS_STAIRS = registerBlockItem("subway_floor_cross_stairs", () -> new StairBlock(SUBWAY_FLOOR_CROSS.get().defaultBlockState(), BlockBehaviour.Properties.copy(SUBWAY_FLOOR_CROSS.get())));
-    public static final RegistrySupplier<StairBlock> SUBWAY_FLOOR_FULL_CROSS_STAIRS = registerBlockItem("subway_floor_full_cross_stairs", () -> new StairBlock(SUBWAY_FLOOR_FULL_CROSS.get().defaultBlockState(), BlockBehaviour.Properties.copy(SUBWAY_FLOOR_FULL_CROSS.get())));
-    public static final RegistrySupplier<StairBlock> SUBWAY_FLOOR_PATH_STAIRS = registerBlockItem("subway_floor_path_stairs", () -> new StairBlock(SUBWAY_FLOOR_PATH.get().defaultBlockState(), BlockBehaviour.Properties.copy(SUBWAY_FLOOR_PATH.get())));
-    public static final RegistrySupplier<StairBlock> SUBWAY_FLOOR_PLAIN_STAIRS = registerBlockItem("subway_floor_plain_stairs", () -> new StairBlock(SUBWAY_FLOOR_PLAIN.get().defaultBlockState(), BlockBehaviour.Properties.copy(SUBWAY_FLOOR_PLAIN.get())));
     public static final RegistrySupplier<StairBlock> SUBWAY_WALL_STAIRS = registerBlockItem("subway_wall_stairs", () -> new StairBlock(SUBWAY_WALL.get().defaultBlockState(), BlockBehaviour.Properties.copy(SUBWAY_WALL.get())));
     public static final RegistrySupplier<StairBlock> SUBWAY_WALL_2_STAIRS = registerBlockItem("subway_wall_2_stairs", () -> new StairBlock(SUBWAY_WALL_2.get().defaultBlockState(), BlockBehaviour.Properties.copy(SUBWAY_WALL_2.get())));
-
-    public static final RegistrySupplier<WallBlock> SUBWAY_FLOOR_CROSS_WALL = registerBlockItem("subway_floor_cross_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SUBWAY_FLOOR_CROSS.get())));
-    public static final RegistrySupplier<WallBlock> SUBWAY_FLOOR_FULL_CROSS_WALL = registerBlockItem("subway_floor_full_cross_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SUBWAY_FLOOR_FULL_CROSS.get())));
-    public static final RegistrySupplier<WallBlock> SUBWAY_FLOOR_PATH_WALL = registerBlockItem("subway_floor_path_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SUBWAY_FLOOR_PATH.get())));
-    public static final RegistrySupplier<WallBlock> SUBWAY_FLOOR_PLAIN_WALL = registerBlockItem("subway_floor_plain_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SUBWAY_FLOOR_PLAIN.get())));
 
     /**
      * Golden Temple (Pokelantis)
