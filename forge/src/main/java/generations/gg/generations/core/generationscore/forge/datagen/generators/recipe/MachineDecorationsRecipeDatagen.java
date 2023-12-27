@@ -117,12 +117,12 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
-                .define('X', GenerationsBlocks.GRAY_MARBLE_STAIRS.get())
-                .define('Y', GenerationsBlocks.GRAY_MARBLE.get())
+                .define('X', GenerationsBlocks.GRAY_MARBLE_SET.getStairs())
+                .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
                 .define('#', Items.BOWL)
                 .pattern(" # ")
                 .pattern("XYX")
-                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE.get()), has(GenerationsBlocks.GRAY_MARBLE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()))
                 .save(consumer);
 
         buildPokeBallDisplayRecipes(consumer, GenerationsItems.POKE_BALL.get(), GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get());
@@ -249,14 +249,14 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
-                .define('X', GenerationsBlocks.GRAY_MARBLE_STAIRS.get())
-                .define('Y', GenerationsBlocks.GRAY_MARBLE.get())
+                .define('X', GenerationsBlocks.GRAY_MARBLE_SET.getStairs())
+                .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
                 .define('#', Items.BOWL)
                 .define('Z', pokeball)
                 .pattern(" Z ")
                 .pattern(" # ")
                 .pattern("XYX")
-                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE.get()), has(GenerationsBlocks.GRAY_MARBLE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()))
                 .save(consumer, "pokeball_display_with_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(pokeball)).getPath());
     }
 }

@@ -61,7 +61,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
             dropSelfUpdated(generationsBlockSet.getStairs());
             dropSelfUpdated(generationsBlockSet.getWall());
         });
-        GenerationsBlocks.MARBLE.forEach(block -> dropSelfUpdated(block.get()));
 
         dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE.get());
 

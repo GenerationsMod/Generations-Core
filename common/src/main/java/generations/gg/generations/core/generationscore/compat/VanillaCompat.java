@@ -76,12 +76,12 @@ public class VanillaCompat {
 								GenerationsBlocks.POKEBRICKS.forEach(block -> addInOrder(output, finalI, block.get()));
 							}
 
-							 */
-
 							for (int i = 0; i <= 5; i++) {
 								int finalI = i;
 								GenerationsBlocks.MARBLE.forEach(block -> addInOrder(output, finalI, block.get()));
 							}
+
+							 */
 
 							for (int i = 0; i <= 5; i++) {
 								int finalI = i;

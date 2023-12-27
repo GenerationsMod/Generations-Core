@@ -27,7 +27,6 @@ public class GenerationsBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> ULTRA_BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
-    public static final DeferredRegister<Block> MARBLE = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> STONE = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
@@ -247,127 +246,26 @@ public class GenerationsBlocks {
 
 
     /**
-     * Marble blocks
+     * Marble block sets
      */
 
-    public static final RegistrySupplier<Block> WHITE_MARBLE = registerMarble("white_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> WHITE_MARBLE_STAIRS = registerMarble("white_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(WHITE_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> WHITE_MARBLE_SLAB = registerMarble("white_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> WHITE_MARBLE_WALL = registerMarble("white_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> WHITE_MARBLE_BUTTON = registerMarble("white_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(WHITE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> WHITE_MARBLE_PRESSURE_PLATE = registerMarble("white_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(WHITE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> LIGHT_GRAY_MARBLE = registerMarble("light_gray_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> LIGHT_GRAY_MARBLE_STAIRS = registerMarble("light_gray_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> LIGHT_GRAY_MARBLE_SLAB = registerMarble("light_gray_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> LIGHT_GRAY_MARBLE_WALL = registerMarble("light_gray_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> LIGHT_GRAY_MARBLE_BUTTON = registerMarble("light_gray_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIGHT_GRAY_MARBLE_PRESSURE_PLATE = registerMarble("light_gray_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_GRAY_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> GRAY_MARBLE = registerMarble("gray_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> GRAY_MARBLE_STAIRS = registerMarble("gray_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(GRAY_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> GRAY_MARBLE_SLAB = registerMarble("gray_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRAY_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> GRAY_MARBLE_WALL = registerMarble("gray_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRAY_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> GRAY_MARBLE_BUTTON = registerMarble("gray_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GRAY_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> GRAY_MARBLE_PRESSURE_PLATE = registerMarble("gray_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GRAY_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> BLACK_MARBLE = registerMarble("black_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> BLACK_MARBLE_STAIRS = registerMarble("black_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BLACK_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> BLACK_MARBLE_SLAB = registerMarble("black_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLACK_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> BLACK_MARBLE_WALL = registerMarble("black_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLACK_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> BLACK_MARBLE_BUTTON = registerMarble("black_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLACK_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BLACK_MARBLE_PRESSURE_PLATE = registerMarble("black_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLACK_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> BROWN_MARBLE = registerMarble("brown_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> BROWN_MARBLE_STAIRS = registerMarble("brown_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BROWN_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> BROWN_MARBLE_SLAB = registerMarble("brown_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BROWN_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> BROWN_MARBLE_WALL = registerMarble("brown_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BROWN_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> BROWN_MARBLE_BUTTON = registerMarble("brown_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BROWN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BROWN_MARBLE_PRESSURE_PLATE = registerMarble("brown_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BROWN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> RED_MARBLE = registerMarble("red_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> RED_MARBLE_STAIRS = registerMarble("red_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(RED_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> RED_MARBLE_SLAB = registerMarble("red_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(RED_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> RED_MARBLE_WALL = registerMarble("red_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(RED_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> RED_MARBLE_BUTTON = registerMarble("red_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(RED_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> RED_MARBLE_PRESSURE_PLATE = registerMarble("red_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(RED_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> ORANGE_MARBLE = registerMarble("orange_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> ORANGE_MARBLE_STAIRS = registerMarble("orange_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(ORANGE_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> ORANGE_MARBLE_SLAB = registerMarble("orange_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ORANGE_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> ORANGE_MARBLE_WALL = registerMarble("orange_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ORANGE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> ORANGE_MARBLE_BUTTON = registerMarble("orange_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(ORANGE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ORANGE_MARBLE_PRESSURE_PLATE = registerMarble("orange_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(ORANGE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> YELLOW_MARBLE = registerMarble("yellow_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> YELLOW_MARBLE_STAIRS = registerMarble("yellow_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(YELLOW_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> YELLOW_MARBLE_SLAB = registerMarble("yellow_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(YELLOW_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> YELLOW_MARBLE_WALL = registerMarble("yellow_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(YELLOW_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> YELLOW_MARBLE_BUTTON = registerMarble("yellow_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(YELLOW_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> YELLOW_MARBLE_PRESSURE_PLATE = registerMarble("yellow_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(YELLOW_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> LIME_MARBLE = registerMarble("lime_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> LIME_MARBLE_STAIRS = registerMarble("lime_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIME_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> LIME_MARBLE_SLAB = registerMarble("lime_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIME_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> LIME_MARBLE_WALL = registerMarble("lime_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIME_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> LIME_MARBLE_BUTTON = registerMarble("lime_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIME_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIME_MARBLE_PRESSURE_PLATE = registerMarble("lime_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIME_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> GREEN_MARBLE = registerMarble("green_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> GREEN_MARBLE_STAIRS = registerMarble("green_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(GREEN_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> GREEN_MARBLE_SLAB = registerMarble("green_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GREEN_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> GREEN_MARBLE_WALL = registerMarble("green_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GREEN_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> GREEN_MARBLE_BUTTON = registerMarble("green_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GREEN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> GREEN_MARBLE_PRESSURE_PLATE = registerMarble("green_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GREEN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> CYAN_MARBLE = registerMarble("cyan_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> CYAN_MARBLE_STAIRS = registerMarble("cyan_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(CYAN_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> CYAN_MARBLE_SLAB = registerMarble("cyan_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CYAN_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> CYAN_MARBLE_WALL = registerMarble("cyan_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CYAN_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> CYAN_MARBLE_BUTTON = registerMarble("cyan_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(CYAN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> CYAN_MARBLE_PRESSURE_PLATE = registerMarble("cyan_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CYAN_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> POWDER_BLUE_MARBLE = registerMarble("powder_blue_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> POWDER_BLUE_MARBLE_STAIRS = registerMarble("powder_blue_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> POWDER_BLUE_MARBLE_SLAB = registerMarble("powder_blue_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> POWDER_BLUE_MARBLE_WALL = registerMarble("powder_blue_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> POWDER_BLUE_MARBLE_BUTTON = registerMarble("powder_blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> POWDER_BLUE_MARBLE_PRESSURE_PLATE = registerMarble("powder_blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(POWDER_BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> LIGHT_BLUE_MARBLE = registerMarble("light_blue_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> LIGHT_BLUE_MARBLE_STAIRS = registerMarble("light_blue_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> LIGHT_BLUE_MARBLE_SLAB = registerMarble("light_blue_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> LIGHT_BLUE_MARBLE_WALL = registerMarble("light_blue_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> LIGHT_BLUE_MARBLE_BUTTON = registerMarble("light_blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIGHT_BLUE_MARBLE_PRESSURE_PLATE = registerMarble("light_blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> BLUE_MARBLE = registerMarble("blue_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> BLUE_MARBLE_STAIRS = registerMarble("blue_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BLUE_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> BLUE_MARBLE_SLAB = registerMarble("blue_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLUE_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> BLUE_MARBLE_WALL = registerMarble("blue_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLUE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> BLUE_MARBLE_BUTTON = registerMarble("blue_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BLUE_MARBLE_PRESSURE_PLATE = registerMarble("blue_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLUE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> PURPLE_MARBLE = registerMarble("purple_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> PURPLE_MARBLE_STAIRS = registerMarble("purple_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(PURPLE_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> PURPLE_MARBLE_SLAB = registerMarble("purple_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PURPLE_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> PURPLE_MARBLE_WALL = registerMarble("purple_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(PURPLE_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> PURPLE_MARBLE_BUTTON = registerMarble("purple_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PURPLE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> PURPLE_MARBLE_PRESSURE_PLATE = registerMarble("purple_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PURPLE_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> MAGENTA_MARBLE = registerMarble("magenta_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> MAGENTA_MARBLE_STAIRS = registerMarble("magenta_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> MAGENTA_MARBLE_SLAB = registerMarble("magenta_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> MAGENTA_MARBLE_WALL = registerMarble("magenta_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> MAGENTA_MARBLE_BUTTON = registerMarble("magenta_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> MAGENTA_MARBLE_PRESSURE_PLATE = registerMarble("magenta_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(MAGENTA_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
-
-    public static final RegistrySupplier<Block> PINK_MARBLE = registerMarble("pink_marble", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> PINK_MARBLE_STAIRS = registerMarble("pink_marble_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(PINK_MARBLE.get())));
-    public static final RegistrySupplier<SlabBlock> PINK_MARBLE_SLAB = registerMarble("pink_marble_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PINK_MARBLE.get())));
-    public static final RegistrySupplier<WallBlock> PINK_MARBLE_WALL = registerMarble("pink_marble_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(PINK_MARBLE.get())));
-    public static final RegistrySupplier<ButtonBlock> PINK_MARBLE_BUTTON = registerMarble("pink_marble_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PINK_MARBLE.get()), GenerationsBlockSetTypes.MARBLE, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> PINK_MARBLE_PRESSURE_PLATE = registerMarble("pink_marble_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PINK_MARBLE.get()), GenerationsBlockSetTypes.MARBLE));
+    public static final GenerationsFullBlockSet WHITE_MARBLE_SET = new GenerationsFullBlockSet("white_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIGHT_GRAY_MARBLE_SET = new GenerationsFullBlockSet("light_gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet GRAY_MARBLE_SET = new GenerationsFullBlockSet("gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BLACK_MARBLE_SET = new GenerationsFullBlockSet("black_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BROWN_MARBLE_SET = new GenerationsFullBlockSet("brown_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet RED_MARBLE_SET = new GenerationsFullBlockSet("red_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet ORANGE_MARBLE_SET = new GenerationsFullBlockSet("orange_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet YELLOW_MARBLE_SET = new GenerationsFullBlockSet("yellow_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIME_MARBLE_SET = new GenerationsFullBlockSet("lime_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet GREEN_MARBLE_SET = new GenerationsFullBlockSet("green_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet CYAN_MARBLE_SET = new GenerationsFullBlockSet("cyan_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet POWDER_BLUE_MARBLE_SET = new GenerationsFullBlockSet("powder_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIGHT_BLUE_MARBLE_SET = new GenerationsFullBlockSet("light_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BLUE_MARBLE_SET = new GenerationsFullBlockSet("blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet PURPLE_MARBLE_SET = new GenerationsFullBlockSet("purple_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet MAGENTA_MARBLE_SET = new GenerationsFullBlockSet("magenta_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet PINK_MARBLE_SET = new GenerationsFullBlockSet("pink_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
 
     /**
      * Unown Blocks
@@ -733,12 +631,6 @@ public class GenerationsBlocks {
         return block;
     }
 
-    private static <T extends Block> RegistrySupplier<T> registerMarble(String name, Supplier<T> blockSupplier) {
-        RegistrySupplier<T> block = MARBLE.register(name, blockSupplier);
-        register(name, properties -> new BlockItem(block.get(), properties));
-        return block;
-    }
-
     private static <T extends GenericChestBlock> RegistrySupplier<T> registerChestBlockItem(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = BLOCKS.register(name, blockSupplier);
         register(name, properties -> new GenericChestBlockItem(block.get(), properties));
@@ -758,7 +650,6 @@ public class GenerationsBlocks {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Blocks");
         BLOCKS.register();
-        MARBLE.register();
         ULTRA_BLOCKS.register();
         STONE.register();
         BLOCK_ITEMS.register();

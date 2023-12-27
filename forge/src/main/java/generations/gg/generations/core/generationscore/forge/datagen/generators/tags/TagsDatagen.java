@@ -69,14 +69,11 @@ public class TagsDatagen {
                 EasyBlockTags(block.get());
             });
 
-            GenerationsBlocks.MARBLE.forEach(block -> {
-                tag(GenerationsBlockTags.MARBLE).add(block.get());
-                EasyBlockTags(block.get());
-            });
-
             GenerationsFullBlockSet.getFullBlockSets().forEach(blockSet -> {
                 if (blockSet.getName().contains("poke_brick"))
                     tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.getBaseBlock());
+                else if (blockSet.getName().contains("marble"))
+                    tag(GenerationsBlockTags.MARBLE).add(blockSet.getBaseBlock());
             });
 
             GenerationsPokeDolls.POKEDOLLS.forEach(pokedoll -> tag(GenerationsBlockTags.POKEDOLLS).add(pokedoll.get()));
