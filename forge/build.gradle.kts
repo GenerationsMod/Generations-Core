@@ -30,8 +30,7 @@ loom {
         convertAccessWideners.set(true)
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
 
-        mixinConfigs("GenerationsCore-common.mixins.json",
-            "GenerationsCore.mixins.json")
+        mixinConfigs("GenerationsCore-common.mixins.json", "GenerationsCore.mixins.json")
     }
 
     runs.create("data") {
@@ -70,7 +69,7 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 
     //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.9.0")
+    implementation("thedarkcolour:kotlinforforge:4.10.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 }
 
