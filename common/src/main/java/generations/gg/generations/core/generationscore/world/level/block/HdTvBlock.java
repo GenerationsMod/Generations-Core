@@ -16,11 +16,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HdTvBlock extends GenericRotatableModelBlock<GenericModelProvidingBlockEntity> {
     public static final GenerationsVoxelShapes.GenericRotatableShapes SHAPE = GenerationsVoxelShapes.generateRotationalVoxelShape(
-            Shapes.join(Shapes.box(0.1875, 0, 0.375, 0.8125, 0.125, 0.75),
-                    Shapes.join(Shapes.box(0.1875, 0.125, 0.375, 0.8125, 0.25, 0.6875),
-                        Shapes.join(Shapes.box(-0.625, 0, 0.4375, 1.625, 0.375, 0.5625),
-                            Shapes.join(Shapes.box(0.25, 0.25, 0.375, 0.75, 0.375, 0.6875),
-                                Shapes.box(-1, 0.1875, 0.375, 2, 1.9375, 0.625), BooleanOp.OR), BooleanOp.OR), BooleanOp.OR), BooleanOp.OR).move(1.5, 0, 0),
+            Shapes.join(Shapes.box(0.375, 0, 0.4375, 2.65625, 0.125, 0.5625),
+                    Shapes.join(Shapes.box(0.4375, 0.125, 0.4375, 2.59375, 0.25, 0.5625),
+                            Shapes.join(Shapes.box(1.1875, 0, 0.375, 1.828125, 0.375, 0.6875),
+                                    Shapes.join(Shapes.box(0, 0.1875, 0.4375, 3, 1.921875, 0.625),
+                                            Shapes.box(0.375, 0.375, 0.375, 2.625, 1.734375, 0.4375), BooleanOp.OR), BooleanOp.OR), BooleanOp.OR), BooleanOp.OR),
             Direction.SOUTH,
             3, 2, 1);
 
