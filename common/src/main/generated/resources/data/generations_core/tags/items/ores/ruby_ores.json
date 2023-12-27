@@ -1,7 +1,6 @@
 {
   "values": [
     "generations_core:ruby_ore",
-    "generations_core:deepslate_ruby_ore",
-    "generations_core:charge_stone_ruby_ore"
+    "generations_core:deepslate_ruby_ore"
   ]
 }

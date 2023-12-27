@@ -12,14 +12,6 @@
     "#generations_core:ores/sky_tumblestone_ores",
     "#generations_core:ores/black_tumblestone_ores",
     "#generations_core:ores/megastone_ores",
-    "#generations_core:ores/meteorite_ores",
-    "generations_core:charge_stone_coal_ore",
-    "generations_core:charge_stone_redstone_ore",
-    "generations_core:charge_stone_iron_ore",
-    "generations_core:charge_stone_gold_ore",
-    "generations_core:charge_stone_copper_ore",
-    "generations_core:charge_stone_lapis_lazuli_ore",
-    "generations_core:charge_stone_diamond_ore",
-    "generations_core:charge_stone_emerald_ore"
+    "#generations_core:ores/meteorite_ores"
   ]
 }

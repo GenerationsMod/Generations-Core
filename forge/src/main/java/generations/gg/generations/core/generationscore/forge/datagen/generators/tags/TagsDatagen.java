@@ -353,6 +353,7 @@ public class TagsDatagen {
 
              */
 
+            /*
             copy(Tags.Blocks.ORES_COAL, Tags.Items.ORES_COAL);
             copy(Tags.Blocks.ORES_IRON, Tags.Items.ORES_IRON);
             copy(Tags.Blocks.ORES_GOLD, Tags.Items.ORES_GOLD);
@@ -361,6 +362,7 @@ public class TagsDatagen {
             copy(Tags.Blocks.ORES_EMERALD, Tags.Items.ORES_EMERALD);
             copy(Tags.Blocks.ORES_LAPIS, Tags.Items.ORES_LAPIS);
             copy(Tags.Blocks.ORES_REDSTONE, Tags.Items.ORES_REDSTONE);
+             */
             //Charge and Volcanic Stone Brick Tags like Vanilla
             copy(GenerationsBlockTags.CHARGE_STONE_BRICKS, GenerationsItemTags.CHARGE_STONE_BRICKS);
             copy(GenerationsBlockTags.VOLCANIC_STONE_BRICKS, GenerationsItemTags.VOLCANIC_STONE_BRICKS);

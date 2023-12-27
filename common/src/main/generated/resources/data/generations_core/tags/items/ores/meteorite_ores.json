@@ -1,7 +1,6 @@
 {
   "values": [
     "generations_core:meteorite_ore",
-    "generations_core:deepslate_meteorite_ore",
-    "generations_core:charge_stone_meteorite_ore"
+    "generations_core:deepslate_meteorite_ore"
   ]
 }

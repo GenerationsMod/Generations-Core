@@ -1,7 +1,6 @@
 {
   "values": [
     "generations_core:sapphire_ore",
-    "generations_core:deepslate_sapphire_ore",
-    "generations_core:charge_stone_sapphire_ore"
+    "generations_core:deepslate_sapphire_ore"
   ]
 }

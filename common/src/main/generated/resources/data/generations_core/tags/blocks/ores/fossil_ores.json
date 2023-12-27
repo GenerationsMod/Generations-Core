@@ -1,7 +1,6 @@
 {
   "values": [
     "generations_core:fossil_ore",
-    "generations_core:deepslate_fossil_ore",
-    "generations_core:charge_stone_fossil_ore"
+    "generations_core:deepslate_fossil_ore"
   ]
 }

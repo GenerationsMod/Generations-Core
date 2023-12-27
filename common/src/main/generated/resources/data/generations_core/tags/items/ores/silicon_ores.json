@@ -1,7 +1,6 @@
 {
   "values": [
     "generations_core:silicon_ore",
-    "generations_core:deepslate_silicon_ore",
-    "generations_core:charge_stone_silicon_ore"
+    "generations_core:deepslate_silicon_ore"
   ]
 }
