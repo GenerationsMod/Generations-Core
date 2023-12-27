@@ -6,8 +6,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import org.jetbrains.annotations.ApiStatus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GenerationsFullBlockSet extends GenerationsBlockSet {
     private static ArrayList<GenerationsFullBlockSet> fullBlockSets = new ArrayList<>();
@@ -46,10 +48,21 @@ public class GenerationsFullBlockSet extends GenerationsBlockSet {
         return pressurePlate.get();
     }
 
+    /**
+     * Returns a list of the full family
+     * @return The full family
+     */
+    @Override
+    public List<Block> getAllBlocks() {
+        return List.of(getBaseBlock(), getSlab(), getStairs(), getWall(), getButton(), getPressurePlate());
+    }
+
+
     public void updateBlockFamily() {
         this.setBlockFamily(new BlockFamily.Builder(getBaseBlock()).slab(getSlab()).stairs(getStairs()).wall(getWall()).button(getButton()).pressurePlate(getPressurePlate()).recipeGroupPrefix(getName()).recipeUnlockedBy("has_" + getName()).getFamily());
     }
 
+    @ApiStatus.Internal
     public static void updateBlockFamilies() {
         for (GenerationsFullBlockSet blockSet : fullBlockSets)
             blockSet.updateBlockFamily();

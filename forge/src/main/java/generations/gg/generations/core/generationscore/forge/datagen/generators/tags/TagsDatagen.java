@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsArm
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -67,10 +68,12 @@ public class TagsDatagen {
             });
 
             GenerationsFullBlockSet.getFullBlockSets().forEach(blockSet -> {
-                if (blockSet.getName().contains("poke_brick"))
-                    tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.getBaseBlock());
-                else if (blockSet.getName().contains("marble"))
-                    tag(GenerationsBlockTags.MARBLE).add(blockSet.getBaseBlock());
+                blockSet.getAllBlocks().forEach(block -> {
+                    if (blockSet.getName().contains("poke_brick"))
+                        tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.getBaseBlock());
+                    else if (blockSet.getName().contains("marble"))
+                        tag(GenerationsBlockTags.MARBLE).add(blockSet.getBaseBlock());
+                });
             });
 
             GenerationsPokeDolls.POKEDOLLS.forEach(pokedoll -> tag(GenerationsBlockTags.POKEDOLLS).add(pokedoll.get()));
@@ -273,9 +276,6 @@ public class TagsDatagen {
             else if (object instanceof PressurePlateBlock) tag(BlockTags.PRESSURE_PLATES).add(object);
         }
 
-        private <T extends Block> ResourceLocation getBlockLocation(T block) {
-            return Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block));
-        }
     }
 
     private static class GenerationsItemTagsProvider extends ItemTagsProvider {

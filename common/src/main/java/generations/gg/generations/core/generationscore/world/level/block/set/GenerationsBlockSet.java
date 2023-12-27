@@ -7,8 +7,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
+import org.jetbrains.annotations.ApiStatus;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 /**
@@ -120,6 +122,14 @@ public class GenerationsBlockSet {
     }
 
     /**
+     * Returns a list of the full family
+     * @return The full family
+     */
+    public List<Block> getAllBlocks() {
+        return List.of(getBaseBlock(), getSlab(), getStairs(), getWall());
+    }
+
+    /**
      * Gets all of the block sets.
      * @return ArrayList of all of the block sets.
      */
@@ -130,6 +140,7 @@ public class GenerationsBlockSet {
     /**
      * Generates all of the block families.
      */
+    @ApiStatus.Internal
     public static void generateAllBlockFamilies() {
         for (GenerationsBlockSet blockSet : blockSets)
             blockSet.setBlockFamily(new BlockFamily.Builder(blockSet.getBaseBlock()).slab(blockSet.getSlab()).stairs(blockSet.getStairs()).wall(blockSet.getWall()).recipeGroupPrefix(blockSet.name).recipeUnlockedBy("has_" + blockSet.name).getFamily());

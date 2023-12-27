@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.world.level.block.set;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
-import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.ApiStatus;
 
