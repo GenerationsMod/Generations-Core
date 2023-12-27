@@ -39,7 +39,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         generateForEnabledBlockFamilies(consumer);
 
         //Colored Shingles
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.WHITE_DYE)
@@ -50,7 +50,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIGHT_GRAY_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIGHT_GRAY_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.LIGHT_GRAY_DYE)
@@ -61,7 +61,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.GRAY_DYE)
@@ -72,7 +72,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLACK_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLACK_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.BLACK_DYE)
@@ -83,7 +83,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROWN_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROWN_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.BROWN_DYE)
@@ -94,7 +94,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RED_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RED_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.RED_DYE)
@@ -105,7 +105,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ORANGE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ORANGE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.ORANGE_DYE)
@@ -116,7 +116,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.YELLOW_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.YELLOW_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.YELLOW_DYE)
@@ -127,7 +127,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIME_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIME_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.LIME_DYE)
@@ -138,7 +138,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GREEN_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GREEN_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.GREEN_DYE)
@@ -149,7 +149,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CYAN_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CYAN_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.CYAN_DYE)
@@ -160,7 +160,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIGHT_BLUE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIGHT_BLUE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.LIGHT_BLUE_DYE)
@@ -171,7 +171,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLUE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLUE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.BLUE_DYE)
@@ -182,7 +182,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PURPLE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PURPLE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.PURPLE_DYE)
@@ -193,7 +193,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MAGENTA_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MAGENTA_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.MAGENTA_DYE)
@@ -204,7 +204,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PINK_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PINK_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.PINK_DYE)
