@@ -17,7 +17,7 @@ public class EnchantedObsidianBlock extends Block implements IPortalBlock {
     }
 
     public boolean isPortalFrame(BlockState state, BlockGetter level, BlockPos pos) {
-        return state.is(GenerationsBlocks.ENCHANTED_OBSIDIAN.get());
+        return state.is(GenerationsBlocks.ENCHANTED_OBSIDIAN_SET.getBaseBlock());
     }
 }
 

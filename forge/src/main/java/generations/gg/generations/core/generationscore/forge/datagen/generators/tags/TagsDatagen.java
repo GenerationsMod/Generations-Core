@@ -108,12 +108,8 @@ public class TagsDatagen {
                     GenerationsBlocks.RICH_SOIL_4.get()
             );
 
-            tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
-                    GenerationsBlocks.ENCHANTED_OBSIDIAN.get(),
-                    GenerationsBlocks.ENCHANTED_OBSIDIAN_STAIRS.get(),
-                    GenerationsBlocks.ENCHANTED_OBSIDIAN_SLAB.get(),
-                    GenerationsBlocks.ENCHANTED_OBSIDIAN_WALL.get()
-            );
+            GenerationsBlocks.ENCHANTED_OBSIDIAN_SET.getAllBlocks()
+                    .forEach(block -> tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block));
 
 
             tag(GenerationsBlockTags.POKEBALL_CHESTS)

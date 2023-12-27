@@ -80,9 +80,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.SUBWAY_WALL, GenerationsBlocks.SUBWAY_WALL_SLAB, GenerationsBlocks.SUBWAY_WALL_STAIRS, null, null, null, true);
         registerPallet(GenerationsBlocks.SUBWAY_WALL_2, GenerationsBlocks.SUBWAY_WALL_2_SLAB, GenerationsBlocks.SUBWAY_WALL_2_STAIRS, null, null, null, true);
 
-        //Enchanted Obsidian
-        registerPallet(GenerationsBlocks.ENCHANTED_OBSIDIAN, GenerationsBlocks.ENCHANTED_OBSIDIAN_SLAB, GenerationsBlocks.ENCHANTED_OBSIDIAN_STAIRS, GenerationsBlocks.ENCHANTED_OBSIDIAN_WALL, GenerationsBlocks.ENCHANTED_OBSIDIAN_BUTTON, GenerationsBlocks.ENCHANTED_OBSIDIAN_PRESSURE_PLATE, true);
-
         registerBlockItem(GenerationsBlocks.POKEMART_SIGN);
         registerBlockItem(GenerationsBlocks.POKECENTER_SIGN);
 
