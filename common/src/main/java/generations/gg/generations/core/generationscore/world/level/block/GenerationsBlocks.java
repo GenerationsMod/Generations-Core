@@ -132,22 +132,22 @@ public class GenerationsBlocks {
      * Ultra Blocks
      */
 
-    public static final GenerationsUltraBlockSet ULTRA_WHITE_SET = new GenerationsUltraBlockSet("ultra_white", registerUltraBlock("ultra_white", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_LIGHT_GRAY_SET = new GenerationsUltraBlockSet("ultra_light_gray", registerUltraBlock("ultra_light_gray", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_GRAY_SET = new GenerationsUltraBlockSet("ultra_gray", registerUltraBlock("ultra_gray", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_BLACK_SET = new GenerationsUltraBlockSet("ultra_black", registerUltraBlock("ultra_black", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_BROWN_SET = new GenerationsUltraBlockSet("ultra_brown", registerUltraBlock("ultra_brown", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_RED_SET = new GenerationsUltraBlockSet("ultra_red", registerUltraBlock("ultra_red", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_ORANGE_SET = new GenerationsUltraBlockSet("ultra_orange", registerUltraBlock("ultra_orange", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_YELLOW_SET = new GenerationsUltraBlockSet("ultra_yellow", registerUltraBlock("ultra_yellow", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_LIME_SET = new GenerationsUltraBlockSet("ultra_lime", registerUltraBlock("ultra_lime", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_GREEN_SET = new GenerationsUltraBlockSet("ultra_green", registerUltraBlock("ultra_green", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_CYAN_SET = new GenerationsUltraBlockSet("ultra_cyan", registerUltraBlock("ultra_cyan", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_LIGHT_BLUE_SET = new GenerationsUltraBlockSet("ultra_light_blue", registerUltraBlock("ultra_light_blue", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_BLUE_SET = new GenerationsUltraBlockSet("ultra_blue", registerUltraBlock("ultra_blue", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_PURPLE_SET = new GenerationsUltraBlockSet("ultra_purple", registerUltraBlock("ultra_purple", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_MAGENTA_SET = new GenerationsUltraBlockSet("ultra_magenta", registerUltraBlock("ultra_magenta", () -> new Block(ULTRA_BLOCK_SETTINGS)));
-    public static final GenerationsUltraBlockSet ULTRA_PINK_SET = new GenerationsUltraBlockSet("ultra_pink", registerUltraBlock("ultra_pink", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_WHITE_SET = new GenerationsUltraBlockSet("ultra_white", registerUltraBlock("ultra_white", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.WHITE))));
+    public static final GenerationsUltraBlockSet ULTRA_LIGHT_GRAY_SET = new GenerationsUltraBlockSet("ultra_light_gray", registerUltraBlock("ultra_light_gray", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIGHT_GRAY))));
+    public static final GenerationsUltraBlockSet ULTRA_GRAY_SET = new GenerationsUltraBlockSet("ultra_gray", registerUltraBlock("ultra_gray", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.GRAY))));
+    public static final GenerationsUltraBlockSet ULTRA_BLACK_SET = new GenerationsUltraBlockSet("ultra_black", registerUltraBlock("ultra_black", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BLACK))));
+    public static final GenerationsUltraBlockSet ULTRA_BROWN_SET = new GenerationsUltraBlockSet("ultra_brown", registerUltraBlock("ultra_brown", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BROWN))));
+    public static final GenerationsUltraBlockSet ULTRA_RED_SET = new GenerationsUltraBlockSet("ultra_red", registerUltraBlock("ultra_red", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.RED))));
+    public static final GenerationsUltraBlockSet ULTRA_ORANGE_SET = new GenerationsUltraBlockSet("ultra_orange", registerUltraBlock("ultra_orange", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.ORANGE))));
+    public static final GenerationsUltraBlockSet ULTRA_YELLOW_SET = new GenerationsUltraBlockSet("ultra_yellow", registerUltraBlock("ultra_yellow", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.YELLOW))));
+    public static final GenerationsUltraBlockSet ULTRA_LIME_SET = new GenerationsUltraBlockSet("ultra_lime", registerUltraBlock("ultra_lime", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIME))));
+    public static final GenerationsUltraBlockSet ULTRA_GREEN_SET = new GenerationsUltraBlockSet("ultra_green", registerUltraBlock("ultra_green", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.GREEN))));
+    public static final GenerationsUltraBlockSet ULTRA_CYAN_SET = new GenerationsUltraBlockSet("ultra_cyan", registerUltraBlock("ultra_cyan", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.CYAN))));
+    public static final GenerationsUltraBlockSet ULTRA_LIGHT_BLUE_SET = new GenerationsUltraBlockSet("ultra_light_blue", registerUltraBlock("ultra_light_blue", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.LIGHT_BLUE))));
+    public static final GenerationsUltraBlockSet ULTRA_BLUE_SET = new GenerationsUltraBlockSet("ultra_blue", registerUltraBlock("ultra_blue", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.BLUE))));
+    public static final GenerationsUltraBlockSet ULTRA_PURPLE_SET = new GenerationsUltraBlockSet("ultra_purple", registerUltraBlock("ultra_purple", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.PURPLE))));
+    public static final GenerationsUltraBlockSet ULTRA_MAGENTA_SET = new GenerationsUltraBlockSet("ultra_magenta", registerUltraBlock("ultra_magenta", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.MAGENTA))));
+    public static final GenerationsUltraBlockSet ULTRA_PINK_SET = new GenerationsUltraBlockSet("ultra_pink", registerUltraBlock("ultra_pink", () -> new Block(ULTRA_BLOCK_SETTINGS.mapColor(DyeColor.PINK))));
 
     public static final RegistrySupplier<Block> ULTRA_SAND = registerBlockItem("ultra_sand", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
 
