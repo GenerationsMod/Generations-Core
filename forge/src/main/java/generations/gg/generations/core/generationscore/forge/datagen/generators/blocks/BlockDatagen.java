@@ -67,7 +67,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK);
 
         //Volcanic
-        registerPallet(GenerationsBlocks.VOLCANIC_ROCK, GenerationsBlocks.VOLCANIC_ROCK_SLAB, GenerationsBlocks.VOLCANIC_ROCK_STAIRS, GenerationsBlocks.VOLCANIC_ROCK_WALL, null, null, true);
         registerBlockItem(GenerationsBlocks.VOLCANIC_FIRESTONE);
 
         //Golden Temple
