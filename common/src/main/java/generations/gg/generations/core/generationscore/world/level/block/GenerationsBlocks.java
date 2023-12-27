@@ -156,23 +156,23 @@ public class GenerationsBlocks {
      * Marble block sets
      */
 
-    public static final GenerationsFullBlockSet WHITE_MARBLE_SET = new GenerationsFullBlockSet("white_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet LIGHT_GRAY_MARBLE_SET = new GenerationsFullBlockSet("light_gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet GRAY_MARBLE_SET = new GenerationsFullBlockSet("gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet BLACK_MARBLE_SET = new GenerationsFullBlockSet("black_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet BROWN_MARBLE_SET = new GenerationsFullBlockSet("brown_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet RED_MARBLE_SET = new GenerationsFullBlockSet("red_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet ORANGE_MARBLE_SET = new GenerationsFullBlockSet("orange_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet YELLOW_MARBLE_SET = new GenerationsFullBlockSet("yellow_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet LIME_MARBLE_SET = new GenerationsFullBlockSet("lime_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet GREEN_MARBLE_SET = new GenerationsFullBlockSet("green_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet CYAN_MARBLE_SET = new GenerationsFullBlockSet("cyan_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet WHITE_MARBLE_SET = new GenerationsFullBlockSet("white_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.WHITE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIGHT_GRAY_MARBLE_SET = new GenerationsFullBlockSet("light_gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIGHT_GRAY), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet GRAY_MARBLE_SET = new GenerationsFullBlockSet("gray_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BLACK_MARBLE_SET = new GenerationsFullBlockSet("black_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BLACK), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BROWN_MARBLE_SET = new GenerationsFullBlockSet("brown_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BROWN), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet RED_MARBLE_SET = new GenerationsFullBlockSet("red_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.RED), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet ORANGE_MARBLE_SET = new GenerationsFullBlockSet("orange_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.ORANGE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet YELLOW_MARBLE_SET = new GenerationsFullBlockSet("yellow_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.YELLOW), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIME_MARBLE_SET = new GenerationsFullBlockSet("lime_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIME), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet GREEN_MARBLE_SET = new GenerationsFullBlockSet("green_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GREEN), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet CYAN_MARBLE_SET = new GenerationsFullBlockSet("cyan_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.CYAN), GenerationsBlockSetTypes.MARBLE);
     public static final GenerationsFullBlockSet POWDER_BLUE_MARBLE_SET = new GenerationsFullBlockSet("powder_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet LIGHT_BLUE_MARBLE_SET = new GenerationsFullBlockSet("light_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet BLUE_MARBLE_SET = new GenerationsFullBlockSet("blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet PURPLE_MARBLE_SET = new GenerationsFullBlockSet("purple_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet MAGENTA_MARBLE_SET = new GenerationsFullBlockSet("magenta_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
-    public static final GenerationsFullBlockSet PINK_MARBLE_SET = new GenerationsFullBlockSet("pink_marble", BlockBehaviour.Properties.copy(Blocks.STONE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet LIGHT_BLUE_MARBLE_SET = new GenerationsFullBlockSet("light_blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.LIGHT_BLUE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet BLUE_MARBLE_SET = new GenerationsFullBlockSet("blue_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.BLUE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet PURPLE_MARBLE_SET = new GenerationsFullBlockSet("purple_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.PURPLE), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet MAGENTA_MARBLE_SET = new GenerationsFullBlockSet("magenta_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.MAGENTA), GenerationsBlockSetTypes.MARBLE);
+    public static final GenerationsFullBlockSet PINK_MARBLE_SET = new GenerationsFullBlockSet("pink_marble", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.PINK), GenerationsBlockSetTypes.MARBLE);
 
     /**
      * Unown Blocks
