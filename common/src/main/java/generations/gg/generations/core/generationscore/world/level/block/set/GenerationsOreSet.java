@@ -8,12 +8,20 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
+/**
+ * A set of OreBlocks
+ * @author Joseph T. McQuigg
+ */
 public class GenerationsOreSet {
     private final String name;
     private final RegistrySupplier<DropExperienceBlock> ore;
     private final RegistrySupplier<DropExperienceBlock> deepslateOre;
     //private final RegistrySupplier<DropExperienceBlock> chargeStoneOre;
 
+    /**
+     * Creates a new OreSet
+     * @param name The name of the Ore
+     */
     public GenerationsOreSet(String name) {
         this.name = name;
         ore = GenerationsOres.registerOreBlockItem(name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
@@ -21,14 +29,26 @@ public class GenerationsOreSet {
         //chargeStoneOre = GenerationsOres.registerOreBlockItem("charge_stone_" + name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).dropsLike(ore.get())));
     }
 
+    /**
+     * Gets the name of the Ore
+     * @return The name of the Ore
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets the Ore
+     * @return The Ore
+     */
     public DropExperienceBlock getOre() {
         return ore.get();
     }
 
+    /**
+     * Gets the Deepslate Ore
+     * @return The Deepslate Ore
+     */
     public DropExperienceBlock getDeepslateOre() {
         return deepslateOre.get();
     }
@@ -39,6 +59,10 @@ public class GenerationsOreSet {
     }
      */
 
+    /**
+     * Makes an ImmutableList of the Ore and Deepslate Ore
+     * @return An ImmutableList of the Ore and Deepslate Ore
+     */
     public ImmutableList<ItemLike> getImmutableList() {
         return ImmutableList.of(ore.get(), deepslateOre.get());
     }
