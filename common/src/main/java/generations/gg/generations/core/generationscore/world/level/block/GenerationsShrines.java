@@ -61,10 +61,6 @@ public class GenerationsShrines {
 		return block;
 	}
 
-	private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> blockSupplier) {
-		return SHRINES.register(name, blockSupplier);
-	}
-
 	public static void init() {
 		GenerationsCore.LOGGER.info("Registering Generations Shrines");
 		SHRINES.register();

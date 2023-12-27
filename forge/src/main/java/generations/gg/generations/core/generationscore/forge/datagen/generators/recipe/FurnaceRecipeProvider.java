@@ -35,18 +35,18 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
     private static final ImmutableList<ItemLike> RARE_TUMBLESTONE_SMELTABLES;
 
     static {
-        ALUMINUM_SMELTABLES = ImmutableList.of(GenerationsItems.RAW_ALUMINUM.get(), GenerationsOres.ALUMINUM_ORE.get(), GenerationsOres.DEEPSLATE_ALUMINUM_ORE.get(), GenerationsOres.CHARGE_STONE_ALUMINUM_ORE.get());
-        Z_CRYSTAL_SMELTABLES = ImmutableList.of(GenerationsOres.Z_CRYSTAL_ORE.get(), GenerationsOres.DEEPSLATE_Z_CRYSTAL_ORE.get(), GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
-        RUBY_SMELTABLES = ImmutableList.of(GenerationsOres.RUBY_ORE.get(), GenerationsOres.DEEPSLATE_RUBY_ORE.get(), GenerationsOres.CHARGE_STONE_RUBY_ORE.get());
-        SAPPHIRE_SMELTABLES = ImmutableList.of(GenerationsOres.SAPPHIRE_ORE.get(), GenerationsOres.DEEPSLATE_SAPPHIRE_ORE.get(), GenerationsOres.CHARGE_STONE_SAPPHIRE_ORE.get());
-        CRYSTAL_SMELTABLES = ImmutableList.of(GenerationsOres.CRYSTAL_ORE.get(), GenerationsOres.DEEPSLATE_CRYSTAL_ORE.get(), GenerationsOres.CHARGE_STONE_CRYSTAL_ORE.get());
-        SILICON_SMELTABLES = ImmutableList.of(GenerationsOres.SILICON_ORE.get(), GenerationsOres.DEEPSLATE_SILICON_ORE.get(), GenerationsOres.CHARGE_STONE_SILICON_ORE.get());
-        MEGASTONE_SMELTABLES = ImmutableList.of(GenerationsOres.MEGASTONE_ORE.get(), GenerationsOres.DEEPSLATE_MEGASTONE_ORE.get(), GenerationsOres.CHARGE_STONE_MEGASTONE_ORE.get());
-        METEORITE_SMELTABLES = ImmutableList.of(GenerationsOres.METEORITE_ORE.get(), GenerationsOres.DEEPSLATE_METEORITE_ORE.get(), GenerationsOres.CHARGE_STONE_METEORITE_ORE.get());
-        TUMBLESTONE_SMELTABLES = ImmutableList.of(GenerationsOres.TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_TUMBLESTONE_ORE.get());
-        BLACK_TUMPLESTONE_SMELTABLES = ImmutableList.of(GenerationsOres.BLACK_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_BLACK_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_BLACK_TUMBLESTONE_ORE.get());
-        SKY_TUMBLESTONE_SMELTABLES = ImmutableList.of(GenerationsOres.SKY_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_SKY_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_SKY_TUMBLESTONE_ORE.get());
-        RARE_TUMBLESTONE_SMELTABLES = ImmutableList.of(GenerationsOres.RARE_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_RARE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_RARE_TUMBLESTONE_ORE.get());
+        ALUMINUM_SMELTABLES = ImmutableList.of(GenerationsItems.RAW_ALUMINUM.get(), GenerationsOres.ALUMINUM_ORE_SET.getOre(), GenerationsOres.ALUMINUM_ORE_SET.getDeepslateOre());
+        Z_CRYSTAL_SMELTABLES = GenerationsOres.Z_CRYSTAL_ORE_SET.getImmutableList();
+        RUBY_SMELTABLES = GenerationsOres.RUBY_ORE_SET.getImmutableList();
+        SAPPHIRE_SMELTABLES = GenerationsOres.SAPPHIRE_ORE_SET.getImmutableList();
+        CRYSTAL_SMELTABLES = GenerationsOres.CRYSTAL_ORE_SET.getImmutableList();
+        SILICON_SMELTABLES = GenerationsOres.SILICON_ORE_SET.getImmutableList();
+        MEGASTONE_SMELTABLES = GenerationsOres.MEGASTONE_ORE_SET.getImmutableList();
+        METEORITE_SMELTABLES = GenerationsOres.METEORITE_ORE_SET.getImmutableList();
+        TUMBLESTONE_SMELTABLES = GenerationsOres.TUMBLESTONE_ORE_SET.getImmutableList();
+        BLACK_TUMPLESTONE_SMELTABLES = GenerationsOres.BLACK_TUMBLESTONE_ORE_SET.getImmutableList();
+        SKY_TUMBLESTONE_SMELTABLES = GenerationsOres.SKY_TUMBLESTONE_ORE_SET.getImmutableList();
+        RARE_TUMBLESTONE_SMELTABLES = GenerationsOres.RARE_TUMBLESTONE_ORE_SET.getImmutableList();
     }
 
     public FurnaceRecipeProvider(PackOutput output) {

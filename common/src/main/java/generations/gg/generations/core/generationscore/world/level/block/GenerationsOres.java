@@ -5,6 +5,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -38,71 +39,45 @@ public class GenerationsOres {
 	/**
 	 * Tumblestone Ores
 	 */
-	public static final RegistrySupplier<DropExperienceBlock> BLACK_TUMBLESTONE_ORE = registerBlockItem("black_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> RARE_TUMBLESTONE_ORE = registerBlockItem("rare_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> SKY_TUMBLESTONE_ORE = registerBlockItem("sky_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> TUMBLESTONE_ORE = registerBlockItem("tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_BLACK_TUMBLESTONE_ORE = registerBlockItem("deepslate_black_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_RARE_TUMBLESTONE_ORE = registerBlockItem("deepslate_rare_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_SKY_TUMBLESTONE_ORE = registerBlockItem("deepslate_sky_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_TUMBLESTONE_ORE = registerBlockItem("deepslate_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_BLACK_TUMBLESTONE_ORE = registerBlockItem("charge_stone_black_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_RARE_TUMBLESTONE_ORE = registerBlockItem("charge_stone_rare_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_SKY_TUMBLESTONE_ORE = registerBlockItem("charge_stone_sky_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_TUMBLESTONE_ORE = registerBlockItem("charge_stone_tumblestone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+	public static final GenerationsOreSet TUMBLESTONE_ORE_SET = new GenerationsOreSet("tumblestone_ore");
+	public static final GenerationsOreSet BLACK_TUMBLESTONE_ORE_SET = new GenerationsOreSet("black_tumblestone_ore");
+	public static final GenerationsOreSet RARE_TUMBLESTONE_ORE_SET = new GenerationsOreSet("rare_tumblestone_ore");
+	public static final GenerationsOreSet SKY_TUMBLESTONE_ORE_SET = new GenerationsOreSet("sky_tumblestone_ore");
 
 
-	public static final RegistrySupplier<DropExperienceBlock> MEGASTONE_ORE = registerBlockItem("megastone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_MEGASTONE_ORE = registerBlockItem("deepslate_megastone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_MEGASTONE_ORE = registerBlockItem("charge_stone_megastone_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> METEORITE_ORE = registerBlockItem("meteorite_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_METEORITE_ORE = registerBlockItem("deepslate_meteorite_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_METEORITE_ORE = registerBlockItem("charge_stone_meteorite_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+	public static final GenerationsOreSet MEGASTONE_ORE_SET = new GenerationsOreSet("megastone_ore");
+	public static final GenerationsOreSet METEORITE_ORE_SET = new GenerationsOreSet("meteorite_ore");
+
 
 	/**
 	 * Other Ores
 	 */
-	public static final RegistrySupplier<DropExperienceBlock> ALUMINUM_ORE = registerBlockItem("aluminum_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_ALUMINUM_ORE = registerBlockItem("deepslate_aluminum_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_ALUMINUM_ORE = registerBlockItem("charge_stone_aluminum_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CRYSTAL_ORE = registerBlockItem("crystal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_CRYSTAL_ORE = registerBlockItem("deepslate_crystal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_CRYSTAL_ORE = registerBlockItem("charge_stone_crystal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> RUBY_ORE = registerBlockItem("ruby_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_RUBY_ORE = registerBlockItem("deepslate_ruby_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_RUBY_ORE = registerBlockItem("charge_stone_ruby_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> SAPPHIRE_ORE = registerBlockItem("sapphire_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_SAPPHIRE_ORE = registerBlockItem("deepslate_sapphire_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_SAPPHIRE_ORE = registerBlockItem("charge_stone_sapphire_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> SILICON_ORE = registerBlockItem("silicon_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_SILICON_ORE = registerBlockItem("deepslate_silicon_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_SILICON_ORE = registerBlockItem("charge_stone_silicon_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> Z_CRYSTAL_ORE = registerBlockItem("z_crystal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_Z_CRYSTAL_ORE = registerBlockItem("deepslate_z_crystal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_Z_CRYSTAL_ORE = registerBlockItem("charge_stone_z_crystal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> FOSSIL_ORE = registerBlockItem("fossil_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> DEEPSLATE_FOSSIL_ORE = registerBlockItem("deepslate_fossil_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_FOSSIL_ORE = registerBlockItem("charge_stone_fossil_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+	public static final GenerationsOreSet ALUMINUM_ORE_SET = new GenerationsOreSet("aluminum_ore");
+	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore");
+	public static final GenerationsOreSet RUBY_ORE_SET = new GenerationsOreSet("ruby_ore");
+	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore");
+	public static final GenerationsOreSet SILICON_ORE_SET = new GenerationsOreSet("silicon_ore");
+	public static final GenerationsOreSet Z_CRYSTAL_ORE_SET = new GenerationsOreSet("z_crystal_ore");
+	public static final GenerationsOreSet FOSSIL_ORE_SET = new GenerationsOreSet("fossil_ore");
+
 
 
 	// Charge Stone Vanilla Ores
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_COAL_ORE = registerBlockItem("charge_stone_coal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_DIAMOND_ORE = registerBlockItem("charge_stone_diamond_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_EMERALD_ORE = registerBlockItem("charge_stone_emerald_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_GOLD_ORE = registerBlockItem("charge_stone_gold_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_IRON_ORE = registerBlockItem("charge_stone_iron_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_COPPER_ORE = registerBlockItem("charge_stone_copper_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_ORE)));
-	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_LAPIS_LAZULI_ORE = registerBlockItem("charge_stone_lapis_lazuli_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_ORE)));
-	public static final RegistrySupplier<RedStoneOreBlock> CHARGE_STONE_REDSTONE_ORE = registerBlockItem("charge_stone_redstone_ore", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE)));
+	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_COAL_ORE = registerOreBlockItem("charge_stone_coal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE).dropsLike(Blocks.COAL_ORE)));
+	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_DIAMOND_ORE = registerOreBlockItem("charge_stone_diamond_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).dropsLike(Blocks.DIAMOND_ORE)));
+	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_EMERALD_ORE = registerOreBlockItem("charge_stone_emerald_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_ORE).dropsLike(Blocks.EMERALD_ORE)));
+	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_GOLD_ORE = registerOreBlockItem("charge_stone_gold_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE).dropsLike(Blocks.GOLD_ORE)));
+	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_IRON_ORE = registerOreBlockItem("charge_stone_iron_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).dropsLike(Blocks.IRON_ORE)));
+	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_COPPER_ORE = registerOreBlockItem("charge_stone_copper_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_ORE).dropsLike(Blocks.COPPER_ORE)));
+	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_LAPIS_LAZULI_ORE = registerOreBlockItem("charge_stone_lapis_lazuli_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_ORE).dropsLike(Blocks.LAPIS_ORE)));
+	public static final RegistrySupplier<RedStoneOreBlock> CHARGE_STONE_REDSTONE_ORE = registerOreBlockItem("charge_stone_redstone_ore", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).dropsLike(Blocks.REDSTONE_ORE)));
 
 
 	private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
 		GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.NATURAL)));
 	}
 
-	private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
+	public static <T extends Block> RegistrySupplier<T> registerOreBlockItem(String name, Supplier<T> blockSupplier) {
 		RegistrySupplier<T> block = ORES.register(name, blockSupplier);
 		register(name, properties -> new BlockItem(block.get(), properties));
 		return block;
