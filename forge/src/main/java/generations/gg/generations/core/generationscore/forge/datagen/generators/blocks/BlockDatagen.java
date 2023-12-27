@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.models.model.ModelLocationUtils;
@@ -35,6 +36,12 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerOreBlocks();
         GenerationsBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateModel).forEach(this::registerBlockFamily);
         GenerationsBlockSet.getBlockSets().forEach(
+                blockSet -> {
+                    BlockFamily family = blockSet.getBlockFamily();
+                    if (family.shouldGenerateModel()) registerBlockFamily(family);
+                }
+        );
+        GenerationsFullBlockSet.getFullBlockSets().forEach(
                 blockSet -> {
                     BlockFamily family = blockSet.getBlockFamily();
                     if (family.shouldGenerateModel()) registerBlockFamily(family);

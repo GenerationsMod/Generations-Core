@@ -3,6 +3,8 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -46,6 +48,20 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         BlockDatagen.dropSelfList.stream().map(block -> (Block) block).forEach(this::dropSelf);
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
         GenerationsBlocks.POKEBRICKS.forEach(block -> dropSelfUpdated(block.get()));
+        GenerationsFullBlockSet.getFullBlockSets().forEach(generationsFullBlockSet -> {
+            dropSelfUpdated(generationsFullBlockSet.getBaseBlock());
+            dropSelfUpdated(generationsFullBlockSet.getSlab());
+            dropSelfUpdated(generationsFullBlockSet.getStairs());
+            dropSelfUpdated(generationsFullBlockSet.getWall());
+            dropSelfUpdated(generationsFullBlockSet.getButton());
+            dropSelfUpdated(generationsFullBlockSet.getPressurePlate());
+        });
+        GenerationsBlockSet.getBlockSets().forEach(generationsBlockSet -> {
+            dropSelfUpdated(generationsBlockSet.getBaseBlock());
+            dropSelfUpdated(generationsBlockSet.getSlab());
+            dropSelfUpdated(generationsBlockSet.getStairs());
+            dropSelfUpdated(generationsBlockSet.getWall());
+        });
         GenerationsBlocks.MARBLE.forEach(block -> dropSelfUpdated(block.get()));
 
         dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE.get());

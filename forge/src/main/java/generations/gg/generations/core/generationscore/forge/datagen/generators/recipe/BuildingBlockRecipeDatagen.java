@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -652,7 +653,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_POKE_BRICK.get(), Blocks.BRICKS);
         buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_POKE_BRICK.get(), Blocks.BRICKS);
         buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
         buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_POKE_BRICK.get(), Blocks.BRICKS);
 
         buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_MARBLE.get(), Blocks.QUARTZ_BLOCK);
@@ -803,6 +804,11 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
             generateStoneCutterRecipesForFamily(consumer, arg);
         });
         GenerationsBlockSet.getBlockSets().forEach(arg -> {
+            BlockFamily family = arg.getBlockFamily();
+            generateRecipes(consumer, family);
+            generateStoneCutterRecipesForFamily(consumer, family);
+        });
+        GenerationsFullBlockSet.getFullBlockSets().forEach(arg -> {
             BlockFamily family = arg.getBlockFamily();
             generateRecipes(consumer, family);
             generateStoneCutterRecipesForFamily(consumer, family);

@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.world.item.creativetab.Ge
 import generations.gg.generations.core.generationscore.world.level.block.decorations.PokecenterScarletSignBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import generations.gg.generations.core.generationscore.world.level.levelgen.GenerationsFeatures;
 import net.minecraft.core.registries.Registries;
@@ -579,12 +580,7 @@ public class GenerationsBlocks {
      * Poke Bricks
      */
 
-    public static final RegistrySupplier<Block> WHITE_POKE_BRICK = registerPokeBrick("white_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> WHITE_POKE_BRICK_STAIRS = registerPokeBrick("white_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> WHITE_POKE_BRICK_SLAB = registerPokeBrick("white_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> WHITE_POKE_BRICK_WALL = registerPokeBrick("white_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> WHITE_POKE_BRICK_BUTTON = registerPokeBrick("white_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> WHITE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("white_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(WHITE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
+    public static final GenerationsFullBlockSet WHITE_POKE_BRICK_SET = new GenerationsFullBlockSet("white_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
 
     public static final RegistrySupplier<Block> LIGHT_GRAY_POKE_BRICK = registerPokeBrick("light_gray_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<StairBlock> LIGHT_GRAY_POKE_BRICK_STAIRS = registerPokeBrick("light_gray_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get())));

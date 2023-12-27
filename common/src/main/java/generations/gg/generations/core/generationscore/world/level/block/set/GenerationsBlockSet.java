@@ -120,5 +120,6 @@ public class GenerationsBlockSet {
     public static void generateAllBlockFamilies() {
         for (GenerationsBlockSet blockSet : blockSets)
             blockSet.setBlockFamily(new BlockFamily.Builder(blockSet.getBaseBlock()).slab(blockSet.getSlab()).stairs(blockSet.getStairs()).wall(blockSet.getWall()).recipeGroupPrefix(blockSet.name).recipeUnlockedBy("has_" + blockSet.name).getFamily());
+        GenerationsFullBlockSet.updateBlockFamilies();
     }
 }
