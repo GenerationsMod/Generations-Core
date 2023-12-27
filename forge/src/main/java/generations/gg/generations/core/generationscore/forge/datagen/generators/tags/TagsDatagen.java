@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsArm
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -73,9 +74,9 @@ public class TagsDatagen {
                 EasyBlockTags(block.get());
             });
 
-            GenerationsBlocks.POKEBRICKS.forEach(block -> {
-                tag(GenerationsBlockTags.POKEBRICKS).add(block.get());
-                EasyBlockTags(block.get());
+            GenerationsFullBlockSet.getFullBlockSets().forEach(blockSet -> {
+                if (blockSet.getName().contains("poke_brick"))
+                    tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.getBaseBlock());
             });
 
             GenerationsPokeDolls.POKEDOLLS.forEach(pokedoll -> tag(GenerationsBlockTags.POKEDOLLS).add(pokedoll.get()));

@@ -32,7 +32,6 @@ public class GeneralLang extends LanguageProvider {
     protected void addTranslations() {
         addBlockEntries(GenerationsBlocks.BLOCKS, this::getNameGens);
         addBlockEntries(GenerationsBlocks.ULTRA_BLOCKS, this::getNameGens);
-        addBlockEntries(GenerationsBlocks.POKEBRICKS, this::getPokeBrickName);
         addBlockEntries(GenerationsBlocks.MARBLE, this::getNameGens);
         addBlockEntries(GenerationsBlocks.STONE, this::getNameGens);
         addBlockEntries(GenerationsDecorationBlocks.DECORATIONS, this::getNameGens);

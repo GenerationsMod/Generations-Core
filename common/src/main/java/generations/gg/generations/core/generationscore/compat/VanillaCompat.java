@@ -70,10 +70,13 @@ public class VanillaCompat {
 				case "colored_blocks" -> {
 					if(tabs.coloredBlocks)
 						CreativeTabRegistry.modifyBuiltin(tab, (flags, output, permissions) -> {
+							/*
 							for (int i = 0; i <= 5; i++) {
 								int finalI = i;
 								GenerationsBlocks.POKEBRICKS.forEach(block -> addInOrder(output, finalI, block.get()));
 							}
+
+							 */
 
 							for (int i = 0; i <= 5; i++) {
 								int finalI = i;

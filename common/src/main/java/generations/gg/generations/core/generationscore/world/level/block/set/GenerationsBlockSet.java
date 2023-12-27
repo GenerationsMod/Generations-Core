@@ -67,6 +67,14 @@ public class GenerationsBlockSet {
     }
 
     /**
+     * Gets BaseBlock's RegistrySupplier.
+     * @return The base block's RegistrySupplier.
+     */
+    public RegistrySupplier<Block> getBaseBlockSupplier() {
+        return baseBlock;
+    }
+
+    /**
      * Gets the slab block.
      * @return The slab block.
      */

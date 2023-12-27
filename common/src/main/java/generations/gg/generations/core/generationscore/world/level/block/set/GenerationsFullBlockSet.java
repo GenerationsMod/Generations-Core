@@ -39,7 +39,7 @@ public class GenerationsFullBlockSet extends GenerationsBlockSet {
     }
 
     public void updateBlockFamily() {
-        this.setBlockFamily(new BlockFamily.Builder(getBaseBlock()).slab(getSlab()).stairs(getStairs()).wall(getWall()).button(getButton()).pressurePlate(getPressurePlate()).getFamily());
+        this.setBlockFamily(new BlockFamily.Builder(getBaseBlock()).slab(getSlab()).stairs(getStairs()).wall(getWall()).button(getButton()).pressurePlate(getPressurePlate()).recipeGroupPrefix(getName()).recipeUnlockedBy("has_" + getName()).getFamily());
     }
 
     public static void updateBlockFamilies() {

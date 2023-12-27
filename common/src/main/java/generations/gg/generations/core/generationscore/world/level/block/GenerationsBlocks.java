@@ -27,7 +27,6 @@ public class GenerationsBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> ULTRA_BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
-    public static final DeferredRegister<Block> POKEBRICKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> MARBLE = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Block> STONE = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
@@ -581,113 +580,21 @@ public class GenerationsBlocks {
      */
 
     public static final GenerationsFullBlockSet WHITE_POKE_BRICK_SET = new GenerationsFullBlockSet("white_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-
-    public static final RegistrySupplier<Block> LIGHT_GRAY_POKE_BRICK = registerPokeBrick("light_gray_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> LIGHT_GRAY_POKE_BRICK_STAIRS = registerPokeBrick("light_gray_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> LIGHT_GRAY_POKE_BRICK_SLAB = registerPokeBrick("light_gray_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> LIGHT_GRAY_POKE_BRICK_WALL = registerPokeBrick("light_gray_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> LIGHT_GRAY_POKE_BRICK_BUTTON = registerPokeBrick("light_gray_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIGHT_GRAY_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("light_gray_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_GRAY_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> GRAY_POKE_BRICK = registerPokeBrick("gray_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> GRAY_POKE_BRICK_STAIRS = registerPokeBrick("gray_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> GRAY_POKE_BRICK_SLAB = registerPokeBrick("gray_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> GRAY_POKE_BRICK_WALL = registerPokeBrick("gray_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> GRAY_POKE_BRICK_BUTTON = registerPokeBrick("gray_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> GRAY_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("gray_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GRAY_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> BLACK_POKE_BRICK = registerPokeBrick("black_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> BLACK_POKE_BRICK_STAIRS = registerPokeBrick("black_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> BLACK_POKE_BRICK_SLAB = registerPokeBrick("black_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> BLACK_POKE_BRICK_WALL = registerPokeBrick("black_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> BLACK_POKE_BRICK_BUTTON = registerPokeBrick("black_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BLACK_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("black_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLACK_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> BROWN_POKE_BRICK = registerPokeBrick("brown_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> BROWN_POKE_BRICK_STAIRS = registerPokeBrick("brown_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> BROWN_POKE_BRICK_SLAB = registerPokeBrick("brown_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> BROWN_POKE_BRICK_WALL = registerPokeBrick("brown_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> BROWN_POKE_BRICK_BUTTON = registerPokeBrick("brown_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BROWN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("brown_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BROWN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> RED_POKE_BRICK = registerPokeBrick("red_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> RED_POKE_BRICK_STAIRS = registerPokeBrick("red_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(RED_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> RED_POKE_BRICK_SLAB = registerPokeBrick("red_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(RED_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> RED_POKE_BRICK_WALL = registerPokeBrick("red_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(RED_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> RED_POKE_BRICK_BUTTON = registerPokeBrick("red_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(RED_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> RED_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("red_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(RED_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> ORANGE_POKE_BRICK = registerPokeBrick("orange_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> ORANGE_POKE_BRICK_STAIRS = registerPokeBrick("orange_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> ORANGE_POKE_BRICK_SLAB = registerPokeBrick("orange_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> ORANGE_POKE_BRICK_WALL = registerPokeBrick("orange_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> ORANGE_POKE_BRICK_BUTTON = registerPokeBrick("orange_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ORANGE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("orange_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(ORANGE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> YELLOW_POKE_BRICK = registerPokeBrick("yellow_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> YELLOW_POKE_BRICK_STAIRS = registerPokeBrick("yellow_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> YELLOW_POKE_BRICK_SLAB = registerPokeBrick("yellow_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> YELLOW_POKE_BRICK_WALL = registerPokeBrick("yellow_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> YELLOW_POKE_BRICK_BUTTON = registerPokeBrick("yellow_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> YELLOW_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("yellow_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(YELLOW_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> LIME_POKE_BRICK = registerPokeBrick("lime_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> LIME_POKE_BRICK_STAIRS = registerPokeBrick("lime_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> LIME_POKE_BRICK_SLAB = registerPokeBrick("lime_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> LIME_POKE_BRICK_WALL = registerPokeBrick("lime_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> LIME_POKE_BRICK_BUTTON = registerPokeBrick("lime_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIME_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("lime_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIME_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> GREEN_POKE_BRICK = registerPokeBrick("green_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> GREEN_POKE_BRICK_STAIRS = registerPokeBrick("green_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> GREEN_POKE_BRICK_SLAB = registerPokeBrick("green_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> GREEN_POKE_BRICK_WALL = registerPokeBrick("green_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> GREEN_POKE_BRICK_BUTTON = registerPokeBrick("green_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> GREEN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("green_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GREEN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> CYAN_POKE_BRICK = registerPokeBrick("cyan_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> CYAN_POKE_BRICK_STAIRS = registerPokeBrick("cyan_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> CYAN_POKE_BRICK_SLAB = registerPokeBrick("cyan_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> CYAN_POKE_BRICK_WALL = registerPokeBrick("cyan_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> CYAN_POKE_BRICK_BUTTON = registerPokeBrick("cyan_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> CYAN_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("cyan_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CYAN_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> LIGHT_BLUE_POKE_BRICK = registerPokeBrick("light_blue_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> LIGHT_BLUE_POKE_BRICK_STAIRS = registerPokeBrick("light_blue_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> LIGHT_BLUE_POKE_BRICK_SLAB = registerPokeBrick("light_blue_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> LIGHT_BLUE_POKE_BRICK_WALL = registerPokeBrick("light_blue_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> LIGHT_BLUE_POKE_BRICK_BUTTON = registerPokeBrick("light_blue_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> LIGHT_BLUE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("light_blue_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(LIGHT_BLUE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> BLUE_POKE_BRICK = registerPokeBrick("blue_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> BLUE_POKE_BRICK_STAIRS = registerPokeBrick("blue_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> BLUE_POKE_BRICK_SLAB = registerPokeBrick("blue_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> BLUE_POKE_BRICK_WALL = registerPokeBrick("blue_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> BLUE_POKE_BRICK_BUTTON = registerPokeBrick("blue_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> BLUE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("blue_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BLUE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> PURPLE_POKE_BRICK = registerPokeBrick("purple_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> PURPLE_POKE_BRICK_STAIRS = registerPokeBrick("purple_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> PURPLE_POKE_BRICK_SLAB = registerPokeBrick("purple_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> PURPLE_POKE_BRICK_WALL = registerPokeBrick("purple_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> PURPLE_POKE_BRICK_BUTTON = registerPokeBrick("purple_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> PURPLE_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("purple_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PURPLE_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> MAGENTA_POKE_BRICK = registerPokeBrick("magenta_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> MAGENTA_POKE_BRICK_STAIRS = registerPokeBrick("magenta_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> MAGENTA_POKE_BRICK_SLAB = registerPokeBrick("magenta_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> MAGENTA_POKE_BRICK_WALL = registerPokeBrick("magenta_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> MAGENTA_POKE_BRICK_BUTTON = registerPokeBrick("magenta_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> MAGENTA_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("magenta_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(MAGENTA_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-    public static final RegistrySupplier<Block> PINK_POKE_BRICK = registerPokeBrick("pink_poke_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<StairBlock> PINK_POKE_BRICK_STAIRS = registerPokeBrick("pink_poke_brick_stairs", () -> new StairBlock(Blocks.BRICK_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get())));
-    public static final RegistrySupplier<SlabBlock> PINK_POKE_BRICK_SLAB = registerPokeBrick("pink_poke_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get())));
-    public static final RegistrySupplier<WallBlock> PINK_POKE_BRICK_WALL = registerPokeBrick("pink_poke_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get())));
-    public static final RegistrySupplier<ButtonBlock> PINK_POKE_BRICK_BUTTON = registerPokeBrick("pink_poke_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> PINK_POKE_BRICK_PRESSURE_PLATE = registerPokeBrick("pink_poke_brick_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(PINK_POKE_BRICK.get()), GenerationsBlockSetTypes.POKE_BRICK));
-
-
+    public static final GenerationsFullBlockSet LIGHT_GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("light_gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BLACK_POKE_BRICK_SET = new GenerationsFullBlockSet("black_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BROWN_POKE_BRICK_SET = new GenerationsFullBlockSet("brown_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet RED_POKE_BRICK_SET = new GenerationsFullBlockSet("red_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet ORANGE_POKE_BRICK_SET = new GenerationsFullBlockSet("orange_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet YELLOW_POKE_BRICK_SET = new GenerationsFullBlockSet("yellow_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet LIME_POKE_BRICK_SET = new GenerationsFullBlockSet("lime_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet GREEN_POKE_BRICK_SET = new GenerationsFullBlockSet("green_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet CYAN_POKE_BRICK_SET = new GenerationsFullBlockSet("cyan_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet LIGHT_BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("light_blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet PURPLE_POKE_BRICK_SET = new GenerationsFullBlockSet("purple_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet MAGENTA_POKE_BRICK_SET = new GenerationsFullBlockSet("magenta_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet PINK_POKE_BRICK_SET = new GenerationsFullBlockSet("pink_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
     /**
      * Ore Blocks
      */
@@ -826,12 +733,6 @@ public class GenerationsBlocks {
         return block;
     }
 
-    private static <T extends Block> RegistrySupplier<T> registerPokeBrick(String name, Supplier<T> blockSupplier) {
-        RegistrySupplier<T> block = POKEBRICKS.register(name, blockSupplier);
-        register(name, properties -> new BlockItem(block.get(), properties));
-        return block;
-    }
-
     private static <T extends Block> RegistrySupplier<T> registerMarble(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = MARBLE.register(name, blockSupplier);
         register(name, properties -> new BlockItem(block.get(), properties));
@@ -857,7 +758,6 @@ public class GenerationsBlocks {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Blocks");
         BLOCKS.register();
-        POKEBRICKS.register();
         MARBLE.register();
         ULTRA_BLOCKS.register();
         STONE.register();

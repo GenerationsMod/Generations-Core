@@ -47,7 +47,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         GenerationsPokeDolls.POKEDOLLS.forEach(block -> dropSelf(block.get()));
         BlockDatagen.dropSelfList.stream().map(block -> (Block) block).forEach(this::dropSelf);
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
-        GenerationsBlocks.POKEBRICKS.forEach(block -> dropSelfUpdated(block.get()));
         GenerationsFullBlockSet.getFullBlockSets().forEach(generationsFullBlockSet -> {
             dropSelfUpdated(generationsFullBlockSet.getBaseBlock());
             dropSelfUpdated(generationsFullBlockSet.getSlab());
