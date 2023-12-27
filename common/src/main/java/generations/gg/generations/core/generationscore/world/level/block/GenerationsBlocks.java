@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.world.level.block.decorat
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import generations.gg.generations.core.generationscore.world.level.levelgen.GenerationsFeatures;
 import net.minecraft.core.registries.Registries;
@@ -130,117 +131,22 @@ public class GenerationsBlocks {
      * Ultra Blocks
      */
 
-    public static final RegistrySupplier<Block> ULTRA_WHITE = registerUltraBlock("ultra_white", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_WHITE_STAIRS = registerUltraBlock("ultra_white_stairs", () -> new StairBlock(ULTRA_WHITE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_WHITE_SLAB = registerUltraBlock("ultra_white_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_WHITE_WALL = registerUltraBlock("ultra_white_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_WHITE_BUTTON = registerUltraBlock("ultra_white_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_WHITE_PRESSURE_PLATE = registerUltraBlock("ultra_white_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_LIGHT_GRAY = registerUltraBlock("ultra_light_gray", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_LIGHT_GRAY_STAIRS = registerUltraBlock("ultra_light_gray_stairs", () -> new StairBlock(ULTRA_LIGHT_GRAY.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_LIGHT_GRAY_SLAB = registerUltraBlock("ultra_light_gray_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_LIGHT_GRAY_WALL = registerUltraBlock("ultra_light_gray_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_LIGHT_GRAY_BUTTON = registerUltraBlock("ultra_light_gray_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIGHT_GRAY_PRESSURE_PLATE = registerUltraBlock("ultra_light_gray_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_GRAY = registerUltraBlock("ultra_gray", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_GRAY_STAIRS = registerUltraBlock("ultra_gray_stairs", () -> new StairBlock(ULTRA_GRAY.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_GRAY_SLAB = registerUltraBlock("ultra_gray_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_GRAY_WALL = registerUltraBlock("ultra_gray_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_GRAY_BUTTON = registerUltraBlock("ultra_gray_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_GRAY_PRESSURE_PLATE = registerUltraBlock("ultra_gray_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_BLACK = registerUltraBlock("ultra_black", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_BLACK_STAIRS = registerUltraBlock("ultra_black_stairs", () -> new StairBlock(ULTRA_BLACK.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_BLACK_SLAB = registerUltraBlock("ultra_black_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_BLACK_WALL = registerUltraBlock("ultra_black_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_BLACK_BUTTON = registerUltraBlock("ultra_black_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BLACK_PRESSURE_PLATE = registerUltraBlock("ultra_black_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_BROWN = registerUltraBlock("ultra_brown", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_BROWN_STAIRS = registerUltraBlock("ultra_brown_stairs", () -> new StairBlock(ULTRA_BROWN.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_BROWN_SLAB = registerUltraBlock("ultra_brown_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_BROWN_WALL = registerUltraBlock("ultra_brown_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_BROWN_BUTTON = registerUltraBlock("ultra_brown_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BROWN_PRESSURE_PLATE = registerUltraBlock("ultra_brown_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_RED = registerUltraBlock("ultra_red", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_RED_STAIRS = registerUltraBlock("ultra_red_stairs", () -> new StairBlock(ULTRA_RED.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_RED_SLAB = registerUltraBlock("ultra_red_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_RED_WALL = registerUltraBlock("ultra_red_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_RED_BUTTON = registerUltraBlock("ultra_red_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_RED_PRESSURE_PLATE = registerUltraBlock("ultra_red_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_ORANGE = registerUltraBlock("ultra_orange", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_ORANGE_STAIRS = registerUltraBlock("ultra_orange_stairs", () -> new StairBlock(ULTRA_ORANGE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_ORANGE_SLAB = registerUltraBlock("ultra_orange_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_ORANGE_WALL = registerUltraBlock("ultra_orange_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_ORANGE_BUTTON = registerUltraBlock("ultra_orange_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_ORANGE_PRESSURE_PLATE = registerUltraBlock("ultra_orange_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_YELLOW = registerUltraBlock("ultra_yellow", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_YELLOW_STAIRS = registerUltraBlock("ultra_yellow_stairs", () -> new StairBlock(ULTRA_YELLOW.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_YELLOW_SLAB = registerUltraBlock("ultra_yellow_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_YELLOW_WALL = registerUltraBlock("ultra_yellow_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_YELLOW_BUTTON = registerUltraBlock("ultra_yellow_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_YELLOW_PRESSURE_PLATE = registerUltraBlock("ultra_yellow_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_LIME = registerUltraBlock("ultra_lime", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_LIME_STAIRS = registerUltraBlock("ultra_lime_stairs", () -> new StairBlock(ULTRA_LIME.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_LIME_SLAB = registerUltraBlock("ultra_lime_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_LIME_WALL = registerUltraBlock("ultra_lime_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_LIME_BUTTON = registerUltraBlock("ultra_lime_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIME_PRESSURE_PLATE = registerUltraBlock("ultra_lime_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_GREEN = registerUltraBlock("ultra_green", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_GREEN_STAIRS = registerUltraBlock("ultra_green_stairs", () -> new StairBlock(ULTRA_GREEN.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_GREEN_SLAB = registerUltraBlock("ultra_green_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_GREEN_WALL = registerUltraBlock("ultra_green_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_GREEN_BUTTON = registerUltraBlock("ultra_green_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_GREEN_PRESSURE_PLATE = registerUltraBlock("ultra_green_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_CYAN = registerUltraBlock("ultra_cyan", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_CYAN_STAIRS = registerUltraBlock("ultra_cyan_stairs", () -> new StairBlock(ULTRA_CYAN.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_CYAN_SLAB = registerUltraBlock("ultra_cyan_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_CYAN_WALL = registerUltraBlock("ultra_cyan_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_CYAN_BUTTON = registerUltraBlock("ultra_cyan_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_CYAN_PRESSURE_PLATE = registerUltraBlock("ultra_cyan_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_LIGHT_BLUE = registerUltraBlock("ultra_light_blue", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_LIGHT_BLUE_STAIRS = registerUltraBlock("ultra_light_blue_stairs", () -> new StairBlock(ULTRA_LIGHT_BLUE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_LIGHT_BLUE_SLAB = registerUltraBlock("ultra_light_blue_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_LIGHT_BLUE_WALL = registerUltraBlock("ultra_light_blue_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_LIGHT_BLUE_BUTTON = registerUltraBlock("ultra_light_blue_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_LIGHT_BLUE_PRESSURE_PLATE = registerUltraBlock("ultra_light_blue_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_BLUE = registerUltraBlock("ultra_blue", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_BLUE_STAIRS = registerUltraBlock("ultra_blue_stairs", () -> new StairBlock(ULTRA_BLUE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_BLUE_SLAB = registerUltraBlock("ultra_blue_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_BLUE_WALL = registerUltraBlock("ultra_blue_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_BLUE_BUTTON = registerUltraBlock("ultra_blue_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_BLUE_PRESSURE_PLATE = registerUltraBlock("ultra_blue_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_PURPLE = registerUltraBlock("ultra_purple", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_PURPLE_STAIRS = registerUltraBlock("ultra_purple_stairs", () -> new StairBlock(ULTRA_PURPLE.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_PURPLE_SLAB = registerUltraBlock("ultra_purple_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_PURPLE_WALL = registerUltraBlock("ultra_purple_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_PURPLE_BUTTON = registerUltraBlock("ultra_purple_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_PURPLE_PRESSURE_PLATE = registerUltraBlock("ultra_purple_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
-    public static final RegistrySupplier<Block> ULTRA_MAGENTA = registerUltraBlock("ultra_magenta", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_MAGENTA_STAIRS = registerUltraBlock("ultra_magenta_stairs", () -> new StairBlock(ULTRA_MAGENTA.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_MAGENTA_SLAB = registerUltraBlock("ultra_magenta_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_MAGENTA_WALL = registerUltraBlock("ultra_magenta_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_MAGENTA_BUTTON = registerUltraBlock("ultra_magenta_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_MAGENTA_PRESSURE_PLATE = registerUltraBlock("ultra_magenta_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-    public static final RegistrySupplier<Block> ULTRA_PINK = registerUltraBlock("ultra_pink", () -> new Block(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<StairBlock> ULTRA_PINK_STAIRS = registerUltraBlock("ultra_pink_stairs", () -> new StairBlock(ULTRA_PINK.get().defaultBlockState(), ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<SlabBlock> ULTRA_PINK_SLAB = registerUltraBlock("ultra_pink_slab", () -> new SlabBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<WallBlock> ULTRA_PINK_WALL = registerUltraBlock("ultra_pink_wall", () -> new WallBlock(ULTRA_BLOCK_SETTINGS));
-    public static final RegistrySupplier<ButtonBlock> ULTRA_PINK_BUTTON = registerUltraBlock("ultra_pink_button", () -> new ButtonBlock(ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, 20, false));
-    public static final RegistrySupplier<PressurePlateBlock> ULTRA_PINK_PRESSURE_PLATE = registerUltraBlock("ultra_pink_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA));
-
+    public static final GenerationsUltraBlockSet ULTRA_WHITE_SET = new GenerationsUltraBlockSet("ultra_white", registerUltraBlock("ultra_white", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_LIGHT_GRAY_SET = new GenerationsUltraBlockSet("ultra_light_gray", registerUltraBlock("ultra_light_gray", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_GRAY_SET = new GenerationsUltraBlockSet("ultra_gray", registerUltraBlock("ultra_gray", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_BLACK_SET = new GenerationsUltraBlockSet("ultra_black", registerUltraBlock("ultra_black", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_BROWN_SET = new GenerationsUltraBlockSet("ultra_brown", registerUltraBlock("ultra_brown", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_RED_SET = new GenerationsUltraBlockSet("ultra_red", registerUltraBlock("ultra_red", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_ORANGE_SET = new GenerationsUltraBlockSet("ultra_orange", registerUltraBlock("ultra_orange", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_YELLOW_SET = new GenerationsUltraBlockSet("ultra_yellow", registerUltraBlock("ultra_yellow", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_LIME_SET = new GenerationsUltraBlockSet("ultra_lime", registerUltraBlock("ultra_lime", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_GREEN_SET = new GenerationsUltraBlockSet("ultra_green", registerUltraBlock("ultra_green", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_CYAN_SET = new GenerationsUltraBlockSet("ultra_cyan", registerUltraBlock("ultra_cyan", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_LIGHT_BLUE_SET = new GenerationsUltraBlockSet("ultra_light_blue", registerUltraBlock("ultra_light_blue", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_BLUE_SET = new GenerationsUltraBlockSet("ultra_blue", registerUltraBlock("ultra_blue", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_PURPLE_SET = new GenerationsUltraBlockSet("ultra_purple", registerUltraBlock("ultra_purple", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_MAGENTA_SET = new GenerationsUltraBlockSet("ultra_magenta", registerUltraBlock("ultra_magenta", () -> new Block(ULTRA_BLOCK_SETTINGS)));
+    public static final GenerationsUltraBlockSet ULTRA_PINK_SET = new GenerationsUltraBlockSet("ultra_pink", registerUltraBlock("ultra_pink", () -> new Block(ULTRA_BLOCK_SETTINGS)));
 
     public static final RegistrySupplier<Block> ULTRA_SAND = registerBlockItem("ultra_sand", () -> new SandBlock(0xdbd3a0, BlockBehaviour.Properties.copy(Blocks.SAND)));
 
@@ -625,7 +531,7 @@ public class GenerationsBlocks {
         return block;
     }
 
-    private static <T extends Block> RegistrySupplier<T> registerUltraBlock(String name, Supplier<T> blockSupplier) {
+    public static <T extends Block> RegistrySupplier<T> registerUltraBlock(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = ULTRA_BLOCKS.register(name, blockSupplier);
         register(name, properties -> new BlockItem(block.get(), properties));
         return block;

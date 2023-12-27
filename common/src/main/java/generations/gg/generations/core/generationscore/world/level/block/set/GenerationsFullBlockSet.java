@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.set;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -14,10 +13,19 @@ public class GenerationsFullBlockSet extends GenerationsBlockSet {
     private static ArrayList<GenerationsFullBlockSet> fullBlockSets = new ArrayList<>();
     private final RegistrySupplier<ButtonBlock> button;
     private final RegistrySupplier<PressurePlateBlock> pressurePlate;
+
+    public GenerationsFullBlockSet(String name, Block.Properties properties, BlockSetType type, RegistrySupplier<Block> baseBlock) {
+        super(name, baseBlock, properties);
+        button = registerBlockItem(name + "_button", () -> new ButtonBlock(properties, type, 20, false));
+        pressurePlate = registerBlockItem(name + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, properties, type));
+        GenerationsBlockSet.getBlockSets().remove(this);
+        fullBlockSets.add(this);
+    }
+
     public GenerationsFullBlockSet(String name, Block.Properties properties, BlockSetType type) {
         super(name, properties);
-        button = GenerationsBlocks.registerBlockItem(name + "_button", () -> new ButtonBlock(properties, type, 20, false));
-        pressurePlate = GenerationsBlocks.registerBlockItem(name + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, properties, type));
+        button = registerBlockItem(name + "_button", () -> new ButtonBlock(properties, type, 20, false));
+        pressurePlate = registerBlockItem(name + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, properties, type));
         GenerationsBlockSet.getBlockSets().remove(this);
         fullBlockSets.add(this);
     }

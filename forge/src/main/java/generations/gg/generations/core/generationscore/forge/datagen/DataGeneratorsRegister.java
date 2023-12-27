@@ -11,6 +11,7 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.*;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.tags.TagsDatagen;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
@@ -32,6 +33,7 @@ public class DataGeneratorsRegister {
     @SubscribeEvent
     public static void gatherData(final GatherDataEvent event) {
         GenerationsBlockSet.generateAllBlockFamilies();
+        GenerationsUltraBlockSet.updateUltraBlockFamilies();
         DataGenerator generator = event.getGenerator();
         //OreGenDatagen.onInitialize(event.getLookupProvider());
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();

@@ -59,9 +59,6 @@ public class TagsDatagen {
                     tag(BlockTags.SAND).add(block);
                     tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block);
                 }
-
-
-
             });
 
             GenerationsBlocks.ULTRA_BLOCKS.forEach(block -> {

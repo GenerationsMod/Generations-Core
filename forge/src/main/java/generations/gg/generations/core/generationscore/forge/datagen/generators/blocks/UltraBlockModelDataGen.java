@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.blocks;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
@@ -14,7 +14,7 @@ public class UltraBlockModelDataGen extends GenerationsBlockStateProvider.Proxie
 
 	@Override
 	public void registerStatesAndModels() {
-		GenerationsBlockFamilies.getAllUltraFamilies().forEach(this::registerBlockFamily);
+		GenerationsUltraBlockSet.ultraBlockSets.forEach(arg -> registerBlockFamily(arg.getBlockFamily()));
 	}
 	private void registerBlockFamily(BlockFamily family) {
 		registerUltraBlock(family.getBaseBlock());

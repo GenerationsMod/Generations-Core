@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 
 import java.util.ArrayList;
+import java.util.function.Supplier;
 
 /**
  * Makes it easier to create a set of blocks that are all related to each other.
@@ -43,11 +44,15 @@ public class GenerationsBlockSet {
     public GenerationsBlockSet(String name, RegistrySupplier<Block> baseBlock, Block.Properties properties) {
         this.name = name;
         this.baseBlock = baseBlock;
-        slab = GenerationsBlocks.registerBlockItem(name + "_slab", () -> new SlabBlock(properties));
-        stairs = GenerationsBlocks.registerBlockItem(name + "_stairs", () -> new StairBlock(baseBlock.get().defaultBlockState(), properties));
-        wall = GenerationsBlocks.registerBlockItem(name + "_wall", () -> new WallBlock(properties));
+        slab = registerBlockItem(name + "_slab", () -> new SlabBlock(properties));
+        stairs = registerBlockItem(name + "_stairs", () -> new StairBlock(baseBlock.get().defaultBlockState(), properties));
+        wall = registerBlockItem(name + "_wall", () -> new WallBlock(properties));
         blockFamily = null;
         blockSets.add(this);
+    }
+
+    protected <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
+        return GenerationsBlocks.registerBlockItem(name, blockSupplier);
     }
 
     /**
