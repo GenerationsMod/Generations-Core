@@ -14,6 +14,7 @@ import generations.gg.generations.core.generationscore.world.level.block.state.p
 import generations.gg.generations.core.generationscore.world.level.levelgen.GenerationsFeatures;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -377,22 +378,22 @@ public class GenerationsBlocks {
      * Poke Bricks
      */
 
-    public static final GenerationsFullBlockSet WHITE_POKE_BRICK_SET = new GenerationsFullBlockSet("white_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet LIGHT_GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("light_gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet BLACK_POKE_BRICK_SET = new GenerationsFullBlockSet("black_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet BROWN_POKE_BRICK_SET = new GenerationsFullBlockSet("brown_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet RED_POKE_BRICK_SET = new GenerationsFullBlockSet("red_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet ORANGE_POKE_BRICK_SET = new GenerationsFullBlockSet("orange_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet YELLOW_POKE_BRICK_SET = new GenerationsFullBlockSet("yellow_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet LIME_POKE_BRICK_SET = new GenerationsFullBlockSet("lime_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet GREEN_POKE_BRICK_SET = new GenerationsFullBlockSet("green_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet CYAN_POKE_BRICK_SET = new GenerationsFullBlockSet("cyan_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet LIGHT_BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("light_blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet PURPLE_POKE_BRICK_SET = new GenerationsFullBlockSet("purple_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet MAGENTA_POKE_BRICK_SET = new GenerationsFullBlockSet("magenta_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
-    public static final GenerationsFullBlockSet PINK_POKE_BRICK_SET = new GenerationsFullBlockSet("pink_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet WHITE_POKE_BRICK_SET = new GenerationsFullBlockSet("white_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.WHITE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet LIGHT_GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("light_gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIGHT_GRAY), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet GRAY_POKE_BRICK_SET = new GenerationsFullBlockSet("gray_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.GRAY), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BLACK_POKE_BRICK_SET = new GenerationsFullBlockSet("black_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BLACK), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BROWN_POKE_BRICK_SET = new GenerationsFullBlockSet("brown_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BROWN), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet RED_POKE_BRICK_SET = new GenerationsFullBlockSet("red_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.RED), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet ORANGE_POKE_BRICK_SET = new GenerationsFullBlockSet("orange_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.ORANGE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet YELLOW_POKE_BRICK_SET = new GenerationsFullBlockSet("yellow_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.YELLOW), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet LIME_POKE_BRICK_SET = new GenerationsFullBlockSet("lime_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIME), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet GREEN_POKE_BRICK_SET = new GenerationsFullBlockSet("green_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.GREEN), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet CYAN_POKE_BRICK_SET = new GenerationsFullBlockSet("cyan_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.CYAN), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet LIGHT_BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("light_blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.LIGHT_BLUE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet BLUE_POKE_BRICK_SET = new GenerationsFullBlockSet("blue_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.BLUE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet PURPLE_POKE_BRICK_SET = new GenerationsFullBlockSet("purple_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.PURPLE), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet MAGENTA_POKE_BRICK_SET = new GenerationsFullBlockSet("magenta_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.MAGENTA), GenerationsBlockSetTypes.POKE_BRICK);
+    public static final GenerationsFullBlockSet PINK_POKE_BRICK_SET = new GenerationsFullBlockSet("pink_poke_brick", BlockBehaviour.Properties.copy(Blocks.BRICKS).mapColor(DyeColor.PINK), GenerationsBlockSetTypes.POKE_BRICK);
     /**
      * Ore Blocks
      */
