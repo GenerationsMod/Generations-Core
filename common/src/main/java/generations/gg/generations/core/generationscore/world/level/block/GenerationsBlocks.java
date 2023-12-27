@@ -220,10 +220,7 @@ public class GenerationsBlocks {
     //ChargeCobbleStone
     public static final GenerationsBlockSet CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
     //Mossy ChargeCobbleStone
-    public static final RegistrySupplier<Block> MOSSY_CHARGE_COBBLESTONE = registerStone("mossy_charge_cobblestone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)));
-    public static final RegistrySupplier<StairBlock> MOSSY_CHARGE_COBBLESTONE_STAIRS = registerStone("mossy_charge_cobblestone_stairs", () -> new StairBlock(Blocks.STONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(MOSSY_CHARGE_COBBLESTONE.get())));
-    public static final RegistrySupplier<SlabBlock> MOSSY_CHARGE_COBBLESTONE_SLAB = registerStone("mossy_charge_cobblestone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MOSSY_CHARGE_COBBLESTONE.get())));
-    public static final RegistrySupplier<WallBlock> MOSSY_CHARGE_COBBLESTONE_WALL = registerStone("mossy_charge_cobblestone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MOSSY_CHARGE_COBBLESTONE.get())));
+    public static final GenerationsBlockSet MOSSY_CHARGE_COBBLESTONE_SET = new GenerationsBlockSet("mossy_charge_cobblestone", BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE));
     //Smooth ChargeStone
     public static final RegistrySupplier<Block> SMOOTH_CHARGE_STONE = registerStone("smooth_charge_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));
     public static final RegistrySupplier<SlabBlock> SMOOTH_CHARGE_STONE_SLAB = registerStone("smooth_charge_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE_SLAB)));
@@ -273,10 +270,7 @@ public class GenerationsBlocks {
     public static final GenerationsBlockSet VOLCANIC_COBBLESTONE_SET = new GenerationsBlockSet("volcanic_cobblestone", BlockBehaviour.Properties.copy(Blocks.COBBLESTONE));
 
     //Mossy Volcanic CobbleStone
-    public static final RegistrySupplier<Block> MOSSY_VOLCANIC_COBBLESTONE = registerStone("mossy_volcanic_cobblestone", () -> new Block(BlockBehaviour.Properties.copy(VOLCANIC_COBBLESTONE_SET.getBaseBlock())));
-    public static final RegistrySupplier<StairBlock> MOSSY_VOLCANIC_COBBLESTONE_STAIRS = registerStone("mossy_volcanic_cobblestone_stairs", () -> new StairBlock(Blocks.COBBLESTONE_STAIRS.defaultBlockState(), BlockBehaviour.Properties.copy(MOSSY_VOLCANIC_COBBLESTONE.get())));
-    public static final RegistrySupplier<SlabBlock> MOSSY_VOLCANIC_COBBLESTONE_SLAB = registerStone("mossy_volcanic_cobblestone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MOSSY_VOLCANIC_COBBLESTONE.get())));
-    public static final RegistrySupplier<WallBlock> MOSSY_VOLCANIC_COBBLESTONE_WALL = registerStone("mossy_volcanic_cobblestone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MOSSY_VOLCANIC_COBBLESTONE.get())));
+    public static final GenerationsBlockSet MOSSY_VOLCANIC_COBBLESTONE_SET = new GenerationsBlockSet("mossy_volcanic_cobblestone", BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE));
 
     //Smooth Volcanic Stone
     public static final RegistrySupplier<Block> SMOOTH_VOLCANIC_STONE = registerStone("smooth_volcanic_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));
