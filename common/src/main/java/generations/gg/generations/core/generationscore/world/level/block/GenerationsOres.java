@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 public class GenerationsOres {
 	public static final DeferredRegister<Block> ORES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 
-	/**
+	/*
 	 * Stone Ores (Charge Stone Variants) Temporarly disabled till ready to use in chargestone cave modules
 
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_DAWN_STONE_ORE = registerBlockItem("charge_stone_dawn_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
@@ -39,24 +39,24 @@ public class GenerationsOres {
 	/**
 	 * Tumblestone Ores
 	 */
-	public static final GenerationsOreSet TUMBLESTONE_ORE_SET = new GenerationsOreSet("tumblestone_ore");
-	public static final GenerationsOreSet BLACK_TUMBLESTONE_ORE_SET = new GenerationsOreSet("black_tumblestone_ore");
-	public static final GenerationsOreSet RARE_TUMBLESTONE_ORE_SET = new GenerationsOreSet("rare_tumblestone_ore");
-	public static final GenerationsOreSet SKY_TUMBLESTONE_ORE_SET = new GenerationsOreSet("sky_tumblestone_ore");
+	public static final GenerationsOreSet TUMBLESTONE_ORE_SET = new GenerationsOreSet("tumblestone_ore", GenerationsItems.TUMBLESTONE);
+	public static final GenerationsOreSet BLACK_TUMBLESTONE_ORE_SET = new GenerationsOreSet("black_tumblestone_ore", GenerationsItems.BLACK_TUMBLESTONE);
+	public static final GenerationsOreSet RARE_TUMBLESTONE_ORE_SET = new GenerationsOreSet("rare_tumblestone_ore", GenerationsItems.RARE_TUMBLESTONE);
+	public static final GenerationsOreSet SKY_TUMBLESTONE_ORE_SET = new GenerationsOreSet("sky_tumblestone_ore", GenerationsItems.SKY_TUMBLESTONE);
 
 
-	public static final GenerationsOreSet MEGASTONE_ORE_SET = new GenerationsOreSet("megastone_ore");
+	public static final GenerationsOreSet MEGASTONE_ORE_SET = new GenerationsOreSet("megastone_ore", GenerationsItems.MEGASTONE_SHARD);
 	public static final GenerationsOreSet METEORITE_ORE_SET = new GenerationsOreSet("meteorite_ore");
 
 
 	/**
 	 * Other Ores
 	 */
-	public static final GenerationsOreSet ALUMINUM_ORE_SET = new GenerationsOreSet("aluminum_ore");
-	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore");
-	public static final GenerationsOreSet RUBY_ORE_SET = new GenerationsOreSet("ruby_ore");
-	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore");
-	public static final GenerationsOreSet SILICON_ORE_SET = new GenerationsOreSet("silicon_ore");
+	public static final GenerationsOreSet ALUMINUM_ORE_SET = new GenerationsOreSet("aluminum_ore", GenerationsItems.RAW_ALUMINUM);
+	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore", GenerationsItems.CRYSTAL);
+	public static final GenerationsOreSet RUBY_ORE_SET = new GenerationsOreSet("ruby_ore", GenerationsItems.RUBY);
+	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE);
+	public static final GenerationsOreSet SILICON_ORE_SET = new GenerationsOreSet("silicon_ore", GenerationsItems.SILICON);
 	public static final GenerationsOreSet Z_CRYSTAL_ORE_SET = new GenerationsOreSet("z_crystal_ore");
 	public static final GenerationsOreSet FOSSIL_ORE_SET = new GenerationsOreSet("fossil_ore");
 

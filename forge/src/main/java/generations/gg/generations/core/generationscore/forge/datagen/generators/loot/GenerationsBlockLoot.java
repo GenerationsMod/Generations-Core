@@ -53,18 +53,17 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get());
 
         //Ores
-        /*
-        addOreSet(GenerationsOres.CHARGE_STONE_TUMBLESTONE_ORE.get(), GenerationsItems.TUMBLESTONE.get());
-        addOreSet(GenerationsOres.CHARGE_STONE_BLACK_TUMBLESTONE_ORE.get(), GenerationsItems.BLACK_TUMBLESTONE.get());
-        addOreSet(GenerationsOres.CHARGE_STONE_SKY_TUMBLESTONE_ORE.get(), GenerationsItems.SKY_TUMBLESTONE.get());
-        addOreSet(GenerationsOres.CHARGE_STONE_RARE_TUMBLESTONE_ORE.get(), GenerationsItems.RARE_TUMBLESTONE.get());
-        addOreSet(GenerationsOres.CHARGE_STONE_ALUMINUM_ORE.get(), GenerationsItems.RAW_ALUMINUM.get());
-        addOreSet(GenerationsOres.CHARGE_STONE_CRYSTAL_ORE.get(), GenerationsItems.CRYSTAL.get());
-        addOreSet(GenerationsOres.CHARGE_STONE_RUBY_ORE.get(), GenerationsItems.RUBY.get());
-        addOreSet(GenerationsOres.CHARGE_STONE_SAPPHIRE_ORE.get(), GenerationsItems.SAPPHIRE.get());
-        addOreSet(GenerationsOres.CHARGE_STONE_SILICON_ORE.get(), GenerationsItems.SILICON.get());
 
-         */
+        addOreSet(GenerationsOres.TUMBLESTONE_ORE_SET);
+        addOreSet(GenerationsOres.BLACK_TUMBLESTONE_ORE_SET);
+        addOreSet(GenerationsOres.SKY_TUMBLESTONE_ORE_SET);
+        addOreSet(GenerationsOres.RARE_TUMBLESTONE_ORE_SET);
+        addOreSet(GenerationsOres.ALUMINUM_ORE_SET);
+        addOreSet(GenerationsOres.CRYSTAL_ORE_SET);
+        addOreSet(GenerationsOres.RUBY_ORE_SET);
+        addOreSet(GenerationsOres.SAPPHIRE_ORE_SET);
+        addOreSet(GenerationsOres.SILICON_ORE_SET);
+
         dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getOre());
         dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getDeepslateOre());
         //dropSelf(GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
@@ -188,9 +187,10 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         );
     }
 
-    private void addOreSet(GenerationsOreSet oreSet, Item drop) {
-        add(oreSet.getOre(), createOreDrop(oreSet.getOre(), drop));
-        add(oreSet.getDeepslateOre(), createOreDrop(oreSet.getDeepslateOre(), drop));
+    private void addOreSet(GenerationsOreSet oreSet) {
+        if (oreSet.getDrop() == null) return;
+        add(oreSet.getOre(), createOreDrop(oreSet.getOre(), oreSet.getDrop()));
+        add(oreSet.getDeepslateOre(), createOreDrop(oreSet.getDeepslateOre(), oreSet.getDrop()));
     }
 
     private void addOreSet(Block ore, Item drop) {
