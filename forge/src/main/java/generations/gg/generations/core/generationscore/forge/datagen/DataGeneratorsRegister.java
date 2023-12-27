@@ -33,7 +33,7 @@ public class DataGeneratorsRegister {
     public static void gatherData(final GatherDataEvent event) {
         GenerationsBlockSet.generateAllBlockFamilies();
         DataGenerator generator = event.getGenerator();
-        OreGenDatagen.onInitialize(event.getLookupProvider());
+        //OreGenDatagen.onInitialize(event.getLookupProvider());
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         PackOutput output = generator.getPackOutput();
         TagsDatagen.init(generator, output, event.getLookupProvider(), existingFileHelper);

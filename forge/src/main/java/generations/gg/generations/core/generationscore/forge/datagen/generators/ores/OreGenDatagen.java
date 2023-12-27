@@ -33,6 +33,7 @@ import java.util.function.Consumer;
 
 public class OreGenDatagen {
 
+    /*
     public static CompletableFuture<HolderLookup.Provider> onInitialize(CompletableFuture<HolderLookup.Provider> original) {
         RuleTest STONE_ORE_REPLACEABLES = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest DEEPSLATE_ORE_REPLACEABLES = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
@@ -252,5 +253,7 @@ public class OreGenDatagen {
     public static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier heightRange) {return orePlacement(CountPlacement.of(count), heightRange);}
 
     private static List<PlacementModifier> rareOrePlacement(int chance, PlacementModifier heightRange) {return orePlacement(RarityFilter.onAverageOnceEvery(chance), heightRange);}
+
+     */
 }
 

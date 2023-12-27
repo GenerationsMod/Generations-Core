@@ -46,6 +46,14 @@ public class GenerationsOreSet {
     }
 
     /**
+     * Gets the Ore as a RegistrySupplier
+     * @return The Ore as a RegistrySupplier
+     */
+    public RegistrySupplier<DropExperienceBlock> getOreSupplier() {
+        return ore;
+    }
+
+    /**
      * Gets the Deepslate Ore
      * @return The Deepslate Ore
      */
