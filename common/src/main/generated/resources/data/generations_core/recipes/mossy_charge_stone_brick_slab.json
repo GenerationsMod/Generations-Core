@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "mossy_charge_stone_bricks_slab",
+  "group": "mossy_charge_stone_brick_slab",
   "key": {
     "#": {
       "item": "generations_core:mossy_charge_stone_bricks"

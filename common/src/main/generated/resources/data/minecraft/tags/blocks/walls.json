@@ -54,10 +54,12 @@
     "generations_core:charge_stone_wall",
     "generations_core:charge_cobblestone_wall",
     "generations_core:mossy_charge_cobblestone_wall",
+    "generations_core:mossy_charge_stone_brick_wall",
     "generations_core:bright_charge_cobblestone_wall",
     "generations_core:glowing_charge_cobblestone_wall",
     "generations_core:volcanic_cobblestone_wall",
     "generations_core:mossy_volcanic_cobblestone_wall",
+    "generations_core:mossy_volcanic_stone_brick_wall",
     "generations_core:volcanic_rock_wall",
     "generations_core:subway_floor_cross_wall",
     "generations_core:subway_floor_full_cross_wall",
@@ -139,9 +141,7 @@
     "generations_core:ultra_magenta_wall",
     "generations_core:ultra_pink_wall",
     "generations_core:charge_stone_brick_wall",
-    "generations_core:mossy_charge_stone_brick_wall",
     "generations_core:volcanic_stone_wall",
-    "generations_core:volcanic_stone_brick_wall",
-    "generations_core:mossy_volcanic_stone_brick_wall"
+    "generations_core:volcanic_stone_brick_wall"
   ]
 }
