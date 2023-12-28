@@ -7,7 +7,6 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.items.ItemDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.lang.GeneralLang;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.LootTableDatagen;
-import generations.gg.generations.core.generationscore.forge.datagen.generators.ores.OreGenDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.*;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.tags.TagsDatagen;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
@@ -35,7 +34,6 @@ public class DataGeneratorsRegister {
         GenerationsBlockSet.generateAllBlockFamilies();
         GenerationsUltraBlockSet.updateUltraBlockFamilies();
         DataGenerator generator = event.getGenerator();
-        //OreGenDatagen.onInitialize(event.getLookupProvider());
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         PackOutput output = generator.getPackOutput();
         TagsDatagen.init(generator, output, event.getLookupProvider(), existingFileHelper);
