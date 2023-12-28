@@ -7,5 +7,5 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(AnvilMenu.class)
 public interface AnvilMenuAccessor {
     @Accessor("repairItemCountCost")
-    public void setMaterialCost(int cost);
+    void setMaterialCost(int cost);
 }

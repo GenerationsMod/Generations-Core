@@ -13,10 +13,10 @@ public class AnvilEvents {
         return false;
     });
 
-    public static interface AnvilChange {
+    public interface AnvilChange {
         boolean change(Result result, @NotNull ItemStack left, @NotNull ItemStack right, String name, int baseCost, Player player);
 
-        public class Result {
+        class Result {
             private ItemStack output;
             private int cost;
             private int materialCost;

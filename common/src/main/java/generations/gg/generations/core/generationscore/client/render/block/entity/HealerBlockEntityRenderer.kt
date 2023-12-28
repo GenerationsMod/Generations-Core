@@ -51,7 +51,7 @@ class HealerBlockEntityRenderer(ctx: BlockEntityRendererProvider.Context) : Gene
             stack.translate(offset.first, 0.78, offset.second)
             stack.mulPose(rot)
             stack.scale(scale, scale, scale)
-            ballInstance.viewMatrix().set(stack.last().pose());
+            ballInstance.viewMatrix().set(stack.last().pose())
             model.render(ballInstance, RenderSystem.getProjectionMatrix())
             stack.popPose()
         }

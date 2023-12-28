@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager;
 import dev.architectury.core.item.ArchitecturyRecordItem;
@@ -8,7 +7,6 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
-import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsChestBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.TieredFishingHookEntity;

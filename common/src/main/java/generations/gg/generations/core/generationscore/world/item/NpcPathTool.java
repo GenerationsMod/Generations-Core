@@ -89,7 +89,7 @@ public class NpcPathTool extends Item {
 
     public static void setPath(ItemStack stack, @Nullable List<BlockPos> path) {
         var tag = stack.getOrCreateTag();
-        if (path == null || path.size() == 0) {
+        if (path == null || path.isEmpty()) {
             tag.remove("path");
         } else {
             tag.putLongArray("path", path.stream().mapToLong(BlockPos::asLong).toArray());

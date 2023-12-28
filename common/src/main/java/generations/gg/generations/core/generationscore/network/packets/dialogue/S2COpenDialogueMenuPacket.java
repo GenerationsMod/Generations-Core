@@ -1,10 +1,7 @@
 package generations.gg.generations.core.generationscore.network.packets.dialogue;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.screen.dialgoue.display.DialogueScreen;
-import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;

@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
 import earth.terrarium.botarium.common.item.SerializableContainer;

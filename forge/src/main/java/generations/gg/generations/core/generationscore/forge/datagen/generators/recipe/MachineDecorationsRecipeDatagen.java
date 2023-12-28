@@ -6,10 +6,6 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.entities.VendingMachineBlock;
-import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.ClockBlock;
-import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.HealerBlock;
-import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.PcBlock;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;

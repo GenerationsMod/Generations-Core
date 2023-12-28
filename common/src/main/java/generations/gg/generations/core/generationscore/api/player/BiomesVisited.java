@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.api.player;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

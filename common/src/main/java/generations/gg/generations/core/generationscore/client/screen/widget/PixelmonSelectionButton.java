@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.screen.widget;
 
 import com.cobblemon.mod.common.api.gui.GuiUtilsKt;
-import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import net.minecraft.client.gui.GuiGraphics;

@@ -5,7 +5,6 @@ import generations.gg.generations.core.generationscore.network.packets.dialogue.
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2COpenDialogueMenuPacket;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNode;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.ChooseNode;
-import generations.gg.generations.core.generationscore.world.dialogue.nodes.ResponseTakingNode;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;

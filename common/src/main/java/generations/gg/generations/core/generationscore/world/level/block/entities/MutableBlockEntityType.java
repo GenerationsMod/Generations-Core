@@ -3,13 +3,11 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 import com.mojang.datafixers.types.Type;
 import generations.gg.generations.core.generationscore.mixin.BlockEntityTypeAccessor;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 

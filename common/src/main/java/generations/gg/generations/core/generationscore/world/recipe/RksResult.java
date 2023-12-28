@@ -1,33 +1,25 @@
 package generations.gg.generations.core.generationscore.world.recipe;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import com.google.gson.JsonPrimitive;
-import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.Map;
-import java.util.function.Consumer;
 
 public interface RksResult {
     void toJson(JsonObject object);
 
     String type();
 
-    public static JsonObject toJson(RksResult result) {
+    static JsonObject toJson(RksResult result) {
         var object = new JsonObject();
         object.addProperty("type", result.type());
         result.toJson(object);
         return object;
     }
 
-    public static RksResult fromJson(JsonObject object) {
+    static RksResult fromJson(JsonObject object) {
         return switch (object.getAsJsonPrimitive("type").getAsString()) {
             case "item" -> ItemResult.fromJson(object);
             case "pokemon" -> PokemonResult.fromJson(object);
@@ -35,7 +27,7 @@ public interface RksResult {
         };
     }
 
-    public record ItemResult(ItemStack item) implements RksResult {
+    record ItemResult(ItemStack item) implements RksResult {
         @Override
         public void toJson(JsonObject object) {
             var json = GenerationsUtils.jsonToNbt(GenerationsUtils.toCompoundTag(item));
@@ -52,7 +44,7 @@ public interface RksResult {
             return "item";
         }
     }
-    public record PokemonResult(PokemonProperties properties) implements RksResult {
+    record PokemonResult(PokemonProperties properties) implements RksResult {
         @Override
         public void toJson(JsonObject object) {
             object.add("data", properties.saveToJSON());

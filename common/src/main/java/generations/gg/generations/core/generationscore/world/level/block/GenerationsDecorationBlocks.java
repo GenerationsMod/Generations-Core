@@ -11,7 +11,6 @@ import generations.gg.generations.core.generationscore.world.level.block.decorat
 import generations.gg.generations.core.generationscore.world.level.block.entities.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock.DisplayState;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -44,7 +43,7 @@ public class GenerationsDecorationBlocks {
     public static final DyedGroup<VendingMachineBlock, VendingMachineBlockEntity> VENDING_MACHINE = registerDyed("vending_machine", function -> () -> new VendingMachineBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistrySupplier<Block> SNORLAX_BEAN_BAG = registerDecorationItem("snorlax_bean_bag", () -> new BeanBagBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
     public static final DyedGroup<PastelBeanBagBlock, GenericDyedVariantBlockEntity> PASTEL_BEAN_BAG = registerDyed("pastel_bean_bag", function -> () -> new PastelBeanBagBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
-    public static final DyedGroup<SwivelChairBlock, GenericDyedVariantBlockEntity> SWIVEL_CHAIR = registerDyed("swivel_chair", function -> () -> new SwivelChairBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));;
+    public static final DyedGroup<SwivelChairBlock, GenericDyedVariantBlockEntity> SWIVEL_CHAIR = registerDyed("swivel_chair", function -> () -> new SwivelChairBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
     public static final RegistrySupplier<Block> BENCH = registerDecorationItem("bench", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.WOOL).strength(1.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> BUSH = registerDecorationItem("bush", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.GRASS).strength(1.0f)));
 

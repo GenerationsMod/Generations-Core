@@ -21,7 +21,7 @@ public interface PlaceRecipeMixin {
      * @reason
      */
     @Overwrite
-    default public void placeRecipe(int width, int height, int outputSlot, Recipe<?> recipe, Iterator ingredients, int maxAmount) {
+    default void placeRecipe(int width, int height, int outputSlot, Recipe<?> recipe, Iterator ingredients, int maxAmount) {
         int i = width;
         int j = height;
         if (recipe instanceof ShapedRecipe shapedRecipe) {

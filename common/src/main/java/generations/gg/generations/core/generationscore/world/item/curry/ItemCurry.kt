@@ -16,7 +16,6 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.level.Level
-import kotlin.math.min
 
 class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), PokemonEntityInteraction {
     override fun getName(stack: ItemStack): Component {
@@ -64,12 +63,12 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         get() = setOf(PokemonEntityInteraction.Ownership.OWNER)
 
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
-        val curry = getData(stack);
+        val curry = getData(stack)
 
-        val pokemon = entity.pokemon;
-        pokemon.incrementFriendship(curry.friendship, true);
-        pokemon.addExperienceWithPlayer(player, CurryExperienceSource(player, stack), curry.experience);
-        if(curry.canHealStatus()) pokemon.status = null;
+        val pokemon = entity.pokemon
+        pokemon.incrementFriendship(curry.friendship, true)
+        pokemon.addExperienceWithPlayer(player, CurryExperienceSource(player, stack), curry.experience)
+        if(curry.canHealStatus()) pokemon.status = null
         if(curry.canRestorePP()) {
             pokemon.moveSet.doWithoutEmitting {
                 pokemon.moveSet.getMoves().forEach {
@@ -87,7 +86,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         val curry = getData(stack)
 
         override fun isInteraction(): Boolean {
-            return true;
+            return true
         }
     }
 

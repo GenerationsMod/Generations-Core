@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.config;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Arrays;
@@ -48,7 +47,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
     public static SpeciesKey fromPokemon(Pokemon pokemon) {
         Set<String> aspects;
 
-        if (pokemon.getAspects().size() != 0) {
+        if (!pokemon.getAspects().isEmpty()) {
             var trackedAspects = GenerationsCore.CONFIG.caught.trackedAspects;
             aspects = pokemon.getAspects().stream().filter(trackedAspects::contains).collect(Collectors.toSet());
         } else {

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.state.properties;
 
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 

@@ -4,12 +4,10 @@ import generations.gg.generations.core.generationscore.world.entity.GenerationsE
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 public class StatueEditorItem extends Item {

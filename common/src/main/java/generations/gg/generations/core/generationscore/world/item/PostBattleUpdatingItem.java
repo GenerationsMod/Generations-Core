@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.world.item;
 
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 
@@ -26,5 +25,5 @@ public interface PostBattleUpdatingItem {
 
     boolean checkData(PlayerBattleActor player, ItemStack stack, BattleData pixelmonData);
 
-    public record BattleData(boolean isNpc, Pokemon pokemon, String move) {}
+    record BattleData(boolean isNpc, Pokemon pokemon, String move) {}
 }

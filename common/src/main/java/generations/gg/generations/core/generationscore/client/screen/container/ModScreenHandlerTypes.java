@@ -1,9 +1,7 @@
 
 package generations.gg.generations.core.generationscore.client.screen.container;
 
-import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;

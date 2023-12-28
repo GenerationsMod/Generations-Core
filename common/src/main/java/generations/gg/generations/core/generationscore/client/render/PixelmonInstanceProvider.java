@@ -8,12 +8,12 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.Set;
 
 public interface PixelmonInstanceProvider {
-    public PixelmonInstance getInstance();
+    PixelmonInstance getInstance();
     void setInstance(PixelmonInstance instance);
 
-    public ResourceLocation species();
+    ResourceLocation species();
 
-    public Set<String> aspects();
+    Set<String> aspects();
 
     default FormData getFormData() {
         return PokemonSpecies.INSTANCE.getByIdentifier(species()).getForm(aspects());

@@ -24,8 +24,8 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
             s.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
-        val transforms = if(split.size == 3) split[2].asBoolean() else false;
-        val pausesPoses = if(split.size == 4) split[3].asBoolean() else false;
+        val transforms = if(split.size == 3) split[2].asBoolean() else false
+        val pausesPoses = if(split.size == 4) split[3].asBoolean() else false
 
 
         val name = split[1].trim { it <= ' ' }

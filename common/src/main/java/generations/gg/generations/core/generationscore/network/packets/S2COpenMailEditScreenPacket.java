@@ -1,11 +1,5 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
-import generations.gg.generations.core.generationscore.client.screen.mails.MailEditScreen;
-import generations.gg.generations.core.generationscore.client.screen.mails.MailViewScreen;
-import generations.gg.generations.core.generationscore.client.screen.mails.MailViewScreen.WrittenMailAccess;
-import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;

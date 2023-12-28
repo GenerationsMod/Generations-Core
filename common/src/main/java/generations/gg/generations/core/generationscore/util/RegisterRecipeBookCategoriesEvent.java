@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.util;
 
-import com.google.common.collect.ImmutableList;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import net.minecraft.client.RecipeBookCategories;
@@ -9,7 +8,6 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 
 import java.util.List;
-import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;

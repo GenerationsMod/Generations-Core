@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.world.item.ItemStack;
 
 public class TechnicalMachineItem extends MoveTeachingItem {

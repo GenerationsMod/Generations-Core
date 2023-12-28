@@ -1,12 +1,9 @@
 package generations.gg.generations.core.generationscore.client;
 
-import com.cobblemon.mod.common.client.entity.PokemonClientDelegate;
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.LightingSettings;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
-import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
