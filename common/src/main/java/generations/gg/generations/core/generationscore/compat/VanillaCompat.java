@@ -70,6 +70,7 @@ public class VanillaCompat {
 				case "colored_blocks" -> {
 					if(tabs.coloredBlocks)
 						CreativeTabRegistry.modifyBuiltin(tab, (flags, output, permissions) -> {
+							/*
 							for (int i = 0; i <= 5; i++) {
 								int finalI = i;
 								GenerationsBlocks.POKEBRICKS.forEach(block -> addInOrder(output, finalI, block.get()));
@@ -79,6 +80,8 @@ public class VanillaCompat {
 								int finalI = i;
 								GenerationsBlocks.MARBLE.forEach(block -> addInOrder(output, finalI, block.get()));
 							}
+
+							 */
 
 							for (int i = 0; i <= 5; i++) {
 								int finalI = i;
@@ -137,6 +140,7 @@ public class VanillaCompat {
 				case "natural_blocks" -> {
 					if(tabs.naturalBlocks)
 						CreativeTabRegistry.modifyBuiltin(tab, (flags, output, permissions) -> {
+							/*
 							output.acceptAfter(Items.DEEPSLATE_COAL_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_COAL_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							output.acceptAfter(Items.DEEPSLATE_DIAMOND_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							output.acceptAfter(Items.DEEPSLATE_EMERALD_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_EMERALD_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -144,6 +148,7 @@ public class VanillaCompat {
 							output.acceptAfter(Items.DEEPSLATE_LAPIS_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							output.acceptAfter(Items.DEEPSLATE_GOLD_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_GOLD_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							output.acceptAfter(Items.DEEPSLATE_COPPER_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_COPPER_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+							 */
 							GenerationsOres.ORES.forEach(b -> output.acceptBefore(Items.NETHER_GOLD_ORE.getDefaultInstance(), b.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
 							output.acceptAfter(Items.RAW_GOLD_BLOCK.getDefaultInstance(), GenerationsBlocks.RAW_ALUMINUM_BLOCK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							output.acceptAfter(Items.ACACIA_LOG.getDefaultInstance(), GenerationsWood.GHOST_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

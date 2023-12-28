@@ -2,7 +2,6 @@
 package generations.gg.generations.core.generationscore.world.container;
 
 import generations.gg.generations.core.generationscore.client.ModRecipeBookTypes;
-import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.level.block.RksMachineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;

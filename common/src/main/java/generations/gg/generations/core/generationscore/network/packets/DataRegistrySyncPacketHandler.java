@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 
 public class DataRegistrySyncPacketHandler<P, T extends DataRegistrySyncPacket<P, T>> implements ClientNetworkPacketHandler<T> {

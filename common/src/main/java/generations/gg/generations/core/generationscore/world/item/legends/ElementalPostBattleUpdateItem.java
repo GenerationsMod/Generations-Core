@@ -6,10 +6,7 @@ import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.world.item.ItemWithLangTooltipImpl;
 import generations.gg.generations.core.generationscore.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.function.Predicate;
 
 public abstract class ElementalPostBattleUpdateItem extends ItemWithLangTooltipImpl implements PostBattleUpdatingItem, LangTooltip {
 

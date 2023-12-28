@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "generations_core:black_shingles"
+  },
+  "result": "generations_core:black_shingles_wall"
+}

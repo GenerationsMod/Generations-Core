@@ -1,9 +1,5 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
-import generations.gg.generations.core.generationscore.GenerationsDataProvider;
-import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CChooseDialoguePacket;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;;
 

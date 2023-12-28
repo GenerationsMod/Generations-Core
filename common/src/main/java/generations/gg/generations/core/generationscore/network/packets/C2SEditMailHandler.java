@@ -4,7 +4,6 @@ import generations.gg.generations.core.generationscore.network.ServerNetworkPack
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.MailItem;
 import net.minecraft.nbt.StringTag;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;

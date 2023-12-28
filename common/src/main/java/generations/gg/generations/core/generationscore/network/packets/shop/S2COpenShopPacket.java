@@ -1,11 +1,7 @@
 package generations.gg.generations.core.generationscore.network.packets.shop;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.screen.ShopScreen;
-import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.world.entity.ShopOfferProvider;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;

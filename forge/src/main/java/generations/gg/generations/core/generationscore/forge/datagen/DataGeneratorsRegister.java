@@ -7,9 +7,10 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.items.ItemDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.lang.GeneralLang;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.LootTableDatagen;
-import generations.gg.generations.core.generationscore.forge.datagen.generators.ores.OreGenDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.*;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.tags.TagsDatagen;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
@@ -29,9 +30,10 @@ import java.util.Set;
 public class DataGeneratorsRegister {
 
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
+    public static void gatherData(final GatherDataEvent event) {
+        GenerationsBlockSet.generateAllBlockFamilies();
+        GenerationsUltraBlockSet.updateUltraBlockFamilies();
         DataGenerator generator = event.getGenerator();
-        OreGenDatagen.onInitialize(event.getLookupProvider());
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         PackOutput output = generator.getPackOutput();
         TagsDatagen.init(generator, output, event.getLookupProvider(), existingFileHelper);

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item.legends;
 
 import com.cobblemon.mod.common.api.types.ElementalTypes;
-import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import net.minecraft.world.item.Item;
 

@@ -18,9 +18,9 @@ public class GenerationsCoreRecipeTypes {
 				return id.toString();
 			}
 		});
-	} ;
+	}
 
-	public static void init() {
+    public static void init() {
 		RECIPES_TYPES.register();
 	}
 }

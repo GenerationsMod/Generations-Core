@@ -14,11 +14,9 @@ import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
-import org.joml.Vector3f;
 
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;

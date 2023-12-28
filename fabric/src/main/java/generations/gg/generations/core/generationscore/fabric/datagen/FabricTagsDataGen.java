@@ -41,7 +41,7 @@ class BlockTagsProvider extends FabricTagProvider.BlockTagProvider {
     protected void addTags(HolderLookup.Provider arg) {
         getOrCreateTagBuilder(ConventionalBlockTags.ORES).forceAddTag(GenerationsBlockTags.GENERATIONSORES);
         getOrCreateTagBuilder(ConventionalBlockTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get());
-        getOrCreateTagBuilder(ConventionalBlockTags.CHESTS).addTag(GenerationsBlockTags.POKEBALL_CHESTS);
+        getOrCreateTagBuilder(ConventionalBlockTags.CHESTS).forceAddTag(GenerationsBlockTags.POKEBALL_CHESTS);
     }
 }
 
@@ -61,7 +61,7 @@ class ItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ConventionalItemTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get().asItem(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get().asItem());
         getOrCreateTagBuilder(ConventionalItemTags.INGOTS).add(GenerationsItems.Z_INGOT.get(), GenerationsItems.ALUMINUM_INGOT.get());
         getOrCreateTagBuilder(ConventionalItemTags.NUGGETS).add(GenerationsItems.ALUMINUM_NUGGET.get());
-        getOrCreateTagBuilder(ConventionalItemTags.CHESTS).addTag(GenerationsItemTags.POKEBALL_CHESTS);
+        getOrCreateTagBuilder(ConventionalItemTags.CHESTS).forceAddTag(GenerationsItemTags.POKEBALL_CHESTS);
     }
 }
 

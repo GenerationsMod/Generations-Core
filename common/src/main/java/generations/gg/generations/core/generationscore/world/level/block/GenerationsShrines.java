@@ -6,16 +6,12 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.world.item.BlockItemWithLang;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.*;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -59,10 +55,6 @@ public class GenerationsShrines {
 		RegistrySupplier<T> block = SHRINES.register(name, blockSupplier);
 		GenerationsItems.ITEMS.register(name, () -> new BlockItemWithLang(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.SHRINES)));
 		return block;
-	}
-
-	private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> blockSupplier) {
-		return SHRINES.register(name, blockSupplier);
 	}
 
 	public static void init() {

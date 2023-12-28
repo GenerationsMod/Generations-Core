@@ -30,9 +30,9 @@ public class GenerationsCreativeTabs {
     public static RegistrySupplier<CreativeModeTab> HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN);
     public static RegistrySupplier<CreativeModeTab> PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX);
     public static RegistrySupplier<CreativeModeTab> LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS);
-    public static RegistrySupplier<CreativeModeTab> BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK);
+    public static RegistrySupplier<CreativeModeTab> BUILDING_BLOCKS = create("building_blocks", GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET::getBaseBlockSupplier);
     public static RegistrySupplier<CreativeModeTab> DECORATIONS = create("decorations", () -> GenerationsDecorationBlocks.SWITCH);
-    public static RegistrySupplier<CreativeModeTab> NATURAL = create("natural", () -> GenerationsOres.ALUMINUM_ORE);
+    public static RegistrySupplier<CreativeModeTab> NATURAL = create("natural", GenerationsOres.ALUMINUM_ORE_SET::getOreSupplier);
     public static RegistrySupplier<CreativeModeTab> UTILITY = create("utility", () -> GenerationsUtilityBlocks.RKS_MACHINE);
     public static RegistrySupplier<CreativeModeTab> FORM_ITEMS = create("form_items", () -> GenerationsItems.METEORITE);
     public static RegistrySupplier<CreativeModeTab> POKEMAIL = create("pokemail", () -> GenerationsItems.POKEMAIL_AIR);

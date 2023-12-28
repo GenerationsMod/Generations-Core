@@ -1,15 +1,8 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
-import generations.gg.generations.core.generationscore.world.item.MailItem;
-import net.minecraft.nbt.StringTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
 

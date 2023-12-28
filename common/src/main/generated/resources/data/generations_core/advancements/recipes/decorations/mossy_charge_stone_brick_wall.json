@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mossy_charge_stone_bricks": {
+    "has_mossy_charge_stone_brick": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_mossy_charge_stone_bricks",
+      "has_mossy_charge_stone_brick",
       "has_the_recipe"
     ]
   ],

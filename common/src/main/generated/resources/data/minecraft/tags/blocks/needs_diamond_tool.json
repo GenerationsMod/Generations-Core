@@ -1,8 +1,10 @@
 {
   "values": [
     "generations_core:enchanted_obsidian",
-    "generations_core:enchanted_obsidian_stairs",
     "generations_core:enchanted_obsidian_slab",
-    "generations_core:enchanted_obsidian_wall"
+    "generations_core:enchanted_obsidian_stairs",
+    "generations_core:enchanted_obsidian_wall",
+    "generations_core:enchanted_obsidian_button",
+    "generations_core:enchanted_obsidian_pressure_plate"
   ]
 }

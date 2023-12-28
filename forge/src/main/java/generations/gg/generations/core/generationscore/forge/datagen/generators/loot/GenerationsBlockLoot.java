@@ -3,10 +3,12 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -45,35 +47,29 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         GenerationsPokeDolls.POKEDOLLS.forEach(block -> dropSelf(block.get()));
         BlockDatagen.dropSelfList.stream().map(block -> (Block) block).forEach(this::dropSelf);
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
-        GenerationsBlocks.POKEBRICKS.forEach(block -> dropSelfUpdated(block.get()));
-        GenerationsBlocks.MARBLE.forEach(block -> dropSelfUpdated(block.get()));
+        GenerationsFullBlockSet.getFullBlockSets().forEach(generationsFullBlockSet -> generationsFullBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
+        GenerationsBlockSet.getBlockSets().forEach(generationsBlockSet -> generationsBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
+
+        add(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(), createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()));
 
         dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE.get());
 
         dropSelf(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get());
 
         //Ores
-        addOre(GenerationsOres.TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_TUMBLESTONE_ORE.get(), GenerationsItems.TUMBLESTONE.get());
-        addOre(GenerationsOres.BLACK_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_BLACK_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_BLACK_TUMBLESTONE_ORE.get(), GenerationsItems.BLACK_TUMBLESTONE.get());
-        addOre(GenerationsOres.SKY_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_SKY_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_SKY_TUMBLESTONE_ORE.get(), GenerationsItems.SKY_TUMBLESTONE.get());
-        addOre(GenerationsOres.RARE_TUMBLESTONE_ORE.get(), GenerationsOres.DEEPSLATE_RARE_TUMBLESTONE_ORE.get(), GenerationsOres.CHARGE_STONE_RARE_TUMBLESTONE_ORE.get(), GenerationsItems.RARE_TUMBLESTONE.get());
-        addOre(GenerationsOres.ALUMINUM_ORE.get(), GenerationsOres.DEEPSLATE_ALUMINUM_ORE.get(), GenerationsOres.CHARGE_STONE_ALUMINUM_ORE.get(), GenerationsItems.RAW_ALUMINUM.get());
-        addOre(GenerationsOres.CRYSTAL_ORE.get(), GenerationsOres.DEEPSLATE_CRYSTAL_ORE.get(), GenerationsOres.CHARGE_STONE_CRYSTAL_ORE.get(), GenerationsItems.CRYSTAL.get());
-        addOre(GenerationsOres.RUBY_ORE.get(), GenerationsOres.DEEPSLATE_RUBY_ORE.get(), GenerationsOres.CHARGE_STONE_RUBY_ORE.get(), GenerationsItems.RUBY.get());
-        addOre(GenerationsOres.SAPPHIRE_ORE.get(), GenerationsOres.DEEPSLATE_SAPPHIRE_ORE.get(), GenerationsOres.CHARGE_STONE_SAPPHIRE_ORE.get(), GenerationsItems.SAPPHIRE.get());
-        addOre(GenerationsOres.SILICON_ORE.get(), GenerationsOres.DEEPSLATE_SILICON_ORE.get(), GenerationsOres.CHARGE_STONE_SILICON_ORE.get(), GenerationsItems.SILICON.get());
-        dropSelf(GenerationsOres.Z_CRYSTAL_ORE.get());
-        dropSelf(GenerationsOres.DEEPSLATE_Z_CRYSTAL_ORE.get());
-        dropSelf(GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
+        addOreSet(GenerationsOres.TUMBLESTONE_ORE_SET);
+        addOreSet(GenerationsOres.BLACK_TUMBLESTONE_ORE_SET);
+        addOreSet(GenerationsOres.SKY_TUMBLESTONE_ORE_SET);
+        addOreSet(GenerationsOres.RARE_TUMBLESTONE_ORE_SET);
+        addOreSet(GenerationsOres.ALUMINUM_ORE_SET);
+        addOreSet(GenerationsOres.CRYSTAL_ORE_SET);
+        addOreSet(GenerationsOres.RUBY_ORE_SET);
+        addOreSet(GenerationsOres.SAPPHIRE_ORE_SET);
+        addOreSet(GenerationsOres.SILICON_ORE_SET);
 
-        addOre(GenerationsOres.CHARGE_STONE_COAL_ORE.get(), Items.COAL);
-        add(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get(), createRedstoneOreDrops(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get()));
-        addOre(GenerationsOres.CHARGE_STONE_IRON_ORE.get(), Items.RAW_IRON);
-        addOre(GenerationsOres.CHARGE_STONE_GOLD_ORE.get(), Items.RAW_GOLD);
-        addOre(GenerationsOres.CHARGE_STONE_COPPER_ORE.get(), Items.RAW_COPPER);
-        addOre(GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get(), Items.DIAMOND);
-        addOre(GenerationsOres.CHARGE_STONE_EMERALD_ORE.get(), Items.EMERALD);
-        add(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get(), createLapisOreDrops(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get()));
+        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getOre());
+        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getDeepslateOre());
+        //dropSelf(GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
 
         dropSelf(GenerationsBlocks.RAW_ALUMINUM_BLOCK.get());
         dropSelf(GenerationsBlocks.ALUMINUM_BLOCK.get());
@@ -102,8 +98,8 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         add(GenerationsBlocks.MASTERBALL_CHEST.get(), createNameableBlockEntityTable(GenerationsBlocks.MASTERBALL_CHEST.get()));
 
 
-        addOreWithRandomAmountDrops(GenerationsOres.MEGASTONE_ORE.get(), GenerationsOres.DEEPSLATE_MEGASTONE_ORE.get(), GenerationsOres.CHARGE_STONE_MEGASTONE_ORE.get(), GenerationsItems.MEGASTONE_SHARD.get());
-        addOreWithRandomAmountDrops(GenerationsOres.METEORITE_ORE.get(), GenerationsOres.DEEPSLATE_METEORITE_ORE.get(), GenerationsOres.CHARGE_STONE_METEORITE_ORE.get(), GenerationsItems.METEORITE_SHARD.get());
+        addOreSetWithRandomAmountDrops(GenerationsOres.MEGASTONE_ORE_SET, GenerationsItems.MEGASTONE_SHARD.get());
+        addOreSetWithRandomAmountDrops(GenerationsOres.METEORITE_ORE_SET, GenerationsItems.METEORITE_SHARD.get());
 
         //Pumpkins
         dropSelf(GenerationsBlocks.CURSED_PUMPKIN.get());
@@ -119,11 +115,10 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         add(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()));
 
 
-        dropSelf(GenerationsOres.FOSSIL_ORE.get());
+        dropSelf(GenerationsOres.FOSSIL_ORE_SET.getOre());
 
-        dropSelf(GenerationsOres.DEEPSLATE_FOSSIL_ORE.get());
+        dropSelf(GenerationsOres.FOSSIL_ORE_SET.getDeepslateOre());
 
-        dropSelf(GenerationsOres.CHARGE_STONE_FOSSIL_ORE.get());
 
         dropSelf(GenerationsBlocks.POKEMART_SIGN.get());
         dropSelf(GenerationsBlocks.POKECENTER_SIGN.get());
@@ -168,13 +163,13 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
     }
 
 
-    private void addOreWithRandomAmountDrops(Block ore, Block deepslateOre, Block chargestoneOre, Item drop) {
+    private void addOreSetWithRandomAmountDrops(GenerationsOreSet oreSet, Item drop) {
         add(
-                ore,
+                oreSet.getOre(),
                 createSilkTouchDispatchTable(
-                        ore,
+                        oreSet.getOre(),
                         applyExplosionDecay(
-                                ore,
+                                oreSet.getOre(),
                                 LootItem.lootTableItem(drop)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between((float) 1, (float) 3)))
                                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -182,23 +177,11 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
                 )
         );
         add(
-                deepslateOre,
+                oreSet.getDeepslateOre(),
                 createSilkTouchDispatchTable(
-                        deepslateOre,
+                        oreSet.getDeepslateOre(),
                         applyExplosionDecay(
-                                deepslateOre,
-                                LootItem.lootTableItem(drop)
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between((float) 1, (float) 3)))
-                                        .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
-                        )
-                )
-        );
-        add(
-                chargestoneOre,
-                createSilkTouchDispatchTable(
-                        chargestoneOre,
-                        applyExplosionDecay(
-                                chargestoneOre,
+                                oreSet.getDeepslateOre(),
                                 LootItem.lootTableItem(drop)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between((float) 1, (float) 3)))
                                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -207,13 +190,13 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         );
     }
 
-    private void addOre(Block ore, Block Deepslateore, Block chargeStoneOre, Item drop) {
-        add(ore, createOreDrop(ore, drop));
-        add(Deepslateore, createOreDrop(Deepslateore, drop));
-        add(chargeStoneOre, createOreDrop(chargeStoneOre, drop));
+    private void addOreSet(GenerationsOreSet oreSet) {
+        if (oreSet.getDrop() == null) return;
+        add(oreSet.getOre(), createOreDrop(oreSet.getOre(), oreSet.getDrop()));
+        add(oreSet.getDeepslateOre(), createOreDrop(oreSet.getDeepslateOre(), oreSet.getDrop()));
     }
 
-    private void addOre(Block ore, Item drop) {
+    private void addOreSet(Block ore, Item drop) {
         add(ore, createOreDrop(ore, drop));
     }
 
@@ -235,10 +218,8 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
     }
 
     private void dropSelfStoneCobble(@NotNull Block block) {
-        if (block == GenerationsBlocks.CHARGE_STONE.get())
-            add(block, createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE.get()));
-        else if (block == GenerationsBlocks.VOLCANIC_STONE.get())
-            add(block, createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()));
+        if (block == GenerationsBlocks.VOLCANIC_STONE.get())
+            add(block, createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()));
         else dropSelfUpdated(block);
     }
     @Override

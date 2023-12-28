@@ -2,9 +2,7 @@ package generations.gg.generations.core.generationscore.world.item;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.types.ElementalType;
-import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
-import com.google.common.collect.Streams;
 import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;

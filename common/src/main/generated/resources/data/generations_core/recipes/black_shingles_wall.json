@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "black_shingles_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:black_shingles"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "generations_core:black_shingles_wall"
+  },
+  "show_notification": true
+}

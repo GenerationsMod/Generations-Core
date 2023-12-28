@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.item;
 
-import com.cobblemon.mod.common.api.moves.Moves;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 

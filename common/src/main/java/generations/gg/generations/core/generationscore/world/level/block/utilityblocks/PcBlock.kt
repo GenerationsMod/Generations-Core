@@ -6,16 +6,12 @@ import com.cobblemon.mod.common.api.storage.pc.PCStore
 import com.cobblemon.mod.common.api.storage.pc.link.PCLink
 import com.cobblemon.mod.common.api.storage.pc.link.PCLinkManager
 import com.cobblemon.mod.common.api.text.red
-import com.cobblemon.mod.common.block.entity.PCBlockEntity
 import com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket
 import com.cobblemon.mod.common.util.isInBattle
 import com.cobblemon.mod.common.util.lang
 import com.cobblemon.mod.common.util.playSoundServer
 import com.cobblemon.mod.common.util.toVec3d
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.world.level.block.entities.PcBlockEntity
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
@@ -25,7 +21,6 @@ import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.InteractionResult.SUCCESS
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
@@ -93,7 +88,7 @@ open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, hei
     }
 
     companion object {
-        val ON = BooleanProperty.create("on")
+        val ON: BooleanProperty = BooleanProperty.create("on")
 
 //        @JvmStatic
 //        fun getBlock(color: DyeColor): DyedBlockItem<PcBlock> = when (color) {
@@ -119,7 +114,7 @@ open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, hei
             return try {
                 if (state.getValue(ON) && state.getValue((state.block as PcBlock).heightProperty) == 1) 10 else 0
             } catch (e: IllegalArgumentException) {
-                0;
+                0
             }
         }
     }
@@ -131,7 +126,7 @@ open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, hei
         val maxDistance: Double = 10.0
     ) : PCLink(pc, playerID) {
         val world = pcBlockEntity.level
-        val pos = pcBlockEntity.blockPos
+        val pos: BlockPos = pcBlockEntity.blockPos
 
         override fun isPermitted(player: ServerPlayer): Boolean {
             val isWithinRange = player.level() == world && player.position().closerThan(pos.toVec3d(), maxDistance)

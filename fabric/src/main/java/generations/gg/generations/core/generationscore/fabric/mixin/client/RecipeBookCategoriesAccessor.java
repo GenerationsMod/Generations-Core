@@ -11,13 +11,13 @@ import java.util.Map;
 @Mixin(RecipeBookCategories.class)
 public interface RecipeBookCategoriesAccessor {
 	@Accessor("AGGREGATE_CATEGORIES")
-	public static Map<RecipeBookCategories, List<RecipeBookCategories>> aggregateCategories() {
+    static Map<RecipeBookCategories, List<RecipeBookCategories>> aggregateCategories() {
 		throw new AssertionError("Untransformed @Accessor");
 	}
 
 	@Accessor("AGGREGATE_CATEGORIES")
 	@Mutable
-	public static void setAggregateCategories(Map<RecipeBookCategories, List<RecipeBookCategories>> aggregateCategories) {
+    static void setAggregateCategories(Map<RecipeBookCategories, List<RecipeBookCategories>> aggregateCategories) {
 		throw new AssertionError("Untransformed @Accessor");
 	}
 }

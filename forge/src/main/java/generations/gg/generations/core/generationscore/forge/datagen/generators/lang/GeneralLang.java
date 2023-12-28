@@ -32,8 +32,6 @@ public class GeneralLang extends LanguageProvider {
     protected void addTranslations() {
         addBlockEntries(GenerationsBlocks.BLOCKS, this::getNameGens);
         addBlockEntries(GenerationsBlocks.ULTRA_BLOCKS, this::getNameGens);
-        addBlockEntries(GenerationsBlocks.POKEBRICKS, this::getPokeBrickName);
-        addBlockEntries(GenerationsBlocks.MARBLE, this::getNameGens);
         addBlockEntries(GenerationsBlocks.STONE, this::getNameGens);
         addBlockEntries(GenerationsDecorationBlocks.DECORATIONS, this::getNameGens);
         addBlockEntries(GenerationsWood.WOOD_BLOCKS, this::getNameGens);
@@ -290,7 +288,7 @@ public class GeneralLang extends LanguageProvider {
     }
 
 
-    protected String getNameGens(RegistrySupplier<? extends ItemLike> item, String name){
+    protected String getNameGens(RegistrySupplier<? extends ItemLike> item, String name) {
         name = name.substring(name.indexOf(":") + 1);  //Removes Mod Tag from front of name
         name = name.replace('_', ' ');
         name = name.substring(0, 1).toUpperCase() + name.substring(1);
@@ -299,6 +297,8 @@ public class GeneralLang extends LanguageProvider {
                 name = name.substring(0, i + 1) + name.substring(i + 1, i + 2).toUpperCase() + name.substring(i + 2);
 
         name = name.replaceAll("Tm", "TM");
+        if (name.contains("poke_brick"))
+            return name.replace("Poke Brick", "PokeBrick");
 
         return name;
     }

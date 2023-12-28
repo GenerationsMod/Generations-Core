@@ -1,14 +1,10 @@
 package generations.gg.generations.core.generationscore;
 
-import generations.gg.generations.core.generationscore.api.player.CurryDex;
 import net.minecraft.nbt.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 public class SchemConverter {
     public static void main(String[] args) throws IOException {

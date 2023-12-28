@@ -6,9 +6,7 @@ import generations.gg.generations.core.generationscore.forge.datagen.cobblemon.P
 import net.minecraft.data.PackOutput;
 import org.apache.commons.lang3.function.TriFunction;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiConsumer;
 
 public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
     public GenerationsPokemonModelsProvider(PackOutput arg) {

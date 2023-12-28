@@ -3,8 +3,6 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import org.joml.Matrix4f;
 
-import java.util.function.Supplier;
-
 public class PixelmonInstance extends AnimatedObjectInstance implements BlockLightValueProvider {
     public Matrix4f[] matrixTransforms;
     private int light;

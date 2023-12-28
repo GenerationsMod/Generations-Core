@@ -6,10 +6,6 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.entities.VendingMachineBlock;
-import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.ClockBlock;
-import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.HealerBlock;
-import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.PcBlock;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -69,11 +65,11 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
         //FURNACES
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
-                .define('X', GenerationsBlocks.CHARGE_COBBLESTONE.get())
+                .define('X', GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())
                 .pattern("XXX")
                 .pattern("X X")
                 .pattern("XXX")
-                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_COBBLESTONE.get()), has(GenerationsBlocks.CHARGE_COBBLESTONE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()), has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get())
                 .define('#', GenerationsBlocks.SMOOTH_CHARGE_STONE.get())
@@ -93,11 +89,11 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
-                .define('X', GenerationsBlocks.VOLCANIC_COBBLESTONE.get())
+                .define('X', GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock())
                 .pattern("XXX")
                 .pattern("X X")
                 .pattern("XXX")
-                .unlockedBy(getHasName(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()), has(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()), has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get())
                 .define('#', GenerationsBlocks.SMOOTH_VOLCANIC_STONE.get())
@@ -117,12 +113,12 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
-                .define('X', GenerationsBlocks.GRAY_MARBLE_STAIRS.get())
-                .define('Y', GenerationsBlocks.GRAY_MARBLE.get())
+                .define('X', GenerationsBlocks.GRAY_MARBLE_SET.getStairs())
+                .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
                 .define('#', Items.BOWL)
                 .pattern(" # ")
                 .pattern("XYX")
-                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE.get()), has(GenerationsBlocks.GRAY_MARBLE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()))
                 .save(consumer);
 
         buildPokeBallDisplayRecipes(consumer, GenerationsItems.POKE_BALL.get(), GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get());
@@ -249,14 +245,14 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
-                .define('X', GenerationsBlocks.GRAY_MARBLE_STAIRS.get())
-                .define('Y', GenerationsBlocks.GRAY_MARBLE.get())
+                .define('X', GenerationsBlocks.GRAY_MARBLE_SET.getStairs())
+                .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
                 .define('#', Items.BOWL)
                 .define('Z', pokeball)
                 .pattern(" Z ")
                 .pattern(" # ")
                 .pattern("XYX")
-                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE.get()), has(GenerationsBlocks.GRAY_MARBLE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()))
                 .save(consumer, "pokeball_display_with_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(pokeball)).getPath());
     }
 }

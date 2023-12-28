@@ -1,31 +1,23 @@
 package generations.gg.generations.core.generationscore.client.screen.statue;
 
 
-import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.api.gui.GuiUtilsKt;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.client.gui.PokemonGuiUtilsKt;
 import com.cobblemon.mod.common.client.gui.summary.widgets.ModelWidget;
-import com.cobblemon.mod.common.util.math.QuaternionUtilsKt;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.client.screen.widget.AngleSelectionWidget;
 import generations.gg.generations.core.generationscore.client.screen.widget.ImageCheckbox;
-import generations.gg.generations.core.generationscore.client.screen.widget.PixelmonSelectionButton;
-import generations.gg.generations.core.generationscore.client.screen.widget.PixelmonSelectionWidget;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.statue.C2SUpdateStatueInfoPacket;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import org.joml.Math;
 import org.joml.Quaternionf;
-import org.joml.Vector3f;
 
 public class StatueEditorScreen extends Screen {
     private static final ResourceLocation TEXTURE = GenerationsCore.id("textures/gui/npc/customization.png");

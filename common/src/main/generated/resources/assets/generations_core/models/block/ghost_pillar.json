@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "generations_core:block/ghost_pillar_top",
+    "side": "generations_core:block/ghost_pillar",
+    "top": "generations_core:block/ghost_pillar_top"
+  }
+}

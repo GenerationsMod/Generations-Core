@@ -5,7 +5,6 @@ import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;

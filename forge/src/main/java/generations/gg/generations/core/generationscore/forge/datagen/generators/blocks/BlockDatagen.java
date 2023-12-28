@@ -5,8 +5,9 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.*;
-import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.models.model.ModelLocationUtils;
@@ -34,15 +35,21 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
     public void registerStatesAndModels() {
         registerOreBlocks();
         GenerationsBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateModel).forEach(this::registerBlockFamily);
+        GenerationsBlockSet.getBlockSets().forEach(
+                blockSet -> {
+                    BlockFamily family = blockSet.getBlockFamily();
+                    if (family.shouldGenerateModel()) registerBlockFamily(family);
+                }
+        );
+        GenerationsFullBlockSet.getFullBlockSets().forEach(
+                blockSet -> {
+                    BlockFamily family = blockSet.getBlockFamily();
+                    if (family.shouldGenerateModel()) registerBlockFamily(family);
+                }
+        );
         registerWoodPallet(GenerationsWood.ULTRA_DARK_LOG, GenerationsWood.STRIPPED_ULTRA_DARK_LOG, GenerationsWood.ULTRA_DARK_PLANKS, GenerationsWood.ULTRA_DARK_SLAB, GenerationsWood.ULTRA_DARK_STAIRS, GenerationsWood.ULTRA_DARK_BUTTON, GenerationsWood.ULTRA_DARK_PRESSURE_PLATE, GenerationsWood.ULTRA_DARK_DOOR, GenerationsWood.ULTRA_DARK_TRAPDOOR, GenerationsWood.ULTRA_DARK_WOOD, GenerationsWood.STRIPPED_ULTRA_DARK_WOOD, GenerationsWood.ULTRA_DARK_FENCE, GenerationsWood.ULTRA_DARK_FENCE_GATE, GenerationsWood.ULTRA_DARK_SIGN, GenerationsWood.ULTRA_DARK_WALL_SIGN, GenerationsWood.ULTRA_DARK_CRAFTING_TABLE, GenerationsWood.ULTRA_DARK_HANGING_SIGN, GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN, GenerationsWood.ULTRA_DARK_BOOKSHELF);
         registerWoodPallet(GenerationsWood.ULTRA_JUNGLE_LOG, GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG, GenerationsWood.ULTRA_JUNGLE_PLANKS, GenerationsWood.ULTRA_JUNGLE_SLAB, GenerationsWood.ULTRA_JUNGLE_STAIRS, GenerationsWood.ULTRA_JUNGLE_BUTTON, GenerationsWood.ULTRA_JUNGLE_PRESSURE_PLATE, GenerationsWood.ULTRA_JUNGLE_DOOR, GenerationsWood.ULTRA_JUNGLE_TRAPDOOR, GenerationsWood.ULTRA_JUNGLE_WOOD, GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD, GenerationsWood.ULTRA_JUNGLE_FENCE, GenerationsWood.ULTRA_JUNGLE_FENCE_GATE, GenerationsWood.ULTRA_JUNGLE_SIGN, GenerationsWood.ULTRA_JUNGLE_WALL_SIGN, GenerationsWood.ULTRA_JUNGLE_CRAFTING_TABLE, GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN, GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN, GenerationsWood.ULTRA_JUNGLE_BOOKSHELF);
         registerWoodPallet(GenerationsWood.GHOST_LOG, GenerationsWood.STRIPPED_GHOST_LOG, GenerationsWood.GHOST_PLANKS, GenerationsWood.GHOST_SLAB, GenerationsWood.GHOST_STAIRS, GenerationsWood.GHOST_BUTTON, GenerationsWood.GHOST_PRESSURE_PLATE, GenerationsWood.GHOST_DOOR, GenerationsWood.GHOST_TRAPDOOR, GenerationsWood.GHOST_WOOD, GenerationsWood.STRIPPED_GHOST_WOOD, GenerationsWood.GHOST_FENCE, GenerationsWood.GHOST_FENCE_GATE, GenerationsWood.GHOST_SIGN, GenerationsWood.GHOST_WALL_SIGN, GenerationsWood.GHOST_CRAFTING_TABLE, GenerationsWood.GHOST_HANGING_SIGN, GenerationsWood.GHOST_WALL_HANGING_SIGN, GenerationsWood.GHOST_BOOKSHELF);
-
-        //Cobble Ruins
-        registerPallet(GenerationsBlocks.COBBLE_RUINS_1, GenerationsBlocks.COBBLE_RUINS_1_SLAB, GenerationsBlocks.COBBLE_RUINS_1_STAIRS, GenerationsBlocks.COBBLE_RUINS_1_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.COBBLE_RUINS_2, GenerationsBlocks.COBBLE_RUINS_2_SLAB, GenerationsBlocks.COBBLE_RUINS_2_STAIRS, GenerationsBlocks.COBBLE_RUINS_2_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.COBBLE_RUINS_3, GenerationsBlocks.COBBLE_RUINS_3_SLAB, GenerationsBlocks.COBBLE_RUINS_3_STAIRS, GenerationsBlocks.COBBLE_RUINS_3_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.COBBLE_RUINS_4, GenerationsBlocks.COBBLE_RUINS_4_SLAB, GenerationsBlocks.COBBLE_RUINS_4_STAIRS, GenerationsBlocks.COBBLE_RUINS_4_WALL, null, null, true);
 
         //House Floors
         registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_1);
@@ -55,12 +62,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_8);
 
         //ChargeStone
-        registerPallet(GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE_SLAB, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE_STAIRS, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.GLOWING_CHARGE_COBBLESTONE, GenerationsBlocks.GLOWING_CHARGE_COBBLESTONE_SLAB, GenerationsBlocks.GLOWING_CHARGE_COBBLESTONE_STAIRS, GenerationsBlocks.GLOWING_CHARGE_COBBLESTONE_WALL, null, null, true);
         registerBlockItem(GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK);
 
         //Volcanic
-        registerPallet(GenerationsBlocks.VOLCANIC_ROCK, GenerationsBlocks.VOLCANIC_ROCK_SLAB, GenerationsBlocks.VOLCANIC_ROCK_STAIRS, GenerationsBlocks.VOLCANIC_ROCK_WALL, null, null, true);
         registerBlockItem(GenerationsBlocks.VOLCANIC_FIRESTONE);
 
         //Golden Temple
@@ -71,15 +75,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_SLAB, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_STAIRS, GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_WALL, null, null, true);
 
         //Subway
-        registerPallet(GenerationsBlocks.SUBWAY_FLOOR_PLAIN, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_SLAB, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_PLAIN_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.SUBWAY_FLOOR_CROSS, GenerationsBlocks.SUBWAY_FLOOR_CROSS_SLAB, GenerationsBlocks.SUBWAY_FLOOR_CROSS_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_CROSS_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.SUBWAY_FLOOR_FULL_CROSS, GenerationsBlocks.SUBWAY_FLOOR_FULL_CROSS_SLAB, GenerationsBlocks.SUBWAY_FLOOR_FULL_CROSS_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_FULL_CROSS_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.SUBWAY_FLOOR_PATH, GenerationsBlocks.SUBWAY_FLOOR_PATH_SLAB, GenerationsBlocks.SUBWAY_FLOOR_PATH_STAIRS, GenerationsBlocks.SUBWAY_FLOOR_PATH_WALL, null, null, true);
         registerPallet(GenerationsBlocks.SUBWAY_WALL, GenerationsBlocks.SUBWAY_WALL_SLAB, GenerationsBlocks.SUBWAY_WALL_STAIRS, null, null, null, true);
         registerPallet(GenerationsBlocks.SUBWAY_WALL_2, GenerationsBlocks.SUBWAY_WALL_2_SLAB, GenerationsBlocks.SUBWAY_WALL_2_STAIRS, null, null, null, true);
-
-        //Enchanted Obsidian
-        registerPallet(GenerationsBlocks.ENCHANTED_OBSIDIAN, GenerationsBlocks.ENCHANTED_OBSIDIAN_SLAB, GenerationsBlocks.ENCHANTED_OBSIDIAN_STAIRS, GenerationsBlocks.ENCHANTED_OBSIDIAN_WALL, GenerationsBlocks.ENCHANTED_OBSIDIAN_BUTTON, GenerationsBlocks.ENCHANTED_OBSIDIAN_PRESSURE_PLATE, true);
 
         registerBlockItem(GenerationsBlocks.POKEMART_SIGN);
         registerBlockItem(GenerationsBlocks.POKECENTER_SIGN);
@@ -149,16 +146,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerBlockItem(GenerationsBlocks.GOLDEN_TEMPLE_SAND);
 
-
-        //floor
-        registerPallet(GenerationsBlocks.FLOOR_1, GenerationsBlocks.FLOOR_1_SLAB, GenerationsBlocks.FLOOR_1_STAIRS, GenerationsBlocks.FLOOR_1_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.FLOOR_2, GenerationsBlocks.FLOOR_2_SLAB, GenerationsBlocks.FLOOR_2_STAIRS, GenerationsBlocks.FLOOR_2_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.FLOOR_3, GenerationsBlocks.FLOOR_3_SLAB, GenerationsBlocks.FLOOR_3_STAIRS, GenerationsBlocks.FLOOR_3_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.FLOOR_4, GenerationsBlocks.FLOOR_4_SLAB, GenerationsBlocks.FLOOR_4_STAIRS, GenerationsBlocks.FLOOR_4_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.MIRRORED_FLOOR_1, GenerationsBlocks.MIRRORED_FLOOR_1_SLAB, GenerationsBlocks.MIRRORED_FLOOR_1_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_1_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.MIRRORED_FLOOR_2, GenerationsBlocks.MIRRORED_FLOOR_2_SLAB, GenerationsBlocks.MIRRORED_FLOOR_2_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_2_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.MIRRORED_FLOOR_3, GenerationsBlocks.MIRRORED_FLOOR_3_SLAB, GenerationsBlocks.MIRRORED_FLOOR_3_STAIRS, GenerationsBlocks.MIRRORED_FLOOR_3_WALL, null, null, true);
-
         registerBlockItem(GenerationsBlocks.RAW_ALUMINUM_BLOCK);
         registerBlockItem(GenerationsBlocks.ALUMINUM_BLOCK);
         registerPallet(GenerationsBlocks.RUBY_BLOCK, GenerationsBlocks.RUBY_SLAB, GenerationsBlocks.RUBY_STAIRS, GenerationsBlocks.RUBY_WALL, null, null, true);
@@ -204,8 +191,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerDoor(GenerationsBlocks.POKECENTER_DOOR.get());
 
-        registerPallet(GenerationsBlocks.POKECENTER_ROOF, GenerationsBlocks.POKECENTER_ROOF_SLAB, GenerationsBlocks.POKECENTER_ROOF_STAIRS, GenerationsBlocks.POKECENTER_ROOF_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.POKECENTER_ROOF_2, GenerationsBlocks.POKECENTER_ROOF_2_SLAB, GenerationsBlocks.POKECENTER_ROOF_2_STAIRS, GenerationsBlocks.POKECENTER_ROOF_2_WALL, null, null, true);
 
         pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, GenerationsItems.POKE_BALL);
         pokeBallChests(GenerationsBlocks.GREATBALL_CHEST, GenerationsItems.GREAT_BALL);
@@ -224,6 +209,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.RICH_SOIL_2);
         registerBlockItem(GenerationsBlocks.RICH_SOIL_3);
         registerBlockItem(GenerationsBlocks.RICH_SOIL_4);
+
+        registerLog(GenerationsBlocks.GHOST_PILLAR);
 
         GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 

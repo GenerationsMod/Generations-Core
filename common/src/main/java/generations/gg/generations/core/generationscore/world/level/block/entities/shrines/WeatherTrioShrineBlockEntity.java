@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
-import generations.gg.generations.core.generationscore.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.WeatherTrioShrineBlock;

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ghost_bricks": {
+    "has_ghost_brick": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_ghost_bricks",
+      "has_ghost_brick",
       "has_the_recipe"
     ]
   ],

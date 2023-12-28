@@ -1,7 +1,6 @@
 {
   "values": [
     "generations_core:sky_tumblestone_ore",
-    "generations_core:deepslate_sky_tumblestone_ore",
-    "generations_core:charge_stone_sky_tumblestone_ore"
+    "generations_core:deepslate_sky_tumblestone_ore"
   ]
 }

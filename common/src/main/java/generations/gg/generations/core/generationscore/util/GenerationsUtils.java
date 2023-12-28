@@ -80,7 +80,7 @@ public class GenerationsUtils {
         compound.putInt("Count", stack.getCount());
         if(stack.getTag() != null) compound.put("tag", stack.getTag());
         return compound;
-    };
+    }
 
     public static JsonElement jsonToNbt(Tag tag) {
         return NbtOps.INSTANCE.convertTo(JsonOps.INSTANCE, tag);

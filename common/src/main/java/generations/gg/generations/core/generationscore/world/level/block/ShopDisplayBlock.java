@@ -4,7 +4,6 @@ import generations.gg.generations.core.generationscore.client.model.ModelContext
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 

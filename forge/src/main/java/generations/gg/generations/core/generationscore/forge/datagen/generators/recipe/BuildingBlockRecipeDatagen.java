@@ -4,6 +4,9 @@ import generations.gg.generations.core.generationscore.forge.datagen.data.famili
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -38,7 +41,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         generateForEnabledBlockFamilies(consumer);
 
         //Colored Shingles
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.WHITE_DYE)
@@ -49,7 +52,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIGHT_GRAY_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIGHT_GRAY_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.LIGHT_GRAY_DYE)
@@ -60,7 +63,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.GRAY_DYE)
@@ -71,7 +74,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLACK_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLACK_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.BLACK_DYE)
@@ -82,7 +85,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROWN_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROWN_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.BROWN_DYE)
@@ -93,7 +96,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RED_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RED_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.RED_DYE)
@@ -104,7 +107,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ORANGE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ORANGE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.ORANGE_DYE)
@@ -115,7 +118,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.YELLOW_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.YELLOW_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.YELLOW_DYE)
@@ -126,7 +129,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIME_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIME_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.LIME_DYE)
@@ -137,7 +140,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GREEN_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GREEN_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.GREEN_DYE)
@@ -148,7 +151,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CYAN_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CYAN_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.CYAN_DYE)
@@ -159,7 +162,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIGHT_BLUE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LIGHT_BLUE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.LIGHT_BLUE_DYE)
@@ -170,7 +173,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLUE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLUE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.BLUE_DYE)
@@ -181,7 +184,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PURPLE_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PURPLE_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.PURPLE_DYE)
@@ -192,7 +195,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MAGENTA_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MAGENTA_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.MAGENTA_DYE)
@@ -203,7 +206,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.INK_SAC), has(Items.INK_SAC))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PINK_SHINGLES.get(), 5)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PINK_SHINGLES_SET.getBaseBlock(), 5)
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Items.INK_SAC)
                 .define('Z', Items.PINK_DYE)
@@ -233,7 +236,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //temple block
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TEMPLE_BLOCK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.STONE_BRICKS)
                 .define('Q', Blocks.SANDSTONE)
                 .pattern("EQ")
@@ -242,52 +245,52 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //temple brick
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TEMPLE_BRICK.get(), 4)
-                .define('E', GenerationsBlocks.TEMPLE_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TEMPLE_BRICK_SET.getBaseBlock(), 4)
+                .define('E', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
                 .pattern("EE")
                 .pattern("EE")
-                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK.get()), has(GenerationsBlocks.TEMPLE_BLOCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()))
                 .save(consumer);
 
         //castle block
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BLOCK.get(), 4)
-                .define('E', GenerationsBlocks.TEMPLE_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock(), 4)
+                .define('E', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
                 .define('Q', Blocks.BRICKS)
                 .pattern("EQ")
                 .pattern("QE")
-                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK.get()), has(GenerationsBlocks.TEMPLE_BLOCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Cracked Castle Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRACKED_CASTLE_BLOCK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRACKED_CASTLE_BLOCK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.BRICKS)
-                .define('Q', GenerationsBlocks.CASTLE_BLOCK.get())
+                .define('Q', GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock())
                 .pattern("EQ")
                 .pattern("QE")
-                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_BLOCK.get()), has(GenerationsBlocks.CASTLE_BLOCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock()))
                 .save(consumer);
 
 
         //Castle Brick
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BRICK.get(), 4)
-                .define('E', GenerationsBlocks.TEMPLE_BRICK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BRICK_SET.getBaseBlock(), 4)
+                .define('E', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
                 .define('Q', Blocks.BRICKS)
                 .pattern("EQ")
                 .pattern("QE")
-                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BRICK.get()), has(GenerationsBlocks.TEMPLE_BRICK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BRICK_SET.getBaseBlock()), has(GenerationsBlocks.TEMPLE_BRICK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Castle Brick 2
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BRICK_2.get(), 4)
-                .define('E', GenerationsBlocks.CASTLE_BRICK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BRICK_2_SET.getBaseBlock(), 4)
+                .define('E', GenerationsBlocks.CASTLE_BRICK_SET.getBaseBlock())
                 .define('Q', Blocks.BRICKS)
                 .pattern("EQ")
                 .pattern("QE")
-                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_BRICK.get()), has(GenerationsBlocks.CASTLE_BRICK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_BRICK_SET.getBaseBlock()), has(GenerationsBlocks.CASTLE_BRICK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Gray Castle Brick
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CASTLE_BRICK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CASTLE_BRICK_SET.getBaseBlock(), 4)
                 .define('Q', Blocks.STONE_BRICKS)
                 .define('E', Blocks.STONE)
                 .pattern("EQ")
@@ -296,7 +299,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //Gray Castle Brick 2
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CASTLE_BRICK_2.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CASTLE_BRICK_2_SET.getBaseBlock(), 4)
                 .define('Q', Blocks.STONE_BRICKS)
                 .define('E', Blocks.QUARTZ_BLOCK)
                 .pattern("EQ")
@@ -306,7 +309,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //White Castle Brick
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_CASTLE_BRICK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_CASTLE_BRICK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.QUARTZ_BLOCK)
                 .define('Q', Blocks.BRICKS)
                 .pattern("EQ")
@@ -316,16 +319,16 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //White Castle Brick 2
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_CASTLE_BRICK_2.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WHITE_CASTLE_BRICK_2_SET.getBaseBlock(), 4)
                 .define('E', Blocks.QUARTZ_BLOCK)
-                .define('Q', GenerationsBlocks.WHITE_CASTLE_BRICK.get())
+                .define('Q', GenerationsBlocks.WHITE_CASTLE_BRICK_SET.getBaseBlock())
                 .pattern("EQ")
                 .pattern("EQ")
-                .unlockedBy(getHasName(GenerationsBlocks.WHITE_CASTLE_BRICK.get()), has(GenerationsBlocks.WHITE_CASTLE_BRICK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_CASTLE_BRICK_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_CASTLE_BRICK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Castle Wall
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_WALL.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock(), 4)
                 .define('E', Blocks.STONE_BRICKS)
                 .define('Q', ItemTags.DIRT)
                 .define('P', ItemTags.SAND)
@@ -337,34 +340,34 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //Castle Wall 2
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_WALL_2.get(), 4)
-                .define('E', GenerationsBlocks.CASTLE_WALL.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_WALL_2_SET.getBaseBlock(), 4)
+                .define('E', GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock())
                 .define('Q', ItemTags.DIRT)
                 .pattern("QQ")
                 .pattern("EE")
-                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_WALL.get()), has(GenerationsBlocks.CASTLE_WALL.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock()), has(GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock()))
                 .save(consumer);
 
         //Castle Wall 3
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_WALL_3.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_WALL_3_SET.getBaseBlock(), 4)
                 .define('E', Blocks.STONE_BRICKS)
-                .define('Q', GenerationsBlocks.CASTLE_WALL.get())
+                .define('Q', GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock())
                 .pattern("EE")
                 .pattern("QQ")
-                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_WALL.get()), has(GenerationsBlocks.CASTLE_WALL.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock()), has(GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock()))
                 .save(consumer);
 
         //Castle Wall 4
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_WALL_4.get(), 4)
-                .define('E', GenerationsBlocks.CASTLE_WALL.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_WALL_4_SET.getBaseBlock(), 4)
+                .define('E', GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock())
                 .define('P', ItemTags.SAND)
                 .pattern("PP")
                 .pattern("EE")
-                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_WALL.get()), has(GenerationsBlocks.CASTLE_WALL.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock()), has(GenerationsBlocks.CASTLE_WALL_SET.getBaseBlock()))
                 .save(consumer);
 
         //Castle Floor
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_FLOOR.get(), 6)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_FLOOR_SET.getBaseBlock(), 6)
                 .define('E', ItemTags.DIRT)
                 .define('P', ItemTags.SAND)
                 .pattern("EEE")
@@ -377,7 +380,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
          * Ice Blocks
          */
         //Ice Brick
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_BRICK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_BRICK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.ICE)
                 .define('Q', Blocks.PACKED_ICE)
                 .pattern("EQ")
@@ -387,43 +390,43 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //Ice Pillar
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_PILLAR.get())
-                .define('X', GenerationsBlocks.ICE_BRICK.get())
+                .define('X', GenerationsBlocks.ICE_BRICK_SET.getBaseBlock())
                 .pattern("X")
                 .pattern("X")
                 .pattern("X")
-                .unlockedBy(getHasName(GenerationsBlocks.ICE_BRICK.get()), has(GenerationsBlocks.ICE_BRICK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()), has(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Broken Ice Pillar
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROKEN_ICE_PILLAR.get())
-                .define('X', GenerationsBlocks.ICE_BRICK.get())
+                .define('X', GenerationsBlocks.ICE_BRICK_SET.getBaseBlock())
                 .pattern("X")
                 .pattern("X")
-                .unlockedBy(getHasName(GenerationsBlocks.ICE_BRICK.get()), has(GenerationsBlocks.ICE_BRICK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()), has(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Ice Pillar Side
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_PILLAR_SIDE.get(), 4)
-                .define('X', GenerationsBlocks.ICE_BRICK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_PILLAR_SIDE_SET.getBaseBlock(), 4)
+                .define('X', GenerationsBlocks.ICE_BRICK_SET.getBaseBlock())
                 .define('#', Blocks.ICE)
                 .pattern("#X")
                 .pattern("X#")
-                .unlockedBy(getHasName(GenerationsBlocks.ICE_BRICK.get()), has(GenerationsBlocks.ICE_BRICK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()), has(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Ice Pillar Top
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_PILLAR_TOP.get(), 4)
-                .define('X', GenerationsBlocks.ICE_BRICK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_PILLAR_TOP_SET.getBaseBlock(), 4)
+                .define('X', GenerationsBlocks.ICE_BRICK_SET.getBaseBlock())
                 .define('#', Blocks.PACKED_ICE)
                 .pattern("#X")
                 .pattern("X#")
-                .unlockedBy(getHasName(GenerationsBlocks.ICE_BRICK.get()), has(GenerationsBlocks.ICE_BRICK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()), has(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()))
                 .save(consumer);
 
         /*
          * Rock Pallets
          */
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ROCK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ROCK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.GRANITE)
                 .define('Q', Blocks.STONE)
                 .pattern("EQ")
@@ -431,7 +434,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Blocks.GRANITE), has(Blocks.GRANITE))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CAVE_ROCK.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CAVE_ROCK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.CLAY)
                 .define('Q', Blocks.STONE)
                 .pattern("EQ")
@@ -439,14 +442,14 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Blocks.CLAY), has(Blocks.CLAY))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CAVE_ROCK_FLOOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CAVE_ROCK_FLOOR_SET.getBaseBlock())
                 .define('X', Blocks.GRAVEL)
                 .pattern("XX")
                 .pattern("XX")
                 .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_CAVE_ROCK_FLOOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_CAVE_ROCK_FLOOR_SET.getBaseBlock())
                 .define('X', Blocks.GRAVEL)
                 .define('Y', Blocks.ICE)
                 .pattern("XY")
@@ -455,7 +458,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //Bridge Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIDGE_BLOCK.get(), 3)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIDGE_BLOCK_SET.getBaseBlock(), 3)
                 .define('E', Blocks.OAK_LOG)
                 .pattern("EEE")
                 .unlockedBy(getHasName(Blocks.OAK_LOG), has(Blocks.OAK_LOG))
@@ -463,52 +466,52 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
 
         //Compressed Polished Blocks
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_ANDESITE.get(), Blocks.POLISHED_ANDESITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DIORITE.get(), Blocks.POLISHED_DIORITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_GRANITE.get(), Blocks.POLISHED_GRANITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DEEPSLATE.get(), Blocks.POLISHED_DEEPSLATE);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_ANDESITE_SET.getBaseBlock(), Blocks.POLISHED_ANDESITE);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DIORITE_SET.getBaseBlock(), Blocks.POLISHED_DIORITE);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_GRANITE_SET.getBaseBlock(), Blocks.POLISHED_GRANITE);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DEEPSLATE_SET.getBaseBlock(), Blocks.POLISHED_DEEPSLATE);
 
         //Cobble Ruins Pallet
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
                 .define('E', Blocks.COBBLESTONE)
-                .define('Q', GenerationsBlocks.ROCK.get())
+                .define('Q', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .pattern("EQ")
                 .pattern("EQ")
-                .unlockedBy(getHasName(GenerationsBlocks.ROCK.get()), has(GenerationsBlocks.ROCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_2.get(), 4)
-                .define('E', GenerationsBlocks.ROCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_2_SET.getBaseBlock(), 4)
+                .define('E', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .define('Q', Blocks.COBBLESTONE)
                 .pattern("EQ")
                 .pattern("EQ")
-                .unlockedBy(getHasName(GenerationsBlocks.ROCK.get()), has(GenerationsBlocks.ROCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_3.get(), 4)
-                .define('E', GenerationsBlocks.ROCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_3_SET.getBaseBlock(), 4)
+                .define('E', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .define('Q', Blocks.COBBLESTONE)
                 .pattern("EE")
                 .pattern("QQ")
-                .unlockedBy(getHasName(GenerationsBlocks.ROCK.get()), has(GenerationsBlocks.ROCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_4.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_4_SET.getBaseBlock(), 4)
                 .define('E', Blocks.COBBLESTONE)
-                .define('Q', GenerationsBlocks.ROCK.get())
+                .define('Q', GenerationsBlocks.ROCK_SET.getBaseBlock())
                 .pattern("EE")
                 .pattern("QQ")
-                .unlockedBy(getHasName(GenerationsBlocks.ROCK.get()), has(GenerationsBlocks.ROCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.ROCK_SET.getBaseBlock()), has(GenerationsBlocks.ROCK_SET.getBaseBlock()))
                 .save(consumer);
 
         //House Floors
         //Missing Blocks for 1+2 recipes
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_1.get(), GenerationsBlocks.BURST_TURF.get());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_3.get(), GenerationsBlocks.RUINS_SAND.get());
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_4.get(), GenerationsBlocks.OCEAN_BLOCK.get());
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_5.get(), GenerationsBlocks.MIRROR_GLASS.get());
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_6.get(), GenerationsBlocks.NORMAL_SANDSTONE.get());
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_7.get(), GenerationsBlocks.ICE_PILLAR_TOP.get());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_4.get(), GenerationsBlocks.OCEAN_BLOCK_SET.getBaseBlock());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_5.get(), GenerationsBlocks.MIRROR_GLASS_SET.getBaseBlock());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_6.get(), GenerationsBlocks.NORMAL_SANDSTONE_SET.getBaseBlock());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_7.get(), GenerationsBlocks.ICE_PILLAR_TOP_SET.getBaseBlock());
 
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_8.get())
@@ -522,10 +525,10 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //Ruins Wall
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RUINS_WALL.get(), 4)
                 .define('X', ItemTags.SAND)
-                .define('Y', GenerationsBlocks.TEMPLE_BLOCK.get())
+                .define('Y', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
                 .pattern("XY")
                 .pattern("XY")
-                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK.get()), has(GenerationsBlocks.TEMPLE_BLOCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Dusty Ruins Wall
@@ -539,23 +542,23 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //ChargeStone Recipes  (Follow Stone Palette)
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_STONE_BRICKS.get(), 4)
-                .define('#', GenerationsBlocks.CHARGE_STONE.get())
+                .define('#', GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock())
                 .pattern("##")
                 .pattern("##")
-                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_STONE.get()), has(GenerationsBlocks.CHARGE_STONE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock()), has(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get()).requires(GenerationsBlocks.CHARGE_COBBLESTONE.get()).requires(Blocks.VINE).group("mossy_charge_cobblestone").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get(), Blocks.VINE));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get()).requires(GenerationsBlocks.CHARGE_STONE_BRICKS.get()).requires(Blocks.VINE).group("mossy_charge_stone_bricks").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get(), Blocks.VINE));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get()).requires(GenerationsBlocks.CHARGE_COBBLESTONE.get()).requires(Blocks.MOSS_BLOCK).group("mossy_charge_cobblestone").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE.get(), Blocks.MOSS_BLOCK));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get()).requires(GenerationsBlocks.CHARGE_STONE_BRICKS.get()).requires(Blocks.MOSS_BLOCK).group("mossy_charge_stone_bricks").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get(), Blocks.MOSS_BLOCK));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE_SET.getBaseBlock()).requires(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()).requires(Blocks.VINE).group("mossy_charge_cobblestone").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE_SET.getBaseBlock(), Blocks.VINE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock()).requires(GenerationsBlocks.CHARGE_STONE_BRICKS.get()).requires(Blocks.VINE).group("mossy_charge_stone_bricks").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock(), Blocks.VINE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE_SET.getBaseBlock()).requires(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()).requires(Blocks.MOSS_BLOCK).group("mossy_charge_cobblestone").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE_SET.getBaseBlock(), Blocks.MOSS_BLOCK));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock()).requires(GenerationsBlocks.CHARGE_STONE_BRICKS.get()).requires(Blocks.MOSS_BLOCK).group("mossy_charge_stone_bricks").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock(), Blocks.MOSS_BLOCK));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE.get())
-                .define('Q', GenerationsBlocks.CHARGE_COBBLESTONE.get()).define('E', Items.GLOWSTONE_DUST)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE_SET.getBaseBlock())
+                .define('Q', GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()).define('E', Items.GLOWSTONE_DUST)
                 .pattern("EEE")
                 .pattern("EQE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_COBBLESTONE.get()), has(GenerationsBlocks.CHARGE_COBBLESTONE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()), has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()))
                 .save(consumer);
 
         //Volcanic Stone Recipes
@@ -566,10 +569,10 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.VOLCANIC_STONE.get()), has(GenerationsBlocks.VOLCANIC_STONE.get()))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE.get()).requires(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()).requires(Blocks.VINE).group("mossy_volcanic_cobblestone").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE.get(), Blocks.VINE));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get()).requires(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get()).requires(Blocks.VINE).group("mossy_volcanic_stone_bricks").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get(), Blocks.VINE));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE.get()).requires(GenerationsBlocks.VOLCANIC_COBBLESTONE.get()).requires(Blocks.MOSS_BLOCK).group("mossy_volcanic_cobblestone").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE.get(), Blocks.MOSS_BLOCK));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get()).requires(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get()).requires(Blocks.MOSS_BLOCK).group("mossy_volcanic_stone_bricks").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS.get(), Blocks.MOSS_BLOCK));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE_SET.getBaseBlock()).requires(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()).requires(Blocks.VINE).group("mossy_volcanic_cobblestone").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE_SET.getBaseBlock(), Blocks.VINE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock()).requires(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get()).requires(Blocks.VINE).group("mossy_volcanic_stone_bricks").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(), Blocks.VINE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE_SET.getBaseBlock()).requires(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()).requires(Blocks.MOSS_BLOCK).group("mossy_volcanic_cobblestone").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE_SET.getBaseBlock(), Blocks.MOSS_BLOCK));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock()).requires(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get()).requires(Blocks.MOSS_BLOCK).group("mossy_volcanic_stone_bricks").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(), Blocks.MOSS_BLOCK));
 
 
         //Golden Temple Recipes
@@ -637,41 +640,41 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
 
         //pokebrick Recipes
-        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_POKE_BRICK.get(), Blocks.BRICKS);
-        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_POKE_BRICK.get(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
+        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
 
-        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_MARBLE.get(), Blocks.QUARTZ_BLOCK);
-        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_MARBLE.get(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BLUE_DYE, GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.BROWN_DYE, GenerationsBlocks.BROWN_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.CYAN_DYE, GenerationsBlocks.CYAN_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.GRAY_DYE, GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.GREEN_DYE, GenerationsBlocks.GREEN_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_BLUE_DYE, GenerationsBlocks.LIGHT_BLUE_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIGHT_GRAY_DYE, GenerationsBlocks.LIGHT_GRAY_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.LIME_DYE, GenerationsBlocks.LIME_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.MAGENTA_DYE, GenerationsBlocks.MAGENTA_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.ORANGE_DYE, GenerationsBlocks.ORANGE_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.PINK_DYE, GenerationsBlocks.PINK_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.PURPLE_DYE, GenerationsBlocks.PURPLE_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.RED_DYE, GenerationsBlocks.RED_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.WHITE_DYE, GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
+        buildBuildingBlockRecipes(consumer, Items.YELLOW_DYE, GenerationsBlocks.YELLOW_MARBLE_SET.getBaseBlock(), Blocks.QUARTZ_BLOCK);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POWDER_BLUE_MARBLE.get(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POWDER_BLUE_MARBLE_SET.getBaseBlock(), 4)
                 .requires(Blocks.QUARTZ_BLOCK, 4)
                 .requires(Items.LIGHT_BLUE_DYE)
                 .requires(Items.WHITE_DYE)
@@ -691,11 +694,11 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
          * Unown Block Recipes
          */
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.UNOWN_BLOCK_BLANK.get())
-                .define('X', GenerationsBlocks.TEMPLE_BLOCK.get())
+                .define('X', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
                 .pattern("XXX")
                 .pattern("XXX")
                 .pattern("XXX")
-                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK.get()), has(GenerationsBlocks.TEMPLE_BLOCK.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()))
                 .save(consumer);
 
         //unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_A, GenerationsItems.UNOWN);
@@ -705,36 +708,26 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
          * Ghost Block Recipes
          */
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_BRICKS.get(), 16)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock(), 16)
                 .requires(Blocks.BRICKS)
                 .requires(GenerationsItems.GHOST_GEM.get())
                 .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
                 .unlockedBy(getHasName(GenerationsItems.GHOST_GEM.get()), has(GenerationsItems.GHOST_GEM.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_OBELISK.get())
-                .define('X', GenerationsBlocks.GHOST_BRICKS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_OBELISK_SET.getBaseBlock())
+                .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
                 .pattern("XX")
                 .pattern("XX")
-                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS.get()), has(GenerationsBlocks.GHOST_BRICKS.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_PILLAR_SIDE.get(), 2)
-                .define('X', GenerationsBlocks.GHOST_BRICKS.get())
-                .define('Y', GenerationsWood.GHOST_PLANKS.get())
-                .pattern("XY")
-                .pattern("YX")
-                .pattern("XY")
-                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS.get()), has(GenerationsBlocks.GHOST_BRICKS.get()))
-                .unlockedBy(getHasName(GenerationsWood.GHOST_PLANKS.get()), has(GenerationsWood.GHOST_PLANKS.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_PILLAR_TOP.get())
-                .define('X', GenerationsBlocks.GHOST_BRICKS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_PILLAR.get())
+                .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
                 .define('Y', GenerationsWood.GHOST_PLANKS.get())
                 .pattern("YX")
                 .pattern("XY")
-                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS.get()), has(GenerationsBlocks.GHOST_BRICKS.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
                 .unlockedBy(getHasName(GenerationsWood.GHOST_PLANKS.get()), has(GenerationsWood.GHOST_PLANKS.get()))
                 .save(consumer);
 
@@ -797,9 +790,20 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
             generateRecipes(consumer, arg);
             generateStoneCutterRecipesForFamily(consumer, arg);
         });
-        GenerationsBlockFamilies.getAllUltraFamilies().forEach(arg -> {
-            generateRecipes(consumer, arg);
-            generateStoneCutterRecipesForFamily(consumer, arg);
+        GenerationsUltraBlockSet.ultraBlockSets.forEach(arg -> {
+            BlockFamily family = arg.getBlockFamily();
+            generateRecipes(consumer, family);
+            generateStoneCutterRecipesForFamily(consumer, family);
+        });
+        GenerationsBlockSet.getBlockSets().forEach(arg -> {
+            BlockFamily family = arg.getBlockFamily();
+            generateRecipes(consumer, family);
+            generateStoneCutterRecipesForFamily(consumer, family);
+        });
+        GenerationsFullBlockSet.getFullBlockSets().forEach(arg -> {
+            BlockFamily family = arg.getBlockFamily();
+            generateRecipes(consumer, family);
+            generateStoneCutterRecipesForFamily(consumer, family);
         });
     }
 

@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public enum GenerationsTiers implements Tier {
-    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, () -> GenerationsBlocks.CHARGE_STONE.get().asItem()),
+    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, () -> GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock().asItem()),
     VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, () -> GenerationsBlocks.VOLCANIC_STONE.get().asItem()),
     ALUMINUM(2, 200, 6F, 1.5F, 14, GenerationsItems.ALUMINUM_INGOT),
     AMETHYST(2, 300, 6.5F, 2.0F, 14, () -> Items.AMETHYST_SHARD),

@@ -1,10 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class GenerationsBlockEntityModels {
     public static final ResourceLocation DEFAULT = GenerationsCore.id("");
@@ -71,7 +68,7 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation POKEBALL = GenerationsCore.id("models/block/utility_blocks/pokeball.pk");
 
     public static final ResourceLocation BREEDER = GenerationsCore.id("models/block/utility_blocks/breeder/breeder.pk");
-    public static final ResourceLocation RKS_MACHINE = GenerationsCore.id("models/block/utility_blocks/rks_machine.pk");;
+    public static final ResourceLocation RKS_MACHINE = GenerationsCore.id("models/block/utility_blocks/rks_machine.pk");
     public static final ResourceLocation LIGHT_CRYSTAL = GenerationsCore.id("models/block/shrines/light_crystal.pk");
     public static final ResourceLocation DARK_CRYSTAL = GenerationsCore.id("models/block/shrines/dark_crystal.pk");
     public static final ResourceLocation SCARECROW = GenerationsCore.id("models/block/utility_blocks/scarecrow.pk");

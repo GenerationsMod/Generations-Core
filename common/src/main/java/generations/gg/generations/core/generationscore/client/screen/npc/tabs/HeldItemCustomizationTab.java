@@ -156,6 +156,6 @@ public class HeldItemCustomizationTab extends CustomizationTab {
         guiGraphics.renderItem(stack, x, y);
         guiGraphics.renderItemDecorations(font, stack, x, y - (this.carried.isEmpty() ? 0 : 8), altText);
 
-        guiGraphics.pose().popPose();;
+        guiGraphics.pose().popPose();
     }
 }

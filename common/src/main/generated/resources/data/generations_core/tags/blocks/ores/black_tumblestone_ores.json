@@ -1,7 +1,6 @@
 {
   "values": [
     "generations_core:black_tumblestone_ore",
-    "generations_core:deepslate_black_tumblestone_ore",
-    "generations_core:charge_stone_black_tumblestone_ore"
+    "generations_core:deepslate_black_tumblestone_ore"
   ]
 }

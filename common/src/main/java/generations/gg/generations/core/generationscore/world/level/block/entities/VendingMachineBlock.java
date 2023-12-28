@@ -4,7 +4,6 @@ import generations.gg.generations.core.generationscore.world.dialogue.DialogueGr
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.OpenShopNode;
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DoubleDyeableBlock;
 import net.minecraft.core.BlockPos;

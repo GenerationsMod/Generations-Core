@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "ghost_bricks_slab",
+  "group": "ghost_brick_slab",
   "key": {
     "#": {
       "item": "generations_core:ghost_bricks"

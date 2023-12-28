@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.mixin.client;
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.LightingSettings;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;

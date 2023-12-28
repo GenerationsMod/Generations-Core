@@ -1,15 +1,11 @@
 package generations.gg.generations.core.generationscore.client.screen.widget;
 
 import com.cobblemon.mod.common.api.gui.GuiUtilsKt;
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
-import com.cobblemon.mod.common.client.gui.PokemonGuiUtilsKt;
-import com.cobblemon.mod.common.pokemon.FormData;
 import com.cobblemon.mod.common.pokemon.RenderablePokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.screen.ScreenUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractButton;
@@ -22,7 +18,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 public class PixelmonSelectionWidget extends AbstractButton {
 

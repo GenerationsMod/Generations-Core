@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore;
 import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -22,12 +21,12 @@ public interface GenerationsImplementation {
 
     void registerResourceReloader(ResourceLocation identifier, PreparableReloadListener reloader, PackType type, Collection<ResourceLocation> dependencies);
 
-    public enum ModAPI {
+    enum ModAPI {
         FABRIC,
         FORGE
     }
 
-    public interface NetworkManager {
+    interface NetworkManager {
 
         void registerClientBound();
 
@@ -46,7 +45,7 @@ public interface GenerationsImplementation {
         <T extends GenerationsNetworkPacket<?>, V extends Entity> void sendToAllTracking(T packet, V entity);
     }
 
-    public enum Environment {
+    enum Environment {
         CLIENT,
         SERVER
 

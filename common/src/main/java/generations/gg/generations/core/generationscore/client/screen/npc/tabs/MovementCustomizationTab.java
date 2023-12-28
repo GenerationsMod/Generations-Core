@@ -237,7 +237,7 @@ public class MovementCustomizationTab extends CustomizationTab {
 
     private ItemStack getItemFromPathInfo() {
         if (npcEntity.getDisplayData().getMovementInfo().getPath() == null
-                || npcEntity.getDisplayData().getMovementInfo().getPath().size() == 0) {
+                || npcEntity.getDisplayData().getMovementInfo().getPath().isEmpty()) {
             return ItemStack.EMPTY;
         }
 

@@ -1,7 +1,6 @@
 {
   "values": [
     "generations_core:z_crystal_ore",
-    "generations_core:deepslate_z_crystal_ore",
-    "generations_core:charge_stone_z_crystal_ore"
+    "generations_core:deepslate_z_crystal_ore"
   ]
 }

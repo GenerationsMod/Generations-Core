@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
 import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.Toggleable;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;

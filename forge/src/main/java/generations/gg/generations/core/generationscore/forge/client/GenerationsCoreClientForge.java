@@ -1,12 +1,8 @@
 package generations.gg.generations.core.generationscore.forge.client;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.BufferUploader;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreRecipeBookGroups;
 import generations.gg.generations.core.generationscore.client.ModRecipeBookTypes;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.EntityRenderersEvent;

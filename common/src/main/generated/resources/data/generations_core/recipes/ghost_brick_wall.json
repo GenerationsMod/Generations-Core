@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "ghost_bricks_wall",
+  "group": "ghost_brick_wall",
   "key": {
     "#": {
       "item": "generations_core:ghost_bricks"

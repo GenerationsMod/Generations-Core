@@ -9,7 +9,6 @@ import com.cobblemon.mod.common.util.isInBattle
 import com.cobblemon.mod.common.util.lang
 import com.cobblemon.mod.common.util.party
 import generations.gg.generations.core.generationscore.world.item.DyedBlockItem
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity
