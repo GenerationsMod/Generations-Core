@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(LightTexture.class)
-public class LightTextureMixin implements ILightTexture {
+public abstract class LightTextureMixin implements ILightTexture {
     @Shadow @Final private DynamicTexture lightTexture;
 
     @Override

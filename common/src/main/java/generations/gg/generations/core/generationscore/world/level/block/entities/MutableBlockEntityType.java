@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import com.mojang.datafixers.types.Type;
-import generations.gg.generations.core.generationscore.mixin.BlockEntityTypeAccessor;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -22,11 +21,11 @@ public class MutableBlockEntityType<T extends BlockEntity> extends BlockEntityTy
 	}
 
 	public boolean addBlock(Block block) {
-		return ((BlockEntityTypeAccessor) this).getBlocks().add(block);
+		return this.validBlocks.add(block);
 	}
 
 	public boolean removeBlock(Block block) {
-		return ((BlockEntityTypeAccessor) this).getBlocks().remove(block);
+		return this.validBlocks.remove(block);
 	}
 
 
