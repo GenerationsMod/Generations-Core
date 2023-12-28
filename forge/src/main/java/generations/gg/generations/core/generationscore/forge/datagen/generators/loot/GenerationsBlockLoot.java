@@ -62,12 +62,13 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
             dropSelfUpdated(generationsBlockSet.getWall());
         });
 
+        add(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(), createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()));
+
         dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE.get());
 
         dropSelf(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get());
 
         //Ores
-
         addOreSet(GenerationsOres.TUMBLESTONE_ORE_SET);
         addOreSet(GenerationsOres.BLACK_TUMBLESTONE_ORE_SET);
         addOreSet(GenerationsOres.SKY_TUMBLESTONE_ORE_SET);
@@ -229,9 +230,7 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
     }
 
     private void dropSelfStoneCobble(@NotNull Block block) {
-        if (block == GenerationsBlocks.CHARGE_STONE.get())
-            add(block, createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()));
-        else if (block == GenerationsBlocks.VOLCANIC_STONE.get())
+        if (block == GenerationsBlocks.VOLCANIC_STONE.get())
             add(block, createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()));
         else dropSelfUpdated(block);
     }

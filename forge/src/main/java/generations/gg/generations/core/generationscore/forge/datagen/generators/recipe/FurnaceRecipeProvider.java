@@ -79,8 +79,8 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
         oreBlasting(consumer, SKY_TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SKY_TUMBLESTONE.get(), 1.0F, 100, "sky_tumblestone");
         oreBlasting(consumer, RARE_TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RARE_TUMBLESTONE.get(), 1.0F, 100, "rare_tumblestone");
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()), RecipeCategory.MISC, GenerationsBlocks.CHARGE_STONE.get(), 0.1F, 200).unlockedBy("has_charge_stone_cobble", has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())).save(consumer);
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.CHARGE_STONE.get()), RecipeCategory.MISC, GenerationsBlocks.SMOOTH_CHARGE_STONE.get(), 0.1F, 200).unlockedBy("has_charge_stone", has(GenerationsBlocks.CHARGE_STONE.get())).save(consumer);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()), RecipeCategory.MISC, GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(), 0.1F, 200).unlockedBy("has_charge_stone_cobble", has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())).save(consumer);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock()), RecipeCategory.MISC, GenerationsBlocks.SMOOTH_CHARGE_STONE.get(), 0.1F, 200).unlockedBy("has_charge_stone", has(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock())).save(consumer);
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()), RecipeCategory.MISC, GenerationsBlocks.VOLCANIC_STONE.get(), 0.1F, 200).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock())).save(consumer);
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.VOLCANIC_STONE.get()), RecipeCategory.MISC, GenerationsBlocks.SMOOTH_VOLCANIC_STONE.get(), 0.1F, 200).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_STONE.get())).save(consumer);
 

@@ -17,6 +17,7 @@
     "generations_core:purple_marble_button",
     "generations_core:magenta_marble_button",
     "generations_core:pink_marble_button",
+    "generations_core:charge_stone_button",
     "generations_core:enchanted_obsidian_button",
     "generations_core:white_poke_brick_button",
     "generations_core:light_gray_poke_brick_button",
@@ -50,7 +51,6 @@
     "generations_core:ultra_purple_button",
     "generations_core:ultra_magenta_button",
     "generations_core:ultra_pink_button",
-    "generations_core:charge_stone_button",
     "generations_core:volcanic_stone_button"
   ]
 }

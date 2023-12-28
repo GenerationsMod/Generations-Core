@@ -542,10 +542,10 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //ChargeStone Recipes  (Follow Stone Palette)
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_STONE_BRICKS.get(), 4)
-                .define('#', GenerationsBlocks.CHARGE_STONE.get())
+                .define('#', GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock())
                 .pattern("##")
                 .pattern("##")
-                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_STONE.get()), has(GenerationsBlocks.CHARGE_STONE.get()))
+                .unlockedBy(getHasName(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock()), has(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock()))
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE_SET.getBaseBlock()).requires(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()).requires(Blocks.VINE).group("mossy_charge_cobblestone").unlockedBy(getHasName(Items.VINE), VanillaRecipeProvider.has(Blocks.VINE)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE_SET.getBaseBlock(), Blocks.VINE));

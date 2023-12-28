@@ -17,6 +17,7 @@
     "generations_core:purple_marble_pressure_plate",
     "generations_core:magenta_marble_pressure_plate",
     "generations_core:pink_marble_pressure_plate",
+    "generations_core:charge_stone_pressure_plate",
     "generations_core:enchanted_obsidian_pressure_plate",
     "generations_core:white_poke_brick_pressure_plate",
     "generations_core:light_gray_poke_brick_pressure_plate",
@@ -50,7 +51,6 @@
     "generations_core:ultra_purple_pressure_plate",
     "generations_core:ultra_magenta_pressure_plate",
     "generations_core:ultra_pink_pressure_plate",
-    "generations_core:charge_stone_pressure_plate",
     "generations_core:volcanic_stone_pressure_plate"
   ]
 }
