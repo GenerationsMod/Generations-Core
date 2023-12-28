@@ -47,20 +47,8 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         GenerationsPokeDolls.POKEDOLLS.forEach(block -> dropSelf(block.get()));
         BlockDatagen.dropSelfList.stream().map(block -> (Block) block).forEach(this::dropSelf);
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
-        GenerationsFullBlockSet.getFullBlockSets().forEach(generationsFullBlockSet -> {
-            dropSelfUpdated(generationsFullBlockSet.getBaseBlock());
-            dropSelfUpdated(generationsFullBlockSet.getSlab());
-            dropSelfUpdated(generationsFullBlockSet.getStairs());
-            dropSelfUpdated(generationsFullBlockSet.getWall());
-            dropSelfUpdated(generationsFullBlockSet.getButton());
-            dropSelfUpdated(generationsFullBlockSet.getPressurePlate());
-        });
-        GenerationsBlockSet.getBlockSets().forEach(generationsBlockSet -> {
-            dropSelfUpdated(generationsBlockSet.getBaseBlock());
-            dropSelfUpdated(generationsBlockSet.getSlab());
-            dropSelfUpdated(generationsBlockSet.getStairs());
-            dropSelfUpdated(generationsBlockSet.getWall());
-        });
+        GenerationsFullBlockSet.getFullBlockSets().forEach(generationsFullBlockSet -> generationsFullBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
+        GenerationsBlockSet.getBlockSets().forEach(generationsBlockSet -> generationsBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
 
         add(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(), createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()));
 
