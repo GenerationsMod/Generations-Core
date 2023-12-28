@@ -553,7 +553,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE_SET.getBaseBlock()).requires(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()).requires(Blocks.MOSS_BLOCK).group("mossy_charge_cobblestone").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_COBBLESTONE_SET.getBaseBlock(), Blocks.MOSS_BLOCK));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get()).requires(GenerationsBlocks.CHARGE_STONE_BRICKS.get()).requires(Blocks.MOSS_BLOCK).group("mossy_charge_stone_bricks").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS.get(), Blocks.MOSS_BLOCK));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE_SET.getBaseBlock())
                 .define('Q', GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()).define('E', Items.GLOWSTONE_DUST)
                 .pattern("EEE")
                 .pattern("EQE")

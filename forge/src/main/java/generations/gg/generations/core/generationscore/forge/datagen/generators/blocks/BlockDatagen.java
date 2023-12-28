@@ -62,8 +62,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_8);
 
         //ChargeStone
-        registerPallet(GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE_SLAB, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE_STAIRS, GenerationsBlocks.BRIGHT_CHARGE_COBBLESTONE_WALL, null, null, true);
-        registerPallet(GenerationsBlocks.GLOWING_CHARGE_COBBLESTONE, GenerationsBlocks.GLOWING_CHARGE_COBBLESTONE_SLAB, GenerationsBlocks.GLOWING_CHARGE_COBBLESTONE_STAIRS, GenerationsBlocks.GLOWING_CHARGE_COBBLESTONE_WALL, null, null, true);
         registerBlockItem(GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK);
 
         //Volcanic

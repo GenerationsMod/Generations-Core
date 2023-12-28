@@ -53,6 +53,8 @@
     "generations_core:pink_marble_stairs",
     "generations_core:charge_cobblestone_stairs",
     "generations_core:mossy_charge_cobblestone_stairs",
+    "generations_core:bright_charge_cobblestone_stairs",
+    "generations_core:glowing_charge_cobblestone_stairs",
     "generations_core:volcanic_cobblestone_stairs",
     "generations_core:mossy_volcanic_cobblestone_stairs",
     "generations_core:volcanic_rock_stairs",
@@ -140,8 +142,6 @@
     "generations_core:charge_stone_stairs",
     "generations_core:charge_stone_brick_stairs",
     "generations_core:mossy_charge_stone_brick_stairs",
-    "generations_core:bright_charge_cobblestone_stairs",
-    "generations_core:glowing_charge_cobblestone_stairs",
     "generations_core:volcanic_stone_stairs",
     "generations_core:volcanic_stone_brick_stairs",
     "generations_core:mossy_volcanic_stone_brick_stairs"
