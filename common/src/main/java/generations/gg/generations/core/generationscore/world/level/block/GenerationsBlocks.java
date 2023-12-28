@@ -405,7 +405,7 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<Block> ULTRA_CUT_SANDSTONE = registerBlockItem("ultra_cut_sandstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE)));
     public static final RegistrySupplier<SlabBlock> ULTRA_CUT_SANDSTONE_SLAB = registerBlockItem("ultra_cut_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ULTRA_CUT_SANDSTONE.get())));
     public static final RegistrySupplier<Block> GHOST_LANTERN = registerBlockItem("ghost_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(.5f).lightLevel((lightLevel) -> 15)));
-    public static final GenerationsBlockSet GHOST_BRICKS_SET = new GenerationsBlockSet("ghost_bricks", BlockBehaviour.Properties.copy(Blocks.BRICKS));
+    public static final GenerationsBlockSet GHOST_BRICKS_SET = new GenerationsBlockSet("ghost_brick", registerBlockItem("ghost_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS))), BlockBehaviour.Properties.copy(Blocks.BRICKS));
     public static final GenerationsBlockSet GHOST_OBELISK_SET = new GenerationsBlockSet("ghost_obelisk", BlockBehaviour.Properties.copy(Blocks.STONE));
 
     public static final RegistrySupplier<RotatedPillarBlock> GHOST_PILLAR = registerBlockItem("ghost_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));

@@ -1,18 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "ghost_bricks_slab",
+  "group": "ghost_brick_stairs",
   "key": {
     "#": {
       "item": "generations_core:ghost_bricks"
     }
   },
   "pattern": [
+    "#  ",
+    "## ",
     "###"
   ],
   "result": {
-    "count": 6,
-    "item": "generations_core:ghost_bricks_slab"
+    "count": 4,
+    "item": "generations_core:ghost_brick_stairs"
   },
   "show_notification": true
 }

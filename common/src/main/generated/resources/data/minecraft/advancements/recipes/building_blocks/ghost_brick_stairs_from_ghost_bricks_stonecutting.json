@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ghost_bricks_wall_from_ghost_bricks_stonecutting"
+        "recipe": "minecraft:ghost_brick_stairs_from_ghost_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ghost_bricks_wall_from_ghost_bricks_stonecutting"
+      "minecraft:ghost_brick_stairs_from_ghost_bricks_stonecutting"
     ]
   },
   "sends_telemetry_event": false

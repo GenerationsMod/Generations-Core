@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:ghost_bricks_slab"
+        "recipe": "minecraft:ghost_brick_wall_from_ghost_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "generations_core:ghost_bricks_slab"
+      "minecraft:ghost_brick_wall_from_ghost_bricks_stonecutting"
     ]
   },
   "sends_telemetry_event": false

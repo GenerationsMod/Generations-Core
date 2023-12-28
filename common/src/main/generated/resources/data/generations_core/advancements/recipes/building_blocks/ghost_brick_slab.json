@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ghost_bricks": {
+    "has_ghost_brick": {
       "conditions": {
         "items": [
           {
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:ghost_bricks_stairs"
+        "recipe": "generations_core:ghost_brick_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_ghost_bricks",
+      "has_ghost_brick",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:ghost_bricks_stairs"
+      "generations_core:ghost_brick_slab"
     ]
   },
   "sends_telemetry_event": false

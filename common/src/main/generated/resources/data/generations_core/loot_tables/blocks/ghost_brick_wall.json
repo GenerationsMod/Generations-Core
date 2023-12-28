@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:ghost_bricks_wall"
+          "name": "generations_core:ghost_brick_wall"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "generations_core:blocks/ghost_bricks_wall"
+  "random_sequence": "generations_core:blocks/ghost_brick_wall"
 }

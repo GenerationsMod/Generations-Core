@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ghost_bricks": {
+    "has_ghost_brick": {
       "conditions": {
         "items": [
           {
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ghost_bricks_slab_from_ghost_bricks_stonecutting"
+        "recipe": "generations_core:ghost_brick_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_ghost_bricks",
+      "has_ghost_brick",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ghost_bricks_slab_from_ghost_bricks_stonecutting"
+      "generations_core:ghost_brick_wall"
     ]
   },
   "sends_telemetry_event": false
