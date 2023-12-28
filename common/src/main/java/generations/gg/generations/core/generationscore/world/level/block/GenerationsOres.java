@@ -63,6 +63,7 @@ public class GenerationsOres {
 
 
 	// Charge Stone Vanilla Ores
+	/*
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_COAL_ORE = registerOreBlockItem("charge_stone_coal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE).dropsLike(Blocks.COAL_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_DIAMOND_ORE = registerOreBlockItem("charge_stone_diamond_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).dropsLike(Blocks.DIAMOND_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_EMERALD_ORE = registerOreBlockItem("charge_stone_emerald_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_ORE).dropsLike(Blocks.EMERALD_ORE)));
@@ -71,6 +72,7 @@ public class GenerationsOres {
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_COPPER_ORE = registerOreBlockItem("charge_stone_copper_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_ORE).dropsLike(Blocks.COPPER_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_LAPIS_LAZULI_ORE = registerOreBlockItem("charge_stone_lapis_lazuli_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_ORE).dropsLike(Blocks.LAPIS_ORE)));
 	public static final RegistrySupplier<RedStoneOreBlock> CHARGE_STONE_REDSTONE_ORE = registerOreBlockItem("charge_stone_redstone_ore", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).dropsLike(Blocks.REDSTONE_ORE)));
+	 */
 
 
 	private static void register(String name, Function<Item.Properties, Item> itemSupplier) {

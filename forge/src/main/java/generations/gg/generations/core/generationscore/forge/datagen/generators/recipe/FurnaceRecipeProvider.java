@@ -93,6 +93,7 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()), RecipeCategory.MISC, GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE.get(), 0.1F, 200).unlockedBy(getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()), has(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get())).save(consumer);
 
         //ChargeStone Ores
+        /*
         oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_COAL_ORE.get()), RecipeCategory.MISC, Items.COAL, 0.1f, 200, "coal");
         oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_IRON_ORE.get()), RecipeCategory.MISC, Items.IRON_INGOT, 0.7f, 200, "iron_ingot");
         oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_COPPER_ORE.get()), RecipeCategory.MISC, Items.COPPER_INGOT, 0.7f, 200, "copper_ingot");
@@ -110,5 +111,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
         oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get()), RecipeCategory.MISC, Items.LAPIS_LAZULI, 0.2f, 100, "lapis_lazuli");
         oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get()), RecipeCategory.REDSTONE, Items.REDSTONE, 0.7f, 100, "redstone");
         oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_EMERALD_ORE.get()), RecipeCategory.MISC, Items.EMERALD, 1.0f, 100, "emerald");
+         */
     }
 }
