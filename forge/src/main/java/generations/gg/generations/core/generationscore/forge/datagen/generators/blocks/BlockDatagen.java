@@ -212,6 +212,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.RICH_SOIL_3);
         registerBlockItem(GenerationsBlocks.RICH_SOIL_4);
 
+        registerLog(GenerationsBlocks.GHOST_PILLAR);
+
         GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
         registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE.block());

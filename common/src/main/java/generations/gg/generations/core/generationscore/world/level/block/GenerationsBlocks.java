@@ -422,14 +422,7 @@ public class GenerationsBlocks {
     public static final GenerationsBlockSet GHOST_BRICKS_SET = new GenerationsBlockSet("ghost_bricks", BlockBehaviour.Properties.copy(Blocks.BRICKS));
     public static final GenerationsBlockSet GHOST_OBELISK_SET = new GenerationsBlockSet("ghost_obelisk", BlockBehaviour.Properties.copy(Blocks.STONE));
 
-    public static final RegistrySupplier<Block> GHOST_PILLAR_SIDE = registerBlockItem("ghost_pillar_side", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> GHOST_PILLAR_SIDE_STAIRS = registerBlockItem("ghost_pillar_side_stairs", () -> new StairBlock(GHOST_PILLAR_SIDE.get().defaultBlockState(), BlockBehaviour.Properties.copy(GHOST_PILLAR_SIDE.get())));
-    public static final RegistrySupplier<SlabBlock> GHOST_PILLAR_SIDE_SLAB = registerBlockItem("ghost_pillar_side_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GHOST_PILLAR_SIDE.get())));
-    public static final RegistrySupplier<WallBlock> GHOST_PILLAR_SIDE_WALL = registerBlockItem("ghost_pillar_side_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GHOST_PILLAR_SIDE.get())));
-    public static final RegistrySupplier<Block> GHOST_PILLAR_TOP = registerBlockItem("ghost_pillar_top", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistrySupplier<StairBlock> GHOST_PILLAR_TOP_STAIRS = registerBlockItem("ghost_pillar_top_stairs", () -> new StairBlock(GHOST_PILLAR_TOP.get().defaultBlockState(), BlockBehaviour.Properties.copy(GHOST_PILLAR_TOP.get())));
-    public static final RegistrySupplier<SlabBlock> GHOST_PILLAR_TOP_SLAB = registerBlockItem("ghost_pillar_top_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GHOST_PILLAR_TOP.get())));
-    public static final RegistrySupplier<WallBlock> GHOST_PILLAR_TOP_WALL = registerBlockItem("ghost_pillar_top_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GHOST_PILLAR_TOP.get())));
+    public static final RegistrySupplier<RotatedPillarBlock> GHOST_PILLAR = registerBlockItem("ghost_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     public static final GenerationsBlockSet MIRROR_GLASS_SET = new GenerationsBlockSet("mirror_glass", BlockBehaviour.Properties.copy(Blocks.GLASS).strength(.5f));
     public static final GenerationsBlockSet NORMAL_SANDSTONE_SET = new GenerationsBlockSet("normal_sandstone", BlockBehaviour.Properties.copy(Blocks.SANDSTONE));

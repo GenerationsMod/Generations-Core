@@ -722,17 +722,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_PILLAR_SIDE.get(), 2)
-                .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
-                .define('Y', GenerationsWood.GHOST_PLANKS.get())
-                .pattern("XY")
-                .pattern("YX")
-                .pattern("XY")
-                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
-                .unlockedBy(getHasName(GenerationsWood.GHOST_PLANKS.get()), has(GenerationsWood.GHOST_PLANKS.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_PILLAR_TOP.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_PILLAR.get())
                 .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
                 .define('Y', GenerationsWood.GHOST_PLANKS.get())
                 .pattern("YX")
