@@ -20,9 +20,9 @@ public class PokeLootRendrer implements BlockEntityRenderer<BallLootBlockEntity>
 
         stack.pushPose();
 
-        var angle = -block.getAngle(blockEntity.getBlockState());
+        var angle = -block.getAngle(blockEntity.getBlockState()) + 180;
 
-        stack.translate(0.5+(0.015625), 0.125, 0.5-(0.015625));
+        stack.translate(0.5-(0.015625), 0.125, 0.5-(0.015625));
 
         stack.mulPose(Axis.YP.rotationDegrees(angle));
 //        stack.scale(1);
