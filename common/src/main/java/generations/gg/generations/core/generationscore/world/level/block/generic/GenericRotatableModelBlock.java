@@ -127,7 +127,6 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         return BlockPos.betweenClosedStream(pos, pos.relative(widthDir, width).relative(heightDir, height).relative(dir, length)).map(level::getBlockState).allMatch(BlockState::canBeReplaced);
     }
 
-
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         var facing = state.getValue(FACING);
