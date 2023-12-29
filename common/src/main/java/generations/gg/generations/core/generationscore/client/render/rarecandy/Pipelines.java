@@ -151,7 +151,7 @@ public class Pipelines {
     }
 
     private static ITexture getTexture(String variant) {
-        return gg.generations.rarecandy.tools.TextureLoader.instance().getTexture(variant);
+        return ITextureLoader.instance().getTexture(variant);
     }
 
     private static void addDiffuse(Pipeline.Builder builder) {

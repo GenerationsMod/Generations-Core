@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -27,7 +28,7 @@ public class ModelRegistry {
         if (gltfModel.getSkinModels().isEmpty()) return new MeshObject();
         return new AnimatedMeshObject();
     };
-    public static final LoadingCache<ResourceLocation, CompiledModel> LOADER = CacheBuilder.newBuilder().removalListener((RemovalListener<ResourceLocation, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
+    public static final LoadingCache<ResourceLocation, CompiledModel> LOADER = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.SECONDS).removalListener((RemovalListener<ResourceLocation, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
         @Override
         public @NotNull CompiledModel load(@NotNull ResourceLocation pair) {
             try {
