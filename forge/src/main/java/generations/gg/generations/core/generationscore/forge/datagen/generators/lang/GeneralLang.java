@@ -54,7 +54,6 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
-        add("pokeballs.generations_core", "Poké Balls");
         add("restoration.generations_core", "Restoration");
         add("tms.generations_core", "TMs");
         add("badges.generations_core", "Badges");

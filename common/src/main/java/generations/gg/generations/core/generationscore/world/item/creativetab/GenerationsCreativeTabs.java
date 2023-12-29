@@ -22,7 +22,6 @@ import java.util.function.Supplier;
 public class GenerationsCreativeTabs {
 
     public static DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.CREATIVE_MODE_TAB);
-    public static RegistrySupplier<CreativeModeTab> POKEBALLS = create("pokeballs", () -> GenerationsItems.POKE_BALL);
     public static RegistrySupplier<CreativeModeTab> RESTORATION = create("restoration", () -> GenerationsItems.POTION);
     //public static CreativeModeTab TMS = create("tms", () -> GenerationsItems.TM_1);
     public static RegistrySupplier<CreativeModeTab> BADGES = create("badges", () -> GenerationsItems.RAINBOW_BADGE);

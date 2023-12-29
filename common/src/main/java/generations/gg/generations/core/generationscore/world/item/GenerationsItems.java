@@ -1554,7 +1554,7 @@ public class GenerationsItems {
     }
 
     public static RegistrySupplier<Item> registerPokeBall(String name, Function<Item.Properties, Item> itemSupplier) {
-        return POKEBALLS.register(name, () -> itemSupplier.apply(of().arch$tab(GenerationsCreativeTabs.POKEBALLS)));
+        return POKEBALLS.register(name, () -> itemSupplier.apply(of()));
     }
 
     public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
