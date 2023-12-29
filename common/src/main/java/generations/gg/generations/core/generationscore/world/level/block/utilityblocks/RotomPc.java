@@ -23,7 +23,7 @@ public class RotomPc extends PcBlock {
                                         Shapes.join(Shapes.box(0.015625, 1.9375, 0.21875, 0.978125, 2.5, 0.4375),
                                                 Shapes.box(0.1875, 1.25, 0.5625, 0.8125, 1.5, 0.625), OR), OR), OR), OR), OR),
             Direction.NORTH,
-            1, 2, 1);
+            1, 3, 1);
 
     public RotomPc(@NotNull BlockBehaviour.Properties arg) {
         super(arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 1, 0);
