@@ -593,30 +593,18 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         itemModels().withExistingParent(block.getId().getPath(), blockTexture(block.get().getHostBlock()));
     }
 
-    private void registerDripStone(RegistrySupplier<PointedChargeDripstoneBlock> dripstone){
+    private void registerDripStone(RegistrySupplier<PointedChargeDripstoneBlock> dripstone) {
         String name = dripstone.getId().toString();
-        this.models().withExistingParent(name.concat("_down_base"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_down_base")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_down_middle"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_down_middle")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_down_tip"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_down_tip")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_down_tip_merge"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_down_tip_merge")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_down_frustum"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_down_frustum")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_up_base"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_up_base")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_up_middle"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_up_middle")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_up_tip"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_up_tip")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_up_tip_merge"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_up_tip_merge")).renderType("cutout");
-        this.models().withExistingParent(name.concat("_up_frustum"), mcLoc("block/pointed_dripstone"))
-                .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_up_frustum")).renderType("cutout");
+        String[] parts = {"down_base", "down_middle", "down_tip", "down_tip_merge", "down_frustum", "up_base", "up_middle", "up_tip", "up_tip_merge", "up_frustum"};
+
+        for (String part : parts)
+            this.models().withExistingParent(name.concat("_" + part), mcLoc("block/pointed_dripstone"))
+                    .texture("cross", GenerationsCore.id("block/" + dripstone.getId().getPath() + "_" + part))
+                    .renderType("cutout");
+
         this.models().withExistingParent(name, mcLoc("block/pointed_dripstone"));
     }
+
 
     private void registerBlockFamily(BlockFamily family) {
         registerBlockItem(family.getBaseBlock());
