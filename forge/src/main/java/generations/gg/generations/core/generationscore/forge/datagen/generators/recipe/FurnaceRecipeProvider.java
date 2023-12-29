@@ -28,10 +28,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
     private static final ImmutableList<ItemLike> SILICON_SMELTABLES;
     private static final ImmutableList<ItemLike> MEGASTONE_SMELTABLES;
     private static final ImmutableList<ItemLike> METEORITE_SMELTABLES;
-    private static final ImmutableList<ItemLike> TUMBLESTONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> BLACK_TUMPLESTONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> SKY_TUMBLESTONE_SMELTABLES;
-    private static final ImmutableList<ItemLike> RARE_TUMBLESTONE_SMELTABLES;
 
     static {
         ALUMINUM_SMELTABLES = ImmutableList.of(GenerationsItems.RAW_ALUMINUM.get(), GenerationsOres.ALUMINUM_ORE_SET.getOre(), GenerationsOres.ALUMINUM_ORE_SET.getDeepslateOre());
@@ -42,10 +38,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
         SILICON_SMELTABLES = GenerationsOres.SILICON_ORE_SET.getImmutableList();
         MEGASTONE_SMELTABLES = GenerationsOres.MEGASTONE_ORE_SET.getImmutableList();
         METEORITE_SMELTABLES = GenerationsOres.METEORITE_ORE_SET.getImmutableList();
-        TUMBLESTONE_SMELTABLES = GenerationsOres.TUMBLESTONE_ORE_SET.getImmutableList();
-        BLACK_TUMPLESTONE_SMELTABLES = GenerationsOres.BLACK_TUMBLESTONE_ORE_SET.getImmutableList();
-        SKY_TUMBLESTONE_SMELTABLES = GenerationsOres.SKY_TUMBLESTONE_ORE_SET.getImmutableList();
-        RARE_TUMBLESTONE_SMELTABLES = GenerationsOres.RARE_TUMBLESTONE_ORE_SET.getImmutableList();
     }
 
     public FurnaceRecipeProvider(PackOutput output) {
@@ -61,10 +53,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
         oreSmelting(consumer, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SAPPHIRE.get(), 1.0F, 200, "sapphire_gem");
         oreSmelting(consumer, CRYSTAL_SMELTABLES, RecipeCategory.MISC, GenerationsItems.CRYSTAL.get(), 1.0F, 200, "crystal_gem");
         oreSmelting(consumer, SILICON_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SILICON.get(), 1.0F, 200, "silicon");
-        oreSmelting(consumer, TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.TUMBLESTONE.get(), 1.0F, 200, "tumblestone");
-        oreSmelting(consumer, BLACK_TUMPLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.BLACK_TUMBLESTONE.get(), 1.0F, 200, "black_tumblestone");
-        oreSmelting(consumer, SKY_TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SKY_TUMBLESTONE.get(), 1.0F, 200, "sky_tumblestone");
-        oreSmelting(consumer, RARE_TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RARE_TUMBLESTONE.get(), 1.0F, 200, "rare_tumblestone");
         oreBlasting(consumer, ALUMINUM_SMELTABLES, RecipeCategory.MISC, GenerationsItems.ALUMINUM_INGOT.get(), 1.0F, 100, "aluminum_ingot");
         oreBlasting(consumer, Z_CRYSTAL_SMELTABLES, RecipeCategory.MISC, GenerationsItems.Z_INGOT.get(), 1.0F, 100, "z_ingot");
         oreBlasting(consumer, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY.get(), 1.0F, 100, "ruby_gem");
@@ -73,10 +61,6 @@ public class FurnaceRecipeProvider extends GenerationsRecipeProvider.Proxied imp
         oreBlasting(consumer, SILICON_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SILICON.get(), 1.0F, 100, "silicon");
         oreBlasting(consumer, MEGASTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.MEGASTONE_SHARD.get(), 1.0F, 100, "mega_stone_shard");
         oreBlasting(consumer, METEORITE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.METEORITE_SHARD.get(), 1.0F, 100, "meteorite_shard");
-        oreBlasting(consumer, TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.TUMBLESTONE.get(), 1.0F, 100, "tumblestone");
-        oreBlasting(consumer, BLACK_TUMPLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.BLACK_TUMBLESTONE.get(), 1.0F, 100, "black_tumblestone");
-        oreBlasting(consumer, SKY_TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.SKY_TUMBLESTONE.get(), 1.0F, 100, "sky_tumblestone");
-        oreBlasting(consumer, RARE_TUMBLESTONE_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RARE_TUMBLESTONE.get(), 1.0F, 100, "rare_tumblestone");
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()), RecipeCategory.MISC, GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(), 0.1F, 200).unlockedBy("has_charge_stone_cobble", has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())).save(consumer);
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock()), RecipeCategory.MISC, GenerationsBlocks.SMOOTH_CHARGE_STONE.get(), 0.1F, 200).unlockedBy("has_charge_stone", has(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock())).save(consumer);

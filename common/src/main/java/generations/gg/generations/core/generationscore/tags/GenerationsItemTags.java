@@ -38,10 +38,6 @@ public class GenerationsItemTags {
     public static final TagKey<Item> SILICON_ORES = create("ores/silicon_ores");
     public static final TagKey<Item> Z_CRYSTAL_ORES = create("ores/z_crystal_ores");
     public static final TagKey<Item> FOSSIL_ORES = create("ores/fossil_ores");
-    public static final TagKey<Item> BLACK_TUMBLESTONE_ORES = create("ores/black_tumblestone_ores");
-    public static final TagKey<Item> RARE_TUMBLESTONE_ORES = create("ores/rare_tumblestone_ores");
-    public static final TagKey<Item> SKY_TUMBLESTONE_ORES = create("ores/sky_tumblestone_ores");
-    public static final TagKey<Item> TUMBLESTONE_ORES = create("ores/tumblestone_ores");
     public static final TagKey<Item> MEGASTONE_ORES = create("ores/megastone_ores");
     public static final TagKey<Item> METEORITE_ORES = create("ores/meteorite_ores");
     

@@ -32,15 +32,6 @@ public class GenerationsOres {
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_MOON_STONE_ORE = registerBlockItem("charge_stone_moon_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 	 */
 
-	/**
-	 * Tumblestone Ores
-	 */
-	public static final GenerationsOreSet TUMBLESTONE_ORE_SET = new GenerationsOreSet("tumblestone_ore", GenerationsItems.TUMBLESTONE);
-	public static final GenerationsOreSet BLACK_TUMBLESTONE_ORE_SET = new GenerationsOreSet("black_tumblestone_ore", GenerationsItems.BLACK_TUMBLESTONE);
-	public static final GenerationsOreSet RARE_TUMBLESTONE_ORE_SET = new GenerationsOreSet("rare_tumblestone_ore", GenerationsItems.RARE_TUMBLESTONE);
-	public static final GenerationsOreSet SKY_TUMBLESTONE_ORE_SET = new GenerationsOreSet("sky_tumblestone_ore", GenerationsItems.SKY_TUMBLESTONE);
-
-
 	public static final GenerationsOreSet MEGASTONE_ORE_SET = new GenerationsOreSet("megastone_ore", GenerationsItems.MEGASTONE_SHARD);
 	public static final GenerationsOreSet METEORITE_ORE_SET = new GenerationsOreSet("meteorite_ore");
 

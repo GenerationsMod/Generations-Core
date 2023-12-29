@@ -137,10 +137,6 @@ public class TagsDatagen {
             tag(GenerationsBlockTags.SILICON_ORES).add(GenerationsOres.SILICON_ORE_SET.getOre(), GenerationsOres.SILICON_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.Z_CRYSTAL_ORES).add(GenerationsOres.Z_CRYSTAL_ORE_SET.getOre(), GenerationsOres.Z_CRYSTAL_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.FOSSIL_ORES).add(GenerationsOres.FOSSIL_ORE_SET.getOre(), GenerationsOres.FOSSIL_ORE_SET.getDeepslateOre());
-            tag(GenerationsBlockTags.TUMBLESTONE_ORES).add(GenerationsOres.TUMBLESTONE_ORE_SET.getOre(), GenerationsOres.TUMBLESTONE_ORE_SET.getDeepslateOre());
-            tag(GenerationsBlockTags.RARE_TUMBLESTONE_ORES).add(GenerationsOres.RARE_TUMBLESTONE_ORE_SET.getOre(), GenerationsOres.RARE_TUMBLESTONE_ORE_SET.getDeepslateOre());
-            tag(GenerationsBlockTags.SKY_TUMBLESTONE_ORES).add(GenerationsOres.SKY_TUMBLESTONE_ORE_SET.getOre(), GenerationsOres.SKY_TUMBLESTONE_ORE_SET.getDeepslateOre());
-            tag(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES).add(GenerationsOres.BLACK_TUMBLESTONE_ORE_SET.getOre(), GenerationsOres.BLACK_TUMBLESTONE_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.MEGASTONE_ORES).add(GenerationsOres.MEGASTONE_ORE_SET.getOre(), GenerationsOres.MEGASTONE_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.METEORITE_ORES).add(GenerationsOres.METEORITE_ORE_SET.getOre(), GenerationsOres.METEORITE_ORE_SET.getDeepslateOre());
             //Vanilla Ores
@@ -172,10 +168,6 @@ public class TagsDatagen {
                     .addTag(GenerationsBlockTags.SILICON_ORES)
                     .addTag(GenerationsBlockTags.Z_CRYSTAL_ORES)
                     .addTag(GenerationsBlockTags.FOSSIL_ORES)
-                    .addTag(GenerationsBlockTags.TUMBLESTONE_ORES)
-                    .addTag(GenerationsBlockTags.RARE_TUMBLESTONE_ORES)
-                    .addTag(GenerationsBlockTags.SKY_TUMBLESTONE_ORES)
-                    .addTag(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES)
                     .addTag(GenerationsBlockTags.MEGASTONE_ORES)
                     .addTag(GenerationsBlockTags.METEORITE_ORES);
                     /*
@@ -327,10 +319,6 @@ public class TagsDatagen {
             copy(GenerationsBlockTags.SILICON_ORES, GenerationsItemTags.SILICON_ORES);
             copy(GenerationsBlockTags.Z_CRYSTAL_ORES, GenerationsItemTags.Z_CRYSTAL_ORES);
             copy(GenerationsBlockTags.FOSSIL_ORES, GenerationsItemTags.FOSSIL_ORES);
-            copy(GenerationsBlockTags.TUMBLESTONE_ORES, GenerationsItemTags.TUMBLESTONE_ORES);
-            copy(GenerationsBlockTags.RARE_TUMBLESTONE_ORES, GenerationsItemTags.RARE_TUMBLESTONE_ORES);
-            copy(GenerationsBlockTags.SKY_TUMBLESTONE_ORES, GenerationsItemTags.SKY_TUMBLESTONE_ORES);
-            copy(GenerationsBlockTags.BLACK_TUMBLESTONE_ORES, GenerationsItemTags.BLACK_TUMBLESTONE_ORES);
             copy(GenerationsBlockTags.MEGASTONE_ORES, GenerationsItemTags.MEGASTONE_ORES);
             copy(GenerationsBlockTags.METEORITE_ORES, GenerationsItemTags.METEORITE_ORES);
             /*

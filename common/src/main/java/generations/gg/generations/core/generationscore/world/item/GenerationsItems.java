@@ -976,10 +976,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> RUBY = register("ruby", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> SAPPHIRE = register("sapphire", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> SILICON = register("silicon", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> TUMBLESTONE = register("tumblestone", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> BLACK_TUMBLESTONE = register("black_tumblestone", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SKY_TUMBLESTONE = register("sky_tumblestone", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RARE_TUMBLESTONE = register("rare_tumblestone", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, GenerationsCreativeTabs.BUILDING_BLOCKS);
 
     /**

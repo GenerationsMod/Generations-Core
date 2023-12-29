@@ -57,10 +57,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get());
 
         //Ores
-        addOreSet(GenerationsOres.TUMBLESTONE_ORE_SET);
-        addOreSet(GenerationsOres.BLACK_TUMBLESTONE_ORE_SET);
-        addOreSet(GenerationsOres.SKY_TUMBLESTONE_ORE_SET);
-        addOreSet(GenerationsOres.RARE_TUMBLESTONE_ORE_SET);
         addOreSet(GenerationsOres.ALUMINUM_ORE_SET);
         addOreSet(GenerationsOres.CRYSTAL_ORE_SET);
         addOreSet(GenerationsOres.RUBY_ORE_SET);

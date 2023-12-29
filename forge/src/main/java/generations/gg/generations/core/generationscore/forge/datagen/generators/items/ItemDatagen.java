@@ -1157,11 +1157,6 @@ public class ItemDatagen extends ItemModelProvider {
         createTm(GenerationsItems.TM_170);
         createTm(GenerationsItems.TM_171);
 
-        createItem(GenerationsItems.TUMBLESTONE.get(), "tumblestone/");
-        createItem(GenerationsItems.BLACK_TUMBLESTONE.get(), "tumblestone/");
-        createItem(GenerationsItems.RARE_TUMBLESTONE.get(), "tumblestone/");
-        createItem(GenerationsItems.SKY_TUMBLESTONE.get(), "tumblestone/");
-
         createItemBlock(GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM.get(), "block/");
         createItemBlock(GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM.get(), "block/");
         createItemBlock(GenerationsBlocks.BALLONLEA_PINK_MUSHROOM.get(), "block/");

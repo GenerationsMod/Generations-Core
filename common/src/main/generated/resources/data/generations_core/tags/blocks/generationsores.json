@@ -7,10 +7,6 @@
     "#generations_core:ores/silicon_ores",
     "#generations_core:ores/z_crystal_ores",
     "#generations_core:ores/fossil_ores",
-    "#generations_core:ores/tumblestone_ores",
-    "#generations_core:ores/rare_tumblestone_ores",
-    "#generations_core:ores/sky_tumblestone_ores",
-    "#generations_core:ores/black_tumblestone_ores",
     "#generations_core:ores/megastone_ores",
     "#generations_core:ores/meteorite_ores"
   ]
