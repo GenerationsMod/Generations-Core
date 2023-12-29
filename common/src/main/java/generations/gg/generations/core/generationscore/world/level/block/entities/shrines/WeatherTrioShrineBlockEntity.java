@@ -2,8 +2,8 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.shrines.WeatherTrioShrineBlock;
 import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.WeatherTrioShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;

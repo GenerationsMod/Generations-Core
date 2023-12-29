@@ -24,6 +24,10 @@ public class GenerationsVoxelShapes {
         return new DirectionalShapes(rotateShape(source, Direction.NORTH, shape), rotateShape(source, Direction.EAST, shape), rotateShape(source, Direction.SOUTH, shape), rotateShape(source, Direction.WEST, shape));
     }
 
+    public static DirectionalShapes generateDirectionVoxelShape(VoxelShape shape) {
+        return  generateDirectionVoxelShape(shape, Direction.NORTH);
+    }
+
     public static GenericRotatableShapes generateRotationalVoxelShape(VoxelShape shape, Direction source, int width, int height, int length) {
         var array = new DirectionalShapes[width*height*length];
 

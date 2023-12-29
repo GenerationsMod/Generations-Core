@@ -13,6 +13,7 @@ import generations.gg.generations.core.generationscore.world.dialogue.nodes.spaw
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogic;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
@@ -21,16 +22,25 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
+import static net.minecraft.world.phys.shapes.BooleanOp.OR;
+
 @SuppressWarnings("deprecation")
 public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
+    private static final GenerationsVoxelShapes.DirectionalShapes SHAPE = GenerationsVoxelShapes.generateDirectionVoxelShape(
+            Shapes.join(Shapes.box(0.1875, 0, 0.1875, 0.8125, 0.109375, 0.8125),
+                Shapes.box(0.21875, 0, 0.21875, 0.78125, 1, 0.78125), OR));
 
     private static final LocationLogic TAPU_LOCATION = BlockLocationLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
     private static final YawLogic TAPU_YAW = BlockYawLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
@@ -78,5 +88,10 @@ public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
     private static SpawnPokemonNode generateTapu(String name) {
         return new SpawnPokemonNode(GenerationsUtils.parseProperties(name + " level=70"), 20, TAPU_LOCATION, TAPU_YAW);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE.getShape(state);
     }
 }
