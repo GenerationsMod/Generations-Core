@@ -56,6 +56,7 @@ import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
@@ -174,14 +175,11 @@ public class GenerationsCoreClient {
             else return 0;
         });
 
-
-
         registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.MASTERBALL_CHEST.get());
     }
-
 
     private static void registerChestRenderer(GenericChestBlock chest) {
         CobblemonBuiltinItemRendererRegistry.INSTANCE.register(chest.asItem(), new GenericChestItemStackRenderer(() -> new GenericChestBlockEntity(BlockPos.ZERO, chest.defaultBlockState())));
