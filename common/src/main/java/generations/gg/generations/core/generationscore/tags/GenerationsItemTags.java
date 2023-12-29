@@ -25,7 +25,6 @@ public class GenerationsItemTags {
 
     public static final TagKey<Item> POKEMAIL = create("pokemail");
     public static final TagKey<Item> CLOSED_POKEMAIL = create("sealed_pokemail");
-    public static final TagKey<Item> POKEBALLS = create("pokeballs");
     public static final TagKey<Item> BADGES = create("badges");
     public static final TagKey<Item> RIBBONS = create("ribbons");
 

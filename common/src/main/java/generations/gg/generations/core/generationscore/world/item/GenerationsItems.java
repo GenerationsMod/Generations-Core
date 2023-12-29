@@ -47,17 +47,6 @@ public class GenerationsItems {
     /** Generations Badges Deferred Register */
     public static final DeferredRegister<Item> BADGES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Pokeballs Deferred Register */
-    public static final DeferredRegister<Item> POKEBALLS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
-
-    /**
-     * Pokeballs
-     */
-    public static final RegistrySupplier<Item> POKE_BALL = registerPokeBall("poke_ball", Item::new); //createPokeball(PokeBall.POKE_BALL);
-    public static final RegistrySupplier<Item> ULTRA_BALL = registerPokeBall("ultra_ball", Item::new); //createPokeball(PokeBall.ULTRA_BALL);
-    public static final RegistrySupplier<Item> GREAT_BALL = registerPokeBall("great_ball", Item::new); //createPokeball(PokeBall.GREAT_BALL);
-    public static final RegistrySupplier<Item> MASTER_BALL = registerPokeBall("master_ball", Item::new); //createPokeball(PokeBall.MASTER_BALL);
-
     /**
      * Restoration Items
      */
@@ -1522,10 +1511,6 @@ public class GenerationsItems {
         return new Item.Properties();
     }
 
-    public static RegistrySupplier<Item> registerPokeBall(String name, Function<Item.Properties, Item> itemSupplier) {
-        return POKEBALLS.register(name, () -> itemSupplier.apply(of()));
-    }
-
     public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
         return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
     }
@@ -1548,7 +1533,5 @@ public class GenerationsItems {
         ITEMS.register();
         BADGES.register();
         RIBBONS.register();
-        GenerationsCore.LOGGER.info("Registering Generations PokeBalls");
-        POKEBALLS.register();
     }
 }

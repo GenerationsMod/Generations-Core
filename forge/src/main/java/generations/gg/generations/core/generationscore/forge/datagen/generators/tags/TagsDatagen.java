@@ -417,7 +417,6 @@ public class TagsDatagen {
             RIBBONS.forEach(ribbon -> tag(GenerationsItemTags.RIBBONS).add(ribbon.get()));
             BADGES.forEach(badge -> tag(GenerationsItemTags.BADGES).add(badge.get()));
             tag(GenerationsItemTags.GENERATIONSITEMS).addTag(GenerationsItemTags.RIBBONS).addTag(GenerationsItemTags.BADGES);
-            POKEBALLS.forEach(pokeball -> tag(GenerationsItemTags.POKEBALLS).add(pokeball.get()));
 
             tag(GenerationsItemTags.POKEMAIL).add(
                     POKEMAIL_AIR.get(),
