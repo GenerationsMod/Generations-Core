@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:friend_ball"
+          "name": "cobblemon:friend_ball"
         }
       ],
       "rolls": 1.0

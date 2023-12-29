@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:dusk_ball"
+          "name": "cobblemon:dusk_ball"
         }
       ],
       "rolls": 1.0

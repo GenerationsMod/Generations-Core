@@ -25,6 +25,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -924,7 +925,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<MeltanBox> MELTAN_BOX = register("meltan_box", properties -> new MeltanBox(properties.stacksTo(1).durability(200)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MELTAN_BOX_CHARGED = register("meltan_box_charged", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)) {
         @Override
-        public boolean isFoil(ItemStack stack) {
+        public boolean isFoil(@NotNull ItemStack stack) {
             return true;
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1364,7 +1365,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> POKEBLOCK_KIT = register("pokeblock_kit", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKEMON_BOX_LINK = register("pokemon_box_link", properties -> new Item(properties.stacksTo(1)) {
         @Override
-        public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+        public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand interactionHand) {
             return super.use(level, player, interactionHand);
         }
     }, GenerationsCreativeTabs.UNIMPLEMENTED);

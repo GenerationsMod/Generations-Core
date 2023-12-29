@@ -276,7 +276,7 @@ public class GenerationsBlockEntities {
             GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get(),
             GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get(),
             GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get(),
-            GenerationsDecorationBlocks.GS_BALL_DISPLAY.get(),
+            //GenerationsDecorationBlocks.GS_BALL_DISPLAY.get(),
             GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get(),
             GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get(),
             GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get(),
