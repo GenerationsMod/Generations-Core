@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:sport_ball"
+          "name": "cobblemon:sport_ball"
         }
       ],
       "rolls": 1.0

@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:premier_ball"
+          "name": "cobblemon:premier_ball"
         }
       ],
       "rolls": 1.0

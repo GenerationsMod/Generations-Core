@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
+import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -121,32 +122,32 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()))
                 .save(consumer);
 
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.POKE_BALL.get(), GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.GREAT_BALL.get(), GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.ULTRA_BALL.get(), GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.MASTER_BALL.get(), GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.CHERISH_BALL.get(), GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.DIVE_BALL.get(), GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.DUSK_BALL.get(), GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.FAST_BALL.get(), GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.FRIEND_BALL.get(), GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.GS_BALL.get(), GenerationsDecorationBlocks.GS_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.HEAL_BALL.get(), GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.HEAVY_BALL.get(), GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LEVEL_BALL.get(), GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LOVE_BALL.get(), GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LURE_BALL.get(), GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.LUXURY_BALL.get(), GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.MOON_BALL.get(), GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.NEST_BALL.get(), GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.NET_BALL.get(), GenerationsDecorationBlocks.NET_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.PARK_BALL.get(), GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.PREMIER_BALL.get(), GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.QUICK_BALL.get(), GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.REPEAT_BALL.get(), GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.SAFARI_BALL.get(), GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.SPORT_BALL.get(), GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(consumer, GenerationsItems.TIMER_BALL.get(), GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.POKE_BALL.asItem(), GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.GREAT_BALL.asItem(), GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.ULTRA_BALL.asItem(), GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.MASTER_BALL.asItem(), GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.CHERISH_BALL.asItem(), GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.DIVE_BALL.asItem(), GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.DUSK_BALL.asItem(), GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.FAST_BALL.asItem(), GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.FRIEND_BALL.asItem(), GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get());
+        //buildPokeBallDisplayRecipes(consumer, CobblemonItems.GS_BALL.asItem(), GenerationsDecorationBlocks.GS_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.HEAL_BALL.asItem(), GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.HEAVY_BALL.asItem(), GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.LEVEL_BALL.asItem(), GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.LOVE_BALL.asItem(), GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.LURE_BALL.asItem(), GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.LUXURY_BALL.asItem(), GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.MOON_BALL.asItem(), GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.NEST_BALL.asItem(), GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.NET_BALL.asItem(), GenerationsDecorationBlocks.NET_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.PARK_BALL.asItem(), GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.PREMIER_BALL.asItem(), GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.QUICK_BALL.asItem(), GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.REPEAT_BALL.asItem(), GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.SAFARI_BALL.asItem(), GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.SPORT_BALL.asItem(), GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get());
+        buildPokeBallDisplayRecipes(consumer, CobblemonItems.TIMER_BALL.asItem(), GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsUtilityBlocks.SCARECROW.get())
                 .pattern(" # ")

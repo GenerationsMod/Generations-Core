@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
@@ -22,9 +22,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Locale;
 import java.util.function.Supplier;
 
+@SuppressWarnings("deprecated")
 public class BallDisplayBlock extends GenericRotatableModelBlock<BallDisplayBlockEntity> {
-    private static VoxelShape FULL = Shapes.box(0.25, 0, 0.25, 0.75, 0.625, 0.75);
-    private static VoxelShape EMPTY = Shapes.box(0.25, 0, 0.25, 0.75, 0.125, 0.75);
+    private static final VoxelShape FULL = Shapes.box(0.25, 0, 0.25, 0.75, 0.625, 0.75);
+    private static final VoxelShape EMPTY = Shapes.box(0.25, 0, 0.25, 0.75, 0.125, 0.75);
     private final String variant;
     private final DisplayState state;
 
@@ -39,7 +40,7 @@ public class BallDisplayBlock extends GenericRotatableModelBlock<BallDisplayBloc
     }
 
     @Override
-    public @NotNull VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    public @NotNull VoxelShape getShape(@NotNull BlockState blockState, @NotNull BlockGetter blockGetter, @NotNull BlockPos blockPos, @NotNull CollisionContext collisionContext) {
         return state == DisplayState.EMPTY ? EMPTY : FULL;
     }
 
@@ -58,33 +59,33 @@ public class BallDisplayBlock extends GenericRotatableModelBlock<BallDisplayBloc
         return InteractionResult.SUCCESS;
     }
     public enum DisplayState {
-        EMPTY(() -> () -> Items.AIR, () -> GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY),
-        POKE(() -> GenerationsItems.POKE_BALL, () -> GenerationsDecorationBlocks.POKE_BALL_DISPLAY),
-        GREAT(() -> GenerationsItems.GREAT_BALL, () -> GenerationsDecorationBlocks.GREAT_BALL_DISPLAY),
-        ULTRA(() -> GenerationsItems.ULTRA_BALL, () -> GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY),
-        MASTER(() -> GenerationsItems.MASTER_BALL, () -> GenerationsDecorationBlocks.MASTER_BALL_DISPLAY),
-        CHERISH(() -> GenerationsItems.CHERISH_BALL, () -> GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY),
-        DIVE(() -> GenerationsItems.DIVE_BALL, () -> GenerationsDecorationBlocks.DIVE_BALL_DISPLAY),
-        DUSK(() -> GenerationsItems.DUSK_BALL, () -> GenerationsDecorationBlocks.DUSK_BALL_DISPLAY),
-        FAST(() -> GenerationsItems.FAST_BALL, () -> GenerationsDecorationBlocks.FAST_BALL_DISPLAY),
-        FRIEND(() -> GenerationsItems.FRIEND_BALL, () -> GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY),
-        GS(() -> GenerationsItems.GS_BALL, () -> GenerationsDecorationBlocks.GS_BALL_DISPLAY),
-        HEAL(() -> GenerationsItems.HEAL_BALL, () -> GenerationsDecorationBlocks.HEAL_BALL_DISPLAY),
-        HEAVY(() -> GenerationsItems.HEAVY_BALL, () -> GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY),
-        LEVEL(() -> GenerationsItems.LEVEL_BALL, () -> GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY),
-        LOVE(() -> GenerationsItems.LOVE_BALL, () -> GenerationsDecorationBlocks.LOVE_BALL_DISPLAY),
-        LURE(() -> GenerationsItems.LURE_BALL, () -> GenerationsDecorationBlocks.LURE_BALL_DISPLAY),
-        LUXURY(() -> GenerationsItems.LUXURY_BALL, () -> GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY),
-        MOON(() -> GenerationsItems.MOON_BALL, () -> GenerationsDecorationBlocks.MOON_BALL_DISPLAY),
-        NEST(() -> GenerationsItems.NEST_BALL, () -> GenerationsDecorationBlocks.NEST_BALL_DISPLAY),
-        NET(() -> GenerationsItems.NET_BALL, () -> GenerationsDecorationBlocks.NET_BALL_DISPLAY),
-        PARK(() -> GenerationsItems.PARK_BALL, () -> GenerationsDecorationBlocks.PARK_BALL_DISPLAY),
-        PREMIER(() -> GenerationsItems.PREMIER_BALL, () -> GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY),
-        QUICK(() -> GenerationsItems.QUICK_BALL, () -> GenerationsDecorationBlocks.QUICK_BALL_DISPLAY),
-        REPEAT(() -> GenerationsItems.REPEAT_BALL, () -> GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY),
-        SAFARI(() -> GenerationsItems.SAFARI_BALL, () -> GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY),
-        SPORT(() -> GenerationsItems.SPORT_BALL, () -> GenerationsDecorationBlocks.SPORT_BALL_DISPLAY),
-        TIMER(() -> GenerationsItems.TIMER_BALL, () -> GenerationsDecorationBlocks.TIMER_BALL_DISPLAY);
+        EMPTY(() -> Items.AIR::asItem, () -> GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY),
+        POKE(() -> CobblemonItems.POKE_BALL::asItem, () -> GenerationsDecorationBlocks.POKE_BALL_DISPLAY),
+        GREAT(() -> CobblemonItems.GREAT_BALL::asItem, () -> GenerationsDecorationBlocks.GREAT_BALL_DISPLAY),
+        ULTRA(() -> CobblemonItems.ULTRA_BALL::asItem, () -> GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY),
+        MASTER(() -> CobblemonItems.MASTER_BALL::asItem, () -> GenerationsDecorationBlocks.MASTER_BALL_DISPLAY),
+        CHERISH(() -> CobblemonItems.CHERISH_BALL::asItem, () -> GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY),
+        DIVE(() -> CobblemonItems.DIVE_BALL::asItem, () -> GenerationsDecorationBlocks.DIVE_BALL_DISPLAY),
+        DUSK(() -> CobblemonItems.DUSK_BALL::asItem, () -> GenerationsDecorationBlocks.DUSK_BALL_DISPLAY),
+        FAST(() -> CobblemonItems.FAST_BALL::asItem, () -> GenerationsDecorationBlocks.FAST_BALL_DISPLAY),
+        FRIEND(() -> CobblemonItems.FRIEND_BALL::asItem, () -> GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY),
+        //GS(() -> CobblemonItems.GS_BALL::asItem, () -> GenerationsDecorationBlocks.GS_BALL_DISPLAY),
+        HEAL(() -> CobblemonItems.HEAL_BALL::asItem, () -> GenerationsDecorationBlocks.HEAL_BALL_DISPLAY),
+        HEAVY(() -> CobblemonItems.HEAVY_BALL::asItem, () -> GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY),
+        LEVEL(() -> CobblemonItems.LEVEL_BALL::asItem, () -> GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY),
+        LOVE(() -> CobblemonItems.LOVE_BALL::asItem, () -> GenerationsDecorationBlocks.LOVE_BALL_DISPLAY),
+        LURE(() -> CobblemonItems.LURE_BALL::asItem, () -> GenerationsDecorationBlocks.LURE_BALL_DISPLAY),
+        LUXURY(() -> CobblemonItems.LUXURY_BALL::asItem, () -> GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY),
+        MOON(() -> CobblemonItems.MOON_BALL::asItem, () -> GenerationsDecorationBlocks.MOON_BALL_DISPLAY),
+        NEST(() -> CobblemonItems.NEST_BALL::asItem, () -> GenerationsDecorationBlocks.NEST_BALL_DISPLAY),
+        NET(() -> CobblemonItems.NET_BALL::asItem, () -> GenerationsDecorationBlocks.NET_BALL_DISPLAY),
+        PARK(() -> CobblemonItems.PARK_BALL::asItem, () -> GenerationsDecorationBlocks.PARK_BALL_DISPLAY),
+        PREMIER(() -> CobblemonItems.PREMIER_BALL::asItem, () -> GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY),
+        QUICK(() -> CobblemonItems.QUICK_BALL::asItem, () -> GenerationsDecorationBlocks.QUICK_BALL_DISPLAY),
+        REPEAT(() -> CobblemonItems.REPEAT_BALL::asItem, () -> GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY),
+        SAFARI(() -> CobblemonItems.SAFARI_BALL::asItem, () -> GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY),
+        SPORT(() -> CobblemonItems.SPORT_BALL::asItem, () -> GenerationsDecorationBlocks.SPORT_BALL_DISPLAY),
+        TIMER(() -> CobblemonItems.TIMER_BALL::asItem, () -> GenerationsDecorationBlocks.TIMER_BALL_DISPLAY);
         private final Supplier<Supplier<Item>> ball;
         private final Supplier<Supplier<BallDisplayBlock>> block;
 

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
+import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
@@ -602,16 +603,16 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
          * PokeChests
          */
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKEBALL_CHEST.get())
-                .define('E', GenerationsItems.POKE_BALL.get())
+                .define('E', CobblemonItems.POKE_BALL.asItem())
                 .define('X', Blocks.CHEST)
                 .pattern("EEE")
                 .pattern("EXE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsItems.POKE_BALL.get()), has(GenerationsItems.POKE_BALL.get()))
+                .unlockedBy(getHasName(CobblemonItems.POKE_BALL.asItem()), has(CobblemonItems.POKE_BALL.asItem()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GREATBALL_CHEST.get())
-                .define('E', GenerationsItems.GREAT_BALL.get())
+                .define('E', CobblemonItems.GREAT_BALL.asItem())
                 .define('X', GenerationsBlocks.POKEBALL_CHEST.get())
                 .pattern("EEE")
                 .pattern("EXE")
@@ -620,7 +621,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ULTRABALL_CHEST.get())
-                .define('E', GenerationsItems.ULTRA_BALL.get())
+                .define('E', CobblemonItems.ULTRA_BALL.asItem())
                 .define('X', GenerationsBlocks.GREATBALL_CHEST.get())
                 .pattern("EEE")
                 .pattern("EXE")
@@ -629,7 +630,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MASTERBALL_CHEST.get())
-                .define('E', GenerationsItems.MASTER_BALL.get())
+                .define('E', CobblemonItems.MASTER_BALL.asItem())
                 .define('X', GenerationsBlocks.ULTRABALL_CHEST.get())
                 .pattern("EEE")
                 .pattern("EXE")

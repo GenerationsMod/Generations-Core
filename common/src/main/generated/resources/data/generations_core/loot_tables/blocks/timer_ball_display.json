@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:timer_ball"
+          "name": "cobblemon:timer_ball"
         }
       ],
       "rolls": 1.0

@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:heavy_ball"
+          "name": "cobblemon:heavy_ball"
         }
       ],
       "rolls": 1.0

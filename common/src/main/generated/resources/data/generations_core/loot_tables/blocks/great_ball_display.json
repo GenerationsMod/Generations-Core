@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:great_ball"
+          "name": "cobblemon:great_ball"
         }
       ],
       "rolls": 1.0

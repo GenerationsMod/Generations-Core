@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:nest_ball"
+          "name": "cobblemon:nest_ball"
         }
       ],
       "rolls": 1.0

@@ -26,7 +26,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "generations_core:dive_ball"
+          "name": "cobblemon:dive_ball"
         }
       ],
       "rolls": 1.0

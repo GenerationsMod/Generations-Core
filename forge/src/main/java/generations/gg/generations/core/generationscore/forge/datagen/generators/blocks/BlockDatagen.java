@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
@@ -12,7 +11,6 @@ import net.minecraft.data.BlockFamily;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -192,10 +190,10 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerDoor(GenerationsBlocks.POKECENTER_DOOR.get());
 
 
-        pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, GenerationsItems.POKE_BALL);
-        pokeBallChests(GenerationsBlocks.GREATBALL_CHEST, GenerationsItems.GREAT_BALL);
-        pokeBallChests(GenerationsBlocks.ULTRABALL_CHEST, GenerationsItems.ULTRA_BALL);
-        pokeBallChests(GenerationsBlocks.MASTERBALL_CHEST, GenerationsItems.MASTER_BALL);
+        pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, "poke_ball");
+        pokeBallChests(GenerationsBlocks.GREATBALL_CHEST, "great_ball");
+        pokeBallChests(GenerationsBlocks.ULTRABALL_CHEST, "ultra_ball");
+        pokeBallChests(GenerationsBlocks.MASTERBALL_CHEST, "master_ball");
 
         //Furnaces
         registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE);
@@ -530,8 +528,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         });
     }
 
-    private void pokeBallChests(RegistrySupplier<GenericChestBlock> chest, RegistrySupplier<Item> pokeball){
-        simpleBlock(chest.get(), models().getBuilder(chest.getId().getPath()).texture("particle", GenerationsCore.id("item/pokeballs/" + pokeball.getId().getPath())));
+    private void pokeBallChests(RegistrySupplier<GenericChestBlock> chest, String ballName){
+        simpleBlock(chest.get(), models().getBuilder(chest.getId().getPath()).texture("particle", GenerationsCore.id("item/pokeballs/" + ballName)));
     }
 
 

@@ -27,8 +27,6 @@ public class ItemDatagen extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        GenerationsItems.POKEBALLS.forEach(pokeball -> createItem(pokeball.get(), "pokeballs/"));
-
         createItem(GenerationsItems.POTION.get(), "restoration/");
         createItem(GenerationsItems.SUPER_POTION.get(), "restoration/");
         createItem(GenerationsItems.HYPER_POTION.get(), "restoration/");

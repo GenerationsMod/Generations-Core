@@ -49,7 +49,6 @@ public class GeneralLang extends LanguageProvider {
                 add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
             }
         });
-        addItemEntries(GenerationsItems.POKEBALLS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
 

@@ -25,6 +25,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -45,49 +46,6 @@ public class GenerationsItems {
 
     /** Generations Badges Deferred Register */
     public static final DeferredRegister<Item> BADGES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
-
-    /** Generations Pokeballs Deferred Register */
-    public static final DeferredRegister<Item> POKEBALLS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
-
-    /**
-     * Pokeballs
-     */
-    public static final RegistrySupplier<Item> POKE_BALL = registerPokeBall("poke_ball", Item::new); //createPokeball(PokeBall.POKE_BALL);
-    public static final RegistrySupplier<Item> ULTRA_BALL = registerPokeBall("ultra_ball", Item::new); //createPokeball(PokeBall.ULTRA_BALL);
-    public static final RegistrySupplier<Item> GREAT_BALL = registerPokeBall("great_ball", Item::new); //createPokeball(PokeBall.GREAT_BALL);
-    public static final RegistrySupplier<Item> MASTER_BALL = registerPokeBall("master_ball", Item::new); //createPokeball(PokeBall.MASTER_BALL);
-    public static final RegistrySupplier<Item> LEVEL_BALL = registerPokeBall("level_ball", Item::new); //createPokeball(PokeBall.LEVEL_BALL);
-    public static final RegistrySupplier<Item> MOON_BALL = registerPokeBall("moon_ball", Item::new); //createPokeball(PokeBall.MOON_BALL);
-    public static final RegistrySupplier<Item> FRIEND_BALL = registerPokeBall("friend_ball", Item::new); //createPokeball(PokeBall.FRIEND_BALL);
-    public static final RegistrySupplier<Item> LOVE_BALL = registerPokeBall("love_ball", Item::new); //createPokeball(PokeBall.LOVE_BALL);
-    public static final RegistrySupplier<Item> SAFARI_BALL = registerPokeBall("safari_ball", Item::new); //createPokeball(PokeBall.SAFARI_BALL);
-    public static final RegistrySupplier<Item> HEAVY_BALL = registerPokeBall("heavy_ball", Item::new); //createPokeball(PokeBall.HEAVY_BALL);
-    public static final RegistrySupplier<Item> FAST_BALL = registerPokeBall("fast_ball", Item::new); //createPokeball(PokeBall.FAST_BALL);
-    public static final RegistrySupplier<Item> REPEAT_BALL = registerPokeBall("repeat_ball", Item::new); //createPokeball(PokeBall.REPEAT_BALL);
-    public static final RegistrySupplier<Item> TIMER_BALL = registerPokeBall("timer_ball", Item::new); //createPokeball(PokeBall.TIMER_BALL);
-    public static final RegistrySupplier<Item> NEST_BALL = registerPokeBall("nest_ball", Item::new); //createPokeball(PokeBall.NEST_BALL);
-    public static final RegistrySupplier<Item> NET_BALL = registerPokeBall("net_ball", Item::new); //createPokeball(PokeBall.NET_BALL);
-    public static final RegistrySupplier<Item> DIVE_BALL = registerPokeBall("dive_ball", Item::new); //createPokeball(PokeBall.DIVE_BALL);
-    public static final RegistrySupplier<Item> LUXURY_BALL = registerPokeBall("luxury_ball", Item::new); //createPokeball(PokeBall.LUXURY_BALL);
-    public static final RegistrySupplier<Item> HEAL_BALL = registerPokeBall("heal_ball", Item::new); //createPokeball(PokeBall.HEAL_BALL);
-    public static final RegistrySupplier<Item> DUSK_BALL = registerPokeBall("dusk_ball", Item::new); //createPokeball(PokeBall.DUSK_BALL);
-    public static final RegistrySupplier<Item> PREMIER_BALL = registerPokeBall("premier_ball", Item::new); //createPokeball(PokeBall.PREMIER_BALL);
-    public static final RegistrySupplier<Item> SPORT_BALL = registerPokeBall("sport_ball", Item::new); //createPokeball(PokeBall.SPORT_BALL);
-    public static final RegistrySupplier<Item> PARK_BALL = registerPokeBall("park_ball", Item::new); //createPokeball(PokeBall.PARK_BALL);
-    public static final RegistrySupplier<Item> QUICK_BALL = registerPokeBall("quick_ball", Item::new); //createPokeball(PokeBall.QUICK_BALL);
-    public static final RegistrySupplier<Item> LURE_BALL = registerPokeBall("lure_ball", Item::new); //createPokeball(PokeBall.LURE_BALL);
-    public static final RegistrySupplier<Item> CHERISH_BALL = registerPokeBall("cherish_ball", Item::new); //createPokeball(PokeBall.CHERISH_BALL);
-    public static final RegistrySupplier<Item> GS_BALL = registerPokeBall("gs_ball", Item::new); //createPokeball(PokeBall.GS_BALL);
-    public static final RegistrySupplier<Item> BEAST_BALL = registerPokeBall("beast_ball", Item::new); //createPokeball(PokeBall.BEAST_BALL);
-    public static final RegistrySupplier<Item> DREAM_BALL = registerPokeBall("dream_ball", Item::new); //createPokeball(PokeBall.DREAM_BALL);
-    public static final RegistrySupplier<Item> LEADEN_BALL = registerPokeBall("leaden_ball", Item::new); //createPokeball(PokeBall.LEADEN_BALL);
-    public static final RegistrySupplier<Item> WING_BALL = registerPokeBall("wing_ball", Item::new); //createPokeball(PokeBall.WING_BALL);
-    public static final RegistrySupplier<Item> GIGATON_BALL = registerPokeBall("gigaton_ball", Item::new); //createPokeball(PokeBall.GIGATON_BALL);
-    public static final RegistrySupplier<Item> FEATHER_BALL = registerPokeBall("feather_ball", Item::new); //createPokeball(PokeBall.FEATHER_BALL);
-    public static final RegistrySupplier<Item> JET_BALL = registerPokeBall("jet_ball", Item::new); //createPokeball(PokeBall.JET_BALL);
-    public static final RegistrySupplier<Item> STRANGE_BALL = registerPokeBall("strange_ball", Item::new);
-    public static final RegistrySupplier<Item> ORIGIN_BALL = registerPokeBall("origin_ball", Item::new);
-
 
     /**
      * Restoration Items
@@ -924,7 +882,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<MeltanBox> MELTAN_BOX = register("meltan_box", properties -> new MeltanBox(properties.stacksTo(1).durability(200)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MELTAN_BOX_CHARGED = register("meltan_box_charged", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)) {
         @Override
-        public boolean isFoil(ItemStack stack) {
+        public boolean isFoil(@NotNull ItemStack stack) {
             return true;
         }
     }, GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1364,7 +1322,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> POKEBLOCK_KIT = register("pokeblock_kit", properties -> new Item(properties.stacksTo(1)), GenerationsCreativeTabs.UNIMPLEMENTED);
     public static final RegistrySupplier<Item> POKEMON_BOX_LINK = register("pokemon_box_link", properties -> new Item(properties.stacksTo(1)) {
         @Override
-        public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+        public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand interactionHand) {
             return super.use(level, player, interactionHand);
         }
     }, GenerationsCreativeTabs.UNIMPLEMENTED);
@@ -1553,10 +1511,6 @@ public class GenerationsItems {
         return new Item.Properties();
     }
 
-    public static RegistrySupplier<Item> registerPokeBall(String name, Function<Item.Properties, Item> itemSupplier) {
-        return POKEBALLS.register(name, () -> itemSupplier.apply(of()));
-    }
-
     public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
         return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
     }
@@ -1579,7 +1533,5 @@ public class GenerationsItems {
         ITEMS.register();
         BADGES.register();
         RIBBONS.register();
-        GenerationsCore.LOGGER.info("Registering Generations PokeBalls");
-        POKEBALLS.register();
     }
 }
