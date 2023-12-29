@@ -7,13 +7,17 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -28,29 +32,19 @@ public class RksMachineBlock extends GenericRotatableModelBlock<RksMachineBlockE
 
     }
 
-//    @Override
-//    protected void onRemove(Level level, BlockPos pos) {
-//        getAssoicatedBlockEntity(level, pos).ifPresent(machine -> {
-//            final NonNullList<ItemStack> inventory = machine.inventory;
-//            Containers.dropContents(level, pos, inventory);
-//
-//            level.updateNeighbourForOutputSignal(pos, this);
-//        });
-//    }
+    @Override
+    public void onRemove(BlockState oldState, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (!oldState.is(newState.getBlock())) {
+            BlockEntity tileEntity = worldIn.getBlockEntity(pos);
+            if (tileEntity instanceof RksMachineBlockEntity machine) {
+                final NonNullList<ItemStack> inventory = machine.inventory;
+                Containers.dropContents(worldIn, pos, inventory);
 
-    //    @Override
-//    public void onRemove(BlockState oldState, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
-//        if (!oldState.is(newState.getBlock())) {
-//            BlockEntity tileEntity = worldIn.getBlockEntity(pos);
-//            if (tileEntity instanceof RksMachineBlockEntity machine) {
-//                final NonNullList<ItemStack> inventory = machine.inventory;
-//                Containers.dropContents(worldIn, pos, inventory);
-//
-//                worldIn.updateNeighbourForOutputSignal(pos, this);
-//            }
-//        }
-//        super.onRemove(oldState, worldIn, pos, newState, isMoving);
-//    }
+                worldIn.updateNeighbourForOutputSignal(pos, this);
+            }
+        }
+        super.onRemove(oldState, worldIn, pos, newState, isMoving);
+    }
 
     @Nullable
     public BlockEntityTicker<RksMachineBlockEntity> getTicker(@NotNull Level level, @NotNull BlockState blockState, @NotNull BlockEntityType entityType) {

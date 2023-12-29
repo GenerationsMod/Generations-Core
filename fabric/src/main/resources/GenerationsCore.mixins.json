@@ -12,8 +12,7 @@
     "RecipeBookSettingsAccessor"
   ],
   "client": [
-    "MainMixin",
-    "client.RecipeBookCategoriesMixin"
+    "MainMixin"
   ],
   "injectors": {
     "defaultRequire": 1

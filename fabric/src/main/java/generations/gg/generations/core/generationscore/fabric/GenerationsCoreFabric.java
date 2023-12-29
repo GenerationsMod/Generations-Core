@@ -6,7 +6,6 @@ import generations.gg.generations.core.generationscore.client.GenerationsCoreRec
 import generations.gg.generations.core.generationscore.client.ModRecipeBookTypes;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.util.RegisterRecipeBookCategoriesEvent;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -52,13 +51,6 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
             GenerationsCore.onAnvilChange(left, right, player, result::setOutput, result::setCost, result::setMaterialCost);
             return false;
         });
-
-        RegisterRecipeBookCategoriesEvent.EVENT.register(event -> {
-            event.registerAggregateCategory(GenerationsCoreRecipeBookGroups.RKS_SEARCH.get(), List.of(GenerationsCoreRecipeBookGroups.RKS_GENERAL.get()));
-            event.registerBookCategories(ModRecipeBookTypes.RKS, List.of(GenerationsCoreRecipeBookGroups.RKS_GENERAL.get()));
-            event.registerRecipeCategoryFinder(GenerationsCoreRecipeTypes.RKS.get(), recipe -> GenerationsCoreRecipeBookGroups.RKS_GENERAL.get());
-        });
-
 
         GenerationsCore.initBuiltinPacks((type, s, s2) -> {
             ResourceManagerHelper.registerBuiltinResourcePack(s, FabricLoader.getInstance().getModContainer("generations_core").get(), s2, ResourcePackActivationType.DEFAULT_ENABLED);
