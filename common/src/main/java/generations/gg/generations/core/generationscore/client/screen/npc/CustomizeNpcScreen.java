@@ -40,7 +40,7 @@ public class CustomizeNpcScreen extends Screen {
         this.tabs = new Tab[] {
                 new Tab(new DisplayCustomizationTab(npcEntity), new ItemStack(Items.SPYGLASS), "Display"),
                 new Tab(new HeldItemCustomizationTab(npcEntity), new ItemStack(GenerationsArmor.ROCKET.chestplate().get()), "Held Items"),
-                new Tab(new MovementCustomizationTab(npcEntity), new ItemStack(GenerationsItems.NEST_BALL.get()/*.RED_BIKE.get()*/), "Movement"),
+                new Tab(new MovementCustomizationTab(npcEntity), new ItemStack(GenerationsItems.BIKE_WHEEL.get()/*.RED_BIKE.get()*/), "Movement"),
                 new Tab(new PresetCustomizationTab(npcEntity), new ItemStack(GenerationsUtilityBlocks.ROTOM_PC.get()), "Presets")
         };
         selectTab(0);
