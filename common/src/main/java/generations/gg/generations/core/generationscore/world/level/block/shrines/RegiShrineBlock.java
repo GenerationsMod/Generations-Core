@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.legends.RegiKeyItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
@@ -70,7 +71,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                 List<BlockPos> list = checkForUnownSequence(level, blockPos.get(0));
                 if (!list.isEmpty() && level.getBlockEntity(pos) instanceof ShrineBlockEntity shrine && !shrine.isActive()) {
 //                    shrine.toggleActive();
-                    list.forEach(a -> level.setBlockAndUpdate(a.above(), Blocks.AIR.defaultBlockState()));
+                    list.forEach(a -> level.destroyBlock(a, false));
                     player.getItemInHand(hand).shrink(1);
                     PokemonUtil.spawn(species.createProperties(70), level, shrine.getBlockPos());
 //                    shrine.toggleActive();
@@ -139,7 +140,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     }
 
     private static boolean isPillar(Level level, BlockPos pos) {
-        return level.getBlockState(pos).is(GenerationsBlocks.CASTLE_PILLAR.get()); //TODO convert into tag
+        return level.getBlockState(pos).is(GenerationsBlockTags.REGI_STANDS);
     }
 
     private static String getSymbol(Level level, BlockPos pos) {

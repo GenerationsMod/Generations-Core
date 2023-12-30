@@ -38,8 +38,8 @@ public class GenerationsShrines {
 	public static final RegistrySupplier<Block> ABUNDANT_SHRINE = registerBlockItem("abundant_shrine", () -> new AbundantShrineBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> CELESTIAL_ALTAR = registerBlockItem("celestial_altar", () -> new CelestialAltarBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> LUNAR_SHRINE = registerBlockItem("lunar_shrine", () -> new LunarShrineBlock(SHRINE_PROPERTIES));
-	public static final RegistrySupplier<Block> LIGHT_CRYSTAL = registerBlockItem("light_crystal", () -> new GenericRotatableModelBlock<>(BlockBehaviour.Properties.of(), GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, GenerationsBlockEntityModels.LIGHT_CRYSTAL, 0, 1, 0));
-	public static final RegistrySupplier<Block> DARK_CRYSTAL = registerBlockItem("dark_crystal", () -> new GenericRotatableModelBlock<>(BlockBehaviour.Properties.of(), GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, GenerationsBlockEntityModels.DARK_CRYSTAL, 0, 1, 0));
+	public static final RegistrySupplier<Block> LIGHT_CRYSTAL = registerBlockItem("light_crystal", () -> new LunarCystalBlock(BlockBehaviour.Properties.of(), GenerationsBlockEntityModels.LIGHT_CRYSTAL));
+	public static final RegistrySupplier<Block> DARK_CRYSTAL = registerBlockItem("dark_crystal", () -> new LunarCystalBlock(BlockBehaviour.Properties.of(), GenerationsBlockEntityModels.DARK_CRYSTAL));
 
 	public static final RegistrySupplier<Block> MELOETTA_MUSIC_BOX = registerBlockItem("meloetta_music_box", () -> new MeloettaMusicBoxBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> REGICE_SHRINE = registerBlockItem("regice_shrine", () -> new RegiShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.REGICE_SHRINE, LegendKeys.REGICE));

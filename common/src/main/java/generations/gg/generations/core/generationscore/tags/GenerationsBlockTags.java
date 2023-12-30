@@ -30,6 +30,7 @@ public class GenerationsBlockTags {
     public static final TagKey<Block> BALL_DISPLAY_BLOCKS = create("ball_display_blocks");
     public static final TagKey<Block> BALL_LOOTS = create("ball_loots");
     public static final TagKey<Block> POKEDOLLS = create("pokedolls");
+    public static final TagKey<Block> REGI_STANDS = create("regi_stands");
 
     private static TagKey<Block> create(String name) {
         return TagKey.create(Registries.BLOCK, GenerationsCore.id(name));

@@ -14,12 +14,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import static net.minecraft.core.Direction.SOUTH;
 import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 
 public class RegigigasShrineBlock extends InteractShrineBlock<RegigigasShrineBlockEntity> {
     private static final GenerationsVoxelShapes.DirectionalShapes SHAPE = GenerationsVoxelShapes.generateDirectionVoxelShape(
             Shapes.join(Shapes.box(0, 0, 0, 1, 0.3125, 1),
-                    Shapes.box(0.125, 0, 0.25, 0.875, 0.875, 0.75), OR));
+                    Shapes.box(0.125, 0, 0.25, 0.875, 0.875, 0.75), OR), SOUTH);
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
