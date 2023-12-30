@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#cobblemon:is_coast",
+  "features": "generations_core:net_ball_loot",
+  "step": "raw_generation"
+}

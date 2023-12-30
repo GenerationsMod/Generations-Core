@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#cobblemon:is_magical",
+  "features": "generations_core:dream_ball_loot",
+  "step": "raw_generation"
+}

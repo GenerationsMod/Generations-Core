@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#cobblemon:is_bamboo",
+  "features": "generations_core:repeat_ball_loot",
+  "step": "raw_generation"
+}
