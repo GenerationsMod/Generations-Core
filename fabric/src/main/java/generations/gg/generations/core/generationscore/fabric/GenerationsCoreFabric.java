@@ -2,11 +2,11 @@ package generations.gg.generations.core.generationscore.fabric;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
-import generations.gg.generations.core.generationscore.client.GenerationsCoreRecipeBookGroups;
-import generations.gg.generations.core.generationscore.client.ModRecipeBookTypes;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
+import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
+import generations.gg.generations.core.generationscore.world.feature.GenerationsConfiguredFeatures;
+import generations.gg.generations.core.generationscore.world.feature.GenerationsPlacedFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
@@ -22,7 +22,6 @@ import net.minecraft.util.profiling.ProfilerFiller;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
@@ -55,6 +54,10 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
         GenerationsCore.initBuiltinPacks((type, s, s2) -> {
             ResourceManagerHelper.registerBuiltinResourcePack(s, FabricLoader.getInstance().getModContainer("generations_core").get(), s2, ResourcePackActivationType.DEFAULT_ENABLED);
         });
+
+        GenerationsConfiguredFeatures.init();
+        GenerationsPlacedFeatures.init();
+        GenerationsFabricBiomemodifiers.generateOres();
     }
 
     @Override

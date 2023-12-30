@@ -9,17 +9,18 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.LootTableDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.*;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.tags.TagsDatagen;
+import generations.gg.generations.core.generationscore.forge.datagen.generators.worldgen.WorldGenProvider;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * This class is used to register the data generators for the mod.
@@ -36,7 +37,8 @@ public class DataGeneratorsRegister {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         PackOutput output = generator.getPackOutput();
-        TagsDatagen.init(generator, output, event.getLookupProvider(), existingFileHelper);
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        TagsDatagen.init(generator, output, lookupProvider, existingFileHelper);
         generator.addProvider(true, new GeneralLang(output, "en_us"));
         generator.addProvider(true, new GenerationsBlockStateProvider(output, existingFileHelper, BlockDatagen::new, UltraBlockModelDataGen::new));
         generator.addProvider(true, new ItemDatagen(output, existingFileHelper));
@@ -51,10 +53,11 @@ public class DataGeneratorsRegister {
                 FurnaceRecipeProvider::new,
                 RksRecipeProvider::new));
         generator.addProvider(true, new LootTableDatagen(output));
-        generator.addProvider(true, new DatapackBuiltinEntriesProvider(output, event.getLookupProvider(), Set.of(GenerationsCore.MOD_ID)));
 
 //        generator.addProvider(true, new GenerationsPokemonModelsProvider(output));
 
 //        generator.addProvider(true, new DialogueDataGen(event.getGenerator().getPackOutput()));
+
+        generator.addProvider(true, new WorldGenProvider(output, lookupProvider));
     }
 }
