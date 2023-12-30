@@ -128,6 +128,8 @@ public class TagsDatagen {
             GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> tag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS).add(block.get()));
             GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> tag(GenerationsBlockTags.BALL_LOOTS).add(block.get()));
 
+            tag(GenerationsBlockTags.REGI_STANDS).add(GenerationsBlocks.CASTLE_PILLAR.get(), GenerationsBlocks.GHOST_PILLAR.get(), GenerationsBlocks.PRISMARINE_PILLAR.get(), GenerationsBlocks.ICE_PILLAR.get(), GenerationsBlocks.DARK_PRISMARINE_PILLAR.get());
+
 
             //Ore Specific tags
             tag(GenerationsBlockTags.ALUMINUM_ORES).add(GenerationsOres.ALUMINUM_ORE_SET.getOre(), GenerationsOres.ALUMINUM_ORE_SET.getDeepslateOre());
