@@ -40,6 +40,7 @@ public class GenericChestContainer extends AbstractContainerMenu {
 
         this.guiWidth = 14 + getInventoryWidth() * 18;
         this.guiHeight = 110 + (getInventoryHeight() * 18);
+        container.startOpen(playerInventory.player);
 
         populate(container, 8, 16, 0, getInventoryHeight(), getInventoryWidth(), -1);
 
