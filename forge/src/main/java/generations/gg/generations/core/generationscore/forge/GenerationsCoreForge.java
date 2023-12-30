@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.GenerationsImplementation
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
+import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
@@ -140,6 +141,11 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         getNetworkManager().registerClientBound();
         getNetworkManager().registerServerBound();
         event.enqueueWork(VanillaCompat::setup);
+        MutableBlockEntityType.blocksToAdd.forEach(genericModelBlock -> {
+            if (genericModelBlock.getBlockEntityType() instanceof MutableBlockEntityType<?> mutableBlockEntityType) {
+                mutableBlockEntityType.addBlock(genericModelBlock);
+            }
+        });
     }
 
     private void onDataPackSync(OnDatapackSyncEvent event) {
