@@ -5,7 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class GenerationsBlockEntityModels {
     public static final ResourceLocation DEFAULT = GenerationsCore.id("");
-    public static final ResourceLocation ABUNDANT_SHRINE = GenerationsCore.id("models/block/shrines/abundant_shrine/abundant_shrine.pk");
+    public static final ResourceLocation ABUNDANT_SHRINE = GenerationsCore.id("models/block/shrines/abundant_shrine.pk");
     public static final ResourceLocation BOX = GenerationsCore.id("models/block/decorations/box/box.pk");
     public static final ResourceLocation CELESTIAL_ALTAR = GenerationsCore.id("models/block/shrines/celestial_altar/celestial_altar.pk");
     public static final ResourceLocation CLOCK = GenerationsCore.id("models/block/decorations/clock.pk");
@@ -19,7 +19,7 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation LUGIA_SHRINE = GenerationsCore.id("models/block/shrines/lugia_shrine/lugia_shrine.pk");
     public static final ResourceLocation DARK_MODEL = GenerationsCore.id("models/block/shrines/lunar_shrine/dark_shrine.pk");
     public static final ResourceLocation LIGHT_MODEL = GenerationsCore.id("models/block/shrines/lunar_shrine/light_shrine.pk");
-    public static final ResourceLocation MELOETTA_MUSIC_BOX = GenerationsCore.id("models/block/shrines/meloetta_music_box/meloetta_music_box.pk");
+    public static final ResourceLocation MELOETTA_MUSIC_BOX = GenerationsCore.id("models/block/shrines/meloetta_music_box.pk");
     public static final ResourceLocation PASTEL_BEAN_BAG = GenerationsCore.id("models/block/decorations/pastel_bean_bag.pk");
     public static final ResourceLocation ROTOM_PC = GenerationsCore.id("models/block/utility_blocks/rotom_pc.pk");
     public static final ResourceLocation TABLE_PC = GenerationsCore.id("models/block/utility_blocks/table_pc.pk");
@@ -36,8 +36,8 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation SNORLAX_BEAN_BAG = GenerationsCore.id("models/block/decorations/snorlax_bean_bag.pk");
     public static final ResourceLocation ZAPDOS_SHRINE = GenerationsCore.id("models/block/shrines/legendary_birds/zapdos_shrine.pk");
     public static final ResourceLocation SWITCH = GenerationsCore.id("models/block/decorations/switch.pk");
-    public static final ResourceLocation TAO_TRIO_SHRINE = GenerationsCore.id("models/block/shrines/tao_trio_shrine/tao_trio_shrine.pk");
-    public static final ResourceLocation TAPU_SHRINE = GenerationsCore.id("models/block/shrines/tapu_shrine/tapu_shrine.pk");
+    public static final ResourceLocation TAO_TRIO_SHRINE = GenerationsCore.id("models/block/shrines/tao_trio_shrine.pk");
+    public static final ResourceLocation TAPU_SHRINE = GenerationsCore.id("models/block/shrines/tapu_shrine.pk");
     public static final ResourceLocation TIME_SPACE_ALTAR = GenerationsCore.id("models/block/shrines/creation_trio/time_space_altar.pk");
     public static final ResourceLocation TRASH_CAN  = GenerationsCore.id("models/block/decorations/trash_can.pk");
     public static final ResourceLocation POKEBALL_RUG = GenerationsCore.id("models/block/decorations/rug.pk");
