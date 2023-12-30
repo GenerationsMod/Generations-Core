@@ -309,20 +309,20 @@ public class RksRecipe implements Recipe<Container> {
 
         @Override
         public @NotNull RksRecipe fromNetwork(@NotNull ResourceLocation recipeId, FriendlyByteBuf buffer) {
-            int i = buffer.readVarInt();
-            int j = buffer.readVarInt();
-            String string = buffer.readUtf();
-            NonNullList<Ingredient> nonNullList = NonNullList.withSize(i * j, Ingredient.EMPTY);
-            nonNullList.replaceAll(ignored -> Ingredient.fromNetwork(buffer));
+            int width = buffer.readVarInt();
+            int height = buffer.readVarInt();
+            String group = buffer.readUtf();
+
+            NonNullList<Ingredient> recipeItems = buffer.readCollection(i -> NonNullList.withSize(i, Ingredient.EMPTY), Ingredient::fromNetwork);
 
             var result = buffer.readBoolean() ? new RksResult.ItemResult(buffer.readItem()) : new RksResult.PokemonResult(GenerationsUtils.parseProperties(buffer.readUtf()));
 
-            var speciesKey = buffer.readNullable(buf -> SpeciesKey.fromString(buf.readUtf()));
+            var key = buffer.readNullable(buf -> SpeciesKey.fromString(buf.readUtf()));
 
             float experience = buffer.readFloat();
-            int weavingTime = buffer.readInt();
-            boolean bl = buffer.readBoolean();
-            return new RksRecipe(recipeId, string, i, j, nonNullList, result, speciesKey, experience, weavingTime, bl);
+            int processingTime = buffer.readInt();
+            boolean showNotification = buffer.readBoolean();
+            return new RksRecipe(recipeId, group, width, height, recipeItems, result, key, experience, processingTime, showNotification);
         }
 
         @Override
@@ -330,7 +330,9 @@ public class RksRecipe implements Recipe<Container> {
             buffer.writeVarInt(recipe.width);
             buffer.writeVarInt(recipe.height);
             buffer.writeUtf(recipe.group);
-            recipe.recipeItems.forEach(ingredient -> ingredient.toNetwork(buffer));
+
+            buffer.writeCollection(recipe.recipeItems, (buf, ingredient) -> ingredient.toNetwork(buf));
+
             var isItem = recipe.result instanceof RksResult.ItemResult;
             buffer.writeBoolean(isItem);
 
