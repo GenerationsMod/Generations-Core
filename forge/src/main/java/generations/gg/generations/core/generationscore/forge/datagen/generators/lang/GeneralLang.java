@@ -218,7 +218,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(REGIGIGAS_SHRINE, "HINT: Images of all 5 Regi’s in the distant past begin to swarm into you. They’re playing. You feel an overwhelming sense of… nurturing? Regigigas clearly has no desire to be awakened unless you’ve awakened its friends.");
 
         //Lunar Duo
-        addBlock(LUNAR_SHRINE, "HINT: It seems empty, strangely like the feeling of a heartache. A summoning ritual is to occur here. A deep malevolent cry is suddenly heard in your left ear- “Souls”. Almost immediately afterwards, a higher-pitched angelic-like cry is heard in your right- “Souls”. Creepy.");
+        addTooltip(LUNAR_SHRINE, "HINT: It seems empty, strangely like the feeling of a heartache. A summoning ritual is to occur here. A deep malevolent cry is suddenly heard in your left ear- “Souls”. Almost immediately afterwards, a higher-pitched angelic-like cry is heard in your right- “Souls”. Creepy.");
         addTooltip(LIGHT_CRYSTAL, "HINT: It’s guiding you to a pentagram. You’ll need 5 in total and prevail against the dark.");
         addTooltip(DARK_CRYSTAL, "HINT: It’s guiding you to a pentagram. You’ll need 5 in total and prevail against the light.");
         addTooltip(LIGHT_SOUL, "HINT: Cresselia appears faintly, you need more.");
@@ -231,7 +231,7 @@ public class GeneralLang extends LanguageProvider {
         //Forces of Nature
         addTooltip(MIRROR, "HINT: Instead of seeing your reflection, you see Gems. They’re pink, blue, and white and laid out in a frame.");
         addTooltip(REVEAL_GLASS, "HINT: Rather than your reflection, it displays a small Abundant Shrine in the sky.");
-        addBlock(ABUNDANT_SHRINE, "HINT: You need something to reveal the secrets within.");
+        addTooltip(ABUNDANT_SHRINE, "HINT: You need something to reveal the secrets within.");
 
         //Tao Trio
         addTooltip(DRAGON_SOUL, "HINT: It screams. They seek their masters- the Tao Trio. An Orb is required to seal these souls. With a certain Gem, you could manipulate it towards a specific Tao.");
