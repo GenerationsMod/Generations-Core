@@ -1,4 +1,3 @@
-import com.matyrobbrt.gradle.pngoptimiser.task.OptimisePNGTask
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
 
 plugins {
