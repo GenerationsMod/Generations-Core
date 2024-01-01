@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.fabric;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
@@ -40,6 +41,9 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
 
         this.getNetworkManager().registerClientBound();
         this.getNetworkManager().registerServerBound();
+
+        if (FabricLoader.getInstance().isModLoaded("impactor"))
+            ImpactorCompat.init();
 
         ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, isLogin) -> {
             if (isLogin)
