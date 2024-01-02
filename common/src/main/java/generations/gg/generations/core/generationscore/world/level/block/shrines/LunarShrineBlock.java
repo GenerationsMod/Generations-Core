@@ -72,17 +72,6 @@ public class LunarShrineBlock extends ShrineBlock<LunarShrineBlockEntity> {
     }
 
     @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        state = state.setValue(IS_LIGHT, level.getMaxLocalRawBrightness(pos) >= 10);
-        level.setBlock(pos, state, 4);
-    }
-
-    @Override
-    public BlockState setSize(BlockState state, int x, int y, int z) {
-        return super.setSize(state, x, y, z);
-    }
-
-    @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if (!level.isClientSide()) {
             var key = getSpecies(state);
