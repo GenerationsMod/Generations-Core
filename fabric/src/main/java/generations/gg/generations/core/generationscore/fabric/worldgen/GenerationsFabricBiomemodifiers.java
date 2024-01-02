@@ -5,7 +5,6 @@ import generations.gg.generations.core.generationscore.world.feature.Generations
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -24,9 +23,9 @@ public class GenerationsFabricBiomemodifiers {
      * Registers all PlacedFeatures with Biomemodificaions#addFeature
      */
     public static void generateOres() {
-        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_ALUMINUM_LOWER);
-        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_ALUMINUM_MIDDLE);
-        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_ALUMINUM_UPPER);
+        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_SILICON_LOWER);
+        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_SILICON_MIDDLE);
+        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_SILICON_UPPER);
 
         registerSurfaceFeatures(GenerationsPlacedFeatures.POKE_BALL_LOOT, BiomeSelectors.foundInOverworld());
         registerSurfaceFeatures(GenerationsPlacedFeatures.BEAST_BALL_LOOT, BiomeSelectors.foundInTheEnd());

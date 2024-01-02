@@ -29,7 +29,6 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     SKULL("skull", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON),
     CRYSTAL("crystal", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL),
     ULTRA("ultra", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.Z_INGOT),
-    ALUMINUM("aluminum", 15, new int[]{2, 5, 6, 2}, 8, GenerationsItems.ALUMINUM_INGOT),
     DAWN_STONE("dawn_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.DAWN_STONE),
     DUSK_STONE("dusk_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.DUSK_STONE),
     FIRE_STONE("fire_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.FIRE_STONE),

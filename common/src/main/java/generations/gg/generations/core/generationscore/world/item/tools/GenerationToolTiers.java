@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 public enum GenerationToolTiers implements Tier {
     CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock().asItem()),
     VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.VOLCANIC_STONE.get().asItem()),
-    ALUMINUM(2, 200, 6F, 1.5F, 14, GenerationsItems.ALUMINUM_INGOT.get()),
     AMETHYST(2, 300, 6.5F, 2.0F, 14, Items.AMETHYST_SHARD),
     CRYSTAL(2, 300, 6.5F, 2.0F, 14, GenerationsItems.CRYSTAL.get()),
     DAWN_STONE(3, 1561, 12.0F, 0.0F, 22, CobblemonItems.DAWN_STONE.asItem()),
@@ -76,7 +75,7 @@ public enum GenerationToolTiers implements Tier {
     public TagKey<Block> getTag() {
         return switch (this) {
             case CHARGE_STONE, VOLCANIC_STONE -> BlockTags.NEEDS_STONE_TOOL;
-            case ALUMINUM, AMETHYST, CRYSTAL, LEAF_STONE, RUBY, SAPPHIRE, SILICON -> BlockTags.NEEDS_IRON_TOOL;
+            case AMETHYST, CRYSTAL, LEAF_STONE, RUBY, SAPPHIRE, SILICON -> BlockTags.NEEDS_IRON_TOOL;
             case DAWN_STONE, DUSK_STONE, FIRE_STONE, ICE_STONE, MOON_STONE, SUN_STONE, THUNDER_STONE, WATER_STONE ->
                     BlockTags.NEEDS_DIAMOND_TOOL;
         };

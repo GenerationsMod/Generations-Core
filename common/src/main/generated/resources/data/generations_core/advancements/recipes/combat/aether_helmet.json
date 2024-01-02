@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_aluminum_ingot": {
+    "has_copper_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:aluminum_ingot"
+              "minecraft:copper_ingot"
             ]
           }
         ]
@@ -34,7 +34,7 @@
   },
   "requirements": [
     [
-      "has_aluminum_ingot",
+      "has_copper_ingot",
       "has_crystal",
       "has_the_recipe"
     ]

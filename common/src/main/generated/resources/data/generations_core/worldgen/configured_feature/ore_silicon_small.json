@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "generations_core:aluminum_ore"
+          "Name": "generations_core:silicon_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
@@ -15,7 +15,7 @@
       },
       {
         "state": {
-          "Name": "generations_core:deepslate_aluminum_ore"
+          "Name": "generations_core:deepslate_silicon_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

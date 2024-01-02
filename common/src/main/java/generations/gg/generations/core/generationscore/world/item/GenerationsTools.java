@@ -37,14 +37,6 @@ public class GenerationsTools {
 			0,
 			0);
 
-	public static final ToolSet ALUMINUM = ToolSet.create("aluminum", () -> GenerationsTiers.CHARGE_STONE,
-			4,
-			3,
-			8,
-			0,
-			3,
-			5);
-
 	public static final ToolSet AMETHYST = ToolSet.create("amethyst", () -> GenerationsTiers.AMETHYST,
 			1,
 			2,

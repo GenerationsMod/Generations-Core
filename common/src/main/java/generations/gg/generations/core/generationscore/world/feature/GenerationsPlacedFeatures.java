@@ -15,9 +15,9 @@ import java.util.List;
 
 public class GenerationsPlacedFeatures {
     public static void init(){}
-    public static final ResourceKey<PlacedFeature> ORE_ALUMINUM_UPPER = registerKey("ore_aluminum_upper");
-    public static final ResourceKey<PlacedFeature> ORE_ALUMINUM_MIDDLE = registerKey("ore_aluminum_middle");
-    public static final ResourceKey<PlacedFeature> ORE_ALUMINUM_LOWER = registerKey("ore_aluminum_lower");
+    public static final ResourceKey<PlacedFeature> ORE_SILICON_UPPER = registerKey("ore_silicon_upper");
+    public static final ResourceKey<PlacedFeature> ORE_SILICON_MIDDLE = registerKey("ore_silicon_middle");
+    public static final ResourceKey<PlacedFeature> ORE_SILICON_LOWER = registerKey("ore_silicon_lower");
     public static final ResourceKey<PlacedFeature> POKE_BALL_LOOT = registerKey("poke_ball_loot");
     public static final ResourceKey<PlacedFeature> BEAST_BALL_LOOT = registerKey("beast_ball_loot");
     public static final ResourceKey<PlacedFeature> CHERISH_BALL_LOOT = registerKey("cherish_ball_loot");
@@ -54,9 +54,9 @@ public class GenerationsPlacedFeatures {
 
     public static void bootStrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
-        register(context, ORE_ALUMINUM_UPPER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_ALUMINUM), GenerationsOrePlacements.modifiersWithCount(90, HeightRangePlacement.triangle(VerticalAnchor.absolute(80), VerticalAnchor.absolute(384))));
-        register(context, ORE_ALUMINUM_MIDDLE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_ALUMINUM), GenerationsOrePlacements.modifiersWithCount(90, HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56))));
-        register(context, ORE_ALUMINUM_LOWER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_ALUMINUM_SMALL), GenerationsOrePlacements.modifiersWithCount(10, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(72))));
+        register(context, ORE_SILICON_UPPER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON), GenerationsOrePlacements.modifiersWithCount(80, HeightRangePlacement.triangle(VerticalAnchor.absolute(80), VerticalAnchor.absolute(384))));
+        register(context, ORE_SILICON_MIDDLE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON), GenerationsOrePlacements.modifiersWithCount(80, HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56))));
+        register(context, ORE_SILICON_LOWER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON_SMALL), GenerationsOrePlacements.modifiersWithCount(10, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(72))));
 
         register(context, POKE_BALL_LOOT, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.POKE_BALL_LOOT), worldSurfaceSquaredWithChance(250));
         register(context, BEAST_BALL_LOOT, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.BEAST_BALL_LOOT), worldSurfaceSquaredWithChance(200));

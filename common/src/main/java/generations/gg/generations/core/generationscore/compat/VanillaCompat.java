@@ -150,7 +150,6 @@ public class VanillaCompat {
 							output.acceptAfter(Items.DEEPSLATE_COPPER_ORE.getDefaultInstance(), GenerationsOres.CHARGE_STONE_COPPER_ORE.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							 */
 							GenerationsOres.ORES.forEach(b -> output.acceptBefore(Items.NETHER_GOLD_ORE.getDefaultInstance(), b.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
-							output.acceptAfter(Items.RAW_GOLD_BLOCK.getDefaultInstance(), GenerationsBlocks.RAW_ALUMINUM_BLOCK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							output.acceptAfter(Items.ACACIA_LOG.getDefaultInstance(), GenerationsWood.GHOST_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							output.acceptAfter(GenerationsWood.GHOST_LOG.get().asItem().getDefaultInstance(), GenerationsWood.ULTRA_DARK_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 							output.acceptAfter(GenerationsWood.ULTRA_DARK_LOG.get().asItem().getDefaultInstance(), GenerationsWood.ULTRA_JUNGLE_LOG.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

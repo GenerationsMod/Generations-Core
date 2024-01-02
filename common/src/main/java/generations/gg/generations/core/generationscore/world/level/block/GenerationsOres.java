@@ -39,7 +39,6 @@ public class GenerationsOres {
 	/**
 	 * Other Ores
 	 */
-	public static final GenerationsOreSet ALUMINUM_ORE_SET = new GenerationsOreSet("aluminum_ore", GenerationsItems.RAW_ALUMINUM);
 	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore", GenerationsItems.CRYSTAL);
 	public static final GenerationsOreSet RUBY_ORE_SET = new GenerationsOreSet("ruby_ore", GenerationsItems.RUBY);
 	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE);

@@ -36,26 +36,26 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get(), 1) //TODO: Decide which color to be base or incorporate dye into recipe.
-                .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
+                .define('Q', GenerationsItems.COPPER_PLATE.get())
                 .define('R', Items.IRON_INGOT)
                 .define('P', Items.DIAMOND)
                     .pattern("QRQ")
                     .pattern("RPR")
                     .pattern("QRQ")
-                .unlockedBy("has_aluminum_plate_has_diamond_has_iron_ingot",
-                        inventoryTrigger(ItemPredicate.Builder.item().of(GenerationsItems.ALUMINUM_PLATE.get(), Items.DIAMOND, Items.IRON_INGOT).build()))
+                .unlockedBy("has_copper_plate_has_diamond_has_iron_ingot",
+                        inventoryTrigger(ItemPredicate.Builder.item().of(GenerationsItems.COPPER_PLATE.get(), Items.DIAMOND, Items.IRON_INGOT).build()))
                 .save(consumer, GenerationsCore.id("healer"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ROTOM_PC.get(), 1)
-                .define('Q', GenerationsItems.ALUMINUM_PLATE.get())
+                .define('Q', GenerationsItems.COPPER_PLATE.get())
                 .define('A', Blocks.GLASS_PANE)
                 .define('R', Items.REDSTONE)
                 .define('P', Blocks.REDSTONE_LAMP)
                 .pattern("QAQ")
                 .pattern("QPQ")
                 .pattern("QRQ")
-                .unlockedBy("has_aluminum_plate_has_redstone_lamp_has_glass_pane",
-                        inventoryTrigger(ItemPredicate.Builder.item().of(GenerationsItems.ALUMINUM_PLATE.get(), Blocks.REDSTONE_LAMP, Blocks.GLASS_PANE).build()))
+                .unlockedBy("has_copper_plate_has_redstone_lamp_has_glass_pane",
+                        inventoryTrigger(ItemPredicate.Builder.item().of(GenerationsItems.COPPER_PLATE.get(), Blocks.REDSTONE_LAMP, Blocks.GLASS_PANE).build()))
                 .save(consumer, GenerationsCore.id("pc"));
 
         for (DyeColor color : DyeColor.values()) {

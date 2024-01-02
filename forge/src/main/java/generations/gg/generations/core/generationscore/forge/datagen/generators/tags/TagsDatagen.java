@@ -82,8 +82,6 @@ public class TagsDatagen {
             });
 
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                    GenerationsBlocks.RAW_ALUMINUM_BLOCK.get(),
-                    GenerationsBlocks.ALUMINUM_BLOCK.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get(),
@@ -132,7 +130,6 @@ public class TagsDatagen {
 
 
             //Ore Specific tags
-            tag(GenerationsBlockTags.ALUMINUM_ORES).add(GenerationsOres.ALUMINUM_ORE_SET.getOre(), GenerationsOres.ALUMINUM_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.SAPPHIRE_ORES).add(GenerationsOres.SAPPHIRE_ORE_SET.getOre(), GenerationsOres.SAPPHIRE_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.RUBY_ORES).add(GenerationsOres.RUBY_ORE_SET.getOre(), GenerationsOres.RUBY_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.CRYSTAL_ORES).add(GenerationsOres.CRYSTAL_ORE_SET.getOre(), GenerationsOres.CRYSTAL_ORE_SET.getDeepslateOre());
@@ -163,7 +160,6 @@ public class TagsDatagen {
              */
 
             tag(GenerationsBlockTags.GENERATIONSORES)
-                    .addTag(GenerationsBlockTags.ALUMINUM_ORES)
                     .addTag(GenerationsBlockTags.SAPPHIRE_ORES)
                     .addTag(GenerationsBlockTags.RUBY_ORES)
                     .addTag(GenerationsBlockTags.CRYSTAL_ORES)
@@ -235,8 +231,6 @@ public class TagsDatagen {
             tag(BlockTags.NEEDS_IRON_TOOL).addTag(GenerationsBlockTags.GENERATIONSORES);
             tag(Tags.Blocks.ORES).addTag(GenerationsBlockTags.GENERATIONSORES);
             tag(BlockTags.NEEDS_STONE_TOOL).add(
-                    GenerationsBlocks.RAW_ALUMINUM_BLOCK.get(),
-                    GenerationsBlocks.ALUMINUM_BLOCK.get(),
                     GenerationsBlocks.SAPPHIRE_BLOCK.get(),
                     GenerationsBlocks.SAPPHIRE_SLAB.get(),
                     GenerationsBlocks.SAPPHIRE_STAIRS.get(),
@@ -314,7 +308,6 @@ public class TagsDatagen {
             //Ore Specific tags like Vanilla
             copy(GenerationsBlockTags.GENERATIONSORES, GenerationsItemTags.GENERATIONSORES);
             copy(Tags.Blocks.ORES, Tags.Items.ORES);
-            copy(GenerationsBlockTags.ALUMINUM_ORES, GenerationsItemTags.ALUMINUM_ORES);
             copy(GenerationsBlockTags.SAPPHIRE_ORES, GenerationsItemTags.SAPPHIRE_ORES);
             copy(GenerationsBlockTags.RUBY_ORES, GenerationsItemTags.RUBY_ORES);
             copy(GenerationsBlockTags.CRYSTAL_ORES, GenerationsItemTags.CRYSTAL_ORES);
@@ -411,9 +404,6 @@ public class TagsDatagen {
 
             tag(ItemTags.TOOLS).addTag(GenerationsItemTags.HAMMERS);
             tag(Tags.Items.TOOLS).addTag(GenerationsItemTags.HAMMERS);
-
-            tag(Tags.Items.INGOTS).add(ALUMINUM_INGOT.get());
-            tag(Tags.Items.NUGGETS).add(ALUMINUM_NUGGET.get());
 
             ITEMS.forEach(item -> tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
             RIBBONS.forEach(ribbon -> tag(GenerationsItemTags.RIBBONS).add(ribbon.get()));

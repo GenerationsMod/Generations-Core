@@ -21,7 +21,7 @@ import net.minecraftforge.registries.ForgeRegistries;
  */
 public class GenerationsForgeBiomemodifiers {
 
-    private static final ResourceKey<BiomeModifier> ADD_ORE_ALUMINUM = registerKey("add_ore_aluminum");
+    private static final ResourceKey<BiomeModifier> ADD_ORE_SILICON = registerKey("add_ore_silicon");
     private static final ResourceKey<BiomeModifier> ADD_POKE_BALL_LOOT = registerKey("add_poke_ball_loot");
     private static final ResourceKey<BiomeModifier> ADD_BEAST_BALL_LOOT = registerKey("add_beast_ball_loot");
     private static final ResourceKey<BiomeModifier> ADD_CHERISH_BALL_LOOT = registerKey("add_cherish_ball_loot");
@@ -60,12 +60,12 @@ public class GenerationsForgeBiomemodifiers {
         HolderGetter<PlacedFeature> placedFeaturesLookup = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<Biome> biomesLookup = context.lookup(Registries.BIOME);
 
-        context.register(ADD_ORE_ALUMINUM, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_ORE_SILICON, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomesLookup.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(
-                        placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_ALUMINUM_UPPER),
-                        placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_ALUMINUM_MIDDLE),
-                        placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_ALUMINUM_LOWER)),
+                        placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_SILICON_UPPER),
+                        placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_SILICON_MIDDLE),
+                        placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_SILICON_LOWER)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_POKE_BALL_LOOT, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(

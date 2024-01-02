@@ -1,9 +1,9 @@
 {
-  "feature": "generations_core:ore_aluminum",
+  "feature": "generations_core:ore_silicon",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 90
+      "count": 80
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:trapezoid",
         "max_inclusive": {
-          "absolute": 56
+          "absolute": 384
         },
         "min_inclusive": {
-          "absolute": -24
+          "absolute": 80
         }
       }
     },

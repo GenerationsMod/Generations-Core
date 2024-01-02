@@ -58,7 +58,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get());
 
         //Ores
-        addOreSet(GenerationsOres.ALUMINUM_ORE_SET);
         addOreSet(GenerationsOres.CRYSTAL_ORE_SET);
         addOreSet(GenerationsOres.RUBY_ORE_SET);
         addOreSet(GenerationsOres.SAPPHIRE_ORE_SET);
@@ -67,9 +66,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getOre());
         dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getDeepslateOre());
         //dropSelf(GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
-
-        dropSelf(GenerationsBlocks.RAW_ALUMINUM_BLOCK.get());
-        dropSelf(GenerationsBlocks.ALUMINUM_BLOCK.get());
 
         addAll(GenerationsBlocks.RUBY_BLOCK.get(), GenerationsBlocks.RUBY_SLAB.get(), GenerationsBlocks.RUBY_STAIRS.get(), GenerationsBlocks.RUBY_WALL.get());
 

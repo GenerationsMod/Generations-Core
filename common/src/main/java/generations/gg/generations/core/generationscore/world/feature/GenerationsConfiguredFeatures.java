@@ -57,15 +57,15 @@ public class GenerationsConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ULTRA_BALL_LOOT = registerKey("ultra_ball_loot");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WING_BALL_LOOT = registerKey("wing_ball_loot");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ALUMINUM = registerKey("ore_aluminum");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ALUMINUM_SMALL = registerKey("ore_aluminum_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SILICON = registerKey("ore_silicon");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SILICON_SMALL = registerKey("ore_silicon_small");
 
     public static void bootStrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        var aluminiumOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.ALUMINUM_ORE_SET);
-        register(context, ORE_ALUMINUM, Feature.ORE, new OreConfiguration(aluminiumOres, 9, 0.0F));
-        register(context, ORE_ALUMINUM_SMALL, Feature.ORE, new OreConfiguration(aluminiumOres, 4, 0.0F));
+        var siliconOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.SILICON_ORE_SET);
+        register(context, ORE_SILICON, Feature.ORE, new OreConfiguration(siliconOres, 9, 0.0F));
+        register(context, ORE_SILICON_SMALL, Feature.ORE, new OreConfiguration(siliconOres, 4, 0.0F));
 
         register(context, POKE_BALL_LOOT, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.POKE_BALL_LOOT.get())));
         register(context, BEAST_BALL_LOOT, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.BEAST_BALL_LOOT.get())));
