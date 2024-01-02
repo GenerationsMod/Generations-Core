@@ -158,7 +158,7 @@ public class Pipelines {
         builder.supplyUniform("diffuse", ctx -> {
             var variant = ctx.instance().variant();
 
-            ITexture texture = isStatueMaterial(variant) ? getTexture(variant) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
+            ITexture texture = isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
             if (texture == null) texture = ITextureLoader.instance().getNuetralFallback();
 
             texture.bind(0);
@@ -211,7 +211,7 @@ public class Pipelines {
 
 
     private static boolean isStatueMaterial(String variant) {
-        return variant != null && variant.startsWith("material") && ((GenerationsCoreClient.GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(variant);
+        return variant != null && variant.startsWith("statue:") && ((GenerationsCoreClient.GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(variant.substring(7));
     }
 
     public static Pipeline getPipeline(String name) {

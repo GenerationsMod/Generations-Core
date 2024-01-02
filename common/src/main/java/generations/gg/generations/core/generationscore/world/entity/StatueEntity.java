@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.world.entity;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.entity.PoseType;
 import com.cobblemon.mod.common.pokemon.RenderablePokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import dev.architectury.utils.EnvExecutor;
@@ -51,7 +52,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         setNoGravity(true);
         setInvulnerable(true);
         this.noPhysics = true;
-        EnvExecutor.runInEnv(CLIENT, () -> () -> delegate = new StatueEntityClient());
+        EnvExecutor.runInEnv(CLIENT, () -> () -> delegate = new StatueEntityClient(this));
     }
 
     public StatueEntity(Level level) {
@@ -76,6 +77,12 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
     @Override
     public boolean isAttackable() {
         return false;
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        EnvExecutor.runInEnv(CLIENT, () -> () -> delegate.tick());
     }
 
     @Override
@@ -372,5 +379,9 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         public ResourceLocation material() {
             return new ResourceLocation("statue:concrete");
         }
+
+//        public PoseType getPose() {
+//
+//        }
     }
 }

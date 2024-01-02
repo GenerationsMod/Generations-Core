@@ -41,17 +41,26 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     public void render(RenderContext context, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var model = objectSupplier.get();
 
-        var instance = context.request(RenderContext.Companion.getENTITY()) instanceof PixelmonInstanceProvider provider ? provider.getInstance() : null;
+        var entity = context.request(RenderContext.Companion.getENTITY());
+
+        var isStatue = entity instanceof StatueEntity;
+
+        var instance = !isStatue && context.request(RenderContext.Companion.getENTITY()) instanceof PixelmonInstanceProvider provider ? provider.getInstance() : null;
 
         boolean isGui = false;
 
         var scale = model.renderObject.scale;
 
-        if(instance == null) {
+        if(instance == null && !isStatue) {
             instance = ModelRegistry.getGuiInstance();
             instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
             isGui = true;
         } else {
+            if(isStatue) {
+                instance = ((StatueEntity) entity).getInstance();
+                instance.matrixTransforms = ModelRegistry.getGuiInstance().matrixTransforms;
+            }
+
             scale *= ((PixelmonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;
         }
 

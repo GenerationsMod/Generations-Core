@@ -98,12 +98,10 @@ public class StatueEditorScreen extends Screen {
 
         statickCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 127, 16, 16, TEXTURE, 0, 166,
                 () -> {
-                    var data = statue.getStatueData();
-                    data.setIsStatic(true);
+                    statue.getStatueData().setIsStatic(true);
                     updateStatueData();
                 },
                 () -> {
-                    var data = statue.getStatueData();
                     statue.getStatueData().setIsStatic(false);
                     updateStatueData();
                 },
@@ -203,5 +201,10 @@ public class StatueEditorScreen extends Screen {
         if(s.isEmpty()) return 0;
 
         return Integer.parseInt(s);
+    }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
     }
 }
