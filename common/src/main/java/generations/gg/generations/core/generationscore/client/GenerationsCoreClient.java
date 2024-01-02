@@ -381,11 +381,16 @@ public class GenerationsCoreClient {
 
         public void initialize(ResourceManager manager) {
             register("dark", new TextureReference(fromColor("000000"), "dark"));
-            register("light", new TextureReference(fromColor("ffffff"), "light"));
+            register("bright", new TextureReference(fromColor("ffffff"), "bright"));
             register("neutral", new TextureReference(fromColor("999999"), "neutral"));
 
-            register("statue:concrete", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("concrete")), "statue:concrete"));
-
+            register("concrete", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("concrete")), "concrete"));
+            register("glass", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("glass")), "glass"));
+            register("gold", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("gold")), "gold"));
+            register("marble", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("marble")), "marble"));
+            register("metal", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("metal")), "metal"));
+            register("moss", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("moss")), "moss"));
+            register("silver", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("silver")), "silver"));
         }
 
         private BufferedImage fromResourceLocation(ResourceManager manager, ResourceLocation location) {

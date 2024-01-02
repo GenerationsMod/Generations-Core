@@ -7,7 +7,7 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation DEFAULT = GenerationsCore.id("");
     public static final ResourceLocation ABUNDANT_SHRINE = GenerationsCore.id("models/block/shrines/abundant_shrine.pk");
     public static final ResourceLocation BOX = GenerationsCore.id("models/block/decorations/box/box.pk");
-    public static final ResourceLocation CELESTIAL_ALTAR = GenerationsCore.id("models/block/shrines/celestial_altar/celestial_altar.pk");
+    public static final ResourceLocation CELESTIAL_ALTAR = GenerationsCore.id("models/block/shrines/celestial_altar.pk");
     public static final ResourceLocation CLOCK = GenerationsCore.id("models/block/decorations/clock.pk");
     public static final ResourceLocation COOKING_POT = GenerationsCore.id("models/block/utility_blocks/cooking_pot.pk");
     public static final ResourceLocation MOLTRES_SHRINE = GenerationsCore.id("models/block/shrines/legendary_birds/moltres_shrine.pk");
