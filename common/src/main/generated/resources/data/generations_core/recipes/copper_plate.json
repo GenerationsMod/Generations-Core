@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:copper_ingot"
+    },
+    "X": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "###",
+    "X#X"
+  ],
+  "result": {
+    "item": "generations_core:copper_plate"
+  },
+  "show_notification": true
+}

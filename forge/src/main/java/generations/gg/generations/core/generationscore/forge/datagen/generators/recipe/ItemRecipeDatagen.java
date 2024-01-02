@@ -5,6 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,6 +31,16 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("##")
                 .unlockedBy(getHasName(GenerationsItems.ENIGMA_FRAGMENT.get()), has(GenerationsItems.ENIGMA_FRAGMENT.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.COPPER_PLATE.get())
+                .define('#', Items.COPPER_INGOT)
+                .define('X', Items.IRON_NUGGET)
+                .pattern("X#X")
+                .pattern("###")
+                .pattern("X#X")
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(consumer);
+
         //These are all HeldItems and Recipes are not needed rn
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PokeModItems.CELL_BATTERY.get())
