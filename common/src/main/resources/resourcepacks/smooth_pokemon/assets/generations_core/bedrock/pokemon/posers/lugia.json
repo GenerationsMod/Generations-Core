@@ -1,41 +1,63 @@
 {
-  "portraitScale": 1.0,
-  "portraitTranslation": [ 0, 0.0, 0 ],
-  "profileScale": 1.0,
-  "profileTranslation": [ 0, 0.0, 0 ],
-  "faint": "pk(generations_core:lugia.pk, faintstart)",
+  "faint": "pk(generations_core:lugia, faintstart)",
   "poses": {
-    "standing": {
-      "poseName": "standing",
-      "transformTicks": 10,
-      "poseTypes": [
-        "STAND",
-        "NONE",
-        "PORTRAIT",
-        "PROFILE"
-      ],
+    "flying": {
       "animations": [
-        "look",
-        "pk(generations_core:lugia.pk, idle)"
+        "pk(generations_core:lugia.pk, flywalk)"
+      ],
+      "poseName": "flying",
+      "poseTypes": [
+        "FLY"
       ]
     },
-    "floating": {
-      "poseName": "floating",
-      "transformTicks": 10,
-      "poseTypes": [ "FLOAT" ],
-      "animations": [ "pk(generations_core:lugia.pk, swimidle)" ]
+    "hovering": {
+      "animations": [
+        "pk(generations_core:lugia.pk, flyidle)"
+      ],
+      "poseName": "hovering",
+      "poseTypes": [
+        "HOVER"
+      ]
     },
-    "walking": {
-      "poseName": "walking",
-      "transformTicks": 10,
-      "poseTypes": [ "WALK" ],
-      "animations": [ "pk(generations_core:lugia.pk, walk)" ]
+    "sleeping": {
+      "animations": [
+        "pk(generations_core:lugia.pk, sleeploop)"
+      ],
+      "poseName": "sleeping",
+      "poseTypes": [
+        "SLEEP"
+      ]
+    },
+    "standing": {
+      "animations": [
+        "pk(generations_core:lugia.pk, idle)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PORTRAIT",
+        "NONE",
+        "PROFILE",
+        "STAND",
+        "FLOAT"
+      ]
     },
     "swimming": {
+      "animations": [
+        "pk(generations_core:lugia.pk, swimidle)"
+      ],
       "poseName": "swimming",
-      "transformTicks": 10,
-      "poseTypes": [ "SWIM" ],
-      "animations": [ "pk(generations_core:lugia.pk, swimwalk)" ]
+      "poseTypes": [
+        "SLEEP"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:lugia.pk, walk)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
     }
   }
 }

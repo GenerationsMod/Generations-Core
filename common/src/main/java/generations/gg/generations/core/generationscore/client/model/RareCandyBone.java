@@ -7,10 +7,13 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
+import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
@@ -96,8 +99,8 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     }
 
     private ResourceLocation getTexture(RenderContext context) {
-        if(context.request(RenderContext.Companion.getENTITY()) instanceof StatueEntity statue && statue.getStatueData().material() != null) {
-            return statue.getStatueData().material();
+        if(context.request(RenderContext.Companion.getENTITY()) instanceof StatueEntity statue && statue.getStatueData().getMaterial() != null && GenerationsCoreClient.textureLoader.has(statue.getStatueData().getMaterial().getPath())) {
+            return statue.getStatueData().getMaterial();
         }
 
         var species = context.request(RenderContext.Companion.getSPECIES());

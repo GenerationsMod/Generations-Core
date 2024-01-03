@@ -1,0 +1,36 @@
+{
+  "faint": "pk(generations_core:raikou, faintstart)",
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:raikou.pk, idle.smd)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PORTRAIT",
+        "NONE",
+        "PROFILE",
+        "STAND",
+        "FLOAT"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:raikou.pk, walk)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    },
+    "sleeping": {
+      "animations": [
+        "pk(generations_core:raikou.pk, sleeploop)"
+      ],
+      "poseName": "sleeping",
+      "poseTypes": [
+        "SLEEP"
+      ]
+    }
+  }
+}

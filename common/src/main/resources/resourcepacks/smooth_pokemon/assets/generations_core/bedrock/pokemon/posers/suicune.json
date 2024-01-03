@@ -1,0 +1,45 @@
+{
+  "faint": "pk(generations_core:suicune, faintstart)",
+  "poses": {
+    "sleeping": {
+      "animations": [
+        "pk(generations_core:suicune.pk, sleeploop)"
+      ],
+      "poseName": "sleeping",
+      "poseTypes": [
+        "SLEEP"
+      ]
+    },
+    "standing": {
+      "animations": [
+        "pk(generations_core:suicune.pk, idle)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PORTRAIT",
+        "NONE",
+        "PROFILE",
+        "STAND",
+        "FLOAT"
+      ]
+    },
+    "swimming": {
+      "animations": [
+        "pk(generations_core:suicune.pk, swimidle)"
+      ],
+      "poseName": "swimming",
+      "poseTypes": [
+        "SLEEP"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:suicune.pk, walk)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    }
+  }
+}

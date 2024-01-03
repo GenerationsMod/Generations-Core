@@ -13,6 +13,8 @@ import generations.gg.generations.core.generationscore.network.packets.statue.C2
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -25,37 +27,53 @@ public class StatueEditorScreen extends Screen {
     private final StatueEntity statue;
     private int x, y;
 
-    private AbstractWidget orientationWidget, statickCheckbox, nameTextField, scaleTextField, animationTextField, timestampTextField, parserTextField, interactableCheckbox, modelWidget;
+    private String parserString;
+
+    private AbstractWidget orientationWidget, statickCheckbox, nameTextField, scaleTextField, materialTextField, timestampTextField, parserTextField, interactableCheckbox, modelWidget;
+    private Button updateButton;
+    private EditBox poseTextField;
 
     public StatueEditorScreen(StatueEntity entity) {
         super(Component.empty());
         this.statue = entity;
+
+        parserString = statue.getStatueData().getProperties().asString(" ");
     }
 
     @Override
     protected void init() {
+        this.height = 184;
+
         this.x = width / 2 - 96;
-        this.y = height / 2 - 84;
+        this.y = height / 2 - 92;
 
         var info = statue.getStatueData();
 
-        this.parserTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 7, y + 7, 178, 14, 500,
-                info.getProperties().asString(" "), s -> {
-                    statue.getStatueData().setProperties(PokemonProperties.Companion.parse(s, " ", "="));
-                    updateStatueData();
-                }));
+        this.parserTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 7, y + 7, 125, 14, 500,
+                parserString, s -> parserString = s));
+
+        this.updateButton = this.addRenderableWidget(Button.builder(Component.literal("Update"), new Button.OnPress() {
+            @Override
+            public void onPress(Button button) {
+                statue.getStatueData().setProperties(PokemonProperties.Companion.parse(parserString, " ", "="));
+                updateStatueData();
+            }
+        }).size(51, 16).pos(x + 135, y + 6).build());
 
         this.nameTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 92, 126, 14, 50, info.getLabel(), a -> true, s -> {
                     statue.getStatueData().setLabel(s);
-                    updateStatueData();
         }));
 
-        this.animationTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 110, 126, 14, 50, info.getAnimation(), a -> true, s -> {
-            statue.getStatueData().setAnimation(s);
-            updateStatueData();
+        this.poseTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 110, 126, 14, 50, info.getPoseType().toString(), a -> true, s -> {
+            statue.getStatueData().setPoseType(s);
         }));
 
-        this.timestampTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 128, 78, 14, 25, String.valueOf(info.getFrame()), s -> {
+
+        this.materialTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 110 + 18, 126, 14, 50, info.getMaterial().getPath(), a -> true, s -> {
+            statue.getStatueData().setMaterial(s);
+        }));
+
+        this.timestampTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 128 + 18, 76, 14, 25, String.valueOf(info.getFrame()), s -> {
             if (s.isEmpty()) {
                 return true;
             }
@@ -67,12 +85,10 @@ public class StatueEditorScreen extends Screen {
             return false;
         }, s -> {
             var value = s.isEmpty() ? 0 : parseFloat(s);
-                  statue.getStatueData().setProgress(value);
-                updateStatueData();
-//            }
+            statue.getStatueData().setProgress(value);
         }));
 
-        this.scaleTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 146, 36, 14, 5, String.valueOf(info.getScale()),
+        this.scaleTextField = this.addRenderableWidget(ScreenUtils.createTextField(x + 59, y + 146 + 18, 36, 14, 5, String.valueOf(info.getScale()),
                 s -> {
                     if (s.isEmpty()) {
                         return true;
@@ -89,35 +105,29 @@ public class StatueEditorScreen extends Screen {
 
                     if (scale <= 0) {
                         statue.getStatueData().setScale(1.0F);
-                        updateStatueData();
                     } else {
                         statue.getStatueData().setScale(scale);
-                        updateStatueData();
                     }
                 }));
 
-        statickCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 127, 16, 16, TEXTURE, 0, 166,
+        statickCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 127 + 18, 16, 16, TEXTURE, 0, 166,
                 () -> {
                     statue.getStatueData().setIsStatic(true);
-                    updateStatueData();
                 },
                 () -> {
                     statue.getStatueData().setIsStatic(false);
-                    updateStatueData();
                 },
                 info.isStatic()
         ));
 
 
-        this.interactableCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 145, 16, 16, TEXTURE, 0, 166,
+        this.interactableCheckbox = this.addRenderableWidget(new ImageCheckbox(x + 170, y + 145 + 18, 16, 16, TEXTURE, 0, 166,
                 () -> {
                     statue.getStatueData().setSacredAshInteractable(true);
-                    updateStatueData();
                 },
                 () -> {
                     var data = statue.getStatueData();
                     statue.getStatueData().setSacredAshInteractable(false);
-                    updateStatueData();
                 },
                 info.isSacredAshInteractable()
         ));
@@ -125,7 +135,6 @@ public class StatueEditorScreen extends Screen {
         orientationWidget = addRenderableWidget(new AngleSelectionWidget(x + 43, y + 47, 15, (statue.getStatueData().getOrientation()), 5, 0x000000,
                 (prevAngle, angle) -> {
                     statue.getStatueData().setOrientation(angle);
-                    updateStatueData();
                 }));
 
         modelWidget = this.addRenderableWidget(new ModelWidget(x +  122, y + 25, 63, 63, info.getProperties().asRenderablePokemon(), 1.9090909f, -325f, -9.545454f));
@@ -157,18 +166,19 @@ public class StatueEditorScreen extends Screen {
         poseStack.disableScissor();
         poseStack.pose().popPose();
 
-        poseStack.blit(STATUE, 0, 0, 0, 0, 256, 166, 256, 256);
+        poseStack.blit(STATUE, 0, 0, 0, 0, 256, 184, 256, 256);
 
         poseStack.pose().popPose();
         super.render(poseStack, mouseX, mouseY, partialTick);
 
-        ScreenUtils.drawText(poseStack, "Static:", x + 168, y + 131, 0x5F5F60, ScreenUtils.Position.RIGHT);
-        ScreenUtils.drawText(poseStack, "Interactable:", x + 168, y + 149, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Static:", x + 168, y + 131 + 18, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Interactable:", x + 168, y + 149 + 18, 0x5F5F60, ScreenUtils.Position.RIGHT);
 
         ScreenUtils.drawText(poseStack, "Name:", x + 56, y + 95, 0x5F5F60, ScreenUtils.Position.RIGHT);
-        ScreenUtils.drawText(poseStack, "Animation", x + 56, y + 113, 0x5F5F60, ScreenUtils.Position.RIGHT);
-        ScreenUtils.drawText(poseStack, "Timestamp:", x + 56, y + 131, 0x5F5F60, ScreenUtils.Position.RIGHT);
-        ScreenUtils.drawText(poseStack, "Scale:", x + 56, y + 149, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Pose:", x + 56, y + 113, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Material:", x + 56, y + 113+18, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Timestamp:", x + 56, y + 131 + 18, 0x5F5F60, ScreenUtils.Position.RIGHT);
+        ScreenUtils.drawText(poseStack, "Scale:", x + 56, y + 149 + 18, 0x5F5F60, ScreenUtils.Position.RIGHT);
 
         poseStack.drawString(font, "N", x + 56, y + 36, 0x000000, false);
         poseStack.drawString(font, "E", x + 78, y + 59, 0x000000, false);

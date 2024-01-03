@@ -1,0 +1,18 @@
+{
+  "name": "cobblemon:raikou",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": [],
+      "model": "generations_core:raikou.pk",
+      "poser": "generations_core:raikou",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

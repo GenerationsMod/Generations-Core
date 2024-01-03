@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.render.entity;
 
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel;
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.PokemonFloatingState;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
 import com.cobblemon.mod.common.entity.PoseType;
@@ -54,7 +53,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         var state = entity.delegate;
 
         var model = (PoseableEntityModel<PokemonEntity>)PokemonModelRepository.INSTANCE.getPoser(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects());
-        var pose = model.getPose(PoseType.SWIM/*entity.getStatueData().getPose()*/);
+        var pose = model.getPose(entity.getStatueData().getPoseType());
         if(pose != null) state.setPose(pose.getPoseName());
 
         state.updatePartialTicks(partialTicks);
@@ -98,7 +97,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
     @Override
     public @NotNull ResourceLocation getTextureLocation(@NotNull StatueEntity entity) {
-        var material = entity.getStatueData().material();
+        var material = entity.getStatueData().getMaterial();
 
         if(material != null) return ((GenerationsCoreClient.GenerationsTextureLoader) ITextureLoader.instance()).getLocation(material);
         else return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);

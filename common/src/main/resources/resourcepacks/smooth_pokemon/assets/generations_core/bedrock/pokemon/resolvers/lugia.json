@@ -1,12 +1,12 @@
 {
-  "species": "cobblemon:lugia",
-  "order": 3,
+  "name": "cobblemon:lugia",
+  "order": 1,
   "variations": [
     {
-      "poser": "generations_core:lugia",
+      "aspects": [],
       "model": "generations_core:lugia.pk",
-      "texture": "pk:normal",
-      "layers": []
+      "poser": "generations_core:lugia",
+      "texture": "pk:normal"
     },
     {
       "aspects": [
