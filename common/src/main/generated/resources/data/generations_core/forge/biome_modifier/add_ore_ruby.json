@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_hot",
+  "features": [
+    "generations_core:ore_ruby",
+    "generations_core:ore_ruby_buried"
+  ],
+  "step": "underground_ores"
+}

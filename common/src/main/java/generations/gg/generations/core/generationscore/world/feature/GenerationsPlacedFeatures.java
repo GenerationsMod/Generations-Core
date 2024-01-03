@@ -18,6 +18,22 @@ public class GenerationsPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_SILICON_UPPER = registerKey("ore_silicon_upper");
     public static final ResourceKey<PlacedFeature> ORE_SILICON_MIDDLE = registerKey("ore_silicon_middle");
     public static final ResourceKey<PlacedFeature> ORE_SILICON_LOWER = registerKey("ore_silicon_lower");
+
+    public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE = registerKey("ore_sapphire");
+    public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_BURIED = registerKey("ore_sapphire_buried");
+    public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_OVERWORLD_SMALL = registerKey("ore_sapphire_overworld_small");
+    public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_OVERWORLD_LARGE = registerKey("ore_sapphire_overworld_large");
+    public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_OVERWORLD_BURIED = registerKey("ore_sapphire_overworld_buried");
+    public static final ResourceKey<PlacedFeature> ORE_RUBY = registerKey("ore_ruby");
+    public static final ResourceKey<PlacedFeature> ORE_RUBY_BURIED = registerKey("ore_ruby_buried");
+    public static final ResourceKey<PlacedFeature> ORE_RUBY_OVERWORLD_SMALL = registerKey("ore_ruby_overworld_small");
+    public static final ResourceKey<PlacedFeature> ORE_RUBY_OVERWORLD_LARGE = registerKey("ore_ruby_overworld_large");
+    public static final ResourceKey<PlacedFeature> ORE_RUBY_OVERWORLD_BURIED = registerKey("ore_ruby_overworld_buried");
+    public static final ResourceKey<PlacedFeature> ORE_CRYSTAL = registerKey("ore_crystal");
+    public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_BURIED = registerKey("ore_crystal_buried");
+    public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_OVERWORLD_SMALL = registerKey("ore_crystal_overworld_small");
+    public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_OVERWORLD_LARGE = registerKey("ore_crystal_overworld_large");
+    public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_OVERWORLD_BURIED = registerKey("ore_crystal_overworld_buried");
     public static final ResourceKey<PlacedFeature> POKE_BALL_LOOT = registerKey("poke_ball_loot");
     public static final ResourceKey<PlacedFeature> BEAST_BALL_LOOT = registerKey("beast_ball_loot");
     public static final ResourceKey<PlacedFeature> CHERISH_BALL_LOOT = registerKey("cherish_ball_loot");
@@ -58,6 +74,24 @@ public class GenerationsPlacedFeatures {
         register(context, ORE_SILICON_MIDDLE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON), GenerationsOrePlacements.modifiersWithCount(80, HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56))));
         register(context, ORE_SILICON_LOWER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON_SMALL), GenerationsOrePlacements.modifiersWithCount(10, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(72))));
 
+        register(context, ORE_SAPPHIRE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SAPPHIRE), GenerationsOrePlacements.modifiersWithCount(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(32))));
+        register(context, ORE_SAPPHIRE_BURIED, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SAPPHIRE_SMALL), GenerationsOrePlacements.modifiersWithCount(4, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(64))));
+        register(context, ORE_SAPPHIRE_OVERWORLD_SMALL, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SAPPHIRE_OVERWORLD_SMALL), GenerationsOrePlacements.modifiersWithCount(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, ORE_SAPPHIRE_OVERWORLD_LARGE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SAPPHIRE_OVERWORLD_LARGE), GenerationsOrePlacements.modifiersWithChanceAndRange(9, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, ORE_SAPPHIRE_OVERWORLD_BURIED, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SAPPHIRE_OVERWORLD_SMALL), GenerationsOrePlacements.modifiersWithCount(4, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+
+        register(context, ORE_RUBY, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_RUBY), GenerationsOrePlacements.modifiersWithCount(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(32))));
+        register(context, ORE_RUBY_BURIED, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_RUBY_SMALL), GenerationsOrePlacements.modifiersWithCount(4, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(64))));
+        register(context, ORE_RUBY_OVERWORLD_SMALL, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_RUBY_OVERWORLD_SMALL), GenerationsOrePlacements.modifiersWithCount(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, ORE_RUBY_OVERWORLD_LARGE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_RUBY_OVERWORLD_LARGE), GenerationsOrePlacements.modifiersWithChanceAndRange(9, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, ORE_RUBY_OVERWORLD_BURIED, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_RUBY_OVERWORLD_SMALL), GenerationsOrePlacements.modifiersWithCount(4, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        
+        register(context, ORE_CRYSTAL, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_CRYSTAL), GenerationsOrePlacements.modifiersWithCount(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(32))));
+        register(context, ORE_CRYSTAL_BURIED, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_CRYSTAL_SMALL), GenerationsOrePlacements.modifiersWithCount(4, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(64))));
+        register(context, ORE_CRYSTAL_OVERWORLD_SMALL, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_CRYSTAL_OVERWORLD_SMALL), GenerationsOrePlacements.modifiersWithCount(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, ORE_CRYSTAL_OVERWORLD_LARGE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_CRYSTAL_OVERWORLD_LARGE), GenerationsOrePlacements.modifiersWithChanceAndRange(9, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, ORE_CRYSTAL_OVERWORLD_BURIED, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_CRYSTAL_OVERWORLD_SMALL), GenerationsOrePlacements.modifiersWithCount(4, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        
         register(context, POKE_BALL_LOOT, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.POKE_BALL_LOOT), worldSurfaceSquaredWithChance(250));
         register(context, BEAST_BALL_LOOT, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.BEAST_BALL_LOOT), worldSurfaceSquaredWithChance(200));
         register(context, CHERISH_BALL_LOOT, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.CHERISH_BALL_LOOT), worldSurfaceSquaredWithChance(200));

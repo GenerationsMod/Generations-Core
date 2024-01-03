@@ -14,6 +14,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
@@ -60,12 +61,52 @@ public class GenerationsConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SILICON = registerKey("ore_silicon");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SILICON_SMALL = registerKey("ore_silicon_small");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE = registerKey("ore_sapphire");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_SMALL = registerKey("ore_sapphire_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_OVERWORLD_SMALL = registerKey("ore_sapphire_overworld_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_OVERWORLD_LARGE = registerKey("ore_sapphire_overworld_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_OVERWORLD_BURIED = registerKey("ore_sapphire_overworld_buried");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_RUBY = registerKey("ore_ruby");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_RUBY_SMALL = registerKey("ore_ruby_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_RUBY_OVERWORLD_SMALL = registerKey("ore_ruby_overworld_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_RUBY_OVERWORLD_LARGE = registerKey("ore_ruby_overworld_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_RUBY_OVERWORLD_BURIED = registerKey("ore_ruby_overworld_buried");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL = registerKey("ore_crystal");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL_SMALL = registerKey("ore_crystal_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL_OVERWORLD_SMALL = registerKey("ore_crystal_overworld_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL_OVERWORLD_LARGE = registerKey("ore_crystal_overworld_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL_OVERWORLD_BURIED = registerKey("ore_crystal_overworld_buried");
+
+
     public static void bootStrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        var siliconOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.SILICON_ORE_SET);
+        List<OreConfiguration.TargetBlockState> siliconOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.SILICON_ORE_SET);
         register(context, ORE_SILICON, Feature.ORE, new OreConfiguration(siliconOres, 9, 0.0F));
         register(context, ORE_SILICON_SMALL, Feature.ORE, new OreConfiguration(siliconOres, 4, 0.0F));
+
+        List<OreConfiguration.TargetBlockState> sapphireOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.SAPPHIRE_ORE_SET);
+        register(context, ORE_SAPPHIRE, Feature.ORE, new OreConfiguration(sapphireOres, 7));
+        register(context, ORE_SAPPHIRE_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 7, 1.0F));
+        register(context, ORE_SAPPHIRE_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 4, 0.5F));
+        register(context, ORE_SAPPHIRE_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(sapphireOres, 12, 0.7F));
+        register(context, ORE_SAPPHIRE_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(sapphireOres, 8, 1.0F));
+
+        List<OreConfiguration.TargetBlockState> rubyOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.RUBY_ORE_SET);
+        register(context, ORE_RUBY, Feature.ORE, new OreConfiguration(rubyOres, 7));
+        register(context, ORE_RUBY_SMALL, Feature.ORE, new OreConfiguration(rubyOres, 7, 1.0F));
+        register(context, ORE_RUBY_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(rubyOres, 4, 0.5F));
+        register(context, ORE_RUBY_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(rubyOres, 12, 0.7F));
+        register(context, ORE_RUBY_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(rubyOres, 8, 1.0F));
+
+        List<OreConfiguration.TargetBlockState> crystalOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.CRYSTAL_ORE_SET);
+        register(context, ORE_CRYSTAL, Feature.ORE, new OreConfiguration(crystalOres, 7));
+        register(context, ORE_CRYSTAL_SMALL, Feature.ORE, new OreConfiguration(crystalOres, 7, 1.0F));
+        register(context, ORE_CRYSTAL_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(crystalOres, 4, 0.5F));
+        register(context, ORE_CRYSTAL_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(crystalOres, 12, 0.7F));
+        register(context, ORE_CRYSTAL_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(crystalOres, 8, 1.0F));
 
         register(context, POKE_BALL_LOOT, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.POKE_BALL_LOOT.get())));
         register(context, BEAST_BALL_LOOT, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.BEAST_BALL_LOOT.get())));

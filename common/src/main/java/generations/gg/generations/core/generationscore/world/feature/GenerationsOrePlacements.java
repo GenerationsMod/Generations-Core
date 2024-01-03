@@ -19,7 +19,7 @@ public class GenerationsOrePlacements {
         return modifiers(CountPlacement.of(count), heightModifier);
     }
 
-    public static List<PlacementModifier> modifiersWithCountAndRange(int chance, PlacementModifier heightModifier) {
+    public static List<PlacementModifier> modifiersWithChanceAndRange(int chance, PlacementModifier heightModifier) {
         return modifiers(RarityFilter.onAverageOnceEvery(chance), heightModifier);
     }
 

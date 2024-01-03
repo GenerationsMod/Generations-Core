@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#cobblemon:is_overworld",
+  "biomes": "#minecraft:is_overworld",
   "features": "generations_core:ultra_ball_loot",
   "step": "raw_generation"
 }
