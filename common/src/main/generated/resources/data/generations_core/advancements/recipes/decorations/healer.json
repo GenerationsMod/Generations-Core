@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_aluminum_plate_has_diamond_has_iron_ingot": {
+    "has_copper_plate_has_diamond_has_iron_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:aluminum_plate",
+              "generations_core:copper_plate",
               "minecraft:diamond",
               "minecraft:iron_ingot"
             ]
@@ -24,7 +24,7 @@
   },
   "requirements": [
     [
-      "has_aluminum_plate_has_diamond_has_iron_ingot",
+      "has_copper_plate_has_diamond_has_iron_ingot",
       "has_the_recipe"
     ]
   ],

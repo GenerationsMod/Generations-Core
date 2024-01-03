@@ -579,13 +579,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //Golden Temple Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()).define('#', GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()).pattern("##").pattern("##").unlockedBy(getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()), has(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get())).save(consumer);
 
-        //Aluminum recipes
-        nineBlockStorageRecipesRecipesWithCustomUnpacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ALUMINUM_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ALUMINUM_BLOCK.get(), "aluminum_ingot_from_aluminum_block", "aluminum_ingot");
-
-        nineBlockStorageRecipesWithCustomPacking(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ALUMINUM_NUGGET.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ALUMINUM_INGOT.get(), "aluminum_ingot_from_nuggets", "aluminum_ingot");
-
-        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.RAW_ALUMINUM.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RAW_ALUMINUM_BLOCK.get());
-
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.CRYSTAL.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_BLOCK.get());
 
         //buildStairsCraftingRecipes(consumer, PixelmonBlocks.CRYSTAL_STAIRS, PixelmonBlocks.CRYSTAL_BLOCK, true);

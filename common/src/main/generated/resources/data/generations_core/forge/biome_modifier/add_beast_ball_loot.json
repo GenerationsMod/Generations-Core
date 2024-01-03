@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": "generations_core:beast_ball_loot",
+  "step": "raw_generation"
+}

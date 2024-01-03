@@ -2,11 +2,13 @@ package generations.gg.generations.core.generationscore.fabric;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
 import generations.gg.generations.core.generationscore.world.feature.GenerationsConfiguredFeatures;
 import generations.gg.generations.core.generationscore.world.feature.GenerationsPlacedFeatures;
+import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
@@ -28,7 +30,6 @@ import java.util.concurrent.Executor;
 /**
  * Fabric Main class and entry point for GenerationsCore.
  * @see ModInitializer
- *
  * @see GenerationsCore
  *
  * @author J.T. McQuigg, WaterPicker
@@ -40,6 +41,9 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
 
         this.getNetworkManager().registerClientBound();
         this.getNetworkManager().registerServerBound();
+
+        if (FabricLoader.getInstance().isModLoaded("impactor"))
+            ImpactorCompat.init();
 
         ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, isLogin) -> {
             if (isLogin)
@@ -53,6 +57,12 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
 
         GenerationsCore.initBuiltinPacks((type, s, s2) -> {
             ResourceManagerHelper.registerBuiltinResourcePack(s, FabricLoader.getInstance().getModContainer("generations_core").get(), s2, ResourcePackActivationType.DEFAULT_ENABLED);
+        });
+
+        MutableBlockEntityType.blocksToAdd.forEach(genericModelBlock -> {
+            if(genericModelBlock.getBlockEntityType() instanceof MutableBlockEntityType<?> mutableBlockEntityType) {
+                mutableBlockEntityType.addBlock(genericModelBlock);
+            }
         });
 
         GenerationsConfiguredFeatures.init();

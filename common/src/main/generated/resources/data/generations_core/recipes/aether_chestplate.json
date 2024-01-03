@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "X": {
-      "item": "generations_core:aluminum_ingot"
+      "item": "minecraft:copper_ingot"
     },
     "Y": {
       "item": "generations_core:crystal"

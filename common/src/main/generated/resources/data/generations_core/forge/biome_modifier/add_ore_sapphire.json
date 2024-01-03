@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_wet",
+  "features": [
+    "generations_core:ore_sapphire",
+    "generations_core:ore_sapphire_buried"
+  ],
+  "step": "underground_ores"
+}

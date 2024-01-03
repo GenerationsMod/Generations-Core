@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#cobblemon:is_plains",
+  "features": "generations_core:origin_ball_loot",
+  "step": "raw_generation"
+}

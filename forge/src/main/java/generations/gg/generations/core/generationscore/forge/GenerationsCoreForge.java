@@ -4,9 +4,11 @@ import com.mojang.datafixers.util.Pair;
 import dev.architectury.platform.forge.EventBuses;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
+import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
@@ -74,6 +76,8 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 
         GenerationsCore.initBuiltinPacks((packType, id, name) -> packs.computeIfAbsent(packType, a -> new ArrayList<>()).add(new Pair<>(id, name)));
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::addPackFinders);
+        if (ModList.get().isLoaded("impactor"))
+            ImpactorCompat.init();
     }
 
     public void addPackFinders(AddPackFindersEvent event) {
@@ -140,6 +144,11 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         getNetworkManager().registerClientBound();
         getNetworkManager().registerServerBound();
         event.enqueueWork(VanillaCompat::setup);
+        MutableBlockEntityType.blocksToAdd.forEach(genericModelBlock -> {
+            if (genericModelBlock.getBlockEntityType() instanceof MutableBlockEntityType<?> mutableBlockEntityType) {
+                mutableBlockEntityType.addBlock(genericModelBlock);
+            }
+        });
     }
 
     private void onDataPackSync(OnDatapackSyncEvent event) {

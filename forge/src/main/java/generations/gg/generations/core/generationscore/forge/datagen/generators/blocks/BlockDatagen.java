@@ -144,8 +144,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         registerBlockItem(GenerationsBlocks.GOLDEN_TEMPLE_SAND);
 
-        registerBlockItem(GenerationsBlocks.RAW_ALUMINUM_BLOCK);
-        registerBlockItem(GenerationsBlocks.ALUMINUM_BLOCK);
         registerPallet(GenerationsBlocks.RUBY_BLOCK, GenerationsBlocks.RUBY_SLAB, GenerationsBlocks.RUBY_STAIRS, GenerationsBlocks.RUBY_WALL, null, null, true);
         registerPallet(GenerationsBlocks.SAPPHIRE_BLOCK, GenerationsBlocks.SAPPHIRE_SLAB, GenerationsBlocks.SAPPHIRE_STAIRS, GenerationsBlocks.SAPPHIRE_WALL, null, null, true);
         registerPallet(GenerationsBlocks.CRYSTAL_BLOCK, GenerationsBlocks.CRYSTAL_SLAB, GenerationsBlocks.CRYSTAL_STAIRS, GenerationsBlocks.CRYSTAL_WALL, null, null, true);

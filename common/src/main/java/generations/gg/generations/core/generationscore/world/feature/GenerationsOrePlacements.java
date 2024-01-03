@@ -11,16 +11,16 @@ import java.util.List;
  */
 public class GenerationsOrePlacements {
 
-    private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
+    private static List<PlacementModifier> orePlacement(PlacementModifier countModifier, PlacementModifier heightModifier) {
         return List.of(countModifier, InSquarePlacement.spread(), heightModifier, BiomeFilter.biome());
     }
 
-    public static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
-        return modifiers(CountPlacement.of(count), heightModifier);
+    public static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier heightRange) {
+        return orePlacement(CountPlacement.of(count), heightRange);
     }
 
-    public static List<PlacementModifier> modifiersWithCountAndRange(int chance, PlacementModifier heightModifier) {
-        return modifiers(RarityFilter.onAverageOnceEvery(chance), heightModifier);
+    public static List<PlacementModifier> rareOrePlacement(int chance, PlacementModifier heightRange) {
+        return orePlacement(RarityFilter.onAverageOnceEvery(chance), heightRange);
     }
 
 }

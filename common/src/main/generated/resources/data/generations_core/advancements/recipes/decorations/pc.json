@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_aluminum_plate_has_redstone_lamp_has_glass_pane": {
+    "has_copper_plate_has_redstone_lamp_has_glass_pane": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:aluminum_plate",
+              "generations_core:copper_plate",
               "minecraft:redstone_lamp",
               "minecraft:glass_pane"
             ]
@@ -24,7 +24,7 @@
   },
   "requirements": [
     [
-      "has_aluminum_plate_has_redstone_lamp_has_glass_pane",
+      "has_copper_plate_has_redstone_lamp_has_glass_pane",
       "has_the_recipe"
     ]
   ],

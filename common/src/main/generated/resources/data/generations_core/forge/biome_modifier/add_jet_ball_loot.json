@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#cobblemon:is_plateau",
+  "features": "generations_core:jet_ball_loot",
+  "step": "raw_generation"
+}

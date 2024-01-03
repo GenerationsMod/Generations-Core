@@ -114,8 +114,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_SOUP.get(), "restoration/");
 
         createItem(GenerationsItems.Z_INGOT.get(), "ingots/");
-        createItem(GenerationsItems.ALUMINUM_INGOT.get(), "ingots/");
-        createItem(GenerationsItems.ALUMINUM_PLATE.get(), "materials/");
+        createItem(GenerationsItems.COPPER_PLATE.get(), "materials/");
 
         createItem(GenerationsItems.KOMALA_COFFEE.get(), "consumable/");
         createItem(GenerationsItems.OMELETTE.get(), "consumable/");
@@ -968,10 +967,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.YELLOW_SCARF.get(), "unimplemented/");
         createItem(GenerationsItems.Z_POWER_RING.get(), "unimplemented/");
         createItem(GenerationsItems.Z_RING.get(), "unimplemented/");
-
-        //aluminium
-        createItem(GenerationsItems.RAW_ALUMINUM.get(), "rawores/");
-        createItem(GenerationsItems.ALUMINUM_NUGGET.get(), "nuggets/");
 
         createItem(GenerationsItems.GHOST_BOAT_ITEM.get(), "boat/");
         createItem(GenerationsItems.GHOST_CHEST_BOAT_ITEM.get(), "chest_boat/");

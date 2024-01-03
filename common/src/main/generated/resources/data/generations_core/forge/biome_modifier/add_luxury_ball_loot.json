@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#cobblemon:is_island",
+  "features": "generations_core:luxury_ball_loot",
+  "step": "raw_generation"
+}

@@ -768,10 +768,7 @@ public class GenerationsItems {
      * Vanilla Like Materials
      */
     public static final RegistrySupplier<Item> Z_INGOT = register("z_ingot", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> ALUMINUM_INGOT = register("aluminum_ingot", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> ALUMINUM_PLATE = register("aluminum_plate", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> RAW_ALUMINUM = register("raw_aluminum", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> ALUMINUM_NUGGET = register("aluminum_nugget", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> COPPER_PLATE = register("copper_plate", Item::new, GenerationsCreativeTabs.PLAYER_ITEMS);
 
     /**
      * Player Items

@@ -32,7 +32,6 @@ subprojects {
         }
         maven("https://maven.tterrag.com/")
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
-        maven("https://maven.tterrag.com/")
     }
 
     @Suppress("UnstableApiUsage")

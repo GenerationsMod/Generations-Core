@@ -12,13 +12,10 @@ import com.cobblemon.mod.common.api.data.DataProvider;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.mojang.logging.LogUtils;
 import dev.architectury.event.events.common.InteractionEvent;
-import dev.architectury.event.events.common.LifecycleEvent;
-import dev.architectury.platform.Platform;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.api.player.Caught;
-import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
@@ -34,7 +31,6 @@ import generations.gg.generations.core.generationscore.world.item.creativetab.Ge
 import generations.gg.generations.core.generationscore.world.item.legends.EnchantableItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeSerializers;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
@@ -109,8 +105,6 @@ public class GenerationsCore
 		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
 
-		if(Platform.isModLoaded("impactor")) ImpactorCompat.init();
-
 		GenerationsCobblemonEvents.init();
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {
 			var stack = player.getItemInHand(hand);
@@ -118,14 +112,6 @@ public class GenerationsCore
 			if(result.interruptsFurtherEvaluation() && stack.getItem() instanceof PixelmonInteractions.PixelmonInteraction interaction && interaction.isConsumed()) stack.shrink(1);
 			return result;
 		});
-
-		LifecycleEvent.SETUP.register(() -> MutableBlockEntityType.blocksToAdd.forEach(genericModelBlock -> {
-			if(genericModelBlock.getBlockEntityType() instanceof MutableBlockEntityType<?> mutableBlockEntityType) {
-				mutableBlockEntityType.addBlock(genericModelBlock);
-			}
-		}));
-
-
 	}
 
 	public static void initBuiltinPacks(TriConsumer<PackType, ResourceLocation, MutableComponent> consumer) {

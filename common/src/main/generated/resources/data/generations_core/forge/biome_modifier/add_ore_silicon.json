@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "generations_core:ore_silicon_upper",
+    "generations_core:ore_silicon_middle",
+    "generations_core:ore_silicon_lower"
+  ],
+  "step": "underground_ores"
+}

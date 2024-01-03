@@ -43,7 +43,6 @@ public class GenerationsArmor {
 	public static final ArmorSet SKULL = ArmorSet.create("skull", () -> GenerationsArmorMaterials.SKULL);
 	public static final ArmorSet ULTRA = ArmorSet.create("ultra", () -> GenerationsArmorMaterials.ULTRA);
 	public static final ArmorSet CRYSTALLIZED = ArmorSet.create("crystallized", () -> GenerationsArmorMaterials.CRYSTAL);
-	public static final ArmorSet ALUMINUM = ArmorSet.create("aluminum", () -> GenerationsArmorMaterials.ALUMINUM);
 	public static final ArmorSet DAWN_STONE = ArmorSet.create("dawn_stone", () -> GenerationsArmorMaterials.DAWN_STONE);
 	public static final ArmorSet DUSK_STONE = ArmorSet.create("dusk_stone", () -> GenerationsArmorMaterials.DUSK_STONE);
 	public static final ArmorSet FIRE_STONE = ArmorSet.create("fire_stone", () -> GenerationsArmorMaterials.FIRE_STONE);
