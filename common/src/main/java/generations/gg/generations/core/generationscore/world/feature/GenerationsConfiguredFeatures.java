@@ -84,8 +84,8 @@ public class GenerationsConfiguredFeatures {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         List<OreConfiguration.TargetBlockState> siliconOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.SILICON_ORE_SET);
-        register(context, ORE_SILICON, Feature.ORE, new OreConfiguration(siliconOres, 9, 0.0F));
-        register(context, ORE_SILICON_SMALL, Feature.ORE, new OreConfiguration(siliconOres, 4, 0.0F));
+        register(context, ORE_SILICON, Feature.ORE, new OreConfiguration(siliconOres, 8, 0.1F));
+        register(context, ORE_SILICON_SMALL, Feature.ORE, new OreConfiguration(siliconOres, 4, 0.1F));
 
         List<OreConfiguration.TargetBlockState> sapphireOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.SAPPHIRE_ORE_SET);
         register(context, ORE_SAPPHIRE, Feature.ORE, new OreConfiguration(sapphireOres, 7));

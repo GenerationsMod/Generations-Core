@@ -24,16 +24,19 @@ public class GenerationsPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_OVERWORLD_SMALL = registerKey("ore_sapphire_overworld_small");
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_OVERWORLD_LARGE = registerKey("ore_sapphire_overworld_large");
     public static final ResourceKey<PlacedFeature> ORE_SAPPHIRE_OVERWORLD_BURIED = registerKey("ore_sapphire_overworld_buried");
+
     public static final ResourceKey<PlacedFeature> ORE_RUBY = registerKey("ore_ruby");
     public static final ResourceKey<PlacedFeature> ORE_RUBY_BURIED = registerKey("ore_ruby_buried");
     public static final ResourceKey<PlacedFeature> ORE_RUBY_OVERWORLD_SMALL = registerKey("ore_ruby_overworld_small");
     public static final ResourceKey<PlacedFeature> ORE_RUBY_OVERWORLD_LARGE = registerKey("ore_ruby_overworld_large");
     public static final ResourceKey<PlacedFeature> ORE_RUBY_OVERWORLD_BURIED = registerKey("ore_ruby_overworld_buried");
+
     public static final ResourceKey<PlacedFeature> ORE_CRYSTAL = registerKey("ore_crystal");
     public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_BURIED = registerKey("ore_crystal_buried");
     public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_OVERWORLD_SMALL = registerKey("ore_crystal_overworld_small");
     public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_OVERWORLD_LARGE = registerKey("ore_crystal_overworld_large");
     public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_OVERWORLD_BURIED = registerKey("ore_crystal_overworld_buried");
+
     public static final ResourceKey<PlacedFeature> POKE_BALL_LOOT = registerKey("poke_ball_loot");
     public static final ResourceKey<PlacedFeature> BEAST_BALL_LOOT = registerKey("beast_ball_loot");
     public static final ResourceKey<PlacedFeature> CHERISH_BALL_LOOT = registerKey("cherish_ball_loot");
@@ -70,9 +73,10 @@ public class GenerationsPlacedFeatures {
 
     public static void bootStrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
-        register(context, ORE_SILICON_UPPER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON), GenerationsOrePlacements.commonOrePlacement(80, HeightRangePlacement.triangle(VerticalAnchor.absolute(80), VerticalAnchor.absolute(384))));
-        register(context, ORE_SILICON_MIDDLE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON), GenerationsOrePlacements.commonOrePlacement(80, HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56))));
-        register(context, ORE_SILICON_LOWER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON_SMALL), GenerationsOrePlacements.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(72))));
+
+        register(context, ORE_SILICON_UPPER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON), GenerationsOrePlacements.commonOrePlacement(40, HeightRangePlacement.triangle(VerticalAnchor.absolute(80), VerticalAnchor.absolute(384))));
+        register(context, ORE_SILICON_MIDDLE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON), GenerationsOrePlacements.commonOrePlacement(40, HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56))));
+        register(context, ORE_SILICON_LOWER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON_SMALL), GenerationsOrePlacements.commonOrePlacement(5, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(72))));
 
         register(context, ORE_SAPPHIRE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SAPPHIRE), GenerationsOrePlacements.commonOrePlacement(2, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(32))));
         register(context, ORE_SAPPHIRE_BURIED, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SAPPHIRE_SMALL), GenerationsOrePlacements.commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(64))));
