@@ -17,11 +17,7 @@
   "processingTime": 240,
   "result": {
     "type": "item",
-    "Count": 1,
-    "id": "generations_core:soul_heart",
-    "tag": {
-      "Damage": 0
-    }
+    "data": "generations_core:soul_heart"
   },
   "speciesKey": "cobblemon:magearna[]"
 }

@@ -35,11 +35,7 @@
   "processingTime": 240,
   "result": {
     "type": "pokemon",
-    "data": {
-      "CustomProperties": [],
-      "OriginalText": "",
-      "SpeciesText": "typenull"
-    }
+    "data": "typenull"
   },
   "speciesKey": "cobblemon:typenull[]"
 }

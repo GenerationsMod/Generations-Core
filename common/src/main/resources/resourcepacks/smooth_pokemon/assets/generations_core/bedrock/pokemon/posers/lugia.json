@@ -37,8 +37,7 @@
         "PORTRAIT",
         "NONE",
         "PROFILE",
-        "STAND",
-        "FLOAT"
+        "STAND"
       ]
     },
     "swimming": {
@@ -47,7 +46,7 @@
       ],
       "poseName": "swimming",
       "poseTypes": [
-        "SLEEP"
+        "FLOAT"
       ]
     },
     "walking": {

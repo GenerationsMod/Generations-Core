@@ -3,7 +3,7 @@
   "poses": {
     "standing": {
       "animations": [
-        "pk(generations_core:raikou.pk, idle.smd)"
+        "pk(generations_core:raikou.pk, idle)"
       ],
       "poseName": "standing",
       "poseTypes": [

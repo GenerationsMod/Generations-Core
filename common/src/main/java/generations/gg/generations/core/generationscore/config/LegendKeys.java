@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.config;
 
-import java.util.Set;
+import net.minecraft.resources.ResourceLocation;
 
-import static com.cobblemon.mod.common.util.MiscUtilsKt.cobblemonResource;
+import java.util.Set;
 
 public class LegendKeys {
     public static SpeciesKey ARTICUNO = create("articuno");
@@ -71,10 +71,10 @@ public class LegendKeys {
     public static SpeciesKey ZACIAN = create("zacian");
 
     private static SpeciesKey create(String species) {
-        return new SpeciesKey(cobblemonResource(species));
+        return new SpeciesKey(new ResourceLocation("cobblemon", species));
     }
 
     private static SpeciesKey create(String species, Set<String> aspects) {
-        return new SpeciesKey(cobblemonResource(species), aspects);
+        return new SpeciesKey(new ResourceLocation("cobblemon", species), aspects);
     }
 }

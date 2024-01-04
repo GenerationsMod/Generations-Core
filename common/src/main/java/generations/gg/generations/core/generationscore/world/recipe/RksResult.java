@@ -4,7 +4,10 @@ import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public interface RksResult {
@@ -27,16 +30,14 @@ public interface RksResult {
         };
     }
 
-    record ItemResult(ItemStack item) implements RksResult {
+    record ItemResult(Item item) implements RksResult {
         @Override
         public void toJson(JsonObject object) {
-            var json = GenerationsUtils.jsonToNbt(GenerationsUtils.toCompoundTag(item));
-
-            json.getAsJsonObject().asMap().forEach(object::add);
+            object.addProperty("data", BuiltInRegistries.ITEM.getKey(item).toString());
         }
 
         public static ItemResult fromJson(JsonObject object) {
-            return new ItemResult(ItemStack.of((CompoundTag) GenerationsUtils.jsonToNbt(object)));
+            return new ItemResult(BuiltInRegistries.ITEM.get(new ResourceLocation(object.getAsJsonPrimitive("data").getAsString())));
         }
 
         @Override
@@ -47,7 +48,7 @@ public interface RksResult {
     record PokemonResult(PokemonProperties properties) implements RksResult {
         @Override
         public void toJson(JsonObject object) {
-            object.add("data", properties.saveToJSON());
+            object.addProperty("data", properties.asString(" "));
         }
 
         @Override
@@ -56,7 +57,7 @@ public interface RksResult {
         }
 
         public static PokemonResult fromJson(JsonObject object) {
-            var properties = new PokemonProperties().loadFromJSON(object.getAsJsonObject("data"));
+            var properties = GenerationsUtils.parseProperties(object.getAsJsonPrimitive("data").getAsString());
             return new PokemonResult(properties);
         }
     }
