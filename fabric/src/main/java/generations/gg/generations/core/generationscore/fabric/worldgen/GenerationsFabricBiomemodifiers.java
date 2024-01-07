@@ -32,7 +32,7 @@ public class GenerationsFabricBiomemodifiers {
         registerUnderGroundOres(BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_HOT), GenerationsPlacedFeatures.ORE_RUBY, GenerationsPlacedFeatures.ORE_RUBY_BURIED);
         registerUnderGroundOres(GenerationsPlacedFeatures.ORE_RUBY_OVERWORLD_SMALL, GenerationsPlacedFeatures.ORE_RUBY_OVERWORLD_LARGE, GenerationsPlacedFeatures.ORE_RUBY_OVERWORLD_BURIED);
 
-        registerUnderGroundOres(BiomeSelectors.tag(ConventionalBiomeTags.SNOWY), GenerationsPlacedFeatures.ORE_CRYSTAL, GenerationsPlacedFeatures.ORE_CRYSTAL_BURIED);
+        registerUnderGroundOres(BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_COLD), GenerationsPlacedFeatures.ORE_CRYSTAL, GenerationsPlacedFeatures.ORE_CRYSTAL_BURIED);
         registerUnderGroundOres(GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_SMALL, GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_LARGE, GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_BURIED);
 
         registerSurfaceFeatures(GenerationsPlacedFeatures.POKE_BALL_LOOT);

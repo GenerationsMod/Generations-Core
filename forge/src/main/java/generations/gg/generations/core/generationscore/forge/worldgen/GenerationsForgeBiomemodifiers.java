@@ -56,7 +56,7 @@ public class GenerationsForgeBiomemodifiers {
                 placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_RUBY_OVERWORLD_BURIED))
         );
 
-        registerUnderGroundOres(context, "add_ore_crystal", biomesLookup.getOrThrow(Tags.Biomes.IS_SNOWY),
+        registerUnderGroundOres(context, "add_ore_crystal", biomesLookup.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD),
                 HolderSet.direct(
                     placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_CRYSTAL),
                     placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_CRYSTAL_BURIED))

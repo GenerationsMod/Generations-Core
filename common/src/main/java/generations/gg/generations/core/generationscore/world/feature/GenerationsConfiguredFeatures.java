@@ -88,25 +88,25 @@ public class GenerationsConfiguredFeatures {
         register(context, ORE_SILICON_SMALL, Feature.ORE, new OreConfiguration(siliconOres, 4, 0.1F));
 
         List<OreConfiguration.TargetBlockState> sapphireOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.SAPPHIRE_ORE_SET);
-        register(context, ORE_SAPPHIRE, Feature.ORE, new OreConfiguration(sapphireOres, 7));
-        register(context, ORE_SAPPHIRE_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 7, 1.0F));
-        register(context, ORE_SAPPHIRE_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 4, 0.5F));
-        register(context, ORE_SAPPHIRE_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(sapphireOres, 12, 0.7F));
-        register(context, ORE_SAPPHIRE_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(sapphireOres, 8, 1.0F));
+        register(context, ORE_SAPPHIRE, Feature.ORE, new OreConfiguration(sapphireOres, 6));
+        register(context, ORE_SAPPHIRE_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 6, 1.0F));
+        register(context, ORE_SAPPHIRE_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(sapphireOres, 2, 0.5F));
+        register(context, ORE_SAPPHIRE_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(sapphireOres, 2, 0.7F));
+        register(context, ORE_SAPPHIRE_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(sapphireOres, 4, 1.0F));
 
         List<OreConfiguration.TargetBlockState> rubyOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.RUBY_ORE_SET);
-        register(context, ORE_RUBY, Feature.ORE, new OreConfiguration(rubyOres, 7));
-        register(context, ORE_RUBY_SMALL, Feature.ORE, new OreConfiguration(rubyOres, 7, 1.0F));
-        register(context, ORE_RUBY_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(rubyOres, 4, 0.5F));
-        register(context, ORE_RUBY_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(rubyOres, 12, 0.7F));
-        register(context, ORE_RUBY_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(rubyOres, 8, 1.0F));
+        register(context, ORE_RUBY, Feature.ORE, new OreConfiguration(rubyOres, 6));
+        register(context, ORE_RUBY_SMALL, Feature.ORE, new OreConfiguration(rubyOres, 6, 1.0F));
+        register(context, ORE_RUBY_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(rubyOres, 2, 0.5F));
+        register(context, ORE_RUBY_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(rubyOres, 2, 0.7F));
+        register(context, ORE_RUBY_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(rubyOres, 4, 1.0F));
 
         List<OreConfiguration.TargetBlockState> crystalOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.CRYSTAL_ORE_SET);
-        register(context, ORE_CRYSTAL, Feature.ORE, new OreConfiguration(crystalOres, 7));
-        register(context, ORE_CRYSTAL_SMALL, Feature.ORE, new OreConfiguration(crystalOres, 7, 1.0F));
-        register(context, ORE_CRYSTAL_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(crystalOres, 4, 0.5F));
-        register(context, ORE_CRYSTAL_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(crystalOres, 12, 0.7F));
-        register(context, ORE_CRYSTAL_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(crystalOres, 8, 1.0F));
+        register(context, ORE_CRYSTAL, Feature.ORE, new OreConfiguration(crystalOres, 6));
+        register(context, ORE_CRYSTAL_SMALL, Feature.ORE, new OreConfiguration(crystalOres, 6, 1.0F));
+        register(context, ORE_CRYSTAL_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(crystalOres, 2, 0.5F));
+        register(context, ORE_CRYSTAL_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(crystalOres, 2, 0.7F));
+        register(context, ORE_CRYSTAL_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(crystalOres, 4, 1.0F));
 
         register(context, POKE_BALL_LOOT, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.POKE_BALL_LOOT.get())));
         register(context, BEAST_BALL_LOOT, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.BEAST_BALL_LOOT.get())));
