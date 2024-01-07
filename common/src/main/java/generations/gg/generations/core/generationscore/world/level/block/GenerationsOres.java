@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -39,9 +40,9 @@ public class GenerationsOres {
 	/**
 	 * Other Ores
 	 */
-	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore", GenerationsItems.CRYSTAL);
-	public static final GenerationsOreSet RUBY_ORE_SET = new GenerationsOreSet("ruby_ore", GenerationsItems.RUBY);
-	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE);
+	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore", GenerationsItems.CRYSTAL, UniformInt.of(2, 5));
+	public static final GenerationsOreSet RUBY_ORE_SET = new GenerationsOreSet("ruby_ore", GenerationsItems.RUBY, UniformInt.of(2, 5));
+	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE, UniformInt.of(2, 5));
 	public static final GenerationsOreSet SILICON_ORE_SET = new GenerationsOreSet("silicon_ore", GenerationsItems.SILICON);
 	public static final GenerationsOreSet Z_CRYSTAL_ORE_SET = new GenerationsOreSet("z_crystal_ore");
 	public static final GenerationsOreSet FOSSIL_ORE_SET = new GenerationsOreSet("fossil_ore");

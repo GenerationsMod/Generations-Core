@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.set;
 import com.google.common.collect.ImmutableList;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -32,6 +33,21 @@ public class GenerationsOreSet {
         drop = null;
         ore = GenerationsOres.registerOreBlockItem(name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
         deepslateOre = GenerationsOres.registerOreBlockItem("deepslate_" + name , () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
+        //chargeStoneOre = GenerationsOres.registerOreBlockItem("charge_stone_" + name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).dropsLike(ore.get())));
+    }
+
+    /**
+     * Creates a new OreSet
+     *
+     * @param name The name of the Ore
+     * @param drop The drop of the Ore
+     * @param xpRange The xp range of the Ore
+     */
+    public GenerationsOreSet(String name, RegistrySupplier<Item> drop, IntProvider xpRange) {
+        this.name = name;
+        this.drop = drop;
+        ore = GenerationsOres.registerOreBlockItem(name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE), xpRange));
+        deepslateOre = GenerationsOres.registerOreBlockItem("deepslate_" + name , () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE), xpRange));
         //chargeStoneOre = GenerationsOres.registerOreBlockItem("charge_stone_" + name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).dropsLike(ore.get())));
     }
 
