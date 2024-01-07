@@ -11,6 +11,7 @@ import gg.generations.rarecandy.renderer.animation.AnimationController;
 import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
 import gg.generations.rarecandy.renderer.pipeline.Pipeline;
+import gg.generations.rarecandy.renderer.pipeline.UniformUploadContext;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -74,6 +75,8 @@ public class Pipelines {
                                 var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getOffset(ctx.getMaterial().getMaterialName()) != null ? instance.getOffset(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
                                 ctx.uniform().uploadVec2f(offsets.scale());
                             })
+                            .supplyUniform("Light0_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[0]))
+                            .supplyUniform("Light1_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[1]))
                             .prePostDraw(material -> {
                                 material.cullType().enable();
                                 if(material.blendType() == BlendType.Regular) {

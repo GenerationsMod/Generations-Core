@@ -1,6 +1,7 @@
 #version 330 core
 
 in vec2 texCoord0;
+in vec4 normal;
 
 out vec4 outColor;
 
@@ -12,6 +13,8 @@ uniform sampler2D emission;
 uniform sampler2D lightmap;
 uniform ivec2 light;
 uniform bool useLight;
+uniform vec3 Light0_Direction;
+uniform vec3 Light1_Direction;
 
 //base
 uniform vec3 baseColor1;
