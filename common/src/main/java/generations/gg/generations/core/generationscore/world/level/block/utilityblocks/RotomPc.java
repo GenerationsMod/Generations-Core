@@ -26,7 +26,7 @@ public class RotomPc extends PcBlock {
             1, 3, 1);
 
     public RotomPc(@NotNull BlockBehaviour.Properties arg) {
-        super(arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 1, 0);
+        super(arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 2, 0);
     }
 
     @Override

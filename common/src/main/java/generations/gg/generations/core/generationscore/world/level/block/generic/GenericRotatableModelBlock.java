@@ -111,10 +111,10 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         var pos = context.getClickedPos();
         var level = context.getLevel();
-        var dir = context.getHorizontalDirection();
+        var dir = context.getHorizontalDirection().getOpposite();
 
         if(pos.getY() < level.getMaxBuildHeight() - height && isAreaClear(level, dir, pos)) {
-            return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+            return this.defaultBlockState().setValue(FACING, dir);
         } else {
             return null;
         }

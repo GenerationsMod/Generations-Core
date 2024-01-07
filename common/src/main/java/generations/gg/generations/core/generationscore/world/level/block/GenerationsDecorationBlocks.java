@@ -44,7 +44,8 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> SNORLAX_BEAN_BAG = registerDecorationItem("snorlax_bean_bag", () -> new BeanBagBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
     public static final DyedGroup<PastelBeanBagBlock, GenericDyedVariantBlockEntity> PASTEL_BEAN_BAG = registerDyed("pastel_bean_bag", function -> () -> new PastelBeanBagBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
     public static final DyedGroup<SwivelChairBlock, GenericDyedVariantBlockEntity> SWIVEL_CHAIR = registerDyed("swivel_chair", function -> () -> new SwivelChairBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
-    public static final RegistrySupplier<Block> BENCH = registerDecorationItem("bench", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.WOOL).strength(1.0f).sound(SoundType.WOOD)));
+    public static final RegistrySupplier<Block> BENCH = registerDecorationItem("bench", () -> new BenchBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOL).strength(1.0f).sound(SoundType.WOOD)));
+    public static final RegistrySupplier<Block> COUCH = registerDecorationItem("couch", () -> new CouchBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOL).strength(1.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> BUSH = registerDecorationItem("bush", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.GRASS).strength(1.0f)));
 
     public static final RegistrySupplier<Block> DESK = registerDecorationItem("desk", () -> new DeskBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(1.0f).sound(SoundType.WOOD)));
