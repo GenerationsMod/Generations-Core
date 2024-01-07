@@ -55,12 +55,15 @@ public class GenerationsDecorationBlocks {
 
     public static final RegistrySupplier<Block> HDTV = registerDecorationItem("hdtv", () -> new HdTvBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(.5f)));
 
-//    public static final RegistrySupplier<Block> SHOP_DISPLAY_CASE_1 = registerDecorationItem("shop_display_case_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
-//    public static final RegistrySupplier<Block> SHOP_DISPLAY_CASE_2 = registerDecorationItem("shop_display_case_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
-//    public static final RegistrySupplier<Block> SHOP_DISPLAY_SHELF_1 = registerDecorationItem("shop_display_shelf_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
-//    public static final RegistrySupplier<Block> SHOP_DISPLAY_SHELF_2 = registerDecorationItem("shop_display_shelf_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
-//    public static final RegistrySupplier<Block> ROUND_SHOP_DISPLAY_SHELF_1 = registerDecorationItem("round_shop_display_shelf_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
-//    public static final RegistrySupplier<Block> ROUND_SHOP_DISPLAY_SHELF_2 = registerDecorationItem("round_shop_display_shelf_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of()));
+    public static final RegistrySupplier<Block> SHOP_DISPLAY_CASE_EMPTY = registerDecorationItem("shop_display_case_empty", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 1, 0, "case_empty"));
+    public static final RegistrySupplier<Block> SHOP_DISPLAY_CASE_1 = registerDecorationItem("shop_display_case_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 1, 0, "case_1"));
+    public static final RegistrySupplier<Block> SHOP_DISPLAY_CASE_2 = registerDecorationItem("shop_display_case_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 1, 0, "case_2"));
+    public static final RegistrySupplier<Block> SHOP_DISPLAY_SHELF_EMPTY = registerDecorationItem("shop_display_shelf_empty", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 1, 0, "round_empty"));
+    public static final RegistrySupplier<Block> SHOP_DISPLAY_SHELF_1 = registerDecorationItem("shop_display_shelf_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 1, 0, "round_1"));
+    public static final RegistrySupplier<Block> SHOP_DISPLAY_SHELF_2 = registerDecorationItem("shop_display_shelf_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 1, 0, "round_2"));
+    public static final RegistrySupplier<Block> ROUND_SHOP_DISPLAY_SHELF_EMPTY = registerDecorationItem("round_shop_display_shelf_empty", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 2, 0, "shelf_empty"));
+    public static final RegistrySupplier<Block> ROUND_SHOP_DISPLAY_SHELF_1 = registerDecorationItem("round_shop_display_shelf_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 2, 0, "shelf_1"));
+    public static final RegistrySupplier<Block> ROUND_SHOP_DISPLAY_SHELF_2 = registerDecorationItem("round_shop_display_shelf_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 2, 0, "shelf_2"));
 
 
 
