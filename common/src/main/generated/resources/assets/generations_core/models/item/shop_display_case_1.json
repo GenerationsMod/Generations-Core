@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "generations_core:item/blocks/decorations/shop_display_case_1"
+  }
+}
