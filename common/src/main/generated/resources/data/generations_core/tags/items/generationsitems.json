@@ -1403,20 +1403,18 @@
     "generations_core:red_swivel_chair",
     "generations_core:black_swivel_chair",
     "generations_core:bench",
+    "generations_core:couch",
     "generations_core:bush",
     "generations_core:desk",
     "generations_core:fridge",
     "generations_core:pokeball_pillar",
     "generations_core:hdtv",
-<<<<<<< HEAD
-=======
     "generations_core:shop_display_case_1",
     "generations_core:shop_display_case_2",
     "generations_core:shop_display_small_1",
     "generations_core:shop_display_small_2",
     "generations_core:shop_display_large_shelf_1",
     "generations_core:shop_display_large_shelf_2",
->>>>>>> c04937cb (HdTv, Bush, and  pokeball pillar ready..)
     "generations_core:empty_ball_display",
     "generations_core:poke_ball_display",
     "generations_core:great_ball_display",

@@ -242,8 +242,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.SWITCH.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.POKEBALL_PILLAR.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.HDTV.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), "decorations");

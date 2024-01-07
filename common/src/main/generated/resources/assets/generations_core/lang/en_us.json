@@ -188,6 +188,7 @@
   "block.generations_core.cool_stone_slab": "Cool Stone Slab",
   "block.generations_core.cool_stone_stairs": "Cool Stone Stairs",
   "block.generations_core.cool_stone_wall": "Cool Stone Wall",
+  "block.generations_core.couch": "Couch",
   "block.generations_core.cracked_castle_block": "Cracked Castle Block",
   "block.generations_core.cracked_castle_block_slab": "Cracked Castle Block Slab",
   "block.generations_core.cracked_castle_block_stairs": "Cracked Castle Block Stairs",
@@ -830,15 +831,12 @@
   "block.generations_core.shiny_wynaut_doll": "Shiny Wynaut Doll",
   "block.generations_core.shiny_zapdos_doll": "Shiny Zapdos Doll",
   "block.generations_core.shiny_zeraora_doll": "Shiny Zeraora Doll",
-<<<<<<< HEAD
-=======
   "block.generations_core.shop_display_case_1": "Shop Display Case 1",
   "block.generations_core.shop_display_case_2": "Shop Display Case 2",
   "block.generations_core.shop_display_large_shelf_1": "Shop Display Large Shelf 1",
   "block.generations_core.shop_display_large_shelf_2": "Shop Display Large Shelf 2",
   "block.generations_core.shop_display_small_1": "Shop Display Small 1",
   "block.generations_core.shop_display_small_2": "Shop Display Small 2",
->>>>>>> c04937cb (HdTv, Bush, and  pokeball pillar ready..)
   "block.generations_core.silicon_block": "Silicon Block",
   "block.generations_core.silicon_ore": "Silicon Ore",
   "block.generations_core.skitty_doll": "Skitty Doll",
