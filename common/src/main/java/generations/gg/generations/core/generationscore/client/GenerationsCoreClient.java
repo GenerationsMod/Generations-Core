@@ -410,7 +410,14 @@ public class GenerationsCoreClient {
         @Override
         public ITexture getTexture(String s) {
             var texture = MAP.getOrDefault(s, null);
-            return texture != null ? (ITexture) Minecraft.getInstance().getTextureManager().getTexture(MAP.get(s)) : null;
+            if(texture != null) {
+                var image = Minecraft.getInstance().getTextureManager().getTexture(MAP.get(s));
+                if(image instanceof ITexture) {
+                    return (ITexture) image;
+                }
+            }
+
+            return null;
         }
 
         @Override

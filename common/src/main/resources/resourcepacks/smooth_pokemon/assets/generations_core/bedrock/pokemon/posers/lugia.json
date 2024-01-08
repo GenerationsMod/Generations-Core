@@ -9,14 +9,19 @@
       "poseName": "standing",
       "transformTicks": 10,
       "poseTypes": [
-        "STAND",
-        "NONE",
         "PORTRAIT",
-        "PROFILE"
-      ],
+        "NONE",
+        "PROFILE",
+        "STAND"
+      ]
+    },
+    "swimming": {
       "animations": [
-        "look",
-        "pk(generations_core:lugia.pk, idle)"
+        "pk(generations_core:lugia.pk, swimidle)"
+      ],
+      "poseName": "swimming",
+      "poseTypes": [
+        "FLOAT"
       ]
     },
     "floating": {

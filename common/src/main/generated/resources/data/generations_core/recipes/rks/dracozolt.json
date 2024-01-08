@@ -15,10 +15,6 @@
   "processingTime": 240,
   "result": {
     "type": "pokemon",
-    "data": {
-      "CustomProperties": [],
-      "OriginalText": "",
-      "SpeciesText": "dracozolt"
-    }
+    "data": "dracozolt"
   }
 }

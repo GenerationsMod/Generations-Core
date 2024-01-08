@@ -22,7 +22,6 @@ import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
@@ -48,8 +47,8 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 	@Nullable
 	private SpeciesKey speciesKey;
 
-	public RksRecipeJsonBuilder(ItemLike output, int outputCount) {
-		this.output = new RksResult.ItemResult(new ItemStack(output, outputCount));
+	public RksRecipeJsonBuilder(ItemLike output) {
+		this.output = new RksResult.ItemResult(output.asItem());
 	}
 
 	public RksRecipeJsonBuilder(PokemonProperties properties) {
@@ -73,11 +72,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 	}
 
 	public static RksRecipeJsonBuilder create(ItemLike output) {
-		return create(output, 1);
-	}
-
-	public static RksRecipeJsonBuilder create(ItemLike output, int outputCount) {
-		return new RksRecipeJsonBuilder(output, outputCount);
+		return new RksRecipeJsonBuilder(output);
 	}
 
 	public static RksRecipeJsonBuilder create(String name) {

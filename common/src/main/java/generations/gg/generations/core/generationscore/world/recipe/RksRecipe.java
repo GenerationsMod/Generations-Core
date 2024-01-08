@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -78,7 +79,7 @@ public class RksRecipe implements Recipe<Container> {
 
     @Override
     public ItemStack getResultItem(RegistryAccess registryAccess) {
-        if(result instanceof RksResult.ItemResult result) return result.item();
+        if(result instanceof RksResult.ItemResult result) return result.item().getDefaultInstance();
         else if(result instanceof RksResult.PokemonResult result) {
             return PokemonItem.from(result.properties());
         }
@@ -315,7 +316,7 @@ public class RksRecipe implements Recipe<Container> {
             NonNullList<Ingredient> nonNullList = NonNullList.withSize(i * j, Ingredient.EMPTY);
             nonNullList.replaceAll(ignored -> Ingredient.fromNetwork(buffer));
 
-            var result = buffer.readBoolean() ? new RksResult.ItemResult(buffer.readItem()) : new RksResult.PokemonResult(GenerationsUtils.parseProperties(buffer.readUtf()));
+            var result = buffer.readBoolean() ? new RksResult.ItemResult(BuiltInRegistries.ITEM.get(buffer.readResourceLocation())) : new RksResult.PokemonResult(GenerationsUtils.parseProperties(buffer.readUtf()));
 
             var speciesKey = buffer.readNullable(buf -> SpeciesKey.fromString(buf.readUtf()));
 
@@ -334,7 +335,7 @@ public class RksRecipe implements Recipe<Container> {
             var isItem = recipe.result instanceof RksResult.ItemResult;
             buffer.writeBoolean(isItem);
 
-            if(isItem) buffer.writeItem(((RksResult.ItemResult) recipe.result).item());
+            if(isItem) buffer.writeResourceLocation(BuiltInRegistries.ITEM.getKey((((RksResult.ItemResult) recipe.result).item())));
             else buffer.writeUtf(((RksResult.PokemonResult) recipe.result).properties().asString(" "));
 
             buffer.writeNullable(recipe.key, (buf, speciesKey) -> buf.writeUtf(speciesKey.toString()));
