@@ -13,6 +13,7 @@ import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.mojang.logging.LogUtils;
 import dev.architectury.event.events.common.InteractionEvent;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
+import generations.gg.generations.core.generationscore.api.events.general.EntityEvents;
 import generations.gg.generations.core.generationscore.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.api.player.Caught;
@@ -39,6 +40,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.apache.logging.log4j.util.TriConsumer;
@@ -106,6 +108,12 @@ public class GenerationsCore
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
 
 		GenerationsCobblemonEvents.init();
+		EntityEvents.JUMP.register(new EntityEvents.Jump() {
+			@Override
+			public void jump(Entity entity) {
+				System.out.println("Blep: " + entity.getDisplayName().toString());
+			}
+		});
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {
 			var stack = player.getItemInHand(hand);
 			var result = PixelmonInteractions.process(entity, player, stack);
