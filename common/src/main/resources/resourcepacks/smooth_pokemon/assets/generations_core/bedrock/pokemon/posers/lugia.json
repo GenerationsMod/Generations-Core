@@ -15,15 +15,6 @@
         "STAND"
       ]
     },
-    "swimming": {
-      "animations": [
-        "pk(generations_core:lugia.pk, swimidle)"
-      ],
-      "poseName": "swimming",
-      "poseTypes": [
-        "FLOAT"
-      ]
-    },
     "floating": {
       "poseName": "floating",
       "transformTicks": 10,
