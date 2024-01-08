@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "generations_core:block/pillar",
   "textures": {
-    "all": "generations_core:block/broken_castle_pillar"
+    "base": "generations_core:block/broken_castle_pillar"
   }
 }
