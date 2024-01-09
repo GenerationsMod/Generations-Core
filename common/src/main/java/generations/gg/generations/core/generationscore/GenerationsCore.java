@@ -35,14 +35,17 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeSerializers;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import org.apache.logging.log4j.util.TriConsumer;
 import org.slf4j.Logger;
 
@@ -108,10 +111,13 @@ public class GenerationsCore
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
 
 		GenerationsCobblemonEvents.init();
-		EntityEvents.JUMP.register(new EntityEvents.Jump() {
-			@Override
-			public void jump(Entity entity) {
-//				System.out.println("Blep: " + entity.getDisplayName().toString());
+		EntityEvents.JUMP.register(entity -> {
+			if (entity instanceof ServerPlayer player) {
+				var pos = entity.blockPosition().below();
+
+				if (entity.level().getBlockState(pos).getBlock() instanceof ElevatorBlock block) {
+					block.takeElevator(entity.level(), entity.blockPosition().below(), player, Direction.UP);
+				}
 			}
 		});
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {

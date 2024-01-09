@@ -227,6 +227,24 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerNoModel(GenerationsUtilityBlocks.CLOCK.block());
         registerNoModel(GenerationsUtilityBlocks.HEALER.block());
 
+        registerBlockItemParticle(GenerationsUtilityBlocks.WHITE_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.GRAY_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.BLACK_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.BROWN_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.RED_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.ORANGE_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.YELLOW_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.LIME_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.GREEN_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.CYAN_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.POWDER_BLUE_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.BLUE_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.PURPLE_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.MAGENTA_ELEVATOR.get(), "utility_blocks");
+        registerBlockItemParticle(GenerationsUtilityBlocks.PINK_ELEVATOR.get(), "utility_blocks");
+
         registerBlockItemParticle(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.BENCH.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.COUCH.get(), "decorations");

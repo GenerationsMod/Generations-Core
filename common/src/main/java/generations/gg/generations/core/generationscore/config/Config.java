@@ -18,6 +18,8 @@ public class Config {
     public Caught caught = new Caught();
     public EnigmaFragment enigmaFragment = new EnigmaFragment();
 
+    public Blocks blocks = new Blocks();
+
     public Config() {}
 
     public static class Caught {
@@ -115,5 +117,9 @@ public class Config {
     public static class EnigmaFragment {
         public boolean enabled = true;
         public int limit = 32;
+    }
+
+    public static class Blocks {
+        public int elevatorRange = 15;
     }
 }
