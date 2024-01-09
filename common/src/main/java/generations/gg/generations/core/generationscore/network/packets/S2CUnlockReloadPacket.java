@@ -1,7 +1,8 @@
 package generations.gg.generations.core.generationscore.network.packets;
 
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;;
+import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 import static generations.gg.generations.core.generationscore.GenerationsCore.id;
 
@@ -17,6 +18,6 @@ public class S2CUnlockReloadPacket implements GenerationsNetworkPacket<S2CUnlock
         return ID;
     }
 
-    public void encode(FriendlyByteBuf buffer) {}
+    public void encode(@NotNull FriendlyByteBuf buffer) {}
 
 }
