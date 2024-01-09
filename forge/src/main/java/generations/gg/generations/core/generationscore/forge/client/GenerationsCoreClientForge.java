@@ -1,20 +1,14 @@
 package generations.gg.generations.core.generationscore.forge.client;
 
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
-import generations.gg.generations.core.generationscore.client.GenerationsCoreRecipeBookGroups;
-import generations.gg.generations.core.generationscore.client.ModRecipeBookTypes;
-import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 /**
@@ -37,15 +31,6 @@ public class GenerationsCoreClientForge {
         eventBus.addListener((Consumer<EntityRenderersEvent.RegisterLayerDefinitions>) event -> GenerationsCoreClient.registerLayerDefinitions(event::registerLayerDefinition));
         eventBus.addListener(GenerationsCoreClientForge::forgeClientSetup);
         MinecraftForge.EVENT_BUS.addListener(GenerationsCoreClientForge::renderHighlightedPath);
-
-        FMLJavaModLoadingContext.get().getModEventBus().addListener((Consumer<RegisterRecipeBookCategoriesEvent>) event1 -> {
-            ModRecipeBookTypes.init();
-            GenerationsCoreRecipeBookGroups.init();
-
-            event1.registerAggregateCategory(GenerationsCoreRecipeBookGroups.RKS_GENERAL.get(), List.of(GenerationsCoreRecipeBookGroups.RKS_GENERAL.get()));
-            event1.registerBookCategories(ModRecipeBookTypes.RKS, List.of(GenerationsCoreRecipeBookGroups.RKS_GENERAL.get()));
-            event1.registerRecipeCategoryFinder(GenerationsCoreRecipeTypes.RKS.get(), recipe -> GenerationsCoreRecipeBookGroups.RKS_GENERAL.get());
-        });
     }
 
     private static void renderHighlightedPath(RenderLevelStageEvent event) {

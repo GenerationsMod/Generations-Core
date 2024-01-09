@@ -1,20 +1,16 @@
 
 package generations.gg.generations.core.generationscore.world.container;
 
-import generations.gg.generations.core.generationscore.client.ModRecipeBookTypes;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.level.block.RksMachineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
 import generations.gg.generations.core.generationscore.world.recipe.RksRecipe;
 import generations.gg.generations.core.generationscore.world.recipe.RksResult;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
 
 public class RksMachineContainer extends AbstractContainerMenu {
 	public static final int INPUT1_SLOT = 0;

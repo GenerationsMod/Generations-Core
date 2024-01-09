@@ -111,7 +111,7 @@ public class GenerationsCore
 		EntityEvents.JUMP.register(new EntityEvents.Jump() {
 			@Override
 			public void jump(Entity entity) {
-				System.out.println("Blep: " + entity.getDisplayName().toString());
+//				System.out.println("Blep: " + entity.getDisplayName().toString());
 			}
 		});
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {

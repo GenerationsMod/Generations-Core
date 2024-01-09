@@ -68,6 +68,8 @@ dependencies {
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 
+    modRuntimeOnly("curse.maven:spit-it-out-857141:4888754")
+
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.10.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
