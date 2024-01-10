@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -20,13 +21,13 @@ import org.jetbrains.annotations.NotNull;
 public abstract class InteractShrineBlock<T extends InteractShrineBlockEntity> extends ShrineBlock<T> {
     private final Class<T> tClass;
 
-    protected InteractShrineBlock(Properties materialIn, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, ResourceLocation model, Class<T> tClass) {
+    protected InteractShrineBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, ResourceLocation model, Class<T> tClass) {
         super(materialIn, blockEntityFunction, model);
         this.tClass = tClass;
     }
 
     @Override
-    public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, @NotNull BlockHitResult hit) {
         if (level.isClientSide() || hand == InteractionHand.OFF_HAND) return InteractionResult.PASS;
         BlockEntity entity = level.getBlockEntity(pos);
         if (isStackValid(player.getItemInHand(hand)) && activate(entity, player, hand)) {

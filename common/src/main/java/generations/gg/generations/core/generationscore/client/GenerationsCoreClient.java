@@ -7,6 +7,10 @@ import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPoke
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
@@ -57,12 +61,14 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.resources.model.Material;
+import net.minecraft.client.resources.sounds.SoundEventRegistration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
+import net.minecraft.util.GsonHelper;
 import net.minecraft.util.Mth;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.InteractionHand;
@@ -82,12 +88,15 @@ import org.joml.Vector4f;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import static generations.gg.generations.core.generationscore.GenerationsCore.id;
@@ -97,6 +106,7 @@ import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
 public class GenerationsCoreClient {
+    private static final TypeToken<Map<String, String>> RARE_CANDY_TYPE = new TypeToken<Map<String, String>>(){};
 
     public static GenerationsTextureLoader textureLoader;
 
@@ -114,11 +124,18 @@ public class GenerationsCoreClient {
                 id("model_registry"),
                 (ResourceManagerReloadListener) resourceManager -> {
                     ModelRegistry.LOADER.invalidateAll();
+                    ModelRegistry.LOADER.cleanUp();
                 },
                 PackType.CLIENT_RESOURCES,
                 emptyList());
 
-                PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
+        GenerationsCore.implementation.registerResourceReloader(
+                id("texture_loader"),
+                (ResourceManagerReloadListener) resourceManager -> textureLoader.initialize(resourceManager),
+                PackType.CLIENT_RESOURCES,
+                emptyList());
+
+        PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
         PlatformEvents.CLIENT_PLAYER_LOGOUT.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogout);
     }
 
@@ -248,6 +265,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.BALL_LOOT.get(), PokeLootRendrer::new);
         consumer.accept(GenerationsBlockEntities.RKS_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.PC.get(), GeneralUseBlockEntityRenderer::new);
+        consumer.accept(GenerationsBlockEntities.COUCH.get(), GeneralUseBlockEntityRenderer::new);
     }
 
     public static void registerLayerDefinitions(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {
@@ -380,37 +398,70 @@ public class GenerationsCoreClient {
         public GenerationsTextureLoader(Minecraft minecraft) {}
 
         public void initialize(ResourceManager manager) {
-            register("dark", new TextureReference(fromColor("000000"), "dark"));
-            register("bright", new TextureReference(fromColor("ffffff"), "bright"));
-            register("neutral", new TextureReference(fromColor("999999"), "neutral"));
+            clear();
+            var gson = new Gson();
 
-            register("concrete", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("concrete")), "concrete"));
-            register("glass", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("glass")), "glass"));
-            register("gold", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("gold")), "gold"));
-            register("marble", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("marble")), "marble"));
-            register("metal", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("metal")), "metal"));
-            register("moss", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("moss")), "moss"));
-            register("silver", new TextureReference(fromResourceLocation(manager, GenerationsCore.id("silver")), "silver"));
+            try {
+                for(var namespace : manager.getNamespaces()) {
+                    var list = manager.getResourceStack(new ResourceLocation(namespace, "rare_candy_texture.json"));
+
+                    for(var resource : list) {
+                        try(var reader = resource.openAsReader()) {
+                            var map = GsonHelper.fromJson(gson, reader, RARE_CANDY_TYPE);
+
+                            map.forEach((key, value) -> register(key, new TextureReference(fromResourceLocation(manager, Objects.requireNonNull(ResourceLocation.tryParse(value))), key)));
+
+                        } catch (IOException e) {
+
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+//
+//            register("dark", new TextureReference(fromColor("000000"), "dark"));
+//            register("bright", new TextureReference(fromColor("ffffff"), "bright"));
+//            register("neutral", new TextureReference(fromColor("999999"), "neutral"));
+//
+//            register("concrete", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("concrete")), "concrete"));
+//            register("glass", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("glass")), "glass"));
+//            register("gold", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("gold")), "gold"));
+//            register("marble", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("marble")), "marble"));
+//            register("metal", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("metal")), "metal"));
+//            register("moss", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("moss")), "moss"));
+//            register("silver", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("silver")), "silver"));
+//
+//            register("couch_diffuse", new TextureReference(fromResourceLocationExternal(manager, GenerationsCore.id("couch_diffuse"));
         }
 
         private BufferedImage fromResourceLocation(ResourceManager manager, ResourceLocation location) {
             try {
-                return ImageIO.read(manager.getResourceOrThrow(new ResourceLocation("%s:textures/entity/statue_material/%s.png".formatted(location.getNamespace(), location.getPath()))).open());
+                return ImageIO.read(manager.getResourceOrThrow(new ResourceLocation("%s:textures/%s.png".formatted(location.getNamespace(), location.getPath()))).open());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-
-        private static BufferedImage fromColor(String color) {
-            int colorValue = Integer.parseInt(color.replace("#", ""), 16);
-
-            var image = new BufferedImage(2, 2, BufferedImage.TYPE_INT_ARGB);
-            image.setRGB(0, 0, colorValue);
-            image.setRGB(0, 1, colorValue);
-            image.setRGB(1, 0, colorValue);
-            image.setRGB(1, 1, colorValue);
-            return image;
-        }
+//
+//        private BufferedImage fromResourceLocationStatue(ResourceManager manager, ResourceLocation location) {
+//            return fromResourceLocation(manager, new ResourceLocation("%s:textures/entity/statue_material/%s.png".formatted(location.getNamespace(), location.getPath()))).open())
+//        }
+//
+//        private BufferedImage fromResourceLocationExternal(ResourceManager manager, ResourceLocation location) {
+//            return fromResourceLocation(manager, new ResourceLocation("%s:textures/pk_eternal/%s.png".formatted(location.getNamespace(), location.getPath()))).open())
+//        }
+//
+//
+//        private static BufferedImage fromColor(String color) {
+//            int colorValue = Integer.parseInt(color.replace("#", ""), 16);
+//
+//            var image = new BufferedImage(2, 2, BufferedImage.TYPE_INT_ARGB);
+//            image.setRGB(0, 0, colorValue);
+//            image.setRGB(0, 1, colorValue);
+//            image.setRGB(1, 0, colorValue);
+//            image.setRGB(1, 1, colorValue);
+//            return image;
+//        }
 
         @Override
         public ITexture getTexture(String s) {

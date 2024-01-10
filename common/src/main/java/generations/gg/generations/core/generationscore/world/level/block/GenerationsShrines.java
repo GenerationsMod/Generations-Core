@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.BlockItemWithLang;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
@@ -52,7 +53,7 @@ public class GenerationsShrines {
 	public static final RegistrySupplier<Block> TAPU_SHRINE = registerBlockItem("tapu_shrine", () -> new TapuShrineBlock(SHRINE_PROPERTIES));
 
 	private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
-		RegistrySupplier<T> block = SHRINES.register(name, blockSupplier);
+		RegistrySupplier<T> block = GenerationsUtils.registerBlock(SHRINES, name, blockSupplier);
 		GenerationsItems.ITEMS.register(name, () -> new BlockItemWithLang(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.SHRINES)));
 		return block;
 	}

@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockAnimatedObjectInstance;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import net.minecraft.core.BlockPos;
@@ -8,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import org.joml.Matrix4f;
 
 public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implements ModelContextProviders.ModelProvider, ModelContextProviders.VariantProvider {
     public ObjectInstance[] objectInstance;
@@ -33,5 +36,9 @@ public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implem
 
     public static AABB defaultAABB(BlockPos pos) {
         return new AABB(pos, pos.offset(1,1,1));
+    }
+
+    public ObjectInstance generateInstance() {
+        return isAnimated() ? new BlockAnimatedObjectInstance(new Matrix4f(), new Matrix4f(), null): new BlockObjectInstance(new Matrix4f(), new Matrix4f(), null);
     }
 }

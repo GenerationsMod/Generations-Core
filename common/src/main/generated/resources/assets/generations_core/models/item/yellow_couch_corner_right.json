@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "generations_core:item/blocks/couch/yellow_couch_corner_right"
+  }
+}

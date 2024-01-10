@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.client.model;
 
 import net.minecraft.resources.ResourceLocation;
+import org.joml.Vector3f;
 
 public class ModelContextProviders {
     public interface AngleProvider {
@@ -25,5 +26,9 @@ public class ModelContextProviders {
 
     public interface FrameProvider extends ModelProvider {
         float getFrame();
+    }
+
+    public interface TintProvider {
+        Vector3f getTint();
     }
 }

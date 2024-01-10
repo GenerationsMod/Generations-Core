@@ -51,7 +51,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             blockEntity.objectInstance = new ObjectInstance[amount];
 
             for (int i = 0; i < amount; i++)
-                blockEntity.objectInstance[i] = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), null);
+                blockEntity.objectInstance[i] = blockEntity.generateInstance();
         }
 
         String variant = blockEntity.getVariant();
@@ -63,7 +63,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
             instance.viewMatrix().set(stack.last().pose());
             ((BlockObjectInstance) instance).setLight(packedLight);
-
+            if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) instance).setTint(provider.getTint());
             model.render(instance, RenderSystem.getProjectionMatrix());
         }
     }
@@ -83,7 +83,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         blockEntity.objectInstance = new ObjectInstance[amount];
 
         for (int i = 0; i < amount; i++) {
-            blockEntity.objectInstance[i] = new BlockAnimatedObjectInstance(new Matrix4f(), new Matrix4f(), blockEntity.getVariant());
+            blockEntity.objectInstance[i] = blockEntity.generateInstance();
         }
 
         var primeInstance = blockEntity.objectInstance[0];
@@ -105,6 +105,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
         primeInstance.viewMatrix().set(stack.last().pose());
         ((BlockLightValueProvider) primeInstance).setLight(packedLight);
+        if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) primeInstance).setTint(provider.getTint());
 
         var instance = (AnimatedObjectInstance) primeInstance;
 

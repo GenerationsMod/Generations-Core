@@ -41,6 +41,19 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> LITWICK_CANDLES = registerDecorationItem("litwick_candles", () -> new LitwickCandlesBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 15).destroyTime(0.5f)));
 
     public static final DyedGroup<VendingMachineBlock, VendingMachineBlockEntity> VENDING_MACHINE = registerDyed("vending_machine", function -> () -> new VendingMachineBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
+    public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_ARM_LEFT = registerCouch(VariantCouchBlock.Variant.ARM_LEFT);
+
+    private static DyedGroup<VariantCouchBlock, CouchBlockEntity> registerCouch(VariantCouchBlock.Variant variant) {
+        return registerDyed("couch_" + variant.name().toLowerCase(), function -> () -> new VariantCouchBlock(function, BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), variant));
+    }
+
+    public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_ARM_RIGHT = registerCouch(VariantCouchBlock.Variant.ARM_RIGHT);
+    public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_CORNER_LEFT = registerCouch(VariantCouchBlock.Variant.CORNER_LEFT);
+    public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_CORNER_RIGHT = registerCouch(VariantCouchBlock.Variant.CORNER_RIGHT);
+    public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_MIDDLE = registerCouch(VariantCouchBlock.Variant.MIDDLE);
+    public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_OTTOMAN = registerCouch(VariantCouchBlock.Variant.OTTOMAN);
+
     public static final RegistrySupplier<Block> SNORLAX_BEAN_BAG = registerDecorationItem("snorlax_bean_bag", () -> new BeanBagBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
     public static final DyedGroup<PastelBeanBagBlock, GenericDyedVariantBlockEntity> PASTEL_BEAN_BAG = registerDyed("pastel_bean_bag", function -> () -> new PastelBeanBagBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
     public static final DyedGroup<SwivelChairBlock, GenericDyedVariantBlockEntity> SWIVEL_CHAIR = registerDyed("swivel_chair", function -> () -> new SwivelChairBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
@@ -66,12 +79,7 @@ public class GenerationsDecorationBlocks {
     public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, Function<Function<DyeColor, DyedBlockItem<T, V>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
 
         var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyedBlockItem<T, V>>>();
-        RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(name,
-                blockSupplier
-                        .apply(dyeColor ->
-                                dyeMap
-                                        .get(dyeColor)
-                                        .get()));
+        RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(name, blockSupplier.apply(dyeColor -> dyeMap.get(dyeColor).get()));
 
         Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
             var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<T, V>(block.get(), dyeColor, properties));

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "generations_core:item/blocks/couch/light_blue_couch_arm_right"
+  }
+}

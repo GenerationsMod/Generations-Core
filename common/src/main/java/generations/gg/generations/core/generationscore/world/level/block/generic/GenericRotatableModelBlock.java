@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.generi
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.util.MathUtils;
+import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -55,7 +56,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     private int height;
     private int length;
 
-    protected GenericRotatableModelBlock(Properties materialIn, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model, int width, int height, int length) {
+    protected GenericRotatableModelBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model, int width, int height, int length) {
         super(materialIn, blockEntityFunction, baseBlockPosFunction, model);
         assignSize(width, height, length);
         reassignStateDefinition();
@@ -63,18 +64,18 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     }
 
-    protected GenericRotatableModelBlock(Properties materialIn, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model) {
+    protected GenericRotatableModelBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model) {
         this(materialIn, blockEntityFunction, baseBlockPosFunction, model, 0, 0, 0);
     }
 
-    public GenericRotatableModelBlock(Properties properties, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, ResourceLocation model, int width, int height, int length) {
+    public GenericRotatableModelBlock(Properties properties, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, ResourceLocation model, int width, int height, int length) {
         super(properties, blockEntityFunction, DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model);
         assignSize(width, height, length);
         reassignStateDefinition();
         this.registerDefaultState(createDefaultState());
     }
 
-    protected GenericRotatableModelBlock(Properties properties, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, ResourceLocation model) {
+    protected GenericRotatableModelBlock(Properties properties, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, ResourceLocation model) {
         this(properties, blockEntityFunction, DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model, 0, 0, 0);
     }
 

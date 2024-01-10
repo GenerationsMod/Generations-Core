@@ -1,0 +1,14 @@
+{
+  "dark": "generations_core:pk_external/dark",
+  "bright": "generations_core:pk_external/bright",
+  "neutral": "generations_core:pk_external/neutral",
+  "couch_diffuse": "generations_core:pk_external/couch_diffuse",
+  "couch_mask": "generations_core:pk_external/couch_diffuse",
+  "concrete": "generations_core:entity/statue_material/concrete",
+  "glass": "generations_core:entity/statue_material/glass",
+  "gold": "generations_core:entity/statue_material/gold",
+  "marble": "generations_core:entity/statue_material/marble",
+  "metal": "generations_core:entity/statue_material/metal",
+  "moss": "generations_core:entity/statue_material/moss",
+  "silver": "generations_core:entity/statue_material/silver"
+}

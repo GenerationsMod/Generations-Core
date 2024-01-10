@@ -5,6 +5,7 @@ import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import gg.generations.rarecandy.pokeutils.BlendType;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.renderer.animation.AnimationController;
@@ -135,7 +136,7 @@ public class Pipelines {
                                 ctx.uniform().uploadInt(3);
                             })
                             .supplyUniform("color", ctx -> {
-                                var color = (Vector3f) ctx.object().getMaterial(ctx.instance().variant()).getValue("color");
+                                var color = ctx.instance() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null ? tintProvider.getTint() : (Vector3f) ctx.object().getMaterial(ctx.instance().variant()).getValue("color");
                                 ctx.uniform().uploadVec3f(color);
                             })
                             .build();

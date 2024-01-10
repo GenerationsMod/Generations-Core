@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.PokeDollBlock;
@@ -188,7 +189,7 @@ public class GenerationsPokeDolls {
 	}
 
 	private static RegistrySupplier<Block> registerBlockItem(String name, boolean shiny, float scale) {
-		RegistrySupplier<Block> block = POKEDOLLS.register((shiny ? "shiny_" : "") + name  + "_doll", () -> new PokeDollBlock(name, shiny, scale));
+		RegistrySupplier<Block> block = GenerationsUtils.registerBlock(POKEDOLLS, (shiny ? "shiny_" : "") + name  + "_doll", () -> new PokeDollBlock(name, shiny, scale));
 		GenerationsItems.ITEMS.register((shiny ? "shiny_" : "") + name  + "_doll", () -> new BlockItem(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.POKEDOLLS)));
 		return block;
 	}

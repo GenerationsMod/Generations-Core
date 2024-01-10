@@ -56,21 +56,20 @@ public class ModelRegistry {
     public static CompiledModel get(ResourceLocation location) {
         try {
             return LOADER.get(location);
-        } catch (ExecutionException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     public static void prepForBER(PoseStack stack, ModelContextProviders.AngleProvider supplier) {
 
+        stack.translate(0.5f, 0.0f, 0.5f);
 
         if(supplier instanceof ModelProvidingBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof GenericRotatableModelBlock<?> block && block.shouldRotateSpecial()) {
             var forward = blockEntity.getBlockState().getValue(GenericRotatableModelBlock.FACING);
 
             var width = block.width() * 0.5f;
             var lenth = block.length() * 0.5f;
-
-            stack.translate(0.5f, 0.0f, 0.5f);
 
             switch (forward) {
                 case SOUTH -> stack.translate(width, 0, -lenth);
@@ -81,8 +80,7 @@ public class ModelRegistry {
 
             stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
         } else {
-            stack.translate(0.5f, 0.0f, 0.5f);
-            stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
+           stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));
         }
 
     }

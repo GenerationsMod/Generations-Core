@@ -129,12 +129,14 @@ public class GenerationsUtils {
     }
 
     public static <T extends Block> RegistrySupplier<T> registerBlock(DeferredRegister<Block> deferredRegister, String name, Supplier<T> blockSupplier) {
-        return deferredRegister.register(name, applyMutable(name, blockSupplier));
+        return deferredRegister.register(name, applyMutable(blockSupplier));
     }
 
-    private static <T extends Block> Supplier<T> applyMutable(String name, Supplier<T> blockSupplier) {
+    private static <T extends Block> Supplier<T> applyMutable(Supplier<T> blockSupplier) {
         return () -> {
             var block = blockSupplier.get();
+
+
 
             if(block instanceof GenericModelBlock<?> genericModelBlock) {
                 MutableBlockEntityType.blocksToAdd.add(genericModelBlock);

@@ -7,6 +7,8 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.decorations.PastelBeanBagBlock;
+import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -1172,9 +1174,15 @@ public class ItemDatagen extends ItemModelProvider {
 //        createItemBlock(GenerationsDecorationBlocks.SWITCH.get(), "item/blocks/decorations/");
 //        createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "item/blocks/decorations/");
 //        createItemBlock(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "item/blocks/decorations/");
-        GenerationsDecorationBlocks.PASTEL_BEAN_BAG.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "bean_bags"));
-        GenerationsDecorationBlocks.VENDING_MACHINE.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "vending_machines"));
-        GenerationsDecorationBlocks.SWIVEL_CHAIR.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "swivel_chairs"));
+        createDyedGroupItem(GenerationsDecorationBlocks.PASTEL_BEAN_BAG, "bean_bags");
+        createDyedGroupItem(GenerationsDecorationBlocks.VENDING_MACHINE, "vending_machines");
+        createDyedGroupItem(GenerationsDecorationBlocks.SWIVEL_CHAIR, "swivel_chairs");
+        createDyedGroupItem(GenerationsDecorationBlocks.COUCH_CORNER_LEFT, "couch");
+        createDyedGroupItem(GenerationsDecorationBlocks.COUCH_CORNER_RIGHT, "couch");
+        createDyedGroupItem(GenerationsDecorationBlocks.COUCH_ARM_LEFT, "couch");
+        createDyedGroupItem(GenerationsDecorationBlocks.COUCH_ARM_RIGHT, "couch");
+        createDyedGroupItem(GenerationsDecorationBlocks.COUCH_OTTOMAN, "couch");
+        createDyedGroupItem(GenerationsDecorationBlocks.COUCH_MIDDLE, "couch");
 
         createItemBlock(GenerationsUtilityBlocks.COOKING_POT.get(), "item/blocks/utility_blocks/");
         GenerationsUtilityBlocks.HEALER.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), "utility_blocks/healer"));
@@ -1284,6 +1292,10 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ROOT_FOSSIL.get(), "fossils/");
         createItem(GenerationsItems.SAIL_FOSSIL.get(), "fossils/");
         createItem(GenerationsItems.SKULL_FOSSIL.get(), "fossils/");
+    }
+
+    private void createDyedGroupItem(DyedGroup<?, ?> group, String name) {
+        group.dyeMap().values().forEach(block -> createItemBlockDir(block.get(), name));
     }
 
     private void createCurry() {

@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.generi
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -36,11 +37,11 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
     protected static final BooleanProperty WATERLOGGED = BooleanProperty.create("waterlogged");
     private static final BiFunction<BlockPos, BlockState, BlockPos> DEFAUL_BLOCK_POS_FUNCTION = (pos, state) -> pos;
 
-    private final RegistrySupplier<BlockEntityType<T>> blockEntityFunction;
+    private final RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction;
     private final BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction;
     private final ResourceLocation model;
 
-    protected GenericModelBlock(Properties properties, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model) {
+    protected GenericModelBlock(Properties properties, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model) {
         super(properties);
         this.blockEntityFunction = blockEntityFunction;
         this.baseBlockPosFunction = baseBlockPosFunction;
@@ -48,7 +49,7 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
         this.registerDefaultState(createDefaultState());
     }
 
-    protected GenericModelBlock(Properties properties, RegistrySupplier<BlockEntityType<T>> blockEntityFunction, ResourceLocation model) {
+    protected GenericModelBlock(Properties properties, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, ResourceLocation model) {
         this(properties, blockEntityFunction, DEFAUL_BLOCK_POS_FUNCTION, model);
     }
 
