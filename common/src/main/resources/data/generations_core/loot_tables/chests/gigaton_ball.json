@@ -307,22 +307,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:tumblestone"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:black_tumblestone"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:sky_tumblestone"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:rare_tumblestone"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:z_ingot"
 			},
 			{

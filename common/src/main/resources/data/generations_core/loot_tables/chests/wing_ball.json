@@ -135,10 +135,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:sky_tumblestone"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:pink_nectar"
 			},
 			{

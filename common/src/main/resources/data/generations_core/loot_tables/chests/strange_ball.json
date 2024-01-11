@@ -124,10 +124,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:rare_tumblestone"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:pokemail_retro"
 			},
 			{
