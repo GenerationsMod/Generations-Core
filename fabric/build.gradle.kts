@@ -52,7 +52,7 @@ dependencies {
     implementation("shadowCommon"("com.thebombzen:jxlatte:1.1.0")!!)
     implementation("shadowCommon"("com.github.Chocohead:Fabric-ASM:v2.3")!!)
 
-    modApi("earth.terrarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
+    modApi("earth.terrarium.botarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
