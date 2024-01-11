@@ -1177,6 +1177,7 @@ public class ItemDatagen extends ItemModelProvider {
         createDyedGroupItem(GenerationsDecorationBlocks.PASTEL_BEAN_BAG, "bean_bags");
         createDyedGroupItem(GenerationsDecorationBlocks.VENDING_MACHINE, "vending_machines");
         createDyedGroupItem(GenerationsDecorationBlocks.SWIVEL_CHAIR, "swivel_chairs");
+        createDyedGroupItem(GenerationsDecorationBlocks.STREET_LAMP, "street_lamp");
         createDyedGroupItem(GenerationsDecorationBlocks.COUCH_CORNER_LEFT, "couch");
         createDyedGroupItem(GenerationsDecorationBlocks.COUCH_CORNER_RIGHT, "couch");
         createDyedGroupItem(GenerationsDecorationBlocks.COUCH_ARM_LEFT, "couch");

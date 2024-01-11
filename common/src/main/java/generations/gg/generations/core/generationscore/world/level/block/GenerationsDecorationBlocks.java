@@ -42,12 +42,14 @@ public class GenerationsDecorationBlocks {
 
     public static final DyedGroup<VendingMachineBlock, VendingMachineBlockEntity> VENDING_MACHINE = registerDyed("vending_machine", function -> () -> new VendingMachineBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
-    public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_ARM_LEFT = registerCouch(VariantCouchBlock.Variant.ARM_LEFT);
+    public static final DyedGroup<StreetLampBlock, StreetLampBlockEntity> STREET_LAMP = registerDyed("street_lamp", function -> () -> new StreetLampBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     private static DyedGroup<VariantCouchBlock, CouchBlockEntity> registerCouch(VariantCouchBlock.Variant variant) {
         return registerDyed("couch_" + variant.name().toLowerCase(), function -> () -> new VariantCouchBlock(function, BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), variant));
     }
 
+
+    public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_ARM_LEFT = registerCouch(VariantCouchBlock.Variant.ARM_LEFT);
     public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_ARM_RIGHT = registerCouch(VariantCouchBlock.Variant.ARM_RIGHT);
     public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_CORNER_LEFT = registerCouch(VariantCouchBlock.Variant.CORNER_LEFT);
     public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_CORNER_RIGHT = registerCouch(VariantCouchBlock.Variant.CORNER_RIGHT);

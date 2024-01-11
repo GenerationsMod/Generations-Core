@@ -80,6 +80,8 @@ public class GenerationsBlockEntities {
     public static final RegistrySupplier<MutableBlockEntityType<BallLootBlockEntity>> BALL_LOOT = registerMutable("poke_loot", BallLootBlockEntity::new);
 
     public static final RegistrySupplier<MutableBlockEntityType<RksMachineBlockEntity>> RKS_MACHINE = registerMutable("rks_machine", RksMachineBlockEntity::new);
+    public static final RegistrySupplier<MutableBlockEntityType<StreetLampBlockEntity>> STREET_LAMP = registerMutable("street_lamp", StreetLampBlockEntity::new);
+
 
     @SafeVarargs
     private static <T extends BlockEntity> RegistrySupplier<BlockEntityType<T>> registerRegular(String name, BlockEntityType.BlockEntitySupplier<T> aNew, Supplier<? extends Block>... blocks) {
