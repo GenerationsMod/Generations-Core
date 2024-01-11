@@ -1169,6 +1169,13 @@ public class ItemDatagen extends ItemModelProvider {
         createItemBlock(GenerationsBlocks.DOUBLE_BALLONLEA_PINK_MUSHROOM.get(), "block/");
         createItemBlock(GenerationsBlocks.DOUBLE_BALLONLEA_YELLOW_MUSHROOM.get(), "block/");
 
+        createItemBlock(GenerationsBlocks.FLABEBE_FLOWER_AZ.get(), "block/flowers/");
+        createItemBlock(GenerationsBlocks.FLABEBE_FLOWER_BLUE.get(), "block/flowers/");
+        createItemBlock(GenerationsBlocks.FLABEBE_FLOWER_ORANGE.get(), "block/flowers/");
+        createItemBlock(GenerationsBlocks.FLABEBE_FLOWER_RED.get(), "block/flowers/");
+        createItemBlock(GenerationsBlocks.FLABEBE_FLOWER_WHITE.get(), "block/flowers/");
+        createItemBlock(GenerationsBlocks.FLABEBE_FLOWER_YELLOW.get(), "block/flowers/");
+
 //        createItemBlock(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), "item/blocks/bean_bags/");
 //        createItemBlock(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "item/blocks/decorations/");
 //        createItemBlock(GenerationsDecorationBlocks.SWITCH.get(), "item/blocks/decorations/");

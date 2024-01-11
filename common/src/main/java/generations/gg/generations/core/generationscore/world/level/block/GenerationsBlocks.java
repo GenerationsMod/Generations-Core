@@ -463,6 +463,13 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<GenerationsMushroomBlock> DOUBLE_BALLONLEA_PINK_MUSHROOM = registerBlockItem("double_ballonlea_pink_mushroom", () -> new GenerationsMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).dynamicShape().lightLevel(value -> 6), GenerationsFeatures.DOUBLE_BALLONLEA_PINK_MUSHROOM));
     public static final RegistrySupplier<GenerationsMushroomBlock> DOUBLE_BALLONLEA_YELLOW_MUSHROOM = registerBlockItem("double_ballonlea_yellow_mushroom", () -> new GenerationsMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM).dynamicShape().lightLevel(value -> 6), GenerationsFeatures.DOUBLE_BALLONLEA_YELLOW_MUSHROOM));
 
+    public static final RegistrySupplier<FlabebeFlowerBlock> FLABEBE_FLOWER_AZ = registerBlockItem("flabebe_flower_az", () -> new FlabebeFlowerBlock(BlockBehaviour.Properties.copy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)));
+    public static final RegistrySupplier<FlabebeFlowerBlock> FLABEBE_FLOWER_BLUE = registerBlockItem("flabebe_flower_blue", () -> new FlabebeFlowerBlock(BlockBehaviour.Properties.copy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)));
+    public static final RegistrySupplier<FlabebeFlowerBlock> FLABEBE_FLOWER_ORANGE = registerBlockItem("flabebe_flower_orange", () -> new FlabebeFlowerBlock(BlockBehaviour.Properties.copy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)));
+    public static final RegistrySupplier<FlabebeFlowerBlock> FLABEBE_FLOWER_RED = registerBlockItem("flabebe_flower_red", () -> new FlabebeFlowerBlock(BlockBehaviour.Properties.copy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)));
+    public static final RegistrySupplier<FlabebeFlowerBlock> FLABEBE_FLOWER_WHITE = registerBlockItem("flabebe_flower_white", () -> new FlabebeFlowerBlock(BlockBehaviour.Properties.copy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)));
+    public static final RegistrySupplier<FlabebeFlowerBlock> FLABEBE_FLOWER_YELLOW = registerBlockItem("flabebe_flower_yellow", () -> new FlabebeFlowerBlock(BlockBehaviour.Properties.copy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)));
+
     /**
      * PokeBall Chests
      **/

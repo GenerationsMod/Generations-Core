@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
@@ -151,26 +152,33 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.SILICON_BLOCK);
 
 
-        registerCrossBlock(GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.BALLONLEA_PINK_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.BALLONLEA_YELLOW_MUSHROOM);
+        registerMushroom(GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM);
+        registerMushroom(GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM);
+        registerMushroom(GenerationsBlocks.BALLONLEA_PINK_MUSHROOM);
+        registerMushroom(GenerationsBlocks.BALLONLEA_YELLOW_MUSHROOM);
 
-        registerCrossBlock(GenerationsBlocks.GROUP_BALLONLEA_BLUE_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.GROUP_BALLONLEA_GREEN_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.GROUP_BALLONLEA_PINK_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.GROUP_BALLONLEA_YELLOW_MUSHROOM);
+        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_BLUE_MUSHROOM);
+        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_GREEN_MUSHROOM);
+        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_PINK_MUSHROOM);
+        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_YELLOW_MUSHROOM);
 
-        registerCrossBlock(GenerationsBlocks.TALL_BALLONLEA_BLUE_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.TALL_BALLONLEA_GREEN_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.TALL_BALLONLEA_PINK_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.TALL_BALLONLEA_YELLOW_MUSHROOM);
+        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_BLUE_MUSHROOM);
+        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_GREEN_MUSHROOM);
+        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_PINK_MUSHROOM);
+        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_YELLOW_MUSHROOM);
 
-        registerCrossBlock(GenerationsBlocks.DOUBLE_BALLONLEA_BLUE_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.DOUBLE_BALLONLEA_GREEN_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.DOUBLE_BALLONLEA_PINK_MUSHROOM);
-        registerCrossBlock(GenerationsBlocks.DOUBLE_BALLONLEA_YELLOW_MUSHROOM);
+        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_BLUE_MUSHROOM);
+        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_GREEN_MUSHROOM);
+        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_PINK_MUSHROOM);
+        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_YELLOW_MUSHROOM);
 
+
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_AZ);
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_BLUE);
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_ORANGE);
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_RED);
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_WHITE);
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_YELLOW);
 
         //Ultra Space
         registerSandStonePallet(GenerationsBlocks.ULTRA_SANDSTONE, GenerationsBlocks.ULTRA_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SANDSTONE_WALL, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_SLAB, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_STAIRS, GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_WALL, GenerationsBlocks.ULTRA_CHISELED_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE, GenerationsBlocks.ULTRA_CUT_SANDSTONE_SLAB);
@@ -463,13 +471,25 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlock(wallsign, thing);
     }
 
-    private void registerCrossBlock(RegistrySupplier<GenerationsMushroomBlock> crossBlock) {
+    private void registerMushroom(RegistrySupplier<GenerationsMushroomBlock> crossBlock) {
         getVariantBuilder(crossBlock.get()).forAllStates(state ->
                 ConfiguredModel.builder()
                         .modelFile(models().cross(crossBlock.getId().getPath(), blockTexture(crossBlock.get())).renderType("cutout"))
                         .build());
 
         MUSHROOM_BLOCKS.add(crossBlock.get());
+    }
+
+    private void registerFlabebeFlower(RegistrySupplier<FlabebeFlowerBlock> crossBlock) {
+        ResourceLocation name = key(crossBlock.get());
+        var location = new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/flowers/" + name.getPath());
+
+        getVariantBuilder(crossBlock.get()).forAllStates(state ->
+                ConfiguredModel.builder()
+                        .modelFile(models().cross(crossBlock.getId().getPath(), location).renderType("cutout"))
+                        .build());
+
+        dropSelfList.add(crossBlock.get());
     }
 
     private void registerLog(RegistrySupplier<RotatedPillarBlock> log) {
