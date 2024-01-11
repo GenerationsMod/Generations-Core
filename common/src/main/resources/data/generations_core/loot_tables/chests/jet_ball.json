@@ -11,10 +11,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:jet_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:coba_berry"
 			},
 			{

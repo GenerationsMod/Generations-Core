@@ -363,14 +363,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wing_ball"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:jet_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:bug_candy"
 			},
 			{

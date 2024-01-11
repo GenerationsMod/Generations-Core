@@ -11,10 +11,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:gigaton_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:heavy_ball"
 			},
 			{

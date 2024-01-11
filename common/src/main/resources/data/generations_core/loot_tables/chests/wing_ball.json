@@ -11,10 +11,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wing_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:icy_wing"
 			},
 			{

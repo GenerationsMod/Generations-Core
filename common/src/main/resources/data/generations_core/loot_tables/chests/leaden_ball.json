@@ -11,10 +11,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:leaden_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:rusty_fragment"
 			},
 			{

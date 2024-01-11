@@ -8,10 +8,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:strange_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:surprise_mulch"
 			},
 			{

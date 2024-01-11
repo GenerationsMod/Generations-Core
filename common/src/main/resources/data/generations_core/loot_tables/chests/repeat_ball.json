@@ -267,14 +267,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:aluminum_ingot"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:aluminum_plate"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:pokemail_orange"
 			},
 			{
