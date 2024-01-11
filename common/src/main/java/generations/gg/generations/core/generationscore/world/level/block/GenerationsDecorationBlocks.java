@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class GenerationsDecorationBlocks {
     public static final DeferredRegister<Block> DECORATIONS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
@@ -42,7 +44,13 @@ public class GenerationsDecorationBlocks {
 
     public static final DyedGroup<VendingMachineBlock, VendingMachineBlockEntity> VENDING_MACHINE = registerDyed("vending_machine", function -> () -> new VendingMachineBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
-    public static final DyedGroup<StreetLampBlock, StreetLampBlockEntity> STREET_LAMP = registerDyed("street_lamp", function -> () -> new StreetLampBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final DyedGroup<StreetLampBlock, StreetLampBlockEntity> STREET_LAMP = registerDyed("street_lamp", function -> () -> new StreetLampBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).lightLevel(new ToIntFunction<BlockState>() {
+        @Override
+        public int applyAsInt(BlockState value) {
+            if(((StreetLampBlock) value.getBlock()).getHeightValue(value) == 1) return 15;
+            return 0;
+        }
+    }).requiresCorrectToolForDrops()));
 
     private static DyedGroup<VariantCouchBlock, CouchBlockEntity> registerCouch(VariantCouchBlock.Variant variant) {
         return registerDyed("couch_" + variant.name().toLowerCase(), function -> () -> new VariantCouchBlock(function, BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), variant));
