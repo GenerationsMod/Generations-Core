@@ -11,10 +11,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:origin_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:scroll_page"
 			},
 			{

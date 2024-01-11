@@ -8,10 +8,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:strange_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:surprise_mulch"
 			},
 			{
@@ -125,10 +121,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:z_ingot"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:rare_tumblestone"
 			},
 			{
 				"type": "minecraft:item",

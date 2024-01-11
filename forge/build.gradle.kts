@@ -116,7 +116,7 @@ publisher {
     }
 
     curseID.set("860936")
-    modrinthID.set("e1GvDbBX")
+    modrinthID.set("AxvRzJ70")
     githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
     setReleaseType(ReleaseType.BETA)
     version.set(project.version.toString())

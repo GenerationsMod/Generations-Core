@@ -11,10 +11,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:wing_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "generations_core:icy_wing"
 			},
 			{
@@ -136,10 +132,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:light_ball"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:sky_tumblestone"
 			},
 			{
 				"type": "minecraft:item",

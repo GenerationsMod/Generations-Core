@@ -11,10 +11,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:jet_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:coba_berry"
 			},
 			{
@@ -320,10 +316,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:packaged_curry"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:sky_tumblestone"
 			},
 			{
 				"type": "minecraft:item",

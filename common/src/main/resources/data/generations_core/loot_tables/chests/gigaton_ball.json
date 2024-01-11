@@ -11,10 +11,6 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:gigaton_ball"
-			},
-			{
-				"type": "minecraft:item",
 				"name": "cobblemon:heavy_ball"
 			},
 			{
@@ -308,22 +304,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:wide_lens"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:tumblestone"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:black_tumblestone"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:sky_tumblestone"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:rare_tumblestone"
 			},
 			{
 				"type": "minecraft:item",
