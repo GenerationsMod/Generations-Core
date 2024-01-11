@@ -1,0 +1,102 @@
+{
+	"type": "minecraft:chest",
+	"pools": [{
+		"rolls": {
+			"min": 5,
+			"max": 8
+		},
+		"entries": [{
+				"type": "minecraft:item",
+				"name": "cobblemon:poke_ball",
+                "conditions": [
+                  {
+                    "condition": "minecraft:random_chance",
+                    "chance": 1
+                  }
+                ],
+                "functions": [
+                  {
+                    "function": "minecraft:set_count",
+                    "count": 3
+                  }
+                ]
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:healing_machine",
+                "conditions": [
+                  {
+                    "condition": "minecraft:random_chance",
+                    "chance": 1
+                  }
+                ]
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:pc",
+                "conditions": [
+                  {
+                    "condition": "minecraft:random_chance",
+                    "chance": 1
+                  }
+                ]
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:friend_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:great_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:level_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:love_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:lure_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:repeat_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:timer_ball"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:black_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:blue_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:green_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:pink_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:red_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:white_apricorn"
+			},
+			{
+				"type": "minecraft:item",
+				"name": "cobblemon:yellow_apricorn"
+			}
+		]
+	}]
+}
