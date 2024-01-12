@@ -8,16 +8,24 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.function.Function;
 
-public class VariantCouchBlock extends DyeableBlock<CouchBlockEntity, VariantCouchBlock> {
+import static net.minecraft.world.phys.shapes.BooleanOp.OR;
+
+public class VariantCouchBlock extends DyeableBlock<CouchBlockEntity, VariantCouchBlock> implements SittableBlock {
     private final GenerationsVoxelShapes.DirectionalShapes shapes;
 
     public VariantCouchBlock(Function<DyeColor, DyedBlockItem<CouchBlockEntity, VariantCouchBlock>> function, Properties arg, Variant variant) {
@@ -30,13 +38,23 @@ public class VariantCouchBlock extends DyeableBlock<CouchBlockEntity, VariantCou
         return shapes.getShape(state);
     }
 
+    @Override
+    protected InteractionResult serverUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+        return SittableBlock.super.use(state, world, pos, player, handIn, hit);
+    }
+
+    @Override
+    public double getOffset() {
+        return 0.4375;
+    }
+
     public static enum Variant {
-        OTTOMAN("ottoman", Shapes.block()),
-        ARM_LEFT("arm_left", Shapes.block()),
-        ARM_RIGHT("arm_right", Shapes.block()),
-        CORNER_LEFT("corner_left", Shapes.block()),
-        CORNER_RIGHT("corner_right", Shapes.block()),
-        MIDDLE("middle", Shapes.block());
+        OTTOMAN("ottoman", Shapes.box(0, 0, 0, 1, 0.4375, 1)),
+        ARM_LEFT("arm_left", Shapes.join(Shapes.box(0, 0, 0, 1, 0.4375, 1), Shapes.join(Shapes.box(0, 0, 0.75, 1, 1, 1), Shapes.box(0.75, 0, 0, 1, 0.71875, 1), OR), OR)),
+        ARM_RIGHT("arm_right", Shapes.join(Shapes.box(0, 0, 0, 1, 0.4375, 1), Shapes.join(Shapes.box(0, 0, 0.75, 1, 1, 1), Shapes.box(0, 0, 0, 0.25, 0.71875, 1), OR), OR)),
+        CORNER_LEFT("corner_left", Shapes.join(Shapes.box(0, 0, 0, 1, 0.4375, 1), Shapes.join(Shapes.box(0, 0, 0.75, 1, 1, 1), Shapes.box(0.75, 0, 0, 1, 1, 1), OR), OR)),
+        CORNER_RIGHT("corner_right", Shapes.join(Shapes.box(0, 0, 0, 1, 0.4375, 1), Shapes.join(Shapes.box(0, 0, 0.75, 1, 1, 1), Shapes.box(0, 0, 0, 0.25, 1, 1), OR), OR)),
+        MIDDLE("middle", Shapes.join(Shapes.box(0, 0, 0, 1, 0.4375, 1),  Shapes.box(0, 0, 0.75, 1, 1, 1), OR));
         private final GenerationsVoxelShapes.DirectionalShapes shape;
         private final ResourceLocation model;
 
