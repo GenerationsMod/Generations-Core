@@ -59,7 +59,6 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation LITWICK_CANDLES = block("decorations/litwick_candles.pk");
     public static final ResourceLocation POKEBALL_PILLAR = block("decorations/pokeball_pillar.pk");
     public static final ResourceLocation BUSH = block("decorations/bush.pk");
-    public static final ResourceLocation RUG = block("decorations/rug.pk");
     public static final ResourceLocation HDTV = block("decorations/hdtv.pk");
     public static final ResourceLocation SWIVEL_CHAIR = block("decorations/swivel_chair.pk");
     public static final ResourceLocation TALL_HOUSE_LAMP = block("decorations/tall_house_lamp.pk");

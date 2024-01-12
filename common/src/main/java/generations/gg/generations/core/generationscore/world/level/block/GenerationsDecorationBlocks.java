@@ -86,6 +86,13 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> SHOP_DISPLAY_LARGE_SHELF_1 = registerDecorationItem("shop_display_large_shelf_1", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 2, 0, "shelf_1"));
     public static final RegistrySupplier<Block> SHOP_DISPLAY_LARGE_SHELF_2 = registerDecorationItem("shop_display_large_shelf_2", () -> new ShopDisplayBlock(BlockBehaviour.Properties.of(), 1, 2, 0, "shelf_2"));
 
+    //Cushion
+
+    public static final RegistrySupplier<Block> FOONGUS_CUSHION = registerDecorationItem("foongus_cushion", () -> new CushionBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), "foongus"));
+    public static final RegistrySupplier<Block> GREATBALL_CUSHION = registerDecorationItem("greatball_cushion", () -> new CushionBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), "greatball"));
+    public static final RegistrySupplier<Block> POKEBALL_CUSHION = registerDecorationItem("pokeball_cushion", () -> new CushionBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), "pokeball"));
+    public static final RegistrySupplier<Block> MASTERBALL_CUSHION = registerDecorationItem("masterball_cushion", () -> new CushionBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), "masterball"));
+
     public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, Function<Function<DyeColor, DyedBlockItem<T, V>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
 
         var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyedBlockItem<T, V>>>();
