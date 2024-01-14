@@ -74,6 +74,11 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
         return InteractionResult.PASS;
     }
 
+    @Override
+    public String getActiveVariant(boolean active) {
+        return active ? "activated" : "deactivated";
+    }
+
     public PokemonProperties getProperties(ItemStack stack) {
         return stack.getItem() instanceof WingItem wing ? wing.getKey().createProperties(70) : null;
     }

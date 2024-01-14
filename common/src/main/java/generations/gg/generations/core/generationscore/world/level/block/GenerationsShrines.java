@@ -8,9 +8,11 @@ import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.BlockItemWithLang;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.FieryShrineBlock;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.FrozenShrineBlock;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.HoohShrineBlock;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.StaticShrineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
@@ -28,11 +30,11 @@ public class GenerationsShrines {
 	/**
 	 * Shrine Blocks
 	 */
-	public static final RegistrySupplier<Block> FIERY_SHRINE = registerBlockItem("fiery_shrine", () -> new BirdShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.MOLTRES_SHRINE, GenerationsItems.FIERY_WING, GenerationsItems.SINISTER_WING));
-	public static final RegistrySupplier<Block> FROZEN_SHRINE = registerBlockItem("frozen_shrine", () -> new BirdShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.ARTICUNO_SHRINE, GenerationsItems.ICY_WING, GenerationsItems.ELEGANT_WING));
-	public static final RegistrySupplier<Block> STATIC_SHRINE = registerBlockItem("static_shrine", () -> new BirdShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.ZAPDOS_SHRINE, GenerationsItems.STATIC_WING, GenerationsItems.BELLIGERENT_WING));
+	public static final RegistrySupplier<Block> FIERY_SHRINE = registerBlockItem("fiery_shrine", () -> new FieryShrineBlock(SHRINE_PROPERTIES));
+	public static final RegistrySupplier<Block> FROZEN_SHRINE = registerBlockItem("frozen_shrine", () -> new FrozenShrineBlock(SHRINE_PROPERTIES));
+	public static final RegistrySupplier<Block> STATIC_SHRINE = registerBlockItem("static_shrine", () -> new StaticShrineBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> LUGIA_SHRINE = registerBlockItem("lugia_shrine", () -> new LugiaShrineBlock(SHRINE_PROPERTIES));
-	public static final RegistrySupplier<Block> HO_OH_SHRINE = registerBlockItem("ho_oh_shrine", () -> new BirdShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.LUGIA_SHRINE, GenerationsItems.RAINBOW_WING)); //TODO: Use Crystal bell Model
+	public static final RegistrySupplier<Block> HO_OH_SHRINE = registerBlockItem("ho_oh_shrine", () -> new HoohShrineBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> GROUDON_SHRINE = registerBlockItem("groudon_shrine", () -> new WeatherTrioShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.GROUDON_SHRINE, LegendKeys.GROUDON, GenerationsItems.FADED_RED_ORB));
 	public static final RegistrySupplier<Block> KYOGRE_SHRINE = registerBlockItem("kyogre_shrine", () -> new WeatherTrioShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.KYOGRE_SHRINE, LegendKeys.KYORGRE, GenerationsItems.FADED_BLUE_ORB));
 	public static final RegistrySupplier<Block> TIMESPACE_ALTAR = registerBlockItem("timespace_altar", () -> new TimespaceAltarBlock(SHRINE_PROPERTIES));

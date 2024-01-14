@@ -70,6 +70,9 @@ dependencies {
 
     modRuntimeOnly("curse.maven:spit-it-out-857141:4888754")
 
+    modRuntimeOnly("curse.maven:worldedit-225608:4586218")
+
+
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.10.0")
     modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")

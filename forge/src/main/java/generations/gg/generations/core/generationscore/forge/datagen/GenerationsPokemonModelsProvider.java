@@ -307,7 +307,7 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
             resolver.variation(shiny().aspect(type).variant(type).poser(id).model(id));
         }
 
-        pairs.add(new Pair<>(resolver, poserBuilder(name, false)));
+//        pairs.add(new Pair<>(resolver, poserBuilder(name, false)));
     }
 
     private void elemental(String name) {
@@ -339,7 +339,7 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
             resolver.variation(shiny().aspect(type).variant("shiny-" + type).poser(id).model(id));
         }
 
-        pairs.add(new Pair<>(resolver, poserBuilder(name, false)));
+//        pairs.add(new Pair<>(resolver, poserBuilder(name, false)));
     }
 
     private void gigantamax(String name) {
@@ -359,7 +359,7 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
     }
 
     private void base(String name, boolean idleOnly) {
-        pairs.add(new Pair<>(baseResolver(name), poserBuilder(name, idleOnly)));
+//        pairs.add(new Pair<>(baseResolver(name), poserBuilder(name, idleOnly)));
     }
 
     private void form(String form, String name) {
@@ -367,7 +367,7 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
     }
 
     private void form(String form, String name, boolean idleOnly) {
-        pairs.add(new Pair<>(formResolver(form, name, idleOnly), formPoserBuilder(form, name, idleOnly)));
+//        pairs.add(new Pair<>(formResolver(form, name, idleOnly), formPoserBuilder(form, name, idleOnly)));
     }
 
     private void mega(String name) {
@@ -404,18 +404,18 @@ public class GenerationsPokemonModelsProvider extends PokemonModelsProvider {
                 .variation(function.apply(name, true, true));
     }
 
-    private List<PokemonModelsProvider.PoserBuilder> formPoserBuilder(String form, String name, boolean idleOnly) {
-        return List.of(gensPoser(name, false),
-                gensPoser(name + "-" + form, idleOnly));
-    }
+//    private List<PokemonModelsProvider.PoserBuilder> formPoserBuilder(String form, String name, boolean idleOnly) {
+//        return List.of(gensPoser(name, false),
+//                gensPoser(name + "-" + form, idleOnly));
+//    }
 
-    private List<PokemonModelsProvider.PoserBuilder> poserBuilder(String name, boolean idleOnly) {
-        return List.of(gensPoser(name, idleOnly));
-    }
+//    private List<PokemonModelsProvider.PoserBuilder> poserBuilder(String name, boolean idleOnly) {
+//        return List.of(gensPoser(name, idleOnly));
+//    }
 
-    public PokemonModelsProvider.PoserBuilder gensPoser(String name, boolean idleOnly) {
-        var poser = poser(GenerationsCore.id(name)).standing();
-        if(!idleOnly) poser.walking();
-        return poser;
-    }
+//    public PokemonModelsProvider.PoserBuilder gensPoser(String name, boolean idleOnly) {
+//        var poser = poser(GenerationsCore.id(name)).standing();
+//        if(!idleOnly) poser.walking();
+//        return poser;
+//    }
 }

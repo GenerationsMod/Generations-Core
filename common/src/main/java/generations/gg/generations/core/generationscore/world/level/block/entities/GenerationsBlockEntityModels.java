@@ -1,7 +1,13 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 
 public class GenerationsBlockEntityModels {
     public static final ResourceLocation DEFAULT = GenerationsCore.id("");
@@ -10,14 +16,13 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation CELESTIAL_ALTAR = block("shrines/celestial_altar.pk");
     public static final ResourceLocation CLOCK = block("decorations/clock.pk");
     public static final ResourceLocation COOKING_POT = block("utility_blocks/cooking_pot.pk");
-    public static final ResourceLocation MOLTRES_SHRINE = block("shrines/legendary_birds/moltres_shrine.pk");
-    public static final ResourceLocation ARTICUNO_SHRINE = block("shrines/legendary_birds/articuno_shrine.pk");
+    public static final ResourceLocation MOLTRES_SHRINE = block("shrines/moltres_shrine.pk");
+    public static final ResourceLocation ARTICUNO_SHRINE = block("shrines/articuno_shrine.pk");
     public static final ResourceLocation GROUDON_SHRINE = block("shrines/weather_trio/groudon_shrine.pk");
     public static final ResourceLocation HEALER = block("utility_blocks/healer.pk");
-    public static final ResourceLocation CRYSTAL_BELL = block("shrines/crystal_bell/crystal_bell.pk");
     public static final ResourceLocation HOUSE_LAMP = block("decorations/house_lamp.pk");
     public static final ResourceLocation KYOGRE_SHRINE = block("shrines/weather_trio/kyogre_shrine.pk");
-    public static final ResourceLocation LUGIA_SHRINE = block("shrines/lugia_shrine/lugia_shrine.pk");
+    public static final ResourceLocation LUGIA_SHRINE = block("shrines/lugia_shrine.pk");
     public static final ResourceLocation DARK_MODEL = block("shrines/lunar_shrine/dark_shrine.pk");
     public static final ResourceLocation LIGHT_MODEL = block("shrines/lunar_shrine/light_shrine.pk");
     public static final ResourceLocation MELOETTA_MUSIC_BOX = block("shrines/meloetta_music_box.pk");
@@ -35,7 +40,7 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation REGIROCK_SHRINE = block("shrines/regis/regirock_shrine.pk");
     public static final ResourceLocation REGISTEEL_SHRINE = block("shrines/regis/registeel_shrine.pk");
     public static final ResourceLocation SNORLAX_BEAN_BAG = block("decorations/snorlax_bean_bag.pk");
-    public static final ResourceLocation ZAPDOS_SHRINE = block("shrines/legendary_birds/zapdos_shrine.pk");
+    public static final ResourceLocation ZAPDOS_SHRINE = block("shrines/zapdos_shrine.pk");
     public static final ResourceLocation SWITCH = block("decorations/switch.pk");
     public static final ResourceLocation TAO_TRIO_SHRINE = block("shrines/tao_trio_shrine.pk");
     public static final ResourceLocation TAPU_SHRINE = block("shrines/tapu_shrine.pk");
@@ -71,6 +76,7 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation LIGHT_CRYSTAL = block("shrines/light_crystal.pk");
     public static final ResourceLocation DARK_CRYSTAL = block("shrines/dark_crystal.pk");
     public static final ResourceLocation SCARECROW = block("utility_blocks/scarecrow.pk");
+    public static ResourceLocation HO_OH_SHRINE = block("shrines/ho_oh_shrine.pk");;
 
     public static ResourceLocation block(String path) {
         return GenerationsCore.id("models/block/" + path);
