@@ -5,7 +5,7 @@
 
   "name": "Generations-Core",
   "description": "",
-  "authors": ["J.T. McQuigg (JT122406)", "Waterpicker"],
+  "authors": ["Joseph T. McQuigg (JT122406)", "Waterpicker"],
   "contact": {},
   "icon": "generations.png",
 
@@ -22,7 +22,7 @@
     "GenerationsCore-common.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.21",
+    "fabricloader": ">=0.15.3",
     "minecraft": ">=1.20.1",
     "architectury": ">=9.1.12",
     "cobblemon": ">=1.4.1"
