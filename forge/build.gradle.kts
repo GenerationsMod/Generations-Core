@@ -89,7 +89,7 @@ tasks {
         exclude("fabric.mod.json",
             "generations/gg/generations/core/generationscore/forge/datagen/**",
             "architectury.common.json",
-            ".cache")
+            ".cache/**")
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
     }
@@ -124,7 +124,7 @@ publisher {
     changelog.set("test changelog")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
-    setLoaders(ModLoader.FORGE)
+    setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
     setCurseEnvironment(CurseEnvironment.BOTH)
     val depends = mutableListOf(
         "architectury-api",
