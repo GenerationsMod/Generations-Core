@@ -11,8 +11,7 @@
     "ItemCombinerMenuMixin",
     "LivingEntityMixin",
     "MagmaCubeMixin",
-    "PortalShapeMixin",
-    "RecipeBookSettingsAccessor"
+    "PortalShapeMixin"
   ],
   "client": [
     "MainMixin"
