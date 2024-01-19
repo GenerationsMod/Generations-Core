@@ -105,7 +105,7 @@ public class GenerationsUtilityBlocks {
 	public static RegistrySupplier<BallLootBlock> WING_BALL_LOOT = registerLoot("wing");
 
 	private static RegistrySupplier<BallLootBlock> registerLoot(String name) {
-		var block = registerBlockItem(name + "_ball_loot", () -> new BallLootBlock(name, BlockBehaviour.Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion()));
+		var block = registerBlockItem(name + "_ball_loot", () -> new BallLootBlock(name));
 		BALL_LOOTS.add(block);
 		return block;
 	}

@@ -26,6 +26,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -46,15 +48,15 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     private final ResourceLocation lootTable;
     private final ResourceLocation ball;
 
-    protected BallLootBlock(String name, Properties properties) {
-        super(properties, GenerationsBlockEntities.BALL_LOOT, null);
+    protected BallLootBlock(String name) {
+        super(BlockBehaviour.Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion(), GenerationsBlockEntities.BALL_LOOT, null);
         this.name = name;
         this.ball = new ResourceLocation("cobblemon", name + "_ball");
         this.lootTable = GenerationsCore.id("chests/%s_ball".formatted(name));
     }
 
     @Override
-    public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if(level.isClientSide || hand == InteractionHand.OFF_HAND) {
             return InteractionResult.CONSUME;
         }
@@ -118,11 +120,11 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     }
 
     @Override
-    public void attack(BlockState state, Level level, BlockPos pos, Player player) {
+    public void attack(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player) {
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof BallLootBlockEntity be && player.getUUID().equals(be.getOwner())) {
             String mode = "generations_core.blocks.lootmode.";
 
-            var lootMode = be.getLootMode();
+            LootMode lootMode = be.getLootMode();
 
             lootMode = switch (lootMode) {
                 case ONCE_PER_PLAYER -> LootMode.TIMED;
@@ -157,7 +159,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     }
 
     @Override
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+    public void randomTick(@NotNull BlockState state, ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         if (level.getBlockEntity(pos) instanceof BallLootBlockEntity be && !be.isVisible()) {
             float rand = random.nextFloat() * 0.5f + 1.0f;
             double xVel = 0.1;
@@ -180,7 +182,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return shape;
     }
 }
