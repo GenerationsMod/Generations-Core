@@ -139,7 +139,7 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<BallDisplayBlock> TIMER_BALL_DISPLAY = registerBallDisplay(DisplayState.TIMER);
 
     private static RegistrySupplier<BallDisplayBlock> registerBallDisplay(DisplayState state) {
-        var block = registerDecorationItem(state.name().toLowerCase() + "_ball_display", () -> new BallDisplayBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), state));
+        var block = registerDecorationItem(state.name().toLowerCase() + "_ball_display", () -> new BallDisplayBlock(state));
         BALL_DISPLAY_BLOCKS.add(block);
         return block;
     }
