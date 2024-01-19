@@ -12,6 +12,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
+@SuppressWarnings("unused")
 public class GenerationsPokeDolls {
 
 	public static final DeferredRegister<Block> POKEDOLLS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
