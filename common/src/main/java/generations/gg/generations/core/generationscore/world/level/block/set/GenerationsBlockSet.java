@@ -3,10 +3,8 @@ package generations.gg.generations.core.generationscore.world.level.block.set;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import net.minecraft.data.BlockFamily;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jetbrains.annotations.ApiStatus;
 
 import java.util.ArrayList;
@@ -35,6 +33,14 @@ public class GenerationsBlockSet {
      */
     public GenerationsBlockSet(String name, Block.Properties properties) {
         this(name, GenerationsBlocks.registerBlockItem(name, () -> new Block(properties)), properties);
+    }
+
+    /**
+     * Creates a new Generations block set with the default properties from Blocks#STONE.
+     * @param name The name of the base block.
+     */
+    public GenerationsBlockSet(String name) {
+        this(name, BlockBehaviour.Properties.copy(Blocks.STONE));
     }
 
     /**
