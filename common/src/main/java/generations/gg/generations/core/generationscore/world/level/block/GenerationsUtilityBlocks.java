@@ -53,23 +53,22 @@ public class GenerationsUtilityBlocks {
 
 	public static final RegistrySupplier<Block> SCARECROW = registerBlockItem("scarecrow", () -> new ScarecrowBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).dynamicShape().noOcclusion()));
 
-	public static final RegistrySupplier<Block> WHITE_ELEVATOR = registerBlockItem("white_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> LIGHT_GRAY_ELEVATOR = registerBlockItem("light_gray_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> GRAY_ELEVATOR = registerBlockItem("gray_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> BLACK_ELEVATOR = registerBlockItem("black_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> BROWN_ELEVATOR = registerBlockItem("brown_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> RED_ELEVATOR = registerBlockItem("red_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> ORANGE_ELEVATOR = registerBlockItem("orange_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> YELLOW_ELEVATOR = registerBlockItem("yellow_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> LIME_ELEVATOR = registerBlockItem("lime_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> GREEN_ELEVATOR = registerBlockItem("green_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> CYAN_ELEVATOR = registerBlockItem("cyan_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> POWDER_BLUE_ELEVATOR = registerBlockItem("powder_blue_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> LIGHT_BLUE_ELEVATOR = registerBlockItem("light_blue_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> BLUE_ELEVATOR = registerBlockItem("blue_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> PURPLE_ELEVATOR = registerBlockItem("purple_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> MAGENTA_ELEVATOR = registerBlockItem("magenta_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> PINK_ELEVATOR = registerBlockItem("pink_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
+	public static final RegistrySupplier<Block> WHITE_ELEVATOR = registerBlockItem("white_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> LIGHT_GRAY_ELEVATOR = registerBlockItem("light_gray_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> GRAY_ELEVATOR = registerBlockItem("gray_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> BLACK_ELEVATOR = registerBlockItem("black_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> BROWN_ELEVATOR = registerBlockItem("brown_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> RED_ELEVATOR = registerBlockItem("red_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> ORANGE_ELEVATOR = registerBlockItem("orange_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> YELLOW_ELEVATOR = registerBlockItem("yellow_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> LIME_ELEVATOR = registerBlockItem("lime_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> GREEN_ELEVATOR = registerBlockItem("green_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> CYAN_ELEVATOR = registerBlockItem("cyan_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> LIGHT_BLUE_ELEVATOR = registerBlockItem("light_blue_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> BLUE_ELEVATOR = registerBlockItem("blue_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> PURPLE_ELEVATOR = registerBlockItem("purple_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> MAGENTA_ELEVATOR = registerBlockItem("magenta_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> PINK_ELEVATOR = registerBlockItem("pink_elevator", ElevatorBlock::new);
 
 	public static RegistrySupplier<BallLootBlock> BEAST_BALL_LOOT = registerLoot("beast");
 	public static RegistrySupplier<BallLootBlock> CHERISH_BALL_LOOT = registerLoot("cherish");
@@ -139,11 +138,11 @@ public class GenerationsUtilityBlocks {
 		RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(name, blockSupplier.apply(dyeColor -> dyeMap.get(dyeColor).get()));
 
 		Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
-			var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<T, V>(block.get(), dyeColor, properties));
+			var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<>(block.get(), dyeColor, properties));
 			dyeMap.put(dyeColor, item);
 		});
 
-		return new DyedGroup<V, T>(block, dyeMap);
+		return new DyedGroup<>(block, dyeMap);
 	}
 
 
