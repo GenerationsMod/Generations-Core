@@ -7,15 +7,17 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CraftingTableBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class GenerationsCraftingTableBlock extends CraftingTableBlock {
 	private static final Component CONTAINER_TITLE = Component.translatable("container.crafting");
 
-	public GenerationsCraftingTableBlock(Properties arg) {
-		super(arg);
+	public GenerationsCraftingTableBlock() {
+		super(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE));
 	}
 
 	@Override
