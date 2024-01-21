@@ -53,23 +53,22 @@ public class GenerationsUtilityBlocks {
 
 	public static final RegistrySupplier<Block> SCARECROW = registerBlockItem("scarecrow", () -> new ScarecrowBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).dynamicShape().noOcclusion()));
 
-	public static final RegistrySupplier<Block> WHITE_ELEVATOR = registerBlockItem("white_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> LIGHT_GRAY_ELEVATOR = registerBlockItem("light_gray_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> GRAY_ELEVATOR = registerBlockItem("gray_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> BLACK_ELEVATOR = registerBlockItem("black_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> BROWN_ELEVATOR = registerBlockItem("brown_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> RED_ELEVATOR = registerBlockItem("red_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> ORANGE_ELEVATOR = registerBlockItem("orange_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> YELLOW_ELEVATOR = registerBlockItem("yellow_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> LIME_ELEVATOR = registerBlockItem("lime_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> GREEN_ELEVATOR = registerBlockItem("green_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> CYAN_ELEVATOR = registerBlockItem("cyan_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> POWDER_BLUE_ELEVATOR = registerBlockItem("powder_blue_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> LIGHT_BLUE_ELEVATOR = registerBlockItem("light_blue_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> BLUE_ELEVATOR = registerBlockItem("blue_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> PURPLE_ELEVATOR = registerBlockItem("purple_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> MAGENTA_ELEVATOR = registerBlockItem("magenta_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
-	public static final RegistrySupplier<Block> PINK_ELEVATOR = registerBlockItem("pink_elevator", () -> new ElevatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f)));
+	public static final RegistrySupplier<Block> WHITE_ELEVATOR = registerBlockItem("white_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> LIGHT_GRAY_ELEVATOR = registerBlockItem("light_gray_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> GRAY_ELEVATOR = registerBlockItem("gray_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> BLACK_ELEVATOR = registerBlockItem("black_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> BROWN_ELEVATOR = registerBlockItem("brown_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> RED_ELEVATOR = registerBlockItem("red_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> ORANGE_ELEVATOR = registerBlockItem("orange_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> YELLOW_ELEVATOR = registerBlockItem("yellow_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> LIME_ELEVATOR = registerBlockItem("lime_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> GREEN_ELEVATOR = registerBlockItem("green_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> CYAN_ELEVATOR = registerBlockItem("cyan_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> LIGHT_BLUE_ELEVATOR = registerBlockItem("light_blue_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> BLUE_ELEVATOR = registerBlockItem("blue_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> PURPLE_ELEVATOR = registerBlockItem("purple_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> MAGENTA_ELEVATOR = registerBlockItem("magenta_elevator", ElevatorBlock::new);
+	public static final RegistrySupplier<Block> PINK_ELEVATOR = registerBlockItem("pink_elevator", ElevatorBlock::new);
 
 	public static RegistrySupplier<BallLootBlock> BEAST_BALL_LOOT = registerLoot("beast");
 	public static RegistrySupplier<BallLootBlock> CHERISH_BALL_LOOT = registerLoot("cherish");
@@ -106,18 +105,18 @@ public class GenerationsUtilityBlocks {
 	public static RegistrySupplier<BallLootBlock> WING_BALL_LOOT = registerLoot("wing");
 
 	private static RegistrySupplier<BallLootBlock> registerLoot(String name) {
-		var block = registerBlockItem(name + "_ball_loot", () -> new BallLootBlock(name, BlockBehaviour.Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion()));
+		var block = registerBlockItem(name + "_ball_loot", () -> new BallLootBlock(name));
 		BALL_LOOTS.add(block);
 		return block;
 	}
 
 	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlock("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOD).ignitedByLava()));
-	public static final RegistrySupplier<GenericFurnaceBlock> CHARGE_STONE_FURNACE = registerBlockItem("charge_stone_furnace", () -> new GenericFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));
-	public static final RegistrySupplier<GenericBlastFurnaceBlock> CHARGE_STONE_BLAST_FURNACE = registerBlockItem("charge_stone_blast_furnace", () -> new GenericBlastFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE)));
-	public static final RegistrySupplier<GenericSmokerBlock> CHARGE_STONE_SMOKER = registerBlockItem("charge_stone_smoker", () -> new GenericSmokerBlock(BlockBehaviour.Properties.copy(Blocks.SMOKER)));
-	public static final RegistrySupplier<GenericFurnaceBlock> VOLCANIC_STONE_FURNACE = registerBlockItem("volcanic_stone_furnace", () -> new GenericFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE)));
-	public static final RegistrySupplier<GenericBlastFurnaceBlock> VOLCANIC_STONE_BLAST_FURNACE = registerBlockItem("volcanic_stone_blast_furnace", () -> new GenericBlastFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE)));
-	public static final RegistrySupplier<GenericSmokerBlock> VOLCANIC_STONE_SMOKER = registerBlockItem("volcanic_stone_smoker", () -> new GenericSmokerBlock(BlockBehaviour.Properties.copy(Blocks.SMOKER)));
+	public static final RegistrySupplier<GenericFurnaceBlock> CHARGE_STONE_FURNACE = registerBlockItem("charge_stone_furnace", GenericFurnaceBlock::new);
+	public static final RegistrySupplier<GenericBlastFurnaceBlock> CHARGE_STONE_BLAST_FURNACE = registerBlockItem("charge_stone_blast_furnace", GenericBlastFurnaceBlock::new);
+	public static final RegistrySupplier<GenericSmokerBlock> CHARGE_STONE_SMOKER = registerBlockItem("charge_stone_smoker", GenericSmokerBlock::new);
+	public static final RegistrySupplier<GenericFurnaceBlock> VOLCANIC_STONE_FURNACE = registerBlockItem("volcanic_stone_furnace", GenericFurnaceBlock::new);
+	public static final RegistrySupplier<GenericBlastFurnaceBlock> VOLCANIC_STONE_BLAST_FURNACE = registerBlockItem("volcanic_stone_blast_furnace", GenericBlastFurnaceBlock::new);
+	public static final RegistrySupplier<GenericSmokerBlock> VOLCANIC_STONE_SMOKER = registerBlockItem("volcanic_stone_smoker", GenericSmokerBlock::new);
 
 	private static <T extends BlockItem> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier) {
 		return GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.UTILITY)));
@@ -139,11 +138,11 @@ public class GenerationsUtilityBlocks {
 		RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(name, blockSupplier.apply(dyeColor -> dyeMap.get(dyeColor).get()));
 
 		Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
-			var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<T, V>(block.get(), dyeColor, properties));
+			var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<>(block.get(), dyeColor, properties));
 			dyeMap.put(dyeColor, item);
 		});
 
-		return new DyedGroup<V, T>(block, dyeMap);
+		return new DyedGroup<>(block, dyeMap);
 	}
 
 

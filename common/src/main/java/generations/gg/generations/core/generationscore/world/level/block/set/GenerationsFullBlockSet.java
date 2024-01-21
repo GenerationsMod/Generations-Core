@@ -2,10 +2,14 @@ package generations.gg.generations.core.generationscore.world.level.block.set;
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.ApiStatus;
 
 import java.util.ArrayList;
@@ -30,6 +34,25 @@ public class GenerationsFullBlockSet extends GenerationsBlockSet {
         pressurePlate = registerBlockItem(name + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, properties, type));
         GenerationsBlockSet.getBlockSets().remove(this);
         fullBlockSets.add(this);
+    }
+
+    /**
+     * Creates a new Generations block set with the default properties from Blocks#STONE.
+     * @param name The name of the base block.
+     * @param type The type of the block set.
+     */
+    public GenerationsFullBlockSet(String name, BlockSetType type) {
+        this(name, BlockBehaviour.Properties.copy(Blocks.STONE), type);
+    }
+
+    /**
+     * Creates a new Generations block set with the default properties from Blocks#STONE.
+     * @param name The name of the base block.
+     * @param type The type of the block set.
+     * @param color The map color of the block set.
+     */
+    public GenerationsFullBlockSet(String name, DyeColor color, BlockSetType type) {
+        this(name, BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(color), type);
     }
 
     /**

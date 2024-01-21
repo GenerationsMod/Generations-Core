@@ -246,7 +246,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsUtilityBlocks.LIME_ELEVATOR.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.GREEN_ELEVATOR.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.CYAN_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.POWDER_BLUE_ELEVATOR.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.BLUE_ELEVATOR.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.PURPLE_ELEVATOR.get(), "utility_blocks");

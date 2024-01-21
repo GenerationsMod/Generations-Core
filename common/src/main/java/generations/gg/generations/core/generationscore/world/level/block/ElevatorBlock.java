@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -12,24 +11,24 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 import java.util.Optional;
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class ElevatorBlock extends Block {
 
-    public ElevatorBlock(Properties properties) {
-        super(properties);
+    public ElevatorBlock() {
+        super(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f));
     }
 
     @Override
-    public void updateEntityAfterFallOn(BlockGetter level, Entity entity) {
-        if (entity instanceof ServerPlayer player && player.isShiftKeyDown()) {
+    public void updateEntityAfterFallOn(@NotNull BlockGetter level, @NotNull Entity entity) {
+        if (entity instanceof ServerPlayer player && player.isShiftKeyDown())
             this.takeElevator(level, entity.blockPosition().below(), player, Direction.DOWN);
-        }
     }
 
     public void takeElevator(BlockGetter world, BlockPos pos, ServerPlayer player, Direction direction) {

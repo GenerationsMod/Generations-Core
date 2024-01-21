@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -48,8 +49,8 @@ public class GenericChestBlock extends AbstractChestBlock<GenericChestBlockEntit
     private final String defaultTranslation;
     private final String materialType;
 
-    public GenericChestBlock(Properties arg, int width, int height, String materialType) {
-        super(arg, GenerationsBlockEntities.GENERIC_CHEST::get);
+    public GenericChestBlock(int width, int height, String materialType) {
+        super(BlockBehaviour.Properties.copy(Blocks.CHEST), GenerationsBlockEntities.GENERIC_CHEST::get);
         this.width = width;
         this.height = height;
         this.materialType = materialType;

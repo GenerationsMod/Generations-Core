@@ -14,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
@@ -25,8 +26,8 @@ import org.jetbrains.annotations.NotNull;
  * Custom Cursed Pumpkin Block
  */
 public class CursedPumpkinBlock extends PumpkinBlock {
-    public CursedPumpkinBlock(Properties arg) {
-        super(arg);
+    public CursedPumpkinBlock() {
+        super(BlockBehaviour.Properties.copy(Blocks.PUMPKIN));
     }
 
     @Override
