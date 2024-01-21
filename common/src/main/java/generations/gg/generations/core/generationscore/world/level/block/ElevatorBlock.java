@@ -10,25 +10,42 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 
+@SuppressWarnings("deprecation")
 public class ElevatorBlock extends Block {
+    protected static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 
     public ElevatorBlock() {
         super(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f));
     }
 
     @Override
-    public void updateEntityAfterFallOn(@NotNull BlockGetter level, @NotNull Entity entity) {
+    public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
         if (entity instanceof ServerPlayer player && player.isShiftKeyDown())
             this.takeElevator(level, entity.blockPosition().below(), player, Direction.DOWN);
+    }
+
+    @Override
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+        return SHAPE;
+    }
+
+    @Override
+    public @NotNull BlockState updateShape(BlockState state, @NotNull Direction direction, @NotNull BlockState neighborState, @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos) {
+        return !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
     public void takeElevator(BlockGetter world, BlockPos pos, ServerPlayer player, Direction direction) {
@@ -37,7 +54,7 @@ public class ElevatorBlock extends Block {
             return useElevator;
         }).map(ElevatorEvents.UseElevator::getDestination).filter(Objects::nonNull).map(BlockPos::above).ifPresent(blockPos -> {
             player.serverLevel().playSound(null, blockPos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS);
-            player.teleportTo(player.position().x, blockPos.getY() + 0.5, player.position().z);
+            player.teleportTo(player.position().x(), blockPos.getY() - 0.5, player.position().z());
         });
     }
 
@@ -49,9 +66,8 @@ public class ElevatorBlock extends Block {
         for (int i = 2; i < range; i++) {
             var current = pos.relative(direction, i);
 
-            if(world.getBlockState(current).getBlock() instanceof ElevatorBlock && world.getBlockState(current.above()).isAir() && world.getBlockState(current.above(2)).isAir()) {
+            if(world.getBlockState(current).getBlock() instanceof ElevatorBlock && world.getBlockState(current.above()).isAir() && world.getBlockState(current.above(2)).isAir())
                 return Optional.of(current);
-            }
         }
 
         return Optional.empty();
@@ -70,7 +86,6 @@ public class ElevatorBlock extends Block {
             private BlockPos destination;
 
             UseElevator(ServerPlayer player, BlockGetter blockGetter, ElevatorBlock block, Direction direction, BlockPos origin, BlockPos defaultDestination) {
-
                 this.player = player;
                 this.blockGetter = blockGetter;
                 this.block = block;
