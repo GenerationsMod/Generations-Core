@@ -135,7 +135,7 @@ public class ShopUtils {
 
     public static String stackToString(ItemStack itemStack) {
         return itemStack == null || itemStack.isEmpty() ? "minecraft:empty" :
-                BuiltInRegistries.ITEM.getKey(itemStack.getItem()).toString()
+                BuiltInRegistries.ITEM.getKey(itemStack.getItem())
                         +(itemStack.hasTag() ? itemStack.getTag().toString() : "");
     }
 

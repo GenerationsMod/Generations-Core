@@ -7,8 +7,6 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.world.level.block.*;
-import generations.gg.generations.core.generationscore.world.level.block.decorations.PastelBeanBagBlock;
-import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

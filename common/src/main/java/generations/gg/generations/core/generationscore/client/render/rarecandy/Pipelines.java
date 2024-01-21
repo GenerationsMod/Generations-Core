@@ -99,9 +99,7 @@ public class Pipelines {
                             .configure(Pipelines::emissionColors);
 
                     Pipeline layered = new Pipeline.Builder(layered_base)
-                            .supplyUniform("frame", ctx -> {
-                                ctx.uniform().uploadInt(-1);
-                            })
+                            .supplyUniform("frame", ctx -> ctx.uniform().uploadInt(-1))
                             .supplyUniform("layer", ctx -> {
                                 var texture = ctx.getTexture("layer");
 

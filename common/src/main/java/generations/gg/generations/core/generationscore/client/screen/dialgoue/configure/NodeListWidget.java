@@ -49,7 +49,7 @@ public class NodeListWidget extends AbstractHierarchicalWidget {
             if(posInsideY > 0) {
                 var idx = (int) Math.floor(posInsideY / 10);
                 hoveredNode = possibleNodes.get(Math.max(0, Math.min(idx, possibleNodes.size() - 1)));
-                setTooltip(Tooltip.create(Component.literal(hoveredNode.toString())));
+                setTooltip(Tooltip.create(Component.literal(hoveredNode)));
                 return true;
             }
         }

@@ -17,12 +17,7 @@ public class RksMachineScreen extends AbstractContainerScreen<RksMachineContaine
 
 	public RksMachineScreen(RksMachineContainer handler, Inventory inventory, Component title) {
 		super(handler, inventory, title);
-		button = Button.builder(Component.literal("Start"), new Button.OnPress() {
-			@Override
-			public void onPress(Button button) {
-				GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2STogglePacket(handler.getRksMachine().getBlockPos()));
-			}
-		}).bounds(0, 0, 41, 13).build();
+		button = Button.builder(Component.literal("Start"), button -> GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2STogglePacket(handler.getRksMachine().getBlockPos()))).bounds(0, 0, 41, 13).build();
 	}
 
 	public void init() {

@@ -22,7 +22,7 @@ public class YawLogicTypes {
         return register(GenerationsCore.id(name), codec, decoder);
     }
     public static <T extends YawLogic> YawLogicType<T> register(ResourceLocation name, Function<JsonObject, T> codec, Function<FriendlyByteBuf, T> decoder) {
-        return (YawLogicType<T>) GenerationsUtils.ensureMapReturn(YAW_LOGICS, name, new YawLogicType<T>(name, codec, decoder));
+        return (YawLogicType<T>) GenerationsUtils.ensureMapReturn(YAW_LOGICS, name, new YawLogicType<>(name, codec, decoder));
     }
 
     public static <T extends YawLogic> JsonObject toJson(T t) {

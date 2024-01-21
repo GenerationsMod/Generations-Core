@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.api.player;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -53,7 +54,7 @@ public class BiomesVisited extends PlayerDataExtension {
     @NotNull
     @Override
     public PlayerDataExtension deserialize(@NotNull JsonObject jsonObject) {
-        var biomes = jsonObject.getAsJsonArray("biomes").asList().stream().map(a -> a.getAsString()).map(a -> new ResourceLocation(a)).map(a -> ResourceKey.create(Registries.BIOME, a)).collect(Collectors.toCollection(HashSet::new));
+        var biomes = jsonObject.getAsJsonArray("biomes").asList().stream().map(JsonElement::getAsString).map(ResourceLocation::new).map(a -> ResourceKey.create(Registries.BIOME, a)).collect(Collectors.toCollection(HashSet::new));
         return new BiomesVisited(biomes);
     }
 

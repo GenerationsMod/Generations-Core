@@ -9,13 +9,13 @@ import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(PortalShape.class)
-public class PortalShapeMixin {
+public abstract class PortalShapeMixin {
     @Shadow
     @Final
     @Mutable
     private static BlockBehaviour.StatePredicate FRAME;
 
     static {
-        FRAME = (blockState, blockGetter, blockPos) -> ((IPortalBlock) (Object) blockState.getBlock()).isPortalFrame(blockState, blockGetter, blockPos);
+        FRAME = (blockState, blockGetter, blockPos) -> ((IPortalBlock) blockState.getBlock()).isPortalFrame(blockState, blockGetter, blockPos);
     }
 }

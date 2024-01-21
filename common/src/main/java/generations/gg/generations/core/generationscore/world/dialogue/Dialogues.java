@@ -30,7 +30,7 @@ public class Dialogues implements JsonDataRegistry<DialogueGraph> {
 
     private static final TypeToken<DialogueGraph> typeToken = TypeToken.get(DialogueGraph.class);
 
-    private final SimpleObservable<Dialogues> observable = new SimpleObservable<Dialogues>();
+    private final SimpleObservable<Dialogues> observable = new SimpleObservable<>();
 
     @NotNull
     @Override

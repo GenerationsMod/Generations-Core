@@ -58,9 +58,7 @@ public class EnigmaStoneItem extends ItemWithLangTooltipImpl implements PostBatt
 
         if(map.isEmpty()) return null;
         var node = new ChooseNode("Choose which Eon to Spawn:", map);
-        node.consumer = p -> {
-            GenerationsUtils.giveItem(p, GenerationsItems.ENIGMA_STONE.get().getDefaultInstance());
-        };
+        node.consumer = p -> GenerationsUtils.giveItem(p, GenerationsItems.ENIGMA_STONE.get().getDefaultInstance());
         return new DialogueGraph(node);
     }
 

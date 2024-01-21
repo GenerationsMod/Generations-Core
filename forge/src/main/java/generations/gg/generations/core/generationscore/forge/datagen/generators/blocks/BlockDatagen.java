@@ -20,7 +20,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {

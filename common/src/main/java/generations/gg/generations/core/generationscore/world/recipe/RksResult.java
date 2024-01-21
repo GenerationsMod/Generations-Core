@@ -5,10 +5,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 
 public interface RksResult {
     void toJson(JsonObject object);

@@ -35,7 +35,7 @@ public class NpcPresets implements JsonDataRegistry<NpcPreset> {
 
     private static final TypeToken<NpcPreset> typeToken = TypeToken.get(NpcPreset.class);
 
-    private final SimpleObservable<NpcPresets> observable = new SimpleObservable<NpcPresets>();
+    private final SimpleObservable<NpcPresets> observable = new SimpleObservable<>();
 
     @NotNull
     @Override

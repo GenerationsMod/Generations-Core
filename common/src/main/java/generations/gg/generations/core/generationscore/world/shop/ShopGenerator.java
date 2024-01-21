@@ -18,7 +18,7 @@ public class ShopGenerator {
         int entryIndex = 0;
 
         for (var preset : presets) {
-            int maxAppearingEntries = preset.maxAppearingItems() > maxEntries ? maxEntries : preset.maxAppearingItems();
+            int maxAppearingEntries = Math.min(preset.maxAppearingItems(), maxEntries);
             var presetEntries = generateEntries(preset.entries(), maxAppearingEntries);
             System.arraycopy(presetEntries, 0, generatedEntries, entryIndex, presetEntries.length);
             maxEntries -= maxAppearingEntries;

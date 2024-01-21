@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.client.render.entity;
 
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel;
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.PokemonFloatingState;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
 import com.cobblemon.mod.common.entity.PoseType;

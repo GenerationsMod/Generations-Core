@@ -7,7 +7,7 @@ import net.minecraft.world.entity.Entity;
 public class EntityEvents {
     public static final Event<Jump> JUMP = EventFactory.createLoop();
 
-    public static interface Jump {
+    public interface Jump {
         void jump(Entity entity);
     }
 }

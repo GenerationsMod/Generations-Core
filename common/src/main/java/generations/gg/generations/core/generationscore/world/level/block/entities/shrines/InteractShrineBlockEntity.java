@@ -5,7 +5,6 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public abstract class InteractShrineBlockEntity extends ShrineBlockEntity {

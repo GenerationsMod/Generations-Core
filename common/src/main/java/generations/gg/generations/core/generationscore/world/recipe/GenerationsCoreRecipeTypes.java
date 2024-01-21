@@ -12,12 +12,12 @@ public class GenerationsCoreRecipeTypes {
 
 	private static <T extends RksRecipe> RegistrySupplier<RecipeType<T>> register(String name) {
 		var id = GenerationsCore.id(name);
-		return RECIPES_TYPES.register(id, () -> new RecipeType<T>() {
-			@Override
-			public String toString() {
-				return id.toString();
-			}
-		});
+		return RECIPES_TYPES.register(id, () -> new RecipeType<>() {
+            @Override
+            public String toString() {
+                return id.toString();
+            }
+        });
 	}
 
     public static void init() {

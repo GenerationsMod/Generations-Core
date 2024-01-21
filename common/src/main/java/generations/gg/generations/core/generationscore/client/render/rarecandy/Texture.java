@@ -7,9 +7,6 @@ import gg.generations.rarecandy.renderer.loading.ITexture;
 import it.unimi.dsi.fastutil.io.FastByteArrayInputStream;
 import it.unimi.dsi.fastutil.io.FastByteArrayOutputStream;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-import org.lwjgl.opengl.GL13C;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

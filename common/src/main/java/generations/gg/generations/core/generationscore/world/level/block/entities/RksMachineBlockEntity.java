@@ -37,6 +37,7 @@ import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -73,7 +74,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    protected void saveAdditional(CompoundTag nbt) {
+    protected void saveAdditional(@NotNull CompoundTag nbt) {
         super.saveAdditional(nbt);
         CompoundTag inventoryTag = new CompoundTag();
         ContainerHelper.saveAllItems(inventoryTag, inventory);
@@ -84,7 +85,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         nbt.putBoolean(IS_PROCESSING_TAG, this.isProcessing);
     }
 
-    public void load(CompoundTag nbt) {
+    public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
         CompoundTag inventoryTag = nbt.getCompound(INVENTORY_TAG);
         ContainerHelper.saveAllItems(inventoryTag, this.inventory);
@@ -95,13 +96,13 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    public Component getDisplayName() {
+    public @NotNull Component getDisplayName() {
         return Component.translatable(getBlockState().getBlock().getDescriptionId());
     }
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int syncId, Inventory inv, Player player) {
+    public AbstractContainerMenu createMenu(int syncId, @NotNull Inventory inv, @NotNull Player player) {
         return new RksMachineContainer(new GenerationsContainers.CreationContext<>(syncId, inv, this));
     }
 
@@ -121,7 +122,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
 //    }
 
     @Override
-    public boolean canPlaceItem(int slot, ItemStack stack) {
+    public boolean canPlaceItem(int slot, @NotNull ItemStack stack) {
         return slot != 0 && slot <= getContainerSize();
     }
 
@@ -147,14 +148,14 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
 
 
     @Override
-    public ItemStack getItem(int slot) {
+    public @NotNull ItemStack getItem(int slot) {
         if (slot > 0) return this.inventory.get(slot - 1);
         if (!output.isEmpty()) return output;
         return ItemStack.EMPTY;
     }
 
     @Override
-    public ItemStack removeItem(int slot, int amount) {
+    public @NotNull ItemStack removeItem(int slot, int amount) {
         if (slot == 0) {
             return output.split(amount);
         }
@@ -162,7 +163,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    public ItemStack removeItemNoUpdate(int slot) {
+    public @NotNull ItemStack removeItemNoUpdate(int slot) {
         if (slot == 0) {
             ItemStack output = this.output;
             this.output = ItemStack.EMPTY;
@@ -172,7 +173,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    public void setItem(int slot, ItemStack stack) {
+    public void setItem(int slot, @NotNull ItemStack stack) {
         if (slot == 0) {
             output = stack;
             return;
@@ -193,7 +194,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    public void fillStackedContents(StackedContents finder) {
+    public void fillStackedContents(@NotNull StackedContents finder) {
         for (ItemStack stack : this.inventory) finder.accountStack(stack);
     }
 
@@ -339,7 +340,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    public CompoundTag getUpdateTag() {
+    public @NotNull CompoundTag getUpdateTag() {
         return this.saveWithFullMetadata();
     }
 
@@ -351,9 +352,9 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
 
     public List<Recipe<?>> getRecipesToAwardAndPopExperience(ServerLevel level, Vec3 popVec) {
         ArrayList<Recipe<?>> list = Lists.newArrayList();
-        for (Object2IntMap.Entry entry : this.recipesUsed.object2IntEntrySet()) {
+        for (Object2IntMap.Entry<?> entry : this.recipesUsed.object2IntEntrySet()) {
             level.getRecipeManager().byKey((ResourceLocation)entry.getKey()).ifPresent(recipe -> {
-                list.add((Recipe<?>)recipe);
+                list.add(recipe);
                 createExperience(level, popVec, entry.getIntValue(), ((RksRecipe)recipe).experience());
             });
         }

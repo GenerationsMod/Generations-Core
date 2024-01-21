@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.mojang.datafixers.util.Pair;
+import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class Shops implements JsonDataRegistry<Shop> {
     private static final ResourceLocation id = GenerationsCore.id("shops");
@@ -31,7 +33,7 @@ public class Shops implements JsonDataRegistry<Shop> {
 
     private static final TypeToken<Shop> typeToken = TypeToken.get(Shop.class);
 
-    private final SimpleObservable<Shops> observable = new SimpleObservable<Shops>();
+    private final SimpleObservable<Shops> observable = new SimpleObservable<>();
 
     @NotNull
     @Override
@@ -102,7 +104,7 @@ public class Shops implements JsonDataRegistry<Shop> {
 
     @Override
     public void reload(@NotNull ResourceManager manager) {
-        Map<ResourceLocation, Shop> data = new HashMap<ResourceLocation, Shop>();
+        Map<ResourceLocation, Shop> data = new HashMap<>();
         var map = manager.listResources(this.getResourcePath(), path -> path.toString().endsWith(".json")).entrySet();
 
         for (Map.Entry<ResourceLocation, Resource> entry : map) {
@@ -111,7 +113,7 @@ public class Shops implements JsonDataRegistry<Shop> {
             try (var reader = resource.openAsReader()) {
                 var resolvedIdentifier = new ResourceLocation(identifier.getNamespace(), FilenameUtils.removeExtension(Path.of(identifier.getPath()).getFileName().toString()));
                 var json = gson.fromJson(reader, JsonObject.class);
-                var shop = JsonOps.INSTANCE.withDecoder(Shop.CODEC).andThen(a -> a.result()).andThen(a -> a.orElseThrow()).andThen(Pair::getFirst).apply(json);
+                var shop = JsonOps.INSTANCE.withDecoder(Shop.CODEC).andThen(DataResult::result).andThen(Optional::orElseThrow).andThen(Pair::getFirst).apply(json);
                 data.put(resolvedIdentifier, shop);
             } catch (Exception exception) {
                 throw new RuntimeException("Error loading JSON for data: %s".formatted(identifier), exception);

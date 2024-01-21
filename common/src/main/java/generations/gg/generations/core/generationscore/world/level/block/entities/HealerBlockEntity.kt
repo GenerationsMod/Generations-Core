@@ -20,7 +20,7 @@ import kotlin.math.floor
 class HealerBlockEntity(pos: BlockPos, state: BlockState) : DyedVariantBlockEntity<HealerBlockEntity>(GenerationsBlockEntities.HEALER.get(), pos, state) {
     var currentUser: UUID? = null
         private set
-    var pokeBalls: MutableList<PokeBall> = mutableListOf<PokeBall>()
+    var pokeBalls: MutableList<PokeBall> = mutableListOf()
         private set
     var healTimeLeft: Int = 0
     var healingCharge: Float = 0.0F

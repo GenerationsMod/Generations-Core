@@ -44,12 +44,9 @@ public class GenerationsDecorationBlocks {
 
     public static final DyedGroup<VendingMachineBlock, VendingMachineBlockEntity> VENDING_MACHINE = registerDyed("vending_machine", function -> () -> new VendingMachineBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
-    public static final DyedGroup<StreetLampBlock, StreetLampBlockEntity> STREET_LAMP = registerDyed("street_lamp", function -> () -> new StreetLampBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).lightLevel(new ToIntFunction<BlockState>() {
-        @Override
-        public int applyAsInt(BlockState value) {
-            if(((StreetLampBlock) value.getBlock()).getHeightValue(value) == 1) return 15;
-            return 0;
-        }
+    public static final DyedGroup<StreetLampBlock, StreetLampBlockEntity> STREET_LAMP = registerDyed("street_lamp", function -> () -> new StreetLampBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).lightLevel(value -> {
+        if(((StreetLampBlock) value.getBlock()).getHeightValue(value) == 1) return 15;
+        return 0;
     }).requiresCorrectToolForDrops()));
 
     private static DyedGroup<VariantCouchBlock, CouchBlockEntity> registerCouch(VariantCouchBlock.Variant variant) {
@@ -99,11 +96,11 @@ public class GenerationsDecorationBlocks {
         RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(name, blockSupplier.apply(dyeColor -> dyeMap.get(dyeColor).get()));
 
         Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
-            var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<T, V>(block.get(), dyeColor, properties));
+            var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<>(block.get(), dyeColor, properties));
             dyeMap.put(dyeColor, item);
         });
 
-        return new DyedGroup<V, T>(block, dyeMap);
+        return new DyedGroup<>(block, dyeMap);
     }
 
     /**
