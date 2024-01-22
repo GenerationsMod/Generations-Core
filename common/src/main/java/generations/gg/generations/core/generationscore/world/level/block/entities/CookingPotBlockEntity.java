@@ -266,7 +266,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
 
         if (output.values().stream().distinct().count() <= 1) return null;
 
-        return output.entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(null);
+        return output.entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(null);
     }
 
     @Override

@@ -8,8 +8,6 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Varyi
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -60,8 +58,6 @@ import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.client.resources.model.Material;
-import net.minecraft.client.resources.sounds.SoundEventRegistration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
@@ -88,7 +84,6 @@ import org.joml.Vector4f;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -96,7 +91,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import static generations.gg.generations.core.generationscore.GenerationsCore.id;
@@ -106,7 +100,8 @@ import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
 public class GenerationsCoreClient {
-    private static final TypeToken<Map<String, String>> RARE_CANDY_TYPE = new TypeToken<Map<String, String>>(){};
+    private static final TypeToken<Map<String, String>> RARE_CANDY_TYPE = new TypeToken<>() {
+    };
 
     public static GenerationsTextureLoader textureLoader;
 

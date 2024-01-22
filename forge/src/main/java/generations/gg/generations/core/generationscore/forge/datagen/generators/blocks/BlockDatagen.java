@@ -249,23 +249,6 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 //        registerNoModel(GenerationsUtilityBlocks.CLOCK.block());
 //        registerNoModel(GenerationsUtilityBlocks.HEALER.block());
 
-        registerBlockItemParticle(GenerationsUtilityBlocks.WHITE_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.GRAY_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.BLACK_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.BROWN_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.RED_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.ORANGE_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.YELLOW_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.LIME_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.GREEN_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.CYAN_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.BLUE_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.PURPLE_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.MAGENTA_ELEVATOR.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.PINK_ELEVATOR.get(), "utility_blocks");
-
         registerBlockItemParticle(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.BENCH.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.GREATBALL_CUSHION.get(), "decorations");
@@ -307,6 +290,15 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHISELED_VOLCANIC_STONE_BRICKS);
 
         registerDripStone(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE);
+
+        registerCarpetLike(GenerationsUtilityBlocks.BLACK_ELEVATOR, GenerationsUtilityBlocks.BLUE_ELEVATOR,
+                GenerationsUtilityBlocks.BROWN_ELEVATOR, GenerationsUtilityBlocks.CYAN_ELEVATOR,
+                GenerationsUtilityBlocks.GRAY_ELEVATOR, GenerationsUtilityBlocks.GREEN_ELEVATOR,
+                //GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR, GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR,
+                GenerationsUtilityBlocks.LIME_ELEVATOR, GenerationsUtilityBlocks.MAGENTA_ELEVATOR,
+                GenerationsUtilityBlocks.ORANGE_ELEVATOR, GenerationsUtilityBlocks.PINK_ELEVATOR,
+                GenerationsUtilityBlocks.PURPLE_ELEVATOR, GenerationsUtilityBlocks.RED_ELEVATOR,
+                GenerationsUtilityBlocks.WHITE_ELEVATOR, GenerationsUtilityBlocks.YELLOW_ELEVATOR);
     }
 
     private <V extends DyeableBlock<T, V>, T extends DyedVariantBlockEntity<?>> void registerDyeGroup(DyedGroup<V, T> group, String dir) {
@@ -599,6 +591,14 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
                         .modelFile(models().cubeAll(block.getId().getPath(), modLoc("block/" + block.getId().getPath())).renderType("cutout_mipped"))
                         .build());
         simpleBlockItem(block.get(), cubeAll(block.get()));
+    }
+
+    @SafeVarargs
+    private void registerCarpetLike(RegistrySupplier<Block>... block) {
+        for (RegistrySupplier<Block> carpet : block) {
+            simpleBlockWithItem(carpet.get(), models().carpet(carpet.getId().getPath(), modLoc("block/" + carpet.getId().getPath())));
+            dropSelfList.add(carpet.get());
+        }
     }
 
     private void registerOreBlocks() {

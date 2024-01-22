@@ -7,8 +7,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.Objects;
-
 public class LunarShrineBlockEntity extends ShrineBlockEntity {
     public LunarShrineBlockEntity(BlockPos pos, BlockState state) {
         super(GenerationsBlockEntities.LUNAR_SHRINE.get(), pos, state);

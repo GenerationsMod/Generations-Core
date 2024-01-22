@@ -80,7 +80,7 @@ public class DurationJsonAdapter implements JsonSerializer<Duration>, JsonDeseri
         if (minutes > 0) {
             durationString.append(minutes).append("m");
         }
-        if (seconds > 0 || durationString.length() == 0) {
+        if (seconds > 0 || durationString.isEmpty()) {
             durationString.append(seconds).append("s");
         }
 

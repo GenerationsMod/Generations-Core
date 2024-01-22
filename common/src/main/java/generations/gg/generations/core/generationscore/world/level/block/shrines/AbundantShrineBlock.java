@@ -36,9 +36,7 @@ public class AbundantShrineBlock extends ShrineBlock<AbundantShrineBlockEntity> 
     private static final LocationLogic THERIAN_LOCATION = BlockLocationLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
     private static final YawLogic THERIAN_YAW = BlockYawLogic.of(GenerationsShrines.TAPU_SHRINE.getKey());
 
-    private static final Consumer<ServerPlayer> playerConsumer = p -> {
-        GenerationsUtils.giveItem(p, GenerationsItems.REVEAL_GLASS.get().getDefaultInstance());
-    };
+    private static final Consumer<ServerPlayer> playerConsumer = p -> GenerationsUtils.giveItem(p, GenerationsItems.REVEAL_GLASS.get().getDefaultInstance());
 
     public AbundantShrineBlock(BlockBehaviour.Properties properties) {
         super(properties, GenerationsBlockEntities.ABUNDANT_SHRINE, GenerationsBlockEntityModels.ABUNDANT_SHRINE);

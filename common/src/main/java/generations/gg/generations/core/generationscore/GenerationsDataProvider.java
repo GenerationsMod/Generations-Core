@@ -75,8 +75,8 @@ public class GenerationsDataProvider implements DataProvider {
 //            LOGGER.info("Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.");
 //        }
         this.registries.add(registry);
-        LOGGER.info("Registered the {} registry", registry.getId().toString());
-        LOGGER.debug("Registered the {} registry of class {}", registry.getId().toString(), registry.getClass().getCanonicalName());
+        LOGGER.info("Registered the {} registry", registry.getId());
+        LOGGER.debug("Registered the {} registry of class {}", registry.getId(), registry.getClass().getCanonicalName());
         return registry;
     }
 

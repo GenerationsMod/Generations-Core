@@ -55,9 +55,7 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
             return false;
         });
 
-        GenerationsCore.initBuiltinPacks((type, s, s2) -> {
-            ResourceManagerHelper.registerBuiltinResourcePack(s, FabricLoader.getInstance().getModContainer("generations_core").get(), s2, ResourcePackActivationType.DEFAULT_ENABLED);
-        });
+        GenerationsCore.initBuiltinPacks((type, s, s2) -> ResourceManagerHelper.registerBuiltinResourcePack(s, FabricLoader.getInstance().getModContainer("generations_core").get(), s2, ResourcePackActivationType.DEFAULT_ENABLED));
 
         MutableBlockEntityType.blocksToAdd.forEach(genericModelBlock -> {
             if(genericModelBlock.getBlockEntityType() instanceof MutableBlockEntityType<?> mutableBlockEntityType) {

@@ -33,7 +33,7 @@ public class ShopPresets implements JsonDataRegistry<ShopPreset> {
 
     private static final TypeToken<ShopPreset> typeToken = TypeToken.get(ShopPreset.class);
 
-    private final SimpleObservable<ShopPresets> observable = new SimpleObservable<ShopPresets>();
+    private final SimpleObservable<ShopPresets> observable = new SimpleObservable<>();
 
     @NotNull
     @Override
@@ -104,7 +104,7 @@ public class ShopPresets implements JsonDataRegistry<ShopPreset> {
 
     @Override
     public void reload(@NotNull ResourceManager manager) {
-        Map<ResourceLocation, ShopPreset> data = new HashMap<ResourceLocation, ShopPreset>();
+        Map<ResourceLocation, ShopPreset> data = new HashMap<>();
         var map = manager.listResources(this.getResourcePath(), path -> path.toString().endsWith(".json")).entrySet();
 
         for (Map.Entry<ResourceLocation, Resource> entry : map) {

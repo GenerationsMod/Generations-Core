@@ -26,7 +26,7 @@ public class AbstractNodeTypes {
         return register(GenerationsCore.id(name), codec, decoder);
     }
     public static <T extends AbstractNode> AbstractNodeType<T> register(ResourceLocation name, Function<JsonObject, T> codec, Function<FriendlyByteBuf, T> decoder) {
-        return (AbstractNodeType<T>) GenerationsUtils.ensureMapReturn(ABSTRACT_NODES, name, new AbstractNodeType<T>(name, codec, decoder));
+        return (AbstractNodeType<T>) GenerationsUtils.ensureMapReturn(ABSTRACT_NODES, name, new AbstractNodeType<>(name, codec, decoder));
     }
 
     public static <T extends AbstractNode> void encode(FriendlyByteBuf buf, T t) {

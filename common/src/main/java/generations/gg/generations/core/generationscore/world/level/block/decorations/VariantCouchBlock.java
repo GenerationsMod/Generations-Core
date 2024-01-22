@@ -47,7 +47,7 @@ public class VariantCouchBlock extends DyeableBlock<CouchBlockEntity, VariantCou
         return 0.4375;
     }
 
-    public static enum Variant {
+    public enum Variant {
         OTTOMAN("ottoman", Shapes.box(0, 0, 0, 1, 0.4375, 1)),
         ARM_LEFT("arm_left", Shapes.join(Shapes.box(0, 0, 0, 1, 0.4375, 1), Shapes.join(Shapes.box(0, 0, 0.75, 1, 1, 1), Shapes.box(0.75, 0, 0, 1, 0.71875, 1), OR), OR)),
         ARM_RIGHT("arm_right", Shapes.join(Shapes.box(0, 0, 0, 1, 0.4375, 1), Shapes.join(Shapes.box(0, 0, 0.75, 1, 1, 1), Shapes.box(0, 0, 0, 0.25, 0.71875, 1), OR), OR)),

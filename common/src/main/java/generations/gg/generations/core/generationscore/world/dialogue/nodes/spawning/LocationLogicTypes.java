@@ -24,7 +24,7 @@ public class LocationLogicTypes {
         return register(GenerationsCore.id(name), codec, decoder);
     }
     public static <T extends LocationLogic> LocationLogicType<T> register(ResourceLocation name, Function<JsonObject, T> codec, Function<FriendlyByteBuf, T> decoder) {
-        return (LocationLogicType<T>) GenerationsUtils.ensureMapReturn(LOCATION_LOGICS, name, new LocationLogicType<T>(name, codec, decoder));
+        return (LocationLogicType<T>) GenerationsUtils.ensureMapReturn(LOCATION_LOGICS, name, new LocationLogicType<>(name, codec, decoder));
     }
 
     public static <T extends LocationLogic> JsonObject toJson(T t) {

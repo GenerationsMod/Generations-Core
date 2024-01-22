@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ItemCombinerMenu.class)
-public class ItemCombinerMenuMixin {
+public abstract class ItemCombinerMenuMixin {
     @Shadow @Final protected ResultContainer resultSlots;
 
     @Shadow @Final protected Player player;

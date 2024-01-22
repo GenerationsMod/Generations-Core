@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation
 import org.joml.Matrix4f
 
 class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<PokemonEntity>(), PixelmonInstanceProvider {
-    private var trueAge: Int = 0;
+    private var trueAge: Int = 0
     private var pixelmonInstance: PixelmonInstance? = null
     private val staticFrame get() = statueEntity.statueData.frame
 
@@ -17,7 +17,7 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
 
     override fun updatePartialTicks(v: Float) {
         currentPartialTicks = if(isStatic) {
-            staticFrame;
+            staticFrame
         } else {
             v
         }
@@ -34,7 +34,7 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
     private fun updateAge() {
         trueAge += 1
 
-        age = if(isStatic) 0 else trueAge;
+        age = if(isStatic) 0 else trueAge
     }
 
     override fun getInstance(): PixelmonInstance {

@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.client.render.block.enti
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockAnimatedObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockLightValueProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
@@ -18,7 +17,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import org.joml.Matrix4f;
 
 import java.util.Objects;
 

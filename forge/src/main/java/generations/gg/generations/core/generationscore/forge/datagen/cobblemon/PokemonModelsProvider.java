@@ -10,6 +10,7 @@ import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -29,7 +30,7 @@ public abstract class PokemonModelsProvider implements DataProvider {
     }
 
     @Override
-    public CompletableFuture<?> run(CachedOutput output) {
+    public @NotNull CompletableFuture<?> run(@NotNull CachedOutput output) {
         Set<ResourceLocation> resolvers = Sets.newHashSet();
         Set<ResourceLocation> poser = Sets.newHashSet();
         List<CompletableFuture<?>> list = new ArrayList<>();
@@ -64,7 +65,7 @@ public abstract class PokemonModelsProvider implements DataProvider {
     public abstract void build();
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "Pokemon Models";
     }
 
@@ -255,9 +256,7 @@ public abstract class PokemonModelsProvider implements DataProvider {
         public JsonElement build() {
             var json = new JsonObject();
             var posesJson = new JsonObject();
-            poses.forEach((k, v) -> {
-                posesJson.add(k, v.builder());
-            });
+            poses.forEach((k, v) -> posesJson.add(k, v.builder()));
 
             json.add("poses", posesJson);
             return json;

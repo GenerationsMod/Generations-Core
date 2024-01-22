@@ -1,5 +1,6 @@
 {
+  "parent": "minecraft:block/carpet",
   "textures": {
-    "particle": "generations_core:item/placeholder"
+    "wool": "generations_core:block/yellow_elevator"
   }
 }

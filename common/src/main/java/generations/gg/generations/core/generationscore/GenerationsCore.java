@@ -42,10 +42,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import org.apache.logging.log4j.util.TriConsumer;
 import org.slf4j.Logger;
 
@@ -113,11 +111,8 @@ public class GenerationsCore
 		GenerationsCobblemonEvents.init();
 		EntityEvents.JUMP.register(entity -> {
 			if (entity instanceof ServerPlayer player) {
-				var pos = entity.blockPosition().below();
-
-				if (entity.level().getBlockState(pos).getBlock() instanceof ElevatorBlock block) {
+				if (entity.level().getBlockState(entity.blockPosition()).getBlock() instanceof ElevatorBlock block)
 					block.takeElevator(entity.level(), entity.blockPosition().below(), player, Direction.UP);
-				}
 			}
 		});
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {

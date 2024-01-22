@@ -9,10 +9,6 @@ import generations.gg.generations.core.generationscore.world.item.BlockItemWithL
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.FieryShrineBlock;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.FrozenShrineBlock;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.HoohShrineBlock;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.StaticShrineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
