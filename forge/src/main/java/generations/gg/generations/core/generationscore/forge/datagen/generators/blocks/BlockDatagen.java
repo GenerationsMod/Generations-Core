@@ -4,9 +4,11 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.models.model.ModelLocationUtils;
@@ -21,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
     public static final ArrayList<Object> dropSelfList = new ArrayList<>();
@@ -218,8 +221,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         GenerationsPokeDolls.POKEDOLLS.forEach(this::registerPokeDoll);
 
-        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE.block());
-        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block());
+//        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE.block());
+//        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block());
         GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> registerBlockItemParticle(block.get(), "ball_displays"));
 
 
@@ -232,8 +235,19 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.ROTOM_PC.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.TABLE_PC.get(), "utility_blocks");
-        registerNoModel(GenerationsUtilityBlocks.CLOCK.block());
-        registerNoModel(GenerationsUtilityBlocks.HEALER.block());
+        registerDyeGroup(GenerationsDecorationBlocks.PASTEL_BEAN_BAG, "bean_bags");
+        registerDyeGroup(GenerationsDecorationBlocks.VENDING_MACHINE, "vending_machines");
+        registerDyeGroup(GenerationsDecorationBlocks.SWIVEL_CHAIR, "swivel_chairs");
+        registerDyeGroup(GenerationsDecorationBlocks.STREET_LAMP, "street_lamp");
+        registerDyeGroup(GenerationsDecorationBlocks.COUCH_CORNER_LEFT, "couch");
+        registerDyeGroup(GenerationsDecorationBlocks.COUCH_CORNER_RIGHT, "couch");
+        registerDyeGroup(GenerationsDecorationBlocks.COUCH_ARM_LEFT, "couch");
+        registerDyeGroup(GenerationsDecorationBlocks.COUCH_ARM_RIGHT, "couch");
+        registerDyeGroup(GenerationsDecorationBlocks.COUCH_OTTOMAN, "couch");
+        registerDyeGroup(GenerationsDecorationBlocks.COUCH_MIDDLE, "couch");
+
+//        registerNoModel(GenerationsUtilityBlocks.CLOCK.block());
+//        registerNoModel(GenerationsUtilityBlocks.HEALER.block());
 
         registerBlockItemParticle(GenerationsUtilityBlocks.WHITE_ELEVATOR.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR.get(), "utility_blocks");
@@ -273,6 +287,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticle(GenerationsDecorationBlocks.SWITCH.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "decorations");
+        registerBlockItemParticle(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get(), "decorations");
         registerBlockItemParticle(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), "decorations");
         registerBlockItemParticle(GenerationsUtilityBlocks.RKS_MACHINE.get(), "utility_blocks");
         registerBlockItemParticle(GenerationsUtilityBlocks.SCARECROW.get(), "utility_blocks");
@@ -292,6 +307,13 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHISELED_VOLCANIC_STONE_BRICKS);
 
         registerDripStone(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE);
+    }
+
+    private <V extends DyeableBlock<T, V>, T extends DyedVariantBlockEntity<?>> void registerDyeGroup(DyedGroup<V, T> group, String dir) {
+        group.block().values().stream().map(Supplier::get).forEach(block -> {
+            registerBlockItemParticle(block, dir);
+            dropSelfList.add(block);
+        });
     }
 
     private <T extends Block> void registerNoModel( RegistrySupplier<T> block) {

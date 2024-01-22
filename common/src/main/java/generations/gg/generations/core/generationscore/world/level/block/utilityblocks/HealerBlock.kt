@@ -8,7 +8,7 @@ import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.isInBattle
 import com.cobblemon.mod.common.util.lang
 import com.cobblemon.mod.common.util.party
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem
+import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity
@@ -37,8 +37,12 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty
 import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 
-class HealerBlock(function: (DyeColor) -> DyedBlockItem<HealerBlockEntity, HealerBlock>, props: Properties?) : DyeableBlock<HealerBlockEntity, HealerBlock>(
-    function,
+class HealerBlock(
+    dyeColor: DyeColor,
+    map: Map<DyeColor, RegistrySupplier<DyeableBlock<HealerBlockEntity, HealerBlock>>>,
+    props: Properties?
+) : DyeableBlock<HealerBlockEntity, HealerBlock>(
+    dyeColor, map,
     GenerationsBlockEntities.HEALER,
     props,
     GenerationsBlockEntityModels.HEALER

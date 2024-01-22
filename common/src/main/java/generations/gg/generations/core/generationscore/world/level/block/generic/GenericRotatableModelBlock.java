@@ -32,6 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
+import java.util.stream.Stream;
 
 @SuppressWarnings("deprecation")
 public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProviders.ModelProvider> extends GenericModelBlock<T> {
@@ -122,10 +123,11 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
-        var widthDir = dir.getCounterClockWise();
-        var heightDir = Direction.UP;
+        return getEncompassingPositions(pos, dir).map(level::getBlockState).allMatch(BlockState::canBeReplaced);
+    }
 
-        return BlockPos.betweenClosedStream(pos, pos.relative(widthDir, width).relative(heightDir, height).relative(dir, length)).map(level::getBlockState).allMatch(BlockState::canBeReplaced);
+    public Stream<BlockPos> getEncompassingPositions(BlockPos pos, Direction dir) {
+        return BlockPos.betweenClosedStream(pos, pos.relative(dir.getCounterClockWise(), width).relative(Direction.UP, height).relative(dir, length));
     }
 
     @Override

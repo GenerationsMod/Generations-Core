@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.SittableBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.function.Function;
+import java.util.Map;
 
 import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 
@@ -38,8 +38,8 @@ public class SwivelChairBlock extends DyeableBlock<GenericDyedVariantBlockEntity
         return SHAPE.getShape(state);
     }
 
-    public SwivelChairBlock(Function<DyeColor, DyedBlockItem<GenericDyedVariantBlockEntity, SwivelChairBlock>> function, BlockBehaviour.Properties props) {
-        super(function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.SWIVEL_CHAIR);
+    public SwivelChairBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<GenericDyedVariantBlockEntity, SwivelChairBlock>>> function, BlockBehaviour.Properties props) {
+        super(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.SWIVEL_CHAIR);
     }
 
     @Override

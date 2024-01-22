@@ -4,7 +4,6 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.entities.*;
@@ -21,10 +20,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -38,14 +35,14 @@ public class GenerationsUtilityBlocks {
 	 */
 	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of().strength(2.5f).randomTicks().noOcclusion()));
 
-	public static final DyedGroup<HealerBlock, HealerBlockEntity> HEALER = registerDyed("healer", function -> () -> new HealerBlock(function::apply, BlockBehaviour.Properties.of().strength(2.5f)));
+	public static final DyedGroup<HealerBlock, HealerBlockEntity> HEALER = registerDyed("healer", (dyeColor, map) -> () -> new HealerBlock(dyeColor, map, BlockBehaviour.Properties.of().strength(2.5f)));
 
 	//PC Blocks
 	public static final RegistrySupplier<PcBlock> TABLE_PC = registerBlockItem("table_pc", () -> new PcBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.TABLE_PC, 0, 0, 0));
 	public static final RegistrySupplier<PcBlock> ROTOM_PC = registerBlockItem("rotom_pc", () -> new RotomPc(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
 
 
-	public static final DyedGroup<ClockBlock, ClockBlockEntity> CLOCK = registerDyed("clock", function -> () -> new ClockBlock(function, BlockBehaviour.Properties.of().strength(2f)));
+	public static final DyedGroup<ClockBlock, ClockBlockEntity> CLOCK = registerDyed("clock", (color, function) -> () -> new ClockBlock(color, function, BlockBehaviour.Properties.of().strength(2f)));
 
 	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
 
@@ -132,17 +129,19 @@ public class GenerationsUtilityBlocks {
 		return GenerationsUtils.registerBlock(UTILITY_BLOCKS, name, blockSupplier);
 	}
 
-	public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, Function<Function<DyeColor, DyedBlockItem<T, V>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
+	public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
 
-		var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyedBlockItem<T, V>>>();
-		RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(name, blockSupplier.apply(dyeColor -> dyeMap.get(dyeColor).get()));
+		var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>();
 
 		Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
-			var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<>(block.get(), dyeColor, properties));
-			dyeMap.put(dyeColor, item);
+			var properName = dyeColor.getSerializedName() + "_" + name;
+			RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(properName, blockSupplier.apply(dyeColor, dyeMap));
+
+			register(properName, properties -> new BlockItem(block.get(), properties));
+			dyeMap.put(dyeColor, block);
 		});
 
-		return new DyedGroup<>(block, dyeMap);
+		return new DyedGroup<>(dyeMap);
 	}
 
 

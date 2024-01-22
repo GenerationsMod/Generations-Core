@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
@@ -25,8 +27,8 @@ public class DoubleStreetLampBlock extends GenericRotatableModelBlock<GenericMod
         return pos;
     };
 
-    protected DoubleStreetLampBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<GenericModelProvidingBlockEntity>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model, int width, int height, int length) {
-        super(materialIn, blockEntityFunction, model, 2, 5, 0);
+    protected DoubleStreetLampBlock(Properties materialIn) {
+        super(materialIn, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, DEFAULT_BLOCK_ROTATE_POS_FUNCTION, GenerationsBlockEntityModels.DOUBLE_STREET_LAMP, 2, 5, 0);
     }
 
 }

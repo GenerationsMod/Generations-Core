@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
@@ -16,35 +15,44 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.function.Function;
+import java.util.function.Consumer;
 
 @SuppressWarnings("deprecation")
 public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> extends GenericRotatableModelBlock<T> {
-    private final Function<DyeColor, DyedBlockItem<T, V>> function;
+    private final DyeColor color;
+    private final Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>> function;
 
-    public DyeableBlock(Function<DyeColor, DyedBlockItem<T, V>> function, RegistrySupplier<MutableBlockEntityType<T>> biFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, Properties arg, ResourceLocation model, int width, int height, int length) {
+    public DyeableBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>> function, RegistrySupplier<MutableBlockEntityType<T>> biFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, Properties arg, ResourceLocation model, int width, int height, int length) {
         super(arg, biFunction, baseBlockPosFunction, model, width, height, length);
+        this.color = color;
         this.function = function;
     }
 
-    public DyeableBlock(Function<DyeColor, DyedBlockItem<T, V>> function, RegistrySupplier<MutableBlockEntityType<T>> biFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, Properties arg, ResourceLocation model) {
+    public DyeableBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>> function, RegistrySupplier<MutableBlockEntityType<T>> biFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, Properties arg, ResourceLocation model) {
         super(arg, biFunction, baseBlockPosFunction, model);
+        this.color = color;
         this.function = function;
     }
 
-    public DyeableBlock(Function<DyeColor, DyedBlockItem<T, V>> function, RegistrySupplier<MutableBlockEntityType<T>> biFunction, Properties arg, ResourceLocation model, int width, int height, int length) {
+    public DyeableBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>> function, RegistrySupplier<MutableBlockEntityType<T>> biFunction, Properties arg, ResourceLocation model, int width, int height, int length) {
         super(arg, biFunction, model, width, height, length);
+        this.color = color;
         this.function = function;
     }
 
-    public DyeableBlock(Function<DyeColor, DyedBlockItem<T, V>> function, RegistrySupplier<MutableBlockEntityType<T>> biFunction, Properties arg, ResourceLocation model) {
+    public DyeableBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>> function, RegistrySupplier<MutableBlockEntityType<T>> biFunction, Properties arg, ResourceLocation model) {
         super(arg, biFunction, model);
+        this.color = color;
         this.function = function;
     }
 
@@ -53,13 +61,17 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
         if (!world.isClientSide()) {
             if (!tryDyeColor(state, world, pos, player, handIn, hit))
                 return serverUse(state, world, pos, player, handIn, hit);
-            return InteractionResult.SUCCESS;
+            else return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;
     }
 
     public Item getItemFromDyeColor(DyeColor color) {
-        return function.apply(color);
+        return getBlockFromDyeColor(color).asItem();
+    }
+
+    public DyeableBlock<T, V> getBlockFromDyeColor(DyeColor color) {
+        return function.get(color).get();
     }
 
     public boolean tryDyeColor(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
@@ -69,17 +81,33 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
         boolean isDye = heldItem.getItem() instanceof DyeItem;
 
         if (isEmpty && isDye) {
-            var blockEntity = getAssoicatedBlockEntity(world, pos);
+            var base = getBaseBlockPos(pos, state);
 
             DyeColor dyeColor = ((DyeItem) heldItem.getItem()).getDyeColor();
 
-            if (blockEntity.isPresent()) {
-                var color = blockEntity.get().getColor();
+            var baseState = world.getBlockState(base);
 
-                if (!color.equals(dyeColor)) {
+            if(this.getClass().isInstance(baseState.getBlock())) {
+                var baseBlock = this.getClass().cast(baseState.getBlock());
+
+
+                if (!baseBlock.color.equals(dyeColor)) {
                     if (!player.isCreative()) heldItem.shrink(1);
 
-                    blockEntity.get().setColor(dyeColor);
+                    var newBlock = getBlockFromDyeColor(dyeColor);
+
+                    var defaultState = newBlock.defaultBlockState().setValue(FACING, baseState.getValue(FACING));
+
+                    getEncompassingPositions(base, baseState.getValue(FACING)).forEach(blockPos -> {
+                        var currentState = world.getBlockState(blockPos);
+
+                        var x = baseBlock.getWidthValue(currentState);
+                        var y = baseBlock.getHeightValue(currentState);
+                        var z = baseBlock.getLengthValue(currentState);
+
+                        world.setBlock(blockPos, newBlock.setSize(defaultState.setValue(WATERLOGGED, currentState.getValue(WATERLOGGED)), x, y, z), 2, 0);
+                    });
+
                     return true;
                 }
             }
@@ -97,13 +125,12 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
         return InteractionResult.PASS;
     }
 
-    @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        var basePos = getBaseBlockPos(pos, state);
-        if(!basePos.equals(pos)) {
-            level.destroyBlock(basePos, true);
-        }
+    public DyeColor getColor() {
+        return color;
+    }
 
-        super.onRemove(state, level, pos, newState, isMoving);
+    @Override
+    public @NotNull List<ItemStack> getDrops(@NotNull BlockState state, @NotNull LootParams.Builder params) {
+        return getWidthValue(state) == 0 || getHeightValue(state) == 0 || getLengthValue(state) == 0 ? super.getDrops(state, params) : Collections.emptyList();
     }
 }

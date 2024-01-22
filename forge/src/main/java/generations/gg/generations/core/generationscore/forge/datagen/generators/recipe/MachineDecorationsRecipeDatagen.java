@@ -35,7 +35,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get(), 1) //TODO: Decide which color to be base or incorporate dye into recipe.
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.HEALER.block().get(DyeColor.BLUE).get(), 1) //TODO: Decide which color to be base or incorporate dye into recipe.
                 .define('Q', GenerationsItems.COPPER_PLATE.get())
                 .define('R', Items.IRON_INGOT)
                 .define('P', Items.DIAMOND)
@@ -162,7 +162,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var healer = GenerationsUtilityBlocks.HEALER.dyeMap().get(color).get();
+        var healer = GenerationsUtilityBlocks.HEALER.block().get(color).get();
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, healer)
                 .define('E', dye)
@@ -170,7 +170,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("EEE")
                 .pattern("EHE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get()), has(GenerationsUtilityBlocks.HEALER.dyeMap().get(DyeColor.BLUE).get())) //TODO: Decide which color to be base or incorporate dye into recipe.
+                .unlockedBy(getHasName(GenerationsUtilityBlocks.HEALER.block().get(DyeColor.BLUE).get()), has(GenerationsUtilityBlocks.HEALER.block().get(DyeColor.BLUE).get())) //TODO: Decide which color to be base or incorporate dye into recipe.
                 .save(consumer);
     }
 
@@ -194,7 +194,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     private void buildClockRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var clock = GenerationsUtilityBlocks.CLOCK.dyeMap().get(color).get();
+        var clock = GenerationsUtilityBlocks.CLOCK.block().get(color).get();
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, clock)
                 .define('E', dye)
@@ -210,12 +210,12 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .requires(dye)
                 .requires(GenerationsItemTags.CLOCK)
                 .unlockedBy("has_" + GenerationsItemTags.CLOCK.location().getPath(), has(GenerationsItemTags.CLOCK))
-                .save(consumer, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(clock)).withPath(a -> a + "_dyed"));
+                .save(consumer, Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(clock)).withPath(a -> a + "_dyed"));
     }
 
     private void buildVendingMachineRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
-        var vendingMachine = GenerationsDecorationBlocks.VENDING_MACHINE.dyeMap().get(color).get();
+        var vendingMachine = GenerationsDecorationBlocks.VENDING_MACHINE.block().get(color).get();
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, vendingMachine)
                 .define('A', Items.IRON_INGOT)
@@ -234,7 +234,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .requires(dye)
                 .requires(GenerationsItemTags.VENDING_MACHINE)
                 .unlockedBy("has_" + GenerationsItemTags.VENDING_MACHINE.location().getPath(), has(GenerationsItemTags.VENDING_MACHINE))
-                .save(consumer, Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(vendingMachine)).withPath(a -> a + "_dyed"));
+                .save(consumer, Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(vendingMachine)).withPath(a -> a + "_dyed"));
     }
 
     private void buildPokeBallDisplayRecipes(Consumer<FinishedRecipe> consumer, Item pokeball, Block display) {

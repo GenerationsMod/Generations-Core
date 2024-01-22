@@ -3,8 +3,8 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.*;
@@ -20,15 +20,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
 public class GenerationsDecorationBlocks {
     public static final DeferredRegister<Block> DECORATIONS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
@@ -42,18 +38,16 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> LITWICK_CANDLE = registerDecorationItem("litwick_candle", () -> new LitwickCandleBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 11).destroyTime(0.7f)));
     public static final RegistrySupplier<Block> LITWICK_CANDLES = registerDecorationItem("litwick_candles", () -> new LitwickCandlesBlock(BlockBehaviour.Properties.copy(Blocks.CANDLE).lightLevel(state -> 15).destroyTime(0.5f)));
 
-    public static final DyedGroup<VendingMachineBlock, VendingMachineBlockEntity> VENDING_MACHINE = registerDyed("vending_machine", function -> () -> new VendingMachineBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final DyedGroup<VendingMachineBlock, VendingMachineBlockEntity> VENDING_MACHINE = registerDyed("vending_machine", (color, function) -> () -> new VendingMachineBlock(color, function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
-    public static final DyedGroup<StreetLampBlock, StreetLampBlockEntity> STREET_LAMP = registerDyed("street_lamp", function -> () -> new StreetLampBlock(function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).lightLevel(new ToIntFunction<BlockState>() {
-        @Override
-        public int applyAsInt(BlockState value) {
-            if(((StreetLampBlock) value.getBlock()).getHeightValue(value) == 1) return 15;
-            return 0;
-        }
+    public static final DyedGroup<StreetLampBlock, StreetLampBlockEntity> STREET_LAMP = registerDyed("street_lamp", (color, function) -> () -> new StreetLampBlock(color, function, BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL).lightLevel(value -> {
+        if(((StreetLampBlock) value.getBlock()).getHeightValue(value) == 1) return 15;
+        return 0;
     }).requiresCorrectToolForDrops()));
+    public static final RegistrySupplier<DoubleStreetLampBlock> DOUBLE_STREET_LAMP = registerDecorationItem("double_street_lamp", () -> new DoubleStreetLampBlock(BlockBehaviour.Properties.of()));
 
     private static DyedGroup<VariantCouchBlock, CouchBlockEntity> registerCouch(VariantCouchBlock.Variant variant) {
-        return registerDyed("couch_" + variant.name().toLowerCase(), function -> () -> new VariantCouchBlock(function, BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), variant));
+        return registerDyed("couch_" + variant.name().toLowerCase(), (color, function) -> () -> new VariantCouchBlock(color, function, BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), variant));
     }
 
 
@@ -65,8 +59,8 @@ public class GenerationsDecorationBlocks {
     public static final DyedGroup<VariantCouchBlock, CouchBlockEntity> COUCH_OTTOMAN = registerCouch(VariantCouchBlock.Variant.OTTOMAN);
 
     public static final RegistrySupplier<Block> SNORLAX_BEAN_BAG = registerDecorationItem("snorlax_bean_bag", () -> new BeanBagBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
-    public static final DyedGroup<PastelBeanBagBlock, GenericDyedVariantBlockEntity> PASTEL_BEAN_BAG = registerDyed("pastel_bean_bag", function -> () -> new PastelBeanBagBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
-    public static final DyedGroup<SwivelChairBlock, GenericDyedVariantBlockEntity> SWIVEL_CHAIR = registerDyed("swivel_chair", function -> () -> new SwivelChairBlock(function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
+    public static final DyedGroup<PastelBeanBagBlock, GenericDyedVariantBlockEntity> PASTEL_BEAN_BAG = registerDyed("pastel_bean_bag", (color, function) -> () -> new PastelBeanBagBlock(color, function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
+    public static final DyedGroup<SwivelChairBlock, GenericDyedVariantBlockEntity> SWIVEL_CHAIR = registerDyed("swivel_chair", (color, function) -> () -> new SwivelChairBlock(color, function, BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(.5f).ignitedByLava()));
     public static final RegistrySupplier<Block> BENCH = registerDecorationItem("bench", () -> new BenchBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOL).strength(1.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> COUCH = registerDecorationItem("couch", () -> new CouchBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.WOOL).strength(1.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> BUSH = registerDecorationItem("bush", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.GRASS).strength(1.0f)));
@@ -93,18 +87,21 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> POKEBALL_CUSHION = registerDecorationItem("pokeball_cushion", () -> new CushionBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), "pokeball"));
     public static final RegistrySupplier<Block> MASTERBALL_CUSHION = registerDecorationItem("masterball_cushion", () -> new CushionBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), "masterball"));
 
-    public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, Function<Function<DyeColor, DyedBlockItem<T, V>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
+    public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
 
-        var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyedBlockItem<T, V>>>();
-        RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(name, blockSupplier.apply(dyeColor -> dyeMap.get(dyeColor).get()));
+        var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>();
 
         Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
-            var item = register(dyeColor.getSerializedName() + "_" + name, properties -> new DyedBlockItem<T, V>(block.get(), dyeColor, properties));
-            dyeMap.put(dyeColor, item);
+            var properName = dyeColor.getSerializedName() + "_" + name;
+            RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(properName, blockSupplier.apply(dyeColor, dyeMap));
+
+            register(properName, properties -> new BlockItem(block.get(), properties));
+            dyeMap.put(dyeColor, block);
         });
 
-        return new DyedGroup<V, T>(block, dyeMap);
+        return new DyedGroup<>(dyeMap);
     }
+
 
     /**
      * Decoration Blocks (Vending Machine)

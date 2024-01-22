@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.entity.block.SittableEntity;
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
@@ -20,12 +20,12 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.function.Function;
+import java.util.Map;
 
 @SuppressWarnings("deprecation")
 public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock> {
-    public PastelBeanBagBlock(Function<DyeColor, DyedBlockItem<GenericDyedVariantBlockEntity, PastelBeanBagBlock>> function, Properties props) {
-        super(function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.PASTEL_BEAN_BAG);
+    public PastelBeanBagBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock>>> function, Properties props) {
+        super(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.PASTEL_BEAN_BAG);
     }
 
     @Override

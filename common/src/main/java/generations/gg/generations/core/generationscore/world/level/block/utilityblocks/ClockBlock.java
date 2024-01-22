@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ClockBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
@@ -18,7 +18,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Function;
 
 @SuppressWarnings("deprecation")
 public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
@@ -29,8 +28,8 @@ public class ClockBlock extends DyeableBlock<ClockBlockEntity, ClockBlock> {
         map.put(Direction.WEST, Shapes.box(0.9375, 0.25, 0.25, 1, 0.75, 0.75));
     });
 
-    public ClockBlock(Function<DyeColor, DyedBlockItem<ClockBlockEntity, ClockBlock>> function, Properties arg) {
-        super(function, GenerationsBlockEntities.CLOCK, arg, GenerationsBlockEntityModels.CLOCK);
+    public ClockBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<ClockBlockEntity, ClockBlock>>> function, Properties arg) {
+        super(color, function, GenerationsBlockEntities.CLOCK, arg, GenerationsBlockEntityModels.CLOCK);
     }
 
     @Override

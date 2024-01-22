@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
-import generations.gg.generations.core.generationscore.world.item.DyedBlockItem;
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.CouchBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
@@ -16,20 +16,19 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.function.Function;
+import java.util.Map;
 
 import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 
 public class VariantCouchBlock extends DyeableBlock<CouchBlockEntity, VariantCouchBlock> implements SittableBlock {
     private final GenerationsVoxelShapes.DirectionalShapes shapes;
 
-    public VariantCouchBlock(Function<DyeColor, DyedBlockItem<CouchBlockEntity, VariantCouchBlock>> function, Properties arg, Variant variant) {
-        super(function, GenerationsBlockEntities.COUCH, arg, variant.getModel(), 0, 0, 0);
+    public VariantCouchBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<CouchBlockEntity, VariantCouchBlock>>> function, Properties arg, Variant variant) {
+        super(color, function, GenerationsBlockEntities.COUCH, arg, variant.getModel(), 0, 0, 0);
         this.shapes = variant.getShape();
     }
 
