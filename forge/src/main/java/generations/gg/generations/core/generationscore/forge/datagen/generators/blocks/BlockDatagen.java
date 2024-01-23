@@ -226,15 +226,15 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> registerBlockItemParticle(block.get(), "ball_displays"));
 
 
-        registerBlockItemParticle(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign");
+        registerBlockItemParticleWithDrop(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign");
 
 
         GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block.get(), "shrines"));
         GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots"));
-        registerBlockItemParticle(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.ROTOM_PC.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.TABLE_PC.get(), "utility_blocks");
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.ROTOM_PC.get(), "utility_blocks");
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TABLE_PC.get(), "utility_blocks");
         registerDyeGroup(GenerationsDecorationBlocks.PASTEL_BEAN_BAG, "bean_bags");
         registerDyeGroup(GenerationsDecorationBlocks.VENDING_MACHINE, "vending_machines");
         registerDyeGroup(GenerationsDecorationBlocks.SWIVEL_CHAIR, "swivel_chairs");
@@ -249,31 +249,31 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 //        registerNoModel(GenerationsUtilityBlocks.CLOCK.block());
 //        registerNoModel(GenerationsUtilityBlocks.HEALER.block());
 
-        registerBlockItemParticle(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.BENCH.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.GREATBALL_CUSHION.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.POKEBALL_CUSHION.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.FOONGUS_CUSHION.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.MASTERBALL_CUSHION.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.COUCH.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.BUSH.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.HDTV.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.DESK.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.FRIDGE.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.POKEBALL_PILLAR.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SWITCH.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get(), "decorations");
-        registerBlockItemParticle(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), "decorations");
-        registerBlockItemParticle(GenerationsUtilityBlocks.RKS_MACHINE.get(), "utility_blocks");
-        registerBlockItemParticle(GenerationsUtilityBlocks.SCARECROW.get(), "utility_blocks");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.BENCH.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.GREATBALL_CUSHION.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.POKEBALL_CUSHION.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.FOONGUS_CUSHION.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.MASTERBALL_CUSHION.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.COUCH.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.BUSH.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.HDTV.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.DESK.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.FRIDGE.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.POKEBALL_PILLAR.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SWITCH.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), "decorations");
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.RKS_MACHINE.get(), "utility_blocks");
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.SCARECROW.get(), "utility_blocks");
 
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);
@@ -294,7 +294,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerCarpetLike(GenerationsUtilityBlocks.BLACK_ELEVATOR, GenerationsUtilityBlocks.BLUE_ELEVATOR,
                 GenerationsUtilityBlocks.BROWN_ELEVATOR, GenerationsUtilityBlocks.CYAN_ELEVATOR,
                 GenerationsUtilityBlocks.GRAY_ELEVATOR, GenerationsUtilityBlocks.GREEN_ELEVATOR,
-                //GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR, GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR,
+                GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR, GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR,
                 GenerationsUtilityBlocks.LIME_ELEVATOR, GenerationsUtilityBlocks.MAGENTA_ELEVATOR,
                 GenerationsUtilityBlocks.ORANGE_ELEVATOR, GenerationsUtilityBlocks.PINK_ELEVATOR,
                 GenerationsUtilityBlocks.PURPLE_ELEVATOR, GenerationsUtilityBlocks.RED_ELEVATOR,
@@ -537,6 +537,12 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlockWithItem(block.get(), model);
         dropSelfList.add(block.get());
     }
+
+    private void registerBlockItemParticleWithDrop(Block block, String name) {
+        registerBlockItemParticle(block, name);
+        dropSelfList.add(block);
+    }
+
     private void registerBlockItemParticle(Block block, String name) {
         ResourceLocation blockId = key(block);
         ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "generations_core:block/light_gray_elevator"
+  }
+}

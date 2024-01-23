@@ -7,11 +7,14 @@ import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -21,9 +24,8 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.function.BiConsumer;
 
 public class GenerationsBlockLoot extends BlockLootSubProvider {
 
@@ -237,10 +239,33 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
                         LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0f))
                                 .add(LootItem.lootTableItem(block)
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(dyeMap)
                                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(property, value)))
                                         .apply(DyedBlockLootFunction.DUMMY)))));
     }
 
      */
+
+    public void generate(BiConsumer<ResourceLocation, LootTable.Builder> biConsumer) {
+        this.generate();
+        Set<ResourceLocation> set = new HashSet();
+
+        for (Block block : this.getKnownBlocks()) {
+            if (block.isEnabled(this.enabledFeatures)) {
+                ResourceLocation resourcelocation = block.getLootTable();
+                if (resourcelocation != BuiltInLootTables.EMPTY && set.add(resourcelocation)) {
+                    LootTable.Builder loottable$builder = (LootTable.Builder) this.map.remove(resourcelocation);
+                    if (loottable$builder == null) {
+                        throw new IllegalStateException(String.format(Locale.ROOT, "Missing loottable '%s' for '%s'", resourcelocation, BuiltInRegistries.BLOCK.getKey(block)));
+                    }
+
+                    biConsumer.accept(resourcelocation, loottable$builder);
+                }
+            }
+        }
+
+        if (!this.map.isEmpty() && this.map.size() != 1 && this.map.containsKey(new ResourceLocation("empty"))) {
+            throw new IllegalStateException("Created block loot tables for non-blocks: " + this.map.keySet());
+        }
+    }
 }

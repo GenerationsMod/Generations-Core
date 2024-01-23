@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shop_display_large_shelf_2"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "generations_core:blocks/shop_display_large_shelf_2"
+}
