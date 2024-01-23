@@ -52,9 +52,9 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         return pos;
     };
 
-    private int width;
-    private int height;
-    private int length;
+    protected int width;
+    protected int height;
+    protected int length;
 
     protected GenericRotatableModelBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model, int width, int height, int length) {
         super(materialIn, blockEntityFunction, baseBlockPosFunction, model);
@@ -138,19 +138,23 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
         var rightDir = facing.getClockWise();
 
-        if(x == 0 && y == 0 && z == 0) {
-            return needsSupport(level, pos.below()); //TODO: Do we want the blocks to require solid foundation?
-        }
+//        if(x == 0 && y == 0 && z == 0) {
+//            return needsSupport(level, pos.below()); //TODO: Do we want the blocks to require solid foundation?
+//        }
 
         return checkDirection(level, pos, rightDir, Size.WIDTH, x) && checkDirection(level, pos, Direction.DOWN, Size.HEIGHT, y) && checkDirection(level, pos, facing, Size.LENGTH, z);
     }
 
-    private boolean checkDirection(LevelReader level, BlockPos pos, Direction dir, Size size, int value) {
+    protected boolean checkDirection(LevelReader level, BlockPos pos, Direction dir, Size size, int value) {
+        return checkDirection(level, pos, dir, size, 0, value);
+    }
+
+    protected boolean checkDirection(LevelReader level, BlockPos pos, Direction dir, Size size, int base, int value) {
         var forward = getValue(level, pos, dir, size);
         var backward = getValue(level, pos, dir.getOpposite(), size);
         var maxSize = getSize(dir.getAxis());
 
-        return value == 0 || forward == value - 1 || backward > maxSize;
+        return value == base || forward == value - 1 || backward > maxSize;
     }
 
     @Override
