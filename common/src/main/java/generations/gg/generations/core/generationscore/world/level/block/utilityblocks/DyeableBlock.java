@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -98,17 +99,30 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
 
                     var defaultState = newBlock.defaultBlockState().setValue(FACING, baseState.getValue(FACING));
 
-                    getEncompassingPositions(base, baseState.getValue(FACING)).forEach(blockPos -> {
-                        var currentState = world.getBlockState(blockPos);
+//                    if (newBlock.getClass().equals(state.getBlock().getClass())) {
+                        var dir = state.getValue(FACING);
 
-                        var x = baseBlock.getWidthValue(currentState);
-                        var y = baseBlock.getHeightValue(currentState);
-                        var z = baseBlock.getLengthValue(currentState);
+                        for (int x = 0; x < width; x++) {
+                            for (int y = 0; y < height; y++) {
+                                for (int z = 0; z < length; z++) {
+                                    var adjustX = adjustX(x);
+                                    var adjustZ = adjustX(x);
 
-                        world.setBlock(blockPos, newBlock.setSize(defaultState.setValue(WATERLOGGED, currentState.getValue(WATERLOGGED)), x, y, z), 2, 0);
-                    });
+                                    var blockPos = base.relative(dir.getCounterClockWise(), adjustZ).relative(Direction.UP, y).relative(dir, adjustZ);
 
-                    return true;
+                                    var currentState = world.getBlockState(blockPos);
+
+                                    var stateX = baseBlock.getWidthValue(currentState);
+                                    var stateY = baseBlock.getHeightValue(currentState);
+                                    var stateZ = baseBlock.getLengthValue(currentState);
+
+                                    world.setBlock(blockPos, newBlock.setSize(defaultState.setValue(WATERLOGGED, currentState.getValue(WATERLOGGED)), x, y, z), 2, 0);
+                                }
+                            }
+                        }
+
+                        return true;
+//                    }
                 }
             }
         }
