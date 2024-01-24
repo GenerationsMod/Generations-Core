@@ -21,12 +21,10 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.function.Consumer;
 
 @SuppressWarnings("deprecation")
 public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> extends GenericRotatableModelBlock<T> {
@@ -59,9 +57,11 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
-        if (!world.isClientSide()) {
-            if (!tryDyeColor(state, world, pos, player, handIn, hit))
+        if (!world.isClientSide() && handIn == InteractionHand.MAIN_HAND) {
+            if (!tryDyeColor(state, world, pos, player, handIn, hit)) {
+
                 return serverUse(state, world, pos, player, handIn, hit);
+            }
             else return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;
@@ -102,13 +102,13 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
 //                    if (newBlock.getClass().equals(state.getBlock().getClass())) {
                         var dir = state.getValue(FACING);
 
-                        for (int x = 0; x < width; x++) {
-                            for (int y = 0; y < height; y++) {
-                                for (int z = 0; z < length; z++) {
+                        for (int x = 0; x < width + 1; x++) {
+                            for (int y = 0; y < height + 1; y++) {
+                                for (int z = 0; z < length + 1; z++) {
                                     var adjustX = adjustX(x);
                                     var adjustZ = adjustX(x);
 
-                                    var blockPos = base.relative(dir.getCounterClockWise(), adjustZ).relative(Direction.UP, y).relative(dir, adjustZ);
+                                    var blockPos = base.relative(dir.getCounterClockWise(), adjustX).relative(Direction.UP, y).relative(dir, adjustZ);
 
                                     var currentState = world.getBlockState(blockPos);
 
@@ -116,7 +116,7 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
                                     var stateY = baseBlock.getHeightValue(currentState);
                                     var stateZ = baseBlock.getLengthValue(currentState);
 
-                                    world.setBlock(blockPos, newBlock.setSize(defaultState.setValue(WATERLOGGED, currentState.getValue(WATERLOGGED)), x, y, z), 2, 0);
+                                    world.setBlock(blockPos, newBlock.setSize(defaultState.setValue(WATERLOGGED, currentState.getValue(WATERLOGGED)), stateX, stateY, stateZ), 2, 0);
                                 }
                             }
                         }

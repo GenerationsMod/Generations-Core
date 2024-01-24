@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -32,9 +31,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 @SuppressWarnings("deprecation")
 public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProviders.ModelProvider> extends GenericModelBlock<T> {
@@ -133,11 +129,11 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
-        var base = getBaseBlockPos(pos, level.getBlockState(pos));
+        var base = pos;
 
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                for (int z = 0; z < length; z++) {
+        for (int x = 0; x < width + 1; x++) {
+            for (int y = 0; y < height + 1; y++) {
+                for (int z = 0; z < length + 1; z++) {
                     if(!validPosition(x,y,z)) continue;
 
                     var adjustedX = adjustX(x);
@@ -145,7 +141,9 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
                     var blockPos = base.relative(dir.getCounterClockWise(), adjustedX).relative(Direction.UP, y).relative(dir, adjustedZ);
 
-                    if(!(level.getBlockState(blockPos).canBeReplaced())) return false;
+                    if(!(level.getBlockState(blockPos).canBeReplaced())) {
+                        return false;
+                    }
                 }
             }
         }
@@ -309,6 +307,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         for (int x = 0; x <= width; x++) {
             for (int y = 0; y <= height; y++) {
                 for (int z = 0; z <= length; z++) {
+                    if(!validPosition(x,y, z)) continue;
                     var adjustedX = adjustX(x);
                     var adjustedZ = adjustZ(z);
 
