@@ -11,6 +11,16 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "generations_core:double_street_lamp",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "height": "0",
+                "width": "1"
+              }
+            }
+          ],
           "name": "generations_core:double_street_lamp"
         }
       ],

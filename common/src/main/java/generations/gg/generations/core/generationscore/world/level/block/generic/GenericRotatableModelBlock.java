@@ -187,46 +187,44 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         return true;
     }
 
-//    @Override
-//    public void playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, Player player) {
-//
-//
-//        pos = getBaseBlockPos(pos, state);
-//        var facing = state.getValue(FACING);
-//        var rightDir = facing.getCounterClockWise();
-//        var backDir = facing.getOpposite();
-//
-//        for (int x = 0; x <= width; x++) {
-//            for (int y = 0; y <= height; y++) {
-//                for (int z = 0; z <= length; z++) {
-//                    var adjustedX = adjustX(x);
-//                    var adjustedZ = adjustZ(z);
-//
-//                    var blockPos = pos.relative(rightDir, adjustedX).relative(Direction.UP, y).relative(backDir, adjustedZ);
-//
-//                    if(adjustedX == 0 && y == 0 && adjustedZ == 0) {
-//                        level.destroyBlock(getBaseBlockPos(pos, state), true);
-//                    }
-//                     else {
-//                         level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 35);
-//                    }
-//                }
-//            }
-//        }
-
-//        super.playerWillDestroy(level, pos, state, player);
-//    }
-
     @Override
     public void playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, Player player) {
-        if(!level.isClientSide()) {
-            preventCreativeDropFromBottomPart(level, pos, state, player);
-        } else {
-            dropResources(state, level, pos, null, player, player.getMainHandItem());
+
+
+        pos = getBaseBlockPos(pos, state);
+        var facing = state.getValue(FACING);
+        var rightDir = facing.getCounterClockWise();
+        var backDir = facing.getOpposite();
+
+        for (int x = 0; x <= width; x++) {
+            for (int y = 0; y <= height; y++) {
+                for (int z = 0; z <= length; z++) {
+                    if(!validPosition(x,y, z)) continue;
+
+                    var adjustedX = adjustX(x);
+                    var adjustedZ = adjustZ(z);
+
+                    var blockPos = pos.relative(rightDir, adjustedX).relative(Direction.UP, y).relative(backDir, adjustedZ);
+
+                    if(adjustedX == 0 && y == 0 && adjustedZ == 0) {
+                        level.destroyBlock(blockPos, true);
+                    }
+                     else {
+                         level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 35);
+                    }
+                }
+            }
         }
 
         super.playerWillDestroy(level, pos, state, player);
     }
+
+//    @Override
+//    public void playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, Player player) {
+//        level.destroyBlock(getBaseBlockPos(pos, state), true);
+//
+//        super.playerWillDestroy(level, pos, state, player);
+//    }
 
     protected void preventCreativeDropFromBottomPart(Level level, BlockPos pos, BlockState state, Player player) {
         var blockPos = getBaseBlockPos(pos, state);
