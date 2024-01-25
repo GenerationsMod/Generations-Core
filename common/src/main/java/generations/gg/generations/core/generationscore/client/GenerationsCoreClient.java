@@ -198,7 +198,6 @@ public class GenerationsCoreClient {
     }
 
     private static void addWoodType(WoodType woodType) {
-        WoodType.register(woodType);
         Sheets.SIGN_MATERIALS.put(woodType, createSignMaterial(woodType));
         Sheets.HANGING_SIGN_MATERIALS.put(woodType, createHangingSignMaterial(woodType));
     }
