@@ -189,8 +189,6 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     @Override
     public void playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, Player player) {
-
-
         pos = getBaseBlockPos(pos, state);
         var facing = state.getValue(FACING);
         var rightDir = facing.getCounterClockWise();
@@ -206,12 +204,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
                     var blockPos = pos.relative(rightDir, adjustedX).relative(Direction.UP, y).relative(backDir, adjustedZ);
 
-                    if(adjustedX == 0 && y == 0 && adjustedZ == 0) {
-                        level.destroyBlock(blockPos, true);
-                    }
-                     else {
-                         level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 35);
-                    }
+                    level.destroyBlock(blockPos, adjustedX == 0 && y == 0 && adjustedZ == 0);
                 }
             }
         }
@@ -219,20 +212,6 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         super.playerWillDestroy(level, pos, state, player);
     }
 
-//    @Override
-//    public void playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, Player player) {
-//        level.destroyBlock(getBaseBlockPos(pos, state), true);
-//
-//        super.playerWillDestroy(level, pos, state, player);
-//    }
-
-    protected void preventCreativeDropFromBottomPart(Level level, BlockPos pos, BlockState state, Player player) {
-        var blockPos = getBaseBlockPos(pos, state);
-        var blockState = level.getBlockState(blockPos);
-        var blockState1 = blockState.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
-        level.setBlock(blockPos, blockState1, 35);
-        level.levelEvent(player, 2001, blockPos, Block.getId(blockState));
-    }
 
     @Override
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {

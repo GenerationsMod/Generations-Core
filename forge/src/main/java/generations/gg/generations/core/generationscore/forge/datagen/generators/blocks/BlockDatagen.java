@@ -8,16 +8,15 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.BoxBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
+import net.minecraft.core.Direction;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.client.model.generators.ModelProvider;
+import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
@@ -299,6 +298,31 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
                 GenerationsUtilityBlocks.ORANGE_ELEVATOR, GenerationsUtilityBlocks.PINK_ELEVATOR,
                 GenerationsUtilityBlocks.PURPLE_ELEVATOR, GenerationsUtilityBlocks.RED_ELEVATOR,
                 GenerationsUtilityBlocks.WHITE_ELEVATOR, GenerationsUtilityBlocks.YELLOW_ELEVATOR);
+
+        registerBox();
+    }
+
+    private void registerBox() {
+        var closed = new ModelFile.UncheckedModelFile("generations_core:block/utility_blocks/box_closed");
+        var open = new ModelFile.UncheckedModelFile("generations_core:block/utility_blocks/box_open");
+
+        getVariantBuilder(GenerationsUtilityBlocks.BOX.get())
+                .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.NORTH)
+                .modelForState().modelFile(open).addModel()
+                .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.EAST)
+                .modelForState().modelFile(open).rotationY(90).addModel()
+                .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.SOUTH)
+                .modelForState().modelFile(open).rotationY(180).addModel()
+                .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.WEST)
+                .modelForState().modelFile(open).rotationY(270).addModel()
+                .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.NORTH)
+                .modelForState().modelFile(closed).addModel()
+                .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.EAST)
+                .modelForState().modelFile(closed).rotationY(90).addModel()
+                .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.SOUTH)
+                .modelForState().modelFile(closed).rotationY(180).addModel()
+                .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.WEST)
+                .modelForState().modelFile(closed).rotationY(270).addModel();
     }
 
     private <V extends DyeableBlock<T, V>, T extends DyedVariantBlockEntity<?>> void registerDyeGroup(DyedGroup<V, T> group, String dir) {

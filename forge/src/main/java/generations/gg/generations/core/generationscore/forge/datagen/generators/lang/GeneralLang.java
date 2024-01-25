@@ -91,6 +91,7 @@ public class GeneralLang extends LanguageProvider {
         add("container.volcanic_stone_blast_furnace", "Volcanic Stone Blast Furnace");
         add("container.volcanic_stone_smoker", "Volcanic Stone Smoker");
         add("container.cooking_pot", "Cooking Pot");
+        add("container.box", "Box");
 
 
         add("generations_core.item.melody_flute.no_item", "This flute resonates with feathers.");
