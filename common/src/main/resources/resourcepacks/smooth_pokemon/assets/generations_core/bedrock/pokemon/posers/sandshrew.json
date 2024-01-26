@@ -1,4 +1,8 @@
 {
+  "portraitScale": 1.0,
+  "portraitTranslation": [ 0, 0.0, 0 ],
+  "profileScale": 1.0,
+  "profileTranslation": [ 0, 0.0, 0 ],
   "faint": "pk(generations_core:sandshrew, faintstart)",
   "poses": {
     "standing": {

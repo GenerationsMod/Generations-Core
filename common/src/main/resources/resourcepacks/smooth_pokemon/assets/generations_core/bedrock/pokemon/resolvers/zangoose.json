@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:zangoose",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:zangoose",
+      "model": "generations_core:zangoose.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
