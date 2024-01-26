@@ -1,0 +1,36 @@
+{
+  "faint": "pk(generations_core:ivysaur, faintstart)",
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:ivysaur.pk, idle)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PORTRAIT",
+        "NONE",
+        "PROFILE",
+        "STAND",
+        "FLOAT"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:ivysaur.pk, walk)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    },
+    "sleeping": {
+      "animations": [
+        "pk(generations_core:ivysaur.pk, sleeploop)"
+      ],
+      "poseName": "sleeping",
+      "poseTypes": [
+        "SLEEP"
+      ]
+    }
+  }
+}

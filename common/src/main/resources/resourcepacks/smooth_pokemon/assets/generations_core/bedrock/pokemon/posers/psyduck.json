@@ -3,7 +3,7 @@
   "portraitTranslation": [ 0, 0.0, 0 ],
   "profileScale": 1.0,
   "profileTranslation": [ 0, 0.0, 0 ],
-  "faint": "pk(generations_core:squirtle.pk, faintstart)",
+  "faint": "pk(generations_core:psyduck.pk, faintstart)",
   "poses": {
     "standing": {
       "poseName": "standing",
@@ -16,26 +16,26 @@
       ],
       "animations": [
         "look",
-        "pk(generations_core:squirtle.pk, idle)"
+        "pk(generations_core:psyduck.pk, idle)"
       ]
     },
     "floating": {
       "poseName": "floating",
       "transformTicks": 10,
       "poseTypes": [ "FLOAT" ],
-      "animations": [ "pk(generations_core:squirtle.pk, swimidle)" ]
+      "animations": [ "pk(generations_core:psyduck.pk, swimidle)" ]
     },
     "walking": {
       "poseName": "walking",
       "transformTicks": 10,
       "poseTypes": [ "WALK" ],
-      "animations": [ "pk(generations_core:squirtle.pk, walk)" ]
+      "animations": [ "pk(generations_core:psyduck.pk, walk)" ]
     },
     "swimming": {
       "poseName": "swimming",
       "transformTicks": 10,
       "poseTypes": [ "SWIM" ],
-      "animations": [ "pk(generations_core:squirtle.pk, swimwalk)" ]
+      "animations": [ "pk(generations_core:psyduck.pk, swimwalk)" ]
     }
   }
 }

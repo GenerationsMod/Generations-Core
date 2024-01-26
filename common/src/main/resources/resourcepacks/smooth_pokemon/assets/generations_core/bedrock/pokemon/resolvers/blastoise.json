@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:blastoise",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:blastoise",
+      "model": "generations_core:blastoise.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

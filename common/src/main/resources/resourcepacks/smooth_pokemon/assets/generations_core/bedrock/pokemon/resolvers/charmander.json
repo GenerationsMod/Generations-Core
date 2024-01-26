@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:charmander",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:charmander",
+      "model": "generations_core:charmander.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
