@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:espeon",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:espeon",
+      "model": "generations_core:espeon.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

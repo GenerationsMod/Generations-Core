@@ -13,6 +13,7 @@
     },
     {
       "aspects": [
+        "female",
         "shiny"
       ],
       "texture": "pk:shiny"

@@ -13,6 +13,7 @@
     },
     {
       "aspects": [
+        "hisuian",
         "shiny"
       ],
       "texture": "pk:shiny"
