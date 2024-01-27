@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:pikachu",
+  "order": 4,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "poser": "generations_core:pikachu_female",
+      "model": "generations_core:pikachu_female.pk"
+    },
+    {
+      "aspects": [
+        "female",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

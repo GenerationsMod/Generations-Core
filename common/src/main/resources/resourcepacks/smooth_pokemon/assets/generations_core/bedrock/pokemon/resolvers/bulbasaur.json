@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:bulbasaur",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:bulbasaur",
+      "model": "generations_core:bulbasaur.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
