@@ -41,11 +41,8 @@ public class GenerationsItems {
     /** Generations Items Deferred Register */
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Ribbons Deferred Register */
-    public static final DeferredRegister<Item> RIBBONS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
-
-    /** Generations Badges Deferred Register */
-    public static final DeferredRegister<Item> BADGES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
+    /** Generations Awards(Ribbons/Badges) Deferred Register */
+    public static final DeferredRegister<Item> AWARDS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
     /**
      * Restoration Items
@@ -1518,17 +1515,16 @@ public class GenerationsItems {
 
     private static RegistrySupplier<Item> createBadge(String id) {
         /*elementType*/
-        return BADGES.register(id + "_badge", () -> new BadgeItem(new Item.Properties()));
+        return AWARDS.register(id + "_badge", () -> new BadgeItem(new Item.Properties()));
     }
 
     private static RegistrySupplier<Item> createRibbon(String id) {
-        return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties()));
+        return AWARDS.register(id, () -> new RibbonItem(new Item.Properties()));
     }
     
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Items");
         ITEMS.register();
-        BADGES.register();
-        RIBBONS.register();
+        AWARDS.register();
     }
 }

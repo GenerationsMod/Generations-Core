@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/ribbons/paldea_champion_ribbon"
+    "layer0": "generations_core:item/awards/ribbons/paldea_champion_ribbon"
   }
 }

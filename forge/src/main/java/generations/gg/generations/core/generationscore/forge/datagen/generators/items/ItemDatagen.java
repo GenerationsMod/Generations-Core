@@ -2,9 +2,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.world.item.*;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.data.PackOutput;
@@ -431,8 +429,10 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.WATER_CANDY.get(), "valuables/");
         createItem(GenerationsItems.NULL_CANDY.get(), "valuables/");
 
-        GenerationsItems.BADGES.forEach(badge -> createItem(badge.get(), "badges/"));
-        GenerationsItems.RIBBONS.forEach(ribbon -> createItem(ribbon.get(), "ribbons/"));
+        GenerationsItems.AWARDS.forEach(award -> {
+            if (award.get() instanceof RibbonItem) createItem(award.get(), "awards/ribbons/");
+            else if (award.get() instanceof BadgeItem) createItem(award.get(), "awards/badges/");
+        });
 
         createItem(GenerationsItems.CRYSTAL.get(), "natural/");
         createItem(GenerationsItems.RUBY.get(), "natural/");

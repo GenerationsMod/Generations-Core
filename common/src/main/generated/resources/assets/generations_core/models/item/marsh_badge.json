@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/badges/marsh_badge"
+    "layer0": "generations_core:item/awards/badges/marsh_badge"
   }
 }

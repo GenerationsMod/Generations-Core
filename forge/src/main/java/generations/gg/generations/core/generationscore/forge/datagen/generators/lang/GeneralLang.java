@@ -49,8 +49,7 @@ public class GeneralLang extends LanguageProvider {
                 add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
             }
         });
-        addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.AWARDS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
         add("itemGroup.generations_core.restoration", "Restoration");

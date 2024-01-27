@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/ribbons/special_ribbon"
+    "layer0": "generations_core:item/awards/ribbons/special_ribbon"
   }
 }

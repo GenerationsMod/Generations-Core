@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/ribbons/cool_ribbon_master_hoenn"
+    "layer0": "generations_core:item/awards/ribbons/cool_ribbon_master_hoenn"
   }
 }

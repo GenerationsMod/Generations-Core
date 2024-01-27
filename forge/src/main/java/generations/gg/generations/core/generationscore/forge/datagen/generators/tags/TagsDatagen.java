@@ -3,8 +3,10 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.world.item.BadgeItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.world.item.RibbonItem;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
@@ -406,8 +408,11 @@ public class TagsDatagen {
             tag(Tags.Items.TOOLS).addTag(GenerationsItemTags.HAMMERS);
 
             ITEMS.forEach(item -> tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
-            RIBBONS.forEach(ribbon -> tag(GenerationsItemTags.RIBBONS).add(ribbon.get()));
-            BADGES.forEach(badge -> tag(GenerationsItemTags.BADGES).add(badge.get()));
+            AWARDS.forEach(award -> {
+                if (award.get() instanceof BadgeItem) tag(GenerationsItemTags.BADGES).add(award.get());
+                else if (award.get() instanceof RibbonItem)tag(GenerationsItemTags.RIBBONS).add(award.get());
+            });
+
             tag(GenerationsItemTags.GENERATIONSITEMS).addTag(GenerationsItemTags.RIBBONS).addTag(GenerationsItemTags.BADGES);
 
             tag(GenerationsItemTags.POKEMAIL).add(
