@@ -1509,19 +1509,19 @@ public class GenerationsItems {
     }
 
     public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier, CreativeModeTab tab) {
-        return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
+        return ITEMS.register(name, () -> itemSupplier.apply(of()));
     }
 
     public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, CreativeModeTab tab) {
         return register(name, itemSupplier, tab);
     }
 
-    public static RegistrySupplier<Item> createBadge(String id) {
+    private static RegistrySupplier<Item> createBadge(String id) {
         /*elementType*/
         return BADGES.register(id + "_badge", () -> new BadgeItem(new Item.Properties()));
     }
 
-    public static RegistrySupplier<Item> createRibbon(String id) {
+    private static RegistrySupplier<Item> createRibbon(String id) {
         return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties()));
     }
     

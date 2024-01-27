@@ -5,8 +5,10 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
-import generations.gg.generations.core.generationscore.world.level.block.entities.*;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ClockBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
+import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericBlastFurnaceBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericFurnaceBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericSmokerBlock;
@@ -116,7 +118,7 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<GenericSmokerBlock> VOLCANIC_STONE_SMOKER = registerBlockItem("volcanic_stone_smoker", GenericSmokerBlock::new);
 
 	private static <T extends BlockItem> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier) {
-		return GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.UTILITY)));
+		return GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
 	}
 
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
@@ -129,7 +131,7 @@ public class GenerationsUtilityBlocks {
 		return GenerationsUtils.registerBlock(UTILITY_BLOCKS, name, blockSupplier);
 	}
 
-	public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
+	private static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
 
 		var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>();
 
