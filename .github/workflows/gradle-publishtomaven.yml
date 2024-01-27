@@ -37,7 +37,7 @@ jobs:
           echo "${MAVEN_REPO_PROPERTIES}" > ~/.gradle/gradle.properties
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/actions/setup-gradle@v3
 
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
