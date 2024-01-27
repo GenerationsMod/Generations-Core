@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
+import generations.gg.generations.core.generationscore.forge.world.item.ForgeCreativeTabReg;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.SharedConstants;
@@ -64,6 +65,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     public GenerationsCoreForge() {
         ConfigLoader.setConfigDirectory(FMLPaths.CONFIGDIR.get());
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+        ForgeCreativeTabReg.init(MOD_BUS);
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
         GenerationsCore.init(this);
@@ -143,7 +145,8 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     /**
      * Should initialize everything where a specific event does not cover it.
      */
-    private void onInitialize(FMLCommonSetupEvent event) {
+    private void onInitialize(final FMLCommonSetupEvent event) {
+        ForgeCreativeTabReg.syncTabs();
         getNetworkManager().registerClientBound();
         getNetworkManager().registerServerBound();
         event.enqueueWork(VanillaCompat::setup);
