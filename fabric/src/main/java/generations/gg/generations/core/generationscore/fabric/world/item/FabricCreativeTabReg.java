@@ -27,7 +27,7 @@ public class FabricCreativeTabReg {
         GenerationsCreativeTabs.PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX.get().getDefaultInstance());
         GenerationsCreativeTabs.LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS.get().getDefaultInstance());
         GenerationsCreativeTabs.DECORATIONS = create("decorations", () -> GenerationsDecorationBlocks.SWITCH.get().asItem().getDefaultInstance(), GenerationsDecorationBlocks.DECORATIONS);
-        GenerationsCreativeTabs.NATURAL = create("natural", () -> GenerationsOres.SILICON_ORE_SET.getOreSupplier().get().asItem().getDefaultInstance());
+        GenerationsCreativeTabs.NATURAL = create("natural", () -> GenerationsOres.SILICON_ORE_SET.getOreSupplier().get().asItem().getDefaultInstance(), GenerationsOres.ORES);
         GenerationsCreativeTabs.UTILITY = create("utility", () -> GenerationsUtilityBlocks.RKS_MACHINE.get().asItem().getDefaultInstance());
         GenerationsCreativeTabs.FORM_ITEMS = create("form_items", () -> GenerationsItems.METEORITE.get().getDefaultInstance());
         GenerationsCreativeTabs.POKEMAIL = create("pokemail", () -> GenerationsItems.POKEMAIL_AIR.get().getDefaultInstance());

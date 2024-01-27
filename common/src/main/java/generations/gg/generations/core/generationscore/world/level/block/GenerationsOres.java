@@ -63,7 +63,7 @@ public class GenerationsOres {
 
 
 	private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-		GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.NATURAL)));
+		GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
 	}
 
 	public static <T extends Block> RegistrySupplier<T> registerOreBlockItem(String name, Supplier<T> blockSupplier) {
