@@ -10,8 +10,7 @@ import net.minecraft.world.item.CreativeModeTab;
 public class GenerationsCreativeTabs {
 
     public static CreativeModeTab RESTORATION;
-    public static CreativeModeTab BADGES;
-    public static CreativeModeTab RIBBONS;
+    public static CreativeModeTab AWARDS;
     public static CreativeModeTab HELD_ITEMS;
     public static CreativeModeTab PLAYER_ITEMS;
     public static CreativeModeTab LEGENDARY_ITEMS;

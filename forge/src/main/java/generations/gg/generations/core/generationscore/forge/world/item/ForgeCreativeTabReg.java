@@ -22,8 +22,7 @@ public class ForgeCreativeTabReg {
 
     private static RegistryObject<CreativeModeTab> BUILDING_BLOCKS;
     private static RegistryObject<CreativeModeTab> RESTORATION;
-    private static RegistryObject<CreativeModeTab> BADGES;
-    private static RegistryObject<CreativeModeTab> RIBBONS;
+    private static RegistryObject<CreativeModeTab> AWARDS;
     private static RegistryObject<CreativeModeTab> HELD_ITEMS;
     private static RegistryObject<CreativeModeTab> PLAYER_ITEMS;
     private static RegistryObject<CreativeModeTab> LEGENDARY_ITEMS;
@@ -40,10 +39,9 @@ public class ForgeCreativeTabReg {
     
     public static void init(IEventBus MOD_BUS) {
         GenerationsCore.LOGGER.info("Registering Generations Creative Tabs...");
-        BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET.getBaseBlockSupplier().get().asItem().getDefaultInstance());
+        BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET.getBaseBlockSupplier().get().asItem().getDefaultInstance(), GenerationsWood.WOOD_BLOCKS);
         RESTORATION = create("restoration", () -> GenerationsItems.POTION.get().getDefaultInstance());
-        BADGES = create("badges", () -> GenerationsItems.RAINBOW_BADGE.get().getDefaultInstance(), GenerationsItems.BADGES);
-        RIBBONS = create("ribbons", () -> GenerationsItems.COOLNESS_MASTER_RIBBON.get().getDefaultInstance(), GenerationsItems.RIBBONS);
+        AWARDS = create("badges", () -> GenerationsItems.RAINBOW_BADGE.get().getDefaultInstance(), GenerationsItems.BADGES, GenerationsItems.RIBBONS);
         HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN.get().getDefaultInstance());
         PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX.get().getDefaultInstance());
         LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS.get().getDefaultInstance());
@@ -65,8 +63,7 @@ public class ForgeCreativeTabReg {
         GenerationsCore.LOGGER.info("Syncing Generations Creative Tabs... (Forge Only)");
         GenerationsCreativeTabs.BUILDING_BLOCKS = BUILDING_BLOCKS.get();
         GenerationsCreativeTabs.RESTORATION = RESTORATION.get();
-        GenerationsCreativeTabs.BADGES = BADGES.get();
-        GenerationsCreativeTabs.RIBBONS = RIBBONS.get();
+        GenerationsCreativeTabs.AWARDS = AWARDS.get();
         GenerationsCreativeTabs.HELD_ITEMS = HELD_ITEMS.get();
         GenerationsCreativeTabs.PLAYER_ITEMS = PLAYER_ITEMS.get();
         GenerationsCreativeTabs.LEGENDARY_ITEMS = LEGENDARY_ITEMS.get();
@@ -90,11 +87,15 @@ public class ForgeCreativeTabReg {
                 .build());
     }
 
-    private static <T extends ItemLike> RegistryObject<CreativeModeTab> create(String name, @NotNull Supplier<ItemStack> icon, @NotNull dev.architectury.registry.registries.DeferredRegister<T> items) {
+    @SafeVarargs
+    private static <T extends ItemLike> RegistryObject<CreativeModeTab> create(String name, @NotNull Supplier<ItemStack> icon, @NotNull dev.architectury.registry.registries.DeferredRegister<T>... items) {
         return register(name, CreativeModeTab.builder()
                 .title(Component.translatable("itemGroup." + GenerationsCore.MOD_ID + "." + name))
                 .icon(icon)
-                .displayItems((entry, context) -> items.forEach((block) -> context.accept(block.get().asItem().getDefaultInstance())))
+                .displayItems((entry, context) -> {
+                    for (dev.architectury.registry.registries.DeferredRegister<T> item : items)
+                        item.forEach((itemEntry) -> context.accept(itemEntry.get().asItem().getDefaultInstance()));
+                })
                 .build());
     }
 

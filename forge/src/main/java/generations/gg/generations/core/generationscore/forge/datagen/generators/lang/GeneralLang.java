@@ -55,8 +55,7 @@ public class GeneralLang extends LanguageProvider {
         //Manually add Creative Tabs
         add("itemGroup.generations_core.restoration", "Restoration");
         add("itemGroup.generations_core.tms", "TMs");
-        add("itemGroup.generations_core.badges", "Badges");
-        add("itemGroup.generations_core.ribbons", "Ribbons");
+        add("itemGroup.generations_core.awards", "Awards");
         add("itemGroup.generations_core.held_items", "Held Items");
         add("itemGroup.generations_core.player_items", "Player Items");
         add("itemGroup.generations_core.legendary_items", "Legendary Items");

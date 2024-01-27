@@ -19,10 +19,9 @@ import java.util.function.Supplier;
 public class FabricCreativeTabReg {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Creative Tabs...");
-        GenerationsCreativeTabs.BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET.getBaseBlockSupplier().get().asItem().getDefaultInstance());
+        GenerationsCreativeTabs.BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET.getBaseBlockSupplier().get().asItem().getDefaultInstance(), GenerationsWood.WOOD_BLOCKS);
         GenerationsCreativeTabs.RESTORATION = create("restoration", () -> GenerationsItems.POTION.get().getDefaultInstance());
-        GenerationsCreativeTabs.BADGES = create("badges", () -> GenerationsItems.RAINBOW_BADGE.get().getDefaultInstance(), GenerationsItems.BADGES);
-        GenerationsCreativeTabs.RIBBONS = create("ribbons", () -> GenerationsItems.COOLNESS_MASTER_RIBBON.get().getDefaultInstance(), GenerationsItems.RIBBONS);
+        GenerationsCreativeTabs.AWARDS = create("awards", () -> GenerationsItems.RAINBOW_BADGE.get().getDefaultInstance(), GenerationsItems.BADGES, GenerationsItems.RIBBONS);
         GenerationsCreativeTabs.HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN.get().getDefaultInstance());
         GenerationsCreativeTabs.PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX.get().getDefaultInstance());
         GenerationsCreativeTabs.LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS.get().getDefaultInstance());
@@ -46,11 +45,15 @@ public class FabricCreativeTabReg {
                 .build());
     }
 
-    private static <T extends ItemLike> CreativeModeTab create(String name, @NotNull Supplier<ItemStack> icon, @NotNull DeferredRegister<T> items) {
+    @SafeVarargs
+    private static <T extends ItemLike> CreativeModeTab create(String name, @NotNull Supplier<ItemStack> icon, @NotNull DeferredRegister<T>... items) {
         return register(name, FabricItemGroup.builder()
                 .title(Component.translatable("itemGroup." + GenerationsCore.MOD_ID + "." + name))
                 .icon(icon)
-                .displayItems((entry, context) -> items.forEach((block) -> context.accept(block.get().asItem().getDefaultInstance())))
+                .displayItems((entry, context) -> {
+                    for (DeferredRegister<T> item : items)
+                        item.forEach((itemEntry) -> context.accept(itemEntry.get().asItem().getDefaultInstance()));
+                })
                 .build());
     }
 

@@ -85,7 +85,7 @@ public class GenerationsWood {
     public static final RegistrySupplier<Block> GHOST_BOOKSHELF = registerBlockItem("ghost_bookshelf", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-        GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
+        GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
     }
 
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
