@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:eiscue_iceface",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:eiscue_iceface",
+      "model": "generations_core:eiscue_iceface.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:larvitar",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:larvitar",
+      "model": "generations_core:larvitar.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
