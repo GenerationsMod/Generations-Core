@@ -9,6 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -102,5 +103,10 @@ public class ForgeCreativeTabReg {
 
     private static RegistryObject<CreativeModeTab> register(String name, CreativeModeTab tab) {
         return CREATIVE_TABS.register(name, () -> tab);
+    }
+
+
+    public static void modifyTabs(final BuildCreativeModeTabContentsEvent event) {
+
     }
 }

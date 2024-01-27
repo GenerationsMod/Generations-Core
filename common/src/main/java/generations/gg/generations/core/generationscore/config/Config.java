@@ -106,6 +106,7 @@ public class Config {
     }
 
     public static class VanillaTabsToAdd {
+        public boolean allowVanillaModifications = true;
         public boolean coloredBlocks = true;
         public boolean combat = true;
         public boolean toolsAndUtilities = true;

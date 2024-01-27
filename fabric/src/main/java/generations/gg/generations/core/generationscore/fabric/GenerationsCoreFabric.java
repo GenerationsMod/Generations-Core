@@ -37,8 +37,8 @@ import java.util.concurrent.Executor;
  */
 public class GenerationsCoreFabric implements ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
     public void onInitialize() {
-        FabricCreativeTabReg.init();
         GenerationsCore.init(this);
+        FabricCreativeTabReg.init();
         VanillaCompat.setup();
 
         this.getNetworkManager().registerClientBound();

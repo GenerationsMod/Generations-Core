@@ -83,6 +83,8 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::addPackFinders);
         if (ModList.get().isLoaded("impactor"))
             ImpactorCompat.init();
+        if (GenerationsCore.CONFIG.addItemsToVanillaTabs.allowVanillaModifications)
+            MOD_BUS.addListener(ForgeCreativeTabReg::modifyTabs);
     }
 
     public void addPackFinders(AddPackFindersEvent event) {

@@ -6,10 +6,12 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
@@ -36,6 +38,8 @@ public class FabricCreativeTabReg {
         GenerationsCreativeTabs.UNIMPLEMENTED = create("unimplemented", () -> GenerationsItems.ABILITY_URGE.get().getDefaultInstance());
         GenerationsCreativeTabs.SHRINES = create("shrines", () -> GenerationsShrines.FROZEN_SHRINE.get().asItem().getDefaultInstance(), GenerationsShrines.SHRINES);
         GenerationsCore.LOGGER.info("Registered Generations Creative Tabs!");
+        if (GenerationsCore.CONFIG.addItemsToVanillaTabs.allowVanillaModifications)
+            modifyTabs();
     }
 
     private static CreativeModeTab create(String name, Supplier<ItemStack> icon) {
@@ -59,5 +63,10 @@ public class FabricCreativeTabReg {
 
     private static CreativeModeTab register(String name, CreativeModeTab tab) {
         return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, GenerationsCore.id(name), tab);
+    }
+
+    private static void modifyTabs() {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((content) -> {
+        });
     }
 }
