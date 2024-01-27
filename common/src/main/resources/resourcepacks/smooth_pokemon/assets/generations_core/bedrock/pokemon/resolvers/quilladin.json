@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:quilladin",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:quilladin",
+      "model": "generations_core:quilladin.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

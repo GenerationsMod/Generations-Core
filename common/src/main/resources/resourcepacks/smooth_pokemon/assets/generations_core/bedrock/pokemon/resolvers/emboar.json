@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:emboar",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:emboar",
+      "model": "generations_core:emboar.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

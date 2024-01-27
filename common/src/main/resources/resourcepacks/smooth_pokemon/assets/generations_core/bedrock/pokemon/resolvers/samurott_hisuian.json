@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:samurott",
+  "order": 5,
+  "variations": [
+    {
+      "aspects": ["hisuian"],
+      "poser": "generations_core:samurott_hisuian",
+      "model": "generations_core:samurott_hisuian.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "hisuian",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

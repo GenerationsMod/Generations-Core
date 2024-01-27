@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:prinplup",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:prinplup",
+      "model": "generations_core:prinplup.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
