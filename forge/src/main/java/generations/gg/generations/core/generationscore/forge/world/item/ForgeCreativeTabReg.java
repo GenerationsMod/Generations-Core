@@ -41,7 +41,7 @@ public class ForgeCreativeTabReg {
         GenerationsCore.LOGGER.info("Registering Generations Creative Tabs...");
         BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET.getBaseBlockSupplier().get().asItem().getDefaultInstance(), GenerationsWood.WOOD_BLOCKS);
         RESTORATION = create("restoration", () -> GenerationsItems.POTION.get().getDefaultInstance());
-        AWARDS = create("badges", () -> GenerationsItems.RAINBOW_BADGE.get().getDefaultInstance(), GenerationsItems.BADGES, GenerationsItems.RIBBONS);
+        AWARDS = create("awards", () -> GenerationsItems.RAINBOW_BADGE.get().getDefaultInstance(), GenerationsItems.BADGES, GenerationsItems.RIBBONS);
         HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN.get().getDefaultInstance());
         PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX.get().getDefaultInstance());
         LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS.get().getDefaultInstance());
@@ -96,6 +96,7 @@ public class ForgeCreativeTabReg {
                     for (dev.architectury.registry.registries.DeferredRegister<T> item : items)
                         item.forEach((itemEntry) -> context.accept(itemEntry.get().asItem().getDefaultInstance()));
                 })
+                .withSearchBar()
                 .build());
     }
 
