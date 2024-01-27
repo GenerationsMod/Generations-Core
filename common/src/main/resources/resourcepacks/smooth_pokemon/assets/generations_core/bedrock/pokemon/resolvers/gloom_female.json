@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:gloom",
+  "order": 5,
+  "variations": [
+    {
+      "aspects": ["female"],
+      "poser": "generations_core:gloom_female",
+      "model": "generations_core:gloom_female.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "female",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
