@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:sobble",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:sobble",
+      "model": "generations_core:sobble.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

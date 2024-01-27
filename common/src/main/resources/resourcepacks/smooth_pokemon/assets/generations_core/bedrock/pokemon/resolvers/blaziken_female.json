@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:blaziken",
+  "order": 5,
+  "variations": [
+    {
+      "aspects": ["female"],
+      "poser": "generations_core:blaziken_female",
+      "model": "generations_core:blaziken_female.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "female",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
