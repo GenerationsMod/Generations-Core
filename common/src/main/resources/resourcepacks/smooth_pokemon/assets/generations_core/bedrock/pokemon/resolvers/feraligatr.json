@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:feraligatr",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:feraligatr",
+      "model": "generations_core:feraligatr.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

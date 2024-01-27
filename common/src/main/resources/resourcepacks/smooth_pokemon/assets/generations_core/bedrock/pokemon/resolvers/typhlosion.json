@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:typhlosion",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:typhlosion",
+      "model": "generations_core:typhlosion.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

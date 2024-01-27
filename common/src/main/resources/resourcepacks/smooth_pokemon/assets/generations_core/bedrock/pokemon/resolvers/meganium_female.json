@@ -1,0 +1,21 @@
+{
+  "species": "cobblemon:meganium",
+  "order": 3,
+  "variations": [
+    {
+      "aspects": [
+        "female"
+      ],
+      "poser": "generations_core:meganium_female",
+      "model": "generations_core:meganium_female.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
