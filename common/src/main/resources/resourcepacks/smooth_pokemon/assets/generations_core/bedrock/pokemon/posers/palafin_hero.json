@@ -1,0 +1,41 @@
+{
+  "portraitScale": 1.0,
+  "portraitTranslation": [ 0, 0.0, 0 ],
+  "profileScale": 1.0,
+  "profileTranslation": [ 0, 0.0, 0 ],
+  "faint": "pk(generations_core:palafin_hero.pk, faintstart)",
+  "poses": {
+    "standing": {
+      "poseName": "standing",
+      "transformTicks": 10,
+      "poseTypes": [
+        "STAND",
+        "NONE",
+        "PORTRAIT",
+        "PROFILE"
+      ],
+      "animations": [
+        "look",
+        "pk(generations_core:palafin_hero.pk, idle)"
+      ]
+    },
+    "floating": {
+      "poseName": "floating",
+      "transformTicks": 10,
+      "poseTypes": [ "FLOAT" ],
+      "animations": [ "pk(generations_core:palafin_hero.pk, swimidle)" ]
+    },
+    "walking": {
+      "poseName": "walking",
+      "transformTicks": 10,
+      "poseTypes": [ "WALK" ],
+      "animations": [ "pk(generations_core:palafin_hero.pk, walk)" ]
+    },
+    "swimming": {
+      "poseName": "swimming",
+      "transformTicks": 10,
+      "poseTypes": [ "SWIM" ],
+      "animations": [ "pk(generations_core:palafin_hero.pk, swimwalk)" ]
+    }
+  }
+}
