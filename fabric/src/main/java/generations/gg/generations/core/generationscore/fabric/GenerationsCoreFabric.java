@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.GenerationsImplementation
 import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
+import generations.gg.generations.core.generationscore.fabric.world.item.FabricCreativeTabReg;
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
 import generations.gg.generations.core.generationscore.world.feature.GenerationsConfiguredFeatures;
 import generations.gg.generations.core.generationscore.world.feature.GenerationsPlacedFeatures;
@@ -36,6 +37,7 @@ import java.util.concurrent.Executor;
  */
 public class GenerationsCoreFabric implements ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
     public void onInitialize() {
+        FabricCreativeTabReg.init();
         GenerationsCore.init(this);
         VanillaCompat.setup();
 

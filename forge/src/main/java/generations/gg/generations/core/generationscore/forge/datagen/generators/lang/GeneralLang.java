@@ -53,24 +53,24 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
-        add("restoration.generations_core", "Restoration");
-        add("tms.generations_core", "TMs");
-        add("badges.generations_core", "Badges");
-        add("ribbons.generations_core", "Ribbons");
-        add("held_items.generations_core", "Held Items");
-        add("player_items.generations_core", "Player Items");
-        add("legendary_items.generations_core", "Legendary Items");
-        add("building_blocks.generations_core", "Building Blocks");
-        add("decorations.generations_core", "Decorations");
-        add("natural.generations_core", "Natural");
-        add("utility.generations_core", "Utility");
-        add("form_items.generations_core", "Form Items");
-        add("pokemail.generations_core", "Pokemail");
-        add("valuables.generations_core", "Valuables");
-        add("pokedolls.generations_core", "PokeDolls");
-        add("cuisine.generations_core", "Cuisine");
-        add("unimplemented.generations_core", "Unimplemented");
-        add("shrines.generations_core", "Shrines");
+        add("itemGroup.generations_core.restoration", "Restoration");
+        add("itemGroup.generations_core.tms", "TMs");
+        add("itemGroup.generations_core.badges", "Badges");
+        add("itemGroup.generations_core.ribbons", "Ribbons");
+        add("itemGroup.generations_core.held_items", "Held Items");
+        add("itemGroup.generations_core.player_items", "Player Items");
+        add("itemGroup.generations_core.legendary_items", "Legendary Items");
+        add("itemGroup.generations_core.building_blocks", "Building Blocks");
+        add("itemGroup.generations_core.decorations", "Decorations");
+        add("itemGroup.generations_core.natural", "Natural");
+        add("itemGroup.generations_core.utility", "Utility");
+        add("itemGroup.generations_core.form_items", "Form Items");
+        add("itemGroup.generations_core.pokemail", "Pokemail");
+        add("itemGroup.generations_core.valuables", "Valuables");
+        add("itemGroup.generations_core.pokedolls", "PokeDolls");
+        add("itemGroup.generations_core.cuisine", "Cuisine");
+        add("itemGroup.generations_core.unimplemented", "Unimplemented");
+        add("itemGroup.generations_core.shrines", "Shrines");
 
         add("container.melody_flute", "Melody Flute");
         add("container.trashcan", "Trash Can");
