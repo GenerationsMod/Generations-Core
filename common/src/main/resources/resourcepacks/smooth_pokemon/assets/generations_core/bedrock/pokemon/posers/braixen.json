@@ -1,0 +1,40 @@
+{
+  "portraitScale": 1.0,
+  "portraitTranslation": [ 0, 0.0, 0 ],
+  "profileScale": 1.0,
+  "profileTranslation": [ 0, 0.0, 0 ],
+  "faint": "pk(generations_core:braixen, faintstart)",
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:braixen.pk, idle)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PORTRAIT",
+        "NONE",
+        "PROFILE",
+        "STAND",
+        "FLOAT"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:braixen.pk, walk)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    },
+    "sleeping": {
+      "animations": [
+        "pk(generations_core:braixen.pk, sleeploop)"
+      ],
+      "poseName": "sleeping",
+      "poseTypes": [
+        "SLEEP"
+      ]
+    }
+  }
+}

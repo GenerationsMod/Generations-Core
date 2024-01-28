@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:gothita",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:gothita",
+      "model": "generations_core:gothita.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

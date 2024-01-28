@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:drizzile",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:drizzile",
+      "model": "generations_core:drizzile.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

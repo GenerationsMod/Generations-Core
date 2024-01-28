@@ -1,0 +1,40 @@
+{
+  "portraitScale": 1.0,
+  "portraitTranslation": [ 0, 0.0, 0 ],
+  "profileScale": 1.0,
+  "profileTranslation": [ 0, 0.0, 0 ],
+  "faint": "pk(generations_core:tynamo, faintstart)",
+  "poses": {
+    "standing": {
+      "animations": [
+        "pk(generations_core:tynamo.pk, swimidle)"
+      ],
+      "poseName": "standing",
+      "poseTypes": [
+        "PORTRAIT",
+        "NONE",
+        "PROFILE",
+        "STAND",
+        "FLOAT"
+      ]
+    },
+    "walking": {
+      "animations": [
+        "pk(generations_core:tynamo.pk, swimwalk)"
+      ],
+      "poseName": "walking",
+      "poseTypes": [
+        "WALK"
+      ]
+    },
+    "sleeping": {
+      "animations": [
+        "pk(generations_core:tynamo.pk, sleeploop)"
+      ],
+      "poseName": "sleeping",
+      "poseTypes": [
+        "SLEEP"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:decidueye",
+  "order": 5,
+  "variations": [
+    {
+      "aspects": ["hisuian"],
+      "poser": "generations_core:decidueye_hisuian",
+      "model": "generations_core:decidueye_hisuian.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "hisuian",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

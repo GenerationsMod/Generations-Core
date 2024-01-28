@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:bayleef",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:bayleef",
+      "model": "generations_core:bayleef.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

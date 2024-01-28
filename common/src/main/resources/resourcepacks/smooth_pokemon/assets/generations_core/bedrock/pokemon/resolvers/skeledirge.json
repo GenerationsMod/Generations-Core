@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:skeledirge",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:skeledirge",
+      "model": "generations_core:skeledirge.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

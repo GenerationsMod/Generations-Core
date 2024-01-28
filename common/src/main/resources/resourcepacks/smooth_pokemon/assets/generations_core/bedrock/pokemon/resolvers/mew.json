@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:mew",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:mew",
+      "model": "generations_core:mew.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
