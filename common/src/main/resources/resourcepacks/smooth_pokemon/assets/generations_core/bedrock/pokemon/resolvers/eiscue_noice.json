@@ -1,17 +1,17 @@
 {
-  "species": "cobblemon:eiscue_noiceface",
+  "species": "cobblemon:eiscue",
   "order": 3,
   "variations": [
     {
-      "aspects": ["noiceface"],
-      "poser": "generations_core:eiscue_noiceface",
-      "model": "generations_core:eiscue_noiceface.pk",
+      "aspects": ["no_ice"],
+      "poser": "generations_core:eiscue_noice",
+      "model": "generations_core:eiscue_noice.pk",
       "texture": "pk:normal",
       "layers": []
     },
     {
       "aspects": [
-        "noiceface",
+        "no_ice",
         "shiny"
       ],
       "texture": "pk:shiny"
