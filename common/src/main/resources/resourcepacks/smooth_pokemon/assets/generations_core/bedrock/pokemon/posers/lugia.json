@@ -9,10 +9,14 @@
       "poseName": "standing",
       "transformTicks": 10,
       "poseTypes": [
-        "PORTRAIT",
+        "STAND",
         "NONE",
-        "PROFILE",
-        "STAND"
+        "PORTRAIT",
+        "PROFILE"
+      ],
+      "animations": [
+        "look",
+        "pk(generations_core:lugia.pk, idle)"
       ]
     },
     "floating": {

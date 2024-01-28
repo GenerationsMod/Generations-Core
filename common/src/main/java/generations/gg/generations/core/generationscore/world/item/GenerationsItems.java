@@ -310,77 +310,77 @@ public class GenerationsItems {
     /**
      * Badges
      */
-    public static final RegistrySupplier<Item> BALANCE_BADGE = createBadge("balance_badge", null);
-    public static final RegistrySupplier<Item> BEACON_BADGE = createBadge("beacon_badge", null);
-    public static final RegistrySupplier<Item> BOULDER_BADGE = createBadge("boulder_badge", null);
-    public static final RegistrySupplier<Item> CASCADE_BADGE = createBadge("cascade_badge", null);
-    public static final RegistrySupplier<Item> COAL_BADGE = createBadge("coal_badge", null);
-    public static final RegistrySupplier<Item> COBBLE_BADGE = createBadge("cobble_badge", null);
-    public static final RegistrySupplier<Item> DYNAMO_BADGE = createBadge("dynamo_badge", null);
-    public static final RegistrySupplier<Item> EARTH_BADGE = createBadge("earth_badge", null);
-    public static final RegistrySupplier<Item> FEATHER_BADGE = createBadge("feather_badge", null);
-    public static final RegistrySupplier<Item> FEN_BADGE = createBadge("fen_badge", null);
-    public static final RegistrySupplier<Item> FOG_BADGE = createBadge("fog_badge", null);
-    public static final RegistrySupplier<Item> FOREST_BADGE = createBadge("forest_badge", null);
-    public static final RegistrySupplier<Item> GLACIER_BADGE = createBadge("glacier_badge", null);
-    public static final RegistrySupplier<Item> HEAT_BADGE = createBadge("heat_badge", null);
-    public static final RegistrySupplier<Item> HIVE_BADGE = createBadge("hive_badge", null);
-    public static final RegistrySupplier<Item> ICICLE_BADGE = createBadge("icicle_badge", null);
-    public static final RegistrySupplier<Item> KNUCKLE_BADGE = createBadge("knuckle_badge", null);
-    public static final RegistrySupplier<Item> MARSH_BADGE = createBadge("marsh_badge", null);
-    public static final RegistrySupplier<Item> MIND_BADGE = createBadge("mind_badge", null);
-    public static final RegistrySupplier<Item> MINE_BADGE = createBadge("mine_badge", null);
-    public static final RegistrySupplier<Item> MINERAL_BADGE = createBadge("mineral_badge", null);
-    public static final RegistrySupplier<Item> PLAIN_BADGE = createBadge("plain_badge", null);
-    public static final RegistrySupplier<Item> RAINBOW_BADGE = createBadge("rainbow_badge", null);
-    public static final RegistrySupplier<Item> RAIN_BADGE = createBadge("rain_badge", null);
-    public static final RegistrySupplier<Item> RELIC_BADGE = createBadge("relic_badge", null);
-    public static final RegistrySupplier<Item> RISING_BADGE = createBadge("rising_badge", null);
-    public static final RegistrySupplier<Item> SOUL_BADGE = createBadge("soul_badge", null);
-    public static final RegistrySupplier<Item> STONE_BADGE = createBadge("stone_badge", null);
-    public static final RegistrySupplier<Item> STORM_BADGE = createBadge("storm_badge", null);
-    public static final RegistrySupplier<Item> THUNDER_BADGE = createBadge("thunder_badge", null);
-    public static final RegistrySupplier<Item> VOLCANO_BADGE = createBadge("volcano_badge", null);
-    public static final RegistrySupplier<Item> ZEPHYR_BADGE = createBadge("zephyr_badge", null);
-    public static final RegistrySupplier<Item> BASIC_BADGE = createBadge("basic_badge", null);
-    public static final RegistrySupplier<Item> BOLT_BADGE = createBadge("bolt_badge", null);
-    public static final RegistrySupplier<Item> FREEZE_BADGE = createBadge("freeze_badge", null);
-    public static final RegistrySupplier<Item> INSECT_BADGE = createBadge("insect_badge", null);
-    public static final RegistrySupplier<Item> JET_BADGE = createBadge("jet_badge", null);
-    public static final RegistrySupplier<Item> LEGEND_BADGE = createBadge("legend_badge", null);
-    public static final RegistrySupplier<Item> QUAKE_BADGE = createBadge("quake_badge", null);
-    public static final RegistrySupplier<Item> TOXIC_BADGE = createBadge("toxic_badge", null);
-    public static final RegistrySupplier<Item> TRIO_BADGE = createBadge("trio_badge", null);
-    public static final RegistrySupplier<Item> WAVE_BADGE = createBadge("wave_badge", null);
-    public static final RegistrySupplier<Item> BUG_BADGE = createBadge("bug_badge", null);
-    public static final RegistrySupplier<Item> CLIFF_BADGE = createBadge("cliff_badge", null);
-    public static final RegistrySupplier<Item> RUMBLE_BADGE = createBadge("rumble_badge", null);
-    public static final RegistrySupplier<Item> PLANT_BADGE = createBadge("plant_badge", null);
-    public static final RegistrySupplier<Item> VOLTAGE_BADGE = createBadge("voltage_badge", null);
-    public static final RegistrySupplier<Item> FAIRY_BADGE = createBadge("fairy_badge", null);
-    public static final RegistrySupplier<Item> PSYCHIC_BADGE = createBadge("psychic_badge", null);
-    public static final RegistrySupplier<Item> ICEBERG_BADGE = createBadge("iceberg_badge", null);
-    public static final RegistrySupplier<Item> SPIKESHELL_BADGE = createBadge("spikeshell_badge", null);
-    public static final RegistrySupplier<Item> SEARUBY_BADGE = createBadge("searuby_badge", null);
-    public static final RegistrySupplier<Item> JADESTAR_BADGE = createBadge("jadestar_badge", null);
-    public static final RegistrySupplier<Item> CORALEYE_BADGE = createBadge("coraleye_badge", null);
-    public static final RegistrySupplier<Item> FREEDOM_BADGE = createBadge("freedom_badge", null);
-    public static final RegistrySupplier<Item> HARMONY_BADGE = createBadge("harmony_badge", null);
-    public static final RegistrySupplier<Item> PATIENCE_BADGE = createBadge("patience_badge", null);
-    public static final RegistrySupplier<Item> PRIDE_BADGE = createBadge("pride_badge", null);
-    public static final RegistrySupplier<Item> TRANQUILITY_BADGE = createBadge("tranquility_badge", null);
-    public static final RegistrySupplier<Item> DARK_BADGE = createBadge("dark_badge", null);
-    public static final RegistrySupplier<Item> DRAGON_BADGE = createBadge("dragon_badge", null);
-    public static final RegistrySupplier<Item> FAIRY_BADGE_2 = createBadge("fairy_badge2", null);
-    public static final RegistrySupplier<Item> FIRE_BADGE = createBadge("fire_badge", null);
-    public static final RegistrySupplier<Item> GRASS_BADGE = createBadge("grass_badge", null);
-    public static final RegistrySupplier<Item> ICE_BADGE = createBadge("ice_badge", null);
-    public static final RegistrySupplier<Item> ROCK_BADGE = createBadge("rock_badge", null);
-    public static final RegistrySupplier<Item> WATER_BADGE = createBadge("water_badge", null);
-    public static final RegistrySupplier<Item> FIGHTING_BADGE = createBadge("fighting_badge", null);
-    public static final RegistrySupplier<Item> GHOST_BADGE = createBadge("ghost_badge", null);
-    public static final RegistrySupplier<Item> SHIELD_BADGE_COMPLETE = createBadge("shield_badge_complete", null);
-    public static final RegistrySupplier<Item> SWORD_BADGE_COMPLETE = createBadge("sword_badge_complete", null);
+    public static final RegistrySupplier<Item> BALANCE_BADGE = createBadge("balance");
+    public static final RegistrySupplier<Item> BEACON_BADGE = createBadge("beacon");
+    public static final RegistrySupplier<Item> BOULDER_BADGE = createBadge("boulder");
+    public static final RegistrySupplier<Item> CASCADE_BADGE = createBadge("cascade");
+    public static final RegistrySupplier<Item> COAL_BADGE = createBadge("coal");
+    public static final RegistrySupplier<Item> COBBLE_BADGE = createBadge("cobble");
+    public static final RegistrySupplier<Item> DYNAMO_BADGE = createBadge("dynamo");
+    public static final RegistrySupplier<Item> EARTH_BADGE = createBadge("earth");
+    public static final RegistrySupplier<Item> FEATHER_BADGE = createBadge("feather");
+    public static final RegistrySupplier<Item> FEN_BADGE = createBadge("fen");
+    public static final RegistrySupplier<Item> FOG_BADGE = createBadge("fog");
+    public static final RegistrySupplier<Item> FOREST_BADGE = createBadge("forest");
+    public static final RegistrySupplier<Item> GLACIER_BADGE = createBadge("glacier");
+    public static final RegistrySupplier<Item> HEAT_BADGE = createBadge("heat");
+    public static final RegistrySupplier<Item> HIVE_BADGE = createBadge("hive");
+    public static final RegistrySupplier<Item> ICICLE_BADGE = createBadge("icicle");
+    public static final RegistrySupplier<Item> KNUCKLE_BADGE = createBadge("knuckle");
+    public static final RegistrySupplier<Item> MARSH_BADGE = createBadge("marsh");
+    public static final RegistrySupplier<Item> MIND_BADGE = createBadge("mind");
+    public static final RegistrySupplier<Item> MINE_BADGE = createBadge("mine");
+    public static final RegistrySupplier<Item> MINERAL_BADGE = createBadge("mineral");
+    public static final RegistrySupplier<Item> PLAIN_BADGE = createBadge("plain");
+    public static final RegistrySupplier<Item> RAINBOW_BADGE = createBadge("rainbow");
+    public static final RegistrySupplier<Item> RAIN_BADGE = createBadge("rain");
+    public static final RegistrySupplier<Item> RELIC_BADGE = createBadge("relic");
+    public static final RegistrySupplier<Item> RISING_BADGE = createBadge("rising");
+    public static final RegistrySupplier<Item> SOUL_BADGE = createBadge("soul");
+    public static final RegistrySupplier<Item> STONE_BADGE = createBadge("stone");
+    public static final RegistrySupplier<Item> STORM_BADGE = createBadge("storm");
+    public static final RegistrySupplier<Item> THUNDER_BADGE = createBadge("thunder");
+    public static final RegistrySupplier<Item> VOLCANO_BADGE = createBadge("volcano");
+    public static final RegistrySupplier<Item> ZEPHYR_BADGE = createBadge("zephyr");
+    public static final RegistrySupplier<Item> BASIC_BADGE = createBadge("basic");
+    public static final RegistrySupplier<Item> BOLT_BADGE = createBadge("bolt");
+    public static final RegistrySupplier<Item> FREEZE_BADGE = createBadge("freeze");
+    public static final RegistrySupplier<Item> INSECT_BADGE = createBadge("insect");
+    public static final RegistrySupplier<Item> JET_BADGE = createBadge("jet");
+    public static final RegistrySupplier<Item> LEGEND_BADGE = createBadge("legend");
+    public static final RegistrySupplier<Item> QUAKE_BADGE = createBadge("quake");
+    public static final RegistrySupplier<Item> TOXIC_BADGE = createBadge("toxic");
+    public static final RegistrySupplier<Item> TRIO_BADGE = createBadge("trio");
+    public static final RegistrySupplier<Item> WAVE_BADGE = createBadge("wave");
+    public static final RegistrySupplier<Item> BUG_BADGE = createBadge("bug");
+    public static final RegistrySupplier<Item> CLIFF_BADGE = createBadge("cliff");
+    public static final RegistrySupplier<Item> RUMBLE_BADGE = createBadge("rumble");
+    public static final RegistrySupplier<Item> PLANT_BADGE = createBadge("plant");
+    public static final RegistrySupplier<Item> VOLTAGE_BADGE = createBadge("voltage");
+    public static final RegistrySupplier<Item> FAIRY_BADGE = createBadge("fairy");
+    public static final RegistrySupplier<Item> PSYCHIC_BADGE = createBadge("psychic");
+    public static final RegistrySupplier<Item> ICEBERG_BADGE = createBadge("iceberg");
+    public static final RegistrySupplier<Item> SPIKESHELL_BADGE = createBadge("spikeshell");
+    public static final RegistrySupplier<Item> SEARUBY_BADGE = createBadge("searuby");
+    public static final RegistrySupplier<Item> JADESTAR_BADGE = createBadge("jadestar");
+    public static final RegistrySupplier<Item> CORALEYE_BADGE = createBadge("coraleye");
+    public static final RegistrySupplier<Item> FREEDOM_BADGE = createBadge("freedom");
+    public static final RegistrySupplier<Item> HARMONY_BADGE = createBadge("harmony");
+    public static final RegistrySupplier<Item> PATIENCE_BADGE = createBadge("patience");
+    public static final RegistrySupplier<Item> PRIDE_BADGE = createBadge("pride");
+    public static final RegistrySupplier<Item> TRANQUILITY_BADGE = createBadge("tranquility");
+    public static final RegistrySupplier<Item> DARK_BADGE = createBadge("dark");
+    public static final RegistrySupplier<Item> DRAGON_BADGE = createBadge("dragon");
+    public static final RegistrySupplier<Item> FAIRY_2_BADGE = createBadge("fairy_2");
+    public static final RegistrySupplier<Item> FIRE_BADGE = createBadge("fire");
+    public static final RegistrySupplier<Item> GRASS_BADGE = createBadge("grass");
+    public static final RegistrySupplier<Item> ICE_BADGE = createBadge("ice");
+    public static final RegistrySupplier<Item> ROCK_BADGE = createBadge("rock");
+    public static final RegistrySupplier<Item> WATER_BADGE = createBadge("water");
+    public static final RegistrySupplier<Item> FIGHTING_BADGE = createBadge("fighting");
+    public static final RegistrySupplier<Item> GHOST_BADGE = createBadge("ghost");
+    public static final RegistrySupplier<Item> COMPLETE_SHIELD_BADGE = createBadge("complete_shield");
+    public static final RegistrySupplier<Item> COMPLETE_SWORD_BADGE = createBadge("complete_sword");
 
     /**
      * Ribbons
@@ -896,7 +896,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> UNENCHANTED_SHADEROOT_CARROT = register("unenchanted_shaderoot_carrot", Item::new, GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> SHADEROOT_CARROT = register("shaderoot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("spectrier"), UNENCHANTED_SHADEROOT_CARROT), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<EnigmaStoneItem> ENIGMA_STONE = register("enigma_stone", properties -> new EnigmaStoneItem(properties.stacksTo(1).durability(100)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_SHARD = register("enigma_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_SHARD = register("enigma_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(64)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_FRAGMENT = register("enigma_fragment", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4).fireResistant() /* just incase it falls into lava while in nether*/), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SACRED_ASH = register("sacred_ash", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1).durability(1)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHARD_OF_WILLPOWER = register("shard_of_willpower", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(9)), GenerationsCreativeTabs.LEGENDARY_ITEMS);
@@ -1508,21 +1508,21 @@ public class GenerationsItems {
         return new Item.Properties();
     }
 
-    public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
+    public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier, CreativeModeTab tab) {
         return ITEMS.register(name, () -> itemSupplier.apply(of().arch$tab(tab)));
     }
 
-    public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, RegistrySupplier<CreativeModeTab> tab) {
+    public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, CreativeModeTab tab) {
         return register(name, itemSupplier, tab);
     }
 
-    public static RegistrySupplier<Item> createBadge(String id, Object object/*ElementType elementType*/) {
+    public static RegistrySupplier<Item> createBadge(String id) {
         /*elementType*/
-        return BADGES.register(id, () -> new BadgeItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.BADGES)));
+        return BADGES.register(id + "_badge", () -> new BadgeItem(new Item.Properties()));
     }
 
     public static RegistrySupplier<Item> createRibbon(String id) {
-        return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties().arch$tab(GenerationsCreativeTabs.RIBBONS)));
+        return RIBBONS.register(id, () -> new RibbonItem(new Item.Properties()));
     }
     
     public static void init() {

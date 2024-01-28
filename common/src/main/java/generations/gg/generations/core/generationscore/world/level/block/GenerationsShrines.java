@@ -7,7 +7,6 @@ import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.BlockItemWithLang;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.FieryShrineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.FrozenShrineBlock;
@@ -56,7 +55,7 @@ public class GenerationsShrines {
 
 	private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
 		RegistrySupplier<T> block = GenerationsUtils.registerBlock(SHRINES, name, blockSupplier);
-		GenerationsItems.ITEMS.register(name, () -> new BlockItemWithLang(block.get(), new Item.Properties().arch$tab(GenerationsCreativeTabs.SHRINES)));
+		GenerationsItems.ITEMS.register(name, () -> new BlockItemWithLang(block.get(), new Item.Properties()));
 		return block;
 	}
 

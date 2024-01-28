@@ -11,7 +11,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.WoodType;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -39,7 +38,7 @@ public class GenerationsWood {
     public static final RegistrySupplier<TrapDoorBlock> ULTRA_JUNGLE_TRAPDOOR = registerBlockItem("ultra_jungle_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_TRAPDOOR), GenerationsBlockSetTypes.ULTRA_JUNGLE));
     public static final RegistrySupplier<DoorBlock> ULTRA_JUNGLE_DOOR = registerBlockItem("ultra_jungle_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_DOOR), GenerationsBlockSetTypes.ULTRA_JUNGLE));
     public static final RegistrySupplier<FenceBlock>  ULTRA_JUNGLE_FENCE = registerBlockItem("ultra_jungle_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE)));
-    public static final RegistrySupplier<FenceGateBlock> ULTRA_JUNGLE_FENCE_GATE = registerBlockItem("ultra_jungle_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE), WoodType.JUNGLE));
+    public static final RegistrySupplier<FenceGateBlock> ULTRA_JUNGLE_FENCE_GATE = registerBlockItem("ultra_jungle_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE), GenerationsWoodTypes.ULTRA_JUNGLE));
     public static final RegistrySupplier<StandingSignBlock> ULTRA_JUNGLE_SIGN = registerBlockWithoutItem("ultra_jungle_sign", () -> new GenerationsStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_SIGN), GenerationsWoodTypes.ULTRA_JUNGLE));
     public static final RegistrySupplier<WallSignBlock> ULTRA_JUNGLE_WALL_SIGN = registerSignWithoutItem("ultra_jungle_wall_sign", () -> new GenerationsWallSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WALL_SIGN), GenerationsWoodTypes.ULTRA_JUNGLE));
     public static final RegistrySupplier<CeilingHangingSignBlock> ULTRA_JUNGLE_HANGING_SIGN = registerBlockWithoutItem("ultra_jungle_hanging_sign", () -> new GenerationsCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_HANGING_SIGN), GenerationsWoodTypes.ULTRA_JUNGLE));
@@ -58,7 +57,7 @@ public class GenerationsWood {
     public static final RegistrySupplier<TrapDoorBlock> ULTRA_DARK_TRAPDOOR = registerBlockItem("ultra_dark_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_TRAPDOOR), GenerationsBlockSetTypes.ULTRA_DARK));
     public static final RegistrySupplier<DoorBlock> ULTRA_DARK_DOOR = registerBlockItem("ultra_dark_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_DOOR), GenerationsBlockSetTypes.ULTRA_DARK));
     public static final RegistrySupplier<FenceBlock>  ULTRA_DARK_FENCE = registerBlockItem("ultra_dark_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE)));
-    public static final RegistrySupplier<FenceGateBlock> ULTRA_DARK_FENCE_GATE = registerBlockItem("ultra_dark_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE_GATE), WoodType.DARK_OAK));
+    public static final RegistrySupplier<FenceGateBlock> ULTRA_DARK_FENCE_GATE = registerBlockItem("ultra_dark_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE_GATE), GenerationsWoodTypes.ULTRA_DARK));
     public static final RegistrySupplier<StandingSignBlock> ULTRA_DARK_SIGN = registerBlockWithoutItem("ultra_dark_sign", () -> new GenerationsStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_SIGN), GenerationsWoodTypes.ULTRA_DARK));
     public static final RegistrySupplier<WallSignBlock> ULTRA_DARK_WALL_SIGN = registerSignWithoutItem("ultra_dark_wall_sign", () -> new GenerationsWallSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_WALL_SIGN), GenerationsWoodTypes.ULTRA_DARK));
     public static final RegistrySupplier<CeilingHangingSignBlock> ULTRA_DARK_HANGING_SIGN = registerBlockWithoutItem("ultra_dark_hanging_sign", () -> new GenerationsCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_HANGING_SIGN), GenerationsWoodTypes.ULTRA_DARK));
@@ -86,7 +85,7 @@ public class GenerationsWood {
     public static final RegistrySupplier<Block> GHOST_BOOKSHELF = registerBlockItem("ghost_bookshelf", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-        GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
+        GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
     }
 
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
