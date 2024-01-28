@@ -1,10 +1,10 @@
 {
-  "species": "cobblemon:sharpedo",
-  "order": 3,
+  "species": "cobblemon:palafin",
+  "order": 5,
   "variations": [
     {
-      "poser": "generations_core:sharpedo",
-      "model": "generations_core:sharpedo.pk",
+      "poser": "generations_core:palafin",
+      "model": "generations_core:palafin.pk",
       "texture": "pk:normal",
       "layers": []
     },
