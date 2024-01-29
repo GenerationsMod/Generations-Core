@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.util.GenerationsItemUtils;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
@@ -124,7 +125,7 @@ public class GenerationsUtilityBlocks {
 
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
 		RegistrySupplier<T> block = registerBlock(name, blockSupplier);
-		register(name, properties -> new BlockItem(block.get(), properties));
+		register(name, properties -> GenerationsItemUtils.generateBlockItem(block.get(), properties));
 		return block;
 	}
 

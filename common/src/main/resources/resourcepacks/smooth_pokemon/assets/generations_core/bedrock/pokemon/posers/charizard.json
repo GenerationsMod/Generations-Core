@@ -5,6 +5,16 @@
   "profileTranslation": [ 0, 0.0, 0 ],
   "faint": "pk(generations_core:charizard, faintstart)",
   "poses": {
+    "battle-standing": {
+      "animations": [
+        "pk(generations_core:charizard.pk, battleidle)"
+      ],
+      "poseName": "battle-standing",
+      "poseTypes": [
+        "STAND"
+      ],
+      "isBattle": true
+    },
     "standing": {
       "animations": [
         "pk(generations_core:charizard.pk, idle)"

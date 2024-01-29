@@ -45,7 +45,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
             var y = block.getHeightValue(state);
             var z = block.adjustZ(block.getLengthValue(state));
 
-            return pos.relative(facing.getClockWise(), x).relative(Direction.DOWN, y).relative(facing, z);
+            return block.adjustBlockPos(pos, facing, x, y, z, false);
         }
 
         return pos;
@@ -94,7 +94,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     protected BlockState createDefaultState() {
-        return setSize(super.createDefaultState().setValue(FACING, Direction.NORTH), 0, 0, 0);
+        return setSize(super.createDefaultState().setValue(FACING, Direction.NORTH), getBaseX(), 0, getBaseZ());
     }
 
     @Override
@@ -129,17 +129,13 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
-        var base = pos;
 
-        for (int x = 0; x < width + 1; x++) {
-            for (int y = 0; y < height + 1; y++) {
-                for (int z = 0; z < length + 1; z++) {
+        for (int x = 0; x < width /*+ 1*/; x++) {
+            for (int z = 0; z < length /*+ 1*/; z++) {
+                for (int y = 0; y < height /*+ 1*/; y++) {
                     if(!validPosition(x,y,z)) continue;
 
-                    var adjustedX = adjustX(x);
-                    var adjustedZ = adjustZ(z);
-
-                    var blockPos = base.relative(dir.getCounterClockWise(), adjustedX).relative(Direction.UP, y).relative(dir, adjustedZ);
+                    var blockPos = adjustBlockPos(pos, dir, x, y, z, true);
 
                     if(!(level.getBlockState(blockPos).canBeReplaced())) {
                         return false;
@@ -151,35 +147,36 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         return true;
     }
 
+    protected BlockPos adjustBlockPos(BlockPos pos, Direction dir, int x, int y, int z, boolean b) {
+        return b ? pos.relative(dir.getCounterClockWise(), adjustX(x)).relative(Direction.UP, y).relative(dir.getOpposite(), adjustZ(z)) : pos.relative(dir.getClockWise(), adjustX(x)).relative(Direction.DOWN, y).relative(dir, adjustZ(z));
+    }
+
     protected boolean validPosition(int x, int y, int z) {
         return true;
     }
 
     protected boolean matches(BlockState state, int x, int y, int z) {
-        return !validPosition(x, y, z) || getWidthValue(state) == x && getHeightValue(state) == y && getLengthValue(state) == z;
-    }
-
-    @Override
-    public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
-        return super.canBeReplaced(state, useContext);
+        return getWidthValue(state) == x && getHeightValue(state) == y && getLengthValue(state) == z;
     }
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         var dir = state.getValue(FACING);
-        var base = getBaseBlockPos(pos, level.getBlockState(pos));
+        var base = getBaseBlockPos(pos, state);
 
         for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                for (int z = 0; z < length; z++) {
+            for (int z = 0; z < length; z++) {
+                for (int y = 0; y < height; y++) {
                     if(!validPosition(x,y,z)) continue;
 
                     var adjustedX = adjustX(x);
                     var adjustedZ = adjustZ(z);
 
-                    var blockPos = base.relative(dir.getCounterClockWise(), adjustedX).relative(Direction.UP, y).relative(dir, adjustedZ);
+                    var blockPos = base.relative(dir.getCounterClockWise(), adjustedX).relative(Direction.UP, y).relative(dir.getOpposite(), adjustedZ);
 
-                    if(!matches(level.getBlockState(blockPos), x, y, z)) return false;
+                    if(!matches(level.getBlockState(blockPos), x, y, z)) {
+                        return false;
+                    }
                 }
             }
         }
@@ -191,20 +188,16 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     public void playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, Player player) {
         pos = getBaseBlockPos(pos, state);
         var facing = state.getValue(FACING);
-        var rightDir = facing.getCounterClockWise();
-        var backDir = facing.getOpposite();
 
         for (int x = 0; x <= width; x++) {
-            for (int y = 0; y <= height; y++) {
-                for (int z = 0; z <= length; z++) {
+            for (int z = 0; z <= length; z++) {
+                for (int y = 0; y <= height; y++) {
                     if(!validPosition(x,y, z)) continue;
 
-                    var adjustedX = adjustX(x);
-                    var adjustedZ = adjustZ(z);
 
-                    var blockPos = pos.relative(rightDir, adjustedX).relative(Direction.UP, y).relative(backDir, adjustedZ);
+                    var blockPos = adjustBlockPos(pos, facing, x, y,z, true);
 
-                    level.destroyBlock(blockPos, adjustedX == 0 && y == 0 && adjustedZ == 0);
+                    level.destroyBlock(blockPos, !player.isCreative() && x == getBaseX() && y == 0 && z == getBaseZ());
                 }
             }
         }
@@ -245,11 +238,11 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         };
     }
 
-    @Override
-    public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
-        if(canSurvive(state, level, currentPos)) return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
-        else return Blocks.AIR.defaultBlockState();
-    }
+//    @Override
+//    public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
+//        if(canSurvive(state, level, currentPos)) return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
+//        else return Blocks.AIR.defaultBlockState();
+//    }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
@@ -262,8 +255,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     @Override
     public AABB computeRenderBoundingBox(Level level, BlockPos pos, BlockState state) {
-        var facing = state.getValue(FACING);
-        return new AABB(pos, pos.relative(facing.getCounterClockWise(), width + 1).relative(Direction.UP, height + 1).relative(facing.getOpposite(), length + 1));
+        return new AABB(pos, adjustBlockPos(getBaseBlockPos(pos, state), state.getValue(FACING), width + 1, height + 1, length + 1, true));
     }
 
     @Override
@@ -277,19 +269,13 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        var facing = state.getValue(FACING);
-        var rightDir = facing.getCounterClockWise();
-        var backDir = facing.getOpposite();
-
         for (int x = 0; x <= width; x++) {
-            for (int y = 0; y <= height; y++) {
-                for (int z = 0; z <= length; z++) {
+            for (int z = 0; z <= length; z++) {
+                for (int y = 0; y <= height; y++) {
                     if(!validPosition(x,y, z)) continue;
-                    var adjustedX = adjustX(x);
-                    var adjustedZ = adjustZ(z);
 
-                    if(adjustedX == 0 && y == 0 && adjustedZ == 0) continue;
-                    var blockPos = pos.relative(rightDir, adjustedX).relative(Direction.UP, y).relative(backDir, adjustedZ);
+                    if(x == getBaseX() && y == 0 && z == getBaseZ()) continue;
+                    var blockPos = adjustBlockPos(pos, state.getValue(FACING), x, y, z, true);;
                     level.setBlock(blockPos, setSize(state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER), x, y, z), 2);
                 }
             }

@@ -50,7 +50,7 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation WHITE_HEALER = block("utility_blocks/healer.pk");
     public static final ResourceLocation VENDING_MACHINE = block("utility_blocks/vending_machine.pk");
     public static final ResourceLocation BENCH = block("decorations/bench.pk");
-    public static final ResourceLocation BLUE_DESK = block("decorations/blue_desk.pk");
+    public static final ResourceLocation SHELF = block("decorations/shelf.pk");
     public static final ResourceLocation BOOKSHELF = block("decorations/bookshelf.pk");
     public static final ResourceLocation COUCH = block("decorations/couch.pk");
     public static final ResourceLocation CUSHION_CHAIR = block("decorations/cushion_chair.pk");

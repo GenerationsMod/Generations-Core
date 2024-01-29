@@ -4,13 +4,18 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.api.player.AccountInfo;
+import generations.gg.generations.core.generationscore.util.GenerationsItemUtils;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.item.GenericRotatableBlockItem;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
+import generations.gg.generations.core.generationscore.world.level.block.de.WorkDeskBlock;
+import generations.gg.generations.core.generationscore.world.level.block.deco.ShelfBlock;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock.DisplayState;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -68,6 +73,12 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> DESK = registerDecorationItem("desk", () -> new DeskBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(1.0f).sound(SoundType.WOOD)));
 
     public static final RegistrySupplier<Block> FRIDGE = registerDecorationItem("fridge", () -> new FridgeBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(.5f)));
+
+    public static final RegistrySupplier<Block> WORK_DESK = registerDecorationItem("work_desk", () -> new WorkDeskBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(1.0f)));
+    public static final RegistrySupplier<Block> SHELF = registerDecorationItem("shelf", () -> new ShelfBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1.0f)));
+
+    public static final RegistrySupplier<Block> BOOK_SHELF = registerDecorationItem("book_shelf", () -> new BookShelfBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(1.0f).requiresCorrectToolForDrops()));
+
 
     public static final RegistrySupplier<Block> POKEBALL_PILLAR = registerDecorationItem("pokeball_pillar", () -> new PokeballPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(1.0f)));
 
@@ -143,7 +154,7 @@ public class GenerationsDecorationBlocks {
 
     private static <T extends Block> RegistrySupplier<T> registerDecorationItem(String name, Supplier<T> blockSupplier) {
         RegistrySupplier<T> block = registerBlock(name, blockSupplier);
-        register(name, properties -> new BlockItem(block.get(), properties));
+        register(name, properties -> GenerationsItemUtils.generateBlockItem(block.get(), properties));
         return block;
     }
 
