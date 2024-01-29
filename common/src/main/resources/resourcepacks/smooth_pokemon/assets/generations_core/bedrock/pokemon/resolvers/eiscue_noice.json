@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:eiscue",
+  "order": 3,
+  "variations": [
+    {
+      "aspects": ["no_ice"],
+      "poser": "generations_core:eiscue_noice",
+      "model": "generations_core:eiscue_noice.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "no_ice",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

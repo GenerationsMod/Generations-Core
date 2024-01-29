@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:tynamo",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:tynamo",
+      "model": "generations_core:tynamo.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

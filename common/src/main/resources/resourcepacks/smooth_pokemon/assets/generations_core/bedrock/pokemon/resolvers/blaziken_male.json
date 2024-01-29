@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:blaziken",
+  "order": 5,
+  "variations": [
+    {
+      "poser": "generations_core:blaziken_male",
+      "model": "generations_core:blaziken_male.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

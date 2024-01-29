@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:gligar",
+  "order": 5,
+  "variations": [
+    {
+      "aspects": ["female"],
+      "poser": "generations_core:gligar_female",
+      "model": "generations_core:gligar_female.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "female",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

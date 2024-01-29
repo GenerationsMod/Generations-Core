@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:diglett",
+  "order": 5,
+  "variations": [
+    {
+      "aspects": ["alolan"],
+      "poser": "generations_core:diglett_alolan",
+      "model": "generations_core:diglett_alolan.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "alolan",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}
