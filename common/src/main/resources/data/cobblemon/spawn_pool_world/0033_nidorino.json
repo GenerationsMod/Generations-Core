@@ -7,19 +7,19 @@
             "id": "nidorino-1",
             "pokemon": "nidorino",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "16-36",
+            "level": "16-37",
             "weight": 0.9,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_savanna"
-                ],
-                "timeRange": "day"
+                ]
             }
         }
     ]

@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -12,25 +12,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "ultra-rare",
-            "level": "5-16",
-            "weight": 9.0,
-            "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_coast"
-                ]
-            }
-        },
-        {
-            "id": "popplio-2",
-            "pokemon": "popplio",
-            "presets": [
-                "underwater"
-            ],
-            "type": "pokemon",
-            "context": "submerged",
-            "bucket": "ultra-rare",
-            "level": "5-16",
+            "level": "5-32",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,

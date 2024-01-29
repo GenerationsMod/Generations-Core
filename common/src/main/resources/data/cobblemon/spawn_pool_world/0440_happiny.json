@@ -13,14 +13,44 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
-            "level": "4-22",
+            "level": "1-22",
             "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_overworld"
-                ],
-                "timeRange": "day"
+                ]
+            }
+        },
+        {
+            "id": "happiny-2",
+            "pokemon": "happiny",
+            "presets": [
+                "natural",
+                "village"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "1-22",
+            "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
             }
         }
     ]

@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -14,6 +14,12 @@
             "bucket": "common",
             "level": "36-47",
             "weight": 0.6,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "isThundering": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -28,7 +34,7 @@
             "id": "galvantula-2",
             "pokemon": "galvantula",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
@@ -43,7 +49,25 @@
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
+                ]
+            }
+        },
+        {
+            "id": "galvantula-3",
+            "pokemon": "galvantula",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "36-47",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "terralith:cave/infested_caves"
                 ]
             }
         }

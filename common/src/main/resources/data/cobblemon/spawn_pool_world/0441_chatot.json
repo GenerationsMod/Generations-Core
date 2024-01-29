@@ -13,21 +13,54 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "5-60",
-            "weight": 9.0,
+            "level": "16-41",
+            "weight": 10.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_temperate",
+                    "#cobblemon:is_jungle"
+                ],
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "chatot-2",
+            "pokemon": "chatot",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "16-41",
+            "weight": 6.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_tropical_island"
+                ],
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "chatot-3",
+            "pokemon": "chatot",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "16-41",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
                     "#cobblemon:is_sky"
                 ],
-                "timeRange": "day",
-                "isRaining": false
-            },
-            "anticondition": {
-                "biomes": [
-                    "#cobblemon:is_spooky"
-                ]
+                "timeRange": "day"
             }
         }
     ]

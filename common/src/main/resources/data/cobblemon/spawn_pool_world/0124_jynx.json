@@ -13,13 +13,43 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "30-45",
-            "weight": 0.2,
+            "level": "30-46",
+            "weight": 1.0,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_snowy",
-                    "#cobblemon:is_tundra"
+                    "#cobblemon:is_freezing"
+                ]
+            }
+        },
+        {
+            "id": "jynx-2",
+            "pokemon": "jynx",
+            "presets": [
+                "natural",
+                "village"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "30-46",
+            "weight": 1.0,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_freezing"
                 ]
             }
         }

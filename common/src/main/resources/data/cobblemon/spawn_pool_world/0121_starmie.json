@@ -12,8 +12,8 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "35-52",
-            "weight": 0.1,
+            "level": "29-52",
+            "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -31,12 +31,18 @@
             "type": "pokemon",
             "context": "seafloor",
             "bucket": "uncommon",
-            "level": "35-52",
-            "weight": 0.06,
+            "level": "29-52",
+            "weight": 0.6,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_ocean"
+                    "#cobblemon:is_ocean"
                 ]
             }
         }

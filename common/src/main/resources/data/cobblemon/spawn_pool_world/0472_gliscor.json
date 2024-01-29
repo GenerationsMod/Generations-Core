@@ -7,19 +7,37 @@
             "id": "gliscor-1",
             "pokemon": "gliscor",
             "presets": [
-                "natural"
+                "natural",
+                "treetop"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "32-50",
-            "weight": 0.5,
+            "level": "38-51",
+            "weight": 0.6,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_desert"
+                    "#cobblemon:is_badlands"
                 ],
                 "timeRange": "night"
+            }
+        },
+        {
+            "id": "gliscor-2",
+            "pokemon": "gliscor",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "38-51",
+            "weight": 0.2,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_mountain"
+                ]
             }
         }
     ]

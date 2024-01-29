@@ -12,29 +12,43 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "4-20",
-            "weight": 5.0,
+            "level": "1-24",
+            "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_floral"
+                    "#cobblemon:is_temperate"
                 ]
             }
         },
         {
-            "id": "zigzagoon-galarian-1",
+            "id": "zigzagoon-galarian-2",
             "pokemon": "zigzagoon galarian",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "4-20",
-            "weight": 5.0,
+            "level": "1-24",
+            "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
-                "timeRange": "night",
+                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_floral"
+                    "#cobblemon:is_taiga"
                 ]
             }
         }

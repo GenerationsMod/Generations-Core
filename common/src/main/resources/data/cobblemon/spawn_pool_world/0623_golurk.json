@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -7,23 +7,17 @@
             "id": "golurk-1",
             "pokemon": "golurk",
             "presets": [
-                "underground"
+                "ancient_city"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
             "level": "43-48",
-            "weight": 18.0,
+            "weight": 1.0,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_abyss"
-                ],
-                "neededNearbyBlocks": [
-                    "minecraft:deepslate_bricks",
-                    "minecraft:cracked_deepslate_bricks",
-                    "minecraft:deepslate_tiles",
-                    "minecraft:polished_deepslate"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
@@ -31,15 +25,55 @@
             "id": "golurk-2",
             "pokemon": "golurk",
             "presets": [
-                "ruined_structures"
+                "trail_ruins"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
             "level": "43-48",
-            "weight": 0.2,
+            "weight": 2.0,
             "condition": {
-                "canSeeSky": false
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        },
+        {
+            "id": "golurk-3",
+            "pokemon": "golurk",
+            "presets": [
+                "natural",
+                "desert_pyramid",
+                "jungle_pyramid"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "43-48",
+            "weight": 2.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        },
+        {
+            "id": "golurk-4",
+            "pokemon": "golurk",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "43-48",
+            "weight": 0.6,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:howling_constructs"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
             }
         }
     ]

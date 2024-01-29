@@ -4,7 +4,7 @@
     "neededUninstalledMods": [],
     "spawns": [
         {
-            "id": "tranquill-1",
+            "id": "tranquill-2",
             "pokemon": "tranquill",
             "presets": [
                 "natural",
@@ -12,21 +12,67 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "21-35",
-            "weight": 9.0,
+            "bucket": "common",
+            "level": "21-36",
+            "weight": 0.9,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_temperate",
+                    "#cobblemon:is_mountain",
                     "#cobblemon:is_sky"
                 ],
-                "timeRange": "day",
-                "isRaining": false
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "tranquill-3",
+            "pokemon": "tranquill",
+            "presets": [
+                "natural",
+                "urban"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "21-36",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "timeRange": "day"
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_spooky"
+                    "#cobblemon:is_arid",
+                    "#cobblemon:is_tundra"
+                ]
+            }
+        },
+        {
+            "id": "tranquill-4",
+            "pokemon": "tranquill",
+            "presets": [
+                "natural",
+                "village"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "21-36",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "timeRange": "day"
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_arid",
+                    "#cobblemon:is_tundra"
                 ]
             }
         }

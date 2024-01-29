@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -13,11 +13,10 @@
             "context": "grounded",
             "bucket": "common",
             "level": "38-43",
-            "weight": 0.2,
+            "weight": 0.6,
             "condition": {
                 "biomes": [
-                    "minecraft:basalt_deltas",
-                    "minecraft:nether_wastes"
+                    "#cobblemon:is_nether_basalt"
                 ]
             }
         },
@@ -76,7 +75,7 @@
                     "#cobblemon:is_volcanic"
                 ],
                 "neededNearbyBlocks": [
-                    "minecraft:lava"
+                    "#minecraft:lava"
                 ]
             }
         },

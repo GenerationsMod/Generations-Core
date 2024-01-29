@@ -7,22 +7,17 @@
             "id": "shuckle-1",
             "pokemon": "shuckle",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "5-55",
-            "weight": 0.06,
+            "level": "16-51",
+            "weight": 6.0,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_overworld"
-                ]
-            },
-            "anticondition": {
-                "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_lush"
                 ]
             }
         }

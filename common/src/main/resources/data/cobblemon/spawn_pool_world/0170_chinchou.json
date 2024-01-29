@@ -10,15 +10,16 @@
                 "underwater"
             ],
             "type": "pokemon",
-            "context": "seafloor",
-            "bucket": "uncommon",
-            "level": "12-30",
-            "weight": 9.9,
+            "context": "submerged",
+            "bucket": "common",
+            "level": "8-33",
+            "weight": 5.4,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_ocean"
-                ]
+                    "#cobblemon:is_deep_ocean"
+                ],
+                "maxY": 48
             }
         }
     ]

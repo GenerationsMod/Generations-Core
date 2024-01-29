@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -12,31 +12,37 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "5-36",
+            "level": "5-30",
             "weight": 1.8,
             "condition": {
-                "canSeeSky": true,
-                "timeRange": "night",
+                "canSeeSky": false,
                 "biomes": [
                     "#cobblemon:is_desert"
+                ],
+                "minY": 0
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
         {
-            "id": "yamask-galarian1",
-            "pokemon": "yamask galarian",
+            "id": "yamask-2",
+            "pokemon": "yamask",
             "presets": [
-                "natural"
+                "natural",
+                "desert_pyramid"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "5-36",
-            "weight": 1.8,
+            "bucket": "common",
+            "level": "5-30",
+            "weight": 90.0,
             "condition": {
-                "timeRange": "night",
+                "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_desert"
+                    "#cobblemon:is_overworld"
                 ]
             }
         }

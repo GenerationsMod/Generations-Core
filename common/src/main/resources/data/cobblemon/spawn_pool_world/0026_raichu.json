@@ -12,14 +12,19 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "33-48",
+            "level": "27-49",
             "weight": 0.02,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "isThundering": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_forest"
-                ],
-                "timeRange": "day"
+                ]
             },
             "anticondition": {
                 "biomes": [
@@ -28,7 +33,7 @@
             }
         },
         {
-            "id": "raichu-alolan-1",
+            "id": "raichu-alolan-2",
             "pokemon": "raichu alolan",
             "presets": [
                 "natural"
@@ -36,14 +41,20 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "33-48",
-            "weight": 9.0,
+            "level": "27-49",
+            "weight": 0.2,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "isThundering": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_beach"
-                ],
-                "timeRange": "day"
+                    "#cobblemon:is_beach",
+                    "#cobblemon:is_tropical_island"
+                ]
             }
         }
     ]

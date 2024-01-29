@@ -13,19 +13,59 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "12-31",
-            "weight": 1.8,
+            "level": "6-31",
+            "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_arid",
-                    "#cobblemon:is_taiga",
-                    "#cobblemon:is_temperate"
+                    "#cobblemon:is_overworld"
                 ]
             },
             "anticondition": {
                 "biomes": [
                     "#cobblemon:is_freezing"
+                ]
+            }
+        },
+        {
+            "id": "mimejr-2",
+            "pokemon": "mimejr",
+            "presets": [
+                "natural",
+                "village"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "6-31",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_freezing"
+                ]
+            }
+        },
+        {
+            "id": "mimejr-3",
+            "pokemon": "mimejr",
+            "presets": [
+                "mansion"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "6-31",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
                 ]
             }
         }

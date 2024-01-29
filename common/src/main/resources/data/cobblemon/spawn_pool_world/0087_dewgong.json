@@ -7,17 +7,18 @@
             "id": "dewgong-1",
             "pokemon": "dewgong",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "34-47",
+            "level": "34-48",
             "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_frozen"
+                    "#cobblemon:is_frozen_ocean"
                 ]
             }
         },
@@ -30,12 +31,12 @@
             "type": "pokemon",
             "context": "submerged",
             "bucket": "common",
-            "level": "34-47",
+            "level": "34-48",
             "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_frozen"
+                    "#cobblemon:is_frozen_ocean"
                 ]
             }
         }

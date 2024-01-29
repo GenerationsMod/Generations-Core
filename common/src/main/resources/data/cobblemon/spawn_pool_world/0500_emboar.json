@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -15,9 +15,11 @@
             "level": "36-53",
             "weight": 0.1,
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
-                    "minecraft:crimson_forest"
-                ]
+                    "#cobblemon:is_plains"
+                ],
+                "isRaining": false
             }
         },
         {
@@ -32,11 +34,10 @@
             "level": "36-53",
             "weight": 0.1,
             "condition": {
-                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_plains"
-                ],
-                "isRaining": false
+                    "#cobblemon:is_nether_crimson",
+                    "#cobblemon:is_nether_overgrowth"
+                ]
             }
         }
     ]

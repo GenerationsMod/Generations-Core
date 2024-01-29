@@ -12,12 +12,68 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "ultra-rare",
-            "level": "33-52",
+            "level": "28-53",
             "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_sandy"
+                ]
+            }
+        },
+        {
+            "id": "flareon-2",
+            "pokemon": "flareon",
+            "presets": [
+                "natural",
+                "urban"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "28-53",
+            "weight": 0.025,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        },
+        {
+            "id": "flareon-3",
+            "pokemon": "flareon",
+            "presets": [
+                "natural",
+                "village"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "28-53",
+            "weight": 0.025,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        },
+        {
+            "id": "flareon-4",
+            "pokemon": "flareon",
+            "presets": [
+                "mansion"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "28-53",
+            "weight": 0.125,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
                 ]
             }
         }

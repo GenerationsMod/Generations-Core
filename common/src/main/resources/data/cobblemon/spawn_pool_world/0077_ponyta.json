@@ -12,14 +12,19 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "20-41",
+            "level": "16-41",
             "weight": 5.4,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_grassland"
                 ],
-                "timeRange": "day",
                 "isRaining": false
             }
         },
@@ -31,32 +36,40 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "20-41",
+            "bucket": "common",
+            "level": "16-41",
             "weight": 5.4,
             "condition": {
                 "biomes": [
-                    "minecraft:nether_wastes"
+                    "#cobblemon:is_nether_overgrowth",
+                    "#cobblemon:is_nether_wasteland"
                 ]
             }
         },
         {
-            "id": "ponyta-galarian-1",
+            "id": "ponyta-galarian-3",
             "pokemon": "ponyta galarian",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "20-41",
-            "weight": 5.4,
+            "level": "16-41",
+            "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
+                    "#cobblemon:is_floral",
                     "#cobblemon:is_magical"
-                ],
-                "isRaining": false
+                ]
             }
         }
     ]

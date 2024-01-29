@@ -7,20 +7,22 @@
             "id": "hoothoot-1",
             "pokemon": "hoothoot",
             "presets": [
-                "natural"
+                "natural",
+                "treetop"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "5-24",
+            "level": "1-26",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
-                "timeRange": "night",
                 "biomes": [
-                    "#cobblemon:is_taiga",
-                    "#cobblemon:is_forest"
-                ]
+                    "#cobblemon:is_forest",
+                    "#cobblemon:is_sky",
+                    "#cobblemon:is_spooky"
+                ],
+                "timeRange": "night"
             }
         }
     ]

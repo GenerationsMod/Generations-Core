@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -7,17 +7,17 @@
             "id": "mawile-1",
             "pokemon": "mawile",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "16-38",
+            "level": "13-38",
             "weight": 6.0,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
@@ -25,12 +25,12 @@
             "id": "mawile-2",
             "pokemon": "mawile",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
-            "level": "16-38",
+            "level": "13-38",
             "weight": 6.0,
             "condition": {
                 "canSeeSky": false,
@@ -40,7 +40,7 @@
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         }

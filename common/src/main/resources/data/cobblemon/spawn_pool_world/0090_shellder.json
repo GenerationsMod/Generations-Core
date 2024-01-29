@@ -12,12 +12,35 @@
             "type": "pokemon",
             "context": "seafloor",
             "bucket": "common",
-            "level": "12-30",
-            "weight": 9.9,
+            "level": "6-31",
+            "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_ocean"
+                    "#cobblemon:is_cold_ocean"
+                ]
+            }
+        },
+        {
+            "id": "shellder-2",
+            "pokemon": "shellder",
+            "presets": [
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "seafloor",
+            "bucket": "common",
+            "level": "6-31",
+            "weight": 5.4,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_cold_ocean"
                 ]
             }
         }

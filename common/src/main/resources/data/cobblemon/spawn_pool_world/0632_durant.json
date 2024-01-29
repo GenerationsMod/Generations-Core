@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -12,9 +12,10 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "16-48",
+            "level": "23-48",
             "weight": 2.0,
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_badlands",
                     "#cobblemon:is_hills"
@@ -29,12 +30,31 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "16-48",
+            "bucket": "common",
+            "level": "23-48",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_badlands",
+                    "#cobblemon:is_hills"
+                ]
+            }
+        },
+        {
+            "id": "durant-3",
+            "pokemon": "durant",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "23-48",
             "weight": 10.0,
             "condition": {
                 "biomes": [
-                    "#minecraft:is_nether"
+                    "#cobblemon:is_nether_mountain"
                 ]
             }
         }

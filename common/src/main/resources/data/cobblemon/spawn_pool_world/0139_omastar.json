@@ -12,7 +12,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "ultra-rare",
-            "level": "40-49",
+            "level": "40-50",
             "weight": 1.0,
             "condition": {
                 "biomes": [
@@ -29,7 +29,7 @@
             "type": "pokemon",
             "context": "submerged",
             "bucket": "ultra-rare",
-            "level": "40-49",
+            "level": "40-50",
             "weight": 1.0,
             "condition": {
                 "biomes": [

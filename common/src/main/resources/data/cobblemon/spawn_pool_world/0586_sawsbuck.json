@@ -7,13 +7,20 @@
             "id": "sawsbuck-1",
             "pokemon": "sawsbuck",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "34-47",
+            "level": "34-48",
             "weight": 0.2,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -21,14 +28,32 @@
                     "#cobblemon:is_forest",
                     "#cobblemon:is_hills",
                     "#cobblemon:is_plains",
-                    "#cobblemon:is_snowy",
+                    "#cobblemon:is_snowy_forest",
                     "#cobblemon:is_taiga"
-                ],
-                "timeRange": "day"
+                ]
             },
             "anticondition": {
                 "biomes": [
                     "#cobblemon:is_savanna"
+                ]
+            }
+        },
+        {
+            "id": "sawsbuck-2",
+            "pokemon": "sawsbuck",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "34-48",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:floral_meadow"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
                 ]
             }
         }

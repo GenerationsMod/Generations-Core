@@ -7,16 +7,25 @@
             "id": "swellow-1",
             "pokemon": "swellow",
             "presets": [
-                "natural"
+                "natural",
+                "treetop"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "22-52",
-            "weight": 5.0,
+            "bucket": "common",
+            "level": "22-46",
+            "weight": 1.0,
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_floral"
+                    "#cobblemon:is_sky",
+                    "#cobblemon:is_temperate"
+                ],
+                "timeRange": "day"
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_spooky"
                 ]
             }
         }

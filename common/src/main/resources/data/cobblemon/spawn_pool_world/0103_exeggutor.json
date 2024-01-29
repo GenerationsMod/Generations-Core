@@ -11,9 +11,9 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "33-53",
-            "weight": 0.02,
+            "bucket": "common",
+            "level": "28-53",
+            "weight": 0.2,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -22,7 +22,7 @@
             }
         },
         {
-            "id": "exeggutor-alolan-1",
+            "id": "exeggutor-alolan-2",
             "pokemon": "exeggutor alolan",
             "presets": [
                 "natural"
@@ -30,12 +30,13 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "33-53",
-            "weight": 0.02,
+            "level": "28-53",
+            "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_beach"
+                    "#cobblemon:is_beach",
+                    "#cobblemon:is_tropical_island"
                 ]
             }
         }

@@ -7,17 +7,47 @@
             "id": "herdier-1",
             "pokemon": "herdier",
             "presets": [
-                "natural"
+                "natural",
+                "urban"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "16-40",
-            "weight": 9.0,
+            "bucket": "common",
+            "level": "16-37",
+            "weight": 0.54,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_grassland"
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_desert"
+                ]
+            }
+        },
+        {
+            "id": "herdier-2",
+            "pokemon": "herdier",
+            "presets": [
+                "natural",
+                "village"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "16-37",
+            "weight": 0.54,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_desert"
                 ]
             }
         }

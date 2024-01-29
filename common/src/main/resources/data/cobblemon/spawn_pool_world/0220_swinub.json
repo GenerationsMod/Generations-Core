@@ -7,12 +7,13 @@
             "id": "swinub-1",
             "pokemon": "swinub",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "5-25",
+            "level": "1-25",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,

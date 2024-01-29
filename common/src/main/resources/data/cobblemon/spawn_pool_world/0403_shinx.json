@@ -7,16 +7,18 @@
             "id": "shinx-1",
             "pokemon": "shinx",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "common",
-            "level": "5-30",
-            "weight": 5.0,
+            "bucket": "uncommon",
+            "level": "1-26",
+            "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
+                    "#cobblemon:is_desert",
                     "#cobblemon:is_savanna"
                 ]
             }

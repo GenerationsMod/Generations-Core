@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -23,7 +23,7 @@
             }
         },
         {
-            "id": "lombre-1",
+            "id": "lombre-2",
             "pokemon": "lombre",
             "presets": [
                 "water_surface"

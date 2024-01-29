@@ -7,13 +7,13 @@
             "id": "onix-1",
             "pokemon": "onix",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "20-38",
-            "weight": 5.94,
+            "level": "14-39",
+            "weight": 5.4,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
@@ -22,7 +22,24 @@
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
+                ]
+            }
+        },
+        {
+            "id": "onix-2",
+            "pokemon": "onix",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "14-39",
+            "weight": 1.8,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_basalt"
                 ]
             }
         }

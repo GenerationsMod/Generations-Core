@@ -12,12 +12,29 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "ultra-rare",
-            "level": "16-40",
-            "weight": 1.0,
+            "level": "16-41",
+            "weight": 0.9,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_desert"
+                    "#cobblemon:is_badlands"
+                ]
+            }
+        },
+        {
+            "id": "crocalor-2",
+            "pokemon": "crocalor",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "16-41",
+            "weight": 0.9,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_wasteland"
                 ]
             }
         }

@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -12,12 +12,12 @@
             "type": "pokemon",
             "context": "submerged",
             "bucket": "uncommon",
-            "level": "12-30",
+            "level": "6-31",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_ocean"
+                    "#cobblemon:is_ocean"
                 ]
             }
         }

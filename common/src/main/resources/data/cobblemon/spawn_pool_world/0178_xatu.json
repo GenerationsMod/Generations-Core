@@ -12,14 +12,33 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
+            "bucket": "common",
             "level": "25-47",
-            "weight": 1.0,
+            "weight": 0.6,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_badlands",
                     "#cobblemon:is_plateau"
+                ],
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "xatu-3",
+            "pokemon": "xatu",
+            "presets": [
+                "trail_ruins"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-47",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
                 ],
                 "timeRange": "day"
             }

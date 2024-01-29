@@ -13,7 +13,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "ultra-rare",
-            "level": "5-16",
+            "level": "5-32",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
@@ -24,7 +24,7 @@
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_snowy"
+                    "#cobblemon:is_snowy_forest"
                 ]
             }
         }

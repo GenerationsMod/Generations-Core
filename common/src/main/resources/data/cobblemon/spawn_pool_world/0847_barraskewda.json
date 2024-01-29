@@ -7,16 +7,24 @@
             "id": "barraskewda-1",
             "pokemon": "barraskewda",
             "presets": [
-                "river",
                 "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",
-            "bucket": "uncommon",
-            "level": "10-32",
-            "weight": 9.0,
+            "bucket": "common",
+            "level": "26-49",
+            "weight": 0.2,
             "condition": {
-                "canSeeSky": true
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_ocean",
+                    "minecraft:mangrove_swamp"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_freezing"
+                ]
             }
         }
     ]

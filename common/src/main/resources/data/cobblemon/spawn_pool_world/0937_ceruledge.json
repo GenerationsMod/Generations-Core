@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -7,17 +7,55 @@
             "id": "ceruledge-1",
             "pokemon": "ceruledge",
             "presets": [
-                "natural"
+                "natural",
+                "nether_structures"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "rare",
-            "level": "20-60",
-            "weight": 4.0,
+            "bucket": "common",
+            "level": "21-53",
+            "weight": 5.0,
             "condition": {
-                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_volcanic"
+                    "#minecraft:is_nether"
+                ]
+            },
+            "drops": {
+                "amount": 5,
+                "entries": [
+                    {
+                        "item": "minecraft:blaze_rod",
+                        "quantityRange": "0-2"
+                    },
+                    {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 5.0
+                    },
+                    {
+                        "item": "cobblemon:malicious_armor",
+                        "percentage": 5.0
+                    },
+                    {
+                        "item": "cobblemon:rawst_berry",
+                        "percentage": 5.0
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ceruledge-2",
+            "pokemon": "ceruledge",
+            "presets": [
+                "ruined_portal"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "21-53",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
                 ]
             }
         }

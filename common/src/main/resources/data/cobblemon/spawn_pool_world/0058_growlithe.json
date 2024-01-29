@@ -12,22 +12,42 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "12-35",
-            "weight": 5.94,
+            "bucket": "common",
+            "level": "10-35",
+            "weight": 5.4,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_forest",
-                    "#cobblemon:is_grassland",
-                    "#cobblemon:is_snowy",
-                    "#cobblemon:is_tundra"
-                ],
-                "timeRange": "day"
+                    "#cobblemon:is_overworld"
+                ]
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_spooky"
+                    "#cobblemon:is_desert"
+                ]
+            }
+        },
+        {
+            "id": "growlithe-2",
+            "pokemon": "growlithe",
+            "presets": [
+                "natural",
+                "village"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-35",
+            "weight": 5.4,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_desert"
                 ]
             }
         },
@@ -36,7 +56,7 @@
             "pokemon": "growlithe hisuian",
             "presets": [
                 "natural",
-                "urban"
+                "village"
             ],
             "type": "pokemon",
             "context": "grounded",

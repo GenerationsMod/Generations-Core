@@ -13,7 +13,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "5-25",
+            "level": "1-25",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
@@ -21,8 +21,7 @@
                     "#cobblemon:is_temperate",
                     "#cobblemon:is_sky"
                 ],
-                "timeRange": "day",
-                "isRaining": false
+                "timeRange": "day"
             },
             "anticondition": {
                 "biomes": [

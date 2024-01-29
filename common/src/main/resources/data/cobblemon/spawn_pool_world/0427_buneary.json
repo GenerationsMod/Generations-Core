@@ -7,19 +7,21 @@
             "id": "buneary-1",
             "pokemon": "buneary",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "8-35",
-            "weight": 9.9,
+            "level": "10-35",
+            "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_forest",
                     "#cobblemon:is_hills",
-                    "#cobblemon:is_snowy"
+                    "#cobblemon:is_snowy_forest",
+                    "#cobblemon:is_taiga"
                 ]
             }
         }

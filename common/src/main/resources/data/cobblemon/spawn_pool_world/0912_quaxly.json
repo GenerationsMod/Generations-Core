@@ -7,18 +7,16 @@
             "id": "quaxly-1",
             "pokemon": "quaxly",
             "presets": [
-                "natural"
+                "natural",
+                "river"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "ultra-rare",
-            "level": "5-32",
+            "level": "5-31",
             "weight": 9.0,
             "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_river"
-                ]
+                "canSeeSky": true
             }
         }
     ]

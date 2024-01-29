@@ -7,18 +7,22 @@
             "id": "grafaiai-1",
             "pokemon": "grafaiai",
             "presets": [
-                "natural"
+                "natural",
+                "treetop",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "rare",
-            "level": "28-60",
-            "weight": 9.0,
+            "bucket": "common",
+            "level": "28-49",
+            "weight": 0.2,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_jungle"
-                ]
+                    "#cobblemon:is_jungle",
+                    "#cobblemon:is_tropical_island"
+                ],
+                "timeRange": "night"
             }
         }
     ]

@@ -12,14 +12,20 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "16-30",
-            "weight": 5.94,
+            "level": "5-30",
+            "weight": 5.4,
+            "weightMultiplier": {
+                "multiplier": 2.5,
+                "condition": {
+                    "timeRange": "twilight"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_forest"
-                ],
-                "timeRange": "twilight"
+                    "#cobblemon:is_forest",
+                    "#cobblemon:is_taiga"
+                ]
             },
             "anticondition": {
                 "biomes": [
@@ -28,7 +34,29 @@
             }
         },
         {
-            "id": "vulpix-alolan-1",
+            "id": "vulpix-2",
+            "pokemon": "vulpix",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "5-30",
+            "weight": 1.8,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_forest"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_nether_frozen"
+                ]
+            }
+        },
+        {
+            "id": "vulpix-alolan-3",
             "pokemon": "vulpix alolan",
             "presets": [
                 "natural"
@@ -36,14 +64,36 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "16-30",
-            "weight": 5.94,
+            "level": "5-30",
+            "weight": 5.4,
+            "weightMultiplier": {
+                "multiplier": 2.5,
+                "condition": {
+                    "timeRange": "twilight"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_snowy"
-                ],
-                "timeRange": "twilight"
+                    "#cobblemon:is_snowy_forest"
+                ]
+            }
+        },
+        {
+            "id": "vulpix-alolan-4",
+            "pokemon": "vulpix alolan",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "5-30",
+            "weight": 1.8,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_frozen"
+                ]
             }
         }
     ]

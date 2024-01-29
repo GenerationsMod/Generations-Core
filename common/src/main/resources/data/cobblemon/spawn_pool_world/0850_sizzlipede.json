@@ -7,17 +7,19 @@
             "id": "sizzlipede-1",
             "pokemon": "sizzlipede",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "10-30",
+            "level": "6-31",
             "weight": 5.4,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_badlands"
+                    "#cobblemon:is_badlands",
+                    "#cobblemon:is_volcanic"
                 ]
             }
         },
@@ -25,17 +27,35 @@
             "id": "sizzlipede-2",
             "pokemon": "sizzlipede",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "10-30",
+            "level": "6-31",
             "weight": 5.4,
             "condition": {
                 "biomes": [
-                    "minecraft:basalt_deltas",
-                    "minecraft:nether_wastes"
+                    "#cobblemon:is_nether_basalt"
+                ]
+            }
+        },
+        {
+            "id": "sizzlipede-3",
+            "pokemon": "sizzlipede",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "6-31",
+            "weight": 9.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_wasteland"
                 ]
             }
         }

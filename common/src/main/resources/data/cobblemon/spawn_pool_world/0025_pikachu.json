@@ -12,18 +12,48 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "12-32",
+            "level": "16-32",
             "weight": 0.18,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "isThundering": true
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_forest"
-                ],
-                "timeRange": "day"
+                ]
             },
             "anticondition": {
                 "biomes": [
                     "#cobblemon:is_spooky"
+                ]
+            }
+        },
+        {
+            "id": "pikachu-alolan-2",
+            "pokemon": "pikachu alolan",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "16-32",
+            "weight": 1.8,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "isThundering": true
+                }
+            },
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_beach",
+                    "#cobblemon:is_tropical_island"
                 ]
             }
         }

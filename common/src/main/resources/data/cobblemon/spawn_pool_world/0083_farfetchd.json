@@ -8,48 +8,57 @@
             "pokemon": "farfetchd",
             "presets": [
                 "natural",
-                "treetop"
+                "treetop",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "rare",
-            "level": "15-38",
+            "bucket": "common",
+            "level": "13-38",
             "weight": 10.0,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_temperate"
+                    "#cobblemon:is_overworld"
                 ],
-                "timeRange": "day"
-            },
-            "anticondition": {
-                "biomes": [
-                    "#cobblemon:is_spooky"
+                "neededNearbyBlocks": [
+                    "cobblemon:medicinal_leek"
                 ]
             }
         },
         {
-            "id": "farfetchd-galarian-1",
+            "id": "farfetchd-galarian-2",
             "pokemon": "farfetchd galarian",
             "presets": [
                 "natural",
-                "treetop"
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
-            "level": "15-38",
-            "weight": 10.0,
+            "level": "13-38",
+            "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_temperate"
-                ],
-                "timeRange": "day"
+                    "#cobblemon:is_forest"
+                ]
             },
             "anticondition": {
-                "biomes": [
-                    "#cobblemon:is_spooky"
+                "neededNearbyBlocks": [
+                    "#minecraft:water"
                 ]
             }
         }

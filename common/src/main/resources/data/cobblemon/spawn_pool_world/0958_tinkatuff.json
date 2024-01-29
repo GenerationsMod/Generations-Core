@@ -7,17 +7,18 @@
             "id": "tinkatuff-1",
             "pokemon": "tinkatuff",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "24-40",
-            "weight": 9.0,
+            "bucket": "rare",
+            "level": "24-38",
+            "weight": 0.9,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_mountain"
+                    "#cobblemon:is_hills"
                 ]
             }
         }

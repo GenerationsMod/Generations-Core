@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -12,7 +12,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "45-53",
+            "level": "41-54",
             "weight": 0.02,
             "condition": {
                 "canSeeSky": true,
@@ -35,53 +35,7 @@
             }
         },
         {
-            "id": "crobat-2",
-            "pokemon": "crobat",
-            "presets": [
-                "underground"
-            ],
-            "type": "pokemon",
-            "context": "grounded",
-            "bucket": "common",
-            "level": "45-53",
-            "weight": 0.1,
-            "condition": {
-                "canSeeSky": false,
-                "biomes": [
-                    "#cobblemon:is_overworld"
-                ]
-            },
-            "anticondition": {
-                "biomes": [
-                    "#cobblemon:is_abyss"
-                ]
-            }
-        },
-        {
             "id": "crobat-3",
-            "pokemon": "crobat",
-            "presets": [
-                "derelict"
-            ],
-            "type": "pokemon",
-            "context": "grounded",
-            "bucket": "uncommon",
-            "level": "45-53",
-            "weight": 0.1,
-            "condition": {
-                "canSeeSky": false,
-                "biomes": [
-                    "#cobblemon:is_overworld"
-                ]
-            },
-            "anticondition": {
-                "biomes": [
-                    "#cobblemon:is_abyss"
-                ]
-            }
-        },
-        {
-            "id": "crobat-4",
             "pokemon": "crobat",
             "presets": [
                 "natural"
@@ -89,8 +43,72 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "45-53",
+            "level": "41-54",
             "weight": 0.1,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "day"
+                }
+            },
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_deep_dark"
+                ]
+            }
+        },
+        {
+            "id": "crobat-4",
+            "pokemon": "crobat",
+            "presets": [
+                "derelict"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "41-54",
+            "weight": 0.1,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "day"
+                }
+            },
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_deep_dark"
+                ]
+            }
+        },
+        {
+            "id": "crobat-5",
+            "pokemon": "crobat",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "41-54",
+            "weight": 0.1,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [

@@ -31,7 +31,7 @@
             "id": "raticate-2",
             "pokemon": "raticate",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
@@ -40,14 +40,14 @@
             "weight": 1.0,
             "condition": {
                 "canSeeSky": false,
-                "minY": 0,
                 "biomes": [
                     "#cobblemon:is_overworld"
-                ]
+                ],
+                "minY": 0
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
@@ -64,22 +64,22 @@
             "weight": 1.0,
             "condition": {
                 "canSeeSky": false,
-                "minY": 0,
                 "biomes": [
                     "#cobblemon:is_overworld"
-                ]
+                ],
+                "minY": 0
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
         {
-            "id": "raticate-alolan-1",
+            "id": "raticate-alolan-4",
             "pokemon": "raticate alolan",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
@@ -88,19 +88,19 @@
             "weight": 1.0,
             "condition": {
                 "canSeeSky": false,
-                "maxY": 0,
                 "biomes": [
                     "#cobblemon:is_overworld"
-                ]
+                ],
+                "maxY": 0
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
         {
-            "id": "raticate-alolan-2",
+            "id": "raticate-alolan-5",
             "pokemon": "raticate alolan",
             "presets": [
                 "derelict"
@@ -112,19 +112,19 @@
             "weight": 1.0,
             "condition": {
                 "canSeeSky": false,
-                "maxY": 0,
                 "biomes": [
                     "#cobblemon:is_overworld"
-                ]
+                ],
+                "maxY": 0
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
         {
-            "id": "raticate-alolan-3",
+            "id": "raticate-alolan-6",
             "pokemon": "raticate alolan",
             "presets": [
                 "natural"
@@ -143,7 +143,7 @@
             }
         },
         {
-            "id": "raticate-alolan-4",
+            "id": "raticate-alolan-7",
             "pokemon": "raticate alolan",
             "presets": [
                 "derelict"

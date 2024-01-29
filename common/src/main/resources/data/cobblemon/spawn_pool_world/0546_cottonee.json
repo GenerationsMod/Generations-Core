@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -11,14 +11,21 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "5-24",
-            "weight": 1.8,
+            "bucket": "common",
+            "level": "3-28",
+            "weight": 5.4,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_forest"
-                ]
+                    "#cobblemon:is_plains"
+                ],
+                "isRaining": false
             }
         }
     ]

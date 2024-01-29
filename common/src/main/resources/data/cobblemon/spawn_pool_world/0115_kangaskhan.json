@@ -7,19 +7,25 @@
             "id": "kangaskhan-1",
             "pokemon": "kangaskhan",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
             "level": "24-49",
             "weight": 10.0,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_savanna"
-                ],
-                "timeRange": "day"
+                ]
             }
         }
     ]

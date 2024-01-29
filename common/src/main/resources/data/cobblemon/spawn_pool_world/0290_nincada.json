@@ -12,13 +12,20 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "5-24",
-            "weight": 5.0,
+            "level": "2-27",
+            "weight": 10.0,
             "condition": {
-                "canSeeSky": true,
-                "timeRange": "night",
+                "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_forest"
+                    "#cobblemon:is_forest",
+                    "#cobblemon:is_jungle"
+                ],
+                "minY": 32,
+                "maxY": 62
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         }

@@ -12,11 +12,30 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
-            "level": "12-48",
-            "weight": 4.0,
+            "level": "23-48",
+            "weight": 10.0,
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_spooky"
+                ]
+            }
+        },
+        {
+            "id": "mimikyu-2",
+            "pokemon": "mimikyu",
+            "presets": [
+                "mansion"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "23-48",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
                 ]
             }
         }

@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -7,36 +7,77 @@
             "id": "sigilyph-1",
             "pokemon": "sigilyph",
             "presets": [
-                "natural"
+                "natural",
+                "desert_pyramid",
+                "jungle_pyramid"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "20-49",
-            "weight": 2.0,
+            "level": "24-49",
+            "weight": 60.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_desert"
+                    "#cobblemon:is_overworld"
                 ],
-                "neededNearbyBlocks": [
-                    "minecraft:chiseled_red_sandstone",
-                    "minecraft:chiseled_sandstone",
-                    "minecraft:cut_red_sandstone",
-                    "minecraft:cut_red_sandstone_slab",
-                    "minecraft:cut_sandstone",
-                    "minecraft:cut_sandstone_slab",
-                    "minecraft:red_sandstone_slab",
-                    "minecraft:red_sandstone_stairs",
-                    "minecraft:red_sandstone_wall",
-                    "minecraft:sandstone_stairs",
-                    "minecraft:sandstone_wall",
-                    "minecraft:smooth_red_sandstone",
-                    "minecraft:smooth_red_sandstone_slab",
-                    "minecraft:smooth_red_sandstone_stairs",
-                    "minecraft:smooth_sandstone",
-                    "minecraft:smooth_sandstone_slab",
-                    "minecraft:smooth_sandstone_stairs"
+                "structures": [
+                    "minecraft:desert_well"
+                ]
+            }
+        },
+        {
+            "id": "sigilyph-2",
+            "pokemon": "sigilyph",
+            "presets": [
+                "trail_ruins"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "24-49",
+            "weight": 60.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        },
+        {
+            "id": "sigilyph-3",
+            "pokemon": "sigilyph",
+            "presets": [
+                "natural",
+                "end_city"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "24-49",
+            "weight": 6.0,
+            "condition": {
+                "biomes": [
+                    "#minecraft:is_end"
+                ]
+            }
+        },
+        {
+            "id": "sigilyph-4",
+            "pokemon": "sigilyph",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "24-49",
+            "weight": 6.0,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:howling_constructs"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
                 ]
             }
         }

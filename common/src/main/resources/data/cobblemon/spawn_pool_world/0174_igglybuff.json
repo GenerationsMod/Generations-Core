@@ -12,8 +12,14 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "4-21",
+            "level": "1-21",
             "weight": 9.0,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -30,8 +36,14 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "4-21",
+            "level": "1-21",
             "weight": 1.8,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [

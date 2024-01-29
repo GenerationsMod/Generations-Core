@@ -13,7 +13,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "7-20",
+            "level": "7-21",
             "weight": 2.0,
             "condition": {
                 "canSeeSky": true,
@@ -25,6 +25,25 @@
             "anticondition": {
                 "biomes": [
                     "#cobblemon:is_freezing"
+                ]
+            }
+        },
+        {
+            "id": "kakuna-2",
+            "pokemon": "kakuna",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "7-21",
+            "weight": 2.0,
+            "condition": {
+                "biomes": [
+                    "#the_bumblezone:the_bumblezone"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
                 ]
             }
         }

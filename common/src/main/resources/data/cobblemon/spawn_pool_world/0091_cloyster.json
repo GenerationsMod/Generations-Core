@@ -12,12 +12,35 @@
             "type": "pokemon",
             "context": "seafloor",
             "bucket": "common",
-            "level": "31-52",
-            "weight": 0.1,
+            "level": "26-53",
+            "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_ocean"
+                    "#cobblemon:is_cold_ocean"
+                ]
+            }
+        },
+        {
+            "id": "cloyster-2",
+            "pokemon": "cloyster",
+            "presets": [
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "seafloor",
+            "bucket": "common",
+            "level": "26-53",
+            "weight": 0.6,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_cold_ocean"
                 ]
             }
         }

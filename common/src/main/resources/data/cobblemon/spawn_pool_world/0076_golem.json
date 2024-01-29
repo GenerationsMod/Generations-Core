@@ -7,12 +7,13 @@
             "id": "golem-1",
             "pokemon": "golem",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "40-49",
+            "level": "34-50",
             "weight": 0.1,
             "condition": {
                 "canSeeSky": true,
@@ -25,12 +26,12 @@
             "id": "golem-2",
             "pokemon": "golem",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "40-49",
+            "level": "34-50",
             "weight": 0.1,
             "condition": {
                 "canSeeSky": false,
@@ -40,7 +41,7 @@
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
@@ -52,36 +53,18 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "common",
-            "level": "40-49",
-            "weight": 0.1,
-            "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_mountain"
-                ]
-            }
-        },
-        {
-            "id": "golem-alolan-2",
-            "pokemon": "golem alolan",
-            "presets": [
-                "underground"
-            ],
-            "type": "pokemon",
-            "context": "grounded",
-            "bucket": "common",
-            "level": "40-49",
-            "weight": 0.1,
+            "bucket": "uncommon",
+            "level": "34-50",
+            "weight": 0.9,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_overworld"
+                    "#cobblemon:is_mountain"
                 ]
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         }
