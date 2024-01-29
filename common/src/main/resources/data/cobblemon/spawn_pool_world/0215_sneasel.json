@@ -22,6 +22,26 @@
                 ],
                 "timeRange": "night"
             }
+        },
+        {
+            "id": "sneasel-hisuian-1",
+            "pokemon": "sneasel hisuian",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "12-43",
+            "weight": 9.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_taiga"
+                ],
+                "timeRange": "night"
+            }
         }
     ]
 }

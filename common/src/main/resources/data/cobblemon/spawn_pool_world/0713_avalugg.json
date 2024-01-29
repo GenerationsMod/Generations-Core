@@ -55,6 +55,23 @@
                     "#cobblemon:is_nether_frozen"
                 ]
             }
+        },
+        {
+            "id": "avalugg-hisuian-3",
+            "pokemon": "avalugg hisuian",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "37-51",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_frozen"
+                ]
+            }
         }
     ]
 }
