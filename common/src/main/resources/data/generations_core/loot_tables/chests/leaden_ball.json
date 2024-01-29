@@ -131,7 +131,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:iron_ball"
+				"name": "cobblemon:iron_ball"
 			},
 			{
 				"type": "minecraft:item",
@@ -151,7 +151,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:life_orb"
+				"name": "cobblemon:life_orb"
 			},
 			{
 				"type": "minecraft:item",
@@ -292,10 +292,6 @@
 			{
 				"type": "minecraft:item",
 				"name": "generations_core:silicon"
-			},
-			{
-				"type": "minecraft:item",
-				"name": "generations_core:aluminum_ingot"
 			},
 			{
 				"type": "minecraft:item",

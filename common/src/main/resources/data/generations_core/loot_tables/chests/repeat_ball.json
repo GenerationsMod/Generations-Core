@@ -127,7 +127,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:smoke_ball"
+				"name": "cobblemon:smoke_ball"
 			},
 			{
 				"type": "minecraft:item",

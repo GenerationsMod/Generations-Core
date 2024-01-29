@@ -91,7 +91,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:flame_orb"
+				"name": "cobblemon:flame_orb"
 			},
 			{
 				"type": "minecraft:item",
@@ -271,7 +271,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:toxic_orb"
+				"name": "cobblemon:toxic_orb"
 			},
 			{
 				"type": "minecraft:item",

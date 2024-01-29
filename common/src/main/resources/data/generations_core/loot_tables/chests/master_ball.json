@@ -135,7 +135,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:life_orb"
+				"name": "cobblemon:life_orb"
 			},
 			{
 				"type": "minecraft:item",
@@ -223,7 +223,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:toxic_orb"
+				"name": "cobblemon:toxic_orb"
 			},
 			{
 				"type": "minecraft:item",
