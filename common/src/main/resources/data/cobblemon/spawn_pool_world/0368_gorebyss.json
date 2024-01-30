@@ -10,14 +10,33 @@
                 "underwater"
             ],
             "type": "pokemon",
-            "context": "seafloor",
-            "bucket": "rare",
-            "level": "24-55",
-            "weight": 9.9,
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "30-49",
+            "weight": 0.5,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_ocean"
+                    "#cobblemon:is_deep_ocean"
+                ],
+                "maxY": 48
+            }
+        },
+        {
+            "id": "gorebyss-2",
+            "pokemon": "gorebyss",
+            "presets": [
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "rare",
+            "level": "30-49",
+            "weight": 0.5,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_warm_ocean"
                 ]
             }
         }

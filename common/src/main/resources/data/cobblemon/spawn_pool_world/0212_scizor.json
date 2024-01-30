@@ -7,13 +7,14 @@
             "id": "scizor-1",
             "pokemon": "scizor",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "50",
-            "weight": 0.02,
+            "level": "45-50",
+            "weight": 0.2,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [

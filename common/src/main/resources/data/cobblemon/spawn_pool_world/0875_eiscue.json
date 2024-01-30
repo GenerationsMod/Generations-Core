@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -12,12 +12,12 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "12-47",
+            "level": "22-47",
             "weight": 6.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_frozen"
+                    "#cobblemon:is_frozen_ocean"
                 ]
             }
         },
@@ -30,12 +30,12 @@
             "type": "pokemon",
             "context": "surface",
             "bucket": "common",
-            "level": "12-47",
+            "level": "22-47",
             "weight": 6.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_frozen"
+                    "#cobblemon:is_frozen_ocean"
                 ]
             }
         }

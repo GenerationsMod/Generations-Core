@@ -12,7 +12,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-29",
+            "level": "4-29",
             "weight": 4.05,
             "condition": {
                 "canSeeSky": true,
@@ -30,7 +30,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-29",
+            "level": "4-29",
             "weight": 0.27,
             "condition": {
                 "canSeeSky": true,
@@ -48,7 +48,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-29",
+            "level": "4-29",
             "weight": 0.27,
             "condition": {
                 "canSeeSky": true,
@@ -66,7 +66,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-29",
+            "level": "4-29",
             "weight": 0.27,
             "condition": {
                 "canSeeSky": true,
@@ -84,7 +84,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-29",
+            "level": "4-29",
             "weight": 0.27,
             "condition": {
                 "canSeeSky": true,
@@ -102,7 +102,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-29",
+            "level": "4-29",
             "weight": 0.27,
             "condition": {
                 "canSeeSky": true,
@@ -112,7 +112,7 @@
             }
         },
         {
-            "id": "ekans-dark-1",
+            "id": "ekans-dark-2",
             "pokemon": "ekans snake-pattern=dark",
             "presets": [
                 "natural"
@@ -120,11 +120,11 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-29",
+            "level": "4-29",
             "weight": 5.4,
             "condition": {
                 "biomes": [
-                    "minecraft:soul_sand_valley"
+                    "#cobblemon:is_nether_desert"
                 ]
             }
         }

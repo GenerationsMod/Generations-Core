@@ -7,17 +7,17 @@
             "id": "haunter-1",
             "pokemon": "haunter",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "25-40",
+            "level": "25-41",
             "weight": 0.54,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
@@ -25,23 +25,23 @@
             "id": "haunter-2",
             "pokemon": "haunter",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "25-40",
+            "level": "25-41",
             "weight": 0.9,
             "condition": {
                 "canSeeSky": false,
-                "maxLight": 0,
                 "biomes": [
                     "#cobblemon:is_overworld"
-                ]
+                ],
+                "maxLight": 0
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
@@ -54,12 +54,17 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "25-40",
+            "level": "25-41",
             "weight": 0.54,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
                     "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
@@ -72,14 +77,14 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "25-40",
+            "level": "25-41",
             "weight": 0.9,
             "condition": {
                 "canSeeSky": true,
-                "maxLight": 0,
                 "biomes": [
                     "#cobblemon:is_spooky"
-                ]
+                ],
+                "maxLight": 0
             }
         },
         {
@@ -91,11 +96,28 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "25-40",
+            "level": "25-41",
             "weight": 0.9,
             "condition": {
                 "biomes": [
                     "#minecraft:is_nether"
+                ]
+            },
+            "drops": {
+                "amount": 3,
+                "entries": [
+                    {
+                        "item": "cobblemon:spell_tag",
+                        "percentage": 5.0
+                    },
+                    {
+                        "item": "cobblemon:payapa_berry",
+                        "percentage": 5.0
+                    },
+                    {
+                        "item": "minecraft:ghast_tear",
+                        "percentage": 5.0
+                    }
                 ]
             }
         }

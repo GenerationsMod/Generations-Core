@@ -31,7 +31,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cleanse_tag"
+				"name": "cobblemon:cleanse_tag"
 			},
 			{
 				"type": "minecraft:item",
@@ -195,7 +195,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:toxic_orb"
+				"name": "cobblemon:toxic_orb"
 			},
 			{
 				"type": "minecraft:item",

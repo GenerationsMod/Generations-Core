@@ -12,7 +12,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "10-39",
+            "level": "10-40",
             "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
@@ -26,6 +26,25 @@
             "anticondition": {
                 "biomes": [
                     "#cobblemon:is_freezing"
+                ]
+            }
+        },
+        {
+            "id": "beedrill-2",
+            "pokemon": "beedrill",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-40",
+            "weight": 5.0,
+            "condition": {
+                "biomes": [
+                    "#the_bumblezone:the_bumblezone"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
                 ]
             }
         }

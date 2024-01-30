@@ -12,12 +12,17 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "ultra-rare",
-            "level": "32-52",
+            "level": "36-53",
             "weight": 0.1,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_volcanic"
+                    "#cobblemon:is_temperate"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_spooky"
                 ]
             }
         },

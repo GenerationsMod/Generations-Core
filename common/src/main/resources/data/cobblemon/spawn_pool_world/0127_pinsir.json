@@ -8,19 +8,20 @@
             "pokemon": "pinsir",
             "presets": [
                 "natural",
-                "treetop"
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
-            "level": "20-50",
+            "level": "25-50",
             "weight": 10.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_jungle"
+                    "#cobblemon:is_jungle",
+                    "#cobblemon:is_tropical_island"
                 ],
-                "timeRange": "day"
+                "timeRange": "night"
             }
         }
     ]

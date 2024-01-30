@@ -7,12 +7,13 @@
             "id": "tangrowth-1",
             "pokemon": "tangrowth",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "24-53",
+            "level": "24-54",
             "weight": 0.2,
             "condition": {
                 "canSeeSky": true,

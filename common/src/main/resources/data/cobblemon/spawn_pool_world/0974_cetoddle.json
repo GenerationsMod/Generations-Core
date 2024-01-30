@@ -7,17 +7,38 @@
             "id": "cetoddle-1",
             "pokemon": "cetoddle",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "10-40",
+            "level": "8-33",
+            "weight": 5.4,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_frozen_ocean"
+                ]
+            }
+        },
+        {
+            "id": "cetoddle-2",
+            "pokemon": "cetoddle",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "8-33",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_glacial"
+                    "#cobblemon:is_glacial",
+                    "#cobblemon:is_tundra"
                 ]
             }
         }

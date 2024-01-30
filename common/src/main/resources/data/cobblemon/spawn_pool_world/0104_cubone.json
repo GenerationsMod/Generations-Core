@@ -7,17 +7,56 @@
             "id": "cubone-1",
             "pokemon": "cubone",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "12-32",
+            "level": "7-32",
             "weight": 1.8,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_sandy"
+                ]
+            }
+        },
+        {
+            "id": "cubone-2",
+            "pokemon": "cubone",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "7-32",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_volcanic"
+                ]
+            }
+        },
+        {
+            "id": "cubone-3",
+            "pokemon": "cubone",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "7-32",
+            "weight": 5.4,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_desert",
+                    "#cobblemon:is_nether_soul_fire"
                 ]
             }
         }

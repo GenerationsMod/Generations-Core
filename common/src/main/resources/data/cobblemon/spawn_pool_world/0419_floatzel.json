@@ -7,18 +7,48 @@
             "id": "floatzel-1",
             "pokemon": "floatzel",
             "presets": [
-                "river"
+                "natural",
+                "freshwater"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
+            "bucket": "common",
             "level": "26-50",
-            "weight": 9.0,
+            "weight": 0.2,
             "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_river"
-                ]
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "floatzel-2",
+            "pokemon": "floatzel",
+            "presets": [
+                "underwater",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "26-50",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "floatzel-3",
+            "pokemon": "floatzel",
+            "presets": [
+                "water_surface",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "26-50",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true
             }
         }
     ]

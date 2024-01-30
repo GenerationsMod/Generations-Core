@@ -11,30 +11,44 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "20-50",
-            "weight": 5.0,
+            "bucket": "common",
+            "level": "20-42",
+            "weight": 1.0,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_floral"
+                    "#cobblemon:is_temperate"
                 ]
             }
         },
         {
-            "id": "linoone-galarian-1",
+            "id": "linoone-galarian-2",
             "pokemon": "linoone galarian",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "20-50",
-            "weight": 5.0,
+            "bucket": "common",
+            "level": "20-42",
+            "weight": 0.9,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
-                "timeRange": "night",
+                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_floral"
+                    "#cobblemon:is_taiga"
                 ]
             }
         }

@@ -22,8 +22,7 @@
                     "#cobblemon:is_savanna",
                     "#cobblemon:is_sky"
                 ],
-                "timeRange": "day",
-                "isRaining": false
+                "timeRange": "day"
             }
         }
     ]

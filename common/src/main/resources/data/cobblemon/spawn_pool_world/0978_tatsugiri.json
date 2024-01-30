@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -7,12 +7,13 @@
             "id": "tatsugiri-1",
             "pokemon": "tatsugiri",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
-            "level": "17-47",
+            "level": "23-48",
             "weight": 10.0,
             "condition": {
                 "canSeeSky": true,
@@ -30,7 +31,7 @@
             "type": "pokemon",
             "context": "submerged",
             "bucket": "rare",
-            "level": "17-47",
+            "level": "23-48",
             "weight": 10.0,
             "condition": {
                 "canSeeSky": true,

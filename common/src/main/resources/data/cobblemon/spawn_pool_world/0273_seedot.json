@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -13,7 +13,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "6-22",
+            "level": "1-22",
             "weight": 5.4,
             "condition": {
                 "canSeeSky": true,

@@ -12,8 +12,8 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "40-49",
-            "weight": 0.05,
+            "level": "35-49",
+            "weight": 0.1,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -30,9 +30,9 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "40-49",
-            "weight": 0.05,
+            "bucket": "common",
+            "level": "35-49",
+            "weight": 0.02,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -42,20 +42,21 @@
             }
         },
         {
-            "id": "bellossom-valencian-1",
+            "id": "bellossom-valencian-3",
             "pokemon": "bellossom valencian",
             "presets": [
                 "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "40-49",
-            "weight": 0.05,
+            "bucket": "common",
+            "level": "35-49",
+            "weight": 0.02,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_savanna"
+                    "#cobblemon:is_savanna",
+                    "#cobblemon:is_tropical_island"
                 ],
                 "timeRange": "day"
             }

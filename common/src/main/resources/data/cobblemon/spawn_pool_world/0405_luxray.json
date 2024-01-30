@@ -7,16 +7,18 @@
             "id": "luxray-1",
             "pokemon": "luxray",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "rare",
-            "level": "30-55",
-            "weight": 5.0,
+            "bucket": "uncommon",
+            "level": "30-52",
+            "weight": 0.1,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
+                    "#cobblemon:is_desert",
                     "#cobblemon:is_savanna"
                 ]
             }

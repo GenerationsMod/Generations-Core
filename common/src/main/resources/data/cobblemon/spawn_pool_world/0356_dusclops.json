@@ -7,20 +7,54 @@
             "id": "dusclops-1",
             "pokemon": "dusclops",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "rare",
-            "level": "37-55",
-            "weight": 9.0,
+            "bucket": "common",
+            "level": "37-46",
+            "weight": 0.54,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_badlands"
+                    "#cobblemon:is_spooky"
                 ],
                 "timeRange": "night"
+            }
+        },
+        {
+            "id": "dusclops-2",
+            "pokemon": "dusclops",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "37-46",
+            "weight": 0.54,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_deep_dark"
+                ]
+            }
+        },
+        {
+            "id": "dusclops-3",
+            "pokemon": "dusclops",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "37-46",
+            "weight": 0.9,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_soul_sand"
+                ]
             }
         }
     ]

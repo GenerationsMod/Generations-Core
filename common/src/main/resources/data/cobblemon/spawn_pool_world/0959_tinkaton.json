@@ -7,17 +7,18 @@
             "id": "tinkaton-1",
             "pokemon": "tinkaton",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
-            "level": "38-60",
-            "weight": 9.0,
+            "level": "38-51",
+            "weight": 0.1,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_mountain"
+                    "#cobblemon:is_hills"
                 ]
             }
         }

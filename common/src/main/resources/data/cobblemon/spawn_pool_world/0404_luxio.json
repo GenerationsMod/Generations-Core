@@ -7,16 +7,18 @@
             "id": "luxio-1",
             "pokemon": "luxio",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "15-30",
-            "weight": 5.0,
+            "level": "15-36",
+            "weight": 0.9,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
+                    "#cobblemon:is_desert",
                     "#cobblemon:is_savanna"
                 ]
             }

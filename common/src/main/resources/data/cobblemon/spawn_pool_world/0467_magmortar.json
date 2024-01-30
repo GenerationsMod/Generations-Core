@@ -12,7 +12,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "50-54",
+            "level": "45-54",
             "weight": 0.1,
             "condition": {
                 "canSeeSky": true,
@@ -21,7 +21,8 @@
                 ],
                 "isRaining": false,
                 "neededNearbyBlocks": [
-                    "minecraft:lava", "minecraft:flowing_lava"
+                    "#minecraft:lava",
+                    "minecraft:magma_block"
                 ]
             }
         },
@@ -34,7 +35,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "50-54",
+            "level": "45-54",
             "weight": 0.1,
             "condition": {
                 "canSeeSky": true,
@@ -52,14 +53,13 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "50-54",
+            "bucket": "common",
+            "level": "45-54",
             "weight": 0.1,
             "condition": {
                 "biomes": [
-                    "minecraft:basalt_deltas",
-                    "minecraft:crimson_forest",
-                    "minecraft:nether_wastes"
+                    "#cobblemon:is_nether_basalt",
+                    "#cobblemon:is_nether_wasteland"
                 ]
             }
         }

@@ -12,9 +12,9 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "rare",
-            "level": "28-45",
-            "weight": 1.0,
+            "bucket": "common",
+            "level": "35-54",
+            "weight": 0.06,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [

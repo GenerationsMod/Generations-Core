@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -7,17 +7,57 @@
             "id": "naclstack-1",
             "pokemon": "naclstack",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "28-40",
-            "weight": 4.0,
+            "bucket": "common",
+            "level": "24-36",
+            "weight": 0.54,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_mountain"
+                    "#cobblemon:is_badlands"
+                ]
+            }
+        },
+        {
+            "id": "naclstack-2",
+            "pokemon": "naclstack",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "24-36",
+            "weight": 0.9,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_salt"
+                ]
+            }
+        },
+        {
+            "id": "naclstack-3",
+            "pokemon": "naclstack",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "24-36",
+            "weight": 0.9,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_quartz"
+                ],
+                "neededBaseBlocks": [
+                    "minecraft:quartz_block"
                 ]
             }
         }

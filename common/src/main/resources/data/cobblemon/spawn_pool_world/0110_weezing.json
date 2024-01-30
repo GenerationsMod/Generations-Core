@@ -7,22 +7,54 @@
             "id": "weezing-1",
             "pokemon": "weezing",
             "presets": [
-                "natural"
+                "natural",
+                "urban"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
             "level": "35-49",
             "weight": 0.2,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_swamp"
+                    "#cobblemon:is_overworld"
                 ]
             }
         },
         {
             "id": "weezing-2",
+            "pokemon": "weezing",
+            "presets": [
+                "natural",
+                "village"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "35-49",
+            "weight": 0.2,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        },
+        {
+            "id": "weezing-3",
             "pokemon": "weezing",
             "presets": [
                 "natural"
@@ -31,24 +63,24 @@
             "context": "grounded",
             "bucket": "common",
             "level": "35-49",
-            "weight": 0.2,
+            "weight": 1.0,
             "condition": {
                 "biomes": [
-                    "#minecraft:is_nether"
+                    "#cobblemon:is_nether_toxic"
                 ]
             }
         },
         {
-            "id": "weezing-galarian-1",
+            "id": "weezing-galarian-3",
             "pokemon": "weezing galarian",
             "presets": [
                 "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "common",
+            "bucket": "uncommon",
             "level": "35-49",
-            "weight": 0.2,
+            "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [

@@ -7,13 +7,14 @@
             "id": "kleavor-1",
             "pokemon": "kleavor",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
-            "level": "50",
-            "weight": 0.02,
+            "level": "45-50",
+            "weight": 0.2,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -23,6 +24,7 @@
             },
             "anticondition": {
                 "biomes": [
+                    "#cobblemon:is_freezing",
                     "#cobblemon:is_spooky"
                 ]
             }

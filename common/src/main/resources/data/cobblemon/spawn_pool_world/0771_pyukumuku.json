@@ -12,12 +12,12 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "15-41",
+            "level": "16-41",
             "weight": 6.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_beach"
+                    "#cobblemon:is_beach"
                 ]
             }
         },
@@ -28,19 +28,20 @@
                 "underwater"
             ],
             "type": "pokemon",
-            "context": "submerged",
+            "context": "seafloor",
             "bucket": "common",
-            "level": "15-41",
+            "level": "16-41",
             "weight": 2.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_ocean"
-                ]
+                    "#cobblemon:is_ocean"
+                ],
+                "minY": 48
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_reef"
+                    "#cobblemon:is_warm_ocean"
                 ]
             }
         },
@@ -51,14 +52,14 @@
                 "underwater"
             ],
             "type": "pokemon",
-            "context": "submerged",
+            "context": "seafloor",
             "bucket": "common",
-            "level": "15-41",
+            "level": "16-41",
             "weight": 10.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_reef"
+                    "#cobblemon:is_warm_ocean"
                 ]
             }
         }

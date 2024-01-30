@@ -112,7 +112,7 @@
             }
         },
         {
-            "id": "arbok-dark-1",
+            "id": "arbok-dark-2",
             "pokemon": "arbok snake-pattern=dark",
             "presets": [
                 "natural"
@@ -124,7 +124,7 @@
             "weight": 0.6,
             "condition": {
                 "biomes": [
-                    "minecraft:soul_sand_valley"
+                    "#cobblemon:is_nether_desert"
                 ]
             }
         }

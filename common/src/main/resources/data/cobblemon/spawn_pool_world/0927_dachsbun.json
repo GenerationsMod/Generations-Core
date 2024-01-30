@@ -4,42 +4,40 @@
     "neededUninstalledMods": [],
     "spawns": [
         {
-            "id": "spewpa-1",
-            "pokemon": "spewpa",
+            "id": "dachsbun-1",
+            "pokemon": "dachsbun",
             "presets": [
                 "natural",
-                "foliage"
+                "urban"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-21",
-            "weight": 3.0,
+            "level": "26-48",
+            "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_floral",
-                    "#cobblemon:is_plains",
-                    "#cobblemon:is_savanna"
+                    "#cobblemon:is_overworld"
                 ]
             }
         },
         {
-            "id": "spewpa-2",
-            "pokemon": "spewpa",
+            "id": "dachsbun-2",
+            "pokemon": "dachsbun",
+            "presets": [
+                "natural",
+                "village"
+            ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "9-21",
-            "weight": 2.0,
+            "level": "26-48",
+            "weight": 1.0,
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
-                    "the_bumblezone:floral_meadow"
-                ]
-            },
-            "anticondition": {
-                "structures": [
-                    "#the_bumblezone:sempiternal_sanctums"
+                    "#cobblemon:is_overworld"
                 ]
             }
         }

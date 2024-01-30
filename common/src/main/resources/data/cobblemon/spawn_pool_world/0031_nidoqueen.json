@@ -7,19 +7,19 @@
             "id": "nidoqueen-1",
             "pokemon": "nidoqueen",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "37-50",
+            "level": "37-51",
             "weight": 0.1,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_savanna"
-                ],
-                "timeRange": "day"
+                ]
             }
         }
     ]

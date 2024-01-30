@@ -7,19 +7,19 @@
             "id": "nidoranm-1",
             "pokemon": "nidoranm",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "5-27",
+            "level": "3-28",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_savanna"
-                ],
-                "timeRange": "day"
+                ]
             }
         }
     ]

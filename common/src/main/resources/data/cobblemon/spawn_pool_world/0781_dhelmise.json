@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -7,21 +7,18 @@
             "id": "dhelmise-1",
             "pokemon": "dhelmise",
             "presets": [
-                "underwater"
+                "underwater",
+                "shipwreck"
             ],
             "type": "pokemon",
             "context": "submerged",
             "bucket": "common",
-            "level": "20-52",
-            "weight": 2.0,
+            "level": "27-52",
+            "weight": 10.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#minecraft:is_ocean"
-                ],
-                "neededNearbyBlocks": [
-                    "#minecraft:logs",
-                    "#minecraft:planks"
+                    "#cobblemon:is_ocean"
                 ]
             }
         }

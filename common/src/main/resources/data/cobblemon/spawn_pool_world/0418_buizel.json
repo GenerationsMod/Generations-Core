@@ -7,18 +7,48 @@
             "id": "buizel-1",
             "pokemon": "buizel",
             "presets": [
-                "river"
+                "natural",
+                "freshwater"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "5-26",
-            "weight": 9.0,
+            "level": "8-33",
+            "weight": 1.8,
             "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_river"
-                ]
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "buizel-2",
+            "pokemon": "buizel",
+            "presets": [
+                "underwater",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "8-33",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "buizel-3",
+            "pokemon": "buizel",
+            "presets": [
+                "water_surface",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "8-33",
+            "weight": 1.8,
+            "condition": {
+                "canSeeSky": true
             }
         }
     ]

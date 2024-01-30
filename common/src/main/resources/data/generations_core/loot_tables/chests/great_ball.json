@@ -67,7 +67,7 @@
 			},
 			{
 				"type": "minecraft:item",
-				"name": "generations_core:cleanse_tag"
+				"name": "cobblemon:cleanse_tag"
 			},
 			{
 				"type": "minecraft:item",

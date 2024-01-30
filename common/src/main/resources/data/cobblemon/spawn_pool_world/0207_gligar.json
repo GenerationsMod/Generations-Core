@@ -7,19 +7,37 @@
             "id": "gligar-1",
             "pokemon": "gligar",
             "presets": [
-                "natural"
+                "natural",
+                "treetop"
             ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "4-42",
-            "weight": 1.0,
+            "level": "18-43",
+            "weight": 5.4,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_desert"
+                    "#cobblemon:is_badlands"
                 ],
                 "timeRange": "night"
+            }
+        },
+        {
+            "id": "gligar-2",
+            "pokemon": "gligar",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "18-43",
+            "weight": 1.8,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_mountain"
+                ]
             }
         }
     ]

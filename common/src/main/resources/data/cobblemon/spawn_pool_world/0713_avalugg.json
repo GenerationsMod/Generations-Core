@@ -17,7 +17,7 @@
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_frozen"
+                    "#cobblemon:is_frozen_ocean"
                 ]
             }
         },
@@ -28,19 +28,20 @@
                 "water_surface"
             ],
             "type": "pokemon",
+            "context": "surface",
             "bucket": "common",
             "level": "37-51",
             "weight": 1.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_frozen"
+                    "#cobblemon:is_frozen_ocean"
                 ]
             }
         },
         {
-            "id": "avalugg-hisuian-1",
-            "pokemon": "avalugg hisuian",
+            "id": "avalugg-3",
+            "pokemon": "avalugg",
             "presets": [
                 "natural"
             ],
@@ -50,24 +51,23 @@
             "level": "37-51",
             "weight": 1.0,
             "condition": {
-                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_frozen"
+                    "#cobblemon:is_nether_frozen"
                 ]
             }
         },
         {
-            "id": "avalugg-hisuian-2",
+            "id": "avalugg-hisuian-3",
             "pokemon": "avalugg hisuian",
             "presets": [
-                "water_surface"
+                "natural"
             ],
             "type": "pokemon",
-            "bucket": "common",
+            "context": "grounded",
+            "bucket": "uncommon",
             "level": "37-51",
             "weight": 1.0,
             "condition": {
-                "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_frozen"
                 ]

@@ -7,16 +7,49 @@
             "id": "donphan-1",
             "pokemon": "donphan",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "25-42",
-            "weight": 5.0,
+            "bucket": "common",
+            "level": "25-50",
+            "weight": 0.2,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_badlands"
+                ]
+            }
+        },
+        {
+            "id": "donphan-2",
+            "pokemon": "donphan",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-50",
+            "weight": 0.6,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_savanna"
                 ]
             }
         }

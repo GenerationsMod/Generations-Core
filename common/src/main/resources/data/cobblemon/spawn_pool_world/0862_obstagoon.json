@@ -7,16 +7,24 @@
             "id": "obstagoon-1",
             "pokemon": "obstagoon",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "rare",
-            "level": "30-50",
-            "weight": 5.0,
+            "bucket": "common",
+            "level": "35-52",
+            "weight": 0.1,
+            "weightMultiplier": {
+                "multiplier": 1.5,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
+                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_floral"
+                    "#cobblemon:is_taiga"
                 ]
             }
         }

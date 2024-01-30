@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -12,8 +12,8 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "14-43",
-            "weight": 1.98,
+            "level": "19-44",
+            "weight": 5.4,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -26,13 +26,13 @@
             "id": "misdreavus-2",
             "pokemon": "misdreavus",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "14-43",
-            "weight": 5.94,
+            "bucket": "common",
+            "level": "19-44",
+            "weight": 1.8,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
@@ -49,9 +49,9 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "14-43",
-            "weight": 5.94,
+            "bucket": "common",
+            "level": "19-44",
+            "weight": 5.4,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
@@ -69,8 +69,8 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "14-43",
-            "weight": 1.98,
+            "level": "19-44",
+            "weight": 5.4,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
@@ -88,11 +88,11 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "14-43",
-            "weight": 1.98,
+            "level": "19-44",
+            "weight": 5.4,
             "condition": {
                 "biomes": [
-                    "minecraft:warped_forest"
+                    "#cobblemon:is_nether_warped"
                 ]
             }
         }

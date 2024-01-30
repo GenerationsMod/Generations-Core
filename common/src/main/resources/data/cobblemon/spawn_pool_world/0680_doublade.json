@@ -1,40 +1,32 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
         {
             "id": "doublade-1",
             "pokemon": "doublade",
+            "presets": [
+                "natural",
+                "nether_structures"
+            ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
             "level": "35-45",
-            "weight": 0.9,
+            "weight": 9.0,
             "condition": {
                 "biomes": [
                     "#minecraft:is_nether"
-                ],
-                "neededNearbyBlocks": [
-                    "minecraft:blackstone_wall",
-                    "minecraft:blackstone_slab",
-                    "minecraft:blackstone_stairs",
-                    "minecraft:polished_blackstone",
-                    "minecraft:polished_blackstone_wall",
-                    "minecraft:polished_blackstone_slab",
-                    "minecraft:polished_blackstone_button",
-                    "minecraft:polished_blackstone_bricks",
-                    "minecraft:chiseled_polished_blackstone",
-                    "minecraft:polished_blackstone_brick_wall",
-                    "minecraft:polished_blackstone_brick_slab",
-                    "minecraft:polished_blackstone_brick_stairs",
-                    "minecraft:polished_blackstone_pressure_plate"
                 ]
             }
         },
         {
             "id": "doublade-2",
             "pokemon": "doublade",
+            "presets": [
+                "stronghold"
+            ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
@@ -44,11 +36,6 @@
                 "canSeeSky": false,
                 "biomes": [
                     "#cobblemon:is_overworld"
-                ],
-                "neededNearbyBlocks": [
-                    "minecraft:iron_bars",
-                    "minecraft:cracked_stone_bricks",
-                    "minecraft:infested_cracked_stone_bricks"
                 ]
             }
         }

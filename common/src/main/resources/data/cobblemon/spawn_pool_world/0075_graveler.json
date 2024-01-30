@@ -7,7 +7,8 @@
             "id": "graveler-1",
             "pokemon": "graveler",
             "presets": [
-                "natural"
+                "natural",
+                "wild"
             ],
             "type": "pokemon",
             "context": "grounded",
@@ -25,7 +26,7 @@
             "id": "graveler-2",
             "pokemon": "graveler",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
@@ -40,9 +41,10 @@
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
+        },
         },
         {
             "id": "graveler-alolan-1",
@@ -56,32 +58,14 @@
             "level": "25-39",
             "weight": 0.9,
             "condition": {
-                "canSeeSky": true,
-                "biomes": [
-                    "#cobblemon:is_mountain"
-                ]
-            }
-        },
-        {
-            "id": "graveler-alolan-2",
-            "pokemon": "graveler alolan",
-            "presets": [
-                "underground"
-            ],
-            "type": "pokemon",
-            "context": "grounded",
-            "bucket": "common",
-            "level": "25-39",
-            "weight": 0.9,
-            "condition": {
                 "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_overworld"
+                    "#cobblemon:is_mountain"
                 ]
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         }

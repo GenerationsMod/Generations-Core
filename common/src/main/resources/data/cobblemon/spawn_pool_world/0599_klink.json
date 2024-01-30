@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -7,12 +7,12 @@
             "id": "klink-1",
             "pokemon": "klink",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "12-30",
+            "bucket": "common",
+            "level": "5-30",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": false,
@@ -26,7 +26,7 @@
             },
             "anticondition": {
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         },
@@ -38,8 +38,8 @@
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "uncommon",
-            "level": "12-30",
+            "bucket": "common",
+            "level": "5-30",
             "weight": 9.0,
             "condition": {
                 "biomes": [

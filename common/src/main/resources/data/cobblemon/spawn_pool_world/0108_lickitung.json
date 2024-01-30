@@ -12,14 +12,19 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",
-            "level": "18-32",
+            "level": "14-39",
             "weight": 1.8,
+            "weightMultiplier": {
+                "multiplier": 0.25,
+                "condition": {
+                    "timeRange": "night"
+                }
+            },
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_grassland"
-                ],
-                "timeRange": "day"
+                ]
             }
         }
     ]

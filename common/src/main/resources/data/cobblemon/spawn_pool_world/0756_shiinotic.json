@@ -1,5 +1,5 @@
 {
-    "enabled": "true",
+    "enabled": true,
     "neededInstalledMods": [],
     "neededUninstalledMods": [],
     "spawns": [
@@ -12,7 +12,7 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "24-40",
+            "level": "24-41",
             "weight": 0.2,
             "condition": {
                 "biomes": [
@@ -32,12 +32,29 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
-            "level": "24-40",
+            "level": "24-41",
             "weight": 0.2,
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
                     "#cobblemon:is_lush"
+                ]
+            }
+        },
+        {
+            "id": "shiinotic-3",
+            "pokemon": "shiinotic",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "24-41",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_fungus"
                 ]
             }
         }
