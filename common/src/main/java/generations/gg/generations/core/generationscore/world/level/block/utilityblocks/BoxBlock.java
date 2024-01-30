@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.utilit
 
 import generations.gg.generations.core.generationscore.client.render.block.entity.BoxBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
+import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -63,10 +64,10 @@ public class BoxBlock extends BaseEntityBlock {
 
             if (player.isShiftKeyDown()) {
                 if (open) {
-                    boxBlockEntity.playSound(state, SoundEvents.BARREL_CLOSE);
+                    boxBlockEntity.playSound(state, GenerationsSounds.BOX_CLOSED.get());
                     boxBlockEntity.updateBlockState(state, false);
                 } else {
-                    boxBlockEntity.playSound(state, SoundEvents.BARREL_OPEN);
+                    boxBlockEntity.playSound(state, GenerationsSounds.BOX_OPEN.get());
                     boxBlockEntity.updateBlockState(state, true);
                 }
             } else if(open) {

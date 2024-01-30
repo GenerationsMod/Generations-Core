@@ -120,7 +120,7 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<GenericSmokerBlock> VOLCANIC_STONE_SMOKER = registerBlockItem("volcanic_stone_smoker", GenericSmokerBlock::new);
 
 	private static <T extends BlockItem> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier) {
-		return GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.UTILITY)));
+		return GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
 	}
 
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {

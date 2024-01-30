@@ -47,7 +47,7 @@ public class ForgeCreativeTabReg {
         LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS.get().getDefaultInstance());
         DECORATIONS = create("decorations", () -> GenerationsDecorationBlocks.SWITCH.get().asItem().getDefaultInstance(), GenerationsDecorationBlocks.DECORATIONS);
         NATURAL = create("natural", () -> GenerationsOres.SILICON_ORE_SET.getOreSupplier().get().asItem().getDefaultInstance(), GenerationsOres.ORES);
-        UTILITY = create("utility", () -> GenerationsUtilityBlocks.RKS_MACHINE.get().asItem().getDefaultInstance());
+        UTILITY = create("utility", () -> GenerationsUtilityBlocks.RKS_MACHINE.get().asItem().getDefaultInstance(), GenerationsUtilityBlocks.UTILITY_BLOCKS);
         FORM_ITEMS = create("form_items", () -> GenerationsItems.METEORITE.get().getDefaultInstance());
         POKEMAIL = create("pokemail", () -> GenerationsItems.POKEMAIL_AIR.get().getDefaultInstance());
         VALUABLES = create("valuables", () -> GenerationsItems.STRANGE_SOUVENIR.get().getDefaultInstance());

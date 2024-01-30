@@ -309,7 +309,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         var closed = new ModelFile.UncheckedModelFile("generations_core:block/utility_blocks/box_closed");
         var open = new ModelFile.UncheckedModelFile("generations_core:block/utility_blocks/box_open");
 
-        getVariantBuilder(GenerationsUtilityBlocks.BOX.get())
+        var box = GenerationsUtilityBlocks.BOX;
+
+        getVariantBuilder(box.get())
                 .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.NORTH)
                 .modelForState().modelFile(open).addModel()
                 .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.EAST)
@@ -326,6 +328,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
                 .modelForState().modelFile(closed).rotationY(180).addModel()
                 .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.WEST)
                 .modelForState().modelFile(closed).rotationY(270).addModel();
+
+        itemModels().withExistingParent(box.getId().getPath(), closed.getLocation());
+        dropSelfList.add(box.get());
     }
 
     private <V extends DyeableBlock<T, V>, T extends DyedVariantBlockEntity<?>> void registerDyeGroup(DyedGroup<V, T> group, String dir) {

@@ -13,6 +13,20 @@
       }
     ]
   },
+  "generations_core.block.box_open": {
+    "sounds": [
+      {
+        "name": "generations_core:block/box_open"
+      }
+    ]
+  },
+  "generations_core.block.box_closed": {
+    "sounds": [
+      {
+        "name": "generations_core:block/box_closed"
+      }
+    ]
+  },
   "generations_core.other.ui_click": {
     "sounds": [
       {
