@@ -130,14 +130,16 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
 
-        for (int x = 0; x < width /*+ 1*/; x++) {
-            for (int z = 0; z < length /*+ 1*/; z++) {
-                for (int y = 0; y < height /*+ 1*/; y++) {
+        for (int x = 0; x < width + 1; x++) {
+            for (int z = 0; z < length + 1; z++) {
+                for (int y = 0; y < height + 1; y++) {
                     if(!validPosition(x,y,z)) continue;
 
                     var blockPos = adjustBlockPos(pos, dir, x, y, z, true);
 
-                    if(!(level.getBlockState(blockPos).canBeReplaced())) {
+                    var state = level.getBlockState(blockPos);
+
+                    if(!state.canBeReplaced() || state.is(this)) {
                         return false;
                     }
                 }

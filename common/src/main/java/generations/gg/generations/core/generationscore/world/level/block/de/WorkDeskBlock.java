@@ -18,13 +18,13 @@ import org.jetbrains.annotations.NotNull;
 
 public class WorkDeskBlock extends GenericRotatableModelBlock<GenericModelProvidingBlockEntity> {
     private final static GenerationsVoxelShapes.GenericRotatableShapes SHAPES = GenerationsVoxelShapes.generateRotationalVoxelShape(Shapes.or(
-                    Shapes.box(1.78125, 0, -0.21250000000000002, 1.89375, 1.125, -0.09999999999999998),
-                    Shapes.box(-0.89375, 0, 1.0875, -0.78125, 1.125, 1.2000000000000002),
-                    Shapes.box(1.78125, 0, 1.0875, 1.89375, 1.125, 1.2000000000000002),
-                    Shapes.box(-0.89375, 0, -0.21250000000000002, -0.78125, 1.125, -0.10000000000000009),
-                    Shapes.box(-0.95, 1.11875, -0.26249999999999996, 1.95, 1.4124999999999999, 1.2625),
-                    Shapes.box(-0.8500000000000001, 0.14125, -0.17500000000000004, 1.8500000000000003, 1.1412499999999999, 1.1624999999999999)
-    ).move(0.725, 0, 0.38125), Direction.SOUTH,3, 2, 2);
+            Shapes.box(2.78125, 0, -0.7124999999999999, 2.89375, 1.125, -0.6000000000000001),
+            Shapes.box(0.10624999999999996, 0, 0.5874999999999999, 0.21875, 1.125, 0.7000000000000002),
+            Shapes.box(2.78125, 0, 0.5874999999999999, 2.89375, 1.125, 0.7000000000000002),
+            Shapes.box(0.10624999999999996, 0, -0.7124999999999999, 0.21875, 1.125, -0.6000000000000001),
+            Shapes.box(0.050000000000000044, 1.11875, -0.7625000000000002, 2.95, 1.4124999999999999, 0.7625),
+            Shapes.box(0.1499999999999999, 0.14125, -0.675, 2.8500000000000005, 1.1412499999999999, 0.6624999999999999)
+    ), Direction.SOUTH,3, 2, 2);
 
     public WorkDeskBlock(BlockBehaviour.Properties props) {
         super(props, GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, GenerationsBlockEntityModels.WORK_DESK,2, 1, 1);
