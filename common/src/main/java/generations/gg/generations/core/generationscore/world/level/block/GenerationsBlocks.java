@@ -503,7 +503,7 @@ public class GenerationsBlocks {
     }
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-        BLOCK_ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
+        BLOCK_ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
     }
 
     public static void init() {

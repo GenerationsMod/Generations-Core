@@ -33,6 +33,8 @@ import java.util.function.Supplier;
 
 public class GenerationsDecorationBlocks {
     public static final DeferredRegister<Block> DECORATIONS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
+    public static final DeferredRegister<Block> DECORATION_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
+
     public static final List<RegistrySupplier<BallDisplayBlock>> BALL_DISPLAY_BLOCKS = new ArrayList<>();
 
     /**

@@ -28,6 +28,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsArm
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.PixelmonInteractions;
+import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.item.legends.EnchantableItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
@@ -80,6 +81,7 @@ public class GenerationsCore
 		GenerationsCore.implementation = implementation;
 		GenerationsCoreEntityDataSerializers.init();
 		GenerationsSounds.init();
+		GenerationsItems.init();
 		GenerationsBlocks.init();
 		GenerationsPokeDolls.init();
 		GenerationsWood.init();
@@ -89,7 +91,7 @@ public class GenerationsCore
 		GenerationsShrines.init();
 		GenerationsBlockEntities.init();
 		GenerationsEntities.init();
-		GenerationsItems.init();
+		GenerationsCreativeTabs.init();
 		GenerationsArmor.init();
 		GenerationsTools.init();
 		GenerationsPaintings.init();

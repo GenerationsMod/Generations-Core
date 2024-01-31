@@ -40,25 +40,4 @@ public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEnti
 
         return InteractionResult.PASS;
     }
-
-//    public static DyedBlockItem<PastelBeanBagBlock> getBlock(DyeColor dyeColor) {
-//        return (switch (dyeColor) {
-//            case WHITE -> GenerationsDecorationBlocks.WHITE_PASTEL_BEAN_BAG;
-//            case LIGHT_GRAY -> GenerationsDecorationBlocks.LIGHT_GRAY_PASTEL_BEAN_BAG;
-//            case GRAY -> GenerationsDecorationBlocks.GRAY_PASTEL_BEAN_BAG;
-//            case BLACK -> GenerationsDecorationBlocks.BLACK_PASTEL_BEAN_BAG;
-//            case BROWN -> GenerationsDecorationBlocks.BROWN_PASTEL_BEAN_BAG;
-//            case RED -> GenerationsDecorationBlocks.RED_PASTEL_BEAN_BAG;
-//            case ORANGE -> GenerationsDecorationBlocks.ORANGE_PASTEL_BEAN_BAG;
-//            case YELLOW -> GenerationsDecorationBlocks.YELLOW_PASTEL_BEAN_BAG;
-//            case LIME -> GenerationsDecorationBlocks.LIME_PASTEL_BEAN_BAG;
-//            case GREEN -> GenerationsDecorationBlocks.GREEN_PASTEL_BEAN_BAG;
-//            case CYAN -> GenerationsDecorationBlocks.CYAN_PASTEL_BEAN_BAG;
-//            case LIGHT_BLUE -> GenerationsDecorationBlocks.LIGHT_BLUE_PASTEL_BEAN_BAG;
-//            case BLUE -> GenerationsDecorationBlocks.BLUE_PASTEL_BEAN_BAG;
-//            case PURPLE -> GenerationsDecorationBlocks.PURPLE_PASTEL_BEAN_BAG;
-//            case MAGENTA -> GenerationsDecorationBlocks.MAGENTA_PASTEL_BEAN_BAG;
-//            case PINK -> GenerationsDecorationBlocks.PINK_PASTEL_BEAN_BAG;
-//        }).get();
-//    }
 }
