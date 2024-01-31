@@ -24,10 +24,6 @@ public class GenerationsBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
 
     public static final RegistrySupplier<MutableBlockEntityType<PokeDollBlockEntity>> POKE_DOLL = registerMutable("pokedoll", PokeDollBlockEntity::new);
-
-    public static final RegistrySupplier<MutableBlockEntityType<HealerBlockEntity>> HEALER = registerMutable("healer", HealerBlockEntity::new);
-    public static final RegistrySupplier<MutableBlockEntityType<ClockBlockEntity>> CLOCK = registerMutable("clock", ClockBlockEntity::new);
-
     public static final RegistrySupplier<MutableBlockEntityType<GenericShrineBlockEntity>> GENERIC_SHRINE = registerMutable("generic_shrine", GenericShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<WeatherTrioShrineBlockEntity>> WEATHER_TRIO = registerMutable("weather_trio", WeatherTrioShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<TimeSpaceAltarBlockEntity>> TIMESPACE_ALTAR = registerMutable("timespace_altar", TimeSpaceAltarBlockEntity::new);

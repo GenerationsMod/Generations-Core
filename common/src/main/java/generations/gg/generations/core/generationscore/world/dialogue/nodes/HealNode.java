@@ -1,12 +1,12 @@
 package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 
+import com.cobblemon.mod.common.block.entity.HealingMachineBlockEntity;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.network.packets.dialogue.S2CHealDialoguePacket;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
-import generations.gg.generations.core.generationscore.world.level.block.entities.HealerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -41,9 +41,11 @@ public class HealNode extends AbstractNode implements DialogueContainingNode {
             for (int x = center.getX() - radius; x < maxX; x++) {
                 for (int y = center.getY() - radius; y < maxY; y++) {
                     for (int z = center.getZ() - radius; z < maxZ; z++) {
-                        if (source.level().getBlockEntity(new BlockPos(x, y, z)) instanceof HealerBlockEntity healerBlockEntity) {
-                            // TODO heal player's pixelmon when the healer block gets implemented
-                            System.out.println("Healing player's pixelmon through dialogue");
+
+                        if (source.level().getBlockEntity(new BlockPos(x, y, z)) instanceof HealingMachineBlockEntity healerBlockEntity) {
+
+                                // TODO heal player's pixelmon when the healer block gets implemented
+                                System.out.println("Healing player's pixelmon through dialogue");
                         }
                     }
                 }
@@ -53,13 +55,18 @@ public class HealNode extends AbstractNode implements DialogueContainingNode {
 //            var party = HealingMachineBlockEntity.of(player);
 //            for (var data : party) {
 //                data.hp = data.getMaxHp();
-                // do we need to heal pixelmon in-game too?
+            // do we need to heal pixelmon in-game too?
                 /*var inGamePixelmon = party.findInGameCopy(data);
                 if (inGamePixelmon != null) {
                     inGamePixelmon.setHealth(data.getMaxHp());
                 }*/
 //            }
         }
+
+        while (healerRequired && HealingMachineBlockEntity.Companion.isUsingHealer(player)) {
+
+        }
+
         GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(player, new S2CHealDialoguePacket(text, next instanceof DialogueContainingNode));
     }
 

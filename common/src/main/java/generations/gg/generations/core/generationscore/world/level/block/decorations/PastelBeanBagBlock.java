@@ -26,7 +26,7 @@ import org.joml.Vector3f;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock> implements ModelContextProviders.TintProvider {
+public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock> {
     public PastelBeanBagBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock>>> function, Properties props) {
         super(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.PASTEL_BEAN_BAG);
     }
@@ -42,10 +42,5 @@ public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEnti
             return SittableEntity.mount(world, pos, 0.5f, player);
 
         return InteractionResult.PASS;
-    }
-
-    @Override
-    public Vector3f getTint() {
-        return DyedVariantBlockEntity.COLOR_MAP.get(getColor());
     }
 }
