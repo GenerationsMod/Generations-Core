@@ -1,0 +1,20 @@
+{
+  "values": [
+    "generations_core:armor_fossil",
+    "generations_core:bird_fossil",
+    "generations_core:claw_fossil",
+    "generations_core:cover_fossil",
+    "generations_core:dino_fossil",
+    "generations_core:dome_fossil",
+    "generations_core:drake_fossil",
+    "generations_core:fish_fossil",
+    "generations_core:fossil",
+    "generations_core:helix_fossil",
+    "generations_core:jaw_fossil",
+    "generations_core:old_amber",
+    "generations_core:plume_fossil",
+    "generations_core:root_fossil",
+    "generations_core:sail_fossil",
+    "generations_core:skull_fossil"
+  ]
+}

@@ -23,6 +23,18 @@ public class GenerationsItemTags {
     public static final TagKey<Item> CLOSED_POKEMAIL = create("sealed_pokemail");
     public static final TagKey<Item> BADGES = create("badges");
     public static final TagKey<Item> RIBBONS = create("ribbons");
+    public static final TagKey<Item> UNIMPLEMENTED = create("unimplemented");
+    public static final TagKey<Item> CUISINE = create("cuisine");
+    public static final TagKey<Item> NATURAL = create("natural");
+    public static final TagKey<Item> RESTORATION = create("restoration");
+    public static final TagKey<Item> PLAYER_ITEMS = create("player_items");
+    public static final TagKey<Item> HELD_ITEMS = create("held_items");
+    public static final TagKey<Item> LEGENDARY_ITEMS = create("legendary_items");
+    public static final TagKey<Item> UTILITY = create("utility");
+    public static final TagKey<Item> VALUABLES = create("valuables");
+    public static final TagKey<Item> FORM_ITEMS = create("form_items");
+    public static final TagKey<Item> BUILDING_BLOCKS = create("building_blocks");
+
 
     //Ore Tags
     public static final TagKey<Item> GENERATIONSORES = create("generationsores");

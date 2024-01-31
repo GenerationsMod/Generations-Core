@@ -48,40 +48,40 @@ public class GenerationsItems {
     /** Generations Badges Deferred Register */
     public static final DeferredRegister<Item> BADGES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Unimplemented Deferred Register */
     public static final DeferredRegister<Item> UNIMPLEMENTED = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Cusine Deferred Register */
     public static final DeferredRegister<Item> CUISINE = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Natural Deferred Register */
     public static final DeferredRegister<Item> NATURAL = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Restoration Deferred Register */
     public static final DeferredRegister<Item> RESTORATION = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Player Items Deferred Register */
     public static final DeferredRegister<Item> PLAYER_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations HeldItems Deferred Register */
     public static final DeferredRegister<Item> HELD_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Pokemail Deferred Register */
     public static final DeferredRegister<Item> POKEMAIL = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Legendary Items Deferred Register */
     public static final DeferredRegister<Item> LEGENDARY_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Utility Deferred Register */
     public static final DeferredRegister<Item> UTILITY = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Valuables Deferred Register */
     public static final DeferredRegister<Item> VALUABLES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Form Items Deferred Register */
     public static final DeferredRegister<Item> FORM_ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
-    /** Generations Unimplemented Deffered Register */
+    /** Generations Building Blocks Deferred Register */
     public static final DeferredRegister<Item> BUILDING_BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
 
 
@@ -169,7 +169,7 @@ public class GenerationsItems {
     /**
      * TM ITEMS
      */
-    public static final RegistrySupplier<Item> CUSTOM_TM = register("tm", CustomTechnicalMachineItem::new, null);
+    public static final RegistrySupplier<Item> CUSTOM_TM = register("tm", CustomTechnicalMachineItem::new);
 
 
     public static final RegistrySupplier<Item> TM_1 = register("tm_1", properties -> new TechnicalMachineItem("takedown", properties), PLAYER_ITEMS);
@@ -1534,8 +1534,11 @@ public class GenerationsItems {
     }
 
     public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier, DeferredRegister<Item> register) {
-        
-        return ITEMS.register(name, () -> itemSupplier.apply(of()));
+        return register.register(name, () -> itemSupplier.apply(of()));
+    }
+
+    public static <T extends Item> RegistrySupplier<T> register(String name, Function<Item.Properties, T> itemSupplier) {
+        return register(name, itemSupplier, ITEMS);
     }
 
     public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, DeferredRegister<Item> register) {
@@ -1554,7 +1557,19 @@ public class GenerationsItems {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Items");
         ITEMS.register();
-        BADGES.register();
         RIBBONS.register();
+        BADGES.register();
+        UNIMPLEMENTED.register();
+        CUISINE.register();
+        NATURAL.register();
+        RESTORATION.register();
+        PLAYER_ITEMS.register();
+        HELD_ITEMS.register();
+        POKEMAIL.register();
+        LEGENDARY_ITEMS.register();
+        UTILITY.register();
+        VALUABLES.register();
+        FORM_ITEMS.register();
+        BUILDING_BLOCKS.register();
     }
 }

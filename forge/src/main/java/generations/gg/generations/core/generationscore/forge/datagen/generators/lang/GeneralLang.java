@@ -43,14 +43,28 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsTools.TOOLS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsArmor.ARMOR, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.ITEMS, this::getNameGens, (item, function) -> {
+
+        });
+        addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.UNIMPLEMENTED, this::getNameGens, (item, function) -> {
             var item1 = item.get();
 
             if(item1 instanceof RecordItem) {
                 add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
             }
         });
-        addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.CUISINE, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.NATURAL, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.RESTORATION, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.PLAYER_ITEMS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.HELD_ITEMS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.LEGENDARY_ITEMS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.UTILITY, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.VALUABLES, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.FORM_ITEMS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.BUILDING_BLOCKS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.POKEMAIL, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
         add("itemGroup.generations_core.restoration", "Restoration");

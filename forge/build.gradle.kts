@@ -75,7 +75,7 @@ dependencies {
 
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.10.0")
-    modApi("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
+    modImplementation("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 }
 
 tasks {
