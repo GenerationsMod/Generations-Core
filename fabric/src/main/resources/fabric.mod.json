@@ -27,6 +27,6 @@
     "minecraft": ">=1.20.1",
     "architectury": ">=9.1.12",
     "cobblemon": ">=1.4.1",
-    "botarium": "*"
+    "botarium": ">=2.3.2"
   }
 }
