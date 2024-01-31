@@ -10,6 +10,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
@@ -19,6 +20,36 @@ import java.util.function.BiConsumer;
 public class GenerationsChestLoot implements LootTableSubProvider {
 	private static final ResourceLocation BEAST_BALL = GenerationsCore.id("chests/beast_ball");
 	private static final ResourceLocation CHERISH_BALL = GenerationsCore.id("chests/cherish_ball");
+	private static final ResourceLocation DIVE_BALL = GenerationsCore.id("chests/dive_ball");
+	private static final ResourceLocation DREAM_BALL = GenerationsCore.id("chests/dream_ball");
+	private static final ResourceLocation DUSK_BALL = GenerationsCore.id("chests/dusk_ball");
+	private static final ResourceLocation FAST_BALL = GenerationsCore.id("chests/fast_ball");
+	private static final ResourceLocation FRIEND_BALL = GenerationsCore.id("chests/friend_ball");
+	private static final ResourceLocation GIGATON_BALL = GenerationsCore.id("chests/gigaton_ball");
+	private static final ResourceLocation GREAT_BALL = GenerationsCore.id("chests/great_ball");
+	private static final ResourceLocation HEAL_BALL = GenerationsCore.id("chests/heal_ball");
+	private static final ResourceLocation HEAVY_BALL = GenerationsCore.id("chests/heavy_ball");
+	private static final ResourceLocation JET_BALL = GenerationsCore.id("chests/jet_ball");
+	private static final ResourceLocation LEADEN_BALL = GenerationsCore.id("chests/leaden_ball");
+	private static final ResourceLocation LEVEL_BALL = GenerationsCore.id("chests/level_ball");
+	private static final ResourceLocation LOVE_BALL = GenerationsCore.id("chests/love_ball");
+	private static final ResourceLocation LURE_BALL = GenerationsCore.id("chests/lure_ball");
+	private static final ResourceLocation LUXURY_BALL = GenerationsCore.id("chests/luxury_ball");
+	private static final ResourceLocation MASTER_BALL = GenerationsCore.id("chests/master_ball");
+	private static final ResourceLocation MOON_BALL = GenerationsCore.id("chests/moon_ball");
+	private static final ResourceLocation NEST_BALL = GenerationsCore.id("chests/nest_ball");
+	private static final ResourceLocation NET_BALL = GenerationsCore.id("chests/net_ball");
+	private static final ResourceLocation ORIGIN_BALL = GenerationsCore.id("chests/origin_ball");
+	private static final ResourceLocation PARK_BALL = GenerationsCore.id("chests/park_ball");
+	private static final ResourceLocation POKE_BALL = GenerationsCore.id("chests/poke_ball");
+	private static final ResourceLocation PREMIER_BALL = GenerationsCore.id("chests/premier_ball");
+	private static final ResourceLocation QUICK_BALL = GenerationsCore.id("chests/quick_ball");
+	private static final ResourceLocation REPEAT_BALL = GenerationsCore.id("chests/repeat_ball");
+	private static final ResourceLocation SAFARI_BALL = GenerationsCore.id("chests/safari_ball");
+	private static final ResourceLocation SPORT_BALL = GenerationsCore.id("chests/sport_ball");
+	private static final ResourceLocation TIMER_BALL = GenerationsCore.id("chests/timer_ball");
+	private static final ResourceLocation ULTRA_BALL = GenerationsCore.id("chests/ultra_ball");
+	private static final ResourceLocation WING_BALL = GenerationsCore.id("chests/wing_ball");
 	@Override
 	public void generate(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> output) {
 		//output.accept(BuiltInLootTables.ABANDONED_MINESHAFT, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).name(GenerationsCore.id("chests/heavy_ball").toString())));
@@ -93,6 +124,42 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 				GenerationsItems.TM_129.get(), GenerationsItems.TM_138.get(), GenerationsItems.TM_161.get())));
 
 		//output.accept(BuiltInLootTables.RUINED_PORTAL, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))).withPool(CHERISH_BALL));
+
+		output.accept(DIVE_BALL, LootTable.lootTable().withPool(createPool(UniformGenerator.between(1.0F, 2.0F),
+				CobblemonItems.POKE_BALL.asItem(), GenerationsItems.ABSORB_BULB.get(), GenerationsItems.BEACH_GLASS.get(),
+				GenerationsItems.BLUE_SHARD.get(), GenerationsItems.DAMP_ROCK.get(), CobblemonItems.DEEP_SEA_SCALE.asItem(),
+				CobblemonItems.DEEP_SEA_TOOTH.asItem(), CobblemonItems.DIVE_BALL.asItem(), GenerationsItems.HEALTH_CANDY.get(),
+				GenerationsItems.ICE_GEM.get(), GenerationsItems.ICE_HEAL.get(), CobblemonItems.ICE_STONE.asItem(),
+				GenerationsItems.ICY_ROCK.get(), CobblemonItems.LANSAT_BERRY.asItem(), GenerationsItems.LARGE_LEEK.get(),
+				GenerationsItems.LAX_INCENSE.get(), CobblemonItems.LEPPA_BERRY.asItem(), CobblemonItems.LEVEL_BALL.asItem(),
+				CobblemonItems.LIGHT_CLAY.asItem(), GenerationsItems.LUCKY_PUNCH.get(), CobblemonItems.LUM_BERRY.asItem(),
+				GenerationsItems.LUMINOUS_MOSS.get(), GenerationsItems.LUMIOSE_GALETTE.get(), GenerationsItems.LURE.get(),
+				CobblemonItems.LURE_BALL.asItem(), CobblemonItems.LUXURY_BALL.asItem(), CobblemonItems.MAGO_BERRY.asItem(),
+				GenerationsItems.MARBLE.get(), GenerationsItems.MAX_LURE.get(), GenerationsItems.MAX_POTION.get(),
+				GenerationsItems.MIGHTY_CANDY_L.get(), CobblemonItems.MOON_STONE.asItem(), CobblemonItems.MYSTIC_WATER.asItem(),
+				CobblemonItems.NET_BALL.asItem(), GenerationsItems.PARALYZE_HEAL.get(), GenerationsItems.PASS_ORB.get(),
+				CobblemonItems.PASSHO_BERRY.asItem(), CobblemonItems.PERSIM_BERRY.asItem(), CobblemonItems.PINAP_BERRY.asItem(),
+				GenerationsItems.POKE_DOLL.get(), GenerationsItems.POTION.get(), GenerationsItems.POWER_BELT.get(),
+				CobblemonItems.PRISM_SCALE.asItem(), GenerationsItems.PUNGENT_ROOT.get(), GenerationsItems.PURE_INCENSE.get(),
+				CobblemonItems.RABUTA_BERRY.asItem(), GenerationsItems.RELIC_GOLD.get(), GenerationsItems.SEA_INCENSE.get(),
+				GenerationsItems.SHOAL_SALT.get(), GenerationsItems.SHOAL_SHELL.get(), GenerationsItems.SMOKED_POKE_TAIL.get(),
+				GenerationsItems.SMOOTH_ROCK.get(), CobblemonItems.SOFT_SAND.asItem(), GenerationsItems.SPRINK_LOTAD.get(),
+				GenerationsItems.STRETCHY_SPRING.get(), GenerationsItems.SUPER_LURE.get(), CobblemonItems.TANGA_BERRY.asItem(),
+				GenerationsItems.TOUGH_CANDY_XL.get(), GenerationsItems.TROPICAL_SHELL.get(), CobblemonItems.WACAN_BERRY.asItem(),
+				GenerationsItems.WATER_GEM.get(), CobblemonItems.WATMEL_BERRY.asItem(), GenerationsItems.WAVE_INCENSE.get(),
+				CobblemonItems.YACHE_BERRY.asItem(), Items.SPONGE, Items.PRISMARINE, Items.SCUTE, Items.INK_SAC,
+				Items.PRISMARINE_SHARD, Items.PRISMARINE_CRYSTALS, Items.MUSIC_DISC_BLOCKS,
+				GenerationsItems.OLD_ROD.get(), GenerationsItems.GOOD_ROD.get(), GenerationsItems.SUPER_ROD.get(),
+				GenerationsItems.WAILMER_PAIL.get(), GenerationsItems.LAVA_CRYSTAL.get(), CobblemonItems.ADAMANT_MINT.asItem(),
+				CobblemonItems.NAUGHTY_MINT.asItem(), CobblemonItems.BOLD_MINT.asItem(), GenerationsItems.WATER_MEMORY_DRIVE.get(),
+				GenerationsItems.SPLASH_PLATE.get(), GenerationsItems.POKEMAIL_AIR.get(), GenerationsItems.POKEMAIL_BLOOM.get(),
+				GenerationsItems.POKEMAIL_BRICK.get(), GenerationsItems.POKEMAIL_BRIDGE_D.get(), GenerationsItems.POKEMAIL_BRIDGE_M.get(),
+				GenerationsItems.POKEMAIL_BRIDGE_S.get(), GenerationsItems.POKEMAIL_BRIDGE_T.get(), GenerationsItems.POKEMAIL_BRIDGE_V.get(),
+				GenerationsItems.WATER_CANDY.get(), GenerationsItems.SHATTERED_ICE_KEY_1.get(), GenerationsItems.SHATTERED_ICE_KEY_2.get(),
+				GenerationsItems.SHATTERED_ICE_KEY_3.get(), GenerationsItems.SHATTERED_ICE_KEY_4.get(), GenerationsItems.TM_11.get(),
+				GenerationsItems.TM_22.get(), GenerationsItems.TM_50.get(), GenerationsItems.TM_77.get(), GenerationsItems.TM_110.get(),
+				GenerationsItems.TM_123.get(), GenerationsItems.TM_142.get(), GenerationsItems.TM_145.get(), GenerationsItems.TM_154.get()
+		)));
 
 	}
 
