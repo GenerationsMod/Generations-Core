@@ -29,8 +29,7 @@ loom {
     forge {
         convertAccessWideners.set(true)
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
-
-        mixinConfigs("GenerationsCore-common.mixins.json", "GenerationsCore.mixins.json")
+        mixinConfig("GenerationsCore-common.mixins.json")
     }
 
     runs.create("data") {
@@ -47,6 +46,7 @@ repositories {
 
 dependencies {
     forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
+    //forge("net.neoforged:forge:$minecraftVersion-${project.properties["neoforge_version"]}")
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
