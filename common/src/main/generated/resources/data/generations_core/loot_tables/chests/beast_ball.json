@@ -1,0 +1,192 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:poke_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:antidote"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:assault_vest"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:babiri_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:beast_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:big_nugget"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:black_sludge"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bright_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:brittle_bones"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:cell_battery"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:chalky_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:charcoal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:charti_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:choice_band"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:choice_specs"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:chople_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:comet_shard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:courage_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dna_splicers"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dragon_gem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dynamax_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:enigma_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:exp_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fairy_gem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fire_gem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:flame_orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:full_heal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:ganlon_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:gigantamix"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:heal_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:jaboca_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lava_cookie"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:permit"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:pomeg_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:power_belt"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:rawst_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rock_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sea_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:smart_candy_l"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:soda_pop"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:strange_souvenir"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:weakness_policy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:wepear_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:wide_lens"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 1.0
+      }
+    }
+  ],
+  "random_sequence": "generations_core:chests/beast_ball"
+}
