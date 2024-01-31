@@ -42,3 +42,10 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
    versionRange="[1.4.1,)"
    ordering="AFTER"
    side="BOTH"
+
+[[dependencies.generations_core]]
+   modId="botarium"
+   mandatory=true
+   versionRange="[2.3.2,)"
+   ordering="AFTER"
+   side="BOTH"
