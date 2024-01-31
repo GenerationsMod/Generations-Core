@@ -24,7 +24,7 @@ public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implem
         return (getBlockState().getBlock() instanceof GenericModelBlock<?> block ? block.getModel() : GenerationsBlockEntityModels.DEFAULT);
     }
 
-    public AABB getBoundingBox() {
+    public AABB getRenderBoundingBox() {
         if(boundingBox == null) boundingBox = getBlockState().getBlock() instanceof GenericModelBlock<?> block ? block.computeRenderBoundingBox(getLevel(), getBlockPos(), getBlockState()) : defaultAABB(getBlockPos());
         return boundingBox;
     }

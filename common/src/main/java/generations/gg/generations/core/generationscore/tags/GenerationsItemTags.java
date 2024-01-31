@@ -9,13 +9,9 @@ public class GenerationsItemTags {
 
     public static final TagKey<Item> GENERATIONSITEMS = create("generationsitems");
     public static final TagKey<Item> PC = create("pc");
-    public static final TagKey<Item> CLOCK = create("clock");
-    public static final TagKey<Item> HEALER = create("healer");
     public static final TagKey<Item> VENDING_MACHINE = create("vending_machine");
-    public static final TagKey<Item> UMBRELLA = create("umbrella");
     public static final TagKey<Item> PASTEL_BEAN_BAG = create("pastel_bean_bag");
     public static final TagKey<Item> POKEDOLLS = create("pokedolls");
-    public static final TagKey<Item> POKEBALL_RUG = create("pokeball_rug");
     public static final TagKey<Item> ULTRA_DARK_LOGS = create("ultra_dark_logs");
     public static final TagKey<Item> ULTRA_JUNGLE_LOGS = create("ultra_jungle_logs");
     public static final TagKey<Item> GHOST_LOGS = create("ghost_logs");

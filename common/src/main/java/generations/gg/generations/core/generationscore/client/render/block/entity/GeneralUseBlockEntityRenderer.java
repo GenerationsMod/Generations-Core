@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.client.render.block.enti
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockAnimatedObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockLightValueProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
@@ -104,7 +105,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
         primeInstance.viewMatrix().set(stack.last().pose());
         ((BlockLightValueProvider) primeInstance).setLight(packedLight);
-        if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) primeInstance).setTint(provider.getTint());
+        if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockAnimatedObjectInstance) primeInstance).setTint(provider.getTint());
 
         var instance = (AnimatedObjectInstance) primeInstance;
 

@@ -134,7 +134,12 @@ public class Pipelines {
                                 ctx.uniform().uploadInt(3);
                             })
                             .supplyUniform("color", ctx -> {
-                                var color = ctx.instance() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null ? tintProvider.getTint() : (Vector3f) ctx.object().getMaterial(ctx.instance().variant()).getValue("color");
+                                Vector3f color;
+                                if (ctx.instance() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null)
+                                    color = tintProvider.getTint();
+                                else if(ctx.object().getMaterial(ctx.instance().variant()).getValue("color") != null)
+                                    color = (Vector3f) ctx.object().getMaterial(ctx.instance().variant()).getValue("color");
+                                else color = ONE;
                                 ctx.uniform().uploadVec3f(color);
                             })
                             .build();

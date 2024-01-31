@@ -1,7 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.decorations;
 
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.world.entity.block.SittableEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
@@ -19,11 +21,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Vector3f;
 
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock> {
+public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock> implements ModelContextProviders.TintProvider {
     public PastelBeanBagBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock>>> function, Properties props) {
         super(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.PASTEL_BEAN_BAG);
     }
@@ -39,5 +42,10 @@ public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEnti
             return SittableEntity.mount(world, pos, 0.5f, player);
 
         return InteractionResult.PASS;
+    }
+
+    @Override
+    public Vector3f getTint() {
+        return DyedVariantBlockEntity.COLOR_MAP.get(getColor());
     }
 }

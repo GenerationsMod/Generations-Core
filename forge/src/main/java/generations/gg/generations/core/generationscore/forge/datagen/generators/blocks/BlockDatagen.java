@@ -234,6 +234,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.ROTOM_PC.get(), "utility_blocks");
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TABLE_PC.get(), "utility_blocks");
+
         registerDyeGroup(GenerationsDecorationBlocks.PASTEL_BEAN_BAG, "bean_bags");
         registerDyeGroup(GenerationsDecorationBlocks.VENDING_MACHINE, "vending_machines");
         registerDyeGroup(GenerationsDecorationBlocks.SWIVEL_CHAIR, "swivel_chairs");
