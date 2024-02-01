@@ -580,6 +580,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.UNENCHANTED_SHADEROOT_CARROT.get(), "legend_items/", "shaderoot_carrot");
         createItem(GenerationsItems.ENIGMA_FRAGMENT.get(), "legend_items/");
         createItem(GenerationsItems.MEW_DNA_FIBER.get(), "legend_items/");
+        createItem(GenerationsItems.MEW_FOSSIL.get(), "legend_items/");
         createItem(GenerationsItems.LIGHT_SOUL.get(), "legend_items/");
         createItem(GenerationsShrines.LIGHT_CRYSTAL.get().asItem(), "legend_items/");
         createItem(GenerationsItems.SOUL_HEART.get(), "legend_items/");
