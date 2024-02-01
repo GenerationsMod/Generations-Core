@@ -10,7 +10,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
@@ -160,6 +159,51 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 				GenerationsItems.TM_22.get(), GenerationsItems.TM_50.get(), GenerationsItems.TM_77.get(), GenerationsItems.TM_110.get(),
 				GenerationsItems.TM_123.get(), GenerationsItems.TM_142.get(), GenerationsItems.TM_145.get(), GenerationsItems.TM_154.get()
 		)));
+
+		output.accept(DREAM_BALL, LootTable.lootTable().withPool(createPool(UniformGenerator.between(1.0F, 2.0F),
+				CobblemonItems.POKE_BALL.asItem(), GenerationsItems.AWAKENING.get(), CobblemonItems.BIG_ROOT.asItem(),
+				GenerationsItems.CELL_BATTERY.get(), GenerationsItems.CHALKY_STONE.get(), CobblemonItems.CHESTO_BERRY.asItem(),
+				CobblemonItems.CLOVER_SWEET.asItem(), GenerationsItems.COURAGE_CANDY.get(), CobblemonItems.CRACKED_POT.asItem(),
+				GenerationsItems.DRAGON_GEM.get(), CobblemonItems.DREAM_BALL.asItem(), CobblemonItems.DUSK_BALL.asItem(),
+				CobblemonItems.EXPERIENCE_CANDY_L.asItem(), GenerationsItems.FAIRY_GEM.get(), GenerationsItems.FRESH_CREAM.get(),
+				GenerationsItems.FRIED_FOOD.get(), CobblemonItems.IAPAPA_BERRY.asItem(), CobblemonItems.KEBIA_BERRY.asItem(),
+				GenerationsItems.LARGE_LEEK.get(), GenerationsItems.LEEK.get(), GenerationsItems.LEMONADE.get(),
+				GenerationsItems.LIGHT_BALL.get(), GenerationsItems.LOOKER_TICKET.get(), GenerationsItems.MARBLE.get(),
+				CobblemonItems.MYSTIC_WATER.asItem(), GenerationsItems.NORMAL_GEM.get(), GenerationsItems.ODD_INCENSE.get(),
+				GenerationsItems.ODD_KEYSTONE.get(), GenerationsItems.PARALYZE_HEAL.get(), CobblemonItems.PAYAPA_BERRY.asItem(),
+				CobblemonItems.PERSIM_BERRY.asItem(), GenerationsItems.POISON_GEM.get(), GenerationsItems.POLISHED_MUD_BALL.get(),
+				GenerationsItems.POWER_LENS.get(), GenerationsItems.PSYCHIC_GEM.get(), GenerationsItems.RAGE_CANDY_BAR.get(),
+				CobblemonItems.RAZOR_CLAW.asItem(), CobblemonItems.RAZOR_FANG.asItem(), GenerationsItems.RED_CARD.get(),
+				GenerationsItems.RED_NECTAR.get(), GenerationsItems.RED_SCARF.get(), GenerationsItems.RED_SHARD.get(),
+				GenerationsItems.RELIC_BAND.get(), GenerationsItems.ICY_WING.get(), GenerationsItems.ROOM_SERVICE.get(),
+				CobblemonItems.ROSELI_BERRY.asItem(), GenerationsItems.SCOPE_LENS.get(), CobblemonItems.SILK_SCARF.asItem(),
+				CobblemonItems.SITRUS_BERRY.asItem(), GenerationsItems.SMART_CANDY_XL.get(), GenerationsItems.SNOWBALL.get(),
+				GenerationsItems.SODA_POP.get(), GenerationsItems.SOUL_DEW.get(), GenerationsItems.STAR_PIECE.get(),
+				GenerationsItems.STARDUST.get(), GenerationsItems.THROAT_SPRAY.get(), CobblemonItems.THUNDER_STONE.asItem(),
+				CobblemonItems.TWISTED_SPOON.asItem(), CobblemonItems.UPGRADE.asItem(), CobblemonItems.WHIPPED_DREAM.asItem(),
+				GenerationsItems.WIDE_LENS.get(), GenerationsItems.X_ACCURACY.get(), GenerationsItems.X_DEFENSE_6.get(),
+				GenerationsItems.X_SPECIAL_ATTACK_2.get(), Items.PURPUR_BLOCK, Items.SLIME_BALL, Items.GHAST_TEAR,
+				Items.CRIMSON_FUNGUS, Items.MUSIC_DISC_BLOCKS, GenerationsItems.MARK_CHARM.get(),
+				GenerationsItems.RUSTY_IRON_KEY_2.get(), GenerationsItems.SHATTERED_ICE_KEY_2.get(),
+				GenerationsItems.CRUMBLED_ROCK_KEY_2.get(), GenerationsItems.FRAGMENTED_DRAGO_KEY_2.get(),
+				GenerationsItems.DISCHARGED_ELEKI_KEY_2.get(), GenerationsItems.SHATTERED_RELIC_SONG_2.get(),
+				GenerationsItems.LAVA_CRYSTAL.get(), GenerationsItems.LUGIA_DISC.get(), GenerationsItems.LAVENDER_TOWN_DISC.get(),
+				GenerationsItems.MT_PYRE_DISC.get(), CobblemonItems.RELAXED_MINT.asItem(), CobblemonItems.IMPISH_MINT.asItem(),
+				CobblemonItems.GENTLE_MINT.asItem(), GenerationsItems.POKEMAIL_AIR.get(), GenerationsItems.POKEMAIL_BLOOM.get(),
+				GenerationsItems.POKEMAIL_BRICK.get(), GenerationsItems.POKEMAIL_BRIDGE_D.get(), GenerationsItems.POKEMAIL_BRIDGE_M.get(),
+				GenerationsItems.POKEMAIL_BRIDGE_S.get(), GenerationsItems.POKEMAIL_BRIDGE_T.get(), GenerationsItems.POKEMAIL_BRIDGE_V.get(),
+				GenerationsItems.POKEMAIL_BUBBLE.get(), GenerationsItems.POKEMAIL_DREAM.get(), GenerationsItems.POKEMAIL_FAB.get(),
+				GenerationsItems.POKEMAIL_FAVORED.get(), GenerationsItems.FIRE_CANDY.get(), GenerationsItems.ICE_CANDY.get(),
+				GenerationsItems.PSYCHIC_CANDY.get(), GenerationsItems.TM_8.get(), GenerationsItems.TM_24.get(),
+				GenerationsItems.TM_38.get(), GenerationsItems.TM_49.get(), GenerationsItems.TM_67.get(), GenerationsItems.TM_107.get(),
+				GenerationsItems.TM_118.get(), GenerationsItems.TM_125.get(), GenerationsItems.TM_141.get(), GenerationsItems.TM_144.get(),
+				GenerationsItems.TM_153.get(), GenerationsItems.TM_157.get(), GenerationsItems.TM_165.get(), GenerationsItems.TM_10.get(),
+				GenerationsItems.TM_34.get(), GenerationsItems.TM_46.get(), GenerationsItems.TM_52.get(), GenerationsItems.TM_59.get(),
+				GenerationsItems.TM_63.get(), GenerationsItems.TM_74.get(), GenerationsItems.TM_75.get(), GenerationsItems.TM_85.get(),
+				GenerationsItems.TM_92.get(), GenerationsItems.TM_98.get(), GenerationsItems.TM_109.get(), GenerationsItems.TM_120.get(),
+				GenerationsItems.TM_128.get(), GenerationsItems.TM_129.get(), GenerationsItems.TM_138.get(), GenerationsItems.TM_161.get()
+		)));
+
 
 	}
 
