@@ -17,14 +17,10 @@ class GenerationsCobblemonEvents {
         @JvmStatic
         fun init() {
             CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) { it ->
-                var level = it.entity.level()
-
                 var amount = 0
-                level.getChunk(it.entity.blockPosition()).findBlocks({ it.`is`(GenerationsUtilityBlocks.SCARECROW.get())}) {pos, state -> amount += 1}
+                it.entity.level().getChunk(it.entity.blockPosition()).findBlocks({ it.`is`(GenerationsUtilityBlocks.SCARECROW.get())}) {pos, state -> amount += 1}
                 if(amount > 0) it.cancel()
             }
-
-
 
             BATTLE_VICTORY.subscribe(Priority.HIGH) { event ->
                 val data = mutableListOf<BattleData>()
@@ -45,7 +41,7 @@ class GenerationsCobblemonEvents {
 
                         actor.pokemonList.asSequence().map { it.originalPokemon }.forEach { originalPokemon ->
                             val it: ItemStack = originalPokemon.heldItem()
-                            if (!it.isEmpty) {
+                            if (!it.isEmpty)
                                 if (it.item is PostBattleUpdatingItem) {
                                     (it.item as PostBattleUpdatingItem).afterBattle(
                                         actor,
@@ -55,7 +51,6 @@ class GenerationsCobblemonEvents {
                                     )
                                     originalPokemon.swapHeldItem(it, false)
                                 }
-                            }
                         }
                     }
             }

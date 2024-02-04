@@ -1,0 +1,384 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:poke_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:coba_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:flying_gem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:flying_memory_drive"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:sharp_beak"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:iron_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sky_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:clever_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:genius_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:health_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:muscle_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pretty_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:resist_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:swift_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:eject_pack"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:cell_battery"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:eject_button"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:miracle_seed"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:light_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:power_herb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mental_herb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:mirror_herb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:white_herb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:silk_scarf"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:max_potion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:max_repel"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:metal_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:metronome"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:nanab_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:pomeg_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:power_anklet"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:power_band"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:precooked_burger"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:premier_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:protector"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:quick_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:chesto_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:choice_scarf"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:terrain_extender"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:awakening"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:energy_root"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:heal_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:courage_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:quick_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lemonade"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:paralyze_heal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:zinc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_silver"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:odd_keystone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_d"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_m"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_s"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_t"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_v"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:flying_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:health_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:honey"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:leek"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:leftovers"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:cascarrafa_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:slumbering_weald_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemon_center_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:azalea_town_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lillie_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:route_228_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:jubilife_village_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:goldenrod_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:eterna_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:vermilion_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lone_earring"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lustrous_orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bread"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pasta"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fancy_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:spice_mix"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:packaged_curry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_speed_6"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_accuracy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_attack_3"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:exp_candy_m"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:exp_candy_xs"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_14"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_27"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_40"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_65"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_97"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_113"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_160"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_164"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 1.0
+      }
+    }
+  ],
+  "random_sequence": "generations_core:chests/jet_ball"
+}

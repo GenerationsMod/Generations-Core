@@ -41,7 +41,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.apache.logging.log4j.util.TriConsumer;
@@ -60,9 +59,6 @@ public class GenerationsCore
 
 	/** The mod id of the Generations-Core mod. */
 	public static final String MOD_ID = "generations_core";
-
-	/** The random source for Generations-Core mod. */
-	public static final RandomSource RANDOM_SOURCE = RandomSource.create();
 
 	/** The logger for the Generations-Core mod. */
 	public static final Logger LOGGER = LogUtils.getLogger();
