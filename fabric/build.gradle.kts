@@ -116,11 +116,12 @@ publisher {
     setReleaseType(ReleaseType.BETA)
     version.set(project.version.toString())
     displayName.set("$jarName-${version.get()}")
-    changelog.set("test changelog")
+    changelog.set("")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
     setCurseEnvironment(CurseEnvironment.BOTH)
+    setJavaVersions("java 17", "java 18")
     val depends = mutableListOf(
         "fabric-api",
         "fabric-language-kotlin",
@@ -129,7 +130,9 @@ publisher {
         "botarium",
     )
     curseDepends.required.set(depends)
+    curseDepends.optional.set(mutableListOf("wthit"))
     modrinthDepends.required.set(depends)
+    modrinthDepends.optional.set(mutableListOf("wthit"))
 }
 
 components {

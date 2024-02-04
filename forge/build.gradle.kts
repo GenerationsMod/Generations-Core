@@ -124,11 +124,12 @@ publisher {
     setReleaseType(ReleaseType.BETA)
     version.set(project.version.toString())
     displayName.set("$jarName-${version.get()}")
-    changelog.set("test changelog")
+    changelog.set("")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
     setCurseEnvironment(CurseEnvironment.BOTH)
+    setJavaVersions("java 17", "java 18")
     val depends = mutableListOf(
         "architectury-api",
         "kotlin-for-forge",
@@ -136,7 +137,9 @@ publisher {
         "botarium",
     )
     curseDepends.required.set(depends)
+    curseDepends.optional.set(mutableListOf("wthit-forge"))
     modrinthDepends.required.set(depends)
+    modrinthDepends.optional.set(mutableListOf("wthit"))
 }
 
 components {
