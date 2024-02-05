@@ -7,7 +7,7 @@ issueTrackerURL="https://github.com/GenerationsMod/Generations-Core/issues"
 modId="generations_core"
 version="${version}"
 displayName="Generations-Core"
-authors="J.T. McQuigg (JT122406), Waterpicker, Stampede"
+authors="Joseph T. McQuigg (JT122406), Waterpicker, Stampede"
 credits="Generations Development Team"
 logoFile="generations.png"
 description='''
@@ -18,7 +18,7 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 [[dependencies.generations_core]]
    modId="forge"
    mandatory=true
-   versionRange="[47.2,)"
+   versionRange="[47.1.96,)"
    ordering="NONE"
    side="BOTH"
 

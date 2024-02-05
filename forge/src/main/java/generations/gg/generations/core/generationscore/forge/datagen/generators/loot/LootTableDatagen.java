@@ -12,7 +12,8 @@ public class LootTableDatagen extends LootTableProvider {
 
     public LootTableDatagen(PackOutput output) {
         super(output, Set.of(), ImmutableList.of(
-                new SubProviderEntry(GenerationsBlockLoot::new, LootContextParamSets.BLOCK)
+                new SubProviderEntry(GenerationsBlockLoot::new, LootContextParamSets.BLOCK),
+        new SubProviderEntry(GenerationsChestLoot::new, LootContextParamSets.CHEST)
 //            Pair.of(ChestLoot::new, LootContextParamSets.CHEST),
 //            Pair.of(EntityLoot::new, LootContextParamSets.ENTITY),
 //            Pair.of(PiglinBarterLoot::new, LootContextParamSets.PIGLIN_BARTER),

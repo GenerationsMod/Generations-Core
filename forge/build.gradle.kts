@@ -29,8 +29,7 @@ loom {
     forge {
         convertAccessWideners.set(true)
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
-
-        mixinConfigs("GenerationsCore-common.mixins.json", "GenerationsCore.mixins.json")
+        mixinConfig("GenerationsCore-common.mixins.json")
     }
 
     runs.create("data") {
@@ -47,6 +46,7 @@ repositories {
 
 dependencies {
     forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
+    //forge("net.neoforged:forge:$minecraftVersion-${project.properties["neoforge_version"]}")
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
@@ -124,11 +124,12 @@ publisher {
     setReleaseType(ReleaseType.BETA)
     version.set(project.version.toString())
     displayName.set("$jarName-${version.get()}")
-    changelog.set("test changelog")
+    changelog.set("")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
     setCurseEnvironment(CurseEnvironment.BOTH)
+    setJavaVersions("java 17", "java 18")
     val depends = mutableListOf(
         "architectury-api",
         "kotlin-for-forge",
@@ -136,7 +137,9 @@ publisher {
         "botarium",
     )
     curseDepends.required.set(depends)
+    curseDepends.optional.set(mutableListOf("wthit-forge"))
     modrinthDepends.required.set(depends)
+    modrinthDepends.optional.set(mutableListOf("wthit"))
 }
 
 components {
