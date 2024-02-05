@@ -2,7 +2,7 @@
   "generations_core.item.lugia_shrine_song": {
     "sounds": [
       {
-        "name": "generations_core:item/lugia_shrine_song"
+        "name": "generations_core:items/lugia_shrine_song"
       }
     ]
   },

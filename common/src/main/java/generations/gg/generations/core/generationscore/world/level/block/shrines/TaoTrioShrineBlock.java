@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.legends.TaoTrioStoneItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
@@ -7,8 +8,11 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.TaoTrioShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -28,6 +32,14 @@ public class TaoTrioShrineBlock extends InteractShrineBlock<TaoTrioShrineBlockEn
 
     public TaoTrioShrineBlock(BlockBehaviour.Properties properties) {
         super(properties, GenerationsBlockEntities.TAO_TRIO_SHRINE, GenerationsBlockEntityModels.TAO_TRIO_SHRINE, TaoTrioShrineBlockEntity.class);
+    }
+
+    @Override
+    protected boolean activate(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, ActivationState activationState) {
+        var stack = player.getItemInHand(hand);
+        PokemonUtil.spawn(((TaoTrioStoneItem) stack.getItem()).getSpecies().createProperties(70), level, player.getOnPos());
+        stack.shrink(1);
+        return true;
     }
 
     @Override

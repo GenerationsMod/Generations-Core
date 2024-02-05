@@ -49,7 +49,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     //11: bowl
     //12: log
     //13: out
-    private ExtendedsimpleItemContainer handler = new ExtendedsimpleItemContainer(this, 14);
+    private ExtendedsimpleItemContainer handler;
 
     private String customName;
     private boolean isCooking;
@@ -89,12 +89,13 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     public void serverTick() {
-        ItemStack[] berries = IntStream.rangeClosed(0, 9).mapToObj(handler::getItem).toArray(ItemStack[]::new);
-        ItemStack bowl = handler.getItem(10);
-        ItemStack mainIngredient = handler.getItem(11);
-        ItemStack log = handler.getItem(12);
+        var container = getContainer();
+        ItemStack[] berries = IntStream.rangeClosed(0, 9).mapToObj(container::getItem).toArray(ItemStack[]::new);
+        ItemStack bowl = container.getItem(10);
+        ItemStack mainIngredient = container.getItem(11);
+        ItemStack log = container.getItem(12);
 
-        boolean hasEverything = isCooking && Stream.of(berries).anyMatch(a -> !a.isEmpty()) && !bowl.isEmpty() && !log.isEmpty() && handler.getItem(13).isEmpty();
+        boolean hasEverything = isCooking && Stream.of(berries).anyMatch(a -> !a.isEmpty()) && !bowl.isEmpty() && !log.isEmpty() && container.getItem(13).isEmpty();
         if (hasEverything) {
             boolean hasInserted = false;
             cookTime++;
@@ -111,7 +112,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
                     CurryEvents.Cook event = new CurryEvents.Cook(type, berriesTypes, new CurryData(type, berriesTypes));
 
                     if (!CurryEvents.COOK.invoker().act(event).isTrue()) {
-                        hasInserted = handler.insertItem(13, ItemCurry.createStack(event.getOutput()), false).isEmpty();
+                        hasInserted = container.insertItem(13, ItemCurry.createStack(event.getOutput()), false).isEmpty();
                     }
                 } else if (hasMaxMushrooms && !hasBerry && (mainIngredient.isEmpty() || mainIngredient.getItem() == GenerationsItems.MAX_HONEY.get())) {
                     AtomicInteger count = new AtomicInteger();
@@ -145,7 +146,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
                             cookTime = 0;
                         }
 
-                        handler.insertItem(13, maxSoupStack, false);
+                        container.insertItem(13, maxSoupStack, false);
                     } else {
                         setCooking(false);
                     }
@@ -186,15 +187,15 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     public ItemStack getIngredient() {
-        return handler.getItem(11);
+        return getContainer().getItem(11);
     }
 
     public ItemStack getOuput() {
-        return handler.getItem(13);
+        return getContainer().getItem(13);
     }
 
     public ItemStack getBerry(int index) {
-        return index >= 0 && index < 10 ? handler.getItem(index) : ItemStack.EMPTY;
+        return index >= 0 && index < 10 ? getContainer().getItem(index) : ItemStack.EMPTY;
     }
 
     @Nullable
@@ -215,8 +216,8 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
 //    }
 
     @Override
-    public SerializableContainer getContainer() {
-        return this.handler;
+    public ExtendedsimpleItemContainer getContainer() {
+        return this.handler == null ? (handler = new ExtendedsimpleItemContainer(this, 14)) : handler;
     }
 
     @Override
@@ -249,7 +250,7 @@ public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     public boolean hasLogs() {
-        return !handler.getItem(12).isEmpty();
+        return !getContainer().getItem(12).isEmpty();
     }
 
     public static Flavor getDominantFlavor(Berry... berries) {

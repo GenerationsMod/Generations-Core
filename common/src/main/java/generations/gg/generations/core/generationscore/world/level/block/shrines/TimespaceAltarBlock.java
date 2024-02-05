@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.legends.CreationTrioItem;
 import generations.gg.generations.core.generationscore.world.item.legends.RedChainItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
@@ -7,8 +9,11 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -35,5 +40,56 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE.getShape(state);
+    }
+
+    @Override
+    protected boolean activate(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, ActivationState activationState) {
+        ItemStack stack = player.getItemInHand(hand);
+
+        var entity = getAssoicatedBlockEntity(level, pos).orElse(null);
+
+        if(entity == null) return false;
+
+        var handler = entity.getContainer();
+
+        if (stack.getItem() instanceof RedChainItem && !handler.hasRedChain()) {
+            ItemStack chain = handler.insertItem(1, stack, false);
+
+            if (ItemStack.isSameItem(stack, chain)) return false;
+            player.setItemInHand(hand, chain);
+
+            var succeeded = trySpawn(level, pos, handler, player);
+            if(succeeded) entity.sync();
+            return succeeded;
+        } else if (stack.getItem() instanceof CreationTrioItem && !handler.hasOrb(player)) {
+            ItemStack chain = handler.insertItem(0, stack, false);
+
+            if (ItemStack.isSameItem(stack, chain)) return false;
+            player.setItemInHand(hand, chain);
+
+            var succeeded = trySpawn(level, pos, handler, player);
+            if(succeeded) entity.sync();
+            return succeeded;
+        } else if (stack.isEmpty()) {
+            player.getInventory().placeItemBackInInventory(handler.extractItem());
+            return true;
+        } else return false;
+    }
+
+    public static boolean trySpawn(Level level, BlockPos pos, TimeSpaceAltarBlockEntity.TimeSpaceAltarItemStackHandler handler, ServerPlayer player) {
+        if (handler.shouldSpawn(player)) {
+            var id = ((CreationTrioItem) handler.getItem(0).getItem()).getSpeciesId();
+            PokemonUtil.spawn(GenerationsUtils.parseProperties(id.species().getPath()), level, pos);
+            RedChainItem.incrementUsage(handler.getItem(1));
+            if (RedChainItem.getUses(handler.getItem(1)) >= RedChainItem.MAX_USES)
+                handler.setItem(1, ItemStack.EMPTY);
+            handler.setItem(0, ItemStack.EMPTY);
+            handler.dumpAllIntoPlayerInventory(player);
+            return true;
+        }
+
+        else {
+            return false;
+        }
     }
 }

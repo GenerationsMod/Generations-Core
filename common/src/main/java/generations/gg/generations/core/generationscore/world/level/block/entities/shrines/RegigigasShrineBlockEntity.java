@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.world.entity.block.Pokemo
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.legends.RegiOrbItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.ShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
@@ -21,11 +22,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Optional;
 import java.util.OptionalInt;
 
-public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implements ItemContainerBlock {
-    private final RegigigasItemStackHandler handler = new RegigigasItemStackHandler();
+public class RegigigasShrineBlockEntity extends ShrineBlockEntity implements ItemContainerBlock {
+    private RegigigasItemStackHandler handler;
 
     public RegigigasShrineBlockEntity(BlockPos arg2, BlockState arg3) {
         super(GenerationsBlockEntities.REGIGIGAS_SHRINE.get(), arg2, arg3);
+        handler = new RegigigasItemStackHandler();
     }
 
     public RegigigasItemStackHandler getRegiOrbs() {
@@ -33,34 +35,8 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
     }
 
     @Override
-    public SerializableContainer getContainer() {
-        return handler;
-    }
-
-    public boolean activate(ServerPlayer player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
-
-        if (stack.getItem() instanceof RegiOrbItem item && !handler.contains(item)) {
-            player.setItemInHand(hand, handler.insertItem(OptionalInt.of(getRegiOrbIndex(item)).getAsInt(), stack, false));
-
-            if (handler.isFull()) {
-                toggleActive();
-                PokemonUtil.spawn(LegendKeys.REGIGIGAS.createProperties(70), level, getBlockPos().above());
-                handler.clear();
-                toggleActive();
-            }
-
-            sync();
-
-            return true;
-        } else
-            for (int i = 0; i < 5; i++)
-                if (!handler.getItem(i).isEmpty()) {
-                    player.getInventory().placeItemBackInInventory(handler.extractItem(i, 1, false));
-                    return true;
-                }
-
-        return false;
+    public RegigigasItemStackHandler getContainer() {
+        return handler == null ? (handler = new RegigigasItemStackHandler()) : handler;
     }
 
     public static int getRegiOrbIndex(RegiOrbItem item) {
@@ -72,6 +48,11 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
             case "regieleki" -> 4;
             default -> -1;
         };
+    }
+
+    @Override
+    protected void saveAdditional(@NotNull CompoundTag nbt) {
+        super.saveAdditional(nbt);
     }
 
     private Optional<RegiOrbItem> getRegiItem(int index) {

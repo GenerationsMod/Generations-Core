@@ -41,9 +41,9 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     private static final BiFunction<BlockPos, BlockState, BlockPos> DEFAULT_BLOCK_ROTATE_POS_FUNCTION = (pos, state) -> {
         if(state.getBlock() instanceof GenericRotatableModelBlock<?> block) {
             var facing = state.getValue(FACING);
-            var x = block.adjustX(block.getWidthValue(state));
+            var x = block.getWidthValue(state);
             var y = block.getHeightValue(state);
-            var z = block.adjustZ(block.getLengthValue(state));
+            var z = block.getLengthValue(state);
 
             return block.adjustBlockPos(pos, facing, x, y, z, false);
         }
@@ -87,7 +87,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         if(length != 0) SIZE_PROPERTIES.computeIfAbsent(Size.LENGTH, value -> new HashMap<>()).computeIfAbsent(length, value -> IntegerProperty.create("length", 0, value));
     }
 
-    private void reassignStateDefinition() {
+    protected void reassignStateDefinition() {
         StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
         this.createBlockStateDefinition(builder);
         this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
@@ -149,8 +149,8 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         return true;
     }
 
-    protected BlockPos adjustBlockPos(BlockPos pos, Direction dir, int x, int y, int z, boolean b) {
-        return b ? pos.relative(dir.getCounterClockWise(), adjustX(x)).relative(Direction.UP, y).relative(dir.getOpposite(), adjustZ(z)) : pos.relative(dir.getClockWise(), adjustX(x)).relative(Direction.DOWN, y).relative(dir, adjustZ(z));
+    protected BlockPos adjustBlockPos(BlockPos pos, Direction dir, int x, int y, int z, boolean positive) {
+        return positive ? pos.relative(dir.getCounterClockWise(), adjustX(x)).relative(Direction.UP, y).relative(dir.getOpposite(), adjustZ(z)) : pos.relative(dir.getClockWise(), adjustX(x)).relative(Direction.DOWN, y).relative(dir, adjustZ(z));
     }
 
     protected boolean validPosition(int x, int y, int z) {
@@ -199,7 +199,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
                     var blockPos = adjustBlockPos(pos, facing, x, y,z, true);
 
-                    level.destroyBlock(blockPos, !player.isCreative() && x == getBaseX() && y == 0 && z == getBaseZ());
+                    level.destroyBlock(blockPos, !player.isCreative() && x == 0 && y == 0 && z == 0);
                 }
             }
         }

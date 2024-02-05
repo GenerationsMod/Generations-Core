@@ -11,6 +11,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -68,11 +69,21 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
             if (!blockPos.isEmpty()) {
                 List<BlockPos> list = checkForUnownSequence(level, blockPos.get(0));
-                if (!list.isEmpty() && level.getBlockEntity(pos) instanceof ShrineBlockEntity shrine && !shrine.isActive()) {
+                if (!list.isEmpty() && level.getBlockEntity(pos) instanceof ShrineBlockEntity shrine && isActive(state) == ActivationState.OFF) {
+                    toggleActive(level, pos);
+
+                    ScheduledTask.schedule(new Runnable() {
+                        @Override
+                        public void run() {
+                            list.forEach(a -> level.destroyBlock(a, false));
+                            player.getItemInHand(hand).shrink(1);
+                            PokemonUtil.spawn(species.createProperties(70), level, shrine.getBlockPos());
+                            toggleActive(level, pos);
+                        }
+                    }, 200);
+
 //                    shrine.toggleActive();
-                    list.forEach(a -> level.destroyBlock(a, false));
-                    player.getItemInHand(hand).shrink(1);
-                    PokemonUtil.spawn(species.createProperties(70), level, shrine.getBlockPos());
+
 //                    shrine.toggleActive();
                 }
             }
