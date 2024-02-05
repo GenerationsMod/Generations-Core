@@ -15,6 +15,10 @@
   "processingTime": 240,
   "result": {
     "type": "pokemon",
-    "data": "dracovish"
+    "data": {
+      "aspects": [],
+      "level": 1,
+      "species": "cobblemon:dracovish"
+    }
   }
 }

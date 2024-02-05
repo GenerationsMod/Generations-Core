@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
 import com.cobblemon.mod.common.CobblemonItems;
+import com.google.common.collect.Sets;
+import com.google.gson.JsonObject;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
@@ -8,12 +10,19 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.data.CachedOutput;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
@@ -23,7 +32,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(LegendKeys.MEWTWO.createProperties(70))
+        RksRecipeJsonBuilder.create(LegendKeys.MEWTWO, 70)
                 .key(LegendKeys.MEWTWO)
                 .pattern("XAX")
                 .pattern("XBX")
@@ -106,6 +115,8 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createFossil(GenerationsItems.DRAKE_FOSSIL, GenerationsItems.FISH_FOSSIL, "dracovish", exporter);
         createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.BIRD_FOSSIL, "arctozolt", exporter);
         createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.FISH_FOSSIL, "artcovish", exporter);
+
+        System.out.println();
     }
 
     private void createFossil(RegistrySupplier<Item> item, String name, Consumer<FinishedRecipe> exporter) {
@@ -115,7 +126,6 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .criterion(item.getId().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item.get()))
                 .offerTo(exporter, GenerationsCore.id(name));
     }
-
 
     private void createFossil(RegistrySupplier<Item> item, RegistrySupplier<Item> item2, String name, Consumer<FinishedRecipe> exporter) {
         RksRecipeJsonBuilder.create(name)

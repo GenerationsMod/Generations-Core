@@ -1,6 +1,7 @@
 
 package generations.gg.generations.core.generationscore.world.container;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.level.block.RksMachineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
@@ -135,7 +136,12 @@ public class RksMachineContainer extends AbstractContainerMenu {
 				var pos = rksmachine.getBlockPos();
 				var dir = rksmachine.getBlockState().getValue(RksMachineBlock.FACING);
 
-				PokemonUtil.spawn(((RksResult.PokemonResult) recipe.getResult()).properties(), rksmachine.getLevel(), pos.above(2), dir.toYRot());
+				var result = ((RksResult.PokemonResult) recipe.getResult());
+				var properties = new PokemonProperties();
+				properties.setSpecies(result.species().toString());
+				properties.setAspects(result.aspects());
+				properties.setLevel(result.level());
+				PokemonUtil.spawn(properties, rksmachine.getLevel(), pos.above(2), dir.toYRot());
 				stack.setCount(0);
 			} else {
 				this.checkTakeAchievements(stack);

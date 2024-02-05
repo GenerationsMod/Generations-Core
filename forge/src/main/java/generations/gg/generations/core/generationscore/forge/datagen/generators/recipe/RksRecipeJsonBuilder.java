@@ -1,8 +1,11 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonPropertyExtractor;
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.pokemon.Species;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -27,6 +30,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -51,24 +55,24 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 		this.output = new RksResult.ItemResult(output.asItem());
 	}
 
-	public RksRecipeJsonBuilder(PokemonProperties properties) {
-		this.output = new RksResult.PokemonResult(properties);
+	public RksRecipeJsonBuilder(ResourceLocation species, Set<String> aspects, int level) {
+		this.output = new RksResult.PokemonResult(species, aspects, level);
 	}
 
 	public static RksRecipeJsonBuilder create(SpeciesKey key) {
-		return new RksRecipeJsonBuilder(key.createProperties());
+		return create(key, 1);
+	}
+
+	public static RksRecipeJsonBuilder create(ResourceLocation species, Set<String> aspects, int level) {
+		return new RksRecipeJsonBuilder(species, aspects, level);
 	}
 
 	public static RksRecipeJsonBuilder create(SpeciesKey key, int level) {
-		return new RksRecipeJsonBuilder(key.createProperties(level));
-	}
-
-	public static RksRecipeJsonBuilder create(PokemonProperties properties) {
-		return new RksRecipeJsonBuilder(properties);
+		return new RksRecipeJsonBuilder(key.species(), key.aspects(), level);
 	}
 
 	public static RksRecipeJsonBuilder create(Pokemon pokemon) {
-		return new RksRecipeJsonBuilder(pokemon.createPokemonProperties(PokemonPropertyExtractor.ALL));
+		return new RksRecipeJsonBuilder(pokemon.getSpecies().getResourceIdentifier(), pokemon.getAspects(), pokemon.getLevel());
 	}
 
 	public static RksRecipeJsonBuilder create(ItemLike output) {
@@ -76,9 +80,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 	}
 
 	public static RksRecipeJsonBuilder create(String name) {
-		var properties = new PokemonProperties();
-		properties.setSpecies(name);
-		return create(properties);
+		return create(new ResourceLocation("cobblemon", name), new HashSet<>(), 1);
 	}
 
 	public RksRecipeJsonBuilder key(SpeciesKey key) {

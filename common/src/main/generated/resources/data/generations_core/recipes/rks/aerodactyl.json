@@ -12,6 +12,10 @@
   "processingTime": 240,
   "result": {
     "type": "pokemon",
-    "data": "aerodactyl"
+    "data": {
+      "aspects": [],
+      "level": 1,
+      "species": "cobblemon:aerodactyl"
+    }
   }
 }
