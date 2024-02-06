@@ -75,7 +75,6 @@ public class GeneralLang extends LanguageProvider {
         add("itemGroup.generations_core.legendary_items", "Legendary Items");
         add("itemGroup.generations_core.building_blocks", "Building Blocks");
         add("itemGroup.generations_core.decorations", "Decorations");
-        add("itemGroup.generations_core.natural", "Natural");
         add("itemGroup.generations_core.utility", "Utility");
         add("itemGroup.generations_core.form_items", "Form Items");
         add("itemGroup.generations_core.pokemail", "Pokemail");
