@@ -1,20 +1,13 @@
 package generations.gg.generations.core.generationscore.world.recipe;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
-import com.cobblemon.mod.common.item.PokemonItem;
-import com.cobblemon.mod.common.pokemon.Species;
 import com.google.common.collect.Streams;
 import com.google.gson.*;
-import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.Level;
 
 import java.util.Collections;
 import java.util.Set;
-import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
 public interface RksResult {

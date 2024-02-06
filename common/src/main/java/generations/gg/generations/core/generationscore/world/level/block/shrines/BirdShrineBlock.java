@@ -8,7 +8,6 @@ import generations.gg.generations.core.generationscore.world.item.MelodyFluteIte
 import generations.gg.generations.core.generationscore.world.item.WingItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.BlockPos;

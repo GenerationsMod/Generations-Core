@@ -72,14 +72,11 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                 if (!list.isEmpty() && level.getBlockEntity(pos) instanceof ShrineBlockEntity shrine && isActive(state) == ActivationState.OFF) {
                     toggleActive(level, pos);
 
-                    ScheduledTask.schedule(new Runnable() {
-                        @Override
-                        public void run() {
-                            list.forEach(a -> level.destroyBlock(a, false));
-                            player.getItemInHand(hand).shrink(1);
-                            PokemonUtil.spawn(species.createProperties(70), level, shrine.getBlockPos());
-                            toggleActive(level, pos);
-                        }
+                    ScheduledTask.schedule(() -> {
+                        list.forEach(a -> level.destroyBlock(a, false));
+                        player.getItemInHand(hand).shrink(1);
+                        PokemonUtil.spawn(species.createProperties(70), level, shrine.getBlockPos());
+                        toggleActive(level, pos);
                     }, 200);
 
 //                    shrine.toggleActive();

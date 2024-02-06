@@ -7,7 +7,6 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.*;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,8 +27,6 @@ import org.joml.Vector4f;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
-import java.util.function.IntFunction;
 
 public class RksRecipe implements Recipe<Container> {
     private final int width;

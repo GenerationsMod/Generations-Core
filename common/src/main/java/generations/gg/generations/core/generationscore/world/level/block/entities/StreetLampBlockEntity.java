@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
-import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import org.joml.Vector3f;

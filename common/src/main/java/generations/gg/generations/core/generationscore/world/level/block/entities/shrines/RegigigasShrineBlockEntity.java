@@ -2,25 +2,18 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
-import earth.terrarium.botarium.common.item.SerializableContainer;
-import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
-import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.legends.RegiOrbItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.shrines.ShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
-import java.util.OptionalInt;
 
 public class RegigigasShrineBlockEntity extends ShrineBlockEntity implements ItemContainerBlock {
     private RegigigasItemStackHandler handler;

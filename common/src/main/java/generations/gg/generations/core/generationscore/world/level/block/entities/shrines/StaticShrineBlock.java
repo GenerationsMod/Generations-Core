@@ -1,24 +1,17 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.shrines;
 
-import com.google.common.collect.ImmutableMap;
-import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.WingItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.BirdShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import java.util.function.Function;
 
 import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 

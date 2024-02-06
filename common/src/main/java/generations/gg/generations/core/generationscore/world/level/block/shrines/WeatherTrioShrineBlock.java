@@ -56,12 +56,9 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
         player.getMainHandItem().shrink(1);
 
         toggleActive(level, pos);
-        ScheduledTask.schedule(new Runnable() {
-            @Override
-            public void run() {
-                PokemonUtil.spawn(getSpecies().createProperties(70), level, pos);
-                toggleActive(level, pos);
-            }
+        ScheduledTask.schedule(() -> {
+            PokemonUtil.spawn(getSpecies().createProperties(70), level, pos);
+            toggleActive(level, pos);
         }, 150);
 
         return true;

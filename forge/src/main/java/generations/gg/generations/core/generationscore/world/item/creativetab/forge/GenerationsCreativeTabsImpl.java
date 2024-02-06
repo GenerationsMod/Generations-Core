@@ -1,9 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item.creativetab.forge;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
-import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -34,9 +31,7 @@ public class GenerationsCreativeTabsImpl {
                 .icon(icon)
                 .displayItems((entry, context) -> {
                     for (dev.architectury.registry.registries.DeferredRegister<? extends ItemLike> item : items)
-                        item.forEach((itemEntry) -> {
-                            context.accept(itemEntry.get().asItem().getDefaultInstance());
-                        });
+                        item.forEach((itemEntry) -> context.accept(itemEntry.get().asItem().getDefaultInstance()));
                 })
                 .withSearchBar()
                 .build());

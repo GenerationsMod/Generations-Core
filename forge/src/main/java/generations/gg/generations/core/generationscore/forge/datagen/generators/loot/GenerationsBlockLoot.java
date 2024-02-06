@@ -12,17 +12,14 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
@@ -258,9 +255,9 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
 
      */
 
-    public void generate(BiConsumer<ResourceLocation, LootTable.Builder> biConsumer) {
+    public void generate(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> biConsumer) {
         this.generate();
-        Set<ResourceLocation> set = new HashSet();
+        Set<ResourceLocation> set = new HashSet<>();
 
         for (Block block : this.getKnownBlocks()) {
             if (block.isEnabled(this.enabledFeatures)) {

@@ -1,22 +1,16 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities.shrines.altar;
 
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
-import earth.terrarium.botarium.common.item.SerializableContainer;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
-import generations.gg.generations.core.generationscore.util.GenerationsUtils;
-import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.legends.CreationTrioItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.legends.RedChainItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.shrines.ShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;

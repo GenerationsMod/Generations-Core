@@ -11,8 +11,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import static net.minecraft.world.phys.shapes.BooleanOp.OR;
-
 public class LugiaShrineBlock extends BirdShrineBlock {
     private static final GenerationsVoxelShapes.GenericRotatableShapes SHAPE = GenerationsVoxelShapes.generateRotationalVoxelShape(Shapes.or(
             Shapes.box(0, 0, 0, 1, 0.178125, 1),

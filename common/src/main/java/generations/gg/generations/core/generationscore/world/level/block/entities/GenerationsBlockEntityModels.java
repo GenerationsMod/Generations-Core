@@ -1,13 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
-import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
-
-import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 
 public class GenerationsBlockEntityModels {
     public static final ResourceLocation DEFAULT = GenerationsCore.id("");

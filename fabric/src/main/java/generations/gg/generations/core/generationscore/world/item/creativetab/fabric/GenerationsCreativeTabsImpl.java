@@ -2,9 +2,6 @@ package generations.gg.generations.core.generationscore.world.item.creativetab.f
 
 import dev.architectury.registry.registries.DeferredRegister;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
-import generations.gg.generations.core.generationscore.world.level.block.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

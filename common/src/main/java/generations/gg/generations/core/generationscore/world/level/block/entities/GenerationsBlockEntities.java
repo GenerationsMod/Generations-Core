@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.client.render.block.entity.BoxBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.*;

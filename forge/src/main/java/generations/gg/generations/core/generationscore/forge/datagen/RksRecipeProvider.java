@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
 import com.cobblemon.mod.common.CobblemonItems;
-import com.google.common.collect.Sets;
-import com.google.gson.JsonObject;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
@@ -10,19 +8,12 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.data.CachedOutput;
-import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {

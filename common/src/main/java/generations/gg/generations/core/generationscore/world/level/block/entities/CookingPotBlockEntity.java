@@ -6,7 +6,6 @@ import com.cobblemon.mod.common.item.BerryItem;
 import dev.architectury.registry.menu.ExtendedMenuProvider;
 import dev.architectury.registry.menu.MenuRegistry;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
-import earth.terrarium.botarium.common.item.SerializableContainer;
 import generations.gg.generations.core.generationscore.api.events.CurryEvents;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.util.ExtendedsimpleItemContainer;
