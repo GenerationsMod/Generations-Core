@@ -56,6 +56,7 @@ public class GenerationsCreativeTabs {
     }
 
     @ExpectPlatform
+    @SafeVarargs
     private static <T extends ItemLike> Supplier<CreativeModeTab> create(String name, @NotNull Supplier<ItemStack> icon, @NotNull DeferredRegister<? extends ItemLike>... items) {
         throw new RuntimeException("Something");
     }
