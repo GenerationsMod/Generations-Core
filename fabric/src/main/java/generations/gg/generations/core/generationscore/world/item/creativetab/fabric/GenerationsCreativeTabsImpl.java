@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 public class GenerationsCreativeTabsImpl {
 
     @SafeVarargs
-    private static <T extends ItemLike> Supplier<CreativeModeTab> create(String name, @NotNull Supplier<ItemStack> icon, @NotNull DeferredRegister<? extends ItemLike>... items) {
+    public static <T extends ItemLike> Supplier<CreativeModeTab> create(String name, @NotNull Supplier<ItemStack> icon, @NotNull DeferredRegister<? extends ItemLike>... items) {
         return register(name, FabricItemGroup.builder()
                 .title(Component.translatable("itemGroup." + GenerationsCore.MOD_ID + "." + name))
                 .icon(icon)

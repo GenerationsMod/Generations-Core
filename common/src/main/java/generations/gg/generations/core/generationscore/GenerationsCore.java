@@ -77,7 +77,6 @@ public class GenerationsCore
 		GenerationsCore.implementation = implementation;
 		GenerationsCoreEntityDataSerializers.init();
 		GenerationsSounds.init();
-		GenerationsItems.init();
 		GenerationsBlocks.init();
 		GenerationsPokeDolls.init();
 		GenerationsWood.init();
@@ -85,6 +84,7 @@ public class GenerationsCore
 		GenerationsDecorationBlocks.init();
 		GenerationsUtilityBlocks.init();
 		GenerationsShrines.init();
+		GenerationsItems.init();
 		GenerationsBlockEntities.init();
 		GenerationsEntities.init();
 		GenerationsCreativeTabs.init();
@@ -106,10 +106,9 @@ public class GenerationsCore
 
 		GenerationsCobblemonEvents.init();
 		EntityEvents.JUMP.register(entity -> {
-			if (entity instanceof ServerPlayer player) {
+			if (entity instanceof ServerPlayer player)
 				if (entity.level().getBlockState(entity.blockPosition()).getBlock() instanceof ElevatorBlock block)
 					block.takeElevator(entity.level(), entity.blockPosition().below(), player, Direction.UP);
-			}
 		});
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {
 			var stack = player.getItemInHand(hand);
