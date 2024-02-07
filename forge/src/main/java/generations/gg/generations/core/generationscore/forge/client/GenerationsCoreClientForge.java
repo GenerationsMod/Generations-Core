@@ -15,7 +15,7 @@ import java.util.function.Consumer;
  * This class is used to initialize the Forge client side of the mod.
  * @see FMLClientSetupEvent
  * @see GenerationsCoreClient
- * @author J.T. McQuigg, WaterPicker
+ * @author Joseph T. McQuigg, WaterPicker
  */
 public class GenerationsCoreClientForge {
 

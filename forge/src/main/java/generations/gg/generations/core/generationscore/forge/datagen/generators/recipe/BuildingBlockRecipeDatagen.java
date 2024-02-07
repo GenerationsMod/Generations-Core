@@ -31,7 +31,7 @@ import java.util.function.Consumer;
  * Creates recipes for building blocks using Forge Datagen
  * @see net.minecraft.data.recipes.packs.VanillaRecipeProvider
  * @see net.minecraft.data.recipes.RecipeProvider
- * @author J.T. McQuigg
+ * @author Joseph T. McQuigg
  */
 public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxied implements IConditionBuilder {
 

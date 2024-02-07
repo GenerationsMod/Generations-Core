@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Fabric Data Generator for Generations Tags
- * @author J.T. McQuigg
+ * @author Joseph T. McQuigg
  * @see DataGen
  */
 public class FabricTagsDataGen {

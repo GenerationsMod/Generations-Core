@@ -32,7 +32,7 @@ import java.util.concurrent.Executor;
  * @see ModInitializer
  * @see GenerationsCore
  *
- * @author J.T. McQuigg, WaterPicker
+ * @author Joseph T. McQuigg, WaterPicker
  */
 public class GenerationsCoreFabric implements ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
     public void onInitialize() {

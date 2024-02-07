@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.TrapDoorBlock;
  * The client initializer for the fabric client portion of the mod.
  * @see ClientModInitializer
  * @see GenerationsCoreClient
- * @author J.T. McQuigg, WaterPicker
+ * @author Joseph T. McQuigg, WaterPicker
  */
 @Environment(EnvType.CLIENT)
 public class GenerationsCoreClientFabric implements ClientModInitializer {

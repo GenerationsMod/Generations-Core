@@ -34,7 +34,7 @@ import java.util.function.Function;
 /**
  * Generations Items
  * @see net.minecraft.world.item.Item
- * @author J.T. McQuigg
+ * @author Joseph T. McQuigg
  * @author WaterPicker
  */
 @SuppressWarnings("unused")

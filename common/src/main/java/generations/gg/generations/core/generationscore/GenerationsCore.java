@@ -1,7 +1,7 @@
 /**
  * The Main Class of the Generations-Core mod. (Common)
  * Registers the mod's items and blocks with Minecraft using Architectury.
- * @author J.T. McQuigg
+ * @author Joseph T. McQuigg
  *
  * CopyRight (c) 2023 Generations-Mod
  */
@@ -52,7 +52,7 @@ import java.util.function.IntConsumer;
 /**
  * The Main Class of the Generations-Core mod. (Common)
  * Registers the mod's items and blocks with Minecraft using Architectury.
- * @author J.T. McQuigg, WaterPicker
+ * @author Joseph T. McQuigg, WaterPicker
  */
 public class GenerationsCore
 {

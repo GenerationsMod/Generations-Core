@@ -52,7 +52,7 @@ import java.util.function.Consumer;
  * Forge Main class for GenerationsCore.
  * @see Mod
  * @see GenerationsCore
- * @author J.T. McQuigg, WaterPicker
+ * @author Joseph T. McQuigg, WaterPicker
  */
 @Mod(GenerationsCore.MOD_ID)
 public class GenerationsCoreForge implements GenerationsImplementation {

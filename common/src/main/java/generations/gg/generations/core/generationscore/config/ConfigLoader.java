@@ -12,7 +12,7 @@ import java.time.Duration;
 /**
  * The Config Loader for all Generations modules/extensions
  * @author WaterPicker
- * @author J.T. McQuigg
+ * @author Joseph T. McQuigg
  */
 public class ConfigLoader {
 

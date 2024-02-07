@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.world.item.creativetab.f
 
 import dev.architectury.registry.registries.DeferredRegister;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -13,10 +14,17 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
+/**
+ * Generations Creative Tabs (Fabric)
+ * @author Joseph T. McQuigg
+ * @author WaterPicker
+ * @see GenerationsCreativeTabs
+ * Uses ExpectPlatform to register the creative tabs with Minecraft using Fabric.
+ */
 public class GenerationsCreativeTabsImpl {
 
     @SafeVarargs
-    public static <T extends ItemLike> Supplier<CreativeModeTab> create(String name, @NotNull Supplier<ItemStack> icon, @NotNull DeferredRegister<? extends ItemLike>... items) {
+    public static Supplier<CreativeModeTab> create(String name, @NotNull Supplier<ItemStack> icon, @NotNull DeferredRegister<? extends ItemLike>... items) {
         return register(name, FabricItemGroup.builder()
                 .title(Component.translatable("itemGroup." + GenerationsCore.MOD_ID + "." + name))
                 .icon(icon)
