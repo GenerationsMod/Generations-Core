@@ -28,6 +28,7 @@ public class GenerationsCreativeTabsImpl {
     }
 
     private static Supplier<CreativeModeTab> register(String name, CreativeModeTab tab) {
-        return () -> Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, GenerationsCore.id(name), tab);
+        CreativeModeTab tab1 = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, GenerationsCore.id(name), tab);
+        return () -> tab1;
     }
 }
