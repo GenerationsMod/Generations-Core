@@ -10,7 +10,10 @@ public class GenerationsSounds {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.SOUND_EVENT);
 
     public static final RegistrySupplier<SoundEvent> LUGIA_SHRINE_SONG = registerSound("generations_core.item.lugia_shrine_song");
+
     public static final RegistrySupplier<SoundEvent> RKS_MACHINE = registerSound("generations_core.block.rks_machine");
+    public static final RegistrySupplier<SoundEvent> BOX_OPEN = registerSound("generations_core.block.box_open");
+    public static final RegistrySupplier<SoundEvent> BOX_CLOSED = registerSound("generations_core.block.box_closed");
 
     public static final RegistrySupplier<SoundEvent> UI_CLICK = registerSound("generations_core.other.ui_click");
     public static final RegistrySupplier<SoundEvent> AZALEA_TOWN = registerSound("generations_core.music.ambient.azalea_town");

@@ -4,9 +4,11 @@ import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +22,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
@@ -146,6 +149,9 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         dropDisplayStandWithBall(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get(), CobblemonItems.SAFARI_BALL.asItem());
         dropDisplayStandWithBall(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get(), CobblemonItems.SPORT_BALL.asItem());
         dropDisplayStandWithBall(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), CobblemonItems.TIMER_BALL.asItem());
+
+        createGenericRotationModelBlockTable(GenerationsUtilityBlocks.RKS_MACHINE.get());
+        createGenericRotationModelBlockTable(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get());
     }
 
     private void dropDisplayStandWithBall(Block block, Item item) {
@@ -203,7 +209,9 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
     }
 
     @Override
-    protected @NotNull Iterable<Block> getKnownBlocks() {return knownBlocks;}
+    protected @NotNull Iterable<Block> getKnownBlocks() {
+        return knownBlocks;
+    }
 
     private void dropSelfUpdated(@NotNull Block block) {
         if (block instanceof SlabBlock) add(block, createSlabItemTable(block));
@@ -217,6 +225,7 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
             add(block, createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()));
         else dropSelfUpdated(block);
     }
+
     @Override
     protected void add(@NotNull Block block, LootTable.@NotNull Builder lootTableBuilder) {
         knownBlocks.add(block);
@@ -246,15 +255,15 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
 
      */
 
-    public void generate(BiConsumer<ResourceLocation, LootTable.Builder> biConsumer) {
+    public void generate(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> biConsumer) {
         this.generate();
-        Set<ResourceLocation> set = new HashSet();
+        Set<ResourceLocation> set = new HashSet<>();
 
         for (Block block : this.getKnownBlocks()) {
             if (block.isEnabled(this.enabledFeatures)) {
                 ResourceLocation resourcelocation = block.getLootTable();
                 if (resourcelocation != BuiltInLootTables.EMPTY && set.add(resourcelocation)) {
-                    LootTable.Builder loottable$builder = (LootTable.Builder) this.map.remove(resourcelocation);
+                    LootTable.Builder loottable$builder = this.map.remove(resourcelocation);
                     if (loottable$builder == null) {
                         throw new IllegalStateException(String.format(Locale.ROOT, "Missing loottable '%s' for '%s'", resourcelocation, BuiltInRegistries.BLOCK.getKey(block)));
                     }
@@ -267,5 +276,21 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         if (!this.map.isEmpty() && this.map.size() != 1 && this.map.containsKey(new ResourceLocation("empty"))) {
             throw new IllegalStateException("Created block loot tables for non-blocks: " + this.map.keySet());
         }
+    }
+
+    protected <T extends GenericRotatableModelBlock<?>> void createGenericRotationModelBlockTable(T block) {
+        var statePropertiesPredicate = StatePropertiesPredicate.Builder.properties();
+
+        if (block.getWidthProperty() != null) {
+            statePropertiesPredicate.hasProperty(block.getWidthProperty(), block.getBaseX());
+        }
+        if (block.getHeightProperty() != null) {
+            statePropertiesPredicate.hasProperty(block.getHeightProperty(), 0);
+        }
+        if (block.getLengthProperty() != null) {
+            statePropertiesPredicate.hasProperty(block.getLengthProperty(), block.getBaseZ());
+        }
+
+        add(block, LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f)).add(LootItem.lootTableItem(block).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(statePropertiesPredicate))))));
     }
 }

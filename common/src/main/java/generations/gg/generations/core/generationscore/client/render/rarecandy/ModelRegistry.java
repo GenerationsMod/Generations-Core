@@ -67,14 +67,18 @@ public class ModelRegistry {
         if(supplier instanceof ModelProvidingBlockEntity blockEntity && blockEntity.getBlockState().getBlock() instanceof GenericRotatableModelBlock<?> block && block.shouldRotateSpecial()) {
             var forward = blockEntity.getBlockState().getValue(GenericRotatableModelBlock.FACING);
 
-            var width = block.width() * 0.5f;
-            var lenth = block.length() * 0.5f;
+            var x = block.getWidthValue(blockEntity.getBlockState());
+            var z = block.getLengthValue(blockEntity.getBlockState());
+
+
+            var width = (block.width() * 0.5f) - x;
+            var length = (block.length() * 0.5f) - z;
 
             switch (forward) {
-                case SOUTH -> stack.translate(width, 0, -lenth);
-                case EAST -> stack.translate(-lenth, 0, -width);
-                case NORTH -> stack.translate(-width, 0, lenth);
-                case WEST -> stack.translate(lenth, 0, width);
+                case SOUTH -> stack.translate(width, 0, -length);
+                case EAST -> stack.translate(-length, 0, -width);
+                case NORTH -> stack.translate(-width, 0, length);
+                case WEST -> stack.translate(length, 0, width);
             }
 
             stack.mulPose(Axis.YN.rotationDegrees(supplier.getAngle()));

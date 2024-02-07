@@ -22,17 +22,17 @@ public class ImpactorCompat {
 
         @Override
         public CompletableFuture<Boolean> withdraw(BigDecimal amount) {
-            return account().thenCompose(account -> account.withdrawAsync(amount).thenApply(EconomyTransaction::successful));
+            return account().thenCompose(account -> CompletableFuture.completedFuture(account.withdraw(amount)).thenApply(EconomyTransaction::successful));
         }
 
         @Override
         public CompletableFuture<Boolean> deposit(BigDecimal amount) {
-            return account().thenCompose(account -> account.depositAsync(amount).thenApply(EconomyTransaction::successful));
+            return account().thenCompose(account -> CompletableFuture.completedFuture(account.deposit(amount)).thenApply(EconomyTransaction::successful));
         }
 
         @Override
         public CompletableFuture<BigDecimal> balance() {
-            return account().thenCompose(Account::balanceAsync);
+            return account().thenCompose(a -> CompletableFuture.completedFuture(a.balance()));
         }
     }
 }

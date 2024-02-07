@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.ShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -12,5 +13,5 @@ public abstract class InteractShrineBlockEntity extends ShrineBlockEntity {
         super(arg, arg2, arg3);
     }
 
-    public abstract boolean activate(ServerPlayer player, InteractionHand hand);
+    public abstract boolean activate(ServerPlayer player, InteractionHand hand, ShrineBlock.ActivationState activationState);
 }

@@ -8,11 +8,12 @@ import generations.gg.generations.core.generationscore.world.item.MelodyFluteIte
 import generations.gg.generations.core.generationscore.world.item.WingItem;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
+import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -51,15 +52,20 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                 var imbuedStack = MelodyFluteItem.getImbuedItem(stack);
                 if (imbuedStack.isEmpty() || allowedImbuedItems.stream().noneMatch(a -> imbuedStack.is(item -> item.is(a)))) return InteractionResult.PASS;
                 var pokemonProperties = getProperties(imbuedStack);
-                var entity = level.getBlockEntity(hit.getBlockPos());
 
-                if (entity instanceof ShrineBlockEntity shrine && !shrine.isActive() && stack.getDamageValue() >= stack.getMaxDamage() && pokemonProperties != null) {
-                    shrine.toggleActive();
-                    stack.shrink(1);
+                if (isActive(state) == ActivationState.OFF && stack.getDamageValue() >= stack.getMaxDamage() && pokemonProperties != null) {
+                    toggleActive(level, pos);
+                    level.playSound(null, pos, GenerationsSounds.LUGIA_SHRINE_SONG.get(), SoundSource.BLOCKS);
 
-                    PokemonUtil.spawn(pokemonProperties, level, entity.getBlockPos());
 
-                    ScheduledTask.schedule(shrine::toggleActive, 150);
+                    ScheduledTask.schedule(() -> {
+                        if(!player.isCreative()) stack.shrink(1);
+
+                        toggleActive(level, pos);
+
+                        PokemonUtil.spawn(pokemonProperties, level, pos);
+                    }, 100);
+
                     return InteractionResult.SUCCESS;
                 }
             }
@@ -68,12 +74,12 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
         return InteractionResult.PASS;
     }
 
-    @Override
-    public String getActiveVariant(boolean active) {
-        return active ? "activated" : "deactivated";
-    }
-
     public PokemonProperties getProperties(ItemStack stack) {
         return stack.getItem() instanceof WingItem wing ? wing.getKey().createProperties(70) : null;
+    }
+
+    @Override
+    public boolean isActivatable() {
+        return true;
     }
 }

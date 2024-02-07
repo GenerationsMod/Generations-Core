@@ -4,7 +4,6 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenericChestBlockItem;
-import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.PokecenterScarletSignBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
@@ -503,7 +502,7 @@ public class GenerationsBlocks {
     }
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-        BLOCK_ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
+        BLOCK_ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
     }
 
     public static void init() {

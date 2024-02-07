@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:cinderace",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:cinderace",
+      "model": "generations_core:cinderace.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

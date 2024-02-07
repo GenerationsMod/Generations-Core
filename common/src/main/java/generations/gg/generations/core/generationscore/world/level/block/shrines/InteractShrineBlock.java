@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
-import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.InteractShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -11,36 +11,31 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
-public abstract class InteractShrineBlock<T extends InteractShrineBlockEntity> extends ShrineBlock<T> {
-    private final Class<T> tClass;
+public abstract class InteractShrineBlock<T extends ShrineBlockEntity> extends ShrineBlock<T> {
 
     protected InteractShrineBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, ResourceLocation model, Class<T> tClass) {
         super(materialIn, blockEntityFunction, model);
-        this.tClass = tClass;
     }
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, @NotNull BlockHitResult hit) {
         if (level.isClientSide() || hand == InteractionHand.OFF_HAND) return InteractionResult.PASS;
-        BlockEntity entity = level.getBlockEntity(pos);
-        if (isStackValid(player.getItemInHand(hand)) && activate(entity, player, hand)) {
+
+        var activeState = isActive(state);
+
+        if ((activeState != ActivationState.ON) && isStackValid(player.getItemInHand(hand)) && activate(level, pos, state, (ServerPlayer) player, hand, activeState)) {
             return InteractionResult.SUCCESS;
         }
 
         return InteractionResult.PASS;
     }
 
-    private boolean activate(BlockEntity entity, Player player, InteractionHand hand) {
-        if(!tClass.isInstance(entity)) return false;
-        T t = tClass.cast(entity);
-        return !t.isActive() && t.activate((ServerPlayer) player, hand);
-    }
+    protected abstract boolean activate(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, ActivationState activationState);
 
     public abstract boolean isStackValid(ItemStack stack);
 }

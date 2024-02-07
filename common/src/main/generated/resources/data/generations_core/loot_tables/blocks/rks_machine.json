@@ -11,6 +11,17 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "generations_core:rks_machine",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "height": "0",
+                "length": "0",
+                "width": "0"
+              }
+            }
+          ],
           "name": "generations_core:rks_machine"
         }
       ],

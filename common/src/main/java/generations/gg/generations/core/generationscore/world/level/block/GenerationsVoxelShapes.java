@@ -29,15 +29,21 @@ public class GenerationsVoxelShapes {
     }
 
     public static GenericRotatableShapes generateRotationalVoxelShape(VoxelShape shape, Direction source, int width, int height, int length) {
+        return generateRotationalVoxelShape(shape, source, width, height, length, 0, 0);
+    }
+
+    public static GenericRotatableShapes generateRotationalVoxelShape(VoxelShape shape, Direction source, int width, int height, int length, int xOffset, int zOffset) {
         var array = new DirectionalShapes[width*height*length];
+
+        shape = shape.move(xOffset, 0, zOffset);
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 for (int z = 0; z < length; z++) {
                     var index = x+width*(y+height*z);
 
-                    var mask = Shapes.block().move(x, y, z);
-                    array[index] = generateDirectionVoxelShape(Shapes.join(shape, mask, BooleanOp.AND).move(-x, -y, -z), source);
+//                    var mask = Shapes.block().move(x, y, z);
+                    array[index] = generateDirectionVoxelShape(Shapes.join(shape, shape, BooleanOp.AND).move(-x, -y, z), source);
 
 
                 }
@@ -47,7 +53,6 @@ public class GenerationsVoxelShapes {
 
         return new GenericRotatableShapes(array, width, height, length);
     }
-
 
     public record GenericRotatableShapes(DirectionalShapes[] array, int width, int height, int length) {
         public VoxelShape getShape(BlockState state) {

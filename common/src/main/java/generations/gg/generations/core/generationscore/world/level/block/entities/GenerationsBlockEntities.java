@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.level.block.entiti
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.client.render.block.entity.BoxBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.*;
@@ -22,10 +23,6 @@ public class GenerationsBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
 
     public static final RegistrySupplier<MutableBlockEntityType<PokeDollBlockEntity>> POKE_DOLL = registerMutable("pokedoll", PokeDollBlockEntity::new);
-
-    public static final RegistrySupplier<MutableBlockEntityType<HealerBlockEntity>> HEALER = registerMutable("healer", HealerBlockEntity::new);
-    public static final RegistrySupplier<MutableBlockEntityType<ClockBlockEntity>> CLOCK = registerMutable("clock", ClockBlockEntity::new);
-
     public static final RegistrySupplier<MutableBlockEntityType<GenericShrineBlockEntity>> GENERIC_SHRINE = registerMutable("generic_shrine", GenericShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<WeatherTrioShrineBlockEntity>> WEATHER_TRIO = registerMutable("weather_trio", WeatherTrioShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<TimeSpaceAltarBlockEntity>> TIMESPACE_ALTAR = registerMutable("timespace_altar", TimeSpaceAltarBlockEntity::new);
@@ -81,6 +78,7 @@ public class GenerationsBlockEntities {
 
     public static final RegistrySupplier<MutableBlockEntityType<RksMachineBlockEntity>> RKS_MACHINE = registerMutable("rks_machine", RksMachineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<StreetLampBlockEntity>> STREET_LAMP = registerMutable("street_lamp", StreetLampBlockEntity::new);
+    public static final RegistrySupplier<BlockEntityType<BoxBlockEntity>> BOX = registerRegular("box", BoxBlockEntity::new, GenerationsUtilityBlocks.BOX);
 
 
     @SafeVarargs

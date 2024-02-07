@@ -408,7 +408,35 @@ public class TagsDatagen {
             ITEMS.forEach(item -> tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
             RIBBONS.forEach(ribbon -> tag(GenerationsItemTags.RIBBONS).add(ribbon.get()));
             BADGES.forEach(badge -> tag(GenerationsItemTags.BADGES).add(badge.get()));
-            tag(GenerationsItemTags.GENERATIONSITEMS).addTag(GenerationsItemTags.RIBBONS).addTag(GenerationsItemTags.BADGES);
+
+            UNIMPLEMENTED.forEach(item -> tag(GenerationsItemTags.UNIMPLEMENTED).add(item.get()));
+            CUISINE.forEach(item -> tag(GenerationsItemTags.CUISINE).add(item.get()));
+            NATURAL.forEach(item -> tag(GenerationsItemTags.NATURAL).add(item.get()));
+            RESTORATION.forEach(item -> tag(GenerationsItemTags.RESTORATION).add(item.get()));
+            PLAYER_ITEMS.forEach(item -> tag(GenerationsItemTags.PLAYER_ITEMS).add(item.get()));
+            HELD_ITEMS.forEach(item -> tag(GenerationsItemTags.HELD_ITEMS).add(item.get()));
+            LEGENDARY_ITEMS.forEach(item -> tag(GenerationsItemTags.LEGENDARY_ITEMS).add(item.get()));
+            UTILITY.forEach(item -> tag(GenerationsItemTags.UTILITY).add(item.get()));
+            VALUABLES.forEach(item -> tag(GenerationsItemTags.VALUABLES).add(item.get()));
+            FORM_ITEMS.forEach(item -> tag(GenerationsItemTags.FORM_ITEMS).add(item.get()));
+            BUILDING_BLOCKS.forEach(item -> tag(GenerationsItemTags.BUILDING_BLOCKS).add(item.get()));
+
+            tag(GenerationsItemTags.GENERATIONSITEMS)
+                    .addTag(GenerationsItemTags.RIBBONS)
+                    .addTag(GenerationsItemTags.BADGES)
+                    .addTag(GenerationsItemTags.UNIMPLEMENTED)
+                    .addTag(GenerationsItemTags.CUISINE)
+                    .addTag(GenerationsItemTags.NATURAL)
+                    .addTag(GenerationsItemTags.RESTORATION)
+                    .addTag(GenerationsItemTags.PLAYER_ITEMS)
+                    .addTag(GenerationsItemTags.HELD_ITEMS)
+                    .addTag(GenerationsItemTags.LEGENDARY_ITEMS)
+                    .addTag(GenerationsItemTags.UTILITY)
+                    .addTag(GenerationsItemTags.VALUABLES)
+                    .addTag(GenerationsItemTags.FORM_ITEMS)
+                    .addTag(GenerationsItemTags.BUILDING_BLOCKS)
+                    .addTag(GenerationsItemTags.POKEMAIL)
+                    .addTag(GenerationsItemTags.CLOSED_POKEMAIL);
 
             tag(GenerationsItemTags.POKEMAIL).add(
                     POKEMAIL_AIR.get(),

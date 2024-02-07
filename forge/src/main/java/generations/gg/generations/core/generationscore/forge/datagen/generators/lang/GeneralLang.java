@@ -43,34 +43,46 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsTools.TOOLS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsArmor.ARMOR, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.ITEMS, this::getNameGens, (item, function) -> {
+
+        });
+        addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.UNIMPLEMENTED, this::getNameGens, (item, function) -> {
             var item1 = item.get();
 
             if(item1 instanceof RecordItem) {
                 add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
             }
         });
-        addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.CUISINE, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.NATURAL, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.RESTORATION, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.PLAYER_ITEMS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.HELD_ITEMS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.LEGENDARY_ITEMS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.UTILITY, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.VALUABLES, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.FORM_ITEMS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.BUILDING_BLOCKS, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.POKEMAIL, this::getNameGens, (item, function) -> {});
 
         //Manually add Creative Tabs
-        add("restoration.generations_core", "Restoration");
-        add("tms.generations_core", "TMs");
-        add("badges.generations_core", "Badges");
-        add("ribbons.generations_core", "Ribbons");
-        add("held_items.generations_core", "Held Items");
-        add("player_items.generations_core", "Player Items");
-        add("legendary_items.generations_core", "Legendary Items");
-        add("building_blocks.generations_core", "Building Blocks");
-        add("decorations.generations_core", "Decorations");
-        add("natural.generations_core", "Natural");
-        add("utility.generations_core", "Utility");
-        add("form_items.generations_core", "Form Items");
-        add("pokemail.generations_core", "Pokemail");
-        add("valuables.generations_core", "Valuables");
-        add("pokedolls.generations_core", "PokeDolls");
-        add("cuisine.generations_core", "Cuisine");
-        add("unimplemented.generations_core", "Unimplemented");
-        add("shrines.generations_core", "Shrines");
+        add("itemGroup.generations_core.restoration", "Restoration");
+        add("itemGroup.generations_core.tms", "TMs");
+        add("itemGroup.generations_core.awards", "Awards");
+        add("itemGroup.generations_core.held_items", "Held Items");
+        add("itemGroup.generations_core.player_items", "Player Items");
+        add("itemGroup.generations_core.legendary_items", "Legendary Items");
+        add("itemGroup.generations_core.building_blocks", "Building Blocks");
+        add("itemGroup.generations_core.decorations", "Decorations");
+        add("itemGroup.generations_core.utility", "Utility");
+        add("itemGroup.generations_core.form_items", "Form Items");
+        add("itemGroup.generations_core.pokemail", "Pokemail");
+        add("itemGroup.generations_core.valuables", "Valuables");
+        add("itemGroup.generations_core.pokedolls", "PokeDolls");
+        add("itemGroup.generations_core.cuisine", "Cuisine");
+        add("itemGroup.generations_core.unimplemented", "Unimplemented");
+        add("itemGroup.generations_core.shrines", "Shrines");
 
         add("container.melody_flute", "Melody Flute");
         add("container.trashcan", "Trash Can");
@@ -91,6 +103,7 @@ public class GeneralLang extends LanguageProvider {
         add("container.volcanic_stone_blast_furnace", "Volcanic Stone Blast Furnace");
         add("container.volcanic_stone_smoker", "Volcanic Stone Smoker");
         add("container.cooking_pot", "Cooking Pot");
+        add("container.box", "Box");
 
 
         add("generations_core.item.melody_flute.no_item", "This flute resonates with feathers.");

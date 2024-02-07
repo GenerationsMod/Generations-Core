@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:shelgon",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:shelgon",
+      "model": "generations_core:shelgon.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

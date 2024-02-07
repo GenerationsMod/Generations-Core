@@ -3,14 +3,19 @@ package generations.gg.generations.core.generationscore.world.level.block.shrine
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.WeatherTrioShrineBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.schedule.ScheduledTask;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -47,8 +52,16 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
     }
 
     @Override
-    public String getActiveVariant(boolean active) {
-        return active ? "activated" : "deactivated";
+    protected boolean activate(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, ActivationState activationState) {
+        player.getMainHandItem().shrink(1);
+
+        toggleActive(level, pos);
+        ScheduledTask.schedule(() -> {
+            PokemonUtil.spawn(getSpecies().createProperties(70), level, pos);
+            toggleActive(level, pos);
+        }, 150);
+
+        return true;
     }
 
     @Override

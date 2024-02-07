@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:glalie",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:glalie",
+      "model": "generations_core:glalie.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -20,12 +21,10 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.function.Consumer;
 
 @SuppressWarnings("deprecation")
 public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> extends GenericRotatableModelBlock<T> {
@@ -58,9 +57,11 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
-        if (!world.isClientSide()) {
-            if (!tryDyeColor(state, world, pos, player, handIn, hit))
+        if (!world.isClientSide() && handIn == InteractionHand.MAIN_HAND) {
+            if (!tryDyeColor(state, world, pos, player, handIn, hit)) {
+
                 return serverUse(state, world, pos, player, handIn, hit);
+            }
             else return InteractionResult.SUCCESS;
         }
         return InteractionResult.FAIL;
@@ -98,17 +99,30 @@ public abstract class DyeableBlock<T extends DyedVariantBlockEntity<?>, V extend
 
                     var defaultState = newBlock.defaultBlockState().setValue(FACING, baseState.getValue(FACING));
 
-                    getEncompassingPositions(base, baseState.getValue(FACING)).forEach(blockPos -> {
-                        var currentState = world.getBlockState(blockPos);
+//                    if (newBlock.getClass().equals(state.getBlock().getClass())) {
+                        var dir = state.getValue(FACING);
 
-                        var x = baseBlock.getWidthValue(currentState);
-                        var y = baseBlock.getHeightValue(currentState);
-                        var z = baseBlock.getLengthValue(currentState);
+                        for (int x = 0; x < width + 1; x++) {
+                            for (int y = 0; y < height + 1; y++) {
+                                for (int z = 0; z < length + 1; z++) {
+                                    var adjustX = adjustX(x);
+                                    var adjustZ = adjustX(x);
 
-                        world.setBlock(blockPos, newBlock.setSize(defaultState.setValue(WATERLOGGED, currentState.getValue(WATERLOGGED)), x, y, z), 2, 0);
-                    });
+                                    var blockPos = base.relative(dir.getCounterClockWise(), adjustX).relative(Direction.UP, y).relative(dir, adjustZ);
 
-                    return true;
+                                    var currentState = world.getBlockState(blockPos);
+
+                                    var stateX = baseBlock.getWidthValue(currentState);
+                                    var stateY = baseBlock.getHeightValue(currentState);
+                                    var stateZ = baseBlock.getLengthValue(currentState);
+
+                                    world.setBlock(blockPos, newBlock.setSize(defaultState.setValue(WATERLOGGED, currentState.getValue(WATERLOGGED)), stateX, stateY, stateZ), 2, 0);
+                                }
+                            }
+                        }
+
+                        return true;
+//                    }
                 }
             }
         }

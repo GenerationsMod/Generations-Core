@@ -61,7 +61,7 @@
     "generations_core:tranquility_badge",
     "generations_core:dark_badge",
     "generations_core:dragon_badge",
-    "generations_core:fairy_badge2",
+    "generations_core:fairy_2_badge",
     "generations_core:fire_badge",
     "generations_core:grass_badge",
     "generations_core:ice_badge",
@@ -69,7 +69,7 @@
     "generations_core:water_badge",
     "generations_core:fighting_badge",
     "generations_core:ghost_badge",
-    "generations_core:shield_badge_complete",
-    "generations_core:sword_badge_complete"
+    "generations_core:complete_shield_badge",
+    "generations_core:complete_sword_badge"
   ]
 }

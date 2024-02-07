@@ -35,17 +35,6 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.HEALER.block().get(DyeColor.BLUE).get(), 1) //TODO: Decide which color to be base or incorporate dye into recipe.
-                .define('Q', GenerationsItems.COPPER_PLATE.get())
-                .define('R', Items.IRON_INGOT)
-                .define('P', Items.DIAMOND)
-                    .pattern("QRQ")
-                    .pattern("RPR")
-                    .pattern("QRQ")
-                .unlockedBy("has_copper_plate_has_diamond_has_iron_ingot",
-                        inventoryTrigger(ItemPredicate.Builder.item().of(GenerationsItems.COPPER_PLATE.get(), Items.DIAMOND, Items.IRON_INGOT).build()))
-                .save(consumer, GenerationsCore.id("healer"));
-
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ROTOM_PC.get(), 1)
                 .define('Q', GenerationsItems.COPPER_PLATE.get())
                 .define('A', Blocks.GLASS_PANE)
@@ -59,9 +48,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer, GenerationsCore.id("pc"));
 
         for (DyeColor color : DyeColor.values()) {
-            buildClockRecipes(consumer, color);
             buildVendingMachineRecipes(consumer, color);
-            buildColoredHealerCraftingRecipes(consumer, color);
         }
 
         //FURNACES
@@ -160,57 +147,23 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
     }
 
-    private void buildColoredHealerCraftingRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+
+        private void buildPastelBeanBagRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) { //TODO: Figure out recipe
         var dye = DyeItem.byColor(color);
-        var healer = GenerationsUtilityBlocks.HEALER.block().get(color).get();
+        var pastelBeanBag = GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block().get(color).get();
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, healer)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
                 .define('E', dye)
-                .define('H', healer)
-                .pattern("EEE")
-                .pattern("EHE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsUtilityBlocks.HEALER.block().get(DyeColor.BLUE).get()), has(GenerationsUtilityBlocks.HEALER.block().get(DyeColor.BLUE).get())) //TODO: Decide which color to be base or incorporate dye into recipe.
-                .save(consumer);
-    }
-
-    //    private void buildPastelBeanBagRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) { //TODO: Figure out recipe
-//        var dye = DyeItem.byColor(color);
-//        var pastelBeanBag = PastelBeanBagBlock.getBlock(color);
-//
-//        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
-//                .define('E', dye)
-//                .define('X', Items.WHITE_WOOL)
-//                .pattern("XEX")
-//                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
-//                .save(consumer);
-//
-//        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, pastelBeanBag)
-//                .requires(dye)
-//                .requires(GenerationsItemTags.PASTEL_BEAN_BAG)
-//                .unlockedBy("has_" + GenerationsItemTags.PASTEL_BEAN_BAG.location().getPath(), has(GenerationsItemTags.PASTEL_BEAN_BAG))
-//                .save(consumer, BuiltInRegistries.ITEM.getKey(pastelBeanBag).withPath(a -> a + "_dyed"));
-//    }
-
-    private void buildClockRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
-        var dye = DyeItem.byColor(color);
-        var clock = GenerationsUtilityBlocks.CLOCK.block().get(color).get();
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, clock)
-                .define('E', dye)
-                .define('X', Items.IRON_INGOT)
-                .define('C', Items.CLOCK)
-                .pattern("XXX")
+                .define('X', Items.WHITE_WOOL)
                 .pattern("XEX")
-                .pattern("XCX")
-                .unlockedBy(getHasName(Items.CLOCK), has(Items.CLOCK))
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, clock)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, pastelBeanBag)
                 .requires(dye)
-                .requires(GenerationsItemTags.CLOCK)
-                .unlockedBy("has_" + GenerationsItemTags.CLOCK.location().getPath(), has(GenerationsItemTags.CLOCK))
-                .save(consumer, Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(clock)).withPath(a -> a + "_dyed"));
+                .requires(GenerationsItemTags.PASTEL_BEAN_BAG)
+                .unlockedBy("has_" + GenerationsItemTags.PASTEL_BEAN_BAG.location().getPath(), has(GenerationsItemTags.PASTEL_BEAN_BAG))
+                .save(consumer, Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(pastelBeanBag)).withPath(a -> a + "_dyed"));
     }
 
     private void buildVendingMachineRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {

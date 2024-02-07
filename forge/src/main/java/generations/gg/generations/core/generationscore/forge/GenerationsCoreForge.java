@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge;
 
+import com.google.gson.Gson;
 import com.mojang.datafixers.util.Pair;
 import dev.architectury.platform.forge.EventBuses;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -9,6 +10,7 @@ import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
+import generations.gg.generations.core.generationscore.world.item.creativetab.forge.GenerationsCreativeTabsImpl;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.SharedConstants;
@@ -54,6 +56,8 @@ import java.util.function.Consumer;
  */
 @Mod(GenerationsCore.MOD_ID)
 public class GenerationsCoreForge implements GenerationsImplementation {
+    private static final Gson gson = new Gson();
+
     private List<PreparableReloadListener> reloadableResources = new ArrayList<>();
     private Map<PackType, List<Pair<ResourceLocation, Component>>> packs = new HashMap<>();
 
@@ -64,6 +68,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     public GenerationsCoreForge() {
         ConfigLoader.setConfigDirectory(FMLPaths.CONFIGDIR.get());
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+        GenerationsCreativeTabsImpl.init(MOD_BUS);
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
         GenerationsCore.init(this);
@@ -98,9 +103,9 @@ public class GenerationsCoreForge implements GenerationsImplementation {
                         GenerationsCore.MOD_ID + ":add_pack/" + id.getPath(), displayName,
                         false,
                         (path) -> new PathPackResources(path, resourcePath, true),
-                        packInfo, PackType.CLIENT_RESOURCES, Pack.Position.BOTTOM, false, createSource()
-                );
-                event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
+                        packInfo, PackType.CLIENT_RESOURCES, Pack.Position.BOTTOM, false, PackSource.BUILT_IN);
+                event.addRepositorySource((packConsumer) ->
+                        packConsumer.accept(pack));
             }
         }
     }
@@ -127,7 +132,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
                 SharedConstants.getCurrentVersion().getPackVersion(PackType.SERVER_DATA),
                 SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES),
                 FeatureFlagSet.of(),
-                false
+                hidden
         );
     }
 
@@ -135,7 +140,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         final Component text = Component.translatable("pack.source.builtin");
         return PackSource.create(
                 component -> Component.translatable("pack.nameAndSource", component, text).withStyle(ChatFormatting.GRAY),
-                false
+                true
         );
     }
 
@@ -143,7 +148,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     /**
      * Should initialize everything where a specific event does not cover it.
      */
-    private void onInitialize(FMLCommonSetupEvent event) {
+    private void onInitialize(final FMLCommonSetupEvent event) {
         getNetworkManager().registerClientBound();
         getNetworkManager().registerServerBound();
         event.enqueueWork(VanillaCompat::setup);

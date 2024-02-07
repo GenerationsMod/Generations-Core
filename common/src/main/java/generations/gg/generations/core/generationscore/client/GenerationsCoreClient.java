@@ -33,6 +33,7 @@ import generations.gg.generations.core.generationscore.world.item.MoveTeachingIt
 import generations.gg.generations.core.generationscore.world.item.NpcPathTool;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWoodTypes;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
@@ -187,6 +188,8 @@ public class GenerationsCoreClient {
             else return 0;
         });
 
+        ItemPropertiesRegistry.register(GenerationsShrines.CELESTIAL_ALTAR.get(), GenerationsCore.id("time"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);
+
         registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST.get());
@@ -233,8 +236,6 @@ public class GenerationsCoreClient {
      */
     public static void registerBlockEntityRenderers(BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> consumer) {
         consumer.accept(GenerationsBlockEntities.POKE_DOLL.get(), GeneralUseBlockEntityRenderer::new);
-        consumer.accept(GenerationsBlockEntities.HEALER.get(), HealerBlockEntityRenderer::new);
-        consumer.accept(GenerationsBlockEntities.CLOCK.get(), GeneralUseBlockEntityRenderer::new);
 
         consumer.accept(GenerationsBlockEntities.TIMESPACE_ALTAR.get(), TimeSpaceAltarEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.ABUNDANT_SHRINE.get(), GeneralUseBlockEntityRenderer::new);

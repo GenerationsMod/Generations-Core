@@ -69,13 +69,11 @@ public class LunarShrineBlock extends ShrineBlock<LunarShrineBlockEntity> {
 
             var list = RegiShrineBlock.searchForBlock(level, pos, 15, 5, (level1, blockPos) -> level1.getBlockState(blockPos).is(block));
 
-            if (!list.isEmpty() && level.getBlockEntity(pos) instanceof ShrineBlockEntity shrine && !shrine.isActive()) {
+            if (!list.isEmpty() && level.getBlockEntity(pos) instanceof ShrineBlockEntity shrine) {
                 if(list.size() == 5) {
-                    shrine.toggleActive();
                     list.forEach(a -> level.destroyBlock(a, false));
                     player.getItemInHand(hand).shrink(1);
                     PokemonUtil.spawn(key.createProperties(70), level, shrine.getBlockPos());
-                    shrine.toggleActive();
 
                     return InteractionResult.SUCCESS;
                 }

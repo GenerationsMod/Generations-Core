@@ -1,0 +1,18 @@
+{
+  "species": "cobblemon:riolu",
+  "order": 3,
+  "variations": [
+    {
+      "poser": "generations_core:riolu",
+      "model": "generations_core:riolu.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

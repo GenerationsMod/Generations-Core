@@ -1,25 +1,17 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
-import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
-
-import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 
 public class GenerationsBlockEntityModels {
     public static final ResourceLocation DEFAULT = GenerationsCore.id("");
     public static final ResourceLocation ABUNDANT_SHRINE = block("shrines/abundant_shrine.pk");
     public static final ResourceLocation BOX = block("decorations/box/box.pk");
     public static final ResourceLocation CELESTIAL_ALTAR = block("shrines/celestial_altar.pk");
-    public static final ResourceLocation CLOCK = block("decorations/clock.pk");
     public static final ResourceLocation COOKING_POT = block("utility_blocks/cooking_pot.pk");
     public static final ResourceLocation MOLTRES_SHRINE = block("shrines/moltres_shrine.pk");
     public static final ResourceLocation ARTICUNO_SHRINE = block("shrines/articuno_shrine.pk");
     public static final ResourceLocation GROUDON_SHRINE = block("shrines/weather_trio/groudon_shrine.pk");
-    public static final ResourceLocation HEALER = block("utility_blocks/healer.pk");
     public static final ResourceLocation HOUSE_LAMP = block("decorations/house_lamp.pk");
     public static final ResourceLocation KYOGRE_SHRINE = block("shrines/weather_trio/kyogre_shrine.pk");
     public static final ResourceLocation LUGIA_SHRINE = block("shrines/lugia_shrine.pk");
@@ -30,8 +22,6 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation ROTOM_PC = block("utility_blocks/rotom_pc.pk");
     public static final ResourceLocation TABLE_PC = block("utility_blocks/table_pc.pk");
     public static final ResourceLocation POKECENTER_SCARLET_SIGN = block("decorations/pokecenter_scarlet_sign.pk");
-    public static final ResourceLocation DEFAULT_POKEDOLL = block("pokedolls/charizard.pk");
-    public static final ResourceLocation RED_HEALER = block("utility_blocks/red_healer/healer.pk");
     public static final ResourceLocation RAYQUAZA_SHRINE = block("shrines/weather_trio/groudon_shrine.pk"); //TODO: Change to Rayquaza when model is available
     public static final ResourceLocation REGICE_SHRINE = block("shrines/regis/regice_shrine.pk");
     public static final ResourceLocation REGIDRAGO_SHRINE = block("shrines/regis/regidrago_shrine.pk");
@@ -46,27 +36,22 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation TAPU_SHRINE = block("shrines/tapu_shrine.pk");
     public static final ResourceLocation TIME_SPACE_ALTAR = block("shrines/creation_trio/time_space_altar.pk");
     public static final ResourceLocation TRASH_CAN  = block("decorations/trash_can.pk");
-    public static final ResourceLocation POKEBALL_RUG = block("decorations/rug.pk");
-    public static final ResourceLocation WHITE_HEALER = block("utility_blocks/healer.pk");
     public static final ResourceLocation VENDING_MACHINE = block("utility_blocks/vending_machine.pk");
     public static final ResourceLocation BENCH = block("decorations/bench.pk");
-    public static final ResourceLocation BLUE_DESK = block("decorations/blue_desk.pk");
+    public static final ResourceLocation SHELF = block("decorations/shelf.pk");
     public static final ResourceLocation BOOKSHELF = block("decorations/bookshelf.pk");
     public static final ResourceLocation COUCH = block("decorations/couch.pk");
-    public static final ResourceLocation CUSHION_CHAIR = block("decorations/cushion_chair.pk");
     public static final ResourceLocation DESK = block("decorations/desk.pk");
     public static final ResourceLocation STREET_LAMP = block("decorations/street_lamp.pk");
     public static final ResourceLocation DOUBLE_STREET_LAMP = block("decorations/double_street_lamp.pk");
     public static final ResourceLocation FLOOR_CUSHION = block("decorations/floor_cushion.pk");
     public static final ResourceLocation FRIDGE = block("decorations/fridge.pk");
-    public static final ResourceLocation GYM_SIGN = block("decorations/gym_sign.pk");
     public static final ResourceLocation LITWICK_CANDLE = block("decorations/litwick_candle.pk");
     public static final ResourceLocation LITWICK_CANDLES = block("decorations/litwick_candles.pk");
     public static final ResourceLocation POKEBALL_PILLAR = block("decorations/pokeball_pillar.pk");
     public static final ResourceLocation BUSH = block("decorations/bush.pk");
     public static final ResourceLocation HDTV = block("decorations/hdtv.pk");
     public static final ResourceLocation SWIVEL_CHAIR = block("decorations/swivel_chair.pk");
-    public static final ResourceLocation TALL_HOUSE_LAMP = block("decorations/tall_house_lamp.pk");
     public static final ResourceLocation WORK_DESK = block("decorations/work_desk.pk");
     public static final ResourceLocation SHOP = block("decorations/shop.pk");
     public static final ResourceLocation BALL_DISPLAY = block("decorations/ball_display.pk");

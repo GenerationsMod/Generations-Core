@@ -23,7 +23,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(LegendKeys.MEWTWO.createProperties(70))
+        RksRecipeJsonBuilder.create(LegendKeys.MEWTWO, 70)
                 .key(LegendKeys.MEWTWO)
                 .pattern("XAX")
                 .pattern("XBX")
@@ -106,6 +106,8 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createFossil(GenerationsItems.DRAKE_FOSSIL, GenerationsItems.FISH_FOSSIL, "dracovish", exporter);
         createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.BIRD_FOSSIL, "arctozolt", exporter);
         createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.FISH_FOSSIL, "artcovish", exporter);
+
+        System.out.println();
     }
 
     private void createFossil(RegistrySupplier<Item> item, String name, Consumer<FinishedRecipe> exporter) {
@@ -115,7 +117,6 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .criterion(item.getId().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item.get()))
                 .offerTo(exporter, GenerationsCore.id(name));
     }
-
 
     private void createFossil(RegistrySupplier<Item> item, RegistrySupplier<Item> item2, String name, Consumer<FinishedRecipe> exporter) {
         RksRecipeJsonBuilder.create(name)

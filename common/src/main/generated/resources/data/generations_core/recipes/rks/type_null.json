@@ -35,7 +35,11 @@
   "processingTime": 240,
   "result": {
     "type": "pokemon",
-    "data": "typenull"
+    "data": {
+      "aspects": [],
+      "level": 1,
+      "species": "cobblemon:typenull"
+    }
   },
   "speciesKey": "cobblemon:typenull[]"
 }

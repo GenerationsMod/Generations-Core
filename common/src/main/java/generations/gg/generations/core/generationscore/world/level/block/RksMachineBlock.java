@@ -29,7 +29,6 @@ import org.jetbrains.annotations.Nullable;
 public class RksMachineBlock extends GenericRotatableModelBlock<RksMachineBlockEntity> {
     public RksMachineBlock(BlockBehaviour.Properties copy) {
         super(copy, GenerationsBlockEntities.RKS_MACHINE, GenerationsBlockEntityModels.RKS_MACHINE, 1, 1, 1);
-
     }
 
     @Override

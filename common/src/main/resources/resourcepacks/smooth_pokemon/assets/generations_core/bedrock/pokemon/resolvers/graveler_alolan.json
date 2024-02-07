@@ -1,0 +1,20 @@
+{
+  "species": "cobblemon:graveler",
+  "order": 5,
+  "variations": [
+    {
+      "aspects": ["alolan"],
+      "poser": "generations_core:graveler_alolan",
+      "model": "generations_core:graveler_alolan.pk",
+      "texture": "pk:normal",
+      "layers": []
+    },
+    {
+      "aspects": [
+        "alolan",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

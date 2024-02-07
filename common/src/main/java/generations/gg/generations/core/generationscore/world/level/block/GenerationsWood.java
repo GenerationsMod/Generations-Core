@@ -4,7 +4,6 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -85,7 +84,7 @@ public class GenerationsWood {
     public static final RegistrySupplier<Block> GHOST_BOOKSHELF = registerBlockItem("ghost_bookshelf", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF)));
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-        GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties().arch$tab(GenerationsCreativeTabs.BUILDING_BLOCKS)));
+        GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
     }
 
     private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {

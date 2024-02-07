@@ -8,21 +8,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ShrineBlockEntity extends ModelProvidingBlockEntity implements ModelContextProviders.VariantProvider {
-    private boolean active = false;
     public ShrineBlockEntity(MutableBlockEntityType<? extends ModelProvidingBlockEntity> arg, BlockPos arg2, BlockState arg3) {
         super(arg, arg2, arg3);
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void toggleActive() {
-        active = !active;
-    }
-
     @Override
     public String getVariant() {
-        return getBlockState().getBlock() instanceof ShrineBlock<?> shrine ? shrine.getActiveVariant(isActive()) : null;
+        return getBlockState().getBlock() instanceof ShrineBlock<?> shrine ? shrine.getVariant(getBlockState()) : null;
     }
 }

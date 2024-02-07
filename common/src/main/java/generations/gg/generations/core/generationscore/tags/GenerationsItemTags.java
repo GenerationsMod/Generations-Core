@@ -9,13 +9,9 @@ public class GenerationsItemTags {
 
     public static final TagKey<Item> GENERATIONSITEMS = create("generationsitems");
     public static final TagKey<Item> PC = create("pc");
-    public static final TagKey<Item> CLOCK = create("clock");
-    public static final TagKey<Item> HEALER = create("healer");
     public static final TagKey<Item> VENDING_MACHINE = create("vending_machine");
-    public static final TagKey<Item> UMBRELLA = create("umbrella");
     public static final TagKey<Item> PASTEL_BEAN_BAG = create("pastel_bean_bag");
     public static final TagKey<Item> POKEDOLLS = create("pokedolls");
-    public static final TagKey<Item> POKEBALL_RUG = create("pokeball_rug");
     public static final TagKey<Item> ULTRA_DARK_LOGS = create("ultra_dark_logs");
     public static final TagKey<Item> ULTRA_JUNGLE_LOGS = create("ultra_jungle_logs");
     public static final TagKey<Item> GHOST_LOGS = create("ghost_logs");
@@ -27,6 +23,18 @@ public class GenerationsItemTags {
     public static final TagKey<Item> CLOSED_POKEMAIL = create("sealed_pokemail");
     public static final TagKey<Item> BADGES = create("badges");
     public static final TagKey<Item> RIBBONS = create("ribbons");
+    public static final TagKey<Item> UNIMPLEMENTED = create("unimplemented");
+    public static final TagKey<Item> CUISINE = create("cuisine");
+    public static final TagKey<Item> NATURAL = create("natural");
+    public static final TagKey<Item> RESTORATION = create("restoration");
+    public static final TagKey<Item> PLAYER_ITEMS = create("player_items");
+    public static final TagKey<Item> HELD_ITEMS = create("held_items");
+    public static final TagKey<Item> LEGENDARY_ITEMS = create("legendary_items");
+    public static final TagKey<Item> UTILITY = create("utility");
+    public static final TagKey<Item> VALUABLES = create("valuables");
+    public static final TagKey<Item> FORM_ITEMS = create("form_items");
+    public static final TagKey<Item> BUILDING_BLOCKS = create("building_blocks");
+
 
     //Ore Tags
     public static final TagKey<Item> GENERATIONSORES = create("generationsores");

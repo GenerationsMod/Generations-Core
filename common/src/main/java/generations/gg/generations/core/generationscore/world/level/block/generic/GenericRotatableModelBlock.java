@@ -12,7 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -31,7 +30,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.stream.Stream;
 
 @SuppressWarnings("deprecation")
 public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProviders.ModelProvider> extends GenericModelBlock<T> {
@@ -46,15 +44,15 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
             var y = block.getHeightValue(state);
             var z = block.getLengthValue(state);
 
-            return pos.relative(facing.getClockWise(), x).relative(Direction.DOWN, y).relative(facing, z);
+            return block.adjustBlockPos(pos, facing, x, y, z, false);
         }
 
         return pos;
     };
 
-    private int width;
-    private int height;
-    private int length;
+    protected int width;
+    protected int height;
+    protected int length;
 
     protected GenericRotatableModelBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction, ResourceLocation model, int width, int height, int length) {
         super(materialIn, blockEntityFunction, baseBlockPosFunction, model);
@@ -88,14 +86,14 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         if(length != 0) SIZE_PROPERTIES.computeIfAbsent(Size.LENGTH, value -> new HashMap<>()).computeIfAbsent(length, value -> IntegerProperty.create("length", 0, value));
     }
 
-    private void reassignStateDefinition() {
+    protected void reassignStateDefinition() {
         StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
         this.createBlockStateDefinition(builder);
         this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
     }
 
     protected BlockState createDefaultState() {
-        return setSize(super.createDefaultState().setValue(FACING, Direction.NORTH), 0, 0, 0);
+        return setSize(super.createDefaultState().setValue(FACING, Direction.NORTH), getBaseX(), 0, getBaseZ());
     }
 
     @Override
@@ -115,54 +113,108 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         var dir = context.getHorizontalDirection().getOpposite();
 
         if(pos.getY() < level.getMaxBuildHeight() - height && isAreaClear(level, dir, pos)) {
-            return this.defaultBlockState().setValue(FACING, dir);
+            return setSize(this.defaultBlockState().setValue(FACING, dir), getBaseX(), 0, getBaseZ());
         } else {
             return null;
         }
     }
 
-    protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
-        return getEncompassingPositions(pos, dir).map(level::getBlockState).allMatch(BlockState::canBeReplaced);
+    public int getBaseX() {
+        return 0;
     }
 
-    public Stream<BlockPos> getEncompassingPositions(BlockPos pos, Direction dir) {
-        return BlockPos.betweenClosedStream(pos, pos.relative(dir.getCounterClockWise(), width).relative(Direction.UP, height).relative(dir, length));
+    public int getBaseZ() {
+        return 0;
+    }
+
+    protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
+
+        for (int x = 0; x < width + 1; x++) {
+            for (int z = 0; z < length + 1; z++) {
+                for (int y = 0; y < height + 1; y++) {
+                    if(!validPosition(x,y,z)) continue;
+
+                    var blockPos = adjustBlockPos(pos, dir, x, y, z, true);
+
+                    var state = level.getBlockState(blockPos);
+
+                    if(!state.canBeReplaced() || state.is(this)) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    protected BlockPos adjustBlockPos(BlockPos pos, Direction dir, int x, int y, int z, boolean positive) {
+        return positive ? pos.relative(dir.getCounterClockWise(), adjustX(x)).relative(Direction.UP, y).relative(dir.getOpposite(), adjustZ(z)) : pos.relative(dir.getClockWise(), adjustX(x)).relative(Direction.DOWN, y).relative(dir, adjustZ(z));
+    }
+
+    protected boolean validPosition(int x, int y, int z) {
+        return true;
+    }
+
+    protected boolean matches(BlockState state, int x, int y, int z) {
+        return getWidthValue(state) == x && getHeightValue(state) == y && getLengthValue(state) == z;
     }
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        var facing = state.getValue(FACING);
-        var x = getWidthValue(state);
-        var y = getHeightValue(state);
-        var z = getLengthValue(state);
+        var dir = state.getValue(FACING);
+        var base = getBaseBlockPos(pos, state);
 
-        var rightDir = facing.getClockWise();
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < length; z++) {
+                for (int y = 0; y < height; y++) {
+                    if(!validPosition(x,y,z)) continue;
 
-        if(x == 0 && y == 0 && z == 0) {
-            return needsSupport(level, pos.below()); //TODO: Do we want the blocks to require solid foundation?
+                    var adjustedX = adjustX(x);
+                    var adjustedZ = adjustZ(z);
+
+                    var blockPos = base.relative(dir.getCounterClockWise(), adjustedX).relative(Direction.UP, y).relative(dir.getOpposite(), adjustedZ);
+
+                    if(!matches(level.getBlockState(blockPos), x, y, z)) {
+                        return false;
+                    }
+                }
+            }
         }
 
-        return checkDirection(level, pos, rightDir, Size.WIDTH, x) && checkDirection(level, pos, Direction.DOWN, Size.HEIGHT, y) && checkDirection(level, pos, facing, Size.LENGTH, z);
-    }
-
-    private boolean checkDirection(LevelReader level, BlockPos pos, Direction dir, Size size, int value) {
-        var forward = getValue(level, pos, dir, size);
-        var backward = getValue(level, pos, dir.getOpposite(), size);
-        var maxSize = getSize(dir.getAxis());
-
-        return value == 0 || forward == value - 1 || backward > maxSize;
+        return true;
     }
 
     @Override
     public void playerWillDestroy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, Player player) {
-        level.destroyBlock(getBaseBlockPos(pos, state), true);
+        pos = getBaseBlockPos(pos, state);
+        var facing = state.getValue(FACING);
+
+        for (int x = 0; x <= width; x++) {
+            for (int z = 0; z <= length; z++) {
+                for (int y = 0; y <= height; y++) {
+                    if(!validPosition(x,y, z)) continue;
+
+
+                    var blockPos = adjustBlockPos(pos, facing, x, y,z, true);
+
+                    level.destroyBlock(blockPos, !player.isCreative() && x == 0 && y == 0 && z == 0);
+                }
+            }
+        }
 
         super.playerWillDestroy(level, pos, state, player);
     }
 
+
+    @Override
+    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
+        super.playerDestroy(level, player, pos, Blocks.AIR.defaultBlockState(), blockEntity, tool);
+    }
+
     @Override
     public @NotNull List<ItemStack> getDrops(@NotNull BlockState state, LootParams.@NotNull Builder params) {
-        if(getWidthValue(state) == 0 && getLengthValue(state) == 0 && getHeightValue(state) == 0) return super.getDrops(state, params);
+        if(getWidthValue(state) == getBaseX() && getLengthValue(state) == 0 && getHeightValue(state) == getBaseZ()) return super.getDrops(state, params);
         else return Collections.emptyList();
     }
 
@@ -187,15 +239,11 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         };
     }
 
-    protected boolean needsSupport(LevelReader level, BlockPos pos) {
-        return canSupportRigidBlock(level, pos);
-    }
-
-    @Override
-    public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
-        if(canSurvive(state, level, currentPos)) return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
-        else return Blocks.AIR.defaultBlockState();
-    }
+//    @Override
+//    public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
+//        if(canSurvive(state, level, currentPos)) return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
+//        else return Blocks.AIR.defaultBlockState();
+//    }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
@@ -208,13 +256,12 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     @Override
     public AABB computeRenderBoundingBox(Level level, BlockPos pos, BlockState state) {
-        var facing = state.getValue(FACING);
-        return new AABB(pos, pos.relative(facing.getCounterClockWise(), width + 1).relative(Direction.UP, height + 1).relative(facing.getOpposite(), length + 1));
+        return new AABB(pos, adjustBlockPos(getBaseBlockPos(pos, state), state.getValue(FACING), width + 1, height + 1, length + 1, true));
     }
 
     @Override
     public boolean canRender(Level level, BlockPos blockPos, BlockState blockState) {
-        return getWidthValue(blockState) == 0 || getHeightValue(blockState) == 0 || getLengthValue(blockState) == 0;
+        return getWidthValue(blockState) == getBaseX() || getHeightValue(blockState) == 0 || getLengthValue(blockState) == getBaseZ();
     }
 
     public float getAngle(BlockState state) {
@@ -223,15 +270,13 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        var facing = state.getValue(FACING);
-        var rightDir = facing.getCounterClockWise();
-        var backDir = facing.getOpposite();
-
         for (int x = 0; x <= width; x++) {
-            for (int y = 0; y <= height; y++) {
-                for (int z = 0; z <= length; z++) {
-                    if(x == 0 && y == 0 && z == 0) continue;
-                    var blockPos = pos.relative(rightDir, x).relative(Direction.UP, y).relative(backDir, z);
+            for (int z = 0; z <= length; z++) {
+                for (int y = 0; y <= height; y++) {
+                    if(!validPosition(x,y, z)) continue;
+
+                    if(x == getBaseX() && y == 0 && z == getBaseZ()) continue;
+                    var blockPos = adjustBlockPos(pos, state.getValue(FACING), x, y, z, true);;
                     level.setBlock(blockPos, setSize(state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER), x, y, z), 2);
                 }
             }
@@ -291,6 +336,14 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     public int length() {
         return length;
+    }
+
+    public int adjustX(int x) {
+        return x - getBaseX();
+    }
+
+    public int adjustZ(int z) {
+        return z - getBaseZ();
     }
 
     public enum Size {//TODO: THink of better name

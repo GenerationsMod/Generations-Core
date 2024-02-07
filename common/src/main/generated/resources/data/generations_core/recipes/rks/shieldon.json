@@ -12,6 +12,10 @@
   "processingTime": 240,
   "result": {
     "type": "pokemon",
-    "data": "shieldon"
+    "data": {
+      "aspects": [],
+      "level": 1,
+      "species": "cobblemon:shieldon"
+    }
   }
 }
