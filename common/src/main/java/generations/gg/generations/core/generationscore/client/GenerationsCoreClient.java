@@ -56,6 +56,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.texture.DynamicTexture;
@@ -227,6 +228,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsEntities.MAGMA_CRYSTAL.get(), ThrownItemRenderer::new);
         consumer.accept(GenerationsEntities.STATUE_ENTITY.get(), StatueEntityRenderer::new);
         consumer.accept(GenerationsEntities.PLAYER_NPC.get(), context -> new PlayerNpcEntityRenderer(context, true));
+        consumer.accept(GenerationsEntities.ZYGARDE_CELL.get(), ZygardeCellRenderer::new);
     }
 
     /**
@@ -475,7 +477,7 @@ public class GenerationsCoreClient {
         @Override
         public void register(String s, ITexture iTexture) {
             if(iTexture instanceof DynamicTexture texture) {
-                var location = Minecraft.getInstance().getTextureManager().register(s.replace(":", "_"), texture);
+                var location = Minecraft.getInstance().getTextureManager().register(s.replace(":", "_").toLowerCase(), texture);
                 MAP.putIfAbsent(s, location);
             }
         }

@@ -901,7 +901,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> CROWNED_SHIELD = register("crowned_shield", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SCROLL_PAGE = register("scroll_page", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<PostBattleUpdatingWithItem> SECRET_ARMOR_SCROLL = register("secret_armor_scroll", properties -> new PostBattleUpdatingWithItem(properties.stacksTo(1).durability(100), "kubfu", "pixelmon.secret_armor_scoll.amountfull", (player, stack, battle) -> battle.isNpc()), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> ZYGARDE_CUBE = register("zygarde_cube", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ZygardeCubeItem> ZYGARDE_CUBE = register("zygarde_cube", new Function<Item.Properties, ZygardeCubeItem>() {
+        @Override
+        public ZygardeCubeItem apply(Item.Properties properties) {
+            return new ZygardeCubeItem(properties.stacksTo(1).durability(ZygardeCubeItem.FULL));
+        }
+    }, LEGENDARY_ITEMS);
     public static final RegistrySupplier<MeltanBox> MELTAN_BOX = register("meltan_box", properties -> new MeltanBox(properties.stacksTo(1).durability(200)), LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MELTAN_BOX_CHARGED = register("meltan_box_charged", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)) {
         @Override

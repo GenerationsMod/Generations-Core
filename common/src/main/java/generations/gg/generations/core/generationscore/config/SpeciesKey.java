@@ -2,8 +2,10 @@ package generations.gg.generations.core.generationscore.config;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.pokemon.Species;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -76,5 +78,9 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
             }
         }
         return new SpeciesKey(species, aspects);
+    }
+
+    public static SpeciesKey fromSpecies(@NotNull Species species) {
+        return new SpeciesKey(species.getResourceIdentifier());
     }
 }

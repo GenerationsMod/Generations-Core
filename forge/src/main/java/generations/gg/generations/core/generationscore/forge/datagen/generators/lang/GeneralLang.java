@@ -262,6 +262,28 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(MELOETTA_MUSIC_BOX, "HINT: You hear a wonderful melody from within. You need to hear more.”");
         //Zygarde
         addTooltip(ZYGARDE_CUBE, "A strange cube capable of storing up to 100 Zygarde Cells, as well as fusing them together to reconstruct the legendary Zygarde.");
+        add("gui.zygarde_cube.select", "Merge Zygarde Cells");
+        add("gui.zygarde_cube.merge_10.name", "Create 10%");
+        add("gui.zygarde_cube.merge_10.accept", "Your Cells merged to form a Zygarde 10%!");
+        add("gui.zygarde_cube.merge_50.name", "Create 50%");
+        add("gui.zygarde_cube.merge_50.accept", "Your Cells merged to form a Zygarde 50%!");
+        add("gui.zygarde_cube.merge_10_power_construct.name", "Create 10% with Power Construct");
+        add("gui.zygarde_cube.merge_10_power_construct.accept", "Your Cells merged to form a Zygarde 10% with Power Construct!");
+        add("gui.zygarde_cube.merge_50_power_construct.name", "Create 50% with Power Construct");
+        add("gui.zygarde_cube.merge_50_power_construct.accept", "Your Cells merged to form a Zygarde 50% with Power Construct!");
+        add("gui.zygarde_cube.merge_10_with_40_to_50.name", "Convert 10% to 50% with Power Construct");
+        add("gui.zygarde_cube.merge_10_with_40_to_50.accept", "Your Zygarde 10% was combined with 40 Cells to create a Zygarde 50%!");
+        add("gui.zygarde_cube.merge_10_with_90_to_10_power_construct.name", "Convert 10% to 10% Power Construct");
+        add("gui.zygarde_cube.merge_10_with_90_to_10_power_construct.accept", "Your Zygarde 10% was combined with 90 Cells to create a Zygarde 10% with Power Construct!");
+        add("gui.zygarde_cube.merge_10_with_90_to_50_power_construct.name", "Convert 10% to 50% with Power Construct");
+        add("gui.zygarde_cube.merge_10_with_90_to_50_power_construct.accept", "Your Zygarde 10% was combined with 90 Cells to create a Zygarde 50% with Power Construct!");
+        add("gui.zygarde_cube.merge_50_with_50_to_50_power_construct.name", "Convert 50% to 50% with Power Construct");
+        add("gui.zygarde_cube.merge_50_with_50_to_50_power_construct.accept", "Your Zygarde 50% was combined with 50 Cells to create a Zygarde 50% with Power Construct!");
+
+        add("gui.zygarde_cube.select", "Merge Zygarde Cells");
+        add("gui.zygarde_cube.select", "Merge Zygarde Cells");
+        add("gui.zygarde_cube.select", "Merge Zygarde Cells");
+
 
         //Hoopa
         addTooltip(PRISON_BOTTLE_STEM, "HINT: You hear a voice within, guiding you. \"Free me! Make my rings with Gold Blocks\".");
@@ -296,6 +318,12 @@ public class GeneralLang extends LanguageProvider {
 
         //Legendary Beasts
         addTooltip(SACRED_ASH, "HINT: A sacred item capable of bringing back the dead.");
+
+        add("generations_core.special.shadow.already", "%s heart is already closed.");
+        add("generations_core.special.shadow.success", "%s heart has been closed.");
+        add("generations_core.special.shadow.failure", "%s refused to clsoe its heart.");
+
+
     }
 
 

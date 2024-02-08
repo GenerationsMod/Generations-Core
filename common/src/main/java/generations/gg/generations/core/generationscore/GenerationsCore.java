@@ -9,8 +9,10 @@
 package generations.gg.generations.core.generationscore;
 
 import com.cobblemon.mod.common.api.data.DataProvider;
+import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.mojang.logging.LogUtils;
+import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.InteractionEvent;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.api.events.general.EntityEvents;
@@ -24,10 +26,8 @@ import generations.gg.generations.core.generationscore.world.dialogue.nodes.Abst
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogicTypes;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.YawLogicTypes;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
-import generations.gg.generations.core.generationscore.world.item.PixelmonInteractions;
+import generations.gg.generations.core.generationscore.world.entity.ZygardeCellEntity;
+import generations.gg.generations.core.generationscore.world.item.*;
 import generations.gg.generations.core.generationscore.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.world.item.legends.EnchantableItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
@@ -35,12 +35,15 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeSerializers;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
+import generations.gg.generations.core.generationscore.world.spawning.ZygardeCellDetail;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.apache.logging.log4j.util.TriConsumer;
@@ -75,6 +78,9 @@ public class GenerationsCore
 	public static void init(GenerationsImplementation implementation) {
 		CONFIG = ConfigLoader.loadConfig(Config.class, "core", "main");
 		GenerationsCore.implementation = implementation;
+
+		SpawnDetail.Companion.registerSpawnType(ZygardeCellDetail.Companion.getTYPE(), ZygardeCellDetail.class);
+
 		GenerationsCoreEntityDataSerializers.init();
 		GenerationsSounds.init();
 		GenerationsBlocks.init();
@@ -110,10 +116,25 @@ public class GenerationsCore
 				if (entity.level().getBlockState(entity.blockPosition()).getBlock() instanceof ElevatorBlock block)
 					block.takeElevator(entity.level(), entity.blockPosition().below(), player, Direction.UP);
 		});
+
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {
 			var stack = player.getItemInHand(hand);
 			var result = PixelmonInteractions.process(entity, player, stack);
 			if(result.interruptsFurtherEvaluation() && stack.getItem() instanceof PixelmonInteractions.PixelmonInteraction interaction && interaction.isConsumed()) stack.shrink(1);
+//			else if(stack.is(GenerationsItems.ZYGARDE_CUBE.get()) && entity instanceof ZygardeCellEntity) {
+//				if (stack.getDamageValue() != ZygardeCubeItem.FULL) {
+//					stack.setDamageValue(stack.getDamageValue() + 1);
+//					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.add_cell"), false);
+////                level().playSound(null, blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f);
+//					entity.remove(Entity.RemovalReason.DISCARDED);
+//
+//					result = EventResult.interruptTrue();
+//				} else {
+//					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.full_cell"), false);
+//					result = EventResult.pass();
+//				}
+//			}
+
 			return result;
 		});
 	}

@@ -27,10 +27,24 @@
       }
     ]
   },
+  "generations_core.block.elevator": {
+    "sounds": [
+      {
+        "name": "generations_core:block/elevator"
+      }
+    ]
+  },
   "generations_core.other.ui_click": {
     "sounds": [
       {
         "name": "generations_core:other/ui_click"
+      }
+    ]
+  },
+  "generations_core.other.zygarde_cell": {
+    "sounds": [
+      {
+        "name": "generations_core:other/zygarde_cell"
       }
     ]
   },

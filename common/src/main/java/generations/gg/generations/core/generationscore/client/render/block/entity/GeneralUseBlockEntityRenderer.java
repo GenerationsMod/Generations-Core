@@ -32,7 +32,6 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         stack.pushPose();
         ModelRegistry.prepForBER(stack, blockEntity);
         renderModels(stack, blockEntity, packedLight);
-        RenderSystem.disableDepthTest();
         stack.popPose();
     }
 

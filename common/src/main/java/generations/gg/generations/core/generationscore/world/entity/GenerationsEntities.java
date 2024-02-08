@@ -10,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.Level;
 
 public class GenerationsEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ENTITY_TYPE);
@@ -19,7 +20,6 @@ public class GenerationsEntities {
     public static final RegistrySupplier<EntityType<PlayerNpcEntity>> PLAYER_NPC = createEntityType("player_npc", MobCategory.MISC, 0.6f, 1.8f, PlayerNpcEntity::new);
 //    public static final RegistrySupplier<EntityType<PokeBallEntity>> POKEBALL_ENTITY = createEntityType("pokeball", MobCategory.MISC, 0.2f, 0.2f, PokeBallEntity::new);
     public static final RegistrySupplier<EntityType<SittableEntity>> SEAT = createEntityType("seat", MobCategory.MISC, 0.0f, 0.0f, SittableEntity::new);
-//    public static final RegistrySupplier<EntityType<StatueEntity>> STATUE = createEntityType("statue", MobCategory.MISC, 1.0f, 1.0f, StatueEntity::new);
     public static final RegistrySupplier<EntityType<TieredFishingHookEntity>> TIERED_FISHING_BOBBER = ENTITIES.register("tiered_fishing_bobber", () -> EntityType.Builder.<TieredFishingHookEntity>of(TieredFishingHookEntity::new, MobCategory.MISC).noSave().sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(5).build("tiered_fishing_bobber"));
     public static final RegistrySupplier<EntityType<MagmaCrystalEntity>> MAGMA_CRYSTAL = ENTITIES.register("magma_crystal", () -> EntityType.Builder.<MagmaCrystalEntity>of((arg, arg2) -> new MagmaCrystalEntity(arg2), MobCategory.MISC).noSave().sized(0.25f, 0.025f).clientTrackingRange(4).updateInterval(10).build("magma_crystal"));
     public static final RegistrySupplier<EntityType<GenerationsBoatEntity>> BOAT_ENTITY =
@@ -35,6 +35,9 @@ public class GenerationsEntities {
                     .build("chest_boat"));
     public static RegistrySupplier<EntityType<StatueEntity>> STATUE_ENTITY =
             ENTITIES.register("statue", () -> EntityType.Builder.<StatueEntity>of(StatueEntity::new, MobCategory.MISC).build("statue"));
+
+    public static RegistrySupplier<EntityType<ZygardeCellEntity>> ZYGARDE_CELL = ENTITIES.register("zygarde_cell", () -> EntityType.Builder.<ZygardeCellEntity>of(ZygardeCellEntity::new, MobCategory.MISC).build("zygarde_cell"));
+
 
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations entities");
