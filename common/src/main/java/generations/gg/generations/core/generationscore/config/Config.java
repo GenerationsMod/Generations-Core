@@ -21,6 +21,8 @@ public class Config {
     public Blocks blocks = new Blocks();
     public Special special = new Special();
 
+    public Client client = new Client();
+
     public Config() {}
 
     public static class Caught {
@@ -126,5 +128,9 @@ public class Config {
 
     public static class Special {
         public boolean darkCrystalShadowPokemon = true;
+    }
+
+    public static class Client {
+        public boolean usePixelmonShading = false;
     }
 }
