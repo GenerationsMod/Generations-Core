@@ -3,12 +3,14 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -53,7 +55,7 @@ public class ElevatorBlock extends Block {
             ElevatorEvents.USE_ELEVATOR.invoker().accept(useElevator);
             return useElevator;
         }).map(ElevatorEvents.UseElevator::getDestination).filter(Objects::nonNull).map(BlockPos::above).ifPresent(blockPos -> {
-            player.serverLevel().playSound(null, blockPos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS);
+            player.serverLevel().playSound(null, blockPos, GenerationsSounds.ELEVATOR.get(), SoundSource.BLOCKS);
             player.teleportTo(player.position().x(), blockPos.getY() - 0.5, player.position().z());
         });
     }

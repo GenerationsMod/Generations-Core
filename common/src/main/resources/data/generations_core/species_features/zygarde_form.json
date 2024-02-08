@@ -1,0 +1,12 @@
+{
+  "type": "choice",
+  "keys": ["zygarde_form"],
+  "default": "50%",
+  "choices": [
+    "10%",
+    "50%",
+    "complete"
+  ],
+  "isAspect": true,
+  "aspectFormat": "zygarde-form-{{choice}}"
+}

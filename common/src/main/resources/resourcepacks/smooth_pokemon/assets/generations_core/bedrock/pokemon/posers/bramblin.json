@@ -1,5 +1,5 @@
 {
-  "faint": "pk(generations_core:bramblin, faintstart)",
+  "faint": "pk(generations_core:bramblin.pk, faintstart)",
   "poses": {
     "standing": {
       "animations": [

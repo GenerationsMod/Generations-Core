@@ -14,21 +14,25 @@ public class GenerationsSounds {
     public static final RegistrySupplier<SoundEvent> RKS_MACHINE = registerSound("generations_core.block.rks_machine");
     public static final RegistrySupplier<SoundEvent> BOX_OPEN = registerSound("generations_core.block.box_open");
     public static final RegistrySupplier<SoundEvent> BOX_CLOSED = registerSound("generations_core.block.box_closed");
+    public static final RegistrySupplier<SoundEvent> ELEVATOR = registerSound("generations_core.block.elevator");
+
 
     public static final RegistrySupplier<SoundEvent> UI_CLICK = registerSound("generations_core.other.ui_click");
+    public static final RegistrySupplier<SoundEvent> ZYGARDE_CELL = registerSound("generations_core.other.zygarde_cell");
+
     public static final RegistrySupplier<SoundEvent> AZALEA_TOWN = registerSound("generations_core.music.ambient.azalea_town");
     public static final RegistrySupplier<SoundEvent> CASCARRAFA_CITY = registerSound("generations_core.music.ambient.cascarrafa_city");
     public static final RegistrySupplier<SoundEvent> CERULEAN_CITY = registerSound("generations_core.music.ambient.cerulean_city");
     public static final RegistrySupplier<SoundEvent> ETERNA_CITY = registerSound("generations_core.music.ambient.eterna_city");
     public static final RegistrySupplier<SoundEvent> GOLDENROD_CITY = registerSound("generations_core.music.ambient.goldenrod_city");
     public static final RegistrySupplier<SoundEvent> ICIRRUS_CITY = registerSound("generations_core.music.ambient.icirrus_city");
-    public static final RegistrySupplier<SoundEvent> JUBILIFE_VILLAGE = registerSound("generations_core.music.ambient.jubilife_villag");
+    public static final RegistrySupplier<SoundEvent> JUBILIFE_VILLAGE = registerSound("generations_core.music.ambient.jubilife_village");
     public static final RegistrySupplier<SoundEvent> LAKE_OF_RAGE = registerSound("generations_core.music.ambient.lake_of_rage");
     public static final RegistrySupplier<SoundEvent> LAVERRE_CITY = registerSound("generations_core.music.ambient.laverre_city");
     public static final RegistrySupplier<SoundEvent> LILLIE = registerSound("generations_core.music.ambient.lillie");
     public static final RegistrySupplier<SoundEvent> POKEMON_CENTER = registerSound("generations_core.music.ambient.pokemon_center");
     public static final RegistrySupplier<SoundEvent> ROUTE_228 = registerSound("generations_core.music.ambient.route_228");
-    public static final RegistrySupplier<SoundEvent> SLUMBERING_WEALD = registerSound("generations_core.music.ambient.slumbering_weal");
+    public static final RegistrySupplier<SoundEvent> SLUMBERING_WEALD = registerSound("generations_core.music.ambient.slumbering_weald");
     public static final RegistrySupplier<SoundEvent> SURF = registerSound("generations_core.music.ambient.surf");
     public static final RegistrySupplier<SoundEvent> VERMILION_CITY = registerSound("generations_core.music.ambient.vermilion_city");
     public static final RegistrySupplier<SoundEvent> CYNTHIA = registerSound("generations_core.music.battle.cynthia");

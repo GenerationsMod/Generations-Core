@@ -57,7 +57,7 @@ public class OptionsWidget extends AbstractWidget {
 
         int y = getY() - getHeight() - 4;
         for (var option : options) {
-            stack.drawString(Minecraft.getInstance().font, option, getX() - getWidth() + 15, y += 10, 0xFF000000);
+            stack.drawString(Minecraft.getInstance().font, option, getX() - getWidth() + 15, y += 10, 0xFF000000, false);
         }
 
         if(hovered != null) {

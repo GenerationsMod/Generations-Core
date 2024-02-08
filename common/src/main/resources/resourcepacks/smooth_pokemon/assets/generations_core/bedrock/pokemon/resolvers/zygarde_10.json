@@ -1,0 +1,19 @@
+{
+  "species": "cobblemon:zygarde",
+  "order": 4,
+  "variations": [
+    {
+      "aspects": ["zygarde-form-10%"],
+      "poser": "generations_core:zygarde_10",
+      "model": "generations_core:zygarde_10.pk",
+      "texture": "pk:normal"
+    },
+    {
+      "aspects": [
+        "zygarde-form-10%",
+        "shiny"
+      ],
+      "texture": "pk:shiny"
+    }
+  ]
+}

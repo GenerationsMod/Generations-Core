@@ -13,6 +13,12 @@
         "shiny"
       ],
       "texture": "pk:shiny"
+    },
+    {
+      "aspects": [
+        "shadow"
+      ],
+      "texture": "pk:shadow"
     }
   ]
 }

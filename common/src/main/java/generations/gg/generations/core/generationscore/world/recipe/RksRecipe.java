@@ -85,10 +85,11 @@ public class RksRecipe implements Recipe<Container> {
             try {
                 return PokemonItem.from(PokemonSpecies.INSTANCE.getByIdentifier(result.species()), result.aspects(), 1, new Vector4f(1,1,1,1));
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                System.out.println("Error failed to create item: " + result.species());
             }
         }
-        else return ItemStack.EMPTY;
+
+        return ItemStack.EMPTY;
     }
 
     @Override

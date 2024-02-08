@@ -21,6 +21,7 @@ public class AbstractNodeTypes {
     public static final AbstractNodeType<SpawnPokemonNode> SPAWN_POKEMON = register("spawn_pokemon", SpawnPokemonNode::fromJson, SpawnPokemonNode::decode);
     public static final AbstractNodeType<OpenShopNode> OPEN_SHOP = register("open_shop", OpenShopNode::fromJson, OpenShopNode::decode);
     public static final AbstractNodeType<SayNode> SAY = register("say", SayNode::fromJson, SayNode::decode);
+    public static final AbstractNodeType<ConsumerNode> CONSUMER = register("consume", object -> new ConsumerNode(a -> {}), buf -> new ConsumerNode(a -> {}));
 
     public static <T extends AbstractNode> AbstractNodeType<T> register(String name, Function<JsonObject, T> codec, Function<FriendlyByteBuf, T> decoder) {
         return register(GenerationsCore.id(name), codec, decoder);

@@ -3,7 +3,7 @@
   "portraitTranslation": [ 0, 0.0, 0 ],
   "profileScale": 1.0,
   "profileTranslation": [ 0, 0.0, 0 ],
-  "faint": "pk(generations_core:flaaffy, faintstart)",
+  "faint": "pk(generations_core:flaaffy.pk, faintstart)",
   "poses": {
     "standing": {
       "animations": [

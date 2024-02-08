@@ -59,7 +59,7 @@ public class DialogueScreen extends Screen {
         if (activeInfo != null) {
             for (var line : ConfigureStringListEntryScreen.DisplayCache.calculateMultilineFittingString(activeInfo.text(), 63)) {
                 var component = ScreenUtils.formatStringWithColorsToComponent(line);
-                stack.drawString(Minecraft.getInstance().font, component, width / 2 - 170 + 8, y, 0xFFFFFF);
+                stack.drawString(Minecraft.getInstance().font, component, width / 2 - 170 + 8, y, 0xFFFFFF, false);
                 y += 10;
             }
 

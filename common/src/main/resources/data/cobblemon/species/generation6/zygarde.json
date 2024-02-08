@@ -5,7 +5,8 @@
   "primaryType": "dragon",
   "secondaryType": "ground",
   "abilities": [
-    "aurabreak"
+    "aurabreak",
+    "powerconstruct"
   ],
   "baseStats": {
     "hp": 108,
@@ -155,7 +156,8 @@
       "primaryType": "dragon",
       "secondaryType": "ground",
       "abilities": [
-        "aurabreak"
+        "aurabreak",
+        "powerconstruct"
       ],
       "baseStats": {
         "hp": 54,

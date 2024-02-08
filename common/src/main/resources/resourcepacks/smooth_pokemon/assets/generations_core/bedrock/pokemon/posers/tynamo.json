@@ -3,7 +3,7 @@
   "portraitTranslation": [ 0, 0.0, 0 ],
   "profileScale": 1.0,
   "profileTranslation": [ 0, 0.0, 0 ],
-  "faint": "pk(generations_core:tynamo, faintstart)",
+  "faint": "pk(generations_core:tynamo.pk, faintstart)",
   "poses": {
     "standing": {
       "animations": [

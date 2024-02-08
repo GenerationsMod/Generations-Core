@@ -19,6 +19,7 @@ public class Config {
     public EnigmaFragment enigmaFragment = new EnigmaFragment();
 
     public Blocks blocks = new Blocks();
+    public Special special = new Special();
 
     public Config() {}
 
@@ -121,5 +122,9 @@ public class Config {
 
     public static class Blocks {
         public int elevatorRange = 15;
+    }
+
+    public static class Special {
+        public boolean darkCrystalShadowPokemon = true;
     }
 }
