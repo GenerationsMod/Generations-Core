@@ -1,11 +1,13 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.config.Config;
 import gg.generations.rarecandy.pokeutils.BlendType;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.renderer.animation.AnimationController;
@@ -58,8 +60,9 @@ public class Pipelines {
 
     public static void initGenerationsPipelines(PipelineRegister register) {
 
-        register.register("pokemon",
+        register.register("pokemon", 
                 manager -> {
+            var legacyShading = GenerationsCore.CONFIG.client.usePixelmonShading ? "legacy/" : "";
                     var ROOT = new Pipeline.Builder()
                             .supplyUniform("viewMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().viewMatrix()))
                             .supplyUniform("modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().transformationMatrix()))
@@ -74,8 +77,12 @@ public class Pipelines {
                             }).supplyUniform("uvScale", ctx -> {
                                 var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getOffset(ctx.getMaterial().getMaterialName()) != null ? instance.getOffset(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
                                 ctx.uniform().uploadVec2f(offsets.scale());
-                            })
-                            .prePostDraw(material -> {
+                            });
+                    
+                    if(!legacyShading.isEmpty()) {
+                          ROOT.supplyUniform("Light0_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[0])).supplyUniform("Light1_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[1]));
+                    }
+                    ROOT.prePostDraw(material -> {
                                 material.cullType().enable();
                                 if(material.blendType() == BlendType.Regular) {
                                     RenderSystem.enableBlend();
@@ -94,7 +101,7 @@ public class Pipelines {
                             .configure(Pipelines::addLight);
 
                     Pipeline.Builder layered_base = new Pipeline.Builder(BASE)
-                            .shader(read(register.resourceManager, "shaders/block/animated.vs.glsl"), read(register.resourceManager, "shaders/block/layered.fs.glsl"))
+                            .shader(read(register.resourceManager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(register.resourceManager, "shaders/block/" + legacyShading + "layered.fs.glsl"))
                             .configure(Pipelines::baseColors)
                             .configure(Pipelines::emissionColors);
 
@@ -119,11 +126,11 @@ public class Pipelines {
                             .build();
 
                     Pipeline solid = new Pipeline.Builder(BASE)
-                            .shader(read(manager, "shaders/block/animated.vs.glsl"), read(manager, "shaders/block/solid.fs.glsl"))
+                            .shader(read(manager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(manager, "shaders/block/" + legacyShading + "solid.fs.glsl"))
                             .build();
 
                     Pipeline masked = new Pipeline.Builder(BASE)
-                            .shader(read(manager, "shaders/block/animated.vs.glsl"), read(manager, "shaders/block/masked.fs.glsl"))
+                            .shader(read(manager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(manager, "shaders/block/" + legacyShading + "masked.fs.glsl"))
                             .supplyUniform("mask", ctx -> {
 
                                 var texture = ctx.getTexture("mask");
