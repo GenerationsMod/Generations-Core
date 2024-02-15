@@ -9,13 +9,15 @@ import generations.gg.generations.core.generationscore.world.level.block.set.Gen
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.InfestedBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -25,6 +27,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -265,7 +268,7 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
                 if (resourcelocation != BuiltInLootTables.EMPTY && set.add(resourcelocation)) {
                     LootTable.Builder loottable$builder = this.map.remove(resourcelocation);
                     if (loottable$builder == null) {
-                        throw new IllegalStateException(String.format(Locale.ROOT, "Missing loottable '%s' for '%s'", resourcelocation, BuiltInRegistries.BLOCK.getKey(block)));
+                        throw new IllegalStateException(String.format(Locale.ROOT, "Missing loottable '%s' for '%s'", resourcelocation, ForgeRegistries.BLOCKS.getKey(block)));
                     }
 
                     biConsumer.accept(resourcelocation, loottable$builder);
