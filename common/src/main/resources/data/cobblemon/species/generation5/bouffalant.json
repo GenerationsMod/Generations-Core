@@ -9,30 +9,26 @@
     "h:soundproof"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 8,
     "entries": [
       {
         "item": "minecraft:leather",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:beef",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "quantityRange": "1-3"
       },
       {
         "item": "minecraft:brown_wool",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "1-2"
       },
       {
         "item": "cobblemon:wepear_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
-
   "baseStats": {
     "hp": 95,
     "attack": 110,

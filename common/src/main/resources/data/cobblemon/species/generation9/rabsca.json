@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Rabsca",
   "nationalPokedexNumber": 954,
   "primaryType": "bug",
@@ -39,7 +38,7 @@
     "1:psychup",
     "1:safeguard",
     "1:tackle",
-	"1:revivalblessing",
+    "1:revivalblessing",
     "4:sandattack",
     "7:strugglebug",
     "11:rollout",
@@ -112,5 +111,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.rabsca.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:clay",
+        "quantityRange": "0-2"
+      }
+    ]
+  }
 }

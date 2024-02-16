@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Swablu",
   "nationalPokedexNumber": 333,
   "primaryType": "normal",
@@ -26,15 +25,6 @@
     "flying",
     "dragon"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:swablu_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:growl",
     "1:peck",
@@ -194,5 +184,20 @@
   "height": 4,
   "weight": 12,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:white_wool"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

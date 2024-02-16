@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Drakloak",
   "nationalPokedexNumber": 886,
   "primaryType": "dragon",
@@ -136,5 +135,14 @@
   "height": 14,
   "weight": 110,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

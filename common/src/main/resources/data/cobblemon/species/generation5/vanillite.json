@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Vanillite",
   "nationalPokedexNumber": 582,
   "primaryType": "ice",
@@ -12,8 +11,8 @@
     "amount": 3,
     "entries": [
       {
-        "item": "minecraft:snow_ball",
-        "percentage": 50
+        "item": "minecraft:snowball",
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:never_melt_ice",

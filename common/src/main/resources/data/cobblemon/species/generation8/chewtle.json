@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Chewtle",
   "nationalPokedexNumber": 833,
   "primaryType": "water",
@@ -116,5 +115,18 @@
   "height": 3,
   "weight": 85,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:scute",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sunflora",
   "nationalPokedexNumber": 192,
   "primaryType": "grass",
@@ -156,5 +155,17 @@
   "height": 8,
   "weight": 85,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:sunflower"
+      },
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

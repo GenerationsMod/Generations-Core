@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Yveltal",
   "nationalPokedexNumber": 717,
   "primaryType": "dark",
@@ -24,6 +23,13 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "moves": [
     "1:doubleteam",
     "1:gust",

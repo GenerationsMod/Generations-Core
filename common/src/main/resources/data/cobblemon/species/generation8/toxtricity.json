@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Toxtricity",
   "nationalPokedexNumber": 849,
   "primaryType": "electric",
@@ -367,5 +366,14 @@
   "height": 16,
   "weight": 400,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:shuca_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

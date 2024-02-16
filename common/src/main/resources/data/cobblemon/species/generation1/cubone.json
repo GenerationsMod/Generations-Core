@@ -26,19 +26,15 @@
     "monster"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:bone",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:nanab_berry",
         "percentage": 2.5
-      },
-      {
-        "item": "generations_core:cubone_doll",
-        "percentage": 1
       }
     ]
   },

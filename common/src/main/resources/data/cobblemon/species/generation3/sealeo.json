@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sealeo",
   "nationalPokedexNumber": 364,
   "primaryType": "ice",
@@ -150,5 +149,18 @@
   "height": 11,
   "weight": 876,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

@@ -11,7 +11,7 @@
     "entries": [
       {
         "item": "cobblemon:colbur_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -34,9 +34,6 @@
   ],
   "behaviour": {
     "moving": {
-      "walk": {
-        "canWalk": false
-      },
       "fly": {
         "canFly": true
       }
@@ -159,13 +156,6 @@
     "tutor:wrap",
     "tutor:zenheadbutt"
   ],
-  "behaviour": {
-    "moving": {
-      "fly": {
-        "canFly": true
-      }
-    }
-  },
   "labels": [
     "gen3"
   ],

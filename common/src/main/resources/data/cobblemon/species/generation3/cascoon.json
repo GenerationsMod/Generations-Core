@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cascoon",
   "nationalPokedexNumber": 268,
   "primaryType": "bug",
@@ -16,9 +15,12 @@
   },
   "behaviour": {
     "moving": {
-      "canMove": false,
       "walk": {
         "canWalk": false
+      },
+      "swim": {
+        "canSwimInWater": false,
+        "canSwimInLava": false
       },
       "canLook": false
     }
@@ -79,5 +81,18 @@
   "height": 7,
   "weight": 115,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

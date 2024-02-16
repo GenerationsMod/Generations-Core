@@ -10,16 +10,15 @@
     "h:unaware"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:clay_ball",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:pecha_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -49,10 +48,18 @@
     "water_1",
     "field"
   ],
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
   "moves": [
     "1:poisonsting",
     "1:tailwhip",
-	"1:amnesia",
+    "1:amnesia",
     "4:toxicspikes",
     "8:mudshot",
     "12:poisontail",

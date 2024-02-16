@@ -9,14 +9,18 @@
     "h:moldbreaker"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:salmon"
       },
       {
         "item": "minecraft:bone_meal",
-        "percentage": 5
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:deep_sea_tooth",
+        "percentage": 5.0
       }
     ]
   },

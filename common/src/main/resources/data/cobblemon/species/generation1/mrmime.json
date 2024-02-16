@@ -17,12 +17,12 @@
     "special_defence": 120,
     "speed": 90
   },
+  "features": [
+    "galar"
+  ],
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
-  "features": [
-    "galarian"
-  ],
   "forms": [
     {
       "name": "Galar",
@@ -190,7 +190,16 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "cobblemon:aspear_berry",
+            "percentage": 5.0
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 161,
@@ -450,5 +459,18 @@
   "weight": 545,
   "aspects": [],
   "evolutions": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:light_clay",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

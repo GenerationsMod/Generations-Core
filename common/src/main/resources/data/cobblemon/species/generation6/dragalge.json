@@ -10,20 +10,18 @@
     "h:adaptability"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:kelp",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:pecha_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
-
   "baseStats": {
     "hp": 65,
     "attack": 75,

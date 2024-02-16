@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },
@@ -50,15 +50,17 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "walk": {
-      "walkSpeed": 0.3
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.3
+      }
     }
   },
   "moves": [
     "1:leafage",
     "1:scratch",
     "1:tailwhip",
-	"1:flowertrick",
+    "1:flowertrick",
     "7:bite",
     "10:honeclaws",
     "13:magicalleaf",

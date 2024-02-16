@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Cursola",
   "nationalPokedexNumber": 864,
   "primaryType": "ghost",
@@ -124,5 +123,14 @@
   "height": 10,
   "weight": 4,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

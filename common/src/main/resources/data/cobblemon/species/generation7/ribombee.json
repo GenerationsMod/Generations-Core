@@ -10,16 +10,15 @@
     "h:sweetveil"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
-        "item": "minecraft:honeycomb",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "item": "minecraft:honey_bottle",
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:cheri_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

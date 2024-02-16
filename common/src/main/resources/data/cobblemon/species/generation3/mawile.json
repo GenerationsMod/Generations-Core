@@ -80,13 +80,21 @@
     "entries": [
       {
         "item": "cobblemon:razor_fang",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:occa_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:astonish",

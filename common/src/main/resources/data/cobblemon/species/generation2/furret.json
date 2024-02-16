@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Furret",
   "nationalPokedexNumber": 162,
   "primaryType": "normal",
@@ -177,5 +176,18 @@
   "height": 18,
   "weight": 325,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:silk_scarf",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

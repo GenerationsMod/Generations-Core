@@ -184,7 +184,24 @@
       "preEvolution": "vulpix form=alola",
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 7,
+        "entries": [
+          {
+            "item": "minecraft:sweet_berries",
+            "quantityRange": "2-4"
+          },
+          {
+            "item": "minecraft:snowball",
+            "quantityRange": "0-2"
+          },
+          {
+            "item": "cobblemon:babiri_berry",
+            "percentage": 5.0
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 177,
@@ -194,15 +211,19 @@
     "field"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:sweet_berries",
-        "quantityRange": "3-5"
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "minecraft:charcoal",
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:rawst_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

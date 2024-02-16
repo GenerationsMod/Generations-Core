@@ -79,9 +79,9 @@
       "light": "0-4"
     },
     "moving": {
-        "walk": {
-          "walkSpeed": 0.4
-        },
+      "walk": {
+        "walkSpeed": 0.4
+      },
       "swim": {
         "canWalkOnWater": true
       },
@@ -95,11 +95,11 @@
     "entries": [
       {
         "item": "cobblemon:poison_barb",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:pinap_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

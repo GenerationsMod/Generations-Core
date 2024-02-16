@@ -26,7 +26,7 @@
     "field"
   ],
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.15
       },
@@ -43,15 +43,11 @@
     }
   },
   "drops": {
-    "amount": 2,
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 5
-      },
-      {
-        "item": "generations_core:popplio_doll",
-        "percentage": 1
+        "percentage": 5.0
       }
     ]
   },

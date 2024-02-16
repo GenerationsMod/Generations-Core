@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mantine",
   "nationalPokedexNumber": 226,
   "primaryType": "water",
@@ -199,5 +198,18 @@
   "height": 21,
   "weight": 2200,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

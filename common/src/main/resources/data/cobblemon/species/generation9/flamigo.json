@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Flamigo",
   "nationalPokedexNumber": 973,
   "primaryType": "flying",
@@ -9,6 +8,26 @@
     "tangledfeet",
     "h:costar"
   ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:payapa_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 5.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 82,
     "attack": 115,

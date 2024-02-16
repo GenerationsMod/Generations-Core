@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Vullaby",
   "nationalPokedexNumber": 629,
   "primaryType": "dark",
@@ -14,11 +13,11 @@
     "entries": [
       {
         "item": "minecraft:feather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:rotten_flesh",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:chicken"

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tympole",
   "nationalPokedexNumber": 535,
   "primaryType": "water",
@@ -13,7 +12,7 @@
     "entries": [
       {
         "item": "minecraft:clay_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:persim_berry",

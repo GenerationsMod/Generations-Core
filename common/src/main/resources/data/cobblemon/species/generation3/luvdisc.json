@@ -35,12 +35,12 @@
         "canBreatheUnderwater": true
       }
     },
-      "resting": {
-        "canSleep": true,
-        "willSleepOnBed": false,
-        "depth": "normal",
-        "light": "0-4"
-      }
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "drops": {
     "amount": 1,

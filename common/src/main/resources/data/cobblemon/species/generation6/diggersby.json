@@ -10,30 +10,29 @@
     "h:hugepower"
   ],
   "drops": {
-    "amount": 5,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:rabbit"
       },
       {
         "item": "minecraft:rabbit_hide",
-        "percentage": 50
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:rabbit_foot",
-        "percentage": 2.5
+        "percentage": 5.0
       },
       {
         "item": "minecraft:carrot",
-        "percentage": 2.5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:chilan_berry",
-        "percentage": 2.5
+        "percentage": 5.0
       }
     ]
   },
-
   "baseStats": {
     "hp": 85,
     "attack": 56,
@@ -52,7 +51,7 @@
     "field"
   ],
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.2
       }

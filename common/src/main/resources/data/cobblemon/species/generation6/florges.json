@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Florges",
   "nationalPokedexNumber": 671,
   "primaryType": "fairy",
@@ -129,5 +128,14 @@
   "height": 11,
   "weight": 100,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

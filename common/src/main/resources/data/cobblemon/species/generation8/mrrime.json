@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mr. Rime",
   "nationalPokedexNumber": 866,
   "primaryType": "ice",
@@ -155,5 +154,14 @@
   "height": 15,
   "weight": 582,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

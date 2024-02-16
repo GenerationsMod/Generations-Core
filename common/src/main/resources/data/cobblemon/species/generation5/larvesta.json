@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Larvesta",
   "nationalPokedexNumber": 636,
   "primaryType": "bug",
@@ -13,7 +12,7 @@
     "entries": [
       {
         "item": "minecraft:string",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:blaze_powder",

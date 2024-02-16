@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Solrock",
   "nationalPokedexNumber": 338,
   "primaryType": "rock",
@@ -197,5 +196,18 @@
   "height": 12,
   "weight": 1540,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:sun_stone",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:colbur_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

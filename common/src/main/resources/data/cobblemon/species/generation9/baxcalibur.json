@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Baxcalibur",
   "nationalPokedexNumber": 998,
   "primaryType": "dragon",
@@ -41,7 +40,7 @@
     "1:leer",
     "1:snowscape",
     "1:tackle",
-	"1:glaiverush",
+    "1:glaiverush",
     "6:icywind",
     "12:dragonbreath",
     "18:focusenergy",
@@ -104,5 +103,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.baxcalibur.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "cobblemon:metal_coat",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -39,6 +39,12 @@
       "fly": {
         "canFly": true
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

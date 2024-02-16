@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dragapult",
   "nationalPokedexNumber": 887,
   "primaryType": "dragon",
@@ -130,5 +129,14 @@
   "height": 30,
   "weight": 500,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

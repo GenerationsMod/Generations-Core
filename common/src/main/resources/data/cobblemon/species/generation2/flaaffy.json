@@ -8,7 +8,7 @@
     "h:plus"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:mutton",
@@ -19,7 +19,7 @@
       },
       {
         "item": "cobblemon:cheri_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -42,7 +42,7 @@
     "field"
   ],
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.2
       }

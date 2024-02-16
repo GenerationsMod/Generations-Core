@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Regice",
   "nationalPokedexNumber": 378,
   "primaryType": "ice",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:regice_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:chargebeam",
     "1:icywind",
@@ -183,5 +173,13 @@
   "height": 18,
   "weight": 1750,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:never_melt_ice"
+      }
+    ]
+  }
 }

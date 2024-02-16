@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Meltan",
   "nationalPokedexNumber": 808,
   "primaryType": "steel",
@@ -68,16 +67,7 @@
   "pokedex": [
     "cobblemon.species.meltan.desc"
   ],
-  "evolutions": [
-    {
-      "id": "meltan_melmetal",
-      "variant": "item_interact",
-      "result": "melmetal",
-      "consumeHeldItem": false,
-      "requirements": [],
-      "requiredContext": "generations_core:meltan_box_charged"
-    }
-  ],
+  "evolutions": [],
   "baseScale": 1,
   "hitbox": {
     "width": 1,

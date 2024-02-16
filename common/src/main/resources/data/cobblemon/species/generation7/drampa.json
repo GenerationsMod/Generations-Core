@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Drampa",
   "nationalPokedexNumber": 780,
   "primaryType": "normal",
@@ -165,5 +164,18 @@
   "height": 30,
   "weight": 1850,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:dragon_breath",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

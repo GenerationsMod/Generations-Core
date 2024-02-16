@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tyrantrum",
   "nationalPokedexNumber": 697,
   "primaryType": "rock",
@@ -153,5 +152,14 @@
   "height": 25,
   "weight": 2700,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:razor_fang",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

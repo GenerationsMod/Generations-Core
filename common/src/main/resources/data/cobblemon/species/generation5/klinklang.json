@@ -9,12 +9,11 @@
     "h:clearbody"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:raw_iron",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "quantityRange": "0-3"
       }
     ]
   },

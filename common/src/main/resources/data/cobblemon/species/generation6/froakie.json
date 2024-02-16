@@ -43,11 +43,11 @@
     "entries": [
       {
         "item": "minecraft:pearlescent_froglight",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

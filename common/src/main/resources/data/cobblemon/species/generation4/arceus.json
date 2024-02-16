@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Arceus",
   "nationalPokedexNumber": 493,
   "primaryType": "normal",
@@ -790,15 +789,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:arceus_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:cosmicpower",
     "1:naturalgift",

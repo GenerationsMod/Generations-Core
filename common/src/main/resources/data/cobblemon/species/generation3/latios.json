@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Latios",
   "nationalPokedexNumber": 381,
   "primaryType": "dragon",
@@ -72,15 +71,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:latios_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:dragondance",
     "1:healblock",
@@ -261,5 +251,14 @@
   "height": 20,
   "weight": 600,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "2-4"
+      }
+    ]
+  }
 }

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Ho-Oh",
   "nationalPokedexNumber": 250,
   "primaryType": "fire",
@@ -25,15 +24,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:hooh_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:ancientpower",
     "1:gust",
@@ -225,5 +215,17 @@
   "height": 38,
   "weight": 1990,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "cobblemon:sacred_ash"
+      }
+    ]
+  }
 }

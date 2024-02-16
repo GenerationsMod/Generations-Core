@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Toucannon",
   "nationalPokedexNumber": 733,
   "primaryType": "normal",
@@ -107,5 +106,21 @@
   "height": 11,
   "weight": 260,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:sharp_beak",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Trapinch",
   "nationalPokedexNumber": 328,
   "primaryType": "ground",
@@ -158,5 +157,18 @@
   "height": 7,
   "weight": 150,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:soft_sand",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

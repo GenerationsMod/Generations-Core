@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Qwilfish",
   "nationalPokedexNumber": 211,
   "primaryType": "water",
@@ -17,6 +16,9 @@
     "special_defence": 55,
     "speed": 85
   },
+  "features": [
+    "hisuian"
+  ],
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -344,5 +346,21 @@
   "height": 5,
   "weight": 39,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:pufferfish"
+      },
+      {
+        "item": "minecraft:prismarine_shard",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

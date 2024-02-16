@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Polteageist",
   "nationalPokedexNumber": 855,
   "primaryType": "ghost",
@@ -155,5 +154,14 @@
   "height": 2,
   "weight": 4,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:spell_tag",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

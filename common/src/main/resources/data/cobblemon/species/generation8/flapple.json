@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Flapple",
   "nationalPokedexNumber": 841,
   "primaryType": "grass",
@@ -163,5 +162,17 @@
   "height": 3,
   "weight": 10,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

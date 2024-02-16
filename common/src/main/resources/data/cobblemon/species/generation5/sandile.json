@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sandile",
   "nationalPokedexNumber": 551,
   "primaryType": "ground",
@@ -20,7 +19,6 @@
         "item": "cobblemon:tanga_berry",
         "percentage": 2.5
       }
-
     ]
   },
   "baseStats": {

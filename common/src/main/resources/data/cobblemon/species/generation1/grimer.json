@@ -16,12 +16,12 @@
     "special_defence": 50,
     "speed": 25
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
   "features": [
     "alolan"
   ],
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Alola",
@@ -239,7 +239,7 @@
     "entries": [
       {
         "item": "minecraft:slime_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:black_sludge",

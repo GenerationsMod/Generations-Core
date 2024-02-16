@@ -8,15 +8,15 @@
     "icebody",
     "h:sturdy"
   ],
-    "drops": {
+  "drops": {
     "amount": 2,
     "entries": [
       {
-        "item": "cobblemon:aspear_berry",
+        "item": "cobblemon:never_melt_ice",
         "percentage": 2.5
       },
       {
-        "item": "cobblemon:never_melt_ice",
+        "item": "cobblemon:aspear_berry",
         "percentage": 2.5
       }
     ]
@@ -50,6 +50,12 @@
       "walk": {
         "walkSpeed": 0.15
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

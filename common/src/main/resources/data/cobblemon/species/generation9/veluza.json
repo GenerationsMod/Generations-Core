@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Veluza",
   "nationalPokedexNumber": 976,
   "primaryType": "water",
@@ -90,5 +89,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.veluza.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

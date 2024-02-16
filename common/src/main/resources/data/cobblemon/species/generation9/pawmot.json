@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Pawmot",
   "nationalPokedexNumber": 923,
   "primaryType": "electric",
@@ -38,8 +37,8 @@
     "1:growl",
     "1:scratch",
     "1:wildcharge",
-	"1:armthrust",
-	"1:revivalblessing",
+    "1:armthrust",
+    "1:revivalblessing",
     "3:thundershock",
     "6:quickattack",
     "8:charge",
@@ -115,5 +114,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.pawmot.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

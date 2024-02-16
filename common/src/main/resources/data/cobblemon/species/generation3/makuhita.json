@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Makuhita",
   "nationalPokedexNumber": 296,
   "primaryType": "fighting",
@@ -195,5 +194,22 @@
   "height": 10,
   "weight": 864,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:black_belt",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kings_rock",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:payapa_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

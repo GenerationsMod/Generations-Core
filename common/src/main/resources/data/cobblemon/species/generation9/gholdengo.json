@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gholdengo",
   "nationalPokedexNumber": 1000,
   "primaryType": "steel",
@@ -94,5 +93,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.gholdengo.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:gold_nugget",
+        "quantityRange": "2-4"
+      }
+    ]
+  }
 }

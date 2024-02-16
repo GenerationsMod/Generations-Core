@@ -29,11 +29,11 @@
     "amount": 2,
     "entries": [
       {
-        "item": "cobblemon:pecha_berry",
+        "item": "cobblemon:big_root",
         "percentage": 2.5
       },
       {
-        "item": "cobblemon:pecha_berry",
+        "item": "cobblemon:pinap_berry",
         "percentage": 2.5
       }
     ]

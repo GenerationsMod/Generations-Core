@@ -28,19 +28,15 @@
     "field"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:protector",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:passho_berry",
-        "percentage": 5
-      },
-      {
-        "item": "generations_core:rhydon_doll",
-        "percentage": 1
+        "percentage": 5.0
       }
     ]
   },

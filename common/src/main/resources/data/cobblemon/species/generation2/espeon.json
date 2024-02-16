@@ -20,11 +20,11 @@
     "entries": [
       {
         "item": "cobblemon:sun_stone",
-        "percentage": 25
+        "percentage": 25.0
       },
       {
         "item": "cobblemon:twisted_spoon",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

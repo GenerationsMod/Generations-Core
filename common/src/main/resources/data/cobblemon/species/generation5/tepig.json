@@ -8,7 +8,7 @@
     "h:thickfat"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:porkchop",
@@ -16,7 +16,7 @@
       },
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

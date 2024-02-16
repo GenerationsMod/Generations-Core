@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gimmighoul",
   "nationalPokedexNumber": 999,
   "primaryType": "ghost",
@@ -126,5 +125,14 @@
   ],
   "pokedex": [
     "cobblemon.species.gimmighoul.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:gold_nugget",
+        "quantityRange": "1-3"
+      }
+    ]
+  }
 }

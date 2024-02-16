@@ -139,7 +139,27 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 4,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "quantityRange": "0-1"
+          },
+          {
+            "item": "minecraft:chicken"
+          },
+          {
+            "item": "cobblemon:medicinal_leek",
+            "quantityRange": "0-1"
+          },
+          {
+            "item": "cobblemon:coba_berry",
+            "percentage": 2.5
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 132,
@@ -165,18 +185,22 @@
     }
   },
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:feather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:chicken"
       },
       {
         "item": "cobblemon:medicinal_leek",
-        "percentage": 50
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:chilan_berry",
+        "percentage": 5.0
       }
     ]
   },

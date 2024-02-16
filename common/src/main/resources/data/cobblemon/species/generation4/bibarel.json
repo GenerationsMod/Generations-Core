@@ -10,17 +10,15 @@
     "h:moody"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:stick",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:oran_berry",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "percentage": 5.0
       }
     ]
   },

@@ -8,14 +8,10 @@
     "h:unnerve"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:twisted_spoon"
-      },
-      {
-        "item": "generations_core:mewtwo_doll",
-        "percentage": 75
       }
     ]
   },

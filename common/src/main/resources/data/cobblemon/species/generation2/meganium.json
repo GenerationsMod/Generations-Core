@@ -32,7 +32,7 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.15
       }
@@ -43,7 +43,7 @@
     "entries": [
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },

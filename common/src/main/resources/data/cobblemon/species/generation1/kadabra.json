@@ -16,14 +16,7 @@
     "special_defence": 70,
     "speed": 105
   },
-  "behaviour": {
-    "resting": {
-      "canSleep": true,
-      "willSleepOnBed": false,
-      "depth": "normal",
-      "light": "0-4"
-    }
-  },
+  "behaviour": {},
   "catchRate": 100,
   "maleRatio": 0.75,
   "shoulderMountable": false,
@@ -34,16 +27,19 @@
     "human_like"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:ender_pearl",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:twisted_spoon",
-        "percentage": 5
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 5.0
       }
     ]
   },

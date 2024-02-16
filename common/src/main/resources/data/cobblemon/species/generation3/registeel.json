@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Registeel",
   "nationalPokedexNumber": 379,
   "primaryType": "steel",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:registeel_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:chargebeam",
     "1:metalclaw",
@@ -189,5 +179,13 @@
   "height": 19,
   "weight": 2050,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:metal_coat"
+      }
+    ]
+  }
 }

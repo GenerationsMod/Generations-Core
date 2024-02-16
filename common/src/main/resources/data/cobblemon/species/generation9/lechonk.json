@@ -9,7 +9,7 @@
     "h:thickfat"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:porkchop",

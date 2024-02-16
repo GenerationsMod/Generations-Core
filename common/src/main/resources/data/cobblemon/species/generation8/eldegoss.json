@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Eldegoss",
   "nationalPokedexNumber": 830,
   "primaryType": "grass",
@@ -93,5 +92,18 @@
   "height": 5,
   "weight": 25,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:white_wool",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

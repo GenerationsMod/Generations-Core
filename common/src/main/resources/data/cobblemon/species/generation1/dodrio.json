@@ -27,19 +27,22 @@
     "flying"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:feather",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:chicken"
       },
       {
         "item": "cobblemon:sharp_beak",
-        "percentage": 5
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 5.0
       }
     ]
   },

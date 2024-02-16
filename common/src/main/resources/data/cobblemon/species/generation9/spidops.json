@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Spidops",
   "nationalPokedexNumber": 918,
   "primaryType": "bug",
@@ -35,7 +34,7 @@
   "moves": [
     "1:stringshot",
     "1:tackle",
-	"1:silktrap",
+    "1:silktrap",
     "5:strugglebug",
     "8:assurance",
     "11:feint",
@@ -96,5 +95,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.spidops.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:spider_eye",
+        "quantityRange": "0-2"
+      }
+    ]
+  }
 }

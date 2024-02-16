@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Coalossal",
   "nationalPokedexNumber": 839,
   "primaryType": "rock",
@@ -168,5 +167,22 @@
   "height": 28,
   "weight": 3105,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:coal",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:black_augurite",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

@@ -9,16 +9,15 @@
     "h:sheerforce"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:bone_block",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:aspear_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -48,10 +47,16 @@
     "field"
   ],
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.2
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

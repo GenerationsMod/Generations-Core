@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tarountula",
   "nationalPokedexNumber": 917,
   "primaryType": "bug",
@@ -104,5 +103,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.tarountula.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:spider_eye",
+        "quantityRange": "0-1"
+      }
+    ]
+  }
 }

@@ -10,20 +10,19 @@
     "h:noguard"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:clay_ball",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:light_clay",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:colbur_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -40,7 +39,7 @@
       "walk": {
         "walkSpeed": 0.25
       }
-      },
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": false,

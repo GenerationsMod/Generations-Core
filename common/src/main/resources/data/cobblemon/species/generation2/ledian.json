@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Ledian",
   "nationalPokedexNumber": 166,
   "primaryType": "bug",
@@ -164,5 +163,14 @@
   "height": 14,
   "weight": 356,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:charti_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

@@ -14,7 +14,7 @@
     "entries": [
       {
         "item": "cobblemon:kasib_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -35,6 +35,13 @@
   "eggGroups": [
     "amorphous"
   ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "moves": [
     "1:astonish",
     "1:constrict",
@@ -188,8 +195,8 @@
   "evolutions": [],
   "baseScale": 1,
   "hitbox": {
-    "width": 1,
-    "height": 1,
+    "width": 1.6,
+    "height": 3.25,
     "fixed": false
   },
   "baseFriendship": 50,

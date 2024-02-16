@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Roserade",
   "nationalPokedexNumber": 407,
   "primaryType": "grass",
@@ -138,5 +137,22 @@
   "height": 9,
   "weight": 145,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:rose_bush",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

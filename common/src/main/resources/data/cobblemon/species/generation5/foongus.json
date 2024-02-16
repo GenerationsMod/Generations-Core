@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Foongus",
   "nationalPokedexNumber": 590,
   "primaryType": "grass",
@@ -13,7 +12,7 @@
     "entries": [
       {
         "item": "minecraft:red_mushroom",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:cheri_berry",

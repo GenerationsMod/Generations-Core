@@ -10,23 +10,22 @@
     "h:rivalry"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:feather",
-        "percentage": 75,
-        "quantityRange": "1-3"
+        "quantityRange": "0-3"
       },
       {
         "item": "minecraft:chicken"
       },
       {
         "item": "cobblemon:sharp_beak",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:razz_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

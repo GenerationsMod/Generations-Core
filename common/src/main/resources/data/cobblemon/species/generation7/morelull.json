@@ -31,7 +31,7 @@
     "entries": [
       {
         "item": "minecraft:brown_mushroom",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:kebia_berry",

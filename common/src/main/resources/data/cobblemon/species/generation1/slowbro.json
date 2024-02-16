@@ -13,12 +13,12 @@
     "amount": 2,
     "entries": [
       {
-        "item": "cobblemon:wacan_berry",
-        "percentage": 2.5
+        "item": "cobblemon:kings_rock",
+        "percentage": 5.0
       },
       {
-        "item": "cobblemon:kings_rock",
-        "percentage": 2.5
+        "item": "cobblemon:chesto_berry",
+        "percentage": 5.0
       }
     ]
   },
@@ -30,12 +30,12 @@
     "special_defence": 80,
     "speed": 30
   },
-  "catchRate": 75,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
   "features": [
     "galarian"
   ],
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Mega",
@@ -241,7 +241,16 @@
       "preEvolution": "slowpoke form=galar",
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "cobblemon:chesto_berry",
+            "percentage": 5.0
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 172,

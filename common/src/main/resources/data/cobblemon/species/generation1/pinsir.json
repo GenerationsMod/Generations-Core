@@ -247,5 +247,14 @@
   "height": 15,
   "weight": 550,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

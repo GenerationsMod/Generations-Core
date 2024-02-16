@@ -7,11 +7,10 @@
     "beastboost"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:echo_shard",
-        "percentage": 66,
         "quantityRange": "1-2"
       }
     ]

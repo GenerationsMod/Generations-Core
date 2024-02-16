@@ -9,10 +9,10 @@
     "h:static"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 6,
     "entries": [
       {
-        "item": "cobblemon:feather",
+        "item": "minecraft:feather",
         "quantityRange": "2-4"
       },
       {
@@ -20,10 +20,6 @@
       },
       {
         "item": "cobblemon:magnet"
-      },
-      {
-        "item": "generations_core:zapdos_doll",
-        "percentage": 75
       }
     ]
   },
@@ -35,12 +31,12 @@
     "special_defence": 90,
     "speed": 100
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
   "features": [
     "galarian"
   ],
+  "catchRate": 3,
+  "maleRatio": -1,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Galar",
@@ -158,7 +154,22 @@
       "weight": 582,
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 6,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "quantityRange": "2-4"
+          },
+          {
+            "item": "minecraft:chicken"
+          },
+          {
+            "item": "cobblemon:razor_claw"
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 290,

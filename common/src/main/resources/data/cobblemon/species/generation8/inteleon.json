@@ -78,7 +78,7 @@
     "entries": [
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },
@@ -88,7 +88,7 @@
     "1:growl",
     "1:pound",
     "1:watergun",
-	"1:snipeshot",
+    "1:snipeshot",
     "12:waterpulse",
     "19:tearfullook",
     "24:suckerpunch",

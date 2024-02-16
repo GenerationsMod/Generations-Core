@@ -16,12 +16,12 @@
     "special_defence": 85,
     "speed": 90
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
   "features": [
     "galarian"
   ],
+  "catchRate": 3,
+  "maleRatio": -1,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Galar",
@@ -132,7 +132,22 @@
       "weight": 660,
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 6,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "quantityRange": "2-4"
+          },
+          {
+            "item": "minecraft:cooked_chicken"
+          },
+          {
+            "item": "cobblemon:sharp_beak"
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 290,
@@ -141,15 +156,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:moltres_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "behaviour": {
     "moving": {
       "fly": {
@@ -324,5 +330,20 @@
   "height": 20,
   "weight": 600,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 6,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "minecraft:cooked_chicken"
+      },
+      {
+        "item": "cobblemon:charcoal_stick"
+      }
+    ]
+  }
 }

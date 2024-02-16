@@ -174,15 +174,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:eevee_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:covet",
     "1:growl",
@@ -445,5 +436,14 @@
   "height": 3,
   "weight": 65,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:silk_scarf",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

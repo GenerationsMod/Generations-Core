@@ -4,7 +4,9 @@
   "nationalPokedexNumber": 1009,
   "primaryType": "water",
   "secondaryType": "dragon",
-  "abilities": ["protosynthesis"],
+  "abilities": [
+    "protosynthesis"
+  ],
   "baseStats": {
     "hp": 99,
     "attack": 83,
@@ -41,7 +43,9 @@
   },
   "experienceGroup": "slow",
   "eggCycles": 50,
-  "eggGroups": ["undiscovered"],
+  "eggGroups": [
+    "undiscovered"
+  ],
   "moves": [
     "1:aquajet",
     "1:honeclaws",
@@ -100,7 +104,10 @@
     "tutor:hydrosteam",
     "tutor:nobleroar"
   ],
-  "labels": ["gen9", "paradox"],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
   "aspects": [],
   "height": 35,
   "weight": 2800,

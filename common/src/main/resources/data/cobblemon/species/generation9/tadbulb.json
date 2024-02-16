@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tadbulb",
   "nationalPokedexNumber": 938,
   "primaryType": "electric",
@@ -97,5 +96,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.tadbulb.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:ochre_froglight",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

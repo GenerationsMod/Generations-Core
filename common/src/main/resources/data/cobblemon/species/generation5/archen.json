@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Archen",
   "nationalPokedexNumber": 566,
   "primaryType": "rock",
@@ -8,12 +7,11 @@
     "defeatist"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:feather",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       }
     ]
   },

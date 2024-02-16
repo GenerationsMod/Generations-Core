@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Hydreigon",
   "nationalPokedexNumber": 635,
   "primaryType": "dark",
@@ -8,16 +7,15 @@
     "levitate"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:dragon_breath",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "quantityRange": "0-3"
       },
       {
         "item": "cobblemon:roseli_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

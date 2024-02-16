@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "cobblemon:dubious_disc",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },
@@ -42,6 +42,12 @@
       "walk": {
         "canWalk": false
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

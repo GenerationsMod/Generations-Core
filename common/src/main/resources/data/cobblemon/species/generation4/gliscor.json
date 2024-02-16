@@ -10,19 +10,19 @@
     "h:poisonheal"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 3,
     "entries": [
       {
         "item": "cobblemon:razor_fang",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:poison_barb",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:yache_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

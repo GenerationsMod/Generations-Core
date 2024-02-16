@@ -12,7 +12,7 @@
     "entries": [
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },
@@ -43,10 +43,21 @@
     "water_1"
   ],
   "behaviour": {
-    "moving" : {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true,
+        "canWalkOnWater": true
+      },
       "walk": {
         "walkSpeed": 0.3
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

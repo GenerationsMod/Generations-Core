@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dedenne",
   "nationalPokedexNumber": 702,
   "primaryType": "electric",
@@ -147,5 +146,14 @@
   "height": 2,
   "weight": 22,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

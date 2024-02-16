@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Skarmory",
   "nationalPokedexNumber": 227,
   "primaryType": "steel",
@@ -192,5 +191,22 @@
   "height": 17,
   "weight": 505,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:sharp_beak",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:metal_coat",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

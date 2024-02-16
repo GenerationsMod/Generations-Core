@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sentret",
   "nationalPokedexNumber": 161,
   "primaryType": "normal",
@@ -199,5 +198,18 @@
   "height": 8,
   "weight": 60,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:silk_scarf",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

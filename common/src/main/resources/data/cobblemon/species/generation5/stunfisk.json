@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Stunfisk",
   "nationalPokedexNumber": 618,
   "primaryType": "ground",
@@ -10,16 +9,15 @@
     "h:sandveil"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:mud",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:passho_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -31,12 +29,12 @@
     "special_defence": 99,
     "speed": 32
   },
-  "catchRate": 75,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
   "features": [
     "galarian"
   ],
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Galar",

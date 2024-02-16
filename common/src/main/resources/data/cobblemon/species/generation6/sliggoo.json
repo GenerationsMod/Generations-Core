@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sliggoo",
   "nationalPokedexNumber": 705,
   "primaryType": "dragon",
@@ -16,6 +15,9 @@
     "special_defence": 113,
     "speed": 60
   },
+  "features": [
+    "hisuian"
+  ],
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -246,5 +248,18 @@
   "height": 8,
   "weight": 175,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:slime_ball",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

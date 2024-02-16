@@ -10,16 +10,15 @@
     "h:technician"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:brown_mushroom",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
-        "item": "cobblemon:kasib_berry",
-        "percentage": 5
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5.0
       }
     ]
   },
@@ -46,6 +45,12 @@
       "walk": {
         "walkSpeed": 0.25
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

@@ -12,16 +12,15 @@
     "amount": 2,
     "entries": [
       {
-        "item": "cobblemon:aspear_berry",
-        "percentage": 5
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 5.0
       },
       {
-        "item": "cobblemon:never_melt_ice",
-        "percentage": 5
+        "item": "cobblemon:aspear_berry",
+        "percentage": 5.0
       }
     ]
   },
-
   "baseStats": {
     "hp": 95,
     "attack": 117,
@@ -30,6 +29,9 @@
     "special_defence": 46,
     "speed": 28
   },
+  "features": [
+    "hisuian"
+  ],
   "catchRate": 55,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -159,6 +161,12 @@
         "canBreatheUnderwater": true,
         "canWalkOnWater": true
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

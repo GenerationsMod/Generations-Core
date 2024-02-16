@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sunkern",
   "nationalPokedexNumber": 191,
   "primaryType": "grass",
@@ -169,5 +168,17 @@
   "height": 3,
   "weight": 18,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:wheat_seeds"
+      },
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

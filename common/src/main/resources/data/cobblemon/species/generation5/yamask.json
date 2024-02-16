@@ -39,9 +39,6 @@
   "catchRate": 190,
   "maleRatio": 0.5,
   "shoulderMountable": false,
-  "features": [
-    "galarian"
-  ],
   "forms": [
     {
       "name": "Galar",
@@ -158,7 +155,16 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "cobblemon:kasib_berry",
+            "percentage": 2.5
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 61,

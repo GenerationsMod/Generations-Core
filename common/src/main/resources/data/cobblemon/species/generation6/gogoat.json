@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gogoat",
   "nationalPokedexNumber": 673,
   "primaryType": "grass",
@@ -135,5 +134,18 @@
   "height": 17,
   "weight": 910,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:mutton",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

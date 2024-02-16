@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Azurill",
   "nationalPokedexNumber": 298,
   "primaryType": "normal",
@@ -26,15 +25,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:azurill_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:splash",
     "1:tailwhip",
@@ -173,5 +163,14 @@
   "height": 2,
   "weight": 20,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

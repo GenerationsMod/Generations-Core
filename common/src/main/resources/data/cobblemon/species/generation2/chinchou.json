@@ -14,7 +14,7 @@
     "entries": [
       {
         "item": "minecraft:prismarine_crystals",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:deep_sea_scale",

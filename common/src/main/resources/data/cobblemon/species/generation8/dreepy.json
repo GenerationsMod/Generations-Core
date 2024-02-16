@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dreepy",
   "nationalPokedexNumber": 885,
   "primaryType": "dragon",
@@ -99,5 +98,14 @@
   "height": 5,
   "weight": 20,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

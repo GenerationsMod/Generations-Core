@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Marill",
   "nationalPokedexNumber": 183,
   "primaryType": "water",
@@ -27,15 +26,6 @@
     "water_1",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:marill_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:helpinghand",
@@ -249,5 +239,14 @@
   "height": 4,
   "weight": 85,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

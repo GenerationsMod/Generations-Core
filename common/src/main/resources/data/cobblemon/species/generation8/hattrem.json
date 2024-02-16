@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Hattrem",
   "nationalPokedexNumber": 857,
   "primaryType": "psychic",
@@ -121,5 +120,14 @@
   "height": 6,
   "weight": 48,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

@@ -12,7 +12,7 @@
     "entries": [
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },
@@ -24,6 +24,9 @@
     "special_defence": 85,
     "speed": 100
   },
+  "features": [
+    "hisuian"
+  ],
   "catchRate": 45,
   "maleRatio": 0.875,
   "shoulderMountable": false,
@@ -155,7 +158,7 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.15
       }

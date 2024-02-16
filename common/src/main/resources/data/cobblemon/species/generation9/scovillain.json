@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Scovillain",
   "nationalPokedexNumber": 952,
   "primaryType": "grass",
@@ -38,8 +37,8 @@
     "1:firefang",
     "1:leafage",
     "1:leer",
-	"1:spicyextract",
-	"1:flamethrower",
+    "1:spicyextract",
+    "1:flamethrower",
     "4:bite",
     "10:growth",
     "13:razorleaf",
@@ -97,5 +96,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.scovillain.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:roasted_leek",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

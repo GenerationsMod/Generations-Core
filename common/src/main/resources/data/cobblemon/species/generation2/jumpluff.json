@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Jumpluff",
   "nationalPokedexNumber": 189,
   "primaryType": "grass",
@@ -169,5 +168,18 @@
   "height": 8,
   "weight": 30,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:white_wool",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

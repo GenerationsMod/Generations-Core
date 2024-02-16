@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Lileep",
   "nationalPokedexNumber": 345,
   "primaryType": "rock",
@@ -163,5 +162,14 @@
   "height": 10,
   "weight": 238,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },
@@ -27,7 +27,7 @@
   },
   "behaviour": {
     "resting": {
-      "canSleep": true,
+      "canSleep": false,
       "willSleepOnBed": false,
       "depth": "normal",
       "light": "0-4"

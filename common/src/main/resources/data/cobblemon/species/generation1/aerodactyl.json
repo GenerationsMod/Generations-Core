@@ -90,16 +90,15 @@
     }
   },
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:bone",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "quantityRange": "0-3"
       },
       {
         "item": "cobblemon:rocky_helmet",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

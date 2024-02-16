@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Haxorus",
   "nationalPokedexNumber": 612,
   "primaryType": "dragon",
@@ -13,11 +12,11 @@
     "entries": [
       {
         "item": "cobblemon:dragon_fang",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:haban_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

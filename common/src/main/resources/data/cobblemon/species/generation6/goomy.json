@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Goomy",
   "nationalPokedexNumber": 704,
   "primaryType": "dragon",
@@ -150,5 +149,18 @@
   "height": 3,
   "weight": 28,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:slime_ball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

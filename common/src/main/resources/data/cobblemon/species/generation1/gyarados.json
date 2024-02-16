@@ -99,11 +99,11 @@
       },
       {
         "item": "minecraft:bone_meal",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:wacan_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Zangoose",
   "nationalPokedexNumber": 335,
   "primaryType": "normal",
@@ -224,5 +223,22 @@
   "height": 13,
   "weight": 403,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:razor_claw",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:quick_claw",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

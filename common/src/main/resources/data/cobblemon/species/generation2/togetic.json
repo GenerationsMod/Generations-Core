@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Togetic",
   "nationalPokedexNumber": 176,
   "primaryType": "fairy",
@@ -9,6 +8,23 @@
     "serenegrace",
     "h:superluck"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:lucky_egg",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:shiny_stone",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 5.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 55,
     "attack": 40,

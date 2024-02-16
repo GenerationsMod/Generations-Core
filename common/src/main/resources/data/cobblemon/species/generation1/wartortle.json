@@ -26,16 +26,15 @@
     "water_1"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:scute",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },
@@ -46,10 +45,8 @@
       "light": "0-4"
     },
     "moving": {
-      "moving" : {
-        "walk": {
-          "walkSpeed": 0.29
-        }
+      "walk": {
+        "walkSpeed": 0.29
       },
       "swim": {
         "canSwimInWater": true,

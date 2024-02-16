@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Slaking",
   "nationalPokedexNumber": 289,
   "primaryType": "normal",
@@ -197,5 +196,14 @@
   "height": 20,
   "weight": 1305,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

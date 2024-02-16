@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Buzzwole",
   "nationalPokedexNumber": 794,
   "primaryType": "bug",
@@ -8,7 +7,7 @@
     "beastboost"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:echo_shard",

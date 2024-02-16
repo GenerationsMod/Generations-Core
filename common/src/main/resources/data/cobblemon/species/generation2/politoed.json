@@ -37,15 +37,15 @@
     "amount": 3,
     "entries": [
       {
-        "item": "minecraft:verdant_froglight"
+        "item": "cobblemon:verdant_froglight"
       },
       {
         "item": "cobblemon:kings_rock",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:chesto_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

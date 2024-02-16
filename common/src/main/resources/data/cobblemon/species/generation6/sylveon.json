@@ -8,11 +8,15 @@
     "h:pixilate"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:shiny_stone",
-        "percentage": 25
+        "percentage": 25.0
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 10.0
       }
     ]
   },

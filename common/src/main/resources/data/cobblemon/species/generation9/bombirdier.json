@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Bombirdier",
   "nationalPokedexNumber": 962,
   "primaryType": "flying",
@@ -109,5 +108,21 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.bombirdier.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

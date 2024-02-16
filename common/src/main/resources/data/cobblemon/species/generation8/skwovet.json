@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Skwovet",
   "nationalPokedexNumber": 819,
   "primaryType": "normal",
@@ -114,5 +113,14 @@
   "height": 3,
   "weight": 25,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "quantityRange": "0-1"
+      }
+    ]
+  }
 }

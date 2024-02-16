@@ -9,24 +9,23 @@
     "h:unnerve"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:honey_bottle",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "quantityRange": "0-3"
       },
       {
-        "item": "minecraft:honey_comb",
-        "percentage": 10
+        "item": "minecraft:honeycomb",
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:poison_barb",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
-        "item": "cobblemont:charti_berry",
-        "percentage": 10
+        "item": "cobblemon:charti_berry",
+        "percentage": 10.0
       }
     ]
   },

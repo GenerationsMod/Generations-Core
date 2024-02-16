@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Ducklett",
   "nationalPokedexNumber": 580,
   "primaryType": "water",
@@ -14,7 +13,7 @@
     "entries": [
       {
         "item": "minecraft:feather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:chicken"

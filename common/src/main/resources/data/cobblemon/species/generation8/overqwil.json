@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Overqwil",
   "nationalPokedexNumber": 904,
   "primaryType": "dark",
@@ -101,5 +100,21 @@
   "preEvolution": "qwilfish form=hisui",
   "evolutions": [],
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:pufferfish"
+      },
+      {
+        "item": "minecraft:prismarine_shard",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

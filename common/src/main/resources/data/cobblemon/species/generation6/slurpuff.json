@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Slurpuff",
   "nationalPokedexNumber": 685,
   "primaryType": "fairy",
@@ -123,5 +122,22 @@
   "height": 8,
   "weight": 50,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:sugar",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:cake",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

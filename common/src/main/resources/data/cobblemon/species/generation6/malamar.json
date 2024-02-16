@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Malamar",
   "nationalPokedexNumber": 687,
   "primaryType": "dark",
@@ -149,5 +148,18 @@
   "height": 15,
   "weight": 470,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:ink_sac",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

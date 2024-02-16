@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Entei",
   "nationalPokedexNumber": 244,
   "primaryType": "fire",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:entei_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:ember",
     "1:extremespeed",
@@ -197,5 +187,16 @@
   "height": 21,
   "weight": 1980,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:charcoal_stick"
+      },
+      {
+        "item": "cobblemon:sacred_ash"
+      }
+    ]
+  }
 }

@@ -33,11 +33,15 @@
     "monster"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:slime_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
       }
     ]
   },

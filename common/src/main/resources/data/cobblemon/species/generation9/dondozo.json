@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dondozo",
   "nationalPokedexNumber": 977,
   "primaryType": "water",
@@ -96,5 +95,17 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.dondozo.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:salmon"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

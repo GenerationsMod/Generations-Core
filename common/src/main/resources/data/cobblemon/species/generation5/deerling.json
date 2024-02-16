@@ -14,7 +14,7 @@
     "entries": [
       {
         "item": "minecraft:leather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:yache_berry",

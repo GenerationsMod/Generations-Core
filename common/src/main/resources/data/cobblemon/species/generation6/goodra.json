@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Goodra",
   "nationalPokedexNumber": 706,
   "primaryType": "dragon",
@@ -16,6 +15,9 @@
     "special_defence": 150,
     "speed": 80
   },
+  "features": [
+    "hisuian"
+  ],
   "catchRate": 45,
   "maleRatio": 0.5,
   "shoulderMountable": false,
@@ -277,5 +279,18 @@
   "height": 20,
   "weight": 1505,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:slime_ball",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

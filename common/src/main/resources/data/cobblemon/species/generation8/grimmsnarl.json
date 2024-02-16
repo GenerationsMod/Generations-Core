@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Grimmsnarl",
   "nationalPokedexNumber": 861,
   "primaryType": "dark",
@@ -185,5 +184,14 @@
   "height": 15,
   "weight": 610,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

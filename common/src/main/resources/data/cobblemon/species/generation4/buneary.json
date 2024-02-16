@@ -16,7 +16,7 @@
       },
       {
         "item": "minecraft:rabbit_hide",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:rabbit_foot",
@@ -27,7 +27,7 @@
         "percentage": 2.5
       },
       {
-        "item": "minecraft:chople_berry",
+        "item": "cobblemon:chople_berry",
         "percentage": 2.5
       }
     ]

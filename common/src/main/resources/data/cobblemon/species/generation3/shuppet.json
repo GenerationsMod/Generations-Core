@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Shuppet",
   "nationalPokedexNumber": 353,
   "primaryType": "ghost",
@@ -194,5 +193,14 @@
   "height": 6,
   "weight": 23,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:spell_tag",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

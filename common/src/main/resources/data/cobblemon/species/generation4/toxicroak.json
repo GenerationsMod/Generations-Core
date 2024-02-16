@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Toxicroak",
   "nationalPokedexNumber": 454,
   "primaryType": "poison",
@@ -14,11 +13,11 @@
     "entries": [
       {
         "item": "cobblemon:black_sludge",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:payapa_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

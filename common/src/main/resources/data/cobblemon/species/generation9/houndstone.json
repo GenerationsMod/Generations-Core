@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Houndstone",
   "nationalPokedexNumber": 972,
   "primaryType": "ghost",
@@ -35,7 +34,7 @@
   "moves": [
     "1:growl",
     "1:tackle",
-	"1:lastrespects",
+    "1:lastrespects",
     "3:lick",
     "6:bite",
     "6:tailwhip",
@@ -98,5 +97,22 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.houndstone.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 6,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

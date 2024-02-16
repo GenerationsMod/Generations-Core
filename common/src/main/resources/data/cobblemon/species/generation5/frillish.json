@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Frillish",
   "nationalPokedexNumber": 592,
   "primaryType": "water",
@@ -14,11 +13,11 @@
     "entries": [
       {
         "item": "minecraft:glow_ink_sac",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:kasib_berry",
-        "percentage": 5
+        "percentage": 2.5
       }
     ]
   },

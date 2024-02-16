@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mothim",
   "nationalPokedexNumber": 414,
   "primaryType": "bug",
@@ -13,11 +12,11 @@
     "entries": [
       {
         "item": "cobblemon:silver_powder",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:occa_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Absol",
   "nationalPokedexNumber": 359,
   "primaryType": "dark",
@@ -266,5 +265,18 @@
   "height": 12,
   "weight": 470,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:razor_claw",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

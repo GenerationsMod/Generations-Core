@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Finizen",
   "nationalPokedexNumber": 963,
   "primaryType": "water",
@@ -107,5 +106,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.finizen.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "quantityRange": "0-1"
+      }
+    ]
+  }
 }

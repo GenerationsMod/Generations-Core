@@ -11,15 +11,15 @@
     "entries": [
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:big_root",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:kebia_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

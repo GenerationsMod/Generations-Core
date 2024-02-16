@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mantyke",
   "nationalPokedexNumber": 458,
   "primaryType": "water",
@@ -174,5 +173,18 @@
   "height": 10,
   "weight": 650,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

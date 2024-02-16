@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Pawmi",
   "nationalPokedexNumber": 921,
   "primaryType": "electric",
@@ -112,5 +111,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.pawmi.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

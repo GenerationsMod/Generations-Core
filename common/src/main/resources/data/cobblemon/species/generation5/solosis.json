@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Solosis",
   "nationalPokedexNumber": 577,
   "primaryType": "psychic",
@@ -13,7 +12,7 @@
     "entries": [
       {
         "item": "minecraft:slime_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:persim_berry",

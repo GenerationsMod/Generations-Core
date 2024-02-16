@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Woobat",
   "nationalPokedexNumber": 527,
   "primaryType": "psychic",
@@ -10,7 +9,7 @@
     "h:simple"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:light_blue_wool"

@@ -37,7 +37,7 @@
     "entries": [
       {
         "item": "minecraft:string",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:occa_berry",

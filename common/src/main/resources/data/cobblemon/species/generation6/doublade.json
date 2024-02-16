@@ -25,20 +25,19 @@
     "mineral"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:iron_nugget",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:iron_sword",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:dusk_stone",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

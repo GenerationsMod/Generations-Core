@@ -39,7 +39,7 @@
     "entries": [
       {
         "item": "minecraft:cod",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:never_melt_ice",

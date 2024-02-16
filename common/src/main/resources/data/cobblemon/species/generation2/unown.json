@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Unown",
   "nationalPokedexNumber": 201,
   "primaryType": "psychic",
@@ -53,5 +52,14 @@
   "height": 5,
   "weight": 50,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl",
+        "quantityRange": "0-1"
+      }
+    ]
+  }
 }

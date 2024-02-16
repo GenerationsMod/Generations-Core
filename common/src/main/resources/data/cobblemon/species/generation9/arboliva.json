@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Arboliva",
   "nationalPokedexNumber": 930,
   "primaryType": "grass",
@@ -95,5 +94,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.arboliva.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

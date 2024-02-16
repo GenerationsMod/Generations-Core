@@ -9,7 +9,7 @@
     "h:unnerve"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 7,
     "entries": [
       {
         "item": "minecraft:sweet_berries",
@@ -17,15 +17,15 @@
       },
       {
         "item": "minecraft:honey_bottle",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:peat_block",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:oran_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Glalie",
   "nationalPokedexNumber": 362,
   "primaryType": "ice",
@@ -203,5 +202,26 @@
   "height": 15,
   "weight": 2565,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:snowball",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:dawn_stone",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

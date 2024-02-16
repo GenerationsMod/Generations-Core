@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Grumpig",
   "nationalPokedexNumber": 326,
   "primaryType": "psychic",
@@ -202,5 +201,18 @@
   "height": 9,
   "weight": 715,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:porkchop",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Toedscruel",
   "nationalPokedexNumber": 949,
   "primaryType": "ground",
@@ -101,5 +100,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.toedscruel.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:brown_mushroom",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

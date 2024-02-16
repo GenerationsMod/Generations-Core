@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Roselia",
   "nationalPokedexNumber": 315,
   "primaryType": "grass",
@@ -174,5 +173,22 @@
   "height": 3,
   "weight": 20,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:rose_bush",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

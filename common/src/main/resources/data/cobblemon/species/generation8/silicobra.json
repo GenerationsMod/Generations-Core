@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Silicobra",
   "nationalPokedexNumber": 843,
   "primaryType": "ground",
@@ -117,5 +116,14 @@
   "height": 22,
   "weight": 76,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:soft_sand",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

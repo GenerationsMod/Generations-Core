@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Alomomola",
   "nationalPokedexNumber": 594,
   "primaryType": "water",
@@ -16,15 +15,14 @@
       },
       {
         "item": "minecraft:bone_meal",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:deep_sea_scale",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
-
   "baseStats": {
     "hp": 165,
     "attack": 75,

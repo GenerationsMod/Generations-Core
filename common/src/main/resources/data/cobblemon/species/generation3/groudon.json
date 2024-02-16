@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Groudon",
   "nationalPokedexNumber": 383,
   "primaryType": "ground",
@@ -71,15 +70,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:groudon_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:ancientpower",
     "1:lavaplume",
@@ -258,5 +248,13 @@
   "height": 35,
   "weight": 9500,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:nether_star"
+      }
+    ]
+  }
 }

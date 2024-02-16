@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tynamo",
   "nationalPokedexNumber": 602,
   "primaryType": "electric",
@@ -11,7 +10,7 @@
     "entries": [
       {
         "item": "minecraft:slime_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
       }
     ]
   },

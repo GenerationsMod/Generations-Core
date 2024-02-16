@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Pheromosa",
   "nationalPokedexNumber": 795,
   "primaryType": "bug",
@@ -140,5 +139,14 @@
   "height": 18,
   "weight": 250,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:echo_shard",
+        "quantityRange": "1-3"
+      }
+    ]
+  }
 }

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Excadrill",
   "nationalPokedexNumber": 530,
   "primaryType": "ground",
@@ -14,11 +13,11 @@
     "entries": [
       {
         "item": "cobblemon:soft_sand",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:pinap_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

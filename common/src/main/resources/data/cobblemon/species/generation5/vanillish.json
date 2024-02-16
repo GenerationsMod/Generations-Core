@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Vanillish",
   "nationalPokedexNumber": 583,
   "primaryType": "ice",
@@ -9,20 +8,19 @@
     "h:weakarmor"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
-        "item": "minecraft:snow_ball",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "item": "minecraft:snowball",
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:never_melt_ice",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:aspear_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

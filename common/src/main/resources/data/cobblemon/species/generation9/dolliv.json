@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dolliv",
   "nationalPokedexNumber": 929,
   "primaryType": "grass",
@@ -95,5 +94,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.dolliv.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

@@ -8,11 +8,15 @@
     "h:lightningrod"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
+        "item": "cobblemon:thunder_stone",
+        "percentage": 10.0
+      },
+      {
         "item": "cobblemon:oran_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },
@@ -40,21 +44,15 @@
   "shoulderMountable": false,
   "forms": [
     {
+      "name": "base"
+    },
+    {
       "name": "Alola",
       "primaryType": "electric",
       "secondaryType": "psychic",
       "abilities": [
         "surgesurfer"
       ],
-      "drops": {
-        "amount": 1,
-        "entries": [
-          {
-            "item": "cobblemon:oran_berry",
-            "percentage": 10
-          }
-        ]
-      },
       "baseStats": {
         "hp": 60,
         "attack": 85,

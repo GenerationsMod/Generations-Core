@@ -9,7 +9,7 @@
     "h:stakeout"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:sweet_berries",

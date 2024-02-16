@@ -43,16 +43,19 @@
     }
   },
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:string",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:silver_powder",
-        "percentage": 2.5
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 5.0
       }
     ]
   },

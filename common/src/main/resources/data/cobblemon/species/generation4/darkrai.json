@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Darkrai",
   "nationalPokedexNumber": 491,
   "primaryType": "dark",
@@ -7,14 +6,10 @@
     "baddreams"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:reaper_cloth"
-      },
-      {
-        "item": "generations_core:darkrai_doll",
-        "percentage": 75
       }
     ]
   },

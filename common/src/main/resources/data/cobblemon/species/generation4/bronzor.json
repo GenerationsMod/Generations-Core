@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Bronzor",
   "nationalPokedexNumber": 436,
   "primaryType": "steel",
@@ -14,22 +13,18 @@
     "entries": [
       {
         "item": "minecraft:raw_iron",
-        "quantityRange": "1",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:mental_herb",
-        "quantityRange": "1",
         "percentage": 2.5
       },
       {
         "item": "cobblemon:light_clay",
-        "quantityRange": "1",
         "percentage": 2.5
       },
       {
         "item": "cobblemon:occa_berry",
-        "quantityRange": "1",
         "percentage": 2.5
       }
     ]

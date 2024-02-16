@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Snover",
   "nationalPokedexNumber": 459,
   "primaryType": "grass",
@@ -13,7 +12,7 @@
     "entries": [
       {
         "item": "minecraft:snowball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:never_melt_ice",

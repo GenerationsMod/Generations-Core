@@ -10,7 +10,7 @@
     "h:infiltrator"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:candle",
@@ -18,11 +18,11 @@
       },
       {
         "item": "cobblemon:dusk_stone",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:rawst_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

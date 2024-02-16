@@ -40,11 +40,11 @@
     "entries": [
       {
         "item": "cobblemon:poison_barb",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:pecha_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Carracosta",
   "nationalPokedexNumber": 565,
   "primaryType": "water",
@@ -10,12 +9,11 @@
     "h:swiftswim"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:scute",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "quantityRange": "0-3"
       }
     ]
   },

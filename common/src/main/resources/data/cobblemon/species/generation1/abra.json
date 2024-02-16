@@ -46,7 +46,7 @@
     "entries": [
       {
         "item": "minecraft:ender_pearl",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:twisted_spoon",

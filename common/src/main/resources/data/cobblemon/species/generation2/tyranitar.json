@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Tyranitar",
   "nationalPokedexNumber": 248,
   "primaryType": "rock",
@@ -310,5 +309,18 @@
   "height": 20,
   "weight": 2020,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:hard_stone",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:chople_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

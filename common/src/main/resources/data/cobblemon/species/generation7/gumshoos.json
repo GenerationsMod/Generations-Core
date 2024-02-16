@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Gumshoos",
   "nationalPokedexNumber": 735,
   "primaryType": "normal",
@@ -253,5 +252,14 @@
   "height": 7,
   "weight": 142,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

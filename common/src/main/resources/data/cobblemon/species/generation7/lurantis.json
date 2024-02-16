@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Lurantis",
   "nationalPokedexNumber": 754,
   "primaryType": "grass",
@@ -242,5 +241,18 @@
   "height": 9,
   "weight": 185,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

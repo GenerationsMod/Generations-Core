@@ -33,11 +33,11 @@
     "flying"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:feather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:chicken"

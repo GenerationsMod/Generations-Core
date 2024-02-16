@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Carbink",
   "nationalPokedexNumber": 703,
   "primaryType": "rock",
@@ -148,5 +147,18 @@
   "height": 3,
   "weight": 57,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:diamond",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

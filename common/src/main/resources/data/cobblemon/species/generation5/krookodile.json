@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Krookodile",
   "nationalPokedexNumber": 553,
   "primaryType": "ground",
@@ -14,11 +13,11 @@
     "entries": [
       {
         "item": "cobblemon:black_glasses",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:tanga_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

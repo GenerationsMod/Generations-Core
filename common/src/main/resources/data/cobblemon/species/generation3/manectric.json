@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Manectric",
   "nationalPokedexNumber": 310,
   "primaryType": "electric",
@@ -195,5 +194,22 @@
   "height": 15,
   "weight": 402,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

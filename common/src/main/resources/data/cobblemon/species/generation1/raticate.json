@@ -9,16 +9,15 @@
     "h:hustle"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
-        "item": "cobblemon:oran_berry",
-        "percentage": 5
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "0-2"
       },
       {
-        "item": "minecraft:rotten_flesh",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "item": "cobblemon:chilan_berry",
+        "percentage": 5.0
       }
     ]
   },
@@ -31,7 +30,7 @@
     "speed": 97
   },
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.33
       }
@@ -60,12 +59,15 @@
         "h:thickfat"
       ],
       "drops": {
-        "amount": 1,
+        "amount": 3,
         "entries": [
           {
             "item": "minecraft:rotten_flesh",
-            "percentage": 66,
-            "quantityRange": "1-2"
+            "quantityRange": "0-2"
+          },
+          {
+            "item": "cobblemon:pecha_berry",
+            "percentage": 5.0
           }
         ]
       },

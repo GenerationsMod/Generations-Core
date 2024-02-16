@@ -8,12 +8,11 @@
     "h:friendguard"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:string",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:bright_powder",
@@ -25,7 +24,6 @@
       }
     ]
   },
-
   "baseStats": {
     "hp": 45,
     "attack": 22,
@@ -52,6 +50,12 @@
         "canSwimInWater": false
       },
       "canLook": false
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [
@@ -246,6 +250,10 @@
         {
           "variant": "biome",
           "biomeCondition": "#cobblemon:is_ocean"
+        },
+        {
+          "variant": "biome",
+          "biomeAnticondition": "#cobblemon:is_warm_ocean"
         }
       ]
     },
@@ -282,8 +290,8 @@
           "minLevel": 12
         },
         {
-          "variant": "biome",
-          "biomeCondition": "minecraft:is_void"
+          "variant": "structure",
+          "structureCondition": "#minecraft:village"
         }
       ]
     },
@@ -325,11 +333,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_coast"
-        },
-        {
-          "variant": "biome",
-          "biomeCondition": "#cobblemon:is_warm_ocean"
+          "biomeCondition": "#cobblemon:vivillon_evolutions/ocean"
         }
       ]
     },
@@ -367,11 +371,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_river"
-        },
-        {
-          "variant": "biome",
-          "biomeCondition": "#cobblemon:is_swamp"
+          "biomeCondition": "#cobblemon:vivillon_evolutions/river"
         }
       ]
     },
@@ -428,15 +428,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_sky"
-        },
-        {
-          "variant": "biome",
-          "biomeCondition": "#cobblemon:is_volcano"
-        },
-        {
-          "variant": "biome",
-          "biomeCondition": "minecraft:sunflower_plains"
+          "biomeCondition": "#cobblemon:vivillon_evolutions/sun"
         }
       ]
     },
@@ -455,15 +447,64 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_tundra"
+          "biomeCondition": "#cobblemon:vivillon_evolutions/tundra"
+        }
+      ]
+    },
+    {
+      "id": "spewpa_vivillon_inferno",
+      "variant": "level_up",
+      "result": "vivillon vivillon_wings=inferno",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 12
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_snowy_forest"
+          "biomeCondition": "#minecraft:is_nether"
+        }
+      ]
+    },
+    {
+      "id": "spewpa_vivillon_void",
+      "variant": "level_up",
+      "result": "vivillon vivillon_wings=void",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 12
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:is_glacial"
+          "biomeCondition": "#minecraft:is_end"
+        }
+      ]
+    },
+    {
+      "id": "spewpa_vivillon_forsaken",
+      "variant": "level_up",
+      "result": "vivillon vivillon_wings=forsaken",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 12
+        },
+        {
+          "variant": "biome",
+          "biomeCondition": "#cobblemon:is_deep_dark"
         }
       ]
     }

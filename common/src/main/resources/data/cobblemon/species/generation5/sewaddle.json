@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Sewaddle",
   "nationalPokedexNumber": 540,
   "primaryType": "bug",
@@ -14,7 +13,7 @@
     "entries": [
       {
         "item": "minecraft:string",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:mental_herb",

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Arctibax",
   "nationalPokedexNumber": 997,
   "primaryType": "dragon",
@@ -104,5 +103,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.arctibax.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

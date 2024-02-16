@@ -8,6 +8,23 @@
     "magicguard",
     "h:unaware"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:moon_stone",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 10.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 95,
     "attack": 70,
@@ -33,19 +50,6 @@
   "eggGroups": [
     "fairy"
   ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:moon_stone",
-        "percentage": 10
-      },
-      {
-        "item": "cobblemon:babiri_berry",
-        "percentage": 10
-      }
-    ]
-  },
   "moves": [
     "1:afteryou",
     "1:charm",

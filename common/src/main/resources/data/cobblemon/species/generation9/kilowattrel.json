@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Kilowattrel",
   "nationalPokedexNumber": 941,
   "primaryType": "electric",
@@ -38,7 +37,7 @@
   "moves": [
     "1:growl",
     "1:peck",
-	"1:electroball",
+    "1:electroball",
     "4:thundershock",
     "7:quickattack",
     "11:pluck",
@@ -93,5 +92,25 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.kilowattrel.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:sharp_beak",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

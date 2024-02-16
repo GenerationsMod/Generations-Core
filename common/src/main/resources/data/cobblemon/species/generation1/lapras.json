@@ -88,27 +88,23 @@
     }
   },
   "drops": {
-    "amount": 5,
+    "amount": 4,
     "entries": [
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:never_melt_ice",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "minecraft:heart_of_the_sea",
-        "percentage": 1
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:aspear_berry",
-        "percentage": 5
-      },
-      {
-        "item": "generations_core:lapras_doll",
-        "percentage": 1
+        "percentage": 5.0
       }
     ]
   },

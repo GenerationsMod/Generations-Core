@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Mienshao",
   "nationalPokedexNumber": 620,
   "primaryType": "fighting",
@@ -13,7 +12,7 @@
     "entries": [
       {
         "item": "cobblemon:payapa_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

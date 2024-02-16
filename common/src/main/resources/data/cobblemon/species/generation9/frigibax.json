@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Frigibax",
   "nationalPokedexNumber": 996,
   "primaryType": "dragon",
@@ -102,5 +101,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.frigibax.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

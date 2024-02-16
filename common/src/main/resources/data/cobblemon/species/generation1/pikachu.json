@@ -8,39 +8,15 @@
     "h:lightningrod"
   ],
   "drops": {
-    "amount": 8,
+    "amount": 2,
     "entries": [
       {
+        "item": "cobblemon:thunder_stone",
+        "percentage": 5.0
+      },
+      {
         "item": "cobblemon:oran_berry",
-        "percentage": 5
-      },
-      {
-        "item": "generations_core:rockstar_costume",
-        "percentage": 2
-      },
-      {
-        "item": "generations_core:belle_costume",
-        "percentage": 2
-      },
-      {
-        "item": "generations_core:popstar_costume",
-        "percentage": 2
-      },
-      {
-        "item": "generations_core:phd_costume",
-        "percentage": 2
-      },
-      {
-        "item": "generations_core:libre_costume",
-        "percentage": 2
-      },
-      {
-        "item": "minecraft:glowstone_dust",
-        "percentage": 20
-      },
-      {
-        "item": "generations_core:pikachu_doll",
-        "percentage": 1
+        "percentage": 5.0
       }
     ]
   },
@@ -72,6 +48,9 @@
   "maleRatio": 0.5,
   "shoulderMountable": true,
   "forms": [
+    {
+      "name": "base"
+    },
     {
       "name": "Cosplay",
       "primaryType": "electric",
@@ -1749,7 +1728,7 @@
         {
           "id": "pikachu_raichu_alolan_kantonian",
           "variant": "item_interact",
-          "result": "raichu",
+          "result": "raichu alolan=false",
           "consumeHeldItem": false,
           "learnableMoves": [
             "thunderpunch"
@@ -1773,41 +1752,9 @@
           "requirements": [
             {
               "variant": "biome",
-              "biomeCondition": "#cobblemon:is_plains"
+              "biomeAnticondition": "#cobblemon:is_temperate"
             }
           ],
-          "requiredContext": "cobblemon:thunder_stone"
-        }
-      ]
-    },
-    {
-      "name": "base",
-      "evolutions": [
-        {
-          "id": "pikachu_raichu_kantonian_alolan",
-          "variant": "item_interact",
-          "result": "raichu alolan",
-          "consumeHeldItem": false,
-          "learnableMoves": [
-            "psychic"
-          ],
-          "requirements": [
-            {
-              "variant": "biome",
-              "biomeCondition": "#minecraft:is_beach"
-            }
-          ],
-          "requiredContext": "cobblemon:thunder_stone"
-        },
-        {
-          "id": "pikachu_raichu_kantonian",
-          "variant": "item_interact",
-          "result": "raichu",
-          "consumeHeldItem": false,
-          "learnableMoves": [
-            "thunderpunch"
-          ],
-          "requirements": [],
           "requiredContext": "cobblemon:thunder_stone"
         }
       ]
@@ -2012,7 +1959,40 @@
     "cobblemon.species.pikachu.desc"
   ],
   "preEvolution": "pichu",
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "pikachu_raichu_kantonian_alolan",
+      "variant": "item_interact",
+      "result": "raichu alolan",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "psychic"
+      ],
+      "requirements": [
+        {
+          "variant": "biome",
+          "biomeCondition": "#minecraft:is_beach"
+        }
+      ],
+      "requiredContext": "cobblemon:thunder_stone"
+    },
+    {
+      "id": "pikachu_raichu_kantonian",
+      "variant": "item_interact",
+      "result": "raichu alolan=false",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "thunderpunch"
+      ],
+      "requirements": [
+        {
+          "variant": "biome",
+          "biomeAnticondition": "#minecraft:is_beach"
+        }
+      ],
+      "requiredContext": "cobblemon:thunder_stone"
+    }
+  ],
   "baseScale": 0.5,
   "hitbox": {
     "width": 0.7,

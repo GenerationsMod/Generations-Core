@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Lilligant",
   "nationalPokedexNumber": 549,
   "primaryType": "grass",
@@ -13,15 +12,15 @@
     "entries": [
       {
         "item": "cobblemon:big_root",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:revival_herb",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:persim_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -33,6 +32,9 @@
     "special_defence": 75,
     "speed": 90
   },
+  "features": [
+    "hisuian"
+  ],
   "catchRate": 75,
   "maleRatio": 0,
   "shoulderMountable": false,

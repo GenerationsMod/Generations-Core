@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Vigoroth",
   "nationalPokedexNumber": 288,
   "primaryType": "normal",
@@ -195,5 +194,14 @@
   "height": 14,
   "weight": 465,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

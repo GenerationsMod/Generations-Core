@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Spoink",
   "nationalPokedexNumber": 325,
   "primaryType": "psychic",
@@ -194,5 +193,18 @@
   "height": 7,
   "weight": 306,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:porkchop",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

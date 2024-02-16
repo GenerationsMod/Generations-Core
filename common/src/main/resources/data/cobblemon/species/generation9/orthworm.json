@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Orthworm",
   "nationalPokedexNumber": 968,
   "primaryType": "steel",
@@ -96,5 +95,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.orthworm.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:iron_nugget",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:shuca_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

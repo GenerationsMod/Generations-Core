@@ -1,0 +1,199 @@
+{
+  "name": "Poltchageist",
+  "nationalPokedexNumber": 1012,
+  "primaryType": "grass",
+  "secondaryType": "ghost",
+  "abilities": [
+    "hospitality",
+    "h:heatproof"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 45,
+    "defence": 45,
+    "special_attack": 74,
+    "special_defence": 54,
+    "speed": 50
+  },
+  "catchRate": 120,
+  "maleRatio": -1,
+  "baseExperienceYield": 0,
+  "baseFriendship": 0,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 50,
+  "eggGroups": [
+    "mineral",
+    "amorphous"
+  ],
+  "moves": [
+    "1:astonish",
+    "1:stunspore",
+    "1:withdraw",
+    "6:absorb",
+    "12:lifedew",
+    "18:foulplay",
+    "24:megadrain",
+    "30:hex",
+    "36:ragepowder",
+    "42:gigadrain",
+    "48:shadowball",
+    "54:memento",
+    "60:leafstorm",
+    "tm:calmmind",
+    "tm:endure",
+    "tm:energyball",
+    "tm:foulplay",
+    "tm:gigadrain",
+    "tm:grassyterrain",
+    "tm:hex",
+    "tm:imprison",
+    "tm:irondefense",
+    "tm:leafstorm",
+    "tm:magicalleaf",
+    "tm:nastyplot",
+    "tm:nightshade",
+    "tm:phantomforce",
+    "tm:poltergeist",
+    "tm:protect",
+    "tm:reflect",
+    "tm:rest",
+    "tm:scald",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:spite",
+    "tm:substitute",
+    "tm:terablast",
+    "tm:trickroom",
+    "tm:uproar"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 1,
+  "weight": 11,
+  "evolutions": [
+    {
+      "id": "poltchageist_sinistcha",
+      "variant": "item_interact",
+      "result": "sinistcha",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "matchagotcha"
+      ],
+      "requirements": [],
+      "requiredContext": "cobblemon:unremarkable_teacup"
+    }
+  ],
+  "cannotDynamax": false,
+  "forms": [
+    {
+      "name": "Artisan",
+      "primaryType": "grass",
+      "secondaryType": "ghost",
+      "abilities": [
+        "hospitality",
+        "h:heatproof"
+      ],
+      "baseStats": {
+        "hp": 40,
+        "attack": 45,
+        "defence": 45,
+        "special_attack": 74,
+        "special_defence": 54,
+        "speed": 50
+      },
+      "catchRate": 120,
+      "maleRatio": -1,
+      "baseExperienceYield": 0,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 50,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "moves": [
+        "1:astonish",
+        "1:stunspore",
+        "1:withdraw",
+        "6:absorb",
+        "12:lifedew",
+        "18:foulplay",
+        "24:megadrain",
+        "30:hex",
+        "36:ragepowder",
+        "42:gigadrain",
+        "48:shadowball",
+        "54:memento",
+        "60:leafstorm",
+        "tm:calmmind",
+        "tm:endure",
+        "tm:energyball",
+        "tm:foulplay",
+        "tm:gigadrain",
+        "tm:grassyterrain",
+        "tm:hex",
+        "tm:imprison",
+        "tm:irondefense",
+        "tm:leafstorm",
+        "tm:magicalleaf",
+        "tm:nastyplot",
+        "tm:nightshade",
+        "tm:phantomforce",
+        "tm:poltergeist",
+        "tm:protect",
+        "tm:reflect",
+        "tm:rest",
+        "tm:scald",
+        "tm:shadowball",
+        "tm:sleeptalk",
+        "tm:solarbeam",
+        "tm:spite",
+        "tm:substitute",
+        "tm:terablast",
+        "tm:trickroom",
+        "tm:uproar"
+      ],
+      "labels": [
+        "gen9"
+      ],
+      "aspects": [
+        "artisan"
+      ],
+      "height": 1,
+      "weight": 11,
+      "evolutions": [
+        {
+          "id": "poltchageist_sinistcha",
+          "variant": "item_interact",
+          "result": "sinistcha form=masterpiece",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "matchagotcha"
+          ],
+          "requirements": [],
+          "requiredContext": "cobblemon:masterpiece_teacup"
+        }
+      ],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ]
+}

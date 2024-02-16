@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Altaria",
   "nationalPokedexNumber": 334,
   "primaryType": "dragon",
@@ -235,5 +234,21 @@
   "height": 11,
   "weight": 206,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:white_wool",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

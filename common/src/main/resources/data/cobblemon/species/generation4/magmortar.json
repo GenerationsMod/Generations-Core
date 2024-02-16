@@ -12,15 +12,15 @@
     "entries": [
       {
         "item": "minecraft:blaze_powder",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:magmarizer",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:rawst_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Finneon",
   "nationalPokedexNumber": 456,
   "primaryType": "water",
@@ -16,7 +15,7 @@
       },
       {
         "item": "minecraft:bone_meal",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:rindo_berry",

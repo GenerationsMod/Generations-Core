@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Simisage",
   "nationalPokedexNumber": 512,
   "primaryType": "grass",
@@ -12,15 +11,15 @@
     "entries": [
       {
         "item": "cobblemon:leaf_stone",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:occa_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

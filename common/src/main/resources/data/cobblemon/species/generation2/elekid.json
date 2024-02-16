@@ -29,7 +29,7 @@
     "entries": [
       {
         "item": "minecraft:redstone",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:electirizer",

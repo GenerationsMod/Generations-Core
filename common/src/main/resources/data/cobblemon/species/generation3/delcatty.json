@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Delcatty",
   "nationalPokedexNumber": 301,
   "primaryType": "normal",
@@ -139,5 +138,18 @@
   "height": 11,
   "weight": 326,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:silk_scarf",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

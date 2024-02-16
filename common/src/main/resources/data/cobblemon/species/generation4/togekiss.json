@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Togekiss",
   "nationalPokedexNumber": 468,
   "primaryType": "fairy",
@@ -9,6 +8,23 @@
     "serenegrace",
     "h:superluck"
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:lucky_egg",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:shiny_stone",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 10.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 85,
     "attack": 50,

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Trubbish",
   "nationalPokedexNumber": 568,
   "primaryType": "poison",
@@ -25,7 +24,7 @@
       },
       {
         "item": "cobblemon:pecha_berry",
-        "percentage": 5
+        "percentage": 2.5
       }
     ]
   },

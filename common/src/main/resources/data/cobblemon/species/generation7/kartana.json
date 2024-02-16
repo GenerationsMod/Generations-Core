@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Kartana",
   "nationalPokedexNumber": 798,
   "primaryType": "grass",
@@ -117,5 +116,14 @@
   "height": 3,
   "weight": 1,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:echo_shard",
+        "quantityRange": "1-3"
+      }
+    ]
+  }
 }

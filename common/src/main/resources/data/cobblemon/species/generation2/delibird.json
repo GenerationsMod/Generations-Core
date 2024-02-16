@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Delibird",
   "nationalPokedexNumber": 225,
   "primaryType": "ice",
@@ -196,5 +195,21 @@
   "height": 9,
   "weight": 160,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:charti_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Espurr",
   "nationalPokedexNumber": 677,
   "primaryType": "psychic",
@@ -166,5 +165,14 @@
   "height": 3,
   "weight": 35,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:colbur_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

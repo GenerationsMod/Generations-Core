@@ -16,7 +16,7 @@
     "speed": 65
   },
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.3
       }
@@ -43,11 +43,11 @@
     "entries": [
       {
         "item": "minecraft:blaze_powder",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

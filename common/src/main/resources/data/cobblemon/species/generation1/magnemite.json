@@ -33,13 +33,13 @@
       },
       "walk": {
         "canWalk": false
-      },
-      "resting": {
-        "canSleep": true,
-        "willSleepOnBed": false,
-        "depth": "normal",
-        "light": "0-4"
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "drops": {
@@ -47,7 +47,7 @@
     "entries": [
       {
         "item": "minecraft:raw_iron",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:magnet",

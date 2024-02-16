@@ -37,12 +37,11 @@
     "field"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:leather",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:beef",
@@ -50,7 +49,7 @@
       },
       {
         "item": "cobblemon:oran_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

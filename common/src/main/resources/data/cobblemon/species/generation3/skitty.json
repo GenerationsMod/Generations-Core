@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Skitty",
   "nationalPokedexNumber": 300,
   "primaryType": "normal",
@@ -26,15 +25,6 @@
     "field",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:skitty_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:fakeout",
     "1:growl",
@@ -186,5 +176,18 @@
   "height": 6,
   "weight": 110,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:silk_scarf",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

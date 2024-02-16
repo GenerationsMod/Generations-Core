@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Wurmple",
   "nationalPokedexNumber": 265,
   "primaryType": "bug",
@@ -87,5 +86,18 @@
   "height": 3,
   "weight": 36,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

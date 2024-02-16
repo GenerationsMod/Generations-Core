@@ -143,5 +143,14 @@
   "height": 19,
   "weight": 515,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:charti_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

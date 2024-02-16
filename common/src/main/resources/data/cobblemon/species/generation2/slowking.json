@@ -14,11 +14,11 @@
     "entries": [
       {
         "item": "cobblemon:kings_rock",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:chesto_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },
@@ -30,12 +30,12 @@
     "special_defence": 110,
     "speed": 30
   },
-  "catchRate": 70,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
   "features": [
     "galarian"
   ],
+  "catchRate": 70,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Galar",
@@ -208,7 +208,16 @@
       "preEvolution": "slowpoke form=galar",
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "cobblemon:chesto_berry",
+            "percentage": 10.0
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 172,

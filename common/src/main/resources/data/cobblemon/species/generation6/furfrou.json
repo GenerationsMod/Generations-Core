@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Furfrou",
   "nationalPokedexNumber": 676,
   "primaryType": "normal",
@@ -110,5 +109,22 @@
   "height": 12,
   "weight": 280,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:white_wool",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:silk_scarf",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

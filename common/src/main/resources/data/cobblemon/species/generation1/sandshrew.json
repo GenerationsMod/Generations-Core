@@ -28,6 +28,9 @@
     "special_defence": 30,
     "speed": 40
   },
+  "features": [
+    "alolan"
+  ],
   "behaviour": {
     "moving": {
       "walk": {
@@ -44,9 +47,6 @@
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": false,
-  "features": [
-    "alolan"
-  ],
   "forms": [
     {
       "name": "Alola",
@@ -230,7 +230,20 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "cobblemon:quick_claw",
+            "percentage": 2.5
+          },
+          {
+            "item": "cobblemon:chople_berry",
+            "percentage": 2.5
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 60,

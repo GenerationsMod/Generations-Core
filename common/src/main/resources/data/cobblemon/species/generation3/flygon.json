@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Flygon",
   "nationalPokedexNumber": 330,
   "primaryType": "ground",
@@ -200,5 +199,18 @@
   "height": 20,
   "weight": 820,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:soft_sand",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

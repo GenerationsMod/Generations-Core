@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dustox",
   "nationalPokedexNumber": 269,
   "primaryType": "bug",
@@ -125,5 +124,18 @@
   "height": 12,
   "weight": 316,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:silver_powder",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

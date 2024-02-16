@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Copperajah",
   "nationalPokedexNumber": 879,
   "primaryType": "steel",
@@ -166,5 +165,18 @@
   "height": 30,
   "weight": 6500,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:raw_copper",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

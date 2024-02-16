@@ -208,15 +208,15 @@
     "entries": [
       {
         "item": "minecraft:potato",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:big_root",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:soft_sand",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

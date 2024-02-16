@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Drapion",
   "nationalPokedexNumber": 452,
   "primaryType": "poison",
@@ -14,11 +13,11 @@
     "entries": [
       {
         "item": "cobblemon:poison_barb",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:bluk_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

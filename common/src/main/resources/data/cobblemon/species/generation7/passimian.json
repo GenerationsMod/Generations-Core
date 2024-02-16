@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Passimian",
   "nationalPokedexNumber": 766,
   "primaryType": "fighting",
@@ -163,5 +162,18 @@
   "height": 20,
   "weight": 828,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:muscle_band",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:payapa_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

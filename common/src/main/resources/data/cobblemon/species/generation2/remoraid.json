@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Remoraid",
   "nationalPokedexNumber": 223,
   "primaryType": "water",
@@ -208,5 +207,21 @@
   "height": 6,
   "weight": 120,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:cod"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

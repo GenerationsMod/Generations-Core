@@ -30,11 +30,11 @@
     "entries": [
       {
         "item": "minecraft:stick",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

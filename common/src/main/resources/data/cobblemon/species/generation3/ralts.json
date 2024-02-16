@@ -14,14 +14,14 @@
     "entries": [
       {
         "item": "minecraft:ender_pearl",
-        "percentage": 50
-      },
-      {
-        "item": "cobblemon:twisted_spoon",
-        "percentage": 2.5
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:dawn_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:twisted_spoon",
         "percentage": 2.5
       },
       {

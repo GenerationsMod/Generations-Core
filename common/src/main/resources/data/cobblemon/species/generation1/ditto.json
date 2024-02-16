@@ -8,19 +8,15 @@
     "h:imposter"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:quick_powder",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:metal_powder",
-        "percentage": 5
-      },
-      {
-        "item": "generations_core:ditto_doll",
-        "percentage": 1
+        "percentage": 5.0
       }
     ]
   },

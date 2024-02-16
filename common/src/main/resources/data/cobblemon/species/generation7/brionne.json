@@ -26,7 +26,7 @@
     "field"
   ],
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.2
       },
@@ -47,7 +47,7 @@
     "entries": [
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Azumarill",
   "nationalPokedexNumber": 184,
   "primaryType": "water",
@@ -14,7 +13,7 @@
     "entries": [
       {
         "item": "cobblemon:kebia_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

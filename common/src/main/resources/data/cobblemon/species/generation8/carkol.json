@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Carkol",
   "nationalPokedexNumber": 838,
   "primaryType": "rock",
@@ -127,5 +126,22 @@
   "height": 11,
   "weight": 780,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:coal",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:black_augurite",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

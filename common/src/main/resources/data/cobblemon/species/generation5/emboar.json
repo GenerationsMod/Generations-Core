@@ -9,7 +9,7 @@
     "h:reckless"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:porkchop",
@@ -17,7 +17,7 @@
       },
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },

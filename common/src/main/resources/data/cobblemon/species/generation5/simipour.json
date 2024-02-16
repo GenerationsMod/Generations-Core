@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Simipour",
   "nationalPokedexNumber": 516,
   "primaryType": "water",
@@ -12,15 +11,15 @@
     "entries": [
       {
         "item": "cobblemon:water_stone",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:rindo_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

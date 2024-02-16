@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Bagon",
   "nationalPokedexNumber": 371,
   "primaryType": "dragon",
@@ -172,5 +171,22 @@
   "height": 6,
   "weight": 421,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:dragon_fang",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:dragon_scale",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

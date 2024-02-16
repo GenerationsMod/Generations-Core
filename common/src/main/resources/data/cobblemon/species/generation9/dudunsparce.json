@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Dudunsparce",
   "nationalPokedexNumber": 982,
   "primaryType": "normal",
@@ -170,5 +169,18 @@
   ],
   "pokedex": [
     "cobblemon.species.dudunsparce.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:rocky_helmet",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

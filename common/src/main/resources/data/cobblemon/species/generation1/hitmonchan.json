@@ -33,13 +33,16 @@
       "light": "0-4"
     }
   },
-
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:black_belt",
-        "percentage": 5
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:payapa_berry",
+        "percentage": 5.0
       }
     ]
   },

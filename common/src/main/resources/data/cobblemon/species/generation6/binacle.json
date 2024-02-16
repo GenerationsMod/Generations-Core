@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Binacle",
   "nationalPokedexNumber": 688,
   "primaryType": "rock",
@@ -165,5 +164,14 @@
   "height": 5,
   "weight": 310,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

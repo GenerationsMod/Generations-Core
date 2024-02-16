@@ -1,5 +1,4 @@
 {
-  "implemented": true,
   "name": "Suicune",
   "nationalPokedexNumber": 245,
   "primaryType": "water",
@@ -24,15 +23,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:suicune_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:bubblebeam",
     "1:extremespeed",
@@ -199,5 +189,13 @@
   "height": 20,
   "weight": 1870,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water"
+      }
+    ]
+  }
 }

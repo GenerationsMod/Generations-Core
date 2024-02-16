@@ -10,26 +10,25 @@
     "h:tintedlens"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:feather",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:chicken"
       },
       {
         "item": "cobblemon:wise_glasses",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:chilan_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
-  },  
+  },
   "baseStats": {
     "hp": 100,
     "attack": 50,

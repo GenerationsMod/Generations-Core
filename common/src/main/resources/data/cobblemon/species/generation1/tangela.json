@@ -30,7 +30,7 @@
     "entries": [
       {
         "item": "minecraft:vines",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:big_root",
