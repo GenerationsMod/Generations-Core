@@ -69,7 +69,7 @@ public class GenerationsDataProvider implements DataProvider {
         }
     }
 
-    public <T extends DataRegistry> T register(T registry) {
+    public <T extends DataRegistry> @NotNull T register(@NotNull T registry) {
 //         Only send message once
 //        if (this.registries.isEmpty()) {
 //            LOGGER.info("Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.");
@@ -80,7 +80,7 @@ public class GenerationsDataProvider implements DataProvider {
         return registry;
     }
 
-    public DataRegistry fromIdentifier(ResourceLocation registryIdentifier) {
+    public DataRegistry fromIdentifier(@NotNull ResourceLocation registryIdentifier) {
         return this.registries.stream().filter(it -> it.getId().equals(registryIdentifier)).findAny().orElse(null);
     }
 
@@ -104,7 +104,7 @@ public class GenerationsDataProvider implements DataProvider {
         }
 
         @Override
-            public void onResourceManagerReload(ResourceManager manager) {
+            public void onResourceManagerReload(@NotNull ResourceManager manager) {
                 // Check for a server running, this is due to the create a world screen triggering datapack reloads, these are fine to happen as many times as needed as players may be in the process of adding their datapacks.
                 var isInGame = server() != null;
                 if (isInGame && this.type == PackType.SERVER_DATA && !GenerationsDataProvider.INSTANCE.canReload) {

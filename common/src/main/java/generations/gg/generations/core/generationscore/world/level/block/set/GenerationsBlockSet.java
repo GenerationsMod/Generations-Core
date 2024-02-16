@@ -6,6 +6,7 @@ import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.function.Supplier;
  */
 public class GenerationsBlockSet {
 
-    private static ArrayList<GenerationsBlockSet> blockSets = new ArrayList<>();
+    private static final ArrayList<GenerationsBlockSet> blockSets = new ArrayList<>();
 
     private final String name;
     private final RegistrySupplier<Block> baseBlock;
@@ -31,7 +32,7 @@ public class GenerationsBlockSet {
      * @param name The name of the base block.
      * @param properties The properties of the blocks
      */
-    public GenerationsBlockSet(String name, Block.Properties properties) {
+    public GenerationsBlockSet(String name, @NotNull Block.Properties properties) {
         this(name, GenerationsBlocks.registerBlockItem(name, () -> new Block(properties)), properties);
     }
 
@@ -49,7 +50,7 @@ public class GenerationsBlockSet {
      * @param baseBlock The base block.
      * @param properties The properties of the blocks
      */
-    public GenerationsBlockSet(String name, RegistrySupplier<Block> baseBlock, Block.Properties properties) {
+    public GenerationsBlockSet(String name, @NotNull RegistrySupplier<Block> baseBlock, @NotNull Block.Properties properties) {
         this.name = name;
         this.baseBlock = baseBlock;
         slab = registerBlockItem(name + "_slab", () -> new SlabBlock(properties));

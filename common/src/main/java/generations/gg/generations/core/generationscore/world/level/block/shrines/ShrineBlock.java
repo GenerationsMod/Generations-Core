@@ -51,7 +51,7 @@ public class ShrineBlock<T extends ShrineBlockEntity> extends GenericRotatableMo
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
+    public BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
         var state = super.getStateForPlacement(context);
         if(state != null && isActivatable()) state = state.setValue(ACTIVE, OFF);
         return state;

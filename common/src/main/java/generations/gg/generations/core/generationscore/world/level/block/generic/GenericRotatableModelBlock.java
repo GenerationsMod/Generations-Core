@@ -107,7 +107,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
+    public BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
         var pos = context.getClickedPos();
         var level = context.getLevel();
         var dir = context.getHorizontalDirection().getOpposite();
@@ -269,7 +269,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
     }
 
     @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+    public void setPlacedBy(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @Nullable LivingEntity placer, @NotNull ItemStack stack) {
         for (int x = 0; x <= width; x++) {
             for (int z = 0; z <= length; z++) {
                 for (int y = 0; y <= height; y++) {

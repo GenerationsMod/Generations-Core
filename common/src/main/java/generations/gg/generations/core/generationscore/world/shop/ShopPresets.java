@@ -56,7 +56,7 @@ public class ShopPresets implements JsonDataRegistry<ShopPreset> {
 
 
     @Override
-    public TypeToken<ShopPreset> getTypeToken() {
+    public @NotNull TypeToken<ShopPreset> getTypeToken() {
         return typeToken;
     }
 
@@ -67,7 +67,7 @@ public class ShopPresets implements JsonDataRegistry<ShopPreset> {
     }
 
     @Override
-    public SimpleObservable<? extends DataRegistry> getObservable() {
+    public @NotNull SimpleObservable<? extends DataRegistry> getObservable() {
         return observable;
     }
 

@@ -23,7 +23,7 @@ public abstract class InteractShrineBlock<T extends ShrineBlockEntity> extends S
     }
 
     @Override
-    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, @NotNull BlockHitResult hit) {
+    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if (level.isClientSide() || hand == InteractionHand.OFF_HAND) return InteractionResult.PASS;
 
         var activeState = isActive(state);

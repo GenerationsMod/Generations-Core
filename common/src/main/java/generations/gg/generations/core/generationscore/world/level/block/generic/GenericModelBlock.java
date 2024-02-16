@@ -58,13 +58,13 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
     }
 
     @Override
-    public void setPlacedBy(Level level, BlockPos blockPos, BlockState blockState, @Nullable LivingEntity livingEntity, ItemStack itemStack) {
+    public void setPlacedBy(@NotNull Level level, @NotNull BlockPos blockPos, @NotNull BlockState blockState, @Nullable LivingEntity livingEntity, @NotNull ItemStack itemStack) {
         super.setPlacedBy(level, blockPos, blockState, livingEntity, itemStack);
     }
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
+    public BlockState getStateForPlacement(@NotNull BlockPlaceContext blockPlaceContext) {
         return stateFromContext(blockPlaceContext);
     }
 
@@ -79,7 +79,7 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
     }
 
     @Override
-    public long getSeed(BlockState state, BlockPos pos) {
+    public long getSeed(@NotNull BlockState state, @NotNull BlockPos pos) {
         return Mth.getSeed(getBaseBlockPos(pos, state));
     }
 
@@ -92,7 +92,7 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
     }
 
     @Override
-    public @NotNull VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
+    public @NotNull VoxelShape getOcclusionShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
         return Shapes.empty();
     }
 
@@ -114,7 +114,7 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
     }
 
     @Override
-    public FluidState getFluidState(BlockState blockState) {
+    public @NotNull FluidState getFluidState(@NotNull BlockState blockState) {
         if(isWaterLogged(blockState)) {
             return Fluids.WATER.getSource(false);
         } else {
@@ -128,7 +128,7 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
     }
 
     @Override
-    public BlockState updateShape(BlockState blockState, Direction direction, BlockState blockState2, LevelAccessor levelAccessor, BlockPos blockPos, BlockPos blockPos2) {
+    public @NotNull BlockState updateShape(@NotNull BlockState blockState, @NotNull Direction direction, @NotNull BlockState blockState2, @NotNull LevelAccessor levelAccessor, @NotNull BlockPos blockPos, @NotNull BlockPos blockPos2) {
         if(isWaterLogged(blockState)) {
             levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         }

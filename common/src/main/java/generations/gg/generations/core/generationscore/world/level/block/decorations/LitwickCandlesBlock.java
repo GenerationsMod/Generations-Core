@@ -33,7 +33,7 @@ public class LitwickCandlesBlock extends GenericRotatableModelBlock<GenericModel
     }
 
     @Override
-    public @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPE.getShape(state);
     }
 }

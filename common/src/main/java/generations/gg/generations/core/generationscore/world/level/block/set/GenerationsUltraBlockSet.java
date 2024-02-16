@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.function.Supplier;
@@ -21,7 +22,7 @@ public class GenerationsUltraBlockSet extends GenerationsFullBlockSet {
     }
 
     @Override
-    protected <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
+    protected <T extends Block> RegistrySupplier<T> registerBlockItem(String name, @NotNull Supplier<T> blockSupplier) {
         return GenerationsBlocks.registerUltraBlock(name, blockSupplier);
     }
 

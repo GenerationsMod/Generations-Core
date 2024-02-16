@@ -56,7 +56,6 @@ public class ShopEntry {
         buf.writeDouble(priceVariation);
         buf.writeInt(order);
         buf.writeInt(weight);
-        return;
     }
 
     public ShopEntry(CompoundTag tag) {

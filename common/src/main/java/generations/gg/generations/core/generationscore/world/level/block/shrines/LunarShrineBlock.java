@@ -53,7 +53,7 @@ public class LunarShrineBlock extends ShrineBlock<LunarShrineBlockEntity> {
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> blockEntityType) {
         return ConduitBlock.createTickerHelper(blockEntityType, GenerationsBlockEntities.LUNAR_SHRINE.get(), level.isClientSide ? (level1, blockPos, blockState, blockEntity) -> {} : (level12, pos, blockState, blockEntity) -> {
             var state1 = level12.getBlockState(pos).setValue(IS_LIGHT, level12.getMaxLocalRawBrightness(pos) >= 10);
             level12.setBlockAndUpdate(pos, state1);
@@ -88,7 +88,7 @@ public class LunarShrineBlock extends ShrineBlock<LunarShrineBlockEntity> {
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return (state.getValue(IS_LIGHT) ? LIGHT : DARK).getShape(state);
     }
 }

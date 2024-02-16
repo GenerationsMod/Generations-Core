@@ -9,6 +9,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -43,7 +44,7 @@ public class GenerationsOreSet {
      * @param drop The drop of the Ore
      * @param xpRange The xp range of the Ore
      */
-    public GenerationsOreSet(String name, RegistrySupplier<Item> drop, IntProvider xpRange) {
+    public GenerationsOreSet(String name, @NotNull RegistrySupplier<Item> drop, IntProvider xpRange) {
         this.name = name;
         this.drop = drop;
         ore = GenerationsOres.registerOreBlockItem(name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE), xpRange));
@@ -57,7 +58,7 @@ public class GenerationsOreSet {
      * @param name The name of the Ore
      * @param drop The drop of the Ore
      */
-    public GenerationsOreSet(String name, RegistrySupplier<Item> drop) {
+    public GenerationsOreSet(String name, @NotNull RegistrySupplier<Item> drop) {
         this.name = name;
         this.drop = drop;
         ore = GenerationsOres.registerOreBlockItem(name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));

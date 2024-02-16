@@ -170,7 +170,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     }
 
     @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+    public void setPlacedBy(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @Nullable LivingEntity placer, @NotNull ItemStack stack) {
         super.setPlacedBy(level, pos, state, placer, stack);
         if(level.getBlockEntity(pos) instanceof BallLootBlockEntity lootBlockEntity && placer instanceof ServerPlayer player) lootBlockEntity.setOwner(placer.getUUID());
     }

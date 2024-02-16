@@ -75,7 +75,7 @@ public class PokeDollBlock extends GenericModelBlock<PokeDollBlockEntity> {
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
+    public BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
         Cardinal cardinal;
         if (context.getPlayer() != null) {
             cardinal = Cardinal.getFromAngle((context.getRotation() - 180) % 360);

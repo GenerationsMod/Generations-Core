@@ -47,7 +47,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     private final List<String> list;
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPE.getShape(state);
     }
 
@@ -63,7 +63,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     }
 
     @Override
-    public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if (!level.isClientSide() && player.getItemInHand(hand).getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesKey().equals(species) && GenerationsCore.CONFIG.caught.capped(player, species)) {
             List<BlockPos> blockPos = searchForBlock(level, pos, 15, 1, RegiShrineBlock::isPillar);
 

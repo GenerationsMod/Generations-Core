@@ -21,7 +21,7 @@ public class BeanBagBlock extends GenericRotatableModelBlock<GenericModelProvidi
     }
 
     @Override
-    public @NotNull InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+    public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
         return SittableBlock.super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
     }
 

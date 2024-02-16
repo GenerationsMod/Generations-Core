@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class RksMachineContainer extends AbstractContainerMenu {
 	public static final int INPUT1_SLOT = 0;
@@ -56,7 +57,7 @@ public class RksMachineContainer extends AbstractContainerMenu {
 
 
 	@Override
-	public ItemStack quickMoveStack(Player player, int index) {
+	public @NotNull ItemStack quickMoveStack(@NotNull Player player, int index) {
 		{
 			ItemStack returnStack = ItemStack.EMPTY;
 			final Slot slot = this.slots.get(index);
@@ -88,7 +89,7 @@ public class RksMachineContainer extends AbstractContainerMenu {
 	}
 
 	@Override
-	public boolean stillValid(Player player) {
+	public boolean stillValid(@NotNull Player player) {
 		return rksMachine.stillValid(player);
 	}
 
@@ -116,12 +117,12 @@ public class RksMachineContainer extends AbstractContainerMenu {
 		}
 
 		@Override
-		public boolean mayPlace(ItemStack stack) {
+		public boolean mayPlace(@NotNull ItemStack stack) {
 			return false;
 		}
 
 		@Override
-		public ItemStack remove(int amount) {
+		public @NotNull ItemStack remove(int amount) {
 			if (this.hasItem()) {
 				this.removeCount += Math.min(amount, this.getItem().getCount());
 			}
@@ -130,7 +131,7 @@ public class RksMachineContainer extends AbstractContainerMenu {
 		}
 
 		@Override
-		public void onTake(Player player, ItemStack stack) {
+		public void onTake(@NotNull Player player, @NotNull ItemStack stack) {
 			if(((RksMachineBlockEntity) container).getRecipeUsed() instanceof RksRecipe recipe && recipe.isPokemonResult()) {
 				var rksmachine = ((RksMachineBlockEntity) container);
 				var pos = rksmachine.getBlockPos();

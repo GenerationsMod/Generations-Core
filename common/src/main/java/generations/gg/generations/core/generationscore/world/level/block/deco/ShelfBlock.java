@@ -31,7 +31,7 @@ public class ShelfBlock extends GenericRotatableModelBlock<GenericModelProviding
         }
 
     @Override
-    public @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPES.getShape(state);
     }
 }
