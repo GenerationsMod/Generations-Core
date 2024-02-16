@@ -18,7 +18,8 @@
     "speed": 90
   },
   "features": [
-    "galar"
+    "galar",
+    "galarian"
   ],
   "catchRate": 45,
   "maleRatio": 0.5,

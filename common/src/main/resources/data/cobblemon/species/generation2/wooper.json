@@ -17,6 +17,9 @@
     "special_defence": 25,
     "speed": 15
   },
+  "features": [
+    "paldean"
+  ],
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": true,
