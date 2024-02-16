@@ -1,0 +1,23 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "seaking-1",
+            "pokemon": "seaking",
+            "presets": [
+                "river",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "33-45",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true
+            }
+        }
+    ]
+}

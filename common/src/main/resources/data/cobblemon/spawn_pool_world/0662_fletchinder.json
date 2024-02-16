@@ -1,0 +1,53 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "fletchinder-1",
+            "pokemon": "fletchinder",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "17-38",
+            "weight": 0.54,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_forest",
+                    "#cobblemon:is_sky",
+                    "#cobblemon:is_taiga"
+                ],
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "fletchinder-3",
+            "pokemon": "fletchinder",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "17-38",
+            "weight": 0.54,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_forest",
+                    "#cobblemon:is_nether_fungus"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_nether_warped"
+                ]
+            }
+        }
+    ]
+}

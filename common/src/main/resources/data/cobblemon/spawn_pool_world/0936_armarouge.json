@@ -1,0 +1,63 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "armarouge-1",
+            "pokemon": "armarouge",
+            "presets": [
+                "natural",
+                "nether_structures"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "21-53",
+            "weight": 5.0,
+            "condition": {
+                "biomes": [
+                    "#minecraft:is_nether"
+                ]
+            },
+            "drops": {
+                "amount": 5,
+                "entries": [
+                    {
+                        "item": "minecraft:blaze_rod",
+                        "quantityRange": "0-2"
+                    },
+                    {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 5.0
+                    },
+                    {
+                        "item": "cobblemon:auspicious_armor",
+                        "percentage": 5.0
+                    },
+                    {
+                        "item": "cobblemon:rawst_berry",
+                        "percentage": 5.0
+                    }
+                ]
+            }
+        },
+        {
+            "id": "armarouge-2",
+            "pokemon": "armarouge",
+            "presets": [
+                "ruined_portal"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "21-53",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        }
+    ]
+}

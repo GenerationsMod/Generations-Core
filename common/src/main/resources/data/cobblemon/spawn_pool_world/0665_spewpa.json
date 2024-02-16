@@ -1,0 +1,47 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "spewpa-1",
+            "pokemon": "spewpa",
+            "presets": [
+                "natural",
+                "foliage"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "9-21",
+            "weight": 3.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_floral",
+                    "#cobblemon:is_plains",
+                    "#cobblemon:is_savanna"
+                ]
+            }
+        },
+        {
+            "id": "spewpa-2",
+            "pokemon": "spewpa",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "9-21",
+            "weight": 2.0,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:floral_meadow"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
+            }
+        }
+    ]
+}

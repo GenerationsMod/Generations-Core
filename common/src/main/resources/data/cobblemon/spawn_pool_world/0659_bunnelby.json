@@ -1,0 +1,26 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "bunnelby-1",
+            "pokemon": "bunnelby",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "1-24",
+            "weight": 9.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_hills",
+                    "#cobblemon:is_temperate"
+                ],
+                "minY": 32
+            }
+        }
+    ]
+}

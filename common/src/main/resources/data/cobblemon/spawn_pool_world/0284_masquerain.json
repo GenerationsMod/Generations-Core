@@ -1,0 +1,47 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "masquerain-1",
+            "pokemon": "masquerain",
+            "presets": [
+                "water_surface",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "22-45",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true,
+                "timeRange": "night",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "masquerain-2",
+            "pokemon": "masquerain",
+            "presets": [
+                "water_surface"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "22-45",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "#the_bumblezone:the_bumblezone"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
+            }
+        }
+    ]
+}

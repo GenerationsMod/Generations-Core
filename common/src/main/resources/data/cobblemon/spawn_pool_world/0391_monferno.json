@@ -1,0 +1,45 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "monferno-1",
+            "pokemon": "monferno",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "14-41",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_mountain"
+                ],
+                "isRaining": false
+            }
+        },
+        {
+            "id": "monferno-2",
+            "pokemon": "monferno",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "14-41",
+            "weight": 0.9,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_forest"
+                ]
+            }
+        }
+    ]
+}

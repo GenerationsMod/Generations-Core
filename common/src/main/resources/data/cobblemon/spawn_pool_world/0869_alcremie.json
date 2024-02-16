@@ -1,0 +1,64 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "alcremie-1",
+            "pokemon": "alcremie",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "22-50",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:cake"
+                ]
+            }
+        },
+        {
+            "id": "alcremie-2",
+            "pokemon": "alcremie",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "22-50",
+            "weight": 0.2,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:sugar_cane"
+                ]
+            }
+        },
+        {
+            "id": "alcremie-3",
+            "pokemon": "alcremie",
+            "presets": [
+                "mansion"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "22-50",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededNearbyBlocks": [
+                    "minecraft:light_grey_carpet",
+                    "minecraft:magenta_carpet",
+                    "minecraft:white_carpet"
+                ]
+            }
+        }
+    ]
+}

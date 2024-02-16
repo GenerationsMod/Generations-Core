@@ -1,0 +1,85 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "illumise-1",
+            "pokemon": "illumise",
+            "presets": [
+                "freshwater",
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "18-43",
+            "weight": 5.0,
+            "condition": {
+                "canSeeSky": true,
+                "timeRange": "night",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "illumise-2",
+            "pokemon": "illumise",
+            "presets": [
+                "freshwater",
+                "water_surface"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "18-43",
+            "weight": 5.0,
+            "condition": {
+                "canSeeSky": true,
+                "timeRange": "night",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "illumise-3",
+            "pokemon": "illumise",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "18-43",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:floral_meadow"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
+            }
+        },
+        {
+            "id": "illumise-4",
+            "pokemon": "illumise",
+            "presets": [
+                "water_surface"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "18-43",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "#the_bumblezone:the_bumblezone"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "ribombee-1",
+            "pokemon": "ribombee",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-46",
+            "weight": 1.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "ribombee-2",
+            "pokemon": "ribombee",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-46",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ]
+            }
+        },
+        {
+            "id": "ribombee-3",
+            "pokemon": "ribombee",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "25-46",
+            "weight": 18.0,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:floral_meadow",
+                    "the_bumblezone:pollinated_fields"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "diggersby-1",
+            "pokemon": "diggersby",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "20-42",
+            "weight": 1.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_hills",
+                    "#cobblemon:is_temperate"
+                ],
+                "minY": 32
+            }
+        }
+    ]
+}

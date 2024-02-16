@@ -1,0 +1,45 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "sableye-1",
+            "pokemon": "sableye",
+            "presets": [
+                "natural",
+                "gemstones"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "13-38",
+            "weight": 6.0,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        },
+        {
+            "id": "sableye-2",
+            "pokemon": "sableye",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "13-38",
+            "weight": 2.0,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:crystal_canyon"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
+            }
+        }
+    ]
+}

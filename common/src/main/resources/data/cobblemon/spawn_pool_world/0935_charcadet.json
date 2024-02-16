@@ -1,0 +1,59 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "charcadet-1",
+            "pokemon": "charcadet",
+            "presets": [
+                "natural",
+                "nether_structures"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "1-26",
+            "weight": 90.0,
+            "condition": {
+                "biomes": [
+                    "#minecraft:is_nether"
+                ]
+            },
+            "drops": {
+                "amount": 3,
+                "entries": [
+                    {
+                        "item": "minecraft:blaze_rod",
+                        "quantityRange": "0-1"
+                    },
+                    {
+                        "item": "cobblemon:charcoal_stick",
+                        "percentage": 2.5
+                    },
+                    {
+                        "item": "cobblemon:rawst_berry",
+                        "percentage": 2.5
+                    }
+                ]
+            }
+        },
+        {
+            "id": "charcadet-2",
+            "pokemon": "charcadet",
+            "presets": [
+                "ruined_portal"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "1-26",
+            "weight": 18.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            }
+        }
+    ]
+}
