@@ -60,8 +60,8 @@ allprojects {
     base.archivesName.set(project.properties["archives_base_name"] as String)
 
     tasks.withType<JavaCompile>().configureEach {
-            options.encoding = "UTF-8"
-            options.release.set(17)
+        options.encoding = "UTF-8"
+        options.release.set(17)
     }
 
     java.withSourcesJar()

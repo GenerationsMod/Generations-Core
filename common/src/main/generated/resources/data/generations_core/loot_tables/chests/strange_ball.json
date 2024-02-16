@@ -1,0 +1,340 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:poke_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:surprise_mulch"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:growth_mulch"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:rich_mulch"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:scroll_page"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rusty_fragment"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sparkling_shard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:hoopa_ring"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dragon_soul"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:legend_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:ghost_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lugia_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lavender_town_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mt_pyre_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:permit"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:plasma_card"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:poke_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:power_weight"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:pp_up"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:rare_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:reset_urge"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:roller_skates"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:room_service"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shalour_sable"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:precooked_burger"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pungent_root"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mixed_mushrooms"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:gigantamix"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:z_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_retro"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_rsvp"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_space"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:enigma_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:pomeg_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:yache_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:hondew_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rockstar_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:belle_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:popstar_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:phd_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:libre_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mewtwo_armor"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rotom_catalog"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pink_nectar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:purple_nectar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:red_nectar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:yellow_nectar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:old_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:good_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:super_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:wailmer_pail"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sprink_lotad"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:repel"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:super_repel"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:max_repel"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:camera"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:film"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:snap_camera"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:full_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lax_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:odd_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pure_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rock_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rose_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sea_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:wave_incense"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_17"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_29"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_42"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_61"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_114"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_151"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_3"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_18"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_30"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_43"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_62"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_87"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_94"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_108"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_140"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "generations_core:chests/strange_ball"
+}
