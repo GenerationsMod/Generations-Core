@@ -14,6 +14,15 @@
     "special_defence": 130,
     "speed": 95
   },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:uxie_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "catchRate": 3,
   "maleRatio": -1,
   "shoulderMountable": false,

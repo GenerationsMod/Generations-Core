@@ -34,7 +34,7 @@
     }
   },
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:clay_ball",
@@ -43,6 +43,10 @@
       {
         "item": "cobblemon:mystic_water",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:mudkip_doll",
+        "percentage": 1.0
       }
     ]
   },

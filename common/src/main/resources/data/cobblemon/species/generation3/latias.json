@@ -259,12 +259,12 @@
   "aspects": [],
   "cannotDynamax": false,
   "drops": {
-    "amount": 4,
+    "amount": 1,
     "entries": [
       {
-        "item": "minecraft:feather",
-        "quantityRange": "2-4"
+        "item": "generations_core:latias_doll",
+        "percentage": 100.0
       }
     ]
-  }
+  },
 }

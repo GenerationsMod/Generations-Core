@@ -6,6 +6,15 @@
   "abilities": [
     "hydration"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:manaphy_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 100,
     "attack": 100,

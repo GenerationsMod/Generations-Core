@@ -332,18 +332,12 @@
   "aspects": [],
   "cannotDynamax": false,
   "drops": {
-    "amount": 6,
+    "amount": 1,
     "entries": [
       {
-        "item": "minecraft:feather",
-        "quantityRange": "2-4"
-      },
-      {
-        "item": "minecraft:cooked_chicken"
-      },
-      {
-        "item": "cobblemon:charcoal_stick"
+        "item": "generations_core:moltres_doll",
+        "percentage": 100.0
       }
     ]
-  }
+  },
 }

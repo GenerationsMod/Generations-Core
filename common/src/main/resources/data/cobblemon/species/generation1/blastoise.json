@@ -128,6 +128,10 @@
       {
         "item": "cobblemon:mystic_water",
         "percentage": 25.0
+      },
+      {
+        "item": "generations_core:blastoise_doll",
+        "percentage": 1.0
       }
     ]
   },

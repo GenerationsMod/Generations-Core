@@ -194,11 +194,15 @@
   "aspects": [],
   "cannotDynamax": false,
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:persim_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:kecleon_doll",
+        "percentage": 1.0
       }
     ]
   }

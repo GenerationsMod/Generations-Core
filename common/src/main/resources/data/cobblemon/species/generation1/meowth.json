@@ -468,7 +468,7 @@
     "field"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:gold_nugget",
@@ -481,6 +481,10 @@
       {
         "item": "cobblemon:pinap_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:meowth_doll",
+        "percentage": 1.0
       }
     ]
   },

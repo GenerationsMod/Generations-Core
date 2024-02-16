@@ -17,6 +17,10 @@
       {
         "item": "cobblemon:metal_powder",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:ditto_doll",
+        "percentage": 1.0
       }
     ]
   },

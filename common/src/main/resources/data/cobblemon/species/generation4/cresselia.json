@@ -6,6 +6,15 @@
   "abilities": [
     "levitate"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:cresselia_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 120,
     "attack": 70,

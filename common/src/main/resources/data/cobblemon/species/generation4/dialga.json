@@ -8,6 +8,15 @@
     "pressure",
     "h:telepathy"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:dialga_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 100,
     "attack": 120,

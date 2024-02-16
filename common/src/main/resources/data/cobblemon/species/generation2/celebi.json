@@ -19,7 +19,8 @@
     "amount": 1,
     "entries": [
       {
-        "item": "cobblemon:miracle_seed"
+        "item": "generations_core:celebi_doll",
+        "percentage": 100.0
       }
     ]
   },

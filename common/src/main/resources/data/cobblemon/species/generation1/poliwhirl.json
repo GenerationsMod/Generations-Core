@@ -18,6 +18,10 @@
       {
         "item": "cobblemon:chesto_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:poliwhirl_doll",
+        "percentage": 1.0
       }
     ]
   },

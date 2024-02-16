@@ -91,6 +91,10 @@
       {
         "item": "cobblemon:leftovers",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:snorlax_doll",
+        "percentage": 1.0
       }
     ]
   },

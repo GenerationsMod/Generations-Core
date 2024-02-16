@@ -166,11 +166,15 @@
   "aspects": [],
   "cannotDynamax": false,
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:kebia_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:azurill_doll",
+        "percentage": 1.0
       }
     ]
   }

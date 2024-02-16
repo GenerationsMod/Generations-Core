@@ -35,6 +35,10 @@
       {
         "item": "cobblemon:nanab_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:cubone_doll",
+        "percentage": 1.0
       }
     ]
   },

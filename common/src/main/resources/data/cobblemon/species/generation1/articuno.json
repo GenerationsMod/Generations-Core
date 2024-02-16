@@ -9,17 +9,11 @@
     "h:snowcloak"
   ],
   "drops": {
-    "amount": 6,
+    "amount": 1,
     "entries": [
       {
-        "item": "minecraft:feather",
-        "quantityRange": "2-4"
-      },
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:never_melt_ice"
+        "item": "generations_core:articuno_doll",
+        "percentage": 100.0
       }
     ]
   },

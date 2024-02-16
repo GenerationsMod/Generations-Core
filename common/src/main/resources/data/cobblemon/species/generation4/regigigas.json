@@ -14,6 +14,15 @@
     "special_defence": 110,
     "speed": 100
   },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:regigigas_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "catchRate": 3,
   "maleRatio": -1,
   "shoulderMountable": false,

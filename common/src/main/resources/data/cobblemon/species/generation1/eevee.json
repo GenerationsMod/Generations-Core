@@ -443,6 +443,10 @@
       {
         "item": "cobblemon:silk_scarf",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:eevee_doll",
+        "percentage": 1.0
       }
     ]
   }

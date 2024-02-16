@@ -9,17 +9,11 @@
     "h:static"
   ],
   "drops": {
-    "amount": 6,
+    "amount": 1,
     "entries": [
       {
-        "item": "minecraft:feather",
-        "quantityRange": "2-4"
-      },
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:magnet"
+        "item": "generations_core:zapdos_doll",
+        "percentage": 100.0
       }
     ]
   },

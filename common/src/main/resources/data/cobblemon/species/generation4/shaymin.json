@@ -14,6 +14,19 @@
     "special_defence": 100,
     "speed": 100
   },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "generations_core:shaymin_sky_doll",
+        "percentage": 100.0
+      },
+      {
+        "item": "generations_core:shaymin_land_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "catchRate": 45,
   "maleRatio": -1,
   "shoulderMountable": false,

@@ -89,6 +89,10 @@
       {
         "item": "cobblemon:colbur_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:wynaut_doll",
+        "percentage": 1.0
       }
     ]
   }

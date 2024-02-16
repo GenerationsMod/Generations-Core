@@ -198,6 +198,10 @@
       {
         "item": "cobblemon:oran_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:gulpin_doll",
+        "percentage": 1.0
       }
     ]
   }

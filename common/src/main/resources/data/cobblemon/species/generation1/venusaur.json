@@ -142,6 +142,10 @@
       {
         "item": "cobblemon:coba_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:venusaur_doll",
+        "percentage": 1.0
       }
     ]
   },

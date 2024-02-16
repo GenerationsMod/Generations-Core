@@ -190,14 +190,12 @@
   "aspects": [],
   "cannotDynamax": false,
   "drops": {
-    "amount": 2,
+    "amount": 1,
     "entries": [
       {
-        "item": "cobblemon:charcoal_stick"
-      },
-      {
-        "item": "cobblemon:sacred_ash"
+        "item": "generations_core:entei_doll",
+        "percentage": 100.0
       }
     ]
-  }
+  },
 }

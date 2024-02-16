@@ -9,7 +9,7 @@
     "h:friendguard"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "cobblemon:moon_stone",
@@ -22,6 +22,10 @@
       {
         "item": "cobblemon:fairy_feather",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:clefairy_doll",
+        "percentage": 1.0
       }
     ]
   },

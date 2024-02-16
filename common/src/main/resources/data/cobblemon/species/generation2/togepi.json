@@ -22,6 +22,10 @@
       {
         "item": "cobblemon:fairy_feather",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:togepi_doll",
+        "percentage": 1.0
       }
     ]
   },

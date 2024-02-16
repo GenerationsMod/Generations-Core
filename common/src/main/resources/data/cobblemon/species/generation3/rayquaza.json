@@ -8,11 +8,11 @@
     "airlock"
   ],
   "drops": {
-    "amount": 5,
+    "amount": 1,
     "entries": [
       {
-        "item": "minecraft:dragon_breath",
-        "quantityRange": "3-5"
+        "item": "generations_core:rayquaza_doll",
+        "percentage": 100.0
       }
     ]
   },

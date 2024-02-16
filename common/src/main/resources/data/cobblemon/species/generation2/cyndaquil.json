@@ -13,6 +13,10 @@
       {
         "item": "cobblemon:charcoal_stick",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:cyndaquil_doll",
+        "percentage": 1.0
       }
     ]
   },

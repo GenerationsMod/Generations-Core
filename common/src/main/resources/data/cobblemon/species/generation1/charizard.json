@@ -177,6 +177,10 @@
       {
         "item": "cobblemon:charcoal_stick",
         "percentage": 25.0
+      },
+      {
+        "item": "generations_core:charizard_doll",
+        "percentage": 1.0
       }
     ]
   },

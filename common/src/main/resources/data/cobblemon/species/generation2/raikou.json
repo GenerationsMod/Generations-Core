@@ -192,7 +192,8 @@
     "amount": 1,
     "entries": [
       {
-        "item": "cobblemon:magnet"
+        "item": "generations_core:raikou_doll",
+        "percentage": 100.0
       }
     ]
   }

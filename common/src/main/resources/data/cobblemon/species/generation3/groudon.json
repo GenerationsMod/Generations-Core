@@ -254,7 +254,8 @@
     "amount": 1,
     "entries": [
       {
-        "item": "minecraft:nether_star"
+        "item": "generations_core:groudon_doll",
+        "percentage": 100.0
       }
     ]
   }

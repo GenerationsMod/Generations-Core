@@ -43,6 +43,10 @@
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:treecko_doll",
+        "percentage": 1.0
       }
     ]
   },

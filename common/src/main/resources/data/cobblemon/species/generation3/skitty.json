@@ -179,7 +179,7 @@
   "aspects": [],
   "cannotDynamax": false,
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "cobblemon:silk_scarf",
@@ -188,6 +188,10 @@
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:skitty_doll",
+        "percentage": 1.0
       }
     ]
   }

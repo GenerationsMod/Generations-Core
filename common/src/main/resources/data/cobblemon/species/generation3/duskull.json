@@ -17,6 +17,10 @@
       {
         "item": "cobblemon:kasib_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:duskull_doll",
+        "percentage": 1.0
       }
     ]
   },
