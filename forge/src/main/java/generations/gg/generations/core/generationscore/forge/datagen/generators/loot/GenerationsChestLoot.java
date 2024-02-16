@@ -1282,11 +1282,87 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POKEMAIL_TROPIC.get(), GenerationsItems.POKEMAIL_TUNNEL.get(), GenerationsItems.POKEMAIL_WAVE.get(),
 						GenerationsItems.POKEMAIL_WOOD.get(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem()
 				)));
+
+		output.accept(ULTRA_BALL, LootTable.lootTable()
+				.withPool(createPool(UniformGenerator.between(1, 3),
+						CobblemonItems.POKE_BALL.asItem(), GenerationsItems.ABSORB_BULB.get(), GenerationsItems.ADRENALINE_ORB.get(),
+						GenerationsItems.AWAKENING.get(), GenerationsItems.BALM_MUSHROOM.get(), CobblemonItems.BERRY_SWEET.asItem(),
+						CobblemonItems.BLACK_BELT.asItem(), CobblemonItems.BLACK_SLUDGE.asItem(), GenerationsItems.IRIS_DISC.get(),
+						GenerationsItems.NESSA_DISC.get(), GenerationsItems.TEAM_ROCKET_DISC.get(), GenerationsItems.SADA_AND_TURO_DISC.get(),
+						GenerationsItems.SOUTH_PROVINCE_DISC.get(), GenerationsItems.RIVAL_DISC.get(), GenerationsItems.LUSAMINE_DISC.get(),
+						GenerationsItems.XY_LEGENDARY_DISC.get(), GenerationsItems.KANTO_DISC.get(), GenerationsItems.ULTRA_NECROZMA_DISC.get(),
+						CobblemonItems.BLUK_BERRY.asItem(), GenerationsItems.BLUNDER_POLICY.get(), GenerationsItems.BURN_HEAL.get(),
+						CobblemonItems.CALCIUM.asItem(), GenerationsItems.CELL_BATTERY.get(), GenerationsItems.CHARCOAL.get(),
+						CobblemonItems.CHERI_BERRY.asItem(), CobblemonItems.CHERI_BERRY.asItem(), CobblemonItems.CHIPPED_POT.asItem(),
+						CobblemonItems.CHOICE_BAND.asItem(), CobblemonItems.CLOVER_SWEET.asItem(), CobblemonItems.CORNN_BERRY.asItem(),
+						GenerationsItems.COURAGE_CANDY_L.get(), CobblemonItems.DEEP_SEA_TOOTH.asItem(), GenerationsItems.DIRE_HIT.get(),
+						CobblemonItems.DRAGON_FANG.asItem(), CobblemonItems.DREAM_BALL.asItem(), CobblemonItems.DUSK_BALL.asItem(),
+						GenerationsItems.EJECT_PACK.get(), CobblemonItems.EXPERIENCE_CANDY_L.asItem(), GenerationsItems.EXPERT_BELT.get(),
+						CobblemonItems.FAST_BALL.asItem(), CobblemonItems.FLAME_ORB.asItem(), GenerationsItems.FRUIT_BUNCH.get(),
+						GenerationsItems.FULL_HEAL.get(), GenerationsItems.FULL_RESTORE.get(), GenerationsItems.FIERY_WING.get(),
+						GenerationsItems.GHOST_GEM.get(), GenerationsItems.GRIP_CLAW.get(), GenerationsItems.GRUBBY_HANKY.get(),
+						CobblemonItems.HEAL_BALL.asItem(), GenerationsItems.HEALTH_CANDY_XL.get(), CobblemonItems.HEAVY_DUTY_BOOTS.asItem(),
+						CobblemonItems.KEE_BERRY.asItem(), CobblemonItems.KELPSY_BERRY.asItem(), GenerationsItems.LOOKER_TICKET.get(),
+						CobblemonItems.MAGNET.asItem(), GenerationsItems.MAX_ELIXIR.get(), CobblemonItems.MAX_REVIVE.asItem(),
+						GenerationsItems.MIGHTY_CANDY_XL.get(), CobblemonItems.NEVER_MELT_ICE.asItem(), GenerationsItems.NORMAL_GEM.get(),
+						GenerationsItems.PERMIT.get(), GenerationsItems.PLASMA_CARD.get(), CobblemonItems.POKE_BALL.asItem(),
+						GenerationsItems.POWER_WEIGHT.get(), CobblemonItems.PP_UP.asItem(), CobblemonItems.RARE_CANDY.asItem(),
+						GenerationsItems.RESET_URGE.get(), GenerationsItems.ROLLER_SKATES.get(), GenerationsItems.ROOM_SERVICE.get(),
+						GenerationsItems.SHALOUR_SABLE.get(), CobblemonItems.SHARP_BEAK.asItem(), CobblemonItems.SOFT_SAND.asItem(),
+						GenerationsItems.SOUL_DEW.get(), GenerationsItems.STARDUST.get(), GenerationsItems.SUPER_POTION.get(),
+						GenerationsItems.THROAT_SPRAY.get(), GenerationsItems.TOUGH_CANDY_L.get(), CobblemonItems.ULTRA_BALL.asItem(),
+						GenerationsItems.WEAKNESS_POLICY.get(), GenerationsItems.WHITE_FLUTE.get(), GenerationsItems.X_ACCURACY_6.get(),
+						GenerationsItems.X_SPECIAL_ATTACK_6.get(), GenerationsItems.X_SPECIAL_DEFENSE_2.get(), Items.SADDLE,
+						Items.LEATHER, Items.BLAZE_POWDER, Items.MUSIC_DISC_WAIT, GenerationsItems.BASIC_SWEET_POKE_PUFF.get(),
+						GenerationsItems.BASIC_MINT_POKE_PUFF.get(), GenerationsItems.BASIC_CITRUS_POKE_PUFF.get(), GenerationsItems.BASIC_MOCHA_POKE_PUFF.get(),
+						GenerationsItems.BASIC_SPICE_POKE_PUFF.get(), Items.AMETHYST_SHARD, GenerationsItems.RUBY.get(),
+						GenerationsItems.POKEMAIL_ORANGE.get(), GenerationsItems.POKEMAIL_REPLY.get(), GenerationsItems.POKEMAIL_RETRO.get(),
+						GenerationsItems.POKEMAIL_RSVP.get(), GenerationsItems.POKEMAIL_SHADOW.get(), GenerationsItems.POKEMAIL_SNOW.get(),
+						GenerationsItems.POKEMAIL_SPACE.get(), GenerationsItems.POKEMAIL_STEEL.get(), GenerationsItems.POKEMAIL_THANKS.get(),
+						GenerationsItems.POKEMAIL_TROPIC.get(), GenerationsItems.POKEMAIL_TUNNEL.get(), GenerationsItems.POKEMAIL_WAVE.get(),
+						GenerationsItems.POKEMAIL_WOOD.get(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem()
+				)));
+
+		output.accept(WING_BALL, LootTable.lootTable()
+				.withPool(createPool(UniformGenerator.between(1, 2),
+						CobblemonItems.POKE_BALL.asItem(), GenerationsItems.ICY_WING.get(), GenerationsItems.ELEGANT_WING.get(),
+						GenerationsItems.HEALTH_FEATHER.get(), GenerationsItems.STATIC_WING.get(), GenerationsItems.BELLIGERENT_WING.get(),
+						GenerationsItems.FIERY_WING.get(), GenerationsItems.SINISTER_WING.get(), GenerationsItems.SILVER_WING.get(),
+						GenerationsItems.RAINBOW_WING.get(), CobblemonItems.COBA_BERRY.asItem(), GenerationsItems.FLYING_GEM.get(),
+						GenerationsItems.FLYING_MEMORY_DRIVE.get(), GenerationsItems.CERULEAN_CITY_DISC.get(), GenerationsItems.ICIRRUS_CITY_DISC.get(),
+						GenerationsItems.LAVERRE_CITY_DISC.get(), GenerationsItems.SURF_DISC.get(), GenerationsItems.LAKE_OF_RAGE_DISC.get(),
+						GenerationsItems.PENNY_DISC.get(), GenerationsItems.NEMONA_DISC.get(), GenerationsItems.ZINNIA_DISC.get(),
+						GenerationsItems.CYNTHIA_DISC.get(), GenerationsItems.DEOXYS_DISC.get(), GenerationsItems.IRON_BALL.get(),
+						CobblemonItems.SHARP_BEAK.asItem(), GenerationsItems.SKY_PLATE.get(), GenerationsItems.UTILITY_UMBRELLA.get(),
+						GenerationsItems.AIR_BALLOON.get(), CobblemonItems.GREPA_BERRY.asItem(), CobblemonItems.LANSAT_BERRY.asItem(),
+						CobblemonItems.LUM_BERRY.asItem(), GenerationsItems.LIGHT_BALL.get(), GenerationsItems.PINK_NECTAR.get(),
+						GenerationsItems.PURPLE_NECTAR.get(), GenerationsItems.RED_NECTAR.get(), GenerationsItems.YELLOW_NECTAR.get(),
+						GenerationsItems.POWER_HERB.get(), GenerationsItems.MENTAL_HERB.get(), CobblemonItems.MIRROR_HERB.asItem(),
+						GenerationsItems.WHITE_HERB.get(), GenerationsItems.ICY_ROCK.get(), GenerationsItems.HEAT_ROCK.get(),
+						CobblemonItems.ASSAULT_VEST.asItem(), GenerationsItems.ELECTRIC_SEED.get(), GenerationsItems.GRASSY_SEED.get(),
+						GenerationsItems.MISTY_SEED.get(), GenerationsItems.PSYCHIC_SEED.get(), CobblemonItems.MIRACLE_SEED.asItem(),
+						GenerationsItems.ANTIDOTE.get(), GenerationsItems.MAX_ELIXIR.get(), GenerationsItems.HYPER_POTION.get(),
+						GenerationsItems.MOOMOO_MILK.get(), CobblemonItems.GREAT_BALL.asItem(), GenerationsItems.FRESH_WATER.get(),
+						GenerationsItems.SODA_POP.get(), GenerationsItems.POTION.get(), CobblemonItems.CALCIUM.asItem(),
+						GenerationsItems.HEALTH_CANDY.get(), GenerationsItems.QUICK_CANDY.get(), GenerationsItems.SMART_CANDY.get(),
+						GenerationsItems.SILVER_LEAF.get(), GenerationsItems.GOLD_LEAF.get(), GenerationsItems.HEART_SCALE.get(),
+						GenerationsItems.STARDUST.get(), GenerationsItems.POKEMAIL_HARBOR.get(), GenerationsItems.POKEMAIL_INQUIRY.get(),
+						GenerationsItems.POKEMAIL_TROPIC.get(), GenerationsItems.POKEMAIL_AIR.get(), GenerationsItems.POKEMAIL_REPLY.get(),
+						GenerationsItems.POKEMAIL_SPACE.get(), CobblemonItems.CHOICE_BAND.asItem(), GenerationsItems.COMET_SHARD.get(),
+						GenerationsItems.DESTINY_KNOT.get(), GenerationsItems.BOILED_EGG.get(), GenerationsItems.SAUSAGES.get(),
+						GenerationsItems.BOBS_FOOD_TIN.get(), GenerationsItems.BACHS_FOOD_TIN.get(), GenerationsItems.GRIP_CLAW.get(),
+						GenerationsItems.REPEL.get(), GenerationsItems.SUPER_REPEL.get(), CobblemonItems.EXPERIENCE_CANDY_XS.asItem(),
+						CobblemonItems.EXPERIENCE_CANDY_S.asItem(), GenerationsItems.FLYING_CANDY.get(), GenerationsItems.X_SPEED_2.get(),
+						GenerationsItems.X_SPEED.get(), GenerationsItems.X_ACCURACY_6.get(), GenerationsItems.X_ATTACK.get(),
+						GenerationsItems.TM_14.get(), GenerationsItems.TM_27.get(), GenerationsItems.TM_40.get(),
+						GenerationsItems.TM_65.get(), GenerationsItems.TM_97.get(), GenerationsItems.TM_113.get(),
+						GenerationsItems.TM_160.get(), GenerationsItems.TM_164.get()
+				)));
 	}
 
 	private LootPool.Builder createPool(NumberProvider rolls, Item... items) {
 		LootPool.Builder pool = LootPool.lootPool().setRolls(rolls);
-		for (var item : items)
+		for (Item item : items)
 			pool.add(LootItem.lootTableItem(item));
 
 		return pool;
