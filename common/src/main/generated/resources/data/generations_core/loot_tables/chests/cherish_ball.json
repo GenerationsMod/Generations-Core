@@ -186,7 +186,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:potion"
+          "name": "cobblemon:potion"
         },
         {
           "type": "minecraft:item",

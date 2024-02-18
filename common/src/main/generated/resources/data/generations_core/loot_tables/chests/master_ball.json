@@ -42,7 +42,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:burn_heal"
+          "name": "cobblemon:burn_heal"
         },
         {
           "type": "minecraft:item",

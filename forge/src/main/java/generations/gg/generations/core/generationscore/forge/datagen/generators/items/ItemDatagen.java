@@ -27,31 +27,15 @@ public class ItemDatagen extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        createItem(GenerationsItems.POTION.get(), "restoration/");
-        createItem(GenerationsItems.SUPER_POTION.get(), "restoration/");
-        createItem(GenerationsItems.HYPER_POTION.get(), "restoration/");
-        createItem(GenerationsItems.MAX_POTION.get(), "restoration/");
-        createItem(GenerationsItems.REVIVE.get(), "restoration/");
-        createItem(GenerationsItems.MAX_REVIVE.get(), "restoration/");
         createItem(GenerationsItems.ETHER.get(), "restoration/");
         createItem(GenerationsItems.MAX_ETHER.get(), "restoration/");
         createItem(GenerationsItems.ELIXIR.get(), "restoration/");
         createItem(GenerationsItems.MAX_ELIXIR.get(), "restoration/");
         createItem(GenerationsItems.PP_UP.get(), "restoration/");
         createItem(GenerationsItems.PP_MAX.get(), "restoration/");
-        createItem(GenerationsItems.FULL_HEAL.get(), "restoration/");
         createItem(GenerationsItems.FULL_RESTORE.get(), "restoration/");
         createItem(GenerationsItems.ANTIDOTE.get(), "restoration/");
-        createItem(GenerationsItems.PARALYZE_HEAL.get(), "restoration/");
         createItem(GenerationsItems.AWAKENING.get(), "restoration/");
-        createItem(GenerationsItems.BURN_HEAL.get(), "restoration/");
-        createItem(GenerationsItems.ICE_HEAL.get(), "restoration/");
-        /*createItem(GenerationsItems.RARE_CANDY.get(), "restoration/");
-        createItem(GenerationsItems.XS_CANDY.get(), "restoration/");
-        createItem(GenerationsItems.S_CANDY.get(), "restoration/");
-        createItem(GenerationsItems.M_CANDY.get(), "restoration/");
-        createItem(GenerationsItems.L_CANDY.get(), "restoration/");
-        createItem(GenerationsItems.XL_CANDY.get(), "restoration/");*/
         createItem(GenerationsItems.HEALTH_FEATHER.get(), "restoration/");
         createItem(GenerationsItems.MUSCLE_FEATHER.get(), "restoration/");
         createItem(GenerationsItems.RESIST_FEATHER.get(), "restoration/");
@@ -96,7 +80,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.BLUE_FLUTE.get(), "restoration/");
         createItem(GenerationsItems.RED_FLUTE.get(), "restoration/");
         createItem(GenerationsItems.YELLOW_FLUTE.get(), "restoration/");
-        createItem(GenerationsItems.HEAL_POWDER.get(), "restoration/");
         createItem(GenerationsItems.ENERGY_POWDER.get(), "restoration/");
         createItem(GenerationsItems.ENERGY_ROOT.get(), "restoration/");
         createItem(GenerationsItems.REVIVAL_HERB.get(), "restoration/");

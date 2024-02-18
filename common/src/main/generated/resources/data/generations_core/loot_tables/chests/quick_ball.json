@@ -90,7 +90,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:max_potion"
+          "name": "cobblemon:max_potion"
         },
         {
           "type": "minecraft:item",

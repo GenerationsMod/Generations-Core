@@ -206,7 +206,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:super_potion"
+          "name": "cobblemon:super_potion"
         },
         {
           "type": "minecraft:item",

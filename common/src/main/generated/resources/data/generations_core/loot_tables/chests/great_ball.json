@@ -138,7 +138,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:hyper_potion"
+          "name": "cobblemon:hyper_potion"
         },
         {
           "type": "minecraft:item",
@@ -198,7 +198,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:paralyze_heal"
+          "name": "cobblemon:paralyze_heal"
         },
         {
           "type": "minecraft:item",

@@ -118,7 +118,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:paralyze_heal"
+          "name": "cobblemon:paralyze_heal"
         },
         {
           "type": "minecraft:item",

@@ -86,7 +86,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:full_heal"
+          "name": "cobblemon:full_heal"
         },
         {
           "type": "minecraft:item",
@@ -110,7 +110,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:ice_heal"
+          "name": "cobblemon:ice_heal"
         },
         {
           "type": "minecraft:item",

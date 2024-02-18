@@ -70,7 +70,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:ice_heal"
+          "name": "cobblemon:ice_heal"
         },
         {
           "type": "minecraft:item",

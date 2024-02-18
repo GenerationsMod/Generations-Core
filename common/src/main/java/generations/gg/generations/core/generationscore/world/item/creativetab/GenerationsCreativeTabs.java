@@ -39,7 +39,7 @@ public class GenerationsCreativeTabs {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations Creative Tabs...");
         GenerationsCreativeTabs.BUILDING_BLOCKS = create("building_blocks", () -> GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET.getBaseBlockSupplier().get().asItem().getDefaultInstance(), GenerationsWood.WOOD_BLOCKS, GenerationsBlocks.BLOCK_ITEMS, GenerationsOres.ORES);
-        GenerationsCreativeTabs.RESTORATION = create("restoration", () -> GenerationsItems.POTION.get().getDefaultInstance(), GenerationsItems.RESTORATION);
+        GenerationsCreativeTabs.RESTORATION = create("restoration", () -> GenerationsItems.LEMONADE.get().getDefaultInstance(), GenerationsItems.RESTORATION);
         GenerationsCreativeTabs.AWARDS = create("awards", () -> GenerationsItems.RAINBOW_BADGE.get().getDefaultInstance(), GenerationsItems.BADGES, GenerationsItems.RIBBONS);
         GenerationsCreativeTabs.HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN.get().getDefaultInstance(), GenerationsItems.HELD_ITEMS);
         GenerationsCreativeTabs.PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX.get().getDefaultInstance(), GenerationsItems.PLAYER_ITEMS);

@@ -114,7 +114,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:hyper_potion"
+          "name": "cobblemon:hyper_potion"
         },
         {
           "type": "minecraft:item",

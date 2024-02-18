@@ -89,25 +89,15 @@ public class GenerationsItems {
     /**
      * Restoration Items
      */
-    public static final RegistrySupplier<Item> POTION = register("potion", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> SUPER_POTION = register("super_potion", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> HYPER_POTION = register("hyper_potion", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> MAX_POTION = register("max_potion", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> REVIVE = register("revive", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> MAX_REVIVE = register("max_revive", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> ETHER = register("ether", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> PP_UP = register("pp_up", PpUpItem::new, RESTORATION);
     public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), RESTORATION);
-    public static final RegistrySupplier<Item> FULL_HEAL = register("full_heal", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> ANTIDOTE = register("antidote", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> PARALYZE_HEAL = register("paralyze_heal", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> AWAKENING = register("awakening", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> BURN_HEAL = register("burn_heal", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> ICE_HEAL = register("ice_heal", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> HEALTH_FEATHER = register("health_feather", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> MUSCLE_FEATHER = register("muscle_feather", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> RESIST_FEATHER = register("resist_feather", Item::new, RESTORATION);
@@ -147,7 +137,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> BLUE_FLUTE = register("blue_flute", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> RED_FLUTE = register("red_flute", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> YELLOW_FLUTE = register("yellow_flute", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> HEAL_POWDER = register("heal_powder", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> ENERGY_POWDER = register("energy_powder", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> ENERGY_ROOT = register("energy_root", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> REVIVAL_HERB = register("revival_herb", Item::new, RESTORATION);

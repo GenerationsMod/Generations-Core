@@ -86,7 +86,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:burn_heal"
+          "name": "cobblemon:burn_heal"
         },
         {
           "type": "minecraft:item",
@@ -174,7 +174,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:full_heal"
+          "name": "cobblemon:full_heal"
         },
         {
           "type": "minecraft:item",
@@ -302,7 +302,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:super_potion"
+          "name": "cobblemon:super_potion"
         },
         {
           "type": "minecraft:item",

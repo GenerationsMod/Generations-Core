@@ -22,7 +22,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:burn_heal"
+          "name": "cobblemon:burn_heal"
         },
         {
           "type": "minecraft:item",
@@ -90,7 +90,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:ice_heal"
+          "name": "cobblemon:ice_heal"
         },
         {
           "type": "minecraft:item",
@@ -110,7 +110,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:max_potion"
+          "name": "cobblemon:max_potion"
         },
         {
           "type": "minecraft:item",
@@ -130,7 +130,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:potion"
+          "name": "cobblemon:potion"
         },
         {
           "type": "minecraft:item",
