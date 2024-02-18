@@ -59,27 +59,27 @@ public class RksRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ResourceLocation getId() {
+    public @NotNull ResourceLocation getId() {
         return this.id;
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return GenerationsCoreRecipeSerializers.RKS.get();
     }
 
     @Override
-    public String getGroup() {
+    public @NotNull String getGroup() {
         return this.group;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public @NotNull RecipeType<?> getType() {
         return GenerationsCoreRecipeTypes.RKS.get();
     }
 
     @Override
-    public ItemStack getResultItem(RegistryAccess registryAccess) {
+    public @NotNull ItemStack getResultItem(@NotNull RegistryAccess registryAccess) {
         if(result instanceof RksResult.ItemResult result) return result.item().getDefaultInstance();
         else if(result instanceof RksResult.PokemonResult result) {
             try {
@@ -92,7 +92,7 @@ public class RksRecipe implements Recipe<Container> {
     }
 
     @Override
-    public NonNullList<Ingredient> getIngredients() {
+    public @NotNull NonNullList<Ingredient> getIngredients() {
         return this.recipeItems;
     }
 
@@ -110,7 +110,7 @@ public class RksRecipe implements Recipe<Container> {
      * Used to check if a recipe matches current crafting inventory
      */
     @Override
-    public boolean matches(Container inv, Level level) {
+    public boolean matches(@NotNull Container inv, @NotNull Level level) {
         for (int i = 0; i <= 3 - this.width; ++i) {
             for (int j = 0; j <= 3 - this.height; ++j) {
                 if (this.matches(inv, i, j, true)) {
@@ -142,7 +142,7 @@ public class RksRecipe implements Recipe<Container> {
         return true;
     }
 
-    public NonNullList<ItemStack> getRemainingItems(Container container) {
+    public @NotNull NonNullList<ItemStack> getRemainingItems(Container container) {
         NonNullList<ItemStack> nonNullList = NonNullList.withSize(container.getContainerSize(), ItemStack.EMPTY);
         for (int i = 1; i < nonNullList.size(); ++i) {
             Item item = container.getItem(i).getItem();
@@ -153,7 +153,7 @@ public class RksRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ItemStack assemble(Container container, RegistryAccess registryAccess) {
+    public @NotNull ItemStack assemble(@NotNull Container container, @NotNull RegistryAccess registryAccess) {
         return this.getResultItem(registryAccess).copy();
     }
 
