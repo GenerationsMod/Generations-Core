@@ -95,8 +95,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GENIUS_FEATHER = register("genius_feather", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> CLEVER_FEATHER = register("clever_feather", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> SWIFT_FEATHER = register("swift_feather", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> DIRE_HIT = register("dire_hit", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> GUARD_SPEC = register("guard_spec", Item::new, RESTORATION);
 
     public static final RegistrySupplier<Item> PURPLE_JUICE = register("purple_juice", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> RED_JUICE = register("red_juice", Item::new, RESTORATION);

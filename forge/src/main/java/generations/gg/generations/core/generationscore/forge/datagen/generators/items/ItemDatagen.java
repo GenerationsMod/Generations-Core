@@ -39,8 +39,6 @@ public class ItemDatagen extends ItemModelProvider {
 //        createItem(GenerationsItems.CALCIUM.get(), "restoration/");
 //        createItem(GenerationsItems.ZINC.get(), "restoration/");
 //        createItem(GenerationsItems.CARBOS.get(), "restoration/");
-        createItem(GenerationsItems.DIRE_HIT.get(), "restoration/");
-        createItem(GenerationsItems.GUARD_SPEC.get(), "restoration/");
         createItem(GenerationsItems.PURPLE_JUICE.get(), "restoration/");
         createItem(GenerationsItems.RED_JUICE.get(), "restoration/");
         createItem(GenerationsItems.YELLOW_JUICE.get(), "restoration/");

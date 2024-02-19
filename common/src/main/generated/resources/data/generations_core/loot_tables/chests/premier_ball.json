@@ -102,7 +102,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:guard_spec"
+          "name": "cobblemon:guard_spec"
         },
         {
           "type": "minecraft:item",
