@@ -190,7 +190,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_speed"
+          "name": "cobblemon:x_speed"
         },
         {
           "type": "minecraft:item",

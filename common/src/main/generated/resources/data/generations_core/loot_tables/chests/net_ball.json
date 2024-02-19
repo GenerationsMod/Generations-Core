@@ -190,19 +190,19 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_defense"
+          "name": "cobblemon:x_defence"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_special_attack"
+          "name": "cobblemon:x_special_attack"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_special_defense"
+          "name": "cobblemon:x_special_defence"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_speed"
+          "name": "cobblemon:x_speed"
         },
         {
           "type": "minecraft:item",

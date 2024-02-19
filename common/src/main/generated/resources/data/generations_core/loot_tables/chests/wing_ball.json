@@ -342,7 +342,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_speed"
+          "name": "cobblemon:x_speed"
         },
         {
           "type": "minecraft:item",
@@ -350,7 +350,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_attack"
+          "name": "cobblemon:x_attack"
         },
         {
           "type": "minecraft:item",

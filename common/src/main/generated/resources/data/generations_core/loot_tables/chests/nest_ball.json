@@ -194,7 +194,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_accuracy"
+          "name": "cobblemon:x_accuracy"
         },
         {
           "type": "minecraft:item",
@@ -202,15 +202,15 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_defense"
+          "name": "cobblemon:x_defence"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_special_attack"
+          "name": "cobblemon:x_special_attack"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_special_defense"
+          "name": "cobblemon:x_special_defence"
         },
         {
           "type": "minecraft:item",

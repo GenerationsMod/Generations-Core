@@ -214,7 +214,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_accuracy"
+          "name": "cobblemon:x_accuracy"
         },
         {
           "type": "minecraft:item",

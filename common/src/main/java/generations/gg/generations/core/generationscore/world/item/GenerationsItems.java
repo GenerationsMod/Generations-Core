@@ -95,12 +95,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GENIUS_FEATHER = register("genius_feather", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> CLEVER_FEATHER = register("clever_feather", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> SWIFT_FEATHER = register("swift_feather", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> X_ATTACK = register("x_attack", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> X_DEFENSE = register("x_defense", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> X_SPECIAL_ATTACK = register("x_special_attack", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> X_SPECIAL_DEFENSE = register("x_special_defense", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> X_SPEED = register("x_speed", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> X_ACCURACY = register("x_accuracy", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> DIRE_HIT = register("dire_hit", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> GUARD_SPEC = register("guard_spec", Item::new, RESTORATION);
 

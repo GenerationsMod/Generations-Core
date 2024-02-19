@@ -234,7 +234,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_special_defense"
+          "name": "cobblemon:x_special_defence"
         },
         {
           "type": "minecraft:item",
