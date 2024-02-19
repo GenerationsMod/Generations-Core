@@ -6,10 +6,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,8 +36,7 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     THUNDER_STONE("thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.THUNDER_STONE),
     WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.WATER_STONE);
 
-    private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
-    private final String name;
+	private final String name;
     private final int durabilityMultiplier;
     private final int[] slotProtections;
     private final int enchantmentValue;
@@ -61,8 +57,8 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     }
 
     @Override
-    public int getDurabilityForType(ArmorItem.Type type) {
-        return HEALTH_PER_SLOT[type.getSlot().getIndex()] * this.durabilityMultiplier;
+    public int getDurabilityForType(ArmorItem.@NotNull Type type) {
+        return ArmorMaterials.HEALTH_FUNCTION_FOR_TYPE.get(type) * this.durabilityMultiplier;
     }
 
     @Override

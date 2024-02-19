@@ -46,3 +46,5 @@ accessible method net/minecraft/world/item/crafting/RecipeManager byType (Lnet/m
 
 accessible field net/minecraft/world/level/block/entity/BlockEntityType validBlocks Ljava/util/Set;
 mutable field net/minecraft/world/level/block/entity/BlockEntityType validBlocks Ljava/util/Set;
+
+accessible field net/minecraft/world/item/ArmorMaterials HEALTH_FUNCTION_FOR_TYPE Ljava/util/EnumMap;
