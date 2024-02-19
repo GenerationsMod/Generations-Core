@@ -138,8 +138,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> RED_FLUTE = register("red_flute", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> YELLOW_FLUTE = register("yellow_flute", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> ENERGY_POWDER = register("energy_powder", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> ENERGY_ROOT = register("energy_root", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> REVIVAL_HERB = register("revival_herb", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> SWEET_HEART = register("sweet_heart", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> BASIC_SWEET_POKE_PUFF = register("basic_sweet_poke_puff", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> BASIC_CITRUS_POKE_PUFF = register("basic_citrus_poke_puff", Item::new, RESTORATION);
@@ -538,7 +536,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ADRENALINE_ORB = registerHeldItem("adrenaline_orb");
     public static final RegistrySupplier<Item> AIR_BALLOON = registerHeldItem("air_balloon");
     public static final RegistrySupplier<Item> AMULET_COIN = registerHeldItem("amulet_coin");
-    public static final RegistrySupplier<Item> BERRY_JUICE = registerHeldItem("berry_juice");
     public static final RegistrySupplier<Item> BINDING_BAND = registerHeldItem("binding_band");
     public static final RegistrySupplier<Item> BLACK_FLUTE = registerHeldItem("black_flute");
     public static final RegistrySupplier<Item> BLUNDER_POLICY = registerHeldItem("blunder_policy");

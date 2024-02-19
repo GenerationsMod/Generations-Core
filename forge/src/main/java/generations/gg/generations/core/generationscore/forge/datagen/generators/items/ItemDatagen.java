@@ -81,8 +81,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RED_FLUTE.get(), "restoration/");
         createItem(GenerationsItems.YELLOW_FLUTE.get(), "restoration/");
         createItem(GenerationsItems.ENERGY_POWDER.get(), "restoration/");
-        createItem(GenerationsItems.ENERGY_ROOT.get(), "restoration/");
-        createItem(GenerationsItems.REVIVAL_HERB.get(), "restoration/");
         createItem(GenerationsItems.SWEET_HEART.get(), "restoration/");
         createItem(GenerationsItems.BASIC_SWEET_POKE_PUFF.get(), "restoration/");
         createItem(GenerationsItems.BASIC_CITRUS_POKE_PUFF.get(), "restoration/");
@@ -110,7 +108,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.ADRENALINE_ORB.get());
         createHeldItem(GenerationsItems.AIR_BALLOON.get());
         createHeldItem(GenerationsItems.AMULET_COIN.get());
-        createHeldItem(GenerationsItems.BERRY_JUICE.get());
         createHeldItem(GenerationsItems.BINDING_BAND.get());
         createHeldItem(GenerationsItems.BLACK_FLUTE.get());
         createHeldItem(GenerationsItems.BLUNDER_POLICY.get());
