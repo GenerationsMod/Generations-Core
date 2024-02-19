@@ -178,7 +178,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:antidote"
+          "name": "cobblemon:antidote"
         },
         {
           "type": "minecraft:item",

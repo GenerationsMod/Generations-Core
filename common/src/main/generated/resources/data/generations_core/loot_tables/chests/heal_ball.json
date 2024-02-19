@@ -14,7 +14,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:antidote"
+          "name": "cobblemon:antidote"
         },
         {
           "type": "minecraft:item",
@@ -22,7 +22,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:awakening"
+          "name": "cobblemon:awakening"
         },
         {
           "type": "minecraft:item",
@@ -86,7 +86,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:elixir"
+          "name": "cobblemon:elixir"
         },
         {
           "type": "minecraft:item",
@@ -110,7 +110,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:full_restore"
+          "name": "cobblemon:full_restore"
         },
         {
           "type": "minecraft:item",

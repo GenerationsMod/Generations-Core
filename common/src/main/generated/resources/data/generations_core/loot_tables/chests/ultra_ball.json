@@ -18,7 +18,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:awakening"
+          "name": "cobblemon:awakening"
         },
         {
           "type": "minecraft:item",
@@ -178,7 +178,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:full_restore"
+          "name": "cobblemon:full_restore"
         },
         {
           "type": "minecraft:item",
@@ -226,7 +226,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:max_elixir"
+          "name": "cobblemon:max_elixir"
         },
         {
           "type": "minecraft:item",

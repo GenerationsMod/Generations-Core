@@ -1,14 +1,5 @@
 {
   "values": [
-    "generations_core:ether",
-    "generations_core:max_ether",
-    "generations_core:elixir",
-    "generations_core:max_elixir",
-    "generations_core:pp_up",
-    "generations_core:pp_max",
-    "generations_core:full_restore",
-    "generations_core:antidote",
-    "generations_core:awakening",
     "generations_core:health_feather",
     "generations_core:muscle_feather",
     "generations_core:resist_feather",

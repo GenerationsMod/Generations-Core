@@ -154,7 +154,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:max_ether"
+          "name": "cobblemon:max_ether"
         },
         {
           "type": "minecraft:item",

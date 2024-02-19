@@ -18,7 +18,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:antidote"
+          "name": "cobblemon:antidote"
         },
         {
           "type": "minecraft:item",
@@ -74,7 +74,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:elixir"
+          "name": "cobblemon:elixir"
         },
         {
           "type": "minecraft:item",

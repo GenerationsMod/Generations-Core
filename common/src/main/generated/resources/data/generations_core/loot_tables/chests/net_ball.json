@@ -42,7 +42,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:elixir"
+          "name": "cobblemon:elixir"
         },
         {
           "type": "minecraft:item",
@@ -94,7 +94,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:max_elixir"
+          "name": "cobblemon:max_elixir"
         },
         {
           "type": "minecraft:item",

@@ -42,7 +42,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:ether"
+          "name": "cobblemon:ether"
         },
         {
           "type": "minecraft:item",

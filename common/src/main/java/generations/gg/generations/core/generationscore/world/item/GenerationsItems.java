@@ -89,15 +89,6 @@ public class GenerationsItems {
     /**
      * Restoration Items
      */
-    public static final RegistrySupplier<Item> ETHER = register("ether", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> MAX_ETHER = register("max_ether", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> ELIXIR = register("elixir", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> MAX_ELIXIR = register("max_elixir", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> PP_UP = register("pp_up", PpUpItem::new, RESTORATION);
-    public static final RegistrySupplier<Item> PP_MAX = register("pp_max", properties -> new PpUpItem(properties, true), RESTORATION);
-    public static final RegistrySupplier<Item> FULL_RESTORE = register("full_restore", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> ANTIDOTE = register("antidote", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> AWAKENING = register("awakening", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> HEALTH_FEATHER = register("health_feather", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> MUSCLE_FEATHER = register("muscle_feather", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> RESIST_FEATHER = register("resist_feather", Item::new, RESTORATION);

@@ -27,15 +27,6 @@ public class ItemDatagen extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        createItem(GenerationsItems.ETHER.get(), "restoration/");
-        createItem(GenerationsItems.MAX_ETHER.get(), "restoration/");
-        createItem(GenerationsItems.ELIXIR.get(), "restoration/");
-        createItem(GenerationsItems.MAX_ELIXIR.get(), "restoration/");
-        createItem(GenerationsItems.PP_UP.get(), "restoration/");
-        createItem(GenerationsItems.PP_MAX.get(), "restoration/");
-        createItem(GenerationsItems.FULL_RESTORE.get(), "restoration/");
-        createItem(GenerationsItems.ANTIDOTE.get(), "restoration/");
-        createItem(GenerationsItems.AWAKENING.get(), "restoration/");
         createItem(GenerationsItems.HEALTH_FEATHER.get(), "restoration/");
         createItem(GenerationsItems.MUSCLE_FEATHER.get(), "restoration/");
         createItem(GenerationsItems.RESIST_FEATHER.get(), "restoration/");
