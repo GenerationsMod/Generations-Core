@@ -2,14 +2,11 @@
   "schemaVersion": 1,
   "id": "generations_core",
   "version": "${version}",
-
   "name": "Generations-Core",
   "description": "",
   "authors": ["Joseph T. McQuigg (JT122406)", "Waterpicker"],
-  "contributors": ["Greg_lor"],
-  "contact": {},
+  "contributors": ["Greg_lor, Hydos, Dysthymic"],
   "icon": "generations.png",
-
   "license": "GNU GPL 3.0",
   "environment": "*",
   "entrypoints": {
