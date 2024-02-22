@@ -94,7 +94,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.BINDING_BAND.get());
         createHeldItem(GenerationsItems.BLACK_FLUTE.get());
         createHeldItem(GenerationsItems.BLUNDER_POLICY.get());
-        createHeldItem(GenerationsItems.BRIGHT_POWDER.get());
         createHeldItem(GenerationsItems.CELL_BATTERY.get());
         createHeldItem(GenerationsItems.CHARCOAL.get());
         createHeldItem(GenerationsItems.CHOICE_BAND.get());
@@ -122,8 +121,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.LUCKY_PUNCH.get());
         createHeldItem(GenerationsItems.LUMINOUS_MOSS.get());
         createHeldItem(GenerationsItems.MACHO_BRACE.get());
-        createHeldItem(GenerationsItems.MENTAL_HERB.get());
-        createHeldItem(GenerationsItems.METAL_POWDER.get());
         createHeldItem(GenerationsItems.METRONOME.get());
         createHeldItem(GenerationsItems.POKE_DOLL.get());
         createHeldItem(GenerationsItems.POKE_TOY.get());
@@ -131,12 +128,10 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.POWER_BAND.get());
         createHeldItem(GenerationsItems.POWER_BELT.get());
         createHeldItem(GenerationsItems.POWER_BRACER.get());
-        createHeldItem(GenerationsItems.POWER_HERB.get());
         createHeldItem(GenerationsItems.POWER_LENS.get());
         createHeldItem(GenerationsItems.POWER_WEIGHT.get());
         createHeldItem(GenerationsItems.PRISM_SCALE.get());
         createHeldItem(GenerationsItems.PROTECTIVE_PADS.get());
-        createHeldItem(GenerationsItems.QUICK_POWDER.get());
         createHeldItem(GenerationsItems.RED_CARD.get());
         createHeldItem(GenerationsItems.RING_TARGET.get());
         createHeldItem(GenerationsItems.ROOM_SERVICE.get());
@@ -157,7 +152,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.UTILITY_UMBRELLA.get());
         createHeldItem(GenerationsItems.WEAKNESS_POLICY.get());
         createHeldItem(GenerationsItems.WHITE_FLUTE.get());
-        createHeldItem(GenerationsItems.WHITE_HERB.get());
         createHeldItem(GenerationsItems.WIDE_LENS.get());
         createHeldItem(GenerationsItems.ZOOM_LENS.get());
 

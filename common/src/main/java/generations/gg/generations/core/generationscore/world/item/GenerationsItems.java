@@ -522,7 +522,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> BINDING_BAND = registerHeldItem("binding_band");
     public static final RegistrySupplier<Item> BLACK_FLUTE = registerHeldItem("black_flute");
     public static final RegistrySupplier<Item> BLUNDER_POLICY = registerHeldItem("blunder_policy");
-    public static final RegistrySupplier<Item> BRIGHT_POWDER = registerHeldItem("bright_powder");
     public static final RegistrySupplier<Item> CELL_BATTERY = registerHeldItem("cell_battery");
     public static final RegistrySupplier<Item> CHARCOAL = registerHeldItem("charcoal");
     public static final RegistrySupplier<Item> CHOICE_BAND = registerHeldItem("choice_band");
@@ -550,8 +549,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> LUCKY_PUNCH = registerHeldItem("lucky_punch");
     public static final RegistrySupplier<Item> LUMINOUS_MOSS = registerHeldItem("luminous_moss");
     public static final RegistrySupplier<Item> MACHO_BRACE = registerHeldItem("macho_brace");
-    public static final RegistrySupplier<Item> MENTAL_HERB = registerHeldItem("mental_herb");
-    public static final RegistrySupplier<Item> METAL_POWDER = registerHeldItem("metal_powder");
     public static final RegistrySupplier<Item> METRONOME = registerHeldItem("metronome");
     public static final RegistrySupplier<Item> POKE_DOLL = registerHeldItem("poke_doll");
     public static final RegistrySupplier<Item> POKE_TOY = registerHeldItem("poke_toy");
@@ -559,12 +556,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> POWER_BAND = registerHeldItem("power_band");
     public static final RegistrySupplier<Item> POWER_BELT = registerHeldItem("power_belt");
     public static final RegistrySupplier<Item> POWER_BRACER = registerHeldItem("power_bracer");
-    public static final RegistrySupplier<Item> POWER_HERB = registerHeldItem("power_herb");
     public static final RegistrySupplier<Item> POWER_LENS = registerHeldItem("power_lens");
     public static final RegistrySupplier<Item> POWER_WEIGHT = registerHeldItem("power_weight");
     public static final RegistrySupplier<Item> PRISM_SCALE = registerHeldItem("prism_scale");
     public static final RegistrySupplier<Item> PROTECTIVE_PADS = registerHeldItem("protective_pads");
-    public static final RegistrySupplier<Item> QUICK_POWDER = registerHeldItem("quick_powder");
     public static final RegistrySupplier<Item> RED_CARD = registerHeldItem("red_card");
     public static final RegistrySupplier<Item> RING_TARGET = registerHeldItem("ring_target");
     public static final RegistrySupplier<Item> ROOM_SERVICE = registerHeldItem("room_service");
@@ -585,7 +580,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> UTILITY_UMBRELLA = registerHeldItem("utility_umbrella");
     public static final RegistrySupplier<Item> WEAKNESS_POLICY = registerHeldItem("weakness_policy");
     public static final RegistrySupplier<Item> WHITE_FLUTE = registerHeldItem("white_flute");
-    public static final RegistrySupplier<Item> WHITE_HERB = registerHeldItem("white_herb");
     public static final RegistrySupplier<Item> WIDE_LENS = registerHeldItem("wide_lens");
     public static final RegistrySupplier<Item> ZOOM_LENS = registerHeldItem("zoom_lens");
     public static final RegistrySupplier<Item> BURN_DRIVE = registerHeldItem("burn_drive");

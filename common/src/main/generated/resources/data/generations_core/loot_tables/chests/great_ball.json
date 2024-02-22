@@ -42,7 +42,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:bright_powder"
+          "name": "cobblemon:bright_powder"
         },
         {
           "type": "minecraft:item",
@@ -162,7 +162,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:mental_herb"
+          "name": "cobblemon:mental_herb"
         },
         {
           "type": "minecraft:item",

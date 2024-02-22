@@ -38,7 +38,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:bright_powder"
+          "name": "cobblemon:bright_powder"
         },
         {
           "type": "minecraft:item",
@@ -246,7 +246,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:quick_powder"
+          "name": "cobblemon:quick_powder"
         },
         {
           "type": "minecraft:item",

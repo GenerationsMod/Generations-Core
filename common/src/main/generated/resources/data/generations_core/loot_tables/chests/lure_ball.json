@@ -134,7 +134,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:metal_powder"
+          "name": "cobblemon:metal_powder"
         },
         {
           "type": "minecraft:item",
@@ -166,7 +166,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_herb"
+          "name": "cobblemon:power_herb"
         },
         {
           "type": "minecraft:item",

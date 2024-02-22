@@ -126,7 +126,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:metal_powder"
+          "name": "cobblemon:metal_powder"
         },
         {
           "type": "minecraft:item",
