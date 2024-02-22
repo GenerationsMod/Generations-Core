@@ -98,7 +98,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:charcoal"
+          "name": "cobblemon:charcoal_stick"
         },
         {
           "type": "minecraft:item",

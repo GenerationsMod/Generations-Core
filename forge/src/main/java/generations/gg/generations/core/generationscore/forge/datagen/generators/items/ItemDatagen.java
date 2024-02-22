@@ -95,9 +95,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.BLACK_FLUTE.get());
         createHeldItem(GenerationsItems.BLUNDER_POLICY.get());
         createHeldItem(GenerationsItems.CELL_BATTERY.get());
-        createHeldItem(GenerationsItems.CHARCOAL.get());
-        createHeldItem(GenerationsItems.CHOICE_BAND.get());
-        createHeldItem(GenerationsItems.CLEANSE_TAG.get());
         createHeldItem(GenerationsItems.DAMP_ROCK.get());
         createHeldItem(GenerationsItems.DESTINY_KNOT.get());
         createHeldItem(GenerationsItems.EJECT_BUTTON.get());

@@ -523,9 +523,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> BLACK_FLUTE = registerHeldItem("black_flute");
     public static final RegistrySupplier<Item> BLUNDER_POLICY = registerHeldItem("blunder_policy");
     public static final RegistrySupplier<Item> CELL_BATTERY = registerHeldItem("cell_battery");
-    public static final RegistrySupplier<Item> CHARCOAL = registerHeldItem("charcoal");
-    public static final RegistrySupplier<Item> CHOICE_BAND = registerHeldItem("choice_band");
-    public static final RegistrySupplier<Item> CLEANSE_TAG = registerHeldItem("cleanse_tag");
     public static final RegistrySupplier<Item> DAMP_ROCK = registerHeldItem("damp_rock");
     public static final RegistrySupplier<Item> DESTINY_KNOT = registerHeldItem("destiny_knot");
     public static final RegistrySupplier<Item> EJECT_BUTTON = registerHeldItem("eject_button");
