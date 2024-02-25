@@ -126,11 +126,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_anklet"
+          "name": "cobblemon:power_anklet"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_band"
+          "name": "cobblemon:power_band"
         },
         {
           "type": "minecraft:item",

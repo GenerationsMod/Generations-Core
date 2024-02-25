@@ -226,7 +226,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_weight"
+          "name": "cobblemon:power_weight"
         },
         {
           "type": "minecraft:item",

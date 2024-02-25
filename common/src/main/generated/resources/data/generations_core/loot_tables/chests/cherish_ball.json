@@ -78,7 +78,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:everstone"
+          "name": "cobblemon:everstone"
         },
         {
           "type": "minecraft:item",
@@ -190,7 +190,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_belt"
+          "name": "cobblemon:power_belt"
         },
         {
           "type": "minecraft:item",

@@ -150,11 +150,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_anklet"
+          "name": "cobblemon:power_anklet"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_bracer"
+          "name": "cobblemon:power_bracer"
         },
         {
           "type": "minecraft:item",

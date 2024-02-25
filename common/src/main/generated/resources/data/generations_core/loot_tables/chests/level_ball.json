@@ -42,7 +42,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:everstone"
+          "name": "cobblemon:everstone"
         },
         {
           "type": "minecraft:item",
@@ -166,7 +166,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_bracer"
+          "name": "cobblemon:power_bracer"
         },
         {
           "type": "minecraft:item",

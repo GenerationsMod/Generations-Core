@@ -258,27 +258,27 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_anklet"
+          "name": "cobblemon:power_anklet"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_band"
+          "name": "cobblemon:power_band"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_belt"
+          "name": "cobblemon:power_belt"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_bracer"
+          "name": "cobblemon:power_bracer"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_lens"
+          "name": "cobblemon:power_lens"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_weight"
+          "name": "cobblemon:power_weight"
         },
         {
           "type": "minecraft:item",

@@ -178,7 +178,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_band"
+          "name": "cobblemon:power_band"
         },
         {
           "type": "minecraft:item",

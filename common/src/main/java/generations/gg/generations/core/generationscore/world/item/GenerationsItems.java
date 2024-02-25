@@ -524,14 +524,11 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> BLUNDER_POLICY = registerHeldItem("blunder_policy");
     public static final RegistrySupplier<Item> CELL_BATTERY = registerHeldItem("cell_battery");
     public static final RegistrySupplier<Item> DAMP_ROCK = registerHeldItem("damp_rock");
-    public static final RegistrySupplier<Item> DESTINY_KNOT = registerHeldItem("destiny_knot");
     public static final RegistrySupplier<Item> EJECT_BUTTON = registerHeldItem("eject_button");
     public static final RegistrySupplier<Item> EJECT_PACK = registerHeldItem("eject_pack");
-    public static final RegistrySupplier<Item> EVERSTONE = registerHeldItem("everstone");
     public static final RegistrySupplier<Item> EVIOLITE = registerHeldItem("eviolite");
     public static final RegistrySupplier<Item> EXP_ALL = registerHeldItem("exp_all");
     public static final RegistrySupplier<Item> EXPERT_BELT = registerHeldItem("expert_belt");
-    public static final RegistrySupplier<Item> FLAME_ORB = registerHeldItem("flame_orb");
     public static final RegistrySupplier<Item> FLOAT_STONE = registerHeldItem("float_stone");
     public static final RegistrySupplier<Item> FLUFFY_TAIL = registerHeldItem("fluffy_tail");
     public static final RegistrySupplier<Item> FOCUS_SASH = registerHeldItem("focus_sash");
@@ -541,7 +538,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> IRON_BALL = registerHeldItem("iron_ball");
     public static final RegistrySupplier<Item> LAGGING_TAIL = registerHeldItem("lagging_tail");
     public static final RegistrySupplier<Item> LEEK = registerHeldItem("leek");
-    public static final RegistrySupplier<Item> LIFE_ORB = registerHeldItem("life_orb");
     public static final RegistrySupplier<Item> LIGHT_BALL = registerHeldItem("light_ball");
     public static final RegistrySupplier<Item> LUCKY_PUNCH = registerHeldItem("lucky_punch");
     public static final RegistrySupplier<Item> LUMINOUS_MOSS = registerHeldItem("luminous_moss");
@@ -549,12 +545,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> METRONOME = registerHeldItem("metronome");
     public static final RegistrySupplier<Item> POKE_DOLL = registerHeldItem("poke_doll");
     public static final RegistrySupplier<Item> POKE_TOY = registerHeldItem("poke_toy");
-    public static final RegistrySupplier<Item> POWER_ANKLET = registerHeldItem("power_anklet");
-    public static final RegistrySupplier<Item> POWER_BAND = registerHeldItem("power_band");
-    public static final RegistrySupplier<Item> POWER_BELT = registerHeldItem("power_belt");
-    public static final RegistrySupplier<Item> POWER_BRACER = registerHeldItem("power_bracer");
-    public static final RegistrySupplier<Item> POWER_LENS = registerHeldItem("power_lens");
-    public static final RegistrySupplier<Item> POWER_WEIGHT = registerHeldItem("power_weight");
     public static final RegistrySupplier<Item> PRISM_SCALE = registerHeldItem("prism_scale");
     public static final RegistrySupplier<Item> PROTECTIVE_PADS = registerHeldItem("protective_pads");
     public static final RegistrySupplier<Item> RED_CARD = registerHeldItem("red_card");
@@ -563,7 +553,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SCOPE_LENS = registerHeldItem("scope_lens");
     public static final RegistrySupplier<Item> SHED_SHELL = registerHeldItem("shed_shell");
     public static final RegistrySupplier<Item> SHELL_BELL = registerHeldItem("shell_bell");
-    public static final RegistrySupplier<Item> SMOKE_BALL = registerHeldItem("smoke_ball");
     public static final RegistrySupplier<Item> SMOOTH_ROCK = registerHeldItem("smooth_rock");
     public static final RegistrySupplier<Item> SNOWBALL = registerHeldItem("snowball");
     public static final RegistrySupplier<Item> SOOTHE_BELL = registerHeldItem("soothe_bell");
@@ -572,7 +561,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TERRAIN_EXTENDER = registerHeldItem("terrain_extender");
     public static final RegistrySupplier<Item> THICK_CLUB = registerHeldItem("thick_club");
     public static final RegistrySupplier<Item> THROAT_SPRAY = registerHeldItem("throat_spray");
-    public static final RegistrySupplier<Item> TOXIC_ORB = registerHeldItem("toxic_orb");
     public static final RegistrySupplier<Item> UP_GRADE = registerHeldItem("up_grade");
     public static final RegistrySupplier<Item> UTILITY_UMBRELLA = registerHeldItem("utility_umbrella");
     public static final RegistrySupplier<Item> WEAKNESS_POLICY = registerHeldItem("weakness_policy");

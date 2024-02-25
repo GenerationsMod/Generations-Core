@@ -96,14 +96,11 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.BLUNDER_POLICY.get());
         createHeldItem(GenerationsItems.CELL_BATTERY.get());
         createHeldItem(GenerationsItems.DAMP_ROCK.get());
-        createHeldItem(GenerationsItems.DESTINY_KNOT.get());
         createHeldItem(GenerationsItems.EJECT_BUTTON.get());
         createHeldItem(GenerationsItems.EJECT_PACK.get());
-        createHeldItem(GenerationsItems.EVERSTONE.get());
         createHeldItem(GenerationsItems.EVIOLITE.get());
         createHeldItem(GenerationsItems.EXP_ALL.get());
         createHeldItem(GenerationsItems.EXPERT_BELT.get());
-        createHeldItem(GenerationsItems.FLAME_ORB.get());
         createHeldItem(GenerationsItems.FLOAT_STONE.get());
         createHeldItem(GenerationsItems.FLUFFY_TAIL.get());
         createHeldItem(GenerationsItems.FOCUS_SASH.get());
@@ -113,7 +110,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.IRON_BALL.get());
         createHeldItem(GenerationsItems.LAGGING_TAIL.get());
         createHeldItem(GenerationsItems.LEEK.get());
-        createHeldItem(GenerationsItems.LIFE_ORB.get());
         createHeldItem(GenerationsItems.LIGHT_BALL.get());
         createHeldItem(GenerationsItems.LUCKY_PUNCH.get());
         createHeldItem(GenerationsItems.LUMINOUS_MOSS.get());
@@ -121,12 +117,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.METRONOME.get());
         createHeldItem(GenerationsItems.POKE_DOLL.get());
         createHeldItem(GenerationsItems.POKE_TOY.get());
-        createHeldItem(GenerationsItems.POWER_ANKLET.get());
-        createHeldItem(GenerationsItems.POWER_BAND.get());
-        createHeldItem(GenerationsItems.POWER_BELT.get());
-        createHeldItem(GenerationsItems.POWER_BRACER.get());
-        createHeldItem(GenerationsItems.POWER_LENS.get());
-        createHeldItem(GenerationsItems.POWER_WEIGHT.get());
         createHeldItem(GenerationsItems.PRISM_SCALE.get());
         createHeldItem(GenerationsItems.PROTECTIVE_PADS.get());
         createHeldItem(GenerationsItems.RED_CARD.get());
@@ -135,7 +125,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.SCOPE_LENS.get());
         createHeldItem(GenerationsItems.SHED_SHELL.get());
         createHeldItem(GenerationsItems.SHELL_BELL.get());
-        createHeldItem(GenerationsItems.SMOKE_BALL.get());
         createHeldItem(GenerationsItems.SMOOTH_ROCK.get());
         createHeldItem(GenerationsItems.SNOWBALL.get());
         createHeldItem(GenerationsItems.SOOTHE_BELL.get());
@@ -144,7 +133,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.TERRAIN_EXTENDER.get());
         createHeldItem(GenerationsItems.THICK_CLUB.get());
         createHeldItem(GenerationsItems.THROAT_SPRAY.get());
-        createHeldItem(GenerationsItems.TOXIC_ORB.get());
         createHeldItem(GenerationsItems.UP_GRADE.get());
         createHeldItem(GenerationsItems.UTILITY_UMBRELLA.get());
         createHeldItem(GenerationsItems.WEAKNESS_POLICY.get());

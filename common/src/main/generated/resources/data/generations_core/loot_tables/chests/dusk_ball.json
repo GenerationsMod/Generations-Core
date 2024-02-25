@@ -134,7 +134,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_lens"
+          "name": "cobblemon:power_lens"
         },
         {
           "type": "minecraft:item",

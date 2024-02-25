@@ -170,7 +170,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:power_belt"
+          "name": "cobblemon:power_belt"
         },
         {
           "type": "minecraft:item",
