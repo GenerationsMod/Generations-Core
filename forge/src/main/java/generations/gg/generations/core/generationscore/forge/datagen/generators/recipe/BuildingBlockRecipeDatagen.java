@@ -590,6 +590,65 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE_SET.getBaseBlock()).requires(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()).requires(Blocks.MOSS_BLOCK).group("mossy_volcanic_cobblestone").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_COBBLESTONE_SET.getBaseBlock(), Blocks.MOSS_BLOCK));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock()).requires(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get()).requires(Blocks.MOSS_BLOCK).group("mossy_volcanic_stone_bricks").unlockedBy(getHasName(Blocks.MOSS_BLOCK), VanillaRecipeProvider.has(Blocks.MOSS_BLOCK)).save(consumer, VanillaRecipeProvider.getConversionRecipeName(GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(), Blocks.MOSS_BLOCK));
 
+        //Dark Prismarine Pillar
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DARK_PRISMARINE_PILLAR.get())
+                .define('X', Items.DARK_PRISMARINE)
+                .pattern("X")
+                .pattern("X")
+                .pattern("X")
+                .unlockedBy(getHasName(Items.DARK_PRISMARINE), has(Items.DARK_PRISMARINE))
+                .save(consumer);
+
+        //Dark Primsarine Pillar Broken
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROKEN_DARK_PRISMARINE_PILLAR.get())
+                .define('X', Items.DARK_PRISMARINE)
+                .pattern("X")
+                .pattern("X")
+                .unlockedBy(getHasName(Items.DARK_PRISMARINE), has(Items.DARK_PRISMARINE))
+                .save(consumer);
+
+        //Prismarine Pillar
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.PRISMARINE_PILLAR.get())
+                .define('X', Items.PRISMARINE)
+                .pattern("X")
+                .pattern("X")
+                .pattern("X")
+                .unlockedBy(getHasName(Items.PRISMARINE), has(Items.PRISMARINE))
+                .save(consumer);
+
+        //Primsarine Pillar Broken
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROKEN_PRISMARINE_PILLAR.get())
+                .define('X', Items.PRISMARINE)
+                .pattern("X")
+                .pattern("X")
+                .unlockedBy(getHasName(Items.PRISMARINE), has(Items.PRISMARINE))
+                .save(consumer);
+
+        //Haunted Pillar
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HAUNTED_PILLAR.get())
+                .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
+                .pattern("X")
+                .pattern("X")
+                .pattern("X")
+                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
+                .save(consumer);
+
+        //Haunted Pillar Broken
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROKEN_HAUNTED_PILLAR.get())
+                .define('X', GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock())
+                .pattern("X")
+                .pattern("X")
+                .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
+                .save(consumer);
+
+        //Cursed Jack O Lantern
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CURSED_JACK_O_LANTERN.get())
+                .define('X', GenerationsBlocks.CURSED_CARVED_PUMPKIN.get())
+                .define('T', Items.TORCH)
+                .pattern("X")
+                .pattern("T")
+                .unlockedBy(getHasName(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()), has(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()))
+                .save(consumer);
 
         //Golden Temple Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()).define('#', GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()).pattern("##").pattern("##").unlockedBy(getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()), has(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get())).save(consumer);
