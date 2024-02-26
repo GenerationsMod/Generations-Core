@@ -523,11 +523,13 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //House Floors
         //Missing Blocks for 1+2 recipes
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_1.get(), GenerationsBlocks.BURST_TURF.get());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_2.get(), GenerationsBlocks.MIRRORED_FLOOR_1_SET.getBaseBlock());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_3.get(), GenerationsBlocks.RUINS_SAND.get());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_4.get(), GenerationsBlocks.OCEAN_BLOCK_SET.getBaseBlock());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_5.get(), GenerationsBlocks.MIRROR_GLASS_SET.getBaseBlock());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_6.get(), GenerationsBlocks.NORMAL_SANDSTONE_SET.getBaseBlock());
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_7.get(), GenerationsBlocks.ICE_PILLAR_TOP_SET.getBaseBlock());
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_8.get(), Items.WAXED_EXPOSED_CUT_COPPER);
 
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.HOUSE_FLOOR_8.get())
@@ -537,6 +539,25 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.COPPER_JUNK.get()), has(GenerationsBlocks.COPPER_JUNK.get()))
                 .save(consumer);
          */
+
+        //Mirrored Floors
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MIRRORED_FLOOR_1_SET.getBaseBlock(), Items.BLUE_STAINED_GLASS);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MIRRORED_FLOOR_2_SET.getBaseBlock(), Items.GRAY_STAINED_GLASS);
+        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MIRRORED_FLOOR_3_SET.getBaseBlock(), Items.WHITE_STAINED_GLASS);
+
+        //Ocean Block
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
+                .requires(Items.PRISMARINE, 1)
+                .requires(CobblemonItems.WATER_STONE, 1)
+                .unlockedBy(getHasName(CobblemonItems.WATER_STONE), has(CobblemonItems.WATER_STONE))
+                .save(consumer);
+
+        //Water Quartz Block
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
+                .requires(Items.QUARTZ, 1)
+                .requires(GenerationsBlocks.OCEAN_BLOCK_SET.getBaseBlock(), 1)
+                .unlockedBy(getHasName(Items.QUARTZ), has(Items.QUARTZ))
+                .save(consumer);
 
         //Ruins Wall
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RUINS_WALL.get(), 4)
