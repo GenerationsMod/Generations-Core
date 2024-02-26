@@ -458,6 +458,14 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Blocks.CLAY), has(Blocks.CLAY))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CAVE_ROCK_FLOOR_SET.getBaseBlock())
+                .define('X', Blocks.GRAVEL)
+                .define('C', GenerationsBlocks.CAVE_ROCK_SET.getBaseBlock())
+                .pattern("XC")
+                .pattern("XC")
+                .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GRAY_CAVE_ROCK_FLOOR_SET.getBaseBlock())
                 .define('X', Blocks.GRAVEL)
                 .pattern("XX")
@@ -557,6 +565,20 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .requires(Items.QUARTZ, 1)
                 .requires(GenerationsBlocks.OCEAN_BLOCK_SET.getBaseBlock(), 1)
                 .unlockedBy(getHasName(Items.QUARTZ), has(Items.QUARTZ))
+                .save(consumer);
+
+        //Bleach Stone
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLEACH_STONE_SET.getBaseBlock(), 1)
+                .requires(Items.COBBLESTONE, 1)
+                .requires(Items.WHITE_DYE, 1)
+                .unlockedBy(getHasName(Items.WHITE_DYE), has(Items.WHITE_DYE))
+                .save(consumer);
+
+        //Ruins Sand
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
+                .requires(Items.SAND, 1)
+                .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock(), 1)
+                .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()))
                 .save(consumer);
 
         //Ruins Wall
