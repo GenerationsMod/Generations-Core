@@ -5,6 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +40,32 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("###")
                 .pattern("X#X")
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.CAMERA.get())
+                .define('I', Items.IRON_INGOT)
+                .define('B', GenerationsItems.CELL_BATTERY.get())
+                .define('G', Items.GLASS_PANE)
+                .define('R', Items.REDSTONE)
+                .pattern("III")
+                .pattern("BRG")
+                .pattern("III")
+                .unlockedBy(getHasName(GenerationsItems.CELL_BATTERY.get()), has(GenerationsItems.CELL_BATTERY.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.SNAP_CAMERA.get())
+                .define('I',GenerationsItems.Z_INGOT.get())
+                .define('B', GenerationsItems.CELL_BATTERY.get())
+                .define('G', Items.GLASS_PANE)
+                .define('R', Items.REDSTONE)
+                .pattern("III")
+                .pattern("BRG")
+                .pattern("III")
+                .unlockedBy(getHasName(GenerationsItems.CELL_BATTERY.get()), has(GenerationsItems.CELL_BATTERY.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.FILM.get())
+                .requires(Items.INK_SAC, 1)
+                .requires(Items.PAPER, 1)
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(consumer);
 
         //These are all HeldItems and Recipes are not needed rn
