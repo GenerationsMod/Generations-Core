@@ -49,6 +49,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
         for (DyeColor color : DyeColor.values()) {
             buildVendingMachineRecipes(consumer, color);
+            buildPastelBeanBagRecipes(consumer, color);
         }
 
         //FURNACES
@@ -145,6 +146,156 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .define('B', Items.STICK)
                 .unlockedBy(getHasName(Items.HAY_BLOCK), has(Items.HAY_BLOCK))
                 .save(consumer);
+
+        //Elevators
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLACK_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.BLACK_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLUE_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.BLUE_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BROWN_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.BROWN_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CYAN_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.CYAN_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.GRAY_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.GRAY_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.GREEN_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.GREEN_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.LIGHT_BLUE_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.LIGHT_GRAY_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIME_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.LIME_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.MAGENTA_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.MAGENTA_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ORANGE_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.ORANGE_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.PINK_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.PINK_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.PURPLE_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.PURPLE_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.RED_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.RED_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.WHITE_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.WHITE_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.YELLOW_ELEVATOR.get(), 1)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('T', Items.YELLOW_GLAZED_TERRACOTTA)
+                .pattern("RIR")
+                .pattern("TTT")
+                .pattern("RIR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+
+        for (DyeColor color : DyeColor.values()) {
+            buildVendingMachineRecipes(consumer, color);
+        }
     }
 
 
@@ -156,6 +307,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .define('E', dye)
                 .define('X', Items.WHITE_WOOL)
                 .pattern("XEX")
+                .pattern("XXX")
                 .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
                 .save(consumer);
 

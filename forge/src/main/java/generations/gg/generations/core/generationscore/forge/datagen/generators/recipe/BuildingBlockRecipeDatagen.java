@@ -270,7 +270,22 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .pattern("QE")
                 .unlockedBy(getHasName(GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock()))
                 .save(consumer);
+        //Castle Pillar
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_PILLAR.get())
+                .define('X', GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock())
+                .pattern("X")
+                .pattern("X")
+                .pattern("X")
+                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()))
+                .save(consumer);
 
+        //Broken Castle Pillar
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BROKEN_CASTLE_PILLAR.get())
+                .define('X', GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock())
+                .pattern("X")
+                .pattern("X")
+                .unlockedBy(getHasName(GenerationsBlocks.CASTLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.ICE_BRICK_SET.getBaseBlock()))
+                .save(consumer);
 
         //Castle Brick
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CASTLE_BRICK_SET.getBaseBlock(), 4)
@@ -631,7 +646,77 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.ULTRABALL_CHEST.get()), has(GenerationsBlocks.ULTRABALL_CHEST.get()))
                 .save(consumer);
 
-
+        //Evolution Stone Block Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DAWN_STONE_BLOCK.get())
+                .define('E', CobblemonItems.DAWN_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.DAWN_STONE.asItem()), has(CobblemonItems.DAWN_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DUSK_STONE_BLOCK.get())
+                .define('E', CobblemonItems.DUSK_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.DUSK_STONE.asItem()), has(CobblemonItems.DUSK_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FIRE_STONE_BLOCK.get())
+                .define('E', CobblemonItems.FIRE_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.FIRE_STONE.asItem()), has(CobblemonItems.FIRE_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_STONE_BLOCK.get())
+                .define('E', CobblemonItems.ICE_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.ICE_STONE.asItem()), has(CobblemonItems.ICE_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LEAF_STONE_BLOCK.get())
+                .define('E', CobblemonItems.LEAF_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.LEAF_STONE.asItem()), has(CobblemonItems.LEAF_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOON_STONE_BLOCK.get())
+                .define('E', CobblemonItems.MOON_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.MOON_STONE.asItem()), has(CobblemonItems.MOON_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINY_STONE_BLOCK.get())
+                .define('E', CobblemonItems.SHINY_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.SHINY_STONE.asItem()), has(CobblemonItems.SHINY_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SUN_STONE_BLOCK.get())
+                .define('E', CobblemonItems.SUN_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.SUN_STONE.asItem()), has(CobblemonItems.SUN_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.THUNDER_STONE_BLOCK.get())
+                .define('E', CobblemonItems.THUNDER_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.THUNDER_STONE.asItem()), has(CobblemonItems.THUNDER_STONE.asItem()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WATER_STONE_BLOCK.get())
+                .define('E', CobblemonItems.WATER_STONE.asItem())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(CobblemonItems.WATER_STONE.asItem()), has(CobblemonItems.WATER_STONE_ORE.asItem()))
+                .save(consumer);
 
         //pokebrick Recipes
         buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
