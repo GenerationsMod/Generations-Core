@@ -650,6 +650,18 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()), has(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()))
                 .save(consumer);
 
+        //Warning Block
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WARNING_BLOCK.get())
+                .requires(Items.YELLOW_CONCRETE, 1 )
+                .requires(Items.BLACK_CONCRETE, 1)
+                .unlockedBy(getHasName(Items.YELLOW_CONCRETE), has(Items.YELLOW_CONCRETE))
+                .save(consumer);
+        //Crate
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRATE.get())
+                .requires(CobblemonItems.APRICORN_PLANKS, 9 )
+                .unlockedBy(getHasName(CobblemonItems.APRICORN_PLANKS), has(CobblemonItems.APRICORN_PLANKS))
+                .save(consumer);
+
         //Golden Temple Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()).define('#', GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()).pattern("##").pattern("##").unlockedBy(getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get()), has(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get())).save(consumer);
 

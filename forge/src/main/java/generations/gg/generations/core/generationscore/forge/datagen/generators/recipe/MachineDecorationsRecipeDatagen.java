@@ -147,6 +147,26 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .unlockedBy(getHasName(Items.HAY_BLOCK), has(Items.HAY_BLOCK))
                 .save(consumer);
 
+        //Cooking Pot
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.COOKING_POT.get())
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.CAULDRON)
+                .pattern("ICI")
+                .pattern("I I")
+                .unlockedBy(getHasName(Items.CAULDRON), has(Items.CAULDRON))
+                .save(consumer);
+
+        //Fridge
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.FRIDGE.get())
+                .define('I', Items.IRON_INGOT)
+                .define('C', Items.ICE)
+                .define('R', Items.REDSTONE)
+                .pattern("RII")
+                .pattern("RCI")
+                .pattern("RII")
+                .unlockedBy(getHasName(Items.ICE), has(Items.ICE))
+                .save(consumer);
+
         //Elevators
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLACK_ELEVATOR.get(), 1)
                 .define('I', Items.IRON_INGOT)
