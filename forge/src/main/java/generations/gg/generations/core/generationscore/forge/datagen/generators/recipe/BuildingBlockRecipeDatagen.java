@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
@@ -907,6 +908,15 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .pattern("EEE")
                 .pattern("EEE")
                 .unlockedBy(getHasName(CobblemonItems.WATER_STONE.asItem()), has(CobblemonItems.WATER_STONE_ORE.asItem()))
+                .save(consumer);
+
+        //Silicon Block
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WATER_STONE_BLOCK.get())
+                .define('E', GenerationsOres.SILICON_ORE_SET.getOre())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(GenerationsOres.SILICON_ORE_SET.getOre()), has(GenerationsOres.SILICON_ORE_SET.getOre()))
                 .save(consumer);
 
         //pokebrick Recipes
