@@ -236,6 +236,36 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.BLUE_DYE), has(Items.BLUE_DYE))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKECENTER_SCARLET_SIGN.get())
+                .define('X', Blocks.IRON_BLOCK)
+                .define('Y', Items.RED_DYE)
+                .pattern("XXX")
+                .pattern("YYY")
+                .pattern("XXX")
+                .unlockedBy(getHasName(Blocks.IRON_BLOCK), has(Blocks.IRON_BLOCK))
+                .unlockedBy(getHasName(Items.RED_DYE), has(Items.RED_DYE))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKECENTER_DOOR.get())
+                .define('G', Blocks.GRAY_STAINED_GLASS)
+                .define('B', Blocks.BLUE_STAINED_GLASS)
+                .define('Y', Items.RED_DYE)
+                .pattern("YGB")
+                .pattern("YBG")
+                .pattern("YGB")
+                .unlockedBy(getHasName(Blocks.IRON_BLOCK), has(Blocks.IRON_BLOCK))
+                .unlockedBy(getHasName(Items.RED_DYE), has(Items.RED_DYE))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKECENTER_ROOF_SET.getBaseBlock())
+                .requires(GenerationsBlocks.RED_SHINGLES_SET.getBaseBlock(), 2)
+                .unlockedBy(getHasName(GenerationsBlocks.RED_SHINGLES_SET.getBaseBlock()), has(GenerationsBlocks.RED_SHINGLES_SET.getBaseBlock()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.POKECENTER_ROOF_2_SET.getBaseBlock())
+                .requires(GenerationsBlocks.RED_SHINGLES_SET.getBaseBlock(), 1)
+                .requires(GenerationsBlocks.RED_POKE_BRICK_SET.getBaseBlock(), 1)
+                .unlockedBy(getHasName(GenerationsBlocks.RED_SHINGLES_SET.getBaseBlock()), has(GenerationsBlocks.RED_SHINGLES_SET.getBaseBlock()))
+                .save(consumer);
+
         //temple block
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock(), 4)
                 .define('E', Blocks.STONE_BRICKS)
@@ -553,6 +583,36 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MIRRORED_FLOOR_2_SET.getBaseBlock(), Items.GRAY_STAINED_GLASS);
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MIRRORED_FLOOR_3_SET.getBaseBlock(), Items.WHITE_STAINED_GLASS);
 
+        //Floor 1-4
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FLOOR_1_SET.getBaseBlock())
+                .define('X', Blocks.ACACIA_LOG)
+                .define('Y', CobblemonItems.APRICORN_LOG)
+                .pattern("XY")
+                .pattern("YX")
+                .unlockedBy(getHasName(Blocks.ACACIA_LOG), has(Blocks.ACACIA_LOG))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FLOOR_2_SET.getBaseBlock())
+                .define('X', GenerationsBlocks.VOLCANIC_STONE.get())
+                .define('Y', GenerationsBlocks.COOL_STONE_SET.getBaseBlock())
+                .pattern("XY")
+                .pattern("YX")
+                .unlockedBy(getHasName(GenerationsBlocks.VOLCANIC_STONE.get()), has(GenerationsBlocks.VOLCANIC_STONE.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FLOOR_3_SET.getBaseBlock())
+                .define('X', Blocks.BIRCH_LOG)
+                .define('Y', Blocks.RED_SANDSTONE)
+                .pattern("XY")
+                .pattern("YX")
+                .unlockedBy(getHasName(Blocks.BIRCH_LOG), has(Blocks.BIRCH_LOG))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FLOOR_4_SET.getBaseBlock())
+                .define('X', Blocks.SANDSTONE)
+                .define('Y', Blocks.END_STONE)
+                .pattern("XY")
+                .pattern("YX")
+                .unlockedBy(getHasName(Blocks.END_STONE), has(Blocks.END_STONE))
+                .save(consumer);
+
         //Ocean Block
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
                 .requires(Items.PRISMARINE, 1)
@@ -567,11 +627,28 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(Items.QUARTZ), has(Items.QUARTZ))
                 .save(consumer);
 
+        //Cool Stone
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COOL_STONE_SET.getBaseBlock(), 1)
+                .requires(Items.STONE, 1)
+                .requires(Items.WHITE_DYE, 1)
+                .unlockedBy(getHasName(Items.WHITE_DYE), has(Items.WHITE_DYE))
+                .save(consumer);
+
         //Bleach Stone
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.BLEACH_STONE_SET.getBaseBlock(), 1)
                 .requires(Items.COBBLESTONE, 1)
                 .requires(Items.WHITE_DYE, 1)
                 .unlockedBy(getHasName(Items.WHITE_DYE), has(Items.WHITE_DYE))
+                .save(consumer);
+
+        //Machine Block
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MACHINE_BLOCK.get())
+                .define('X', Blocks.SMOOTH_STONE)
+                .define('Y', Items.REDSTONE)
+                .pattern("XXX")
+                .pattern("XYX")
+                .pattern("XXX")
+                .unlockedBy(getHasName(Blocks.SMOOTH_STONE), has(Blocks.SMOOTH_STONE))
                 .save(consumer);
 
         //Ruins Sand
