@@ -400,6 +400,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_REPEL.get(), "player_items/");
         createItem(GenerationsItems.WAILMER_PAIL.get(), "player_items/");
         createItem(GenerationsItems.SPRINK_LOTAD.get(), "player_items/");
+        createItem(GenerationsItems.MEGA_BRACELET.get(), "player_items/");
         createItem(GenerationsItems.MEGA_CHARM.get(), "player_items/");
         createItem(GenerationsItems.MEGA_CUFF.get(), "player_items/");
         createItem(GenerationsItems.MEGA_RING.get(), "player_items/");
@@ -545,10 +546,13 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.HIDDEN_LEVER.get(), "utility_items/");
         createItem(GenerationsItems.HIDDEN_PRESSURE_PLATE.get(), "utility_items/");
         createItem(GenerationsItems.HIDDEN_CUBE.get(), "utility_items/");
+        createItem(GenerationsItems.HIDDEN_BUTTON.get(), "utility_items/");
         createItem(GenerationsItems.CHISEL.get(), "utility_items/");
         createItem(GenerationsItems.GIFT_BOX.get(), "utility_items/");
         createItem(GenerationsItems.POKEMON_WAND.get(), "utility_items/");
         createItem(GenerationsItems.ZONE_WAND.get(), "utility_items/");
+        createItem(GenerationsItems.NPC_PATH_TOOL.get(), "utility_items/");
+        createItem(GenerationsItems.NPC_WAND.get(), "utility_items/");
 
         createItem(GenerationsItems.METEORITE.get(), "form_items/");
         createItem(GenerationsItems.GRACIDEA.get(), "form_items/");

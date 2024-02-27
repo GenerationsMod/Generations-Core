@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "J": {
+      "item": "minecraft:jukebox"
+    },
+    "W": {
+      "item": "generations_core:master_walkmon"
+    }
+  },
+  "pattern": [
+    "JJJ",
+    "JWJ",
+    "JJJ"
+  ],
+  "result": {
+    "item": "generations_core:hi_tech_earbuds"
+  },
+  "show_notification": true
+}

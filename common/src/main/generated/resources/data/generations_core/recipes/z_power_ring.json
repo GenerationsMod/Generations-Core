@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "S": {
+      "item": "generations_core:sparkling_shard"
+    },
+    "Z": {
+      "item": "generations_core:z_ingot"
+    }
+  },
+  "pattern": [
+    "ZIZ",
+    "ZSZ",
+    "ZIZ"
+  ],
+  "result": {
+    "item": "generations_core:z_power_ring"
+  },
+  "show_notification": true
+}

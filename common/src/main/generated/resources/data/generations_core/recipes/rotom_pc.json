@@ -2,23 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:glass_pane"
+    "D": {
+      "item": "minecraft:diamond"
     },
     "P": {
-      "item": "minecraft:redstone_lamp"
-    },
-    "Q": {
-      "item": "generations_core:copper_plate"
+      "item": "cobblemon:pc"
     },
     "R": {
       "item": "minecraft:redstone"
     }
   },
   "pattern": [
-    "QAQ",
-    "QPQ",
-    "QRQ"
+    "RDR",
+    "DPD",
+    "RDR"
   ],
   "result": {
     "item": "generations_core:rotom_pc"

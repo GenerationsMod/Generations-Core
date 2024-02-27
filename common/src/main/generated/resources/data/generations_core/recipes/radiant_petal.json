@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:blue_petal"
+    },
+    {
+      "item": "generations_core:green_petal"
+    },
+    {
+      "item": "generations_core:orange_petal"
+    },
+    {
+      "item": "generations_core:pink_petal"
+    },
+    {
+      "item": "generations_core:purple_petal"
+    },
+    {
+      "item": "generations_core:red_petal"
+    },
+    {
+      "item": "generations_core:yellow_petal"
+    }
+  ],
+  "result": {
+    "item": "generations_core:radiant_petal"
+  }
+}

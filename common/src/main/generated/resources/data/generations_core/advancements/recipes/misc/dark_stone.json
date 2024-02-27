@@ -1,14 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_copper_plate_has_redstone_lamp_has_glass_pane": {
+    "has_dark_soul": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:copper_plate",
-              "minecraft:redstone_lamp",
-              "minecraft:glass_pane"
+              "generations_core:dark_soul"
             ]
           }
         ]
@@ -17,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:pc"
+        "recipe": "generations_core:dark_stone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_copper_plate_has_redstone_lamp_has_glass_pane",
+      "has_dark_soul",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:pc"
+      "generations_core:dark_stone"
     ]
   },
   "sends_telemetry_event": false

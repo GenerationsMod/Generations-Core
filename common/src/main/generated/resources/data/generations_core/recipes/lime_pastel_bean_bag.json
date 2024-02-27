@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:lime_dye"
+    },
+    "X": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "XEX",
+    "XXX"
+  ],
+  "result": {
+    "item": "generations_core:lime_pastel_bean_bag"
+  },
+  "show_notification": true
+}

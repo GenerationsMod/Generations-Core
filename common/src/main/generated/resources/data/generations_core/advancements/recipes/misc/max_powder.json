@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:max_powder"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tiny_mushroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:tiny_mushroom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tiny_mushroom",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:max_powder"
+    ]
+  },
+  "sends_telemetry_event": false
+}

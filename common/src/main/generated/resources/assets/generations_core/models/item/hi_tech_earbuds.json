@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/unimplemented/hi_tech_earbuds"
+    "layer0": "generations_core:item/utility_items/hi_tech_earbuds"
   }
 }

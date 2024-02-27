@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dynite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:dynite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:uncharged_dynamax_band"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_dynite_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:uncharged_dynamax_band"
+    ]
+  },
+  "sends_telemetry_event": false
+}
