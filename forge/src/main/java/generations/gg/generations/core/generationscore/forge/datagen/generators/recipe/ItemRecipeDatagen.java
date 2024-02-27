@@ -217,6 +217,32 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("RBR")
                 .unlockedBy(getHasName(GenerationsItems.MEGASTONE_SHARD.get()), has(GenerationsItems.MEGASTONE_SHARD.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.Z_RING.get())
+                .define('Z', GenerationsItems.Z_INGOT.get())
+                .define('I', Items.IRON_INGOT)
+                .define('S', GenerationsItems.SPARKLING_SHARD.get())
+                .pattern("ZIZ")
+                .pattern("ZSZ")
+                .pattern("ZIZ")
+                .unlockedBy(getHasName(GenerationsItems.Z_INGOT.get()), has(GenerationsItems.Z_INGOT.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.Z_POWER_RING.get())
+                .define('Z', GenerationsItems.Z_INGOT.get())
+                .define('I', Items.NETHERITE_INGOT)
+                .define('S', GenerationsItems.SPARKLING_SHARD.get())
+                .pattern("ZIZ")
+                .pattern("ZSZ")
+                .pattern("ZIZ")
+                .unlockedBy(getHasName(GenerationsItems.Z_INGOT.get()), has(GenerationsItems.Z_INGOT.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.UNCHARGED_DYNAMAX_BAND.get())
+                .define('Z', GenerationsItems.DYNITE_ORE.get())
+                .define('I', Items.IRON_INGOT)
+                .pattern("DID")
+                .pattern("DID")
+                .pattern("DID")
+                .unlockedBy(getHasName(GenerationsItems.DYNITE_ORE.get()), has(GenerationsItems.DYNITE_ORE.get()))
+                .save(consumer);
         //These are all HeldItems and Recipes are not needed rn
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PokeModItems.CELL_BATTERY.get())
