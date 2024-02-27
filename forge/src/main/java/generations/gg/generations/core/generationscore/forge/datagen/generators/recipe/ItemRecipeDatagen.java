@@ -2,6 +2,8 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -121,6 +123,14 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("GOG")
                 .pattern("DDD")
                 .unlockedBy(getHasName(CobblemonItems.SHINY_STONE), has(CobblemonItems.SHINY_STONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.MELTAN_BOX.get())
+                .define('X', GenerationsUtilityBlocks.BOX.get())
+                .define('Y', Items.IRON_INGOT)
+                .pattern("XXX")
+                .pattern("XYX")
+                .pattern("XXX")
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(consumer);
         //These are all HeldItems and Recipes are not needed rn
         /*

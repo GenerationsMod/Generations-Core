@@ -6,7 +6,9 @@ import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -165,6 +167,26 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("RCI")
                 .pattern("RII")
                 .unlockedBy(getHasName(Items.ICE), has(Items.ICE))
+                .save(consumer);
+
+        //Box
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BOX.get())
+                .define('P', Items.PAPER)
+                .define('C', Items.CHEST)
+                .pattern("PPP")
+                .pattern("PCP")
+                .pattern("PPP")
+                .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
+                .save(consumer);
+
+        //Meloetta Music Box
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsShrines.MELOETTA_MUSIC_BOX.get())
+                .define('J', Items.JUKEBOX)
+                .define('O', GenerationsItems.ORB.get())
+                .pattern("JJJ")
+                .pattern("JOJ")
+                .pattern("JJJ")
+                .unlockedBy(getHasName(Items.JUKEBOX), has(Items.JUKEBOX))
                 .save(consumer);
 
         //Elevators
