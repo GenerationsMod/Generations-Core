@@ -615,14 +615,14 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //Ocean Block
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.OCEAN_BLOCK_SET.getBaseBlock(), 4)
                 .requires(Items.PRISMARINE, 1)
                 .requires(CobblemonItems.WATER_STONE, 1)
                 .unlockedBy(getHasName(CobblemonItems.WATER_STONE), has(CobblemonItems.WATER_STONE))
                 .save(consumer);
 
         //Water Quartz Block
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WATER_QUARTZ_SET.getBaseBlock(), 4)
                 .requires(Items.QUARTZ, 1)
                 .requires(GenerationsBlocks.OCEAN_BLOCK_SET.getBaseBlock(), 1)
                 .unlockedBy(getHasName(Items.QUARTZ), has(Items.QUARTZ))
@@ -653,7 +653,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //Ruins Sand
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RUINS_SAND.get(), 4)
                 .requires(Items.SAND, 1)
                 .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock(), 1)
                 .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()))
@@ -762,15 +762,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()), has(GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock()))
                 .save(consumer);
 
-        //Cursed Jack O Lantern
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CURSED_JACK_O_LANTERN.get())
-                .define('X', GenerationsBlocks.CURSED_CARVED_PUMPKIN.get())
-                .define('T', Items.TORCH)
-                .pattern("X")
-                .pattern("T")
-                .unlockedBy(getHasName(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()), has(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()))
-                .save(consumer);
-
         //Warning Block
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WARNING_BLOCK.get())
                 .requires(Items.YELLOW_CONCRETE, 1 )
@@ -797,16 +788,16 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //Crystal Stairs
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_STAIRS.get())
                 .define('X', GenerationsItems.CRYSTAL.get())
-                .pattern("X")
-                .pattern("XX")
+                .pattern("X  ")
+                .pattern("XX ")
                 .pattern("XXX")
                 .unlockedBy(getHasName(GenerationsItems.CRYSTAL.get()), has(GenerationsItems.CRYSTAL.get()))
                 .save(consumer);
         //Crystal Wall
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_WALL.get())
                 .define('X', GenerationsItems.CRYSTAL.get())
-                .pattern("X")
-                .pattern("XX")
+                .pattern("X  ")
+                .pattern("XX ")
                 .pattern("XXX")
                 .unlockedBy(getHasName(GenerationsItems.CRYSTAL.get()), has(GenerationsItems.CRYSTAL.get()))
                 .save(consumer);
@@ -944,7 +935,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //Silicon Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WATER_STONE_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SILICON_BLOCK.get())
                 .define('E', GenerationsOres.SILICON_ORE_SET.getOre())
                 .pattern("EEE")
                 .pattern("EEE")

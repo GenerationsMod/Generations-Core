@@ -37,17 +37,6 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ROTOM_PC.get(), 1)
-                .define('Q', GenerationsItems.COPPER_PLATE.get())
-                .define('A', Blocks.GLASS_PANE)
-                .define('R', Items.REDSTONE)
-                .define('P', Blocks.REDSTONE_LAMP)
-                .pattern("QAQ")
-                .pattern("QPQ")
-                .pattern("QRQ")
-                .unlockedBy("has_copper_plate_has_redstone_lamp_has_glass_pane",
-                        inventoryTrigger(ItemPredicate.Builder.item().of(GenerationsItems.COPPER_PLATE.get(), Blocks.REDSTONE_LAMP, Blocks.GLASS_PANE).build()))
-                .save(consumer, GenerationsCore.id("pc"));
 
         for (DyeColor color : DyeColor.values()) {
             buildVendingMachineRecipes(consumer, color);
@@ -153,7 +142,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.COOKING_POT.get())
                 .define('I', Items.IRON_INGOT)
                 .define('R', Items.CAULDRON)
-                .pattern("ICI")
+                .pattern("IRI")
                 .pattern("I I")
                 .unlockedBy(getHasName(Items.CAULDRON), has(Items.CAULDRON))
                 .save(consumer);
@@ -198,6 +187,26 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("GOG")
                 .pattern("GGG")
                 .unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT))
+                .save(consumer);
+
+        //PC
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ROTOM_PC.get(), 1)
+                .define('P', CobblemonItems.PC)
+                .define('R', Items.REDSTONE)
+                .define('D', Items.DIAMOND)
+                .pattern("RDR")
+                .pattern("DPD")
+                .pattern("RDR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.TABLE_PC.get(), 1)
+                .define('P', CobblemonItems.PC)
+                .define('R', Items.REDSTONE)
+                .define('D', Items.IRON_INGOT)
+                .pattern("RDR")
+                .pattern("DPD")
+                .pattern("RDR")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
                 .save(consumer);
 
         //Elevators
@@ -345,10 +354,6 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("RIR")
                 .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
                 .save(consumer);
-
-        for (DyeColor color : DyeColor.values()) {
-            buildVendingMachineRecipes(consumer, color);
-        }
     }
 
 

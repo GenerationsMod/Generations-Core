@@ -238,9 +238,9 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.UNCHARGED_DYNAMAX_BAND.get())
                 .define('Z', GenerationsItems.DYNITE_ORE.get())
                 .define('I', Items.IRON_INGOT)
-                .pattern("DID")
-                .pattern("DID")
-                .pattern("DID")
+                .pattern("ZIZ")
+                .pattern("ZIZ")
+                .pattern("ZIZ")
                 .unlockedBy(getHasName(GenerationsItems.DYNITE_ORE.get()), has(GenerationsItems.DYNITE_ORE.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.POKE_WALKMON.get())
