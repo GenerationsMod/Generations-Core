@@ -1231,8 +1231,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> HEALTH_CANDY = register("health_candy", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HEALTH_CANDY_L = register("health_candy_l", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HEALTH_CANDY_XL = register("health_candy_xl", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-
-    public static final RegistrySupplier<Item> HI_TECH_EARBUDS = register("hi_tech_earbuds", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HOLO_CASTER_1 = register("holo_caster_1", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HOLO_CASTER_2 = register("holo_caster_2", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HONOR_OF_KALOS = register("honor_of_kalos", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
@@ -1433,6 +1431,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmonItem(properties, 2, "great_walkmon"), UTILITY);
     public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmonItem(properties, 3, "ultra_walkmon"), UTILITY);
     public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmonItem(properties, 4, "master_walkmon"), UTILITY);
+    public static final RegistrySupplier<Item> HI_TECH_EARBUDS = register("hi_tech_earbuds", properties -> new WalkmonItem(properties, 4, "hi_tech_earbuds"), UTILITY);
     public static final RegistrySupplier<Item> AZALEA_TOWN_DISC = createMusicDisc("azalea_town_disc", GenerationsSounds.AZALEA_TOWN, 4000);
     public static final RegistrySupplier<Item> CASCARRAFA_CITY_DISC = createMusicDisc("cascarrafa_city_disc", GenerationsSounds.CASCARRAFA_CITY, 3396);
     public static final RegistrySupplier<Item> CERULEAN_CITY_DISC = createMusicDisc("cerulean_city_disc", GenerationsSounds.CERULEAN_CITY, 3677);

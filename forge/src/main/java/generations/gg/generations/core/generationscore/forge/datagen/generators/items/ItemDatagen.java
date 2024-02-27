@@ -741,7 +741,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.HEALTH_CANDY.get(), "unimplemented/");
         createItem(GenerationsItems.HEALTH_CANDY_L.get(), "unimplemented/");
         createItem(GenerationsItems.HEALTH_CANDY_XL.get(), "unimplemented/");
-        createItem(GenerationsItems.HI_TECH_EARBUDS.get(), "unimplemented/");
         createItem(GenerationsItems.HOLO_CASTER_1.get(), "unimplemented/");
         createItem(GenerationsItems.HOLO_CASTER_2.get(), "unimplemented/");
         createItem(GenerationsItems.HONOR_OF_KALOS.get(), "unimplemented/");
@@ -1198,6 +1197,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GREAT_WALKMON.get(), "utility_items/");
         createItem(GenerationsItems.ULTRA_WALKMON.get(), "utility_items/");
         createItem(GenerationsItems.MASTER_WALKMON.get(), "utility_items/");
+        createItem(GenerationsItems.HI_TECH_EARBUDS.get(), "utility_items/");
+
 
 //        createItemBlock(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
 //        createItemBlock(GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
