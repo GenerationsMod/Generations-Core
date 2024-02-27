@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
+import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -53,7 +54,7 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .unlockedBy(getHasName(GenerationsItems.CELL_BATTERY.get()), has(GenerationsItems.CELL_BATTERY.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.SNAP_CAMERA.get())
-                .define('I',GenerationsItems.Z_INGOT.get())
+                .define('I', GenerationsItems.Z_INGOT.get())
                 .define('B', GenerationsItems.CELL_BATTERY.get())
                 .define('G', Items.GLASS_PANE)
                 .define('R', Items.REDSTONE)
@@ -67,7 +68,60 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .requires(Items.PAPER, 1)
                 .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .save(consumer);
-
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.DARK_STONE.get())
+                .define('D', GenerationsItems.DARK_SOUL.get())
+                .define('O', GenerationsItems.ORB.get())
+                .define('G', GenerationsItems.DARK_GEM.get())
+                .pattern("DDD")
+                .pattern("GOG")
+                .pattern("DDD")
+                .unlockedBy(getHasName(GenerationsItems.DARK_SOUL.get()), has(GenerationsItems.DARK_SOUL.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.LIGHT_STONE.get())
+                .define('D', GenerationsItems.LIGHT_SOUL.get())
+                .define('O', GenerationsItems.ORB.get())
+                .define('G', GenerationsItems.FIRE_GEM.get())
+                .pattern("DDD")
+                .pattern("GOG")
+                .pattern("DDD")
+                .unlockedBy(getHasName(GenerationsItems.LIGHT_SOUL.get()), has(GenerationsItems.LIGHT_SOUL.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.DRAGON_STONE.get())
+                .define('D', GenerationsItems.DRAGON_SOUL.get())
+                .define('O', GenerationsItems.ORB.get())
+                .define('G', GenerationsItems.DRAGON_GEM.get())
+                .pattern("DDD")
+                .pattern("GOG")
+                .pattern("DDD")
+                .unlockedBy(getHasName(GenerationsItems.DRAGON_SOUL.get()), has(GenerationsItems.DRAGON_SOUL.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.FADED_BLUE_ORB.get())
+                .define('D', CobblemonItems.WATER_STONE)
+                .define('O', GenerationsItems.ORB.get())
+                .define('G', GenerationsItems.WATER_GEM.get())
+                .pattern("DDD")
+                .pattern("GOG")
+                .pattern("DDD")
+                .unlockedBy(getHasName(CobblemonItems.WATER_STONE), has(CobblemonItems.WATER_STONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.FADED_RED_ORB.get())
+                .define('D', CobblemonItems.FIRE_STONE)
+                .define('O', GenerationsItems.ORB.get())
+                .define('G', GenerationsItems.FIRE_GEM.get())
+                .pattern("DDD")
+                .pattern("GOG")
+                .pattern("DDD")
+                .unlockedBy(getHasName(CobblemonItems.FIRE_STONE), has(CobblemonItems.FIRE_STONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.FADED_JADE_ORB.get())
+                .define('D', CobblemonItems.SHINY_STONE)
+                .define('O', GenerationsItems.ORB.get())
+                .define('G', GenerationsItems.FLYING_GEM.get())
+                .pattern("DDD")
+                .pattern("GOG")
+                .pattern("DDD")
+                .unlockedBy(getHasName(CobblemonItems.SHINY_STONE), has(CobblemonItems.SHINY_STONE))
+                .save(consumer);
         //These are all HeldItems and Recipes are not needed rn
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PokeModItems.CELL_BATTERY.get())

@@ -788,6 +788,39 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.CRYSTAL.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_BLOCK.get());
 
+        //Crystal Slab
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_SLAB.get())
+                .define('X', GenerationsItems.CRYSTAL.get())
+                .pattern("XXX")
+                .unlockedBy(getHasName(GenerationsItems.CRYSTAL.get()), has(GenerationsItems.CRYSTAL.get()))
+                .save(consumer);
+        //Crystal Stairs
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_STAIRS.get())
+                .define('X', GenerationsItems.CRYSTAL.get())
+                .pattern("X")
+                .pattern("XX")
+                .pattern("XXX")
+                .unlockedBy(getHasName(GenerationsItems.CRYSTAL.get()), has(GenerationsItems.CRYSTAL.get()))
+                .save(consumer);
+        //Crystal Wall
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_WALL.get())
+                .define('X', GenerationsItems.CRYSTAL.get())
+                .pattern("X")
+                .pattern("XX")
+                .pattern("XXX")
+                .unlockedBy(getHasName(GenerationsItems.CRYSTAL.get()), has(GenerationsItems.CRYSTAL.get()))
+                .save(consumer);
+        //Crystal Light
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_LIGHT.get())
+                .define('X', GenerationsItems.CRYSTAL.get())
+                .define('Y', Blocks.SEA_LANTERN)
+                .pattern("XXX")
+                .pattern("XYX")
+                .pattern("XXX")
+                .unlockedBy(getHasName(GenerationsItems.CRYSTAL.get()), has(GenerationsItems.CRYSTAL.get()))
+                .save(consumer);
+
+
         //buildStairsCraftingRecipes(consumer, PixelmonBlocks.CRYSTAL_STAIRS, PixelmonBlocks.CRYSTAL_BLOCK, true);
 
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SAPPHIRE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SAPPHIRE_BLOCK.get());
