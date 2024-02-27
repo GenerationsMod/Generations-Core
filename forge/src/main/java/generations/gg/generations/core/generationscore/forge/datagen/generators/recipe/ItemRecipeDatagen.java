@@ -182,6 +182,41 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("SBS")
                 .unlockedBy(getHasName(Items.SLIME_BALL), has(Items.SLIME_BALL))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.MEGA_BRACELET.get())
+                .define('M', GenerationsItems.MEGASTONE_SHARD.get())
+                .define('I', Items.IRON_INGOT)
+                .pattern("MMM")
+                .pattern("MMM")
+                .pattern("III")
+                .unlockedBy(getHasName(GenerationsItems.MEGASTONE_SHARD.get()), has(GenerationsItems.MEGASTONE_SHARD.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.MEGA_CUFF.get())
+                .define('M', GenerationsItems.MEGASTONE_SHARD.get())
+                .define('R', GenerationsItems.RUBY.get())
+                .define('B', GenerationsItems.MEGA_BRACELET.get())
+                .pattern("RRR")
+                .pattern("MMM")
+                .pattern("RBR")
+                .unlockedBy(getHasName(GenerationsItems.MEGASTONE_SHARD.get()), has(GenerationsItems.MEGASTONE_SHARD.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.MEGA_RING.get())
+                .define('M', GenerationsItems.MEGASTONE_SHARD.get())
+                .define('R', Items.NETHERITE_SCRAP)
+                .define('B', GenerationsItems.MEGA_BRACELET.get())
+                .pattern("RRR")
+                .pattern("MMM")
+                .pattern("RBR")
+                .unlockedBy(getHasName(GenerationsItems.MEGASTONE_SHARD.get()), has(GenerationsItems.MEGASTONE_SHARD.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.MEGA_CHARM.get())
+                .define('M', GenerationsItems.MEGASTONE_SHARD.get())
+                .define('R', GenerationsItems.HEART_SCALE.get())
+                .define('B', GenerationsItems.MEGA_BRACELET.get())
+                .pattern("RRR")
+                .pattern("MMM")
+                .pattern("RBR")
+                .unlockedBy(getHasName(GenerationsItems.MEGASTONE_SHARD.get()), has(GenerationsItems.MEGASTONE_SHARD.get()))
+                .save(consumer);
         //These are all HeldItems and Recipes are not needed rn
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PokeModItems.CELL_BATTERY.get())

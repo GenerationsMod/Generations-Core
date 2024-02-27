@@ -765,6 +765,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MAX_REPEL = register("max_repel", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WAILMER_PAIL = register("wailmer_pail", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SPRINK_LOTAD = register("sprink_lotad", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MEGA_BRACELET = register("mega_bracelet", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MEGA_CHARM = register("mega_charm", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MEGA_CUFF = register("mega_cuff", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MEGA_RING = register("mega_ring", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
     /*
     public static final RegistrySupplier<Item> RED_BIKE = register("red_bike", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> ORANGE_BIKE = register("orange_bike", Item::new, PLAYER_ITEMS);
@@ -1258,9 +1262,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MAKEUP_BAG = register("makeup_bag", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MAX_LURE = register("max_lure", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEDAL_BOX = register("medal_box", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> MEGA_CHARM = register("mega_charm", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> MEGA_CUFF = register("mega_cuff", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> MEGA_RING = register("mega_ring", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEMBER_CARD = register("member_card", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> METEORITE_SHARD = register("meteorite_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEGASTONE_SHARD = register("mega_stone_shard", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
