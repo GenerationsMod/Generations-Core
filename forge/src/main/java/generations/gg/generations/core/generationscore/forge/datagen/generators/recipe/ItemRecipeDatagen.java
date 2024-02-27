@@ -132,6 +132,21 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("XXX")
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.RED_CHAIN.get())
+                .requires(GenerationsItems.CRYSTAL_OF_EMOTION.get(), 1)
+                .requires(GenerationsItems.CRYSTAL_OF_KNOWLEDGE.get(), 1)
+                .requires(GenerationsItems.CRYSTAL_OF_WILLPOWER.get(), 1)
+                .unlockedBy(getHasName(GenerationsItems.CRYSTAL_OF_KNOWLEDGE.get()), has(GenerationsItems.CRYSTAL_OF_KNOWLEDGE.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.RUBY_ROD.get())
+                .define('R', GenerationsItems.RUBY.get())
+                .define('S', Items.STRING)
+                .define('R', GenerationsItems.ORB.get())
+                .pattern("  R")
+                .pattern(" RS")
+                .pattern("R O")
+                .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
+                .save(consumer);
         //These are all HeldItems and Recipes are not needed rn
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PokeModItems.CELL_BATTERY.get())

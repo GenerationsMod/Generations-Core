@@ -189,6 +189,17 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .unlockedBy(getHasName(Items.JUKEBOX), has(Items.JUKEBOX))
                 .save(consumer);
 
+        //Prison Bottle Stem
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsItems.PRISON_BOTTLE_STEM.get())
+                .define('R', GenerationsItems.RUBY.get())
+                .define('O', GenerationsItems.ORB.get())
+                .define('G', Items.GOLD_INGOT)
+                .pattern("RRR")
+                .pattern("GOG")
+                .pattern("GGG")
+                .unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT))
+                .save(consumer);
+
         //Elevators
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLACK_ELEVATOR.get(), 1)
                 .define('I', Items.IRON_INGOT)
