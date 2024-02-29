@@ -127,5 +127,14 @@
   "height": 38,
   "weight": 1000,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:echo_shard",
+        "quantityRange": "1-3"
+      }
+    ]
+  }
 }

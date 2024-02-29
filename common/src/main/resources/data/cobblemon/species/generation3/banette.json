@@ -223,5 +223,14 @@
   "height": 11,
   "weight": 125,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:spell_tag",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

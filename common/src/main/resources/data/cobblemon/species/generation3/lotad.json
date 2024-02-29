@@ -51,7 +51,7 @@
     "entries": [
       {
         "item": "minecraft:lily_pad",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:mental_herb",
@@ -63,7 +63,7 @@
       },
       {
         "item": "generations_core:lotad_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

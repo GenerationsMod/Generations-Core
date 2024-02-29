@@ -30,18 +30,18 @@
     "entries": [
       {
         "item": "minecraft:rabbit_hide",
-        "percentage": 50
-      },
-      {
-        "item": "minecraft:rabbit_foot",
-        "percentage": 5
-      },
-      {
-        "item": "cobblemon:charcoal_stick",
-        "percentage": 5
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:rabbit"
+      },
+      {
+        "item": "minecraft:rabbit_foot",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5.0
       }
     ]
   },

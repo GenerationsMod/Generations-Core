@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "minecraft:clay_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:persim_berry",

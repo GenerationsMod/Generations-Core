@@ -37,18 +37,18 @@
     "entries": [
       {
         "item": "minecraft:feather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:chicken"
       },
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "generations_core:rowlet_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

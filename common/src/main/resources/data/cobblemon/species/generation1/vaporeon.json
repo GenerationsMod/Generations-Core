@@ -12,11 +12,11 @@
     "entries": [
       {
         "item": "cobblemon:water_stone",
-        "percentage": 25
+        "percentage": 25.0
       },
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

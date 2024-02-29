@@ -176,5 +176,14 @@
   "height": 13,
   "weight": 252,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

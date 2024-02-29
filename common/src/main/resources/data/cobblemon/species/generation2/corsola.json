@@ -17,12 +17,12 @@
     "special_defence": 95,
     "speed": 35
   },
-  "catchRate": 60,
-  "maleRatio": 0.25,
-  "shoulderMountable": false,
   "features": [
     "galarian"
   ],
+  "catchRate": 60,
+  "maleRatio": 0.25,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Galar",
@@ -157,7 +157,16 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "cobblemon:kasib_berry",
+            "percentage": 2.5
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 144,
@@ -353,5 +362,14 @@
   "height": 6,
   "weight": 50,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

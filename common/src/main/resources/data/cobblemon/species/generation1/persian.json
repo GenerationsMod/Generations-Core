@@ -216,7 +216,24 @@
       "preEvolution": "meowth alolan",
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 4,
+        "entries": [
+          {
+            "item": "minecraft:gold_nugget",
+            "quantityRange": "0-2"
+          },
+          {
+            "item": "cobblemon:quick_claw",
+            "percentage": 5.0
+          },
+          {
+            "item": "cobblemon:bluk_berry",
+            "percentage": 5.0
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 154,
@@ -226,16 +243,19 @@
     "field"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:gold_nugget",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:quick_claw",
-        "percentage": 5
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 5.0
       }
     ]
   },

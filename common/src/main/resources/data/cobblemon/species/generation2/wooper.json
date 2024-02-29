@@ -17,6 +17,9 @@
     "special_defence": 25,
     "speed": 15
   },
+  "features": [
+    "paldean"
+  ],
   "catchRate": 255,
   "maleRatio": 0.5,
   "shoulderMountable": true,
@@ -177,7 +180,7 @@
     "entries": [
       {
         "item": "minecraft:clay_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:rindo_berry",
@@ -360,7 +363,7 @@
       ]
     }
   ],
-  "baseScale": 1,
+  "baseScale": 0.5,
   "hitbox": {
     "width": 0.8,
     "height": 1,

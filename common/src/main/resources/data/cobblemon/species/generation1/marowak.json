@@ -16,12 +16,12 @@
     "special_defence": 80,
     "speed": 45
   },
-  "catchRate": 75,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
   "features": [
     "alolan"
   ],
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Alola",
@@ -225,7 +225,15 @@
       "preEvolution": "cubone",
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:bone"
+          }
+        ]
+      }
     },
     {
       "name": "Alola-Totem",
@@ -369,10 +377,14 @@
     "monster"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:bone"
+      },
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 5.0
       }
     ]
   },

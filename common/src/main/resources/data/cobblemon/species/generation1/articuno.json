@@ -9,21 +9,11 @@
     "h:snowcloak"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 1,
     "entries": [
       {
-        "item": "minecraft:feather",
-        "quantityRange": "2-4"
-      },
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:never_melt_ice"
-      },
-      {
         "item": "generations_core:articuno_doll",
-        "percentage": 75
+        "percentage": 100.0
       }
     ]
   },
@@ -156,7 +146,22 @@
       "weight": 509,
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 6,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "quantityRange": "2-4"
+          },
+          {
+            "item": "minecraft:chicken"
+          },
+          {
+            "item": "cobblemon:twisted_spoon"
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 290,

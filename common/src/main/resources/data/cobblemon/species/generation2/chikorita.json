@@ -32,7 +32,7 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.2
       }
@@ -43,11 +43,11 @@
     "entries": [
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "generations_core:chikorita_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

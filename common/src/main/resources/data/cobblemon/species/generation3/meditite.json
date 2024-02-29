@@ -215,5 +215,22 @@
   "height": 6,
   "weight": 112,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:wise_glasses",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:black_belt",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

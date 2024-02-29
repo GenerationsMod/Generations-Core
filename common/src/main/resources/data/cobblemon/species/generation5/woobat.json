@@ -10,7 +10,7 @@
     "h:simple"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:light_blue_wool"

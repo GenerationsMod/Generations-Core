@@ -106,5 +106,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.klawf.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

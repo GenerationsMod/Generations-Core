@@ -16,12 +16,12 @@
     "special_defence": 55,
     "speed": 100
   },
-  "catchRate": 190,
-  "maleRatio": -1,
-  "shoulderMountable": false,
   "features": [
     "hisuian"
   ],
+  "catchRate": 190,
+  "maleRatio": -1,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Hisui",
@@ -147,7 +147,7 @@
     "entries": [
       {
         "item": "minecraft:gunpowder",
-        "percentage": 50
+        "quantityRange": "0-1"
       }
     ]
   },

@@ -25,15 +25,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:lugia_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:ancientpower",
     "1:dragonrush",
@@ -231,8 +222,8 @@
   "evolutions": [],
   "baseScale": 1,
   "hitbox": {
-    "width": 2,
-    "height": 5.2,
+    "width": 1,
+    "height": 1,
     "fixed": false
   },
   "baseFriendship": 0,
@@ -247,5 +238,14 @@
   "height": 52,
   "weight": 2160,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:lugia_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
 }

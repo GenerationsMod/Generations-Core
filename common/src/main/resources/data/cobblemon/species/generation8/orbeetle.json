@@ -164,5 +164,14 @@
   "height": 4,
   "weight": 408,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

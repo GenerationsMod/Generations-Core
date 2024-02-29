@@ -6,6 +6,15 @@
   "abilities": [
     "synchronize"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:mew_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 100,
     "attack": 100,
@@ -29,15 +38,6 @@
         "canFly": true
       }
     }
-  },
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:mew_doll",
-        "percentage": 75
-      }
-    ]
   },
   "moves": [
     "1:pound",

@@ -109,5 +109,21 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.wattrel.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

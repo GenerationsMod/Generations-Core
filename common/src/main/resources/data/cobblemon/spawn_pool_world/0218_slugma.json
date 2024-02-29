@@ -1,0 +1,85 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "slugma-1",
+            "pokemon": "slugma",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "1-25",
+            "weight": 5.4,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_basalt",
+                    "#cobblemon:is_nether_wasteland"
+                ]
+            }
+        },
+        {
+            "id": "slugma-2",
+            "pokemon": "slugma",
+            "presets": [
+                "lava_surface"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "1-25",
+            "weight": 9.0,
+            "condition": {
+                "biomes": [
+                    "#minecraft:is_nether",
+                    "#cobblemon:is_volcanic"
+                ]
+            }
+        },
+        {
+            "id": "slugma-3",
+            "pokemon": "slugma",
+            "presets": [
+                "lava_surface"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "1-25",
+            "weight": 1.8,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:is_volcanic"
+                ]
+            }
+        },
+        {
+            "id": "slugma-4",
+            "pokemon": "slugma",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "1-25",
+            "weight": 9.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_volcanic"
+                ],
+                "neededNearbyBlocks": [
+                    "#minecraft:lava"
+                ]
+            }
+        }
+    ]
+}

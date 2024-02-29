@@ -12,7 +12,7 @@
     "entries": [
       {
         "item": "minecraft:dragon_breath",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:roseli_berry",

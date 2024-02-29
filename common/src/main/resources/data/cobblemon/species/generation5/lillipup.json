@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "minecraft:bone",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:blue_wool"

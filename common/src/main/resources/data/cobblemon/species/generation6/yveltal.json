@@ -24,6 +24,13 @@
   "eggGroups": [
     "undiscovered"
   ],
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "moves": [
     "1:doubleteam",
     "1:gust",

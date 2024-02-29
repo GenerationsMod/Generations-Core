@@ -24,15 +24,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:wynaut_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:amnesia",
     "1:charm",
@@ -91,5 +82,18 @@
   "height": 6,
   "weight": 140,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:colbur_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:wynaut_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
 }

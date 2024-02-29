@@ -88,5 +88,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.brambleghast.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:stick",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

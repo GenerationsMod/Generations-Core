@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "minecraft:rotten_flesh",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:bluk_berry",

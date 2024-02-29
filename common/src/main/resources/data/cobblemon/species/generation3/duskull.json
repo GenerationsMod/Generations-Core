@@ -8,7 +8,7 @@
     "h:frisk"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:reaper_cloth",
@@ -20,7 +20,7 @@
       },
       {
         "item": "generations_core:duskull_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

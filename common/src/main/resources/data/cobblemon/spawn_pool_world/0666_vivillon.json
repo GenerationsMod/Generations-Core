@@ -1,0 +1,426 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "vivillon-high-plains-1",
+            "pokemon": "vivillon vivillon_wings=high-plains",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_badlands"
+                ],
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "vivillon-fancy-2",
+            "pokemon": "vivillon vivillon_wings=fancy",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "minecraft:cherry_grove"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-ocean-3",
+            "pokemon": "vivillon vivillon_wings=ocean",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_coast",
+                    "#cobblemon:is_warm_ocean"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-sandstorm-4",
+            "pokemon": "vivillon vivillon_wings=sandstorm",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_desert"
+                ],
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "vivillon-meadow-5",
+            "pokemon": "vivillon vivillon_wings=meadow",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_floral"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-meadow-6",
+            "pokemon": "vivillon vivillon_wings=meadow",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 5.0,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:floral_meadow"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
+            }
+        },
+        {
+            "id": "vivillon-garden-7",
+            "pokemon": "vivillon vivillon_wings=garden",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_forest"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-river-8",
+            "pokemon": "vivillon vivillon_wings=river",
+            "presets": [
+                "natural",
+                "flowers",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-polar-9",
+            "pokemon": "vivillon vivillon_wings=polar",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_frozen_ocean"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-tundra-10",
+            "pokemon": "vivillon vivillon_wings=tundra",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_glacial",
+                    "#cobblemon:is_snowy_forest",
+                    "#cobblemon:is_tundra"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-jungle-11",
+            "pokemon": "vivillon vivillon_wings=jungle",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_jungle"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-monsoon-12",
+            "pokemon": "vivillon vivillon_wings=monsoon",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_mountain"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-archipelago-13",
+            "pokemon": "vivillon vivillon_wings=archipelago",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_mushroom"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-marine-14",
+            "pokemon": "vivillon vivillon_wings=marine",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_ocean"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-modern-15",
+            "pokemon": "vivillon vivillon_wings=modern",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-continental-16",
+            "pokemon": "vivillon vivillon_wings=continental",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_plains"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-savanna-17",
+            "pokemon": "vivillon vivillon_wings=savanna",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_savanna"
+                ],
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "vivillon-sun-18",
+            "pokemon": "vivillon vivillon_wings=sun",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "minecraft:sunflower_plains",
+                    "#cobblemon:is_sky",
+                    "#cobblemon:is_tropical_island"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-elegant-19",
+            "pokemon": "vivillon vivillon_wings=elegant",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_magical",
+                    "#cobblemon:is_spooky"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        },
+        {
+            "id": "vivillon-icy-snow-20",
+            "pokemon": "vivillon vivillon_wings=icy-snow",
+            "presets": [
+                "natural",
+                "flowers"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "12-41",
+            "weight": 2.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_taiga"
+                ],
+                "timeRange": "day",
+                "isRaining": false
+            }
+        }
+    ]
+}

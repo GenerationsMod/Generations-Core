@@ -24,15 +24,6 @@
   "eggGroups": [
     "field"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:kecleon_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:astonish",
     "1:lick",
@@ -201,5 +192,18 @@
   "height": 10,
   "weight": 220,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:kecleon_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
 }

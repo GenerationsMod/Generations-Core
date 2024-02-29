@@ -13,14 +13,14 @@
     "entries": [
       {
         "item": "minecraft:flint",
-        "percentage": 50
-      },
-      {
-        "item": "cobblemon:magnet",
-        "percentage": 2.5
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:hard_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:magnet",
         "percentage": 2.5
       },
       {

@@ -36,33 +36,28 @@
         "canSwimInWater": true,
         "canBreatheUnderwater": true
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
-  "resting": {
-    "canSleep": true,
-    "willSleepOnBed": false,
-    "depth": "normal",
-    "light": "0-4"
-  },
   "drops": {
-    "amount": 4,
+    "amount": 7,
     "entries": [
       {
-        "item": "cobblemon:ink_sac",
-        "quantityRange": "1-3",
-        "percentage": 10
+        "item": "minecraft:ink_sac",
+        "quantityRange": "1-3"
       },
       {
         "item": "minecraft:glow_ink_sac",
         "quantityRange": "1-3",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:poison_barb",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:pecha_berry",
         "percentage": 2.5
       }
     ]

@@ -7,6 +7,15 @@
   "abilities": [
     "serenegrace"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:jirachi_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 100,
     "attack": 100,
@@ -24,15 +33,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:jirachi_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:confusion",
     "1:wish",

@@ -25,15 +25,6 @@
   "eggGroups": [
     "amorphous"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:gulpin_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:pound",
     "5:yawn",
@@ -196,5 +187,22 @@
   "height": 4,
   "weight": 103,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:black_sludge",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:gulpin_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
 }

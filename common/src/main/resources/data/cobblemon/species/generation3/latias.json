@@ -72,15 +72,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:latias_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:charm",
     "1:psywave",
@@ -266,5 +257,14 @@
   "height": 14,
   "weight": 400,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:latias_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
 }

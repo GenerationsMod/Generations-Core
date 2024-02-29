@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "minecraft:raw_iron",
-        "percentage": 50
+        "quantityRange": "0-1"
       }
     ]
   },

@@ -13,12 +13,10 @@
     "entries": [
       {
         "item": "minecraft:stick",
-        "quantityRange": "1",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:oran_berry",
-        "quantityRange": "1",
         "percentage": 2.5
       }
     ]

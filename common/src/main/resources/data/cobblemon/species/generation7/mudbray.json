@@ -13,11 +13,11 @@
     "entries": [
       {
         "item": "minecraft:leather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:clay_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:light_clay",

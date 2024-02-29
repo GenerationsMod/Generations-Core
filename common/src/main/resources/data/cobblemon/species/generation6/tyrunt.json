@@ -175,5 +175,14 @@
   "height": 8,
   "weight": 260,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:razor_fang",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

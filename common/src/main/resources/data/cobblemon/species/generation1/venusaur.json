@@ -22,7 +22,7 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.3
       }
@@ -134,20 +134,18 @@
     "grass"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 2,
     "entries": [
       {
-        "item": "minecraft:melon_seeds",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "item": "minecraft:wheat_seeds"
       },
       {
-        "item": "cobblemon:miracle_seed",
-        "percentage": 25
+        "item": "cobblemon:coba_berry",
+        "percentage": 2.5
       },
       {
         "item": "generations_core:venusaur_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

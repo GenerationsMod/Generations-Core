@@ -14,11 +14,10 @@
     "entries": [
       {
         "item": "cobblemon:chople_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
-
   "baseStats": {
     "hp": 120,
     "attack": 125,

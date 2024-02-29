@@ -102,5 +102,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.frigibax.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

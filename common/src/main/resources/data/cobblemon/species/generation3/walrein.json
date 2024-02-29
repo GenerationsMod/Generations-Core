@@ -158,5 +158,18 @@
   "height": 14,
   "weight": 1506,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

@@ -7,14 +7,11 @@
     "baddreams"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 1,
     "entries": [
       {
-        "item": "cobblemon:reaper_cloth"
-      },
-      {
         "item": "generations_core:darkrai_doll",
-        "percentage": 75
+        "percentage": 100.0
       }
     ]
   },

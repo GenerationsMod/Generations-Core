@@ -40,7 +40,7 @@
     "1:metalburst",
     "1:metalclaw",
     "1:scratch",
-	"1:kowtowcleave",
+    "1:kowtowcleave",
     "15:torment",
     "20:scaryface",
     "25:assurance",
@@ -107,5 +107,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.kingambit.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:iron_helmet",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:chople_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

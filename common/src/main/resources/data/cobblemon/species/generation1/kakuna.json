@@ -41,12 +41,15 @@
     }
   },
   "drops": {
-    "amount": 1,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:string",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 2.5
       }
     ]
   },

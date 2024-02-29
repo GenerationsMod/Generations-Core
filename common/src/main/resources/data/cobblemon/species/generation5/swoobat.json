@@ -10,7 +10,7 @@
     "h:simple"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:light_blue_wool",
@@ -18,7 +18,7 @@
       },
       {
         "item": "cobblemon:colbur_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

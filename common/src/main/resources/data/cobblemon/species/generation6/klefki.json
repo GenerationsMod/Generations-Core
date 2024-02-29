@@ -134,5 +134,14 @@
   "height": 2,
   "weight": 30,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:name_tag",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

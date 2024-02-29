@@ -33,10 +33,8 @@
       "light": "0-4"
     },
     "moving": {
-      "moving" : {
-        "walk": {
-          "walkSpeed": 0.29
-        }
+      "walk": {
+        "walkSpeed": 0.29
       },
       "swim": {
         "canSwimInWater": true,
@@ -49,11 +47,11 @@
     "entries": [
       {
         "item": "minecraft:scute",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

@@ -10,11 +10,15 @@
     "h:frisk"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
+        "item": "cobblemon:moon_stone",
+        "percentage": 10.0
+      },
+      {
         "item": "cobblemon:oran_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

@@ -12,8 +12,8 @@
     "amount": 1,
     "entries": [
       {
-        "item": "cobblemon:cheri_berry",
-        "percentage": 5
+        "item": "cobblemon:persim_berry",
+        "percentage": 5.0
       }
     ]
   },

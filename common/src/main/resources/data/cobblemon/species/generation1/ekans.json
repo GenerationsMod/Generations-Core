@@ -38,19 +38,15 @@
     "dragon"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:razor_fang",
         "percentage": 2.5
       },
       {
-        "item": "cobblemon:pecha_berry",
-        "percentage": 2.5
-      },
-      {
         "item": "generations_core:ekans_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

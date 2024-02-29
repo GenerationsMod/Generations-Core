@@ -9,11 +9,11 @@
     "h:quickfeet"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:brown_mushroom",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:kebia_berry",
@@ -39,6 +39,14 @@
     "fairy",
     "grass"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
   "moves": [
     "1:absorb",
     "1:tackle",

@@ -74,23 +74,22 @@
     "human_like"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:rabbit_hide",
-        "quantityRange": "1-3",
-        "percentage": 75
-      },
-      {
-        "item": "minecraft:rabbit_foot",
-        "percentage": 25
-      },
-      {
-        "item": "cobblemon:charcoal_stick",
-        "percentage": 25
+        "quantityRange": "0-3"
       },
       {
         "item": "minecraft:rabbit"
+      },
+      {
+        "item": "minecraft:rabbit_foot",
+        "percentage": 25.0
+      },
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 25.0
       }
     ]
   },
@@ -100,7 +99,7 @@
     "1:growl",
     "1:quickattack",
     "1:tackle",
-	"1:pyroball",
+    "1:pyroball",
     "12:doublekick",
     "19:flamecharge",
     "24:agility",

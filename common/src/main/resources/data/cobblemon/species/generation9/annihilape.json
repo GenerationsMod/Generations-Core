@@ -14,11 +14,11 @@
     "entries": [
       {
         "item": "cobblemon:muscle_band",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:payapa_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },
@@ -66,7 +66,7 @@
     "1:focusenergy",
     "1:leer",
     "1:scratch",
-	"1:shadowpunch",
+    "1:shadowpunch",
     "5:furyswipes",
     "8:lowkick",
     "12:seismictoss",

@@ -8,15 +8,15 @@
     "h:sheerforce"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 1,
     "entries": [
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "generations_core:totodile_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

@@ -14,15 +14,15 @@
     "entries": [
       {
         "item": "minecraft:string",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:spider_eye",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:rotten_flesh",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:nanab_berry",

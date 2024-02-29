@@ -10,16 +10,15 @@
     "h:pickpocket"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:dark_oak_sapling",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:tanga_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

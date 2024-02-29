@@ -230,7 +230,24 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 3,
+        "entries": [
+          {
+            "item": "minecraft:gold_nugget",
+            "quantityRange": "0-1"
+          },
+          {
+            "item": "cobblemon:quick_claw",
+            "percentage": 2.5
+          },
+          {
+            "item": "cobblemon:bluk_berry",
+            "percentage": 2.5
+          }
+        ]
+      }
     },
     {
       "name": "Galar",
@@ -266,7 +283,7 @@
         "field"
       ],
       "behaviour": {
-        "moving" : {
+        "moving": {
           "walk": {
             "walkSpeed": 0.2
           }
@@ -382,7 +399,20 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "cobblemon:razor_claw",
+            "percentage": 2.5
+          },
+          {
+            "item": "cobblemon:wepear_berry",
+            "percentage": 2.5
+          }
+        ]
+      }
     },
     {
       "name": "Gmax",
@@ -438,19 +468,23 @@
     "field"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:gold_nugget",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:quick_claw",
         "percentage": 2.5
       },
       {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 2.5
+      },
+      {
         "item": "generations_core:meowth_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

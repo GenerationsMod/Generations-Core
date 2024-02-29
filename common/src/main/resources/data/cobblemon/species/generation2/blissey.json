@@ -29,15 +29,16 @@
     "amount": 1,
     "entries": [
       {
-        "item": "cobblemon:lucky_egg",
-        "percentage": 25
+        "item": "minecraft:egg",
+        "percentage": 33.0
       },
       {
         "item": "cobblemon:oval_stone",
-        "percentage": 25
+        "percentage": 25.0
       },
       {
-        "item": "minecraft:egg"
+        "item": "cobblemon:lucky_egg",
+        "percentage": 25.0
       }
     ]
   },

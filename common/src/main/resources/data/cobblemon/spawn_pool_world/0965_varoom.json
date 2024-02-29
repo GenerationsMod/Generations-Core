@@ -1,0 +1,58 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "varoom-1",
+            "pokemon": "varoom",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "5-30",
+            "weight": 5.4,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_badlands"
+                ]
+            }
+        },
+        {
+            "id": "varoom-2",
+            "pokemon": "varoom",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "5-30",
+            "weight": 5.4,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_overworld"
+                ],
+                "neededBaseBlocks": [
+                    "minecraft:white_concrete",
+                    "minecraft:orange_concrete",
+                    "minecraft:magenta_concrete",
+                    "minecraft:light_blue_concrete",
+                    "minecraft:yellow_concrete",
+                    "minecraft:lime_concrete",
+                    "minecraft:pink_concrete",
+                    "minecraft:gray_concrete",
+                    "minecraft:light_gray_concrete",
+                    "minecraft:cyan_concrete",
+                    "minecraft:purple_concrete",
+                    "minecraft:blue_concrete",
+                    "minecraft:brown_concrete",
+                    "minecraft:green_concrete",
+                    "minecraft:red_concrete",
+                    "minecraft:black_concrete"
+                ]
+            }
+        }
+    ]
+}

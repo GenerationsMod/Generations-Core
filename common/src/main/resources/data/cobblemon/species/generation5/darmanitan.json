@@ -12,7 +12,7 @@
     "entries": [
       {
         "item": "cobblemon:rawst_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -334,7 +334,20 @@
       "preEvolution": "darumaka form=galar",
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "cobblemon:ice_stone",
+            "percentage": 5.0
+          },
+          {
+            "item": "cobblemon:occa_berry",
+            "percentage": 5.0
+          }
+        ]
+      }
     },
     {
       "name": "Galar-Zen",

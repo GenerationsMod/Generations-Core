@@ -38,7 +38,7 @@
     "1:leer",
     "1:lowkick",
     "1:tackle",
-	"1:lunge",
+    "1:lunge",
     "4:strugglebug",
     "6:astonish",
     "9:assurance",
@@ -95,5 +95,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.lokix.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

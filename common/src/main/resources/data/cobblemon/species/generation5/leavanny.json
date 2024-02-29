@@ -10,24 +10,23 @@
     "h:overcoat"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:string",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "quantityRange": "0-3"
       },
       {
         "item": "cobblemon:mental_herb",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:revival_herb",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:coba_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

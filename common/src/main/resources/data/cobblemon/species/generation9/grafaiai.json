@@ -14,7 +14,7 @@
     "entries": [
       {
         "item": "cobblemon:nanab_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -54,7 +54,7 @@
   "moves": [
     "1:leer",
     "1:scratch",
-	"1:doodle",
+    "1:doodle",
     "5:acidspray",
     "8:furyswipes",
     "11:switcheroo",

@@ -12,11 +12,11 @@
     "entries": [
       {
         "item": "cobblemon:ice_stone",
-        "percentage": 25
+        "percentage": 25.0
       },
       {
         "item": "cobblemon:never_melt_ice",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

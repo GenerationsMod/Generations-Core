@@ -1,0 +1,47 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "scatterbug-1",
+            "pokemon": "scatterbug",
+            "presets": [
+                "natural",
+                "foliage"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "1-20",
+            "weight": 7.0,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_floral",
+                    "#cobblemon:is_plains",
+                    "#cobblemon:is_savanna"
+                ]
+            }
+        },
+        {
+            "id": "scatterbug-2",
+            "pokemon": "scatterbug",
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "1-20",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "the_bumblezone:floral_meadow"
+                ]
+            },
+            "anticondition": {
+                "structures": [
+                    "#the_bumblezone:sempiternal_sanctums"
+                ]
+            }
+        }
+    ]
+}

@@ -160,5 +160,14 @@
   "height": 38,
   "weight": 655,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:soft_sand",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

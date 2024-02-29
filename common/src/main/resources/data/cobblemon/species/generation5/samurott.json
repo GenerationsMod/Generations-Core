@@ -12,13 +12,12 @@
     "entries": [
       {
         "item": "cobblemon:mystic_water",
-        "percentage": 25
+        "percentage": 25.0
       },
       {
         "item": "minecraft:nautilus_shell",
-        "percentage": 1
+        "percentage": 25.0
       }
-
     ]
   },
   "baseStats": {
@@ -29,6 +28,9 @@
     "special_defence": 70,
     "speed": 70
   },
+  "features": [
+    "hisuian"
+  ],
   "catchRate": 45,
   "maleRatio": 0.875,
   "shoulderMountable": false,
@@ -151,6 +153,20 @@
   "eggGroups": [
     "field"
   ],
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    },
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canBreatheUnderwater": true
+      }
+    }
+  },
   "moves": [
     "1:megahorn",
     "1:slash",

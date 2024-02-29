@@ -164,5 +164,14 @@
   "height": 7,
   "weight": 125,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:scute",
+        "quantityRange": "0-2"
+      }
+    ]
+  }
 }

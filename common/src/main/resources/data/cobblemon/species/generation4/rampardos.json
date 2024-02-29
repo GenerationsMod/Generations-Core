@@ -8,12 +8,11 @@
     "h:sheerforce"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
-        "item": "minecraft:bone",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "item": "minecraft:bones",
+        "quantityRange": "0-2"
       }
     ]
   },

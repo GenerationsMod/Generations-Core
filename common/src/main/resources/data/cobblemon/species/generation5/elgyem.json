@@ -9,15 +9,11 @@
     "h:analytic"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:ender_pearl",
-        "percentage": 50
-      },
-      {
-        "item": "minecraft:chorus_fruit",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:light_clay",

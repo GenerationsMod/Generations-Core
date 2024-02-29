@@ -164,5 +164,26 @@
   "height": 14,
   "weight": 3400,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 6,
+    "entries": [
+      {
+        "item": "minecraft:flint",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:hard_stone",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:magnet",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:chople_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

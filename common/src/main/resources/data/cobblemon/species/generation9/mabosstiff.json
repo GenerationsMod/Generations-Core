@@ -9,21 +9,19 @@
     "h:stakeout"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:bone",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:rotten_flesh",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:tanga_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -56,7 +54,7 @@
     "1:leer",
     "1:scaryface",
     "1:tackle",
-	"1:comeuppance",
+    "1:comeuppance",
     "4:lick",
     "7:snarl",
     "10:honeclaws",

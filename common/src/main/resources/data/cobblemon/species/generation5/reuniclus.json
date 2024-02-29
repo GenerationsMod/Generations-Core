@@ -9,16 +9,15 @@
     "h:regenerator"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:slime_ball",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-3"
       },
       {
         "item": "cobblemon:persim_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

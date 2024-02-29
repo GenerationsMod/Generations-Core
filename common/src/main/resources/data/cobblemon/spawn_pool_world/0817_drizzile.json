@@ -1,0 +1,39 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "drizzile-1",
+            "pokemon": "drizzile",
+            "presets": [
+                "natural",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "16-42",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "drizzile-2",
+            "pokemon": "drizzile",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "ultra-rare",
+            "level": "16-42",
+            "weight": 0.9,
+            "condition": {
+                "canSeeSky": true
+            }
+        }
+    ]
+}

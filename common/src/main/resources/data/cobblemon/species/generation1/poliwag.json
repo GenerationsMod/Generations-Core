@@ -9,10 +9,14 @@
     "h:swiftswim"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
-        "item": "cobblemon:wacan_berry",
+        "item": "cobblemon:kings_rock",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:chesto_berry",
         "percentage": 2.5
       }
     ]

@@ -26,20 +26,19 @@
     "field"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:coal",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:charti_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

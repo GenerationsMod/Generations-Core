@@ -12,7 +12,7 @@
     "entries": [
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },
@@ -40,7 +40,7 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.2
       }

@@ -38,14 +38,14 @@
     "entries": [
       {
         "item": "minecraft:dragon_breath",
-        "percentage": 50
-      },
-      {
-        "item": "cobblemon:dragon_scale",
-        "percentage": 2.5
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:dragon_fang",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:dragon_scale",
         "percentage": 2.5
       },
       {

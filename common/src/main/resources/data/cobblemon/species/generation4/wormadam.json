@@ -9,16 +9,15 @@
     "h:overcoat"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:string",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
-        "item": "minecraft:occa_berry",
-        "percentage": 5
+        "item": "cobblemon:occa_berry",
+        "percentage": 5.0
       }
     ]
   },

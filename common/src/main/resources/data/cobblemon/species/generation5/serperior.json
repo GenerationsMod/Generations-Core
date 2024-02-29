@@ -30,9 +30,17 @@
     "entries": [
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 20
+        "percentage": 25.0
       }
     ]
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:leer",

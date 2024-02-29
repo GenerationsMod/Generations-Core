@@ -11,8 +11,8 @@
     "amount": 1,
     "entries": [
       {
-        "item": "minecraft:bone",
-        "percentage": 50
+        "item": "minecraft:bones",
+        "quantityRange": "0-1"
       }
     ]
   },

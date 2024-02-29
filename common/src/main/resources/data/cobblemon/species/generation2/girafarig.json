@@ -241,5 +241,22 @@
   "height": 15,
   "weight": 415,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:leather",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:razor_fang",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

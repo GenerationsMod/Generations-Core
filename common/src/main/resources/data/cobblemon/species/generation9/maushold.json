@@ -9,16 +9,15 @@
     "h:technician"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:wheat_seeds",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:chilan_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -32,7 +31,7 @@
   },
   "behaviour": {
     "resting": {
-      "canSleep": true,
+      "canSleep": false,
       "willSleepOnBed": true,
       "depth": "normal",
       "light": "0-4"

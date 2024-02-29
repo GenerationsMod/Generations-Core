@@ -13,11 +13,11 @@
     "amount": 2,
     "entries": [
       {
-        "item": "cobblemon:wacan_berry",
+        "item": "cobblemon:kings_rock",
         "percentage": 2.5
       },
       {
-        "item": "cobblemon:kings_rock",
+        "item": "cobblemon:chesto_berry",
         "percentage": 2.5
       }
     ]
@@ -30,12 +30,12 @@
     "special_defence": 40,
     "speed": 15
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
   "features": [
     "galarian"
   ],
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Galar",
@@ -189,7 +189,16 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "cobblemon:chesto_berry",
+            "percentage": 2.5
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 63,

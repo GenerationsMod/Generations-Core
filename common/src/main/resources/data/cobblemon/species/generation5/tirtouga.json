@@ -10,12 +10,11 @@
     "h:swiftswim"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:scute",
-        "quantityRange": "0-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       }
     ]
   },

@@ -51,7 +51,7 @@
     "entries": [
       {
         "item": "minecraft:quartz",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:passho_berry",

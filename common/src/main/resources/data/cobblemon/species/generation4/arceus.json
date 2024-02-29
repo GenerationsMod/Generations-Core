@@ -6,6 +6,15 @@
   "abilities": [
     "multitype"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:arceus_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 120,
     "attack": 120,
@@ -790,15 +799,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:arceus_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:cosmicpower",
     "1:naturalgift",

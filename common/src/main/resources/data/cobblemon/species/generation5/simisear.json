@@ -12,15 +12,15 @@
     "entries": [
       {
         "item": "cobblemon:fire_stone",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:passho_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

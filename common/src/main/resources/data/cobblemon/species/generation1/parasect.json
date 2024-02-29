@@ -21,7 +21,7 @@
     "moving": {
       "canLook": false,
       "wanderChance": 20,
-      "walking": {
+      "walk": {
         "walkSpeed": 0.45
       }
     },
@@ -50,7 +50,7 @@
       },
       {
         "item": "cobblemon:coba_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

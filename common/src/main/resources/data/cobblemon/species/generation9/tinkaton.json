@@ -10,16 +10,15 @@
     "h:pickpocket"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:raw_iron",
-        "percentage": 75,
-        "quantityRange": "1-3"
+        "quantityRange": "0-3"
       },
       {
         "item": "cobblemon:razz_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },
@@ -59,7 +58,7 @@
   "moves": [
     "1:astonish",
     "1:fairywind",
-	"1:gigatonhammer",
+    "1:gigatonhammer",
     "5:babydolleyes",
     "8:metalclaw",
     "11:covet",

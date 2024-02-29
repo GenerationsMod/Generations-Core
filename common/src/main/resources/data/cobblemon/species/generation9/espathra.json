@@ -16,7 +16,7 @@
       },
       {
         "item": "cobblemon:tanga_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -29,6 +29,11 @@
     "speed": 105
   },
   "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.3
+      }
+    },
     "resting": {
       "canSleep": true,
       "willSleepOnBed": false,
@@ -59,25 +64,12 @@
     "height": 2.1,
     "fixed": false
   },
-  "behaviour": {
-    "moving": {
-      "walk": {
-        "walkSpeed": 0.3
-      }
-    },
-    "resting": {
-      "canSleep": true,
-      "willSleepOnBed": false,
-      "depth": "normal",
-      "light": "0-4"
-    }
-  },
   "moves": [
     "1:drillpeck",
     "1:featherdance",
     "1:growl",
     "1:peck",
-	"1:luminacrash",
+    "1:luminacrash",
     "5:confusion",
     "8:babydolleyes",
     "11:disarmingvoice",

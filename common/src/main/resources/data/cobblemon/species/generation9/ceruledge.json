@@ -9,24 +9,23 @@
     "h:weakarmor"
   ],
   "drops": {
-    "amount": 4,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:charcoal",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:malicious_armor",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:rawst_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
@@ -77,7 +76,7 @@
     "1:quickguard",
     "1:shadowsneak",
     "1:solarblade",
-	"1:shadowclaw",
+    "1:shadowclaw",
     "8:clearsmog",
     "12:firespin",
     "16:willowisp",

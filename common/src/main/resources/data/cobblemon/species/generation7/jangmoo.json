@@ -145,5 +145,26 @@
   "height": 6,
   "weight": 297,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:scute",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:razor_claw",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:dragon_scale",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

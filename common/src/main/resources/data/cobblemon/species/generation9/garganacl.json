@@ -38,19 +38,24 @@
       "walk": {
         "walkSpeed": 0.2
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:quartz",
-        "quantityRange": "1-3",
-        "percentage": 75
+        "quantityRange": "0-3"
       },
       {
         "item": "cobblemon:passho_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },
@@ -59,8 +64,8 @@
     "1:harden",
     "1:rockblast",
     "1:tackle",
-	"1:saltcure",
-	"1:hammerarm",
+    "1:saltcure",
+    "1:hammerarm",
     "1:wideguard",
     "5:rockthrow",
     "7:mudshot",

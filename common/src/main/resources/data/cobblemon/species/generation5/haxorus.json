@@ -13,11 +13,11 @@
     "entries": [
       {
         "item": "cobblemon:dragon_fang",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:haban_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

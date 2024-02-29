@@ -7,7 +7,7 @@
     "illusion"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:sweet_berries",
@@ -27,6 +27,9 @@
     "special_defence": 40,
     "speed": 65
   },
+  "features": [
+    "hisuian"
+  ],
   "catchRate": 75,
   "maleRatio": 0.875,
   "shoulderMountable": false,

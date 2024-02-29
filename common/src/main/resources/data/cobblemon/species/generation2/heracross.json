@@ -73,15 +73,6 @@
   "eggGroups": [
     "bug"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:heracross_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:armthrust",
     "1:bulletseed",
@@ -266,5 +257,18 @@
   "height": 15,
   "weight": 540,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:heracross_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
 }

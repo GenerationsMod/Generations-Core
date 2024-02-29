@@ -88,5 +88,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.bellibolt.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:ochre_froglight",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

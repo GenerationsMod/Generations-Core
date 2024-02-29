@@ -12,15 +12,15 @@
     "amount": 3,
     "entries": [
       {
-        "item": "cobblemon:cod"
+        "item": "minecraft:cod"
       },
       {
-        "item": "cobblemon:bone_meal",
-        "percentage": 10
+        "item": "minecraft:bone_meal",
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:rindo_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

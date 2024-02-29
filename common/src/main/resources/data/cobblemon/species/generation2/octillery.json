@@ -177,5 +177,18 @@
   "height": 9,
   "weight": 285,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:ink_sac",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

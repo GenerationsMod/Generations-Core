@@ -107,5 +107,18 @@
   "height": 16,
   "weight": 390,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:ink_sac",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

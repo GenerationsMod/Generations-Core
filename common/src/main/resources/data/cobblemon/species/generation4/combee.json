@@ -8,12 +8,12 @@
     "honeygather",
     "h:hustle"
   ],
-    "drops": {
+  "drops": {
     "amount": 4,
     "entries": [
       {
         "item": "minecraft:honey_bottle",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:honeycomb",

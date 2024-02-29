@@ -139,5 +139,21 @@
   "height": 6,
   "weight": 74,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:salmon"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:prism_scale",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

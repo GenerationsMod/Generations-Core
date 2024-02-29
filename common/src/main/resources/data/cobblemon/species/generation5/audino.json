@@ -9,11 +9,15 @@
     "h:klutz"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:oran_berry",
-        "percentage": 10
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 10.0
       }
     ]
   },

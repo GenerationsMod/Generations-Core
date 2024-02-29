@@ -112,5 +112,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.pawmi.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

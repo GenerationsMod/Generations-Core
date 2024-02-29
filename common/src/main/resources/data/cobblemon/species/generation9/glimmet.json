@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "minecraft:amethyst_shard",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:shuca_berry",

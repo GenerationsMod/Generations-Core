@@ -99,5 +99,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.cyclizar.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

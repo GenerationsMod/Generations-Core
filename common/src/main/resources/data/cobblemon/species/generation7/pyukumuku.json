@@ -25,12 +25,11 @@
     "water_1"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "minecraft:slime_ball",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       }
     ]
   },

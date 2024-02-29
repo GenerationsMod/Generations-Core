@@ -9,14 +9,18 @@
     "h:sandforce"
   ],
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:raw_copper",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:hard_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:everstone",
         "percentage": 2.5
       },
       {
@@ -49,7 +53,7 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.15
       }

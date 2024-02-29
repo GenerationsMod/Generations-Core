@@ -9,27 +9,26 @@
     "h:limber"
   ],
   "drops": {
-    "amount": 5,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:rabbit"
       },
       {
         "item": "minecraft:rabbit_hide",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:rabbit_foot",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "minecraft:carrot",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
-        "item": "minecraft:chople_berry",
-        "percentage": 5
+        "item": "cobblemon:chople_berry",
+        "percentage": 5.0
       }
     ]
   },

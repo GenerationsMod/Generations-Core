@@ -12,11 +12,11 @@
     "entries": [
       {
         "item": "minecraft:golden_helmet",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:nanab_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

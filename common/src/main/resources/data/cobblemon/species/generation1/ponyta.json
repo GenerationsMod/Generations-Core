@@ -137,7 +137,20 @@
         }
       ],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "minecraft:leather",
+            "quantityRange": "0-1"
+          },
+          {
+            "item": "cobblemon:razz_berry",
+            "percentage": 2.5
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 82,
@@ -147,10 +160,16 @@
     "field"
   ],
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.3
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "drops": {
@@ -158,7 +177,7 @@
     "entries": [
       {
         "item": "minecraft:leather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:blaze_powder",

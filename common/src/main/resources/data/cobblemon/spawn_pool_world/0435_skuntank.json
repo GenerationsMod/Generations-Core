@@ -4,20 +4,19 @@
     "neededUninstalledMods": [],
     "spawns": [
         {
-            "id": "minccino-1",
-            "pokemon": "minccino",
+            "id": "skuntank-1",
+            "pokemon": "skuntank",
             "presets": [
                 "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
-            "bucket": "common",
-            "level": "5-30",
-            "weight": 1.8,
+            "bucket": "rare",
+            "level": "34-50",
+            "weight": 5.0,
             "condition": {
-                "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_mountain"
+                    "#cobblemon:is_forest"
                 ]
             }
         }

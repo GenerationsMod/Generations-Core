@@ -27,15 +27,6 @@
     "water_1",
     "fairy"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:marill_doll",
-        "percentage": 1
-      }
-    ]
-  },
   "moves": [
     "1:defensecurl",
     "1:helpinghand",
@@ -249,5 +240,18 @@
   "height": 4,
   "weight": 85,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:marill_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
 }

@@ -14,7 +14,7 @@
     "entries": [
       {
         "item": "minecraft:honey_bottle",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:cheri_berry",
@@ -48,6 +48,12 @@
       "fly": {
         "canFly": true
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

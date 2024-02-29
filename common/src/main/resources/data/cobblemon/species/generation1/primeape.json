@@ -38,11 +38,11 @@
     "entries": [
       {
         "item": "cobblemon:muscle_band",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:payapa_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

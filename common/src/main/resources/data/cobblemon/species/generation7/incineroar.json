@@ -30,7 +30,7 @@
     "entries": [
       {
         "item": "cobblemon:charcoal_stick",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },
@@ -43,7 +43,7 @@
     "1:lick",
     "1:scratch",
     "1:throatchop",
-	"1:darkestlariat",
+    "1:darkestlariat",
     "9:roar",
     "11:leer",
     "12:furyswipes",

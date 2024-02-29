@@ -24,15 +24,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:raikou_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:charge",
     "1:extremespeed",
@@ -196,5 +187,14 @@
   "height": 19,
   "weight": 1780,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:raikou_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
 }

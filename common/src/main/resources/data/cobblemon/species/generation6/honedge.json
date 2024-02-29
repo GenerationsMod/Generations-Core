@@ -28,12 +28,12 @@
     "amount": 3,
     "entries": [
       {
-        "item": "minecraft:iron_sword",
-        "percentage": 2.5
+        "item": "minecraft:iron_nugget",
+        "quantityRange": "0-1"
       },
       {
-        "item": "minecraft:iron_nugget",
-        "percentage": 50
+        "item": "minecraft:iron_sword",
+        "percentage": 2.5
       },
       {
         "item": "cobblemon:dusk_stone",

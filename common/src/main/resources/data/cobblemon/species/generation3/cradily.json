@@ -149,5 +149,14 @@
   "height": 15,
   "weight": 604,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

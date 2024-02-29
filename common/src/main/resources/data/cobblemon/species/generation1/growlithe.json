@@ -16,12 +16,12 @@
     "special_defence": 50,
     "speed": 60
   },
-  "catchRate": 190,
-  "maleRatio": 0.75,
-  "shoulderMountable": false,
   "features": [
     "hisuian"
   ],
+  "catchRate": 190,
+  "maleRatio": 0.75,
+  "shoulderMountable": false,
   "forms": [
     {
       "name": "Hisui",
@@ -154,13 +154,21 @@
     "entries": [
       {
         "item": "minecraft:bone",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:rawst_berry",
         "percentage": 2.5
       }
     ]
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
   },
   "moves": [
     "1:ember",

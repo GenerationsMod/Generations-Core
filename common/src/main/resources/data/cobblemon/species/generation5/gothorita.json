@@ -13,11 +13,11 @@
     "entries": [
       {
         "item": "cobblemon:twisted_spoon",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:persim_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

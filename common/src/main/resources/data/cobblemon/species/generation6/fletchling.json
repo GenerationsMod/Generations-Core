@@ -13,7 +13,7 @@
     "entries": [
       {
         "item": "minecraft:feather",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:chicken"
@@ -24,7 +24,6 @@
       }
     ]
   },
-
   "baseStats": {
     "hp": 45,
     "attack": 50,

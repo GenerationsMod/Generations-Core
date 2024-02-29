@@ -1,0 +1,44 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "gligar-1",
+            "pokemon": "gligar",
+            "presets": [
+                "natural",
+                "treetop"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "18-43",
+            "weight": 5.4,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_badlands"
+                ],
+                "timeRange": "night"
+            }
+        },
+        {
+            "id": "gligar-2",
+            "pokemon": "gligar",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "18-43",
+            "weight": 1.8,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_nether_mountain"
+                ]
+            }
+        }
+    ]
+}

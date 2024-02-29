@@ -94,5 +94,14 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.nymble.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

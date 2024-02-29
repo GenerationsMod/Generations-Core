@@ -14,15 +14,14 @@
     "entries": [
       {
         "item": "cobblemon:spell_tag",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:rawst_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },
-
   "baseStats": {
     "hp": 85,
     "attack": 110,
@@ -42,10 +41,16 @@
     "amorphous"
   ],
   "behaviour": {
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.2
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

@@ -130,7 +130,20 @@
       "preEvolution": "ponyta form=galar",
       "evolutions": [],
       "cannotDynamax": false,
-      "battleOnly": false
+      "battleOnly": false,
+      "drops": {
+        "amount": 3,
+        "entries": [
+          {
+            "item": "minecraft:leather",
+            "quantityRange": "0-2"
+          },
+          {
+            "item": "cobblemon:razz_berry",
+            "percentage": 5.0
+          }
+        ]
+      }
     }
   ],
   "baseExperienceYield": 175,
@@ -146,25 +159,26 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "walk": {
-      "walkSpeed": 0.35
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.35
+      }
     }
   },
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:leather",
-        "percentage": 66,
-        "quantityRange": "1-2"
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:blaze_powder",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:shuca_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

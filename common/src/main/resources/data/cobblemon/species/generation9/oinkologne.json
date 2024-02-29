@@ -9,16 +9,15 @@
     "h:thickfat"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:porkchop",
-        "percentage": 75,
         "quantityRange": "1-3"
       },
       {
         "item": "cobblemon:oran_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

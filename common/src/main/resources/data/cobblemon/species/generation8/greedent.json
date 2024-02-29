@@ -109,5 +109,14 @@
   "height": 6,
   "weight": 60,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "quantityRange": "0-2"
+      }
+    ]
+  }
 }

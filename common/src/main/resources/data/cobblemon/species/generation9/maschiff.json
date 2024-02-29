@@ -13,11 +13,11 @@
     "entries": [
       {
         "item": "minecraft:bone",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:rotten_flesh",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:tanga_berry",

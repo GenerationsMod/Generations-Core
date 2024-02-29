@@ -13,10 +13,10 @@
     "entries": [
       {
         "item": "minecraft:clay_ball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
-        "item": "minecraft:rindo_berry",
+        "item": "cobblemon:rindo_berry",
         "percentage": 2.5
       }
     ]

@@ -74,7 +74,7 @@
     "grass"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:stick",
@@ -82,7 +82,7 @@
       },
       {
         "item": "cobblemon:miracle_seed",
-        "percentage": 25
+        "percentage": 25.0
       }
     ]
   },
@@ -94,7 +94,7 @@
     "1:nobleroar",
     "1:scratch",
     "1:taunt",
-	"1:drumbeating",
+    "1:drumbeating",
     "12:razorleaf",
     "19:screech",
     "24:knockoff",

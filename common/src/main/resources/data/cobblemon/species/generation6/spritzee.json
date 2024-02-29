@@ -7,6 +7,19 @@
     "healer",
     "h:aromaveil"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 50.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 78,
     "attack": 52,

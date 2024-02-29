@@ -8,6 +8,19 @@
     "pressure",
     "h:telepathy"
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "generations_core:giratina_altered_doll",
+        "percentage": 1.0
+      },
+      {
+        "item": "generations_core:giratina_origin_doll",
+        "percentage": 1.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 150,
     "attack": 100,
@@ -34,19 +47,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "2",
-    "entries": [
-      {
-        "item": "generations_core:giratina_altered_doll",
-        "percentage": 50
-      },
-      {
-        "item": "generations_core:giratina_origin_doll",
-        "percentage": 50
-      }
-    ]
-  },
   "moves": [
     "1:defog",
     "1:dragonbreath",

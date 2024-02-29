@@ -13,15 +13,15 @@
     "entries": [
       {
         "item": "cobblemon:razor_claw",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:quick_claw",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:chople_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

@@ -35,15 +35,19 @@
     }
   },
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "cobblemon:kings_rock",
         "percentage": 2.5
       },
       {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 2.5
+      },
+      {
         "item": "generations_core:krabby_doll",
-        "percentage": 1
+        "percentage": 1.0
       }
     ]
   },

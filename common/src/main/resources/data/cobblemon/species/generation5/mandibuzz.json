@@ -10,17 +10,15 @@
     "h:weakarmor"
   ],
   "drops": {
-    "amount": 5,
+    "amount": 7,
     "entries": [
       {
         "item": "minecraft:feather",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:rotten_flesh",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
       },
       {
         "item": "minecraft:chicken"
@@ -31,7 +29,7 @@
       },
       {
         "item": "cobblemon:bluk_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

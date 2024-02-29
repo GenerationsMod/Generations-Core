@@ -6,6 +6,15 @@
   "abilities": [
     "pressure"
   ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:deoxys_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "baseStats": {
     "hp": 50,
     "attack": 150,
@@ -32,15 +41,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:deoxys_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:leer",
     "1:wrap",
@@ -354,5 +354,13 @@
     }
   ],
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:eye_of_ender"
+      }
+    ]
+  }
 }

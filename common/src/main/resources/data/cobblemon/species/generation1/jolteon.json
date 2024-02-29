@@ -12,11 +12,11 @@
     "entries": [
       {
         "item": "cobblemon:thunder_stone",
-        "percentage": 25
+        "percentage": 25.0
       },
       {
         "item": "cobblemon:magnet",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

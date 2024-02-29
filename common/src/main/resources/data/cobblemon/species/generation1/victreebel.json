@@ -26,11 +26,15 @@
     "grass"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:big_root",
-        "percentage": 10
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 10.0
       }
     ]
   },

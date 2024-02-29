@@ -12,12 +12,10 @@
     "entries": [
       {
         "item": "minecraft:salmon",
-        "quantityRange": "1",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:wacan_berry",
-        "quantityRange": "1",
         "percentage": 2.5
       }
     ]

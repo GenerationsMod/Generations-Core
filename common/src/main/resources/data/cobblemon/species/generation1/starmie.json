@@ -9,15 +9,6 @@
     "naturalcure",
     "h:analytic"
   ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:persim_berry",
-        "percentage": 5
-      }
-    ]
-  },
   "baseStats": {
     "hp": 60,
     "attack": 75,
@@ -42,6 +33,12 @@
         "canSwimInWater": true,
         "canBreatheUnderwater": true
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "moves": [

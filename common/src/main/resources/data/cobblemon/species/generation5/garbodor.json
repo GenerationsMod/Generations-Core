@@ -13,19 +13,19 @@
     "entries": [
       {
         "item": "cobblemon:black_sludge",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:leftovers",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:silk_scarf",
-        "percentage": 5
+        "percentage": 5.0
       },
       {
         "item": "cobblemon:pecha_berry",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

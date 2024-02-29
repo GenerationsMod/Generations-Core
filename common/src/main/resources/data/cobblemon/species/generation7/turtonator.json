@@ -157,5 +157,22 @@
   "height": 20,
   "weight": 2120,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:scute",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:charcoal",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

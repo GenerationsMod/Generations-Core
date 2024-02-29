@@ -13,11 +13,11 @@
     "entries": [
       {
         "item": "minecraft:snowball",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:cod",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:aspear_berry",

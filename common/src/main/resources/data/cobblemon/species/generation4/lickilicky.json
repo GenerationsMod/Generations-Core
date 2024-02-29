@@ -9,12 +9,15 @@
     "h:cloudnine"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:slime_ball",
-        "quantityRange": "1-2",
-        "percentage": 66
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5.0
       }
     ]
   },
@@ -31,6 +34,12 @@
       "walk": {
         "walkSpeed": 0.2
       }
+    },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": false,
+      "depth": "normal",
+      "light": "0-4"
     }
   },
   "catchRate": 30,

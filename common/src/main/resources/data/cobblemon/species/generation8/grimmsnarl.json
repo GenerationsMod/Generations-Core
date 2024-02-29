@@ -185,5 +185,14 @@
   "height": 15,
   "weight": 610,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 10.0
+      }
+    ]
+  }
 }

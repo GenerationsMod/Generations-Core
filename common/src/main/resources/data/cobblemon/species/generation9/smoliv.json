@@ -98,5 +98,18 @@
   "cannotDynamax": false,
   "pokedex": [
     "cobblemon.species.smoliv.desc"
-  ]
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 2.5
+      }
+    ]
+  }
 }

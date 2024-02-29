@@ -8,11 +8,11 @@
     "h:waterabsorb"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:cactus",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:poison_barb",
@@ -49,7 +49,7 @@
       "depth": "normal",
       "light": "0-4"
     },
-    "moving" : {
+    "moving": {
       "walk": {
         "walkSpeed": 0.25
       }

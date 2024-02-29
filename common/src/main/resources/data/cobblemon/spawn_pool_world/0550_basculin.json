@@ -1,0 +1,160 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "basculin-bluestripe-1",
+            "pokemon": "basculin bluestripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "21-46",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "2,3,4"
+            }
+        },
+        {
+            "id": "basculin-bluestripe-2",
+            "pokemon": "basculin bluestripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "21-46",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "6,7,8"
+            }
+        },
+        {
+            "id": "basculin-bluestripe-3",
+            "pokemon": "basculin bluestripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "21-46",
+            "weight": 5.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "1,5"
+            }
+        },
+        {
+            "id": "basculin-redstripe-1",
+            "pokemon": "basculin redstripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "21-46",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "6,7,8"
+            }
+        },
+        {
+            "id": "basculin-redstripe-2",
+            "pokemon": "basculin redstripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "21-46",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "2,3,4"
+            }
+        },
+        {
+            "id": "basculin-redstripe-3",
+            "pokemon": "basculin redstripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "21-46",
+            "weight": 5.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "1,5"
+            }
+        },
+        {
+            "id": "basculin-whitestripe-1",
+            "pokemon": "basculin whitestripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "21-46",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "6,7,8"
+            }
+        },
+        {
+            "id": "basculin-whitestripe-2",
+            "pokemon": "basculin whitestripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "21-46",
+            "weight": 10.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "2,3,4"
+            }
+        },
+        {
+            "id": "basculin-whitestripe-3",
+            "pokemon": "basculin whitestripe",
+            "presets": [
+                "freshwater",
+                "underwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "21-46",
+            "weight": 5.0,
+            "condition": {
+                "canSeeSky": true,
+                "moonPhase": "1,5"
+            }
+        }
+    ]
+}

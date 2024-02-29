@@ -13,11 +13,11 @@
     "entries": [
       {
         "item": "cobblemon:quick_claw",
-        "percentage": 10
+        "percentage": 10.0
       },
       {
         "item": "cobblemon:shuca_berry",
-        "percentage": 10
+        "percentage": 10.0
       }
     ]
   },

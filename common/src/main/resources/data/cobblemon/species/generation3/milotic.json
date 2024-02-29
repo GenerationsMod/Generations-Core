@@ -162,5 +162,18 @@
   "height": 62,
   "weight": 1620,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:prism_scale",
+        "percentage": 5.0
+      }
+    ]
+  }
 }

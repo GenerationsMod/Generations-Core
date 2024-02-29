@@ -39,12 +39,11 @@
     "amount": 2,
     "entries": [
       {
-        "item": "minecraft:nautilus_shell",
-        "percentage": 1
+        "item": "minecraft:nautilus_shell"
       },
       {
         "item": "minecraft:bone_meal",
-        "percentage": 5
+        "percentage": 5.0
       }
     ]
   },

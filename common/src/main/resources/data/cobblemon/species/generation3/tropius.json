@@ -181,5 +181,14 @@
   "height": 20,
   "weight": 1000,
   "aspects": [],
-  "cannotDynamax": false
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:nanab_berry",
+        "quantityRange": "0-2"
+      }
+    ]
+  }
 }

@@ -14,6 +14,15 @@
     "special_defence": 80,
     "speed": 143
   },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:zeraora_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
   "catchRate": 3,
   "maleRatio": -1,
   "shoulderMountable": false,
@@ -23,15 +32,6 @@
   "eggGroups": [
     "undiscovered"
   ],
-  "drops": {
-    "amount": "1",
-    "entries": [
-      {
-        "item": "generations_core:zeraora_doll",
-        "percentage": 75
-      }
-    ]
-  },
   "moves": [
     "1:fakeout",
     "1:poweruppunch",

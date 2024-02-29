@@ -9,15 +9,15 @@
     "h:rattled"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "minecraft:bone",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "minecraft:rotten_flesh",
-        "percentage": 50
+        "quantityRange": "0-1"
       },
       {
         "item": "cobblemon:pecha_berry",

@@ -1,0 +1,55 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "floatzel-1",
+            "pokemon": "floatzel",
+            "presets": [
+                "natural",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "26-50",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "floatzel-2",
+            "pokemon": "floatzel",
+            "presets": [
+                "underwater",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "26-50",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true
+            }
+        },
+        {
+            "id": "floatzel-3",
+            "pokemon": "floatzel",
+            "presets": [
+                "water_surface",
+                "freshwater"
+            ],
+            "type": "pokemon",
+            "context": "surface",
+            "bucket": "common",
+            "level": "26-50",
+            "weight": 0.2,
+            "condition": {
+                "canSeeSky": true
+            }
+        }
+    ]
+}
