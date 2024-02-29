@@ -1,18 +1,15 @@
 package generations.gg.generations.core.generationscore.client.render.block.entity;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockAnimatedObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockLightValueProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.animation.FixedFrameAnimationInstance;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
-import gg.generations.rarecandy.renderer.animation.AnimationInstance;
-import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
-import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
+import gg.generations.rarecandy.legacy.animation.AnimationInstance;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -42,27 +39,27 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
         var model = ModelRegistry.get(blockEntity);
-        stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
+        stack.scale(model.renderObject.getScale(), model.renderObject.getScale(), model.renderObject.getScale());
 
         if (blockEntity.objectInstance == null) {
             int amount = instanceAmount();
-            blockEntity.objectInstance = new ObjectInstance[amount];
+            blockEntity.objectInstance = new BlockObjectInstance[amount];
 
             for (int i = 0; i < amount; i++)
-                blockEntity.objectInstance[i] = blockEntity.generateInstance();
+                blockEntity.objectInstance[i] = blockEntity.generateInstance(model.renderObject);
         }
 
         String variant = blockEntity.getVariant();
 
         for (var instance : blockEntity.objectInstance) {
-            if (!Objects.equals(instance.materialId(), variant)) {
+            if (!Objects.equals(instance.getVariant(), variant)) {
                 instance.setVariant(variant);
             }
 
-            instance.viewMatrix().set(stack.last().pose());
-            ((BlockObjectInstance) instance).setLight(packedLight);
-            if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) instance).setTint(provider.getTint());
-            model.render(instance, RenderSystem.getProjectionMatrix());
+            instance.transformationMatrix().set(stack.last().pose());
+            instance.setLight(packedLight);
+            if(blockEntity instanceof ModelContextProviders.TintProvider provider) (instance).setTint(provider.getTint());
+            model.render(instance);
         }
     }
 
@@ -75,48 +72,44 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
         var model = ModelRegistry.get(blockEntity);
 
-        stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
+        stack.scale(model.renderObject.getScale(), model.renderObject.getScale(), model.renderObject.getScale());
 
         var amount = instanceAmount();
-        blockEntity.objectInstance = new ObjectInstance[amount];
+        blockEntity.objectInstance = new BlockObjectInstance[amount];
 
         for (int i = 0; i < amount; i++) {
-            blockEntity.objectInstance[i] = blockEntity.generateInstance();
+            blockEntity.objectInstance[i] = blockEntity.generateInstance(model.renderObject);
         }
 
         var primeInstance = blockEntity.objectInstance[0];
 
-        if (model.renderObject.isReady()) {
-            primeInstance.link(model.renderObject);
+        if (model.isReady()) {
 
-            var animationInstance = ((AnimatedObjectInstance) primeInstance);
-            var animation = animationInstance.getAnimationsIfAvailable().get(blockEntity.getAnimation());
+            var animation = (primeInstance).getAnimationsIfAvailable().get(blockEntity.getAnimation());
 
             if (animation != null) {
                 if (blockEntity instanceof ModelContextProviders.FrameProvider frameProvider) {
-                    animationInstance.changeAnimation(new FixedFrameAnimationInstance(animation, frameProvider.getFrame()));
+                    (primeInstance).changeAnimation(new FixedFrameAnimationInstance(animation, frameProvider.getFrame()));
                 } else {
-                    animationInstance.changeAnimation(new AnimationInstance(animation));
+                    (primeInstance).changeAnimation(new AnimationInstance(animation));
                 }
             }
         }
 
-        primeInstance.viewMatrix().set(stack.last().pose());
+        primeInstance.transformationMatrix().set(stack.last().pose());
         ((BlockLightValueProvider) primeInstance).setLight(packedLight);
-        if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockAnimatedObjectInstance) primeInstance).setTint(provider.getTint());
+        if(blockEntity instanceof ModelContextProviders.TintProvider provider) primeInstance.setTint(provider.getTint());
 
-        var instance = (AnimatedObjectInstance) primeInstance;
-
-        if(blockEntity instanceof ModelContextProviders.FrameProvider frameProvider && instance.currentAnimation instanceof FixedFrameAnimationInstance fixedAnimation && fixedAnimation.getCurrentTime() != frameProvider.getFrame()) {
+        if(blockEntity instanceof ModelContextProviders.FrameProvider frameProvider && primeInstance.currentAnimation instanceof FixedFrameAnimationInstance fixedAnimation && fixedAnimation.getCurrentTime() != frameProvider.getFrame()) {
             fixedAnimation.setCurrentTime(frameProvider.getFrame());
         }
 
-        model.render(instance, RenderSystem.getProjectionMatrix());
+        model.render(primeInstance);
     }
 
-    protected void renderResourceLocation(ResourceLocation location, PoseStack stack, ObjectInstance objectInstance) {
+    protected void renderResourceLocation(ResourceLocation location, PoseStack stack, PixelmonInstance objectInstance) {
         objectInstance.transformationMatrix().set(stack.last().pose());
-        ModelRegistry.get(location).render(objectInstance, RenderSystem.getProjectionMatrix());
+        ModelRegistry.get(location).render(objectInstance);
     }
 
     @Override

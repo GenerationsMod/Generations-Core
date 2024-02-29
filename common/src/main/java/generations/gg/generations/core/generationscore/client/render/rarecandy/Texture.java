@@ -2,30 +2,32 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.systems.RenderSystem;
-import gg.generations.rarecandy.pokeutils.reader.TextureReference;
-import gg.generations.rarecandy.renderer.loading.ITexture;
+import gg.generations.rarecandy.legacy.pipeline.ITexture;
+import gg.generations.rarecandy.legacy.pipeline.TextureReference;
 import it.unimi.dsi.fastutil.io.FastByteArrayInputStream;
 import it.unimi.dsi.fastutil.io.FastByteArrayOutputStream;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 
 import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import static org.lwjgl.opengl.GL13C.GL_TEXTURE0;
 
 public class Texture extends DynamicTexture implements ITexture {
     public Texture(TextureReference pixels) {
-        super(getFromBuffered(pixels.data()));
+        super(getFromBuffered(pixels));
     }
 
-    private static NativeImage getFromBuffered(BufferedImage image) {
-        try (FastByteArrayOutputStream outputStream = new FastByteArrayOutputStream()) {
-            ImageIO.write(image, "PNG", outputStream);
-            return NativeImage.read(new FastByteArrayInputStream(outputStream.array));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    private static NativeImage getFromBuffered(TextureReference image) {
+        var texture = new NativeImage(NativeImage.Format.RGBA, image.width(), image.height(), true);
+
+        for (int x = 0; x < image.width(); x++) {
+            for (int y = 0; y < image.height(); y++) {
+                texture.setPixelRGBA(x, y, image.rgbaBytes().getInt(x + y * image.height()));
+            }
         }
+
+        return texture;
     }
 
     @Override

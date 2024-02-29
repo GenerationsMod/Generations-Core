@@ -38,8 +38,9 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
     }
 
     override fun getInstance(): PixelmonInstance {
-        if (pixelmonInstance == null) pixelmonInstance = PixelmonInstance(Matrix4f(), Matrix4f(), null)
-        return pixelmonInstance as PixelmonInstance
+//        if (pixelmonInstance == null) pixelmonInstance = PixelmonInstance(
+//            Matrix4f(), Matrix4f(), null)
+        return pixelmonInstance as PixelmonInstance //TODO: Finish this
     }
 
     override fun setInstance(instance: PixelmonInstance?) {

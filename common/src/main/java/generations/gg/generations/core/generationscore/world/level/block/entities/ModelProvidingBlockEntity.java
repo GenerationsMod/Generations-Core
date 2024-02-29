@@ -1,10 +1,9 @@
 package generations.gg.generations.core.generationscore.world.level.block.entities;
 
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockAnimatedObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
-import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
+import gg.generations.rarecandy.arceus.model.pk.MultiRenderObject;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -13,7 +12,7 @@ import net.minecraft.world.phys.AABB;
 import org.joml.Matrix4f;
 
 public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implements ModelContextProviders.ModelProvider, ModelContextProviders.VariantProvider {
-    public ObjectInstance[] objectInstance;
+    public BlockObjectInstance[] objectInstance;
     private AABB boundingBox;
 
     public ModelProvidingBlockEntity(BlockEntityType<? extends ModelProvidingBlockEntity> type, BlockPos pos, BlockState state) {
@@ -38,7 +37,7 @@ public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implem
         return new AABB(pos, pos.offset(1,1,1));
     }
 
-    public ObjectInstance generateInstance() {
-        return isAnimated() ? new BlockAnimatedObjectInstance(new Matrix4f(), new Matrix4f(), null): new BlockObjectInstance(new Matrix4f(), new Matrix4f(), null);
+    public BlockObjectInstance generateInstance(MultiRenderObject<?> object) {
+        return new BlockObjectInstance(object, new Matrix4f(), null);
     }
 }

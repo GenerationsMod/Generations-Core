@@ -22,7 +22,8 @@ import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
 
 public class ZygardeCellEntity extends Entity {
-    public BlockObjectInstance instance = new BlockObjectInstance(new Matrix4f(), new Matrix4f(), null);
+
+    public BlockObjectInstance instance;
     public ZygardeCellEntity(Level level) {
         super(GenerationsEntities.ZYGARDE_CELL.get(), level);
     }

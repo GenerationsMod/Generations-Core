@@ -1,14 +1,17 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
-import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
+import gg.generations.rarecandy.arceus.model.pk.MultiRenderObject;
+import gg.generations.rarecandy.arceus.model.pk.MultiRenderObjectInstance;
 import org.joml.Matrix4f;
 
-public class PixelmonInstance extends AnimatedObjectInstance implements BlockLightValueProvider {
+public class PixelmonInstance extends MultiRenderObjectInstance<MultiRenderObject<?>> implements BlockLightValueProvider {
+    private final Matrix4f transformationMatrix;
     public Matrix4f[] matrixTransforms;
     private int light;
 
-    public PixelmonInstance(Matrix4f transformationMatrix, Matrix4f viewMatrix, String materialId) {
-        super(transformationMatrix, viewMatrix, materialId);
+    public PixelmonInstance(MultiRenderObject<?> object, Matrix4f transformationMatrix, String materialId) {
+        super(object, transformationMatrix, materialId);
+        this.transformationMatrix = transformationMatrix;
     }
 
     @Override
@@ -24,5 +27,9 @@ public class PixelmonInstance extends AnimatedObjectInstance implements BlockLig
     @Override
     public void setLight(int light) {
         this.light = light;
+    }
+
+    public Matrix4f transformationMatrix() {
+        return transformationMatrix;
     }
 }

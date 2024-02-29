@@ -49,22 +49,21 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         boolean isGui = false;
 
-        var scale = model.renderObject.scale;
+        var scale = model.renderObject.getScale();
 
         if(instance == null && !isStatue) {
-            instance = ModelRegistry.getGuiInstance();
-            instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
+            instance = model.getGuiInstance();
             isGui = true;
         } else {
             if(isStatue) {
                 instance = ((StatueEntity) entity).getInstance();
-                instance.matrixTransforms = ModelRegistry.getGuiInstance().matrixTransforms;
+                instance.matrixTransforms = model.getGuiInstance().matrixTransforms;
             }
 
             scale *= ((PixelmonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;
         }
 
-        if(model.renderObject.isReady()) {
+        if(model.isReady()) {
             instance.setLight(packedLight);
 
             var id = getTexture(context);
@@ -88,11 +87,15 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             stack.popPose();
 
             if(!isGui) {
-                model.render(instance, RenderSystem.getProjectionMatrix());
+                model.render(instance);
             } else {
-                model.renderGui(instance, RenderSystem.getProjectionMatrix());
+                model.renderGui(instance);
             }
         }
+    }
+
+    public CompiledModel compiledModel() {
+        return objectSupplier.get();
     }
 
     private ResourceLocation getTexture(RenderContext context) {

@@ -1,16 +1,16 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
-import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
+import gg.generations.rarecandy.arceus.model.pk.MultiRenderObject;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
-public class BlockObjectInstance extends ObjectInstance implements BlockLightValueProvider, ModelContextProviders.TintProvider {
+public class BlockObjectInstance extends PixelmonInstance implements ModelContextProviders.TintProvider {
     private int light = 0x000000;
     private Vector3f tint = null;
 
-    public BlockObjectInstance(Matrix4f transformationMatrix, Matrix4f viewMatrix, String variant) {
-        super(transformationMatrix, viewMatrix, variant);
+    public BlockObjectInstance(MultiRenderObject<?> object, Matrix4f transformationMatrix, String materialId) {
+        super(object, transformationMatrix, materialId);
     }
 
 

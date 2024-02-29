@@ -38,10 +38,10 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
-import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
-import gg.generations.rarecandy.pokeutils.reader.TextureReference;
-import gg.generations.rarecandy.renderer.loading.ITexture;
-import gg.generations.rarecandy.tools.TextureLoader;
+import gg.generations.rarecandy.arceus.model.pk.ITextureLoader;
+import gg.generations.rarecandy.arceus.model.pk.TextureLoader;
+import gg.generations.rarecandy.legacy.pipeline.ITexture;
+import gg.generations.rarecandy.legacy.pipeline.TextureReference;
 import kotlin.Unit;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -143,7 +143,7 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.GHOST);
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
-            TextureLoader.setInstance(textureLoader = new GenerationsTextureLoader(event));
+            TextureLoader.setInstance(textureLoader = new GenerationsTextureLoader());
             textureLoader.initialize(event.getResourceManager());
 
             Pipelines.onInitialize(event.getResourceManager());
@@ -387,13 +387,14 @@ public class GenerationsCoreClient {
     }
 
     public static void renderRareCandy() {
-        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+        ModelRegistry.getWorldRareCandy().render();
+        ModelRegistry.getWorldRareCandy().clear();
     }
 
     public static class GenerationsTextureLoader extends ITextureLoader {
         final Map<String, ResourceLocation> MAP = new HashMap<>();
 
-        public GenerationsTextureLoader(Minecraft minecraft) {}
+        public GenerationsTextureLoader() {}
 
         public void initialize(ResourceManager manager) {
             clear();
@@ -407,7 +408,11 @@ public class GenerationsCoreClient {
                         try(var reader = resource.openAsReader()) {
                             var map = GsonHelper.fromJson(gson, reader, RARE_CANDY_TYPE);
 
-                            map.forEach((key, value) -> register(key, new TextureReference(fromResourceLocation(manager, Objects.requireNonNull(ResourceLocation.tryParse(value))), key)));
+                            map.forEach((key, value) -> {
+                                var bufferedImage = fromResourceLocation(manager, Objects.requireNonNull(ResourceLocation.tryParse(value)));
+
+                                register(key, TextureReference.read(bufferedImage));
+                            });
 
                         } catch (IOException e) {
 
@@ -480,16 +485,6 @@ public class GenerationsCoreClient {
                 var location = Minecraft.getInstance().getTextureManager().register(s.replace(":", "_").toLowerCase(), texture);
                 MAP.putIfAbsent(s, location);
             }
-        }
-
-        @Override
-        public void register(String s, TextureReference textureReference) {
-            register(s, new generations.gg.generations.core.generationscore.client.render.rarecandy.Texture(textureReference));
-        }
-
-        @Override
-        protected ITexture loadFromReference(TextureReference textureReference) {
-            return null;
         }
 
         @Override
