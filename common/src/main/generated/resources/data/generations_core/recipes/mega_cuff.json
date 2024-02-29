@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "generations_core:mega_bracelet"
+    },
+    "M": {
+      "item": "generations_core:mega_stone_shard"
+    },
+    "R": {
+      "item": "generations_core:ruby"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "MMM",
+    "RBR"
+  ],
+  "result": {
+    "item": "generations_core:mega_cuff"
+  },
+  "show_notification": true
+}

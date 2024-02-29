@@ -188,6 +188,12 @@
     "generations_core:max_repel",
     "generations_core:wailmer_pail",
     "generations_core:sprink_lotad",
+    "generations_core:mega_bracelet",
+    "generations_core:mega_charm",
+    "generations_core:mega_cuff",
+    "generations_core:mega_ring",
+    "generations_core:z_power_ring",
+    "generations_core:z_ring",
     "generations_core:rotom_catalog",
     "generations_core:pokedex",
     "generations_core:lure_module",
@@ -196,6 +202,7 @@
     "generations_core:ability_capsule",
     "generations_core:ability_patch",
     "generations_core:wishing_star",
-    "generations_core:uncharged_dynamax_band"
+    "generations_core:uncharged_dynamax_band",
+    "generations_core:dynamax_band"
   ]
 }

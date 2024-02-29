@@ -13,8 +13,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public enum GenerationsArmorMaterials implements ArmorMaterial {
-    RUNNING("running", 66, new int[]{3, 0, 0, 0}, 22, () -> Items.LEATHER),
-    OLD_RUNNING("old_running", 999999, new int[]{2, 0, 0, 0}, 13, () -> Items.LEATHER),
     AETHER("aether", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON),
     AQUA("aqua", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SAPPHIRE),
     FLARE("flare", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY),

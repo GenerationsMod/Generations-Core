@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "E": {
-      "item": "generations_core:cursed_carved_pumpkin"
-    },
-    "J": {
+    "T": {
       "item": "minecraft:torch"
+    },
+    "X": {
+      "item": "generations_core:cursed_carved_pumpkin"
     }
   },
   "pattern": [
-    "E",
-    "J"
+    "X",
+    "T"
   ],
   "result": {
     "item": "generations_core:cursed_jack_o_lantern"

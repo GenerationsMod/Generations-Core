@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Z": {
+      "item": "generations_core:dynite_ore"
+    }
+  },
+  "pattern": [
+    "ZIZ",
+    "ZIZ",
+    "ZIZ"
+  ],
+  "result": {
+    "item": "generations_core:uncharged_dynamax_band"
+  },
+  "show_notification": true
+}

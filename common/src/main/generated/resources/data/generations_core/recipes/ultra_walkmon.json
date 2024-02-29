@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "cobblemon:ultra_ball"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "J": {
+      "item": "minecraft:jukebox"
+    },
+    "R": {
+      "item": "minecraft:yellow_dye"
+    },
+    "W": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "pattern": [
+    "CRC",
+    "JBJ",
+    "CWC"
+  ],
+  "result": {
+    "item": "generations_core:ultra_walkmon"
+  },
+  "show_notification": true
+}

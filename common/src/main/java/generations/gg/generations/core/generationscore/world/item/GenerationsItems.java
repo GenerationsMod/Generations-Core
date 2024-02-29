@@ -765,6 +765,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MAX_REPEL = register("max_repel", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WAILMER_PAIL = register("wailmer_pail", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SPRINK_LOTAD = register("sprink_lotad", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MEGA_BRACELET = register("mega_bracelet", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MEGA_CHARM = register("mega_charm", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MEGA_CUFF = register("mega_cuff", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MEGA_RING = register("mega_ring", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> Z_POWER_RING = register("z_power_ring", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> Z_RING = register("z_ring", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
     /*
     public static final RegistrySupplier<Item> RED_BIKE = register("red_bike", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> ORANGE_BIKE = register("orange_bike", Item::new, PLAYER_ITEMS);
@@ -782,6 +788,8 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ABILITY_PATCH = register("ability_patch", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WISHING_STAR = register("wishing_star", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> UNCHARGED_DYNAMAX_BAND = register("uncharged_dynamax_band", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> DYNAMAX_BAND = register("dynamax_band", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
+
 
     /**
      * Legendary Items
@@ -1223,8 +1231,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> HEALTH_CANDY = register("health_candy", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HEALTH_CANDY_L = register("health_candy_l", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HEALTH_CANDY_XL = register("health_candy_xl", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-
-    public static final RegistrySupplier<Item> HI_TECH_EARBUDS = register("hi_tech_earbuds", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HOLO_CASTER_1 = register("holo_caster_1", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HOLO_CASTER_2 = register("holo_caster_2", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> HONOR_OF_KALOS = register("honor_of_kalos", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
@@ -1258,9 +1264,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MAKEUP_BAG = register("makeup_bag", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MAX_LURE = register("max_lure", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEDAL_BOX = register("medal_box", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> MEGA_CHARM = register("mega_charm", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> MEGA_CUFF = register("mega_cuff", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> MEGA_RING = register("mega_ring", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEMBER_CARD = register("member_card", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> METEORITE_SHARD = register("meteorite_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> MEGASTONE_SHARD = register("mega_stone_shard", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
@@ -1403,8 +1406,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> X_TRANSCEIVER_YELLOW = register("x_transceiver_yellow", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> YELLOW_PETAL = register("yellow_petal", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> YELLOW_SCARF = register("yellow_scarf", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> Z_POWER_RING = register("z_power_ring", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> Z_RING = register("z_ring", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
 
     /**
      * Items to be included in Minecraft Default Section.
@@ -1430,6 +1431,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmonItem(properties, 2, "great_walkmon"), UTILITY);
     public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmonItem(properties, 3, "ultra_walkmon"), UTILITY);
     public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmonItem(properties, 4, "master_walkmon"), UTILITY);
+    public static final RegistrySupplier<Item> HI_TECH_EARBUDS = register("hi_tech_earbuds", properties -> new WalkmonItem(properties, 4, "hi_tech_earbuds"), UTILITY);
     public static final RegistrySupplier<Item> AZALEA_TOWN_DISC = createMusicDisc("azalea_town_disc", GenerationsSounds.AZALEA_TOWN, 4000);
     public static final RegistrySupplier<Item> CASCARRAFA_CITY_DISC = createMusicDisc("cascarrafa_city_disc", GenerationsSounds.CASCARRAFA_CITY, 3396);
     public static final RegistrySupplier<Item> CERULEAN_CITY_DISC = createMusicDisc("cerulean_city_disc", GenerationsSounds.CERULEAN_CITY, 3677);

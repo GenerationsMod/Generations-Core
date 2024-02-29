@@ -3,6 +3,7 @@
     "generations_core:poke_walkmon",
     "generations_core:great_walkmon",
     "generations_core:ultra_walkmon",
-    "generations_core:master_walkmon"
+    "generations_core:master_walkmon",
+    "generations_core:hi_tech_earbuds"
   ]
 }

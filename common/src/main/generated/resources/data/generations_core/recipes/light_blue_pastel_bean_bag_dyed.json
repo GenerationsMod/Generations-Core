@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:light_blue_dye"
+    },
+    {
+      "tag": "generations_core:pastel_bean_bag"
+    }
+  ],
+  "result": {
+    "item": "generations_core:light_blue_pastel_bean_bag"
+  }
+}

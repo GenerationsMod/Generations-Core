@@ -1,7 +1,5 @@
 {
   "values": [
-    "generations_core:running_boots",
-    "generations_core:old_running_boots",
     "generations_core:aether_boots",
     "generations_core:aqua_boots",
     "generations_core:flare_boots",

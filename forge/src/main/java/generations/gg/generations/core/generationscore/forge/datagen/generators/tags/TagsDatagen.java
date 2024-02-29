@@ -385,7 +385,8 @@ public class TagsDatagen {
                     POKE_WALKMON.get(),
                     GREAT_WALKMON.get(),
                     ULTRA_WALKMON.get(),
-                    MASTER_WALKMON.get()
+                    MASTER_WALKMON.get(),
+                    HI_TECH_EARBUDS.get()
             );
 
             tag(ItemTags.BOATS).add(GHOST_BOAT_ITEM.get()).add(ULTRA_DARK_BOAT_ITEM.get()).add(ULTRA_JUNGLE_BOAT_ITEM.get());
