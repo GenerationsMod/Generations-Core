@@ -25,7 +25,10 @@ configurations {
     getByName("developmentFabric").extendsFrom(configurations["common"])
 }
 
-loom.accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+loom {
+    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+    mixin.useLegacyMixinAp.set(false)
+}
 
 fabricApi.configureDataGeneration()
 
