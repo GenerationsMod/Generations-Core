@@ -104,6 +104,10 @@
       {
         "item": "cobblemon:wepear_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
       }
     ]
   },

@@ -83,6 +83,10 @@
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 25.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
       }
     ]
   },

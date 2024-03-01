@@ -170,6 +170,10 @@
       {
         "item": "minecraft:iron_ingot",
         "quantityRange": "0-1"
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
       }
     ]
   }
