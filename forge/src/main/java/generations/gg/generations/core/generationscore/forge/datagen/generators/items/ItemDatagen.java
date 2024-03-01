@@ -380,7 +380,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RUBY.get(), "natural/");
         createItem(GenerationsItems.SAPPHIRE.get(), "natural/");
         createItem(GenerationsItems.SILICON.get(), "natural/");
-        createItem(GenerationsItems.GALARICA_TWIG.get(), "natural/");
 
         GenerationsArmor.ARMOR.forEach(armor -> createItem(armor.get(), "armor/"));
         GenerationsTools.TOOLS.forEach(tool -> handheldItem(tool.get()));
@@ -741,6 +740,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.FESTIVAL_TICKET.get(), "unimplemented/");
         createItem(GenerationsItems.FORAGE_BAG.get(), "unimplemented/");
         createItem(GenerationsItems.GALACTIC_KEY.get(), "unimplemented/");
+        createItem(GenerationsItems.GALARICA_TWIG.get(), "unimplemented/");
         createItem(GenerationsItems.GB_SOUNDS.get(), "unimplemented/");
         createItem(GenerationsItems.GO_GOGGLES.get(), "unimplemented/");
         createItem(GenerationsItems.GOLD_TEETH.get(), "unimplemented/");

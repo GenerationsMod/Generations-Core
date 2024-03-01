@@ -933,7 +933,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SAPPHIRE = register("sapphire", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SILICON = register("silicon", Item::new, PLAYER_ITEMS);
 
-    public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, UNIMPLEMENTED);
 
     /**
      * Utility Items
