@@ -1470,7 +1470,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MT_PYRE_DISC = createMusicDisc("mt_pyre_disc", GenerationsSounds.MT_PYRE, 4372);
 
     private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound, int ticks) {
-        return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, ticks), UNIMPLEMENTED);
+        return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, ticks), PLAYER_ITEMS);
     }
 
     public static RegistrySupplier<Item> registerHeldItem(String name) {
