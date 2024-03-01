@@ -16,6 +16,10 @@
       {
         "item": "cobblemon:cheri_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:purple_petal",
+        "percentage": 10.0
       }
     ]
   },

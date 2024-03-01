@@ -176,7 +176,7 @@
   "aspects": [],
   "cannotDynamax": false,
   "drops": {
-    "amount": 3,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:rose_bush",
@@ -189,6 +189,14 @@
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:blue_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:red_petal",
+        "percentage": 10.0
       }
     ]
   }

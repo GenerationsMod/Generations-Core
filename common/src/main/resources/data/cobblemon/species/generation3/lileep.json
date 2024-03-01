@@ -170,6 +170,10 @@
       {
         "item": "cobblemon:big_root",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:pink_petal",
+        "percentage": 10.0
       }
     ]
   }

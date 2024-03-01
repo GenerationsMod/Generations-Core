@@ -253,6 +253,10 @@
       {
         "item": "cobblemon:tanga_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:pink_petal",
+        "percentage": 10.0
       }
     ]
   }

@@ -153,6 +153,14 @@
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 10.0
+      },
+      {
+        "item": "generations_core:blue_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:red_petal",
+        "percentage": 10.0
       }
     ]
   }
