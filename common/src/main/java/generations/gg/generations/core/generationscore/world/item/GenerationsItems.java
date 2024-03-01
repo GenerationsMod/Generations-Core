@@ -742,6 +742,8 @@ public class GenerationsItems {
      * Vanilla Like Materials
      */
     public static final RegistrySupplier<Item> Z_INGOT = register("z_ingot", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> DYNITE_ORE = register("dynite_ore", Item::new, PLAYER_ITEMS);
+    
     public static final RegistrySupplier<Item> COPPER_PLATE = register("copper_plate", Item::new, PLAYER_ITEMS);
 
     /**
@@ -1220,7 +1222,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> DRAGON_SKULL = register("dragon_skull", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> DROPPED_ITEM_RED = register("dropped_item_red", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> DROPPED_ITEM_YELLOW = register("dropped_item_yellow", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
-    public static final RegistrySupplier<Item> DYNITE_ORE = register("dynite_ore", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> ELEVATOR_KEY = register("elevator_key", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> ENDORSEMENT = register("endorsement", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> EON_FLUTE = register("eon_flute", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);

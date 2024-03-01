@@ -78,6 +78,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_SOUP.get(), "restoration/");
 
         createItem(GenerationsItems.Z_INGOT.get(), "ingots/");
+        createItem(GenerationsItems.DYNITE_ORE.get(), "ingots/");
         createItem(GenerationsItems.COPPER_PLATE.get(), "materials/");
 
         createItem(GenerationsItems.KOMALA_COFFEE.get(), "consumable/");
@@ -730,7 +731,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.DRAGON_SKULL.get(), "unimplemented/");
         createItem(GenerationsItems.DROPPED_ITEM_RED.get(), "unimplemented/");
         createItem(GenerationsItems.DROPPED_ITEM_YELLOW.get(), "unimplemented/");
-        createItem(GenerationsItems.DYNITE_ORE.get(), "unimplemented/");
         createItem(GenerationsItems.ELEVATOR_KEY.get(), "unimplemented/");
         createItem(GenerationsItems.ENDORSEMENT.get(), "unimplemented/");
         createItem(GenerationsItems.EON_FLUTE.get(), "unimplemented/");
