@@ -936,11 +936,11 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //Silicon Block
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SILICON_BLOCK.get())
-                .define('E', GenerationsOres.SILICON_ORE_SET.getOre())
+                .define('E', GenerationsItems.SILICON.get())
                 .pattern("EEE")
                 .pattern("EEE")
                 .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsOres.SILICON_ORE_SET.getOre()), has(GenerationsOres.SILICON_ORE_SET.getOre()))
+                .unlockedBy(getHasName(GenerationsItems.SILICON.get()), has(GenerationsItems.SILICON.get()))
                 .save(consumer);
 
         //pokebrick Recipes
