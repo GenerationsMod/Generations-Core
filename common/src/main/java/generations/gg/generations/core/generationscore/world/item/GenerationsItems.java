@@ -787,7 +787,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ABILITY_CAPSULE = register("ability_capsule", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> ABILITY_PATCH = register("ability_patch", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WISHING_STAR = register("wishing_star", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> UNCHARGED_DYNAMAX_BAND = register("uncharged_dynamax_band", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
     public static final RegistrySupplier<Item> DYNAMAX_BAND = register("dynamax_band", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
     public static final RegistrySupplier<Item> POKEMON_BOX_LINK = register("pokemon_box_link", properties -> new Item(properties.stacksTo(1)) {
         @Override

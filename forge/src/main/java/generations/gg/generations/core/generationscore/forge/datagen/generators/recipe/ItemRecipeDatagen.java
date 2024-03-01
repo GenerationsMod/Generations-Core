@@ -235,7 +235,7 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("ZIZ")
                 .unlockedBy(getHasName(GenerationsItems.Z_INGOT.get()), has(GenerationsItems.Z_INGOT.get()))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.UNCHARGED_DYNAMAX_BAND.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.DYNAMAX_BAND.get())
                 .define('Z', GenerationsItems.DYNITE_ORE.get())
                 .define('I', Items.IRON_INGOT)
                 .pattern("ZIZ")

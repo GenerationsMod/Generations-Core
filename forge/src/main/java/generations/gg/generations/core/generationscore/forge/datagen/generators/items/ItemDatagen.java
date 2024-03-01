@@ -423,7 +423,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ABILITY_CAPSULE.get(), "player_items/");
         createItem(GenerationsItems.ABILITY_PATCH.get(), "player_items/");
         createItem(GenerationsItems.WISHING_STAR.get(), "player_items/");
-        createItem(GenerationsItems.UNCHARGED_DYNAMAX_BAND.get(), "player_items/");
         createItem(GenerationsItems.DYNAMAX_BAND.get(), "player_items/");
 
 
