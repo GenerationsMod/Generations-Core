@@ -48,16 +48,19 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.UNIMPLEMENTED, this::getNameGens, (item, function) -> {
+                add(item.get().asItem().getDescriptionId() + ".desc", "Not currently implemented");
+        });
+
+        addItemEntries(GenerationsItems.CUISINE, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.NATURAL, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.RESTORATION, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.PLAYER_ITEMS, this::getNameGens, (item, function) -> {
             var item1 = item.get();
 
             if(item1 instanceof RecordItem) {
                 add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
             }
         });
-        addItemEntries(GenerationsItems.CUISINE, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.NATURAL, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.RESTORATION, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.PLAYER_ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.HELD_ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.LEGENDARY_ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.UTILITY, this::getNameGens, (item, function) -> {});
@@ -96,6 +99,7 @@ public class GeneralLang extends LanguageProvider {
         add("container.greatball_chest", "Greatball Chest");
         add("container.ultraball_chest", "Ultraball Chest");
         add("container.masterball_chest", "Masterball Chest");
+        add("container.hi_tech_earbuds", "Hi Tech Earbuds");
         add("container.charge_stone_furnace", "Charge Stone Furnace");
         add("container.charge_stone_blast_furnace", "Charge Stone Blast Furnace");
         add("container.charge_stone_smoker", "Charge Stone Smoker");
@@ -119,6 +123,7 @@ public class GeneralLang extends LanguageProvider {
 
         add("generations_core.item.timeglass.wrongbiome", "You can only summon Celebi in a Flower Forest Biome");
         add("generations_core.item.timeglass.amount", "You've defeated %s Grass, Psychic, or Fairy Type Pokemon out of 100 in a Flower Forest Biome");
+        add("item.generations_core.enigma_fragment.desc", "A mysterious item gained upon discovering new biomes.");
 
         //TR/TM lines
         add("move.cantlearn", "%s can't learn %s.");
@@ -140,8 +145,6 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.blocks.lootmode.timed", "Timed drops");
         add("generations_core.blocks.lootmode.once", "First come, first served");
         add("generations_core.blocks.lootmode.unlimited", "Permanent, unlimited drops");
-
-        add("generations_core.enigma_biome", "Upon entering %s for the first, a fragment of a shard of an engima appears.");
 
         //Heatran
         addTooltip(GenerationsItems.LAVA_CRYSTAL, "HINT: You see a faint image of Heatran from within. You’ll need more, and an Orb.");
