@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/unimplemented/white_mane_hair"
+    "layer0": "generations_core:item/legend_items/white_mane_hair"
   }
 }

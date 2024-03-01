@@ -51,6 +51,7 @@
     "generations_core:dark_stone",
     "generations_core:dragon_stone",
     "generations_core:rainbow_wing",
+    "generations_core:silver_wing",
     "generations_core:dark_soul",
     "generations_core:dragon_soul",
     "generations_core:melody_flute",
@@ -106,6 +107,15 @@
     "generations_core:wonder_egg",
     "generations_core:phione_egg",
     "generations_core:soul_heart",
+    "generations_core:blue_petal",
+    "generations_core:green_petal",
+    "generations_core:orange_petal",
+    "generations_core:pink_petal",
+    "generations_core:purple_petal",
+    "generations_core:radiant_petal",
+    "generations_core:red_petal",
+    "generations_core:yellow_petal",
+    "generations_core:meteorite_shard",
     "generations_core:black_mane_hair",
     "generations_core:white_mane_hair"
   ]

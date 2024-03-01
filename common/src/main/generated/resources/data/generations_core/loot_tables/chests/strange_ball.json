@@ -331,6 +331,18 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_140"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:enigma_fragment"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mew_fossil"
         }
       ],
       "rolls": 1.0

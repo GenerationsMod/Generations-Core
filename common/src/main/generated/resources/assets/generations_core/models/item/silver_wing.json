@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/unimplemented/silver_wing"
+    "layer0": "generations_core:item/legend_items/silver_wing"
   }
 }

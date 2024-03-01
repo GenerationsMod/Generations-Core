@@ -286,6 +286,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:z_ingot"
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:prismarine_crystals"
         },
         {

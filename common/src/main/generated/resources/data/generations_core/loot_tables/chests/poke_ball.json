@@ -379,6 +379,10 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:pokemail_wood"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dynite_ore"
         }
       ],
       "rolls": {

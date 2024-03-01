@@ -286,6 +286,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:dynite_ore"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:rusty_iron_key_2"
         },
         {

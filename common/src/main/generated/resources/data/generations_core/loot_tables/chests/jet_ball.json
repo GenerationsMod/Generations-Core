@@ -246,6 +246,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:enigma_fragment"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:leftovers"
         },
         {

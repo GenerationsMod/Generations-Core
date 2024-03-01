@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:uncharged_dynamax_band"
+        "recipe": "generations_core:dynamax_band"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "generations_core:uncharged_dynamax_band"
+      "generations_core:dynamax_band"
     ]
   },
   "sends_telemetry_event": false

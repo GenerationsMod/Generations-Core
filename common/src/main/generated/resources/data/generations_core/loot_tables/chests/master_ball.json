@@ -459,6 +459,10 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_166"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mew_fossil"
         }
       ],
       "rolls": 1.0

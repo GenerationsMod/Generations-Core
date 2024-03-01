@@ -290,6 +290,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:dynite_ore"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:old_rod"
         },
         {

@@ -246,6 +246,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:hoopa_ring"
         },
         {
