@@ -60,6 +60,10 @@
       {
         "item": "cobblemon:shuca_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:rusty_fragment",
+        "percentage": 1.0
       }
     ]
   },
