@@ -928,11 +928,12 @@ public class GenerationsItems {
     /**
      * Naturals
      */
-    public static final RegistrySupplier<Item> CRYSTAL = register("crystal", Item::new, BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> RUBY = register("ruby", Item::new, BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SAPPHIRE = register("sapphire", Item::new, BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> SILICON = register("silicon", Item::new, BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> CRYSTAL = register("crystal", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> RUBY = register("ruby", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> SAPPHIRE = register("sapphire", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> SILICON = register("silicon", Item::new, PLAYER_ITEMS);
+
+    public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, PLAYER_ITEMS);
 
     /**
      * Utility Items
