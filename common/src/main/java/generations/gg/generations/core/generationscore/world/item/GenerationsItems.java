@@ -743,7 +743,7 @@ public class GenerationsItems {
      */
     public static final RegistrySupplier<Item> Z_INGOT = register("z_ingot", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> DYNITE_ORE = register("dynite_ore", Item::new, PLAYER_ITEMS);
-    
+
     public static final RegistrySupplier<Item> COPPER_PLATE = register("copper_plate", Item::new, PLAYER_ITEMS);
 
     /**
@@ -790,7 +790,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ABILITY_PATCH = register("ability_patch", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WISHING_STAR = register("wishing_star", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> DYNAMAX_BAND = register("dynamax_band", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> POKEMON_BOX_LINK = register("pokemon_box_link", properties -> new Item(properties.stacksTo(1)) {
+    public static final RegistrySupplier<Item> TIME_CAPSULE = register("time_capsule", properties -> new Item(properties.stacksTo(1)) {
         @Override
         public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand interactionHand) {
             return super.use(level, player, interactionHand);

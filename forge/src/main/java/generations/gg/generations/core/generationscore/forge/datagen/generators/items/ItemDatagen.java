@@ -406,7 +406,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MEGA_RING.get(), "player_items/");
         createItem(GenerationsItems.Z_POWER_RING.get(), "player_items/");
         createItem(GenerationsItems.Z_RING.get(), "player_items/");
-        createItem(GenerationsItems.POKEMON_BOX_LINK.get(), "player_items/");
+        createItem(GenerationsItems.TIME_CAPSULE.get(), "player_items/");
         /*
         createItem(GenerationsItems.RED_BIKE.get(), "player_items/");
         createItem(GenerationsItems.ORANGE_BIKE.get(), "player_items/");
