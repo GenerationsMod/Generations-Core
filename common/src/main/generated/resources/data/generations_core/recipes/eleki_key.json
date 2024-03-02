@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:discharged_eleki_key_1"
+    },
+    {
+      "item": "generations_core:discharged_eleki_key_2"
+    },
+    {
+      "item": "generations_core:discharged_eleki_key_3"
+    },
+    {
+      "item": "generations_core:discharged_eleki_key_4"
+    }
+  ],
+  "result": {
+    "item": "generations_core:eleki_key"
+  }
+}

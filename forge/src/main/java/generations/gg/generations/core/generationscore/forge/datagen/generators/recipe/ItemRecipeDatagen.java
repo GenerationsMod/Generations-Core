@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -318,6 +319,117 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .requires(GenerationsItems.YELLOW_PETAL.get(), 1)
                 .unlockedBy(getHasName(GenerationsItems.BLUE_PETAL.get()), has(GenerationsItems.BLUE_PETAL.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.TIME_CAPSULE.get())
+                .define('I', Items.IRON_INGOT)
+                .define('G', Items.GLASS)
+                .define('R', GenerationsItems.RUBY.get())
+                .pattern("IRI")
+                .pattern("IGI")
+                .pattern("III")
+                .unlockedBy(getHasName(Items.GLASS), has(Items.GLASS))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.REVEAL_GLASS.get())
+                .define('R', GenerationsItems.RUBY.get())
+                .define('S', GenerationsItems.SAPPHIRE.get())
+                .define('C', GenerationsItems.CRYSTAL.get())
+                .define('G', GenerationsItems.MIRROR.get())
+                .pattern("RRR")
+                .pattern("SGS")
+                .pattern("CCC")
+                .unlockedBy(getHasName(GenerationsItems.MIRROR.get()), has(GenerationsItems.MIRROR.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.DNA_SPLICERS.get())
+                .define('S', GenerationsItems.SILICON.get())
+                .define('G', Items.GOLD_INGOT)
+                .define('I', Items.IRON_INGOT)
+                .define('N', Items.NETHERITE_INGOT)
+                .pattern(" SG")
+                .pattern("IIS")
+                .pattern("NI ")
+                .unlockedBy(getHasName(GenerationsItems.SILICON.get()), has(GenerationsItems.SILICON.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.MELODY_FLUTE.get())
+                .define('S', GenerationsItems.SILICON.get())
+                .define('I', Items.IRON_INGOT)
+                .define('N', Items.NETHERITE_INGOT)
+                .pattern("S  ")
+                .pattern(" I ")
+                .pattern("  N")
+                .unlockedBy(getHasName(GenerationsItems.SILICON.get()), has(GenerationsItems.SILICON.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.RELIC_SONG.get())
+                .requires(GenerationsItems.SHATTERED_RELIC_SONG_1.get(), 1)
+                .requires(GenerationsItems.SHATTERED_RELIC_SONG_2.get(), 1)
+                .requires(GenerationsItems.SHATTERED_RELIC_SONG_3.get(), 1)
+                .requires(GenerationsItems.SHATTERED_RELIC_SONG_4.get(), 1)
+                .unlockedBy(getHasName(GenerationsItems.SHATTERED_RELIC_SONG_1.get()), has(GenerationsItems.SHATTERED_RELIC_SONG_1.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.ROCK_PEAK_KEY.get())
+                .requires(GenerationsItems.CRUMBLED_ROCK_KEY_1.get(), 1)
+                .requires(GenerationsItems.CRUMBLED_ROCK_KEY_2.get(), 1)
+                .requires(GenerationsItems.CRUMBLED_ROCK_KEY_3.get(), 1)
+                .requires(GenerationsItems.CRUMBLED_ROCK_KEY_4.get(), 1)
+                .unlockedBy(getHasName(GenerationsItems.CRUMBLED_ROCK_KEY_1.get()), has(GenerationsItems.CRUMBLED_ROCK_KEY_1.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.ICEBERG_KEY.get())
+                .requires(GenerationsItems.SHATTERED_ICE_KEY_1.get(), 1)
+                .requires(GenerationsItems.SHATTERED_ICE_KEY_2.get(), 1)
+                .requires(GenerationsItems.SHATTERED_ICE_KEY_3.get(), 1)
+                .requires(GenerationsItems.SHATTERED_ICE_KEY_4.get(), 1)
+                .unlockedBy(getHasName(GenerationsItems.SHATTERED_ICE_KEY_1.get()), has(GenerationsItems.SHATTERED_ICE_KEY_1.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.IRON_KEY.get())
+                .requires(GenerationsItems.RUSTY_IRON_KEY_1.get(), 1)
+                .requires(GenerationsItems.RUSTY_IRON_KEY_2.get(), 1)
+                .requires(GenerationsItems.RUSTY_IRON_KEY_3.get(), 1)
+                .requires(GenerationsItems.RUSTY_IRON_KEY_4.get(), 1)
+                .unlockedBy(getHasName(GenerationsItems.RUSTY_IRON_KEY_1.get()), has(GenerationsItems.RUSTY_IRON_KEY_1.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.ELEKI_KEY.get())
+                .requires(GenerationsItems.DISCHARGED_ELEKI_KEY_1.get(), 1)
+                .requires(GenerationsItems.DISCHARGED_ELEKI_KEY_2.get(), 1)
+                .requires(GenerationsItems.DISCHARGED_ELEKI_KEY_3.get(), 1)
+                .requires(GenerationsItems.DISCHARGED_ELEKI_KEY_4.get(), 1)
+                .unlockedBy(getHasName(GenerationsItems.DISCHARGED_ELEKI_KEY_1.get()), has(GenerationsItems.DISCHARGED_ELEKI_KEY_1.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.DRAGO_KEY.get())
+                .requires(GenerationsItems.FRAGMENTED_DRAGO_KEY_1.get(), 1)
+                .requires(GenerationsItems.FRAGMENTED_DRAGO_KEY_2.get(), 1)
+                .requires(GenerationsItems.FRAGMENTED_DRAGO_KEY_3.get(), 1)
+                .requires(GenerationsItems.FRAGMENTED_DRAGO_KEY_4.get(), 1)
+                .unlockedBy(getHasName(GenerationsItems.FRAGMENTED_DRAGO_KEY_1.get()), has(GenerationsItems.FRAGMENTED_DRAGO_KEY_1.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsShrines.LIGHT_CRYSTAL.get())
+                .requires(GenerationsItems.LIGHT_SOUL.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.LIGHT_SOUL.get()), has(GenerationsItems.LIGHT_SOUL.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsShrines.DARK_CRYSTAL.get())
+                .requires(GenerationsItems.DARK_SOUL.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.LIGHT_SOUL.get()), has(GenerationsItems.LIGHT_SOUL.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.METEORITE.get())
+                .requires(GenerationsItems.METEORITE_SHARD.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.METEORITE_SHARD.get()), has(GenerationsItems.METEORITE_SHARD.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.SPARKLING_STONE.get())
+                .requires(GenerationsItems.SPARKLING_SHARD.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.SPARKLING_SHARD.get()), has(GenerationsItems.SPARKLING_SHARD.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.SECRET_ARMOR_SCROLL.get())
+                .requires(GenerationsItems.SCROLL_PAGE.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.SCROLL_PAGE.get()), has(GenerationsItems.SCROLL_PAGE.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.REINS_OF_UNITY.get())
+                .requires(GenerationsItems.BLACK_MANE_HAIR.get(), 1)
+                .requires(GenerationsItems.WHITE_MANE_HAIR.get(), 1)
+                .requires(GenerationsItems.RADIANT_PETAL.get(), 1)
+                .unlockedBy(getHasName(GenerationsItems.RADIANT_PETAL.get()), has(GenerationsItems.RADIANT_PETAL.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.MAGMA_CRYSTAL.get())
+                .requires(GenerationsItems.LAVA_CRYSTAL.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.LAVA_CRYSTAL.get()), has(GenerationsItems.LAVA_CRYSTAL.get()))
+                .save(consumer);
+
         //These are all HeldItems and Recipes are not needed rn
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PokeModItems.CELL_BATTERY.get())

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dragon_soul": {
+    "has_radiant_petal": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:dragon_soul"
+              "generations_core:radiant_petal"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:dark_stone"
+        "recipe": "generations_core:reins_of_unity"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_dragon_soul",
+      "has_radiant_petal",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:dark_stone"
+      "generations_core:reins_of_unity"
     ]
   },
   "sends_telemetry_event": false

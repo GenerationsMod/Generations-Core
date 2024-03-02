@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "S": {
+      "item": "generations_core:silicon"
+    }
+  },
+  "pattern": [
+    "S  ",
+    " I ",
+    "  N"
+  ],
+  "result": {
+    "item": "generations_core:melody_flute"
+  },
+  "show_notification": true
+}

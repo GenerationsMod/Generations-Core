@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:sparkling_shard"
+    },
+    {
+      "item": "generations_core:sparkling_shard"
+    },
+    {
+      "item": "generations_core:sparkling_shard"
+    },
+    {
+      "item": "generations_core:sparkling_shard"
+    },
+    {
+      "item": "generations_core:sparkling_shard"
+    },
+    {
+      "item": "generations_core:sparkling_shard"
+    },
+    {
+      "item": "generations_core:sparkling_shard"
+    },
+    {
+      "item": "generations_core:sparkling_shard"
+    },
+    {
+      "item": "generations_core:sparkling_shard"
+    }
+  ],
+  "result": {
+    "item": "generations_core:sparkling_stone"
+  }
+}

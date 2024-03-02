@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dragon_soul": {
+    "has_lava_crystal": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:dragon_soul"
+              "generations_core:lava_crystal"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:dark_stone"
+        "recipe": "generations_core:magma_crystal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_dragon_soul",
+      "has_lava_crystal",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:dark_stone"
+      "generations_core:magma_crystal"
     ]
   },
   "sends_telemetry_event": false

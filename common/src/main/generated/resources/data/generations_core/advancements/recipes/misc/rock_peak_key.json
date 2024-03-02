@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dragon_soul": {
+    "has_crumbled_rock_key_1": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:dragon_soul"
+              "generations_core:crumbled_rock_key_1"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:dark_stone"
+        "recipe": "generations_core:rock_peak_key"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_dragon_soul",
+      "has_crumbled_rock_key_1",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:dark_stone"
+      "generations_core:rock_peak_key"
     ]
   },
   "sends_telemetry_event": false

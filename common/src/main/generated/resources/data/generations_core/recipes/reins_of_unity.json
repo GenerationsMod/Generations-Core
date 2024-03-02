@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:black_mane_hair"
+    },
+    {
+      "item": "generations_core:white_mane_hair"
+    },
+    {
+      "item": "generations_core:radiant_petal"
+    }
+  ],
+  "result": {
+    "item": "generations_core:reins_of_unity"
+  }
+}
