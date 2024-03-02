@@ -148,6 +148,10 @@
           {
             "item": "cobblemon:razz_berry",
             "percentage": 2.5
+          },
+          {
+            "item": "generations_core:light_soul",
+            "percentage": 2.5
           }
         ]
       }

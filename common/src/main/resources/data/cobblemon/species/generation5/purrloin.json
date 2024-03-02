@@ -18,6 +18,10 @@
       {
         "item": "cobblemon:bluk_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:dark_soul",
+        "percentage": 2.5
       }
     ]
   },

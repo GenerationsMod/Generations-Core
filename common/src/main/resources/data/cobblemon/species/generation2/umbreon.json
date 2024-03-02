@@ -17,6 +17,10 @@
       {
         "item": "cobblemon:black_glasses",
         "percentage": 10.0
+      },
+      {
+        "item": "generations_core:dark_soul",
+        "percentage": 2.5
       }
     ]
   },
