@@ -913,17 +913,17 @@ public class GenerationsItems {
     public static final RegistrySupplier<LegendaryEggItem> WONDER_EGG = register("wonder_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.MANAPHY, 10000), LEGENDARY_ITEMS);
     public static final RegistrySupplier<LegendaryEggItem> PHIONE_EGG = register("phione_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.PHIONE, 10000), LEGENDARY_ITEMS);
     public static final RegistrySupplier<SingleElmentPostUpdatingItem> SOUL_HEART = register("soul_heart", properties -> new SingleElmentPostUpdatingItem(properties.stacksTo(1).durability(100), ElementalTypes.INSTANCE.getFAIRY()), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> BLUE_PETAL = register("blue_petal", properties -> new Item(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> GREEN_PETAL = register("green_petal", properties -> new Item(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ORANGE_PETAL = register("orange_petal", properties -> new Item(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> PINK_PETAL = register("pink_petal", properties -> new Item(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> PURPLE_PETAL = register("purple_petal", properties -> new Item(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RADIANT_PETAL = register("radiant_petal", properties -> new Item(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RED_PETAL = register("red_petal", properties -> new Item(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> YELLOW_PETAL = register("yellow_petal", properties -> new Item(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> METEORITE_SHARD = register("meteorite_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> BLACK_MANE_HAIR = register("black_mane_hair", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> WHITE_MANE_HAIR = register("white_mane_hair", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(1)), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> BLUE_PETAL = register("blue_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> GREEN_PETAL = register("green_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> ORANGE_PETAL = register("orange_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> PINK_PETAL = register("pink_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> PURPLE_PETAL = register("purple_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RADIANT_PETAL = register("radiant_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RED_PETAL = register("red_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> YELLOW_PETAL = register("yellow_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> METEORITE_SHARD = register("meteorite_shard", properties -> new ItemWithLangTooltipImpl(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> BLACK_MANE_HAIR = register("black_mane_hair", properties -> new ItemWithLangTooltipImpl(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> WHITE_MANE_HAIR = register("white_mane_hair", properties -> new ItemWithLangTooltipImpl(properties), LEGENDARY_ITEMS);
 
     /**
      * Naturals
