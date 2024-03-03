@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 import com.google.common.cache.*;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import de.javagl.jgltf.model.GltfModel;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
@@ -23,10 +22,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModelRegistry {
-    private static final Function<GltfModel, Supplier<MeshObject>> MESH_OBJECT_SUPPLIER = gltfModel -> () -> {
-        if (gltfModel.getSkinModels().isEmpty()) return new MeshObject();
-        return new AnimatedMeshObject();
-    };
+    private static final Supplier<MeshObject> MESH_OBJECT_SUPPLIER = AnimatedMeshObject::new;
     public static final LoadingCache<ResourceLocation, CompiledModel> LOADER = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.SECONDS).removalListener((RemovalListener<ResourceLocation, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
         @Override
         public @NotNull CompiledModel load(@NotNull ResourceLocation pair) {

@@ -29,7 +29,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
 
 
         val name = split[1].trim { it <= ' ' }
-        return StatefulAnimationRareCandy(Supplier<Animation<Any>> {
+        return StatefulAnimationRareCandy(Supplier<Animation<*>> {
             val objects = ModelRegistry.get(location).renderObject
             if (objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
@@ -46,7 +46,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
             s.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
         val name = split[1].trim { it <= ' ' }
-        return StatelessAnimationRareCandy(jsonPokemonPoseableModel, Supplier<Animation<Any>?> {
+        return StatelessAnimationRareCandy(jsonPokemonPoseableModel, Supplier<Animation<*>?> {
             val objects = ModelRegistry.get(location).renderObject
             if (objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
@@ -55,7 +55,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         })
     }
 
-    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation<Any>>?, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {
+    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation<*>>?, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {
         var startedSeconds = -1F
         override val isTransform: Boolean = transforms
 
@@ -103,7 +103,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
 
     private class StatelessAnimationRareCandy (
         jsonPokemonPoseableModel: JsonPokemonPoseableModel,
-        private val animationSupplier: Supplier<Animation<Any>?>
+        private val animationSupplier: Supplier<Animation<*>?>
     ) : StatelessAnimation<PokemonEntity, ModelFrame>(jsonPokemonPoseableModel) {
         override val targetFrame = ModelFrame::class.java
 
