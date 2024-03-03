@@ -58,7 +58,9 @@ dependencies {
 
     forgeRuntimeLibrary("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
-    forgeRuntimeLibrary("shadowCommon"("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!
+    forgeRuntimeLibrary(platform("org.lwjgl:lwjgl-bom:3.3.3"))
+    forgeRuntimeLibrary("org.lwjgl:lwjgl-assimp")
+    forgeRuntimeLibrary("org.lwjgl:lwjgl-assimp:natives-windows")
     forgeRuntimeLibrary("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
     forgeRuntimeLibrary("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!

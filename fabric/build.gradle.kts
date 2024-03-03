@@ -45,7 +45,9 @@ dependencies {
 
     implementation("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
     implementation("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
-    implementation("shadowCommon"("de.javagl", "jgltf-model", "${project.properties["rareCandyJgltfModel"]}"))!!
+    implementation(platform("org.lwjgl:lwjgl-bom:3.3.3"))
+    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp")!!)
+    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:natives-windows")!!)
     implementation("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     implementation("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
     implementation("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!

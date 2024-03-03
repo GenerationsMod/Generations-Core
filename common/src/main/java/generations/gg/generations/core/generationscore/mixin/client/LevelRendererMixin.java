@@ -51,10 +51,12 @@ public abstract class LevelRendererMixin {
     private void pokecraft$rksRender(PoseStack poseStack, float partialTick, long finishNanoTime, boolean renderBlockOutline, Camera camera, GameRenderer gameRenderer, LightTexture lightTexture, Matrix4f projectionMatrix, CallbackInfo ci) {
         var startTime = System.currentTimeMillis();
         assert level != null;
+
         level.getProfiler().popPush("render_models");
         RenderSystem.enableDepthTest();
         BufferUploader.reset();
 
+        ModelRegistry.run();
         ModelRegistry.getWorldRareCandy().render();
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
     }

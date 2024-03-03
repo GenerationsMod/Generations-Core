@@ -8,7 +8,7 @@ import dev.architectury.utils.EnvExecutor;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.client.StatueEntityClient;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.GenerationsObjectInstance;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.statue.S2COpenStatueEditorScreenPacket;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -200,12 +200,12 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
     }
 
     @Override
-    public PixelmonInstance getInstance() {
+    public GenerationsObjectInstance getInstance() {
         return delegate != null ? delegate.getInstance() : null;
     }
 
     @Override
-    public void setInstance(PixelmonInstance instance) {
+    public void setInstance(GenerationsObjectInstance instance) {
         if(delegate != null) {
             delegate.setInstance(instance);
         }

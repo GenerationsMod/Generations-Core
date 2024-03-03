@@ -23,6 +23,7 @@ import generations.gg.generations.core.generationscore.client.render.entity.*;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.Texture;
 import generations.gg.generations.core.generationscore.client.screen.container.*;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
@@ -42,6 +43,7 @@ import gg.generations.rarecandy.arceus.model.pk.ITextureLoader;
 import gg.generations.rarecandy.arceus.model.pk.TextureLoader;
 import gg.generations.rarecandy.legacy.pipeline.ITexture;
 import gg.generations.rarecandy.legacy.pipeline.TextureReference;
+import gg.generationsmod.rarecandy.assimp.AssimpModelLoader;
 import kotlin.Unit;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -144,6 +146,7 @@ public class GenerationsCoreClient {
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
             TextureLoader.setInstance(textureLoader = new GenerationsTextureLoader());
+            AssimpModelLoader.setImageConsumer((s, image) -> textureLoader.register(s, image));
             textureLoader.initialize(event.getResourceManager());
 
             Pipelines.onInitialize(event.getResourceManager());
@@ -411,11 +414,11 @@ public class GenerationsCoreClient {
                             map.forEach((key, value) -> {
                                 var bufferedImage = fromResourceLocation(manager, Objects.requireNonNull(ResourceLocation.tryParse(value)));
 
-                                register(key, TextureReference.read(bufferedImage));
+                                register(key, new Texture(TextureReference.read(bufferedImage)));
                             });
 
                         } catch (IOException e) {
-
+                            System.out.println("oh no: " + e.getMessage());
                         }
                     }
                 }
@@ -478,6 +481,11 @@ public class GenerationsCoreClient {
 
             return null;
         }
+
+        public void register(String name, BufferedImage reference) {
+            this.register(name, new Texture(TextureReference.read(reference)));
+        }
+
 
         @Override
         public void register(String s, ITexture iTexture) {

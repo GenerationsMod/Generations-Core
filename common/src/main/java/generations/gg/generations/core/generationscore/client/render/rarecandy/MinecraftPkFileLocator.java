@@ -77,7 +77,7 @@ public class MinecraftPkFileLocator implements FileLocator {
 
     @Override
     public Path getPath() {
-        return null;
+        return Path.of(path.getNamespace() + "-" + path.getPath());
     }
 
     public ResourceLocation getLocation() {

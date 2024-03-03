@@ -41,6 +41,8 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     public void render(RenderContext context, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var model = objectSupplier.get();
 
+        if(!model.isReady()) return;
+
         var entity = context.request(RenderContext.Companion.getENTITY());
 
         var isStatue = entity instanceof StatueEntity;
@@ -53,6 +55,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         if(instance == null && !isStatue) {
             instance = model.getGuiInstance();
+            System.out.println(":O");
             isGui = true;
         } else {
             if(isStatue) {

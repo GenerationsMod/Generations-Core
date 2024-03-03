@@ -9,11 +9,10 @@ import gg.generations.rarecandy.arceus.model.pk.MultiRenderObjectInstance;
 import gg.generationsmod.rarecandy.assimp.AssimpModelLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import org.joml.Matrix4f;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 /**
  * Represents a compiled model which can be rendered
@@ -21,7 +20,7 @@ import java.util.function.Consumer;
 public class CompiledModel {
     public MultiRenderObject<?> renderObject;
 
-    private PixelmonInstance guiInstance;
+    private GenerationsObjectInstance guiInstance;
     private boolean isReady = false;
 
 
@@ -33,19 +32,19 @@ public class CompiledModel {
 
         var locator = new MinecraftPkFileLocator(a, stream);
 
-        CompletableFuture.supplyAsync(() -> locator)
-                .thenApply(b -> AssimpModelLoader.load(locator.getModelName(), locator, 0))
-                .thenApply(MultiRenderObject::new)
-                .thenAccept(new Consumer<MultiRenderObject<RenderingInstance>>() {
-                    @Override
-                    public void accept(MultiRenderObject<RenderingInstance> model) {
-                        CompiledModel.this.renderObject = model;
+        ModelRegistry.addRunnable(() -> {
+            var rawModel = AssimpModelLoader.load(locator.getModelName(), locator, 0);
+            var model = new MultiRenderObject<>(rawModel);
 
-                        var manager = Minecraft.getInstance().getTextureManager();
+            var manager = Minecraft.getInstance().getTextureManager();
 
-                        CompiledModel.this.isReady = true;
+            System.out.println("Rawr");
 
-                        if(requiresVariantTexture) {
+            renderObject = model;
+            guiInstance = new GenerationsObjectInstance(renderObject, new Matrix4f(), null);
+            CompiledModel.this.isReady = true;
+
+            if(requiresVariantTexture) {
 //                            TODO: Implment this
 //                            renderObject.availableVariants().forEach(s -> manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
 //                                @Override
@@ -53,27 +52,27 @@ public class CompiledModel {
 //
 //                                }
 //                            }));
-                        }
-                    }
-                });
-
-
+            }
+        });
     }
 
-    public void renderGui(PixelmonInstance guiInstance) {
+    public void renderGui(GenerationsObjectInstance guiInstance) {
         RenderSystem.enableDepthTest();
         BufferUploader.reset();
         RenderSystem.applyModelViewMatrix();
         render(guiInstance, ModelRegistry.getGuiRareCandy().objectManager);
         ModelRegistry.getGuiRareCandy().render();
+        ModelRegistry.getGuiRareCandy().clear();
     }
 
     public void render(MultiRenderObjectInstance<?> instance) {
         render(instance, ModelRegistry.getWorldRareCandy().objectManager);
     }
 
-    public void render(MultiRenderObjectInstance<?> instance, RareCandyScene objectManager) {
-        if (!isReady) return;
+    public void render(MultiRenderObjectInstance<?> instance, RareCandyScene<RenderingInstance> objectManager) {
+        if (!isReady) {
+            return;
+        }
 
         Minecraft.getInstance().getProfiler().push("create_model_instance");
         MinecraftClientGameProvider.projMatrix =  RenderSystem.getProjectionMatrix();
@@ -86,13 +85,13 @@ public class CompiledModel {
 
     public void delete() {
         try {
-            renderObject.close();
+            if(isReady()) renderObject.close();
         } catch (IOException e) {
 
         }
     }
 
-    public PixelmonInstance getGuiInstance() {
+    public GenerationsObjectInstance getGuiInstance() {
         return guiInstance;
     }
 

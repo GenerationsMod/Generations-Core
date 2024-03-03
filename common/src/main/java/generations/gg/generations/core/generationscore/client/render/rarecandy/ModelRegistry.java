@@ -8,10 +8,13 @@ import generations.gg.generations.core.generationscore.client.model.ModelContext
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 
+import gg.generations.rarecandy.legacy.LoggerUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
 
 public class ModelRegistry {
@@ -32,6 +35,29 @@ public class ModelRegistry {
             }
         }
     });
+
+    private static final Queue<Runnable> TASKS = new ConcurrentLinkedQueue<>();
+    public static boolean DEBUG_THREADS = false;
+
+    public static void run() {
+        var task = TASKS.poll();
+        while (task != null) {
+            task.run();
+            task = TASKS.poll();
+        }
+    }
+
+    public static void addRunnable(Runnable runnable) {
+        TASKS.add(runnable);
+    }
+
+    public void init() {
+        ThreadSafety.initContextThread();
+        var startLoad = System.currentTimeMillis();
+//        this.loader = new ModelLoader();
+        LoggerUtil.print("RareCandy Startup took " + (System.currentTimeMillis() - startLoad) + "ms");
+    }
+
     private static GenerationsRenderGraph WORLD_RENDER;
     private static GenerationsRenderGraph GUI_RENDER;
 
@@ -90,5 +116,7 @@ public class ModelRegistry {
         return GUI_RENDER;
     }
 
-
+    public static void runLater(Runnable r) {
+        TASKS.add(r);
+    }
 }

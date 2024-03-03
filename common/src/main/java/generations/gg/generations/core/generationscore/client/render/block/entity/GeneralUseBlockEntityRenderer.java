@@ -5,7 +5,7 @@ import generations.gg.generations.core.generationscore.client.model.ModelContext
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockLightValueProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.GenerationsObjectInstance;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.animation.FixedFrameAnimationInstance;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
@@ -39,6 +39,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
         var model = ModelRegistry.get(blockEntity);
+        if(!model.isReady()) return;
         stack.scale(model.renderObject.getScale(), model.renderObject.getScale(), model.renderObject.getScale());
 
         if (blockEntity.objectInstance == null) {
@@ -71,6 +72,8 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         //TODO: Get this operational
 
         var model = ModelRegistry.get(blockEntity);
+
+        if(!model.isReady()) return;
 
         stack.scale(model.renderObject.getScale(), model.renderObject.getScale(), model.renderObject.getScale());
 
@@ -107,7 +110,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         model.render(primeInstance);
     }
 
-    protected void renderResourceLocation(ResourceLocation location, PoseStack stack, PixelmonInstance objectInstance) {
+    protected void renderResourceLocation(ResourceLocation location, PoseStack stack, GenerationsObjectInstance objectInstance) {
         objectInstance.transformationMatrix().set(stack.last().pose());
         ModelRegistry.get(location).render(objectInstance);
     }

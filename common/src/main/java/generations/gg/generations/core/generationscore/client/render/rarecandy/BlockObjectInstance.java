@@ -5,7 +5,7 @@ import gg.generations.rarecandy.arceus.model.pk.MultiRenderObject;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
-public class BlockObjectInstance extends PixelmonInstance implements ModelContextProviders.TintProvider {
+public class BlockObjectInstance extends GenerationsObjectInstance implements ModelContextProviders.TintProvider {
     private int light = 0x000000;
     private Vector3f tint = null;
 

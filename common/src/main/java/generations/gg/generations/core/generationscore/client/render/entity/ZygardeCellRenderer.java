@@ -23,6 +23,12 @@ public class ZygardeCellRenderer extends EntityRenderer<ZygardeCellEntity> {
     @Override
     public void render(ZygardeCellEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         var model = ModelRegistry.get(MODEL);
+
+        if(!model.isReady()) {
+            System.out.println("Blep3");
+            return;
+        }
+
         var instance = entity.instance;
 
         if(instance == null) {

@@ -1,15 +1,20 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
+import gg.generations.rarecandy.arceus.model.Model;
 import gg.generations.rarecandy.arceus.model.pk.MultiRenderObject;
 import gg.generations.rarecandy.arceus.model.pk.MultiRenderObjectInstance;
+import gg.generations.rarecandy.arceus.model.pk.MultiRenderingInstance;
+import gg.generations.rarecandy.arceus.model.pk.PkMaterial;
 import org.joml.Matrix4f;
 
-public class PixelmonInstance extends MultiRenderObjectInstance<MultiRenderObject<?>> implements BlockLightValueProvider {
+import java.util.function.Supplier;
+
+public class GenerationsObjectInstance extends MultiRenderObjectInstance<MultiRenderObject<?>> implements BlockLightValueProvider {
     private final Matrix4f transformationMatrix;
     public Matrix4f[] matrixTransforms;
     private int light;
 
-    public PixelmonInstance(MultiRenderObject<?> object, Matrix4f transformationMatrix, String materialId) {
+    public GenerationsObjectInstance(MultiRenderObject<?> object, Matrix4f transformationMatrix, String materialId) {
         super(object, transformationMatrix, materialId);
         this.transformationMatrix = transformationMatrix;
     }

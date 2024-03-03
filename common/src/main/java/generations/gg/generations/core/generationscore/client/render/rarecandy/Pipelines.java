@@ -7,6 +7,7 @@ import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
+import gg.generations.rarecandy.arceus.model.RenderingInstance;
 import gg.generations.rarecandy.arceus.model.pk.*;
 import gg.generations.rarecandy.legacy.animation.AnimationController;
 import gg.generations.rarecandy.legacy.pipeline.ITexture;
@@ -67,7 +68,7 @@ public class Pipelines {
                             .supplyUniform(INSTANCE, "modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().getTransform()))
                             .supplyUniform(SHARED, "projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(MinecraftClientGameProvider.projMatrix))
                             .supplyUniform(INSTANCE, "boneTransforms", ctx -> {
-                                var mats = ctx.instance() instanceof MultiRenderObjectInstance<?> instance ? instance.getTransforms() != null ? instance.getTransforms() : AnimationController.NO_ANIMATION : AnimationController.NO_ANIMATION;
+                                var mats = ctx.instance() instanceof MultiRenderingInstance<?> instance && instance.object().getTransforms() != null ? instance.object().getTransforms() : AnimationController.NO_ANIMATION;
                                 ctx.uniform().uploadMat4fs(mats);
                             })
                             .supplyUniform(INSTANCE, "uvOffset", ctx -> {
@@ -112,7 +113,7 @@ public class Pipelines {
 
                     ShaderProgram layered = new ShaderProgram.Builder(layered_base)
                             .supplyUniform(SHARED, "frame", ctx -> ctx.uniform().uploadInt(-1))
-                            .supplyUniform(MATERIAL, "layer", ctx -> {
+                            .supplyUniform(INSTANCE, "layer", ctx -> {
                                 var texture = ctx.material() instanceof PkMaterial material ? material.getTexture("layer") : null;
 
                                 if (texture == null || isStatueMaterial(ctx.instance() instanceof MultiRenderObjectInstance<?> instance ? instance.getVariant() : null)) texture = ITextureLoader.instance().getDarkFallback();
@@ -120,8 +121,8 @@ public class Pipelines {
 
                                 texture.bind(3);
                                 ctx.uniform().uploadInt(3);
-                            }).supplyUniform(MATERIAL, "mask", ctx -> {
-                                var texture = ctx.instance() instanceof PkMaterial material ? material.getTexture("mask") : null;
+                            }).supplyUniform(INSTANCE, "mask", ctx -> {
+                                var texture = ctx.material() instanceof PkMaterial material ? material.getTexture("mask") : null;
 
                                 if (texture == null || isStatueMaterial(ctx.instance() instanceof MultiRenderObjectInstance<?> instance ? instance.getVariant() : null)) texture = ITextureLoader.instance().getDarkFallback();
 
@@ -146,7 +147,7 @@ public class Pipelines {
                                 ctx.uniform().uploadInt(3);
                             })
                             .supplyUniform(MATERIAL, "color", ctx -> {
-                                Vector3f color = ctx.instance() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null ? tintProvider.getTint() : ctx.instance().getMaterial() instanceof PkMaterial material && material.getValue("color") instanceof Vector3f vec ? vec : ONE;
+                                Vector3f color = ctx.instance() instanceof MultiRenderingInstance instance && instance.object() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null ? tintProvider.getTint() : ctx.material() instanceof PkMaterial material && material.getValue("color") instanceof Vector3f vec ? vec : ONE;
 
                                 ctx.uniform().uploadVec3f(color);
                             })
@@ -167,10 +168,10 @@ public class Pipelines {
     }
 
     private static void addDiffuse(ShaderProgram.Builder builder) {
-        builder.supplyUniform(MATERIAL, "diffuse", ctx -> {
+        builder.supplyUniform(INSTANCE, "diffuse", ctx -> {
             var variant = ctx.instance() instanceof MultiRenderObjectInstance<?> instance ? instance.getVariant() : null;
 
-            ITexture texture = isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.instance().getMaterial() instanceof PkMaterial material ? material.getDiffuseTexture() : null;
+            ITexture texture = isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.material() instanceof PkMaterial material ? material.getDiffuseTexture() : null;
             if (texture == null) texture = ITextureLoader.instance().getNuetralFallback();
 
             texture.bind(0);
@@ -207,7 +208,7 @@ public class Pipelines {
             RenderSystem.texParameter(3553, 10241, 9729);
             RenderSystem.texParameter(3553, 10240, 9729);
         }).supplyUniform(INSTANCE, "light", ctx -> {
-            var light = ((BlockLightValueProvider) ctx.instance()).getLight();
+            var light = ctx.instance() instanceof MultiRenderingInstance<?> instance && instance.object() instanceof BlockLightValueProvider provider ? provider.getLight() : 0;
             ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
         }).supplyUniform(MATERIAL, "emission", ctx -> {
             var texture = ctx.material() instanceof PkMaterial material ? material.getTexture("emission") : null;
@@ -218,7 +219,7 @@ public class Pipelines {
 
             texture.bind(2);
             ctx.uniform().uploadInt(2);
-        }).supplyUniform(MATERIAL, "useLight", ctx -> ctx.uniform().uploadBoolean(ctx.instance().getMaterial() instanceof PkMaterial material && material.getValue("useLight") instanceof Boolean bool ? bool : true));
+        }).supplyUniform(MATERIAL, "useLight", ctx -> ctx.uniform().uploadBoolean(ctx.material() instanceof PkMaterial material && material.getValue("useLight") instanceof Boolean bool ? bool : true));
     }
 
 
