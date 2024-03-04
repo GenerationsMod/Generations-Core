@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
-import de.javagl.jgltf.model.GltfModel;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
@@ -28,18 +27,18 @@ import java.util.function.Supplier;
 public class CompiledModel {
     public final MultiRenderObject<MeshObject> renderObject;
 
-    public CompiledModel(ResourceLocation a, InputStream stream, Function<GltfModel, Supplier<MeshObject>> supplier) {
+    public CompiledModel(ResourceLocation a, InputStream stream, Supplier<MeshObject> supplier) {
         this(a, stream, supplier, false);
     }
 
-    public CompiledModel(ResourceLocation a, InputStream stream, Function<GltfModel, Supplier<MeshObject>> supplier, boolean requiresVariantTexture) {
+    public CompiledModel(ResourceLocation a, InputStream stream, Supplier<MeshObject> supplier, boolean requiresVariantTexture) {
         var loader = ModelRegistry.getWorldRareCandy().getLoader();
         this.renderObject = loader.createObject(
                 () -> new PixelAsset(stream, a.toString()),
                  (gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
                     try {
-                        ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, glCalls, supplier.apply(gltfModel));
+                        ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, glCalls, supplier);
                     } catch (NullPointerException e) {
 //                        RareCandyTest.LOGGER.error("Catching exception reading model %s.".formatted(a));
                         e.printStackTrace();

@@ -18,7 +18,7 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 [[dependencies.generations_core]]
    modId="forge"
    mandatory=true
-   versionRange="[47.1.96,)"
+   versionRange="[47.1.101,)"
    ordering="NONE"
    side="BOTH"
 

@@ -20,7 +20,8 @@ dependencies {
     implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
     implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")
     implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}")
-    implementation("de.javagl:jgltf-model:${project.properties["rareCandyJgltfModel"]}")
+    implementation("org.lwjgl:lwjgl-assimp:3.3.1")
+    implementation("org.lwjgl:lwjgl-assimp:3.3.1:natives-windows")
     implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
     implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
     implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")
