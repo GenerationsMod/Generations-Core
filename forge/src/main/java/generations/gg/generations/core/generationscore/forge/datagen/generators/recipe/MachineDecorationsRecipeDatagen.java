@@ -41,6 +41,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
         for (DyeColor color : DyeColor.values()) {
             buildVendingMachineRecipes(consumer, color);
             buildPastelBeanBagRecipes(consumer, color);
+            buildSwivelChairRecipes(consumer, color);
         }
 
         //FURNACES
@@ -357,7 +358,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
     }
 
 
-        private void buildPastelBeanBagRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) { //TODO: Figure out recipe
+        private void buildPastelBeanBagRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
         var pastelBeanBag = GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block().get(color).get();
 
@@ -374,6 +375,22 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .requires(GenerationsItemTags.PASTEL_BEAN_BAG)
                 .unlockedBy("has_" + GenerationsItemTags.PASTEL_BEAN_BAG.location().getPath(), has(GenerationsItemTags.PASTEL_BEAN_BAG))
                 .save(consumer, Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(pastelBeanBag)).withPath(a -> a + "_dyed"));
+    }
+
+    private void buildSwivelChairRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.SWIVEL_CHAIR.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('X', Items.WHITE_WOOL)
+                .define('S', GenerationsItems.SILICON.get())
+                .define('I', Items.IRON_INGOT)
+                .pattern(" XX")
+                .pattern("XXX")
+                .pattern("SIS")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
     }
 
     private void buildVendingMachineRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
