@@ -42,6 +42,11 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
             buildVendingMachineRecipes(consumer, color);
             buildPastelBeanBagRecipes(consumer, color);
             buildSwivelChairRecipes(consumer, color);
+            buildCouchOttomanRecipes(consumer, color);
+            buildCouchArmLeftRecipes(consumer, color);
+            buildCouchArmRightRecipes(consumer, color);
+            buildCouchMiddleRecipes(consumer, color);
+            buildStreetLampRecipes(consumer, color);
         }
 
         //FURNACES
@@ -386,10 +391,81 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .define('X', Items.WHITE_WOOL)
                 .define('S', GenerationsItems.SILICON.get())
                 .define('I', Items.IRON_INGOT)
-                .pattern(" XX")
+                .pattern("EXX")
                 .pattern("XXX")
                 .pattern("SIS")
                 .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+
+    private void buildCouchArmLeftRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.COUCH_ARM_LEFT.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('W', Items.WHITE_WOOL)
+                .define('P', Items.DARK_OAK_PLANKS)
+                .pattern("WEE")
+                .pattern("WWW")
+                .pattern("P P")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+    private void buildCouchArmRightRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.COUCH_ARM_RIGHT.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('W', Items.WHITE_WOOL)
+                .define('P', Items.DARK_OAK_PLANKS)
+                .pattern("EEW")
+                .pattern("WWW")
+                .pattern("P P")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+    private void buildCouchMiddleRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.COUCH_MIDDLE.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('W', Items.WHITE_WOOL)
+                .define('P', Items.DARK_OAK_PLANKS)
+                .pattern("EWE")
+                .pattern("WWW")
+                .pattern("P P")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+    private void buildCouchOttomanRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.COUCH_OTTOMAN.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('W', Items.WHITE_WOOL)
+                .define('P', Items.DARK_OAK_PLANKS)
+                .pattern("EEE")
+                .pattern("WWW")
+                .pattern("P P")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+    private void buildStreetLampRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.STREET_LAMP.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('L', Items.REDSTONE_LAMP)
+                .define('I', Items.IRON_INGOT)
+                .pattern("ELE")
+                .pattern(" I ")
+                .pattern(" I ")
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(consumer);
     }
 
