@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "generations_core:crystal"
+    },
+    "G": {
+      "item": "generations_core:mirror"
+    },
+    "R": {
+      "item": "generations_core:ruby"
+    },
+    "S": {
+      "item": "generations_core:sapphire"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "SGS",
+    "CCC"
+  ],
+  "result": {
+    "item": "generations_core:reveal_glass"
+  },
+  "show_notification": true
+}

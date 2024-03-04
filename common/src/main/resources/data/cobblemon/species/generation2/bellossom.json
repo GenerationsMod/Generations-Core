@@ -8,10 +8,18 @@
     "h:healer"
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:pecha_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:green_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:yellow_petal",
         "percentage": 10.0
       }
     ]

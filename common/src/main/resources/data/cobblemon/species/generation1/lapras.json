@@ -109,6 +109,10 @@
       {
         "item": "generations_core:lapras_doll",
         "percentage": 1.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
       }
     ]
   },

@@ -25,6 +25,10 @@
       {
         "item": "cobblemon:twisted_spoon",
         "percentage": 10.0
+      },
+      {
+        "item": "generations_core:light_soul",
+        "percentage": 2.5
       }
     ]
   },

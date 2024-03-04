@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dynite_ore": {
+    "has_fragmented_drago_key_1": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:dynite_ore"
+              "generations_core:fragmented_drago_key_1"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:uncharged_dynamax_band"
+        "recipe": "generations_core:drago_key"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_dynite_ore",
+      "has_fragmented_drago_key_1",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:uncharged_dynamax_band"
+      "generations_core:drago_key"
     ]
   },
   "sends_telemetry_event": false

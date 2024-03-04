@@ -78,6 +78,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_SOUP.get(), "restoration/");
 
         createItem(GenerationsItems.Z_INGOT.get(), "ingots/");
+        createItem(GenerationsItems.DYNITE_ORE.get(), "ingots/");
         createItem(GenerationsItems.COPPER_PLATE.get(), "materials/");
 
         createItem(GenerationsItems.KOMALA_COFFEE.get(), "consumable/");
@@ -341,7 +342,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GOLD_LEAF.get(), "valuables/");
         createItem(GenerationsItems.SMALL_BOUQUET.get(), "valuables/");
         createItem(GenerationsItems.BLUE_SHARD.get(), "valuables/");
-        createItem(GenerationsItems.ENIGMA_SHARD.get(), "valuables/");
         createItem(GenerationsItems.COMET_SHARD.get(), "valuables/");
         createItem(GenerationsItems.GREEN_SHARD.get(), "valuables/");
         createItem(GenerationsItems.MEGASTONE_SHARD.get(), "valuables/");
@@ -380,7 +380,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RUBY.get(), "natural/");
         createItem(GenerationsItems.SAPPHIRE.get(), "natural/");
         createItem(GenerationsItems.SILICON.get(), "natural/");
-        createItem(GenerationsItems.GALARICA_TWIG.get(), "natural/");
 
         GenerationsArmor.ARMOR.forEach(armor -> createItem(armor.get(), "armor/"));
         GenerationsTools.TOOLS.forEach(tool -> handheldItem(tool.get()));
@@ -406,6 +405,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MEGA_RING.get(), "player_items/");
         createItem(GenerationsItems.Z_POWER_RING.get(), "player_items/");
         createItem(GenerationsItems.Z_RING.get(), "player_items/");
+        createItem(GenerationsItems.TIME_CAPSULE.get(), "player_items/");
         /*
         createItem(GenerationsItems.RED_BIKE.get(), "player_items/");
         createItem(GenerationsItems.ORANGE_BIKE.get(), "player_items/");
@@ -423,7 +423,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ABILITY_CAPSULE.get(), "player_items/");
         createItem(GenerationsItems.ABILITY_PATCH.get(), "player_items/");
         createItem(GenerationsItems.WISHING_STAR.get(), "player_items/");
-        createItem(GenerationsItems.UNCHARGED_DYNAMAX_BAND.get(), "player_items/");
         createItem(GenerationsItems.DYNAMAX_BAND.get(), "player_items/");
 
 
@@ -476,7 +475,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.LIGHT_STONE.get(), "legend_items/");
         createItem(GenerationsItems.DARK_STONE.get(), "legend_items/");
         createItem(GenerationsItems.DRAGON_STONE.get(), "legend_items/");
-        createItem(GenerationsItems.RAINBOW_WING.get(), "legend_items/");
         createItem(GenerationsItems.DARK_SOUL.get(), "legend_items/");
         createItem(GenerationsItems.DRAGON_SOUL.get(), "legend_items/");
 //        createItem(GenerationsItems.MELODY_FLUTE.get(), "legend_items/");
@@ -528,7 +526,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MELTAN_BOX_CHARGED.get(), "legend_items/", "meltan_box");
         createItem(GenerationsItems.UNENCHANTED_ICEROOT_CARROT.get(), "legend_items/", "iceroot_carrot");
         createItem(GenerationsItems.UNENCHANTED_SHADEROOT_CARROT.get(), "legend_items/", "shaderoot_carrot");
-        createItem(GenerationsItems.ENIGMA_FRAGMENT.get(), "legend_items/");
         createItem(GenerationsItems.MEW_DNA_FIBER.get(), "legend_items/");
         createItem(GenerationsItems.MEW_FOSSIL.get(), "legend_items/");
         createItem(GenerationsItems.LIGHT_SOUL.get(), "legend_items/");
@@ -536,6 +533,23 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.SOUL_HEART.get(), "legend_items/");
         createItem(GenerationsItems.WONDER_EGG.get(), "legend_items/");
         createItem(GenerationsItems.PHIONE_EGG.get(), "legend_items/");
+        createItem(GenerationsItems.BLACK_MANE_HAIR.get(), "legend_items/");
+        createItem(GenerationsItems.WHITE_MANE_HAIR.get(), "legend_items/");
+        createItem(GenerationsItems.ENIGMA_FRAGMENT.get(), "legend_items/");
+        createItem(GenerationsItems.ENIGMA_SHARD.get(), "legend_items/");
+        createItem(GenerationsItems.ENIGMA_STONE.get(), "legend_items/");
+        createItem(GenerationsItems.METEORITE_SHARD.get(), "legend_items/");
+        createItem(GenerationsItems.SACRED_ASH.get(), "legend_items/");
+        createItem(GenerationsItems.RAINBOW_WING.get(), "legend_items/");
+        createItem(GenerationsItems.SILVER_WING.get(), "legend_items/");
+        createItem(GenerationsItems.BLUE_PETAL.get(), "legend_items/");
+        createItem(GenerationsItems.GREEN_PETAL.get(), "legend_items/");
+        createItem(GenerationsItems.ORANGE_PETAL.get(), "legend_items/");
+        createItem(GenerationsItems.PINK_PETAL.get(), "legend_items/");
+        createItem(GenerationsItems.PURPLE_PETAL.get(), "legend_items/");
+        createItem(GenerationsItems.RADIANT_PETAL.get(), "legend_items/");
+        createItem(GenerationsItems.RED_PETAL.get(), "legend_items/");
+        createItem(GenerationsItems.YELLOW_PETAL.get(), "legend_items/");
 
         createItem(GenerationsItems.BIKE_FRAME.get(), "utility_items/");
         createItem(GenerationsItems.BIKE_HANDLEBARS.get(), "utility_items/");
@@ -681,9 +695,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.BERRY_PLANTER.get(), "unimplemented/");
         createItem(GenerationsItems.BERRY_POUCH.get(), "unimplemented/");
         createItem(GenerationsItems.BIKE_VOUCHER.get(), "unimplemented/");
-        createItem(GenerationsItems.BLACK_MANE_HAIR.get(), "unimplemented/");
         createItem(GenerationsItems.BLUE_CARD.get(), "unimplemented/");
-        createItem(GenerationsItems.BLUE_PETAL.get(), "unimplemented/");
         createItem(GenerationsItems.BLUE_SCARF.get(), "unimplemented/");
         createItem(GenerationsItems.BLUE_SPHERE.get(), "unimplemented/");
         createItem(GenerationsItems.CAMPING_GEAR.get(), "unimplemented/");
@@ -718,10 +730,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.DRAGON_SKULL.get(), "unimplemented/");
         createItem(GenerationsItems.DROPPED_ITEM_RED.get(), "unimplemented/");
         createItem(GenerationsItems.DROPPED_ITEM_YELLOW.get(), "unimplemented/");
-        createItem(GenerationsItems.DYNITE_ORE.get(), "unimplemented/");
         createItem(GenerationsItems.ELEVATOR_KEY.get(), "unimplemented/");
         createItem(GenerationsItems.ENDORSEMENT.get(), "unimplemented/");
-        createItem(GenerationsItems.ENIGMA_STONE.get(), "unimplemented/");
         createItem(GenerationsItems.EON_FLUTE.get(), "unimplemented/");
         createItem(GenerationsItems.EON_TICKET.get(), "unimplemented/");
         createItem(GenerationsItems.EXPLORER_KIT.get(), "unimplemented/");
@@ -730,6 +740,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.FESTIVAL_TICKET.get(), "unimplemented/");
         createItem(GenerationsItems.FORAGE_BAG.get(), "unimplemented/");
         createItem(GenerationsItems.GALACTIC_KEY.get(), "unimplemented/");
+        createItem(GenerationsItems.GALARICA_TWIG.get(), "unimplemented/");
         createItem(GenerationsItems.GB_SOUNDS.get(), "unimplemented/");
         createItem(GenerationsItems.GO_GOGGLES.get(), "unimplemented/");
         createItem(GenerationsItems.GOLD_TEETH.get(), "unimplemented/");
@@ -737,7 +748,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GOLDEN_PINAP_BERRY.get(), "unimplemented/");
         createItem(GenerationsItems.GOLDEN_RAZZ_BERRY.get(), "unimplemented/");
         createItem(GenerationsItems.GRAM.get(), "unimplemented/");
-        createItem(GenerationsItems.GREEN_PETAL.get(), "unimplemented/");
         createItem(GenerationsItems.GREEN_SCARF.get(), "unimplemented/");
         createItem(GenerationsItems.GREEN_SPHERE.get(), "unimplemented/");
         createItem(GenerationsItems.GREEN_TEA.get(), "unimplemented/");
@@ -779,7 +789,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_LURE.get(), "unimplemented/");
         createItem(GenerationsItems.MEDAL_BOX.get(), "unimplemented/");
         createItem(GenerationsItems.MEMBER_CARD.get(), "unimplemented/");
-        createItem(GenerationsItems.METEORITE_SHARD.get(), "unimplemented/");
         createItem(GenerationsItems.MIGHTY_CANDY.get(), "unimplemented/");
         createItem(GenerationsItems.MIGHTY_CANDY_L.get(), "unimplemented/");
         createItem(GenerationsItems.MIGHTY_CANDY_XL.get(), "unimplemented/");
@@ -789,7 +798,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.OLD_CHARM.get(), "unimplemented/");
         createItem(GenerationsItems.OLD_LETTER.get(), "unimplemented/");
         createItem(GenerationsItems.OLD_SEA_MAP.get(), "unimplemented/");
-        createItem(GenerationsItems.ORANGE_PETAL.get(), "unimplemented/");
         createItem(GenerationsItems.PAIR_OF_TICKETS.get(), "unimplemented/");
         createItem(GenerationsItems.PAL_PAD.get(), "unimplemented/");
         createItem(GenerationsItems.PALE_SPHERE.get(), "unimplemented/");
@@ -797,7 +805,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.PASS_ORB.get(), "unimplemented/");
         createItem(GenerationsItems.PERMIT.get(), "unimplemented/");
         createItem(GenerationsItems.PEWTER_CRUNCHIES.get(), "unimplemented/");
-        createItem(GenerationsItems.PINK_PETAL.get(), "unimplemented/");
         createItem(GenerationsItems.PINK_SCARF.get(), "unimplemented/");
         createItem(GenerationsItems.PLASMA_CARD.get(), "unimplemented/");
         createItem(GenerationsItems.POFFIN.get(), "unimplemented/");
@@ -807,7 +814,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.POKE_RADAR.get(), "unimplemented/");
         createItem(GenerationsItems.POKEBLOCK_CASE.get(), "unimplemented/");
         createItem(GenerationsItems.POKEBLOCK_KIT.get(), "unimplemented/");
-        createItem(GenerationsItems.POKEMON_BOX_LINK.get(), "unimplemented/");
         createItem(GenerationsItems.POKETCH_BLUE.get(), "unimplemented/");
         createItem(GenerationsItems.POKETCH_RED.get(), "unimplemented/");
         createItem(GenerationsItems.POWDER_JAR.get(), "unimplemented/");
@@ -816,14 +822,11 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.PROFESSORS_MASK.get(), "unimplemented/");
         createItem(GenerationsItems.PROFS_LETTER.get(), "unimplemented/");
         createItem(GenerationsItems.PROP_CASE.get(), "unimplemented/");
-        createItem(GenerationsItems.PURPLE_PETAL.get(), "unimplemented/");
         createItem(GenerationsItems.QUICK_CANDY.get(), "unimplemented/");
         createItem(GenerationsItems.QUICK_CANDY_L.get(), "unimplemented/");
         createItem(GenerationsItems.QUICK_CANDY_XL.get(), "unimplemented/");
-        createItem(GenerationsItems.RADIANT_PETAL.get(), "unimplemented/");
         createItem(GenerationsItems.RAINBOW_FLOWER.get(), "unimplemented/");
         createItem(GenerationsItems.RAINBOW_PASS.get(), "unimplemented/");
-        createItem(GenerationsItems.RED_PETAL.get(), "unimplemented/");
         createItem(GenerationsItems.RED_SCALE.get(), "unimplemented/");
         createItem(GenerationsItems.RED_SPHERE.get(), "unimplemented/");
         createItem(GenerationsItems.RESET_URGE.get(), "unimplemented/");
@@ -841,7 +844,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ROTO_PRIZE_MONEY.get(), "unimplemented/");
         createItem(GenerationsItems.ROTO_STEALTH.get(), "unimplemented/");
         createItem(GenerationsItems.RULE_BOOK.get(), "unimplemented/");
-        createItem(GenerationsItems.SACRED_ASH.get(), "unimplemented/");
         createItem(GenerationsItems.SCANNER.get(), "unimplemented/");
         createItem(GenerationsItems.SEAL_BAG.get(), "unimplemented/");
         createItem(GenerationsItems.SEAL_CASE.get(), "unimplemented/");
@@ -852,7 +854,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.SILVER_NANAB_BERRY.get(), "unimplemented/");
         createItem(GenerationsItems.SILVER_PINAP_BERRY.get(), "unimplemented/");
         createItem(GenerationsItems.SILVER_RAZZ_BERRY.get(), "unimplemented/");
-        createItem(GenerationsItems.SILVER_WING.get(), "unimplemented/");
         createItem(GenerationsItems.SINNOH_STONE.get(), "unimplemented/");
         createItem(GenerationsItems.SMART_CANDY.get(), "unimplemented/");
         createItem(GenerationsItems.SMART_CANDY_L.get(), "unimplemented/");
@@ -887,7 +888,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.UNOWN_REPORT.get(), "unimplemented/");
         createItem(GenerationsItems.VS_RECORDER.get(), "unimplemented/");
         createItem(GenerationsItems.VS_SEEKER.get(), "unimplemented/");
-        createItem(GenerationsItems.WHITE_MANE_HAIR.get(), "unimplemented/");
         createItem(GenerationsItems.WISHING_CHIP.get(), "unimplemented/");
         createItem(GenerationsItems.WISHING_PIECE.get(), "unimplemented/");
         createItem(GenerationsItems.WOODEN_CROWN.get(), "unimplemented/");
@@ -913,7 +913,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.X_TRANSCEIVER_BLUE.get(), "unimplemented/");
         createItem(GenerationsItems.X_TRANSCEIVER_RED.get(), "unimplemented/");
         createItem(GenerationsItems.X_TRANSCEIVER_YELLOW.get(), "unimplemented/");
-        createItem(GenerationsItems.YELLOW_PETAL.get(), "unimplemented/");
         createItem(GenerationsItems.YELLOW_SCARF.get(), "unimplemented/");
 
         createItem(GenerationsItems.GHOST_BOAT_ITEM.get(), "boat/");

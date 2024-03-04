@@ -366,11 +366,19 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:z_ingot"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:sapphire"
         },
         {
           "type": "minecraft:item",
           "name": "generations_core:silicon"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mew_fossil"
         },
         {
           "type": "minecraft:item",

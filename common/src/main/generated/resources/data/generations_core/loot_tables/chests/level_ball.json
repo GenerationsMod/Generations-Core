@@ -499,6 +499,10 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_167"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dynite_ore"
         }
       ],
       "rolls": {

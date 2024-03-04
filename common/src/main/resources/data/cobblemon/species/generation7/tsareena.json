@@ -14,6 +14,10 @@
       {
         "item": "cobblemon:persim_berry",
         "percentage": 10.0
+      },
+      {
+        "item": "generations_core:purple_petal",
+        "percentage": 10.0
       }
     ]
   },

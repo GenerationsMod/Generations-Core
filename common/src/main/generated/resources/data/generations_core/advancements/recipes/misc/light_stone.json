@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_light_soul": {
+    "has_dragon_soul": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:light_soul"
+              "generations_core:dragon_soul"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_light_soul",
+      "has_dragon_soul",
       "has_the_recipe"
     ]
   ],

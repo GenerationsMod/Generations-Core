@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:dark_soul"
+    },
+    {
+      "item": "generations_core:dark_soul"
+    },
+    {
+      "item": "generations_core:dark_soul"
+    },
+    {
+      "item": "generations_core:dark_soul"
+    },
+    {
+      "item": "generations_core:dark_soul"
+    },
+    {
+      "item": "generations_core:dark_soul"
+    },
+    {
+      "item": "generations_core:dark_soul"
+    },
+    {
+      "item": "generations_core:dark_soul"
+    },
+    {
+      "item": "generations_core:dark_soul"
+    }
+  ],
+  "result": {
+    "item": "generations_core:dark_crystal"
+  }
+}

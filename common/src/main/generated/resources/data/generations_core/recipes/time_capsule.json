@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "generations_core:ruby"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "IGI",
+    "III"
+  ],
+  "result": {
+    "item": "generations_core:time_capsule"
+  },
+  "show_notification": true
+}

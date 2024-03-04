@@ -9,7 +9,7 @@
     "h:naturalcure"
   ],
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "cobblemon:misty_seed",
@@ -18,6 +18,22 @@
       {
         "item": "cobblemon:kebia_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:pink_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:purple_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:red_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:yellow_petal",
+        "percentage": 10.0
       }
     ]
   },

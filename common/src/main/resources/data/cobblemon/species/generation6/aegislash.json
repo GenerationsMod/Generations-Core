@@ -47,6 +47,10 @@
       {
         "item": "cobblemon:dusk_stone",
         "percentage": 10.0
+      },
+      {
+        "item": "generations_core:rusty_fragment",
+        "percentage": 1.0
       }
     ]
   },

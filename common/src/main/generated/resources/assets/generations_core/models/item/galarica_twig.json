@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/natural/galarica_twig"
+    "layer0": "generations_core:item/unimplemented/galarica_twig"
   }
 }

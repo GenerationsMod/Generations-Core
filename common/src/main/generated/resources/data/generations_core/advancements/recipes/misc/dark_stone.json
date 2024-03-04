@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dark_soul": {
+    "has_dragon_soul": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:dark_soul"
+              "generations_core:dragon_soul"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_dark_soul",
+      "has_dragon_soul",
       "has_the_recipe"
     ]
   ],

@@ -16,6 +16,10 @@
       {
         "item": "cobblemon:roseli_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:dark_soul",
+        "percentage": 2.5
       }
     ]
   },

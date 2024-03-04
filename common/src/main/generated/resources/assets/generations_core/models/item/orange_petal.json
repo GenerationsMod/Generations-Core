@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/unimplemented/orange_petal"
+    "layer0": "generations_core:item/legend_items/orange_petal"
   }
 }

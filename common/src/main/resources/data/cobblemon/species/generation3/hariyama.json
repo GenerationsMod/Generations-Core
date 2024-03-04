@@ -190,6 +190,10 @@
       {
         "item": "cobblemon:payapa_berry",
         "percentage": 5.0
+      },
+      {
+        "item": "generations_core:scroll_page",
+        "percentage": 1.0
       }
     ]
   }

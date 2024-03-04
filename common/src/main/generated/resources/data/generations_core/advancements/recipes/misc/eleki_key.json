@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_discharged_eleki_key_1": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:discharged_eleki_key_1"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:eleki_key"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_discharged_eleki_key_1",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:eleki_key"
+    ]
+  },
+  "sends_telemetry_event": false
+}

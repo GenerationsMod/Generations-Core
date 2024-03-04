@@ -331,6 +331,10 @@
       {
         "item": "cobblemon:roseli_berry",
         "percentage": 2.5
+      },
+      {
+        "item": "generations_core:dragon_soul",
+        "percentage": 5.0
       }
     ]
   }

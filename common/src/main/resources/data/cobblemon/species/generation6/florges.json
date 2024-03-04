@@ -131,10 +131,26 @@
   "aspects": [],
   "cannotDynamax": false,
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:kebia_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:blue_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:red_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:orange_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:yellow_petal",
         "percentage": 10.0
       }
     ]

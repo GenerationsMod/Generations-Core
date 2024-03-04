@@ -274,6 +274,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "minecraft:netherite_scrap"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:mewtwo_armor"
         },
         {
@@ -379,6 +383,10 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_170"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:z_ingot"
         }
       ],
       "rolls": 1.0

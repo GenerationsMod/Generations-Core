@@ -318,7 +318,15 @@
         },
         {
           "type": "minecraft:item",
+          "name": "minecraft:netherite_scrap"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:rich_mulch"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dynite_ore"
         }
       ],
       "rolls": {

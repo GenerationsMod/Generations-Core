@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_silicon_ore": {
+    "has_silicon": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:silicon_ore"
+              "generations_core:silicon"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_silicon_ore",
+      "has_silicon",
       "has_the_recipe"
     ]
   ],

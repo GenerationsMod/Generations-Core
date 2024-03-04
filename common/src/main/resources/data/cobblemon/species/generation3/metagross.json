@@ -14,6 +14,10 @@
       {
         "item": "cobblemon:metal_coat",
         "percentage": 10.0
+      },
+      {
+        "item": "generations_core:dragon_soul",
+        "percentage": 5.0
       }
     ]
   },

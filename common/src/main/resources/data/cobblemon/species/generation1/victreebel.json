@@ -35,6 +35,10 @@
       {
         "item": "cobblemon:pinap_berry",
         "percentage": 10.0
+      },
+      {
+        "item": "generations_core:green_petal",
+        "percentage": 10.0
       }
     ]
   },

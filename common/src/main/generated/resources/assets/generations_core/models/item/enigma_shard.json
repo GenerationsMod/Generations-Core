@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/valuables/enigma_shard"
+    "layer0": "generations_core:item/legend_items/enigma_shard"
   }
 }

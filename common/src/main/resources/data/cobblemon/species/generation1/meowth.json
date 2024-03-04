@@ -245,6 +245,10 @@
           {
             "item": "cobblemon:bluk_berry",
             "percentage": 2.5
+          },
+          {
+            "item": "generations_core:dark_soul",
+            "percentage": 2.5
           }
         ]
       }
@@ -485,6 +489,10 @@
       {
         "item": "generations_core:meowth_doll",
         "percentage": 1.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
       }
     ]
   },

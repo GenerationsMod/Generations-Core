@@ -5,17 +5,20 @@
     "I": {
       "item": "minecraft:iron_ingot"
     },
-    "Z": {
-      "item": "generations_core:dynite_ore"
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "S": {
+      "item": "generations_core:silicon"
     }
   },
   "pattern": [
-    "ZIZ",
-    "ZIZ",
-    "ZIZ"
+    "S  ",
+    " I ",
+    "  N"
   ],
   "result": {
-    "item": "generations_core:uncharged_dynamax_band"
+    "item": "generations_core:melody_flute"
   },
   "show_notification": true
 }

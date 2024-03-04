@@ -302,6 +302,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:dynite_ore"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:z_ingot"
         },
         {

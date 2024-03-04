@@ -57,7 +57,6 @@ public abstract class ServerPlayerMixin extends Player {
                     Containers.dropItemStack(level(), position().x, position().y, position().z, stack);
                 }
                 biomesVisited.add(currentBiome);
-                this.sendSystemMessage(Component.translatable("generations_core.enigma_biome", Language.getInstance().getOrDefault("biome.%s.%s".formatted(currentBiome.location().getNamespace(), currentBiome.location().getPath()))));
             }
 
         });
