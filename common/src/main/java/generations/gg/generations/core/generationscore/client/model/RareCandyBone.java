@@ -102,7 +102,12 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         var species = context.request(RenderContext.Companion.getSPECIES());
         var aspects = context.request(RenderContext.Companion.getASPECTS());
-        return PokemonModelRepository.INSTANCE.getVariations().get(species).getTexture(aspects, 0.0f);
+
+        try {
+            return PokemonModelRepository.INSTANCE.getVariations().get(species).getTexture(aspects, 0.0f);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
