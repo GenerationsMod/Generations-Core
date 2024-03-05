@@ -569,6 +569,14 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("W W")
                 .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.TRASH_CAN.get(), 1)
+                .define('W', Items.IRON_INGOT)
+                .define('C', Items.COMPOSTER)
+                .pattern("WWW")
+                .pattern("WCW")
+                .pattern("WWW")
+                .unlockedBy(getHasName(Items.COMPOSTER), has(Items.COMPOSTER))
+                .save(consumer);
     }
 
 
