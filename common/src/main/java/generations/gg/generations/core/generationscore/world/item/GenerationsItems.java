@@ -1153,22 +1153,22 @@ public class GenerationsItems {
     /**
      * Fossils
      */
-    public static final RegistrySupplier<Item> ARMOR_FOSSIL = register("armor_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> BIRD_FOSSIL = register("bird_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> CLAW_FOSSIL = register("claw_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> COVER_FOSSIL = register("cover_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> DINO_FOSSIL = register("dino_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> DOME_FOSSIL = register("dome_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> DRAKE_FOSSIL = register("drake_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> FISH_FOSSIL = register("fish_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> FOSSIL = register("fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> HELIX_FOSSIL = register("helix_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> JAW_FOSSIL = register("jaw_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> OLD_AMBER = register("old_amber", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> PLUME_FOSSIL = register("plume_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> ROOT_FOSSIL = register("root_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> SAIL_FOSSIL = register("sail_fossil", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> SKULL_FOSSIL = register("skull_fossil", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> ARMOR_FOSSIL = register("armor_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> BIRD_FOSSIL = register("bird_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> CLAW_FOSSIL = register("claw_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> COVER_FOSSIL = register("cover_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> DINO_FOSSIL = register("dino_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> DOME_FOSSIL = register("dome_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> DRAKE_FOSSIL = register("drake_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> FISH_FOSSIL = register("fish_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> FOSSIL = register("fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> HELIX_FOSSIL = register("helix_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> JAW_FOSSIL = register("jaw_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> OLD_AMBER = register("old_amber", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> PLUME_FOSSIL = register("plume_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> ROOT_FOSSIL = register("root_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> SAIL_FOSSIL = register("sail_fossil", Item::new, NATURAL);
+    public static final RegistrySupplier<Item> SKULL_FOSSIL = register("skull_fossil", Item::new, NATURAL);
 
     /**
      * Un-Implemented Items : Items currently have no in-game function
