@@ -489,6 +489,23 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .requires(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), 3)
                 .unlockedBy(getHasName(GenerationsDecorationBlocks.LITWICK_CANDLE.get()), has(GenerationsDecorationBlocks.LITWICK_CANDLE.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHELF.get(), 1)
+                .define('B', GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock())
+                .define('W', Items.WHITE_DYE)
+                .define('O', Items.OAK_PLANKS)
+                .pattern("BBB")
+                .pattern("OOO")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BOOK_SHELF.get(), 1)
+                .define('B', Items.BOOK)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("WWW")
+                .pattern("BBB")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1.get(), 1)
                 .define('P', CobblemonItems.POTION)
                 .define('R', CobblemonItems.RARE_CANDY)
