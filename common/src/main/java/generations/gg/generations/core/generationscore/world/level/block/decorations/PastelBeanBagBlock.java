@@ -24,7 +24,7 @@ import java.util.Map;
 
 @SuppressWarnings("deprecation")
 public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock> {
-    public PastelBeanBagBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock>>> function, Properties props) {
+    public PastelBeanBagBlock(DyeColor color, Map<DyeColor, RegistrySupplier<PastelBeanBagBlock>> function, Properties props) {
         super(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.PASTEL_BEAN_BAG);
     }
 

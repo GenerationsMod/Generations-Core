@@ -28,7 +28,7 @@ import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 public class VariantCouchBlock extends DyeableBlock<CouchBlockEntity, VariantCouchBlock> implements SittableBlock {
     private final GenerationsVoxelShapes.DirectionalShapes shapes;
 
-    public VariantCouchBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<CouchBlockEntity, VariantCouchBlock>>> function, Properties arg, Variant variant) {
+    public VariantCouchBlock(DyeColor color, Map<DyeColor, RegistrySupplier<VariantCouchBlock>> function, Properties arg, Variant variant) {
         super(color, function, GenerationsBlockEntities.COUCH, arg, variant.getModel(), 0, 0, 0);
         this.shapes = variant.getShape();
     }

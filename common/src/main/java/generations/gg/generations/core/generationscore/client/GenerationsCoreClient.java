@@ -261,6 +261,8 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.BALL_LOOT.get(), PokeLootRendrer::new);
         consumer.accept(GenerationsBlockEntities.RKS_MACHINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.PC.get(), GeneralUseBlockEntityRenderer::new);
+        consumer.accept(GenerationsBlockEntities.DYED_PC.get(), GeneralUseBlockEntityRenderer::new);
+
         consumer.accept(GenerationsBlockEntities.COUCH.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.STREET_LAMP.get(), GeneralUseBlockEntityRenderer::new);
     }

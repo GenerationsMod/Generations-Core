@@ -1,10 +1,15 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
+import generations.gg.generations.core.generationscore.world.level.block.entities.DefaultPcBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.DyedPcBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -14,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 
-public class RotomPc extends PcBlock {
+public class RotomPc extends PcBlock<DefaultPcBlockEntity, RotomPc> {
     public static final GenerationsVoxelShapes.GenericRotatableShapes SHAPE = GenerationsVoxelShapes.generateRotationalVoxelShape(
             Shapes.join(Shapes.box(0.015625, 0, 0.28125, 0.978125, 2, 0.5625),
                     Shapes.join(Shapes.box(0.015625, 0.6875, 0, 0.978125, 0.8125, 0.28125),
@@ -26,11 +31,17 @@ public class RotomPc extends PcBlock {
             1, 3, 1);
 
     public RotomPc(@NotNull BlockBehaviour.Properties arg) {
-        super(arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 2, 0);
+        super(GenerationsBlockEntities.PC, DefaultPcBlockEntity.class, arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 2, 0);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE.getShape(state);
+    }
+
+    @NotNull
+    @Override
+    public BlockEntityTicker<DefaultPcBlockEntity> getTicker() {
+        return DefaultPcBlockEntity.TICKER;
     }
 }

@@ -96,13 +96,13 @@ public class GenerationsDecorationBlocks {
     public static final RegistrySupplier<Block> POKEBALL_CUSHION = registerDecorationItem("pokeball_cushion", () -> new CushionBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), "pokeball"));
     public static final RegistrySupplier<Block> MASTERBALL_CUSHION = registerDecorationItem("masterball_cushion", () -> new CushionBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL), "masterball"));
 
-    public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
+    public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<V>>, Supplier<V>> blockSupplier) {
 
-        var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>();
+        var dyeMap = new HashMap<DyeColor, RegistrySupplier<V>>();
 
         Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
             var properName = dyeColor.getSerializedName() + "_" + name;
-            RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(properName, blockSupplier.apply(dyeColor, dyeMap));
+            RegistrySupplier<V> block = registerBlock(properName, blockSupplier.apply(dyeColor, dyeMap));
 
             register(properName, properties -> new BlockItem(block.get(), properties));
             dyeMap.put(dyeColor, block);

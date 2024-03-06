@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
+import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
@@ -245,6 +246,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerDyeGroup(GenerationsDecorationBlocks.COUCH_ARM_RIGHT, "couch");
         registerDyeGroup(GenerationsDecorationBlocks.COUCH_OTTOMAN, "couch");
         registerDyeGroup(GenerationsDecorationBlocks.COUCH_MIDDLE, "couch");
+        registerDyeGroup(GenerationsUtilityBlocks.PC, "pcs");
+
 
 //        registerNoModel(GenerationsUtilityBlocks.CLOCK.block());
 //        registerNoModel(GenerationsUtilityBlocks.HEALER.block());
@@ -334,7 +337,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         dropSelfList.add(box.get());
     }
 
-    private <V extends DyeableBlock<T, V>, T extends DyedVariantBlockEntity<?>> void registerDyeGroup(DyedGroup<V, T> group, String dir) {
+    private <V extends DyeableBlock<T, V>, T extends ModelProvidingBlockEntity> void registerDyeGroup(DyedGroup<V, T> group, String dir) {
         group.block().values().stream().map(Supplier::get).forEach(block -> {
             registerBlockItemParticle(block, dir);
             dropSelfList.add(block);

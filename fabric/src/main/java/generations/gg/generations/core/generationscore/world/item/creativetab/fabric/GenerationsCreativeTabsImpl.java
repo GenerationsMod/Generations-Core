@@ -30,6 +30,7 @@ public class GenerationsCreativeTabsImpl {
                 .icon(icon)
                 .displayItems((entry, context) -> {
                     for (DeferredRegister<? extends ItemLike> item : items)
+
                         item.forEach((itemEntry) -> context.accept(itemEntry.get().asItem().getDefaultInstance()));
                 })
                 .build());

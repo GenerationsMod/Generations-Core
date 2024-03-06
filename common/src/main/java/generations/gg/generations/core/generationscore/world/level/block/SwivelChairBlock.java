@@ -38,7 +38,7 @@ public class SwivelChairBlock extends DyeableBlock<GenericDyedVariantBlockEntity
         return SHAPE.getShape(state);
     }
 
-    public SwivelChairBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<GenericDyedVariantBlockEntity, SwivelChairBlock>>> function, BlockBehaviour.Properties props) {
+    public SwivelChairBlock(DyeColor color, Map<DyeColor, RegistrySupplier<SwivelChairBlock>> function, BlockBehaviour.Properties props) {
         super(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, props, GenerationsBlockEntityModels.SWIVEL_CHAIR);
     }
 

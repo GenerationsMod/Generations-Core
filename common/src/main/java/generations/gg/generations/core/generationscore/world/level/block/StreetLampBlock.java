@@ -25,7 +25,7 @@ public class StreetLampBlock extends DyeableBlock<StreetLampBlockEntity, StreetL
                     Shapes.box(0.35, 1.84375, 0.35, 0.65, 1.975, 0.65)),
                     Direction.NORTH, 1, 2, 1);
 
-    public StreetLampBlock(DyeColor color, Map<DyeColor, RegistrySupplier<DyeableBlock<StreetLampBlockEntity, StreetLampBlock>>> function, Properties properties) {
+    public StreetLampBlock(DyeColor color, Map<DyeColor, RegistrySupplier<StreetLampBlock>> function, Properties properties) {
         super(color, function, GenerationsBlockEntities.STREET_LAMP, properties, GenerationsBlockEntityModels.STREET_LAMP, 0, 1, 0);
     }
 

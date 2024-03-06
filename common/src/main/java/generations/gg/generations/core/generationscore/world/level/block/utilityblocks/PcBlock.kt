@@ -11,7 +11,8 @@ import com.cobblemon.mod.common.util.isInBattle
 import com.cobblemon.mod.common.util.lang
 import com.cobblemon.mod.common.util.playSoundServer
 import com.cobblemon.mod.common.util.toVec3d
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities
+import dev.architectury.registry.registries.RegistrySupplier
+import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.world.level.block.entities.PcBlockEntity
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
@@ -25,6 +26,7 @@ import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
+import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
@@ -33,7 +35,15 @@ import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 import java.util.*
 
-open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, height: Int = 0, length: Int = 0) : GenericRotatableModelBlock<PcBlockEntity>(arg, GenerationsBlockEntities.PC, model, width, height, length) {
+abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
+    type: RegistrySupplier<MutableBlockEntityType<T>>,
+    private val blockEntityClass: Class<T>,
+    arg: Properties,
+    model: ResourceLocation,
+    width: Int = 0,
+    height: Int = 0,
+    length: Int = 0
+) : GenericRotatableModelBlock<T>(arg, type, model, width, height, length) {
     override fun createDefaultState(): BlockState {
         return super.createDefaultState().setValue(ON, false)
     }
@@ -61,7 +71,7 @@ open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, hei
         world.getBlockEntity(basePos.above())?.setRemoved()
 
         val baseEntity = world.getBlockEntity(basePos)
-        if (baseEntity !is PcBlockEntity) return SUCCESS
+        if (!blockEntityClass.isInstance(baseEntity)) return SUCCESS
 
         if (player.isInBattle()) {
             player.sendSystemMessage(lang("pc.inbattle").red())
@@ -70,7 +80,7 @@ open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, hei
 
         val pc = Cobblemon.storage.getPC(player.uuid) ?: return SUCCESS
         // TODO add event to check if they can open this PC?
-        PCLinkManager.addLink(ProximityPCLink(pc, player.uuid, baseEntity))
+        PCLinkManager.addLink(ProximityPCLink(blockEntityClass, pc, player.uuid, blockEntityClass.cast(baseEntity)))
         OpenPCPacket(pc.uuid).sendToPlayer(player)
         world.playSoundServer(
             position = blockPos.toVec3d(),
@@ -81,7 +91,9 @@ open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, hei
         return SUCCESS
     }
 
-    override fun <T : BlockEntity> getTicker(world: Level, blockState: BlockState, BlockWithEntityType: BlockEntityType<T>) =  createTickerHelper(BlockWithEntityType, GenerationsBlockEntities.PC.get(), PcBlockEntity.TICKER::tick)
+    override fun <T : BlockEntity> getTicker(world: Level, blockState: BlockState, BlockWithEntityType: BlockEntityType<T>) =  createTickerHelper(BlockWithEntityType, blockEntityFunction.get(), getTicker())
+
+    abstract fun getTicker() :BlockEntityTicker<T>
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         super.createBlockStateDefinition(builder.add(ON))
@@ -90,39 +102,20 @@ open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, hei
     companion object {
         val ON: BooleanProperty = BooleanProperty.create("on")
 
-//        @JvmStatic
-//        fun getBlock(color: DyeColor): DyedBlockItem<PcBlock> = when (color) {
-//            DyeColor.WHITE -> GenerationsUtilityBlocks.WHITE_PC
-//            DyeColor.ORANGE -> GenerationsUtilityBlocks.ORANGE_PC
-//            DyeColor.MAGENTA -> GenerationsUtilityBlocks.MAGENTA_PC
-//            DyeColor.LIGHT_BLUE -> GenerationsUtilityBlocks.LIGHT_BLUE_PC
-//            DyeColor.YELLOW -> GenerationsUtilityBlocks.YELLOW_PC
-//            DyeColor.LIME -> GenerationsUtilityBlocks.LIME_PC
-//            DyeColor.PINK -> GenerationsUtilityBlocks.PINK_PC
-//            DyeColor.GRAY -> GenerationsUtilityBlocks.GRAY_PC
-//            DyeColor.LIGHT_GRAY -> GenerationsUtilityBlocks.LIGHT_GRAY_PC
-//            DyeColor.CYAN -> GenerationsUtilityBlocks.CYAN_PC
-//            DyeColor.PURPLE -> GenerationsUtilityBlocks.PURPLE_PC
-//            DyeColor.BLUE -> GenerationsUtilityBlocks.BLUE_PC
-//            DyeColor.BROWN -> GenerationsUtilityBlocks.BROWN_PC
-//            DyeColor.GREEN -> GenerationsUtilityBlocks.GREEN_PC
-//            DyeColor.RED -> GenerationsUtilityBlocks.RED_PC
-//            DyeColor.BLACK -> GenerationsUtilityBlocks.BLACK_PC
-//        }.get()
-
         fun lumiance(state: BlockState): Int {
             return try {
-                if (state.getValue(ON) && state.getValue((state.block as PcBlock).heightProperty) == 1) 10 else 0
+                if (state.getValue(ON) && state.getValue((state.block as GenericRotatableModelBlock<*>).heightProperty) == 1) 10 else 0
             } catch (e: IllegalArgumentException) {
                 0
             }
         }
     }
 
-    class ProximityPCLink(
+    class ProximityPCLink<T : PcBlockEntity<T>>(
+        val clazz: Class<T>,
         pc: PCStore,
         playerID: UUID,
-        pcBlockEntity: PcBlockEntity,
+        pcBlockEntity: T,
         val maxDistance: Double = 10.0
     ) : PCLink(pc, playerID) {
         val world = pcBlockEntity.level
@@ -130,7 +123,7 @@ open class PcBlock(arg: Properties, model: ResourceLocation, width: Int = 0, hei
 
         override fun isPermitted(player: ServerPlayer): Boolean {
             val isWithinRange = player.level() == world && player.position().closerThan(pos.toVec3d(), maxDistance)
-            val pcStillStanding = player.level().getBlockEntity(pos) is PcBlockEntity
+            val pcStillStanding = clazz.isInstance(player.level().getBlockEntity(pos))
             if (!isWithinRange || !pcStillStanding) {
                 PCLinkManager.removeLink(playerID)
             }

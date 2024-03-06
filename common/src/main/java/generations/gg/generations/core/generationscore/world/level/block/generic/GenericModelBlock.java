@@ -37,7 +37,7 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
     protected static final BooleanProperty WATERLOGGED = BooleanProperty.create("waterlogged");
     private static final BiFunction<BlockPos, BlockState, BlockPos> DEFAUL_BLOCK_POS_FUNCTION = (pos, state) -> pos;
 
-    private final RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction;
+    protected final RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction;
     private final BiFunction<BlockPos, BlockState, BlockPos> baseBlockPosFunction;
     private final ResourceLocation model;
 

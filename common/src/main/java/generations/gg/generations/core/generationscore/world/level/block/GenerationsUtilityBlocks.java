@@ -36,8 +36,8 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of().strength(2.5f).randomTicks().noOcclusion()));
 
 	//PC Blocks
-	public static final RegistrySupplier<PcBlock> TABLE_PC = registerBlockItem("table_pc", () -> new PcBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.TABLE_PC, 0, 0, 0));
-	public static final RegistrySupplier<PcBlock> ROTOM_PC = registerBlockItem("rotom_pc", () -> new RotomPc(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
+	public static final RegistrySupplier<TablePc> TABLE_PC = registerBlockItem("table_pc", () -> new TablePc(BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.TABLE_PC, 0, 0, 0));
+	public static final RegistrySupplier<RotomPc> ROTOM_PC = registerBlockItem("rotom_pc", () -> new RotomPc(BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
 
 	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));
 
@@ -46,6 +46,8 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<RksMachineBlock> RKS_MACHINE = registerBlockItem("rks_machine", () -> new RksMachineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
 	public static final RegistrySupplier<Block> SCARECROW = registerBlockItem("scarecrow", () -> new ScarecrowBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).dynamicShape().noOcclusion()));
+
+	public static final DyedGroup<DyedPcBlock, DyedPcBlockEntity> PC = registerDyed("pc", (color, dyeColorRegistrySupplierMap) -> () -> new DyedPcBlock(color, dyeColorRegistrySupplierMap, BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
 
 	public static final RegistrySupplier<Block> WHITE_ELEVATOR = registerBlockItem("white_elevator", ElevatorBlock::new);
 	public static final RegistrySupplier<Block> LIGHT_GRAY_ELEVATOR = registerBlockItem("light_gray_elevator", ElevatorBlock::new);
@@ -126,13 +128,13 @@ public class GenerationsUtilityBlocks {
 		return GenerationsUtils.registerBlock(UTILITY_BLOCKS, name, blockSupplier);
 	}
 
-	public static <T extends DyedVariantBlockEntity<?>, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>, Supplier<DyeableBlock<T,V>>> blockSupplier) {
+	public static <T extends ModelProvidingBlockEntity, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<V>>, Supplier<V>> blockSupplier) {
 
-		var dyeMap = new HashMap<DyeColor, RegistrySupplier<DyeableBlock<T, V>>>();
+		var dyeMap = new HashMap<DyeColor, RegistrySupplier<V>>();
 
 		Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
 			var properName = dyeColor.getSerializedName() + "_" + name;
-			RegistrySupplier<DyeableBlock<T, V>> block = registerBlock(properName, blockSupplier.apply(dyeColor, dyeMap));
+			RegistrySupplier<V> block = registerBlock(properName, blockSupplier.apply(dyeColor, dyeMap));
 
 			register(properName, properties -> new BlockItem(block.get(), properties));
 			dyeMap.put(dyeColor, block);

@@ -72,7 +72,8 @@ public class GenerationsBlockEntities {
     public static final RegistrySupplier<MutableBlockEntityType<VendingMachineBlockEntity>> VENDING_MACHINE = registerMutable("vending_machine", VendingMachineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<BallDisplayBlockEntity>> BALL_DISPLAY = registerMutable("ball_display", BallDisplayBlockEntity::new);
 
-    public static final RegistrySupplier<MutableBlockEntityType<PcBlockEntity>> PC = registerMutable("pc", PcBlockEntity::new);
+    public static final RegistrySupplier<MutableBlockEntityType<DefaultPcBlockEntity>> PC = registerMutable("pc", DefaultPcBlockEntity::new);
+    public static final RegistrySupplier<MutableBlockEntityType<DyedPcBlockEntity>> DYED_PC = registerMutable("dyed_pc", DyedPcBlockEntity::new);
 
     public static final RegistrySupplier<MutableBlockEntityType<BallLootBlockEntity>> BALL_LOOT = registerMutable("poke_loot", BallLootBlockEntity::new);
 
