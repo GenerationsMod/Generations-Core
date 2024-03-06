@@ -6,8 +6,10 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.mojang.serialization.JsonOps;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeSerializers;
+import generations.gg.generations.core.generationscore.world.recipe.RksRecipe;
 import generations.gg.generations.core.generationscore.world.recipe.RksResult;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
@@ -47,7 +49,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 	private SpeciesKey speciesKey;
 
 	public RksRecipeJsonBuilder(ItemLike output) {
-		this.output = new RksResult.ItemResult(output.asItem());
+		this.output = new RksResult.ItemResult(output.asItem().getDefaultInstance());
 	}
 
 	public RksRecipeJsonBuilder(ResourceLocation species, Set<String> aspects, int level) {
@@ -174,7 +176,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 
 	static class RksRecipeJsonProvider implements FinishedRecipe {
 		private final ResourceLocation recipeId;
-		private final RksResult output;
+		private final RksResult<?> output;
 		private final String group;
 		private final List<String> pattern;
 		private final Map<Character, Ingredient> inputs;
@@ -184,7 +186,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 		private final int processingTime;
 		private final SpeciesKey speciesKey;
 
-		public RksRecipeJsonProvider(ResourceLocation recipeId, RksResult output, String group, List<String> pattern, Map<Character, Ingredient> inputs, Advancement.Builder advancementBuilder, ResourceLocation advancementId, float experience, int processingTime, SpeciesKey speciesKey) {
+		public RksRecipeJsonProvider(ResourceLocation recipeId, RksResult<?> output, String group, List<String> pattern, Map<Character, Ingredient> inputs, Advancement.Builder advancementBuilder, ResourceLocation advancementId, float experience, int processingTime, SpeciesKey speciesKey) {
 			this.recipeId = recipeId;
 			this.output = output;
 			this.group = group;
@@ -217,12 +219,8 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 			}
 
 			json.add("key", jsonObject);
-			JsonObject jsonObject2 = new JsonObject();
-			jsonObject2.addProperty("type", output.type());
-			output.toJson(jsonObject2);
 
-
-			json.add("result", jsonObject2);
+			json.add("result", RksResult.CODEC.encodeStart(JsonOps.INSTANCE, output).getOrThrow(false, System.out::println));
 			json.addProperty("experience", experience);
 			json.addProperty("processingTime", processingTime);
 			if(speciesKey != null) json.addProperty("speciesKey", speciesKey.toString());

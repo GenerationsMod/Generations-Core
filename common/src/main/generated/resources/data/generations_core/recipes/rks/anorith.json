@@ -11,11 +11,7 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "pokemon",
-    "data": {
-      "aspects": [],
-      "level": 1,
-      "species": "cobblemon:anorith"
-    }
+    "type": "generations_core:pokemon",
+    "species": "cobblemon:anorith"
   }
 }

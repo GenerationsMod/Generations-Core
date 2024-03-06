@@ -34,6 +34,7 @@ import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeSerializers;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
+import generations.gg.generations.core.generationscore.world.recipe.RksResultType;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.world.spawning.ZygardeCellDetail;
 import net.minecraft.core.Direction;
@@ -101,6 +102,7 @@ public class GenerationsCore
 		YawLogicTypes.init();
 		LocationLogicTypes.init();
 		AbstractNodeTypes.init();
+		RksResultType.init();
 		GenerationsCoreRecipeTypes.init();
 		GenerationsCoreRecipeSerializers.init();
 
@@ -121,19 +123,19 @@ public class GenerationsCore
 			var stack = player.getItemInHand(hand);
 			var result = PixelmonInteractions.process(entity, player, stack);
 			if(result.interruptsFurtherEvaluation() && stack.getItem() instanceof PixelmonInteractions.PixelmonInteraction interaction && interaction.isConsumed()) stack.shrink(1);
-//			else if(stack.is(GenerationsItems.ZYGARDE_CUBE.get()) && entity instanceof ZygardeCellEntity) {
-//				if (stack.getDamageValue() != ZygardeCubeItem.FULL) {
-//					stack.setDamageValue(stack.getDamageValue() + 1);
-//					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.add_cell"), false);
-////                level().playSound(null, blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f);
-//					entity.remove(Entity.RemovalReason.DISCARDED);
-//
-//					result = EventResult.interruptTrue();
-//				} else {
-//					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.full_cell"), false);
-//					result = EventResult.pass();
-//				}
-//			}
+			else if(stack.is(GenerationsItems.ZYGARDE_CUBE.get()) && entity instanceof ZygardeCellEntity) {
+				if (stack.getDamageValue() != ZygardeCubeItem.FULL) {
+					stack.setDamageValue(stack.getDamageValue() + 1);
+					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.add_cell"), false);
+//                level().playSound(null, blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f);
+					entity.remove(Entity.RemovalReason.DISCARDED);
+
+					result = EventResult.interruptTrue();
+				} else {
+					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.full_cell"), false);
+					result = EventResult.pass();
+				}
+			}
 
 			return result;
 		});

@@ -132,21 +132,8 @@ public class RksMachineContainer extends AbstractContainerMenu {
 
 		@Override
 		public void onTake(@NotNull Player player, @NotNull ItemStack stack) {
-			if(((RksMachineBlockEntity) container).getRecipeUsed() instanceof RksRecipe recipe && recipe.isPokemonResult()) {
-				var rksmachine = ((RksMachineBlockEntity) container);
-				var pos = rksmachine.getBlockPos();
-				var dir = rksmachine.getBlockState().getValue(RksMachineBlock.FACING);
-
-				var result = ((RksResult.PokemonResult) recipe.getResult());
-				var properties = new PokemonProperties();
-				properties.setSpecies(result.species().toString());
-				properties.setAspects(result.aspects());
-				properties.setLevel(result.level());
-				PokemonUtil.spawn(properties, rksmachine.getLevel(), pos.above(2), dir.toYRot());
-				stack.setCount(0);
-			} else {
-				this.checkTakeAchievements(stack);
-			}
+			if(((RksMachineBlockEntity) container).getRecipeUsed() instanceof RksRecipe recipe) recipe.process(((RksMachineBlockEntity) container), stack);
+			this.checkTakeAchievements(stack);
 			super.onTake(player, stack);
 		}
 

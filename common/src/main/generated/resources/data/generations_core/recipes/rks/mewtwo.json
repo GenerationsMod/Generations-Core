@@ -22,12 +22,9 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "pokemon",
-    "data": {
-      "aspects": [],
-      "level": 70,
-      "species": "cobblemon:mewtwo"
-    }
+    "type": "generations_core:pokemon",
+    "level": 70,
+    "species": "cobblemon:mewtwo"
   },
   "speciesKey": "cobblemon:mewtwo[]"
 }

@@ -790,12 +790,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ABILITY_PATCH = register("ability_patch", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WISHING_STAR = register("wishing_star", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> DYNAMAX_BAND = register("dynamax_band", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> TIME_CAPSULE = register("time_capsule", properties -> new Item(properties.stacksTo(1)) {
-        @Override
-        public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand interactionHand) {
-            return super.use(level, player, interactionHand);
-        }
-    }, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> TIME_CAPSULE = register("time_capsule", properties -> new TimeCapsule(properties.stacksTo(1)), PLAYER_ITEMS);
 
 
     /**

@@ -25,8 +25,8 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "item",
-    "data": "generations_core:wonder_egg"
+    "type": "generations_core:item",
+    "value": "generations_core:wonder_egg"
   },
   "speciesKey": "cobblemon:manaphy[]"
 }

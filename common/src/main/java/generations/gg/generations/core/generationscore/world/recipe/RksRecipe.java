@@ -1,15 +1,17 @@
 package generations.gg.generations.core.generationscore.world.recipe;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
-import com.cobblemon.mod.common.item.PokemonItem;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
+import com.mojang.serialization.JsonOps;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -22,7 +24,6 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import org.joml.Vector4f;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -35,7 +36,7 @@ public class RksRecipe implements Recipe<Container> {
     final RksResult result;
 
     final SpeciesKey key;
-    private final ResourceLocation id;
+    private ResourceLocation id;
     final String group;
     final boolean showNotification;
     private final float experience;
@@ -53,6 +54,7 @@ public class RksRecipe implements Recipe<Container> {
         this.processingTime = processingTime;
         this.showNotification = showNotification;
     }
+
 
     public RksRecipe(ResourceLocation id, String group, int width, int height, NonNullList<Ingredient> recipeItems, RksResult result, float experience, int processingTime) {
         this(id, group, width, height, recipeItems, result, null, experience, processingTime, true);
@@ -80,16 +82,7 @@ public class RksRecipe implements Recipe<Container> {
 
     @Override
     public @NotNull ItemStack getResultItem(@NotNull RegistryAccess registryAccess) {
-        if(result instanceof RksResult.ItemResult result) return result.item().getDefaultInstance();
-        else if(result instanceof RksResult.PokemonResult result) {
-            try {
-                return PokemonItem.from(PokemonSpecies.INSTANCE.getByIdentifier(result.species()), result.aspects(), 1, new Vector4f(1,1,1,1));
-            } catch (Exception e) {
-                System.out.println("Error failed to create item: " + result.species());
-            }
-        }
-
-        return ItemStack.EMPTY;
+        return result.getStack();
     }
 
     @Override
@@ -288,11 +281,17 @@ public class RksRecipe implements Recipe<Container> {
         return result instanceof RksResult.PokemonResult;
     }
 
-    public RksResult getResult() {
+    public RksResult<?> getResult() {
         return result;
     }
 
+    public void process(RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {
+        result.process(rksMachineBlockEntity, stack);
+    }
+
     public static class Serializer implements RecipeSerializer<RksRecipe> {
+//        public static final Codec<RksRecipe> CODEC = RecordCodecBuilder
+
         @Override
         public @NotNull RksRecipe fromJson(@NotNull ResourceLocation recipeId, @NotNull JsonObject json) {
             String string = GsonHelper.getAsString(json, "group", "");
@@ -302,8 +301,7 @@ public class RksRecipe implements Recipe<Container> {
             int j = strings.length;
             NonNullList<Ingredient> nonNullList = dissolvePattern(strings, map, i, j);
 
-            var result = RksResult.fromJson(GsonHelper.getAsJsonObject(json, "result"));
-
+            var result = RksResult.CODEC.decode(JsonOps.INSTANCE, GsonHelper.getAsJsonObject(json, "result")).getOrThrow(false, System.out::println).getFirst();
 
 
             var speciesKey = json.has("speciesKey") ? SpeciesKey.fromString(json.getAsJsonPrimitive("speciesKey").getAsString()) : null;
@@ -323,12 +321,7 @@ public class RksRecipe implements Recipe<Container> {
             NonNullList<Ingredient> nonNullList = NonNullList.withSize(i * j, Ingredient.EMPTY);
             nonNullList.replaceAll(ignored -> Ingredient.fromNetwork(buffer));
 
-            RksResult result;
-            if (buffer.readBoolean())
-                result = new RksResult.ItemResult(BuiltInRegistries.ITEM.get(buffer.readResourceLocation()));
-            else {
-                result = new RksResult.PokemonResult(buffer.readResourceLocation(), buffer.readCollection(HashSet::new, FriendlyByteBuf::readUtf), buffer.readInt());
-            }
+            var result = RksResult.fromBuffer(buffer);
 
             var speciesKey = buffer.readNullable(buf -> SpeciesKey.fromString(buf.readUtf()));
 
@@ -344,15 +337,8 @@ public class RksRecipe implements Recipe<Container> {
             buffer.writeVarInt(recipe.height);
             buffer.writeUtf(recipe.group);
             recipe.recipeItems.forEach(ingredient -> ingredient.toNetwork(buffer));
-            var isItem = recipe.result instanceof RksResult.ItemResult;
-            buffer.writeBoolean(isItem);
 
-            if(isItem) buffer.writeResourceLocation(BuiltInRegistries.ITEM.getKey((((RksResult.ItemResult) recipe.result).item())));
-            else {
-                var result = (RksResult.PokemonResult) recipe.result;
-                buffer.writeResourceLocation(result.species()).writeCollection(result.aspects(), FriendlyByteBuf::writeUtf);
-                buffer.writeInt(result.level());
-            }
+            RksResult.toBuffer(buffer, recipe.result);
 
             buffer.writeNullable(recipe.key, (buf, speciesKey) -> buf.writeUtf(speciesKey.toString()));
 

@@ -14,11 +14,7 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "pokemon",
-    "data": {
-      "aspects": [],
-      "level": 1,
-      "species": "cobblemon:artcovish"
-    }
+    "type": "generations_core:pokemon",
+    "species": "cobblemon:artcovish"
   }
 }
