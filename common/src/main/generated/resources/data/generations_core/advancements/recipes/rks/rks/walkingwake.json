@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "dino_fossil": {
+    "coal": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:dino_fossil"
+              "minecraft:coal"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:rks/artcovish"
+        "recipe": "generations_core:rks/walkingwake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "dino_fossil",
+      "coal",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:rks/artcovish"
+      "generations_core:rks/walkingwake"
     ]
   },
   "sends_telemetry_event": true

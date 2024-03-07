@@ -21,6 +21,7 @@ import generations.gg.generations.core.generationscore.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.api.player.Caught;
 import generations.gg.generations.core.generationscore.config.Config;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
+import generations.gg.generations.core.generationscore.recipe.GenerationsIngredidents;
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.AbstractNodeTypes;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogicTypes;
@@ -103,6 +104,7 @@ public class GenerationsCore
 		LocationLogicTypes.init();
 		AbstractNodeTypes.init();
 		RksResultType.init();
+		GenerationsIngredidents.init();
 		GenerationsCoreRecipeTypes.init();
 		GenerationsCoreRecipeSerializers.init();
 

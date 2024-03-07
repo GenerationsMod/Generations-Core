@@ -3,10 +3,13 @@
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "generations_core:dino_fossil"
+      "type": "generations_core:pokemon",
+      "aspects": [],
+      "species": "cobblemon:suicune",
+      "strictAspects": false
     },
     "B": {
-      "item": "generations_core:fish_fossil"
+      "item": "minecraft:coal"
     }
   },
   "pattern": [
@@ -15,6 +18,6 @@
   "processingTime": 240,
   "result": {
     "type": "generations_core:pokemon",
-    "species": "cobblemon:artcovish"
+    "species": "cobblemon:walkingwake"
   }
 }

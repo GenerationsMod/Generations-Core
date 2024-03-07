@@ -8,6 +8,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.serialization.JsonOps;
+import dev.architectury.injectables.annotations.ExpectPlatform;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
 import net.minecraft.core.NonNullList;
@@ -263,10 +264,15 @@ public class RksRecipe implements Recipe<Container> {
             if (" ".equals(entry.getKey())) {
                 throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
             }
-            map.put(entry.getKey(), Ingredient.fromJson(entry.getValue()));
+            map.put(entry.getKey(), fromJson(entry.getValue()));
         }
         map.put(" ", Ingredient.EMPTY);
         return map;
+    }
+
+    @ExpectPlatform
+    public static Ingredient fromJson(JsonElement obj) {
+        throw new RuntimeException();
     }
 
     public int processingTime() {

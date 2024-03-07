@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.Set;
 
 public class LegendKeys {
+    public static final SpeciesKey WALKING_WAKE = create("walkingwake");
     public static SpeciesKey ARTICUNO = create("articuno");
     public static SpeciesKey GALARIAN_ARTICUNO = create("articuno", Set.of("galarian"));
     public static SpeciesKey ZAPDOS = create("zapdos");

@@ -9,6 +9,7 @@ import com.google.gson.JsonObject;
 import com.mojang.serialization.JsonOps;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeSerializers;
+import generations.gg.generations.core.generationscore.world.recipe.GenerationsIngredient;
 import generations.gg.generations.core.generationscore.world.recipe.RksRecipe;
 import generations.gg.generations.core.generationscore.world.recipe.RksResult;
 import net.minecraft.advancements.Advancement;
@@ -103,6 +104,18 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 			return this;
 		}
 	}
+
+	public <T extends GenerationsIngredient> RksRecipeJsonBuilder input(Character c, GenerationsIngredient ingredient) {
+		if (this.inputs.containsKey(c)) {
+			throw new IllegalArgumentException("Symbol '" + c + "' is already defined!");
+		} else if (c == ' ') {
+			throw new IllegalArgumentException("Symbol ' ' (whitespace) is reserved and cannot be defined");
+		} else {
+			this.inputs.put(c, ingredient.asMinecraftIngredient());
+			return this;
+		}
+	}
+
 
 	public RksRecipeJsonBuilder pattern(String patternStr) {
 		if (!this.pattern.isEmpty() && patternStr.length() != this.pattern.get(0).length()) {

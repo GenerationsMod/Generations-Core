@@ -6,11 +6,9 @@ import com.cobblemon.mod.common.pokemon.Species;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
@@ -21,6 +19,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
     public SpeciesKey(String species) {
         this(species, null);
     }
+
 
     public PokemonProperties createProperties() {
         var properties = new PokemonProperties();

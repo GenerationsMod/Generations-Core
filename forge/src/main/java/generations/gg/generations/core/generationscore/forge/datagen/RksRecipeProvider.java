@@ -1,13 +1,17 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
 import com.cobblemon.mod.common.CobblemonItems;
+import com.cobblemon.mod.common.pokemon.Species;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.GenerationsRecipeProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.recipe.PokemonIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Item;
@@ -74,11 +78,6 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .criterion("heart_scale", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.HEART_SCALE.get()))
                 .offerTo(exporter, GenerationsCore.id("soul_heart"));
 
-        var itemStack = GenerationsItems.SOUL_HEART.toOptional().map(item -> {
-            var stack = item.getDefaultInstance();
-            stack.setDamageValue(100);
-            return stack;
-        }).get();
 
 //        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA.createProperties(70))
 //                .key(LegendKeys.TYPE_NULL)
@@ -105,9 +104,22 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createFossil(GenerationsItems.DRAKE_FOSSIL, GenerationsItems.BIRD_FOSSIL, "dracozolt", exporter);
         createFossil(GenerationsItems.DRAKE_FOSSIL, GenerationsItems.FISH_FOSSIL, "dracovish", exporter);
         createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.BIRD_FOSSIL, "arctozolt", exporter);
-        createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.FISH_FOSSIL, "artcovish", exporter);
+        createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.FISH_FOSSIL, "arctovish", exporter);
 
-        System.out.println();
+        createParadoxPast("walkingwake", LegendKeys.SUICUNE, exporter);
+    }
+
+    private void createParadoxPast(String paradoxPokemon, SpeciesKey toBeConverted, Consumer<FinishedRecipe> exporter) {
+        createParadox(paradoxPokemon, toBeConverted, exporter, Items.COAL);
+    }
+
+    private void createParadox(String name, SpeciesKey toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
+        RksRecipeJsonBuilder.create(name)
+                .input('A', new PokemonIngredient(toBeConverted, false))
+                .input('B', item)
+                .pattern("AB")
+                .criterion(BuiltInRegistries.ITEM.getKey(item).getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
+                .offerTo(exporter, GenerationsCore.id(name));
     }
 
     private void createFossil(RegistrySupplier<Item> item, String name, Consumer<FinishedRecipe> exporter) {
