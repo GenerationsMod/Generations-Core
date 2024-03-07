@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.world.item
 
 import com.cobblemon.mod.common.Cobblemon.storage
+import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.Pokemon.Companion.loadFromNBT
@@ -22,6 +23,7 @@ import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.level.Level
 import java.util.*
 import java.util.function.Function
+import kotlin.jvm.optionals.getOrNull
 
 class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteraction {
     override fun interact(entity: PokemonEntity, player: Player, itemInHandItemStack: ItemStack): EventResult {
@@ -36,6 +38,8 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
                 1.0f,
                 1.0f
             )
+            player.cooldowns.addCooldown(this, 20)
+
             EventResult.interruptTrue()
         } else {
             EventResult.interruptFalse()
@@ -50,13 +54,18 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
         itemInHandItemStack.getOrCreateTag().put("pokemon", poke.saveToNBT(CompoundTag()))
     }
 
+    private fun removePokemon(itemInHandItemStack: ItemStack) {
+        itemInHandItemStack.getOrCreateTag().remove("pokemon")
+    }
+
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
-        if (!level.isClientSide) {
+        if (!level.isClientSide && !player.cooldowns.isOnCooldown(this)) {
             val item = player.getItemInHand(usedHand)
             val pokemon = getPokemon(item)
             if (pokemon.isPresent) {
                 storage.getParty((player as ServerPlayer)).add(pokemon.get())
                 item.shrink(1)
+                removePokemon(item)
                 player.level().playSound(null, player, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
                 return InteractionResultHolder.sidedSuccess(item, false)
             }
@@ -65,7 +74,7 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
     }
 
     override fun getName(stack: ItemStack): Component {
-        return getPokemon(stack).map { it.getDisplayName() }.orElse(super.getName(stack).copy())
+        return getPokemon(stack).getOrNull()?.getDisplayName() ?: super.getName(stack)
     }
 
     override fun appendHoverText(
@@ -74,6 +83,16 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
+        getPokemon(stack).ifPresent {
+            tooltipComponents += "Level ${it.level} | ${it.gender}".text()
+            tooltipComponents += "${it.nature.name} ${it.mintedNature?.let { "(${it.name})" } ?: ""} | Ability: ${it.ability.name}".text()
+            tooltipComponents += "Aspects: ${it.aspects}".text()
+            tooltipComponents += "Ball: ${it.caughtBall.name.toLanguageKey()}".text()
+            tooltipComponents += "Moves:".text()
+            tooltipComponents += "${it.moveSet[0]?.displayName?.string ?: "n/a"} | ${it.moveSet[1]?.displayName?.string ?: "n/a"}".text()
+            tooltipComponents += "${it.moveSet[2]?.displayName?.string ?: "n/a"} | ${it.moveSet[3]?.displayName?.string ?: "n/a"}".text()
+        }
+
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced)
     }
 
