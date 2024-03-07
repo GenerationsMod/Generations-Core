@@ -1,0 +1,23 @@
+{
+  "type": "generations_core:rks",
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "type": "generations_core:pokemon",
+      "aspects": [],
+      "species": "cobblemon:delibird",
+      "strictAspects": false
+    },
+    "B": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "AB"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:pokemon",
+    "species": "cobblemon:ironbundle"
+  }
+}

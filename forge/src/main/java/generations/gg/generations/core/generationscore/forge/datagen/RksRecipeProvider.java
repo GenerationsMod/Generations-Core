@@ -106,14 +106,41 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.BIRD_FOSSIL, "arctozolt", exporter);
         createFossil(GenerationsItems.DINO_FOSSIL, GenerationsItems.FISH_FOSSIL, "arctovish", exporter);
 
-        createParadoxPast("walkingwake", LegendKeys.SUICUNE, exporter);
+        createParadoxPast("walkingwake", "suicune", exporter);
+        createParadoxPast("greattusk", "donphan", exporter);
+        createParadoxPast("screamtail", "jigglypuff", exporter);
+        createParadoxPast("brutebonnet", "amoonguss", exporter);
+        createParadoxPast("fluttermane", "misdreavus", exporter);
+        createParadoxPast("slitherwing", "volcarona", exporter);
+        createParadoxPast("sandyshocks", "magneton", exporter);
+        createParadoxPast("roaringmoon", "salamence", exporter);
+        createParadoxPast("koraidon", "cyclizar", exporter);
+        createParadoxPast("gougingfire", "entei", exporter);
+        createParadoxPast("ragingbolt", "raikou", exporter);
+
+        createParadoxFuture("ironthreads", "donphan", exporter);
+        createParadoxFuture("ironbundle", "delibird", exporter);
+        createParadoxFuture("ironhands", "hariyama", exporter);
+        createParadoxFuture("ironjugulis", "hydreigon", exporter);
+        createParadoxFuture("ironmoth", "volcarona", exporter);
+        createParadoxFuture("ironthorns", "tyranitar", exporter);
+        createParadoxFuture("ironvaliant", "gallade", exporter);
+        createParadoxFuture("miraidon", "cyclizar", exporter);
+        createParadoxFuture("ironleaves", "virizion", exporter);
+        createParadoxFuture("ironboulder", "terrakion", exporter);
+        createParadoxFuture("ironcrown", "cobalion", exporter);
     }
 
-    private void createParadoxPast(String paradoxPokemon, SpeciesKey toBeConverted, Consumer<FinishedRecipe> exporter) {
+    private void createParadoxPast(String paradoxPokemon, String toBeConverted, Consumer<FinishedRecipe> exporter) {
         createParadox(paradoxPokemon, toBeConverted, exporter, Items.COAL);
     }
 
-    private void createParadox(String name, SpeciesKey toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
+    private void createParadoxFuture(String paradoxPokemon, String toBeConverted, Consumer<FinishedRecipe> exporter) {
+        createParadox(paradoxPokemon, toBeConverted, exporter, Items.REDSTONE);
+    }
+
+
+    private void createParadox(String name, String toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
         RksRecipeJsonBuilder.create(name)
                 .input('A', new PokemonIngredient(toBeConverted, false))
                 .input('B', item)
