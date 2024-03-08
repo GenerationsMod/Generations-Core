@@ -34,6 +34,7 @@ public class GenerationsUtilityBlocks {
 	 * Utility Blocks
 	 */
 	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of().strength(2.5f).randomTicks().noOcclusion()));
+	public static final RegistrySupplier<Block> SPAWNER = registerBlockItem("spawner", SpawnerBlock::new);
 
 	//PC Blocks
 	public static final RegistrySupplier<PcBlock> TABLE_PC = registerBlockItem("table_pc", () -> new PcBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.TABLE_PC, 0, 0, 0));

@@ -1138,6 +1138,7 @@ public class ItemDatagen extends ItemModelProvider {
 //        createDyedGroupItem(GenerationsDecorationBlocks.COUCH_MIDDLE, "couch");
 
         createItemBlock(GenerationsUtilityBlocks.COOKING_POT.get(), "item/blocks/utility_blocks/");
+        createItemBlock(GenerationsUtilityBlocks.SPAWNER.get(), "item/blocks/utility_blocks/");
 //        GenerationsUtilityBlocks.HEALER.block().values().forEach(block -> createItemBlockDir(block.get(), "utility_blocks/healer"));
         createItemBlock(GenerationsUtilityBlocks.TABLE_PC.get(), "item/blocks/utility_blocks/");
         createItemBlock(GenerationsUtilityBlocks.ROTOM_PC.get(), "item/blocks/utility_blocks/");

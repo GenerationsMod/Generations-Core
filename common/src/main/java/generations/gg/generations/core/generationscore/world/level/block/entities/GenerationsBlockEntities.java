@@ -34,6 +34,7 @@ public class GenerationsBlockEntities {
     public static final RegistrySupplier<MutableBlockEntityType<TaoTrioShrineBlockEntity>> TAO_TRIO_SHRINE = registerMutable("tao_trio_shrine", TaoTrioShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<TapuShrineBlockEntity>> TAPU_SHRINE = registerMutable("tapu_shrine", TapuShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<CookingPotBlockEntity>> COOKING_POT = registerMutable("cooking_pot", CookingPotBlockEntity::new);
+    public static final RegistrySupplier<MutableBlockEntityType<SpawnerBlockEntity>> SPAWNER_BLOCK = registerMutable("spawner", SpawnerBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<GenericChestBlockEntity>> GENERIC_CHEST = registerMutable("generic_chest", GenericChestBlockEntity::new);
     public static final RegistrySupplier<BlockEntityType<SignBlockEntity>> SIGN_BLOCK_ENTITIES = registerRegular("sign_block_entity", SignBlockEntity::new,
             GenerationsWood.ULTRA_DARK_SIGN,
