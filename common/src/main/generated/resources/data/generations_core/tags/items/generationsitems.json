@@ -1,6 +1,12 @@
 {
   "values": [
     "generations_core:tm",
+    "generations_core:ultra_dark_sign",
+    "generations_core:ultra_dark_hanging_sign",
+    "generations_core:ultra_jungle_sign",
+    "generations_core:ultra_jungle_hanging_sign",
+    "generations_core:ghost_sign",
+    "generations_core:ghost_hanging_sign",
     "generations_core:arceus_doll",
     "generations_core:articuno_doll",
     "generations_core:azelf_doll",
