@@ -913,17 +913,17 @@ public class GenerationsItems {
     public static final RegistrySupplier<LegendaryEggItem> WONDER_EGG = register("wonder_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.MANAPHY, 10000), LEGENDARY_ITEMS);
     public static final RegistrySupplier<LegendaryEggItem> PHIONE_EGG = register("phione_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.PHIONE, 10000), LEGENDARY_ITEMS);
     public static final RegistrySupplier<SingleElmentPostUpdatingItem> SOUL_HEART = register("soul_heart", properties -> new SingleElmentPostUpdatingItem(properties.stacksTo(1).durability(100), ElementalTypes.INSTANCE.getFAIRY()), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> BLUE_PETAL = register("blue_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> GREEN_PETAL = register("green_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ORANGE_PETAL = register("orange_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> PINK_PETAL = register("pink_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> PURPLE_PETAL = register("purple_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RADIANT_PETAL = register("radiant_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> RED_PETAL = register("red_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> YELLOW_PETAL = register("yellow_petal", properties -> new Item(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> METEORITE_SHARD = register("meteorite_shard", properties -> new ItemWithLangTooltipImpl(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> BLACK_MANE_HAIR = register("black_mane_hair", properties -> new ItemWithLangTooltipImpl(properties), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> WHITE_MANE_HAIR = register("white_mane_hair", properties -> new ItemWithLangTooltipImpl(properties), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> BLUE_PETAL = register("blue_petal", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> GREEN_PETAL = register("green_petal", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> ORANGE_PETAL = register("orange_petal", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> PINK_PETAL = register("pink_petal", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> PURPLE_PETAL = register("purple_petal", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RADIANT_PETAL = register("radiant_petal", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RED_PETAL = register("red_petal", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> YELLOW_PETAL = register("yellow_petal", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> METEORITE_SHARD = register("meteorite_shard", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> BLACK_MANE_HAIR = register("black_mane_hair", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<ItemWithLangTooltipImpl> WHITE_MANE_HAIR = register("white_mane_hair", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
 
     /**
      * Naturals
@@ -1417,12 +1417,12 @@ public class GenerationsItems {
 
     public static final RegistrySupplier<Item> CURRY = register("curry", ItemCurry::new, CUISINE);
 
-    public static final RegistrySupplier<Item> ULTRA_DARK_SIGN = registerSign("ultra_dark_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_SIGN.get()), BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_SIGN = registerSign("ultra_jungle_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_JUNGLE_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get()), BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> ULTRA_JUNGLE_HANGING_SIGN = registerSign("ultra_jungle_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GHOST_SIGN = registerSign("ghost_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.GHOST_SIGN.get(), GenerationsWood.GHOST_WALL_SIGN.get()), BUILDING_BLOCKS);
-    public static final RegistrySupplier<Item> GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign", properties -> new HangingSignItem(GenerationsWood.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_WALL_HANGING_SIGN.get(), properties.stacksTo(16)), BUILDING_BLOCKS);
+    public static final RegistrySupplier<Item> ULTRA_DARK_SIGN = registerSign("ultra_dark_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(), properties.stacksTo(16)));
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_SIGN = registerSign("ultra_jungle_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.ULTRA_JUNGLE_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> ULTRA_JUNGLE_HANGING_SIGN = registerSign("ultra_jungle_hanging_sign", properties -> new HangingSignItem(GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get(), properties.stacksTo(16)));
+    public static final RegistrySupplier<Item> GHOST_SIGN = registerSign("ghost_sign", properties -> new SignItem(properties.stacksTo(16), GenerationsWood.GHOST_SIGN.get(), GenerationsWood.GHOST_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign", properties -> new HangingSignItem(GenerationsWood.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_WALL_HANGING_SIGN.get(), properties.stacksTo(16)));
 
     public static final RegistrySupplier<Item> GHOST_BOAT_ITEM = register("ghost_boat", properties -> new GenerationsBoatItem(properties, GenerationsBoatEntity.Type.GHOST), BUILDING_BLOCKS);
     public static final RegistrySupplier<Item> GHOST_CHEST_BOAT_ITEM = register("ghost_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.GHOST), BUILDING_BLOCKS);
@@ -1496,8 +1496,8 @@ public class GenerationsItems {
         return register(name, itemSupplier, ITEMS);
     }
 
-    public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier, DeferredRegister<Item> register) {
-        return register(name, itemSupplier, register);
+    public static RegistrySupplier<Item> registerSign(String name, Function<Item.Properties, Item> itemSupplier) {
+        return register(name, itemSupplier);
     }
 
     public static RegistrySupplier<Item> createBadge(String id) {
