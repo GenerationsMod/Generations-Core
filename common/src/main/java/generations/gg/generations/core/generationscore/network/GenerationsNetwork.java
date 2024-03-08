@@ -41,6 +41,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
     public void registerClientBound() {
         this.createClientBound(S2COpenMailEditScreenPacket.ID, S2COpenMailEditScreenPacket.class, S2COpenMailEditScreenPacket::decode, () -> S2COpenMailEditScreenPacketHandler::new);
         this.createClientBound(S2COpenMailPacket.ID, S2COpenMailPacket.class, S2COpenMailPacket::decode, () -> S2COpenMailPacket.Handler::new);
+        this.createClientBound(S2COpenSpawnerEditorScreenPacket.ID, S2COpenSpawnerEditorScreenPacket.class, S2COpenSpawnerEditorScreenPacket::decode, () -> S2COpenSpawnerEditorScreenPacket.Handler::new);
         this.createClientBound(S2CChooseDialoguePacket.ID, S2CChooseDialoguePacket.class, S2CChooseDialoguePacket::decode, () -> S2CChooseDialogueHandler::new);
         this.createClientBound(S2CHealDialoguePacket.ID, S2CHealDialoguePacket.class, S2CHealDialoguePacket::decode, () -> S2CHealDialoguePacket.Handler::new);
         this.createClientBound(S2COpenDialogueEditorScreenPacket.ID, S2COpenDialogueEditorScreenPacket.class, S2COpenDialogueEditorScreenPacket::decode, () -> S2COpenDialogueEditorScreenHandler::new);
