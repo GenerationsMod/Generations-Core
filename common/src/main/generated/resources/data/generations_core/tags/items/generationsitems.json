@@ -435,6 +435,7 @@
     "generations_core:sport_ball_display",
     "generations_core:timer_ball_display",
     "generations_core:cooking_pot",
+    "generations_core:spawner",
     "generations_core:table_pc",
     "generations_core:rotom_pc",
     "generations_core:trash_can",

@@ -232,7 +232,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots"));
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
-        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.SPAWNER.get(), "utility_blocks");
+        simpleBlock(GenerationsUtilityBlocks.SPAWNER.get());
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.ROTOM_PC.get(), "utility_blocks");
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TABLE_PC.get(), "utility_blocks");
 
