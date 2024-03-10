@@ -10,6 +10,7 @@ import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
@@ -45,20 +46,22 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         var isStatue = entity instanceof StatueEntity;
 
-        var instance = !isStatue && context.request(RenderContext.Companion.getENTITY()) instanceof PixelmonInstanceProvider provider ? provider.getInstance() : null;
-
         boolean isGui = false;
+        PixelmonInstance instance = null;
+        if (!isStatue && context.request(RenderContext.Companion.getENTITY()) instanceof PixelmonInstanceProvider provider) {
+            instance = provider.getInstance();
+        }
 
         var scale = model.renderObject.scale;
 
         if(instance == null && !isStatue) {
-            instance = ModelRegistry.getGuiInstance();
-            instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
+            instance = model.getGuiInstance();
             isGui = true;
+            instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
         } else {
             if(isStatue) {
                 instance = ((StatueEntity) entity).getInstance();
-                instance.matrixTransforms = ModelRegistry.getGuiInstance().matrixTransforms;
+                instance.matrixTransforms = model.getGuiInstance().matrixTransforms;
             }
 
             scale *= ((PixelmonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;
@@ -70,11 +73,9 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             var id = getTexture(context);
 
             if (id != null) {
-                if (id.getNamespace().equals("pk")) {
-                    instance.setVariant(id.getPath());
-                } else if(id.getNamespace().equals("statue")) {
-                    instance.setVariant(id.toString());
-                }
+                String namespace = id.getNamespace();
+                if (namespace.equals("pk")) instance.setVariant(id.getPath());
+                else if (namespace.equals("statue")) instance.setVariant(id.toString());
             }
 
             stack.pushPose();
@@ -95,13 +96,25 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         }
     }
 
+    public CompiledModel getCompiledModel() {
+        return objectSupplier.get();
+    }
+
     private ResourceLocation getTexture(RenderContext context) {
-        if(context.request(RenderContext.Companion.getENTITY()) instanceof StatueEntity statue && statue.getStatueData().material() != null) {
+        var aspects = context.request(RenderContext.Companion.getASPECTS());
+        if((context.request(RenderContext.Companion.getENTITY()) instanceof StatueEntity statue && statue.getStatueData().material() != null)) {
             return statue.getStatueData().material();
         }
 
+        if (aspects != null) {
+            var material = aspects.stream().filter(a  -> a.startsWith("statue:")).map(ResourceLocation::new).findFirst();
+
+            if(material.isPresent()) return material.get();
+        } else {
+            return null;
+        }
+
         var species = context.request(RenderContext.Companion.getSPECIES());
-        var aspects = context.request(RenderContext.Companion.getASPECTS());
 
         try {
             return PokemonModelRepository.INSTANCE.getVariations().get(species).getTexture(aspects, 0.0f);

@@ -10,6 +10,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPoke
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry
+import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance
 import gg.generations.rarecandy.renderer.animation.Animation
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import net.minecraft.resources.ResourceLocation
@@ -19,7 +20,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
     override fun stateful(
             model: JsonPokemonPoseableModel,
             s: String
-    ): StatefulAnimation<PokemonEntity, ModelFrame> {
+    ): StatefulAnimationRareCandy {
         val split =
             s.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
@@ -35,7 +36,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
-        }, transforms, pausesPoses)
+        }, Supplier<PixelmonInstance> { return@Supplier ModelRegistry.get(location).guiInstance }, transforms, pausesPoses)
     }
 
     override fun stateless(
@@ -52,10 +53,10 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
-        })
+        }, Supplier<PixelmonInstance> { return@Supplier ModelRegistry.get(location).guiInstance })
     }
 
-    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation<*>>?, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {
+    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation<*>>?, private val instanceProvider: Supplier<PixelmonInstance>, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {
         var startedSeconds = -1F
         override val isTransform: Boolean = transforms
 
@@ -84,9 +85,9 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 startedSeconds = poseableEntityState.animationSeconds
             }
 
-            val instance = if (t != null) (t as PixelmonInstanceProvider).instance else ModelRegistry.getGuiInstance()
+            val instance = if (t != null) (t as PixelmonInstanceProvider).instance else instanceProvider.get();
             val animation = animationSuppler?.get()
-            if (instance != null && animation != null) {
+            if (animation != null) {
                 instance.matrixTransforms = animation.getFrameTransform((poseableEntityState.animationSeconds - startedSeconds).times(animation_factor).toDouble())
             }
             return true
@@ -103,7 +104,8 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
 
     private class StatelessAnimationRareCandy (
         jsonPokemonPoseableModel: JsonPokemonPoseableModel,
-        private val animationSupplier: Supplier<Animation<*>?>
+        private val animationSupplier: Supplier<Animation<*>?>,
+        private val objectSupplier: Supplier<PixelmonInstance>
     ) : StatelessAnimation<PokemonEntity, ModelFrame>(jsonPokemonPoseableModel) {
         override val targetFrame = ModelFrame::class.java
 
@@ -118,7 +120,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
             v4: Float
         ) {
             val instance =
-                if (pokemonEntity != null) (pokemonEntity as PixelmonInstanceProvider).instance else ModelRegistry.getGuiInstance()
+                if (pokemonEntity != null) (pokemonEntity as PixelmonInstanceProvider).instance else objectSupplier.get()
             val animation = animationSupplier.get()
 
             if (instance != null && animation != null) {

@@ -83,7 +83,12 @@ public class RksRecipe implements Recipe<Container> {
 
     @Override
     public @NotNull ItemStack getResultItem(@NotNull RegistryAccess registryAccess) {
-        return result.getStack();
+        try {
+            return result.getStack();
+        } catch (Exception e) {
+            System.out.println("Oh no! " + id);
+            return ItemStack.EMPTY;
+        }
     }
 
     @Override
@@ -308,6 +313,10 @@ public class RksRecipe implements Recipe<Container> {
             NonNullList<Ingredient> nonNullList = dissolvePattern(strings, map, i, j);
 
             var result = RksResult.CODEC.decode(JsonOps.INSTANCE, GsonHelper.getAsJsonObject(json, "result")).getOrThrow(false, System.out::println).getFirst();
+
+            if(result instanceof RksResult.PokemonResult result1) {
+                if(result1.species() == null) System.out.println(":O  -> " + recipeId);
+            }
 
 
             var speciesKey = json.has("speciesKey") ? SpeciesKey.fromString(json.getAsJsonPrimitive("speciesKey").getAsString()) : null;

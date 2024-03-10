@@ -234,6 +234,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 			json.add("key", jsonObject);
 
 			json.add("result", RksResult.CODEC.encodeStart(JsonOps.INSTANCE, output).getOrThrow(false, System.out::println));
+
 			json.addProperty("experience", experience);
 			json.addProperty("processingTime", processingTime);
 			if(speciesKey != null) json.addProperty("speciesKey", speciesKey.toString());

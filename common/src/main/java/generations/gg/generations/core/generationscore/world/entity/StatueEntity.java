@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.world.entity;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.entity.PoseType;
 import com.cobblemon.mod.common.pokemon.RenderablePokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import dev.architectury.utils.EnvExecutor;
@@ -96,7 +97,13 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
                 stack.shrink(1);
                 return InteractionResult.SUCCESS;
             } else if (player.getItemInHand(hand).getItem().equals(GenerationsItems.CHISEL.get())) {
-                GenerationsNetwork.INSTANCE.sendPacketToPlayer((ServerPlayer) player, new S2COpenStatueEditorScreenPacket(getId()));
+                if(player.isShiftKeyDown()) {
+                    this.remove(RemovalReason.KILLED);
+                } else {
+                    GenerationsNetwork.INSTANCE.sendPacketToPlayer((ServerPlayer) player, new S2COpenStatueEditorScreenPacket(getId()));
+                }
+
+                return InteractionResult.SUCCESS;
             }
         }
 
@@ -162,8 +169,6 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         var orientation = getStatueData().getOrientation() % 360;
         this.setYRot(orientation);
         this.yRotO = orientation;
-        this.setYBodyRot(orientation);
-        this.yBodyRotO = orientation;
     }
 
     public RenderablePokemon getInfo() {
@@ -236,39 +241,69 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         private static ResourceLocation defaultSpecies = new ResourceLocation("cobblemon", "charizard");
         private PokemonProperties properties;
         private float orientation;
-        private String animation;
+        private PoseType poseType;
         private boolean isStatic;
         private float progress;
         private float scale;
 
         private boolean sacredAshInteractable;
         private String label = null;
+        private ResourceLocation material = null;
 
         public StatueInfo() {
-            this(PokemonProperties.Companion.parse("species=charizard", " ", "="), "Statue", 0.0f, 1.0f, "", false, 0.0f, false);
+            this(PokemonProperties.Companion.parse("species=charizard", " ", "="), "Statue", 0.0f, 1.0f, PoseType.NONE, false, 0.0f, false, null);
         }
 
-        public StatueInfo(PokemonProperties properties, String label, float orientation, float scale, String animation, boolean isStatic, float progress, boolean sacredAshInteractable) {
+        public StatueInfo(PokemonProperties properties, String label, float orientation, float scale, PoseType poseType, boolean isStatic, float progress, boolean sacredAshInteractable, ResourceLocation material) {
             this.properties = properties;
             this.label = label;
             this.orientation = orientation;
             this.scale = scale;
-            this.animation = animation;
+            this.poseType = poseType != null ? poseType : PoseType.NONE;
             this.isStatic = isStatic;
             this.progress = progress;
             this.sacredAshInteractable = sacredAshInteractable;
+            this.material = material;
         }
 
         public StatueInfo(FriendlyByteBuf buf) {
-            this(PokemonProperties.Companion.parse(buf.readUtf(), " ", "="), buf.readNullable(FriendlyByteBuf::readUtf), buf.readFloat(), buf.readFloat(), buf.readUtf(), buf.readBoolean(), buf.readFloat(), buf.readBoolean());
+            this(
+                    PokemonProperties.Companion.parse(buf.readUtf(), " ", "="),
+                    buf.readNullable(FriendlyByteBuf::readUtf),
+                    buf.readFloat(),
+                    buf.readFloat(),
+                    toPoseType(buf.readUtf()),
+                    buf.readBoolean(),
+                    buf.readFloat(),
+                    buf.readBoolean(),
+                    buf.readNullable(FriendlyByteBuf::readResourceLocation));
+        }
+        public void serializeToByteBuf(FriendlyByteBuf buf) {
+                    buf.writeUtf(properties.asString(" "))
+                    .writeNullable(label, FriendlyByteBuf::writeUtf);
+                    buf.writeFloat(orientation).writeFloat(scale);
+                    buf.writeEnum(poseType)
+                    .writeBoolean(isStatic)
+                    .writeFloat(progress)
+                    .writeBoolean(sacredAshInteractable);
+                    buf.writeNullable(material, FriendlyByteBuf::writeResourceLocation);
+        }
+
+
+        private static PoseType toPoseType(String poseType) {
+            try {
+                return PoseType.valueOf(poseType.toUpperCase());
+            } catch (Exception e) {
+                return PoseType.NONE;
+            }
         }
 
         public StatueInfo(CompoundTag tag) {
-            this(PokemonProperties.Companion.parse(tag.getString("properties"), " ", "="), tag.getString("label"), tag.getFloat("orientation"), tag.getFloat("scale"), tag.getString("animation"), tag.getBoolean("isStatic"), tag.getFloat("progress"), tag.getBoolean("sacredAshInteractable"));
+            this(PokemonProperties.Companion.parse(tag.getString("properties"), " ", "="), tag.getString("label"), tag.getFloat("orientation"), tag.getFloat("scale"), toPoseType(tag.getString("poseType")), tag.getBoolean("isStatic"), tag.getFloat("progress"), tag.getBoolean("sacredAshInteractable"), ResourceLocation.tryParse(tag.getString("material")));
         }
 
         public static StatueInfo of(PokemonProperties properties) {
-            return new StatueInfo(properties, "", 0.0f, 1.0f, "", true, 0.0f, false);
+            return new StatueInfo(properties, "", 0.0f, 1.0f, PoseType.NONE, true, 0.0f, false, null);
         }
 
         public PokemonProperties getProperties() {
@@ -308,8 +343,8 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
             return !isStatic;
         }
 
-        public String getAnimation() {
-            return animation;
+        public PoseType getPoseType() {
+            return poseType;
         }
 
         public float getFrame() {
@@ -321,18 +356,13 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
             tag.putString("properties", properties.asString(" "));
             tag.putFloat("orientation", orientation);
             tag.putFloat("scale", scale);
-            tag.putString("animation", animation);
+            tag.putString("poseType", poseType.toString());
             tag.putBoolean("isStatic", isStatic);
             tag.putFloat("progress", progress);
             tag.putBoolean("sacredAshInteractable", sacredAshInteractable);
             if(label != null) tag.putString("label", label);
+            if(material != null) tag.putString("material", material.toString());
             return tag;
-        }
-
-        public void serializeToByteBuf(FriendlyByteBuf buf) {
-            buf.writeUtf(properties.asString(" ")).writeNullable(label, FriendlyByteBuf::writeUtf);
-            buf.writeFloat(orientation).writeFloat(scale);
-            buf.writeUtf(animation).writeBoolean(isStatic).writeFloat(progress).writeBoolean(sacredAshInteractable);
         }
 
         public float getOrientation() {
@@ -359,9 +389,14 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
             return isStatic;
         }
 
-        public void setAnimation(String animation) {
-            this.animation = animation;
+        public void setPoseType(PoseType poseType) {
+            this.poseType = poseType;
         }
+
+        public void setPosType(String posType) {
+            setPoseType(toPoseType(posType));
+        }
+
 
         public void setProgress(float timestamp) {
             this.progress = timestamp;
@@ -376,11 +411,11 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
         }
 
         public ResourceLocation material() {
-            return new ResourceLocation("statue:concrete");
+            return material;
         }
 
-//        public PoseType getPose() {
-//
-//        }
+        public void setMaterial(String material) {
+            this.material = material != null ? new ResourceLocation("statue", material) : null;
+        }
     }
 }

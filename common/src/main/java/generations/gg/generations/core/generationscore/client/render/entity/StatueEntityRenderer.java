@@ -11,6 +11,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
+import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import net.minecraft.client.model.EntityModel;
@@ -30,7 +31,6 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
     }
 
     public RenderContext context = new RenderContext();
-    public static RenderContext.Key<StatueEntity> STATUE = RenderContext.Companion.key(GenerationsCore.id("statue"), TypeToken.get(StatueEntity.class));
 
     @Override
     public void render(@NotNull StatueEntity entity, float entityYaw, float partialTicks, @NotNull PoseStack stack, @Nullable MultiBufferSource buffer, int light) {
@@ -39,25 +39,29 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
         var variation = PokemonModelRepository.INSTANCE.getVariations().getOrDefault(entity.getStatueData().getProperties().asRenderablePokemon().getSpecies().getResourceIdentifier(), null);
         if(variation == null) return;
-        var texture = variation.getTexture(entity.getStatueData().getProperties().getAspects(), 0.0f);
 
         stack.pushPose();
-        stack.mulPose(Axis.YP.rotationDegrees(entityYaw));
+        stack.mulPose(Axis.YP.rotationDegrees(entity.getStatueData().getOrientation()));
         stack.scale(-1, -1, 1);
         var scale = entity.getScale();
         stack.translate(0, -1.501 * scale, 0);
         stack.scale(scale, scale, scale);
 
-//        state.getInstance().setVariant(entity.getStatueData().material());
 
         var state = entity.delegate;
 
+        var texture = getTextureLocation(entity);
+
+        if(texture != null) state.getInstance().setVariant(texture.toString());
+
         var model = (PoseableEntityModel<PokemonEntity>)PokemonModelRepository.INSTANCE.getPoser(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects());
-        var pose = model.getPose(PoseType.SWIM/*entity.getStatueData().getPose()*/);
+        var pose = model.getPose(entity.getStatueData().getPoseType());
         if(pose != null) state.setPose(pose.getPoseName());
 
         state.updatePartialTicks(partialTicks);
-        model.setupAnimStateful(null, state, 0F, 0F, 0F, 0F, 0F);
+        model.setupAnimStateless(entity.getStatueData().getPoseType(), state.getAnimationSeconds(), 0F, 0F, 0F, 0F);
+        if (model.getRootPart() instanceof RareCandyBone bone)
+            state.getInstance().matrixTransforms = bone.getCompiledModel().getGuiInstance().matrixTransforms;
 
         model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.INSTANCE.getLayers(entity.getStatueData().asRenderablePokemon().getSpecies().getResourceIdentifier(), entity.getStatueData().getProperties().getAspects()));
         var vertexConsumer = ItemRenderer.getFoilBuffer(buffer, model.getLayer(texture, false, false), false, false);
@@ -99,7 +103,11 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
     public @NotNull ResourceLocation getTextureLocation(@NotNull StatueEntity entity) {
         var material = entity.getStatueData().material();
 
-        if(material != null) return ((GenerationsCoreClient.GenerationsTextureLoader) ITextureLoader.instance()).getLocation(material);
+        if(material != null && ITextureLoader.instance().getTextureEntries().contains(material.getPath())) {
+            material = ((GenerationsCoreClient.GenerationsTextureLoader) ITextureLoader.instance()).getLocation(material);
+        }
+
+        if(material != null) return material;
         else return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);
     }
 }

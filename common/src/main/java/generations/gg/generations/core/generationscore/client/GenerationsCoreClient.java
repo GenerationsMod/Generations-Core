@@ -531,7 +531,7 @@ public class GenerationsCoreClient {
 
         @Override
         public Set<String> getTextureEntries() {
-            return null;
+            return MAP.keySet();
         }
 
         public boolean has(String texture) {

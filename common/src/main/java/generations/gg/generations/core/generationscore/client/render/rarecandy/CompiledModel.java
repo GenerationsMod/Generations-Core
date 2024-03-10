@@ -26,9 +26,10 @@ import java.util.function.Supplier;
  */
 public class CompiledModel {
     public final MultiRenderObject<MeshObject> renderObject;
+    private PixelmonInstance guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null);
 
     public CompiledModel(ResourceLocation a, InputStream stream, Supplier<MeshObject> supplier) {
-        this(a, stream, supplier, false);
+        this(a, stream, supplier, true);
     }
 
     public CompiledModel(ResourceLocation a, InputStream stream, Supplier<MeshObject> supplier, boolean requiresVariantTexture) {
@@ -56,6 +57,8 @@ public class CompiledModel {
                             }
                         }));
                     }
+
+                    guiInstance.link(object);
                     if(object.scale == 0f) object.scale = 1.0f;
                 }
         );
@@ -89,5 +92,9 @@ public class CompiledModel {
         } catch (IOException e) {
 
         }
+    }
+
+    public PixelmonInstance getGuiInstance() {
+        return guiInstance;
     }
 }

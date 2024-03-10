@@ -15,10 +15,8 @@ import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import org.joml.Matrix4f;
 
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModelRegistry {
@@ -42,7 +40,6 @@ public class ModelRegistry {
     });
     private static RareCandy WORLD_RENDER;
     private static RareCandy GUI_RENDER;
-    private static final PixelmonInstance guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), "");
 
     public static CompiledModel get(ModelContextProviders.ModelProvider modelProvider) {
         return get(modelProvider.getModel());
@@ -100,10 +97,5 @@ public class ModelRegistry {
             if (s.equals("gfb")) animation.ticksPerSecond = 60_000; // 60 fps. 1000 ticks per frame?
         };
         return GUI_RENDER;
-    }
-
-
-    public static PixelmonInstance getGuiInstance() {
-        return guiInstance;
     }
 }
