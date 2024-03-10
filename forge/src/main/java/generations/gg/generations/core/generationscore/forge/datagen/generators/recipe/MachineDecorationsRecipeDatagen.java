@@ -1,15 +1,12 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
 import com.cobblemon.mod.common.CobblemonItems;
-import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -21,7 +18,6 @@ import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;

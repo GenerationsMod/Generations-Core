@@ -18,7 +18,6 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ModelRegistry {

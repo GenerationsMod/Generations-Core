@@ -6,7 +6,6 @@ import generations.gg.generations.core.generationscore.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.legends.DistanceTraveled;
 import net.minecraft.core.BlockPos;
-import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;

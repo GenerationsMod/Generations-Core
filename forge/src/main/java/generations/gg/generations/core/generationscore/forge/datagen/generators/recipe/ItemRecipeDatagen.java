@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
 import net.minecraft.data.PackOutput;
