@@ -58,6 +58,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createClientBound(S2CSyncPlayerMoneyPacket.ID, S2CSyncPlayerMoneyPacket.class, S2CSyncPlayerMoneyPacket::new, () -> S2CSyncPlayerMoneyHandler::new);
         this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, S2COpenNpcCustomizationScreenPacket.class, S2COpenNpcCustomizationScreenPacket::new, () -> S2COpenNpcCustomizationScreenHandler::new);
         this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, S2CUpdateNpcDisplayDataPacket.class, S2CUpdateNpcDisplayDataPacket::new, () -> S2CUpdateNpcDisplayDataHandler::new);
+        this.createClientBound(S2CUpdateStatueInfoPacket.ID, S2CUpdateStatueInfoPacket.class, S2CUpdateStatueInfoPacket::decode, () -> S2CUpdateStatueInfoHandler::new);
     }
 
     public void registerServerBound() {

@@ -14,6 +14,7 @@ import gg.generations.rarecandy.renderer.animation.AnimationController;
 import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
 import gg.generations.rarecandy.renderer.pipeline.Pipeline;
+import gg.generations.rarecandy.renderer.pipeline.UniformUploadContext;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -178,24 +179,32 @@ public class Pipelines {
     }
 
     private static void emissionColors(Pipeline.Builder builder) {
-        builder.supplyUniform("emiColor1", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("emiColor1") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("emiColor2", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("emiColor2") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("emiColor3", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("emiColor3") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("emiColor4", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("emiColor4") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("emiColor5", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("emiColor5") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("emiIntensity1", ctx -> ctx.uniform().uploadFloat(ctx.getValue("emiIntensity1") instanceof Float vec ? vec : 0.0f))
-                .supplyUniform("emiIntensity2", ctx -> ctx.uniform().uploadFloat(ctx.getValue("emiIntensity2") instanceof Float vec ? vec : 0.0f))
-                .supplyUniform("emiIntensity3", ctx -> ctx.uniform().uploadFloat(ctx.getValue("emiIntensity3") instanceof Float vec ? vec : 0.0f))
-                .supplyUniform("emiIntensity4", ctx -> ctx.uniform().uploadFloat(ctx.getValue("emiIntensity4") instanceof Float vec ? vec : 0.0f))
-                .supplyUniform("emiIntensity5", ctx -> ctx.uniform().uploadFloat(ctx.getValue("emiIntensity5") instanceof Float vec ? vec : 1.0f));
+        builder.supplyUniform("emiColor1", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor1")))
+                .supplyUniform("emiColor2", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor2")))
+                .supplyUniform("emiColor3", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor3")))
+                .supplyUniform("emiColor4", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor4")))
+                .supplyUniform("emiColor5", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor5")))
+                .supplyUniform("emiIntensity1", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity1")))
+                .supplyUniform("emiIntensity2", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity2")))
+                .supplyUniform("emiIntensity3", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity3")))
+                .supplyUniform("emiIntensity4", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity4")))
+                .supplyUniform("emiIntensity5", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity5")));
     }
 
     private static void baseColors(Pipeline.Builder builder) {
-        builder.supplyUniform("baseColor1", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("baseColor1") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("baseColor2", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("baseColor2") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("baseColor3", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("baseColor3") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("baseColor4", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("baseColor4") instanceof Vector3f vec ? vec : Pipelines.ONE))
-                .supplyUniform("baseColor5", ctx -> ctx.uniform().uploadVec3f(ctx.getValue("baseColor5") instanceof Vector3f vec ? vec : Pipelines.ONE));
+        builder.supplyUniform("baseColor1", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "baseColor1")))
+                .supplyUniform("baseColor2", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "baseColor2")))
+                .supplyUniform("baseColor3", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "baseColor3")))
+                .supplyUniform("baseColor4", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "baseColor4")))
+                .supplyUniform("baseColor5", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "baseColor5")));
+    }
+
+    private static Vector3f getColorValue(UniformUploadContext ctx, String id) {
+        return !isStatueMaterial(ctx.instance().variant()) && ctx.getValue(id) instanceof Vector3f vec ? vec : Pipelines.ONE;
+    }
+
+    private static float getFloatValue(UniformUploadContext ctx, String id) {
+        return !isStatueMaterial(ctx.instance().variant()) && ctx.getValue(id) instanceof Float vec ? vec : 0.0f;
     }
 
     private static void addLight(Pipeline.Builder builder) {

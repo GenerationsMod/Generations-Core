@@ -538,8 +538,8 @@ public class GenerationsCoreClient {
             return MAP.containsKey(texture);
         }
 
-        public ResourceLocation getLocation(ResourceLocation material) {
-            return MAP.getOrDefault(material.toString(), null);
+        public ResourceLocation getLocation(String material) {
+            return MAP.getOrDefault(material, null);
         }
     }
 }

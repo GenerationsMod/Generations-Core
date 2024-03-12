@@ -9,6 +9,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Pokem
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.mojang.blaze3d.platform.Lighting
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.GenerationsCore
@@ -24,6 +25,8 @@ import net.minecraft.client.gui.components.AbstractWidget
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.gui.components.EditBox
 import net.minecraft.client.gui.screens.Screen
+import net.minecraft.client.gui.screens.inventory.InventoryScreen
+import net.minecraft.client.gui.screens.inventory.SmithingScreen
 import net.minecraft.client.renderer.LightTexture
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.network.chat.Component
@@ -32,7 +35,7 @@ import org.joml.Math
 import org.joml.Quaternionf
 import org.joml.Vector3f
 
-class StatueEditorScreen(private val statue: StatueEntity) : Screen(Component.empty()) {
+class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
     private var x = 0
     private var y = 0
     private var parserString: String
@@ -53,7 +56,7 @@ class StatueEditorScreen(private val statue: StatueEntity) : Screen(Component.em
     }
 
     override fun init() {
-        height = 184
+        height = 191
         x = width / 2 - 96
         y = height / 2 - 92
         val info = statue.statueData
@@ -106,6 +109,7 @@ class StatueEditorScreen(private val statue: StatueEntity) : Screen(Component.em
                 }) { s: String ->
                 val value: Float = if (s.isEmpty()) 0f else parseFloat(s)
                 statue.statueData.setProgress(value)
+                updateStatueData()
             })
         scaleTextField = addRenderableWidget(
             ScreenUtils.createTextField(x + 59, y + 146, 36, 14, 5, info.scale.toString(),
@@ -133,7 +137,7 @@ class StatueEditorScreen(private val statue: StatueEntity) : Screen(Component.em
             })
 
         materialTextField = addRenderableWidget(
-            ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, info.material().path, { true }) {
+            ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, info?.material()?.path ?: "", { true }) {
                 it.takeIf { it.isNotEmpty() }.run {
                     statue.statueData.setMaterial(it)
                     updateStatueData()
@@ -172,7 +176,7 @@ class StatueEditorScreen(private val statue: StatueEntity) : Screen(Component.em
         orientationWidget = addRenderableWidget(AngleSelectionWidget(
             x + 43, y + 47, 15, statue.statueData.orientation, 5, 0x000000
         ) { _: Float, angle: Float ->
-            statue.statueData.orientation = angle
+            statue.statueData.orientation = Math.floor(angle)
             updateStatueData()
         })
         modelWidget = addRenderableWidget(
@@ -211,11 +215,12 @@ class StatueEditorScreen(private val statue: StatueEntity) : Screen(Component.em
         var aspects = data.aspects
 
         if(statue.statueData.material() != null) {
-            aspects = aspects.toMutableSet().apply { this.add(statue.statueData.material().toString()) }
+            aspects = aspects.toMutableSet().let { it + (statue.statueData.material().toString()) }
         }
 
         drawProfilePokemon(data.species.resourceIdentifier,
             aspects,
+            statue.statueData.poseType,
             poseStack.pose(),
             Quaternionf().rotationXYZ(Math.toRadians(13f), Math.toRadians(-35f), Math.toRadians(0f)),
             statue.delegate,
@@ -224,7 +229,7 @@ class StatueEditorScreen(private val statue: StatueEntity) : Screen(Component.em
         )
         poseStack.disableScissor()
         poseStack.pose().popPose()
-        poseStack.blit(STATUE, 0, 0, 0f, 0f, 256, 166, 256, 256)
+        poseStack.blit(STATUE, 0, 0, 0f, 0f, 256, 191, 256, 256)
         poseStack.pose().popPose()
         super.render(poseStack, mouseX, mouseY, partialTick)
         ScreenUtils.drawText(
@@ -326,5 +331,63 @@ class StatueEditorScreen(private val statue: StatueEntity) : Screen(Component.em
             }
             return if (s.isEmpty()) 0 else s.toInt()
         }
+    }
+
+    fun drawProfilePokemon(
+        species: ResourceLocation,
+        aspects: Set<String>,
+        poseType: PoseType,
+        matrixStack: PoseStack,
+        rotation: Quaternionf,
+        state: PoseableEntityState<PokemonEntity>?,
+        partialTicks: Float,
+        scale: Float = 20F
+    ) {
+        val model = PokemonModelRepository.getPoser(species, aspects)
+        val texture = PokemonModelRepository.getTexture(species, aspects, state?.animationSeconds ?: 0F)
+
+        val context = RenderContext()
+        PokemonModelRepository.getTextureNoSubstitute(species, aspects, 0f).let { it -> context.put(RenderContext.TEXTURE, it) }
+        context.put(RenderContext.SCALE, PokemonSpecies.getByIdentifier(species)!!.getForm(aspects).baseScale)
+        context.put(RenderContext.SPECIES, species)
+        context.put(RenderContext.ASPECTS, aspects)
+
+        val renderType = model.getLayer(texture, false, false)
+
+        RenderSystem.applyModelViewMatrix()
+        matrixStack.scale(scale, scale, -scale)
+
+        if (state != null) {
+            model.getPose(poseType)?.let { state.setPose(it.poseName) }
+            state.timeEnteredPose = 0F
+            state.updatePartialTicks(partialTicks)
+            model.setupAnimStateful(null, state, 0F, 0F, 0F, 0F, 0F)
+        } else {
+            model.setupAnimStateless(poseType)
+        }
+        matrixStack.translate(model.profileTranslation.x, model.profileTranslation.y,  model.profileTranslation.z - 4.0)
+        matrixStack.scale(model.profileScale, model.profileScale, 1 / model.profileScale)
+
+        matrixStack.mulPose(rotation)
+        Lighting.setupForEntityInInventory()
+        val entityRenderDispatcher = Minecraft.getInstance().entityRenderDispatcher
+        rotation.conjugate()
+        entityRenderDispatcher.overrideCameraOrientation(rotation)
+        entityRenderDispatcher.setRenderShadow(true)
+
+        val bufferSource = Minecraft.getInstance().renderBuffers().bufferSource()
+        val buffer = bufferSource.getBuffer(renderType)
+        val light1 = Vector3f(-1F, 1F, 1.0F)
+        val light2 = Vector3f(1.3F, -1F, 1.0F)
+        RenderSystem.setShaderLights(light1, light2)
+        val packedLight = LightTexture.pack(11, 7)
+
+        model.withLayerContext(bufferSource, state, PokemonModelRepository.getLayers(species, aspects)) {
+            model.render(context, matrixStack, buffer, packedLight, OverlayTexture.NO_OVERLAY, 1F, 1F, 1F, 1F)
+            bufferSource.endBatch()
+        }
+        model.setDefault()
+        entityRenderDispatcher.setRenderShadow(true)
+        Lighting.setupFor3DItems()
     }
 }

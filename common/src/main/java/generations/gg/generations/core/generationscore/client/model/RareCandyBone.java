@@ -12,6 +12,7 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.C
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
+import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
@@ -102,7 +103,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
     private ResourceLocation getTexture(RenderContext context) {
         var aspects = context.request(RenderContext.Companion.getASPECTS());
-        if((context.request(RenderContext.Companion.getENTITY()) instanceof StatueEntity statue && statue.getStatueData().material() != null)) {
+        if((context.request(RenderContext.Companion.getENTITY()) instanceof StatueEntity statue && statue.getStatueData().material() != null && statue.getStatueData().material().getNamespace().equals("statue") && ITextureLoader.instance().getTextureEntries().contains(statue.getStatueData().material().getPath()))) {
             return statue.getStatueData().material();
         }
 

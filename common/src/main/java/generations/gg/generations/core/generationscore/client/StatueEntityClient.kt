@@ -34,7 +34,7 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
     private fun updateAge() {
         trueAge += 1
 
-        age = if(isStatic) 0 else trueAge
+        age = if( isStatic) 0 else trueAge
     }
 
     override fun getInstance(): PixelmonInstance {

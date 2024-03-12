@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, EntityModel<StatueEntity>> {
-    public static final ResourceLocation CONCRETE = GenerationsCore.id("textures/entity/statue_material/concrete.png");
     public StatueEntityRenderer(EntityRendererProvider.Context arg) {
         super(arg, null, 0.0f);
     }
@@ -52,27 +51,21 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
         var texture = getTextureLocation(entity);
 
-        if(texture != null) state.getInstance().setVariant(texture.toString());
+        if(texture.getPath().equals("pk")) state.getInstance().setVariant(texture.toString());
 
         var model = (PoseableEntityModel<PokemonEntity>)PokemonModelRepository.INSTANCE.getPoser(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects());
         var pose = model.getPose(entity.getStatueData().getPoseType());
         if(pose != null) state.setPose(pose.getPoseName());
-
         state.updatePartialTicks(partialTicks);
-        model.setupAnimStateless(entity.getStatueData().getPoseType(), state.getAnimationSeconds(), 0F, 0F, 0F, 0F);
-        if (model.getRootPart() instanceof RareCandyBone bone)
-            state.getInstance().matrixTransforms = bone.getCompiledModel().getGuiInstance().matrixTransforms;
-
+        model.setupAnimStateful(null, entity.delegate, 0, 0F, 0F, 0F, 0F);
         model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.INSTANCE.getLayers(entity.getStatueData().asRenderablePokemon().getSpecies().getResourceIdentifier(), entity.getStatueData().getProperties().getAspects()));
         var vertexConsumer = ItemRenderer.getFoilBuffer(buffer, model.getLayer(texture, false, false), false, false);
 
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 
         context.pop();
-        context.put(RenderContext.Companion.getRENDER_STATE(), RenderContext.RenderState.WORLD);
         context.put(RenderContext.Companion.getENTITY(), entity);
         context.put(RenderContext.Companion.getSCALE(), scale);
-        context.put(RenderContext.Companion.getTEXTURE(), texture);
         context.put(RenderContext.Companion.getSPECIES(), entity.species());
         context.put(RenderContext.Companion.getASPECTS(), entity.aspects());
 
@@ -100,14 +93,13 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
     }
 
     @Override
+
+
     public @NotNull ResourceLocation getTextureLocation(@NotNull StatueEntity entity) {
-        var material = entity.getStatueData().material();
+        var state = entity.getStatueData();
 
-        if(material != null && ITextureLoader.instance().getTextureEntries().contains(material.getPath())) {
-            material = ((GenerationsCoreClient.GenerationsTextureLoader) ITextureLoader.instance()).getLocation(material);
-        }
-
-        if(material != null) return material;
-        else return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);
+        if(state.material() != null && state.material().getNamespace().equals("statue") && ITextureLoader.instance().getTextureEntries().contains(state.material().getPath())) {
+            return ((GenerationsCoreClient.GenerationsTextureLoader) ITextureLoader.instance()).getLocation(state.material().getPath());
+        } else return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);
     }
 }

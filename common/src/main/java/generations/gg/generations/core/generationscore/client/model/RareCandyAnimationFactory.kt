@@ -113,11 +113,11 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
             pokemonEntity: PokemonEntity?,
             poseableEntityModel: PoseableEntityModel<PokemonEntity>,
             state: PoseableEntityState<PokemonEntity>?,
-            v: Float,
-            v1: Float,
-            v2: Float,
-            v3: Float,
-            v4: Float
+            limbSwing: Float,
+            limbSwingAmount: Float,
+            ageInTicks: Float,
+            headYaw: Float,
+            headPitch: Float
         ) {
             val instance =
                 if (pokemonEntity != null) (pokemonEntity as PixelmonInstanceProvider).instance else objectSupplier.get()
