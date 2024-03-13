@@ -44,6 +44,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -81,7 +82,7 @@ public class GenerationsCore
 		CONFIG = ConfigLoader.loadConfig(Config.class, "core", "main");
 		GenerationsCore.implementation = implementation;
 
-		SpawnDetail.Companion.registerSpawnType(ZygardeCellDetail.Companion.getTYPE(), ZygardeCellDetail.class);
+		SpawnDetail.Companion.registerSpawnType(ZygardeCellDetail.TYPE, ZygardeCellDetail.class);
 
 		GenerationsCoreEntityDataSerializers.init();
 		GenerationsSounds.init();
@@ -128,13 +129,13 @@ public class GenerationsCore
 			else if(stack.is(GenerationsItems.ZYGARDE_CUBE.get()) && entity instanceof ZygardeCellEntity) {
 				if (stack.getDamageValue() != ZygardeCubeItem.FULL) {
 					stack.setDamageValue(stack.getDamageValue() + 1);
-					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.add_cell"), false);
-//                level().playSound(null, blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f);
+					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.tooltip.cell_add"), false);
+					player.level().playSound(null, player.blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f);
 					entity.remove(Entity.RemovalReason.DISCARDED);
 
 					result = EventResult.interruptTrue();
 				} else {
-					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.full_cell"), false);
+					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.tooltip.cell_full"), false);
 					result = EventResult.pass();
 				}
 			}

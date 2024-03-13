@@ -25,16 +25,17 @@ import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.level.Level
 import java.util.function.Consumer
 
-class ZygardeCubeItem(properties: Properties?) : Item(properties) {
+class ZygardeCubeItem(properties: Properties) : Item(properties), LangTooltip {
     override fun appendHoverText(
         stack: ItemStack,
         level: Level?,
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
-        tooltipComponents.add(Component.literal("Collect Zygarde Cells to summon the balance."))
-        tooltipComponents.add(Component.literal("Cells collected: " + stack.damageValue + "/" + stack.maxDamage))
-        super.appendHoverText(stack, level, tooltipComponents, isAdvanced)
+        tooltipComponents.add(Component.translatable("item.zygarde_cell.tooltip"))
+        tooltipComponents.add(Component.translatable("item.zygarde_cell.tooltip.lore1"))
+        tooltipComponents.add(Component.translatable("item.zygarde_cell.tooltip.lore2", stack.damageValue, stack.maxDamage))
+//        LangTooltip.appendHoverText(stack, level, tooltipComponents, isAdvanced)
     }
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
@@ -109,7 +110,7 @@ class ZygardeCubeItem(properties: Properties?) : Item(properties) {
 
                     var pokemon = PokemonProperties.parse("species=zygarde level=70" + if(original == 10) " zygarde_form=10%" else "" + if(powerconstruct) " ability=powerconstruct" else "").create()
 
-                    item.damageValue = item.damageValue - amount;
+                    item.hurt(amount, it.random, it)
 
 //                    it.sendSystemMessage(("$name.accept").asTranslated(), false)
                     store.add(pokemon)

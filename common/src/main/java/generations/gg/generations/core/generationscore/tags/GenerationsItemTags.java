@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
 
 public class GenerationsItemTags {
 
@@ -54,6 +55,7 @@ public class GenerationsItemTags {
     public static final TagKey<Item> WALKMONS = create("walkmons");
     public static final TagKey<Item> HAMMERS = create("hammers");
     public static final TagKey<Item> SHEARS = create("shears");
+    public static final TagKey<Item> KEY_STONES = create("key_stones");
 
     private static TagKey<Item> create(String name) {
         return TagKey.create(Registries.ITEM, GenerationsCore.id(name));

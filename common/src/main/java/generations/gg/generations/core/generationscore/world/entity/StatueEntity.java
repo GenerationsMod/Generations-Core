@@ -92,7 +92,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
 
             if (stack.is(GenerationsItems.SACRED_ASH.get()) && getStatueData().isSacredAshInteractable()/* && SacredAshItem.isFullyCharged(stack)*/) {
                 var entity = getStatueData().getProperties().createEntity(level());
-                entity.setPos(Vec3.atBottomCenterOf(getOnPos()));
+                entity.setPos(Vec3.atBottomCenterOf(getOnPos().above()));
                 level().addFreshEntity(entity);
                 stack.shrink(1);
                 return InteractionResult.SUCCESS;

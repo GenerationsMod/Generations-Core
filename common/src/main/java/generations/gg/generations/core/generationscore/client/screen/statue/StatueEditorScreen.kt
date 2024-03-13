@@ -214,19 +214,19 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
 
         var aspects = data.aspects
 
-        if(statue.statueData.material() != null) {
-            aspects = aspects.toMutableSet().let { it + (statue.statueData.material().toString()) }
-        }
-
-        drawProfilePokemon(data.species.resourceIdentifier,
-            aspects,
-            statue.statueData.poseType,
-            poseStack.pose(),
-            Quaternionf().rotationXYZ(Math.toRadians(13f), Math.toRadians(-35f), Math.toRadians(0f)),
-            statue.delegate,
-            partialTick,
-            1f
-        )
+//        if(statue.statueData.material() != null) {
+//            aspects = aspects.toMutableSet().let { it + (statue.statueData.material().toString()) }
+//        }
+//
+//        drawProfilePokemon(data.species.resourceIdentifier,
+//            aspects,
+//            statue.statueData.poseType,
+//            poseStack.pose(),
+//            Quaternionf().rotationXYZ(Math.toRadians(13f), Math.toRadians(-35f), Math.toRadians(0f)),
+//            statue.delegate,
+//            partialTick,
+//            1f
+//        )
         poseStack.disableScissor()
         poseStack.pose().popPose()
         poseStack.blit(STATUE, 0, 0, 0f, 0f, 256, 191, 256, 256)

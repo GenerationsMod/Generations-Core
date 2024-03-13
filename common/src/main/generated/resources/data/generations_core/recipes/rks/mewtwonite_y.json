@@ -1,0 +1,31 @@
+{
+  "type": "generations_core:rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "generations_core:key_stone_1"
+    },
+    "B": {
+      "type": "generations_core:pokemon",
+      "aspects": [],
+      "species": "cobblemon:mewtwo",
+      "strictAspects": false
+    },
+    "C": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "D": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " D ",
+    "ABC"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "value": "generations_core:mewtwonite_y"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:rks/pinsirite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "key_stone_1": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:key_stone_1"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "key_stone_1",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:rks/pinsirite"
+    ]
+  },
+  "sends_telemetry_event": true
+}

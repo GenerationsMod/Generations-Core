@@ -1,5 +1,6 @@
 {
   "type": "generations_core:rks",
+  "consumesTimeCapsules": true,
   "experience": 1.0,
   "key": {
     "A": {

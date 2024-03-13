@@ -9,18 +9,14 @@ import net.minecraft.network.chat.MutableComponent
 
 class ZygardeCellDetail : SpawnDetail() {
     companion object {
-        val TYPE = "zygarde"
+        const val TYPE = "zygarde"
     }
 
     override val type: String = TYPE;
-    override fun doSpawn(ctx: SpawningContext): SpawnAction<*> {
-        TODO("Not yet implemented")
-    }
+    override fun doSpawn(ctx: SpawningContext): SpawnAction<*> = ZygardeCellSpawnActon(ctx, ZygardeCellDetail())
 
     override fun getName(): MutableComponent {
-        displayName?.let { return it.asTranslated() }
-
-        return "generations_core.entity.zygarde_cel".asTranslated()
+        return displayName?.let { return it.asTranslated() } ?: return "generations_core.entity.zygarde_cell".asTranslated()
     }
 
 }

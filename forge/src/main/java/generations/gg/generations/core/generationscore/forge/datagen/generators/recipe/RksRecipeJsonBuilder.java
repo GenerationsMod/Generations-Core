@@ -36,6 +36,8 @@ import java.util.function.Consumer;
 
 public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 	private final RksResult output;
+
+	private boolean consumesTimeCapsules = true;
 	private final List<String> pattern = Lists.newArrayList();
 	private final Map<Character, Ingredient> inputs = Maps.newLinkedHashMap();
 	private final Advancement.Builder advancementBuilder = Advancement.Builder.advancement();
@@ -156,7 +158,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 		this.validate(recipeId);
 		this.advancementBuilder.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId)).rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(RequirementsStrategy.OR);
 
-		exporter.accept(new RksRecipeJsonProvider(recipeId, this.output, this.group == null ? "" : this.group, this.pattern, this.inputs, this.advancementBuilder, recipeId.withPrefix("recipes/rks/"), experience, processingTime, speciesKey));
+		exporter.accept(new RksRecipeJsonProvider(recipeId, this.output, this.consumesTimeCapsules, this.group == null ? "" : this.group, this.pattern, this.inputs, this.advancementBuilder, recipeId.withPrefix("recipes/rks/"), experience, processingTime, speciesKey));
 	}
 
 	private void validate(ResourceLocation recipeId) {
@@ -187,9 +189,15 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 		}
 	}
 
-	static class RksRecipeJsonProvider implements FinishedRecipe {
+	public RksRecipeJsonBuilder doesntConsumeTimeCapsules() {
+		this.consumesTimeCapsules = false;
+		return this;
+	}
+
+	class RksRecipeJsonProvider implements FinishedRecipe {
 		private final ResourceLocation recipeId;
 		private final RksResult<?> output;
+		private final boolean consumesTimeCapsules1;
 		private final String group;
 		private final List<String> pattern;
 		private final Map<Character, Ingredient> inputs;
@@ -199,9 +207,10 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 		private final int processingTime;
 		private final SpeciesKey speciesKey;
 
-		public RksRecipeJsonProvider(ResourceLocation recipeId, RksResult<?> output, String group, List<String> pattern, Map<Character, Ingredient> inputs, Advancement.Builder advancementBuilder, ResourceLocation advancementId, float experience, int processingTime, SpeciesKey speciesKey) {
+		public RksRecipeJsonProvider(ResourceLocation recipeId, RksResult<?> output, boolean consumesTimeCapsules, String group, List<String> pattern, Map<Character, Ingredient> inputs, Advancement.Builder advancementBuilder, ResourceLocation advancementId, float experience, int processingTime, SpeciesKey speciesKey) {
 			this.recipeId = recipeId;
 			this.output = output;
+			this.consumesTimeCapsules1 = consumesTimeCapsules;
 			this.group = group;
 			this.pattern = pattern;
 			this.inputs = inputs;
@@ -238,6 +247,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 			json.addProperty("experience", experience);
 			json.addProperty("processingTime", processingTime);
 			if(speciesKey != null) json.addProperty("speciesKey", speciesKey.toString());
+			json.addProperty("consumesTimeCapsules", consumesTimeCapsules);
 		}
 
 		@Override

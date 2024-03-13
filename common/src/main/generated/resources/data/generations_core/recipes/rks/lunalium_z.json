@@ -1,0 +1,29 @@
+{
+  "type": "generations_core:rks",
+  "consumesTimeCapsules": false,
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "B": {
+      "type": "generations_core:pokemon",
+      "aspects": [],
+      "species": "cobblemon:lunala",
+      "strictAspects": false
+    },
+    "X": {
+      "item": "generations_core:z_ingot"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "ABA",
+    "XXX"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "value": "generations_core:lunalium_z"
+  }
+}

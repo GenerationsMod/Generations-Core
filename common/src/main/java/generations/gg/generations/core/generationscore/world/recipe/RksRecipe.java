@@ -10,6 +10,7 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.serialization.JsonOps;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
@@ -17,7 +18,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -37,19 +37,21 @@ public class RksRecipe implements Recipe<Container> {
     final RksResult result;
 
     final SpeciesKey key;
+    private final boolean consumesTimeCapsules;
     private ResourceLocation id;
     final String group;
     final boolean showNotification;
     private final float experience;
     private final int processingTime;
 
-    public RksRecipe(ResourceLocation id, String group, int width, int height, NonNullList<Ingredient> recipeItems, RksResult result, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
+    public RksRecipe(ResourceLocation id, String group, int width, int height, NonNullList<Ingredient> recipeItems, RksResult result, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
         this.id = id;
         this.group = group;
         this.width = width;
         this.height = height;
         this.recipeItems = recipeItems;
         this.result = result;
+        this.consumesTimeCapsules = consumesTimeCapsules;
         this.key = key;
         this.experience = experience;
         this.processingTime = processingTime;
@@ -57,8 +59,8 @@ public class RksRecipe implements Recipe<Container> {
     }
 
 
-    public RksRecipe(ResourceLocation id, String group, int width, int height, NonNullList<Ingredient> recipeItems, RksResult result, float experience, int processingTime) {
-        this(id, group, width, height, recipeItems, result, null, experience, processingTime, true);
+    public RksRecipe(ResourceLocation id, String group, int width, int height, NonNullList<Ingredient> recipeItems, RksResult<?> result, boolean consumesTimeCapsules, float experience, int processingTime) {
+        this(id, group, width, height, recipeItems, result, consumesTimeCapsules, null, experience, processingTime, true);
     }
 
     @Override
@@ -145,9 +147,11 @@ public class RksRecipe implements Recipe<Container> {
     public @NotNull NonNullList<ItemStack> getRemainingItems(Container container) {
         NonNullList<ItemStack> nonNullList = NonNullList.withSize(container.getContainerSize(), ItemStack.EMPTY);
         for (int i = 1; i < nonNullList.size(); ++i) {
-            Item item = container.getItem(i).getItem();
-            if (!item.hasCraftingRemainingItem()) continue;
-            nonNullList.set(i, new ItemStack(item.getCraftingRemainingItem()));
+            ItemStack itemStack = container.getItem(i);
+            var item = itemStack.getItem();
+            if (itemStack.is(GenerationsItems.TIME_CAPSULE.get()) && consumesTimeCapsules)
+
+            if (item.hasCraftingRemainingItem()) nonNullList.set(i, new ItemStack(item.getCraftingRemainingItem()));
         }
         return nonNullList;
     }
@@ -325,7 +329,8 @@ public class RksRecipe implements Recipe<Container> {
             int processingTime = GsonHelper.getAsInt(json, "processingTime", 200);
 
             boolean bl = GsonHelper.getAsBoolean(json, "show_notification", true);
-            return new RksRecipe(recipeId, string, i, j, nonNullList, result, speciesKey, experience, processingTime, bl);
+            boolean consumesTimeCapsules = GsonHelper.getAsBoolean(json, "consumesTimeCapsules", true);
+            return new RksRecipe(recipeId, string, i, j, nonNullList, result, consumesTimeCapsules, speciesKey, experience, processingTime, bl);
         }
 
         @Override
@@ -337,13 +342,14 @@ public class RksRecipe implements Recipe<Container> {
             nonNullList.replaceAll(ignored -> Ingredient.fromNetwork(buffer));
 
             var result = RksResult.fromBuffer(buffer);
+            var consumesTimeCapsules = buffer.readBoolean();
 
             var speciesKey = buffer.readNullable(buf -> SpeciesKey.fromString(buf.readUtf()));
 
             float experience = buffer.readFloat();
             int weavingTime = buffer.readInt();
             boolean bl = buffer.readBoolean();
-            return new RksRecipe(recipeId, string, i, j, nonNullList, result, speciesKey, experience, weavingTime, bl);
+            return new RksRecipe(recipeId, string, i, j, nonNullList, result, consumesTimeCapsules, speciesKey, experience, weavingTime, bl);
         }
 
         @Override

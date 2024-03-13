@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:rks/rockium_z"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "z_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:z_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "z_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:rks/rockium_z"
+    ]
+  },
+  "sends_telemetry_event": true
+}

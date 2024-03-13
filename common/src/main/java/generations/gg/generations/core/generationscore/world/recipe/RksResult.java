@@ -37,6 +37,10 @@ public interface RksResult<U extends RksResult<U>> {
 
     default void process(RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {}
 
+    default boolean consumeTimeCapsules() {
+        return true;
+    }
+
     record ItemResult(ItemStack item) implements RksResult<ItemResult> {
         public static final Codec<ItemResult> CODEC = Codec.either(BuiltInRegistries.ITEM.byNameCodec(), ItemStack.CODEC).xmap(a -> a.map(Item::getDefaultInstance, b -> b), a -> a.getCount() > 1 || a.hasTag() ? Either.right(a) : Either.left(a.getItem())).xmap(ItemResult::new, ItemResult::item);
 
@@ -55,6 +59,7 @@ public interface RksResult<U extends RksResult<U>> {
         }
     }
     record PokemonResult(ResourceLocation species, Set<String> aspects, int level) implements RksResult<PokemonResult> {
+
         public static final Codec<PokemonResult> CODEC = RecordCodecBuilder.create(instance -> instance.group(
                 ResourceLocation.CODEC.fieldOf("species").forGetter(PokemonResult::species),
                 Codec.STRING.listOf().<Set<String>>xmap(HashSet::new, ArrayList::new).optionalFieldOf("aspects", new HashSet<>()).forGetter(PokemonResult::aspects),

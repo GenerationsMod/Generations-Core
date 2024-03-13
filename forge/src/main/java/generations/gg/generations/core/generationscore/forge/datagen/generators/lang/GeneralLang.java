@@ -265,6 +265,14 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(MELOETTA_MUSIC_BOX, "HINT: You hear a wonderful melody from within. You need to hear more.”");
         //Zygarde
         addTooltip(ZYGARDE_CUBE, "A strange cube capable of storing up to 100 Zygarde Cells, as well as fusing them together to reconstruct the legendary Zygarde.");
+        addTooltip(ZYGARDE_CUBE, "cell_add", "Zygarde Cell collected!");
+        addTooltip(ZYGARDE_CUBE, "cell_full", "The Zygarde Cube is full!");
+        addTooltip(ZYGARDE_CUBE, "lore1", "Collect Zygarde Cells to summon the balance.");
+        addTooltip(ZYGARDE_CUBE, "lore2", "Cells collected: %s/%s");
+
+
+
+
         add("gui.zygarde_cube.select", "Merge Zygarde Cells");
         add("gui.zygarde_cube.merge_10.name", "Create 10%");
         add("gui.zygarde_cube.merge_10.accept", "Your Cells merged to form a Zygarde 10%!");
@@ -282,11 +290,6 @@ public class GeneralLang extends LanguageProvider {
         add("gui.zygarde_cube.merge_10_with_90_to_50_power_construct.accept", "Your Zygarde 10% was combined with 90 Cells to create a Zygarde 50% with Power Construct!");
         add("gui.zygarde_cube.merge_50_with_50_to_50_power_construct.name", "Convert 50% to 50% with Power Construct");
         add("gui.zygarde_cube.merge_50_with_50_to_50_power_construct.accept", "Your Zygarde 50% was combined with 50 Cells to create a Zygarde 50% with Power Construct!");
-
-        add("gui.zygarde_cube.select", "Merge Zygarde Cells");
-        add("gui.zygarde_cube.select", "Merge Zygarde Cells");
-        add("gui.zygarde_cube.select", "Merge Zygarde Cells");
-
 
         //Hoopa
         addTooltip(PRISON_BOTTLE_STEM, "HINT: You hear a voice within, guiding you. \"Free me! Make my rings with Gold Blocks\".");
