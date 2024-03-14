@@ -6,6 +6,13 @@
       }
     ]
   },
+  "generations_core.item.meloettas_relic_song": {
+    "sounds": [
+      {
+        "name": "generations_core:items/meloettas_relic_song"
+      }
+    ]
+  },
   "generations_core.block.rks_machine": {
     "sounds": [
       {

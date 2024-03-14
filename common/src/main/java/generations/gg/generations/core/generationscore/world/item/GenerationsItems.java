@@ -18,15 +18,11 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SignItem;
-import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
@@ -829,7 +825,11 @@ public class GenerationsItems {
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_RELIC_SONG_2 = register("shattered_relic_song_2", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_RELIC_SONG_3 = register("shattered_relic_song_3", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_RELIC_SONG_4 = register("shattered_relic_song_4", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> RELIC_SONG = register("relic_song", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<RelicSongItem> RELIC_SONG = createRelicSong(true);
+    public static final RegistrySupplier<RelicSongItem> INERT_RELIC_SONG = createRelicSong(false);
+
+
+
     public static final RegistrySupplier<RedChainItem> RED_CHAIN = register("red_chain", properties -> new RedChainItem(properties.stacksTo(1)), LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> DNA_SPLICERS = register("dna_splicers", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REINS_OF_UNITY = register("reins_of_unity", Item::new, LEGENDARY_ITEMS);
@@ -1467,6 +1467,10 @@ public class GenerationsItems {
 
     private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound, int ticks) {
         return register(name, properties -> new ArchitecturyRecordItem(0, sound, properties, ticks), PLAYER_ITEMS);
+    }
+
+    private static RegistrySupplier<RelicSongItem> createRelicSong(boolean inert) {
+        return register((inert ? "inert_" : "") + "relic_song", properties -> new RelicSongItem(properties, inert), LEGENDARY_ITEMS);
     }
 
     public static RegistrySupplier<Item> registerHeldItem(String name) {

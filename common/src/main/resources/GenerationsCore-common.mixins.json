@@ -6,6 +6,7 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "AbstractFurnaceBlockEntityMixin",
+    "RecordItemMixin",
     "ServerPlayerMixin",
     "client.PokemonItemRendererMixin"
   ],
