@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "O": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "I I"
+  ],
+  "result": {
+    "item": "generations_core:bench"
+  },
+  "show_notification": true
+}

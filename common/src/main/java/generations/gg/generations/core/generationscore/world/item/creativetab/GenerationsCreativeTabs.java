@@ -42,7 +42,7 @@ public class GenerationsCreativeTabs {
         GenerationsCreativeTabs.RESTORATION = create("restoration", () -> GenerationsItems.LEMONADE.get().getDefaultInstance(), GenerationsItems.RESTORATION);
         GenerationsCreativeTabs.AWARDS = create("awards", () -> GenerationsItems.RAINBOW_BADGE.get().getDefaultInstance(), GenerationsItems.BADGES, GenerationsItems.RIBBONS);
         GenerationsCreativeTabs.HELD_ITEMS = create("held_items", () -> GenerationsItems.AMULET_COIN.get().getDefaultInstance(), GenerationsItems.HELD_ITEMS);
-        GenerationsCreativeTabs.PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX.get().getDefaultInstance(), GenerationsItems.PLAYER_ITEMS);
+        GenerationsCreativeTabs.PLAYER_ITEMS = create("player_items", () -> GenerationsItems.POKEDEX.get().getDefaultInstance(), GenerationsItems.PLAYER_ITEMS, GenerationsItems.NATURAL);
         GenerationsCreativeTabs.LEGENDARY_ITEMS = create("legendary_items", () -> GenerationsItems.DNA_SPLICERS.get().getDefaultInstance(), GenerationsItems.LEGENDARY_ITEMS);
         GenerationsCreativeTabs.DECORATIONS = create("decorations", () -> GenerationsDecorationBlocks.SWITCH.get().asItem().getDefaultInstance(), GenerationsDecorationBlocks.DECORATIONS);
         GenerationsCreativeTabs.UTILITY = create("utility", () -> GenerationsUtilityBlocks.RKS_MACHINE.get().asItem().getDefaultInstance(), GenerationsItems.UTILITY, GenerationsUtilityBlocks.UTILITY_BLOCKS);

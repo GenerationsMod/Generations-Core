@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:green_dye"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:redstone_lamp"
+    }
+  },
+  "pattern": [
+    "ELE",
+    " I ",
+    " I "
+  ],
+  "result": {
+    "item": "generations_core:green_street_lamp"
+  },
+  "show_notification": true
+}

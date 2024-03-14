@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:lime_dye"
+    },
+    "P": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "EWE",
+    "WWW",
+    "P P"
+  ],
+  "result": {
+    "item": "generations_core:lime_couch_middle"
+  },
+  "show_notification": true
+}

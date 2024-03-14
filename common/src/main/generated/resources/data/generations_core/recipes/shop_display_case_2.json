@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "W": {
+      "item": "generations_core:white_marble"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "GGG"
+  ],
+  "result": {
+    "item": "generations_core:shop_display_case_2"
+  },
+  "show_notification": true
+}

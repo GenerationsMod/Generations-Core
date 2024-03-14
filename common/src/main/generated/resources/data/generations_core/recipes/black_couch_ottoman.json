@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:black_dye"
+    },
+    "P": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "WWW",
+    "P P"
+  ],
+  "result": {
+    "item": "generations_core:black_couch_ottoman"
+  },
+  "show_notification": true
+}

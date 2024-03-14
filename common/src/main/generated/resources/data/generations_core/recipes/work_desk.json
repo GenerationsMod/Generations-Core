@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "generations_core:blue_marble"
+    },
+    "G": {
+      "item": "generations_core:gray_marble"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GBG"
+  ],
+  "result": {
+    "item": "generations_core:work_desk"
+  },
+  "show_notification": true
+}
