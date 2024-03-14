@@ -1195,6 +1195,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.LAVENDER_TOWN_DISC.get(), "discs/");
         createItem(GenerationsItems.LUGIA_DISC.get(), "discs/");
         createItem(GenerationsItems.MT_PYRE_DISC.get(), "discs/");
+        createItem(GenerationsItems.RELIC_SONG.get(), "legend_items/");
+        createItem(GenerationsItems.INERT_RELIC_SONG.get(), "legend_items/");
 
         createItem(GenerationsItems.POKE_WALKMON.get(), "utility_items/");
         createItem(GenerationsItems.GREAT_WALKMON.get(), "utility_items/");

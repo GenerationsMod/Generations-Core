@@ -379,7 +379,9 @@ public class TagsDatagen {
                     ZINNIA_DISC.get(),
                     LAVENDER_TOWN_DISC.get(),
                     LUGIA_DISC.get(),
-                    MT_PYRE_DISC.get()
+                    MT_PYRE_DISC.get(),
+                    RELIC_SONG.get(),
+                    INERT_RELIC_SONG.get()
             );
 
             tag(GenerationsItemTags.WALKMONS).add(

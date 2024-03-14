@@ -825,11 +825,8 @@ public class GenerationsItems {
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_RELIC_SONG_2 = register("shattered_relic_song_2", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_RELIC_SONG_3 = register("shattered_relic_song_3", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> SHATTERED_RELIC_SONG_4 = register("shattered_relic_song_4", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
-    public static final RegistrySupplier<RelicSongItem> RELIC_SONG = createRelicSong(true);
-    public static final RegistrySupplier<RelicSongItem> INERT_RELIC_SONG = createRelicSong(false);
-
-
-
+    public static final RegistrySupplier<RelicSongItem> RELIC_SONG = createRelicSong(false);
+    public static final RegistrySupplier<RelicSongItem> INERT_RELIC_SONG = createRelicSong(true);
     public static final RegistrySupplier<RedChainItem> RED_CHAIN = register("red_chain", properties -> new RedChainItem(properties.stacksTo(1)), LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> DNA_SPLICERS = register("dna_splicers", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REINS_OF_UNITY = register("reins_of_unity", Item::new, LEGENDARY_ITEMS);
