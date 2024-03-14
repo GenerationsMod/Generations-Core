@@ -1,15 +1,12 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
 import com.cobblemon.mod.common.CobblemonItems;
-import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsDecorationBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
-import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -21,7 +18,6 @@ import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
@@ -41,6 +37,12 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
         for (DyeColor color : DyeColor.values()) {
             buildVendingMachineRecipes(consumer, color);
             buildPastelBeanBagRecipes(consumer, color);
+            buildSwivelChairRecipes(consumer, color);
+            buildCouchOttomanRecipes(consumer, color);
+            buildCouchArmLeftRecipes(consumer, color);
+            buildCouchArmRightRecipes(consumer, color);
+            buildCouchMiddleRecipes(consumer, color);
+            buildStreetLampRecipes(consumer, color);
         }
 
         //FURNACES
@@ -354,10 +356,227 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .pattern("RIR")
                 .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
                 .save(consumer);
+        //Misc Furniture
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), 1)
+                .define('B', Items.BLUE_WOOL)
+                .define('Y', Items.YELLOW_WOOL)
+                .define('W', Items.WHITE_WOOL)
+                .pattern("BYB")
+                .pattern("BWB")
+                .unlockedBy(getHasName(Items.BLUE_WOOL), has(Items.BLUE_WOOL))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.COUCH.get(), 1)
+                .define('G', Items.GREEN_WOOL)
+                .define('Y', Items.YELLOW_WOOL)
+                .define('O', Items.OAK_PLANKS)
+                .pattern("GGG")
+                .pattern("YGG")
+                .pattern("OOO")
+                .unlockedBy(getHasName(Items.GREEN_WOOL), has(Items.GREEN_WOOL))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.HDTV.get(), 1)
+                .define('G', Items.GLASS)
+                .define('R', Items.IRON_INGOT)
+                .define('I', Items.REDSTONE)
+                .pattern("GGG")
+                .pattern("IRI")
+                .pattern("III")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SWITCH.get(), 1)
+                .define('C', Items.COPPER_INGOT)
+                .define('R', Items.REDSTONE)
+                .define('B', Items.BLUE_DYE)
+                .define('D', Items.RED_DYE)
+                .define('S', GenerationsItems.SILICON.get())
+                .pattern("SRS")
+                .pattern("SRS")
+                .pattern("BCD")
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.FOONGUS_CUSHION.get(), 1)
+                .define('W', Items.WHITE_WOOL)
+                .define('R', Items.RED_WOOL)
+                .define('M', Items.BROWN_MUSHROOM)
+                .define('B', Items.BLACK_WOOL)
+                .pattern("RRR")
+                .pattern("BMB")
+                .pattern("WWW")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.POKEBALL_CUSHION.get(), 1)
+                .define('W', Items.WHITE_WOOL)
+                .define('R', Items.RED_WOOL)
+                .define('B', Items.BLACK_WOOL)
+                .pattern("RRR")
+                .pattern("BWB")
+                .pattern("WWW")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.GREATBALL_CUSHION.get(), 1)
+                .define('W', Items.WHITE_WOOL)
+                .define('R', Items.BLUE_WOOL)
+                .define('B', Items.BLACK_WOOL)
+                .pattern("RRR")
+                .pattern("BWB")
+                .pattern("WWW")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.MASTERBALL_CUSHION.get(), 1)
+                .define('W', Items.WHITE_WOOL)
+                .define('R', Items.PURPLE_WOOL)
+                .define('B', Items.BLACK_WOOL)
+                .pattern("RRR")
+                .pattern("BWB")
+                .pattern("WWW")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.POKEBALL_PILLAR.get(), 1)
+                .define('S', Items.STONE)
+                .define('P', CobblemonItems.POKE_BALL)
+                .define('I', Items.COPPER_INGOT)
+                .pattern("SPS")
+                .pattern("SIS")
+                .pattern("SSS")
+                .unlockedBy(getHasName(CobblemonItems.POKE_BALL), has(CobblemonItems.POKE_BALL))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BUSH.get(), 1)
+                .define('B', Items.BONE_MEAL)
+                .define('O', Items.OAK_SAPLING)
+                .define('I', Items.IRON_INGOT)
+                .pattern("BBB")
+                .pattern("IOI")
+                .pattern("III")
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BENCH.get(), 1)
+                .define('O', Items.OAK_PLANKS)
+                .define('I', Items.IRON_INGOT)
+                .pattern("OOO")
+                .pattern("I I")
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get(), 1)
+                .define('C', Items.COPPER_INGOT)
+                .define('L', Items.REDSTONE_LAMP)
+                .define('G', Items.GLASS)
+                .pattern("LCL")
+                .pattern("GCG")
+                .pattern(" C ")
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.HOUSE_LAMP.get(), 1)
+                .define('W', Items.WHITE_WOOL)
+                .define('R', Items.REDSTONE_LAMP)
+                .define('I', Items.IRON_INGOT)
+                .pattern("WRW")
+                .pattern("WIW")
+                .pattern("III")
+                .unlockedBy(getHasName(Items.REDSTONE_LAMP), has(Items.REDSTONE_LAMP))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.LITWICK_CANDLE.get(), 1)
+                .define('C', Items.WHITE_CANDLE)
+                .define('Y', Items.YELLOW_CANDLE)
+                .pattern("CYC")
+                .pattern("CCC")
+                .unlockedBy(getHasName(Items.WHITE_CANDLE), has(Items.WHITE_CANDLE))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.LITWICK_CANDLES.get(), 1)
+                .requires(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), 3)
+                .unlockedBy(getHasName(GenerationsDecorationBlocks.LITWICK_CANDLE.get()), has(GenerationsDecorationBlocks.LITWICK_CANDLE.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHELF.get(), 1)
+                .define('B', GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock())
+                .define('W', Items.WHITE_DYE)
+                .define('O', Items.OAK_PLANKS)
+                .pattern("BBB")
+                .pattern("OOO")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BOOK_SHELF.get(), 1)
+                .define('B', Items.BOOK)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("WWW")
+                .pattern("BBB")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1.get(), 1)
+                .define('P', CobblemonItems.POTION)
+                .define('R', CobblemonItems.RARE_CANDY)
+                .define('G', Items.GLASS)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("PRP")
+                .pattern("GGG")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2.get(), 1)
+                .define('R', CobblemonItems.RARE_CANDY)
+                .define('L', Items.LIME_WOOL)
+                .define('G', Items.GLASS)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("RLR")
+                .pattern("GGG")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1.get(), 1)
+                .define('P', CobblemonItems.POTION)
+                .define('R', CobblemonItems.RARE_CANDY)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("PRP")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2.get(), 1)
+                .define('R', CobblemonItems.RARE_CANDY)
+                .define('L', Items.LIME_WOOL)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("RLR")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1.get(), 1)
+                .define('G', Items.GLASS)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("GGG")
+                .pattern("WWW")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2.get(), 1)
+                .define('G', Items.GLASS)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("WWW")
+                .pattern("GGG")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.WORK_DESK.get(), 1)
+                .define('G', GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
+                .define('B', GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock())
+                .pattern("GGG")
+                .pattern("GBG")
+                .unlockedBy(getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.DESK.get(), 1)
+                .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                .pattern("WWW")
+                .pattern("W W")
+                .unlockedBy(getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()), has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.TRASH_CAN.get(), 1)
+                .define('W', Items.IRON_INGOT)
+                .define('C', Items.COMPOSTER)
+                .pattern("WWW")
+                .pattern("WCW")
+                .pattern("WWW")
+                .unlockedBy(getHasName(Items.COMPOSTER), has(Items.COMPOSTER))
+                .save(consumer);
     }
 
 
-        private void buildPastelBeanBagRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) { //TODO: Figure out recipe
+        private void buildPastelBeanBagRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
         var dye = DyeItem.byColor(color);
         var pastelBeanBag = GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block().get(color).get();
 
@@ -374,6 +593,93 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .requires(GenerationsItemTags.PASTEL_BEAN_BAG)
                 .unlockedBy("has_" + GenerationsItemTags.PASTEL_BEAN_BAG.location().getPath(), has(GenerationsItemTags.PASTEL_BEAN_BAG))
                 .save(consumer, Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(pastelBeanBag)).withPath(a -> a + "_dyed"));
+    }
+
+    private void buildSwivelChairRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.SWIVEL_CHAIR.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('X', Items.WHITE_WOOL)
+                .define('S', GenerationsItems.SILICON.get())
+                .define('I', Items.IRON_INGOT)
+                .pattern("EXX")
+                .pattern("XXX")
+                .pattern("SIS")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+
+    private void buildCouchArmLeftRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.COUCH_ARM_LEFT.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('W', Items.WHITE_WOOL)
+                .define('P', Items.DARK_OAK_PLANKS)
+                .pattern("WEE")
+                .pattern("WWW")
+                .pattern("P P")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+    private void buildCouchArmRightRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.COUCH_ARM_RIGHT.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('W', Items.WHITE_WOOL)
+                .define('P', Items.DARK_OAK_PLANKS)
+                .pattern("EEW")
+                .pattern("WWW")
+                .pattern("P P")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+    private void buildCouchMiddleRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.COUCH_MIDDLE.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('W', Items.WHITE_WOOL)
+                .define('P', Items.DARK_OAK_PLANKS)
+                .pattern("EWE")
+                .pattern("WWW")
+                .pattern("P P")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+    private void buildCouchOttomanRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.COUCH_OTTOMAN.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('W', Items.WHITE_WOOL)
+                .define('P', Items.DARK_OAK_PLANKS)
+                .pattern("EEE")
+                .pattern("WWW")
+                .pattern("P P")
+                .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
+                .save(consumer);
+    }
+    private void buildStreetLampRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {
+        var dye = DyeItem.byColor(color);
+        var pastelBeanBag = GenerationsDecorationBlocks.STREET_LAMP.block().get(color).get();
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+                .define('E', dye)
+                .define('L', Items.REDSTONE_LAMP)
+                .define('I', Items.IRON_INGOT)
+                .pattern("ELE")
+                .pattern(" I ")
+                .pattern(" I ")
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(consumer);
     }
 
     private void buildVendingMachineRecipes(Consumer<FinishedRecipe> consumer, DyeColor color) {

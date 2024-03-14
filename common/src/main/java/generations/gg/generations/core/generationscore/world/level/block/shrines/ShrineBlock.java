@@ -93,7 +93,7 @@ public class ShrineBlock<T extends ShrineBlockEntity> extends GenericRotatableMo
         }
     }
 
-    public static enum ActivationState implements StringRepresentable {
+    public enum ActivationState implements StringRepresentable {
         NONE, ON, OFF;
 
         @Override
