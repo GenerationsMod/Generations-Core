@@ -51,6 +51,8 @@ public class MeloettaMusicBoxBlock extends GenericRotatableModelBlock<MeloettaMu
         return super.createDefaultState().setValue(HAS_RECORD, false);
     }
 
+
+
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPE;
@@ -124,6 +126,7 @@ public class MeloettaMusicBoxBlock extends GenericRotatableModelBlock<MeloettaMu
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
         builder.add(HAS_RECORD);
     }
 
