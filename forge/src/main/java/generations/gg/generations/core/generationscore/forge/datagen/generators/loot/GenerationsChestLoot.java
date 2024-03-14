@@ -81,7 +81,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.MT_PYRE_DISC.get(), GenerationsItems.TM_44.get(), GenerationsItems.TM_78.get(),
 						GenerationsItems.TM_100.get(), GenerationsItems.TM_115.get(), GenerationsItems.TM_156.get(),
 						GenerationsItems.TM_169.get(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem(),
-						Items.NETHERITE_SCRAP, CobblemonItems.RICH_MULCH.asItem(), GenerationsItems.DYNITE_ORE.get()
+						Items.NETHERITE_SCRAP, CobblemonItems.RICH_MULCH.asItem(), GenerationsItems.DYNITE_ORE.get(),
+						GenerationsItems.TM_181.get(), GenerationsItems.TM_199.get(), GenerationsItems.TM_221.get()
 				)));
 
 
@@ -125,7 +126,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_63.get(), GenerationsItems.TM_74.get(), GenerationsItems.TM_75.get(),
 						GenerationsItems.TM_85.get(), GenerationsItems.TM_92.get(), GenerationsItems.TM_98.get(),
 						GenerationsItems.TM_109.get(), GenerationsItems.TM_120.get(), GenerationsItems.TM_128.get(),
-						GenerationsItems.TM_129.get(), GenerationsItems.TM_138.get(), GenerationsItems.TM_161.get()
+						GenerationsItems.TM_129.get(), GenerationsItems.TM_138.get(), GenerationsItems.TM_161.get(),
+						GenerationsItems.TM_201.get(), GenerationsItems.TM_227.get()
 				)));
 
 		//output.accept(BuiltInLootTables.RUINED_PORTAL, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))).withPool(CHERISH_BALL));
@@ -164,7 +166,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.WATER_CANDY.get(), GenerationsItems.SHATTERED_ICE_KEY_1.get(), GenerationsItems.SHATTERED_ICE_KEY_2.get(),
 						GenerationsItems.SHATTERED_ICE_KEY_3.get(), GenerationsItems.SHATTERED_ICE_KEY_4.get(), GenerationsItems.TM_11.get(),
 						GenerationsItems.TM_22.get(), GenerationsItems.TM_50.get(), GenerationsItems.TM_77.get(), GenerationsItems.TM_110.get(),
-						GenerationsItems.TM_123.get(), GenerationsItems.TM_142.get(), GenerationsItems.TM_145.get(), GenerationsItems.TM_154.get()
+						GenerationsItems.TM_123.get(), GenerationsItems.TM_142.get(), GenerationsItems.TM_145.get(), GenerationsItems.TM_154.get(),
+						GenerationsItems.TM_188.get(), GenerationsItems.TM_196.get(), GenerationsItems.TM_208.get(), GenerationsItems.TM_209.get()
 				)));
 
 		output.accept(DREAM_BALL, LootTable.lootTable()
@@ -245,7 +248,9 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_29.get(), GenerationsItems.TM_42.get(), GenerationsItems.TM_61.get(), GenerationsItems.TM_114.get(),
 						GenerationsItems.TM_151.get(), GenerationsItems.TM_3.get(), GenerationsItems.TM_18.get(), GenerationsItems.TM_30.get(),
 						GenerationsItems.TM_43.get(), GenerationsItems.TM_62.get(), GenerationsItems.TM_87.get(), GenerationsItems.TM_94.get(),
-						GenerationsItems.TM_108.get(), GenerationsItems.TM_140.get()
+						GenerationsItems.TM_108.get(), GenerationsItems.TM_140.get(),
+						GenerationsItems.TM_174.get(), GenerationsItems.TM_187.get(), GenerationsItems.TM_212.get(),
+						GenerationsItems.TM_177.get(), GenerationsItems.TM_198.get(), GenerationsItems.TM_224.get()
 				)));
 
 
@@ -326,7 +331,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_15.get(), GenerationsItems.TM_21.get(), GenerationsItems.TM_60.get(), GenerationsItems.TM_95.get(),
 						GenerationsItems.TM_105.get(), GenerationsItems.TM_131.get(), GenerationsItems.TM_162.get(), GenerationsItems.TM_36.get(),
 						GenerationsItems.TM_51.get(), GenerationsItems.TM_76.get(), GenerationsItems.TM_86.get(), GenerationsItems.TM_101.get(),
-						GenerationsItems.TM_116.get(), GenerationsItems.TM_105.get(), GenerationsItems.DYNITE_ORE.get()
+						GenerationsItems.TM_116.get(), GenerationsItems.TM_105.get(), GenerationsItems.DYNITE_ORE.get(), GenerationsItems.TM_201.get(), GenerationsItems.TM_227.get()
 				)));
 
 		output.accept(GIGATON_BALL, LootTable.lootTable()
@@ -370,8 +375,11 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.THICK_CLUB.get(), GenerationsItems.WIDE_LENS.get(), GenerationsItems.DYNITE_ORE.get(),
 						GenerationsItems.Z_INGOT.get(), GenerationsItems.TM_31.get(), GenerationsItems.TM_53.get(),
 						GenerationsItems.TM_93.get(), GenerationsItems.TM_43.get(), GenerationsItems.TM_99.get(),
-						GenerationsItems.TM_104.get(), GenerationsItems.TM_121.get(), GenerationsItems.TM_170.get()
-				)));
+						GenerationsItems.TM_104.get(), GenerationsItems.TM_121.get(), GenerationsItems.TM_170.get(),
+						GenerationsItems.TM_180.get(), GenerationsItems.TM_223.get(), GenerationsItems.TM_225.get(),
+						GenerationsItems.TM_179.get(), GenerationsItems.TM_220.get(), GenerationsItems.TM_184.get(),
+						GenerationsItems.TM_192.get(), GenerationsItems.TM_213.get(), GenerationsItems.TM_229.get()
+						)));
 
 		output.accept(GREAT_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -428,8 +436,9 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_84.get(), GenerationsItems.TM_90.get(), GenerationsItems.TM_106.get(),
 						GenerationsItems.TM_133.get(), GenerationsItems.TM_149.get(), GenerationsItems.TM_44.get(),
 						GenerationsItems.TM_78.get(), GenerationsItems.TM_100.get(), GenerationsItems.TM_115.get(),
-						GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get()
-				)));
+						GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get(), GenerationsItems.TM_180.get(),
+						GenerationsItems.TM_223.get(), GenerationsItems.TM_225.get()
+						)));
 
 		output.accept(HEAL_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -473,7 +482,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_26.get(), GenerationsItems.TM_45.get(), GenerationsItems.TM_83.get(),
 						GenerationsItems.TM_91.get(), GenerationsItems.TM_102.get(), GenerationsItems.TM_148.get(),
 						GenerationsItems.TM_2.get(), GenerationsItems.TM_19.get(), GenerationsItems.TM_37.get(),
-						GenerationsItems.TM_79.get(), GenerationsItems.TM_127.get(), GenerationsItems.TM_139.get()
+						GenerationsItems.TM_79.get(), GenerationsItems.TM_127.get(), GenerationsItems.TM_139.get(),
+						GenerationsItems.TM_201.get(), GenerationsItems.TM_227.get()
 				)));
 
 		output.accept(HEAVY_BALL, LootTable.lootTable()
@@ -524,8 +534,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_53.get(), GenerationsItems.TM_93.get(),
 						GenerationsItems.TM_43.get(), GenerationsItems.TM_99.get(),
 						GenerationsItems.TM_104.get(), GenerationsItems.TM_121.get(),
-						GenerationsItems.TM_170.get(), GenerationsItems.Z_INGOT.get()
-				)));
+						GenerationsItems.TM_180.get(), GenerationsItems.TM_223.get(),
+						GenerationsItems.TM_225.get(), GenerationsItems.Z_INGOT.get(),
+						GenerationsItems.TM_176.get(), GenerationsItems.TM_186.get(), GenerationsItems.TM_215.get()
+						)));
 
 		output.accept(JET_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -574,7 +586,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_14.get(), GenerationsItems.TM_27.get(),
 						GenerationsItems.TM_40.get(), GenerationsItems.TM_65.get(),
 						GenerationsItems.TM_97.get(), GenerationsItems.TM_113.get(),
-						GenerationsItems.TM_160.get(), GenerationsItems.TM_164.get()
+						GenerationsItems.TM_160.get(), GenerationsItems.TM_164.get(),
+						GenerationsItems.TM_197.get(), GenerationsItems.TM_216.get()
 				)));
 
 		output.accept(LEADEN_BALL, LootTable.lootTable()
@@ -624,7 +637,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_157.get(), GenerationsItems.TM_165.get(),
 						GenerationsItems.TM_36.get(), GenerationsItems.TM_51.get(),
 						GenerationsItems.TM_76.get(), GenerationsItems.TM_86.get(),
-						GenerationsItems.TM_101.get(), GenerationsItems.TM_116.get(), GenerationsItems.TM_150.get()
+						GenerationsItems.TM_101.get(), GenerationsItems.TM_116.get(), GenerationsItems.TM_150.get(),
+						GenerationsItems.TM_176.get(), GenerationsItems.TM_186.get(), GenerationsItems.TM_215.get()
 				)));
 
 		output.accept(LEVEL_BALL, LootTable.lootTable()
@@ -669,7 +683,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_6.get(), GenerationsItems.TM_7.get(), GenerationsItems.TM_25.get(), GenerationsItems.TM_32.get(),
 						GenerationsItems.TM_47.get(), GenerationsItems.TM_58.get(), GenerationsItems.TM_64.get(), GenerationsItems.TM_73.get(),
 						GenerationsItems.TM_89.get(), GenerationsItems.TM_112.get(), GenerationsItems.TM_134.get(), GenerationsItems.TM_158.get(),
-						GenerationsItems.TM_167.get(), GenerationsItems.DYNITE_ORE.get()
+						GenerationsItems.TM_167.get(), GenerationsItems.TM_190.get(), GenerationsItems.TM_194.get(), GenerationsItems.TM_206.get(),
+						GenerationsItems.DYNITE_ORE.get()
 				)));
 
 		output.accept(LOVE_BALL, LootTable.lootTable()
@@ -706,7 +721,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POKEMAIL_INQUIRY.get(), GenerationsItems.POKEMAIL_LIKE.get(), GenerationsItems.POKEMAIL_MECH.get(),
 						GenerationsItems.POKEMAIL_MOSAIC.get(), GenerationsItems.FAIRY_CANDY.get(), GenerationsItems.TM_2.get(),
 						GenerationsItems.TM_19.get(), GenerationsItems.TM_37.get(), GenerationsItems.TM_79.get(),
-						GenerationsItems.TM_127.get(), GenerationsItems.TM_139.get()
+						GenerationsItems.TM_127.get(), GenerationsItems.TM_139.get(), GenerationsItems.TM_178.get(),
+						GenerationsItems.TM_217.get(), GenerationsItems.TM_218.get(), GenerationsItems.TM_228.get(),
+						GenerationsItems.TM_174.get(), GenerationsItems.TM_187.get(), GenerationsItems.TM_212.get(),
+						GenerationsItems.TM_177.get(), GenerationsItems.TM_198.get(), GenerationsItems.TM_224.get()
 				)));
 
 		output.accept(LURE_BALL, LootTable.lootTable()
@@ -779,7 +797,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POISON_CANDY.get(), GenerationsItems.DRAGON_CANDY.get(), GenerationsItems.TM_13.get(),
 						GenerationsItems.TM_26.get(), GenerationsItems.TM_45.get(), GenerationsItems.TM_83.get(), GenerationsItems.TM_91.get(),
 						GenerationsItems.TM_102.get(), GenerationsItems.TM_148.get(), GenerationsItems.TM_44.get(), GenerationsItems.TM_78.get(),
-						GenerationsItems.TM_100.get(), GenerationsItems.TM_115.get(), GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get()
+						GenerationsItems.TM_100.get(), GenerationsItems.TM_115.get(), GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get(),
+						GenerationsItems.TM_178.get(), GenerationsItems.TM_217.get(), GenerationsItems.TM_218.get(), GenerationsItems.TM_228.get(),
+						GenerationsItems.TM_174.get(), GenerationsItems.TM_187.get(), GenerationsItems.TM_212.get(),
+						GenerationsItems.TM_177.get(), GenerationsItems.TM_198.get(), GenerationsItems.TM_224.get()
 				)));
 
 		output.accept(MASTER_BALL, LootTable.lootTable()
@@ -898,7 +919,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POKEMAIL_WOOD.get(), GenerationsItems.FLYING_CANDY.get(), GenerationsItems.BUG_CANDY.get(),
 						GenerationsItems.TM_14.get(), GenerationsItems.TM_27.get(), GenerationsItems.TM_40.get(),
 						GenerationsItems.TM_65.get(), GenerationsItems.TM_97.get(), GenerationsItems.TM_105.get(),
-						GenerationsItems.TM_131.get(), GenerationsItems.TM_162.get()
+						GenerationsItems.TM_190.get(), GenerationsItems.TM_194.get(), GenerationsItems.TM_206.get(),
+						GenerationsItems.TM_131.get(), GenerationsItems.TM_162.get(),
+						GenerationsItems.TM_179.get(), GenerationsItems.TM_220.get(), GenerationsItems.TM_184.get(),
+						GenerationsItems.TM_192.get(), GenerationsItems.TM_213.get(), GenerationsItems.TM_229.get()
 				)));
 
 		output.accept(NET_BALL, LootTable.lootTable()
@@ -935,7 +959,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_142.get(), GenerationsItems.TM_145.get(), GenerationsItems.TM_154.get(),
 						GenerationsItems.TM_15.get(), GenerationsItems.TM_21.get(), GenerationsItems.TM_60.get(),
 						GenerationsItems.TM_95.get(), GenerationsItems.TM_105.get(), GenerationsItems.TM_131.get(),
-						GenerationsItems.TM_162.get()
+						GenerationsItems.TM_162.get(), GenerationsItems.TM_188.get(), GenerationsItems.TM_196.get(),
+						GenerationsItems.TM_208.get(), GenerationsItems.TM_209.get(), GenerationsItems.TM_190.get(),
+						GenerationsItems.TM_194.get(), GenerationsItems.TM_206.get(), GenerationsItems.TM_182.get(),
+						GenerationsItems.TM_185.get(), GenerationsItems.TM_219.get()
 				)));
 
 		output.accept(ORIGIN_BALL, LootTable.lootTable()
@@ -972,7 +999,9 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_82.get(), GenerationsItems.TM_96.get(), GenerationsItems.TM_126.get(),
 						GenerationsItems.TM_136.get(), GenerationsItems.TM_147.get(), GenerationsItems.TM_166.get(),
 						GenerationsItems.TM_44.get(), GenerationsItems.TM_78.get(), GenerationsItems.TM_100.get(),
-						GenerationsItems.TM_115.get(), GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get(), GenerationsItems.MEW_FOSSIL.get()
+						GenerationsItems.TM_115.get(), GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get(), GenerationsItems.MEW_FOSSIL.get(),
+						GenerationsItems.TM_175.get(), GenerationsItems.TM_214.get(), GenerationsItems.TM_200.get(),
+						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get()
 				)));
 
 		output.accept(PARK_BALL, LootTable.lootTable()
@@ -1022,7 +1051,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_33.get(), GenerationsItems.TM_56.get(), GenerationsItems.TM_71.get(),
 						GenerationsItems.TM_81.get(), GenerationsItems.TM_111.get(), GenerationsItems.TM_119.get(),
 						GenerationsItems.TM_137.get(), GenerationsItems.TM_146.get(), GenerationsItems.TM_155.get(),
-						GenerationsItems.TM_159.get(), GenerationsItems.TM_168.get()
+						GenerationsItems.TM_159.get(), GenerationsItems.TM_168.get(),
+						GenerationsItems.TM_176.get(), GenerationsItems.TM_186.get(), GenerationsItems.TM_215.get()
 				)));
 
 		output.accept(POKE_BALL, LootTable.lootTable()
@@ -1057,7 +1087,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POKEMAIL_RETRO.get(), GenerationsItems.POKEMAIL_RSVP.get(), GenerationsItems.POKEMAIL_SHADOW.get(),
 						GenerationsItems.POKEMAIL_SNOW.get(), GenerationsItems.POKEMAIL_SPACE.get(), GenerationsItems.POKEMAIL_STEEL.get(),
 						GenerationsItems.POKEMAIL_THANKS.get(), GenerationsItems.POKEMAIL_TROPIC.get(), GenerationsItems.POKEMAIL_TUNNEL.get(),
-						GenerationsItems.POKEMAIL_WAVE.get(), GenerationsItems.POKEMAIL_WOOD.get(), GenerationsItems.DYNITE_ORE.get()
+						GenerationsItems.POKEMAIL_WAVE.get(), GenerationsItems.POKEMAIL_WOOD.get(), GenerationsItems.DYNITE_ORE.get(), GenerationsItems.TM_172.get(),
+						GenerationsItems.TM_183.get(), GenerationsItems.TM_191.get(), GenerationsItems.TM_193.get(), GenerationsItems.TM_202.get(),
+						GenerationsItems.TM_203.get(), GenerationsItems.TM_204.get(), GenerationsItems.TM_205.get(), GenerationsItems.TM_182.get(),
+						GenerationsItems.TM_185.get(), GenerationsItems.TM_219.get()
 				)));
 
 		output.accept(PREMIER_BALL, LootTable.lootTable()
@@ -1127,7 +1160,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_23.get(), GenerationsItems.TM_48.get(), GenerationsItems.TM_68.get(),
 						GenerationsItems.TM_72.get(), GenerationsItems.TM_82.get(), GenerationsItems.TM_96.get(),
 						GenerationsItems.TM_126.get(), GenerationsItems.TM_136.get(), GenerationsItems.TM_147.get(),
-						GenerationsItems.TM_166.get()
+						GenerationsItems.TM_166.get(), GenerationsItems.TM_173.get(), GenerationsItems.TM_210.get(), GenerationsItems.TM_211.get()
 				)));
 
 		output.accept(REPEAT_BALL, LootTable.lootTable()
@@ -1160,7 +1193,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POKEMAIL_WAVE.get(), GenerationsItems.POKEMAIL_WOOD.get(), GenerationsItems.TM_12.get(),
 						GenerationsItems.TM_39.get(), GenerationsItems.TM_58.get(), GenerationsItems.TM_64.get(), GenerationsItems.TM_73.get(),
 						GenerationsItems.TM_89.get(), GenerationsItems.TM_112.get(), GenerationsItems.TM_134.get(), GenerationsItems.TM_158.get(),
-						GenerationsItems.TM_167.get()
+						GenerationsItems.TM_167.get(), GenerationsItems.TM_172.get(),
+						GenerationsItems.TM_183.get(), GenerationsItems.TM_191.get(), GenerationsItems.TM_193.get(), GenerationsItems.TM_202.get(),
+						GenerationsItems.TM_203.get(), GenerationsItems.TM_204.get(), GenerationsItems.TM_205.get(), GenerationsItems.TM_173.get(), GenerationsItems.TM_210.get(),
+						GenerationsItems.TM_211.get(), GenerationsItems.TM_182.get(), GenerationsItems.TM_185.get(), GenerationsItems.TM_219.get()
 				)));
 
 		output.accept(SAFARI_BALL, LootTable.lootTable()
@@ -1197,7 +1233,9 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_155.get(), GenerationsItems.TM_159.get(), GenerationsItems.TM_168.get(),
 						GenerationsItems.TM_5.get(), GenerationsItems.TM_28.get(), GenerationsItems.TM_35.get(),
 						GenerationsItems.TM_55.get(), GenerationsItems.TM_84.get(), GenerationsItems.TM_90.get(),
-						GenerationsItems.TM_106.get(), GenerationsItems.TM_133.get(), GenerationsItems.TM_149.get()
+						GenerationsItems.TM_106.get(), GenerationsItems.TM_133.get(), GenerationsItems.TM_149.get(),
+						GenerationsItems.TM_189.get(), GenerationsItems.TM_195.get(), GenerationsItems.TM_207.get(),
+						GenerationsItems.TM_181.get(), GenerationsItems.TM_199.get(), GenerationsItems.TM_221.get()
 				)));
 
 		output.accept(SPORT_BALL, LootTable.lootTable()
@@ -1232,7 +1270,9 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_12.get(), GenerationsItems.TM_39.get(), GenerationsItems.TM_58.get(),
 						GenerationsItems.TM_64.get(), GenerationsItems.TM_73.get(), GenerationsItems.TM_89.get(),
 						GenerationsItems.TM_112.get(), GenerationsItems.TM_134.get(), GenerationsItems.TM_158.get(),
-						GenerationsItems.TM_167.get()
+						GenerationsItems.TM_167.get(), GenerationsItems.TM_189.get(), GenerationsItems.TM_195.get(), GenerationsItems.TM_207.get(),
+						GenerationsItems.TM_179.get(), GenerationsItems.TM_220.get(), GenerationsItems.TM_184.get(),
+						GenerationsItems.TM_192.get(), GenerationsItems.TM_213.get(), GenerationsItems.TM_229.get()
 				)));
 
 		output.accept(STRANGE_BALL, LootTable.lootTable()
@@ -1264,7 +1304,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_151.get(), GenerationsItems.TM_3.get(), GenerationsItems.TM_18.get(),
 						GenerationsItems.TM_30.get(), GenerationsItems.TM_43.get(), GenerationsItems.TM_62.get(),
 						GenerationsItems.TM_87.get(), GenerationsItems.TM_94.get(), GenerationsItems.TM_108.get(),
-						GenerationsItems.TM_140.get(), Items.TOTEM_OF_UNDYING, GenerationsItems.ENIGMA_FRAGMENT.get(), GenerationsItems.MEW_FOSSIL.get()
+						GenerationsItems.TM_140.get(), GenerationsItems.TM_189.get(), GenerationsItems.TM_195.get(), GenerationsItems.TM_207.get(),
+						Items.TOTEM_OF_UNDYING, GenerationsItems.ENIGMA_FRAGMENT.get(), GenerationsItems.MEW_FOSSIL.get(),
+						GenerationsItems.TM_175.get(), GenerationsItems.TM_214.get(), GenerationsItems.TM_200.get(),
+						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get()
 				)));
 
 		output.accept(TIMER_BALL, LootTable.lootTable()
@@ -1299,7 +1342,13 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POKEMAIL_RSVP.get(), GenerationsItems.POKEMAIL_SHADOW.get(), GenerationsItems.POKEMAIL_SNOW.get(),
 						GenerationsItems.POKEMAIL_SPACE.get(), GenerationsItems.POKEMAIL_STEEL.get(), GenerationsItems.POKEMAIL_THANKS.get(),
 						GenerationsItems.POKEMAIL_TROPIC.get(), GenerationsItems.POKEMAIL_TUNNEL.get(), GenerationsItems.POKEMAIL_WAVE.get(),
-						GenerationsItems.POKEMAIL_WOOD.get(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem()
+						GenerationsItems.POKEMAIL_WOOD.get(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem(), GenerationsItems.TM_172.get(),
+						GenerationsItems.TM_183.get(), GenerationsItems.TM_191.get(), GenerationsItems.TM_193.get(), GenerationsItems.TM_202.get(),
+						GenerationsItems.TM_203.get(), GenerationsItems.TM_204.get(), GenerationsItems.TM_205.get(),
+						GenerationsItems.TM_173.get(), GenerationsItems.TM_210.get(), GenerationsItems.TM_211.get(),
+						GenerationsItems.TM_181.get(), GenerationsItems.TM_199.get(), GenerationsItems.TM_221.get(),
+						GenerationsItems.TM_178.get(), GenerationsItems.TM_217.get(), GenerationsItems.TM_218.get(),
+						GenerationsItems.TM_228.get()
 				)));
 
 		output.accept(ULTRA_BALL, LootTable.lootTable()
@@ -1339,7 +1388,13 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POKEMAIL_RSVP.get(), GenerationsItems.POKEMAIL_SHADOW.get(), GenerationsItems.POKEMAIL_SNOW.get(),
 						GenerationsItems.POKEMAIL_SPACE.get(), GenerationsItems.POKEMAIL_STEEL.get(), GenerationsItems.POKEMAIL_THANKS.get(),
 						GenerationsItems.POKEMAIL_TROPIC.get(), GenerationsItems.POKEMAIL_TUNNEL.get(), GenerationsItems.POKEMAIL_WAVE.get(),
-						GenerationsItems.POKEMAIL_WOOD.get(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem()
+						GenerationsItems.POKEMAIL_WOOD.get(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem(),
+						GenerationsItems.TM_173.get(), GenerationsItems.TM_210.get(), GenerationsItems.TM_211.get(),
+						GenerationsItems.TM_188.get(), GenerationsItems.TM_196.get(), GenerationsItems.TM_208.get(), GenerationsItems.TM_209.get(),
+						GenerationsItems.TM_197.get(), GenerationsItems.TM_216.get(),
+						GenerationsItems.TM_181.get(), GenerationsItems.TM_199.get(), GenerationsItems.TM_221.get(),
+						GenerationsItems.TM_175.get(), GenerationsItems.TM_214.get(), GenerationsItems.TM_200.get(),
+						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get()
 				)));
 
 		output.accept(WING_BALL, LootTable.lootTable()
@@ -1375,7 +1430,8 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.X_SPEED.asItem(), GenerationsItems.X_ACCURACY_6.get(), CobblemonItems.X_ATTACK.asItem(),
 						GenerationsItems.TM_14.get(), GenerationsItems.TM_27.get(), GenerationsItems.TM_40.get(),
 						GenerationsItems.TM_65.get(), GenerationsItems.TM_97.get(), GenerationsItems.TM_113.get(),
-						GenerationsItems.TM_160.get(), GenerationsItems.TM_164.get()
+						GenerationsItems.TM_160.get(), GenerationsItems.TM_164.get(),
+						GenerationsItems.TM_197.get(), GenerationsItems.TM_216.get()
 				)));
 	}
 
