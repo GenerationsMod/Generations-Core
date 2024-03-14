@@ -991,8 +991,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SAPPHIRE = register("sapphire", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SILICON = register("silicon", Item::new, PLAYER_ITEMS);
 
-    public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, UNIMPLEMENTED);
-
     /**
      * Utility Items
      */
@@ -1462,6 +1460,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> X_TRANSCEIVER_RED = register("x_transceiver_red", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> X_TRANSCEIVER_YELLOW = register("x_transceiver_yellow", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
     public static final RegistrySupplier<Item> YELLOW_SCARF = register("yellow_scarf", properties -> new Item(properties.stacksTo(1)), UNIMPLEMENTED);
+    public static final RegistrySupplier<Item> GALARICA_TWIG = register("galarica_twig", Item::new, UNIMPLEMENTED);
 
     /**
      * Items to be included in Minecraft Default Section.

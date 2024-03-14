@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "key_stone_1": {
+    "key_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:key_stone_1"
+              "generations_core:key_stone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "key_stone_1",
+      "key_stone",
       "has_the_recipe"
     ]
   ],

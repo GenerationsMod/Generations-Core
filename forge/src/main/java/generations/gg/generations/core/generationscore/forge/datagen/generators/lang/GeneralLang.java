@@ -326,7 +326,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(SACRED_ASH, "§7HINT: A sacred item capable of bringing back the dead.");
 
         //Legendary Beasts
-        addTooltip(SACRED_ASH, "HINT: A sacred item capable of bringing back the dead.");
+        addTooltip(SACRED_ASH, "§HINT: A sacred item capable of bringing back the dead.");
 
         add("generations_core.special.shadow.already", "%s heart is already closed.");
         add("generations_core.special.shadow.success", "%s heart has been closed.");

@@ -4,7 +4,7 @@
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "generations_core:key_stone_1"
+      "item": "generations_core:key_stone"
     },
     "B": {
       "type": "generations_core:pokemon",
