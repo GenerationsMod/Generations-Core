@@ -299,13 +299,13 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         }
 
         var builder = RksRecipeJsonBuilder.create(result.get())
-                .input('A', KEY_STONE_1.get())
+                .input('A', KEY_STONE.get())
                 .input('B', new PokemonIngredient(pokemon, false))
                 .input('C', Items.NETHERITE_SCRAP);
         if(special != null) builder.input('D', item).pattern(" D ".toUpperCase());
         builder.pattern("ABC")
                 .doesntConsumeTimeCapsules()
-                .criterion(KEY_STONE_1.getId().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(KEY_STONE_1.get()))
+                .criterion(KEY_STONE.getId().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(KEY_STONE.get()))
                 .offerTo(exporter, result.getId());
     }
 

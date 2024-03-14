@@ -428,6 +428,10 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .requires(GenerationsItems.LAVA_CRYSTAL.get(), 9)
                 .unlockedBy(getHasName(GenerationsItems.LAVA_CRYSTAL.get()), has(GenerationsItems.LAVA_CRYSTAL.get()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.KEY_STONE.get())
+                .requires(GenerationsItems.MEGASTONE_SHARD.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.MEGASTONE_SHARD.get()), has(GenerationsItems.MEGASTONE_SHARD.get()))
+                .save(consumer);
 
         //These are all HeldItems and Recipes are not needed rn
         /*
