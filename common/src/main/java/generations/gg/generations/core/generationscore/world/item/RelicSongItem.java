@@ -10,7 +10,7 @@ public class RelicSongItem extends ArchitecturyRecordItem implements LangTooltip
     private final boolean notInsert;
 
     public RelicSongItem(Item.Properties properties, boolean notInsert) {
-        super(0, GenerationsSounds.MELOETTAS_RELIC_SONG, properties, 600);
+        super(0, GenerationsSounds.MELOETTAS_RELIC_SONG, properties, 30);
         this.notInsert = notInsert;
     }
 
