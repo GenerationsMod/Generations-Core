@@ -334,6 +334,18 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:tm_189"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_195"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_207"
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:totem_of_undying"
         },
         {
@@ -343,6 +355,26 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:mew_fossil"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_175"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_214"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_200"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_222"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_226"
         }
       ],
       "rolls": 1.0

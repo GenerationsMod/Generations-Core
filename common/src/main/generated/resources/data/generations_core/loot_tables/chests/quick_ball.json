@@ -399,6 +399,18 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_166"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_173"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_210"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_211"
         }
       ],
       "rolls": {

@@ -399,6 +399,46 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_139"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_178"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_217"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_218"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_228"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_174"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_187"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_212"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_177"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_198"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_224"
         }
       ],
       "rolls": {

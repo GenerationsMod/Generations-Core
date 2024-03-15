@@ -1,6 +1,5 @@
 {
   "values": [
-    "generations_core:galarica_twig",
     "generations_core:ability_urge",
     "generations_core:adventure_guide",
     "generations_core:apricorn_box",
@@ -228,6 +227,7 @@
     "generations_core:x_transceiver_blue",
     "generations_core:x_transceiver_red",
     "generations_core:x_transceiver_yellow",
-    "generations_core:yellow_scarf"
+    "generations_core:yellow_scarf",
+    "generations_core:galarica_twig"
   ]
 }

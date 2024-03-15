@@ -403,6 +403,30 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_140"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_174"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_187"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_212"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_177"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_198"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_224"
         }
       ],
       "rolls": {

@@ -439,6 +439,74 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:growth_mulch"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_173"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_210"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_211"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_188"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_196"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_208"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_209"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_197"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_216"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_181"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_199"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_221"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_175"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_214"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_200"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_222"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_226"
         }
       ],
       "rolls": {
