@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "R": {
+      "item": "generations_core:ruby"
+    },
+    "S": {
+      "item": "generations_core:silicon"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "GGG",
+    "NSN"
+  ],
+  "result": {
+    "item": "generations_core:rks_machine"
+  },
+  "show_notification": true
+}

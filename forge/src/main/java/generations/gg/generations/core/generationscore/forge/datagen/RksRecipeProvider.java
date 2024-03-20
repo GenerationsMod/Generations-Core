@@ -120,8 +120,6 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createParadoxPast("slitherwing", "volcarona", exporter);
         createParadoxPast("sandyshocks", "magneton", exporter);
         createParadoxPast("roaringmoon", "salamence", exporter);
-        //Koraidon needs something additional or needs removed, it's too easy
-        createParadoxPast("koraidon", "cyclizar", exporter);
         createParadoxPast("gougingfire", "entei", exporter);
         createParadoxPast("ragingbolt", "raikou", exporter);
 
@@ -132,8 +130,6 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createParadoxFuture("ironmoth", "volcarona", exporter);
         createParadoxFuture("ironthorns", "tyranitar", exporter);
         createParadoxFuture("ironvaliant", "gallade", exporter);
-        //Miraidon needs something additional or needs removed, it's too easy
-        createParadoxFuture("miraidon", "cyclizar", exporter);
         createParadoxFuture("ironleaves", "virizion", exporter);
         createParadoxFuture("ironboulder", "terrakion", exporter);
         createParadoxFuture("ironcrown", "cobalion", exporter);

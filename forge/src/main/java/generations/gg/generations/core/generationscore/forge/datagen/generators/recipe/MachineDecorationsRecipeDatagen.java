@@ -160,6 +160,19 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .unlockedBy(getHasName(Items.ICE), has(Items.ICE))
                 .save(consumer);
 
+        //RKS Machine
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.RKS_MACHINE.get())
+                .define('I', Items.IRON_INGOT)
+                .define('G', Items.GLASS)
+                .define('R', GenerationsItems.RUBY.get())
+                .define('N', Items.NETHERITE_INGOT)
+                .define('S', GenerationsItems.SILICON.get())
+                .pattern("IRI")
+                .pattern("GGG")
+                .pattern("NSN")
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(consumer);
+
         //Box
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BOX.get())
                 .define('P', Items.PAPER)

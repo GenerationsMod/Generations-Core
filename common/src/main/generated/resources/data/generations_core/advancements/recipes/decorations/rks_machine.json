@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "coal": {
+    "has_iron_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:coal"
+              "minecraft:iron_ingot"
             ]
           }
         ]
@@ -15,21 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:rks/koraidon"
+        "recipe": "generations_core:rks_machine"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "coal",
+      "has_iron_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "generations_core:rks/koraidon"
+      "generations_core:rks_machine"
     ]
   },
-  "sends_telemetry_event": true
+  "sends_telemetry_event": false
 }
