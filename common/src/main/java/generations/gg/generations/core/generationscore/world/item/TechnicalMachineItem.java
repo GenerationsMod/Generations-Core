@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
 public class TechnicalMachineItem extends MoveTeachingItem {
@@ -13,5 +14,11 @@ public class TechnicalMachineItem extends MoveTeachingItem {
     @Override
     protected String getMoveString(ItemStack itemStack) {
         return move;
+    }
+
+    @Override
+    public Component getName(net.minecraft.world.item.ItemStack stack) {
+        var move = getMove(stack);
+        return Component.keybind("").append(super.getName(stack)).append(Component.literal(" - ")).append((move != null ? move.getDisplayName() : Component.literal("Blank")));
     }
 }

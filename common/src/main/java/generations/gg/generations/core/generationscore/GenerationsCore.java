@@ -124,6 +124,9 @@ public class GenerationsCore
 
 		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {
 			var stack = player.getItemInHand(hand);
+
+			if(player.level().isClientSide()) return EventResult.pass();
+
 			var result = PixelmonInteractions.process(entity, player, stack);
 			if(result.interruptsFurtherEvaluation() && stack.getItem() instanceof PixelmonInteractions.PixelmonInteraction interaction && interaction.isConsumed()) stack.shrink(1);
 			else if(stack.is(GenerationsItems.ZYGARDE_CUBE.get()) && entity instanceof ZygardeCellEntity) {
