@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.battles.ShowdownMoveset;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import dev.architectury.event.EventResult;
 import net.minecraft.world.entity.Entity;

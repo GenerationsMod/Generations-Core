@@ -56,6 +56,9 @@ public class GenerationsItemTags {
     public static final TagKey<Item> HAMMERS = create("hammers");
     public static final TagKey<Item> SHEARS = create("shears");
     public static final TagKey<Item> KEY_STONES = create("key_stones");
+    public static final TagKey<Item> DYNAMAX_BANDS = create("dynamax_bands");
+    public static final TagKey<Item> TERA_ORBS = create("tera_orbs");
+    public static final TagKey<Item> Z_RINGS = create("z_rings");
 
     private static TagKey<Item> create(String name) {
         return TagKey.create(Registries.ITEM, GenerationsCore.id(name));

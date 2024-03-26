@@ -1,19 +1,32 @@
 package generations.gg.generations.core.generationscore
 
+import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
+import com.cobblemon.mod.common.util.cobblemonResource
 import generations.gg.generations.core.generationscore.api.player.Caught
 import generations.gg.generations.core.generationscore.config.SpeciesKey
+import generations.gg.generations.core.generationscore.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem.BattleData
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsUtilityBlocks
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 
 class GenerationsCobblemonEvents {
+
     companion object {
+        val gimmackItems: Set<ResourceLocation> = setOf(
+            cobblemonResource("key_stone"),
+            cobblemonResource("dynamax_band"),
+            cobblemonResource("tera_orb"),
+            cobblemonResource("z_ring")
+        )
+
+
         @JvmStatic
         fun init() {
             CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) { it ->
@@ -60,7 +73,18 @@ class GenerationsCobblemonEvents {
                 Caught.get(event.player).accumulate(speciesKey)
             }
 
-            GenerationsCobblemonEvents
+            CobblemonEvents.BATTLE_STARTED_PRE.subscribe(Priority.HIGHEST)  {
+                it.battle.actors.filter { it is PlayerBattleActor }.map { it as PlayerBattleActor }.map { it.entity }.filterNotNull().forEach {
+                    val keyItems = Cobblemon.playerData.get(it).keyItems
+
+                    keyItems.removeAll(gimmackItems)
+
+                    if(it.inventory.contains(GenerationsItemTags.KEY_STONES)) keyItems.add(cobblemonResource("key_stone"))
+                    if(it.inventory.contains(GenerationsItemTags.DYNAMAX_BANDS)) keyItems.add(cobblemonResource("dynamax_band"))
+                    if(it.inventory.contains(GenerationsItemTags.TERA_ORBS)) keyItems.add(cobblemonResource("tera_orb"))
+                    if(it.inventory.contains(GenerationsItemTags.Z_RINGS)) keyItems.add(cobblemonResource("z_ring"))
+                }
+            }
 
             CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST) {
 

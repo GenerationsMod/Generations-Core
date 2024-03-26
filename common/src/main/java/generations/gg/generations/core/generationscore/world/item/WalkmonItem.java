@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item;
 
+import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import generations.gg.generations.core.generationscore.world.container.GenericContainer;
 import generations.gg.generations.core.generationscore.world.container.WalkmonContainer;
 import net.minecraft.nbt.Tag;
@@ -14,6 +15,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class WalkmonItem extends Item {
     private final int row;
@@ -57,6 +60,10 @@ public class WalkmonItem extends Item {
         @Override
         public @Nullable AbstractContainerMenu createMenu(int i, @NotNull Inventory arg, @NotNull Player arg2) {
             return new WalkmonContainer(i, arg, this, arg2.getInventory().selected);
+        }
+
+        public Optional<ItemStack> getDisc() {
+            return Optional.empty();
         }
     }
 }

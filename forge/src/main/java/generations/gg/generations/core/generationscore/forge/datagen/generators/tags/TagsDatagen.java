@@ -270,6 +270,7 @@ public class TagsDatagen {
             super(arg, completableFuture, blockTagsProvider.contentsGetter(), GenerationsCore.MOD_ID, existingFileHelper);
         }
 
+
         @Override
         protected void addTags(HolderLookup.@NotNull Provider arg) {
             //Copy Block tags to item version
@@ -527,6 +528,17 @@ public class TagsDatagen {
                     case BOOTS -> tag(Tags.Items.ARMORS_BOOTS).add(armor.get());
                 }
             });
+
+            tag(GenerationsItemTags.KEY_STONES)
+                    .add(KEY_STONE.getKey())
+                    .add(KEY_STONE_2.getKey())
+                    .add(MEGA_RING.getKey())
+                    .add(MEGA_BRACELET.getKey())
+                    .add(MEGA_CHARM.getKey())
+                    .add(MEGA_CUFF.getKey());
+            tag(GenerationsItemTags.DYNAMAX_BANDS).add(DYNAMAX_BAND.getKey());
+            tag(GenerationsItemTags.Z_RINGS).add(Z_RING.getKey()).add(Z_POWER_RING.getKey());
+
         }
     }
 
