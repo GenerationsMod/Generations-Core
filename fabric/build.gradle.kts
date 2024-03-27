@@ -63,7 +63,7 @@ dependencies {
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
-    modApi("net.fabricmc:fabric-language-kotlin:1.10.17+kotlin.1.9.22")
+    modApi("net.fabricmc:fabric-language-kotlin:1.10.19+kotlin.1.9.23")
     modRuntimeOnly("com.jozufozu.flywheel:flywheel-fabric-$minecraftVersion:${project.properties["flywheel_fabric_version"]}")
 }
 
