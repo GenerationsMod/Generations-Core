@@ -106,10 +106,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:hi_tech_earbuds"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:hyper_potion"
         },
         {
@@ -459,6 +455,11 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_139"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:hi_tech_earbuds"
         }
       ],
       "rolls": {

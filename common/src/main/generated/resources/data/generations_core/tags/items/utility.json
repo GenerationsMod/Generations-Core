@@ -15,12 +15,6 @@
     "generations_core:hidden_lever",
     "generations_core:hidden_pressure_plate",
     "generations_core:hidden_cube",
-    "generations_core:hidden_button",
-    "generations_core:poke_walkmon",
-    "generations_core:great_walkmon",
-    "generations_core:ultra_walkmon",
-    "generations_core:master_walkmon",
-    "generations_core:hi_tech_earbuds",
-    "generations_core:gb_sounds"
+    "generations_core:hidden_button"
   ]
 }

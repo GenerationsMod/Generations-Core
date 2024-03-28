@@ -3,13 +3,17 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import com.cobblemon.mod.common.CobblemonItems;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.loot.ResouceKeyEntry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -77,13 +81,12 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						Items.PURPUR_BLOCK, Items.END_STONE, Items.PRISMARINE, Items.GLOWSTONE_DUST, Items.NETHER_WART,
 						Items.SPIDER_EYE, Items.WARPED_FUNGUS, Items.MUSIC_DISC_CAT, GenerationsItems.Z_INGOT.get(),
 						Items.AMETHYST_SHARD, GenerationsItems.RUBY.get(), GenerationsItems.LAVA_CRYSTAL.get(),
-						GenerationsItems.BELLIGERENT_WING.get(), GenerationsItems.LUGIA_DISC.get(), GenerationsItems.LAVENDER_TOWN_DISC.get(),
-						GenerationsItems.MT_PYRE_DISC.get(), GenerationsItems.TM_44.get(), GenerationsItems.TM_78.get(),
+						GenerationsItems.BELLIGERENT_WING.get(), GenerationsItems.TM_44.get(), GenerationsItems.TM_78.get(),
 						GenerationsItems.TM_100.get(), GenerationsItems.TM_115.get(), GenerationsItems.TM_156.get(),
 						GenerationsItems.TM_169.get(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem(),
 						Items.NETHERITE_SCRAP, CobblemonItems.RICH_MULCH.asItem(), GenerationsItems.DYNITE_ORE.get(),
 						GenerationsItems.TM_181.get(), GenerationsItems.TM_199.get(), GenerationsItems.TM_221.get()
-				)));
+				).add(ResouceKeyEntry.resourceKeyContents("lugia_disc")).add(key("lavender_town_disc")).add(key("mt_pyre_disc"))));
 
 
 		output.accept(CHERISH_BALL, LootTable.lootTable()
@@ -198,8 +201,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.RUSTY_IRON_KEY_2.get(), GenerationsItems.SHATTERED_ICE_KEY_2.get(),
 						GenerationsItems.CRUMBLED_ROCK_KEY_2.get(), GenerationsItems.FRAGMENTED_DRAGO_KEY_2.get(),
 						GenerationsItems.DISCHARGED_ELEKI_KEY_2.get(), GenerationsItems.SHATTERED_RELIC_SONG_2.get(),
-						GenerationsItems.LAVA_CRYSTAL.get(), GenerationsItems.LUGIA_DISC.get(), GenerationsItems.LAVENDER_TOWN_DISC.get(),
-						GenerationsItems.MT_PYRE_DISC.get(), CobblemonItems.RELAXED_MINT.asItem(), CobblemonItems.IMPISH_MINT.asItem(),
+						GenerationsItems.LAVA_CRYSTAL.get(), CobblemonItems.RELAXED_MINT.asItem(), CobblemonItems.IMPISH_MINT.asItem(),
 						CobblemonItems.GENTLE_MINT.asItem(), GenerationsItems.POKEMAIL_AIR.get(), GenerationsItems.POKEMAIL_BLOOM.get(),
 						GenerationsItems.POKEMAIL_BRICK.get(), GenerationsItems.POKEMAIL_BRIDGE_D.get(), GenerationsItems.POKEMAIL_BRIDGE_M.get(),
 						GenerationsItems.POKEMAIL_BRIDGE_S.get(), GenerationsItems.POKEMAIL_BRIDGE_T.get(), GenerationsItems.POKEMAIL_BRIDGE_V.get(),
@@ -213,7 +215,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_63.get(), GenerationsItems.TM_74.get(), GenerationsItems.TM_75.get(), GenerationsItems.TM_85.get(),
 						GenerationsItems.TM_92.get(), GenerationsItems.TM_98.get(), GenerationsItems.TM_109.get(), GenerationsItems.TM_120.get(),
 						GenerationsItems.TM_128.get(), GenerationsItems.TM_129.get(), GenerationsItems.TM_138.get(), GenerationsItems.TM_161.get()
-				)));
+				).add(key("lugia_disc")).add(key("lavender_town_disc")).add(key("mt_pyre_disc"))));
 
 		output.accept(DUSK_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -236,10 +238,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.TOXIC_ORB.asItem(), CobblemonItems.TWISTED_SPOON.asItem(), GenerationsItems.WIDE_LENS.get(),
 						CobblemonItems.WISE_GLASSES.asItem(), GenerationsItems.WISHING_PIECE.get(), CobblemonItems.X_ACCURACY.asItem(),
 						GenerationsItems.X_ATTACK_3.get(), GenerationsItems.X_SPECIAL_ATTACK_2.get(), GenerationsItems.X_SPECIAL_DEFENSE_6.get(),
-						GenerationsItems.SINISTER_WING.get(), GenerationsItems.IRIS_DISC.get(), GenerationsItems.NESSA_DISC.get(),
-						GenerationsItems.TEAM_ROCKET_DISC.get(), GenerationsItems.SADA_AND_TURO_DISC.get(), GenerationsItems.SOUTH_PROVINCE_DISC.get(),
-						GenerationsItems.RIVAL_DISC.get(), GenerationsItems.LUSAMINE_DISC.get(), GenerationsItems.XY_LEGENDARY_DISC.get(),
-						GenerationsItems.KANTO_DISC.get(), GenerationsItems.ULTRA_NECROZMA_DISC.get(), GenerationsItems.X_SPEED_2.get(),
+						GenerationsItems.SINISTER_WING.get(), GenerationsItems.X_SPEED_2.get(),
 						Items.COBWEB, Items.END_STONE, Items.BONE, Items.SPIDER_EYE, Items.PHANTOM_MEMBRANE, Items.MUSIC_DISC_FAR,
 						GenerationsItems.DARK_SOUL.get(), GenerationsItems.DRAGON_SOUL.get(), CobblemonItems.LAX_MINT.asItem(),
 						CobblemonItems.TIMID_MINT.asItem(), CobblemonItems.HASTY_MINT.asItem(), GenerationsItems.POISON_MEMORY_DRIVE.get(),
@@ -251,7 +250,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_108.get(), GenerationsItems.TM_140.get(),
 						GenerationsItems.TM_174.get(), GenerationsItems.TM_187.get(), GenerationsItems.TM_212.get(),
 						GenerationsItems.TM_177.get(), GenerationsItems.TM_198.get(), GenerationsItems.TM_224.get()
-				)));
+				).add(key("iris_disc")).add(key("nessa_disc")).add(key("team_rocket_disc")).add(key("sada_and_turo_disc")).add(key("south_province_disc")).add(key("rival_disc")).add(key("lusamine_disc")).add(key("xy_legendary_disc")).add(key("kanto_disc")).add(key("ultra_necrozma_disc"))));
 
 
 		output.accept(FAST_BALL, LootTable.lootTable()
@@ -306,7 +305,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.GALARICA_TWIG.get(), GenerationsItems.GREEN_SCARF.get(), CobblemonItems.GREPA_BERRY.asItem(),
 						CobblemonItems.GROWTH_MULCH.asItem(), CobblemonItems.HEAL_POWDER.asItem(), GenerationsItems.HEALTH_CANDY_XL.get(),
 						GenerationsItems.HEART_SCALE.get(), GenerationsItems.ROTOM_CATALOG.get(), GenerationsItems.LUSTROUS_GLOBE.get(),
-						GenerationsItems.GRISEOUS_CORE.get(), GenerationsItems.ADAMANT_CRYSTAL.get(), GenerationsItems.HI_TECH_EARBUDS.get(),
+						GenerationsItems.GRISEOUS_CORE.get(), GenerationsItems.ADAMANT_CRYSTAL.get(),
 						CobblemonItems.HONDEW_BERRY.asItem(), GenerationsItems.ITEM_DROP.get(), CobblemonItems.KINGS_ROCK.asItem(),
 						CobblemonItems.LANSAT_BERRY.asItem(), CobblemonItems.LEFTOVERS.asItem(), GenerationsItems.LIGHT_BALL.get(),
 						CobblemonItems.LUXURY_BALL.asItem(), CobblemonItems.MAX_ELIXIR.asItem(), GenerationsItems.MOOMOO_CHEESE.get(),
@@ -332,7 +331,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_105.get(), GenerationsItems.TM_131.get(), GenerationsItems.TM_162.get(), GenerationsItems.TM_36.get(),
 						GenerationsItems.TM_51.get(), GenerationsItems.TM_76.get(), GenerationsItems.TM_86.get(), GenerationsItems.TM_101.get(),
 						GenerationsItems.TM_116.get(), GenerationsItems.TM_105.get(), GenerationsItems.DYNITE_ORE.get(), GenerationsItems.TM_201.get(), GenerationsItems.TM_227.get()
-				)));
+				).add(key("hi_tech_earbuds"))));
 
 		output.accept(GIGATON_BALL, LootTable.lootTable()
 				.withPool(createPool(ConstantValue.exactly(1.0F),
@@ -361,11 +360,6 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.CRUMBLED_ROCK_KEY_2.get(), GenerationsItems.CRUMBLED_ROCK_KEY_3.get(),
 						GenerationsItems.CRUMBLED_ROCK_KEY_4.get(), GenerationsItems.LUSTROUS_GLOBE.get(),
 						GenerationsItems.GRISEOUS_CORE.get(), GenerationsItems.ADAMANT_CRYSTAL.get(),
-						GenerationsItems.CASCARRAFA_CITY_DISC.get(), GenerationsItems.SLUMBERING_WEALD_DISC.get(),
-						GenerationsItems.POKEMON_CENTER_DISC.get(), GenerationsItems.AZALEA_TOWN_DISC.get(),
-						GenerationsItems.LILLIE_DISC.get(), GenerationsItems.ROUTE_228_DISC.get(),
-						GenerationsItems.JUBILIFE_VILLAGE_DISC.get(), GenerationsItems.GOLDENROD_CITY_DISC.get(),
-						GenerationsItems.ETERNA_CITY_DISC.get(), GenerationsItems.VERMILION_CITY_DISC.get(),
 						GenerationsItems.EVIOLITE.get(), CobblemonItems.HARD_STONE.asItem(),
 						CobblemonItems.LUCKY_EGG.asItem(), CobblemonItems.POWER_ANKLET.asItem(),
 						CobblemonItems.POWER_BAND.asItem(), CobblemonItems.POWER_BELT.asItem(),
@@ -378,8 +372,12 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_104.get(), GenerationsItems.TM_121.get(), GenerationsItems.TM_170.get(),
 						GenerationsItems.TM_180.get(), GenerationsItems.TM_223.get(), GenerationsItems.TM_225.get(),
 						GenerationsItems.TM_179.get(), GenerationsItems.TM_220.get(), GenerationsItems.TM_184.get(),
-						GenerationsItems.TM_192.get(), GenerationsItems.TM_213.get(), GenerationsItems.TM_229.get()
-						)));
+						GenerationsItems.TM_192.get(), GenerationsItems.TM_213.get(), GenerationsItems.TM_229.get())
+						.add(key("cascarrafa_city_disc")).add(key("slumbering_weald_disc"))
+						.add(key("pokemon_center_disc")).add(key("azalea_town_disc"))
+						.add(key("lillie_disc")).add(key("route_228_disc"))
+						.add(key("jubilife_village_disc")).add(key("goldenrod_city_disc"))
+						.add(key("eterna_city_disc")).add(key("vermilion_city_disc"))));
 
 		output.accept(GREAT_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -416,12 +414,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.SAFARI_BALL.asItem(), CobblemonItems.SILK_SCARF.asItem(),
 						GenerationsItems.SMART_CANDY_L.get(), CobblemonItems.STRAWBERRY_SWEET.asItem(),
 						GenerationsItems.TIN_OF_BEANS.get(), CobblemonItems.ULTRA_BALL.asItem(),
-						GenerationsItems.X_SPECIAL_ATTACK_2.get(), GenerationsItems.CASCARRAFA_CITY_DISC.get(),
-						GenerationsItems.SLUMBERING_WEALD_DISC.get(), GenerationsItems.POKEMON_CENTER_DISC.get(),
-						GenerationsItems.AZALEA_TOWN_DISC.get(), GenerationsItems.LILLIE_DISC.get(),
-						GenerationsItems.ROUTE_228_DISC.get(), GenerationsItems.JUBILIFE_VILLAGE_DISC.get(),
-						GenerationsItems.GOLDENROD_CITY_DISC.get(), GenerationsItems.ETERNA_CITY_DISC.get(),
-						GenerationsItems.VERMILION_CITY_DISC.get(), CobblemonItems.BLACK_APRICORN.asItem(),
+						GenerationsItems.X_SPECIAL_ATTACK_2.get(), CobblemonItems.BLACK_APRICORN.asItem(),
 						CobblemonItems.BLUE_APRICORN.asItem(), CobblemonItems.GREEN_APRICORN.asItem(),
 						CobblemonItems.PINK_APRICORN.asItem(), CobblemonItems.RED_APRICORN.asItem(),
 						CobblemonItems.WHITE_APRICORN.asItem(), CobblemonItems.YELLOW_APRICORN.asItem(),
@@ -437,8 +430,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_133.get(), GenerationsItems.TM_149.get(), GenerationsItems.TM_44.get(),
 						GenerationsItems.TM_78.get(), GenerationsItems.TM_100.get(), GenerationsItems.TM_115.get(),
 						GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get(), GenerationsItems.TM_180.get(),
-						GenerationsItems.TM_223.get(), GenerationsItems.TM_225.get()
-						)));
+						GenerationsItems.TM_223.get(), GenerationsItems.TM_225.get())
+						.add(key("cascarrafa_city_disc"))
+						.add(key("slumbering_weald_disc"))
+						.add(key("pokemon_center_disc"))
+						.add(key("azalea_town_disc"))
+						.add(key("lillie_disc"))
+						.add(key("route_228_disc"))
+						.add(key("jubilife_village_disc"))
+						.add(key("goldenrod_city_disc"))
+						.add(key("eterna_city_disc"))
+						.add(key("vermilion_city_disc"))));
 
 		output.accept(HEAL_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -473,18 +475,22 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.X_SPECIAL_DEFENSE_2.get(), GenerationsItems.X_SPEED_2.get(),
 						Items.MILK_BUCKET, Items.MUSIC_DISC_MELLOHI, Items.TOTEM_OF_UNDYING,
 						GenerationsItems.HOOPA_RING.get(), GenerationsItems.GRACIDEA.get(),
-						CobblemonItems.EXPERIENCE_CANDY_S.asItem(), GenerationsItems.CASCARRAFA_CITY_DISC.get(),
-						GenerationsItems.SLUMBERING_WEALD_DISC.get(), GenerationsItems.POKEMON_CENTER_DISC.get(),
-						GenerationsItems.AZALEA_TOWN_DISC.get(), GenerationsItems.LILLIE_DISC.get(),
-						GenerationsItems.ROUTE_228_DISC.get(), GenerationsItems.JUBILIFE_VILLAGE_DISC.get(),
-						GenerationsItems.GOLDENROD_CITY_DISC.get(), GenerationsItems.ETERNA_CITY_DISC.get(),
-						GenerationsItems.VERMILION_CITY_DISC.get(), GenerationsItems.TM_13.get(),
+						CobblemonItems.EXPERIENCE_CANDY_S.asItem(), GenerationsItems.TM_13.get(),
 						GenerationsItems.TM_26.get(), GenerationsItems.TM_45.get(), GenerationsItems.TM_83.get(),
 						GenerationsItems.TM_91.get(), GenerationsItems.TM_102.get(), GenerationsItems.TM_148.get(),
 						GenerationsItems.TM_2.get(), GenerationsItems.TM_19.get(), GenerationsItems.TM_37.get(),
 						GenerationsItems.TM_79.get(), GenerationsItems.TM_127.get(), GenerationsItems.TM_139.get(),
-						GenerationsItems.TM_201.get(), GenerationsItems.TM_227.get()
-				)));
+						GenerationsItems.TM_201.get(), GenerationsItems.TM_227.get())
+						.add(key("cascarrafa_city_disc"))
+						.add(key("slumbering_weald_disc"))
+						.add(key("pokemon_center_disc"))
+						.add(key("azalea_town_disc"))
+						.add(key("lillie_disc"))
+						.add(key("route_228_disc"))
+						.add(key("jubilife_village_disc"))
+						.add(key("goldenrod_city_disc"))
+						.add(key("eterna_city_disc"))
+						.add(key("vermilion_city_disc"))));
 
 		output.accept(HEAVY_BALL, LootTable.lootTable()
 				.withPool(createPool(ConstantValue.exactly(1.0F),
@@ -571,12 +577,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.POKEMAIL_BRIDGE_T.get(), GenerationsItems.POKEMAIL_BRIDGE_V.get(),
 						GenerationsItems.FLYING_CANDY.get(), GenerationsItems.HEALTH_CANDY_XL.get(),
 						GenerationsItems.HONEY.get(), GenerationsItems.LEEK.get(), GenerationsItems.ENIGMA_FRAGMENT.get(),
-						CobblemonItems.LEFTOVERS.asItem(), GenerationsItems.CASCARRAFA_CITY_DISC.get(),
-						GenerationsItems.SLUMBERING_WEALD_DISC.get(), GenerationsItems.POKEMON_CENTER_DISC.get(),
-						GenerationsItems.AZALEA_TOWN_DISC.get(), GenerationsItems.LILLIE_DISC.get(),
-						GenerationsItems.ROUTE_228_DISC.get(), GenerationsItems.JUBILIFE_VILLAGE_DISC.get(),
-						GenerationsItems.GOLDENROD_CITY_DISC.get(), GenerationsItems.ETERNA_CITY_DISC.get(),
-						GenerationsItems.VERMILION_CITY_DISC.get(), GenerationsItems.LONE_EARRING.get(),
+						CobblemonItems.LEFTOVERS.asItem(), GenerationsItems.LONE_EARRING.get(),
 						GenerationsItems.LUSTROUS_ORB.get(), GenerationsItems.BREAD.get(),
 						GenerationsItems.PASTA.get(), GenerationsItems.FANCY_APPLE.get(),
 						GenerationsItems.SPICE_MIX.get(), GenerationsItems.PACKAGED_CURRY.get(),
@@ -587,19 +588,23 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_40.get(), GenerationsItems.TM_65.get(),
 						GenerationsItems.TM_97.get(), GenerationsItems.TM_113.get(),
 						GenerationsItems.TM_160.get(), GenerationsItems.TM_164.get(),
-						GenerationsItems.TM_197.get(), GenerationsItems.TM_216.get()
-				)));
+						GenerationsItems.TM_197.get(), GenerationsItems.TM_216.get())
+ 						.add(key("cascarrafa_city_disc"))
+ 						.add(key("slumbering_weald_disc"))
+ 						.add(key("pokemon_center_disc"))
+ 						.add(key("azalea_town_disc"))
+ 						.add(key("lillie_disc"))
+ 						.add(key("route_228_disc"))
+ 						.add(key("jubilife_village_disc"))
+ 						.add(key("goldenrod_city_disc"))
+ 						.add(key("eterna_city_disc"))
+ 						.add(key("vermilion_city_disc"))));
 
 		output.accept(LEADEN_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
 						CobblemonItems.POKE_BALL.asItem(), GenerationsItems.RUSTY_FRAGMENT.get(),
 						GenerationsItems.RUSTY_IRON_KEY_1.get(), GenerationsItems.RUSTY_IRON_KEY_2.get(),
 						GenerationsItems.RUSTY_IRON_KEY_3.get(), GenerationsItems.RUSTY_IRON_KEY_4.get(),
-						GenerationsItems.CERULEAN_CITY_DISC.get(), GenerationsItems.ICIRRUS_CITY_DISC.get(),
-						GenerationsItems.LAVERRE_CITY_DISC.get(), GenerationsItems.SURF_DISC.get(),
-						GenerationsItems.LAKE_OF_RAGE_DISC.get(), GenerationsItems.PENNY_DISC.get(),
-						GenerationsItems.NEMONA_DISC.get(), GenerationsItems.ZINNIA_DISC.get(),
-						GenerationsItems.CYNTHIA_DISC.get(), GenerationsItems.DEOXYS_DISC.get(),
 						GenerationsItems.MIRROR.get(), GenerationsItems.METEORITE_SHARD.get(),
 						GenerationsItems.ROCK_GEM.get(), CobblemonItems.ROCKY_HELMET.asItem(),
 						CobblemonItems.SAFETY_GOGGLES.asItem(), GenerationsItems.SPRINK_LOTAD.get(),
@@ -638,8 +643,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_36.get(), GenerationsItems.TM_51.get(),
 						GenerationsItems.TM_76.get(), GenerationsItems.TM_86.get(),
 						GenerationsItems.TM_101.get(), GenerationsItems.TM_116.get(), GenerationsItems.TM_150.get(),
-						GenerationsItems.TM_176.get(), GenerationsItems.TM_186.get(), GenerationsItems.TM_215.get()
-				)));
+						GenerationsItems.TM_176.get(), GenerationsItems.TM_186.get(), GenerationsItems.TM_215.get())
+						.add(key("cerulean_city_disc"))
+						.add(key("icirrus_city_disc"))
+						.add(key("laverre_city_disc"))
+						.add(key("surf_disc"))
+						.add(key("lake_of_rage_disc"))
+						.add(key("penny_disc"))
+						.add(key("nemona_disc"))
+						.add(key("zinnia_disc"))
+						.add(key("cynthia_disc"))
+						.add(key("deoxys_disc"))));
 
 		output.accept(LEVEL_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -700,10 +714,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.LOVE_BALL.asItem(), CobblemonItems.LOVE_SWEET.asItem(), CobblemonItems.MAX_POTION.asItem(),
 						CobblemonItems.OVAL_STONE.asItem(), GenerationsItems.PEARL_STRING.get(), GenerationsItems.PINK_SCARF.get(),
 						GenerationsItems.POKE_DOLL.get(), CobblemonItems.POTION.asItem(), CobblemonItems.POWER_ANKLET.asItem(),
-						CobblemonItems.POWER_BRACER.asItem(), GenerationsItems.MIRROR.get(), GenerationsItems.CERULEAN_CITY_DISC.get(),
-						GenerationsItems.ICIRRUS_CITY_DISC.get(), GenerationsItems.LAVERRE_CITY_DISC.get(), GenerationsItems.SURF_DISC.get(),
-						GenerationsItems.LAKE_OF_RAGE_DISC.get(), GenerationsItems.PENNY_DISC.get(), GenerationsItems.NEMONA_DISC.get(),
-						GenerationsItems.ZINNIA_DISC.get(), GenerationsItems.CYNTHIA_DISC.get(), GenerationsItems.DEOXYS_DISC.get(),
+						CobblemonItems.POWER_BRACER.asItem(), GenerationsItems.MIRROR.get(),
 						GenerationsItems.QUICK_CANDY.get(), CobblemonItems.RIBBON_SWEET.asItem(), CobblemonItems.ROWAP_BERRY.asItem(),
 						GenerationsItems.SAUSAGES.get(), CobblemonItems.SITRUS_BERRY.asItem(), GenerationsItems.SMOKED_POKE_TAIL.get(),
 						GenerationsItems.SMOOTH_ROCK.get(), CobblemonItems.STARF_BERRY.asItem(), GenerationsItems.STRANGE_SOUVENIR.get(),
@@ -724,8 +735,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_127.get(), GenerationsItems.TM_139.get(), GenerationsItems.TM_178.get(),
 						GenerationsItems.TM_217.get(), GenerationsItems.TM_218.get(), GenerationsItems.TM_228.get(),
 						GenerationsItems.TM_174.get(), GenerationsItems.TM_187.get(), GenerationsItems.TM_212.get(),
-						GenerationsItems.TM_177.get(), GenerationsItems.TM_198.get(), GenerationsItems.TM_224.get()
-				)));
+						GenerationsItems.TM_177.get(), GenerationsItems.TM_198.get(), GenerationsItems.TM_224.get())
+						.add(key("cerulean_city_disc"))
+						.add(key("icirrus_city_disc"))
+						.add(key("laverre_city_disc"))
+						.add(key("surf_disc"))
+						.add(key("lake_of_rage_disc"))
+						.add(key("penny_disc"))
+						.add(key("nemona_disc"))
+						.add(key("zinnia_disc"))
+						.add(key("cynthia_disc"))
+						.add(key("deoxys_disc"))));
 
 		output.accept(LURE_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -789,10 +809,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.SWEET_HEART.get(), GenerationsItems.TOUGH_CANDY.get(), GenerationsItems.TROPICAL_SHELL.get(),
 						GenerationsItems.X_DEFENSE_6.get(), GenerationsItems.YELLOW_FLUTE.get(), Items.QUARTZ_BLOCK,
 						Items.DIAMOND, Items.LEATHER, GenerationsItems.ELEGANT_WING.get(), Items.MUSIC_DISC_CHIRP, Items.NETHERITE_SCRAP,
-						GenerationsItems.IRIS_DISC.get(), GenerationsItems.NESSA_DISC.get(), GenerationsItems.TEAM_ROCKET_DISC.get(),
-						GenerationsItems.SADA_AND_TURO_DISC.get(), GenerationsItems.SOUTH_PROVINCE_DISC.get(), GenerationsItems.RIVAL_DISC.get(),
-						GenerationsItems.LUSAMINE_DISC.get(), GenerationsItems.XY_LEGENDARY_DISC.get(), GenerationsItems.KANTO_DISC.get(),
-						GenerationsItems.ULTRA_NECROZMA_DISC.get(), GenerationsItems.CRYSTAL.get(), GenerationsItems.SAPPHIRE.get(),
+						GenerationsItems.CRYSTAL.get(), GenerationsItems.SAPPHIRE.get(),
 						GenerationsItems.SILICON.get(), GenerationsItems.SPARKLING_SHARD.get(), CobblemonItems.EXPERIENCE_CANDY_L.asItem(),
 						GenerationsItems.POISON_CANDY.get(), GenerationsItems.DRAGON_CANDY.get(), GenerationsItems.TM_13.get(),
 						GenerationsItems.TM_26.get(), GenerationsItems.TM_45.get(), GenerationsItems.TM_83.get(), GenerationsItems.TM_91.get(),
@@ -800,8 +817,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_100.get(), GenerationsItems.TM_115.get(), GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get(),
 						GenerationsItems.TM_178.get(), GenerationsItems.TM_217.get(), GenerationsItems.TM_218.get(), GenerationsItems.TM_228.get(),
 						GenerationsItems.TM_174.get(), GenerationsItems.TM_187.get(), GenerationsItems.TM_212.get(),
-						GenerationsItems.TM_177.get(), GenerationsItems.TM_198.get(), GenerationsItems.TM_224.get()
-				)));
+						GenerationsItems.TM_177.get(), GenerationsItems.TM_198.get(), GenerationsItems.TM_224.get())
+						.add(key("iris_disc"))
+						.add(key("nessa_disc"))
+						.add(key("team_rocket_disc"))
+						.add(key("sada_and_turo_disc"))
+						.add(key("south_province_disc"))
+						.add(key("rival_disc"))
+						.add(key("lusamine_disc"))
+						.add(key("xy_legendary_disc"))
+						.add(key("kanto_disc"))
+						.add(key("ultra_necrozma_disc"))));
 
 		output.accept(MASTER_BALL, LootTable.lootTable()
 				.withPool(createPool(ConstantValue.exactly(1),
@@ -855,7 +881,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.EVIOLITE.get(), CobblemonItems.EXPERIENCE_CANDY_M.asItem(), GenerationsItems.FAIRY_GEM.get(),
 						CobblemonItems.FRIEND_BALL.asItem(), GenerationsItems.GALARICA_TWIG.get(), CobblemonItems.GANLON_BERRY.asItem(),
 						GenerationsItems.GHOST_GEM.get(), GenerationsItems.GREEN_SHARD.get(), GenerationsItems.GROUND_GEM.get(),
-						CobblemonItems.HEAVY_BALL.asItem(), GenerationsItems.HI_TECH_EARBUDS.get(), CobblemonItems.HYPER_POTION.asItem(),
+						CobblemonItems.HEAVY_BALL.asItem(), CobblemonItems.HYPER_POTION.asItem(),
 						GenerationsItems.ICY_ROCK.get(), CobblemonItems.IRON.asItem(), GenerationsItems.ITEM_URGE.get(),
 						CobblemonItems.KEBIA_BERRY.asItem(), CobblemonItems.KINGS_ROCK.asItem(), CobblemonItems.LEPPA_BERRY.asItem(),
 						CobblemonItems.LIGHT_CLAY.asItem(), GenerationsItems.LURE.get(), GenerationsItems.LUSTROUS_ORB.get(),
@@ -884,8 +910,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_128.get(), GenerationsItems.TM_129.get(), GenerationsItems.TM_138.get(),
 						GenerationsItems.TM_161.get(), GenerationsItems.TM_2.get(), GenerationsItems.TM_19.get(),
 						GenerationsItems.TM_37.get(), GenerationsItems.TM_79.get(), GenerationsItems.TM_127.get(),
-						GenerationsItems.TM_139.get()
-				)));
+						GenerationsItems.TM_139.get()).add(key("hi_tech_earbuds"))));
 
 		output.accept(NEST_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -907,10 +932,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.WHITE_HERB.asItem(), CobblemonItems.WIKI_BERRY.asItem(), CobblemonItems.X_ACCURACY.asItem(),
 						GenerationsItems.X_ATTACK_2.get(), CobblemonItems.X_DEFENSE.asItem(), CobblemonItems.X_SP_ATK.asItem(),
 						CobblemonItems.X_SP_DEF.asItem(), Items.COBWEB, Items.FEATHER, Items.MUSIC_DISC_11,
-						GenerationsItems.CERULEAN_CITY_DISC.get(), GenerationsItems.ICIRRUS_CITY_DISC.get(), GenerationsItems.LAVERRE_CITY_DISC.get(),
-						GenerationsItems.SURF_DISC.get(), GenerationsItems.LAKE_OF_RAGE_DISC.get(), GenerationsItems.PENNY_DISC.get(),
-						GenerationsItems.NEMONA_DISC.get(), GenerationsItems.ZINNIA_DISC.get(), GenerationsItems.CYNTHIA_DISC.get(),
-						GenerationsItems.DEOXYS_DISC.get(), GenerationsItems.CRYSTAL.get(), GenerationsItems.SAPPHIRE.get(),
+						GenerationsItems.CRYSTAL.get(), GenerationsItems.SAPPHIRE.get(),
 						GenerationsItems.SILICON.get(), GenerationsItems.FLYING_MEMORY_DRIVE.get(), GenerationsItems.SKY_PLATE.get(),
 						GenerationsItems.POKEMAIL_ORANGE.get(), GenerationsItems.POKEMAIL_REPLY.get(), GenerationsItems.POKEMAIL_RETRO.get(),
 						GenerationsItems.POKEMAIL_RSVP.get(), GenerationsItems.POKEMAIL_SHADOW.get(), GenerationsItems.POKEMAIL_SNOW.get(),
@@ -922,8 +944,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_190.get(), GenerationsItems.TM_194.get(), GenerationsItems.TM_206.get(),
 						GenerationsItems.TM_131.get(), GenerationsItems.TM_162.get(),
 						GenerationsItems.TM_179.get(), GenerationsItems.TM_220.get(), GenerationsItems.TM_184.get(),
-						GenerationsItems.TM_192.get(), GenerationsItems.TM_213.get(), GenerationsItems.TM_229.get()
-				)));
+						GenerationsItems.TM_192.get(), GenerationsItems.TM_213.get(), GenerationsItems.TM_229.get())
+						.add(key("cerulean_city_disc"))
+						.add(key("icirrus_city_disc"))
+						.add(key("laverre_city_disc"))
+						.add(key("surf_disc"))
+						.add(key("lake_of_rage_disc"))
+						.add(key("penny_disc"))
+						.add(key("nemona_disc"))
+						.add(key("zinnia_disc"))
+						.add(key("cynthia_disc"))
+						.add(key("deoxys_disc"))));
 
 		output.accept(NET_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 3),
@@ -946,11 +977,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.X_SP_DEF.asItem(), CobblemonItems.X_SPEED.asItem(), CobblemonItems.YACHE_BERRY.asItem(),
 						GenerationsItems.YELLOW_FLUTE.get(), GenerationsItems.ZOOM_LENS.get(), Items.STRING,
 						Items.SLIME_BALL, Items.RABBIT_HIDE, Items.MUSIC_DISC_13, GenerationsItems.OLD_ROD.get(),
-						GenerationsItems.GOOD_ROD.get(), GenerationsItems.SUPER_ROD.get(), GenerationsItems.CASCARRAFA_CITY_DISC.get(),
-						GenerationsItems.SLUMBERING_WEALD_DISC.get(), GenerationsItems.POKEMON_CENTER_DISC.get(),
-						GenerationsItems.AZALEA_TOWN_DISC.get(), GenerationsItems.LILLIE_DISC.get(), GenerationsItems.ROUTE_228_DISC.get(),
-						GenerationsItems.JUBILIFE_VILLAGE_DISC.get(), GenerationsItems.GOLDENROD_CITY_DISC.get(),
-						GenerationsItems.ETERNA_CITY_DISC.get(), GenerationsItems.VERMILION_CITY_DISC.get(),
+						GenerationsItems.GOOD_ROD.get(), GenerationsItems.SUPER_ROD.get(),
 						GenerationsItems.WAILMER_PAIL.get(), CobblemonItems.JOLLY_MINT.asItem(), CobblemonItems.NAIVE_MINT.asItem(),
 						CobblemonItems.MODEST_MINT.asItem(), GenerationsItems.GROUND_MEMORY_DRIVE.get(),
 						GenerationsItems.BUG_MEMORY_DRIVE.get(), GenerationsItems.EARTH_PLATE.get(), GenerationsItems.INSECT_PLATE.get(),
@@ -962,8 +989,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_162.get(), GenerationsItems.TM_188.get(), GenerationsItems.TM_196.get(),
 						GenerationsItems.TM_208.get(), GenerationsItems.TM_209.get(), GenerationsItems.TM_190.get(),
 						GenerationsItems.TM_194.get(), GenerationsItems.TM_206.get(), GenerationsItems.TM_182.get(),
-						GenerationsItems.TM_185.get(), GenerationsItems.TM_219.get()
-				)));
+						GenerationsItems.TM_185.get(), GenerationsItems.TM_219.get())
+						.add(key("cascarrafa_city_disc"))
+						.add(key("slumbering_weald_disc"))
+						.add(key("pokemon_center_disc"))
+						.add(key("azalea_town_disc"))
+						.add(key("lillie_disc"))
+						.add(key("route_228_disc"))
+						.add(key("jubilife_village_disc"))
+						.add(key("goldenrod_city_disc"))
+						.add(key("eterna_city_disc"))
+						.add(key("vermilion_city_disc"))));
 
 		output.accept(ORIGIN_BALL, LootTable.lootTable()
 				.withPool(createPool(ConstantValue.exactly(1),
@@ -974,10 +1010,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.HONEY.get(), GenerationsItems.LEEK.get(), CobblemonItems.LEFTOVERS.asItem(),
 						GenerationsItems.LONE_EARRING.get(), GenerationsItems.LUSTROUS_ORB.get(), GenerationsItems.GRISEOUS_ORB.get(),
 						GenerationsItems.ADAMANT_ORB.get(), GenerationsItems.LUSTROUS_GLOBE.get(), GenerationsItems.GRISEOUS_CORE.get(),
-						GenerationsItems.ADAMANT_CRYSTAL.get(), GenerationsItems.GRACIDEA.get(), GenerationsItems.IRIS_DISC.get(),
-						GenerationsItems.NESSA_DISC.get(), GenerationsItems.TEAM_ROCKET_DISC.get(), GenerationsItems.SADA_AND_TURO_DISC.get(),
-						GenerationsItems.SOUTH_PROVINCE_DISC.get(), GenerationsItems.RIVAL_DISC.get(), GenerationsItems.LUSAMINE_DISC.get(),
-						GenerationsItems.XY_LEGENDARY_DISC.get(), GenerationsItems.KANTO_DISC.get(), GenerationsItems.ULTRA_NECROZMA_DISC.get(),
+						GenerationsItems.ADAMANT_CRYSTAL.get(), GenerationsItems.GRACIDEA.get(),
 						GenerationsItems.RUBY.get(), GenerationsItems.RELIC_BAND.get(), GenerationsItems.RELIC_CROWN.get(),
 						GenerationsItems.RELIC_STATUE.get(), GenerationsItems.RELIC_VASE.get(), GenerationsItems.FRUIT_BUNCH.get(),
 						GenerationsItems.COCONUT_MILK.get(), GenerationsItems.INSTANT_NOODLES.get(), GenerationsItems.FRESH_CREAM.get(),
@@ -1001,8 +1034,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_44.get(), GenerationsItems.TM_78.get(), GenerationsItems.TM_100.get(),
 						GenerationsItems.TM_115.get(), GenerationsItems.TM_156.get(), GenerationsItems.TM_169.get(), GenerationsItems.MEW_FOSSIL.get(),
 						GenerationsItems.TM_175.get(), GenerationsItems.TM_214.get(), GenerationsItems.TM_200.get(),
-						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get()
-				)));
+						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get())
+						.add(key("iris_disc"))
+						.add(key("nessa_disc"))
+						.add(key("team_rocket_disc"))
+						.add(key("sada_and_turo_disc"))
+						.add(key("south_province_disc"))
+						.add(key("rival_disc"))
+						.add(key("lusamine_disc"))
+						.add(key("xy_legendary_disc"))
+						.add(key("kanto_disc"))
+						.add(key("ultra_necrozma_disc"))));
 
 		output.accept(PARK_BALL, LootTable.lootTable()
 				.withPool(createPool(ConstantValue.exactly(1),
@@ -1104,11 +1146,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.DYNAMAX_CANDY.get(), GenerationsItems.ELECTRIC_GEM.get(), CobblemonItems.EXPERIENCE_CANDY_L.asItem(),
 						GenerationsItems.FANCY_APPLE.get(), GenerationsItems.FRUIT_BUNCH.get(), CobblemonItems.GALARICA_WREATH.asItem(),
 						CobblemonItems.GUARD_SPEC.asItem(), GenerationsItems.HEALTH_CANDY_XL.get(), GenerationsItems.HEART_SCALE.get(),
-						GenerationsItems.ELEGANT_WING.get(), GenerationsItems.IRIS_DISC.get(), GenerationsItems.NESSA_DISC.get(),
-						GenerationsItems.TEAM_ROCKET_DISC.get(), GenerationsItems.SADA_AND_TURO_DISC.get(), GenerationsItems.SOUTH_PROVINCE_DISC.get(),
-						GenerationsItems.RIVAL_DISC.get(), GenerationsItems.LUSAMINE_DISC.get(), GenerationsItems.XY_LEGENDARY_DISC.get(),
-						GenerationsItems.KANTO_DISC.get(), GenerationsItems.ULTRA_NECROZMA_DISC.get(), CobblemonItems.HEAVY_BALL.asItem(),
-						GenerationsItems.HI_TECH_EARBUDS.get(), GenerationsItems.ICE_GEM.get(), GenerationsItems.ITEM_DROP.get(),
+						GenerationsItems.ELEGANT_WING.get(), GenerationsItems.ICE_GEM.get(), GenerationsItems.ITEM_DROP.get(),
 						GenerationsItems.LOOKER_TICKET.get(), CobblemonItems.MAGOST_BERRY.asItem(), GenerationsItems.MOOMOO_MILK.get(),
 						CobblemonItems.MUSCLE_BAND.asItem(), GenerationsItems.NORMAL_GEM.get(), GenerationsItems.NUGGET.get(),
 						GenerationsItems.POISON_GEM.get(), CobblemonItems.PP_UP.asItem(), CobblemonItems.PREMIER_BALL.asItem(),
@@ -1123,8 +1161,18 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_61.get(), GenerationsItems.TM_114.get(), GenerationsItems.TM_151.get(),
 						GenerationsItems.TM_3.get(), GenerationsItems.TM_18.get(), GenerationsItems.TM_30.get(),
 						GenerationsItems.TM_43.get(), GenerationsItems.TM_62.get(), GenerationsItems.TM_87.get(),
-						GenerationsItems.TM_94.get(), GenerationsItems.TM_108.get(), GenerationsItems.TM_140.get()
-				)));
+						GenerationsItems.TM_94.get(), GenerationsItems.TM_108.get(), GenerationsItems.TM_140.get(), CobblemonItems.HEAVY_BALL.asItem())
+						.add(key("iris_disc"))
+						.add(key("nessa_disc"))
+						.add(key("team_rocket_disc"))
+						.add(key("sada_and_turo_disc"))
+						.add(key("south_province_disc"))
+						.add(key("rival_disc"))
+						.add(key("lusamine_disc"))
+						.add(key("xy_legendary_disc"))
+						.add(key("kanto_disc"))
+						.add(key("ultra_necrozma_disc"))
+						.add(key("hi_tech_earbuds"))));
 
 		output.accept(QUICK_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -1161,7 +1209,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_72.get(), GenerationsItems.TM_82.get(), GenerationsItems.TM_96.get(),
 						GenerationsItems.TM_126.get(), GenerationsItems.TM_136.get(), GenerationsItems.TM_147.get(),
 						GenerationsItems.TM_166.get(), GenerationsItems.TM_173.get(), GenerationsItems.TM_210.get(), GenerationsItems.TM_211.get()
-				)));
+				).add(key("cascarrafa_city_disc")).add(key("slumbering_weald_disc")).add(key("pokemon_center_disc"))
+								.add(key("azalea_town_disc")).add(key("lillie_disc")).add(key("route_228_disc"))
+								.add(key("jubilife_village_disc")).add(key("goldenrod_city_disc"))
+								.add(key("eterna_city_disc")).add(key("vermilion_city_disc"))));
 
 		output.accept(REPEAT_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 3),
@@ -1180,10 +1231,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.X_SPEED.asItem(), GenerationsItems.YELLOW_SHARD.get(), CobblemonItems.ZINC.asItem(),
 						CobblemonItems.BLACK_APRICORN.asItem(), CobblemonItems.BLUE_APRICORN.asItem(), CobblemonItems.GREEN_APRICORN.asItem(),
 						CobblemonItems.PINK_APRICORN.asItem(), CobblemonItems.RED_APRICORN.asItem(), CobblemonItems.WHITE_APRICORN.asItem(),
-						CobblemonItems.YELLOW_APRICORN.asItem(), Items.STRING, Items.MUSIC_DISC_MALL, GenerationsItems.CASCARRAFA_CITY_DISC.get(),
-						GenerationsItems.SLUMBERING_WEALD_DISC.get(), GenerationsItems.POKEMON_CENTER_DISC.get(), GenerationsItems.AZALEA_TOWN_DISC.get(),
-						GenerationsItems.LILLIE_DISC.get(), GenerationsItems.ROUTE_228_DISC.get(), GenerationsItems.JUBILIFE_VILLAGE_DISC.get(),
-						GenerationsItems.GOLDENROD_CITY_DISC.get(), GenerationsItems.ETERNA_CITY_DISC.get(), GenerationsItems.VERMILION_CITY_DISC.get(),
+						CobblemonItems.YELLOW_APRICORN.asItem(), Items.STRING, Items.MUSIC_DISC_MALL,
 						GenerationsItems.FRAGMENTED_DRAGO_KEY_1.get(), GenerationsItems.FRAGMENTED_DRAGO_KEY_2.get(), GenerationsItems.FRAGMENTED_DRAGO_KEY_3.get(),
 						GenerationsItems.FRAGMENTED_DRAGO_KEY_4.get(), GenerationsItems.FIGHTING_CANDY.get(), GenerationsItems.FILM.get(),
 						GenerationsItems.CAMERA.get(), GenerationsItems.POKEMAIL_ORANGE.get(), GenerationsItems.POKEMAIL_REPLY.get(),
@@ -1280,8 +1328,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.POKE_BALL.asItem(), CobblemonItems.SURPRISE_MULCH.asItem(), CobblemonItems.GROWTH_MULCH.asItem(),
 						CobblemonItems.RICH_MULCH.asItem(), GenerationsItems.SCROLL_PAGE.get(), GenerationsItems.RUSTY_FRAGMENT.get(),
 						GenerationsItems.SPARKLING_SHARD.get(), GenerationsItems.HOOPA_RING.get(), GenerationsItems.DRAGON_SOUL.get(),
-						GenerationsItems.LEGEND_PLATE.get(), GenerationsItems.GHOST_CANDY.get(), GenerationsItems.LUGIA_DISC.get(),
-						GenerationsItems.LAVENDER_TOWN_DISC.get(), GenerationsItems.MT_PYRE_DISC.get(), GenerationsItems.PERMIT.get(),
+						GenerationsItems.LEGEND_PLATE.get(), GenerationsItems.GHOST_CANDY.get(), GenerationsItems.PERMIT.get(),
 						GenerationsItems.PLASMA_CARD.get(), CobblemonItems.POKE_BALL.asItem(), CobblemonItems.POWER_WEIGHT.asItem(),
 						CobblemonItems.PP_UP.asItem(), CobblemonItems.RARE_CANDY.asItem(), GenerationsItems.RESET_URGE.get(),
 						GenerationsItems.ROLLER_SKATES.get(), GenerationsItems.ROOM_SERVICE.get(), GenerationsItems.SHALOUR_SABLE.get(),
@@ -1307,8 +1354,10 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_140.get(), GenerationsItems.TM_189.get(), GenerationsItems.TM_195.get(), GenerationsItems.TM_207.get(),
 						Items.TOTEM_OF_UNDYING, GenerationsItems.ENIGMA_FRAGMENT.get(), GenerationsItems.MEW_FOSSIL.get(),
 						GenerationsItems.TM_175.get(), GenerationsItems.TM_214.get(), GenerationsItems.TM_200.get(),
-						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get()
-				)));
+						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get())
+						.add(key("lugia_disc"))
+						.add(key("lavender_town_disc"))
+						.add(key("mt_pyre_disc"))));
 
 		output.accept(TIMER_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 3),
@@ -1328,10 +1377,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						CobblemonItems.QUICK_CLAW.asItem(), CobblemonItems.RABUTA_BERRY.asItem(), CobblemonItems.REVIVE.asItem(),
 						CobblemonItems.SALAC_BERRY.asItem(), GenerationsItems.SALAD_MIX.get(), CobblemonItems.SHARP_BEAK.asItem(),
 						GenerationsItems.SILVER_LEAF.get(), GenerationsItems.ORB.get(), GenerationsItems.ROTOM_CATALOG.get(),
-						GenerationsItems.CERULEAN_CITY_DISC.get(), GenerationsItems.ICIRRUS_CITY_DISC.get(), GenerationsItems.LAVERRE_CITY_DISC.get(),
-						GenerationsItems.SURF_DISC.get(), GenerationsItems.LAKE_OF_RAGE_DISC.get(), GenerationsItems.PENNY_DISC.get(),
-						GenerationsItems.NEMONA_DISC.get(), GenerationsItems.ZINNIA_DISC.get(), GenerationsItems.CYNTHIA_DISC.get(),
-						GenerationsItems.DEOXYS_DISC.get(), CobblemonItems.SPORT_BALL.asItem(), GenerationsItems.TERRAIN_EXTENDER.get(),
+						CobblemonItems.SPORT_BALL.asItem(), GenerationsItems.TERRAIN_EXTENDER.get(),
 						CobblemonItems.TIMER_BALL.asItem(), GenerationsItems.TIN_OF_BEANS.get(), CobblemonItems.WIKI_BERRY.asItem(),
 						CobblemonItems.WISE_GLASSES.asItem(), GenerationsItems.ICE_CANDY.get(), GenerationsItems.X_ACCURACY_2.get(),
 						GenerationsItems.X_ATTACK_6.get(), GenerationsItems.X_SPECIAL_ATTACK_3.get(), Items.SADDLE,
@@ -1348,17 +1394,23 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_173.get(), GenerationsItems.TM_210.get(), GenerationsItems.TM_211.get(),
 						GenerationsItems.TM_181.get(), GenerationsItems.TM_199.get(), GenerationsItems.TM_221.get(),
 						GenerationsItems.TM_178.get(), GenerationsItems.TM_217.get(), GenerationsItems.TM_218.get(),
-						GenerationsItems.TM_228.get()
-				)));
+						GenerationsItems.TM_228.get())
+						.add(key("cerulean_city_disc"))
+						.add(key("icirrus_city_disc"))
+						.add(key("laverre_city_disc"))
+						.add(key("surf_disc"))
+						.add(key("lake_of_rage_disc"))
+						.add(key("penny_disc"))
+						.add(key("nemona_disc"))
+						.add(key("zinnia_disc"))
+						.add(key("cynthia_disc"))
+						.add(key("deoxys_disc"))));
 
 		output.accept(ULTRA_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 3),
 						CobblemonItems.POKE_BALL.asItem(), GenerationsItems.ABSORB_BULB.get(), GenerationsItems.ADRENALINE_ORB.get(),
 						CobblemonItems.AWAKENING.asItem(), GenerationsItems.BALM_MUSHROOM.get(), CobblemonItems.BERRY_SWEET.asItem(),
-						CobblemonItems.BLACK_BELT.asItem(), CobblemonItems.BLACK_SLUDGE.asItem(), GenerationsItems.IRIS_DISC.get(),
-						GenerationsItems.NESSA_DISC.get(), GenerationsItems.TEAM_ROCKET_DISC.get(), GenerationsItems.SADA_AND_TURO_DISC.get(),
-						GenerationsItems.SOUTH_PROVINCE_DISC.get(), GenerationsItems.RIVAL_DISC.get(), GenerationsItems.LUSAMINE_DISC.get(),
-						GenerationsItems.XY_LEGENDARY_DISC.get(), GenerationsItems.KANTO_DISC.get(), GenerationsItems.ULTRA_NECROZMA_DISC.get(),
+						CobblemonItems.BLACK_BELT.asItem(), CobblemonItems.BLACK_SLUDGE.asItem(),
 						CobblemonItems.BLUK_BERRY.asItem(), GenerationsItems.BLUNDER_POLICY.get(), CobblemonItems.BURN_HEAL.asItem(),
 						CobblemonItems.CALCIUM.asItem(), GenerationsItems.CELL_BATTERY.get(), CobblemonItems.CHARCOAL.asItem(),
 						CobblemonItems.CHERI_BERRY.asItem(), CobblemonItems.CHERI_BERRY.asItem(), CobblemonItems.CHIPPED_POT.asItem(),
@@ -1394,8 +1446,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_197.get(), GenerationsItems.TM_216.get(),
 						GenerationsItems.TM_181.get(), GenerationsItems.TM_199.get(), GenerationsItems.TM_221.get(),
 						GenerationsItems.TM_175.get(), GenerationsItems.TM_214.get(), GenerationsItems.TM_200.get(),
-						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get()
-				)));
+						GenerationsItems.TM_222.get(), GenerationsItems.TM_226.get())
+						.add(key("iris_disc"))
+						.add(key("nessa_disc"))
+						.add(key("team_rocket_disc"))
+						.add(key("sada_and_turo_disc"))
+						.add(key("south_province_disc"))
+						.add(key("rival_disc"))
+						.add(key("lusamine_disc"))
+						.add(key("xy_legendary_disc"))
+						.add(key("kanto_disc"))
+						.add(key("ultra_necrozma_disc"))));
 
 		output.accept(WING_BALL, LootTable.lootTable()
 				.withPool(createPool(UniformGenerator.between(1, 2),
@@ -1403,10 +1464,7 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.HEALTH_FEATHER.get(), GenerationsItems.STATIC_WING.get(), GenerationsItems.BELLIGERENT_WING.get(),
 						GenerationsItems.FIERY_WING.get(), GenerationsItems.SINISTER_WING.get(), GenerationsItems.SILVER_WING.get(),
 						GenerationsItems.RAINBOW_WING.get(), CobblemonItems.COBA_BERRY.asItem(), GenerationsItems.FLYING_GEM.get(),
-						GenerationsItems.FLYING_MEMORY_DRIVE.get(), GenerationsItems.CERULEAN_CITY_DISC.get(), GenerationsItems.ICIRRUS_CITY_DISC.get(),
-						GenerationsItems.LAVERRE_CITY_DISC.get(), GenerationsItems.SURF_DISC.get(), GenerationsItems.LAKE_OF_RAGE_DISC.get(),
-						GenerationsItems.PENNY_DISC.get(), GenerationsItems.NEMONA_DISC.get(), GenerationsItems.ZINNIA_DISC.get(),
-						GenerationsItems.CYNTHIA_DISC.get(), GenerationsItems.DEOXYS_DISC.get(), GenerationsItems.IRON_BALL.get(),
+						GenerationsItems.FLYING_MEMORY_DRIVE.get(), GenerationsItems.IRON_BALL.get(),
 						CobblemonItems.SHARP_BEAK.asItem(), GenerationsItems.SKY_PLATE.get(), GenerationsItems.UTILITY_UMBRELLA.get(),
 						GenerationsItems.AIR_BALLOON.get(), CobblemonItems.GREPA_BERRY.asItem(), CobblemonItems.LANSAT_BERRY.asItem(),
 						CobblemonItems.LUM_BERRY.asItem(), GenerationsItems.LIGHT_BALL.get(), GenerationsItems.PINK_NECTAR.get(),
@@ -1431,8 +1489,17 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 						GenerationsItems.TM_14.get(), GenerationsItems.TM_27.get(), GenerationsItems.TM_40.get(),
 						GenerationsItems.TM_65.get(), GenerationsItems.TM_97.get(), GenerationsItems.TM_113.get(),
 						GenerationsItems.TM_160.get(), GenerationsItems.TM_164.get(),
-						GenerationsItems.TM_197.get(), GenerationsItems.TM_216.get()
-				)));
+						GenerationsItems.TM_197.get(), GenerationsItems.TM_216.get())
+						.add(key("cerulean_city_disc"))
+						.add(key("icirrus_city_disc"))
+						.add(key("laverre_city_disc"))
+						.add(key("surf_disc"))
+						.add(key("lake_of_rage_disc"))
+						.add(key("penny_disc"))
+						.add(key("nemona_disc"))
+						.add(key("zinnia_disc"))
+						.add(key("cynthia_disc"))
+						.add(key("deoxys_disc"))));
 	}
 
 	private LootPool.Builder createPool(NumberProvider rolls, Item... items) {
@@ -1441,5 +1508,9 @@ public class GenerationsChestLoot implements LootTableSubProvider {
 			pool.add(LootItem.lootTableItem(item));
 
 		return pool;
+	}
+
+	public static LootPoolSingletonContainer.Builder<?> key(String key) {
+		return ResouceKeyEntry.resourceKeyContents(ResourceKey.create(Registries.ITEM, new ResourceLocation("generations_music", key)));
 	}
 }

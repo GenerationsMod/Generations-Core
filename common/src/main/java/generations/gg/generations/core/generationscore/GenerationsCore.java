@@ -33,6 +33,7 @@ import generations.gg.generations.core.generationscore.world.item.creativetab.Ge
 import generations.gg.generations.core.generationscore.world.item.legends.EnchantableItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.world.loot.LootPoolEntryTypes;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeSerializers;
 import generations.gg.generations.core.generationscore.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.world.recipe.RksResultType;
@@ -91,6 +92,7 @@ public class GenerationsCore
 		GenerationsWood.init();
 		GenerationsOres.init();
 		GenerationsDecorationBlocks.init();
+		LootPoolEntryTypes.init();
 		GenerationsUtilityBlocks.init();
 		GenerationsShrines.init();
 		GenerationsItems.init();

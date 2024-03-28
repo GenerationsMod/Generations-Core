@@ -50,18 +50,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:lugia_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lavender_town_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:mt_pyre_disc"
-        },
-        {
-          "type": "minecraft:item",
           "name": "generations_core:permit"
         },
         {
@@ -375,6 +363,21 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_226"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:lugia_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:lavender_town_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:mt_pyre_disc"
         }
       ],
       "rolls": 1.0

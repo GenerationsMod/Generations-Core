@@ -146,46 +146,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:cerulean_city_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:icirrus_city_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:laverre_city_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:surf_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lake_of_rage_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:penny_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:nemona_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:zinnia_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:cynthia_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:deoxys_disc"
-        },
-        {
-          "type": "minecraft:item",
           "name": "generations_core:quick_candy"
         },
         {
@@ -439,6 +399,56 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_224"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:cerulean_city_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:icirrus_city_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:laverre_city_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:surf_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:lake_of_rage_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:penny_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:nemona_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:zinnia_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:cynthia_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:deoxys_disc"
         }
       ],
       "rolls": {

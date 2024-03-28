@@ -158,10 +158,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:hi_tech_earbuds"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:hondew_berry"
         },
         {
@@ -487,6 +483,11 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_227"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:hi_tech_earbuds"
         }
       ],
       "rolls": {

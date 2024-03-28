@@ -38,46 +38,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:iris_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:nessa_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:team_rocket_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:sada_and_turo_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:south_province_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:rival_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lusamine_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:xy_legendary_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:kanto_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:ultra_necrozma_disc"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:bluk_berry"
         },
         {
@@ -507,6 +467,56 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_226"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:iris_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:nessa_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:team_rocket_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:sada_and_turo_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:south_province_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:rival_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:lusamine_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:xy_legendary_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:kanto_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:ultra_necrozma_disc"
         }
       ],
       "rolls": {

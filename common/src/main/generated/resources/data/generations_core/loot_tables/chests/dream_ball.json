@@ -318,18 +318,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:lugia_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lavender_town_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:mt_pyre_disc"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:relaxed_mint"
         },
         {
@@ -519,6 +507,21 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_161"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:lugia_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:lavender_town_disc"
+        },
+        {
+          "type": "generations_core:resource_key",
+          "expand": false,
+          "name": "generations_music:mt_pyre_disc"
         }
       ],
       "rolls": {

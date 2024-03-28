@@ -1218,50 +1218,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.GHOST_SIGN.get(), "blocks/sign/");
         createItem(GenerationsItems.GHOST_HANGING_SIGN.get(), "blocks/sign/");
 
-        createItem(GenerationsItems.AZALEA_TOWN_DISC.get(), "discs/");
-        createItem(GenerationsItems.CASCARRAFA_CITY_DISC.get(), "discs/");
-        createItem(GenerationsItems.CERULEAN_CITY_DISC.get(), "discs/");
-        createItem(GenerationsItems.ETERNA_CITY_DISC.get(), "discs/");
-        createItem(GenerationsItems.GOLDENROD_CITY_DISC.get(), "discs/");
-        createItem(GenerationsItems.ICIRRUS_CITY_DISC.get(), "discs/");
-        createItem(GenerationsItems.JUBILIFE_VILLAGE_DISC.get(), "discs/");
-        createItem(GenerationsItems.LAKE_OF_RAGE_DISC.get(), "discs/");
-        createItem(GenerationsItems.LAVERRE_CITY_DISC.get(), "discs/");
-        createItem(GenerationsItems.LILLIE_DISC.get(), "discs/");
-        createItem(GenerationsItems.POKEMON_CENTER_DISC.get(), "discs/");
-        createItem(GenerationsItems.ROUTE_228_DISC.get(), "discs/");
-        createItem(GenerationsItems.SLUMBERING_WEALD_DISC.get(), "discs/");
-        createItem(GenerationsItems.SURF_DISC.get(), "discs/");
-        createItem(GenerationsItems.VERMILION_CITY_DISC.get(), "discs/");
-        createItem(GenerationsItems.CYNTHIA_DISC.get(), "discs/");
-        createItem(GenerationsItems.DEOXYS_DISC.get(), "discs/");
-        createItem(GenerationsItems.IRIS_DISC.get(), "discs/");
-        createItem(GenerationsItems.KANTO_DISC.get(), "discs/");
-        createItem(GenerationsItems.LUSAMINE_DISC.get(), "discs/");
-        createItem(GenerationsItems.NEMONA_DISC.get(), "discs/");
-        createItem(GenerationsItems.NESSA_DISC.get(), "discs/");
-        createItem(GenerationsItems.PENNY_DISC.get(), "discs/");
-        createItem(GenerationsItems.RIVAL_DISC.get(), "discs/");
-        createItem(GenerationsItems.SADA_AND_TURO_DISC.get(), "discs/");
-        createItem(GenerationsItems.SOUTH_PROVINCE_DISC.get(), "discs/");
-        createItem(GenerationsItems.TEAM_ROCKET_DISC.get(), "discs/");
-        createItem(GenerationsItems.ULTRA_NECROZMA_DISC.get(), "discs/");
-        createItem(GenerationsItems.XY_LEGENDARY_DISC.get(), "discs/");
-        createItem(GenerationsItems.ZINNIA_DISC.get(), "discs/");
-        createItem(GenerationsItems.LAVENDER_TOWN_DISC.get(), "discs/");
-        createItem(GenerationsItems.LUGIA_DISC.get(), "discs/");
-        createItem(GenerationsItems.MT_PYRE_DISC.get(), "discs/");
         createItem(GenerationsItems.RELIC_SONG.get(), "legend_items/");
         createItem(GenerationsItems.INERT_RELIC_SONG.get(), "legend_items/");
-
-        createItem(GenerationsItems.POKE_WALKMON.get(), "utility_items/");
-        createItem(GenerationsItems.GREAT_WALKMON.get(), "utility_items/");
-        createItem(GenerationsItems.ULTRA_WALKMON.get(), "utility_items/");
-        createItem(GenerationsItems.MASTER_WALKMON.get(), "utility_items/");
-        createItem(GenerationsItems.HI_TECH_EARBUDS.get(), "utility_items/");
-        createItem(GenerationsItems.GB_SOUNDS.get(), "utility_items/");
-
-
 
 //        createItemBlock(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
 //        createItemBlock(GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
