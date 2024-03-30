@@ -135,7 +135,6 @@ public class TagsDatagen {
             tag(GenerationsBlockTags.CRYSTAL_ORES).add(GenerationsOres.CRYSTAL_ORE_SET.getOre(), GenerationsOres.CRYSTAL_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.SILICON_ORES).add(GenerationsOres.SILICON_ORE_SET.getOre(), GenerationsOres.SILICON_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.Z_CRYSTAL_ORES).add(GenerationsOres.Z_CRYSTAL_ORE_SET.getOre(), GenerationsOres.Z_CRYSTAL_ORE_SET.getDeepslateOre());
-            tag(GenerationsBlockTags.FOSSIL_ORES).add(GenerationsOres.FOSSIL_ORE_SET.getOre(), GenerationsOres.FOSSIL_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.MEGASTONE_ORES).add(GenerationsOres.MEGASTONE_ORE_SET.getOre(), GenerationsOres.MEGASTONE_ORE_SET.getDeepslateOre());
             tag(GenerationsBlockTags.METEORITE_ORES).add(GenerationsOres.METEORITE_ORE_SET.getOre(), GenerationsOres.METEORITE_ORE_SET.getDeepslateOre());
             //Vanilla Ores
@@ -165,7 +164,6 @@ public class TagsDatagen {
                     .addTag(GenerationsBlockTags.CRYSTAL_ORES)
                     .addTag(GenerationsBlockTags.SILICON_ORES)
                     .addTag(GenerationsBlockTags.Z_CRYSTAL_ORES)
-                    .addTag(GenerationsBlockTags.FOSSIL_ORES)
                     .addTag(GenerationsBlockTags.MEGASTONE_ORES)
                     .addTag(GenerationsBlockTags.METEORITE_ORES);
                     /*
@@ -313,7 +311,6 @@ public class TagsDatagen {
             copy(GenerationsBlockTags.CRYSTAL_ORES, GenerationsItemTags.CRYSTAL_ORES);
             copy(GenerationsBlockTags.SILICON_ORES, GenerationsItemTags.SILICON_ORES);
             copy(GenerationsBlockTags.Z_CRYSTAL_ORES, GenerationsItemTags.Z_CRYSTAL_ORES);
-            copy(GenerationsBlockTags.FOSSIL_ORES, GenerationsItemTags.FOSSIL_ORES);
             copy(GenerationsBlockTags.MEGASTONE_ORES, GenerationsItemTags.MEGASTONE_ORES);
             copy(GenerationsBlockTags.METEORITE_ORES, GenerationsItemTags.METEORITE_ORES);
             /*
