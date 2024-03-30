@@ -119,14 +119,14 @@ publisher {
     modrinthID.set("AxvRzJ70")
     githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
     setReleaseType(ReleaseType.BETA)
-    version.set(project.version.toString())
-    displayName.set("$jarName-${version.get()}")
+    projectVersion.set(project.version.toString())
+    displayName.set("$jarName-${projectVersion.get()}")
     changelog.set("")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
     setCurseEnvironment(CurseEnvironment.BOTH)
-    setJavaVersions("17", "18")
+    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18)
     val depends = mutableListOf(
         "fabric-api",
         "fabric-language-kotlin",
