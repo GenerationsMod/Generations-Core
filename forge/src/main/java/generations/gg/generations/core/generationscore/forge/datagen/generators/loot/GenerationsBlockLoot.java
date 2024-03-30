@@ -116,11 +116,6 @@ public class GenerationsBlockLoot extends BlockLootSubProvider {
         add(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()));
 
 
-        dropSelf(GenerationsOres.FOSSIL_ORE_SET.getOre());
-
-        dropSelf(GenerationsOres.FOSSIL_ORE_SET.getDeepslateOre());
-
-
         dropSelf(GenerationsBlocks.POKEMART_SIGN.get());
         dropSelf(GenerationsBlocks.POKECENTER_SIGN.get());
 
