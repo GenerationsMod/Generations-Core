@@ -131,7 +131,7 @@ publisher {
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
     setCurseEnvironment(CurseEnvironment.BOTH)
-    setJavaVersions("java 17", "java 18")
+    setJavaVersions("17", "18")
     val depends = mutableListOf(
         "architectury-api",
         "kotlin-for-forge",

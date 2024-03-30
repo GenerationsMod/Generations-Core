@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:ironbundle",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ironbundle",
+            "model": "generations_core:ironbundle.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -104,10 +104,7 @@ public class Pipelines {
                     Pipeline.Builder layered_base = new Pipeline.Builder(BASE)
                             .shader(read(register.resourceManager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(register.resourceManager, "shaders/block/" + legacyShading + "layered.fs.glsl"))
                             .configure(Pipelines::baseColors)
-                            .configure(Pipelines::emissionColors);
-
-                    Pipeline layered = new Pipeline.Builder(layered_base)
-                            .supplyUniform("frame", ctx -> ctx.uniform().uploadInt(-1))
+                            .configure(Pipelines::emissionColors)
                             .supplyUniform("layer", ctx -> {
                                 var texture = ctx.getTexture("layer");
 
@@ -123,7 +120,10 @@ public class Pipelines {
 
                                 texture.bind(4);
                                 ctx.uniform().uploadInt(4);
-                            })
+                            });
+
+                    Pipeline layered = new Pipeline.Builder(layered_base)
+                            .supplyUniform("frame", ctx -> ctx.uniform().uploadInt(-1))
                             .build();
 
                     Pipeline solid = new Pipeline.Builder(BASE)

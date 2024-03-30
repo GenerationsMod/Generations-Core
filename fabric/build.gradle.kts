@@ -126,7 +126,7 @@ publisher {
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
     setCurseEnvironment(CurseEnvironment.BOTH)
-    setJavaVersions("java 17", "java 18")
+    setJavaVersions("17", "18")
     val depends = mutableListOf(
         "fabric-api",
         "fabric-language-kotlin",

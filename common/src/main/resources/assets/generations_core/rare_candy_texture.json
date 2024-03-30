@@ -10,5 +10,6 @@
   "marble": "generations_core:entity/statue_material/marble",
   "metal": "generations_core:entity/statue_material/metal",
   "moss": "generations_core:entity/statue_material/moss",
-  "silver": "generations_core:entity/statue_material/silver"
+  "silver": "generations_core:entity/statue_material/silver",
+  "paradox_mask": "generations_core:pk_external/paradox"
 }
