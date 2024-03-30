@@ -153,13 +153,17 @@ public class Pipelines {
                             .build();
 
                             Pipeline paradox = new Pipeline.Builder(layered_base)
-                                    .supplyUniform("frame", ctx -> ctx.uniform().uploadInt((int) ((MinecraftClientGameProvider.getTimePassed() * 200) % 16)))
+                                    .supplyUniform("frame", ctx -> ctx.uniform().uploadInt((int) pingpong(MinecraftClientGameProvider.getTimePassed())))
                                     .build();
 
                             var map = Map.of("masked", masked, "layered", layered, "paradox", paradox, "solid", solid);
 
                             return s -> map.getOrDefault(s, solid);
                 });
+    }
+
+    public static double pingpong(double time) {
+        return (int) (Math.sin(time * Math.PI * 2) * 7 + 7);
     }
 
     private static ITexture getTexture(String variant) {
@@ -188,7 +192,7 @@ public class Pipelines {
                 .supplyUniform("emiIntensity2", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity2")))
                 .supplyUniform("emiIntensity3", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity3")))
                 .supplyUniform("emiIntensity4", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity4")))
-                .supplyUniform("emiIntensity5", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity5")));
+                .supplyUniform("emiIntensity5", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity5", 1.0f)));
     }
 
     private static void baseColors(Pipeline.Builder builder) {
@@ -204,7 +208,11 @@ public class Pipelines {
     }
 
     private static float getFloatValue(UniformUploadContext ctx, String id) {
-        return !isStatueMaterial(ctx.instance().variant()) && ctx.getValue(id) instanceof Float vec ? vec : 0.0f;
+        return getFloatValue(ctx, id, 0.0f);
+    }
+
+    private static float getFloatValue(UniformUploadContext ctx, String id, float value) {
+        return !isStatueMaterial(ctx.instance().variant()) && ctx.getValue(id) instanceof Float vec ? vec : value;
     }
 
     private static void addLight(Pipeline.Builder builder) {

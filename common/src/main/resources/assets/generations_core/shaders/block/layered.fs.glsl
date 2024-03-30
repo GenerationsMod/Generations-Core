@@ -46,9 +46,9 @@ float getMaskIntensity() {
     vec2 effectTexCoord = vec2(texCoord0);
 
     if(frame >= 0) {
-        effectTexCoord *= 0.25;
-        effectTexCoord.x += (frame % 4)/4;
-        effectTexCoord.y +=  (frame/4)/4;
+        effectTexCoord *= (0.25f);
+        effectTexCoord.x += (frame % 4)/4f;
+        effectTexCoord.y +=  (frame/4)/4f;
     }
 
     return texture(mask, effectTexCoord).r;
@@ -77,6 +77,7 @@ vec4 getColor() {
 
     return vec4(base, color.a);
 }
+
 vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
     return texture(lightMap, clamp(uv / 256.0, vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
 }

@@ -7,6 +7,6 @@ public class MinecraftClientGameProvider {
     public static Matrix4f projMatrix = new Matrix4f();
 
     public static double getTimePassed() {
-        return (System.currentTimeMillis() - START_TIME) / 1000 / 1000;
+        return (System.currentTimeMillis() - START_TIME) / 1000f;
     }
 }
