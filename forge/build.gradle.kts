@@ -46,8 +46,10 @@ repositories {
 }
 
 dependencies {
-    forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
-    //forge("net.neoforged:forge:$minecraftVersion-${project.properties["neoforge_version"]}")
+    if ((project.properties["use_neoforge"] as String).toBoolean())
+        forge("net.neoforged:forge:$minecraftVersion-${project.properties["neoforge_version"]}")
+    else forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
+
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
