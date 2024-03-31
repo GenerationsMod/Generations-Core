@@ -2,10 +2,7 @@ package generations.gg.generations.core.generationscore.compat.forge;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FireBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -24,5 +21,9 @@ public class VanillaCompatImpl {
     }
     public static void registerFlammable(@NotNull Block blockIn, int encouragement, int flammability) {
         ((FireBlock) Blocks.FIRE).setFlammable(blockIn, encouragement, flammability);
+    }
+
+    public static void registerCompostables(@NotNull Block block, float chance) {
+        ComposterBlock.COMPOSTABLES.put(block, chance);
     }
 }

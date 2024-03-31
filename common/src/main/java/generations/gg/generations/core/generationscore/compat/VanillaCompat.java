@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.compat;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import generations.gg.generations.core.generationscore.world.level.block.FlabebeFlowerBlock;
+import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
@@ -19,6 +21,11 @@ public class VanillaCompat {
 		registerStrippable(GenerationsWood.ULTRA_JUNGLE_WOOD.get(), GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD.get());
 		registerStrippable(GenerationsWood.GHOST_LOG.get(), GenerationsWood.STRIPPED_GHOST_LOG.get());
 		registerStrippable(GenerationsWood.GHOST_WOOD.get(), GenerationsWood.STRIPPED_GHOST_WOOD.get());
+
+		GenerationsBlocks.BLOCKS.forEach(block -> {
+			if (block.get() instanceof FlabebeFlowerBlock)
+				registerCompostables(block.get(), 0.65F);
+		});
 	}
 
 	/**
@@ -39,6 +46,17 @@ public class VanillaCompat {
 	 */
 	@ExpectPlatform
 	private static void registerFlammable(@NotNull Block blockIn, int encouragement, int flammability) {
+		throw new RuntimeException();
+	}
+
+
+	/**
+	 * Register a block as compostable.
+	 * @param block The block to register
+	 * @param chance The chance of the block to compost
+	 */
+	@ExpectPlatform
+	private static void registerCompostables(@NotNull Block block, float chance) {
 		throw new RuntimeException();
 	}
 }
