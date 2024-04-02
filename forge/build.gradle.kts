@@ -46,8 +46,10 @@ repositories {
 }
 
 dependencies {
-    forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
-    //forge("net.neoforged:forge:$minecraftVersion-${project.properties["neoforge_version"]}")
+    if ((project.properties["use_neoforge"] as String).toBoolean())
+        forge("net.neoforged:forge:$minecraftVersion-${project.properties["neoforge_version"]}")
+    else forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
+
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
@@ -124,14 +126,14 @@ publisher {
     modrinthID.set("AxvRzJ70")
     githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
     setReleaseType(ReleaseType.BETA)
-    version.set(project.version.toString())
-    displayName.set("$jarName-${version.get()}")
+    projectVersion.set(project.version.toString())
+    displayName.set("$jarName-${projectVersion.get()}")
     changelog.set("")
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
     setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
     setCurseEnvironment(CurseEnvironment.BOTH)
-    setJavaVersions("17", "18")
+    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18)
     val depends = mutableListOf(
         "architectury-api",
         "kotlin-for-forge",

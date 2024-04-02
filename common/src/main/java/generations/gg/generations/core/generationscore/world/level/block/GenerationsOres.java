@@ -44,8 +44,6 @@ public class GenerationsOres {
 	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE, UniformInt.of(2, 5));
 	public static final GenerationsOreSet SILICON_ORE_SET = new GenerationsOreSet("silicon_ore", GenerationsItems.SILICON);
 	public static final GenerationsOreSet Z_CRYSTAL_ORE_SET = new GenerationsOreSet("z_crystal_ore");
-	public static final GenerationsOreSet FOSSIL_ORE_SET = new GenerationsOreSet("fossil_ore");
-
 
 
 	// Charge Stone Vanilla Ores
