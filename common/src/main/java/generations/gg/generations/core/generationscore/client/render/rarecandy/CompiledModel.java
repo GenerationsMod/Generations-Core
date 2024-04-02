@@ -2,15 +2,19 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
+import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
 import gg.generations.rarecandy.renderer.loading.ModelLoader;
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
+import gg.generations.rarecandy.renderer.rendering.RenderStage;
 import gg.generations.rarecandy.renderer.storage.ObjectManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
@@ -18,6 +22,7 @@ import org.joml.Matrix4f;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 /**
@@ -39,9 +44,8 @@ public class CompiledModel {
                     var glCalls = new ArrayList<Runnable>();
                     try {
                         ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, glCalls, supplier);
-                    } catch (NullPointerException e) {
+                    } catch (Exception e) {
 //                        RareCandyTest.LOGGER.error("Catching exception reading model %s.".formatted(a));
-                        e.printStackTrace();
                     }
                     return glCalls;
                 },
@@ -63,13 +67,25 @@ public class CompiledModel {
         );
     }
 
+    public static CompiledModel of(ResourceLocation pair, Resource resource) {
+        try {
+            var is = resource.open();
+            return new CompiledModel(pair, is, AnimatedMeshObject::new);
+        } catch (Exception e) {
+            var path = pair.toString();
+            if (path.endsWith(".smdx") || path.endsWith(".pqc")) throw new RuntimeException("Tried reading a 1.12 .smdx or .pqc");
+            throw new RuntimeException("Failed to load " + path, e);
+        }
+    }
+
     public void renderGui(ObjectInstance instance, Matrix4f projectionMatrix) {
         RenderSystem.enableDepthTest();
         BufferUploader.reset();
         RenderSystem.applyModelViewMatrix();
         instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
         render(instance, projectionMatrix, ModelRegistry.getWorldRareCandy().objectManager);
-        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+        ModelRegistry.getWorldRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.SOLID);
+        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
     }
 
     public void render(ObjectInstance instance, Matrix4f projectionMatrix) {
@@ -79,10 +95,16 @@ public class CompiledModel {
     public void render(ObjectInstance instance, Matrix4f projectionMatrix, ObjectManager objectManager) {
         if (!renderObject.isReady()) return;
 
+        uploadIfNeeded();
+
         Minecraft.getInstance().getProfiler().push("create_model_instance");
         MinecraftClientGameProvider.projMatrix = projectionMatrix;
         objectManager.add(this.renderObject, instance);
         Minecraft.getInstance().getProfiler().pop();
+    }
+
+    private void uploadIfNeeded() {
+        renderObject.objects.stream().filter(meshObject -> !meshObject.model.isUploaded()).forEachOrdered(meshObject -> meshObject.model.upload());
     }
 
     public void delete() {

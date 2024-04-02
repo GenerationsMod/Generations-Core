@@ -20,6 +20,7 @@ import generations.gg.generations.core.generationscore.client.model.RareCandyBon
 import generations.gg.generations.core.generationscore.client.model.inventory.GenericChestItemStackRenderer;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.*;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Pipelines;
@@ -41,6 +42,8 @@ import generations.gg.generations.core.generationscore.world.level.block.generic
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.pokeutils.reader.TextureReference;
 import gg.generations.rarecandy.renderer.loading.ITexture;
+import gg.generations.rarecandy.renderer.rendering.RareCandy;
+import gg.generations.rarecandy.renderer.rendering.RenderStage;
 import gg.generations.rarecandy.tools.TextureLoader;
 import kotlin.Unit;
 import net.minecraft.client.Camera;
@@ -64,6 +67,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.util.GsonHelper;
@@ -93,7 +97,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static generations.gg.generations.core.generationscore.GenerationsCore.id;
 import static generations.gg.generations.core.generationscore.world.item.MelodyFluteItem.isItem;
@@ -110,6 +117,7 @@ public class GenerationsCoreClient {
     public static void onInitialize(Minecraft minecraft) {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
+        RareCandy.DEBUG_THREADS = true;
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
@@ -121,6 +129,12 @@ public class GenerationsCoreClient {
                 (ResourceManagerReloadListener) resourceManager -> {
                     ModelRegistry.LOADER.invalidateAll();
                     ModelRegistry.LOADER.cleanUp();
+
+                    var map = new HashMap<ResourceLocation, CompiledModel>();
+                    resourceManager.listResources("models", a -> a.getPath().endsWith(".pk")).forEach((location, resource) -> map.computeIfAbsent(location, a -> CompiledModel.of(a, resource)));
+                    resourceManager.listResources("bedrock/pokemon/models", a -> a.getPath().endsWith(".pk")).forEach((location, resource) -> map.computeIfAbsent(location, a -> CompiledModel.of(a, resource)));
+
+                    ModelRegistry.LOADER.putAll(map);
                 },
                 PackType.CLIENT_RESOURCES,
                 emptyList());
@@ -388,7 +402,8 @@ public class GenerationsCoreClient {
     }
 
     public static void renderRareCandy() {
-        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+        ModelRegistry.getWorldRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.SOLID);
+        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
     }
 
     public static class GenerationsTextureLoader extends ITextureLoader {
@@ -500,12 +515,6 @@ public class GenerationsCoreClient {
 
         @Override
         public void clear() {
-            var manager = Minecraft.getInstance().getTextureManager();
-
-            for (var entry : MAP.keySet()) {
-                manager.release(MAP.get(entry));
-            }
-
             MAP.clear();
         }
 

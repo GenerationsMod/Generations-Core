@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
 import com.google.common.cache.*;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -16,27 +18,55 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.FileNotFoundException;
+import java.util.AbstractMap;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import static com.google.common.util.concurrent.Futures.immediateFuture;
+
 public class ModelRegistry {
-    private static final Supplier<MeshObject> MESH_OBJECT_SUPPLIER = AnimatedMeshObject::new;
-    public static final LoadingCache<ResourceLocation, CompiledModel> LOADER = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.SECONDS).removalListener((RemovalListener<ResourceLocation, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
+    private static final String DUMMY = "dummy";
+
+    public static final LoadingCache<ResourceLocation, String> REFRESH = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.SECONDS).removalListener(new RemovalListener<ResourceLocation, String>() {
         @Override
-        public @NotNull CompiledModel load(@NotNull ResourceLocation pair) {
-            try {
-                var resourceManager = Minecraft.getInstance().getResourceManager();
-                var is = resourceManager.getResource(pair).orElseGet(() -> {
-                    System.out.println("Failed to get Pokemon model: " + pair);
-                    return resourceManager.getResource(GenerationsCore.id("models/pokemon/substitute.pk")).orElseThrow();
-                }).open();
-                return new CompiledModel(pair, is, MESH_OBJECT_SUPPLIER);
-            } catch (Exception e) {
-                var path = pair.toString();
-                if (path.endsWith(".smdx") || path.endsWith(".pqc")) throw new RuntimeException("Tried reading a 1.12 .smdx or .pqc");
-                throw new RuntimeException("Failed to load " + path, e);
+        public void onRemoval(RemovalNotification<ResourceLocation, String> notification) {
+            var model = LOADER.getIfPresent(notification.getKey());
+
+            if(model != null) {
+                model.renderObject.objects.forEach(a -> a.model.removeFromGpu());
             }
         }
+    }).build(new CacheLoader<ResourceLocation, String>() {
+        @Override
+        public String load(ResourceLocation key) throws Exception {
+            return ModelRegistry.DUMMY;
+        }
+    });
+    public static final LoadingCache<ResourceLocation, CompiledModel> LOADER = CacheBuilder.newBuilder().removalListener((RemovalListener<ResourceLocation, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
+        @Override
+        public @NotNull CompiledModel load(@NotNull ResourceLocation pair) {
+            var resourceManager = Minecraft.getInstance().getResourceManager();
+
+            try {
+                return CompiledModel.of(pair, resourceManager.getResourceOrThrow(pair));
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+//        @Override
+//        public ListenableFuture<CompiledModel> reload(ResourceLocation key, CompiledModel oldValue) throws Exception {
+//            for (MeshObject meshObject : oldValue.renderObject.objects) {
+//                if (meshObject.isReady() && meshObject.model.isUploaded()) {
+//                    meshObject.model.removeFromGpu();
+//                }
+//            }
+//
+//            return Futures.immediateFuture(oldValue);
+//        }
     });
     private static RareCandy WORLD_RENDER;
     private static RareCandy GUI_RENDER;
@@ -47,7 +77,9 @@ public class ModelRegistry {
 
     public static CompiledModel get(ResourceLocation location) {
         try {
+            REFRESH.get(location);
             return LOADER.get(location);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

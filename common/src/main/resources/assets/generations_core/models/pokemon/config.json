@@ -1,0 +1,18 @@
+{
+  "scale": 1.0,
+  "materials": {
+    "body": {
+      "type": "solid",
+      "texture": "body.png"
+    }
+  },
+  "defaultVariant": {
+    "body": {
+      "material": "body",
+      "hide": false
+    }
+  },
+  "variants": {
+    "regular": {}
+  }
+}
