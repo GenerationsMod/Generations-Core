@@ -6,11 +6,15 @@ import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
+import generations.gg.generations.core.generationscore.world.entity.PlayerNpcEntity;
+import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import generations.gg.generations.core.generationscore.world.feature.GenerationsConfiguredFeatures;
 import generations.gg.generations.core.generationscore.world.feature.GenerationsPlacedFeatures;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
@@ -66,6 +70,7 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
         GenerationsConfiguredFeatures.init();
         GenerationsPlacedFeatures.init();
         GenerationsFabricBiomemodifiers.generateOres();
+        registerEntityAttributes();
     }
 
     @Override
@@ -82,6 +87,11 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
                 dependencies
             )
         );
+    }
+
+    public static void registerEntityAttributes(){
+        FabricDefaultAttributeRegistry.register(GenerationsEntities.STATUE_ENTITY.get(), StatueEntity.createLivingAttributes());
+        FabricDefaultAttributeRegistry.register(GenerationsEntities.PLAYER_NPC.get(), PlayerNpcEntity.createMobAttributes());
     }
 
     @Override

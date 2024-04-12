@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.entity;
 
-import dev.architectury.registry.level.entity.EntityAttributeRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -39,18 +38,7 @@ public class GenerationsEntities {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations entities");
         ENTITIES.register();
-        EntityAttributeRegistry.register(STATUE_ENTITY, StatueEntity::createLivingAttributes);
-        EntityAttributeRegistry.register(PLAYER_NPC, PlayerNpcEntity::createMobAttributes);
-//        eventBus.addListener(PokeModEntities::registerEntityAttributes);
     }
-
-
-//    private static void registerEntityAttributes(EntityAttributeCreationEvent event) {
-//        event.put(PIXELMON.get(), PixelmonEntity.createMobAttributes().build());
-//        event.put(STARTER_PICK.get(), StarterPickEntity.createAttributes().build());
-//        event.put(PLAYER_NPC.get(), PlayerNpcEntity.createAttributes().build());
-//        event.put(STATUE.get(), StatueEntity.createLivingAttributes().build());
-//    }
 
     private static <T extends Entity> RegistrySupplier<EntityType<T>> createEntityType(String name, MobCategory category, float width, float height, EntityType.EntityFactory<T> factory) {
         return ENTITIES.register(name, () -> EntityType.Builder.of(factory, category).sized(width, height).build(name));
