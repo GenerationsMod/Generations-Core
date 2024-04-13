@@ -49,12 +49,13 @@ dependencies {
 
     implementation("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
     implementation("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
-    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.1")!!)
-    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.1:natives-windows")!!)
+    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2")!!)
+    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")!!)
     implementation("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     implementation("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
     implementation("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
-    implementation("shadowCommon"("com.thebombzen:jxlatte:1.1.0")!!)
+    implementation("shadowCommon"("com.traneptora:jxlatte:2.0.0")!!)
+
     implementation("shadowCommon"("com.github.Chocohead:Fabric-ASM:v2.3")!!)
 
     modApi("earth.terrarium.botarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")

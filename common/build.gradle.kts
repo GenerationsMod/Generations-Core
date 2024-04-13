@@ -20,12 +20,12 @@ dependencies {
     implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
     implementation("org.tukaani:xz:${project.properties["rareCandyXZ"]}")
     implementation("org.apache.commons:commons-compress:${project.properties["rareCandyCommonCompress"]}")
-    implementation("org.lwjgl:lwjgl-assimp:3.3.1")
-    implementation("org.lwjgl:lwjgl-assimp:3.3.1:natives-windows")
+    implementation("org.lwjgl:lwjgl-assimp:3.3.2")
+    implementation("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")
     implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
     implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
     implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")
-    implementation("com.thebombzen:jxlatte:1.1.0")
+    implementation("com.traneptora:jxlatte:2.0.0")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 
     //Cobblemon

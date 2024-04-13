@@ -83,9 +83,9 @@ public class CompiledModel {
         BufferUploader.reset();
         RenderSystem.applyModelViewMatrix();
         instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
-        render(instance, projectionMatrix, ModelRegistry.getWorldRareCandy().objectManager);
-        ModelRegistry.getWorldRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.SOLID);
-        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
+        render(instance, projectionMatrix, ModelRegistry.getGuiRareCandy().objectManager);
+        ModelRegistry.getGuiRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.SOLID);
+        ModelRegistry.getGuiRareCandy().render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
     }
 
     public void render(ObjectInstance instance, Matrix4f projectionMatrix) {

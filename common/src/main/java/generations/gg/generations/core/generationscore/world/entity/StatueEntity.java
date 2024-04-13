@@ -272,7 +272,7 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
                     buf.readNullable(FriendlyByteBuf::readUtf),
                     buf.readFloat(),
                     buf.readFloat(),
-                    toPoseType(buf.readUtf()),
+                    buf.readEnum(PoseType.class),
                     buf.readBoolean(),
                     buf.readFloat(),
                     buf.readBoolean(),

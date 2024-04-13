@@ -108,7 +108,12 @@ public class Pipelines {
                             .supplyUniform("layer", ctx -> {
                                 var texture = ctx.getTexture("layer");
 
-                                if (texture == null || isStatueMaterial(ctx.instance().variant())) texture = ITextureLoader.instance().getDarkFallback();
+                                if (texture == null || isStatueMaterial(ctx.instance().variant())) {
+                                    texture = ITextureLoader.instance().getDarkFallback();
+                                    if(texture == null) {
+                                        System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
+                                    }
+                                }
 
 
                                 texture.bind(3);
@@ -116,7 +121,12 @@ public class Pipelines {
                             }).supplyUniform("mask", ctx -> {
                                 var texture = ctx.getTexture("mask");
 
-                                if (texture == null || isStatueMaterial(ctx.instance().variant())) texture = ITextureLoader.instance().getDarkFallback();
+                                if (texture == null || isStatueMaterial(ctx.instance().variant())) {
+                                    texture = ITextureLoader.instance().getDarkFallback();
+                                    if(texture == null) {
+                                        System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
+                                    }
+                                }
 
                                 texture.bind(4);
                                 ctx.uniform().uploadInt(4);
@@ -136,7 +146,12 @@ public class Pipelines {
 
                                 var texture = ctx.getTexture("mask");
 
-                                if(texture == null) texture = ITextureLoader.instance().getDarkFallback();
+                                if(texture == null) {
+                                    texture = ITextureLoader.instance().getDarkFallback();
+                                    if(texture == null) {
+                                        System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
+                                    }
+                                }
 
                                 texture.bind(3);
                                 ctx.uniform().uploadInt(3);
@@ -175,7 +190,13 @@ public class Pipelines {
             var variant = ctx.instance().variant();
 
             ITexture texture = isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
-            if (texture == null) texture = ITextureLoader.instance().getNuetralFallback();
+            if (texture == null) {
+                texture = ITextureLoader.instance().getNuetralFallback();
+
+                if(texture == null) {
+                    System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
+                }
+            }
 
             texture.bind(0);
             ctx.uniform().uploadInt(0);
@@ -230,7 +251,13 @@ public class Pipelines {
 
             if(texture == null) {
                 texture = ITextureLoader.instance().getDarkFallback();
+
+                if(texture == null) {
+                    System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
+                }
             }
+
+
 
             texture.bind(2);
             ctx.uniform().uploadInt(2);

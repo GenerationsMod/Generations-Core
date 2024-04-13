@@ -117,7 +117,7 @@ public class GenerationsCoreClient {
     public static void onInitialize(Minecraft minecraft) {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
-        RareCandy.DEBUG_THREADS = true;
+//        RareCandy.DEBUG_THREADS = true;
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
@@ -131,8 +131,20 @@ public class GenerationsCoreClient {
                     ModelRegistry.LOADER.cleanUp();
 
                     var map = new HashMap<ResourceLocation, CompiledModel>();
-                    resourceManager.listResources("models", a -> a.getPath().endsWith(".pk")).forEach((location, resource) -> map.computeIfAbsent(location, a -> CompiledModel.of(a, resource)));
-                    resourceManager.listResources("bedrock/pokemon/models", a -> a.getPath().endsWith(".pk")).forEach((location, resource) -> map.computeIfAbsent(location, a -> CompiledModel.of(a, resource)));
+
+//                    System.out.println("Loading Models: ");
+//                    long time = System.currentTimeMillis();
+
+                    for (Map.Entry<ResourceLocation, Resource> e : resourceManager.listResources("models", a -> a.getPath().endsWith(".pk")).entrySet()) {
+                        ResourceLocation key = e.getKey();
+                        Resource value = e.getValue();
+                        map.computeIfAbsent(key, a -> CompiledModel.of(a, value));
+                    }
+                    for (Map.Entry<ResourceLocation, Resource> entry : resourceManager.listResources("bedrock/pokemon/models", a -> a.getPath().endsWith(".pk")).entrySet()) {
+                        ResourceLocation location = entry.getKey();
+                        Resource resource = entry.getValue();
+                        map.computeIfAbsent(location, a -> CompiledModel.of(a, resource));
+                    }
 
                     ModelRegistry.LOADER.putAll(map);
                 },
