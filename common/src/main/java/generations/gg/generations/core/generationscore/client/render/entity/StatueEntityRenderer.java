@@ -29,8 +29,6 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         super(arg, null, 0.0f);
     }
 
-    public RenderContext context = new RenderContext();
-
     @Override
     public void render(@NotNull StatueEntity entity, float entityYaw, float partialTicks, @NotNull PoseStack stack, @Nullable MultiBufferSource buffer, int light) {
         var renderable = entity.getStatueData().asRenderablePokemon();
@@ -54,14 +52,8 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         if(texture.getPath().equals("pk")) state.getInstance().setVariant(texture.toString());
 
         var model = (PoseableEntityModel<PokemonEntity>)PokemonModelRepository.INSTANCE.getPoser(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects());
-        var pose = model.getPose(entity.getStatueData().getPoseType());
-        if(pose != null) state.setPose(pose.getPoseName());
-        state.updatePartialTicks(partialTicks);
-        model.setupAnimStateful(null, entity.delegate, 0, 0F, 0F, 0F, 0F);
-        model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.INSTANCE.getLayers(entity.getStatueData().asRenderablePokemon().getSpecies().getResourceIdentifier(), entity.getStatueData().getProperties().getAspects()));
-        var vertexConsumer = ItemRenderer.getFoilBuffer(buffer, model.getLayer(texture, false, false), false, false);
 
-        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+        var context = model.getContext();
 
         context.pop();
         context.put(RenderContext.Companion.getENTITY(), entity);
@@ -69,6 +61,15 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         context.put(RenderContext.Companion.getSPECIES(), entity.species());
         context.put(RenderContext.Companion.getASPECTS(), entity.aspects());
 
+        var pose = model.getPose(entity.getStatueData().getPoseType());
+        if(pose != null) state.setPose(pose.getPoseName());
+
+        state.updatePartialTicks(partialTicks);
+        model.setupAnimStateful(null, entity.delegate, 0, 0F, 0F, 0F, 0F);
+        model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.INSTANCE.getLayers(entity.getStatueData().asRenderablePokemon().getSpecies().getResourceIdentifier(), entity.getStatueData().getProperties().getAspects()));
+        var vertexConsumer = ItemRenderer.getFoilBuffer(buffer, model.getLayer(texture, false, false), false, false);
+
+        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         model.render(context, stack, vertexConsumer, light, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
 
 

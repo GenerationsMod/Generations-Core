@@ -63,6 +63,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             if(isStatue) {
                 instance = ((StatueEntity) entity).getInstance();
                 instance.matrixTransforms = model.getGuiInstance().matrixTransforms;
+                instance.offsets = model.getGuiInstance().offsets;
             }
 
             scale *= ((PixelmonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;

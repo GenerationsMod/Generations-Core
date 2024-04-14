@@ -7,19 +7,22 @@ import com.cobblemon.mod.common.client.render.models.blockbench.animation.Statel
 import com.cobblemon.mod.common.client.render.models.blockbench.frame.ModelFrame
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.AnimationReferenceFactory
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance
 import gg.generations.rarecandy.renderer.animation.Animation
+import gg.generations.rarecandy.renderer.animation.AnimationInstance
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
+import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance
 import net.minecraft.resources.ResourceLocation
 import java.util.function.Supplier
 
 class RareCandyAnimationFactory : AnimationReferenceFactory {
     override fun stateful(
-            model: JsonPokemonPoseableModel,
-            s: String
+        model: JsonPokemonPoseableModel,
+        s: String
     ): StatefulAnimationRareCandy {
         val split =
             s.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
@@ -85,10 +88,14 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 startedSeconds = poseableEntityState.animationSeconds
             }
 
-            val instance = if (t != null) (t as PixelmonInstanceProvider).instance else instanceProvider.get();
+            val instance = if (t != null) (t as PixelmonInstanceProvider).instance else poseableEntityModel.context.request(RenderContext.ENTITY)?.takeIf { it is PixelmonInstanceProvider }?.let { it as PixelmonInstanceProvider }?.instance ?: instanceProvider.get()
             val animation = animationSuppler?.get()
-            if (animation != null) {
-                instance.matrixTransforms = animation.getFrameTransform((poseableEntityState.animationSeconds - startedSeconds).toDouble())
+            if (animation != null && instance != null) {
+                instance.setAnimation(animation)
+                instance.currentAnimation!!.startTime = startedSeconds.toDouble()
+                instance.currentAnimation!!.update(poseableEntityState.animationSeconds.toDouble())
+                instance.matrixTransforms = animation.getFrameTransform(instance.currentAnimation!!)
+                animation.getFrameOffset(instance.currentAnimation!!)
             }
             return true
         }
@@ -110,7 +117,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         override val targetFrame = ModelFrame::class.java
 
         override fun setAngles(
-            pokemonEntity: PokemonEntity?,
+            t: PokemonEntity?,
             poseableEntityModel: PoseableEntityModel<PokemonEntity>,
             state: PoseableEntityState<PokemonEntity>?,
             limbSwing: Float,
@@ -119,14 +126,16 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
             headYaw: Float,
             headPitch: Float
         ) {
-            val instance =
-                if (pokemonEntity != null) (pokemonEntity as PixelmonInstanceProvider).instance else objectSupplier.get()
+            val instance = if (t != null) (t as PixelmonInstanceProvider).instance else poseableEntityModel.context.request(RenderContext.ENTITY)?.takeIf { it is PixelmonInstanceProvider }?.let { it as PixelmonInstanceProvider }?.instance ?: objectSupplier.get()
+
             val animation = animationSupplier.get()
 
             if (instance != null && animation != null) {
-                instance.matrixTransforms = animation.getFrameTransform(
-                    (state?.animationSeconds?.toDouble()) ?: 0.0
-                )
+                instance.setAnimation(animation)
+                instance.currentAnimation!!.startTime = 0.0
+                instance.currentAnimation!!.update(state?.animationSeconds?.toDouble() ?: 0.0)
+                instance.matrixTransforms = animation.getFrameTransform(instance.currentAnimation!!)
+                animation.getFrameOffset(instance.currentAnimation!!)
             }
         }
     }
@@ -134,7 +143,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
 }
 
 private fun String.asBoolean(): Boolean = when {
-        this.lowercase().equals("true") -> true
-        this.lowercase().equals("false") -> false
-        else -> false
-    }
+    this.lowercase().equals("true") -> true
+    this.lowercase().equals("false") -> false
+    else -> false
+}
