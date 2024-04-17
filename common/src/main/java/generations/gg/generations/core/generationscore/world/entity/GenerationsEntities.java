@@ -21,17 +21,9 @@ public class GenerationsEntities {
 //    public static final RegistrySupplier<EntityType<StatueEntity>> STATUE = createEntityType("statue", MobCategory.MISC, 1.0f, 1.0f, StatueEntity::new);
     public static final RegistrySupplier<EntityType<TieredFishingHookEntity>> TIERED_FISHING_BOBBER = ENTITIES.register("tiered_fishing_bobber", () -> EntityType.Builder.<TieredFishingHookEntity>of(TieredFishingHookEntity::new, MobCategory.MISC).noSave().sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(5).build("tiered_fishing_bobber"));
     public static final RegistrySupplier<EntityType<MagmaCrystalEntity>> MAGMA_CRYSTAL = ENTITIES.register("magma_crystal", () -> EntityType.Builder.<MagmaCrystalEntity>of((arg, arg2) -> new MagmaCrystalEntity(arg2), MobCategory.MISC).noSave().sized(0.25f, 0.025f).clientTrackingRange(4).updateInterval(10).build("magma_crystal"));
-    public static final RegistrySupplier<EntityType<GenerationsBoatEntity>> BOAT_ENTITY =
-            ENTITIES.register("boat", () -> EntityType.Builder.<GenerationsBoatEntity>of(GenerationsBoatEntity::new,
-                            MobCategory.MISC).fireImmune().sized(1.375F, 0.5625F)
-//                    .setCustomClientFactory((spawnEntity, world) -> new PokeModBoatEntity(world, 0, 0, 0))
-                    .build("boat"));
+    public static final RegistrySupplier<EntityType<GenerationsBoatEntity>> BOAT_ENTITY = createEntityType("boat", MobCategory.MISC, EntityType.BOAT.getWidth(), EntityType.BOAT.getHeight(), GenerationsBoatEntity::new);
+    public static final RegistrySupplier<EntityType<GenerationsChestBoatEntity>> CHEST_BOAT_ENTITY = createEntityType("chest_boat", MobCategory.MISC, EntityType.CHEST_BOAT.getWidth(), EntityType.CHEST_BOAT.getHeight(), GenerationsChestBoatEntity::new);
 
-    public static final RegistrySupplier<EntityType<GenerationsChestBoatEntity>> CHEST_BOAT_ENTITY =
-            ENTITIES.register("chest_boat", () -> EntityType.Builder.<GenerationsChestBoatEntity>of(GenerationsChestBoatEntity::new,
-                            MobCategory.MISC).fireImmune().sized(1.375F, 0.5625F)
-//                    .setCustomClientFactory((spawnEntity, world) -> new PokeModChestBoatEntity(world, 0, 0, 0))
-                    .build("chest_boat"));
     public static RegistrySupplier<EntityType<StatueEntity>> STATUE_ENTITY =
             ENTITIES.register("statue", () -> EntityType.Builder.<StatueEntity>of(StatueEntity::new, MobCategory.MISC).build("statue"));
 
