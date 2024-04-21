@@ -16,6 +16,8 @@ import generations.gg.generations.core.generationscore.world.item.curry.ItemCurr
 import generations.gg.generations.core.generationscore.world.item.legends.*;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.food.FoodProperties;
@@ -23,9 +25,12 @@ import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SignItem;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Generations Items

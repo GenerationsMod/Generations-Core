@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.mixin.client;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
+import gg.generations.rarecandy.renderer.animation.AnimationInstance;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,8 +15,9 @@ public abstract class PokemonEntityMixin implements PixelmonInstanceProvider {
     private PixelmonInstance instance;
 
     public PixelmonInstance getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null);
+        }
 
         return instance;
     }
