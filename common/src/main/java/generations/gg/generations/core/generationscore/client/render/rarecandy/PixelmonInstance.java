@@ -29,9 +29,6 @@ public class PixelmonInstance extends AnimatedObjectInstance implements BlockLig
 
     public void setAnimation(Animation animation) {
         if(currentAnimation == null) currentAnimation = new StaticAnimationInstance(animation);
-
-        System.out.println("Changing Animation: " + animation.name);
-
         ((StaticAnimationInstance) currentAnimation).setAnimation(animation);
 
     }

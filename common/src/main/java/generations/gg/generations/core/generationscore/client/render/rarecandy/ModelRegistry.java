@@ -36,7 +36,7 @@ public class ModelRegistry {
             var model = LOADER.getIfPresent(notification.getKey());
 
             if(model != null) {
-                model.renderObject.objects.forEach(a -> a.model.removeFromGpu());
+                if(model.isUploaded()) model.removeFromGpu();
             }
         }
     }).build(new CacheLoader<ResourceLocation, String>() {

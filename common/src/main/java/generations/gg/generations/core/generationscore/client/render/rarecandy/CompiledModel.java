@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
-import generations.gg.generations.core.generationscore.GenerationsCore;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
 import gg.generations.rarecandy.renderer.components.MeshObject;
@@ -22,7 +21,7 @@ import org.joml.Matrix4f;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.function.Consumer;
+import java.util.List;
 import java.util.function.Supplier;
 
 /**
@@ -30,16 +29,20 @@ import java.util.function.Supplier;
  */
 public class CompiledModel {
     public final MultiRenderObject<MeshObject> renderObject;
+    public final ResourceLocation name;
+
+    private boolean isUploaded = false;
     private PixelmonInstance guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null);
 
-    public CompiledModel(ResourceLocation a, InputStream stream, Supplier<MeshObject> supplier) {
-        this(a, stream, supplier, true);
+    public CompiledModel(ResourceLocation name, InputStream stream, Supplier<MeshObject> supplier) {
+        this(name, stream, supplier, true);
     }
 
-    public CompiledModel(ResourceLocation a, InputStream stream, Supplier<MeshObject> supplier, boolean requiresVariantTexture) {
+    public CompiledModel(ResourceLocation name, InputStream stream, Supplier<MeshObject> supplier, boolean requiresVariantTexture) {
+        this.name = name;
         var loader = ModelRegistry.getWorldRareCandy().getLoader();
         this.renderObject = loader.createObject(
-                () -> new PixelAsset(stream, a.toString()),
+                () -> new PixelAsset(stream, name.toString()),
                  (gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
                     try {
@@ -84,6 +87,8 @@ public class CompiledModel {
         RenderSystem.applyModelViewMatrix();
         instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
         render(instance, projectionMatrix, ModelRegistry.getGuiRareCandy().objectManager);
+
+
         ModelRegistry.getGuiRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.SOLID);
         ModelRegistry.getGuiRareCandy().render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
     }
@@ -95,7 +100,7 @@ public class CompiledModel {
     public void render(ObjectInstance instance, Matrix4f projectionMatrix, ObjectManager objectManager) {
         if (!renderObject.isReady()) return;
 
-        uploadIfNeeded();
+        if(!isUploaded) uploadIfNeeded();
 
         Minecraft.getInstance().getProfiler().push("create_model_instance");
         MinecraftClientGameProvider.projMatrix = projectionMatrix;
@@ -104,7 +109,16 @@ public class CompiledModel {
     }
 
     private void uploadIfNeeded() {
-        renderObject.objects.stream().filter(meshObject -> !meshObject.model.isUploaded()).forEachOrdered(meshObject -> meshObject.model.upload());
+        List<MeshObject> objects = renderObject.objects;
+        for (int i = 0, objectsSize = objects.size(); i < objectsSize; i++) {
+            MeshObject meshObject = objects.get(i);
+
+                meshObject.model.upload();
+
+//            }
+        }
+
+        isUploaded = true;
     }
 
     public void delete() {
@@ -117,5 +131,14 @@ public class CompiledModel {
 
     public PixelmonInstance getGuiInstance() {
         return guiInstance;
+    }
+
+    public boolean isUploaded() {
+        return isUploaded;
+    }
+
+    public void removeFromGpu() {
+        renderObject.objects.forEach(a -> a.model.removeFromGpu());
+        isUploaded = false;
     }
 }
