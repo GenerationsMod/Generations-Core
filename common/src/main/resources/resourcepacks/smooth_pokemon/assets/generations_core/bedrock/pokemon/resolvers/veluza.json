@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:veluza",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:veluza",
+            "model": "generations_core:veluza.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

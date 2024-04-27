@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:medicham",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:medicham",
+            "model": "generations_core:medicham.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

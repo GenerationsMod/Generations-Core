@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:shellos",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:shellos_west",
+            "model": "generations_core:shellos_west.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "west"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "west"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

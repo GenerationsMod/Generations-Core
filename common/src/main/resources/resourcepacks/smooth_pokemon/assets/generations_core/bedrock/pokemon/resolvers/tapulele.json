@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:tapulele",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tapulele",
+            "model": "generations_core:tapulele.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

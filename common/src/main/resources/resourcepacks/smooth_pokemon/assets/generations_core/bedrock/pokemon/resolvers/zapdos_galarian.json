@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:zapdos",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:zapdos_galarian",
+            "model": "generations_core:zapdos_galarian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "galarian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "galarian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

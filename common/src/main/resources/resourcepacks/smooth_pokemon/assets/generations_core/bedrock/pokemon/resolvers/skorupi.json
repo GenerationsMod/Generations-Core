@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:skorupi",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:skorupi",
+            "model": "generations_core:skorupi.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

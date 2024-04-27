@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:ponyta",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ponyta",
+            "model": "generations_core:ponyta.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

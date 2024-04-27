@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:mismagius",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:mismagius",
+            "model": "generations_core:mismagius.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

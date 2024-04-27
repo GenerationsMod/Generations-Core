@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:clefable",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:clefable",
+            "model": "generations_core:clefable.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

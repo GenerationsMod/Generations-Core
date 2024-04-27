@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:boltund",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:boltund",
+            "model": "generations_core:boltund.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:lokix",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lokix",
+            "model": "generations_core:lokix.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

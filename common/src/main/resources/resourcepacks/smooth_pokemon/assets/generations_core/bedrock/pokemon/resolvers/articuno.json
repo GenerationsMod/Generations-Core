@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:articuno",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:articuno",
+            "model": "generations_core:articuno.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

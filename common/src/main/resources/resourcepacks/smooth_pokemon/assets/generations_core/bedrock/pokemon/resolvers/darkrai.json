@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:darkrai",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:darkrai",
+            "model": "generations_core:darkrai.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

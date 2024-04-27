@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:linoone",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:linoone_galarian",
+            "model": "generations_core:linoone_galarian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "galarian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "galarian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

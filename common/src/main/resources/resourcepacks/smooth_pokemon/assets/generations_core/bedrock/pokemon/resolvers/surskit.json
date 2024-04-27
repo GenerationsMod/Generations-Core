@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:surskit",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:surskit",
+            "model": "generations_core:surskit.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

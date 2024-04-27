@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:espathra",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:espathra",
+            "model": "generations_core:espathra.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

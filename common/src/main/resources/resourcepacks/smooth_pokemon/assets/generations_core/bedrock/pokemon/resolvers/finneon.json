@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:finneon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:finneon",
+            "model": "generations_core:finneon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

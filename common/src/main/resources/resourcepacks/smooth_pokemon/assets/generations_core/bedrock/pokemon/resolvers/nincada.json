@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:nincada",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:nincada",
+            "model": "generations_core:nincada.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

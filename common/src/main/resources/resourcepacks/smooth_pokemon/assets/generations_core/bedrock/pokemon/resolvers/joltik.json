@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:joltik",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:joltik",
+            "model": "generations_core:joltik.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

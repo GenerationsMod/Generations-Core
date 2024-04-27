@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:flareon",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:flareon",
-      "model": "generations_core:flareon.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:flareon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:flareon",
+            "model": "generations_core:flareon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

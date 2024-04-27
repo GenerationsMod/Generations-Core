@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:sandshrew",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:sandshrew",
-      "model": "generations_core:sandshrew.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:sandshrew",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:sandshrew",
+            "model": "generations_core:sandshrew.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

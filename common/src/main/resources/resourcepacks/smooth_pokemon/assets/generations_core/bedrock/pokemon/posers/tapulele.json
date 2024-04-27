@@ -1,0 +1,57 @@
+{
+    "portraitScale": 1.0,
+    "portraitTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "profileScale": 1.0,
+    "profileTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "faint": "pk(generations_core:tapulele.pk, faintstart)",
+    "cry": "pk(generations_core:tapulele.pk, roar)",
+    "recoil": "pk(generations_core:tapulele.pk, damage)",
+    "physical": "pk(generations_core:tapulele.pk, attack)",
+    "special": "pk(generations_core:tapulele.pk, attack)",
+    "status": "pk(generations_core:tapulele.pk, attack)",
+    "glad": "pk(generations_core:tapulele.pk, glad)",
+    "poses": {
+        "idle": {
+            "poseName": "idle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "STAND",
+                "NONE",
+                "PORTRAIT",
+                "PROFILE"
+            ],
+            "animations": [
+                "look",
+                "pk(generations_core:tapulele.pk, idle)"
+            ]
+        },
+        "walk": {
+            "poseName": "walk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "WALK"
+            ],
+            "animations": [
+                "pk(generations_core:tapulele.pk, walk)"
+            ]
+        },
+        "sleeploop": {
+            "poseName": "sleeploop",
+            "transformTicks": 10,
+            "poseTypes": [
+                "SLEEP"
+            ],
+            "animations": [
+                "pk(generations_core:tapulele.pk, sleeploop)"
+            ]
+        }
+    }
+}

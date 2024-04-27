@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:dottler",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:dottler",
+            "model": "generations_core:dottler.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

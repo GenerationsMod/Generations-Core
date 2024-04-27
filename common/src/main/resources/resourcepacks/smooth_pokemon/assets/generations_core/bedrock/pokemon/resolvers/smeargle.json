@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:smeargle",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:smeargle",
+            "model": "generations_core:smeargle.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

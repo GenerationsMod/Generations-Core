@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:palossand",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:palossand",
+            "model": "generations_core:palossand.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

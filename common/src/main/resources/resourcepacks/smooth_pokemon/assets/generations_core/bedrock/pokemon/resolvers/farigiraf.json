@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:farigiraf",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:farigiraf",
+            "model": "generations_core:farigiraf.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

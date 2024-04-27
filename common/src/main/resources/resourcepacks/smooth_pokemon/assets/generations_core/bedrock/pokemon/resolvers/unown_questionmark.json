@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:unown",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:unown_questionmark",
+            "model": "generations_core:unown_questionmark.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "questionmark"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "questionmark"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

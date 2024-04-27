@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:servine",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:servine",
-      "model": "generations_core:servine.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:servine",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:servine",
+            "model": "generations_core:servine.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

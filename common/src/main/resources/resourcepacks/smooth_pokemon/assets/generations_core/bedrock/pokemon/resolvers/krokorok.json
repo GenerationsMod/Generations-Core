@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:krokorok",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:krokorok",
+            "model": "generations_core:krokorok.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:turtwig",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:turtwig",
-      "model": "generations_core:turtwig.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:turtwig",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:turtwig",
+            "model": "generations_core:turtwig.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

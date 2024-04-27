@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:frosmoth",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:frosmoth",
+            "model": "generations_core:frosmoth.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

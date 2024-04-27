@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:ribombee",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ribombee",
+            "model": "generations_core:ribombee.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

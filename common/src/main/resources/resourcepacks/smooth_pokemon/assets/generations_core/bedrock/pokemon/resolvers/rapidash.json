@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:rapidash",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:rapidash",
+            "model": "generations_core:rapidash.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

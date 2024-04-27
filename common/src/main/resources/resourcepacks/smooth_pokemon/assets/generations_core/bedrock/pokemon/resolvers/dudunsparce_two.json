@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:dudunsparce",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:dudunsparce_two",
+            "model": "generations_core:dudunsparce_two.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "two"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "two"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

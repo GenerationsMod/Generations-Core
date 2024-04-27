@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:mimejr",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:mimejr",
+            "model": "generations_core:mimejr.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

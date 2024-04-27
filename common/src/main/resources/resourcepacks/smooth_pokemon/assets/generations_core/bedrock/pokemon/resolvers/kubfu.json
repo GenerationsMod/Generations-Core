@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:kubfu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:kubfu",
+            "model": "generations_core:kubfu.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

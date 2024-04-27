@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:shedinja",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:shedinja",
+            "model": "generations_core:shedinja.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

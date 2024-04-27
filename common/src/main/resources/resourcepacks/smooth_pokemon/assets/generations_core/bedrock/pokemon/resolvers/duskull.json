@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:duskull",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:duskull",
+            "model": "generations_core:duskull.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

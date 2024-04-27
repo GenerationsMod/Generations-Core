@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:barraskewda",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:barraskewda",
+            "model": "generations_core:barraskewda.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

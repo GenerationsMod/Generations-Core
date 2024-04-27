@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:weavile",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:weavile",
+            "model": "generations_core:weavile.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

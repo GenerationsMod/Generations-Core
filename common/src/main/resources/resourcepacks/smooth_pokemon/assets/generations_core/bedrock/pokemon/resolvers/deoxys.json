@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:deoxys",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:deoxys",
+            "model": "generations_core:deoxys.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

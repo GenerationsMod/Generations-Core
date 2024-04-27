@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:ironvaliant",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ironvaliant",
+            "model": "generations_core:ironvaliant.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

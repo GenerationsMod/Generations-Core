@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:dustox",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:dustox",
+            "model": "generations_core:dustox.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

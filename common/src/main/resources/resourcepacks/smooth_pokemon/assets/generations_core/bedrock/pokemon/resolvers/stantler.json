@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:stantler",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:stantler",
+            "model": "generations_core:stantler.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:vikavolt",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:vikavolt",
+            "model": "generations_core:vikavolt.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:walkingwake",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:walkingwake",
-      "model": "generations_core:walkingwake.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:walkingwake",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:walkingwake",
+            "model": "generations_core:walkingwake.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:shinx",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:shinx",
+            "model": "generations_core:shinx.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

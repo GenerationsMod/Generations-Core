@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:qwilfish",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:qwilfish",
+            "model": "generations_core:qwilfish.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

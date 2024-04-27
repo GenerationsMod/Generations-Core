@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:incineroar",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:incineroar",
-      "model": "generations_core:incineroar.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:incineroar",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:incineroar",
+            "model": "generations_core:incineroar.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

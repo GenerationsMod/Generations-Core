@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:chandelure",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:chandelure",
+            "model": "generations_core:chandelure.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

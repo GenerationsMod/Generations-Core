@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:gougingfire",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:gougingfire",
-      "model": "generations_core:gougingfire.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:gougingfire",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:gougingfire",
+            "model": "generations_core:gougingfire.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

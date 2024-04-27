@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:emolga",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:emolga",
+            "model": "generations_core:emolga.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

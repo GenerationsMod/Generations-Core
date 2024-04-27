@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:wishiwashi",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:wishiwashi",
+            "model": "generations_core:wishiwashi.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

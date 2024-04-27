@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:terapagos",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:terapagos_terastal",
+            "model": "generations_core:terapagos_terastal.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "terastal"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "terastal"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

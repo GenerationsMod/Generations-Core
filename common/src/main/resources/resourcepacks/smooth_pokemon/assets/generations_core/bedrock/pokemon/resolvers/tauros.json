@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:tauros",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:tauros",
-      "model": "generations_core:tauros.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:tauros",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tauros",
+            "model": "generations_core:tauros.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

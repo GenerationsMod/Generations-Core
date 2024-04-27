@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:klink",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:klink",
+            "model": "generations_core:klink.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

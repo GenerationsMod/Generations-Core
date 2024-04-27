@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:jirachi",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:jirachi",
+            "model": "generations_core:jirachi.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

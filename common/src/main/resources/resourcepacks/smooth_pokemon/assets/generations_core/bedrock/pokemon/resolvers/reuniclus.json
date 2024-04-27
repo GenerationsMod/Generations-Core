@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:reuniclus",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:reuniclus",
+            "model": "generations_core:reuniclus.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

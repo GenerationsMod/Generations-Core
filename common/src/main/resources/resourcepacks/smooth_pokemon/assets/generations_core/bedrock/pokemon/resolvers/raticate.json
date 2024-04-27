@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:raticate",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:raticate",
+            "model": "generations_core:raticate.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

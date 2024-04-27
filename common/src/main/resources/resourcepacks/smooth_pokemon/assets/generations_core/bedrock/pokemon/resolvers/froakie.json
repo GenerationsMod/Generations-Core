@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:froakie",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:froakie",
-      "model": "generations_core:froakie.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:froakie",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:froakie",
+            "model": "generations_core:froakie.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

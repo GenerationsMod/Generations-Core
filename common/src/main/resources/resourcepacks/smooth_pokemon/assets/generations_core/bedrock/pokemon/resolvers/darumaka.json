@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:darumaka",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:darumaka",
+            "model": "generations_core:darumaka.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

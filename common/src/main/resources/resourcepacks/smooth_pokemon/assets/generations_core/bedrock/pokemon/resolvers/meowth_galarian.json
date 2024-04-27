@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:meowth",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:meowth_galarian",
+            "model": "generations_core:meowth_galarian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "galarian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "galarian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

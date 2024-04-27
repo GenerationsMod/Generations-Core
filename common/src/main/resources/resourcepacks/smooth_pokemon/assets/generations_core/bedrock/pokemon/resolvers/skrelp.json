@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:skrelp",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:skrelp",
+            "model": "generations_core:skrelp.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

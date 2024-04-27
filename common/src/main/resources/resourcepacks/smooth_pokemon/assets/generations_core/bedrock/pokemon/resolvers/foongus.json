@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:foongus",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:foongus",
+            "model": "generations_core:foongus.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

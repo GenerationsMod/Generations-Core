@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:ampharos",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:ampharos",
-      "model": "generations_core:ampharos.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:ampharos",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ampharos",
+            "model": "generations_core:ampharos.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:gourgeist",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:gourgeist_small",
+            "model": "generations_core:gourgeist_small.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "pumpkin-size-small"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "pumpkin-size-small"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

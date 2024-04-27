@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:mantyke",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:mantyke",
+            "model": "generations_core:mantyke.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

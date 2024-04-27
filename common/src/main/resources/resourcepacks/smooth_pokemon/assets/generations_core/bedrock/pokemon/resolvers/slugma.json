@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:slugma",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:slugma",
+            "model": "generations_core:slugma.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

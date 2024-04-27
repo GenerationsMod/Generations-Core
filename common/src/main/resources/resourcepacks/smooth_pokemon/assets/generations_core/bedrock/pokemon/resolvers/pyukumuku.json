@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:pyukumuku",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:pyukumuku",
+            "model": "generations_core:pyukumuku.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

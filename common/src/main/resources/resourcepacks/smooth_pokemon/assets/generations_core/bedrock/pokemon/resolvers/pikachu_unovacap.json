@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:pikachu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:pikachu_unovacap",
+            "model": "generations_core:pikachu_unovacap.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "unovacap"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "unovacap"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

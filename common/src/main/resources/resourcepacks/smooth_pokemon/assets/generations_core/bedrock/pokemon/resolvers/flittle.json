@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:flittle",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:flittle",
+            "model": "generations_core:flittle.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

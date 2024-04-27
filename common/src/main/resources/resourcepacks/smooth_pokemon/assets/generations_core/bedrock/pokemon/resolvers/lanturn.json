@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:lanturn",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lanturn",
+            "model": "generations_core:lanturn.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

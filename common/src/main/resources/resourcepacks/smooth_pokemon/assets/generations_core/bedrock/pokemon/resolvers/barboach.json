@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:barboach",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:barboach",
+            "model": "generations_core:barboach.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:unown",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:unown_k",
+            "model": "generations_core:unown_k.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "k"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "k"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

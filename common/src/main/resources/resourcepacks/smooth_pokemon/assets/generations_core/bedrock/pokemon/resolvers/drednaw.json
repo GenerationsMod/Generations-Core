@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:drednaw",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:drednaw",
+            "model": "generations_core:drednaw.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

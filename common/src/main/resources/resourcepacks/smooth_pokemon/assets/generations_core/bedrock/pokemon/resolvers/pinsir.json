@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:pinsir",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:pinsir",
+            "model": "generations_core:pinsir.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:swinub",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:swinub",
+            "model": "generations_core:swinub.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

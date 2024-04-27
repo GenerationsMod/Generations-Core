@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:gligar",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:gligar",
+            "model": "generations_core:gligar.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

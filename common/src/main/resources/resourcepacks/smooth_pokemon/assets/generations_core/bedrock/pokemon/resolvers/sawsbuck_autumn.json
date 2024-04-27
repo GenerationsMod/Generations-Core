@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:sawsbuck",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:sawsbuck_autumn",
+            "model": "generations_core:sawsbuck_autumn.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "autumn"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "autumn"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

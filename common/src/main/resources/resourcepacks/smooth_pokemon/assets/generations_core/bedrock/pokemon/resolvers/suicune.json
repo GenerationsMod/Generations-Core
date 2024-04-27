@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:suicune",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:suicune",
-      "model": "generations_core:suicune.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:suicune",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:suicune",
+            "model": "generations_core:suicune.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

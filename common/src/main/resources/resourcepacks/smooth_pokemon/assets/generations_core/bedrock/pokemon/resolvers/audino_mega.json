@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:audino",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:audino_mega",
+            "model": "generations_core:audino_mega.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "mega"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "mega"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

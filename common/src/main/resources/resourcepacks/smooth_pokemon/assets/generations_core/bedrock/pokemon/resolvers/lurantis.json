@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:lurantis",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lurantis",
+            "model": "generations_core:lurantis.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

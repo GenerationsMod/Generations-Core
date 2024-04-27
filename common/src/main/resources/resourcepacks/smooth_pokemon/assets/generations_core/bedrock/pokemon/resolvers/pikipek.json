@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:pikipek",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:pikipek",
+            "model": "generations_core:pikipek.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

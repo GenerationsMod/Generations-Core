@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:duosion",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:duosion",
+            "model": "generations_core:duosion.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

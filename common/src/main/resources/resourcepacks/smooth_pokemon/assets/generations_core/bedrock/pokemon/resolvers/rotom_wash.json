@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:rotom",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:rotom_wash",
+            "model": "generations_core:rotom_wash.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "wash"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "wash"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

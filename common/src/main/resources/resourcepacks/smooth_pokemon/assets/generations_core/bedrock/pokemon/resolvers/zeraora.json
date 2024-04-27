@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:zeraora",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:zeraora",
+            "model": "generations_core:zeraora.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:cacturne",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:cacturne_female",
+            "model": "generations_core:cacturne_female.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "female"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "female"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

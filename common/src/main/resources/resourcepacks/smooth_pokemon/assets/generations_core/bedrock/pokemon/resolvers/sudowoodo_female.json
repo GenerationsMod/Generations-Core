@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:sudowoodo",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:sudowoodo_female",
+            "model": "generations_core:sudowoodo_female.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "female"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "female"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

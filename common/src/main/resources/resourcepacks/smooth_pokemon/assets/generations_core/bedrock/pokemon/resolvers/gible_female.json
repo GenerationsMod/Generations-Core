@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:gible",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:gible_female",
+            "model": "generations_core:gible_female.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "female"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "female"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

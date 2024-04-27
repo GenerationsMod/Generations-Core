@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:anorith",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:anorith",
+            "model": "generations_core:anorith.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:tauros",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tauros_blaze",
+            "model": "generations_core:tauros_blaze.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "paldean-breed-blaze"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "paldean-breed-blaze"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

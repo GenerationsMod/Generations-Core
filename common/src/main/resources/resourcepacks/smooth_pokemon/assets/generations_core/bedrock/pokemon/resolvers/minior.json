@@ -1,0 +1,116 @@
+{
+    "species": "cobblemon:minior",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:minior",
+            "model": "generations_core:minior.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "red_core",
+                "meteor"
+            ],
+            "texture": "pk:red_core_meteor"
+        },
+        {
+            "aspects": [
+                "red_core"
+            ],
+            "texture": "pk:red_core"
+        },
+        {
+            "aspects": [
+                "orange_core",
+                "meteor"
+            ],
+            "texture": "pk:orange_core_meteor"
+        },
+        {
+            "aspects": [
+                "orange_core"
+            ],
+            "texture": "pk:orange_core"
+        },
+        {
+            "aspects": [
+                "yellow_core",
+                "meteor"
+            ],
+            "texture": "pk:yellow_core_meteor"
+        },
+        {
+            "aspects": [
+                "yellow_core"
+            ],
+            "texture": "pk:yellow_core"
+        },
+        {
+            "aspects": [
+                "green_core",
+                "meteor"
+            ],
+            "texture": "pk:green_core_meteor"
+        },
+        {
+            "aspects": [
+                "green_core"
+            ],
+            "texture": "pk:green_core"
+        },
+        {
+            "aspects": [
+                "blue_core",
+                "meteor"
+            ],
+            "texture": "pk:blue_core_meteor"
+        },
+        {
+            "aspects": [
+                "blue_core"
+            ],
+            "texture": "pk:blue_core"
+        },
+        {
+            "aspects": [
+                "indigo_core",
+                "meteor"
+            ],
+            "texture": "pk:indigo_core_meteor"
+        },
+        {
+            "aspects": [
+                "indigo_core"
+            ],
+            "texture": "pk:indigo_core"
+        },
+        {
+            "aspects": [
+                "violet_core",
+                "meteor"
+            ],
+            "texture": "pk:violet_core_meteor"
+        },
+        {
+            "aspects": [
+                "violet_core"
+            ],
+            "texture": "pk:violet_core"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "meteor"
+            ],
+            "texture": "pk:shiny_core_meteor"
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny_core"
+        }
+    ]
+}

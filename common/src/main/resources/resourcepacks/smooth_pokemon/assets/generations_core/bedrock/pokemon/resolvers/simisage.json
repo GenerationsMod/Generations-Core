@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:simisage",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:simisage",
+            "model": "generations_core:simisage.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

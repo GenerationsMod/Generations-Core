@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:rotom",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:rotom_frost",
+            "model": "generations_core:rotom_frost.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "frost"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "frost"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

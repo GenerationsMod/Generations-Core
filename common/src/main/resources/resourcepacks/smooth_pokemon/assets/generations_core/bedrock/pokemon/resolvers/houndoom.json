@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:houndoom",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:houndoom",
+            "model": "generations_core:houndoom.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

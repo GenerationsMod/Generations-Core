@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:necrozma",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:necrozma_dawnwings",
+            "model": "generations_core:necrozma_dawnwings.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "dawnwings"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "dawnwings"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

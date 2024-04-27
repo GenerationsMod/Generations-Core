@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:palpitoad",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:palpitoad",
+            "model": "generations_core:palpitoad.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

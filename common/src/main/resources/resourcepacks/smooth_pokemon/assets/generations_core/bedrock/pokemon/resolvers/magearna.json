@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:magearna",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:magearna",
+            "model": "generations_core:magearna.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

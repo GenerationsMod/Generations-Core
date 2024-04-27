@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:blissey",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:blissey",
+            "model": "generations_core:blissey.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

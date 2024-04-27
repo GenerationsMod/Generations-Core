@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:metagross",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:metagross_mega",
+            "model": "generations_core:metagross_mega.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "mega"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "mega"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

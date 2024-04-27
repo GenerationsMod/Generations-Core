@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bronzong",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bronzong",
+            "model": "generations_core:bronzong.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

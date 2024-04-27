@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:komala",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:komala",
+            "model": "generations_core:komala.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

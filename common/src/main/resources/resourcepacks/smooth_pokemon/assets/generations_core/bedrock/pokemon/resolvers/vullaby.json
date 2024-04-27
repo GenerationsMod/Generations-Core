@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:vullaby",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:vullaby",
+            "model": "generations_core:vullaby.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

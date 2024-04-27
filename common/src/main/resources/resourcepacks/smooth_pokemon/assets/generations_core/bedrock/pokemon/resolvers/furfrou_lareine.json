@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:furfrou",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:furfrou_lareine",
+            "model": "generations_core:furfrou_lareine.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "lareine"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "lareine"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

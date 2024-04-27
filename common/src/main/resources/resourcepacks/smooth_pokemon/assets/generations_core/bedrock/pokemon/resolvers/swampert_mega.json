@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:swampert",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:swampert_mega",
+            "model": "generations_core:swampert_mega.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "mega"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "mega"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

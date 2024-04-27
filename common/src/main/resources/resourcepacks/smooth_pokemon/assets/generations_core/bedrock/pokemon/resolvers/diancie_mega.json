@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:diancie",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:diancie_mega",
+            "model": "generations_core:diancie_mega.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "mega"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "mega"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

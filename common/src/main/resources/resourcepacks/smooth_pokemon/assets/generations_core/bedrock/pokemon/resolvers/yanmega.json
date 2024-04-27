@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:yanmega",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:yanmega",
+            "model": "generations_core:yanmega.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:grimer",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:grimer_alolan",
+            "model": "generations_core:grimer_alolan.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "alolan"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "alolan"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

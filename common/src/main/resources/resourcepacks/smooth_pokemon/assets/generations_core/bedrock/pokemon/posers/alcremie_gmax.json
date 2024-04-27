@@ -1,0 +1,37 @@
+{
+    "portraitScale": 1.0,
+    "portraitTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "profileScale": 1.0,
+    "profileTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "faint": "pk(generations_core:alcremie_gmax.pk, faintstart)",
+    "cry": "pk(generations_core:alcremie_gmax.pk, roar)",
+    "recoil": "pk(generations_core:alcremie_gmax.pk, damage)",
+    "physical": "pk(generations_core:alcremie_gmax.pk, attack)",
+    "special": "pk(generations_core:alcremie_gmax.pk, attack)",
+    "status": "pk(generations_core:alcremie_gmax.pk, attack)",
+    "glad": "pk(generations_core:alcremie_gmax.pk, glad)",
+    "poses": {
+        "idle": {
+            "poseName": "idle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "STAND",
+                "NONE",
+                "PORTRAIT",
+                "PROFILE"
+            ],
+            "animations": [
+                "look",
+                "pk(generations_core:alcremie_gmax.pk, idle)"
+            ]
+        }
+    }
+}

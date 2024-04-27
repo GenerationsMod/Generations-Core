@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:fluttermane",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:fluttermane",
+            "model": "generations_core:fluttermane.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:inteleon",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:inteleon",
-      "model": "generations_core:inteleon.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:inteleon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:inteleon",
+            "model": "generations_core:inteleon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

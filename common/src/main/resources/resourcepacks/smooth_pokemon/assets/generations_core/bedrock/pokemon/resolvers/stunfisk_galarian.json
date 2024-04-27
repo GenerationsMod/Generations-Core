@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:stunfisk",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:stunfisk_galarian",
+            "model": "generations_core:stunfisk_galarian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "galarian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "galarian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

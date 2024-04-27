@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:golduck",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:golduck",
-      "model": "generations_core:golduck.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:golduck",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:golduck",
+            "model": "generations_core:golduck.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

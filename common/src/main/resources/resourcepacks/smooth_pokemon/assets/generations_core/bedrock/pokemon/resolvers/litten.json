@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:litten",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:litten",
-      "model": "generations_core:litten.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:litten",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:litten",
+            "model": "generations_core:litten.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

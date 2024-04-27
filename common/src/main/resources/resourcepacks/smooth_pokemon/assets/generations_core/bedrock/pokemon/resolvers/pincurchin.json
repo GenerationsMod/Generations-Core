@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:pincurchin",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:pincurchin",
+            "model": "generations_core:pincurchin.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

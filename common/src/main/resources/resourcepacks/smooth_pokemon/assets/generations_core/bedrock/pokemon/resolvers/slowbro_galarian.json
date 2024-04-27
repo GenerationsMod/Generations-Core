@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:slowbro",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:slowbro_galarian",
+            "model": "generations_core:slowbro_galarian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "galarian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "galarian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

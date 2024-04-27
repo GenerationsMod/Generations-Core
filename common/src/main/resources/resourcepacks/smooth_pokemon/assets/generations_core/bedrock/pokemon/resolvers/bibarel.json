@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bibarel",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bibarel",
+            "model": "generations_core:bibarel.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:jigglypuff",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:jigglypuff",
+            "model": "generations_core:jigglypuff.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

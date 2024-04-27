@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:milotic",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:milotic",
+            "model": "generations_core:milotic.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

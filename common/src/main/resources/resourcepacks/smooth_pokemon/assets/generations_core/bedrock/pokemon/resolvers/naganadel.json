@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:naganadel",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:naganadel",
+            "model": "generations_core:naganadel.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

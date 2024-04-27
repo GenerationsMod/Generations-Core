@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:tapufini",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tapufini",
+            "model": "generations_core:tapufini.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

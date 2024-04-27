@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:terrakion",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:terrakion",
+            "model": "generations_core:terrakion.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

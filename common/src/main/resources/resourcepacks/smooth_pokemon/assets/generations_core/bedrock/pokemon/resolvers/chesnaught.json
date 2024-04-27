@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:chesnaught",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:chesnaught",
-      "model": "generations_core:chesnaught.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:chesnaught",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:chesnaught",
+            "model": "generations_core:chesnaught.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

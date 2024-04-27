@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:salamence",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:salamence",
-      "model": "generations_core:salamence.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:salamence",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:salamence",
+            "model": "generations_core:salamence.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

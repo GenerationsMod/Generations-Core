@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:delphox",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:delphox",
-      "model": "generations_core:delphox.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:delphox",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:delphox",
+            "model": "generations_core:delphox.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

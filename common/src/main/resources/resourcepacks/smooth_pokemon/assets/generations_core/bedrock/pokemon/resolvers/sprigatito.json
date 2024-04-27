@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:sprigatito",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:sprigatito",
-      "model": "generations_core:sprigatito.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:sprigatito",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:sprigatito",
+            "model": "generations_core:sprigatito.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

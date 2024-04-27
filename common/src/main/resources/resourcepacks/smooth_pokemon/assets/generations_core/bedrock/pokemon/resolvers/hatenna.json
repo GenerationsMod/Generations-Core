@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:hatenna",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:hatenna",
+            "model": "generations_core:hatenna.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

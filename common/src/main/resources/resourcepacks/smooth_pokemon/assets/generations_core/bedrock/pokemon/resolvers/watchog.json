@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:watchog",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:watchog",
+            "model": "generations_core:watchog.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

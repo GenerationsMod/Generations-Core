@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:corphish",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:corphish",
+            "model": "generations_core:corphish.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

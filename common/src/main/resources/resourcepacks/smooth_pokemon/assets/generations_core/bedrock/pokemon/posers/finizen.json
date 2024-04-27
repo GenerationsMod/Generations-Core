@@ -1,41 +1,77 @@
 {
-  "portraitScale": 1.0,
-  "portraitTranslation": [ 0, 0.0, 0 ],
-  "profileScale": 1.0,
-  "profileTranslation": [ 0, 0.0, 0 ],
-  "faint": "pk(generations_core:finizen.pk, faintstart)",
-  "poses": {
-    "standing": {
-      "poseName": "standing",
-      "transformTicks": 10,
-      "poseTypes": [
-        "STAND",
-        "NONE",
-        "PORTRAIT",
-        "PROFILE"
-      ],
-      "animations": [
-        "look",
-        "pk(generations_core:finizen.pk, swimidle)"
-      ]
-    },
-    "floating": {
-      "poseName": "floating",
-      "transformTicks": 10,
-      "poseTypes": [ "FLOAT" ],
-      "animations": [ "pk(generations_core:finizen.pk, swimidle)" ]
-    },
-    "walking": {
-      "poseName": "walking",
-      "transformTicks": 10,
-      "poseTypes": [ "WALK" ],
-      "animations": [ "pk(generations_core:finizen.pk, swimwalk)" ]
-    },
-    "swimming": {
-      "poseName": "swimming",
-      "transformTicks": 10,
-      "poseTypes": [ "SWIM" ],
-      "animations": [ "pk(generations_core:finizen.pk, swimwalk)" ]
+    "portraitScale": 1.0,
+    "portraitTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "profileScale": 1.0,
+    "profileTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "faint": "pk(generations_core:finizen.pk, faintstart)",
+    "cry": "pk(generations_core:finizen.pk, roar)",
+    "recoil": "pk(generations_core:finizen.pk, damage)",
+    "physical": "pk(generations_core:finizen.pk, attack)",
+    "special": "pk(generations_core:finizen.pk, attack)",
+    "status": "pk(generations_core:finizen.pk, attack)",
+    "glad": "pk(generations_core:finizen.pk, glad)",
+    "poses": {
+        "swimidle": {
+            "poseName": "swimidle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "FLOAT"
+            ],
+            "animations": [
+                "pk(generations_core:finizen.pk, swimidle)"
+            ]
+        },
+        "swimwalk": {
+            "poseName": "swimwalk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "SWIM"
+            ],
+            "animations": [
+                "pk(generations_core:finizen.pk, swimwalk)"
+            ]
+        },
+        "sleeploop": {
+            "poseName": "sleeploop",
+            "transformTicks": 10,
+            "poseTypes": [
+                "SLEEP"
+            ],
+            "animations": [
+                "pk(generations_core:finizen.pk, sleeploop)"
+            ]
+        },
+        "swimidlenoidle": {
+            "poseName": "swimidle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "STAND",
+                "NONE",
+                "PORTRAIT",
+                "PROFILE"
+            ],
+            "animations": [
+                "look",
+                "pk(generations_core:finizen.pk, swimidle)"
+            ]
+        },
+        "swimwalknowalk": {
+            "poseName": "swimwalk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "WALK"
+            ],
+            "animations": [
+                "pk(generations_core:finizen.pk, swimwalk)"
+            ]
+        }
     }
-  }
 }

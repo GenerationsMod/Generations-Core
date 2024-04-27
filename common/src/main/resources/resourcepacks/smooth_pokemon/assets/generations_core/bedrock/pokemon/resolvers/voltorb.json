@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:voltorb",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:voltorb",
+            "model": "generations_core:voltorb.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

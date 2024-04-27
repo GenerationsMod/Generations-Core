@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:miraidon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:miraidon",
+            "model": "generations_core:miraidon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

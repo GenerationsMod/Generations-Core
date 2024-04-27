@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:yamask",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:yamask_galarian",
+            "model": "generations_core:yamask_galarian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "galarian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "galarian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:alakazam",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:alakazam_mega",
+            "model": "generations_core:alakazam_mega.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "mega"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "mega"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

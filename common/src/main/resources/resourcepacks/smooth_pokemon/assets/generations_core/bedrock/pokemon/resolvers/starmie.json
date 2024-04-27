@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:starmie",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:starmie",
+            "model": "generations_core:starmie.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

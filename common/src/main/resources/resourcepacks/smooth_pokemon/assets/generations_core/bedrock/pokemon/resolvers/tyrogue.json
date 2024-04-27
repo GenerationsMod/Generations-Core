@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:tyrogue",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tyrogue",
+            "model": "generations_core:tyrogue.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

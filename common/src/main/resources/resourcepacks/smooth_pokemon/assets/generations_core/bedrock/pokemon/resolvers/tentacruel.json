@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:tentacruel",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tentacruel",
+            "model": "generations_core:tentacruel.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

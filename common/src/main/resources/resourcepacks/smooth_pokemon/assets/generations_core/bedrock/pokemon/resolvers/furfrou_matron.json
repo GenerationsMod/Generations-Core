@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:furfrou",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:furfrou_matron",
+            "model": "generations_core:furfrou_matron.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "matron"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "matron"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

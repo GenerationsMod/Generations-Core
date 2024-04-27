@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:obstagoon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:obstagoon",
+            "model": "generations_core:obstagoon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

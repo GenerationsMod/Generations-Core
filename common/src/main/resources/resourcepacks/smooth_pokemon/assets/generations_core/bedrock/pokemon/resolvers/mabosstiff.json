@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:mabosstiff",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:mabosstiff",
+            "model": "generations_core:mabosstiff.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

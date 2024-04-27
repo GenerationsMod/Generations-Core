@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:jolteon",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:jolteon",
-      "model": "generations_core:jolteon.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:jolteon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:jolteon",
+            "model": "generations_core:jolteon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

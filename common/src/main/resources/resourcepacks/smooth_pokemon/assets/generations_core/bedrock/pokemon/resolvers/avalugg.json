@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:avalugg",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:avalugg",
+            "model": "generations_core:avalugg.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

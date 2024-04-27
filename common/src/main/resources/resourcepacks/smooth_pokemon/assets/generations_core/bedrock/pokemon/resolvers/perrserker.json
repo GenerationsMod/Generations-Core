@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:perrserker",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:perrserker",
+            "model": "generations_core:perrserker.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

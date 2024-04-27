@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:jellicent",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:jellicent",
+            "model": "generations_core:jellicent.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

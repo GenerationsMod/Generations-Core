@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:typenull",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:typenull",
+            "model": "generations_core:typenull.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

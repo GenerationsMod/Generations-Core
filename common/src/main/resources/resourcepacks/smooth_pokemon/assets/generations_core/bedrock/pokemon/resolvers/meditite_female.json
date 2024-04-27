@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:meditite",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:meditite_female",
+            "model": "generations_core:meditite_female.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "female"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "female"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

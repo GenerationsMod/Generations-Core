@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:darmanitan",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:darmanitan_galarian",
+            "model": "generations_core:darmanitan_galarian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "galarian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "galarian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:lycanroc",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lycanroc_midnight",
+            "model": "generations_core:lycanroc_midnight.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "midnight"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "midnight"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

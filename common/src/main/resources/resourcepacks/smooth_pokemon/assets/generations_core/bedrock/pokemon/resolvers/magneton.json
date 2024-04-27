@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:magneton",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:magneton",
+            "model": "generations_core:magneton.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

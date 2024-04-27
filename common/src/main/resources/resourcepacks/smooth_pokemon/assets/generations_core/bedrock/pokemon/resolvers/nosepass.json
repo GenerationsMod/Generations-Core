@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:nosepass",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:nosepass",
+            "model": "generations_core:nosepass.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

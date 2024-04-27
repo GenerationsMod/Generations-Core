@@ -1,0 +1,239 @@
+{
+    "species": "cobblemon:arceus",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:arceus",
+            "model": "generations_core:arceus.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "fighting"
+            ],
+            "texture": "pk:shiny_fighting"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "flying"
+            ],
+            "texture": "pk:shiny_flying"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "poison"
+            ],
+            "texture": "pk:shiny_poison"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "ground"
+            ],
+            "texture": "pk:shiny_ground"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "rock"
+            ],
+            "texture": "pk:shiny_rock"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "bug"
+            ],
+            "texture": "pk:shiny_bug"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "ghost"
+            ],
+            "texture": "pk:shiny_ghost"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "steel"
+            ],
+            "texture": "pk:shiny_steel"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "fire"
+            ],
+            "texture": "pk:shiny_fire"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "water"
+            ],
+            "texture": "pk:shiny_water"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "grass"
+            ],
+            "texture": "pk:shiny_grass"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "electric"
+            ],
+            "texture": "pk:shiny_electric"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "psychic"
+            ],
+            "texture": "pk:shiny_psychic"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "ice"
+            ],
+            "texture": "pk:shiny_ice"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "dragon"
+            ],
+            "texture": "pk:shiny_dragon"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "dark"
+            ],
+            "texture": "pk:shiny_dark"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "fairy"
+            ],
+            "texture": "pk:shiny_fairy"
+        },
+        {
+            "aspects": [
+                "fighting"
+            ],
+            "texture": "pk:fighting"
+        },
+        {
+            "aspects": [
+                "flying"
+            ],
+            "texture": "pk:flying"
+        },
+        {
+            "aspects": [
+                "poison"
+            ],
+            "texture": "pk:poison"
+        },
+        {
+            "aspects": [
+                "ground"
+            ],
+            "texture": "pk:ground"
+        },
+        {
+            "aspects": [
+                "rock"
+            ],
+            "texture": "pk:rock"
+        },
+        {
+            "aspects": [
+                "bug"
+            ],
+            "texture": "pk:bug"
+        },
+        {
+            "aspects": [
+                "ghost"
+            ],
+            "texture": "pk:ghost"
+        },
+        {
+            "aspects": [
+                "steel"
+            ],
+            "texture": "pk:steel"
+        },
+        {
+            "aspects": [
+                "fire"
+            ],
+            "texture": "pk:fire"
+        },
+        {
+            "aspects": [
+                "water"
+            ],
+            "texture": "pk:water"
+        },
+        {
+            "aspects": [
+                "grass"
+            ],
+            "texture": "pk:grass"
+        },
+        {
+            "aspects": [
+                "electric"
+            ],
+            "texture": "pk:electric"
+        },
+        {
+            "aspects": [
+                "psychic"
+            ],
+            "texture": "pk:psychic"
+        },
+        {
+            "aspects": [
+                "ice"
+            ],
+            "texture": "pk:ice"
+        },
+        {
+            "aspects": [
+                "dark"
+            ],
+            "texture": "pk:dark"
+        },
+        {
+            "aspects": [
+                "dragon"
+            ],
+            "texture": "pk:dragon"
+        },
+        {
+            "aspects": [
+                "fairy"
+            ],
+            "texture": "pk:fairy"
+        }
+    ]
+}

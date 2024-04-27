@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:kyogre",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:kyogre_primal",
+            "model": "generations_core:kyogre_primal.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "primal"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "primal"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

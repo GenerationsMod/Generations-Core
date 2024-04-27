@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:moltres",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:moltres",
+            "model": "generations_core:moltres.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

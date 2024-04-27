@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:phanpy",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:phanpy",
+            "model": "generations_core:phanpy.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:wormadam",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:wormadam_plant",
+            "model": "generations_core:wormadam_plant.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "plant"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "plant"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

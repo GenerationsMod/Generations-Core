@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:hoopa",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:hoopa_unbound",
+            "model": "generations_core:hoopa_unbound.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "unbound"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "unbound"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

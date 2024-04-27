@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:porygonz",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:porygonz",
+            "model": "generations_core:porygonz.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

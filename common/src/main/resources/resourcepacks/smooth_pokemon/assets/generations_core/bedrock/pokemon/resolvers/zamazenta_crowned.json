@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:zamazenta",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:zamazenta_crowned",
+            "model": "generations_core:zamazenta_crowned.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "crowned"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "crowned"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

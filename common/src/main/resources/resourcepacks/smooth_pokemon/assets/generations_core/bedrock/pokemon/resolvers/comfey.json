@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:comfey",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:comfey",
+            "model": "generations_core:comfey.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

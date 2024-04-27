@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:ledian",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ledian",
+            "model": "generations_core:ledian.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

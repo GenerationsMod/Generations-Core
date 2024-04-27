@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:purrloin",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:purrloin",
+            "model": "generations_core:purrloin.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

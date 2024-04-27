@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:wingull",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:wingull",
+            "model": "generations_core:wingull.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

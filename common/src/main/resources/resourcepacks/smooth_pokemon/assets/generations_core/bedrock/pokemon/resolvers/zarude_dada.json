@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:zarude",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:zarude_dada",
+            "model": "generations_core:zarude_dada.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "dada"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "dada"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

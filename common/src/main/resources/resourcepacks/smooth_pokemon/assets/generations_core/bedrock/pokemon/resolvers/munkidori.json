@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:munkidori",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:munkidori",
+            "model": "generations_core:munkidori.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:shelmet",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:shelmet",
+            "model": "generations_core:shelmet.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

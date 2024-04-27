@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:xerneas",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:xerneas_active",
+            "model": "generations_core:xerneas_active.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "active"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "active"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

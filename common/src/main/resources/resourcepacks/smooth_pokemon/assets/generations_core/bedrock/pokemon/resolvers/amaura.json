@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:amaura",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:amaura",
+            "model": "generations_core:amaura.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:arctibax",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:arctibax",
+            "model": "generations_core:arctibax.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

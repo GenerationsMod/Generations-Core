@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:weezing",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:weezing",
+            "model": "generations_core:weezing.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

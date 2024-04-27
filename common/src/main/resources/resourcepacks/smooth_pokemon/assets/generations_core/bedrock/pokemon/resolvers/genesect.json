@@ -1,0 +1,66 @@
+{
+    "species": "cobblemon:genesect",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:genesect",
+            "model": "generations_core:genesect.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        },
+        {
+            "aspects": [
+                "normal-douse"
+            ],
+            "texture": "pk:normal-douse"
+        },
+        {
+            "aspects": [
+                "shiny-douse"
+            ],
+            "texture": "pk:shiny-douse"
+        },
+        {
+            "aspects": [
+                "normal-shock"
+            ],
+            "texture": "pk:normal-shock"
+        },
+        {
+            "aspects": [
+                "shiny-shock"
+            ],
+            "texture": "pk:shiny-shock"
+        },
+        {
+            "aspects": [
+                "normal-burn"
+            ],
+            "texture": "pk:normal-burn"
+        },
+        {
+            "aspects": [
+                "shiny-burn"
+            ],
+            "texture": "pk:shiny-burn"
+        },
+        {
+            "aspects": [
+                "normal-chill"
+            ],
+            "texture": "pk:normal-chill"
+        },
+        {
+            "aspects": [
+                "shiny-chill"
+            ],
+            "texture": "pk:shiny-chill"
+        }
+    ]
+}

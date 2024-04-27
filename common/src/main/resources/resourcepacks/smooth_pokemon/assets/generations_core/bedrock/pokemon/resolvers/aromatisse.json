@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:aromatisse",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:aromatisse",
+            "model": "generations_core:aromatisse.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

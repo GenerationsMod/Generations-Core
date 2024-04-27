@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:shieldon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:shieldon",
+            "model": "generations_core:shieldon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

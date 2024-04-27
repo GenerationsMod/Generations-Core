@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:araquanid",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:araquanid",
+            "model": "generations_core:araquanid.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

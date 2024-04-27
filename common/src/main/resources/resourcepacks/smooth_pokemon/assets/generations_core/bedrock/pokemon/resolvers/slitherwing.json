@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:slitherwing",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:slitherwing",
+            "model": "generations_core:slitherwing.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

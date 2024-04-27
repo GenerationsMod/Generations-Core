@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:eternatus",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:eternatus_eternamax",
+            "model": "generations_core:eternatus_eternamax.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "eternamax"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "eternamax"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

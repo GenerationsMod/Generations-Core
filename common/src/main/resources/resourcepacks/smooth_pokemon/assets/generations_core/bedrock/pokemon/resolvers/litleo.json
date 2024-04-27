@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:litleo",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:litleo",
+            "model": "generations_core:litleo.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

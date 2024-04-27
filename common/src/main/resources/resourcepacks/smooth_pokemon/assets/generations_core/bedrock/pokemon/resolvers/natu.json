@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:natu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:natu",
+            "model": "generations_core:natu.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

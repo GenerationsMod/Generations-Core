@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:naclstack",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:naclstack",
-      "model": "generations_core:naclstack.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:naclstack",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:naclstack",
+            "model": "generations_core:naclstack.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

@@ -1,0 +1,64 @@
+{
+    "species": "cobblemon:deerling",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:deerling",
+            "model": "generations_core:deerling.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "autumn"
+            ],
+            "texture": "pk:autumn"
+        },
+        {
+            "aspects": [
+                "autumn",
+                "shiny"
+            ],
+            "texture": "pk:autumn_shiny"
+        },
+        {
+            "aspects": [
+                "spring"
+            ],
+            "texture": "pk:spring"
+        },
+        {
+            "aspects": [
+                "spring",
+                "shiny"
+            ],
+            "texture": "pk:spring_shiny"
+        },
+        {
+            "aspects": [
+                "summer"
+            ],
+            "texture": "pk:summer"
+        },
+        {
+            "aspects": [
+                "summer",
+                "shiny"
+            ],
+            "texture": "pk:summer_shiny"
+        },
+        {
+            "aspects": [
+                "winter"
+            ],
+            "texture": "pk:winter"
+        },
+        {
+            "aspects": [
+                "winter",
+                "shiny"
+            ],
+            "texture": "pk:winter_shiny"
+        }
+    ]
+}

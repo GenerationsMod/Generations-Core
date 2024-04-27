@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:crabominable",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:crabominable",
+            "model": "generations_core:crabominable.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

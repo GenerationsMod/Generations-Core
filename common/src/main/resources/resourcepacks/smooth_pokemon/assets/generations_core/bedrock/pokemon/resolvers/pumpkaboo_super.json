@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:pumpkaboo",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:pumpkaboo_super",
+            "model": "generations_core:pumpkaboo_super.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "pumpkin-size-super"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "pumpkin-size-super"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

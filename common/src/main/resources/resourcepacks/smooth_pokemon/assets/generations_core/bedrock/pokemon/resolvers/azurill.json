@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:azurill",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:azurill",
+            "model": "generations_core:azurill.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

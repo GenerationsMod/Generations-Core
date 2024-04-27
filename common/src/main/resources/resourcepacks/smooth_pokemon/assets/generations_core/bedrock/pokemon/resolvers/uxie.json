@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:uxie",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:uxie",
+            "model": "generations_core:uxie.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

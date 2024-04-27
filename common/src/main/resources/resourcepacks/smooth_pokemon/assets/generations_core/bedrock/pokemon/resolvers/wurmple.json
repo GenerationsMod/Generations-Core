@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:wurmple",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:wurmple",
+            "model": "generations_core:wurmple.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

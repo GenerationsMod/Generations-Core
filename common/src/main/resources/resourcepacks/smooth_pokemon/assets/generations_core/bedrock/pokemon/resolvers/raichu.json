@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:raichu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:raichu",
+            "model": "generations_core:raichu.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

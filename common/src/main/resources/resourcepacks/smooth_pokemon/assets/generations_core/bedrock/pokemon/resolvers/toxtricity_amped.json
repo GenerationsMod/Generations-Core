@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:toxtricity",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:toxtricity_amped",
+            "model": "generations_core:toxtricity_amped.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "amped"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "amped"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

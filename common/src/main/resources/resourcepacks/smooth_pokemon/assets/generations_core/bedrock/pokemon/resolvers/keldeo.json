@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:keldeo",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:keldeo",
+            "model": "generations_core:keldeo.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

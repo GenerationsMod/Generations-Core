@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:tauros",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tauros_combat",
+            "model": "generations_core:tauros_combat.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "paldean-breed-combat"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "paldean-breed-combat"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

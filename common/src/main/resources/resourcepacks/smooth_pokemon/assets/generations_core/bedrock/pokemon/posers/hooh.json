@@ -1,41 +1,87 @@
 {
-  "portraitScale": 1.0,
-  "portraitTranslation": [ 0, 0.0, 0 ],
-  "profileScale": 1.0,
-  "profileTranslation": [ 0, 0.0, 0 ],
-  "faint": "pk(generations_core:hooh.pk, faintstart)",
-  "poses": {
-    "standing": {
-      "poseName": "standing",
-      "transformTicks": 10,
-      "poseTypes": [
-        "STAND",
-        "NONE",
-        "PORTRAIT",
-        "PROFILE"
-      ],
-      "animations": [
-        "look",
-        "pk(generations_core:hooh.pk, idle)"
-      ]
-    },
-    "floating": {
-      "poseName": "hovering",
-      "transformTicks": 10,
-      "poseTypes": [ "HOVER" ],
-      "animations": [ "pk(generations_core:hooh.pk, flyidle)" ]
-    },
-    "walking": {
-      "poseName": "walking",
-      "transformTicks": 10,
-      "poseTypes": [ "WALK" ],
-      "animations": [ "pk(generations_core:hooh.pk, walk)" ]
-    },
-    "swimming": {
-      "poseName": "flying",
-      "transformTicks": 10,
-      "poseTypes": [ "FLY" ],
-      "animations": [ "pk(generations_core:hooh.pk, flywalk)" ]
+    "portraitScale": 1.0,
+    "portraitTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "profileScale": 1.0,
+    "profileTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "faint": "pk(generations_core:hooh.pk, faintstart)",
+    "cry": "pk(generations_core:hooh.pk, roar)",
+    "recoil": "pk(generations_core:hooh.pk, damage)",
+    "physical": "pk(generations_core:hooh.pk, attack)",
+    "special": "pk(generations_core:hooh.pk, attack)",
+    "status": "pk(generations_core:hooh.pk, attack)",
+    "glad": "pk(generations_core:hooh.pk, glad)",
+    "poses": {
+        "battleidle": {
+            "animations": [
+                "pk(generations_core:hooh.pk, battleidle)"
+            ],
+            "poseName": "battleidle",
+            "poseTypes": [
+                "STAND"
+            ],
+            "isBattle": true
+        },
+        "idle": {
+            "poseName": "idle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "STAND",
+                "NONE",
+                "PORTRAIT",
+                "PROFILE"
+            ],
+            "animations": [
+                "look",
+                "pk(generations_core:hooh.pk, idle)"
+            ]
+        },
+        "walk": {
+            "poseName": "walk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "WALK"
+            ],
+            "animations": [
+                "pk(generations_core:hooh.pk, walk)"
+            ]
+        },
+        "flyidle": {
+            "poseName": "flyidle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "HOVER"
+            ],
+            "animations": [
+                "pk(generations_core:hooh.pk, flyidle)"
+            ]
+        },
+        "flywalk": {
+            "poseName": "flywalk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "FLY"
+            ],
+            "animations": [
+                "pk(generations_core:hooh.pk, flywalk)"
+            ]
+        },
+        "sleeploop": {
+            "poseName": "sleeploop",
+            "transformTicks": 10,
+            "poseTypes": [
+                "SLEEP"
+            ],
+            "animations": [
+                "pk(generations_core:hooh.pk, sleeploop)"
+            ]
+        }
     }
-  }
 }

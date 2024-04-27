@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:pikachu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:pikachu_partnercap",
+            "model": "generations_core:pikachu_partnercap.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "partnercap"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "partnercap"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

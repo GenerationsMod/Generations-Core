@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:okidogi",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:okidogi",
+            "model": "generations_core:okidogi.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

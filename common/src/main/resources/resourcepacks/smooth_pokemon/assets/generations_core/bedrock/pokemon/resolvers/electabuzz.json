@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:electabuzz",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:electabuzz",
-      "model": "generations_core:electabuzz.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:electabuzz",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:electabuzz",
+            "model": "generations_core:electabuzz.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

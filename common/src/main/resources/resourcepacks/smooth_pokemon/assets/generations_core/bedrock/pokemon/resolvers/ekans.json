@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:ekans",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:ekans",
-      "model": "generations_core:ekans.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:ekans",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ekans",
+            "model": "generations_core:ekans.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

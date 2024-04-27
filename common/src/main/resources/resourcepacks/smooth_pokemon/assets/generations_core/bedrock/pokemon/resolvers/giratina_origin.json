@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:giratina",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:giratina_origin",
+            "model": "generations_core:giratina_origin.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "origin"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "origin"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

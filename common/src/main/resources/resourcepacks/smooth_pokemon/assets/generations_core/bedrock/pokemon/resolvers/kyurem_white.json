@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:kyurem",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:kyurem_white",
+            "model": "generations_core:kyurem_white.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "white"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "white"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

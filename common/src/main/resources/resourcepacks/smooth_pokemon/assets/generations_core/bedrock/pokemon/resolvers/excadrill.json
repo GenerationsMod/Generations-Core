@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:excadrill",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:excadrill",
+            "model": "generations_core:excadrill.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

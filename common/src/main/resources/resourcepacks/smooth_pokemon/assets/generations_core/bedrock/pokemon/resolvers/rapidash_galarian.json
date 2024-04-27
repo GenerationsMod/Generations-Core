@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:rapidash",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:rapidash_galarian",
+            "model": "generations_core:rapidash_galarian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "galarian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "galarian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

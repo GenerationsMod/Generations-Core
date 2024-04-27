@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:happiny",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:happiny",
+            "model": "generations_core:happiny.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

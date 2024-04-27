@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:lotad",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lotad",
+            "model": "generations_core:lotad.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

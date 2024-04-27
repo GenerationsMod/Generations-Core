@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:dratini",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:dratini",
+            "model": "generations_core:dratini.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:basculin",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:basculin_whitestriped",
+            "model": "generations_core:basculin_whitestriped.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "whitestriped"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "whitestriped"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

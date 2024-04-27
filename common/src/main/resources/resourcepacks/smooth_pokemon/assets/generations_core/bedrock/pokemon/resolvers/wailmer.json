@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:wailmer",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:wailmer",
+            "model": "generations_core:wailmer.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

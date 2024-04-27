@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:wigglytuff",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:wigglytuff",
+            "model": "generations_core:wigglytuff.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:spewpa",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:spewpa",
+            "model": "generations_core:spewpa.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

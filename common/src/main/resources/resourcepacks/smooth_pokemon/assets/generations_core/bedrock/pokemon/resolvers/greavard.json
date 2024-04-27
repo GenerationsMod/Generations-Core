@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:greavard",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:greavard",
+            "model": "generations_core:greavard.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

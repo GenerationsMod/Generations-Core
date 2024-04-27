@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:dragonair",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:dragonair",
+            "model": "generations_core:dragonair.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

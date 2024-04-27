@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:togetic",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:togetic",
+            "model": "generations_core:togetic.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

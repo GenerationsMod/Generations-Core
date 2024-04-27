@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:fletchling",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:fletchling",
+            "model": "generations_core:fletchling.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

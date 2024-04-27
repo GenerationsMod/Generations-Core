@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:loudred",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:loudred",
+            "model": "generations_core:loudred.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

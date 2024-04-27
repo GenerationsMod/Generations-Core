@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:gabite",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:gabite",
+            "model": "generations_core:gabite.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

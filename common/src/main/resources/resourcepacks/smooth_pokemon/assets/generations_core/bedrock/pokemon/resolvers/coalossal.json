@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:coalossal",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:coalossal",
+            "model": "generations_core:coalossal.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

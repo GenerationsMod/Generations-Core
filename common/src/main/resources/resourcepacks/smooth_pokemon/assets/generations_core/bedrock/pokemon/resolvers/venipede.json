@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:venipede",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:venipede",
+            "model": "generations_core:venipede.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

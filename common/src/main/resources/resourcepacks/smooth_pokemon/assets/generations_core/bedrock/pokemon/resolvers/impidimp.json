@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:impidimp",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:impidimp",
+            "model": "generations_core:impidimp.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:registeel",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:registeel",
+            "model": "generations_core:registeel.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

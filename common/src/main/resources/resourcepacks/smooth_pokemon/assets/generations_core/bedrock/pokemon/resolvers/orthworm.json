@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:orthworm",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:orthworm",
+            "model": "generations_core:orthworm.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

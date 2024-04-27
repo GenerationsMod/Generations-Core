@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:hariyama",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:hariyama",
+            "model": "generations_core:hariyama.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

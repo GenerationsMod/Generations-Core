@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:charmeleon",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:charmeleon",
-      "model": "generations_core:charmeleon.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:charmeleon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:charmeleon",
+            "model": "generations_core:charmeleon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

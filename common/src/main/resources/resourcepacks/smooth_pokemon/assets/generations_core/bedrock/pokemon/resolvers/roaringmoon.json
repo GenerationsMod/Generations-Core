@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:roaringmoon",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:roaringmoon",
-      "model": "generations_core:roaringmoon.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:roaringmoon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:roaringmoon",
+            "model": "generations_core:roaringmoon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

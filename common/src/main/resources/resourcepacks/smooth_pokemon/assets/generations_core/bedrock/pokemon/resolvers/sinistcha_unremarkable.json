@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:sinistcha",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:sinistcha_unremarkable",
+            "model": "generations_core:sinistcha_unremarkable.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "unremarkable"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "unremarkable"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

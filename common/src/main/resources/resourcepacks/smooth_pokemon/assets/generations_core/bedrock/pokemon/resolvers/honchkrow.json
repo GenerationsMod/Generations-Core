@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:honchkrow",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:honchkrow",
+            "model": "generations_core:honchkrow.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

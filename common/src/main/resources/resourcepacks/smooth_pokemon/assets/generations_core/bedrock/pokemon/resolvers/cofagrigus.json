@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:cofagrigus",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:cofagrigus",
+            "model": "generations_core:cofagrigus.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

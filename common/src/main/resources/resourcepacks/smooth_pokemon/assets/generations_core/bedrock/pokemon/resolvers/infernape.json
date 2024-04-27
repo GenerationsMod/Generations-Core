@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:infernape",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:infernape",
-      "model": "generations_core:infernape.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:infernape",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:infernape",
+            "model": "generations_core:infernape.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

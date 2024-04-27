@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:slowpoke",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:slowpoke",
+            "model": "generations_core:slowpoke.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

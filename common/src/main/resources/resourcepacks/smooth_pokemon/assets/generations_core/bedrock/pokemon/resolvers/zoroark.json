@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:zoroark",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:zoroark",
+            "model": "generations_core:zoroark.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

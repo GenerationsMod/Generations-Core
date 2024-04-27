@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:guzzlord",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:guzzlord",
+            "model": "generations_core:guzzlord.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

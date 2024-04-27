@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:ceruledge",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ceruledge",
+            "model": "generations_core:ceruledge.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

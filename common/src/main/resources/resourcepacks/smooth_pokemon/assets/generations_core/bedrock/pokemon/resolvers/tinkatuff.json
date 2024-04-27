@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:tinkatuff",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tinkatuff",
+            "model": "generations_core:tinkatuff.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

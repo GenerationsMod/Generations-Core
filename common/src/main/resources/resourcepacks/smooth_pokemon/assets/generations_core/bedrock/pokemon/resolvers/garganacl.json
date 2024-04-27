@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:garganacl",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:garganacl",
-      "model": "generations_core:garganacl.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:garganacl",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:garganacl",
+            "model": "generations_core:garganacl.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

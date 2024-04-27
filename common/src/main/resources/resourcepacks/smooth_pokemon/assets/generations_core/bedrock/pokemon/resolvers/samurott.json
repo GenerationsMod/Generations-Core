@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:samurott",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:samurott",
-      "model": "generations_core:samurott.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:samurott",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:samurott",
+            "model": "generations_core:samurott.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

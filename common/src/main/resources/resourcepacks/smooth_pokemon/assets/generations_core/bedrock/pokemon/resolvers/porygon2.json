@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:porygon2",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:porygon2",
+            "model": "generations_core:porygon2.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

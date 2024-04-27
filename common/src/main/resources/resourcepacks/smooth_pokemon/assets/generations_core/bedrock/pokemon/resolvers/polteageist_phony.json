@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:polteageist",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:polteageist_phony",
+            "model": "generations_core:polteageist_phony.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "phony"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "phony"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

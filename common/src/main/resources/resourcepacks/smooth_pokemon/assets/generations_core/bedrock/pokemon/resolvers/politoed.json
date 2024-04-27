@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:politoed",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:politoed",
+            "model": "generations_core:politoed.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

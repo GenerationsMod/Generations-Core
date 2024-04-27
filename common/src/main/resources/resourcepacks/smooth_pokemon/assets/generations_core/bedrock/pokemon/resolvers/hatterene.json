@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:hatterene",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:hatterene",
+            "model": "generations_core:hatterene.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

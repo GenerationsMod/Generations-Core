@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:spidops",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:spidops",
+            "model": "generations_core:spidops.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

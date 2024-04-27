@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:mienshao",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:mienshao",
+            "model": "generations_core:mienshao.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

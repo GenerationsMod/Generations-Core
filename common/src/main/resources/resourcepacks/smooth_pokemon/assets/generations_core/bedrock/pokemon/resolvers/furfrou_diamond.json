@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:furfrou",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:furfrou_diamond",
+            "model": "generations_core:furfrou_diamond.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "diamond"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "diamond"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

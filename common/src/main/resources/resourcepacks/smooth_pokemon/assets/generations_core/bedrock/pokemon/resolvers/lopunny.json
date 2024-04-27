@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:lopunny",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lopunny",
+            "model": "generations_core:lopunny.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

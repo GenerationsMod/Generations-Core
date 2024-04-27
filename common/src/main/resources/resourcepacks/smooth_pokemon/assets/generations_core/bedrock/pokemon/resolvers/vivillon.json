@@ -1,0 +1,272 @@
+{
+    "species": "cobblemon:vivillon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:vivillon",
+            "model": "generations_core:vivillon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "vivillon-wings-archipelago"
+            ],
+            "texture": "pk:archipelago"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-archipelago"
+            ],
+            "texture": "pk:shiny-archipelago"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-continental"
+            ],
+            "texture": "pk:continental"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-continental"
+            ],
+            "texture": "pk:shiny-continental"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-elegant"
+            ],
+            "texture": "pk:elegant"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-elegant"
+            ],
+            "texture": "pk:shiny-elegant"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-fancy"
+            ],
+            "texture": "pk:fancy"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-fancy"
+            ],
+            "texture": "pk:shiny-fancy"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-garden"
+            ],
+            "texture": "pk:garden"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-garden"
+            ],
+            "texture": "pk:shiny-garden"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-high-plains"
+            ],
+            "texture": "pk:highplains"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-high-plains"
+            ],
+            "texture": "pk:shiny-highplains"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-icy-snow"
+            ],
+            "texture": "pk:icysnow"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-icy-snow"
+            ],
+            "texture": "pk:shiny-icysnow"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-jungle"
+            ],
+            "texture": "pk:jungle"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-jungle"
+            ],
+            "texture": "pk:shiny-jungle"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-marine"
+            ],
+            "texture": "pk:marine"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-marine"
+            ],
+            "texture": "pk:shiny-marine"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-meadow"
+            ],
+            "texture": "pk:meadow"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-meadow"
+            ],
+            "texture": "pk:shiny-meadow"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-modern"
+            ],
+            "texture": "pk:modern"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-modern"
+            ],
+            "texture": "pk:shiny-modern"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-monsoon"
+            ],
+            "texture": "pk:monsoon"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-monsoon"
+            ],
+            "texture": "pk:shiny-monsoon"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-ocean"
+            ],
+            "texture": "pk:ocean"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-ocean"
+            ],
+            "texture": "pk:shiny-ocean"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-poke-ball"
+            ],
+            "texture": "pk:pokeball"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-poke-ball"
+            ],
+            "texture": "pk:shiny-pokeball"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-polar"
+            ],
+            "texture": "pk:polar"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-polar"
+            ],
+            "texture": "pk:shiny-polar"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-river"
+            ],
+            "texture": "pk:river"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-river"
+            ],
+            "texture": "pk:shiny-river"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-sandstorm"
+            ],
+            "texture": "pk:sandstorm"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-sandstorm"
+            ],
+            "texture": "pk:shiny-sandstorm"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-savanna"
+            ],
+            "texture": "pk:savanna"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-savanna"
+            ],
+            "texture": "pk:shiny-savanna"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-sun"
+            ],
+            "texture": "pk:sun"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-sun"
+            ],
+            "texture": "pk:shiny-sun"
+        },
+        {
+            "aspects": [
+                "vivillon-wings-tundra"
+            ],
+            "texture": "pk:tundra"
+        },
+        {
+            "aspects": [
+                "shiny",
+                "vivillon-wings-tundra"
+            ],
+            "texture": "pk:shiny-tundra"
+        }
+    ]
+}

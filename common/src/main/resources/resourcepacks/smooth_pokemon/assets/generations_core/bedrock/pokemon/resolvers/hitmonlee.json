@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:hitmonlee",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:hitmonlee",
+            "model": "generations_core:hitmonlee.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

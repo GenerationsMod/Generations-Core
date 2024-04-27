@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:karrablast",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:karrablast",
+            "model": "generations_core:karrablast.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

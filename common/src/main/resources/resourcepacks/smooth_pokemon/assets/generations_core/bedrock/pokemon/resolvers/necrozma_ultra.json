@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:necrozma",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:necrozma_ultra",
+            "model": "generations_core:necrozma_ultra.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "ultra"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "ultra"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:marshadow",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:marshadow",
+            "model": "generations_core:marshadow.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

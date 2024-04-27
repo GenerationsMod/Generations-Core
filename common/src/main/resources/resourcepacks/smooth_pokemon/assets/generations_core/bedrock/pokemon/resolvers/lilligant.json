@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:lilligant",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lilligant",
+            "model": "generations_core:lilligant.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

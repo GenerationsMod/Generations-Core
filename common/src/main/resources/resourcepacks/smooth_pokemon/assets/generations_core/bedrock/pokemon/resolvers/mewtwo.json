@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:mewtwo",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:mewtwo",
-      "model": "generations_core:mewtwo.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:mewtwo",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:mewtwo",
+            "model": "generations_core:mewtwo.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:relicanth",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:relicanth",
+            "model": "generations_core:relicanth.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

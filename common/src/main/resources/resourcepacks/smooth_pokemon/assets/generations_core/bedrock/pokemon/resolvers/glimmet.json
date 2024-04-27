@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:glimmet",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:glimmet",
+            "model": "generations_core:glimmet.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

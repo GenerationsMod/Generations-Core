@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:toxicroak",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:toxicroak",
+            "model": "generations_core:toxicroak.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:lombre",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lombre",
+            "model": "generations_core:lombre.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

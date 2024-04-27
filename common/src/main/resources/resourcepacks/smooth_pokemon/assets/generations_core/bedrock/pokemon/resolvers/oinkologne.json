@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:oinkologne",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:oinkologne",
+            "model": "generations_core:oinkologne.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

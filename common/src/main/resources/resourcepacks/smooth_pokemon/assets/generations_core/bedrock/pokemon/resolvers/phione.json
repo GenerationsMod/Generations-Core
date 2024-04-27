@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:phione",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:phione",
+            "model": "generations_core:phione.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

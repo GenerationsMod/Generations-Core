@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:calyrex",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:calyrex_shadowrider",
+            "model": "generations_core:calyrex_shadowrider.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "shadowrider"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "shadowrider"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

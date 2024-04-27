@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:luxray",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:luxray",
+            "model": "generations_core:luxray.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

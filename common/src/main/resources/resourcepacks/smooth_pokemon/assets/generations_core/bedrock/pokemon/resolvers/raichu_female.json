@@ -1,20 +1,22 @@
 {
-  "species": "cobblemon:raichu",
-  "order": 5,
-  "variations": [
-    {
-      "aspects": ["female"],
-      "poser": "generations_core:raichu_female",
-      "model": "generations_core:raichu_female.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "female",
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:raichu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:raichu_female",
+            "model": "generations_core:raichu_female.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "female"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "female"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

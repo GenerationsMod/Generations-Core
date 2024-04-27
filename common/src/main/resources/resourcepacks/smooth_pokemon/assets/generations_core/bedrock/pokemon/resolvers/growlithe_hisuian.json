@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:growlithe",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:growlithe_hisuian",
+            "model": "generations_core:growlithe_hisuian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "hisuian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "hisuian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

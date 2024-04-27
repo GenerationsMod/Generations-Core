@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:seel",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:seel",
+            "model": "generations_core:seel.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

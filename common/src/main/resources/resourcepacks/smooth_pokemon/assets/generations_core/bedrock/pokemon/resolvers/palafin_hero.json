@@ -1,20 +1,22 @@
 {
-  "species": "cobblemon:palafin",
-  "order": 5,
-  "variations": [
-    {
-      "aspects": ["hero"],
-      "poser": "generations_core:palafin_hero",
-      "model": "generations_core:palafin_hero.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "hero",
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:palafin",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:palafin_hero",
+            "model": "generations_core:palafin_hero.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "hero"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "hero"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

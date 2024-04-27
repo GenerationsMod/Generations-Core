@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:gimmighoul",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:gimmighoul",
+            "model": "generations_core:gimmighoul.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:scovillain",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:scovillain",
+            "model": "generations_core:scovillain.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

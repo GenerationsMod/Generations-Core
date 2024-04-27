@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:heracross",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:heracross_mega",
+            "model": "generations_core:heracross_mega.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "mega"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "mega"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

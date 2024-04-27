@@ -1,20 +1,22 @@
 {
-  "species": "cobblemon:golem",
-  "order": 5,
-  "variations": [
-    {
-      "aspects": ["alolan"],
-      "poser": "generations_core:golem_alolan",
-      "model": "generations_core:golem_alolan.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "alolan",
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:golem",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:golem_alolan",
+            "model": "generations_core:golem_alolan.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "alolan"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "alolan"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

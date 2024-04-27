@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:ninjask",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ninjask",
+            "model": "generations_core:ninjask.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

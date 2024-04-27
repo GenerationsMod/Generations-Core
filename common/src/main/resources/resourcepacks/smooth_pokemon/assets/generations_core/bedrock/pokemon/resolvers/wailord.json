@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:wailord",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:wailord",
+            "model": "generations_core:wailord.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:cottonee",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:cottonee",
+            "model": "generations_core:cottonee.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

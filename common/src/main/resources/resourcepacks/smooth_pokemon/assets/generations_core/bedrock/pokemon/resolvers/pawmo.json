@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:pawmo",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:pawmo",
+            "model": "generations_core:pawmo.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

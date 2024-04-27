@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:arcanine",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:arcanine_hisuian",
+            "model": "generations_core:arcanine_hisuian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "hisuian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "hisuian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

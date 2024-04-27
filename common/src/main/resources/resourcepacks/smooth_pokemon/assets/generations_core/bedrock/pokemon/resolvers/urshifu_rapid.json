@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:urshifu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:urshifu_rapid",
+            "model": "generations_core:urshifu_rapid.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "rapid"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "rapid"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

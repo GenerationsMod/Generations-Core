@@ -1,0 +1,77 @@
+{
+    "species": "cobblemon:flabebe",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:flabebe",
+            "model": "generations_core:flabebe.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "flower-red"
+            ],
+            "texture": "pk:red"
+        },
+        {
+            "aspects": [
+                "flower-red",
+                "shiny"
+            ],
+            "texture": "pk:red_shiny"
+        },
+        {
+            "aspects": [
+                "flower-blue"
+            ],
+            "texture": "pk:blue"
+        },
+        {
+            "aspects": [
+                "flower-blue",
+                "shiny"
+            ],
+            "texture": "pk:blue_shiny"
+        },
+        {
+            "aspects": [
+                "flower-orange"
+            ],
+            "texture": "pk:orange"
+        },
+        {
+            "aspects": [
+                "flower-orange",
+                "shiny"
+            ],
+            "texture": "pk:orange_shiny"
+        },
+        {
+            "aspects": [
+                "flower-white"
+            ],
+            "texture": "pk:white"
+        },
+        {
+            "aspects": [
+                "flower-white",
+                "shiny"
+            ],
+            "texture": "pk:white_shiny"
+        },
+        {
+            "aspects": [
+                "flower-yellow"
+            ],
+            "texture": "pk:yellow"
+        },
+        {
+            "aspects": [
+                "flower-yellow",
+                "shiny"
+            ],
+            "texture": "pk:yellow_shiny"
+        }
+    ]
+}

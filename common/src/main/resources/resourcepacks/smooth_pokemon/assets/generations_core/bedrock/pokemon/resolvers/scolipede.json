@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:scolipede",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:scolipede",
+            "model": "generations_core:scolipede.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

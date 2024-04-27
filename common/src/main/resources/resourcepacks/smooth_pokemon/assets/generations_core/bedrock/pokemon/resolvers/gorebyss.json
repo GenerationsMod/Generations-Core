@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:gorebyss",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:gorebyss",
+            "model": "generations_core:gorebyss.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:swampert",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:swampert",
-      "model": "generations_core:swampert.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:swampert",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:swampert",
+            "model": "generations_core:swampert.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

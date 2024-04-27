@@ -1,22 +1,22 @@
 {
-  "species": "cobblemon:typhlosion",
-  "order": 3,
-  "variations": [
-    {
-      "aspects": [
-        "hisuian"
-      ],
-      "poser": "generations_core:typhlosion_hisuian",
-      "model": "generations_core:typhlosion_hisuian.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "hisuian",
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:typhlosion",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:typhlosion_hisuian",
+            "model": "generations_core:typhlosion_hisuian.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "hisuian"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "hisuian"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

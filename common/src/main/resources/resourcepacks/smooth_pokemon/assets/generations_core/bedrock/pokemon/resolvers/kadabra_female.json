@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:kadabra",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:kadabra_female",
+            "model": "generations_core:kadabra_female.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "female"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "female"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

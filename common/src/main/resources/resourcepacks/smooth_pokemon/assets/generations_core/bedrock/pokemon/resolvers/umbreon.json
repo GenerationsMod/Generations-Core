@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:umbreon",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:umbreon",
-      "model": "generations_core:umbreon.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:umbreon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:umbreon",
+            "model": "generations_core:umbreon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

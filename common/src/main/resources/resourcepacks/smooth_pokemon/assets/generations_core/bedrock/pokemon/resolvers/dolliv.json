@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:dolliv",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:dolliv",
+            "model": "generations_core:dolliv.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

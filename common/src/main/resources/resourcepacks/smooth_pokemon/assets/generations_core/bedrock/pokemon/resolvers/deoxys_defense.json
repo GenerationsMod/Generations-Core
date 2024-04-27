@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:deoxys",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:deoxys_defense",
+            "model": "generations_core:deoxys_defense.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "defense"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "defense"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

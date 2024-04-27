@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:tatsugiri",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:tatsugiri_curly",
+            "model": "generations_core:tatsugiri_curly.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "tatsugiri-texture-curly"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "tatsugiri-texture-curly"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

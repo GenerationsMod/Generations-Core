@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:simipour",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:simipour",
+            "model": "generations_core:simipour.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

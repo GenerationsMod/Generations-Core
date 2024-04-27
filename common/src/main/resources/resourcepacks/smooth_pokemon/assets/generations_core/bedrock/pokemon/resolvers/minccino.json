@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:minccino",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:minccino",
+            "model": "generations_core:minccino.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

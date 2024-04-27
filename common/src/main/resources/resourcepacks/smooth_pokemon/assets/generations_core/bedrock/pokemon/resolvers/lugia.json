@@ -1,24 +1,24 @@
 {
-  "species": "cobblemon:lugia",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:lugia",
-      "model": "generations_core:lugia.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    },
-    {
-      "aspects": [
-        "shadow"
-      ],
-      "texture": "pk:shadow"
-    }
-  ]
+    "species": "cobblemon:lugia",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:lugia",
+            "model": "generations_core:lugia.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        },
+        {
+            "aspects": [
+                "shadow"
+            ],
+            "texture": "pk:shadow"
+        }
+    ]
 }

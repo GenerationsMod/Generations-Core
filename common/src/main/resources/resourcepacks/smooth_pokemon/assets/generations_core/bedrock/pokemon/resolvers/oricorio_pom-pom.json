@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:oricorio",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:oricorio_pom-pom",
+            "model": "generations_core:oricorio_pom-pom.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "pom-pom"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "pom-pom"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

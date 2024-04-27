@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:sceptile",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:sceptile",
-      "model": "generations_core:sceptile.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:sceptile",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:sceptile",
+            "model": "generations_core:sceptile.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:poochyena",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:poochyena",
+            "model": "generations_core:poochyena.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

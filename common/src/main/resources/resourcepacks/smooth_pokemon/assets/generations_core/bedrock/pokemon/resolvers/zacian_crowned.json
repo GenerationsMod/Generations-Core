@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:zacian",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:zacian_crowned",
+            "model": "generations_core:zacian_crowned.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "crowned"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "crowned"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

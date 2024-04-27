@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:cramorant",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:cramorant_gulping",
+            "model": "generations_core:cramorant_gulping.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "gulping"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "gulping"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

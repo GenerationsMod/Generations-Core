@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:glaceon",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:glaceon",
-      "model": "generations_core:glaceon.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:glaceon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:glaceon",
+            "model": "generations_core:glaceon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

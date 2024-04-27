@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:dondozo",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:dondozo",
+            "model": "generations_core:dondozo.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:arrokuda",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:arrokuda",
+            "model": "generations_core:arrokuda.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

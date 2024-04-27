@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:palafin",
-  "order": 5,
-  "variations": [
-    {
-      "poser": "generations_core:palafin",
-      "model": "generations_core:palafin.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:palafin",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:palafin",
+            "model": "generations_core:palafin.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

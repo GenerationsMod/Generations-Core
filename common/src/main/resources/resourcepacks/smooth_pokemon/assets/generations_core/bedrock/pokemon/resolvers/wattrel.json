@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:wattrel",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:wattrel",
+            "model": "generations_core:wattrel.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

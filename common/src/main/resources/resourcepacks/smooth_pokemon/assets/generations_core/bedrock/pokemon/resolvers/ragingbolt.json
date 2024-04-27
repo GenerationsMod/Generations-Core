@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:ragingbolt",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:ragingbolt",
-      "model": "generations_core:ragingbolt.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:ragingbolt",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:ragingbolt",
+            "model": "generations_core:ragingbolt.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

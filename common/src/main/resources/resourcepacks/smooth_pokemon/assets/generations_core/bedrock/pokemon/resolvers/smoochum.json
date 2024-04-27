@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:smoochum",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:smoochum",
+            "model": "generations_core:smoochum.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

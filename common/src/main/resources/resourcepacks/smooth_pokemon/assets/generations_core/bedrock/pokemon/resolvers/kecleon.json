@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:kecleon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:kecleon",
+            "model": "generations_core:kecleon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:axew",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:axew",
+            "model": "generations_core:axew.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

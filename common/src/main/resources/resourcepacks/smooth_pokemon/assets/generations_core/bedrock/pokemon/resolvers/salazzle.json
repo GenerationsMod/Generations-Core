@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:salazzle",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:salazzle",
+            "model": "generations_core:salazzle.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

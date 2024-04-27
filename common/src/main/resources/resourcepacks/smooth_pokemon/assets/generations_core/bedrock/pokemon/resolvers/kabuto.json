@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:kabuto",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:kabuto",
+            "model": "generations_core:kabuto.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

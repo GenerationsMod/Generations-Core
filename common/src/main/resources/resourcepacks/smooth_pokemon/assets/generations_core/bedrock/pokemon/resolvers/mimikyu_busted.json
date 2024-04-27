@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:mimikyu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:mimikyu_busted",
+            "model": "generations_core:mimikyu_busted.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "busted"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "busted"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

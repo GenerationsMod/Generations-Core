@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:dusclops",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:dusclops",
+            "model": "generations_core:dusclops.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

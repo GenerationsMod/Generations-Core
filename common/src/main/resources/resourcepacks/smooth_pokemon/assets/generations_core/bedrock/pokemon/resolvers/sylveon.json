@@ -1,18 +1,18 @@
 {
-  "species": "cobblemon:sylveon",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:sylveon",
-      "model": "generations_core:sylveon.pk",
-      "texture": "pk:normal",
-      "layers": []
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:sylveon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:sylveon",
+            "model": "generations_core:sylveon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

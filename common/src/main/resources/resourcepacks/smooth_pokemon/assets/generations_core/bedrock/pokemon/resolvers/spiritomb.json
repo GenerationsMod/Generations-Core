@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:spiritomb",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:spiritomb",
+            "model": "generations_core:spiritomb.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

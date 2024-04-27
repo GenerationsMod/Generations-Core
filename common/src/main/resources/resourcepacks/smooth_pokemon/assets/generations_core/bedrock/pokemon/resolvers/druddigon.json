@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:druddigon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:druddigon",
+            "model": "generations_core:druddigon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

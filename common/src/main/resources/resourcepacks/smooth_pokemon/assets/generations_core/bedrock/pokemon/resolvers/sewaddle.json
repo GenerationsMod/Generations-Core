@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:sewaddle",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:sewaddle",
+            "model": "generations_core:sewaddle.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

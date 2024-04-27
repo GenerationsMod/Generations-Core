@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:zubat",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:zubat_female",
+            "model": "generations_core:zubat_female.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "female"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "female"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

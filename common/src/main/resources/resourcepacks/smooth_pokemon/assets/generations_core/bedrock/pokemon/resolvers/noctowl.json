@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:noctowl",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:noctowl",
+            "model": "generations_core:noctowl.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

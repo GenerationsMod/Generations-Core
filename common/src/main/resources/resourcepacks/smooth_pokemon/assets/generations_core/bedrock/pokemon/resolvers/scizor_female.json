@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:scizor",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:scizor_female",
+            "model": "generations_core:scizor_female.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "female"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "female"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

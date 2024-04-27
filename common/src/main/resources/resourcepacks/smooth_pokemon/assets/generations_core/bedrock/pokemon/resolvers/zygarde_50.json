@@ -1,17 +1,22 @@
 {
-  "species": "cobblemon:zygarde",
-  "order": 3,
-  "variations": [
-    {
-      "poser": "generations_core:zygarde_50",
-      "model": "generations_core:zygarde_50.pk",
-      "texture": "pk:normal"
-    },
-    {
-      "aspects": [
-        "shiny"
-      ],
-      "texture": "pk:shiny"
-    }
-  ]
+    "species": "cobblemon:zygarde",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:zygarde_50",
+            "model": "generations_core:zygarde_50.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "50%"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "50%"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
 }

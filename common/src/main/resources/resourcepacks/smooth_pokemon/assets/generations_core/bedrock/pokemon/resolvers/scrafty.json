@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:scrafty",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:scrafty",
+            "model": "generations_core:scrafty.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

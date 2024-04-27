@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:grimmsnarl",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:grimmsnarl_gmax",
+            "model": "generations_core:grimmsnarl_gmax.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "gmax"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "gmax"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

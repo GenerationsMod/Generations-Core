@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:corviknight",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:corviknight_gmax",
+            "model": "generations_core:corviknight_gmax.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "gmax"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "gmax"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

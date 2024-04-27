@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:purugly",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:purugly",
+            "model": "generations_core:purugly.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

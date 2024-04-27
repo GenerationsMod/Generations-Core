@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:metapod",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:metapod",
+            "model": "generations_core:metapod.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}
