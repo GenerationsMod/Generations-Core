@@ -41,6 +41,7 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.pokeutils.reader.TextureReference;
+import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
 import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import gg.generations.rarecandy.renderer.rendering.RenderStage;
@@ -67,12 +68,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.Mth;
 import net.minecraft.util.Tuple;
+import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -92,10 +95,9 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -112,12 +114,10 @@ public class GenerationsCoreClient {
     private static final TypeToken<Map<String, String>> RARE_CANDY_TYPE = new TypeToken<>() {
     };
 
-    public static GenerationsTextureLoader textureLoader;
-
     public static void onInitialize(Minecraft minecraft) {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
-//        RareCandy.DEBUG_THREADS = true;
+        RareCandy.DEBUG_THREADS = true;
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
@@ -126,36 +126,15 @@ public class GenerationsCoreClient {
 
         GenerationsCore.implementation.registerResourceReloader(
                 id("model_registry"),
-                (ResourceManagerReloadListener) resourceManager -> {
-                    ModelRegistry.LOADER.invalidateAll();
-                    ModelRegistry.LOADER.cleanUp();
-
-                    var map = new HashMap<ResourceLocation, CompiledModel>();
-
-//                    System.out.println("Loading Models: ");
-//                    long time = System.currentTimeMillis();
-
-                    for (Map.Entry<ResourceLocation, Resource> e : resourceManager.listResources("models", a -> a.getPath().endsWith(".pk")).entrySet()) {
-                        ResourceLocation key = e.getKey();
-                        Resource value = e.getValue();
-                        map.computeIfAbsent(key, a -> CompiledModel.of(a, value));
-                    }
-                    for (Map.Entry<ResourceLocation, Resource> entry : resourceManager.listResources("bedrock/pokemon/models", a -> a.getPath().endsWith(".pk")).entrySet()) {
-                        ResourceLocation location = entry.getKey();
-                        Resource resource = entry.getValue();
-                        map.computeIfAbsent(location, a -> CompiledModel.of(a, resource));
-                    }
-
-                    ModelRegistry.LOADER.putAll(map);
-                },
+                new CompiledModelLoader(),
                 PackType.CLIENT_RESOURCES,
                 emptyList());
 
-        GenerationsCore.implementation.registerResourceReloader(
-                id("texture_loader"),
-                (ResourceManagerReloadListener) resourceManager -> textureLoader.initialize(resourceManager),
-                PackType.CLIENT_RESOURCES,
-                emptyList());
+//        GenerationsCore.implementation.registerResourceReloader(
+//                id("texture_loader"),
+//                (ResourceManagerReloadListener) resourceManager -> textureLoader.initialize(resourceManager),
+//                PackType.CLIENT_RESOURCES,
+//                emptyList());
 
         PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin);
         PlatformEvents.CLIENT_PLAYER_LOGOUT.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogout);
@@ -167,9 +146,6 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
-
-            TextureLoader.setInstance(textureLoader = new GenerationsTextureLoader(event));
-            textureLoader.initialize(event.getResourceManager());
 
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
@@ -419,11 +395,19 @@ public class GenerationsCoreClient {
     }
 
     public static class GenerationsTextureLoader extends ITextureLoader {
+        private static GenerationsTextureLoader instance = new GenerationsTextureLoader();
         final Map<String, ResourceLocation> MAP = new HashMap<>();
 
-        public GenerationsTextureLoader(Minecraft minecraft) {}
+        public GenerationsTextureLoader() {
+            TextureLoader.setInstance(this);
+        }
+
+        public static GenerationsTextureLoader getInstance() {
+            return instance;
+        }
 
         public void initialize(ResourceManager manager) {
+
             clear();
             var gson = new Gson();
 

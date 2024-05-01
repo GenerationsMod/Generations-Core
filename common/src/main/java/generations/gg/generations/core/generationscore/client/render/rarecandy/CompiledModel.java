@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
 import gg.generations.rarecandy.renderer.components.MeshObject;
@@ -56,18 +57,28 @@ public class CompiledModel {
                     var manager = Minecraft.getInstance().getTextureManager();
 
                     if(requiresVariantTexture) {
-                        object.availableVariants().forEach(s -> manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
-                            @Override
-                            public void load(@NotNull ResourceManager resourceManager) {
+                        if(!object.objects.isEmpty()) {
 
-                            }
-                        }));
+                            object.availableVariants().forEach(s -> manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
+                                @Override
+                                public void load(@NotNull ResourceManager resourceManager) {
+
+                                }
+                            }));
+                        } else {
+                            System.out.println("Warning %s lacks variants: " + name.toString());
+                        }
                     }
 
                     guiInstance.link(object);
                     if(object.scale == 0f) object.scale = 1.0f;
                 }
         );
+    }
+
+    public CompiledModel() {
+        this.renderObject = null;
+        this.name = GenerationsCore.id("dummy");
     }
 
     public static CompiledModel of(ResourceLocation pair, Resource resource) {
@@ -82,6 +93,8 @@ public class CompiledModel {
     }
 
     public void renderGui(ObjectInstance instance, Matrix4f projectionMatrix) {
+        if(renderObject == null) return;
+
         RenderSystem.enableDepthTest();
         BufferUploader.reset();
         RenderSystem.applyModelViewMatrix();
@@ -94,10 +107,11 @@ public class CompiledModel {
     }
 
     public void render(ObjectInstance instance, Matrix4f projectionMatrix) {
+        if(renderObject == null) return;
         render(instance, projectionMatrix, ModelRegistry.getWorldRareCandy().objectManager);
     }
 
-    public void render(ObjectInstance instance, Matrix4f projectionMatrix, ObjectManager objectManager) {
+    private void render(ObjectInstance instance, Matrix4f projectionMatrix, ObjectManager objectManager) {
         if (!renderObject.isReady()) return;
 
         if(!isUploaded) uploadIfNeeded();
@@ -141,4 +155,6 @@ public class CompiledModel {
         renderObject.objects.forEach(a -> a.model.removeFromGpu());
         isUploaded = false;
     }
+
+    public static final CompiledModel DUMMY = new CompiledModel();
 }

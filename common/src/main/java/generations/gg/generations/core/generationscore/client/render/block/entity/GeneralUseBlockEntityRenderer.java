@@ -42,6 +42,9 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
         var model = ModelRegistry.get(blockEntity);
+
+        if(model.renderObject == null) return;
+
         stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
 
         if (blockEntity.objectInstance == null) {
@@ -72,8 +75,9 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
 
     protected void renderModelFrameProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
         //TODO: Get this operational
-
         var model = ModelRegistry.get(blockEntity);
+
+        if(model.renderObject != null) return;
 
         stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
 

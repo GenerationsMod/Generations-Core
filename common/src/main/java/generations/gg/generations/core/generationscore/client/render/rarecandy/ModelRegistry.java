@@ -78,7 +78,9 @@ public class ModelRegistry {
     public static CompiledModel get(ResourceLocation location) {
         try {
             REFRESH.get(location);
-            return LOADER.get(location);
+            var model = LOADER.getIfPresent(location);
+            if (model != null) return model;
+            return CompiledModel.DUMMY;
 
         } catch (Exception e) {
             throw new RuntimeException(e);

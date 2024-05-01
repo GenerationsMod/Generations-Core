@@ -35,7 +35,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         val name = split[1].trim { it <= ' ' }
         return StatefulAnimationRareCandy(Supplier<Animation> {
             val objects = ModelRegistry.get(location).renderObject
-            if (objects.isReady) {
+            if (objects != null && objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
@@ -52,7 +52,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         val name = split[1].trim { it <= ' ' }
         return StatelessAnimationRareCandy(jsonPokemonPoseableModel, Supplier<Animation?> {
             val objects = ModelRegistry.get(location).renderObject
-            if (objects.isReady) {
+            if (objects != null && objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
