@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-public class GenerationsChestLoot implements LootTableSubProvider {
+class GenerationsChestLoot implements LootTableSubProvider {
 	private static final ResourceLocation BEAST_BALL = GenerationsCore.id("chests/beast_ball");
 	private static final ResourceLocation CHERISH_BALL = GenerationsCore.id("chests/cherish_ball");
 	private static final ResourceLocation DIVE_BALL = GenerationsCore.id("chests/dive_ball");

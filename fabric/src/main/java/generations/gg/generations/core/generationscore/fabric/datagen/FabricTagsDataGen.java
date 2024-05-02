@@ -20,8 +20,8 @@ import java.util.concurrent.CompletableFuture;
  * @author Joseph T. McQuigg
  * @see DataGen
  */
-public class FabricTagsDataGen {
-    public static void init(FabricDataGenerator.Pack pack) {
+class FabricTagsDataGen {
+    protected static void init(FabricDataGenerator.Pack pack) {
         pack.addProvider(BlockTagsProvider::new);
         pack.addProvider(ItemTagsProvider::new);
         pack.addProvider(EntityTypeTagsProvider::new);
