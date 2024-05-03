@@ -17,32 +17,41 @@ import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 
 class CompiledModelLoader : ResourceManagerReloadListener {
+    var loading: Job? = null
+
 
     override fun onResourceManagerReload(resourceManager: ResourceManager) {
+        loading?.cancel("Reloading in progress.")
+
         GenerationsTextureLoader.getInstance().initialize(resourceManager)
         ModelRegistry.LOADER.invalidateAll()
         ModelRegistry.LOADER.cleanUp()
 
+
+
         var list = (MODEL.listMatchingResources(resourceManager).toList() + MODEL_COBBLEMON.listMatchingResources(resourceManager).toList())
 
-        println("Loading ${list.size} Models")
+        loading = CoroutineScope(Dispatchers.IO).launch {
 
-        var time = System.currentTimeMillis();
+//            println("Loading ${list.size} Models")
 
-        var models = mutableMapOf<ResourceLocation, CompiledModel>()
+            var time = System.currentTimeMillis();
 
-        var size = models.size-1
+            var models = mutableMapOf<ResourceLocation, CompiledModel>()
 
-        list.forEachIndexed { i, pair ->
-            var time1 = System.currentTimeMillis();
-            println("Loading $i/$size ${pair.first}")
-            CompiledModel.of(pair.first, pair.second).run { ModelRegistry.LOADER.put(pair.first, this) }
-            println("${pair.first} completed in ${(System.currentTimeMillis() - time1) / 1000f}")
+            var size = models.size - 1
+
+            list.forEach {pair ->
+                var time1 = System.currentTimeMillis();
+//                println("Loading $i/$size ${pair.first}")
+                CompiledModel.of(pair.first, pair.second).run { ModelRegistry.LOADER.put(pair.first, this) }
+                println("${pair.first} completed in ${(System.currentTimeMillis() - time1) / 1000f}")
+            }
+
+            val difference = System.currentTimeMillis() - time;
+
+//            println("Models completed in ${difference / 1000f}")
         }
-
-        val difference = System.currentTimeMillis() - time;
-
-        println("Models completed in ${difference / 1000f}")
     }
 
     companion object {
