@@ -3,15 +3,11 @@ package generations.gg.generations.core.generationscore.client.render.entity;
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
-import com.cobblemon.mod.common.entity.PoseType;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.google.gson.reflect.TypeToken;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
-import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
+import generations.gg.generations.core.generationscore.client.GenerationsTextureLoader;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import net.minecraft.client.model.EntityModel;
@@ -23,6 +19,8 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, EntityModel<StatueEntity>> {
     public StatueEntityRenderer(EntityRendererProvider.Context arg) {
@@ -100,7 +98,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
         var state = entity.getStatueData();
 
         if(state.material() != null && state.material().getNamespace().equals("statue") && ITextureLoader.instance().getTextureEntries().contains(state.material().getPath())) {
-            return ((GenerationsCoreClient.GenerationsTextureLoader) ITextureLoader.instance()).getLocation(state.material().getPath());
+            return Objects.requireNonNull(((GenerationsTextureLoader) ITextureLoader.instance()).getLocation(state.material().getPath()));
         } else return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);
     }
 }

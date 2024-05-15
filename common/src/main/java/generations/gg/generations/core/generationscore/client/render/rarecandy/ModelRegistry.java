@@ -3,6 +3,8 @@ package generations.gg.generations.core.generationscore.client.render.rarecandy;
 import com.google.common.cache.*;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.mojang.blaze3d.pipeline.RenderCall;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -36,7 +38,7 @@ public class ModelRegistry {
             var model = LOADER.getIfPresent(notification.getKey());
 
             if(model != null) {
-                if(model.isUploaded()) model.removeFromGpu();
+                if(model.isUploaded()) RenderSystem.recordRenderCall(model::removeFromGpu);
             }
         }
     }).build(new CacheLoader<ResourceLocation, String>() {

@@ -1,13 +1,11 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
+import generations.gg.generations.core.generationscore.client.GenerationsTextureLoader;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.config.Config;
 import gg.generations.rarecandy.pokeutils.BlendType;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.renderer.animation.AnimationController;
@@ -266,7 +264,7 @@ public class Pipelines {
 
 
     private static boolean isStatueMaterial(String variant) {
-        return variant != null && variant.startsWith("statue:") && ((GenerationsCoreClient.GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(variant.substring(7));
+        return variant != null && variant.startsWith("statue:") && ((GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(variant.substring(7));
     }
 
     public static Pipeline getPipeline(String name) {

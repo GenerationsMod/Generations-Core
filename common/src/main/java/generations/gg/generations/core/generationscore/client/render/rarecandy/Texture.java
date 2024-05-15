@@ -20,12 +20,16 @@ public class Texture extends DynamicTexture implements ITexture {
     }
 
     private static NativeImage getFromBuffered(BufferedImage image) {
-        try (FastByteArrayOutputStream outputStream = new FastByteArrayOutputStream()) {
-            ImageIO.write(image, "PNG", outputStream);
-            return NativeImage.read(new FastByteArrayInputStream(outputStream.array));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        NativeImage nativeImage = new NativeImage(image.getWidth(), image.getHeight(), true);
+
+        for (int y = 0; y < image.getHeight(); y++) {
+            for (int x = 0; x < image.getWidth(); x++) {
+                int rgb = image.getRGB(x, y);
+                nativeImage.setPixelRGBA(x, y, rgb);
+            }
         }
+
+        return nativeImage;
     }
 
     @Override

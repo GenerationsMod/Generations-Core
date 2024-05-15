@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererR
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
+import com.cobblemon.mod.common.platform.events.ClientTickEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -47,6 +48,7 @@ import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import gg.generations.rarecandy.renderer.rendering.RenderStage;
 import gg.generations.rarecandy.tools.TextureLoader;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
@@ -111,8 +113,6 @@ import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
 public class GenerationsCoreClient {
-    private static final TypeToken<Map<String, String>> RARE_CANDY_TYPE = new TypeToken<>() {
-    };
 
     public static void onInitialize(Minecraft minecraft) {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
@@ -123,6 +123,13 @@ public class GenerationsCoreClient {
 
         VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
 
+        PlatformEvents.CLIENT_TICK_PRE.subscribe(Priority.NORMAL, new Function1<ClientTickEvent.Pre, Unit>() {
+            @Override
+            public Unit invoke(ClientTickEvent.Pre pre) {
+                GenerationsTextureLoader.INSTANCE.tick();
+                return Unit.INSTANCE;
+            }
+        });
 
         GenerationsCore.implementation.registerResourceReloader(
                 id("model_registry"),
@@ -394,157 +401,4 @@ public class GenerationsCoreClient {
         ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
     }
 
-    public static class GenerationsTextureLoader extends ITextureLoader {
-        private static GenerationsTextureLoader instance = new GenerationsTextureLoader();
-        final Map<String, ResourceLocation> MAP = new HashMap<>();
-
-        public GenerationsTextureLoader() {
-            TextureLoader.setInstance(this);
-        }
-
-        public static GenerationsTextureLoader getInstance() {
-            return instance;
-        }
-
-        public void initialize(ResourceManager manager) {
-
-            clear();
-            var gson = new Gson();
-
-            try {
-                for(var namespace : manager.getNamespaces()) {
-                    var list = manager.getResourceStack(new ResourceLocation(namespace, "rare_candy_texture.json"));
-
-                    for(var resource : list) {
-                        try(var reader = resource.openAsReader()) {
-                            var map = GsonHelper.fromJson(gson, reader, RARE_CANDY_TYPE);
-
-                            map.forEach((key, value) -> register(key, new TextureReference(fromResourceLocation(manager, Objects.requireNonNull(ResourceLocation.tryParse(value))), key)));
-
-                        } catch (IOException e) {
-
-                        }
-                    }
-                }
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-//
-//            register("dark", new TextureReference(fromColor("000000"), "dark"));
-//            register("bright", new TextureReference(fromColor("ffffff"), "bright"));
-//            register("neutral", new TextureReference(fromColor("999999"), "neutral"));
-//
-//            register("concrete", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("concrete")), "concrete"));
-//            register("glass", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("glass")), "glass"));
-//            register("gold", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("gold")), "gold"));
-//            register("marble", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("marble")), "marble"));
-//            register("metal", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("metal")), "metal"));
-//            register("moss", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("moss")), "moss"));
-//            register("silver", new TextureReference(fromResourceLocationStatue(manager, GenerationsCore.id("silver")), "silver"));
-//
-//            register("couch_diffuse", new TextureReference(fromResourceLocationExternal(manager, GenerationsCore.id("couch_diffuse"));
-        }
-
-        private BufferedImage fromResourceLocation(ResourceManager manager, ResourceLocation location) {
-            try {
-                return ImageIO.read(manager.getResourceOrThrow(new ResourceLocation("%s:textures/%s.png".formatted(location.getNamespace(), location.getPath()))).open());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-//
-//        private BufferedImage fromResourceLocationStatue(ResourceManager manager, ResourceLocation location) {
-//            return fromResourceLocation(manager, new ResourceLocation("%s:textures/entity/statue_material/%s.png".formatted(location.getNamespace(), location.getPath()))).open())
-//        }
-//
-//        private BufferedImage fromResourceLocationExternal(ResourceManager manager, ResourceLocation location) {
-//            return fromResourceLocation(manager, new ResourceLocation("%s:textures/pk_eternal/%s.png".formatted(location.getNamespace(), location.getPath()))).open())
-//        }
-//
-//
-//        private static BufferedImage fromColor(String color) {
-//            int colorValue = Integer.parseInt(color.replace("#", ""), 16);
-//
-//            var image = new BufferedImage(2, 2, BufferedImage.TYPE_INT_ARGB);
-//            image.setRGB(0, 0, colorValue);
-//            image.setRGB(0, 1, colorValue);
-//            image.setRGB(1, 0, colorValue);
-//            image.setRGB(1, 1, colorValue);
-//            return image;
-//        }
-
-        @Override
-        public ITexture getTexture(String s) {
-            var texture = MAP.getOrDefault(s, null);
-            if(texture != null) {
-                var image = Minecraft.getInstance().getTextureManager().getTexture(MAP.get(s));
-                if(image instanceof ITexture) {
-                    return (ITexture) image;
-                }
-            }
-
-            return null;
-        }
-
-        @Override
-        public void register(String s, ITexture iTexture) {
-            if(iTexture instanceof DynamicTexture texture) {
-                var location = Minecraft.getInstance().getTextureManager().register(s.replace(":", "_").toLowerCase(), texture);
-                MAP.putIfAbsent(s, location);
-            }
-        }
-
-        @Override
-        public void register(String s, TextureReference textureReference) {
-            register(s, new generations.gg.generations.core.generationscore.client.render.rarecandy.Texture(textureReference));
-        }
-
-        @Override
-        protected ITexture loadFromReference(TextureReference textureReference) {
-            return null;
-        }
-
-        @Override
-        public void remove(String s) {
-            Minecraft.getInstance().getTextureManager().release(MAP.remove(s));
-        }
-
-        @Override
-        public void clear() {
-            MAP.clear();
-        }
-
-        @Override
-        public TextureReference generateDirectReference(String s) {
-            return null;
-        }
-
-        @Override
-        public ITexture getDarkFallback() {
-            return getTexture("dark");
-        }
-
-        @Override
-        public ITexture getBrightFallback() {
-            return getTexture("light");
-        }
-
-        @Override
-        public ITexture getNuetralFallback() {
-            return getTexture("neutral");
-        }
-
-        @Override
-        public Set<String> getTextureEntries() {
-            return MAP.keySet();
-        }
-
-        public boolean has(String texture) {
-            return MAP.containsKey(texture);
-        }
-
-        public ResourceLocation getLocation(String material) {
-            return MAP.getOrDefault(material, null);
-        }
-    }
 }

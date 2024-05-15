@@ -1,20 +1,12 @@
 package generations.gg.generations.core.generationscore.client
 
-import generations.gg.generations.core.generationscore.client.GenerationsCoreClient.GenerationsTextureLoader
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry
-import gg.generations.rarecandy.renderer.loading.ModelLoader
 import kotlinx.coroutines.*
-import kotlinx.coroutines.future.asCompletableFuture
 import net.minecraft.resources.FileToIdConverter
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener
-import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener
-import net.minecraft.util.profiling.ProfilerFiller
-import java.util.concurrent.CompletableFuture
-import java.util.concurrent.Executor
 
 class CompiledModelLoader : ResourceManagerReloadListener {
     var loading: Job? = null
@@ -23,7 +15,7 @@ class CompiledModelLoader : ResourceManagerReloadListener {
     override fun onResourceManagerReload(resourceManager: ResourceManager) {
         loading?.cancel("Reloading in progress.")
 
-        GenerationsTextureLoader.getInstance().initialize(resourceManager)
+        GenerationsTextureLoader.initialize(resourceManager)
         ModelRegistry.LOADER.invalidateAll()
         ModelRegistry.LOADER.cleanUp()
 

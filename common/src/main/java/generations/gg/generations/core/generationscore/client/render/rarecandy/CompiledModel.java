@@ -4,13 +4,17 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
+import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
+import gg.generations.rarecandy.pokeutils.reader.TextureReference;
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
+import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.loading.ModelLoader;
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import gg.generations.rarecandy.renderer.rendering.RenderStage;
 import gg.generations.rarecandy.renderer.storage.ObjectManager;
+import gg.generations.rarecandy.tools.TextureLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +26,10 @@ import org.joml.Matrix4f;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
 /**
@@ -31,6 +38,7 @@ import java.util.function.Supplier;
 public class CompiledModel {
     public final MultiRenderObject<MeshObject> renderObject;
     public final ResourceLocation name;
+    public final Map<String, TextureReference> map = new HashMap<>();
 
     private boolean isUploaded = false;
     private PixelmonInstance guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null);
@@ -42,7 +50,7 @@ public class CompiledModel {
     public CompiledModel(ResourceLocation name, InputStream stream, Supplier<MeshObject> supplier, boolean requiresVariantTexture) {
         this.name = name;
         var loader = ModelRegistry.getWorldRareCandy().getLoader();
-        this.renderObject = loader.createObject(
+        this.renderObject = loader.createObject(this,
                 () -> new PixelAsset(stream, name.toString()),
                  (gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
@@ -124,13 +132,11 @@ public class CompiledModel {
 
     private void uploadIfNeeded() {
         List<MeshObject> objects = renderObject.objects;
-        for (int i = 0, objectsSize = objects.size(); i < objectsSize; i++) {
-            MeshObject meshObject = objects.get(i);
-
-                meshObject.model.upload();
-
-//            }
+        for (MeshObject meshObject : objects) {
+            meshObject.model.upload();
         }
+
+        map.forEach(ITextureLoader.instance()::register);
 
         isUploaded = true;
     }
@@ -153,6 +159,9 @@ public class CompiledModel {
 
     public void removeFromGpu() {
         renderObject.objects.forEach(a -> a.model.removeFromGpu());
+
+        map.keySet().forEach(TextureLoader.instance()::remove);
+
         isUploaded = false;
     }
 
