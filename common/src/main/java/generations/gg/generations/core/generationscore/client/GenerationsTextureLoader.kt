@@ -3,29 +3,32 @@ package generations.gg.generations.core.generationscore.client
 import com.cobblemon.mod.common.util.asResource
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.mojang.blaze3d.systems.RenderSystem
+import generations.gg.generations.core.generationscore.GenerationsCore
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel
+import generations.gg.generations.core.generationscore.client.render.rarecandy.ITextureWithResourceLocation
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Texture
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
-import gg.generations.rarecandy.pokeutils.reader.TextureReference
 import gg.generations.rarecandy.renderer.loading.ITexture
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
 import net.minecraft.client.Minecraft
+import net.minecraft.client.renderer.texture.AbstractTexture
 import net.minecraft.client.renderer.texture.DynamicTexture
+import net.minecraft.client.renderer.texture.SimpleTexture
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.GsonHelper
-import java.awt.image.BufferedImage
+import org.lwjgl.opengl.GL13C
 import java.io.IOException
+import java.io.InputStream
 import java.util.*
 import java.util.concurrent.ConcurrentLinkedQueue
-import javax.imageio.ImageIO
+import kotlin.collections.HashMap
 
 object GenerationsTextureLoader : ITextureLoader() {
-    private val imagesToBeLoaded = ConcurrentLinkedQueue<Triple<CompiledModel, String, ByteArray>>()
-    val MAP: MutableMap<String, ResourceLocation> = HashMap()
+    val REGULAR: MutableMap<String, ITexture> = HashMap()
 
     init {
         setInstance(this)
@@ -39,7 +42,7 @@ object GenerationsTextureLoader : ITextureLoader() {
                 manager.getResourceStack(ResourceLocation(namespace, "rare_candy_texture.json")).forEach { resource ->
                     resource.openAsReader().use { reader ->
                         GsonHelper.fromJson(gson, reader, RARE_CANDY_TYPE).forEach { (key: String, value: String?) ->
-                            register(key, TextureReference(fromResourceLocation(manager, value.asResource()), key))
+                            register(key, SimpleTextureEnhancedK(value.asResource()))
                         }
                     }
                 }
@@ -48,33 +51,23 @@ object GenerationsTextureLoader : ITextureLoader() {
         }
     }
 
-    private fun fromResourceLocation(manager: ResourceManager, location: ResourceLocation): BufferedImage = try {
-            ImageIO.read(manager.getResourceOrThrow("${location.namespace}:textures/${location.path}.png".asResource()).open())
+    private fun fromResourceLocation(manager: ResourceManager, location: ResourceLocation): InputStream = try {
+            manager.getResourceOrThrow("${location.namespace}:textures/${location.path}.png".asResource()).open()
         } catch (e: IOException) {
             throw RuntimeException(e)
         }
 
     override fun getTexture(s: String?): ITexture? {
-        val texture = MAP.getOrDefault(s, null)?.let { texture -> Minecraft.getInstance().textureManager.getTexture(texture) }
+        val texture = REGULAR.getOrDefault(s, null)//?.let { texture -> Minecraft.getInstance().textureManager.getTexture(texture) }
         return if(texture is ITexture) texture else null
     }
 
     override fun register(s: String, iTexture: ITexture) {
-        if (iTexture is DynamicTexture) {
-            val location: ResourceLocation = Minecraft.getInstance().textureManager.register(
-                s.replace(":", "_").lowercase(Locale.getDefault()),
-                iTexture
-            )
-            MAP.putIfAbsent(s, location)
-        }
+        REGULAR.putIfAbsent(s, iTexture)
     }
 
-    override fun register(s: String, textureReference: TextureReference) = register(s, Texture(textureReference))
-
-    fun register(model: CompiledModel, s: String, imageData: ByteArray) {
-        val pair: Triple<CompiledModel, String, ByteArray> = Triple(model, s, imageData)
-
-        imagesToBeLoaded.add(pair);
+    override fun register(id: String, name: String, data: ByteArray) {
+        register(id, Texture.read(data, name))
     }
 
     val scope = CoroutineScope(Dispatchers.Default)
@@ -91,31 +84,27 @@ object GenerationsTextureLoader : ITextureLoader() {
 //    }
 
     fun tick() {
-        if ((ticks % 20) == 0 && imagesToBeLoaded.isNotEmpty()) {
-            if (job == null || job?.isActive == false) {
-                job = scope.launch {
-                    while (true) {
-                        val image = imagesToBeLoaded.poll() ?: break
-                        val (first, second, third) = image
-                        var reference = TextureReference.read(third, second, true)
-                        image.first.map[second] = reference
-                        if(first.isUploaded) register(second, reference)
-                    }
-                }
-            }
-        }
-        ticks += 1
+//        if ((ticks % 20) == 0 && imagesToBeLoaded.isNotEmpty()) {
+//            if (job == null || job?.isActive == false) {
+//                job = scope.launch {
+//                    while (true) {
+//                        val image = imagesToBeLoaded.poll() ?: break
+//                        val (first, second, third) = image
+//                        var reference = TextureReference.read(third, second, true)
+//                        image.first.map[second] = reference
+//                        if(first.isUploaded) register(second, reference)
+//                    }
+//                }
+//            }
+//        }
+//        ticks += 1
     }
-
-    override fun loadFromReference(textureReference: TextureReference): ITexture? = null
 
     override fun remove(s: String) {
-        MAP.remove(s)?.run { Minecraft.getInstance().textureManager.release(this) }
+        REGULAR.remove(s)?.run { this.close() }
     }
 
-    override fun clear() = MAP.clear()
-
-    override fun generateDirectReference(s: String): TextureReference? = null
+    fun clear() = REGULAR.clear()
 
     override fun getDarkFallback(): ITexture? = getTexture("dark")
 
@@ -123,11 +112,27 @@ object GenerationsTextureLoader : ITextureLoader() {
 
     override fun getNuetralFallback(): ITexture? = getTexture("neutral")
 
-    override fun getTextureEntries(): Set<String> = MAP.keys
+    override fun getTextureEntries(): Set<String> = REGULAR.keys
 
-    fun has(texture: String): Boolean = MAP.containsKey(texture)
+    fun has(texture: String): Boolean = REGULAR.containsKey(texture)
 
-    fun getLocation(material: String): ResourceLocation? = MAP.getOrDefault(material, null)
+    fun getLocation(material: String): ResourceLocation? = REGULAR.getOrDefault(material, null)?.takeIf { it is ITextureWithResourceLocation }.let { it as ITextureWithResourceLocation }.location
 
     private val RARE_CANDY_TYPE: TypeToken<Map<String, String>> = object : TypeToken<Map<String, String>>() {}
+
+    private class SimpleTextureEnhancedK(var location: ResourceLocation) : SimpleTexture(location), ITexture {
+        init {
+            Minecraft.getInstance().textureManager.register(location, this)
+        }
+
+        override fun bind(slot: Int) {
+            RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
+            bind()
+        }
+
+        override fun close() {
+            Minecraft.getInstance().textureManager.release(location)
+            super.close()
+        }
+    }
 }

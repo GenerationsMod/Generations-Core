@@ -1,10 +1,10 @@
-import com.hypherionmc.modpublisher.properties.CurseEnvironment
-import com.hypherionmc.modpublisher.properties.ModLoader
-import com.hypherionmc.modpublisher.properties.ReleaseType
+//import com.hypherionmc.modpublisher.properties.CurseEnvironment
+//import com.hypherionmc.modpublisher.properties.ModLoader
+//import com.hypherionmc.modpublisher.properties.ReleaseType
 
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("com.hypherionmc.modutils.modpublisher") version "2.+"
+//    id("com.hypherionmc.modutils.modpublisher") version "2.+"
 }
 
 architectury {
@@ -112,37 +112,37 @@ tasks {
     }
 }
 
-publisher {
-    apiKeys {
-        curseforge(getPublishingCredentials().first)
-        modrinth(getPublishingCredentials().second)
-        github(project.properties["github_token"].toString())
-    }
-
-    curseID.set("860936")
-    modrinthID.set("AxvRzJ70")
-    githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
-    setReleaseType(ReleaseType.BETA)
-    projectVersion.set(project.version.toString())
-    displayName.set("$jarName-${projectVersion.get()}")
-    changelog.set("")
-    artifact.set(tasks.remapJar)
-    setGameVersions(minecraftVersion)
-    setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
-    setCurseEnvironment(CurseEnvironment.BOTH)
-    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18)
-    val depends = mutableListOf(
-        "fabric-api",
-        "fabric-language-kotlin",
-        "architectury-api",
-        "cobblemon",
-        "botarium",
-    )
-    curseDepends.required.set(depends)
-    curseDepends.optional.set(mutableListOf("wthit"))
-    modrinthDepends.required.set(depends)
-    modrinthDepends.optional.set(mutableListOf("wthit"))
-}
+//publisher {
+//    apiKeys {
+//        curseforge(getPublishingCredentials().first)
+//        modrinth(getPublishingCredentials().second)
+//        github(project.properties["github_token"].toString())
+//    }
+//
+//    curseID.set("860936")
+//    modrinthID.set("AxvRzJ70")
+//    githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
+//    setReleaseType(ReleaseType.BETA)
+//    projectVersion.set(project.version.toString())
+//    displayName.set("$jarName-${projectVersion.get()}")
+//    changelog.set("")
+//    artifact.set(tasks.remapJar)
+//    setGameVersions(minecraftVersion)
+//    setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
+//    setCurseEnvironment(CurseEnvironment.BOTH)
+//    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18)
+//    val depends = mutableListOf(
+//        "fabric-api",
+//        "fabric-language-kotlin",
+//        "architectury-api",
+//        "cobblemon",
+//        "botarium",
+//    )
+//    curseDepends.required.set(depends)
+//    curseDepends.optional.set(mutableListOf("wthit"))
+//    modrinthDepends.required.set(depends)
+//    modrinthDepends.optional.set(mutableListOf("wthit"))
+//}
 
 components {
     java.run {

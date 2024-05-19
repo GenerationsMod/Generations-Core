@@ -32,22 +32,7 @@ import static com.google.common.util.concurrent.Futures.immediateFuture;
 public class ModelRegistry {
     private static final String DUMMY = "dummy";
 
-    public static final LoadingCache<ResourceLocation, String> REFRESH = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.SECONDS).removalListener(new RemovalListener<ResourceLocation, String>() {
-        @Override
-        public void onRemoval(RemovalNotification<ResourceLocation, String> notification) {
-            var model = LOADER.getIfPresent(notification.getKey());
-
-            if(model != null) {
-                if(model.isUploaded()) RenderSystem.recordRenderCall(model::removeFromGpu);
-            }
-        }
-    }).build(new CacheLoader<ResourceLocation, String>() {
-        @Override
-        public String load(ResourceLocation key) throws Exception {
-            return ModelRegistry.DUMMY;
-        }
-    });
-    public static final LoadingCache<ResourceLocation, CompiledModel> LOADER = CacheBuilder.newBuilder().removalListener((RemovalListener<ResourceLocation, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
+    public static final LoadingCache<ResourceLocation, CompiledModel> LOADER = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.SECONDS).removalListener((RemovalListener<ResourceLocation, CompiledModel>) notification -> notification.getValue().delete()).build(new CacheLoader<>() {
         @Override
         public @NotNull CompiledModel load(@NotNull ResourceLocation pair) {
             var resourceManager = Minecraft.getInstance().getResourceManager();
@@ -58,17 +43,6 @@ public class ModelRegistry {
                 throw new RuntimeException(e);
             }
         }
-
-//        @Override
-//        public ListenableFuture<CompiledModel> reload(ResourceLocation key, CompiledModel oldValue) throws Exception {
-//            for (MeshObject meshObject : oldValue.renderObject.objects) {
-//                if (meshObject.isReady() && meshObject.model.isUploaded()) {
-//                    meshObject.model.removeFromGpu();
-//                }
-//            }
-//
-//            return Futures.immediateFuture(oldValue);
-//        }
     });
     private static RareCandy WORLD_RENDER;
     private static RareCandy GUI_RENDER;
@@ -79,10 +53,8 @@ public class ModelRegistry {
 
     public static CompiledModel get(ResourceLocation location) {
         try {
-            REFRESH.get(location);
-            var model = LOADER.getIfPresent(location);
-            if (model != null) return model;
-            return CompiledModel.DUMMY;
+            var model = LOADER.get(location);
+            return model;
 
         } catch (Exception e) {
             throw new RuntimeException(e);

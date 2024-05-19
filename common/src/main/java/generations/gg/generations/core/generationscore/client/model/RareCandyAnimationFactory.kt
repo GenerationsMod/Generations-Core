@@ -39,7 +39,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
-        }, Supplier<PixelmonInstance> { return@Supplier ModelRegistry.get(location).guiInstance }, transforms, pausesPoses)
+        }, Supplier<PixelmonInstance?> { return@Supplier ModelRegistry.get(location).guiInstance }, transforms, pausesPoses)
     }
 
     override fun stateless(
@@ -56,10 +56,10 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
-        }, Supplier<PixelmonInstance> { return@Supplier ModelRegistry.get(location).guiInstance })
+        }, Supplier<PixelmonInstance?> { return@Supplier ModelRegistry.get(location).guiInstance })
     }
 
-    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation>?, private val instanceProvider: Supplier<PixelmonInstance>, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {
+    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation>?, private val instanceProvider: Supplier<PixelmonInstance?>, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {
         var startedSeconds = -1F
         override val isTransform: Boolean = transforms
 
@@ -112,7 +112,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
     private class StatelessAnimationRareCandy (
         jsonPokemonPoseableModel: JsonPokemonPoseableModel,
         private val animationSupplier: Supplier<Animation?>,
-        private val objectSupplier: Supplier<PixelmonInstance>
+        private val objectSupplier: Supplier<PixelmonInstance?>
     ) : StatelessAnimation<PokemonEntity, ModelFrame>(jsonPokemonPoseableModel) {
         override val targetFrame = ModelFrame::class.java
 

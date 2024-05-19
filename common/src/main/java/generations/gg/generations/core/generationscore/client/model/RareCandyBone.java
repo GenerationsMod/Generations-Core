@@ -58,14 +58,16 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         var scale = model.renderObject.scale;
 
         if(instance == null && !isStatue) {
-            instance = model.getGuiInstance();
+            instance = model.guiInstance;
+            if(instance == null) return;
             isGui = true;
             instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
         } else {
             if(isStatue) {
+                if(model.guiInstance == null) return;
                 instance = ((StatueEntity) entity).getInstance();
-                instance.matrixTransforms = model.getGuiInstance().matrixTransforms;
-                instance.offsets = model.getGuiInstance().offsets;
+                instance.matrixTransforms = model.guiInstance.matrixTransforms;
+                instance.offsets = model.guiInstance.offsets;
             }
 
             scale *= ((PixelmonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;

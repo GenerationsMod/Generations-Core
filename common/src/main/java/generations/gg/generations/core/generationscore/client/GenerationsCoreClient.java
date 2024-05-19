@@ -40,13 +40,8 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
-import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
-import gg.generations.rarecandy.pokeutils.reader.TextureReference;
-import gg.generations.rarecandy.renderer.components.AnimatedMeshObject;
-import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import gg.generations.rarecandy.renderer.rendering.RenderStage;
-import gg.generations.rarecandy.tools.TextureLoader;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import net.minecraft.client.Camera;
@@ -117,7 +112,7 @@ public class GenerationsCoreClient {
     public static void onInitialize(Minecraft minecraft) {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
-        RareCandy.DEBUG_THREADS = true;
+        RareCandy.DEBUG_THREADS = false;
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
