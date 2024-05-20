@@ -32,21 +32,21 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 [[dependencies.generations_core]]
    modId="architectury"
    mandatory=true
-   versionRange="[9.1.13,)"
+   versionRange="[9.2.14,)"
    ordering="AFTER"
    side="BOTH"
 
 [[dependencies.generations_core]]
    modId="cobblemon"
    mandatory=true
-   versionRange="[1.4.1,)"
+   versionRange="[1.5.0,)"
    ordering="AFTER"
    side="BOTH"
 
 [[dependencies.generations_core]]
    modId="botarium"
    mandatory=true
-   versionRange="[2.3.2,)"
+   versionRange="[2.3.3,)"
    ordering="AFTER"
    side="BOTH"
 

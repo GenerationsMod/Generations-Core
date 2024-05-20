@@ -20,11 +20,11 @@
     "GenerationsCore-common.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.3",
+    "fabricloader": ">=0.15.11",
     "minecraft": ">=1.20.1",
-    "architectury": ">=9.1.13",
-    "cobblemon": ">=1.4.1",
-    "botarium": ">=2.3.2"
+    "architectury": ">=9.2.14",
+    "cobblemon": ">=1.5.0",
+    "botarium": ">=2.3.3"
   },
   "suggests": {
     "wthit": ">=8.2.0"
