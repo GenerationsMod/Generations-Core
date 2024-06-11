@@ -62,9 +62,6 @@ class CompiledModel {
         RenderSystem.applyModelViewMatrix()
         instance.viewMatrix().set(RenderSystem.getModelViewMatrix())
         render(instance, projectionMatrix, ModelRegistry.getGuiRareCandy().objectManager)
-        ModelRegistry.getGuiRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.SOLID)
-        ModelRegistry.getGuiRareCandy()
-            .render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT)
     }
 
     fun render(instance: ObjectInstance, projectionMatrix: Matrix4f) {

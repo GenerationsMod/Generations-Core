@@ -42,7 +42,7 @@ public class GenerationsCoreClientForge {
 //            level.getProfiler().popPush("render_models");
 //            RenderSystem.enableDepthTest();
 //            BufferUploader.reset();
-            GenerationsCoreClient.renderRareCandy();
+//            GenerationsCoreClient.renderRareCandy(Minecraft.getInstance().level);
 //            if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
         }
     }

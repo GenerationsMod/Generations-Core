@@ -10,6 +10,8 @@ import com.cobblemon.mod.common.platform.events.ClientTickEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.BufferUploader;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
@@ -50,6 +52,7 @@ import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -101,6 +104,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static generations.gg.generations.core.generationscore.GenerationsCore.LOGGER;
 import static generations.gg.generations.core.generationscore.GenerationsCore.id;
 import static generations.gg.generations.core.generationscore.world.item.MelodyFluteItem.isItem;
 import static java.util.Collections.emptyList;
@@ -112,7 +116,7 @@ public class GenerationsCoreClient {
     public static void onInitialize(Minecraft minecraft) {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
-        RareCandy.DEBUG_THREADS = false;
+        RareCandy.DEBUG_THREADS = true;
 
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
@@ -121,7 +125,7 @@ public class GenerationsCoreClient {
         PlatformEvents.CLIENT_TICK_PRE.subscribe(Priority.NORMAL, new Function1<ClientTickEvent.Pre, Unit>() {
             @Override
             public Unit invoke(ClientTickEvent.Pre pre) {
-                GenerationsTextureLoader.INSTANCE.tick();
+//                GenerationsTextureLoader.INSTANCE.tick();
                 return Unit.INSTANCE;
             }
         });
@@ -391,9 +395,21 @@ public class GenerationsCoreClient {
                 (double) blockPos.getX() - pos.x(), (double) blockPos.getY() - pos.y(), (double) blockPos.getZ() - pos.z(), color);
     }
 
-    public static void renderRareCandy() {
-        ModelRegistry.getWorldRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.SOLID);
-        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
+    public static void renderRareCandy(ClientLevel level) {
+
+        var startTime = System.currentTimeMillis();
+        assert level != null;
+        level.getProfiler().popPush("render_models");
+        RenderSystem.enableDepthTest();
+//        BufferUploader.reset();
+
+//        ModelRegistry.getWorldRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
+        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+        if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
+    }
+
+    private static boolean shouldRenderFpsPie() {
+        return Minecraft.getInstance().options.renderDebug && Minecraft.getInstance().options.renderDebugCharts && !Minecraft.getInstance().options.hideGui;
     }
 
 }

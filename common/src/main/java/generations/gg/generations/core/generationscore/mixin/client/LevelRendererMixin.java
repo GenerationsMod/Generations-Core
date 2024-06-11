@@ -21,6 +21,7 @@ package generations.gg.generations.core.generationscore.mixin.client;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
 import com.mojang.blaze3d.vertex.PoseStack;
+import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import gg.generations.rarecandy.renderer.rendering.RenderStage;
@@ -50,18 +51,6 @@ public abstract class LevelRendererMixin {
 
     @Inject(method = "renderLevel", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/debug/DebugRenderer;render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;DDD)V"))
     private void pokecraft$rksRender(PoseStack poseStack, float partialTick, long finishNanoTime, boolean renderBlockOutline, Camera camera, GameRenderer gameRenderer, LightTexture lightTexture, Matrix4f projectionMatrix, CallbackInfo ci) {
-        var startTime = System.currentTimeMillis();
-        assert level != null;
-        level.getProfiler().popPush("render_models");
-        RenderSystem.enableDepthTest();
-        BufferUploader.reset();
-
-        ModelRegistry.getWorldRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
-        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed(), RenderStage.SOLID);
-        if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
-    }
-
-    private boolean shouldRenderFpsPie() {
-        return Minecraft.getInstance().options.renderDebug && Minecraft.getInstance().options.renderDebugCharts && !Minecraft.getInstance().options.hideGui;
+//        GenerationsCoreClient.renderRareCandy(level);
     }
 }

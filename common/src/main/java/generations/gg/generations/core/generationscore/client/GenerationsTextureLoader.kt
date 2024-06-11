@@ -17,6 +17,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.AbstractTexture
 import net.minecraft.client.renderer.texture.DynamicTexture
 import net.minecraft.client.renderer.texture.SimpleTexture
+import net.minecraft.resources.FileToIdConverter
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.GsonHelper
@@ -29,6 +30,7 @@ import kotlin.collections.HashMap
 
 object GenerationsTextureLoader : ITextureLoader() {
     val REGULAR: MutableMap<String, ITexture> = HashMap()
+    val RARE_CANDY = FileToIdConverter("textures", "rare_candy_texture.json")
 
     init {
         setInstance(this)
@@ -38,13 +40,9 @@ object GenerationsTextureLoader : ITextureLoader() {
         clear()
         val gson = Gson()
         try {
-            for (namespace in manager.namespaces) {
-                manager.getResourceStack(ResourceLocation(namespace, "rare_candy_texture.json")).forEach { resource ->
-                    resource.openAsReader().use { reader ->
-                        GsonHelper.fromJson(gson, reader, RARE_CANDY_TYPE).forEach { (key: String, value: String?) ->
-                            register(key, SimpleTextureEnhancedK(value.asResource()))
-                        }
-                    }
+            RARE_CANDY.listMatchingResources(manager).values.forEach { resouce ->
+                resouce.openAsReader().use { GsonHelper.fromJson(gson, it, RARE_CANDY_TYPE) }.forEach { (key, value) ->
+                    register(key, SimpleTextureEnhancedK(value.asResource().let { "${it.namespace}:textures/${it.path}.png" }.asResource()))
                 }
             }
         } catch (e: Exception) { throw RuntimeException(e)
@@ -58,7 +56,7 @@ object GenerationsTextureLoader : ITextureLoader() {
         }
 
     override fun getTexture(s: String?): ITexture? {
-        val texture = REGULAR.getOrDefault(s, null)//?.let { texture -> Minecraft.getInstance().textureManager.getTexture(texture) }
+        val texture = REGULAR.getOrDefault(s, null)
         return if(texture is ITexture) texture else null
     }
 
@@ -67,7 +65,7 @@ object GenerationsTextureLoader : ITextureLoader() {
     }
 
     override fun register(id: String, name: String, data: ByteArray) {
-        register(id, Texture.read(data, name))
+        Texture.read(data, name)?.let { register(id, it) }
     }
 
     val scope = CoroutineScope(Dispatchers.Default)

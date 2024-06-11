@@ -1,6 +1,9 @@
 package generations.gg.generations.core.generationscore.fabric.client;
 
+import dev.architectury.event.events.client.ClientTickEvent;
 import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsMushroomBlock;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
@@ -10,6 +13,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
@@ -34,11 +38,19 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
-//        System.loadLibrary("renderdoc");+
+        System.loadLibrary("renderdoc");
         WorldRenderEvents.AFTER_TRANSLUCENT.register(context -> {
+            GenerationsCoreClient.renderRareCandy(context.world());
             GenerationsCoreClient.renderHighlightedPath(context.matrixStack(), Minecraft.getInstance().levelRenderer.ticks, context.camera());
-            GenerationsCoreClient.renderRareCandy();
         });
+
+        ClientTickEvent.CLIENT_POST.register(new ClientTickEvent.Client() {
+            @Override
+            public void tick(Minecraft instance) {
+                ModelRegistry.getGuiRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+            }
+        });
+
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
         registerRenderTypes();
         GenerationsCoreClient.registerEntityRenderers(EntityRendererRegistry::register);

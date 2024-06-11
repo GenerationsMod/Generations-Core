@@ -32,7 +32,8 @@ public class GenerationsModelLoader extends ModelLoader {
                     try {
                         ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, glCalls, supplier);
                     } catch (Exception e) {
-//                        RareCandyTest.LOGGER.error("Catching exception reading model %s.".formatted(a));
+                        System.out.println("Oh no! Model : " + name + " didn't properly load!");
+                        e.printStackTrace();
                     }
                     return glCalls;
                 },
@@ -40,7 +41,7 @@ public class GenerationsModelLoader extends ModelLoader {
                     var manager = Minecraft.getInstance().getTextureManager();
 
                     if(requiresVariantTexture) {
-                        if(!object.objects.isEmpty()) {
+                        if(!object.objects.isEmpty() && !object.objects.get(0).availableVariants().isEmpty()) {
 
                             object.availableVariants().forEach(s -> manager.register(new ResourceLocation("pk:" + s), new AbstractTexture() {
                                 @Override
