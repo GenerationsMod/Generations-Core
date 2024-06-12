@@ -7,23 +7,14 @@ import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import gg.generations.rarecandy.renderer.components.MeshObject
 import gg.generations.rarecandy.renderer.components.MultiRenderObject
 import gg.generations.rarecandy.renderer.loading.GenerationsModelLoader
-import gg.generations.rarecandy.renderer.loading.ModelLoader
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
-import gg.generations.rarecandy.renderer.rendering.RenderStage
 import gg.generations.rarecandy.renderer.storage.ObjectManager
-import gg.generations.rarecandy.tools.TextureLoader
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Runnable
-import kotlinx.coroutines.launch
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
 import org.joml.Matrix4f
 import java.io.IOException
 import java.io.InputStream
-import java.util.function.Consumer
 import java.util.function.Supplier
 
 /**
@@ -98,6 +89,5 @@ class CompiledModel {
             }
         }
 
-        val DUMMY = CompiledModel()
     }
 }

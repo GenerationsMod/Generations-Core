@@ -4,18 +4,11 @@ import com.cobblemon.mod.common.util.asResource
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.mojang.blaze3d.systems.RenderSystem
-import generations.gg.generations.core.generationscore.GenerationsCore
-import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ITextureWithResourceLocation
 import generations.gg.generations.core.generationscore.client.render.rarecandy.Texture
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
 import gg.generations.rarecandy.renderer.loading.ITexture
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.texture.AbstractTexture
-import net.minecraft.client.renderer.texture.DynamicTexture
 import net.minecraft.client.renderer.texture.SimpleTexture
 import net.minecraft.resources.FileToIdConverter
 import net.minecraft.resources.ResourceLocation
@@ -24,9 +17,6 @@ import net.minecraft.util.GsonHelper
 import org.lwjgl.opengl.GL13C
 import java.io.IOException
 import java.io.InputStream
-import java.util.*
-import java.util.concurrent.ConcurrentLinkedQueue
-import kotlin.collections.HashMap
 
 object GenerationsTextureLoader : ITextureLoader() {
     val REGULAR: MutableMap<String, ITexture> = HashMap()
@@ -68,35 +58,6 @@ object GenerationsTextureLoader : ITextureLoader() {
         Texture.read(data, name)?.let { register(id, it) }
     }
 
-    val scope = CoroutineScope(Dispatchers.Default)
-
-    private var ticks = 0
-
-    var job: Job? = null
-
-//    fun tick() {
-//        if((ticks % 600) == 0 && imagesToBeLoaded.isNotEmpty()) {
-//            imagesToBeLoaded.forEach { register(it.first, TextureReference.read(it.second, it.first, true)) }
-//        }
-//        ticks += 1
-//    }
-
-    fun tick() {
-//        if ((ticks % 20) == 0 && imagesToBeLoaded.isNotEmpty()) {
-//            if (job == null || job?.isActive == false) {
-//                job = scope.launch {
-//                    while (true) {
-//                        val image = imagesToBeLoaded.poll() ?: break
-//                        val (first, second, third) = image
-//                        var reference = TextureReference.read(third, second, true)
-//                        image.first.map[second] = reference
-//                        if(first.isUploaded) register(second, reference)
-//                    }
-//                }
-//            }
-//        }
-//        ticks += 1
-    }
 
     override fun remove(s: String) {
         REGULAR.remove(s)?.run { this.close() }

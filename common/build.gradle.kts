@@ -25,14 +25,12 @@ dependencies {
     implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
     implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
     implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")
-    implementation("com.traneptora:jxlatte:2.0.0")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
 
     //Cobblemon
     implementation(kotlin("stdlib-jdk8"))
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
     modImplementation("net.impactdev.impactor.api:economy:5.1.1+1.20.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1-Beta")
 }
 
 publishing {
