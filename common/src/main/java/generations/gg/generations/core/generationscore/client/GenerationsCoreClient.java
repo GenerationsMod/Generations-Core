@@ -114,6 +114,14 @@ import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 public class GenerationsCoreClient {
 
     public static void onInitialize(Minecraft minecraft) {
+        if (GenerationsCore.CONFIG.client.useRenderDoc) {
+            try {
+                System.loadLibrary("renderdoc");
+            } catch (UnsatisfiedLinkError e) {
+                LOGGER.warn("Attempted to use renderdoc without renderdoc installed.");
+            }
+        }
+
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
         RareCandy.DEBUG_THREADS = true;

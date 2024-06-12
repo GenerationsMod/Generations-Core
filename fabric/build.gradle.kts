@@ -54,7 +54,6 @@ dependencies {
     implementation("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     implementation("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
     implementation("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
-    implementation("shadowCommon"("com.traneptora:jxlatte:2.0.0")!!)
 
     implementation("shadowCommon"("com.github.Chocohead:Fabric-ASM:v2.3")!!)
 

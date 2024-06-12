@@ -60,13 +60,12 @@ dependencies {
     modApi("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!
 
     forgeRuntimeLibrary("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
-    forgeRuntimeLibrary("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
-    forgeRuntimeLibrary("org.lwjgl:lwjgl-assimp:3.3.2")
-    forgeRuntimeLibrary("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")
+    forgeRuntimeLibrary("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))
+    forgeRuntimeLibrary("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2")!!)
+    forgeRuntimeLibrary("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")!!)
     forgeRuntimeLibrary("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
     forgeRuntimeLibrary("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
-    forgeRuntimeLibrary(include("com.traneptora:jxlatte:2.0.0")!!)
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
