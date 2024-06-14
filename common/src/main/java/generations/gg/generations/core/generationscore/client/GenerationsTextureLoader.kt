@@ -39,12 +39,6 @@ object GenerationsTextureLoader : ITextureLoader() {
         }
     }
 
-    private fun fromResourceLocation(manager: ResourceManager, location: ResourceLocation): InputStream = try {
-            manager.getResourceOrThrow("${location.namespace}:textures/${location.path}.png".asResource()).open()
-        } catch (e: IOException) {
-            throw RuntimeException(e)
-        }
-
     override fun getTexture(s: String?): ITexture? {
         val texture = REGULAR.getOrDefault(s, null)
         return if(texture is ITexture) texture else null
@@ -55,7 +49,7 @@ object GenerationsTextureLoader : ITextureLoader() {
     }
 
     override fun register(id: String, name: String, data: ByteArray) {
-        Texture.read(data, name)?.let { register(id, it) }
+        generations.gg.generations.core.generationscore.client.Texture.read(data, name)?.let { register(id, it) }
     }
 
 
@@ -63,7 +57,7 @@ object GenerationsTextureLoader : ITextureLoader() {
         REGULAR.remove(s)?.run { this.close() }
     }
 
-    fun clear() = REGULAR.clear()
+    fun clear() = REGULAR.forEach { (key, _) -> remove(key) }
 
     override fun getDarkFallback(): ITexture? = getTexture("dark")
 

@@ -1,6 +1,5 @@
 package gg.generations.rarecandy.renderer.loading;
 
-import generations.gg.generations.core.generationscore.client.GenerationsTextureLoader;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
@@ -13,11 +12,8 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Supplier;
 
 public class GenerationsModelLoader extends ModelLoader {

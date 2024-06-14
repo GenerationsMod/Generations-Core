@@ -27,7 +27,7 @@ public class TimeSpaceAltarBlockEntity extends ShrineBlockEntity implements Item
 
     @Override
     public String getVariant() {
-        return handler.hasRedChain() ? "red chain" : "none";
+        return getContainer().hasRedChain() ? "red chain" : "none";
     }
 
     @Override
@@ -37,7 +37,7 @@ public class TimeSpaceAltarBlockEntity extends ShrineBlockEntity implements Item
 
     @Nullable
     public CreationTrioItem getOrb() {
-        if (handler.getItem(0).getItem() instanceof CreationTrioItem item) return item;
+        if (getContainer().getItem(0).getItem() instanceof CreationTrioItem item) return item;
         return null;
     }
 

@@ -54,7 +54,6 @@ public class ModelRegistry {
     public static CompiledModel get(ResourceLocation location) {
         try {
             return LOADER.get(location);
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
