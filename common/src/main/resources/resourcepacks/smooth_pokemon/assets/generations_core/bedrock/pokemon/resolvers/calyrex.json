@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:calyrex",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:calyrex",
+            "model": "generations_core:calyrex.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:chansey",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:chansey",
+            "model": "generations_core:chansey.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:centiskorch",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:centiskorch",
+            "model": "generations_core:centiskorch.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:chiyu",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:chiyu",
+            "model": "generations_core:chiyu.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

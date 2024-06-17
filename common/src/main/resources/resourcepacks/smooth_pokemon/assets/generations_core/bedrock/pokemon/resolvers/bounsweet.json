@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bounsweet",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bounsweet",
+            "model": "generations_core:bounsweet.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

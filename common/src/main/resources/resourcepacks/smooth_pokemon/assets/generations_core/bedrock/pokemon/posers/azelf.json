@@ -1,0 +1,77 @@
+{
+    "portraitScale": 1.0,
+    "portraitTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "profileScale": 1.0,
+    "profileTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "faint": "pk(generations_core:azelf.pk, faintstart)",
+    "cry": "pk(generations_core:azelf.pk, roar)",
+    "recoil": "pk(generations_core:azelf.pk, damage)",
+    "physical": "pk(generations_core:azelf.pk, attack)",
+    "special": "pk(generations_core:azelf.pk, attack)",
+    "status": "pk(generations_core:azelf.pk, attack)",
+    "glad": "pk(generations_core:azelf.pk, glad)",
+    "poses": {
+        "flyidle": {
+            "poseName": "flyidle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "HOVER"
+            ],
+            "animations": [
+                "pk(generations_core:azelf.pk, flyidle)"
+            ]
+        },
+        "flywalk": {
+            "poseName": "flywalk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "FLY"
+            ],
+            "animations": [
+                "pk(generations_core:azelf.pk, flywalk)"
+            ]
+        },
+        "sleeploop": {
+            "poseName": "sleeploop",
+            "transformTicks": 10,
+            "poseTypes": [
+                "SLEEP"
+            ],
+            "animations": [
+                "pk(generations_core:azelf.pk, sleeploop)"
+            ]
+        },
+        "flyidlenoidle": {
+            "poseName": "flyidle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "STAND",
+                "NONE",
+                "PORTRAIT",
+                "PROFILE"
+            ],
+            "animations": [
+                "look",
+                "pk(generations_core:azelf.pk, flyidle)"
+            ]
+        },
+        "flywalknowalk": {
+            "poseName": "flywalk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "WALK"
+            ],
+            "animations": [
+                "pk(generations_core:azelf.pk, flywalk)"
+            ]
+        }
+    }
+}

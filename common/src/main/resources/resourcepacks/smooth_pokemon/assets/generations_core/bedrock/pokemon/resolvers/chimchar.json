@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:chimchar",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:chimchar",
+            "model": "generations_core:chimchar.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

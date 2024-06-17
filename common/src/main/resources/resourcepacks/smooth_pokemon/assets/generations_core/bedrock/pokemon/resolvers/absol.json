@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:absol",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:absol",
+            "model": "generations_core:absol.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bonsly",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bonsly",
+            "model": "generations_core:bonsly.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

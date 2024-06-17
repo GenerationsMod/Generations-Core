@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bellsprout",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bellsprout",
+            "model": "generations_core:bellsprout.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:aron",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:aron",
+            "model": "generations_core:aron.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

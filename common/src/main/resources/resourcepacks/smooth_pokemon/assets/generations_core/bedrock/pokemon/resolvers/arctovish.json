@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:arctovish",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:arctovish",
+            "model": "generations_core:arctovish.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

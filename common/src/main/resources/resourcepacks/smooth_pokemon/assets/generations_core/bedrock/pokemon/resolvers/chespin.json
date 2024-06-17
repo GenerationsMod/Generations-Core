@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:chespin",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:chespin",
+            "model": "generations_core:chespin.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

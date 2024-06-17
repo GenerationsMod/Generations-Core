@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bouffalant",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bouffalant",
+            "model": "generations_core:bouffalant.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

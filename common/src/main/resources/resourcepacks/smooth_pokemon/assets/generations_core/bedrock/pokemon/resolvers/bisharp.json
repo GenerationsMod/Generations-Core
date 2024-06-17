@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bisharp",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bisharp",
+            "model": "generations_core:bisharp.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

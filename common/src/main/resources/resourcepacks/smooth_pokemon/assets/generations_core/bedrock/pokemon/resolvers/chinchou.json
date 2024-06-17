@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:chinchou",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:chinchou",
+            "model": "generations_core:chinchou.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

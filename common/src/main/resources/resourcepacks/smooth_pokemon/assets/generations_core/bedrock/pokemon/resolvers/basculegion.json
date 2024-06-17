@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:basculegion",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:basculegion",
+            "model": "generations_core:basculegion.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

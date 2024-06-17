@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:armarouge",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:armarouge",
+            "model": "generations_core:armarouge.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

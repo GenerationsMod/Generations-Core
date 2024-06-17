@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:archaludon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:archaludon",
+            "model": "generations_core:archaludon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

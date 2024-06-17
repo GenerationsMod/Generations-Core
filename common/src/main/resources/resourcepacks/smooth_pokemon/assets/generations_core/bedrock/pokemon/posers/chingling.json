@@ -1,0 +1,87 @@
+{
+    "portraitScale": 1.0,
+    "portraitTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "profileScale": 1.0,
+    "profileTranslation": [
+        0,
+        0.0,
+        0
+    ],
+    "faint": "pk(generations_core:chingling.pk, faintstart)",
+    "cry": "pk(generations_core:chingling.pk, roar)",
+    "recoil": "pk(generations_core:chingling.pk, damage)",
+    "physical": "pk(generations_core:chingling.pk, attack)",
+    "special": "pk(generations_core:chingling.pk, attack)",
+    "status": "pk(generations_core:chingling.pk, attack)",
+    "glad": "pk(generations_core:chingling.pk, glad)",
+    "poses": {
+        "battleidle": {
+            "animations": [
+                "pk(generations_core:chingling.pk, battleidle)"
+            ],
+            "poseName": "battleidle",
+            "poseTypes": [
+                "STAND"
+            ],
+            "isBattle": true
+        },
+        "flyidle": {
+            "poseName": "flyidle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "HOVER"
+            ],
+            "animations": [
+                "pk(generations_core:chingling.pk, flyidle)"
+            ]
+        },
+        "flywalk": {
+            "poseName": "flywalk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "FLY"
+            ],
+            "animations": [
+                "pk(generations_core:chingling.pk, flywalk)"
+            ]
+        },
+        "sleeploop": {
+            "poseName": "sleeploop",
+            "transformTicks": 10,
+            "poseTypes": [
+                "SLEEP"
+            ],
+            "animations": [
+                "pk(generations_core:chingling.pk, sleeploop)"
+            ]
+        },
+        "flyidlenoidle": {
+            "poseName": "flyidle",
+            "transformTicks": 10,
+            "poseTypes": [
+                "STAND",
+                "NONE",
+                "PORTRAIT",
+                "PROFILE"
+            ],
+            "animations": [
+                "look",
+                "pk(generations_core:chingling.pk, flyidle)"
+            ]
+        },
+        "flywalknowalk": {
+            "poseName": "flywalk",
+            "transformTicks": 10,
+            "poseTypes": [
+                "WALK"
+            ],
+            "animations": [
+                "pk(generations_core:chingling.pk, flywalk)"
+            ]
+        }
+    }
+}

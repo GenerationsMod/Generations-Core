@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:arctozolt",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:arctozolt",
+            "model": "generations_core:arctozolt.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:binacle",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:binacle",
+            "model": "generations_core:binacle.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:archen",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:archen",
+            "model": "generations_core:archen.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

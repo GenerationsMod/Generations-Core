@@ -1,0 +1,22 @@
+{
+    "species": "cobblemon:aegislash",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:aegislash_blade",
+            "model": "generations_core:aegislash_blade.pk",
+            "texture": "pk:normal",
+            "layers": [],
+            "aspects": [
+                "blade"
+            ]
+        },
+        {
+            "aspects": [
+                "shiny",
+                "blade"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

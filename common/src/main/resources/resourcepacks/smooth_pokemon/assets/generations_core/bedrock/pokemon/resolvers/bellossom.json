@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bellossom",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bellossom",
+            "model": "generations_core:bellossom.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

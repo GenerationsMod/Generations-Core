@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:accelgor",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:accelgor",
+            "model": "generations_core:accelgor.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

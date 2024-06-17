@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:cherrim",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:cherrim",
+            "model": "generations_core:cherrim.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

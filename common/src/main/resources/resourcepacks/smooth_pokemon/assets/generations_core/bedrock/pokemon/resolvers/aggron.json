@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:aggron",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:aggron",
+            "model": "generations_core:aggron.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

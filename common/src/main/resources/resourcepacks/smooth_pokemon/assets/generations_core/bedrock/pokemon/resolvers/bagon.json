@@ -1,0 +1,18 @@
+{
+    "species": "cobblemon:bagon",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:bagon",
+            "model": "generations_core:bagon.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        }
+    ]
+}

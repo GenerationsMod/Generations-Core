@@ -1,0 +1,31 @@
+{
+    "species": "cobblemon:butterfree",
+    "order": 3,
+    "variations": [
+        {
+            "poser": "generations_core:butterfree",
+            "model": "generations_core:butterfree.pk",
+            "texture": "pk:normal",
+            "layers": []
+        },
+        {
+            "aspects": [
+                "shiny"
+            ],
+            "texture": "pk:shiny"
+        },
+        {
+            "aspects": [
+                "female"
+            ],
+            "texture": "pk:female"
+        },
+        {
+            "aspects": [
+                "female",
+                "shiny"
+            ],
+            "texture": "pk:female_shiny"
+        }
+    ]
+}
