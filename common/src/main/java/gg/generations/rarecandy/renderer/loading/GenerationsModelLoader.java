@@ -1,7 +1,7 @@
 package gg.generations.rarecandy.renderer.loading;
 
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.CobblemonInstance;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
@@ -49,7 +49,7 @@ public class GenerationsModelLoader extends ModelLoader {
                             System.out.println("Warning %s lacks variants: " + name.toString());
                         }
                     }
-                    model.guiInstance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null);
+                    model.guiInstance = new CobblemonInstance(new Matrix4f(), new Matrix4f(), null);
                     model.guiInstance.link(object);
                     if(object.scale == 0f) object.scale = 1.0f;
                 }

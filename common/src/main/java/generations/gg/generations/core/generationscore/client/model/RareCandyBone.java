@@ -7,10 +7,10 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
+import generations.gg.generations.core.generationscore.client.render.CobblemonInstanceProvider;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.CobblemonInstance;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import net.minecraft.resources.ResourceLocation;
@@ -50,8 +50,8 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         var isStatue = entity instanceof StatueEntity;
 
         boolean isGui = false;
-        PixelmonInstance instance = null;
-        if (!isStatue && context.request(RenderContext.Companion.getENTITY()) instanceof PixelmonInstanceProvider provider) {
+        CobblemonInstance instance = null;
+        if (!isStatue && context.request(RenderContext.Companion.getENTITY()) instanceof CobblemonInstanceProvider provider) {
             instance = provider.getInstance();
         }
 
@@ -70,7 +70,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
                 instance.offsets = model.guiInstance.offsets;
             }
 
-            scale *= ((PixelmonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;
+            scale *= ((CobblemonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;
         }
 
         if(model.renderObject.isReady()) {

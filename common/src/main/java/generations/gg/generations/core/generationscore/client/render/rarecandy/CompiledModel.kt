@@ -27,7 +27,7 @@ class CompiledModel {
     val map: List<String> = ArrayList()
 
     @JvmField
-    var guiInstance: PixelmonInstance? = null
+    var guiInstance: CobblemonInstance? = null
 
     @JvmOverloads
     constructor(

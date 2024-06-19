@@ -8,8 +8,8 @@ import com.cobblemon.mod.common.pokemon.Species;
 import dev.architectury.utils.EnvExecutor;
 import generations.gg.generations.core.generationscore.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.client.StatueEntityClient;
-import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
+import generations.gg.generations.core.generationscore.client.render.CobblemonInstanceProvider;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.CobblemonInstance;
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.network.packets.statue.S2COpenStatueEditorScreenPacket;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
@@ -35,7 +35,7 @@ import java.util.Set;
 
 import static dev.architectury.utils.Env.CLIENT;
 
-public class StatueEntity extends LivingEntity implements PixelmonInstanceProvider {
+public class StatueEntity extends LivingEntity implements CobblemonInstanceProvider {
     public static final EntityDataAccessor<StatueInfo> STATUE_DATA = SynchedEntityData.defineId(StatueEntity.class, GenerationsCoreEntityDataSerializers.STATUE_INFO);
 
     private EntityDimensions dimensions;
@@ -205,12 +205,12 @@ public class StatueEntity extends LivingEntity implements PixelmonInstanceProvid
     }
 
     @Override
-    public PixelmonInstance getInstance() {
+    public CobblemonInstance getInstance() {
         return delegate != null ? delegate.getInstance() : null;
     }
 
     @Override
-    public void setInstance(PixelmonInstance instance) {
+    public void setInstance(CobblemonInstance instance) {
         if(delegate != null) {
             delegate.setInstance(instance);
         }

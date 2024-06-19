@@ -2,15 +2,16 @@ package generations.gg.generations.core.generationscore.client
 
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
-import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance
+import generations.gg.generations.core.generationscore.client.render.CobblemonInstanceProvider
+import generations.gg.generations.core.generationscore.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity
 import net.minecraft.resources.ResourceLocation
 import org.joml.Matrix4f
 
-class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<PokemonEntity>(), PixelmonInstanceProvider {
+class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<PokemonEntity>(),
+    CobblemonInstanceProvider {
     private var trueAge: Int = 0
-    private var pixelmonInstance: PixelmonInstance? = null
+    private var cobblemonInstance: CobblemonInstance? = null
     private val staticFrame get() = statueEntity.statueData.frame
 
     private val isStatic get() = statueEntity.statueData.isStatic
@@ -37,13 +38,18 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
         age = if( isStatic) 0 else trueAge
     }
 
-    override fun getInstance(): PixelmonInstance {
-        if (pixelmonInstance == null) pixelmonInstance = PixelmonInstance(Matrix4f(), Matrix4f(), null)
-        return pixelmonInstance as PixelmonInstance
+    override fun getInstance(): CobblemonInstance {
+        if (cobblemonInstance == null) cobblemonInstance =
+            CobblemonInstance(
+                Matrix4f(),
+                Matrix4f(),
+                null
+            )
+        return cobblemonInstance as CobblemonInstance
     }
 
-    override fun setInstance(instance: PixelmonInstance?) {
-        pixelmonInstance = instance
+    override fun setInstance(instance: CobblemonInstance?) {
+        cobblemonInstance = instance
     }
 
     override fun species(): ResourceLocation? {

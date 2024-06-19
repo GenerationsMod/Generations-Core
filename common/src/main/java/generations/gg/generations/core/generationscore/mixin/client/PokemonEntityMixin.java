@@ -1,9 +1,8 @@
 package generations.gg.generations.core.generationscore.mixin.client;
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import generations.gg.generations.core.generationscore.client.render.PixelmonInstanceProvider;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.PixelmonInstance;
-import gg.generations.rarecandy.renderer.animation.AnimationInstance;
+import generations.gg.generations.core.generationscore.client.render.CobblemonInstanceProvider;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.CobblemonInstance;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,12 +10,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import java.util.Set;
 
 @Mixin(PokemonEntity.class)
-public abstract class PokemonEntityMixin implements PixelmonInstanceProvider {
-    private PixelmonInstance instance;
+public abstract class PokemonEntityMixin implements CobblemonInstanceProvider {
+    private CobblemonInstance instance;
 
-    public PixelmonInstance getInstance() {
+    public CobblemonInstance getInstance() {
         if (instance == null) {
-            instance = new PixelmonInstance(new Matrix4f(), new Matrix4f(), null);
+            instance = new CobblemonInstance(new Matrix4f(), new Matrix4f(), null);
         }
 
         return instance;
@@ -27,7 +26,7 @@ public abstract class PokemonEntityMixin implements PixelmonInstanceProvider {
     }
 
     @Override
-    public void setInstance(PixelmonInstance instance) {
+    public void setInstance(CobblemonInstance instance) {
         this.instance = instance;
     }
 
