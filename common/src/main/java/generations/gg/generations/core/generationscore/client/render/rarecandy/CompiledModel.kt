@@ -49,7 +49,6 @@ class CompiledModel {
         if (renderObject == null) return
         RenderSystem.enableDepthTest()
         BufferUploader.reset()
-        RenderSystem.applyModelViewMatrix()
         instance.viewMatrix().set(RenderSystem.getModelViewMatrix())
 
         ObjectManager.render(renderObject, instance)

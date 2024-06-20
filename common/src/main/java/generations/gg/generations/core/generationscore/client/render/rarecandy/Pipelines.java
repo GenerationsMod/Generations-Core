@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventFactory;
@@ -7,6 +8,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.GenerationsTextureLoader;
 import generations.gg.generations.core.generationscore.client.model.ModelContextProviders;
 import gg.generations.rarecandy.pokeutils.BlendType;
+import gg.generations.rarecandy.pokeutils.CullType;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.renderer.animation.AnimationController;
 import gg.generations.rarecandy.renderer.loading.ITexture;
@@ -18,6 +20,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.joml.Vector3f;
+import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11C;
 import org.lwjgl.opengl.GL13C;
 
@@ -29,6 +32,7 @@ import java.util.function.Function;
 public class Pipelines {
     private static final Vector3f ONE = new Vector3f(1, 1, 1);
     public static Event<Consumer<PipelineRegister>> REGISTER = EventFactory.createConsumerLoop(PipelineRegister.class);
+    private static BlendRecord blendState = new BlendRecord();
 
     public static class PipelineRegister {
         private final ResourceManager resourceManager;
@@ -82,17 +86,30 @@ public class Pipelines {
                           ROOT.supplyUniform("Light0_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[0])).supplyUniform("Light1_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[1]));
                     }
                     ROOT.prePostDraw(material -> {
-                                material.cullType().enable();
-                                if(material.blendType() == BlendType.Regular) {
-                                    RenderSystem.enableBlend();
-                                    RenderSystem.defaultBlendFunc();
-                                }
-                            }, material -> {
-                                material.cullType().disable();
-                                if(material.blendType() == BlendType.Regular) {
-                                    RenderSystem.disableBlend();
-                                }
-                            });
+                        if(material.cullType() != CullType.None) {
+                            RenderSystem.enableCull();
+                        }
+
+//                               material.cullType().enable();
+                        if(material.blendType() == BlendType.Regular) {
+
+                            BlendRecord.push();
+
+                            RenderSystem.enableBlend();
+                            RenderSystem.defaultBlendFunc();
+                        }
+                        }, material -> {
+                            if(material.cullType() != CullType.None) {
+                                RenderSystem.enableCull();
+                            }
+
+//                                material.cullType().disable();
+                            if(material.blendType() == BlendType.Regular) {
+                                BlendRecord.pop();
+
+                                RenderSystem.disableBlend();
+                            }
+                    });
 
 
                     var BASE = new Pipeline.Builder(ROOT)
@@ -190,10 +207,6 @@ public class Pipelines {
             ITexture texture = isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
             if (texture == null) {
                 texture = ITextureLoader.instance().getNuetralFallback();
-
-                if(texture == null) {
-                    System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
-                }
             }
 
             texture.bind(0);
@@ -280,6 +293,29 @@ public class Pipelines {
             return new String(is.readAllBytes());
         } catch (Exception e) {
             throw new RuntimeException("Failed to read shader from resource location in shader: " + name, e);
+        }
+    }
+
+    private static class BlendRecord {
+        public static boolean enabled;
+        public static int srcRgb;
+        public static int dstRgb;
+        public static int srcAlpha;
+        public static int dstAlpha;
+
+        public static void push() {
+            enabled = GlStateManager.BLEND.mode.enabled;
+            srcRgb = GlStateManager.BLEND.srcRgb;
+            dstRgb = GlStateManager.BLEND.dstRgb;
+            srcAlpha = GlStateManager.BLEND.srcAlpha;
+            dstAlpha = GlStateManager.BLEND.dstAlpha;
+        }
+
+        public static void pop() {
+            if(enabled) RenderSystem.enableBlend();
+            else RenderSystem.disableBlend();
+
+            RenderSystem.blendFuncSeparate(srcRgb, dstRgb, srcAlpha, dstAlpha);
         }
     }
 }
