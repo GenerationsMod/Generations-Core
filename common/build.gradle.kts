@@ -26,6 +26,7 @@ dependencies {
     implementation("org.msgpack:msgpack-core:${project.properties["rareCandyMsgPackCore"]}")
     implementation("com.google.flatbuffers:flatbuffers-java:${project.properties["rareCandyFlatBuffers"]}")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
+    implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
 
     //Cobblemon
     implementation(kotlin("stdlib-jdk8"))

@@ -1,0 +1,18 @@
+{
+  "scale": 1.0,
+  "materials": {
+    "zygarde_cell": {
+      "type": "solid",
+      "texture": "zygardecell.png"
+    }
+  },
+  "defaultVariant": {
+    "zygardecell": {
+      "material": "zygarde_cell",
+      "hide": false
+    }
+  },
+  "variants": {
+    "regular": {}
+  }
+}

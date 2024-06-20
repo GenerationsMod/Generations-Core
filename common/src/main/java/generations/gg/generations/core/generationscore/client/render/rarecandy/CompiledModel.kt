@@ -12,7 +12,6 @@ import gg.generations.rarecandy.renderer.storage.ObjectManager
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
-import org.joml.Matrix4f
 import java.io.IOException
 import java.io.InputStream
 import java.util.function.Supplier
@@ -46,32 +45,32 @@ class CompiledModel {
         name = GenerationsCore.id("dummy")
     }
 
-    fun renderGui(instance: ObjectInstance, projectionMatrix: Matrix4f) {
+    fun renderGui(instance: ObjectInstance) {
         if (renderObject == null) return
         RenderSystem.enableDepthTest()
         BufferUploader.reset()
         RenderSystem.applyModelViewMatrix()
         instance.viewMatrix().set(RenderSystem.getModelViewMatrix())
-        render(instance, projectionMatrix, ModelRegistry.getGuiRareCandy().objectManager)
+
+        ObjectManager.render(renderObject, instance)
     }
 
-    fun render(instance: ObjectInstance, projectionMatrix: Matrix4f) {
+    fun render(instance: ObjectInstance) {
         if (renderObject == null) return
-        render(instance, projectionMatrix, ModelRegistry.getWorldRareCandy().objectManager)
+        render(instance, ModelRegistry.worldRareCandy.objectManager)
     }
 
-    private fun render(instance: ObjectInstance, projectionMatrix: Matrix4f, objectManager: ObjectManager) {
+    private fun render(instance: ObjectInstance, objectManager: ObjectManager) {
         if (!renderObject!!.isReady) return
         Minecraft.getInstance().profiler.push("create_model_instance")
-        MinecraftClientGameProvider.projMatrix = projectionMatrix
         objectManager.add(renderObject!!, instance)
         Minecraft.getInstance().profiler.pop()
     }
 
     fun delete() {
         try {
-            renderObject!!.close()
-        } catch (e: IOException) {
+            RenderSystem.recordRenderCall { renderObject?.close() }
+        } catch (_: IOException) {
         }
     }
 

@@ -65,7 +65,7 @@ public class Pipelines {
                     var ROOT = new Pipeline.Builder()
                             .supplyUniform("viewMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().viewMatrix()))
                             .supplyUniform("modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().transformationMatrix()))
-                            .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(MinecraftClientGameProvider.projMatrix))
+                            .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(RenderSystem.getProjectionMatrix()))
                             .supplyUniform("boneTransforms", ctx -> {
                                 var mats = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms() != null ? instance.getTransforms() : AnimationController.NO_ANIMATION : AnimationController.NO_ANIMATION;
                                 ctx.uniform().uploadMat4fs(mats);

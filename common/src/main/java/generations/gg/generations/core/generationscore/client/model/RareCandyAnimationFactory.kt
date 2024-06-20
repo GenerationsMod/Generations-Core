@@ -32,12 +32,12 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
 
         val name = split[1].trim { it <= ' ' }
         return StatefulAnimationRareCandy(Supplier<Animation> {
-            val objects = ModelRegistry.get(location).renderObject
+            val objects = ModelRegistry[location]?.renderObject
             if (objects != null && objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
-        }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry.get(location).guiInstance }, transforms, pausesPoses)
+        }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry.get(location)?.guiInstance }, transforms, pausesPoses)
     }
 
     override fun stateless(
@@ -49,12 +49,12 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
         val name = split[1].trim { it <= ' ' }
         return StatelessAnimationRareCandy(jsonPokemonPoseableModel, Supplier<Animation?> {
-            val objects = ModelRegistry.get(location).renderObject
+            val objects = ModelRegistry[location]?.renderObject
             if (objects != null && objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
-        }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry.get(location).guiInstance })
+        }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry[location]?.guiInstance })
     }
 
     class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation>?, private val instanceProvider: Supplier<CobblemonInstance?>, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {

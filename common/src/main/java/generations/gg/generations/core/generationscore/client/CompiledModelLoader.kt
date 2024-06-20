@@ -10,7 +10,6 @@ class CompiledModelLoader : ResourceManagerReloadListener {
 
     override fun onResourceManagerReload(resourceManager: ResourceManager) {
         GenerationsTextureLoader.initialize(resourceManager)
-        ModelRegistry.LOADER.invalidateAll()
-        ModelRegistry.LOADER.cleanUp()
+        ModelRegistry.clear()
     }
 }

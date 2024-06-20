@@ -6,6 +6,7 @@ import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.world.entity.ZygardeCellEntity;
+import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -21,6 +22,7 @@ public class ZygardeCellRenderer extends EntityRenderer<ZygardeCellEntity> {
     @Override
     public void render(ZygardeCellEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         var model = ModelRegistry.get(MODEL);
+        if(model == null) return;
 
         var instance = entity.instance;
 
@@ -29,8 +31,7 @@ public class ZygardeCellRenderer extends EntityRenderer<ZygardeCellEntity> {
         instance.viewMatrix().set(poseStack.last().pose());
         instance.setLight(packedLight);
         poseStack.popPose();
-        model.render(instance, RenderSystem.getProjectionMatrix());
-
+        model.render(instance);
 
         super.render(entity, entityYaw, partialTick, poseStack, buffer, packedLight);
     }

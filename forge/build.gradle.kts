@@ -75,6 +75,7 @@ dependencies {
 
     modRuntimeOnly("curse.maven:worldedit-225608:4586218")
 
+    implementation("shadowCommon"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
 
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.10.0")

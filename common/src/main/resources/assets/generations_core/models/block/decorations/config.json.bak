@@ -1,0 +1,281 @@
+{
+  "scale": 0.7,
+  "materials": {
+    "black": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.13333334, 0.15686275, 0.1764706]
+      }
+    },
+    "blue": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.20784314, 0.45490196, 0.7019608]
+      }
+    },
+    "brown": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.4862745, 0.32156864, 0.14901961]
+      }
+    },
+    "cyan": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.2784314, 0.54901963, 0.69803923]
+      }
+    },
+    "green": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.21568628, 0.63529414, 0.21568628]
+      }
+    },
+    "gray": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.4862745, 0.48235294, 0.48235294]
+      }
+    },
+    "light_blue": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.27058825, 0.5647059, 0.84313726]
+      }
+    },
+    "light_gray": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.6627451, 0.64705884, 0.65882355]
+      }
+    },
+    "lime": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.25490198, 0.81960785, 0.2509804]
+      }
+    },
+    "magenta": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.6901961, 0.28235295, 0.69411767]
+      }
+    },
+    "orange": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.79607844, 0.48235294, 0.2784314]
+      }
+    },
+    "pink": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.827451, 0.3137255, 0.5019608]
+      }
+    },
+    "purple": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.5294118, 0.30588236, 0.7137255]
+      }
+    },
+    "red": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.7372549, 0.23137255, 0.23921569]
+      }
+    },
+    "white": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.9098039, 0.85882354, 0.8901961]
+      }
+    },
+    "yellow": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "base.png",
+        "mask": "mask.png"
+      },
+      "values": {
+        "color": [0.77254903, 0.78039217, 0.2627451]
+      }
+    }
+  },
+  "defaultVariant": {
+    "swivel_chair": {
+      "material": "white",
+      "hide": false
+    }
+  },
+  "variants": {
+    "black": {
+      "swivel_chair": {
+        "material": "black"
+      }
+    },
+    "blue": {
+      "swivel_chair": {
+        "material": "blue"
+      }
+    },
+    "brown": {
+      "swivel_chair": {
+        "material": "brown"
+      }
+    },
+    "cyan": {
+      "swivel_chair": {
+        "material": "cyan"
+      }
+    },
+    "green": {
+      "swivel_chair": {
+        "material": "green"
+      }
+    },
+    "gray": {
+      "swivel_chair": {
+        "material": "gray"
+      }
+    },
+    "light_blue": {
+      "swivel_chair": {
+        "material": "light_blue"
+      }
+    },
+    "light_gray": {
+      "swivel_chair": {
+        "material": "light_gray"
+      }
+    },
+    "lime": {
+      "swivel_chair": {
+        "material": "lime"
+      }
+    },
+    "magenta": {
+      "swivel_chair": {
+        "material": "magenta"
+      }
+    },
+    "orange": {
+      "swivel_chair": {
+        "material": "orange"
+      }
+    },
+    "pink": {
+      "swivel_chair": {
+        "material": "pink"
+      }
+    },
+    "purple": {
+      "swivel_chair": {
+        "material": "purple"
+      }
+    },
+    "red": {
+      "swivel_chair": {
+        "material": "red"
+      }
+    },
+    "white": {},
+    "yellow": {
+      "swivel_chair": {
+        "material": "yellow"
+      }
+    }
+  }
+}

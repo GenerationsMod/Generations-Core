@@ -43,7 +43,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
     protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
         var model = ModelRegistry.get(blockEntity);
 
-        if(model.renderObject == null) return;
+        if(model == null || model.renderObject == null) return;
 
         stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
 
@@ -65,7 +65,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             instance.viewMatrix().set(stack.last().pose());
             ((BlockObjectInstance) instance).setLight(packedLight);
             if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) instance).setTint(provider.getTint());
-            model.render(instance, RenderSystem.getProjectionMatrix());
+            model.render(instance);
         }
     }
 
@@ -77,7 +77,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         //TODO: Get this operational
         var model = ModelRegistry.get(blockEntity);
 
-        if(model.renderObject != null) return;
+        if(model == null || model.renderObject == null) return;
 
         stack.scale(model.renderObject.scale, model.renderObject.scale, model.renderObject.scale);
 
@@ -115,12 +115,14 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             fixedAnimation.setCurrentTime(frameProvider.getFrame());
         }
 
-        model.render(instance, RenderSystem.getProjectionMatrix());
+        model.render(instance);
     }
 
     protected void renderResourceLocation(ResourceLocation location, PoseStack stack, ObjectInstance objectInstance) {
         objectInstance.transformationMatrix().set(stack.last().pose());
-        ModelRegistry.get(location).render(objectInstance, RenderSystem.getProjectionMatrix());
+
+        var model = ModelRegistry.get(location);
+        if(model != null) model.render(objectInstance);
     }
 
     @Override

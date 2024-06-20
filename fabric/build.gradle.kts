@@ -60,6 +60,7 @@ dependencies {
     modApi("earth.terrarium.botarium:botarium-fabric-$minecraftVersion:${project.properties["botarium_version"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
+    implementation("shadowCommon"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
 
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")

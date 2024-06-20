@@ -409,9 +409,7 @@ public class GenerationsCoreClient {
         assert level != null;
         level.getProfiler().popPush("render_models");
         RenderSystem.enableDepthTest();
-//        BufferUploader.reset();
 
-//        ModelRegistry.getWorldRareCandy().render(false, MinecraftClientGameProvider.getTimePassed(), RenderStage.TRANSPARENT);
         ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
     }

@@ -43,7 +43,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     public void render(RenderContext context, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var model = objectSupplier.get();
 
-        if(model.renderObject == null) return;
+        if(model == null || model.renderObject == null) return;
 
         var entity = context.request(RenderContext.Companion.getENTITY());
 
@@ -95,9 +95,9 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             stack.popPose();
 
             if(!isGui) {
-                model.render(instance, RenderSystem.getProjectionMatrix());
+                model.render(instance);
             } else {
-                model.renderGui(instance, RenderSystem.getProjectionMatrix());
+                model.renderGui(instance);
             }
         }
     }

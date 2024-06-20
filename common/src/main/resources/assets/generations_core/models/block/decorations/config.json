@@ -1,0 +1,26 @@
+{
+  "scale": 1.0,
+  "materials": {
+    "Material.023": {
+      "shader": "masked",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "pastel_bean_bag_blue.png",
+        "mask": "bright"
+      },
+      "values": {
+        "color": [1.0, 1.0, 1.0]
+      }
+    }
+  },
+  "defaultVariant": {
+    "pastel_bean_bag.001": {
+      "material": "Material.023",
+      "hide": false
+    }
+  },
+  "variants": {
+    "regular": {}
+  }
+}
