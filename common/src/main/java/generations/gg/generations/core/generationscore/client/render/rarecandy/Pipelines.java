@@ -262,13 +262,13 @@ public class Pipelines {
 
             if(texture == null) {
                 texture = ITextureLoader.instance().getDarkFallback();
-
-                if(texture == null) {
-                    System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
-                }
             }
 
+            if(texture == null) {
+                System.out.println("Warning Emission Texture fallBack failed.");
 
+                return;
+            }
 
             texture.bind(2);
             ctx.uniform().uploadInt(2);
