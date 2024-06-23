@@ -198,8 +198,10 @@ public class TagsDatagen {
                     tag(BlockTags.CEILING_HANGING_SIGNS).add(woodBlock);
                 else if (woodBlock instanceof WallHangingSignBlock)
                     tag(BlockTags.WALL_HANGING_SIGNS).add(woodBlock);
-                else if (woodBlock.getName().getString().contains("book"))
+                else if (woodBlock.getName().getString().contains("book")) {
                     tag(Tags.Blocks.BOOKSHELVES).add(woodBlock);
+                    tag(BlockTags.ENCHANTMENT_POWER_PROVIDER).add(woodBlock);
+                }
             });
 
             tag(GenerationsBlockTags.GHOST_LOGS).add(GenerationsWood.GHOST_LOG.get(), GenerationsWood.STRIPPED_GHOST_LOG.get());
