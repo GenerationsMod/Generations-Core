@@ -32,7 +32,7 @@ public class GenerationsVoxelShapes {
         return generateRotationalVoxelShape(shape, source, width, height, length, 0, 0);
     }
 
-    public static GenericRotatableShapes generateRotationalVoxelShape(VoxelShape shape, Direction source, int width, int height, int length, int xOffset, int zOffset) {
+    public static GenericRotatableShapes generateRotationalVoxelShape(VoxelShape shape, Direction source, int width, int height, int length, double xOffset, double zOffset) {
         var array = new DirectionalShapes[width*height*length];
 
         shape = shape.move(xOffset, 0, zOffset);

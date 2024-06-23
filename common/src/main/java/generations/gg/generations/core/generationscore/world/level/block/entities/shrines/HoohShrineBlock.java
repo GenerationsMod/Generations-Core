@@ -25,7 +25,8 @@ public class HoohShrineBlock extends BirdShrineBlock {
                     Shapes.box(0.625, 1.25, 0.3125, 0.875, 1.83125, 0.6875),
                     Shapes.box(-0.3125, 1.3125, -0.0625, 0.1875, 2.14375, 0.4375),
                     Shapes.box(0.8125, 1.3125, -0.0625, 1.3125, 2.14375, 0.4375),
-                    Shapes.box(0.125, 1.25, 0.3125, 0.375, 1.83125, 0.6875)), Direction.NORTH, 3, 2, 1, 1, 0);
+                    Shapes.box(0.125, 1.25, 0.3125, 0.375, 1.83125, 0.6875)),
+            Direction.SOUTH, 3, 2, 1, 1, 0);
 
     public HoohShrineBlock(BlockBehaviour.Properties properties) {
         super(properties, GenerationsBlockEntityModels.HO_OH_SHRINE, 2, 1, 0, GenerationsItems.RAINBOW_WING);

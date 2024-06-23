@@ -13,16 +13,16 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 public class LugiaShrineBlock extends BirdShrineBlock {
-    private static final GenerationsVoxelShapes.GenericRotatableShapes SHAPE = GenerationsVoxelShapes.generateRotationalVoxelShape(Shapes.or(
-            Shapes.box(0, 0, 0, 1, 0.178125, 1),
-                Shapes.box(0, 0, 0.125, 1, 0.6875, 0.875),
-                        Shapes.box(0.3125, 0.6875, 0.3125, 0.6875, 1.375, 0.6875),
-                                Shapes.box(0.375, 0.6875, -0.0625, 0.625, 1, 0.3125),
-                                        Shapes.box(0.375, 1.375, 0.4375, 0.625, 1.8125, 0.8125),
-                                                Shapes.box(0.6875, 1.0625, 0.3125, 1.0625, 1.75, 0.5),
-                                                        Shapes.box(-0.0625, 1.0625, 0.3125, 0.3125, 1.75, 0.5),
-                                                                Shapes.box(-0.5, 1.3125, 0.1875, 0.0625, 1.9375, 0.375),
-                                                                        Shapes.box(0.9375, 1.3125, 0.1875, 1.5, 1.9375, 0.375)),
+    private static final GenerationsVoxelShapes.GenericRotatableShapes SHAPE = GenerationsVoxelShapes.generateRotationalVoxelShape(
+            Shapes.or(Shapes.box(0, 0, 0, 1, 0.178125, 1),
+                    Shapes.box(0, 0, 0.125, 1, 0.6875, 0.875),
+                    Shapes.box(0.3125, 0.6875, 0.3125, 0.6875, 1.375, 0.6875),
+                    Shapes.box(0.375, 0.6875, -0.0625, 0.625, 1, 0.3125),
+                    Shapes.box(0.375, 1.375, 0.4375, 0.625, 1.8125, 0.8125),
+                    Shapes.box(0.6875, 1.0625, 0.3125, 1.0625, 1.75, 0.5),
+                    Shapes.box(-0.0625, 1.0625, 0.3125, 0.3125, 1.75, 0.5),
+                    Shapes.box(-0.5, 1.3125, 0.1875, 0.0625, 1.9375, 0.375),
+                    Shapes.box(0.9375, 1.3125, 0.1875, 1.5, 1.9375, 0.375)),
 
     Direction.SOUTH, 3, 2, 1, 1, 0);
 
