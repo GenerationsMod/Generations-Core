@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.entity;
 
-import dev.architectury.registry.level.entity.EntityAttributeRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -22,17 +21,9 @@ public class GenerationsEntities {
     public static final RegistrySupplier<EntityType<SittableEntity>> SEAT = createEntityType("seat", MobCategory.MISC, 0.0f, 0.0f, SittableEntity::new);
     public static final RegistrySupplier<EntityType<TieredFishingHookEntity>> TIERED_FISHING_BOBBER = ENTITIES.register("tiered_fishing_bobber", () -> EntityType.Builder.<TieredFishingHookEntity>of(TieredFishingHookEntity::new, MobCategory.MISC).noSave().sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(5).build("tiered_fishing_bobber"));
     public static final RegistrySupplier<EntityType<MagmaCrystalEntity>> MAGMA_CRYSTAL = ENTITIES.register("magma_crystal", () -> EntityType.Builder.<MagmaCrystalEntity>of((arg, arg2) -> new MagmaCrystalEntity(arg2), MobCategory.MISC).noSave().sized(0.25f, 0.025f).clientTrackingRange(4).updateInterval(10).build("magma_crystal"));
-    public static final RegistrySupplier<EntityType<GenerationsBoatEntity>> BOAT_ENTITY =
-            ENTITIES.register("boat", () -> EntityType.Builder.<GenerationsBoatEntity>of(GenerationsBoatEntity::new,
-                            MobCategory.MISC).fireImmune().sized(1.375F, 0.5625F)
-//                    .setCustomClientFactory((spawnEntity, world) -> new PokeModBoatEntity(world, 0, 0, 0))
-                    .build("boat"));
+    public static final RegistrySupplier<EntityType<GenerationsBoatEntity>> BOAT_ENTITY = createEntityType("boat", MobCategory.MISC, EntityType.BOAT.getWidth(), EntityType.BOAT.getHeight(), GenerationsBoatEntity::new);
+    public static final RegistrySupplier<EntityType<GenerationsChestBoatEntity>> CHEST_BOAT_ENTITY = createEntityType("chest_boat", MobCategory.MISC, EntityType.CHEST_BOAT.getWidth(), EntityType.CHEST_BOAT.getHeight(), GenerationsChestBoatEntity::new);
 
-    public static final RegistrySupplier<EntityType<GenerationsChestBoatEntity>> CHEST_BOAT_ENTITY =
-            ENTITIES.register("chest_boat", () -> EntityType.Builder.<GenerationsChestBoatEntity>of(GenerationsChestBoatEntity::new,
-                            MobCategory.MISC).fireImmune().sized(1.375F, 0.5625F)
-//                    .setCustomClientFactory((spawnEntity, world) -> new PokeModChestBoatEntity(world, 0, 0, 0))
-                    .build("chest_boat"));
     public static RegistrySupplier<EntityType<StatueEntity>> STATUE_ENTITY =
             ENTITIES.register("statue", () -> EntityType.Builder.<StatueEntity>of(StatueEntity::new, MobCategory.MISC).build("statue"));
 
@@ -42,18 +33,7 @@ public class GenerationsEntities {
     public static void init() {
         GenerationsCore.LOGGER.info("Registering Generations entities");
         ENTITIES.register();
-        EntityAttributeRegistry.register(STATUE_ENTITY, StatueEntity::createLivingAttributes);
-        EntityAttributeRegistry.register(PLAYER_NPC, PlayerNpcEntity::createMobAttributes);
-//        eventBus.addListener(PokeModEntities::registerEntityAttributes);
     }
-
-
-//    private static void registerEntityAttributes(EntityAttributeCreationEvent event) {
-//        event.put(PIXELMON.get(), PixelmonEntity.createMobAttributes().build());
-//        event.put(STARTER_PICK.get(), StarterPickEntity.createAttributes().build());
-//        event.put(PLAYER_NPC.get(), PlayerNpcEntity.createAttributes().build());
-//        event.put(STATUE.get(), StatueEntity.createLivingAttributes().build());
-//    }
 
     private static <T extends Entity> RegistrySupplier<EntityType<T>> createEntityType(String name, MobCategory category, float width, float height, EntityType.EntityFactory<T> factory) {
         return ENTITIES.register(name, () -> EntityType.Builder.of(factory, category).sized(width, height).build(name));

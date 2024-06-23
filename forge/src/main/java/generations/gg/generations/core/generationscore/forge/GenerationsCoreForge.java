@@ -10,6 +10,9 @@ import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
+import generations.gg.generations.core.generationscore.world.entity.PlayerNpcEntity;
+import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import generations.gg.generations.core.generationscore.world.item.creativetab.forge.GenerationsCreativeTabsImpl;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.ChatFormatting;
@@ -35,6 +38,7 @@ import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -80,6 +84,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         GenerationsCreativeTabsImpl.init(MOD_BUS);
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
+        MOD_BUS.addListener(this::createEntityAttributes);
         GenerationsCore.init(this);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
         var EVENT_BUS = MinecraftForge.EVENT_BUS;
@@ -194,5 +199,10 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     @Override
     public NetworkManager getNetworkManager() {
         return GenerationsForgeNetworkManager.INSTANCE;
+    }
+
+    private void createEntityAttributes(final EntityAttributeCreationEvent event) {
+        event.put(GenerationsEntities.STATUE_ENTITY.get(), StatueEntity.createLivingAttributes().build());
+        event.put(GenerationsEntities.PLAYER_NPC.get(), PlayerNpcEntity.createMobAttributes().build());
     }
 }

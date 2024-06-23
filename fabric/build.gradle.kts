@@ -87,8 +87,9 @@ tasks {
         exclude(mutableListOf(
             "generations/gg/generations/core/generationscore/fabric/datagen/**",
             "data/forge/**",
+            "data/generations_core/forge/**",
             "architectury.common.json",
-            ".cache"
+            ".cache/**"
         ))
         configurations = listOf(project.configurations.getByName("shadowCommon"))
         archiveClassifier.set("dev-shadow")
@@ -140,6 +141,31 @@ tasks {
 //    modrinthDepends.required.set(depends)
 //    modrinthDepends.optional.set(mutableListOf("wthit"))
 //}
+
+    curseID.set("860936")
+    modrinthID.set("AxvRzJ70")
+    githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
+    setReleaseType(ReleaseType.BETA)
+    projectVersion.set(project.version.toString())
+    displayName.set("$jarName-${projectVersion.get()}")
+    changelog.set("")
+    artifact.set(tasks.remapJar)
+    setGameVersions(minecraftVersion)
+    setLoaders(ModLoader.FABRIC, ModLoader.QUILT)
+    setCurseEnvironment(CurseEnvironment.BOTH)
+    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18, JavaVersion.VERSION_19, JavaVersion.VERSION_20, JavaVersion.VERSION_21)
+    val depends = mutableListOf(
+        "fabric-api",
+        "fabric-language-kotlin",
+        "architectury-api",
+        "cobblemon",
+        "botarium",
+    )
+    curseDepends.required.set(depends)
+    curseDepends.optional.set(mutableListOf("wthit"))
+    modrinthDepends.required.set(depends)
+    modrinthDepends.optional.set(mutableListOf("wthit"))
+}
 
 components {
     java.run {

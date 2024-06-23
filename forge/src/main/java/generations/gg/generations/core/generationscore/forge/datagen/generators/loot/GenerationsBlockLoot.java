@@ -33,7 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 import java.util.function.BiConsumer;
 
-public class GenerationsBlockLoot extends BlockLootSubProvider {
+class GenerationsBlockLoot extends BlockLootSubProvider {
 
     private final List<Block> knownBlocks = new ArrayList<>();
 
