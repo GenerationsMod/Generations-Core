@@ -118,35 +118,36 @@ tasks {
     }
 }
 
-publisher {
-    apiKeys {
-        curseforge(getPublishingCredentials().first)
-        modrinth(getPublishingCredentials().second)
-        github(project.properties["github_token"].toString())
-    }
-    curseID.set("860936")
-    modrinthID.set("AxvRzJ70")
-    githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
-    setReleaseType(ReleaseType.BETA)
-    projectVersion.set(project.version.toString())
-    displayName.set("$jarName-${projectVersion.get()}")
-    changelog.set("")
-    artifact.set(tasks.remapJar)
-    setGameVersions(minecraftVersion)
-    setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
-    setCurseEnvironment(CurseEnvironment.BOTH)
-    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18, JavaVersion.VERSION_19, JavaVersion.VERSION_20, JavaVersion.VERSION_21)
-    val depends = mutableListOf(
-        "architectury-api",
-        "kotlin-for-forge",
-        "cobblemon",
-        "botarium",
-    )
-    curseDepends.required.set(depends)
-    curseDepends.optional.set(mutableListOf("wthit-forge"))
-    modrinthDepends.required.set(depends)
-    modrinthDepends.optional.set(mutableListOf("wthit"))
-}
+//publisher {
+//    apiKeys {
+//        curseforge(getPublishingCredentials().first)
+//        modrinth(getPublishingCredentials().second)
+//        github(project.properties["github_token"].toString())
+//    }
+//
+//    curseID.set("860936")
+//    modrinthID.set("AxvRzJ70")
+//    githubRepo.set("https://github.com/GenerationsMod/Generations-Core")
+//    setReleaseType(ReleaseType.BETA)
+//    projectVersion.set(project.version.toString())
+//    displayName.set("$jarName-${projectVersion.get()}")
+//    changelog.set("")
+//    artifact.set(tasks.remapJar)
+//    setGameVersions(minecraftVersion)
+//    setLoaders(ModLoader.FORGE, ModLoader.NEOFORGE)
+//    setCurseEnvironment(CurseEnvironment.BOTH)
+//    setJavaVersions(JavaVersion.VERSION_17, JavaVersion.VERSION_18)
+//    val depends = mutableListOf(
+//        "architectury-api",
+//        "kotlin-for-forge",
+//        "cobblemon",
+//        "botarium",
+//    )
+//    curseDepends.required.set(depends)
+//    curseDepends.optional.set(mutableListOf("wthit-forge"))
+//    modrinthDepends.required.set(depends)
+//    modrinthDepends.optional.set(mutableListOf("wthit"))
+//}
 
 components {
     java.run {
