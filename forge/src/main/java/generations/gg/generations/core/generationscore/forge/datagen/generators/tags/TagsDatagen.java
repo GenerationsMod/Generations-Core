@@ -348,7 +348,40 @@ public class TagsDatagen {
             //Discs
             tag(ItemTags.MUSIC_DISCS).add(
                     RELIC_SONG.get(),
-                    INERT_RELIC_SONG.get()
+                    INERT_RELIC_SONG.get(),
+                    AZALEA_TOWN_DISC.get(),
+                    CASCARRAFA_CITY_DISC.get(),
+                    CERULEAN_CITY_DISC.get(),
+                    ETERNA_CITY_DISC.get(),
+                    GOLDENROD_CITY_DISC.get(),
+                    ICIRRUS_CITY_DISC.get(),
+                    JUBILIFE_VILLAGE_DISC.get(),
+                    LAKE_OF_RAGE_DISC.get(),
+                    LAVERRE_CITY_DISC.get(),
+                    LILLIE_DISC.get(),
+                    POKEMON_CENTER_DISC.get(),
+                    ROUTE_228_DISC.get(),
+                    SLUMBERING_WEALD_DISC.get(),
+                    SURF_DISC.get(),
+                    VERMILION_CITY_DISC.get(),
+                    CYNTHIA_DISC.get(),
+                    DEOXYS_DISC.get(),
+                    IRIS_DISC.get(),
+                    KANTO_DISC.get(),
+                    LUSAMINE_DISC.get(),
+                    NEMONA_DISC.get(),
+                    NESSA_DISC.get(),
+                    PENNY_DISC.get(),
+                    RIVAL_DISC.get(),
+                    SADA_AND_TURO_DISC.get(),
+                    SOUTH_PROVINCE_DISC.get(),
+                    TEAM_ROCKET_DISC.get(),
+                    ULTRA_NECROZMA_DISC.get(),
+                    XY_LEGENDARY_DISC.get(),
+                    ZINNIA_DISC.get(),
+                    LAVENDER_TOWN_DISC.get(),
+                    LUGIA_DISC.get(),
+                    MT_PYRE_DISC.get()
             );
 
             tag(ItemTags.BOATS).add(GHOST_BOAT_ITEM.get()).add(ULTRA_DARK_BOAT_ITEM.get()).add(ULTRA_JUNGLE_BOAT_ITEM.get());
@@ -496,7 +529,6 @@ public class TagsDatagen {
                     .add(MEGA_CUFF.getKey());
             tag(GenerationsItemTags.DYNAMAX_BANDS).add(DYNAMAX_BAND.getKey());
             tag(GenerationsItemTags.Z_RINGS).add(Z_RING.getKey()).add(Z_POWER_RING.getKey());
-
         }
     }
 

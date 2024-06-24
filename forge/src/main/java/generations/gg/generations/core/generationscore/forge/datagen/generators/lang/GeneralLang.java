@@ -63,7 +63,13 @@ public class GeneralLang extends LanguageProvider {
         });
         addItemEntries(GenerationsItems.HELD_ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.LEGENDARY_ITEMS, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.UTILITY, this::getNameGens, (item, function) -> {});
+        addItemEntries(GenerationsItems.UTILITY, this::getNameGens, (item, function) -> {
+            var item1 = item.get();
+
+            if(item1 instanceof RecordItem) {
+                add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
+            }
+        });
         addItemEntries(GenerationsItems.VALUABLES, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.FORM_ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.BUILDING_BLOCKS, this::getNameGens, (item, function) -> {});
