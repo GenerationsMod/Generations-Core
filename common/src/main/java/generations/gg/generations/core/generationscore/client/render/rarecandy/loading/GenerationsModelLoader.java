@@ -1,10 +1,11 @@
-package gg.generations.rarecandy.renderer.loading;
+package generations.gg.generations.core.generationscore.client.render.rarecandy.loading;
 
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CobblemonInstance;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
+import gg.generations.rarecandy.renderer.loading.ModelLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.resources.ResourceLocation;

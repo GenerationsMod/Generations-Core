@@ -1,5 +1,5 @@
 {
   "textures": {
-    "particle": "generations_core:item/placeholder"
+    "particle": "generations_core:item/blocks/pcs/gray_pc"
   }
 }

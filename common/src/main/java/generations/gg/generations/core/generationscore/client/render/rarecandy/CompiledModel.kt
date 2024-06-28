@@ -6,7 +6,7 @@ import generations.gg.generations.core.generationscore.GenerationsCore
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import gg.generations.rarecandy.renderer.components.MeshObject
 import gg.generations.rarecandy.renderer.components.MultiRenderObject
-import gg.generations.rarecandy.renderer.loading.GenerationsModelLoader
+import generations.gg.generations.core.generationscore.client.render.rarecandy.loading.GenerationsModelLoader
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 import gg.generations.rarecandy.renderer.storage.ObjectManager
 import net.minecraft.client.Minecraft
@@ -74,7 +74,10 @@ class CompiledModel {
     }
 
     companion object {
-        val loader = GenerationsModelLoader(2);
+        val loader =
+            GenerationsModelLoader(
+                2
+            );
         @JvmStatic
         fun of(pair: ResourceLocation, resource: Resource): CompiledModel {
             return try {
