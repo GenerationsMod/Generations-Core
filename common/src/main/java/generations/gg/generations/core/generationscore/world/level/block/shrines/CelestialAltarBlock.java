@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
+import com.cobblemon.mod.common.api.spawning.TimeRange;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.altar.CelestialAltarBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
@@ -47,7 +48,7 @@ public class CelestialAltarBlock extends GenericRotatableModelBlock<CelestialAlt
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> blockEntityType) {
         return ConduitBlock.createTickerHelper(blockEntityType, GenerationsBlockEntities.CELESTIAL_ALTAR.get(), level.isClientSide ? (level1, blockPos, blockState, blockEntity) -> {} : (level12, pos, blockState, blockEntity) -> {
-            var state1 = level12.getBlockState(pos).setValue(IS_SUN, level12.isDay());
+            var state1 = level12.getBlockState(pos).setValue(IS_SUN, TimeRange.Companion.getTimeRanges().get("day").contains((int) level12.dayTime()));
             level12.setBlockAndUpdate(pos, state1);
         });
     }

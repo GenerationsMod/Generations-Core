@@ -16,10 +16,13 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.StaticShrineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.*;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -42,7 +45,16 @@ public class GenerationsShrines {
 	public static final RegistrySupplier<Block> KYOGRE_SHRINE = registerBlockItem("kyogre_shrine", () -> new WeatherTrioShrineBlock(SHRINE_PROPERTIES, GenerationsBlockEntityModels.KYOGRE_SHRINE, LegendKeys.KYORGRE, GenerationsItems.FADED_BLUE_ORB));
 	public static final RegistrySupplier<Block> TIMESPACE_ALTAR = registerBlockItem("timespace_altar", () -> new TimespaceAltarBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> ABUNDANT_SHRINE = registerBlockItem("abundant_shrine", () -> new AbundantShrineBlock(SHRINE_PROPERTIES));
-	public static final RegistrySupplier<Block> CELESTIAL_ALTAR = registerBlockItem("celestial_altar", () -> new CelestialAltarBlock(SHRINE_PROPERTIES));
+	public static final RegistrySupplier<Block> CELESTIAL_ALTAR = registerBlockItem("celestial_altar", () -> new CelestialAltarBlock(SHRINE_PROPERTIES), (block, properties) -> new BlockItemWithLang(block, properties) {
+			@Override
+			protected boolean placeBlock(BlockPlaceContext context, BlockState state) {
+				if (context.getLevel().dimensionType().natural() && super.placeBlock(context, state)) return true;
+				else {
+					context.getPlayer().displayClientMessage(Component.literal("You can not place the celestial altar in an unnatural place!"), true);
+					return false;
+				}
+			}
+	});
 	public static final RegistrySupplier<Block> LUNAR_SHRINE = registerBlockItem("lunar_shrine", () -> new LunarShrineBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> LIGHT_CRYSTAL = registerBlockItem("light_crystal", () -> new LunarCystalBlock(BlockBehaviour.Properties.of(), GenerationsBlockEntityModels.LIGHT_CRYSTAL));
 	public static final RegistrySupplier<Block> DARK_CRYSTAL = registerBlockItem("dark_crystal", () -> new LunarCystalBlock(BlockBehaviour.Properties.of(), GenerationsBlockEntityModels.DARK_CRYSTAL), DarkCrystalItem::new);

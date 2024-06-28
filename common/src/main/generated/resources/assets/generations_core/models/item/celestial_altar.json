@@ -1,5 +1,19 @@
 {
   "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "generations_core:item/blocks/shrines/celestial_altar_sun",
+      "predicate": {
+        "generations_core:time": 0.1
+      }
+    },
+    {
+      "model": "generations_core:item/blocks/shrines/celestial_altar_moon",
+      "predicate": {
+        "generations_core:time": 0.2
+      }
+    }
+  ],
   "textures": {
     "layer0": "generations_core:item/blocks/shrines/celestial_altar"
   }

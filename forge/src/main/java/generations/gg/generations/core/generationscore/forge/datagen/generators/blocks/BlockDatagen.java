@@ -4,11 +4,12 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
 import generations.gg.generations.core.generationscore.world.level.block.*;
-import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.CelestialAltarBlock;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.LunarShrineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.BoxBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.Direction;
@@ -223,14 +224,17 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
 //        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE.block());
 //        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block());
-        GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> registerBlockItemParticle(block.get(), "ball_displays"));
+        GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(block -> registerBlockItemParticle(block.get(), "ball_displays", true));
 
 
         registerBlockItemParticleWithDrop(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign");
 
 
-        GenerationsShrines.SHRINES.forEach(block -> registerBlockItemParticle(block.get(), "shrines"));
-        GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots"));
+        GenerationsShrines.SHRINES.forEach(block -> {
+            var block1 = block.get();
+            registerBlockItemParticle(block1, "shrines", !(block1 instanceof LunarShrineBlock || block1 instanceof CelestialAltarBlock));
+        });
+        GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots", true));
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks");
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.ROTOM_PC.get(), "utility_blocks");
@@ -339,7 +343,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
     private <V extends DyeableBlock<T, V>, T extends ModelProvidingBlockEntity> void registerDyeGroup(DyedGroup<V, T> group, String dir) {
         group.block().values().stream().map(Supplier::get).forEach(block -> {
-            registerBlockItemParticle(block, dir);
+            registerBlockItemParticle(block, dir, true);
             dropSelfList.add(block);
         });
     }
@@ -575,21 +579,21 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
     }
 
     private void registerBlockItemParticleWithDrop(Block block, String name) {
-        registerBlockItemParticle(block, name);
+        registerBlockItemParticle(block, name, true);
         dropSelfList.add(block);
     }
 
-    private void registerBlockItemParticle(Block block, String name) {
+    private void registerBlockItemParticle(Block block, String name, boolean shouldGenerateItems) {
         ResourceLocation blockId = key(block);
         ResourceLocation textureId = blockId.withPrefix("item/blocks/" + name + "/");
         try {
             simpleBlock(block, models().sign(blockId.getPath(), textureId));
-            itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.asItem())).toString()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+            if (shouldGenerateItems) itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.asItem())).toString()).parent(new ModelFile.UncheckedModelFile("item/generated"))
                     .texture("layer0", textureId);
         } catch (Exception ignored) {
             DataProvider.LOGGER.error("Block: " + name + " -> " + textureId);
             simpleBlock(block, models().sign(blockId.getPath(), GenerationsCore.id("item/placeholder")));
-            itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.asItem())).toString()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+            if(shouldGenerateItems) itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.asItem())).toString()).parent(new ModelFile.UncheckedModelFile("item/generated"))
                     .texture("layer0", GenerationsCore.id("item/placeholder"));
 
         }

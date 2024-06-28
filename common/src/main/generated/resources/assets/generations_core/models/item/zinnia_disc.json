@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "generations_core:item/utility_items/npc_wand"
+    "layer0": "generations_core:item/discs/zinnia_disc"
   }
 }

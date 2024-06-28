@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.client;
 
 import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.api.spawning.TimeRange;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry;
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
@@ -63,6 +64,7 @@ import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
@@ -79,6 +81,8 @@ import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Panda;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -89,6 +93,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector4f;
 
 import javax.imageio.ImageIO;
@@ -204,7 +209,38 @@ public class GenerationsCoreClient {
             else return 0;
         });
 
-        ItemPropertiesRegistry.register(GenerationsShrines.CELESTIAL_ALTAR.get(), GenerationsCore.id("time"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);
+        ItemPropertiesRegistry.register(GenerationsShrines.CELESTIAL_ALTAR.get(), GenerationsCore.id("time"), new ClampedItemPropertyFunction() {
+            @Override
+            public float call(ItemStack itemStack, @Nullable ClientLevel clientLevel, @Nullable LivingEntity livingEntity, int i) {
+                return ClampedItemPropertyFunction.super.call(itemStack, clientLevel, livingEntity, i);
+            }
+
+            public float unclampedCall(ItemStack itemStack, @Nullable ClientLevel clientLevel, @Nullable LivingEntity livingEntity, int i) {
+                    Entity entity = livingEntity != null ? livingEntity : itemStack.getEntityRepresentation();
+                    if (entity == null) {
+                        return 0.0F;
+                    } else {
+                        if (clientLevel == null && entity.level() instanceof ClientLevel level) {
+                            clientLevel = level;
+                        }
+
+                        if (clientLevel == null) {
+                            return 0.0F;
+                        } else {
+                            double d;
+                            if (clientLevel.dimensionType().natural()) {
+                                d = TimeRange.Companion.getTimeRanges().get("day").contains((int) clientLevel.dayTime()) ? 0.1f : 0.2f;
+                            } else {
+                                d = 0F;
+                            }
+
+                            return (float)d;
+                        }
+                    }
+                }
+        });
+
+//        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("lit"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);
 
         registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get());

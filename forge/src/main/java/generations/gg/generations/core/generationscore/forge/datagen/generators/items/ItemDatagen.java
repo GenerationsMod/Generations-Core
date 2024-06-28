@@ -920,8 +920,43 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get(), "boat/");
         createItem(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get(), "chest_boat/");
 
+        registerDisc(GenerationsItems.AZALEA_TOWN_DISC.getId());
+        registerDisc(GenerationsItems.CASCARRAFA_CITY_DISC.getId());
+        registerDisc(GenerationsItems.CERULEAN_CITY_DISC.getId());
+        registerDisc(GenerationsItems.ETERNA_CITY_DISC.getId());
+        registerDisc(GenerationsItems.GOLDENROD_CITY_DISC.getId());
+        registerDisc(GenerationsItems.ICIRRUS_CITY_DISC.getId());
+        registerDisc(GenerationsItems.JUBILIFE_VILLAGE_DISC.getId());
+        registerDisc(GenerationsItems.LAKE_OF_RAGE_DISC.getId());
+        registerDisc(GenerationsItems.LAVERRE_CITY_DISC.getId());
+        registerDisc(GenerationsItems.LILLIE_DISC.getId());
+        registerDisc(GenerationsItems.POKEMON_CENTER_DISC.getId());
+        registerDisc(GenerationsItems.ROUTE_228_DISC.getId());
+        registerDisc(GenerationsItems.SLUMBERING_WEALD_DISC.getId());
+        registerDisc(GenerationsItems.SURF_DISC.getId());
+        registerDisc(GenerationsItems.VERMILION_CITY_DISC.getId());
+        registerDisc(GenerationsItems.CYNTHIA_DISC.getId());
+        registerDisc(GenerationsItems.DEOXYS_DISC.getId());
+        registerDisc(GenerationsItems.IRIS_DISC.getId());
+        registerDisc(GenerationsItems.KANTO_DISC.getId());
+        registerDisc(GenerationsItems.LUSAMINE_DISC.getId());
+        registerDisc(GenerationsItems.NEMONA_DISC.getId());
+        registerDisc(GenerationsItems.NESSA_DISC.getId());
+        registerDisc(GenerationsItems.PENNY_DISC.getId());
+        registerDisc(GenerationsItems.RIVAL_DISC.getId());
+        registerDisc(GenerationsItems.SADA_AND_TURO_DISC.getId());
+        registerDisc(GenerationsItems.SOUTH_PROVINCE_DISC.getId());
+        registerDisc(GenerationsItems.TEAM_ROCKET_DISC.getId());
+        registerDisc(GenerationsItems.ULTRA_NECROZMA_DISC.getId());
+        registerDisc(GenerationsItems.XY_LEGENDARY_DISC.getId());
+        registerDisc(GenerationsItems.ZINNIA_DISC.getId());
+        registerDisc(GenerationsItems.LAVENDER_TOWN_DISC.getId());
+        registerDisc(GenerationsItems.LUGIA_DISC.getId());
+        registerDisc(GenerationsItems.MT_PYRE_DISC.getId());
+
         createCurry();
         createImbuedFlute();
+        createCelestialAltar();
         createTm(GenerationsItems.CUSTOM_TM);
         createTm(GenerationsItems.TM_1);
         createTm(GenerationsItems.TM_2);
@@ -1271,6 +1306,10 @@ public class ItemDatagen extends ItemModelProvider {
 //        group.block().values().forEach(block -> createItemBlockDir(block.get().asItem(), name));
 //    }
 
+    private void registerDisc(ResourceLocation id) {
+        this.singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", GenerationsCore.id("item/discs/" + id.getPath()));
+    }
+
     private void createCurry() {
         ItemModelBuilder model = generated(GenerationsItems.CURRY.getId().getPath(), CurryType.None.getResourceLocation());
         CurryType[] values = CurryType.values();
@@ -1327,6 +1366,34 @@ public class ItemDatagen extends ItemModelProvider {
         consumer.accept("silver", 8f);
     }
 
+    private void createCelestialAltar() {
+        ItemModelBuilder model = createItemBlockDir(GenerationsShrines.CELESTIAL_ALTAR.get().asItem(), "shrines");
+
+        BiConsumer<String, Float> consumer = (name, i) -> {
+            if(!name.isEmpty()) name = "_" + name;
+            ItemModelBuilder typeModel = generated("item/blocks/shrines/celestial_altar" + name, GenerationsCore.id("item/blocks/shrines/celestial_altar" + name));
+            model.override().model(typeModel).predicate(GenerationsCore.id("time"), i).end();
+        };
+
+//        consumer.accept("", 0f);
+        consumer.accept("sun", 0.1f);
+        consumer.accept("moon", 0.2f);
+    }
+
+    private void createLunarShrine() {
+        ItemModelBuilder model = createItemBlockDir(GenerationsShrines.CELESTIAL_ALTAR.get().asItem(), "shrines");
+
+        BiConsumer<String, Float> consumer = (name, i) -> {
+            if(!name.isEmpty()) name = "_" + name;
+            ItemModelBuilder typeModel = generated("item/blocks/shrines/celestial_altar" + name, GenerationsCore.id("item/blocks/shrines/celestial_altar" + name));
+            model.override().model(typeModel).predicate(GenerationsCore.id("time"), i).end();
+        };
+
+//        consumer.accept("", 0f);
+        consumer.accept("sun", 1f);
+        consumer.accept("moon", 2f);
+    }
+
     private ResourceLocation getKey(Item item) {
         return ForgeRegistries.ITEMS.getKey(item);
     }
@@ -1352,9 +1419,9 @@ public class ItemDatagen extends ItemModelProvider {
         generated(key.getPath(), texPath);
     }
 
-    public void createItemBlock(Block block, String directory) {
+    public ItemModelBuilder createItemBlock(Block block, String directory) {
         ResourceLocation key = Objects.requireNonNull(getKey(block.asItem()), "Tried to create json model for unregistered Item.");
-        generated(key.getPath(), GenerationsCore.id(directory + key.getPath()));
+        return generated(key.getPath(), GenerationsCore.id(directory + key.getPath()));
     }
 
     public void createPointedDripstoneItem(Block block, String directory) {
@@ -1362,9 +1429,9 @@ public class ItemDatagen extends ItemModelProvider {
         singleTexture(key.getPath(), mcLoc("item/pointed_dripstone"), "layer0", GenerationsCore.id(directory.concat(key.getPath())));
     }
 
-    public void createItemBlockDir(Item block, String directory) {
+    public ItemModelBuilder createItemBlockDir(Item block, String directory) {
         ResourceLocation key = Objects.requireNonNull(getKey(block), "Tried to create json model for unregistered Item.");
-        generated(key.getPath(), GenerationsCore.id("item/blocks/" + directory + "/" + key.getPath()));
+        return generated(key.getPath(), GenerationsCore.id("item/blocks/" + directory + "/" + key.getPath()));
     }
 
     public ItemModelBuilder createCurryType(CurryType type) {
