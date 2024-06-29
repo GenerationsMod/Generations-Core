@@ -19,6 +19,8 @@
   "processingTime": 240,
   "result": {
     "type": "generations_core:pokemon",
-    "species": "cobblemon:ragingbolt"
+    "spawnInWorld": false,
+    "species": "cobblemon:ragingbolt",
+    "usePokemonInCapsule": true
   }
 }

@@ -1,19 +1,28 @@
 package generations.gg.generations.core.generationscore.world.recipe;
 
+import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.CobblemonBlockEntities;
+import com.cobblemon.mod.common.CobblemonEntities;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.item.PokemonItem;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import generations.gg.generations.core.generationscore.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.level.block.RksMachineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec3;
 import org.joml.Vector4f;
 
 import java.util.*;
@@ -35,7 +44,7 @@ public interface RksResult<U extends RksResult<U>> {
 
     RksResultType<U> type();
 
-    default void process(RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {}
+    default void process(Player player, RksMachineContainer container, RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {}
 
     default boolean consumeTimeCapsules() {
         return true;
@@ -58,23 +67,29 @@ public interface RksResult<U extends RksResult<U>> {
             return RksResultType.ITEM.get();
         }
     }
-    record PokemonResult(ResourceLocation species, Set<String> aspects, int level) implements RksResult<PokemonResult> {
+    record PokemonResult(ResourceLocation species, Set<String> aspects, int level, boolean spawnInWorld, boolean usePokemonInCapsule) implements RksResult<PokemonResult> {
 
         public static final Codec<PokemonResult> CODEC = RecordCodecBuilder.create(instance -> instance.group(
                 ResourceLocation.CODEC.fieldOf("species").forGetter(PokemonResult::species),
                 Codec.STRING.listOf().<Set<String>>xmap(HashSet::new, ArrayList::new).optionalFieldOf("aspects", new HashSet<>()).forGetter(PokemonResult::aspects),
-                Codec.INT.optionalFieldOf("level", 1).forGetter(PokemonResult::level)).apply(instance, PokemonResult::new));
+                Codec.INT.optionalFieldOf("level", 1).forGetter(PokemonResult::level),
+                Codec.BOOL.optionalFieldOf("spawnInWorld", true).forGetter(PokemonResult::spawnInWorld),
+                Codec.BOOL.optionalFieldOf("usePokemonInCapsule", false).forGetter(PokemonResult::usePokemonInCapsule)).apply(instance, PokemonResult::new));
         public static final Function<FriendlyByteBuf, PokemonResult> FROM_BUFFER = buffer -> {
             var species = buffer.readResourceLocation();
             var aspects = buffer.readCollection(HashSet::new, FriendlyByteBuf::readUtf);
             var level = buffer.readVarInt();
-            return new PokemonResult(species, aspects, level);
+            var spawnInWorld = buffer.readBoolean();
+            var usePokemonInCapsule = buffer.readBoolean();
+            return new PokemonResult(species, aspects, level, spawnInWorld, usePokemonInCapsule);
         };
 
         public static final BiConsumer<FriendlyByteBuf, PokemonResult> TO_BUFFER = (buffer, result) -> {
             buffer.writeResourceLocation(result.species);
             buffer.writeCollection(result.aspects, FriendlyByteBuf::writeUtf);
             buffer.writeVarInt(result.level);
+            buffer.writeBoolean(result.spawnInWorld());
+            buffer.writeBoolean(result.usePokemonInCapsule());
         };
 
         @Override
@@ -88,15 +103,30 @@ public interface RksResult<U extends RksResult<U>> {
         }
 
         @Override
-        public void process(RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {
-            var pos = rksMachineBlockEntity.getBlockPos();
-            var dir = rksMachineBlockEntity.getBlockState().getValue(RksMachineBlock.FACING);
+        public void process(Player player, RksMachineContainer container, RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {
+            Pokemon pokemon = null;
 
-            var properties = new PokemonProperties();
-            properties.setSpecies(species().toString());
-            properties.setAspects(aspects());
-            properties.setLevel(level());
-            PokemonUtil.spawn(properties, rksMachineBlockEntity.getLevel(), pos.above(2), dir.toYRot());
+            if(usePokemonInCapsule() && container.pokemon.isPresent()) {
+                pokemon = container.pokemon.get();
+            } else {
+                var properties = new PokemonProperties();
+                properties.setAspects(aspects);
+                properties.setSpecies(species.toString());
+                properties.setLevel(level);
+                pokemon = properties.create();
+            }
+
+            if(spawnInWorld()) {
+                var pos = rksMachineBlockEntity.getBlockPos();
+                var dir = rksMachineBlockEntity.getBlockState().getValue(RksMachineBlock.FACING);
+                PokemonUtil.spawn(new PokemonEntity(rksMachineBlockEntity.getLevel(), pokemon, CobblemonEntities.POKEMON), rksMachineBlockEntity.getLevel(), Vec3.atCenterOf(pos.above(2)), dir.toYRot());
+            } else {
+                try {
+                    Cobblemon.INSTANCE.getStorage().getParty(player.getUUID()).add(pokemon);
+                } catch (NoPokemonStoreException e) {
+                }
+            }
+
             stack.setCount(0);
         }
     }

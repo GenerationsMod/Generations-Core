@@ -10,7 +10,9 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.serialization.JsonOps;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.item.TimeCapsule;
 import generations.gg.generations.core.generationscore.world.level.block.entities.RksMachineBlockEntity;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
@@ -18,6 +20,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -145,11 +148,15 @@ public class RksRecipe implements Recipe<Container> {
     }
 
     public @NotNull NonNullList<ItemStack> getRemainingItems(Container container) {
+
         NonNullList<ItemStack> nonNullList = NonNullList.withSize(container.getContainerSize(), ItemStack.EMPTY);
         for (int i = 1; i < nonNullList.size(); ++i) {
             ItemStack itemStack = container.getItem(i);
             var item = itemStack.getItem();
-            if (itemStack.is(GenerationsItems.TIME_CAPSULE.get()) && consumesTimeCapsules)
+            if (itemStack.is(GenerationsItems.TIME_CAPSULE.get()) && consumesTimeCapsules && container instanceof RksMachineContainer rksMachineContainer) {
+                nonNullList.set(i, itemStack);
+                rksMachineContainer.pokemon = TimeCapsule.Companion.getPokemon(itemStack);
+            }
 
             if (item.hasCraftingRemainingItem()) nonNullList.set(i, new ItemStack(item.getCraftingRemainingItem()));
         }
@@ -300,8 +307,8 @@ public class RksRecipe implements Recipe<Container> {
         return result;
     }
 
-    public void process(RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {
-        result.process(rksMachineBlockEntity, stack);
+    public void process(Player player, RksMachineContainer container, RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {
+        result.process(player, container, rksMachineBlockEntity, stack);
     }
 
     public static class Serializer implements RecipeSerializer<RksRecipe> {

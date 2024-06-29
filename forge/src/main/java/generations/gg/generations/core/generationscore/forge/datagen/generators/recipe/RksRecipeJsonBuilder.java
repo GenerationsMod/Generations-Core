@@ -56,8 +56,13 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 	}
 
 	public RksRecipeJsonBuilder(ResourceLocation species, Set<String> aspects, int level) {
-		this.output = new RksResult.PokemonResult(species, aspects, level);
+		this(species, aspects, level, true, false);
 	}
+
+	public RksRecipeJsonBuilder(ResourceLocation species, Set<String> aspects, int level, boolean spawnInWorld, boolean usePokemonInCapsule) {
+		this.output = new RksResult.PokemonResult(species, aspects, level, spawnInWorld, usePokemonInCapsule);
+	}
+
 
 	public static RksRecipeJsonBuilder create(SpeciesKey key) {
 		return create(key, 1);
@@ -80,8 +85,13 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 	}
 
 	public static RksRecipeJsonBuilder create(String name) {
-		return create(new ResourceLocation("cobblemon", name), new HashSet<>(), 1);
+		return create(name, true, false);
 	}
+
+	public static RksRecipeJsonBuilder create(String name, boolean spawnInWorld, boolean usePokemonInCapsule) {
+		return new RksRecipeJsonBuilder(new ResourceLocation("cobblemon", name), new HashSet<>(), 1, spawnInWorld, usePokemonInCapsule);
+	}
+
 
 	public RksRecipeJsonBuilder key(SpeciesKey key) {
 		this.speciesKey = key;

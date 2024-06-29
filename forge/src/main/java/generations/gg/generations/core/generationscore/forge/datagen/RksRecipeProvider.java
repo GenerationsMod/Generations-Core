@@ -310,7 +310,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
 
 
     private void createParadox(String name, String toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
-        RksRecipeJsonBuilder.create(name)
+        RksRecipeJsonBuilder.create(name, false, true)
                 .input('A', new PokemonIngredient(toBeConverted, false))
                 .input('B', item)
                 .pattern("AB")
@@ -319,7 +319,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     }
 
     private void createFossil(RegistrySupplier<Item> item, String name, Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(name)
+        RksRecipeJsonBuilder.create(name, false, false)
                 .pattern("A")
                 .input('A', item.get())
                 .criterion(item.getId().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item.get()))

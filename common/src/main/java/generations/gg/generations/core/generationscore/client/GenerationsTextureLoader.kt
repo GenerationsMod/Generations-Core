@@ -25,9 +25,7 @@ object GenerationsTextureLoader : ITextureLoader() {
     val REGULAR: MutableMap<String, ITexture> = HashMap()
     val RARE_CANDY = FileToIdConverter("textures", "rare_candy_texture.json")
 
-    init {
-        setInstance(this)
-    }
+    init {}
 
     fun initialize(manager: ResourceManager) {
         clear()

@@ -1,5 +1,13 @@
 {
   "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "generations_core:item/time_capsule_with_pokemon",
+      "predicate": {
+        "generations_core:has_pokemon": 1.0
+      }
+    }
+  ],
   "textures": {
     "layer0": "generations_core:item/player_items/time_capsule"
   }

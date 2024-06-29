@@ -19,6 +19,8 @@
   "processingTime": 240,
   "result": {
     "type": "generations_core:pokemon",
-    "species": "cobblemon:walkingwake"
+    "spawnInWorld": false,
+    "species": "cobblemon:walkingwake",
+    "usePokemonInCapsule": true
   }
 }

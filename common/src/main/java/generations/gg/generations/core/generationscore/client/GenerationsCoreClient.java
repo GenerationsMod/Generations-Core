@@ -22,6 +22,7 @@ import generations.gg.generations.core.generationscore.GenerationsDataProvider;
 import generations.gg.generations.core.generationscore.client.model.RareCandyAnimationFactory;
 import generations.gg.generations.core.generationscore.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.client.model.inventory.GenericChestItemStackRenderer;
+import generations.gg.generations.core.generationscore.client.render.TimeCapsuleItemRenderer;
 import generations.gg.generations.core.generationscore.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.client.render.entity.*;
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
@@ -32,10 +33,7 @@ import generations.gg.generations.core.generationscore.client.screen.container.*
 import generations.gg.generations.core.generationscore.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.MelodyFluteItem;
-import generations.gg.generations.core.generationscore.world.item.MoveTeachingItem;
-import generations.gg.generations.core.generationscore.world.item.NpcPathTool;
+import generations.gg.generations.core.generationscore.world.item.*;
 import generations.gg.generations.core.generationscore.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines;
@@ -43,6 +41,7 @@ import generations.gg.generations.core.generationscore.world.level.block.Generat
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericChestBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
+import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import gg.generations.rarecandy.renderer.rendering.RenderStage;
 import kotlin.Unit;
@@ -127,6 +126,11 @@ public class GenerationsCoreClient {
             }
         }
 
+        ITextureLoader.setInstance(GenerationsTextureLoader.INSTANCE);
+
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.TIME_CAPSULE.get(), new TimeCapsuleItemRenderer());
+
+
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
         RareCandy.DEBUG_THREADS = true;
@@ -209,36 +213,31 @@ public class GenerationsCoreClient {
             else return 0;
         });
 
-        ItemPropertiesRegistry.register(GenerationsShrines.CELESTIAL_ALTAR.get(), GenerationsCore.id("time"), new ClampedItemPropertyFunction() {
-            @Override
-            public float call(ItemStack itemStack, @Nullable ClientLevel clientLevel, @Nullable LivingEntity livingEntity, int i) {
-                return ClampedItemPropertyFunction.super.call(itemStack, clientLevel, livingEntity, i);
-            }
+        ItemPropertiesRegistry.register(GenerationsShrines.CELESTIAL_ALTAR.get(), GenerationsCore.id("time"), (itemStack, clientLevel, livingEntity, i) -> {
+                Entity entity = livingEntity != null ? livingEntity : itemStack.getEntityRepresentation();
+                if (entity == null) {
+                    return 0.0F;
+                } else {
+                    if (clientLevel == null && entity.level() instanceof ClientLevel level) {
+                        clientLevel = level;
+                    }
 
-            public float unclampedCall(ItemStack itemStack, @Nullable ClientLevel clientLevel, @Nullable LivingEntity livingEntity, int i) {
-                    Entity entity = livingEntity != null ? livingEntity : itemStack.getEntityRepresentation();
-                    if (entity == null) {
+                    if (clientLevel == null) {
                         return 0.0F;
                     } else {
-                        if (clientLevel == null && entity.level() instanceof ClientLevel level) {
-                            clientLevel = level;
-                        }
-
-                        if (clientLevel == null) {
-                            return 0.0F;
+                        double d;
+                        if (clientLevel.dimensionType().natural()) {
+                            d = TimeRange.Companion.getTimeRanges().get("day").contains((int) clientLevel.dayTime()) ? 0.1f : 0.2f;
                         } else {
-                            double d;
-                            if (clientLevel.dimensionType().natural()) {
-                                d = TimeRange.Companion.getTimeRanges().get("day").contains((int) clientLevel.dayTime()) ? 0.1f : 0.2f;
-                            } else {
-                                d = 0F;
-                            }
-
-                            return (float)d;
+                            d = 0F;
                         }
+
+                        return (float)d;
                     }
                 }
-        });
+            });
+
+        ItemPropertiesRegistry.register(GenerationsItems.TIME_CAPSULE.get(), GenerationsCore.id("has_pokemon"), (itemStack, clientLevel, livingEntity, i) -> TimeCapsule.Companion.getPokemon(itemStack).isEmpty() ? 0f : 1f);
 
 //        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("lit"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);
 

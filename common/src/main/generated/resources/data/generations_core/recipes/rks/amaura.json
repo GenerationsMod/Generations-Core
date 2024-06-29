@@ -13,6 +13,7 @@
   "processingTime": 240,
   "result": {
     "type": "generations_core:pokemon",
+    "spawnInWorld": false,
     "species": "cobblemon:amaura"
   }
 }

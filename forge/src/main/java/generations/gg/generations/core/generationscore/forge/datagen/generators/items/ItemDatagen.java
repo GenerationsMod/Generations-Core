@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -408,7 +409,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.KEY_STONE.get(), "player_items/");
         createItem(GenerationsItems.Z_POWER_RING.get(), "player_items/");
         createItem(GenerationsItems.Z_RING.get(), "player_items/");
-        createItem(GenerationsItems.TIME_CAPSULE.get(), "player_items/");
+
         /*
         createItem(GenerationsItems.RED_BIKE.get(), "player_items/");
         createItem(GenerationsItems.ORANGE_BIKE.get(), "player_items/");
@@ -957,6 +958,7 @@ public class ItemDatagen extends ItemModelProvider {
         createCurry();
         createImbuedFlute();
         createCelestialAltar();
+        createTimeCapsule();
         createTm(GenerationsItems.CUSTOM_TM);
         createTm(GenerationsItems.TM_1);
         createTm(GenerationsItems.TM_2);
@@ -1300,6 +1302,12 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ROOT_FOSSIL.get(), "fossils/");
         createItem(GenerationsItems.SAIL_FOSSIL.get(), "fossils/");
         createItem(GenerationsItems.SKULL_FOSSIL.get(), "fossils/");
+    }
+
+    private void createTimeCapsule() {
+        var model = createItem(GenerationsItems.TIME_CAPSULE.get(), "player_items/");
+        ItemModelBuilder typeModel = this.getBuilder("item/time_capsule_with_pokemon").parent(new ModelFile.UncheckedModelFile("minecraft:builtin/entity"));
+        model.override().model(typeModel).predicate(GenerationsCore.id("has_pokemon"), 1f).end();
     }
 
 //    private void createDyedGroupItem(DyedGroup<?, ?> group, String name) {
