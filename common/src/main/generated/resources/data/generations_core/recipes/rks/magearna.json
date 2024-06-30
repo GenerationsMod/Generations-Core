@@ -1,0 +1,29 @@
+{
+  "type": "generations_core:rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "B": {
+      "type": "generations_core:damage",
+      "damage": 100,
+      "item": "generations_core:soul_heart"
+    },
+    "C": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "CAC",
+    "ABA",
+    "CAC"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:pokemon",
+    "species": "cobblemon:magearna"
+  },
+  "speciesKey": "cobblemon:magearna[]"
+}

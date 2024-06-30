@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:rks/magearna"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "soul_heart": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:soul_heart"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "soul_heart",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:rks/magearna"
+    ]
+  },
+  "sends_telemetry_event": true
+}

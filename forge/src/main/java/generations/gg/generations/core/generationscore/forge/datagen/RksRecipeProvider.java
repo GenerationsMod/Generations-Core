@@ -10,6 +10,7 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
 import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.recipe.DamageIngredient;
 import generations.gg.generations.core.generationscore.world.recipe.PokemonIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -83,6 +84,17 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .input('B', ORB.get())
                 .criterion("heart_scale", InventoryChangeTrigger.TriggerInstance.hasItems(HEART_SCALE.get()))
                 .offerTo(exporter, GenerationsCore.id("soul_heart"));
+
+        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA)
+                .key(LegendKeys.MAGEARNA)
+                .pattern("CAC")
+                .pattern("ABA")
+                .pattern("CAC")
+                .input('A', Items.NETHERITE_INGOT)
+                .input('B', new DamageIngredient(SOUL_HEART.get(), 100))
+                .input('C', Items.IRON_INGOT)
+                .criterion("soul_heart", InventoryChangeTrigger.TriggerInstance.hasItems(SOUL_HEART.get()))
+                .offerTo(exporter, GenerationsCore.id("magearna"));
 
 
 //        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA.createProperties(70))
