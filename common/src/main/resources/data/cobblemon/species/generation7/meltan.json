@@ -68,7 +68,16 @@
   "pokedex": [
     "cobblemon.species.meltan.desc"
   ],
-  "evolutions": [],
+  "evolutions": [
+    {
+      "id": "meltan_box",
+      "variant": "item_interact",
+      "result": "melmetal",
+      "consumeHeldItem": false,
+      "requirements": [],
+      "requiredContext": "generations_core:meltan_box_charged"
+    }
+  ],
   "baseScale": 1,
   "hitbox": {
     "width": 1,

@@ -59,7 +59,7 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
             if (ItemStack.isSameItem(stack, chain)) return false;
             player.setItemInHand(hand, chain);
 
-            var succeeded = trySpawn(level, pos, handler, player);
+            var succeeded = trySpawn(state, level, pos, handler, player);
             if(succeeded) entity.sync();
             return succeeded;
         } else if (stack.getItem() instanceof CreationTrioItem && !handler.hasOrb(player)) {
@@ -68,7 +68,7 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
             if (ItemStack.isSameItem(stack, chain)) return false;
             player.setItemInHand(hand, chain);
 
-            var succeeded = trySpawn(level, pos, handler, player);
+            var succeeded = trySpawn(state, level, pos, handler, player);
             if(succeeded) entity.sync();
             return succeeded;
         } else if (stack.isEmpty()) {
