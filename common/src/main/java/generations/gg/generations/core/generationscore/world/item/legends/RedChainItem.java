@@ -23,7 +23,7 @@ public class RedChainItem extends EnchantableItem implements LangTooltip {
     @Override
     public int neededEnchantmentLevel(Player player) {
         var caught = GenerationsCore.CONFIG.caught;
-        if(caught.capped(player, LegendKeys.DIALGA) || caught.capped(player, LegendKeys.GIRATINA) || caught.capped(player, LegendKeys.PALKIA)) return super.neededEnchantmentLevel(player);
+        if(!caught.capped(player, LegendKeys.DIALGA) || !caught.capped(player, LegendKeys.GIRATINA) || !caught.capped(player, LegendKeys.PALKIA)) return super.neededEnchantmentLevel(player);
         else return 0;
     }
 

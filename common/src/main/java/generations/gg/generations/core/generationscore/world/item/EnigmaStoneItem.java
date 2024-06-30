@@ -48,11 +48,11 @@ public class EnigmaStoneItem extends ItemWithLangTooltipImpl implements PostBatt
     public static DialogueGraph generateGraph(Player player) {
         var map = new HashMap<String, AbstractNode>();
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.LATIAS)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.LATIAS)) {
             map.put("Latias", generateEons("latias"));
         }
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.LATIOS)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.LATIOS)) {
             map.put("Latios", generateEons("latios"));
         }
 

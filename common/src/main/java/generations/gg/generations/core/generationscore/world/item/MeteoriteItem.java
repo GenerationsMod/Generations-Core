@@ -19,7 +19,7 @@ public class MeteoriteItem extends EnchantableItem implements LangTooltip {
     @Override
     public int neededEnchantmentLevel(Player player) {
         var caught = GenerationsCore.CONFIG.caught;
-        if(caught.capped(player, LegendKeys.DEOXYS)) return super.neededEnchantmentLevel(player);
+        if(!caught.capped(player, LegendKeys.DEOXYS)) return super.neededEnchantmentLevel(player);
         else return 0;
     }
     @Override

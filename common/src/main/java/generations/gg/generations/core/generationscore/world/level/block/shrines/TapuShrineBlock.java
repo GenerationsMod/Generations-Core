@@ -66,19 +66,19 @@ public class TapuShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     public static DialogueGraph generateGraph(Player player) {
         var map = new HashMap<String, AbstractNode>();
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_BULU)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_BULU)) {
             map.put("Tapu Bulu", generateTapu("tapubulu"));
         }
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_FINI)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_FINI)) {
             map.put("Tapu Fini", generateTapu("tapufini"));
         }
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_LELE)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_LELE)) {
             map.put("Tapu Lele", generateTapu("tapulele"));
         }
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_KOKO)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TAPU_KOKO)) {
             map.put("Tapu Koko", generateTapu("tapukoko"));
         }
 

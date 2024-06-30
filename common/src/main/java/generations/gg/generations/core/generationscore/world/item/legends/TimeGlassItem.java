@@ -30,7 +30,7 @@ public class TimeGlassItem extends ItemWithLangTooltipImpl implements PostBattle
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
-        if(!level.isClientSide() && GenerationsCore.CONFIG.caught.capped(player, LegendKeys.CELEBI)) {
+        if(!level.isClientSide() && !GenerationsCore.CONFIG.caught.capped(player, LegendKeys.CELEBI)) {
             int damage = stack.getDamageValue();
             if (damage >= stack.getMaxDamage()) {
                 if (level.getBiome(player.getOnPos()).is(Biomes.FLOWER_FOREST)) {

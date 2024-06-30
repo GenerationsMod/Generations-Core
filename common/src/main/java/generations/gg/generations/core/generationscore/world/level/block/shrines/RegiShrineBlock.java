@@ -66,7 +66,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        if (!level.isClientSide() && player.getItemInHand(hand).getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesKey().equals(species) && GenerationsCore.CONFIG.caught.capped(player, species)) {
+        if (!level.isClientSide() && player.getItemInHand(hand).getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesKey().equals(species) && !GenerationsCore.CONFIG.caught.capped(player, species)) {
             List<BlockPos> blockPos = searchForBlock(level, pos, 15, 1, RegiShrineBlock::isPillar);
 
             if (!blockPos.isEmpty()) {

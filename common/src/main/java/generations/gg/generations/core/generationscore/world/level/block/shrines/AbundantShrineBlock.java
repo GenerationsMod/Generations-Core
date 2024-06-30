@@ -59,19 +59,19 @@ public class AbundantShrineBlock extends ShrineBlock<AbundantShrineBlockEntity> 
     public static DialogueGraph generateGraph(Player player) {
         var map = new HashMap<String, AbstractNode>();
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TORNADUS)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.TORNADUS)) {
             map.put("Tornadus", generateTapu("tornadus"));
         }
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.THUNDURUS)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.THUNDURUS)) {
             map.put("Thunderus", generateTapu("thundurus"));
         }
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.LANDORUS)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.LANDORUS)) {
             map.put("Landorus", generateTapu("landorus"));
         }
 
-        if(GenerationsCore.CONFIG.caught.capped(player, LegendKeys.ENAMORUS)) {
+        if(!GenerationsCore.CONFIG.caught.capped(player, LegendKeys.ENAMORUS)) {
             map.put("Enamorus", generateTapu("enamorus"));
         }
 

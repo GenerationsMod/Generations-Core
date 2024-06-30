@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
-    public static int MAX_DAMAGE = 1;
+    public static int MAX_DAMAGE = 250;
 
     public MelodyFluteItem(Properties properties) {
         super(properties.durability(MAX_DAMAGE));
