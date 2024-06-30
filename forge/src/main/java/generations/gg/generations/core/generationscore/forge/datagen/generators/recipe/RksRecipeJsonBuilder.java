@@ -204,10 +204,10 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 		return this;
 	}
 
-	class RksRecipeJsonProvider implements FinishedRecipe {
+	static class RksRecipeJsonProvider implements FinishedRecipe {
 		private final ResourceLocation recipeId;
 		private final RksResult<?> output;
-		private final boolean consumesTimeCapsules1;
+		private final boolean consumesTimeCapsules;
 		private final String group;
 		private final List<String> pattern;
 		private final Map<Character, Ingredient> inputs;
@@ -220,7 +220,7 @@ public class RksRecipeJsonBuilder extends CraftingRecipeBuilder {
 		public RksRecipeJsonProvider(ResourceLocation recipeId, RksResult<?> output, boolean consumesTimeCapsules, String group, List<String> pattern, Map<Character, Ingredient> inputs, Advancement.Builder advancementBuilder, ResourceLocation advancementId, float experience, int processingTime, SpeciesKey speciesKey) {
 			this.recipeId = recipeId;
 			this.output = output;
-			this.consumesTimeCapsules1 = consumesTimeCapsules;
+			this.consumesTimeCapsules = consumesTimeCapsules;
 			this.group = group;
 			this.pattern = pattern;
 			this.inputs = inputs;

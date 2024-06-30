@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.world.entity.block.Pokemo
 import generations.gg.generations.core.generationscore.world.item.legends.RegiKeyItem;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsVoxelShapes;
+import generations.gg.generations.core.generationscore.world.level.block.UnownBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericShrineBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.ShrineBlockEntity;
@@ -28,6 +29,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -69,15 +71,15 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
             if (!blockPos.isEmpty()) {
                 List<BlockPos> list = checkForUnownSequence(level, blockPos.get(0));
-                if (!list.isEmpty() && level.getBlockEntity(pos) instanceof ShrineBlockEntity shrine && isActive(state) == ActivationState.OFF) {
-                    toggleActive(level, pos);
+                if (!list.isEmpty() && level.getBlockEntity(pos) instanceof ShrineBlockEntity shrine/* && isActive(state) == ActivationState.OFF*/) {
+//                    toggleActive(level, pos);
 
-                    ScheduledTask.schedule(() -> {
-                        list.forEach(a -> level.destroyBlock(a, false));
+//                    ScheduledTask.schedule(() -> {
+                        list.stream().map(BlockPos::above).forEach(a -> level.destroyBlock(a, false));
                         player.getItemInHand(hand).shrink(1);
                         PokemonUtil.spawn(species.createProperties(70), level, shrine.getBlockPos());
-                        toggleActive(level, pos);
-                    }, 200);
+//                        toggleActive(level, pos);
+//                    }, 200);
 
 //                    shrine.toggleActive();
 
@@ -147,7 +149,9 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     }
 
     private static boolean isPillar(Level level, BlockPos pos) {
-        return level.getBlockState(pos).is(GenerationsBlockTags.REGI_STANDS);
+        var block = level.getBlockState(pos);
+
+        return block.is(GenerationsBlockTags.REGI_STANDS) && level.getBlockState(pos.above()).getBlock() instanceof UnownBlock;
     }
 
     private static String getSymbol(Level level, BlockPos pos) {
@@ -158,40 +162,42 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
         return cipher.substring(i, i + 3);
     }
     public static Optional<String> symbolFromState(BlockState state) {
-        Block block = state.getBlock();
+        return Optional.of(state.getBlock()).filter(a -> a instanceof UnownBlock).map(a -> ((UnownBlock) a).getGlyph());
 
-        Predicate<RegistrySupplier<Block>> predicate = b -> b.get().equals(block);
-
-        if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_A)) return Optional.of("A");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_B)) return Optional.of("B");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_C)) return Optional.of("C");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_D)) return Optional.of("D");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_E)) return Optional.of("E");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_F)) return Optional.of("F");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_G)) return Optional.of("G");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_H)) return Optional.of("H");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_I)) return Optional.of("I");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_J)) return Optional.of("J");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_K)) return Optional.of("K");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_L)) return Optional.of("L");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_M)) return Optional.of("M");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_N)) return Optional.of("N");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_O)) return Optional.of("O");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_P)) return Optional.of("P");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_Q)) return Optional.of("Q");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_R)) return Optional.of("R");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_S)) return Optional.of("S");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_T)) return Optional.of("T");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_U)) return Optional.of("U");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_V)) return Optional.of("V");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_W)) return Optional.of("W");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_X)) return Optional.of("X");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_Y)) return Optional.of("Y");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_Z)) return Optional.of("Z");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_BLANK)) return Optional.of(" ");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK)) return Optional.of("?");
-        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK)) return Optional.of("!");
-        else return Optional.empty();
+//        System.out.println("BlargBlargBlarg: " + block.builtInRegistryHolder().key().location());
+//
+//        Predicate<RegistrySupplier<Block>> predicate = b -> b.get().equals(block);
+//
+//        if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_A)) return Optional.of("A");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_B)) return Optional.of("B");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_C)) return Optional.of("C");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_D)) return Optional.of("D");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_E)) return Optional.of("E");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_F)) return Optional.of("F");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_G)) return Optional.of("G");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_H)) return Optional.of("H");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_I)) return Optional.of("I");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_J)) return Optional.of("J");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_K)) return Optional.of("K");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_L)) return Optional.of("L");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_M)) return Optional.of("M");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_N)) return Optional.of("N");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_O)) return Optional.of("O");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_P)) return Optional.of("P");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_Q)) return Optional.of("Q");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_R)) return Optional.of("R");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_S)) return Optional.of("S");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_T)) return Optional.of("T");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_U)) return Optional.of("U");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_V)) return Optional.of("V");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_W)) return Optional.of("W");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_X)) return Optional.of("X");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_Y)) return Optional.of("Y");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_Z)) return Optional.of("Z");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_BLANK)) return Optional.of(" ");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK)) return Optional.of("?");
+//        else if (predicate.test(GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK)) return Optional.of("!");
+//        else return Optional.empty();
     }
 
 //    public static BlockState stateFromSymbol(String character) {
