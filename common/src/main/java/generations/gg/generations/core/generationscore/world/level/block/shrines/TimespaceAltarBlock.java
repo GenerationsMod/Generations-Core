@@ -77,10 +77,10 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
         } else return false;
     }
 
-    public static boolean trySpawn(Level level, BlockPos pos, TimeSpaceAltarBlockEntity.TimeSpaceAltarItemStackHandler handler, ServerPlayer player) {
+    public static boolean trySpawn(BlockState state, Level level, BlockPos pos, TimeSpaceAltarBlockEntity.TimeSpaceAltarItemStackHandler handler, ServerPlayer player) {
         if (handler.shouldSpawn(player)) {
             var id = ((CreationTrioItem) handler.getItem(0).getItem()).getSpeciesId();
-            PokemonUtil.spawn(GenerationsUtils.parseProperties(id.species().getPath()), level, pos);
+            PokemonUtil.spawn(id.createPokemon(70), level, pos, state.getValue(FACING).toYRot());
             RedChainItem.incrementUsage(handler.getItem(1));
             if (RedChainItem.getUses(handler.getItem(1)) >= RedChainItem.MAX_USES)
                 handler.setItem(1, ItemStack.EMPTY);
