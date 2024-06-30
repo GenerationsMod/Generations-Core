@@ -35,6 +35,15 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
         return properties;
     }
 
+    public Pokemon createPokemon(int level) {
+        var properties = createProperties();
+        properties.setLevel(level);
+        var pokemon = properties.create();
+        pokemon.setAspects(aspects());
+        return pokemon;
+    }
+
+
     @Override
     public String toString() {
         String setString = aspects != null ? aspects.stream().collect(Collectors.joining(",", "[", "]")) : "";

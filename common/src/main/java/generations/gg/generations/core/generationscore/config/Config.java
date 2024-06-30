@@ -11,6 +11,9 @@ import java.time.Duration;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static generations.gg.generations.core.generationscore.config.LegendKeys.*;
+import static generations.gg.generations.core.generationscore.config.LegendKeys.HEATRAN;
+
 public class Config {
     public VanillaTabsToAdd addItemsToVanillaTabs = new VanillaTabsToAdd();
     public Duration lootTime = Duration.ofHours(1);
@@ -28,50 +31,50 @@ public class Config {
     public static class Caught {
         public Set<String> trackedAspects = Set.of("alola", "galarian");
         public Multiset<SpeciesKey> limits = ImmutableMultiset.<SpeciesKey>builder()
-//                .setCount(ARTICUNO, 2)
-//                .setCount(GALARIAN_ARTICUNO, 2)
-//                .setCount(ZAPDOS, 2)
-//                .setCount(GALARIAN_ZAPDOS, 2)
-//                .setCount(MOLTRES, 2)
-//                .setCount(GALARIAN_MOLTRES, 2)
-//                .setCount(MEWTWO, 2)
-//                .setCount(SUICUNE, 2)
-//                .setCount(ENTEI, 2)
-//                .setCount(RAIKOU, 2)
-//                .setCount(LUGIA, 2)
-//                .setCount(HO_OH, 2)
-//                .setCount(CELEBI, 2)
-//                .setCount(REGIROCK, 2)
-//                .setCount(REGICE, 2)
-//                .setCount(REGIROCK, 2)
-//                .setCount(REGISTEEL, 2)
-//                .setCount(REGIELEKI, 2)
-//                .setCount(REGIDRAGO, 2)
-//                .setCount(LATIAS, 2)
-//                .setCount(LATIOS, 2)
-//                .setCount(KYORGRE, 2)
-//                .setCount(GROUDON, 2)
-//                .setCount(RAYQUAZA, 2)
-//                .setCount(DEOXYS, 8)
-//                .setCount(UXIE, 2)
-//                .setCount(AZELF, 2)
-//                .setCount(MESPRIT, 2)
-//                .setCount(DIALGA, 2)
-//                .setCount(PALKIA, 2)
-//                .setCount(GIRATINA, 2)
-//                .setCount(HEATRAN, 2)
-//                .setCount(REGIGIGAS, 2)
-//                .setCount(CRESSELIA, 1)
-//                .setCount(DARKRAI, 1)
-//                .setCount(MANAPHY, 1)
-//                .setCount(MANAPHY, 1)
-//                .setCount(TORNADUS, 1)
-//                .setCount(LATIAS, 1)
-//                .setCount(LATIAS, 1)
+                .setCount(ARTICUNO, 2)
+                .setCount(GALARIAN_ARTICUNO, 2)
+                .setCount(ZAPDOS, 2)
+                .setCount(GALARIAN_ZAPDOS, 2)
+                .setCount(MOLTRES, 2)
+                .setCount(GALARIAN_MOLTRES, 2)
+                .setCount(MEWTWO, 2)
+                .setCount(SUICUNE, 2)
+                .setCount(ENTEI, 2)
+                .setCount(RAIKOU, 2)
+                .setCount(LUGIA, 2)
+                .setCount(HO_OH, 2)
+                .setCount(CELEBI, 2)
+                .setCount(REGIROCK, 2)
+                .setCount(REGICE, 2)
+                .setCount(REGIROCK, 2)
+                .setCount(REGISTEEL, 2)
+                .setCount(REGIELEKI, 2)
+                .setCount(REGIDRAGO, 2)
+                .setCount(LATIAS, 2)
+                .setCount(LATIOS, 2)
+                .setCount(KYORGRE, 2)
+                .setCount(GROUDON, 2)
+                .setCount(RAYQUAZA, 2)
+                .setCount(DEOXYS, 8)
+                .setCount(UXIE, 2)
+                .setCount(AZELF, 2)
+                .setCount(MESPRIT, 2)
+                .setCount(DIALGA, 2)
+                .setCount(PALKIA, 2)
+                .setCount(GIRATINA, 2)
+                .setCount(HEATRAN, 2)
+                .setCount(REGIGIGAS, 2)
+                .setCount(CRESSELIA, 1)
+                .setCount(DARKRAI, 1)
+                .setCount(MANAPHY, 1)
+                .setCount(MANAPHY, 1)
+                .setCount(TORNADUS, 1)
+                .setCount(LATIAS, 1)
+                .setCount(LATIAS, 1)
                 .build();
 
         public boolean capped(Player player, SpeciesKey speciesKey) {
-            if(!limits.contains(speciesKey)) return true;
+            if(!limits.contains(speciesKey)) return false;
 
             var limit = limits.count(speciesKey);
 

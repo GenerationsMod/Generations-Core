@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import dev.architectury.registry.registries.DeferredSupplier;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
@@ -63,7 +64,7 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
                         toggleActive(level, pos);
 
-                        PokemonUtil.spawn(pokemonProperties, level, pos);
+                        PokemonUtil.spawn(pokemonProperties, level, pos, state.getValue(FACING).toYRot());
                     }, 100);
 
                     return InteractionResult.SUCCESS;
@@ -74,8 +75,8 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
         return InteractionResult.PASS;
     }
 
-    public PokemonProperties getProperties(ItemStack stack) {
-        return stack.getItem() instanceof WingItem wing ? wing.getKey().createProperties(70) : null;
+    public Pokemon getProperties(ItemStack stack) {
+        return stack.getItem() instanceof WingItem wing ? wing.getKey().createPokemon(70) : null;
     }
 
     @Override
