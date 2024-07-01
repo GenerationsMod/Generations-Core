@@ -1,10 +1,14 @@
 package generations.gg.generations.core.generationscore.compat;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
+import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.level.block.FlabebeFlowerBlock;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DispenserBlock;
 import org.jetbrains.annotations.NotNull;
 
 public class VanillaCompat {
@@ -26,6 +30,15 @@ public class VanillaCompat {
 			if (block.get() instanceof FlabebeFlowerBlock)
 				registerCompostables(block.get(), 0.65F);
 		});
+	}
+
+	public static void dispenserBehavior() {
+		DispenserBlock.registerBehavior(GenerationsItems.GHOST_BOAT_ITEM.get(), new BoatDispenseItemBehavior(GenerationsBoatEntity.Type.GHOST));
+		DispenserBlock.registerBehavior(GenerationsItems.GHOST_CHEST_BOAT_ITEM.get(), new BoatDispenseItemBehavior(GenerationsBoatEntity.Type.GHOST, true));
+		DispenserBlock.registerBehavior(GenerationsItems.ULTRA_DARK_BOAT_ITEM.get(), new BoatDispenseItemBehavior(GenerationsBoatEntity.Type.ULTRA_DARK));
+		DispenserBlock.registerBehavior(GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get(), new BoatDispenseItemBehavior(GenerationsBoatEntity.Type.ULTRA_DARK, true));
+		DispenserBlock.registerBehavior(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get(), new BoatDispenseItemBehavior(GenerationsBoatEntity.Type.ULTRA_JUNGLE));
+		DispenserBlock.registerBehavior(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get(), new BoatDispenseItemBehavior(GenerationsBoatEntity.Type.ULTRA_JUNGLE, true));
 	}
 
 	/**

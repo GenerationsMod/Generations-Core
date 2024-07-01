@@ -71,6 +71,7 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
         GenerationsPlacedFeatures.init();
         GenerationsFabricBiomemodifiers.generateOres();
         registerEntityAttributes();
+        VanillaCompat.dispenserBehavior();
     }
 
     @Override

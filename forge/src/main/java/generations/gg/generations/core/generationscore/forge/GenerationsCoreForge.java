@@ -18,11 +18,7 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import net.minecraft.ChatFormatting;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.PathPackResources;
@@ -31,7 +27,6 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
 import net.minecraft.world.flag.FeatureFlagSet;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddPackFindersEvent;
@@ -45,6 +40,7 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLLoader;
 import net.minecraftforge.fml.loading.FMLPaths;
@@ -55,11 +51,7 @@ import org.jetbrains.annotations.NotNull;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 /**
  * Forge Main class for GenerationsCore.
@@ -84,6 +76,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         GenerationsCreativeTabsImpl.init(MOD_BUS);
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
+        MOD_BUS.addListener(this::postInit);
         MOD_BUS.addListener(this::createEntityAttributes);
         GenerationsCore.init(this);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
@@ -171,6 +164,10 @@ public class GenerationsCoreForge implements GenerationsImplementation {
                 mutableBlockEntityType.addBlock(genericModelBlock);
             }
         });
+    }
+
+    private void postInit(final FMLLoadCompleteEvent event) {
+        event.enqueueWork(VanillaCompat::dispenserBehavior);
     }
 
     private void onDataPackSync(OnDatapackSyncEvent event) {
