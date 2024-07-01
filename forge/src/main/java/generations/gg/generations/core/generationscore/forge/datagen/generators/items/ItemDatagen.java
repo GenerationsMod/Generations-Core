@@ -959,6 +959,7 @@ public class ItemDatagen extends ItemModelProvider {
         createImbuedFlute();
         createCelestialAltar();
         createTimeCapsule();
+        createLunarShrine();
         createTm(GenerationsItems.CUSTOM_TM);
         createTm(GenerationsItems.TM_1);
         createTm(GenerationsItems.TM_2);
@@ -1389,17 +1390,15 @@ public class ItemDatagen extends ItemModelProvider {
     }
 
     private void createLunarShrine() {
-        ItemModelBuilder model = createItemBlockDir(GenerationsShrines.CELESTIAL_ALTAR.get().asItem(), "shrines");
+        ItemModelBuilder model = createItemBlockDir(GenerationsShrines.LUNAR_SHRINE.get().asItem(), "shrines");
 
         BiConsumer<String, Float> consumer = (name, i) -> {
-            if(!name.isEmpty()) name = "_" + name;
-            ItemModelBuilder typeModel = generated("item/blocks/shrines/celestial_altar" + name, GenerationsCore.id("item/blocks/shrines/celestial_altar" + name));
-            model.override().model(typeModel).predicate(GenerationsCore.id("time"), i).end();
+            ItemModelBuilder typeModel = generated("item/blocks/shrines/" + name, GenerationsCore.id("item/blocks/shrines/" + name));
+            model.override().model(typeModel).predicate(GenerationsCore.id("light_level"), i).end();
         };
 
-//        consumer.accept("", 0f);
-        consumer.accept("sun", 1f);
-        consumer.accept("moon", 2f);
+        consumer.accept("darkrai_shrine", 0.0f);
+        consumer.accept("cresselia_shrine", 0.1f);
     }
 
     private ResourceLocation getKey(Item item) {

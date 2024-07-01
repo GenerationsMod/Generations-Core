@@ -237,6 +237,16 @@ public class GenerationsCoreClient {
                 }
             });
 
+        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("light_level"), (itemStack, clientLevel, livingEntity, i) -> {
+            Entity entity = livingEntity != null ? livingEntity : itemStack.getEntityRepresentation();
+            if (entity == null) return 0.0F;
+            else {
+                if (clientLevel == null && entity.level() instanceof ClientLevel level) clientLevel = level;
+                return clientLevel == null ? 0.0F : clientLevel.getMaxLocalRawBrightness(entity.blockPosition()) >= 10 ? 0.1f : 0F;
+            }
+        });
+
+
         ItemPropertiesRegistry.register(GenerationsItems.TIME_CAPSULE.get(), GenerationsCore.id("has_pokemon"), (itemStack, clientLevel, livingEntity, i) -> TimeCapsule.Companion.getPokemon(itemStack).isEmpty() ? 0f : 1f);
 
 //        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("lit"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);

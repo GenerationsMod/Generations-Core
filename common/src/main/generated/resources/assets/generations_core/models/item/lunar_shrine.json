@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "generations_core:item/blocks/shrines/darkrai_shrine",
+      "predicate": {
+        "generations_core:light_level": 0.0
+      }
+    },
+    {
+      "model": "generations_core:item/blocks/shrines/cresselia_shrine",
+      "predicate": {
+        "generations_core:light_level": 0.1
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "generations_core:item/placeholder"
+  }
+}
