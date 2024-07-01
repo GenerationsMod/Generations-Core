@@ -1,13 +1,14 @@
 package generations.gg.generations.core.generationscore.world.level.block.utilityblocks;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.world.level.block.entities.DyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -61,7 +62,7 @@ public abstract class DyeableBlock<T extends ModelProvidingBlockEntity, V extend
         if (!world.isClientSide() && handIn == InteractionHand.MAIN_HAND) {
             if (!tryDyeColor(state, world, pos, player, handIn, hit)) {
 
-                return serverUse(state, world, pos, player, handIn, hit);
+                return serverUse(state, (ServerLevel) world, pos, (ServerPlayer) player, handIn, hit);
             }
             else return InteractionResult.SUCCESS;
         }
@@ -136,7 +137,7 @@ public abstract class DyeableBlock<T extends ModelProvidingBlockEntity, V extend
         return new ItemStack(getItemFromDyeColor(getColor()));
     }
 
-    protected InteractionResult serverUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+    protected InteractionResult serverUse(BlockState state, ServerLevel world, BlockPos pos, ServerPlayer player, InteractionHand handIn, BlockHitResult hit) {
         return InteractionResult.PASS;
     }
 
