@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "generations_core:temple_block"
+    },
+    "Y": {
+      "type": "generations_core:pokemon_item",
+      "aspects": [
+        "glyph-h"
+      ],
+      "fabric:type": "generations_core:pokemon_item",
+      "species": "cobblemon:unown"
+    }
+  },
+  "pattern": [
+    "XY"
+  ],
+  "result": {
+    "item": "generations_core:unown_block_h"
+  },
+  "show_notification": true
+}

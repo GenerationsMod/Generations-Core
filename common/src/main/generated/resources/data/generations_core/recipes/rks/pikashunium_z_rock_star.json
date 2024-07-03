@@ -7,10 +7,11 @@
       "item": "minecraft:netherite_scrap"
     },
     "B": {
-      "type": "generations_core:pokemon",
+      "type": "generations_core:time_capsule",
       "aspects": [
         "rock-star"
       ],
+      "fabric:type": "generations_core:time_capsule",
       "species": "minecraft:pikachu",
       "strictAspects": false
     },

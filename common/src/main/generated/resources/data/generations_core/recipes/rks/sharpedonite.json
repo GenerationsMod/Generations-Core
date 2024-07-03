@@ -7,8 +7,9 @@
       "item": "generations_core:key_stone"
     },
     "B": {
-      "type": "generations_core:pokemon",
+      "type": "generations_core:time_capsule",
       "aspects": [],
+      "fabric:type": "generations_core:time_capsule",
       "species": "cobblemon:sharpedo",
       "strictAspects": false
     },

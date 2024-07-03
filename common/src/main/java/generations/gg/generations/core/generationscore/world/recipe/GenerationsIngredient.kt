@@ -26,10 +26,11 @@ interface GenerationsIngredient {
 
     fun toJson(obj: JsonObject) {
         obj.addProperty("type", GenerationsIngredidents.getId(this).toString())
+        obj.addProperty("fabric:type", GenerationsIngredidents.getId(this).toString())
     }
 
     val isSimple: Boolean
-        get() = true
+        get() = false
 
     fun asMinecraftIngredient(): Ingredient = GenerationsIngredidents.convert(this);
 }

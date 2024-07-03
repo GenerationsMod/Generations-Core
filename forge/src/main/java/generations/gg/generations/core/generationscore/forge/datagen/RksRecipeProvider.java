@@ -1,17 +1,14 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
 import com.cobblemon.mod.common.CobblemonItems;
-import com.cobblemon.mod.common.pokemon.Species;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
 import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.GenerationsRecipeProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
-import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.recipe.DamageIngredient;
-import generations.gg.generations.core.generationscore.world.recipe.PokemonIngredient;
+import generations.gg.generations.core.generationscore.world.recipe.TimeCapsuleIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -243,7 +240,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     private <E> void createZCyrstal(RegistrySupplier<Item> result, String pokemon, String aspects, Consumer<FinishedRecipe> exporter) {
         RksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
-                .input('B', new PokemonIngredient(new SpeciesKey(pokemon, Set.of(aspects)), false))
+                .input('B', new TimeCapsuleIngredient(new SpeciesKey(pokemon, Set.of(aspects)), false))
                 .input('X', Z_INGOT.get())
                 .pattern("XXX")
                 .pattern("ABA")
@@ -267,7 +264,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     private void createZCyrstal(RegistrySupplier<Item> result, String pokemon, boolean multi, Consumer<FinishedRecipe> exporter) {
         RksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
-                .input('B', new PokemonIngredient(pokemon, false))
+                .input('B', new TimeCapsuleIngredient(pokemon, false))
                 .input('X', Z_INGOT.get())
                 .pattern("XXX")
                 .pattern("ABA")
@@ -310,7 +307,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
 
         var builder = RksRecipeJsonBuilder.create(result.get())
                 .input('A', KEY_STONE.get())
-                .input('B', new PokemonIngredient(pokemon, false))
+                .input('B', new TimeCapsuleIngredient(pokemon, false))
                 .input('C', Items.NETHERITE_SCRAP);
         if(special != null) builder.input('D', item).pattern(" D ".toUpperCase());
         builder.pattern("ABC")
@@ -323,7 +320,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
 
     private void createParadox(String name, String toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
         RksRecipeJsonBuilder.create(name, false, true)
-                .input('A', new PokemonIngredient(toBeConverted, false))
+                .input('A', new TimeCapsuleIngredient(toBeConverted, false))
                 .input('B', item)
                 .pattern("AB")
                 .criterion(BuiltInRegistries.ITEM.getKey(item).getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item))

@@ -9,6 +9,7 @@
     "B": {
       "type": "generations_core:damage",
       "damage": 100,
+      "fabric:type": "generations_core:damage",
       "item": "generations_core:soul_heart"
     },
     "C": {
