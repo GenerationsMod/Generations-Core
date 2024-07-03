@@ -61,6 +61,7 @@ public class GenerationsBlockEntityModels {
     public static final ResourceLocation LIGHT_CRYSTAL = block("shrines/light_crystal.pk");
     public static final ResourceLocation DARK_CRYSTAL = block("shrines/dark_crystal.pk");
     public static final ResourceLocation SCARECROW = block("utility_blocks/scarecrow.pk");
+    public static final ResourceLocation PRISON_BOTTLE =  block("shrines/prison_bottle.pk");;
     public static ResourceLocation HO_OH_SHRINE = block("shrines/ho_oh_shrine.pk");
     public static ResourceLocation PC = block("utility_blocks/pc.pk");
 

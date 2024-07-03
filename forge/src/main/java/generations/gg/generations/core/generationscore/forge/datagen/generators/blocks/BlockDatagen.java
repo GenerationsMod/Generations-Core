@@ -10,6 +10,7 @@ import generations.gg.generations.core.generationscore.world.level.block.set.Gen
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.CelestialAltarBlock;
 import generations.gg.generations.core.generationscore.world.level.block.shrines.LunarShrineBlock;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.PrisonBottleStemBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.BoxBlock;
 import generations.gg.generations.core.generationscore.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.Direction;
@@ -232,7 +233,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
 
         GenerationsShrines.SHRINES.forEach(block -> {
             var block1 = block.get();
-            registerBlockItemParticle(block1, "shrines", !(block1 instanceof LunarShrineBlock || block1 instanceof CelestialAltarBlock));
+
+            if(block1 instanceof PrisonBottleStemBlock || block1 instanceof PrisonBottleBlock) registerBlockItemParticle(block1, "legend_items", true);
+            else registerBlockItemParticle(block1, "shrines", !(block1 instanceof LunarShrineBlock || block1 instanceof CelestialAltarBlock));
         });
         GenerationsUtilityBlocks.BALL_LOOTS.forEach(block -> registerBlockItemParticle(block.get(), "ball_loots", true));
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks");

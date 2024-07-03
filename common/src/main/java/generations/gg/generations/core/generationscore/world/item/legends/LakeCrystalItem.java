@@ -19,12 +19,13 @@ import org.jetbrains.annotations.NotNull;
 
 public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdatingItem, LangTooltip {
 
-    private final PokemonProperties pokemonProperties;
+    private final SpeciesKey pokemonProperties;
     private final SpeciesKey speciesKey;
 
-    public LakeCrystalItem(Properties properties, SpeciesKey speciesKey) {
+    public
+    LakeCrystalItem(Properties properties, SpeciesKey speciesKey) {
         super(properties);
-        this.pokemonProperties = GenerationsUtils.parseProperties(speciesKey.species().getPath());
+        this.pokemonProperties = speciesKey;
         this.speciesKey = speciesKey;
     }
 
@@ -39,7 +40,7 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
             ItemStack stack = player.getItemInHand(usedHand);
 
             if (!isEnchanted(stack) && stack.getDamageValue() >= getMaxDamage()) {
-                PokemonUtil.spawn(pokemonProperties, level, player.getOnPos());
+                PokemonUtil.spawn(pokemonProperties.createPokemon(70), level, player.getOnPos(), player.getYRot());
                 stack.getOrCreateTag().putBoolean("enchanted", true);
                 return InteractionResultHolder.success(stack);
             }

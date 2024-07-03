@@ -73,8 +73,6 @@
     "generations_core:sun_flute",
     "generations_core:lava_crystal",
     "generations_core:jewel_of_life",
-    "generations_core:prison_bottle_stem",
-    "generations_core:prison_bottle",
     "generations_core:mirror",
     "generations_core:unenchanted_iceroot_carrot",
     "generations_core:iceroot_carrot",
@@ -118,6 +116,8 @@
     "generations_core:yellow_petal",
     "generations_core:meteorite_shard",
     "generations_core:black_mane_hair",
-    "generations_core:white_mane_hair"
+    "generations_core:white_mane_hair",
+    "generations_core:prison_bottle_stem",
+    "generations_core:prison_bottle"
   ]
 }

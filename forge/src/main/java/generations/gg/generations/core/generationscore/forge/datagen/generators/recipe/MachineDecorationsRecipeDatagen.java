@@ -194,7 +194,7 @@ public class MachineDecorationsRecipeDatagen extends GenerationsRecipeProvider.P
                 .save(consumer);
 
         //Prison Bottle Stem
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsItems.PRISON_BOTTLE_STEM.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsShrines.PRISON_BOTTLE_STEM.get())
                 .define('R', GenerationsItems.RUBY.get())
                 .define('O', GenerationsItems.ORB.get())
                 .define('G', Items.GOLD_INGOT)

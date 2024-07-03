@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.world.level.block.generic
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.PrisonBottleStemBlock;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -150,6 +151,9 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
 
         createGenericRotationModelBlockTable(GenerationsUtilityBlocks.RKS_MACHINE.get());
         createGenericRotationModelBlockTable(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get());
+        createGenericRotationModelBlockTable(GenerationsShrines.PRISON_BOTTLE.get());
+        prisonBottleStem();
+
     }
 
     private void dropDisplayStandWithBall(Block block, Item item) {
@@ -290,5 +294,41 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         }
 
         add(block, LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f)).add(LootItem.lootTableItem(block).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(statePropertiesPredicate))))));
+    }
+
+    protected <T extends GenericRotatableModelBlock<?>> void prisonBottleStem() {
+        var block = GenerationsShrines.PRISON_BOTTLE_STEM.get();
+        var statePropertiesPredicate = StatePropertiesPredicate.Builder.properties();
+
+        if (block.getWidthProperty() != null) {
+            statePropertiesPredicate.hasProperty(block.getWidthProperty(), block.getBaseX());
+        }
+        if (block.getHeightProperty() != null) {
+            statePropertiesPredicate.hasProperty(block.getHeightProperty(), 0);
+        }
+        if (block.getLengthProperty() != null) {
+            statePropertiesPredicate.hasProperty(block.getLengthProperty(), block.getBaseZ());
+        }
+
+        var lootTable = this.applyExplosionCondition(block, LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1.0f))
+                .add(LootItem.lootTableItem(block)
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(statePropertiesPredicate))));
+
+        add(block, LootTable.lootTable()
+                .withPool(lootTable)
+                .withPool(ringLoot(PrisonBottleStemBlock.PrisonBottleState.RING_1, 1, statePropertiesPredicate))
+                .withPool(ringLoot(PrisonBottleStemBlock.PrisonBottleState.RING_2, 2, statePropertiesPredicate))
+                .withPool(ringLoot(PrisonBottleStemBlock.PrisonBottleState.RING_3, 3, statePropertiesPredicate))
+                .withPool(ringLoot(PrisonBottleStemBlock.PrisonBottleState.RING_4, 4, statePropertiesPredicate))
+                .withPool(ringLoot(PrisonBottleStemBlock.PrisonBottleState.RING_5, 5, statePropertiesPredicate))
+        );
+    }
+
+    public LootPool.Builder ringLoot(PrisonBottleStemBlock.PrisonBottleState state, int ring, StatePropertiesPredicate.Builder builder) {
+        return this.applyExplosionCondition(GenerationsItems.HOOPA_RING.get(), LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(ring))
+                .add(LootItem.lootTableItem(GenerationsItems.HOOPA_RING.get())
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(GenerationsShrines.PRISON_BOTTLE_STEM.get()).setProperties(builder.hasProperty(PrisonBottleStemBlock.STATE, state)))));
     }
 }

@@ -21,7 +21,6 @@ import net.minecraft.world.level.biome.Biomes;
 import org.jetbrains.annotations.NotNull;
 
 public class TimeGlassItem extends ItemWithLangTooltipImpl implements PostBattleUpdatingItem, LangTooltip {
-    private static final PokemonProperties properties = GenerationsUtils.parseProperties("celebi");
 
     public TimeGlassItem(Properties arg) {
         super(arg);
@@ -34,7 +33,7 @@ public class TimeGlassItem extends ItemWithLangTooltipImpl implements PostBattle
             int damage = stack.getDamageValue();
             if (damage >= stack.getMaxDamage()) {
                 if (level.getBiome(player.getOnPos()).is(Biomes.FLOWER_FOREST)) {
-                    PokemonUtil.spawn(properties, level, player.getOnPos());
+                    PokemonUtil.spawn(LegendKeys.CELEBI.createPokemon(70), level, player.getOnPos(), player.getYRot());
                     player.getItemInHand(usedHand).shrink(1);
                 } else player.displayClientMessage(Component.translatable("generations_core.timeglass.wrongbiome"), true);
             } else {

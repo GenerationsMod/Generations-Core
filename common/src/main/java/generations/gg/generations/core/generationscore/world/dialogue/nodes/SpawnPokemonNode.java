@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.world.dialogue.nodes;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
+import generations.gg.generations.core.generationscore.world.dialogue.DialogueManager;
 import generations.gg.generations.core.generationscore.world.dialogue.DialoguePlayer;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogic;
 import generations.gg.generations.core.generationscore.world.dialogue.nodes.spawning.LocationLogicTypes;
@@ -48,6 +49,7 @@ public class SpawnPokemonNode extends AbstractNode {
 
         PokemonUtil.spawn(properties, level, pos.createSupplier(serverPlayer).get(), yaw.createSupplier(serverPlayer).getAsFloat());
         dialoguePlayer.discard();
+        DialogueManager.DIALOGUE_MAP.remove(serverPlayer);
     }
 
     @Override

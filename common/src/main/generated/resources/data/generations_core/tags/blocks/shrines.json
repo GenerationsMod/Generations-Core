@@ -21,6 +21,8 @@
     "generations_core:registeel_shrine",
     "generations_core:regigigas_shrine",
     "generations_core:tao_trio_shrine",
-    "generations_core:tapu_shrine"
+    "generations_core:tapu_shrine",
+    "generations_core:prison_bottle_stem",
+    "generations_core:prison_bottle"
   ]
 }

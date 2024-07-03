@@ -3,12 +3,15 @@ package generations.gg.generations.core.generationscore.world.level.block;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.item.BlockItemWithLang;
+import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.world.item.GenericChestBlockItem;
 import generations.gg.generations.core.generationscore.world.level.block.decorations.PokecenterScarletSignBlock;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericChestBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
+import generations.gg.generations.core.generationscore.world.level.block.shrines.PrisonBottleStemBlock;
 import generations.gg.generations.core.generationscore.world.level.block.state.properties.GenerationsBlockSetTypes;
 import generations.gg.generations.core.generationscore.world.level.levelgen.GenerationsFeatures;
 import net.minecraft.core.registries.Registries;
@@ -20,8 +23,12 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
+
+import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.LEGENDARY_ITEMS;
+import static generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines.SHRINE_PROPERTIES;
 
 @SuppressWarnings("unused")
 public class GenerationsBlocks {
@@ -478,8 +485,12 @@ public class GenerationsBlocks {
     public static final RegistrySupplier<GenericChestBlock> MASTERBALL_CHEST = registerChestBlockItem("masterball_chest", () -> new GenericChestBlock(12, 8, "masterball_chest"));
 
     public static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
+        return registerBlockItem(name, blockSupplier, BlockItem::new, GenerationsBlocks.BLOCK_ITEMS);
+    }
+
+    public static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier, BiFunction<Block, Item.Properties, Item> function, DeferredRegister<Item> register) {
         RegistrySupplier<T> block = BLOCKS.register(name, blockSupplier);
-        register(name, properties -> new BlockItem(block.get(), properties));
+        register(name, properties -> function.apply(block.get(), properties), register);
         return block;
     }
 
@@ -502,7 +513,12 @@ public class GenerationsBlocks {
     }
 
     private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-        BLOCK_ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
+        register(name, properties -> itemSupplier.apply(new Item.Properties()), BLOCK_ITEMS);
+    }
+
+
+    private static void register(String name, Function<Item.Properties, Item> itemSupplier, DeferredRegister<Item> register) {
+        register.register(name, () -> itemSupplier.apply(new Item.Properties()));
     }
 
     public static void init() {

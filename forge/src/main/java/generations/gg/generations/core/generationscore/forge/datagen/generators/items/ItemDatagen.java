@@ -499,8 +499,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.LAVA_CRYSTAL.get(), "legend_items/");
         createItem(GenerationsItems.MAGMA_CRYSTAL.get(), "legend_items/");
         createItem(GenerationsItems.JEWEL_OF_LIFE.get(), "legend_items/");
-        createItem(GenerationsItems.PRISON_BOTTLE_STEM.get(), "legend_items/");
-        createItem(GenerationsItems.PRISON_BOTTLE.get(), "legend_items/");
+//        createItemBlockDir(GenerationsShrines.PRISON_BOTTLE_STEM.get().asItem(), "legend_items");
+//        createItem(GenerationsItems.PRISON_BOTTLE.get(), "legend_items/");
         createItem(GenerationsItems.MIRROR.get(), "legend_items/");
         createItem(GenerationsShrines.DARK_CRYSTAL.get().asItem(), "legend_items/");
         createItem(GenerationsItems.ICEROOT_CARROT.get(), "legend_items/");

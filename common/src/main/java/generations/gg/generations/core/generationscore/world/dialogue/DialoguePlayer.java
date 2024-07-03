@@ -64,7 +64,10 @@ public class DialoguePlayer {
     }
 
     public void update() {
-        if (currentNode == null) discard(); else currentNode.run(player, this);
+        if (currentNode == null) {
+            DialogueManager.DIALOGUE_MAP.remove(player);
+            discard();
+        } else currentNode.run(player, this);
     }
 
     public void discard() {

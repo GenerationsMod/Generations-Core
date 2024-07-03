@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.legends.CreationTrioItem;
 import generations.gg.generations.core.generationscore.world.item.legends.RedChainItem;
@@ -30,7 +29,7 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
                             Shapes.box(0.03749999999999998, 0.1875, 0.3125, 0.975, 0.89375, 0.625), OR), OR));
 
     public TimespaceAltarBlock(BlockBehaviour.Properties properties) {
-        super(properties, GenerationsBlockEntities.TIMESPACE_ALTAR, GenerationsBlockEntityModels.TIME_SPACE_ALTAR, TimeSpaceAltarBlockEntity.class);
+        super(properties, GenerationsBlockEntities.TIMESPACE_ALTAR, GenerationsBlockEntityModels.TIME_SPACE_ALTAR);
     }
 
     @Override

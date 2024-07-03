@@ -63,7 +63,7 @@ public class EnigmaStoneItem extends ItemWithLangTooltipImpl implements PostBatt
     }
 
     private static SpawnPokemonNode generateEons(String name) {
-        return new SpawnPokemonNode(GenerationsUtils.parseProperties(name + " level=70"), 20, PlayerLocationLogic.INSTANCE, PlayerYawLogic.INSTANCE);
+        return new SpawnPokemonNode(GenerationsUtils.parseProperties("species=" + name + " level=70"), 20, PlayerLocationLogic.INSTANCE, PlayerYawLogic.INSTANCE);
     }
 
     @Override

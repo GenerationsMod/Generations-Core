@@ -37,7 +37,7 @@ public class RegigigasShrineBlock extends InteractShrineBlock<RegigigasShrineBlo
     }
 
     public RegigigasShrineBlock(BlockBehaviour.Properties materialIn) {
-        super(materialIn, GenerationsBlockEntities.REGIGIGAS_SHRINE, GenerationsBlockEntityModels.REGIGIGAS_SHRINE, RegigigasShrineBlockEntity.class);
+        super(materialIn, GenerationsBlockEntities.REGIGIGAS_SHRINE, GenerationsBlockEntityModels.REGIGIGAS_SHRINE);
     }
 
     @Override

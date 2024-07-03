@@ -1,0 +1,155 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "generations_core:prison_bottle_stem",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "height": "0"
+              }
+            }
+          ],
+          "name": "generations_core:prison_bottle_stem"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "generations_core:prison_bottle_stem",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "height": "0",
+                "state": "ring_1"
+              }
+            }
+          ],
+          "name": "generations_core:hoopa_ring"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "generations_core:prison_bottle_stem",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "height": "0",
+                "state": "ring_2"
+              }
+            }
+          ],
+          "name": "generations_core:hoopa_ring"
+        }
+      ],
+      "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "generations_core:prison_bottle_stem",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "height": "0",
+                "state": "ring_3"
+              }
+            }
+          ],
+          "name": "generations_core:hoopa_ring"
+        }
+      ],
+      "rolls": 3.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "generations_core:prison_bottle_stem",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "height": "0",
+                "state": "ring_4"
+              }
+            }
+          ],
+          "name": "generations_core:hoopa_ring"
+        }
+      ],
+      "rolls": 4.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "generations_core:prison_bottle_stem",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "height": "0",
+                "state": "ring_5"
+              }
+            }
+          ],
+          "name": "generations_core:hoopa_ring"
+        }
+      ],
+      "rolls": 5.0
+    }
+  ],
+  "random_sequence": "generations_core:blocks/prison_bottle_stem"
+}

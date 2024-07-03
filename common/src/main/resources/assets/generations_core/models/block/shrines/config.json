@@ -1,0 +1,154 @@
+{
+  "scale": 1.0,
+  "materials": {
+    "activated": {
+      "shader": "solid",
+      "images": {
+        "diffuse": "active.png"
+      }
+    },
+    "deactivated": {
+      "shader": "solid",
+      "images": {
+        "diffuse": "inert.png"
+      }
+    }
+  },
+  "defaultVariant": {
+    "stem": {
+      "material": "deactivated",
+      "hide": false
+    },
+    "ring_1": {
+      "material": "deactivated",
+      "hide": true
+    },
+    "ring_2": {
+      "material": "deactivated",
+      "hide": true
+    },
+    "ring_3": {
+      "material": "deactivated",
+      "hide": true
+    },
+    "ring_4": {
+      "material": "deactivated",
+      "hide": true
+    },
+    "ring_5": {
+      "material": "deactivated",
+      "hide": true
+    },
+    "ring_6": {
+      "material": "deactivated",
+      "hide": true
+    }
+  },
+  "variants": {
+    "empty": {},
+    "ring_1": {
+      "ring_1": {
+        "hide": false
+      }
+    },
+    "ring_2": {
+      "ring_1": {
+        "hide": false
+      },
+      "ring_2": {
+        "hide": false
+      }
+    },
+    "ring_3": {
+      "ring_1": {
+        "hide": false
+      },
+      "ring_2": {
+        "hide": false
+      },
+      "ring_3": {
+        "hide": false
+      }
+    },
+    "ring_4": {
+      "ring_1": {
+        "hide": false
+      },
+      "ring_2": {
+        "hide": false
+      },
+      "ring_3": {
+        "hide": false
+      },
+      "ring_4": {
+        "hide": false
+      }
+    },
+    "ring_5": {
+      "ring_1": {
+        "hide": false
+      },
+      "ring_2": {
+        "hide": false
+      },
+      "ring_3": {
+        "hide": false
+      },
+      "ring_4": {
+        "hide": false
+      },
+      "ring_5": {
+        "hide": false
+      }
+    },
+    "ring_6": {
+      "ring_1": {
+        "hide": false
+      },
+      "ring_2": {
+        "hide": false
+      },
+      "ring_3": {
+        "hide": false
+      },
+      "ring_4": {
+        "hide": false
+      },
+      "ring_5": {
+        "hide": false
+      },
+      "ring_6": {
+        "hide": false
+      }
+    },
+    "unbound": {
+      "stem": {
+        "material": "activated"
+      },
+      "ring_1": {
+        "hide": false,
+        "material": "activated"
+      },
+      "ring_2": {
+        "hide": false,
+        "material": "activated"
+      },
+      "ring_3": {
+        "hide": false,
+        "material": "activated"
+      },
+      "ring_4": {
+        "hide": false,
+        "material": "activated"
+      },
+      "ring_5": {
+        "hide": false,
+        "material": "activated"
+      },
+      "ring_6": {
+        "hide": false,
+        "material": "activated"
+      }
+    }
+  }
+}

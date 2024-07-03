@@ -82,7 +82,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .criterion("heart_scale", InventoryChangeTrigger.TriggerInstance.hasItems(HEART_SCALE.get()))
                 .offerTo(exporter, GenerationsCore.id("soul_heart"));
 
-        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA)
+        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA, 70)
                 .key(LegendKeys.MAGEARNA)
                 .pattern("CAC")
                 .pattern("ABA")

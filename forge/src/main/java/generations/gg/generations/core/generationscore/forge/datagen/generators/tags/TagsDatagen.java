@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.world.item.GenerationsIte
 import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock;
 import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -30,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.*;
 
@@ -83,13 +85,46 @@ public class TagsDatagen {
             });
 
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                    GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
+                            (Block) GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get(),
                     GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get(),
                     GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get(),
-                    GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()
-            );
+                    GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get(),
+                    GenerationsShrines.PRISON_BOTTLE.get(),
+                    GenerationsShrines.PRISON_BOTTLE_STEM.get(),
+                    GenerationsUtilityBlocks.RKS_MACHINE.get(),
+                    GenerationsUtilityBlocks.COOKING_POT.get(),
+                    GenerationsUtilityBlocks.TABLE_PC.get(),
+                    GenerationsUtilityBlocks.ROTOM_PC.get(),
+                    GenerationsUtilityBlocks.TRASH_CAN.get(),
+                    GenerationsUtilityBlocks.WHITE_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.GRAY_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.BLACK_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.BROWN_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.RED_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.ORANGE_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.YELLOW_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.LIME_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.GREEN_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.CYAN_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.BLUE_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.PURPLE_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.MAGENTA_ELEVATOR.get(),
+                    GenerationsUtilityBlocks.PINK_ELEVATOR.get(),
+                    GenerationsDecorationBlocks.DESK.get(),
+                    GenerationsDecorationBlocks.FRIDGE.get()
+            )
+                    .add(GenerationsUtilityBlocks.PC.toArray())
+                    .add(GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.stream().map(Supplier::get).toArray(BallDisplayBlock[]::new));
+
+
+
+
+
+
 
             tag(BlockTags.DIRT).add(
                     GenerationsBlocks.ULTRA_SAND.get(),
@@ -225,7 +260,7 @@ public class TagsDatagen {
             tag(GenerationsBlockTags.VOLCANIC_STONE_BRICKS)
                     .add(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(), GenerationsBlocks.CRACKED_VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.CHISELED_VOLCANIC_STONE_BRICKS.get());
 
-            tag(BlockTags.MINEABLE_WITH_AXE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
+            tag(BlockTags.MINEABLE_WITH_AXE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get(), GenerationsUtilityBlocks.SCARECROW.get(), GenerationsUtilityBlocks.BOX.get());
             tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)
                     .addTag(GenerationsBlockTags.POKEBRICKS).addTag(GenerationsBlockTags.GENERATIONSORES).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
                     .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS);

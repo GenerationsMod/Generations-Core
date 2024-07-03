@@ -84,24 +84,25 @@ public abstract class DyeableBlock<T extends ModelProvidingBlockEntity, V extend
         boolean isDye = heldItem.getItem() instanceof DyeItem;
 
         if (isEmpty && isDye) {
-            var base = getBaseBlockPos(pos, state);
 
             DyeColor dyeColor = ((DyeItem) heldItem.getItem()).getDyeColor();
 
-            var baseState = world.getBlockState(base);
+            var baseState = world.getBlockState(pos);
 
             if(this.getClass().isInstance(baseState.getBlock())) {
                 var baseBlock = this.getClass().cast(baseState.getBlock());
 
 
                 if (!baseBlock.color.equals(dyeColor)) {
+
+                    var base = getBaseBlockPos(pos, state);
+
                     if (!player.isCreative()) heldItem.shrink(1);
 
                     var newBlock = getBlockFromDyeColor(dyeColor);
 
                     var defaultState = newBlock.defaultBlockState().setValue(FACING, baseState.getValue(FACING));
 
-//                    if (newBlock.getClass().equals(state.getBlock().getClass())) {
                         var dir = state.getValue(FACING);
 
                         for (int x = 0; x < width + 1; x++) {
@@ -122,9 +123,7 @@ public abstract class DyeableBlock<T extends ModelProvidingBlockEntity, V extend
                                 }
                             }
                         }
-
                         return true;
-//                    }
                 }
             }
         }

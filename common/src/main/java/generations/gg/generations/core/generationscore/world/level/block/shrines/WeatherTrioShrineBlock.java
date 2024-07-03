@@ -38,7 +38,7 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
     private final RegistrySupplier<? extends Item> requiredItem;
 
     public WeatherTrioShrineBlock(BlockBehaviour.Properties properties, ResourceLocation model, SpeciesKey speiceskey, RegistrySupplier<? extends Item> requiredItem) {
-        super(properties, GenerationsBlockEntities.WEATHER_TRIO, model, WeatherTrioShrineBlockEntity.class);
+        super(properties, GenerationsBlockEntities.WEATHER_TRIO, model);
         this.speiceskey = speiceskey;
         this.requiredItem = requiredItem;
     }
@@ -58,7 +58,7 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
 
         toggleActive(level, pos);
         ScheduledTask.schedule(() -> {
-            PokemonUtil.spawn(getSpecies().createProperties(70), level, pos);
+            PokemonUtil.spawn(getSpecies().createPokemon(70), level, pos, getAngle(state));
             toggleActive(level, pos);
         }, 150);
 

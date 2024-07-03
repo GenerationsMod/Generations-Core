@@ -8,7 +8,7 @@ import net.minecraft.server.level.ServerPlayer;
 public class C2SCloseDialogueHandler implements ServerNetworkPacketHandler<C2SCloseDialoguePacket> {
     @Override
     public void handle(C2SCloseDialoguePacket packet, MinecraftServer server, ServerPlayer player) {
-        if (DialogueManager.DIALOGUE_MAP.containsKey(player)) DialogueManager.DIALOGUE_MAP.get(player).discard();
+        if (DialogueManager.DIALOGUE_MAP.containsKey(player)) DialogueManager.DIALOGUE_MAP.remove(player).discard();
     }
 
 }

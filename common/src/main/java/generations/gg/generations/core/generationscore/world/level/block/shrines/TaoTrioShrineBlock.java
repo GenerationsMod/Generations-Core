@@ -32,7 +32,7 @@ public class TaoTrioShrineBlock extends InteractShrineBlock<TaoTrioShrineBlockEn
 
 
     public TaoTrioShrineBlock(BlockBehaviour.Properties properties) {
-        super(properties, GenerationsBlockEntities.TAO_TRIO_SHRINE, GenerationsBlockEntityModels.TAO_TRIO_SHRINE, TaoTrioShrineBlockEntity.class);
+        super(properties, GenerationsBlockEntities.TAO_TRIO_SHRINE, GenerationsBlockEntityModels.TAO_TRIO_SHRINE);
     }
 
     @Override

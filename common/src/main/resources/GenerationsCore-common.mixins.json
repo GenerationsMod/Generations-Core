@@ -11,6 +11,7 @@
     "client.PokemonItemRendererMixin"
   ],
   "client": [
+    "client.GuiMixin",
     "client.LevelRendererMixin",
     "client.LightTextureMixin",
     "client.PokemonEntityMixin"

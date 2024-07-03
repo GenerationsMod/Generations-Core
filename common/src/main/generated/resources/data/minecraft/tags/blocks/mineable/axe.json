@@ -53,6 +53,8 @@
     "generations_core:ghost_bookshelf",
     "generations_core:cursed_pumpkin",
     "generations_core:cursed_jack_o_lantern",
-    "generations_core:cursed_carved_pumpkin"
+    "generations_core:cursed_carved_pumpkin",
+    "generations_core:scarecrow",
+    "generations_core:box"
   ]
 }

@@ -2,6 +2,8 @@ package generations.gg.generations.core.generationscore.world.item.legends;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
+import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.world.item.PostBattleUpdatingItem;
@@ -16,13 +18,13 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdatingItem {
-    private final PokemonProperties speciesId;
+    private final SpeciesKey speciesId;
     private final String lang;
     private final TriPredicate<PlayerBattleActor, ItemStack, BattleData> predicate;
 
-    public PostBattleUpdatingItemImpl(Properties settings, String speciesId, String lang, TriPredicate<PlayerBattleActor, ItemStack, BattleData> predicate) {
+    public PostBattleUpdatingItemImpl(Properties settings, SpeciesKey speciesId, String lang, TriPredicate<PlayerBattleActor, ItemStack, BattleData> predicate) {
         super(settings);
-        this.speciesId = GenerationsUtils.parseProperties(speciesId);
+        this.speciesId = speciesId;
         this.lang = lang;
         this.predicate = predicate;
     }
@@ -31,12 +33,12 @@ public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdati
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         var stack = player.getItemInHand(usedHand);
 
-        if (!level.isClientSide()) {
+        if (!level.isClientSide() && !GenerationsCore.CONFIG.caught.capped(player, speciesId)) {
             int damage = stack.getDamageValue();
 
             if (damage >= getMaxDamage()) {
                 stack.shrink(1);
-                PokemonUtil.spawn(speciesId, level, player.getOnPos());
+                if(spawnPokemon()) PokemonUtil.spawn(speciesId.createPokemon(spawnedLevel()), level, player.getOnPos(), player.getYRot());
                 postSpawn(level, player, usedHand);
             } else {
                 player.displayClientMessage(Component.translatable(lang, getMaxDamage() - damage), true);
@@ -49,6 +51,14 @@ public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdati
     }
 
     protected void postSpawn(Level level, Player player, InteractionHand usedHand) {
+    }
+
+    protected boolean spawnPokemon() {
+        return true;
+    }
+
+    protected int spawnedLevel() {
+        return 1;
     }
 
     @Override

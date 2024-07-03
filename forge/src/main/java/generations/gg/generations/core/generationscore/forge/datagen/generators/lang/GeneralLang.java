@@ -364,7 +364,7 @@ public class GeneralLang extends LanguageProvider {
     }
 
     public <T extends ItemLike> void addTooltip(RegistrySupplier<T> registrySupplier, String sub, String entry) {
-        if(registrySupplier.get() instanceof LangTooltip lang) add(lang.tooltipId() + (sub != null ? "." + sub : ""), entry);
+        if(registrySupplier.get().asItem() instanceof LangTooltip lang) add(lang.tooltipId() + (sub != null ? "." + sub : ""), entry);
     }
 
     @Deprecated

@@ -18,9 +18,14 @@ import org.jetbrains.annotations.NotNull;
 @SuppressWarnings("deprecation")
 public abstract class InteractShrineBlock<T extends ShrineBlockEntity> extends ShrineBlock<T> {
 
-    protected InteractShrineBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, ResourceLocation model, Class<T> tClass) {
+    protected InteractShrineBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, ResourceLocation model) {
         super(materialIn, blockEntityFunction, model);
     }
+
+    protected InteractShrineBlock(Properties materialIn, RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction, ResourceLocation model, int width, int height, int length) {
+        super(materialIn, blockEntityFunction, model, width, height, length);
+    }
+
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {

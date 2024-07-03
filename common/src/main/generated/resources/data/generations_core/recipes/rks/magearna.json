@@ -24,6 +24,7 @@
   "processingTime": 240,
   "result": {
     "type": "generations_core:pokemon",
+    "level": 70,
     "species": "cobblemon:magearna"
   },
   "speciesKey": "cobblemon:magearna[]"

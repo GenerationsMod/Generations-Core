@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.world.level.block;
 
-import com.cobblemon.mod.common.api.interaction.PokemonEntityInteraction;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -9,6 +8,7 @@ import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.item.BlockItemWithLang;
 import generations.gg.generations.core.generationscore.world.item.DarkCrystalItem;
 import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.world.item.ItemWithLangTooltipImpl;
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.FieryShrineBlock;
 import generations.gg.generations.core.generationscore.world.level.block.entities.shrines.FrozenShrineBlock;
@@ -25,14 +25,17 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.function.Supplier;
+
+import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.LEGENDARY_ITEMS;
 
 public class GenerationsShrines {
 	public static final DeferredRegister<Block> SHRINES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
 
 
 	public static final BlockBehaviour.Properties SHRINE_PROPERTIES = BlockBehaviour.Properties.of()/*of(Material.HEAVY_METAL) TODO: Verify we have all properties*/.strength(-1.0F, 3600000.8F).noLootTable().isValidSpawn(Blocks::never).lightLevel(value -> 5);
+	public static final BlockBehaviour.Properties BOTTLE_PROPERTIES = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).isValidSpawn(Blocks::never);
+
 	/**
 	 * Shrine Blocks
 	 */
@@ -69,14 +72,24 @@ public class GenerationsShrines {
 	public static final RegistrySupplier<Block> TAO_TRIO_SHRINE = registerBlockItem("tao_trio_shrine", () -> new TaoTrioShrineBlock(SHRINE_PROPERTIES));
 	public static final RegistrySupplier<Block> TAPU_SHRINE = registerBlockItem("tapu_shrine", () -> new TapuShrineBlock(SHRINE_PROPERTIES));
 
+	public static final RegistrySupplier<PrisonBottleStemBlock> PRISON_BOTTLE_STEM = registerBlockItem("prison_bottle_stem", () -> new PrisonBottleStemBlock(BOTTLE_PROPERTIES), BlockItemWithLang::new, LEGENDARY_ITEMS);
+	public static final RegistrySupplier<PrisonBottleBlock> PRISON_BOTTLE = registerBlockItem("prison_bottle", () -> new PrisonBottleBlock(BOTTLE_PROPERTIES), BlockItemWithLang::new, LEGENDARY_ITEMS);
+
+
+	private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier, BiFunction<Block, Item.Properties, Item> function, DeferredRegister<Item> register) {
+		RegistrySupplier<T> block = GenerationsUtils.registerBlock(SHRINES, name, blockSupplier);
+		register.register(name, () -> function.apply(block.get(), new Item.Properties()));
+		return block;
+	}
+
+
 	private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier) {
 		return registerBlockItem(name, blockSupplier, BlockItemWithLang::new);
 	}
 
+
 	private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier, BiFunction<Block, Item.Properties, Item> function) {
-		RegistrySupplier<T> block = GenerationsUtils.registerBlock(SHRINES, name, blockSupplier);
-		GenerationsItems.ITEMS.register(name, () -> function.apply(block.get(), new Item.Properties()));
-		return block;
+		return registerBlockItem(name, blockSupplier, function, GenerationsItems.ITEMS);
 	}
 
 
