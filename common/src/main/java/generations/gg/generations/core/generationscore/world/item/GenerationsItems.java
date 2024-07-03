@@ -1,12 +1,15 @@
 package generations.gg.generations.core.generationscore.world.item;
 
 import com.cobblemon.mod.common.api.types.ElementalTypes;
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
+import com.cobblemon.mod.common.item.PokemonItem;
 import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager;
 import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
+import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsChestBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.TieredFishingHookEntity;
@@ -16,17 +19,31 @@ import generations.gg.generations.core.generationscore.world.item.curry.ItemCurr
 import generations.gg.generations.core.generationscore.world.item.legends.*;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -821,8 +838,8 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SUPER_ROD = register("super_rod", properties -> new TieredFishingRodItem(properties, TieredFishingHookEntity.Teir.SUPER), PLAYER_ITEMS);
     /*, TieredFishingHookEntity.Teir.RUBY*/
     public static final RegistrySupplier<RubyRodItem> RUBY_ROD = register("ruby_rod", properties -> new RubyRodItem(properties, TieredFishingHookEntity.Teir.RUBY), PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> CAMERA = register("camera", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> SNAP_CAMERA = register("snap_camera", Item::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> CAMERA = register("camera", CameraItem::new, PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> SNAP_CAMERA = register("snap_camera", CameraItem::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> FILM = register("film", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> REPEL = register("repel", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> SUPER_REPEL = register("super_repel", Item::new, PLAYER_ITEMS);
@@ -938,8 +955,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> SUN_FLUTE = register("sun_flute", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> LAVA_CRYSTAL = register("lava_crystal", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> JEWEL_OF_LIFE = register("jewel_of_life", Item::new, LEGENDARY_ITEMS);
-    public static final RegistrySupplier<ItemWithLangTooltipImpl> PRISON_BOTTLE_STEM = register("prison_bottle_stem", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> PRISON_BOTTLE = register("prison_bottle", Item::new, LEGENDARY_ITEMS);
+//    public static final RegistrySupplier<Item> PRISON_BOTTLE = register("prison_bottle", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MIRROR = register("mirror", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> UNENCHANTED_ICEROOT_CARROT = register("unenchanted_iceroot_carrot", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> ICEROOT_CARROT = register("iceroot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("glastrier"), UNENCHANTED_ICEROOT_CARROT), LEGENDARY_ITEMS);

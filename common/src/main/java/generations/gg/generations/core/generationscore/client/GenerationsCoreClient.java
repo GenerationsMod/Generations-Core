@@ -15,6 +15,8 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import dev.architectury.event.EventResult;
+import dev.architectury.event.events.client.ClientGuiEvent;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.GenerationsCore;
@@ -48,6 +50,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -83,6 +87,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Panda;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -104,6 +109,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -138,14 +144,6 @@ public class GenerationsCoreClient {
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
         VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
-
-        PlatformEvents.CLIENT_TICK_PRE.subscribe(Priority.NORMAL, new Function1<ClientTickEvent.Pre, Unit>() {
-            @Override
-            public Unit invoke(ClientTickEvent.Pre pre) {
-//                GenerationsTextureLoader.INSTANCE.tick();
-                return Unit.INSTANCE;
-            }
-        });
 
         GenerationsCore.implementation.registerResourceReloader(
                 id("model_registry"),

@@ -19,9 +19,14 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.Containers;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
@@ -33,6 +38,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiFunction;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class GenerationsUtils {
@@ -162,5 +168,13 @@ public class GenerationsUtils {
     @ExpectPlatform
     public static CompoundTag serializeStack(ItemStack itemStack) {
         throw new RuntimeException();
+    }
+
+    public static HitResult raycast(Entity entity, double maxDistance, float tickDelta, Predicate<Entity> predicate) {
+        Vec3 vec3d = entity.getEyePosition(tickDelta);
+        Vec3 vec3d2 = entity.getViewVector(tickDelta);
+        Vec3 vec3d3 = vec3d.add(vec3d2.x * maxDistance, vec3d2.y * maxDistance, vec3d2.z * maxDistance);
+        var box = entity.getBoundingBox().expandTowards(vec3d2.scale(maxDistance)).inflate(1.0D, 1.0D, 1.0D);
+        return ProjectileUtil.getEntityHitResult(entity, vec3d, vec3d3, box, predicate, maxDistance);
     }
 }
