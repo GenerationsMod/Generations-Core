@@ -19,7 +19,8 @@ public class GenerationsIngredidents {
     }
 
     public static void init() {
-        register("pokemon", PokemonIngredient.class, PokemonIngredientSerializer.INSTANCE);
+        register("time_capsule", TimeCapsuleIngredient.class, TimeCapsuleIngredientSerializer.INSTANCE);
+        register("pokemon_item", PokemonItemIngredient.class, PokemonItemIngredient.PokemonItemIngredientSerializer.INSTANCE);
         register("damage", DamageIngredient.class, DamageIngredientSerializer.INSTANCE);
     }
 
