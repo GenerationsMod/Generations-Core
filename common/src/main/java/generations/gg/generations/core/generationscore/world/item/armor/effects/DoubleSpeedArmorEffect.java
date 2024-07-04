@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item.armor.effects;
 
-import generations.gg.generations.core.generationscore.world.item.armor.ArmorEffect;
+import generations.gg.generations.core.generationscore.world.item.armor.ArmorTickEffect;
 import generations.gg.generations.core.generationscore.world.item.armor.GenerationsArmorItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
@@ -8,11 +8,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public record DoubleSpeedArmorEffect() implements ArmorEffect {
+public record DoubleSpeedArmorEffect() implements ArmorTickEffect {
     @Override
     public void onArmorTick(ItemStack itemStack, Level world, Player player, GenerationsArmorItem generationsArmorItem) {
         if (world.isClientSide) return;
-        if (ArmorEffect.isWearingFullSet(player, generationsArmorItem.getMaterial())) {
+        if (ArmorTickEffect.isWearingFullSet(player, generationsArmorItem.getMaterial())) {
             CompoundTag armorEffectTagElement = itemStack.getTagElement("ArmorEffect");
             if (armorEffectTagElement == null) return;
             armorEffectTagElement.remove("DoubleSpeed");

@@ -3,12 +3,17 @@ package generations.gg.generations.core.generationscore.world.item;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.world.item.armor.ArmorEffect;
+import generations.gg.generations.core.generationscore.world.item.armor.ArmorTickEffect;
 import generations.gg.generations.core.generationscore.world.item.armor.GenerationsArmorItem;
 import generations.gg.generations.core.generationscore.world.item.armor.GenerationsArmorMaterials;
+import generations.gg.generations.core.generationscore.world.item.armor.effects.PotionArmorEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -45,24 +50,7 @@ public class GenerationsArmor {
 	public static final ArmorSet MOON_STONE = ArmorSet.create("moon_stone", () -> GenerationsArmorMaterials.MOON_STONE);
 	public static final ArmorSet SUN_STONE = ArmorSet.create("sun_stone", () -> GenerationsArmorMaterials.SUN_STONE);
 	public static final ArmorSet THUNDER_STONE = ArmorSet.create("thunder_stone", () -> GenerationsArmorMaterials.THUNDER_STONE);
-	public static final ArmorSet WATER_STONE = ArmorSet.create("water_stone", () -> GenerationsArmorMaterials.WATER_STONE);
-
-
-	public record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, Supplier<ArmorMaterial> armorMaterial) {
-		public static ArmorSet create(String name, Supplier<ArmorMaterial> armorMaterial) {
-			return new ArmorSet(
-					register(name + "_helmet", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.HELMET, properties)),
-					register(name + "_chestplate", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.CHESTPLATE, properties)),
-					register(name + "_leggings", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.LEGGINGS, properties)),
-					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.BOOTS, properties)),
-					armorMaterial
-			);
-		}
-
-		public static RegistrySupplier<Item> register(String name, Function<Item.Properties, Item> function) {
-			return GenerationsArmor.register(name, function, CreativeModeTabs.COMBAT);
-		}
-	}
+	public static final ArmorSet WATER_STONE = ArmorSet.create("water_stone", () -> GenerationsArmorMaterials.WATER_STONE, new PotionArmorEffect(MobEffects.WATER_BREATHING, 1));
 
 	public static Item.Properties of() {
 		return new Item.Properties();
@@ -71,5 +59,22 @@ public class GenerationsArmor {
 	public static void init() {
 		GenerationsCore.LOGGER.info("Registering Generations Armor");
 		ARMOR.register();
+	}
+
+	public static record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, Supplier<ArmorMaterial> armorMaterial) {
+		public static ArmorSet create(String name, Supplier<ArmorMaterial> armorMaterial, ArmorEffect... armorEffects) {
+			return new ArmorSet(
+					register(name + "_helmet", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.HELMET, properties).addArmorEffects(armorEffects)),
+					register(name + "_chestplate", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.CHESTPLATE, properties).addArmorEffects(armorEffects)),
+					register(name + "_leggings", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.LEGGINGS, properties).addArmorEffects(armorEffects)),
+					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.BOOTS, properties).addArmorEffects(armorEffects)),
+					armorMaterial
+			);
+		}
+
+		public static RegistrySupplier<Item> register(String name, Function<Item.Properties, GenerationsArmorItem> function) {
+			return GenerationsArmor.register(name, function::apply, CreativeModeTabs.COMBAT);
+		}
+
 	}
 }

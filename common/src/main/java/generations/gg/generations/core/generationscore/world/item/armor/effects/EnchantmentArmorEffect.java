@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.world.item.armor.effects;
 
-import generations.gg.generations.core.generationscore.world.item.armor.ArmorEffect;
+import generations.gg.generations.core.generationscore.world.item.armor.ArmorTickEffect;
 import generations.gg.generations.core.generationscore.world.item.armor.GenerationsArmorItem;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -11,11 +11,11 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public record EnchantmentArmorEffect(Enchantment enchantment, int level) implements ArmorEffect {
+public record EnchantmentArmorEffect(Enchantment enchantment, int level) implements ArmorTickEffect {
     @Override
     public void onArmorTick(ItemStack itemStack, Level world, Player player, GenerationsArmorItem generationsArmorItem) {
         if (world.isClientSide) return;
-        if (ArmorEffect.isWearingFullSet(player, generationsArmorItem.getMaterial())) {
+        if (ArmorTickEffect.isWearingFullSet(player, generationsArmorItem.getMaterial())) {
             itemStack.removeTagKey("Enchantments");
             return;
         }

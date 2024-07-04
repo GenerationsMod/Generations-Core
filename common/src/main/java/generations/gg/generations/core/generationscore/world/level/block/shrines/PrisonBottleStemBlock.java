@@ -29,28 +29,28 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 public class PrisonBottleStemBlock extends InteractShrineBlock<GenericShrineBlockEntity> {
-//    public static final GenerationsVoxelShapes.GenericRotatableShapes SHAPE = GenerationsVoxelShapes.generateRotationalVoxelShape(Shapes.or(
-//            Shapes.box(0.5, 1.55, 0.4375, 0.96875, 1.8250000000000002, 0.5625),
-//            Shapes.box(0.5, 0, 0.19374999999999998, 0.80625, 0.0625, 0.80625),
-//            Shapes.box(0.5, 0.0625, 0.21875, 0.78125, 0.0875, 0.78125),
-//            Shapes.box(0.19374999999999998, 0, 0.19374999999999998, 0.5, 0.0625, 0.80625),
-//            Shapes.box(0.5, 0.0875, 0.26875, 0.73125, 0.11249999999999999, 0.73125),
-//            Shapes.box(0.21875, 0.0625, 0.21875, 0.5, 0.0875, 0.78125),
-//            Shapes.box(0.5, 0.1125, 0.39375, 0.60625, 1.075, 0.60625),
-//            Shapes.box(0.5, 0.175, 0.31875, 0.98125, 0.95, 0.68125),
-//            Shapes.box(0.5, 0.0875, 0.33125, 0.66875, 0.175, 0.66875),
-//            Shapes.box(0.26875, 0.0875, 0.26875, 0.5, 0.11249999999999999, 0.73125),
-//            Shapes.box(0.5, 0.7375, 0.41875, 0.58125, 1.7000000000000002, 0.58125),
-//            Shapes.box(0.39375, 0.1125, 0.39375, 0.5, 1.075, 0.60625),
-//            Shapes.box(0.25, 1.55, 0.35624999999999996, 0.51875, 1.8250000000000002, 0.64375),
-//            Shapes.box(0.375, 1.675, 0.375, 0.5, 2.21875, 0.625),
-//            Shapes.box(0.03125, 1.55, 0.4375, 0.5, 1.8250000000000002, 0.5625),
-//            Shapes.box(0.48125, 1.55, 0.35624999999999996, 0.75, 1.8250000000000002, 0.64375),
-//            Shapes.box(0.5, 1.675, 0.375, 0.625, 2.21875, 0.625),
-//            Shapes.box(0.41875, 0.7375, 0.41875, 0.5, 1.7000000000000002, 0.58125),
-//            Shapes.box(0.01874999999999999, 0.175, 0.31875, 0.49999999999999994, 0.95, 0.68125),
-//            Shapes.box(0.33125, 0.0875, 0.33125, 0.5, 0.175, 0.66875)),
-//            Direction.SOUTH, 0, 2, 0,0, 0);
+    public static final GenerationsVoxelShapes.GenericRotatableShapes SHAPE = GenerationsVoxelShapes.generateRotationalVoxelShape(Shapes.or(
+            Shapes.box(0.5, 1.55, 0.4375, 0.96875, 1.8250000000000002, 0.5625),
+            Shapes.box(0.5, 0, 0.19374999999999998, 0.80625, 0.0625, 0.80625),
+            Shapes.box(0.5, 0.0625, 0.21875, 0.78125, 0.0875, 0.78125),
+            Shapes.box(0.19374999999999998, 0, 0.19374999999999998, 0.5, 0.0625, 0.80625),
+            Shapes.box(0.5, 0.0875, 0.26875, 0.73125, 0.11249999999999999, 0.73125),
+            Shapes.box(0.21875, 0.0625, 0.21875, 0.5, 0.0875, 0.78125),
+            Shapes.box(0.5, 0.1125, 0.39375, 0.60625, 1.075, 0.60625),
+            Shapes.box(0.5, 0.175, 0.31875, 0.98125, 0.95, 0.68125),
+            Shapes.box(0.5, 0.0875, 0.33125, 0.66875, 0.175, 0.66875),
+            Shapes.box(0.26875, 0.0875, 0.26875, 0.5, 0.11249999999999999, 0.73125),
+            Shapes.box(0.5, 0.7375, 0.41875, 0.58125, 1.7000000000000002, 0.58125),
+            Shapes.box(0.39375, 0.1125, 0.39375, 0.5, 1.075, 0.60625),
+            Shapes.box(0.25, 1.55, 0.35624999999999996, 0.51875, 1.8250000000000002, 0.64375),
+            Shapes.box(0.375, 1.675, 0.375, 0.5, 2.21875, 0.625),
+            Shapes.box(0.03125, 1.55, 0.4375, 0.5, 1.8250000000000002, 0.5625),
+            Shapes.box(0.48125, 1.55, 0.35624999999999996, 0.75, 1.8250000000000002, 0.64375),
+            Shapes.box(0.5, 1.675, 0.375, 0.625, 2.21875, 0.625),
+            Shapes.box(0.41875, 0.7375, 0.41875, 0.5, 1.7000000000000002, 0.58125),
+            Shapes.box(0.01874999999999999, 0.175, 0.31875, 0.49999999999999994, 0.95, 0.68125),
+            Shapes.box(0.33125, 0.0875, 0.33125, 0.5, 0.175, 0.66875)),
+            Direction.SOUTH, 1, 3, 1);
 
     public static final EnumProperty<PrisonBottleState> STATE = EnumProperty.create("state", PrisonBottleState.class);
 
@@ -156,9 +156,9 @@ public class PrisonBottleStemBlock extends InteractShrineBlock<GenericShrineBloc
         }
     }
 
-//    @Override
-//    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-//        return SHAPE.getShape(state);
-//    }
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE.getShape(state);
+    }
 
 }

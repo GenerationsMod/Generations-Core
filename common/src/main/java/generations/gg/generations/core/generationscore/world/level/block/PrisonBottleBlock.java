@@ -5,7 +5,14 @@ import generations.gg.generations.core.generationscore.world.level.block.entitie
 import generations.gg.generations.core.generationscore.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.world.level.block.entities.generic.GenericModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import static generations.gg.generations.core.generationscore.world.level.block.shrines.PrisonBottleStemBlock.SHAPE;
 
 public class PrisonBottleBlock extends GenericRotatableModelBlock<GenericModelProvidingBlockEntity> {
     public PrisonBottleBlock(Properties properties) {
@@ -16,4 +23,10 @@ public class PrisonBottleBlock extends GenericRotatableModelBlock<GenericModelPr
     public String getVariant() {
         return "ring_6";
     }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE.getShape(state);
+    }
+
 }
