@@ -186,7 +186,7 @@ public class ScreenUtils {
 
     }
 
-    public static void drawRect(GuiGraphics poseStack, int x, int y, int width, int height, int color) {
+    public static void drawRect(GuiGraphics poseStack, float x, float y, float width, float height, int color) {
         if (width == 0 || height == 0) {
             return;
         }
@@ -194,7 +194,7 @@ public class ScreenUtils {
         drawRect(poseStack.pose().last().pose(), 0, x, y, x + width, y + height, color);
     }
 
-    public static void drawRect(Matrix4f mat, int zLevel, int left, int top, int right, int bottom, int startColor) {
+    public static void drawRect(Matrix4f mat, int zLevel, float left, float top, float right, float bottom, int startColor) {
         float startAlpha = (float) (startColor >> 24 & 0xFF) / 255.0f;
         float startRed = (float) (startColor >> 16 & 0xFF) / 255.0f;
         float startGreen = (float) (startColor >> 8 & 0xFF) / 255.0f;
