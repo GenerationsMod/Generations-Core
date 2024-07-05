@@ -7,15 +7,15 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class RelicSongItem extends ArchitecturyRecordItem implements LangTooltip {
-    private final boolean notInsert;
+    private final boolean notInert;
 
-    public RelicSongItem(Item.Properties properties, boolean notInsert) {
+    public RelicSongItem(Item.Properties properties, boolean notInert) {
         super(0, GenerationsSounds.MELOETTAS_RELIC_SONG, properties, 30);
-        this.notInsert = notInsert;
+        this.notInert = notInert;
     }
 
     @Override
     public boolean isFoil(@NotNull ItemStack stack) {
-        return notInsert;
+        return !notInert;
     }
 }

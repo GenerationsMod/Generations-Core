@@ -6,6 +6,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
 
 public class WalkmonContainer extends GenericChestContainer {
@@ -25,7 +26,7 @@ public class WalkmonContainer extends GenericChestContainer {
     }
 
     @Override
-    public void save() {
+    public void save(Player player) {
         var stack = getPlayerInventory().getItem(this.getLocked());
         if(stack.getItem() instanceof WalkmonItem walkmon) walkmon.saveDiscs((GenericContainer.SimpleGenericContainer) getContainer(), stack);
     }

@@ -42,15 +42,15 @@ public class GenericChestContainer extends AbstractContainerMenu {
         this.guiHeight = 110 + (getInventoryHeight() * 18);
         container.startOpen(playerInventory.player);
 
-        populate(container, 8, 16, 0, getInventoryHeight(), getInventoryWidth(), -1);
+        populate(container, 8, 16, 0, getInventoryHeight(), getInventoryWidth());
 
         this.playerInventoryX = guiWidth/2 - 80;
 
-        populate(playerInventory, playerInventoryX, guiHeight - 82, 1, 3, 9, lockedSlot);
-        populate(playerInventory, playerInventoryX, guiHeight - 24, 0, 1, 9, lockedSlot);
+        populate(playerInventory, playerInventoryX, guiHeight - 82, 1, 3, 9);
+        populate(playerInventory, playerInventoryX, guiHeight - 24, 0, 1, 9);
     }
 
-    private void populate(Container container, int x, int y, int startingRow, int rows, int columns, int lockedSlot) {
+    private void populate(Container container, int x, int y, int startingRow, int rows, int columns) {
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
                 var slot = column + (startingRow + row) * columns;
@@ -128,7 +128,7 @@ public class GenericChestContainer extends AbstractContainerMenu {
         return container;
     }
 
-    public void save() {}
+    public void save(Player player) {}
 
     public Inventory getPlayerInventory() {
         return playerInventory;

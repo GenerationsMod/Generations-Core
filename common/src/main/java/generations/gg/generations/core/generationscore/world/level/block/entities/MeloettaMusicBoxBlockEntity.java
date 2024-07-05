@@ -102,7 +102,7 @@ public class MeloettaMusicBoxBlockEntity extends ShrineBlockEntity implements Cl
 
                 if(getFirstItem().is(GenerationsItems.RELIC_SONG.get())) {
                     PokemonUtil.spawn(LegendKeys.MELOETTA.createPokemon(70), level, pos, getAngle());
-                    setFirstItem(new ItemStack(GenerationsItems.INERT_RELIC_SONG.get()));
+                    this.items.set(0, new ItemStack(GenerationsItems.INERT_RELIC_SONG.get()));
                 }
 
             } else if (this.shouldSendJukeboxPlayingEvent()) {

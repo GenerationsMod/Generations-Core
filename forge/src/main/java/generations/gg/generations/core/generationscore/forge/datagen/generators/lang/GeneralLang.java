@@ -95,6 +95,8 @@ public class GeneralLang extends LanguageProvider {
 
         add("container.melody_flute", "Melody Flute");
         add("container.trashcan", "Trash Can");
+        add("container.shaderoot_carrot", "Shaderoot Carrot");
+        add("container.iceroot_carrot", "Iceroot Carrot");
 
         add("container.poke_walkmon", "Poke Walkmon");
         add("container.great_walkmon", "Great Walkmon");
@@ -337,6 +339,8 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.special.shadow.already", "%s heart is already closed.");
         add("generations_core.special.shadow.success", "%s heart has been closed.");
         add("generations_core.special.shadow.failure", "%s refused to clsoe its heart.");
+
+
     }
 
 

@@ -963,9 +963,9 @@ public class GenerationsItems {
 //    public static final RegistrySupplier<Item> PRISON_BOTTLE = register("prison_bottle", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MIRROR = register("mirror", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> UNENCHANTED_ICEROOT_CARROT = register("unenchanted_iceroot_carrot", Item::new, LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> ICEROOT_CARROT = register("iceroot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("glastrier"), UNENCHANTED_ICEROOT_CARROT), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> ICEROOT_CARROT = register("iceroot_carrot", properties -> new CalyrexSteedItem("iceroot", properties.stacksTo(1).food(new FoodProperties.Builder().alwaysEat().build()), LegendKeys.GLASTRIER, UNENCHANTED_ICEROOT_CARROT), LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> UNENCHANTED_SHADEROOT_CARROT = register("unenchanted_shaderoot_carrot", Item::new, LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> SHADEROOT_CARROT = register("shaderoot_carrot", properties -> new CalyrexSteedItem(properties.stacksTo(1).durability(100).food(new FoodProperties.Builder().build()), GenerationsCore.id("spectrier"), UNENCHANTED_SHADEROOT_CARROT), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> SHADEROOT_CARROT = register("shaderoot_carrot", properties -> new CalyrexSteedItem("shaderoot", properties.stacksTo(1).food(new FoodProperties.Builder().alwaysEat().build()), LegendKeys.SPECTRIER, UNENCHANTED_SHADEROOT_CARROT), LEGENDARY_ITEMS);
     public static final RegistrySupplier<EnigmaStoneItem> ENIGMA_STONE = register("enigma_stone", properties -> new EnigmaStoneItem(properties.stacksTo(1).durability(100)), LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_SHARD = register("enigma_shard", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(64)), LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> ENIGMA_FRAGMENT = register("enigma_fragment", properties -> new ItemWithLangTooltipImpl(properties.stacksTo(4).fireResistant() /* just incase it falls into lava while in nether*/), LEGENDARY_ITEMS);
@@ -991,8 +991,12 @@ public class GenerationsItems {
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MEW_DNA_FIBER = register("mew_dna_fiber", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> MEW_FOSSIL = register("mew_fossil", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> LIGHT_SOUL = register("light_soul", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
-    public static final RegistrySupplier<LegendaryEggItem> WONDER_EGG = register("wonder_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.MANAPHY, 10000), LEGENDARY_ITEMS);
-    public static final RegistrySupplier<LegendaryEggItem> PHIONE_EGG = register("phione_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.PHIONE, 10000), LEGENDARY_ITEMS);
+
+    //TODO: Turn back to 10,000 before release
+    public static final RegistrySupplier<LegendaryEggItem> WONDER_EGG = register("wonder_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.MANAPHY, 100), LEGENDARY_ITEMS);
+
+    //TODO: Turn back to 10,000 before release
+    public static final RegistrySupplier<LegendaryEggItem> PHIONE_EGG = register("phione_egg", properties -> new LegendaryEggItem(properties.stacksTo(1), LegendKeys.PHIONE, 100), LEGENDARY_ITEMS);
     public static final RegistrySupplier<SingleElmentPostUpdatingItem> SOUL_HEART = register("soul_heart", properties -> new SingleElmentPostUpdatingItem(properties.stacksTo(1).durability(100), ElementalTypes.INSTANCE.getFAIRY()), LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> BLUE_PETAL = register("blue_petal", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> GREEN_PETAL = register("green_petal", Item::new, LEGENDARY_ITEMS);

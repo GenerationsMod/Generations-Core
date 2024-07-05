@@ -56,5 +56,7 @@ public interface GenericContainer extends Container, MenuProvider {
         public @NotNull Component getDisplayName() {
             return Component.empty();
         }
+
+
     }
 }
