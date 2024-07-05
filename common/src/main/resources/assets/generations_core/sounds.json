@@ -55,6 +55,13 @@
       }
     ]
   },
+  "generations_core.other.camera_shutter": {
+    "sounds": [
+      {
+        "name": "generations_core:other/camera_shutter"
+      }
+    ]
+  },
   "generations_core.music.ambient.azalea_town": {
     "sounds": [
       {

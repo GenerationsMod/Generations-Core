@@ -70,9 +70,14 @@ public class CameraOverlay {
             graphics.pose().scale(scale, scale, 1.0f);
 
 
-            var value = player.getCooldowns().getCooldownPercent(player.getMainHandItem().getItem(), delta);
-            if(player.getInventory().hasAnyMatching(stack -> stack.is(GenerationsItems.FILM.get())))
-                renderTextureOverlay(graphics, CAMERA_OVERLAY_FOCUS,1f, 1f, Mth.lerp(value, 1f, 0f));
+            if(player.getInventory().hasAnyMatching(stack -> stack.is(GenerationsItems.FILM.get()))) {
+                if(player.getInventory().getFreeSlot() > -1) {
+                    var value = player.getCooldowns().getCooldownPercent(player.getMainHandItem().getItem(), delta);
+                    renderTextureOverlay(graphics, CAMERA_OVERLAY_FOCUS, 1f, 1f, Mth.lerp(value, 1f, 0f));
+                } else {
+                    renderTextureOverlay(graphics, CAMERA_OVERLAY_FOCUS, 0.3f, 0.3f, 0.3f);
+                }
+            }
             else {
                 renderTextureOverlay(graphics, CAMERA_OVERLAY_FOCUS, 0f, 0f, 0f);
             }

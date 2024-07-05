@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.item.PokemonItem;
 import generations.gg.generations.core.generationscore.api.events.general.CameraEvents;
 import generations.gg.generations.core.generationscore.util.GenerationsUtils;
+import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -32,10 +33,12 @@ public class CameraItem extends Item {
 
                 var changed = CameraEvents.MODIFY_PHOTO.invoker().modify((ServerPlayer) player, (ServerLevel) level, photo);
 
-                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.LEVER_CLICK, SoundSource.MASTER, 1.0f, 1.0f);
-                ContainerHelper.clearOrCountMatchingItems(player.getInventory(), stack -> stack.is(GenerationsItems.FILM.get()), 1, false);
-                player.addItem(changed != null ? changed : photo);
-                player.getCooldowns().addCooldown(this, 20);
+                if(player.getInventory().getFreeSlot() > -1) {
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(), GenerationsSounds.CAMERA_SHUTTER.get(), SoundSource.MASTER, 1.0f, 1.0f);
+                    ContainerHelper.clearOrCountMatchingItems(player.getInventory(), stack -> stack.is(GenerationsItems.FILM.get()), 1, false);
+                    player.addItem(changed != null ? changed : photo);
+                    player.getCooldowns().addCooldown(this, 5);
+                }
             }
         }
 

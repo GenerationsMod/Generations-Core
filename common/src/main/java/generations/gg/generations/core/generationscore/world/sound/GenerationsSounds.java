@@ -18,8 +18,8 @@ public class GenerationsSounds {
     public static final RegistrySupplier<SoundEvent> BOX_CLOSED = registerSound("generations_core.block.box_closed");
     public static final RegistrySupplier<SoundEvent> ELEVATOR = registerSound("generations_core.block.elevator");
 
-
     public static final RegistrySupplier<SoundEvent> UI_CLICK = registerSound("generations_core.other.ui_click");
+    public static final RegistrySupplier<SoundEvent> CAMERA_SHUTTER = registerSound("generations_core.other.camera_shutter");
     public static final RegistrySupplier<SoundEvent> ZYGARDE_CELL = registerSound("generations_core.other.zygarde_cell");
 
     public static final RegistrySupplier<SoundEvent> AZALEA_TOWN = registerSound("generations_core.music.ambient.azalea_town");
