@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntitySt
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import generations.gg.generations.core.generationscore.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.client.render.rarecandy.CobblemonInstance
+import generations.gg.generations.core.generationscore.client.render.rarecandy.StatueInstance
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity
 import net.minecraft.resources.ResourceLocation
 import org.joml.Matrix4f
@@ -11,7 +12,7 @@ import org.joml.Matrix4f
 class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<PokemonEntity>(),
     CobblemonInstanceProvider {
     private var trueAge: Int = 0
-    private var cobblemonInstance: CobblemonInstance? = null
+    private var cobblemonInstance: StatueInstance? = null
     private val staticFrame get() = statueEntity.statueData.frame
 
     private val isStatic get() = statueEntity.statueData.isStatic
@@ -40,7 +41,7 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
 
     override fun getInstance(): CobblemonInstance {
         if (cobblemonInstance == null) cobblemonInstance =
-            CobblemonInstance(
+            StatueInstance(
                 Matrix4f(),
                 Matrix4f(),
                 null
@@ -49,7 +50,7 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
     }
 
     override fun setInstance(instance: CobblemonInstance?) {
-        cobblemonInstance = instance
+        instance?.takeIf { it is StatueInstance }?.let { it as StatueInstance }.let { cobblemonInstance = it }
     }
 
     override fun species(): ResourceLocation? {

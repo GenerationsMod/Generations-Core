@@ -81,7 +81,6 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             if (id != null) {
                 String namespace = id.getNamespace();
                 if (namespace.equals("pk")) instance.setVariant(id.getPath());
-                else if (namespace.equals("statue")) instance.setVariant(id.toString());
             }
 
             stack.pushPose();
@@ -107,23 +106,11 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     }
 
     private ResourceLocation getTexture(RenderContext context) {
-        var aspects = context.request(RenderContext.Companion.getASPECTS());
-        if((context.request(RenderContext.Companion.getENTITY()) instanceof StatueEntity statue && statue.getStatueData().material() != null && statue.getStatueData().material().getNamespace().equals("statue") && ITextureLoader.instance().getTextureEntries().contains(statue.getStatueData().material().getPath()))) {
-            return statue.getStatueData().material();
-        }
-
-        if (aspects != null) {
-            var material = aspects.stream().filter(a  -> a.startsWith("statue:")).map(ResourceLocation::new).findFirst();
-
-            if(material.isPresent()) return material.get();
-        } else {
-            return null;
-        }
-
-        var species = context.request(RenderContext.Companion.getSPECIES());
-
         try {
-            return PokemonModelRepository.INSTANCE.getVariations().get(species).getTexture(aspects, 0.0f);
+            var aspects = context.request(RenderContext.Companion.getASPECTS());
+            var species = context.request(RenderContext.Companion.getSPECIES());
+
+            return PokemonModelRepository.INSTANCE.getVariations().get(species).getTexture(aspects != null ? aspects : Collections.emptySet(), 0.0f);
         } catch (Exception e) {
             return null;
         }

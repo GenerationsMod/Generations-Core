@@ -134,7 +134,12 @@ public class GenerationsCoreClient {
 
         ITextureLoader.setInstance(GenerationsTextureLoader.INSTANCE);
 
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.TIME_CAPSULE.get(), new TimeCapsuleItemRenderer());
+        var renderer = new TimeCapsuleItemRenderer();
+
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.RAIKOU_STATUE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
 
 
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);

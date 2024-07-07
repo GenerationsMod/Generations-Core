@@ -11,6 +11,7 @@ import com.cobblemon.mod.common.util.math.fromEulerXYZ
 import com.mojang.blaze3d.platform.Lighting
 import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.mixin.client.PokemonItemRendererMixin
+import generations.gg.generations.core.generationscore.world.item.StatueSpawnerItem
 import generations.gg.generations.core.generationscore.world.item.TimeCapsule
 import net.minecraft.client.renderer.LightTexture
 import net.minecraft.client.renderer.MultiBufferSource
@@ -31,7 +32,7 @@ class TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
         light: Int,
         overlay: Int,
     ) {
-        if (stack.item is TimeCapsule) {
+        if (stack.item is TimeCapsule || stack.item is StatueSpawnerItem) {
             val (first, second) = TimeCapsule.getRenderablePokmon(stack)
                 ?: return
             matrices.pushPose()

@@ -1303,6 +1303,10 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ROOT_FOSSIL.get(), "fossils/");
         createItem(GenerationsItems.SAIL_FOSSIL.get(), "fossils/");
         createItem(GenerationsItems.SKULL_FOSSIL.get(), "fossils/");
+
+        createEntityModelItem(GenerationsItems.SUICUNE_STATUE.get());
+        createEntityModelItem(GenerationsItems.RAIKOU_STATUE.get());
+        createEntityModelItem(GenerationsItems.ENTEI_STATUE.get());
     }
 
     private void createTimeCapsule() {
@@ -1457,6 +1461,11 @@ public class ItemDatagen extends ItemModelProvider {
             LOGGER.error(item.getDescriptionId() + " -> " + directory);
             return null;
         }
+    }
+
+    public ItemModelBuilder createEntityModelItem(Item item) {
+        ResourceLocation key = Objects.requireNonNull(getKey(item), "Tried to create json model for unregistered Item.");
+        return getBuilder(key.getPath()).parent(new ModelFile.UncheckedModelFile(new ResourceLocation("minecraft:builtin/entity")));
     }
 
 

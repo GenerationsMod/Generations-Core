@@ -22,7 +22,7 @@ import java.io.IOException
 import kotlin.random.Random
 
 object GenerationsTextureLoader : ITextureLoader() {
-    val REGULAR: MutableMap<String, ITexture> = HashMap()
+    val REGULAR: MutableMap<String, ITexture?> = HashMap()
     val RARE_CANDY = FileToIdConverter("textures", "rare_candy_texture.json")
 
     init {}
@@ -63,7 +63,7 @@ object GenerationsTextureLoader : ITextureLoader() {
         while(iterator.hasNext()) {
             val entry = iterator.next()
             iterator.remove()
-            entry.value.close()
+            entry.value?.close()
         }
     }
 
@@ -77,11 +77,12 @@ object GenerationsTextureLoader : ITextureLoader() {
 
     fun has(texture: String): Boolean = REGULAR.containsKey(texture)
 
-    fun getLocation(material: String): ResourceLocation = REGULAR.getOrDefault(material, null)?.takeIf { it is ITextureWithResourceLocation }.let { it as ITextureWithResourceLocation }.location
+    fun getLocation(material: String): ResourceLocation? =
+        REGULAR.getOrDefault(material, null).takeIf { it is ITextureWithResourceLocation? }?.let { it as ITextureWithResourceLocation }?.location
 
     private val RARE_CANDY_TYPE: TypeToken<Map<String, String>> = object : TypeToken<Map<String, String>>() {}
 
-    private class SimpleTextureEnhanced(location: ResourceLocation) : SimpleTexture(location), ITexture {
+    private class SimpleTextureEnhanced(override var location: ResourceLocation) : SimpleTexture(location), ITextureWithResourceLocation {
         init {
             Minecraft.getInstance().textureManager.register(location, this)
         }

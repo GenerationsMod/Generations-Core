@@ -16,6 +16,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import org.apache.logging.log4j.util.TriConsumer;
@@ -74,6 +75,7 @@ public class GenerationsFabricNetworkManager implements GenerationsImplementatio
 
     @Override
     public <T extends GenerationsNetworkPacket<?>, V extends Entity> void sendToAllTracking(T packet, V entity) {
-        PlayerLookup.tracking(entity).forEach(player -> sendPacketToPlayer(player, packet));
+        var players = PlayerLookup.around((ServerLevel) entity.level(), entity.position(), 50);
+        players.forEach(player -> sendPacketToPlayer(player, packet));
     }
 }

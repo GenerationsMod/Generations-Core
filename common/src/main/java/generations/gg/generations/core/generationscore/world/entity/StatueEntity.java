@@ -248,13 +248,13 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
 
         private boolean sacredAshInteractable;
         private String label = null;
-        private ResourceLocation material = null;
+        private String material = null;
 
         public StatueInfo() {
             this(PokemonProperties.Companion.parse("species=charizard", " ", "="), "Statue", 0.0f, 1.0f, PoseType.NONE, false, 0.0f, false, null);
         }
 
-        public StatueInfo(PokemonProperties properties, String label, float orientation, float scale, PoseType poseType, boolean isStatic, float progress, boolean sacredAshInteractable, ResourceLocation material) {
+        public StatueInfo(PokemonProperties properties, String label, float orientation, float scale, PoseType poseType, boolean isStatic, float progress, boolean sacredAshInteractable, String material) {
             this.properties = properties;
             this.label = label;
             this.orientation = orientation;
@@ -276,7 +276,7 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
                     buf.readBoolean(),
                     buf.readFloat(),
                     buf.readBoolean(),
-                    buf.readNullable(FriendlyByteBuf::readResourceLocation));
+                    buf.readNullable(FriendlyByteBuf::readUtf));
         }
         public void serializeToByteBuf(FriendlyByteBuf buf) {
                     buf.writeUtf(properties.asString(" "))
@@ -286,7 +286,7 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
                     .writeBoolean(isStatic)
                     .writeFloat(progress)
                     .writeBoolean(sacredAshInteractable);
-                    buf.writeNullable(material, FriendlyByteBuf::writeResourceLocation);
+                    buf.writeNullable(material, FriendlyByteBuf::writeUtf);
         }
 
 
@@ -299,7 +299,7 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
         }
 
         public StatueInfo(CompoundTag tag) {
-            this(PokemonProperties.Companion.parse(tag.getString("properties"), " ", "="), tag.getString("label"), tag.getFloat("orientation"), tag.getFloat("scale"), toPoseType(tag.getString("poseType")), tag.getBoolean("isStatic"), tag.getFloat("progress"), tag.getBoolean("sacredAshInteractable"), ResourceLocation.tryParse(tag.getString("material")));
+            this(PokemonProperties.Companion.parse(tag.getString("properties"), " ", "="), tag.getString("label"), tag.getFloat("orientation"), tag.getFloat("scale"), toPoseType(tag.getString("poseType")), tag.getBoolean("isStatic"), tag.getFloat("progress"), tag.getBoolean("sacredAshInteractable"), tag.getString("material"));
         }
 
         public static StatueInfo of(PokemonProperties properties) {
@@ -410,12 +410,12 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
             this.label = label;
         }
 
-        public ResourceLocation material() {
+        public String material() {
             return material;
         }
 
         public void setMaterial(String material) {
-            this.material = material != null ? new ResourceLocation("statue", material) : null;
+            this.material = material;
         }
     }
 }

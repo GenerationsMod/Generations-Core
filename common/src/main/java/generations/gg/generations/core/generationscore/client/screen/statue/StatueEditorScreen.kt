@@ -137,7 +137,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
             })
 
         materialTextField = addRenderableWidget(
-            ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, info?.material()?.path ?: "", { true }) {
+            ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, info?.material() ?: "", { true }) {
                 it.takeIf { it.isNotEmpty() }.run {
                     statue.statueData.setMaterial(it)
                     updateStatueData()

@@ -1,15 +1,12 @@
 package generations.gg.generations.core.generationscore.world.item;
 
 import com.cobblemon.mod.common.api.types.ElementalTypes;
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.cobblemon.mod.common.item.PokemonItem;
 import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager;
 import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.config.LegendKeys;
-import generations.gg.generations.core.generationscore.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.GenerationsChestBoatEntity;
 import generations.gg.generations.core.generationscore.world.entity.TieredFishingHookEntity;
@@ -19,32 +16,13 @@ import generations.gg.generations.core.generationscore.world.item.curry.ItemCurr
 import generations.gg.generations.core.generationscore.world.item.legends.*;
 import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
 import generations.gg.generations.core.generationscore.world.sound.GenerationsSounds;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
-import java.util.HashMap;
 import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 /**
  * Generations Items
@@ -1022,7 +1000,11 @@ public class GenerationsItems {
      * Utility Items
      */
     public static final RegistrySupplier<Item> POKEMON_WAND = register("pokemon_wand", Item::new, UTILITY);
-    public static final RegistrySupplier<Item> CHISEL = register("chisel", StatueEditorItem::new, UTILITY);
+    public static final RegistrySupplier<Item> CHISEL = register("chisel", StatueSpawnerItem::new, UTILITY);
+    public static final RegistrySupplier<Item> SUICUNE_STATUE = register("suicune_statue", properties -> new StatueSpawnerItem(properties, LegendKeys.SUICUNE), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> RAIKOU_STATUE = register("raikou_statue", properties -> new StatueSpawnerItem(properties, LegendKeys.RAIKOU), LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> ENTEI_STATUE = register("entei_statue", properties -> new StatueSpawnerItem(properties, LegendKeys.ENTEI), LEGENDARY_ITEMS);
+
     public static final RegistrySupplier<Item> GIFT_BOX = register("gift_box", Item::new, UTILITY);
     public static final RegistrySupplier<Item> NPC_WAND = register("npc_wand", NpcWandItem::new, UTILITY);
     public static final RegistrySupplier<Item> NPC_PATH_TOOL = register("npc_path_tool", NpcPathTool::new, UTILITY);

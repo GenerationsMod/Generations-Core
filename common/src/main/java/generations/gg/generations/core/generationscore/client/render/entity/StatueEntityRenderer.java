@@ -8,6 +8,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.client.GenerationsTextureLoader;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.StatueInstance;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import net.minecraft.client.model.EntityModel;
@@ -47,7 +48,10 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
         var texture = getTextureLocation(entity);
 
-        if(texture.getPath().equals("pk")) state.getInstance().setVariant(texture.toString());
+        if(state.getInstance() instanceof StatueInstance instance) {
+            if(texture.getPath().equals("pk")) instance.setVariant(texture.toString());
+            instance.setMaterial(entity.getStatueData().material().toString());
+        }
 
         var model = (PoseableEntityModel<PokemonEntity>)PokemonModelRepository.INSTANCE.getPoser(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects());
 
@@ -95,10 +99,15 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
 
     public @NotNull ResourceLocation getTextureLocation(@NotNull StatueEntity entity) {
-        var state = entity.getStatueData();
+//        var state = entity.getStatueData();
+//
+//        if(state.material() != null && state.material().getNamespace().equals("statue") && ITextureLoader.instance().getTextureEntries().contains(state.material().getPath())) {
+//            var texture = ((GenerationsTextureLoader) ITextureLoader.instance()).getLocation(state.material().getPath());
+//
+//            if(texture != null) return texture;
+//
+//        }
 
-        if(state.material() != null && state.material().getNamespace().equals("statue") && ITextureLoader.instance().getTextureEntries().contains(state.material().getPath())) {
-            return Objects.requireNonNull(((GenerationsTextureLoader) ITextureLoader.instance()).getLocation(state.material().getPath()));
-        } else return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);
+        return PokemonModelRepository.INSTANCE.getTexture(entity.species(), entity.aspects(), 0f);
     }
 }

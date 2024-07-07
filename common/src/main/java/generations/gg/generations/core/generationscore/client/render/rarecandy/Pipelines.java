@@ -123,24 +123,17 @@ public class Pipelines {
                             .supplyUniform("layer", ctx -> {
                                 var texture = ctx.getTexture("layer");
 
-                                if (texture == null || isStatueMaterial(ctx.instance().variant())) {
+                                if (texture != null && !isStatueMaterial(ctx)) {
                                     texture = ITextureLoader.instance().getDarkFallback();
-                                    if(texture == null) {
-                                        System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
-                                    }
                                 }
-
 
                                 texture.bind(3);
                                 ctx.uniform().uploadInt(3);
                             }).supplyUniform("mask", ctx -> {
                                 var texture = ctx.getTexture("mask");
 
-                                if (texture == null || isStatueMaterial(ctx.instance().variant())) {
+                                if (texture != null && !isStatueMaterial(ctx)) {
                                     texture = ITextureLoader.instance().getDarkFallback();
-                                    if(texture == null) {
-                                        System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
-                                    }
                                 }
 
                                 texture.bind(4);
@@ -161,12 +154,10 @@ public class Pipelines {
 
                                 var texture = ctx.getTexture("mask");
 
-                                if(texture == null) {
+                                if (texture != null && !isStatueMaterial(ctx)) {
                                     texture = ITextureLoader.instance().getDarkFallback();
-                                    if(texture == null) {
-                                        System.out.println("Oh no!: " +ITextureLoader.instance().getTextureEntries());
-                                    }
                                 }
+
 
                                 texture.bind(3);
                                 ctx.uniform().uploadInt(3);
@@ -175,7 +166,7 @@ public class Pipelines {
                                 Vector3f color;
                                 if (ctx.instance() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null)
                                     color = tintProvider.getTint();
-                                else if(ctx.object().getMaterial(ctx.instance().variant()).getValue("color") != null)
+                                else if(!isStatueMaterial(ctx) && ctx.object().getMaterial(ctx.instance().variant()).getValue("color") != null)
                                     color = (Vector3f) ctx.object().getMaterial(ctx.instance().variant()).getValue("color");
                                 else color = ONE;
                                 ctx.uniform().uploadVec3f(color);
@@ -202,16 +193,26 @@ public class Pipelines {
 
     private static void addDiffuse(Pipeline.Builder builder) {
         builder.supplyUniform("diffuse", ctx -> {
-            var variant = ctx.instance().variant();
+            ITexture texture = getTexture(ctx); //isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
 
-            ITexture texture = isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
-            if (texture == null) {
-                texture = ITextureLoader.instance().getNuetralFallback();
-            }
+            /*if(texture == null) */texture = ITextureLoader.instance().getNuetralFallback();
 
             texture.bind(0);
             ctx.uniform().uploadInt(0);
         });
+    }
+
+    private static ITexture getTexture(UniformUploadContext ctx) {
+        String material;
+        if (ctx.instance() instanceof StatueInstance instance) {
+            material = instance.getMaterial();
+        }
+        else {
+            material = null;
+        }
+
+        if(material != null) return ITextureLoader.instance().getTexture(material);
+        return ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
     }
 
     private static void emissionColors(Pipeline.Builder builder) {
@@ -236,7 +237,7 @@ public class Pipelines {
     }
 
     private static Vector3f getColorValue(UniformUploadContext ctx, String id) {
-        return !isStatueMaterial(ctx.instance().variant()) && ctx.getValue(id) instanceof Vector3f vec ? vec : Pipelines.ONE;
+        return !isStatueMaterial(ctx) && ctx.getValue(id) instanceof Vector3f vec ? vec : Pipelines.ONE;
     }
 
     private static float getFloatValue(UniformUploadContext ctx, String id) {
@@ -244,7 +245,7 @@ public class Pipelines {
     }
 
     private static float getFloatValue(UniformUploadContext ctx, String id, float value) {
-        return !isStatueMaterial(ctx.instance().variant()) && ctx.getValue(id) instanceof Float vec ? vec : value;
+        return !isStatueMaterial(ctx) && ctx.getValue(id) instanceof Float vec ? vec : value;
     }
 
     private static void addLight(Pipeline.Builder builder) {
@@ -260,14 +261,9 @@ public class Pipelines {
         }).supplyUniform("emission", ctx -> {
             var texture = ctx.object().getVariant(ctx.instance().variant()).getTexture("emission");
 
-            if(texture == null) {
+
+            if (isStatueMaterial(ctx) || texture == null) {
                 texture = ITextureLoader.instance().getDarkFallback();
-            }
-
-            if(texture == null) {
-                System.out.println("Warning Emission Texture fallBack failed.");
-
-                return;
             }
 
             texture.bind(2);
@@ -276,8 +272,8 @@ public class Pipelines {
     }
 
 
-    private static boolean isStatueMaterial(String variant) {
-        return variant != null && variant.startsWith("statue:") && ((GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(variant.substring(7));
+    private static boolean isStatueMaterial(UniformUploadContext ctx) {
+        return ctx.instance() instanceof StatueInstance instance && instance.getMaterial() != null && ((GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(instance.getMaterial());
     }
 
     public static Pipeline getPipeline(String name) {

@@ -13,7 +13,7 @@ public class C2SUpdateStatueInfoHandler implements ServerNetworkPacketHandler<C2
         StatueEntity statueEntity = (StatueEntity) player.level().getEntity(packet.entityId());
         if (statueEntity != null) {
             statueEntity.setStatueInfo(packet.statueInfo());
-            GenerationsNetwork.INSTANCE.sendToAllTracking(new S2CUpdateStatueInfoPacket(packet.entityId()), player);
+            GenerationsNetwork.INSTANCE.sendToAllTracking(new S2CUpdateStatueInfoPacket(packet.entityId(), packet.statueInfo()), player);
         }
     }
 }

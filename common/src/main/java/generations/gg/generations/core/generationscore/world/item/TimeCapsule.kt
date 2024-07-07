@@ -98,11 +98,15 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
 
     companion object {
         fun getRenderablePokmon(stack: ItemStack): RenderablePokemon? {
-            return getPokemon(stack).map<RenderablePokemon?>(Function<Pokemon, RenderablePokemon?> { it.asRenderablePokemon() })
+            return getPokemon(stack).map { it.asRenderablePokemon() }
                 .orElse(null)
         }
 
         fun getPokemon(stack: ItemStack): Optional<Pokemon> {
+            if(stack.item is StatueSpawnerItem) {
+                return Optional.ofNullable((stack.item as StatueSpawnerItem).pokemon)
+            }
+
             return if (stack.hasTag() && stack.tag!!.contains("pokemon")) {
                 Optional.of(
                     loadFromNBT(
