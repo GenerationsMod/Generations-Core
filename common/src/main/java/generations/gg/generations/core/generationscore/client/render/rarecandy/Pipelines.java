@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.client.render.rarecandy;
 
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
+import com.google.gson.reflect.TypeToken;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.architectury.event.Event;
@@ -15,6 +17,7 @@ import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
 import gg.generations.rarecandy.renderer.pipeline.Pipeline;
 import gg.generations.rarecandy.renderer.pipeline.UniformUploadContext;
+import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -30,6 +33,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class Pipelines {
+    public static final RenderContext.Key<CobblemonInstance> INSTANCE = RenderContext.Companion.key(GenerationsCore.id("object_instance"), TypeToken.get(CobblemonInstance.class));
     private static final Vector3f ONE = new Vector3f(1, 1, 1);
     public static Event<Consumer<PipelineRegister>> REGISTER = EventFactory.createConsumerLoop(PipelineRegister.class);
     public static class PipelineRegister {

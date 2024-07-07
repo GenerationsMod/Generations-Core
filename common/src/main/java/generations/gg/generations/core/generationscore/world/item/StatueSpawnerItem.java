@@ -42,6 +42,8 @@ public class StatueSpawnerItem extends Item {
             if(key != null) {
                 data.setProperties(key.createPokemon(70).createPokemonProperties(PokemonPropertyExtractor.SPECIES, PokemonPropertyExtractor.FORM, PokemonPropertyExtractor.ASPECTS));
                 data.setSacredAshInteractable(true);
+                data.setMaterial("concrete");
+                data.setIsStatic(true);
                 serverPlayer.setItemInHand(context.getHand(), ItemStack.EMPTY);
             }
 
@@ -50,7 +52,6 @@ public class StatueSpawnerItem extends Item {
             serverPlayer.level().addFreshEntity(statueEntity);
 
             statueEntity.setStatueInfo(data);
-            System.out.println("Statue Id!!!!: " + statueEntity.getId());
             GenerationsNetwork.INSTANCE.sendToAllTracking(new S2CUpdateStatueInfoPacket(statueEntity.getId(), data), serverPlayer);
         }
         return InteractionResult.PASS;

@@ -1,16 +1,17 @@
 package generations.gg.generations.core.generationscore.client.model;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
+import com.cobblemon.mod.common.net.messages.client.data.SpeciesRegistrySyncPacket;
+import com.cobblemon.mod.common.pokemon.Species;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.client.render.CobblemonInstanceProvider;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.CompiledModel;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.CobblemonInstance;
+import generations.gg.generations.core.generationscore.client.render.rarecandy.*;
 import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import net.minecraft.resources.ResourceLocation;
@@ -47,13 +48,15 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         var entity = context.request(RenderContext.Companion.getENTITY());
 
-        var isStatue = entity instanceof StatueEntity;
 
         boolean isGui = false;
-        CobblemonInstance instance = null;
-        if (!isStatue && context.request(RenderContext.Companion.getENTITY()) instanceof CobblemonInstanceProvider provider) {
+        CobblemonInstance instance = context.request(Pipelines.INSTANCE);
+
+        if (instance != null && context.request(RenderContext.Companion.getENTITY()) instanceof CobblemonInstanceProvider provider) {
             instance = provider.getInstance();
         }
+
+        var isStatue = instance instanceof StatueInstance;
 
         var scale = model.renderObject.scale;
 
@@ -65,12 +68,11 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         } else {
             if(isStatue) {
                 if(model.guiInstance == null) return;
-                instance = ((StatueEntity) entity).getInstance();
                 instance.matrixTransforms = model.guiInstance.matrixTransforms;
                 instance.offsets = model.guiInstance.offsets;
             }
 
-            scale *= ((CobblemonInstanceProvider) context.request(RenderContext.Companion.getENTITY())).getFormData().getHitbox().height;
+            scale *= PokemonSpecies.INSTANCE.getByIdentifier(context.requires(RenderContext.Companion.getSPECIES())).getForm(context.requires(RenderContext.Companion.getASPECTS())).getHitbox().height;
         }
 
         if(model.renderObject.isReady()) {
