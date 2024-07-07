@@ -50,7 +50,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
         if(state.getInstance() instanceof StatueInstance instance) {
             if(texture.getPath().equals("pk")) instance.setVariant(texture.toString());
-            instance.setMaterial(entity.getStatueData().material().toString());
+            instance.setMaterial(entity.getStatueData().material());
         }
 
         var model = (PoseableEntityModel<PokemonEntity>)PokemonModelRepository.INSTANCE.getPoser(renderable.getSpecies().getResourceIdentifier(), renderable.getAspects());

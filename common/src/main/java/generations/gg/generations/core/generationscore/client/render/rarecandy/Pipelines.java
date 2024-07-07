@@ -32,8 +32,6 @@ import java.util.function.Function;
 public class Pipelines {
     private static final Vector3f ONE = new Vector3f(1, 1, 1);
     public static Event<Consumer<PipelineRegister>> REGISTER = EventFactory.createConsumerLoop(PipelineRegister.class);
-    private static BlendRecord blendState = new BlendRecord();
-
     public static class PipelineRegister {
         private final ResourceManager resourceManager;
         private final Map<String, Function<String, Pipeline>> pipelines;
@@ -123,7 +121,7 @@ public class Pipelines {
                             .supplyUniform("layer", ctx -> {
                                 var texture = ctx.getTexture("layer");
 
-                                if (texture != null && !isStatueMaterial(ctx)) {
+                                if (isStatueMaterial(ctx) || texture == null) {
                                     texture = ITextureLoader.instance().getDarkFallback();
                                 }
 
@@ -132,7 +130,7 @@ public class Pipelines {
                             }).supplyUniform("mask", ctx -> {
                                 var texture = ctx.getTexture("mask");
 
-                                if (texture != null && !isStatueMaterial(ctx)) {
+                                if (isStatueMaterial(ctx) || texture == null) {
                                     texture = ITextureLoader.instance().getDarkFallback();
                                 }
 
@@ -154,7 +152,7 @@ public class Pipelines {
 
                                 var texture = ctx.getTexture("mask");
 
-                                if (texture != null && !isStatueMaterial(ctx)) {
+                                if (isStatueMaterial(ctx) || texture == null) {
                                     texture = ITextureLoader.instance().getDarkFallback();
                                 }
 
@@ -195,7 +193,9 @@ public class Pipelines {
         builder.supplyUniform("diffuse", ctx -> {
             ITexture texture = getTexture(ctx); //isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
 
-            /*if(texture == null) */texture = ITextureLoader.instance().getNuetralFallback();
+            if (texture == null) {
+                texture = ITextureLoader.instance().getNuetralFallback();
+            }
 
             texture.bind(0);
             ctx.uniform().uploadInt(0);
