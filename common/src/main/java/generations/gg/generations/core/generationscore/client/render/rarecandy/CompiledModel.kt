@@ -7,6 +7,7 @@ import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import gg.generations.rarecandy.renderer.components.MeshObject
 import gg.generations.rarecandy.renderer.components.MultiRenderObject
 import generations.gg.generations.core.generationscore.client.render.rarecandy.loading.GenerationsModelLoader
+import generations.gg.generations.core.generationscore.util.TaskQueue
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 import gg.generations.rarecandy.renderer.storage.ObjectManager
 import net.minecraft.client.Minecraft
@@ -31,13 +32,15 @@ class CompiledModel {
     @JvmOverloads
     constructor(
         name: ResourceLocation,
-        stream: InputStream?,
+        stream: Resource?,
         supplier: Supplier<MeshObject>?,
         requiresVariantTexture: Boolean = true
     ) {
         this.name = name
 
-        renderObject = loader.compiledModelMethod(this, stream, supplier, name.toString(), requiresVariantTexture)
+        queue.addTask {
+            renderObject = loader.compiledModelMethod(this, stream?.open(), supplier, name.toString(), requiresVariantTexture)
+        }
     }
 
     constructor() {
@@ -78,11 +81,13 @@ class CompiledModel {
             GenerationsModelLoader(
                 2
             );
+
+        val queue = TaskQueue()
+
         @JvmStatic
         fun of(pair: ResourceLocation, resource: Resource): CompiledModel {
             return try {
-                val `is` = resource.open()
-                CompiledModel(pair, `is`, { AnimatedMeshObject() })
+                CompiledModel(pair, resource, { AnimatedMeshObject() })
             } catch (e: Exception) {
                 val path = pair.toString()
                 if (path.endsWith(".smdx") || path.endsWith(".pqc")) throw RuntimeException("Tried reading a 1.12 .smdx or .pqc")
