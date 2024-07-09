@@ -34,16 +34,16 @@ public class StatueSpawnerItem extends Item {
     public @NotNull InteractionResult useOn(UseOnContext context) {
         if (context.getPlayer() != null && context.getPlayer() instanceof ServerPlayer serverPlayer) {
             BlockPos pos = context.getClickedPos();
-            StatueEntity statueEntity = new StatueEntity(GenerationsEntities.STATUE_ENTITY.get(), serverPlayer.level());
+            StatueEntity statueEntity = new StatueEntity(serverPlayer.level(), );
 
             var data = statueEntity.getStatueData();
-            data.setOrientation(context.getHorizontalDirection().toYRot());
+            data.orientation = context.getHorizontalDirection().toYRot();
 
             if(key != null) {
-                data.setProperties(key.createPokemon(70).createPokemonProperties(PokemonPropertyExtractor.SPECIES, PokemonPropertyExtractor.FORM, PokemonPropertyExtractor.ASPECTS));
+                data.properties = key.createPokemon(70).createPokemonProperties(PokemonPropertyExtractor.SPECIES, PokemonPropertyExtractor.FORM, PokemonPropertyExtractor.ASPECTS);
                 data.setSacredAshInteractable(true);
                 data.setMaterial("concrete");
-                data.setIsStatic(true);
+                data.isStatic = true;
                 serverPlayer.setItemInHand(context.getHand(), ItemStack.EMPTY);
             }
 

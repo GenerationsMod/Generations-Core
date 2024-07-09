@@ -31,12 +31,12 @@ public abstract class PokemonEntityMixin implements CobblemonInstanceProvider {
     }
 
     @Override
-    public Set<String> aspects() {
+    public Set<String> getAspects() {
         return self().getPokemon().getAspects();
     }
 
     @Override
-    public ResourceLocation species() {
+    public ResourceLocation getSpecies() {
         return self().getPokemon().getSpecies().getResourceIdentifier();
     }
 }

@@ -14,6 +14,7 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.GenerationsCore
 import generations.gg.generations.core.generationscore.client.screen.ScreenUtils
+import generations.gg.generations.core.generationscore.client.screen.ScreenUtils.createTextField
 import generations.gg.generations.core.generationscore.client.screen.widget.AngleSelectionWidget
 import generations.gg.generations.core.generationscore.client.screen.widget.ImageCheckbox
 import generations.gg.generations.core.generationscore.network.GenerationsNetwork
@@ -52,49 +53,47 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
     private var poseTextField: EditBox? = null
 
     init {
-        parserString = statue.statueData.properties.asString(" ")
+        parserString = statue.properties.asString(" ")
     }
 
     override fun init() {
         height = 191
         x = width / 2 - 96
         y = height / 2 - 92
-        val info = statue.statueData
         parserTextField = addRenderableWidget(
-            ScreenUtils.createTextField(
+            createTextField(
                 x + 7, y + 7, 125, 14, 500,
                 parserString
-            ) { s: String -> parserString = s })
+            ) { s -> parserString = s })
         updateButton = addRenderableWidget(Button.builder(Component.literal("Update")) { button: Button? ->
             statue.statueData.properties = parse(parserString, " ", "=")
         }
             .size(51, 16).pos(x + 135, y + 6).build())
         nameTextField = addRenderableWidget(
-            ScreenUtils.createTextField(
+            createTextField(
                 x + 59,
                 y + 92,
                 126,
                 14,
                 50,
-                info.label,
-                { a: String? -> true }) { s: String? -> statue.statueData.label = s })
+                statue.label,
+                { a: String? -> true }) { s: String? -> statue.label = s })
         poseTextField = addRenderableWidget(
-            ScreenUtils.createTextField(
+            createTextField(
                 x + 59,
                 y + 110,
                 126,
                 14,
                 50,
-                info.poseType.toString(),
-                { a: String? -> true }) { s: String? -> statue.statueData.setPosType(s) })
+                statue.poseType.toString(), { _ -> true }) { s: String? -> statue.statueData.setPosType(s) })
         timestampTextField = addRenderableWidget(
-            ScreenUtils.createTextField(
+            createTextField(
                 x + 59,
                 y + 128,
                 76,
                 14,
                 25,
-                info.frame.toString(),
+                statue.frame.toString(),
                 { s: String ->
                     if (s.isEmpty()) {
                         return@createTextField true
@@ -112,7 +111,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                 updateStatueData()
             })
         scaleTextField = addRenderableWidget(
-            ScreenUtils.createTextField(x + 59, y + 146, 36, 14, 5, info.scale.toString(),
+            createTextField(x + 59, y + 146, 36, 14, 5, info.scale.toString(),
                 { s: String ->
                     if (s.isEmpty()) {
                         return@createTextField true
@@ -137,7 +136,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
             })
 
         materialTextField = addRenderableWidget(
-            ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, info?.material() ?: "", { true }) {
+            createTextField(x + 59, y + 146 + 18, 126, 14, 500, info?.material() ?: "", { true }) {
                 it.takeIf { it.isNotEmpty() }.run {
                     statue.statueData.setMaterial(it)
                     updateStatueData()
@@ -149,11 +148,11 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
             ImageCheckbox(
                 x + 170, y + 127, 16, 16, TEXTURE, 0, 166,
                 {
-                    statue.statueData.setIsStatic(true)
+                    statue.statueData.isStatic = true
                     updateStatueData()
                 },
                 {
-                    statue.statueData.setIsStatic(false)
+                    statue.statueData.isStatic = false
                     updateStatueData()
                 },
                 info.isStatic

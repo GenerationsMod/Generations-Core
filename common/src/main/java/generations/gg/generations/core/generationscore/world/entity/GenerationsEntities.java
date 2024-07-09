@@ -25,7 +25,12 @@ public class GenerationsEntities {
     public static final RegistrySupplier<EntityType<GenerationsChestBoatEntity>> CHEST_BOAT_ENTITY = createEntityType("chest_boat", MobCategory.MISC, EntityType.CHEST_BOAT.getWidth(), EntityType.CHEST_BOAT.getHeight(), GenerationsChestBoatEntity::new);
 
     public static RegistrySupplier<EntityType<StatueEntity>> STATUE_ENTITY =
-            ENTITIES.register("statue", () -> EntityType.Builder.<StatueEntity>of(StatueEntity::new, MobCategory.MISC).build("statue"));
+            ENTITIES.register("statue", () -> EntityType.Builder.<StatueEntity>of(new EntityType.EntityFactory<StatueEntity>() {
+                @Override
+                public StatueEntity create(EntityType<StatueEntity> entityType, Level level) {
+                    return new StatueEntity(level, );
+                }
+            }, MobCategory.MISC).build("statue"));
 
     public static RegistrySupplier<EntityType<ZygardeCellEntity>> ZYGARDE_CELL = ENTITIES.register("zygarde_cell", () -> EntityType.Builder.<ZygardeCellEntity>of(ZygardeCellEntity::new, MobCategory.MISC).build("zygarde_cell"));
 

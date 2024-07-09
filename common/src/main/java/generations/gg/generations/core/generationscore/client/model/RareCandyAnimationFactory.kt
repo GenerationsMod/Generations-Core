@@ -15,13 +15,14 @@ import generations.gg.generations.core.generationscore.client.render.rarecandy.C
 import gg.generations.rarecandy.renderer.animation.Animation
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.entity.Entity
 import java.util.function.Supplier
 
 class RareCandyAnimationFactory : AnimationReferenceFactory {
-    override fun stateful(
-        model: JsonPokemonPoseableModel,
+    override fun <T : Entity> stateful(
+        model: PoseableEntityModel<T>,
         s: String
-    ): StatefulAnimationRareCandy {
+    ): StatefulAnimationRareCandy<T> {
         val split =
             s.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
@@ -37,13 +38,13 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
             }
             null
-        }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry.get(location)?.guiInstance }, transforms, pausesPoses)
+        }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry[location]?.guiInstance }, transforms, pausesPoses)
     }
 
-    override fun stateless(
-        jsonPokemonPoseableModel: JsonPokemonPoseableModel,
+    override fun <T : Entity> stateless(
+        jsonPokemonPoseableModel: PoseableEntityModel<T>,
         s: String
-    ): StatelessAnimation<PokemonEntity, ModelFrame> {
+    ): StatelessAnimation<T, ModelFrame> {
         val split =
             s.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
@@ -57,41 +58,33 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry[location]?.guiInstance })
     }
 
-    class StatefulAnimationRareCandy(private val animationSuppler: Supplier<Animation>?, private val instanceProvider: Supplier<CobblemonInstance?>, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<PokemonEntity, ModelFrame> {
+    class StatefulAnimationRareCandy<T : Entity>(private val animationSuppler: Supplier<Animation>?, private val instanceProvider: Supplier<CobblemonInstance?>, transforms: Boolean, pausesPoses: Boolean) : StatefulAnimation<T, ModelFrame> {
         var startedSeconds = -1F
+        override val duration: Float = animationSuppler?.get()?.animationDuration?.toFloat() ?: 0f;
         override val isTransform: Boolean = transforms
 
-        override val isPosePauser: Boolean = pausesPoses
-
-        override fun preventsIdle(
-            entity: PokemonEntity?,
-            state: PoseableEntityState<PokemonEntity>,
-            idleAnimation: StatelessAnimation<PokemonEntity, *>
-        ): Boolean {
-            return false
-        }
-
         override fun run(
-            t: PokemonEntity?,
-            poseableEntityModel: PoseableEntityModel<PokemonEntity>,
-            poseableEntityState: PoseableEntityState<PokemonEntity>,
-            v: Float,
-            v1: Float,
-            v2: Float,
-            v3: Float,
-            v4: Float
+            entity: T?,
+            model: PoseableEntityModel<T>,
+            state: PoseableEntityState<T>,
+            limbSwing: Float,
+            limbSwingAmount: Float,
+            ageInTicks: Float,
+            headYaw: Float,
+            headPitch: Float,
+            intensity: Float
         ): Boolean {
 
             if (startedSeconds == -1F) {
-                startedSeconds = poseableEntityState.animationSeconds
+                startedSeconds = state.animationSeconds
             }
 
-            val instance = if (t != null) (t as CobblemonInstanceProvider).instance else poseableEntityModel.context.request(RenderContext.ENTITY)?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance ?: instanceProvider.get()
+            val instance = if (entity != null) (entity as CobblemonInstanceProvider).instance else model.context.request(RenderContext.ENTITY)?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance ?: instanceProvider.get()
             val animation = animationSuppler?.get()
             if (animation != null && instance != null) {
                 instance.setAnimation(animation)
                 instance.currentAnimation!!.startTime = startedSeconds.toDouble()
-                instance.currentAnimation!!.update(poseableEntityState.animationSeconds.toDouble())
+                instance.currentAnimation!!.update(state.animationSeconds.toDouble())
                 instance.matrixTransforms = animation.getFrameTransform(instance.currentAnimation!!)
                 animation.getFrameOffset(instance.currentAnimation!!)
             }
@@ -99,32 +92,33 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
         }
 
         override fun applyEffects(
-            pokemon: PokemonEntity,
-            poseableEntityState: PoseableEntityState<PokemonEntity>,
+            pokemon: T,
+            poseableEntityState: PoseableEntityState<T>,
             v: Float,
             v1: Float
         ) {
         }
     }
 
-    private class StatelessAnimationRareCandy (
-        jsonPokemonPoseableModel: JsonPokemonPoseableModel,
+    private class StatelessAnimationRareCandy<T : Entity> (
+        jsonPokemonPoseableModel: PoseableEntityModel<T>,
         private val animationSupplier: Supplier<Animation?>,
         private val objectSupplier: Supplier<CobblemonInstance?>
-    ) : StatelessAnimation<PokemonEntity, ModelFrame>(jsonPokemonPoseableModel) {
+    ) : StatelessAnimation<T, ModelFrame>(jsonPokemonPoseableModel) {
         override val targetFrame = ModelFrame::class.java
 
         override fun setAngles(
-            t: PokemonEntity?,
-            poseableEntityModel: PoseableEntityModel<PokemonEntity>,
-            state: PoseableEntityState<PokemonEntity>?,
+            entity: T?,
+            model: PoseableEntityModel<T>,
+            state: PoseableEntityState<T>?,
             limbSwing: Float,
             limbSwingAmount: Float,
             ageInTicks: Float,
             headYaw: Float,
-            headPitch: Float
+            headPitch: Float,
+            intensity: Float
         ) {
-            val instance = if (t != null) (t as CobblemonInstanceProvider).instance else poseableEntityModel.context.request(RenderContext.ENTITY)?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance ?: objectSupplier.get()
+            val instance = if (entity != null) (entity as CobblemonInstanceProvider).instance else model.context.request(RenderContext.ENTITY)?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance ?: objectSupplier.get()
 
             val animation = animationSupplier.get()
 
@@ -137,7 +131,6 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
             }
         }
     }
-
 }
 
 private fun String.asBoolean(): Boolean = when {

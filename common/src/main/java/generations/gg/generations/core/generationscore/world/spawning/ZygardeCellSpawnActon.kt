@@ -7,7 +7,7 @@ import generations.gg.generations.core.generationscore.world.entity.ZygardeCellE
 import net.minecraft.world.item.ItemStack
 
 class ZygardeCellSpawnActon(ctx: SpawningContext, override val detail: ZygardeCellDetail) : SpawnAction<ZygardeCellEntity>(ctx, detail) {
-    override fun createEntity(): ZygardeCellEntity? {
+    override fun run(): ZygardeCellEntity? {
         val start = ItemStack.EMPTY
         start.item.hasCraftingRemainingItem()
 

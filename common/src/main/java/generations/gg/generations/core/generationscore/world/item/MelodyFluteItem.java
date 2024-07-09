@@ -50,6 +50,8 @@ public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
         return super.use(level, player, usedHand);
     }
 
+
+
     @Override
     public @NotNull InteractionResult useOn(@NotNull UseOnContext context) {
         return super.useOn(context);

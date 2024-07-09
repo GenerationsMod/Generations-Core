@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.client
 
+import com.cobblemon.mod.common.api.scheduling.SchedulingTracker
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import generations.gg.generations.core.generationscore.client.render.CobblemonInstanceProvider
@@ -9,7 +10,7 @@ import generations.gg.generations.core.generationscore.world.entity.StatueEntity
 import net.minecraft.resources.ResourceLocation
 import org.joml.Matrix4f
 
-class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<PokemonEntity>(),
+class StatueEntityClient(var statueEntity: StatueEntity, override val schedulingTracker: SchedulingTracker) : PoseableEntityState<StatueEntity>(),
     CobblemonInstanceProvider {
     private var trueAge: Int = 0
     private var cobblemonInstance: StatueInstance? = null
@@ -53,7 +54,7 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
         instance?.takeIf { it is StatueInstance }?.let { it as StatueInstance }.let { cobblemonInstance = it }
     }
 
-    override fun species(): ResourceLocation? {
+    override fun getSpecies(): ResourceLocation? {
         return null
     }
 
@@ -61,7 +62,7 @@ class StatueEntityClient(var statueEntity: StatueEntity) : PoseableEntityState<P
         return null
     }
 
-    override fun getEntity(): PokemonEntity? {
+    override fun getEntity(): StatueEntity? {
         return null
     }
 }
