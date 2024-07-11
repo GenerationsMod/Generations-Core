@@ -64,9 +64,9 @@ class CompiledModel {
 
     private fun render(instance: ObjectInstance, objectManager: ObjectManager) {
         if (!renderObject!!.isReady) return
-        Minecraft.getInstance().profiler.push("create_model_instance")
+//        Minecraft.getInstance().profiler.push("create_model_instance")
         objectManager.add(renderObject!!, instance)
-        Minecraft.getInstance().profiler.pop()
+//        Minecraft.getInstance().profiler.pop()
     }
 
     fun delete() {

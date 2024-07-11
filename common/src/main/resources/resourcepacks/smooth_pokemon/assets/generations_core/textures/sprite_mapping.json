@@ -1,0 +1,8 @@
+{
+  "pokemon": {
+    "generations_core:arcanine": {
+      "shiny": "generations_core:pokemon/arcanine/shiny.png",
+      "normal": "generations_core:pokemon/arcanine/normal.png"
+    }
+  }
+}

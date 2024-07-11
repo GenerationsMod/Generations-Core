@@ -24,12 +24,11 @@ import kotlin.random.Random
 object GenerationsTextureLoader : ITextureLoader() {
     val REGULAR: MutableMap<String, ITexture?> = HashMap()
     val RARE_CANDY = FileToIdConverter("textures", "rare_candy_texture.json")
-
+    val gson = Gson()
     init {}
 
     fun initialize(manager: ResourceManager) {
         clear()
-        val gson = Gson()
         try {
             RARE_CANDY.listMatchingResources(manager).values.forEach { resouce ->
                 resouce.openAsReader().use { GsonHelper.fromJson(gson, it, RARE_CANDY_TYPE) }.forEach { (key, value) ->
