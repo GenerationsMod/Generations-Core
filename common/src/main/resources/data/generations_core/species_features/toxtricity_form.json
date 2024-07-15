@@ -1,11 +1,10 @@
 {
   "type": "choice",
-  "keys": ["zygarde_form"],
-  "default": "50%",
+  "keys": ["toxtricity_form"],
+  "default": "random",
   "choices": [
-    "10%",
-    "50%",
-    "complete"
+    "amped",
+    "lowkey"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"

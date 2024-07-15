@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["zen_mode"],
+  "default": false,
+  "isAspect": true
+}

@@ -1,0 +1,14 @@
+{
+  "type": "choice",
+  "keys": ["mask"],
+  "default": "none",
+  "choices": [
+    "none",
+    "teal",
+    "wellspring",
+    "hearthflame",
+    "cornerstone"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

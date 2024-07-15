@@ -1,0 +1,15 @@
+{
+  "type": "choice",
+  "keys": ["authenticity"],
+  "default": "phony",
+  "choices": [
+    "phony",
+    "antique",
+    "counterfeit",
+    "artisan",
+    "unremarkable",
+    "masterpiece"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

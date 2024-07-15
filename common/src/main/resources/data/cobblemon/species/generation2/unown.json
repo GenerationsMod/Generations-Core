@@ -52,7 +52,7 @@
   },
   "height": 5,
   "weight": 50,
-  "aspects": ["glyph"],
+  "aspects": ["symbol"],
   "cannotDynamax": false,
   "drops": {
     "amount": 1,

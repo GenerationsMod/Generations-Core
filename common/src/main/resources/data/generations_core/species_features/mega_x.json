@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["mega_x"],
+  "default": false,
+  "isAspect": true
+}

@@ -1,0 +1,13 @@
+{
+  "type": "choice",
+  "keys": ["oricorio_style"],
+  "default": "random",
+  "choices": [
+    "baile",
+    "pom-pom",
+    "pa'u",
+    "sensu"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

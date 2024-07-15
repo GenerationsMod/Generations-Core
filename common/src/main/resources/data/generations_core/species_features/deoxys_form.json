@@ -1,11 +1,11 @@
 {
   "type": "choice",
-  "keys": ["zygarde_form"],
-  "default": "50%",
+  "keys": ["deoxys_form"],
+  "default": "false",
   "choices": [
-    "10%",
-    "50%",
-    "complete"
+    "attack",
+    "defense",
+    "speed"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"

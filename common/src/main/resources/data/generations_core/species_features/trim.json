@@ -1,0 +1,18 @@
+{
+  "type": "choice",
+  "keys": ["trim"],
+  "default": "false",
+  "choices": [
+    "heart",
+    "star",
+    "diamond",
+    "deputante",
+    "matron",
+    "dandy",
+    "lareine",
+    "kabuki",
+    "pharaoh"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "choice",
+  "keys": ["rotom_form"],
+  "default": "false",
+  "choices": [
+    "fan",
+    "frost",
+    "heat",
+    "mow",
+    "wash"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

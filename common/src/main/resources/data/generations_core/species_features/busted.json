@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["busted"],
+  "default": false,
+  "isAspect": true
+}

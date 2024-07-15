@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["bloodmoon"],
+  "default": false,
+  "isAspect": true
+}

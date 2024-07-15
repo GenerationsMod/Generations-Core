@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["eternalflower"],
+  "default": false,
+  "isAspect": true
+}

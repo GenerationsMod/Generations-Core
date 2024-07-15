@@ -1,0 +1,17 @@
+{
+  "type": "choice",
+  "keys": ["core"],
+  "default": "random",
+  "choices": [
+    "meteor",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "indigo",
+    "violet"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}_core"
+}

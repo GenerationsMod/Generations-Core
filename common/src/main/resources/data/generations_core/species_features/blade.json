@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["blade"],
+  "default": false,
+  "isAspect": true
+}

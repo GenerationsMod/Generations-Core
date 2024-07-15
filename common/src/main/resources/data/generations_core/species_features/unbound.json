@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["unbound"],
+  "default": false,
+  "isAspect": true
+}

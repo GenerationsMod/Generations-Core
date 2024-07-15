@@ -1,11 +1,10 @@
 {
   "type": "choice",
-  "keys": ["zygarde_form"],
-  "default": "50%",
+  "keys": ["kyurem_form"],
+  "default": "false",
   "choices": [
-    "10%",
-    "50%",
-    "complete"
+    "black",
+    "white"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"

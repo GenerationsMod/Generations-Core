@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["eternamax"],
+  "default": false,
+  "isAspect": true
+}

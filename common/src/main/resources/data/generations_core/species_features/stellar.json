@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["stellar"],
+  "default": false,
+  "isAspect": true
+}

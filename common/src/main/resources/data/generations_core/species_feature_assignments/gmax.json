@@ -1,0 +1,4 @@
+{
+  "pokemon": ["venusaur", "charizard", "blastoise", "butterfree", "pikachu", "meowth", "machamp", "gengar", "kingler", "lapras", "eevee", "snorlax", "garbodor", "melmetal", "rillaboom", "cinderace", "inteleon", "corviknight", "orbeetle", "drednaw", "coalossal", "flapple", "appletun", "sandaconda", "toxtricity", "centiskorch", "hatterene", "grimmsnarl", "alcremie", "copperajah", "duraludon", "urshifu"],
+  "features": ["gmax"]
+}

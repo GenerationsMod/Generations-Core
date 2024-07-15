@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["crowned"],
+  "default": false,
+  "isAspect": true
+}

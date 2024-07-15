@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["dada"],
+  "default": false,
+  "isAspect": true
+}

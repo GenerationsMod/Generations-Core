@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["hangry"],
+  "default": false,
+  "isAspect": true
+}

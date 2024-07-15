@@ -1,11 +1,11 @@
 {
   "type": "choice",
-  "keys": ["zygarde_form"],
-  "default": "50%",
+  "keys": ["cloak"],
+  "default": "random",
   "choices": [
-    "10%",
-    "50%",
-    "complete"
+    "plant",
+    "sandy",
+    "trash"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"

@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["sky"],
+  "default": false,
+  "isAspect": true
+}

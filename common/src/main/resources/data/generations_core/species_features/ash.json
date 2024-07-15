@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["ash"],
+  "default": false,
+  "isAspect": true
+}

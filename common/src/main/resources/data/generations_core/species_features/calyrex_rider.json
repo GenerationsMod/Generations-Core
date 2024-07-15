@@ -1,0 +1,11 @@
+{
+  "type": "choice",
+  "keys": ["calyrex_rider"],
+  "default": "false",
+  "choices": [
+    "ice",
+    "shadow"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}rider"
+}

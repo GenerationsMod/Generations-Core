@@ -1,7 +1,7 @@
 {
   "type": "choice",
-  "keys": ["glyph"],
-  "default": "a",
+  "keys": ["symbol"],
+  "default": "random",
   "choices": [
     "a",
     "b",
@@ -29,9 +29,9 @@
     "x",
     "y",
     "z",
-    "?",
-    "!"
+    "questionmark",
+    "exclamation"
   ],
   "isAspect": true,
-  "aspectFormat": "glyph-{{choice}}"
+  "aspectFormat": "{{choice}}"
 }

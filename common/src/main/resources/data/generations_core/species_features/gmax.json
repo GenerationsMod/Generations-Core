@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["gmax"],
+  "default": false,
+  "isAspect": true
+}

@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["piroette"],
+  "default": false,
+  "isAspect": true
+}

@@ -1,0 +1,12 @@
+{
+  "type": "choice",
+  "keys": ["necrozma_form"],
+  "default": "false",
+  "choices": [
+    "duskmane",
+    "dawnwings",
+    "ultra"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

@@ -1,11 +1,11 @@
 {
   "type": "choice",
-  "keys": ["zygarde_form"],
-  "default": "50%",
+  "keys": ["lycanroc_form"],
+  "default": "random",
   "choices": [
-    "10%",
-    "50%",
-    "complete"
+    "midday",
+    "midnight",
+    "dusk"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"

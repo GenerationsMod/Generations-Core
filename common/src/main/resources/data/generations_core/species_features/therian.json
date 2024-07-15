@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["therian"],
+  "default": false,
+  "isAspect": true
+}

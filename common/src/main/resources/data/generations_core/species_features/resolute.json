@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["resolute"],
+  "default": false,
+  "isAspect": true
+}

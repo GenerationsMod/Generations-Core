@@ -1,11 +1,10 @@
 {
   "type": "choice",
-  "keys": ["zygarde_form"],
-  "default": "50%",
+  "keys": ["cramorant_form"],
+  "default": "false",
   "choices": [
-    "10%",
-    "50%",
-    "complete"
+    "gorging",
+    "gulping"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"

@@ -1,0 +1,19 @@
+{
+  "type": "choice",
+  "keys": ["pikachu_cap"],
+  "default": "false",
+  "choices": [
+    "originalcap",
+    "worldcap",
+    "kantocap",
+    "johtocap",
+    "hoenncap",
+    "sinnohcap",
+    "unovacap",
+    "kaloscap",
+    "alolacap",
+    "partnercap"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

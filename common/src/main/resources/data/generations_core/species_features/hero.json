@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["hero"],
+  "default": false,
+  "isAspect": true
+}

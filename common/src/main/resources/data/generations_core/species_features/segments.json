@@ -1,11 +1,10 @@
 {
   "type": "choice",
-  "keys": ["zygarde_form"],
-  "default": "50%",
+  "keys": ["segments"],
+  "default": "random",
   "choices": [
-    "10%",
-    "50%",
-    "complete"
+    "two",
+    "three"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"
