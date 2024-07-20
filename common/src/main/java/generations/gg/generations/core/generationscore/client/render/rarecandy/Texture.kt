@@ -17,7 +17,6 @@ class Texture(override var location: ResourceLocation, image: NativeImage) : Dyn
         Minecraft.getInstance().textureManager.register(location, this)
     }
 
-
     override fun bind(slot: Int) {
 
         assert(slot in 0..31)

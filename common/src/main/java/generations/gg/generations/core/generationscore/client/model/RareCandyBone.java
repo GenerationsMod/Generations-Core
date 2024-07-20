@@ -29,6 +29,7 @@ import org.joml.Vector3f;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -38,13 +39,13 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     private final Supplier<CompiledModel> objectSupplier;
 
     private static final Map<String, Bone> DUMMY = Collections.emptyMap();
-    private final Function<String, ResourceLocation> spriteProvider;
+    private final BiFunction<RenderContext.RenderState, String, ResourceLocation> spriteProvider;
 
     public RareCandyBone(ResourceLocation location) {
         var spriteLoc = Objects.requireNonNull(ResourceLocation.tryBuild(location.getNamespace(), location.getPath().replace("bedrock/pokemon/models/", "").replace(".pk", "")));
         objectSupplier = () -> ModelRegistry.get(location);
-        spriteProvider = s -> {
-            var sprite = SpriteRegistry.INSTANCE.getPokemonSprite(Objects.requireNonNull(spriteLoc), s);
+        spriteProvider = (state, s) -> {
+            var sprite = SpriteRegistry.INSTANCE.getPokemonSprite(state, Objects.requireNonNull(spriteLoc), s);
             if(sprite != null) return sprite;
             else return MissingTextureAtlasSprite.getLocation();
         };
@@ -58,19 +59,19 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
     @Override
     public void render(RenderContext context, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
-        if(context.request(Pipelines.INSTANCE) == null && context.request(RenderContext.Companion.getENTITY()) == null) {
-            renderSprite(context, stack, packedLight, packedOverlay, r, g, b, a);
-        } else {
+//        if(context.request(Pipelines.INSTANCE) == null && context.request(RenderContext.Companion.getENTITY()) == null) {
+//            renderSprite(context, stack, packedLight, packedOverlay, r, g, b, a);
+//        } else {
             renderModel(context, stack, packedLight);
-        }
+//        }
     }
 
-    private void renderSprite(RenderContext context, PoseStack stack, int packedLight, int packedOverlay, float r, float g, float b, float a) {
+    public void renderSprite(RenderContext context, PoseStack stack, int packedLight, int packedOverlay, float r, float g, float b, float a) {
         var id = getTexture(context);
 
         if (id != null) {
             if (id.getNamespace().equals("pk")) {
-                id = spriteProvider.apply(id.getPath());
+                id = spriteProvider.apply(context.requires(RenderContext.Companion.getRENDER_STATE()), id.getPath());
             }
         }
 
@@ -91,10 +92,9 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         if(model == null || model.renderObject == null) return;
 
-        boolean isGui = false;
         CobblemonInstance instance = context.request(Pipelines.INSTANCE);
 
-        if (instance != null && context.request(RenderContext.Companion.getENTITY()) instanceof CobblemonInstanceProvider provider) {
+        if (instance == null && context.request(RenderContext.Companion.getENTITY()) instanceof CobblemonInstanceProvider provider) {
             instance = provider.getInstance();
         }
 
@@ -104,10 +104,6 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         if(instance == null) {
             return;
-//            instance = model.guiInstance;
-//            if(instance == null) return;
-//            isGui = true;
-//            instance.viewMatrix().set(RenderSystem.getModelViewMatrix());
         } else {
             if(isStatue) {
                 if(model.guiInstance == null) return;

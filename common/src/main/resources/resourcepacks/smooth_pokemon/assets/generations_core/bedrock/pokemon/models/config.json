@@ -1,0 +1,307 @@
+{
+    "scale": 0.46846027839841925,
+    "materials": {
+        "body_b_02": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_body_b_alb.png",
+                "layer": "pm0851_00_00_body_b_lym.png"
+            },
+            "values": {
+                "emiColor3": "#c6eafe",
+                "baseColor1": "#fefefe",
+                "emiIntensity3": 0.4,
+                "baseColor4": "#fefefe",
+                "baseColor3": "#b6d8eb",
+                "baseColor2": "#fefefe"
+            },
+            "blend": "regular"
+        },
+        "body_a_01": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_body_a_alb.png",
+                "layer": "pm0851_00_00_body_a_lym.png",
+                "mask": "pm0851_00_00_body_a_msk.png"
+            },
+            "values": {
+                "baseColor1": "#3797b6",
+                "baseColor5": "#fefefe",
+                "baseColor4": "#fefefe",
+                "baseColor3": "#fefefe",
+                "baseColor2": "#fefefe"
+            }
+        },
+        "body_a_00": {
+            "shader": "solid",
+            "images": {
+                "diffuse": "pm0851_00_00_body_a_alb.png"
+            }
+        },
+        "l_eye": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_eye_alb.png",
+                "layer": "pm0851_00_00_eye_lym.png"
+            },
+            "values": {
+                "emiColor3": "#fefefe",
+                "emiColor4": "#3797b6",
+                "baseColor1": "#3797b6",
+                "emiIntensity2": 1.0,
+                "emiIntensity3": 0.2,
+                "emiIntensity4": 1.0,
+                "baseColor4": "#3797b6",
+                "baseColor3": "#fefefe",
+                "baseColor2": "#b6d8eb"
+            }
+        },
+        "shiny_body_b_00": {
+            "shader": "solid",
+            "images": {
+                "diffuse": "pm0851_00_00_body_b_rare_alb.png"
+            }
+        },
+        "shiny_body_b_02": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_body_b_rare_alb.png",
+                "layer": "pm0851_00_00_body_b_lym.png"
+            },
+            "values": {
+                "emiColor3": "#c6eafe",
+                "baseColor1": "#fefefe",
+                "emiIntensity3": 0.4,
+                "baseColor4": "#fefefe",
+                "baseColor3": "#c6e3ec",
+                "baseColor2": "#fefefe"
+            },
+            "blend": "regular"
+        },
+        "body_b_00": {
+            "shader": "solid",
+            "images": {
+                "diffuse": "pm0851_00_00_body_b_alb.png"
+            }
+        },
+        "shiny_body_a_01": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_body_a_rare_alb.png",
+                "layer": "pm0851_00_00_body_a_lym.png",
+                "mask": "pm0851_00_00_body_a_msk.png"
+            },
+            "values": {
+                "baseColor1": "#ea5e29",
+                "baseColor5": "#fefefe",
+                "baseColor4": "#fefefe",
+                "baseColor3": "#fefefe",
+                "baseColor2": "#fefefe"
+            }
+        },
+        "shiny_l_eye": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_eye_alb.png",
+                "layer": "pm0851_00_00_eye_lym.png"
+            },
+            "values": {
+                "emiColor3": "#fefefe",
+                "emiColor4": "#ea5e29",
+                "baseColor1": "#ea5e29",
+                "emiIntensity2": 1.0,
+                "emiIntensity3": 0.2,
+                "emiIntensity4": 1.0,
+                "baseColor4": "#ea5e29",
+                "baseColor3": "#fefefe",
+                "baseColor2": "#f6c1a5"
+            }
+        },
+        "shiny_body_a_00": {
+            "shader": "solid",
+            "images": {
+                "diffuse": "pm0851_00_00_body_a_rare_alb.png"
+            }
+        },
+        "r_eye": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_eye_alb.png",
+                "layer": "pm0851_00_00_eye_lym.png"
+            },
+            "values": {
+                "emiColor3": "#fefefe",
+                "emiColor4": "#3797b6",
+                "baseColor1": "#3797b6",
+                "emiIntensity2": 1.0,
+                "emiIntensity3": 0.2,
+                "emiIntensity4": 1.0,
+                "baseColor4": "#3797b6",
+                "baseColor3": "#fefefe",
+                "baseColor2": "#b6d8eb"
+            }
+        },
+        "body_b_01": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_body_b_alb.png",
+                "layer": "pm0851_00_00_body_b_lym.png",
+                "mask": "pm0851_00_00_body_b_msk.png"
+            },
+            "values": {
+                "baseColor1": "#fefefe",
+                "baseColor5": "#fefefe",
+                "baseColor4": "#fefefe",
+                "baseColor3": "#b6d8eb",
+                "baseColor2": "#fefefe"
+            },
+            "cull": "forward"
+        },
+        "shiny_r_eye": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_eye_alb.png",
+                "layer": "pm0851_00_00_eye_lym.png"
+            },
+            "values": {
+                "emiColor3": "#fefefe",
+                "emiColor4": "#ea5e29",
+                "baseColor1": "#ea5e29",
+                "emiIntensity2": 1.0,
+                "emiIntensity3": 0.2,
+                "emiIntensity4": 1.0,
+                "baseColor4": "#ea5e29",
+                "baseColor3": "#fefefe",
+                "baseColor2": "#f6c1a5"
+            }
+        },
+        "shiny_body_b_01": {
+            "shader": "layered",
+            "images": {
+                "diffuse": "pm0851_00_00_body_b_rare_alb.png",
+                "layer": "pm0851_00_00_body_b_lym.png",
+                "mask": "pm0851_00_00_body_b_msk.png"
+            },
+            "values": {
+                "baseColor1": "#fefefe",
+                "baseColor5": "#fefefe",
+                "baseColor4": "#fefefe",
+                "baseColor3": "#c6e3ec",
+                "baseColor2": "#fefefe"
+            },
+            "cull": "forward"
+        }
+    },
+    "defaultVariant": {
+        "pm0851_00_00_waterfront_mesh_body_b_02": {
+            "material": "body_b_02",
+            "hide": false
+        },
+        "pm0851_00_00_head_mesh_l_eye": {
+            "material": "l_eye",
+            "hide": false
+        },
+        "pm0851_00_00_head_mesh_r_eye": {
+            "material": "r_eye",
+            "hide": false
+        },
+        "pm0851_00_00_body_mesh_body_a_00": {
+            "material": "body_a_00",
+            "hide": false
+        },
+        "pm0851_00_00_leg_b_mesh_body_a_00": {
+            "material": "body_a_00",
+            "hide": false
+        },
+        "pm0851_00_00_leg_b_mesh_body_b_01": {
+            "material": "body_b_01",
+            "hide": false
+        },
+        "pm0851_00_00_leg_b_mesh_body_b_00": {
+            "material": "body_b_00",
+            "hide": false
+        },
+        "pm0851_00_00_head_mesh_body_a_00": {
+            "material": "body_a_00",
+            "hide": false
+        },
+        "pm0851_00_00_head_mesh_body_a_01": {
+            "material": "body_a_01",
+            "hide": false
+        },
+        "pm0851_00_00_leg_c_mesh_body_a_00": {
+            "material": "body_a_00",
+            "hide": false
+        },
+        "pm0851_00_00_leg_c_mesh_body_b_01": {
+            "material": "body_b_01",
+            "hide": false
+        },
+        "pm0851_00_00_leg_a_mesh_body_b_00": {
+            "material": "body_b_00",
+            "hide": false
+        },
+        "pm0851_00_00_leg_c_mesh_body_b_00": {
+            "material": "body_b_00",
+            "hide": false
+        },
+        "pm0851_00_00_leg_a_mesh_body_a_00": {
+            "material": "body_a_00",
+            "hide": false
+        },
+        "pm0851_00_00_leg_a_mesh_body_b_01": {
+            "material": "body_b_01",
+            "hide": false
+        }
+    },
+    "variants": {
+        "normal": {},
+        "shiny": {
+            "pm0851_00_00_waterfront_mesh_body_b_02": {
+                "material": "shiny_body_b_02"
+            },
+            "pm0851_00_00_head_mesh_l_eye": {
+                "material": "shiny_l_eye"
+            },
+            "pm0851_00_00_head_mesh_r_eye": {
+                "material": "shiny_r_eye"
+            },
+            "pm0851_00_00_leg_b_mesh_body_b_01": {
+                "material": "shiny_body_b_01"
+            },
+            "pm0851_00_00_body_mesh_body_a_00": {
+                "material": "shiny_body_a_00"
+            },
+            "pm0851_00_00_leg_b_mesh_body_a_00": {
+                "material": "shiny_body_a_00"
+            },
+            "pm0851_00_00_leg_b_mesh_body_b_00": {
+                "material": "shiny_body_b_00"
+            },
+            "pm0851_00_00_head_mesh_body_a_00": {
+                "material": "shiny_body_a_00"
+            },
+            "pm0851_00_00_head_mesh_body_a_01": {
+                "material": "shiny_body_a_01"
+            },
+            "pm0851_00_00_leg_c_mesh_body_a_00": {
+                "material": "shiny_body_a_00"
+            },
+            "pm0851_00_00_leg_c_mesh_body_b_01": {
+                "material": "shiny_body_b_01"
+            },
+            "pm0851_00_00_leg_a_mesh_body_b_00": {
+                "material": "shiny_body_b_00"
+            },
+            "pm0851_00_00_leg_c_mesh_body_b_00": {
+                "material": "shiny_body_b_00"
+            },
+            "pm0851_00_00_leg_a_mesh_body_b_01": {
+                "material": "shiny_body_b_01"
+            },
+            "pm0851_00_00_leg_a_mesh_body_a_00": {
+                "material": "shiny_body_a_00"
+            }
+        }
+    }
+}

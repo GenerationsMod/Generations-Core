@@ -8,6 +8,8 @@
     "AbstractFurnaceBlockEntityMixin",
     "RecordItemMixin",
     "ServerPlayerMixin",
+    "client.GuiUtilsMixin",
+    "client.PokemonGuiUtilsMixin",
     "client.PokemonItemRendererMixin"
   ],
   "client": [

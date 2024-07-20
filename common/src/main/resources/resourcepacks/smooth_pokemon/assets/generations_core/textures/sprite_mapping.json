@@ -1,8 +1,12 @@
 {
-  "pokemon": {
-    "generations_core:arcanine": {
-      "shiny": "generations_core:pokemon/arcanine/shiny.png",
-      "normal": "generations_core:pokemon/arcanine/normal.png"
+  "generations_core:absol": {
+    "profile": {
+      "shiny": "generations_core:textures/pokemon/absol/profile-shiny.png",
+      "normal": "generations_core:textures/pokemon/absol/profile-normal.png"
+    },
+    "portrait": {
+      "shiny": "generations_core:textures/pokemon/absol/portrait-shiny.png",
+      "normal": "generations_core:textures/pokemon/absol/portrait-normal.png"
     }
   }
 }
