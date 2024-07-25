@@ -36,7 +36,7 @@ object SpriteRegistry {
             val obj = resouce.openAsReader().use { GSON.fromJson(it, JsonObject::class.java) }
             val map = CODEC.decode(JsonOps.INSTANCE, obj).getOrThrow(false, System.out::println).first
 
-            System.out.println("BLARGE: " + map)
+//            System.out.println("BLARGE: " + map)
 
             MAP.putAll(map)
 
@@ -51,19 +51,16 @@ object SpriteRegistry {
 //            }
         }
 
-        System.out.println("Blep:" + MAP)
+//        System.out.println("Blep:" + MAP)
     }
 
     private fun getProfilePokemonSprite(model: ResourceLocation, variant: String): ResourceLocation? {
-        return MAP[model]?.get("profile")?.get(variant)
+        return MAP[model]?.get(variant)?.get("profile")
     }
 
     private fun getPortraitPokemonSprite(model: ResourceLocation, variant: String): ResourceLocation? {
-        return MAP[model]?.get("portrait")?.get(variant)
+        return MAP[model]?.get(variant)?.get("portrait")
     }
 
-    fun <T> getPokemonSprite(state: RenderContext.RenderState, model: ResourceLocation, variant: String): ResourceLocation? = when (state) {
-            RenderContext.RenderState.PROFILE -> getProfilePokemonSprite(model, variant)
-            else -> getPortraitPokemonSprite(model, variant)
-    }
+    fun <T> getPokemonSprite(state: RenderContext.RenderState, model: ResourceLocation, variant: String): ResourceLocation? = MAP[model]?.get(variant)?.get(if(state == RenderContext.RenderState.PROFILE) "profile" else "portrait")
 }
