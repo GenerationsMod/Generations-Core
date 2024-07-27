@@ -75,7 +75,9 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
             }
         }
 
-        var buffer = Minecraft.getInstance().renderBuffers().bufferSource().getBuffer(RenderType.entityCutout(id));
+        var sources = Minecraft.getInstance().renderBuffers().bufferSource();
+
+        var buffer = sources.getBuffer(RenderType.entityCutout(id));
 
         var matrix = stack.last();
         matrix.pose().translate(-1, 0, 0);
@@ -85,6 +87,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         buffer.vertex(matrix.pose(), 0f,  0f, 0.0f).color(r,g,b,a).uv(0, 0).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
         buffer.vertex(matrix.pose(), 0f,  2f, 0.0f).color(r,g,b,a).uv(0, 1).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
         buffer.vertex(matrix.pose(), 2f, 2f, 0.0f).color(r,g,b,a).uv(1, 1).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
+        sources.endBatch();
     }
 
     private void renderModel(RenderContext context, PoseStack stack, int packedLight) {
