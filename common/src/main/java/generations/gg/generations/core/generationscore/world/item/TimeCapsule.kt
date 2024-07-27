@@ -6,11 +6,13 @@ import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.Pokemon.Companion.loadFromNBT
 import com.cobblemon.mod.common.pokemon.RenderablePokemon
+import com.cobblemon.mod.common.pokemon.Species
 import dev.architectury.event.EventResult
 import generations.gg.generations.core.generationscore.world.item.PixelmonInteractions.PixelmonInteraction
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
@@ -97,9 +99,8 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
     }
 
     companion object {
-        fun getRenderablePokmon(stack: ItemStack): RenderablePokemon? {
-            return getPokemon(stack).map { it.asRenderablePokemon() }
-                .orElse(null)
+        fun getRenderablePokmon(stack: ItemStack): Pair<Species, Set<String>>? {
+            return getPokemon(stack).map { it.species to it.aspects }.orElse(null)
         }
 
         fun getPokemon(stack: ItemStack): Optional<Pokemon> {

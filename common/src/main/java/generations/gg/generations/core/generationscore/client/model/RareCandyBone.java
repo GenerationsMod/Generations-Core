@@ -67,6 +67,10 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
     }
 
     public void renderSprite(RenderContext context, PoseStack stack, int packedLight, int packedOverlay, float r, float g, float b, float a) {
+        renderSprite(context, stack, packedLight, packedOverlay, r, g, b, a, false);
+    }
+
+    public void renderSprite(RenderContext context, PoseStack stack, int packedLight, int packedOverlay, float r, float g, float b, float a, boolean isSprite) {
         var id = getTexture(context);
 
         if (id != null) {
@@ -79,14 +83,16 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         var buffer = sources.getBuffer(RenderType.entityCutout(id));
 
+        var scale = isSprite ? 1f : 2f;
+
         var matrix = stack.last();
-        matrix.pose().translate(-1, 0, 0);
+        matrix.pose().translate(-scale/2f, 0, 0);
 
 
-        buffer.vertex(matrix.pose(), 2f,  0f, 0.0f).color(r,g,b,a).uv(1, 0).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
+        buffer.vertex(matrix.pose(), scale,  0f, 0.0f).color(r,g,b,a).uv(1, 0).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
         buffer.vertex(matrix.pose(), 0f,  0f, 0.0f).color(r,g,b,a).uv(0, 0).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
-        buffer.vertex(matrix.pose(), 0f,  2f, 0.0f).color(r,g,b,a).uv(0, 1).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
-        buffer.vertex(matrix.pose(), 2f, 2f, 0.0f).color(r,g,b,a).uv(1, 1).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
+        buffer.vertex(matrix.pose(), 0f,  scale, 0.0f).color(r,g,b,a).uv(0, 1).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
+        buffer.vertex(matrix.pose(), scale, scale, 0.0f).color(r,g,b,a).uv(1, 1).overlayCoords(packedOverlay).uv2(packedLight).normal(matrix.normal(), 0, 1,0).endVertex();
         sources.endBatch();
     }
 

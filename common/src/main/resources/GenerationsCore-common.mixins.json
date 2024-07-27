@@ -10,7 +10,6 @@
     "ServerPlayerMixin",
     "client.GuiUtilsMixin",
     "client.PokemonGuiUtilsMixin",
-    "client.PokemonItemRendererMixin"
   ],
   "client": [
     "client.GuiMixin",

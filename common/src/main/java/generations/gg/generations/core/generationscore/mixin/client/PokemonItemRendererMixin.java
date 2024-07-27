@@ -28,7 +28,7 @@ public class PokemonItemRendererMixin implements CobblemonBuiltinItemRenderer {
     public void render(ItemStack stack, ItemDisplayContext mode, PoseStack matrices, MultiBufferSource vertexConsumers, int light, int overlay) {
         if(stack.getItem() instanceof PokemonItem pokemonItem) {
             var pair = pokemonItem.getSpeciesAndAspects(stack);
-            if(pair == null) return;
+            if(pair == null || PokemonModelRepository.INSTANCE == null) return;
             matrices.pushPose();
 
             var model = PokemonModelRepository.INSTANCE.getPoser(pair.getFirst().getResourceIdentifier(), pair.getSecond());
