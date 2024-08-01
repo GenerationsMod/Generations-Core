@@ -25,7 +25,7 @@ import java.util.Set;
 @Mixin(PokemonGuiUtilsKt.class)
 public class PokemonGuiUtilsMixin {
 
-    @Inject(method = "drawProfilePokemon(Lnet/minecraft/resources/ResourceLocation;Ljava/util/Set;Lcom/mojang/blaze3d/vertex/PoseStack;Lorg/joml/Quaternionf;Lcom/cobblemon/mod/common/client/render/models/blockbench/PoseableEntityState;FF)V", at = @At("HEAD"), remap = false, cancellable = true)
+    @Inject(method = "drawProfilePokemon(Lnet/minecraft/resources/ResourceLocation;Ljava/util/Set;Lcom/mojang/blaze3d/vertex/PoseStack;Lorg/joml/Quaternionf;Lcom/cobblemon/mod/common/client/render/models/blockbench/PoseableEntityState;FF)V", at = @At("HEAD"), cancellable = true)
     private static void drawPokemonPortrait(ResourceLocation species, Set<String> aspects, PoseStack matrixStack, Quaternionf rotation, PoseableEntityState<PokemonEntity> state, float partialTicks, float scale, CallbackInfo ci) {
         var model = PokemonModelRepository.INSTANCE.getPoser(species, aspects);
 

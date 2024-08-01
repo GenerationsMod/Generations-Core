@@ -22,7 +22,7 @@ import java.util.Set;
 @Mixin(GuiUtilsKt.class)
 public class GuiUtilsMixin {
 
-    @Inject(method = "drawPortraitPokemon", at = @At("HEAD"), remap = false, cancellable = true)
+    @Inject(method = "drawPortraitPokemon", at = @At("HEAD"), cancellable = true)
     private static void drawPokemonPortrait(Species species, Set<String> aspects, PoseStack matrixStack, float scale, boolean reversed, PoseableEntityState<PokemonEntity> state, float partialTicks, CallbackInfo ci) {
         var model = PokemonModelRepository.INSTANCE.getPoser(species.resourceIdentifier, aspects);
 
