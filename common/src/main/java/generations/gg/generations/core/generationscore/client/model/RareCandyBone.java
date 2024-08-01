@@ -46,8 +46,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
         objectSupplier = () -> ModelRegistry.get(location);
         spriteProvider = (state, s) -> {
             var sprite = SpriteRegistry.INSTANCE.getPokemonSprite(state, Objects.requireNonNull(spriteLoc), s);
-            if(sprite != null) return sprite;
-            else return MissingTextureAtlasSprite.getLocation();
+            return sprite != null ? sprite : MissingTextureAtlasSprite.getLocation();
         };
     }
 
@@ -59,11 +58,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
     @Override
     public void render(RenderContext context, PoseStack stack, VertexConsumer buffer, int packedLight, int packedOverlay, float r, float g, float b, float a) {
-//        if(context.request(Pipelines.INSTANCE) == null && context.request(RenderContext.Companion.getENTITY()) == null) {
-//            renderSprite(context, stack, packedLight, packedOverlay, r, g, b, a);
-//        } else {
-            renderModel(context, stack, packedLight);
-//        }
+        renderModel(context, stack, packedLight);
     }
 
     public void renderSprite(RenderContext context, PoseStack stack, int packedLight, int packedOverlay, float r, float g, float b, float a) {

@@ -1,14 +1,17 @@
 package generations.gg.generations.core.generationscore.util;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.berry.Flavor;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.google.gson.*;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
+import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.JsonOps;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
+import generations.gg.generations.core.generationscore.GenerationsCore;
 import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.world.level.block.generic.GenericModelBlock;
 import net.minecraft.locale.Language;
@@ -63,6 +66,9 @@ public class GenerationsUtils {
         return flavor != null ? Language.getInstance().getOrDefault("enum.flavor." + flavor.toString().toLowerCase(Locale.ENGLISH)) : "";
     }
 
+    public static <T> T decode(Codec<T> codec, JsonObject v) {
+        return codec.decode(JsonOps.INSTANCE, v).getOrThrow(false, GenerationsCore.LOGGER::error).getFirst();
+    }
 
     public static Vector3f rgbFromInt(int color) {
         float d = (color >> 16 & 0xFF) / 255.0f;
