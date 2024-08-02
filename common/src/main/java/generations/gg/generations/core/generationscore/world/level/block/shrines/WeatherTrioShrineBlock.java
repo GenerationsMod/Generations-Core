@@ -66,8 +66,13 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
     }
 
     @Override
+    public boolean isActivatable() {
+        return true;
+    }
+
+    @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-        if(speiceskey == LegendKeys.KYORGRE) return KYOGRE.getShape(state);
+        if(speiceskey == LegendKeys.KYOGRE) return KYOGRE.getShape(state);
         else if(speiceskey == LegendKeys.GROUDON) return GROUDON.getShape(state);
         else return Shapes.block();
     }

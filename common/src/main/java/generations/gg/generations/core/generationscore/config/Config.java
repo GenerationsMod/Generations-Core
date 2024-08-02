@@ -52,7 +52,7 @@ public class Config {
                 .setCount(REGIDRAGO, 2)
                 .setCount(LATIAS, 2)
                 .setCount(LATIOS, 2)
-                .setCount(KYORGRE, 2)
+                .setCount(KYOGRE, 2)
                 .setCount(GROUDON, 2)
                 .setCount(RAYQUAZA, 2)
                 .setCount(DEOXYS, 8)
