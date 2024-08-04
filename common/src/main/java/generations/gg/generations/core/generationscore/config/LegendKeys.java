@@ -31,7 +31,7 @@ public class LegendKeys {
     public static SpeciesKey LATIAS = create("latias");
     public static SpeciesKey LATIOS = create("latias");
 
-    public static SpeciesKey KYORGRE = create("kyorgre");
+    public static SpeciesKey KYOGRE = create("kyogre");
     public static SpeciesKey GROUDON = create("groudon");
     public static SpeciesKey RAYQUAZA = create("rayquaza");
     public static SpeciesKey DEOXYS = create("deoxys");
