@@ -1237,12 +1237,12 @@ public class GenerationsItems {
 
     //Walkmons
 
-//    public static final RegistrySupplier<Item> POKE_WALKMON = register("poke_walkmon", properties -> new WalkmanItem(properties, 1, "poke_walkmon"));
-//    public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmanItem(properties, 2, "great_walkmon"));
-//    public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmanItem(properties, 3, "ultra_walkmon"));
-//    public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmanItem(properties, 4, "master_walkmon"));
-//    public static final RegistrySupplier<Item> HI_TECH_EARBUDS = register("hi_tech_earbuds", properties -> new WalkmanItem(properties, 4, "hi_tech_earbuds"));
-//    public static final RegistrySupplier<Item> GB_SOUNDS = register("gb_sounds", properties -> new WalkmanItem(properties, 4, "hi_tech_earbuds"));
+    public static final RegistrySupplier<Item> POKE_WALKMON = register("poke_walkmon", properties -> new WalkmonItem(properties, 1, "poke_walkmon"), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> GREAT_WALKMON = register("great_walkmon", properties -> new WalkmonItem(properties, 2, "great_walkmon"), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> ULTRA_WALKMON = register("ultra_walkmon", properties -> new WalkmonItem(properties, 3, "ultra_walkmon"), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> MASTER_WALKMON = register("master_walkmon", properties -> new WalkmonItem(properties, 4, "master_walkmon"), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> HI_TECH_EARBUDS = register("hi_tech_earbuds", properties -> new WalkmonItem(properties, 4, "hi_tech_earbuds"), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> GB_SOUNDS = register("gb_sounds", properties -> new WalkmonItem(properties, 4, "hi_tech_earbuds"));
 
     //Discs
 

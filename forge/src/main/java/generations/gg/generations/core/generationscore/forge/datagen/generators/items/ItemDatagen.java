@@ -921,6 +921,13 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get(), "boat/");
         createItem(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get(), "chest_boat/");
 
+        createItem(GenerationsItems.POKE_WALKMON.get(), "walkmon/");
+        createItem(GenerationsItems.GREAT_WALKMON.get(), "walkmon/");
+        createItem(GenerationsItems.ULTRA_WALKMON.get(), "walkmon/");
+        createItem(GenerationsItems.MASTER_WALKMON.get(), "walkmon/");
+        createItem(GenerationsItems.HI_TECH_EARBUDS.get(), "walkmon/");
+        createItem(GenerationsItems.GB_SOUNDS.get(), "walkmon/");
+
         registerDisc(GenerationsItems.AZALEA_TOWN_DISC.getId());
         registerDisc(GenerationsItems.CASCARRAFA_CITY_DISC.getId());
         registerDisc(GenerationsItems.CERULEAN_CITY_DISC.getId());

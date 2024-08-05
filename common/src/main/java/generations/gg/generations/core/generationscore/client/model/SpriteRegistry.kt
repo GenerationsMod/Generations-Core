@@ -27,8 +27,6 @@ object SpriteRegistry {
                     val obj = resource.openAsReader().use { GSON.fromJson(it, JsonObject::class.java) }
                     val map = GenerationsUtils.decode(CODEC, obj);
 
-                    System.out.println(map)
-
                     if (map.isNotEmpty()) {
 
                         map.forEach { (species, types) ->
