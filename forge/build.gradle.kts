@@ -1,7 +1,3 @@
-import com.hypherionmc.modpublisher.properties.CurseEnvironment
-import com.hypherionmc.modpublisher.properties.ModLoader
-import com.hypherionmc.modpublisher.properties.ReleaseType
-
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("com.hypherionmc.modutils.modpublisher") version "2.+"
@@ -66,6 +62,7 @@ dependencies {
     forgeRuntimeLibrary("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
     forgeRuntimeLibrary("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
     forgeRuntimeLibrary("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
+    forgeRuntimeLibrary("shadowCommon"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
@@ -75,7 +72,6 @@ dependencies {
 
     modRuntimeOnly("curse.maven:worldedit-225608:4586218")
 
-    forgeRuntimeLibrary("shadowCommon"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
 
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.10.0")
@@ -101,6 +97,9 @@ tasks {
             "architectury.common.json",
             ".cache/**")
         configurations = listOf(project.configurations.getByName("shadowCommon"))
+//        relocate("org.lwjgl", "generations.gg.generations.shaded.lwjgl") {
+//            exclude("org/lwjgl/opengl/**")
+//        }
         archiveClassifier.set("dev-shadow")
     }
 
