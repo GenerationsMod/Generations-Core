@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
 import com.google.common.collect.ImmutableList;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsOres;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsOres;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;

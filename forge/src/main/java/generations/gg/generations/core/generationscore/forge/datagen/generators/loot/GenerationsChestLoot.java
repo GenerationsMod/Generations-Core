@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.loot;
 
 import com.cobblemon.mod.common.CobblemonItems;
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.loot.ResouceKeyEntry;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.loot.ResouceKeyEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;

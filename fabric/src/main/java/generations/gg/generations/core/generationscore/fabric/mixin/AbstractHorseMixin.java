@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric.mixin;
 
-import generations.gg.generations.core.generationscore.api.events.general.EntityEvents;
+import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.phys.Vec3;

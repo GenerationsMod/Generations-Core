@@ -1,15 +1,14 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.tags;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
-import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
-import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
-import generations.gg.generations.core.generationscore.world.item.tools.GenerationsHammerItem;
-import generations.gg.generations.core.generationscore.world.level.block.*;
-import generations.gg.generations.core.generationscore.world.level.block.entities.BallDisplayBlock;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags;
+import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.common.world.item.tools.GenerationsHammerItem;
+import generations.gg.generations.core.generationscore.common.world.level.block.*;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallDisplayBlock;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -33,7 +32,7 @@ import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
-import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.*;
+import static generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.*;
 
 public class TagsDatagen {
     public static void init(DataGenerator generator, PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper helper) {

@@ -1,15 +1,15 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe;
 
 import com.cobblemon.mod.common.CobblemonItems;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
+import generations.gg.generations.core.generationscore.common.world.recipe.PokemonItemIngredient;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
-import generations.gg.generations.core.generationscore.recipe.forge.GenerationsIngredidentsImpl;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
-import generations.gg.generations.core.generationscore.world.recipe.PokemonItemIngredient;
+import generations.gg.generations.core.generationscore.forge.recipe.GenerationsIngredientsForge;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -1112,7 +1112,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
     private void unownBlock(@NotNull Consumer<FinishedRecipe> consumer, @NotNull Block createdBlock, String form){
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, createdBlock)
                 .define('X', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
-                .define('Y', new GenerationsIngredidentsImpl.GenerationsForgeIngredigent<>(new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of("glyph-" + form))))
+                .define('Y', new GenerationsIngredientsForge.GenerationsForgeIngredigent<>(new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of("glyph-" + form))))
                 .pattern("XY")
                 .unlockedBy(getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()), has(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()))
                 .save(consumer);

@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.fabric.worldgen;
 
 import com.cobblemon.mod.common.api.tags.CobblemonBiomeTags;
-import generations.gg.generations.core.generationscore.world.feature.GenerationsPlacedFeatures;
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;

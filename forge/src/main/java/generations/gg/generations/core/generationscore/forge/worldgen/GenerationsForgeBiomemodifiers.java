@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.forge.worldgen;
 
 import com.cobblemon.mod.common.api.tags.CobblemonBiomeTags;
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.feature.GenerationsPlacedFeatures;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;

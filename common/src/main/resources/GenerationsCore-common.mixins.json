@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "generations.gg.generations.core.generationscore.mixin",
+  "package": "generations.gg.generations.core.generationscore.common.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractCauldronBlockMixin",
@@ -9,7 +9,7 @@
     "RecordItemMixin",
     "ServerPlayerMixin",
     "client.GuiUtilsMixin",
-    "client.PokemonGuiUtilsMixin",
+    "client.PokemonGuiUtilsMixin"
   ],
   "client": [
     "client.GuiMixin",

@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.fabric.datagen;
 
-import generations.gg.generations.core.generationscore.tags.GenerationsBlockTags;
-import generations.gg.generations.core.generationscore.tags.GenerationsItemTags;
-import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags;
+import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

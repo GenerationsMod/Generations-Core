@@ -2,12 +2,12 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
-import generations.gg.generations.core.generationscore.world.item.LangTooltip;
-import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.common.world.item.LangTooltip;
+import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.RecordItem;
@@ -19,8 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 
-import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.*;
-import static generations.gg.generations.core.generationscore.world.level.block.GenerationsShrines.*;
+import static generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.*;
+import static generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines.*;
 
 public class GeneralLang extends LanguageProvider {
 

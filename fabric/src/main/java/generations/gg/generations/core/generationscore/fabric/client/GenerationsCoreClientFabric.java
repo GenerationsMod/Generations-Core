@@ -1,19 +1,16 @@
 package generations.gg.generations.core.generationscore.fabric.client;
 
 import dev.architectury.event.events.client.ClientTickEvent;
-import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.MinecraftClientGameProvider;
-import generations.gg.generations.core.generationscore.client.render.rarecandy.ModelRegistry;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsBlocks;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsMushroomBlock;
-import generations.gg.generations.core.generationscore.world.level.block.GenerationsWood;
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;

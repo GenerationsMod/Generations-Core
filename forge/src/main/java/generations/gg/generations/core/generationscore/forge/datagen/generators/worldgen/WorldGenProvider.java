@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.worldgen;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.worldgen.GenerationsForgeBiomemodifiers;
-import generations.gg.generations.core.generationscore.world.feature.GenerationsConfiguredFeatures;
-import generations.gg.generations.core.generationscore.world.feature.GenerationsPlacedFeatures;
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures;
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;

@@ -1,14 +1,14 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.loot;
 
 import com.cobblemon.mod.common.CobblemonItems;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.level.block.*;
+import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsOreSet;
+import generations.gg.generations.core.generationscore.common.world.level.block.shrines.PrisonBottleStemBlock;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.level.block.*;
-import generations.gg.generations.core.generationscore.world.level.block.generic.GenericRotatableModelBlock;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsFullBlockSet;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsOreSet;
-import generations.gg.generations.core.generationscore.world.level.block.shrines.PrisonBottleStemBlock;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;

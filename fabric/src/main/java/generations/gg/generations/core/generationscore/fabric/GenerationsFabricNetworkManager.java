@@ -1,11 +1,11 @@
 package generations.gg.generations.core.generationscore.fabric;
 
 import dev.architectury.utils.EnvExecutor;
-import generations.gg.generations.core.generationscore.GenerationsImplementation;
-import generations.gg.generations.core.generationscore.network.ClientNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.network.GenerationsNetwork;
-import generations.gg.generations.core.generationscore.network.ServerNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.network.packets.GenerationsNetworkPacket;
+import generations.gg.generations.core.generationscore.common.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler;
+import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
+import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
+import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;

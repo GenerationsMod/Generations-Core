@@ -1,35 +1,50 @@
 package generations.gg.generations.core.generationscore.fabric;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.GenerationsImplementation;
-import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
-import generations.gg.generations.core.generationscore.compat.VanillaCompat;
-import generations.gg.generations.core.generationscore.config.ConfigLoader;
+import dev.architectury.registry.registries.DeferredRegister;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
+import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
+import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
+import generations.gg.generations.core.generationscore.fabric.recipe.GenerationsIngredientsFabric;
+import generations.gg.generations.core.generationscore.fabric.world.item.creativetab.GenerationsCreativeTabsFabric;
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
-import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.world.entity.PlayerNpcEntity;
-import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
-import generations.gg.generations.core.generationscore.world.feature.GenerationsConfiguredFeatures;
-import generations.gg.generations.core.generationscore.world.feature.GenerationsPlacedFeatures;
-import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
+import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
+import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
+import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity;
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures;
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
+import java.util.function.Supplier;
 
 /**
  * Fabric Main class and entry point for GenerationsCore.
@@ -39,6 +54,8 @@ import java.util.concurrent.Executor;
  * @author Joseph T. McQuigg, WaterPicker
  */
 public class GenerationsCoreFabric implements ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
+    private GenerationsIngredientsFabric ingredients = new GenerationsIngredientsFabric();
+
     public void onInitialize() {
         GenerationsCore.init(this);
         VanillaCompat.setup();
@@ -72,6 +89,38 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
         GenerationsFabricBiomemodifiers.generateOres();
         registerEntityAttributes();
         VanillaCompat.dispenserBehavior();
+    }
+
+    public void registerStrippable(@NotNull Block log, @NotNull Block stripped) {
+        StrippableBlockRegistry.register(log, stripped);
+    }
+
+    public void registerFlammable(@NotNull Block blockIn, int encouragement, int flammability) {
+        FlammableBlockRegistry.getDefaultInstance().add(blockIn, encouragement, flammability);
+    }
+
+    public void registerCompostables(@NotNull Block block, float chance) {
+        CompostingChanceRegistry.INSTANCE.add(block, chance);
+    }
+
+    @Override
+    public Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> supplier, DeferredRegister<? extends ItemLike>... deferredRegister) {
+        return GenerationsCreativeTabsFabric.create(name, supplier, deferredRegister);
+    }
+
+    @Override
+    public GenerationsIngredientsFabric getIngredients() {
+        return ingredients;
+    }
+
+    @Override
+    public boolean canEquip(ItemStack carried, EquipmentSlot equipmentslottype, Entity entity) {
+        return Mob.getEquipmentSlotForItem(carried) == equipmentslottype;
+    }
+
+    @Override
+    public CompoundTag serializeStack(ItemStack itemStack) {
+        return itemStack.save(new CompoundTag());
     }
 
     @Override

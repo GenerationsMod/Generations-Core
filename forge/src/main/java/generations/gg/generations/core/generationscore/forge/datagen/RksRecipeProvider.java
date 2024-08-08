@@ -2,13 +2,13 @@ package generations.gg.generations.core.generationscore.forge.datagen;
 
 import com.cobblemon.mod.common.CobblemonItems;
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.config.LegendKeys;
-import generations.gg.generations.core.generationscore.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.config.LegendKeys;
+import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.GenerationsRecipeProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
-import generations.gg.generations.core.generationscore.world.recipe.DamageIngredient;
-import generations.gg.generations.core.generationscore.world.recipe.TimeCapsuleIngredient;
+import generations.gg.generations.core.generationscore.common.world.recipe.DamageIngredient;
+import generations.gg.generations.core.generationscore.common.world.recipe.TimeCapsuleIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -21,8 +21,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import java.util.function.Consumer;
 
-import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.*;
-import static generations.gg.generations.core.generationscore.world.item.GenerationsItems.BEEDRILLITE;
+import static generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.*;
+import static generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.BEEDRILLITE;
 
 public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     public RksRecipeProvider(PackOutput arg) {

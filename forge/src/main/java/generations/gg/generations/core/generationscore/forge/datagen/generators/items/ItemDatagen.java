@@ -1,12 +1,12 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.world.item.GenerationsArmor;
-import generations.gg.generations.core.generationscore.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.world.item.GenerationsTools;
-import generations.gg.generations.core.generationscore.world.item.curry.CurryType;
-import generations.gg.generations.core.generationscore.world.level.block.*;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
+import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.client;
 
-import generations.gg.generations.core.generationscore.client.GenerationsCoreClient;
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
@@ -49,7 +49,6 @@ public class GenerationsCoreClientForge {
 
 
     private static void forgeClientSetup(final FMLClientSetupEvent event) {
-
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
         ForgeConfig.CLIENT.alwaysSetupTerrainOffThread.set(true); // Performance improvement
         ForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.set(true); // Use Experimental Forge Light Pipeline

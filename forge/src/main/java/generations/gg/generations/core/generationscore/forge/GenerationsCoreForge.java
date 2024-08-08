@@ -1,23 +1,28 @@
 package generations.gg.generations.core.generationscore.forge;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.mojang.datafixers.util.Pair;
 import dev.architectury.platform.forge.EventBuses;
-import generations.gg.generations.core.generationscore.GenerationsCore;
-import generations.gg.generations.core.generationscore.GenerationsImplementation;
-import generations.gg.generations.core.generationscore.api.events.general.EntityEvents;
-import generations.gg.generations.core.generationscore.compat.ImpactorCompat;
-import generations.gg.generations.core.generationscore.compat.VanillaCompat;
-import generations.gg.generations.core.generationscore.config.ConfigLoader;
+import dev.architectury.registry.registries.DeferredRegister;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents;
+import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
+import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
+import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
-import generations.gg.generations.core.generationscore.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.world.entity.PlayerNpcEntity;
-import generations.gg.generations.core.generationscore.world.entity.StatueEntity;
-import generations.gg.generations.core.generationscore.world.item.creativetab.forge.GenerationsCreativeTabsImpl;
-import generations.gg.generations.core.generationscore.world.level.block.entities.MutableBlockEntityType;
+import generations.gg.generations.core.generationscore.forge.recipe.GenerationsIngredientsForge;
+import generations.gg.generations.core.generationscore.forge.world.item.creativetab.GenerationsCreativeTabsForge;
+import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
+import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
+import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
+import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
@@ -26,7 +31,14 @@ import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddPackFindersEvent;
@@ -52,6 +64,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 /**
  * Forge Main class for GenerationsCore.
@@ -65,6 +78,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 
     private List<PreparableReloadListener> reloadableResources = new ArrayList<>();
     private Map<PackType, List<Pair<ResourceLocation, Component>>> packs = new HashMap<>();
+    private GenerationsIngredientsForge generationsIngredients = new GenerationsIngredientsForge();
 
     /**
      * Sets up Forge side of the mod.
@@ -73,7 +87,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     public GenerationsCoreForge() {
         ConfigLoader.setConfigDirectory(FMLPaths.CONFIGDIR.get());
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
-        GenerationsCreativeTabsImpl.init(MOD_BUS);
+        GenerationsCreativeTabsForge.init(MOD_BUS);
         EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
         MOD_BUS.addListener(this::postInit);
@@ -93,6 +107,44 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::addPackFinders);
         if (ModList.get().isLoaded("impactor"))
             ImpactorCompat.init();
+    }
+
+    public void registerStrippable(@NotNull Block log, @NotNull Block stripped) {
+        if (!log.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS))
+            throw new IllegalArgumentException("Input block is missing required 'AXIS' property!");
+        if (!stripped.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS))
+            throw new IllegalArgumentException("Result block is missing required 'AXIS' property!");
+        if (AxeItem.STRIPPABLES instanceof ImmutableMap)
+            AxeItem.STRIPPABLES = new HashMap<>(AxeItem.STRIPPABLES);
+
+        AxeItem.STRIPPABLES.put(log, stripped);
+    }
+    public void registerFlammable(@NotNull Block blockIn, int encouragement, int flammability) {
+        ((FireBlock) Blocks.FIRE).setFlammable(blockIn, encouragement, flammability);
+    }
+
+    public void registerCompostables(@NotNull Block block, float chance) {
+        ComposterBlock.COMPOSTABLES.put(block, chance);
+    }
+
+    @Override
+    public Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> o, DeferredRegister<? extends ItemLike>... deferredRegister) {
+        return GenerationsCreativeTabsForge.create(name, o, deferredRegister);
+    }
+
+    @Override
+    public GenerationsIngredidents getIngredients() {
+        return generationsIngredients;
+    }
+
+    @Override
+    public boolean canEquip(ItemStack carried, EquipmentSlot equipmentslottype, Entity entity) {
+        return carried.canEquip(equipmentslottype, entity);
+    }
+
+    @Override
+    public CompoundTag serializeStack(ItemStack itemStack) {
+        return itemStack.serializeNBT();
     }
 
     public void addPackFinders(AddPackFindersEvent event) {

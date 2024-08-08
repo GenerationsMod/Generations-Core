@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.GenerationsBlockStateProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.UltraBlockModelDataGen;
@@ -10,8 +10,8 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.*;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.tags.TagsDatagen;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.worldgen.WorldGenProvider;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsBlockSet;
-import generations.gg.generations.core.generationscore.world.level.block.set.GenerationsUltraBlockSet;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;

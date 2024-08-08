@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.blocks;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;

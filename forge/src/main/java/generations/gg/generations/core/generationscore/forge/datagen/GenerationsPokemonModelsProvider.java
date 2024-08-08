@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
-import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.forge.datagen.cobblemon.PokemonModelsProvider;
 import net.minecraft.data.PackOutput;
 import org.apache.commons.lang3.function.TriFunction;

@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.loot;
 
 import com.google.common.collect.ImmutableList;
-import generations.gg.generations.core.generationscore.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
