@@ -94,12 +94,20 @@ tasks {
     shadowJar {
         exclude("fabric.mod.json",
             "generations/gg/generations/core/generationscore/forge/datagen/**",
+            "org/lwjgl/system//**",
+            "org/lwjgl/BufferUtils.class",
+            "org/lwjgl/CLongBuffer.class",
+            "org/lwjgl/PointerBuffer.class",
+            "org/lwjgl/Version\$BuildType.class",
+            "org/lwjgl/Version.class",
+            "org/lwjgl/VersionImpl.class",
+            "org/lwjgl/package-info.class",
             "architectury.common.json",
             ".cache/**")
         configurations = listOf(project.configurations.getByName("shadowCommon"))
-//        relocate("org.lwjgl", "generations.gg.generations.shaded.lwjgl") {
-//            exclude("org/lwjgl/opengl/**")
-//        }
+        relocate("org.lwjgl.assimp", "generations.gg.generations.shaded.assimp") {
+
+        }
         archiveClassifier.set("dev-shadow")
     }
 
