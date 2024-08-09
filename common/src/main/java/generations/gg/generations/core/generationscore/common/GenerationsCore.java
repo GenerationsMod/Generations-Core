@@ -106,6 +106,7 @@ public class GenerationsCore
 		initRecipes();
 		GenerationsCoreRecipeTypes.init();
 		GenerationsCoreRecipeSerializers.init();
+		GenerationsCoreStats.init();
 
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 
