@@ -1,0 +1,152 @@
+{
+  "target": "cobblemon:deoxys",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "generations_core:deoxys_doll",
+        "percentage": 100.0
+      },
+      {
+        "item": "minecraft:eye_of_ender"
+      }
+    ]
+  },
+  "forms": [
+    {
+      "name": "Attack",
+      "primaryType": "psychic",
+      "abilities": [
+        "pressure"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 180,
+        "defence": 20,
+        "special_attack": 180,
+        "special_defence": 20,
+        "speed": 150
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 270,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen3",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "attack"
+      ],
+      "height": 17,
+      "weight": 608,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Defense",
+      "primaryType": "psychic",
+      "abilities": [
+        "pressure"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 70,
+        "defence": 160,
+        "special_attack": 70,
+        "special_defence": 160,
+        "speed": 90
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 270,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 2,
+        "special_attack": 0,
+        "special_defence": 1,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen3",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "defense"
+      ],
+      "height": 17,
+      "weight": 608,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Speed",
+      "primaryType": "psychic",
+      "abilities": [
+        "pressure"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 95,
+        "defence": 90,
+        "special_attack": 95,
+        "special_defence": 90,
+        "speed": 180
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 270,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 3
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen3",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "speed"
+      ],
+      "height": 17,
+      "weight": 608,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ]
+}

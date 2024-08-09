@@ -1,0 +1,12 @@
+{
+  "target": "cobblemon:regigigas",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:regigigas_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

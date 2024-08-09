@@ -1,0 +1,75 @@
+{
+  "target": "cobblemon:sableye",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "dark",
+      "secondaryType": "ghost",
+      "abilities": [
+        "magicbounce"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 85,
+        "defence": 125,
+        "special_attack": 85,
+        "special_defence": 115,
+        "speed": 20
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 133,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 1,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 25,
+      "eggGroups": [
+        "human_like"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 5,
+      "weight": 1610,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:amethyst_shard",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:diamond",
+        "percentage": 5.0
+      },
+      {
+        "item": "minecraft:emerald",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:sableye_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

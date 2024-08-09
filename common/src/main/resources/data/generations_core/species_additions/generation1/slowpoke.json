@@ -1,0 +1,172 @@
+{
+  "target": "cobblemon:slowpoke",
+  "forms": [
+    {
+      "name": "Galar",
+      "primaryType": "psychic",
+      "abilities": [
+        "gluttony",
+        "owntempo",
+        "h:regenerator"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "attack": 65,
+        "defence": 65,
+        "special_attack": 40,
+        "special_defence": 40,
+        "speed": 15
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 63,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 1,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "monster",
+        "water_1"
+      ],
+      "moves": [
+        "1:curse",
+        "1:tackle",
+        "3:growl",
+        "6:acid",
+        "9:yawn",
+        "12:confusion",
+        "15:disable",
+        "18:waterpulse",
+        "21:headbutt",
+        "24:zenheadbutt",
+        "27:amnesia",
+        "30:surf",
+        "33:slackoff",
+        "36:psychic",
+        "39:psychup",
+        "42:raindance",
+        "45:healpulse",
+        "egg:belch",
+        "egg:bellydrum",
+        "egg:block",
+        "egg:stomp",
+        "tm:amnesia",
+        "tm:attract",
+        "tm:avalanche",
+        "tm:blizzard",
+        "tm:bodyslam",
+        "tm:brine",
+        "tm:bulldoze",
+        "tm:calmmind",
+        "tm:chillingwater",
+        "tm:dig",
+        "tm:dive",
+        "tm:earthquake",
+        "tm:endure",
+        "tm:facade",
+        "tm:fireblast",
+        "tm:flamethrower",
+        "tm:foulplay",
+        "tm:futuresight",
+        "tm:grassknot",
+        "tm:hail",
+        "tm:helpinghand",
+        "tm:hydropump",
+        "tm:icebeam",
+        "tm:icywind",
+        "tm:imprison",
+        "tm:irontail",
+        "tm:lightscreen",
+        "tm:liquidation",
+        "tm:mudshot",
+        "tm:payday",
+        "tm:protect",
+        "tm:psybeam",
+        "tm:psychic",
+        "tm:psychicterrain",
+        "tm:psyshock",
+        "tm:raindance",
+        "tm:rest",
+        "tm:round",
+        "tm:safeguard",
+        "tm:scald",
+        "tm:shadowball",
+        "tm:skillswap",
+        "tm:sleeptalk",
+        "tm:snore",
+        "tm:snowscape",
+        "tm:storedpower",
+        "tm:substitute",
+        "tm:sunnyday",
+        "tm:surf",
+        "tm:swift",
+        "tm:takedown",
+        "tm:terablast",
+        "tm:thunderwave",
+        "tm:triattack",
+        "tm:trick",
+        "tm:trickroom",
+        "tm:waterfall",
+        "tm:waterpulse",
+        "tm:weatherball",
+        "tm:whirlpool",
+        "tm:wonderroom",
+        "tm:zenheadbutt",
+        "tutor:expandingforce"
+      ],
+      "labels": [
+        "gen8",
+        "galar_regional"
+      ],
+      "aspects": [
+        "galarian"
+      ],
+      "height": 12,
+      "weight": 360,
+      "evolutions": [
+        {
+          "id": "slowpoke_slowbro",
+          "variant": "item_interact",
+          "result": "slowbro form=galar",
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "shellsidearm"
+          ],
+          "requirements": [],
+          "requiredContext": "cobblemon:galarica_cuff"
+        },
+        {
+          "id": "slowpoke_slowking",
+          "variant": "item_interact",
+          "result": "slowking form=galar",
+          "consumeHeldItem": false,
+          "learnableMoves": [],
+          "requirements": [],
+          "requiredContext": "cobblemon:galarica_wreath"
+        }
+      ],
+      "cannotDynamax": false,
+      "battleOnly": false,
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "cobblemon:chesto_berry",
+            "percentage": 2.5
+          },
+          {
+            "item": "generations_core:light_soul",
+            "percentage": 2.5
+          }
+        ]
+      }
+    }
+  ]
+}

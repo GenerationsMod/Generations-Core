@@ -1,0 +1,64 @@
+{
+  "target": "cobblemon:shaymin",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "generations_core:shaymin_sky_doll",
+        "percentage": 100.0
+      },
+      {
+        "item": "generations_core:shaymin_land_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
+  "forms": [
+    {
+      "name": "Sky",
+      "primaryType": "grass",
+      "secondaryType": "flying",
+      "abilities": [
+        "serenegrace"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "attack": 103,
+        "defence": 75,
+        "special_attack": 120,
+        "special_defence": 75,
+        "speed": 127
+      },
+      "catchRate": 45,
+      "maleRatio": -1,
+      "baseExperienceYield": 270,
+      "baseFriendship": 100,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 3
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen4",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "sky"
+      ],
+      "height": 4,
+      "weight": 52,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ]
+}

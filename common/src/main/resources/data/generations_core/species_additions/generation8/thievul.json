@@ -1,0 +1,24 @@
+{
+  "target": "cobblemon:thievul",
+  "drops": {
+    "amount": 6,
+    "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "minecraft:emerald",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:dark_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}

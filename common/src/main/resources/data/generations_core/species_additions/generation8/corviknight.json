@@ -1,0 +1,76 @@
+{
+  "target": "cobblemon:corviknight",
+  "drops": {
+    "amount": 6,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:metal_coat",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "flying",
+      "secondaryType": "steel",
+      "abilities": [
+        "pressure",
+        "unnerve",
+        "h:mirrorarmor"
+      ],
+      "baseStats": {
+        "hp": 98,
+        "attack": 87,
+        "defence": 105,
+        "special_attack": 53,
+        "special_defence": 85,
+        "speed": 67
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 248,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 3,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 15,
+      "eggGroups": [
+        "flying"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 140,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ]
+}

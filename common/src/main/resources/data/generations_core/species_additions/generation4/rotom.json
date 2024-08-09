@@ -1,0 +1,245 @@
+{
+  "target": "cobblemon:rotom",
+  "forms": [
+    {
+      "name": "Heat",
+      "primaryType": "electric",
+      "secondaryType": "fire",
+      "abilities": [
+        "levitate"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defence": 107,
+        "special_attack": 105,
+        "special_defence": 107,
+        "speed": 86
+      },
+      "catchRate": 45,
+      "maleRatio": -1,
+      "baseExperienceYield": 154,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "amorphous"
+      ],
+      "moves": [
+        "1:overheat",
+        "form_change:overheat"
+      ],
+      "labels": [
+        "gen4"
+      ],
+      "aspects": [
+        "heat"
+      ],
+      "height": 3,
+      "weight": 3,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Wash",
+      "primaryType": "electric",
+      "secondaryType": "water",
+      "abilities": [
+        "levitate"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defence": 107,
+        "special_attack": 105,
+        "special_defence": 107,
+        "speed": 86
+      },
+      "catchRate": 45,
+      "maleRatio": -1,
+      "baseExperienceYield": 154,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "amorphous"
+      ],
+      "moves": [
+        "1:hydropump",
+        "form_change:hydropump"
+      ],
+      "labels": [
+        "gen4"
+      ],
+      "aspects": [
+        "wash"
+      ],
+      "height": 3,
+      "weight": 3,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Frost",
+      "primaryType": "electric",
+      "secondaryType": "ice",
+      "abilities": [
+        "levitate"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defence": 107,
+        "special_attack": 105,
+        "special_defence": 107,
+        "speed": 86
+      },
+      "catchRate": 45,
+      "maleRatio": -1,
+      "baseExperienceYield": 154,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "amorphous"
+      ],
+      "moves": [
+        "1:blizzard",
+        "form_change:blizzard"
+      ],
+      "labels": [
+        "gen4"
+      ],
+      "aspects": [
+        "frost"
+      ],
+      "height": 3,
+      "weight": 3,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Fan",
+      "primaryType": "electric",
+      "secondaryType": "flying",
+      "abilities": [
+        "levitate"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defence": 107,
+        "special_attack": 105,
+        "special_defence": 107,
+        "speed": 86
+      },
+      "catchRate": 45,
+      "maleRatio": -1,
+      "baseExperienceYield": 154,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "amorphous"
+      ],
+      "moves": [
+        "1:airslash",
+        "form_change:airslash"
+      ],
+      "labels": [
+        "gen4"
+      ],
+      "aspects": [
+        "fan"
+      ],
+      "height": 3,
+      "weight": 3,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Mow",
+      "primaryType": "electric",
+      "secondaryType": "grass",
+      "abilities": [
+        "levitate"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defence": 107,
+        "special_attack": 105,
+        "special_defence": 107,
+        "speed": 86
+      },
+      "catchRate": 45,
+      "maleRatio": -1,
+      "baseExperienceYield": 154,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "amorphous"
+      ],
+      "moves": [
+        "1:leafstorm",
+        "form_change:leafstorm"
+      ],
+      "labels": [
+        "gen4"
+      ],
+      "aspects": [
+        "mow"
+      ],
+      "height": 3,
+      "weight": 3,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ]
+}

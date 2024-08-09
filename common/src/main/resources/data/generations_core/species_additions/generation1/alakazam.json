@@ -1,0 +1,70 @@
+{
+  "target": "cobblemon:alakazam",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "psychic",
+      "abilities": [
+        "trace"
+      ],
+      "baseStats": {
+        "hp": 55,
+        "attack": 50,
+        "defence": 65,
+        "special_attack": 175,
+        "special_defence": 105,
+        "speed": 150
+      },
+      "catchRate": 50,
+      "maleRatio": 0.75,
+      "baseExperienceYield": 250,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 3,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "human_like"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 12,
+      "weight": 480,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:twisted_spoon",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:light_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}

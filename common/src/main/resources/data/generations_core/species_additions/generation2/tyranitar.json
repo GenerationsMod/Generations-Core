@@ -1,0 +1,68 @@
+{
+  "target": "cobblemon:tyranitar",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "rock",
+      "secondaryType": "dark",
+      "abilities": [
+        "sandstream"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "attack": 164,
+        "defence": 150,
+        "special_attack": 95,
+        "special_defence": 120,
+        "speed": 71
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 300,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+        "monster"
+      ],
+      "labels": [
+        "gen6",
+        "mega",
+        "pseudo_legendary"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 25,
+      "weight": 2550,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:hard_stone",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:chople_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:dragon_soul",
+        "percentage": 5.0
+      }
+    ]
+  }
+}

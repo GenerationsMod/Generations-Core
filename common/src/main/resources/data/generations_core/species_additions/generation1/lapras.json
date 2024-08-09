@@ -1,0 +1,82 @@
+{
+  "target": "cobblemon:lapras",
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "water",
+      "secondaryType": "ice",
+      "abilities": [
+        "waterabsorb",
+        "shellarmor",
+        "h:hydration"
+      ],
+      "baseStats": {
+        "hp": 130,
+        "attack": 85,
+        "defence": 80,
+        "special_attack": 85,
+        "special_defence": 95,
+        "speed": 60
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 187,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+        "monster",
+        "water_1"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 240,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 5.0
+      },
+      {
+        "item": "minecraft:heart_of_the_sea",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:lapras_doll",
+        "percentage": 1.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
+      }
+    ]
+  }
+}

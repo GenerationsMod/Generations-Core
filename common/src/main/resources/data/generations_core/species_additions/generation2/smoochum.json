@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:smoochum",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:smoochum_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

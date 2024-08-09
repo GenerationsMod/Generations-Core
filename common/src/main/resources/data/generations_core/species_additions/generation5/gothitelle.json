@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:gothitelle",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:twisted_spoon",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:light_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}

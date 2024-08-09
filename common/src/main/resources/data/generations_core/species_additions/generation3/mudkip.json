@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:mudkip",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:mudkip_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

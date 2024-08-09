@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:klinklang",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "generations_core:rusty_fragment",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

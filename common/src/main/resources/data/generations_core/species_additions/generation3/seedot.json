@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:seedot",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:dark_oak_sapling",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:seedot_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

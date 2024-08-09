@@ -1,0 +1,12 @@
+{
+ "target": "cobblemon:lugia",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:lugia_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

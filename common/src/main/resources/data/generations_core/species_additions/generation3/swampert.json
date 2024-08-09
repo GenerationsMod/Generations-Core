@@ -1,0 +1,51 @@
+{
+  "target": "cobblemon:swampert",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "water",
+      "secondaryType": "ground",
+      "abilities": [
+        "swiftswim"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "attack": 150,
+        "defence": 110,
+        "special_attack": 95,
+        "special_defence": 110,
+        "speed": 70
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "baseExperienceYield": 268,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "monster",
+        "water_1"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 19,
+      "weight": 1020,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

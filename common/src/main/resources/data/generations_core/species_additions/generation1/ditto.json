@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:ditto",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:quick_powder",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:metal_powder",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:ditto_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

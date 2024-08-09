@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:popplio",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:popplio_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

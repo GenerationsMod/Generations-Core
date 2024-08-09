@@ -1,0 +1,63 @@
+{
+  "target": "cobblemon:giratina",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "generations_core:giratina_altered_doll",
+        "percentage": 1.0
+      },
+      {
+        "item": "generations_core:giratina_origin_doll",
+        "percentage": 1.0
+      }
+    ]
+  },
+  "forms": [
+    {
+      "name": "Origin",
+      "primaryType": "ghost",
+      "secondaryType": "dragon",
+      "abilities": [
+        "levitate"
+      ],
+      "baseStats": {
+        "hp": 150,
+        "attack": 120,
+        "defence": 100,
+        "special_attack": 120,
+        "special_defence": 100,
+        "speed": 90
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 340,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen4",
+        "legendary"
+      ],
+      "aspects": [
+        "origin"
+      ],
+      "height": 69,
+      "weight": 6500,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ]
+}

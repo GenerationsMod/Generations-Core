@@ -1,0 +1,12 @@
+{
+  "target": "cobblemon:zapdos",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:zapdos_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

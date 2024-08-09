@@ -1,0 +1,113 @@
+{
+  "target": "cobblemon:pichu",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:thunder_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:pichu_doll",
+        "percentage": 1.0
+      }
+    ]
+  },
+  "forms": [
+    {
+      "name": "Spiky-eared",
+      "primaryType": "electric",
+      "abilities": [
+        "static"
+      ],
+      "baseStats": {
+        "hp": 20,
+        "attack": 40,
+        "defence": 15,
+        "special_attack": 35,
+        "special_defence": 35,
+        "speed": 60
+      },
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 41,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "moves": [
+        "1:charm",
+        "1:thundershock",
+        "5:tailwhip",
+        "10:thunderwave",
+        "13:sweetkiss",
+        "18:nastyplot",
+        "tm:attract",
+        "tm:captivate",
+        "tm:chargebeam",
+        "tm:doubleteam",
+        "tm:endure",
+        "tm:facade",
+        "tm:flash",
+        "tm:fling",
+        "tm:frustration",
+        "tm:grassknot",
+        "tm:hiddenpower",
+        "tm:irontail",
+        "tm:lightscreen",
+        "tm:naturalgift",
+        "tm:protect",
+        "tm:raindance",
+        "tm:rest",
+        "tm:return",
+        "tm:secretpower",
+        "tm:shockwave",
+        "tm:sleeptalk",
+        "tm:substitute",
+        "tm:swagger",
+        "tm:thunder",
+        "tm:thunderbolt",
+        "tm:thunderwave",
+        "tm:toxic",
+        "tutor:headbutt",
+        "tutor:helpinghand",
+        "tutor:magnetrise",
+        "tutor:mudslap",
+        "tutor:painsplit",
+        "tutor:rollout",
+        "tutor:signalbeam",
+        "tutor:snore",
+        "tutor:swagger",
+        "tutor:swift",
+        "tutor:uproar",
+        "tutor:volttackle"
+      ],
+      "labels": [
+        "gen4",
+        "baby"
+      ],
+      "aspects": [
+        "spiky-eared"
+      ],
+      "height": 3,
+      "weight": 20,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ]
+}

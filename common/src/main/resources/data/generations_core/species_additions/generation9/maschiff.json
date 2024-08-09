@@ -1,0 +1,24 @@
+{
+  "target": "cobblemon:maschiff",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:dark_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}
