@@ -1,0 +1,69 @@
+{
+  "target": "cobblemon:garchomp",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:dragon_fang",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:dragon_soul",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "dragon",
+      "secondaryType": "ground",
+      "abilities": [
+        "sandforce"
+      ],
+      "baseStats": {
+        "hp": 108,
+        "attack": 170,
+        "defence": 115,
+        "special_attack": 120,
+        "special_defence": 95,
+        "speed": 92
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 300,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+        "monster",
+        "dragon"
+      ],
+      "labels": [
+        "gen6",
+        "mega",
+        "pseudo_legendary"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 19,
+      "weight": 950,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

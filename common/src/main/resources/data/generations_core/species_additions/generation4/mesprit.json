@@ -1,0 +1,12 @@
+{
+  "target": "cobblemon:mespirit",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:mesprit_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

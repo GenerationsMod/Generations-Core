@@ -1,0 +1,51 @@
+{
+  "target": "cobblemon:sceptile",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "grass",
+      "secondaryType": "dragon",
+      "abilities": [
+        "lightningrod"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 110,
+        "defence": 75,
+        "special_attack": 145,
+        "special_defence": 85,
+        "speed": 145
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "baseExperienceYield": 265,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 3
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "monster",
+        "dragon"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 19,
+      "weight": 552,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

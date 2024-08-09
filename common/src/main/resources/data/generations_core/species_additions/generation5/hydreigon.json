@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:hydreigon",
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:dragon_breath",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:dragon_soul",
+        "percentage": 5.0
+      }
+    ]
+  }
+}

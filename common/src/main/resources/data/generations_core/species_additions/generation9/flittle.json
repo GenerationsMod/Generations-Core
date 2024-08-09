@@ -1,0 +1,19 @@
+{
+  "target": "cobblemon:flittle",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:light_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "target": "cobblemon:entei",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:entei_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

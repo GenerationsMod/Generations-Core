@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:litten",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:charcoal_stick",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:litten_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

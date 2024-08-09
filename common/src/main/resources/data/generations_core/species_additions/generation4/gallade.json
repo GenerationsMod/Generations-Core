@@ -1,0 +1,50 @@
+{
+  "target": "cobblemon:gallade",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "psychic",
+      "secondaryType": "fighting",
+      "abilities": [
+        "innerfocus"
+      ],
+      "baseStats": {
+        "hp": 68,
+        "attack": 165,
+        "defence": 95,
+        "special_attack": 65,
+        "special_defence": 115,
+        "speed": 110
+      },
+      "catchRate": 45,
+      "maleRatio": 1,
+      "baseExperienceYield": 259,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "amorphous"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 16,
+      "weight": 564,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

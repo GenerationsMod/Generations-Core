@@ -1,0 +1,12 @@
+{
+  "target": "cobblemon:suicune",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:suicune_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "target": "cobblemon:articuno",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:articuno_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
+  "features": [
+    "galarian"
+  ],
+  "forms": [
+    {
+      "name": "Galar",
+      "primaryType": "psychic",
+      "secondaryType": "flying",
+      "abilities": [
+        "competitive"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "attack": 85,
+        "defence": 85,
+        "special_attack": 125,
+        "special_defence": 100,
+        "speed": 95
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 290,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 3,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 80,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen8",
+        "legendary",
+        "galar_regional"
+      ],
+      "aspects": [
+        "galarian"
+      ]
+    }
+  ]
+}

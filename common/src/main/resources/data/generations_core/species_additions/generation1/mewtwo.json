@@ -1,0 +1,105 @@
+{
+  "target": "cobblemon:mewtwo",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:mewtwo_doll",
+        "percentage": 100.0
+      }
+    ]
+  },
+  "forms": [
+    {
+      "name": "Mega-X",
+      "primaryType": "psychic",
+      "secondaryType": "fighting",
+      "abilities": [
+        "steadfast"
+      ],
+      "baseStats": {
+        "hp": 106,
+        "attack": 190,
+        "defence": 100,
+        "special_attack": 154,
+        "special_defence": 100,
+        "speed": 130
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 340,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 3,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen6",
+        "mega",
+        "legendary"
+      ],
+      "aspects": [
+        "mega-x"
+      ],
+      "height": 23,
+      "weight": 1270,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    },
+    {
+      "name": "Mega-Y",
+      "primaryType": "psychic",
+      "abilities": [
+        "insomnia"
+      ],
+      "baseStats": {
+        "hp": 106,
+        "attack": 150,
+        "defence": 70,
+        "special_attack": 194,
+        "special_defence": 120,
+        "speed": 140
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 340,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 3,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen6",
+        "mega",
+        "legendary"
+      ],
+      "aspects": [
+        "mega-y"
+      ],
+      "height": 15,
+      "weight": 330,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

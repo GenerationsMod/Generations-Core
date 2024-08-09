@@ -1,0 +1,28 @@
+{
+  "target": "cobblemon:kommoo",
+  "drops": {
+    "amount": 6,
+    "entries": [
+      {
+        "item": "minecraft:scute",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:razor_claw",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:dragon_scale",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:dragon_soul",
+        "percentage": 5.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:hatenna",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:light_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}

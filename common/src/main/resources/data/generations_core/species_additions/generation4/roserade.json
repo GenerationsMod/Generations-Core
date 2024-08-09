@@ -1,0 +1,28 @@
+{
+  "target": "cobblemon:roserade",
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:rose_bush",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:blue_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:red_petal",
+        "percentage": 10.0
+      }
+    ]
+  }
+}

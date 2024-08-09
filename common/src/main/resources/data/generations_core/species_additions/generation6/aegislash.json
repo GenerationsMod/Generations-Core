@@ -1,0 +1,24 @@
+{
+  "target": "cobblemon:aegislash",
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:iron_nugget",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "minecraft:iron_sword",
+        "percentage": 25.0
+      },
+      {
+        "item": "cobblemon:dusk_stone",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:rusty_fragment",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

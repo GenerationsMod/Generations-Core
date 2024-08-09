@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:luvdisc",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:deep_sea_scale",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:heart_scale",
+        "percentage": 5.0
+      }
+    ]
+  }
+}

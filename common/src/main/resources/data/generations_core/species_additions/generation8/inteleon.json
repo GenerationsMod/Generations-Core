@@ -1,0 +1,64 @@
+{
+  "target": "cobblemon:inteleon",
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "water",
+      "abilities": [
+        "torrent",
+        "h:sniper"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defence": 65,
+        "special_attack": 125,
+        "special_defence": 65,
+        "speed": 120
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "baseExperienceYield": 265,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 3
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "water_1",
+        "field"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 30,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 25.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
+      }
+    ]
+  }
+}

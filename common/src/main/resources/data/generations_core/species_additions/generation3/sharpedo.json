@@ -1,0 +1,50 @@
+{
+  "target": "cobblemon:sharpedo",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "water",
+      "secondaryType": "dark",
+      "abilities": [
+        "strongjaw"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 140,
+        "defence": 70,
+        "special_attack": 110,
+        "special_defence": 65,
+        "speed": 105
+      },
+      "catchRate": 60,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 161,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "water_2"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 25,
+      "weight": 1303,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

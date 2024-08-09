@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:ekans",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:razor_fang",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:ekans_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

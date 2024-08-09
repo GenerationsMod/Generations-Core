@@ -1,0 +1,76 @@
+{
+  "target": "cobblemon:machamp",
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "fighting",
+      "abilities": [
+        "guts",
+        "noguard",
+        "h:steadfast"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "attack": 130,
+        "defence": 80,
+        "special_attack": 65,
+        "special_defence": 85,
+        "speed": 55
+      },
+      "catchRate": 45,
+      "maleRatio": 0.75,
+      "baseExperienceYield": 253,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "human_like"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 250,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:focus_band",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:muscle_band",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:scroll_page",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

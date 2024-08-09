@@ -1,0 +1,71 @@
+{
+  "target": "cobblemon:medicham",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "fighting",
+      "secondaryType": "psychic",
+      "abilities": [
+        "purepower"
+      ],
+      "baseStats": {
+        "hp": 60,
+        "attack": 100,
+        "defence": 85,
+        "special_attack": 80,
+        "special_defence": 85,
+        "speed": 100
+      },
+      "catchRate": 90,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 144,
+      "baseFriendship": 70,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "human_like"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 13,
+      "weight": 315,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:wise_glasses",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:black_belt",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:scroll_page",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

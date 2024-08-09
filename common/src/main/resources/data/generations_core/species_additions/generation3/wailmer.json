@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:wailmer",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:bone_block",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:wailmer_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

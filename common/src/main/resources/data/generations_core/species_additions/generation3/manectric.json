@@ -1,0 +1,49 @@
+{
+  "target": "cobblemon:manectric",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "electric",
+      "abilities": [
+        "intimidate"
+      ],
+      "baseStats": {
+        "hp": 70,
+        "attack": 75,
+        "defence": 80,
+        "special_attack": 135,
+        "special_defence": 80,
+        "speed": 135
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 166,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "field"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 18,
+      "weight": 440,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

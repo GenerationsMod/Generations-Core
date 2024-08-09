@@ -1,0 +1,169 @@
+{
+  "target": "cobblemon:eevee",
+  "forms": [
+    {
+      "name": "Starter",
+      "primaryType": "normal",
+      "abilities": [
+        "runaway",
+        "adaptability",
+        "h:anticipation"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "attack": 75,
+        "defence": 70,
+        "special_attack": 65,
+        "special_defence": 85,
+        "speed": 75
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "baseExperienceYield": 65,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 1,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 35,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "moves": [
+        "1:growl",
+        "1:tackle",
+        "3:tailwhip",
+        "6:quickattack",
+        "10:doublekick",
+        "14:sandattack",
+        "17:bite",
+        "21:swift",
+        "24:takedown",
+        "28:doubleedge",
+        "31:helpinghand",
+        "tm:dig",
+        "tm:facade",
+        "tm:headbutt",
+        "tm:helpinghand",
+        "tm:irontail",
+        "tm:payday",
+        "tm:protect",
+        "tm:reflect",
+        "tm:rest",
+        "tm:shadowball",
+        "tm:substitute",
+        "tm:toxic",
+        "tutor:baddybad",
+        "tutor:bite",
+        "tutor:bouncybubble",
+        "tutor:buzzybuzz",
+        "tutor:dig",
+        "tutor:doubleedge",
+        "tutor:doublekick",
+        "tutor:facade",
+        "tutor:freezyfrost",
+        "tutor:glitzyglow",
+        "tutor:growl",
+        "tutor:headbutt",
+        "tutor:helpinghand",
+        "tutor:irontail",
+        "tutor:payday",
+        "tutor:protect",
+        "tutor:quickattack",
+        "tutor:reflect",
+        "tutor:rest",
+        "tutor:sandattack",
+        "tutor:sappyseed",
+        "tutor:shadowball",
+        "tutor:sizzlyslide",
+        "tutor:sparklyswirl",
+        "tutor:substitute",
+        "tutor:swift",
+        "tutor:tackle",
+        "tutor:tailwhip",
+        "tutor:takedown",
+        "tutor:toxic",
+        "tutor:veeveevolley"
+      ],
+      "labels": [
+        "gen7"
+      ],
+      "aspects": [
+        "starter"
+      ],
+      "height": 3,
+      "weight": 65,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Gmax",
+      "primaryType": "normal",
+      "abilities": [
+        "runaway",
+        "adaptability",
+        "h:anticipation"
+      ],
+      "baseStats": {
+        "hp": 55,
+        "attack": 55,
+        "defence": 50,
+        "special_attack": 45,
+        "special_defence": 65,
+        "speed": 55
+      },
+      "catchRate": 45,
+      "maleRatio": 0.875,
+      "baseExperienceYield": 65,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 1,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 35,
+      "eggGroups": [
+        "field"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 180,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:silk_scarf",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:eevee_doll",
+        "percentage": 1.0
+      },
+      {
+        "item": "generations_core:dynite_ore",
+        "percentage": 5.0
+      }
+    ]
+  }
+}

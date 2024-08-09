@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:azurill",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:azurill_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

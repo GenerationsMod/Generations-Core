@@ -1,0 +1,60 @@
+{
+  "target": "cobblemon:groudon",
+  "forms": [
+    {
+      "name": "Primal",
+      "primaryType": "ground",
+      "secondaryType": "fire",
+      "abilities": [
+        "desolateland"
+      ],
+      "baseStats": {
+        "hp": 100,
+        "attack": 180,
+        "defence": 160,
+        "special_attack": 150,
+        "special_defence": 90,
+        "speed": 90
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 335,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen6",
+        "primal",
+        "legendary"
+      ],
+      "aspects": [
+        "primal"
+      ],
+      "height": 50,
+      "weight": 9997,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:groudon_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

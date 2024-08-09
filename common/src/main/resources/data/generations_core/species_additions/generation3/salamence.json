@@ -1,0 +1,72 @@
+{
+  "target": "cobblemon:salamance",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "dragon",
+      "secondaryType": "flying",
+      "abilities": [
+        "aerilate"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "attack": 145,
+        "defence": 130,
+        "special_attack": 120,
+        "special_defence": 90,
+        "speed": 120
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 300,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 3,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 40,
+      "eggGroups": [
+        "dragon"
+      ],
+      "labels": [
+        "gen6",
+        "mega",
+        "pseudo_legendary"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 18,
+      "weight": 1126,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:dragon_fang",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:dragon_scale",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:dragon_soul",
+        "percentage": 5.0
+      }
+    ]
+  }
+}

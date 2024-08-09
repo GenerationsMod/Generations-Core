@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:bounsweet",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:purple_petal",
+        "percentage": 10.0
+      }
+    ]
+  }
+}

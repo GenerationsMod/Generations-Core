@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:unown",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "generations_core:light_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}

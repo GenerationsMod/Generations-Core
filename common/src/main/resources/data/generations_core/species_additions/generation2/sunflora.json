@@ -1,0 +1,23 @@
+{
+  "target": "cobblemon:sunflora",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:sunflower"
+      },
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:orange_petal",
+        "percentage": 10.0
+      },
+      {
+        "item": "generations_core:yellow_petal",
+        "percentage": 10.0
+      }
+    ]
+  }
+}

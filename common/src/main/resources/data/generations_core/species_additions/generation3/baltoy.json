@@ -1,0 +1,24 @@
+{
+  "target": "cobblemon:baltoy",
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:light_clay",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:colbur_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:baltoy_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

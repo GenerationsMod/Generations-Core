@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:duskull",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:reaper_cloth",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:duskull_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

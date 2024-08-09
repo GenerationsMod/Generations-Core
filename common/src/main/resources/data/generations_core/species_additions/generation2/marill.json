@@ -1,0 +1,16 @@
+{
+  "target": "cobblemon:marill",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:marill_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

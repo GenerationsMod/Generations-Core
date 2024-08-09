@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:cherrim",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:miracle_seed",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:purple_petal",
+        "percentage": 10.0
+      }
+    ]
+  }
+}

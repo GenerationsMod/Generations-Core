@@ -1,0 +1,24 @@
+{
+  "target": "cobblemon:hariyama",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:black_belt",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:kings_rock",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:payapa_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:scroll_page",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

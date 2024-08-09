@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:gulpin",
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:black_sludge",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:gulpin_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

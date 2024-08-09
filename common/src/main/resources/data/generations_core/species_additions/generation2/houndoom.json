@@ -1,0 +1,50 @@
+{
+  "target": "cobblemon:houndoom",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "dark",
+      "secondaryType": "fire",
+      "abilities": [
+        "solarpower"
+      ],
+      "baseStats": {
+        "hp": 75,
+        "attack": 90,
+        "defence": 90,
+        "special_attack": 140,
+        "special_defence": 90,
+        "speed": 115
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 175,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 2,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "field"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 19,
+      "weight": 495,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

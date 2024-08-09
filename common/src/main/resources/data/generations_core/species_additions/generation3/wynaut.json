@@ -1,0 +1,20 @@
+{
+  "target": "cobblemon:wynaut",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:colbur_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:wynaut_doll",
+        "percentage": 1.0
+      },
+      {
+        "item": "generations_core:light_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}

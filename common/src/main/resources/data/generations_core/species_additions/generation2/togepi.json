@@ -1,0 +1,24 @@
+{
+  "target": "cobblemon:togepi",
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:lucky_egg",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:shiny_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 2.5
+      },
+      {
+        "item": "generations_core:togepi_doll",
+        "percentage": 1.0
+      }
+    ]
+  }
+}

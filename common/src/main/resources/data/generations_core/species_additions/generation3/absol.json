@@ -1,0 +1,66 @@
+{
+  "target": "cobblemon:absol",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "dark",
+      "abilities": [
+        "magicbounce"
+      ],
+      "baseStats": {
+        "hp": 65,
+        "attack": 150,
+        "defence": 60,
+        "special_attack": 115,
+        "special_defence": 60,
+        "speed": 115
+      },
+      "catchRate": 30,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 163,
+      "baseFriendship": 35,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 25,
+      "eggGroups": [
+        "field"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 12,
+      "weight": 490,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:razor_claw",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "generations_core:dark_soul",
+        "percentage": 2.5
+      }
+    ]
+  }
+}

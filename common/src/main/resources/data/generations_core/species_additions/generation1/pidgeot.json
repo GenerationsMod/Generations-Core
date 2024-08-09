@@ -1,0 +1,50 @@
+{
+  "target": "cobblemon:pidgeot",
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "normal",
+      "secondaryType": "flying",
+      "abilities": [
+        "noguard"
+      ],
+      "baseStats": {
+        "hp": 83,
+        "attack": 80,
+        "defence": 80,
+        "special_attack": 135,
+        "special_defence": 80,
+        "speed": 121
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 216,
+      "baseFriendship": 70,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 3
+      },
+      "experienceGroup": "medium_slow",
+      "eggCycles": 15,
+      "eggGroups": [
+        "flying"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "height": 22,
+      "weight": 505,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ]
+}

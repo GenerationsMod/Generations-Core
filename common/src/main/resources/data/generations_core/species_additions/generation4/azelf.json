@@ -1,0 +1,12 @@
+{
+  "target": "cobblemon:azelf",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:azelf_doll",
+        "percentage": 100.0
+      }
+    ]
+  }
+}
