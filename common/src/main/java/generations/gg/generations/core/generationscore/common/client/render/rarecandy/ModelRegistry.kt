@@ -15,7 +15,6 @@ import gg.generations.rarecandy.renderer.rendering.RareCandy
 import net.minecraft.client.Minecraft
 import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation
-import java.io.FileNotFoundException
 import java.util.concurrent.TimeUnit
 import java.util.function.BiConsumer
 
@@ -27,7 +26,7 @@ object ModelRegistry {
                 val resourceManager = Minecraft.getInstance().resourceManager
                 try {
                     return@CacheLoader of(key!!, resourceManager.getResourceOrThrow(key))
-                } catch (e: FileNotFoundException) {
+                } catch (e: Exception) {
                     throw RuntimeException(e)
                 }
             })
@@ -35,6 +34,9 @@ object ModelRegistry {
     operator fun get(modelProvider: ModelContextProviders.ModelProvider): CompiledModel? {
         return ModelRegistry[modelProvider.model]
     }
+
+    @JvmStatic
+    fun cache() = LOADER;
 
     @JvmStatic
     fun clear() = LOADER.asMap().clear();
@@ -46,6 +48,11 @@ object ModelRegistry {
         } catch (e: Exception) {
             throw RuntimeException(e)
         }
+    }
+
+    @JvmStatic
+    fun init() {
+        CompiledModel.init()
     }
 
     @JvmStatic

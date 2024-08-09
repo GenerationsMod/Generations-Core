@@ -22,7 +22,14 @@ public class TaskQueue {
             try {
                 if (!taskQueue.isEmpty()) {
                     Runnable task = taskQueue.poll(100, TimeUnit.MILLISECONDS);
-                    if(task != null) task.run();
+                    if(task != null) {
+                        try {
+                            task.run();
+                        } catch (Exception e) {
+                            System.out.println("Error!");
+                            e.printStackTrace();
+                        }
+                    }
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

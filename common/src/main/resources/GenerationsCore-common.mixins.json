@@ -12,6 +12,7 @@
     "client.PokemonGuiUtilsMixin"
   ],
   "client": [
+    "client.ClientRecipeBookMixin",
     "client.GuiMixin",
     "client.LevelRendererMixin",
     "client.LightTextureMixin",

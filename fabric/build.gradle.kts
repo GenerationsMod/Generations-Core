@@ -1,7 +1,3 @@
-import com.hypherionmc.modpublisher.properties.CurseEnvironment
-import com.hypherionmc.modpublisher.properties.ModLoader
-import com.hypherionmc.modpublisher.properties.ReleaseType
-
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("com.hypherionmc.modutils.modpublisher") version "2.+"
@@ -48,12 +44,12 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
     implementation("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
-    implementation("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
-    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2")!!)
-    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")!!)
-    implementation("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
-    implementation("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
-    implementation("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
+//    implementation("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
+//    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2")!!)
+//    implementation("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")!!)
+//    implementation("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
+//    implementation("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
+//    implementation("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
 
     implementation("shadowCommon"("com.github.Chocohead:Fabric-ASM:v2.3")!!)
 

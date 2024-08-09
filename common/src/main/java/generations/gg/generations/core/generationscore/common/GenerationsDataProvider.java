@@ -6,16 +6,7 @@ import com.cobblemon.mod.common.api.data.DataRegistry;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import dev.architectury.utils.Env;
 import dev.architectury.utils.EnvExecutor;
-import generations.gg.generations.core.generationscore.common.network.packets.S2CUnlockReloadPacket;
-import generations.gg.generations.core.generationscore.common.world.dialogue.Dialogues;
-import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;
-import generations.gg.generations.core.generationscore.common.world.shop.ShopPresets;
-import generations.gg.generations.core.generationscore.common.world.shop.Shops;
-import generations.gg.generations.core.generationscore.common.network.packets.S2CUnlockReloadPacket;
-import generations.gg.generations.core.generationscore.common.world.dialogue.Dialogues;
-import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;
-import generations.gg.generations.core.generationscore.common.world.shop.ShopPresets;
-import generations.gg.generations.core.generationscore.common.world.shop.Shops;
+import generations.gg.generations.core.generationscore.common.client.CompiledModelLoader;
 import generations.gg.generations.core.generationscore.common.network.packets.S2CUnlockReloadPacket;
 import generations.gg.generations.core.generationscore.common.world.dialogue.Dialogues;
 import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;
@@ -60,13 +51,19 @@ public class GenerationsDataProvider implements DataProvider {
             return Unit.INSTANCE;
         });
 
-        EnvExecutor.runInEnv(Env.CLIENT, () -> () ->
-                GenerationsCore.implementation.registerResourceReloader(
-                        id("client_resources"),
-                        new SimpleResourceReloader(PackType.CLIENT_RESOURCES),
-                        PackType.CLIENT_RESOURCES,
-                        emptyList()
-                ));
+        EnvExecutor.runInEnv(Env.CLIENT, () -> () -> {
+            GenerationsCore.implementation.registerResourceReloader(
+                    id("client_resources"),
+                    new SimpleResourceReloader(PackType.CLIENT_RESOURCES),
+                    PackType.CLIENT_RESOURCES,
+                    emptyList()
+            );
+            GenerationsCore.implementation.registerResourceReloader(
+                    id("model_registry"),
+                    new CompiledModelLoader(),
+                    PackType.CLIENT_RESOURCES,
+                    emptyList());
+        });
 
         GenerationsCore.implementation.registerResourceReloader(id("data_resources"), new SimpleResourceReloader(PackType.SERVER_DATA), PackType.SERVER_DATA, emptyList());
     }

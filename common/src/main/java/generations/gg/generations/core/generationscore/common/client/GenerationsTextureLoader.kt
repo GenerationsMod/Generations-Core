@@ -2,11 +2,15 @@ package generations.gg.generations.core.generationscore.common.client
 
 import com.cobblemon.mod.common.util.asResource
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 import com.mojang.blaze3d.platform.NativeImage
 import com.mojang.blaze3d.systems.RenderSystem
+import com.mojang.serialization.Codec
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.client.model.SpriteRegistry
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ITextureWithResourceLocation
+import generations.gg.generations.core.generationscore.common.util.GenerationsUtils
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
 import gg.generations.rarecandy.renderer.loading.ITexture
 import net.minecraft.client.Minecraft
@@ -14,14 +18,14 @@ import net.minecraft.client.renderer.texture.SimpleTexture
 import net.minecraft.resources.FileToIdConverter
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.ResourceManager
-import net.minecraft.util.GsonHelper
 import org.lwjgl.opengl.GL13C
 import java.io.ByteArrayInputStream
 import java.io.IOException
 import kotlin.random.Random
 
 object GenerationsTextureLoader : ITextureLoader() {
-    val REGULAR: MutableMap<String, ITexture?> = HashMap()
+    val REGULAR = mutableMapOf<String, ITexture>()
+    val CODEC = Codec.unboundedMap(Codec.STRING, ResourceLocation.CODEC)
     val RARE_CANDY = FileToIdConverter("textures", "rare_candy_texture.json")
     val gson = Gson()
     init {}
@@ -29,11 +33,24 @@ object GenerationsTextureLoader : ITextureLoader() {
     fun initialize(manager: ResourceManager) {
         clear()
         try {
-            RARE_CANDY.listMatchingResources(manager).values.forEach { resouce ->
-                resouce.openAsReader().use { GsonHelper.fromJson(gson, it, RARE_CANDY_TYPE) }.forEach { (key, value) ->
-                    register(key, SimpleTextureEnhanced(value.asResource().let { "${it.namespace}:textures/${it.path}.png" }.asResource()))
+            RARE_CANDY.listMatchingResourceStacks(manager).forEach { name, list ->
+                list.forEach { resource ->
+                    val obj = resource.openAsReader().use { SpriteRegistry.GSON.fromJson(it, JsonObject::class.java) }
+                    val map = GenerationsUtils.decode(CODEC, obj)
+
+                    if(map.isNotEmpty()) {
+                        map.forEach { (key, value) ->
+                            register(key, SimpleTextureEnhanced(value.let { "${it.namespace}:textures/${it.path}.png" }.asResource()))
+                        }
+                    }
                 }
             }
+
+//            RARE_CANDY.listMatchingResources(manager).values.forEach { resouce ->
+//                resouce.openAsReader().use { GsonHelper.fromJson(gson, it, RARE_CANDY_TYPE) }.forEach { (key, value) ->
+//                    register(key, SimpleTextureEnhanced(value.asResource().let { "${it.namespace}:textures/${it.path}.png" }.asResource()))
+//                }
+//            }
         } catch (e: Exception) { throw RuntimeException(e)
         }
     }

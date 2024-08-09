@@ -59,7 +59,6 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.PackType;
 import net.minecraft.util.Mth;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.InteractionHand;
@@ -82,9 +81,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
 import static generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER;
-import static generations.gg.generations.core.generationscore.common.GenerationsCore.id;
 import static generations.gg.generations.core.generationscore.common.world.item.MelodyFluteItem.isItem;
-import static java.util.Collections.emptyList;
 import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
 import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 
@@ -98,6 +95,8 @@ public class GenerationsCoreClient {
                 LOGGER.warn("Attempted to use renderdoc without renderdoc installed.");
             }
         }
+
+        ModelRegistry.init();
 
         ITextureLoader.setInstance(GenerationsTextureLoader.INSTANCE);
 
@@ -116,12 +115,6 @@ public class GenerationsCoreClient {
         JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
 
         VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
-
-        GenerationsCore.implementation.registerResourceReloader(
-                id("model_registry"),
-                new CompiledModelLoader(),
-                PackType.CLIENT_RESOURCES,
-                emptyList());
 
 //        GenerationsCore.implementation.registerResourceReloader(
 //                id("texture_loader"),

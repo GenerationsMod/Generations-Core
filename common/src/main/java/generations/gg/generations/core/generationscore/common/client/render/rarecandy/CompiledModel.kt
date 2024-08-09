@@ -75,12 +75,14 @@ class CompiledModel {
     }
 
     companion object {
-        val loader =
-            GenerationsModelLoader(
+        val loader = GenerationsModelLoader(
                 2
             )
 
         val queue = TaskQueue()
+
+        @JvmStatic
+        fun init() {}
 
         @JvmStatic
         fun of(pair: ResourceLocation, resource: Resource): CompiledModel {

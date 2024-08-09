@@ -2,14 +2,10 @@ package generations.gg.generations.core.generationscore.common.world.recipe
 
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
-import com.cobblemon.mod.common.item.CobblemonItem
 import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.util.asResource
 import com.cobblemon.mod.common.util.toJsonArray
-import com.google.gson.JsonArray
 import com.google.gson.JsonObject
-import com.google.gson.JsonPrimitive
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
@@ -43,8 +39,6 @@ class PokemonItemIngredient(var species: ResourceLocation, var aspects: Set<Stri
         override fun parse(jsonObject: JsonObject): PokemonItemIngredient {
             val species = jsonObject.getResouceLocation("species")
             val aspects = jsonObject.getAsJsonArray("aspects").map { it.asString }.toMutableSet()
-
-            println("RAWRF!")
 
             return PokemonItemIngredient(species, aspects)
         }

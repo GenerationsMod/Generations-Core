@@ -91,7 +91,7 @@ public class RksRecipe implements Recipe<Container> {
         try {
             return result.getStack();
         } catch (Exception e) {
-            System.out.println("Oh no! " + id);
+            GenerationsCore.LOGGER.warn("Result for RKS machine recipe " + id + " is missing.");
             return ItemStack.EMPTY;
         }
     }

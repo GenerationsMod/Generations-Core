@@ -1,6 +1,6 @@
 {
   "generations_core:general": {
-    "initializer": "generations.gg.generations.core.generationscore.compat.WTHIT",
+    "initializer": "generations.gg.generations.core.generationscore.common.compat.WTHIT",
     "side": "*"
   }
 }

@@ -275,7 +275,7 @@ public class Pipelines {
 
 
     private static boolean isStatueMaterial(UniformUploadContext ctx) {
-        return ctx.instance() instanceof StatueInstance instance && instance.getMaterial() != null && ((GenerationsTextureLoader) gg.generations.rarecandy.tools.TextureLoader.instance()).has(instance.getMaterial());
+        return ctx.instance() instanceof StatueInstance instance && instance.getMaterial() != null && ((GenerationsTextureLoader) ITextureLoader.instance()).has(instance.getMaterial());
     }
 
     public static Pipeline getPipeline(String name) {
