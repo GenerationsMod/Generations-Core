@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.client.model;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
@@ -105,7 +104,7 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
                 instance.offsets = model.guiInstance.offsets;
             }
 
-            scale *= PokemonSpecies.INSTANCE.getByIdentifier(context.requires(RenderContext.Companion.getSPECIES())).getForm(context.requires(RenderContext.Companion.getASPECTS())).getHitbox().height;
+//            scale *= PokemonSpecies.INSTANCE.getByIdentifier(context.requires(RenderContext.Companion.getSPECIES())).getForm(context.requires(RenderContext.Companion.getASPECTS())).getHitbox().height;
         }
 
         if(model.renderObject.isReady()) {
