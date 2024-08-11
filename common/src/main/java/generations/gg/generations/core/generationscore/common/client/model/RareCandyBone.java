@@ -119,10 +119,9 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
             stack.pushPose();
 
-            stack.scale(scale, scale, scale);
             stack.mulPose(ROTATION_CORRECTION);
-            stack.scale(-1, -1, 1);
-            stack.translate(0, -1.501, 0);
+            stack.scale(-scale, -scale, scale);
+            stack.translate(0, -1.501/scale, 0);
 
             instance.transformationMatrix().set(stack.last().pose());
             stack.popPose();
