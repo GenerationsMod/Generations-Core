@@ -74,11 +74,11 @@ dependencies {
 
 
     //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.10.0")
+    implementation("thedarkcolour:kotlinforforge:4.11.0")
     modImplementation("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.3.3")
-    include("org.jetbrains.kotlinx:kotlinx-io-core:0.3.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")
+    include("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")
 }
 
 tasks {

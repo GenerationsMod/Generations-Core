@@ -2,7 +2,7 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
-    kotlin("jvm") version ("1.9.23")
+    kotlin("jvm") version ("2.0.10")
     id("dev.architectury.loom") version "1.7-SNAPSHOT" apply false
     java
     idea
