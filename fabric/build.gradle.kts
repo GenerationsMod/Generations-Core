@@ -51,13 +51,7 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
-    implementation("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
-//    implementation("shadowBundle"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))!!
-//    implementation("shadowBundle"("org.lwjgl:lwjgl-assimp:3.3.2")!!)
-//    implementation("shadowBundle"("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")!!)
-//    implementation("shadowBundle"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
-//    implementation("shadowBundle"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
-//    implementation("shadowBundle"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
+    implementation("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}") {isTransitive = false})!!
 
     implementation("shadowBundle"("com.github.Chocohead:Fabric-ASM:v2.3")!!)
 

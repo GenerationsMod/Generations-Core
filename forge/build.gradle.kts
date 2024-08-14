@@ -67,12 +67,7 @@ dependencies {
     modApi("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!
 
     forgeRuntimeLibrary("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
-    forgeRuntimeLibrary("shadowBundle"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))
-    forgeRuntimeLibrary("shadowBundle"("org.lwjgl:lwjgl-assimp:3.3.2")!!)
-    forgeRuntimeLibrary("shadowBundle"("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")!!)
-    forgeRuntimeLibrary("shadowBundle"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
-    forgeRuntimeLibrary("shadowBundle"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
-    forgeRuntimeLibrary("shadowBundle"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
+
     forgeRuntimeLibrary("shadowBundle"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
@@ -82,7 +77,6 @@ dependencies {
     modRuntimeOnly("curse.maven:spit-it-out-857141:4888754")
 
     modRuntimeOnly("curse.maven:worldedit-225608:4586218")
-
 
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.11.0")
