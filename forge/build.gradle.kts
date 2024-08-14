@@ -1,5 +1,5 @@
 plugins {
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.github.johnrengelman.shadow")
     id("com.hypherionmc.modutils.modpublisher") version "2.+"
 }
 
@@ -9,14 +9,21 @@ architectury {
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
-val jarName = base.archivesName.get() + "-Forge"
 
 configurations {
     create("common")
-    create("shadowCommon")
+    "common" {
+        isCanBeResolved = true
+        isCanBeConsumed = false
+    }
+    create("shadowBundle")
     compileClasspath.get().extendsFrom(configurations["common"])
     runtimeClasspath.get().extendsFrom(configurations["common"])
     getByName("developmentForge").extendsFrom(configurations["common"])
+    "shadowBundle" {
+        isCanBeResolved = true
+        isCanBeConsumed = false
+    }
 }
 
 loom {
@@ -49,20 +56,20 @@ dependencies {
     modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
 
     "common"(project(":common", "namedElements")) { isTransitive = false }
-    "shadowCommon"(project(":common", "transformProductionForge")) { isTransitive = false }
+    "shadowBundle"(project(":common", "transformProductionForge"))
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
     modApi("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!
 
-    forgeRuntimeLibrary("shadowCommon"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
-    forgeRuntimeLibrary("shadowCommon"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))
-    forgeRuntimeLibrary("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2")!!)
-    forgeRuntimeLibrary("shadowCommon"("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")!!)
-    forgeRuntimeLibrary("shadowCommon"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
-    forgeRuntimeLibrary("shadowCommon"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
-    forgeRuntimeLibrary("shadowCommon"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
-    forgeRuntimeLibrary("shadowCommon"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
+    forgeRuntimeLibrary("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
+    forgeRuntimeLibrary("shadowBundle"("org.tukaani", "xz", "${project.properties["rareCandyXZ"]}"))
+    forgeRuntimeLibrary("shadowBundle"("org.lwjgl:lwjgl-assimp:3.3.2")!!)
+    forgeRuntimeLibrary("shadowBundle"("org.lwjgl:lwjgl-assimp:3.3.2:natives-windows")!!)
+    forgeRuntimeLibrary("shadowBundle"("com.github.thecodewarrior", "BinarySMD", "${project.properties["rareCandyBinarySMD"]}"){isTransitive = false})!!
+    forgeRuntimeLibrary("shadowBundle"("org.msgpack", "msgpack-core", "${project.properties["rareCandyMsgPackCore"]}"))!!
+    forgeRuntimeLibrary("shadowBundle"("com.google.flatbuffers", "flatbuffers-java", "${project.properties["rareCandyFlatBuffers"]}"))!!
+    forgeRuntimeLibrary("shadowBundle"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
@@ -82,7 +89,6 @@ dependencies {
 }
 
 tasks {
-    base.archivesName.set(jarName)
     processResources {
         inputs.property("version", project.version)
 
@@ -92,8 +98,7 @@ tasks {
     }
 
     shadowJar {
-        exclude("fabric.mod.json",
-            "generations/gg/generations/core/generationscore/forge/datagen/**",
+        exclude("generations/gg/generations/core/generationscore/forge/datagen/**",
             "org/lwjgl/system//**",
             "org/lwjgl/BufferUtils.class",
             "org/lwjgl/CLongBuffer.class",
@@ -104,24 +109,14 @@ tasks {
             "org/lwjgl/package-info.class",
             "architectury.common.json",
             ".cache/**")
-        configurations = listOf(project.configurations.getByName("shadowCommon"))
-        relocate("org.lwjgl.assimp", "generations.gg.generations.shaded.assimp") {
-
-        }
+        configurations = listOf(project.configurations.getByName("shadowBundle"))
+        relocate("org.lwjgl.assimp", "generations.gg.generations.shaded.assimp")
         archiveClassifier.set("dev-shadow")
     }
 
     remapJar {
         inputFile.set(shadowJar.get().archiveFile)
         dependsOn(shadowJar)
-    }
-
-    jar.get().archiveClassifier.set("dev")
-
-    sourcesJar {
-        val commonSources = project(":common").tasks.sourcesJar
-        dependsOn(commonSources)
-        from(commonSources.get().archiveFile.map { zipTree(it) })
     }
 }
 
@@ -155,40 +150,6 @@ tasks {
 //    modrinthDepends.required.set(depends)
 //    modrinthDepends.optional.set(mutableListOf("wthit"))
 //}
-
-components {
-    java.run {
-        if (this is AdhocComponentWithVariants)
-            withVariantsFromConfiguration(project.configurations.shadowRuntimeElements.get()) { skip() }
-    }
-}
-
-publishing {
-    publications.create<MavenPublication>("mavenForge") {
-        artifactId = jarName
-        from(components["java"])
-    }
-
-    repositories {
-        mavenLocal()
-        maven {
-            val releasesRepoUrl = "https://maven.generations.gg/releases"
-            val snapshotsRepoUrl = "https://maven.generations.gg/snapshots"
-            url = uri(if (project.version.toString().endsWith("SNAPSHOT") || project.version.toString().startsWith("0")) snapshotsRepoUrl else releasesRepoUrl)
-            name = "Generations-Repo"
-            credentials {
-                username = getGensCredentials().first
-                password = getGensCredentials().second
-            }
-        }
-    }
-}
-
-private fun getGensCredentials(): Pair<String?, String?> {
-    val username = (project.findProperty("gensUsername") ?: System.getenv("GENS_USERNAME") ?: "") as String?
-    val password = (project.findProperty("gensPassword") ?: System.getenv("GENS_PASSWORD") ?: "") as String?
-    return Pair(username, password)
-}
 
 private fun getPublishingCredentials(): Pair<String?, String?> {
     val curseForgeToken = (project.findProperty("curseforge_token") ?: System.getenv("CURSEFORGE_TOKEN") ?: "") as String?
