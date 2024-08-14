@@ -17,7 +17,6 @@ dependencies {
 
     implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
 
-    implementation("com.github.thecodewarrior:BinarySMD:${project.properties["rareCandyBinarySMD"]}"){isTransitive = false}
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
     implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
 
