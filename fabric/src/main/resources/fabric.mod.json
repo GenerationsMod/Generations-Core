@@ -28,5 +28,12 @@
   },
   "suggests": {
     "wthit": ">=8.2.0"
+  },
+  "custom": {
+    "catalogue": {
+      "icon": {
+        "image": "generations.png"
+      }
+    }
   }
 }
