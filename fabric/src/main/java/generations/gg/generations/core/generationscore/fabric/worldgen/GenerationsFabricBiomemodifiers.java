@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric.worldgen;
 
-import com.cobblemon.mod.common.api.tags.CobblemonBiomeTags;
+import generations.gg.generations.core.generationscore.common.api.tags.GenerationsBiomeTags;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
@@ -34,40 +34,39 @@ public class GenerationsFabricBiomemodifiers {
 
         registerUnderGroundOres(BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_COLD), GenerationsPlacedFeatures.ORE_CRYSTAL, GenerationsPlacedFeatures.ORE_CRYSTAL_BURIED);
         registerUnderGroundOres(GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_SMALL, GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_LARGE, GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_BURIED);
-
         registerSurfaceFeatures(GenerationsPlacedFeatures.POKE_BALL_LOOT);
         registerSurfaceFeatures(GenerationsPlacedFeatures.BEAST_BALL_LOOT, BiomeSelectors.foundInTheEnd());
-        registerSurfaceFeatures(GenerationsPlacedFeatures.CHERISH_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_FLORAL));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.CHERISH_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_FLORAL));
         registerSurfaceFeatures(GenerationsPlacedFeatures.DIVE_BALL_LOOT, BiomeSelectors.tag(BiomeTags.IS_OCEAN));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.DUSK_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_CAVE));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.DREAM_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_MAGICAL));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.FAST_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_SNOWY_FOREST));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.FRIEND_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_TAIGA));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.GIGATON_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_DESERT));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.DUSK_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_CAVE));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.DREAM_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_MAGICAL));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.FAST_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_SNOWY_FOREST));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.FRIEND_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_TAIGA));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.GIGATON_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_DESERT));
         registerSurfaceFeatures(GenerationsPlacedFeatures.GREAT_BALL_LOOT);
-        registerSurfaceFeatures(GenerationsPlacedFeatures.HEAL_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_RIVER));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.HEAVY_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_TUNDRA));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.JET_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_PLATEAU));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.HEAL_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_RIVER));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.HEAVY_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_TUNDRA));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.JET_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_PLATEAU));
         registerSurfaceFeatures(GenerationsPlacedFeatures.LEADEN_BALL_LOOT, BiomeSelectors.foundInTheNether());
-        registerSurfaceFeatures(GenerationsPlacedFeatures.LEVEL_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_SAVANNA));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.LEVEL_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_SAVANNA));
         registerSurfaceFeatures(GenerationsPlacedFeatures.LOVE_BALL_LOOT, BiomeSelectors.tag(BiomeTags.IS_BEACH));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.LURE_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_JUNGLE));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.LUXURY_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_ISLAND));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.LURE_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_JUNGLE));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.LUXURY_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_ISLAND));
         registerSurfaceFeatures(GenerationsPlacedFeatures.MASTER_BALL_LOOT);
-        registerSurfaceFeatures(GenerationsPlacedFeatures.MOON_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_SPOOKY));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.NEST_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_FOREST));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.NET_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_COAST));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.ORIGIN_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_PLAINS));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.PARK_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_SWAMP));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.PREMIER_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_GLACIAL));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.QUICK_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_HILLS));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.REPEAT_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_BAMBOO));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.SAFARI_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_GRASSLAND));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.SPORT_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_MOUNTAIN));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.STRANGE_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_DRIPSTONE));
-        registerSurfaceFeatures(GenerationsPlacedFeatures.TIMER_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_BADLANDS));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.MOON_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_SPOOKY));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.NEST_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_FOREST));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.NET_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_COAST));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.ORIGIN_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_PLAINS));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.PARK_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_SWAMP));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.PREMIER_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_GLACIAL));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.QUICK_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_HILLS));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.REPEAT_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_BAMBOO));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.SAFARI_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_GRASSLAND));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.SPORT_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_MOUNTAIN));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.STRANGE_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_DRIPSTONE));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.TIMER_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_BADLANDS));
         registerSurfaceFeatures(GenerationsPlacedFeatures.ULTRA_BALL_LOOT);
-        registerSurfaceFeatures(GenerationsPlacedFeatures.WING_BALL_LOOT, BiomeSelectors.tag(CobblemonBiomeTags.IS_PEAK));
+        registerSurfaceFeatures(GenerationsPlacedFeatures.WING_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_PEAK));
 
     }
 

@@ -7,6 +7,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.animation.Statel
 import com.cobblemon.mod.common.client.render.models.blockbench.frame.ModelFrame
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.AnimationReferenceFactory
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.util.asExpression
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
@@ -18,6 +19,11 @@ import java.util.function.Supplier
 
 class RareCandyAnimationFactory : AnimationReferenceFactory {
     override fun <T : Entity> stateful(model: PoseableEntityModel<T>, animString: String): StatefulAnimationRareCandy<T> {
+        System.out.println("Oh no: " + animString)
+
+        var blep = ""
+        blep.asExpression()
+
         val split = animString.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
@@ -34,6 +40,8 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
     }
 
     override fun <T: Entity> stateless(model: PoseableEntityModel<T>, animString: String): StatelessAnimation<T, ModelFrame> {
+        System.out.println("Oh redacted: " + animString)
+
         val split = animString.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
         val name = split[1].trim { it <= ' ' }

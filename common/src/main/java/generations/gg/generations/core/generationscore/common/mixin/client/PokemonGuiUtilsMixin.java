@@ -1,17 +1,13 @@
 package generations.gg.generations.core.generationscore.common.mixin.client;
 
 import com.cobblemon.mod.common.client.gui.PokemonGuiUtilsKt;
-import com.cobblemon.mod.common.client.gui.battle.BattleOverlay;
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.cobblemon.mod.common.pokemon.Species;
 import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone;
-import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.texture.OverlayTexture;

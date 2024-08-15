@@ -52,3 +52,5 @@ accessible field net/minecraft/world/item/ArmorMaterials HEALTH_FUNCTION_FOR_TYP
 accessible field com/mojang/blaze3d/platform/GlStateManager BLEND Lcom/mojang/blaze3d/platform/GlStateManager$BlendState;
 accessible class com/mojang/blaze3d/platform/GlStateManager$BlendState
 accessible field com/mojang/blaze3d/platform/GlStateManager$BooleanState enabled Z
+
+extendable class net/minecraft/client/model/geom/ModelPart
