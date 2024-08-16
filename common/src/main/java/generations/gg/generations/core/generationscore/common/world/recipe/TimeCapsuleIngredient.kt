@@ -16,13 +16,14 @@ class TimeCapsuleIngredient(val key : SpeciesKey, val strictAspects: Boolean = f
         ), strictAspects)
 
     override fun matches(stack: ItemStack): Boolean = if(stack.`is`(GenerationsItems.TIME_CAPSULE.get())) TimeCapsule.getPokemon(stack).filter { it.species.resourceIdentifier == key.species && if(strictAspects) it.aspects == key.aspects else it.aspects.containsAll(key.aspects) }.isPresent else false
-    override fun matchingStacks(): List<ItemStack> = listOf(GenerationsItems.TIME_CAPSULE.get().defaultInstance)
+    override fun matchingStacks(): List<ItemStack> = listOf(GenerationsItems.TIME_CAPSULE.get().defaultInstance.apply { TimeCapsule.savePokemon(this, key.createPokemon(1)) })
     override fun toJson(obj: JsonObject) {
         super.toJson(obj)
         obj.addProperty("species", key.species.toString())
         obj.add("aspects", key.aspects.toJsonArray())
         obj.addProperty("strictAspects", strictAspects)
     }
+
 }
 
 object TimeCapsuleIngredientSerializer : GenerationsIngredientSerializer<TimeCapsuleIngredient> {

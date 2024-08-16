@@ -48,14 +48,6 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
         return false
     }
 
-    private fun savePokemon(itemInHandItemStack: ItemStack, poke: Pokemon) {
-        itemInHandItemStack.getOrCreateTag().put("pokemon", poke.saveToNBT(CompoundTag()))
-    }
-
-    private fun removePokemon(itemInHandItemStack: ItemStack) {
-        itemInHandItemStack.getOrCreateTag().remove("pokemon")
-    }
-
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         if (!level.isClientSide && !player.cooldowns.isOnCooldown(this)) {
             val item = player.getItemInHand(usedHand)
@@ -95,6 +87,14 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
     }
 
     companion object {
+        fun savePokemon(itemInHandItemStack: ItemStack, poke: Pokemon) {
+            itemInHandItemStack.getOrCreateTag().put("pokemon", poke.saveToNBT(CompoundTag()))
+        }
+
+        fun removePokemon(itemInHandItemStack: ItemStack) {
+            itemInHandItemStack.getOrCreateTag().remove("pokemon")
+        }
+
         fun getRenderablePokmon(stack: ItemStack): Pair<Species, Set<String>>? {
             return getPokemon(stack).map { it.species to it.aspects }.orElse(null)
         }
