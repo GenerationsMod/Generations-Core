@@ -93,7 +93,11 @@ public class RareCandyBone implements Supplier<Bone>, Bone {
 
         var isStatue = instance instanceof StatueInstance;
 
-        var scale = model.renderObject.scale/context.requires(RenderContext.Companion.getSCALE());
+        var contextScale = context.request(RenderContext.Companion.getSCALE());
+
+        if(contextScale == null) contextScale = 1f;
+
+        var scale = model.renderObject.scale/contextScale;
 
         if(instance == null) {
             return;
