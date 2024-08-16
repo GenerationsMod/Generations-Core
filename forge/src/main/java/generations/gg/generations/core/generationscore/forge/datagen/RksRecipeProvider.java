@@ -5,10 +5,10 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.GenerationsRecipeProvider;
-import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
 import generations.gg.generations.core.generationscore.common.world.recipe.DamageIngredient;
 import generations.gg.generations.core.generationscore.common.world.recipe.TimeCapsuleIngredient;
+import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.GenerationsRecipeProvider;
+import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -22,7 +22,6 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import static generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.*;
-import static generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.BEEDRILLITE;
 
 public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     public RksRecipeProvider(PackOutput arg) {
@@ -93,6 +92,13 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .criterion("soul_heart", InventoryChangeTrigger.TriggerInstance.hasItems(SOUL_HEART.get()))
                 .offerTo(exporter, GenerationsCore.id("magearna"));
 
+        RksRecipeJsonBuilder.create(SACRED_ASH.get()) //TODO: Add SpeciesKey if needed
+                .pattern("ABC")
+                .input('A', Items.TOTEM_OF_UNDYING)
+                .input('B', Items.COAL)
+                .input('C',RAINBOW_WING.get())
+                .criterion("rainbow_wing", InventoryChangeTrigger.TriggerInstance.hasItems(RAINBOW_WING.get()))
+                .offerTo(exporter, GenerationsCore.id("rainbow_wing"));
 
 //        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA.createProperties(70))
 //                .key(LegendKeys.TYPE_NULL)

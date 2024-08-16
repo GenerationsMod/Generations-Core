@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:rks/rainbow_wing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "rainbow_wing": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:rainbow_wing"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "rainbow_wing",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:rks/rainbow_wing"
+    ]
+  },
+  "sends_telemetry_event": true
+}
