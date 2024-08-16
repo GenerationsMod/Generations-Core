@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, EntityModel<StatueEntity>> {
+
     public StatueEntityRenderer(EntityRendererProvider.Context arg) {
         super(arg, null, 0.0f);
     }
@@ -58,7 +59,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
 
         context.pop();
         context.put(RenderContext.Companion.getENTITY(), entity);
-        context.put(RenderContext.Companion.getSCALE(), scale);
+        context.put(RenderContext.Companion.getSCALE(), entity.getStatueData().getProperties().asRenderablePokemon().getForm().getBaseScale());
         context.put(RenderContext.Companion.getSPECIES(), entity.species());
         context.put(RenderContext.Companion.getASPECTS(), entity.aspects());
         context.put(Pipelines.INSTANCE, state.getInstance());
@@ -91,7 +92,7 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
     @Override
     protected void scale(StatueEntity livingEntity, PoseStack matrixStack, float partialTickTime) {
         var species = livingEntity.getStatueData().getProperties().asRenderablePokemon().getForm();
-        var scale = species.getBaseScale();
+        var scale = species.getBaseScale() * livingEntity.getScale();
         matrixStack.scale(scale, scale, scale);
     }
 
