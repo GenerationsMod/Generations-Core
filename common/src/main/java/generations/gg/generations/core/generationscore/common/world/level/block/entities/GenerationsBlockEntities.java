@@ -21,6 +21,8 @@ import net.minecraft.world.level.block.entity.SignBlockEntity;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import static generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.*;
+
 public class GenerationsBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
 
@@ -36,7 +38,11 @@ public class GenerationsBlockEntities {
     public static final RegistrySupplier<MutableBlockEntityType<TaoTrioShrineBlockEntity>> TAO_TRIO_SHRINE = registerMutable("tao_trio_shrine", TaoTrioShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<TapuShrineBlockEntity>> TAPU_SHRINE = registerMutable("tapu_shrine", TapuShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<CookingPotBlockEntity>> COOKING_POT = registerMutable("cooking_pot", CookingPotBlockEntity::new);
-    public static final RegistrySupplier<MutableBlockEntityType<GenericChestBlockEntity>> GENERIC_CHEST = registerMutable("generic_chest", GenericChestBlockEntity::new);
+    public static final RegistrySupplier<BlockEntityType<GenericChestBlockEntity>> GENERIC_CHEST = registerRegular("generic_chest", GenericChestBlockEntity::new,
+            POKEBALL_CHEST,
+            GREATBALL_CHEST,
+            ULTRABALL_CHEST,
+            MASTERBALL_CHEST);
     public static final RegistrySupplier<BlockEntityType<SignBlockEntity>> SIGN_BLOCK_ENTITIES = registerRegular("sign_block_entity", SignBlockEntity::new,
             GenerationsWood.ULTRA_DARK_SIGN,
             GenerationsWood.ULTRA_DARK_WALL_SIGN,
