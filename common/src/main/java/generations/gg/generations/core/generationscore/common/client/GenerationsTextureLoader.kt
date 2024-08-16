@@ -106,11 +106,6 @@ object GenerationsTextureLoader : ITextureLoader() {
             RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
             bind()
         }
-
-        override fun close() {
-            Minecraft.getInstance().textureManager.release(location)
-            super.close()
-        }
     }
 
     private class SimpleTextureIndependentData(location: ResourceLocation, private val texture: ByteArray?) : SimpleTexture(location), ITexture {
@@ -124,10 +119,6 @@ object GenerationsTextureLoader : ITextureLoader() {
             bind()
         }
 
-        override fun close() {
-            Minecraft.getInstance().textureManager.release(location)
-            super.close()
-        }
         override fun getTextureImage(resourceManager: ResourceManager): TextureImage {
             return load()!!
         }
