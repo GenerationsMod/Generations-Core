@@ -213,7 +213,9 @@ public class Pipelines {
             material = null;
         }
 
-        if(material != null) return ITextureLoader.instance().getTexture(material);
+        if(material != null && ((GenerationsTextureLoader) ITextureLoader.instance()).has(material)) {
+            return ITextureLoader.instance().getTexture(material);
+        }
         return ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
     }
 
