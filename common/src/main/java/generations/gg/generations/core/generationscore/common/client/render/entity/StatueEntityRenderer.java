@@ -84,6 +84,11 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
     }
 
     @Override
+    protected boolean shouldShowName(StatueEntity entity) {
+        return entity.getStatueData().getLabel() != null && !entity.getStatueData().getLabel().isBlank() && super.shouldShowName(entity);
+    }
+
+    @Override
     protected void scale(StatueEntity livingEntity, PoseStack matrixStack, float partialTickTime) {
         var species = livingEntity.getStatueData().getProperties().asRenderablePokemon().getForm();
         var scale = species.getBaseScale();
@@ -96,8 +101,6 @@ public class StatueEntityRenderer extends LivingEntityRenderer<StatueEntity, Ent
     }
 
     @Override
-
-
     public @NotNull ResourceLocation getTextureLocation(@NotNull StatueEntity entity) {
         var state = entity.getStatueData();
 
