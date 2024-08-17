@@ -132,7 +132,7 @@ public class Pipelines {
                             }).supplyUniform("mask", ctx -> {
                                 var texture = ctx.getTexture("mask");
 
-                                if (isStatueMaterial(ctx) || texture == null) {
+                                if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
                                     texture = ITextureLoader.instance().getDarkFallback();
                                 }
 
@@ -154,7 +154,7 @@ public class Pipelines {
 
                                 var texture = ctx.getTexture("mask");
 
-                                if (isStatueMaterial(ctx) || texture == null) {
+                                if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
                                     texture = ITextureLoader.instance().getDarkFallback();
                                 }
 
@@ -195,7 +195,7 @@ public class Pipelines {
         builder.supplyUniform("diffuse", ctx -> {
             ITexture texture = getTexture(ctx); //isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
 
-            if (texture == null) {
+            if (texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
                 texture = ITextureLoader.instance().getNuetralFallback();
             }
 
@@ -266,7 +266,7 @@ public class Pipelines {
             var texture = ctx.object().getVariant(ctx.instance().variant()).getTexture("emission");
 
 
-            if (isStatueMaterial(ctx) || texture == null) {
+            if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
                 texture = ITextureLoader.instance().getDarkFallback();
             }
 

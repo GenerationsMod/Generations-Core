@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.client
 import com.cobblemon.mod.common.util.asResource
 import com.google.gson.Gson
 import com.google.gson.JsonObject
-import com.google.gson.reflect.TypeToken
 import com.mojang.blaze3d.platform.NativeImage
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.serialization.Codec
@@ -14,6 +13,7 @@ import generations.gg.generations.core.generationscore.common.util.GenerationsUt
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
 import gg.generations.rarecandy.renderer.loading.ITexture
 import net.minecraft.client.Minecraft
+import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
 import net.minecraft.client.renderer.texture.SimpleTexture
 import net.minecraft.resources.FileToIdConverter
 import net.minecraft.resources.ResourceLocation
@@ -24,11 +24,25 @@ import java.io.IOException
 import kotlin.random.Random
 
 object GenerationsTextureLoader : ITextureLoader() {
-    val REGULAR = mutableMapOf<String, ITexture>()
+    val REGULAR = mutableMapOf<String, ResourceLocation>()
     val CODEC = Codec.unboundedMap(Codec.STRING, ResourceLocation.CODEC)
     val RARE_CANDY = FileToIdConverter("textures", "rare_candy_texture.json")
     val gson = Gson()
     init {}
+
+
+    object MissingTextureProxy : ITexture {
+
+        override fun close() {
+        }
+        override fun bind(slot: Int) {
+            var texture = Minecraft.getInstance().textureManager.getTexture(MissingTextureAtlasSprite.getLocation())
+
+            RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
+            RenderSystem.bindTexture(texture.id)
+        }
+
+    }
 
     fun initialize(manager: ResourceManager) {
         clear()
@@ -56,12 +70,13 @@ object GenerationsTextureLoader : ITextureLoader() {
     }
 
     override fun getTexture(s: String?): ITexture? {
-        val texture = REGULAR.getOrDefault(s, null)
-        return if(texture is ITexture) texture else null
+        val texture = REGULAR.getOrDefault(s, null)?.let { Minecraft.getInstance().textureManager.getTexture(it, null) }.takeIf { it is ITextureWithResourceLocation } ?: return MissingTextureProxy
+
+        return texture as ITexture
     }
 
     override fun register(s: String, iTexture: ITexture) {
-        REGULAR.putIfAbsent(s, iTexture)
+        if(iTexture is ITextureWithResourceLocation) REGULAR.putIfAbsent(s, iTexture.location)
     }
 
     override fun register(id: String, name: String, data: ByteArray) {
@@ -70,7 +85,7 @@ object GenerationsTextureLoader : ITextureLoader() {
 
 
     override fun remove(s: String) {
-        REGULAR.remove(s)?.run { this.close() }
+        REGULAR.remove(s)?.run { Minecraft.getInstance().textureManager.release(this) }
     }
 
     fun clear() {
@@ -78,13 +93,13 @@ object GenerationsTextureLoader : ITextureLoader() {
         while(iterator.hasNext()) {
             val entry = iterator.next()
             iterator.remove()
-            entry.value?.close()
+            Minecraft.getInstance().textureManager.release(entry.value)
         }
     }
 
     override fun getDarkFallback(): ITexture? = getTexture("dark")
 
-    override fun getBrightFallback(): ITexture? = getTexture("light")
+    override fun getBrightFallback(): ITexture? = getTexture("bright")
 
     override fun getNuetralFallback(): ITexture? = getTexture("neutral")
 
@@ -92,31 +107,31 @@ object GenerationsTextureLoader : ITextureLoader() {
 
     fun has(texture: String): Boolean = REGULAR.containsKey(texture)
 
-    fun getLocation(material: String): ResourceLocation? =
-        REGULAR.getOrDefault(material, null).takeIf { it is ITextureWithResourceLocation? }?.let { it as ITextureWithResourceLocation }?.location
-
-    private val RARE_CANDY_TYPE: TypeToken<Map<String, String>> = object : TypeToken<Map<String, String>>() {}
+    fun getLocation(material: String): ResourceLocation? = REGULAR.getOrDefault(material, null)
 
     private class SimpleTextureEnhanced(override var location: ResourceLocation) : SimpleTexture(location), ITextureWithResourceLocation {
+
         init {
+            System.out.println("Registering: " + location)
             Minecraft.getInstance().textureManager.register(location, this)
         }
 
         override fun bind(slot: Int) {
             RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
-            bind()
+            RenderSystem.bindTexture(id)
         }
     }
 
-    private class SimpleTextureIndependentData(location: ResourceLocation, private val texture: ByteArray?) : SimpleTexture(location), ITexture {
+    private class SimpleTextureIndependentData(override var location: ResourceLocation, private val texture: ByteArray?) : SimpleTexture(location), ITextureWithResourceLocation {
 
         init {
+            System.out.println("Registering: " + location)
             Minecraft.getInstance().textureManager.register(location, this)
         }
 
         override fun bind(slot: Int) {
             RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
-            bind()
+            RenderSystem.bindTexture(id)
         }
 
         override fun getTextureImage(resourceManager: ResourceManager): TextureImage {
