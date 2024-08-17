@@ -4,16 +4,15 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.ImmutableMultiset;
 import com.google.common.collect.Multiset;
 import com.google.gson.*;
-import generations.gg.generations.core.generationscore.common.api.player.Caught;
 import net.minecraft.world.entity.player.Player;
 
 import java.lang.reflect.Type;
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import static generations.gg.generations.core.generationscore.common.config.LegendKeys.*;
-import static generations.gg.generations.core.generationscore.common.config.LegendKeys.HEATRAN;
 
 public class Config {
     public VanillaTabsToAdd addItemsToVanillaTabs = new VanillaTabsToAdd();
@@ -26,6 +25,8 @@ public class Config {
     public Special special = new Special();
 
     public Client client = new Client();
+
+    public Economy economy = new Economy();
 
     public Config() {}
 
@@ -137,5 +138,9 @@ public class Config {
     public static class Client {
         public boolean usePixelmonShading = false;
         public boolean useRenderDoc = false;
+    }
+
+    public static class Economy {
+        public BigDecimal startingFunds = BigDecimal.valueOf(0);
     }
 }

@@ -1537,7 +1537,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> ULTRA_JUNGLE_CHEST_BOAT_ITEM = register("ultra_jungle_boat_with_chest", properties -> new GenerationsChestBoatItem(properties, GenerationsChestBoatEntity.Type.ULTRA_JUNGLE), BUILDING_BLOCKS);
 
     private static RegistrySupplier<RelicSongItem> createRelicSong(boolean inert) {
-        return register((inert ? "inert_" : "") + "relic_song", properties -> new RelicSongItem(properties, inert), LEGENDARY_ITEMS);
+        return register((inert ? "inert_" : "") + "relic_song", properties -> new RelicSongItem(properties.stacksTo(1), inert), LEGENDARY_ITEMS);
     }
 
     public static RegistrySupplier<Item> registerHeldItem(String name) {
@@ -1576,7 +1576,7 @@ public class GenerationsItems {
     }
 
     private static RegistrySupplier<Item> createMusicDisc(String name, RegistrySupplier<SoundEvent> sound, int ticks) {
-        return PLAYER_ITEMS.register(name, () -> new ArchitecturyRecordItem(0, sound, new Item.Properties().arch$tab(CreativeModeTabs.TOOLS_AND_UTILITIES), ticks));
+        return PLAYER_ITEMS.register(name, () -> new ArchitecturyRecordItem(0, sound, new Item.Properties().arch$tab(CreativeModeTabs.TOOLS_AND_UTILITIES).stacksTo(1), ticks));
     }
 
     public static void init() {
