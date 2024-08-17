@@ -112,7 +112,6 @@ object GenerationsTextureLoader : ITextureLoader() {
     private class SimpleTextureEnhanced(override var location: ResourceLocation) : SimpleTexture(location), ITextureWithResourceLocation {
 
         init {
-            System.out.println("Registering: " + location)
             Minecraft.getInstance().textureManager.register(location, this)
         }
 
@@ -125,7 +124,6 @@ object GenerationsTextureLoader : ITextureLoader() {
     private class SimpleTextureIndependentData(override var location: ResourceLocation, private val texture: ByteArray?) : SimpleTexture(location), ITextureWithResourceLocation {
 
         init {
-            System.out.println("Registering: " + location)
             Minecraft.getInstance().textureManager.register(location, this)
         }
 
