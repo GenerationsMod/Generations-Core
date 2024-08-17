@@ -35,10 +35,12 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
-        WorldRenderEvents.AFTER_TRANSLUCENT.register(context -> {
-            GenerationsCoreClient.renderRareCandy(context.world());
-            GenerationsCoreClient.renderHighlightedPath(context.matrixStack(), Minecraft.getInstance().levelRenderer.ticks, context.camera());
-        });
+        WorldRenderEvents.AFTER_TRANSLUCENT.register(context -> GenerationsCoreClient.renderHighlightedPath(context.matrixStack(), Minecraft.getInstance().levelRenderer.ticks, context.camera()));
+
+        WorldRenderEvents.BEFORE_DEBUG_RENDER.register(context -> GenerationsCoreClient.renderRareCandy(context.world()));
+
+
+
 
         ClientTickEvent.CLIENT_POST.register(new ClientTickEvent.Client() {
             @Override
