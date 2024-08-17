@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.api.player;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.google.gson.JsonObject;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -48,6 +49,6 @@ public class AccountInfo extends PlayerDataExtension {
     }
 
     public static AccountInfo get(Player player) {
-        return (AccountInfo) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new AccountInfo(BigDecimal.valueOf(1000000)));
+        return (AccountInfo) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new AccountInfo(GenerationsCore.CONFIG.economy.startingFunds));
     }
 }
