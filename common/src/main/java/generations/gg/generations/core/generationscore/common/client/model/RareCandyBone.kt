@@ -38,7 +38,11 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             val sprite = getPokemonSprite(state, spriteLoc, s)
             sprite ?: MissingTextureAtlasSprite.getLocation()
         }
+
+
     }
+
+
 
     override fun getChildren(): Map<String, Bone> {
         return DUMMY
@@ -95,7 +99,6 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         val model = objectSupplier.invoke()
         if (model?.renderObject == null) return
 
-        System.out.println("Blep")
         var instance = context.request(Pipelines.INSTANCE)
         if (instance == null && context.request<Entity>(RenderContext.Companion.ENTITY) is CobblemonInstanceProvider) {
             instance = (context.request<Entity>(RenderContext.Companion.ENTITY) as CobblemonInstanceProvider).instance
@@ -152,7 +155,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     override fun get(): Bone = this
 
     companion object {
-        private val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
+        val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
         private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))
         private val temp = Vector3f()
         private val ROTATION_CORRECTION = Axis.YP.rotationDegrees(180f)

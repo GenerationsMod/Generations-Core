@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.model
 
+import com.cobblemon.mod.common.api.molang.ObjectValue
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
 import com.cobblemon.mod.common.client.render.models.blockbench.animation.StatefulAnimation
@@ -7,7 +8,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.animation.Statel
 import com.cobblemon.mod.common.client.render.models.blockbench.frame.ModelFrame
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.AnimationReferenceFactory
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
-import com.cobblemon.mod.common.util.asExpression
+import com.cobblemon.mod.common.util.getBooleanOrNull
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
@@ -17,19 +18,18 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import java.util.function.Supplier
 
-class RareCandyAnimationFactory : AnimationReferenceFactory {
+object RareCandyAnimationFactory : AnimationReferenceFactory {
     override fun <T : Entity> stateful(model: PoseableEntityModel<T>, animString: String): StatefulAnimationRareCandy<T> {
         System.out.println("Oh no: " + animString)
 
-        var blep = ""
-        blep.asExpression()
-
         val split = animString.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
-        val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
-        val transforms = if(split.size == 3) split[2].asBoolean() else false
+        return stateful(split[0], split[1].trim { it <= ' ' }, if(split.size == 3) split[2].asBoolean() else false)
+    }
 
-        val name = split[1].trim { it <= ' ' }
+    fun <T : Entity> stateful(loc: String, name: String, transforms: Boolean): StatefulAnimationRareCandy<T> {
+        val location = ResourceLocation(loc).withPrefix("bedrock/pokemon/models/")
+
         return StatefulAnimationRareCandy(Supplier<Animation> {
             val objects = ModelRegistry[location]?.renderObject
             if (objects != null && objects.isReady) {
@@ -44,8 +44,13 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
 
         val split = animString.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
-        val name = split[1].trim { it <= ' ' }
+        val name =
 
+        return stateless(model, split[0], split[1].trim { it <= ' ' })
+    }
+
+    fun <T: Entity> stateless(model: PoseableEntityModel<T>, loc: String, name: String): StatelessAnimation<T, ModelFrame> {
+        val location = ResourceLocation(loc).withPrefix("bedrock/pokemon/models/")
         return StatelessAnimationRareCandy(model, Supplier<Animation?> {
             val objects = ModelRegistry[location]?.renderObject
             if (objects != null && objects.isReady) {
@@ -54,6 +59,23 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
             null
         }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry[location]?.guiInstance })
     }
+
+    @JvmStatic
+    fun <T : Entity> addAnimationFunctions(model: PoseableEntityModel<T>) {
+        model.functions.addFunction("pk") { params ->
+            val group = params.getString(0)
+            val animation = params.getString(1)
+            val anim = stateful<T>(group, animation, params.getBooleanOrNull(2) ?: false)
+            return@addFunction ObjectValue(anim)
+        }
+            .addFunction("pk_stateless") { params ->
+                val group = params.getString(0)
+                val animation = params.getString(1)
+                val anim = stateless(model, group, animation)
+                return@addFunction ObjectValue(anim)
+            }
+    }
+
 
     class StatefulAnimationRareCandy<T: Entity>(
         private val animationSuppler: Supplier<Animation>?,
@@ -99,6 +121,7 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
 
         override fun applyEffects(entity: T, state: PoseableEntityState<T>, previousSeconds: Float, newSeconds: Float) = run { }
 
+        fun asMolang() = ObjectValue(this)
     }
 
     private class StatelessAnimationRareCandy<T: Entity>(frame: ModelFrame, private val animationSupplier: Supplier<Animation?>, private val objectSupplier: Supplier<CobblemonInstance?>) : StatelessAnimation<T, ModelFrame>(frame) {
@@ -125,8 +148,9 @@ class RareCandyAnimationFactory : AnimationReferenceFactory {
                 animation.getFrameOffset(instance.currentAnimation!!)
             }
         }
-    }
 
+        fun asMolang() = ObjectValue(this)
+    }
 }
 
 private fun String.asBoolean(): Boolean = when {

@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.spawning.TimeRange;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry;
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
+import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
@@ -45,6 +46,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -77,6 +79,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Vector4f;
 
 import java.io.File;
+import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
@@ -112,9 +115,13 @@ public class GenerationsCoreClient {
         GenerationsCoreClient.setupClient(minecraft);
         RareCandy.DEBUG_THREADS = true;
 
-        JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
+        JsonPokemonPoseableModel.Companion.registerFactory("pk", RareCandyAnimationFactory.INSTANCE);
 
-        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> {
+            return new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> {
+                return (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation)));
+            });
+        });
 
 //        GenerationsCore.implementation.registerResourceReloader(
 //                id("texture_loader"),
