@@ -58,7 +58,7 @@
       "description": "Berry Juice",
       "item": {
         "Count": 1,
-        "id": "generations_core:berry_juice"
+        "id": "cobblemon:berry_juice"
       },
       "order": 4,
       "priceVariation": 0.0,

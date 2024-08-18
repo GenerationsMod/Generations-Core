@@ -13,7 +13,10 @@
     "preLaunch": ["generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"],
     "main": ["generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"],
     "client" : ["generations.gg.generations.core.generationscore.fabric.client.GenerationsCoreClientFabric"],
-    "fabric-datagen": ["generations.gg.generations.core.generationscore.fabric.datagen.DataGen"]
+    "fabric-datagen": ["generations.gg.generations.core.generationscore.fabric.datagen.DataGen"],
+    "rei_client": [
+      "generations.gg.generations.core.generationscore.common.compat.rei.ReiCompatClient"
+    ]
   },
   "mixins": [
     "GenerationsCore.mixins.json",

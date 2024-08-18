@@ -60,6 +60,9 @@ dependencies {
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
     implementation("shadowBundle"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
 
+
+    modRuntimeOnly("me.shedaniel:RoughlyEnoughItems-fabric:${project.properties["rei"]}")
+
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
     modApi("net.fabricmc:fabric-language-kotlin:1.12.0+kotlin.2.0.10")

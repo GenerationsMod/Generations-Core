@@ -1,0 +1,30 @@
+{
+  "type": "generations_core:rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "B": {
+      "item": "minecraft:coal"
+    },
+    "C": {
+      "item": "generations_core:rainbow_wing"
+    }
+  },
+  "pattern": [
+    "ABC"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "value": {
+      "Count": 1,
+      "id": "generations_core:sacred_ash",
+      "tag": {
+        "Damage": 0
+      }
+    }
+  }
+}

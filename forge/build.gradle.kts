@@ -78,6 +78,10 @@ dependencies {
 
     modRuntimeOnly("curse.maven:worldedit-225608:4586218")
 
+    modRuntimeOnly("me.shedaniel:RoughlyEnoughItems-forge:${project.properties["rei"]}")
+    modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-forge:${project.properties["rei"]}")
+    modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin-forge:${project.properties["rei"]}")
+
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.11.0")
     modImplementation("com.cobblemon:forge:${project.properties["cobblemon_version"]}")

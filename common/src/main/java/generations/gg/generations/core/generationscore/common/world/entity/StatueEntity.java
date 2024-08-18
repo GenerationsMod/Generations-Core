@@ -234,7 +234,7 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
     @Override
     public Component getDisplayName() {
         String label = getStatueData().label;
-        return label != null ? Component.nullToEmpty(label) : super.getDisplayName();
+        return label != null && !label.isBlank() ? Component.nullToEmpty(label) : super.getDisplayName();
     }
 
     public static final class StatueInfo {

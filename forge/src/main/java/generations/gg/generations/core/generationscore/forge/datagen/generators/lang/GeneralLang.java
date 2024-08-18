@@ -281,8 +281,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(ZYGARDE_CUBE, "lore2", "Cells collected: %s/%s");
 
 
-
-
+        add("gui.zygarde_cube", "Zygarde Cube");
         add("gui.zygarde_cube.select", "Merge Zygarde Cells");
         add("gui.zygarde_cube.merge_10.name", "Create 10%");
         add("gui.zygarde_cube.merge_10.accept", "Your Cells merged to form a Zygarde 10%!");
