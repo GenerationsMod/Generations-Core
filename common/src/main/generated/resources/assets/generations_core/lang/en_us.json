@@ -1416,6 +1416,7 @@
   "generations_core.special.shadow.success": "%s heart has been closed.",
   "generations_core.timeglass.amount": "§7Grass, Psychic, or Fairy-Type Pokemon remaining: ",
   "generations_core.timeglass.wrongbiome": "§7This item only works in a Flower Forest biome!",
+  "gui.zygarde_cube": "Zygarde Cube",
   "gui.zygarde_cube.merge_10.accept": "Your Cells merged to form a Zygarde 10%!",
   "gui.zygarde_cube.merge_10.name": "Create 10%",
   "gui.zygarde_cube.merge_10_power_construct.accept": "Your Cells merged to form a Zygarde 10% with Power Construct!",
