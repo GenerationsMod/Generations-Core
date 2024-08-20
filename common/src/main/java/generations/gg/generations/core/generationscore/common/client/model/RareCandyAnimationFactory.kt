@@ -3,11 +3,13 @@ package generations.gg.generations.core.generationscore.common.client.model
 import com.cobblemon.mod.common.api.molang.ObjectValue
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
+import com.cobblemon.mod.common.client.render.models.blockbench.animation.PrimaryAnimation
 import com.cobblemon.mod.common.client.render.models.blockbench.animation.StatefulAnimation
 import com.cobblemon.mod.common.client.render.models.blockbench.animation.StatelessAnimation
 import com.cobblemon.mod.common.client.render.models.blockbench.frame.ModelFrame
 import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.AnimationReferenceFactory
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.client.render.models.blockbench.wavefunction.WaveFunction
 import com.cobblemon.mod.common.util.getBooleanOrNull
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
@@ -30,7 +32,7 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
     fun <T : Entity> stateful(loc: String, name: String, transforms: Boolean): StatefulAnimationRareCandy<T> {
         val location = ResourceLocation(loc).withPrefix("bedrock/pokemon/models/")
 
-        return StatefulAnimationRareCandy(Supplier<Animation> {
+        return StatefulAnimationRareCandy(Supplier<Animation?> {
             val objects = ModelRegistry[location]?.renderObject
             if (objects != null && objects.isReady) {
                 return@Supplier (objects.objects[0] as AnimatedMeshObject).animations[name]
@@ -44,7 +46,6 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
 
         val split = animString.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
-        val name =
 
         return stateless(model, split[0], split[1].trim { it <= ' ' })
     }
@@ -62,30 +63,74 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
 
     @JvmStatic
     fun <T : Entity> addAnimationFunctions(model: PoseableEntityModel<T>) {
-        model.functions.addFunction("pk") { params ->
+        model.functions.addFunction("pk_stateful") { params ->
             val group = params.getString(0)
             val animation = params.getString(1)
             val anim = stateful<T>(group, animation, params.getBooleanOrNull(2) ?: false)
             return@addFunction ObjectValue(anim)
-        }
-            .addFunction("pk_stateless") { params ->
+        }.addFunction("pk_primary") { params ->
+            val group = params.getString(0)
+            val animation = params.getString(1)
+            val anim = stateful<T>(group, animation, params.getBooleanOrNull(2) ?: false)
+
+            try {
+
+                val excludedLabels = mutableSetOf<String>()
+                var curve: WaveFunction = { t ->
+                    2F
+                }
+                for (index in 2 until params.params.size) {
+                    val label = params.getString(index) ?: continue
+                    excludedLabels.add(label)
+                }
+                return@addFunction ObjectValue(PrimaryAnimation(animation = anim, excludedLabels = excludedLabels, curve = curve))
+            } catch (e: Exception) {
+                print("Whark!?!?")
+                e.printStackTrace()
+            }
+
+        }.addFunction("pk") { params ->
                 val group = params.getString(0)
                 val animation = params.getString(1)
                 val anim = stateless(model, group, animation)
                 return@addFunction ObjectValue(anim)
-            }
+        }
     }
 
 
     class StatefulAnimationRareCandy<T: Entity>(
-        private val animationSuppler: Supplier<Animation>?,
+        private val animationSuppler: Supplier<Animation?>,
         private val instanceProvider: Supplier<CobblemonInstance?>,
         transforms: Boolean
     ) : StatefulAnimation<T, ModelFrame> {
         private var startedSeconds = -1F
         override val isTransform: Boolean = transforms
 
-        override val duration: Float get() = animationSuppler?.get()?.animationDuration?.toFloat() ?: 0.0f
+
+        override val duration: Float
+            get() {
+                var base = animationSuppler.get()
+
+                if(base != null) {
+                    var base2 = base!!.animationDuration
+
+                    println("base2: $base2")
+
+                    var base3 = base2 / base.ticksPerSecond
+
+                    println("base3: $base3")
+
+                    var base4 = base3 * 20;
+
+                    println("base4: $base4")
+
+                    return base4.toFloat()
+
+                } else {
+                    println("Nope")
+                    return 0.0f
+                }
+            }
 
         override fun run(
             entity: T?,
@@ -103,20 +148,36 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
                 startedSeconds = state.animationSeconds
             }
 
+
             val instance =
                 if (entity != null) (entity as CobblemonInstanceProvider).instance else model.context.request(
                     RenderContext.ENTITY
                 )?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance
                     ?: instanceProvider.get()
-            val animation = animationSuppler?.get()
-            if (animation != null && instance != null) {
-                instance.setAnimation(animation)
-                instance.currentAnimation!!.startTime = startedSeconds.toDouble()
-                instance.currentAnimation!!.update(state.animationSeconds.toDouble())
-                instance.matrixTransforms = animation.getFrameTransform(instance.currentAnimation!!)
-                animation.getFrameOffset(instance.currentAnimation!!)
+            val animation = animationSuppler.get()
+
+            if (animation != null) {
+                var currentSeconds = state.animationSeconds - startedSeconds
+                var animationLength = animation.animationDuration / animation.ticksPerSecond
+
+                if(currentSeconds > animationLength) {
+                    return false
+                }
+
+
+                if (instance != null) {
+                    instance.setAnimation(animation)
+                    if(state.animationSeconds != 0f) println("Stateful ${animation.name} + $currentSeconds $intensity")
+
+                    instance.matrixTransforms = animation.getFrameTransform((currentSeconds).toDouble())
+                    animation.getFrameOffset(instance.currentAnimation!!)
+                }
+
+                return true
             }
-            return true
+
+            return false
+
         }
 
         override fun applyEffects(entity: T, state: PoseableEntityState<T>, previousSeconds: Float, newSeconds: Float) = run { }
@@ -136,15 +197,21 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
                                headPitch: Float,
                                intensity: Float
         ) {
-            val instance = if (entity != null) (entity as CobblemonInstanceProvider).instance else model.context.request(RenderContext.ENTITY)?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance ?: objectSupplier.get()
+            val instance =
+                if (entity != null) (entity as CobblemonInstanceProvider).instance else model.context.request(
+                    RenderContext.ENTITY
+                )?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance
+                    ?: objectSupplier.get()
 
             val animation = animationSupplier.get()
 
             if (instance != null && animation != null) {
                 instance.setAnimation(animation)
-                instance.currentAnimation!!.startTime = 0.0
-                instance.currentAnimation!!.update(state?.animationSeconds?.toDouble() ?: 0.0)
-                instance.matrixTransforms = animation.getFrameTransform(instance.currentAnimation!!)
+
+                if(state?.animationSeconds != 0f) println("Stateless: ${animation.name} + ${state?.animationSeconds ?: 0.0} $intensity")
+
+                instance.matrixTransforms = animation.getFrameTransform((state?.animationSeconds?.toDouble() ?: 0.0).toDouble())
+
                 animation.getFrameOffset(instance.currentAnimation!!)
             }
         }
