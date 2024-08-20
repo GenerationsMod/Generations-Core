@@ -282,6 +282,8 @@ public class TagsDatagen {
                     .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS);
 
             tag(BlockTags.SNOW_LAYER_CANNOT_SURVIVE_ON).add(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get()).addTag(GenerationsBlockTags.SHRINES);
+
+            tag(GenerationsBlockTags.TAPU_SUMMONING).add(GenerationsShrines.TAPU_SHRINE.get());
         }
 
         private void EasyBlockTags(Block object) {

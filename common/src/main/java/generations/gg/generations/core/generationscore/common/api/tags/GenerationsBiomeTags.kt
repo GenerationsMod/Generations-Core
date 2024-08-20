@@ -35,7 +35,7 @@ object GenerationsBiomeTags {
     @JvmField val IS_PEAK = cobblemon("is_peak")
 
 
-    private fun generations(path: String) : TagKey<Biome> = TagKey.create(Registries.BIOME, cobblemonResource(path))
-    private fun cobblemon(path: String) : TagKey<Biome> = TagKey.create(Registries.BIOME, GenerationsCore.id(path))
+    private fun generations(path: String) : TagKey<Biome> = TagKey.create(Registries.BIOME, GenerationsCore.id(path))
+    private fun cobblemon(path: String) : TagKey<Biome> = TagKey.create(Registries.BIOME, cobblemonResource(path))
 
 }

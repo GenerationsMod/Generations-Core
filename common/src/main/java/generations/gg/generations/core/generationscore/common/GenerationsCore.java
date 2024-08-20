@@ -12,10 +12,7 @@ import com.cobblemon.mod.common.api.data.DataProvider;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.mojang.logging.LogUtils;
-import dev.architectury.event.EventResult;
-import dev.architectury.event.events.common.InteractionEvent;
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers;
-import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents;
 import generations.gg.generations.core.generationscore.common.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.common.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.common.api.player.Caught;
@@ -26,8 +23,9 @@ import generations.gg.generations.core.generationscore.common.world.dialogue.nod
 import generations.gg.generations.core.generationscore.common.world.dialogue.nodes.spawning.LocationLogicTypes;
 import generations.gg.generations.core.generationscore.common.world.dialogue.nodes.spawning.YawLogicTypes;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.common.world.entity.ZygardeCellEntity;
-import generations.gg.generations.core.generationscore.common.world.item.*;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs;
 import generations.gg.generations.core.generationscore.common.world.item.legends.EnchantableItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
@@ -36,14 +34,10 @@ import generations.gg.generations.core.generationscore.common.world.loot.LootPoo
 import generations.gg.generations.core.generationscore.common.world.recipe.*;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.spawning.ZygardeCellDetail;
-import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.apache.logging.log4j.util.TriConsumer;
@@ -115,35 +109,7 @@ public class GenerationsCore
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
 
 		GenerationsCobblemonEvents.init();
-		EntityEvents.JUMP.register(entity -> {
-			if (entity instanceof ServerPlayer player)
-				if (entity.level().getBlockState(entity.blockPosition()).getBlock() instanceof ElevatorBlock block)
-					block.takeElevator(entity.level(), entity.blockPosition().below(), player, Direction.UP);
-		});
-
-		InteractionEvent.INTERACT_ENTITY.register((player, entity, hand) -> {
-			var stack = player.getItemInHand(hand);
-
-			if(player.level().isClientSide()) return EventResult.pass();
-
-			var result = PixelmonInteractions.process(entity, player, stack);
-			if(result.interruptsFurtherEvaluation() && stack.getItem() instanceof PixelmonInteractions.PixelmonInteraction interaction && interaction.isConsumed()) stack.shrink(1);
-			else if(stack.is(GenerationsItems.ZYGARDE_CUBE.get()) && entity instanceof ZygardeCellEntity) {
-				if (stack.getDamageValue() != ZygardeCubeItem.FULL) {
-					stack.setDamageValue(stack.getDamageValue() + 1);
-					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.tooltip.cell_add"), false);
-					player.level().playSound(null, player.blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f);
-					entity.remove(Entity.RemovalReason.DISCARDED);
-
-					result = EventResult.interruptTrue();
-				} else {
-					player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.tooltip.cell_full"), false);
-					result = EventResult.pass();
-				}
-			}
-
-			return result;
-		});
+		GenerationsArchitecturyEvents.init();
 	}
 
 	private static void initRecipes() {

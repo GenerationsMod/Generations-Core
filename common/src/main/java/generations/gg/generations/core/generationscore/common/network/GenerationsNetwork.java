@@ -74,6 +74,7 @@ public class GenerationsNetwork implements GenerationsImplementation.NetworkMana
         this.createServerBound(C2SUpdateNpcDisplayDataPacket.ID, C2SUpdateNpcDisplayDataPacket.class, C2SUpdateNpcDisplayDataPacket::new, new C2SUpdateNpcDisplayDataHandler());
         this.createServerBound(C2SUpdateNpcShopPacket.ID, C2SUpdateNpcShopPacket.class, C2SUpdateNpcShopPacket::new, new C2SUpdateNpcShopHandler());
         this.createServerBound(C2SSetNpcPresetPacket.ID, C2SSetNpcPresetPacket.class, C2SSetNpcPresetPacket::new, new C2SSetNpcPresetHandler());
+        this.createServerBound(HeadPatPacket.Companion.getID(), HeadPatPacket.class, HeadPatPacket::new, new HeadPatPacketHandler());
     }
 
     private <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, Class<T> kClass, Function<FriendlyByteBuf, T> decoder, Supplier<Supplier<ClientNetworkPacketHandler<T>>> handler) {

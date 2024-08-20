@@ -30,6 +30,8 @@ public class GenerationsBlockTags {
     public static final TagKey<Block> POKEDOLLS = create("pokedolls");
     public static final TagKey<Block> REGI_STANDS = create("regi_stands");
 
+    public static final TagKey<Block> TAPU_SUMMONING = create("tapu_summoning");
+
     private static TagKey<Block> create(String name) {
         return TagKey.create(Registries.BLOCK, GenerationsCore.id(name));
     }

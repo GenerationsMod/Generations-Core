@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
-import com.cobblemon.mod.common.battles.ShowdownMoveset;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import dev.architectury.event.EventResult;
 import net.minecraft.world.entity.Entity;
@@ -10,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PixelmonInteractions {
+public class GenerationsCobblemonInteractions {
     private static final List<PixelmonInteraction> customInteractions = new ArrayList<>();
     public void registerCustomInteraction(PixelmonInteraction customInteraction) {
         customInteractions.add(customInteraction);

@@ -5,16 +5,22 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
+import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
+import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
+import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
 import com.cobblemon.mod.common.util.cobblemonResource
 import generations.gg.generations.core.generationscore.common.api.player.Caught
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
+import generations.gg.generations.core.generationscore.common.network.packets.HeadPatPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags.*
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem.BattleData
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks.SCARECROW
+import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
+import org.joml.Vector3f
 
 class GenerationsCobblemonEvents {
 
@@ -84,6 +90,15 @@ class GenerationsCobblemonEvents {
                     if(it.inventory.contains(TERA_ORBS)) keyItems.add(cobblemonResource("tera_orb"))
                     if(it.inventory.contains(Z_RINGS)) keyItems.add(cobblemonResource("z_ring"))
                 }
+            }
+
+            POKEMON_INTERACTION_GUI_CREATION.subscribe {
+                it.addOption(Orientation.BOTTOM_LEFT, InteractWheelOption(
+                    iconResource = GenerationsCore.id("textures/ui/interact/head_pat.png"),
+                    "generations_core.ui.interact.head_pat", { Vector3f(1F, 0F, 0F) }, {
+                    HeadPatPacket(it.pokemonID).sendToServer()
+                    Minecraft.getInstance().screen = null
+                }))
             }
 
             CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST) {

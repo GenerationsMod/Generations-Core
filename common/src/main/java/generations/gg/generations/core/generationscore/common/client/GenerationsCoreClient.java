@@ -5,7 +5,6 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.spawning.TimeRange;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry;
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
@@ -17,7 +16,6 @@ import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.GenerationsDataProvider;
-import generations.gg.generations.core.generationscore.common.client.model.RareCandyAnimationFactory;
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer;
 import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRenderer;
@@ -115,13 +113,7 @@ public class GenerationsCoreClient {
         GenerationsCoreClient.setupClient(minecraft);
         RareCandy.DEBUG_THREADS = true;
 
-        JsonPokemonPoseableModel.Companion.registerFactory("pk", RareCandyAnimationFactory.INSTANCE);
-
-        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> {
-            return new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> {
-                return (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation)));
-            });
-        });
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation)))));
 
 //        GenerationsCore.implementation.registerResourceReloader(
 //                id("texture_loader"),
