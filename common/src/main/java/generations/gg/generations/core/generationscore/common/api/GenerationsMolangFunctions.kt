@@ -1,4 +1,11 @@
 package generations.gg.generations.core.generationscore.common.api
 
-class GenerationsMolangFunctions {
+object GenerationsMolangFunctions {
+    init {
+//        MoLangFunctions.playerFunctions.add {
+//            hashMapOf(
+//                "open_shop"
+//            )
+//        }
+    }
 }

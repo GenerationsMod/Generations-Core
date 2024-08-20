@@ -7,7 +7,6 @@ import com.cobblemon.mod.common.client.render.models.blockbench.animation.Primar
 import com.cobblemon.mod.common.client.render.models.blockbench.animation.StatefulAnimation
 import com.cobblemon.mod.common.client.render.models.blockbench.animation.StatelessAnimation
 import com.cobblemon.mod.common.client.render.models.blockbench.frame.ModelFrame
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.AnimationReferenceFactory
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.client.render.models.blockbench.wavefunction.WaveFunction
 import com.cobblemon.mod.common.util.getBooleanOrNull
@@ -20,15 +19,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import java.util.function.Supplier
 
-object RareCandyAnimationFactory : AnimationReferenceFactory {
-    override fun <T : Entity> stateful(model: PoseableEntityModel<T>, animString: String): StatefulAnimationRareCandy<T> {
-        System.out.println("Oh no: " + animString)
-
-        val split = animString.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-
-        return stateful(split[0], split[1].trim { it <= ' ' }, if(split.size == 3) split[2].asBoolean() else false)
-    }
-
+object RareCandyAnimationFactory {
     fun <T : Entity> stateful(loc: String, name: String, transforms: Boolean): StatefulAnimationRareCandy<T> {
         val location = ResourceLocation(loc).withPrefix("bedrock/pokemon/models/")
 
@@ -39,15 +30,6 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
             }
             null
         }, Supplier<CobblemonInstance?> { return@Supplier ModelRegistry[location]?.guiInstance }, transforms)
-    }
-
-    override fun <T: Entity> stateless(model: PoseableEntityModel<T>, animString: String): StatelessAnimation<T, ModelFrame> {
-        System.out.println("Oh redacted: " + animString)
-
-        val split = animString.replace("pk(", "").replace(")", "").split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-        val location = ResourceLocation(split[0]).withPrefix("bedrock/pokemon/models/")
-
-        return stateless(model, split[0], split[1].trim { it <= ' ' })
     }
 
     fun <T: Entity> stateless(model: PoseableEntityModel<T>, loc: String, name: String): StatelessAnimation<T, ModelFrame> {
@@ -187,8 +169,3 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
     }
 }
 
-private fun String.asBoolean(): Boolean = when {
-    this.lowercase() == "true" -> true
-    this.lowercase() == "false" -> false
-    else -> false
-}
