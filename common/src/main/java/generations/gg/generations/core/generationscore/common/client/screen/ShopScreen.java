@@ -1,16 +1,8 @@
 package generations.gg.generations.core.generationscore.common.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.ImageButton;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.RadioButton;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.ScrollableMultiLineTextBox;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.ShopListWidget;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.api.player.ClientPlayerMoney;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.ImageButton;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.RadioButton;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.ScrollableMultiLineTextBox;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.ShopListWidget;
 import generations.gg.generations.core.generationscore.common.client.screen.widget.ImageButton;
 import generations.gg.generations.core.generationscore.common.client.screen.widget.RadioButton;
 import generations.gg.generations.core.generationscore.common.client.screen.widget.ScrollableMultiLineTextBox;
@@ -250,6 +242,7 @@ public class ShopScreen extends Screen {
 
     @Override
     public void onClose() {
+        super.onClose();
         GenerationsCore.implementation.getNetworkManager().sendPacketToServer(new C2SCloseShopPacket());
     }
 
