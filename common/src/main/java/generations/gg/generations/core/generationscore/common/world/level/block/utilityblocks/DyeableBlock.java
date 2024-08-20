@@ -59,10 +59,16 @@ public abstract class DyeableBlock<T extends ModelProvidingBlockEntity, V extend
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, Level world, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, @NotNull BlockHitResult hit) {
-        if (!world.isClientSide() && handIn == InteractionHand.MAIN_HAND) {
-            if (!tryDyeColor(state, world, pos, player, handIn, hit)) {
 
-                return serverUse(state, (ServerLevel) world, pos, (ServerPlayer) player, handIn, hit);
+
+        if (!world.isClientSide() && handIn == InteractionHand.MAIN_HAND) {
+            pos = getBaseBlockPos(pos, state);
+            state = world.getBlockState(pos);
+            var block = state.getBlock();
+
+            if (block instanceof DyeableBlock<?,?> dyeableBlock && !dyeableBlock.tryDyeColor(state, world, pos, player, handIn, hit)) {
+
+                return dyeableBlock.serverUse(state, (ServerLevel) world, pos, (ServerPlayer) player, handIn, hit);
             }
             else return InteractionResult.SUCCESS;
         }
