@@ -73,22 +73,15 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
             val animation = params.getString(1)
             val anim = stateful<T>(group, animation, params.getBooleanOrNull(2) ?: false)
 
-            try {
+            val excludedLabels = mutableSetOf<String>()
+            val curve: WaveFunction = { 2F }
 
-                val excludedLabels = mutableSetOf<String>()
-                var curve: WaveFunction = { t ->
-                    2F
-                }
-                for (index in 2 until params.params.size) {
-                    val label = params.getString(index) ?: continue
-                    excludedLabels.add(label)
-                }
-                return@addFunction ObjectValue(PrimaryAnimation(animation = anim, excludedLabels = excludedLabels, curve = curve))
-            } catch (e: Exception) {
-                print("Whark!?!?")
-                e.printStackTrace()
+            for (index in 2 until params.params.size) {
+                val label = params.getString(index) ?: continue
+                excludedLabels.add(label)
             }
 
+            return@addFunction ObjectValue(PrimaryAnimation(animation = anim, excludedLabels = excludedLabels, curve = curve))
         }.addFunction("pk") { params ->
                 val group = params.getString(0)
                 val animation = params.getString(1)
@@ -108,29 +101,7 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
 
 
         override val duration: Float
-            get() {
-                var base = animationSuppler.get()
-
-                if(base != null) {
-                    var base2 = base!!.animationDuration
-
-                    println("base2: $base2")
-
-                    var base3 = base2 / base.ticksPerSecond
-
-                    println("base3: $base3")
-
-                    var base4 = base3 * 20;
-
-                    println("base4: $base4")
-
-                    return base4.toFloat()
-
-                } else {
-                    println("Nope")
-                    return 0.0f
-                }
-            }
+            get() = animationSuppler.get()?.let { (it.animationDuration / it.ticksPerSecond * 20).toFloat() } ?: 0.0f
 
         override fun run(
             entity: T?,
@@ -157,17 +128,15 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
             val animation = animationSuppler.get()
 
             if (animation != null) {
-                var currentSeconds = state.animationSeconds - startedSeconds
-                var animationLength = animation.animationDuration / animation.ticksPerSecond
+                val currentSeconds = state.animationSeconds - startedSeconds
+                val animationLength = animation.animationDuration / animation.ticksPerSecond
 
                 if(currentSeconds > animationLength) {
                     return false
                 }
 
-
                 if (instance != null) {
                     instance.setAnimation(animation)
-                    if(state.animationSeconds != 0f) println("Stateful ${animation.name} + $currentSeconds $intensity")
 
                     instance.matrixTransforms = animation.getFrameTransform((currentSeconds).toDouble())
                     animation.getFrameOffset(instance.currentAnimation!!)
@@ -207,8 +176,6 @@ object RareCandyAnimationFactory : AnimationReferenceFactory {
 
             if (instance != null && animation != null) {
                 instance.setAnimation(animation)
-
-                if(state?.animationSeconds != 0f) println("Stateless: ${animation.name} + ${state?.animationSeconds ?: 0.0} $intensity")
 
                 instance.matrixTransforms = animation.getFrameTransform((state?.animationSeconds?.toDouble() ?: 0.0).toDouble())
 
