@@ -1,0 +1,120 @@
+{
+  "speakers": {
+    "player": {
+      "face": "q.player.face();",
+      "name": {
+        "type": "expression",
+        "expression": "q.player.username"
+      }
+    }
+  },
+  "pages": [
+    {
+      "id": "intro",
+      "lines": [
+        "Which of the eon duo you call?"
+      ],
+      "input": {
+        "type": "option",
+        "vertical": false,
+        "options": [
+          {
+            "text": "Latios",
+            "value": "latios",
+            "isVisible": "q.player.capped('cobblemon:latios')",
+            "action": [
+              "v.pokemon_concept = 'blue';",
+              "v.pokemon_name = 'Latios';",
+              "v.pokemon_id = 'latios';",
+              "q.dialogue.set_page('eon_1');"
+            ]
+          },
+          {
+            "text": "Latias",
+            "value": "latias",
+            "isVisible": "q.player.capped('cobblemon:latias')",
+            "action": [
+              "v.pokemon_concept = 'blue';",
+              "v.pokemon_name = 'Latias';",
+              "v.pokemon_id = 'latias';",
+              "q.dialogue.set_page('eon_1');"
+            ]
+          },
+          {
+            "text": "None Available",
+            "value": "none",
+            "isVisible": "!q.player.capped('cobblemon:tapukoko') && !q.player.capped('cobblemon:tapulele') && !q.player.capped('cobblemon:tapubulu') && !q.player.capped('cobblemon:tapufini')",
+            "action": [
+              "q.dialogue.set_page('none_1');"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "eon_1",
+      "lines": [ "*As you examine the Enigma stone, you begin to recall the journey that led you to this moment.*" ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "tapu_2",
+      "lines": [
+        "*Having followed you for some time, a sleek ' + v.pokemon_concept + ' form swiftly approaches.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "tapu_4",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'*' + v.pokemon_name + ' has arrived.*'"
+        }
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1,
+        "action": [
+          "q.player.main_hand.shrink(1);",
+          "q.spawn_pokemon(q.player, v.pokemon_id + ' level=70',);",
+          "q.dialogue.close();"
+        ]
+      }
+    },
+    {
+      "id": "none_1",
+      "lines": [
+        "*As you examine the Enigma stone, you begin to recall the journey that led you to this moment.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "none_2",
+      "allowSkip": false,
+      "lines": [
+        "*Nothing odd happens besides fond memories remembered.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1,
+        "action": [
+          "q.dialogue.close();"
+        ]
+      }
+    }
+  ]
+}

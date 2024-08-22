@@ -12,6 +12,7 @@ import com.cobblemon.mod.common.api.data.DataProvider;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.mojang.logging.LogUtils;
+import generations.gg.generations.core.generationscore.common.api.GenerationsMolangFunctions;
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.common.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.common.api.player.BiomesVisited;
@@ -107,6 +108,8 @@ public class GenerationsCore
 		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
+
+		GenerationsMolangFunctions.init();
 
 		GenerationsCobblemonEvents.init();
 		GenerationsArchitecturyEvents.init();

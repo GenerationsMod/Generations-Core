@@ -12,6 +12,7 @@ import java.time.Duration;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static generations.gg.generations.core.generationscore.common.api.player.Caught.*;
 import static generations.gg.generations.core.generationscore.common.config.LegendKeys.*;
 
 public class Config {
@@ -71,18 +72,28 @@ public class Config {
                 .setCount(MANAPHY, 1)
                 .setCount(MANAPHY, 1)
                 .setCount(TORNADUS, 1)
+                .setCount(LANDORUS, 1)
+                .setCount(THUNDURUS, 1)
+                .setCount(ENAMORUS, 1)
                 .setCount(LATIAS, 1)
                 .setCount(LATIAS, 1)
+                .setCount(TAPU_KOKO, 1)
+                .setCount(TAPU_LELE, 1)
+                .setCount(TAPU_BULU, 1)
+                .setCount(TAPU_FINI, 1)
+
                 .build();
 
         public boolean capped(Player player, SpeciesKey speciesKey) {
-            if(!limits.contains(speciesKey)) return false;
+            if(!limits.contains(speciesKey)) return true;
 
             var limit = limits.count(speciesKey);
 
-            var count = generations.gg.generations.core.generationscore.common.api.player.Caught.get(player).get(speciesKey);
+            if(limit == 0) return true;
 
-            return limit > 0 && limit >= count;
+            var count = get(player).get(speciesKey);
+
+            return limit > 0 && limit > count;
         }
 
         public static class Adapter implements JsonDeserializer<Caught>, JsonSerializer<Caught> {

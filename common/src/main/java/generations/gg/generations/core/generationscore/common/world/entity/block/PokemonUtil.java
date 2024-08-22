@@ -4,7 +4,6 @@ import com.cobblemon.mod.common.CobblemonEntities;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.world.level.Level;
@@ -13,8 +12,6 @@ import net.minecraft.world.phys.Vec3;
 public class PokemonUtil {
     public static void spawn(PokemonProperties species, Level level, Vec3 pos, float yaw) {
         var entity = species.createEntity(level);
-
-
         spawn(entity, level, pos, yaw);
     }
 

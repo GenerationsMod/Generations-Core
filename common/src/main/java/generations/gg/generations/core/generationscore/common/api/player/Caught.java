@@ -5,8 +5,6 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,7 +22,7 @@ public class Caught extends PlayerDataExtension {
     }
 
     public int get(SpeciesKey name) {
-        return obtained.contains(name) ? obtained.count(name) : -1;
+        return obtained.contains(name) ? obtained.count(name) : 0;
     }
 
     public boolean accumulate(SpeciesKey name, int amount) {
