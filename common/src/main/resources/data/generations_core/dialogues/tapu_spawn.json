@@ -87,7 +87,7 @@
       "lines": [
         {
           "type": "expression",
-          "expression": "*Your sparkling stone resonates with ' + v.pokemon_concept + '.*'"
+          "expression": "'*Your sparkling stone resonates with ' + v.pokemon_concept + '.*'"
         }
       ],
       "input": {

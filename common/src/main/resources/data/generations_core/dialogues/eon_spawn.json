@@ -63,7 +63,10 @@
     {
       "id": "tapu_2",
       "lines": [
-        "*Having followed you for some time, a sleek ' + v.pokemon_concept + ' form swiftly approaches.*"
+        {
+          "type": "expression",
+          "expression": "'*Having followed you for some time, a sleek ' + v.pokemon_concept + ' form swiftly approaches.*'"
+        }
       ],
       "input": {
         "type": "auto-continue",
@@ -85,7 +88,7 @@
         "delay": 1,
         "action": [
           "q.player.main_hand.shrink(1);",
-          "q.spawn_pokemon(q.player, v.pokemon_id + ' level=70',);",
+          "q.spawn_pokemon(q.player, v.pokemon_id + ' level=70');",
           "q.dialogue.close();"
         ]
       }
