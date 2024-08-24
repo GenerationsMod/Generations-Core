@@ -349,7 +349,6 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
 
         @Override
         public void toNetwork(FriendlyByteBuf buffer, T recipe) {
-            System.out.println(recipe.getId());
             buffer.writeVarInt(recipe.width);
             buffer.writeVarInt(recipe.height);
             buffer.writeUtf(recipe.group);

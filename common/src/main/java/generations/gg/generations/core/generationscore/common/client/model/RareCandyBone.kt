@@ -30,8 +30,6 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     private val spriteProvider: (RenderState, String) -> ResourceLocation
 
     init {
-        System.out.println("Slurp: $location")
-
         val spriteLoc = location.toString().replace("bedrock/pokemon/models/", "").replace(".pk", "").asResource()
         objectSupplier = { ModelRegistry[location] }
         spriteProvider = { state: RenderState, s: String ->
