@@ -5,7 +5,9 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.recipe.DamageIngredient;
+import generations.gg.generations.core.generationscore.common.world.recipe.PokemonItemIngredient;
 import generations.gg.generations.core.generationscore.common.world.recipe.TimeCapsuleIngredient;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.GenerationsRecipeProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
@@ -13,9 +15,10 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -99,17 +102,6 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .input('C',RAINBOW_WING.get())
                 .criterion("rainbow_wing", InventoryChangeTrigger.TriggerInstance.hasItems(RAINBOW_WING.get()))
                 .offerTo(exporter, GenerationsCore.id("rainbow_wing"));
-
-//        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA.createProperties(70))
-//                .key(LegendKeys.TYPE_NULL)
-//                .pattern(" A ")
-//                .pattern("CBC")
-//                .pattern(" A ")
-//                .input('A', Items.NETHERITE_INGOT)
-//                .input('B', itemStack)
-//                .input('C', Items.IRON_INGOT)
-//                .criterion("netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
-//                .offerTo(exporter, GenerationsCore.id("type_null"));
 
         createFossil(OLD_AMBER, "aerodactyl", exporter);
         createFossil(HELIX_FOSSIL, "omanyte", exporter);
@@ -241,6 +233,36 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createZCyrstal(TAPUNIUM_Z, "tapubulu", true, exporter);
         createZCyrstal(TAPUNIUM_Z, "tapufini", true, exporter);
         createZCyrstal(ULTRANECROZIUM_Z, "necrozma", exporter);
+
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_A, "a");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_B, "b");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_C, "c");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_D, "d");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_E, "e");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_F, "f");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_G, "g");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_H, "h");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_I, "i");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_J, "j");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_K, "k");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_L, "l");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_M, "m");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_N, "n");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_O, "o");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_P, "p");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Q, "q");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_R, "r");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_S, "s");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_T, "t");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_U, "u");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_V, "v");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_W, "w");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_X, "x");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Y, "y");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Z, "z");
+
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK, "!");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK, "?");
     }
 
     private <E> void createZCyrstal(RegistrySupplier<Item> result, String pokemon, String aspects, Consumer<FinishedRecipe> exporter) {
@@ -280,10 +302,19 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .offerTo(exporter, result.getId().withSuffix(multi ? "_" + pokemon : ""));
     }
 
+    private void unownBlock(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Block> createdBlock, String form){
+        RksRecipeJsonBuilder.create(createdBlock.get())
+                .input('X', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
+                .input('Y', new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of("glyph-" + form)))
+                .pattern("XY")
+                .criterion(getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()), has(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()))
+                .offerTo(consumer, createdBlock.getId());
+    }
+
     private void createZCyrstal(RegistrySupplier<Item> result, RegistrySupplier<Item> item, Consumer<FinishedRecipe> exporter) {
         RksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
-                .input('B', Ingredient.of(item.get()))
+                .input('B', item.get())
                 .input('X', Z_INGOT.get())
                 .pattern("XXX")
                 .pattern("ABA")

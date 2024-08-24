@@ -1,19 +1,20 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_pokemon",
   "consumesTimeCapsules": true,
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "minecraft:netherite_ingot"
+      "type": "item",
+      "key": "minecraft:netherite_ingot"
     },
     "B": {
-      "type": "generations_core:damage",
+      "type": "damage",
       "damage": 100,
-      "fabric:type": "generations_core:damage",
       "item": "generations_core:soul_heart"
     },
     "C": {
-      "item": "minecraft:iron_ingot"
+      "type": "item",
+      "key": "minecraft:iron_ingot"
     }
   },
   "pattern": [
@@ -23,9 +24,8 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "generations_core:pokemon",
     "level": 70,
     "species": "cobblemon:magearna"
   },
-  "speciesKey": "cobblemon:magearna[]"
+  "speciesKey": "cobblemon:magearna"
 }

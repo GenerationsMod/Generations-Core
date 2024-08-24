@@ -249,7 +249,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsEntities.BOAT_ENTITY.get(), (EntityRendererProvider.Context context) -> new GenerationsBoatRenderer(context, false));
         consumer.accept(GenerationsEntities.CHEST_BOAT_ENTITY.get(), context -> new GenerationsBoatRenderer(context, true));
         consumer.accept(GenerationsEntities.MAGMA_CRYSTAL.get(), ThrownItemRenderer::new);
-        consumer.accept(GenerationsEntities.STATUE_ENTITY.get(), StatueEntityRenderer::new);
+//        consumer.accept(GenerationsEntities.STATUE_ENTITY.get(), StatueEntityRenderer::new);
         consumer.accept(GenerationsEntities.PLAYER_NPC.get(), context -> new PlayerNpcEntityRenderer(context, true));
         consumer.accept(GenerationsEntities.ZYGARDE_CELL.get(), ZygardeCellRenderer::new);
     }

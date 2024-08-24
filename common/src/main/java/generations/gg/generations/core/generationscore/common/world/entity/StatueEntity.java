@@ -6,20 +6,15 @@ import com.cobblemon.mod.common.entity.PoseType;
 import com.cobblemon.mod.common.pokemon.RenderablePokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import dev.architectury.utils.EnvExecutor;
-import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.common.client.StatueEntityClient;
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
-import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenPacket;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -36,7 +31,7 @@ import java.util.Set;
 import static dev.architectury.utils.Env.CLIENT;
 
 public class StatueEntity extends LivingEntity implements CobblemonInstanceProvider {
-    public static final EntityDataAccessor<StatueInfo> STATUE_DATA = SynchedEntityData.defineId(StatueEntity.class, GenerationsCoreEntityDataSerializers.STATUE_INFO);
+//    public static final EntityDataAccessor<StatueInfo> STATUE_DATA = SynchedEntityData.defineId(StatueEntity.class, GenerationsCoreEntityDataSerializers.STATUE_INFO);
 
     private EntityDimensions dimensions;
     private boolean sizeChanged;
@@ -56,7 +51,7 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
     }
 
     public StatueEntity(Level level) {
-        this(GenerationsEntities.STATUE_ENTITY.get(), level);
+        this(/*GenerationsEntities.STATUE_ENTITY.get()*/null, level);
     }
 
     @Override
@@ -100,7 +95,7 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
                 if(player.isShiftKeyDown()) {
                     this.remove(RemovalReason.KILLED);
                 } else {
-                    GenerationsNetwork.INSTANCE.sendPacketToPlayer((ServerPlayer) player, new S2COpenStatueEditorScreenPacket(getId()));
+//                    GenerationsNetwork.INSTANCE.sendPacketToPlayer((ServerPlayer) player, new S2COpenStatueEditorScreenPacket(getId()));
                 }
 
                 return InteractionResult.SUCCESS;
@@ -123,7 +118,7 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(STATUE_DATA, new StatueInfo());
+//        this.entityData.define(STATUE_DATA, new StatueInfo());
     }
 
     @Override
@@ -141,11 +136,11 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
     }
 
     public StatueInfo getStatueData() {
-        return this.getEntityData().get(STATUE_DATA);
+        return new StatueInfo(); //        return this.getEntityData().get(STATUE_DATA);
     }
 
     public void setStatueInfo(StatueInfo data) {
-        this.getEntityData().set(STATUE_DATA, data);
+//        this.getEntityData().set(STATUE_DATA, data);
         setRotationFromStatueData();
         refreshInstance();
         this.sizeChanged = true;
@@ -186,10 +181,10 @@ public class StatueEntity extends LivingEntity implements CobblemonInstanceProvi
 
     @Override
     public void onSyncedDataUpdated(EntityDataAccessor<?> key) {
-        if (key.equals(StatueEntity.STATUE_DATA)) {
-            updateStatueData();
-            refreshDimensions();
-        }
+//        if (key.equals(StatueEntity.STATUE_DATA)) {
+//            updateStatueData();
+//            refreshDimensions();
+//        }
 
         super.onSyncedDataUpdated(key);
     }

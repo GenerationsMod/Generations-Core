@@ -1,19 +1,23 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_pokemon",
   "consumesTimeCapsules": true,
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "generations_core:dna_splicers"
+      "type": "item",
+      "key": "generations_core:dna_splicers"
     },
     "B": {
-      "item": "generations_core:orb"
+      "type": "item",
+      "key": "generations_core:orb"
     },
     "C": {
-      "item": "generations_core:mew_dna_fiber"
+      "type": "item",
+      "key": "generations_core:mew_dna_fiber"
     },
     "X": {
-      "item": "generations_core:mew_fossil"
+      "type": "item",
+      "key": "generations_core:mew_fossil"
     }
   },
   "pattern": [
@@ -23,9 +27,8 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "generations_core:pokemon",
     "level": 70,
     "species": "cobblemon:mewtwo"
   },
-  "speciesKey": "cobblemon:mewtwo[]"
+  "speciesKey": "cobblemon:mewtwo"
 }

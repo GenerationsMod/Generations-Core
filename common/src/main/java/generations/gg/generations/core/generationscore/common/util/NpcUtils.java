@@ -88,7 +88,7 @@ public class NpcUtils {
                 .map(registryObject -> EntityType.getKey(registryObject.get()).toString())
                 .filter(s -> s.contains("npc"))
                 .collect(Collectors.toList());
-        invalidTypes.add(EntityType.getKey(GenerationsEntities.STATUE_ENTITY.get()).toString());
+//        invalidTypes.add(EntityType.getKey(GenerationsEntities.STATUE_ENTITY.get()).toString());
         // the ender dragon renderer isn't a LivingEntityRenderer, so it'd cause issues with our current implementation
         invalidTypes.add(EntityType.getKey(EntityType.ENDER_DRAGON).toString());
         return invalidTypes;

@@ -1,16 +1,19 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_item",
   "consumesTimeCapsules": true,
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "minecraft:netherite_scrap"
+      "type": "item",
+      "key": "minecraft:netherite_scrap"
     },
     "B": {
-      "item": "generations_core:ghost_gem"
+      "type": "item",
+      "key": "generations_core:ghost_gem"
     },
     "X": {
-      "item": "generations_core:z_ingot"
+      "type": "item",
+      "key": "generations_core:z_ingot"
     }
   },
   "pattern": [
@@ -19,8 +22,5 @@
     "XXX"
   ],
   "processingTime": 240,
-  "result": {
-    "type": "generations_core:item",
-    "value": "generations_core:ghostium_z"
-  }
+  "result": "generations_core:ghostium_z"
 }

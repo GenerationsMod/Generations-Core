@@ -4,7 +4,6 @@ import dev.architectury.registry.registries.DeferredRegister;
 import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
@@ -54,8 +53,6 @@ public interface GenerationsImplementation {
     void registerCompostables(@NotNull Block block, float chance);
 
     Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> o, DeferredRegister<? extends ItemLike>... deferredRegister);
-
-    GenerationsIngredidents getIngredients();
 
     boolean canEquip(ItemStack carried, EquipmentSlot equipmentslottype, Entity entity);
 

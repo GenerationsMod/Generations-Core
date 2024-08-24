@@ -1,28 +1,26 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_item",
   "consumesTimeCapsules": false,
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "generations_core:key_stone"
+      "type": "item",
+      "key": "generations_core:key_stone"
     },
     "B": {
-      "type": "generations_core:time_capsule",
+      "type": "time_capsule",
       "aspects": [],
-      "fabric:type": "generations_core:time_capsule",
       "species": "cobblemon:absol",
       "strictAspects": false
     },
     "C": {
-      "item": "minecraft:netherite_scrap"
+      "type": "item",
+      "key": "minecraft:netherite_scrap"
     }
   },
   "pattern": [
     "ABC"
   ],
   "processingTime": 240,
-  "result": {
-    "type": "generations_core:item",
-    "value": "generations_core:absolite"
-  }
+  "result": "generations_core:absolite"
 }

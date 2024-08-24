@@ -1,17 +1,17 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_pokemon",
   "consumesTimeCapsules": true,
   "experience": 1.0,
   "key": {
     "A": {
-      "type": "generations_core:time_capsule",
+      "type": "time_capsule",
       "aspects": [],
-      "fabric:type": "generations_core:time_capsule",
       "species": "cobblemon:suicune",
       "strictAspects": false
     },
     "B": {
-      "item": "minecraft:coal"
+      "type": "item",
+      "key": "minecraft:coal"
     }
   },
   "pattern": [
@@ -19,7 +19,6 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "generations_core:pokemon",
     "spawnInWorld": false,
     "species": "cobblemon:walkingwake",
     "usePokemonInCapsule": true

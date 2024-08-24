@@ -5,20 +5,14 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.entity.block.MagmaCrystalEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.block.MagmaCrystalEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.block.MagmaCrystalEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.level.Level;
 
 public class GenerationsEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ENTITY_TYPE);
 
-//    public static final RegistrySupplier<EntityType<PixelmonEntity>> PIXELMON = createEntityType("pixelmon", MobCategory.CREATURE, 0.6f, 1.8f, PixelmonEntity::new);
 //    public static final RegistrySupplier<EntityType<StarterPickEntity>> STARTER_PICK = createEntityType("starter_pick", MobCategory.CREATURE, 0.6f, 0.6f, StarterPickEntity::new);
     public static final RegistrySupplier<EntityType<PlayerNpcEntity>> PLAYER_NPC = createEntityType("player_npc", MobCategory.MISC, 0.6f, 1.8f, PlayerNpcEntity::new);
 //    public static final RegistrySupplier<EntityType<PokeBallEntity>> POKEBALL_ENTITY = createEntityType("pokeball", MobCategory.MISC, 0.2f, 0.2f, PokeBallEntity::new);
@@ -28,8 +22,7 @@ public class GenerationsEntities {
     public static final RegistrySupplier<EntityType<GenerationsBoatEntity>> BOAT_ENTITY = createEntityType("boat", MobCategory.MISC, EntityType.BOAT.getWidth(), EntityType.BOAT.getHeight(), GenerationsBoatEntity::new);
     public static final RegistrySupplier<EntityType<GenerationsChestBoatEntity>> CHEST_BOAT_ENTITY = createEntityType("chest_boat", MobCategory.MISC, EntityType.CHEST_BOAT.getWidth(), EntityType.CHEST_BOAT.getHeight(), GenerationsChestBoatEntity::new);
 
-    public static RegistrySupplier<EntityType<StatueEntity>> STATUE_ENTITY =
-            ENTITIES.register("statue", () -> EntityType.Builder.<StatueEntity>of(StatueEntity::new, MobCategory.MISC).build("statue"));
+//    public static RegistrySupplier<EntityType<StatueEntity>> STATUE_ENTITY = ENTITIES.register("statue", () -> EntityType.Builder.<StatueEntity>of(StatueEntity::new, MobCategory.MISC).build("statue"));
 
     public static RegistrySupplier<EntityType<ZygardeCellEntity>> ZYGARDE_CELL = ENTITIES.register("zygarde_cell", () -> EntityType.Builder.<ZygardeCellEntity>of(ZygardeCellEntity::new, MobCategory.MISC).build("zygarde_cell"));
 

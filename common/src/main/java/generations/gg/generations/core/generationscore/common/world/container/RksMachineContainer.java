@@ -1,21 +1,15 @@
 
 package generations.gg.generations.core.generationscore.common.world.container;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
-import com.cobblemon.mod.common.pokemon.Pokemon;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.level.block.RksMachineBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.recipe.RksRecipe;
-import generations.gg.generations.core.generationscore.common.world.recipe.RksResult;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.*;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Optional;
 
 public class RksMachineContainer extends AbstractContainerMenu {
 	public static final int INPUT1_SLOT = 0;
@@ -26,7 +20,6 @@ public class RksMachineContainer extends AbstractContainerMenu {
 	public static final int DATA_WEAVE_TIME = 0;
 	public static final int DATA_WEAVE_TIME_TOAL = 1;
 	public static final int NUM_DATA_VALUES = 2;
-	public Optional<Pokemon> pokemon = Optional.empty();
 
 	protected Inventory playerInventory;
 	protected RksMachineBlockEntity rksMachine;
@@ -36,7 +29,7 @@ public class RksMachineContainer extends AbstractContainerMenu {
 		this.playerInventory = ctx.playerInv();
 		this.rksMachine = ctx.blockEntity();
 
-		this.addSlot(new ResultSlot(this, playerInventory.player, rksMachine, 0, 124, 35));
+		this.addSlot(new ResultSlot(playerInventory.player, rksMachine, 0, 124, 35));
 
 		for(int i = 0; i < 3; ++i) {
 			for(int j = 0; j < 3; ++j) {
@@ -112,13 +105,11 @@ public class RksMachineContainer extends AbstractContainerMenu {
 	}
 
 	public static class ResultSlot extends Slot {
-		private final RksMachineContainer rksMachineContainer;
 		private final Player player;
 		private int removeCount;
 
-		public ResultSlot(RksMachineContainer container, Player player, RksMachineBlockEntity rksMachineBlockEntity, int slot, int x, int y) {
+		public ResultSlot(Player player, RksMachineBlockEntity rksMachineBlockEntity, int slot, int x, int y) {
 			super(rksMachineBlockEntity, slot, x, y);
-			this.rksMachineContainer = container;
 			this.player = player;
 		}
 
@@ -138,7 +129,7 @@ public class RksMachineContainer extends AbstractContainerMenu {
 
 		@Override
 		public void onTake(@NotNull Player player, @NotNull ItemStack stack) {
-			if(((RksMachineBlockEntity) container).getRecipeUsed() instanceof RksRecipe recipe) recipe.process(player, rksMachineContainer, ((RksMachineBlockEntity) container), stack);
+			if(((RksMachineBlockEntity) container).getRecipeUsed() instanceof RksRecipe recipe) recipe.process(player, ((RksMachineBlockEntity) container), stack);
 			this.checkTakeAchievements(stack);
 			super.onTake(player, stack);
 		}

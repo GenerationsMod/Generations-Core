@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.api.data;
 
 import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity;
 import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
-import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity;
-import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
 import net.minecraft.network.syncher.EntityDataSerializer;
 import net.minecraft.network.syncher.EntityDataSerializers;
 
@@ -12,7 +10,7 @@ public class GenerationsCoreEntityDataSerializers {
     public static final EntityDataSerializer<NpcDisplayData> NPC_PRESET = EntityDataSerializer.simple((buf, npcDisplayData) -> npcDisplayData.serializeToByteBuf(buf), NpcDisplayData::new);
 
     public static void init() {
-        EntityDataSerializers.registerSerializer(STATUE_INFO);
+//        EntityDataSerializers.registerSerializer(STATUE_INFO);
         EntityDataSerializers.registerSerializer(NPC_PRESET);
     }
 }

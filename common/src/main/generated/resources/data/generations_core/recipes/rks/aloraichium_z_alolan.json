@@ -1,22 +1,23 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_item",
   "consumesTimeCapsules": true,
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "minecraft:netherite_scrap"
+      "type": "item",
+      "key": "minecraft:netherite_scrap"
     },
     "B": {
-      "type": "generations_core:time_capsule",
+      "type": "time_capsule",
       "aspects": [
         "alolan"
       ],
-      "fabric:type": "generations_core:time_capsule",
       "species": "minecraft:raichu",
       "strictAspects": false
     },
     "X": {
-      "item": "generations_core:z_ingot"
+      "type": "item",
+      "key": "generations_core:z_ingot"
     }
   },
   "pattern": [
@@ -25,8 +26,5 @@
     "XXX"
   ],
   "processingTime": 240,
-  "result": {
-    "type": "generations_core:item",
-    "value": "generations_core:aloraichium_z"
-  }
+  "result": "generations_core:aloraichium_z"
 }

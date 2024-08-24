@@ -1,18 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities;
 
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.common.collect.Lists;
 import dev.architectury.registry.menu.ExtendedMenuProvider;
 import dev.architectury.registry.menu.MenuRegistry;
-import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
-import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
-import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes;
-import generations.gg.generations.core.generationscore.common.world.recipe.RksRecipe;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
-import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
-import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
-import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes;
-import generations.gg.generations.core.generationscore.common.world.recipe.RksRecipe;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes;
@@ -33,7 +24,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
-import net.minecraft.world.*;
+import net.minecraft.world.Container;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.Containers;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -67,6 +60,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
 
     public int processingTime;
     public int processTimeTotal;
+    public Optional<Pokemon> pokemon;
 
     private boolean isProcessing = false;
 
@@ -223,22 +217,36 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         this.inventory.clear();
     }
 
-    private Optional<RksRecipe> getCurrentRecipe() {
+    private Optional<? extends RksRecipe<?>> getCurrentRecipe() {
         // No need to find recipes if the inventory is empty. Cannot craft anything.
         if (this.level == null || this.isEmpty()) return Optional.empty();
 
-        RksRecipe lastRecipe = (RksRecipe) getRecipeUsed();
+        RksRecipe<?> lastRecipe = (RksRecipe<?>) getRecipeUsed();
         RecipeManager manager = this.level.getRecipeManager();
 
         if (lastRecipe != null) {
-            RksRecipe mapRecipe = manager.byType(GenerationsCoreRecipeTypes.RKS.get()).get(lastRecipe);
+            RksRecipe<?> mapRecipe = getMappedRecipe(manager, lastRecipe.getId());
             if (mapRecipe != null && mapRecipe.matches(this, level)) {
                 return Optional.of(lastRecipe);
             }
         }
-        return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS.get(), this, level);
+        return getMappedRecipe(manager);
     }
 
+    private Optional<? extends RksRecipe<?>> getMappedRecipe(RecipeManager manager) {
+        var recipe = manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_ITEM.get(), this, level);
+
+        if(recipe.isEmpty()) return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_ITEM.get(), this, level);
+        else return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_POKEMON.get(), this, level);
+    }
+
+    private RksRecipe<?> getMappedRecipe(RecipeManager manager, ResourceLocation id) {
+        var recipe = manager.byType(GenerationsCoreRecipeTypes.RKS_ITEM.get()).get(id);
+
+        if(recipe == null) manager.byType(GenerationsCoreRecipeTypes.RKS_POKEMON.get()).get(id);
+
+        return recipe;
+    }
 
     private Optional<ItemStack> getResult() {
         Optional<ItemStack> maybe_result = getCurrentRecipe().map(recipe -> recipe.assemble(this, null));
@@ -309,7 +317,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         if (tile.isToggled()) {
             ItemStack result = tile.getResult().orElse(ItemStack.EMPTY);
 
-            Optional<RksRecipe> recipe = tile.getCurrentRecipe();
+            Optional<? extends RksRecipe<?>> recipe = tile.getCurrentRecipe();
 
             if (recipe.isPresent() && (!tile.isInputEmpty())) {
                 if (tile.canSmelt(result, recipe.get())) {
