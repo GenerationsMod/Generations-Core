@@ -1,0 +1,189 @@
+{
+  "name": "Hatterene",
+  "nationalPokedexNumber": 858,
+  "primaryType": "psychic",
+  "secondaryType": "fairy",
+  "abilities": [
+    "healer",
+    "anticipation",
+    "h:magicbounce"
+  ],
+  "baseStats": {
+    "hp": 57,
+    "attack": 90,
+    "defence": 95,
+    "special_attack": 136,
+    "special_defence": 103,
+    "speed": 29
+  },
+  "catchRate": 45,
+  "maleRatio": 0,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "psychic",
+      "secondaryType": "fairy",
+      "abilities": [
+        "healer",
+        "anticipation",
+        "h:magicbounce"
+      ],
+      "baseStats": {
+        "hp": 57,
+        "attack": 90,
+        "defence": 95,
+        "special_attack": 136,
+        "special_defence": 103,
+        "speed": 29
+      },
+      "catchRate": 45,
+      "maleRatio": 0,
+      "baseExperienceYield": 255,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 3,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "fairy"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 260,
+      "weight": 0,
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 255,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy"
+  ],
+  "moves": [
+    "1:brutalswing",
+    "1:confusion",
+    "1:disarmingvoice",
+    "1:lifedew",
+    "1:playnice",
+    "15:aromatherapy",
+    "15:aromaticmist",
+    "20:psybeam",
+    "25:healpulse",
+    "30:dazzlinggleam",
+    "37:calmmind",
+    "46:psychic",
+    "55:healingwish",
+    "64:magicpowder",
+    "tm:agility",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:brutalswing",
+    "tm:calmmind",
+    "tm:charm",
+    "tm:darkpulse",
+    "tm:dazzlinggleam",
+    "tm:disarmingvoice",
+    "tm:drainingkiss",
+    "tm:endure",
+    "tm:expandingforce",
+    "tm:facade",
+    "tm:futuresight",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:gravity",
+    "tm:guardswap",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:imprison",
+    "tm:lightscreen",
+    "tm:magicalleaf",
+    "tm:magicroom",
+    "tm:metronome",
+    "tm:mistyexplosion",
+    "tm:mistyterrain",
+    "tm:mysticalfire",
+    "tm:painsplit",
+    "tm:playrough",
+    "tm:powerswap",
+    "tm:powerwhip",
+    "tm:protect",
+    "tm:psybeam",
+    "tm:psychic",
+    "tm:psychicnoise",
+    "tm:psychicterrain",
+    "tm:psychocut",
+    "tm:psychup",
+    "tm:psyshock",
+    "tm:reflect",
+    "tm:rest",
+    "tm:round",
+    "tm:safeguard",
+    "tm:shadowball",
+    "tm:shadowclaw",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:terablast",
+    "tm:thunderwave",
+    "tm:trick",
+    "tm:trickroom",
+    "tm:wonderroom",
+    "tutor:expandingforce",
+    "tutor:mistyexplosion"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.hatterene.desc"
+  ],
+  "preEvolution": "hattrem",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 21,
+  "weight": 51,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 10.0
+      }
+    ]
+  },
+  "implemented": true
+}

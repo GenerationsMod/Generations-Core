@@ -1,0 +1,167 @@
+{
+  "name": "Glameow",
+  "nationalPokedexNumber": 431,
+  "primaryType": "normal",
+  "abilities": [
+    "limber",
+    "owntempo",
+    "h:keeneye"
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 49,
+    "attack": 55,
+    "defence": 42,
+    "special_attack": 42,
+    "special_defence": 37,
+    "speed": 85
+  },
+  "catchRate": 190,
+  "maleRatio": 0.25,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "moves": [
+    "1:fakeout",
+    "5:scratch",
+    "8:growl",
+    "13:hypnosis",
+    "17:feintattack",
+    "20:furyswipes",
+    "25:charm",
+    "29:assist",
+    "32:captivate",
+    "37:slash",
+    "41:suckerpunch",
+    "44:attract",
+    "45:attract",
+    "48:honeclaws",
+    "50:playrough",
+    "egg:assurance",
+    "egg:bite",
+    "egg:faketears",
+    "egg:flail",
+    "egg:lastresort",
+    "egg:quickattack",
+    "egg:sandattack",
+    "egg:snatch",
+    "egg:tailwhip",
+    "egg:wakeupslap",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:captivate",
+    "tm:confide",
+    "tm:cut",
+    "tm:dig",
+    "tm:doubleteam",
+    "tm:dreameater",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:irontail",
+    "tm:naturalgift",
+    "tm:payback",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:round",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:shadowclaw",
+    "tm:shockwave",
+    "tm:sleeptalk",
+    "tm:snatch",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:torment",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:waterpulse",
+    "tm:workup",
+    "tutor:assurance",
+    "tutor:covet",
+    "tutor:fakeout",
+    "tutor:foulplay",
+    "tutor:furycutter",
+    "tutor:headbutt",
+    "tutor:hypervoice",
+    "tutor:irontail",
+    "tutor:knockoff",
+    "tutor:lastresort",
+    "tutor:mudslap",
+    "tutor:secretpower",
+    "tutor:shockwave",
+    "tutor:sleeptalk",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:suckerpunch",
+    "tutor:superfang",
+    "tutor:swift",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.glameow.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "glameow_purugly",
+      "variant": "level_up",
+      "result": "purugly",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 38
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 5,
+  "weight": 39,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

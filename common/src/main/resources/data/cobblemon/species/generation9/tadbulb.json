@@ -1,0 +1,118 @@
+{
+  "name": "Tadbulb",
+  "nationalPokedexNumber": 938,
+  "primaryType": "electric",
+  "abilities": [
+    "owntempo",
+    "static",
+    "h:damp"
+  ],
+  "baseStats": {
+    "hp": 61,
+    "attack": 31,
+    "defence": 41,
+    "special_attack": 59,
+    "special_defence": 35,
+    "speed": 45
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 54,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1"
+  ],
+  "moves": [
+    "1:mudslap",
+    "1:tackle",
+    "7:thundershock",
+    "11:watergun",
+    "17:charge",
+    "21:spark",
+    "24:mudshot",
+    "25:flail",
+    "32:discharge",
+    "36:weatherball",
+    "40:electricterrain",
+    "45:suckerpunch",
+    "50:zapcannon",
+    "egg:muddywater",
+    "egg:paraboliccharge",
+    "egg:soak",
+    "tm:acidspray",
+    "tm:charge",
+    "tm:chargebeam",
+    "tm:chillingwater",
+    "tm:confuseray",
+    "tm:eerieimpulse",
+    "tm:electricterrain",
+    "tm:electroball",
+    "tm:electroweb",
+    "tm:endure",
+    "tm:hypervoice",
+    "tm:lightscreen",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:protect",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:swift",
+    "tm:terablast",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:voltswitch",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tm:wildcharge"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 3,
+  "weight": 4,
+  "evolutions": [
+    {
+      "id": "tadbulb_bellibolt",
+      "variant": "item_interact",
+      "result": "bellibolt",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [],
+      "requiredContext": "cobblemon:thunder_stone"
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.tadbulb.desc"
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:ochre_froglight",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

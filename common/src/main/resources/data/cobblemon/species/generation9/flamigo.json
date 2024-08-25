@@ -1,0 +1,128 @@
+{
+  "name": "Flamigo",
+  "nationalPokedexNumber": 973,
+  "primaryType": "flying",
+  "secondaryType": "fighting",
+  "abilities": [
+    "scrappy",
+    "tangledfeet",
+    "h:costar"
+  ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:payapa_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 82,
+    "attack": 115,
+    "defence": 74,
+    "special_attack": 75,
+    "special_defence": 64,
+    "speed": 90
+  },
+  "catchRate": 100,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 175,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "flying"
+  ],
+  "moves": [
+    "1:copycat",
+    "1:peck",
+    "5:doublekick",
+    "9:detect",
+    "12:wingattack",
+    "15:focusenergy",
+    "18:lowkick",
+    "21:feint",
+    "27:payback",
+    "31:roost",
+    "35:airslash",
+    "39:megakick",
+    "44:wideguard",
+    "48:throatchop",
+    "54:bravebird",
+    "egg:doubleteam",
+    "egg:quickguard",
+    "egg:skyattack",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:bravebird",
+    "tm:bulkup",
+    "tm:chillingwater",
+    "tm:closecombat",
+    "tm:dualwingbeat",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:facade",
+    "tm:featherdance",
+    "tm:fling",
+    "tm:fly",
+    "tm:gigaimpact",
+    "tm:hurricane",
+    "tm:hyperbeam",
+    "tm:liquidation",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:lunge",
+    "tm:pounce",
+    "tm:protect",
+    "tm:psychup",
+    "tm:rest",
+    "tm:reversal",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:swordsdance",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:throatchop",
+    "tm:upperhand",
+    "tm:uturn",
+    "tm:waterpulse"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 16,
+  "weight": 370,
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.flamigo.desc"
+  ],
+  "implemented": true
+}

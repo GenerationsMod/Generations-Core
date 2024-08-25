@@ -1,0 +1,191 @@
+{
+  "name": "Morpeko",
+  "nationalPokedexNumber": 877,
+  "primaryType": "electric",
+  "secondaryType": "dark",
+  "abilities": [
+    "hungerswitch"
+  ],
+  "baseStats": {
+    "hp": 58,
+    "attack": 95,
+    "defence": 58,
+    "special_attack": 70,
+    "special_defence": 58,
+    "speed": 97
+  },
+  "catchRate": 180,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 153,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 10,
+  "eggGroups": [
+    "field",
+    "fairy"
+  ],
+  "moves": [
+    "1:tailwhip",
+    "1:thundershock",
+    "5:leer",
+    "10:powertrip",
+    "15:quickattack",
+    "20:flatter",
+    "25:bite",
+    "30:spark",
+    "35:torment",
+    "40:agility",
+    "45:bulletseed",
+    "50:crunch",
+    "55:aurawheel",
+    "60:thrash",
+    "egg:charge",
+    "egg:fakeout",
+    "egg:partingshot",
+    "egg:quash",
+    "egg:rapidspin",
+    "egg:superfang",
+    "egg:swagger",
+    "egg:tickle",
+    "tm:agility",
+    "tm:assurance",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:brickbreak",
+    "tm:bulletseed",
+    "tm:charge",
+    "tm:chargebeam",
+    "tm:crunch",
+    "tm:darkpulse",
+    "tm:doubleedge",
+    "tm:eerieimpulse",
+    "tm:electricterrain",
+    "tm:electroball",
+    "tm:electroweb",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:facade",
+    "tm:faketears",
+    "tm:firefang",
+    "tm:fling",
+    "tm:foulplay",
+    "tm:icefang",
+    "tm:knockoff",
+    "tm:lashout",
+    "tm:nastyplot",
+    "tm:outrage",
+    "tm:payback",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:rest",
+    "tm:revenge",
+    "tm:reversal",
+    "tm:round",
+    "tm:scaryface",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:spite",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:superfang",
+    "tm:swift",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderfang",
+    "tm:thunderpunch",
+    "tm:thunderwave",
+    "tm:uproar",
+    "tm:voltswitch",
+    "tm:wildcharge",
+    "tutor:lashout",
+    "tutor:risingvoltage"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.morpeko.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 3,
+  "weight": 30,
+  "forms": [
+    {
+      "name": "Hangry",
+      "primaryType": "electric",
+      "secondaryType": "dark",
+      "abilities": [
+        "hungerswitch"
+      ],
+      "baseStats": {
+        "hp": 58,
+        "attack": 95,
+        "defence": 58,
+        "special_attack": 70,
+        "special_defence": 58,
+        "speed": 97
+      },
+      "catchRate": 180,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 153,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
+        "field",
+        "fairy"
+      ],
+      "labels": [
+        "gen8"
+      ],
+      "aspects": [
+        "hangry"
+      ],
+      "height": 3,
+      "weight": 30,
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "implemented": true
+}

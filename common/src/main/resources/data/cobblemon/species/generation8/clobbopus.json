@@ -1,0 +1,132 @@
+{
+  "name": "Clobbopus",
+  "nationalPokedexNumber": 852,
+  "primaryType": "fighting",
+  "abilities": [
+    "limber",
+    "h:technician"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 68,
+    "defence": 60,
+    "special_attack": 50,
+    "special_defence": 50,
+    "speed": 32
+  },
+  "catchRate": 180,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 25,
+  "eggGroups": [
+    "water_1",
+    "human_like"
+  ],
+  "moves": [
+    "1:leer",
+    "1:rocksmash",
+    "5:feint",
+    "10:bind",
+    "15:detect",
+    "20:brickbreak",
+    "25:bulkup",
+    "30:submission",
+    "35:taunt",
+    "40:reversal",
+    "45:superpower",
+    "egg:circlethrow",
+    "egg:painsplit",
+    "egg:poweruppunch",
+    "egg:seismictoss",
+    "egg:soak",
+    "egg:suckerpunch",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:brine",
+    "tm:bulkup",
+    "tm:closecombat",
+    "tm:dive",
+    "tm:endure",
+    "tm:facade",
+    "tm:focusblast",
+    "tm:icepunch",
+    "tm:liquidation",
+    "tm:megapunch",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:payback",
+    "tm:protect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:revenge",
+    "tm:reversal",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:taunt",
+    "tm:waterfall",
+    "tm:workup",
+    "tutor:coaching"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.clobbopus.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "clobbopus_grapploct",
+      "variant": "level_up",
+      "result": "grapploct",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "octolock"
+      ],
+      "requirements": [
+        {
+          "variant": "has_move",
+          "move": "taunt"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 40,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:ink_sac",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:pinap_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

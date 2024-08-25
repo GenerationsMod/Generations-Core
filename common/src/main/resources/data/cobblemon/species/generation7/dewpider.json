@@ -1,0 +1,163 @@
+{
+  "name": "Dewpider",
+  "nationalPokedexNumber": 751,
+  "primaryType": "water",
+  "secondaryType": "bug",
+  "abilities": [
+    "waterbubble",
+    "h:waterabsorb"
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 38,
+    "attack": 40,
+    "defence": 52,
+    "special_attack": 40,
+    "special_defence": 72,
+    "speed": 27
+  },
+  "catchRate": 200,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 54,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "water_1",
+    "bug"
+  ],
+  "moves": [
+    "1:bubble",
+    "1:infestation",
+    "1:watergun",
+    "1:watersport",
+    "4:bugbite",
+    "8:bite",
+    "8:spiderweb",
+    "12:bubblebeam",
+    "16:aquaring",
+    "20:headbutt",
+    "24:crunch",
+    "28:soak",
+    "32:entrainment",
+    "36:lunge",
+    "40:liquidation",
+    "44:leechlife",
+    "48:mirrorcoat",
+    "egg:aurorabeam",
+    "egg:powersplit",
+    "egg:spitup",
+    "egg:stickyweb",
+    "egg:stockpile",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:bugbite",
+    "tm:bugbuzz",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:crunch",
+    "tm:doubleteam",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:facade",
+    "tm:frostbreath",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:infestation",
+    "tm:irondefense",
+    "tm:leechlife",
+    "tm:liquidation",
+    "tm:lunge",
+    "tm:magicroom",
+    "tm:poisonjab",
+    "tm:pounce",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scald",
+    "tm:skittersmack",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:wonderroom",
+    "tm:xscissor",
+    "tutor:bugbite",
+    "tutor:gigadrain",
+    "tutor:icywind",
+    "tutor:irondefense",
+    "tutor:liquidation",
+    "tutor:magiccoat",
+    "tutor:magicroom",
+    "tutor:signalbeam",
+    "tutor:skittersmack",
+    "tutor:snore",
+    "tutor:waterpulse",
+    "tutor:wonderroom"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.dewpider.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "dewpider_araquanid",
+      "variant": "level_up",
+      "result": "araquanid",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 22
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 3,
+  "weight": 40,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

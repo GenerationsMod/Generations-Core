@@ -1,0 +1,120 @@
+{
+  "name": "Flutter Mane",
+  "nationalPokedexNumber": 987,
+  "primaryType": "ghost",
+  "secondaryType": "fairy",
+  "abilities": [
+    "protosynthesis"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 55,
+    "defence": 55,
+    "special_attack": 135,
+    "special_defence": 135,
+    "speed": 135
+  },
+  "catchRate": 30,
+  "maleRatio": -1,
+  "baseExperienceYield": 285,
+  "baseFriendship": 0,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 1,
+    "speed": 1
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 50,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "moves": [
+    "1:astonish",
+    "1:confuseray",
+    "1:spite",
+    "1:sunnyday",
+    "7:psybeam",
+    "14:meanlook",
+    "21:memento",
+    "28:wish",
+    "35:dazzlinggleam",
+    "42:shadowball",
+    "49:mysticalfire",
+    "56:powergem",
+    "63:psyshock",
+    "70:phantomforce",
+    "77:painsplit",
+    "84:moonblast",
+    "91:perishsong",
+    "tm:calmmind",
+    "tm:chargebeam",
+    "tm:charm",
+    "tm:confuseray",
+    "tm:darkpulse",
+    "tm:dazzlinggleam",
+    "tm:disarmingvoice",
+    "tm:drainingkiss",
+    "tm:endure",
+    "tm:energyball",
+    "tm:faketears",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:hex",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:icywind",
+    "tm:imprison",
+    "tm:magicalleaf",
+    "tm:mistyterrain",
+    "tm:nightshade",
+    "tm:painsplit",
+    "tm:phantomforce",
+    "tm:poltergeist",
+    "tm:powergem",
+    "tm:protect",
+    "tm:psybeam",
+    "tm:psyshock",
+    "tm:rest",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:spite",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swift",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:trickroom"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
+  "height": 14,
+  "weight": 40,
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.fluttermane.desc"
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:phantom_membrane",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:fairy_feather"
+      }
+    ]
+  },
+  "implemented": true
+}

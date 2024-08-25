@@ -1,0 +1,195 @@
+{
+  "name": "Vullaby",
+  "nationalPokedexNumber": 629,
+  "primaryType": "dark",
+  "secondaryType": "flying",
+  "abilities": [
+    "bigpecks",
+    "overcoat",
+    "h:weakarmor"
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:bluk_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 70,
+    "attack": 55,
+    "defence": 75,
+    "special_attack": 45,
+    "special_defence": 65,
+    "speed": 60
+  },
+  "catchRate": 190,
+  "maleRatio": 0,
+  "shoulderMountable": false,
+  "baseExperienceYield": 74,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "flying"
+  ],
+  "moves": [
+    "1:gust",
+    "1:leer",
+    "5:furyattack",
+    "6:flatter",
+    "12:pluck",
+    "18:tailwind",
+    "23:feintattack",
+    "24:knockoff",
+    "28:punishment",
+    "30:irondefense",
+    "36:whirlwind",
+    "42:airslash",
+    "48:darkpulse",
+    "50:embargo",
+    "54:nastyplot",
+    "60:defog",
+    "64:mirrormove",
+    "66:attract",
+    "72:bravebird",
+    "egg:faketears",
+    "egg:foulplay",
+    "egg:knockoff",
+    "egg:meanlook",
+    "egg:roost",
+    "egg:scaryface",
+    "egg:steelwing",
+    "egg:toxic",
+    "tm:aerialace",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bravebird",
+    "tm:confide",
+    "tm:cut",
+    "tm:darkpulse",
+    "tm:doubleedge",
+    "tm:doubleteam",
+    "tm:dualwingbeat",
+    "tm:embargo",
+    "tm:endure",
+    "tm:facade",
+    "tm:faketears",
+    "tm:featherdance",
+    "tm:fly",
+    "tm:foulplay",
+    "tm:frustration",
+    "tm:heatwave",
+    "tm:hiddenpower",
+    "tm:incinerate",
+    "tm:irondefense",
+    "tm:knockoff",
+    "tm:lashout",
+    "tm:nastyplot",
+    "tm:payback",
+    "tm:pluck",
+    "tm:protect",
+    "tm:psychup",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:roost",
+    "tm:round",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:spite",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:throatchop",
+    "tm:torment",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:uturn",
+    "tutor:block",
+    "tutor:darkpulse",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:foulplay",
+    "tutor:heatwave",
+    "tutor:irondefense",
+    "tutor:knockoff",
+    "tutor:lashout",
+    "tutor:roost",
+    "tutor:sleeptalk",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:tailwind"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.vullaby.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "vullaby_mandibuzz",
+      "variant": "level_up",
+      "result": "mandibuzz",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "bonerush"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 54
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 35,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 90,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

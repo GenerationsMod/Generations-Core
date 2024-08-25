@@ -1,0 +1,199 @@
+{
+  "name": "Terapagos",
+  "nationalPokedexNumber": 1024,
+  "primaryType": "normal",
+  "abilities": [
+    "terashift"
+  ],
+  "baseStats": {
+    "hp": 90,
+    "attack": 65,
+    "defence": 85,
+    "special_attack": 65,
+    "special_defence": 85,
+    "speed": 60
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 0,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 5,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "moves": [
+    "1:rapidspin",
+    "1:triattack",
+    "1:withdraw",
+    "10:ancientpower",
+    "20:headbutt",
+    "30:protect",
+    "40:earthpower",
+    "50:heavyslam",
+    "60:terastarstorm",
+    "70:doubleedge",
+    "80:rockpolish",
+    "90:gyroball",
+    "tm:aurasphere",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bugbuzz",
+    "tm:calmmind",
+    "tm:crunch",
+    "tm:darkpulse",
+    "tm:dazzlinggleam",
+    "tm:doubleedge",
+    "tm:dragonpulse",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:flashcannon",
+    "tm:gigaimpact",
+    "tm:gravity",
+    "tm:gyroball",
+    "tm:heatcrash",
+    "tm:heavyslam",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icespinner",
+    "tm:ironhead",
+    "tm:meteorbeam",
+    "tm:powergem",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:roar",
+    "tm:rockslide",
+    "tm:scorchingsands",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:stealthrock",
+    "tm:stoneedge",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:supercellslam",
+    "tm:surf",
+    "tm:takedown",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:toxic",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tm:wildcharge",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9",
+    "legendary"
+  ],
+  "aspects": [],
+  "height": 2,
+  "weight": 65,
+  "evolutions": [],
+  "cannotDynamax": false,
+  "forms": [
+    {
+      "name": "Terastal",
+      "primaryType": "normal",
+      "abilities": [
+        "terashell"
+      ],
+      "baseStats": {
+        "hp": 95,
+        "attack": 95,
+        "defence": 110,
+        "special_attack": 105,
+        "special_defence": 110,
+        "speed": 85
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 0,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 2,
+        "special_attack": 0,
+        "special_defence": 2,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 5,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen9",
+        "legendary"
+      ],
+      "aspects": [
+        "terastal"
+      ],
+      "height": 3,
+      "weight": 160,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    },
+    {
+      "name": "Stellar",
+      "primaryType": "normal",
+      "abilities": [
+        "teraformzero"
+      ],
+      "baseStats": {
+        "hp": 160,
+        "attack": 105,
+        "defence": 110,
+        "special_attack": 130,
+        "special_defence": 110,
+        "speed": 85
+      },
+      "catchRate": 255,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 0,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 5,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen9",
+        "legendary"
+      ],
+      "aspects": [
+        "stellar"
+      ],
+      "height": 17,
+      "weight": 770,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": true
+    }
+  ],
+  "implemented": true
+}

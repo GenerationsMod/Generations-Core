@@ -1,0 +1,134 @@
+{
+  "name": "Pawmo",
+  "nationalPokedexNumber": 922,
+  "primaryType": "electric",
+  "secondaryType": "fighting",
+  "abilities": [
+    "voltabsorb",
+    "naturalcure",
+    "h:ironfist"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 75,
+    "defence": 40,
+    "special_attack": 50,
+    "special_defence": 40,
+    "speed": 85
+  },
+  "catchRate": 80,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 123,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "moves": [
+    "1:growl",
+    "1:scratch",
+    "1:armthrust",
+    "3:thundershock",
+    "6:quickattack",
+    "8:charge",
+    "12:nuzzle",
+    "15:dig",
+    "19:bite",
+    "23:spark",
+    "27:thunderwave",
+    "32:slam",
+    "38:entrainment",
+    "42:discharge",
+    "46:agility",
+    "52:wildcharge",
+    "tm:agility",
+    "tm:batonpass",
+    "tm:charge",
+    "tm:chargebeam",
+    "tm:charm",
+    "tm:coaching",
+    "tm:crunch",
+    "tm:dig",
+    "tm:eerieimpulse",
+    "tm:electricterrain",
+    "tm:electroball",
+    "tm:electroweb",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:focuspunch",
+    "tm:helpinghand",
+    "tm:knockoff",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:metalclaw",
+    "tm:playrough",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superfang",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderfang",
+    "tm:thunderpunch",
+    "tm:thunderwave",
+    "tm:upperhand",
+    "tm:voltswitch",
+    "tm:wildcharge"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 4,
+  "weight": 65,
+  "preEvolution": "pawmi",
+  "evolutions": [
+    {
+      "id": "pawmo_pawmot",
+      "variant": "level_up",
+      "result": "pawmot",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "revivalblessing"
+      ],
+      "requirements": [
+        {
+          "variant": "blocks_traveled",
+          "amount": 1000
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.pawmo.desc"
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "implemented": true
+}

@@ -1,0 +1,201 @@
+{
+  "name": "Snorunt",
+  "nationalPokedexNumber": 361,
+  "primaryType": "ice",
+  "abilities": [
+    "innerfocus",
+    "icebody",
+    "h:moody"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 50,
+    "defence": 50,
+    "special_attack": 50,
+    "special_defence": 50,
+    "speed": 50
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 60,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "fairy",
+    "mineral"
+  ],
+  "moves": [
+    "1:astonish",
+    "1:headbutt",
+    "1:powdersnow",
+    "5:leer",
+    "10:doubleteam",
+    "15:iceshard",
+    "20:protect",
+    "25:icywind",
+    "30:frostbreath",
+    "34:icebeam",
+    "35:bite",
+    "40:icefang",
+    "45:hail",
+    "45:snowscape",
+    "50:weatherball",
+    "55:crunch",
+    "60:blizzard",
+    "egg:avalanche",
+    "egg:bide",
+    "egg:block",
+    "egg:disable",
+    "egg:faketears",
+    "egg:hex",
+    "egg:iciclecrash",
+    "egg:rollout",
+    "egg:spikes",
+    "egg:switcheroo",
+    "egg:weatherball",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:captivate",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:crunch",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:facade",
+    "tm:faketears",
+    "tm:flash",
+    "tm:frostbreath",
+    "tm:frustration",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hex",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:icespinner",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:snowscape",
+    "tm:spikes",
+    "tm:spite",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tutor:bite",
+    "tutor:block",
+    "tutor:bodyslam",
+    "tutor:doubleedge",
+    "tutor:endure",
+    "tutor:headbutt",
+    "tutor:icywind",
+    "tutor:mimic",
+    "tutor:powdersnow",
+    "tutor:rollout",
+    "tutor:sing",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:waterpulse",
+    "tutor:weatherball"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.snorunt.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "snorunt_glalie",
+      "variant": "level_up",
+      "result": "glalie",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "freezedry"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 42
+        }
+      ]
+    },
+    {
+      "id": "snorunt_froslass",
+      "variant": "item_interact",
+      "result": "froslass",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "properties",
+          "target": "gender=female"
+        }
+      ],
+      "requiredContext": "cobblemon:dawn_stone"
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 7,
+  "weight": 168,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:snowball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:dawn_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}
