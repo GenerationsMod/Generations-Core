@@ -1,0 +1,116 @@
+{
+  "name": "Frigibax",
+  "nationalPokedexNumber": 996,
+  "primaryType": "dragon",
+  "secondaryType": "ice",
+  "abilities": [
+    "thermalexchange",
+    "h:icebody"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 75,
+    "defence": 45,
+    "special_attack": 35,
+    "special_defence": 45,
+    "speed": 55
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 64,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 40,
+  "eggGroups": [
+    "dragon",
+    "mineral"
+  ],
+  "moves": [
+    "1:dragontail",
+    "1:leer",
+    "1:tackle",
+    "6:icywind",
+    "12:dragonbreath",
+    "18:focusenergy",
+    "24:bite",
+    "29:icefang",
+    "32:dragonclaw",
+    "36:takedown",
+    "40:icebeam",
+    "44:crunch",
+    "48:iciclecrash",
+    "egg:aquatail",
+    "egg:dragonrush",
+    "egg:freezedry",
+    "egg:iciclespear",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:crunch",
+    "tm:dig",
+    "tm:dracometeor",
+    "tm:dragonclaw",
+    "tm:dragonpulse",
+    "tm:dragontail",
+    "tm:endure",
+    "tm:facade",
+    "tm:helpinghand",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:outrage",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:sleeptalk",
+    "tm:snowscape",
+    "tm:substitute",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:terablast"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 5,
+  "weight": 170,
+  "evolutions": [
+    {
+      "id": "frigibax_arctibax",
+      "variant": "level_up",
+      "result": "arctibax",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.frigibax.desc"
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

@@ -1,0 +1,154 @@
+{
+  "name": "Foongus",
+  "nationalPokedexNumber": 590,
+  "primaryType": "grass",
+  "secondaryType": "poison",
+  "abilities": [
+    "effectspore",
+    "h:regenerator"
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:red_mushroom",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 69,
+    "attack": 55,
+    "defence": 45,
+    "special_attack": 55,
+    "special_defence": 55,
+    "speed": 15
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 59,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass"
+  ],
+  "moves": [
+    "1:absorb",
+    "1:astonish",
+    "4:growth",
+    "8:stunspore",
+    "12:bide",
+    "12:megadrain",
+    "16:synthesis",
+    "20:clearsmog",
+    "20:feintattack",
+    "24:sweetscent",
+    "28:gigadrain",
+    "32:ingrain",
+    "36:toxic",
+    "40:ragepowder",
+    "44:solarbeam",
+    "48:spore",
+    "egg:bodyslam",
+    "egg:defensecurl",
+    "egg:endure",
+    "egg:gastroacid",
+    "egg:growth",
+    "egg:poisonpowder",
+    "egg:rollout",
+    "egg:stunspore",
+    "egg:worryseed",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bulletseed",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:foulplay",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyterrain",
+    "tm:hiddenpower",
+    "tm:leafstorm",
+    "tm:magicalleaf",
+    "tm:naturepower",
+    "tm:payback",
+    "tm:pollenpuff",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:venoshock",
+    "tutor:afteryou",
+    "tutor:foulplay",
+    "tutor:gastroacid",
+    "tutor:gigadrain",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.foongus.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "foongus_amoonguss",
+      "variant": "level_up",
+      "result": "amoonguss",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 39
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 2,
+  "weight": 10,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

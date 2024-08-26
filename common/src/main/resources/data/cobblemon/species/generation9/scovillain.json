@@ -1,0 +1,120 @@
+{
+  "name": "Scovillain",
+  "nationalPokedexNumber": 952,
+  "primaryType": "grass",
+  "secondaryType": "fire",
+  "abilities": [
+    "chlorophyll",
+    "insomnia",
+    "h:moody"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 108,
+    "defence": 65,
+    "special_attack": 108,
+    "special_defence": 65,
+    "speed": 75
+  },
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 170,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass"
+  ],
+  "moves": [
+    "1:firefang",
+    "1:leafage",
+    "1:leer",
+    "1:spicyextract",
+    "1:flamethrower",
+    "4:bite",
+    "10:growth",
+    "13:razorleaf",
+    "17:sunnyday",
+    "21:bulletseed",
+    "24:headbutt",
+    "28:zenheadbutt",
+    "33:worryseed",
+    "38:crunch",
+    "44:seedbomb",
+    "48:overheat",
+    "48:solarbeam",
+    "tm:bulletseed",
+    "tm:burningjealousy",
+    "tm:crunch",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:flamethrower",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:grassyglide",
+    "tm:grassyterrain",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:lashout",
+    "tm:leafstorm",
+    "tm:magicalleaf",
+    "tm:overheat",
+    "tm:protect",
+    "tm:rest",
+    "tm:sandstorm",
+    "tm:scaryface",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superfang",
+    "tm:takedown",
+    "tm:temperflare",
+    "tm:terablast",
+    "tm:thief",
+    "tm:trailblaze",
+    "tm:willowisp",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 9,
+  "weight": 150,
+  "preEvolution": "capsakid",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.scovillain.desc"
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:roasted_leek",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "implemented": true
+}

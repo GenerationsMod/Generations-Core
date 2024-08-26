@@ -1,0 +1,158 @@
+{
+  "name": "Swanna",
+  "nationalPokedexNumber": 581,
+  "primaryType": "water",
+  "secondaryType": "flying",
+  "abilities": [
+    "keeneye",
+    "bigpecks",
+    "h:hydration"
+  ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:sharp_beak",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:wacan_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 75,
+    "attack": 87,
+    "defence": 63,
+    "special_attack": 87,
+    "special_defence": 63,
+    "speed": 98
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 166,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "flying"
+  ],
+  "moves": [
+    "1:defog",
+    "1:watergun",
+    "1:watersport",
+    "1:wingattack",
+    "13:waterpulse",
+    "15:aerialace",
+    "19:bubblebeam",
+    "21:featherdance",
+    "24:aquaring",
+    "27:airslash",
+    "30:roost",
+    "34:raindance",
+    "40:tailwind",
+    "47:bravebird",
+    "55:hurricane",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:alluringvoice",
+    "tm:attract",
+    "tm:bravebird",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:disarmingvoice",
+    "tm:dive",
+    "tm:doubleedge",
+    "tm:doubleteam",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:facade",
+    "tm:featherdance",
+    "tm:flipturn",
+    "tm:fly",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hurricane",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icywind",
+    "tm:knockoff",
+    "tm:liquidation",
+    "tm:pluck",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:steelwing",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:swift",
+    "tm:tailwind",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tm:whirlpool",
+    "tutor:defog",
+    "tutor:endeavor",
+    "tutor:icywind",
+    "tutor:liquidation",
+    "tutor:roost",
+    "tutor:skyattack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:tailwind",
+    "tutor:uproar",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.swanna.desc"
+  ],
+  "preEvolution": "ducklett",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 13,
+  "weight": 242,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

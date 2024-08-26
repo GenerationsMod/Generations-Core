@@ -1,0 +1,114 @@
+{
+  "name": "Dondozo",
+  "nationalPokedexNumber": 977,
+  "primaryType": "water",
+  "abilities": [
+    "unaware",
+    "oblivious",
+    "h:waterveil"
+  ],
+  "baseStats": {
+    "hp": 150,
+    "attack": 100,
+    "defence": 115,
+    "special_attack": 65,
+    "special_defence": 65,
+    "speed": 35
+  },
+  "catchRate": 25,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 265,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 3,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 40,
+  "eggGroups": [
+    "water_2"
+  ],
+  "moves": [
+    "1:supersonic",
+    "1:tackle",
+    "1:watergun",
+    "5:tickle",
+    "10:flail",
+    "15:rest",
+    "15:sleeptalk",
+    "20:dive",
+    "25:nobleroar",
+    "30:soak",
+    "35:bodyslam",
+    "40:aquatail",
+    "45:raindance",
+    "50:orderup",
+    "55:heavyslam",
+    "60:doubleedge",
+    "65:wavecrash",
+    "egg:curse",
+    "egg:fissure",
+    "egg:thrash",
+    "egg:yawn",
+    "tm:avalanche",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:chillingwater",
+    "tm:crunch",
+    "tm:curse",
+    "tm:doubleedge",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:facade",
+    "tm:gigaimpact",
+    "tm:heavyslam",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icefang",
+    "tm:liquidation",
+    "tm:outrage",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:rockslide",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:surf",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 120,
+  "weight": 2200,
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.dondozo.desc"
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:salmon"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "implemented": true
+}

@@ -1,0 +1,88 @@
+{
+  "name": "Blipbug",
+  "nationalPokedexNumber": 824,
+  "primaryType": "bug",
+  "abilities": [
+    "swarm",
+    "compoundeyes",
+    "h:telepathy"
+  ],
+  "baseStats": {
+    "hp": 25,
+    "attack": 20,
+    "defence": 20,
+    "special_attack": 25,
+    "special_defence": 45,
+    "speed": 45
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 36,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "moves": [
+    "1:strugglebug",
+    "egg:infestation",
+    "egg:recover",
+    "egg:stickyweb",
+    "egg:supersonic"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.blipbug.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "blipbug_dottler",
+      "variant": "level_up",
+      "result": "dottler",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "confusion",
+        "lightscreen",
+        "reflect"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 10
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 80,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

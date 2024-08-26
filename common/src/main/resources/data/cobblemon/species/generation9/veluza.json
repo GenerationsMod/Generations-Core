@@ -1,0 +1,113 @@
+{
+  "name": "Veluza",
+  "nationalPokedexNumber": 976,
+  "primaryType": "water",
+  "secondaryType": "psychic",
+  "abilities": [
+    "moldbreaker",
+    "h:sharpness"
+  ],
+  "baseStats": {
+    "hp": 90,
+    "attack": 102,
+    "defence": 73,
+    "special_attack": 78,
+    "special_defence": 65,
+    "speed": 70
+  },
+  "catchRate": 100,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 167,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_2"
+  ],
+  "moves": [
+    "1:aquajet",
+    "1:tackle",
+    "7:pluck",
+    "11:waterpulse",
+    "15:focusenergy",
+    "20:slash",
+    "25:aquacutter",
+    "30:filletaway",
+    "35:nightslash",
+    "40:psychocut",
+    "45:liquidation",
+    "50:crunch",
+    "55:finalgambit",
+    "egg:recover",
+    "egg:thrash",
+    "tm:agility",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:chillingwater",
+    "tm:crunch",
+    "tm:doubleedge",
+    "tm:drillrun",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:expandingforce",
+    "tm:flipturn",
+    "tm:gigaimpact",
+    "tm:hydropump",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icefang",
+    "tm:icywind",
+    "tm:liquidation",
+    "tm:painsplit",
+    "tm:protect",
+    "tm:psychic",
+    "tm:psychicfangs",
+    "tm:psychicterrain",
+    "tm:raindance",
+    "tm:rest",
+    "tm:scaleshot",
+    "tm:sleeptalk",
+    "tm:snowscape",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:surf",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 25,
+  "weight": 900,
+  "evolutions": [],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.veluza.desc"
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "minecraft:bone_meal",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "implemented": true
+}

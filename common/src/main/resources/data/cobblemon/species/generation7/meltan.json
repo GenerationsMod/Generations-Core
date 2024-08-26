@@ -1,0 +1,91 @@
+{
+  "name": "Meltan",
+  "nationalPokedexNumber": 808,
+  "primaryType": "steel",
+  "abilities": [
+    "magnetpull"
+  ],
+  "baseStats": {
+    "hp": 46,
+    "attack": 65,
+    "defence": 65,
+    "special_attack": 55,
+    "special_defence": 35,
+    "speed": 34
+  },
+  "catchRate": 3,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 150,
+  "experienceGroup": "slow",
+  "eggCycles": 120,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "moves": [
+    "1:harden",
+    "1:thundershock",
+    "8:tailwhip",
+    "16:headbutt",
+    "24:thunderwave",
+    "32:acidarmor",
+    "40:flashcannon",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:gyroball",
+    "tm:headbutt",
+    "tm:irondefense",
+    "tm:protect",
+    "tm:rest",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tutor:acidarmor",
+    "tutor:flashcannon",
+    "tutor:harden",
+    "tutor:headbutt",
+    "tutor:protect",
+    "tutor:rest",
+    "tutor:steelbeam",
+    "tutor:substitute",
+    "tutor:tailwhip",
+    "tutor:thunderbolt",
+    "tutor:thundershock",
+    "tutor:thunderwave",
+    "tutor:toxic"
+  ],
+  "labels": [
+    "gen7",
+    "mythical",
+    "legendary"
+  ],
+  "pokedex": [
+    "cobblemon.species.meltan.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 0,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 2,
+  "weight": 80,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

@@ -1,0 +1,142 @@
+{
+  "name": "Amoonguss",
+  "nationalPokedexNumber": 591,
+  "primaryType": "grass",
+  "secondaryType": "poison",
+  "abilities": [
+    "effectspore",
+    "h:regenerator"
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:red_mushroom",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 114,
+    "attack": 85,
+    "defence": 70,
+    "special_attack": 85,
+    "special_defence": 80,
+    "speed": 30
+  },
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 162,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass"
+  ],
+  "moves": [
+    "1:absorb",
+    "1:astonish",
+    "1:bide",
+    "1:growth",
+    "1:stunspore",
+    "12:megadrain",
+    "16:synthesis",
+    "20:clearsmog",
+    "20:feintattack",
+    "24:sweetscent",
+    "28:gigadrain",
+    "32:ingrain",
+    "36:toxic",
+    "42:ragepowder",
+    "48:solarbeam",
+    "54:spore",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bulletseed",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:foulplay",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:grassyterrain",
+    "tm:hex",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:leafstorm",
+    "tm:magicalleaf",
+    "tm:naturepower",
+    "tm:payback",
+    "tm:pollenpuff",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:venoshock",
+    "tutor:afteryou",
+    "tutor:clearsmog",
+    "tutor:foulplay",
+    "tutor:gastroacid",
+    "tutor:gigadrain",
+    "tutor:protect",
+    "tutor:ragepowder",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spore",
+    "tutor:stompingtantrum",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.amoonguss.desc"
+  ],
+  "preEvolution": "foongus",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 6,
+  "weight": 105,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}
