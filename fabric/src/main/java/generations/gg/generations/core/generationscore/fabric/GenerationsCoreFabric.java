@@ -10,7 +10,6 @@ import generations.gg.generations.core.generationscore.fabric.world.item.creativ
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;

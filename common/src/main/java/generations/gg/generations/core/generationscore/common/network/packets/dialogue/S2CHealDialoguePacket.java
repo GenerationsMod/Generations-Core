@@ -2,14 +2,6 @@ package generations.gg.generations.core.generationscore.common.network.packets.d
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.screen.dialgoue.display.DialogueScreen;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.client.screen.dialgoue.display.DialogueScreen;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.client.screen.dialgoue.display.DialogueScreen;
-import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import net.minecraft.client.Minecraft;
@@ -41,7 +33,7 @@ public record S2CHealDialoguePacket(List<String> text, boolean useNextArrow) imp
     public static class Handler implements ClientNetworkPacketHandler<S2CHealDialoguePacket> {
         public static final Handler INSTANCE = new Handler();
 
-        public void handle(S2CHealDialoguePacket packet) {
+        public void handle(S2CHealDialoguePacket packet, Minecraft minecraft) {
             if (Minecraft.getInstance().screen instanceof DialogueScreen dialogueScreen)
                 dialogueScreen.activeInfo = new DialogueScreen.SayActiveInfo(packet.text, packet.useNextArrow);
         }

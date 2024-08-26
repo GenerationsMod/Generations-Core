@@ -27,7 +27,7 @@ public record S2COpenMailPacket(InteractionHand hand) implements GenerationsNetw
 
     public static class Handler implements ClientNetworkPacketHandler<S2COpenMailPacket> {
         public static final Handler INSTANCE = new Handler();
-        public void handle(S2COpenMailPacket packet) {
+        public void handle(S2COpenMailPacket packet, Minecraft minecraft) {
             var itemStack = Minecraft.getInstance().player.getItemInHand(packet.hand());
             if (itemStack.is(GenerationsItemTags.CLOSED_POKEMAIL)) Minecraft.getInstance().setScreen(
                     new MailViewScreen(

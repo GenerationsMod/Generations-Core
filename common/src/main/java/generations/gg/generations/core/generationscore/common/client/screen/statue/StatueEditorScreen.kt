@@ -12,12 +12,12 @@ import com.mojang.blaze3d.platform.Lighting
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.client.entity.StatueClientDelegate
 import generations.gg.generations.core.generationscore.common.client.screen.ScreenUtils
 import generations.gg.generations.core.generationscore.common.client.screen.widget.AngleSelectionWidget
 import generations.gg.generations.core.generationscore.common.client.screen.widget.ImageCheckbox
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork
-import generations.gg.generations.core.generationscore.common.network.packets.statue.C2SUpdateStatueInfoPacket
-import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity
+import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatuePacket
+import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.AbstractWidget
@@ -49,21 +49,21 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
     private var poseTextField: EditBox? = null
 
     init {
-        parserString = statue.statueData.properties.asString(" ")
+        parserString = statue.properties.asString()
     }
 
     override fun init() {
         height = 191
         x = width / 2 - 96
         y = height / 2 - 92
-        val info = statue.statueData
+
         parserTextField = addRenderableWidget(
             ScreenUtils.createTextField(
                 x + 7, y + 7, 125, 14, 500,
                 parserString
             ) { s: String -> parserString = s })
         updateButton = addRenderableWidget(Button.builder(Component.literal("Update")) { button: Button? ->
-            statue.statueData.properties = parse(parserString, " ", "=")
+            statue.properties = parse(parserString, " ", "=")
         }
             .size(51, 16).pos(x + 135, y + 6).build())
         nameTextField = addRenderableWidget(
@@ -73,8 +73,12 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                 126,
                 14,
                 50,
-                info.label,
-                { a: String? -> true }) { s: String? -> statue.statueData.label = s })
+                statue.label ?: "",
+                { true }) { s: String? -> run {
+                    statue.label = s
+                    UpdateStatuePacket.Label(statue.id, s).sendToServer()
+                }
+            })
         poseTextField = addRenderableWidget(
             ScreenUtils.createTextField(
                 x + 59,
@@ -82,8 +86,16 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                 126,
                 14,
                 50,
-                info.poseType.toString(),
-                { a: String? -> true }) { s: String? -> statue.statueData.setPosType(s) })
+                statue.poseType.toString(),
+                { true }, fun(s: String?) {
+                    this.run {
+                        val poseType = s?.uppercase()?.takeIf { PoseType.entries.map { it.name }.any { a -> it == a } }?.let { PoseType.valueOf(it) }?.run {
+                            statue.poseType = this
+                            UpdateStatuePacket.PoseType(statue.id, this).sendToServer()
+                        }
+                    }
+                })
+        )
         timestampTextField = addRenderableWidget(
             ScreenUtils.createTextField(
                 x + 59,
@@ -91,25 +103,23 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                 76,
                 14,
                 25,
-                info.frame.toString(),
+                "${statue.staticAge + statue.staticPartial}",
                 { s: String ->
-                    if (s.isEmpty()) {
-                        return@createTextField true
-                    }
+                    if (s.isEmpty()) return@createTextField true
                     try {
-                        if (parseFloat(s) >= 0) {
-                            return@createTextField true
-                        }
-                    } catch (ignored: Exception) {
-                    }
+                        if (parseFloat(s) >= 0) return@createTextField true
+                    } catch (ignored: Exception) {}
                     false
                 }) { s: String ->
                 val value: Float = if (s.isEmpty()) 0f else parseFloat(s)
-                statue.statueData.setProgress(value)
-                updateStatueData()
+                statue.staticAge = value.floor().toInt()
+                statue.staticPartial = value % 1F
+
+                UpdateStatuePacket.StaticAge(statue.id, statue.staticAge).sendToServer()
+                UpdateStatuePacket.StaticPartial(statue.id, statue.staticPartial).sendToServer()
             })
         scaleTextField = addRenderableWidget(
-            ScreenUtils.createTextField(x + 59, y + 146, 36, 14, 5, info.scale.toString(),
+            ScreenUtils.createTextField(x + 59, y + 146, 36, 14, 5, statue.scale.toString(),
                 { s: String ->
                     if (s.isEmpty()) {
                         return@createTextField true
@@ -123,21 +133,20 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                     false
                 }
             ) { s: String ->
-                val scale = parseFloat(s)
+                var scale = parseFloat(s)
                 if (scale <= 0) {
-                    statue.statueData.scale = 1.0f
-                    updateStatueData()
-                } else {
-                    statue.statueData.scale = scale
-                    updateStatueData()
+                    scale = 1.0f
                 }
+
+                statue.scale = scale
+                UpdateStatuePacket.Scale(statue.id, scale).sendToServer()
             })
 
         materialTextField = addRenderableWidget(
-            ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, info?.material() ?: "", { true }) {
+            ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, statue.material ?: "", { true }) {
                 it.takeIf { it.isNotEmpty() }.run {
-                    statue.statueData.setMaterial(it)
-                    updateStatueData()
+                    statue.material = it
+                    UpdateStatuePacket.Material(statue.id, it)
                 }
             }
         )
@@ -146,35 +155,35 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
             ImageCheckbox(
                 x + 170, y + 127, 16, 16, TEXTURE, 0, 166,
                 {
-                    statue.statueData.setIsStatic(true)
-                    updateStatueData()
+                    statue.staticToggle = true
+                    UpdateStatuePacket.StaticToggle(statue.id, true).sendToServer()
                 },
                 {
-                    statue.statueData.setIsStatic(false)
-                    updateStatueData()
+                    statue.staticToggle = false
+                    UpdateStatuePacket.StaticToggle(statue.id, false).sendToServer()
                 },
-                info.isStatic
+                statue.staticToggle
             )
         )
         interactableCheckbox = addRenderableWidget(
             ImageCheckbox(
                 x + 170, y + 145, 16, 16, TEXTURE, 0, 166,
                 {
-                    statue.statueData.isSacredAshInteractable = true
-                    updateStatueData()
+                    statue.interactable = true
+                    UpdateStatuePacket.Interactable(statue.id, true).sendToServer()
                 },
                 {
-                    statue.statueData.isSacredAshInteractable = false
-                    updateStatueData()
+                    statue.interactable = false
+                    UpdateStatuePacket.Interactable(statue.id, false).sendToServer()
                 },
-                info.isSacredAshInteractable
+                statue.interactable
             )
         )
         orientationWidget = addRenderableWidget(AngleSelectionWidget(
-            x + 43, y + 47, 15, statue.statueData.orientation, 5, 0x000000
+            x + 43, y + 47, 15, statue.yRot, 5, 0x000000
         ) { _: Float, angle: Float ->
-            statue.statueData.orientation = Math.floor(angle)
-            updateStatueData()
+            statue.yRot = Math.floor(angle)
+            UpdateStatuePacket.Orientation(statue.id, statue.yRot).sendToServer()
         })
         modelWidget = addRenderableWidget(
             ModelWidget(
@@ -182,19 +191,10 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                 y + 25,
                 63,
                 63,
-                info.properties.asRenderablePokemon(),
+                statue.properties.asRenderablePokemon(),
                 1.9090909f,
                 -325f,
                 -9.545454
-            )
-        )
-    }
-
-    private fun updateStatueData() {
-        GenerationsCore.implementation.networkManager.sendPacketToServer(
-            C2SUpdateStatueInfoPacket(
-                statue.id,
-                statue.statueData
             )
         )
     }
@@ -206,8 +206,8 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
         poseStack.fill(122, 25, 122 + 63, 25 + 63, -0x1000000)
         poseStack.enableScissor(x + 122, y + 25, x + 122 + 63, y + 25 + 63)
         poseStack.pose().translate((63 / 2f).toDouble(), 63 - 5.0, 0.0)
-        statue.delegate.setPose(statue.statueData.poseType.toString())
-        var data = statue.statueData.asRenderablePokemon()
+        (statue.delegate as StatueClientDelegate).setPose(statue.poseType.toString())
+        var data = statue.renderablePokemon()
 
         var aspects = data.aspects
 
@@ -229,84 +229,18 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
         poseStack.blit(STATUE, 0, 0, 0f, 0f, 256, 191, 256, 256)
         poseStack.pose().popPose()
         super.render(poseStack, mouseX, mouseY, partialTick)
-        ScreenUtils.drawText(
-            poseStack,
-            "Static:",
-            (x + 168).toFloat(),
-            (y + 131).toFloat(),
-            0x5F5F60,
-            ScreenUtils.Position.RIGHT
-        )
-        ScreenUtils.drawText(
-            poseStack,
-            "Interactable:",
-            (x + 168).toFloat(),
-            (y + 149).toFloat(),
-            0x5F5F60,
-            ScreenUtils.Position.RIGHT
-        )
-        ScreenUtils.drawText(
-            poseStack,
-            "Name:",
-            (x + 56).toFloat(),
-            (y + 95).toFloat(),
-            0x5F5F60,
-            ScreenUtils.Position.RIGHT
-        )
-        ScreenUtils.drawText(
-            poseStack,
-            "Animation",
-            (x + 56).toFloat(),
-            (y + 113).toFloat(),
-            0x5F5F60,
-            ScreenUtils.Position.RIGHT
-        )
-        ScreenUtils.drawText(
-            poseStack,
-            "Timestamp:",
-            (x + 56).toFloat(),
-            (y + 131).toFloat(),
-            0x5F5F60,
-            ScreenUtils.Position.RIGHT
-        )
-        ScreenUtils.drawText(
-            poseStack,
-            "Scale:",
-            (x + 56).toFloat(),
-            (y + 149).toFloat(),
-            0x5F5F60,
-            ScreenUtils.Position.RIGHT
-        )
-        ScreenUtils.drawText(
-            poseStack,
-            "Material:",
-            (x + 56).toFloat(),
-            (y + 167).toFloat(),
-            0x5F5F60,
-            ScreenUtils.Position.RIGHT
-        )
+        ScreenUtils.drawText(poseStack, "Static:", (x + 168).toFloat(), (y + 131).toFloat(), 0x5F5F60, ScreenUtils.Position.RIGHT)
+        ScreenUtils.drawText(poseStack, "Interactable:", (x + 168).toFloat(), (y + 149).toFloat(), 0x5F5F60, ScreenUtils.Position.RIGHT)
+        ScreenUtils.drawText(poseStack, "Name:", (x + 56).toFloat(), (y + 95).toFloat(), 0x5F5F60, ScreenUtils.Position.RIGHT)
+        ScreenUtils.drawText(poseStack, "Animation", (x + 56).toFloat(), (y + 113).toFloat(), 0x5F5F60, ScreenUtils.Position.RIGHT)
+        ScreenUtils.drawText(poseStack, "Timestamp:", (x + 56).toFloat(), (y + 131).toFloat(), 0x5F5F60, ScreenUtils.Position.RIGHT)
+        ScreenUtils.drawText(poseStack, "Scale:", (x + 56).toFloat(), (y + 149).toFloat(), 0x5F5F60, ScreenUtils.Position.RIGHT)
+        ScreenUtils.drawText(poseStack, "Material:", (x + 56).toFloat(), (y + 167).toFloat(), 0x5F5F60, ScreenUtils.Position.RIGHT)
         poseStack.drawString(font, "N", x + 56, y + 36, 0x000000, false)
         poseStack.drawString(font, "E", x + 78, y + 59, 0x000000, false)
         poseStack.drawString(font, "W", x + 34, y + 59, 0x000000, false)
         poseStack.drawString(font, "S", x + 56, y + 82, 0x000000, false)
-        poseStack.drawString(
-            font,
-            "Orientation: " + String.format("%.2f", statue.statueData.orientation),
-            x + 11,
-            y + 24,
-            0x5F5F60,
-            false
-        )
-    }
-
-    override fun onClose() {
-        GenerationsNetwork.INSTANCE.sendToServer(
-            C2SUpdateStatueInfoPacket(
-                statue.id,
-                statue.statueData
-            )
-        )
-        super.onClose()
+        poseStack.drawString(font, "Orientation: " + String.format("%.2f", statue.yRot), x + 11, y + 24, 0x5F5F60, false)
     }
 
     override fun isPauseScreen(): Boolean {
@@ -317,10 +251,10 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
         private val TEXTURE = GenerationsCore.id("textures/gui/npc/customization.png")
         private val STATUE = GenerationsCore.id("textures/gui/statue/statue_gui.png")
         @Throws(NumberFormatException::class)
-        fun parseFloat(s: String): Float {
-            var s = s
+        fun parseFloat(value: String): Float {
+            var s = value
             if (s.endsWith(".")) {
-                s = s + "0"
+                s += "0"
             }
             return if (s.isEmpty()) 1.0f else s.toFloat()
         }
@@ -393,3 +327,5 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
         Lighting.setupFor3DItems()
     }
 }
+
+fun Float.floor(): Float = Math.floor(this)

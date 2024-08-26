@@ -3,10 +3,6 @@ package generations.gg.generations.core.generationscore.common.mixin.client;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance;
-import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance;
-import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,11 +23,6 @@ public abstract class PokemonEntityMixin implements CobblemonInstanceProvider {
 
     private PokemonEntity self() {
         return (PokemonEntity) (Object) this;
-    }
-
-    @Override
-    public void setInstance(CobblemonInstance instance) {
-        this.instance = instance;
     }
 
     @Override
