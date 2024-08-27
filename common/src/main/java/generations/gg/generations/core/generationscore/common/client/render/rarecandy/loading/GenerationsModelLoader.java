@@ -24,10 +24,10 @@ public class GenerationsModelLoader extends ModelLoader {
     public MultiRenderObject<MeshObject> compiledModelMethod(CompiledModel model, InputStream stream, Supplier<MeshObject> supplier, String name, boolean requiresVariantTexture) {
         return createObject(
                 () -> new PixelAsset(stream, name),
-                (gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, object) -> {
+                (gltfModel, animResources, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
                     try {
-                        ModelLoader.create2(object, gltfModel, smdFileMap, pkxFileMap, gfFileMap, textures, config, glCalls, supplier);
+                        ModelLoader.create2(object, gltfModel, animResources, textures, config, glCalls, supplier);
                     } catch (Exception e) {
                         System.out.println("Oh no! Model : " + name + " didn't properly load!");
                         e.printStackTrace();

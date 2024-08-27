@@ -13,6 +13,7 @@ import com.cobblemon.mod.common.util.getBooleanOrNull
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
+import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import gg.generations.rarecandy.renderer.animation.Animation
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import net.minecraft.resources.ResourceLocation
@@ -102,8 +103,7 @@ object RareCandyAnimationFactory {
             }
 
 
-            val instance =
-                if (entity != null) (entity as CobblemonInstanceProvider).instance else model.context.request(
+            val instance = if (entity != null) (entity as CobblemonInstanceProvider).instance else model.context.request(
                     RenderContext.ENTITY
                 )?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance
                     ?: instanceProvider.get()
@@ -158,6 +158,8 @@ object RareCandyAnimationFactory {
 
             if (instance != null && animation != null) {
                 instance.setAnimation(animation)
+
+                if(model.context.request(RenderContext.ENTITY) is StatueEntity) System.out.println("Rawr Rawr: ${state?.animationSeconds}")
 
                 instance.matrixTransforms = animation.getFrameTransform((state?.animationSeconds?.toDouble() ?: 0.0).toDouble())
 

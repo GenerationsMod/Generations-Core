@@ -36,7 +36,6 @@ public class GenerationsDataProvider implements DataProvider {
     private final Map<UUID, List<@NotNull Function0<Unit>>> scheduledActions = new HashMap<>();
 
     public void registerDefaults() {
-//        this.register(Dialogues.instance());
 //        this.register(Shops.instance());
 //        this.register(ShopPresets.instance());
 //        this.register(NpcPresets.instance());

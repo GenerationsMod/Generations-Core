@@ -20,7 +20,6 @@ dependencies {
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
     modCompileOnly(fileTree(mapOf("dir" to "libs", "include" to "*.jar")))
 
-    implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-api:${project.properties["rei"]}")
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin:${project.properties["rei"]}")
 

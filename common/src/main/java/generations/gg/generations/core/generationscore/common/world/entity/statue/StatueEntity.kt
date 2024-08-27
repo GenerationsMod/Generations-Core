@@ -44,7 +44,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         val MATERIAL = SynchedEntityData.defineId(StatueEntity::class.java, GenerationsCoreEntityDataSerializers.NULLABLE_STRING)
     }
 
-    var savesToWorld = false
+    var savesToWorld = true
 
     override val schedulingTracker = SchedulingTracker()
 

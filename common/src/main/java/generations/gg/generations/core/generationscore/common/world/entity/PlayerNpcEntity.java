@@ -1,21 +1,17 @@
 package generations.gg.generations.core.generationscore.common.world.entity;
 
 import com.cobblemon.mod.common.CobblemonEntities;
+import com.cobblemon.mod.common.api.dialogue.DialogueManager;
+import com.cobblemon.mod.common.api.dialogue.Dialogues;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.common.collect.ImmutableMap;
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialoguePlayer;
-import generations.gg.generations.core.generationscore.common.world.entity.ai.goal.PatrolPathGoal;
-import generations.gg.generations.core.generationscore.common.world.entity.ai.goal.RandomWanderAroundPosGoal;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import generations.gg.generations.core.generationscore.common.network.packets.npc.S2COpenNpcCustomizationScreenPacket;
 import generations.gg.generations.core.generationscore.common.network.packets.shop.C2SShopItemPacket;
 import generations.gg.generations.core.generationscore.common.util.NpcUtils;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialoguePlayer;
 import generations.gg.generations.core.generationscore.common.world.entity.ai.goal.PatrolPathGoal;
 import generations.gg.generations.core.generationscore.common.world.entity.ai.goal.RandomWanderAroundPosGoal;
 import generations.gg.generations.core.generationscore.common.world.item.NpcWandItem;
@@ -25,11 +21,6 @@ import generations.gg.generations.core.generationscore.common.world.npc.display.
 import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
 import generations.gg.generations.core.generationscore.common.world.npc.display.RotationInfo;
 import generations.gg.generations.core.generationscore.common.world.shop.Offers;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialoguePlayer;
-import generations.gg.generations.core.generationscore.common.world.entity.ai.goal.PatrolPathGoal;
-import generations.gg.generations.core.generationscore.common.world.entity.ai.goal.RandomWanderAroundPosGoal;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -91,7 +82,7 @@ public class PlayerNpcEntity extends PathfinderMob implements ShopOfferProvider 
                 GenerationsNetwork.INSTANCE.sendPacketToPlayer(serverPlayer, new S2COpenNpcCustomizationScreenPacket(this.getId()));
             }
             else if (this.dialogue != null) {
-                new DialoguePlayer(this.dialogue, this, serverPlayer, false);
+                DialogueManager.INSTANCE.startDialogue(serverPlayer, Dialogues.INSTANCE.getDialogues().get(dialogue));
             }
         }
 

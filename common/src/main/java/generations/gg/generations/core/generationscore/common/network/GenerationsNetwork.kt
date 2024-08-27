@@ -1,12 +1,10 @@
 package generations.gg.generations.core.generationscore.common.network
 
 import com.cobblemon.mod.common.util.server
-import dev.architectury.platform.Platform
-import dev.architectury.utils.Env
+import dev.architectury.utils.EnvExecutor
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation
 import generations.gg.generations.core.generationscore.common.network.packets.*
-import generations.gg.generations.core.generationscore.common.network.packets.dialogue.*
 import generations.gg.generations.core.generationscore.common.network.packets.npc.*
 import generations.gg.generations.core.generationscore.common.network.packets.shop.*
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenHandler
@@ -15,7 +13,6 @@ import generations.gg.generations.core.generationscore.common.network.packets.st
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatuePacket
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnExtraDataEntityHandler
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
-import generations.gg.generations.core.generationscore.common.world.dialogue.network.DialogueGraphRegistrySyncPacket
 import generations.gg.generations.core.generationscore.common.world.shop.ShopPresetRegistrySyncPacket
 import generations.gg.generations.core.generationscore.common.world.shop.ShopRegistrySyncPacket
 import net.minecraft.network.FriendlyByteBuf
@@ -27,8 +24,14 @@ import net.minecraft.world.entity.Entity
 import java.util.function.BiConsumer
 import java.util.function.Consumer
 import java.util.function.Function
+import java.util.function.Supplier
+import kotlin.reflect.KClass
 
 object GenerationsNetwork : GenerationsImplementation.NetworkManager {
+    private var clientProxy: PacketProxy = EnvExecutor.getEnvSpecific(
+        { Supplier { ClientPacketProxy() } },
+        { Supplier { PacketProxy() } })
+
     fun sendToServer(packet: GenerationsNetworkPacket<*>?) {
         sendPacketToServer(packet)
     }
@@ -42,94 +45,67 @@ object GenerationsNetwork : GenerationsImplementation.NetworkManager {
     }
 
     override fun registerClientBound() {
-        this.createClientBound(S2COpenMailEditScreenPacket.ID, S2COpenMailEditScreenPacket::class.java, S2COpenMailEditScreenPacket::decode) { ::S2COpenMailEditScreenPacketHandler }
-        this.createClientBound(S2COpenMailPacket.ID, S2COpenMailPacket::class.java, S2COpenMailPacket::decode) { S2COpenMailPacket::Handler }
-        this.createClientBound(S2CChooseDialoguePacket.ID, S2CChooseDialoguePacket::class.java, S2CChooseDialoguePacket::decode) { ::S2CChooseDialogueHandler }
-        this.createClientBound(S2CHealDialoguePacket.ID, S2CHealDialoguePacket::class.java, S2CHealDialoguePacket::decode) { S2CHealDialoguePacket::Handler }
-        this.createClientBound(S2COpenDialogueEditorScreenPacket.ID, S2COpenDialogueEditorScreenPacket::class.java, S2COpenDialogueEditorScreenPacket::decode) { ::S2COpenDialogueEditorScreenHandler }
-        this.createClientBound(S2COpenDialogueMenuPacket.ID, S2COpenDialogueMenuPacket::class.java, S2COpenDialogueMenuPacket::decode) { ::S2COpenDialogueMenuHandler }
-        this.createClientBound(S2CSayDialoguePacket.ID, S2CSayDialoguePacket::class.java, S2CSayDialoguePacket::decode) { ::S2CSayDialogueHandler }
-        this.createClientBound(S2CCloseScreenPacket.ID, S2CCloseScreenPacket::class.java, S2CCloseScreenPacket::decode) { ::S2CCloseScreenHandler }
-        this.createClientBound(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket::class.java, S2CUnlockReloadPacket::decode) { ::UnlockReloadPacketHandler }
-        this.createClientBound(S2COpenStatueEditorScreenPacket.ID, S2COpenStatueEditorScreenPacket::class.java, S2COpenStatueEditorScreenPacket::decode) { ::S2COpenStatueEditorScreenHandler }
-        //        this.createClientBound(S2CUpdateStatueInfoPacket.ID, S2CUpdateStatueInfoPacket.class, S2CUpdateStatueInfoPacket::decode, () -> S2CUpdateStatueInfoHandler::new);
-        this.createClientBound(DialogueGraphRegistrySyncPacket.ID, DialogueGraphRegistrySyncPacket::class.java, DialogueGraphRegistrySyncPacket::decode) { { DataRegistrySyncPacketHandler() } }
-        this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket::class.java, ShopRegistrySyncPacket::decode) { { DataRegistrySyncPacketHandler() } }
-        this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket::class.java, ShopPresetRegistrySyncPacket::decode) { { DataRegistrySyncPacketHandler() } }
-        this.createClientBound(NpcPresetsRegistrySyncPacket.ID, NpcPresetsRegistrySyncPacket::class.java, NpcPresetsRegistrySyncPacket::decode) { { DataRegistrySyncPacketHandler() } }
-        this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket::class.java, S2COpenShopPacket::decode) { ::S2COpenShopHandler }
-        this.createClientBound(S2CSyncPlayerMoneyPacket.ID, S2CSyncPlayerMoneyPacket::class.java, ::S2CSyncPlayerMoneyPacket) { ::S2CSyncPlayerMoneyHandler }
-        this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, S2COpenNpcCustomizationScreenPacket::class.java, ::S2COpenNpcCustomizationScreenPacket) { ::S2COpenNpcCustomizationScreenHandler }
-        this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, S2CUpdateNpcDisplayDataPacket::class.java, ::S2CUpdateNpcDisplayDataPacket) { ::S2CUpdateNpcDisplayDataHandler }
-        this.createClientBound(SpawnStatuePacket.ID, SpawnStatuePacket::class.java, SpawnStatuePacket::decode) { ::SpawnExtraDataEntityHandler }
+        this.createClientBound(S2COpenMailEditScreenPacket.ID, S2COpenMailEditScreenPacket::decode, clientProxy.processS2COpenMailEditScreenPacket)
+        this.createClientBound(S2COpenMailPacket.ID, S2COpenMailPacket::decode, clientProxy.processS2COpenMailPacket)
+        this.createClientBound(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket::decode, clientProxy.processS2CUnlockReloadPacket)
+        this.createClientBound(S2COpenStatueEditorScreenPacket.ID, S2COpenStatueEditorScreenPacket::decode, clientProxy.processS2COpenStatueEditorScreenPacket)
+        this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket::decode, clientProxy.processShopRegistrySyncPacket)
+        this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket::decode, clientProxy.processShopPresetRegistrySyncPacket)
+        this.createClientBound(NpcPresetsRegistrySyncPacket.ID, NpcPresetsRegistrySyncPacket::decode, clientProxy.processNpcPresetsRegistrySyncPacket)
+        this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket::decode, clientProxy.processS2COpenShopPacket)
+        this.createClientBound(S2CSyncPlayerMoneyPacket.ID, ::S2CSyncPlayerMoneyPacket, clientProxy.processS2CSyncPlayerMoneyPacket)
+        this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, ::S2COpenNpcCustomizationScreenPacket, clientProxy.processS2COpenNpcCustomizationScreenPacket)
+        this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, ::S2CUpdateNpcDisplayDataPacket, clientProxy.processS2CUpdateNpcDisplayDataPacket)
+        this.createClientBound(SpawnStatuePacket.ID, SpawnStatuePacket::decode, clientProxy.processSpawnStatuePacket)
     }
 
     override fun registerServerBound() {
-        this.createServerBound(C2STogglePacket.ID, C2STogglePacket::class.java, C2STogglePacket::decode, C2SToggleHandler())
-        this.createServerBound(C2SEditMailPacket.ID, C2SEditMailPacket::class.java, C2SEditMailPacket::decode, C2SEditMailHandler())
-        this.createServerBound(C2SCloseDialoguePacket.ID, C2SCloseDialoguePacket::class.java, C2SCloseDialoguePacket::decode, C2SCloseDialogueHandler())
-        this.createServerBound(C2SRequestNodesDialoguePacket.ID, C2SRequestNodesDialoguePacket::class.java, C2SRequestNodesDialoguePacket::decode, C2SRequestNodesDialogueHandler())
-        this.createServerBound(C2SRespondDialoguePacket.ID, C2SRespondDialoguePacket::class.java, C2SRespondDialoguePacket::decode, C2SRespondDialogueHandler())
-        this.createServerBound(C2SSaveDatapackEntryPacket.ID, C2SSaveDatapackEntryPacket::class.java, C2SSaveDatapackEntryPacket::decode, C2SSaveDatapackEntryHandler())
-        this.createServerBound(C2SCloseShopPacket.ID, C2SCloseShopPacket::class.java, ::C2SCloseShopPacket, C2SCloseShopHandler())
-        this.createServerBound(C2SShopItemPacket.ID, C2SShopItemPacket::class.java, C2SShopItemPacket::decode, C2SShopItemHandler())
-        this.createServerBound(C2SUpdateNpcDialoguePacket.ID, C2SUpdateNpcDialoguePacket::class.java, ::C2SUpdateNpcDialoguePacket, C2SUpdateNpcDialogueHandler())
-        this.createServerBound(C2SUpdateNpcDisplayDataPacket.ID, C2SUpdateNpcDisplayDataPacket::class.java, ::C2SUpdateNpcDisplayDataPacket, C2SUpdateNpcDisplayDataHandler())
-        this.createServerBound(C2SUpdateNpcShopPacket.ID, C2SUpdateNpcShopPacket::class.java, ::C2SUpdateNpcShopPacket, C2SUpdateNpcShopHandler())
-        this.createServerBound(C2SSetNpcPresetPacket.ID, C2SSetNpcPresetPacket::class.java, ::C2SSetNpcPresetPacket, C2SSetNpcPresetHandler())
-        this.createServerBound(HeadPatPacket.ID, HeadPatPacket::class.java, ::HeadPatPacket, HeadPatPacketHandler())
+        this.createServerBound(C2STogglePacket.ID, C2STogglePacket::decode, C2SToggleHandler())
+        this.createServerBound(C2SEditMailPacket.ID, C2SEditMailPacket::decode, C2SEditMailHandler())
+        this.createServerBound(C2SShopItemPacket.ID, C2SShopItemPacket::decode, C2SShopItemHandler())
+        this.createServerBound(C2SUpdateNpcDisplayDataPacket.ID, ::C2SUpdateNpcDisplayDataPacket, C2SUpdateNpcDisplayDataHandler())
+        this.createServerBound(C2SUpdateNpcShopPacket.ID, ::C2SUpdateNpcShopPacket, C2SUpdateNpcShopHandler())
+        this.createServerBound(C2SSetNpcPresetPacket.ID, ::C2SSetNpcPresetPacket, C2SSetNpcPresetHandler())
+        this.createServerBound(HeadPatPacket.ID, ::HeadPatPacket, HeadPatPacketHandler())
 
         createServerStatueUpdate()
     }
 
     private fun createServerStatueUpdate() {
-        this.createServerBound(UpdateStatuePacket.PROPERTIES_ID, UpdateStatuePacket.Properties::class.java, UpdateStatuePacket.Companion::propertiesDecode, UpdateStatueHandler.Properties)
-        this.createServerBound(UpdateStatuePacket.LABEL_ID, UpdateStatuePacket.Label::class.java, UpdateStatuePacket.Companion::labelDecode, UpdateStatueHandler.Label)
-        this.createServerBound(UpdateStatuePacket.SCALE_ID, UpdateStatuePacket.Scale::class.java, UpdateStatuePacket.Companion::scaleDecode, UpdateStatueHandler.Scale)
-        this.createServerBound(UpdateStatuePacket.POSE_TYPE_ID, UpdateStatuePacket.PoseType::class.java, UpdateStatuePacket.Companion::poseTypeDecode, UpdateStatueHandler.PoseType)
-        this.createServerBound(UpdateStatuePacket.STATIC_TOGGLE_ID, UpdateStatuePacket.StaticToggle::class.java, UpdateStatuePacket.Companion::staticToggleDecode, UpdateStatueHandler.StaticToggle)
-        this.createServerBound(UpdateStatuePacket.STATIC_PARTIAL_ID, UpdateStatuePacket.StaticPartial::class.java, UpdateStatuePacket.Companion::staticPartialDecode, UpdateStatueHandler.StaticPartial)
-        this.createServerBound(UpdateStatuePacket.STATIC_AGE_ID, UpdateStatuePacket.StaticAge::class.java, UpdateStatuePacket.Companion::staticAgeDecode, UpdateStatueHandler.StaticAge)
-        this.createServerBound(UpdateStatuePacket.INTERACTABLE_ID, UpdateStatuePacket.Interactable::class.java, UpdateStatuePacket.Companion::interactableDecode, UpdateStatueHandler.Interactable)
-        this.createServerBound(UpdateStatuePacket.MATERIAL_ID, UpdateStatuePacket.Material::class.java, UpdateStatuePacket.Companion::materialDecode, UpdateStatueHandler.Material)
-        this.createServerBound(UpdateStatuePacket.ORIENTATION_ID, UpdateStatuePacket.Orientation::class.java, UpdateStatuePacket.Companion::orientationDecode, UpdateStatueHandler.Orientation)
+        this.createServerBound(UpdateStatuePacket.PROPERTIES_ID, UpdateStatuePacket.Companion::propertiesDecode, UpdateStatueHandler.Properties)
+        this.createServerBound(UpdateStatuePacket.LABEL_ID, UpdateStatuePacket.Companion::labelDecode, UpdateStatueHandler.Label)
+        this.createServerBound(UpdateStatuePacket.SCALE_ID, UpdateStatuePacket.Companion::scaleDecode, UpdateStatueHandler.Scale)
+        this.createServerBound(UpdateStatuePacket.POSE_TYPE_ID, UpdateStatuePacket.Companion::poseTypeDecode, UpdateStatueHandler.PoseType)
+        this.createServerBound(UpdateStatuePacket.STATIC_TOGGLE_ID, UpdateStatuePacket.Companion::staticToggleDecode, UpdateStatueHandler.StaticToggle)
+        this.createServerBound(UpdateStatuePacket.STATIC_PARTIAL_ID, UpdateStatuePacket.Companion::staticPartialDecode, UpdateStatueHandler.StaticPartial)
+        this.createServerBound(UpdateStatuePacket.STATIC_AGE_ID, UpdateStatuePacket.Companion::staticAgeDecode, UpdateStatueHandler.StaticAge)
+        this.createServerBound(UpdateStatuePacket.INTERACTABLE_ID, UpdateStatuePacket.Companion::interactableDecode, UpdateStatueHandler.Interactable)
+        this.createServerBound(UpdateStatuePacket.MATERIAL_ID, UpdateStatuePacket.Companion::materialDecode, UpdateStatueHandler.Material)
+        this.createServerBound(UpdateStatuePacket.ORIENTATION_ID, UpdateStatuePacket.Companion::orientationDecode, UpdateStatueHandler.Orientation)
     }
 
-    private fun <T : GenerationsNetworkPacket<T>> createClientBound(
-        identifier: ResourceLocation,
-        kClass: Class<T>,
-        decoder: (FriendlyByteBuf) -> T,
-        handler: () -> () -> ClientNetworkPacketHandler<T>) {
-        createClientBound(
-            identifier,
-            kClass,
-            { obj: T, buffer: FriendlyByteBuf -> obj.encode(buffer) },
-            decoder,
-            if (Platform.getEnvironment() == Env.CLIENT) handler.invoke().invoke() else ClientNetworkPacketHandler { _, _ -> })
+
+    private inline fun <reified T : GenerationsNetworkPacket<T>> createClientBound(identifier: ResourceLocation, noinline decoder: (FriendlyByteBuf) -> T, handler: Consumer<T>) {
+        GenerationsCore.implementation.networkManager.createClientBound(identifier, T::class, { message, buffer -> message.encode(buffer) }, decoder, handler)
     }
 
-    private fun <T : GenerationsNetworkPacket<T>> createServerBound(
-        identifier: ResourceLocation,
-        kClass: Class<T>,
-        decoder: (FriendlyByteBuf) -> T,
-        handler: ServerNetworkPacketHandler<T>
-    ) {
-        createServerBound(identifier, kClass, { obj: T, buffer: FriendlyByteBuf -> obj.encode(buffer) }, decoder, handler)
+    private inline fun <reified T : GenerationsNetworkPacket<T>> createServerBound(identifier: ResourceLocation, noinline decoder: (FriendlyByteBuf) -> T, handler: ServerNetworkPacketHandler<T>) {
+        GenerationsCore.implementation.networkManager.createServerBound(identifier, T::class, { message, buffer -> message.encode(buffer) }, decoder, handler)
     }
 
     override fun <T : GenerationsNetworkPacket<T>> createClientBound(
         identifier: ResourceLocation,
-        kClass: Class<T>,
+        kClass: KClass<T>,
         encoder: BiConsumer<T, FriendlyByteBuf>,
         decoder: Function<FriendlyByteBuf, T>,
-        handler: ClientNetworkPacketHandler<T>
+        handler: Consumer<T>
     ) {
         GenerationsCore.implementation.networkManager.createClientBound(identifier, kClass, encoder, decoder, handler)
     }
 
-    override fun <T : GenerationsNetworkPacket<T>?> createServerBound(
+    override fun <T : GenerationsNetworkPacket<T>> createServerBound(
         identifier: ResourceLocation,
-        kClass: Class<T>,
+        kClass: KClass<T>,
         encoder: BiConsumer<T, FriendlyByteBuf>,
         decoder: Function<FriendlyByteBuf, T>,
         handler: ServerNetworkPacketHandler<T>

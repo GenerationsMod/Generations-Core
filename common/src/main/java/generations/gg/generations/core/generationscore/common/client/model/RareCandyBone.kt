@@ -98,8 +98,11 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         if (model?.renderObject == null) return
 
         var instance = context.request(Pipelines.INSTANCE)
-        if (instance == null && context.request<Entity>(RenderContext.Companion.ENTITY) is CobblemonInstanceProvider) {
-            instance = (context.request<Entity>(RenderContext.Companion.ENTITY) as CobblemonInstanceProvider).instance
+        if (instance == null) {
+            val entity = context.request<Entity>(RenderContext.Companion.ENTITY);
+            if (entity is CobblemonInstanceProvider) {
+                instance = entity.instance
+            }
         }
         val isStatue = instance is StatueInstance
         val scale = model.renderObject!!.scale // / context.requires(RenderContext.SCALE)

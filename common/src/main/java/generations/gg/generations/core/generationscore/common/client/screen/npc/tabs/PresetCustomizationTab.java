@@ -1,19 +1,13 @@
 package generations.gg.generations.core.generationscore.common.client.screen.npc.tabs;
 
 import com.mojang.serialization.JsonOps;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.DropdownWidget;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.screen.ScreenUtils;
 import generations.gg.generations.core.generationscore.common.client.screen.widget.DropdownWidget;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.DropdownWidget;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
-import generations.gg.generations.core.generationscore.common.network.packets.dialogue.C2SSaveDatapackEntryPacket;
 import generations.gg.generations.core.generationscore.common.network.packets.npc.C2SSetNpcPresetPacket;
 import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
 import generations.gg.generations.core.generationscore.common.world.npc.NpcPreset;
 import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
@@ -141,7 +135,7 @@ public class PresetCustomizationTab extends CustomizationTab {
         }
         this.errorTick = 0;
         ((EditBox)this.nameTextField).setValue("");
-        GenerationsNetwork.INSTANCE.sendToServer(new C2SSaveDatapackEntryPacket(GenerationsCore.id("npc_presets/"+this.newPresetName+".json"), data));
+//        GenerationsNetwork.INSTANCE.sendToServer(new C2SSaveDatapackEntryPacket(GenerationsCore.id("npc_presets/"+this.newPresetName+".json"), data));
     }
 
     private void warnCouldntSave(String s) {

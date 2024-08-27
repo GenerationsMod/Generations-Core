@@ -66,6 +66,9 @@ class StatueClientDelegate : StatueSideDelegate, PoseableEntityState<PokemonEnti
         val previousAge = this.activeAge
         updateAge(trueAge + 1)
         runEffects(entity, previousAge, this.activeAge)
+
+        age = this.activeAge
+
         val primaryAnimation = primaryAnimation ?: return
         if (primaryAnimation.started + primaryAnimation.duration <= animationSeconds) {
             this.primaryAnimation = null
