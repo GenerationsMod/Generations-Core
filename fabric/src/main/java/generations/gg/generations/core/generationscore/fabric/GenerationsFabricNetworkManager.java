@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsImpleme
 import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
+import kotlin.reflect.KClass;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
@@ -35,12 +36,12 @@ public class GenerationsFabricNetworkManager implements GenerationsImplementatio
     }
 
     @Override
-    public <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, Class<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, Consumer<T> handler) {
+    public <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, KClass<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, Consumer<T> handler) {
         EnvExecutor.runInEnv(EnvType.CLIENT, () -> () -> ClientPlayNetworking.registerGlobalReceiver(identifier, this.createClientBoundHandler(decoder, handler)));
     }
 
     @Override
-    public <T extends GenerationsNetworkPacket<T>> void createServerBound(ResourceLocation identifier, Class<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, ServerNetworkPacketHandler<T> handler) {
+    public <T extends GenerationsNetworkPacket<T>> void createServerBound(ResourceLocation identifier, KClass<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, ServerNetworkPacketHandler<T> handler) {
         ServerPlayNetworking.registerGlobalReceiver(identifier, this.createServerBoundHandler(decoder, handler::handleOnNettyThread));
     }
 
