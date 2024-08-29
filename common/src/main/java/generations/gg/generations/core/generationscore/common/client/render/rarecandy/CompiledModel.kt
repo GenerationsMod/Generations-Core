@@ -4,6 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.GenerationsModelLoader
+import generations.gg.generations.core.generationscore.common.util.TaskQueue
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import gg.generations.rarecandy.renderer.components.MeshObject
 import gg.generations.rarecandy.renderer.components.MultiRenderObject
@@ -35,9 +36,9 @@ class CompiledModel {
     ) {
         this.name = name
 
-        RenderSystem.recordRenderCall {
+        queue.addTask {
             renderObject = loader.compiledModelMethod(this, stream?.open(), supplier, name.toString(), requiresVariantTexture)
-        };
+        }
     }
 
     constructor() {
@@ -78,7 +79,7 @@ class CompiledModel {
                 2
             )
 
-//        val queue = TaskQueue()
+        val queue = TaskQueue()
 
         @JvmStatic
         fun init() {}
