@@ -1,31 +1,39 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_pokemon",
   "consumesTimeCapsules": true,
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "minecraft:netherite_chestplate"
+      "type": "item",
+      "key": "minecraft:netherite_chestplate"
     },
     "B": {
-      "item": "minecraft:netherite_leggings"
+      "type": "item",
+      "key": "minecraft:netherite_leggings"
     },
     "C": {
-      "item": "minecraft:netherite_boots"
+      "type": "item",
+      "key": "minecraft:netherite_boots"
     },
     "D": {
-      "item": "minecraft:netherite_axe"
+      "type": "item",
+      "key": "minecraft:netherite_axe"
     },
     "E": {
-      "item": "minecraft:netherite_helmet"
+      "type": "item",
+      "key": "minecraft:netherite_helmet"
     },
     "F": {
-      "item": "minecraft:totem_of_undying"
+      "type": "item",
+      "key": "minecraft:totem_of_undying"
     },
     "G": {
-      "item": "generations_core:bug_memory_drive"
+      "type": "item",
+      "key": "generations_core:bug_memory_drive"
     },
     "Z": {
-      "item": "minecraft:netherite_block"
+      "type": "item",
+      "key": "minecraft:netherite_block"
     }
   },
   "pattern": [
@@ -35,8 +43,7 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "generations_core:pokemon",
     "species": "cobblemon:typenull"
   },
-  "speciesKey": "cobblemon:typenull[]"
+  "speciesKey": "cobblemon:typenull"
 }

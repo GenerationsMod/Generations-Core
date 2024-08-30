@@ -1,0 +1,211 @@
+{
+  "name": "Inkay",
+  "nationalPokedexNumber": 686,
+  "primaryType": "dark",
+  "secondaryType": "psychic",
+  "abilities": [
+    "contrary",
+    "suctioncups",
+    "h:infiltrator"
+  ],
+  "baseStats": {
+    "hp": 53,
+    "attack": 54,
+    "defence": 53,
+    "special_attack": 37,
+    "special_defence": 46,
+    "speed": 45
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 58,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "water_2"
+  ],
+  "moves": [
+    "1:constrict",
+    "1:peck",
+    "1:tackle",
+    "3:hypnosis",
+    "4:reflect",
+    "6:wrap",
+    "9:payback",
+    "12:pluck",
+    "13:psywave",
+    "15:psybeam",
+    "18:swagger",
+    "21:slash",
+    "24:nightslash",
+    "27:psychocut",
+    "31:lightscreen",
+    "31:switcheroo",
+    "33:foulplay",
+    "36:topsyturvy",
+    "39:superpower",
+    "egg:acupressure",
+    "egg:camouflage",
+    "egg:destinybond",
+    "egg:disable",
+    "egg:flatter",
+    "egg:guardswap",
+    "egg:powersplit",
+    "egg:simplebeam",
+    "tm:aerialace",
+    "tm:allyswitch",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:calmmind",
+    "tm:confide",
+    "tm:cut",
+    "tm:darkpulse",
+    "tm:doubleteam",
+    "tm:embargo",
+    "tm:endure",
+    "tm:expandingforce",
+    "tm:facade",
+    "tm:faketears",
+    "tm:flamethrower",
+    "tm:flash",
+    "tm:fling",
+    "tm:foulplay",
+    "tm:frustration",
+    "tm:futuresight",
+    "tm:gravity",
+    "tm:guardswap",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:knockoff",
+    "tm:lashout",
+    "tm:lightscreen",
+    "tm:liquidation",
+    "tm:lunge",
+    "tm:nastyplot",
+    "tm:payback",
+    "tm:protect",
+    "tm:psybeam",
+    "tm:psychic",
+    "tm:psychocut",
+    "tm:psychup",
+    "tm:psyshock",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:rockslide",
+    "tm:round",
+    "tm:secretpower",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:spite",
+    "tm:storedpower",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superpower",
+    "tm:swagger",
+    "tm:swift",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderbolt",
+    "tm:torment",
+    "tm:toxic",
+    "tm:trick",
+    "tm:trickroom",
+    "tutor:allyswitch",
+    "tutor:bind",
+    "tutor:expandingforce",
+    "tutor:foulplay",
+    "tutor:happyhour",
+    "tutor:hypnosis",
+    "tutor:knockoff",
+    "tutor:lashout",
+    "tutor:roleplay",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:superpower",
+    "tutor:telekinesis",
+    "tutor:topsyturvy"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "pokedex": [
+    "cobblemon.species.inkay.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "inkay_malamar_dinnerbone",
+      "variant": "level_up",
+      "result": "malamar",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        },
+        {
+          "variant": "properties",
+          "target": "nickname=Dinnerbone"
+        }
+      ]
+    },
+    {
+      "id": "inkay_malamar_grumm",
+      "variant": "level_up",
+      "result": "malamar",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        },
+        {
+          "variant": "properties",
+          "target": "nickname=Grumm"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 35,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:ink_sac",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

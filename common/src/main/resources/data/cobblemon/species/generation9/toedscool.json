@@ -1,0 +1,141 @@
+{
+  "name": "Toedscool",
+  "nationalPokedexNumber": 948,
+  "primaryType": "ground",
+  "secondaryType": "grass",
+  "abilities": [
+    "myceliummight"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 40,
+    "defence": 35,
+    "special_attack": 50,
+    "special_defence": 100,
+    "speed": 70
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 67,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass"
+  ],
+  "moves": [
+    "1:mudslap",
+    "1:wrap",
+    "4:absorb",
+    "8:poisonpowder",
+    "8:stunspore",
+    "12:supersonic",
+    "15:tackle",
+    "16:megadrain",
+    "20:screech",
+    "24:mudshot",
+    "28:hex",
+    "32:seedbomb",
+    "36:spore",
+    "40:growth",
+    "44:gigadrain",
+    "48:earthpower",
+    "52:powerwhip",
+    "egg:acupressure",
+    "egg:knockoff",
+    "egg:leechseed",
+    "egg:mirrorcoat",
+    "egg:ragepowder",
+    "egg:rapidspin",
+    "egg:tickle",
+    "egg:toxic",
+    "tm:acidspray",
+    "tm:bulletseed",
+    "tm:confuseray",
+    "tm:dazzlinggleam",
+    "tm:earthpower",
+    "tm:endure",
+    "tm:energyball",
+    "tm:flashcannon",
+    "tm:foulplay",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyglide",
+    "tm:grassyterrain",
+    "tm:hex",
+    "tm:knockoff",
+    "tm:leafstorm",
+    "tm:lightscreen",
+    "tm:lunge",
+    "tm:magicalleaf",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:painsplit",
+    "tm:protect",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:scaryface",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:substitute",
+    "tm:swift",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:toxicspikes",
+    "tm:trailblaze",
+    "tm:trickroom",
+    "tm:venoshock"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 9,
+  "weight": 330,
+  "evolutions": [
+    {
+      "id": "toedscool_toedscruel",
+      "variant": "level_up",
+      "result": "toedscruel",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.toedscool.desc"
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:brown_mushroom",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

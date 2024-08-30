@@ -1,10 +1,11 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_pokemon",
   "consumesTimeCapsules": true,
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "generations_core:dome_fossil"
+      "type": "item",
+      "key": "generations_core:dome_fossil"
     }
   },
   "pattern": [
@@ -12,7 +13,6 @@
   ],
   "processingTime": 240,
   "result": {
-    "type": "generations_core:pokemon",
     "spawnInWorld": false,
     "species": "cobblemon:kabuto"
   }

@@ -1,0 +1,221 @@
+{
+  "name": "Rockruff",
+  "nationalPokedexNumber": 744,
+  "primaryType": "rock",
+  "abilities": [
+    "keeneye",
+    "vitalspirit",
+    "h:steadfast"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 65,
+    "defence": 40,
+    "special_attack": 30,
+    "special_defence": 40,
+    "speed": 60
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 56,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "moves": [
+    "1:leer",
+    "1:tackle",
+    "4:sandattack",
+    "8:doubleteam",
+    "12:rockthrow",
+    "16:howl",
+    "18:odorsleuth",
+    "20:bite",
+    "24:rocktomb",
+    "28:roar",
+    "32:rockslide",
+    "36:crunch",
+    "40:scaryface",
+    "44:stealthrock",
+    "45:rockclimb",
+    "48:stoneedge",
+    "egg:crushclaw",
+    "egg:endeavor",
+    "egg:firefang",
+    "egg:lastresort",
+    "egg:suckerpunch",
+    "egg:thrash",
+    "egg:thunderfang",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:charm",
+    "tm:confide",
+    "tm:crunch",
+    "tm:dig",
+    "tm:doubleedge",
+    "tm:doubleteam",
+    "tm:earthpower",
+    "tm:echoedvoice",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:facade",
+    "tm:firefang",
+    "tm:frustration",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:hypervoice",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:irontail",
+    "tm:mudslap",
+    "tm:playrough",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rockpolish",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snore",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thunderfang",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:zenheadbutt",
+    "tutor:covet",
+    "tutor:earthpower",
+    "tutor:endeavor",
+    "tutor:hypervoice",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:irontail",
+    "tutor:lastresort",
+    "tutor:snore",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.rockruff.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "rockruff_lycanroc",
+      "variant": "level_up",
+      "result": "lycanroc",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "suckerpunch"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 25
+        },
+        {
+          "variant": "time_range",
+          "range": "day"
+        }
+      ]
+    },
+    {
+      "id": "rockruff_lycanroc",
+      "variant": "level_up",
+      "result": "lycanroc midnight",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "counter"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 25
+        },
+        {
+          "variant": "time_range",
+          "range": "night"
+        }
+      ]
+    },
+    {
+      "id": "rockruff_lycanroc",
+      "variant": "level_up",
+      "result": "lycanroc dusk",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "crushclaw"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 25
+        },
+        {
+          "variant": "time_range",
+          "range": "dusk"
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 92,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:hard_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

@@ -1,0 +1,167 @@
+{
+  "name": "Sealeo",
+  "nationalPokedexNumber": 364,
+  "primaryType": "ice",
+  "secondaryType": "water",
+  "abilities": [
+    "thickfat",
+    "icebody",
+    "h:oblivious"
+  ],
+  "baseStats": {
+    "hp": 90,
+    "attack": 60,
+    "defence": 70,
+    "special_attack": 75,
+    "special_defence": 70,
+    "speed": 45
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 144,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1",
+    "field"
+  ],
+  "moves": [
+    "1:defensecurl",
+    "1:growl",
+    "1:rollout",
+    "1:swagger",
+    "1:watergun",
+    "12:powdersnow",
+    "13:iceball",
+    "16:rest",
+    "20:snore",
+    "24:brine",
+    "28:aurorabeam",
+    "35:encore",
+    "40:bodyslam",
+    "46:surf",
+    "52:blizzard",
+    "58:hail",
+    "64:sheercold",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:brine",
+    "tm:bulldoze",
+    "tm:captivate",
+    "tm:confide",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:earthquake",
+    "tm:echoedvoice",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:frostbreath",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:irontail",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:roar",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:strength",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:waterpulse",
+    "tm:whirlpool",
+    "tutor:aquatail",
+    "tutor:bodyslam",
+    "tutor:defensecurl",
+    "tutor:dive",
+    "tutor:doubleedge",
+    "tutor:endure",
+    "tutor:headbutt",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:mimic",
+    "tutor:mudslap",
+    "tutor:rockslide",
+    "tutor:rollout",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:steelroller",
+    "tutor:substitute",
+    "tutor:superfang",
+    "tutor:swagger",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.sealeo.desc"
+  ],
+  "preEvolution": "spheal",
+  "evolutions": [
+    {
+      "id": "sealeo_walrein",
+      "variant": "level_up",
+      "result": "walrein",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 44
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 11,
+  "weight": 876,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:cod",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:chesto_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "implemented": true
+}

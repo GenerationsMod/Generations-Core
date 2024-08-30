@@ -7,9 +7,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
-import generations.gg.generations.core.generationscore.common.world.recipe.PokemonItemIngredient;
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies;
-import generations.gg.generations.core.generationscore.forge.recipe.GenerationsIngredientsForge;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -17,7 +15,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.packs.VanillaRecipeProvider;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -28,7 +25,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-import java.util.Set;
 import java.util.function.Consumer;
 
 /**
@@ -1008,36 +1004,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .unlockedBy(getHasName(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()), has(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock()))
                 .save(consumer);
 
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_A.get(), "a");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_B.get(), "b");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_C.get(), "c");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_D.get(), "d");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_E.get(), "e");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_F.get(), "f");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_G.get(), "g");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_H.get(), "h");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_I.get(), "i");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_J.get(), "j");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_K.get(), "k");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_L.get(), "l");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_M.get(), "m");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_N.get(), "n");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_O.get(), "o");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_P.get(), "p");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_Q.get(), "q");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_R.get(), "r");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_S.get(), "s");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_T.get(), "t");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_U.get(), "u");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_V.get(), "v");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_W.get(), "w");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_X.get(), "x");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_Y.get(), "y");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_Z.get(), "z");
-
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK.get(), "!");
-        unownBlock(consumer, GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK.get(), "?");
-
         /*
          * Ghost Block Recipes
          */
@@ -1109,14 +1075,6 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
     }
 
-    private void unownBlock(@NotNull Consumer<FinishedRecipe> consumer, @NotNull Block createdBlock, String form){
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, createdBlock)
-                .define('X', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
-                .define('Y', new GenerationsIngredientsForge.GenerationsForgeIngredigent<>(new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of("glyph-" + form))))
-                .pattern("XY")
-                .unlockedBy(getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()), has(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()))
-                .save(consumer);
-    }
 
     protected void generateForEnabledBlockFamilies(@NotNull Consumer<FinishedRecipe> consumer) {
         GenerationsBlockFamilies.getAllFamilies().forEach(arg -> {

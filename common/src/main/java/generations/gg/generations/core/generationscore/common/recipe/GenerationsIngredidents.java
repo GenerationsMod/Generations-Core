@@ -1,19 +1,44 @@
 package generations.gg.generations.core.generationscore.common.recipe;
 
-import com.google.gson.JsonElement;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsIngredient;
 import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsIngredientSerializer;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.crafting.Ingredient;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.network.FriendlyByteBuf;
 
-public interface GenerationsIngredidents {
-    <T extends GenerationsIngredient> void register(String name, Class<T> clazz, GenerationsIngredientSerializer<T> serializer);
+public class GenerationsIngredidents {
+    private static BiMap<String, GenerationsIngredientSerializer<?>> SERIALIZER = HashBiMap.create();
 
+    public static <T extends GenerationsIngredient> void register(String id, GenerationsIngredientSerializer<T> serializer) {
+        SERIALIZER.put(id, serializer);
+    }
 
-    ResourceLocation getId(GenerationsIngredient ingredient);
+    public static GenerationsIngredientSerializer<?> getSerializer(String id) {
+        return SERIALIZER.get(id);
+    }
 
-    @NotNull Ingredient convert(@NotNull GenerationsIngredient generationsIngredient);
+    public static GenerationsIngredient fromJson(JsonObject value) {
+        var id = value.get("type").getAsString();
+        return getSerializer(id).read(value);
+    }
 
-    Ingredient fromJson(JsonElement value);
+    public static JsonObject toJson(GenerationsIngredient value) {
+        var obj = new JsonObject();
+        obj.addProperty("type", value.getId());
+        value.write(obj);
+        return obj;
+    }
+
+    public static void toNetwork(FriendlyByteBuf buf, GenerationsIngredient ingredient) {
+        buf.writeUtf(ingredient.getId());
+        ingredient.write(buf);
+    }
+
+    public static GenerationsIngredient fromNetwork(FriendlyByteBuf buffer) {
+        var id = buffer.readUtf();
+        var ingredient = getSerializer(id).read(buffer);
+
+        return ingredient;
+    }
 }

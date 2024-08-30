@@ -6,9 +6,11 @@ import com.cobblemon.mod.common.pokemon.Species;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
@@ -17,7 +19,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
     }
 
     public SpeciesKey(String species) {
-        this(species, null);
+        this(species, Set.of());
     }
 
 
@@ -38,7 +40,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
     public Pokemon createPokemon(int level) {
         var properties = createProperties();
         properties.setLevel(level);
-        var pokemon = properties.create();
+         var pokemon = properties.create();
         pokemon.setAspects(aspects());
         return pokemon;
     }
@@ -46,7 +48,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
 
     @Override
     public String toString() {
-        String setString = aspects != null ? aspects.stream().collect(Collectors.joining(",", "[", "]")) : "";
+        String setString = !aspects.isEmpty() ? aspects.stream().collect(Collectors.joining(",", "[", "]")) : "";
         return species.toString() + setString;
     }
 
@@ -64,7 +66,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
             aspects = Set.of();
         }
 
-        return new SpeciesKey(pokemon.getSpecies().resourceIdentifier, aspects.isEmpty() ? null : aspects);
+        return new SpeciesKey(pokemon.getSpecies().resourceIdentifier, aspects.isEmpty() ? Set.of() : aspects);
     }
 
     public static SpeciesKey fromString(String input) {
@@ -72,7 +74,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
 
         ResourceLocation species = new ResourceLocation(parts[0]);
 
-        Set<String> aspects = null;
+        Set<String> aspects = new HashSet<>();
         if (parts.length == 2) {
 
             String values = parts[1];
@@ -82,7 +84,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
             if (values != null && !values.isEmpty()) {
                 String[] valueArray = values.split(",");
 
-                aspects = new HashSet<>(Arrays.asList(valueArray));
+                aspects.addAll(Arrays.asList(valueArray));
             }
         }
         return new SpeciesKey(species, aspects);

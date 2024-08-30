@@ -1,0 +1,188 @@
+{
+  "name": "Appletun",
+  "nationalPokedexNumber": 842,
+  "primaryType": "grass",
+  "secondaryType": "dragon",
+  "abilities": [
+    "ripen",
+    "gluttony",
+    "h:thickfat"
+  ],
+  "baseStats": {
+    "hp": 110,
+    "attack": 85,
+    "defence": 80,
+    "special_attack": 100,
+    "special_defence": 80,
+    "speed": 30
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "grass",
+      "secondaryType": "dragon",
+      "abilities": [
+        "ripen",
+        "gluttony",
+        "h:thickfat"
+      ],
+      "baseStats": {
+        "hp": 110,
+        "attack": 85,
+        "defence": 80,
+        "special_attack": 100,
+        "special_defence": 80,
+        "speed": 30
+      },
+      "catchRate": 45,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 170,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "erratic",
+      "eggCycles": 20,
+      "eggGroups": [
+        "grass",
+        "dragon"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 240,
+      "weight": 0,
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 170,
+  "experienceGroup": "erratic",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass",
+    "dragon"
+  ],
+  "moves": [
+    "1:astonish",
+    "1:growth",
+    "1:recycle",
+    "1:sweetscent",
+    "1:withdraw",
+    "4:curse",
+    "8:stomp",
+    "12:leechseed",
+    "16:protect",
+    "20:bulletseed",
+    "24:recover",
+    "28:appleacid",
+    "32:bodyslam",
+    "36:irondefense",
+    "40:dragonpulse",
+    "44:energyball",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:bulletseed",
+    "tm:curse",
+    "tm:dracometeor",
+    "tm:dragonpulse",
+    "tm:dragontail",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:grassyglide",
+    "tm:grassyterrain",
+    "tm:gyroball",
+    "tm:heavyslam",
+    "tm:helpinghand",
+    "tm:highhorsepower",
+    "tm:hyperbeam",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:leafstorm",
+    "tm:lightscreen",
+    "tm:magicalleaf",
+    "tm:outrage",
+    "tm:payback",
+    "tm:pounce",
+    "tm:protect",
+    "tm:raindance",
+    "tm:reflect",
+    "tm:rest",
+    "tm:round",
+    "tm:safeguard",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superpower",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:trailblaze",
+    "tm:zenheadbutt",
+    "tutor:dracometeor",
+    "tutor:grassyglide"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "pokedex": [
+    "cobblemon.species.appletun.desc"
+  ],
+  "preEvolution": "applin",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 130,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 10.0
+      }
+    ]
+  },
+  "implemented": true
+}

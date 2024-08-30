@@ -68,8 +68,6 @@ dependencies {
 
     forgeRuntimeLibrary("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
 
-    forgeRuntimeLibrary("shadowBundle"("com.github.ben-manes.caffeine:caffeine:3.1.8")!!)
-
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")

@@ -11,6 +11,8 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 
 class PokemonItemIngredient(var species: ResourceLocation, var aspects: Set<String>) : GenerationsIngredient {
+    override val id = ID
+
     override fun matches(stack: ItemStack): Boolean =
         if (stack.`is`(CobblemonItems.POKEMON_MODEL)) {
             (stack.item as PokemonItem).getSpeciesAndAspects(stack)?.let {
@@ -22,30 +24,33 @@ class PokemonItemIngredient(var species: ResourceLocation, var aspects: Set<Stri
         PokemonItem.from(species = it, aspects = aspects)
     } ?: ItemStack.EMPTY)
 
-    override fun toJson(obj: JsonObject) {
-        super.toJson(obj)
-        obj.addProperty("species", species.toString())
-        obj.add("aspects", aspects.stream().map { it.toString() }.toList().toJsonArray())
+    override fun write(json: JsonObject) {
+        json.addProperty("species", species.toString())
+        json.add("aspects", aspects.stream().map { it.toString() }.toList().toJsonArray())
+    }
+
+    override fun write(buf: FriendlyByteBuf) {
+        buf.writeResourceLocation(species)
+        buf.writeCollection(aspects) { t, u -> t.writeUtf(u) }
+    }
+
+    companion object {
+        val ID = "pokemon_item"
     }
 
     object PokemonItemIngredientSerializer : GenerationsIngredientSerializer<PokemonItemIngredient> {
-        override fun parse(buf: FriendlyByteBuf): PokemonItemIngredient {
+        override fun read(buf: FriendlyByteBuf): PokemonItemIngredient {
             val species = buf.readResourceLocation()
-            val aspects = buf.readCollection({ mutableSetOf() }, { it.readUtf() })
+            val aspects = buf.readCollection({ mutableSetOf() }, FriendlyByteBuf::readUtf)
 
             return PokemonItemIngredient(species, aspects)
         }
 
-        override fun parse(jsonObject: JsonObject): PokemonItemIngredient {
+        override fun read(jsonObject: JsonObject): PokemonItemIngredient {
             val species = jsonObject.getResouceLocation("species")
             val aspects = jsonObject.getAsJsonArray("aspects").map { it.asString }.toMutableSet()
 
             return PokemonItemIngredient(species, aspects)
-        }
-
-        override fun write(buf: FriendlyByteBuf, ingredient: PokemonItemIngredient) {
-            buf.writeResourceLocation(ingredient.species)
-            buf.writeCollection(ingredient.aspects) { t, u -> t.writeUtf(u) }
         }
     }
 }

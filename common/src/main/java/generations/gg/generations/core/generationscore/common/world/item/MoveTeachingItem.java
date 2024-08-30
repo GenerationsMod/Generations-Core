@@ -18,7 +18,7 @@ import net.minecraft.world.item.ItemStack;
 
 import java.util.stream.Stream;
 
-public abstract class MoveTeachingItem extends Item implements PixelmonInteractions.PixelmonInteraction {
+public abstract class MoveTeachingItem extends Item implements GenerationsCobblemonInteractions.PixelmonInteraction {
     public MoveTeachingItem(Properties properties) {
         super(properties);
     }

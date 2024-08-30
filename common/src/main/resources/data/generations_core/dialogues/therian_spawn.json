@@ -1,60 +1,156 @@
 {
-  "root": {
-    "type": "generations_core:choose",
-    "next": {
-      "Enamorus": {
-        "type": "generations_core:spawn_pokemon",
-        "maxTick": 20,
-        "pos": {
-          "type": "generations_core:block",
-          "entry": "generations_core:abundant_shrine"
-        },
-        "properties": "enamorus level=70",
-        "yaw": {
-          "type": "generations_core:block",
-          "entry": "generations_core:abundant_shrine"
-        }
-      },
-      "Landorus": {
-        "type": "generations_core:spawn_pokemon",
-        "maxTick": 20,
-        "pos": {
-          "type": "generations_core:block",
-          "entry": "generations_core:abundant_shrine"
-        },
-        "properties": "landorus level=70",
-        "yaw": {
-          "type": "generations_core:block",
-          "entry": "generations_core:abundant_shrine"
-        }
-      },
-      "Thundurus": {
-        "type": "generations_core:spawn_pokemon",
-        "maxTick": 20,
-        "pos": {
-          "type": "generations_core:block",
-          "entry": "generations_core:abundant_shrine"
-        },
-        "properties": "thundurus level=70",
-        "yaw": {
-          "type": "generations_core:block",
-          "entry": "generations_core:abundant_shrine"
-        }
-      },
-      "Tornadus": {
-        "type": "generations_core:spawn_pokemon",
-        "maxTick": 20,
-        "pos": {
-          "type": "generations_core:block",
-          "entry": "generations_core:abundant_shrine"
-        },
-        "properties": "tornadus level=70",
-        "yaw": {
-          "type": "generations_core:block",
-          "entry": "generations_core:abundant_shrine"
-        }
+  "speakers": {
+    "player": {
+      "face": "q.player.face();",
+      "name": {
+        "type": "expression",
+        "expression": "q.player.username"
+      }
+    }
+  },
+  "pages": [
+    {
+      "id": "intro",
+      "lines": [
+        "Which island guardian should I summon?"
+      ],
+      "input": {
+        "type": "option",
+        "vertical": false,
+        "options": [
+          {
+            "text": "Tornadus",
+            "value": "tornadus",
+            "isVisible": "q.player.capped('cobblemon:tornadus')",
+            "action": [
+              "v.pokemon_intro = 'A powerful gale begins to swirl.';",
+              "v.pokemon_name = 'Tornadus';",
+              "v.pokemon_id = 'tornadus';",
+              "q.dialogue.set_page('therian_1');"
+            ]
+          },
+          {
+            "text": "Thundurus",
+            "value": "thundurus",
+            "isVisible": "q.player.capped('cobblemon:thundurus')",
+            "action": [
+              "v.pokemon_intro = 'You sense a crackling energy in the air.';",
+              "v.pokemon_name = 'Thundurus';",
+              "v.pokemon_id = 'thundurus';",
+              "q.dialogue.set_page('therian_1');"
+            ]
+          },
+          {
+            "text": "Landorus",
+            "value": "landorus",
+            "isVisible": "q.player.capped('cobblemon:landorus')",
+            "action": [
+              "v.pokemon_concept = 'A revitalizing force emanates from the ground.';",
+              "v.pokemon_name = 'Landorus';",
+              "v.pokemon_id = 'landorus';",
+              "q.dialogue.set_page('therian_1');"
+            ]
+          },
+          {
+            "text": "Enamorus",
+            "value": "enamorus",
+            "isVisible": "q.player.capped('cobblemon:enamorus')",
+            "action": [
+              "v.pokemon_intro = 'You feel a soothing force.';",
+              "v.pokemon_name = 'Enamorus';",
+              "v.pokemon_id = 'enamorus';",
+              "q.dialogue.set_page('therian_1');"
+            ]
+          },
+          {
+            "text": "None Available",
+            "value": "none",
+            "isVisible": "!q.player.capped('cobblemon:tornadus') && !q.player.capped('cobblemon:thundurus') && !q.player.capped('cobblemon:landorus') && !q.player.capped('cobblemon:enamorus')",
+            "action": [
+              "q.dialogue.set_page('none_1');"
+            ]
+          }
+        ]
       }
     },
-    "question": "Choose which Tapu to Spawn:"
-  }
+    {
+      "id": "therian_1",
+      "lines": ["'*You hold up the reveal glass.*'"],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "therian_2",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'* ' + v.pokemon_intro + '.*'"
+        }
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "therian_3",
+      "lines": [
+        "*You hear a roar in the distance.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "therian_4",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'*' + v.pokemon_name + ' has arrived.*'"
+        }
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1,
+        "action": [
+          "q.player.main_hand.shrink(1);",
+          "q.spawn_pokemon(q.player, v.pokemon_id + ' level=70', 'generations_core:abundant_shrine', 'generations_core:abundant_shrine');",
+          "q.dialogue.close();"
+        ]
+      }
+    },
+    {
+      "id": "none_1",
+      "lines": [
+        "*You raise up the reveal glass.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "none_2",
+      "allowSkip": false,
+      "lines": [
+        "*It is inert. Revealing nothing.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1,
+        "action": [
+          "q.dialogue.close();"
+        ]
+      }
+    }
+  ]
 }

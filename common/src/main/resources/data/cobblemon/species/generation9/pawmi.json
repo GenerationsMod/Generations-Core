@@ -1,0 +1,128 @@
+{
+  "name": "Pawmi",
+  "nationalPokedexNumber": 921,
+  "primaryType": "electric",
+  "abilities": [
+    "static",
+    "naturalcure",
+    "h:ironfist"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 50,
+    "defence": 20,
+    "special_attack": 40,
+    "special_defence": 25,
+    "speed": 60
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 48,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "moves": [
+    "1:growl",
+    "1:scratch",
+    "3:thundershock",
+    "6:quickattack",
+    "8:charge",
+    "12:nuzzle",
+    "15:dig",
+    "19:bite",
+    "23:spark",
+    "27:thunderwave",
+    "31:entrainment",
+    "35:slam",
+    "38:discharge",
+    "40:agility",
+    "44:wildcharge",
+    "egg:fakeout",
+    "egg:machpunch",
+    "egg:sweetkiss",
+    "egg:wish",
+    "tm:agility",
+    "tm:batonpass",
+    "tm:charge",
+    "tm:chargebeam",
+    "tm:charm",
+    "tm:crunch",
+    "tm:dig",
+    "tm:eerieimpulse",
+    "tm:electricterrain",
+    "tm:electroball",
+    "tm:electroweb",
+    "tm:encore",
+    "tm:endure",
+    "tm:facade",
+    "tm:fling",
+    "tm:helpinghand",
+    "tm:metalclaw",
+    "tm:playrough",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superfang",
+    "tm:swift",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderfang",
+    "tm:thunderwave",
+    "tm:voltswitch",
+    "tm:wildcharge"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 3,
+  "weight": 25,
+  "evolutions": [
+    {
+      "id": "pawmi_pawmo",
+      "variant": "level_up",
+      "result": "pawmo",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "armthrust"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 18
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.pawmi.desc"
+  ],
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

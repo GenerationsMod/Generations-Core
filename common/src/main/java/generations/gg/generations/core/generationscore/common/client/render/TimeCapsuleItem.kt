@@ -42,7 +42,7 @@ class TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
                 first.resourceIdentifier, second
             )
 
-            var isSprite = model.rootPart is RareCandyBone;
+            val isSprite = model.rootPart is RareCandyBone;
 
             val context = model.context
             context.put(RenderContext.SPECIES, first.resourceIdentifier)

@@ -1,0 +1,197 @@
+{
+  "name": "Snover",
+  "nationalPokedexNumber": 459,
+  "primaryType": "grass",
+  "secondaryType": "ice",
+  "abilities": [
+    "snowwarning",
+    "h:soundproof"
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:snowball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:occa_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 60,
+    "attack": 62,
+    "defence": 50,
+    "special_attack": 62,
+    "special_defence": 60,
+    "speed": 40
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 67,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "monster",
+    "grass"
+  ],
+  "moves": [
+    "1:leer",
+    "1:powdersnow",
+    "5:leafage",
+    "5:razorleaf",
+    "9:icywind",
+    "10:mist",
+    "13:grasswhistle",
+    "15:iceshard",
+    "17:swagger",
+    "20:razorleaf",
+    "21:mist",
+    "25:icywind",
+    "26:iceshard",
+    "30:swagger",
+    "31:ingrain",
+    "35:ingrain",
+    "36:woodhammer",
+    "41:blizzard",
+    "41:woodhammer",
+    "45:blizzard",
+    "46:sheercold",
+    "50:sheercold",
+    "egg:avalanche",
+    "egg:bulletseed",
+    "egg:doubleedge",
+    "egg:growth",
+    "egg:leechseed",
+    "egg:magicalleaf",
+    "egg:mist",
+    "egg:naturalgift",
+    "egg:seedbomb",
+    "egg:skullbash",
+    "egg:stomp",
+    "egg:weatherball",
+    "tm:attract",
+    "tm:avalanche",
+    "tm:blizzard",
+    "tm:bodyslam",
+    "tm:bulletseed",
+    "tm:captivate",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:curse",
+    "tm:doubleedge",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frostbreath",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyglide",
+    "tm:hail",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:icebeam",
+    "tm:icepunch",
+    "tm:icespinner",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:irontail",
+    "tm:leafstorm",
+    "tm:lightscreen",
+    "tm:magicalleaf",
+    "tm:megapunch",
+    "tm:mudslap",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:snowscape",
+    "tm:solarbeam",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tm:waterpulse",
+    "tm:weatherball",
+    "tutor:avalanche",
+    "tutor:gigadrain",
+    "tutor:grassyglide",
+    "tutor:headbutt",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:mudslap",
+    "tutor:razorleaf",
+    "tutor:roleplay",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:waterpulse",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "pokedex": [
+    "cobblemon.species.snover.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "snover_abomasnow",
+      "variant": "level_up",
+      "result": "abomasnow",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "icepunch"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 40
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 10,
+  "weight": 505,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

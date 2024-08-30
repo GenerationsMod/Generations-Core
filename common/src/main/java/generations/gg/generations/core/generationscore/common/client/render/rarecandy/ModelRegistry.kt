@@ -1,8 +1,5 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy
 
-import com.github.benmanes.caffeine.cache.CacheLoader
-import com.github.benmanes.caffeine.cache.Caffeine
-import com.github.benmanes.caffeine.cache.RemovalCause
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
@@ -12,6 +9,9 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import gg.generations.rarecandy.renderer.animation.Animation
 import gg.generations.rarecandy.renderer.rendering.RareCandy
+import gg.generations.rarecandy.shaded.caffeine.cache.CacheLoader
+import gg.generations.rarecandy.shaded.caffeine.cache.Caffeine
+import gg.generations.rarecandy.shaded.caffeine.cache.RemovalCause
 import net.minecraft.client.Minecraft
 import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation

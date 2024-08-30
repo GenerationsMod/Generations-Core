@@ -1,0 +1,164 @@
+{
+  "name": "Swadloon",
+  "nationalPokedexNumber": 541,
+  "primaryType": "bug",
+  "secondaryType": "grass",
+  "abilities": [
+    "leafguard",
+    "chlorophyll",
+    "h:overcoat"
+  ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:mental_herb",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:revival_herb",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 55,
+    "attack": 63,
+    "defence": 90,
+    "special_attack": 50,
+    "special_defence": 80,
+    "speed": 42
+  },
+  "catchRate": 120,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 133,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "moves": [
+    "1:bugbite",
+    "1:grasswhistle",
+    "1:protect",
+    "1:razorleaf",
+    "1:stringshot",
+    "1:tackle",
+    "22:strugglebug",
+    "29:endure",
+    "31:stickyweb",
+    "36:bugbuzz",
+    "43:flail",
+    "tm:attract",
+    "tm:batonpass",
+    "tm:bugbite",
+    "tm:bugbuzz",
+    "tm:calmmind",
+    "tm:charm",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleteam",
+    "tm:dreameater",
+    "tm:electroweb",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyglide",
+    "tm:grassyterrain",
+    "tm:hiddenpower",
+    "tm:irondefense",
+    "tm:lightscreen",
+    "tm:lunge",
+    "tm:magicalleaf",
+    "tm:naturepower",
+    "tm:payback",
+    "tm:pounce",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:safeguard",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:skittersmack",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trailblaze",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:gigadrain",
+    "tutor:irondefense",
+    "tutor:magiccoat",
+    "tutor:seedbomb",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:synthesis",
+    "tutor:worryseed"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.swadloon.desc"
+  ],
+  "preEvolution": "sewaddle",
+  "evolutions": [
+    {
+      "id": "swadloon_leavanny",
+      "variant": "level_up",
+      "result": "leavanny",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "slash"
+      ],
+      "requirements": [
+        {
+          "variant": "friendship",
+          "amount": 160
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 73,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

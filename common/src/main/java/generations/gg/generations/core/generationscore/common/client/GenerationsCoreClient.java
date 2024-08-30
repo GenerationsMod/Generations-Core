@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.spawning.TimeRange;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry;
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.JsonPokemonPoseableModel;
+import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
@@ -16,7 +16,6 @@ import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.GenerationsDataProvider;
-import generations.gg.generations.core.generationscore.common.client.model.RareCandyAnimationFactory;
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer;
 import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRenderer;
@@ -45,6 +44,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -77,6 +77,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Vector4f;
 
 import java.io.File;
+import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
@@ -112,9 +113,7 @@ public class GenerationsCoreClient {
         GenerationsCoreClient.setupClient(minecraft);
         RareCandy.DEBUG_THREADS = true;
 
-        JsonPokemonPoseableModel.Companion.registerFactory("pk", new RareCandyAnimationFactory());
-
-        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> new RareCandyBone(resourceLocation)));
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation)))));
 
 //        GenerationsCore.implementation.registerResourceReloader(
 //                id("texture_loader"),

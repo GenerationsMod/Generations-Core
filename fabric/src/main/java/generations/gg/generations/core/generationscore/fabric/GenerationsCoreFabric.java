@@ -6,12 +6,10 @@ import generations.gg.generations.core.generationscore.common.GenerationsImpleme
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.fabric.recipe.GenerationsIngredientsFabric;
 import generations.gg.generations.core.generationscore.fabric.world.item.creativetab.GenerationsCreativeTabsFabric;
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
@@ -54,7 +52,6 @@ import java.util.function.Supplier;
  * @author Joseph T. McQuigg, WaterPicker
  */
 public class GenerationsCoreFabric implements ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
-    private GenerationsIngredientsFabric ingredients = new GenerationsIngredientsFabric();
 
     public void onInitialize() {
         GenerationsCore.init(this);
@@ -109,11 +106,6 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
     }
 
     @Override
-    public GenerationsIngredientsFabric getIngredients() {
-        return ingredients;
-    }
-
-    @Override
     public boolean canEquip(ItemStack carried, EquipmentSlot equipmentslottype, Entity entity) {
         return Mob.getEquipmentSlotForItem(carried) == equipmentslottype;
     }
@@ -140,7 +132,7 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
     }
 
     public static void registerEntityAttributes(){
-        FabricDefaultAttributeRegistry.register(GenerationsEntities.STATUE_ENTITY.get(), StatueEntity.createLivingAttributes());
+//        FabricDefaultAttributeRegistry.register(GenerationsEntities.STATUE_ENTITY.get(), StatueEntity.createLivingAttributes());
         FabricDefaultAttributeRegistry.register(GenerationsEntities.PLAYER_NPC.get(), PlayerNpcEntity.createMobAttributes());
     }
 

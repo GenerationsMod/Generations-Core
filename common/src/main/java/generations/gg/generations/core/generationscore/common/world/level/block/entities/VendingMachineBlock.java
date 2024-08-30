@@ -1,18 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialogueGraph;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialoguePlayer;
-import generations.gg.generations.core.generationscore.common.world.dialogue.nodes.OpenShopNode;
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialogueGraph;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialoguePlayer;
-import generations.gg.generations.core.generationscore.common.world.dialogue.nodes.OpenShopNode;
+import generations.gg.generations.core.generationscore.common.api.player.PlayerMoneyHandler;
+import generations.gg.generations.core.generationscore.common.network.packets.shop.S2COpenShopPacket;
+import generations.gg.generations.core.generationscore.common.network.packets.shop.S2CSyncPlayerMoneyPacket;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialogueGraph;
-import generations.gg.generations.core.generationscore.common.world.dialogue.DialoguePlayer;
-import generations.gg.generations.core.generationscore.common.world.dialogue.nodes.OpenShopNode;
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -31,6 +23,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("deprecation")
 public class VendingMachineBlock extends DyeableBlock<VendingMachineBlockEntity, VendingMachineBlock> {
@@ -48,8 +41,17 @@ public class VendingMachineBlock extends DyeableBlock<VendingMachineBlockEntity,
 
     @Override
     protected InteractionResult serverUse(BlockState state, ServerLevel world, BlockPos pos, ServerPlayer player, InteractionHand handIn, BlockHitResult hit) {
-        var graph = new DialogueGraph(new OpenShopNode(null));
-        new DialoguePlayer(graph, null, (ServerPlayer) player, false);
+        var blockPos = CompletableFuture.supplyAsync(() -> pos);
+        var amount = PlayerMoneyHandler.of(player).balance();
+        var playerFuture = CompletableFuture.completedFuture(player);
+
+        blockPos.thenAccept(pos1 -> {
+            var amount1 = amount.join();
+            var player1 = playerFuture.join();
+            new S2CSyncPlayerMoneyPacket(amount1).sendToPlayer(player1);
+            new S2COpenShopPacket(pos1).sendToPlayer(player1);
+        });
+
         return InteractionResult.SUCCESS;
     }
 

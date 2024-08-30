@@ -1,0 +1,125 @@
+{
+  "name": "Toxel",
+  "nationalPokedexNumber": 848,
+  "primaryType": "electric",
+  "secondaryType": "poison",
+  "abilities": [
+    "rattled",
+    "static",
+    "h:klutz"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 38,
+    "defence": 35,
+    "special_attack": 54,
+    "special_defence": 35,
+    "speed": 40
+  },
+  "catchRate": 75,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 48,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 25,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "moves": [
+    "1:acid",
+    "1:belch",
+    "1:flail",
+    "1:growl",
+    "1:nuzzle",
+    "1:tearfullook",
+    "egg:endeavor",
+    "egg:metalsound",
+    "egg:poweruppunch",
+    "tm:attract",
+    "tm:charm",
+    "tm:encore",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:facade",
+    "tm:metalsound",
+    "tm:protect",
+    "tm:rest",
+    "tm:round",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:substitute",
+    "tm:terablast",
+    "tutor:acid",
+    "tutor:flail",
+    "tutor:growl",
+    "tutor:nuzzle"
+  ],
+  "labels": [
+    "gen8",
+    "baby"
+  ],
+  "pokedex": [
+    "cobblemon.species.toxel.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "toxel_toxtricity",
+      "variant": "level_up",
+      "result": "toxtricity",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "spark"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        }
+      ]
+    },
+    {
+      "id": "toxel_toxtricity",
+      "variant": "level_up",
+      "result": "toxtricity lowkey",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "spark"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 4,
+  "weight": 110,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:shuca_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

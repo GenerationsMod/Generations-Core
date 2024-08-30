@@ -8,10 +8,6 @@ import dev.architectury.utils.Env;
 import dev.architectury.utils.EnvExecutor;
 import generations.gg.generations.core.generationscore.common.client.CompiledModelLoader;
 import generations.gg.generations.core.generationscore.common.network.packets.S2CUnlockReloadPacket;
-import generations.gg.generations.core.generationscore.common.world.dialogue.Dialogues;
-import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;
-import generations.gg.generations.core.generationscore.common.world.shop.ShopPresets;
-import generations.gg.generations.core.generationscore.common.world.shop.Shops;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import net.minecraft.resources.ResourceLocation;
@@ -40,10 +36,9 @@ public class GenerationsDataProvider implements DataProvider {
     private final Map<UUID, List<@NotNull Function0<Unit>>> scheduledActions = new HashMap<>();
 
     public void registerDefaults() {
-        this.register(Dialogues.instance());
-        this.register(Shops.instance());
-        this.register(ShopPresets.instance());
-        this.register(NpcPresets.instance());
+//        this.register(Shops.instance());
+//        this.register(ShopPresets.instance());
+//        this.register(NpcPresets.instance());
 
         PlatformEvents.SERVER_PLAYER_LOGOUT.subscribe(Priority.HIGH, it -> {
             synchronizedPlayerIds.remove(it.getPlayer().getUUID());

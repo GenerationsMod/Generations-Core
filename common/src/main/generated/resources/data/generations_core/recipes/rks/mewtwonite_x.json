@@ -1,23 +1,25 @@
 {
-  "type": "generations_core:rks",
+  "type": "generations_core:rks_item",
   "consumesTimeCapsules": false,
   "experience": 1.0,
   "key": {
     "A": {
-      "item": "generations_core:key_stone"
+      "type": "item",
+      "key": "generations_core:key_stone"
     },
     "B": {
-      "type": "generations_core:time_capsule",
+      "type": "time_capsule",
       "aspects": [],
-      "fabric:type": "generations_core:time_capsule",
       "species": "cobblemon:mewtwo",
       "strictAspects": false
     },
     "C": {
-      "item": "minecraft:netherite_scrap"
+      "type": "item",
+      "key": "minecraft:netherite_scrap"
     },
     "D": {
-      "item": "minecraft:coal"
+      "type": "item",
+      "key": "minecraft:coal"
     }
   },
   "pattern": [
@@ -25,8 +27,5 @@
     "ABC"
   ],
   "processingTime": 240,
-  "result": {
-    "type": "generations_core:item",
-    "value": "generations_core:mewtwonite_x"
-  }
+  "result": "generations_core:mewtwonite_x"
 }

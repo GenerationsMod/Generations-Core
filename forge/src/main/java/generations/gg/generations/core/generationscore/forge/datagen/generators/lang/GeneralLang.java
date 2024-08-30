@@ -339,7 +339,7 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.special.shadow.success", "%s heart has been closed.");
         add("generations_core.special.shadow.failure", "%s refused to clsoe its heart.");
 
-
+        add("generations_core.ui.interact.head_pat", "Head Pat");
     }
 
 

@@ -1,10 +1,9 @@
 package generations.gg.generations.core.generationscore.common;
 
 import dev.architectury.registry.registries.DeferredRegister;
-import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
+import kotlin.reflect.KClass;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
@@ -23,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -55,8 +55,6 @@ public interface GenerationsImplementation {
 
     Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> o, DeferredRegister<? extends ItemLike>... deferredRegister);
 
-    GenerationsIngredidents getIngredients();
-
     boolean canEquip(ItemStack carried, EquipmentSlot equipmentslottype, Entity entity);
 
     CompoundTag serializeStack(ItemStack itemStack);
@@ -72,9 +70,9 @@ public interface GenerationsImplementation {
 
         void registerServerBound();
 
-        <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, Class<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, ClientNetworkPacketHandler<T> handler);
+        <T extends GenerationsNetworkPacket<T>> void createClientBound(ResourceLocation identifier, KClass<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, Consumer<T> handler);
 
-        <T extends GenerationsNetworkPacket<T>> void createServerBound(ResourceLocation identifier, Class<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, ServerNetworkPacketHandler<T> handler);
+        <T extends GenerationsNetworkPacket<T>> void createServerBound(ResourceLocation identifier, KClass<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, ServerNetworkPacketHandler<T> handler);
 
         void sendPacketToPlayer(ServerPlayer player, GenerationsNetworkPacket<?> packet);
 

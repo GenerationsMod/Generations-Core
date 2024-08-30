@@ -1,0 +1,142 @@
+{
+  "name": "Dustox",
+  "nationalPokedexNumber": 269,
+  "primaryType": "bug",
+  "secondaryType": "poison",
+  "abilities": [
+    "shielddust",
+    "h:compoundeyes"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 50,
+    "defence": 70,
+    "special_attack": 50,
+    "special_defence": 90,
+    "speed": 65
+  },
+  "catchRate": 45,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 173,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "bug"
+  ],
+  "moves": [
+    "1:gust",
+    "12:confusion",
+    "15:poisonpowder",
+    "17:moonlight",
+    "20:venoshock",
+    "22:psybeam",
+    "25:silverwind",
+    "27:lightscreen",
+    "30:whirlwind",
+    "32:toxic",
+    "35:bugbuzz",
+    "37:protect",
+    "40:quiverdance",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:attract",
+    "tm:captivate",
+    "tm:confide",
+    "tm:defog",
+    "tm:doubleteam",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flash",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:infestation",
+    "tm:lightscreen",
+    "tm:naturalgift",
+    "tm:protect",
+    "tm:psychic",
+    "tm:rest",
+    "tm:return",
+    "tm:roost",
+    "tm:round",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:silverwind",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:solarbeam",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thief",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:venoshock",
+    "tutor:aircutter",
+    "tutor:bugbite",
+    "tutor:defog",
+    "tutor:doubleedge",
+    "tutor:electroweb",
+    "tutor:endure",
+    "tutor:gigadrain",
+    "tutor:laserfocus",
+    "tutor:mimic",
+    "tutor:ominouswind",
+    "tutor:roost",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:stringshot",
+    "tutor:substitute",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:tailwind",
+    "tutor:twister"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "pokedex": [
+    "cobblemon.species.dustox.desc"
+  ],
+  "preEvolution": "cascoon",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 3,
+    "speed": 0
+  },
+  "height": 12,
+  "weight": 316,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:silver_powder",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "implemented": true
+}

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.recipe;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.CobblemonBlockEntities;
 import com.cobblemon.mod.common.CobblemonEntities;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
@@ -12,12 +11,9 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
-import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.level.block.RksMachineBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -27,30 +23,24 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector4f;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public interface RksResult<U extends RksResult<U>> {
-    Codec<RksResult<?>> CODEC = ResourceLocation.CODEC.dispatch(rksResult -> RksResultType.REGISTRAR.getId(rksResult.type()), location -> RksResultType.REGISTRAR.get(location).codec());
-
-    static RksResult<?> fromBuffer(FriendlyByteBuf buffer) {
-        return RksResultType.fromBuffer(buffer).fromBuffer().apply(buffer);
-    }
-
-    static <T extends RksResult<T>> void toBuffer(FriendlyByteBuf buffer, T result) {
-        result.type().toBuffer().accept(buffer, result);
-    }
-
     ItemStack getStack();
 
     RksResultType<U> type();
 
-    default void process(Player player, RksMachineContainer container, RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {}
+    default void process(Player player, RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {}
 
     default boolean consumeTimeCapsules() {
         return true;
     }
+
+    boolean isPokemon();
 
     record ItemResult(ItemStack item) implements RksResult<ItemResult> {
         public static final Codec<ItemResult> CODEC = Codec.either(BuiltInRegistries.ITEM.byNameCodec(), ItemStack.CODEC).xmap(a -> a.map(Item::getDefaultInstance, b -> b), a -> a.getCount() > 1 || a.hasTag() ? Either.right(a) : Either.left(a.getItem())).xmap(ItemResult::new, ItemResult::item);
@@ -66,7 +56,12 @@ public interface RksResult<U extends RksResult<U>> {
 
         @Override
         public RksResultType<ItemResult> type() {
-            return RksResultType.ITEM.get();
+            return RksResultType.ITEM;
+        }
+
+        @Override
+        public boolean isPokemon() {
+            return false;
         }
     }
     record PokemonResult(ResourceLocation species, Set<String> aspects, int level, boolean spawnInWorld, boolean usePokemonInCapsule) implements RksResult<PokemonResult> {
@@ -101,15 +96,15 @@ public interface RksResult<U extends RksResult<U>> {
 
         @Override
         public RksResultType<PokemonResult> type() {
-            return RksResultType.POKEMON.get();
+            return RksResultType.POKEMON;
         }
 
         @Override
-        public void process(Player player, RksMachineContainer container, RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {
+        public void process(Player player, RksMachineBlockEntity rksMachineBlockEntity, ItemStack stack) {
             Pokemon pokemon = null;
 
-            if(usePokemonInCapsule() && container.pokemon.isPresent()) {
-                pokemon = container.pokemon.get();
+            if(usePokemonInCapsule() && rksMachineBlockEntity.pokemon.isPresent()) {
+                pokemon = rksMachineBlockEntity.pokemon.get();
             } else {
                 var properties = new PokemonProperties();
                 properties.setAspects(aspects);
@@ -130,6 +125,11 @@ public interface RksResult<U extends RksResult<U>> {
             }
 
             stack.setCount(0);
+        }
+
+        @Override
+        public boolean isPokemon() {
+            return true;
         }
     }
 }

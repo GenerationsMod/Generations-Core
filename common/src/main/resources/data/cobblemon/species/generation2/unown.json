@@ -1,0 +1,66 @@
+{
+  "name": "Unown",
+  "nationalPokedexNumber": 201,
+  "primaryType": "psychic",
+  "abilities": [
+    "levitate"
+  ],
+  "baseStats": {
+    "hp": 48,
+    "attack": 72,
+    "defence": 48,
+    "special_attack": 72,
+    "special_defence": 48,
+    "speed": 48
+  },
+  "catchRate": 225,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 118,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 40,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "moves": [
+    "1:hiddenpower",
+    "tm:hiddenpower",
+    "tutor:hiddenpower"
+  ],
+  "labels": [
+    "gen2"
+  ],
+  "pokedex": [
+    "cobblemon.species.unown.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 50,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl",
+        "quantityRange": "0-1"
+      }
+    ]
+  },
+  "implemented": true
+}

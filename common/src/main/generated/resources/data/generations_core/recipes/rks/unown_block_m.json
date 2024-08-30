@@ -1,0 +1,23 @@
+{
+  "type": "generations_core:rks_item",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "key": {
+    "X": {
+      "type": "item",
+      "key": "generations_core:temple_block"
+    },
+    "Y": {
+      "type": "pokemon_item",
+      "aspects": [
+        "glyph-m"
+      ],
+      "species": "cobblemon:unown"
+    }
+  },
+  "pattern": [
+    "XY"
+  ],
+  "processingTime": 240,
+  "result": "generations_core:unown_block_m"
+}

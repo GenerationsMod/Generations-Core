@@ -1,0 +1,157 @@
+{
+  "name": "Tympole",
+  "nationalPokedexNumber": 535,
+  "primaryType": "water",
+  "abilities": [
+    "swiftswim",
+    "hydration",
+    "h:waterabsorb"
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:clay_ball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 50,
+    "attack": 50,
+    "defence": 40,
+    "special_attack": 50,
+    "special_defence": 40,
+    "speed": 64
+  },
+  "catchRate": 255,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 59,
+  "experienceGroup": "medium_slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "water_1"
+  ],
+  "moves": [
+    "1:bubble",
+    "1:echoedvoice",
+    "1:growl",
+    "4:acid",
+    "8:supersonic",
+    "12:mudshot",
+    "16:round",
+    "20:bubblebeam",
+    "24:flail",
+    "28:uproar",
+    "32:aquaring",
+    "36:hypervoice",
+    "40:muddywater",
+    "44:raindance",
+    "48:hydropump",
+    "egg:afteryou",
+    "egg:earthpower",
+    "egg:mist",
+    "egg:mudbomb",
+    "egg:mudslap",
+    "egg:mudsport",
+    "egg:refresh",
+    "egg:sleeptalk",
+    "egg:snore",
+    "egg:toxic",
+    "egg:venomdrench",
+    "egg:waterpulse",
+    "tm:attract",
+    "tm:bounce",
+    "tm:confide",
+    "tm:doubleteam",
+    "tm:earthpower",
+    "tm:echoedvoice",
+    "tm:endure",
+    "tm:facade",
+    "tm:frustration",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:hydropump",
+    "tm:hypervoice",
+    "tm:icywind",
+    "tm:infestation",
+    "tm:muddywater",
+    "tm:mudshot",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:round",
+    "tm:scald",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:sludgewave",
+    "tm:snore",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:toxic",
+    "tm:uproar",
+    "tm:venomdrench",
+    "tm:weatherball",
+    "tutor:afteryou",
+    "tutor:bounce",
+    "tutor:earthpower",
+    "tutor:endeavor",
+    "tutor:hypervoice",
+    "tutor:icywind",
+    "tutor:round",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:uproar",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.tympole.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "tympole_palpitoad",
+      "variant": "level_up",
+      "result": "palpitoad",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 25
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 5,
+  "weight": 45,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

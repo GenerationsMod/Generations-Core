@@ -1,0 +1,126 @@
+{
+  "name": "Bramblin",
+  "nationalPokedexNumber": 946,
+  "primaryType": "grass",
+  "secondaryType": "ghost",
+  "abilities": [
+    "windrider",
+    "h:infiltrator"
+  ],
+  "baseStats": {
+    "hp": 40,
+    "attack": 65,
+    "defence": 30,
+    "special_attack": 45,
+    "special_defence": 35,
+    "speed": 60
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 55,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "grass"
+  ],
+  "moves": [
+    "1:astonish",
+    "1:defensecurl",
+    "1:rollout",
+    "5:absorb",
+    "9:rapidspin",
+    "13:bulletseed",
+    "17:infestation",
+    "21:hex",
+    "25:megadrain",
+    "29:disable",
+    "35:phantomforce",
+    "40:gigadrain",
+    "45:curse",
+    "50:painsplit",
+    "55:powerwhip",
+    "egg:beatup",
+    "egg:block",
+    "egg:leechseed",
+    "egg:shadowsneak",
+    "egg:strengthsap",
+    "tm:bulletseed",
+    "tm:confuseray",
+    "tm:curse",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:gigadrain",
+    "tm:grassknot",
+    "tm:grassyglide",
+    "tm:grassyterrain",
+    "tm:hex",
+    "tm:leafstorm",
+    "tm:nightshade",
+    "tm:painsplit",
+    "tm:phantomforce",
+    "tm:poltergeist",
+    "tm:pounce",
+    "tm:protect",
+    "tm:rest",
+    "tm:scaryface",
+    "tm:seedbomb",
+    "tm:shadowball",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:spite",
+    "tm:substitute",
+    "tm:terablast",
+    "tm:thief",
+    "tm:trailblaze"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 6,
+  "weight": 6,
+  "evolutions": [
+    {
+      "id": "bramblin_brambleghast",
+      "variant": "level_up",
+      "result": "brambleghast",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "blocks_traveled",
+          "amount": 1000
+        }
+      ]
+    }
+  ],
+  "cannotDynamax": false,
+  "pokedex": [
+    "cobblemon.species.bramblin.desc"
+  ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:stick",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

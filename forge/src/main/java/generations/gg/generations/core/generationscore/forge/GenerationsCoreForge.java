@@ -12,12 +12,9 @@ import generations.gg.generations.core.generationscore.common.compat.ImpactorCom
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
-import generations.gg.generations.core.generationscore.forge.recipe.GenerationsIngredientsForge;
 import generations.gg.generations.core.generationscore.forge.world.item.creativetab.GenerationsCreativeTabsForge;
-import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.SharedConstants;
@@ -78,7 +75,6 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 
     private List<PreparableReloadListener> reloadableResources = new ArrayList<>();
     private Map<PackType, List<Pair<ResourceLocation, Component>>> packs = new HashMap<>();
-    private GenerationsIngredientsForge generationsIngredients = new GenerationsIngredientsForge();
 
     /**
      * Sets up Forge side of the mod.
@@ -130,11 +126,6 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     @Override
     public Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> o, DeferredRegister<? extends ItemLike>... deferredRegister) {
         return GenerationsCreativeTabsForge.create(name, o, deferredRegister);
-    }
-
-    @Override
-    public GenerationsIngredidents getIngredients() {
-        return generationsIngredients;
     }
 
     @Override
@@ -251,7 +242,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
     }
 
     private void createEntityAttributes(final EntityAttributeCreationEvent event) {
-        event.put(GenerationsEntities.STATUE_ENTITY.get(), StatueEntity.createLivingAttributes().build());
+//        event.put(GenerationsEntities.STATUE_ENTITY.get(), StatueEntity.createLivingAttributes().build());
         event.put(GenerationsEntities.PLAYER_NPC.get(), PlayerNpcEntity.createMobAttributes().build());
     }
 }

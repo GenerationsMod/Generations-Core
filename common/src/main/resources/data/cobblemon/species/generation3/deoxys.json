@@ -1,0 +1,415 @@
+{
+  "name": "Deoxys",
+  "nationalPokedexNumber": 386,
+  "primaryType": "psychic",
+  "abilities": [
+    "pressure"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 150,
+    "defence": 50,
+    "special_attack": 150,
+    "special_defence": 50,
+    "speed": 150
+  },
+  "catchRate": 3,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "baseExperienceYield": 270,
+  "baseFriendship": 0,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "experienceGroup": "slow",
+  "eggCycles": 120,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "moves": [
+    "1:leer",
+    "1:wrap",
+    "7:nightshade",
+    "13:doubleteam",
+    "13:teleport",
+    "19:knockoff",
+    "19:taunt",
+    "25:psyshock",
+    "25:pursuit",
+    "25:spikes",
+    "31:psychic",
+    "37:gravity",
+    "37:protect",
+    "37:snatch",
+    "37:superpower",
+    "37:swift",
+    "43:psychoshift",
+    "43:skillswap",
+    "49:zenheadbutt",
+    "55:agility",
+    "55:amnesia",
+    "55:cosmicpower",
+    "55:irondefense",
+    "61:recover",
+    "61:zapcannon",
+    "67:psychoboost",
+    "73:counter",
+    "73:extremespeed",
+    "73:hyperbeam",
+    "73:mirrorcoat",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:allyswitch",
+    "tm:amnesia",
+    "tm:avalanche",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:calmmind",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:cut",
+    "tm:darkpulse",
+    "tm:doubleteam",
+    "tm:drainpunch",
+    "tm:dreameater",
+    "tm:endure",
+    "tm:energyball",
+    "tm:expandingforce",
+    "tm:facade",
+    "tm:firepunch",
+    "tm:flash",
+    "tm:flashcannon",
+    "tm:fling",
+    "tm:focusblast",
+    "tm:focuspunch",
+    "tm:frustration",
+    "tm:futuresight",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:gravity",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icepunch",
+    "tm:icywind",
+    "tm:imprison",
+    "tm:irondefense",
+    "tm:knockoff",
+    "tm:lightscreen",
+    "tm:lowkick",
+    "tm:lowsweep",
+    "tm:meteorbeam",
+    "tm:nastyplot",
+    "tm:naturalgift",
+    "tm:nightshade",
+    "tm:painsplit",
+    "tm:poisonjab",
+    "tm:poweruppunch",
+    "tm:protect",
+    "tm:psybeam",
+    "tm:psychic",
+    "tm:psychicnoise",
+    "tm:psychicterrain",
+    "tm:psychup",
+    "tm:psyshock",
+    "tm:raindance",
+    "tm:recycle",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:safeguard",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:shadowball",
+    "tm:shockwave",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:snatch",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:stealthrock",
+    "tm:stompingtantrum",
+    "tm:storedpower",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:swift",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:telekinesis",
+    "tm:terablast",
+    "tm:throatchop",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderpunch",
+    "tm:thunderwave",
+    "tm:torment",
+    "tm:toxic",
+    "tm:trick",
+    "tm:trickroom",
+    "tm:waterpulse",
+    "tm:zenheadbutt",
+    "tutor:allyswitch",
+    "tutor:bind",
+    "tutor:bodyslam",
+    "tutor:cosmicpower",
+    "tutor:counter",
+    "tutor:darkpulse",
+    "tutor:detect",
+    "tutor:doubleedge",
+    "tutor:doubleteam",
+    "tutor:drainpunch",
+    "tutor:dreameater",
+    "tutor:dynamicpunch",
+    "tutor:endure",
+    "tutor:extremespeed",
+    "tutor:firepunch",
+    "tutor:focuspunch",
+    "tutor:gravity",
+    "tutor:headbutt",
+    "tutor:hyperbeam",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:irondefense",
+    "tutor:knockoff",
+    "tutor:laserfocus",
+    "tutor:leer",
+    "tutor:lowkick",
+    "tutor:magiccoat",
+    "tutor:megakick",
+    "tutor:megapunch",
+    "tutor:meteormash",
+    "tutor:mimic",
+    "tutor:mirrorcoat",
+    "tutor:mudslap",
+    "tutor:nastyplot",
+    "tutor:nightmare",
+    "tutor:nightshade",
+    "tutor:psychic",
+    "tutor:psychoboost",
+    "tutor:psychup",
+    "tutor:pursuit",
+    "tutor:recover",
+    "tutor:recycle",
+    "tutor:rockslide",
+    "tutor:roleplay",
+    "tutor:seismictoss",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:snatch",
+    "tutor:snore",
+    "tutor:spikes",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:substitute",
+    "tutor:superpower",
+    "tutor:swagger",
+    "tutor:swift",
+    "tutor:taunt",
+    "tutor:telekinesis",
+    "tutor:throatchop",
+    "tutor:thunderpunch",
+    "tutor:thunderwave",
+    "tutor:trick",
+    "tutor:waterpulse",
+    "tutor:wonderroom",
+    "tutor:wrap",
+    "tutor:zapcannon",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen3",
+    "mythical",
+    "legendary"
+  ],
+  "pokedex": [
+    "cobblemon.species.deoxys.desc"
+  ],
+  "height": 17,
+  "weight": 608,
+  "evolutions": [],
+  "forms": [
+    {
+      "name": "Attack",
+      "primaryType": "psychic",
+      "abilities": [
+        "pressure"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 180,
+        "defence": 20,
+        "special_attack": 180,
+        "special_defence": 20,
+        "speed": 150
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 270,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen3",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "attack"
+      ],
+      "height": 17,
+      "weight": 608,
+      "cannotDynamax": false,
+      "battleOnly": false,
+      "drops": {
+        "amount": 5,
+        "entries": [
+          {
+            "item": "minecraft:eye_of_ender",
+            "quantityRange": "3-5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Defense",
+      "primaryType": "psychic",
+      "abilities": [
+        "pressure"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 70,
+        "defence": 160,
+        "special_attack": 70,
+        "special_defence": 160,
+        "speed": 90
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 270,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 2,
+        "special_attack": 0,
+        "special_defence": 1,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen3",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "defense"
+      ],
+      "height": 17,
+      "weight": 608,
+      "cannotDynamax": false,
+      "battleOnly": false,
+      "drops": {
+        "amount": 5,
+        "entries": [
+          {
+            "item": "minecraft:eye_of_ender",
+            "quantityRange": "3-5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Speed",
+      "primaryType": "psychic",
+      "abilities": [
+        "pressure"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 95,
+        "defence": 90,
+        "special_attack": 95,
+        "special_defence": 90,
+        "speed": 180
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 270,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 3
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen3",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "speed"
+      ],
+      "height": 17,
+      "weight": 608,
+      "cannotDynamax": false,
+      "battleOnly": false,
+      "drops": {
+        "amount": 5,
+        "entries": [
+          {
+            "item": "minecraft:eye_of_ender",
+            "quantityRange": "3-5"
+          }
+        ]
+      }
+    }
+  ],
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:eye_of_ender"
+      }
+    ]
+  },
+  "implemented": true
+}

@@ -1,0 +1,176 @@
+{
+  "name": "Sandygast",
+  "nationalPokedexNumber": 769,
+  "primaryType": "ghost",
+  "secondaryType": "ground",
+  "abilities": [
+    "watercompaction",
+    "h:sandveil"
+  ],
+  "baseStats": {
+    "hp": 55,
+    "attack": 55,
+    "defence": 80,
+    "special_attack": 70,
+    "special_defence": 45,
+    "speed": 15
+  },
+  "catchRate": 140,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "baseExperienceYield": 64,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "amorphous"
+  ],
+  "moves": [
+    "1:absorb",
+    "1:harden",
+    "5:astonish",
+    "10:sandtomb",
+    "15:megadrain",
+    "20:sandattack",
+    "25:bulldoze",
+    "30:hypnosis",
+    "35:gigadrain",
+    "40:irondefense",
+    "45:shadowball",
+    "50:earthpower",
+    "55:shoreup",
+    "60:sandstorm",
+    "egg:amnesia",
+    "egg:ancientpower",
+    "egg:curse",
+    "egg:destinybond",
+    "egg:spitup",
+    "egg:stockpile",
+    "egg:swallow",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:brine",
+    "tm:bulldoze",
+    "tm:chillingwater",
+    "tm:confide",
+    "tm:confuseray",
+    "tm:curse",
+    "tm:doubleteam",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:fling",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gravity",
+    "tm:hex",
+    "tm:hiddenpower",
+    "tm:imprison",
+    "tm:infestation",
+    "tm:irondefense",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:nightshade",
+    "tm:painsplit",
+    "tm:poltergeist",
+    "tm:protect",
+    "tm:psychic",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockpolish",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:sandstorm",
+    "tm:sandtomb",
+    "tm:scaryface",
+    "tm:scorchingsands",
+    "tm:shadowball",
+    "tm:skillswap",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:snore",
+    "tm:spite",
+    "tm:stealthrock",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:trick",
+    "tutor:afteryou",
+    "tutor:block",
+    "tutor:earthpower",
+    "tutor:gigadrain",
+    "tutor:gravity",
+    "tutor:irondefense",
+    "tutor:painsplit",
+    "tutor:poltergeist",
+    "tutor:recycle",
+    "tutor:roleplay",
+    "tutor:scorchingsands",
+    "tutor:skillswap",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:stealthrock",
+    "tutor:trick"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "pokedex": [
+    "cobblemon.species.sandygast.desc"
+  ],
+  "evolutions": [
+    {
+      "id": "sandygast_palossand",
+      "variant": "level_up",
+      "result": "palossand",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 42
+        }
+      ]
+    }
+  ],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 5,
+  "weight": 700,
+  "aspects": [],
+  "cannotDynamax": false,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:soft_sand",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
+  "implemented": true
+}

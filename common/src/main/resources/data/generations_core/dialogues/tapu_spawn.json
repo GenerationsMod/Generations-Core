@@ -1,60 +1,156 @@
 {
-  "root": {
-    "type": "generations_core:choose",
-    "next": {
-      "Tapu Bulu": {
-        "type": "generations_core:spawn_pokemon",
-        "maxTick": 20,
-        "pos": {
-          "type": "generations_core:block",
-          "entry": "generations_core:tapu_shrine"
-        },
-        "properties": "tapubulu level=70",
-        "yaw": {
-          "type": "generations_core:block",
-          "entry": "generations_core:tapu_shrine"
-        }
-      },
-      "Tapu Fini": {
-        "type": "generations_core:spawn_pokemon",
-        "maxTick": 20,
-        "pos": {
-          "type": "generations_core:block",
-          "entry": "generations_core:tapu_shrine"
-        },
-        "properties": "tapufini level=70",
-        "yaw": {
-          "type": "generations_core:block",
-          "entry": "generations_core:tapu_shrine"
-        }
-      },
-      "Tapu Koko": {
-        "type": "generations_core:spawn_pokemon",
-        "maxTick": 20,
-        "pos": {
-          "type": "generations_core:block",
-          "entry": "generations_core:tapu_shrine"
-        },
-        "properties": "tapukoko level=70",
-        "yaw": {
-          "type": "generations_core:block",
-          "entry": "generations_core:tapu_shrine"
-        }
-      },
-      "Tapu Lele": {
-        "type": "generations_core:spawn_pokemon",
-        "maxTick": 20,
-        "pos": {
-          "type": "generations_core:block",
-          "entry": "generations_core:tapu_shrine"
-        },
-        "properties": "tapulele level=70",
-        "yaw": {
-          "type": "generations_core:block",
-          "entry": "generations_core:tapu_shrine"
-        }
+  "speakers": {
+    "player": {
+      "face": "q.player.face();",
+      "name": {
+        "type": "expression",
+        "expression": "q.player.username"
+      }
+    }
+  },
+  "pages": [
+    {
+      "id": "intro",
+      "lines": [
+        "Which island guardian should I summon?"
+      ],
+      "input": {
+        "type": "option",
+        "vertical": false,
+        "options": [
+          {
+            "text": "Tapu Koko",
+            "value": "tapukoko",
+            "isVisible": "q.player.capped('cobblemon:tapukoko')",
+            "action": [
+              "v.pokemon_concept = 'abundance';",
+              "v.pokemon_name = 'Tapu Koko';",
+              "v.pokemon_id = 'tapukoko';",
+              "q.dialogue.set_page('tapu_1');"
+            ]
+          },
+          {
+            "text": "Tapu lele",
+            "value": "tapulele",
+            "isVisible": "q.player.capped('cobblemon:tapulele')",
+            "action": [
+              "v.pokemon_concept = 'life';",
+              "v.pokemon_name = 'Tapu Lele';",
+              "v.pokemon_id = 'tapulele';",
+              "q.dialogue.set_page('tapu_1');"
+            ]
+          },
+          {
+            "text": "Tapu Bulu",
+            "value": "tapubulu",
+            "isVisible": "q.player.capped('cobblemon:tapubulu')",
+            "action": [
+              "v.pokemon_concept = 'hope';",
+              "v.pokemon_name = 'Tapu Bulu';",
+              "v.pokemon_id = 'tapubulu';",
+              "q.dialogue.set_page('tapu_1');"
+            ]
+          },
+          {
+            "text": "Tapu Fini",
+            "value": "tapufini",
+            "isVisible": "q.player.capped('cobblemon:tapufini')",
+            "action": [
+              "v.pokemon_concept = 'hope';",
+              "v.pokemon_name = 'Tapu Fini';",
+              "v.pokemon_id = 'tapufini';",
+              "q.dialogue.set_page('tapu_1');"
+            ]
+          },
+          {
+            "text": "None Available",
+            "value": "none",
+            "isVisible": "!q.player.capped('cobblemon:tapukoko') && !q.player.capped('cobblemon:tapulele') && !q.player.capped('cobblemon:tapubulu') && !q.player.capped('cobblemon:tapufini')",
+            "action": [
+              "q.dialogue.set_page('none_1');"
+            ]
+          }
+        ]
       }
     },
-    "question": "Choose which Tapu to Spawn:"
-  }
+    {
+      "id": "tapu_1",
+      "lines": [ "*You hear a cry in the distance.*" ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "tapu_2",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'*Your sparkling stone resonates with ' + v.pokemon_concept + '.*'"
+        }
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "tapu_3",
+      "lines": [
+        "*It shatters as something approaches.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "tapu_4",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'*' + v.pokemon_name + ' has arrived.*'"
+        }
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1,
+        "action": [
+          "q.player.main_hand.shrink(1);",
+          "q.spawn_pokemon(q.player, v.pokemon_id + ' level=70', 'generations_core:tapu_shrine', 'generations_core:tapu_shrine');",
+          "q.dialogue.close();"
+        ]
+      }
+    },
+    {
+      "id": "none_1",
+      "lines": [
+        "*Your sparkling stone remains quiets.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1
+      }
+    },
+    {
+      "id": "none_2",
+      "allowSkip": false,
+      "lines": [
+        "*There are no island guardians who heed your call.*"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1,
+        "action": [
+          "q.dialogue.close();"
+        ]
+      }
+    }
+  ]
 }

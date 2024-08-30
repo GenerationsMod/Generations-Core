@@ -1,0 +1,142 @@
+{
+  "name": "Simipour",
+  "nationalPokedexNumber": 516,
+  "primaryType": "water",
+  "abilities": [
+    "gluttony",
+    "h:torrent"
+  ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:water_stone",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:mystic_water",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 75,
+    "attack": 98,
+    "defence": 63,
+    "special_attack": 98,
+    "special_defence": 63,
+    "speed": 101
+  },
+  "catchRate": 75,
+  "maleRatio": 0.875,
+  "shoulderMountable": false,
+  "baseExperienceYield": 174,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "field"
+  ],
+  "moves": [
+    "1:furyswipes",
+    "1:leer",
+    "1:lick",
+    "1:scald",
+    "tm:acrobatics",
+    "tm:attract",
+    "tm:blizzard",
+    "tm:brickbreak",
+    "tm:confide",
+    "tm:cut",
+    "tm:dig",
+    "tm:dive",
+    "tm:doubleteam",
+    "tm:facade",
+    "tm:fling",
+    "tm:focusblast",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:hail",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:lowsweep",
+    "tm:payback",
+    "tm:poweruppunch",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:round",
+    "tm:scald",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:substitute",
+    "tm:surf",
+    "tm:swagger",
+    "tm:taunt",
+    "tm:thief",
+    "tm:torment",
+    "tm:toxic",
+    "tm:waterfall",
+    "tm:workup",
+    "tutor:aquatail",
+    "tutor:covet",
+    "tutor:endeavor",
+    "tutor:focuspunch",
+    "tutor:gastroacid",
+    "tutor:gunkshot",
+    "tutor:helpinghand",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:irontail",
+    "tutor:knockoff",
+    "tutor:lowkick",
+    "tutor:recycle",
+    "tutor:roleplay",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:superpower",
+    "tutor:throatchop",
+    "tutor:uproar",
+    "tutor:waterpledge",
+    "tutor:waterpulse"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.simipour.desc"
+  ],
+  "preEvolution": "panpour",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 70,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "height": 10,
+  "weight": 290,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

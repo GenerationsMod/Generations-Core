@@ -1,0 +1,208 @@
+{
+  "name": "Garbodor",
+  "nationalPokedexNumber": 569,
+  "primaryType": "poison",
+  "abilities": [
+    "stench",
+    "weakarmor",
+    "h:aftermath"
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "cobblemon:black_sludge",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:leftovers",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:silk_scarf",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 80,
+    "attack": 95,
+    "defence": 82,
+    "special_attack": 60,
+    "special_defence": 82,
+    "speed": 75
+  },
+  "catchRate": 60,
+  "maleRatio": 0.5,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "poison",
+      "abilities": [
+        "stench",
+        "weakarmor",
+        "h:aftermath"
+      ],
+      "baseStats": {
+        "hp": 80,
+        "attack": 95,
+        "defence": 82,
+        "special_attack": 60,
+        "special_defence": 82,
+        "speed": 75
+      },
+      "catchRate": 60,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 166,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 20,
+      "eggGroups": [
+        "mineral"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "height": 210,
+      "weight": 0,
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 166,
+  "experienceGroup": "medium_fast",
+  "eggCycles": 20,
+  "eggGroups": [
+    "mineral"
+  ],
+  "moves": [
+    "1:acidspray",
+    "1:metalclaw",
+    "1:poisongas",
+    "1:pound",
+    "1:recycle",
+    "1:takedown",
+    "9:amnesia",
+    "12:clearsmog",
+    "14:doubleslap",
+    "15:toxicspikes",
+    "18:sludge",
+    "21:stockpile",
+    "21:swallow",
+    "24:bodyslam",
+    "27:sludgebomb",
+    "30:toxic",
+    "33:belch",
+    "39:painsplit",
+    "43:gunkshot",
+    "48:explosion",
+    "tm:amnesia",
+    "tm:attract",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:confide",
+    "tm:crosspoison",
+    "tm:darkpulse",
+    "tm:doubleteam",
+    "tm:drainpunch",
+    "tm:endure",
+    "tm:explosion",
+    "tm:facade",
+    "tm:fling",
+    "tm:focusblast",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:gunkshot",
+    "tm:hiddenpower",
+    "tm:hyperbeam",
+    "tm:infestation",
+    "tm:payback",
+    "tm:protect",
+    "tm:psychic",
+    "tm:raindance",
+    "tm:rest",
+    "tm:return",
+    "tm:rockblast",
+    "tm:rockpolish",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:seedbomb",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:sludgebomb",
+    "tm:sludgewave",
+    "tm:smackdown",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swagger",
+    "tm:thief",
+    "tm:thunderbolt",
+    "tm:toxic",
+    "tm:toxicspikes",
+    "tm:venomdrench",
+    "tm:venoshock",
+    "tutor:corrosivegas",
+    "tutor:darkpulse",
+    "tutor:drainpunch",
+    "tutor:gigadrain",
+    "tutor:gunkshot",
+    "tutor:painsplit",
+    "tutor:recycle",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:stompingtantrum"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "pokedex": [
+    "cobblemon.species.garbodor.desc"
+  ],
+  "preEvolution": "trubbish",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 19,
+  "weight": 1073,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

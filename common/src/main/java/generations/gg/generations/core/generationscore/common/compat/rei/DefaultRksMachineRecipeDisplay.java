@@ -41,8 +41,8 @@ public abstract class DefaultRksMachineRecipeDisplay<C extends Recipe<?>> extend
     public static DefaultRksMachineRecipeDisplay<?> of(Recipe<?> recipe) {
 //        if (recipe instanceof TesselatingShapelessRecipe) {
 //            return new DefaultTesselatingShapelessDisplay((TesselatingShapelessRecipe) recipe);
-        /*} else */if (recipe instanceof RksRecipe rksRecipe) {
-            return new DefaultRksMachineeShapedDisplay(rksRecipe);
+        /*} else */if (recipe instanceof RksRecipe<?> rksRecipe) {
+            return new DefaultRksMachineeShapedDisplay<>(rksRecipe);
         } /*else if (!recipe.isSpecial()) {
             NonNullList<Ingredient> ingredients = recipe.getIngredients();
             for (CraftingRecipeSizeProvider<?> pair : SIZE_PROVIDER) {

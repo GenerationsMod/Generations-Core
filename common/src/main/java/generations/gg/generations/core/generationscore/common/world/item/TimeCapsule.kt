@@ -7,7 +7,7 @@ import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.Pokemon.Companion.loadFromNBT
 import com.cobblemon.mod.common.pokemon.Species
 import dev.architectury.event.EventResult
-import generations.gg.generations.core.generationscore.common.world.item.PixelmonInteractions.PixelmonInteraction
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.PixelmonInteraction
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer

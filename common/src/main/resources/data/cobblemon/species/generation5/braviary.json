@@ -1,0 +1,320 @@
+{
+  "name": "Braviary",
+  "nationalPokedexNumber": 628,
+  "primaryType": "normal",
+  "secondaryType": "flying",
+  "abilities": [
+    "keeneye",
+    "sheerforce",
+    "h:defiant"
+  ],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:sharp_beak",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 100,
+    "attack": 123,
+    "defence": 75,
+    "special_attack": 57,
+    "special_defence": 75,
+    "speed": 80
+  },
+  "features": [
+    "hisuian"
+  ],
+  "catchRate": 60,
+  "maleRatio": 1,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Hisui",
+      "primaryType": "psychic",
+      "secondaryType": "flying",
+      "abilities": [
+        "keeneye",
+        "sheerforce",
+        "h:tintedlens"
+      ],
+      "baseStats": {
+        "hp": 110,
+        "attack": 83,
+        "defence": 70,
+        "special_attack": 112,
+        "special_defence": 70,
+        "speed": 65
+      },
+      "catchRate": 60,
+      "maleRatio": 1,
+      "baseExperienceYield": 179,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 20,
+      "eggGroups": [
+        "flying"
+      ],
+      "moves": [
+        "1:honeclaws",
+        "1:leer",
+        "1:peck",
+        "1:skyattack",
+        "1:superpower",
+        "1:wingattack",
+        "18:tailwind",
+        "24:scaryface",
+        "30:aerialace",
+        "36:slash",
+        "42:whirlwind",
+        "48:crushclaw",
+        "57:airslash",
+        "64:defog",
+        "72:thrash",
+        "80:hurricane",
+        "tm:acrobatics",
+        "tm:aerialace",
+        "tm:agility",
+        "tm:aircutter",
+        "tm:airslash",
+        "tm:bodyslam",
+        "tm:bravebird",
+        "tm:bulkup",
+        "tm:calmmind",
+        "tm:closecombat",
+        "tm:confuseray",
+        "tm:dazzlinggleam",
+        "tm:doubleedge",
+        "tm:dualwingbeat",
+        "tm:endure",
+        "tm:expandingforce",
+        "tm:facade",
+        "tm:featherdance",
+        "tm:fly",
+        "tm:futuresight",
+        "tm:gigaimpact",
+        "tm:heatwave",
+        "tm:helpinghand",
+        "tm:hurricane",
+        "tm:hyperbeam",
+        "tm:hypervoice",
+        "tm:icywind",
+        "tm:metalclaw",
+        "tm:nightshade",
+        "tm:protect",
+        "tm:psybeam",
+        "tm:psychic",
+        "tm:psychicnoise",
+        "tm:psychicterrain",
+        "tm:psychup",
+        "tm:psyshock",
+        "tm:raindance",
+        "tm:rest",
+        "tm:reversal",
+        "tm:rockslide",
+        "tm:rocktomb",
+        "tm:scaryface",
+        "tm:shadowball",
+        "tm:shadowclaw",
+        "tm:sleeptalk",
+        "tm:snarl",
+        "tm:storedpower",
+        "tm:substitute",
+        "tm:sunnyday",
+        "tm:swift",
+        "tm:tailwind",
+        "tm:takedown",
+        "tm:terablast",
+        "tm:uturn",
+        "tm:vacuumwave",
+        "tm:zenheadbutt"
+      ],
+      "labels": [
+        "gen8",
+        "hisui_regional"
+      ],
+      "aspects": [
+        "hisuian"
+      ],
+      "height": 17,
+      "weight": 434,
+      "preEvolution": "rufflet",
+      "cannotDynamax": false,
+      "battleOnly": false,
+      "drops": {
+        "amount": 5,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "quantityRange": "0-2"
+          },
+          {
+            "item": "minecraft:chicken"
+          },
+          {
+            "item": "cobblemon:sharp_beak",
+            "percentage": 2.5
+          },
+          {
+            "item": "cobblemon:wepear_berry",
+            "percentage": 5.0
+          }
+        ]
+      }
+    }
+  ],
+  "baseExperienceYield": 179,
+  "experienceGroup": "slow",
+  "eggCycles": 20,
+  "eggGroups": [
+    "flying"
+  ],
+  "moves": [
+    "1:furyattack",
+    "1:honeclaws",
+    "1:leer",
+    "1:peck",
+    "1:skyattack",
+    "1:superpower",
+    "1:wingattack",
+    "18:tailwind",
+    "24:scaryface",
+    "30:aerialace",
+    "36:slash",
+    "42:whirlwind",
+    "48:crushclaw",
+    "50:skydrop",
+    "57:airslash",
+    "64:defog",
+    "72:thrash",
+    "80:bravebird",
+    "tm:acrobatics",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:assurance",
+    "tm:attract",
+    "tm:bodyslam",
+    "tm:bravebird",
+    "tm:bulkup",
+    "tm:closecombat",
+    "tm:confide",
+    "tm:cut",
+    "tm:doubleedge",
+    "tm:doubleteam",
+    "tm:dualwingbeat",
+    "tm:endure",
+    "tm:facade",
+    "tm:featherdance",
+    "tm:fly",
+    "tm:frustration",
+    "tm:gigaimpact",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:hurricane",
+    "tm:hyperbeam",
+    "tm:ironhead",
+    "tm:metalclaw",
+    "tm:pluck",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:return",
+    "tm:reversal",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:roost",
+    "tm:round",
+    "tm:scaryface",
+    "tm:secretpower",
+    "tm:shadowclaw",
+    "tm:skydrop",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:steelwing",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superpower",
+    "tm:swagger",
+    "tm:swift",
+    "tm:tailwind",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:toxic",
+    "tm:uturn",
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:aerialace",
+    "tutor:defog",
+    "tutor:dualwingbeat",
+    "tutor:heatwave",
+    "tutor:honeclaws",
+    "tutor:laserfocus",
+    "tutor:roost",
+    "tutor:scaryface",
+    "tutor:skyattack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:superpower",
+    "tutor:tailwind",
+    "tutor:wingattack",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5",
+    "unova_regional"
+  ],
+  "pokedex": [
+    "cobblemon.species.braviary.desc"
+  ],
+  "preEvolution": "rufflet",
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "height": 15,
+  "weight": 410,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}

@@ -1,0 +1,347 @@
+{
+  "name": "Genesect",
+  "nationalPokedexNumber": 649,
+  "primaryType": "bug",
+  "secondaryType": "steel",
+  "abilities": [
+    "download"
+  ],
+  "baseStats": {
+    "hp": 71,
+    "attack": 120,
+    "defence": 95,
+    "special_attack": 120,
+    "special_defence": 95,
+    "speed": 99
+  },
+  "catchRate": 3,
+  "maleRatio": -1,
+  "shoulderMountable": false,
+  "forms": [
+    {
+      "name": "Douse",
+      "primaryType": "bug",
+      "secondaryType": "steel",
+      "abilities": [
+        "download"
+      ],
+      "baseStats": {
+        "hp": 71,
+        "attack": 120,
+        "defence": 95,
+        "special_attack": 120,
+        "special_defence": 95,
+        "speed": 99
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 300,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen5",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "douse"
+      ],
+      "height": 15,
+      "weight": 825,
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Shock",
+      "primaryType": "bug",
+      "secondaryType": "steel",
+      "abilities": [
+        "download"
+      ],
+      "baseStats": {
+        "hp": 71,
+        "attack": 120,
+        "defence": 95,
+        "special_attack": 120,
+        "special_defence": 95,
+        "speed": 99
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 300,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen5",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "shock"
+      ],
+      "height": 15,
+      "weight": 825,
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Burn",
+      "primaryType": "bug",
+      "secondaryType": "steel",
+      "abilities": [
+        "download"
+      ],
+      "baseStats": {
+        "hp": 71,
+        "attack": 120,
+        "defence": 95,
+        "special_attack": 120,
+        "special_defence": 95,
+        "speed": 99
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 300,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen5",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "burn"
+      ],
+      "height": 15,
+      "weight": 825,
+      "cannotDynamax": false,
+      "battleOnly": false
+    },
+    {
+      "name": "Chill",
+      "primaryType": "bug",
+      "secondaryType": "steel",
+      "abilities": [
+        "download"
+      ],
+      "baseStats": {
+        "hp": 71,
+        "attack": 120,
+        "defence": 95,
+        "special_attack": 120,
+        "special_defence": 95,
+        "speed": 99
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 300,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 0,
+        "attack": 1,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 1
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen5",
+        "mythical",
+        "legendary"
+      ],
+      "aspects": [
+        "chill"
+      ],
+      "height": 15,
+      "weight": 825,
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseExperienceYield": 300,
+  "experienceGroup": "slow",
+  "eggCycles": 120,
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "moves": [
+    "1:furycutter",
+    "1:quickattack",
+    "7:screech",
+    "14:metalclaw",
+    "21:fellstinger",
+    "22:magnetbomb",
+    "28:flamecharge",
+    "29:slash",
+    "35:metalsound",
+    "40:signalbeam",
+    "42:xscissor",
+    "44:triattack",
+    "49:magnetrise",
+    "56:bugbuzz",
+    "63:simplebeam",
+    "70:zapcannon",
+    "73:hyperbeam",
+    "77:lockon",
+    "84:technoblast",
+    "91:selfdestruct",
+    "tm:aerialace",
+    "tm:allyswitch",
+    "tm:assurance",
+    "tm:blazekick",
+    "tm:blizzard",
+    "tm:bugbuzz",
+    "tm:chargebeam",
+    "tm:confide",
+    "tm:darkpulse",
+    "tm:doubleteam",
+    "tm:electroweb",
+    "tm:endure",
+    "tm:energyball",
+    "tm:explosion",
+    "tm:facade",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flash",
+    "tm:flashcannon",
+    "tm:fly",
+    "tm:frustration",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:gunkshot",
+    "tm:hiddenpower",
+    "tm:honeclaws",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:infestation",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:leechlife",
+    "tm:lightscreen",
+    "tm:protect",
+    "tm:psychic",
+    "tm:reflect",
+    "tm:rest",
+    "tm:return",
+    "tm:rockpolish",
+    "tm:round",
+    "tm:screech",
+    "tm:secretpower",
+    "tm:selfdestruct",
+    "tm:shadowclaw",
+    "tm:sleeptalk",
+    "tm:snore",
+    "tm:solarbeam",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:swagger",
+    "tm:swift",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderwave",
+    "tm:toxic",
+    "tm:triattack",
+    "tm:uturn",
+    "tm:xscissor",
+    "tm:zenheadbutt",
+    "tutor:allyswitch",
+    "tutor:blazekick",
+    "tutor:bugbite",
+    "tutor:darkpulse",
+    "tutor:electroweb",
+    "tutor:extremespeed",
+    "tutor:fellstinger",
+    "tutor:gigadrain",
+    "tutor:gravity",
+    "tutor:gunkshot",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:lastresort",
+    "tutor:magiccoat",
+    "tutor:magnetbomb",
+    "tutor:magnetrise",
+    "tutor:metalclaw",
+    "tutor:recycle",
+    "tutor:shiftgear",
+    "tutor:shockwave",
+    "tutor:signalbeam",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:solarbeam",
+    "tutor:steelbeam",
+    "tutor:technoblast",
+    "tutor:telekinesis",
+    "tutor:xscissor",
+    "tutor:zenheadbutt"
+  ],
+  "labels": [
+    "gen5",
+    "mythical",
+    "legendary"
+  ],
+  "pokedex": [
+    "cobblemon.species.genesect.desc"
+  ],
+  "evolutions": [],
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "baseFriendship": 0,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "height": 15,
+  "weight": 825,
+  "aspects": [],
+  "cannotDynamax": false,
+  "implemented": true
+}
