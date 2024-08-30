@@ -1,18 +1,17 @@
 package generations.gg.generations.core.generationscore.common.compat;
 
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
 import mcp.mobius.waila.api.*;
 import mcp.mobius.waila.api.component.ItemComponent;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
-public class WTHIT implements IWailaPlugin {
+public class WTHIT implements IWailaClientPlugin {
+
     @Override
-    public void register(IRegistrar iRegistrar) {
-        iRegistrar.addIcon(DyeableBlockPrvoider.INSTANCE, DyeableBlock.class);
-        iRegistrar.addComponent(DyeableBlockPrvoider.INSTANCE, TooltipPosition.HEAD, DyeableBlock.class);
+    public void register(IClientRegistrar iClientRegistrar) {
+        iClientRegistrar.icon(DyeableBlockPrvoider.INSTANCE, DyeableBlock.class);
+        iClientRegistrar.head(DyeableBlockPrvoider.INSTANCE, DyeableBlock.class);
     }
 
     public enum DyeableBlockPrvoider implements IBlockComponentProvider {

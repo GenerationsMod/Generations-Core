@@ -53,5 +53,5 @@ Contains Blocks, Items, Entities, and other things that are used by all other Ge
 [[dependencies.generations_core]]
    modId="wthit"
    mandatory=false
-   versionRange="[8.2.0,)"
+   versionRange="[8.15.0,)"
    ordering="NONE"

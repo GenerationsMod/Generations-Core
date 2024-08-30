@@ -28,7 +28,7 @@ class EnigmaStoneItem(properties: Properties?) : ItemWithLangTooltipImpl(propert
 
                     return InteractionResultHolder.success(player.mainHandItem);
                 } else {
-                    player.sendSystemMessage(Component.literal("You need to defeat/capture " + (player.mainHandItem.maxDamage - player.mainHandItem.damageValue) + " Psychic/Dragon pokemon to use this stone.")
+                    player.sendSystemMessage(Component.literal("You need to defeat/capture " + (player.mainHandItem.maxDamage - player.mainHandItem.damageValue) + " Psychic/Dragon pokemon to use this stone."))
                 }
             }
         }

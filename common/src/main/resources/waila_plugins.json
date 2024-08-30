@@ -1,6 +1,7 @@
 {
   "generations_core:general": {
-    "initializer": "generations.gg.generations.core.generationscore.common.compat.WTHIT",
-    "side": "*"
+    "entrypoints": {
+        "client": "generations.gg.generations.core.generationscore.common.compat.WTHIT"
+    }
   }
 }
