@@ -6,10 +6,13 @@ import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
 import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
+import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeatures
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
 import com.cobblemon.mod.common.util.cobblemonResource
+import com.cobblemon.mod.common.util.party
+import dev.architectury.event.events.common.TickEvent
 import generations.gg.generations.core.generationscore.common.api.player.Caught
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.network.packets.HeadPatPacket
@@ -19,6 +22,7 @@ import generations.gg.generations.core.generationscore.common.world.item.PostBat
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks.SCARECROW
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.ItemStack
 import org.joml.Vector3f
 
@@ -100,6 +104,18 @@ class GenerationsCobblemonEvents {
                     Minecraft.getInstance().screen = null
                 }))
             }
+
+            TickEvent.PLAYER_PRE.register { player ->
+                if (player is ServerPlayer) {
+                    player.party().forEach {pokemon ->
+                        SpeciesFeatures.getFeaturesFor(pokemon.species).forEach { provider ->
+                            if (provider is PlayerAspectProvider)
+                        }
+                    }
+                }
+            }
+
+//            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { it.entity.taskBuilder().infiniteIterations().identifier("castform") }
 
             CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST) {
 

@@ -1,7 +1,12 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
+import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
+import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeatureProvider
+import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeatures
+import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
@@ -13,6 +18,13 @@ import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
+
+fun ChoiceSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: String = ""): StringSpeciesFeature = this.get(pokemon) ?: StringSpeciesFeature(keys.first(), value)
+
+private fun ChoiceSpeciesFeatureProvider.cycle(value: String): String {
+    val index = choices.indexOf(value)
+    return choices.getOrNull(index + 1) ?: ""
+}
 
 class MeteoriteItem(arg: Properties?) : EnchantableItem(arg), LangTooltip, GenerationsCobblemonInteractions.PokemonInteraction {
     override fun neededEnchantmentLevel(player: Player): Int {
@@ -35,16 +47,15 @@ class MeteoriteItem(arg: Properties?) : EnchantableItem(arg), LangTooltip, Gener
     }
 
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
-        var species = PokemonSpecies.getByName("deoxys");
+        if (entity.pokemon.isSpecies("deoxys")) {
 
-        if(species != null) {
-            if (entity.pokemon.species == species) {
-                var forms = species.forms
+            val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("deoxys_form") ?: return false
+            val feature = provider.getOrCreate(entity.pokemon)
+            feature.value = provider.cycle(feature.value)
+            feature.apply(entity)
 
-                entity.pokemon.form = forms[((species.forms.indexOf(entity.pokemon.form) + 1) % forms.size)]
-                player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
-                return true
-            }
+            player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
+            return true
         }
 
         return false

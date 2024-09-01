@@ -894,7 +894,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> DNA_SPLICERS = register("dna_splicers", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> REINS_OF_UNITY = register("reins_of_unity", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> N_SOLARIZER = register("n_solarizer", Item::new, LEGENDARY_ITEMS);
-    public static final RegistrySupplier<Item> N_LUNARIZER = register("n_lunarizer", Item::new, LEGENDARY_ITEMS);
+    public static final RegistrySupplier<Item> N_LUNARIZER = register("n_lunarizer", properties -> new NecroizerItemItem(properties, "lunala", "moongeistbeam", "duskmane"), LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> LEGEND_FINDER = register("legend_finder", Item::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> HOOPA_RING = register("hoopa_ring", ItemWithLangTooltipImpl::new, LEGENDARY_ITEMS);
     public static final RegistrySupplier<Item> RED_ORB = register("red_orb", Item::new, LEGENDARY_ITEMS);
@@ -1034,7 +1034,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> MEWTWO_ARMOR = register("mewtwo_armor", Item::new, FORM_ITEMS);
     public static final RegistrySupplier<Item> PINK_NECTAR = register("pink_nectar", properties -> new NectarItem(properties, "pa'u"), FORM_ITEMS);
     public static final RegistrySupplier<Item> PURPLE_NECTAR = register("purple_nectar", properties -> new NectarItem(properties, "sensu"), FORM_ITEMS);
-    public static final RegistrySupplier<Item> RED_NECTAR = register("red_nectar", properties -> new NectarItem(properties, null), FORM_ITEMS);
+    public static final RegistrySupplier<Item> RED_NECTAR = register("red_nectar", properties -> new NectarItem(properties, ""), FORM_ITEMS);
     public static final RegistrySupplier<Item> YELLOW_NECTAR = register("yellow_nectar", properties -> new NectarItem(properties, "pom-pom"), FORM_ITEMS);
 
     /**
