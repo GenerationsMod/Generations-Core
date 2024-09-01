@@ -6,8 +6,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.level.Level
 
-class ZygardeCubeItem(properties: Properties) : Item(properties),
-    LangTooltip {
+class ZygardeCubeItem(properties: Properties) : Item(properties), LangTooltip {
     override fun appendHoverText(
         stack: ItemStack,
         level: Level?,

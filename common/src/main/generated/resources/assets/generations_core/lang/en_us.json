@@ -1390,6 +1390,8 @@
   "container.volcanic_stone_blast_furnace": "Volcanic Stone Blast Furnace",
   "container.volcanic_stone_furnace": "Volcanic Stone Furnace",
   "container.volcanic_stone_smoker": "Volcanic Stone Smoker",
+  "entity.generations_core.zygarde_cell": "Zygarde Cells",
+  "generations_core.ability.formchange": "%s changed form!",
   "generations_core.blocks.balllootset": "Custom Ball Loot Set: %s",
   "generations_core.blocks.claimedloot": "You've already claimed this loot!",
   "generations_core.blocks.lootfound": "You found one %s!",

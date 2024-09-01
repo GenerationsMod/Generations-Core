@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
@@ -280,7 +281,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(ZYGARDE_CUBE, "lore1", "Collect Zygarde Cells to summon the balance.");
         addTooltip(ZYGARDE_CUBE, "lore2", "Cells collected: %s/%s");
 
-
+        addEntityType(GenerationsEntities.ZYGARDE_CELL, "Zygarde Cells");
         add("gui.zygarde_cube", "Zygarde Cube");
         add("gui.zygarde_cube.select", "Merge Zygarde Cells");
         add("gui.zygarde_cube.merge_10.name", "Create 10%");
@@ -340,6 +341,7 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.special.shadow.failure", "%s refused to clsoe its heart.");
 
         add("generations_core.ui.interact.head_pat", "Head Pat");
+        add("generations_core.ability.formchange", "%s changed form!");
     }
 
 

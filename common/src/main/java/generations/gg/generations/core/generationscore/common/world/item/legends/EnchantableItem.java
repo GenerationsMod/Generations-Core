@@ -26,6 +26,15 @@ public abstract class EnchantableItem extends ItemWithLangTooltipImpl {
         return stack;
     }
 
+    public static ItemStack setUsed(ItemStack stack, boolean used) {
+        stack.getOrCreateTag().putBoolean("used", used);
+        return stack;
+    }
+
+    public static boolean isUsed(ItemStack stack) {
+        return stack != null && !stack.isEmpty() && stack.getOrCreateTag().getBoolean("used");
+    }
+
     public static boolean isEnchanted(ItemStack stack) {
         return stack != null && !stack.isEmpty() && stack.getOrCreateTag().getBoolean("enchanted");
     }

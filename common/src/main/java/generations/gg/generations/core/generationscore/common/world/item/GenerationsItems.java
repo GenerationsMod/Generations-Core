@@ -1024,7 +1024,7 @@ public class GenerationsItems {
      * Form Items
      */
     public static final RegistrySupplier<MeteoriteItem> METEORITE = register("meteorite", MeteoriteItem::new, FORM_ITEMS);
-    public static final RegistrySupplier<Item> GRACIDEA = register("gracidea", Item::new, FORM_ITEMS);
+    public static final RegistrySupplier<Item> GRACIDEA = register("gracidea", GracideaItem::new, FORM_ITEMS);
     public static final RegistrySupplier<ItemWithLangTooltipImpl> REVEAL_GLASS = register("reveal_glass", ItemWithLangTooltipImpl::new, FORM_ITEMS);
     public static final RegistrySupplier<Item> ROCKSTAR_COSTUME = register("rockstar_costume", Item::new, FORM_ITEMS);
     public static final RegistrySupplier<Item> BELLE_COSTUME = register("belle_costume", Item::new, FORM_ITEMS);
@@ -1032,10 +1032,10 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> PHD_COSTUME = register("phd_costume", Item::new, FORM_ITEMS);
     public static final RegistrySupplier<Item> LIBRE_COSTUME = register("libre_costume", Item::new, FORM_ITEMS);
     public static final RegistrySupplier<Item> MEWTWO_ARMOR = register("mewtwo_armor", Item::new, FORM_ITEMS);
-    public static final RegistrySupplier<Item> PINK_NECTAR = register("pink_nectar", Item::new, FORM_ITEMS);
-    public static final RegistrySupplier<Item> PURPLE_NECTAR = register("purple_nectar", Item::new, FORM_ITEMS);
-    public static final RegistrySupplier<Item> RED_NECTAR = register("red_nectar", Item::new, FORM_ITEMS);
-    public static final RegistrySupplier<Item> YELLOW_NECTAR = register("yellow_nectar", Item::new, FORM_ITEMS);
+    public static final RegistrySupplier<Item> PINK_NECTAR = register("pink_nectar", properties -> new NectarItem(properties, "pa'u"), FORM_ITEMS);
+    public static final RegistrySupplier<Item> PURPLE_NECTAR = register("purple_nectar", properties -> new NectarItem(properties, "sensu"), FORM_ITEMS);
+    public static final RegistrySupplier<Item> RED_NECTAR = register("red_nectar", properties -> new NectarItem(properties, null), FORM_ITEMS);
+    public static final RegistrySupplier<Item> YELLOW_NECTAR = register("yellow_nectar", properties -> new NectarItem(properties, "pom-pom"), FORM_ITEMS);
 
     /**
      * Mail

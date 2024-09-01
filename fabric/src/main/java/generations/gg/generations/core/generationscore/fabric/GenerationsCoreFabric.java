@@ -6,13 +6,13 @@ import generations.gg.generations.core.generationscore.common.GenerationsImpleme
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.fabric.world.item.creativetab.GenerationsCreativeTabsFabric;
-import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
+import generations.gg.generations.core.generationscore.fabric.world.item.creativetab.GenerationsCreativeTabsFabric;
+import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;

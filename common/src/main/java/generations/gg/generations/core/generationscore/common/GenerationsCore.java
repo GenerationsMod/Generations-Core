@@ -139,7 +139,7 @@ public class GenerationsCore
 	}
 
 	public static void onAnvilChange(ItemStack left, ItemStack right, Player player, Consumer<ItemStack> output, IntConsumer cost, IntConsumer materialCost) {
-		if(left.getItem() instanceof EnchantableItem enchantableItem && enchantableItem.neededEnchantmentLevel(player) > 0 && !EnchantableItem.isEnchanted(left) && right.isEmpty()) {
+		if(left.getItem() instanceof EnchantableItem enchantableItem && enchantableItem.neededEnchantmentLevel(player) > 0 && !EnchantableItem.isEnchanted(left) && !EnchantableItem.isUsed(left) && right.isEmpty()) {
 			output.accept(EnchantableItem.setEnchanted(left.copy(), true));
 			cost.accept(100);
 			materialCost.accept(0);

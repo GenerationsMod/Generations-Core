@@ -7,7 +7,7 @@ import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.Pokemon.Companion.loadFromNBT
 import com.cobblemon.mod.common.pokemon.Species
 import dev.architectury.event.EventResult
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.PixelmonInteraction
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.PokemonInteraction
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
@@ -23,11 +23,11 @@ import net.minecraft.world.level.Level
 import java.util.*
 import kotlin.jvm.optionals.getOrNull
 
-class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteraction {
-    override fun interact(entity: PokemonEntity, player: Player, itemInHandItemStack: ItemStack): EventResult {
+class TimeCapsule(properties: Properties) : Item(properties), PokemonInteraction {
+    override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
         val pokemon = entity.pokemon
         return if (pokemon.belongsTo(player) && pokemon.storeCoordinates.get()?.remove() == true) {
-            savePokemon(itemInHandItemStack, pokemon)
+            savePokemon(stack, pokemon)
             player.level().playSound(
                 null,
                 entity,
@@ -38,15 +38,14 @@ class TimeCapsule(properties: Properties) : Item(properties), PixelmonInteractio
             )
             player.cooldowns.addCooldown(this, 20)
 
-            EventResult.interruptTrue()
+            true
         } else {
-            EventResult.interruptFalse()
+            false
         }
     }
 
-    override fun isConsumed(): Boolean {
-        return false
-    }
+    override val isConsumed: Boolean
+        get() = false
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         if (!level.isClientSide && !player.cooldowns.isOnCooldown(this)) {
