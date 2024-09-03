@@ -6,10 +6,10 @@ import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
 import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
-import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeatures
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
+import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.party
 import dev.architectury.event.events.common.TickEvent
@@ -108,18 +108,18 @@ class GenerationsCobblemonEvents {
             TickEvent.PLAYER_PRE.register { player ->
                 if (player is ServerPlayer) {
                     player.party().forEach {pokemon ->
-                        SpeciesFeatures.getFeaturesFor(pokemon.species).forEach { provider ->
-                            if (provider is PlayerAspectProvider)
-                        }
+                        if(pokemon.isSpecies("castform", "arceus")) pokemon.updateAspects()
                     }
                 }
             }
 
-//            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { it.entity.taskBuilder().infiniteIterations().identifier("castform") }
+            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { it.entity.takeIf { it -> !it.pokemon.isPlayerOwned() && it.pokemon.isSpecies("castform",  "arceus") }?.taskBuilder()?.infiniteIterations()?.identifier("castform_handler")?.interval(1f)?.execute { task -> it.entity.pokemon.updateAspects() }?.build() }
 
-            CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST) {
-
-            }
         }
     }
+}
+
+private fun Pokemon.isSpecies(vararg name: String): Boolean {
+    val id = this.species.resourceIdentifier.path
+    return name.any { it -> id == it }
 }

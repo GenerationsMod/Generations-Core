@@ -1,26 +1,24 @@
 {
-  "type": "choice",
+  "type": "item",
   "keys": ["type"],
   "default": "normal",
-  "choices": [
-    "normal",
-    "bug",
-    "dark",
-    "dragon",
-    "electric",
-    "fairy",
-    "fighting",
-    "fire",
-    "flying",
-    "ghost",
-    "grass",
-    "ground",
-    "ice",
-    "poison",
-    "rock",
-    "steel",
-    "water"
-  ],
-  "isAspect": true,
-  "aspectFormat": "{{choice}}"
+  "items": {
+    "generations_core:insect_plate": "bug",
+    "generations_core:dread_plate": "dark",
+    "generations_core:draco_plate": "dragon",
+    "generations_core:zap_plate": "electric",
+    "generations_core:pixie_plate": "fairy",
+    "generations_core:fist_plate": "fighting",
+    "generations_core:flame_plate": "fire",
+    "generations_core:sky_plate": "flying",
+    "generations_core:spooky_plate": "ghost",
+    "generations_core:meadow_plate": "grass",
+    "generations_core:earth_plate": "ground",
+    "generations_core:icicle_plate": "ice",
+    "generations_core:toxic_plate": "poison",
+    "generations_core:stone_plate": "rock",
+    "generations_core:iron_plate": "steel",
+    "generations_core:splash_plate": "water"
+  },
+  "isAspect": true
 }

@@ -9,6 +9,7 @@
 package generations.gg.generations.core.generationscore.common;
 
 import com.cobblemon.mod.common.api.data.DataProvider;
+import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeatures;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.google.gson.JsonObject;
@@ -100,6 +101,10 @@ public class GenerationsCore
 		GenerationsCoreRecipeTypes.init();
 		GenerationsCoreRecipeSerializers.init();
 		GenerationsCoreStats.init();
+
+		WeatherAspectProviderKt.getWEATHER_ASPECT().register();
+		SpeciesFeatures.INSTANCE.getTypes().put("item", HeldItemSpeciesFeatureProvider.class);
+
 
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 

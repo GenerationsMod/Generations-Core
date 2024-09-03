@@ -46,5 +46,8 @@ inline fun <reified R : CustomPokemonPropertyType<*>> Pokemon.getProviderOrNull(
     return SpeciesFeatures.getFeaturesFor(species).filterIsInstance<R>().firstOrNull { it.keys.contains(id) };
 }
 
+inline fun <reified R : CustomPokemonPropertyType<*>> Pokemon.getProviders(): List<R> {
+    return SpeciesFeatures.getFeaturesFor(species).filterIsInstance<R>();
+}
 
 
