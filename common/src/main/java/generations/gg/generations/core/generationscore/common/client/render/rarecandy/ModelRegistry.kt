@@ -27,7 +27,8 @@ object ModelRegistry {
                 try {
                     return@CacheLoader of(key!!, resourceManager.getResourceOrThrow(key))
                 } catch (e: Exception) {
-                    throw RuntimeException(e)
+                    System.out.println("Error when loading $key ${e.message}")
+                    null
                 }
             })
     @JvmStatic

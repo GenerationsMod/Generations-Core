@@ -61,7 +61,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
                 instance.setVariant(variant);
             }
 
-            instance.viewMatrix().set(stack.last().pose());
+            instance.transformationMatrix().set(stack.last().pose());
             ((BlockObjectInstance) instance).setLight(packedLight);
             if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) instance).setTint(provider.getTint());
             model.render(instance);

@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Pipelines {
     public static final RenderContext.Key<CobblemonInstance> INSTANCE = RenderContext.Companion.key(GenerationsCore.id("object_instance"), TypeToken.get(CobblemonInstance.class));
@@ -65,9 +66,9 @@ public class Pipelines {
 
         register.register("pokemon", 
                 manager -> {
-            var legacyShading = GenerationsCore.CONFIG.client.usePixelmonShading ? "legacy/" : "";
+
                     var ROOT = new Pipeline.Builder()
-                            .supplyUniform("viewMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().viewMatrix()))
+//                            .supplyUniform("cameraMatrix", ctx -> ctx.uniform().uploadMat4f(RenderSystem.getInverseViewRotationMatrix()))
                             .supplyUniform("modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().transformationMatrix()))
                             .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(RenderSystem.getProjectionMatrix()))
                             .supplyUniform("boneTransforms", ctx -> {
@@ -80,44 +81,33 @@ public class Pipelines {
                             }).supplyUniform("uvScale", ctx -> {
                                 var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getOffset(ctx.getMaterial().getMaterialName()) != null ? instance.getOffset(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
                                 ctx.uniform().uploadVec2f(offsets.scale());
+                            }).supplyUniform("legacyShading", ctx -> ctx.uniform().uploadBoolean(GenerationsCore.CONFIG.client.usePixelmonShading))
+                            .supplyUniform("Light0_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[0])).supplyUniform("Light1_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[1]))
+                            .prePostDraw(material -> {
+                                if(material.cullType() != CullType.None) {
+                                    RenderSystem.enableCull();
+                                }
+
+                                if(material.blendType() == BlendType.Regular) {
+                                    BlendRecord.push();
+                                }
+                                }, material -> {
+                                if(material.cullType() != CullType.None) {
+                                    RenderSystem.enableCull();
+                                }
+
+                                if(material.blendType() == BlendType.Regular) {
+                                    BlendRecord.pop();
+                                }
                             });
-                    
-                    if(!legacyShading.isEmpty()) {
-                          ROOT.supplyUniform("Light0_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[0])).supplyUniform("Light1_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[1]));
-                    }
-                    ROOT.prePostDraw(material -> {
-                        if(material.cullType() != CullType.None) {
-                            RenderSystem.enableCull();
-                        }
-
-//                               material.cullType().enable();
-                        if(material.blendType() == BlendType.Regular) {
-
-                            BlendRecord.push();
-
-                            RenderSystem.enableBlend();
-                            RenderSystem.defaultBlendFunc();
-                        }
-                        }, material -> {
-                            if(material.cullType() != CullType.None) {
-                                RenderSystem.enableCull();
-                            }
-
-//                                material.cullType().disable();
-                            if(material.blendType() == BlendType.Regular) {
-                                BlendRecord.pop();
-
-                                RenderSystem.disableBlend();
-                            }
-                    });
 
 
                     var BASE = new Pipeline.Builder(ROOT)
                             .configure(Pipelines::addDiffuse)
-                            .configure(Pipelines::addLight);
+                            .configure(Pipelines::addLight)
+                            .configure(Pipelines::addFog);
 
                     Pipeline.Builder layered_base = new Pipeline.Builder(BASE)
-                            .shader(read(register.resourceManager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(register.resourceManager, "shaders/block/" + legacyShading + "layered.fs.glsl"))
                             .configure(Pipelines::baseColors)
                             .configure(Pipelines::emissionColors)
                             .supplyUniform("layer", ctx -> {
@@ -138,18 +128,19 @@ public class Pipelines {
 
                                 texture.bind(4);
                                 ctx.uniform().uploadInt(4);
-                            });
+                            })
+                            .shader(read(register.resourceManager, "shaders/block/animated.vs.glsl"), read(register.resourceManager, "shaders/block/layered.fs.glsl"));
 
                     Pipeline layered = new Pipeline.Builder(layered_base)
                             .supplyUniform("frame", ctx -> ctx.uniform().uploadInt(-1))
                             .build();
 
                     Pipeline solid = new Pipeline.Builder(BASE)
-                            .shader(read(manager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(manager, "shaders/block/" + legacyShading + "solid.fs.glsl"))
+                            .shader(read(manager, "shaders/block/animated.vs.glsl"), read(manager, "shaders/block/solid.fs.glsl"))
                             .build();
 
                     Pipeline masked = new Pipeline.Builder(BASE)
-                            .shader(read(manager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(manager, "shaders/block/" + legacyShading + "masked.fs.glsl"))
+                            .shader(read(manager, "shaders/block/animated.vs.glsl"), read(manager, "shaders/block/masked.fs.glsl"))
                             .supplyUniform("mask", ctx -> {
 
                                 var texture = ctx.getTexture("mask");
@@ -193,7 +184,7 @@ public class Pipelines {
 
     private static void addDiffuse(Pipeline.Builder builder) {
         builder.supplyUniform("diffuse", ctx -> {
-            ITexture texture = getTexture(ctx); //isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
+            ITexture texture = getTexture(ctx);
 
             if (texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
                 texture = ITextureLoader.instance().getNuetralFallback();
@@ -250,6 +241,20 @@ public class Pipelines {
 
     private static float getFloatValue(UniformUploadContext ctx, String id, float value) {
         return !isStatueMaterial(ctx) && ctx.getValue(id) instanceof Float vec ? vec : value;
+    }
+
+    private static void addFog(Pipeline.Builder builder) {
+        builder.supplyUniform("FogShape", ctx -> ctx.uniform().uploadInt(RenderSystem.getShaderFogShape().ordinal()));
+        builder.supplyUniform("FogStart", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogStart()));
+        builder.supplyUniform("FogEnd", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogEnd()));
+        builder.supplyUniform("FogColor", colorConsumer(RenderSystem::getShaderFogColor));
+    }
+
+    private static Consumer<UniformUploadContext> colorConsumer(Supplier<float[]> supplier) {
+        return ctx -> {
+            var color = supplier.get();
+            ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
+        };
     }
 
     private static void addLight(Pipeline.Builder builder) {
@@ -309,6 +314,9 @@ public class Pipelines {
             dstRgb = GlStateManager.BLEND.dstRgb;
             srcAlpha = GlStateManager.BLEND.srcAlpha;
             dstAlpha = GlStateManager.BLEND.dstAlpha;
+
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
         }
 
         public static void pop() {

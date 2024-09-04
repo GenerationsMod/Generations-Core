@@ -18,6 +18,7 @@ import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.GenerationsDataProvider;
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone;
+import generations.gg.generations.core.generationscore.common.client.model.RunnableKeybind;
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer;
 import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRenderer;
 import generations.gg.generations.core.generationscore.common.client.render.block.entity.*;
@@ -76,6 +77,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Vector4f;
+import org.lwjgl.glfw.GLFW;
 
 import java.io.File;
 import java.util.Map;
@@ -131,10 +133,19 @@ public class GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
             addWoodType(GenerationsWoodTypes.GHOST);
+
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
+
 
             Pipelines.onInitialize(event.getResourceManager());
             registerScreens();
+        });
+
+        RunnableKeybind.create("blep", GLFW.GLFW_KEY_SEMICOLON, "rendering", new Runnable() {
+            @Override
+            public void run() {
+                GenerationsCore.CONFIG.client.usePixelmonShading = !GenerationsCore.CONFIG.client.usePixelmonShading;
+            }
         });
 
         ItemPropertiesRegistry.registerGeneric(GenerationsCore.id("type"), (arg, arg2, arg3, i) -> {

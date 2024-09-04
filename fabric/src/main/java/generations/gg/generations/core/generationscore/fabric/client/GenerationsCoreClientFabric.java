@@ -39,11 +39,8 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
 
         WorldRenderEvents.BEFORE_DEBUG_RENDER.register(context -> GenerationsCoreClient.renderRareCandy(context.world()));
 
-        ClientTickEvent.CLIENT_POST.register(new ClientTickEvent.Client() {
-            @Override
-            public void tick(Minecraft instance) {
+        ClientTickEvent.CLIENT_POST.register(instance -> {
 //                ModelRegistry.getGuiRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
-            }
         });
 
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());

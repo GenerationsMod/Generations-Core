@@ -68,9 +68,13 @@ class CompiledModel {
     }
 
     fun delete() {
-        try {
-            RenderSystem.recordRenderCall { renderObject?.close() }
-        } catch (_: IOException) {
+        RenderSystem.recordRenderCall {
+            try {
+                renderObject?.close()
+            } catch (e: IOException) {
+                System.out.println("Error in model ${this.name}")
+                e.printStackTrace()
+            }
         }
     }
 
