@@ -39,9 +39,6 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
 
         WorldRenderEvents.BEFORE_DEBUG_RENDER.register(context -> GenerationsCoreClient.renderRareCandy(context.world()));
 
-
-
-
         ClientTickEvent.CLIENT_POST.register(new ClientTickEvent.Client() {
             @Override
             public void tick(Minecraft instance) {

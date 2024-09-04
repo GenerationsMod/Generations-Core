@@ -35,14 +35,8 @@ public class GenerationsCoreClientForge {
     private static void renderHighlightedPath(RenderLevelStageEvent event) {
         if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
             GenerationsCoreClient.renderHighlightedPath(event.getPoseStack(), event.getRenderTick(), event.getCamera());
-        } else if(event.getStage() == RenderLevelStageEvent.Stage.AFTER_TRIPWIRE_BLOCKS) {
-//            var startTime = System.currentTimeMillis();
-//            assert level != null;
-//            level.getProfiler().popPush("render_models");
-//            RenderSystem.enableDepthTest();
-//            BufferUploader.reset();
+        } else if(event.getStage() == RenderLevelStageEvent.Stage.AFTER_BLOCK_ENTITIES) {
             GenerationsCoreClient.renderRareCandy(Minecraft.getInstance().level);
-//            if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
         }
     }
 
