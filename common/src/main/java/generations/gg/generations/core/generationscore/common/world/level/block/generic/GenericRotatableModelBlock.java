@@ -279,7 +279,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
                     if(x == getBaseX() && y == 0 && z == getBaseZ()) continue;
                     var blockPos = adjustBlockPos(pos, state.getValue(FACING), x, y, z, true);
-                    level.setBlock(blockPos, setSize(state.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER), x, y, z), 2);
+                    level.setBlock(blockPos, setSize(state.setValue(WATERLOGGED, level.getFluidState(blockPos).getType() == Fluids.WATER), x, y, z), 2);
                 }
             }
         }
