@@ -10,6 +10,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Varyi
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.BufferUploader;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
@@ -417,6 +418,7 @@ public class GenerationsCoreClient {
         assert level != null;
         level.getProfiler().popPush("render_models");
         RenderSystem.enableDepthTest();
+        BufferUploader.reset();
 
         ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
