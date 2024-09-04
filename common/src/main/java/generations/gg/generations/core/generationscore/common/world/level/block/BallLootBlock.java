@@ -6,15 +6,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallLootBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallLootBlockEntity.LootMode;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallLootBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
@@ -51,7 +42,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.stream.Collectors;
 
 public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntity> {
-    private static VoxelShape shape = Shapes.box(0.25f, 0.0f, 0.25f, 0.75, 0.5f, 0.75f);
+    private static final VoxelShape shape = Shapes.box(0.25f, 0.0f, 0.25f, 0.75, 0.5f, 0.75f);
     private final String name;
     private final ResourceLocation lootTable;
     private final ResourceLocation ball;
@@ -161,9 +152,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
             builder.withLuck(player.getLuck()).withParameter(LootContextParams.THIS_ENTITY, player);
 
 
-        var table = level.getServer().getLootData().getLootTable(this.getLootTableId()).getRandomItems(builder.create(LootContextParamSets.CHEST)).stream().collect(Collectors.toCollection(NonNullList::create));
-
-        return table;
+        return level.getServer().getLootData().getLootTable(this.getLootTableId()).getRandomItems(builder.create(LootContextParamSets.CHEST)).stream().collect(Collectors.toCollection(NonNullList::create));
     }
 
     @Override

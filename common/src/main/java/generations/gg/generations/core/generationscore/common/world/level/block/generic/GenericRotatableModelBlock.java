@@ -2,11 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.common.util.MathUtils;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -116,10 +112,12 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         var level = context.getLevel();
         var dir = context.getHorizontalDirection().getOpposite();
 
+        var state = super.getStateForPlacement(context);
+
         if(pos.getY() < level.getMaxBuildHeight() - height && isAreaClear(level, dir, pos)) {
-            return setSize(this.defaultBlockState().setValue(FACING, dir), getBaseX(), 0, getBaseZ());
+            return setSize(state.setValue(FACING, dir), getBaseX(), 0, getBaseZ());
         } else {
-            return null;
+            return state;
         }
     }
 

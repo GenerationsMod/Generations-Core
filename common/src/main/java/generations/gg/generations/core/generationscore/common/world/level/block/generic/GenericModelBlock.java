@@ -2,10 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,6 +20,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -38,7 +35,7 @@ import java.util.function.BiFunction;
 
 @SuppressWarnings("deprecation")
 public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.ModelProvider> extends BaseEntityBlock implements SimpleWaterloggedBlock, ModelContextProviders.VariantProvider {
-    protected static final BooleanProperty WATERLOGGED = BooleanProperty.create("waterlogged");
+    protected static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final BiFunction<BlockPos, BlockState, BlockPos> DEFAUL_BLOCK_POS_FUNCTION = (pos, state) -> pos;
 
     protected final RegistrySupplier<MutableBlockEntityType<T>> blockEntityFunction;
