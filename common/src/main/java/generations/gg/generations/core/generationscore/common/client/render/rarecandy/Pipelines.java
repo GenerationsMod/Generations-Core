@@ -114,7 +114,8 @@ public class Pipelines {
 
                     var BASE = new Pipeline.Builder(ROOT)
                             .configure(Pipelines::addDiffuse)
-                            .configure(Pipelines::addLight);
+                            .configure(Pipelines::addLight)
+                            .configure(Pipelines::addFog);
 
                     Pipeline.Builder layered_base = new Pipeline.Builder(BASE)
                             .shader(read(register.resourceManager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(register.resourceManager, "shaders/block/" + legacyShading + "layered.fs.glsl"))
@@ -157,7 +158,6 @@ public class Pipelines {
                                 if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
                                     texture = ITextureLoader.instance().getDarkFallback();
                                 }
-
 
                                 texture.bind(3);
                                 ctx.uniform().uploadInt(3);
@@ -275,6 +275,15 @@ public class Pipelines {
         }).supplyUniform("useLight", ctx -> ctx.uniform().uploadBoolean(ctx.getValue("useLight") instanceof Boolean bool ? bool : true));
     }
 
+    private static void addFog(Pipeline.Builder builder) {
+        builder.supplyUniform("FogStart", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogStart()));
+        builder.supplyUniform("FogEnd", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogEnd()));
+        builder.supplyUniform("FogColor", ctx -> {
+            var color = RenderSystem.getShaderFogColor();
+            ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
+        });
+        builder.supplyUniform("FogShape", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogShape().getIndex()));
+    }
 
     private static boolean isStatueMaterial(UniformUploadContext ctx) {
         return ctx.instance() instanceof StatueInstance instance && instance.getMaterial() != null && ((GenerationsTextureLoader) ITextureLoader.instance()).has(instance.getMaterial());
