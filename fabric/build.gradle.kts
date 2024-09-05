@@ -49,7 +49,7 @@ dependencies {
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowBundle"(project(":common", "transformProductionFabric"))
 
-    modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
+    modLocalRuntime("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
     implementation("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}") {isTransitive = false})!!
 

@@ -62,19 +62,19 @@ dependencies {
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowBundle"(project(":common", "transformProductionForge"))
 
-    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
+    modLocalRuntime("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
 
     modApi("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!
 
-    forgeRuntimeLibrary("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}"){isTransitive = false})!!
+    forgeRuntimeLibrary("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}") {isTransitive = false})!!
 
     modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
 
-    modRuntimeOnly("curse.maven:spit-it-out-857141:4888754")
+    modLocalRuntime("curse.maven:spit-it-out-857141:4888754")
 
-    modRuntimeOnly("curse.maven:worldedit-225608:4586218")
+    modLocalRuntime("curse.maven:worldedit-225608:4586218")
 
     modRuntimeOnly("me.shedaniel:RoughlyEnoughItems-forge:${project.properties["rei"]}")
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-forge:${project.properties["rei"]}")
