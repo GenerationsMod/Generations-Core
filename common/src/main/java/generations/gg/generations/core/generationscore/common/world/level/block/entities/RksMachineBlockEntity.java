@@ -92,7 +92,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
         CompoundTag inventoryTag = nbt.getCompound(INVENTORY_TAG);
-        ContainerHelper.saveAllItems(inventoryTag, this.inventory);
+        ContainerHelper.loadAllItems(inventoryTag, this.inventory);
         this.output = ItemStack.of(inventoryTag.getCompound("Output"));
         this.processingTime = nbt.getInt(PROCESSING_TIME_TAG);
         this.processTimeTotal = nbt.getInt(PROCESSING_TIME_TOTAL_TAG);
@@ -236,8 +236,8 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     private Optional<? extends RksRecipe<?>> getMappedRecipe(RecipeManager manager) {
         var recipe = manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_ITEM.get(), this, level);
 
-        if(recipe.isEmpty()) return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_ITEM.get(), this, level);
-        else return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_POKEMON.get(), this, level);
+        if(recipe.isEmpty()) return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_POKEMON.get(), this, level);
+        else return Optional.empty();
     }
 
     private RksRecipe<?> getMappedRecipe(RecipeManager manager, ResourceLocation id) {

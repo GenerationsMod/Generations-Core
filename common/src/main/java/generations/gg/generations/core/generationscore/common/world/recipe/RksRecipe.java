@@ -219,13 +219,14 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
 
     @Override
     public boolean isIncomplete() {
-        NonNullList<Ingredient> nonNullList = this.getIngredients();
-        return nonNullList.isEmpty() || nonNullList.stream().filter(ingredient -> !ingredient.isEmpty()).anyMatch(ingredient -> ingredient.getItems().length == 0);
+        NonNullList<GenerationsIngredient> nonNullList = this.recipeItems;
+        return nonNullList.isEmpty() || nonNullList.stream().filter(ingredient -> !ingredient.isEmpty()).anyMatch(ingredient -> ingredient.matchingStacks().size() == 0);
     }
 
     private static int firstNonSpace(String entry) {
-        int i;
-        for (i = 0; i < entry.length() && entry.charAt(i) == ' '; ++i) {
+        int i = 0;
+        while (i < entry.length() && entry.charAt(i) == ' ') {
+            ++i;
         }
         return i;
     }

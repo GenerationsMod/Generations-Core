@@ -177,7 +177,7 @@ public class Pipelines {
                                     .supplyUniform("frame", ctx -> ctx.uniform().uploadInt((int) pingpong(MinecraftClientGameProvider.getTimePassed())))
                                     .build();
 
-                            var map = Map.of("masked", masked, "layered", layered, "paradox", paradox, "solid", solid);
+                            var map = Map.of("masked", layered, "layered", layered, "paradox", paradox, "solid", solid);
 
                             return s -> map.getOrDefault(s, solid);
                 });
@@ -224,7 +224,7 @@ public class Pipelines {
                 .supplyUniform("emiColor2", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor2")))
                 .supplyUniform("emiColor3", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor3")))
                 .supplyUniform("emiColor4", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor4")))
-                .supplyUniform("emiColor5", ctx -> ctx.uniform().uploadVec3f(getColorValue(ctx, "emiColor5")))
+                .supplyUniform("emiColor5", ctx -> ctx.uniform().uploadVec3f(ctx.instance() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null ? tintProvider.getTint() : getColorValue(ctx, "emiColor5")))
                 .supplyUniform("emiIntensity1", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity1")))
                 .supplyUniform("emiIntensity2", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity2")))
                 .supplyUniform("emiIntensity3", ctx -> ctx.uniform().uploadFloat(getFloatValue(ctx, "emiIntensity3")))

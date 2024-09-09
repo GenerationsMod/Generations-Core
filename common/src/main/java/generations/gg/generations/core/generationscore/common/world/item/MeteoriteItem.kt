@@ -1,9 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
-import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeatureProvider
-import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeatures
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Pokemon
@@ -29,7 +26,7 @@ private fun ChoiceSpeciesFeatureProvider.cycle(value: String): String {
 class MeteoriteItem(arg: Properties?) : EnchantableItem(arg), LangTooltip, GenerationsCobblemonInteractions.PokemonInteraction {
     override fun neededEnchantmentLevel(player: Player): Int {
         val caught = GenerationsCore.CONFIG.caught
-        return if (!caught.capped(player, LegendKeys.DEOXYS)) super.neededEnchantmentLevel(player) else 0
+        return if (caught.capped(player, LegendKeys.DEOXYS)) super.neededEnchantmentLevel(player) else 0
     }
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {

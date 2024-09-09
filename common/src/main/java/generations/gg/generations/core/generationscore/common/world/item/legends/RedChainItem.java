@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item.legends;
 
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip;
 import net.minecraft.network.chat.Component;
@@ -25,7 +23,7 @@ public class RedChainItem extends EnchantableItem implements LangTooltip {
     @Override
     public int neededEnchantmentLevel(Player player) {
         var caught = GenerationsCore.CONFIG.caught;
-        if(!caught.capped(player, LegendKeys.DIALGA) || !caught.capped(player, LegendKeys.GIRATINA) || !caught.capped(player, LegendKeys.PALKIA)) return super.neededEnchantmentLevel(player);
+        if(caught.capped(player, LegendKeys.DIALGA) || caught.capped(player, LegendKeys.GIRATINA) || caught.capped(player, LegendKeys.PALKIA)) return super.neededEnchantmentLevel(player);
         else return 0;
     }
 

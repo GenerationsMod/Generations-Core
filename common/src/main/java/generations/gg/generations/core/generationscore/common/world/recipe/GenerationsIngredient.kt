@@ -6,6 +6,8 @@ import net.minecraft.world.item.ItemStack
 
 //Copy of Cobblemon's CobblemonIngredient class due to it being sealed.
 interface GenerationsIngredient {
+    val isEmpty: Boolean
+        get() = false
     val id: String
 
     /**
@@ -28,6 +30,9 @@ interface GenerationsIngredient {
 
     object EmptyIngredient : GenerationsIngredient {
         override val id: String = "empty"
+
+        override val isEmpty: Boolean
+            get() = true
 
         override fun matches(stack: ItemStack): Boolean = stack.isEmpty
 
