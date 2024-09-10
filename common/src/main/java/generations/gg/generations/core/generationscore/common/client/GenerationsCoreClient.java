@@ -102,7 +102,7 @@ public class GenerationsCoreClient {
 
         ITextureLoader.setInstance(GenerationsTextureLoader.INSTANCE);
 
-        var renderer = new TimeCapsuleItemRenderer();
+        var renderer = TimeCapsuleItemRenderer.INSTANCE;
 
         CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
         CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);

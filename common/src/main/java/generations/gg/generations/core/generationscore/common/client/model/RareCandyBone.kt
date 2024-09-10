@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.model
 
+import com.cobblemon.mod.common.client.render.layer.CobblemonRenderLayers
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
@@ -16,7 +17,6 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.StatueInstance
 import net.minecraft.client.Minecraft
 import net.minecraft.client.model.geom.ModelPart
-import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
 import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation
@@ -74,11 +74,12 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     ) {
         var id = getTexture(context)
         if (id != null) {
-            if (id.namespace == "pk") { id = spriteProvider.invoke(context.requires(RenderContext.RENDER_STATE), id.path)
+            if (id.namespace == "pk") {
+                id = spriteProvider.invoke(context.requires(RenderContext.RENDER_STATE), id.path)
             }
         }
         val sources = Minecraft.getInstance().renderBuffers().bufferSource()
-        val buffer = sources.getBuffer(RenderType.entityCutout(id))
+        val buffer = sources.getBuffer(CobblemonRenderLayers.ENTITY_CUTOUT.apply(id!!))
         val scale = if (isSprite) 1f else 2f
         val matrix = stack.last()
         matrix.pose().translate(-scale / 2f, 0f, 0f)

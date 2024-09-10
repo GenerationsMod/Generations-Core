@@ -104,7 +104,12 @@ public interface RksResult<U extends RksResult<U>> {
             Pokemon pokemon = null;
 
             if(usePokemonInCapsule() && rksMachineBlockEntity.pokemon.isPresent()) {
+                var properties = new PokemonProperties();
+                properties.setAspects(aspects);
+                properties.setSpecies(species.toString());
+
                 pokemon = rksMachineBlockEntity.pokemon.get();
+                properties.apply(pokemon);
             } else {
                 var properties = new PokemonProperties();
                 properties.setAspects(aspects);
@@ -121,6 +126,7 @@ public interface RksResult<U extends RksResult<U>> {
                 try {
                     Cobblemon.INSTANCE.getStorage().getParty(player.getUUID()).add(pokemon);
                 } catch (NoPokemonStoreException e) {
+                    e.printStackTrace();
                 }
             }
 

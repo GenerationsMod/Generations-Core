@@ -8,6 +8,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Rende
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.util.math.fromEulerXYZ
+import com.cobblemon.mod.common.util.math.geometry.toRadians
 import com.mojang.blaze3d.platform.Lighting
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
@@ -22,92 +23,58 @@ import net.minecraft.world.item.ItemStack
 import org.joml.Quaternionf
 import org.joml.Vector4f
 
-class TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
-    override fun render(
-        stack: ItemStack,
-        mode: ItemDisplayContext,
-        matrices: PoseStack,
-        vertexConsumers: MultiBufferSource,
-        light: Int,
-        overlay: Int,
+object TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
+    override fun render(stack: ItemStack, mode: ItemDisplayContext, matrices: PoseStack, vertexConsumers: MultiBufferSource, light: Int, overlay: Int,
     ) {
         if (stack.item is TimeCapsule || stack.item is StatueSpawnerItem || stack.item is PokemonItem) {
-            val pair = (if(stack.item is PokemonItem) (stack.item as PokemonItem).getSpeciesAndAspects(stack) else TimeCapsule.getRenderablePokmon(stack)) ?: return
-            val first = pair.first
-            val second = pair.second
-
+            val (species, aspects) = (if(stack.item is PokemonItem) (stack.item as PokemonItem).getSpeciesAndAspects(stack) else TimeCapsule.getRenderablePokmon(stack)) ?: return
 
             matrices.pushPose()
-            val model = PokemonModelRepository.getPoser(
-                first.resourceIdentifier, second
-            )
+            val model = PokemonModelRepository.getPoser(species.resourceIdentifier, aspects)
 
             val isSprite = model.rootPart is RareCandyBone;
 
             val context = model.context
-            context.put(RenderContext.SPECIES, first.resourceIdentifier)
-            context.put(RenderContext.ASPECTS, second)
-            context.put(RenderContext.RENDER_STATE, RenderContext.RenderState.PROFILE)
+            context.put(RenderContext.SPECIES, species.resourceIdentifier)
+            context.put(RenderContext.ASPECTS, aspects)
+            context.put(RenderContext.RENDER_STATE, RenderContext.RenderState.PORTRAIT)
 
-            val renderLayer =
-                model.getLayer(PokemonModelRepository.getTexture(first.resourceIdentifier, second, 0f), false, false)
+            val renderLayer = model.getLayer(PokemonModelRepository.getTexture(species.resourceIdentifier, aspects, 0f), false, false)
             val transformations: PokemonItemRenderer.Transformations = (if(isSprite) positionsSprite[mode] else positions[mode]) ?: return
 
             Lighting.setupFor3DItems()
             matrices.scale(transformations.scale.x, transformations.scale.y, transformations.scale.z)
-            matrices.translate(
-                transformations.translation.x,
-                transformations.translation.y,
-                transformations.translation.z
+            matrices.translate(transformations.translation.x, transformations.translation.y, transformations.translation.z
             )
 
             if(!isSprite) {
                 model.setupAnimStateless(PoseType.PROFILE, 0f, 0f, 0f, 0f, 0f)
-                matrices.translate(
-                    model.profileTranslation.x,
-                    model.profileTranslation.y,
-                    model.profileTranslation.z - 4f
-                )
+                matrices.translate(model.profileTranslation.x, model.profileTranslation.y, model.profileTranslation.z - 4.0)
                 matrices.scale(model.profileScale, model.profileScale, 0.15f)
             }
 
-            val rotation = Quaternionf().fromEulerXYZ(
-                transformations.rotation.x,
-                transformations.rotation.y,
-                transformations.rotation.z
-            )
+            val rotation = Quaternionf().fromEulerXYZ(transformations.rotation.x, transformations.rotation.y + 180f.toRadians(), transformations.rotation.z)
+
 
             matrices.mulPose(rotation)
-//            rotation.conjugate()
+            rotation.conjugate()
 
             val tint: Vector4f = if (stack.item is PokemonItem) (stack.item as PokemonItem).tint(stack) else Vector4f(1f, 1f, 1f, 1f)
-
-
+            
             if(isSprite) {
+                Lighting.setupForFlatItems()
+
+                val packedLight = if (mode == ItemDisplayContext.GUI) LightTexture.pack(13, 13) else light
                 RenderSystem.disableCull()
-                (model.rootPart as RareCandyBone).renderSprite(context, matrices, light, overlay, tint.x, tint.y, tint.z, tint.w, isSprite)
+                (model.rootPart as RareCandyBone).renderSprite(context, matrices, packedLight, OverlayTexture.NO_OVERLAY, tint.x, tint.y, tint.z, tint.w, isSprite)
                 RenderSystem.disableCull()
             } else {
+                val packedLight = if (mode == ItemDisplayContext.GUI) LightTexture.pack(13, 13) else light
                 val vertexConsumer = vertexConsumers.getBuffer(renderLayer)
                 matrices.pushPose()
-                val packedLight = if (mode == ItemDisplayContext.GUI) LightTexture.pack(13, 13) else light
 
-                model.withLayerContext(
-                    vertexConsumers,
-                    null,
-                    PokemonModelRepository.getLayers(first.resourceIdentifier, second)
-                ) {
-                    model.render(
-                        model.context,
-                        matrices,
-                        vertexConsumer,
-                        packedLight,
-                        OverlayTexture.NO_OVERLAY,
-                        tint.x,
-                        tint.y,
-                        tint.z,
-                        tint.w
-                    )
+                model.withLayerContext(vertexConsumers, null, PokemonModelRepository.getLayers(species.resourceIdentifier, aspects)) {
+                    model.render(model.context, matrices, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, tint.x, tint.y, tint.z, tint.w)
                 }
                 model.setDefault()
                 matrices.popPose()
@@ -118,7 +85,6 @@ class TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
         }
     }
 
-        companion object {
             val positionsSprite: MutableMap<ItemDisplayContext, PokemonItemRenderer.Transformations> = mutableMapOf()
 
             init {
@@ -166,6 +132,5 @@ class TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
                 PokemonItemRenderer().Transformation(0.0, 0.0, 0.0),
                 PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
                 PokemonItemRenderer().Transformation(0F, 0F, 0F))
-        }
     }
 }

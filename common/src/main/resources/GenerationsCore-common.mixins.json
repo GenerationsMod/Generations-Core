@@ -9,7 +9,8 @@
     "RecordItemMixin",
     "ServerPlayerMixin",
     "client.GuiUtilsMixin",
-    "client.PokemonGuiUtilsMixin"
+    "client.PokemonGuiUtilsMixin",
+    "client.PokemonItemRendererMixin"
   ],
   "client": [
     "client.ClientRecipeBookMixin",
