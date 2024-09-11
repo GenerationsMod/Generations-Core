@@ -56,6 +56,7 @@ public class LegendKeys {
     public static SpeciesKey RESHIRAM = create("reshiram");
     public static SpeciesKey ZEKROM = create("zekrom");
     public static SpeciesKey KYUREM = create("kyurem");
+    public static SpeciesKey GENESECT = create("genesect");
     public static SpeciesKey MELOETTA = create("meloetta");
     public static SpeciesKey HOOPA = create("hoopa");
     public static SpeciesKey TYPE_NULL = create("typenull");

@@ -95,6 +95,21 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .criterion("soul_heart", InventoryChangeTrigger.TriggerInstance.hasItems(SOUL_HEART.get()))
                 .offerTo(exporter, GenerationsCore.id("magearna"));
 
+        RksRecipeJsonBuilder.create(LegendKeys.GENESECT)
+                .key(LegendKeys.GENESECT)
+                .pattern("SOB")
+                .pattern("CND")
+                .pattern("RNR")
+                .input('S', SHOCK_DRIVE.get())
+                .input('N', Items.NETHERITE_HELMET)
+                .input('B', BURN_DRIVE.get())
+                .input('C', CHILL_DRIVE.get())
+                .input('O', ORB.get())
+                .input('D', DOUSE_DRIVE.get())
+                .input('R', Items.REDSTONE)
+                .criterion("orb", InventoryChangeTrigger.TriggerInstance.hasItems(ORB.get()))
+                .offerTo(exporter, GenerationsCore.id("genesect"));
+
         RksRecipeJsonBuilder.create(SACRED_ASH.get()) //TODO: Add SpeciesKey if needed
                 .pattern("ABC")
                 .input('A', Items.TOTEM_OF_UNDYING)
