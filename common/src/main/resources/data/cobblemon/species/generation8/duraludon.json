@@ -163,7 +163,7 @@
         "electroshot"
       ],
       "requirements": [],
-      "requiredContext": "cobblemon:metal_alloy"
+      "requiredContext": "minecraft:iron_ingot"
     }
   ],
   "baseScale": 1,
