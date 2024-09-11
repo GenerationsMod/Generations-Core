@@ -1010,9 +1010,9 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_BRICKS_SET.getBaseBlock(), 16)
                 .requires(Blocks.BRICKS)
-                .requires(GenerationsItems.GHOST_GEM.get())
+                .requires(CobblemonItems.GHOST_GEM)
                 .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
-                .unlockedBy(getHasName(GenerationsItems.GHOST_GEM.get()), has(GenerationsItems.GHOST_GEM.get()))
+                .unlockedBy(getHasName(CobblemonItems.GHOST_GEM), has(CobblemonItems.GHOST_GEM))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.GHOST_OBELISK_SET.getBaseBlock())
@@ -1034,15 +1034,15 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         //Ghost Log from Log
         //1 Gem 1 Log = 8 Logs
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsWood.GHOST_LOG.get(), 8)
-                .requires(GenerationsItems.GHOST_GEM.get())
+                .requires(CobblemonItems.GHOST_GEM)
                 .requires(ItemTags.LOGS)
-                .unlockedBy(getHasName(GenerationsItems.GHOST_GEM.get()), has(GenerationsItems.GHOST_GEM.get()))
+                .unlockedBy(getHasName(CobblemonItems.GHOST_GEM), has(CobblemonItems.GHOST_GEM))
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsWood.GHOST_PLANKS.get(), 32)
-                .requires(GenerationsItems.GHOST_GEM.get())
+                .requires(CobblemonItems.GHOST_GEM)
                 .requires(ItemTags.PLANKS)
-                .unlockedBy(getHasName(GenerationsItems.GHOST_GEM.get()), has(GenerationsItems.GHOST_GEM.get()))
+                .unlockedBy(getHasName(CobblemonItems.GHOST_GEM), has(CobblemonItems.GHOST_GEM))
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
                 .save(consumer, "ghost_planks_from_other_planks");
 

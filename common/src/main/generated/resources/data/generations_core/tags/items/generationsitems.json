@@ -1,5 +1,20 @@
 {
   "values": [
+    "#generations_core:ribbons",
+    "#generations_core:badges",
+    "#generations_core:unimplemented",
+    "#generations_core:cuisine",
+    "#generations_core:natural",
+    "#generations_core:restoration",
+    "#generations_core:player_items",
+    "#generations_core:held_items",
+    "#generations_core:legendary_items",
+    "#generations_core:utility",
+    "#generations_core:valuables",
+    "#generations_core:form_items",
+    "#generations_core:building_blocks",
+    "#generations_core:pokemail",
+    "#generations_core:sealed_pokemail",
     "generations_core:tm",
     "generations_core:gb_sounds",
     "generations_core:ultra_dark_sign",
@@ -538,21 +553,6 @@
     "generations_core:registeel_shrine",
     "generations_core:regigigas_shrine",
     "generations_core:tao_trio_shrine",
-    "generations_core:tapu_shrine",
-    "#generations_core:ribbons",
-    "#generations_core:badges",
-    "#generations_core:unimplemented",
-    "#generations_core:cuisine",
-    "#generations_core:natural",
-    "#generations_core:restoration",
-    "#generations_core:player_items",
-    "#generations_core:held_items",
-    "#generations_core:legendary_items",
-    "#generations_core:utility",
-    "#generations_core:valuables",
-    "#generations_core:form_items",
-    "#generations_core:building_blocks",
-    "#generations_core:pokemail",
-    "#generations_core:sealed_pokemail"
+    "generations_core:tapu_shrine"
   ]
 }

@@ -6,23 +6,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cobblemon:poke_ball"
+          "name": "cobblemon:absorb_bulb"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:absorb_bulb"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:beach_glass"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:blue_shard"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:damp_rock"
+          "name": "cobblemon:damp_rock"
         },
         {
           "type": "minecraft:item",
@@ -34,15 +22,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "cobblemon:dive_ball"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:health_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:ice_gem"
+          "name": "cobblemon:ice_gem"
         },
         {
           "type": "minecraft:item",
@@ -54,7 +34,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:icy_rock"
+          "name": "cobblemon:icy_rock"
         },
         {
           "type": "minecraft:item",
@@ -62,19 +42,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:large_leek"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lax_incense"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:leppa_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "cobblemon:level_ball"
         },
         {
           "type": "minecraft:item",
@@ -82,31 +50,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:lucky_punch"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:lum_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:luminous_moss"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lumiose_galette"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lure"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "cobblemon:lure_ball"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "cobblemon:luxury_ball"
         },
         {
           "type": "minecraft:item",
@@ -114,19 +58,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:marble"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:max_lure"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:max_potion"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:mighty_candy_l"
         },
         {
           "type": "minecraft:item",
@@ -138,15 +70,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "cobblemon:net_ball"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:paralyze_heal"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pass_orb"
         },
         {
           "type": "minecraft:item",
@@ -162,14 +86,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:poke_doll"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "cobblemon:potion"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:power_belt"
         },
         {
@@ -178,39 +94,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:pungent_root"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pure_incense"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:rabuta_berry"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:relic_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:sea_incense"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:shoal_salt"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:shoal_shell"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:smoked_poke_tail"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:smooth_rock"
+          "name": "cobblemon:smooth_rock"
         },
         {
           "type": "minecraft:item",
@@ -218,27 +106,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:sprink_lotad"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:stretchy_spring"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:super_lure"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:tanga_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tough_candy_xl"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tropical_shell"
         },
         {
           "type": "minecraft:item",
@@ -246,15 +114,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:water_gem"
+          "name": "cobblemon:water_gem"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:watmel_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:wave_incense"
         },
         {
           "type": "minecraft:item",
@@ -290,30 +154,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:dynite_ore"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:old_rod"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:good_rod"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:super_rod"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:wailmer_pail"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lava_crystal"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:adamant_mint"
         },
         {
@@ -323,118 +163,6 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:bold_mint"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:water_memory_drive"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:splash_plate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemail_air"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemail_bloom"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemail_brick"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemail_bridge_d"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemail_bridge_m"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemail_bridge_s"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemail_bridge_t"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemail_bridge_v"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:water_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:shattered_ice_key_1"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:shattered_ice_key_2"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:shattered_ice_key_3"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:shattered_ice_key_4"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_11"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_22"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_50"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_77"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_110"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_123"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_142"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_145"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_154"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_188"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_196"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_208"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_209"
         }
       ],
       "rolls": {

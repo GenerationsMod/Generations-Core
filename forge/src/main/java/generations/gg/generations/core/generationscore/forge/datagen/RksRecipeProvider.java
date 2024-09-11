@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.forge.datagen;
 
-import com.cobblemon.mod.common.CobblemonItems;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
@@ -24,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import java.util.function.Consumer;
 
+import static com.cobblemon.mod.common.CobblemonItems.*;
 import static generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.*;
 
 public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
@@ -50,11 +50,11 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .pattern("XXX")
                 .pattern("ABC")
                 .pattern("ZZZ")
-                .input('X', WATER_GEM.get())
+                .input('X', WATER_GEM)
                 .input('A', Items.EGG)
                 .input('B', ORB.get())
                 .input('C', Items.HEART_OF_THE_SEA)
-                .input('Z', CobblemonItems.MYSTIC_WATER)
+                .input('Z', MYSTIC_WATER)
                 .criterion("heart_of_the_sea", InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEART_OF_THE_SEA))
                 .offerTo(exporter, GenerationsCore.id("wonder_egg"));
 
@@ -102,22 +102,6 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .input('C',RAINBOW_WING.get())
                 .criterion("rainbow_wing", InventoryChangeTrigger.TriggerInstance.hasItems(RAINBOW_WING.get()))
                 .offerTo(exporter, GenerationsCore.id("rainbow_wing"));
-
-        createFossil(OLD_AMBER, "aerodactyl", exporter);
-        createFossil(HELIX_FOSSIL, "omanyte", exporter);
-        createFossil(DOME_FOSSIL, "kabuto", exporter);
-        createFossil(ROOT_FOSSIL, "lileep", exporter);
-        createFossil(CLAW_FOSSIL, "anorith", exporter);
-        createFossil(SKULL_FOSSIL, "cranidos", exporter);
-        createFossil(ARMOR_FOSSIL, "shieldon", exporter);
-        createFossil(COVER_FOSSIL, "tirtouga", exporter);
-        createFossil(PLUME_FOSSIL, "archen", exporter);
-        createFossil(JAW_FOSSIL, "tyrunt", exporter);
-        createFossil(SAIL_FOSSIL, "amaura", exporter);
-        createFossil(DRAKE_FOSSIL, BIRD_FOSSIL, "dracozolt", exporter);
-        createFossil(DRAKE_FOSSIL, FISH_FOSSIL, "dracovish", exporter);
-        createFossil(DINO_FOSSIL, BIRD_FOSSIL, "arctozolt", exporter);
-        createFossil(DINO_FOSSIL, FISH_FOSSIL, "arctovish", exporter);
 
         createParadoxPast("walkingwake", "suicune", exporter);
         createParadoxPast("greattusk", "donphan", exporter);
@@ -273,7 +257,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .pattern("XXX")
                 .pattern("ABA")
                 .pattern("XXX")
-                .criterion(BuiltInRegistries.ITEM.getKey(Z_INGOT.get()).getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(Z_INGOT.get()))
+                .criterion(Z_INGOT.getId().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(Z_INGOT.get()))
                 .offerTo(exporter, result.getId().withSuffix("_" + aspects.replace("-", "_")));
     }
 
@@ -311,10 +295,10 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .offerTo(consumer, createdBlock.getId());
     }
 
-    private void createZCyrstal(RegistrySupplier<Item> result, RegistrySupplier<Item> item, Consumer<FinishedRecipe> exporter) {
+    private void createZCyrstal(RegistrySupplier<Item> result, Item item, Consumer<FinishedRecipe> exporter) {
         RksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
-                .input('B', item.get())
+                .input('B', item)
                 .input('X', Z_INGOT.get())
                 .pattern("XXX")
                 .pattern("ABA")
