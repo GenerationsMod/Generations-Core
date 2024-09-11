@@ -160,11 +160,6 @@
         {
           "variant": "level",
           "minLevel": 32
-        },
-        {
-          "variant": "party_member",
-          "target": "type=dark",
-          "contains": true
         }
       ]
     }
