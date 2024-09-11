@@ -361,7 +361,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> TM_223 = register("tm_223", properties -> new TechnicalMachineItem("metalsound", properties), PLAYER_ITEMS);
     public static final RegistrySupplier<Item> TM_224 = register("tm_224", properties -> new TechnicalMachineItem("curse", properties), PLAYER_ITEMS);
     public static final RegistrySupplier<Item> TM_225 = register("tm_225", properties -> new TechnicalMachineItem("hardpress", properties), PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> TM_226 = register("tm_226", properties -> new TechnicalMachineItem("dragonpower", properties), PLAYER_ITEMS);
+    public static final RegistrySupplier<Item> TM_226 = register("tm_226", properties -> new TechnicalMachineItem("dragoncheer", properties), PLAYER_ITEMS);
     public static final RegistrySupplier<Item> TM_227 = register("tm_227", properties -> new TechnicalMachineItem("alluringvoice", properties), PLAYER_ITEMS);
     public static final RegistrySupplier<Item> TM_228 = register("tm_228", properties -> new TechnicalMachineItem("psychicnoise", properties), PLAYER_ITEMS);
     public static final RegistrySupplier<Item> TM_229 = register("tm_229", properties -> new TechnicalMachineItem("upperhand", properties), PLAYER_ITEMS);
