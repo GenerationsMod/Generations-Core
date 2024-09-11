@@ -96,26 +96,44 @@
   "evolutions": [
     {
       "id": "kubfu_urshifu",
-      "variant": "block_click",
-      "result": "urshifu",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "wickedblow"
-      ],
-      "requirements": [],
-      "block": "cobblemon:scroll_of_darkness"
-    },
-    {
-      "id": "kubfu_urshifu",
-      "variant": "block_click",
+      "variant": "level_up",
       "result": "urshifu rapidstrike",
       "consumeHeldItem": false,
       "learnableMoves": [
         "surgingstrikes"
       ],
-      "requirements": [],
-      "block": "cobblemon:scroll_of_waters"
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "time_range",
+          "range": "day"
+        }
+      ]
+    },
+    {
+      "id": "kubfu_urshifu",
+      "variant": "level_up",
+      "result": "urshifu",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "wickedblow"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 32
+        },
+        {
+          "variant": "time_range",
+          "range": "night"
+        }
+      ]
     }
+
+
   ],
   "baseScale": 1,
   "hitbox": {
