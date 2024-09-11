@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.tags;
 
+import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
@@ -84,7 +85,7 @@ public class TagsDatagen {
             });
 
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                            (Block) GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
+                            GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get(),
                     GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get(),
@@ -437,23 +438,22 @@ public class TagsDatagen {
             tag(ItemTags.TOOLS).addTag(GenerationsItemTags.HAMMERS);
             tag(Tags.Items.TOOLS).addTag(GenerationsItemTags.HAMMERS);
 
-            ITEMS.forEach(item -> tag(GenerationsItemTags.GENERATIONSITEMS).add(item.get()));
-            RIBBONS.forEach(ribbon -> tag(GenerationsItemTags.RIBBONS).add(ribbon.get()));
-            BADGES.forEach(badge -> tag(GenerationsItemTags.BADGES).add(badge.get()));
+            tag(GenerationsItemTags.RIBBONS).add(Streams.stream(RIBBONS.iterator()).map(a -> a.get()).toArray(Item[]::new));
+            tag(GenerationsItemTags.BADGES).add(Streams.stream(BADGES.iterator()).map(a -> a.get()).toArray(Item[]::new));
 
-            UNIMPLEMENTED.forEach(item -> tag(GenerationsItemTags.UNIMPLEMENTED).add(item.get()));
-            CUISINE.forEach(item -> tag(GenerationsItemTags.CUISINE).add(item.get()));
-            NATURAL.forEach(item -> tag(GenerationsItemTags.NATURAL).add(item.get()));
-            RESTORATION.forEach(item -> tag(GenerationsItemTags.RESTORATION).add(item.get()));
-            PLAYER_ITEMS.forEach(item -> tag(GenerationsItemTags.PLAYER_ITEMS).add(item.get()));
-            HELD_ITEMS.forEach(item -> tag(GenerationsItemTags.HELD_ITEMS).add(item.get()));
-            LEGENDARY_ITEMS.forEach(item -> tag(GenerationsItemTags.LEGENDARY_ITEMS).add(item.get()));
-            UTILITY.forEach(item -> tag(GenerationsItemTags.UTILITY).add(item.get()));
-            VALUABLES.forEach(item -> tag(GenerationsItemTags.VALUABLES).add(item.get()));
-            FORM_ITEMS.forEach(item -> tag(GenerationsItemTags.FORM_ITEMS).add(item.get()));
-            BUILDING_BLOCKS.forEach(item -> tag(GenerationsItemTags.BUILDING_BLOCKS).add(item.get()));
+            tag(GenerationsItemTags.UNIMPLEMENTED).add(Streams.stream(UNIMPLEMENTED.iterator()).map(a -> a.get()).toArray(Item[]::new));
+            tag(GenerationsItemTags.CUISINE).add(Streams.stream(CUISINE.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.NATURAL).add(Streams.stream(NATURAL.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.RESTORATION).add(Streams.stream(RESTORATION.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.PLAYER_ITEMS).add(Streams.stream(PLAYER_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.HELD_ITEMS).add(Streams.stream(HELD_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.LEGENDARY_ITEMS).add(Streams.stream(LEGENDARY_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.UTILITY).add(Streams.stream(UTILITY.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.VALUABLES).add(Streams.stream(VALUABLES.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.FORM_ITEMS).add(Streams.stream(FORM_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.BUILDING_BLOCKS).add(Streams.stream(BUILDING_BLOCKS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
 
-            tag(GenerationsItemTags.GENERATIONSITEMS)
+            var generationsItemsTag = tag(GenerationsItemTags.GENERATIONSITEMS)
                     .addTag(GenerationsItemTags.RIBBONS)
                     .addTag(GenerationsItemTags.BADGES)
                     .addTag(GenerationsItemTags.UNIMPLEMENTED)
@@ -469,6 +469,8 @@ public class TagsDatagen {
                     .addTag(GenerationsItemTags.BUILDING_BLOCKS)
                     .addTag(GenerationsItemTags.POKEMAIL)
                     .addTag(GenerationsItemTags.CLOSED_POKEMAIL);
+
+            ITEMS.forEach(item -> generationsItemsTag.add(item.getKey()));
 
             tag(GenerationsItemTags.POKEMAIL).add(
                     POKEMAIL_AIR.get(),

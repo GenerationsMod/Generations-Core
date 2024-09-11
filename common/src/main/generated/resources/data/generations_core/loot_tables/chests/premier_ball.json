@@ -6,35 +6,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cobblemon:poke_ball"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:big_malasada"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:big_mushroom"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:black_glasses"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:blue_flute"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:bottle_cap"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:carbos"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:casteliacone"
         },
         {
           "type": "minecraft:item",
@@ -46,7 +22,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:dark_gem"
+          "name": "cobblemon:dark_gem"
         },
         {
           "type": "minecraft:item",
@@ -58,15 +34,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:dire_hit_3"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:discount_coupon"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:dragon_gem"
+          "name": "cobblemon:dragon_gem"
         },
         {
           "type": "minecraft:item",
@@ -78,23 +46,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:dynamax_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:electric_gem"
+          "name": "cobblemon:electric_gem"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:exp_candy_l"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:fancy_apple"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:fruit_bunch"
         },
         {
           "type": "minecraft:item",
@@ -106,27 +62,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:health_candy_xl"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:heart_scale"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:elegant_wing"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:ice_gem"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:item_drop"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:looker_ticket"
+          "name": "cobblemon:ice_gem"
         },
         {
           "type": "minecraft:item",
@@ -134,31 +70,19 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:moomoo_milk"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:muscle_band"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:normal_gem"
+          "name": "cobblemon:normal_gem"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:nugget"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:poison_gem"
+          "name": "cobblemon:poison_gem"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:pp_up"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "cobblemon:premier_ball"
         },
         {
           "type": "minecraft:item",
@@ -186,35 +110,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:scope_lens"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:steel_gem"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tiny_mushroom"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "cobblemon:ultra_ball"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:utility_umbrella"
+          "name": "cobblemon:steel_gem"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:white_herb"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:ghost_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:x_attack_2"
         },
         {
           "type": "minecraft:item",
@@ -235,141 +135,6 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:music_disc_stal"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:exp_charm"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:sparkling_shard"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:electric_memory_drive"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:zap_plate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_17"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_29"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_42"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_61"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_114"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_151"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_3"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_18"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_30"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_43"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_62"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_87"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_94"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_108"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_140"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "cobblemon:heavy_ball"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:iris_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:nessa_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:team_rocket_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:sada_and_turo_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:south_province_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:rival_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:lusamine_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:xy_legendary_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:kanto_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:ultra_necrozma_disc"
-        },
-        {
-          "type": "generations_core:resource_key",
-          "expand": false,
-          "name": "generations_music:hi_tech_earbuds"
         }
       ],
       "rolls": {

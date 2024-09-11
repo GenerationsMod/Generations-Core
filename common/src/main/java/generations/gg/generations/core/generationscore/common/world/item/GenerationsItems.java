@@ -82,13 +82,6 @@ public class GenerationsItems {
     /**
      * Restoration Items
      */
-    public static final RegistrySupplier<Item> HEALTH_FEATHER = register("health_feather", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> MUSCLE_FEATHER = register("muscle_feather", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> RESIST_FEATHER = register("resist_feather", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> GENIUS_FEATHER = register("genius_feather", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> CLEVER_FEATHER = register("clever_feather", Item::new, RESTORATION);
-    public static final RegistrySupplier<Item> SWIFT_FEATHER = register("swift_feather", Item::new, RESTORATION);
-
     public static final RegistrySupplier<Item> PURPLE_JUICE = register("purple_juice", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> RED_JUICE = register("red_juice", Item::new, RESTORATION);
     public static final RegistrySupplier<Item> YELLOW_JUICE = register("yellow_juice", Item::new, RESTORATION);
@@ -567,56 +560,31 @@ public class GenerationsItems {
     /**
      * Held Items
      */
-    public static final RegistrySupplier<Item> ABSORB_BULB = registerHeldItem("absorb_bulb");
-    public static final RegistrySupplier<Item> ABILITY_SHIELD = registerHeldItem("ability_shield");
     public static final RegistrySupplier<Item> ADRENALINE_ORB = registerHeldItem("adrenaline_orb");
-    public static final RegistrySupplier<Item> AIR_BALLOON = registerHeldItem("air_balloon");
     public static final RegistrySupplier<Item> AMULET_COIN = registerHeldItem("amulet_coin");
-    public static final RegistrySupplier<Item> BINDING_BAND = registerHeldItem("binding_band");
     public static final RegistrySupplier<Item> BLACK_FLUTE = registerHeldItem("black_flute");
-    public static final RegistrySupplier<Item> BLUNDER_POLICY = registerHeldItem("blunder_policy");
-    public static final RegistrySupplier<Item> CELL_BATTERY = registerHeldItem("cell_battery");
-    public static final RegistrySupplier<Item> DAMP_ROCK = registerHeldItem("damp_rock");
-    public static final RegistrySupplier<Item> EJECT_BUTTON = registerHeldItem("eject_button");
-    public static final RegistrySupplier<Item> EJECT_PACK = registerHeldItem("eject_pack");
-    public static final RegistrySupplier<Item> EVIOLITE = registerHeldItem("eviolite");
     public static final RegistrySupplier<Item> EXP_ALL = registerHeldItem("exp_all");
-    public static final RegistrySupplier<Item> EXPERT_BELT = registerHeldItem("expert_belt");
-    public static final RegistrySupplier<Item> FLOAT_STONE = registerHeldItem("float_stone");
     public static final RegistrySupplier<Item> FLUFFY_TAIL = registerHeldItem("fluffy_tail");
-    public static final RegistrySupplier<Item> FOCUS_SASH = registerHeldItem("focus_sash");
     public static final RegistrySupplier<Item> GRIP_CLAW = registerHeldItem("grip_claw");
-    public static final RegistrySupplier<Item> HEAT_ROCK = registerHeldItem("heat_rock");
-    public static final RegistrySupplier<Item> ICY_ROCK = registerHeldItem("icy_rock");
-    public static final RegistrySupplier<Item> IRON_BALL = registerHeldItem("iron_ball");
     public static final RegistrySupplier<Item> LAGGING_TAIL = registerHeldItem("lagging_tail");
     public static final RegistrySupplier<Item> LEEK = registerHeldItem("leek");
-    public static final RegistrySupplier<Item> LIGHT_BALL = registerHeldItem("light_ball");
     public static final RegistrySupplier<Item> LUCKY_PUNCH = registerHeldItem("lucky_punch");
     public static final RegistrySupplier<Item> LUMINOUS_MOSS = registerHeldItem("luminous_moss");
     public static final RegistrySupplier<Item> MACHO_BRACE = registerHeldItem("macho_brace");
     public static final RegistrySupplier<Item> METRONOME = registerHeldItem("metronome");
     public static final RegistrySupplier<Item> POKE_DOLL = registerHeldItem("poke_doll");
     public static final RegistrySupplier<Item> POKE_TOY = registerHeldItem("poke_toy");
-    public static final RegistrySupplier<Item> PRISM_SCALE = registerHeldItem("prism_scale");
     public static final RegistrySupplier<Item> PROTECTIVE_PADS = registerHeldItem("protective_pads");
-    public static final RegistrySupplier<Item> RED_CARD = registerHeldItem("red_card");
-    public static final RegistrySupplier<Item> RING_TARGET = registerHeldItem("ring_target");
     public static final RegistrySupplier<Item> ROOM_SERVICE = registerHeldItem("room_service");
     public static final RegistrySupplier<Item> SCOPE_LENS = registerHeldItem("scope_lens");
     public static final RegistrySupplier<Item> SHED_SHELL = registerHeldItem("shed_shell");
-    public static final RegistrySupplier<Item> SHELL_BELL = registerHeldItem("shell_bell");
-    public static final RegistrySupplier<Item> SMOOTH_ROCK = registerHeldItem("smooth_rock");
     public static final RegistrySupplier<Item> SNOWBALL = registerHeldItem("snowball");
-    public static final RegistrySupplier<Item> SOOTHE_BELL = registerHeldItem("soothe_bell");
     public static final RegistrySupplier<Item> SOUL_DEW = registerHeldItem("soul_dew");
-    public static final RegistrySupplier<Item> STICKY_BARB = registerHeldItem("sticky_barb");
     public static final RegistrySupplier<Item> TERRAIN_EXTENDER = registerHeldItem("terrain_extender");
     public static final RegistrySupplier<Item> THICK_CLUB = registerHeldItem("thick_club");
     public static final RegistrySupplier<Item> THROAT_SPRAY = registerHeldItem("throat_spray");
     public static final RegistrySupplier<Item> UP_GRADE = registerHeldItem("up_grade");
     public static final RegistrySupplier<Item> UTILITY_UMBRELLA = registerHeldItem("utility_umbrella");
-    public static final RegistrySupplier<Item> WEAKNESS_POLICY = registerHeldItem("weakness_policy");
     public static final RegistrySupplier<Item> WHITE_FLUTE = registerHeldItem("white_flute");
     public static final RegistrySupplier<Item> WIDE_LENS = registerHeldItem("wide_lens");
     public static final RegistrySupplier<Item> ZOOM_LENS = registerHeldItem("zoom_lens");
@@ -625,25 +593,7 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> DOUSE_DRIVE = registerHeldItem("douse_drive");
     public static final RegistrySupplier<Item> SHOCK_DRIVE = registerHeldItem("shock_drive");
 
-    public static final RegistrySupplier<Item> BUG_GEM = registerHeldItem("bug_gem");
-    public static final RegistrySupplier<Item> DARK_GEM = registerHeldItem("dark_gem");
-    public static final RegistrySupplier<Item> DRAGON_GEM = registerHeldItem("dragon_gem");
-    public static final RegistrySupplier<Item> ELECTRIC_GEM = registerHeldItem("electric_gem");
-    public static final RegistrySupplier<Item> FAIRY_GEM = registerHeldItem("fairy_gem");
-    public static final RegistrySupplier<Item> FIGHTING_GEM = registerHeldItem("fighting_gem");
-    public static final RegistrySupplier<Item> FIRE_GEM = registerHeldItem("fire_gem");
-    public static final RegistrySupplier<Item> FLYING_GEM = registerHeldItem("flying_gem");
-    public static final RegistrySupplier<Item> GHOST_GEM = registerHeldItem("ghost_gem");
-    public static final RegistrySupplier<Item> GRASS_GEM = registerHeldItem("grass_gem");
-    public static final RegistrySupplier<Item> GROUND_GEM = registerHeldItem("ground_gem");
-    public static final RegistrySupplier<Item> ICE_GEM = registerHeldItem("ice_gem");
-    public static final RegistrySupplier<Item> NORMAL_GEM = registerHeldItem("normal_gem");
-    public static final RegistrySupplier<Item> POISON_GEM = registerHeldItem("poison_gem");
-    public static final RegistrySupplier<Item> PSYCHIC_GEM = registerHeldItem("psychic_gem");
-    public static final RegistrySupplier<Item> ROCK_GEM = registerHeldItem("rock_gem");
-    public static final RegistrySupplier<Item> STEEL_GEM = registerHeldItem("steel_gem");
-    public static final RegistrySupplier<Item> WATER_GEM = registerHeldItem("water_gem");
-
+    //Incense
     public static final RegistrySupplier<Item> FULL_INCENSE = registerHeldItem("full_incense");
     public static final RegistrySupplier<Item> LAX_INCENSE = registerHeldItem("lax_incense");
     public static final RegistrySupplier<Item> LUCK_INCENSE = registerHeldItem("luck_incense");
@@ -784,10 +734,8 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> LUSTROUS_GLOBE = registerHeldItem("lustrous_globe");
     public static final RegistrySupplier<Item> ADAMANT_CRYSTAL = registerHeldItem("adamant_crystal");
     public static final RegistrySupplier<Item> GRISEOUS_CORE = registerHeldItem("griseous_core");
-    public static final RegistrySupplier<Item> LOADED_DICE = registerHeldItem("loaded_dice");
     public static final RegistrySupplier<Item> PUNCHING_GLOVE = registerHeldItem("punching_glove");
     public static final RegistrySupplier<Item> CLEAR_AMULET = registerHeldItem("clear_amulet");
-    public static final RegistrySupplier<Item> COVERT_CLOAK = registerHeldItem("covert_cloak");
     public static final RegistrySupplier<Item> BOOSTER_ENERGY = registerHeldItem("booster_energy");
     public static final RegistrySupplier<Item> FAIRY_FEATHER = registerHeldItem("fairy_feather");
 
@@ -845,8 +793,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> LURE_MODULE = register("lure_module", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> BOTTLE_CAP = register("bottle_cap", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> GOLD_BOTTLE_CAP = register("gold_bottle_cap", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> ABILITY_CAPSULE = register("ability_capsule", Item::new, PLAYER_ITEMS);
-    public static final RegistrySupplier<Item> ABILITY_PATCH = register("ability_patch", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> WISHING_STAR = register("wishing_star", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> DYNAMAX_BAND = register("dynamax_band", properties -> new Item(properties.stacksTo(1)), PLAYER_ITEMS);
     public static final RegistrySupplier<Item> TIME_CAPSULE = register("time_capsule", properties -> new TimeCapsule(properties.fireResistant().stacksTo(1)), PLAYER_ITEMS);
@@ -1214,26 +1160,6 @@ public class GenerationsItems {
     public static final RegistrySupplier<Item> PINAP_JUICE = register("pinap_juice", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), CUISINE);
     public static final RegistrySupplier<Item> ROSERADE_TEA = register("roserade_tea", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), CUISINE);
     public static final RegistrySupplier<Item> TAPU_COCOA = register("tapu_cocoa", properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())), CUISINE);
-
-    /**
-     * Fossils
-     */
-    public static final RegistrySupplier<Item> ARMOR_FOSSIL = register("armor_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> BIRD_FOSSIL = register("bird_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> CLAW_FOSSIL = register("claw_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> COVER_FOSSIL = register("cover_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> DINO_FOSSIL = register("dino_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> DOME_FOSSIL = register("dome_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> DRAKE_FOSSIL = register("drake_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> FISH_FOSSIL = register("fish_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> FOSSIL = register("fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> HELIX_FOSSIL = register("helix_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> JAW_FOSSIL = register("jaw_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> OLD_AMBER = register("old_amber", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> PLUME_FOSSIL = register("plume_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> ROOT_FOSSIL = register("root_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> SAIL_FOSSIL = register("sail_fossil", Item::new, NATURAL);
-    public static final RegistrySupplier<Item> SKULL_FOSSIL = register("skull_fossil", Item::new, NATURAL);
 
     //Walkmons
 
