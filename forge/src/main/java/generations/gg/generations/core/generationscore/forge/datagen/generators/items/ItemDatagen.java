@@ -28,12 +28,6 @@ public class ItemDatagen extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        createItem(GenerationsItems.HEALTH_FEATHER.get(), "restoration/");
-        createItem(GenerationsItems.MUSCLE_FEATHER.get(), "restoration/");
-        createItem(GenerationsItems.RESIST_FEATHER.get(), "restoration/");
-        createItem(GenerationsItems.GENIUS_FEATHER.get(), "restoration/");
-        createItem(GenerationsItems.CLEVER_FEATHER.get(), "restoration/");
-        createItem(GenerationsItems.SWIFT_FEATHER.get(), "restoration/");
 //        createItem(GenerationsItems.HP_UP.get(), "restoration/");
 //        createItem(GenerationsItems.PROTEIN.get(), "restoration/");
 //        createItem(GenerationsItems.IRON.get(), "restoration/");
@@ -89,56 +83,31 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ROSERADE_TEA.get(), "consumable/");
         createItem(GenerationsItems.TAPU_COCOA.get(), "consumable/");
 
-        createHeldItem(GenerationsItems.ABILITY_SHIELD.get());
-        createHeldItem(GenerationsItems.ABSORB_BULB.get());
         createHeldItem(GenerationsItems.ADRENALINE_ORB.get());
-        createHeldItem(GenerationsItems.AIR_BALLOON.get());
         createHeldItem(GenerationsItems.AMULET_COIN.get());
-        createHeldItem(GenerationsItems.BINDING_BAND.get());
         createHeldItem(GenerationsItems.BLACK_FLUTE.get());
-        createHeldItem(GenerationsItems.BLUNDER_POLICY.get());
-        createHeldItem(GenerationsItems.CELL_BATTERY.get());
-        createHeldItem(GenerationsItems.DAMP_ROCK.get());
-        createHeldItem(GenerationsItems.EJECT_BUTTON.get());
-        createHeldItem(GenerationsItems.EJECT_PACK.get());
-        createHeldItem(GenerationsItems.EVIOLITE.get());
         createHeldItem(GenerationsItems.EXP_ALL.get());
-        createHeldItem(GenerationsItems.EXPERT_BELT.get());
-        createHeldItem(GenerationsItems.FLOAT_STONE.get());
         createHeldItem(GenerationsItems.FLUFFY_TAIL.get());
-        createHeldItem(GenerationsItems.FOCUS_SASH.get());
         createHeldItem(GenerationsItems.GRIP_CLAW.get());
-        createHeldItem(GenerationsItems.HEAT_ROCK.get());
-        createHeldItem(GenerationsItems.ICY_ROCK.get());
-        createHeldItem(GenerationsItems.IRON_BALL.get());
         createHeldItem(GenerationsItems.LAGGING_TAIL.get());
         createHeldItem(GenerationsItems.LEEK.get());
-        createHeldItem(GenerationsItems.LIGHT_BALL.get());
         createHeldItem(GenerationsItems.LUCKY_PUNCH.get());
         createHeldItem(GenerationsItems.LUMINOUS_MOSS.get());
         createHeldItem(GenerationsItems.MACHO_BRACE.get());
         createHeldItem(GenerationsItems.METRONOME.get());
         createHeldItem(GenerationsItems.POKE_DOLL.get());
         createHeldItem(GenerationsItems.POKE_TOY.get());
-        createHeldItem(GenerationsItems.PRISM_SCALE.get());
         createHeldItem(GenerationsItems.PROTECTIVE_PADS.get());
-        createHeldItem(GenerationsItems.RED_CARD.get());
-        createHeldItem(GenerationsItems.RING_TARGET.get());
         createHeldItem(GenerationsItems.ROOM_SERVICE.get());
         createHeldItem(GenerationsItems.SCOPE_LENS.get());
         createHeldItem(GenerationsItems.SHED_SHELL.get());
-        createHeldItem(GenerationsItems.SHELL_BELL.get());
-        createHeldItem(GenerationsItems.SMOOTH_ROCK.get());
         createHeldItem(GenerationsItems.SNOWBALL.get());
-        createHeldItem(GenerationsItems.SOOTHE_BELL.get());
         createHeldItem(GenerationsItems.SOUL_DEW.get());
-        createHeldItem(GenerationsItems.STICKY_BARB.get());
         createHeldItem(GenerationsItems.TERRAIN_EXTENDER.get());
         createHeldItem(GenerationsItems.THICK_CLUB.get());
         createHeldItem(GenerationsItems.THROAT_SPRAY.get());
         createHeldItem(GenerationsItems.UP_GRADE.get());
         createHeldItem(GenerationsItems.UTILITY_UMBRELLA.get());
-        createHeldItem(GenerationsItems.WEAKNESS_POLICY.get());
         createHeldItem(GenerationsItems.WHITE_FLUTE.get());
         createHeldItem(GenerationsItems.WIDE_LENS.get());
         createHeldItem(GenerationsItems.ZOOM_LENS.get());
@@ -147,25 +116,6 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.CHILL_DRIVE.get(), "drives/");
         createHeldItem(GenerationsItems.DOUSE_DRIVE.get(), "drives/");
         createHeldItem(GenerationsItems.SHOCK_DRIVE.get(), "drives/");
-
-        createHeldItem(GenerationsItems.BUG_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.DARK_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.DRAGON_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.ELECTRIC_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.FAIRY_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.FIGHTING_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.FIRE_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.FLYING_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.GHOST_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.GRASS_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.GROUND_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.ICE_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.NORMAL_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.POISON_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.PSYCHIC_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.ROCK_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.STEEL_GEM.get(), "gems/");
-        createHeldItem(GenerationsItems.WATER_GEM.get(), "gems/");
 
         createHeldItem(GenerationsItems.FULL_INCENSE.get(), "incense/");
         createHeldItem(GenerationsItems.LAX_INCENSE.get(), "incense/");
@@ -303,10 +253,8 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.PSYCHIC_SEED.get());
         createHeldItem(GenerationsItems.RED_SCARF.get());
 
-        createHeldItem(GenerationsItems.LOADED_DICE.get());
         createHeldItem(GenerationsItems.PUNCHING_GLOVE.get());
         createHeldItem(GenerationsItems.CLEAR_AMULET.get());
-        createHeldItem(GenerationsItems.COVERT_CLOAK.get());
         createHeldItem(GenerationsItems.BOOSTER_ENERGY.get());
         createHeldItem(GenerationsItems.FAIRY_FEATHER.get());
 
@@ -424,8 +372,6 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.LURE_MODULE.get(), "player_items/");
         createItem(GenerationsItems.BOTTLE_CAP.get(), "player_items/");
         createItem(GenerationsItems.GOLD_BOTTLE_CAP.get(), "player_items/");
-        createItem(GenerationsItems.ABILITY_CAPSULE.get(), "player_items/");
-        createItem(GenerationsItems.ABILITY_PATCH.get(), "player_items/");
         createItem(GenerationsItems.WISHING_STAR.get(), "player_items/");
         createItem(GenerationsItems.DYNAMAX_BAND.get(), "player_items/");
 
@@ -1293,23 +1239,6 @@ public class ItemDatagen extends ItemModelProvider {
 //        createItemBlock(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
 //        createItemBlock(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
 //        createItemBlock(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), "item/blocks/ball_displays/");
-
-        createItem(GenerationsItems.ARMOR_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.BIRD_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.CLAW_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.COVER_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.DINO_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.DOME_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.DRAKE_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.FISH_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.HELIX_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.JAW_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.OLD_AMBER.get(), "fossils/");
-        createItem(GenerationsItems.PLUME_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.ROOT_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.SAIL_FOSSIL.get(), "fossils/");
-        createItem(GenerationsItems.SKULL_FOSSIL.get(), "fossils/");
 
         createEntityModelItem(GenerationsItems.SUICUNE_STATUE.get());
         createEntityModelItem(GenerationsItems.RAIKOU_STATUE.get());
