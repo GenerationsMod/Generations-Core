@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block;
 
-import com.cobblemon.mod.common.api.pokeball.PokeBalls;
 import com.cobblemon.mod.common.pokeball.PokeBall;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallLootBlockEntity;
@@ -40,19 +39,18 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntity> {
     private static final VoxelShape shape = Shapes.box(0.25f, 0.0f, 0.25f, 0.75, 0.5f, 0.75f);
     private final String name;
     private final ResourceLocation lootTable;
-    private final ResourceLocation ball;
+    private final PokeBall ball;
 
-    protected BallLootBlock(String name) {
+    protected BallLootBlock(String name, PokeBall ball) {
         super(BlockBehaviour.Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion(), GenerationsBlockEntities.BALL_LOOT, null);
         this.name = name;
-        this.ball = new ResourceLocation("cobblemon", name + "_ball");
+        this.ball = ball;
         this.lootTable = GenerationsCore.id("chests/%s_ball".formatted(name));
     }
 
@@ -172,7 +170,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     }
 
     public PokeBall ball() {
-        return Objects.requireNonNullElseGet(PokeBalls.INSTANCE.getPokeBall(this.ball), PokeBalls.INSTANCE::getPOKE_BALL);
+        return this.ball;
     }
 
     @Override
