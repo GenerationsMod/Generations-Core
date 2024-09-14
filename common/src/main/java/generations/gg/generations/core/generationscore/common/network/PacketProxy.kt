@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.network
 
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailEditScreenPacket
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket
+import generations.gg.generations.core.generationscore.common.network.packets.S2CPlaySoundPacket
 import generations.gg.generations.core.generationscore.common.network.packets.S2CUnlockReloadPacket
 import generations.gg.generations.core.generationscore.common.network.packets.npc.S2COpenNpcCustomizationScreenPacket
 import generations.gg.generations.core.generationscore.common.network.packets.npc.S2CUpdateNpcDisplayDataPacket
@@ -27,4 +28,5 @@ open class PacketProxy {
     open val processS2COpenNpcCustomizationScreenPacket : Consumer<S2COpenNpcCustomizationScreenPacket> = Consumer {}
     open val processS2CUpdateNpcDisplayDataPacket : Consumer<S2CUpdateNpcDisplayDataPacket> = Consumer {}
     open val processSpawnStatuePacket : Consumer<SpawnStatuePacket> = Consumer {}
+    open val processS2CPlaySoundPacket : Consumer<S2CPlaySoundPacket> = Consumer {}
 }

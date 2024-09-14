@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.util
 
 object DataKeys {
+
     const val EMBEDDED_POKEMON = "EmbeddedPokemon"
 
     //Statues
@@ -14,4 +15,11 @@ object DataKeys {
     const val FRAME = "Frame"
     const val INTERACTABLE = "Interactable"
     const val MATERIAL = "Material"
+
+    //Walkmon values
+    const val DISC_HOLDER = "DiscHolder"
+    const val DISCS = "Discs"
+    const val PLAYING = "Playing"
+    const val TIME_UNTIL_NEXT_SONG = "TimeUntilNextSong"
+    const val CURRENT_SLOT = "CurrentSlot"
 }

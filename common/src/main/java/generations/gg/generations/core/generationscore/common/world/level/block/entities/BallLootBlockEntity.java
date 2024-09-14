@@ -3,10 +3,12 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.time.Instant;
@@ -174,5 +176,21 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
         public boolean isBreakable() {
             return this.dropOnce && !this.timeEnabled;
         }
+    }
+
+    @Override
+    public float getAngle() {
+        if (getBlockState().hasProperty(HorizontalDirectionalBlock.FACING)) {
+            var dir = getBlockState().getValue(HorizontalDirectionalBlock.FACING);
+
+            switch (dir) {
+                case EAST -> dir = Direction.WEST;
+                case WEST -> dir = Direction.EAST;
+                default -> {}
+            }
+
+            return dir.getOpposite().toYRot();
+        }
+        return 0f;
     }
 }

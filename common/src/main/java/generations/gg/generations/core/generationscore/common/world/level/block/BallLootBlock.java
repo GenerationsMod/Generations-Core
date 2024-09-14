@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block;
 
 import com.cobblemon.mod.common.api.pokeball.PokeBalls;
+import com.cobblemon.mod.common.pokeball.PokeBall;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallLootBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
@@ -39,6 +40,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntity> {
@@ -71,9 +73,6 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
 
                 if(be.canClaim(playerUUID)) {
                     if (be.shouldBreakBlock()) {
-//                        if (MinecraftForge.EVENT_BUS.post(new BlockEvent.BreakEvent(world, pos, state, player))) { TODO: Figure out if needed
-//                            return true;
-//                        }
                         level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
                     }
 
@@ -152,7 +151,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
             builder.withLuck(player.getLuck()).withParameter(LootContextParams.THIS_ENTITY, player);
 
 
-        return level.getServer().getLootData().getLootTable(this.getLootTableId()).getRandomItems(builder.create(LootContextParamSets.CHEST)).stream().collect(Collectors.toCollection(NonNullList::create));
+        return level.getServer().getLootData().getLootTable(this.getLootTableId()).getRandomItems(builder.create(LootContextParamSets.CHEST)).stream().limit(1).collect(Collectors.toCollection(NonNullList::create));
     }
 
     @Override
@@ -172,10 +171,8 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
         if(level.getBlockEntity(pos) instanceof BallLootBlockEntity lootBlockEntity && placer instanceof ServerPlayer player) lootBlockEntity.setOwner(placer.getUUID());
     }
 
-    public ItemStack ball() {
-        var ball = PokeBalls.INSTANCE.getPokeBall(this.ball);
-
-        return (ball != null ? ball : PokeBalls.INSTANCE.getPOKE_BALL()).stack(1);
+    public PokeBall ball() {
+        return Objects.requireNonNullElseGet(PokeBalls.INSTANCE.getPokeBall(this.ball), PokeBalls.INSTANCE::getPOKE_BALL);
     }
 
     @Override

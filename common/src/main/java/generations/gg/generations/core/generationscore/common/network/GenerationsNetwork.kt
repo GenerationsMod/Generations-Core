@@ -7,11 +7,9 @@ import generations.gg.generations.core.generationscore.common.GenerationsImpleme
 import generations.gg.generations.core.generationscore.common.network.packets.*
 import generations.gg.generations.core.generationscore.common.network.packets.npc.*
 import generations.gg.generations.core.generationscore.common.network.packets.shop.*
-import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenHandler
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenPacket
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatueHandler
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatuePacket
-import generations.gg.generations.core.generationscore.common.network.spawn.SpawnExtraDataEntityHandler
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
 import generations.gg.generations.core.generationscore.common.world.shop.ShopPresetRegistrySyncPacket
 import generations.gg.generations.core.generationscore.common.world.shop.ShopRegistrySyncPacket
@@ -57,6 +55,7 @@ object GenerationsNetwork : GenerationsImplementation.NetworkManager {
         this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, ::S2COpenNpcCustomizationScreenPacket, clientProxy.processS2COpenNpcCustomizationScreenPacket)
         this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, ::S2CUpdateNpcDisplayDataPacket, clientProxy.processS2CUpdateNpcDisplayDataPacket)
         this.createClientBound(SpawnStatuePacket.ID, SpawnStatuePacket::decode, clientProxy.processSpawnStatuePacket)
+        this.createClientBound(S2CPlaySoundPacket.ID, S2CPlaySoundPacket::decode, clientProxy.processS2CPlaySoundPacket)
     }
 
     override fun registerServerBound() {

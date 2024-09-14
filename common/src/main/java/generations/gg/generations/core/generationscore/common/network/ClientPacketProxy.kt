@@ -28,6 +28,7 @@ class ClientPacketProxy : PacketProxy() {
     override val processS2COpenNpcCustomizationScreenPacket : Consumer<S2COpenNpcCustomizationScreenPacket> = createConsumer(S2COpenNpcCustomizationScreenHandler())
     override val processS2CUpdateNpcDisplayDataPacket : Consumer<S2CUpdateNpcDisplayDataPacket> = createConsumer(S2CUpdateNpcDisplayDataHandler())
     override val processSpawnStatuePacket : Consumer<SpawnStatuePacket> = createConsumer(SpawnExtraDataEntityHandler())
+    override val processS2CPlaySoundPacket : Consumer<S2CPlaySoundPacket> = createConsumer(S2CPlaySoundHandler())
 
     private fun <T : GenerationsNetworkPacket<T>> createConsumer(handler: ClientNetworkPacketHandler<T>): Consumer<T> {
         return Consumer { handler.handle(it, Minecraft.getInstance())}

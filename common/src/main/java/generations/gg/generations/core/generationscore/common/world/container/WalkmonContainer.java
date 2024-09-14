@@ -1,9 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.container;
 
 import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
-import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
 import generations.gg.generations.core.generationscore.common.world.item.WalkmonItem;
-import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Container;
@@ -17,7 +15,7 @@ public class WalkmonContainer extends GenericChestContainer {
         super(GenerationsContainers.WALKMON.get(), containerId, playerInventory, buf);
     }
 
-    public WalkmonContainer(int containerId, Inventory playerInventory, GenericContainer container, int lockedSlot) {
+    public WalkmonContainer(int containerId, Inventory playerInventory, GenericContainer.SimpleGenericContainer container, int lockedSlot) {
         super(GenerationsContainers.WALKMON.get(), containerId, playerInventory, container, lockedSlot);
     }
 
@@ -30,7 +28,10 @@ public class WalkmonContainer extends GenericChestContainer {
     @Override
     public void save(Player player) {
         var stack = getPlayerInventory().getItem(this.getLocked());
-        if(stack.getItem() instanceof WalkmonItem walkmon) walkmon.saveDiscs((GenericContainer.SimpleGenericContainer) getContainer(), stack);
+        if(stack.getItem() instanceof WalkmonItem walkmon) {
+            var holder = walkmon.load(stack, (GenericContainer.SimpleGenericContainer) this.getContainer());
+            holder.save(stack);
+        }
     }
 
 
