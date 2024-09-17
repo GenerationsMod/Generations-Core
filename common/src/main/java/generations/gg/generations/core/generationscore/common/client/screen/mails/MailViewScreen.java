@@ -4,6 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.common.world.item.ClosedMailItem;
 import generations.gg.generations.core.generationscore.common.world.item.MailType;
+import generations.gg.generations.core.generationscore.common.world.item.MailTypes;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
@@ -42,7 +43,7 @@ public class MailViewScreen extends Screen {
 
         @Override
         public ResourceLocation texture() {
-            return MailType.AIR.getLocation();
+            return MailTypes.AIR.location;
         }
     };
 
@@ -210,7 +211,7 @@ public class MailViewScreen extends Screen {
 
         @Override
         public ResourceLocation texture() {
-            return type.getLocation();
+            return type.location;
         }
     }
 
@@ -263,7 +264,7 @@ public class MailViewScreen extends Screen {
 
         @Override
         public ResourceLocation texture() {
-            return type.getLocation();
+            return type.location;
         }
     }
 }

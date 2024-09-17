@@ -93,7 +93,7 @@ public class Pipelines {
 //                               material.cullType().enable();
                         if(material.blendType() == BlendType.Regular) {
 
-                            BlendRecord.push();
+//                            BlendRecord.push();
 
                             RenderSystem.enableBlend();
                             RenderSystem.defaultBlendFunc();
@@ -105,8 +105,6 @@ public class Pipelines {
 
 //                                material.cullType().disable();
                             if(material.blendType() == BlendType.Regular) {
-                                BlendRecord.pop();
-
                                 RenderSystem.disableBlend();
                             }
                     });

@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailEditScreenPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailEditScreenPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailEditScreenPacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
@@ -27,7 +25,7 @@ public class MailItem extends Item {
 
     public static ItemStack getSealed(Item item) {
         if (item instanceof MailItem mailItem)
-            return new ItemStack(mailItem.type.getSealed().get());
+            return new ItemStack(mailItem.type.sealed);
         else return ItemStack.EMPTY;
     }
 

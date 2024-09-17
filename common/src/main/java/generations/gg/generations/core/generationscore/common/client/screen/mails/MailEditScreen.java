@@ -89,7 +89,7 @@ public class MailEditScreen extends Screen {
             contents = MailViewScreen.loadPages(compoundTag);
         }
 
-        location = ((MailItem) arg2.getItem()).getType().getLocation();
+        location = ((MailItem) arg2.getItem()).getType().location;
     }
 
     private void setClipboard(String clipboardValue) {

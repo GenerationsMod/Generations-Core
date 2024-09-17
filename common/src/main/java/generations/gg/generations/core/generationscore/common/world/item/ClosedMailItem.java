@@ -2,9 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.item;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
-import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.nbt.CompoundTag;

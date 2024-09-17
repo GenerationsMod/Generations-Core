@@ -5,7 +5,9 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.spawning.TimeRange;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry;
+import com.cobblemon.mod.common.client.render.models.blockbench.pokeball.PokeBallModel;
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone;
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokeBallModelRepository;
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository;
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
@@ -113,6 +115,8 @@ public class GenerationsCoreClient {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
         RareCandy.DEBUG_THREADS = true;
+
+        PokeBallModelRepository.INSTANCE.inbuilt("strange_ball", PokeBallModel::new);
 
         VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation)))));
 

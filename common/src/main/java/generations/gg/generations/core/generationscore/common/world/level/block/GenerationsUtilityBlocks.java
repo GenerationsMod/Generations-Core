@@ -7,6 +7,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.util.GenerationsItemUtils;
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
+import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedPcBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
@@ -99,7 +100,7 @@ public class GenerationsUtilityBlocks {
 	public static RegistrySupplier<BallLootBlock> REPEAT_BALL_LOOT = registerLoot("repeat", PokeBalls.INSTANCE.getREPEAT_BALL());
 	public static RegistrySupplier<BallLootBlock> SAFARI_BALL_LOOT = registerLoot("safari", PokeBalls.INSTANCE.getSAFARI_BALL());
 	public static RegistrySupplier<BallLootBlock> SPORT_BALL_LOOT = registerLoot("sport", PokeBalls.INSTANCE.getSPORT_BALL());
-	public static RegistrySupplier<BallLootBlock> STRANGE_BALL_LOOT = registerLoot("strange", PokeBalls.INSTANCE.getPOKE_BALL());
+	public static RegistrySupplier<BallLootBlock> STRANGE_BALL_LOOT = registerLoot("strange", GenerationsPokeBalls.INSTANCE.getSTRANGE_BALL());
 	public static RegistrySupplier<BallLootBlock> TIMER_BALL_LOOT = registerLoot("timer", PokeBalls.INSTANCE.getTIMER_BALL());
 	public static RegistrySupplier<BallLootBlock> ULTRA_BALL_LOOT = registerLoot("ultra", PokeBalls.INSTANCE.getULTRA_BALL());
 	public static RegistrySupplier<BallLootBlock> WING_BALL_LOOT = registerLoot("wing", PokeBalls.INSTANCE.getANCIENT_WING_BALL());
