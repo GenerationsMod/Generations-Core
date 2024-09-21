@@ -97,7 +97,7 @@
     {
       "id": "kubfu_urshifu",
       "variant": "level_up",
-      "result": "urshifu rapidstrike",
+      "result": "urshifu rapid-strike",
       "consumeHeldItem": false,
       "learnableMoves": [
         "surgingstrikes"
