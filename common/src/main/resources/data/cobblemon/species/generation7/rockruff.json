@@ -120,7 +120,7 @@
   ],
   "evolutions": [
     {
-      "id": "rockruff_lycanroc",
+      "id": "rockruff_lycanroc1",
       "variant": "level_up",
       "result": "lycanroc",
       "consumeHeldItem": false,
@@ -139,7 +139,7 @@
       ]
     },
     {
-      "id": "rockruff_lycanroc",
+      "id": "rockruff_lycanroc2",
       "variant": "level_up",
       "result": "lycanroc midnight",
       "consumeHeldItem": false,
@@ -158,7 +158,7 @@
       ]
     },
     {
-      "id": "rockruff_lycanroc",
+      "id": "rockruff_lycanroc3",
       "variant": "level_up",
       "result": "lycanroc dusk",
       "consumeHeldItem": false,
