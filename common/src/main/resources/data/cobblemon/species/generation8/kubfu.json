@@ -95,7 +95,7 @@
   ],
   "evolutions": [
     {
-      "id": "kubfu_urshifu",
+      "id": "kubfu_urshifu1",
       "variant": "level_up",
       "result": "urshifu rapid-strike",
       "consumeHeldItem": false,
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "id": "kubfu_urshifu",
+      "id": "kubfu_urshifu2",
       "variant": "level_up",
       "result": "urshifu",
       "consumeHeldItem": false,
