@@ -143,6 +143,14 @@ public class GeneralLang extends LanguageProvider {
         add("move.newmove2", "%s forgot %s!");
         add("move.newmove3", "...and learned %s!");
 
+        //Temp Cobblemon
+        add("cobblemon.move.dragoncheer", "Dragon Cheer");
+        add("cobblemon.move.dragoncheer.name", "Dragon Cheer");
+        add("cobblemon.move.dragoncheer.desc", "The user cheers a draconic cry to raise its allies critical hit chance. This rouses Dragon types more.");
+        add("cobblemon.move.syrupbomb", "Syrup Bomb");
+        add("cobblemon.move.syrupbomb.name", "Syrup Bomb");
+        add("cobblemon.move.syrupbomb.desc", "Spews an explosion of sticky syrup onto the target and causes their Speed to drop each turn for three turns.");
+
         add("generations_core.blocks.lootfound", "You found one %s!");
         add("generations_core.blocks.timedclaim", "You've already claimed this timed loot! Try again later!");
         add("generations_core.blocks.claimedloot", "You've already claimed this loot!");
