@@ -1,0 +1,6 @@
+{
+  "keys": ["rapid-strike"],
+  "type": "flag",
+  "isAspect": true,
+  "default": false
+}
