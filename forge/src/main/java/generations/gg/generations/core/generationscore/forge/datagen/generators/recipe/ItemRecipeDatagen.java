@@ -132,6 +132,18 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("XXX")
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.CRYSTAL_OF_EMOTION.get())
+                .requires(GenerationsItems.SHARD_OF_EMOTION.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.SHARD_OF_EMOTION.get()), has(GenerationsItems.SHARD_OF_EMOTION.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.CRYSTAL_OF_WILLPOWER.get())
+                .requires(GenerationsItems.SHARD_OF_WILLPOWER.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.SHARD_OF_WILLPOWER.get()), has(GenerationsItems.SHARD_OF_WILLPOWER.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.CRYSTAL_OF_KNOWLEDGE.get())
+                .requires(GenerationsItems.SHARD_OF_KNOWLEDGE.get(), 9)
+                .unlockedBy(getHasName(GenerationsItems.SHARD_OF_KNOWLEDGE.get()), has(GenerationsItems.SHARD_OF_KNOWLEDGE.get()))
+                .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GenerationsItems.RED_CHAIN.get())
                 .requires(GenerationsItems.CRYSTAL_OF_EMOTION.get(), 1)
                 .requires(GenerationsItems.CRYSTAL_OF_KNOWLEDGE.get(), 1)
