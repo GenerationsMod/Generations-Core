@@ -150,6 +150,9 @@ public class GeneralLang extends LanguageProvider {
         add("cobblemon.move.syrupbomb", "Syrup Bomb");
         add("cobblemon.move.syrupbomb.name", "Syrup Bomb");
         add("cobblemon.move.syrupbomb.desc", "Spews an explosion of sticky syrup onto the target and causes their Speed to drop each turn for three turns.");
+        add("cobblemon.move.ficklebeam", "Fickle Beam");
+        add("cobblemon.move.ficklebeam.name", "Fickle Beam");
+        add("cobblemon.move.ficklebeam.desc", "Shoots a beam of light to deal damage. Sometimes all the user's heads shoot beams in unison, doubling the power.");
 
         add("generations_core.blocks.lootfound", "You found one %s!");
         add("generations_core.blocks.timedclaim", "You've already claimed this timed loot! Try again later!");
