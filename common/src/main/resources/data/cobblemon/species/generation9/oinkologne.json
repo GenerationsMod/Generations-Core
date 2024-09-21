@@ -1,0 +1,227 @@
+{
+  "implemented": true,
+  "name": "Oinkologne",
+  "nationalPokedexNumber": 916,
+  "primaryType": "normal",
+  "abilities": [
+    "lingeringaroma",
+    "gluttony",
+    "h:thickfat"
+  ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:porkchop",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
+  "baseStats": {
+    "hp": 110,
+    "attack": 100,
+    "defence": 75,
+    "special_attack": 59,
+    "special_defence": 80,
+    "speed": 65
+  },
+  "catchRate": 100,
+  "maleRatio": 0.5,
+  "baseExperienceYield": 171,
+  "baseFriendship": 50,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "experienceGroup": "medium_fast",
+  "eggCycles": 15,
+  "eggGroups": [
+    "field"
+  ],
+  "moves": [
+    "1:tackle",
+    "1:tailwhip",
+    "5:disarmingvoice",
+    "8:echoedvoice",
+    "12:mudshot",
+    "15:covet",
+    "17:dig",
+    "23:headbutt",
+    "26:takedown",
+    "27:yawn",
+    "34:workup",
+    "38:uproar",
+    "42:doubleedge",
+    "48:earthpower",
+    "54:belch",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:bulletseed",
+    "tm:chillingwater",
+    "tm:curse",
+    "tm:dig",
+    "tm:disarmingvoice",
+    "tm:doubleedge",
+    "tm:earthpower",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:highhorsepower",
+    "tm:hyperbeam",
+    "tm:hypervoice",
+    "tm:ironhead",
+    "tm:lashout",
+    "tm:mudshot",
+    "tm:mudslap",
+    "tm:playrough",
+    "tm:protect",
+    "tm:raindance",
+    "tm:rest",
+    "tm:seedbomb",
+    "tm:sleeptalk",
+    "tm:stompingtantrum",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:superfang",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:thief",
+    "tm:trailblaze",
+    "tm:uproar",
+    "tm:zenheadbutt"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "height": 10,
+  "weight": 1200,
+  "preEvolution": "lechonk",
+  "evolutions": [],
+  "cannotDynamax": false,
+  "forms": [
+    {
+      "name": "female",
+      "primaryType": "normal",
+      "abilities": [
+        "aromaveil",
+        "gluttony",
+        "h:thickfat"
+      ],
+      "baseStats": {
+        "hp": 115,
+        "attack": 90,
+        "defence": 70,
+        "special_attack": 59,
+        "special_defence": 90,
+        "speed": 65
+      },
+      "catchRate": 100,
+      "maleRatio": 0,
+      "baseExperienceYield": 171,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 2,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "medium_fast",
+      "eggCycles": 15,
+      "eggGroups": [
+        "field"
+      ],
+      "moves": [
+        "1:tackle",
+        "1:tailwhip",
+        "3:disarmingvoice",
+        "6:echoedvoice",
+        "9:mudshot",
+        "12:covet",
+        "15:dig",
+        "17:headbutt",
+        "23:yawn",
+        "28:takedown",
+        "30:workup",
+        "34:uproar",
+        "39:doubleedge",
+        "45:earthpower",
+        "51:belch",
+        "tm:bodypress",
+        "tm:bodyslam",
+        "tm:bulldoze",
+        "tm:bulletseed",
+        "tm:chillingwater",
+        "tm:curse",
+        "tm:dig",
+        "tm:disarmingvoice",
+        "tm:doubleedge",
+        "tm:earthpower",
+        "tm:endeavor",
+        "tm:endure",
+        "tm:energyball",
+        "tm:facade",
+        "tm:gigaimpact",
+        "tm:helpinghand",
+        "tm:highhorsepower",
+        "tm:hyperbeam",
+        "tm:hypervoice",
+        "tm:ironhead",
+        "tm:lashout",
+        "tm:mudshot",
+        "tm:mudslap",
+        "tm:playrough",
+        "tm:protect",
+        "tm:raindance",
+        "tm:rest",
+        "tm:seedbomb",
+        "tm:sleeptalk",
+        "tm:stompingtantrum",
+        "tm:substitute",
+        "tm:sunnyday",
+        "tm:superfang",
+        "tm:takedown",
+        "tm:terablast",
+        "tm:thief",
+        "tm:trailblaze",
+        "tm:uproar",
+        "tm:zenheadbutt"
+      ],
+      "labels": [
+        "gen9"
+      ],
+      "aspects": [
+        "female"
+      ],
+      "height": 10,
+      "weight": 1200,
+      "preEvolution": "lechonk",
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
+    }
+  ],
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.1,
+    "fixed": false
+  },
+  "pokedex": [
+    "cobblemon.species.oinkologne.desc"
+  ]
+}

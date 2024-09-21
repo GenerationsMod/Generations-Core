@@ -16,7 +16,7 @@
     "speed": 104
   },
   "catchRate": 75,
-  "maleRatio": 1,
+  "maleRatio": 0.5,
   "shoulderMountable": false,
   "baseExperienceYield": 163,
   "baseFriendship": 50,
@@ -167,7 +167,7 @@
   "evolutions": [],
   "forms": [
     {
-      "name": "F",
+      "name": "female",
       "primaryType": "psychic",
       "abilities": [
         "keeneye",
@@ -318,7 +318,7 @@
         "gen6"
       ],
       "aspects": [
-        "f"
+        "female"
       ],
       "height": 6,
       "weight": 85,

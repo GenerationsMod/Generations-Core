@@ -17,11 +17,11 @@
     "speed": 95
   },
   "catchRate": 30,
-  "maleRatio": 1,
+  "maleRatio": 0.5,
   "shoulderMountable": false,
   "forms": [
     {
-      "name": "F",
+      "name": "female",
       "primaryType": "psychic",
       "secondaryType": "normal",
       "abilities": [
@@ -126,7 +126,7 @@
         "gen8"
       ],
       "aspects": [
-        "f"
+        "female"
       ],
       "height": 9,
       "weight": 280,
