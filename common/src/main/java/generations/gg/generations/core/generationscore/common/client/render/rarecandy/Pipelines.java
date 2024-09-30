@@ -75,10 +75,10 @@ public class Pipelines {
                                 ctx.uniform().uploadMat4fs(mats);
                             })
                             .supplyUniform("uvOffset", ctx -> {
-                                var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getOffset(ctx.getMaterial().getMaterialName()) != null ? instance.getOffset(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
+                                var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransform(ctx.getMaterial().getMaterialName()) != null ? instance.getTransform(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
                                 ctx.uniform().uploadVec2f(offsets.offset());
                             }).supplyUniform("uvScale", ctx -> {
-                                var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getOffset(ctx.getMaterial().getMaterialName()) != null ? instance.getOffset(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
+                                var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransform(ctx.getMaterial().getMaterialName()) != null ? instance.getTransform(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
                                 ctx.uniform().uploadVec2f(offsets.scale());
                             });
                     
@@ -214,7 +214,7 @@ public class Pipelines {
         if(material != null && ((GenerationsTextureLoader) ITextureLoader.instance()).has(material)) {
             return ITextureLoader.instance().getTexture(material);
         }
-        return ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
+        return ctx.getTexture("diffuse");
     }
 
     private static void emissionColors(Pipeline.Builder builder) {
@@ -261,8 +261,7 @@ public class Pipelines {
             var light = ((BlockLightValueProvider) ctx.instance()).getLight();
             ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
         }).supplyUniform("emission", ctx -> {
-            var texture = ctx.object().getVariant(ctx.instance().variant()).getTexture("emission");
-
+            var texture = ctx.getTexture("emission");
 
             if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
                 texture = ITextureLoader.instance().getDarkFallback();

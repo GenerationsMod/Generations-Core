@@ -58,6 +58,16 @@ public class Texture implements ITexture {
     }
 
     @Override
+    public int width() {
+        return 0;
+    }
+
+    @Override
+    public int height() {
+        return 0;
+    }
+
+    @Override
     public void close() throws IOException {
         GL11.glDeleteTextures(id);
     }

@@ -6,6 +6,7 @@ import gg.generations.rarecandy.pokeutils.PixelAsset;
 import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
 import gg.generations.rarecandy.renderer.loading.ModelLoader;
+import gg.generations.rarecandy.renderer.model.GLModel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.resources.ResourceLocation;
@@ -27,7 +28,9 @@ public class GenerationsModelLoader extends ModelLoader {
                 (gltfModel, animResources, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
                     try {
-                        ModelLoader.create2(object, gltfModel, animResources, textures, config, glCalls, supplier);
+
+
+                        ModelLoader.processModel(object, gltfModel, animResources, textures, config, glCalls, supplier, GLModel::new);
                     } catch (Exception e) {
                         System.out.println("Oh no! Model : " + name + " didn't properly load!");
                         e.printStackTrace();

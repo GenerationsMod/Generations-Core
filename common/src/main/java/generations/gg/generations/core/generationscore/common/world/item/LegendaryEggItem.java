@@ -1,14 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.legends.DistanceTraveledImplItem;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.legends.DistanceTraveledImplItem;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.legends.DistanceTraveledImplItem;
 import net.minecraft.network.chat.Component;
@@ -39,7 +33,7 @@ public class LegendaryEggItem extends DistanceTraveledImplItem implements LangTo
 
     @Override
     public boolean checkPlayerState(Player player) {
-        return !GenerationsCore.CONFIG.caught.capped(player, speciesKey);
+        return GenerationsCore.CONFIG.caught.capped(player, speciesKey);
     }
 
     @Override

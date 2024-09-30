@@ -1,12 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.item.legends;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem;
 import generations.gg.generations.core.generationscore.common.world.item.TriPredicate;
@@ -35,7 +31,7 @@ public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdati
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         var stack = player.getItemInHand(usedHand);
 
-        if (!level.isClientSide() && !GenerationsCore.CONFIG.caught.capped(player, speciesId)) {
+        if (!level.isClientSide() && GenerationsCore.CONFIG.caught.capped(player, speciesId)) {
             int damage = stack.getDamageValue();
 
             if (damage >= getMaxDamage()) {

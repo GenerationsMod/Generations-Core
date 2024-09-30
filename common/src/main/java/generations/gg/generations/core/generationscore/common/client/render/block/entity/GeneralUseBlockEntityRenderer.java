@@ -30,16 +30,16 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         if (!(blockEntity.getBlockState().getBlock() instanceof GenericModelBlock<?> block && block.canRender(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState()))) return;
         stack.pushPose();
         ModelRegistry.prepForBER(stack, blockEntity);
-        renderModels(stack, blockEntity, packedLight);
+        renderModels(stack, bufferSource, blockEntity, packedLight);
         stack.popPose();
     }
 
-    protected void renderModels(PoseStack stack, T blockEntity, int packedLight) {
-        if(blockEntity.isAnimated()) renderModelFrameProvider(stack, blockEntity, packedLight);
-        else renderModelProvider(stack, blockEntity, packedLight);
+    protected void renderModels(PoseStack stack, MultiBufferSource buffersource, T blockEntity, int packedLight) {
+        if(blockEntity.isAnimated()) renderModelFrameProvider(stack, buffersource, blockEntity, packedLight);
+        else renderModelProvider(stack, buffersource, blockEntity, packedLight);
     }
 
-    protected void renderModelProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
+    protected void renderModelProvider(PoseStack stack, MultiBufferSource buffersource, ModelProvidingBlockEntity blockEntity, int packedLight) {
         var model = ModelRegistry.get(blockEntity);
 
         if(model == null || model.renderObject == null) return;
@@ -64,7 +64,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             instance.viewMatrix().set(stack.last().pose());
             ((BlockObjectInstance) instance).setLight(packedLight);
             if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) instance).setTint(provider.getTint());
-            model.render(instance);
+            model.render(instance, buffersource);
         }
     }
 
@@ -72,7 +72,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
         return 1;
     }
 
-    protected void renderModelFrameProvider(PoseStack stack, ModelProvidingBlockEntity blockEntity, int packedLight) {
+    protected void renderModelFrameProvider(PoseStack stack, MultiBufferSource buffersource, ModelProvidingBlockEntity blockEntity, int packedLight) {
         //TODO: Get this operational
         var model = ModelRegistry.get(blockEntity);
 
@@ -114,14 +114,14 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             fixedAnimation.setCurrentTime(frameProvider.getFrame());
         }
 
-        model.render(instance);
+        model.render(instance, buffersource);
     }
 
-    protected void renderResourceLocation(ResourceLocation location, PoseStack stack, ObjectInstance objectInstance) {
+    protected void renderResourceLocation(MultiBufferSource source, ResourceLocation location, PoseStack stack, ObjectInstance objectInstance) {
         objectInstance.transformationMatrix().set(stack.last().pose());
 
         var model = ModelRegistry.get(location);
-        if(model != null) model.render(objectInstance);
+        if(model != null) model.render(objectInstance, source);
     }
 
     @Override

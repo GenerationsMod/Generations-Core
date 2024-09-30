@@ -57,7 +57,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         b: Float,
         a: Float
     ) {
-        renderModel(context, stack, packedLight)
+        renderModel(context, buffer, stack, packedLight, packedOverlay, r, g, b, a)
     }
 
     @JvmOverloads
@@ -94,7 +94,17 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         sources.endBatch()
     }
 
-    private fun renderModel(context: RenderContext, stack: PoseStack, packedLight: Int) {
+    private fun renderModel(
+        context: RenderContext,
+        buffer: VertexConsumer,
+        stack: PoseStack,
+        packedLight: Int,
+        packedOverlay: Int,
+        r: Float,
+        g: Float,
+        b: Float,
+        a: Float
+    ) {
         val model = objectSupplier.invoke()
         if (model?.renderObject == null) return
 
@@ -120,6 +130,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         }
         if (model.renderObject!!.isReady) {
             instance.light = packedLight
+            instance.tint.set(r, g, b)
             val id = getTexture(context)
             if (id != null) {
                 val namespace = id.namespace
@@ -133,7 +144,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             stack.popPose()
 
 //            if(!isGui) {
-            model.render(instance)
+            model.render(instance, Minecraft.getInstance().renderBuffers().bufferSource())
             //            } else {
 //                model.renderGui(instance);
 //            }

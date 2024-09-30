@@ -1,11 +1,10 @@
 package generations.gg.generations.core.generationscore.common.client.render.block.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BreederBlockEntity;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 
@@ -19,14 +18,14 @@ public class BreederBlocEntityRenderer extends GeneralUseBlockEntityRenderer<Bre
     }
 
     @Override
-    protected void renderModels(PoseStack stack, BreederBlockEntity blockEntity, int packedLight) {
-        super.renderModels(stack, blockEntity, packedLight);
+    protected void renderModels(PoseStack stack, MultiBufferSource buffersource, BreederBlockEntity blockEntity, int packedLight) {
+        super.renderModels(stack, buffersource, blockEntity, packedLight);
         ((BlockObjectInstance) blockEntity.objectInstance[1]).setLight(packedLight);
-        renderResourceLocation(AUTO_FEEDER_FILL, stack, blockEntity.objectInstance[1]);
+        renderResourceLocation(buffersource, AUTO_FEEDER_FILL, stack, blockEntity.objectInstance[1]);
         ((BlockObjectInstance) blockEntity.objectInstance[2]).setLight(packedLight);
-        renderResourceLocation(AUTO_FEEDER, stack, blockEntity.objectInstance[2]);
+        renderResourceLocation(buffersource, AUTO_FEEDER, stack, blockEntity.objectInstance[2]);
         ((BlockObjectInstance) blockEntity.objectInstance[3]).setLight(packedLight);
-        renderResourceLocation(EGG, stack, blockEntity.objectInstance[3]);
+        renderResourceLocation(buffersource, EGG, stack, blockEntity.objectInstance[3]);
     }
 
     @Override

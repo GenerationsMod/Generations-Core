@@ -13,16 +13,23 @@ import java.io.IOException
 import kotlin.random.Random
 
 class Texture(override var location: ResourceLocation, image: NativeImage) : DynamicTexture(image), ITextureWithResourceLocation {
+    val height: Int;
+    val width: Int;
+
     init {
         Minecraft.getInstance().textureManager.register(location, this)
+        height = image.width;
+        width = image.width;
     }
 
     override fun bind(slot: Int) {
-
         assert(slot in 0..31)
         RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
         RenderSystem.bindTexture(id)
     }
+
+    override fun width(): Int = width
+    override fun height(): Int = height
 
     @Throws(IOException::class)
     override fun load(resourceManager: ResourceManager) {

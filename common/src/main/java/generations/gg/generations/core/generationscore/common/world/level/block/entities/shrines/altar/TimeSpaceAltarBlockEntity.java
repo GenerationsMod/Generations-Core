@@ -1,20 +1,14 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar;
 
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
-import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem;
 import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer;
-import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
 import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
-import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
@@ -74,7 +68,7 @@ public class TimeSpaceAltarBlockEntity extends ShrineBlockEntity implements Item
         public boolean hasOrb(ServerPlayer player) {
             var orb = getItem(0);
 
-            return !orb.isEmpty() && !GenerationsCore.CONFIG.caught.capped(player, ((CreationTrioItem) orb.getItem()).getSpeciesId());
+            return !orb.isEmpty() && GenerationsCore.CONFIG.caught.capped(player, ((CreationTrioItem) orb.getItem()).getSpeciesId());
         }
 
 

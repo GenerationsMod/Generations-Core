@@ -1,15 +1,19 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy;
 
+import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import gg.generations.rarecandy.renderer.animation.Animation;
 import gg.generations.rarecandy.renderer.animation.AnimationInstance;
 import gg.generations.rarecandy.renderer.animation.Transform;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
 
-public class CobblemonInstance extends AnimatedObjectInstance implements BlockLightValueProvider {
+public class CobblemonInstance extends AnimatedObjectInstance implements BlockLightValueProvider, ModelContextProviders.TintProvider {
 
     public Matrix4f[] matrixTransforms;
     public Transform offsets;
+    private final Vector3f tint = new Vector3f();
+
     public Transform getOffset(String material) {
         return this.offsets != null ? this.currentAnimation.getOffset(material) : null;
     }
@@ -42,6 +46,11 @@ public class CobblemonInstance extends AnimatedObjectInstance implements BlockLi
     @Override
     public void setLight(int light) {
         this.light = light;
+    }
+
+    @Override
+    public Vector3f getTint() {
+        return tint;
     }
 
     private static class StaticAnimationInstance extends AnimationInstance {

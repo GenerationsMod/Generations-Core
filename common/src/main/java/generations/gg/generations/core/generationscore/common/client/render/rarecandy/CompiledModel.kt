@@ -2,14 +2,16 @@ package generations.gg.generations.core.generationscore.common.client.render.rar
 
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
-import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.GenerationsModelLoader
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.VanilaRenderModel
 import generations.gg.generations.core.generationscore.common.util.TaskQueue
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import gg.generations.rarecandy.renderer.components.MeshObject
 import gg.generations.rarecandy.renderer.components.MultiRenderObject
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 import gg.generations.rarecandy.renderer.storage.ObjectManager
+import net.minecraft.client.renderer.MultiBufferSource
+import net.minecraft.client.renderer.MultiBufferSource.BufferSource
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
 import java.io.IOException
@@ -18,32 +20,23 @@ import java.util.function.Supplier
 /**
  * Represents a compiled model which can be rendered
  */
-class CompiledModel {
+class CompiledModel @JvmOverloads constructor(
+    val name: ResourceLocation,
+    stream: Resource?,
+    supplier: Supplier<MeshObject>,
+    requiresVariantTexture: Boolean = true
+) {
     @JvmField
     var renderObject: MultiRenderObject<MeshObject>? = null
-    val name: ResourceLocation
     val map: List<String> = ArrayList()
 
     @JvmField
     var guiInstance: CobblemonInstance? = null
 
-    @JvmOverloads
-    constructor(
-        name: ResourceLocation,
-        stream: Resource?,
-        supplier: Supplier<MeshObject>?,
-        requiresVariantTexture: Boolean = true
-    ) {
-        this.name = name
-
+    init {
         queue.addTask {
             renderObject = loader.compiledModelMethod(this, stream?.open(), supplier, name.toString(), requiresVariantTexture)
         }
-    }
-
-    constructor() {
-        renderObject = null
-        name = GenerationsCore.id("dummy")
     }
 
     fun renderGui(instance: ObjectInstance) {
@@ -55,16 +48,28 @@ class CompiledModel {
         ObjectManager.render(renderObject, instance)
     }
 
-    fun render(instance: ObjectInstance) {
+    fun render(instance: ObjectInstance, source: MultiBufferSource) {
         if (renderObject == null) return
-        render(instance, ModelRegistry.worldRareCandy.objectManager)
+        if (!renderObject!!.isReady) return
+
+//        if(GenerationsCore.CONFIG.client.useVanilla) {
+//            renderVanilla(instance, source)
+//        } else {
+        renderRareCandy(instance, ModelRegistry.worldRareCandy.objectManager)
+//        }
     }
 
-    private fun render(instance: ObjectInstance, objectManager: ObjectManager) {
-        if (!renderObject!!.isReady) return
-//        Minecraft.getInstance().profiler.push("create_model_instance")
+    private fun renderVanilla(instance: ObjectInstance, source: BufferSource) {
+        var list = renderObject!!.objects
+        list.forEach {
+            var model = it.model.takeIf { it is VanilaRenderModel }?.let { it as VanilaRenderModel } ?: return
+
+            model.bufferSource = source
+        }
+    }
+
+    private fun renderRareCandy(instance: ObjectInstance, objectManager: ObjectManager) {
         objectManager.add(renderObject!!, instance)
-//        Minecraft.getInstance().profiler.pop()
     }
 
     fun delete() {

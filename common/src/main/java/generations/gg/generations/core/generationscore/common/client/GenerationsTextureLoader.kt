@@ -42,6 +42,10 @@ object GenerationsTextureLoader : ITextureLoader() {
             RenderSystem.bindTexture(texture.id)
         }
 
+        override fun width(): Int = 16
+
+        override fun height(): Int = 16
+
     }
 
     fun initialize(manager: ResourceManager) {
@@ -119,6 +123,14 @@ object GenerationsTextureLoader : ITextureLoader() {
             RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
             RenderSystem.bindTexture(id)
         }
+
+        override fun width(): Int {
+            TODO("Not yet implemented")
+        }
+
+        override fun height(): Int {
+            TODO("Not yet implemented")
+        }
     }
 
     private class SimpleTextureIndependentData(override var location: ResourceLocation, private val texture: ByteArray?) : SimpleTexture(location), ITextureWithResourceLocation {
@@ -130,6 +142,14 @@ object GenerationsTextureLoader : ITextureLoader() {
         override fun bind(slot: Int) {
             RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
             RenderSystem.bindTexture(id)
+        }
+
+        override fun width(): Int {
+            TODO("Not yet implemented")
+        }
+
+        override fun height(): Int {
+            TODO("Not yet implemented")
         }
 
         override fun getTextureImage(resourceManager: ResourceManager): TextureImage {

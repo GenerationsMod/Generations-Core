@@ -1,11 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.world.entity.block.MagmaCrystalEntity;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.world.entity.block.MagmaCrystalEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.block.MagmaCrystalEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -24,7 +20,7 @@ public class MagmaCrystal extends ItemWithLangTooltipImpl {
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
         ItemStack itemStack = player.getItemInHand(usedHand);
-        if(!level.isClientSide && GenerationsCore.CONFIG.caught.capped(player, LegendKeys.HEATRAN)) return InteractionResultHolder.fail(itemStack);
+        if(!level.isClientSide && !GenerationsCore.CONFIG.caught.capped(player, LegendKeys.HEATRAN)) return InteractionResultHolder.fail(itemStack);
 
         level.playSound(
                 null,

@@ -29,7 +29,7 @@ public class ZygardeCellRenderer extends EntityRenderer<ZygardeCellEntity> {
         instance.viewMatrix().set(poseStack.last().pose());
         instance.setLight(packedLight);
         poseStack.popPose();
-        model.render(instance);
+        model.render(instance, buffer);
 
         super.render(entity, entityYaw, partialTick, poseStack, buffer, packedLight);
     }

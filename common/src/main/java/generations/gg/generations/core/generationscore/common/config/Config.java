@@ -149,6 +149,7 @@ public class Config {
     public static class Client {
         public boolean usePixelmonShading = false;
         public boolean useRenderDoc = false;
+        public boolean useVanilla = false;
     }
 
     public static class Economy {
