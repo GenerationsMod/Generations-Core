@@ -7,8 +7,8 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import org.jetbrains.annotations.NotNull;
 
-public class RksRecipePokemon extends RksRecipe<RksResult.PokemonResult> {
-    public RksRecipePokemon(ResourceLocation id, String group, int width, int height, NonNullList<GenerationsIngredient> recipeItems, RksResult.PokemonResult result, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
+public class RksRecipePokemon extends RksRecipe<PokemonResult> {
+    public RksRecipePokemon(ResourceLocation id, String group, int width, int height, NonNullList<GenerationsIngredient> recipeItems, PokemonResult result, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
         super(id, group, width, height, recipeItems, result, consumesTimeCapsules, key, experience, processingTime, showNotification);
     }
 

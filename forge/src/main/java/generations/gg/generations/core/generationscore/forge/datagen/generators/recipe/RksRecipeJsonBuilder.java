@@ -53,7 +53,7 @@ public abstract class RksRecipeJsonBuilder<T extends RksResult<T>, V extends Rks
 	}
 
 	public static RksRecipeItemJsonBuilder create(ItemLike output) {
-		return new RksRecipeItemJsonBuilder(new RksResult.ItemResult(output.asItem().getDefaultInstance()));
+		return new RksRecipeItemJsonBuilder(new ItemResult(output.asItem().getDefaultInstance()));
 	}
 
 	public static RksRecipePokemonJsonBuilder create(ResourceLocation species, Set<String> aspects, int level) {
@@ -61,7 +61,7 @@ public abstract class RksRecipeJsonBuilder<T extends RksResult<T>, V extends Rks
 	}
 
 	public static RksRecipePokemonJsonBuilder create(ResourceLocation species, Set<String> aspects, int level, boolean spawnInWorld, boolean usePokemonInCapsule) {
-		return new RksRecipePokemonJsonBuilder(new RksResult.PokemonResult(species, aspects, level, spawnInWorld, usePokemonInCapsule));
+		return new RksRecipePokemonJsonBuilder(new PokemonResult(species, aspects, level, spawnInWorld, usePokemonInCapsule));
 	}
 
 
@@ -276,8 +276,8 @@ public abstract class RksRecipeJsonBuilder<T extends RksResult<T>, V extends Rks
 		}
 	}
 
-	public static class RksRecipeItemJsonBuilder extends RksRecipeJsonBuilder<RksResult.ItemResult, RksRecipeItem> {
-		public RksRecipeItemJsonBuilder(RksResult.ItemResult result) {
+	public static class RksRecipeItemJsonBuilder extends RksRecipeJsonBuilder<ItemResult, RksRecipeItem> {
+		public RksRecipeItemJsonBuilder(ItemResult result) {
 			super(result);
 		}
 
@@ -287,8 +287,8 @@ public abstract class RksRecipeJsonBuilder<T extends RksResult<T>, V extends Rks
 		}
 	}
 
-	public static class RksRecipePokemonJsonBuilder extends RksRecipeJsonBuilder<RksResult.PokemonResult, RksRecipePokemon> {
-		public RksRecipePokemonJsonBuilder(RksResult.PokemonResult result) {
+	public static class RksRecipePokemonJsonBuilder extends RksRecipeJsonBuilder<PokemonResult, RksRecipePokemon> {
+		public RksRecipePokemonJsonBuilder(PokemonResult result) {
 			super(result);
 		}
 

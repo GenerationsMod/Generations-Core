@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack
 class ItemIngredient(val itemKey: ResourceKey<Item>) : GenerationsIngredient {
     override val id = ID
     override fun matches(stack: ItemStack): Boolean {
+        println("${stack.item.asItem().builtInRegistryHolder().key().location()} == ${itemKey.location()} equals ${stack.item.asItem().builtInRegistryHolder().key().location().equals(itemKey.location())}")
         return stack.`is` { it.`is`(itemKey) }
     }
 

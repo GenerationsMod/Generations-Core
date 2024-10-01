@@ -8,6 +8,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.serialization.JsonOps;
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
@@ -19,7 +20,6 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -31,18 +31,20 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMachineBlockEntity> {
-    final int width;
-    final int height;
+    public final int width;
+    public final int height;
     public final NonNullList<GenerationsIngredient> recipeItems;
-    final T result;
+    public final T result;
 
-    final SpeciesKey key;
-    public final boolean consumesTimeCapsules;
     private final ResourceLocation id;
-    final String group;
-    final boolean showNotification;
-    private final float experience;
-    private final int processingTime;
+    public final SpeciesKey key;
+    public final String group;
+
+    public final boolean consumesTimeCapsules;
+    public final float experience;
+    public final int processingTime;
+
+    public final boolean showNotification;
 
     public RksRecipe(ResourceLocation id, String group, int width, int height, NonNullList<GenerationsIngredient> recipeItems, T result, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
         this.id = id;
@@ -106,32 +108,75 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
      */
     @Override
     public boolean matches(@NotNull RksMachineBlockEntity inv, @NotNull Level level) {
+//        System.out.println("Comparing: " + getId());
+
+//        return checkPattern(inv.inventory, 3, 3, recipeItems, this.width, this.height);
         for (int i = 0; i <= 3 - this.width; ++i) {
             for (int j = 0; j <= 3 - this.height; ++j) {
-                if (this.matches(inv, i, j, true)) {
+                if (this.matches(inv, i, j)) {
                     return true;
                 }
-                if (!this.matches(inv, i, j, false)) continue;
-                return true;
             }
         }
+
         return false;
     }
 
     /**
      * Checks if the region of a crafting inventory is match for the recipe.
      */
-    private boolean matches(Container craftingInventory, int width, int height, boolean mirrored) {
+    private boolean matches(RksMachineBlockEntity craftingInventory, int width, int height) {
+//        return checkPattern(craftingInventory.inventory.subList(1, 9), width, height, recipeItems, this.width, this.height);
+
         for (int x = 0; x < 3; ++x) {
             for (int y = 0; y < 3; ++y) {
                 int k = x - width;
                 int l = y - height;
                 GenerationsIngredient ingredient = GenerationsIngredient.EmptyIngredient.INSTANCE;
                 if (k >= 0 && l >= 0 && k < this.width && l < this.height) {
-                    ingredient = mirrored ? this.recipeItems.get(this.width - k - 1 + l * this.width) : this.recipeItems.get(k + l * this.width);
+                    ingredient = this.recipeItems.get(k + l * this.width);
                 }
-                if (ingredient.matches(craftingInventory.getItem(x + y * 3 + 1))) continue;
-                return false;
+
+
+                if (!ingredient.matches(craftingInventory.getItem(x + y * 3 + 1))) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static boolean checkPattern(List<ItemStack> grid, int gridWidth, int gridHeight,
+                                       NonNullList<GenerationsIngredient> pattern, int patternWidth, int patternHeight) {
+        // Ensure the pattern size matches the specified dimensions
+        if (pattern.size() != patternWidth * patternHeight) {
+            throw new IllegalArgumentException("Pattern size does not match specified dimensions.");
+        }
+
+        // Try all possible subsections of the grid
+        for (int row = 0; row <= gridHeight - patternHeight; row++) {
+            for (int col = 0; col <= gridWidth - patternWidth; col++) {
+                if (matchesPatternAt(grid, gridWidth, pattern, patternWidth, patternHeight, row, col)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private static boolean matchesPatternAt(List<ItemStack> grid, int gridWidth,
+                                                NonNullList<GenerationsIngredient> pattern, int patternWidth,
+                                                int patternHeight, int startRow, int startCol) {
+        // Check each element in the pattern
+        for (int row = 0; row < patternHeight; row++) {
+            for (int col = 0; col < patternWidth; col++) {
+                int gridIndex = (startRow + row) * gridWidth + (startCol + col);
+                ItemStack gridValue = grid.get(gridIndex);
+                GenerationsIngredient predicate = pattern.get(row * patternWidth + col);
+                if (!predicate.matches(gridValue)) {
+                    return false;
+                }
             }
         }
         return true;
@@ -139,16 +184,14 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
 
     public @NotNull NonNullList<ItemStack> getRemainingItems(RksMachineBlockEntity container) {
 
-        NonNullList<ItemStack> nonNullList = NonNullList.withSize(container.getContainerSize(), ItemStack.EMPTY);
+        NonNullList<ItemStack> nonNullList = NonNullList.withSize(9, ItemStack.EMPTY);
         for (int i = 1; i < nonNullList.size(); ++i) {
-            ItemStack itemStack = container.getItem(i);
+            ItemStack itemStack = container.inventory.get(i).copy();
             var item = itemStack.getItem();
-            if (itemStack.is(GenerationsItems.TIME_CAPSULE.get()) && consumesTimeCapsules) {
-                nonNullList.set(i, itemStack);
+            if (itemStack.is(GenerationsItems.TIME_CAPSULE.get()) && !consumesTimeCapsules) {
+                nonNullList.set(i, itemStack.copy());
                 container.pokemon = TimeCapsule.Companion.getPokemon(itemStack);
-            }
-
-            if (item.hasCraftingRemainingItem()) nonNullList.set(i, new ItemStack(item.getCraftingRemainingItem()));
+            } else if (item.hasCraftingRemainingItem()) nonNullList.set(i, new ItemStack(item.getCraftingRemainingItem()));
         }
         return nonNullList;
     }
@@ -220,7 +263,7 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
     @Override
     public boolean isIncomplete() {
         NonNullList<GenerationsIngredient> nonNullList = this.recipeItems;
-        return nonNullList.isEmpty() || nonNullList.stream().filter(ingredient -> !ingredient.isEmpty()).anyMatch(ingredient -> ingredient.matchingStacks().size() == 0);
+        return nonNullList.isEmpty() || nonNullList.stream().filter(ingredient -> !ingredient.isEmpty()).anyMatch(ingredient -> ingredient.isEmpty());
     }
 
     private static int firstNonSpace(String entry) {
@@ -297,7 +340,7 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
         result.process(player, rksMachineBlockEntity, stack);
     }
 
-    public record Serializer<T extends RksRecipe<V>, V extends RksResult<V>>(RksRecipeConstructor<T, V> constructor, RksResultType<V> type) implements RecipeSerializer<T> {
+    public record Serializer<T extends RksRecipe<V>, V extends RksResult<V>, K extends RksResultType<V>>(RksRecipeConstructor<T, V> constructor, RegistrySupplier<K> type) implements RecipeSerializer<T> {
 
         @Override
         public @NotNull T fromJson(@NotNull ResourceLocation recipeId, @NotNull JsonObject json) {
@@ -308,7 +351,7 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
             int j = strings.length;
             NonNullList<GenerationsIngredient> nonNullList = dissolvePattern(strings, map, i, j);
 
-            var result = type().codec().decode(JsonOps.INSTANCE, json.get("result")).getOrThrow(false, System.out::println).getFirst();
+            var result = type().get().codec().decode(JsonOps.INSTANCE, json.get("result")).getOrThrow(false, System.out::println).getFirst();
 
             var speciesKey = json.has("speciesKey") ? SpeciesKey.fromString(json.getAsJsonPrimitive("speciesKey").getAsString()) : null;
 
@@ -329,7 +372,7 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
             nonNullList.replaceAll(ignored -> GenerationsIngredidents.fromNetwork(buffer));
 
 
-            var result = type.fromBuffer().apply(buffer);
+            var result = type.get().fromBuffer().apply(buffer);
 
             var consumesTimeCapsules = buffer.readBoolean();
 
@@ -358,7 +401,7 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
                 GenerationsIngredidents.toNetwork(buffer, generationsIngredient);
             }
 
-            type.toBuffer().accept(buffer, recipe.result);
+            type.get().toBuffer().accept(buffer, recipe.result);
 
             buffer.writeBoolean(recipe.consumesTimeCapsules);
 
@@ -377,5 +420,7 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
     public interface RksRecipeConstructor<V extends RksRecipe<T>, T extends RksResult<T>> {
         V create(ResourceLocation id, String group, int width, int height, NonNullList<GenerationsIngredient> recipeItems, T result, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification);
     }
+
+
 }
 

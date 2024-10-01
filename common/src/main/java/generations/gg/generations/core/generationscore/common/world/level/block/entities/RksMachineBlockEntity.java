@@ -237,7 +237,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         var recipe = manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_ITEM.get(), this, level);
 
         if(recipe.isEmpty()) return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_POKEMON.get(), this, level);
-        else return Optional.empty();
+        else return recipe;
     }
 
     private RksRecipe<?> getMappedRecipe(RecipeManager manager, ResourceLocation id) {
