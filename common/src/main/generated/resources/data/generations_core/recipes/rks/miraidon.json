@@ -1,0 +1,26 @@
+{
+  "type": "generations_core:rks_pokemon",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "key": {
+    "A": {
+      "type": "time_capsule",
+      "aspects": [],
+      "species": "cobblemon:cyclizar",
+      "strictAspects": false
+    },
+    "B": {
+      "type": "item",
+      "key": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "AB"
+  ],
+  "processingTime": 240,
+  "result": {
+    "spawnInWorld": false,
+    "species": "cobblemon:miraidon",
+    "usePokemonInCapsule": true
+  }
+}

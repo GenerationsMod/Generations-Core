@@ -108,9 +108,6 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
      */
     @Override
     public boolean matches(@NotNull RksMachineBlockEntity inv, @NotNull Level level) {
-//        System.out.println("Comparing: " + getId());
-
-//        return checkPattern(inv.inventory, 3, 3, recipeItems, this.width, this.height);
         for (int i = 0; i <= 3 - this.width; ++i) {
             for (int j = 0; j <= 3 - this.height; ++j) {
                 if (this.matches(inv, i, j)) {
@@ -126,8 +123,6 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
      * Checks if the region of a crafting inventory is match for the recipe.
      */
     private boolean matches(RksMachineBlockEntity craftingInventory, int width, int height) {
-//        return checkPattern(craftingInventory.inventory.subList(1, 9), width, height, recipeItems, this.width, this.height);
-
         for (int x = 0; x < 3; ++x) {
             for (int y = 0; y < 3; ++y) {
                 int k = x - width;
@@ -146,52 +141,17 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
         return true;
     }
 
-    public static boolean checkPattern(List<ItemStack> grid, int gridWidth, int gridHeight,
-                                       NonNullList<GenerationsIngredient> pattern, int patternWidth, int patternHeight) {
-        // Ensure the pattern size matches the specified dimensions
-        if (pattern.size() != patternWidth * patternHeight) {
-            throw new IllegalArgumentException("Pattern size does not match specified dimensions.");
-        }
-
-        // Try all possible subsections of the grid
-        for (int row = 0; row <= gridHeight - patternHeight; row++) {
-            for (int col = 0; col <= gridWidth - patternWidth; col++) {
-                if (matchesPatternAt(grid, gridWidth, pattern, patternWidth, patternHeight, row, col)) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    private static boolean matchesPatternAt(List<ItemStack> grid, int gridWidth,
-                                                NonNullList<GenerationsIngredient> pattern, int patternWidth,
-                                                int patternHeight, int startRow, int startCol) {
-        // Check each element in the pattern
-        for (int row = 0; row < patternHeight; row++) {
-            for (int col = 0; col < patternWidth; col++) {
-                int gridIndex = (startRow + row) * gridWidth + (startCol + col);
-                ItemStack gridValue = grid.get(gridIndex);
-                GenerationsIngredient predicate = pattern.get(row * patternWidth + col);
-                if (!predicate.matches(gridValue)) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
     public @NotNull NonNullList<ItemStack> getRemainingItems(RksMachineBlockEntity container) {
 
         NonNullList<ItemStack> nonNullList = NonNullList.withSize(9, ItemStack.EMPTY);
-        for (int i = 1; i < nonNullList.size(); ++i) {
+        for (int i = 0; i < nonNullList.size(); ++i) {
             ItemStack itemStack = container.inventory.get(i).copy();
             var item = itemStack.getItem();
-            if (itemStack.is(GenerationsItems.TIME_CAPSULE.get()) && !consumesTimeCapsules) {
-                nonNullList.set(i, itemStack.copy());
+            if (itemStack.is(GenerationsItems.TIME_CAPSULE.get())) {
                 container.pokemon = TimeCapsule.Companion.getPokemon(itemStack);
-            } else if (item.hasCraftingRemainingItem()) nonNullList.set(i, new ItemStack(item.getCraftingRemainingItem()));
+                if (!consumesTimeCapsules) nonNullList.set(i, itemStack.copy());
+            } else if (item.hasCraftingRemainingItem())
+                nonNullList.set(i, new ItemStack(item.getCraftingRemainingItem()));
         }
         return nonNullList;
     }

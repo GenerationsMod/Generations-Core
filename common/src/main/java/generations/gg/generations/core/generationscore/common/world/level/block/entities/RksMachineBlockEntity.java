@@ -60,7 +60,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
 
     public int processingTime;
     public int processTimeTotal;
-    public Optional<Pokemon> pokemon;
+    public Optional<Pokemon> pokemon = Optional.empty();
 
     private boolean isProcessing = false;
 

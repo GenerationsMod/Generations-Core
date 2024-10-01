@@ -128,6 +128,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createParadoxPast("roaringmoon", "salamence", exporter);
         createParadoxPast("gougingfire", "entei", exporter);
         createParadoxPast("ragingbolt", "raikou", exporter);
+        createParadoxPast("koraidon", "cyclizar", exporter);
 
         createParadoxFuture("ironthreads", "donphan", exporter);
         createParadoxFuture("ironbundle", "delibird", exporter);
@@ -139,6 +140,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createParadoxFuture("ironleaves", "virizion", exporter);
         createParadoxFuture("ironboulder", "terrakion", exporter);
         createParadoxFuture("ironcrown", "cobalion", exporter);
+        createParadoxFuture("miraidon", "cyclizar", exporter);
 
         createMegaStone(GENGARITE, "gengar", exporter);
         createMegaStone(GARDEVOIRITE, "gardevoir", exporter);
