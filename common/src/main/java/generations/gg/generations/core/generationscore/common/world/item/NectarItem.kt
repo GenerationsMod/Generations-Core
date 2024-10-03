@@ -3,6 +3,9 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.util.asTranslated
+import generations.gg.generations.core.generationscore.common.util.getOrCreate
+import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
+import generations.gg.generations.core.generationscore.common.util.isSpecies
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.PokemonInteraction
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.Item

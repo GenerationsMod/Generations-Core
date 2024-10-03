@@ -213,8 +213,7 @@ public class GenerationsCoreClient {
             }
         });
 
-
-        ItemPropertiesRegistry.register(GenerationsItems.TIME_CAPSULE.get(), GenerationsCore.id("has_pokemon"), (itemStack, clientLevel, livingEntity, i) -> TimeCapsule.Companion.getPokemon(itemStack).isEmpty() ? 0f : 1f);
+        TimeCapsule.Companion.registerItemProperty();
 
 //        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("lit"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);
 

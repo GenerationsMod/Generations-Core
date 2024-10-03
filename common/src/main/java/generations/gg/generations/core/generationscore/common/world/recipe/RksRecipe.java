@@ -12,6 +12,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
+import generations.gg.generations.core.generationscore.common.util.PokemonFunctionsKt;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.TimeCapsule;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity;
@@ -148,7 +149,7 @@ public abstract class RksRecipe<T extends RksResult<T>> implements Recipe<RksMac
             ItemStack itemStack = container.inventory.get(i).copy();
             var item = itemStack.getItem();
             if (itemStack.is(GenerationsItems.TIME_CAPSULE.get())) {
-                container.pokemon = TimeCapsule.Companion.getPokemon(itemStack);
+                container.pokemon = Optional.ofNullable(PokemonFunctionsKt.getPokemon(itemStack));
                 if (!consumesTimeCapsules) nonNullList.set(i, itemStack.copy());
             } else if (item.hasCraftingRemainingItem())
                 nonNullList.set(i, new ItemStack(item.getCraftingRemainingItem()));

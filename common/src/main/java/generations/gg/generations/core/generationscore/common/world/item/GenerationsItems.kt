@@ -20,7 +20,10 @@ import generations.gg.generations.core.generationscore.common.world.sound.Genera
 import net.minecraft.core.registries.Registries
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.world.food.FoodProperties
-import net.minecraft.world.item.*
+import net.minecraft.world.item.CreativeModeTabs
+import net.minecraft.world.item.HangingSignItem
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.SignItem
 import java.util.function.Function
 
 /**
@@ -850,10 +853,10 @@ object GenerationsItems {
     @JvmField val RELIC_SONG = createRelicSong(false)
     @JvmField val INERT_RELIC_SONG = createRelicSong(true)
     @JvmField val RED_CHAIN = register("red_chain", { RedChainItem(it.stacksTo(1)) }, LEGENDARY_ITEMS)
-    @JvmField val DNA_SPLICERS = register("dna_splicers", ::Item, LEGENDARY_ITEMS)
+    @JvmField val DNA_SPLICERS = register("dna_splicers", { DnaSplicer(it) }, LEGENDARY_ITEMS)
     @JvmField val REINS_OF_UNITY = register("reins_of_unity", ::Item, LEGENDARY_ITEMS)
-    @JvmField val N_SOLARIZER = register("n_solarizer", ::Item, LEGENDARY_ITEMS)
-    @JvmField val N_LUNARIZER = register("n_lunarizer", { NecroizerItemItem(it, "lunala", "moongeistbeam", "duskmane") }, LEGENDARY_ITEMS)
+    @JvmField val N_SOLARIZER = register("n_solarizer", { NecroizerItemItem(it, "solgaleo", "sunsteelstrike", "duskmane")}, LEGENDARY_ITEMS)
+    @JvmField val N_LUNARIZER = register("n_lunarizer", { NecroizerItemItem(it, "lunala", "moongeistbeam", "dawnwings") }, LEGENDARY_ITEMS)
     @JvmField val LEGEND_FINDER = register("legend_finder", ::Item, LEGENDARY_ITEMS)
     @JvmField val HOOPA_RING = register("hoopa_ring", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val RED_ORB = register("red_orb", ::Item, LEGENDARY_ITEMS)
@@ -887,7 +890,6 @@ object GenerationsItems {
     @JvmField val SUN_FLUTE = register("sun_flute", ::Item, LEGENDARY_ITEMS);
     @JvmField val LAVA_CRYSTAL = register("lava_crystal", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
     @JvmField val JEWEL_OF_LIFE = register("jewel_of_life", ::Item, LEGENDARY_ITEMS);
-//    public static final RegistrySupplier<Item> PRISON_BOTTLE = register("prison_bottle", Item::new, LEGENDARY_ITEMS);
     @JvmField val MIRROR = register("mirror", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
     @JvmField val UNENCHANTED_ICEROOT_CARROT = register("unenchanted_iceroot_carrot", ::Item, LEGENDARY_ITEMS)
     @JvmField val ICEROOT_CARROT = register("iceroot_carrot", { CalyrexSteedItem("iceroot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEat().build()), LegendKeys.GLASTRIER, UNENCHANTED_ICEROOT_CARROT) }, LEGENDARY_ITEMS)

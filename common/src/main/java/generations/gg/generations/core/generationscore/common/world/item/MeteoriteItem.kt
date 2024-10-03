@@ -1,12 +1,14 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
 import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
-import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
-import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
+import generations.gg.generations.core.generationscore.common.util.cycle
+import generations.gg.generations.core.generationscore.common.util.getOrCreate
+import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
+import generations.gg.generations.core.generationscore.common.util.isSpecies
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.item.legends.EnchantableItem
 import net.minecraft.server.level.ServerPlayer
@@ -16,12 +18,6 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
-fun ChoiceSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: String = ""): StringSpeciesFeature = this.get(pokemon) ?: StringSpeciesFeature(keys.first(), value)
-
-private fun ChoiceSpeciesFeatureProvider.cycle(value: String): String {
-    val index = choices.indexOf(value)
-    return choices.getOrNull(index + 1) ?: ""
-}
 
 class MeteoriteItem(arg: Properties?) : EnchantableItem(arg), LangTooltip, GenerationsCobblemonInteractions.PokemonInteraction {
     override fun neededEnchantmentLevel(player: Player): Int {

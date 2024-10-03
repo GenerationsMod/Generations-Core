@@ -353,6 +353,10 @@ public class GeneralLang extends LanguageProvider {
 
         add("generations_core.ui.interact.head_pat", "Head Pat");
         add("generations_core.ability.formchange", "%s changed form!");
+
+        add("generations_core.pokemon.fused", "%s was fused with %s.");
+        add("generations_core.pokemon.defused", "%s was defused from %s.");
+        add("generations_core.pokemon.encoded", "%s was encoded.");
     }
 
 
