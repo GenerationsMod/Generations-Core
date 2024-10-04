@@ -32,6 +32,6 @@ void main() {
     mat4 modelTransform = modelMatrix * getBoneTransform();
     vec4 worldPosition = modelTransform * vec4(positions, 1.0);
 
-    texCoord0 = texcoords + uvOffset;
+    texCoord0 = (texcoords * uvScale) + uvOffset;
     gl_Position = worldSpace * worldPosition;
 }

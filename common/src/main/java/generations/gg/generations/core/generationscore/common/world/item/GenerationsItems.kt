@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
+import com.cobblemon.mod.common.api.types.ElementalType
 import com.cobblemon.mod.common.api.types.ElementalTypes
 import com.cobblemon.mod.common.item.PokeBallItem
 import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager
@@ -672,23 +673,23 @@ object GenerationsItems {
     @JvmField val STEEL_MEMORY_DRIVE = registerHeldItem("steel_memory_drive")
     @JvmField val WATER_MEMORY_DRIVE = registerHeldItem("water_memory_drive")
 
-    @JvmField val DRACO_PLATE = registerHeldItem("draco_plate")
-    @JvmField val DREAD_PLATE = registerHeldItem("dread_plate")
-    @JvmField val EARTH_PLATE = registerHeldItem("earth_plate")
-    @JvmField val FIST_PLATE = registerHeldItem("fist_plate")
-    @JvmField val FLAME_PLATE = registerHeldItem("flame_plate")
-    @JvmField val ICICLE_PLATE = registerHeldItem("icicle_plate")
-    @JvmField val INSECT_PLATE = registerHeldItem("insect_plate")
-    @JvmField val IRON_PLATE = registerHeldItem("iron_plate")
-    @JvmField val MEADOW_PLATE = registerHeldItem("meadow_plate")
-    @JvmField val MIND_PLATE = registerHeldItem("mind_plate")
-    @JvmField val PIXIE_PLATE = registerHeldItem("pixie_plate")
-    @JvmField val SKY_PLATE = registerHeldItem("sky_plate")
-    @JvmField val SPLASH_PLATE = registerHeldItem("splash_plate")
-    @JvmField val SPOOKY_PLATE = registerHeldItem("spooky_plate")
-    @JvmField val STONE_PLATE = registerHeldItem("stone_plate")
-    @JvmField val TOXIC_PLATE = registerHeldItem("toxic_plate")
-    @JvmField val ZAP_PLATE = registerHeldItem("zap_plate")
+    @JvmField val DRACO_PLATE = registerPlate("draco_plate", ElementalTypes.DRAGON)
+    @JvmField val DREAD_PLATE = registerPlate("dread_plate", ElementalTypes.DARK)
+    @JvmField val EARTH_PLATE = registerPlate("earth_plate", ElementalTypes.GROUND)
+    @JvmField val FIST_PLATE = registerPlate("fist_plate", ElementalTypes.FIGHTING)
+    @JvmField val FLAME_PLATE = registerPlate("flame_plate", ElementalTypes.FIRE)
+    @JvmField val ICICLE_PLATE = registerPlate("icicle_plate", ElementalTypes.ICE)
+    @JvmField val INSECT_PLATE = registerPlate("insect_plate", ElementalTypes.BUG)
+    @JvmField val IRON_PLATE = registerPlate("iron_plate", ElementalTypes.STEEL)
+    @JvmField val MEADOW_PLATE = registerPlate("meadow_plate", ElementalTypes.GRASS)
+    @JvmField val MIND_PLATE = registerPlate("mind_plate", ElementalTypes.PSYCHIC)
+    @JvmField val PIXIE_PLATE = registerPlate("pixie_plate", ElementalTypes.FAIRY)
+    @JvmField val SKY_PLATE = registerPlate("sky_plate", ElementalTypes.FLYING)
+    @JvmField val SPLASH_PLATE = registerPlate("splash_plate", ElementalTypes.WATER)
+    @JvmField val SPOOKY_PLATE = registerPlate("spooky_plate", ElementalTypes.GHOST)
+    @JvmField val STONE_PLATE = registerPlate("stone_plate", ElementalTypes.ROCK)
+    @JvmField val TOXIC_PLATE = registerPlate("toxic_plate", ElementalTypes.POISON)
+    @JvmField val ZAP_PLATE = registerPlate("zap_plate", ElementalTypes.ELECTRIC)
 
     @JvmField val BUGINIUM_Z = registerHeldItem("buginium_z")
     @JvmField val DARKINIUM_Z = registerHeldItem("darkinium_z")
@@ -1488,6 +1489,9 @@ object GenerationsItems {
     private fun registerClosedMail(name: String, type: MailType): RegistrySupplier<ClosedMailItem> = register(name, type::createClosedMailItem, POKEMAIL)
 
     private fun registerMail(name: String, type: MailType): RegistrySupplier<MailItem> = register(name, type::createMailItem, POKEMAIL)
+
+    private fun registerPlate(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(name, { FormChangingItem(it, "type", type.name) })
+
 
     @JvmStatic fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Items");

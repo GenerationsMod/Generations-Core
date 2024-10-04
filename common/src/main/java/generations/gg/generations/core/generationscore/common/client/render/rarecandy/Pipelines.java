@@ -13,6 +13,7 @@ import gg.generations.rarecandy.pokeutils.BlendType;
 import gg.generations.rarecandy.pokeutils.CullType;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.renderer.animation.AnimationController;
+import gg.generations.rarecandy.renderer.animation.Transform;
 import gg.generations.rarecandy.renderer.loading.ITexture;
 import gg.generations.rarecandy.renderer.model.material.PipelineRegistry;
 import gg.generations.rarecandy.renderer.pipeline.Pipeline;
@@ -75,11 +76,29 @@ public class Pipelines {
                                 ctx.uniform().uploadMat4fs(mats);
                             })
                             .supplyUniform("uvOffset", ctx -> {
-                                var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransform(ctx.getMaterial().getMaterialName()) != null ? instance.getTransform(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
-                                ctx.uniform().uploadVec2f(offsets.offset());
+                                Transform transform = ctx.object().getTransform(ctx.instance().variant());
+
+                                if (ctx.instance() instanceof AnimatedObjectInstance instance) {
+                                    var t = instance.getTransform(ctx.getMaterial().getMaterialName());
+
+                                    if (t != null) {
+                                        transform = t;
+                                    }
+                                }
+
+                                ctx.uniform().uploadVec2f(transform.offset());
                             }).supplyUniform("uvScale", ctx -> {
-                                var offsets = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransform(ctx.getMaterial().getMaterialName()) != null ? instance.getTransform(ctx.getMaterial().getMaterialName()) : AnimationController.NO_OFFSET : AnimationController.NO_OFFSET;
-                                ctx.uniform().uploadVec2f(offsets.scale());
+                                Transform transform = ctx.object().getTransform(ctx.instance().variant());
+
+                                if (ctx.instance() instanceof AnimatedObjectInstance instance) {
+                                    var t = instance.getTransform(ctx.getMaterial().getMaterialName());
+
+                                    if (t != null) {
+                                        transform = t;
+                                    }
+                                }
+
+                                ctx.uniform().uploadVec2f(transform.scale());
                             });
                     
                     if(!legacyShading.isEmpty()) {

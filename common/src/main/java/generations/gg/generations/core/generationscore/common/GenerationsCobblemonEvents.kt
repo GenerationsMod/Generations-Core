@@ -5,15 +5,22 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
+import com.cobblemon.mod.common.api.events.CobblemonEvents.HELD_ITEM_POST
+import com.cobblemon.mod.common.api.events.CobblemonEvents.HELD_ITEM_UPDATED
 import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
+import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import generations.gg.generations.core.generationscore.common.api.player.Caught
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.network.packets.HeadPatPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags.*
+import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
+import generations.gg.generations.core.generationscore.common.world.item.FormChangingItem
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem.BattleData
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks.SCARECROW
@@ -99,6 +106,39 @@ class GenerationsCobblemonEvents {
                     HeadPatPacket(it.pokemonID).sendToServer()
                     Minecraft.getInstance().screen = null
                 }))
+            }
+
+            HELD_ITEM_POST.subscribe {
+                val received = it.received.item
+                val returned = it.returned.item
+
+                var provider: ChoiceSpeciesFeatureProvider? = null
+                var value = ""
+
+                if(received is FormChangingItem) {
+                    provider = it.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>(received.provider)
+                    value = received.value
+                } else if(returned is FormChangingItem) {
+                    provider = it.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>(returned.provider)
+                }
+
+                if(provider != null) {
+                    val feature = provider.get(it.pokemon)
+
+                    if(feature != null) {
+                        feature.value = value
+                        feature.apply(it.pokemon)
+
+                        it.pokemon.entity?.also { pokemon ->
+                            feature.apply(pokemon.pokemon)
+                            pokemon.entityData.set(PokemonEntity.ASPECTS, it.pokemon.aspects)
+
+//                            pokemon.pokemon = it.pokemon
+                        }
+
+                        it.pokemon.getOwnerPlayer()?.sendSystemMessage("generations_core.ability.formchange".asTranslated(it.pokemon.getDisplayName().string))
+                    }
+                }
             }
 
 //            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { it.entity.taskBuilder().infiniteIterations().identifier("castform") }
