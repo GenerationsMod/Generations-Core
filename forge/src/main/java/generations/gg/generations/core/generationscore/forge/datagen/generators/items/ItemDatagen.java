@@ -531,6 +531,17 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RED_NECTAR.get(), "form_items/");
         createItem(GenerationsItems.YELLOW_NECTAR.get(), "form_items/");
 
+        createItem(GenerationsItems.ORIGINAL_CAP.get(), "form_items/");
+        createItem(GenerationsItems.WORLD_CAP.get(), "form_items/");
+        createItem(GenerationsItems.KANTO_CAP.get(), "form_items/");
+        createItem(GenerationsItems.JOHTO_CAP.get(), "form_items/");
+        createItem(GenerationsItems.HOENN_CAP.get(), "form_items/");
+        createItem(GenerationsItems.SINNOH_CAP.get(), "form_items/");
+        createItem(GenerationsItems.UNOVA_CAP.get(), "form_items/");
+        createItem(GenerationsItems.KALOS_CAP.get(), "form_items/");
+        createItem(GenerationsItems.ALOLA_CAP.get(), "form_items/");
+        createItem(GenerationsItems.PARTNER_CAP.get(), "form_items/");
+
         createItem(GenerationsItems.BACHS_FOOD_TIN.get(), "curry/ingredients/");
         createItem(GenerationsItems.BOBS_FOOD_TIN.get(), "curry/ingredients/");
         createItem(GenerationsItems.BOILED_EGG.get(), "curry/ingredients/");

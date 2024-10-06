@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading;
 
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
@@ -28,9 +29,11 @@ public class GenerationsModelLoader extends ModelLoader {
                 (gltfModel, animResources, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
                     try {
-
-
-                        ModelLoader.processModel(object, gltfModel, animResources, textures, config, glCalls, supplier, GLModel::new);
+                        if(GenerationsCore.CONFIG.client.useVanilla) {
+                            VanillaModelLoader.processModel(object, gltfModel, animResources, textures, config, glCalls, supplier);
+                        } else {
+                            processModel(object, gltfModel, animResources, textures, config, glCalls, supplier, GLModel::new);
+                        }
                     } catch (Exception e) {
                         System.out.println("Oh no! Model : " + name + " didn't properly load!");
                         e.printStackTrace();

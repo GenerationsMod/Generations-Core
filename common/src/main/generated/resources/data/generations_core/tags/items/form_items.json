@@ -1,5 +1,22 @@
 {
   "values": [
+    "generations_core:draco_plate",
+    "generations_core:dread_plate",
+    "generations_core:earth_plate",
+    "generations_core:fist_plate",
+    "generations_core:flame_plate",
+    "generations_core:icicle_plate",
+    "generations_core:insect_plate",
+    "generations_core:iron_plate",
+    "generations_core:meadow_plate",
+    "generations_core:mind_plate",
+    "generations_core:pixie_plate",
+    "generations_core:sky_plate",
+    "generations_core:splash_plate",
+    "generations_core:spooky_plate",
+    "generations_core:stone_plate",
+    "generations_core:toxic_plate",
+    "generations_core:zap_plate",
     "generations_core:meteorite",
     "generations_core:gracidea",
     "generations_core:reveal_glass",
@@ -12,6 +29,16 @@
     "generations_core:pink_nectar",
     "generations_core:purple_nectar",
     "generations_core:red_nectar",
-    "generations_core:yellow_nectar"
+    "generations_core:yellow_nectar",
+    "generations_core:original_cap",
+    "generations_core:world_cap",
+    "generations_core:kanto_cap",
+    "generations_core:johto_cap",
+    "generations_core:hoenn_cap",
+    "generations_core:sinnoh_cap",
+    "generations_core:unova_cap",
+    "generations_core:kalos_cap",
+    "generations_core:alola_cap",
+    "generations_core:partner_cap"
   ]
 }

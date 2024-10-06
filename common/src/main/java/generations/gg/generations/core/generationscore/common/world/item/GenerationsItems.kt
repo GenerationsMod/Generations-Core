@@ -988,6 +988,16 @@ object GenerationsItems {
     @JvmField val PURPLE_NECTAR = register("purple_nectar", { NectarItem(it, "sensu") }, FORM_ITEMS)
     @JvmField val RED_NECTAR = register("red_nectar", { NectarItem(it, "") }, FORM_ITEMS)
     @JvmField val YELLOW_NECTAR = register("yellow_nectar", { NectarItem(it, "pom-pom") }, FORM_ITEMS)
+    @JvmField val ORIGINAL_CAP = registerCap("original_cap", "originalcap");
+    @JvmField val WORLD_CAP = registerCap("world_cap", "worldcap");
+    @JvmField val KANTO_CAP = registerCap("kanto_cap", "kantocap");
+    @JvmField val JOHTO_CAP = registerCap("johto_cap", "johtocap");
+    @JvmField val HOENN_CAP = registerCap("hoenn_cap", "hoenncap");
+    @JvmField val SINNOH_CAP = registerCap("sinnoh_cap", "sinnohcap");
+    @JvmField val UNOVA_CAP = registerCap("unova_cap", "unovacap");
+    @JvmField val KALOS_CAP = registerCap("kalos_cap", "kaloscap");
+    @JvmField val ALOLA_CAP = registerCap("alola_cap", "alolacap");
+    @JvmField val PARTNER_CAP = registerCap("partner_cap", "partnercap");
 
     /**
      * Mail
@@ -1490,8 +1500,9 @@ object GenerationsItems {
 
     private fun registerMail(name: String, type: MailType): RegistrySupplier<MailItem> = register(name, type::createMailItem, POKEMAIL)
 
-    private fun registerPlate(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(name, { FormChangingItem(it, "type", type.name) })
+    private fun registerPlate(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(name, { FormChangingItem(it, "type", type.name) }, FORM_ITEMS)
 
+    private fun registerCap(name: String, capType: String): RegistrySupplier<FormChangingItem> = register(name, { FormChangingItem(it, "pikachu_cap", capType) }, FORM_ITEMS)
 
     @JvmStatic fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Items");

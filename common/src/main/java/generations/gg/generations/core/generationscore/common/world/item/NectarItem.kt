@@ -15,7 +15,7 @@ class NectarItem(properties: Properties, private var form: String): Item(propert
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
 
         if(entity.pokemon.isSpecies("oricorio")) {
-            val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("sky") ?: return false
+            val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("oricorio_style") ?: return false
             val feature = provider.getOrCreate(entity.pokemon)
 
             if(feature.value != form) {

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.client;
 
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.EntityRenderersEvent;

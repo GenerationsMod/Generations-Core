@@ -2,16 +2,18 @@ package generations.gg.generations.core.generationscore.common.client.render.rar
 
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.GenerationsModelLoader
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.VanilaRenderModel
 import generations.gg.generations.core.generationscore.common.util.TaskQueue
+import gg.generations.rarecandy.renderer.animation.AnimationController
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import gg.generations.rarecandy.renderer.components.MeshObject
 import gg.generations.rarecandy.renderer.components.MultiRenderObject
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
+import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance
 import gg.generations.rarecandy.renderer.storage.ObjectManager
 import net.minecraft.client.renderer.MultiBufferSource
-import net.minecraft.client.renderer.MultiBufferSource.BufferSource
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
 import java.io.IOException
@@ -24,7 +26,7 @@ class CompiledModel @JvmOverloads constructor(
     val name: ResourceLocation,
     stream: Resource?,
     supplier: Supplier<MeshObject>,
-    requiresVariantTexture: Boolean = true
+    requiresVariantTexture: Boolean = true,
 ) {
     @JvmField
     var renderObject: MultiRenderObject<MeshObject>? = null
@@ -52,19 +54,24 @@ class CompiledModel @JvmOverloads constructor(
         if (renderObject == null) return
         if (!renderObject!!.isReady) return
 
-//        if(GenerationsCore.CONFIG.client.useVanilla) {
-//            renderVanilla(instance, source)
-//        } else {
+        if(GenerationsCore.CONFIG.client.useVanilla) {
+            renderVanilla(instance, source)
+        } else {
         renderRareCandy(instance, ModelRegistry.worldRareCandy.objectManager)
-//        }
+        }
     }
 
-    private fun renderVanilla(instance: ObjectInstance, source: BufferSource) {
+    private fun renderVanilla(instance: ObjectInstance, source: MultiBufferSource) {
         var list = renderObject!!.objects
+
+        var transforms = instance.takeIf { it is AnimatedObjectInstance }?.let { it as AnimatedObjectInstance }?.transforms ?: AnimationController.NO_ANIMATION
+
         list.forEach {
             var model = it.model.takeIf { it is VanilaRenderModel }?.let { it as VanilaRenderModel } ?: return
 
             model.bufferSource = source
+
+            model.render(instance, it, transforms)
         }
     }
 

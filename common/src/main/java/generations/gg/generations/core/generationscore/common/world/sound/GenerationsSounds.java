@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.sound;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import net.kyori.adventure.sound.Sound;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 

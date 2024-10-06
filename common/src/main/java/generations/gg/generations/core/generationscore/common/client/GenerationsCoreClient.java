@@ -416,6 +416,7 @@ public class GenerationsCoreClient {
     }
 
     public static void renderRareCandy(ClientLevel level) {
+        if(GenerationsCore.CONFIG.client.useVanilla) return;
 
         var startTime = System.currentTimeMillis();
         assert level != null;
