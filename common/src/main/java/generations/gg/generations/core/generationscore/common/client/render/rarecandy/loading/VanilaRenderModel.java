@@ -20,10 +20,11 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import org.joml.*;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class VanilaRenderModel implements RenderModel {
-    public static final Matrix3f UV_TRANSFORM = new Matrix3f();
     public static final Vector2f UV_VECTOR = new Vector2f();
 
     public static final Matrix4f SKELETAL_TRANSFORM = new Matrix4f();
@@ -62,43 +63,34 @@ public class VanilaRenderModel implements RenderModel {
         var light = instance instanceof BlockLightValueProvider provider ? provider.getLight() : LightTexture.FULL_BRIGHT;
 
         if(tint == null) tint = WHITE;
-        var matrix = instance.transformationMatrix();
+        var modelMatrix = instance.transformationMatrix();
+        var viewMatrix = instance.viewMatrix();
 
         for (int i = 0; i < indexSize; i += 3) {
-            addVertex(consumer, i, tint, light, matrix, transform, transforms);
-            addVertex(consumer, i, tint, light, matrix, transform, transforms);
-            addVertex(consumer, i + 1, tint, light, matrix, transform, transforms);
-            addVertex(consumer, i + 2, tint, light, matrix, transform, transforms);
+            addVertex(consumer, i, tint, light, modelMatrix, viewMatrix, transform, transforms);
+            addVertex(consumer, i, tint, light, modelMatrix, viewMatrix, transform, transforms);
+            addVertex(consumer, i + 1, tint, light, modelMatrix, viewMatrix, transform, transforms);
+            addVertex(consumer, i + 2, tint, light, modelMatrix, viewMatrix, transform, transforms);
         }
     }
 
-    private void addVertex(VertexConsumer consumer, int i, Vector3f tint, int light, Matrix4f matrix4f, Transform transform, Matrix4f[] transforms) {
+    private void addVertex(VertexConsumer consumer, int i, Vector3f tint, int light, Matrix4f modelMatrix, Matrix4f viewMatrix, Transform transform, Matrix4f[] transforms) {
         var bufferIndex = indicies[i];
 
         var posIndex = bufferIndex * 3;
         var boneIndex = bufferIndex * 4;
         var uvIndex = bufferIndex * 2;
 
-        UV_VECTOR.set(uvs[uvIndex], uvs[uvIndex+1]).mul(transform.scale()).add(transform.offset());
+        SKELETAL_VECTOR.set(positions[posIndex+0], positions[posIndex+1], positions[posIndex+2], 1.0f);
 
-        SKELETAL_VECTOR.set(positions[posIndex],
-                positions[posIndex + 1],
-                positions[posIndex + 2], 1.0);
+//        transforms[boneIds[boneIndex+0]].scale(boneWeights[boneIndex+0], SKELETAL_TRANSFORM)
+//                .add(transforms[boneIds[boneIndex+1]].scale(boneWeights[boneIndex+1], SKELETAL_TEMP))
+//                .add(transforms[boneIds[boneIndex+2]].scale(boneWeights[boneIndex+2], SKELETAL_TEMP))
+//                .add(transforms[boneIds[boneIndex+3]].scale(boneWeights[boneIndex+3], SKELETAL_TEMP));
+//
+//        modelMatrix.mul(SKELETAL_TRANSFORM, SKELETAL_TEMP);
 
-        SKELETAL_TRANSFORM.set(transforms[boneIds[boneIndex]]).scale(boneWeights[boneIndex]);
-        SKELETAL_TEMP.identity().set(SKELETAL_TRANSFORM);
-        SKELETAL_TRANSFORM.set(transforms[boneIds[boneIndex+1]]).scale(boneWeights[boneIndex+1]);
-        SKELETAL_TEMP.add(SKELETAL_TRANSFORM);
-        SKELETAL_TRANSFORM.set(transforms[boneIds[boneIndex+2]]).scale(boneWeights[boneIndex+2]);
-        SKELETAL_TEMP.add(SKELETAL_TRANSFORM);
-        SKELETAL_TRANSFORM.set(transforms[boneIds[boneIndex+3]]).scale(boneWeights[boneIndex+3]);
-        SKELETAL_TEMP.add(SKELETAL_TRANSFORM);
-
-        SKELETAL_TRANSFORM.set(matrix4f);
-
-        SKELETAL_TRANSFORM.mul(SKELETAL_TEMP);
-
-        SKELETAL_TRANSFORM.transform(SKELETAL_VECTOR);
+        modelMatrix.transform(SKELETAL_VECTOR);
 
         consumer.vertex(SKELETAL_VECTOR.x(),
                         SKELETAL_VECTOR.y(),
@@ -109,9 +101,13 @@ public class VanilaRenderModel implements RenderModel {
                 .uv2(light)
                 .normal(normals[posIndex], normals[posIndex+1], normals[posIndex+2])
                 .endVertex();
-
-        TextComponent
     }
+
+//    private Matrix4f getBoneTransform(Matrix4f[] boneTransforms, int boneIndex) {
+//        var boneTransform = boneTransforms[boneIds[boneIndex]].scale(boneWeights[boneIndex], new Matrix4f()).add(boneTransforms[boneIds[boneIndex+1]].scale(boneWeights[boneIndex+1], new Matrix4f()).add(boneTransforms[boneIds[boneIndex+2]].scale(boneWeights[boneIndex+2], new Matrix4f()).add(boneTransforms[boneIds[boneIndex+3]].scale(boneWeights[boneIndex+2], new Matrix4f()))));
+//
+//        return boneTransform;
+//    }
 
     @Override
     public Vector3f getDimensions() {

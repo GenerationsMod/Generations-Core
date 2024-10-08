@@ -61,7 +61,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
                 instance.setVariant(variant);
             }
 
-            instance.viewMatrix().set(stack.last().pose());
+            instance.transformationMatrix().set(stack.last().pose());
             ((BlockObjectInstance) instance).setLight(packedLight);
             if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) instance).setTint(provider.getTint());
             model.render(instance, buffersource);
@@ -104,7 +104,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             }
         }
 
-        primeInstance.viewMatrix().set(stack.last().pose());
+        primeInstance.transformationMatrix().set(stack.last().pose());
         ((BlockLightValueProvider) primeInstance).setLight(packedLight);
         if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockAnimatedObjectInstance) primeInstance).setTint(provider.getTint());
 
