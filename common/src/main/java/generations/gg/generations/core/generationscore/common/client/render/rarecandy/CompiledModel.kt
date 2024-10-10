@@ -37,6 +37,7 @@ class CompiledModel @JvmOverloads constructor(
 
     init {
         queue.addTask {
+            GenerationsCore.LOGGER.info("Loading PK: $name")
             renderObject = loader.compiledModelMethod(this, stream?.open(), supplier, name.toString(), requiresVariantTexture)
         }
     }
