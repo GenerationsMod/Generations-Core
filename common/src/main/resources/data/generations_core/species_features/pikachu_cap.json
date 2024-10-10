@@ -3,16 +3,16 @@
   "keys": ["pikachu_cap"],
   "default": "false",
   "choices": [
-    "originalcap",
-    "worldcap",
-    "kantocap",
-    "johtocap",
-    "hoenncap",
-    "sinnohcap",
-    "unovacap",
-    "kaloscap",
-    "alolacap",
-    "partnercap"
+    "original",
+    "world",
+    "kanto",
+    "johto",
+    "hoenn",
+    "sinnoh",
+    "unova",
+    "kalos",
+    "alola",
+    "partner"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"

@@ -120,6 +120,7 @@ class GenerationsCobblemonEvents {
                     value = received.value
                 } else if(returned is FormChangingItem) {
                     provider = it.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>(returned.provider)
+                    value = provider?.default ?: ""
                 }
 
                 if(provider != null) {
