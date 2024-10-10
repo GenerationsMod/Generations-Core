@@ -1,11 +1,11 @@
 #version 330 core
 #define MAX_BONES 220
 
-layout(location = 0) in vec3 positions;
-layout(location = 1) in vec2 texcoords;
-layout(location = 2) in vec3 inNormal;
-layout(location = 3) in vec4 joints;
-layout(location = 4) in vec4 weights;
+in vec3 positions;
+in vec2 texcoords;
+in vec3 inNormal;
+in vec4 joints;
+in vec4 weights;
 
 out vec2 texCoord0;
 
