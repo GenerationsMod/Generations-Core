@@ -112,7 +112,7 @@ publisher {
     //githubRepo.set("https:github.com/GenerationsMod/Generations-Core")
     setReleaseType(ReleaseType.BETA)
     projectVersion.set(project.version.toString() + "-${project.name}")
-    displayName.set(base.archivesName.get() + "-Fabric")
+    displayName.set(base.archivesName.get() + "-${project.version}")
     changelog.set(projectDir.toPath().parent.resolve("CHANGELOG.md").toFile().readText())
     artifact.set(tasks.remapJar)
     setGameVersions(minecraftVersion)
