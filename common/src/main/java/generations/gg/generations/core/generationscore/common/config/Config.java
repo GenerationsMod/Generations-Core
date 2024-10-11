@@ -150,6 +150,7 @@ public class Config {
         public boolean usePixelmonShading = false;
         public boolean useRenderDoc = false;
         public boolean useVanilla = false;
+        public boolean logModelLoading = false;
     }
 
     public static class Economy {
