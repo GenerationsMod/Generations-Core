@@ -36,10 +36,10 @@ object ModelRegistry {
     }
 
     @JvmStatic
-    fun cache() = LOADER;
+    fun cache() = LOADER
 
     @JvmStatic
-    fun clear() = LOADER.asMap().clear();
+    fun clear() = LOADER.asMap().clear()
 
     @JvmStatic
     operator fun get(location: ResourceLocation): CompiledModel? {
@@ -59,7 +59,7 @@ object ModelRegistry {
     fun prepForBER(stack: PoseStack, supplier: AngleProvider) {
         stack.translate(0.5f, 0.0f, 0.5f)
         if (supplier is ModelProvidingBlockEntity) {
-            val block = supplier.blockState.block;
+            val block = supplier.blockState.block
 
             if (block is GenericRotatableModelBlock<*> && block.shouldRotateSpecial()) {
                 val forward: Direction = supplier.blockState.getValue(GenericRotatableModelBlock.FACING)

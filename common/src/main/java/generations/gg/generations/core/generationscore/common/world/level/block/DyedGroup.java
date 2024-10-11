@@ -3,12 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedVariantBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
-import net.minecraft.tags.TagEntry;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 

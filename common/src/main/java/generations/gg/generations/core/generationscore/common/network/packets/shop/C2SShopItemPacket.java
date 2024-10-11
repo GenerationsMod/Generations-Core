@@ -1,10 +1,6 @@
 package generations.gg.generations.core.generationscore.common.network.packets.shop;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;

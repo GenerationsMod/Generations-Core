@@ -1,16 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.legends.TaoTrioStoneItem;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.TaoTrioShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.legends.TaoTrioStoneItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.TaoTrioShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.legends.TaoTrioStoneItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;

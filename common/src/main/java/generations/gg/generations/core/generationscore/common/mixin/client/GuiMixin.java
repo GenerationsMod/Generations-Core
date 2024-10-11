@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.mixin.client;
 
 import generations.gg.generations.core.generationscore.common.client.screen.CameraOverlay;
-import generations.gg.generations.core.generationscore.common.client.screen.CameraOverlay;
-import generations.gg.generations.core.generationscore.common.client.screen.CameraOverlay;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import org.spongepowered.asm.mixin.Mixin;

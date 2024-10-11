@@ -1,18 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
-import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
-import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
 import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem;

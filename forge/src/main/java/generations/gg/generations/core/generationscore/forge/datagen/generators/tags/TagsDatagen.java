@@ -442,18 +442,18 @@ public class TagsDatagen {
             tag(GenerationsItemTags.BADGES).add(Streams.stream(BADGES.iterator()).map(a -> a.get()).toArray(Item[]::new));
 
             tag(GenerationsItemTags.UNIMPLEMENTED).add(Streams.stream(UNIMPLEMENTED.iterator()).map(a -> a.get()).toArray(Item[]::new));
-            tag(GenerationsItemTags.CUISINE).add(Streams.stream(CUISINE.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.NATURAL).add(Streams.stream(NATURAL.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.RESTORATION).add(Streams.stream(RESTORATION.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.PLAYER_ITEMS).add(Streams.stream(PLAYER_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.HELD_ITEMS).add(Streams.stream(HELD_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.LEGENDARY_ITEMS).add(Streams.stream(LEGENDARY_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.UTILITY).add(Streams.stream(UTILITY.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.VALUABLES).add(Streams.stream(VALUABLES.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.FORM_ITEMS).add(Streams.stream(FORM_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
-            tag(GenerationsItemTags.BUILDING_BLOCKS).add(Streams.stream(BUILDING_BLOCKS.iterator()).map(a -> a.get()).toArray(Item[]::new));;
+            tag(GenerationsItemTags.CUISINE).add(Streams.stream(CUISINE.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.NATURAL).add(Streams.stream(NATURAL.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.RESTORATION).add(Streams.stream(RESTORATION.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.PLAYER_ITEMS).add(Streams.stream(PLAYER_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.HELD_ITEMS).add(Streams.stream(HELD_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.LEGENDARY_ITEMS).add(Streams.stream(LEGENDARY_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.UTILITY).add(Streams.stream(UTILITY.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.VALUABLES).add(Streams.stream(VALUABLES.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.FORM_ITEMS).add(Streams.stream(FORM_ITEMS.iterator()).map(a -> a.get()).toArray(Item[]::new));
+	        tag(GenerationsItemTags.BUILDING_BLOCKS).add(Streams.stream(BUILDING_BLOCKS.iterator()).map(a -> a.get()).toArray(Item[]::new));
 
-            var generationsItemsTag = tag(GenerationsItemTags.GENERATIONSITEMS)
+	        var generationsItemsTag = tag(GenerationsItemTags.GENERATIONSITEMS)
                     .addTag(GenerationsItemTags.RIBBONS)
                     .addTag(GenerationsItemTags.BADGES)
                     .addTag(GenerationsItemTags.UNIMPLEMENTED)

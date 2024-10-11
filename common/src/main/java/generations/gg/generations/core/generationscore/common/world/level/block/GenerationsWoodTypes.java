@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes;
-import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes;
-import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
 /**

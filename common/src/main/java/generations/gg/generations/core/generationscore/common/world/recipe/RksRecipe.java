@@ -14,7 +14,6 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
 import generations.gg.generations.core.generationscore.common.util.PokemonFunctionsKt;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.item.TimeCapsule;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;

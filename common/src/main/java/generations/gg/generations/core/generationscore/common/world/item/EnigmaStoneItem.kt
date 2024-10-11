@@ -22,11 +22,11 @@ class EnigmaStoneItem(properties: Properties?) : ItemWithLangTooltipImpl(propert
         if (player is ServerPlayer) {
             if (hand == InteractionHand.MAIN_HAND) {
                 if (player.mainHandItem.damageValue >= player.mainHandItem.maxDamage) {
-                    val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("eon_spawn")] ?: return InteractionResultHolder.fail(player.mainHandItem);
+                    val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("eon_spawn")] ?: return InteractionResultHolder.fail(player.mainHandItem)
 
                     player.openDialogue(dialogue)
 
-                    return InteractionResultHolder.success(player.mainHandItem);
+                    return InteractionResultHolder.success(player.mainHandItem)
                 } else {
                     player.sendSystemMessage(Component.literal("You need to defeat/capture " + (player.mainHandItem.maxDamage - player.mainHandItem.damageValue) + " Psychic/Dragon pokemon to use this stone."))
                 }

@@ -1,10 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;

@@ -33,7 +33,7 @@ object TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
             matrices.pushPose()
             val model = PokemonModelRepository.getPoser(species.resourceIdentifier, aspects)
 
-            val isSprite = model.rootPart is RareCandyBone;
+            val isSprite = model.rootPart is RareCandyBone
 
             val context = model.context
             context.put(RenderContext.SPECIES, species.resourceIdentifier)

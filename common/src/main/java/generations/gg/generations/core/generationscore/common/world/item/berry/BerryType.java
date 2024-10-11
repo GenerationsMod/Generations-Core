@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item.berry;
 
 import com.cobblemon.mod.common.api.berry.Berry;
 import generations.gg.generations.core.generationscore.common.world.item.curry.ICurryRarity;
-import generations.gg.generations.core.generationscore.common.world.item.curry.ICurryRarity;
-import generations.gg.generations.core.generationscore.common.world.item.curry.ICurryRarity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.MapColor;
 

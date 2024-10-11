@@ -6,16 +6,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.SittableBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.SittableBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericDyedVariantBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

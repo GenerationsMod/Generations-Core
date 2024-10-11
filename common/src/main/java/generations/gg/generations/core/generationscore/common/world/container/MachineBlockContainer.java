@@ -1,9 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.container;
 
-import generations.gg.generations.core.generationscore.common.world.container.slots.NullCandySlot;
-import generations.gg.generations.core.generationscore.common.world.container.slots.TypeSlot;
-import generations.gg.generations.core.generationscore.common.world.container.slots.NullCandySlot;
-import generations.gg.generations.core.generationscore.common.world.container.slots.TypeSlot;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.container.slots.NullCandySlot;

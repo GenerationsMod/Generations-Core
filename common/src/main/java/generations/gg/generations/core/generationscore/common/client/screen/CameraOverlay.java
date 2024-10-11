@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.client.screen;
 
-import com.cobblemon.mod.common.client.render.item.PokemonItemRenderer;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.item.PokemonItem;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -8,13 +7,9 @@ import generations.gg.generations.core.generationscore.common.world.item.CameraI
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.function.Predicate;
 
 public class CameraOverlay {
     private static final ResourceLocation CAMERA_OVERLAY_BORDER = new ResourceLocation("generations_core:textures/gui/camera_overlay_border.png");

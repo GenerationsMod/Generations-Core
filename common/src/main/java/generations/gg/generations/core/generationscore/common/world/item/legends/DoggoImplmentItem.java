@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item.legend
 
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import net.minecraft.world.item.Item;
 
 public class DoggoImplmentItem extends ElementalPostBattleUpdateItemImplImpl {

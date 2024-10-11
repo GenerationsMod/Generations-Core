@@ -8,8 +8,6 @@ import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.Tesselator;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.packets.C2SEditMailPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.C2SEditMailPacket;
 import generations.gg.generations.core.generationscore.common.world.item.MailItem;
 import generations.gg.generations.core.generationscore.common.network.packets.C2SEditMailPacket;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -45,8 +43,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
-
-import static generations.gg.generations.core.generationscore.common.client.screen.mails.MailViewScreen.loadPages;
 
 @Environment(value= EnvType.CLIENT)
 public class MailEditScreen extends Screen {

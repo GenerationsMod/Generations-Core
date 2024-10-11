@@ -123,8 +123,9 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         ComposterBlock.COMPOSTABLES.put(block, chance);
     }
 
+    @SafeVarargs
     @Override
-    public Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> o, DeferredRegister<? extends ItemLike>... deferredRegister) {
+    public final Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> o, DeferredRegister<? extends ItemLike>... deferredRegister) {
         return GenerationsCreativeTabsForge.create(name, o, deferredRegister);
     }
 

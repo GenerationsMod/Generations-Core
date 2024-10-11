@@ -1,10 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
 import net.minecraft.core.BlockPos;

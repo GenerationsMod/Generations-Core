@@ -4,7 +4,6 @@ import com.cobblemon.mod.common.api.spawning.context.SpawningContext
 import com.cobblemon.mod.common.api.spawning.detail.SpawnAction
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail
 import com.cobblemon.mod.common.util.asTranslated
-import com.cobblemon.mod.common.util.lang
 import net.minecraft.network.chat.MutableComponent
 
 class ZygardeCellDetail : SpawnDetail() {
@@ -12,7 +11,7 @@ class ZygardeCellDetail : SpawnDetail() {
         const val TYPE = "zygarde"
     }
 
-    override val type: String = TYPE;
+    override val type: String = TYPE
     override fun doSpawn(ctx: SpawningContext): SpawnAction<*> = ZygardeCellSpawnActon(ctx, ZygardeCellDetail())
 
     override fun getName(): MutableComponent {

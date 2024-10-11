@@ -1,12 +1,8 @@
 package generations.gg.generations.core.generationscore.common.client.screen.npc.tabs;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.DropdownWidget;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.FakeSlot;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.screen.ScreenUtils;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.DropdownWidget;
-import generations.gg.generations.core.generationscore.common.client.screen.widget.FakeSlot;
 import generations.gg.generations.core.generationscore.common.client.screen.widget.DropdownWidget;
 import generations.gg.generations.core.generationscore.common.client.screen.widget.FakeSlot;
 import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;

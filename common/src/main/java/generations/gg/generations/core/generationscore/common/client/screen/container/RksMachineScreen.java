@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.screen.container;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.packets.C2STogglePacket;
-import generations.gg.generations.core.generationscore.common.network.packets.C2STogglePacket;
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.common.network.packets.C2STogglePacket;
 import net.minecraft.client.gui.GuiGraphics;
@@ -11,6 +9,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import org.jetbrains.annotations.NotNull;
 
 public class RksMachineScreen extends AbstractContainerScreen<RksMachineContainer> {
 	private static final ResourceLocation TEXTURE = GenerationsCore.id("textures/gui/container/rks_machine.png");
@@ -30,7 +29,7 @@ public class RksMachineScreen extends AbstractContainerScreen<RksMachineContaine
 	}
 
 
-	public void render(GuiGraphics matrices, int mouseX, int mouseY, float delta) {
+	public void render(@NotNull GuiGraphics matrices, int mouseX, int mouseY, float delta) {
 		this.renderBackground(matrices);
 		this.renderBg(matrices, delta, mouseX, mouseY);
 		super.render(matrices, mouseX, mouseY, delta);

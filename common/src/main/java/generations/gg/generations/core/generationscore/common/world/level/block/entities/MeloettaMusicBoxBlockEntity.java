@@ -2,14 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.google.common.annotations.VisibleForTesting;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -77,7 +70,7 @@ public class MeloettaMusicBoxBlockEntity extends ShrineBlockEntity implements Cl
 
     private void setHasRecordBlockState(@Nullable Entity entity, boolean hasRecord) {
         if (Objects.requireNonNull(this.level).getBlockState(this.getBlockPos()) == this.getBlockState()) {
-            this.level.setBlock(this.getBlockPos(), (BlockState)this.getBlockState().setValue(JukeboxBlock.HAS_RECORD, hasRecord), 2);
+            this.level.setBlock(this.getBlockPos(), this.getBlockState().setValue(JukeboxBlock.HAS_RECORD, hasRecord), 2);
             this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), GameEvent.Context.of(entity, this.getBlockState()));
         }
     }

@@ -37,11 +37,11 @@ class PokeLootRendrer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRen
 
         entity.value.pokeBall = block.ball()
 
-        stack.translate(0.5, 0.25, 0.5);
-        stack.mulPose(Axis.YP.rotationDegrees(angle));
-        stack.translate(0.0, 0.0, 0.25);
-        stack.mulPose(Axis.XP.rotationDegrees(94.0f));
-        stack.mulPose(Axis.ZP.rotationDegrees(180.0f));
+        stack.translate(0.5, 0.25, 0.5)
+        stack.mulPose(Axis.YP.rotationDegrees(angle))
+        stack.translate(0.0, 0.0, 0.25)
+        stack.mulPose(Axis.XP.rotationDegrees(94.0f))
+        stack.mulPose(Axis.ZP.rotationDegrees(180.0f))
 
         stack.scale(0.9f, 0.9f, 0.9f)
 

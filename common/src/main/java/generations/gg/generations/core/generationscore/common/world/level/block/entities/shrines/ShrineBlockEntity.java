@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines;
 
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.ShrineBlock;

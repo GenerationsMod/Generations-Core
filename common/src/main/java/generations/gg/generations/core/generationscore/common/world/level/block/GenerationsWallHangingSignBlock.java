@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block;
 
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsHangingSignBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsHangingSignBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsHangingSignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.WallHangingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;

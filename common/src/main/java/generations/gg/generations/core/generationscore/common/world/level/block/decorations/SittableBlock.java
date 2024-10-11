@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.decorations;
 
 import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

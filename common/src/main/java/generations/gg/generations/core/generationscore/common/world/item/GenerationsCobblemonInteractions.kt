@@ -35,7 +35,7 @@ object GenerationsCobblemonInteractions {
             if (stack.item is PokemonInteraction) {
                 (stack.item as PokemonInteraction).processInteraction(player as ServerPlayer, entity, stack)
             } else {
-                triggerCustomInteraction(entity, player, stack);
+                triggerCustomInteraction(entity, player, stack)
             }
         } else {
             false

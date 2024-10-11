@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block;
 
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;

@@ -1,14 +1,6 @@
 package generations.gg.generations.core.generationscore.common.network.packets.shop;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.packets.DataRegistrySyncPacket;
-import generations.gg.generations.core.generationscore.common.world.npc.NpcPreset;
-import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;
-import generations.gg.generations.core.generationscore.common.network.packets.DataRegistrySyncPacket;
-import generations.gg.generations.core.generationscore.common.world.npc.NpcPreset;
-import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;
 import generations.gg.generations.core.generationscore.common.network.packets.DataRegistrySyncPacket;
 import generations.gg.generations.core.generationscore.common.world.npc.NpcPreset;
 import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;

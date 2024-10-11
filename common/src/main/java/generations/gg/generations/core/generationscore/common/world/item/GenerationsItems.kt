@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.common.world.item;
+package generations.gg.generations.core.generationscore.common.world.item
 
 import com.cobblemon.mod.common.api.types.ElementalType
 import com.cobblemon.mod.common.api.types.ElementalTypes
@@ -120,16 +120,16 @@ object GenerationsItems {
     /**
      * Consumable Items
      */
-    @JvmField val DYNAMAX_CANDY = register("dynamax_candy", ::Item, RESTORATION);
-    @JvmField val MAX_HONEY = register("max_honey", ::Item, RESTORATION);
-    @JvmField val MAX_MUSHROOMS = register("max_mushrooms", ::Item, RESTORATION);
-    @JvmField val MAX_POWDER = register("max_powder", ::Item, RESTORATION);
-    @JvmField val MAX_SOUP = register("max_soup", ::Item, RESTORATION);
+    @JvmField val DYNAMAX_CANDY = register("dynamax_candy", ::Item, RESTORATION)
+    @JvmField val MAX_HONEY = register("max_honey", ::Item, RESTORATION)
+    @JvmField val MAX_MUSHROOMS = register("max_mushrooms", ::Item, RESTORATION)
+    @JvmField val MAX_POWDER = register("max_powder", ::Item, RESTORATION)
+    @JvmField val MAX_SOUP = register("max_soup", ::Item, RESTORATION)
 
     /**
      * TM ITEMS
      */
-    @JvmField val CUSTOM_TM = registerTm("tm", ::CustomTechnicalMachineItem);
+    @JvmField val CUSTOM_TM = registerTm("tm", ::CustomTechnicalMachineItem)
 
 
     @JvmField val TM_1 = registerTm("tm_1", { TechnicalMachineItem("takedown", it) }, PLAYER_ITEMS)
@@ -752,7 +752,7 @@ object GenerationsItems {
 
 
 
-    @JvmField val COPPER_PLATE = register("copper_plate", ::Item, PLAYER_ITEMS);
+    @JvmField val COPPER_PLATE = register("copper_plate", ::Item, PLAYER_ITEMS)
 
     /**
      * Player Items
@@ -818,35 +818,35 @@ object GenerationsItems {
     /**
      * Legendary Items
      */
-    @JvmField val ORB = register("orb", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val ADAMANT_ORB = register("adamant_orb", { CreationTrioItem(it.stacksTo(1), LegendKeys.DIALGA, GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")) }, LEGENDARY_ITEMS);
-    @JvmField val GRISEOUS_ORB = register("griseous_orb", { CreationTrioItem(it.stacksTo(1), LegendKeys.GIRATINA, GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")) }, LEGENDARY_ITEMS);
-    @JvmField val LUSTROUS_ORB = register("lustrous_orb", { CreationTrioItem(it.stacksTo(1), LegendKeys.PALKIA, GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")) }, LEGENDARY_ITEMS);
-    @JvmField val SHATTERED_ICE_KEY_1 = register("shattered_ice_key_1", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val SHATTERED_ICE_KEY_2 = register("shattered_ice_key_2", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val SHATTERED_ICE_KEY_3 = register("shattered_ice_key_3", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val SHATTERED_ICE_KEY_4 = register("shattered_ice_key_4", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val ICEBERG_KEY = register("iceberg_key", { RegiKeyItem(it, LegendKeys.REGICE) }, LEGENDARY_ITEMS);
-    @JvmField val CRUMBLED_ROCK_KEY_1 = register("crumbled_rock_key_1", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val CRUMBLED_ROCK_KEY_2 = register("crumbled_rock_key_2", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val CRUMBLED_ROCK_KEY_3 = register("crumbled_rock_key_3", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val CRUMBLED_ROCK_KEY_4 = register("crumbled_rock_key_4", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val ROCK_PEAK_KEY = register("rock_peak_key", { RegiKeyItem(it, LegendKeys.REGIROCK) }, LEGENDARY_ITEMS);
+    @JvmField val ORB = register("orb", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val ADAMANT_ORB = register("adamant_orb", { CreationTrioItem(it.stacksTo(1), LegendKeys.DIALGA, GenerationsCore.id("models/block/shrines/creation_trio/adamant_orb.pk")) }, LEGENDARY_ITEMS)
+    @JvmField val GRISEOUS_ORB = register("griseous_orb", { CreationTrioItem(it.stacksTo(1), LegendKeys.GIRATINA, GenerationsCore.id("models/block/shrines/creation_trio/griseous_orb.pk")) }, LEGENDARY_ITEMS)
+    @JvmField val LUSTROUS_ORB = register("lustrous_orb", { CreationTrioItem(it.stacksTo(1), LegendKeys.PALKIA, GenerationsCore.id("models/block/shrines/creation_trio/lustrous_orb.pk")) }, LEGENDARY_ITEMS)
+    @JvmField val SHATTERED_ICE_KEY_1 = register("shattered_ice_key_1", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val SHATTERED_ICE_KEY_2 = register("shattered_ice_key_2", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val SHATTERED_ICE_KEY_3 = register("shattered_ice_key_3", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val SHATTERED_ICE_KEY_4 = register("shattered_ice_key_4", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val ICEBERG_KEY = register("iceberg_key", { RegiKeyItem(it, LegendKeys.REGICE) }, LEGENDARY_ITEMS)
+    @JvmField val CRUMBLED_ROCK_KEY_1 = register("crumbled_rock_key_1", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val CRUMBLED_ROCK_KEY_2 = register("crumbled_rock_key_2", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val CRUMBLED_ROCK_KEY_3 = register("crumbled_rock_key_3", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val CRUMBLED_ROCK_KEY_4 = register("crumbled_rock_key_4", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val ROCK_PEAK_KEY = register("rock_peak_key", { RegiKeyItem(it, LegendKeys.REGIROCK) }, LEGENDARY_ITEMS)
     @JvmField val RUSTY_IRON_KEY_1 = register("rusty_iron_key_1", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val RUSTY_IRON_KEY_2 = register("rusty_iron_key_2", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val RUSTY_IRON_KEY_3 = register("rusty_iron_key_3", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val RUSTY_IRON_KEY_4 = register("rusty_iron_key_4", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
-    @JvmField val IRON_KEY = register("iron_key", { RegiKeyItem(it, LegendKeys.REGISTEEL) }, LEGENDARY_ITEMS);
+    @JvmField val IRON_KEY = register("iron_key", { RegiKeyItem(it, LegendKeys.REGISTEEL) }, LEGENDARY_ITEMS)
     @JvmField val FRAGMENTED_DRAGO_KEY_1 = register("fragmented_drago_key_1", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val FRAGMENTED_DRAGO_KEY_2 = register("fragmented_drago_key_2", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val FRAGMENTED_DRAGO_KEY_3 = register("fragmented_drago_key_3", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val FRAGMENTED_DRAGO_KEY_4 = register("fragmented_drago_key_4", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
-    @JvmField val DRAGO_KEY = register("drago_key", { RegiKeyItem(it, LegendKeys.REGIDRAGO) }, LEGENDARY_ITEMS);
+    @JvmField val DRAGO_KEY = register("drago_key", { RegiKeyItem(it, LegendKeys.REGIDRAGO) }, LEGENDARY_ITEMS)
     @JvmField val DISCHARGED_ELEKI_KEY_1 = register("discharged_eleki_key_1", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val DISCHARGED_ELEKI_KEY_2 = register("discharged_eleki_key_2", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val DISCHARGED_ELEKI_KEY_3 = register("discharged_eleki_key_3", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val DISCHARGED_ELEKI_KEY_4 = register("discharged_eleki_key_4", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
-    @JvmField val ELEKI_KEY = register("eleki_key", { RegiKeyItem(it, LegendKeys.REGIELEKI) } , LEGENDARY_ITEMS);
+    @JvmField val ELEKI_KEY = register("eleki_key", { RegiKeyItem(it, LegendKeys.REGIELEKI) } , LEGENDARY_ITEMS)
     @JvmField val SHATTERED_RELIC_SONG_1 = register("shattered_relic_song_1", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val SHATTERED_RELIC_SONG_2 = register("shattered_relic_song_2", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val SHATTERED_RELIC_SONG_3 = register("shattered_relic_song_3", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
@@ -871,47 +871,47 @@ object GenerationsItems {
     @JvmField val DRAGON_STONE = register("dragon_stone", { TaoTrioStoneItem(it.stacksTo(1).durability(100), LegendKeys.KYUREM) }, LEGENDARY_ITEMS)
     @JvmField val RAINBOW_WING = register("rainbow_wing", { WingItem(it, "rainbow", ElementalTypes.FLYING, LegendKeys.HO_OH) }, LEGENDARY_ITEMS)
     @JvmField val SILVER_WING = register("silver_wing", { WingItem(it.stacksTo(1), "silver", ElementalTypes.FLYING, LegendKeys.LUGIA) }, LEGENDARY_ITEMS)
-    @JvmField val DARK_SOUL = register("dark_soul", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val DRAGON_SOUL = register("dragon_soul", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val MELODY_FLUTE = register("melody_flute", ::MelodyFluteItem, LEGENDARY_ITEMS);
-    @JvmField val SPARKLING_SHARD = register("sparkling_shard", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val SPARKLING_STONE = register("sparkling_stone", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val RUSTY_FRAGMENT = register("rusty_fragment", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val RUSTY_SWORD = register("rusty_sword", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), LegendKeys.ZACIAN, ElementalTypes.STEEL) }, LEGENDARY_ITEMS);
-    @JvmField val CROWNED_SWORD = register("crowned_sword", ::Item, LEGENDARY_ITEMS);
-    @JvmField val RUSTY_SHIELD = register("rusty_shield", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), LegendKeys.ZAMAZENTA, ElementalTypes.STEEL) }, LEGENDARY_ITEMS);
-    @JvmField val CROWNED_SHIELD = register("crowned_shield", ::Item, LEGENDARY_ITEMS);
-    @JvmField val SCROLL_PAGE = register("scroll_page", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val SECRET_ARMOR_SCROLL = register("secret_armor_scroll", ::SecretArmorScroll, LEGENDARY_ITEMS);
-    @JvmField val ZYGARDE_CUBE = register("zygarde_cube", { ZygardeCubeItem(it.stacksTo(1).durability(ZygardeCubeItem.FULL)) }, LEGENDARY_ITEMS);
-    @JvmField val MELTAN_BOX = register("meltan_box", { MeltanBox(it.stacksTo(1).durability(200)) }, LEGENDARY_ITEMS);
-    @JvmField val MELTAN_BOX_CHARGED = register("meltan_box_charged", ::MeltanBox, LEGENDARY_ITEMS);
-    @JvmField val TIME_GLASS = register("time_glass", { TimeGlassItem(it.stacksTo(1).durability(100)) }, LEGENDARY_ITEMS);
-    @JvmField val MOON_FLUTE = register("moon_flute", ::Item, LEGENDARY_ITEMS);
-    @JvmField val SUN_FLUTE = register("sun_flute", ::Item, LEGENDARY_ITEMS);
-    @JvmField val LAVA_CRYSTAL = register("lava_crystal", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val JEWEL_OF_LIFE = register("jewel_of_life", ::Item, LEGENDARY_ITEMS);
-    @JvmField val MIRROR = register("mirror", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
+    @JvmField val DARK_SOUL = register("dark_soul", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val DRAGON_SOUL = register("dragon_soul", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val MELODY_FLUTE = register("melody_flute", ::MelodyFluteItem, LEGENDARY_ITEMS)
+    @JvmField val SPARKLING_SHARD = register("sparkling_shard", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val SPARKLING_STONE = register("sparkling_stone", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val RUSTY_FRAGMENT = register("rusty_fragment", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val RUSTY_SWORD = register("rusty_sword", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), LegendKeys.ZACIAN, ElementalTypes.STEEL) }, LEGENDARY_ITEMS)
+    @JvmField val CROWNED_SWORD = register("crowned_sword", ::Item, LEGENDARY_ITEMS)
+    @JvmField val RUSTY_SHIELD = register("rusty_shield", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), LegendKeys.ZAMAZENTA, ElementalTypes.STEEL) }, LEGENDARY_ITEMS)
+    @JvmField val CROWNED_SHIELD = register("crowned_shield", ::Item, LEGENDARY_ITEMS)
+    @JvmField val SCROLL_PAGE = register("scroll_page", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val SECRET_ARMOR_SCROLL = register("secret_armor_scroll", ::SecretArmorScroll, LEGENDARY_ITEMS)
+    @JvmField val ZYGARDE_CUBE = register("zygarde_cube", { ZygardeCubeItem(it.stacksTo(1).durability(ZygardeCubeItem.FULL)) }, LEGENDARY_ITEMS)
+    @JvmField val MELTAN_BOX = register("meltan_box", { MeltanBox(it.stacksTo(1).durability(200)) }, LEGENDARY_ITEMS)
+    @JvmField val MELTAN_BOX_CHARGED = register("meltan_box_charged", ::MeltanBox, LEGENDARY_ITEMS)
+    @JvmField val TIME_GLASS = register("time_glass", { TimeGlassItem(it.stacksTo(1).durability(100)) }, LEGENDARY_ITEMS)
+    @JvmField val MOON_FLUTE = register("moon_flute", ::Item, LEGENDARY_ITEMS)
+    @JvmField val SUN_FLUTE = register("sun_flute", ::Item, LEGENDARY_ITEMS)
+    @JvmField val LAVA_CRYSTAL = register("lava_crystal", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val JEWEL_OF_LIFE = register("jewel_of_life", ::Item, LEGENDARY_ITEMS)
+    @JvmField val MIRROR = register("mirror", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val UNENCHANTED_ICEROOT_CARROT = register("unenchanted_iceroot_carrot", ::Item, LEGENDARY_ITEMS)
     @JvmField val ICEROOT_CARROT = register("iceroot_carrot", { CalyrexSteedItem("iceroot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEat().build()), LegendKeys.GLASTRIER, UNENCHANTED_ICEROOT_CARROT) }, LEGENDARY_ITEMS)
     @JvmField val UNENCHANTED_SHADEROOT_CARROT = register("unenchanted_shaderoot_carrot", ::Item, LEGENDARY_ITEMS)
     @JvmField val SHADEROOT_CARROT = register("shaderoot_carrot", { CalyrexSteedItem("shaderoot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEat().build()), LegendKeys.SPECTRIER, UNENCHANTED_SHADEROOT_CARROT) }, LEGENDARY_ITEMS)
     @JvmField val ENIGMA_STONE = register("enigma_stone", { EnigmaStoneItem(it.stacksTo(1).durability(100)) }, LEGENDARY_ITEMS)
     @JvmField val ENIGMA_SHARD = register("enigma_shard", { ItemWithLangTooltipImpl(it.stacksTo(64)) }, LEGENDARY_ITEMS)
-    @JvmField val ENIGMA_FRAGMENT = register("enigma_fragment", { ItemWithLangTooltipImpl(it.stacksTo(64).fireResistant() /* just incase it falls into lava while in nether*/) }, LEGENDARY_ITEMS);
-    @JvmField val SACRED_ASH = register("sacred_ash", { ItemWithLangTooltipImpl(it.stacksTo(1).durability(1)) }, LEGENDARY_ITEMS);
+    @JvmField val ENIGMA_FRAGMENT = register("enigma_fragment", { ItemWithLangTooltipImpl(it.stacksTo(64).fireResistant() /* just incase it falls into lava while in nether*/) }, LEGENDARY_ITEMS)
+    @JvmField val SACRED_ASH = register("sacred_ash", { ItemWithLangTooltipImpl(it.stacksTo(1).durability(1)) }, LEGENDARY_ITEMS)
     @JvmField val SHARD_OF_WILLPOWER = register("shard_of_willpower", { ItemWithLangTooltipImpl(it.stacksTo(9)) }, LEGENDARY_ITEMS)
     @JvmField val SHARD_OF_EMOTION = register("shard_of_emotion", { ItemWithLangTooltipImpl(it.stacksTo(9)) }, LEGENDARY_ITEMS)
     @JvmField val SHARD_OF_KNOWLEDGE = register("shard_of_knowledge", { ItemWithLangTooltipImpl(it.stacksTo(9)) }, LEGENDARY_ITEMS)
-    @JvmField val CRYSTAL_OF_WILLPOWER = register("crystal_of_willpower", { LakeCrystalItem(it.durability(100), LegendKeys.AZELF) }, LEGENDARY_ITEMS);
-    @JvmField val CRYSTAL_OF_EMOTION = register("crystal_of_emotion", { LakeCrystalItem(it.durability(100), LegendKeys.MESPRIT) }, LEGENDARY_ITEMS);
-    @JvmField val CRYSTAL_OF_KNOWLEDGE = register("crystal_of_knowledge", { LakeCrystalItem(it.durability(100), LegendKeys.UXIE) }, LEGENDARY_ITEMS);
-    @JvmField val REGICE_ORB = register("regice_orb", { RegiOrbItem(it, "regice") }, LEGENDARY_ITEMS);
-    @JvmField val REGIROCK_ORB = register("regirock_orb", { RegiOrbItem(it, "regirock") }, LEGENDARY_ITEMS);
-    @JvmField val REGISTEEL_ORB = register("registeel_orb", { RegiOrbItem(it,"registeel") }, LEGENDARY_ITEMS);
-    @JvmField val REGIDRAGO_ORB = register("regidrago_orb", { RegiOrbItem(it, "regidrago") }, LEGENDARY_ITEMS);
-    @JvmField val REGIELEKI_ORB = register("regieleki_orb", { RegiOrbItem(it, "regieleki") }, LEGENDARY_ITEMS);
-    @JvmField val MAGMA_CRYSTAL = register("magma_crystal", { MagmaCrystal(it.stacksTo(1)) }, LEGENDARY_ITEMS);
+    @JvmField val CRYSTAL_OF_WILLPOWER = register("crystal_of_willpower", { LakeCrystalItem(it.durability(100), LegendKeys.AZELF) }, LEGENDARY_ITEMS)
+    @JvmField val CRYSTAL_OF_EMOTION = register("crystal_of_emotion", { LakeCrystalItem(it.durability(100), LegendKeys.MESPRIT) }, LEGENDARY_ITEMS)
+    @JvmField val CRYSTAL_OF_KNOWLEDGE = register("crystal_of_knowledge", { LakeCrystalItem(it.durability(100), LegendKeys.UXIE) }, LEGENDARY_ITEMS)
+    @JvmField val REGICE_ORB = register("regice_orb", { RegiOrbItem(it, "regice") }, LEGENDARY_ITEMS)
+    @JvmField val REGIROCK_ORB = register("regirock_orb", { RegiOrbItem(it, "regirock") }, LEGENDARY_ITEMS)
+    @JvmField val REGISTEEL_ORB = register("registeel_orb", { RegiOrbItem(it,"registeel") }, LEGENDARY_ITEMS)
+    @JvmField val REGIDRAGO_ORB = register("regidrago_orb", { RegiOrbItem(it, "regidrago") }, LEGENDARY_ITEMS)
+    @JvmField val REGIELEKI_ORB = register("regieleki_orb", { RegiOrbItem(it, "regieleki") }, LEGENDARY_ITEMS)
+    @JvmField val MAGMA_CRYSTAL = register("magma_crystal", { MagmaCrystal(it.stacksTo(1)) }, LEGENDARY_ITEMS)
     @JvmField val ICY_WING = register("icy_wing", { WingItem(it.stacksTo(1), "icy", ElementalTypes.ICE, LegendKeys.ARTICUNO) }, LEGENDARY_ITEMS)
     @JvmField val ELEGANT_WING = register("elegant_wing", { WingItem(it.stacksTo(1), "elegant", ElementalTypes.PSYCHIC, LegendKeys.GALARIAN_ARTICUNO) }, LEGENDARY_ITEMS)
     @JvmField val STATIC_WING = register("static_wing", { WingItem(it.stacksTo(1), "static", ElementalTypes.ELECTRIC, LegendKeys.ZAPDOS) }, LEGENDARY_ITEMS)
@@ -923,22 +923,22 @@ object GenerationsItems {
     @JvmField val LIGHT_SOUL = register("light_soul", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
 
     //TODO: Turn back to 10,000 before release
-    @JvmField val WONDER_EGG = register("wonder_egg", { LegendaryEggItem(it.stacksTo(1), LegendKeys.MANAPHY, 100.0) }, LEGENDARY_ITEMS);
+    @JvmField val WONDER_EGG = register("wonder_egg", { LegendaryEggItem(it.stacksTo(1), LegendKeys.MANAPHY, 100.0) }, LEGENDARY_ITEMS)
 
     //TODO: Turn back to 10,000 before release
     @JvmField val PHIONE_EGG = register("phione_egg", { LegendaryEggItem(it.stacksTo(1), LegendKeys.PHIONE, 100.0) }, LEGENDARY_ITEMS)
     @JvmField val SOUL_HEART = register("soul_heart", { SingleElmentPostUpdatingItem(it.stacksTo(1).durability(100), ElementalTypes.FAIRY) }, LEGENDARY_ITEMS)
-    @JvmField val BLUE_PETAL = register("blue_petal", ::Item, LEGENDARY_ITEMS);
-    @JvmField val GREEN_PETAL = register("green_petal", ::Item, LEGENDARY_ITEMS);
-    @JvmField val ORANGE_PETAL = register("orange_petal", ::Item, LEGENDARY_ITEMS);
-    @JvmField val PINK_PETAL = register("pink_petal", ::Item, LEGENDARY_ITEMS);
-    @JvmField val PURPLE_PETAL = register("purple_petal", ::Item, LEGENDARY_ITEMS);
-    @JvmField val RADIANT_PETAL = register("radiant_petal", ::Item, LEGENDARY_ITEMS);
-    @JvmField val RED_PETAL = register("red_petal", ::Item, LEGENDARY_ITEMS);
-    @JvmField val YELLOW_PETAL = register("yellow_petal", ::Item, LEGENDARY_ITEMS);
-    @JvmField val METEORITE_SHARD = register("meteorite_shard", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val BLACK_MANE_HAIR = register("black_mane_hair", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
-    @JvmField val WHITE_MANE_HAIR = register("white_mane_hair", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS);
+    @JvmField val BLUE_PETAL = register("blue_petal", ::Item, LEGENDARY_ITEMS)
+    @JvmField val GREEN_PETAL = register("green_petal", ::Item, LEGENDARY_ITEMS)
+    @JvmField val ORANGE_PETAL = register("orange_petal", ::Item, LEGENDARY_ITEMS)
+    @JvmField val PINK_PETAL = register("pink_petal", ::Item, LEGENDARY_ITEMS)
+    @JvmField val PURPLE_PETAL = register("purple_petal", ::Item, LEGENDARY_ITEMS)
+    @JvmField val RADIANT_PETAL = register("radiant_petal", ::Item, LEGENDARY_ITEMS)
+    @JvmField val RED_PETAL = register("red_petal", ::Item, LEGENDARY_ITEMS)
+    @JvmField val YELLOW_PETAL = register("yellow_petal", ::Item, LEGENDARY_ITEMS)
+    @JvmField val METEORITE_SHARD = register("meteorite_shard", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val BLACK_MANE_HAIR = register("black_mane_hair", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val WHITE_MANE_HAIR = register("white_mane_hair", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
 
     /**
      * Naturals
@@ -957,20 +957,20 @@ object GenerationsItems {
     @JvmField val RAIKOU_STATUE = register("raikou_statue", { StatueSpawnerItem(it, LegendKeys.RAIKOU) }, LEGENDARY_ITEMS)
     @JvmField val ENTEI_STATUE = register("entei_statue", { StatueSpawnerItem(it, LegendKeys.ENTEI) }, LEGENDARY_ITEMS)
 
-    @JvmField val GIFT_BOX = register("gift_box", ::Item, UTILITY);
-    @JvmField val NPC_WAND = register("npc_wand", ::NpcWandItem, UTILITY);
-    @JvmField val NPC_PATH_TOOL = register("npc_path_tool", ::NpcPathTool, UTILITY);
-    @JvmField val ZONE_WAND = register("zone_wand", ::Item, UTILITY);
-    @JvmField val BIKE_FRAME = register("bike_frame", ::Item, UTILITY);
-    @JvmField val BIKE_HANDLEBARS = register("bike_handlebars", ::Item, UTILITY);
-    @JvmField val BIKE_SEAT = register("bike_seat", ::Item, UTILITY);
-    @JvmField val BIKE_WHEEL = register("bike_wheel", ::Item, UTILITY);
-    @JvmField val HIDDEN_IRON_DOOR = register("hidden_iron_door", ::Item, UTILITY);
-    @JvmField val HIDDEN_WOODEN_DOOR = register("hidden_wooden_door", ::Item, UTILITY);
-    @JvmField val HIDDEN_LEVER = register("hidden_lever", ::Item, UTILITY);
-    @JvmField val HIDDEN_PRESSURE_PLATE = register("hidden_pressure_plate", ::Item, UTILITY);
-    @JvmField val HIDDEN_CUBE = register("hidden_cube", ::Item, UTILITY);
-    @JvmField val HIDDEN_BUTTON = register("hidden_button", ::Item, UTILITY);
+    @JvmField val GIFT_BOX = register("gift_box", ::Item, UTILITY)
+    @JvmField val NPC_WAND = register("npc_wand", ::NpcWandItem, UTILITY)
+    @JvmField val NPC_PATH_TOOL = register("npc_path_tool", ::NpcPathTool, UTILITY)
+    @JvmField val ZONE_WAND = register("zone_wand", ::Item, UTILITY)
+    @JvmField val BIKE_FRAME = register("bike_frame", ::Item, UTILITY)
+    @JvmField val BIKE_HANDLEBARS = register("bike_handlebars", ::Item, UTILITY)
+    @JvmField val BIKE_SEAT = register("bike_seat", ::Item, UTILITY)
+    @JvmField val BIKE_WHEEL = register("bike_wheel", ::Item, UTILITY)
+    @JvmField val HIDDEN_IRON_DOOR = register("hidden_iron_door", ::Item, UTILITY)
+    @JvmField val HIDDEN_WOODEN_DOOR = register("hidden_wooden_door", ::Item, UTILITY)
+    @JvmField val HIDDEN_LEVER = register("hidden_lever", ::Item, UTILITY)
+    @JvmField val HIDDEN_PRESSURE_PLATE = register("hidden_pressure_plate", ::Item, UTILITY)
+    @JvmField val HIDDEN_CUBE = register("hidden_cube", ::Item, UTILITY)
+    @JvmField val HIDDEN_BUTTON = register("hidden_button", ::Item, UTILITY)
 
     /**
      * Form Items
@@ -988,16 +988,16 @@ object GenerationsItems {
     @JvmField val PURPLE_NECTAR = register("purple_nectar", { NectarItem(it, "sensu") }, FORM_ITEMS)
     @JvmField val RED_NECTAR = register("red_nectar", { NectarItem(it, "") }, FORM_ITEMS)
     @JvmField val YELLOW_NECTAR = register("yellow_nectar", { NectarItem(it, "pom-pom") }, FORM_ITEMS)
-    @JvmField val ORIGINAL_CAP = registerCap("original");
-    @JvmField val WORLD_CAP = registerCap("world");
-    @JvmField val KANTO_CAP = registerCap("kanto");
-    @JvmField val JOHTO_CAP = registerCap("johto");
-    @JvmField val HOENN_CAP = registerCap("hoenn");
-    @JvmField val SINNOH_CAP = registerCap("sinnoh");
-    @JvmField val UNOVA_CAP = registerCap("unova");
-    @JvmField val KALOS_CAP = registerCap("kalos");
-    @JvmField val ALOLA_CAP = registerCap("alola");
-    @JvmField val PARTNER_CAP = registerCap("partner");
+    @JvmField val ORIGINAL_CAP = registerCap("original")
+    @JvmField val WORLD_CAP = registerCap("world")
+    @JvmField val KANTO_CAP = registerCap("kanto")
+    @JvmField val JOHTO_CAP = registerCap("johto")
+    @JvmField val HOENN_CAP = registerCap("hoenn")
+    @JvmField val SINNOH_CAP = registerCap("sinnoh")
+    @JvmField val UNOVA_CAP = registerCap("unova")
+    @JvmField val KALOS_CAP = registerCap("kalos")
+    @JvmField val ALOLA_CAP = registerCap("alola")
+    @JvmField val PARTNER_CAP = registerCap("partner")
 
     /**
      * Mail
@@ -1171,11 +1171,11 @@ object GenerationsItems {
     /**
      * Player Consumables
      */
-    @JvmField val KOMALA_COFFEE = register("komala_coffee", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE);
-    @JvmField val OMELETTE = register("omelette", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE);
-    @JvmField val PINAP_JUICE = register("pinap_juice", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE);
-    @JvmField val ROSERADE_TEA = register("roserade_tea", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE);
-    @JvmField val TAPU_COCOA = register("tapu_cocoa", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE);
+    @JvmField val KOMALA_COFFEE = register("komala_coffee", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
+    @JvmField val OMELETTE = register("omelette", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
+    @JvmField val PINAP_JUICE = register("pinap_juice", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
+    @JvmField val ROSERADE_TEA = register("roserade_tea", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
+    @JvmField val TAPU_COCOA = register("tapu_cocoa", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
 
     //Walkmons
 
@@ -1456,13 +1456,13 @@ object GenerationsItems {
     @JvmField val X_TRANSCEIVER_RED = register("x_transceiver_red", { Item(it.stacksTo(1)) }, UNIMPLEMENTED)
     @JvmField val X_TRANSCEIVER_YELLOW = register("x_transceiver_yellow", { Item(it.stacksTo(1)) }, UNIMPLEMENTED)
     @JvmField val YELLOW_SCARF = register("yellow_scarf", { Item(it.stacksTo(1)) }, UNIMPLEMENTED)
-    @JvmField val GALARICA_TWIG = register("galarica_twig", ::Item, UNIMPLEMENTED);
+    @JvmField val GALARICA_TWIG = register("galarica_twig", ::Item, UNIMPLEMENTED)
 
     /**
      * Items to be included in Minecraft Default Section.
      */
 
-    @JvmField val CURRY = register("curry", ::ItemCurry, CUISINE);
+    @JvmField val CURRY = register("curry", ::ItemCurry, CUISINE)
 
     @JvmField val ULTRA_DARK_SIGN = registerSign("ultra_dark_sign") { SignItem(it.stacksTo(16), GenerationsWood.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_SIGN.get()) }
     @JvmField val ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign") { HangingSignItem(GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get(), it.stacksTo(16)) }
@@ -1471,12 +1471,12 @@ object GenerationsItems {
     @JvmField val GHOST_SIGN = registerSign("ghost_sign") { SignItem(it.stacksTo(16), GenerationsWood.GHOST_SIGN.get(), GenerationsWood.GHOST_WALL_SIGN.get()) }
     @JvmField val GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign") { HangingSignItem(GenerationsWood.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_WALL_HANGING_SIGN.get(), it.stacksTo(16)) }
 
-    @JvmField val GHOST_BOAT_ITEM = register("ghost_boat", { GenerationsBoatItem(it, GenerationsBoatEntity.Type.GHOST) }, BUILDING_BLOCKS);
-    @JvmField val GHOST_CHEST_BOAT_ITEM = register("ghost_boat_with_chest", { GenerationsChestBoatItem(it, GenerationsBoatEntity.Type.GHOST) }, BUILDING_BLOCKS);
-    @JvmField val ULTRA_DARK_BOAT_ITEM = register("ultra_dark_boat", { GenerationsBoatItem(it, GenerationsBoatEntity.Type.ULTRA_DARK) }, BUILDING_BLOCKS);
-    @JvmField val ULTRA_DARK_CHEST_BOAT_ITEM = register("ultra_dark_boat_with_chest", { GenerationsChestBoatItem(it, GenerationsBoatEntity.Type.ULTRA_DARK) }, BUILDING_BLOCKS);
-    @JvmField val ULTRA_JUNGLE_BOAT_ITEM = register("ultra_jungle_boat", { GenerationsBoatItem(it, GenerationsBoatEntity.Type.ULTRA_JUNGLE) }, BUILDING_BLOCKS);
-    @JvmField val ULTRA_JUNGLE_CHEST_BOAT_ITEM = register("ultra_jungle_boat_with_chest", { GenerationsChestBoatItem(it, GenerationsBoatEntity.Type.ULTRA_JUNGLE) }, BUILDING_BLOCKS);
+    @JvmField val GHOST_BOAT_ITEM = register("ghost_boat", { GenerationsBoatItem(it, GenerationsBoatEntity.Type.GHOST) }, BUILDING_BLOCKS)
+    @JvmField val GHOST_CHEST_BOAT_ITEM = register("ghost_boat_with_chest", { GenerationsChestBoatItem(it, GenerationsBoatEntity.Type.GHOST) }, BUILDING_BLOCKS)
+    @JvmField val ULTRA_DARK_BOAT_ITEM = register("ultra_dark_boat", { GenerationsBoatItem(it, GenerationsBoatEntity.Type.ULTRA_DARK) }, BUILDING_BLOCKS)
+    @JvmField val ULTRA_DARK_CHEST_BOAT_ITEM = register("ultra_dark_boat_with_chest", { GenerationsChestBoatItem(it, GenerationsBoatEntity.Type.ULTRA_DARK) }, BUILDING_BLOCKS)
+    @JvmField val ULTRA_JUNGLE_BOAT_ITEM = register("ultra_jungle_boat", { GenerationsBoatItem(it, GenerationsBoatEntity.Type.ULTRA_JUNGLE) }, BUILDING_BLOCKS)
+    @JvmField val ULTRA_JUNGLE_CHEST_BOAT_ITEM = register("ultra_jungle_boat_with_chest", { GenerationsChestBoatItem(it, GenerationsBoatEntity.Type.ULTRA_JUNGLE) }, BUILDING_BLOCKS)
 
     private fun createRelicSong(inert: Boolean): RegistrySupplier<RelicSongItem> = register((if(inert) "inert_" else "") + "relic_song", { RelicSongItem(it.stacksTo(1), inert) }, LEGENDARY_ITEMS)
 
@@ -1505,21 +1505,21 @@ object GenerationsItems {
     private fun registerCap(name: String): RegistrySupplier<FormChangingItem> = register("${name}_cap", { FormChangingItem(it, "pikachu_cap", name) }, FORM_ITEMS)
 
     @JvmStatic fun init() {
-        GenerationsCore.LOGGER.info("Registering Generations Items");
-        ITEMS.register();
-        RIBBONS.register();
-        BADGES.register();
-        UNIMPLEMENTED.register();
-        CUISINE.register();
-        NATURAL.register();
-        RESTORATION.register();
-        PLAYER_ITEMS.register();
-        HELD_ITEMS.register();
-        POKEMAIL.register();
-        LEGENDARY_ITEMS.register();
-        UTILITY.register();
-        VALUABLES.register();
-        FORM_ITEMS.register();
-        BUILDING_BLOCKS.register();
+        GenerationsCore.LOGGER.info("Registering Generations Items")
+        ITEMS.register()
+        RIBBONS.register()
+        BADGES.register()
+        UNIMPLEMENTED.register()
+        CUISINE.register()
+        NATURAL.register()
+        RESTORATION.register()
+        PLAYER_ITEMS.register()
+        HELD_ITEMS.register()
+        POKEMAIL.register()
+        LEGENDARY_ITEMS.register()
+        UTILITY.register()
+        VALUABLES.register()
+        FORM_ITEMS.register()
+        BUILDING_BLOCKS.register()
     }
 }

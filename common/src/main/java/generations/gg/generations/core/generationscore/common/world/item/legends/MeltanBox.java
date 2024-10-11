@@ -6,8 +6,6 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import com.google.common.collect.Streams;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;

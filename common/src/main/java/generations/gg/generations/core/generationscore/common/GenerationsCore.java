@@ -119,7 +119,7 @@ public class GenerationsCore
 		GenerationsIngredidents.register(PokemonItemIngredient.Companion.getID(), PokemonItemIngredient.PokemonItemIngredientSerializer.INSTANCE);
 		GenerationsIngredidents.register(DamageIngredient.Companion.getID(), DamageIngredientSerializer.INSTANCE);
 		GenerationsIngredidents.register(ItemTagIngredient.Companion.getID(), ItemTagIngredientSerializer.INSTANCE);
-		GenerationsIngredidents.register(GenerationsIngredient.EmptyIngredient.INSTANCE.getId(), new GenerationsIngredientSerializer<GenerationsIngredient>() {
+		GenerationsIngredidents.register(GenerationsIngredient.EmptyIngredient.INSTANCE.getId(), new GenerationsIngredientSerializer<>() {
 			@NotNull
 			@Override
 			public GenerationsIngredient read(@NotNull FriendlyByteBuf buf) {

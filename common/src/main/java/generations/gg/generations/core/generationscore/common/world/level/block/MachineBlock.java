@@ -3,10 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;

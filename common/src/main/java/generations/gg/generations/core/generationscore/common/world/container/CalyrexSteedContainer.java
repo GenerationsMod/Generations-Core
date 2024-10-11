@@ -1,13 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.container;
 
-import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
-import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
 import generations.gg.generations.core.generationscore.common.world.item.CalyrexSteedItem;
-import generations.gg.generations.core.generationscore.common.world.item.WalkmonItem;
 import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;

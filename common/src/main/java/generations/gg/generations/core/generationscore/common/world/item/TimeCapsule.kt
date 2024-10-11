@@ -1,33 +1,20 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import com.cobblemon.mod.common.Cobblemon.storage
 import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
-import com.cobblemon.mod.common.pokemon.Pokemon
-import com.cobblemon.mod.common.pokemon.Pokemon.Companion.loadFromNBT
 import com.cobblemon.mod.common.pokemon.Species
 import dev.architectury.registry.item.ItemPropertiesRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.util.add
 import generations.gg.generations.core.generationscore.common.util.getPokemon
 import generations.gg.generations.core.generationscore.common.util.removeIfBelongs
 import generations.gg.generations.core.generationscore.common.util.savePokemon
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.PokemonInteraction
 import net.minecraft.client.multiplayer.ClientLevel
-import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
-import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.LivingEntity
-import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.item.TooltipFlag
-import net.minecraft.world.level.Level
-import java.util.*
 
 class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {

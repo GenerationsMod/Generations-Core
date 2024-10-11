@@ -16,7 +16,7 @@ data class MailType(val name: String) {
 
     fun createClosedMailItem(properties: Item.Properties): ClosedMailItem {
         val item = ClosedMailItem(this, properties.stacksTo(1))
-        this.sealed = item;
+        this.sealed = item
         return item
     }
 }

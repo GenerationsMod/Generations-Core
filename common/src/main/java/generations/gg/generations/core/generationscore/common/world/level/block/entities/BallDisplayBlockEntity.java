@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities;
 
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 

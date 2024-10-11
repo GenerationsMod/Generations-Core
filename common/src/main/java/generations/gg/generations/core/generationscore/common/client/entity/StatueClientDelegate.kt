@@ -19,7 +19,7 @@ class StatueClientDelegate : StatueSideDelegate, PoseableEntityState<PokemonEnti
     private var instance = StatueInstance(Matrix4f(), Matrix4f(), null)
     lateinit var currentEntity: StatueEntity
 
-    var trueAge = 0;
+    var trueAge = 0
 
     val activeAge: Int
         get() = if(currentEntity.staticToggle) currentEntity.staticAge else trueAge

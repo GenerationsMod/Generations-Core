@@ -53,7 +53,7 @@ public class GenerationsModelLoader extends ModelLoader {
                                 }
                             }));
                         } else {
-                            System.out.println("Warning %s lacks variants: " + name.toString());
+                            System.out.println("Warning %s lacks variants: " + name);
                         }
                     }
                     model.guiInstance = new CobblemonInstance(new Matrix4f(), new Matrix4f(), null);

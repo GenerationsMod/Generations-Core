@@ -2,10 +2,8 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
-import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem;
 import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem;
 import net.minecraft.core.BlockPos;

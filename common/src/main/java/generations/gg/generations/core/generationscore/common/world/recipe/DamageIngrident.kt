@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack
 
 class DamageIngredient(var item: Item, var damage: Int) : GenerationsIngredient {
     override val id = ID
-    override fun matches(stack: ItemStack): Boolean = stack.`is`(item) && stack.damageValue == damage;
+    override fun matches(stack: ItemStack): Boolean = stack.`is`(item) && stack.damageValue == damage
 
     override fun matchingStacks(): List<ItemStack> = listOf(item.defaultInstance)
 
@@ -21,7 +21,7 @@ class DamageIngredient(var item: Item, var damage: Int) : GenerationsIngredient 
     }
 
     override fun write(buf: FriendlyByteBuf) {
-        buf.writeItemOnly(item);
+        buf.writeItemOnly(item)
         buf.writeVarInt(damage)
     }
 
@@ -34,7 +34,7 @@ private fun JsonObject.addProperty(name: String, item: Item) = this.addProperty(
 
 object DamageIngredientSerializer : GenerationsIngredientSerializer<DamageIngredient> {
     override fun read(buf: FriendlyByteBuf): DamageIngredient {
-        return DamageIngredient(buf.readItemOnly(), buf.readVarInt());
+        return DamageIngredient(buf.readItemOnly(), buf.readVarInt())
     }
 
     override fun read(jsonObject: JsonObject): DamageIngredient {

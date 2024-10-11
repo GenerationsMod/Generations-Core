@@ -1,13 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.common.network.packets.npc.S2COpenNpcCustomizationScreenPacket;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
 import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;

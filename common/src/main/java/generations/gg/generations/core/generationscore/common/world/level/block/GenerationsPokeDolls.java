@@ -3,11 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock;
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock;
 import net.minecraft.core.registries.Registries;

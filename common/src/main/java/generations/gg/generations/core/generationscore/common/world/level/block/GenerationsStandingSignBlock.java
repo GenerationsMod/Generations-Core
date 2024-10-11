@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block;
 
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsSignBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsSignBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsSignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;

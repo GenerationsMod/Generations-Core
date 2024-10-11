@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities;
 
-import com.cobblemon.mod.common.block.entity.PCBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;

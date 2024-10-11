@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.api.player;
 
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import generations.gg.generations.core.generationscore.common.network.packets.shop.S2CSyncPlayerMoneyPacket;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import net.minecraft.server.level.ServerPlayer;

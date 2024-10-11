@@ -1,14 +1,6 @@
 package generations.gg.generations.core.generationscore.common.network.packets.shop;
 
 import generations.gg.generations.core.generationscore.common.api.player.PlayerMoneyHandler;
-import generations.gg.generations.core.generationscore.common.api.player.PlayerMoneyHandler;
-import generations.gg.generations.core.generationscore.common.api.player.PlayerMoneyHandler;
-import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.common.util.ShopUtils;
-import generations.gg.generations.core.generationscore.common.world.entity.ShopOfferProvider;
-import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.common.util.ShopUtils;
-import generations.gg.generations.core.generationscore.common.world.entity.ShopOfferProvider;
 import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.common.util.ShopUtils;
 import generations.gg.generations.core.generationscore.common.world.entity.ShopOfferProvider;

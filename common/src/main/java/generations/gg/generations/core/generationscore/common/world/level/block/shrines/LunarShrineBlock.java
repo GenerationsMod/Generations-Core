@@ -2,20 +2,8 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.LunarShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.LunarShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.LunarShrineBlockEntity;

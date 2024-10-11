@@ -22,7 +22,6 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.RecordItem
 import net.minecraft.world.level.Level
-import java.util.*
 
 class WalkmonItem(properties: Properties, private val row: Int, type: String) : Item(properties) {
     private val defaultTranslation: String
@@ -46,8 +45,8 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 
     override fun inventoryTick(stack: ItemStack, level: Level, entity: Entity, slotId: Int, isSelected: Boolean) {
         if (!level.isClientSide && entity is ServerPlayer) {
-            var discHolder = load(stack);
-            discHolder.tick(entity);
+            var discHolder = load(stack)
+            discHolder.tick(entity)
             discHolder.save(stack)
         }
     }
@@ -99,7 +98,7 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
             get() = discs.getItem(currentSlot).item as? RecordItem
 
         private fun createTag(): CompoundTag {
-            val holderTag = CompoundTag();
+            val holderTag = CompoundTag()
 
             holderTag.putInt(DataKeys.CURRENT_SLOT, currentSlot)
             holderTag.putInt(DataKeys.TIME_UNTIL_NEXT_SONG, timeUntilNextSong)
@@ -115,7 +114,7 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
         fun tick(player: ServerPlayer) {
             if (playing) {
                 if (timeUntilNextSong > 0) {
-                    timeUntilNextSong -= 1;
+                    timeUntilNextSong -= 1
                 } else {
                     next()?.run {
                         timeUntilNextSong = lengthInTicks
@@ -140,13 +139,13 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
             var index = currentSlot
 
             while (index < size) {
-                index++;
+                index++
 
                 val stack = discs.getItem(index)
                 if(stack.isEmpty) continue
-                val item = stack.item;
+                val item = stack.item
                 if(item is RecordItem) {
-                    currentSlot = index;
+                    currentSlot = index
                     return item
                 }
             }
