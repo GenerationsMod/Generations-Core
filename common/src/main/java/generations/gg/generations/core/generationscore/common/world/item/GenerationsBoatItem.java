@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

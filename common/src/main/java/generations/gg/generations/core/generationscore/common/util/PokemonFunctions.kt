@@ -17,7 +17,7 @@ fun Pokemon.dembedPokemon(): Pokemon? = if(hasEmbeddedPokemon()) {
         this.anyChangeObservable.emit(this)
     }
 } else {
-    null;
+    null
 }
 
 fun Pokemon.embedPokemon(pokemon: Pokemon, needsToBeInWorld: Boolean = true): Boolean {
@@ -50,7 +50,7 @@ private fun FlagSpeciesFeatureProvider.create(enabled: Boolean): FlagSpeciesFeat
 fun FlagSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon): FlagSpeciesFeature = this.get(pokemon) ?: FlagSpeciesFeature(keys.first()).also { pokemon.features.add(it) }
 
 inline fun <reified R : CustomPokemonPropertyType<*>> Pokemon.getProviderOrNull(id: String): R? {
-    return SpeciesFeatures.getFeaturesFor(species).filterIsInstance<R>().firstOrNull { it.keys.contains(id) };
+    return SpeciesFeatures.getFeaturesFor(species).filterIsInstance<R>().firstOrNull { it.keys.contains(id) }
 }
 
 fun MutableList<Component>.add(value: String) = add(value.text())

@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item.legend
 
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 
 public class TaoTrioStoneItem extends ElementalPostBattleUpdateItemImpl {
     private final SpeciesKey species;

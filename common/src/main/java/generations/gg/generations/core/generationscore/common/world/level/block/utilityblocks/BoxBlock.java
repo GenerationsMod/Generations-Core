@@ -1,11 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks;
 
 import generations.gg.generations.core.generationscore.common.client.render.block.entity.BoxBlockEntity;
-import generations.gg.generations.core.generationscore.common.client.render.block.entity.BoxBlockEntity;
-import generations.gg.generations.core.generationscore.common.client.render.block.entity.BoxBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

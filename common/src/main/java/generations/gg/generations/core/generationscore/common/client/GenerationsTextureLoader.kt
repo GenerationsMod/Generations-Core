@@ -28,7 +28,6 @@ object GenerationsTextureLoader : ITextureLoader() {
     val CODEC = Codec.unboundedMap(Codec.STRING, ResourceLocation.CODEC)
     val RARE_CANDY = FileToIdConverter("textures", "rare_candy_texture.json")
     val gson = Gson()
-    init {}
 
 
     object MissingTextureProxy : ITexture {

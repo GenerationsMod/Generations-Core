@@ -3,8 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.shop;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import generations.gg.generations.core.generationscore.common.util.Time;
-import generations.gg.generations.core.generationscore.common.util.Time;
-import generations.gg.generations.core.generationscore.common.util.Time;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 

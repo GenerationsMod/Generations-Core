@@ -1,10 +1,6 @@
 package generations.gg.generations.core.generationscore.common.network.packets.statue;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;

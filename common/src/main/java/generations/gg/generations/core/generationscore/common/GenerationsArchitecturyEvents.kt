@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.common;
+package generations.gg.generations.core.generationscore.common
 
 import com.cobblemon.mod.common.api.dialogue.Dialogue
 import com.cobblemon.mod.common.api.dialogue.Dialogues
@@ -58,14 +58,14 @@ object GenerationsArchitecturyEvents {
         }
 
         InteractionEvent.INTERACT_ENTITY.register { player, entity, hand ->
-            val stack = player.getItemInHand(hand);
+            val stack = player.getItemInHand(hand)
             if (stack.`is`(GenerationsItems.ZYGARDE_CUBE.get()) && entity is ZygardeCellEntity) {
                 if (stack.damageValue != ZygardeCubeItem.FULL) {
-                    stack.damageValue += 1;
+                    stack.damageValue += 1
                     player.displayClientMessage("item.generations_core.zygarde_cube.tooltip.cell_add".asTranslated(), false)
                     player.level().playSound(null, player.blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f)
-                    entity.remove(Entity.RemovalReason.DISCARDED);
-                    return@register EventResult.interruptTrue();
+                    entity.remove(Entity.RemovalReason.DISCARDED)
+                    return@register EventResult.interruptTrue()
                 } else {
                     player.displayClientMessage("item.generations_core.zygarde_cube.tooltip.cell_full".asTranslated(), false)
                 }

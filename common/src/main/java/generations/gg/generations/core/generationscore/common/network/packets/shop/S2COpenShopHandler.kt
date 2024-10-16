@@ -13,7 +13,7 @@ object S2COpenShopHandler : ClientNetworkPacketHandler<S2COpenShopPacket> {
 
         if (packet.entityId != -1 && entity is ShopOfferProvider) Minecraft.getInstance().setScreen(ShopScreen(entity))
         else {
-            var blockEntity = Minecraft.getInstance().level!!.getBlockEntity(packet.pos);
+            var blockEntity = Minecraft.getInstance().level!!.getBlockEntity(packet.pos)
 
             if (blockEntity is ShopOfferProvider) {
                 Minecraft.getInstance().setScreen(ShopScreen(blockEntity))

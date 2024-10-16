@@ -1,12 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.decorations;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CouchBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;

@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
 import generations.gg.generations.core.generationscore.common.world.entity.TieredFishingHookEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.TieredFishingHookEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.TieredFishingHookEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;

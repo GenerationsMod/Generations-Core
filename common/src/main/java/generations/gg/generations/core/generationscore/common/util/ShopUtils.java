@@ -4,8 +4,6 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import generations.gg.generations.core.generationscore.common.api.player.PlayerMoneyHandler;
 import generations.gg.generations.core.generationscore.common.world.entity.ShopOfferProvider;
-import generations.gg.generations.core.generationscore.common.world.entity.ShopOfferProvider;
-import generations.gg.generations.core.generationscore.common.world.entity.ShopOfferProvider;
 import net.minecraft.commands.arguments.item.ItemInput;
 import net.minecraft.commands.arguments.item.ItemParser;
 import net.minecraft.core.HolderLookup;

@@ -1,11 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities;
 
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;

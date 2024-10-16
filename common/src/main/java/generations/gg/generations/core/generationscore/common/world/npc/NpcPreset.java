@@ -3,8 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.npc;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
-import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
-import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;

@@ -1,21 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.schedule.ScheduledTask;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.schedule.ScheduledTask;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
@@ -146,7 +134,7 @@ public class PrisonBottleStemBlock extends InteractShrineBlock<GenericShrineBloc
         return super.isActivatable();
     }
 
-    public static enum PrisonBottleState implements StringRepresentable {
+    public enum PrisonBottleState implements StringRepresentable {
         EMPTY("empty"),
         RING_1("ring_1"),
         RING_2("ring_2"),

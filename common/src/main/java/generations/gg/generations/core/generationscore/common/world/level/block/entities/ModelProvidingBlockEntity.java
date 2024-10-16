@@ -3,12 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockAnimatedObjectInstance;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockAnimatedObjectInstance;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance;
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockAnimatedObjectInstance;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock;
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import net.minecraft.core.BlockPos;

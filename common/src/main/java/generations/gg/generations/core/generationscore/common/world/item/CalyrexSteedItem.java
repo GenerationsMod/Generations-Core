@@ -1,15 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.world.container.CalyrexSteedContainer;
-import generations.gg.generations.core.generationscore.common.world.container.GenericContainer;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.world.container.CalyrexSteedContainer;
-import generations.gg.generations.core.generationscore.common.world.container.GenericContainer;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.container.CalyrexSteedContainer;
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;

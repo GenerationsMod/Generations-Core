@@ -12,14 +12,6 @@ import generations.gg.generations.core.generationscore.common.util.GenerationsUt
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryTasteRating;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
-import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryTasteRating;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
-import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryTasteRating;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

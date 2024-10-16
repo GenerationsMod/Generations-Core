@@ -42,7 +42,7 @@ public class VanillaModelLoader {
         var variants = processVariants(config, images);
 
         for (var mesh : meshes) {
-            processPrimitiveModels(objects, supplier, mesh, variants, glCalls, skeleton, animations, config.hideDuringAnimation, config.modelOptions != null ? config.modelOptions : Collections.<String, MeshOptions>emptyMap());
+            processPrimitiveModels(objects, supplier, mesh, variants, glCalls, skeleton, animations, config.hideDuringAnimation, config.modelOptions != null ? config.modelOptions : Collections.emptyMap());
         }
 
         var transform = new Matrix4f();

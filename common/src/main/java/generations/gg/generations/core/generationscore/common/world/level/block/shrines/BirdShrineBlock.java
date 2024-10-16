@@ -1,22 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import dev.architectury.registry.registries.DeferredSupplier;
 import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.WingItem;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.schedule.ScheduledTask;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.MelodyFluteItem;
-import generations.gg.generations.core.generationscore.common.world.item.WingItem;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.schedule.ScheduledTask;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.WingItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;

@@ -100,8 +100,9 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
         CompostingChanceRegistry.INSTANCE.add(block, chance);
     }
 
+    @SafeVarargs
     @Override
-    public Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> supplier, DeferredRegister<? extends ItemLike>... deferredRegister) {
+    public final Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> supplier, DeferredRegister<? extends ItemLike>... deferredRegister) {
         return GenerationsCreativeTabsFabric.create(name, supplier, deferredRegister);
     }
 
@@ -144,7 +145,7 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
     private record GenerationsReloadListener(ResourceLocation identifier, PreparableReloadListener reloader, Collection<ResourceLocation> dependencies) implements IdentifiableResourceReloadListener {
 
         @Override
-        public @NotNull CompletableFuture<Void> reload(PreparableReloadListener.PreparationBarrier preparationBarrier, ResourceManager resourceManager, ProfilerFiller preparationsProfiler, ProfilerFiller reloadProfiler, Executor backgroundExecutor, Executor gameExecutor) {
+        public @NotNull CompletableFuture<Void> reload(PreparableReloadListener.@NotNull PreparationBarrier preparationBarrier, @NotNull ResourceManager resourceManager, @NotNull ProfilerFiller preparationsProfiler, @NotNull ProfilerFiller reloadProfiler, @NotNull Executor backgroundExecutor, @NotNull Executor gameExecutor) {
             return reloader.reload(preparationBarrier, resourceManager, preparationsProfiler, reloadProfiler, backgroundExecutor, gameExecutor);
         }
 

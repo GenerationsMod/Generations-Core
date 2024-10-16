@@ -1,19 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.RegigigasShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
-import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
-import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.RegigigasShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
@@ -34,7 +22,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.OptionalInt;
 
-import static generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.RegigigasShrineBlockEntity.getRegiOrbIndex;
 import static net.minecraft.core.Direction.SOUTH;
 import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 

@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.mixin;
 
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsCookers;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsCookers;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsCookers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;

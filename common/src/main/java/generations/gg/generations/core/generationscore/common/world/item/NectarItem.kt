@@ -19,7 +19,7 @@ class NectarItem(properties: Properties, private var form: String): Item(propert
             val feature = provider.getOrCreate(entity.pokemon)
 
             if(feature.value != form) {
-                feature.value = form;
+                feature.value = form
                 feature.apply(entity)
                 player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
                 return true

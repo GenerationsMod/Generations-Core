@@ -2,10 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.container;
 
 import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot;
 import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
-import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot;
-import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
-import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot;
-import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;

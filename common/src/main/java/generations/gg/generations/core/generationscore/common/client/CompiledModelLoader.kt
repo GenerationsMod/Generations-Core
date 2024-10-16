@@ -4,7 +4,6 @@ import generations.gg.generations.core.generationscore.common.client.model.Sprit
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener
-import org.apache.commons.compress.archivers.sevenz.SevenZFile
 
 class CompiledModelLoader : ResourceManagerReloadListener {
 

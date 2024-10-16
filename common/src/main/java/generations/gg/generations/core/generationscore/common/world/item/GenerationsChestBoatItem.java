@@ -1,9 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsChestBoatEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsChestBoatEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsChestBoatEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;

@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item;
 
 import dev.architectury.core.item.ArchitecturyRecordItem;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;

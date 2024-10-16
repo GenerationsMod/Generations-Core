@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.shop;
 
 import generations.gg.generations.core.generationscore.common.util.ShopUtils;
-import generations.gg.generations.core.generationscore.common.util.ShopUtils;
-import generations.gg.generations.core.generationscore.common.util.ShopUtils;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 

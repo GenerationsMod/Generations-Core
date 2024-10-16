@@ -25,7 +25,7 @@ object SpriteRegistry {
                 run {
 
                     val obj = resource.openAsReader().use { GSON.fromJson(it, JsonObject::class.java) }
-                    val map = GenerationsUtils.decode(CODEC, obj);
+                    val map = GenerationsUtils.decode(CODEC, obj)
 
                     if (map.isNotEmpty()) {
 

@@ -2,10 +2,6 @@ package generations.gg.generations.core.generationscore.common.network.packets.n
 
 import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
 import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
-import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
-import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler;
-import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 

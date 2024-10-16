@@ -7,21 +7,11 @@ import generations.gg.generations.core.generationscore.common.world.item.armor.A
 import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorItem;
 import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorMaterials;
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.PotionArmorEffect;
-import generations.gg.generations.core.generationscore.common.world.item.armor.ArmorEffect;
-import generations.gg.generations.core.generationscore.common.world.item.armor.ArmorTickEffect;
-import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorItem;
-import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorMaterials;
-import generations.gg.generations.core.generationscore.common.world.item.armor.effects.PotionArmorEffect;
-import generations.gg.generations.core.generationscore.common.world.item.armor.ArmorEffect;
-import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorItem;
-import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorMaterials;
-import generations.gg.generations.core.generationscore.common.world.item.armor.effects.PotionArmorEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -69,7 +59,7 @@ public class GenerationsArmor {
 		ARMOR.register();
 	}
 
-	public static record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, Supplier<ArmorMaterial> armorMaterial) {
+	public record ArmorSet(RegistrySupplier<Item> helmet, RegistrySupplier<Item> chestplate, RegistrySupplier<Item> leggings, RegistrySupplier<Item> boots, Supplier<ArmorMaterial> armorMaterial) {
 		public static ArmorSet create(String name, Supplier<ArmorMaterial> armorMaterial, ArmorEffect... armorEffects) {
 			return new ArmorSet(
 					register(name + "_helmet", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.HELMET, properties).addArmorEffects(armorEffects)),

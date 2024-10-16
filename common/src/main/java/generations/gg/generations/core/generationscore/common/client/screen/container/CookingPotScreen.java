@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.client.screen.con
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.packets.C2STogglePacket;
-import generations.gg.generations.core.generationscore.common.network.packets.C2STogglePacket;
 import generations.gg.generations.core.generationscore.common.world.container.CookingPotContainer;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.common.network.packets.C2STogglePacket;

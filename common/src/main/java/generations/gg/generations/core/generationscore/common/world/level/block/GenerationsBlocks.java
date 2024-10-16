@@ -11,25 +11,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes;
 import generations.gg.generations.core.generationscore.common.world.level.levelgen.GenerationsFeatures;
-import generations.gg.generations.core.generationscore.common.world.item.BlockItemWithLang;
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.item.GenericChestBlockItem;
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokecenterScarletSignBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
-import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
-import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
-import generations.gg.generations.core.generationscore.common.world.level.block.shrines.PrisonBottleStemBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes;
-import generations.gg.generations.core.generationscore.common.world.level.levelgen.GenerationsFeatures;
-import generations.gg.generations.core.generationscore.common.world.item.GenericChestBlockItem;
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokecenterScarletSignBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock;
-import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
-import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
-import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
-import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes;
-import generations.gg.generations.core.generationscore.common.world.level.levelgen.GenerationsFeatures;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -42,9 +23,6 @@ import net.minecraft.world.level.material.MapColor;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
-import static generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.LEGENDARY_ITEMS;
-import static generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines.SHRINE_PROPERTIES;
 
 @SuppressWarnings("unused")
 public class GenerationsBlocks {

@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item;
 
 import com.cobblemon.mod.common.api.types.ElementalType;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 
 public class WingItem extends ItemWithLangTooltipImpl {
     private final String name;

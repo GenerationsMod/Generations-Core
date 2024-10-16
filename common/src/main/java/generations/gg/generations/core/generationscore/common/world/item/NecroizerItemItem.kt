@@ -21,15 +21,15 @@ class NecroizerItemItem(private val properties: Properties, private val species:
 
             when(feature.value) {
                 "" -> {
-                    if(entity.pokemon.hasEmbeddedPokemon()) return false;
+                    if(entity.pokemon.hasEmbeddedPokemon()) return false
 
                     val pokemon = player.party().firstOrNull { it.isSpecies(species) } ?: return false
                     if(!entity.pokemon.embedPokemon(pokemon)) {
-                        player.sendSystemMessage("${entity.displayName.string} failed to absorb ${pokemon.getDisplayName().string}.".text(), true);
-                        return false;
+                        player.sendSystemMessage("${entity.displayName.string} failed to absorb ${pokemon.getDisplayName().string}.".text(), true)
+                        return false
                     }
 
-                    feature.value = form;
+                    feature.value = form
                     feature.apply(entity)
 
                     Moves.getByName(move)?.run { entity.pokemon.benchedMoves.add(BenchedMove(this, 0)) }
@@ -38,13 +38,13 @@ class NecroizerItemItem(private val properties: Properties, private val species:
                     return true
                 }
                 form -> {
-                    feature.value = "";
+                    feature.value = ""
                     feature.apply(entity)
                     player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
 
                     for(move in entity.pokemon.moveSet) {
                         if(move.template.name == this.move) {
-                            val index = entity.pokemon.moveSet.indexOf(move);
+                            val index = entity.pokemon.moveSet.indexOf(move)
                             entity.pokemon.moveSet.setMove(index, null)
                         }
                     }

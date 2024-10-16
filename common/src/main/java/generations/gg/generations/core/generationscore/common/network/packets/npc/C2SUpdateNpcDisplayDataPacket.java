@@ -1,12 +1,6 @@
 package generations.gg.generations.core.generationscore.common.network.packets.npc;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
-import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import generations.gg.generations.core.generationscore.common.world.npc.display.NpcDisplayData;
 import net.minecraft.network.FriendlyByteBuf;

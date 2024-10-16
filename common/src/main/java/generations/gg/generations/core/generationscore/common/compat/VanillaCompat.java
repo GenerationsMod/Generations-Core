@@ -1,17 +1,12 @@
 package generations.gg.generations.core.generationscore.common.compat;
 
-import dev.architectury.injectables.annotations.ExpectPlatform;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.GenerationsImplementation;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.FlabebeFlowerBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DispenserBlock;
-import org.jetbrains.annotations.NotNull;
 
 public class VanillaCompat {
 

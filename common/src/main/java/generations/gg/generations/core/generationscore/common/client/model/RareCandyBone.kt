@@ -110,7 +110,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
 
         var instance = context.request(Pipelines.INSTANCE)
         if (instance == null) {
-            val entity = context.request<Entity>(RenderContext.Companion.ENTITY);
+            val entity = context.request<Entity>(RenderContext.Companion.ENTITY)
             if (entity is CobblemonInstanceProvider) {
                 instance = entity.instance
             }

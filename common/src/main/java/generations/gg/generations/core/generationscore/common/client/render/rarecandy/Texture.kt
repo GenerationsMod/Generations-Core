@@ -13,13 +13,13 @@ import java.io.IOException
 import kotlin.random.Random
 
 class Texture(override var location: ResourceLocation, image: NativeImage) : DynamicTexture(image), ITextureWithResourceLocation {
-    val height: Int;
-    val width: Int;
+    val height: Int
+    val width: Int
 
     init {
         Minecraft.getInstance().textureManager.register(location, this)
-        height = image.width;
-        width = image.width;
+        height = image.width
+        width = image.width
     }
 
     override fun bind(slot: Int) {
@@ -36,7 +36,7 @@ class Texture(override var location: ResourceLocation, image: NativeImage) : Dyn
     }
 
     override fun close() {
-        Minecraft.getInstance().textureManager.release(location);
+        Minecraft.getInstance().textureManager.release(location)
     }
 
     companion object {

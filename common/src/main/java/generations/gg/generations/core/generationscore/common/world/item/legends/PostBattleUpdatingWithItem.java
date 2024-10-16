@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item.legend
 
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
-import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem;
 import generations.gg.generations.core.generationscore.common.world.item.TriPredicate;
@@ -12,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -22,7 +21,7 @@ public class PostBattleUpdatingWithItem extends PostBattleUpdatingItemImpl imple
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
         LangTooltip.super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
     }
 }

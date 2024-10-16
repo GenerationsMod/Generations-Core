@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import com.cobblemon.mod.common.Cobblemon.storage
 import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
 import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.api.text.text
@@ -15,6 +14,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.item.ItemStack
+
 class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
 
@@ -51,7 +51,7 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
                         null
                     } ?: return false
 
-                    feature.value = form;
+                    feature.value = form
                     feature.apply(entity)
 
                     pokemon.embedPokemon(pokemonInStack, needsToBeInWorld = false)
@@ -70,7 +70,7 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
                 val dembeded: Pokemon =
                     entity.pokemon.dembedPokemon()?.also { player.party().add(it) } ?: return false
 
-                feature.value = "false";
+                feature.value = "false"
                 feature.apply(entity)
 
                 player.sendSystemMessage(

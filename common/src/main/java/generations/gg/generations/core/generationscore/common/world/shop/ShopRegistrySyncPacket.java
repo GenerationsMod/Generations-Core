@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.shop;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.network.packets.DataRegistrySyncPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.DataRegistrySyncPacket;
-import generations.gg.generations.core.generationscore.common.network.packets.DataRegistrySyncPacket;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 

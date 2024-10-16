@@ -5,14 +5,12 @@ import generations.gg.generations.core.generationscore.common.client.model.Model
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockLightValueProvider;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ITextureWithResourceLocation;
 import gg.generations.rarecandy.pokeutils.BlendType;
-import gg.generations.rarecandy.renderer.animation.AnimationController;
 import gg.generations.rarecandy.renderer.animation.Transform;
 import gg.generations.rarecandy.renderer.components.RenderObject;
 import gg.generations.rarecandy.renderer.model.RenderModel;
 import gg.generations.rarecandy.renderer.model.material.Material;
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
-import net.kyori.adventure.text.TextComponent;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -20,9 +18,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import org.joml.*;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class VanilaRenderModel implements RenderModel {
     public static final Vector2f UV_VECTOR = new Vector2f();
