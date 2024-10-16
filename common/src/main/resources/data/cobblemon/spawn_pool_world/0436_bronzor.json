@@ -7,7 +7,7 @@
             "id": "bronzor-1",
             "pokemon": "bronzor",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

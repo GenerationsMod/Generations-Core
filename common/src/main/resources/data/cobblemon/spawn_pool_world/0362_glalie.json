@@ -7,7 +7,7 @@
             "id": "glalie-1",
             "pokemon": "glalie",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

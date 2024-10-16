@@ -7,7 +7,7 @@
             "id": "axew-1",
             "pokemon": "axew",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

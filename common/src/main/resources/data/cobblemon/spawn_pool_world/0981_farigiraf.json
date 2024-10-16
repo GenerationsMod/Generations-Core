@@ -7,7 +7,7 @@
             "id": "farigiraf-1",
             "pokemon": "farigiraf",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

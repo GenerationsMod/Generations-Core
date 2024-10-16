@@ -7,7 +7,7 @@
             "id": "excadrill-1",
             "pokemon": "excadrill",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

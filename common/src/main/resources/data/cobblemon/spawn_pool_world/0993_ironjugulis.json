@@ -7,7 +7,7 @@
             "id": "ironjugulis-1",
             "pokemon": "ironjugulis",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

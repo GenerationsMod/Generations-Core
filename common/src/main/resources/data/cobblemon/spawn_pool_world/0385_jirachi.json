@@ -7,7 +7,7 @@
             "id": "jirachi-1",
             "pokemon": "jirachi",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

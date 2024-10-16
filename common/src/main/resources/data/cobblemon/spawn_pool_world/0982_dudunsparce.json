@@ -7,7 +7,7 @@
             "id": "dudunsparce-1",
             "pokemon": "dudunsparce",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

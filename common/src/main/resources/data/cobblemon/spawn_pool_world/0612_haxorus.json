@@ -7,7 +7,7 @@
             "id": "haxorus-1",
             "pokemon": "haxorus",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

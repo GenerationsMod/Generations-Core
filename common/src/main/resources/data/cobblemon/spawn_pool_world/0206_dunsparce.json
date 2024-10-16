@@ -7,7 +7,7 @@
             "id": "dunsparce-1",
             "pokemon": "dunsparce",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

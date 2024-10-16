@@ -7,7 +7,7 @@
             "id": "noivern-1",
             "pokemon": "noivern",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

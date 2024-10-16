@@ -7,7 +7,7 @@
             "id": "drilbur-1",
             "pokemon": "drilbur",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

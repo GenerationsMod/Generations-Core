@@ -7,7 +7,7 @@
             "id": "wobbuffet-1",
             "pokemon": "wobbuffet",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

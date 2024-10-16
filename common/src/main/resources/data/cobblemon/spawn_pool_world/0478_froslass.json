@@ -7,7 +7,7 @@
             "id": "froslass-1",
             "pokemon": "froslass",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

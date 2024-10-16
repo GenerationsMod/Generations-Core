@@ -26,7 +26,7 @@
             "id": "fluttermane-2",
             "pokemon": "fluttermane",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

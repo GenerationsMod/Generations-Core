@@ -7,7 +7,7 @@
             "id": "wynaut-1",
             "pokemon": "wynaut",
             "presets": [
-                "underground"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
