@@ -305,10 +305,6 @@ public class VanillaModelLoader {
 
                 var index = skeleton.getId(aiBone.mName().dataString());
 
-                if(index < 0) {
-                    System.out.println("Rawr: " + index);
-                }
-
                 for (int weightId = 0; weightId < weight.capacity(); weightId++) {
                     var aiWeight = weight.get(weightId);
                     var vertexId = aiWeight.mVertexId();

@@ -304,6 +304,8 @@ public class GenerationsBlocks {
 
     public static final GenerationsBlockSet VOLCANIC_ROCK_SET = new GenerationsBlockSet("volcanic_rock", BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.COLOR_BROWN));
 
+    public static final RegistrySupplier<Block> LIGHTNING_LANTERN = registerBlockItem("lightning_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.LANTERN)));
+
     /**
      * Battle Subway Blocks
      */

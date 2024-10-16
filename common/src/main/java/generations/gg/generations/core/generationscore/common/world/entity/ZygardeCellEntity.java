@@ -43,8 +43,6 @@ public class ZygardeCellEntity extends Entity {
 
     @Override
     public InteractionResult interact(Player player, InteractionHand hand) {
-        System.out.println("rawr: :(");
-
         var stack = player.getItemInHand(hand);
 
         if(stack.is(GenerationsItems.ZYGARDE_CUBE.get())) {
