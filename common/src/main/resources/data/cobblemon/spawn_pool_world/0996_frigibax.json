@@ -16,7 +16,7 @@
             "weight": 9.0,
             "condition": {
                 "biomes": [
-                    "#cobblemon:is_frigid"
+                    "#cobblemon:is_freezing"
                 ]
             }
         }
