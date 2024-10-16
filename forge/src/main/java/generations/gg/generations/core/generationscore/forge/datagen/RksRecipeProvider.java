@@ -130,7 +130,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createParadoxPast("ragingbolt", "raikou", exporter);
         createParadoxPast("koraidon", "cyclizar", exporter);
 
-        createParadoxFuture("ironthreads", "donphan", exporter);
+        createParadoxFuture("irontreads", "donphan", exporter);
         createParadoxFuture("ironbundle", "delibird", exporter);
         createParadoxFuture("ironhands", "hariyama", exporter);
         createParadoxFuture("ironjugulis", "hydreigon", exporter);

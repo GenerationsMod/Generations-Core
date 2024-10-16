@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:rks/ironthreads"
+        "recipe": "generations_core:rks/irontreads"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "generations_core:rks/ironthreads"
+      "generations_core:rks/irontreads"
     ]
   },
   "sends_telemetry_event": true
