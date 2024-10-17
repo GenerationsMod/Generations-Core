@@ -813,15 +813,14 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //buildStairsCraftingRecipes(consumer, PixelmonBlocks.CRYSTAL_STAIRS, PixelmonBlocks.CRYSTAL_BLOCK, true);
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SAPPHIRE.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SAPPHIRE_BLOCK.get());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.SAPPHIRE_BLOCK.get(), GenerationsItems.SAPPHIRE.get());
 
         //buildStairsCraftingRecipes(consumer, PixelmonBlocks.SAPPHIRE_STAIRS, PixelmonBlocks.SAPPHIRE_BLOCK, true);
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.RUBY.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RUBY_BLOCK.get());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.RUBY_BLOCK.get(), GenerationsItems.RUBY.get());
 
         //buildStairsCraftingRecipes(consumer, PixelmonBlocks.RUBY_STAIRS, PixelmonBlocks.RUBY_BLOCK, true);
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsItems.SILICON.get(), RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SILICON_BLOCK.get());
         /*
          * PokeChests
          */
@@ -862,85 +861,24 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         //Evolution Stone Block Recipes
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DAWN_STONE_BLOCK.get())
-                .define('E', CobblemonItems.DAWN_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.DAWN_STONE.asItem()), has(CobblemonItems.DAWN_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.DUSK_STONE_BLOCK.get())
-                .define('E', CobblemonItems.DUSK_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.DUSK_STONE.asItem()), has(CobblemonItems.DUSK_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FIRE_STONE_BLOCK.get())
-                .define('E', CobblemonItems.FIRE_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.FIRE_STONE.asItem()), has(CobblemonItems.FIRE_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ICE_STONE_BLOCK.get())
-                .define('E', CobblemonItems.ICE_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.ICE_STONE.asItem()), has(CobblemonItems.ICE_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.LEAF_STONE_BLOCK.get())
-                .define('E', CobblemonItems.LEAF_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.LEAF_STONE.asItem()), has(CobblemonItems.LEAF_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MOON_STONE_BLOCK.get())
-                .define('E', CobblemonItems.MOON_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.MOON_STONE.asItem()), has(CobblemonItems.MOON_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SHINY_STONE_BLOCK.get())
-                .define('E', CobblemonItems.SHINY_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.SHINY_STONE.asItem()), has(CobblemonItems.SHINY_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SUN_STONE_BLOCK.get())
-                .define('E', CobblemonItems.SUN_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.SUN_STONE.asItem()), has(CobblemonItems.SUN_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.THUNDER_STONE_BLOCK.get())
-                .define('E', CobblemonItems.THUNDER_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.THUNDER_STONE.asItem()), has(CobblemonItems.THUNDER_STONE.asItem()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.WATER_STONE_BLOCK.get())
-                .define('E', CobblemonItems.WATER_STONE.asItem())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(CobblemonItems.WATER_STONE.asItem()), has(CobblemonItems.WATER_STONE_ORE.asItem()))
-                .save(consumer);
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.DAWN_STONE_BLOCK.get(), CobblemonItems.DAWN_STONE.asItem());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.DUSK_STONE_BLOCK.get(), CobblemonItems.DUSK_STONE.asItem());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.FIRE_STONE_BLOCK.get(), CobblemonItems.FIRE_STONE.asItem());
+
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.ICE_STONE_BLOCK.get(), CobblemonItems.ICE_STONE.asItem());
+
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.LEAF_STONE_BLOCK.get(), CobblemonItems.LEAF_STONE.asItem());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.MOON_STONE_BLOCK.get(), CobblemonItems.MOON_STONE.asItem());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.SHINY_STONE_BLOCK.get(), CobblemonItems.SHINY_STONE.asItem());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.SUN_STONE_BLOCK.get(), CobblemonItems.SUN_STONE.asItem());
+
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.THUNDER_STONE_BLOCK.get(), CobblemonItems.THUNDER_STONE.asItem());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.WATER_STONE_BLOCK.get(), CobblemonItems.WATER_STONE_ORE.asItem());
 
         //Silicon Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.SILICON_BLOCK.get())
-                .define('E', GenerationsItems.SILICON.get())
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
-                .unlockedBy(getHasName(GenerationsItems.SILICON.get()), has(GenerationsItems.SILICON.get()))
-                .save(consumer);
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.SILICON_BLOCK.get(), GenerationsItems.SILICON.get());
+
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.Z_BLOCK.get(), GenerationsItems.Z_INGOT.get());
 
         //pokebrick Recipes
         buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
@@ -1065,6 +1003,16 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //Charge Dripstone
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.get(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
+    }
+
+    private void nineStorageBlockRecipe(@NotNull Consumer<FinishedRecipe> consumer, Block block, Item item) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block)
+                .define('E', item)
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .unlockedBy(getHasName(item), has(item))
+                .save(consumer);
     }
 
     private void buildBuildingBlockRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item dye, Block pokebrick, Block block) {

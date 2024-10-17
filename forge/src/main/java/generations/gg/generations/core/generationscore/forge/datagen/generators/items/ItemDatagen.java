@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
@@ -531,10 +532,8 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RED_NECTAR.get(), "form_items/");
         createItem(GenerationsItems.YELLOW_NECTAR.get(), "form_items/");
 
-        createItem(GenerationsItems.ORIGINAL_CAP.get(), "form_items/");
         createItem(GenerationsItems.WORLD_CAP.get(), "caps/");
         createItem(GenerationsItems.KANTO_CAP.get(), "caps/");
-        createItem(GenerationsItems.JOHTO_CAP.get(), "caps/");
         createItem(GenerationsItems.HOENN_CAP.get(), "caps/");
         createItem(GenerationsItems.SINNOH_CAP.get(), "caps/");
         createItem(GenerationsItems.UNOVA_CAP.get(), "caps/");
@@ -869,6 +868,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.X_TRANSCEIVER_RED.get(), "unimplemented/");
         createItem(GenerationsItems.X_TRANSCEIVER_YELLOW.get(), "unimplemented/");
         createItem(GenerationsItems.YELLOW_SCARF.get(), "unimplemented/");
+        createItem(GenerationsItems.STRANGE_BALL.get(), "unimplemented/");
 
         createItem(GenerationsItems.GHOST_BOAT_ITEM.get(), "boat/");
         createItem(GenerationsItems.GHOST_CHEST_BOAT_ITEM.get(), "chest_boat/");

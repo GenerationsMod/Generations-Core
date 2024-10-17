@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "generations_core:silicon"
+    "E": {
+      "item": "generations_core:z_ingot"
     }
   },
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "EEE",
+    "EEE",
+    "EEE"
   ],
   "result": {
-    "item": "generations_core:silicon_block"
+    "item": "generations_core:z_block"
   },
   "show_notification": true
 }

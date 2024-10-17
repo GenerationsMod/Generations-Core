@@ -158,7 +158,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerPallet(GenerationsBlocks.CRYSTAL_BLOCK, GenerationsBlocks.CRYSTAL_SLAB, GenerationsBlocks.CRYSTAL_STAIRS, GenerationsBlocks.CRYSTAL_WALL, null, null, true);
         registerBlockItem(GenerationsBlocks.CRYSTAL_LIGHT);
         registerBlockItem(GenerationsBlocks.SILICON_BLOCK);
-
+        registerBlockItem(GenerationsBlocks.Z_BLOCK);
 
         registerMushroom(GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM);
         registerMushroom(GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM);
@@ -291,6 +291,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.RKS_MACHINE.get(), "utility_blocks");
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.SCARECROW.get(), "utility_blocks");
 
+        registerBlockItem(GenerationsBlocks.LIGHTNING_LANTERN);
 
         registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE);
         registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE);

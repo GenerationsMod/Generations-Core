@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sapphire_block": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:z_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_z_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:sapphire_block"
+              "generations_core:z_ingot"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "minecraft:sapphire"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_sapphire_block",
+      "has_z_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:sapphire"
+      "generations_core:z_block"
     ]
   },
   "sends_telemetry_event": false

@@ -83,6 +83,7 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         addAll(GenerationsBlocks.CRYSTAL_BLOCK.get(), GenerationsBlocks.CRYSTAL_SLAB.get(), GenerationsBlocks.CRYSTAL_STAIRS.get(), GenerationsBlocks.CRYSTAL_WALL.get());
 
         dropSelf(GenerationsBlocks.SILICON_BLOCK.get());
+        dropSelf(GenerationsBlocks.Z_BLOCK.get());
 
         //Ultra Space
         dropSelf(GenerationsBlocks.ULTRA_SAND.get());

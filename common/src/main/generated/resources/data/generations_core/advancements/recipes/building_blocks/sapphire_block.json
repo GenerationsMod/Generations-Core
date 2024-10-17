@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_silicon": {
+    "has_sapphire": {
       "conditions": {
         "items": [
           {
             "items": [
-              "generations_core:silicon"
+              "generations_core:sapphire"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:silicon_block"
+        "recipe": "generations_core:sapphire_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_silicon",
+      "has_sapphire",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:silicon_block"
+      "generations_core:sapphire_block"
     ]
   },
   "sends_telemetry_event": false
