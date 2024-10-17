@@ -14,11 +14,19 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:flying_memory_drive"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:sharp_beak"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:iron_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sky_plate"
         },
         {
           "type": "minecraft:item",
@@ -35,6 +43,10 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:muscle_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pretty_feather"
         },
         {
           "type": "minecraft:item",
@@ -90,7 +102,15 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:max_repel"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:metal_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:metronome"
         },
         {
           "type": "minecraft:item",
@@ -110,6 +130,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:precooked_burger"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:protector"
         },
         {
@@ -119,6 +143,10 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:choice_scarf"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:terrain_extender"
         },
         {
           "type": "minecraft:item",
@@ -134,6 +162,18 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:courage_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:quick_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lemonade"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:paralyze_heal"
         },
         {
@@ -142,11 +182,103 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:relic_silver"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:odd_keystone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_d"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_m"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_s"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_t"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_bridge_v"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:flying_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:health_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:honey"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:leek"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:enigma_fragment"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:leftovers"
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:lone_earring"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lustrous_orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bread"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pasta"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fancy_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:spice_mix"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:packaged_curry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_speed_6"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:x_accuracy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_attack_3"
         },
         {
           "type": "minecraft:item",
@@ -155,6 +287,90 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:exp_candy_xs"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_14"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_27"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_40"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_65"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_97"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_113"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_160"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_164"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_197"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_216"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:cascarrafa_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:slumbering_weald_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemon_center_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:azalea_town_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lillie_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:route_228_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:jubilife_village_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:goldenrod_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:eterna_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:vermilion_city_disc"
         }
       ],
       "rolls": {

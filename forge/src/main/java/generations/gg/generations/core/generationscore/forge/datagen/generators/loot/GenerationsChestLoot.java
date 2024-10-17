@@ -1491,7 +1491,7 @@ class GenerationsChestLoot implements LootTableSubProvider {
 
 	public static @Nullable Item process(Object object) {
 		if(object instanceof RegistrySupplier<?> supplier) {
-			return supplier instanceof ItemLike item ? item.asItem() : null;
+			return supplier.get() instanceof ItemLike item ? item.asItem() : null;
 		} else return object instanceof ItemLike item ? item.asItem() : null;
 	}
 

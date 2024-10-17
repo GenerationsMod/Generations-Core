@@ -6,11 +6,19 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "generations_core:adamant_orb"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:air_balloon"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:babiri_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:big_pearl"
         },
         {
           "type": "minecraft:item",
@@ -34,6 +42,18 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:courage_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:courage_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dire_hit_3"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:dragon_fang"
         },
         {
@@ -54,7 +74,15 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:full_incense"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:ganlon_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:green_shard"
         },
         {
           "type": "minecraft:item",
@@ -67,6 +95,10 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:hard_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:health_candy_l"
         },
         {
           "type": "minecraft:item",
@@ -86,11 +118,27 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:item_drop"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:kee_berry"
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:lagging_tail"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lava_cookie"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:life_orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:macho_brace"
         },
         {
           "type": "minecraft:item",
@@ -114,7 +162,31 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:poke_toy"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:power_band"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:protective_pads"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:quick_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:red_shard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:icy_wing"
         },
         {
           "type": "minecraft:item",
@@ -130,6 +202,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:sprink_lotad"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:steel_gem"
         },
         {
@@ -138,7 +214,31 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:strange_souvenir"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:stretchy_spring"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tough_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:upgrade"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_attack_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_defense_6"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_special_defense_6"
         },
         {
           "type": "minecraft:item",
@@ -162,7 +262,135 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:mewtwo_armor"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:exp_candy_l"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rock_memory_drive"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:steel_memory_drive"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:stone_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:iron_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fragmented_drago_key_1"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fragmented_drago_key_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fragmented_drago_key_3"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fragmented_drago_key_4"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rock_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:steel_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_36"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_51"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_76"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_86"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_101"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_116"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_150"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_31"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_53"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_93"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_43"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_99"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_104"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_121"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_180"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_223"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_225"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:z_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_176"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_186"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_215"
         }
       ],
       "rolls": 1.0

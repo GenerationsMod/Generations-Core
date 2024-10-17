@@ -6,7 +6,39 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "generations_core:icy_wing"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:elegant_wing"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:health_feather"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:static_wing"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:belligerent_wing"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fiery_wing"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sinister_wing"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:silver_wing"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rainbow_wing"
         },
         {
           "type": "minecraft:item",
@@ -18,11 +50,23 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:flying_memory_drive"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:iron_ball"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:sharp_beak"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sky_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:utility_umbrella"
         },
         {
           "type": "minecraft:item",
@@ -43,6 +87,22 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:light_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pink_nectar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:purple_nectar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:red_nectar"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:yellow_nectar"
         },
         {
           "type": "minecraft:item",
@@ -74,6 +134,22 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:electric_seed"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:grassy_seed"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:misty_seed"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:psychic_seed"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:miracle_seed"
         },
         {
@@ -90,7 +166,71 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:moomoo_milk"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fresh_water"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:soda_pop"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:calcium"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:health_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:quick_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:smart_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:silver_leaf"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:gold_leaf"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:heart_scale"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:stardust"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_harbor"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_inquiry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_tropic"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_air"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_reply"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_space"
         },
         {
           "type": "minecraft:item",
@@ -98,7 +238,39 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:comet_shard"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:destiny_knot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:boiled_egg"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sausages"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bobs_food_tin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bachs_food_tin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:grip_claw"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:repel"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:super_repel"
         },
         {
           "type": "minecraft:item",
@@ -110,11 +282,103 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:flying_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_speed_2"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:x_speed"
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:x_accuracy_6"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:x_attack"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_14"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_27"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_40"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_65"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_97"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_113"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_160"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_164"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_197"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_216"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:cerulean_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:icirrus_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:laverre_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:surf_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lake_of_rage_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:penny_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:nemona_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:zinnia_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:cynthia_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:deoxys_disc"
         }
       ],
       "rolls": {

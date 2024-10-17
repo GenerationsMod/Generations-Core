@@ -6,6 +6,18 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "generations_core:scroll_page"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mew_dna_fiber"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:legend_plate"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:black_apricorn"
         },
         {
@@ -34,7 +46,91 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:health_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:honey"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:leek"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:leftovers"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lone_earring"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lustrous_orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:griseous_orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:adamant_orb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lustrous_globe"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:griseous_core"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:adamant_crystal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:gracidea"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:ruby"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_band"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_crown"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_statue"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:relic_vase"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fruit_bunch"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:coconut_milk"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:instant_noodles"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fresh_cream"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:exp_charm"
         },
         {
           "type": "minecraft:item",
@@ -191,6 +287,138 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:tart_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_9"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_23"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_48"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_68"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_72"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_82"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_96"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_126"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_136"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_147"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_166"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_44"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_78"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_100"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_115"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_156"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_169"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mew_fossil"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_175"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_214"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_200"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_222"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_226"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:iris_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:nessa_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:team_rocket_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sada_and_turo_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:south_province_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rival_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lusamine_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:xy_legendary_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:kanto_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:ultra_necrozma_disc"
         }
       ],
       "rolls": 1.0

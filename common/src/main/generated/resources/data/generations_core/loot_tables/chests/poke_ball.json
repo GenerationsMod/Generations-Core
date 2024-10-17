@@ -30,6 +30,22 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:bachs_food_tin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bobs_food_tin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:boiled_egg"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bread"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:burn_heal"
         },
         {
@@ -58,11 +74,23 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:energy_powder"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:energy_root"
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:escape_rope"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:float_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fluffy_tail"
         },
         {
           "type": "minecraft:item",
@@ -82,7 +110,15 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:health_candy"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:iapapa_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:instant_noodles"
         },
         {
           "type": "minecraft:item",
@@ -98,7 +134,15 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:moomoo_cheese"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:oran_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:packaged_curry"
         },
         {
           "type": "minecraft:item",
@@ -106,7 +150,35 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:precooked_burger"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pretty_feather"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:qualot_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:quick_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rotom_catalog"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:repel"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shed_shell"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:smart_candy"
         },
         {
           "type": "minecraft:item",
@@ -114,7 +186,19 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:tiny_mushroom"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tough_candy"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:x_attack"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_special_attack_3"
         },
         {
           "type": "minecraft:item",
@@ -162,7 +246,151 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:film"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:camera"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:crystal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sapphire"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:silicon"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rusty_iron_key_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shattered_ice_key_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:crumbled_rock_key_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fragmented_drago_key_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:discharged_eleki_key_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shattered_relic_song_2"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:exp_candy_xs"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_orange"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_reply"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_retro"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_rsvp"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_shadow"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_snow"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_space"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_steel"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_thanks"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_tropic"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_tunnel"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_wave"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemail_wood"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dynite_ore"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_172"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_183"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_191"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_193"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_202"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_203"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_204"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_205"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_182"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_185"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_219"
         }
       ],
       "rolls": {
