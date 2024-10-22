@@ -37,7 +37,7 @@ public class StatueSpawnerItem extends Item {
             statueEntity.setYRot(context.getHorizontalDirection().toYRot());
 
             if(key != null) {
-                statueEntity.setProperties(key.createPokemon(70).createPokemonProperties(PokemonPropertyExtractor.SPECIES, PokemonPropertyExtractor.FORM, PokemonPropertyExtractor.ASPECTS));
+                statueEntity.setProperties(key.createPokemon(70).createPokemonProperties(PokemonPropertyExtractor.SPECIES, PokemonPropertyExtractor.LEVEL, PokemonPropertyExtractor.FORM, PokemonPropertyExtractor.ASPECTS));
                 statueEntity.setInteractable(true);
                 statueEntity.setMaterial("concrete");
                 statueEntity.setStaticToggle(true);
