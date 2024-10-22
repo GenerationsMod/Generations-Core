@@ -1,11 +1,16 @@
 {
   "target": "cobblemon:hooh",
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "generations_core:hooh_doll",
         "percentage": 100.0
+      },
+      {
+        "item": "generations_core:rainbow_wing",
+        "percentage": 100.0,
+        "quantityRange": 6-6
       }
     ]
   }
