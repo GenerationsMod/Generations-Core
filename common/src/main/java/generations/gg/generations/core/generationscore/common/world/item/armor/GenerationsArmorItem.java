@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class GenerationsArmorItem extends ArmorItem implements ItemExtension {
@@ -40,10 +41,12 @@ public class GenerationsArmorItem extends ArmorItem implements ItemExtension {
 
     //Method for Forge
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack itemStack) {
-        return ImmutableMultimap.<Attribute, AttributeModifier>builder()
-                .putAll(super.getDefaultAttributeModifiers(equipmentSlot))
-                .putAll(customAttributeModifiers.stream().map(customAttributeModifier -> customAttributeModifier.getAttributeModifiers(equipmentSlot, itemStack, this).entries()).flatMap(Collection::stream).collect(Collectors.toList()))
-                .build();
+        var builder = ImmutableMultimap.<Attribute, AttributeModifier>builder();
+        for (CustomAttributeModifier customAttributeModifier : customAttributeModifiers) {
+            customAttributeModifier.getAttributeModifiers(builder, equipmentSlot, itemStack, this);
+        }
+
+        return builder.build();
     }
 
     //Method for Fabric

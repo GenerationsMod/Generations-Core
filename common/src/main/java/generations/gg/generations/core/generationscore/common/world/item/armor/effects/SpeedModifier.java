@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item.armor.effects;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import generations.gg.generations.core.generationscore.common.world.item.armor.CustomAttributeModifier;
@@ -23,12 +24,8 @@ public class SpeedModifier implements CustomAttributeModifier {
     }
 
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack itemStack, GenerationsArmorItem generationsArmorItem) {
-        return equipmentSlot != generationsArmorItem.getType().getSlot() ?
-                ImmutableMultimap.<Attribute, AttributeModifier>builder().build() :
-                ImmutableMultimap.<Attribute, AttributeModifier>builder()
-                        .put(Attributes.MOVEMENT_SPEED, isDoubled(itemStack) ? this.elementalBootsModifier2x : this.elementalBootsModifier)
-                        .build();
+    public void getAttributeModifiers(ImmutableMultimap.Builder<Attribute, AttributeModifier> builder, EquipmentSlot equipmentSlot, ItemStack itemStack, GenerationsArmorItem generationsArmorItem) {
+        if(equipmentSlot == generationsArmorItem.getType().getSlot()) builder.put(Attributes.MOVEMENT_SPEED, isDoubled(itemStack) ? this.elementalBootsModifier2x : this.elementalBootsModifier);
     }
 
     private boolean isDoubled(ItemStack itemStack) {

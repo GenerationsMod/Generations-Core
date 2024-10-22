@@ -14,10 +14,10 @@ import java.util.function.Supplier;
 
 public enum GenerationsArmorMaterials implements ArmorMaterial {
     AETHER("aether", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON),
-    AQUA("aqua", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SAPPHIRE),
+    AQUA("saphire", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SAPPHIRE),
     FLARE("flare", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY),
     GALACTIC("galactic", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON),
-    MAGMA("magma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY),
+    MAGMA("ruby", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY),
     NEO_PLASMA("neo_plasma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL),
     PLASMA("plasma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL),
     ROCKET("rocket", 200, new int[]{3, 6, 7, 3}, 10, () -> Items.AMETHYST_SHARD),

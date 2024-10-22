@@ -83,10 +83,13 @@ class GenerationsCobblemonEvents {
             CobblemonEvents.POKEMON_CAPTURED.subscribe(Priority.HIGH) { event ->
                 val speciesKey = SpeciesKey.fromPokemon(event.pokemon)
                 Caught.get(event.player).accumulate(speciesKey)
+
+                event.pokemon.form.drops.drop(null, event.player.serverLevel(), event.player.position(), event.player)
             }
 
             CobblemonEvents.BATTLE_STARTED_PRE.subscribe(Priority.HIGHEST)  {
-                it.battle.actors.filter { it is PlayerBattleActor }.map { it as PlayerBattleActor }.map { it.entity }.filterNotNull().forEach {
+                it.battle.actors.filterIsInstance<PlayerBattleActor>()
+                    .mapNotNull { it.entity }.forEach {
                     val keyItems = Cobblemon.playerData.get(it).keyItems
 
                     keyItems.removeAll(gimmackItems)

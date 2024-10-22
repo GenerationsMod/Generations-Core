@@ -57,9 +57,9 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                     toggleActive(level, pos);
                     level.playSound(null, pos, GenerationsSounds.LUGIA_SHRINE_SONG.get(), SoundSource.BLOCKS);
 
+                    if(!player.isCreative()) stack.shrink(1);
 
                     ScheduledTask.schedule(() -> {
-                        if(!player.isCreative()) stack.shrink(1);
 
                         toggleActive(level, pos);
 
