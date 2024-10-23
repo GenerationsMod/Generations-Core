@@ -363,6 +363,10 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:vermilion_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mew_fossil"
         }
       ],
       "rolls": 1.0

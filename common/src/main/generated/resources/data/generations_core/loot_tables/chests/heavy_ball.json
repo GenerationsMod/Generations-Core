@@ -310,6 +310,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:mew_fossil"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:tm_36"
         },
         {
