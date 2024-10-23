@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
@@ -38,6 +39,10 @@ public class LegendaryEggItem extends DistanceTraveledImplItem implements LangTo
 
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
-        LangTooltip.super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        var distance = remainingNeededDistance(stack);
+
+        if(distance > 0) tooltipComponents.add(Component.nullToEmpty("Distance needed to hatch: %.2f".formatted(distance)));
+        else tooltipComponents.add(Component.nullToEmpty("Ready to Hatch. Right Click to hatch " + PokemonSpecies.INSTANCE.getByIdentifier(speciesKey.species()).getName() + "!"));
+
     }
 }

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item.legends;
 
+import generations.gg.generations.core.generationscore.common.util.DataKeys;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -58,13 +59,13 @@ public abstract class DistanceTraveledImplItem extends Item implements DistanceT
 
     @Override
     public double getDistance(ItemStack stack) {
-        return stack.getOrCreateTag().getDouble("distance");
+        return stack.getOrCreateTag().getDouble(DataKeys.DISTANCE);
     }
 
     @Override
     public void setDistance(ItemStack stack, double distance) {
         CompoundTag tag = stack.getOrCreateTag();
-        tag.putDouble("distance", Mth.clamp(distance, 0, maxDistance));
+        tag.putDouble(DataKeys.DISTANCE, Mth.clamp(distance, 0, maxDistance));
     }
 
     @Override

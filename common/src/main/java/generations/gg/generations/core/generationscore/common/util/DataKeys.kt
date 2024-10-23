@@ -2,7 +2,9 @@ package generations.gg.generations.core.generationscore.common.util
 
 object DataKeys {
 
+    const val GAVE_EGG = "GaveEgg"
     const val EMBEDDED_POKEMON = "EmbeddedPokemon"
+    const val DISTANCE = "Distance"
 
     //Statues
     const val PROPERTIES = "Properties"

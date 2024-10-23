@@ -60,7 +60,7 @@ public abstract class ServerPlayerMixin extends Player {
 
         });
 
-        var distance = (float) Math.sqrt(distanceX * distanceX + distanceY * distanceY + distanceZ * distanceZ);
+        var distance = (float) Math.sqrt(distanceX * distanceX + /*distanceY * distanceY TODO: Determine if we should have height*/ + distanceZ * distanceZ);
         var inventory = getInventory();
         var fullInventoryList = Stream.of(inventory.items, inventory.armor, inventory.offhand).flatMap(Collection::stream).toList();
 

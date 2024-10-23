@@ -5,21 +5,30 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
+import com.cobblemon.mod.common.api.events.CobblemonEvents.FRIENDSHIP_UPDATED
 import com.cobblemon.mod.common.api.events.CobblemonEvents.HELD_ITEM_POST
+import com.cobblemon.mod.common.api.events.CobblemonEvents.LOOT_DROPPED
 import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
+import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent
 import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
+import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
+import com.cobblemon.mod.common.util.giveOrDropItemStack
 import generations.gg.generations.core.generationscore.common.api.player.Caught
+import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.network.packets.HeadPatPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags.*
+import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
 import generations.gg.generations.core.generationscore.common.world.item.FormChangingItem
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem.BattleData
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks.SCARECROW
@@ -41,6 +50,7 @@ class GenerationsCobblemonEvents {
 
         @JvmStatic
         fun init() {
+
             CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) { it ->
                 var amount = 0
                 it.entity.level().getChunk(it.entity.blockPosition()).findBlocks({ it.`is`(SCARECROW.get())}) { pos, state -> amount += 1}
@@ -84,7 +94,17 @@ class GenerationsCobblemonEvents {
                 val speciesKey = SpeciesKey.fromPokemon(event.pokemon)
                 Caught.get(event.player).accumulate(speciesKey)
 
-                event.pokemon.form.drops.drop(null, event.player.serverLevel(), event.player.position(), event.player)
+
+                //Loot
+
+                var table = event.pokemon.form.drops
+                var drops = table.getDrops().toMutableList()
+                var player = event.player
+
+                LOOT_DROPPED.postThen(
+                    event = LootDroppedEvent(table, player, null, drops),
+                    ifSucceeded = { it.drops.forEach { it.drop(null, player.serverLevel(), player.position(), player) } }
+                )
             }
 
             CobblemonEvents.BATTLE_STARTED_PRE.subscribe(Priority.HIGHEST)  {
@@ -101,7 +121,22 @@ class GenerationsCobblemonEvents {
                 }
             }
 
+            FRIENDSHIP_UPDATED.subscribe {
+                var player = it.pokemon.getOwnerPlayer() ?: return@subscribe
+
+                if(it.newFriendship >= Cobblemon.config.maxPokemonFriendship && it.pokemon.species.resourceIdentifier == LegendKeys.MANAPHY.species) {
+
+                    if(it.pokemon.persistentData.getBoolean(DataKeys.GAVE_EGG)) return@subscribe
+
+                    player.sendSystemMessage("Due to ${it.pokemon.getDisplayName().getString()} happiness reaching max, it gave you an egg.".text())
+
+                    player.giveOrDropItemStack(GenerationsItems.PHIONE_EGG.get().defaultInstance, true)
+                    it.pokemon.persistentData.putBoolean(DataKeys.GAVE_EGG, true)
+                }
+            }
+
             POKEMON_INTERACTION_GUI_CREATION.subscribe {
+
                 it.addOption(Orientation.BOTTOM_LEFT, InteractWheelOption(
                     iconResource = GenerationsCore.id("textures/ui/interact/head_pat.png"),
                     "generations_core.ui.interact.head_pat", { Vector3f(1F, 0F, 0F) }, {
