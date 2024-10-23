@@ -65,7 +65,7 @@ public abstract class DistanceTraveledImplItem extends Item implements DistanceT
     @Override
     public void setDistance(ItemStack stack, double distance) {
         CompoundTag tag = stack.getOrCreateTag();
-        tag.putDouble(DataKeys.DISTANCE, Mth.clamp(distance, 0, maxDistance));
+        tag.putDouble(DataKeys.DISTANCE, Mth.clamp(distance, 0, getMaxDistance()));
     }
 
     @Override

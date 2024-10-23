@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
@@ -23,8 +24,13 @@ public class LegendaryEggItem extends DistanceTraveledImplItem implements LangTo
     private final SpeciesKey speciesKey;
 
     public LegendaryEggItem(Properties properties, SpeciesKey speciesKey, double maxDistance) {
-        super(properties, maxDistance);
+        super(properties, -1);
         this.speciesKey = speciesKey;
+    }
+
+    @Override
+    public double getMaxDistance() {
+        return PokemonSpecies.INSTANCE.getByIdentifier(speciesKey.species()).getEggCycles() * GenerationsCore.CONFIG.breeding.blocksPerEggCcyle;
     }
 
     @Override

@@ -28,6 +28,7 @@ public class Config {
     public Client client = new Client();
 
     public Economy economy = new Economy();
+    public Breeding breeding = new Breeding();
 
     public Config() {}
 
@@ -155,5 +156,9 @@ public class Config {
 
     public static class Economy {
         public BigDecimal startingFunds = BigDecimal.valueOf(0);
+    }
+
+    public static class Breeding {
+        public int blocksPerEggCcyle = 256;
     }
 }
