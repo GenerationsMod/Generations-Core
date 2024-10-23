@@ -1,0 +1,12 @@
+{
+  "target": "cobblemon:regieleki",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:regieleki_orb",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

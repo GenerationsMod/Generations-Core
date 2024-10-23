@@ -48,10 +48,14 @@
     }
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "generations_core:kyogre_doll",
+        "percentage": 100.0
+      },
+      {
+        "item": "generations_core:blue_orb",
         "percentage": 100.0
       }
     ]

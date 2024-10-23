@@ -1,0 +1,12 @@
+{
+  "target": "cobblemon:spectrier",
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "generations_core:black_mane_hair",
+        "percentage": 100.0
+      }
+    ]
+  }
+}

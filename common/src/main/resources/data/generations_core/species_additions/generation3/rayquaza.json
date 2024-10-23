@@ -1,10 +1,14 @@
 {
   "target": "cobblemon:rayquaza",
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "generations_core:rayquaza_doll",
+        "percentage": 100.0
+      },
+      {
+        "item": "generations_core:jade_orb",
         "percentage": 100.0
       }
     ]

@@ -1,15 +1,19 @@
 {
   "target": "cobblemon:giratina",
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "generations_core:giratina_altered_doll",
-        "percentage": 1.0
+        "percentage": 100.0
       },
       {
         "item": "generations_core:giratina_origin_doll",
-        "percentage": 1.0
+        "percentage": 100.0
+      },
+      {
+        "item": "generations_core:griseous_orb",
+        "percentage": 100.0
       }
     ]
   },

@@ -49,10 +49,14 @@
     }
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "generations_core:latias_doll",
+        "percentage": 100.0
+      },
+      {
+        "item": "generations_core:soul_dew",
         "percentage": 100.0
       }
     ]

@@ -49,10 +49,14 @@
     }
   ],
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "generations_core:groudon_doll",
+        "percentage": 100.0
+      },
+      {
+        "item": "generations_core:red_orb",
         "percentage": 100.0
       }
     ]

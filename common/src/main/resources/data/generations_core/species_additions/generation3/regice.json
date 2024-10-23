@@ -1,10 +1,14 @@
 {
   "target": "cobblemon:regice",
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "generations_core:regice_doll",
+        "percentage": 100.0
+      },
+      {
+        "item": "generations_core:regice_orb",
         "percentage": 100.0
       }
     ]

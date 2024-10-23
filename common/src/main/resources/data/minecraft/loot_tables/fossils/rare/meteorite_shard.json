@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:archaeology",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "generations_core:meteorite_shard",
+                    "weight": 2
+                }
+            ],
+            "rolls": 1.0
+        }
+    ],
+    "random_sequence": "minecraft:fossils/rare/meteorite_shard"
+}
