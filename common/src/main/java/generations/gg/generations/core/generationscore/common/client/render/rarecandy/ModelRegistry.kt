@@ -20,7 +20,10 @@ import java.util.function.BiConsumer
 
 object ModelRegistry {
     private const val DUMMY = "dummy"
-    private val LOADER = Caffeine.newBuilder().expireAfterAccess(1, TimeUnit.MINUTES).removalListener { _: ResourceLocation?, value: CompiledModel?, _: RemovalCause? -> value!!.delete() }
+    private val LOADER = Caffeine.newBuilder().expireAfterAccess(1, TimeUnit.MINUTES)
+        .removalListener { _: ResourceLocation?, value: CompiledModel?, _: RemovalCause? ->
+
+            value?.delete() }
         .buildAsync<ResourceLocation, CompiledModel?>(
             CacheLoader { key ->
                 val resourceManager = Minecraft.getInstance().resourceManager

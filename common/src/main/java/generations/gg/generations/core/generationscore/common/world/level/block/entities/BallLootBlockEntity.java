@@ -89,11 +89,7 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
         if (!this.lootMode.isDropOnce()) return true;
         
         Optional<LootClaim> claim = this.getLootClaim(playerUUID);
-        if (claim.isPresent() && this.lootMode.isTimeEnabled()) {
-            claim.get().time().plus(GenerationsCore.CONFIG.lootTime);
-            Instant.now();
-        }
-        return true;
+        return claim.isEmpty() || this.lootMode.isTimeEnabled() && Instant.now().plus(GenerationsCore.CONFIG.lootTime).isAfter(claim.get().time());
     }
 
     public void addClaimer(UUID playerUUID) {
@@ -174,7 +170,7 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
         }
 
         public boolean isBreakable() {
-            return this.dropOnce && !this.timeEnabled;
+            return this.dropOnce && this.timeEnabled;
         }
     }
 
