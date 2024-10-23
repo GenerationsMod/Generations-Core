@@ -13,6 +13,7 @@ import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
+import dev.architectury.event.events.common.LootEvent;
 import generations.gg.generations.core.generationscore.common.api.GenerationsMolangFunctions;
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.common.api.player.AccountInfo;
@@ -41,6 +42,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.*;
+import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import org.apache.logging.log4j.util.TriConsumer;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -53,8 +56,8 @@ import java.util.function.IntConsumer;
  * Registers the mod's items and blocks with Minecraft using Architectury.
  * @author Joseph T. McQuigg, WaterPicker
  */
-public class GenerationsCore
-{
+public class GenerationsCore {
+
 
 	/** The mod id of the Generations-Core mod. */
 	public static final String MOD_ID = "generations_core";
@@ -74,6 +77,14 @@ public class GenerationsCore
 	public static void init(GenerationsImplementation implementation) {
 		CONFIG = ConfigLoader.loadConfig(Config.class, "core", "main");
 		GenerationsCore.implementation = implementation;
+
+
+		LootEvent.MODIFY_LOOT_TABLE.register((lootDataManager, id, context, builtin) -> {
+            if(id.getNamespace().equals("minecraft") && id.getPath().contains("chests") && !id.getPath().contains("inject")) {
+                var inject = new ResourceLocation(id.getNamespace(), id.getPath().replace("chests", "chests/inject"));
+                context.addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(inject)));
+            }
+        });
 
 		SpawnDetail.Companion.registerSpawnType(ZygardeCellDetail.TYPE, ZygardeCellDetail.class);
 
