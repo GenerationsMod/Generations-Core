@@ -26,7 +26,7 @@ import java.util.function.Function
 object ModelRegistry {
     private const val DUMMY = "dummy"
 
-    val CACHE = TimedCache(Duration.ofSeconds(10), BiConsumer<ResourceLocation, CompiledModel>{
+    val CACHE = TimedCache(Duration.ofMinutes(1), BiConsumer<ResourceLocation, CompiledModel>{
         key, value ->
 //        System.out.println("DELETING: $key")
         RenderSystem.recordRenderCall { value.delete() }
