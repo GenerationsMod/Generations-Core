@@ -6,6 +6,9 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.item.GenericChestBlockItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokecenterScarletSignBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock;
+import generations.gg.generations.core.generationscore.common.world.level.block.pumpkin.CursedCarvedPumpkinBlock;
+import generations.gg.generations.core.generationscore.common.world.level.block.pumpkin.CursedPumpkinBlock;
+import generations.gg.generations.core.generationscore.common.world.level.block.pumpkin.EquipableCursedCarvedPumpkinBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
@@ -120,7 +123,7 @@ public class GenerationsBlocks {
 
     //Cursed Pumpkin Based Blocks
     public static final RegistrySupplier<PumpkinBlock> CURSED_PUMPKIN = registerBlockItem("cursed_pumpkin", CursedPumpkinBlock::new);
-    public static final RegistrySupplier<CursedCarvedPumpkinBlock> CURSED_CARVED_PUMPKIN = registerBlockItem("cursed_carved_pumpkin", () -> new CursedCarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.CARVED_PUMPKIN)));
+    public static final RegistrySupplier<EquipableCursedCarvedPumpkinBlock> CURSED_CARVED_PUMPKIN = registerBlockItem("cursed_carved_pumpkin", () -> new EquipableCursedCarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.CARVED_PUMPKIN)));
     public static final RegistrySupplier<CursedCarvedPumpkinBlock> CURSED_JACK_O_LANTERN = registerBlockItem("cursed_jack_o_lantern", () -> new CursedCarvedPumpkinBlock(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN)));
 
     public static final GenerationsBlockSet COBBLE_RUINS_1_SET = new GenerationsBlockSet("cobble_ruins_1");

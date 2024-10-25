@@ -60,7 +60,7 @@ public class GenerationsModelLoader extends ModelLoader {
                     model.guiInstance.link(object);
                     if(object.scale == 0f) object.scale = 1.0f;
 
-                    if(GenerationsCore.CONFIG.client.logModelLoading) GenerationsCore.LOGGER.info("Done Loading: " + name)
+                    if(GenerationsCore.CONFIG.client.logModelLoading) GenerationsCore.LOGGER.info("Done Loading: " + name);
                 }
         );
     }

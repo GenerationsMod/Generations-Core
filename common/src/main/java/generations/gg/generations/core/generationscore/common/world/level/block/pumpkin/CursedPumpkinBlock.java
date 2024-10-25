@@ -1,6 +1,7 @@
-package generations.gg.generations.core.generationscore.common.world.level.block;
+package generations.gg.generations.core.generationscore.common.world.level.block.pumpkin;
 
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;

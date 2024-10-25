@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock;
+import generations.gg.generations.core.generationscore.common.world.level.block.pumpkin.CursedCarvedPumpkinBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.CelestialAltarBlock;
