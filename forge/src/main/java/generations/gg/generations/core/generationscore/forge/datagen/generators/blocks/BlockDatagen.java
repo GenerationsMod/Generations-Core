@@ -684,7 +684,7 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
     }
 
     @SuppressWarnings("SameParameterValue")
-    private void registerCarvedPumpkin(RegistrySupplier<CursedCarvedPumpkinBlock> carvedPumpkin, RegistrySupplier<PumpkinBlock> pumpkin){
+    private void registerCarvedPumpkin(RegistrySupplier<? extends Block> carvedPumpkin, RegistrySupplier<PumpkinBlock> pumpkin){
         BlockModelBuilder pumpkinModel = models().withExistingParent(carvedPumpkin.getId().toString(), mcLoc("block/carved_pumpkin"))
                 .texture("side", GenerationsCore.id("block/" + pumpkin.getId().getPath() + "_side"))
                 .texture("top", GenerationsCore.id("block/" + pumpkin.getId().getPath() + "_end"))

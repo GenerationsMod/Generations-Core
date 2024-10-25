@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.item;
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.item.PokemonItem;
+import dev.architectury.event.events.client.ClientGuiEvent;
 import generations.gg.generations.core.generationscore.common.api.events.general.CameraEvents;
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
@@ -25,6 +26,7 @@ public class CameraItem extends Item {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
+
         if(!level.isClientSide() && usedHand == InteractionHand.MAIN_HAND && !player.getCooldowns().isOnCooldown(this) && player.getInventory().hasAnyMatching(stack -> stack.is(GenerationsItems.FILM.get()))) {
             var hit = GenerationsUtils.raycast(player, 30, 1.0f, entity -> entity instanceof PokemonEntity);
 

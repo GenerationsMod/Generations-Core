@@ -1,9 +1,17 @@
 package generations.gg.generations.core.generationscore.forge.client;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient;
+import generations.gg.generations.core.generationscore.common.client.screen.Overlays;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
+import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -29,6 +37,7 @@ public class GenerationsCoreClientForge {
         });
         eventBus.addListener((Consumer<EntityRenderersEvent.RegisterLayerDefinitions>) event -> GenerationsCoreClient.registerLayerDefinitions(event::registerLayerDefinition));
         eventBus.addListener(GenerationsCoreClientForge::forgeClientSetup);
+        eventBus.addListener(GenerationsCoreClientForge::registerGUILayers);
         MinecraftForge.EVENT_BUS.addListener(GenerationsCoreClientForge::renderHighlightedPath);
     }
 
@@ -45,5 +54,9 @@ public class GenerationsCoreClientForge {
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
 //        ForgeConfig.CLIENT.alwaysSetupTerrainOffThread.set(true); // Performance improvement
 //        ForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.set(true); // Use Experimental Forge Light Pipeline
+    }
+
+    private static void registerGUILayers(final RegisterGuiOverlaysEvent event) {
+        event.registerAbove(VanillaGuiOverlay.HELMET.id(), GenerationsCore.id("overlays").toLanguageKey(), (gui, guiGraphics, partialTick, screenWidth, screenHeight) -> Overlays.render(gui.getMinecraft(), guiGraphics, partialTick, screenWidth, screenHeight));
     }
 }

@@ -5,16 +5,18 @@ import com.cobblemon.mod.common.item.PokemonItem;
 import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.common.world.item.CameraItem;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 
-public class CameraOverlay {
+public class Overlays {
     private static final ResourceLocation CAMERA_OVERLAY_BORDER = new ResourceLocation("generations_core:textures/gui/camera_overlay_border.png");
     private static final ResourceLocation CAMERA_OVERLAY_FOCUS = new ResourceLocation("generations_core:textures/gui/camera_overlay_focus.png");
     private static final ResourceLocation CAMERA_OVERLAY_MIDDLE = new ResourceLocation("generations_core:textures/gui/camera_overlay_middle.png");
+    private static final ResourceLocation PUMPKIN_BLUR_LOCATION = new ResourceLocation("textures/misc/pumpkinblur.png");
 
 
 
@@ -118,5 +120,32 @@ public class CameraOverlay {
         RenderSystem.enableDepthTest();
         RenderSystem.disableBlend();
         guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
+    }
+
+    public static void render(Minecraft minecraft, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
+        if (minecraft.options.getCameraType().isFirstPerson()) {
+            assert minecraft.player != null;
+            if (!minecraft.player.isScoping()) {
+                if (!renderCamera(guiGraphics, partialTick)) renderPumpkin(minecraft, guiGraphics, screenWidth, screenHeight);
+            }
+        }
+    }
+
+    public static boolean renderPumpkin(Minecraft minecraft, GuiGraphics guiGraphics, int screenWidth, int screenHeight) {
+        if (minecraft.player.getInventory().getArmor(3).is(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().asItem())) {
+            RenderSystem.disableDepthTest();
+            RenderSystem.enableBlend();
+            RenderSystem.depthMask(false);
+            guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
+            guiGraphics.blit(PUMPKIN_BLUR_LOCATION, 0, 0, -90, 0.0F, 0.0F, screenWidth, screenHeight, screenWidth, screenHeight);
+            RenderSystem.depthMask(true);
+            RenderSystem.enableDepthTest();
+            RenderSystem.disableBlend();
+            guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
+
+            return true;
+        }
+
+        return false;
     }
 }
