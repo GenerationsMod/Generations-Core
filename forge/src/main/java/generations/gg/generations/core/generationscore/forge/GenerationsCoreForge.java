@@ -100,7 +100,7 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         EVENT_BUS.addListener(this::onReload);
 
         GenerationsCore.initBuiltinPacks((packType, id, name) -> packs.computeIfAbsent(packType, a -> new ArrayList<>()).add(new Pair<>(id, name)));
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::addPackFinders);
+        MOD_BUS.addListener(this::addPackFinders);
         if (ModList.get().isLoaded("impactor"))
             ImpactorCompat.init();
     }
