@@ -146,9 +146,9 @@ publisher {
         "botarium",
     )
     curseDepends.required.set(depends)
-    curseDepends.optional.set(mutableListOf("wthit-forge"))
+    curseDepends.optional.set(mutableListOf("wthit-forge", "generations-structures"))
     modrinthDepends.required.set(depends)
-    modrinthDepends.optional.set(mutableListOf("wthit"))
+    modrinthDepends.optional.set(mutableListOf("wthit", "generations-structures"))
 }
 
 private fun getPublishingCredentials(): Pair<String?, String?> {
