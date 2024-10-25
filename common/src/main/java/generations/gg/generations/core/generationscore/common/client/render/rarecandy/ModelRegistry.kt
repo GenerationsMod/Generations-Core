@@ -1,10 +1,12 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy
 
+import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.AngleProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CompiledModel.Companion.of
+import generations.gg.generations.core.generationscore.common.util.TimedCache
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import gg.generations.rarecandy.renderer.animation.Animation
@@ -15,39 +17,64 @@ import gg.generations.rarecandy.shaded.caffeine.cache.RemovalCause
 import net.minecraft.client.Minecraft
 import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation
+import java.time.Duration
+import java.time.Instant
 import java.util.concurrent.TimeUnit
 import java.util.function.BiConsumer
+import java.util.function.Function
 
 object ModelRegistry {
     private const val DUMMY = "dummy"
-    private val LOADER = Caffeine.newBuilder().expireAfterAccess(1, TimeUnit.MINUTES)
-        .removalListener { _: ResourceLocation?, value: CompiledModel?, _: RemovalCause? ->
 
-            value?.delete() }
-        .buildAsync<ResourceLocation, CompiledModel?>(
-            CacheLoader { key ->
-                val resourceManager = Minecraft.getInstance().resourceManager
-                try {
-                    return@CacheLoader of(key!!, resourceManager.getResourceOrThrow(key))
-                } catch (e: Exception) {
-                    throw RuntimeException(e)
-                }
-            })
+    val CACHE = TimedCache(Duration.ofSeconds(10), BiConsumer<ResourceLocation, CompiledModel>{
+        key, value ->
+//        System.out.println("DELETING: $key")
+        RenderSystem.recordRenderCall { value.delete() }
+    }, Function {
+        val resourceManager = Minecraft.getInstance().resourceManager
+        try {
+            of(it, resourceManager.getResourceOrThrow(it))
+        } catch (e: Exception) {
+            throw RuntimeException(e)
+        }
+    });
+
+//    private val LOADER = Caffeine.newBuilder().expireAfterAccess(1, TimeUnit.SECONDS)
+//        .removalListener { key: ResourceLocation, value: CompiledModel, cause: RemovalCause ->
+//            System.out.println(String.format("Key %s was removed (%s)%n", key, cause))
+//            RenderSystem.recordRenderCall { value.delete() }
+//        }
+//        .evictionListener { key: ResourceLocation, value: CompiledModel, cause: RemovalCause ->
+//            System.out.println(String.format("Key %s was removed (%s)%n", key, cause))
+//            RenderSystem.recordRenderCall { value.delete() }
+//        }
+//        .buildAsync<ResourceLocation, CompiledModel>(
+//            CacheLoader { key ->
+//                val resourceManager = Minecraft.getInstance().resourceManager
+//                try {
+//                    return@CacheLoader of(key, resourceManager.getResourceOrThrow(key))
+//                } catch (e: Exception) {
+//                    throw RuntimeException(e)
+//                }
+//            })
     @JvmStatic
     operator fun get(modelProvider: ModelContextProviders.ModelProvider): CompiledModel? {
-        return ModelRegistry[modelProvider.model]
+        return get(modelProvider.model)
     }
 
     @JvmStatic
-    fun cache() = LOADER
+    fun cache() = CACHE
 
     @JvmStatic
-    fun clear() = LOADER.asMap().clear()
+    fun clear() = CACHE.clear()
+
+    fun tick() = CACHE.tick()
 
     @JvmStatic
     operator fun get(location: ResourceLocation): CompiledModel? {
         return try {
-            LOADER[location].getNow(null)
+
+            CACHE[location]
         } catch (e: Exception) {
             throw RuntimeException(e)
         }

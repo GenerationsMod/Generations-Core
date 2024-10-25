@@ -24,6 +24,7 @@ public class GenerationsModelLoader extends ModelLoader {
         super(numThreads);
     }
     public MultiRenderObject<MeshObject> compiledModelMethod(CompiledModel model, InputStream stream, Supplier<MeshObject> supplier, String name, boolean requiresVariantTexture) {
+        System.out.println("Computing: " + name);
         return createObject(
                 () -> new PixelAsset(stream, name),
                 (gltfModel, animResources, textures, config, object) -> {

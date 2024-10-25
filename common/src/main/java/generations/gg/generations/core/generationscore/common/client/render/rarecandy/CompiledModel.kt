@@ -81,10 +81,8 @@ class CompiledModel @JvmOverloads constructor(
     }
 
     fun delete() {
-        try {
-            RenderSystem.recordRenderCall { renderObject?.close() }
-        } catch (_: IOException) {
-        }
+        System.out.println("Deleting: $name / $renderObject")
+        renderObject?.close()
     }
 
     companion object {

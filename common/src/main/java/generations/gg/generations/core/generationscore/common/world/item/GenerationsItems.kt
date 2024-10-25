@@ -923,10 +923,10 @@ object GenerationsItems {
     @JvmField val LIGHT_SOUL = register("light_soul", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
 
     //TODO: Turn back to 10,000 before release
-    @JvmField val WONDER_EGG = register("wonder_egg", { LegendaryEggItem(it.stacksTo(1), LegendKeys.MANAPHY, 100.0) }, LEGENDARY_ITEMS)
+    @JvmField val WONDER_EGG = register("wonder_egg", { LegendaryEggItem(it.stacksTo(1), LegendKeys.MANAPHY) }, LEGENDARY_ITEMS)
 
     //TODO: Turn back to 10,000 before release
-    @JvmField val PHIONE_EGG = register("phione_egg", { LegendaryEggItem(it.stacksTo(1), LegendKeys.PHIONE, 100.0) }, LEGENDARY_ITEMS)
+    @JvmField val PHIONE_EGG = register("phione_egg", { LegendaryEggItem(it.stacksTo(1), LegendKeys.PHIONE) }, LEGENDARY_ITEMS)
     @JvmField val SOUL_HEART = register("soul_heart", { SingleElmentPostUpdatingItem(it.stacksTo(1).durability(100), ElementalTypes.FAIRY) }, LEGENDARY_ITEMS)
     @JvmField val BLUE_PETAL = register("blue_petal", ::Item, LEGENDARY_ITEMS)
     @JvmField val GREEN_PETAL = register("green_petal", ::Item, LEGENDARY_ITEMS)

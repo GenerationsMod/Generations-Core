@@ -13,12 +13,14 @@ import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
+import dev.architectury.event.events.client.ClientTickEvent;
 import dev.architectury.event.events.common.LootEvent;
 import generations.gg.generations.core.generationscore.common.api.GenerationsMolangFunctions;
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers;
 import generations.gg.generations.core.generationscore.common.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.common.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.common.api.player.Caught;
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.common.config.Config;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
@@ -35,6 +37,7 @@ import generations.gg.generations.core.generationscore.common.world.loot.LootPoo
 import generations.gg.generations.core.generationscore.common.world.recipe.*;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.spawning.ZygardeCellDetail;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -87,6 +90,8 @@ public class GenerationsCore {
         });
 
 		SpawnDetail.Companion.registerSpawnType(ZygardeCellDetail.TYPE, ZygardeCellDetail.class);
+
+		ClientTickEvent.CLIENT_PRE.register(instance -> ModelRegistry.INSTANCE.tick());
 
 		GenerationsCoreEntityDataSerializers.init();
 		GenerationsSounds.init();
