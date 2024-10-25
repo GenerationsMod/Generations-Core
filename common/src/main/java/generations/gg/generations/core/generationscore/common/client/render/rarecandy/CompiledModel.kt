@@ -81,7 +81,7 @@ class CompiledModel @JvmOverloads constructor(
     }
 
     fun delete() {
-        System.out.println("Deleting: $name / $renderObject")
+        if(GenerationsCore.CONFIG.client.logModelLoading) System.out.println("Deleting GPU Resources for: $name")
         renderObject?.close()
     }
 

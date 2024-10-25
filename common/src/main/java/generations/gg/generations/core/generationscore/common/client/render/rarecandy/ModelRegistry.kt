@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.client.render.rar
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.AngleProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CompiledModel.Companion.of
@@ -26,57 +27,52 @@ import java.util.function.Function
 object ModelRegistry {
     private const val DUMMY = "dummy"
 
-    val CACHE = TimedCache(Duration.ofMinutes(1), BiConsumer<ResourceLocation, CompiledModel>{
-        key, value ->
-//        System.out.println("DELETING: $key")
-        RenderSystem.recordRenderCall { value.delete() }
-    }, Function {
-        val resourceManager = Minecraft.getInstance().resourceManager
-        try {
-            of(it, resourceManager.getResourceOrThrow(it))
-        } catch (e: Exception) {
-            throw RuntimeException(e)
-        }
-    });
+//    val CACHE = TimedCache(Duration.ofMinutes(1), BiConsumer<ResourceLocation, CompiledModel>{
+//        key, value ->
+////        System.out.println("DELETING: $key")
+//        RenderSystem.recordRenderCall { value.delete() }
+//    }, Function {
+//        val resourceManager = Minecraft.getInstance().resourceManager
+//        try {
+//            of(it, resourceManager.getResourceOrThrow(it))
+//        } catch (e: Exception) {
+//            throw RuntimeException(e)
+//        }
+//    });
 
-//    private val LOADER = Caffeine.newBuilder().expireAfterAccess(1, TimeUnit.SECONDS)
-//        .removalListener { key: ResourceLocation, value: CompiledModel, cause: RemovalCause ->
-//            System.out.println(String.format("Key %s was removed (%s)%n", key, cause))
-//            RenderSystem.recordRenderCall { value.delete() }
-//        }
-//        .evictionListener { key: ResourceLocation, value: CompiledModel, cause: RemovalCause ->
-//            System.out.println(String.format("Key %s was removed (%s)%n", key, cause))
-//            RenderSystem.recordRenderCall { value.delete() }
-//        }
-//        .buildAsync<ResourceLocation, CompiledModel>(
-//            CacheLoader { key ->
-//                val resourceManager = Minecraft.getInstance().resourceManager
-//                try {
-//                    return@CacheLoader of(key, resourceManager.getResourceOrThrow(key))
-//                } catch (e: Exception) {
-//                    throw RuntimeException(e)
-//                }
-//            })
+    private val LOADER = Caffeine.newBuilder().executor(Minecraft.getInstance()).expireAfterAccess(2, TimeUnit.MINUTES)
+        .removalListener { key: ResourceLocation, value: CompiledModel, cause: RemovalCause ->
+            if(GenerationsCore.CONFIG.client.logModelLoading) GenerationsCore.LOGGER.info(String.format("%s was removed from cache. Deleting GPU Resouces next.", key, cause))
+            RenderSystem.recordRenderCall { value.delete() }
+        }
+        .buildAsync<ResourceLocation, CompiledModel>(
+            CacheLoader { key ->
+                val resourceManager = Minecraft.getInstance().resourceManager
+                try {
+                    return@CacheLoader of(key, resourceManager.getResourceOrThrow(key))
+                } catch (e: Exception) {
+                    throw RuntimeException(e)
+                }
+            })
     @JvmStatic
     operator fun get(modelProvider: ModelContextProviders.ModelProvider): CompiledModel? {
         return get(modelProvider.model)
     }
 
     @JvmStatic
-    fun cache() = CACHE
+    fun cache() = LOADER
 
     @JvmStatic
-    fun clear() = CACHE.clear()
+    fun clear() = LOADER.asMap().clear()
 
-    fun tick() = CACHE.tick()
+    fun tick() = /*CACHE.tick()*/ {}
 
     @JvmStatic
     operator fun get(location: ResourceLocation): CompiledModel? {
         return try {
-
-            CACHE[location]
+            LOADER[location].getNow(null)
         } catch (e: Exception) {
-            throw RuntimeException(e)
+            null
         }
     }
 
