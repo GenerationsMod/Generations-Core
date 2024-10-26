@@ -225,7 +225,10 @@ public class TagsDatagen {
                 else if (woodBlock instanceof SlabBlock) tag(BlockTags.WOODEN_SLABS).add(woodBlock);
                 else if (woodBlock instanceof StairBlock) tag(BlockTags.WOODEN_STAIRS).add(woodBlock);
                 else if (woodBlock instanceof FenceBlock) tag(BlockTags.WOODEN_FENCES).add(woodBlock);
-                else if (woodBlock instanceof FenceGateBlock) tag(BlockTags.FENCE_GATES).add(woodBlock);
+                else if (woodBlock instanceof FenceGateBlock) {
+                    tag(BlockTags.FENCE_GATES).add(woodBlock);
+                    tag(Tags.Blocks.FENCE_GATES_WOODEN).add(woodBlock);
+                }
                 else if (woodBlock instanceof PressurePlateBlock)
                     tag(BlockTags.WOODEN_PRESSURE_PLATES).add(woodBlock);
                 else if (woodBlock instanceof ButtonBlock) tag(BlockTags.WOODEN_BUTTONS).add(woodBlock);
@@ -284,7 +287,7 @@ public class TagsDatagen {
                     GenerationsBlocks.SILICON_BLOCK.get())
                     .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS);
 
-            tag(BlockTags.SNOW_LAYER_CANNOT_SURVIVE_ON).add(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get()).addTag(GenerationsBlockTags.SHRINES);
+            tag(BlockTags.SNOW_LAYER_CANNOT_SURVIVE_ON).add(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get()).addTag(GenerationsBlockTags.SHRINES).addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS).addTag(GenerationsBlockTags.BALL_LOOTS).addTag(GenerationsBlockTags.POKEDOLLS);
 
             tag(GenerationsBlockTags.TAPU_SUMMONING).add(GenerationsShrines.TAPU_SHRINE.get());
         }
@@ -320,6 +323,8 @@ public class TagsDatagen {
             copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
             copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
             copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
+            copy(BlockTags.FENCE_GATES, ItemTags.FENCE_GATES);
+            copy(Tags.Blocks.FENCE_GATES_WOODEN, Tags.Items.FENCE_GATES_WOODEN);
             copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
             //copy(BlockTags.DOORS, ItemTags.DOORS);
             //copy(BlockTags.SAND, ItemTags.SAND);

@@ -1,6 +1,9 @@
 {
   "values": [
     "generations_core:pokecenter_scarlet_sign",
-    "#generations_core:shrines"
+    "#generations_core:shrines",
+    "#generations_core:ball_display_blocks",
+    "#generations_core:ball_loots",
+    "#generations_core:pokedolls"
   ]
 }
