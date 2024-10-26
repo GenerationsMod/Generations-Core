@@ -13,7 +13,6 @@ import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
-import dev.architectury.event.events.client.ClientTickEvent;
 import dev.architectury.event.events.common.LootEvent;
 import generations.gg.generations.core.generationscore.common.api.GenerationsMolangFunctions;
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers;
@@ -90,8 +89,6 @@ public class GenerationsCore {
         });
 
 		SpawnDetail.Companion.registerSpawnType(ZygardeCellDetail.TYPE, ZygardeCellDetail.class);
-
-		ClientTickEvent.CLIENT_PRE.register(instance -> ModelRegistry.INSTANCE.tick());
 
 		GenerationsCoreEntityDataSerializers.init();
 		GenerationsSounds.init();
