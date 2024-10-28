@@ -16,7 +16,7 @@ object S2COpenShopHandler : ClientNetworkPacketHandler<S2COpenShopPacket> {
             var blockEntity = Minecraft.getInstance().level!!.getBlockEntity(packet.pos)
 
             if (blockEntity is ShopOfferProvider) {
-                Minecraft.getInstance().setScreen(ShopScreen(blockEntity))
+                Minecraft.getInstance().execute { Minecraft.getInstance().setScreen(ShopScreen(blockEntity)) }
             }
         }
     }

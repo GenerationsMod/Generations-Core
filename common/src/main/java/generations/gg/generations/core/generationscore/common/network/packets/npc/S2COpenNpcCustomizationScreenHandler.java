@@ -12,7 +12,7 @@ public class S2COpenNpcCustomizationScreenHandler implements ClientNetworkPacket
     public void handle(S2COpenNpcCustomizationScreenPacket packet, Minecraft minecraft) {
         EnvExecutor.runInEnv(Env.CLIENT, () -> () -> {
             var npcEntity = (PlayerNpcEntity) Minecraft.getInstance().level.getEntity(packet.entityId());
-            Minecraft.getInstance().setScreen(new CustomizeNpcScreen(npcEntity));
+            Minecraft.getInstance().execute(() -> Minecraft.getInstance().setScreen(new CustomizeNpcScreen(npcEntity)));
         });
     }
 }

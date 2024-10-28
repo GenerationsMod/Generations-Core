@@ -33,7 +33,11 @@ import generations.gg.generations.core.generationscore.common.world.item.legends
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.loot.LootPoolEntryTypes;
+import generations.gg.generations.core.generationscore.common.world.npc.NpcPresets;
 import generations.gg.generations.core.generationscore.common.world.recipe.*;
+import generations.gg.generations.core.generationscore.common.world.shop.ShopPresets;
+import generations.gg.generations.core.generationscore.common.world.shop.ShopRegistrySyncPacket;
+import generations.gg.generations.core.generationscore.common.world.shop.Shops;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.spawning.ZygardeCellDetail;
 import net.minecraft.client.Minecraft;
@@ -80,6 +84,9 @@ public class GenerationsCore {
 		CONFIG = ConfigLoader.loadConfig(Config.class, "core", "main");
 		GenerationsCore.implementation = implementation;
 
+		GenerationsDataProvider.INSTANCE.register(ShopPresets.instance());
+		GenerationsDataProvider.INSTANCE.register(Shops.instance());
+		GenerationsDataProvider.INSTANCE.register(NpcPresets.instance());
 
 		LootEvent.MODIFY_LOOT_TABLE.register((lootDataManager, id, context, builtin) -> {
             if(id.getNamespace().equals("minecraft") && id.getPath().contains("chests") && !id.getPath().contains("inject")) {

@@ -73,7 +73,7 @@ public class Shops implements JsonDataRegistry<Shop> {
 
     @Override
     public void sync(@NotNull ServerPlayer player) {
-//        new ShopRegistrySyncPacket(graphsByIdentifier).sendToPlayer(player);
+        new ShopRegistrySyncPacket(graphsByIdentifier).sendToPlayer(player);
     }
 
     private final Map<ResourceLocation, Shop> graphsByIdentifier = new HashMap<>();
