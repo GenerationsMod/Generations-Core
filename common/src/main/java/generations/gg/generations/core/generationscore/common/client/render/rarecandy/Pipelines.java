@@ -23,6 +23,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.joml.Vector3f;
+import org.joml.Vector4f;
 import org.lwjgl.opengl.GL11C;
 import org.lwjgl.opengl.GL13C;
 
@@ -62,6 +63,8 @@ public class Pipelines {
         }
     }
 
+    private static final Vector4f TEMP = new Vector4f();
+
     public static void initGenerationsPipelines(PipelineRegister register) {
 
         register.register("pokemon", 
@@ -69,6 +72,17 @@ public class Pipelines {
             var legacyShading = GenerationsCore.CONFIG.client.usePixelmonShading ? "legacy/" : "";
                     var ROOT = new Pipeline.Builder()
                             .supplyUniform("viewMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().viewMatrix()))
+                            .supplyUniform("FogStart", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogStart()))
+                            .supplyUniform("FogEnd", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogEnd()))
+                            .supplyUniform("FogColor", ctx -> {
+                                var color = RenderSystem.getShaderFogColor();
+                                ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
+                            })
+                            .supplyUniform("ColorModulator", ctx -> {
+                                var color = RenderSystem.getShaderColor();
+                                ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
+                            })
+                            .supplyUniform("FogShape", ctx -> ctx.uniform().uploadInt(RenderSystem.getShaderFogShape().getIndex()))
                             .supplyUniform("modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().transformationMatrix()))
                             .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(RenderSystem.getProjectionMatrix()))
                             .supplyUniform("boneTransforms", ctx -> {
@@ -194,7 +208,7 @@ public class Pipelines {
                                     .supplyUniform("frame", ctx -> ctx.uniform().uploadInt((int) pingpong(MinecraftClientGameProvider.getTimePassed())))
                                     .build();
 
-                            var map = Map.of("masked", layered, "layered", layered, "paradox", paradox, "solid", solid);
+                            var map = Map.of("masked", masked, "layered", layered, "paradox", paradox, "solid", solid);
 
                             return s -> map.getOrDefault(s, solid);
                 });

@@ -7,8 +7,12 @@ layout(location = 2) in vec3 inNormal;
 layout(location = 3) in vec4 joints;
 layout(location = 4) in vec4 weights;
 
-out vec2 texCoord0;
+out float vertexDistance;
 out vec4 vertexColor;
+out vec2 texCoord0;
+
+uniform int FogShape;
+
 uniform vec3 Light0_Direction;
 uniform vec3 Light1_Direction;
 
@@ -41,6 +45,16 @@ mat4 getBoneTransform() {
     return boneTransform;
 }
 
+float fog_distance(mat4 modelViewMat, vec3 pos, int shape) {
+    if (shape == 0) {
+        return length((modelViewMat * vec4(pos, 1.0)).xyz);
+    } else {
+        float distXZ = length((modelViewMat * vec4(pos.x, 0.0, pos.z, 1.0)).xyz);
+        float distY = length((modelViewMat * vec4(0.0, pos.y, 0.0, 1.0)).xyz);
+        return max(distXZ, distY);
+    }
+}
+
 void main() {
     mat4 worldSpace = projectionMatrix * viewMatrix;
     mat4 modelTransform = modelMatrix * getBoneTransform();
@@ -48,5 +62,6 @@ void main() {
 
     texCoord0 = texcoords + uvOffset;
     gl_Position = worldSpace * worldPosition;
+    vertexDistance = fog_distance(worldSpace * modelTransform, positions, FogShape);
     vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, inNormal);
 }
