@@ -1401,6 +1401,7 @@
   "container.volcanic_stone_blast_furnace": "Volcanic Stone Blast Furnace",
   "container.volcanic_stone_furnace": "Volcanic Stone Furnace",
   "container.volcanic_stone_smoker": "Volcanic Stone Smoker",
+  "entity.generations_core.statue": "Statue",
   "entity.generations_core.zygarde_cell": "Zygarde Cells",
   "generations_core.ability.formchange": "%s changed form!",
   "generations_core.blocks.balllootset": "Custom Ball Loot Set: %s",

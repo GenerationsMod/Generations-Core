@@ -23,6 +23,7 @@ class SpawnStatuePacket(
     val staticAge: Int,
     val interactable: Boolean,
     val material: String?,
+    val orientation: Float,
     vanillaSpawnPacket: ClientboundAddEntityPacket
 ) : SpawnExtraDataEntityPacket<SpawnStatuePacket, StatueEntity>(vanillaSpawnPacket) {
     override fun getId(): ResourceLocation = ID
@@ -36,6 +37,7 @@ class SpawnStatuePacket(
         buffer.writeVarInt(staticAge)
         buffer.writeBoolean(interactable)
         buffer.writeNullableString(material)
+        buffer.writeFloat(orientation)
     }
 
     override fun applyData(entity: StatueEntity) {
@@ -43,10 +45,12 @@ class SpawnStatuePacket(
         entity.label = label
         entity.scale = this.scale
         entity.poseType = this.poseType
+        entity.staticToggle = this.staticToggle
         entity.staticPartial = this.staticPartial
         entity.staticAge = this.staticAge
         entity.interactable = this.interactable
         entity.material = this.material
+        entity.orientation = this.orientation
         entity.delegate.initialize(entity)
 //        (entity.delegate as GenericBedrockClientDelegate).updateAge(startAge)
     }
@@ -65,8 +69,9 @@ class SpawnStatuePacket(
             val staticAge = buffer.readVarInt()
             val interactable = buffer.readBoolean()
             val material = buffer.readNullableString()
+            val orientation = buffer.readFloat()
             val vanillaPacket = decodeVanillaPacket(buffer)
-            return SpawnStatuePacket(properties, label, scale, pose_type, staticToggle, staticPartial, staticAge, interactable, material, vanillaPacket)
+            return SpawnStatuePacket(properties, label, scale, pose_type, staticToggle, staticPartial, staticAge, interactable, material, orientation, vanillaPacket)
         }
     }
 }

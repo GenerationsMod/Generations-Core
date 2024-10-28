@@ -10,6 +10,7 @@ import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.entity.Poseable
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers
+import generations.gg.generations.core.generationscore.common.api.events.general.StatueEvents
 import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenPacket
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
@@ -19,6 +20,7 @@ import generations.gg.generations.core.generationscore.common.world.item.Generat
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
+import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
 import net.minecraft.server.level.ServerPlayer
@@ -42,11 +44,16 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         val STATIC_AGE = SynchedEntityData.defineId(StatueEntity::class.java, EntityDataSerializers.INT)
         val INTERACTABLE = SynchedEntityData.defineId(StatueEntity::class.java, EntityDataSerializers.BOOLEAN)
         val MATERIAL = SynchedEntityData.defineId(StatueEntity::class.java, GenerationsCoreEntityDataSerializers.NULLABLE_STRING)
+        val ORIENTATION = SynchedEntityData.defineId(StatueEntity::class.java, EntityDataSerializers.FLOAT)
     }
 
     var savesToWorld = true
 
     override val schedulingTracker = SchedulingTracker()
+
+    override fun isCustomNameVisible(): Boolean {
+        return true
+    }
 
 
     override val delegate = if (level.isClientSide) {
@@ -55,10 +62,19 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         StatueServerDelegate()
     }
 
+    override fun onSyncedDataUpdated(key: EntityDataAccessor<*>) {
+        super.onSyncedDataUpdated(key)
+
+        when(key) {
+            PROPERTIES -> delegate.updatePoke(properties)
+            SCALE -> refreshDimensions()
+            MATERIAL -> delegate.updateMaterial(material)
+        }
+    }
+
     var properties: PokemonProperties
         get() = this.getEntityData()[PROPERTIES]
         set(value) {
-            delegate.updatePoke(properties)
             this.entityData.set(PROPERTIES, value)
         }
     var label : String?
@@ -69,7 +85,6 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         get() = this.entityData[SCALE]
         set(value) {
             this.entityData.set(SCALE, value)
-            refreshDimensions()
         }
 
     var poseType: PoseType
@@ -106,8 +121,14 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         get() = this.entityData[MATERIAL]
         set(value) {
             this.entityData[MATERIAL] = value
-            delegate.updateMaterial(value)
         }
+
+    var orientation: Float
+        get() = this.entityData[ORIENTATION]
+        set(value) {
+            this.entityData[ORIENTATION] = value
+        }
+
     override fun defineSynchedData() {
         this.entityData.define(PROPERTIES, parse("charizard"))
         this.entityData.define(LABEL, "Statue")
@@ -118,7 +139,9 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         this.entityData.define(STATIC_AGE, 0)
         this.entityData.define(INTERACTABLE, false)
         this.entityData.define(MATERIAL, "")
+        this.entityData.define(ORIENTATION, 0.0f)
     }
+
     override fun readAdditionalSaveData(compound: CompoundTag) {
         this.properties = compound.getPokemonProperties(DataKeys.PROPERTIES)
         this.label = compound.getStringOrNull(DataKeys.LABEL)
@@ -129,7 +152,9 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         this.staticAge = compound.getInt(DataKeys.STATIC_AGE)
         this.interactable = compound.getBoolean(DataKeys.INTERACTABLE)
         this.material = compound.getStringOrNull(DataKeys.MATERIAL)
+        this.orientation = compound.getFloat(DataKeys.ORIENTATION)
     }
+
     override fun addAdditionalSaveData(compound: CompoundTag) {
         compound.putPokemonProperties(DataKeys.PROPERTIES, this.properties)
         compound.putNullableString(DataKeys.LABEL, label)
@@ -140,6 +165,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         compound.putInt(DataKeys.STATIC_AGE, this.staticAge)
         compound.putBoolean(DataKeys.INTERACTABLE, this.interactable)
         compound.putNullableString(DataKeys.MATERIAL, this.material)
+        compound.putFloat(DataKeys.ORIENTATION, this.orientation)
     }
 
     init {
@@ -170,6 +196,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
             staticAge =  staticAge,
             interactable = interactable,
             material = material,
+            orientation = orientation,
             vanillaSpawnPacket = super.getAddEntityPacket() as ClientboundAddEntityPacket
         )
     )
@@ -194,6 +221,8 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
                 stack.shrink(1)
                 return InteractionResult.SUCCESS
             } else if (player.getItemInHand(hand).item == GenerationsItems.CHISEL.get()) {
+                if (!StatueEvents.CAN_USE_CHISEL.invoker().canUse(player as ServerPlayer?, player.isCreative())) return InteractionResult.PASS
+
                 if (player.isShiftKeyDown) {
                     this.remove(RemovalReason.KILLED)
                 } else {
@@ -213,15 +242,17 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         return false
     }
 
-    override fun getDisplayName(): Component = label?.takeIf { it.isNotBlank() }?.text() ?: super.getDisplayName()
     fun renderablePokemon() = properties.asRenderablePokemon()
+
+    override fun hasCustomName(): Boolean {
+        return label?.isNotBlank() != null
+    }
+
+    override fun getCustomName(): Component? = label?.text()
 }
 
 private fun CompoundTag.getPokemonProperties(key: String): PokemonProperties = parse(this.getString(key))
-
-
-private fun CompoundTag.getStringOrNull(key: String): String? = if(this.hasUUID(key)) this.getString(key) else null
+private fun CompoundTag.getStringOrNull(key: String): String? = if(this.contains(key)) this.getString(key) else null
 private fun CompoundTag.putPokemonProperties(key: String, properties: PokemonProperties) = this.putString(key, properties.asString())
 private fun CompoundTag.putNullableString(key: String, value: String?) = value?.run { this@putNullableString.putString(key, this) }
-
 fun PokemonProperties.getHitBox(): EntityDimensions? = this.species?.let { PokemonSpecies.getByName(it) }?.getForm(this.aspects)?.hitbox

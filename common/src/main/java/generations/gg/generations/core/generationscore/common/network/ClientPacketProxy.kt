@@ -8,11 +8,14 @@ import generations.gg.generations.core.generationscore.common.network.packets.np
 import generations.gg.generations.core.generationscore.common.network.packets.shop.*
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenHandler
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenPacket
+import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatueHandler
+import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatuePacket
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnExtraDataEntityHandler
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
 import generations.gg.generations.core.generationscore.common.world.shop.ShopPresetRegistrySyncPacket
 import generations.gg.generations.core.generationscore.common.world.shop.ShopRegistrySyncPacket
 import net.minecraft.client.Minecraft
+import net.minecraft.client.player.LocalPlayer
 import java.util.function.Consumer
 
 class ClientPacketProxy : PacketProxy() {
@@ -29,6 +32,10 @@ class ClientPacketProxy : PacketProxy() {
     override val processS2CUpdateNpcDisplayDataPacket : Consumer<S2CUpdateNpcDisplayDataPacket> = createConsumer(S2CUpdateNpcDisplayDataHandler())
     override val processSpawnStatuePacket : Consumer<SpawnStatuePacket> = createConsumer(SpawnExtraDataEntityHandler())
     override val processS2CPlaySoundPacket : Consumer<S2CPlaySoundPacket> = createConsumer(S2CPlaySoundHandler())
+
+    override fun <V, T : UpdateStatuePacket<V, T>> processStatueUpdate(packet: T, handler: UpdateStatueHandler<V, T>) {
+        handler.accept(packet, Minecraft.getInstance().player as LocalPlayer)
+    }
 
     private fun <T : GenerationsNetworkPacket<T>> createConsumer(handler: ClientNetworkPacketHandler<T>): Consumer<T> {
         return Consumer { handler.handle(it, Minecraft.getInstance())}

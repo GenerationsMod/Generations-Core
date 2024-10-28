@@ -357,6 +357,8 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.pokemon.fused", "%s was fused with %s.");
         add("generations_core.pokemon.defused", "%s was defused from %s.");
         add("generations_core.pokemon.encoded", "%s was encoded.");
+
+        addEntityType(GenerationsEntities.STATUE_ENTITY, "Statue");
     }
 
 

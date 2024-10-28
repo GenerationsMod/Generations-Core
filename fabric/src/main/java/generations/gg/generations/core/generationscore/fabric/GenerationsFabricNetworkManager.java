@@ -45,6 +45,13 @@ public class GenerationsFabricNetworkManager implements GenerationsImplementatio
         ServerPlayNetworking.registerGlobalReceiver(identifier, this.createServerBoundHandler(decoder, handler::handleOnNettyThread));
     }
 
+    @Override
+    public <T extends GenerationsNetworkPacket<T>> void createBothBound(ResourceLocation identifier, KClass<T> kClass, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, Consumer<T> clientHandler, ServerNetworkPacketHandler<T> serverHandler) {
+        createClientBound(identifier, kClass, encoder, decoder, clientHandler);
+        createServerBound(identifier, kClass, encoder, decoder, serverHandler);
+    }
+
+
     private <T extends GenerationsNetworkPacket<?>> ServerPlayNetworking.PlayChannelHandler createServerBoundHandler(
             Function<FriendlyByteBuf, T> decoder,
             TriConsumer<T, MinecraftServer, ServerPlayer> handler) {

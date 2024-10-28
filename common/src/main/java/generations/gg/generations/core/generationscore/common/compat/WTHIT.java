@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.common.compat;
 
+import com.cobblemon.mod.common.item.PokemonItem;
+import generations.gg.generations.core.generationscore.common.client.entity.StatueClientDelegate;
+import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
 import mcp.mobius.waila.api.*;
 import mcp.mobius.waila.api.component.ItemComponent;
@@ -12,6 +15,27 @@ public class WTHIT implements IWailaClientPlugin {
     public void register(IClientRegistrar iClientRegistrar) {
         iClientRegistrar.icon(DyeableBlockPrvoider.INSTANCE, DyeableBlock.class);
         iClientRegistrar.head(DyeableBlockPrvoider.INSTANCE, DyeableBlock.class);
+//        iClientRegistrar.icon(StatueEntityProvider.INSTANCE, StatueEntity.class);
+//        iClientRegistrar.head(StatueEntityProvider.INSTANCE, StatueEntity.class);
+    }
+
+    public enum StatueEntityProvider implements IEntityComponentProvider {
+        INSTANCE;
+
+        @Override
+        public @Nullable ITooltipComponent getIcon(IEntityAccessor accessor, IPluginConfig config) {
+            return accessor.getEntity() instanceof StatueEntity statue ? new ItemComponent(PokemonItem.from(statue.getProperties())) : null;
+        }
+
+        @Override
+        public void appendHead(ITooltip tooltip, IEntityAccessor accessor, IPluginConfig config) {
+            if(accessor.getEntity() instanceof StatueEntity statue) {
+
+                IWailaConfig.Formatter formatter = IWailaConfig.get().getFormatter();
+                var name = formatter.entityName(statue.getDisplayName().getString());
+                tooltip.setLine(WailaConstants.OBJECT_NAME_TAG, name);
+            }
+        }
     }
 
     public enum DyeableBlockPrvoider implements IBlockComponentProvider {

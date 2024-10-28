@@ -1,16 +1,21 @@
 package generations.gg.generations.core.generationscore.forge
 
+import dev.architectury.utils.Env
+import dev.architectury.utils.EnvExecutor
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation
 import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork
 import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler
 import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket
+import net.minecraft.client.Minecraft
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.protocol.Packet
 import net.minecraft.network.protocol.game.ClientGamePacketListener
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.player.Player
+import net.minecraftforge.fml.LogicalSide
 import net.minecraftforge.network.NetworkDirection
 import net.minecraftforge.network.NetworkEvent
 import net.minecraftforge.network.NetworkRegistry
@@ -76,6 +81,30 @@ object GenerationsForgeNetworkManager : GenerationsImplementation.NetworkManager
                 Objects.requireNonNull(Objects.requireNonNull(context.sender)?.getServer()),
                 context.sender
             )
+            context.packetHandled = true
+        }
+    }
+
+    override fun <T : GenerationsNetworkPacket<T>> createBothBound(
+        identifier: ResourceLocation?,
+        kClass: KClass<T>,
+        encoder: BiConsumer<T, FriendlyByteBuf>,
+        decoder: Function<FriendlyByteBuf, T>,
+        clientHandler: Consumer<T>,
+        serverHandler: ServerNetworkPacketHandler<T>,
+    ) {
+        channel.registerMessage(id++, kClass.java, encoder, decoder) { msg: T, ctx: Supplier<NetworkEvent.Context> ->
+            val context = ctx.get()
+
+            if(context.direction.receptionSide == LogicalSide.SERVER) {
+                clientHandler.accept(msg)
+            } else {
+                serverHandler.handleOnNettyThread(
+                    msg,
+                    Objects.requireNonNull(Objects.requireNonNull(context.sender)?.getServer()),
+                    context.sender
+                )
+            }
             context.packetHandled = true
         }
     }

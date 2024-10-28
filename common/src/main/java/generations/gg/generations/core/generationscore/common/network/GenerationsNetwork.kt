@@ -11,6 +11,7 @@ import generations.gg.generations.core.generationscore.common.network.packets.st
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatueHandler
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatuePacket
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
+import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import generations.gg.generations.core.generationscore.common.world.shop.ShopPresetRegistrySyncPacket
 import generations.gg.generations.core.generationscore.common.world.shop.ShopRegistrySyncPacket
 import net.minecraft.network.FriendlyByteBuf
@@ -71,18 +72,28 @@ object GenerationsNetwork : GenerationsImplementation.NetworkManager {
     }
 
     private fun createServerStatueUpdate() {
-        this.createServerBound(UpdateStatuePacket.PROPERTIES_ID, UpdateStatuePacket.Companion::propertiesDecode, UpdateStatueHandler.Properties)
-        this.createServerBound(UpdateStatuePacket.LABEL_ID, UpdateStatuePacket.Companion::labelDecode, UpdateStatueHandler.Label)
-        this.createServerBound(UpdateStatuePacket.SCALE_ID, UpdateStatuePacket.Companion::scaleDecode, UpdateStatueHandler.Scale)
-        this.createServerBound(UpdateStatuePacket.POSE_TYPE_ID, UpdateStatuePacket.Companion::poseTypeDecode, UpdateStatueHandler.PoseType)
-        this.createServerBound(UpdateStatuePacket.STATIC_TOGGLE_ID, UpdateStatuePacket.Companion::staticToggleDecode, UpdateStatueHandler.StaticToggle)
-        this.createServerBound(UpdateStatuePacket.STATIC_PARTIAL_ID, UpdateStatuePacket.Companion::staticPartialDecode, UpdateStatueHandler.StaticPartial)
-        this.createServerBound(UpdateStatuePacket.STATIC_AGE_ID, UpdateStatuePacket.Companion::staticAgeDecode, UpdateStatueHandler.StaticAge)
-        this.createServerBound(UpdateStatuePacket.INTERACTABLE_ID, UpdateStatuePacket.Companion::interactableDecode, UpdateStatueHandler.Interactable)
-        this.createServerBound(UpdateStatuePacket.MATERIAL_ID, UpdateStatuePacket.Companion::materialDecode, UpdateStatueHandler.Material)
-        this.createServerBound(UpdateStatuePacket.ORIENTATION_ID, UpdateStatuePacket.Companion::orientationDecode, UpdateStatueHandler.Orientation)
+        this.createStatueUpdate(UpdateStatuePacket.PROPERTIES_ID, UpdateStatuePacket.Companion::propertiesDecode, UpdateStatueHandler.Properties)
+        this.createStatueUpdate(UpdateStatuePacket.LABEL_ID, UpdateStatuePacket.Companion::labelDecode, UpdateStatueHandler.Label)
+        this.createStatueUpdate(UpdateStatuePacket.SCALE_ID, UpdateStatuePacket.Companion::scaleDecode, UpdateStatueHandler.Scale)
+        this.createStatueUpdate(UpdateStatuePacket.POSE_TYPE_ID, UpdateStatuePacket.Companion::poseTypeDecode, UpdateStatueHandler.PoseType)
+        this.createStatueUpdate(UpdateStatuePacket.STATIC_TOGGLE_ID, UpdateStatuePacket.Companion::staticToggleDecode, UpdateStatueHandler.StaticToggle)
+        this.createStatueUpdate(UpdateStatuePacket.STATIC_PARTIAL_ID, UpdateStatuePacket.Companion::staticPartialDecode, UpdateStatueHandler.StaticPartial)
+        this.createStatueUpdate(UpdateStatuePacket.STATIC_AGE_ID, UpdateStatuePacket.Companion::staticAgeDecode, UpdateStatueHandler.StaticAge)
+        this.createStatueUpdate(UpdateStatuePacket.INTERACTABLE_ID, UpdateStatuePacket.Companion::interactableDecode, UpdateStatueHandler.Interactable)
+        this.createStatueUpdate(UpdateStatuePacket.MATERIAL_ID, UpdateStatuePacket.Companion::materialDecode, UpdateStatueHandler.Material)
+        this.createStatueUpdate(UpdateStatuePacket.ORIENTATION_ID, UpdateStatuePacket.Companion::orientationDecode, UpdateStatueHandler.Orientation)
     }
 
+    private inline fun <reified V, reified T : UpdateStatuePacket<V, T>> createStatueUpdate(id: ResourceLocation, decoder: Function<FriendlyByteBuf,T>, handler: UpdateStatueHandler<V, T>) {
+        GenerationsCore.implementation.networkManager.createBothBound(id, T::class, { message, buffer -> message.encode(buffer) }, decoder, {
+            clientProxy.processStatueUpdate(it, handler)
+        }, { packet, _, player ->
+            handler.accept(packet, player)
+            var entity = player.level().getEntity(packet.entityId) ?: return@createBothBound
+
+            packet.sendToPlayersAround(entity.x, entity.y, entity.z, 128.0, entity.level().dimension()) { false }
+        })
+    }
 
     private inline fun <reified T : GenerationsNetworkPacket<T>> createClientBound(identifier: ResourceLocation, noinline decoder: (FriendlyByteBuf) -> T, handler: Consumer<T>) {
         GenerationsCore.implementation.networkManager.createClientBound(identifier, T::class, { message, buffer -> message.encode(buffer) }, decoder, handler)
@@ -110,6 +121,17 @@ object GenerationsNetwork : GenerationsImplementation.NetworkManager {
         handler: ServerNetworkPacketHandler<T>
     ) {
         GenerationsCore.implementation.networkManager.createServerBound(identifier, kClass, encoder, decoder, handler)
+    }
+
+    override fun <T : GenerationsNetworkPacket<T>> createBothBound(
+        identifier: ResourceLocation,
+        kClass: KClass<T>,
+        encoder: BiConsumer<T, FriendlyByteBuf>,
+        decoder: Function<FriendlyByteBuf, T>,
+        clientHandler: Consumer<T>,
+        serverHandler: ServerNetworkPacketHandler<T>,
+    ) {
+        GenerationsCore.implementation.networkManager.createBothBound(identifier, kClass, encoder, decoder, clientHandler, serverHandler)
     }
 
     override fun sendPacketToPlayer(player: ServerPlayer, packet: GenerationsNetworkPacket<*>?) {

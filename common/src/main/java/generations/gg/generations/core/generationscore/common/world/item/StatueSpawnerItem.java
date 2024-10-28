@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.item;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonPropertyExtractor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import generations.gg.generations.core.generationscore.common.api.events.general.StatueEvents;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity;
 import net.minecraft.core.BlockPos;
@@ -30,6 +31,9 @@ public class StatueSpawnerItem extends Item {
     @Override
     public @NotNull InteractionResult useOn(UseOnContext context) {
         if (context.getPlayer() != null && context.getPlayer() instanceof ServerPlayer serverPlayer) {
+
+            if(!StatueEvents.CAN_USE_CHISEL.invoker().canUse(serverPlayer, serverPlayer.isCreative())) return InteractionResult.PASS;
+
             BlockPos pos = context.getClickedPos();
             StatueEntity statueEntity = new StatueEntity(serverPlayer.level());
 

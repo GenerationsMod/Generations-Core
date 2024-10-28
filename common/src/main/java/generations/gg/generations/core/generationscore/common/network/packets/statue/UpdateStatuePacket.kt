@@ -7,7 +7,9 @@ import generations.gg.generations.core.generationscore.common.util.readNullableS
 import generations.gg.generations.core.generationscore.common.util.readPokemonProperties
 import generations.gg.generations.core.generationscore.common.util.writeNullableString
 import generations.gg.generations.core.generationscore.common.util.writePokemonProperties
+import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.resources.ResourceLocation
 
 abstract class UpdateStatuePacket<V, T : UpdateStatuePacket<V, T>>(var entityId: Int, var value: V) : GenerationsNetworkPacket<T> {

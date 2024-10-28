@@ -64,6 +64,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
             ) { s: String -> parserString = s })
         updateButton = addRenderableWidget(Button.builder(Component.literal("Update")) { button: Button? ->
             statue.properties = parse(parserString, " ", "=")
+            UpdateStatuePacket.Properties(statue.id, statue.properties).sendToServer()
         }
             .size(51, 16).pos(x + 135, y + 6).build())
         nameTextField = addRenderableWidget(
@@ -146,7 +147,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
             ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, statue.material ?: "", { true }) {
                 it.takeIf { it.isNotEmpty() }.run {
                     statue.material = it
-                    UpdateStatuePacket.Material(statue.id, it)
+                    UpdateStatuePacket.Material(statue.id, it).sendToServer()
                 }
             }
         )

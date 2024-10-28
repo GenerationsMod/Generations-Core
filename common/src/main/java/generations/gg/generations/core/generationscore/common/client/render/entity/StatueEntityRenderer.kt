@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.common.client.render.entity
 
+import com.cobblemon.mod.common.api.text.text
+import com.cobblemon.mod.common.client.render.ModelLayer
+import com.cobblemon.mod.common.client.render.ModelTextureSupplier
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
@@ -13,13 +16,37 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.StatueInstance
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import net.minecraft.client.renderer.MultiBufferSource
+import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.entity.EntityRenderer
 import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.client.renderer.entity.ItemRenderer
+import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.resources.ResourceLocation
+import java.lang.reflect.Field
+
+object ModifiableTextureSupplier : ModelTextureSupplier {
+    var texture = MissingTextureAtlasSprite.getLocation()
+    override fun invoke(animationSeconds: Float): ResourceLocation {
+        return texture
+    }
+
+}
+
+private fun <T:ModelTextureSupplier> ModelLayer.setTextureSupplier(supplier: T): ModelLayer {
+    val textureField = ModelLayer::class.java.getDeclaredField("texture")
+    textureField.isAccessible = true
+    textureField.set(this, supplier)
+
+    return this
+}
 
 class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer<StatueEntity>(arg) {
+
+
+    val modelLayer = ModelLayer().setTextureSupplier(ModifiableTextureSupplier)
+    val layerList = mutableListOf(modelLayer)
+
     override fun render(
         entity: StatueEntity,
         entityYaw: Float,
@@ -32,7 +59,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
 
         PokemonModelRepository.variations.getOrDefault(renderable.species.resourceIdentifier, null) ?: return
         stack.pushPose()
-        stack.mulPose(Axis.YP.rotationDegrees(entity.yRot))
+        stack.mulPose(Axis.YP.rotationDegrees(entity.orientation))
         stack.scale(-1f, -1f, 1f)
         val scale: Float = entity.scale
         stack.translate(0.0, -1.501 * scale, 0.0)
@@ -56,8 +83,11 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
 
         state.updatePartialTicks(partialTicks)
         setupAnimStateful(model, entity.delegate, 0f, 0f, 0f, 0f, 0f)
-        model.setLayerContext(buffer, entity.delegate, PokemonModelRepository.getLayers(entity.delegate.species(), entity.delegate.aspects()))
-        val vertexConsumer = ItemRenderer.getFoilBuffer(buffer, model.getLayer(texture, emissive = false, translucent = false), false, false)
+
+        var materialLocation = entity.material?.let { GenerationsTextureLoader.getLocation(it) }.also { ModifiableTextureSupplier.texture = it }
+
+        model.setLayerContext(buffer, entity.delegate, if(materialLocation == null) PokemonModelRepository.getLayers(entity.delegate.species(), entity.delegate.aspects()) else layerList)
+        val vertexConsumer = ItemRenderer.getFoilBuffer(buffer, if(materialLocation == null) model.getLayer(texture, emissive = false, translucent = false) else materialLocation.type(), false, false)
         model.render(context, stack, vertexConsumer, light, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f)
 
         model.resetLayerContext()
@@ -66,9 +96,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
 
         stack.popPose()
 
-        if (shouldShowName(entity)) {
-            renderNameTag(entity, entity.displayName, stack, buffer, light)
-        }
+        super.render(entity, entityYaw, partialTicks, stack, buffer, light)
     }
 
     fun setupAnimStateful(
@@ -115,8 +143,6 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         state.currentPose?.let { model.getPose(it) }?.idleStateful(null, model, state, limbSwing, limbSwingAmount, ageInTicks, headYaw, headPitch)
     }
 
-    override fun shouldShowName(entity: StatueEntity): Boolean = entity.label?.isNotBlank() == true && super.shouldShowName(entity)
-
 //    override fun scale(livingEntity: StatueEntity, matrixStack: PoseStack, partialTickTime: Float) {
 //        val species: Unit = livingEntity.getStatueData().properties.asRenderablePokemon().getForm()
 //        val scale: Unit = species.getBaseScale() * livingEntity.scale
@@ -139,3 +165,5 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         return PokemonModelRepository.getTexture(renderable.species.resourceIdentifier, renderable.aspects, 0f)
     }
 }
+
+private fun ResourceLocation.type(): RenderType = RenderType.entitySolid(this)

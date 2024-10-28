@@ -17,6 +17,7 @@ object DataKeys {
     const val FRAME = "Frame"
     const val INTERACTABLE = "Interactable"
     const val MATERIAL = "Material"
+    const val ORIENTATION = "Orientation"
 
     //Walkmon values
     const val DISC_HOLDER = "DiscHolder"
