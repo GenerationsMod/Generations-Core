@@ -23,14 +23,15 @@ public class LegendaryEggItem extends DistanceTraveledImplItem implements LangTo
     private final SpeciesKey speciesKey;
 
     public LegendaryEggItem(Properties properties, SpeciesKey speciesKey) {
-        super(properties, -1);
+        super(properties, 10_000);
         this.speciesKey = speciesKey;
     }
 
-    @Override
-    public double getMaxDistance() {
-        return PokemonSpecies.INSTANCE.getByIdentifier(speciesKey.species()).getEggCycles() * GenerationsCore.CONFIG.breeding.blocksPerEggCcyle;
-    }
+//    @Override
+//    public double getMaxDistance() {
+//        var species = PokemonSpecies.INSTANCE.getByIdentifier(speciesKey.species());
+//        return species.getEggCycles() * GenerationsCore.CONFIG.breeding.blocksPerEggCcyle;
+//    }
 
     @Override
     protected void onCompletion(ServerLevel level, Player player, InteractionHand usedHand) {
@@ -47,7 +48,9 @@ public class LegendaryEggItem extends DistanceTraveledImplItem implements LangTo
         var distance = remainingNeededDistance(stack);
 
         if(distance > 0) tooltipComponents.add(Component.nullToEmpty("Distance needed to hatch: %.2f".formatted(distance)));
-        else tooltipComponents.add(Component.nullToEmpty("Ready to Hatch. Right Click to hatch " + PokemonSpecies.INSTANCE.getByIdentifier(speciesKey.species()).getName() + "!"));
-
+        else {
+            var species = PokemonSpecies.INSTANCE.getByIdentifier(speciesKey.species());
+            tooltipComponents.add(Component.nullToEmpty("Ready to Hatch. Right Click to hatch " + (species != null ? species.getName() : "Redacted") + "!"));
+        }
     }
 }
