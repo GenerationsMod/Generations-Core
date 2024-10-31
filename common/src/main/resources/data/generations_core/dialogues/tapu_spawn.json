@@ -120,7 +120,6 @@
         "allowSkip": false,
         "delay": 1,
         "action": [
-          "q.player.main_hand.shrink(1);",
           "q.spawn_pokemon(q.player, v.pokemon_id + ' level=70', 'generations_core:tapu_shrine', 'generations_core:tapu_shrine');",
           "q.dialogue.close();"
         ]

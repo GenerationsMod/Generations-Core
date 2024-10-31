@@ -37,7 +37,7 @@ object GenerationsArchitecturyEvents {
                 ) {
                     val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("tapu_spawn")]
                         ?: return@register EventResult.interruptFalse()
-
+                    player.getItemInHand(hand).shrink(1)
                     player.openDialogue(dialogue)
 
                     return@register EventResult.interruptTrue()
@@ -48,6 +48,7 @@ object GenerationsArchitecturyEvents {
                     val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("therian_spawn")]
                         ?: return@register EventResult.interruptFalse()
 
+                    player.getItemInHand(hand).shrink(1)
                     player.openDialogue(dialogue)
 
                     return@register EventResult.interruptTrue()
