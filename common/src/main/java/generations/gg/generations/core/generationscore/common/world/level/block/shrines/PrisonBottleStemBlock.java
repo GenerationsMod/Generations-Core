@@ -8,7 +8,7 @@ import generations.gg.generations.core.generationscore.common.world.entity.block
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericShrineBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.schedule.ScheduledTask;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -28,7 +28,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class PrisonBottleStemBlock extends InteractShrineBlock<GenericShrineBlockEntity> {
+public class PrisonBottleStemBlock extends InteractShrineBlock<InteractShrineBlockEntity> {
     public static final GenerationsVoxelShapes.GenericRotatableShapes SHAPE = GenerationsVoxelShapes.generateRotationalVoxelShape(Shapes.or(
             Shapes.box(0.5, 1.55, 0.4375, 0.96875, 1.8250000000000002, 0.5625),
             Shapes.box(0.5, 0, 0.19374999999999998, 0.80625, 0.0625, 0.80625),
@@ -55,12 +55,12 @@ public class PrisonBottleStemBlock extends InteractShrineBlock<GenericShrineBloc
     public static final EnumProperty<PrisonBottleState> STATE = EnumProperty.create("state", PrisonBottleState.class);
 
     public PrisonBottleStemBlock(Properties materialIn) {
-        super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, GenerationsBlockEntityModels.PRISON_BOTTLE, 0, 2, 0);
+        super(materialIn, GenerationsBlockEntities.INTERACT_SHRINE, GenerationsBlockEntityModels.PRISON_BOTTLE, 0, 2, 0);
         this.registerDefaultState(defaultBlockState().setValue(STATE, PrisonBottleState.EMPTY));
     }
 
     @Override
-    protected boolean activate(Level world, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, ActivationState activationState) {
+    protected boolean interact(Level world, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, boolean activationState) {
         ItemStack heldItem = player.getMainHandItem();
 
         var baseState = world.getBlockState(pos);
@@ -93,25 +93,45 @@ public class PrisonBottleStemBlock extends InteractShrineBlock<GenericShrineBloc
             }
 
             if (baseState.getValue(STATE) == PrisonBottleState.UNBOUND) {
-                ScheduledTask.schedule(() -> {
-                    for (int x = 0; x < width + 1; x++) {
-                        for (int y = 0; y < height + 1; y++) {
-                            for (int z = 0; z < length + 1; z++) {
-                                var adjustX = adjustX(x);
-                                var adjustZ = adjustX(x);
-                                var blockPos = base.relative(dir.getCounterClockWise(), adjustX).relative(Direction.UP, y).relative(dir, adjustZ);
-
-                                world.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2, 0);
-                                world.addFreshEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, new ItemStack(GenerationsShrines.PRISON_BOTTLE.get())));
-                            }
-                        }
-                    }
-
-                    PokemonUtil.spawn(LegendKeys.HOOPA.createPokemon(70), world, base, dir.toYRot()); //TODO: Spawn as unbound.
-                }, 40);
+                getAssoicatedBlockEntity(world, pos).ifPresent(InteractShrineBlockEntity::triggerCountDown);
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean revertsAfterActivation() {
+        return false;
+    }
+
+    @Override
+    public int waitToDeactivateTime() {
+        return 40;
+    }
+
+    @Override
+    public void postDeactivation(Level world, BlockPos pos, BlockState state) {
+        var baseState = world.getBlockState(pos);
+        var base = getBaseBlockPos(pos, state);
+
+        var dir = state.getValue(FACING);
+
+        if (baseState.getValue(STATE) == PrisonBottleState.UNBOUND) {
+            for (int x = 0; x < width + 1; x++) {
+                for (int y = 0; y < height + 1; y++) {
+                    for (int z = 0; z < length + 1; z++) {
+                        var adjustX = adjustX(x);
+                        var adjustZ = adjustX(x);
+                        var blockPos = base.relative(dir.getCounterClockWise(), adjustX).relative(Direction.UP, y).relative(dir, adjustZ);
+
+                        world.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2, 0);
+                        if(adjustX == 0 && y == 0 && adjustZ == 0) world.addFreshEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, new ItemStack(GenerationsShrines.PRISON_BOTTLE.get())));
+
+                        PokemonUtil.spawn(LegendKeys.HOOPA.createPokemon(70), world, base, dir.toYRot()); //TODO: Spawn as unbound.
+                    }
+                }
+            }
+        }
     }
 
     @Override

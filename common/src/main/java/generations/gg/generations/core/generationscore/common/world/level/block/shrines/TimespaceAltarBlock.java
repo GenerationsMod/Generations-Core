@@ -43,7 +43,7 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
     }
 
     @Override
-    protected boolean activate(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, ActivationState activationState) {
+    protected boolean interact(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, boolean activationState) {
         ItemStack stack = player.getItemInHand(hand);
 
         var entity = getAssoicatedBlockEntity(level, pos).orElse(null);

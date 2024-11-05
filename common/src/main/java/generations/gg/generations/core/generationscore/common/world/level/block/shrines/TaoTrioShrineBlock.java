@@ -36,7 +36,7 @@ public class TaoTrioShrineBlock extends InteractShrineBlock<TaoTrioShrineBlockEn
     }
 
     @Override
-    protected boolean activate(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, ActivationState activationState) {
+    protected boolean interact(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, boolean activationState) {
         var stack = player.getItemInHand(hand);
         PokemonUtil.spawn(((TaoTrioStoneItem) stack.getItem()).getSpecies().createProperties(70), level, player.getOnPos());
         stack.shrink(1);

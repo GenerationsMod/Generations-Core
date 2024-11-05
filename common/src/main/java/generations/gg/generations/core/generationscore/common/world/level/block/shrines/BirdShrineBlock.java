@@ -53,15 +53,15 @@ public class BirdShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                 if (imbuedStack.isEmpty() || allowedImbuedItems.stream().noneMatch(a -> imbuedStack.is(item -> item.is(a)))) return InteractionResult.PASS;
                 var pokemonProperties = getProperties(imbuedStack);
 
-                if (isActive(state) == ActivationState.OFF && stack.getDamageValue() >= stack.getMaxDamage() && pokemonProperties != null) {
-                    toggleActive(level, pos);
+                if (InteractShrineBlock.isActive(state) && stack.getDamageValue() >= stack.getMaxDamage() && pokemonProperties != null) {
+                    InteractShrineBlock.toggleActive(level, pos);
                     level.playSound(null, pos, GenerationsSounds.LUGIA_SHRINE_SONG.get(), SoundSource.BLOCKS);
 
                     if(!player.isCreative()) stack.shrink(1);
 
                     ScheduledTask.schedule(() -> {
 
-                        toggleActive(level, pos);
+                        InteractShrineBlock.toggleActive(level, pos);
 
                         PokemonUtil.spawn(pokemonProperties, level, pos, state.getValue(FACING).toYRot());
                     }, 100);

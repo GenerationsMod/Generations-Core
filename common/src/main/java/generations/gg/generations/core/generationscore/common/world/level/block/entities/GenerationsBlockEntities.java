@@ -11,12 +11,14 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.*;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.CelestialAltarBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.HangingSignBlockEntity;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -37,6 +39,7 @@ public class GenerationsBlockEntities {
     public static final RegistrySupplier<MutableBlockEntityType<RegigigasShrineBlockEntity>> REGIGIGAS_SHRINE = registerMutable("regigigas_shrine", RegigigasShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<TaoTrioShrineBlockEntity>> TAO_TRIO_SHRINE = registerMutable("tao_trio_shrine", TaoTrioShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<TapuShrineBlockEntity>> TAPU_SHRINE = registerMutable("tapu_shrine", TapuShrineBlockEntity::new);
+    public static final RegistrySupplier<MutableBlockEntityType<InteractShrineBlockEntity>> INTERACT_SHRINE = registerMutable("interact_shrine", InteractShrineBlockEntity::new);
     public static final RegistrySupplier<MutableBlockEntityType<CookingPotBlockEntity>> COOKING_POT = registerMutable("cooking_pot", CookingPotBlockEntity::new);
     public static final RegistrySupplier<BlockEntityType<GenericChestBlockEntity>> GENERIC_CHEST = registerRegular("generic_chest", GenericChestBlockEntity::new,
             POKEBALL_CHEST,

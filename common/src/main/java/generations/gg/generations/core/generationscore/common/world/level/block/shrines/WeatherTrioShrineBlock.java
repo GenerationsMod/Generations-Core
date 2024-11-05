@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.WeatherTrioShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.schedule.ScheduledTask;
 import net.minecraft.core.BlockPos;
@@ -53,14 +54,16 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
     }
 
     @Override
-    protected boolean activate(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, ActivationState activationState) {
+    protected boolean interact(Level level, BlockPos pos, BlockState state, ServerPlayer player, InteractionHand hand, boolean activationState) {
         player.getMainHandItem().shrink(1);
 
-        toggleActive(level, pos);
-        ScheduledTask.schedule(() -> {
-            PokemonUtil.spawn(getSpecies().createPokemon(70), level, pos, getAngle(state));
-            toggleActive(level, pos);
-        }, 150);
+        InteractShrineBlock.toggleActive(level, pos);
+        getAssoicatedBlockEntity(level, pos).ifPresent(InteractShrineBlockEntity::triggerCountDown);
+
+//        ScheduledTask.schedule(() -> {
+//            PokemonUtil.spawn(getSpecies().createPokemon(70), level, pos, getAngle(state));
+//            InteractShrineBlock.toggleActive(level, pos);
+//        }, 150);
 
         return true;
     }
@@ -75,5 +78,20 @@ public class WeatherTrioShrineBlock extends InteractShrineBlock<WeatherTrioShrin
         if(speiceskey == LegendKeys.KYOGRE) return KYOGRE.getShape(state);
         else if(speiceskey == LegendKeys.GROUDON) return GROUDON.getShape(state);
         else return Shapes.block();
+    }
+
+    @Override
+    public boolean revertsAfterActivation() {
+        return true;
+    }
+
+    @Override
+    public int waitToDeactivateTime() {
+        return 150;
+    }
+
+    @Override
+    public void postDeactivation(Level level, BlockPos pos, BlockState state) {
+        PokemonUtil.spawn(getSpecies().createPokemon(70), level, pos, getAngle(state));
     }
 }

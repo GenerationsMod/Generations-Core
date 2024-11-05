@@ -11,9 +11,4 @@ public class ShrineBlockEntity extends ModelProvidingBlockEntity implements Mode
     public ShrineBlockEntity(MutableBlockEntityType<? extends ModelProvidingBlockEntity> arg, BlockPos arg2, BlockState arg3) {
         super(arg, arg2, arg3);
     }
-
-    @Override
-    public String getVariant() {
-        return getBlockState().getBlock() instanceof ShrineBlock<?> shrine ? shrine.getVariant(getBlockState()) : null;
-    }
 }

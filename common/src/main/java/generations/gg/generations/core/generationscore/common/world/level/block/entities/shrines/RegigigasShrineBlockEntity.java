@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class RegigigasShrineBlockEntity extends ShrineBlockEntity implements ItemContainerBlock {
+public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implements ItemContainerBlock {
     private RegigigasItemStackHandler handler;
 
     public RegigigasShrineBlockEntity(BlockPos arg2, BlockState arg3) {

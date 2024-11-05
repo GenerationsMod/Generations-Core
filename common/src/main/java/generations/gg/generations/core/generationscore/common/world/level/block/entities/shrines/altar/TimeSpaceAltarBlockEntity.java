@@ -8,7 +8,9 @@ import generations.gg.generations.core.generationscore.common.world.item.Generat
 import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
 import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity;
+import generations.gg.generations.core.generationscore.common.world.level.block.shrines.InteractShrineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
@@ -16,7 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class TimeSpaceAltarBlockEntity extends ShrineBlockEntity implements ItemContainerBlock, ModelContextProviders.VariantProvider {
+public class TimeSpaceAltarBlockEntity extends InteractShrineBlockEntity implements ItemContainerBlock, ModelContextProviders.VariantProvider {
 
     private TimeSpaceAltarItemStackHandler handler;
 
