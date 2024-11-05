@@ -40,6 +40,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -153,7 +154,7 @@ public class GenerationsCore {
 	}
 
 	public static void onAnvilChange(ItemStack left, ItemStack right, Player player, Consumer<ItemStack> output, IntConsumer cost, IntConsumer materialCost) {
-		if(left.getItem() instanceof EnchantableItem enchantableItem && enchantableItem.neededEnchantmentLevel(player) > 0 && !EnchantableItem.isEnchanted(left) && !EnchantableItem.isUsed(left) && right.isEmpty()) {
+		if(player instanceof ServerPlayer && left.getItem() instanceof EnchantableItem enchantableItem && enchantableItem.neededEnchantmentLevel(player) > 0 && !EnchantableItem.isEnchanted(left) && !EnchantableItem.isUsed(left) && right.isEmpty()) {
 			output.accept(EnchantableItem.setEnchanted(left.copy(), true));
 			cost.accept(100);
 			materialCost.accept(0);
