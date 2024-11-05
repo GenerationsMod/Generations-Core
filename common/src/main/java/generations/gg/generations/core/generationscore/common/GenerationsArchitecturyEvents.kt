@@ -7,11 +7,13 @@ import com.cobblemon.mod.common.util.openDialogue
 import dev.architectury.event.EventResult
 import dev.architectury.event.events.common.InteractionEvent
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents
+import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags
 import generations.gg.generations.core.generationscore.common.world.entity.ZygardeCellEntity
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.ZygardeCubeItem
 import generations.gg.generations.core.generationscore.common.world.level.block.ElevatorBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.VendingMachineBlock
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerPlayer
@@ -52,6 +54,8 @@ object GenerationsArchitecturyEvents {
                     player.openDialogue(dialogue)
 
                     return@register EventResult.interruptTrue()
+                } else if(player.level().getBlockState(pos).block is VendingMachineBlock) { //TODO: upgrade to a vending machines tag.
+
                 }
             }
 

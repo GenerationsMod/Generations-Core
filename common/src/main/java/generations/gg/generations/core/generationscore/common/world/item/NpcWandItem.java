@@ -1,19 +1,19 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.network.packets.npc.S2COpenNpcCustomizationScreenPacket;
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
-import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class NpcWandItem extends Item {
+import java.util.List;
+
+public class NpcWandItem extends Item { //TODO: Get it working with 1.6 npcs
     public NpcWandItem(Properties arg) {
         super(arg);
     }
@@ -21,15 +21,12 @@ public class NpcWandItem extends Item {
     @Override
     public @NotNull InteractionResult useOn(UseOnContext context) {
         if (context.getPlayer() != null && context.getPlayer() instanceof ServerPlayer serverPlayer) {
-            BlockPos pos = context.getClickedPos();
-            PlayerNpcEntity npcEntity = new PlayerNpcEntity(GenerationsEntities.PLAYER_NPC.get(), serverPlayer.level());
-            npcEntity.loadPreset(GenerationsCore.id("npc_default"));
-            VoxelShape collisionShape = serverPlayer.level().getBlockState(pos).getBlockSupportShape(serverPlayer.level(), pos);
-            double blockHeight = collisionShape.isEmpty() ? 0 : collisionShape.bounds().maxY;
-            npcEntity.setPos(pos.getX() + 0.5, pos.getY() + blockHeight, pos.getZ() + 0.5);
-            serverPlayer.level().addFreshEntity(npcEntity);
-            GenerationsNetwork.INSTANCE.sendPacketToPlayer(serverPlayer, new S2COpenNpcCustomizationScreenPacket(npcEntity.getId()));
         }
         return InteractionResult.PASS;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+        tooltipComponents.add(Component.translatable("item.unimplemented_until_1_dot_6_cobblemon"));
     }
 }

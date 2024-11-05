@@ -1,10 +1,6 @@
 package generations.gg.generations.core.generationscore.common.network
 
 import generations.gg.generations.core.generationscore.common.network.packets.*
-import generations.gg.generations.core.generationscore.common.network.packets.npc.S2COpenNpcCustomizationScreenHandler
-import generations.gg.generations.core.generationscore.common.network.packets.npc.S2COpenNpcCustomizationScreenPacket
-import generations.gg.generations.core.generationscore.common.network.packets.npc.S2CUpdateNpcDisplayDataHandler
-import generations.gg.generations.core.generationscore.common.network.packets.npc.S2CUpdateNpcDisplayDataPacket
 import generations.gg.generations.core.generationscore.common.network.packets.shop.*
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenHandler
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenPacket
@@ -25,11 +21,8 @@ class ClientPacketProxy : PacketProxy() {
     override val processS2COpenStatueEditorScreenPacket : Consumer<S2COpenStatueEditorScreenPacket> = createConsumer(S2COpenStatueEditorScreenHandler)
     override val processShopRegistrySyncPacket : Consumer<ShopRegistrySyncPacket> = createConsumer(DataRegistrySyncPacketHandler())
     override val processShopPresetRegistrySyncPacket : Consumer<ShopPresetRegistrySyncPacket> = createConsumer(DataRegistrySyncPacketHandler())
-    override val processNpcPresetsRegistrySyncPacket : Consumer<NpcPresetsRegistrySyncPacket> = createConsumer(DataRegistrySyncPacketHandler())
     override val processS2COpenShopPacket : Consumer<S2COpenShopPacket> = createConsumer(S2COpenShopHandler)
     override val processS2CSyncPlayerMoneyPacket : Consumer<S2CSyncPlayerMoneyPacket> = createConsumer(S2CSyncPlayerMoneyHandler())
-    override val processS2COpenNpcCustomizationScreenPacket : Consumer<S2COpenNpcCustomizationScreenPacket> = createConsumer(S2COpenNpcCustomizationScreenHandler())
-    override val processS2CUpdateNpcDisplayDataPacket : Consumer<S2CUpdateNpcDisplayDataPacket> = createConsumer(S2CUpdateNpcDisplayDataHandler())
     override val processSpawnStatuePacket : Consumer<SpawnStatuePacket> = createConsumer(SpawnExtraDataEntityHandler())
     override val processS2CPlaySoundPacket : Consumer<S2CPlaySoundPacket> = createConsumer(S2CPlaySoundHandler())
 

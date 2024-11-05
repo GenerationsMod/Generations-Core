@@ -3246,6 +3246,7 @@
   "item.generations_core.zygarde_cube.tooltip.cell_full": "The Zygarde Cube is full!",
   "item.generations_core.zygarde_cube.tooltip.lore1": "Collect Zygarde Cells to summon the balance.",
   "item.generations_core.zygarde_cube.tooltip.lore2": "Cells collected: %s/%s",
+  "item.unimplemented_until_1_dot_6_cobblemon": "Currently unimplemented. Will be looked in 1.6+ cobblemon.",
   "itemGroup.generations_core.awards": "Awards",
   "itemGroup.generations_core.building_blocks": "Building Blocks",
   "itemGroup.generations_core.cuisine": "Cuisine",

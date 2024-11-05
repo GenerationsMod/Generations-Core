@@ -359,6 +359,8 @@ public class GeneralLang extends LanguageProvider {
         add("generations_core.pokemon.encoded", "%s was encoded.");
 
         addEntityType(GenerationsEntities.STATUE_ENTITY, "Statue");
+
+        add("item.unimplemented_until_1_dot_6_cobblemon", "Currently unimplemented. Will be looked in 1.6+ cobblemon.");
     }
 
 

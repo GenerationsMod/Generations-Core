@@ -14,7 +14,6 @@ import net.minecraft.world.entity.MobCategory;
 public class GenerationsEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ENTITY_TYPE);
 
-    public static final RegistrySupplier<EntityType<PlayerNpcEntity>> PLAYER_NPC = createEntityType("player_npc", MobCategory.MISC, 0.6f, 1.8f, PlayerNpcEntity::new);
     public static final RegistrySupplier<EntityType<SittableEntity>> SEAT = createEntityType("seat", MobCategory.MISC, 0.0f, 0.0f, SittableEntity::new);
     public static final RegistrySupplier<EntityType<TieredFishingHookEntity>> TIERED_FISHING_BOBBER = ENTITIES.register("tiered_fishing_bobber", () -> EntityType.Builder.<TieredFishingHookEntity>of(TieredFishingHookEntity::new, MobCategory.MISC).noSave().sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(5).build("tiered_fishing_bobber"));
     public static final RegistrySupplier<EntityType<MagmaCrystalEntity>> MAGMA_CRYSTAL = ENTITIES.register("magma_crystal", () -> EntityType.Builder.<MagmaCrystalEntity>of((arg, arg2) -> new MagmaCrystalEntity(arg2), MobCategory.MISC).noSave().sized(0.25f, 0.025f).clientTrackingRange(4).updateInterval(10).build("magma_crystal"));

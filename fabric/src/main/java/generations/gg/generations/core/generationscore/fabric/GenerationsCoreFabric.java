@@ -6,8 +6,6 @@ import generations.gg.generations.core.generationscore.common.GenerationsImpleme
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
-import generations.gg.generations.core.generationscore.common.world.entity.PlayerNpcEntity;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures;
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
@@ -84,7 +82,6 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
         GenerationsConfiguredFeatures.init();
         GenerationsPlacedFeatures.init();
         GenerationsFabricBiomemodifiers.generateOres();
-        registerEntityAttributes();
         VanillaCompat.dispenserBehavior();
     }
 
@@ -130,11 +127,6 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
                 dependencies
             )
         );
-    }
-
-    public static void registerEntityAttributes(){
-//        FabricDefaultAttributeRegistry.register(GenerationsEntities.STATUE_ENTITY.get(), StatueEntity.createLivingAttributes());
-        FabricDefaultAttributeRegistry.register(GenerationsEntities.PLAYER_NPC.get(), PlayerNpcEntity.createMobAttributes());
     }
 
     @Override

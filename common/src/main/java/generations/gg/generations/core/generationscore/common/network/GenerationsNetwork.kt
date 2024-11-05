@@ -5,15 +5,11 @@ import dev.architectury.utils.EnvExecutor
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation
 import generations.gg.generations.core.generationscore.common.network.packets.*
-import generations.gg.generations.core.generationscore.common.network.packets.npc.*
 import generations.gg.generations.core.generationscore.common.network.packets.shop.*
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenPacket
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatueHandler
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatuePacket
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
-import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
-import generations.gg.generations.core.generationscore.common.world.shop.ShopPresetRegistrySyncPacket
-import generations.gg.generations.core.generationscore.common.world.shop.ShopRegistrySyncPacket
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.protocol.Packet
 import net.minecraft.network.protocol.game.ClientGamePacketListener
@@ -48,13 +44,10 @@ object GenerationsNetwork : GenerationsImplementation.NetworkManager {
         this.createClientBound(S2COpenMailPacket.ID, S2COpenMailPacket::decode, clientProxy.processS2COpenMailPacket)
         this.createClientBound(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket::decode, clientProxy.processS2CUnlockReloadPacket)
         this.createClientBound(S2COpenStatueEditorScreenPacket.ID, S2COpenStatueEditorScreenPacket::decode, clientProxy.processS2COpenStatueEditorScreenPacket)
-        this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket::decode, clientProxy.processShopRegistrySyncPacket)
-        this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket::decode, clientProxy.processShopPresetRegistrySyncPacket)
-        this.createClientBound(NpcPresetsRegistrySyncPacket.ID, NpcPresetsRegistrySyncPacket::decode, clientProxy.processNpcPresetsRegistrySyncPacket)
-        this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket::decode, clientProxy.processS2COpenShopPacket)
+//        this.createClientBound(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket::decode, clientProxy.processShopRegistrySyncPacket)
+//        this.createClientBound(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket::decode, clientProxy.processShopPresetRegistrySyncPacket)
+//        this.createClientBound(S2COpenShopPacket.ID, S2COpenShopPacket::decode, clientProxy.processS2COpenShopPacket)
         this.createClientBound(S2CSyncPlayerMoneyPacket.ID, ::S2CSyncPlayerMoneyPacket, clientProxy.processS2CSyncPlayerMoneyPacket)
-        this.createClientBound(S2COpenNpcCustomizationScreenPacket.ID, ::S2COpenNpcCustomizationScreenPacket, clientProxy.processS2COpenNpcCustomizationScreenPacket)
-        this.createClientBound(S2CUpdateNpcDisplayDataPacket.ID, ::S2CUpdateNpcDisplayDataPacket, clientProxy.processS2CUpdateNpcDisplayDataPacket)
         this.createClientBound(SpawnStatuePacket.ID, SpawnStatuePacket::decode, clientProxy.processSpawnStatuePacket)
         this.createClientBound(S2CPlaySoundPacket.ID, S2CPlaySoundPacket::decode, clientProxy.processS2CPlaySoundPacket)
     }
@@ -62,10 +55,7 @@ object GenerationsNetwork : GenerationsImplementation.NetworkManager {
     override fun registerServerBound() {
         this.createServerBound(C2STogglePacket.ID, C2STogglePacket::decode, C2SToggleHandler())
         this.createServerBound(C2SEditMailPacket.ID, C2SEditMailPacket::decode, C2SEditMailHandler())
-        this.createServerBound(C2SShopItemPacket.ID, C2SShopItemPacket::decode, C2SShopItemHandler())
-        this.createServerBound(C2SUpdateNpcDisplayDataPacket.ID, ::C2SUpdateNpcDisplayDataPacket, C2SUpdateNpcDisplayDataHandler())
-        this.createServerBound(C2SUpdateNpcShopPacket.ID, ::C2SUpdateNpcShopPacket, C2SUpdateNpcShopHandler())
-        this.createServerBound(C2SSetNpcPresetPacket.ID, ::C2SSetNpcPresetPacket, C2SSetNpcPresetHandler())
+//        this.createServerBound(C2SShopItemPacket.ID, C2SShopItemPacket::decode, C2SShopItemHandler())
         this.createServerBound(HeadPatPacket.ID, ::HeadPatPacket, HeadPatPacketHandler())
 
         createServerStatueUpdate()
