@@ -16,7 +16,6 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
-import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.giveOrDropItemStack
@@ -27,6 +26,7 @@ import generations.gg.generations.core.generationscore.common.network.packets.He
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags.*
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
+import generations.gg.generations.core.generationscore.common.world.item.FormChanging
 import generations.gg.generations.core.generationscore.common.world.item.FormChangingItem
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
@@ -149,33 +149,10 @@ class GenerationsCobblemonEvents {
                 val received = it.received.item
                 val returned = it.returned.item
 
-                var provider: ChoiceSpeciesFeatureProvider? = null
-                var value = ""
+                var formchanging = if(received is FormChanging) received else if(returned is FormChanging) returned else null ?: return@subscribe
 
-                if(received is FormChangingItem) {
-                    provider = it.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>(received.provider)
-                    value = received.value
-                } else if(returned is FormChangingItem) {
-                    provider = it.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>(returned.provider)
-                    value = provider?.default ?: ""
-                }
-
-                if(provider != null) {
-                    val feature = provider.get(it.pokemon)
-
-                    if(feature != null) {
-                        feature.value = value
-                        feature.apply(it.pokemon)
-
-                        it.pokemon.entity?.also { pokemon ->
-                            feature.apply(pokemon.pokemon)
-                            pokemon.entityData.set(PokemonEntity.ASPECTS, it.pokemon.aspects)
-
-//                            pokemon.pokemon = it.pokemon
-                        }
-
-                        it.pokemon.getOwnerPlayer()?.sendSystemMessage("generations_core.ability.formchange".asTranslated(it.pokemon.getDisplayName().string))
-                    }
+                if(formchanging.process(it.pokemon, returned == formchanging)) {
+                    it.pokemon.getOwnerPlayer()?.sendSystemMessage("generations_core.ability.formchange".asTranslated(it.pokemon.getDisplayName().string))
                 }
             }
 

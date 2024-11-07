@@ -273,6 +273,7 @@ public class GenerationsCoreClient {
         consumer.accept(GenerationsBlockEntities.REGIGIGAS_SHRINE.get(), RegigigasShrineBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.TAO_TRIO_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.TAPU_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
+        consumer.accept(GenerationsBlockEntities.INTERACT_SHRINE.get(), GeneralUseBlockEntityRenderer::new);
         consumer.accept(GenerationsBlockEntities.BREEDER.get(), BreederBlocEntityRenderer::new);
 
         consumer.accept(GenerationsBlockEntities.COOKING_POT.get(), CookingPotRenderer::new);

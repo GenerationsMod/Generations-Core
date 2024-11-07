@@ -7,7 +7,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericShrineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -125,9 +124,12 @@ public class PrisonBottleStemBlock extends InteractShrineBlock<InteractShrineBlo
                         var blockPos = base.relative(dir.getCounterClockWise(), adjustX).relative(Direction.UP, y).relative(dir, adjustZ);
 
                         world.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2, 0);
-                        if(adjustX == 0 && y == 0 && adjustZ == 0) world.addFreshEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, new ItemStack(GenerationsShrines.PRISON_BOTTLE.get())));
+                        if(adjustX == 0 && y == 0 && adjustZ == 0) {
+                            PokemonUtil.spawn(LegendKeys.HOOPA.createPokemon(70), world, base, dir.toYRot()); //TODO: Spawn as unbound.
 
-                        PokemonUtil.spawn(LegendKeys.HOOPA.createPokemon(70), world, base, dir.toYRot()); //TODO: Spawn as unbound.
+                            world.addFreshEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, new ItemStack(GenerationsShrines.PRISON_BOTTLE.get())));
+                        }
+
                     }
                 }
             }

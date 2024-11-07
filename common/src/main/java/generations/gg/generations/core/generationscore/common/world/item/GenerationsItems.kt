@@ -875,7 +875,7 @@ object GenerationsItems {
     @JvmField val DRAGON_SOUL = register("dragon_soul", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val MELODY_FLUTE = register("melody_flute", ::MelodyFluteItem, LEGENDARY_ITEMS)
     @JvmField val SPARKLING_SHARD = register("sparkling_shard", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
-    @JvmField val SPARKLING_STONE = register("sparkling_stone", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val SPARKLING_STONE = register("sparkling_stone", { ElementalPostBattleUpdateItemImpl(it.stacksTo(1).durability(100), ElementalTypes.FAIRY) }, LEGENDARY_ITEMS)
     @JvmField val RUSTY_FRAGMENT = register("rusty_fragment", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val RUSTY_SWORD = register("rusty_sword", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), LegendKeys.ZACIAN, ElementalTypes.STEEL) }, LEGENDARY_ITEMS)
     @JvmField val CROWNED_SWORD = register("crowned_sword", ::Item, LEGENDARY_ITEMS)

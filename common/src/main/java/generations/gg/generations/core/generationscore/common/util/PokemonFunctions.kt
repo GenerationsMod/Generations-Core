@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.util
 
 import com.cobblemon.mod.common.api.pokemon.feature.*
+import com.cobblemon.mod.common.api.properties.CustomPokemonProperty
 import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.pokemon.Pokemon
