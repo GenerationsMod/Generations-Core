@@ -1,0 +1,10 @@
+{
+    "target": "cobblemon:jumpluff",
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        }
+    }
+}

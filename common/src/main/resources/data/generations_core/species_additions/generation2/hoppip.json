@@ -1,0 +1,10 @@
+{
+    "target": "cobblemon:hoppip",
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        }
+    }
+}

@@ -5,6 +5,9 @@
             "swim": {
                 "canSwimInWater": true,
                 "canBreatheUnderwater": true
+            },
+            "fly": {
+                "canFly": true
             }
         },
         "resting": {

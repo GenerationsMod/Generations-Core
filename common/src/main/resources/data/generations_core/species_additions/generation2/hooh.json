@@ -1,5 +1,12 @@
 {
   "target": "cobblemon:hooh",
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "drops": {
     "amount": 2,
     "entries": [

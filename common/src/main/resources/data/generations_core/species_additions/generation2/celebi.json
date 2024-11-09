@@ -10,6 +10,11 @@
         ]
     },
     "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
         "resting": {
             "canSleep": true,
             "willSleepOnBed": false,
