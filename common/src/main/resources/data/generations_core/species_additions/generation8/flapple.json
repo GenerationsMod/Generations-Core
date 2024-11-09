@@ -1,69 +1,82 @@
 {
-  "target": "cobblemon:flapple",
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "grass",
-      "secondaryType": "dragon",
-      "abilities": [
-        "ripen",
-        "gluttony",
-        "h:hustle"
-      ],
-      "baseStats": {
-        "hp": 70,
-        "attack": 110,
-        "defence": 80,
-        "special_attack": 95,
-        "special_defence": 60,
-        "speed": 70
-      },
-      "catchRate": 45,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 170,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 2,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "erratic",
-      "eggCycles": 20,
-      "eggGroups": [
-        "grass",
-        "dragon"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 240,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "target": "cobblemon:flapple",
+    "forms": [
+        {
+            "name": "Gmax",
+            "primaryType": "grass",
+            "secondaryType": "dragon",
+            "abilities": [
+                "ripen",
+                "gluttony",
+                "h:hustle"
+            ],
+            "baseStats": {
+                "hp": 70,
+                "attack": 110,
+                "defence": 80,
+                "special_attack": 95,
+                "special_defence": 60,
+                "speed": 70
+            },
+            "catchRate": 45,
+            "maleRatio": 0.5,
+            "baseExperienceYield": 170,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 2,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "erratic",
+            "eggCycles": 20,
+            "eggGroups": [
+                "grass",
+                "dragon"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 240,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "minecraft:apple"
+            },
+            {
+                "item": "cobblemon:yache_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:apple"
-      },
-      {
-        "item": "cobblemon:yache_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

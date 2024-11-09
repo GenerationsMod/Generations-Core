@@ -1,66 +1,74 @@
 {
-  "target": "cobblemon:duraludon",
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "steel",
-      "secondaryType": "dragon",
-      "abilities": [
-        "lightmetal",
-        "heavymetal",
-        "h:stalwart"
-      ],
-      "baseStats": {
-        "hp": 70,
-        "attack": 95,
-        "defence": 115,
-        "special_attack": 120,
-        "special_defence": 50,
-        "speed": 85
-      },
-      "catchRate": 45,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 187,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 2,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 30,
-      "eggGroups": [
-        "mineral",
-        "dragon"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 430,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "target": "cobblemon:duraludon",
+    "forms": [
+        {
+            "name": "Gmax",
+            "primaryType": "steel",
+            "secondaryType": "dragon",
+            "abilities": [
+                "lightmetal",
+                "heavymetal",
+                "h:stalwart"
+            ],
+            "baseStats": {
+                "hp": 70,
+                "attack": 95,
+                "defence": 115,
+                "special_attack": 120,
+                "special_defence": 50,
+                "speed": 85
+            },
+            "catchRate": 45,
+            "maleRatio": 0.5,
+            "baseExperienceYield": 187,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 2,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "medium_fast",
+            "eggCycles": 30,
+            "eggGroups": [
+                "mineral",
+                "dragon"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 430,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "minecraft:iron_ingot",
+                "quantityRange": "0-1"
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "minecraft:iron_ingot",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

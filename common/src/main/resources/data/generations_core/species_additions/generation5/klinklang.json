@@ -1,16 +1,24 @@
 {
-  "target": "cobblemon:klinklang",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "quantityRange": "0-3"
-      },
-      {
-        "item": "generations_core:rusty_fragment",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:klinklang",
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "minecraft:raw_iron",
+                "quantityRange": "0-3"
+            },
+            {
+                "item": "generations_core:rusty_fragment",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

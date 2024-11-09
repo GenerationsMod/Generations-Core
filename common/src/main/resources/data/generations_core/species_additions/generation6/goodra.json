@@ -1,20 +1,28 @@
 {
-  "target": "cobblemon:goodra",
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:slime_ball",
-        "quantityRange": "0-3"
-      },
-      {
-        "item": "cobblemon:haban_berry",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:dragon_soul",
-        "percentage": 5.0
-      }
-    ]
-  }
+    "target": "cobblemon:goodra",
+    "drops": {
+        "amount": 4,
+        "entries": [
+            {
+                "item": "minecraft:slime_ball",
+                "quantityRange": "0-3"
+            },
+            {
+                "item": "cobblemon:haban_berry",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:dragon_soul",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

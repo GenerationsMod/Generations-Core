@@ -1,12 +1,20 @@
 {
-  "target": "cobblemon:regieleki",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "generations_core:regieleki_orb",
-        "percentage": 100.0
-      }
-    ]
-  }
+    "target": "cobblemon:regieleki",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "generations_core:regieleki_orb",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

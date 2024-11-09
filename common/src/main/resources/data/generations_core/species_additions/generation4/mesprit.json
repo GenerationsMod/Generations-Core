@@ -1,12 +1,25 @@
 {
-  "target": "cobblemon:mesprit",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "generations_core:mesprit_doll",
-        "percentage": 100.0
-      }
-    ]
-  }
+    "target": "cobblemon:mesprit",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "generations_core:mesprit_doll",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

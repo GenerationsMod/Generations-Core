@@ -1,20 +1,34 @@
 {
-  "target": "cobblemon:poliwhirl",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:kings_rock",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:chesto_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:poliwhirl_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:poliwhirl",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "cobblemon:kings_rock",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:chesto_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:poliwhirl_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

@@ -1,28 +1,41 @@
 {
-  "target": "cobblemon:dragonite",
-  "drops": {
-    "amount": 6,
-    "entries": [
-      {
-        "item": "minecraft:dragon_breath",
-        "quantityRange": "0-3"
-      },
-      {
-        "item": "cobblemon:dragon_fang",
-        "percentage": 10.0
-      },
-      {
-        "item": "cobblemon:dragon_scale",
-        "percentage": 10.0
-      },
-      {
-        "item": "cobblemon:yache_berry",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:dragon_soul",
-        "percentage": 5.0
-      }
-    ]
-  }
+    "target": "cobblemon:dragonite",
+    "drops": {
+        "amount": 6,
+        "entries": [
+            {
+                "item": "minecraft:dragon_breath",
+                "quantityRange": "0-3"
+            },
+            {
+                "item": "cobblemon:dragon_fang",
+                "percentage": 10.0
+            },
+            {
+                "item": "cobblemon:dragon_scale",
+                "percentage": 10.0
+            },
+            {
+                "item": "cobblemon:yache_berry",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:dragon_soul",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

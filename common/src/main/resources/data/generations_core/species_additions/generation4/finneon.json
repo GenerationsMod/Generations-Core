@@ -1,0 +1,17 @@
+{
+    "target": "cobblemon:finneon",
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
+}

@@ -1,16 +1,30 @@
 {
-  "target": "cobblemon:azurill",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:kebia_berry",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:azurill_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:azurill",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "cobblemon:kebia_berry",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:azurill_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

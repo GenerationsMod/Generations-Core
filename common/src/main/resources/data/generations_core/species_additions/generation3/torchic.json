@@ -1,23 +1,31 @@
 {
-  "target": "cobblemon:torchic",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:charcoal_stick",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:torchic_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:torchic",
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "minecraft:feather",
+                "quantityRange": "0-1"
+            },
+            {
+                "item": "minecraft:chicken"
+            },
+            {
+                "item": "cobblemon:charcoal_stick",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:torchic_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

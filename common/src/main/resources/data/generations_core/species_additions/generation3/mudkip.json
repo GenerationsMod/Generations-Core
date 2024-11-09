@@ -1,20 +1,34 @@
 {
-  "target": "cobblemon:mudkip",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:clay_ball",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:mystic_water",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:mudkip_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:mudkip",
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "minecraft:clay_ball",
+                "quantityRange": "0-1"
+            },
+            {
+                "item": "cobblemon:mystic_water",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:mudkip_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

@@ -1,24 +1,32 @@
 {
-  "target": "cobblemon:maractus",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:cactus",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:miracle_seed",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:green_petal",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:pink_petal",
-        "percentage": 10.0
-      }
-    ]
-  }
+    "target": "cobblemon:maractus",
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "minecraft:cactus",
+                "quantityRange": "0-2"
+            },
+            {
+                "item": "cobblemon:miracle_seed",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:green_petal",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:pink_petal",
+                "percentage": 10.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

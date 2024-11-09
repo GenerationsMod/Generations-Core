@@ -1,20 +1,28 @@
 {
-  "target": "cobblemon:rhydon",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "cobblemon:protector",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:passho_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:rhydon_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:rhydon",
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "cobblemon:protector",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:passho_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:rhydon_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

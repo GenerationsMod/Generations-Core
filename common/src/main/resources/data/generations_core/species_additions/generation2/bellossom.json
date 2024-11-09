@@ -1,20 +1,33 @@
 {
-  "target": "cobblemon:bellossom",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:pecha_berry",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:green_petal",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:yellow_petal",
-        "percentage": 10.0
-      }
-    ]
-  }
+    "target": "cobblemon:bellossom",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "cobblemon:pecha_berry",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:green_petal",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:yellow_petal",
+                "percentage": 10.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

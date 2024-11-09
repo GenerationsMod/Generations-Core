@@ -1,75 +1,83 @@
 {
-  "target": "cobblemon:cinderace",
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "fire",
-      "abilities": [
-        "blaze",
-        "h:libero"
-      ],
-      "baseStats": {
-        "hp": 80,
-        "attack": 116,
-        "defence": 75,
-        "special_attack": 65,
-        "special_defence": 75,
-        "speed": 119
-      },
-      "catchRate": 45,
-      "maleRatio": 0.875,
-      "baseExperienceYield": 265,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 3
-      },
-      "experienceGroup": "medium_slow",
-      "eggCycles": 20,
-      "eggGroups": [
-        "field",
-        "human_like"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 30,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "target": "cobblemon:cinderace",
+    "forms": [
+        {
+            "name": "Gmax",
+            "primaryType": "fire",
+            "abilities": [
+                "blaze",
+                "h:libero"
+            ],
+            "baseStats": {
+                "hp": 80,
+                "attack": 116,
+                "defence": 75,
+                "special_attack": 65,
+                "special_defence": 75,
+                "speed": 119
+            },
+            "catchRate": 45,
+            "maleRatio": 0.875,
+            "baseExperienceYield": 265,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 0,
+                "speed": 3
+            },
+            "experienceGroup": "medium_slow",
+            "eggCycles": 20,
+            "eggGroups": [
+                "field",
+                "human_like"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 30,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 6,
+        "entries": [
+            {
+                "item": "minecraft:rabbit_hide",
+                "quantityRange": "0-3"
+            },
+            {
+                "item": "minecraft:rabbit"
+            },
+            {
+                "item": "minecraft:rabbit_foot",
+                "percentage": 25.0
+            },
+            {
+                "item": "cobblemon:charcoal_stick",
+                "percentage": 25.0
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 6,
-    "entries": [
-      {
-        "item": "minecraft:rabbit_hide",
-        "quantityRange": "0-3"
-      },
-      {
-        "item": "minecraft:rabbit"
-      },
-      {
-        "item": "minecraft:rabbit_foot",
-        "percentage": 25.0
-      },
-      {
-        "item": "cobblemon:charcoal_stick",
-        "percentage": 25.0
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

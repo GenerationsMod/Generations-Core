@@ -1,20 +1,33 @@
 {
-  "target": "cobblemon:victreebel",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:big_root",
-        "percentage": 10.0
-      },
-      {
-        "item": "cobblemon:pinap_berry",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:green_petal",
-        "percentage": 10.0
-      }
-    ]
-  }
+    "target": "cobblemon:victreebel",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "cobblemon:big_root",
+                "percentage": 10.0
+            },
+            {
+                "item": "cobblemon:pinap_berry",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:green_petal",
+                "percentage": 10.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

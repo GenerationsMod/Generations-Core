@@ -1,20 +1,28 @@
 {
-  "target": "cobblemon:treecko",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:stick",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:miracle_seed",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:treecko_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:treecko",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "minecraft:stick",
+                "quantityRange": "0-1"
+            },
+            {
+                "item": "cobblemon:miracle_seed",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:treecko_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

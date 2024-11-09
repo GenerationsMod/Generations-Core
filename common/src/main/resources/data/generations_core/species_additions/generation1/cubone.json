@@ -1,54 +1,62 @@
 {
-  "target": "cobblemon:cubone",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:nanab_berry",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:cubone_doll",
-        "percentage": 1.0
-      }
-    ]
-  },
-  "evolutions": [
-    {
-      "id": "cubone_marowak",
-      "variant": "level_up",
-      "result": "marowak",
-      "consumeHeldItem": false,
-      "learnableMoves": [],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 28
-        }
-      ]
+    "target": "cobblemon:cubone",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "minecraft:bone",
+                "quantityRange": "0-1"
+            },
+            {
+                "item": "cobblemon:nanab_berry",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:cubone_doll",
+                "percentage": 1.0
+            }
+        ]
     },
-    {
-      "id": "cubone_marowak",
-      "variant": "level_up",
-      "result": "marowak form=alola",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "shadowbone"
-      ],
-      "requirements": [
+    "evolutions": [
         {
-          "variant": "level",
-          "minLevel": 28
+            "id": "cubone_marowak",
+            "variant": "level_up",
+            "result": "marowak",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+                {
+                    "variant": "level",
+                    "minLevel": 28
+                }
+            ]
         },
         {
-          "variant": "time_range",
-          "range": "night"
+            "id": "cubone_marowak",
+            "variant": "level_up",
+            "result": "marowak form=alola",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+                "shadowbone"
+            ],
+            "requirements": [
+                {
+                    "variant": "level",
+                    "minLevel": 28
+                },
+                {
+                    "variant": "time_range",
+                    "range": "night"
+                }
+            ]
         }
-      ]
+    ],
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ]
 }

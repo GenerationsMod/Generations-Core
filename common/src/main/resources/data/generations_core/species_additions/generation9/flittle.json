@@ -1,19 +1,32 @@
 {
-  "target": "cobblemon:flittle",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:tanga_berry",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:light_soul",
-        "percentage": 2.5
-      }
-    ]
-  }
+    "target": "cobblemon:flittle",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "minecraft:chicken"
+            },
+            {
+                "item": "cobblemon:tanga_berry",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:light_soul",
+                "percentage": 2.5
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

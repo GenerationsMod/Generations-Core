@@ -1,68 +1,76 @@
 {
-  "target": "cobblemon:copperajah",
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "steel",
-      "abilities": [
-        "sheerforce",
-        "h:heavymetal"
-      ],
-      "baseStats": {
-        "hp": 122,
-        "attack": 130,
-        "defence": 69,
-        "special_attack": 80,
-        "special_defence": 69,
-        "speed": 30
-      },
-      "catchRate": 90,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 175,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 2,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 25,
-      "eggGroups": [
-        "field",
-        "mineral"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 230,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "target": "cobblemon:copperajah",
+    "forms": [
+        {
+            "name": "Gmax",
+            "primaryType": "steel",
+            "abilities": [
+                "sheerforce",
+                "h:heavymetal"
+            ],
+            "baseStats": {
+                "hp": 122,
+                "attack": 130,
+                "defence": 69,
+                "special_attack": 80,
+                "special_defence": 69,
+                "speed": 30
+            },
+            "catchRate": 90,
+            "maleRatio": 0.5,
+            "baseExperienceYield": 175,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 2,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "medium_fast",
+            "eggCycles": 25,
+            "eggGroups": [
+                "field",
+                "mineral"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 230,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "minecraft:raw_copper",
+                "quantityRange": "0-2"
+            },
+            {
+                "item": "cobblemon:nanab_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:raw_copper",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:nanab_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

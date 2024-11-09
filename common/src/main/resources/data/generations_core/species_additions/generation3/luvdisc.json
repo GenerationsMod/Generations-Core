@@ -1,16 +1,30 @@
 {
-  "target": "cobblemon:luvdisc",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:deep_sea_scale",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:heart_scale",
-        "percentage": 5.0
-      }
-    ]
-  }
+    "target": "cobblemon:luvdisc",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "cobblemon:deep_sea_scale",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:heart_scale",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

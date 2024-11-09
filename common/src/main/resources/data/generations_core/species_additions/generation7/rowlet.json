@@ -1,23 +1,36 @@
 {
-  "target": "cobblemon:rowlet",
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:miracle_seed",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:rowlet_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:rowlet",
+    "drops": {
+        "amount": 4,
+        "entries": [
+            {
+                "item": "minecraft:feather",
+                "quantityRange": "0-1"
+            },
+            {
+                "item": "minecraft:chicken"
+            },
+            {
+                "item": "cobblemon:miracle_seed",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:rowlet_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

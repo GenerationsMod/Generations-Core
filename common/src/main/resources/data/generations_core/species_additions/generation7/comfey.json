@@ -1,32 +1,45 @@
 {
-  "target": "cobblemon:comfey",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "cobblemon:misty_seed",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:kebia_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:pink_petal",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:purple_petal",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:red_petal",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:yellow_petal",
-        "percentage": 10.0
-      }
-    ]
-  }
+    "target": "cobblemon:comfey",
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "cobblemon:misty_seed",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:kebia_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:pink_petal",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:purple_petal",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:red_petal",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:yellow_petal",
+                "percentage": 10.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

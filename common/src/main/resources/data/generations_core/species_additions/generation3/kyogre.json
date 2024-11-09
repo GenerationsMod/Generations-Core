@@ -1,63 +1,77 @@
 {
-  "target": "cobblemon:kyogre",
-  "forms": [
-    {
-      "name": "Primal",
-      "primaryType": "water",
-      "abilities": [
-        "primordialsea"
-      ],
-      "baseStats": {
-        "hp": 100,
-        "attack": 150,
-        "defence": 90,
-        "special_attack": 180,
-        "special_defence": 160,
-        "speed": 90
-      },
-      "catchRate": 3,
-      "maleRatio": -1,
-      "baseExperienceYield": 335,
-      "baseFriendship": 0,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 3,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 120,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen6",
-        "primal",
-        "legendary"
-      ],
-      "aspects": [
-        "primal"
-      ],
-      "height": 98,
-      "weight": 4300,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
+    "target": "cobblemon:kyogre",
+    "forms": [
+        {
+            "name": "Primal",
+            "primaryType": "water",
+            "abilities": [
+                "primordialsea"
+            ],
+            "baseStats": {
+                "hp": 100,
+                "attack": 150,
+                "defence": 90,
+                "special_attack": 180,
+                "special_defence": 160,
+                "speed": 90
+            },
+            "catchRate": 3,
+            "maleRatio": -1,
+            "baseExperienceYield": 335,
+            "baseFriendship": 0,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 3,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "slow",
+            "eggCycles": 120,
+            "eggGroups": [
+                "undiscovered"
+            ],
+            "labels": [
+                "gen6",
+                "primal",
+                "legendary"
+            ],
+            "aspects": [
+                "primal"
+            ],
+            "height": 98,
+            "weight": 4300,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true
+        }
+    ],
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "generations_core:kyogre_doll",
+                "percentage": 100.0
+            },
+            {
+                "item": "generations_core:blue_orb",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "generations_core:kyogre_doll",
-        "percentage": 100.0
-      },
-      {
-        "item": "generations_core:blue_orb",
-        "percentage": 100.0
-      }
-    ]
-  }
 }

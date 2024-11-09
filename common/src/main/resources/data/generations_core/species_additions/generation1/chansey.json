@@ -1,0 +1,11 @@
+{
+    "target": "cobblemon:chansey",
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
+}

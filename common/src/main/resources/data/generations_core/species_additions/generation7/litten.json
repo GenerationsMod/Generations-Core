@@ -1,16 +1,24 @@
 {
-  "target": "cobblemon:litten",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:charcoal_stick",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:litten_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:litten",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "cobblemon:charcoal_stick",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:litten_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

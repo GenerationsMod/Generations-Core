@@ -1,51 +1,59 @@
 {
-  "target": "cobblemon:abomasnow",
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "grass",
-      "secondaryType": "ice",
-      "abilities": [
-        "snowwarning"
-      ],
-      "baseStats": {
-        "hp": 90,
-        "attack": 132,
-        "defence": 105,
-        "special_attack": 132,
-        "special_defence": 105,
-        "speed": 30
-      },
-      "catchRate": 60,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 173,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 1,
-        "defence": 0,
-        "special_attack": 1,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 20,
-      "eggGroups": [
-        "monster",
-        "grass"
-      ],
-      "labels": [
-        "gen6",
-        "mega"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 27,
-      "weight": 1850,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
+    "target": "cobblemon:abomasnow",
+    "forms": [
+        {
+            "name": "Mega",
+            "primaryType": "grass",
+            "secondaryType": "ice",
+            "abilities": [
+                "snowwarning"
+            ],
+            "baseStats": {
+                "hp": 90,
+                "attack": 132,
+                "defence": 105,
+                "special_attack": 132,
+                "special_defence": 105,
+                "speed": 30
+            },
+            "catchRate": 60,
+            "maleRatio": 0.5,
+            "baseExperienceYield": 173,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 1,
+                "defence": 0,
+                "special_attack": 1,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "slow",
+            "eggCycles": 20,
+            "eggGroups": [
+                "monster",
+                "grass"
+            ],
+            "labels": [
+                "gen6",
+                "mega"
+            ],
+            "aspects": [
+                "mega"
+            ],
+            "height": 27,
+            "weight": 1850,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true
+        }
+    ],
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ]
 }

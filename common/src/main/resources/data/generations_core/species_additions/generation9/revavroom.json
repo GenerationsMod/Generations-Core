@@ -1,24 +1,37 @@
 {
-  "target": "cobblemon:revavroom",
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:iron_nugget",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:black_sludge",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:shuca_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:rusty_fragment",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:revavroom",
+    "drops": {
+        "amount": 4,
+        "entries": [
+            {
+                "item": "minecraft:iron_nugget",
+                "quantityRange": "0-2"
+            },
+            {
+                "item": "cobblemon:black_sludge",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:shuca_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:rusty_fragment",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

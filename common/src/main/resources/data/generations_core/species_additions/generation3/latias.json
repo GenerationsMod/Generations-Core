@@ -1,64 +1,77 @@
 {
-  "target": "cobblemon:latias",
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "dragon",
-      "secondaryType": "psychic",
-      "abilities": [
-        "levitate"
-      ],
-      "baseStats": {
-        "hp": 80,
-        "attack": 100,
-        "defence": 120,
-        "special_attack": 140,
-        "special_defence": 150,
-        "speed": 110
-      },
-      "catchRate": 3,
-      "maleRatio": 0,
-      "baseExperienceYield": 300,
-      "baseFriendship": 90,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 3,
-        "speed": 0
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 120,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen6",
-        "mega",
-        "legendary"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 18,
-      "weight": 520,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
+    "target": "cobblemon:latias",
+    "forms": [
+        {
+            "name": "Mega",
+            "primaryType": "dragon",
+            "secondaryType": "psychic",
+            "abilities": [
+                "levitate"
+            ],
+            "baseStats": {
+                "hp": 80,
+                "attack": 100,
+                "defence": 120,
+                "special_attack": 140,
+                "special_defence": 150,
+                "speed": 110
+            },
+            "catchRate": 3,
+            "maleRatio": 0,
+            "baseExperienceYield": 300,
+            "baseFriendship": 90,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 3,
+                "speed": 0
+            },
+            "experienceGroup": "slow",
+            "eggCycles": 120,
+            "eggGroups": [
+                "undiscovered"
+            ],
+            "labels": [
+                "gen6",
+                "mega",
+                "legendary"
+            ],
+            "aspects": [
+                "mega"
+            ],
+            "height": 18,
+            "weight": 520,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true
+        }
+    ],
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "generations_core:latias_doll",
+                "percentage": 100.0
+            },
+            {
+                "item": "generations_core:soul_dew",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "generations_core:latias_doll",
-        "percentage": 100.0
-      },
-      {
-        "item": "generations_core:soul_dew",
-        "percentage": 100.0
-      }
-    ]
-  }
 }

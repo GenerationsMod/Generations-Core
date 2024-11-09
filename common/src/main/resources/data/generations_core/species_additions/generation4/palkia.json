@@ -1,16 +1,29 @@
 {
-  "target": "cobblemon:palkia",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "generations_core:palkia_doll",
-        "percentage": 100.0
-      },
-      {
-        "item": "generations_core:lustrous_orb",
-        "percentage": 100.0
-      }
-    ]
-  }
+    "target": "cobblemon:palkia",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "generations_core:palkia_doll",
+                "percentage": 100.0
+            },
+            {
+                "item": "generations_core:lustrous_orb",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

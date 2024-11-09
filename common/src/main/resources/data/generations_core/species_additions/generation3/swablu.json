@@ -1,22 +1,35 @@
 {
-  "target": "cobblemon:swablu",
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:white_wool"
-      },
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:yache_berry",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:swablu_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:swablu",
+    "drops": {
+        "amount": 4,
+        "entries": [
+            {
+                "item": "minecraft:white_wool"
+            },
+            {
+                "item": "minecraft:chicken"
+            },
+            {
+                "item": "cobblemon:yache_berry",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:swablu_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }
