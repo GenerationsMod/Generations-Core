@@ -1,6 +1,12 @@
 {
     "target": "cobblemon:seismitoad",
     "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
         "resting": {
             "canSleep": true,
             "willSleepOnBed": false,

@@ -1,6 +1,12 @@
 {
     "target": "cobblemon:tapufini",
     "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
         "resting": {
             "canSleep": true,
             "willSleepOnBed": false,
