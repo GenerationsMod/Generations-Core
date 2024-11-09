@@ -1,16 +1,19 @@
 package generations.gg.generations.core.generationscore.common.client.model
 
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.client.render.layer.CobblemonRenderLayers
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext.RenderState
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.util.asResource
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
 import generations.gg.generations.core.generationscore.common.client.model.SpriteRegistry.getPokemonSprite
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CompiledModel
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines
@@ -116,7 +119,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             }
         }
         val isStatue = instance is StatueInstance
-        val scale = model.renderObject!!.scale // / context.requires(RenderContext.SCALE)
+        var scale = model.renderObject!!.scale // / context.requires(RenderContext.SCALE)
         if (instance == null) {
             return
         } else {
@@ -124,9 +127,13 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
                 if (model.guiInstance == null) return
                 instance.matrixTransforms = model.guiInstance!!.matrixTransforms
                 instance.offsets = model.guiInstance!!.offsets
-            }
+            } else {
+                val entity = context.request(RenderContext.ENTITY) as? PokemonEntity
 
-//            scale *= PokemonSpecies.INSTANCE.getByIdentifier(context.requires(RenderContext.Companion.getSPECIES())).getForm(context.requires(RenderContext.Companion.getASPECTS())).getHitbox().height;
+                if(entity != null) {
+                    scale *= 1f / entity.pokemon.form.baseScale
+                }
+            }
         }
         if (model.renderObject!!.isReady) {
             instance.light = packedLight
