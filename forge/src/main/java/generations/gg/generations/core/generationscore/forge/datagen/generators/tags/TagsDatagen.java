@@ -117,6 +117,14 @@ public class TagsDatagen {
                     GenerationsDecorationBlocks.DESK.get(),
                     GenerationsDecorationBlocks.FRIDGE.get()
             )
+                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
+                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
+                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
+                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
+                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
+                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
+                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
+                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
                     .add(GenerationsUtilityBlocks.PC.toArray())
                     .add(GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.stream().map(Supplier::get).toArray(BallDisplayBlock[]::new));
 
@@ -263,7 +271,13 @@ public class TagsDatagen {
             tag(GenerationsBlockTags.VOLCANIC_STONE_BRICKS)
                     .add(GenerationsBlocks.VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(), GenerationsBlocks.CRACKED_VOLCANIC_STONE_BRICKS.get(), GenerationsBlocks.CHISELED_VOLCANIC_STONE_BRICKS.get());
 
-            tag(BlockTags.MINEABLE_WITH_AXE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get(), GenerationsUtilityBlocks.SCARECROW.get(), GenerationsUtilityBlocks.BOX.get());
+            tag(BlockTags.MINEABLE_WITH_AXE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get(), GenerationsUtilityBlocks.SCARECROW.get(), GenerationsUtilityBlocks.BOX.get())
+                    .add(GenerationsDecorationBlocks.COUCH_ARM_LEFT.toArray())
+                    .add(GenerationsDecorationBlocks.COUCH_ARM_RIGHT.toArray())
+                    .add(GenerationsDecorationBlocks.COUCH_CORNER_LEFT.toArray())
+                    .add(GenerationsDecorationBlocks.COUCH_CORNER_RIGHT.toArray())
+                    .add(GenerationsDecorationBlocks.COUCH_MIDDLE.toArray())
+                    .add(GenerationsDecorationBlocks.COUCH_OTTOMAN.toArray());
             tag(BlockTags.ENDERMAN_HOLDABLE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
             tag(BlockTags.SWORD_EFFICIENT).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
             tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)
