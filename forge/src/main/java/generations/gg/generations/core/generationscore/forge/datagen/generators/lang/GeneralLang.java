@@ -153,6 +153,12 @@ public class GeneralLang extends LanguageProvider {
         add("cobblemon.move.ficklebeam", "Fickle Beam");
         add("cobblemon.move.ficklebeam.name", "Fickle Beam");
         add("cobblemon.move.ficklebeam.desc", "Shoots a beam of light to deal damage. Sometimes all the user's heads shoot beams in unison, doubling the power.");
+        add("cobblemon.move.alluringvoice", "Alluring Voice");
+        add("cobblemon.move.alluringvoice.name", "Alluring Voice");
+        add("cobblemon.move.alluringvoice.desc", "The user attacks with its angelic voice, and also confuses the target if its stats were boosted during the turn.");
+        add("cobblemon.move.psychicnoise", "Psychic Noise");
+        add("cobblemon.move.psychicnoise.name", "Psychic Noise");
+        add("cobblemon.move.psychicnoise.desc", "The user attacks with unpleasant sound waves, preventing the target from recovering HP through moves, abilities, or held items for two turns.");
         add("cobblemon.species.ponytagalar.name", "Galarian Ponyta");
 
         //Posters
