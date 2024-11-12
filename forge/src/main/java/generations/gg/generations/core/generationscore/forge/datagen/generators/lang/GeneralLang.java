@@ -144,6 +144,15 @@ public class GeneralLang extends LanguageProvider {
         add("move.newmove3", "...and learned %s!");
 
         //Temp Cobblemon
+        add("cobblemon.move.upperhand", "Upper Hand");
+        add("cobblemon.move.upperhand.name", "Upper Hand");
+        add("cobblemon.move.upperhand.desc", "The user strikes with the heel of their palm, causing the target to flinch. Fails if the target is not readying a priority move.");
+        add("cobblemon.move.hardpress", "Hard Press");
+        add("cobblemon.move.hardpress.name", "Hard Press");
+        add("cobblemon.move.hardpress.desc", "The target is crushed with an arm, a claw, or the like to inflict damage. The more HP the target has left, the greater the power.");
+        add("cobblemon.move.temperflare", "Temper Flare");
+        add("cobblemon.move.temperflare.name", "Temper Flare");
+        add("cobblemon.move.temperfale.desc", "Spurred by desperation, the user attacks the target. This power is doubled if the previous move failed.");
         add("cobblemon.move.dragoncheer", "Dragon Cheer");
         add("cobblemon.move.dragoncheer.name", "Dragon Cheer");
         add("cobblemon.move.dragoncheer.desc", "The user cheers a draconic cry to raise its allies critical hit chance. This rouses Dragon types more.");
