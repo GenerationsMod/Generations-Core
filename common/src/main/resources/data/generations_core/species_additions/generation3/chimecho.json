@@ -1,16 +1,29 @@
 {
-  "target": "cobblemon:chimecho",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:colbur_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:light_soul",
-        "percentage": 2.5
-      }
-    ]
-  }
+    "target": "cobblemon:chimecho",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "cobblemon:colbur_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:light_soul",
+                "percentage": 2.5
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

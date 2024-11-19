@@ -1,20 +1,33 @@
 {
-  "target": "cobblemon:jigglypuff",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "cobblemon:moon_stone",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:oran_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:jigglypuff_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:jigglypuff",
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "cobblemon:moon_stone",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:oran_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:jigglypuff_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

@@ -1,16 +1,24 @@
 {
-  "target": "cobblemon:ekans",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:razor_fang",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:ekans_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:ekans",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "cobblemon:razor_fang",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:ekans_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

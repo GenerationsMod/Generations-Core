@@ -1,69 +1,77 @@
 {
-  "target": "cobblemon:centiskorch",
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "fire",
-      "secondaryType": "bug",
-      "abilities": [
-        "flashfire",
-        "whitesmoke",
-        "h:flamebody"
-      ],
-      "baseStats": {
-        "hp": 100,
-        "attack": 115,
-        "defence": 65,
-        "special_attack": 90,
-        "special_defence": 90,
-        "speed": 65
-      },
-      "catchRate": 75,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 184,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 2,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 20,
-      "eggGroups": [
-        "bug"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 750,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "target": "cobblemon:centiskorch",
+    "forms": [
+        {
+            "name": "Gmax",
+            "primaryType": "fire",
+            "secondaryType": "bug",
+            "abilities": [
+                "flashfire",
+                "whitesmoke",
+                "h:flamebody"
+            ],
+            "baseStats": {
+                "hp": 100,
+                "attack": 115,
+                "defence": 65,
+                "special_attack": 90,
+                "special_defence": 90,
+                "speed": 65
+            },
+            "catchRate": 75,
+            "maleRatio": 0.5,
+            "baseExperienceYield": 184,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 2,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "medium_fast",
+            "eggCycles": 20,
+            "eggGroups": [
+                "bug"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 750,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "minecraft:blaze_powder",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:charti_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:blaze_powder",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:charti_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

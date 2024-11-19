@@ -1,0 +1,10 @@
+{
+    "target": "cobblemon:golbat",
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        }
+    }
+}

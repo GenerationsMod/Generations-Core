@@ -1,16 +1,30 @@
 {
-  "target": "cobblemon:popplio",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:mystic_water",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:popplio_doll",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:popplio",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "cobblemon:mystic_water",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:popplio_doll",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

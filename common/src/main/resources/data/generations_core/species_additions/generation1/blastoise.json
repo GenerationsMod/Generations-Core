@@ -1,117 +1,131 @@
 {
-  "target": "cobblemon:blastoise",
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "water",
-      "abilities": [
-        "megalauncher"
-      ],
-      "baseStats": {
-        "hp": 79,
-        "attack": 103,
-        "defence": 120,
-        "special_attack": 135,
-        "special_defence": 115,
-        "speed": 78
-      },
-      "catchRate": 45,
-      "maleRatio": 0.875,
-      "baseExperienceYield": 265,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 3,
-        "speed": 0
-      },
-      "experienceGroup": "medium_slow",
-      "eggCycles": 20,
-      "eggGroups": [
-        "monster",
-        "water_1"
-      ],
-      "labels": [
-        "gen6",
-        "mega"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 16,
-      "weight": 1011,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
+    "target": "cobblemon:blastoise",
+    "forms": [
+        {
+            "name": "Mega",
+            "primaryType": "water",
+            "abilities": [
+                "megalauncher"
+            ],
+            "baseStats": {
+                "hp": 79,
+                "attack": 103,
+                "defence": 120,
+                "special_attack": 135,
+                "special_defence": 115,
+                "speed": 78
+            },
+            "catchRate": 45,
+            "maleRatio": 0.875,
+            "baseExperienceYield": 265,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 3,
+                "speed": 0
+            },
+            "experienceGroup": "medium_slow",
+            "eggCycles": 20,
+            "eggGroups": [
+                "monster",
+                "water_1"
+            ],
+            "labels": [
+                "gen6",
+                "mega"
+            ],
+            "aspects": [
+                "mega"
+            ],
+            "height": 16,
+            "weight": 1011,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true
+        },
+        {
+            "name": "Gmax",
+            "primaryType": "water",
+            "abilities": [
+                "torrent",
+                "h:raindish"
+            ],
+            "baseStats": {
+                "hp": 79,
+                "attack": 83,
+                "defence": 100,
+                "special_attack": 85,
+                "special_defence": 105,
+                "speed": 78
+            },
+            "catchRate": 45,
+            "maleRatio": 0.875,
+            "baseExperienceYield": 265,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 3,
+                "speed": 0
+            },
+            "experienceGroup": "medium_slow",
+            "eggCycles": 20,
+            "eggGroups": [
+                "monster",
+                "water_1"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 16,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 4,
+        "entries": [
+            {
+                "item": "minecraft:scute",
+                "quantityRange": "0-3"
+            },
+            {
+                "item": "cobblemon:mystic_water",
+                "percentage": 25.0
+            },
+            {
+                "item": "generations_core:blastoise_doll",
+                "percentage": 1.0
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
     },
-    {
-      "name": "Gmax",
-      "primaryType": "water",
-      "abilities": [
-        "torrent",
-        "h:raindish"
-      ],
-      "baseStats": {
-        "hp": 79,
-        "attack": 83,
-        "defence": 100,
-        "special_attack": 85,
-        "special_defence": 105,
-        "speed": 78
-      },
-      "catchRate": 45,
-      "maleRatio": 0.875,
-      "baseExperienceYield": 265,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 3,
-        "speed": 0
-      },
-      "experienceGroup": "medium_slow",
-      "eggCycles": 20,
-      "eggGroups": [
-        "monster",
-        "water_1"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 16,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:scute",
-        "quantityRange": "0-3"
-      },
-      {
-        "item": "cobblemon:mystic_water",
-        "percentage": 25.0
-      },
-      {
-        "item": "generations_core:blastoise_doll",
-        "percentage": 1.0
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

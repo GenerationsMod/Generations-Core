@@ -1,12 +1,26 @@
 {
-  "target": "cobblemon:manaphy",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "generations_core:manaphy_doll",
-        "percentage": 100.0
-      }
-    ]
-  }
+    "target": "cobblemon:manaphy",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "generations_core:manaphy_doll",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

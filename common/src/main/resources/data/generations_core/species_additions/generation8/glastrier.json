@@ -1,12 +1,20 @@
 {
-  "target": "cobblemon:glastrier",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "generations_core:white_mane_hair",
-        "percentage": 100.0
-      }
-    ]
-  }
+    "target": "cobblemon:glastrier",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "generations_core:white_mane_hair",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

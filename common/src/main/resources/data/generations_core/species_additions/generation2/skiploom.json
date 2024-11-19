@@ -1,0 +1,10 @@
+{
+    "target": "cobblemon:skiploom",
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        }
+    }
+}

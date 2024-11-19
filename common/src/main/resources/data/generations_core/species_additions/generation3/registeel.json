@@ -1,16 +1,24 @@
 {
-  "target": "cobblemon:registeel",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "generations_core:registeel_doll",
-        "percentage": 100.0
-      },
-      {
-        "item": "generations_core:registeel_orb",
-        "percentage": 100.0
-      }
-    ]
-  }
+    "target": "cobblemon:registeel",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "generations_core:registeel_doll",
+                "percentage": 100.0
+            },
+            {
+                "item": "generations_core:registeel_orb",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

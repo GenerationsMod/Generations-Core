@@ -1,51 +1,65 @@
 {
-  "target": "cobblemon:gyarados",
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "water",
-      "secondaryType": "dark",
-      "abilities": [
-        "moldbreaker"
-      ],
-      "baseStats": {
-        "hp": 95,
-        "attack": 155,
-        "defence": 109,
-        "special_attack": 70,
-        "special_defence": 130,
-        "speed": 81
-      },
-      "catchRate": 45,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 189,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 2,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 5,
-      "eggGroups": [
-        "water_2",
-        "dragon"
-      ],
-      "labels": [
-        "gen6",
-        "mega"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 65,
-      "weight": 3050,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
+    "target": "cobblemon:gyarados",
+    "forms": [
+        {
+            "name": "Mega",
+            "primaryType": "water",
+            "secondaryType": "dark",
+            "abilities": [
+                "moldbreaker"
+            ],
+            "baseStats": {
+                "hp": 95,
+                "attack": 155,
+                "defence": 109,
+                "special_attack": 70,
+                "special_defence": 130,
+                "speed": 81
+            },
+            "catchRate": 45,
+            "maleRatio": 0.5,
+            "baseExperienceYield": 189,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 2,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "slow",
+            "eggCycles": 5,
+            "eggGroups": [
+                "water_2",
+                "dragon"
+            ],
+            "labels": [
+                "gen6",
+                "mega"
+            ],
+            "aspects": [
+                "mega"
+            ],
+            "height": 65,
+            "weight": 3050,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true
+        }
+    ],
+    "behaviour": {
+        "moving": {
+            "swim": {
+                "canSwimInWater": true,
+                "canBreatheUnderwater": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ]
 }

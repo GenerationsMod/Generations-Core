@@ -1,66 +1,74 @@
 {
-  "target": "cobblemon:grimmsnarl",
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "dark",
-      "secondaryType": "fairy",
-      "abilities": [
-        "prankster",
-        "frisk",
-        "h:pickpocket"
-      ],
-      "baseStats": {
-        "hp": 95,
-        "attack": 120,
-        "defence": 65,
-        "special_attack": 95,
-        "special_defence": 75,
-        "speed": 60
-      },
-      "catchRate": 45,
-      "maleRatio": 1,
-      "baseExperienceYield": 255,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 3,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 20,
-      "eggGroups": [
-        "fairy",
-        "human_like"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 320,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "target": "cobblemon:grimmsnarl",
+    "forms": [
+        {
+            "name": "Gmax",
+            "primaryType": "dark",
+            "secondaryType": "fairy",
+            "abilities": [
+                "prankster",
+                "frisk",
+                "h:pickpocket"
+            ],
+            "baseStats": {
+                "hp": 95,
+                "attack": 120,
+                "defence": 65,
+                "special_attack": 95,
+                "special_defence": 75,
+                "speed": 60
+            },
+            "catchRate": 45,
+            "maleRatio": 1,
+            "baseExperienceYield": 255,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 3,
+                "defence": 0,
+                "special_attack": 0,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "medium_fast",
+            "eggCycles": 20,
+            "eggGroups": [
+                "fairy",
+                "human_like"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 320,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "cobblemon:roseli_berry",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:roseli_berry",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

@@ -1,65 +1,78 @@
 {
-  "target": "cobblemon:rayquaza",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "generations_core:rayquaza_doll",
-        "percentage": 100.0
-      },
-      {
-        "item": "generations_core:jade_orb",
-        "percentage": 100.0
-      }
-    ]
-  },
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "dragon",
-      "secondaryType": "flying",
-      "abilities": [
-        "deltastream"
-      ],
-      "baseStats": {
-        "hp": 105,
-        "attack": 180,
-        "defence": 100,
-        "special_attack": 180,
-        "special_defence": 100,
-        "speed": 115
-      },
-      "catchRate": 45,
-      "maleRatio": -1,
-      "baseExperienceYield": 340,
-      "baseFriendship": 0,
-      "evYield": {
-        "hp": 0,
-        "attack": 2,
-        "defence": 0,
-        "special_attack": 1,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 120,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen6",
-        "mega",
-        "legendary"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 108,
-      "weight": 3920,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true,
-      "requiredMove": "Dragon Ascent"
+    "target": "cobblemon:rayquaza",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "generations_core:rayquaza_doll",
+                "percentage": 100.0
+            },
+            {
+                "item": "generations_core:jade_orb",
+                "percentage": 100.0
+            }
+        ]
+    },
+    "forms": [
+        {
+            "name": "Mega",
+            "primaryType": "dragon",
+            "secondaryType": "flying",
+            "abilities": [
+                "deltastream"
+            ],
+            "baseStats": {
+                "hp": 105,
+                "attack": 180,
+                "defence": 100,
+                "special_attack": 180,
+                "special_defence": 100,
+                "speed": 115
+            },
+            "catchRate": 45,
+            "maleRatio": -1,
+            "baseExperienceYield": 340,
+            "baseFriendship": 0,
+            "evYield": {
+                "hp": 0,
+                "attack": 2,
+                "defence": 0,
+                "special_attack": 1,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "slow",
+            "eggCycles": 120,
+            "eggGroups": [
+                "undiscovered"
+            ],
+            "labels": [
+                "gen6",
+                "mega",
+                "legendary"
+            ],
+            "aspects": [
+                "mega"
+            ],
+            "height": 108,
+            "weight": 3920,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true,
+            "requiredMove": "Dragon Ascent"
+        }
+    ],
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ]
 }

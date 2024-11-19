@@ -1,118 +1,126 @@
 {
-  "target": "cobblemon:venusaur",
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "grass",
-      "secondaryType": "poison",
-      "abilities": [
-        "thickfat"
-      ],
-      "baseStats": {
-        "hp": 80,
-        "attack": 100,
-        "defence": 123,
-        "special_attack": 122,
-        "special_defence": 120,
-        "speed": 80
-      },
-      "catchRate": 45,
-      "maleRatio": 0.875,
-      "baseExperienceYield": 263,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 2,
-        "special_defence": 1,
-        "speed": 0
-      },
-      "experienceGroup": "medium_slow",
-      "eggCycles": 20,
-      "eggGroups": [
-        "monster",
-        "grass"
-      ],
-      "labels": [
-        "gen6",
-        "mega"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 24,
-      "weight": 1555,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
+    "target": "cobblemon:venusaur",
+    "forms": [
+        {
+            "name": "Mega",
+            "primaryType": "grass",
+            "secondaryType": "poison",
+            "abilities": [
+                "thickfat"
+            ],
+            "baseStats": {
+                "hp": 80,
+                "attack": 100,
+                "defence": 123,
+                "special_attack": 122,
+                "special_defence": 120,
+                "speed": 80
+            },
+            "catchRate": 45,
+            "maleRatio": 0.875,
+            "baseExperienceYield": 263,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 2,
+                "special_defence": 1,
+                "speed": 0
+            },
+            "experienceGroup": "medium_slow",
+            "eggCycles": 20,
+            "eggGroups": [
+                "monster",
+                "grass"
+            ],
+            "labels": [
+                "gen6",
+                "mega"
+            ],
+            "aspects": [
+                "mega"
+            ],
+            "height": 24,
+            "weight": 1555,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true
+        },
+        {
+            "name": "Gmax",
+            "primaryType": "grass",
+            "secondaryType": "poison",
+            "abilities": [
+                "overgrow",
+                "h:chlorophyll"
+            ],
+            "baseStats": {
+                "hp": 80,
+                "attack": 82,
+                "defence": 83,
+                "special_attack": 100,
+                "special_defence": 100,
+                "speed": 80
+            },
+            "catchRate": 45,
+            "maleRatio": 0.875,
+            "baseExperienceYield": 263,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 2,
+                "special_defence": 1,
+                "speed": 0
+            },
+            "experienceGroup": "medium_slow",
+            "eggCycles": 20,
+            "eggGroups": [
+                "monster",
+                "grass"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 20,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "minecraft:wheat_seeds"
+            },
+            {
+                "item": "cobblemon:coba_berry",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:venusaur_doll",
+                "percentage": 1.0
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
     },
-    {
-      "name": "Gmax",
-      "primaryType": "grass",
-      "secondaryType": "poison",
-      "abilities": [
-        "overgrow",
-        "h:chlorophyll"
-      ],
-      "baseStats": {
-        "hp": 80,
-        "attack": 82,
-        "defence": 83,
-        "special_attack": 100,
-        "special_defence": 100,
-        "speed": 80
-      },
-      "catchRate": 45,
-      "maleRatio": 0.875,
-      "baseExperienceYield": 263,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 2,
-        "special_defence": 1,
-        "speed": 0
-      },
-      "experienceGroup": "medium_slow",
-      "eggCycles": 20,
-      "eggGroups": [
-        "monster",
-        "grass"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 20,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:wheat_seeds"
-      },
-      {
-        "item": "cobblemon:coba_berry",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:venusaur_doll",
-        "percentage": 1.0
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

@@ -1,51 +1,64 @@
 {
-  "target": "cobblemon:meloetta",
-  "forms": [
-    {
-      "name": "Pirouette",
-      "primaryType": "normal",
-      "secondaryType": "fighting",
-      "abilities": [
-        "serenegrace"
-      ],
-      "baseStats": {
-        "hp": 100,
-        "attack": 128,
-        "defence": 90,
-        "special_attack": 77,
-        "special_defence": 77,
-        "speed": 128
-      },
-      "catchRate": 3,
-      "maleRatio": -1,
-      "baseExperienceYield": 270,
-      "baseFriendship": 100,
-      "evYield": {
-        "hp": 0,
-        "attack": 1,
-        "defence": 1,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 1
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 120,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen5",
-        "mythical",
-        "legendary"
-      ],
-      "aspects": [
-        "pirouette"
-      ],
-      "height": 6,
-      "weight": 65,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
+    "target": "cobblemon:meloetta",
+    "forms": [
+        {
+            "name": "Pirouette",
+            "primaryType": "normal",
+            "secondaryType": "fighting",
+            "abilities": [
+                "serenegrace"
+            ],
+            "baseStats": {
+                "hp": 100,
+                "attack": 128,
+                "defence": 90,
+                "special_attack": 77,
+                "special_defence": 77,
+                "speed": 128
+            },
+            "catchRate": 3,
+            "maleRatio": -1,
+            "baseExperienceYield": 270,
+            "baseFriendship": 100,
+            "evYield": {
+                "hp": 0,
+                "attack": 1,
+                "defence": 1,
+                "special_attack": 0,
+                "special_defence": 0,
+                "speed": 1
+            },
+            "experienceGroup": "slow",
+            "eggCycles": 120,
+            "eggGroups": [
+                "undiscovered"
+            ],
+            "labels": [
+                "gen5",
+                "mythical",
+                "legendary"
+            ],
+            "aspects": [
+                "pirouette"
+            ],
+            "height": 6,
+            "weight": 65,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true
+        }
+    ],
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ]
 }

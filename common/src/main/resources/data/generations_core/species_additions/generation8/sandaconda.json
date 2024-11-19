@@ -1,65 +1,73 @@
 {
-  "target": "cobblemon:sandaconda",
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "ground",
-      "abilities": [
-        "sandspit",
-        "shedskin",
-        "h:sandveil"
-      ],
-      "baseStats": {
-        "hp": 72,
-        "attack": 107,
-        "defence": 125,
-        "special_attack": 65,
-        "special_defence": 70,
-        "speed": 71
-      },
-      "catchRate": 120,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 179,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 2,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 20,
-      "eggGroups": [
-        "field",
-        "dragon"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 220,
-      "weight": 0,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": false
+    "target": "cobblemon:sandaconda",
+    "forms": [
+        {
+            "name": "Gmax",
+            "primaryType": "ground",
+            "abilities": [
+                "sandspit",
+                "shedskin",
+                "h:sandveil"
+            ],
+            "baseStats": {
+                "hp": 72,
+                "attack": 107,
+                "defence": 125,
+                "special_attack": 65,
+                "special_defence": 70,
+                "speed": 71
+            },
+            "catchRate": 120,
+            "maleRatio": 0.5,
+            "baseExperienceYield": 179,
+            "baseFriendship": 50,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 2,
+                "special_attack": 0,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "medium_fast",
+            "eggCycles": 20,
+            "eggGroups": [
+                "field",
+                "dragon"
+            ],
+            "labels": [
+                "gen8",
+                "gmax"
+            ],
+            "aspects": [
+                "gmax"
+            ],
+            "height": 220,
+            "weight": 0,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": false
+        }
+    ],
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "cobblemon:soft_sand",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:dynite_ore",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:soft_sand",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:dynite_ore",
-        "percentage": 5.0
-      }
-    ]
-  }
 }

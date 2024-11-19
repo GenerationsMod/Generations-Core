@@ -1,24 +1,32 @@
 {
-  "target": "cobblemon:mabosstiff",
-  "drops": {
-    "amount": 5,
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "minecraft:rotten_flesh",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:tanga_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:dark_soul",
-        "percentage": 2.5
-      }
-    ]
-  }
+    "target": "cobblemon:mabosstiff",
+    "drops": {
+        "amount": 5,
+        "entries": [
+            {
+                "item": "minecraft:bone",
+                "quantityRange": "0-2"
+            },
+            {
+                "item": "minecraft:rotten_flesh",
+                "quantityRange": "0-2"
+            },
+            {
+                "item": "cobblemon:tanga_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:dark_soul",
+                "percentage": 2.5
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

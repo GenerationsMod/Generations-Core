@@ -1,20 +1,28 @@
 {
-  "target": "cobblemon:spoink",
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:porkchop",
-        "quantityRange": "1-2"
-      },
-      {
-        "item": "cobblemon:tanga_berry",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:light_soul",
-        "percentage": 2.5
-      }
-    ]
-  }
+    "target": "cobblemon:spoink",
+    "drops": {
+        "amount": 3,
+        "entries": [
+            {
+                "item": "minecraft:porkchop",
+                "quantityRange": "1-2"
+            },
+            {
+                "item": "cobblemon:tanga_berry",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:light_soul",
+                "percentage": 2.5
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

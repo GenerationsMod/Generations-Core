@@ -1,28 +1,41 @@
 {
-  "target": "cobblemon:magneton",
-  "drops": {
-    "amount": 5,
-    "entries": [
-      {
-        "item": "minecraft:raw_iron",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:magnet",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:metal_coat",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:shuca_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:rusty_fragment",
-        "percentage": 1.0
-      }
-    ]
-  }
+    "target": "cobblemon:magneton",
+    "drops": {
+        "amount": 5,
+        "entries": [
+            {
+                "item": "minecraft:raw_iron",
+                "quantityRange": "0-2"
+            },
+            {
+                "item": "cobblemon:magnet",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:metal_coat",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:shuca_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:rusty_fragment",
+                "percentage": 1.0
+            }
+        ]
+    },
+    "behaviour": {
+        "moving": {
+            "fly": {
+                "canFly": true
+            }
+        },
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

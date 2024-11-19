@@ -1,16 +1,24 @@
 {
-  "target": "cobblemon:baxcalibur",
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:haban_berry",
-        "percentage": 10.0
-      },
-      {
-        "item": "generations_core:dragon_soul",
-        "percentage": 5.0
-      }
-    ]
-  }
+    "target": "cobblemon:baxcalibur",
+    "drops": {
+        "amount": 1,
+        "entries": [
+            {
+                "item": "cobblemon:haban_berry",
+                "percentage": 10.0
+            },
+            {
+                "item": "generations_core:dragon_soul",
+                "percentage": 5.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

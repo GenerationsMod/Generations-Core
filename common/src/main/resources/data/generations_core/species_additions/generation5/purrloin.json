@@ -1,20 +1,28 @@
 {
-  "target": "cobblemon:purrloin",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:rotten_flesh",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:bluk_berry",
-        "percentage": 2.5
-      },
-      {
-        "item": "generations_core:dark_soul",
-        "percentage": 2.5
-      }
-    ]
-  }
+    "target": "cobblemon:purrloin",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "minecraft:rotten_flesh",
+                "quantityRange": "0-1"
+            },
+            {
+                "item": "cobblemon:bluk_berry",
+                "percentage": 2.5
+            },
+            {
+                "item": "generations_core:dark_soul",
+                "percentage": 2.5
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }

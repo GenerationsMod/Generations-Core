@@ -1,51 +1,59 @@
 {
-  "target": "cobblemon:ampharos",
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "electric",
-      "secondaryType": "dragon",
-      "abilities": [
-        "moldbreaker"
-      ],
-      "baseStats": {
-        "hp": 90,
-        "attack": 95,
-        "defence": 105,
-        "special_attack": 165,
-        "special_defence": 110,
-        "speed": 45
-      },
-      "catchRate": 45,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 230,
-      "baseFriendship": 70,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 3,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_slow",
-      "eggCycles": 20,
-      "eggGroups": [
-        "monster",
-        "field"
-      ],
-      "labels": [
-        "gen6",
-        "mega"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 14,
-      "weight": 615,
-      "evolutions": [],
-      "cannotDynamax": false,
-      "battleOnly": true
+    "target": "cobblemon:ampharos",
+    "forms": [
+        {
+            "name": "Mega",
+            "primaryType": "electric",
+            "secondaryType": "dragon",
+            "abilities": [
+                "moldbreaker"
+            ],
+            "baseStats": {
+                "hp": 90,
+                "attack": 95,
+                "defence": 105,
+                "special_attack": 165,
+                "special_defence": 110,
+                "speed": 45
+            },
+            "catchRate": 45,
+            "maleRatio": 0.5,
+            "baseExperienceYield": 230,
+            "baseFriendship": 70,
+            "evYield": {
+                "hp": 0,
+                "attack": 0,
+                "defence": 0,
+                "special_attack": 3,
+                "special_defence": 0,
+                "speed": 0
+            },
+            "experienceGroup": "medium_slow",
+            "eggCycles": 20,
+            "eggGroups": [
+                "monster",
+                "field"
+            ],
+            "labels": [
+                "gen6",
+                "mega"
+            ],
+            "aspects": [
+                "mega"
+            ],
+            "height": 14,
+            "weight": 615,
+            "evolutions": [],
+            "cannotDynamax": false,
+            "battleOnly": true
+        }
+    ],
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
     }
-  ]
 }

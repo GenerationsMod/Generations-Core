@@ -1,20 +1,28 @@
 {
-  "target": "cobblemon:lurantis",
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:miracle_seed",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:tanga_berry",
-        "percentage": 5.0
-      },
-      {
-        "item": "generations_core:pink_petal",
-        "percentage": 10.0
-      }
-    ]
-  }
+    "target": "cobblemon:lurantis",
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "cobblemon:miracle_seed",
+                "percentage": 5.0
+            },
+            {
+                "item": "cobblemon:tanga_berry",
+                "percentage": 5.0
+            },
+            {
+                "item": "generations_core:pink_petal",
+                "percentage": 10.0
+            }
+        ]
+    },
+    "behaviour": {
+        "resting": {
+            "canSleep": true,
+            "willSleepOnBed": false,
+            "depth": "normal",
+            "light": "0-4"
+        }
+    }
 }
