@@ -4,6 +4,8 @@ import com.cobblemon.mod.common.api.types.ElementalType
 import com.cobblemon.mod.common.api.types.ElementalTypes
 import com.cobblemon.mod.common.item.PokeBallItem
 import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager
+import com.cobblemon.mod.common.util.asResource
+import com.cobblemon.mod.common.util.cobblemonResource
 import dev.architectury.core.item.ArchitecturyRecordItem
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
@@ -12,6 +14,7 @@ import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity
 import generations.gg.generations.core.generationscore.common.world.entity.TieredFishingHookEntity
+import generations.gg.generations.core.generationscore.common.world.item.FormChangingItems.Companion.createFormChangingItem
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
 import generations.gg.generations.core.generationscore.common.world.item.curry.ItemCurry
@@ -734,13 +737,18 @@ object GenerationsItems {
     @JvmField val PSYCHIC_SEED = registerHeldItem("psychic_seed")
     @JvmField val RED_SCARF = registerHeldItem("red_scarf")
     @JvmField val LEGEND_PLATE = registerHeldItem("legend_plate")
-    @JvmField val LUSTROUS_GLOBE = registerHeldItem("lustrous_globe")
-    @JvmField val ADAMANT_CRYSTAL = registerHeldItem("adamant_crystal")
-    @JvmField val GRISEOUS_CORE = registerHeldItem("griseous_core")
+    @JvmField val LUSTROUS_GLOBE = registerHeldItem("lustrous_globe") { properties -> createFormChangingItem(properties, "origin", species = cobblemonResource("palkia")) }
+    @JvmField val ADAMANT_CRYSTAL = registerHeldItem("adamant_crystal") { properties -> createFormChangingItem(properties, "origin", species = cobblemonResource("dialga")) }
+    @JvmField val GRISEOUS_CORE = registerHeldItem("griseous_core") { properties -> createFormChangingItem(properties, "origin", species = cobblemonResource("giratina")) }
     @JvmField val PUNCHING_GLOVE = registerHeldItem("punching_glove")
     @JvmField val CLEAR_AMULET = registerHeldItem("clear_amulet")
     @JvmField val BOOSTER_ENERGY = registerHeldItem("booster_energy")
     @JvmField val FAIRY_FEATHER = registerHeldItem("fairy_feather")
+
+    @JvmField val TEAL_MASK = registerHeldItem("teal_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "teal") }
+    @JvmField val WELLSPRING_MASK = registerHeldItem("wellspring_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "wellspring") }
+    @JvmField val HEARTFLAME_MASK = registerHeldItem("heartflame_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "heartflame") }
+    @JvmField val CORNERSTONE_MASK = registerHeldItem("cornerstone_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "cornerstone") }
 
     /**
      * Vanilla Like Materials
@@ -860,10 +868,10 @@ object GenerationsItems {
     @JvmField val N_LUNARIZER = register("n_lunarizer", { NecroizerItemItem(it, "lunala", "moongeistbeam", "dawnwings") }, LEGENDARY_ITEMS)
     @JvmField val LEGEND_FINDER = register("legend_finder", ::Item, LEGENDARY_ITEMS)
     @JvmField val HOOPA_RING = register("hoopa_ring", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
-    @JvmField val RED_ORB = register("red_orb", ::Item, LEGENDARY_ITEMS)
     @JvmField val FADED_RED_ORB = register("faded_red_orb", { ElementalPostBattleUpdateItemImpl(it.stacksTo(1).durability(250), ElementalTypes.FIRE) }, LEGENDARY_ITEMS)
     @JvmField val FADED_BLUE_ORB = register("faded_blue_orb", { ElementalPostBattleUpdateItemImpl(it.stacksTo(1).durability(250), ElementalTypes.WATER) }, LEGENDARY_ITEMS)
-    @JvmField val FADED_JADE_ORB = register("faded_jade_orb", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(250), LegendKeys.RAYQUAZA, ElementalTypes.FLYING) }, LEGENDARY_ITEMS)
+    @JvmField val FADED_JADE_ORB = register("faded_jade_orb", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(250), key = LegendKeys.RAYQUAZA, types = listOf(ElementalTypes.FLYING)) }, LEGENDARY_ITEMS)
+    @JvmField val RED_ORB = register("red_orb", ::Item, LEGENDARY_ITEMS)
     @JvmField val BLUE_ORB = register("blue_orb", ::Item, LEGENDARY_ITEMS)
     @JvmField val JADE_ORB = register("jade_orb", { JadeOrb(it.stacksTo(1)) }, LEGENDARY_ITEMS)
     @JvmField val LIGHT_STONE = register("light_stone", { TaoTrioStoneItem(it.stacksTo(1).durability(100), LegendKeys.RESHIRAM) }, LEGENDARY_ITEMS)
@@ -877,10 +885,10 @@ object GenerationsItems {
     @JvmField val SPARKLING_SHARD = register("sparkling_shard", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val SPARKLING_STONE = register("sparkling_stone", { ElementalPostBattleUpdateItemImpl(it.stacksTo(1).durability(100), ElementalTypes.FAIRY) }, LEGENDARY_ITEMS)
     @JvmField val RUSTY_FRAGMENT = register("rusty_fragment", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
-    @JvmField val RUSTY_SWORD = register("rusty_sword", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), LegendKeys.ZACIAN, ElementalTypes.STEEL) }, LEGENDARY_ITEMS)
-    @JvmField val CROWNED_SWORD = register("crowned_sword", ::Item, LEGENDARY_ITEMS)
-    @JvmField val RUSTY_SHIELD = register("rusty_shield", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), LegendKeys.ZAMAZENTA, ElementalTypes.STEEL) }, LEGENDARY_ITEMS)
-    @JvmField val CROWNED_SHIELD = register("crowned_shield", ::Item, LEGENDARY_ITEMS)
+    @JvmField val CROWNED_SWORD = register("crowned_sword", { createFormChangingItem(it, "crowned", species = cobblemonResource("zacian")) }, LEGENDARY_ITEMS)
+    @JvmField val RUSTY_SWORD = register("rusty_sword", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), key = LegendKeys.ZACIAN, itemToGiveUponSpawn = CROWNED_SWORD.get(), types = listOf(ElementalTypes.STEEL)) }, LEGENDARY_ITEMS)
+    @JvmField val CROWNED_SHIELD = register("crowned_shield", { createFormChangingItem(it, "crowned", species = cobblemonResource("zamazenta")) }, LEGENDARY_ITEMS)
+    @JvmField val RUSTY_SHIELD = register("rusty_shield", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(100), key = LegendKeys.ZAMAZENTA, itemToGiveUponSpawn = CROWNED_SHIELD.get(), types = listOf(ElementalTypes.STEEL)) }, LEGENDARY_ITEMS)
     @JvmField val SCROLL_PAGE = register("scroll_page", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val SECRET_ARMOR_SCROLL = register("secret_armor_scroll", ::SecretArmorScroll, LEGENDARY_ITEMS)
     @JvmField val ZYGARDE_CUBE = register("zygarde_cube", { ZygardeCubeItem(it.stacksTo(1).durability(ZygardeCubeItem.FULL)) }, LEGENDARY_ITEMS)
@@ -891,7 +899,7 @@ object GenerationsItems {
     @JvmField val SUN_FLUTE = register("sun_flute", ::Item, LEGENDARY_ITEMS)
     @JvmField val LAVA_CRYSTAL = register("lava_crystal", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val JEWEL_OF_LIFE = register("jewel_of_life", ::Item, LEGENDARY_ITEMS)
-    @JvmField val MIRROR = register("mirror", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
+    @JvmField val MIRROR = register("mirror", { createFormChangingItem(it, "therian") }, LEGENDARY_ITEMS)
     @JvmField val UNENCHANTED_ICEROOT_CARROT = register("unenchanted_iceroot_carrot", ::Item, LEGENDARY_ITEMS)
     @JvmField val ICEROOT_CARROT = register("iceroot_carrot", { CalyrexSteedItem("iceroot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEat().build()), LegendKeys.GLASTRIER, UNENCHANTED_ICEROOT_CARROT) }, LEGENDARY_ITEMS)
     @JvmField val UNENCHANTED_SHADEROOT_CARROT = register("unenchanted_shaderoot_carrot", ::Item, LEGENDARY_ITEMS)
@@ -1478,7 +1486,7 @@ object GenerationsItems {
 
     private fun createRelicSong(inert: Boolean): RegistrySupplier<RelicSongItem> = register((if(inert) "inert_" else "") + "relic_song", { RelicSongItem(it.stacksTo(1), inert) }, LEGENDARY_ITEMS)
 
-    private fun registerHeldItem(name: String): RegistrySupplier<Item> = register(name, { Item(it).also { CobblemonHeldItemManager.registerRemap(it, name.replace("_", "")) } }, HELD_ITEMS)
+    private fun registerHeldItem(name: String, function: Function<Item.Properties, Item> = Function { properties -> Item(properties) }): RegistrySupplier<Item> = register(name, { function.apply(it).also { CobblemonHeldItemManager.registerRemap(it, name.replace("_", "")) } }, HELD_ITEMS)
 
     fun of() : Item.Properties = Item.Properties()
 
@@ -1498,9 +1506,9 @@ object GenerationsItems {
 
     private fun registerMail(name: String, type: MailType): RegistrySupplier<MailItem> = register(name, type::createMailItem, POKEMAIL)
 
-    private fun registerPlate(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(name, { FormChangingItem(it, "type", type.name) }, FORM_ITEMS)
+    private fun registerPlate(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(name, { createFormChangingItem(it, "type", type.name) }, FORM_ITEMS)
 
-    private fun registerCap(name: String): RegistrySupplier<FormChangingItem> = register("${name}_cap", { FormChangingItem(it, "pikachu_cap", name) }, FORM_ITEMS)
+    private fun registerCap(name: String): RegistrySupplier<FormChangingItem> = register("${name}_cap", { createFormChangingItem(it, "pikachu_cap", name) }, FORM_ITEMS)
 
     @JvmStatic fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Items")

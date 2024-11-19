@@ -1,0 +1,13 @@
+{
+  "type": "choice",
+  "keys": ["ogerpon_mask"],
+  "default": "false",
+  "choices": [
+    "teal",
+    "wellspring",
+    "heartflame",
+    "cornerstone"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}

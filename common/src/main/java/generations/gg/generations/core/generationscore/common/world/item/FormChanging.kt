@@ -6,9 +6,12 @@ import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeatureProvider
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Pokemon
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
+import net.minecraft.resources.ResourceLocation
 
 interface FormChanging {
     val provider: String
+
+    val species: ResourceLocation?
 
     fun process(pokemon : Pokemon, returned: Boolean): Boolean
 }
@@ -17,6 +20,8 @@ interface FormChangingString : FormChanging {
     val value: String
 
     override fun process(pokemon: Pokemon, returned: Boolean): Boolean {
+        if(species != null && (species?.equals(pokemon.species.resourceIdentifier) == true)) return false
+
         var provider: ChoiceSpeciesFeatureProvider? = null
         val value: String
 

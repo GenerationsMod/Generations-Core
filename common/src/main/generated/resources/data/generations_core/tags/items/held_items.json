@@ -152,6 +152,10 @@
     "generations_core:punching_glove",
     "generations_core:clear_amulet",
     "generations_core:booster_energy",
-    "generations_core:fairy_feather"
+    "generations_core:fairy_feather",
+    "generations_core:teal_mask",
+    "generations_core:wellspring_mask",
+    "generations_core:heartflame_mask",
+    "generations_core:cornerstone_mask"
   ]
 }

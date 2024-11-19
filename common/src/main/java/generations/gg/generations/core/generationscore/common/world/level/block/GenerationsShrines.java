@@ -70,7 +70,7 @@ public class GenerationsShrines {
 	public static final RegistrySupplier<Block> TAPU_SHRINE = registerBlockItem("tapu_shrine", () -> new TapuShrineBlock(SHRINE_PROPERTIES));
 
 	public static final RegistrySupplier<PrisonBottleStemBlock> PRISON_BOTTLE_STEM = registerBlockItem("prison_bottle_stem", () -> new PrisonBottleStemBlock(BOTTLE_PROPERTIES), BlockItemWithLang::new, GenerationsItems.LEGENDARY_ITEMS);
-	public static final RegistrySupplier<PrisonBottleBlock> PRISON_BOTTLE = registerBlockItem("prison_bottle", () -> new PrisonBottleBlock(BOTTLE_PROPERTIES), (block, properties) -> new FormChangingBlockItem(block, properties, "unbound"), GenerationsItems.LEGENDARY_ITEMS);
+	public static final RegistrySupplier<PrisonBottleBlock> PRISON_BOTTLE = registerBlockItem("prison_bottle", () -> new PrisonBottleBlock(BOTTLE_PROPERTIES), (block, properties) -> new FormChangingBlockItem(block, properties, "unbound", null), GenerationsItems.LEGENDARY_ITEMS);
 
 
 	private static <T extends Block> RegistrySupplier<T> registerBlockItem(String name, Supplier<T> blockSupplier, BiFunction<Block, Item.Properties, Item> function, DeferredRegister<Item> register) {
