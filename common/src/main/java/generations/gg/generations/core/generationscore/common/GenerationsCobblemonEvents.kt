@@ -156,6 +156,8 @@ class GenerationsCobblemonEvents {
                 }
             }
 
+
+
 //            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { it.entity.taskBuilder().infiniteIterations().identifier("castform") }
 
             CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST) {

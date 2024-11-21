@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common
 
 import com.cobblemon.mod.common.api.dialogue.Dialogue
 import com.cobblemon.mod.common.api.dialogue.Dialogues
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.openDialogue
 import dev.architectury.event.EventResult
@@ -9,6 +10,7 @@ import dev.architectury.event.events.common.InteractionEvent
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents
 import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags
 import generations.gg.generations.core.generationscore.common.world.entity.ZygardeCellEntity
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.ZygardeCubeItem
 import generations.gg.generations.core.generationscore.common.world.level.block.ElevatorBlock
@@ -63,6 +65,8 @@ object GenerationsArchitecturyEvents {
         }
 
         InteractionEvent.INTERACT_ENTITY.register { player, entity, hand ->
+            if(player !is ServerPlayer) return@register EventResult.pass()
+
             val stack = player.getItemInHand(hand)
             if (stack.`is`(GenerationsItems.ZYGARDE_CUBE.get()) && entity is ZygardeCellEntity) {
                 if (stack.damageValue != ZygardeCubeItem.FULL) {
@@ -73,6 +77,10 @@ object GenerationsArchitecturyEvents {
                     return@register EventResult.interruptTrue()
                 } else {
                     player.displayClientMessage("item.generations_core.zygarde_cube.tooltip.cell_full".asTranslated(), false)
+                }
+            } else {
+                if(entity is PokemonEntity) {
+                    return@register if(GenerationsCobblemonInteractions.triggerCustomInteraction(entity, player, stack)) EventResult.interruptTrue() else EventResult.pass()
                 }
             }
 

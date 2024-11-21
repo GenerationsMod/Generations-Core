@@ -26,6 +26,7 @@ import generations.gg.generations.core.generationscore.common.recipe.Generations
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs;
@@ -126,6 +127,8 @@ public class GenerationsCore {
 
 		GenerationsCobblemonEvents.init();
 		GenerationsArchitecturyEvents.init();
+
+		GenerationsCobblemonInteractions.INSTANCE.registerDefaultCustomInteractions();
 	}
 
 	private static void initRecipes() {
