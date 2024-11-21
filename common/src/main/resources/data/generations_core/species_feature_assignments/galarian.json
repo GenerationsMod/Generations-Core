@@ -1,4 +1,4 @@
 {
-  "pokemon": ["articuno"],
+  "pokemon": ["articuno", "meowth", "ponyta", "rapidash", "slowpoke", "slowbro", "farfetchd", "grimer", "muk", "weezing", "mrmime", "zapdos", "moltres", "slowking", "corsola", "zigzagoon", "linoone", "darumaka", "darmanitan", "yamask", "stunfisk"],
   "features": ["galarian"]
 }
