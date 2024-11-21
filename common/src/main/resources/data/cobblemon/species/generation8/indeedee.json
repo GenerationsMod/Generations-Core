@@ -1,4 +1,5 @@
 {
+  "implemented": true,
   "name": "Indeedee",
   "nationalPokedexNumber": 876,
   "primaryType": "psychic",
@@ -243,6 +244,5 @@
         "percentage": 5.0
       }
     ]
-  },
-  "implemented": true
+  }
 }
