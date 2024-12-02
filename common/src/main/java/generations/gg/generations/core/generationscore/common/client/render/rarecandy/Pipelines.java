@@ -163,7 +163,7 @@ public class Pipelines {
                             }).supplyUniform("mask", ctx -> {
                                 var texture = ctx.getTexture("mask");
 
-                                if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
+                                if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MinecraftTexture.INSTANCE) {
                                     texture = ITextureLoader.instance().getDarkFallback();
                                 }
 
@@ -185,7 +185,7 @@ public class Pipelines {
 
                                 var texture = ctx.getTexture("mask");
 
-                                if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
+                                if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MinecraftTexture.INSTANCE) {
                                     texture = ITextureLoader.instance().getDarkFallback();
                                 }
 
@@ -226,7 +226,7 @@ public class Pipelines {
         builder.supplyUniform("diffuse", ctx -> {
             ITexture texture = getTexture(ctx); //isStatueMaterial(variant) ? getTexture(variant.substring(7)) : ctx.object().getVariant(ctx.instance().variant()).getDiffuseTexture();
 
-            if (texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
+            if (texture == GenerationsTextureLoader.MinecraftTexture.INSTANCE) {
                 texture = ITextureLoader.instance().getNuetralFallback();
             }
 
@@ -292,11 +292,11 @@ public class Pipelines {
             RenderSystem.texParameter(3553, 10240, 9729);
         }).supplyUniform("light", ctx -> {
             var light = ((BlockLightValueProvider) ctx.instance()).getLight();
-            ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
+            ctx.uniform().upload2i(light & '\uffff', light >> 16 & '\uffff');
         }).supplyUniform("emission", ctx -> {
             var texture = ctx.getTexture("emission");
 
-            if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
+            if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MinecraftTexture.INSTANCE) {
                 texture = ITextureLoader.instance().getDarkFallback();
             }
 

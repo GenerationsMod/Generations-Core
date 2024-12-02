@@ -79,9 +79,9 @@ object GenerationsNetwork : GenerationsImplementation.NetworkManager {
             clientProxy.processStatueUpdate(it, handler)
         }, { packet, _, player ->
             handler.accept(packet, player)
-            var entity = player.level().getEntity(packet.entityId) ?: return@createBothBound
+//            var entity = player.level().getEntity(packet.entityId) ?: return@createBothBound
 
-            packet.sendToPlayersAround(entity.x, entity.y, entity.z, 128.0, entity.level().dimension()) { false }
+//            packet.sendToPlayersAround(entity.x, entity.y, entity.z, 128.0, entity.level().dimension()) { false }
         })
     }
 

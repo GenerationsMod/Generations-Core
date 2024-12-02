@@ -15,6 +15,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferUploader;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import dev.architectury.event.events.client.ClientReloadShadersEvent;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
@@ -27,6 +28,7 @@ import generations.gg.generations.core.generationscore.common.client.render.enti
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.MinecraftClientGameProvider;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines;
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.VanillShaders;
 import generations.gg.generations.core.generationscore.common.client.screen.container.*;
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
@@ -62,6 +64,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ResourceProvider;
 import net.minecraft.util.Mth;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.InteractionHand;
@@ -92,13 +95,15 @@ import static net.minecraft.client.renderer.Sheets.createSignMaterial;
 public class GenerationsCoreClient {
 
     public static void onInitialize(Minecraft minecraft) {
-        if (GenerationsCore.CONFIG.client.useRenderDoc) {
-            try {
-                System.loadLibrary("renderdoc");
-            } catch (UnsatisfiedLinkError e) {
-                LOGGER.warn("Attempted to use renderdoc without renderdoc installed.");
-            }
-        }
+//        if (GenerationsCore.CONFIG.client.useRenderDoc) {
+//            try {
+//                System.loadLibrary("renderdoc");
+//            } catch (Exception e) {
+//                LOGGER.warn("Attempted to use renderdoc without renderdoc installed.");
+//            }
+//        }
+
+
 
         ModelRegistry.init();
 
@@ -115,6 +120,8 @@ public class GenerationsCoreClient {
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
         RareCandy.DEBUG_THREADS = true;
+
+        ClientReloadShadersEvent.EVENT.register(VanillShaders::onShaderRegister);
 
         PokeBallModelRepository.INSTANCE.inbuilt("strange_ball", PokeBallModel::new);
 

@@ -87,9 +87,15 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
 
     public boolean canClaim(UUID playerUUID) {
         if (!this.lootMode.isDropOnce()) return true;
-        
         Optional<LootClaim> claim = this.getLootClaim(playerUUID);
-        return claim.isEmpty() || this.lootMode.isTimeEnabled() && Instant.now().plus(GenerationsCore.CONFIG.lootTime).isAfter(claim.get().time());
+
+        if (claim.isEmpty()) return true;
+        if (this.lootMode.isTimeEnabled())
+            if (Instant.now().plus(GenerationsCore.CONFIG.lootTime).isAfter(claim.get().time())) {
+                removeClaimer(playerUUID);
+                return true;
+            }
+        return false;
     }
 
     public void addClaimer(UUID playerUUID) {
@@ -100,7 +106,6 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
     public Optional<LootClaim> getLootClaim(UUID playerUUID) {
         return this.claims.stream().filter(claim -> claim.uuid().equals(playerUUID)).findFirst();
     }
-
 
     public void removeClaimer(UUID playerUUID) {
         this.claims.removeIf(a -> a.uuid().equals(playerUUID));

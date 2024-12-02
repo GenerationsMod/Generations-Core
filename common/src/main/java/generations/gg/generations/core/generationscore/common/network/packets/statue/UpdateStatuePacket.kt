@@ -116,6 +116,8 @@ abstract class UpdateStatuePacket<V, T : UpdateStatuePacket<V, T>>(var entityId:
         fun interactableDecode(buf: FriendlyByteBuf): Interactable = decode(buf, FriendlyByteBuf::readBoolean, ::Interactable)
         fun materialDecode(buf: FriendlyByteBuf): Material = decode(buf, FriendlyByteBuf::readNullableString, ::Material)
         fun orientationDecode(buf: FriendlyByteBuf): Orientation = decode(buf, FriendlyByteBuf::readFloat, ::Orientation)
-        fun <T, V : UpdateStatuePacket<T, V>> decode(buf: FriendlyByteBuf, function : (FriendlyByteBuf) -> T, factory: (Int, T) -> V): V = factory.invoke(buf.readInt(), function.invoke(buf))
+        fun <T, V : UpdateStatuePacket<T, V>> decode(buf: FriendlyByteBuf, function : (FriendlyByteBuf) -> T, factory: (Int, T) -> V): V {
+            return factory.invoke(buf.readInt(), function.invoke(buf))
+        }
     }
 }

@@ -86,6 +86,7 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")
     include("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")
+
 }
 
 tasks {
@@ -156,3 +157,4 @@ private fun getPublishingCredentials(): Pair<String?, String?> {
     val modrinthToken = (project.findProperty("modrinth_token") ?: System.getenv("MODRINTH_TOKEN") ?: "") as String?
     return Pair(curseForgeToken, modrinthToken)
 }
+

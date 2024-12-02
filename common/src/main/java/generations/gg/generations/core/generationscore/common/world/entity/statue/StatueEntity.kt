@@ -211,6 +211,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         return false
     }
 
+
     override fun interact(player: Player, hand: InteractionHand): InteractionResult {
         if (!level().isClientSide()) {
             val stack = player.getItemInHand(hand)
@@ -226,7 +227,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
                 if (player.isShiftKeyDown) {
                     this.remove(RemovalReason.KILLED)
                 } else {
-                    GenerationsNetwork.sendPacketToPlayer(player as ServerPlayer, S2COpenStatueEditorScreenPacket(id))
+                    GenerationsNetwork.sendPacketToPlayer(player, S2COpenStatueEditorScreenPacket(id))
                 }
                 return InteractionResult.SUCCESS
             }

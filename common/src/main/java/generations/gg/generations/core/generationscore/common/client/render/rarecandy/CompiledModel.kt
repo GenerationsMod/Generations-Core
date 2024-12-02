@@ -65,14 +65,18 @@ class CompiledModel @JvmOverloads constructor(
     private fun renderVanilla(instance: ObjectInstance, source: MultiBufferSource) {
         var list = renderObject!!.objects
 
+        if(list.isEmpty()) return
+
         var transforms = instance.takeIf { it is AnimatedObjectInstance }?.let { it as AnimatedObjectInstance }?.transforms ?: AnimationController.NO_ANIMATION
+
+        VanillShaders.getSolidShader().setupBoneTransforms(transforms)
 
         list.forEach {
             var model = it.model.takeIf { it is VanilaRenderModel }?.let { it as VanilaRenderModel } ?: return
 
             model.bufferSource = source
 
-            model.render(instance, it, transforms)
+            model.render(instance, it)
         }
     }
 

@@ -61,6 +61,8 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import static generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER;
+
 /**
  * Forge Main class for GenerationsCore.
  * @see Mod
@@ -78,6 +80,15 @@ public class GenerationsCoreForge implements GenerationsImplementation {
      * @see FMLJavaModLoadingContext
      */
     public GenerationsCoreForge() {
+//        if (GenerationsCore.CONFIG.client.useRenderDoc) {
+            try {
+                System.loadLibrary("renderdoc");
+            } catch (Exception e) {
+                LOGGER.warn("Attempted to use renderdoc without renderdoc installed.");
+            }
+//        }
+
+
         ConfigLoader.setConfigDirectory(FMLPaths.CONFIGDIR.get());
         IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         GenerationsCreativeTabsForge.init(MOD_BUS);
