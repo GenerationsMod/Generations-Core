@@ -52,7 +52,7 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
             ItemPropertiesRegistry.register(
                 GenerationsItems.TIME_CAPSULE.get(), GenerationsCore.id("has_pokemon")
             ) { itemStack: ItemStack, clientLevel: ClientLevel?, livingEntity: LivingEntity?, i: Int ->
-                if (itemStack.getPokemon() == null) 0f else 1f
+                if (itemStack.getRenderablePokmon() == null) 0f else 1f
             }
         }
     }

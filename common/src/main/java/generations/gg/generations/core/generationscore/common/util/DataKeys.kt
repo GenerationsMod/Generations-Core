@@ -6,6 +6,8 @@ object DataKeys {
     const val EMBEDDED_POKEMON = "EmbeddedPokemon"
     const val DISTANCE = "Distance"
 
+    const val CLIENT_POKEMON_DATA = "ClientPokemonData"
+
     //Statues
     const val PROPERTIES = "Properties"
     const val LABEL = "Label"
