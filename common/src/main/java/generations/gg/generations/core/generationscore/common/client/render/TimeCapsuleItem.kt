@@ -13,9 +13,9 @@ import com.mojang.blaze3d.platform.Lighting
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
+import generations.gg.generations.core.generationscore.common.util.getRenderablePokemon
 import generations.gg.generations.core.generationscore.common.world.item.StatueSpawnerItem
 import generations.gg.generations.core.generationscore.common.world.item.TimeCapsule
-import generations.gg.generations.core.generationscore.common.world.item.TimeCapsule.Companion.getRenderablePokmon
 import net.minecraft.client.renderer.LightTexture
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.texture.OverlayTexture
@@ -28,7 +28,7 @@ object TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
     override fun render(stack: ItemStack, mode: ItemDisplayContext, matrices: PoseStack, vertexConsumers: MultiBufferSource, light: Int, overlay: Int,
     ) {
         if (stack.item is TimeCapsule || stack.item is StatueSpawnerItem || stack.item is PokemonItem) {
-            val (species, aspects) = (if(stack.item is PokemonItem) (stack.item as PokemonItem).getSpeciesAndAspects(stack) else stack.getRenderablePokmon()) ?: return
+            val (species, aspects) = (if(stack.item is PokemonItem) (stack.item as PokemonItem).getSpeciesAndAspects(stack) else stack.getRenderablePokemon()?.let { it.species to it.aspects }) ?: return
 
             matrices.pushPose()
             val model = PokemonModelRepository.getPoser(species.resourceIdentifier, aspects)

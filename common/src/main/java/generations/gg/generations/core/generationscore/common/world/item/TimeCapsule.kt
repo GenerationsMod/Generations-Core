@@ -55,13 +55,12 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
 
 
     companion object {
-        fun ItemStack.getRenderablePokmon(): Pair<Species, Set<String>>? = this.getPokemon()?.let { it.species to it.aspects }
 
         fun registerItemProperty() {
             ItemPropertiesRegistry.register(
                 GenerationsItems.TIME_CAPSULE.get(), GenerationsCore.id("has_pokemon")
             ) { itemStack: ItemStack, clientLevel: ClientLevel?, livingEntity: LivingEntity?, i: Int ->
-                if (itemStack.getRenderablePokmon() == null) 0f else 1f
+                if (itemStack.getRenderablePokemon() == null) 0f else 1f
             }
         }
     }
