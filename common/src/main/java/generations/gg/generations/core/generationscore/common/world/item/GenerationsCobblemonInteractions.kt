@@ -49,6 +49,7 @@ object GenerationsCobblemonInteractions {
     fun registerDefaultCustomInteractions() {
         registerCustomInteraction(KeldeoInteraction)
         registerCustomInteraction(MeloettaInteraction)
+        registerCustomInteraction(TherianInteraction)
     }
 
     private val customInteractions: MutableList<PokemonInteraction> = ArrayList()
@@ -79,6 +80,29 @@ object GenerationsCobblemonInteractions {
     object MeloettaInteraction: PokemonInteraction {
         override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
             if (stack.`is`(GenerationsItems.INERT_RELIC_SONG.get()) && entity.pokemon.isSpecies("meloetta")) {
+
+                var pokemon = entity.pokemon
+
+                val provider = pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>("piroette") ?: return false
+                val feature = provider.getOrCreate(pokemon)
+                feature.enabled = !feature.enabled
+                pokemon.updateAspects()
+                pokemon.markFeatureDirty(feature)
+
+                player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
+                return true
+            }
+
+            return false
+        }
+
+        override val isConsumed: Boolean
+            get() = false
+    }
+
+    object TherianInteraction: PokemonInteraction {
+        override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
+            if (stack.`is`(GenerationsItems.MIRROR.get())) {
 
                 var pokemon = entity.pokemon
 
