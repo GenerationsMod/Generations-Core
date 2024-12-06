@@ -22,7 +22,6 @@ object GenerationsCobblemonInteractions {
         customInteractions.add(customInteraction)
     }
     fun triggerCustomInteraction(pixelmonEntity: PokemonEntity, player: ServerPlayer, itemInHand: ItemStack): Boolean {
-        System.out.println("Testing bullshit:")
         return customInteractions.any { interaction: PokemonInteraction -> interaction.processInteraction(player, pixelmonEntity, itemInHand) }
     }
 
