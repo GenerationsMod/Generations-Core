@@ -28,6 +28,7 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
                 var list = mutableListOf<Component>()
                 list.add(pokemon)
                 stack.setLore(list)
+                stack.setHoverName(super.getName(stack).copy() + getPokemonText(stack))
 
                 player.level().playSound(null, entity, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
 
@@ -90,10 +91,6 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
         }
 
         return false
-    }
-
-    override fun getName(stack: ItemStack): Component {
-        return super.getName(stack).copy().withStyle(ChatFormatting.GRAY) + getPokemonText(stack)
     }
 
     override fun getPokemonText(stack: ItemStack): Component {

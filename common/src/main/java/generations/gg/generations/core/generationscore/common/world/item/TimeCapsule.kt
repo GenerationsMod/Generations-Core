@@ -29,6 +29,7 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
             var list = mutableListOf<Component>()
             list.add(pokemon)
             stack.setLore(list)
+            stack.setHoverName(super.getName(stack).copy() + getPokemonText(stack))
 
             player.level().playSound(
                 null,
@@ -44,10 +45,6 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
         } else {
             false
         }
-    }
-
-    override fun getName(stack: ItemStack): Component {
-        return super.getName(stack).copy() + getPokemonText(stack)
     }
 
     override val isConsumed: Boolean

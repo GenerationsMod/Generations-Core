@@ -136,6 +136,8 @@ fun ItemStack.getPokemon(): Pokemon? {
 }
 
 
+
+
 fun Pokemon.removeIfBelongs(player: Player): Boolean {
     return belongsTo(player) && storeCoordinates.get()?.remove() == true
 }
@@ -150,4 +152,3 @@ fun <T:Any> ItemStack.setLore(lore: List<T>?): ItemStack {
     }
     return this
 }
-

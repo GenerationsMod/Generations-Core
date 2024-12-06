@@ -44,6 +44,7 @@ abstract class PokemonStoringItem(properties: Properties) : Item(properties), Po
                 item.shrink(1)
                 item.removePokemon()
                 item.setLore(mutableListOf<Component>())
+                item.setHoverName(null)
                 player.level().playSound(null, player, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
                 return InteractionResultHolder.sidedSuccess(item, false)
             }
