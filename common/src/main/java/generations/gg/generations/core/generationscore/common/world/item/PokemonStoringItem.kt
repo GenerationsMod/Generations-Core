@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.text.text
 import generations.gg.generations.core.generationscore.common.util.add
 import generations.gg.generations.core.generationscore.common.util.getPokemon
 import generations.gg.generations.core.generationscore.common.util.removePokemon
+import generations.gg.generations.core.generationscore.common.util.setLore
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.PokemonInteraction
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
@@ -31,8 +32,6 @@ abstract class PokemonStoringItem(properties: Properties) : Item(properties), Po
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag,
     ) {
-        stack.getPokemon()?.run { tooltipComponents.add(this) }
-
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced)
     }
 
@@ -44,10 +43,12 @@ abstract class PokemonStoringItem(properties: Properties) : Item(properties), Po
                 storage.getParty((player as ServerPlayer)).add(pokemon)
                 item.shrink(1)
                 item.removePokemon()
+                item.setLore(mutableListOf<Component>())
                 player.level().playSound(null, player, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
                 return InteractionResultHolder.sidedSuccess(item, false)
             }
         }
         return super.use(level, player, usedHand)
     }
+
 }

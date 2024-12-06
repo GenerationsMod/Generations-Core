@@ -17,9 +17,11 @@ import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.toNbtList
 import generations.gg.generations.core.generationscore.common.world.item.StatueSpawnerItem
 import net.minecraft.nbt.CompoundTag
+import net.minecraft.nbt.ListTag
 import net.minecraft.nbt.StringTag
 import net.minecraft.nbt.Tag
 import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.MutableComponent
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
@@ -136,5 +138,16 @@ fun ItemStack.getPokemon(): Pokemon? {
 
 fun Pokemon.removeIfBelongs(player: Player): Boolean {
     return belongsTo(player) && storeCoordinates.get()?.remove() == true
+}
+
+fun <T:Any> ItemStack.setLore(lore: List<T>?): ItemStack {
+    val compoundtag = getOrCreateTagElement(ItemStack.TAG_DISPLAY)
+    if (lore != null) {
+        lore.map { if (it is MutableComponent) it else it.toString().text() }.map { Component.Serializer.toJson(it) }.map { StringTag.valueOf(it) }
+            .toCollection(ListTag()).let { compoundtag.put(ItemStack.TAG_LORE, it) }
+    } else {
+        compoundtag.remove(ItemStack.TAG_LORE)
+    }
+    return this
 }
 

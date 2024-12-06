@@ -24,6 +24,11 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
         if (pokemonInStack == null && (pokemon.isSpecies("zekrom") || pokemon.isSpecies("reshiram"))) {
             if (pokemon.removeIfBelongs(player)) {
                 stack.savePokemon(pokemon)
+
+                var list = mutableListOf<Component>()
+                list.add(pokemon)
+                stack.setLore(list)
+
                 player.level().playSound(null, entity, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
 
                 player.sendSystemMessage("generations_core.pokemon.encoded".asTranslated(pokemon.getDisplayName().string))
