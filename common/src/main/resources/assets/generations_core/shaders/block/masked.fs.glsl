@@ -49,10 +49,7 @@ void main() {
     if(outColor.a < 0.004) discard;
 
     float mask = texture(mask, texCoord0).x;
-
     outColor.xyz = mix(outColor.xyz, outColor.xyz * color, mask);
-
     if(useLight) outColor *= mix(minecraft_sample_lightmap(lightmap, light), vec4(1,1,1,1), texture(emission, texCoord0).r);
-
     outColor = linear_fog(outColor, vertexDistance, FogStart, FogEnd, FogColor);
 }

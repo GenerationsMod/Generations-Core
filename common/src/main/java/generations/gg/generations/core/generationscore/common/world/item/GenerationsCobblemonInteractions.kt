@@ -40,7 +40,7 @@ object GenerationsCobblemonInteractions {
 
     fun process(entity: Entity, player: Player, stack: ItemStack): Boolean {
         return if (entity is PokemonEntity) {
-            return triggerCustomInteraction(entity, player, stack)
+            return triggerCustomInteraction(entity, player as ServerPlayer, stack)
         } else {
             false
         }

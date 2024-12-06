@@ -20,6 +20,7 @@ import gg.generations.rarecandy.renderer.pipeline.Pipeline;
 import gg.generations.rarecandy.renderer.pipeline.UniformUploadContext;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.joml.Vector3f;
@@ -27,6 +28,7 @@ import org.joml.Vector4f;
 import org.lwjgl.opengl.GL11C;
 import org.lwjgl.opengl.GL13C;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -80,6 +82,7 @@ public class Pipelines {
                             })
                             .supplyUniform("ColorModulator", ctx -> {
                                 var color = RenderSystem.getShaderColor();
+
                                 ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
                             })
                             .supplyUniform("FogShape", ctx -> ctx.uniform().uploadInt(RenderSystem.getShaderFogShape().getIndex()))
@@ -285,11 +288,11 @@ public class Pipelines {
 
     private static void addLight(Pipeline.Builder builder) {
         builder.supplyUniform("lightmap", ctx -> {
+//            ITextureLoader.instance().getNuetralFallback().bind(1);
+
+            ((ITexture) Minecraft.getInstance().gameRenderer.lightTexture()).bind(1);
+//            GL13C.glActiveTexture('蓀' + 1);
             ctx.uniform().uploadInt(1);
-            GL13C.glActiveTexture('蓀' + 1);
-            GL11C.glBindTexture(3553, ((ILightTexture) Minecraft.getInstance().gameRenderer.lightTexture()).getTextureId());
-            RenderSystem.texParameter(3553, 10241, 9729);
-            RenderSystem.texParameter(3553, 10240, 9729);
         }).supplyUniform("light", ctx -> {
             var light = ((BlockLightValueProvider) ctx.instance()).getLight();
             ctx.uniform().upload2i(light & 0xFFFF, light >> 16 & 0xFFFF);
