@@ -31,6 +31,9 @@ class ClientPacketProxy : PacketProxy() {
     }
 
     private fun <T : GenerationsNetworkPacket<T>> createConsumer(handler: ClientNetworkPacketHandler<T>): Consumer<T> {
-        return Consumer { handler.handle(it, Minecraft.getInstance())}
+        return Consumer {
+            var minecraft =Minecraft.getInstance()
+            minecraft.execute { handler.handle(it, minecraft) }
+        }
     }
 }

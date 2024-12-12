@@ -88,6 +88,7 @@ public class MailEditScreen extends Screen {
         location = ((MailItem) arg2.getItem()).getType().location;
     }
 
+
     private void setClipboard(String clipboardValue) {
         if (this.minecraft != null) {
             TextFieldHelper.setClipboardContents(this.minecraft, clipboardValue);

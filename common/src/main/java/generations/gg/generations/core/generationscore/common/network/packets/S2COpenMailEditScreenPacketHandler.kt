@@ -6,13 +6,14 @@ import generations.gg.generations.core.generationscore.common.client.screen.mail
 import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import net.minecraft.client.Minecraft
+import kotlin.math.min
 
 object S2COpenMailEditScreenPacketHandler : ClientNetworkPacketHandler<S2COpenMailEditScreenPacket> {
     override fun handle(packet: S2COpenMailEditScreenPacket, minecraft: Minecraft) {
-        val itemStack = Minecraft.getInstance().player!!.getItemInHand(packet.hand)
+        val itemStack = minecraft.player!!.getItemInHand(packet.hand)
         if (itemStack.`is`(GenerationsItemTags.CLOSED_POKEMAIL))
-            Minecraft.getInstance().setScreen(MailViewScreen(WrittenMailAccess(itemStack)))
+            minecraft.setScreen(MailViewScreen(WrittenMailAccess(itemStack)))
         else if (itemStack.`is`(GenerationsItemTags.POKEMAIL))
-            Minecraft.getInstance().setScreen(MailEditScreen(Minecraft.getInstance().player, itemStack, packet.hand))
+            minecraft.setScreen(MailEditScreen(minecraft.player, itemStack, packet.hand))
     }
 }
