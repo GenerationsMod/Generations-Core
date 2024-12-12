@@ -126,7 +126,7 @@ public class CurryData {
 
     public Tag toNbt() {
         CompoundTag nbt = new CompoundTag();
-        nbt.putInt("flavor", flavor.ordinal());
+        nbt.putInt("flavor", flavor == null ? -1 : flavor.ordinal());
         nbt.putInt("type", curryType.ordinal());
         nbt.putInt("rating", rating.ordinal());
         nbt.putInt("experience", experience);
@@ -144,7 +144,9 @@ public class CurryData {
             return curry;
         }
 
-        return curry.setFlavor(Flavor.values()[nbt.getInt("flavor")])
+        var flavor = nbt.getInt("flavor");
+
+        return curry.setFlavor(flavor == -1 ? null : Flavor.values()[flavor])
                 .setCurryType(CurryType.getCurryTypeFromIndex(nbt.getInt("type")))
                 .setRating(CurryTasteRating.fromId(nbt.getInt("rating")))
                 .setExperience(nbt.getInt("experience"))
