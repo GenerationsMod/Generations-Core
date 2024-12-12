@@ -181,7 +181,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
 
     override fun shouldBeSaved(): Boolean = super.shouldBeSaved() && this.savesToWorld
 
-    override fun getDimensions(pose: Pose): EntityDimensions = properties.getHitBox() ?: this.type.dimensions
+    override fun getDimensions(pose: Pose): EntityDimensions = (properties.getHitBox() ?: this.type.dimensions).scale(scale)
 
     override fun getCurrentPoseType(): PoseType = poseType
 

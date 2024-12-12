@@ -75,13 +75,8 @@ object GenerationsNetwork : GenerationsImplementation.NetworkManager {
     }
 
     private inline fun <reified V, reified T : UpdateStatuePacket<V, T>> createStatueUpdate(id: ResourceLocation, decoder: Function<FriendlyByteBuf,T>, handler: UpdateStatueHandler<V, T>) {
-        GenerationsCore.implementation.networkManager.createBothBound(id, T::class, { message, buffer -> message.encode(buffer) }, decoder, {
-            clientProxy.processStatueUpdate(it, handler)
-        }, { packet, _, player ->
+        GenerationsCore.implementation.networkManager.createServerBound(id, T::class, { message, buffer -> message.encode(buffer) }, decoder,  { packet, _, player ->
             handler.accept(packet, player)
-            var entity = player.level().getEntity(packet.entityId) ?: return@createBothBound
-
-            packet.sendToPlayersAround(entity.x, entity.y, entity.z, 128.0, entity.level().dimension()) { false }
         })
     }
 

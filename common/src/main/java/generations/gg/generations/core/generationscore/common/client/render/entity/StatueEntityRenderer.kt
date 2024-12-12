@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.client.render.entity
 
-import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.client.render.ModelLayer
 import com.cobblemon.mod.common.client.render.ModelTextureSupplier
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel
@@ -12,9 +11,12 @@ import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import generations.gg.generations.core.generationscore.common.client.GenerationsTextureLoader
 import generations.gg.generations.core.generationscore.common.client.entity.StatueClientDelegate
+import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.StatueInstance
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
+import net.minecraft.client.Minecraft
+import net.minecraft.client.gui.Font
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.entity.EntityRenderer
@@ -22,8 +24,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.client.renderer.entity.ItemRenderer
 import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
 import net.minecraft.client.renderer.texture.OverlayTexture
+import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
-import java.lang.reflect.Field
 
 object ModifiableTextureSupplier : ModelTextureSupplier {
     var texture = MissingTextureAtlasSprite.getLocation()
@@ -53,7 +55,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         partialTicks: Float,
         stack: PoseStack,
         buffer: MultiBufferSource,
-        light: Int
+        light: Int,
     ) {
         val renderable = entity.renderablePokemon()
 
@@ -72,6 +74,8 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         }
         val model = PokemonModelRepository.getPoser(renderable.species.resourceIdentifier, renderable.aspects) as PoseableEntityModel<PokemonEntity>
         val context = model.context
+
+        var yOffset = renderable.form.hitbox.height * scale
 
         context.pop()
         context.put(RenderContext.SCALE, renderable.form.baseScale)
@@ -96,7 +100,62 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
 
         stack.popPose()
 
-        super.render(entity, entityYaw, partialTicks, stack, buffer, light)
+        if (this.shouldShowName(entity)) {
+            this.renderNameTag(entity, entity.displayName, stack, buffer, light, yOffset)
+        }
+    }
+
+    fun renderNameTag(
+        entity: StatueEntity,
+        displayName: Component,
+        poseStack: PoseStack,
+        buffer: MultiBufferSource?,
+        packedLight: Int,
+        yOffsetY: Float,
+    ) {
+        val d = entityRenderDispatcher.distanceToSqr(entity)
+        if (!(d > 4096.0)) {
+            val bl: Boolean = !entity.isDiscrete()
+            val f: Float = yOffsetY
+            val i = if ("deadmau5" == displayName.string) -10 else 0
+            poseStack.pushPose()
+            poseStack.translate(0.0f, f, 0.0f)
+            poseStack.mulPose(entityRenderDispatcher.cameraOrientation())
+            poseStack.scale(-0.025f, -0.025f, 0.025f)
+            val matrix4f = poseStack.last().pose()
+            val g = Minecraft.getInstance().options.getBackgroundOpacity(0.25f)
+            val j = (g * 255.0f).toInt() shl 24
+            val font = this.font
+            val h = (-font.width(displayName) / 2).toFloat()
+            font.drawInBatch(
+                displayName,
+                h,
+                i.toFloat(),
+                553648127,
+                false,
+                matrix4f,
+                buffer,
+                if (bl) Font.DisplayMode.SEE_THROUGH else Font.DisplayMode.NORMAL,
+                j,
+                packedLight
+            )
+            if (bl) {
+                font.drawInBatch(
+                    displayName,
+                    h,
+                    i.toFloat(),
+                    -1,
+                    false,
+                    matrix4f,
+                    buffer,
+                    Font.DisplayMode.NORMAL,
+                    0,
+                    packedLight
+                )
+            }
+
+            poseStack.popPose()
+        }
     }
 
     fun setupAnimStateful(
@@ -106,7 +165,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         limbSwingAmount: Float,
         ageInTicks: Float,
         headYaw: Float,
-        headPitch: Float
+        headPitch: Float,
     ) {
         model.setupEntityTypeContext(null)
         state.currentModel = model
@@ -163,6 +222,10 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         val renderable = entity.renderablePokemon()
 
         return PokemonModelRepository.getTexture(renderable.species.resourceIdentifier, renderable.aspects, 0f)
+    }
+
+    override fun shouldShowName(entity: StatueEntity): Boolean {
+        return entity.label?.let { it.isNotEmpty() && it.isNotBlank() } ?: false
     }
 }
 
