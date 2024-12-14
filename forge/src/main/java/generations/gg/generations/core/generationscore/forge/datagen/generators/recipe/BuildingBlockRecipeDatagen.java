@@ -520,10 +520,11 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
 
         //Compressed Polished Blocks
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_ANDESITE_SET.getBaseBlock(), Blocks.POLISHED_ANDESITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DIORITE_SET.getBaseBlock(), Blocks.POLISHED_DIORITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_GRANITE_SET.getBaseBlock(), Blocks.POLISHED_GRANITE);
-        twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DEEPSLATE_SET.getBaseBlock(), Blocks.POLISHED_DEEPSLATE);
+        //Reason for changing to 3x3 is feature parity and deepslate conflicts with deepslate tiles.
+        threeByThreePacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_ANDESITE_SET.getBaseBlock(), Blocks.POLISHED_ANDESITE);
+        threeByThreePacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DIORITE_SET.getBaseBlock(), Blocks.POLISHED_DIORITE);
+        threeByThreePacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_GRANITE_SET.getBaseBlock(), Blocks.POLISHED_GRANITE);
+        threeByThreePacker(consumer, RecipeCategory.BUILDING_BLOCKS,GenerationsBlocks.COMPRESSED_POLISHED_DEEPSLATE_SET.getBaseBlock(), Blocks.POLISHED_DEEPSLATE);
 
         //Cobble Ruins Pallet
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.COBBLE_RUINS_1_SET.getBaseBlock(), 4)
