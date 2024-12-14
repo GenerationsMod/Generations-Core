@@ -75,7 +75,9 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
                     }
 
                     var list = be.isCustomDrop() ? be.getCustomDrops() : getDrops((ServerLevel) level, pos, player);
+                    list.forEach(item -> player.displayClientMessage(Component.translatable("generations_core.blocks.lootfound", item.getHoverName()), false));
                     Containers.dropContents(level, pos.above(), list);
+
 
                     be.addClaimer(playerUUID);
                     level.playSound(null, player.getX(), player.getY(), player.getZ(), GenerationsSounds.LUGIA_SHRINE_SONG.get(), SoundSource.BLOCKS, 0.2f, 1.0f);
