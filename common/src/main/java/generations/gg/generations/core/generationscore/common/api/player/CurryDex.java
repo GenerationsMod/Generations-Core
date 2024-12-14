@@ -151,7 +151,7 @@ public class CurryDex extends PlayerDataExtension {
     }
 
     public static class CurryDexEntry {
-        public Instant instant;
+        public long instant;
         public String pokemonName;
         public ResourceLocation biome;
         public BlockPos pos;
@@ -164,7 +164,7 @@ public class CurryDex extends PlayerDataExtension {
 
         public static CurryDexEntry fromNbt(CompoundTag entry) {
             CurryDexEntry curryDexEntry = new CurryDexEntry();
-            curryDexEntry.instant = Instant.ofEpochMilli(entry.getLong("instant"));
+            curryDexEntry.instant = entry.getLong("instant");
             curryDexEntry.pokemonName = entry.getString("pokeName");
             curryDexEntry.biome = new ResourceLocation(entry.getString("biome"));
             curryDexEntry.pos = BlockPos.of(entry.getLong("pos"));
@@ -180,7 +180,7 @@ public class CurryDex extends PlayerDataExtension {
 
         public CompoundTag toNbt() {
             CompoundTag compound = new CompoundTag();
-            compound.putLong("instant", instant.toEpochMilli());
+            compound.putLong("instant", instant);
             compound.putString("pokeName", pokemonName);
             compound.putString("biome", biome.toString());
             compound.putLong("pos", pos.asLong());
@@ -195,12 +195,12 @@ public class CurryDex extends PlayerDataExtension {
         }
 
 
-        public Instant getInstant() {
+        public long getInstant() {
             return instant;
         }
 
         public void setInstant(Instant instant) {
-            this.instant = instant;
+            this.instant = instant.toEpochMilli();
         }
 
         @Override
@@ -219,7 +219,7 @@ public class CurryDex extends PlayerDataExtension {
         }
 
         public static void toByteBuf(FriendlyByteBuf byteBuf, CurryDexEntry entry) {
-            byteBuf.writeVarLong(entry.getInstant().toEpochMilli())
+            byteBuf.writeVarLong(entry.getInstant())
                     .writeUtf(entry.pokemonName)
                     .writeResourceLocation(entry.biome)
                     .writeVarLong(entry.pos.asLong())
@@ -232,7 +232,7 @@ public class CurryDex extends PlayerDataExtension {
         public static CurryDexEntry fromByteBuf(FriendlyByteBuf byteBuf) {
             CurryDexEntry entry = new CurryDexEntry();
 
-            entry.instant = Instant.ofEpochMilli(byteBuf.readVarInt());
+            entry.instant = byteBuf.readVarInt();
             entry.pokemonName = byteBuf.readUtf();
             entry.biome = byteBuf.readResourceLocation();
             entry.pos = BlockPos.of(byteBuf.readVarLong());
@@ -247,7 +247,7 @@ public class CurryDex extends PlayerDataExtension {
 
         public JsonObject toJson() {
             var json = new JsonObject();
-            json.addProperty("instant", getInstant().toEpochMilli());
+            json.addProperty("instant", getInstant());
             json.addProperty("pokemonName", pokemonName);
             json.addProperty("biome", biome.toString());
             json.add("pos", toBlockPosFromJson(pos));
@@ -261,7 +261,7 @@ public class CurryDex extends PlayerDataExtension {
         public static CurryDexEntry fromJson(JsonObject byteBuf) {
             CurryDexEntry entry = new CurryDexEntry();
 
-            entry.instant = Instant.ofEpochMilli(byteBuf.getAsJsonPrimitive("instnace").getAsInt());
+            entry.instant = byteBuf.getAsJsonPrimitive("instnace").getAsLong();
             entry.pokemonName = byteBuf.getAsJsonPrimitive("pokemonName").getAsString();
             entry.biome = new ResourceLocation(byteBuf.getAsJsonPrimitive("biome").getAsString());
             entry.pos = fromJsonToBlockPos(byteBuf.getAsJsonArray("pos"));
