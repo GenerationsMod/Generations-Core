@@ -53,7 +53,7 @@ public class ElevatorBlock extends Block {
             ElevatorEvents.USE_ELEVATOR.invoker().accept(useElevator);
             return useElevator;
         }).map(ElevatorEvents.UseElevator::getDestination).filter(Objects::nonNull).map(BlockPos::above).ifPresent(blockPos -> {
-            player.serverLevel().playSound(null, blockPos, GenerationsSounds.ELEVATOR.get(), SoundSource.BLOCKS);
+            player.serverLevel().playSound(null, blockPos, GenerationsSounds.ELEVATOR.get(), SoundSource.BLOCKS, 0.5f, 0.0f);
             player.teleportTo(player.position().x(), blockPos.getY() - 0.5, player.position().z());
         });
     }
