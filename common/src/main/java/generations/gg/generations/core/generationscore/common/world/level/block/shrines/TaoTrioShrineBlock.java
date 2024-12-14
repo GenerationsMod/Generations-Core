@@ -52,4 +52,9 @@ public class TaoTrioShrineBlock extends InteractShrineBlock<TaoTrioShrineBlockEn
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPE.getShape(state);
     }
+
+    @Override
+    public String getVariant(BlockState blockState) {
+        return null;
+    }
 }

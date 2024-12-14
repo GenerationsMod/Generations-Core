@@ -79,4 +79,9 @@ public class RegigigasShrineBlock extends InteractShrineBlock<RegigigasShrineBlo
     public boolean isStackValid(ItemStack stack) {
         return stack.getItem() instanceof RegiOrbItem;
     }
+
+    @Override
+    public String getVariant(BlockState blockState) {
+        return null;
+    }
 }
