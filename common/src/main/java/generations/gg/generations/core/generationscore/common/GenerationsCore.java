@@ -19,6 +19,7 @@ import generations.gg.generations.core.generationscore.common.api.data.Generatio
 import generations.gg.generations.core.generationscore.common.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.common.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.common.api.player.Caught;
+import generations.gg.generations.core.generationscore.common.api.player.CurryDex;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.common.config.Config;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
@@ -122,6 +123,7 @@ public class GenerationsCore {
 		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
+		PlayerDataExtensionRegistry.INSTANCE.register(CurryDex.KEY, CurryDex.class, false);
 
 		GenerationsMolangFunctions.init();
 
