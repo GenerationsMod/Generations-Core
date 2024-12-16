@@ -1,8 +1,8 @@
 {
-  "type": "generations_core:rks_item",
+  "type": "generations_core:shaped_rks",
   "consumesTimeCapsules": false,
   "experience": 1.0,
-  "key": {
+  "inputs": {
     "A": {
       "type": "item",
       "key": "generations_core:key_stone"
@@ -22,5 +22,8 @@
     "ABC"
   ],
   "processingTime": 240,
-  "result": "generations_core:gengarite"
+  "result": {
+    "type": "generations_core:item",
+    "value": "generations_core:gengarite"
+  }
 }

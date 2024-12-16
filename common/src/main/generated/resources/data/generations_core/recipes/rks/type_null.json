@@ -1,8 +1,8 @@
 {
-  "type": "generations_core:rks_pokemon",
+  "type": "generations_core:shaped_rks",
   "consumesTimeCapsules": true,
   "experience": 1.0,
-  "key": {
+  "inputs": {
     "A": {
       "type": "item",
       "key": "minecraft:netherite_chestplate"
@@ -28,8 +28,8 @@
       "key": "minecraft:totem_of_undying"
     },
     "G": {
-      "type": "item",
-      "key": "generations_core:bug_memory_drive"
+      "type": "item_tag",
+      "key": "generations_core:memory_drives"
     },
     "Z": {
       "type": "item",
@@ -43,6 +43,7 @@
   ],
   "processingTime": 240,
   "result": {
+    "type": "generations_core:pokemon",
     "species": "cobblemon:typenull"
   },
   "speciesKey": "cobblemon:typenull"

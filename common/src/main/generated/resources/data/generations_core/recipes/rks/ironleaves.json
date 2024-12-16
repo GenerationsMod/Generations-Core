@@ -1,24 +1,22 @@
 {
-  "type": "generations_core:rks_pokemon",
+  "type": "generations_core:shapeless_rks",
   "consumesTimeCapsules": true,
   "experience": 1.0,
-  "key": {
-    "A": {
+  "ingredients": [
+    {
       "type": "time_capsule",
       "aspects": [],
       "species": "cobblemon:virizion",
       "strictAspects": false
     },
-    "B": {
+    {
       "type": "item",
       "key": "minecraft:redstone"
     }
-  },
-  "pattern": [
-    "AB"
   ],
   "processingTime": 240,
   "result": {
+    "type": "generations_core:pokemon",
     "spawnInWorld": false,
     "species": "cobblemon:ironleaves",
     "usePokemonInCapsule": true

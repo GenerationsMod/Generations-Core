@@ -4,12 +4,16 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
+import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.recipe.DamageIngredient;
 import generations.gg.generations.core.generationscore.common.world.recipe.PokemonItemIngredient;
+import generations.gg.generations.core.generationscore.common.world.recipe.ShapelessRksRecipe;
 import generations.gg.generations.core.generationscore.common.world.recipe.TimeCapsuleIngredient;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.GenerationsRecipeProvider;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.RksRecipeJsonBuilder;
+import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.ShapedRksRecipeJsonBuilder;
+import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.ShapelessRksRecipeJsonBuilder;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -33,8 +37,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(LegendKeys.MEWTWO, 70)
-                .key(LegendKeys.MEWTWO)
+        ShapedRksRecipeJsonBuilder.create(LegendKeys.MEWTWO, 70)
                 .pattern("XAX")
                 .pattern("XBX")
                 .pattern("XCX")
@@ -42,11 +45,11 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .input('A', DNA_SPLICERS.get())
                 .input('B', ORB.get())
                 .input('C', MEW_DNA_FIBER.get())
+                .key(LegendKeys.MEWTWO)
                 .criterion("mew_fossil", InventoryChangeTrigger.TriggerInstance.hasItems(MEW_FOSSIL.get()))
                 .offerTo(exporter, GenerationsCore.id("mewtwo"));
 
-        RksRecipeJsonBuilder.create(WONDER_EGG.get())
-                .key(LegendKeys.MANAPHY)
+        ShapedRksRecipeJsonBuilder.create(WONDER_EGG.get())
                 .pattern("XXX")
                 .pattern("ABC")
                 .pattern("ZZZ")
@@ -55,11 +58,11 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .input('B', ORB.get())
                 .input('C', Items.HEART_OF_THE_SEA)
                 .input('Z', MYSTIC_WATER)
+                .key(LegendKeys.MANAPHY)
                 .criterion("heart_of_the_sea", InventoryChangeTrigger.TriggerInstance.hasItems(Items.HEART_OF_THE_SEA))
                 .offerTo(exporter, GenerationsCore.id("wonder_egg"));
 
-        RksRecipeJsonBuilder.create(LegendKeys.TYPE_NULL)
-                .key(LegendKeys.TYPE_NULL)
+        ShapedRksRecipeJsonBuilder.create(LegendKeys.TYPE_NULL)
                 .pattern("DAE")
                 .pattern("FBG")
                 .pattern("ZCZ")
@@ -69,34 +72,34 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .input('D', Items.NETHERITE_AXE)
                 .input('E', Items.NETHERITE_HELMET)
                 .input('F', Items.TOTEM_OF_UNDYING)
-                .input('G', BUG_MEMORY_DRIVE.get()) //TODO: Replace with memory drive tag
+                .input('G', GenerationsItemTags.MEMORY_DRIVES) //TODO: Replace with memory drive tag
                 .input('Z', Items.NETHERITE_BLOCK)
+                .key(LegendKeys.TYPE_NULL)
                 .criterion("netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
                 .offerTo(exporter, GenerationsCore.id("type_null"));
 
-        RksRecipeJsonBuilder.create(SOUL_HEART.get())
-                .key(LegendKeys.MAGEARNA)
+        ShapedRksRecipeJsonBuilder.create(SOUL_HEART.get())
                 .pattern(" A ")
                 .pattern("ABA")
                 .pattern(" A ")
                 .input('A', HEART_SCALE.get())
                 .input('B', ORB.get())
+                .key(LegendKeys.MAGEARNA)
                 .criterion("heart_scale", InventoryChangeTrigger.TriggerInstance.hasItems(HEART_SCALE.get()))
                 .offerTo(exporter, GenerationsCore.id("soul_heart"));
 
-        RksRecipeJsonBuilder.create(LegendKeys.MAGEARNA, 70)
-                .key(LegendKeys.MAGEARNA)
+        ShapedRksRecipeJsonBuilder.create(LegendKeys.MAGEARNA, 70)
                 .pattern("CAC")
                 .pattern("ABA")
                 .pattern("CAC")
                 .input('A', Items.NETHERITE_INGOT)
                 .input('B', new DamageIngredient(SOUL_HEART.get(), 100))
                 .input('C', Items.IRON_INGOT)
+                .key(LegendKeys.MAGEARNA)
                 .criterion("soul_heart", InventoryChangeTrigger.TriggerInstance.hasItems(SOUL_HEART.get()))
                 .offerTo(exporter, GenerationsCore.id("magearna"));
 
-        RksRecipeJsonBuilder.create(LegendKeys.GENESECT)
-                .key(LegendKeys.GENESECT)
+        ShapedRksRecipeJsonBuilder.create(LegendKeys.GENESECT)
                 .pattern("SOB")
                 .pattern("CND")
                 .pattern("RNR")
@@ -107,10 +110,11 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .input('O', ORB.get())
                 .input('D', DOUSE_DRIVE.get())
                 .input('R', Items.REDSTONE)
+                .key(LegendKeys.GENESECT)
                 .criterion("orb", InventoryChangeTrigger.TriggerInstance.hasItems(ORB.get()))
                 .offerTo(exporter, GenerationsCore.id("genesect"));
 
-        RksRecipeJsonBuilder.create(SACRED_ASH.get()) //TODO: Add SpeciesKey if needed
+        ShapedRksRecipeJsonBuilder.create(SACRED_ASH.get()) //TODO: Add SpeciesKey if needed
                 .pattern("ABC")
                 .input('A', Items.TOTEM_OF_UNDYING)
                 .input('B', Items.COAL)
@@ -267,7 +271,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     }
 
     private <E> void createZCyrstal(RegistrySupplier<Item> result, String pokemon, String aspects, Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(result.get())
+        ShapedRksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
                 .input('B', new TimeCapsuleIngredient(new SpeciesKey(pokemon, Set.of(aspects)), false))
                 .input('X', Z_INGOT.get())
@@ -291,7 +295,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     }
 
     private void createZCyrstal(RegistrySupplier<Item> result, String pokemon, boolean multi, Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(result.get())
+        ShapedRksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
                 .input('B', new TimeCapsuleIngredient(pokemon, false))
                 .input('X', Z_INGOT.get())
@@ -304,16 +308,15 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     }
 
     private void unownBlock(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Block> createdBlock, String form){
-        RksRecipeJsonBuilder.create(createdBlock.get())
-                .input('X', GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
-                .input('Y', new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of("glyph-" + form)))
-                .pattern("XY")
+        ShapelessRksRecipeJsonBuilder.create(createdBlock.get())
+                .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
+                .requires(new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of("glyph-" + form)))
                 .criterion(getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()), has(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()))
                 .offerTo(consumer, createdBlock.getId());
     }
 
     private void createZCyrstal(RegistrySupplier<Item> result, Item item, Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(result.get())
+        ShapedRksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
                 .input('B', item)
                 .input('X', Z_INGOT.get())
@@ -343,7 +346,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
             }
         }
 
-        var builder = RksRecipeJsonBuilder.create(result.get())
+        var builder = ShapedRksRecipeJsonBuilder.create(result.get())
                 .input('A', KEY_STONE.get())
                 .input('B', new TimeCapsuleIngredient(pokemon, false))
                 .input('C', Items.NETHERITE_SCRAP);
@@ -357,16 +360,15 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
 
 
     private void createParadox(String name, String toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
-        RksRecipeJsonBuilder.create(name, false, true)
-                .input('A', new TimeCapsuleIngredient(toBeConverted, false))
-                .input('B', item)
-                .pattern("AB")
+        ShapelessRksRecipeJsonBuilder.create(name, false, true)
+                .requires(new TimeCapsuleIngredient(toBeConverted, false))
+                .requires(item)
                 .criterion(BuiltInRegistries.ITEM.getKey(item).getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
                 .offerTo(exporter, GenerationsCore.id(name));
     }
 
     private void createFossil(RegistrySupplier<Item> item, String name, Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(name, false, false)
+        ShapedRksRecipeJsonBuilder.create(name, false, false)
                 .pattern("A")
                 .input('A', item.get())
                 .criterion(item.getId().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item.get()))
@@ -374,7 +376,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     }
 
     private void createFossil(RegistrySupplier<Item> item, RegistrySupplier<Item> item2, String name, Consumer<FinishedRecipe> exporter) {
-        RksRecipeJsonBuilder.create(name)
+        ShapedRksRecipeJsonBuilder.create(name)
                 .pattern("AB")
                 .input('A', item.get())
                 .input('B', item2.get())

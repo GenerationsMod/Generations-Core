@@ -588,6 +588,25 @@ public class TagsDatagen {
                     .add(MEGA_CUFF.getKey());
             tag(GenerationsItemTags.DYNAMAX_BANDS).add(DYNAMAX_BAND.getKey());
             tag(GenerationsItemTags.Z_RINGS).add(Z_RING.getKey()).add(Z_POWER_RING.getKey());
+            tag(GenerationsItemTags.MEMORY_DRIVES).add(
+                    BUG_MEMORY_DRIVE.get(),
+                    DARK_MEMORY_DRIVE.get(),
+                    DRAGON_MEMORY_DRIVE.get(),
+                    ELECTRIC_MEMORY_DRIVE.get(),
+                    FAIRY_MEMORY_DRIVE.get(),
+                    FIGHTING_MEMORY_DRIVE.get(),
+                    FIRE_MEMORY_DRIVE.get(),
+                    FLYING_MEMORY_DRIVE.get(),
+                    GHOST_MEMORY_DRIVE.get(),
+                    GRASS_MEMORY_DRIVE.get(),
+                    GROUND_MEMORY_DRIVE.get(),
+                    ICE_MEMORY_DRIVE.get(),
+                    POISON_MEMORY_DRIVE.get(),
+                    PSYCHIC_MEMORY_DRIVE.get(),
+                    ROCK_MEMORY_DRIVE.get(),
+                    STEEL_MEMORY_DRIVE.get(),
+                    WATER_MEMORY_DRIVE.get()
+            );
         }
     }
 

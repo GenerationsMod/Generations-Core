@@ -10,7 +10,8 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public record RksResultType<T extends RksResult<T>>(ResourceLocation id, Codec<T> codec, Function<FriendlyByteBuf, T> fromBuffer, BiConsumer<FriendlyByteBuf, T> toBuffer) {
-    public static Registrar<RksResultType<?>> RKS_RESULT = RegistrarManager.get(GenerationsCore.MOD_ID).<RksResultType<?>>builder(GenerationsCore.id("rks_result")).syncToClients().build();
+    public static final Registrar<RksResultType<?>> RKS_RESULT = RegistrarManager.get(GenerationsCore.MOD_ID).<RksResultType<?>>builder(GenerationsCore.id("rks_result")).syncToClients().build();
+    public static final Codec<RksResultType<?>> CODEC = ResourceLocation.CODEC.xmap(RKS_RESULT::get, RKS_RESULT::getId);
 
     public static final RegistrySupplier<RksResultType<PokemonResult>> POKEMON = register("pokemon", PokemonResult.CODEC, PokemonResult.FROM_BUFFER, PokemonResult.TO_BUFFER);
     public static final RegistrySupplier<RksResultType<ItemResult>> ITEM = register("item", ItemResult.CODEC, ItemResult.FROM_BUFFER, ItemResult.TO_BUFFER);

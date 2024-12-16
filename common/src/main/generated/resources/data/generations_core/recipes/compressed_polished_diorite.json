@@ -1,17 +1,36 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "key": {
-    "#": {
+  "ingredients": [
+    {
+      "item": "minecraft:polished_diorite"
+    },
+    {
+      "item": "minecraft:polished_diorite"
+    },
+    {
+      "item": "minecraft:polished_diorite"
+    },
+    {
+      "item": "minecraft:polished_diorite"
+    },
+    {
+      "item": "minecraft:polished_diorite"
+    },
+    {
+      "item": "minecraft:polished_diorite"
+    },
+    {
+      "item": "minecraft:polished_diorite"
+    },
+    {
+      "item": "minecraft:polished_diorite"
+    },
+    {
       "item": "minecraft:polished_diorite"
     }
-  },
-  "pattern": [
-    "##",
-    "##"
   ],
   "result": {
     "item": "generations_core:compressed_polished_diorite"
-  },
-  "show_notification": true
+  }
 }

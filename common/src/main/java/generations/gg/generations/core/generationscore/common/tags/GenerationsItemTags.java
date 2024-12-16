@@ -58,6 +58,8 @@ public class GenerationsItemTags {
     public static final TagKey<Item> TERA_ORBS = create("tera_orbs");
     public static final TagKey<Item> Z_RINGS = create("z_rings");
 
+    public static final TagKey<Item> MEMORY_DRIVES = create("memory_drives");
+
     private static TagKey<Item> create(String name) {
         return TagKey.create(Registries.ITEM, GenerationsCore.id(name));
     }

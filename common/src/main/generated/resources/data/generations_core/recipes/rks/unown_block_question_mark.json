@@ -1,23 +1,23 @@
 {
-  "type": "generations_core:rks_item",
+  "type": "generations_core:shapeless_rks",
   "consumesTimeCapsules": true,
   "experience": 1.0,
-  "key": {
-    "X": {
+  "ingredients": [
+    {
       "type": "item",
       "key": "generations_core:temple_block"
     },
-    "Y": {
+    {
       "type": "pokemon_item",
       "aspects": [
         "glyph-?"
       ],
       "species": "cobblemon:unown"
     }
-  },
-  "pattern": [
-    "XY"
   ],
   "processingTime": 240,
-  "result": "generations_core:unown_block_question_mark"
+  "result": {
+    "type": "generations_core:item",
+    "value": "generations_core:unown_block_question_mark"
+  }
 }

@@ -217,15 +217,15 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         this.inventory.clear();
     }
 
-    private Optional<? extends RksRecipe<?>> getCurrentRecipe() {
+    private Optional<? extends RksRecipe> getCurrentRecipe() {
         // No need to find recipes if the inventory is empty. Cannot craft anything.
         if (this.level == null || this.isEmpty()) return Optional.empty();
 
-        RksRecipe<?> lastRecipe = (RksRecipe<?>) getRecipeUsed();
+        RksRecipe lastRecipe = (RksRecipe) getRecipeUsed();
         RecipeManager manager = this.level.getRecipeManager();
 
         if (lastRecipe != null) {
-            RksRecipe<?> mapRecipe = getMappedRecipe(manager, lastRecipe.getId());
+            RksRecipe mapRecipe = getMappedRecipe(manager, lastRecipe.getId());
             if (mapRecipe != null && mapRecipe.matches(this, level)) {
                 return Optional.of(lastRecipe);
             }
@@ -233,17 +233,12 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         return getMappedRecipe(manager);
     }
 
-    private Optional<? extends RksRecipe<?>> getMappedRecipe(RecipeManager manager) {
-        var recipe = manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_ITEM.get(), this, level);
-
-        if(recipe.isEmpty()) return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS_POKEMON.get(), this, level);
-        else return recipe;
+    private Optional<? extends RksRecipe> getMappedRecipe(RecipeManager manager) {
+        return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS.get(), this, level);
     }
 
-    private RksRecipe<?> getMappedRecipe(RecipeManager manager, ResourceLocation id) {
-        var recipe = manager.byType(GenerationsCoreRecipeTypes.RKS_ITEM.get()).get(id);
-
-        if(recipe == null) manager.byType(GenerationsCoreRecipeTypes.RKS_POKEMON.get()).get(id);
+    private RksRecipe getMappedRecipe(RecipeManager manager, ResourceLocation id) {
+        var recipe = manager.byType(GenerationsCoreRecipeTypes.RKS.get()).get(id);
 
         return recipe;
     }
@@ -317,7 +312,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         if (tile.isToggled()) {
             ItemStack result = tile.getResult().orElse(ItemStack.EMPTY);
 
-            Optional<? extends RksRecipe<?>> recipe = tile.getCurrentRecipe();
+            Optional<? extends RksRecipe> recipe = tile.getCurrentRecipe();
 
             if (recipe.isPresent() && (!tile.isInputEmpty())) {
                 if (tile.canSmelt(result, recipe.get())) {

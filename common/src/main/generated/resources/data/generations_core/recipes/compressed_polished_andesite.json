@@ -1,17 +1,36 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "key": {
-    "#": {
+  "ingredients": [
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
       "item": "minecraft:polished_andesite"
     }
-  },
-  "pattern": [
-    "##",
-    "##"
   ],
   "result": {
     "item": "generations_core:compressed_polished_andesite"
-  },
-  "show_notification": true
+  }
 }

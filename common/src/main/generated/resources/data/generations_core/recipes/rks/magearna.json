@@ -1,8 +1,8 @@
 {
-  "type": "generations_core:rks_pokemon",
+  "type": "generations_core:shaped_rks",
   "consumesTimeCapsules": true,
   "experience": 1.0,
-  "key": {
+  "inputs": {
     "A": {
       "type": "item",
       "key": "minecraft:netherite_ingot"
@@ -24,6 +24,7 @@
   ],
   "processingTime": 240,
   "result": {
+    "type": "generations_core:pokemon",
     "level": 70,
     "species": "cobblemon:magearna"
   },
