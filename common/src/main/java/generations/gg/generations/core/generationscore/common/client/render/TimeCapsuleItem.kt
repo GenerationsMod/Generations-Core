@@ -17,6 +17,7 @@ import generations.gg.generations.core.generationscore.common.util.getRenderable
 import generations.gg.generations.core.generationscore.common.world.item.StatueSpawnerItem
 import generations.gg.generations.core.generationscore.common.world.item.TimeCapsule
 import net.minecraft.client.renderer.LightTexture
+import net.minecraft.client.renderer.LightTexture.FULL_BRIGHT
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.world.item.ItemDisplayContext
@@ -43,7 +44,7 @@ object TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
             val renderLayer = model.getLayer(PokemonModelRepository.getTexture(species.resourceIdentifier, aspects, 0f), false, false)
             val transformations: PokemonItemRenderer.Transformations = (if(isSprite) positionsSprite[mode] else positions[mode]) ?: return
 
-            Lighting.setupFor3DItems()
+            Lighting.setupForFlatItems()
             matrices.scale(transformations.scale.x, transformations.scale.y, transformations.scale.z)
             matrices.translate(transformations.translation.x, transformations.translation.y, transformations.translation.z
             )
@@ -63,9 +64,9 @@ object TimeCapsuleItemRenderer : CobblemonBuiltinItemRenderer {
             val tint: Vector4f = if (stack.item is PokemonItem) (stack.item as PokemonItem).tint(stack) else Vector4f(1f, 1f, 1f, 1f)
             
             if(isSprite) {
-                Lighting.setupForFlatItems()
+                Lighting.setupForEntityInInventory()
 
-                val packedLight = if (mode == ItemDisplayContext.GUI) LightTexture.pack(13, 13) else light
+                val packedLight = if (mode == ItemDisplayContext.GUI) FULL_BRIGHT else light
                 RenderSystem.disableCull()
                 (model.rootPart as RareCandyBone).renderSprite(context, matrices, packedLight, OverlayTexture.NO_OVERLAY, tint.x, tint.y, tint.z, tint.w, isSprite)
                 RenderSystem.disableCull()
