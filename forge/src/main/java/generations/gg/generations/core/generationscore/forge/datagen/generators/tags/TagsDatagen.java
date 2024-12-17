@@ -78,13 +78,17 @@ public class TagsDatagen {
 
             GenerationsPokeDolls.POKEDOLLS.forEach(pokedoll -> tag(GenerationsBlockTags.POKEDOLLS).add(pokedoll.get()));
 
+            var mine_with_pickaxe = tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)
+                    .addTag(GenerationsBlockTags.POKEBRICKS).addTag(GenerationsBlockTags.GENERATIONSORES).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
+                    .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS);
+
             GenerationsBlocks.STONE.forEach(block -> {
-                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block.get());
+                mine_with_pickaxe.add(block.get());
                 EasyBlockTags(block.get());
                 if (block.get() instanceof PressurePlateBlock) tag(BlockTags.STONE_PRESSURE_PLATES).add(block.get());
             });
 
-            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+            mine_with_pickaxe.add(
                             GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(),
                     GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get(),
@@ -116,21 +120,9 @@ public class TagsDatagen {
                     GenerationsUtilityBlocks.PINK_ELEVATOR.get(),
                     GenerationsDecorationBlocks.DESK.get(),
                     GenerationsDecorationBlocks.FRIDGE.get()
-            )
-                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
-                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
-                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
-                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
-                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
-                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
-                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
-                    .add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
+            ).add(GenerationsDecorationBlocks.STREET_LAMP.toArray())
                     .add(GenerationsUtilityBlocks.PC.toArray())
                     .add(GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.stream().map(Supplier::get).toArray(BallDisplayBlock[]::new));
-
-
-
-
 
 
 
@@ -280,9 +272,7 @@ public class TagsDatagen {
                     .add(GenerationsDecorationBlocks.COUCH_OTTOMAN.toArray());
             tag(BlockTags.ENDERMAN_HOLDABLE).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
             tag(BlockTags.SWORD_EFFICIENT).add(GenerationsBlocks.CURSED_PUMPKIN.get(), GenerationsBlocks.CURSED_JACK_O_LANTERN.get(), GenerationsBlocks.CURSED_CARVED_PUMPKIN.get());
-            tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)
-                    .addTag(GenerationsBlockTags.POKEBRICKS).addTag(GenerationsBlockTags.GENERATIONSORES).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
-                    .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS);
+
             tag(BlockTags.NEEDS_IRON_TOOL).addTag(GenerationsBlockTags.GENERATIONSORES);
             tag(Tags.Blocks.ORES).addTag(GenerationsBlockTags.GENERATIONSORES);
             tag(BlockTags.NEEDS_STONE_TOOL).add(

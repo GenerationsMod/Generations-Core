@@ -1,12 +1,14 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.loot;
 
 import com.cobblemon.mod.common.CobblemonItems;
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsOreSet;
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.PrisonBottleStemBlock;
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -59,6 +61,7 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
         GenerationsFullBlockSet.getFullBlockSets().forEach(generationsFullBlockSet -> generationsFullBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
         GenerationsBlockSet.getBlockSets().forEach(generationsBlockSet -> generationsBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
+        GenerationsUltraBlockSet.ultraBlockSets.forEach(generationsBlockSet -> generationsBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
 
         add(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(), createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()));
 
@@ -155,6 +158,31 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         createGenericRotationModelBlockTable(GenerationsShrines.PRISON_BOTTLE.get());
         prisonBottleStem();
 
+        dropSelf(GenerationsBlocks.CASTLE_PILLAR);
+        dropSelf(GenerationsBlocks.BROKEN_CASTLE_PILLAR);
+        dropSelf(GenerationsBlocks.PRISMARINE_PILLAR);
+        dropSelf(GenerationsBlocks.BROKEN_PRISMARINE_PILLAR);
+        dropSelf(GenerationsBlocks.DARK_PRISMARINE_PILLAR);
+        dropSelf(GenerationsBlocks.BROKEN_DARK_PRISMARINE_PILLAR);
+        dropSelf(GenerationsBlocks.HAUNTED_PILLAR);
+        dropSelf(GenerationsBlocks.BROKEN_HAUNTED_PILLAR);
+        dropSelf(GenerationsBlocks.DAWN_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.DUSK_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.FIRE_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.ICE_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.LEAF_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.MOON_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.SHINY_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.SUN_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.THUNDER_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.WATER_STONE_BLOCK);
+        dropSelf(GenerationsBlocks.CRATE);
+
+        dropSelf(GenerationsBlocks.WARNING_BLOCK);
+    }
+
+    protected void dropSelf(RegistrySupplier<Block> block) {
+        super.dropSelf(block.get());
     }
 
     private void dropDisplayStandWithBall(Block block, Item item) {
