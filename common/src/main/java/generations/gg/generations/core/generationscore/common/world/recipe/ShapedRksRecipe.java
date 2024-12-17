@@ -182,7 +182,6 @@ public class ShapedRksRecipe extends RksRecipe {
                     ingredient = this.recipeItems.get(k + l * this.width);
                 }
 
-
                 if (!ingredient.matches(craftingInventory.getItem(x + y * 3 + 1))) {
                     return false;
                 }
@@ -202,7 +201,7 @@ public class ShapedRksRecipe extends RksRecipe {
     @Override
     public boolean isIncomplete() {
         NonNullList<GenerationsIngredient> nonNullList = this.recipeItems;
-        return nonNullList.isEmpty() || nonNullList.stream().filter(ingredient -> !ingredient.isEmpty()).anyMatch(ingredient -> ingredient.isEmpty());
+        return nonNullList.isEmpty() || nonNullList.stream().filter(ingredient -> !ingredient.isEmpty()).anyMatch(GenerationsIngredient::isEmpty);
     }
 
     public record Serializer() implements RecipeSerializer<ShapedRksRecipe> {

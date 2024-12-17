@@ -269,7 +269,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     protected void smelt(ItemStack result, RksRecipe recipe) {
-        if(recipe.isIncomplete()) return;
+//        if(recipe.isIncomplete()) return;
 
         if (!result.isEmpty() && this.canSmelt(result, recipe)) {
             ItemStack outstack = output.copy();

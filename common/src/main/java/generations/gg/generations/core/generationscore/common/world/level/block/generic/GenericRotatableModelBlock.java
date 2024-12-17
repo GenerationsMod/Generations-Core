@@ -117,7 +117,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         if(pos.getY() < level.getMaxBuildHeight() - height && isAreaClear(level, dir, pos)) {
             return setSize(state.setValue(FACING, dir), getBaseX(), 0, getBaseZ());
         } else {
-            return state;
+            return null;
         }
     }
 
@@ -167,24 +167,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         var dir = state.getValue(FACING);
         var base = getBaseBlockPos(pos, state);
 
-        for (int x = 0; x < width; x++) {
-            for (int z = 0; z < length; z++) {
-                for (int y = 0; y < height; y++) {
-                    if(!validPosition(x,y,z)) continue;
-
-                    var adjustedX = adjustX(x);
-                    var adjustedZ = adjustZ(z);
-
-                    var blockPos = base.relative(dir.getCounterClockWise(), adjustedX).relative(Direction.UP, y).relative(dir.getOpposite(), adjustedZ);
-
-                    if(!matches(level.getBlockState(blockPos), x, y, z)) {
-                        return false;
-                    }
-                }
-            }
-        }
-
-        return true;
+        return isAreaClear((Level) level, dir, base);
     }
 
     @Override

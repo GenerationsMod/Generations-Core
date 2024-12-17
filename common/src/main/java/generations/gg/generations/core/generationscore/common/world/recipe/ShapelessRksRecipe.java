@@ -35,20 +35,42 @@ public class ShapelessRksRecipe extends RksRecipe {
     public ShapelessRksRecipe(ResourceLocation id, String group, RksResult<?> result, NonNullList<GenerationsIngredient> ingredients, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime) {
         this(id, group, result, ingredients, consumesTimeCapsules, key, experience, processingTime, false);
     }
-    public boolean matches(RksMachineBlockEntity inv, Level level) {
-        StackedContents stackedContents = new StackedContents();
-        int i = 0;
 
-        for(int j = 0; j < inv.getContainerSize(); ++j) {
-            ItemStack itemStack = inv.getItem(j);
-            if (!itemStack.isEmpty()) {
-                ++i;
-                stackedContents.accountStack(itemStack, 1);
+    @Override
+    public boolean matches(RksMachineBlockEntity inv, Level level) {
+        // Track which ingredients have been matched
+        boolean[] matchedIngredients = new boolean[this.ingredients.size()];
+
+        int matchedCount = 0;
+
+        // Iterate over inventory slots
+        for (int i = 0; i < inv.getContainerSize(); i++) {
+            ItemStack stack = inv.getItem(i);
+
+            if (!stack.isEmpty()) {
+                boolean foundMatch = false;
+
+                // Match the stack against ingredients
+                for (int j = 0; j < this.ingredients.size(); j++) {
+                    if (!matchedIngredients[j] && this.ingredients.get(j).matches(stack)) {
+                        matchedIngredients[j] = true; // Mark ingredient as matched
+                        matchedCount++;
+                        foundMatch = true;
+                        break; // Stop checking this stack once matched
+                    }
+                }
+
+                // If this stack couldn't be matched, return false early
+                if (!foundMatch) {
+                    return false;
+                }
             }
         }
 
-        return i == this.ingredients.size() && stackedContents.canCraft(this, (IntList)null);
+        // Ensure all ingredients were matched
+        return matchedCount == this.ingredients.size();
     }
+
 
     @Override
     public boolean canCraftInDimensions(int width, int height) {
