@@ -437,6 +437,11 @@ public class GeneralLang extends LanguageProvider {
         addEntityType(GenerationsEntities.STATUE_ENTITY, "Statue");
 
         add("item.unimplemented_until_1_dot_6_cobblemon", "Currently unimplemented. Will be looked in 1.6+ cobblemon.");
+
+        add("generations_core.ui.dna_fibers_extracted", "DNA Fibers");
+
+        add("generations_core.pokemon.extracted_dna_fibers_max", "You have extracted all DNA fibers you could from %s.");
+        add("generations_core.pokemon.extracted_dna_fiber_succeed", "DNA fiber extraction from %s successful!");
     }
 
 

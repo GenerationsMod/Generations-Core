@@ -52,4 +52,5 @@ abstract class PokemonStoringItem(properties: Properties) : Item(properties), Po
         return super.use(level, player, usedHand)
     }
 
+    override fun isFoil(stack: ItemStack): Boolean = stack.getPokemon() != null
 }

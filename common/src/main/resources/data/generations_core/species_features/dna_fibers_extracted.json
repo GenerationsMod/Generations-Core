@@ -1,0 +1,14 @@
+{
+  "type": "integer",
+  "keys": ["dna_fibers_extracted"],
+  "default": 0,
+  "min": 0,
+  "max": 3,
+  "visible": true,
+  "display": {
+    "name": "generations_core.ui.dna_fibers_extracted",
+    "colour": [236, 152, 200],
+    "underlay": "cobblemon:textures/gui/summary/summary_stats_other_bar.png",
+    "overlay": "generations_core:textures/gui/summary/summary_stats_dna_fibers_extracted_overlay.png"
+  }
+}

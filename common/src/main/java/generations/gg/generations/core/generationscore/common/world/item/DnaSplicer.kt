@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
 import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
+import com.cobblemon.mod.common.api.pokemon.feature.IntSpeciesFeatureProvider
 import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
@@ -11,9 +12,13 @@ import generations.gg.generations.core.generationscore.common.util.*
 import net.minecraft.ChatFormatting
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
+import net.minecraft.sounds.SoundEvent
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
+import net.minecraft.world.entity.item.ItemEntity
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.level.Level
+import net.minecraft.world.phys.Vec3
 
 class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
@@ -21,32 +26,46 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
         val pokemon = entity.pokemon
         val pokemonInStack = stack.getPokemon()
 
-        if (pokemonInStack == null && (pokemon.isSpecies("zekrom") || pokemon.isSpecies("reshiram"))) {
-            if (pokemon.removeIfBelongs(player)) {
-                stack.savePokemon(pokemon)
+        if (pokemonInStack == null) {
+            if(pokemon.isSpecies("zekrom") || pokemon.isSpecies("reshiram")) {
+                if (pokemon.removeIfBelongs(player)) {
+                    stack.savePokemon(pokemon)
+                    val list = mutableListOf<Component>()
+                    list.add(pokemon)
+                    stack.setLore(list)
+                    stack.setHoverName(super.getName(stack).copy() + getPokemonText(stack))
 
-                var list = mutableListOf<Component>()
-                list.add(pokemon)
-                stack.setLore(list)
-                stack.setHoverName(super.getName(stack).copy() + getPokemonText(stack))
+                    player.level().playSound(null, entity, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
 
-                player.level().playSound(null, entity, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
+                    player.sendSystemMessage("generations_core.pokemon.encoded".asTranslated(pokemon.getDisplayName().string))
 
-                player.sendSystemMessage("generations_core.pokemon.encoded".asTranslated(pokemon.getDisplayName().string))
+                    player.cooldowns.addCooldown(this, 20)
 
-                player.cooldowns.addCooldown(this, 20)
+                    return true
+                }
+            } else if(pokemon.isSpecies("mew")) {
+                val provider = pokemon.getProviderOrNull<IntSpeciesFeatureProvider>("dna_fibers_extracted") ?: return false
+                val feature = provider.get(pokemon) ?: return false
+
+                if(feature.value >= provider.max) {
+                    player.sendSystemMessage("generations_core.pokemon.extracted_fibers_max".asTranslated(pokemon.getDisplayName().string))
+                    return false
+                }
+
+                feature.value += 1
+                pokemon.markFeatureDirty(feature)
+                GenerationsItems.MEW_DNA_FIBER.get().defaultInstance.dropAsItemEntity(entity.level(), entity.position())
+
+                player.sendSystemMessage("generations_core.pokemon.extracted_dna_fiber_succeed".asTranslated(pokemon.getDisplayName().string))
 
                 return true
-            } else {
-                return false
             }
         } else if (pokemon.isSpecies("kyurem")) {
 
-            val provider =
-                entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("kyurem_form") ?: return false
+            val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("kyurem_form") ?: return false
             val feature = provider.getOrCreate(entity.pokemon)
 
-            if (pokemonInStack != null && !entity.pokemon.hasEmbeddedPokemon()) {
+            if (!entity.pokemon.hasEmbeddedPokemon()) {
                 if (feature.value.isBlank() || feature.value == "false") {
 
                     val form = if (pokemonInStack.isSpecies("zekrom")) {
@@ -73,8 +92,7 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
                     return true
                 }
             } else {
-                val dembeded: Pokemon =
-                    entity.pokemon.dembedPokemon()?.also { player.party().add(it) } ?: return false
+                val dembeded: Pokemon = entity.pokemon.dembedPokemon()?.also { player.party().add(it) } ?: return false
 
                 feature.value = "false"
                 feature.apply(entity)
@@ -93,6 +111,8 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
         return false
     }
 
+
+
     override fun getPokemonText(stack: ItemStack): Component {
 
         var color = ChatFormatting.WHITE
@@ -104,3 +124,5 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
         return stack.getPokemon()?.getDisplayName()?.let { " (".text() + it + ")".text() }?.withStyle(color) ?: Component.empty()
     }
 }
+
+fun ItemStack.dropAsItemEntity(level: Level, position: Vec3) = ItemEntity(level, position.x, position.y, position.z, this).also { level.addFreshEntity(it) }
