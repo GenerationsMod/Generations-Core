@@ -140,7 +140,8 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createParadoxFuture("ironjugulis", "hydreigon", exporter);
         createParadoxFuture("ironmoth", "volcarona", exporter);
         createParadoxFuture("ironthorns", "tyranitar", exporter);
-        createParadoxFuture("ironvaliant", "gallade", exporter);
+        createParadoxFuture("_gardevoir", "ironvaliant", "gardevoir", exporter);
+        createParadoxFuture("_gallade", "ironvaliant", "gallade", exporter);
         createParadoxFuture("ironleaves", "virizion", exporter);
         createParadoxFuture("ironboulder", "terrakion", exporter);
         createParadoxFuture("ironcrown", "cobalion", exporter);
@@ -286,6 +287,10 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createParadox(paradoxPokemon, toBeConverted, exporter, Items.COAL);
     }
 
+    private void createParadoxFuture(String suffix, String paradoxPokemon, String toBeConverted, Consumer<FinishedRecipe> exporter) {
+        createParadox(suffix, paradoxPokemon, toBeConverted, exporter, Items.REDSTONE);
+    }
+
     private void createParadoxFuture(String paradoxPokemon, String toBeConverted, Consumer<FinishedRecipe> exporter) {
         createParadox(paradoxPokemon, toBeConverted, exporter, Items.REDSTONE);
     }
@@ -357,14 +362,16 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .offerTo(exporter, result.getId());
     }
 
-
-
     private void createParadox(String name, String toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
+        createParadox("", name, toBeConverted, exporter, item);
+    }
+
+    private void createParadox(String suffix, String name, String toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
         ShapelessRksRecipeJsonBuilder.create(name, false, true)
                 .requires(new TimeCapsuleIngredient(toBeConverted, false))
                 .requires(item)
                 .criterion(BuiltInRegistries.ITEM.getKey(item).getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
-                .offerTo(exporter, GenerationsCore.id(name));
+                .offerTo(exporter, GenerationsCore.id(name +  suffix));
     }
 
     private void createFossil(RegistrySupplier<Item> item, String name, Consumer<FinishedRecipe> exporter) {

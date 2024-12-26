@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "generations_core:rks/ironvaliant"
+        "recipe": "generations_core:rks/ironvaliant_gardevoir"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "generations_core:rks/ironvaliant"
+      "generations_core:rks/ironvaliant_gardevoir"
     ]
   },
   "sends_telemetry_event": true
