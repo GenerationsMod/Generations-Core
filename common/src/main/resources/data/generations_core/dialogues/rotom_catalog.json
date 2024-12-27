@@ -1,0 +1,149 @@
+{
+  "speakers": {
+    "player": {
+      "face": "q.player.face();",
+      "name": {
+        "type": "expression",
+        "expression": "q.player.username"
+      }
+    }
+  },
+  "pages": [
+    {
+      "id": "intro",
+      "lines": [
+        "Which rotom slot do you wish to change form?"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Slot 1",
+            "value": "0",
+            "isVisible": "q.player.has_in_party('cobblemon:rotom', 0)",
+            "action": [
+              "v.pokemon = q.player.party.get(0);",
+              "q.dialogue.set_page('forms');"
+            ]
+          },
+          {
+            "text": "Slot 2",
+            "value": "1",
+            "isVisible": "q.player.has_in_party('cobblemon:rotom', 1)",
+            "action": [
+              "v.pokemon = q.player.party.get(1);",
+              "q.dialogue.set_page('forms');"
+            ]
+          },
+          {
+            "text": "Slot 3",
+            "value": "2",
+            "isVisible": "q.player.has_in_party('cobblemon:rotom', 2)",
+            "action": [
+              "v.pokemon = q.player.party.get(2);",
+              "q.dialogue.set_page('forms');"
+            ]
+          },
+          {
+            "text": "Slot 4",
+            "value": "3",
+            "isVisible": "q.player.has_in_party('cobblemon:rotom', 3)",
+            "action": [
+              "v.pokemon = q.player.party.get(3);",
+              "q.dialogue.set_page('forms');"
+            ]
+          },
+          {
+            "text": "Slot 5",
+            "value": "4",
+            "isVisible": "q.player.has_in_party('cobblemon:rotom', 4)",
+            "action": [
+              "v.pokemon = q.player.party.get(4);",
+              "q.dialogue.set_page('forms');"
+            ]
+          },
+          {
+            "text": "Slot 6",
+            "value": "5",
+            "isVisible": "q.player.has_in_party('cobblemon:rotom', 5)",
+            "action": [
+              "v.pokemon = q.player.party.get(5);",
+              "q.dialogue.set_page('forms');"
+            ]
+          },
+          {
+            "text": "None Available",
+            "value": "none",
+            "isVisible": "!q.player.has_in_party('cobblemon:rotom')",
+            "action": [
+              "q.dialogue.close();"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "forms",
+      "lines": [ "Select form to change into:" ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Normal",
+            "value": "normal",
+            "isVisible": "v.pokemon.feature('rotom_form') != 'false'",
+            "action": [
+              "v.pokemon.feature('rotom_form', 'false');",
+              "q.dialogue.close();"
+            ]
+          },
+          {
+            "text": "Heat",
+            "value": "heat",
+            "isVisible": "v.pokemon.feature('rotom_form') != 'heat'",
+            "action": [
+              "v.pokemon.feature('rotom_form', 'heat');",
+              "q.dialogue.close();"
+            ]
+          },
+          {
+            "text": "Wash",
+            "value": "wash",
+            "isVisible": "v.pokemon.feature('rotom_form') != 'wash'",
+            "action": [
+              "v.pokemon.feature('rotom_form', 'wash');",
+              "q.dialogue.close();"
+            ]
+          },
+          {
+            "text": "Frost",
+            "value": "frost",
+            "isVisible": "v.pokemon.feature('rotom_form') != 'frost'",
+            "action": [
+              "v.pokemon.feature('rotom_form', 'frost');",
+              "q.dialogue.close();"
+            ]
+          },
+          {
+            "text": "Fan",
+            "value": "fan",
+            "isVisible": "v.pokemon.feature('rotom_form') != 'fan'",
+            "action": [
+              "v.pokemon.feature('rotom_form', 'fan');",
+              "q.dialogue.close();"
+            ]
+          },
+          {
+            "text": "Mow",
+            "value": "mow",
+            "isVisible": "v.pokemon.feature('rotom_form') != 'mow'",
+            "action": [
+              "v.pokemon.feature('rotom_form', 'mow');",
+              "q.dialogue.close();"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

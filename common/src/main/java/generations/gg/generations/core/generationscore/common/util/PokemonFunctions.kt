@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.util
 
+import com.cobblemon.mod.common.api.net.Encodable
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.api.pokemon.feature.*
@@ -52,6 +53,8 @@ fun Pokemon.hasEmbeddedPokemon(): Boolean {
 }
 
 fun ChoiceSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: String = ""): StringSpeciesFeature = this.get(pokemon) ?: StringSpeciesFeature(keys.first(), value)
+fun FlagSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: Boolean = false): FlagSpeciesFeature = this.get(pokemon) ?: FlagSpeciesFeature(keys.first(), value)
+fun IntSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: Int = 0): IntSpeciesFeature = this.get(pokemon) ?: IntSpeciesFeature(keys.first(), value)
 
 fun ChoiceSpeciesFeatureProvider.cycle(value: String): String {
     val index = choices.indexOf(value)

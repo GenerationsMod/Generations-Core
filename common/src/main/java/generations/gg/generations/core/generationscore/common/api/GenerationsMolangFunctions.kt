@@ -2,15 +2,25 @@ package generations.gg.generations.core.generationscore.common.api
 
 import com.bedrockk.molang.runtime.MoParams
 import com.bedrockk.molang.runtime.value.DoubleValue
+import com.bedrockk.molang.runtime.value.StringValue
 import com.cobblemon.mod.common.api.molang.MoLangFunctions
 import com.cobblemon.mod.common.api.molang.MoLangFunctions.addFunctions
 import com.cobblemon.mod.common.api.molang.ObjectValue
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
-import com.cobblemon.mod.common.util.asResource
-import com.cobblemon.mod.common.util.getStringOrNull
+import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
+import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
+import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeatures
+import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
+import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
+import com.cobblemon.mod.common.api.storage.party.PartyStore
+import com.cobblemon.mod.common.pokemon.Pokemon
+import com.cobblemon.mod.common.util.*
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
+import generations.gg.generations.core.generationscore.common.util.getOrCreate
+import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
+import generations.gg.generations.core.generationscore.common.util.isSpecies
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.Registries
@@ -44,6 +54,62 @@ inline fun <reified T> MoParams.getObjectOrNull(index: Int, java: Class<T> ): T?
 object GenerationsMolangFunctions {
     @JvmStatic
     fun init() {
+        val pokemonFunctions = mutableListOf<(Pokemon) -> HashMap<String, java.util.function.Function<MoParams, Any>>>(
+            { pokemon ->
+                hashMapOf(
+                    "species" to java.util.function.Function { _ -> StringValue(pokemon.species.name) },
+                    "form" to java.util.function.Function { _ -> StringValue(pokemon.form.name) },
+                    "feature" to Function {
+                        val featureName = it.getStringOrNull(0) ?: return@Function DoubleValue.ZERO
+                        val feature = pokemon.getOrCreateFeature(featureName) as? StringSpeciesFeature ?: return@Function DoubleValue.ZERO
+
+                        System.out.println("Test: " + featureName)
+
+                        val value = it.getStringOrNull(1) ?: return@Function StringValue(feature.value)
+
+                        System.out.println("Tester: " + value)
+
+                        feature.value = value
+
+                        pokemon.markFeatureDirty(feature)
+                        pokemon.updateAspects()
+                        pokemon.updateForm()
+
+                        return@Function DoubleValue.ONE
+                    }
+                )
+            })
+
+        fun Pokemon.asMoLangValue(): ObjectValue<Pokemon> {
+            val value = ObjectValue(
+                obj = this,
+                stringify = { it.getDisplayName().toString() }
+            )
+            value.addFunctions(pokemonFunctions.flatMap { it(this).entries.map { it.key to it.value } }.toMap())
+            return value
+        }
+
+        val partyFunctions = mutableListOf<(PartyStore) -> HashMap<String, java.util.function.Function<MoParams, Any>>>(
+            { party ->
+                hashMapOf(
+//                    "exists" to java.util.function.Function { it.getDoubleOrNull(0)?.toInt()?.let { party.get(it) }?.let { DoubleValue(1.0) } ?: DoubleValue(0.0) },
+                    "get" to java.util.function.Function {
+                        it.getDoubleOrNull(0)?.
+                        toInt()?.let {
+                            party.get(it)
+                        }?.asMoLangValue() ?: DoubleValue(0.0) }
+                )
+            })
+
+        fun PartyStore.asMoLangValue(): ObjectValue<PartyStore> {
+            val value = ObjectValue(
+                obj = this,
+                stringify = { "party" }
+            )
+            value.addFunctions(partyFunctions.flatMap { it(this).entries.map { it.key to it.value } }.toMap())
+            return value
+        }
+
         MoLangFunctions.playerFunctions.add { player ->
             hashMapOf(
                 "capped" to Function<MoParams, Any> {
@@ -55,6 +121,20 @@ object GenerationsMolangFunctions {
                 },
                 "main_hand" to Function<MoParams, Any> {
                     player.mainHandItem.toMolang()
+                },
+                "party" to Function<MoParams, Any> {
+                    player.party().asMoLangValue()
+                },
+
+                "has_in_party" to Function<MoParams, Any> {
+                    val properties = it.getStringOrNull(0)?.let { SpeciesKey.fromString(it) }?.createProperties()
+
+                    if(properties == null) return@Function DoubleValue(1.0)
+
+                    val index = it.getDoubleOrNull(1)?.toInt()
+
+                    if(index != null) return@Function DoubleValue(if (player.party().get(index)?.takeIf { properties.matches(it) } != null) 1.0 else 0.0)
+                    else return@Function DoubleValue(if (player.party().any { properties.matches(it) }) 1.0 else 0.0)
                 })
             //TODO: Add money support
         }
@@ -70,6 +150,18 @@ object GenerationsMolangFunctions {
         }
     }
 
+}
+
+private fun Pokemon.getOrCreateFeature(featureName: String): SpeciesFeature? {
+    var provider = this.getProviderOrNull<CustomPokemonPropertyType<*>>(featureName) ?: return null
+
+    when (provider) {
+        is ChoiceSpeciesFeatureProvider -> return provider.getOrCreate(this)
+        is FlagSpeciesFeatureProvider -> return provider.getOrCreate(this)
+        is IntSpeciesFeatureProvider -> return provider.getOrCreate(this)
+    }
+
+    return null
 }
 
 private fun String.parseYaw(player: ServerPlayer): Float =

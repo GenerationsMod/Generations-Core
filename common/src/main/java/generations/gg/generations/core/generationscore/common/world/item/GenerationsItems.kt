@@ -799,7 +799,7 @@ object GenerationsItems {
     public static final RegistrySupplier<Item> BLUE_BIKE = register("blue_bike", Item::new, PLAYER_ITEMS);
     public static final RegistrySupplier<Item> PURPLE_BIKE = register("purple_bike", Item::new, PLAYER_ITEMS);
     */
-    @JvmField val ROTOM_CATALOG = register("rotom_catalog", ::Item, PLAYER_ITEMS)
+    @JvmField val ROTOM_CATALOG = register("rotom_catalog", ::RotomCatalog, PLAYER_ITEMS)
     @JvmField val POKEDEX = register("pokedex", ::Item, PLAYER_ITEMS)
     @JvmField val LURE_MODULE = register("lure_module", ::Item, PLAYER_ITEMS)
     @JvmField val BOTTLE_CAP = register("bottle_cap", ::Item, PLAYER_ITEMS)
