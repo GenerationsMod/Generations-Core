@@ -23,6 +23,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 0)",
             "action": [
               "v.pokemon = q.player.party.get(0);",
+              "v.aspect = v.pokemon.get_feature('rotom_form');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -32,6 +33,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 1)",
             "action": [
               "v.pokemon = q.player.party.get(1);",
+              "v.aspect = v.pokemon.get_feature('rotom_form');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -41,6 +43,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 2)",
             "action": [
               "v.pokemon = q.player.party.get(2);",
+              "v.aspect = v.pokemon.get_feature('rotom_form');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -50,6 +53,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 3)",
             "action": [
               "v.pokemon = q.player.party.get(3);",
+              "v.aspect = v.pokemon.get_feature('rotom_form');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -59,6 +63,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 4)",
             "action": [
               "v.pokemon = q.player.party.get(4);",
+              "v.aspect = v.pokemon.get_feature('rotom_form');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -68,6 +73,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 5)",
             "action": [
               "v.pokemon = q.player.party.get(5);",
+              "v.aspect = v.pokemon.get_feature('rotom_form');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -91,54 +97,54 @@
           {
             "text": "Normal",
             "value": "normal",
-            "isVisible": "v.pokemon.feature('rotom_form') != 'false'",
+            "isVisible": "v.aspect != 'false' && v.aspect != 0.0",
             "action": [
-              "v.pokemon.feature('rotom_form', 'false');",
+              "v.pokemon.set_feature('rotom_form', 'false');",
               "q.dialogue.close();"
             ]
           },
           {
             "text": "Heat",
             "value": "heat",
-            "isVisible": "v.pokemon.feature('rotom_form') != 'heat'",
+            "isVisible": "v.aspect != 'heat'",
             "action": [
-              "v.pokemon.feature('rotom_form', 'heat');",
+              "v.pokemon.set_feature('rotom_form', 'heat');",
               "q.dialogue.close();"
             ]
           },
           {
             "text": "Wash",
             "value": "wash",
-            "isVisible": "v.pokemon.feature('rotom_form') != 'wash'",
+            "isVisible": "v.aspect != 'wash'",
             "action": [
-              "v.pokemon.feature('rotom_form', 'wash');",
+              "v.pokemon.set_feature('rotom_form', 'wash');",
               "q.dialogue.close();"
             ]
           },
           {
             "text": "Frost",
             "value": "frost",
-            "isVisible": "v.pokemon.feature('rotom_form') != 'frost'",
+            "isVisible": "v.aspect != 'frost'",
             "action": [
-              "v.pokemon.feature('rotom_form', 'frost');",
+              "v.pokemon.set_feature('rotom_form', 'frost');",
               "q.dialogue.close();"
             ]
           },
           {
             "text": "Fan",
             "value": "fan",
-            "isVisible": "v.pokemon.feature('rotom_form') != 'fan'",
+            "isVisible": "v.aspect != 'fan'",
             "action": [
-              "v.pokemon.feature('rotom_form', 'fan');",
+              "v.pokemon.set_feature('rotom_form', 'fan');",
               "q.dialogue.close();"
             ]
           },
           {
             "text": "Mow",
             "value": "mow",
-            "isVisible": "v.pokemon.feature('rotom_form') != 'mow'",
+            "isVisible": "v.aspect != 'mow'",
             "action": [
-              "v.pokemon.feature('rotom_form', 'mow');",
+              "v.pokemon.set_feature('rotom_form', 'mow');",
               "q.dialogue.close();"
             ]
           }

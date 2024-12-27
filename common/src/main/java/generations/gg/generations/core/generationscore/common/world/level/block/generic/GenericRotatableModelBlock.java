@@ -129,7 +129,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         return 0;
     }
 
-    protected boolean isAreaClear(Level level, Direction dir, BlockPos pos) {
+    protected boolean isAreaClear(LevelReader level, Direction dir, BlockPos pos) {
 
         for (int x = 0; x < width + 1; x++) {
             for (int z = 0; z < length + 1; z++) {
@@ -167,7 +167,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
         var dir = state.getValue(FACING);
         var base = getBaseBlockPos(pos, state);
 
-        return isAreaClear((Level) level, dir, base);
+        return isAreaClear(level, dir, base);
     }
 
     @Override

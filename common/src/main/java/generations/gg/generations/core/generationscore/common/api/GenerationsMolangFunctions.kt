@@ -7,10 +7,7 @@ import com.cobblemon.mod.common.api.molang.MoLangFunctions
 import com.cobblemon.mod.common.api.molang.MoLangFunctions.addFunctions
 import com.cobblemon.mod.common.api.molang.ObjectValue
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
-import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
-import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
-import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeatures
-import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
+import com.cobblemon.mod.common.api.pokemon.feature.*
 import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
 import com.cobblemon.mod.common.api.storage.party.PartyStore
 import com.cobblemon.mod.common.pokemon.Pokemon
@@ -59,23 +56,32 @@ object GenerationsMolangFunctions {
                 hashMapOf(
                     "species" to java.util.function.Function { _ -> StringValue(pokemon.species.name) },
                     "form" to java.util.function.Function { _ -> StringValue(pokemon.form.name) },
-                    "feature" to Function {
+                    "get_feature" to Function {
                         val featureName = it.getStringOrNull(0) ?: return@Function DoubleValue.ZERO
-                        val feature = pokemon.getOrCreateFeature(featureName) as? StringSpeciesFeature ?: return@Function DoubleValue.ZERO
+                        val feature = pokemon.getFeature<SpeciesFeature>(featureName) ?: return@Function DoubleValue.ZERO
 
-                        System.out.println("Test: " + featureName)
+                        when (feature) {
+                            is StringSpeciesFeature -> return@Function StringValue(feature.value)
+                            is FlagSpeciesFeature -> return@Function if(feature.enabled) DoubleValue.ONE else DoubleValue.ZERO
+                            is IntSpeciesFeature -> return@Function DoubleValue(feature.value)
+                            else -> return@Function DoubleValue.ZERO
+                        }
+                    },
 
-                        val value = it.getStringOrNull(1) ?: return@Function StringValue(feature.value)
+                    "set_feature" to Function {
+                        val featureName = it.getStringOrNull(0) ?: return@Function DoubleValue.ZERO
+                        val feature = pokemon.getOrCreateFeature(featureName) ?: return@Function DoubleValue.ZERO
 
-                        System.out.println("Tester: " + value)
-
-                        feature.value = value
-
-                        pokemon.markFeatureDirty(feature)
-                        pokemon.updateAspects()
-                        pokemon.updateForm()
-
-                        return@Function DoubleValue.ONE
+                        when (feature) {
+                            is StringSpeciesFeature -> it.getStringOrNull(1)?.also {
+                                feature.value = it
+                            }?.also {
+                                feature.apply(pokemon)
+                            } ?: return@Function StringValue(feature.value)
+                            is FlagSpeciesFeature -> it.getBooleanOrNull(1)?.also { feature.enabled = it }?.also { feature.apply(pokemon) }
+                            is IntSpeciesFeature -> it.getIntOrNull(1)?.also { feature.value = it }?.also { feature.apply(pokemon) }
+                            else -> return@Function DoubleValue.ZERO
+                        }
                     }
                 )
             })
@@ -149,11 +155,12 @@ object GenerationsMolangFunctions {
             return@Function Unit
         }
     }
-
 }
 
+private fun MoParams.getIntOrNull(index: Int): Int? = this.getDoubleOrNull(index)?.toInt()
+
 private fun Pokemon.getOrCreateFeature(featureName: String): SpeciesFeature? {
-    var provider = this.getProviderOrNull<CustomPokemonPropertyType<*>>(featureName) ?: return null
+    val provider = this.getProviderOrNull<CustomPokemonPropertyType<*>>(featureName) ?: return null
 
     when (provider) {
         is ChoiceSpeciesFeatureProvider -> return provider.getOrCreate(this)
