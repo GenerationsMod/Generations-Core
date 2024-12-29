@@ -23,6 +23,7 @@ import generations.gg.generations.core.generationscore.common.api.player.CurryDe
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.common.config.Config;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
+import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
@@ -34,7 +35,9 @@ import generations.gg.generations.core.generationscore.common.world.item.creativ
 import generations.gg.generations.core.generationscore.common.world.item.legends.EnchantableItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
+import generations.gg.generations.core.generationscore.common.world.loot.LootItemConditionTypes;
 import generations.gg.generations.core.generationscore.common.world.loot.LootPoolEntryTypes;
+import generations.gg.generations.core.generationscore.common.world.loot.SpeciesKeyCondition;
 import generations.gg.generations.core.generationscore.common.world.recipe.*;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.spawning.ZygardeCellDetail;
@@ -44,10 +47,19 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.*;
+import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import org.apache.logging.log4j.util.TriConsumer;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -89,7 +101,9 @@ public class GenerationsCore {
             if(id.getNamespace().equals("minecraft") && id.getPath().contains("chests") && !id.getPath().contains("inject")) {
                 var inject = new ResourceLocation(id.getNamespace(), id.getPath().replace("chests", "chests/inject"));
                 context.addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(inject)));
-            }
+            } else if(id.toString().equals("minecraft:blocks/carrots")) {
+				context.addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(GenerationsCore.id("blocks/calyrex_roots"))));
+			}
         });
 
 		SpawnDetail.Companion.registerSpawnType(ZygardeCellDetail.TYPE, ZygardeCellDetail.class);
@@ -102,6 +116,7 @@ public class GenerationsCore {
 		GenerationsOres.init();
 		GenerationsDecorationBlocks.init();
 		LootPoolEntryTypes.init();
+		LootItemConditionTypes.init();
 		GenerationsUtilityBlocks.init();
 		GenerationsShrines.init();
 		GenerationsItems.init();
