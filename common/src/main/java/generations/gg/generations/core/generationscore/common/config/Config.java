@@ -82,7 +82,8 @@ public class Config {
                 .setCount(TAPU_LELE, 1)
                 .setCount(TAPU_BULU, 1)
                 .setCount(TAPU_FINI, 1)
-
+                .setCount(GLASTRIER, 1)
+                .setCount(SPECTRIER, 1)
                 .build();
 
         public boolean capped(Player player, SpeciesKey speciesKey) {

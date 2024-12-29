@@ -2,17 +2,26 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import generations.gg.generations.core.generationscore.common.config.LegendKeys;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.loot.ResouceKeyEntry;
+import generations.gg.generations.core.generationscore.common.world.loot.SpeciesKeyCondition;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -65,6 +74,8 @@ class GenerationsChestLoot implements LootTableSubProvider {
 	private static final ResourceLocation TIMER_BALL = GenerationsCore.id("chests/timer_ball");
 	private static final ResourceLocation ULTRA_BALL = GenerationsCore.id("chests/ultra_ball");
 	private static final ResourceLocation WING_BALL = GenerationsCore.id("chests/wing_ball");
+	public static final ResourceLocation CALYREX_ROOTS = GenerationsCore.id("blocks/calyrex_roots");
+
 	@Override
 	public void generate(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> output) {
 		//output.accept(BuiltInLootTables.ABANDONED_MINESHAFT, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).name(GenerationsCore.id("chests/heavy_ball").toString())));
