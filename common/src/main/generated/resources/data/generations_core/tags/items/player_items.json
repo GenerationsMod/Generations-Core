@@ -269,6 +269,7 @@
     "generations_core:ruby",
     "generations_core:sapphire",
     "generations_core:silicon",
+    "generations_core:ultrite",
     "generations_core:poke_walkmon",
     "generations_core:great_walkmon",
     "generations_core:ultra_walkmon",

@@ -84,7 +84,6 @@ object GenerationsItems {
     /** Generations Building Blocks Deferred Register */
     @JvmField val BUILDING_BLOCKS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM)
 
-
     /**
      * Restoration Items
      */
@@ -955,8 +954,9 @@ object GenerationsItems {
     @JvmField val RUBY = register("ruby", ::Item, PLAYER_ITEMS)
     @JvmField val SAPPHIRE = register("sapphire", ::Item, PLAYER_ITEMS)
     @JvmField val SILICON = register("silicon", ::Item, PLAYER_ITEMS)
+    @JvmField val ULTRITE = register("ultrite", ::Item, PLAYER_ITEMS)
 
-    /**
+        /**
      * Utility Items
      */
     @JvmField val POKEMON_WAND = register("pokemon_wand", ::Item, UTILITY)
@@ -979,6 +979,7 @@ object GenerationsItems {
     @JvmField val HIDDEN_PRESSURE_PLATE = register("hidden_pressure_plate", ::Item, UTILITY)
     @JvmField val HIDDEN_CUBE = register("hidden_cube", ::Item, UTILITY)
     @JvmField val HIDDEN_BUTTON = register("hidden_button", ::Item, UTILITY)
+    @JvmField val ULTRITE_TEMPLATE = register("ultrite_template", ::Item, UTILITY)
 
     /**
      * Form Items

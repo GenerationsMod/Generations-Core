@@ -32,7 +32,8 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     MOON_STONE("moon_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.MOON_STONE),
     SUN_STONE("sun_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.SUN_STONE),
     THUNDER_STONE("thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.THUNDER_STONE),
-    WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.WATER_STONE);
+    WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.WATER_STONE),
+    ULTRITE("ultrite", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.ULTRITE);
 
 	private final String name;
     private final int durabilityMultiplier;

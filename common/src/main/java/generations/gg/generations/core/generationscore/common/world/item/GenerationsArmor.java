@@ -45,6 +45,7 @@ public class GenerationsArmor {
 	public static final ArmorSet GALACTIC = ArmorSet.builder("galactic", () -> GenerationsArmorMaterials.GALACTIC)
 			.speed(0.5f)
 			.build();
+	public static final ArmorSet ULTRITE = ArmorSet.builder("ultrite", () -> GenerationsArmorMaterials.ULTRITE).build();
 	public static final ArmorSet MAGMA = ArmorSet.create("magma", () -> GenerationsArmorMaterials.MAGMA);
 	public static final ArmorSet NEO_PLASMA = ArmorSet.create("neo_plasma", () -> GenerationsArmorMaterials.NEO_PLASMA);
 	public static final ArmorSet PLASMA = ArmorSet.create("plasma", () -> GenerationsArmorMaterials.PLASMA);
