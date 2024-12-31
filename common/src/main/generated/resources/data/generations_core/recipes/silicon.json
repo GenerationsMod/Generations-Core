@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "generations_core:silicon"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "generations_core:silicon"
+  }
+}

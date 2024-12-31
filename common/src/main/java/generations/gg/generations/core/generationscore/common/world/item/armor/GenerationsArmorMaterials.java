@@ -24,16 +24,16 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     SKULL("skull", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON),
     CRYSTAL("crystal", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL),
     ULTRA("ultra", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.Z_INGOT),
-    DAWN_STONE("dawn_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.DAWN_STONE),
-    DUSK_STONE("dusk_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.DUSK_STONE),
-    FIRE_STONE("fire_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.FIRE_STONE),
-    ICE_STONE("ice_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.ICE_STONE),
-    LEAF_STONE("leaf_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.LEAF_STONE),
-    MOON_STONE("moon_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.MOON_STONE),
-    SUN_STONE("sun_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.SUN_STONE),
-    THUNDER_STONE("thunder_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.THUNDER_STONE),
-    WATER_STONE("water_stone", 200, new int[]{3, 6, 7, 3}, 10, () -> CobblemonItems.WATER_STONE),
-    ULTRITE("ultrite", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.ULTRITE);
+    DAWN_STONE("dawn_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.DAWN_STONE, 2.0f, 0.0f),
+    DUSK_STONE("dusk_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.DUSK_STONE, 2.0f, 0.0f),
+    FIRE_STONE("fire_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.FIRE_STONE, 2.0f, 0.0f),
+    ICE_STONE("ice_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.ICE_STONE, 2.0f, 0.0f),
+    LEAF_STONE("leaf_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.LEAF_STONE, 2.0f, 0.0f),
+    MOON_STONE("moon_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.MOON_STONE, 2.0f, 0.0f),
+    SUN_STONE("sun_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.SUN_STONE, 2.0f, 0.0f),
+    THUNDER_STONE("thunder_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.THUNDER_STONE, 2.0f, 0.0f),
+    WATER_STONE("water_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.WATER_STONE, 2.0f, 0.0f),
+    ULTRITE("ultrite", 42, new int[]{3, 6, 8, 3}, 20, GenerationsItems.ULTRITE_INGOT, 4.0f, 0.2f);
 
 	private final String name;
     private final int durabilityMultiplier;
@@ -44,15 +44,19 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
 
-    GenerationsArmorMaterials(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Supplier<Item> repairIngredient) {
+    GenerationsArmorMaterials(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Supplier<Item> repairIngredient, float toughness, float knockbackResistance) {
         this.name = GenerationsCore.MOD_ID + ":" + name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.slotProtections = slotProtections;
         this.enchantmentValue = enchantmentValue;
         this.sound = SoundEvents.ARMOR_EQUIP_IRON;
-        this.toughness = (float) 0.0;
-        this.knockbackResistance = (float) 0.0;
+        this.toughness = toughness;
+        this.knockbackResistance = knockbackResistance;
         this.repairIngredient = Suppliers.memoize(() -> Ingredient.of(repairIngredient.get()));
+    }
+
+    GenerationsArmorMaterials(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Supplier<Item> repairIngredient) {
+        this(name, durabilityMultiplier, slotProtections, enchantmentValue, repairIngredient, 0.0f, 0.0f);
     }
 
     @Override

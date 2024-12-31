@@ -4,7 +4,6 @@ import com.cobblemon.mod.common.api.types.ElementalType
 import com.cobblemon.mod.common.api.types.ElementalTypes
 import com.cobblemon.mod.common.item.PokeBallItem
 import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager
-import com.cobblemon.mod.common.util.asResource
 import com.cobblemon.mod.common.util.cobblemonResource
 import dev.architectury.core.item.ArchitecturyRecordItem
 import dev.architectury.registry.registries.DeferredRegister
@@ -753,10 +752,13 @@ object GenerationsItems {
      * Vanilla Like Materials
      */
     @JvmField val Z_INGOT = register("z_ingot", ::Item, PLAYER_ITEMS)
+    @JvmField val ULTRITE_INGOT = register("ultrite_ingot", ::Item, PLAYER_ITEMS)
+    @JvmField val ULTRITE_REMNANT = register("ultrite_remnant", ::Item, PLAYER_ITEMS)
     @JvmField val DYNITE_ORE = register("dynite_ore", ::Item, PLAYER_ITEMS)
     @JvmField val MEGASTONE_SHARD = register("mega_stone_shard", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
     @JvmField val KEY_STONE = register("key_stone", ::Item, PLAYER_ITEMS)
 
+    @JvmField val ULTRITE_UPGRADE_SMITHING_TEMPLATE = register("ultrite_upgrade_smithing_template", { UltriteSmithingTemplateItem() }, PLAYER_ITEMS)
 
 
     @JvmField val COPPER_PLATE = register("copper_plate", ::Item, PLAYER_ITEMS)
@@ -954,9 +956,8 @@ object GenerationsItems {
     @JvmField val RUBY = register("ruby", ::Item, PLAYER_ITEMS)
     @JvmField val SAPPHIRE = register("sapphire", ::Item, PLAYER_ITEMS)
     @JvmField val SILICON = register("silicon", ::Item, PLAYER_ITEMS)
-    @JvmField val ULTRITE = register("ultrite", ::Item, PLAYER_ITEMS)
 
-        /**
+      /**
      * Utility Items
      */
     @JvmField val POKEMON_WAND = register("pokemon_wand", ::Item, UTILITY)
@@ -979,7 +980,6 @@ object GenerationsItems {
     @JvmField val HIDDEN_PRESSURE_PLATE = register("hidden_pressure_plate", ::Item, UTILITY)
     @JvmField val HIDDEN_CUBE = register("hidden_cube", ::Item, UTILITY)
     @JvmField val HIDDEN_BUTTON = register("hidden_button", ::Item, UTILITY)
-    @JvmField val ULTRITE_TEMPLATE = register("ultrite_template", ::Item, UTILITY)
 
     /**
      * Form Items

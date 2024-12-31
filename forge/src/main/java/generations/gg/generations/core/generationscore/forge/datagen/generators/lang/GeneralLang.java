@@ -442,6 +442,14 @@ public class GeneralLang extends LanguageProvider {
 
         add("generations_core.pokemon.extracted_dna_fibers_max", "You have extracted all DNA fibers you could from %s.");
         add("generations_core.pokemon.extracted_dna_fiber_succeed", "DNA fiber extraction from %s successful!");
+
+        this.add(ULTRITE_UPGRADE_SMITHING_TEMPLATE.get(), "Ultrite Upgrade Smithing Template");
+
+        this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot");
+        this.add("item.minecraft.smithing_template.ultrite_upgrade.base_slot_description", "Add Ultrite armor, weapon, or tool");
+        this.add("item.minecraft.smithing_template.ultrite_upgrade.additions_slot_description", "Add Ultrite Ingot");
+        this.add("item.minecraft.smithing_template.ultrite_upgrade.applies_to", "Netherite Equipment");
+        this.add("upgrade.minecraft.ultrite_upgrade", "Ultrite Upgrade Smithing Template");
     }
 
 

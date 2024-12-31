@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ultrite_helmet_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultrite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:ultrite_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ultrite_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ultrite_helmet_smithing"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "generations_core:ultrite_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_shovel"
+  },
+  "result": {
+    "item": "generations_core:ultrite_shovel"
+  },
+  "template": {
+    "item": "generations_core:ultrite_upgrade_smithing_template"
+  }
+}

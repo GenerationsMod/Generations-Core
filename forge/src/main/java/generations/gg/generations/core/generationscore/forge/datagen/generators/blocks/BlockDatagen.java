@@ -69,6 +69,8 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_7);
         registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_8);
 
+        registerBlockItem(GenerationsBlocks.ULTRITE_BLOCK);
+
         //ChargeStone
         registerBlockItem(GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK);
 
@@ -566,9 +568,15 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
         simpleBlockItem(log.get(), logBlock);
     }
 
-    private void registerBlockItem(RegistrySupplier<Block> block) {registerBlockItem(block.get());}
+    private void registerBlockItem(RegistrySupplier<Block> block) {
+        registerBlockItem(block.get());
+        dropSelfList.add(block.get());
+    }
 
-    private void registerBlockItem(Block block) {simpleBlockWithItem(block, cubeAll(block));}
+    private void registerBlockItem(Block block) {
+        simpleBlockWithItem(block, cubeAll(block));
+        dropSelfList.add(block);
+    }
 
     private void registerPillar(RegistrySupplier<? extends Block> block) {
         BlockModelBuilder model = models().withExistingParent(block.getId().getPath(), GenerationsCore.id("block/pillar")).texture("base", GenerationsCore.id("block/" + block.getId().getPath()));

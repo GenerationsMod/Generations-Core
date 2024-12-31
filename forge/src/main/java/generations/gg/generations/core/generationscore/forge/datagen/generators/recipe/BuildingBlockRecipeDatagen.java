@@ -1014,6 +1014,11 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .pattern("EEE")
                 .unlockedBy(getHasName(item), has(item))
                 .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, item, 9)
+                .requires(item)
+                .unlockedBy(getHasName(item), has(item))
+                .save(consumer);
     }
 
     private void buildBuildingBlockRecipes(@NotNull Consumer<FinishedRecipe> consumer, Item dye, Block pokebrick, Block block) {

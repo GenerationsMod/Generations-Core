@@ -78,6 +78,7 @@ public class GenerationsTools {
 			-3,
 			2,
 			4,
+			true,
 			new TransformToolEffect(Blocks.WATER, Blocks.OBSIDIAN, 1));
 
 	public static final ToolSet ICE_STONE = ToolSet.create("ice_stone", () -> GenerationsTiers.ICE_STONE,
@@ -138,6 +139,7 @@ public class GenerationsTools {
 			0,
 			2,
 			4,
+			true,
 			new PlaceItemToolEffect((BlockItem) Items.TORCH, 5)); //TODO: Replace with temp light source derived from tinker's construct's light source
 
 	public static final ToolSet THUNDER_STONE = ToolSet.create("thunder_stone", () -> GenerationsTiers.THUNDER_STONE,
@@ -158,10 +160,20 @@ public class GenerationsTools {
 			4,
 			new EnchantmentToolEffect(Enchantments.BLOCK_EFFICIENCY, 3, 1));
 
+	public static final ToolSet ULTRITE = ToolSet.create("ultrite", () -> GenerationsTiers.ULTRITE,
+			1.5f,
+			1,
+			5,
+			-5,
+			2,
+			3,
+			true);
+
 	public static final RegistrySupplier<Item> DIAMOND_HAMMER = register("diamond_hammer", properties -> new GenerationsHammerItem(Tiers.DIAMOND, 5.0F, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> GOLDEN_HAMMER = register("golden_hammer", properties -> new GenerationsHammerItem(Tiers.GOLD, 6.0F, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> IRON_HAMMER = register("iron_hammer", properties -> new GenerationsHammerItem(Tiers.IRON, 6.0F, -3.1F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> NETHERITE_HAMMER = register("netherite_hammer", properties -> new GenerationsHammerItem(Tiers.NETHERITE, 5.0F, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
+//	public static final RegistrySupplier<Item> ULTRITE_HAMMER = register("ultrite_hammer", properties -> new GenerationsHammerItem(GenerationsTiers.ULTRITE, 4.0F, -3.0F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> STONE_HAMMER = register("stone_hammer", properties -> new GenerationsHammerItem(Tiers.STONE, 7.0F, -3.2F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 	public static final RegistrySupplier<Item> WOODEN_HAMMER = register("wooden_hammer", properties -> new GenerationsHammerItem(Tiers.WOOD, 6.0F, -3.2F, properties), CreativeModeTabs.TOOLS_AND_UTILITIES);
 
@@ -180,21 +192,28 @@ public class GenerationsTools {
 	}
 
 	public record ToolSet(RegistrySupplier<GenerationsShovelItem> shovel, RegistrySupplier<GenerationsPickaxeItem> pickaxe, RegistrySupplier<GenerationsAxeItem> axe, RegistrySupplier<GenerationsHoeItem> hoe, RegistrySupplier<GenerationsHammerItem> hammer, RegistrySupplier<GenerationsSwordItem> sword) {
-		public static ToolSet create(String name, Supplier<Tier> tier, int shovelDamage, int pickaxeDamage, int axeDamage, int hoeDamage, int hammerDamage, int swordDamage, ToolEffect... toolEffects) {
-			return new ToolSet(
-			register(name + "_shovel", GenerationsShovelItem::new, tier, shovelDamage, -3.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register(name + "_pickaxe", GenerationsPickaxeItem::new, tier, pickaxeDamage, -2.8F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register(name + "_axe", GenerationsAxeItem::new, tier, axeDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register(name + "_hoe", GenerationsHoeItem::new, tier, hoeDamage, -1.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register(name + "_hammer", GenerationsHammerItem::new, tier, hammerDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, toolEffects),
-			register(name + "_sword", GenerationsSwordItem::new, tier, swordDamage, -2.4F, CreativeModeTabs.COMBAT, toolEffects));
+		public static ToolSet create(String name, Supplier<Tier> tier, float shovelDamage, float pickaxeDamage, float axeDamage, float hoeDamage, float hammerDamage, float swordDamage, ToolEffect... toolEffects) {
+			return create(name, tier, shovelDamage, pickaxeDamage, axeDamage, hoeDamage, hammerDamage, swordDamage, false, toolEffects);
 		}
-		private static <T extends Item & ToolEffectHolder<T>> RegistrySupplier<T> register(String name, ToolSupplier<T> supplier, Supplier<Tier> tier, int attackDamage, float attackSpeed, ResourceKey<CreativeModeTab> tab, ToolEffect... toolEffects) {
-			return GenerationsTools.register(name, properties -> supplier.create(tier.get(), attackDamage, attackSpeed, properties).addToolEffects(toolEffects), tab);
+
+		public static ToolSet create(String name, Supplier<Tier> tier, float shovelDamage, float pickaxeDamage, float axeDamage, float hoeDamage, float hammerDamage, float swordDamage, boolean fireProof, ToolEffect... toolEffects) {
+			return new ToolSet(
+					register(name + "_shovel", GenerationsShovelItem::new, tier, shovelDamage, -3.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, fireProof, toolEffects),
+					register(name + "_pickaxe", GenerationsPickaxeItem::new, tier, pickaxeDamage, -2.8F, CreativeModeTabs.TOOLS_AND_UTILITIES, fireProof, toolEffects),
+					register(name + "_axe", GenerationsAxeItem::new, tier, axeDamage, -3.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, fireProof, toolEffects),
+					register(name + "_hoe", GenerationsHoeItem::new, tier, hoeDamage, -1.0F, CreativeModeTabs.TOOLS_AND_UTILITIES, fireProof, toolEffects),
+					register(name + "_hammer", GenerationsHammerItem::new, tier, hammerDamage, -3.1F, CreativeModeTabs.TOOLS_AND_UTILITIES, fireProof, toolEffects),
+					register(name + "_sword", GenerationsSwordItem::new, tier, swordDamage, -2.4F, CreativeModeTabs.COMBAT, fireProof, toolEffects));
+		}
+		private static <T extends Item & ToolEffectHolder<T>> RegistrySupplier<T> register(String name, ToolSupplier<T> supplier, Supplier<Tier> tier, float attackDamage, float attackSpeed, ResourceKey<CreativeModeTab> tab, boolean fireProof, ToolEffect... toolEffects) {
+			return GenerationsTools.register(name, properties -> {
+				if(fireProof) properties.fireResistant();
+				return supplier.create(tier.get(), attackDamage, attackSpeed, properties).addToolEffects(toolEffects);
+			}, tab);
 		}
 
 		private interface ToolSupplier<T extends Item> {
-			T create(Tier tier, int attackDamage, float attackSpeed, Item.Properties properties);
+			T create(Tier tier, float attackDamage, float attackSpeed, Item.Properties properties);
 		}
 	}
 }

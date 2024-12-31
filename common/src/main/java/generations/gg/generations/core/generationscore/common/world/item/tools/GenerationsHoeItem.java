@@ -18,8 +18,8 @@ import java.util.Set;
 public class GenerationsHoeItem extends HoeItem implements ToolEffectHolder<GenerationsHoeItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsHoeItem(Tier tier, int attackDamageBonus, float attackSpeed, Properties properties) {
-        super(tier, attackDamageBonus, attackSpeed, properties);
+    public GenerationsHoeItem(Tier tier, float attackDamageBonus, float attackSpeed, Properties properties) {
+        super(tier, (int) attackDamageBonus, attackSpeed, properties);
     }
 
     public GenerationsHoeItem addToolEffects(ToolEffect... toolEffect) {

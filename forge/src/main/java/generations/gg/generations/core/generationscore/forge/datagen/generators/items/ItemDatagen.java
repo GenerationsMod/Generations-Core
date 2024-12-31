@@ -73,6 +73,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.MAX_SOUP.get(), "restoration/");
 
         createItem(GenerationsItems.Z_INGOT.get(), "ingots/");
+        createItem(GenerationsItems.ULTRITE_INGOT.get(), "ingots/");
         createItem(GenerationsItems.DYNITE_ORE.get(), "ingots/");
         createItem(GenerationsItems.MEGASTONE_SHARD.get(), "ingots/");
         createItem(GenerationsItems.COPPER_PLATE.get(), "materials/");
@@ -334,11 +335,13 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.RUBY.get(), "natural/");
         createItem(GenerationsItems.SAPPHIRE.get(), "natural/");
         createItem(GenerationsItems.SILICON.get(), "natural/");
+        createItem(GenerationsItems.ULTRITE_REMNANT.get(), "natural/");
 
         GenerationsArmor.ARMOR.forEach(armor -> createItem(armor.get(), "armor/"));
         GenerationsTools.TOOLS.forEach(tool -> handheldItem(tool.get()));
 
         createItem(GenerationsItems.MARK_CHARM.get(), "player_items/");
+        createItem(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get(), "player_items/");
         createItem(GenerationsItems.CATCHING_CHARM.get(), "player_items/");
         createItem(GenerationsItems.EXP_CHARM.get(), "player_items/");
         createItem(GenerationsItems.OLD_ROD.get(), "player_items/");
@@ -1430,8 +1433,13 @@ public class ItemDatagen extends ItemModelProvider {
     }
 
     private void handheldItem(Item item) {
-        withExistingParent(getKey(item).getPath(),
-                new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(GenerationsCore.MOD_ID, "item/tools/" + getKey(item).getPath()));
+        try {
+            withExistingParent(getKey(item).getPath(),
+                    new ResourceLocation("item/handheld")).texture("layer0",
+                    new ResourceLocation(GenerationsCore.MOD_ID, "item/tools/" + getKey(item).getPath()));
+        } catch (Exception e) {
+            LOGGER.error("Item: " + getKey(item));
+            this.singleTexture(getKey(item).getPath(), new ResourceLocation("item/generated"), "layer0", GenerationsCore.id("item/placeholder"));
+        }
     }
 }

@@ -393,6 +393,15 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .unlockedBy(getHasName(GenerationsItems.MEGASTONE_SHARD.get()), has(GenerationsItems.MEGASTONE_SHARD.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsItems.ULTRITE_INGOT.get())
+                .define('X', GenerationsItems.Z_INGOT.get())
+                .define('T', GenerationsItems.ULTRITE_REMNANT.get())
+                .pattern("XXX")
+                .pattern("XTT")
+                .pattern("TT ")
+                .unlockedBy(getHasName(GenerationsItems.ULTRITE_REMNANT.get()), has(GenerationsItems.ULTRITE_REMNANT.get()))
+                .save(consumer);
+
         //These are all HeldItems and Recipes are not needed rn
         /*
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, PokeModItems.CELL_BATTERY.get())
