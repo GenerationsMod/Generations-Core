@@ -10,12 +10,10 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents.HELD_ITEM_POST
 import com.cobblemon.mod.common.api.events.CobblemonEvents.LOOT_DROPPED
 import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent
-import com.cobblemon.mod.common.api.pokemon.feature.ChoiceSpeciesFeatureProvider
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.giveOrDropItemStack
@@ -25,16 +23,19 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.network.packets.HeadPatPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags.*
 import generations.gg.generations.core.generationscore.common.util.DataKeys
-import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
 import generations.gg.generations.core.generationscore.common.world.item.FormChanging
-import generations.gg.generations.core.generationscore.common.world.item.FormChangingItem
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem.BattleData
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks.SCARECROW
+import generations.gg.generations.core.generationscore.common.world.level.block.UnownBlock
+import generations.gg.generations.core.generationscore.common.world.level.block.shrines.RegiShrineBlock
 import net.minecraft.client.Minecraft
+import net.minecraft.core.BlockPos
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.level.Level
 import org.joml.Vector3f
 
 class GenerationsCobblemonEvents {
@@ -52,9 +53,13 @@ class GenerationsCobblemonEvents {
         fun init() {
 
             CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) { it ->
-                var amount = 0
-                it.entity.level().getChunk(it.entity.blockPosition()).findBlocks({ it.`is`(SCARECROW.get())}) { pos, state -> amount += 1}
-                if(amount > 0) it.cancel()
+                val list = RegiShrineBlock.searchForBlock(it.entity.level(), it.entity.blockPosition(), 32, 1) {
+                        world, pos -> world.getBlockState(pos).`is`(SCARECROW.get()) }
+                if(list.isNotEmpty()) {
+                    System.out.println("Blocked a spawn!")
+                    it.cancel()
+                }
+
             }
 
             BATTLE_VICTORY.subscribe(Priority.HIGH) { event ->
@@ -128,7 +133,7 @@ class GenerationsCobblemonEvents {
 
                     if(it.pokemon.persistentData.getBoolean(DataKeys.GAVE_EGG)) return@subscribe
 
-                    player.sendSystemMessage("Due to ${it.pokemon.getDisplayName().getString()} happiness reaching max, it gave you an egg.".text())
+                    player.sendSystemMessage("Due to ${it.pokemon.getDisplayName().string} happiness reaching max, it gave you an egg.".text())
 
                     player.giveOrDropItemStack(GenerationsItems.PHIONE_EGG.get().defaultInstance, true)
                     it.pokemon.persistentData.putBoolean(DataKeys.GAVE_EGG, true)
@@ -160,7 +165,7 @@ class GenerationsCobblemonEvents {
 
 //            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe { it.entity.taskBuilder().infiniteIterations().identifier("castform") }
 
-            CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST) {
+            LOOT_DROPPED.subscribe(Priority.HIGHEST) {
 
             }
         }
