@@ -36,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 
 class GenerationsBlockLoot extends BlockLootSubProvider {
 
@@ -59,6 +60,8 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         //GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> add(block, createSinglePropConditionTable(block, DoubleDyeableBlock.HALF, DoubleBlockHalf.LOWER)));
         GenerationsPokeDolls.POKEDOLLS.forEach(block -> dropSelf(block.get()));
         BlockDatagen.dropSelfList.stream().map(block -> (Block) block).forEach(this::dropSelf);
+        dropSelf(GenerationsShrines.DARK_CRYSTAL);
+        dropSelf(GenerationsShrines.LIGHT_CRYSTAL);
         BlockDatagen.MUSHROOM_BLOCKS.forEach(block -> add(block, createMushroomBlockDrop(block, block.asItem())));
         GenerationsFullBlockSet.getFullBlockSets().forEach(generationsFullBlockSet -> generationsFullBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
         GenerationsBlockSet.getBlockSets().forEach(generationsBlockSet -> generationsBlockSet.getAllBlocks().forEach(this::dropSelfUpdated));
@@ -122,6 +125,7 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         add(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get(), createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get()));
 
 
+
         dropSelf(GenerationsBlocks.POKEMART_SIGN.get());
         dropSelf(GenerationsBlocks.POKECENTER_SIGN.get());
 
@@ -165,6 +169,7 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.BROKEN_PRISMARINE_PILLAR);
         dropSelf(GenerationsBlocks.DARK_PRISMARINE_PILLAR);
         dropSelf(GenerationsBlocks.BROKEN_DARK_PRISMARINE_PILLAR);
+        dropSelf(GenerationsBlocks.GHOST_PILLAR);
         dropSelf(GenerationsBlocks.HAUNTED_PILLAR);
         dropSelf(GenerationsBlocks.BROKEN_HAUNTED_PILLAR);
         dropSelf(GenerationsBlocks.DAWN_STONE_BLOCK);
@@ -180,9 +185,23 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         dropSelf(GenerationsBlocks.CRATE);
 
         dropSelf(GenerationsBlocks.WARNING_BLOCK);
+
+        dropSelf(GenerationsBlocks.POKECENTER_DOOR);
+
+        createSignDrops(GenerationsItems.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_SIGN.get());
+        createSignDrops(GenerationsItems.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(), GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get());
+        createSignDrops(GenerationsItems.ULTRA_JUNGLE_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get());
+        createSignDrops(GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(), GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get());
+        createSignDrops(GenerationsItems.GHOST_SIGN.get(), GenerationsWood.GHOST_SIGN.get(), GenerationsWood.GHOST_WALL_SIGN.get());
+        createSignDrops(GenerationsItems.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_HANGING_SIGN.get(), GenerationsWood.GHOST_WALL_HANGING_SIGN.get());
     }
 
-    protected void dropSelf(RegistrySupplier<Block> block) {
+    private void createSignDrops(Item item, Block standingSignBlock, Block wallSignBlock) {
+        createItemDropTable(item, standingSignBlock);
+        createItemDropTable(item, wallSignBlock);
+    }
+
+    protected <T extends Block> void dropSelf(RegistrySupplier<T> block) {
         super.dropSelf(block.get());
     }
 
@@ -308,6 +327,10 @@ class GenerationsBlockLoot extends BlockLootSubProvider {
         if (!this.map.isEmpty() && this.map.size() != 1 && this.map.containsKey(new ResourceLocation("empty"))) {
             throw new IllegalStateException("Created block loot tables for non-blocks: " + this.map.keySet());
         }
+    }
+
+    protected final <T extends Block> void createItemDropTable(Item item, T block) {
+        add(block, LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f)).add(LootItem.lootTableItem(item)))));
     }
 
     protected <T extends GenericRotatableModelBlock<?>> void createGenericRotationModelBlockTable(T block) {

@@ -48,7 +48,7 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
     private final PokeBall ball;
 
     protected BallLootBlock(String name, PokeBall ball) {
-        super(BlockBehaviour.Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion(), GenerationsBlockEntities.BALL_LOOT, null);
+        super(BlockBehaviour.Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion().noLootTable(), GenerationsBlockEntities.BALL_LOOT, null);
         this.name = name;
         this.ball = ball;
         this.lootTable = GenerationsCore.id("chests/%s_ball".formatted(name));

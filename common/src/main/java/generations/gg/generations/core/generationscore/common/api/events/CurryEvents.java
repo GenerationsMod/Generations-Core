@@ -11,7 +11,7 @@ import net.minecraft.server.level.ServerPlayer;
 
 import java.util.List;
 
-public class CurryEvents {
+public class  CurryEvents {
     public static final Event<EventActor<Cook>> COOK = EventFactory.createEventActorLoop();
 
     public static class Cook {

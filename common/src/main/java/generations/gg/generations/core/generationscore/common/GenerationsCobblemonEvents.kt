@@ -14,6 +14,7 @@ import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
+import com.cobblemon.mod.common.platform.events.PlatformEvents
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.giveOrDropItemStack
@@ -27,15 +28,14 @@ import generations.gg.generations.core.generationscore.common.world.item.FormCha
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem.BattleData
-import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks.SCARECROW
-import generations.gg.generations.core.generationscore.common.world.level.block.UnownBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.RegiShrineBlock
 import net.minecraft.client.Minecraft
-import net.minecraft.core.BlockPos
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.Level
+import net.minecraft.world.level.storage.loot.BuiltInLootTables
+import net.minecraft.world.level.storage.loot.LootTable
 import org.joml.Vector3f
 
 class GenerationsCobblemonEvents {
@@ -56,7 +56,6 @@ class GenerationsCobblemonEvents {
                 val list = RegiShrineBlock.searchForBlock(it.entity.level(), it.entity.blockPosition(), 32, 1) {
                         world, pos -> world.getBlockState(pos).`is`(SCARECROW.get()) }
                 if(list.isNotEmpty()) {
-                    System.out.println("Blocked a spawn!")
                     it.cancel()
                 }
 

@@ -11,6 +11,7 @@ package generations.gg.generations.core.generationscore.common;
 import com.cobblemon.mod.common.api.data.DataProvider;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
+import com.cobblemon.mod.common.platform.events.ServerEvent;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
 import dev.architectury.event.events.common.LootEvent;
@@ -41,6 +42,7 @@ import generations.gg.generations.core.generationscore.common.world.loot.Species
 import generations.gg.generations.core.generationscore.common.world.recipe.*;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.spawning.ZygardeCellDetail;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -146,6 +148,9 @@ public class GenerationsCore {
 		GenerationsArchitecturyEvents.init();
 
 		GenerationsCobblemonInteractions.INSTANCE.registerDefaultCustomInteractions();
+
+
+//		BuiltInRegistries.BLOCK.stream().map(a -> a.arch$registryName() + ": " + a.getLootTable()).forEach(a -> System.out.println(a));
 	}
 
 	private static void initRecipes() {
@@ -170,7 +175,7 @@ public class GenerationsCore {
 	}
 
 	public static void initBuiltinPacks(TriConsumer<PackType, ResourceLocation, MutableComponent> consumer) {
-		consumer.accept(PackType.CLIENT_RESOURCES, GenerationsCore.id("smooth_pokemon"), Component.literal("Smooth Pokemon Models"));
+//		consumer.accept(PackType.CLIENT_RESOURCES, GenerationsCore.id("smooth_pokemon"), Component.literal("Smooth Pokemon Models"));
 	}
 
 	public static void onAnvilChange(ItemStack left, ItemStack right, Player player, Consumer<ItemStack> output, IntConsumer cost, IntConsumer materialCost) {
