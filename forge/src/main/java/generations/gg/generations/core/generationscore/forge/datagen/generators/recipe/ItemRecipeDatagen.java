@@ -400,7 +400,7 @@ public class ItemRecipeDatagen extends GenerationsRecipeProvider.Proxied impleme
                 .pattern("XTT")
                 .pattern("TT ")
                 .unlockedBy(getHasName(GenerationsItems.ULTRITE_REMNANT.get()), has(GenerationsItems.ULTRITE_REMNANT.get()))
-                .save(consumer);
+                .save(consumer, GenerationsItems.ULTRITE_INGOT.getId().withSuffix("_craft"));
 
         //These are all HeldItems and Recipes are not needed rn
         /*

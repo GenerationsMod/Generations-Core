@@ -44,8 +44,8 @@ class DataGeneratorsRegister {
         generator.addProvider(true, new ItemDatagen(output, existingFileHelper));
 
         generator.addProvider(true, new GenerationsRecipeProvider(output,
-                BuildingBlockRecipeDatagen::new,
                 ItemRecipeDatagen::new,
+                BuildingBlockRecipeDatagen::new,
                 GenerationsArmorToolRecipeDatagen::new,
                 MachineDecorationsRecipeDatagen::new,
                 WoodRecipes::new,

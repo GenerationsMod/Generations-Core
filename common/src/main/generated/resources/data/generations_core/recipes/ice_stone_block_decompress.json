@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "generations_core:ice_stone_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "cobblemon:ice_stone"
+  }
+}

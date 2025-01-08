@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:ultrite_ingot_craft"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultrite_remnant": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:ultrite_remnant"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ultrite_remnant",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:ultrite_ingot_craft"
+    ]
+  },
+  "sends_telemetry_event": false
+}

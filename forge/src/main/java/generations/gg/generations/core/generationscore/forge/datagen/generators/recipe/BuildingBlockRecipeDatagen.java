@@ -15,6 +15,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.packs.VanillaRecipeProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -880,6 +881,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         nineStorageBlockRecipe(consumer, GenerationsBlocks.SILICON_BLOCK.get(), GenerationsItems.SILICON.get());
 
         nineStorageBlockRecipe(consumer, GenerationsBlocks.Z_BLOCK.get(), GenerationsItems.Z_INGOT.get());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.ULTRITE_BLOCK.get(), GenerationsItems.ULTRITE_INGOT.get());
 
         //pokebrick Recipes
         buildBuildingBlockRecipes(consumer, Items.BLACK_DYE, GenerationsBlocks.BLACK_POKE_BRICK_SET.getBaseBlock(), Blocks.BRICKS);
@@ -1004,6 +1006,8 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
 
         //Charge Dripstone
         twoByTwoPacker(consumer, RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.get(), GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get());
+
+        ultriteUpgradeDuplication(consumer);
     }
 
     private void nineStorageBlockRecipe(@NotNull Consumer<FinishedRecipe> consumer, Block block, Item item) {
@@ -1016,8 +1020,20 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, item, 9)
-                .requires(item)
+                .requires(block)
                 .unlockedBy(getHasName(item), has(item))
+                .save(consumer, block.builtInRegistryHolder().key().location().withSuffix("_decompress"));
+    }
+
+    private void ultriteUpgradeDuplication(@NotNull Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
+                .define('E', GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get())
+                .define('T', Blocks.END_STONE)
+                .define('X', Items.NETHERITE_INGOT)
+                .pattern("XEX")
+                .pattern("XTX")
+                .pattern("XXX")
+                .unlockedBy(getHasName(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get()), has(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get()))
                 .save(consumer);
     }
 
