@@ -1,0 +1,27 @@
+{
+  "type": "choice",
+  "keys": ["type"],
+  "default": "normal",
+  "choices": [
+    "normal",
+    "bug",
+    "dark",
+    "dragon",
+    "electric",
+    "fairy",
+    "fighting",
+    "fire",
+    "flying",
+    "ghost",
+    "grass",
+    "ground",
+    "ice",
+    "poison",
+    "psychic",
+    "rock",
+    "steel",
+    "water"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}"
+}
