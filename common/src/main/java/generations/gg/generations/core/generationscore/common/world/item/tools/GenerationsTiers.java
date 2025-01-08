@@ -16,25 +16,26 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public enum GenerationsTiers implements Tier {
-    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, () -> GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock().asItem()),
-    VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, () -> GenerationsBlocks.VOLCANIC_STONE.get().asItem()),
-    AMETHYST(2, 300, 6.5F, 2.0F, 14, () -> Items.AMETHYST_SHARD),
-    CRYSTAL(2, 300, 6.5F, 2.0F, 14, GenerationsItems.CRYSTAL),
-    DAWN_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.DAWN_STONE),
-    DUSK_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.DUSK_STONE),
-    FIRE_STONE(3, 1561, 8.0F, 3.0F, 10, () -> CobblemonItems.FIRE_STONE),
-    ICE_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.ICE_STONE),
-    LEAF_STONE(2, 250, 6.0F, 2.0F, 14, () -> CobblemonItems.LEAF_STONE),
-    MOON_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.MOON_STONE),
+    CHARGE_STONE(1, 131, 5.0F, 1.0F, 5, () -> GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock().asItem()),
+    VOLCANIC_STONE(1, 131, 4.0F, 1.0F, 5, () -> GenerationsBlocks.VOLCANIC_STONE.get().asItem()),
 
-    RUBY(2, 300, 6.5F, 2.0F, 14, GenerationsItems.RUBY),
+    AMETHYST(2, 250, 6f, 2f, 14, () -> Items.AMETHYST_SHARD),
+    CRYSTAL(2, 250, 6f, 2f, 14, GenerationsItems.CRYSTAL),
+    SAPPHIRE(2, 250, 6f, 2f, 14, GenerationsItems.SAPPHIRE),
+    SILICON(2, 250, 6f, 2f, 14, GenerationsItems.SILICON),
+    RUBY(2, 250, 6f, 2f, 14, GenerationsItems.RUBY),
 
-    SAPPHIRE(2, 300, 6.5F, 2.0F, 14, GenerationsItems.SAPPHIRE),
-    SILICON(2, 100, 45F, 10F, 30, GenerationsItems.SILICON),
-    SUN_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.SUN_STONE),
-    THUNDER_STONE(3, 1561, 12.0F, 0.0F, 22, () -> CobblemonItems.THUNDER_STONE),
-    WATER_STONE(3, 1561, 8.0F, 3.0F, 10, () -> CobblemonItems.WATER_STONE),
-    ULTRITE(4, 2640, 10.0F, 5.0F, 18, GenerationsItems.ULTRITE_INGOT);
+    DAWN_STONE(3, 1561, 12f, 3f, 10, () -> CobblemonItems.DAWN_STONE),
+    DUSK_STONE(3, 1561, 12f, 3f, 10, () -> CobblemonItems.DUSK_STONE),
+    FIRE_STONE(3, 1561, 12f, 3f, 10, () -> CobblemonItems.FIRE_STONE),
+    ICE_STONE(3, 1561, 12f, 3f, 10, () -> CobblemonItems.ICE_STONE),
+    LEAF_STONE(2, 1561, 12f, 3f, 10, () -> CobblemonItems.LEAF_STONE),
+    MOON_STONE(3, 1561, 12f, 3f, 10, () -> CobblemonItems.MOON_STONE),
+    SUN_STONE(3, 1561, 12f, 3f, 10, () -> CobblemonItems.SUN_STONE),
+    THUNDER_STONE(3, 1561, 12f, 3f, 10, () -> CobblemonItems.THUNDER_STONE),
+    WATER_STONE(3, 1561, 12f, 3f, 10, () -> CobblemonItems.WATER_STONE),
+
+    ULTRITE(5, 2640, 10.0F, 5.0F, 20, GenerationsItems.ULTRITE_INGOT);
 
     private final int level;
     private final int uses;

@@ -13,26 +13,28 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public enum GenerationsArmorMaterials implements ArmorMaterial {
-    AETHER("aether", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON),
-    AQUA("saphire", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SAPPHIRE),
-    FLARE("flare", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY),
-    GALACTIC("galactic", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON),
-    MAGMA("ruby", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.RUBY),
-    NEO_PLASMA("neo_plasma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL),
-    PLASMA("plasma", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL),
-    ROCKET("rocket", 200, new int[]{3, 6, 7, 3}, 10, () -> Items.AMETHYST_SHARD),
-    SKULL("skull", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.SILICON),
-    CRYSTAL("crystal", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.CRYSTAL),
-    ULTRA("ultra", 200, new int[]{3, 6, 7, 3}, 10, GenerationsItems.Z_INGOT),
-    DAWN_STONE("dawn_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.DAWN_STONE, 2.0f, 0.0f),
-    DUSK_STONE("dusk_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.DUSK_STONE, 2.0f, 0.0f),
-    FIRE_STONE("fire_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.FIRE_STONE, 2.0f, 0.0f),
-    ICE_STONE("ice_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.ICE_STONE, 2.0f, 0.0f),
-    LEAF_STONE("leaf_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.LEAF_STONE, 2.0f, 0.0f),
-    MOON_STONE("moon_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.MOON_STONE, 2.0f, 0.0f),
-    SUN_STONE("sun_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.SUN_STONE, 2.0f, 0.0f),
-    THUNDER_STONE("thunder_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.THUNDER_STONE, 2.0f, 0.0f),
-    WATER_STONE("water_stone", 33, new int[]{3, 6, 8, 3}, 10, () -> CobblemonItems.WATER_STONE, 2.0f, 0.0f),
+    AETHER("aether", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SILICON),
+    AQUA("saphire", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SAPPHIRE),
+    FLARE("flare", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.RUBY),
+    GALACTIC("galactic", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SILICON),
+    MAGMA("ruby", 15, new int[] { 2, 5, 6, 2 }, 19, GenerationsItems.RUBY),
+    NEO_PLASMA("neo_plasma", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.CRYSTAL),
+    PLASMA("plasma", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.CRYSTAL),
+    ROCKET("rocket", 15, new int[] { 2, 5, 6, 2 }, 9, () -> Items.AMETHYST_SHARD),
+    SKULL("skull", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SILICON),
+    CRYSTAL("crystal", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.CRYSTAL),
+
+    ULTRA("ultra", 33, new int[] { 3, 6, 7, 3 }, 10, GenerationsItems.Z_INGOT),
+    DAWN_STONE("dawn_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.DAWN_STONE, 2.0f, 0.0f),
+    DUSK_STONE("dusk_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.DUSK_STONE, 2.0f, 0.0f),
+    FIRE_STONE("fire_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.FIRE_STONE, 2.0f, 0.0f),
+    ICE_STONE("ice_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.ICE_STONE, 2.0f, 0.0f),
+    LEAF_STONE("leaf_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.LEAF_STONE, 2.0f, 0.0f),
+    MOON_STONE("moon_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.MOON_STONE, 2.0f, 0.0f),
+    SUN_STONE("sun_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.SUN_STONE, 2.0f, 0.0f),
+    THUNDER_STONE("thunder_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.THUNDER_STONE, 2.0f, 0.0f),
+    WATER_STONE("water_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.WATER_STONE, 2.0f, 0.0f),
+
     ULTRITE("ultrite", 42, new int[]{3, 6, 8, 3}, 20, GenerationsItems.ULTRITE_INGOT, 4.0f, 0.2f);
 
 	private final String name;
