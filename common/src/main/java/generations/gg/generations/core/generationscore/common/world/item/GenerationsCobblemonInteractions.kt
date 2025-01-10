@@ -53,17 +53,21 @@ object GenerationsCobblemonInteractions {
 
     private val customInteractions: MutableList<PokemonInteraction> = ArrayList()
 
-    object KeldeoInteraction: PokemonInteraction {
+    object KeldeoInteraction: FlagFeatureChangeInteraction({ entity, stack -> stack.`is`(ItemTags.SWORDS) && entity.pokemon.isSpecies("keldeo") }, "resolute")
+    object MeloettaInteraction: FlagFeatureChangeInteraction({ entity, stack -> stack.`is`(GenerationsItems.INERT_RELIC_SONG.get()) && entity.pokemon.isSpecies("meloetta") }, "piroette")
+    object TherianInteraction: FlagFeatureChangeInteraction({ _, stack -> stack.`is`(GenerationsItems.REVEAL_GLASS.get()) }, "therian")
+
+    open class FlagFeatureChangeInteraction(private val checkPredicate: (PokemonEntity, ItemStack) -> Boolean, private val key: String, override val isConsumed: Boolean = false) : PokemonInteraction {
         override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
-            if (stack.`is`(ItemTags.SWORDS) && entity.pokemon.isSpecies("keldeo")) {
+            if (checkPredicate.invoke(entity, stack)) {
 
-                var pokemon = entity.pokemon
+                val pokemon = entity.pokemon
 
-                val provider = pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>("resolute") ?: return false
+                val provider = pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>(key) ?: return false
                 val feature = provider.getOrCreate(pokemon)
                 feature.enabled = !feature.enabled
-                pokemon.updateAspects()
                 pokemon.markFeatureDirty(feature)
+                pokemon.updateAspects()
 
                 player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
                 return true
@@ -71,54 +75,7 @@ object GenerationsCobblemonInteractions {
 
             return false
         }
-
-        override val isConsumed: Boolean
-            get() = false
     }
 
-    object MeloettaInteraction: PokemonInteraction {
-        override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
-            if (stack.`is`(GenerationsItems.INERT_RELIC_SONG.get()) && entity.pokemon.isSpecies("meloetta")) {
 
-                var pokemon = entity.pokemon
-
-                val provider = pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>("piroette") ?: return false
-                val feature = provider.getOrCreate(pokemon)
-                feature.enabled = !feature.enabled
-                pokemon.updateAspects()
-                pokemon.markFeatureDirty(feature)
-
-                player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
-                return true
-            }
-
-            return false
-        }
-
-        override val isConsumed: Boolean
-            get() = false
-    }
-
-    object TherianInteraction: PokemonInteraction {
-        override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
-            if (stack.`is`(GenerationsItems.MIRROR.get())) {
-
-                var pokemon = entity.pokemon
-
-                val provider = pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>("piroette") ?: return false
-                val feature = provider.getOrCreate(pokemon)
-                feature.enabled = !feature.enabled
-                pokemon.updateAspects()
-                pokemon.markFeatureDirty(feature)
-
-                player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
-                return true
-            }
-
-            return false
-        }
-
-        override val isConsumed: Boolean
-            get() = false
-    }
 }

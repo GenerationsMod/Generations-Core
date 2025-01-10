@@ -5,7 +5,7 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.Item.Properties
 
 
-abstract class FormChangingItem(properties: Properties, override val provider: String): Item(properties), FormChanging
+abstract class FormChangingItem(properties: Properties, override val provider: String): ItemWithLangTooltipImpl(properties), FormChanging
 
 open class FormChangingItemString(properties: Properties, provider: String, override val value: String, override val species: ResourceLocation? = null): FormChangingItem(properties, provider), FormChangingString
 open class FormChangingItemBoolean(properties: Properties, provider: String, override val species: ResourceLocation? = null): FormChangingItem(properties, provider), FormChangingToggle

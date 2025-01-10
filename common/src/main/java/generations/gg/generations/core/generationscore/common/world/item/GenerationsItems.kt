@@ -900,7 +900,7 @@ object GenerationsItems {
     @JvmField val SUN_FLUTE = register("sun_flute", ::Item, LEGENDARY_ITEMS)
     @JvmField val LAVA_CRYSTAL = register("lava_crystal", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val JEWEL_OF_LIFE = register("jewel_of_life", ::Item, LEGENDARY_ITEMS)
-    @JvmField val MIRROR = register("mirror", { createFormChangingItem(it, "therian") }, LEGENDARY_ITEMS)
+    @JvmField val MIRROR = register("mirror", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val UNENCHANTED_ICEROOT_CARROT = register("unenchanted_iceroot_carrot", ::Item, LEGENDARY_ITEMS)
     @JvmField val ICEROOT_CARROT = register("iceroot_carrot", { CalyrexSteedItem("iceroot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEat().build()), LegendKeys.GLASTRIER, UNENCHANTED_ICEROOT_CARROT) }, LEGENDARY_ITEMS)
     @JvmField val UNENCHANTED_SHADEROOT_CARROT = register("unenchanted_shaderoot_carrot", ::Item, LEGENDARY_ITEMS)
@@ -986,7 +986,7 @@ object GenerationsItems {
      */
     @JvmField val METEORITE = register("meteorite", ::MeteoriteItem, FORM_ITEMS)
     @JvmField val GRACIDEA = register("gracidea", ::GracideaItem, FORM_ITEMS)
-    @JvmField val REVEAL_GLASS = register("reveal_glass", ::ItemWithLangTooltipImpl, FORM_ITEMS)
+    @JvmField val REVEAL_GLASS = register("reveal_glass", { createFormChangingItem(it, "therian") }, FORM_ITEMS)
     @JvmField val ROCKSTAR_COSTUME = register("rockstar_costume", ::Item, FORM_ITEMS)
     @JvmField val BELLE_COSTUME = register("belle_costume", ::Item, FORM_ITEMS)
     @JvmField val POPSTAR_COSTUME = register("popstar_costume", ::Item, FORM_ITEMS)
