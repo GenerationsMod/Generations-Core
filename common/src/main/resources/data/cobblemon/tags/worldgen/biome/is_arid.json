@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#cobblemon:is_sandy",
+    "#cobblemon:is_savanna",
+	{
+      "id": "biomesoplenty:dryland",
+      "required": false
+    }
+  ]
+}

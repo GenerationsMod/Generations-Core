@@ -17,7 +17,7 @@
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_reef"
+                    "#cobblemon:is_warm_ocean"
                 ],
                 "timeRange": "day"
             }
@@ -36,7 +36,7 @@
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_reef"
+                    "#cobblemon:is_warm_ocean"
                 ],
                 "timeRange": "night"
             }
