@@ -1161,6 +1161,9 @@ public class ItemDatagen extends ItemModelProvider {
         createTm(GenerationsItems.TM_227.get());
         createTm(GenerationsItems.TM_228.get());
         createTm(GenerationsItems.TM_229.get());
+        createTm(GenerationsItems.TM_230.get());
+        createTm(GenerationsItems.TM_231.get());
+        createTm(GenerationsItems.TM_232.get());
 
         createItemBlock(GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM.get(), "block/");
         createItemBlock(GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM.get(), "block/");
@@ -1304,8 +1307,8 @@ public class ItemDatagen extends ItemModelProvider {
         consumer.accept("poison", 0.07f);
         consumer.accept("ground", 0.08f);
         consumer.accept("flying", 0.09f);
-        consumer.accept("psychic", 0.10f);
-        consumer.accept("bug", 0.1f);
+        consumer.accept("psychic", 0.1f);
+        consumer.accept("bug", 0.11f);
         consumer.accept("rock", 0.12f);
         consumer.accept("ghost", 0.13f);
         consumer.accept("dragon", 0.14f);
