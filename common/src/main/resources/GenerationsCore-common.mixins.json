@@ -6,13 +6,17 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "AbstractFurnaceBlockEntityMixin",
+    "DetailsChangeInstructionMixin",
+    "PokemonBattleMixin",
     "RecordItemMixin",
     "ServerPlayerMixin",
+    "ShowdownSpeciesMixin",
     "client.GuiUtilsMixin",
     "client.PokemonGuiUtilsMixin",
     "client.PokemonItemRendererMixin"
   ],
   "client": [
+    "client.BattleMoveSelectionGUIMixin",
     "client.ClientRecipeBookMixin",
     "client.GuiMixin",
     "client.LevelRendererMixin",
