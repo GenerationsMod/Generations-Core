@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 
-public class TieredFishingRodItem extends FishingRodItem { //TODO: Readd fully
+public class TieredFishingRodItem extends FishingRodItem {
     private final TieredFishingHookEntity.Teir tier;
 
     public TieredFishingRodItem(Properties properties, TieredFishingHookEntity.Teir tier) {
@@ -43,5 +43,9 @@ public class TieredFishingRodItem extends FishingRodItem { //TODO: Readd fully
             player.gameEvent(GameEvent.ITEM_INTERACT_START);
         }
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
+    }
+
+    public TieredFishingHookEntity.Teir getTier() {
+        return tier;
     }
 }

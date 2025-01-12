@@ -68,7 +68,10 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.FishingRodItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -84,6 +87,7 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
+import static dev.architectury.registry.item.ItemPropertiesRegistry.register;
 import static generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER;
 import static generations.gg.generations.core.generationscore.common.world.item.MelodyFluteItem.isItem;
 import static net.minecraft.client.renderer.Sheets.createHangingSignMaterial;
@@ -165,8 +169,8 @@ public class GenerationsCoreClient {
             else return 0.00f;
         });
 
-        ItemPropertiesRegistry.register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
-        ItemPropertiesRegistry.register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
+        register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
+        register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
             ItemStack stack = MelodyFluteItem.getImbuedItem(arg);
 
             if (isItem(GenerationsItems.ICY_WING, stack)) return 0.125f;
@@ -180,7 +184,7 @@ public class GenerationsCoreClient {
             else return 0;
         });
 
-        ItemPropertiesRegistry.register(GenerationsShrines.CELESTIAL_ALTAR.get(), GenerationsCore.id("time"), (itemStack, clientLevel, livingEntity, i) -> {
+        register(GenerationsShrines.CELESTIAL_ALTAR.get(), GenerationsCore.id("time"), (itemStack, clientLevel, livingEntity, i) -> {
                 Entity entity = livingEntity != null ? livingEntity : itemStack.getEntityRepresentation();
                 if (entity == null) {
                     return 0.0F;
@@ -204,7 +208,7 @@ public class GenerationsCoreClient {
                 }
             });
 
-        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("light_level"), (itemStack, clientLevel, livingEntity, i) -> {
+        register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("light_level"), (itemStack, clientLevel, livingEntity, i) -> {
             Entity entity = livingEntity != null ? livingEntity : itemStack.getEntityRepresentation();
             if (entity == null) return 0.0F;
             else {
@@ -215,12 +219,33 @@ public class GenerationsCoreClient {
 
         TimeCapsule.Companion.registerItemProperty();
 
+        registerFishingRod(GenerationsItems.OLD_ROD);
+        registerFishingRod(GenerationsItems.GOOD_ROD);
+        registerFishingRod(GenerationsItems.SUPER_ROD);
+        registerFishingRod(GenerationsItems.RUBY_ROD);
+
 //        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("lit"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);
 
         registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST.get());
         registerChestRenderer(GenerationsBlocks.MASTERBALL_CHEST.get());
+    }
+
+    private static <T extends Item> void registerFishingRod(Supplier<T> item) {
+        register(item.get(), new ResourceLocation("cast"), (arg, arg2, arg3, i) -> {
+            if (arg3 == null) {
+                return 0.0F;
+            } else {
+                boolean flag = arg3.getMainHandItem() == arg;
+                boolean flag1 = arg3.getOffhandItem() == arg;
+                if (arg3.getMainHandItem().getItem() instanceof TieredFishingRodItem) {
+                    flag1 = false;
+                }
+
+                return (flag || flag1) && arg3 instanceof Player player && player.fishing != null ? 1.0F : 0.0F;
+            }
+        });
     }
 
     private static void registerChestRenderer(GenericChestBlock chest) {

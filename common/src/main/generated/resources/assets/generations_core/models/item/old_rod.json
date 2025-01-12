@@ -1,6 +1,14 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "item/handheld_rod",
   "textures": {
     "layer0": "generations_core:item/player_items/old_rod"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "cast": 1
+      },
+      "model": "generations_core:item/old_rod_cast"
+    }
+  ]
 }

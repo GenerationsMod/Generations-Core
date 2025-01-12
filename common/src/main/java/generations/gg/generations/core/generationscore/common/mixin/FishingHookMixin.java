@@ -27,8 +27,8 @@ public class FishingHookMixin {
             ItemStack itemStack = player.getMainHandItem();
             ItemStack itemStack2 = player.getOffhandItem();
 
-            boolean bl = itemStack.getItem() instanceof TieredFishingRodItem;
-            boolean bl2 = itemStack2.getItem() instanceof TieredFishingRodItem;
+            boolean bl = itemStack.getItem() instanceof TieredFishingRodItem item && item.getTier() == bobber.getTier();
+            boolean bl2 = itemStack2.getItem() instanceof TieredFishingRodItem item && item.getTier() == bobber.getTier();
             if (!player.isRemoved() && player.isAlive() && (bl || bl2) && !(bobber.distanceToSqr(player) > 1024.0)) {
                 cir.setReturnValue(false);
             } else {

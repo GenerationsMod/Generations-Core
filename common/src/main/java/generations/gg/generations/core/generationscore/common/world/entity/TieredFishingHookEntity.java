@@ -112,9 +112,8 @@ public class TieredFishingHookEntity extends FishingHook {
         return 0;
     }
 
-    @Override
-    protected void onHitEntity(EntityHitResult result) {
-        super.onHitEntity(result);
+    public Teir getTier() {
+        return tier;
     }
 
     public enum Teir {
