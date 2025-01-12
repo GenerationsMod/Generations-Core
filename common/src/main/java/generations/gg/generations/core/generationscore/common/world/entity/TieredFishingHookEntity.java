@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.entity;
 
+import generations.gg.generations.core.generationscore.common.world.loot.GenerationCoreLootTables;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerLevel;
@@ -19,6 +20,7 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
@@ -66,31 +68,23 @@ public class TieredFishingHookEntity extends FishingHook {
         Player player = this.getPlayerOwner();
         if (!this.level().isClientSide && player != null && !this.shouldStopFishing(player)) {
             int i = 0;
-//            ItemFishedEvent event = null;
+
             if (this.getHookedIn() != null) {
                 this.pullEntity(this.getHookedIn());
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, Collections.emptyList());
                 this.level().broadcastEntityEvent(this, (byte)31);
                 i = this.getHookedIn() instanceof ItemEntity ? 3 : 5;
             } else if (this.nibble > 0) {
-                var lootcontext$builder = new LootParams.Builder((ServerLevel) this.level()).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.TOOL, stack).withParameter(LootContextParams.THIS_ENTITY, this);
-                lootcontext$builder.withParameter(LootContextParams.KILLER_ENTITY, this.getOwner()).withParameter(LootContextParams.THIS_ENTITY, this);
-                lootcontext$builder.withLuck((float)this.luck + player.getLuck());
+                LootParams lootParams = (new LootParams.Builder((ServerLevel)this.level())).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.TOOL, stack).withParameter(LootContextParams.THIS_ENTITY, this).withLuck((float)this.luck + player.getLuck()).create(LootContextParamSets.FISHING);
 
                 LootTable loottable = this.level().getServer().getLootData().getLootTable(switch (tier){
-//                    case OLD -> PokeModLootTables.FISHING_OLD;
-//                    case GOOD -> PokeModLootTables.FISHING_GOOD;
-//                    case SUPER -> PokeModLootTables.FISHING_SUPER;
-//                    case RUBY -> PokeModLootTables.FISHING_RUBY;
-                    default -> BuiltInLootTables.FISHING;
+                    case OLD -> GenerationCoreLootTables.FISHING_OLD;
+                    case GOOD -> GenerationCoreLootTables.FISHING_GOOD;
+                    case SUPER -> GenerationCoreLootTables.FISHING_SUPER;
+                    case RUBY -> GenerationCoreLootTables.FISHING_RUBY;
                 });
-                ObjectArrayList<ItemStack> list = loottable.getRandomItems(lootcontext$builder.create(LootContextParamSets.FISHING));
-//                event = new ItemFishedEvent(list, this.onGround ? 2 : 1, this);
-//                MinecraftForge.EVENT_BUS.post(event);
-//                if (event.isCanceled()) {
-//                    this.discard();
-//                    return event.getRodDamage();
-//                }
+                ObjectArrayList<ItemStack> list = loottable.getRandomItems(lootParams);
+
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, list);
                 for (ItemStack itemstack : list) {
                     ItemEntity itementity = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), itemstack);
@@ -118,6 +112,10 @@ public class TieredFishingHookEntity extends FishingHook {
         return 0;
     }
 
+    @Override
+    protected void onHitEntity(EntityHitResult result) {
+        super.onHitEntity(result);
+    }
 
     public enum Teir {
         OLD,

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shard_of_emotion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shard_of_knowledge"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shard_of_willpower"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "generations_core:gameplay/fishing/ruby"
+}

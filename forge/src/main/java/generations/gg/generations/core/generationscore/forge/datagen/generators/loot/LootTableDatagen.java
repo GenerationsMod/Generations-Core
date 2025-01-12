@@ -33,6 +33,7 @@ public class LootTableDatagen extends LootTableProvider {
         super(output, Set.of(), ImmutableList.of(
                 new SubProviderEntry(GenerationsBlockLoot::new, LootContextParamSets.BLOCK),
         new SubProviderEntry(GenerationsChestLoot::new, LootContextParamSets.CHEST),
+        new SubProviderEntry(GenerationsCoreFishingLoot::new, LootContextParamSets.FISHING),
         new SubProviderEntry(() -> op -> op.accept(CALYREX_ROOTS, LootTable.lootTable().withPool(LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(1))
                 .add(
