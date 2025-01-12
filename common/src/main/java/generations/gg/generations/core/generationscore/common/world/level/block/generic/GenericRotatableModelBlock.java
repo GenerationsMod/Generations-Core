@@ -183,7 +183,7 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
                     var blockPos = adjustBlockPos(pos, facing, x, y,z, true);
 
-                    level.destroyBlock(blockPos, !player.isCreative() && x == 0 && y == 0 && z == 0);
+                    level.destroyBlock(blockPos, !player.isCreative() && x == getBaseX() && y == 0 && z == getBaseZ());
                 }
             }
         }
@@ -337,5 +337,10 @@ public class GenericRotatableModelBlock<T extends BlockEntity & ModelContextProv
 
     public boolean shouldRotateSpecial() {
         return true;
+    }
+
+    @Override
+    public SoundType getSoundType(BlockState state) {
+        return (getWidthValue(state) == getBaseX() && getHeightValue(state) == 0 && getLengthValue(state) == getBaseZ()) ? super.getSoundType(state) : SoundType.EMPTY;
     }
 }
