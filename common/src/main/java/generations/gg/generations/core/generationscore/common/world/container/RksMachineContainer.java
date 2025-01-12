@@ -62,6 +62,12 @@ public class RksMachineContainer extends AbstractContainerMenu {
 				final ItemStack slotStack = slot.getItem();
 				returnStack = slotStack.copy();
 
+				if(index == 0 && getRksMachine().pokemon.isPresent()) {
+					slot.onTake(player, returnStack);
+					slot.set(ItemStack.EMPTY);
+					return ItemStack.EMPTY;
+				}
+
 				final int containerSlots =
 						this.slots.size() - player.getInventory().getContainerSize();
 				if (index < containerSlots) {
