@@ -875,7 +875,7 @@ public class BuildingBlockRecipeDatagen extends GenerationsRecipeProvider.Proxie
         nineStorageBlockRecipe(consumer, GenerationsBlocks.SUN_STONE_BLOCK.get(), CobblemonItems.SUN_STONE.asItem());
 
         nineStorageBlockRecipe(consumer, GenerationsBlocks.THUNDER_STONE_BLOCK.get(), CobblemonItems.THUNDER_STONE.asItem());
-        nineStorageBlockRecipe(consumer, GenerationsBlocks.WATER_STONE_BLOCK.get(), CobblemonItems.WATER_STONE_ORE.asItem());
+        nineStorageBlockRecipe(consumer, GenerationsBlocks.WATER_STONE_BLOCK.get(), CobblemonItems.WATER_STONE.asItem());
 
         //Silicon Block
         nineStorageBlockRecipe(consumer, GenerationsBlocks.SILICON_BLOCK.get(), GenerationsItems.SILICON.get());
