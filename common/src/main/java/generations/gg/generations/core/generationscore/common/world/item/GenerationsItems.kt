@@ -38,6 +38,8 @@ import java.util.function.Function
 @SuppressWarnings("unused")
 object GenerationsItems {
 
+    @JvmField val TMS: MutableList<RegistrySupplier<TechnicalMachineItem>> = mutableListOf()
+
     /** Generations Items Deferred Register */
     @JvmField val ITEMS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM)
 
@@ -164,7 +166,7 @@ object GenerationsItems {
     @JvmField val TM_29 = registerTmRegular("tm_29", "hex")
     @JvmField val TM_30 = registerTmRegular("tm_30", "snarl")
     @JvmField val TM_31 = registerTmRegular("tm_31", "metalclaw")
-    @JvmField val TM_32 = registerTmRegular("tm_32", "switft")
+    @JvmField val TM_32 = registerTmRegular("tm_32", "swift")
     @JvmField val TM_33 = registerTmRegular("tm_33", "magicalleaf")
     @JvmField val TM_34 = registerTmRegular("tm_34", "icywind")
     @JvmField val TM_35 = registerTmRegular("tm_35", "mudshot")
@@ -235,7 +237,7 @@ object GenerationsItems {
     @JvmField val TM_100 = registerTmRegular("tm_100", "dragondance")
     @JvmField val TM_101 = registerTmRegular("tm_101", "powergem")
     @JvmField val TM_102 = registerTmRegular("tm_102", "gunkshot")
-    @JvmField val TM_103 = registerTmRegular("tm_103", "substitue")
+    @JvmField val TM_103 = registerTmRegular("tm_103", "substitute")
     @JvmField val TM_104 = registerTmRegular("tm_104", "irondefense")
     @JvmField val TM_105 = registerTmRegular("tm_105", "xscissor")
     @JvmField val TM_106 = registerTmRegular("tm_106", "drillrun")
@@ -269,7 +271,7 @@ object GenerationsItems {
     @JvmField val TM_134 = registerTmRegular("tm_134", "reversal")
     @JvmField val TM_135 = registerTmRegular("tm_135", "icebeam")
     @JvmField val TM_136 = registerTmRegular("tm_136", "electricterrain")
-    @JvmField val TM_137 = registerTmRegular("tm_137", "grassterrain")
+    @JvmField val TM_137 = registerTmRegular("tm_137", "grassyterrain")
     @JvmField val TM_138 = registerTmRegular("tm_138", "psychicterrain")
     @JvmField val TM_139 = registerTmRegular("tm_139", "mistyterrain")
     @JvmField val TM_140 = registerTmRegular("tm_140", "nastyplot")
@@ -342,7 +344,7 @@ object GenerationsItems {
     @JvmField val TM_207 = registerTmRegular("tm_207", "temperflare")
     @JvmField val TM_208 = registerTmRegular("tm_208", "whirlpool")
     @JvmField val TM_209 = registerTmRegular("tm_209", "muddywater")
-    @JvmField val TM_210 = registerTmRegular("tm_210", "supercell")
+    @JvmField val TM_210 = registerTmRegular("tm_210", "supercellslame")
     @JvmField val TM_211 = registerTmRegular("tm_211", "electroweb")
     @JvmField val TM_212 = registerTmRegular("tm_212", "tripleaxel")
     @JvmField val TM_213 = registerTmRegular("tm_213", "coaching")
@@ -365,6 +367,10 @@ object GenerationsItems {
     @JvmField val TM_230 = registerTmRegular("tm_230", "defog")
     @JvmField val TM_231 = registerTmRegular("tm_231", "roost")
     @JvmField val TM_232 = registerTmRegular("tm_232", "mysticalfire")
+    @JvmField val TM_233 = registerTmRegular("tm_233", "powerwhip")
+    @JvmField val TM_234 = registerTmRegular("tm_234", "workup")
+    @JvmField val TM_235 = registerTmRegular("tm_235", "allyswitch")
+    @JvmField val TM_236 = registerTmRegular("tm_236", "triattack")
 
 
 
@@ -772,12 +778,9 @@ object GenerationsItems {
     @JvmField val MARK_CHARM = register("mark_charm", ::Item, PLAYER_ITEMS)
     @JvmField val CATCHING_CHARM = register("catching_charm", ::Item, PLAYER_ITEMS)
     @JvmField val EXP_CHARM = register("exp_charm", ::Item, PLAYER_ITEMS)
-    /*, TieredFishingHookEntity.Teir.OLD*/
     @JvmField val OLD_ROD = register("old_rod", { TieredFishingRodItem(it, TieredFishingHookEntity.Teir.OLD) }, PLAYER_ITEMS)
     @JvmField val GOOD_ROD = register("good_rod", { TieredFishingRodItem(it, TieredFishingHookEntity.Teir.GOOD) }, PLAYER_ITEMS)
-    /*, TieredFishingHookEntity.Teir.SUPER*/
     @JvmField val SUPER_ROD = register("super_rod", { TieredFishingRodItem(it, TieredFishingHookEntity.Teir.SUPER) }, PLAYER_ITEMS)
-    /*, TieredFishingHookEntity.Teir.RUBY*/
     @JvmField val RUBY_ROD = register("ruby_rod", { RubyRodItem(it.durability(27), TieredFishingHookEntity.Teir.RUBY) }, PLAYER_ITEMS)
     @JvmField val CAMERA = register("camera", ::CameraItem, PLAYER_ITEMS)
     @JvmField val SNAP_CAMERA = register("snap_camera", ::CameraItem, PLAYER_ITEMS)
@@ -1498,7 +1501,7 @@ object GenerationsItems {
 
     fun <T: MoveTeachingItem> registerTm(name: String, itemSupplier: Function<Item.Properties, T>, register: DeferredRegister<Item> = ITEMS): RegistrySupplier<T> = register.register(name) { itemSupplier.apply(of()) }
 
-    fun registerTmRegular(name: String, move: String): RegistrySupplier<TechnicalMachineItem> =  registerTm(name, {  TechnicalMachineItem(move, it) }, PLAYER_ITEMS)
+    fun registerTmRegular(name: String, move: String): RegistrySupplier<TechnicalMachineItem> = registerTm(name, {  TechnicalMachineItem(move, it) }, PLAYER_ITEMS).also(TMS::add)
 
     private fun registerSign(name: String, itemSupplier: Function<Item.Properties, Item>): RegistrySupplier<Item> = register(name, itemSupplier)
 

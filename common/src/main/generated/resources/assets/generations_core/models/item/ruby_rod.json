@@ -1,14 +1,14 @@
 {
-  "parent": "item/handheld_rod",
-  "textures": {
-    "layer0": "generations_core:item/player_items/ruby_rod"
-  },
+  "parent": "minecraft:item/handheld_rod",
   "overrides": [
     {
+      "model": "generations_core:item/ruby_rod_cast",
       "predicate": {
-        "cast": 1
-      },
-      "model": "generations_core:item/ruby_rod_cast"
+        "generations_core:cast": 1.0
+      }
     }
-  ]
+  ],
+  "textures": {
+    "layer0": "generations_core:item/player_items/ruby_rod"
+  }
 }

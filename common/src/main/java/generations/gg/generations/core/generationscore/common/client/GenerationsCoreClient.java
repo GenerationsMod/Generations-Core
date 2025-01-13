@@ -233,7 +233,7 @@ public class GenerationsCoreClient {
     }
 
     private static <T extends Item> void registerFishingRod(Supplier<T> item) {
-        register(item.get(), new ResourceLocation("cast"), (arg, arg2, arg3, i) -> {
+        register(item.get(), GenerationsCore.id("cast"), (arg, arg2, arg3, i) -> {
             if (arg3 == null) {
                 return 0.0F;
             } else {

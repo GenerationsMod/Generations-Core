@@ -1,10 +1,9 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items;
 
+import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls;
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
+import generations.gg.generations.core.generationscore.common.world.item.*;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import net.minecraft.data.PackOutput;
@@ -19,6 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Objects;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 public class ItemDatagen extends ItemModelProvider {
 
@@ -344,10 +344,10 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get(), "player_items/");
         createItem(GenerationsItems.CATCHING_CHARM.get(), "player_items/");
         createItem(GenerationsItems.EXP_CHARM.get(), "player_items/");
-        createItem(GenerationsItems.OLD_ROD.get(), "player_items/");
-        createItem(GenerationsItems.GOOD_ROD.get(), "player_items/");
-        createItem(GenerationsItems.SUPER_ROD.get(), "player_items/");
-        createItem(GenerationsItems.RUBY_ROD.get(), "player_items/");
+        createFishingRodItem(GenerationsItems.OLD_ROD.get(), "player_items/");
+        createFishingRodItem(GenerationsItems.GOOD_ROD.get(), "player_items/");
+        createFishingRodItem(GenerationsItems.SUPER_ROD.get(), "player_items/");
+        createFishingRodItem(GenerationsItems.RUBY_ROD.get(), "player_items/");
         createItem(GenerationsItems.CAMERA.get(), "player_items/");
         createItem(GenerationsItems.SNAP_CAMERA.get(), "player_items/");
         createItem(GenerationsItems.FILM.get(), "player_items/");
@@ -932,238 +932,8 @@ public class ItemDatagen extends ItemModelProvider {
         createTimeCapsule();
         createLunarShrine();
         createTm(GenerationsItems.CUSTOM_TM.get());
-        createTm(GenerationsItems.TM_1.get());
-        createTm(GenerationsItems.TM_2.get());
-        createTm(GenerationsItems.TM_3.get());
-        createTm(GenerationsItems.TM_4.get());
-        createTm(GenerationsItems.TM_5.get());
-        createTm(GenerationsItems.TM_6.get());
-        createTm(GenerationsItems.TM_7.get());
-        createTm(GenerationsItems.TM_8.get());
-        createTm(GenerationsItems.TM_9.get());
-        createTm(GenerationsItems.TM_10.get());
-        createTm(GenerationsItems.TM_11.get());
-        createTm(GenerationsItems.TM_12.get());
-        createTm(GenerationsItems.TM_13.get());
-        createTm(GenerationsItems.TM_14.get());
-        createTm(GenerationsItems.TM_15.get());
-        createTm(GenerationsItems.TM_16.get());
-        createTm(GenerationsItems.TM_17.get());
-        createTm(GenerationsItems.TM_18.get());
-        createTm(GenerationsItems.TM_19.get());
-        createTm(GenerationsItems.TM_20.get());
-        createTm(GenerationsItems.TM_21.get());
-        createTm(GenerationsItems.TM_22.get());
-        createTm(GenerationsItems.TM_23.get());
-        createTm(GenerationsItems.TM_24.get());
-        createTm(GenerationsItems.TM_25.get());
-        createTm(GenerationsItems.TM_26.get());
-        createTm(GenerationsItems.TM_27.get());
-        createTm(GenerationsItems.TM_28.get());
-        createTm(GenerationsItems.TM_29.get());
-        createTm(GenerationsItems.TM_30.get());
-        createTm(GenerationsItems.TM_31.get());
-        createTm(GenerationsItems.TM_32.get());
-        createTm(GenerationsItems.TM_33.get());
-        createTm(GenerationsItems.TM_34.get());
-        createTm(GenerationsItems.TM_35.get());
-        createTm(GenerationsItems.TM_36.get());
-        createTm(GenerationsItems.TM_37.get());
-        createTm(GenerationsItems.TM_38.get());
-        createTm(GenerationsItems.TM_39.get());
-        createTm(GenerationsItems.TM_40.get());
-        createTm(GenerationsItems.TM_41.get());
-        createTm(GenerationsItems.TM_42.get());
-        createTm(GenerationsItems.TM_43.get());
-        createTm(GenerationsItems.TM_44.get());
-        createTm(GenerationsItems.TM_45.get());
-        createTm(GenerationsItems.TM_46.get());
-        createTm(GenerationsItems.TM_47.get());
-        createTm(GenerationsItems.TM_48.get());
-        createTm(GenerationsItems.TM_49.get());
-        createTm(GenerationsItems.TM_50.get());
-        createTm(GenerationsItems.TM_51.get());
-        createTm(GenerationsItems.TM_52.get());
-        createTm(GenerationsItems.TM_53.get());
-        createTm(GenerationsItems.TM_54.get());
-        createTm(GenerationsItems.TM_55.get());
-        createTm(GenerationsItems.TM_56.get());
-        createTm(GenerationsItems.TM_57.get());
-        createTm(GenerationsItems.TM_58.get());
-        createTm(GenerationsItems.TM_59.get());
-        createTm(GenerationsItems.TM_60.get());
-        createTm(GenerationsItems.TM_61.get());
-        createTm(GenerationsItems.TM_62.get());
-        createTm(GenerationsItems.TM_63.get());
-        createTm(GenerationsItems.TM_64.get());
-        createTm(GenerationsItems.TM_65.get());
-        createTm(GenerationsItems.TM_66.get());
-        createTm(GenerationsItems.TM_67.get());
-        createTm(GenerationsItems.TM_68.get());
-        createTm(GenerationsItems.TM_69.get());
-        createTm(GenerationsItems.TM_70.get());
-        createTm(GenerationsItems.TM_71.get());
-        createTm(GenerationsItems.TM_72.get());
-        createTm(GenerationsItems.TM_73.get());
-        createTm(GenerationsItems.TM_74.get());
-        createTm(GenerationsItems.TM_75.get());
-        createTm(GenerationsItems.TM_76.get());
-        createTm(GenerationsItems.TM_77.get());
-        createTm(GenerationsItems.TM_78.get());
-        createTm(GenerationsItems.TM_79.get());
-        createTm(GenerationsItems.TM_80.get());
-        createTm(GenerationsItems.TM_81.get());
-        createTm(GenerationsItems.TM_82.get());
-        createTm(GenerationsItems.TM_83.get());
-        createTm(GenerationsItems.TM_84.get());
-        createTm(GenerationsItems.TM_85.get());
-        createTm(GenerationsItems.TM_86.get());
-        createTm(GenerationsItems.TM_87.get());
-        createTm(GenerationsItems.TM_88.get());
-        createTm(GenerationsItems.TM_89.get());
-        createTm(GenerationsItems.TM_90.get());
-        createTm(GenerationsItems.TM_91.get());
-        createTm(GenerationsItems.TM_92.get());
-        createTm(GenerationsItems.TM_93.get());
-        createTm(GenerationsItems.TM_94.get());
-        createTm(GenerationsItems.TM_95.get());
-        createTm(GenerationsItems.TM_96.get());
-        createTm(GenerationsItems.TM_97.get());
-        createTm(GenerationsItems.TM_98.get());
-        createTm(GenerationsItems.TM_99.get());
-        createTm(GenerationsItems.TM_100.get());
-        createTm(GenerationsItems.TM_101.get());
-        createTm(GenerationsItems.TM_102.get());
-        createTm(GenerationsItems.TM_103.get());
-        createTm(GenerationsItems.TM_104.get());
-        createTm(GenerationsItems.TM_105.get());
-        createTm(GenerationsItems.TM_106.get());
-        createTm(GenerationsItems.TM_107.get());
-        createTm(GenerationsItems.TM_108.get());
-        createTm(GenerationsItems.TM_109.get());
-        createTm(GenerationsItems.TM_110.get());
-        createTm(GenerationsItems.TM_111.get());
-        createTm(GenerationsItems.TM_112.get());
-        createTm(GenerationsItems.TM_113.get());
-        createTm(GenerationsItems.TM_114.get());
-        createTm(GenerationsItems.TM_115.get());
-        createTm(GenerationsItems.TM_116.get());
-        createTm(GenerationsItems.TM_117.get());
-        createTm(GenerationsItems.TM_118.get());
-        createTm(GenerationsItems.TM_119.get());
-        createTm(GenerationsItems.TM_120.get());
-        createTm(GenerationsItems.TM_121.get());
-        createTm(GenerationsItems.TM_122.get());
-        createTm(GenerationsItems.TM_123.get());
-        createTm(GenerationsItems.TM_124.get());
-        createTm(GenerationsItems.TM_125.get());
-        createTm(GenerationsItems.TM_126.get());
-        createTm(GenerationsItems.TM_127.get());
-        createTm(GenerationsItems.TM_128.get());
-        createTm(GenerationsItems.TM_129.get());
-        createTm(GenerationsItems.TM_130.get());
-        createTm(GenerationsItems.TM_131.get());
-        createTm(GenerationsItems.TM_132.get());
-        createTm(GenerationsItems.TM_133.get());
-        createTm(GenerationsItems.TM_134.get());
-        createTm(GenerationsItems.TM_135.get());
-        createTm(GenerationsItems.TM_136.get());
-        createTm(GenerationsItems.TM_137.get());
-        createTm(GenerationsItems.TM_138.get());
-        createTm(GenerationsItems.TM_139.get());
-        createTm(GenerationsItems.TM_140.get());
-        createTm(GenerationsItems.TM_141.get());
-        createTm(GenerationsItems.TM_142.get());
-        createTm(GenerationsItems.TM_143.get());
-        createTm(GenerationsItems.TM_144.get());
-        createTm(GenerationsItems.TM_145.get());
-        createTm(GenerationsItems.TM_146.get());
-        createTm(GenerationsItems.TM_147.get());
-        createTm(GenerationsItems.TM_148.get());
-        createTm(GenerationsItems.TM_149.get());
-        createTm(GenerationsItems.TM_150.get());
-        createTm(GenerationsItems.TM_151.get());
-        createTm(GenerationsItems.TM_152.get());
-        createTm(GenerationsItems.TM_153.get());
-        createTm(GenerationsItems.TM_154.get());
-        createTm(GenerationsItems.TM_155.get());
-        createTm(GenerationsItems.TM_156.get());
-        createTm(GenerationsItems.TM_157.get());
-        createTm(GenerationsItems.TM_158.get());
-        createTm(GenerationsItems.TM_159.get());
-        createTm(GenerationsItems.TM_160.get());
-        createTm(GenerationsItems.TM_161.get());
-        createTm(GenerationsItems.TM_162.get());
-        createTm(GenerationsItems.TM_163.get());
-        createTm(GenerationsItems.TM_164.get());
-        createTm(GenerationsItems.TM_165.get());
-        createTm(GenerationsItems.TM_166.get());
-        createTm(GenerationsItems.TM_167.get());
-        createTm(GenerationsItems.TM_168.get());
-        createTm(GenerationsItems.TM_169.get());
-        createTm(GenerationsItems.TM_170.get());
-        createTm(GenerationsItems.TM_171.get());
-        createTm(GenerationsItems.TM_172.get());
-        createTm(GenerationsItems.TM_173.get());
-        createTm(GenerationsItems.TM_174.get());
-        createTm(GenerationsItems.TM_175.get());
-        createTm(GenerationsItems.TM_176.get());
-        createTm(GenerationsItems.TM_177.get());
-        createTm(GenerationsItems.TM_178.get());
-        createTm(GenerationsItems.TM_179.get());
-        createTm(GenerationsItems.TM_180.get());
-        createTm(GenerationsItems.TM_181.get());
-        createTm(GenerationsItems.TM_182.get());
-        createTm(GenerationsItems.TM_183.get());
-        createTm(GenerationsItems.TM_184.get());
-        createTm(GenerationsItems.TM_185.get());
-        createTm(GenerationsItems.TM_186.get());
-        createTm(GenerationsItems.TM_187.get());
-        createTm(GenerationsItems.TM_188.get());
-        createTm(GenerationsItems.TM_189.get());
-        createTm(GenerationsItems.TM_190.get());
-        createTm(GenerationsItems.TM_191.get());
-        createTm(GenerationsItems.TM_192.get());
-        createTm(GenerationsItems.TM_193.get());
-        createTm(GenerationsItems.TM_194.get());
-        createTm(GenerationsItems.TM_195.get());
-        createTm(GenerationsItems.TM_196.get());
-        createTm(GenerationsItems.TM_197.get());
-        createTm(GenerationsItems.TM_198.get());
-        createTm(GenerationsItems.TM_199.get());
-        createTm(GenerationsItems.TM_200.get());
-        createTm(GenerationsItems.TM_201.get());
-        createTm(GenerationsItems.TM_202.get());
-        createTm(GenerationsItems.TM_203.get());
-        createTm(GenerationsItems.TM_204.get());
-        createTm(GenerationsItems.TM_205.get());
-        createTm(GenerationsItems.TM_206.get());
-        createTm(GenerationsItems.TM_207.get());
-        createTm(GenerationsItems.TM_208.get());
-        createTm(GenerationsItems.TM_209.get());
-        createTm(GenerationsItems.TM_210.get());
-        createTm(GenerationsItems.TM_211.get());
-        createTm(GenerationsItems.TM_212.get());
-        createTm(GenerationsItems.TM_213.get());
-        createTm(GenerationsItems.TM_214.get());
-        createTm(GenerationsItems.TM_215.get());
-        createTm(GenerationsItems.TM_216.get());
-        createTm(GenerationsItems.TM_217.get());
-        createTm(GenerationsItems.TM_218.get());
-        createTm(GenerationsItems.TM_219.get());
-        createTm(GenerationsItems.TM_220.get());
-        createTm(GenerationsItems.TM_221.get());
-        createTm(GenerationsItems.TM_222.get());
-        createTm(GenerationsItems.TM_223.get());
-        createTm(GenerationsItems.TM_224.get());
-        createTm(GenerationsItems.TM_225.get());
-        createTm(GenerationsItems.TM_226.get());
-        createTm(GenerationsItems.TM_227.get());
-        createTm(GenerationsItems.TM_228.get());
-        createTm(GenerationsItems.TM_229.get());
-        createTm(GenerationsItems.TM_230.get());
-        createTm(GenerationsItems.TM_231.get());
-        createTm(GenerationsItems.TM_232.get());
+
+        GenerationsItems.TMS.stream().map(a -> a.get()).forEach(this::createTm);
 
         createItemBlock(GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM.get(), "block/");
         createItemBlock(GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM.get(), "block/");
@@ -1265,6 +1035,22 @@ public class ItemDatagen extends ItemModelProvider {
         createEntityModelItem(GenerationsItems.RAIKOU_STATUE.get());
         createEntityModelItem(GenerationsItems.ENTEI_STATUE.get());
     }
+
+    private void createFishingRodItem(TieredFishingRodItem rod, String directory) {
+        ResourceLocation rodKey = Objects.requireNonNull(getKey(rod), "Tried to create a model for an unregistered fishing rod.");
+
+        ItemModelBuilder baseModel = getBuilder(rodKey.getPath())
+                .parent(new ModelFile.UncheckedModelFile("item/handheld_rod"))
+                .texture("layer0", new ResourceLocation(GenerationsCore.MOD_ID, "item/" + directory + rodKey.getPath()));
+
+        baseModel.override()
+                .predicate(GenerationsCore.id("cast"), 1)
+                .model(getBuilder(rodKey.getPath() + "_cast")
+                        .parent(new ModelFile.UncheckedModelFile("item/handheld_rod"))
+                        .texture("layer0", new ResourceLocation(GenerationsCore.MOD_ID, "item/" + directory + rodKey.getPath() + "_cast"))
+                ).end();
+    }
+
 
     private void createTimeCapsule() {
         var model = createItem(GenerationsItems.TIME_CAPSULE.get(), "player_items/");
@@ -1407,7 +1193,7 @@ public class ItemDatagen extends ItemModelProvider {
     }
 
     public ItemModelBuilder createItem(Item item, String directory) {
-        return createItem(item, directory, "");
+        return createItem(item, directory,"");
     }
 
     public ItemModelBuilder createItem(Item item, String directory, String override) {

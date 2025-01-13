@@ -80,13 +80,6 @@ public class TieredFishingHookEntity extends FishingHook {
             } else if (this.nibble > -1) {
                 LootParams lootParams = (new LootParams.Builder((ServerLevel)this.level())).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.TOOL, stack).withParameter(LootContextParams.THIS_ENTITY, this).withLuck((float)this.luck + player.getLuck()).create(LootContextParamSets.FISHING);
 
-                LootTable loottable = this.level().getServer().getLootData().getLootTable(switch (tier){
-                    case OLD -> GenerationCoreLootTables.FISHING_OLD;
-                    case GOOD -> GenerationCoreLootTables.FISHING_GOOD;
-                    case SUPER -> GenerationCoreLootTables.FISHING_SUPER;
-                    case RUBY -> GenerationCoreLootTables.FISHING_RUBY;
-                });
-
                 ObjectArrayList<ItemStack> list = tier.process(lootParams, stack);
 
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, list);

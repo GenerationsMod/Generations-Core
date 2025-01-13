@@ -1,5 +1,5 @@
 {
-  "parent": "item/handheld_rod",
+  "parent": "minecraft:item/handheld_rod",
   "textures": {
     "layer0": "generations_core:item/player_items/good_rod_cast"
   }
