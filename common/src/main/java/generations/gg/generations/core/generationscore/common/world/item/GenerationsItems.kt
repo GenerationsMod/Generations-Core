@@ -778,7 +778,7 @@ object GenerationsItems {
     /*, TieredFishingHookEntity.Teir.SUPER*/
     @JvmField val SUPER_ROD = register("super_rod", { TieredFishingRodItem(it, TieredFishingHookEntity.Teir.SUPER) }, PLAYER_ITEMS)
     /*, TieredFishingHookEntity.Teir.RUBY*/
-    @JvmField val RUBY_ROD = register("ruby_rod", { RubyRodItem(it, TieredFishingHookEntity.Teir.RUBY) }, PLAYER_ITEMS)
+    @JvmField val RUBY_ROD = register("ruby_rod", { RubyRodItem(it.durability(27), TieredFishingHookEntity.Teir.RUBY) }, PLAYER_ITEMS)
     @JvmField val CAMERA = register("camera", ::CameraItem, PLAYER_ITEMS)
     @JvmField val SNAP_CAMERA = register("snap_camera", ::CameraItem, PLAYER_ITEMS)
     @JvmField val FILM = register("film", ::Item, PLAYER_ITEMS)

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.entity;
 
+import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem;
 import generations.gg.generations.core.generationscore.common.world.loot.GenerationCoreLootTables;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -24,6 +25,7 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.Map;
 
 public class TieredFishingHookEntity extends FishingHook {
     private final Teir tier;
@@ -69,11 +71,13 @@ public class TieredFishingHookEntity extends FishingHook {
             int i = 0;
 
             if (this.getHookedIn() != null) {
+                if(tier == Teir.RUBY) return 0;
+
                 this.pullEntity(this.getHookedIn());
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, Collections.emptyList());
                 this.level().broadcastEntityEvent(this, (byte)31);
                 i = this.getHookedIn() instanceof ItemEntity ? 3 : 5;
-            } else if (this.nibble > 0) {
+            } else if (this.nibble > -1) {
                 LootParams lootParams = (new LootParams.Builder((ServerLevel)this.level())).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.TOOL, stack).withParameter(LootContextParams.THIS_ENTITY, this).withLuck((float)this.luck + player.getLuck()).create(LootContextParamSets.FISHING);
 
                 LootTable loottable = this.level().getServer().getLootData().getLootTable(switch (tier){
@@ -83,7 +87,7 @@ public class TieredFishingHookEntity extends FishingHook {
                     case RUBY -> GenerationCoreLootTables.FISHING_RUBY;
                 });
 
-                ObjectArrayList<ItemStack> list = tier.process(lootParams, getPlayerOwner());
+                ObjectArrayList<ItemStack> list = tier.process(lootParams, stack);
 
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, list);
                 for (ItemStack itemstack : list) {
@@ -101,7 +105,7 @@ public class TieredFishingHookEntity extends FishingHook {
                 i = 1;
             }
             if (this.onGround()) {
-                i = 2;
+                if(tier != Teir.RUBY) i = 2;
             }
             this.discard();
 
@@ -127,12 +131,41 @@ public class TieredFishingHookEntity extends FishingHook {
             this.resourceLocation = resourceLocation;
         }
 
-        public ObjectArrayList<ItemStack> process(LootParams lootParams, Player playerOwner) {
+        public ObjectArrayList<ItemStack> process(LootParams lootParams, ItemStack stack) {
             var level = lootParams.getLevel();
-
             var loottable = level.getServer().getLootData().getLootTable(resourceLocation);
 
-            return loottable.getRandomItems(lootParams);
+            ObjectArrayList<ItemStack> list = loottable.getRandomItems(lootParams);
+
+            if (this == RUBY) {
+                int tries = 0;
+
+                // Get the initial shard counts from the rod
+                Map<RubyRodItem.LakeTrioShardType, Byte> currentShards = RubyRodItem.getFishedShard(stack);
+
+                while (tries < 3) {
+                    // Step 1: Sanitize the list using the current shard counts
+                    list = RubyRodItem.sanitizeList(list, currentShards);
+
+                    // Step 2: If the list is empty after sanitization, retry
+                    if (list.isEmpty()) {
+                        tries++;
+                        list = loottable.getRandomItems(lootParams);
+                        continue;
+                    }
+
+                    // Step 3: Save the updated shard counts to the rod's NBT
+                    RubyRodItem.saveShardCounts(stack, currentShards);
+
+                    // Step 4: Return the sanitized and valid list
+                    return list;
+                }
+
+                // If no valid list is found after 3 tries, return an empty list
+                return new ObjectArrayList<>();
+            }
+
+            return list;
         }
     }
 }
