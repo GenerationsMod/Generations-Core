@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.entity;
 import generations.gg.generations.core.generationscore.common.world.loot.GenerationCoreLootTables;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
@@ -15,12 +16,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
@@ -83,7 +82,8 @@ public class TieredFishingHookEntity extends FishingHook {
                     case SUPER -> GenerationCoreLootTables.FISHING_SUPER;
                     case RUBY -> GenerationCoreLootTables.FISHING_RUBY;
                 });
-                ObjectArrayList<ItemStack> list = loottable.getRandomItems(lootParams);
+
+                ObjectArrayList<ItemStack> list = tier.process(lootParams, getPlayerOwner());
 
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, list);
                 for (ItemStack itemstack : list) {
@@ -106,7 +106,6 @@ public class TieredFishingHookEntity extends FishingHook {
             this.discard();
 
             return i;
-//            return event == null ? i : event.getRodDamage();
         }
 
         return 0;
@@ -117,9 +116,23 @@ public class TieredFishingHookEntity extends FishingHook {
     }
 
     public enum Teir {
-        OLD,
-        GOOD,
-        SUPER,
-        RUBY
+        OLD(GenerationCoreLootTables.FISHING_OLD),
+        GOOD(GenerationCoreLootTables.FISHING_GOOD),
+        SUPER(GenerationCoreLootTables.FISHING_SUPER),
+        RUBY(GenerationCoreLootTables.FISHING_RUBY);
+
+        private final ResourceLocation resourceLocation;
+
+        Teir(ResourceLocation resourceLocation) {
+            this.resourceLocation = resourceLocation;
+        }
+
+        public ObjectArrayList<ItemStack> process(LootParams lootParams, Player playerOwner) {
+            var level = lootParams.getLevel();
+
+            var loottable = level.getServer().getLootData().getLootTable(resourceLocation);
+
+            return loottable.getRandomItems(lootParams);
+        }
     }
 }
