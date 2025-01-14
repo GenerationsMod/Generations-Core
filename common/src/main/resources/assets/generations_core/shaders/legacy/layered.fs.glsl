@@ -1,6 +1,7 @@
 #version 330 core
 
 in float vertexDistance;
+in vec4 vertexColor;
 in vec2 texCoord0;
 
 out vec4 outColor;
@@ -38,8 +39,6 @@ uniform float emiIntensity3;
 uniform float emiIntensity4;
 uniform float emiIntensity5;
 
-uniform int frame;
-
 vec4 linear_fog(vec4 inColor, float vertexDistance, float fogStart, float fogEnd, vec4 fogColor) {
     if (vertexDistance <= fogStart) {
         return inColor;
@@ -68,15 +67,7 @@ float adjustScalar(float color) {
 }
 
 float getMaskIntensity() {
-    vec2 effectTexCoord = vec2(texCoord0);
-
-    if(frame >= 0) {
-        effectTexCoord *= (0.25f);
-        effectTexCoord.x += (frame % 4)/4.0;
-        effectTexCoord.y +=  (frame/4)/4.0;
-    }
-
-    return texture(mask, effectTexCoord).r;
+    return texture(mask, texCoord0).r;
 }
 
 vec3 applyEmission(vec3 base, vec3 emissionColor, float intensity) {
@@ -102,14 +93,25 @@ vec4 getColor() {
 
     return vec4(base, color.a);
 }
-
 vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
     return texture(lightMap, clamp(uv / 256.0, vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
 }
 
+#process
+
 void main() {
-    outColor = getColor() * ColorModulator;
+    outColor = process(getColor()) * ColorModulator;
+
     if(outColor.a < 0.004) discard;
-    if(useLight) outColor *= mix(minecraft_sample_lightmap(lightmap, light), vec4(1,1,1,1), texture(emission, texCoord0).r);
+
+    if (useLight) {
+        outColor *= vertexColor;
+        // Sample Minecraft's light level from the lightmap texture
+        vec4 minecraftLight = minecraft_sample_lightmap(lightmap, light);
+
+        outColor *= mix(minecraftLight, vec4(1, 1, 1, 1), texture(emission, texCoord0).r);
+    }
+
     outColor = linear_fog(outColor, vertexDistance, FogStart, FogEnd, FogColor);
+
 }

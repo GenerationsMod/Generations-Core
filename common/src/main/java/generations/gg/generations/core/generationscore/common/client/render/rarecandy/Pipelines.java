@@ -9,6 +9,7 @@ import dev.architectury.event.EventFactory;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.GenerationsTextureLoader;
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
+import generations.gg.generations.core.generationscore.common.config.Config;
 import gg.generations.rarecandy.pokeutils.BlendType;
 import gg.generations.rarecandy.pokeutils.CullType;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
@@ -23,13 +24,16 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
+import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 import org.lwjgl.opengl.GL11C;
 import org.lwjgl.opengl.GL13C;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -38,7 +42,9 @@ public class Pipelines {
     public static final RenderContext.Key<CobblemonInstance> INSTANCE = RenderContext.Companion.key(GenerationsCore.id("object_instance"), TypeToken.get(CobblemonInstance.class));
     private static final Vector3f ONE = new Vector3f(1, 1, 1);
     public static Event<Consumer<PipelineRegister>> REGISTER = EventFactory.createConsumerLoop(PipelineRegister.class);
-    public static class PipelineRegister {
+    private static boolean useLegacy;
+
+    public static class  PipelineRegister {
         private final ResourceManager resourceManager;
         private final Map<String, Function<String, Pipeline>> pipelines;
 
@@ -52,7 +58,13 @@ public class Pipelines {
     }
 
     private static final Map<String, Function<String, Pipeline>> PIPELINE_MAP = new HashMap<>();
+
+
     private static boolean initialized = false;
+
+    public static void toggleRendering() {
+        useLegacy = !useLegacy;
+    }
 
     /**
      * Called on first usage of RareCandy to reduce lag later on
@@ -61,6 +73,7 @@ public class Pipelines {
         if(!initialized) {
             REGISTER.invoker().accept(new PipelineRegister(manager, PIPELINE_MAP));
             initialized = true;
+            useLegacy = GenerationsCore.CONFIG.client.usePixelmonShading;
             PipelineRegistry.setFunction(Pipelines::getPipeline);
         }
     }
@@ -68,154 +81,196 @@ public class Pipelines {
     private static final Vector4f TEMP = new Vector4f();
 
     public static void initGenerationsPipelines(PipelineRegister register) {
+        register.register("main", manager -> createShaderMap(manager, true));
+        register.register("legacy", manager -> createShaderMap(manager, false));
+    }
 
-        register.register("pokemon", 
-                manager -> {
-            var legacyShading = GenerationsCore.CONFIG.client.usePixelmonShading ? "legacy/" : "";
-                    var ROOT = new Pipeline.Builder()
-                            .supplyUniform("viewMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().viewMatrix()))
-                            .supplyUniform("FogStart", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogStart()))
-                            .supplyUniform("FogEnd", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogEnd()))
-                            .supplyUniform("FogColor", ctx -> {
-                                var color = RenderSystem.getShaderFogColor();
-                                ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
-                            })
-                            .supplyUniform("ColorModulator", ctx -> {
-                                var color = RenderSystem.getShaderColor();
+    public static Pipeline.Builder createRoot(boolean pixelmonShading) {
+        var builder = new Pipeline.Builder()
+                .supplyUniform("viewMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().viewMatrix()))
+                .supplyUniform("FogStart", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogStart()))
+                .supplyUniform("FogEnd", ctx -> ctx.uniform().uploadFloat(RenderSystem.getShaderFogEnd()))
+                .supplyUniform("FogColor", ctx -> {
+                    var color = RenderSystem.getShaderFogColor();
+                    ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
+                })
+                .supplyUniform("ColorModulator", ctx -> {
+                    var color = RenderSystem.getShaderColor();
 
-                                ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
-                            })
-                            .supplyUniform("FogShape", ctx -> ctx.uniform().uploadInt(RenderSystem.getShaderFogShape().getIndex()))
-                            .supplyUniform("modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().transformationMatrix()))
-                            .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(RenderSystem.getProjectionMatrix()))
-                            .supplyUniform("boneTransforms", ctx -> {
-                                var mats = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms() != null ? instance.getTransforms() : AnimationController.NO_ANIMATION : AnimationController.NO_ANIMATION;
-                                ctx.uniform().uploadMat4fs(mats);
-                            })
-                            .supplyUniform("uvOffset", ctx -> {
-                                Transform transform = ctx.object().getTransform(ctx.instance().variant());
+                    ctx.uniform().upload4f(color[0], color[1], color[2], color[3]);
+                })
+                .supplyUniform("FogShape", ctx -> ctx.uniform().uploadInt(RenderSystem.getShaderFogShape().getIndex()))
+                .supplyUniform("modelMatrix", ctx -> ctx.uniform().uploadMat4f(ctx.instance().transformationMatrix()))
+                .supplyUniform("projectionMatrix", (ctx) -> ctx.uniform().uploadMat4f(RenderSystem.getProjectionMatrix()))
+                .supplyUniform("boneTransforms", ctx -> {
+                    var mats = ctx.instance() instanceof AnimatedObjectInstance instance ? instance.getTransforms() != null ? instance.getTransforms() : AnimationController.NO_ANIMATION : AnimationController.NO_ANIMATION;
+                    ctx.uniform().uploadMat4fs(mats);
+                })
+                .supplyUniform("uvOffset", ctx -> {
+                    Transform transform = ctx.object().getTransform(ctx.instance().variant());
 
-                                if (ctx.instance() instanceof AnimatedObjectInstance instance) {
-                                    var t = instance.getTransform(ctx.getMaterial().getMaterialName());
+                    if (ctx.instance() instanceof AnimatedObjectInstance instance) {
+                        var t = instance.getTransform(ctx.getMaterial().getMaterialName());
 
-                                    if (t != null) {
-                                        transform = t;
-                                    }
-                                }
-
-                                ctx.uniform().uploadVec2f(transform.offset());
-                            }).supplyUniform("uvScale", ctx -> {
-                                Transform transform = ctx.object().getTransform(ctx.instance().variant());
-
-                                if (ctx.instance() instanceof AnimatedObjectInstance instance) {
-                                    var t = instance.getTransform(ctx.getMaterial().getMaterialName());
-
-                                    if (t != null) {
-                                        transform = t;
-                                    }
-                                }
-
-                                ctx.uniform().uploadVec2f(transform.scale());
-                            });
-                    
-                    if(!legacyShading.isEmpty()) {
-                          ROOT.supplyUniform("Light0_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[0])).supplyUniform("Light1_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[1]));
-                    }
-                    ROOT.prePostDraw(material -> {
-                        if(material.cullType() != CullType.None) {
-                            RenderSystem.enableCull();
+                        if (t != null) {
+                            transform = t;
                         }
+                    }
+
+                    ctx.uniform().uploadVec2f(transform.offset());
+                }).supplyUniform("uvScale", ctx -> {
+                    Transform transform = ctx.object().getTransform(ctx.instance().variant());
+
+                    if (ctx.instance() instanceof AnimatedObjectInstance instance) {
+                        var t = instance.getTransform(ctx.getMaterial().getMaterialName());
+
+                        if (t != null) {
+                            transform = t;
+                        }
+                    }
+
+                    ctx.uniform().uploadVec2f(transform.scale());
+                })
+                .configure(Pipelines::addDiffuse)
+                .configure(Pipelines::addLight);
+
+        if (pixelmonShading) {
+            builder.supplyUniform("Light0_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[0])).supplyUniform("Light1_Direction", ctx -> ctx.uniform().uploadVec3f(RenderSystem.shaderLightDirections[1]));
+        }
+        builder.prePostDraw(material -> {
+            if (material.cullType() != CullType.None) {
+                RenderSystem.enableCull();
+            }
 
 //                               material.cullType().enable();
-                        if(material.blendType() == BlendType.Regular) {
+            if (material.blendType() == BlendType.Regular) {
 
 //                            BlendRecord.push();
 
-                            RenderSystem.enableBlend();
-                            RenderSystem.defaultBlendFunc();
-                        }
-                        }, material -> {
-                            if(material.cullType() != CullType.None) {
-                                RenderSystem.enableCull();
-                            }
+                RenderSystem.enableBlend();
+                RenderSystem.defaultBlendFunc();
+            }
+        }, material -> {
+            if (material.cullType() != CullType.None) {
+                RenderSystem.enableCull();
+            }
 
 //                                material.cullType().disable();
-                            if(material.blendType() == BlendType.Regular) {
-                                RenderSystem.disableBlend();
-                            }
-                    });
+            if (material.blendType() == BlendType.Regular) {
+                RenderSystem.disableBlend();
+            }
+        });
 
+        return builder;
+    }
 
-                    var BASE = new Pipeline.Builder(ROOT)
-                            .configure(Pipelines::addDiffuse)
-                            .configure(Pipelines::addLight);
+    public static Function<String, Pipeline> createShaderMap(ResourceManager manager, boolean legacyShading) {
+        var shaderMap = new HashMap<String, Pipeline>();
 
-                    Pipeline.Builder layered_base = new Pipeline.Builder(BASE)
-                            .shader(read(register.resourceManager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(register.resourceManager, "shaders/block/" + legacyShading + "layered.fs.glsl"))
-                            .configure(Pipelines::baseColors)
-                            .configure(Pipelines::emissionColors)
-                            .supplyUniform("layer", ctx -> {
-                                var texture = ctx.getTexture("layer");
+        var extension = legacyShading ? "legacy/" : "main/";
 
-                                if (isStatueMaterial(ctx) || texture == null) {
-                                    texture = ITextureLoader.instance().getDarkFallback();
-                                }
+        var base = createRoot(legacyShading);
 
-                                texture.bind(3);
-                                ctx.uniform().uploadInt(3);
-                            }).supplyUniform("mask", ctx -> {
-                                var texture = ctx.getTexture("mask");
+        var effects = List.of("cartoon", "galaxy", "paradox", "shadow", "sketch", "vintage", "passthrough");
 
-                                if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
-                                    texture = ITextureLoader.instance().getDarkFallback();
-                                }
+        for (var effect : effects) {
+            var solid = createSolid(manager, extension, base, effect);
+            var masked = createMasked(manager, extension, base, effect);
+            var layered = createLayered(manager, extension, base, effect);
 
-                                texture.bind(4);
-                                ctx.uniform().uploadInt(4);
-                            });
+            if(effect.equals("paradox")) {
+                addParadox(solid, "solid");
+                addParadox(masked, "masked");
+                addParadox(layered, "layered");
+            }
 
-                    Pipeline layered = new Pipeline.Builder(layered_base)
-                            .supplyUniform("frame", ctx -> ctx.uniform().uploadInt(-1))
-                            .build();
+            var suffix = !effect.equals("passthrough") ? "_" + effect : "";
 
-                    Pipeline solid = new Pipeline.Builder(BASE)
-                            .shader(read(manager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(manager, "shaders/block/" + legacyShading + "solid.fs.glsl"))
-                            .build();
+            shaderMap.put("solid" + suffix, solid.build());
+            shaderMap.put("masked" + suffix, masked.build());
+            shaderMap.put("layered" + suffix, layered.build());
+        }
 
-                    Pipeline masked = new Pipeline.Builder(BASE)
-                            .shader(read(manager, "shaders/block/" + legacyShading + "animated.vs.glsl"), read(manager, "shaders/block/" + legacyShading + "masked.fs.glsl"))
-                            .supplyUniform("mask", ctx -> {
+        var shader = shaderMap.get("solid");
 
-                                var texture = ctx.getTexture("mask");
+        return s -> shaderMap.getOrDefault(s, shader);
+    }
 
-                                if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
-                                    texture = ITextureLoader.instance().getDarkFallback();
-                                }
+    private static Pipeline.Builder createSolid(ResourceManager manager, String extension, Pipeline.Builder base, String effect) {
+        return new Pipeline.Builder(base)
+                .shader(read(manager, "shaders/" + extension + "animated.vs.glsl"), read(manager, "shaders/" + extension + "solid.fs.glsl", "shaders/process/" + effect + ".lib.glsl"));
+    }
+    private static Pipeline.Builder createLayered(ResourceManager manager, String extension, Pipeline.Builder base, String effect) {
+        return new Pipeline.Builder(base)
+                .shader(read(manager, "shaders/" + extension + "animated.vs.glsl"), read(manager, "shaders/" + extension + "layered.fs.glsl", "shaders/process/" + effect + ".lib.glsl"))
+                .configure(Pipelines::baseColors)
+                .configure(Pipelines::emissionColors)
+                .supplyUniform("layer", ctx -> {
+                    var texture = ctx.getTexture("layer");
 
+                    if (isStatueMaterial(ctx) || texture == null) {
+                        texture = ITextureLoader.instance().getDarkFallback();
+                    }
 
-                                texture.bind(3);
-                                ctx.uniform().uploadInt(3);
-                            })
-                            .supplyUniform("color", ctx -> {
-                                Vector3f color;
-                                if (ctx.instance() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null)
-                                    color = tintProvider.getTint();
-                                else if(!isStatueMaterial(ctx) && ctx.object().getMaterial(ctx.instance().variant()).getValue("color") != null)
-                                    color = (Vector3f) ctx.object().getMaterial(ctx.instance().variant()).getValue("color");
-                                else color = ONE;
-                                ctx.uniform().uploadVec3f(color);
-                            })
-                            .build();
+                    texture.bind(3);
+                    ctx.uniform().uploadInt(3);
+                }).supplyUniform("mask", ctx -> {
+                    var texture = ctx.getTexture("mask");
 
-                            Pipeline paradox = new Pipeline.Builder(layered_base)
-                                    .supplyUniform("frame", ctx -> ctx.uniform().uploadInt((int) pingpong(MinecraftClientGameProvider.getTimePassed())))
-                                    .build();
+                    if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
+                        texture = ITextureLoader.instance().getDarkFallback();
+                    }
 
-                            var map = Map.of("masked", masked, "layered", layered, "paradox", paradox, "solid", solid);
-
-                            return s -> map.getOrDefault(s, solid);
+                    texture.bind(4);
+                    ctx.uniform().uploadInt(4);
                 });
     }
+
+    private static Pipeline.Builder createMasked(ResourceManager manager, String extension, Pipeline.Builder base, String effect) {
+        return new Pipeline.Builder(base)
+                .shader(read(manager, "shaders/" + extension + "animated.vs.glsl"), read(manager, "shaders/" + extension + "masked.fs.glsl", "shaders/process/" + effect + ".lib.glsl"))
+                .supplyUniform("mask", ctx -> {
+
+                    var texture = ctx.getTexture("mask");
+
+                    if (isStatueMaterial(ctx) || texture == GenerationsTextureLoader.MissingTextureProxy.INSTANCE) {
+                        texture = ITextureLoader.instance().getDarkFallback();
+                    }
+
+
+                    texture.bind(3);
+                    ctx.uniform().uploadInt(3);
+                })
+                .supplyUniform("color", ctx -> {
+                    Vector3f color;
+                    if (ctx.instance() instanceof ModelContextProviders.TintProvider tintProvider && tintProvider.getTint() != null)
+                        color = tintProvider.getTint();
+                    else if (!isStatueMaterial(ctx) && ctx.object().getMaterial(ctx.instance().variant()).getValue("color") != null)
+                        color = (Vector3f) ctx.object().getMaterial(ctx.instance().variant()).getValue("color");
+                    else color = ONE;
+                    ctx.uniform().uploadVec3f(color);
+                });
+    }
+
+    public static void addParadox(Pipeline.Builder builder, String shader) {
+        var slot = switch (shader) {
+            case "masked" -> 4;
+            case "layered" -> 5;
+            default -> 3;
+        };
+
+        builder.supplyUniform("frame", ctx -> {
+            var i = (int) pingpong(MinecraftClientGameProvider.getTimePassed());
+            ctx.uniform().uploadInt(i);
+        }).supplyUniform("paradoxMask", ctx -> {
+
+            var texture =  ITextureLoader.instance().getTexture("paradox_mask");
+
+            texture.bind(slot);
+            ctx.uniform().uploadInt(slot);
+        });
+    }
+
 
     public static double pingpong(double time) {
         return (int) (Math.sin(time * Math.PI * 2) * 7 + 7);
@@ -308,13 +363,15 @@ public class Pipelines {
         }).supplyUniform("useLight", ctx -> ctx.uniform().uploadBoolean(ctx.getValue("useLight") instanceof Boolean bool ? bool : true));
     }
 
-
     private static boolean isStatueMaterial(UniformUploadContext ctx) {
         return ctx.instance() instanceof StatueInstance instance && instance.getMaterial() != null && ((GenerationsTextureLoader) ITextureLoader.instance()).has(instance.getMaterial());
     }
 
+    private static final String MAIN = "main";
+    private static final String LEGACY = "legacy";
+
     public static Pipeline getPipeline(String name) {
-        return PIPELINE_MAP.get("pokemon").apply(name);
+        return PIPELINE_MAP.get(useLegacy ? LEGACY : MAIN).apply(name);
     }
 
     public static String read(ResourceManager manager, String name) {
@@ -326,6 +383,25 @@ public class Pipelines {
             return new String(is.readAllBytes());
         } catch (Exception e) {
             throw new RuntimeException("Failed to read shader from resource location in shader: " + name, e);
+        }
+    }
+
+    public static String read(ResourceManager manager, String name, String lib) {
+        return read(manager, GenerationsCore.id(name), GenerationsCore.id(lib));
+    }
+
+    private static String read(ResourceManager manager, ResourceLocation name, ResourceLocation lib) {
+        try (
+                var nameStream = manager.getResource(name).orElseThrow().open();
+                var libStream = manager.getResource(lib).orElseThrow().open();
+        ) {
+            String shaderContent = new String(nameStream.readAllBytes());
+
+            String libContent = new String(libStream.readAllBytes());
+
+            return shaderContent.replace("#process", libContent);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read shader or library file from location location: " + name + ", " + lib, e);
         }
     }
 
