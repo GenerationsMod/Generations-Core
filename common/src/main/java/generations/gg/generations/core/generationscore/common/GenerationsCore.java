@@ -11,6 +11,7 @@ package generations.gg.generations.core.generationscore.common;
 import com.cobblemon.mod.common.api.data.DataProvider;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
+import com.cobblemon.mod.common.client.render.layer.PokemonOnShoulderRenderer;
 import com.cobblemon.mod.common.platform.events.ServerEvent;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;

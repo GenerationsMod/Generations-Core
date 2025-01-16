@@ -23,6 +23,8 @@
     "client.LevelRendererMixin",
     "client.LightTextureMixin",
     "client.PokemonEntityMixin",
+    "client.PokemonOnShoulderRendererCompanionAccessorMixin",
+    "client.PokemonOnShoulderRenderMixin",
     "client.PoseableEntityModelMixin"
   ],
   "injectors": {

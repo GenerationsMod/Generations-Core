@@ -7,6 +7,8 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Pokem
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext.RenderState
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.cobblemon.mod.common.pokemon.FormData
+import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.util.asResource
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
@@ -25,7 +27,14 @@ import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import org.joml.Vector3f
+import java.util.*
 import java.util.function.Supplier
+
+private val RenderContext.form: FormData?
+    get() = this.species?.getForm(this.request(RenderContext.ASPECTS) ?: Collections.emptySet())
+
+private val RenderContext.species: Species?
+    get() = this.request(RenderContext.SPECIES)?.let { PokemonSpecies.getByIdentifier(it) }
 
 class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assumes Bone will always be a ModelPart */(
     location: ResourceLocation) : ModelPart(CUBE_LIST, BLANK_MAP), Supplier<Bone>, Bone {
@@ -42,8 +51,6 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
 
 
     }
-
-
 
     override fun getChildren(): Map<String, Bone> {
         return DUMMY
@@ -130,8 +137,10 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             } else {
                 val entity = context.request(RenderContext.ENTITY) as? PokemonEntity
 
-                if(entity != null) {
-                    scale *= 1f / entity.pokemon.form.baseScale
+                scale *= if(entity != null) {
+                    1f / entity.pokemon.form.baseScale
+                } else {
+                    1f / (context.form?.baseScale ?: 1f)
                 }
             }
         }
