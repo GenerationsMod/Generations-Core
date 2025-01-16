@@ -39,7 +39,7 @@ object GenerationsPokemonOnShoulderProxy {
         netHeadYaw: Float,
         headPitch: Float,
         pLeftShoulder: Boolean,
-    ): Boolean {
+    ) {
         val compoundTag = if (pLeftShoulder) livingEntity.shoulderEntityLeft else livingEntity.shoulderEntityRight
         if (compoundTag.isPokemonEntity()) {
             matrixStack.pushPose()
@@ -58,7 +58,7 @@ object GenerationsPokemonOnShoulderProxy {
 
             if (shoulderData == null){
                 // Could be null
-                shoulderData = (if (pLeftShoulder) cache.lastKnownLeft else cache.lastKnownRight) ?: return false
+                shoulderData = (if (pLeftShoulder) cache.lastKnownLeft else cache.lastKnownRight) ?: return
             }
 
             val model = PokemonModelRepository.getPoser(shoulderData.species.resourceIdentifier, shoulderData.aspects)
@@ -123,9 +123,7 @@ object GenerationsPokemonOnShoulderProxy {
             }
             model.setDefault()
             matrixStack.popPose()
-            return true
         }
-        return false
     }
 
     private data class ShoulderCache(

@@ -34,8 +34,7 @@ public abstract class PokemonOnShoulderRenderMixin<T extends Player> extends Ren
 
     @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/player/Player;FFFFFFZ)V", at = @At("HEAD"), cancellable = true)
     public void render(PoseStack matrixStack, MultiBufferSource buffer, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, boolean pLeftShoulder, CallbackInfo ci) {
-        if(GenerationsPokemonOnShoulderProxy.render(this, matrixStack, buffer, packedLight, livingEntity, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, pLeftShoulder)) {
-            ci.cancel();
-        }
+        GenerationsPokemonOnShoulderProxy.render(this, matrixStack, buffer, packedLight, livingEntity, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, pLeftShoulder);
+        ci.cancel();
     }
 }

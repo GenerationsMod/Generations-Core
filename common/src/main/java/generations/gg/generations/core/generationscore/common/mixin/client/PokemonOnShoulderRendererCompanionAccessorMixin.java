@@ -20,7 +20,7 @@ import java.util.UUID;
 public class PokemonOnShoulderRendererCompanionAccessorMixin {
 
     @Inject(method = "shoulderDataOf", at = @At("HEAD"), cancellable = true)
-    public void blep(Player player, CallbackInfoReturnable<Tuple<PokemonOnShoulderRenderer.ShoulderData, PokemonOnShoulderRenderer.ShoulderData>> cir) {
+    public void of(Player player, CallbackInfoReturnable<Tuple<PokemonOnShoulderRenderer.ShoulderData, PokemonOnShoulderRenderer.ShoulderData>> cir) {
         cir.setReturnValue(GenerationsPokemonOnShoulderProxy.shoulderDataOf(player));
     }
 }
