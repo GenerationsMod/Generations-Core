@@ -45,6 +45,7 @@ abstract class PokemonStoringItem(properties: Properties) : Item(properties), Po
                 item.removePokemon()
                 item.setLore(mutableListOf<Component>())
                 item.setHoverName(null)
+                if(consumeOnRelease()) item.shrink(1)
                 player.level().playSound(null, player, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
                 return InteractionResultHolder.sidedSuccess(item, false)
             }
@@ -53,4 +54,9 @@ abstract class PokemonStoringItem(properties: Properties) : Item(properties), Po
     }
 
     override fun isFoil(stack: ItemStack): Boolean = stack.getPokemon() != null
+
+    protected open fun consumeOnRelease(): Boolean = false
+
+    override val isConsumed: Boolean
+        get() = false
 }

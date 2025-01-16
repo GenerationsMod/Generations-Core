@@ -47,9 +47,7 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
         }
     }
 
-    override val isConsumed: Boolean
-        get() = false
-
+    override fun consumeOnRelease() = true
 
     companion object {
 
