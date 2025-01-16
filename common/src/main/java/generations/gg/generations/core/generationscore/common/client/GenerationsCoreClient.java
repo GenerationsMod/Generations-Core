@@ -137,6 +137,8 @@ public class GenerationsCoreClient {
     }
 
     private static void setupClient(Minecraft event) {
+        RunnableKeybind.create("toggleShaderRendering", GLFW.GLFW_KEY_P, "rendering", Pipelines::toggleRendering);
+
         event.tell(() -> {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE);
             addWoodType(GenerationsWoodTypes.ULTRA_DARK);
@@ -144,8 +146,6 @@ public class GenerationsCoreClient {
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
             Pipelines.onInitialize(event.getResourceManager());
-
-            RunnableKeybind.create("toggleShaderRendering", GLFW.GLFW_KEY_P, "rendering", Pipelines::toggleRendering);
 
             registerScreens();
         });
