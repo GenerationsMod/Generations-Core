@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["galaxy"],
+  "default": false,
+  "isAspect": true
+}

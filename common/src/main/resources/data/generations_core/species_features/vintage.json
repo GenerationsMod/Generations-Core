@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["vintage"],
+  "default": false,
+  "isAspect": true
+}

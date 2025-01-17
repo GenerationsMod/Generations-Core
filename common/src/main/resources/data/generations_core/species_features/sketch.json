@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["sketch"],
+  "default": false,
+  "isAspect": true
+}
