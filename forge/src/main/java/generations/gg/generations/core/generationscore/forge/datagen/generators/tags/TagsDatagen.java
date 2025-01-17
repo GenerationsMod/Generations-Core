@@ -80,7 +80,7 @@ public class TagsDatagen {
 
             var mine_with_pickaxe = tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA).addTag(GenerationsBlockTags.MARBLE)
                     .addTag(GenerationsBlockTags.POKEBRICKS).addTag(GenerationsBlockTags.GENERATIONSORES).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
-                    .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS).add(GenerationsBlocks.Z_BLOCK.get());
+                    .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS).add(GenerationsBlocks.Z_BLOCK.get()).add(GenerationsBlocks.LIGHTNING_LANTERN.get());
 
             GenerationsBlocks.STONE.forEach(block -> {
                 mine_with_pickaxe.add(block.get());
