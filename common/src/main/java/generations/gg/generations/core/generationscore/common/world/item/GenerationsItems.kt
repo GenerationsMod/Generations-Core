@@ -576,7 +576,6 @@ object GenerationsItems {
     @JvmField val ADRENALINE_ORB = registerHeldItem("adrenaline_orb")
     @JvmField val AMULET_COIN = registerHeldItem("amulet_coin")
     @JvmField val BLACK_FLUTE = registerHeldItem("black_flute")
-    @JvmField val EXP_ALL = registerHeldItem("exp_all")
     @JvmField val FLUFFY_TAIL = registerHeldItem("fluffy_tail")
     @JvmField val GRIP_CLAW = registerHeldItem("grip_claw")
     @JvmField val LAGGING_TAIL = registerHeldItem("lagging_tail")
@@ -1239,6 +1238,7 @@ object GenerationsItems {
      * Un-Implemented Items : Items currently have no in-game function
      */
     @JvmField val ABILITY_URGE = register("ability_urge", { Item(it.stacksTo(64)) }, UNIMPLEMENTED)
+    @JvmField val EXP_ALL = register("exp_all", ::Item, UNIMPLEMENTED)
     @JvmField val ADVENTURE_GUIDE = register("adventure_guide", { Item(it.stacksTo(64)) }, UNIMPLEMENTED)
     @JvmField val APRICORN_BOX = register("apricorn_box", { Item(it.stacksTo(1)) }, UNIMPLEMENTED)
     @JvmField val AQUA_SUIT = register("aqua_suit", { Item(it.stacksTo(64)) }, UNIMPLEMENTED)
