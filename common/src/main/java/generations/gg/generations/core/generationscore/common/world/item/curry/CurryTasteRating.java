@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public enum CurryTasteRating implements StringRepresentable {
-    Unknown(0, 0, false, false, ChatFormatting.BLACK),
+    Unknown(0, 0, false, false, ChatFormatting.GRAY),
     Koffing(25, 0.25, false, false, ChatFormatting.DARK_RED),
     Wobbuffet(200, 0.5, false, false, ChatFormatting.RED),
     Milcery(1000, 1.0, true, false, ChatFormatting.WHITE),

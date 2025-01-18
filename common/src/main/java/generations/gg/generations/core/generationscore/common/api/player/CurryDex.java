@@ -36,8 +36,6 @@ import java.util.stream.IntStream;
 
 public class CurryDex extends PlayerDataExtension {
     public static String KEY = "curry_dex";
-    private static final Map<Player, CurryDex> LOCAL_PARTY_CACHE = new Object2ObjectArrayMap<>();
-    private static final Map<Player, CurryDex> SERVER_PARTY_CACHE = new Object2ObjectArrayMap<>();
 
     private static final Comparator<CurryDexEntry> comparator = Comparator.<CurryDexEntry>comparingInt(a -> a.type.ordinal()).thenComparingInt(a -> a.flavor.ordinal());
     List<CurryDexEntry> entries;
@@ -51,7 +49,7 @@ public class CurryDex extends PlayerDataExtension {
         sort();
     }
 
-    public static CurryDex of(Player player) {
+    public static CurryDex of(ServerPlayer player) {
         return (CurryDex) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new CurryDex());
     }
 
@@ -79,7 +77,6 @@ public class CurryDex extends PlayerDataExtension {
         if (entries.stream().noneMatch(a -> comparator.compare(entry, a) == 0) || entry.type == CurryType.Gigantamax && entries.stream().noneMatch(a -> a.type == CurryType.Gigantamax)) {
             entries.add(entry);
             sort();
-//            player.getPersistentData().put("curryDex", entries.stream().map(CurryDexEntry::toNbt).collect(NbtListCollector.toNbtList()));
         }
     }
 
@@ -89,10 +86,6 @@ public class CurryDex extends PlayerDataExtension {
 
     private void clear() {
         entries.clear();
-    }
-
-    public void sendToPlayer(ServerPlayer e) {
-        //Pixelmon.NETWORK.sendTo(new CurryDexPacket(this), e);
     }
 
     public CurryDexEntry getEntry(int id) {
@@ -107,27 +100,6 @@ public class CurryDex extends PlayerDataExtension {
         entries.forEach(entry -> entry.newEntry = false);
     }
 
-    /**
-     * Used to sync player data from the server back to the client.
-     */
-//    public static void replace(Player player, CurryDex curryDex) {
-//        if (player.isLocalPlayer()) {
-//            LOCAL_PARTY_CACHE.remove(player);
-//            LOCAL_PARTY_CACHE.put(player, curryDex);
-//        } else {
-//            SERVER_PARTY_CACHE.remove(player);
-//            SERVER_PARTY_CACHE.put(player, curryDex);
-//            curryDex.sync();
-//        }
-//    }
-//
-//    public void sync() {
-//        if (this.player.getType() == EntityType.PLAYER) {
-////            PokeModNetworking.sendPacket(new S2CSyncCurryDexPacket(this), serverPlayer); TODO: Networking
-//        } else {
-//            throw new RuntimeException("Tried to sync a party from the client???");
-//        }
-//    }
 
     public CurryTasteRating getCurrentTaste() {
         int size = entries.size();
@@ -149,7 +121,7 @@ public class CurryDex extends PlayerDataExtension {
     }
 
     public static class CurryDexEntry {
-        public Instant instant;
+        public long instant; //TODO: Convert back to an Instant when cobblemon converts to using solely codecs in the future.
         public String pokemonName;
         public ResourceLocation biome;
         public BlockPos pos;
@@ -162,7 +134,7 @@ public class CurryDex extends PlayerDataExtension {
 
         public static CurryDexEntry fromNbt(CompoundTag entry) {
             CurryDexEntry curryDexEntry = new CurryDexEntry();
-            curryDexEntry.instant = Instant.ofEpochMilli(entry.getLong("instant"));
+            curryDexEntry.instant = entry.getLong("instant");
             curryDexEntry.pokemonName = entry.getString("pokeName");
             curryDexEntry.biome = new ResourceLocation(entry.getString("biome"));
             curryDexEntry.pos = BlockPos.of(entry.getLong("pos"));
@@ -178,7 +150,7 @@ public class CurryDex extends PlayerDataExtension {
 
         public CompoundTag toNbt() {
             CompoundTag compound = new CompoundTag();
-            compound.putLong("instant", instant.toEpochMilli());
+            compound.putLong("instant", instant);
             compound.putString("pokeName", pokemonName);
             compound.putString("biome", biome.toString());
             compound.putLong("pos", pos.asLong());
@@ -193,12 +165,12 @@ public class CurryDex extends PlayerDataExtension {
         }
 
 
-        public Instant getInstant() {
+        public long getInstant() {
             return instant;
         }
 
         public void setInstant(Instant instant) {
-            this.instant = instant;
+            this.instant = instant.toEpochMilli();
         }
 
         @Override
@@ -217,7 +189,7 @@ public class CurryDex extends PlayerDataExtension {
         }
 
         public static void toByteBuf(FriendlyByteBuf byteBuf, CurryDexEntry entry) {
-            byteBuf.writeVarLong(entry.getInstant().toEpochMilli())
+            byteBuf.writeVarLong(entry.getInstant())
                     .writeUtf(entry.pokemonName)
                     .writeResourceLocation(entry.biome)
                     .writeVarLong(entry.pos.asLong())
@@ -230,7 +202,7 @@ public class CurryDex extends PlayerDataExtension {
         public static CurryDexEntry fromByteBuf(FriendlyByteBuf byteBuf) {
             CurryDexEntry entry = new CurryDexEntry();
 
-            entry.instant = Instant.ofEpochMilli(byteBuf.readVarLong());
+            entry.instant = byteBuf.readVarLong();
             entry.pokemonName = byteBuf.readUtf();
             entry.biome = byteBuf.readResourceLocation();
             entry.pos = BlockPos.of(byteBuf.readVarLong());
@@ -245,7 +217,7 @@ public class CurryDex extends PlayerDataExtension {
 
         public JsonObject toJson() {
             var json = new JsonObject();
-            json.addProperty("instant", getInstant().toEpochMilli());
+            json.addProperty("instant", getInstant());
             json.addProperty("pokemonName", pokemonName);
             json.addProperty("biome", biome.toString());
             json.add("pos", toBlockPosFromJson(pos));
@@ -259,7 +231,7 @@ public class CurryDex extends PlayerDataExtension {
         public static CurryDexEntry fromJson(JsonObject byteBuf) {
             CurryDexEntry entry = new CurryDexEntry();
 
-            entry.instant = Instant.ofEpochMilli(byteBuf.getAsJsonPrimitive("instnace").getAsLong());
+            entry.instant = byteBuf.getAsJsonPrimitive("instnace").getAsLong();
             entry.pokemonName = byteBuf.getAsJsonPrimitive("pokemonName").getAsString();
             entry.biome = new ResourceLocation(byteBuf.getAsJsonPrimitive("biome").getAsString());
             entry.pos = fromJsonToBlockPos(byteBuf.getAsJsonArray("pos"));

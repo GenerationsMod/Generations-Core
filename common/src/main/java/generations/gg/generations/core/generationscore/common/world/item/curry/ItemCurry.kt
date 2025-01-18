@@ -2,6 +2,8 @@ package generations.gg.generations.core.generationscore.common.world.item.curry
 
 import com.cobblemon.mod.common.api.interaction.PokemonEntityInteraction
 import com.cobblemon.mod.common.api.pokemon.experience.SidemodExperienceSource
+import com.cobblemon.mod.common.api.text.plus
+import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.api.player.CurryDex
@@ -20,10 +22,10 @@ import net.minecraft.world.level.Level
 class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), PokemonEntityInteraction {
     override fun getName(stack: ItemStack): Component {
         val data = getData(stack)
-        var name = BuiltInRegistries.ITEM.getKey(this).toString()
-        if (data.curryType != CurryType.None) name = data.curryType.localizedName + " " + name
-        if (data.flavor != null) name = getFlavorLocalizedName(data.flavor) + " " + name
-        return Component.nullToEmpty(name)
+        var name = this.description;
+        if (data.curryType != CurryType.None) name = (data.curryType.localizedName + " ").text() + name
+        if (data.flavor != null) name = (getFlavorLocalizedName(data.flavor) + " ").text() + name
+        return name
     }
 
     override fun appendHoverText(
@@ -35,8 +37,9 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         val info =
             "" //Language.getInstance().getOrDefault("gui.shopkeeper." + this.getDescriptionId().getTranslationKey());
         if (!hasHideFlag(stack)) {
+
             if (Screen.hasShiftDown()) {
-                tooltipComponents.add(Component.nullToEmpty(info))
+//                tooltipComponents.add(Component.nullToEmpty(info))
                 tooltipComponents.add(Component.nullToEmpty("Rating: " + getData(stack).rating.getName()))
             } else {
                 tooltipComponents.add(Component.nullToEmpty("Hold shift for more info."))
@@ -49,13 +52,13 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
     }
 
     override fun onCraftedBy(stack: ItemStack, level: Level, player: Player) {
-        if (!player.isLocalPlayer) {
+        if (player is ServerPlayer) {
             val rating = CurryDex.of(player).currentTaste
             val data = getData(stack)
             data.setRating(rating)
             rating.configureData(data)
             setData(stack, data)
-            CurryDex.add(player as ServerPlayer, data)
+            CurryDex.add(player, data)
         }
     }
 
