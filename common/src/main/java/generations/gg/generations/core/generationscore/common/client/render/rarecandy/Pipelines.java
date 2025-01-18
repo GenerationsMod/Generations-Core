@@ -140,6 +140,8 @@ public class Pipelines {
         builder.prePostDraw(material -> {
             if (material.cullType() != CullType.None) {
                 RenderSystem.enableCull();
+            } else {
+                RenderSystem.disableCull();
             }
 
 //                               material.cullType().enable();
@@ -151,9 +153,9 @@ public class Pipelines {
                 RenderSystem.defaultBlendFunc();
             }
         }, material -> {
-            if (material.cullType() != CullType.None) {
-                RenderSystem.enableCull();
-            }
+//            if (material.cullType() != CullType.None) {
+//                RenderSystem.enableCull();
+//            }
 
 //                                material.cullType().disable();
             if (material.blendType() == BlendType.Regular) {
