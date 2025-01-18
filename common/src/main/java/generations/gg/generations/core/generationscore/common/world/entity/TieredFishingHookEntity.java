@@ -77,7 +77,7 @@ public class TieredFishingHookEntity extends FishingHook {
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, Collections.emptyList());
                 this.level().broadcastEntityEvent(this, (byte)31);
                 i = this.getHookedIn() instanceof ItemEntity ? 3 : 5;
-            } else if (this.nibble > -1) {
+            } else if (this.nibble > 0) {
                 LootParams lootParams = (new LootParams.Builder((ServerLevel)this.level())).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.TOOL, stack).withParameter(LootContextParams.THIS_ENTITY, this).withLuck((float)this.luck + player.getLuck()).create(LootContextParamSets.FISHING);
 
                 ObjectArrayList<ItemStack> list = tier.process(lootParams, stack);
