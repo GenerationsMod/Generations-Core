@@ -347,7 +347,9 @@ public class BlockDatagen extends GenerationsBlockStateProvider.Proxied {
                 .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.WEST)
                 .modelForState().modelFile(closed).rotationY(270).addModel();
 
-        itemModels().withExistingParent(box.getId().getPath(), closed.getLocation());
+        itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(box.get().asItem())).toString()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", key(box.get()).withPrefix("item/blocks/utility_blocks/"));
+
         dropSelfList.add(box.get());
     }
 
