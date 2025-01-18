@@ -23,7 +23,7 @@ import net.minecraft.world.level.Level
 class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
         val pokemon = entity.pokemon
-        return if (pokemon.tradeable && pokemon.removeIfBelongs(player)) {
+        return if (pokemon.tradeable && stack.getPokemon() == null && pokemon.removeIfBelongs(player)) {
             stack.savePokemon(pokemon)
 
             var list = mutableListOf<Component>()

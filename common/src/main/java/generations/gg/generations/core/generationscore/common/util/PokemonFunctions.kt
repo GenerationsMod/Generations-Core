@@ -4,15 +4,15 @@ import com.cobblemon.mod.common.api.net.Encodable
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.api.pokemon.feature.*
+import com.cobblemon.mod.common.api.pokemon.stats.Stat
+import com.cobblemon.mod.common.api.pokemon.stats.Stats
 import com.cobblemon.mod.common.api.properties.CustomPokemonProperty
 import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
 import com.cobblemon.mod.common.api.storage.InvalidSpeciesException
+import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.api.text.text
-import com.cobblemon.mod.common.pokemon.Gender
-import com.cobblemon.mod.common.pokemon.Pokemon
+import com.cobblemon.mod.common.pokemon.*
 import com.cobblemon.mod.common.pokemon.Pokemon.Companion.loadFromNBT
-import com.cobblemon.mod.common.pokemon.RenderablePokemon
-import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.util.asResource
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.toNbtList
@@ -23,10 +23,20 @@ import net.minecraft.nbt.StringTag
 import net.minecraft.nbt.Tag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
+import net.minecraft.network.chat.TextColor
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
+
+private val statColorMap = mapOf(
+    Stats.HP to "&8",
+    Stats.ATTACK to "&c",
+    Stats.DEFENCE to "&3",
+    Stats.SPECIAL_ATTACK to "&9",
+    Stats.SPECIAL_DEFENCE to "&a",
+    Stats.SPEED to "&d"
+)
 
 fun Pokemon.dembedPokemon(): Pokemon? = if(hasEmbeddedPokemon()) {
     persistentData.getCompound(DataKeys.EMBEDDED_POKEMON).let { Pokemon.loadFromNBT(it) }.also {
@@ -82,6 +92,13 @@ fun MutableList<Component>.add(padding: String, pokemon: Pokemon) {
     add(padding + "&6Moves:")
     add(padding + "&e${pokemon.moveSet[0]?.displayName?.string ?: "n/a"} &7| &e${pokemon.moveSet[1]?.displayName?.string ?: "n/a"}")
     add(padding + "&e${pokemon.moveSet[2]?.displayName?.string ?: "n/a"} &7| &e${pokemon.moveSet[3]?.displayName?.string ?: "n/a"}")
+    add(padding + "&6Stats (${Stats.HP.color()}Hp&7/${Stats.ATTACK.color()}Atk&7/${Stats.DEFENCE.color()}Def&7/${Stats.SPECIAL_ATTACK.color()}SpAtk&7/${Stats.SPECIAL_DEFENCE.color()}SpDef&7/${Stats.SPEED.color()}Speed&6):")
+    add(padding + "&eIVs: ${Stats.HP.color()}${pokemon.ivs[Stats.HP] ?: 0}&7/${Stats.ATTACK.color()}${pokemon.ivs[Stats.ATTACK] ?: 0}&7/${Stats.DEFENCE.color()}${pokemon.ivs[Stats.DEFENCE] ?: 0}&7/${Stats.SPECIAL_ATTACK.color()}${pokemon.ivs[Stats.SPECIAL_ATTACK] ?: 0}&7/${Stats.SPECIAL_DEFENCE.color()}${pokemon.ivs[Stats.SPECIAL_DEFENCE] ?: 0}&7/${Stats.SPEED.color()}${pokemon.ivs[Stats.SPEED] ?: 0}")
+    add(padding + "&eEVs: ${Stats.HP.color()}${pokemon.evs[Stats.HP] ?: 0}&7/${Stats.ATTACK.color()}${pokemon.evs[Stats.ATTACK] ?: 0}&7/${Stats.DEFENCE.color()}${pokemon.evs[Stats.DEFENCE] ?: 0}&7/${Stats.SPECIAL_ATTACK.color()}${pokemon.evs[Stats.SPECIAL_ATTACK] ?: 0}&7/${Stats.SPECIAL_DEFENCE.color()}${pokemon.evs[Stats.SPECIAL_DEFENCE] ?: 0}&7/${Stats.SPEED.color()}${pokemon.evs[Stats.SPEED] ?: 0}")
+}
+
+private fun Stat.color(): String {
+    return statColorMap.getOrDefault(this, "")
 }
 
 private fun String.properCase(): String {
@@ -94,8 +111,7 @@ fun MutableList<Component>.add(pokemon: Pokemon) {
 
 fun ItemStack.savePokemon(poke: Pokemon) {
     var tag = this.getOrCreateTag()
-
-    var clientPokemon = CompoundTag()
+     var clientPokemon = CompoundTag()
 
     clientPokemon.putString("Species", poke.species.resourceIdentifier.toString())
     clientPokemon.put("Aspects", poke.aspects.map { StringTag.valueOf(it) }.toNbtList())
