@@ -13,9 +13,4 @@ public class StreetLampBlockEntity extends DyedVariantBlockEntity<StreetLampBloc
     public Vector3f getTint() {
         return COLOR_MAP.get(getColor());
     }
-
-    @Override
-    public String getVariant() {
-        return null;
-    }
 }

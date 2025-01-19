@@ -36,4 +36,9 @@ public class StreetLampBlock extends DyeableBlock<StreetLampBlockEntity, StreetL
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE.getShape(state);
     }
+
+    @Override
+    public String getVariant() {
+        return null;
+    }
 }

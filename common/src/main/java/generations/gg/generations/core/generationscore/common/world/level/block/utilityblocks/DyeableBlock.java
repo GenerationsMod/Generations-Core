@@ -154,4 +154,9 @@ public abstract class DyeableBlock<T extends ModelProvidingBlockEntity, V extend
     public @NotNull List<ItemStack> getDrops(@NotNull BlockState state, @NotNull LootParams.Builder params) {
         return getWidthValue(state) == 0 || getHeightValue(state) == 0 || getLengthValue(state) == 0 ? super.getDrops(state, params) : Collections.emptyList();
     }
+
+    @Override
+    public String getVariant() {
+        return color.getSerializedName();
+    }
 }

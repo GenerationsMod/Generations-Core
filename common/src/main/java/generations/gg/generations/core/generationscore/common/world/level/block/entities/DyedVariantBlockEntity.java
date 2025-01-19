@@ -18,7 +18,7 @@ public abstract class DyedVariantBlockEntity<T extends DyedVariantBlockEntity<?>
 
     @Override
     public String getVariant() {
-        return getColor().getSerializedName();
+        return ((DyeableBlock<?, ?>) getBlockState().getBlock()).getVariant();
     }
 
     public DyeColor getColor() {

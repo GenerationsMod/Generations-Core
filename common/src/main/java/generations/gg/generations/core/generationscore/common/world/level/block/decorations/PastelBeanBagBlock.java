@@ -40,4 +40,9 @@ public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEnti
 
         return InteractionResult.PASS;
     }
+
+    @Override
+    public String getVariant() {
+        return null;
+    }
 }
