@@ -77,7 +77,7 @@
         "doublehit"
       ],
       "requirements": [],
-      "requiredContext": "minecraft:golden_apple"
+      "requiredContext": "generations_core:syrupy_apple"
     }
   ],
   "baseScale": 1,

@@ -539,6 +539,7 @@ public class ItemDatagen extends ItemModelProvider {
         createItem(GenerationsItems.PURPLE_NECTAR.get(), "form_items/");
         createItem(GenerationsItems.RED_NECTAR.get(), "form_items/");
         createItem(GenerationsItems.YELLOW_NECTAR.get(), "form_items/");
+        createItem(GenerationsItems.SYRUPY_APPLE.get(), "form_items/");
 
         createItem(GenerationsItems.WORLD_CAP.get(), "caps/");
         createItem(GenerationsItems.KANTO_CAP.get(), "caps/");

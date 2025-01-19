@@ -254,6 +254,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:syrupy_apple"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:thick_club"
         },
         {

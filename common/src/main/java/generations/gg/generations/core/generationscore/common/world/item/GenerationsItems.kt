@@ -1010,6 +1010,7 @@ object GenerationsItems {
     @JvmField val KALOS_CAP = registerCap("kalos")
     @JvmField val ALOLA_CAP = registerCap("alola")
     @JvmField val PARTNER_CAP = registerCap("partner")
+    @JvmField val SYRUPY_APPLE = register("syrupy_apple", ::Item, FORM_ITEMS)
 
     /**
      * Mail
