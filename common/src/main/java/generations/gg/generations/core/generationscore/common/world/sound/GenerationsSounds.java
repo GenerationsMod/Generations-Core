@@ -11,7 +11,6 @@ public class GenerationsSounds {
 
     public static final RegistrySupplier<SoundEvent> LUGIA_SHRINE_SONG = registerSound("generations_core.item.lugia_shrine_song");
     public static final RegistrySupplier<SoundEvent> MELOETTAS_RELIC_SONG = registerSound("generations_core.item.meloettas_relic_song");
-
     public static final RegistrySupplier<SoundEvent> RKS_MACHINE = registerSound("generations_core.block.rks_machine");
     public static final RegistrySupplier<SoundEvent> BOX_OPEN = registerSound("generations_core.block.box_open");
     public static final RegistrySupplier<SoundEvent> BOX_CLOSED = registerSound("generations_core.block.box_closed");

@@ -360,6 +360,10 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(SHATTERED_RELIC_SONG_3, "§7HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
         addTooltip(SHATTERED_RELIC_SONG_4, "§7HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces.");
         addTooltip(RELIC_SONG, "§7HINT: A special music box may play this melody differently.");
+        addTooltip(INERT_RELIC_SONG, "Relic Song - Shota Kageyama.");
+        add("item.generations_core.inert_relic_song.desc", "Relic Song - Shota Kageyama");
+
+        this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot");
         addTooltip(MELOETTA_MUSIC_BOX, "§7HINT: You hear a wonderful melody from within. You need to hear more.”");
         //Zygarde
         addTooltip(ZYGARDE_CUBE, "A strange cube capable of storing up to 100 Zygarde Cells, as well as fusing them together to reconstruct the legendary Zygarde.");
