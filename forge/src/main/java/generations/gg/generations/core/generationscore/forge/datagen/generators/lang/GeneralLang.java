@@ -465,6 +465,8 @@ public class GeneralLang extends LanguageProvider {
         if (name.contains("poke_brick"))
             return name.replace("Poke Brick", "PokeBrick");
 
+        if(name.equalsIgnoreCase("hdtv")) name = name.toUpperCase();
+
         return name;
     }
 
