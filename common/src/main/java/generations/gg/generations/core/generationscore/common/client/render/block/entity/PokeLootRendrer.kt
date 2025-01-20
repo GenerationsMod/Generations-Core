@@ -26,12 +26,13 @@ class PokeLootRendrer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRen
 
         val block = blockEntity.blockState.block
 
-        if (!(blockEntity.isVisible && block is BallLootBlock && block.canRender(
-                blockEntity.level,
-                blockEntity.blockPos,
-                blockEntity.blockState
-            ))
-        ) return
+        if(!(block is BallLootBlock && block.canRender(blockEntity.level, blockEntity.blockPos, blockEntity.blockState))) return;
+
+        if (!blockEntity.isVisible) {
+            //TODO: Invisible effect
+            return
+        }
+
         stack.pushPose()
         val angle: Float = blockEntity.angle
 
@@ -40,7 +41,7 @@ class PokeLootRendrer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRen
         stack.translate(0.5, 0.25, 0.5)
         stack.mulPose(Axis.YP.rotationDegrees(angle))
         stack.translate(0.0, 0.0, 0.25)
-        stack.mulPose(Axis.XP.rotationDegrees(94.0f))
+        stack.mulPose(Axis.XP.rotationDegrees(93.5f))
         stack.mulPose(Axis.ZP.rotationDegrees(180.0f))
 
         stack.scale(0.9f, 0.9f, 0.9f)

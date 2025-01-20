@@ -53,8 +53,8 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
         if(owner != null)nbt.putUUID("owner", owner);
         nbt.put("claims", claims.stream().map(a -> {
             var tag = new CompoundTag();
-            tag.putUUID("uuid", a.uuid());
-            var instant = a.time();
+            tag.putUUID("uuid", a.uuid);
+            var instant = a.time;
             tag.putLongArray("instant", new long[] { instant.getEpochSecond(), instant.getNano() });
 
             return tag;
@@ -86,31 +86,33 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
     }
 
     public boolean canClaim(UUID playerUUID) {
-        if (!this.lootMode.isDropOnce()) return true;
+        if (lootMode == LootMode.UNLIMITED) return true;
         
         Optional<LootClaim> claim = this.getLootClaim(playerUUID);
 
-        if (claim.isEmpty()) return true;
+        if (claim.isEmpty()) {
+            addClaimer(playerUUID);
+            return true;
+        }
         if (this.lootMode.isTimeEnabled())
-            if (Instant.now().plus(GenerationsCore.CONFIG.lootTime).isAfter(claim.get().time())) {
-                removeClaimer(playerUUID);
+            if (claim.get().isExpired()) {
+                claim.get().refresh();
                 return true;
             }
         return false;
     }
 
-    public void addClaimer(UUID playerUUID) {
-        if (this.lootMode.isDropOnce())
-            this.claims.add(new LootClaim(playerUUID, Instant.now()));
+    public Optional<LootClaim> getLootClaim(UUID playerUUID) {
+        return this.claims.stream().filter(claim -> claim.uuid.equals(playerUUID)).findFirst();
     }
 
-    public Optional<LootClaim> getLootClaim(UUID playerUUID) {
-        return this.claims.stream().filter(claim -> claim.uuid().equals(playerUUID)).findFirst();
+    public void addClaimer(UUID playerUUID) {
+        this.claims.add(new LootClaim(playerUUID, Instant.now().plus(GenerationsCore.CONFIG.lootTime)));
     }
 
 
     public void removeClaimer(UUID playerUUID) {
-        this.claims.removeIf(a -> a.uuid().equals(playerUUID));
+        this.claims.removeIf(a -> a.uuid.equals(playerUUID));
     }
 
     public boolean shouldBreakBlock() {
@@ -155,29 +157,18 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
     }
 
     public enum LootMode {
-        ONCE_PER_PLAYER(true, false),
-        TIMED(false, true),
-        ONCE(true, true),
-        UNLIMITED(false, false);
-
-        private final boolean dropOnce;
-        private final boolean timeEnabled;
-
-        LootMode(boolean dropOnce, boolean timeEnabled) {
-            this.dropOnce = dropOnce;
-            this.timeEnabled = timeEnabled;
-        }
+        ONCE_PER_PLAYER, TIMED, ONCE, UNLIMITED;
 
         public boolean isDropOnce() {
-            return dropOnce;
+            return this == ONCE_PER_PLAYER || this == ONCE;
         }
 
         public boolean isTimeEnabled() {
-            return timeEnabled;
+            return this == TIMED;
         }
 
         public boolean isBreakable() {
-            return this.dropOnce && this.timeEnabled;
+            return this == ONCE;
         }
     }
 

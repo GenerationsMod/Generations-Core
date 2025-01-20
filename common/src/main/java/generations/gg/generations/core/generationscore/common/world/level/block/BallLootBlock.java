@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
+import kotlin.time.DurationUnitKt;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
@@ -39,6 +40,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.stream.Collectors;
 
 public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntity> {
@@ -73,13 +76,11 @@ public class BallLootBlock extends GenericRotatableModelBlock<BallLootBlockEntit
                     if (be.shouldBreakBlock()) {
                         level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
                     }
-
+                    
                     var list = be.isCustomDrop() ? be.getCustomDrops() : getDrops((ServerLevel) level, pos, player);
                     list.forEach(item -> player.displayClientMessage(Component.translatable("generations_core.blocks.lootfound", item.getHoverName()), false));
                     Containers.dropContents(level, pos.above(), list);
 
-
-                    be.addClaimer(playerUUID);
                     level.playSound(null, player.getX(), player.getY(), player.getZ(), GenerationsSounds.LUGIA_SHRINE_SONG.get(), SoundSource.BLOCKS, 0.2f, 1.0f);
 
                     if (be.isVisible()) {
