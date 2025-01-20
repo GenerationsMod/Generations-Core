@@ -122,9 +122,9 @@ public class MailEditScreen extends Screen {
     }
 
     private void saveChanges(boolean publish) {
-        if (!this.isModified) {
-            return;
-        }
+//        if (!this.isModified) {
+//            return;
+//        }
         this.updateLocalCopy(publish);
         int i = this.hand == InteractionHand.MAIN_HAND ? this.owner.getInventory().selected : 40;
         GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2SEditMailPacket(i, this.contents, publish ? Optional.of("") : Optional.empty()));
