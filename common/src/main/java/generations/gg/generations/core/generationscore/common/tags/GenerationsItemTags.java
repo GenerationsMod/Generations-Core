@@ -5,7 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
-public class GenerationsItemTags {
+public final class GenerationsItemTags {
 
     public static final TagKey<Item> GENERATIONSITEMS = create("generationsitems");
     public static final TagKey<Item> PC = create("pc");

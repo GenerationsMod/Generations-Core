@@ -5,7 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
-public class GenerationsBlockTags {
+public final class GenerationsBlockTags {
     public static final TagKey<Block> POKEBRICKS = create("pokebricks");
     public static final TagKey<Block> SHRINES = create("shrines");
     public static final TagKey<Block> MARBLE = create("marble");
