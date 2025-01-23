@@ -24,19 +24,12 @@ import java.util.stream.IntStream;
 
 public class CalyrexSteedItem extends Item {
     private final SpeciesKey speices;
-    private final Supplier<Item> unenchanted;
     private final String defaultTranslation;
 
-    public CalyrexSteedItem(String name, Properties arg, SpeciesKey speices, Supplier<Item> unenchanted) {
+    public CalyrexSteedItem(String name, Properties arg, SpeciesKey speices) {
         super(arg);
         this.speices = speices;
-        this.unenchanted = unenchanted;
         this.defaultTranslation = "container." + name + "_carrot";
-    }
-
-    @Override
-    public boolean isFoil(@NotNull ItemStack stack) {
-        return getCarrots(stack).isFull();
     }
 
     @Override
@@ -64,7 +57,7 @@ public class CalyrexSteedItem extends Item {
             PokemonUtil.spawn(speices.createPokemon(70), level, livingEntity.position(), livingEntity.getYRot());
         }
 
-        return unenchanted.get().getDefaultInstance();
+        return ItemStack.EMPTY;
     }
 
     public CarrotHolder getCarrots(ItemStack stack) {
