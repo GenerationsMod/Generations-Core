@@ -173,7 +173,7 @@ public class Pipelines {
 
         var base = createRoot(legacyShading);
 
-        var effects = List.of("cartoon", "galaxy", "paradox", "shadow", "sketch", "vintage", "passthrough");
+        var effects = List.of("cartoon", "galaxy", "pastel", "paradox", "shadow", "sketch", "vintage", "passthrough");
 
         for (var effect : effects) {
             var solid = createSolid(manager, extension, base, effect);
