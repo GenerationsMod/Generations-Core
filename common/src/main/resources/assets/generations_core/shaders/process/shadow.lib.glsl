@@ -1,15 +1,21 @@
-#define shadowBase vec3(0.04, 0.04, 0.1)
-#define shadowHighlight vec3(0.07, 0.07, 0.08)
-
 vec4 process(vec4 inColor) {
-    float luminance = dot(inColor.rgb, vec3(0.299, 0.587, 0.114));
-    vec3 grayscaleColor = vec3(luminance);
+    float grayscale = 0.2126 * inColor.r + 0.7152 * inColor.g + 0.0722 * inColor.b;
 
-    vec3 shadowColor = mix(shadowBase, shadowHighlight, smoothstep(0.3, 0.7, luminance));
+    vec3 baseColor = vec3(grayscale);
 
-    vec3 finalColor = mix(grayscaleColor, shadowColor, 0.9);
+    vec2 wrappedUV = fract(texCoord0 * 5.0);
+    float gradient = sin(wrappedUV.x * 3.14159) * sin(wrappedUV.y * 3.14159);
 
-    finalColor = finalColor * 1.1 - 0.05;
+    gradient = (gradient + 1.0) * 0.5;
+
+    vec3 deepPurpleBlue = vec3(0.1, 0.1, 0.2);
+    vec3 darkerShade = vec3(0.05, 0.05, 0.1);
+
+    vec3 shadowColor = mix(deepPurpleBlue, darkerShade, gradient);
+
+    vec3 finalColor = mix(baseColor, shadowColor, 0.7);
+
+    finalColor = finalColor * 0.9;
 
     finalColor = clamp(finalColor, 0.0, 1.0);
 
