@@ -6,6 +6,8 @@ import generations.gg.generations.core.generationscore.common.world.entity.Gener
 import generations.gg.generations.core.generationscore.common.world.entity.ZygardeCellEntity
 import net.minecraft.world.item.ItemStack
 
-class ZygardeCellSpawnActon(ctx: SpawningContext, override val detail: ZygardeCellDetail) : SpawnAction<ZygardeCellEntity>(ctx, detail) {
-    override fun run(): ZygardeCellEntity? = GenerationsEntities.ZYGARDE_CELL.get().create(ctx.world)
+class ZygardeCellSpawnActon(ctx: SpawningContext, override val detail: ZygardeCellDetail) : SingleEntitySpawnAction<ZygardeCellEntity>(ctx, detail) {
+    override fun createEntity(): ZygardeCellEntity? {
+        return GenerationsEntities.ZYGARDE_CELL.get().create(ctx.world)
+    }
 }
