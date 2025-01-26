@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.spawning
 
 import com.cobblemon.mod.common.api.spawning.context.SpawningContext
+import com.cobblemon.mod.common.api.spawning.detail.SingleEntitySpawnAction
 import com.cobblemon.mod.common.api.spawning.detail.SpawnAction
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.entity.ZygardeCellEntity
