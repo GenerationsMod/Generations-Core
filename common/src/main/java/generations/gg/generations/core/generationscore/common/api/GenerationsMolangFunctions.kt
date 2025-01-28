@@ -18,6 +18,7 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.util.getOrCreate
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
 import generations.gg.generations.core.generationscore.common.util.isSpecies
+import generations.gg.generations.core.generationscore.common.util.removePokemon
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.Registries
@@ -234,6 +235,10 @@ private fun ItemStack.toMolang(): ObjectValue<ItemStack> {
 
             this.shrink(amount)
             return@Function Unit
+        },
+        "damage" to Function<MoParams, Any> {
+            val value = it.getIntOrNull(0) ?: return@Function DoubleValue(this.damageValue)
+            this.damageValue += value
         }
     ))
 }

@@ -4,8 +4,7 @@
   "default": "50%",
   "choices": [
     "10%",
-    "50%",
-    "complete"
+    "50%"
   ],
   "isAspect": true,
   "aspectFormat": "{{choice}}"

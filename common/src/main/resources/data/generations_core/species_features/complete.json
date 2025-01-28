@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["complete"],
+  "default": false,
+  "isAspect": true
+}

@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.common.mixin;
+package generations.gg.generations.core.generationscore.common.mixin.showdown;
 
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;

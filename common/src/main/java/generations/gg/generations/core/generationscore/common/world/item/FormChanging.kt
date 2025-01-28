@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeatureProvider
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Pokemon
+import generations.gg.generations.core.generationscore.common.util.getOrCreate
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
 import net.minecraft.resources.ResourceLocation
 
@@ -20,7 +21,8 @@ interface FormChangingString : FormChanging {
     val value: String
 
     override fun process(pokemon: Pokemon, returned: Boolean): Boolean {
-        if(species != null && (species?.equals(pokemon.species.resourceIdentifier) == true)) return false
+        if(pokemon.entity?.level()?.isClientSide == true) return false
+        if(species != null && (species?.equals(pokemon.species.resourceIdentifier) == false)) return false
 
         var provider: ChoiceSpeciesFeatureProvider? = null
         val value: String
@@ -34,18 +36,12 @@ interface FormChangingString : FormChanging {
         }
 
         if (provider != null) {
-            val feature = provider.get(pokemon)
+            val feature = provider.getOrCreate(pokemon)
 
-            if (feature != null) {
-                feature.value = value
-                feature.apply(pokemon)
-
-                pokemon.entity?.also { it ->
-                    feature.apply(pokemon)
-                    it.entityData.set(PokemonEntity.ASPECTS, pokemon.aspects)
-                    return true
-                }
-            }
+            feature.value = value
+            pokemon.markFeatureDirty(feature)
+            pokemon.updateAspects()
+            return true
         }
 
         return false
@@ -54,23 +50,17 @@ interface FormChangingString : FormChanging {
 
 interface FormChangingToggle : FormChanging {
     override fun process(pokemon: Pokemon, returned: Boolean): Boolean {
+        if(pokemon.entity?.level()?.isClientSide == true) return false;
         val provider: FlagSpeciesFeatureProvider? = pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>(this.provider)
 
         val value: Boolean = !returned
 
         if (provider != null) {
-            val feature = provider.get(pokemon)
-
-            if (feature != null) {
-                feature.enabled = value
-                feature.apply(pokemon)
-
-                pokemon.entity?.also { it ->
-                    feature.apply(pokemon)
-                    it.entityData.set(PokemonEntity.ASPECTS, pokemon.aspects)
-                    return true
-                }
-            }
+            val feature = provider.getOrCreate(pokemon)
+            feature.enabled = value
+            pokemon.markFeatureDirty(feature)
+            pokemon.updateAspects()
+            return true
         }
 
         return false
