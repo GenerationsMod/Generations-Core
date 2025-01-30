@@ -72,7 +72,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .input('D', Items.NETHERITE_AXE)
                 .input('E', Items.NETHERITE_HELMET)
                 .input('F', Items.TOTEM_OF_UNDYING)
-                .input('G', GenerationsItemTags.MEMORY_DRIVES) //TODO: Replace with memory drive tag
+                .input('G', GenerationsItemTags.MEMORY_DRIVES)
                 .input('Z', Items.NETHERITE_BLOCK)
                 .key(LegendKeys.TYPE_NULL)
                 .criterion("netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))

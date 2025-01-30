@@ -63,9 +63,9 @@ fun Pokemon.hasEmbeddedPokemon(): Boolean {
     return this.persistentData.contains(DataKeys.EMBEDDED_POKEMON)
 }
 
-fun ChoiceSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: String = ""): StringSpeciesFeature = this.get(pokemon) ?: StringSpeciesFeature(keys.first(), value)
-fun FlagSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: Boolean = false): FlagSpeciesFeature = this.get(pokemon) ?: FlagSpeciesFeature(keys.first(), value)
-fun IntSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: Int = 0): IntSpeciesFeature = this.get(pokemon) ?: IntSpeciesFeature(keys.first(), value)
+fun ChoiceSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: String = ""): StringSpeciesFeature = this.get(pokemon) ?: StringSpeciesFeature(keys.first(), value).also { pokemon.features.add(it) }
+fun FlagSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: Boolean = false): FlagSpeciesFeature = this.get(pokemon) ?: FlagSpeciesFeature(keys.first(), value).also { pokemon.features.add(it) }
+fun IntSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon, value: Int = 0): IntSpeciesFeature = this.get(pokemon) ?: IntSpeciesFeature(keys.first(), value).also { pokemon.features.add(it) }
 
 fun ChoiceSpeciesFeatureProvider.cycle(value: String): String {
     val index = choices.indexOf(value)
@@ -76,7 +76,7 @@ fun Pokemon.isSpecies(name: String): Boolean = species.resourceIdentifier.path =
 
 private fun FlagSpeciesFeatureProvider.create(enabled: Boolean): FlagSpeciesFeature = FlagSpeciesFeature(keys.first(), enabled)
 
-fun FlagSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon): FlagSpeciesFeature = this.get(pokemon) ?: FlagSpeciesFeature(keys.first()).also { pokemon.features.add(it) }
+//fun FlagSpeciesFeatureProvider.getOrCreate(pokemon: Pokemon): FlagSpeciesFeature = this.get(pokemon) ?: FlagSpeciesFeature(keys.first()).also { pokemon.features.add(it) }
 
 inline fun <reified R : CustomPokemonPropertyType<*>> Pokemon.getProviderOrNull(id: String): R? {
     return SpeciesFeatures.getFeaturesFor(species).filterIsInstance<R>().firstOrNull { it.keys.contains(id) }

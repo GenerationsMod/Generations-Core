@@ -6,7 +6,6 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "AbstractFurnaceBlockEntityMixin",
-    "DetailsChangeInstructionMixin",
     "FishingHookMixin",
     "PokemonBattleMixin",
     "RecordItemMixin",
@@ -14,7 +13,10 @@
     "ShowdownSpeciesMixin",
     "client.GuiUtilsMixin",
     "client.PokemonGuiUtilsMixin",
-    "client.PokemonItemRendererMixin"
+    "client.PokemonItemRendererMixin",
+    "showdown.DetailsChangeInstructionMixin",
+    "showdown.ShowdownActionRequestMixin",
+    "showdown.ShowdownInterpreterMixin"
   ],
   "client": [
     "client.BattleMoveSelectionGUIMixin",

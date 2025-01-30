@@ -4,7 +4,7 @@
   "primaryType": "dragon",
   "secondaryType": "ground",
   "abilities": [
-    "aurabreak"
+    "aurabreak", "powerconstruct"
   ],
   "baseStats": {
     "hp": 108,
@@ -154,7 +154,7 @@
       "primaryType": "dragon",
       "secondaryType": "ground",
       "abilities": [
-        "aurabreak"
+        "aurabreak", "powerconstruct"
       ],
       "baseStats": {
         "hp": 54,
@@ -209,7 +209,7 @@
       "battleOnly": false
     },
     {
-      "name": "Complete",
+      "name": "10% complete",
       "primaryType": "dragon",
       "secondaryType": "ground",
       "abilities": [
@@ -245,6 +245,52 @@
         "legendary"
       ],
       "aspects": [
+        "10%",
+        "complete"
+      ],
+      "height": 45,
+      "weight": 6100,
+      "cannotDynamax": false,
+      "battleOnly": true
+    },
+    {
+      "name": "50% complete",
+      "primaryType": "dragon",
+      "secondaryType": "ground",
+      "abilities": [
+        "powerconstruct"
+      ],
+      "baseStats": {
+        "hp": 216,
+        "attack": 100,
+        "defence": 121,
+        "special_attack": 91,
+        "special_defence": 95,
+        "speed": 85
+      },
+      "catchRate": 3,
+      "maleRatio": -1,
+      "baseExperienceYield": 300,
+      "baseFriendship": 0,
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "experienceGroup": "slow",
+      "eggCycles": 120,
+      "eggGroups": [
+        "undiscovered"
+      ],
+      "labels": [
+        "gen7",
+        "legendary"
+      ],
+      "aspects": [
+        "50%",
         "complete"
       ],
       "height": 45,

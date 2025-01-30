@@ -8,6 +8,7 @@
 
 package generations.gg.generations.core.generationscore.common;
 
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.data.DataProvider;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
@@ -96,6 +97,8 @@ public class GenerationsCore {
 	public static void init(GenerationsImplementation implementation) {
 		CONFIG = ConfigLoader.loadConfig(Config.class, "core", "main");
 		GenerationsCore.implementation = implementation;
+
+
 
 //		GenerationsDataProvider.INSTANCE.register(ShopPresets.instance());
 //		GenerationsDataProvider.INSTANCE.register(Shops.instance());

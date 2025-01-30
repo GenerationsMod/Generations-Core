@@ -37,9 +37,6 @@ public class StatueSpawnerItem extends Item {
             BlockPos pos = context.getClickedPos();
             StatueEntity statueEntity = new StatueEntity(serverPlayer.level());
 
-
-            statueEntity.setYRot(context.getHorizontalDirection().toYRot());
-
             if(key != null) {
                 statueEntity.setProperties(key.createPokemon(70).createPokemonProperties(PokemonPropertyExtractor.SPECIES, PokemonPropertyExtractor.LEVEL, PokemonPropertyExtractor.FORM, PokemonPropertyExtractor.ASPECTS));
                 statueEntity.setInteractable(true);
@@ -48,6 +45,7 @@ public class StatueSpawnerItem extends Item {
                 serverPlayer.setItemInHand(context.getHand(), ItemStack.EMPTY);
             }
 
+            statueEntity.setOrientation(context.getHorizontalDirection().toYRot());
 
             statueEntity.setPos(Vec3.upFromBottomCenterOf(pos, 1));
             serverPlayer.level().addFreshEntity(statueEntity);

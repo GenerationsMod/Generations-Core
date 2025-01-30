@@ -10,220 +10,46 @@
   },
   "pages": [
     {
-      "id": "intro",
+      "id": "selection",
       "lines": [
-        "Choose what to do with this cube?"
+        "Select what you want to do.",
+        {
+          "type": "expression",
+          "expression": "'You currently have ' + q.player.main_hand.damage + ' cells available."
+        }
+      ],
+      "input": {
+        "type": "option",
+        "allowSkip": false,
+        "delay": 1,
+        "action": [
+          "v.cells = q.player.main_hand.damage;"
+        ]
+      }
+    },
+    {
+      "id": "form",
+      "lines": [
+        "Which type of zygarde do you want to create?"
       ],
       "input": {
         "type": "option",
         "options": [
           {
-            "text": "Change Ability",
-            "value": "0",
-            "isVisible": "q.player.has_in_party('cobblemon:zygarde')",
+            "text": "10%",
+            "value": "10",
+            "isVisible": "q.cells >= 10",
             "action": [
-              "v.pokemon = q.player.party.get(0);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 2",
-            "value": "1",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 1)",
-            "action": [
-              "v.pokemon = q.player.party.get(1);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 3",
-            "value": "2",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 2)",
-            "action": [
-              "v.pokemon = q.player.party.get(2);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 4",
-            "value": "3",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 3)",
-            "action": [
-              "v.pokemon = q.player.party.get(3);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 5",
-            "value": "4",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 4)",
-            "action": [
-              "v.pokemon = q.player.party.get(4);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 6",
-            "value": "5",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 5)",
-            "action": [
-              "v.pokemon = q.player.party.get(5);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "None Available",
-            "value": "none",
-            "isVisible": "!q.player.has_in_party('cobblemon:rotom')",
-            "action": [
-              "q.dialogue.close();"
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "intro",
-      "lines": [
-        "Which rotom slot do you wish to change form?"
-      ],
-      "input": {
-        "type": "option",
-        "options": [
-          {
-            "text": "Slot 1",
-            "value": "0",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 0)",
-            "action": [
-              "v.pokemon = q.player.party.get(0);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 2",
-            "value": "1",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 1)",
-            "action": [
-              "v.pokemon = q.player.party.get(1);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 3",
-            "value": "2",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 2)",
-            "action": [
-              "v.pokemon = q.player.party.get(2);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 4",
-            "value": "3",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 3)",
-            "action": [
-              "v.pokemon = q.player.party.get(3);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 5",
-            "value": "4",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 4)",
-            "action": [
-              "v.pokemon = q.player.party.get(4);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "Slot 6",
-            "value": "5",
-            "isVisible": "q.player.has_in_party('cobblemon:rotom', 5)",
-            "action": [
-              "v.pokemon = q.player.party.get(5);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
-              "q.dialogue.set_page('forms');"
-            ]
-          },
-          {
-            "text": "None Available",
-            "value": "none",
-            "isVisible": "!q.player.has_in_party('cobblemon:rotom')",
-            "action": [
-              "q.dialogue.close();"
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "forms",
-      "lines": [ "Select form to change into:" ],
-      "input": {
-        "type": "option",
-        "options": [
-          {
-            "text": "Normal",
-            "value": "normal",
-            "isVisible": "v.aspect != 'false' && v.aspect != 0.0",
-            "action": [
-              "v.pokemon.set_feature('rotom_form', 'false');",
+              "v.form = '10%';",
               "q.dialogue.close();"
             ]
           },
           {
-            "text": "Heat",
-            "value": "heat",
-            "isVisible": "v.aspect != 'heat'",
+            "text": "50",
+            "value": "50",
+            "isVisible": "q.cells >= 10",
             "action": [
-              "v.pokemon.set_feature('rotom_form', 'heat');",
-              "q.dialogue.close();"
-            ]
-          },
-          {
-            "text": "Wash",
-            "value": "wash",
-            "isVisible": "v.aspect != 'wash'",
-            "action": [
-              "v.pokemon.set_feature('rotom_form', 'wash');",
-              "q.dialogue.close();"
-            ]
-          },
-          {
-            "text": "Frost",
-            "value": "frost",
-            "isVisible": "v.aspect != 'frost'",
-            "action": [
-              "v.pokemon.set_feature('rotom_form', 'frost');",
-              "q.dialogue.close();"
-            ]
-          },
-          {
-            "text": "Fan",
-            "value": "fan",
-            "isVisible": "v.aspect != 'fan'",
-            "action": [
-              "v.pokemon.set_feature('rotom_form', 'fan');",
-              "q.dialogue.close();"
-            ]
-          },
-          {
-            "text": "Mow",
-            "value": "mow",
-            "isVisible": "v.aspect != 'mow'",
-            "action": [
-              "v.pokemon.set_feature('rotom_form', 'mow');",
+              "v.form = '50%';",
               "q.dialogue.close();"
             ]
           }
