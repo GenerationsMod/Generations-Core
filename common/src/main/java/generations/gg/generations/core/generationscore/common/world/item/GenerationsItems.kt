@@ -556,6 +556,7 @@ object GenerationsItems {
     @JvmField val ONCE_IN_A_LIFETIME_RIBBON = createRibbon("once_in_a_lifetime_ribbon")
     @JvmField val GALAR_CHAMP_RIBBON = createRibbon("galar_champ_ribbon")
 
+    @JvmField val KNOWLEDGE_SYMBOL_SILVER = createRibbon("knowledge_symbol_silver")
     @JvmField val KNOWLEDGE_SYMBOL = createRibbon("knowledge_symbol")
     @JvmField val GUTS_SYMBOL_SILVER = createRibbon("guts_symbol_silver")
     @JvmField val GUTS_SYMBOL = createRibbon("guts_symbol")
