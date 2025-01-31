@@ -44,7 +44,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
     private var timestampTextField: AbstractWidget? = null
     private var parserTextField: AbstractWidget? = null
     private var interactableCheckbox: AbstractWidget? = null
-    private var modelWidget: AbstractWidget? = null
+    private var modelWidget: ModelWidget? = null
     private var updateButton: Button? = null
     private var poseTextField: EditBox? = null
 
@@ -64,6 +64,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
             ) { s: String -> parserString = s })
         updateButton = addRenderableWidget(Button.builder(Component.literal("Update")) { button: Button? ->
             statue.properties = parse(parserString, " ", "=")
+            modelWidget?.pokemon = statue.properties.asRenderablePokemon()
             UpdateStatuePacket.Properties(statue.id, statue.properties).sendToServer()
         }
             .size(51, 16).pos(x + 135, y + 6).build())
@@ -203,6 +204,8 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
     override fun render(poseStack: GuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
         poseStack.pose().pushPose()
         poseStack.pose().translate(x.toDouble(), y.toDouble(), 0.0)
+        poseStack.blit(STATUE, 0, 0, 0f, 0f, 256, 191, 256, 256)
+
         poseStack.pose().pushPose()
         poseStack.fill(122, 25, 122 + 63, 25 + 63, -0x1000000)
         poseStack.enableScissor(x + 122, y + 25, x + 122 + 63, y + 25 + 63)
@@ -215,10 +218,10 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
 //        if(statue.statueData.material() != null) {
 //            aspects = aspects.toMutableSet().let { it + (statue.statueData.material().toString()) }
 //        }
-//
+
 //        drawProfilePokemon(data.species.resourceIdentifier,
 //            aspects,
-//            statue.statueData.poseType,
+//            statue.poseType,
 //            poseStack.pose(),
 //            Quaternionf().rotationXYZ(Math.toRadians(13f), Math.toRadians(-35f), Math.toRadians(0f)),
 //            statue.delegate,
@@ -227,7 +230,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
 //        )
         poseStack.disableScissor()
         poseStack.pose().popPose()
-        poseStack.blit(STATUE, 0, 0, 0f, 0f, 256, 191, 256, 256)
+
         poseStack.pose().popPose()
         super.render(poseStack, mouseX, mouseY, partialTick)
         ScreenUtils.drawText(poseStack, "Static:", (x + 168).toFloat(), (y + 131).toFloat(), 0x5F5F60, ScreenUtils.Position.RIGHT)
@@ -280,6 +283,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
         partialTicks: Float,
         scale: Float = 20F
     ) {
+        println("Blep: $species $aspects")
         val model = PokemonModelRepository.getPoser(species, aspects)
         val texture = PokemonModelRepository.getTexture(species, aspects, state?.animationSeconds ?: 0F)
 
