@@ -87,23 +87,6 @@
     "generations_core:swampertite",
     "generations_core:tyranitarite",
     "generations_core:venusaurite",
-    "generations_core:bug_memory_drive",
-    "generations_core:dark_memory_drive",
-    "generations_core:dragon_memory_drive",
-    "generations_core:electric_memory_drive",
-    "generations_core:fairy_memory_drive",
-    "generations_core:fighting_memory_drive",
-    "generations_core:fire_memory_drive",
-    "generations_core:flying_memory_drive",
-    "generations_core:ghost_memory_drive",
-    "generations_core:grass_memory_drive",
-    "generations_core:ground_memory_drive",
-    "generations_core:ice_memory_drive",
-    "generations_core:poison_memory_drive",
-    "generations_core:psychic_memory_drive",
-    "generations_core:rock_memory_drive",
-    "generations_core:steel_memory_drive",
-    "generations_core:water_memory_drive",
     "generations_core:buginium_z",
     "generations_core:darkinium_z",
     "generations_core:dragonium_z",
@@ -155,6 +138,8 @@
     "generations_core:teal_mask",
     "generations_core:wellspring_mask",
     "generations_core:heartflame_mask",
-    "generations_core:cornerstone_mask"
+    "generations_core:cornerstone_mask",
+    "generations_core:red_orb",
+    "generations_core:blue_orb"
   ]
 }
