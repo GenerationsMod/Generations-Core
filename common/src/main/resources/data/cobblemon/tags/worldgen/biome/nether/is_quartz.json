@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+	{
+      "id": "biomeswevegone:quartz_desert",
+      "required": false
+    },
+	{
+      "id": "cinderscapes:quartz_cavern",
+      "required": false
+    },
+	{
+      "id": "incendium:quartz_flats",
+      "required": false
+    }
+  ]
+}

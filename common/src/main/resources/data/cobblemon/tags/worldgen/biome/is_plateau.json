@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:savanna_plateau",
+	{
+      "id": "#byg:is_plateau",
+      "required": false
+    },
+	{
+      "id": "#forge:is_plateau",
+      "required": false
+    },
+    {
+      "id": "wythers:ayers_rock",
+      "required": false
+    }
+  ]
+}

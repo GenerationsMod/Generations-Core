@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:dark_forest",
+    "minecraft:mangrove_swamp",
+	"#cobblemon:is_jungle",
+    {
+      "id": "#c:vegetation_dense",
+      "required": false 
+    },
+    {
+      "id": "#forge:is_dense",
+      "required": false 
+    },
+    {
+      "id": "#forge:is_dense/overworld",
+      "required": false 
+    }
+  ]
+}

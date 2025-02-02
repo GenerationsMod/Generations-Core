@@ -1,0 +1,137 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cherry_grove",
+	"minecraft:flower_forest",
+	"minecraft:meadow",
+	"minecraft:sunflower_plains",
+    {
+      "id": "#byg:is_floral",
+      "required": false
+    },
+	{
+      "id": "#c:floral",
+      "required": false
+    },
+	{
+      "id": "#c:flower_forests",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:bamboo_grove",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:cherry_blossom_grove",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:field",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:highland_moor",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:lavender_field",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:lavender_forest",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:lush_savanna",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:mystic_grove",
+      "required": false
+    },
+	{
+      "id": "biomesoplenty:orchard",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:amaranth_fields",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:allium_fields",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:rose_fields",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:skyris_vale",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:cherry_blossom_forest",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:orchard",
+      "required": false
+    },
+	{
+      "id": "terralith:blooming_plateau",
+      "required": false
+    },
+	{
+      "id": "terralith:blooming_valley",
+      "required": false
+    },
+	{
+      "id": "terralith:cloud_forest",
+      "required": false
+    },
+	{
+      "id": "terralith:lavender_forest",
+      "required": false
+    },
+	{
+      "id": "terralith:lavender_valley",
+      "required": false
+    },
+	{
+      "id": "terralith:sakura_grove",
+      "required": false
+    },
+	{
+      "id": "terralith:sakura_valley",
+      "required": false
+    },
+    {
+      "id": "wythers:autumnal_flower_forest",
+      "required": false
+    },
+    {
+      "id": "wythers:flowering_pantanal",
+      "required": false
+    },
+    {
+      "id": "wythers:jacaranda_savanna",
+      "required": false
+    },
+    {
+      "id": "wythers:lapacho_plains",
+      "required": false
+    },
+    {
+      "id": "wythers:sakura_forest",
+      "required": false
+    },
+    {
+      "id": "wythers:spring_flower_fields",
+      "required": false
+    },
+    {
+      "id": "wythers:spring_flower_forest",
+      "required": false
+    }
+  ]
+}

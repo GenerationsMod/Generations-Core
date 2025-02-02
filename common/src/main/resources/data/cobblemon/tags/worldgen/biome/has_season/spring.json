@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "#cobblemon:is_floral",
+	"#cobblemon:is_lukewarm_ocean",
+	"#cobblemon:is_magical",
+	"#cobblemon:is_plains",
+	{
+      "id": "terralith:skylands_spring",
+      "required": false
+    },
+    {
+      "id": "the_bumblezone:floral_meadow",
+      "required": false
+    },
+    {
+      "id": "wythers:spring_flower_fields",
+      "required": false
+    },
+    {
+      "id": "wythers:spring_flower_forest",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+	"minecraft:warped_forest",
+	{
+      "id": "betternether:old_warped_woods",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:crimson_gardens",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:wailing_garth",
+      "required": false
+    },
+	{
+      "id": "biomeswevegone:warped_desert",
+      "required": false
+    },
+    {
+      "id": "wythers:deep_dark_forest",
+      "required": false
+    }
+  ]
+}

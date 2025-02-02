@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+	{
+      "id": "biomeswevegone:subzero_hypogeal",
+      "required": false
+    }
+  ]
+}

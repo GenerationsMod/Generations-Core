@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+	"#cobblemon:is_arid",
+	"#cobblemon:is_cave",
+	"#cobblemon:is_coast",
+	"#cobblemon:is_cold",
+	"#cobblemon:is_deep_dark",
+	"#cobblemon:is_floral",
+	"#cobblemon:is_forest",
+	"#cobblemon:is_freshwater",
+	"#cobblemon:is_grassland",
+	"#cobblemon:is_highlands",
+	"#cobblemon:is_island",
+	"#cobblemon:is_jungle",
+	"#cobblemon:is_magical",
+	"#cobblemon:is_mountain",
+	"#cobblemon:is_mushroom",
+	"#cobblemon:is_ocean",
+	"#minecraft:is_overworld",
+	"#cobblemon:is_sky",
+	"#cobblemon:is_spooky",
+	"#cobblemon:is_temperate",
+	"#cobblemon:is_thermal",
+	"#cobblemon:is_volcanic"
+  ]
+}
