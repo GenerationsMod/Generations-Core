@@ -1,5 +1,5 @@
 {
-  "parent": "generations_core:block/pillar",
+  "parent": "generations_core:block/pillar_partial",
   "textures": {
     "particle": "generations_core:item/blocks/pillars/broken_castle_pillar",
     "texture": "generations_core:block/broken_castle_pillar"
