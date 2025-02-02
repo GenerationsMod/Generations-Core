@@ -1,7 +1,57 @@
 {
   "variants": {
-    "": {
+    "axis=x,connected_bottom=false,connected_top=false": {
+      "model": "generations_core:block/haunted_pillar_broken",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,connected_bottom=false,connected_top=true": {
+      "model": "generations_core:block/haunted_pillar_broken_partial",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,connected_bottom=true,connected_top=false": {
+      "model": "generations_core:block/haunted_pillar_broken_partial",
+      "x": 270,
+      "y": 90
+    },
+    "axis=x,connected_bottom=true,connected_top=true": {
+      "model": "generations_core:block/haunted_pillar_broken_connected",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,connected_bottom=false,connected_top=false": {
       "model": "generations_core:block/haunted_pillar_broken"
+    },
+    "axis=y,connected_bottom=false,connected_top=true": {
+      "model": "generations_core:block/haunted_pillar_broken_partial"
+    },
+    "axis=y,connected_bottom=true,connected_top=false": {
+      "model": "generations_core:block/haunted_pillar_broken_partial",
+      "x": 180
+    },
+    "axis=y,connected_bottom=true,connected_top=true": {
+      "model": "generations_core:block/haunted_pillar_broken_connected"
+    },
+    "axis=z,connected_bottom=false,connected_top=false": {
+      "model": "generations_core:block/haunted_pillar_broken",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,connected_bottom=false,connected_top=true": {
+      "model": "generations_core:block/haunted_pillar_broken_partial",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,connected_bottom=true,connected_top=false": {
+      "model": "generations_core:block/haunted_pillar_broken_partial",
+      "x": 270,
+      "y": 180
+    },
+    "axis=z,connected_bottom=true,connected_top=true": {
+      "model": "generations_core:block/haunted_pillar_broken_connected",
+      "x": 90,
+      "y": 180
     }
   }
 }

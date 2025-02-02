@@ -8,6 +8,7 @@ import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -70,7 +71,7 @@ public class GenerationsBlockStateProvider extends BlockStateProvider {
             return ForgeRegistries.BLOCKS.getKey(block);
         }
 
-        public boolean registered(Block block) {
+        public boolean registered(@Nullable Block block) {
             return provider.registeredBlocks.containsKey(block);
         }
 

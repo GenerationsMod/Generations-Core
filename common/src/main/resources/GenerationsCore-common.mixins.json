@@ -15,8 +15,7 @@
     "client.PokemonGuiUtilsMixin",
     "client.PokemonItemRendererMixin",
     "showdown.DetailsChangeInstructionMixin",
-    "showdown.ShowdownActionRequestMixin",
-    "showdown.ShowdownInterpreterMixin"
+    "showdown.ShowdownActionRequestMixin"
   ],
   "client": [
     "client.BattleMoveSelectionGUIMixin",

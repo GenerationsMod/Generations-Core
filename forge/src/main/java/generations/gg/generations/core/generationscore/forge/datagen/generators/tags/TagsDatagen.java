@@ -133,7 +133,7 @@ public class TagsDatagen {
                     GenerationsBlocks.RICH_SOIL_3.get(),
                     GenerationsBlocks.RICH_SOIL_4.get()
             );
-            
+
             tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                     GenerationsBlocks.RUINS_SAND.get(),
                     GenerationsBlocks.RICH_SOIL_1.get(),
