@@ -12,6 +12,10 @@
       "required": false
     },
 	{
+      "id": "biomesoplenty:aspen_glade",
+      "required": false
+    },
+	{
       "id": "biomesoplenty:bamboo_grove",
       "required": false
     },
