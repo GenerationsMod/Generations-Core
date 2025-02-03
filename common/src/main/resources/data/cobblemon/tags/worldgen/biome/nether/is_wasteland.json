@@ -3,6 +3,10 @@
   "values": [
     "minecraft:nether_wastes",
     {
+      "id": "biomesoplenty:withered_abyss",
+      "required": false
+    },
+    {
       "id": "betternether:magma_land",
       "required": false
     },
