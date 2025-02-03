@@ -12,6 +12,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:coniferous_forest",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:coniferous_forest",
       "required": false
     },
@@ -41,6 +45,10 @@
     },
     {
       "id": "biomesoplenty:wetland",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:black_forest",
       "required": false
     },
     {

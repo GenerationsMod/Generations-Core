@@ -8,6 +8,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:canadian_shield",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:crag",
       "required": false
     },

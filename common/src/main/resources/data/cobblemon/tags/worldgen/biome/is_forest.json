@@ -12,6 +12,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:cika_woods",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:aspen_boreal",
       "required": false
     },

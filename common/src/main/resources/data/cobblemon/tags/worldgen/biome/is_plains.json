@@ -17,6 +17,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:coconino_meadow",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:clover_patch",
       "required": false
     },

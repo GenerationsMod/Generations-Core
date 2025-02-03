@@ -15,6 +15,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:black_forest",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:ominous_woods",
       "required": false
     },
