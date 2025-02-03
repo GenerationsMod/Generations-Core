@@ -57,6 +57,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:prairie",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:seasonal_orchard",
       "required": false
     },

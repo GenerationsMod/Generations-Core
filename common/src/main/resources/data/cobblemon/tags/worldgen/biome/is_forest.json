@@ -84,7 +84,15 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:pumpkin_valley",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:woodland",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:overgrowth_woodlands",
       "required": false
     },
     {

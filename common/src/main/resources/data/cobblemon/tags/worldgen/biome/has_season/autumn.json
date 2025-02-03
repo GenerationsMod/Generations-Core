@@ -11,6 +11,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:pumpkin_valley",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:bog",
       "required": false
     },
