@@ -24,6 +24,10 @@
       "required": false
     },
     {
+      "id": "biomesoplenty:jacaranda_glade",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:lavender_forest",
       "required": false
     },
