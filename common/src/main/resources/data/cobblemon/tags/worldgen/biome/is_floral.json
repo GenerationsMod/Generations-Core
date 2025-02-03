@@ -62,7 +62,15 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:amaranth_grassland",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:allium_fields",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:allium_shrubland",
       "required": false
     },
     {
