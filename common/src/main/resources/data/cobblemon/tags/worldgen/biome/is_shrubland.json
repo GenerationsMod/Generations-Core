@@ -80,6 +80,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:ironwood_gour",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:firecracker_chaparral",
       "required": false
     },

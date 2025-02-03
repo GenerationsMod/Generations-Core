@@ -60,6 +60,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:orchard",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:orchard",
       "required": false
     },

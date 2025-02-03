@@ -12,6 +12,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:howling_peaks",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:canadian_shield",
       "required": false
     },

@@ -52,6 +52,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:maple_taiga",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:black_forest",
       "required": false
     },
