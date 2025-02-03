@@ -12,6 +12,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:aspen_boreal",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:aspen_glade",
       "required": false
     },

@@ -10,6 +10,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:basalt_barrera",
+      "required": false
+    },
+    {
       "id": "darkerdepths:molten_cavern",
       "required": false
     },
